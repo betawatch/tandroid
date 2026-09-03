@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class p {
     public final Context a;
@@ -27,7 +27,7 @@ public final class p {
     public final e9.a i;
     public final e9.a j;
     public final ExecutorService k;
-    public final sf.e l;
+    public final sf.f l;
     public final k m;
     public final f9.a n;
     public final f0 o;
@@ -42,7 +42,7 @@ public final class p {
         this.j = aVar3;
         this.k = executorService;
         this.h = bVar;
-        this.l = new sf.e(executorService);
+        this.l = new sf.f(executorService);
         this.m = kVar;
         this.o = f0Var;
         System.currentTimeMillis();
@@ -52,8 +52,8 @@ public final class p {
     public static Task a(p pVar, e3.g gVar) {
         Task forException;
         o oVar;
-        sf.e eVar = pVar.l;
-        if (!Boolean.TRUE.equals(((ThreadLocal) eVar.e).get())) {
+        sf.f fVar = pVar.l;
+        if (!Boolean.TRUE.equals(((ThreadLocal) fVar.e).get())) {
             throw new IllegalStateException("Not running on background worker thread as intended.");
         }
         pVar.d.n();
@@ -82,10 +82,10 @@ public final class p {
                 forException = Tasks.forException(e6);
                 oVar = new o(pVar, 0);
             }
-            eVar.H(oVar);
+            fVar.H(oVar);
             return forException;
         } catch (Throwable th2) {
-            eVar.H(new o(pVar, 0));
+            fVar.H(new o(pVar, 0));
             throw th2;
         }
     }

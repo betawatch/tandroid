@@ -9,7 +9,7 @@ import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class pa implements Runnable {
     public final /* synthetic */ int a;
@@ -60,16 +60,16 @@ public final /* synthetic */ class pa implements Runnable {
                 xn.b0((xn) this.d, this.c, this.b);
                 break;
             case 5:
-                qh.x7 x7Var = (qh.x7) this.d;
-                qh.d8 d8Var = x7Var.T;
+                qh.w7 w7Var = (qh.w7) this.d;
+                qh.c8 c8Var = w7Var.T;
                 boolean z4 = this.b;
                 long j11 = this.c;
                 if (z4) {
-                    i11 = ((org.telegram.ui.ActionBar.h3) d8Var).currentAccount;
-                    MessagesController.getInstance(i11).loadChannelParticipants(Long.valueOf(j11), new org.telegram.ui.ActionBar.b4(x7Var, j11, 2), 200);
+                    i11 = ((org.telegram.ui.ActionBar.h3) c8Var).currentAccount;
+                    MessagesController.getInstance(i11).loadChannelParticipants(Long.valueOf(j11), new org.telegram.ui.ActionBar.b4(w7Var, j11, 2), 200);
                     break;
                 } else {
-                    i10 = ((org.telegram.ui.ActionBar.h3) d8Var).currentAccount;
+                    i10 = ((org.telegram.ui.ActionBar.h3) c8Var).currentAccount;
                     MessagesController.getInstance(i10).loadFullChat(j11, 0, true);
                     break;
                 }

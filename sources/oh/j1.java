@@ -23,15 +23,15 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.in;
+import org.telegram.ui.Components.iv0;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class j1 implements NotificationCenter.NotificationCenterDelegate, ef.a {
-    public static final jv0 U = new jv0(new mh.c3(8), new mh.c3(9));
-    public static final jv0 V = new jv0(new mh.c3(10), new mh.c3(11));
+    public static final iv0 U = new iv0(new mh.c3(8), new mh.c3(9));
+    public static final iv0 V = new iv0(new mh.c3(10), new mh.c3(11));
     public static final j1 W;
     public boolean B;
     public boolean C;
@@ -50,17 +50,17 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
     public boolean P;
     public boolean Q;
     public lh.c3 R;
-    public qh.k3 S;
+    public qh.j3 S;
     public boolean T;
     public float a;
     public WindowManager b;
     public WindowManager.LayoutParams c;
     public i1 d;
     public eg.s2 e;
-    public qh.k3 f;
+    public qh.j3 f;
     public FrameLayout h;
     public org.telegram.ui.Components.p9 n;
-    public jn r;
+    public in r;
     public boolean s;
     public e1 v;
     public int w;
@@ -128,13 +128,13 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
         j1Var.n = p9Var;
         j1Var.e.addView(p9Var, k7.c6.c(-1.0f, -1));
-        qh.k3 k3Var = new qh.k3(context, j1Var.w);
-        j1Var.f = k3Var;
-        k3Var.setAlpha(0.0f);
+        qh.j3 j3Var = new qh.j3(context, j1Var.w);
+        j1Var.f = j3Var;
+        j3Var.setAlpha(0.0f);
         j1Var.e.addView(j1Var.f, k7.c6.c(-1.0f, -1));
-        jn jnVar = new jn(context, 4);
-        j1Var.r = jnVar;
-        j1Var.e.addView(jnVar, k7.c6.c(-1.0f, -1));
+        in inVar = new in(context, 4);
+        j1Var.r = inVar;
+        j1Var.e.addView(inVar, k7.c6.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         j1Var.h = frameLayout;
         frameLayout.setAlpha(0.0f);
@@ -226,9 +226,9 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
         this.T = false;
         this.b.addView(this.d, this.c);
         this.d.invalidate();
-        qh.k3 k3Var = this.S;
-        if (k3Var != null) {
-            k3Var.b();
+        qh.j3 j3Var = this.S;
+        if (j3Var != null) {
+            j3Var.b();
             this.S = null;
         }
         i();
@@ -236,8 +236,8 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // ef.a
     public final Bitmap b() {
-        qh.k3 k3Var = this.S;
-        if (k3Var == null || !k3Var.a()) {
+        qh.j3 j3Var = this.S;
+        if (j3Var == null || !j3Var.a()) {
             return null;
         }
         return this.S.getBitmap();
@@ -245,8 +245,8 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // ef.a
     public final Bitmap d() {
-        qh.k3 k3Var = this.f;
-        if (k3Var == null || !k3Var.a()) {
+        qh.j3 j3Var = this.f;
+        if (j3Var == null || !j3Var.a()) {
             return null;
         }
         return this.f.getBitmap();
@@ -276,18 +276,18 @@ public final class j1 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // ef.a
     public final View h() {
-        qh.k3 k3Var = new qh.k3(this.f.getContext(), this.w);
-        this.S = k3Var;
-        return k3Var;
+        qh.j3 j3Var = new qh.j3(this.f.getContext(), this.w);
+        this.S = j3Var;
+        return j3Var;
     }
 
     public final void i() {
         e1 e1Var = this.v;
         if (e1Var != null) {
             e1Var.v(1.0f);
-            qh.k3 k3Var = this.S;
-            if (k3Var != null) {
-                this.v.s(k3Var.getSink());
+            qh.j3 j3Var = this.S;
+            if (j3Var != null) {
+                this.v.s(j3Var.getSink());
             } else {
                 this.v.s(this.f.getSink());
             }

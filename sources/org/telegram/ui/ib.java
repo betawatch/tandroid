@@ -4,11 +4,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ib extends xh.n {
     public int W;
-    public tt0 X;
+    public yt0 X;
     public final /* synthetic */ sb Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -21,13 +21,13 @@ public final class ib extends xh.n {
     @Override // xh.n, f2.l
     public final void N() {
         super.N();
-        tt0 tt0Var = this.X;
-        if (tt0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(tt0Var);
+        yt0 yt0Var = this.X;
+        if (yt0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(yt0Var);
         }
-        tt0 tt0Var2 = new tt0(this, 20);
-        this.X = tt0Var2;
-        AndroidUtilities.runOnUIThread(tt0Var2);
+        yt0 yt0Var2 = new yt0(this, 20);
+        this.X = yt0Var2;
+        AndroidUtilities.runOnUIThread(yt0Var2);
     }
 
     @Override // xh.n
@@ -35,9 +35,9 @@ public final class ib extends xh.n {
         if (this.W == -1) {
             this.W = this.Y.getNotificationCenter().setAnimationInProgress(this.W, sb.V0, false);
         }
-        tt0 tt0Var = this.X;
-        if (tt0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(tt0Var);
+        yt0 yt0Var = this.X;
+        if (yt0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(yt0Var);
             this.X = null;
         }
         if (BuildVars.LOGS_ENABLED) {

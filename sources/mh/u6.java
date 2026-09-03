@@ -20,12 +20,12 @@ import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.te1;
 import org.telegram.ui.xh0;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
+import org.telegram.ui.ze1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u6 implements Runnable {
     public final /* synthetic */ int a = 5;
@@ -113,7 +113,7 @@ public final /* synthetic */ class u6 implements Runnable {
                         tL_inputGroupCall.id = groupCall2.id;
                         tL_inputGroupCall.access_hash = groupCall2.access_hash;
                         h3Var.dismiss();
-                        org.telegram.ui.Components.voip.g2.h(LaunchActivity.D1, i11, tL_inputGroupCall, false, groupcall.call, null);
+                        org.telegram.ui.Components.voip.g2.g(LaunchActivity.D1, i11, tL_inputGroupCall, false, groupcall.call, null);
                         SendMessagesHelper.getInstance(i11).sendMessage(SendMessagesHelper.SendMessageParams.of(groupcall.call.invite_link, j12));
                         break;
                     }
@@ -530,7 +530,7 @@ public final /* synthetic */ class u6 implements Runnable {
                 Context context = (Context) this.d;
                 long j16 = this.b;
                 TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) this.e;
-                a0.g(i19).f(context, j16, connectedbotstarref.bot_id, new te1(i19, j16, context, connectedbotstarref, (org.telegram.ui.ActionBar.h3) this.f, (org.telegram.ui.ActionBar.g6) this.h));
+                a0.g(i19).f(context, j16, connectedbotstarref.bot_id, new ze1(i19, j16, context, connectedbotstarref, (org.telegram.ui.ActionBar.h3) this.f, (org.telegram.ui.ActionBar.g6) this.h));
                 break;
         }
     }

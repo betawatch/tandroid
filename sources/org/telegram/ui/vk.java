@@ -5,9 +5,9 @@ import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class vk extends org.telegram.ui.Components.pn0 {
+public final class vk extends org.telegram.ui.Components.on0 {
     public final /* synthetic */ xn F;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -16,7 +16,7 @@ public final class vk extends org.telegram.ui.Components.pn0 {
         this.F = xnVar;
     }
 
-    @Override // org.telegram.ui.Components.pn0
+    @Override // org.telegram.ui.Components.on0
     public final void b(boolean z4) {
         xn xnVar = this.F;
         xnVar.t7();
@@ -31,7 +31,7 @@ public final class vk extends org.telegram.ui.Components.pn0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.pn0
+    @Override // org.telegram.ui.Components.on0
     public final boolean f(ng.q0 q0Var) {
         int i10;
         xn xnVar = this.F;
@@ -55,7 +55,7 @@ public final class vk extends org.telegram.ui.Components.pn0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.pn0
+    @Override // org.telegram.ui.Components.on0
     public final void h(boolean z4) {
         super.h(z4);
         xn xnVar = this.F;

@@ -1,19 +1,19 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class a60 extends io0 {
-    @Override // org.telegram.ui.Components.io0
+public abstract class a60 extends ho0 {
+    @Override // org.telegram.ui.Components.ho0
     public final boolean a() {
         return j() > 0;
     }
 
-    @Override // org.telegram.ui.Components.io0
+    @Override // org.telegram.ui.Components.ho0
     public final boolean b() {
         return j() < i();
     }
 
-    @Override // org.telegram.ui.Components.io0
+    @Override // org.telegram.ui.Components.ho0
     public final void c(boolean z4) {
         int h = h();
         if (z4) {

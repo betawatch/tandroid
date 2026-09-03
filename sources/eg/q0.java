@@ -2,18 +2,18 @@ package eg;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import org.telegram.ui.ht0;
+import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class q0 extends dg.o1 {
     public final /* synthetic */ Bitmap B;
-    public final /* synthetic */ ht0 C;
+    public final /* synthetic */ mt0 C;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q0(ht0 ht0Var, Context context, dg.c1 c1Var, Bitmap bitmap, Bitmap bitmap2) {
+    public q0(mt0 mt0Var, Context context, dg.c1 c1Var, Bitmap bitmap, Bitmap bitmap2) {
         super(context, c1Var, bitmap, null, null);
-        this.C = ht0Var;
+        this.C = mt0Var;
         this.B = bitmap2;
     }
 
@@ -24,8 +24,8 @@ public final class q0 extends dg.o1 {
         if (i10 <= 1 || this.B != null) {
             indexOf = i10;
         }
-        ht0 ht0Var = this.C;
-        ht0Var.q1.b(indexOf);
-        ht0Var.g(mVar);
+        mt0 mt0Var = this.C;
+        mt0Var.q1.b(indexOf);
+        mt0Var.g(mVar);
     }
 }

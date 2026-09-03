@@ -10,9 +10,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cs implements MessagesStorage.LongCallback, kl0 {
+public final /* synthetic */ class cs implements MessagesStorage.LongCallback, jl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ gs b;
 
@@ -21,16 +21,16 @@ public final /* synthetic */ class cs implements MessagesStorage.LongCallback, k
         this.b = gsVar;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         boolean z4;
         gs gsVar = this.b;
-        j51 G = gsVar.U.G(i10 - 1);
+        h51 G = gsVar.U.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -198,7 +198,7 @@ public final /* synthetic */ class cs implements MessagesStorage.LongCallback, k
                                 if (i15 >= gsVar.U.x.size()) {
                                     break;
                                 }
-                                j51 G2 = gsVar.U.G(i15);
+                                h51 G2 = gsVar.U.G(i15);
                                 if (G2.a == 39 && G2.d == 0) {
                                     f2.m1 K = gsVar.d.K(i15 + 1);
                                     if (K != null) {
@@ -261,7 +261,7 @@ public final /* synthetic */ class cs implements MessagesStorage.LongCallback, k
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

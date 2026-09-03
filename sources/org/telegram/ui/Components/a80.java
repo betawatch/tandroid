@@ -27,7 +27,7 @@ import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class a80 extends org.telegram.ui.ActionBar.h3 {
     public static ArrayList D;
@@ -80,9 +80,9 @@ public final class a80 extends org.telegram.ui.ActionBar.h3 {
         }
         int i10 = 0;
         View childAt = w70Var.getChildAt(0);
-        fl0 fl0Var = (fl0) w70Var.G(childAt);
+        el0 el0Var = (el0) w70Var.G(childAt);
         int top = childAt.getTop() - AndroidUtilities.dp(9.0f);
-        if (top > 0 && fl0Var != null && fl0Var.b() == 0) {
+        if (top > 0 && el0Var != null && el0Var.b() == 0) {
             i10 = top;
         }
         if (a80Var.r != i10) {
@@ -238,11 +238,11 @@ public final class a80 extends org.telegram.ui.ActionBar.h3 {
             w70Var.setPadding(AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f), 0);
         }
         if (i10 == 0) {
-            lj0 lj0Var = new lj0(context);
-            lj0Var.setAutoRepeat(true);
-            lj0Var.f(R.raw.utyan_schedule, 120, 120, null);
-            lj0Var.d();
-            viewGroup.addView(lj0Var, k7.c6.t(160, 160, 49, 17, 8, 17, 0));
+            kj0 kj0Var = new kj0(context);
+            kj0Var.setAutoRepeat(true);
+            kj0Var.f(R.raw.utyan_schedule, 120, 120, null);
+            kj0Var.d();
+            viewGroup.addView(kj0Var, k7.c6.t(160, 160, 49, 17, 8, 17, 0));
         }
         TextView textView = new TextView(context);
         a80Var.e = textView;

@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class iz extends org.telegram.ui.ActionBar.p2 {
     public long a;
@@ -35,12 +35,12 @@ public final class iz extends org.telegram.ui.ActionBar.p2 {
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 8));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 8));
         this.actionBar.setTitle(LocaleController.getString(R.string.TopicsTitle));
         FrameLayout frameLayout = new FrameLayout(context);
         fz fzVar = new fz(this, new d5(this, 13), new gu(this, 6), null);
         this.e = fzVar;
-        fzVar.p1();
+        fzVar.o1();
         this.e.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.a7, this.resourceProvider));
         frameLayout.addView(this.e, k7.c6.e(-1, -1, 119));
         this.actionBar.setAdaptiveBackground(this.e);

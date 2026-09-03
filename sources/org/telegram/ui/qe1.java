@@ -1,26 +1,42 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
-
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class qe1 implements View.OnClickListener {
-    public final /* synthetic */ mf1 a;
+public final /* synthetic */ class qe1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sf1 b;
 
-    public qe1(mf1 mf1Var) {
-        this.a = mf1Var;
+    public /* synthetic */ qe1(sf1 sf1Var, int i10) {
+        this.a = i10;
+        this.b = sf1Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        mf1 mf1Var = this.a;
-        if (mf1Var.J == 1) {
-            org.telegram.ui.Components.z4.j0(mf1Var, -mf1Var.a, null, mf1Var.g(), null, false, mf1Var.G, new ta(this, 5), mf1Var.getResourceProvider());
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                sf1 sf1Var = this.b;
+                sf1Var.x0();
+                sf1Var.B0();
+                break;
+            case 1:
+                this.b.x0();
+                break;
+            case 2:
+                this.b.O0(true);
+                break;
+            case 3:
+                this.b.finishPreviewFragment();
+                break;
+            case 4:
+                sf1 sf1Var2 = this.b;
+                sf1Var2.x0 = null;
+                sf1Var2.U0(true, false);
+                break;
+            default:
+                sf1 sf1Var3 = this.b;
+                sf1Var3.K.postOnAnimation(new qe1(sf1Var3, 1));
+                break;
         }
-        mf1Var.getMessagesController().addUserToChat(mf1Var.a, mf1Var.getUserConfig().getCurrentUser(), 0, null, mf1Var, false, new ke1(mf1Var, 2), new le1(mf1Var));
-        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeSearchByActiveAction, new Object[0]);
-        mf1Var.O0(false);
     }
 }

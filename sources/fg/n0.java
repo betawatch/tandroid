@@ -30,25 +30,25 @@ import org.telegram.ui.ActionBar.l5;
 import org.telegram.ui.Cells.g4;
 import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Cells.z6;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.in;
 import org.telegram.ui.Components.n90;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.u00;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class n0 extends sl0 {
+public final class n0 extends rl0 {
     public final /* synthetic */ v0 c;
 
     public n0(v0 v0Var) {
         this.c = v0Var;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         v0 v0Var = this.c;
         int i10 = v0Var.e0;
@@ -208,7 +208,7 @@ public final class n0 extends sl0 {
                 if (indexOf >= 0) {
                     spannableStringBuilder = new SpannableStringBuilder(string);
                     SpannableString spannableString = new SpannableString(android.support.v4.media.a.m(q0Var.e.e, "", new StringBuilder()));
-                    spannableString.setSpan(new g51(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+                    spannableString.setSpan(new e51(AndroidUtilities.bold()), 0, spannableString.length(), 33);
                     spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) spannableString);
                 }
                 l5Var.l(spannableStringBuilder, false);
@@ -221,7 +221,7 @@ public final class n0 extends sl0 {
                     if (indexOf2 >= 0) {
                         spannableStringBuilder2 = new SpannableStringBuilder(str);
                         SpannableString spannableString2 = new SpannableString(q0Var.e.c);
-                        spannableString2.setSpan(new g51(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
+                        spannableString2.setSpan(new e51(AndroidUtilities.bold()), 0, spannableString2.length(), 33);
                         spannableStringBuilder2.replace(indexOf2, indexOf2 + 2, (CharSequence) spannableString2);
                     }
                     l5Var.l(spannableStringBuilder2, false);
@@ -288,7 +288,7 @@ public final class n0 extends sl0 {
                 view = u00Var;
                 break;
             case 6:
-                view = new jn(v0Var.getContext(), 1);
+                view = new in(v0Var.getContext(), 1);
                 break;
             case 7:
                 FrameLayout frameLayout = new FrameLayout(v0Var.getContext());

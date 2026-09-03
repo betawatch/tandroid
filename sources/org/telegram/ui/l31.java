@@ -1,90 +1,147 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class l31 extends FrameLayout {
-    public int a;
-    public TLRPC.TL_channels_sponsoredMessageReportResultChooseOption b;
-    public TLRPC.TL_reportResultChooseOption c;
-    public TLRPC.TL_reportResultAddComment d;
-    public final FrameLayout e;
-    public final org.telegram.ui.Components.i61 f;
-    public final eg.q1 h;
-    public j31 n;
-    public FrameLayout r;
-    public qh.d s;
-    public final /* synthetic */ m31 v;
+    public final org.telegram.ui.Components.z5 a;
+    public float b;
+    public final Path c;
+    public Boolean d;
+    public final /* synthetic */ q31 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l31(m31 m31Var, Context context) {
+    public l31(q31 q31Var, Context context) {
         super(context);
-        org.telegram.ui.ActionBar.g6 g6Var;
-        org.telegram.ui.ActionBar.g6 g6Var2;
-        org.telegram.ui.ActionBar.g6 g6Var3;
+        this.e = q31Var;
+        this.a = new org.telegram.ui.Components.z5(this, 250L, org.telegram.ui.Components.pr.h);
+        this.c = new Path();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
         int i10;
-        org.telegram.ui.ActionBar.g6 g6Var4;
-        this.v = m31Var;
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.e = frameLayout;
-        frameLayout.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
-        frameLayout.setClipToPadding(true);
-        addView(frameLayout, k7.c6.e(-1, -1, 119));
-        g6Var = ((org.telegram.ui.ActionBar.h3) m31Var).resourcesProvider;
-        eg.q1 q1Var = new eg.q1(context, g6Var);
-        TextView textView = (TextView) q1Var.c;
-        this.h = q1Var;
-        q1Var.e = new i31(this, 0);
-        if (m31Var.d) {
-            textView.setText(LocaleController.getString(R.string.ReportAd));
-        } else if (m31Var.e) {
-            textView.setText(LocaleController.getString(R.string.ReportStory));
-        } else {
-            textView.setText(LocaleController.getString(R.string.Report2));
+        int i11;
+        org.telegram.ui.Components.w51 w51Var;
+        View[] viewArr;
+        org.telegram.ui.Components.h51 G;
+        q31 q31Var = this.e;
+        View[] viewPages = q31Var.b.getViewPages();
+        float f10 = 0.0f;
+        this.b = 0.0f;
+        int length = viewPages.length;
+        int i12 = 0;
+        while (i12 < length) {
+            View view = viewPages[i12];
+            if (view == null) {
+                viewArr = viewPages;
+            } else {
+                p31 p31Var = (p31) view;
+                FrameLayout frameLayout = p31Var.e;
+                org.telegram.ui.Components.h61 h61Var = p31Var.f;
+                float clamp = Utilities.clamp(1.0f - Math.abs(p31Var.getTranslationX() / p31Var.getMeasuredWidth()), 1.0f, f10);
+                float f11 = this.b;
+                float paddingTop = frameLayout.getPaddingTop();
+                int i13 = 0;
+                while (true) {
+                    int childCount = h61Var.getChildCount();
+                    w51Var = h61Var.V2;
+                    if (i13 >= childCount) {
+                        break;
+                    }
+                    View childAt = h61Var.getChildAt(i13);
+                    h61Var.U2.getClass();
+                    int H = f2.w0.H(childAt);
+                    View[] viewArr2 = viewPages;
+                    if (H >= 0 && H < w51Var.x.size() && (G = w51Var.G(H)) != null && G.a == 28) {
+                        paddingTop = childAt.getY() + frameLayout.getPaddingTop();
+                    }
+                    i13++;
+                    viewPages = viewArr2;
+                }
+                viewArr = viewPages;
+                this.b = (paddingTop * clamp) + f11;
+                if (p31Var.getVisibility() == 0) {
+                    eg.q1 q1Var = p31Var.h;
+                    float f12 = -q1Var.getHeight();
+                    int i14 = 0;
+                    while (true) {
+                        if (i14 >= h61Var.getChildCount()) {
+                            break;
+                        }
+                        View childAt2 = h61Var.getChildAt(i14);
+                        h61Var.U2.getClass();
+                        if (w51Var.G(f2.w0.H(childAt2)).a == 28) {
+                            f12 = childAt2.getY() + frameLayout.getPaddingTop();
+                            break;
+                        }
+                        i14++;
+                    }
+                    q1Var.setTranslationY(Math.max(AndroidUtilities.statusBarHeight, f12));
+                }
+            }
+            i12++;
+            viewPages = viewArr;
+            f10 = 0.0f;
         }
-        org.telegram.ui.ActionBar.i2 i2Var = (org.telegram.ui.ActionBar.i2) q1Var.d;
-        int i11 = org.telegram.ui.ActionBar.k6.G6;
-        g6Var2 = ((org.telegram.ui.ActionBar.h3) m31Var).resourcesProvider;
-        i2Var.a(org.telegram.ui.ActionBar.k6.v0(i11, g6Var2));
-        int i12 = org.telegram.ui.ActionBar.k6.h5;
-        g6Var3 = ((org.telegram.ui.ActionBar.h3) m31Var).resourcesProvider;
-        q1Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(i12, g6Var3));
-        addView(q1Var, k7.c6.e(-1, -2, 55));
-        i10 = ((org.telegram.ui.ActionBar.h3) m31Var).currentAccount;
-        d5 d5Var = new d5(this, 19);
-        kl0 kl0Var = new kl0(this, 15);
-        g6Var4 = ((org.telegram.ui.ActionBar.h3) m31Var).resourcesProvider;
-        org.telegram.ui.Components.i61 i61Var = new org.telegram.ui.Components.i61(context, i10, 0, true, d5Var, kl0Var, null, g6Var4);
-        this.f = i61Var;
-        i61Var.setClipToPadding(false);
-        i61Var.U2.k1(true);
-        i61Var.setOnScrollListener(new l3(this, 27));
-        frameLayout.addView(i61Var, k7.c6.c(-1.0f, -1));
+        float d = this.a.d(this.b <= ((float) AndroidUtilities.statusBarHeight) ? 1.0f : 0.0f, false);
+        float f13 = AndroidUtilities.statusBarHeight;
+        float f14 = f13 * d;
+        this.b = Math.max(f13, this.b) - (AndroidUtilities.statusBarHeight * d);
+        RectF rectF = AndroidUtilities.rectTmp;
+        i10 = ((org.telegram.ui.ActionBar.h3) q31Var).backgroundPaddingLeft;
+        float f15 = this.b;
+        int width = getWidth();
+        i11 = ((org.telegram.ui.ActionBar.h3) q31Var).backgroundPaddingLeft;
+        rectF.set(i10, f15, width - i11, AndroidUtilities.dp(8.0f) + getHeight());
+        float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(14.0f), 0, d);
+        canvas.drawRoundRect(rectF, lerp, lerp, q31Var.c);
+        canvas.save();
+        Path path = this.c;
+        path.rewind();
+        path.addRoundRect(rectF, lerp, lerp, Path.Direction.CW);
+        canvas.clipPath(path);
+        super.dispatchDraw(canvas);
+        canvas.restore();
+        boolean z4 = f14 > ((float) AndroidUtilities.statusBarHeight) / 2.0f;
+        Boolean bool = this.d;
+        if (bool == null || bool.booleanValue() != z4) {
+            boolean z10 = AndroidUtilities.computePerceivedBrightness(q31Var.getThemedColor(org.telegram.ui.ActionBar.k6.h5)) > 0.721f;
+            boolean z11 = AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.k6.v(q31Var.getThemedColor(org.telegram.ui.ActionBar.k6.s8), 855638016)) > 0.721f;
+            this.d = Boolean.valueOf(z4);
+            if (!z4) {
+                z10 = z11;
+            }
+            AndroidUtilities.setLightStatusBar(q31Var.getWindow(), z10);
+        }
     }
 
-    public final void a(int i10) {
-        this.a = i10;
-        this.h.b(i10 != 0);
-        org.telegram.ui.Components.i61 i61Var = this.f;
-        if (i61Var != null) {
-            i61Var.V2.N(true);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.b) {
+            return super.dispatchTouchEvent(motionEvent);
         }
+        this.e.dismiss();
+        return true;
     }
 
-    public final void b(TLRPC.TL_reportResultAddComment tL_reportResultAddComment) {
-        this.b = null;
-        this.c = null;
-        this.d = tL_reportResultAddComment;
-        this.f.V2.N(false);
-        if (this.n != null) {
-            AndroidUtilities.runOnUIThread(new i31(this, 1), 120L);
-        }
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j10) {
+        return super.drawChild(canvas, view, j10);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
     }
 }

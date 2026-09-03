@@ -3,9 +3,9 @@ package mh;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class m9 implements ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ boolean[] a;
@@ -16,7 +16,7 @@ public final class m9 implements ImageReceiver.ImageReceiverDelegate {
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public final void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
-        ij0 lottieAnimation;
+        hj0 lottieAnimation;
         if (!z4 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
             return;
         }

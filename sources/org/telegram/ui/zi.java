@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zi implements Runnable {
     public final /* synthetic */ int a;
@@ -108,7 +108,7 @@ public final /* synthetic */ class zi implements Runnable {
                 }
                 poVar.L0 = true;
                 if (poVar.O0 == null) {
-                    poVar.O0 = new org.telegram.ui.Components.ij0(R.raw.camera_outline, "" + R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                    poVar.O0 = new org.telegram.ui.Components.hj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                 }
                 poVar.Y.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                 poVar.Y.e.setAnimation(poVar.O0);

@@ -15,16 +15,16 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.h50;
-import org.telegram.ui.Components.ky0;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.jy0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.o70;
 import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.z50;
-import org.telegram.ui.r61;
+import org.telegram.ui.w61;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class h3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -93,9 +93,9 @@ public final class h3 extends AnimatorListenerAdapter {
                 ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.d).x.remove((AnimatorSet) this.b);
                 View view = (View) this.c;
                 if (view instanceof org.telegram.ui.ActionBar.g1) {
-                    lj0 lj0Var = ((org.telegram.ui.ActionBar.g1) view).c;
-                    if (lj0Var.getAnimatedDrawable() != null) {
-                        lj0Var.getAnimatedDrawable().start();
+                    kj0 kj0Var = ((org.telegram.ui.ActionBar.g1) view).c;
+                    if (kj0Var.getAnimatedDrawable() != null) {
+                        kj0Var.getAnimatedDrawable().start();
                         break;
                     }
                 }
@@ -135,18 +135,18 @@ public final class h3 extends AnimatorListenerAdapter {
                 }
                 break;
             case 5:
-                tl0 tl0Var = (tl0) this.c;
+                sl0 sl0Var = (sl0) this.c;
                 f2.w wVar = (f2.w) this.b;
                 mz mzVar = (mz) this.d;
                 if (animator.equals(mzVar.J0)) {
                     int L0 = wVar.L0();
-                    tl0Var.setTranslationY(0.0f);
-                    if (tl0Var == mzVar.A0) {
-                        tl0Var.setPadding(0, AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(44.0f) + mzVar.n2);
-                    } else if (tl0Var == mzVar.e0) {
-                        tl0Var.setPadding(0, mzVar.Y0, 0, AndroidUtilities.dp(44.0f) + mzVar.n2);
-                    } else if (tl0Var == mzVar.M) {
-                        tl0Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(44.0f) + mzVar.n2);
+                    sl0Var.setTranslationY(0.0f);
+                    if (sl0Var == mzVar.A0) {
+                        sl0Var.setPadding(0, AndroidUtilities.dp(36.0f), 0, AndroidUtilities.dp(44.0f) + mzVar.n2);
+                    } else if (sl0Var == mzVar.e0) {
+                        sl0Var.setPadding(0, mzVar.Y0, 0, AndroidUtilities.dp(44.0f) + mzVar.n2);
+                    } else if (sl0Var == mzVar.M) {
+                        sl0Var.setPadding(AndroidUtilities.dp(5.0f), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(5.0f), AndroidUtilities.dp(44.0f) + mzVar.n2);
                     }
                     if (L0 != -1) {
                         wVar.h1(L0, 0);
@@ -189,13 +189,13 @@ public final class h3 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                r61 r61Var = (r61) this.d;
-                r61Var.o1 = null;
-                r61Var.invalidate();
+                w61 w61Var = (w61) this.d;
+                w61Var.o1 = null;
+                w61Var.invalidate();
                 boolean[] zArr3 = (boolean[]) this.b;
                 if (!zArr3[0]) {
                     zArr3[0] = true;
-                    ((ky0) this.c).run();
+                    ((jy0) this.c).run();
                     break;
                 }
                 break;

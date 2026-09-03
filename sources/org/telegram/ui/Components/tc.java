@@ -7,12 +7,12 @@ import android.text.SpannableString;
 import android.text.style.ReplacementSpan;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class tc extends ReplacementSpan {
     public final org.telegram.ui.ActionBar.g6 a;
     public final Paint b = new Paint(1);
-    public final l01 c;
+    public final k01 c;
     public final Runnable d;
     public rc e;
     public Integer f;
@@ -20,7 +20,7 @@ public final class tc extends ReplacementSpan {
     public tc(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.g6 g6Var) {
         this.a = g6Var;
         this.d = runnable;
-        this.c = new l01(charSequence, 12.0f, null);
+        this.c = new k01(charSequence, 12.0f, null);
     }
 
     public static SpannableString b(CharSequence charSequence, Runnable runnable, org.telegram.ui.ActionBar.g6 g6Var, Integer num) {

@@ -13,21 +13,20 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.lg;
 import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.ti0;
 import org.telegram.ui.xn;
-import qh.b5;
-import qh.ca;
+import qh.a5;
+import qh.ba;
+import qh.f8;
+import qh.f9;
 import qh.g8;
-import qh.g9;
-import qh.h8;
-import qh.m6;
-import qh.z4;
+import qh.k6;
+import qh.y4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d0 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -59,45 +58,45 @@ public final /* synthetic */ class d0 implements View.OnLongClickListener {
                 }
                 return true;
             case 1:
-                b5 b5Var = (b5) this.b;
-                int i12 = b5Var.C1;
-                if (b5Var.F1 != null) {
+                a5 a5Var = (a5) this.b;
+                int i12 = a5Var.C1;
+                if (a5Var.F1 != null) {
                     dg.e1 e10 = dg.e1.e(i12);
                     e10.k = !e10.k;
                     e10.a.edit().putBoolean("fill_shapes", e10.k).apply();
                     boolean z10 = dg.e1.e(i12).k;
-                    for (int i13 = 0; i13 < b5Var.F1.getItemsCount(); i13++) {
-                        View childAt2 = b5Var.F1.I.getChildAt(i13);
-                        if (childAt2 instanceof z4) {
+                    for (int i13 = 0; i13 < a5Var.F1.getItemsCount(); i13++) {
+                        View childAt2 = a5Var.F1.I.getChildAt(i13);
+                        if (childAt2 instanceof y4) {
                             dg.l lVar2 = (dg.l) dg.l.b.get(i13);
-                            ((z4) childAt2).a(z10 ? lVar2.m() : lVar2.e(), z10, true);
+                            ((y4) childAt2).a(z10 ? lVar2.m() : lVar2.e(), z10, true);
                         }
                     }
                 }
                 return true;
             case 2:
-                ca caVar = (ca) this.b;
-                Activity activity = caVar.b;
-                g9 g9Var = caVar.y0;
-                if (g9Var == null || !g9Var.isFrontface()) {
+                ba baVar = (ba) this.b;
+                Activity activity = baVar.b;
+                f9 f9Var = baVar.y0;
+                if (f9Var == null || !f9Var.isFrontface()) {
                     return false;
                 }
-                caVar.p();
-                caVar.B0.setSelected(true);
-                caVar.s.e(0.85f, 240L, null);
-                q70 F = q70.F(caVar.r, caVar.a, caVar.B0);
-                m6 m6Var = new m6(activity, 1);
-                m6Var.d(caVar.s.o);
-                m6Var.h = new h8(caVar, 21);
-                F.q(m6Var);
+                baVar.p();
+                baVar.B0.setSelected(true);
+                baVar.s.e(0.85f, 240L, null);
+                q70 F = q70.F(baVar.r, baVar.a, baVar.B0);
+                k6 k6Var = new k6(activity, 1);
+                k6Var.d(baVar.s.o);
+                k6Var.h = new g8(baVar, 21);
+                F.q(k6Var);
                 F.o();
-                m6 m6Var2 = new m6(activity, 2);
-                m6Var2.b = 0.65f;
-                m6Var2.c = 1.0f;
-                m6Var2.d(caVar.s.p);
-                m6Var2.h = new h8(caVar, 0);
-                F.q(m6Var2);
-                F.p = new g8(caVar, 1);
+                k6 k6Var2 = new k6(activity, 2);
+                k6Var2.b = 0.65f;
+                k6Var2.c = 1.0f;
+                k6Var2.d(baVar.s.p);
+                k6Var2.h = new g8(baVar, 0);
+                F.q(k6Var2);
+                F.p = new f8(baVar, 1);
                 F.s = 0;
                 F.V(5);
                 F.a0(AndroidUtilities.dp(46.0f), -AndroidUtilities.dp(4.0f));
@@ -119,10 +118,10 @@ public final /* synthetic */ class d0 implements View.OnLongClickListener {
                     new fg.n1(miVar.c0, qVar.getContext(), qVar.n, 43, true).show();
                     return true;
                 }
-                if (r3Var.k3() && !r3Var.m3()) {
-                    if (r3Var.M3()) {
-                        ArrayList<TL_iv.PageBlock> Z2 = r3Var.Z2();
-                        if (!Z2.isEmpty()) {
+                if (r3Var.j3() && !r3Var.l3()) {
+                    if (r3Var.L3()) {
+                        ArrayList<TL_iv.PageBlock> Y2 = r3Var.Y2();
+                        if (!Y2.isEmpty()) {
                             org.telegram.ui.ActionBar.p2 p2Var = miVar.c0;
                             xn xnVar = p2Var instanceof xn ? (xn) p2Var : null;
                             ti0 ti0Var = qVar.L;
@@ -143,9 +142,9 @@ public final /* synthetic */ class d0 implements View.OnLongClickListener {
                             tL_message.flags2 |= 8192;
                             TL_iv.RichMessage richMessage = new TL_iv.RichMessage();
                             tL_message.rich_message = richMessage;
-                            richMessage.blocks = Z2;
-                            richMessage.photos = r3Var.B2();
-                            tL_message.rich_message.documents = r3Var.y2();
+                            richMessage.blocks = Y2;
+                            richMessage.photos = r3Var.A2();
+                            tL_message.rich_message.documents = r3Var.x2();
                             if (messageObject != null && !messageObject.isTopicMainMessage) {
                                 TLRPC.TL_messageReplyHeader tL_messageReplyHeader = new TLRPC.TL_messageReplyHeader();
                                 tL_messageReplyHeader.flags |= 16;
@@ -166,7 +165,7 @@ public final /* synthetic */ class d0 implements View.OnLongClickListener {
                             sendButton.setScaleY(1.0f);
                             lg r10 = qVar.L.r(sendButton, true, new org.telegram.ui.Components.voip.o(qVar, 26));
                             if (r10 != null) {
-                                r10.setBackground(new wh.y1(k6.b0(AndroidUtilities.dp(22.0f), k6.v0(k6.Oh, g6Var))));
+                                r10.setBackground(new wh.y1(org.telegram.ui.ActionBar.k6.b0(AndroidUtilities.dp(22.0f), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oh, g6Var))));
                                 ti0 ti0Var3 = qVar.L;
                                 int dp = AndroidUtilities.dp(44.0f);
                                 ti0Var3.j0 = true;
@@ -193,7 +192,7 @@ public final /* synthetic */ class d0 implements View.OnLongClickListener {
                             return true;
                         }
                     } else if (v3Var != null) {
-                        v3Var.setSendEnabled(r3Var.M3());
+                        v3Var.setSendEnabled(r3Var.L3());
                     }
                 }
                 return false;

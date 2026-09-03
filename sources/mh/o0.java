@@ -19,12 +19,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jy;
-import org.telegram.ui.mf1;
 import org.telegram.ui.py;
+import org.telegram.ui.sf1;
 import org.telegram.ui.xf0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o0 implements View.OnClickListener {
     public final /* synthetic */ int a = 0;
@@ -178,7 +178,7 @@ public final /* synthetic */ class o0 implements View.OnClickListener {
                         }
 
                         @Override // org.telegram.ui.jy
-                        public final boolean v(py pyVar, ArrayList arrayList2, CharSequence charSequence, boolean z4, boolean z10, int i13, int i14, mf1 mf1Var) {
+                        public final boolean v(py pyVar, ArrayList arrayList2, CharSequence charSequence, boolean z4, boolean z10, int i13, int i14, sf1 sf1Var) {
                             MessageObject messageObject;
                             TLRPC.TL_forumTopic findTopic;
                             TLRPC.Message message;
@@ -227,11 +227,11 @@ public final /* synthetic */ class o0 implements View.OnClickListener {
                                 e1Var2.Z = true;
                                 wVar.run(arrayList3.size() > 0 ? null : "USER_DECLINED", arrayList3);
                             }
-                            if (mf1Var == null) {
+                            if (sf1Var == null) {
                                 pyVar.finishFragment();
                                 return true;
                             }
-                            mf1Var.finishFragment();
+                            sf1Var.finishFragment();
                             pyVar.removeSelfFromStack();
                             return true;
                         }

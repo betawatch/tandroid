@@ -16,14 +16,13 @@ import java.util.Map;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.concurrent.atomic.AtomicLongArray;
 import org.telegram.tgnet.TLObject;
-import q5.g0;
-import sa.c0;
+import q5.c0;
 import sa.h1;
 import sa.x;
 import sa.x0;
 import sa.y0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class g {
     public static final c h = c.d;
@@ -31,15 +30,15 @@ public final class g {
     public static final q j = t.b;
     public final ThreadLocal a = new ThreadLocal();
     public final ConcurrentHashMap b = new ConcurrentHashMap();
-    public final g0 c;
+    public final c0 c;
     public final sa.j d;
     public final List e;
     public final boolean f;
     public final c g;
 
     public g(ra.f fVar, HashMap hashMap, c cVar, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, t tVar, t tVar2, ArrayList arrayList4) {
-        g0 g0Var = new g0(6, hashMap, arrayList4);
-        this.c = g0Var;
+        c0 c0Var = new c0(7, hashMap, arrayList4);
+        this.c = c0Var;
         this.f = true;
         this.g = cVar;
         ArrayList arrayList5 = new ArrayList();
@@ -52,16 +51,16 @@ public final class g {
         arrayList5.add(h1.d);
         arrayList5.add(h1.e);
         arrayList5.add(h1.f);
-        c0 c0Var = h1.k;
-        arrayList5.add(new y0(Long.TYPE, Long.class, c0Var));
+        sa.c0 c0Var2 = h1.k;
+        arrayList5.add(new y0(Long.TYPE, Long.class, c0Var2));
         arrayList5.add(new y0(Double.TYPE, Double.class, new d(0)));
         arrayList5.add(new y0(Float.TYPE, Float.class, new d(1)));
         arrayList5.add(tVar2 == t.b ? sa.q.b : new sa.p(new sa.q(tVar2), 0));
         arrayList5.add(h1.h);
         arrayList5.add(h1.i);
-        arrayList5.add(new x0(AtomicLong.class, new e(c0Var, 0).nullSafe(), 0));
+        arrayList5.add(new x0(AtomicLong.class, new e(c0Var2, 0).nullSafe(), 0));
         int i10 = 0;
-        arrayList5.add(new x0(AtomicLongArray.class, new e(c0Var, 1).nullSafe(), i10));
+        arrayList5.add(new x0(AtomicLongArray.class, new e(c0Var2, 1).nullSafe(), i10));
         arrayList5.add(h1.j);
         arrayList5.add(h1.l);
         arrayList5.add(h1.q);
@@ -85,13 +84,13 @@ public final class g {
         }
         arrayList5.add(sa.b.c);
         arrayList5.add(h1.a);
-        arrayList5.add(new sa.d(0, g0Var));
-        arrayList5.add(new sa.d(1, g0Var));
-        sa.j jVar = new sa.j(g0Var);
+        arrayList5.add(new sa.d(0, c0Var));
+        arrayList5.add(new sa.d(1, c0Var));
+        sa.j jVar = new sa.j(c0Var);
         this.d = jVar;
         arrayList5.add(jVar);
         arrayList5.add(h1.B);
-        arrayList5.add(new x(g0Var, fVar, jVar, arrayList4));
+        arrayList5.add(new x(c0Var, fVar, jVar, arrayList4));
         this.e = DesugarCollections.unmodifiableList(arrayList5);
     }
 

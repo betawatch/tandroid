@@ -37,7 +37,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
@@ -49,7 +49,6 @@ import org.telegram.ui.bu;
 import org.telegram.ui.fg;
 import org.telegram.ui.fn0;
 import org.telegram.ui.hm0;
-import org.telegram.ui.im0;
 import org.telegram.ui.jn;
 import org.telegram.ui.lo0;
 import org.telegram.ui.ng0;
@@ -60,10 +59,10 @@ import org.telegram.ui.wd;
 import org.telegram.ui.xf0;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
-import qh.ca;
-import qh.s6;
+import qh.ba;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a;
@@ -99,7 +98,7 @@ public final /* synthetic */ class g0 implements Runnable {
         int i11;
         int i12;
         int i13;
-        s6 m9;
+        r6 m9;
         int i14 = this.a;
         int i15 = 7;
         boolean z4 = false;
@@ -255,7 +254,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) obj4;
                 String str = (String) obj3;
                 TLRPC.TL_messageEntityFormattedDate tL_messageEntityFormattedDate = (TLRPC.TL_messageEntityFormattedDate) obj2;
-                jm0 jm0Var = (jm0) obj;
+                im0 im0Var = (im0) obj;
                 xnVar.getClass();
                 ((q70) obj6).n0 = true;
                 if (!TextUtils.isEmpty(messageObject2.caption)) {
@@ -264,7 +263,7 @@ public final /* synthetic */ class g0 implements Runnable {
                     str = t1Var.getMessageObject().messageText.toString();
                 }
                 AndroidUtilities.createCalendarEvent(xnVar.getParentActivity(), tL_messageEntityFormattedDate.date * 1000, str.length() > 21 ? str.substring(0, 21) + "..." : str, str, (tL_messageEntityFormattedDate.long_time || tL_messageEntityFormattedDate.short_time) ? false : true);
-                jm0Var.dismiss();
+                im0Var.dismiss();
                 break;
             case 7:
                 xn xnVar2 = (xn) obj6;
@@ -306,7 +305,7 @@ public final /* synthetic */ class g0 implements Runnable {
                     } else {
                         Activity parentActivity = xnVar3.getParentActivity();
                         i10 = ((org.telegram.ui.ActionBar.p2) xnVar3).currentAccount;
-                        org.telegram.ui.Components.voip.g2.h(parentActivity, i10, tL_inputGroupCallInviteMessage, messageObject3.messageOwner.action.video, groupcall.call, null);
+                        org.telegram.ui.Components.voip.g2.g(parentActivity, i10, tL_inputGroupCallInviteMessage, messageObject3.messageOwner.action.video, groupcall.call, null);
                         break;
                     }
                 } else if (tL_error5 == null || !"GROUPCALL_INVALID".equalsIgnoreCase(tL_error5.text)) {
@@ -424,7 +423,7 @@ public final /* synthetic */ class g0 implements Runnable {
                 TLObject tLObject10 = (TLObject) obj5;
                 String str7 = (String) obj4;
                 TLRPC.TL_secureRequiredType tL_secureRequiredType = (TLRPC.TL_secureRequiredType) obj3;
-                im0 im0Var = (im0) obj2;
+                org.telegram.ui.im0 im0Var2 = (org.telegram.ui.im0) obj2;
                 TLRPC.TL_error tL_error8 = (TLRPC.TL_error) obj7;
                 tm0 tm0Var = (tm0) obj;
                 fn0 fn0Var = ((hm0) obj6).p.d;
@@ -439,7 +438,7 @@ public final /* synthetic */ class g0 implements Runnable {
                     fn0Var2.Q0 = sentemailcode.length;
                     fn0Var2.b1 = fn0Var.b1;
                     fn0Var2.Z0 = fn0Var.Z0;
-                    fn0Var2.y1 = im0Var;
+                    fn0Var2.y1 = im0Var2;
                     fn0Var.presentFragment(fn0Var2, true);
                     break;
                 } else {
@@ -463,7 +462,7 @@ public final /* synthetic */ class g0 implements Runnable {
                     int i19 = iArr2[2];
                     int photoSize = i18 > AndroidUtilities.getPhotoSize() ? AndroidUtilities.getPhotoSize() : i18;
                     int photoSize2 = i19 > AndroidUtilities.getPhotoSize() ? AndroidUtilities.getPhotoSize() : i19;
-                    File w10 = s6.w(UserConfig.selectedAccount, "jpg");
+                    File w10 = r6.w(UserConfig.selectedAccount, "jpg");
                     org.telegram.ui.Components.y5 y5Var = new org.telegram.ui.Components.y5(file, true, 0L, 0, null, null, null, 0L, UserConfig.selectedAccount, true, photoSize, photoSize2, null, 0, true);
                     Bitmap p10 = y5Var.p();
                     y5Var.u();
@@ -478,7 +477,7 @@ public final /* synthetic */ class g0 implements Runnable {
                             e = e10;
                             FileLog.e(e);
                             w10 = null;
-                            m9 = s6.o(file, w10 != null ? null : w10.getAbsolutePath(), iArr2[4]);
+                            m9 = r6.o(file, w10 != null ? null : w10.getAbsolutePath(), iArr2[4]);
                             m9.k0 = i18;
                             m9.l0 = i19;
                             m9.A();
@@ -487,12 +486,12 @@ public final /* synthetic */ class g0 implements Runnable {
                             d2Var.c(500L);
                         }
                     }
-                    m9 = s6.o(file, w10 != null ? null : w10.getAbsolutePath(), iArr2[4]);
+                    m9 = r6.o(file, w10 != null ? null : w10.getAbsolutePath(), iArr2[4]);
                     m9.k0 = i18;
                     m9.l0 = i19;
                     m9.A();
                 } else {
-                    m9 = s6.m(((Integer) AndroidUtilities.getImageOrientation(file).first).intValue(), file);
+                    m9 = r6.m(((Integer) AndroidUtilities.getImageOrientation(file).first).intValue(), file);
                 }
                 if (m9.k0 <= 0 && m9.l0 > 0) {
                     if (str8 != null) {
@@ -515,7 +514,7 @@ public final /* synthetic */ class g0 implements Runnable {
                         }
                         m9.T0.add(mediaEntity);
                     }
-                    ca.E(a1Var.T, UserConfig.selectedAccount).U(null, m9);
+                    ba.E(a1Var.T, UserConfig.selectedAccount).U(null, m9);
                     d2Var.c(500L);
                     break;
                 } else {
@@ -569,7 +568,7 @@ public final /* synthetic */ class g0 implements Runnable {
         this.n = sendconfirmphonecode;
     }
 
-    public /* synthetic */ g0(hm0 hm0Var, TLObject tLObject, String str, TLRPC.TL_secureRequiredType tL_secureRequiredType, im0 im0Var, TLRPC.TL_error tL_error, tm0 tm0Var) {
+    public /* synthetic */ g0(hm0 hm0Var, TLObject tLObject, String str, TLRPC.TL_secureRequiredType tL_secureRequiredType, org.telegram.ui.im0 im0Var, TLRPC.TL_error tL_error, tm0 tm0Var) {
         this.a = 12;
         this.h = hm0Var;
         this.c = tLObject;

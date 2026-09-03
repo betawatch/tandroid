@@ -17,14 +17,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Cells.q7;
 import org.telegram.ui.Cells.r7;
-import org.telegram.ui.Components.dl0;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.or0;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.nr0;
+import org.telegram.ui.Components.sl0;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public class k extends dl0 {
+public class k extends cl0 {
     public final Context c;
     public l6 e;
     public k f;
@@ -40,12 +41,12 @@ public class k extends dl0 {
         M();
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(m1 m1Var) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.dl0
+    @Override // org.telegram.ui.Components.cl0
     public final String F(int i10) {
         MessageObject messageObject;
         TL_stories.StoryItem storyItem;
@@ -56,14 +57,14 @@ public class k extends dl0 {
         return LocaleController.formatYearMont(storyItem.date, true);
     }
 
-    @Override // org.telegram.ui.Components.dl0
-    public final void G(tl0 tl0Var, float f10, int[] iArr) {
-        int measuredHeight = tl0Var.getChildAt(0).getMeasuredHeight();
+    @Override // org.telegram.ui.Components.cl0
+    public final void G(sl0 sl0Var, float f10, int[] iArr) {
+        int measuredHeight = sl0Var.getChildAt(0).getMeasuredHeight();
         k kVar = this.f;
         l lVar = this.s;
         int i10 = this == kVar ? lVar.e : lVar.d;
         int ceil = (int) (Math.ceil(h() / i10) * measuredHeight);
-        int measuredHeight2 = tl0Var.getMeasuredHeight() - tl0Var.getPaddingTop();
+        int measuredHeight2 = sl0Var.getMeasuredHeight() - sl0Var.getPaddingTop();
         if (measuredHeight == 0) {
             iArr[1] = 0;
             iArr[0] = 0;
@@ -75,13 +76,13 @@ public class k extends dl0 {
     }
 
     public final boolean L(int i10) {
-        or0 or0Var = this.s.T;
+        nr0 nr0Var = this.s.T;
         l6 l6Var = this.e;
         if (l6Var == null) {
             return false;
         }
         if (l6Var instanceof d6) {
-            TLRPC.User user = MessagesController.getInstance(or0Var.b).getUser(Long.valueOf(or0Var.d));
+            TLRPC.User user = MessagesController.getInstance(nr0Var.b).getUser(Long.valueOf(nr0Var.d));
             return user != null && user.bot && user.bot_has_main_app && user.bot_can_edit;
         }
         if (i10 < 0 || i10 >= l6Var.i.size()) {
@@ -140,8 +141,8 @@ public class k extends dl0 {
             if (E != null) {
                 for (int i10 = 0; i10 < E.size(); i10++) {
                     s6 s6Var = (s6) E.get(i10);
-                    qh.s6 s6Var2 = s6Var.c;
-                    if (s6Var2 != null && !s6Var2.g && TextUtils.equals(s6Var2.K0, d6Var.E)) {
+                    r6 r6Var = s6Var.c;
+                    if (r6Var != null && !r6Var.g && TextUtils.equals(r6Var.K0, d6Var.E)) {
                         arrayList.add(s6Var);
                     }
                 }
@@ -200,29 +201,29 @@ public class k extends dl0 {
             r7Var.c0 = messageObject != null && this.e.m(messageObject.getId());
             r7Var.setReorder(true);
             r7Var.k(messageObject, this == this.f ? lVar.e : lVar.d, false);
-            or0 or0Var = lVar.T;
-            if (!or0Var.D.z1 || messageObject == null) {
+            nr0 nr0Var = lVar.T;
+            if (!nr0Var.D.z1 || messageObject == null) {
                 r7Var.i(false, false);
             } else {
-                r7Var.i(or0Var.c(messageObject), true);
+                r7Var.i(nr0Var.c(messageObject), true);
             }
         }
     }
 
     @Override // f2.p0
     public final m1 x(ViewGroup viewGroup, int i10) {
-        or0 or0Var = this.s.T;
+        nr0 nr0Var = this.s.T;
         if (this.h == null) {
-            this.h = new q7(viewGroup.getContext(), or0Var.c);
+            this.h = new q7(viewGroup.getContext(), nr0Var.c);
         }
-        r7 r7Var = new r7(this.c, this.h, or0Var.b);
+        r7 r7Var = new r7(this.c, this.h, nr0Var.b);
         r7Var.t0 = true;
         r7Var.setGradientView(null);
         r7Var.a0 = true;
-        return new fl0(r7Var);
+        return new el0(r7Var);
     }
 
-    @Override // org.telegram.ui.Components.dl0
+    @Override // org.telegram.ui.Components.cl0
     public final void I() {
     }
 }

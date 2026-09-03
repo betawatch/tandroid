@@ -10,12 +10,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class a20 extends FrameLayout implements xd.b {
     public final xd.a a;
     public final xd.a b;
-    public final lj0 c;
+    public final kj0 c;
     public final RadialProgressView d;
     public final org.telegram.ui.ActionBar.g6 e;
     public ArrayList f;
@@ -109,17 +109,17 @@ public final class a20 extends FrameLayout implements xd.b {
     public final void g() {
         boolean z4 = this.h;
         RadialProgressView radialProgressView = this.d;
-        lj0 lj0Var = this.c;
+        kj0 kj0Var = this.c;
         org.telegram.ui.ActionBar.g6 g6Var = this.e;
         if (!z4) {
             int i10 = org.telegram.ui.ActionBar.k6.O9;
-            lj0Var.setColorFilter(org.telegram.ui.ActionBar.k6.v0(i10, g6Var), PorterDuff.Mode.SRC_IN);
+            kj0Var.setColorFilter(org.telegram.ui.ActionBar.k6.v0(i10, g6Var), PorterDuff.Mode.SRC_IN);
             radialProgressView.setProgressColor(org.telegram.ui.ActionBar.k6.v0(i10, g6Var));
             setBackground(org.telegram.ui.ActionBar.k6.h0(AndroidUtilities.dp(48.0f), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oh, g6Var), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Qh, g6Var)));
             return;
         }
         int i11 = org.telegram.ui.ActionBar.k6.v8;
-        lj0Var.setColorFilter(org.telegram.ui.ActionBar.k6.v0(i11, g6Var), PorterDuff.Mode.SRC_IN);
+        kj0Var.setColorFilter(org.telegram.ui.ActionBar.k6.v0(i11, g6Var), PorterDuff.Mode.SRC_IN);
         radialProgressView.setProgressColor(org.telegram.ui.ActionBar.k6.v0(i11, g6Var));
         this.n.a(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
         this.s.b();
@@ -174,10 +174,10 @@ public final class a20 extends FrameLayout implements xd.b {
         this.b = new xd.a(1, this, prVar, 380L, false);
         this.e = g6Var;
         this.h = z4;
-        lj0 lj0Var = new lj0(context);
-        this.c = lj0Var;
-        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(lj0Var, k7.c6.c(-1.0f, -1));
+        kj0 kj0Var = new kj0(context);
+        this.c = kj0Var;
+        kj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        addView(kj0Var, k7.c6.c(-1.0f, -1));
         RadialProgressView radialProgressView = new RadialProgressView(context, null);
         this.d = radialProgressView;
         radialProgressView.setSize(AndroidUtilities.dp(18.0f));

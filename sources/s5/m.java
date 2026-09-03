@@ -24,7 +24,7 @@ import java.util.zip.InflaterInputStream;
 import m.r3;
 import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class m implements t0.h, OnCompleteListener, a3.b {
     public final /* synthetic */ int a;
@@ -79,7 +79,7 @@ public final class m implements t0.h, OnCompleteListener, a3.b {
     @Override // rc.a
     public Object get() {
         int i10 = 7;
-        return new y2.q(new z9.d(i10), new u(i10), (d3.b) ((c5.j) this.b).get(), (e3.g) ((r3) this.c).get(), (s) ((sf.e) this.d).get());
+        return new y2.q(new z9.d(i10), new u(i10), (d3.b) ((c5.j) this.b).get(), (e3.g) ((r3) this.c).get(), (s) ((sf.f) this.d).get());
     }
 
     @Override // t0.h

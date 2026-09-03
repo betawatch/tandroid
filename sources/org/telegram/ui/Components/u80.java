@@ -6,7 +6,7 @@ import android.view.ViewTreeObserver;
 import android.widget.FrameLayout;
 import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class u80 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
@@ -36,7 +36,7 @@ public final class u80 implements PopupWindow.OnDismissListener {
                 ((org.telegram.ui.xz) this.e).x = null;
                 fg.i0 i0Var2 = (fg.i0) this.c;
                 i0Var2.animate().cancel();
-                i0Var2.animate().alpha(0.0f).setDuration(150L).setListener(new g91(this, 19));
+                i0Var2.animate().alpha(0.0f).setDuration(150L).setListener(new f91(this, 19));
                 break;
         }
     }

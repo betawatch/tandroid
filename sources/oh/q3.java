@@ -11,9 +11,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.m31;
+import org.telegram.ui.q31;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -56,8 +56,8 @@ public final /* synthetic */ class q3 implements View.OnClickListener {
                 org.telegram.ui.ActionBar.g6 g6Var2 = this.c;
                 qc qcVar = new qc(j3Var, g6Var2);
                 dg.h0 h0Var = new dg.h0(i9Var, 26);
-                int i12 = m31.v;
-                m31.J(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), qcVar, g6Var2, new byte[0], null, h0Var);
+                int i12 = q31.v;
+                q31.J(i11, context, storyItem.dialogId, true, false, new ArrayList(Collections.singleton(Integer.valueOf(storyItem.id))), qcVar, g6Var2, new byte[0], null, h0Var);
                 y3 y3Var2 = f4Var.q1;
                 if (y3Var2 != null) {
                     y3Var2.a();
@@ -71,24 +71,24 @@ public final /* synthetic */ class q3 implements View.OnClickListener {
                 if (y3Var3 != null) {
                     y3Var3.a();
                 }
-                qh.d8 d8Var = new qh.d8(f4Var2.getContext(), 86400, g6Var);
-                d8Var.o1();
-                d8Var.p1(MessagesController.getInstance(f4Var2.z2).getInputPeer(f4Var2.y1));
-                d8Var.I = true;
-                View[] viewPages = d8Var.b.getViewPages();
+                qh.c8 c8Var = new qh.c8(f4Var2.getContext(), 86400, g6Var);
+                c8Var.o1();
+                c8Var.p1(MessagesController.getInstance(f4Var2.z2).getInputPeer(f4Var2.y1));
+                c8Var.I = true;
+                View[] viewPages = c8Var.b.getViewPages();
                 View view4 = viewPages[0];
-                if (view4 instanceof qh.x7) {
-                    qh.x7 x7Var = (qh.x7) view4;
-                    x7Var.b(x7Var.a);
+                if (view4 instanceof qh.w7) {
+                    qh.w7 w7Var = (qh.w7) view4;
+                    w7Var.b(w7Var.a);
                 }
                 View view5 = viewPages[1];
-                if (view5 instanceof qh.x7) {
-                    qh.x7 x7Var2 = (qh.x7) view5;
-                    x7Var2.b(x7Var2.a);
+                if (view5 instanceof qh.w7) {
+                    qh.w7 w7Var2 = (qh.w7) view5;
+                    w7Var2.b(w7Var2.a);
                 }
-                d8Var.e1(false);
-                d8Var.m1(1);
-                d8Var.k1(false);
+                c8Var.e1(false);
+                c8Var.m1(1);
+                c8Var.k1(false);
                 e1 e1Var = i9Var.x0;
                 if (e1Var != null) {
                     TLRPC.GroupCall groupCall = e1Var.v;
@@ -99,23 +99,23 @@ public final /* synthetic */ class q3 implements View.OnClickListener {
                         boolean z10 = storyItem2 == null && storyItem2.pinned;
                         e1 e1Var2 = i9Var.x0;
                         int j10 = e1Var2 != null ? 0 : (int) e1Var2.j();
-                        d8Var.w = z4;
-                        d8Var.x = d;
-                        d8Var.y = z10;
-                        d8Var.E = j10;
-                        View[] viewPages2 = d8Var.b.getViewPages();
+                        c8Var.w = z4;
+                        c8Var.x = d;
+                        c8Var.y = z10;
+                        c8Var.E = j10;
+                        View[] viewPages2 = c8Var.b.getViewPages();
                         view2 = viewPages2[0];
-                        if (view2 instanceof qh.x7) {
-                            qh.x7 x7Var3 = (qh.x7) view2;
-                            x7Var3.b(x7Var3.a);
+                        if (view2 instanceof qh.w7) {
+                            qh.w7 w7Var3 = (qh.w7) view2;
+                            w7Var3.b(w7Var3.a);
                         }
                         view3 = viewPages2[1];
-                        if (view3 instanceof qh.x7) {
-                            qh.x7 x7Var4 = (qh.x7) view3;
-                            x7Var4.b(x7Var4.a);
+                        if (view3 instanceof qh.w7) {
+                            qh.w7 w7Var4 = (qh.w7) view3;
+                            w7Var4.b(w7Var4.a);
                         }
-                        d8Var.Q = new ng.w(4, y3Var, d8Var);
-                        d8Var.show();
+                        c8Var.Q = new ng.w(4, y3Var, c8Var);
+                        c8Var.show();
                         break;
                     }
                 }
@@ -127,19 +127,19 @@ public final /* synthetic */ class q3 implements View.OnClickListener {
                 e1 e1Var22 = i9Var.x0;
                 if (e1Var22 != null) {
                 }
-                d8Var.w = z4;
-                d8Var.x = d10;
-                d8Var.y = z10;
-                d8Var.E = j10;
-                View[] viewPages22 = d8Var.b.getViewPages();
+                c8Var.w = z4;
+                c8Var.x = d10;
+                c8Var.y = z10;
+                c8Var.E = j10;
+                View[] viewPages22 = c8Var.b.getViewPages();
                 view2 = viewPages22[0];
-                if (view2 instanceof qh.x7) {
+                if (view2 instanceof qh.w7) {
                 }
                 view3 = viewPages22[1];
-                if (view3 instanceof qh.x7) {
+                if (view3 instanceof qh.w7) {
                 }
-                d8Var.Q = new ng.w(4, y3Var, d8Var);
-                d8Var.show();
+                c8Var.Q = new ng.w(4, y3Var, c8Var);
+                c8Var.show();
             default:
                 f4 f4Var3 = y3Var.l;
                 y3 y3Var4 = f4Var3.q1;

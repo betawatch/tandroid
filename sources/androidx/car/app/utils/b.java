@@ -60,14 +60,14 @@ import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.f90;
 import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.yh;
 import s8.i0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -283,10 +283,10 @@ public final /* synthetic */ class b implements Runnable {
                 fVar4.q(p11, 1009, new q0(p11, n0Var2, kVar2, 20));
                 return;
             case 15:
-                pr0 pr0Var = (pr0) this.d;
+                or0 or0Var = (or0) this.d;
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) this.c;
                 p2 p2Var = (p2) this.b;
-                pr0Var.E = -1;
+                or0Var.E = -1;
                 if (tL_error3 != null) {
                     qc.a0(p2Var).d0(tL_error3, false);
                     return;
@@ -296,13 +296,13 @@ public final /* synthetic */ class b implements Runnable {
                 n3 n3Var = (n3) this.d;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) this.c;
                 q70 q70Var = (q70) this.b;
-                pr0 pr0Var2 = n3Var.a;
-                pr0Var2.e.k(n3Var.e.d, savedStarGift);
+                or0 or0Var2 = n3Var.a;
+                or0Var2.e.k(n3Var.e.d, savedStarGift);
                 q70Var.u();
-                pr0Var2.n();
-                TL_stars.TL_starGiftCollection c3 = pr0Var2.e.c(n3Var.e.d);
+                or0Var2.n();
+                TL_stars.TL_starGiftCollection c3 = or0Var2.e.c(n3Var.e.d);
                 if (c3 != null) {
-                    qc.a0(pr0Var2.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, g5.D1(savedStarGift.gift), c3.title))).j();
+                    qc.a0(or0Var2.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, g5.D1(savedStarGift.gift), c3.title))).j();
                     return;
                 }
                 return;

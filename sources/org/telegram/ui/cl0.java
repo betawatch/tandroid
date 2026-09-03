@@ -13,9 +13,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cl0 implements org.telegram.ui.Components.uc0, org.telegram.ui.ActionBar.c2, Utilities.Callback2Return, org.telegram.ui.Components.uv0, j3.f, GenericProvider, androidx.car.app.utils.e {
+public final /* synthetic */ class cl0 implements org.telegram.ui.Components.uc0, org.telegram.ui.ActionBar.c2, Utilities.Callback2Return, org.telegram.ui.Components.tv0, j3.f, GenericProvider, androidx.car.app.utils.e {
     public final /* synthetic */ int a;
 
     public /* synthetic */ cl0(int i10) {
@@ -85,7 +85,7 @@ public final /* synthetic */ class cl0 implements org.telegram.ui.Components.uc0
         return i10 == 0 ? LocaleController.getString(R.string.AutoLockDisabled) : i10 == 1 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 1, new Object[0])) : i10 == 2 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 5, new Object[0])) : i10 == 3 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 1, new Object[0])) : i10 == 4 ? LocaleController.formatString("AutoLockInTime", R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 5, new Object[0])) : "";
     }
 
-    @Override // org.telegram.ui.Components.uv0
+    @Override // org.telegram.ui.Components.tv0
     public void i(int i10) {
         SharedConfig.proxyRotationTimeout = i10;
         SharedConfig.saveConfig();
@@ -128,7 +128,7 @@ public final /* synthetic */ class cl0 implements org.telegram.ui.Components.uc0
 
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
-        MediaController.AlbumEntry albumEntry = qh.a3.g0;
+        MediaController.AlbumEntry albumEntry = qh.z2.g0;
         return 0;
     }
 
@@ -147,7 +147,7 @@ public final /* synthetic */ class cl0 implements org.telegram.ui.Components.uc0
         }
     }
 
-    @Override // org.telegram.ui.Components.uv0
+    @Override // org.telegram.ui.Components.tv0
     public /* synthetic */ void m() {
     }
 }

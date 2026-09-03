@@ -26,7 +26,7 @@ import org.telegram.ui.Cells.z9;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class y1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -64,16 +64,16 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                 TL_stories.StoryItem storyItem = f4Var.L1.a;
                 if (storyItem != null) {
                     if (f4Var.z1) {
-                        f4Var.F0(storyItem.privacy.isEmpty() ? new qh.b8(3, f4Var.z2, new ArrayList()) : new qh.b8(f4Var.z2, storyItem.privacy), storyItem);
+                        f4Var.F0(storyItem.privacy.isEmpty() ? new qh.a8(3, f4Var.z2, new ArrayList()) : new qh.a8(f4Var.z2, storyItem.privacy), storyItem);
                         break;
                     } else {
                         if (f4Var.C0 == null) {
-                            qh.f3 f3Var = new qh.f3(f4Var.getContext(), 1);
-                            f3Var.q(true);
-                            f3Var.H = Layout.Alignment.ALIGN_CENTER;
-                            f3Var.i0 = new w1(f4Var, 9);
-                            f4Var.C0 = f3Var;
-                            f3Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+                            qh.e3 e3Var = new qh.e3(f4Var.getContext(), 1);
+                            e3Var.p(true);
+                            e3Var.H = Layout.Alignment.ALIGN_CENTER;
+                            e3Var.i0 = new w1(f4Var, 9);
+                            f4Var.C0 = e3Var;
+                            e3Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
                             j3Var.addView(f4Var.C0, k7.c6.d(-1, 60.0f, 55, 0.0f, 52.0f, 0.0f, 0.0f));
                         }
                         TLRPC.User user = MessagesController.getInstance(f4Var.z2).getUser(Long.valueOf(f4Var.y1));
@@ -84,41 +84,41 @@ public final /* synthetic */ class y1 implements View.OnClickListener {
                                 str = str.substring(0, indexOf);
                             }
                             if (storyItem.close_friends) {
-                                f4Var.C0.l(15.0f, 8.0f, 15.0f, 8.0f);
+                                f4Var.C0.k(15.0f, 8.0f, 15.0f, 8.0f);
                                 replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("StoryCloseFriendsHint", R.string.StoryCloseFriendsHint, str));
                             } else if (storyItem.contacts) {
-                                f4Var.C0.l(11.0f, 6.0f, 11.0f, 7.0f);
+                                f4Var.C0.k(11.0f, 6.0f, 11.0f, 7.0f);
                                 replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("StoryContactsHint", R.string.StoryContactsHint, str));
                                 z4 = false;
                                 CharSequence replaceEmoji = Emoji.replaceEmoji(replaceTags, f4Var.C0.getTextPaint().getFontMetricsInt(), false);
-                                qh.f3 f3Var2 = f4Var.C0;
-                                f3Var2.h = !z4 ? qh.f3.a(replaceEmoji, f3Var2.getTextPaint()) : j3Var.getMeasuredWidth();
-                                f4Var.C0.t(replaceEmoji);
-                                f4Var.C0.m(1.0f, (-(j3Var.getWidth() - f4Var.z0.getCenterX())) / AndroidUtilities.density);
+                                qh.e3 e3Var2 = f4Var.C0;
+                                e3Var2.h = !z4 ? qh.e3.a(replaceEmoji, e3Var2.getTextPaint()) : j3Var.getMeasuredWidth();
+                                f4Var.C0.s(replaceEmoji);
+                                f4Var.C0.l(1.0f, (-(j3Var.getWidth() - f4Var.z0.getCenterX())) / AndroidUtilities.density);
                                 i9 i9Var2 = ((z8) f4Var.N1).d;
                                 i9Var2.f1 = true;
                                 i9Var2.P();
                                 if (f4Var.C0.S) {
                                     BotWebViewVibrationEffect.IMPACT_LIGHT.vibrate();
                                 }
-                                f4Var.C0.v();
+                                f4Var.C0.u();
                                 break;
                             } else if (storyItem.selected_contacts) {
-                                f4Var.C0.l(15.0f, 8.0f, 15.0f, 8.0f);
+                                f4Var.C0.k(15.0f, 8.0f, 15.0f, 8.0f);
                                 replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("StorySelectedContactsHint", R.string.StorySelectedContactsHint, str));
                             }
                             z4 = true;
                             CharSequence replaceEmoji2 = Emoji.replaceEmoji(replaceTags, f4Var.C0.getTextPaint().getFontMetricsInt(), false);
-                            qh.f3 f3Var22 = f4Var.C0;
-                            f3Var22.h = !z4 ? qh.f3.a(replaceEmoji2, f3Var22.getTextPaint()) : j3Var.getMeasuredWidth();
-                            f4Var.C0.t(replaceEmoji2);
-                            f4Var.C0.m(1.0f, (-(j3Var.getWidth() - f4Var.z0.getCenterX())) / AndroidUtilities.density);
+                            qh.e3 e3Var22 = f4Var.C0;
+                            e3Var22.h = !z4 ? qh.e3.a(replaceEmoji2, e3Var22.getTextPaint()) : j3Var.getMeasuredWidth();
+                            f4Var.C0.s(replaceEmoji2);
+                            f4Var.C0.l(1.0f, (-(j3Var.getWidth() - f4Var.z0.getCenterX())) / AndroidUtilities.density);
                             i9 i9Var22 = ((z8) f4Var.N1).d;
                             i9Var22.f1 = true;
                             i9Var22.P();
                             if (f4Var.C0.S) {
                             }
-                            f4Var.C0.v();
+                            f4Var.C0.u();
                         }
                     }
                 }

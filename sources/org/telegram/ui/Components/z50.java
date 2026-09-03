@@ -53,7 +53,7 @@ import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class z50 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] Z0 = {285904780, -1394191079};
@@ -78,7 +78,7 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
     public int J0;
     public VideoEditedInfo K;
     public int K0;
-    public k71 L;
+    public j71 L;
     public boolean L0;
     public Bitmap M;
     public final org.telegram.ui.ActionBar.g6 M0;
@@ -114,28 +114,28 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
     public boolean d0;
     public final RectF e;
     public r50 e0;
-    public final qh.b2 f;
+    public final qh.a2 f;
     public final Size[] f0;
     public Size g0;
-    public final qh.b2 h;
+    public final qh.a2 h;
     public final Size h0;
     public TextureView i0;
     public final org.telegram.ui.jl j0;
     public final boolean k0;
     public CameraSession l0;
     public boolean m0;
-    public final qh.d2 n;
+    public final qh.c2 n;
     public final Camera2Session[] n0;
     public Camera2Session o0;
     public boolean p0;
     public float q0;
-    public ij0 r;
+    public hj0 r;
     public float r0;
-    public ij0 s;
+    public hj0 s;
     public final float[] s0;
     public final float[] t0;
     public final float[] u0;
-    public ij0 v;
+    public hj0 v;
     public FloatBuffer v0;
     public final ImageView w;
     public FloatBuffer w0;
@@ -175,12 +175,12 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
         k50Var.setStrokeWidth(AndroidUtilities.dp(3.0f));
         k50Var.setColor(-1);
         this.e = new RectF();
-        qh.d2 d2Var = new qh.d2(getContext(), null, this, null);
-        this.n = d2Var;
-        d2Var.o = 0.5f;
-        d2Var.n = qh.d2.f(0.5f);
-        d2Var.g();
-        addView(d2Var.b, k7.c6.e(-1, -1, 119));
+        qh.c2 c2Var = new qh.c2(getContext(), null, this, null);
+        this.n = c2Var;
+        c2Var.o = 0.5f;
+        c2Var.n = qh.c2.f(0.5f);
+        c2Var.g();
+        addView(c2Var.b, k7.c6.e(-1, -1, 119));
         l50 l50Var = new l50(this, context);
         this.b = l50Var;
         l50Var.setOutlineProvider(new tl(this, 1));
@@ -188,20 +188,20 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
         l50Var.setWillNotDraw(false);
         int i11 = AndroidUtilities.roundPlayingMessageSize;
         addView(l50Var, new FrameLayout.LayoutParams(i11, i11, 17));
-        addView(d2Var.c, k7.c6.e(-1, -1, 119));
+        addView(c2Var.c, k7.c6.e(-1, -1, 119));
         LinearLayout linearLayout = new LinearLayout(context);
         this.O0 = linearLayout;
         linearLayout.setPadding(AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f));
         linearLayout.setOrientation(0);
         addView(linearLayout, k7.c6.d(-2, 56.0f, 83, 1.0f, 0.0f, 0.0f, 0.0f));
-        qh.b2 b2Var = new qh.b2(context);
-        this.f = b2Var;
+        qh.a2 a2Var = new qh.a2(context);
+        this.f = a2Var;
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        b2Var.setScaleType(scaleType);
-        b2Var.setContentDescription(LocaleController.getString(R.string.AccDescrSwitchCamera));
-        linearLayout.addView(b2Var, k7.c6.n(44, 44));
+        a2Var.setScaleType(scaleType);
+        a2Var.setContentDescription(LocaleController.getString(R.string.AccDescrSwitchCamera));
+        linearLayout.addView(a2Var, k7.c6.n(44, 44));
         final int i12 = 0;
-        b2Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.g50
+        a2Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.g50
             public final /* synthetic */ z50 b;
 
             {
@@ -227,10 +227,10 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
                                 if (!z50Var.m0) {
                                     z50Var.p();
                                 }
-                                ij0 ij0Var = z50Var.v;
+                                hj0 hj0Var = z50Var.v;
                                 int i13 = 0;
-                                if (ij0Var != null) {
-                                    ij0Var.K(0);
+                                if (hj0Var != null) {
+                                    hj0Var.K(0);
                                     z50Var.v.start();
                                 }
                                 z50Var.B0 = true;
@@ -256,12 +256,12 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
                 }
             }
         });
-        qh.b2 b2Var2 = new qh.b2(context);
-        this.h = b2Var2;
-        b2Var2.setScaleType(scaleType);
-        linearLayout.addView(b2Var2, k7.c6.n(44, 44));
+        qh.a2 a2Var2 = new qh.a2(context);
+        this.h = a2Var2;
+        a2Var2.setScaleType(scaleType);
+        linearLayout.addView(a2Var2, k7.c6.n(44, 44));
         final int i13 = 1;
-        b2Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.g50
+        a2Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.g50
             public final /* synthetic */ z50 b;
 
             {
@@ -287,10 +287,10 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
                                 if (!z50Var.m0) {
                                     z50Var.p();
                                 }
-                                ij0 ij0Var = z50Var.v;
+                                hj0 hj0Var = z50Var.v;
                                 int i132 = 0;
-                                if (ij0Var != null) {
-                                    ij0Var.K(0);
+                                if (hj0Var != null) {
+                                    hj0Var.K(0);
                                     z50Var.v.start();
                                 }
                                 z50Var.B0 = true;
@@ -318,11 +318,11 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
         });
         r();
         if (!z4) {
-            d2Var.a(b2Var);
-            d2Var.a(b2Var2);
+            c2Var.a(a2Var);
+            c2Var.a(a2Var2);
         } else if (!g6Var.a()) {
-            b2Var.setInvert(0.6f);
-            b2Var2.setInvert(0.6f);
+            a2Var.setInvert(0.6f);
+            a2Var2.setInvert(0.6f);
         }
         ImageView imageView = new ImageView(context);
         this.w = imageView;
@@ -384,9 +384,9 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
 
     public final void d(boolean z4) {
         o();
-        k71 k71Var = this.L;
-        if (k71Var != null) {
-            k71Var.H();
+        j71 j71Var = this.L;
+        if (j71Var != null) {
+            j71Var.H();
             this.L = null;
         }
         if (this.i0 == null) {
@@ -439,8 +439,8 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
     }
 
     public final void e(float f10, int i10) {
-        k71 k71Var = this.L;
-        if (k71Var == null) {
+        j71 j71Var = this.L;
+        if (j71Var == null) {
             return;
         }
         if (i10 == 0) {
@@ -450,7 +450,7 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
             o();
             this.L.B();
         } else if (i10 == 2) {
-            k71Var.L((long) (f10 * k71Var.p()), false);
+            j71Var.L((long) (f10 * j71Var.p()), false);
         }
     }
 
@@ -508,9 +508,9 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
         return this.b;
     }
 
-    public tk0 getCameraRect() {
+    public sk0 getCameraRect() {
         this.b.getLocationOnScreen(this.P);
-        return new tk0(r1[0], r1[1], r0.getWidth(), r0.getHeight());
+        return new sk0(r1[0], r1[1], r0.getWidth(), r0.getHeight());
     }
 
     public View getMuteImageView() {
@@ -683,9 +683,9 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
             return;
         }
         o();
-        k71 k71Var = this.L;
-        if (k71Var != null) {
-            k71Var.H();
+        j71 j71Var = this.L;
+        if (j71Var != null) {
+            j71Var.H();
             this.L = null;
         }
         int i14 = this.a;
@@ -797,9 +797,9 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
         if (this.v == null) {
             int i10 = R.raw.roundcamera_flip;
             int i11 = this.P0;
-            ij0 ij0Var = new ij0(i10, i11, "roundcamera_flip", i11);
-            this.v = ij0Var;
-            ij0Var.K(0);
+            hj0 hj0Var = new hj0(i10, i11, i11);
+            this.v = hj0Var;
+            hj0Var.K(0);
             this.v.setCallback(this.f);
         }
         this.f.setImageDrawable(this.v);
@@ -994,9 +994,9 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.fileUploaded);
-        qh.d2 d2Var = this.n;
-        if (d2Var != null) {
-            d2Var.d();
+        qh.c2 c2Var = this.n;
+        if (c2Var != null) {
+            c2Var.d();
         }
     }
 
@@ -1056,9 +1056,9 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
         super.onMeasure(i10, i11);
         int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(getMeasuredWidth(), TLObject.FLAG_30);
         int makeMeasureSpec2 = View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30);
-        qh.d2 d2Var = this.n;
-        d2Var.b.measure(makeMeasureSpec, makeMeasureSpec2);
-        d2Var.c.measure(makeMeasureSpec, makeMeasureSpec2);
+        qh.c2 c2Var = this.n;
+        c2Var.b.measure(makeMeasureSpec, makeMeasureSpec2);
+        c2Var.c.measure(makeMeasureSpec, makeMeasureSpec2);
     }
 
     @Override // android.view.View
@@ -1072,12 +1072,12 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
 
     @Override // android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        k71 k71Var;
+        j71 j71Var;
         if (motionEvent.getAction() == 0 && motionEvent.getY() > getMeasuredHeight() - getPaddingBottom()) {
             return false;
         }
-        if (motionEvent.getAction() == 0 && this.c != null && (k71Var = this.L) != null) {
-            boolean x10 = k71Var.x();
+        if (motionEvent.getAction() == 0 && this.c != null && (j71Var = this.L) != null) {
+            boolean x10 = j71Var.x();
             this.L.O(!x10);
             AnimatorSet animatorSet = this.D;
             if (animatorSet != null) {
@@ -1212,9 +1212,9 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
             if (y50Var != null) {
                 y50Var.Q.sendMessage(y50Var.Q.obtainMessage(5));
                 h(false);
-                k71 k71Var = this.L;
-                if (k71Var != null) {
-                    k71Var.H();
+                j71 j71Var = this.L;
+                if (j71Var != null) {
+                    j71Var.H();
                     this.L = null;
                 }
                 l(true);
@@ -1254,11 +1254,11 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
         boolean z4 = this.R0 && this.b0 && this.B;
         if (this.S0 != z4) {
             this.S0 = z4;
-            qh.d2 d2Var = this.n;
+            qh.c2 c2Var = this.n;
             if (z4) {
-                d2Var.c(null);
+                c2Var.c(null);
             } else {
-                d2Var.d();
+                c2Var.d();
             }
         }
         if (this.k0) {
@@ -1272,37 +1272,37 @@ public class z50 extends FrameLayout implements NotificationCenter.NotificationC
                 cameraSession.setTorchEnabled(this.R0 && !this.B && this.b0);
             }
         }
-        qh.b2 b2Var = this.h;
-        if (b2Var != null) {
+        qh.a2 a2Var = this.h;
+        if (a2Var != null) {
             Boolean bool = this.Q0;
             if (bool == null || bool.booleanValue() != this.R0) {
-                b2Var.setContentDescription(LocaleController.getString(this.R0 ? R.string.AccDescrCameraFlashOff : R.string.AccDescrCameraFlashOn));
+                a2Var.setContentDescription(LocaleController.getString(this.R0 ? R.string.AccDescrCameraFlashOff : R.string.AccDescrCameraFlashOn));
                 boolean z10 = this.R0;
                 int i10 = this.P0;
                 if (z10) {
                     if (this.s == null) {
-                        ij0 ij0Var = new ij0(R.raw.roundcamera_flash_off, i10, "roundcamera_flash_off", i10);
-                        this.s = ij0Var;
-                        ij0Var.setCallback(b2Var);
+                        hj0 hj0Var = new hj0(R.raw.roundcamera_flash_off, i10, i10);
+                        this.s = hj0Var;
+                        hj0Var.setCallback(a2Var);
                     }
-                    b2Var.setImageDrawable(this.s);
+                    a2Var.setImageDrawable(this.s);
                     if (this.Q0 == null) {
-                        ij0 ij0Var2 = this.s;
-                        ij0Var2.K(ij0Var2.e[0] - 1);
+                        hj0 hj0Var2 = this.s;
+                        hj0Var2.K(hj0Var2.e[0] - 1);
                     } else {
                         this.s.K(0);
                         this.s.start();
                     }
                 } else {
                     if (this.r == null) {
-                        ij0 ij0Var3 = new ij0(R.raw.roundcamera_flash_on, i10, "roundcamera_flash_on", i10);
-                        this.r = ij0Var3;
-                        ij0Var3.setCallback(b2Var);
+                        hj0 hj0Var3 = new hj0(R.raw.roundcamera_flash_on, i10, i10);
+                        this.r = hj0Var3;
+                        hj0Var3.setCallback(a2Var);
                     }
-                    b2Var.setImageDrawable(this.r);
+                    a2Var.setImageDrawable(this.r);
                     if (this.Q0 == null) {
-                        ij0 ij0Var4 = this.r;
-                        ij0Var4.K(ij0Var4.e[0] - 1);
+                        hj0 hj0Var4 = this.r;
+                        hj0Var4.K(hj0Var4.e[0] - 1);
                     } else {
                         this.r.K(0);
                         this.r.start();

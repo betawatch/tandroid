@@ -4,10 +4,10 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.q70;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d5 implements Utilities.Callback5 {
     public final /* synthetic */ int a;
@@ -22,10 +22,10 @@ public final /* synthetic */ class d5 implements Utilities.Callback5 {
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public final void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        j51 j51Var = (j51) obj;
+        h51 h51Var = (h51) obj;
         switch (this.a) {
             case 0:
-                long j10 = ((TL_stars.starGiftAttributeModel) j51Var.G).document.id;
+                long j10 = ((TL_stars.starGiftAttributeModel) h51Var.G).document.id;
                 b5 b5Var = this.b.c;
                 HashSet hashSet = b5Var.j;
                 HashSet hashSet2 = b5Var.j;
@@ -50,7 +50,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             case 1:
-                int i11 = ((TL_stars.starGiftAttributeBackdrop) j51Var.G).backdrop_id;
+                int i11 = ((TL_stars.starGiftAttributeBackdrop) h51Var.G).backdrop_id;
                 b5 b5Var2 = this.b.c;
                 HashSet hashSet3 = b5Var2.k;
                 HashSet hashSet4 = b5Var2.k;
@@ -75,7 +75,7 @@ public final /* synthetic */ class d5 implements Utilities.Callback5 {
                 this.c.u();
                 break;
             default:
-                long j12 = ((TL_stars.starGiftAttributePattern) j51Var.G).document.id;
+                long j12 = ((TL_stars.starGiftAttributePattern) h51Var.G).document.id;
                 b5 b5Var3 = this.b.c;
                 HashSet hashSet5 = b5Var3.l;
                 HashSet hashSet6 = b5Var3.l;

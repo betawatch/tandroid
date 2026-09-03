@@ -8,11 +8,11 @@ import android.graphics.RectF;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class c2 extends tl0 {
+public abstract class c2 extends sl0 {
     public static final Paint Z2;
     public static final Paint a3;
     public static final Path b3;
@@ -49,7 +49,7 @@ public abstract class c2 extends tl0 {
         setOnItemClickListener(new ag.h(this, 2));
     }
 
-    public static void w1(Canvas canvas, RectF rectF, int i10) {
+    public static void v1(Canvas canvas, RectF rectF, int i10) {
         float f10 = rectF.left;
         while (f10 <= rectF.right) {
             float f11 = rectF.top;
@@ -76,7 +76,7 @@ public abstract class c2 extends tl0 {
         }
     }
 
-    public static void x1(float f10, float f11, float f12, int i10, Canvas canvas) {
+    public static void w1(float f10, float f11, float f12, int i10, Canvas canvas) {
         Paint paint = c3;
         paint.setColor(i10);
         if (paint.getAlpha() == 255) {
@@ -96,7 +96,7 @@ public abstract class c2 extends tl0 {
         path.addArc(rectF, -45.0f, 180.0f);
         canvas.save();
         canvas.clipPath(path);
-        w1(canvas, rectF, AndroidUtilities.dp(4.0f));
+        v1(canvas, rectF, AndroidUtilities.dp(4.0f));
         canvas.restore();
         paint.setColor(i10);
         canvas.drawArc(rectF, -45.0f, 180.0f, true, paint);
@@ -120,7 +120,7 @@ public abstract class c2 extends tl0 {
         getAdapter().l();
     }
 
-    public final void y1(float f10, boolean z4) {
+    public final void x1(float f10, boolean z4) {
         float interpolation = z4 ? pr.g.getInterpolation(f10) : pr.i.getInterpolation(f10);
         float childCount = 1.0f / (getChildCount() - 1);
         for (int i10 = 0; i10 < getChildCount(); i10++) {

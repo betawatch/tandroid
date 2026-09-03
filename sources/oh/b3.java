@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.ng0;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.s21;
+import org.telegram.ui.Components.r21;
 import org.telegram.ui.Components.xf0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.bd0;
@@ -24,7 +24,7 @@ import org.telegram.ui.n50;
 import org.telegram.ui.o50;
 import org.telegram.ui.z60;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class b3 extends View {
     public final /* synthetic */ int a = 4;
@@ -47,8 +47,8 @@ public final class b3 extends View {
         org.telegram.ui.ActionBar.k kVar;
         switch (this.a) {
             case 3:
-                s21 s21Var = (s21) this.d;
-                org.telegram.ui.Components.j6 j6Var = s21Var.e;
+                r21 r21Var = (r21) this.d;
+                org.telegram.ui.Components.j6 j6Var = r21Var.e;
                 float g10 = j6Var.g();
                 if (g10 > 0.0f) {
                     float lerp = AndroidUtilities.lerp(0.6f, 1.0f, g10);
@@ -60,9 +60,9 @@ public final class b3 extends View {
                     float dp = AndroidUtilities.dp(8.33f);
                     float dp2 = AndroidUtilities.dp(8.33f);
                     org.telegram.ui.Components.d6 d6Var = (org.telegram.ui.Components.d6) this.b;
-                    d6Var.setColor(d6Var.b.a(org.telegram.ui.ActionBar.k6.v0(s21Var.F, d6Var.a), false));
-                    textColor = s21Var.getTextColor();
-                    d6Var.setColor(i0.a.d(s21Var.C, d6Var.getColor(), textColor));
+                    d6Var.setColor(d6Var.b.a(org.telegram.ui.ActionBar.k6.v0(r21Var.F, d6Var.a), false));
+                    textColor = r21Var.getTextColor();
+                    d6Var.setColor(i0.a.d(r21Var.C, d6Var.getColor(), textColor));
                     d6Var.setAlpha((int) (d6Var.getAlpha() * g10));
                     canvas.drawRoundRect(rectF, dp, dp2, d6Var);
                     j6Var.m(rectF);
@@ -264,7 +264,7 @@ public final class b3 extends View {
     public void onMeasure(int i10, int i11) {
         switch (this.a) {
             case 3:
-                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(16.66f), ((s21) this.d).e.d + AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30));
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) Math.max(AndroidUtilities.dp(16.66f), ((r21) this.d).e.d + AndroidUtilities.dp(10.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(16.66f), TLObject.FLAG_30));
                 break;
             default:
                 super.onMeasure(i10, i11);
@@ -302,7 +302,7 @@ public final class b3 extends View {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 3:
-                return ((s21) this.d).e == drawable || super.verifyDrawable(drawable);
+                return ((r21) this.d).e == drawable || super.verifyDrawable(drawable);
             case 4:
                 return super.verifyDrawable(drawable) || drawable == ((org.telegram.ui.Components.j6) this.b);
             default:
@@ -348,12 +348,12 @@ public final class b3 extends View {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b3(s21 s21Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+    public b3(r21 r21Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.d = s21Var;
+        this.d = r21Var;
         this.c = g6Var;
         this.b = new org.telegram.ui.Components.d6(this, g6Var);
-        s21Var.e.setCallback(this);
+        r21Var.e.setCallback(this);
     }
 
     public b3(Activity activity) {

@@ -46,18 +46,19 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Components.fc0;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.jl0;
 import org.telegram.ui.Components.y4;
-import org.telegram.ui.Components.zj0;
+import org.telegram.ui.Components.yj0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.c6;
-import org.telegram.ui.cg1;
+import org.telegram.ui.d6;
 import org.telegram.ui.di;
 import org.telegram.ui.ep;
 import org.telegram.ui.f4;
 import org.telegram.ui.f5;
+import org.telegram.ui.ig1;
 import org.telegram.ui.j4;
 import org.telegram.ui.jb;
 import org.telegram.ui.jj;
@@ -65,7 +66,6 @@ import org.telegram.ui.jn;
 import org.telegram.ui.jy;
 import org.telegram.ui.kq;
 import org.telegram.ui.l4;
-import org.telegram.ui.mf1;
 import org.telegram.ui.n1;
 import org.telegram.ui.nd;
 import org.telegram.ui.np;
@@ -74,23 +74,24 @@ import org.telegram.ui.p3;
 import org.telegram.ui.po;
 import org.telegram.ui.py;
 import org.telegram.ui.qo;
-import org.telegram.ui.r51;
 import org.telegram.ui.rp;
 import org.telegram.ui.s3;
 import org.telegram.ui.s4;
 import org.telegram.ui.sb;
+import org.telegram.ui.sf1;
 import org.telegram.ui.vn;
+import org.telegram.ui.w51;
 import org.telegram.ui.x4;
 import org.telegram.ui.xn;
 import org.telegram.ui.z3;
-import qh.b8;
-import qh.d6;
-import qh.d8;
-import qh.l7;
+import qh.a8;
+import qh.c8;
+import qh.k7;
+import qh.l6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class w implements r51, c9.e, vg.g, l7, c2, org.telegram.ui.Cells.v, kl0, jy, x4, y4, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, zj0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, cg1 {
+public final /* synthetic */ class w implements w51, c9.e, vg.g, k7, c2, org.telegram.ui.Cells.v, jl0, jy, x4, y4, MessagesController.ErrorDelegate, LanguageDetector.ExceptionCallback, yj0, MessagesStorage.BooleanCallback, ResultCallback, MessagesStorage.LongCallback, ig1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -140,12 +141,12 @@ public final /* synthetic */ class w implements r51, c9.e, vg.g, l7, c2, org.tel
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.zj0
+    @Override // org.telegram.ui.Components.yj0
     public void a(long j10, TLRPC.MessagePeerReaction messagePeerReaction) {
         di diVar = (di) this.b;
         MessageObject messageObject = (MessageObject) this.c;
@@ -185,7 +186,7 @@ public final /* synthetic */ class w implements r51, c9.e, vg.g, l7, c2, org.tel
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         l4 l4Var = (l4) this.b;
         p3 p3Var = (p3) this.c;
@@ -274,8 +275,8 @@ public final /* synthetic */ class w implements r51, c9.e, vg.g, l7, c2, org.tel
         view2.invalidate();
     }
 
-    @Override // qh.l7
-    public void e(b8 b8Var, boolean z4, boolean z10, boolean z11, boolean z12, TLRPC.InputPeer inputPeer, int i10, d6 d6Var, org.telegram.ui.web.s0 s0Var) {
+    @Override // qh.k7
+    public void e(a8 a8Var, boolean z4, boolean z10, boolean z11, boolean z12, TLRPC.InputPeer inputPeer, int i10, l6 l6Var, org.telegram.ui.web.s0 s0Var) {
         switch (this.a) {
             case 3:
                 oh.f4 f4Var = (oh.f4) this.b;
@@ -284,12 +285,12 @@ public final /* synthetic */ class w implements r51, c9.e, vg.g, l7, c2, org.tel
                 tL_stories_editStory.peer = MessagesController.getInstance(f4Var.z2).getInputPeer(storyItem.dialogId);
                 tL_stories_editStory.id = storyItem.id;
                 tL_stories_editStory.flags |= 4;
-                tL_stories_editStory.privacy_rules = b8Var.b;
-                ConnectionsManager.getInstance(f4Var.z2).sendRequest(tL_stories_editStory, new b1(f4Var, d6Var, storyItem, b8Var, 6));
+                tL_stories_editStory.privacy_rules = a8Var.b;
+                ConnectionsManager.getInstance(f4Var.z2).sendRequest(tL_stories_editStory, new b1(f4Var, l6Var, storyItem, a8Var, 6));
                 break;
             default:
                 y3 y3Var = (y3) this.b;
-                d8 d8Var = (d8) this.c;
+                c8 c8Var = (c8) this.c;
                 oh.f4 f4Var2 = y3Var.l;
                 d4 d4Var = f4Var2.L1;
                 TL_stories.StoryItem storyItem2 = d4Var.a;
@@ -305,7 +306,7 @@ public final /* synthetic */ class w implements r51, c9.e, vg.g, l7, c2, org.tel
                         togglegroupcallsettings.call = inputGroupCall;
                         togglegroupcallsettings.messages_enabled = Boolean.valueOf(z4);
                         togglegroupcallsettings.send_paid_messages_stars = Long.valueOf(i10);
-                        ConnectionsManager.getInstance(f4Var2.z2).sendRequest(togglegroupcallsettings, new b3(12, y3Var, d8Var));
+                        ConnectionsManager.getInstance(f4Var2.z2).sendRequest(togglegroupcallsettings, new b3(12, y3Var, c8Var));
                         break;
                     }
                 }
@@ -325,7 +326,7 @@ public final /* synthetic */ class w implements r51, c9.e, vg.g, l7, c2, org.tel
         }
     }
 
-    @Override // org.telegram.ui.cg1
+    @Override // org.telegram.ui.ig1
     public void i(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((kq) this.b).p0(tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.c);
     }
@@ -444,8 +445,8 @@ public final /* synthetic */ class w implements r51, c9.e, vg.g, l7, c2, org.tel
     }
 
     @Override // org.telegram.ui.jy
-    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, mf1 mf1Var) {
-        org.telegram.ui.d6 d6Var = (org.telegram.ui.d6) this.b;
+    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
+        d6 d6Var = (d6) this.b;
         py pyVar2 = (py) this.c;
         ArrayList arrayList2 = d6Var.c;
         pyVar2.finishFragment();
@@ -497,7 +498,7 @@ public final /* synthetic */ class w implements r51, c9.e, vg.g, l7, c2, org.tel
                 }
             }
             d6Var.b.u0(i12);
-            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(19, d6Var, keepMediaException), 150L);
+            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(18, d6Var, keepMediaException), 150L);
         }
         return true;
     }
@@ -597,7 +598,7 @@ public final /* synthetic */ class w implements r51, c9.e, vg.g, l7, c2, org.tel
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

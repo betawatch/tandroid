@@ -55,31 +55,31 @@ import org.telegram.ui.Cells.w2;
 import org.telegram.ui.Cells.x2;
 import org.telegram.ui.Cells.z2;
 import org.telegram.ui.Cells.z6;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.in;
 import org.telegram.ui.Components.jt;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.q30;
 import org.telegram.ui.Components.ri0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.v01;
+import org.telegram.ui.Components.u01;
 import org.telegram.ui.Components.z8;
-import org.telegram.ui.c51;
+import org.telegram.ui.dy0;
+import org.telegram.ui.h51;
 import org.telegram.ui.ky;
 import org.telegram.ui.ly;
 import org.telegram.ui.oy;
 import org.telegram.ui.py;
 import org.telegram.ui.sj0;
 import org.telegram.ui.yh;
-import org.telegram.ui.yx0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public class k extends sl0 implements n2 {
+public class k extends rl0 implements n2 {
     public static final boolean Z = BuildVars.DEBUG_PRIVATE_VERSION;
     public boolean B;
     public final int C;
@@ -87,7 +87,7 @@ public class k extends sl0 implements n2 {
     public boolean E;
     public long F;
     public boolean G;
-    public tl0 H;
+    public sl0 H;
     public ri0 I;
     public Drawable L;
     public final h M;
@@ -140,7 +140,7 @@ public class k extends sl0 implements n2 {
         this.Q = requestPeerType;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         int i10 = m1Var.f;
         return (i10 == 1 || i10 == 5 || i10 == 3 || i10 == 8 || i10 == 7 || i10 == 10 || i10 == 11 || i10 == 13 || i10 == 15 || i10 == 16 || i10 == 18 || i10 == 19 || i10 == 20) ? false : true;
@@ -228,26 +228,26 @@ public class k extends sl0 implements n2 {
         this.I = ri0Var;
     }
 
-    public final void O(tl0 tl0Var, boolean z4) {
+    public final void O(sl0 sl0Var, boolean z4) {
         this.G = z4;
-        for (int i10 = 0; i10 < tl0Var.getChildCount(); i10++) {
-            if (tl0Var.getChildAt(i10) instanceof r2) {
-                ((r2) tl0Var.getChildAt(i10)).f = z4;
+        for (int i10 = 0; i10 < sl0Var.getChildCount(); i10++) {
+            if (sl0Var.getChildAt(i10) instanceof r2) {
+                ((r2) sl0Var.getChildAt(i10)).f = z4;
             }
         }
-        for (int i11 = 0; i11 < tl0Var.getCachedChildCount(); i11++) {
-            if (tl0Var.P(i11) instanceof r2) {
-                ((r2) tl0Var.P(i11)).f = z4;
+        for (int i11 = 0; i11 < sl0Var.getCachedChildCount(); i11++) {
+            if (sl0Var.P(i11) instanceof r2) {
+                ((r2) sl0Var.P(i11)).f = z4;
             }
         }
-        for (int i12 = 0; i12 < tl0Var.getHiddenChildCount(); i12++) {
-            if (tl0Var.V(i12) instanceof r2) {
-                ((r2) tl0Var.V(i12)).f = z4;
+        for (int i12 = 0; i12 < sl0Var.getHiddenChildCount(); i12++) {
+            if (sl0Var.V(i12) instanceof r2) {
+                ((r2) sl0Var.V(i12)).f = z4;
             }
         }
-        for (int i13 = 0; i13 < tl0Var.getAttachedScrapChildCount(); i13++) {
-            if (tl0Var.O(i13) instanceof r2) {
-                ((r2) tl0Var.O(i13)).f = z4;
+        for (int i13 = 0; i13 < sl0Var.getAttachedScrapChildCount(); i13++) {
+            if (sl0Var.O(i13) instanceof r2) {
+                ((r2) sl0Var.O(i13)).f = z4;
             }
         }
     }
@@ -623,7 +623,7 @@ public class k extends sl0 implements n2 {
         this.J = arrayList3;
         cg.a aVar = new cg.a(this, arrayList2, 4);
         if (arrayList3.size() >= 50 && Z) {
-            Utilities.searchQueue.postRunnable(new yx0(this, aVar, runnable, arrayList2, 22));
+            Utilities.searchQueue.postRunnable(new dy0(this, aVar, runnable, arrayList2, 22));
             return;
         }
         f2.m c3 = f2.q.c(aVar, true);
@@ -665,7 +665,7 @@ public class k extends sl0 implements n2 {
         if (MessagesController.getInstance(i10).getStoriesController().I(r2Var.getDialogId())) {
             py pyVar = this.O;
             pyVar.getOrCreateStoryViewer().getClass();
-            pyVar.getOrCreateStoryViewer().D(pyVar.getParentActivity(), r2Var.getDialogId(), c7.a((tl0) r2Var.getParent()));
+            pyVar.getOrCreateStoryViewer().D(pyVar.getParentActivity(), r2Var.getDialogId(), c7.a((sl0) r2Var.getParent()));
         }
     }
 
@@ -835,9 +835,9 @@ public class k extends sl0 implements n2 {
             int i17 = this.Y;
             int E = E();
             this.Y = E;
-            v01 v01Var = x2Var.n;
+            u01 u01Var = x2Var.n;
             TextView textView = x2Var.h;
-            lj0 lj0Var = x2Var.f;
+            kj0 kj0Var = x2Var.f;
             if (x2Var.r != E) {
                 x2Var.r = E;
                 if (E == 0 || E == 1) {
@@ -845,12 +845,12 @@ public class k extends sl0 implements n2 {
                     string = LocaleController.getString(R.string.NoChatsHelp);
                     textView.setText(LocaleController.getString(R.string.NoChats));
                 } else if (E != 2) {
-                    lj0Var.setAutoRepeat(true);
+                    kj0Var.setAutoRepeat(true);
                     i11 = R.raw.filter_new;
                     string = LocaleController.getString(R.string.FilterAddingChatsInfo);
                     textView.setText(LocaleController.getString(R.string.FilterAddingChats));
                 } else {
-                    lj0Var.setAutoRepeat(false);
+                    kj0Var.setAutoRepeat(false);
                     i11 = R.raw.filter_no_chats;
                     if (this.w) {
                         textView.setText(LocaleController.getString(R.string.FilterNoChatsToForward));
@@ -861,7 +861,7 @@ public class k extends sl0 implements n2 {
                     }
                 }
                 if (i11 != 0) {
-                    lj0Var.setVisibility(0);
+                    kj0Var.setVisibility(0);
                     if (x2Var.r == 1) {
                         if (x2Var.d) {
                             x2Var.a = 1.0f;
@@ -869,24 +869,24 @@ public class k extends sl0 implements n2 {
                             if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                                 string2 = string2.replace('\n', ' ');
                             }
-                            v01Var.a(string2, true, false);
+                            u01Var.a(string2, true, false);
                             x2Var.requestLayout();
                         } else {
                             x2Var.a(true);
                         }
                     }
                     if (x2Var.s != i11) {
-                        lj0Var.f(i11, 100, 100, null);
-                        lj0Var.d();
+                        kj0Var.f(i11, 100, 100, null);
+                        kj0Var.d();
                         x2Var.s = i11;
                     }
                 } else {
-                    lj0Var.setVisibility(8);
+                    kj0Var.setVisibility(8);
                 }
                 if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                     string = string.replace('\n', ' ');
                 }
-                v01Var.a(string, false, false);
+                u01Var.a(string, false, false);
             }
             int i18 = this.h;
             if (i18 != 7 && i18 != 8) {
@@ -1071,7 +1071,7 @@ public class k extends sl0 implements n2 {
     /* JADX WARN: Type inference failed for: r2v16, types: [android.view.View, android.widget.LinearLayout, org.telegram.ui.Cells.q6] */
     /* JADX WARN: Type inference failed for: r2v17, types: [uf.f] */
     /* JADX WARN: Type inference failed for: r2v18, types: [org.telegram.ui.Cells.z2] */
-    /* JADX WARN: Type inference failed for: r2v19, types: [org.telegram.ui.Components.jn] */
+    /* JADX WARN: Type inference failed for: r2v19, types: [org.telegram.ui.Components.in] */
     /* JADX WARN: Type inference failed for: r2v2, types: [android.view.View] */
     /* JADX WARN: Type inference failed for: r2v20, types: [android.view.ViewGroup, uf.j] */
     /* JADX WARN: Type inference failed for: r2v21, types: [org.telegram.ui.Cells.u3] */
@@ -1083,7 +1083,7 @@ public class k extends sl0 implements n2 {
     /* JADX WARN: Type inference failed for: r2v3 */
     /* JADX WARN: Type inference failed for: r2v4, types: [org.telegram.ui.Components.u00] */
     /* JADX WARN: Type inference failed for: r2v5, types: [android.view.ViewGroup, org.telegram.ui.Cells.m4] */
-    /* JADX WARN: Type inference failed for: r2v6, types: [android.view.View, android.view.ViewGroup, org.telegram.ui.c51] */
+    /* JADX WARN: Type inference failed for: r2v6, types: [android.view.View, android.view.ViewGroup, org.telegram.ui.h51] */
     /* JADX WARN: Type inference failed for: r2v7, types: [android.view.View, org.telegram.ui.Cells.a0, org.telegram.ui.Cells.s2] */
     /* JADX WARN: Type inference failed for: r2v8, types: [org.telegram.ui.Cells.x2] */
     /* JADX WARN: Type inference failed for: r2v9, types: [org.telegram.ui.Cells.va] */
@@ -1152,7 +1152,7 @@ public class k extends sl0 implements n2 {
                 textView.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 19));
                 break;
             case 3:
-                r22 = new c51(context, 9);
+                r22 = new h51(context, 9);
                 r22.setBackgroundColor(k6.w0(null, k6.a7, false));
                 View view = new View(context);
                 view.setBackgroundDrawable(k6.V0(context, R.drawable.greydivider, k6.b7));
@@ -1226,7 +1226,7 @@ public class k extends sl0 implements n2 {
                 r22 = new z2(context);
                 break;
             case 18:
-                r22 = new jn(context, 29);
+                r22 = new in(context, 29);
                 break;
             case 19:
                 r22 = new j(this, context);
@@ -1248,7 +1248,7 @@ public class k extends sl0 implements n2 {
                 break;
         }
         r22.setLayoutParams(new f2.x0(-1, (i10 == 5 || i10 == 19) ? -1 : -2));
-        return new fl0(r22);
+        return new el0(r22);
     }
 
     @Override // f2.p0

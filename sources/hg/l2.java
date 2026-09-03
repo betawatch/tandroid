@@ -3,13 +3,13 @@ package hg;
 import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.jl0;
 import org.telegram.ui.Components.wt;
 import org.telegram.ui.Components.xt;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l2 implements kl0, wt {
+public final /* synthetic */ class l2 implements jl0, wt {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ KeyEvent.Callback c;
@@ -22,12 +22,12 @@ public final /* synthetic */ class l2 implements kl0, wt {
         this.b = i11;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         v2.Q((v2) this.c, this.a, (g6) this.d, this.b, view);
     }
@@ -44,7 +44,7 @@ public final /* synthetic */ class l2 implements kl0, wt {
         this.d = runnable;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

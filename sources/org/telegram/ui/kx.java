@@ -6,9 +6,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class kx extends v31 {
+public final class kx extends a41 {
     public boolean P;
     public oy Q;
     public final /* synthetic */ iy R;
@@ -26,7 +26,7 @@ public final class kx extends v31 {
         this.J = true;
     }
 
-    @Override // org.telegram.ui.v31
+    @Override // org.telegram.ui.a41
     public final void d(boolean z4) {
         oy oyVar = this.Q;
         oyVar.c.G = true;
@@ -40,7 +40,7 @@ public final class kx extends v31 {
         this.Q.a.invalidate();
         this.Q.d.l();
         this.Q.D.l();
-        this.Q.a.y1(null, 0.0f, z4);
+        this.Q.a.x1(null, 0.0f, z4);
         pyVar.y = false;
         this.R.requestLayout();
         if (!c()) {
@@ -60,7 +60,7 @@ public final class kx extends v31 {
         pyVar.U4();
     }
 
-    @Override // org.telegram.ui.v31
+    @Override // org.telegram.ui.a41
     public final void e(boolean z4) {
         int i10;
         py pyVar = this.T;
@@ -107,14 +107,14 @@ public final class kx extends v31 {
         this.Q.D.l();
         float f10 = !z4 ? pyVar.K : -pyVar.K;
         oy oyVar8 = this.Q;
-        oyVar8.a.y1(oyVar8.C, f10, false);
+        oyVar8.a.x1(oyVar8.C, f10, false);
         this.Q.a.setClipChildren(false);
         this.Q.a.B0();
         pyVar.D3();
         pyVar.U4();
     }
 
-    @Override // org.telegram.ui.v31
+    @Override // org.telegram.ui.a41
     public final boolean getOccupyStatusbar() {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
@@ -127,7 +127,7 @@ public final class kx extends v31 {
         return kVar2.getOccupyStatusBar();
     }
 
-    @Override // org.telegram.ui.v31
+    @Override // org.telegram.ui.a41
     public final void setOpenProgress(float f10) {
         org.telegram.ui.ActionBar.k kVar;
         org.telegram.ui.ActionBar.k kVar2;

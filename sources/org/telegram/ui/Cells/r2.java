@@ -75,34 +75,34 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.aj0;
 import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.hs;
-import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.is;
-import org.telegram.ui.Components.l01;
-import org.telegram.ui.Components.lw0;
-import org.telegram.ui.Components.n51;
-import org.telegram.ui.Components.nw0;
+import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.nz;
-import org.telegram.ui.Components.o51;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pd0;
 import org.telegram.ui.Components.pi0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.ri0;
-import org.telegram.ui.Components.u61;
+import org.telegram.ui.Components.t61;
 import org.telegram.ui.Components.ve0;
+import org.telegram.ui.Components.x11;
 import org.telegram.ui.Components.xc;
-import org.telegram.ui.Components.y11;
 import org.telegram.ui.a10;
+import org.telegram.ui.a41;
 import org.telegram.ui.kx;
 import org.telegram.ui.py;
-import org.telegram.ui.v31;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
     public th.a A0;
@@ -136,7 +136,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
     public int E4;
     public int F;
     public String F0;
-    public l01 F1;
+    public k01 F1;
     public int F2;
     public int F3;
     public int F4;
@@ -184,7 +184,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
     public Drawable M4;
     public boolean N;
     public boolean N0;
-    public ij0 N1;
+    public hj0 N1;
     public boolean N2;
     public ValueAnimator N3;
     public int N4;
@@ -302,7 +302,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.z5 j2;
     public org.telegram.ui.Components.q5 j3;
     public boolean j4;
-    public y11 k0;
+    public x11 k0;
     public boolean k1;
     public boolean k2;
     public org.telegram.ui.Components.q5 k3;
@@ -344,7 +344,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
     public boolean r2;
     public int r3;
     public float r4;
-    public ij0 s;
+    public hj0 s;
     public Path s0;
     public int s1;
     public boolean s2;
@@ -362,7 +362,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
     public long u4;
     public int v;
     public boolean v0;
-    public ij0 v1;
+    public hj0 v1;
     public int v2;
     public boolean v3;
     public int v4;
@@ -605,9 +605,9 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
         boolean z12 = (this.i0 <= 0 || R() || this.s2 || this.r0.w) ? false : true;
         this.t2 = z12;
         if (this.f0 != 1.0f && (z12 || this.j0 > 0.0f)) {
-            y11 y11Var = this.k0;
-            if (y11Var != null) {
-                int i15 = y11Var.f;
+            x11 x11Var = this.k0;
+            if (x11Var != null) {
+                int i15 = x11Var.f;
                 int i16 = this.i0;
                 if (i15 != i16) {
                 }
@@ -625,8 +625,8 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                     this.l0.setShader(null);
                     if (this.V1.getBitmap() != null && !this.V1.getBitmap().isRecycled()) {
                         this.l0.setColor(AndroidUtilities.getDominantColor(this.V1.getBitmap()));
-                    } else if (this.V1.getDrawable() instanceof u61) {
-                        this.l0.setColor(((u61) this.V1.getDrawable()).a.a());
+                    } else if (this.V1.getDrawable() instanceof t61) {
+                        this.l0.setColor(((t61) this.V1.getDrawable()).a.a());
                     } else {
                         this.l0.setColor(this.X1.c());
                     }
@@ -660,10 +660,10 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                 canvas.restore();
             }
             int i17 = this.i0;
-            y11 y11Var2 = new y11(ApplicationLoader.applicationContext, null);
-            y11Var2.m = true;
-            y11Var2.b(i17);
-            this.k0 = y11Var2;
+            x11 x11Var2 = new x11(ApplicationLoader.applicationContext, null);
+            x11Var2.m = true;
+            x11Var2.b(i17);
+            this.k0 = x11Var2;
             if (this.l0 == null) {
             }
             int imageY222 = (int) (this.V1.getImageY2() - AndroidUtilities.dp(9.0f));
@@ -1257,7 +1257,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                 int length2 = string.length() + length;
                 spannableStringBuilder.append((CharSequence) string);
                 if (dialog.unread_count > 0) {
-                    spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold(), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Y8, this.C4)), length, length2, 33);
+                    spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold(), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Y8, this.C4)), length, length2, 33);
                 }
                 if (spannableStringBuilder.length() > 150) {
                     break;
@@ -1308,7 +1308,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                 int length2 = string.length() + length;
                 spannableStringBuilder.append((CharSequence) string);
                 if (dialog.unread_count > 0) {
-                    spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold(), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Y8, this.C4)), length, length2, 33);
+                    spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold(), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Y8, this.C4)), length, length2, 33);
                 }
                 if (spannableStringBuilder.length() > 150) {
                     break;
@@ -2084,7 +2084,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                     this.e1 = false;
                 }
                 if (this.E0 != 0) {
-                    int i28 = v31.O;
+                    int i28 = a41.O;
                 }
             } else {
                 i11 = i25;
@@ -3129,9 +3129,9 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
             imageReceiverArr[i10].onDetachedFromWindow();
             i10++;
         }
-        ij0 ij0Var = this.v1;
-        if (ij0Var != null) {
-            ij0Var.stop();
+        hj0 hj0Var = this.v1;
+        if (hj0Var != null) {
+            hj0Var.stop();
             this.v1.Q(0.0f, true);
             this.v1.setCallback(null);
             this.v1 = null;
@@ -3266,7 +3266,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
         int i15;
         StaticLayout staticLayout;
         boolean z11;
-        ij0 ij0Var;
+        hj0 hj0Var;
         float f15;
         float f16;
         org.telegram.ui.ActionBar.g6 g6Var2;
@@ -3325,7 +3325,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
         float w10;
         StaticLayout staticLayout2;
         int i24;
-        nw0 t02;
+        mw0 t02;
         int i25;
         m2 m2Var;
         py pyVar;
@@ -3364,9 +3364,9 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
         f2.a0 a0Var5 = r2Var4.a2;
         org.telegram.ui.ActionBar.g6 g6Var5 = r2Var4.C4;
         if (f29 == 0.0f && r2Var4.l1 == 0.0f) {
-            ij0 ij0Var2 = r2Var4.v1;
-            if (ij0Var2 != null) {
-                ij0Var2.stop();
+            hj0 hj0Var2 = r2Var4.v1;
+            if (hj0Var2 != null) {
+                hj0Var2.stop();
                 r2Var4.v1.Q(0.0f, true);
                 r2Var4.v1.setCallback(null);
                 r2Var4.v1 = null;
@@ -3422,11 +3422,11 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                         str = string2;
                         i11 = i26;
                         i12 = v02;
-                        if (r2Var4.w || (ij0Var = r2Var4.s) == null) {
+                        if (r2Var4.w || (hj0Var = r2Var4.s) == null) {
                             r2Var4.s = r2Var4.v1;
                             r2Var4.v = i11;
                         } else {
-                            r2Var4.v1 = ij0Var;
+                            r2Var4.v1 = hj0Var;
                             i11 = r2Var4.v;
                         }
                         if (!r2Var4.w1 && Math.abs(r2Var4.t1) > AndroidUtilities.dp(43.0f)) {
@@ -3453,10 +3453,10 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                                     org.telegram.ui.ActionBar.k6.A1 = z4;
                                 }
                                 if (org.telegram.ui.ActionBar.k6.B1) {
-                                    ij0 ij0Var3 = org.telegram.ui.ActionBar.k6.z1;
-                                    ij0Var3.X = true;
+                                    hj0 hj0Var3 = org.telegram.ui.ActionBar.k6.z1;
+                                    hj0Var3.X = true;
                                     int i27 = org.telegram.ui.ActionBar.k6.c9;
-                                    ij0Var3.O(org.telegram.ui.ActionBar.k6.E0(i27), "Line 1");
+                                    hj0Var3.O(org.telegram.ui.ActionBar.k6.E0(i27), "Line 1");
                                     org.telegram.ui.ActionBar.k6.z1.O(org.telegram.ui.ActionBar.k6.E0(i27), "Line 2");
                                     org.telegram.ui.ActionBar.k6.z1.O(org.telegram.ui.ActionBar.k6.E0(i27), "Line 3");
                                     org.telegram.ui.ActionBar.k6.z1.m();
@@ -3495,10 +3495,10 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                                 org.telegram.ui.ActionBar.k6.A1 = true;
                             }
                             if (!org.telegram.ui.ActionBar.k6.B1) {
-                                ij0 ij0Var4 = org.telegram.ui.ActionBar.k6.z1;
-                                ij0Var4.X = z11;
+                                hj0 hj0Var4 = org.telegram.ui.ActionBar.k6.z1;
+                                hj0Var4.X = z11;
                                 int i28 = org.telegram.ui.ActionBar.k6.d9;
-                                ij0Var4.O(org.telegram.ui.ActionBar.k6.E0(i28), "Line 1");
+                                hj0Var4.O(org.telegram.ui.ActionBar.k6.E0(i28), "Line 1");
                                 org.telegram.ui.ActionBar.k6.z1.O(org.telegram.ui.ActionBar.k6.E0(i28), "Line 2");
                                 org.telegram.ui.ActionBar.k6.z1.O(org.telegram.ui.ActionBar.k6.E0(i28), "Line 3");
                                 org.telegram.ui.ActionBar.k6.z1.m();
@@ -3696,14 +3696,14 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                     f21 = 1.0f;
                     i17 = -1;
                     f22 = 2.0f;
-                    i18 = canvas3.saveLayerAlpha(yh.c(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(v31.getRightPaddingSize() + 1)), 0.0f, r2Var4.getMeasuredWidth(), r2Var4.getMeasuredHeight(), (int) ((1.0f - r2Var4.f0) * 255.0f), 31);
+                    i18 = canvas3.saveLayerAlpha(yh.c(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(a41.getRightPaddingSize() + 1)), 0.0f, r2Var4.getMeasuredWidth(), r2Var4.getMeasuredHeight(), (int) ((1.0f - r2Var4.f0) * 255.0f), 31);
                 } else {
                     o2Var = o2Var4;
                     f21 = 1.0f;
                     i17 = -1;
                     f22 = 2.0f;
                     i18 = canvas3.save();
-                    canvas3.clipRect(yh.c(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(v31.getRightPaddingSize() + 1)), 0.0f, r2Var4.getMeasuredWidth(), r2Var4.getMeasuredHeight());
+                    canvas3.clipRect(yh.c(1.0f, clamp, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(a41.getRightPaddingSize() + 1)), 0.0f, r2Var4.getMeasuredWidth(), r2Var4.getMeasuredHeight());
                 }
                 canvas3.translate((-(r2Var4.getMeasuredWidth() - AndroidUtilities.dp(74.0f))) * 0.7f * r2Var4.f0, 0.0f);
                 f15 += (-(r2Var4.getMeasuredWidth() - AndroidUtilities.dp(74.0f))) * 0.7f * r2Var4.f0;
@@ -4877,9 +4877,9 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                                         canvas3.scale(a2, a2, rectF8.centerX(), rectF8.centerY());
                                         r2Var3.D1.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oh, g6Var3));
                                         canvas3.drawRoundRect(rectF8, rectF8.height() / 2.0f, rectF8.height() / 2.0f, r2Var3.D1);
-                                        l01 l01Var = r2Var3.F1;
-                                        if (l01Var != null) {
-                                            l01Var.c(rectF8.left + AndroidUtilities.dp(13.0f), rectF8.centerY(), 1.0f, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Sh, g6Var3), canvas);
+                                        k01 k01Var = r2Var3.F1;
+                                        if (k01Var != null) {
+                                            k01Var.c(rectF8.left + AndroidUtilities.dp(13.0f), rectF8.centerY(), 1.0f, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Sh, g6Var3), canvas);
                                         }
                                         canvas.restore();
                                     }
@@ -5633,7 +5633,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
             return;
         }
         if (this.F1 == null) {
-            this.F1 = new l01(LocaleController.getString(R.string.BotOpen), 14.0f, AndroidUtilities.bold());
+            this.F1 = new k01(LocaleController.getString(R.string.BotOpen), 14.0f, AndroidUtilities.bold());
         }
         this.B1 = z4;
         this.C1.c(false);
@@ -5676,9 +5676,9 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
             return;
         }
         this.t1 = f10;
-        ij0 ij0Var = this.v1;
-        if (ij0Var != null && f10 == 0.0f) {
-            ij0Var.Q(0.0f, true);
+        hj0 hj0Var = this.v1;
+        if (hj0Var != null && f10 == 0.0f) {
+            hj0Var.Q(0.0f, true);
             this.w1 = false;
             this.j1 = SharedConfig.archiveHidden;
             this.y1 = 0.0f;
@@ -6122,11 +6122,11 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(charSequence28);
             f10 = 17.0f;
             f11 = 16.0f;
-            for (o51 o51Var : (o51[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), o51.class)) {
-                spannableStringBuilder2.removeSpan(o51Var);
+            for (m51 m51Var : (m51[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), m51.class)) {
+                spannableStringBuilder2.removeSpan(m51Var);
             }
-            for (n51 n51Var : (n51[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), n51.class)) {
-                spannableStringBuilder2.removeSpan(n51Var);
+            for (l51 l51Var : (l51[]) spannableStringBuilder2.getSpans(0, spannableStringBuilder2.length(), l51.class)) {
+                spannableStringBuilder2.removeSpan(l51Var);
             }
             charSequence28 = spannableStringBuilder2;
         } else {
@@ -6446,7 +6446,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                                         charSequence2 = charSequence;
                                         int intValue = MessagesController.getInstance(this.C0).getPrintingStringType(this.E0, getTopicId()).intValue();
                                         this.g2 = intValue;
-                                        nw0 t02 = org.telegram.ui.ActionBar.k6.t0(intValue);
+                                        mw0 t02 = org.telegram.ui.ActionBar.k6.t0(intValue);
                                         int dp8 = t02 != null ? AndroidUtilities.dp(3.0f) + t02.getIntrinsicWidth() : 0;
                                         SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder();
                                         CharSequence replace = TextUtils.replace(printingString, new String[]{"..."}, new String[]{""});
@@ -7497,7 +7497,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                                                                                                     TextPaint textPaint6 = this.U;
                                                                                                     float dp9 = AndroidUtilities.dp(1.0f);
                                                                                                     TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                                                                                                    this.b3 = lw0.b(charSequence26, textPaint6, i42, dp9, i42, charSequence41 != null ? 1 : 2);
+                                                                                                    this.b3 = kw0.b(charSequence26, textPaint6, i42, dp9, i42, charSequence41 != null ? 1 : 2);
                                                                                                     max = i42;
                                                                                                     this.f3.addAll(this.g3);
                                                                                                     this.g3.clear();
@@ -8467,7 +8467,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                         TextPaint textPaint62 = this.U;
                         float dp92 = AndroidUtilities.dp(1.0f);
                         TextUtils.TruncateAt truncateAt2 = TextUtils.TruncateAt.END;
-                        this.b3 = lw0.b(charSequence26, textPaint62, i422, dp92, i422, charSequence412 != null ? 1 : 2);
+                        this.b3 = kw0.b(charSequence26, textPaint62, i422, dp92, i422, charSequence412 != null ? 1 : 2);
                         max = i422;
                         this.f3.addAll(this.g3);
                         this.g3.clear();
@@ -8570,7 +8570,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                             TextPaint textPaint622 = this.U;
                             float dp922 = AndroidUtilities.dp(1.0f);
                             TextUtils.TruncateAt truncateAt22 = TextUtils.TruncateAt.END;
-                            this.b3 = lw0.b(charSequence26, textPaint622, i4222, dp922, i4222, charSequence412 != null ? 1 : 2);
+                            this.b3 = kw0.b(charSequence26, textPaint622, i4222, dp922, i4222, charSequence412 != null ? 1 : 2);
                             max = i4222;
                             this.f3.addAll(this.g3);
                             this.g3.clear();
@@ -8663,7 +8663,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                         TextPaint textPaint6222 = this.U;
                         float dp9222 = AndroidUtilities.dp(1.0f);
                         TextUtils.TruncateAt truncateAt222 = TextUtils.TruncateAt.END;
-                        this.b3 = lw0.b(charSequence26, textPaint6222, i42222, dp9222, i42222, charSequence412 != null ? 1 : 2);
+                        this.b3 = kw0.b(charSequence26, textPaint6222, i42222, dp9222, i42222, charSequence412 != null ? 1 : 2);
                         max = i42222;
                         this.f3.addAll(this.g3);
                         this.g3.clear();
@@ -8692,7 +8692,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                     TextPaint textPaint7 = org.telegram.ui.ActionBar.k6.B0[this.B0];
                     Layout.Alignment alignment3 = Layout.Alignment.ALIGN_NORMAL;
                     TextUtils.TruncateAt truncateAt3 = TextUtils.TruncateAt.END;
-                    this.w2 = lw0.b(charSequence44, textPaint7, dp7, 0.0f, dp7, 2);
+                    this.w2 = kw0.b(charSequence44, textPaint7, dp7, 0.0f, dp7, 2);
                 }
                 this.y2 = (this.A2 || !this.w2.isRtlCharAt(0)) ? 0.0f : -AndroidUtilities.dp(f14);
                 this.z2 = this.w2.isRtlCharAt(0);
@@ -9002,7 +9002,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                             TextPaint textPaint8 = org.telegram.ui.ActionBar.k6.G0;
                             Layout.Alignment alignment4 = Layout.Alignment.ALIGN_NORMAL;
                             TextUtils.TruncateAt truncateAt4 = TextUtils.TruncateAt.END;
-                            this.p3 = lw0.b(charSequence25, textPaint8, max, 0.0f, max, 1);
+                            this.p3 = kw0.b(charSequence25, textPaint8, max, 0.0f, max, 1);
                             this.X2 = AndroidUtilities.dp(51.0f);
                             dp4 = (this.O || !this.M) ? 0 : AndroidUtilities.dp(20.0f);
                             i24 = 0;
@@ -9021,7 +9021,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                     TextPaint textPaint82 = org.telegram.ui.ActionBar.k6.G0;
                     Layout.Alignment alignment42 = Layout.Alignment.ALIGN_NORMAL;
                     TextUtils.TruncateAt truncateAt42 = TextUtils.TruncateAt.END;
-                    this.p3 = lw0.b(charSequence25, textPaint82, max, 0.0f, max, 1);
+                    this.p3 = kw0.b(charSequence25, textPaint82, max, 0.0f, max, 1);
                     this.X2 = AndroidUtilities.dp(51.0f);
                     if (this.O) {
                     }
@@ -9094,7 +9094,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                         TextPaint textPaint62222 = this.U;
                         float dp92222 = AndroidUtilities.dp(1.0f);
                         TextUtils.TruncateAt truncateAt2222 = TextUtils.TruncateAt.END;
-                        this.b3 = lw0.b(charSequence26, textPaint62222, i422222, dp92222, i422222, charSequence412 != null ? 1 : 2);
+                        this.b3 = kw0.b(charSequence26, textPaint62222, i422222, dp92222, i422222, charSequence412 != null ? 1 : 2);
                         max = i422222;
                         this.f3.addAll(this.g3);
                         this.g3.clear();
@@ -9113,7 +9113,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                         Layout.Alignment alignment5 = Layout.Alignment.ALIGN_NORMAL;
                         float dp31 = AndroidUtilities.dp(1.0f);
                         TextUtils.TruncateAt truncateAt5 = TextUtils.TruncateAt.END;
-                        this.c3 = lw0.b(charSequence23, textPaint9, max, dp31, max, 1);
+                        this.c3 = kw0.b(charSequence23, textPaint9, max, dp31, max, 1);
                     }
                     i26 = max;
                 }
@@ -9123,7 +9123,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                         if (!(obj instanceof ClickableSpan) && !(obj instanceof CodeHighlighting.Span)) {
                             if (this.H0 == 0) {
                                 if (!P()) {
-                                    if (!(obj instanceof g51)) {
+                                    if (!(obj instanceof e51)) {
                                     }
                                 }
                             }
@@ -9165,7 +9165,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                     TextPaint textPaint622222 = this.U;
                     float dp922222 = AndroidUtilities.dp(1.0f);
                     TextUtils.TruncateAt truncateAt22222 = TextUtils.TruncateAt.END;
-                    this.b3 = lw0.b(charSequence26, textPaint622222, i4222222, dp922222, i4222222, charSequence412 != null ? 1 : 2);
+                    this.b3 = kw0.b(charSequence26, textPaint622222, i4222222, dp922222, i4222222, charSequence412 != null ? 1 : 2);
                     max = i4222222;
                 } else {
                     if (this.O1 > 0) {
@@ -9461,7 +9461,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                     TextPaint textPaint6222222 = this.U;
                     float dp9222222 = AndroidUtilities.dp(1.0f);
                     TextUtils.TruncateAt truncateAt222222 = TextUtils.TruncateAt.END;
-                    this.b3 = lw0.b(charSequence26, textPaint6222222, i42222222, dp9222222, i42222222, charSequence412 != null ? 1 : 2);
+                    this.b3 = kw0.b(charSequence26, textPaint6222222, i42222222, dp9222222, i42222222, charSequence412 != null ? 1 : 2);
                     max = i42222222;
                     this.f3.addAll(this.g3);
                     this.g3.clear();
@@ -9508,7 +9508,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
                 TextPaint textPaint62222222 = this.U;
                 float dp92222222 = AndroidUtilities.dp(1.0f);
                 TextUtils.TruncateAt truncateAt2222222 = TextUtils.TruncateAt.END;
-                this.b3 = lw0.b(charSequence26, textPaint62222222, i422222222, dp92222222, i422222222, charSequence412 != null ? 1 : 2);
+                this.b3 = kw0.b(charSequence26, textPaint62222222, i422222222, dp92222222, i422222222, charSequence412 != null ? 1 : 2);
                 max = i422222222;
                 this.f3.addAll(this.g3);
                 this.g3.clear();
@@ -9561,7 +9561,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
             TextPaint textPaint622222222 = this.U;
             float dp922222222 = AndroidUtilities.dp(1.0f);
             TextUtils.TruncateAt truncateAt22222222 = TextUtils.TruncateAt.END;
-            this.b3 = lw0.b(charSequence26, textPaint622222222, i4222222222, dp922222222, i4222222222, charSequence412 != null ? 1 : 2);
+            this.b3 = kw0.b(charSequence26, textPaint622222222, i4222222222, dp922222222, i4222222222, charSequence412 != null ? 1 : 2);
             max = i4222222222;
             this.f3.addAll(this.g3);
             this.g3.clear();
@@ -9679,7 +9679,7 @@ public class r2 extends a0 implements oh.z6, org.telegram.ui.ActionBar.b6 {
         TextPaint textPaint6222222222 = this.U;
         float dp9222222222 = AndroidUtilities.dp(1.0f);
         TextUtils.TruncateAt truncateAt222222222 = TextUtils.TruncateAt.END;
-        this.b3 = lw0.b(charSequence26, textPaint6222222222, i42222222222, dp9222222222, i42222222222, charSequence412 != null ? 1 : 2);
+        this.b3 = kw0.b(charSequence26, textPaint6222222222, i42222222222, dp9222222222, i42222222222, charSequence412 != null ? 1 : 2);
         max = i42222222222;
         this.f3.addAll(this.g3);
         this.g3.clear();

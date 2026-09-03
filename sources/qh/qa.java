@@ -1,80 +1,80 @@
 package qh;
 
-import android.app.Activity;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class qa extends View {
-    public final Paint a;
-    public final org.telegram.ui.Components.j6 b;
-    public boolean c;
+public final class qa extends View implements b2 {
+    public Paint a;
+    public Paint b;
+    public org.telegram.ui.Components.j6 c;
+    public boolean d;
+    public org.telegram.ui.Components.z5 e;
 
-    public qa(Activity activity) {
-        super(activity);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.c = true;
-        paint.setColor(TLObject.FLAG_31);
-        org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(false, true, true, false);
-        this.b = j6Var;
-        j6Var.k(0.2f, 200L, pr.h);
-        j6Var.t(AndroidUtilities.dp(13.0f));
-        j6Var.r(-1);
-        j6Var.u(AndroidUtilities.bold());
-        j6Var.setCallback(this);
-        j6Var.b = 1;
-        StringBuilder sb = new StringBuilder(8);
-        sb.append("00:00:00");
-        if (TextUtils.equals(sb, j6Var.g)) {
-            return;
+    public final void a(long j10, boolean z4) {
+        long j11 = j10 % 60;
+        long j12 = (j10 - j11) / 60;
+        StringBuilder sb = new StringBuilder(5);
+        if (j12 < 10) {
+            sb.append('0');
         }
-        j6Var.b();
-        j6Var.q(sb, false, true);
+        sb.append(j12);
+        sb.append(':');
+        if (j11 < 10) {
+            sb.append('0');
+        }
+        sb.append(j11);
+        this.c.q(sb, z4, true);
     }
 
-    public final void a(boolean z4) {
-        if (this.c || !z4) {
-            this.c = false;
-            animate().cancel();
-            if (z4) {
-                org.telegram.ui.b.p(animate().translationY(AndroidUtilities.dp(6.0f)).alpha(0.0f).scaleX(0.8f).scaleY(0.8f), pr.h, 220L);
-                return;
-            }
-            setTranslationY(AndroidUtilities.dp(6.0f));
-            setScaleX(0.8f);
-            setScaleY(0.8f);
-            setAlpha(0.0f);
+    public final void b(boolean z4, boolean z10) {
+        this.d = z4;
+        if (!z10) {
+            this.e.d(z4 ? 1.0f : 0.0f, true);
         }
+        invalidate();
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
+        Paint paint = this.b;
+        org.telegram.ui.Components.j6 j6Var = this.c;
         super.onDraw(canvas);
-        org.telegram.ui.Components.j6 j6Var = this.b;
-        float d = j6Var.d();
+        float d = this.e.d(this.d ? 1.0f : 0.0f, false);
+        float dp = AndroidUtilities.dp(12.66f) * d;
+        float d10 = j6Var.d() + dp;
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(((getWidth() - d) / 2.0f) - AndroidUtilities.dp(6.0f), AndroidUtilities.dp(2.0f), ((getWidth() + d) / 2.0f) + AndroidUtilities.dp(6.0f), AndroidUtilities.dp(23.0f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(5.0f), AndroidUtilities.dp(5.0f), this.a);
-        j6Var.setBounds((int) rectF.left, ((int) rectF.top) - AndroidUtilities.dp(1.0f), (int) rectF.right, (int) rectF.bottom);
+        rectF.set(((getWidth() - d10) / 2.0f) - AndroidUtilities.dp(8.0f), AndroidUtilities.dp(18.0f), ((getWidth() + d10) / 2.0f) + AndroidUtilities.dp(8.0f), AndroidUtilities.dp(40.0f));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(18.0f), AndroidUtilities.dp(18.0f), this.a);
+        if (d > 0.0f) {
+            paint.setAlpha((int) (Utilities.clamp((((float) Math.sin(((System.currentTimeMillis() % 2000) / 1000.0f) * 3.141592653589793d)) / 4.0f) + 0.75f, 1.0f, 0.0f) * 255.0f));
+            invalidate();
+            canvas.drawCircle(rectF.left + AndroidUtilities.dp(10.66f), rectF.centerY(), AndroidUtilities.dp(4.0f) * d, paint);
+        }
+        j6Var.setBounds((int) (rectF.left + dp), ((int) rectF.top) - AndroidUtilities.dp(1.0f), (int) rectF.right, (int) rectF.bottom);
         j6Var.draw(canvas);
     }
 
     @Override // android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(25.0f), TLObject.FLAG_30));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(45.0f), TLObject.FLAG_30));
+    }
+
+    @Override // qh.b2
+    public void setInvert(float f10) {
+        this.a.setColor(i0.a.d(f10, 1056964608, TLObject.FLAG_28));
+        this.c.r(i0.a.d(f10, -1, -16777216));
     }
 
     @Override // android.view.View
     public final boolean verifyDrawable(Drawable drawable) {
-        return this.b == drawable || super.verifyDrawable(drawable);
+        return this.c == drawable || super.verifyDrawable(drawable);
     }
 }

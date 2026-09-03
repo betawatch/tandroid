@@ -18,7 +18,7 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class FirebaseMessagingService extends g {
     public static final String ACTION_DIRECT_BOOT_REMOTE_INTENT = "com.google.firebase.messaging.RECEIVE_DIRECT_BOOT";
@@ -227,7 +227,7 @@ public class FirebaseMessagingService extends g {
                                         } catch (NumberFormatException e10) {
                                             Log.w("FirebaseMessaging", "error parsing project number", e10);
                                         }
-                                        ((y2.o) fVar).a("FCM_CLIENT_EVENT_LOGGING", new v2.c("proto"), new androidx.emoji2.text.w(14)).a(new v2.a(null, new ia.e(new ia.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), v2.d.a, new v2.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new sg.a(28));
+                                        ((y2.o) fVar).a("FCM_CLIENT_EVENT_LOGGING", new v2.c("proto"), new androidx.emoji2.text.w(14)).a(new v2.a(null, new ia.e(new ia.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), v2.d.a, new v2.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new sg.a(29));
                                     }
                                     w8.g c13 = w8.g.c();
                                     w8.i iVar = c13.c;
@@ -239,7 +239,7 @@ public class FirebaseMessagingService extends g {
                                         } catch (NumberFormatException e11) {
                                             Log.w("FirebaseMessaging", "error parsing sender ID", e11);
                                         }
-                                        ((y2.o) fVar).a("FCM_CLIENT_EVENT_LOGGING", new v2.c("proto"), new androidx.emoji2.text.w(14)).a(new v2.a(null, new ia.e(new ia.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), v2.d.a, new v2.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new sg.a(28));
+                                        ((y2.o) fVar).a("FCM_CLIENT_EVENT_LOGGING", new v2.c("proto"), new androidx.emoji2.text.w(14)).a(new v2.a(null, new ia.e(new ia.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), v2.d.a, new v2.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new sg.a(29));
                                     }
                                     c13.a();
                                     str2 = iVar.b;
@@ -263,9 +263,9 @@ public class FirebaseMessagingService extends g {
                                         }
                                         parseLong = 0;
                                     }
-                                    ((y2.o) fVar).a("FCM_CLIENT_EVENT_LOGGING", new v2.c("proto"), new androidx.emoji2.text.w(14)).a(new v2.a(null, new ia.e(new ia.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), v2.d.a, new v2.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new sg.a(28));
+                                    ((y2.o) fVar).a("FCM_CLIENT_EVENT_LOGGING", new v2.c("proto"), new androidx.emoji2.text.w(14)).a(new v2.a(null, new ia.e(new ia.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), v2.d.a, new v2.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new sg.a(29));
                                 }
-                                ((y2.o) fVar).a("FCM_CLIENT_EVENT_LOGGING", new v2.c("proto"), new androidx.emoji2.text.w(14)).a(new v2.a(null, new ia.e(new ia.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), v2.d.a, new v2.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new sg.a(28));
+                                ((y2.o) fVar).a("FCM_CLIENT_EVENT_LOGGING", new v2.c("proto"), new androidx.emoji2.text.w(14)).a(new v2.a(null, new ia.e(new ia.d(parseLong <= 0 ? parseLong : 0L, str4, str3, bVar, packageName, str6, i10, str5, str7, str8)), v2.d.a, new v2.b(Integer.valueOf(intent.getIntExtra("google.product_id", 111881503)))), new sg.a(29));
                             } catch (RuntimeException e14) {
                                 Log.w("FirebaseMessaging", "Failed to send big query analytics payload.", e14);
                             }

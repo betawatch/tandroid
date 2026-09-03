@@ -37,29 +37,29 @@ import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.ThemeEditorView;
-import org.telegram.ui.Components.jm;
-import org.telegram.ui.Components.mq0;
+import org.telegram.ui.Components.im;
+import org.telegram.ui.Components.lq0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ue0;
-import org.telegram.ui.Components.vs0;
+import org.telegram.ui.Components.us0;
 import org.telegram.ui.ThemeActivity;
 import org.telegram.ui.d60;
 import org.telegram.ui.fn0;
 import org.telegram.ui.h50;
 import org.telegram.ui.jb;
-import org.telegram.ui.jd1;
 import org.telegram.ui.l4;
-import org.telegram.ui.mb1;
+import org.telegram.ui.od1;
 import org.telegram.ui.p10;
-import org.telegram.ui.p71;
 import org.telegram.ui.py;
+import org.telegram.ui.sb1;
 import org.telegram.ui.t10;
-import org.telegram.ui.uy0;
+import org.telegram.ui.u71;
 import org.telegram.ui.vl0;
 import org.telegram.ui.xn;
 import org.telegram.ui.y3;
+import org.telegram.ui.zy0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class t1 implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -250,13 +250,13 @@ public final /* synthetic */ class t1 implements DialogInterface.OnClickListener
                 }
                 return;
             case 6:
-                vs0 vs0Var = (vs0) this.b;
+                us0 us0Var = (us0) this.b;
                 String str6 = (String) this.c;
                 if (i10 == 0) {
-                    vs0Var.a.R0(str6);
+                    us0Var.a.R0(str6);
                     return;
                 }
-                vs0Var.getClass();
+                us0Var.getClass();
                 if (i10 == 1) {
                     if (str6.startsWith("mailto:")) {
                         str6 = str6.substring(7);
@@ -299,7 +299,7 @@ public final /* synthetic */ class t1 implements DialogInterface.OnClickListener
                 d60Var.v3 = num;
                 d60Var.N1(true, true);
                 d60Var.v3 = null;
-                AndroidUtilities.runOnUIThread(new jm(h50Var, intValue, 13));
+                AndroidUtilities.runOnUIThread(new im(h50Var, intValue, 13));
                 return;
             case 9:
                 fn0 fn0Var = (fn0) this.b;
@@ -330,17 +330,17 @@ public final /* synthetic */ class t1 implements DialogInterface.OnClickListener
                 fn0Var.E1(tL_secureRequiredType, tL_secureRequiredType3, new ArrayList(), tL_secureRequiredType3 != null);
                 return;
             case 10:
-                uy0.a((uy0) this.b, (Context) this.c, i10);
+                zy0.a((zy0) this.b, (Context) this.c, i10);
                 return;
             case 11:
-                p71 p71Var = (p71) this.b;
+                u71 u71Var = (u71) this.b;
                 ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.c));
-                org.telegram.ui.b.m(R.string.TextCopied, new qc(p71Var.getContainer(), null));
+                org.telegram.ui.b.m(R.string.TextCopied, new qc(u71Var.getContainer(), null));
                 return;
             case 12:
-                mb1 mb1Var = (mb1) this.b;
+                sb1 sb1Var = (sb1) this.b;
                 j6 j6Var = (j6) this.c;
-                ThemeActivity themeActivity = mb1Var.e;
+                ThemeActivity themeActivity = sb1Var.e;
                 if (themeActivity.getParentActivity() == null) {
                     return;
                 }
@@ -351,7 +351,7 @@ public final /* synthetic */ class t1 implements DialogInterface.OnClickListener
                         return;
                     }
                     String str8 = "https://" + themeActivity.getMessagesController().linkPrefix + "/addtheme/" + j6Var.C.slug;
-                    themeActivity.showDialog(new mq0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
+                    themeActivity.showDialog(new lq0(themeActivity.getParentActivity(), null, str8, false, str8, false, null));
                     return;
                 }
                 if (i10 != 1) {
@@ -367,7 +367,7 @@ public final /* synthetic */ class t1 implements DialogInterface.OnClickListener
                         return;
                     }
                     if (i10 == 3) {
-                        themeActivity.presentFragment(new jd1(j6Var, null, false));
+                        themeActivity.presentFragment(new od1(j6Var, null, false));
                         return;
                     }
                     if (themeActivity.getParentActivity() == null) {
@@ -376,7 +376,7 @@ public final /* synthetic */ class t1 implements DialogInterface.OnClickListener
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(themeActivity.getParentActivity());
                     alertDialog$Builder.a.O = LocaleController.getString("DeleteThemeTitle", R.string.DeleteThemeTitle);
                     alertDialog$Builder.a.Q = LocaleController.getString("DeleteThemeAlert", R.string.DeleteThemeAlert);
-                    alertDialog$Builder.k(LocaleController.getString("Delete", R.string.Delete), new vl0(22, mb1Var, j6Var));
+                    alertDialog$Builder.k(LocaleController.getString("Delete", R.string.Delete), new vl0(22, sb1Var, j6Var));
                     alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
                     org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
                     themeActivity.showDialog(d2Var);

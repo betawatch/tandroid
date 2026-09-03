@@ -22,9 +22,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.qd1;
+import org.telegram.ui.vd1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -421,7 +421,7 @@ public final /* synthetic */ class g0 implements View.OnClickListener {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(x0Var.e, z10 ? 1.0f : 0.0f);
                 x0Var.f = ofFloat;
                 ofFloat.addUpdateListener(new f2.d0(x0Var, 11));
-                x0Var.f.addListener(new qd1(16, x0Var, z10));
+                x0Var.f.addListener(new vd1(16, x0Var, z10));
                 x0Var.f.setDuration(320L);
                 x0Var.f.setInterpolator(pr.h);
                 x0Var.f.start();

@@ -28,12 +28,12 @@ import java.util.ArrayList;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
-import org.telegram.ui.Components.lw0;
-import org.telegram.ui.Components.nw0;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.mw0;
 import org.telegram.ui.Components.nz;
-import org.telegram.ui.t01;
+import org.telegram.ui.y01;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class l5 extends View implements Drawable.Callback {
     public View.OnClickListener A0;
@@ -300,7 +300,7 @@ public class l5 extends View implements Drawable.Callback {
                     } else {
                         Layout.Alignment alignment = getAlignment();
                         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-                        StaticLayout c3 = lw0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.u0, false);
+                        StaticLayout c3 = kw0.c(charSequence4, textPaint, i16, alignment, 0.0f, false, truncateAt, i16, this.u0, false);
                         i14 = i16;
                         this.e = c3;
                         if (c3 != null) {
@@ -318,12 +318,12 @@ public class l5 extends View implements Drawable.Callback {
                             }
                             CharSequence charSequence6 = subSequence2;
                             this.f = new StaticLayout(charSequence6, 0, charSequence6.length(), textPaint, this.M ? AndroidUtilities.dp(2000.0f) : i14 + AndroidUtilities.dp(8.0f), getAlignment(), 1.0f, 0.0f, false);
-                            this.e = lw0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.q0, getAlignment(), 0.0f, false, truncateAt, i14 + this.q0, this.u0, false);
+                            this.e = kw0.c(valueOf2, textPaint, i14 + AndroidUtilities.dp(8.0f) + this.q0, getAlignment(), 0.0f, false, truncateAt, i14 + this.q0, this.u0, false);
                         }
                     }
                     i13 = i14;
                 } else if (this.r > 1) {
-                    StaticLayout c10 = lw0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
+                    StaticLayout c10 = kw0.c(charSequence4, textPaint, i16, getAlignment(), 0.0f, false, TextUtils.TruncateAt.END, i16, this.r, false);
                     i13 = i16;
                     this.c = c10;
                 } else {
@@ -430,17 +430,17 @@ public class l5 extends View implements Drawable.Callback {
         return true;
     }
 
-    public final void g(nw0 nw0Var, String str) {
+    public final void g(mw0 mw0Var, String str) {
         Drawable drawable = this.y;
-        if (drawable == nw0Var) {
+        if (drawable == mw0Var) {
             return;
         }
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.y = nw0Var;
-        if (nw0Var != null) {
-            nw0Var.setCallback(this);
+        this.y = mw0Var;
+        if (mw0Var != null) {
+            mw0Var.setCallback(this);
         }
         f();
         this.B = str;
@@ -1188,7 +1188,7 @@ public class l5 extends View implements Drawable.Callback {
                 getParent().requestDisallowInterceptTouchEvent(true);
                 Object obj = this.w;
                 if (obj instanceof k5) {
-                    ((t01) ((k5) obj)).f.c(true);
+                    ((y01) ((k5) obj)).f.c(true);
                 }
             } else if (motionEvent.getAction() == 2 && this.B0) {
                 if (Math.abs(motionEvent.getX() - this.C0) >= AndroidUtilities.touchSlop || Math.abs(motionEvent.getY() - this.D0) >= AndroidUtilities.touchSlop) {
@@ -1196,7 +1196,7 @@ public class l5 extends View implements Drawable.Callback {
                     getParent().requestDisallowInterceptTouchEvent(false);
                     Object obj2 = this.w;
                     if (obj2 instanceof k5) {
-                        ((t01) ((k5) obj2)).f.c(false);
+                        ((y01) ((k5) obj2)).f.c(false);
                     }
                 }
             } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -1204,7 +1204,7 @@ public class l5 extends View implements Drawable.Callback {
                     this.A0.onClick(this);
                     Object obj3 = this.w;
                     if (obj3 instanceof k5) {
-                        ((t01) ((k5) obj3)).f.c(false);
+                        ((y01) ((k5) obj3)).f.c(false);
                     }
                 }
                 this.B0 = false;

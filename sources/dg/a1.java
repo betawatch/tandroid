@@ -18,9 +18,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.ts;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a1 implements Runnable {
     public final /* synthetic */ int a;
@@ -202,9 +202,9 @@ public final /* synthetic */ class a1 implements Runnable {
         this.f = aVar;
     }
 
-    public /* synthetic */ a1(x51 x51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z4, TLObject tLObject, int i11) {
+    public /* synthetic */ a1(w51 w51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z4, TLObject tLObject, int i11) {
         this.a = i11;
-        this.d = x51Var;
+        this.d = w51Var;
         this.c = i10;
         this.e = tL_messages_searchGlobal;
         this.b = z4;

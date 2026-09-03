@@ -42,15 +42,15 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.x4;
 import org.telegram.ui.Components.yc0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class b1 extends sa implements NotificationCenter.NotificationCenterDelegate {
     public final ArrayList U;
@@ -133,22 +133,22 @@ public final class b1 extends sa implements NotificationCenter.NotificationCente
         lVar.C = false;
         lVar.m = false;
         this.d.setItemAnimator(lVar);
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i14 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f));
+        sl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(68.0f));
         this.d.setOnScrollListener(new a1());
         this.d.setOnItemClickListener(new v0(0, this, p2Var));
         TLRPC.Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-j10));
         this.Y = chat;
         ig.b bVar = this.d0;
         ArrayList arrayList = this.U;
-        tl0 tl0Var2 = this.d;
+        sl0 sl0Var2 = this.d;
         r0 r0Var = new r0(this);
         r0 r0Var2 = new r0(this);
         r0 r0Var3 = new r0(this);
         bVar.e = arrayList;
         bVar.v = chat;
-        bVar.f = tl0Var2;
+        bVar.f = sl0Var2;
         bVar.h = r0Var;
         bVar.n = r0Var2;
         bVar.s = r0Var3;
@@ -560,10 +560,10 @@ public final class b1 extends sa implements NotificationCenter.NotificationCente
                 }
             } else {
                 jg.d dVar = (jg.d) view;
-                tl0 tl0Var = b1Var.d;
+                sl0 sl0Var = b1Var.d;
                 if (dVar.b()) {
-                    for (int i15 = 0; i15 < tl0Var.getChildCount(); i15++) {
-                        View childAt = tl0Var.getChildAt(i15);
+                    for (int i15 = 0; i15 < sl0Var.getChildCount(); i15++) {
+                        View childAt = sl0Var.getChildAt(i15);
                         if (childAt.getClass().isInstance(dVar)) {
                             ((jg.d) childAt).c(childAt == dVar, true);
                         }
@@ -1261,8 +1261,8 @@ public final class b1 extends sa implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        tl0 tl0Var;
-        if (i10 == NotificationCenter.starGiveawayOptionsLoaded && (tl0Var = this.d) != null && tl0Var.D) {
+        sl0 sl0Var;
+        if (i10 == NotificationCenter.starGiveawayOptionsLoaded && (sl0Var = this.d) != null && sl0Var.D) {
             a0(true, true);
         }
     }
@@ -1277,7 +1277,7 @@ public final class b1 extends sa implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
+    public final rl0 v(sl0 sl0Var) {
         ig.b bVar = new ig.b(this.resourcesProvider);
         this.d0 = bVar;
         return bVar;

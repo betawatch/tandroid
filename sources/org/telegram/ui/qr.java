@@ -32,7 +32,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class qr extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -90,7 +90,7 @@ public final class qr extends org.telegram.ui.ActionBar.p2 implements Notificati
     public mr a;
     public int a0;
     public int a1;
-    public org.telegram.ui.Components.ax0 b;
+    public org.telegram.ui.Components.zw0 b;
     public int b0;
     public final int b1;
     public mh.d1 c;
@@ -1795,9 +1795,9 @@ public final class qr extends org.telegram.ui.ActionBar.p2 implements Notificati
         frameLayout3.addView(radialProgressView, k7.c6.e(-2, -2, 17));
         this.z1.setVisibility(8);
         this.A1.setVisibility(8);
-        org.telegram.ui.Components.ax0 ax0Var = new org.telegram.ui.Components.ax0(context, frameLayout3, 1, null);
-        this.b = ax0Var;
-        ax0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        org.telegram.ui.Components.zw0 zw0Var = new org.telegram.ui.Components.zw0(context, frameLayout3, 1, null);
+        this.b = zw0Var;
+        zw0Var.d.setText(LocaleController.getString(R.string.NoResult));
         this.b.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
         this.b.setVisibility(8);
         this.b.setAnimateLayoutChange(true);
@@ -1806,7 +1806,7 @@ public final class qr extends org.telegram.ui.ActionBar.p2 implements Notificati
         this.b.addView(frameLayout3, 0);
         mh.d1 d1Var = new mh.d1(this, context, 7);
         this.c = d1Var;
-        d1Var.p1();
+        d1Var.o1();
         mh.d1 d1Var2 = this.c;
         cr crVar = new cr(this);
         this.d = crVar;
@@ -1923,7 +1923,7 @@ public final class qr extends org.telegram.ui.ActionBar.p2 implements Notificati
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
         f fVar = new f(this, 10);
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 16, new Class[]{org.telegram.ui.Cells.m4.class, org.telegram.ui.Cells.b5.class, org.telegram.ui.Cells.y4.class, org.telegram.ui.Cells.r8.class, org.telegram.ui.Cells.aa.class, org.telegram.ui.Components.vv0.class}, null, null, null, org.telegram.ui.ActionBar.k6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 16, new Class[]{org.telegram.ui.Cells.m4.class, org.telegram.ui.Cells.b5.class, org.telegram.ui.Cells.y4.class, org.telegram.ui.Cells.r8.class, org.telegram.ui.Cells.aa.class, org.telegram.ui.Components.uv0.class}, null, null, null, org.telegram.ui.ActionBar.k6.d6));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.k6.a7));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 32768, null, null, null, null, org.telegram.ui.ActionBar.k6.s8));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.k6.v8));
@@ -1961,8 +1961,8 @@ public final class qr extends org.telegram.ui.ActionBar.p2 implements Notificati
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 262144, new Class[]{org.telegram.ui.Cells.y4.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.m6));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 262144, new Class[]{org.telegram.ui.Cells.y4.class}, new String[]{"imageView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.u6));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 262144, new Class[]{org.telegram.ui.Cells.y4.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.v6));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 0, new Class[]{org.telegram.ui.Components.ax0.class}, new String[]{"title"}, null, null, -1, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 0, new Class[]{org.telegram.ui.Components.ax0.class}, new String[]{"subtitle"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 0, new Class[]{org.telegram.ui.Components.zw0.class}, new String[]{"title"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 0, new Class[]{org.telegram.ui.Components.zw0.class}, new String[]{"subtitle"}, null, null, -1, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.b.d, 4, null, null, null, null, i11));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.b.e, 4, null, null, null, null, i12));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.c, 0, new Class[]{org.telegram.ui.Cells.b5.class}, null, org.telegram.ui.ActionBar.k6.r0, null, org.telegram.ui.ActionBar.k6.J7));
@@ -2188,7 +2188,7 @@ public final class qr extends org.telegram.ui.ActionBar.p2 implements Notificati
                     }, true);
                 }
             }
-            H.W(qrVar.c.V0(view, false));
+            H.W(qrVar.c.U0(view, false));
             H.S = 190;
             boolean z15 = H.x() > 0;
             if (z4 || !z15) {
@@ -2224,7 +2224,7 @@ public final class qr extends org.telegram.ui.ActionBar.p2 implements Notificati
         uq uqVar = new uq(this, j12, i11, tLObject, tL_chatAdminRights, tL_chatBannedRights2, str, z12);
         long j14 = j12;
         org.telegram.ui.Components.q70 H2 = org.telegram.ui.Components.q70.H(this, view);
-        H2.W(this.c.V0(view, false));
+        H2.W(this.c.U0(view, false));
         H2.l(R.drawable.msg_admins, LocaleController.getString(z18 ? R.string.EditAdminRights : R.string.SetAsAdmin), new zi(uqVar, 11), z11);
         H2.l(R.drawable.msg_permissions, LocaleController.getString("ChangePermissions", R.string.ChangePermissions), new ih((Object) this, (Object) tLObject, (Object) user, (Object) uqVar, 4), z21);
         boolean z22 = ChatObject.canBlockUsers(this.r) && z12;
@@ -2372,9 +2372,9 @@ public final class qr extends org.telegram.ui.ActionBar.p2 implements Notificati
         if (mrVar != null) {
             mrVar.l();
         }
-        org.telegram.ui.Components.ax0 ax0Var = this.b;
-        if (ax0Var != null) {
-            ax0Var.requestLayout();
+        org.telegram.ui.Components.zw0 zw0Var = this.b;
+        if (zw0Var != null) {
+            zw0Var.requestLayout();
         }
     }
 
@@ -2457,9 +2457,9 @@ public final class qr extends org.telegram.ui.ActionBar.p2 implements Notificati
         }
         if (ChatObject.isChannel(this.r)) {
             this.N = true;
-            org.telegram.ui.Components.ax0 ax0Var = this.b;
-            if (ax0Var != null) {
-                ax0Var.e(true, false);
+            org.telegram.ui.Components.zw0 zw0Var = this.b;
+            if (zw0Var != null) {
+                zw0Var.e(true, false);
             }
             mr mrVar2 = this.a;
             if (mrVar2 != null) {

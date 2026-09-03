@@ -18,7 +18,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class aa extends org.telegram.ui.ActionBar.p2 {
     public z9 a;
@@ -235,7 +235,7 @@ public final class aa extends org.telegram.ui.ActionBar.p2 {
     @Override // org.telegram.ui.ActionBar.p2
     public final void onTransitionAnimationEnd(boolean z4, boolean z10) {
         if (z4) {
-            AndroidUtilities.runOnUIThread(new tt0(this, 18), 100L);
+            AndroidUtilities.runOnUIThread(new yt0(this, 18), 100L);
         }
     }
 }

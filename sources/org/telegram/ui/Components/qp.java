@@ -14,11 +14,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class qp extends FrameLayout {
     public final TextView[] a;
-    public final lj0[] b;
+    public final kj0[] b;
     public final ImageView c;
     public AnimatorSet d;
     public fg e;
@@ -28,7 +28,7 @@ public final class qp extends FrameLayout {
     public qp(Activity activity, org.telegram.ui.ActionBar.g6 g6Var) {
         super(activity);
         this.a = new TextView[2];
-        this.b = new lj0[2];
+        this.b = new kj0[2];
         this.h = g6Var;
         FrameLayout frameLayout = new FrameLayout(activity);
         frameLayout.setBackground(org.telegram.ui.ActionBar.k6.b0(AndroidUtilities.dp(6.0f), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.qf, g6Var)));
@@ -36,7 +36,7 @@ public final class qp extends FrameLayout {
         frameLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
         addView(frameLayout, k7.c6.d(-2, -2.0f, 51, 0.0f, 0.0f, 0.0f, 6.0f));
         while (i10 < 2) {
-            this.b[i10] = new lj0(activity);
+            this.b[i10] = new kj0(activity);
             this.b[i10].setScaleType(ImageView.ScaleType.CENTER);
             frameLayout.addView(this.b[i10], k7.c6.d(24, 24.0f, 51, 0.0f, i10 == 0 ? 0.0f : 24.0f, 0.0f, 0.0f));
             this.a[i10] = new TextView(activity);

@@ -15,18 +15,19 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.b8;
 import org.telegram.ui.Components.c8;
 import org.telegram.ui.Components.ov;
-import org.telegram.ui.Components.ry0;
-import org.telegram.ui.Components.vm;
+import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.um;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.a20;
+import org.telegram.ui.c81;
 import org.telegram.ui.fn0;
 import org.telegram.ui.qt;
+import org.telegram.ui.v10;
 import org.telegram.ui.vl0;
 import org.telegram.ui.vy;
-import org.telegram.ui.w10;
 import org.telegram.ui.yy;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i1 implements View.OnTouchListener {
     public final /* synthetic */ int a;
@@ -75,10 +76,10 @@ public final /* synthetic */ class i1 implements View.OnTouchListener {
                 c8Var.E.r(c8Var.n.T(xVar));
                 return false;
             case 2:
-                s6 = qt.q().s(motionEvent, r0.h, (vm) this.c, r0.K, ((ov) this.b).resourcesProvider);
+                s6 = qt.q().s(motionEvent, r0.h, (um) this.c, r0.K, ((ov) this.b).resourcesProvider);
                 return s6;
             case 3:
-                s9 = qt.q().s(motionEvent, r0.e, (org.telegram.ui.Components.k) this.c, r0.getPreviewDelegate(), ((ry0) this.b).b);
+                s9 = qt.q().s(motionEvent, r0.e, (org.telegram.ui.Components.k) this.c, r0.getPreviewDelegate(), ((qy0) this.b).b);
                 return s9;
             case 4:
                 vy vyVar = (vy) this.b;
@@ -92,12 +93,12 @@ public final /* synthetic */ class i1 implements View.OnTouchListener {
                 return false;
             case 5:
                 a20 a20Var = (a20) this.b;
-                w10 w10Var = (w10) this.c;
+                v10 v10Var = (v10) this.c;
                 if (motionEvent.getAction() != 0) {
                     return false;
                 }
                 FiltersSetupActivity filtersSetupActivity = a20Var.e;
-                filtersSetupActivity.c.r(filtersSetupActivity.a.T(w10Var));
+                filtersSetupActivity.c.r(filtersSetupActivity.a.T(v10Var));
                 return false;
             case 6:
                 fn0 fn0Var = (fn0) this.b;
@@ -145,13 +146,13 @@ public final /* synthetic */ class i1 implements View.OnTouchListener {
                 }
                 return true;
             default:
-                qh.i1 i1Var = (qh.i1) this.b;
+                qh.h1 h1Var = (qh.h1) this.b;
                 ag.h hVar = (ag.h) this.c;
                 qt q10 = qt.q();
-                qh.e1 e1Var = i1Var.b;
-                qh.f1 f1Var = i1Var.f;
-                g6Var = i1Var.r.resourcesProvider;
-                return q10.s(motionEvent, e1Var, hVar, f1Var, g6Var);
+                c81 c81Var = h1Var.b;
+                qh.e1 e1Var = h1Var.f;
+                g6Var = h1Var.r.resourcesProvider;
+                return q10.s(motionEvent, c81Var, hVar, e1Var, g6Var);
         }
     }
 }

@@ -12,7 +12,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -76,7 +76,7 @@ public final /* synthetic */ class i implements Utilities.CallbackReturn {
                         }
                     }, tL_aiComposeTone.creator);
                     F.c(R.drawable.msg_share, LocaleController.getString(R.string.AIEditorShareStyle), new org.telegram.ui.ih(f0Var, tL_aiComposeTone, context, g6Var, 6), false);
-                    F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new org.telegram.ui.mp(6, f0Var, tL_aiComposeTone));
+                    F.m(!tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorRemoveStyle), true, new org.telegram.ui.mp(5, f0Var, tL_aiComposeTone));
                     final int i11 = 1;
                     F.m(tL_aiComposeTone.creator, R.drawable.msg_delete, LocaleController.getString(R.string.AIEditorDeleteStyle), true, new Runnable() { // from class: org.telegram.ui.Components.f
                         @Override // java.lang.Runnable
@@ -123,17 +123,17 @@ public final /* synthetic */ class i implements Utilities.CallbackReturn {
                 MessageObject messageObject = ((fh.h) this.d).b;
                 break;
             case 2:
-                tl0 tl0Var = (tl0) this.b;
+                sl0 sl0Var = (sl0) this.b;
                 Utilities.CallbackReturn callbackReturn = (Utilities.CallbackReturn) this.c;
                 SparseIntArray sparseIntArray = (SparseIntArray) this.d;
                 View view = (View) obj;
                 try {
-                    if (view.getParent() != tl0Var) {
+                    if (view.getParent() != sl0Var) {
                         break;
                     } else {
                         Boolean bool = (Boolean) callbackReturn.run(view);
                         boolean booleanValue = bool.booleanValue();
-                        f2.m1 T = tl0Var.T(view);
+                        f2.m1 T = sl0Var.T(view);
                         if (T != null) {
                             sparseIntArray.put(T.f, booleanValue ? 1 : 0);
                         }
@@ -143,61 +143,61 @@ public final /* synthetic */ class i implements Utilities.CallbackReturn {
                     return Boolean.FALSE;
                 }
             default:
-                qh.b5 b5Var = (qh.b5) this.b;
+                qh.a5 a5Var = (qh.a5) this.b;
                 boolean[] zArr = (boolean[]) this.c;
-                qh.l4 l4Var = (qh.l4) this.d;
+                qh.k4 k4Var = (qh.k4) this.d;
                 Integer num = (Integer) obj;
-                qh.w4 w4Var = b5Var.O0;
-                qh.q4 q4Var = b5Var.D1;
+                qh.v4 v4Var = a5Var.O0;
+                qh.p4 p4Var = a5Var.D1;
                 if (num.intValue() == 0) {
                     zArr[0] = false;
-                    b5Var.L0(null, new qh.d4(b5Var, 0));
+                    a5Var.L0(null, new qh.c4(a5Var, 0));
                     break;
                 } else if (num.intValue() == 5) {
                     zArr[0] = false;
-                    qh.ya.a(true, new org.telegram.ui.web.v1(4, b5Var, l4Var));
+                    qh.xa.a(true, new org.telegram.ui.web.a2(3, a5Var, k4Var));
                     break;
                 } else if (num.intValue() == 2) {
-                    l4Var.dismiss();
-                    qh.ca caVar = ((qh.f9) b5Var).x2;
-                    caVar.Z0.I.b(true);
-                    caVar.w();
-                    caVar.t(true);
-                    caVar.f(true);
+                    k4Var.dismiss();
+                    qh.ba baVar = ((qh.e9) a5Var).x2;
+                    baVar.Z0.I.b(true);
+                    baVar.w();
+                    baVar.t(true);
+                    baVar.f(true);
                     break;
                 } else if (num.intValue() == 1) {
                     zArr[0] = false;
-                    qh.k6 k6Var = new qh.k6(b5Var.getContext(), false, null, new org.telegram.ui.web.d1(b5Var, 8), new oh.b());
-                    k6Var.setOnDismissListener(new qh.a4(b5Var, 2));
-                    k6Var.show();
+                    qh.i6 i6Var = new qh.i6(a5Var.getContext(), false, null, new org.telegram.ui.web.d1(a5Var, 8), new oh.b());
+                    i6Var.setOnDismissListener(new qh.z3(a5Var, 2));
+                    i6Var.show();
                     break;
                 } else if (num.intValue() == 3) {
-                    b5Var.i2 = true;
-                    b5Var.d0(b5Var.l0(true));
+                    a5Var.i2 = true;
+                    a5Var.d0(a5Var.l0(true));
                     break;
                 } else if (num.intValue() == 4) {
-                    if (UserConfig.getInstance(b5Var.C1).isPremium()) {
+                    if (UserConfig.getInstance(a5Var.C1).isPremium()) {
                         int i12 = 0;
-                        for (int i13 = 0; i13 < w4Var.getChildCount(); i13++) {
-                            if (w4Var.getChildAt(i13) instanceof eg.g1) {
+                        for (int i13 = 0; i13 < v4Var.getChildCount(); i13++) {
+                            if (v4Var.getChildAt(i13) instanceof eg.g1) {
                                 i12++;
                             }
                         }
                         if (i12 >= 3) {
-                            new qc(l4Var.container, q4Var).M(LocaleController.getString(R.string.StoryLinkLimitTitle), LocaleController.formatPluralString("StoryLinkLimitMessage", 3, new Object[0]), R.raw.linkbroken).k(true);
+                            new qc(k4Var.container, p4Var).M(LocaleController.getString(R.string.StoryLinkLimitTitle), LocaleController.formatPluralString("StoryLinkLimitMessage", 3, new Object[0]), R.raw.linkbroken).k(true);
                             break;
                         } else {
                             zArr[0] = false;
-                            b5Var.K0(null);
-                            l4Var.dismiss();
+                            a5Var.K0(null);
+                            k4Var.dismiss();
                             break;
                         }
                     } else {
                         try {
-                            l4Var.container.performHapticFeedback(3);
+                            k4Var.container.performHapticFeedback(3);
                         } catch (Exception unused2) {
                         }
-                        new qc(l4Var.container, q4Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.StoryLinkPremium), new qh.a4(b5Var, 1))).k(true);
+                        new qc(k4Var.container, p4Var).Q(R.raw.star_premium_2, 36, AndroidUtilities.premiumText(LocaleController.getString(R.string.StoryLinkPremium), new qh.z3(a5Var, 1))).k(true);
                         break;
                     }
                 } else {

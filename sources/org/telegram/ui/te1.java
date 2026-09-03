@@ -1,114 +1,220 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class te1 implements Utilities.Callback {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object g;
+public final class te1 extends f2.j0 {
+    public boolean I;
+    public final /* synthetic */ sf1 J;
 
-    public /* synthetic */ te1(int i10, long j10, Context context, TL_payments.connectedBotStarRef connectedbotstarref, org.telegram.ui.ActionBar.h3 h3Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        this.b = i10;
-        this.d = connectedbotstarref;
-        this.e = h3Var;
-        this.f = context;
-        this.c = j10;
-        this.g = g6Var;
+    public te1(sf1 sf1Var) {
+        this.J = sf1Var;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        int i10;
-        SpannableStringBuilder replaceTags;
-        int i11 = this.a;
-        Object obj2 = this.g;
-        Object obj3 = this.f;
-        Object obj4 = this.e;
-        Object obj5 = this.d;
-        switch (i11) {
-            case 0:
-                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = (TLRPC.TL_messages_invitedUsers) obj4;
-                int[] iArr = (int[]) obj3;
-                ArrayList arrayList = (ArrayList) obj2;
-                TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers2 = (TLRPC.TL_messages_invitedUsers) obj;
-                mf1 mf1Var = ((we1) obj5).b;
-                if (tL_messages_invitedUsers2 != null) {
-                    tL_messages_invitedUsers.missing_invitees.addAll(tL_messages_invitedUsers2.missing_invitees);
-                }
-                int i12 = iArr[0] + 1;
-                iArr[0] = i12;
-                if (i12 == this.b) {
-                    boolean isEmpty = tL_messages_invitedUsers.missing_invitees.isEmpty();
-                    long j10 = this.c;
-                    if (!isEmpty) {
-                        TLRPC.Chat chat = mf1Var.getMessagesController().getChat(Long.valueOf(j10));
-                        i10 = ((org.telegram.ui.ActionBar.p2) mf1Var).currentAccount;
-                        org.telegram.ui.Components.z4.f(i10, chat, tL_messages_invitedUsers);
-                        break;
-                    } else {
-                        org.telegram.ui.Components.qc a02 = org.telegram.ui.Components.qc.a0(mf1Var);
-                        TLRPC.Chat chat2 = mf1Var.getMessagesController().getChat(Long.valueOf(j10));
-                        a02.getClass();
-                        if (arrayList.size() == 0) {
-                            replaceTags = null;
-                        } else if (arrayList.size() != 1) {
-                            replaceTags = ChatObject.isChannelAndNotMegaGroup(chat2) ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddedMembersToChannel", arrayList.size(), new Object[0])) : AndroidUtilities.replaceTags(LocaleController.formatPluralString("AddedSubscribersToChannel", arrayList.size(), new Object[0]));
-                        } else if (ChatObject.isChannelAndNotMegaGroup(chat2)) {
-                            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("HasBeenAddedToChannel", R.string.HasBeenAddedToChannel, "**" + UserObject.getFirstName((TLRPC.User) arrayList.get(0)) + "**"));
-                        } else {
-                            replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("HasBeenAddedToGroup", R.string.HasBeenAddedToGroup, "**" + UserObject.getFirstName((TLRPC.User) arrayList.get(0)) + "**"));
-                        }
-                        a02.V(arrayList, replaceTags, null, null).j();
-                        break;
-                    }
-                }
-                break;
-            default:
-                TL_payments.connectedBotStarRef connectedbotstarref = (TL_payments.connectedBotStarRef) obj5;
-                org.telegram.ui.ActionBar.h3 h3Var = (org.telegram.ui.ActionBar.h3) obj4;
-                Context context = (Context) obj3;
-                org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj2;
-                TL_payments.connectedBotStarRef connectedbotstarref2 = (TL_payments.connectedBotStarRef) obj;
-                int i13 = this.b;
-                long j11 = this.c;
-                if (connectedbotstarref2 != null) {
-                    h3Var.dismiss();
-                    sh.d3.H0(context, i13, connectedbotstarref2, j11, g6Var);
-                    break;
-                } else {
-                    TLRPC.User user = MessagesController.getInstance(i13).getUser(Long.valueOf(connectedbotstarref.bot_id));
-                    if (user != null) {
-                        MessagesController.getInstance(i13).loadFullUser(user, 0, true, new sh.s2(h3Var, context, i13, j11, g6Var, 1));
-                        break;
-                    }
-                }
-                break;
+    @Override // f2.j0, f2.w0
+    public final void b0(bf.f fVar, f2.j1 j1Var) {
+        if (BuildVars.DEBUG_PRIVATE_VERSION) {
+            try {
+                super.b0(fVar, j1Var);
+                return;
+            } catch (IndexOutOfBoundsException unused) {
+                throw new RuntimeException("Inconsistency detected. ");
+            }
+        }
+        try {
+            super.b0(fVar, j1Var);
+        } catch (IndexOutOfBoundsException e6) {
+            FileLog.e(e6);
+            AndroidUtilities.runOnUIThread(new sz0(this, 18));
         }
     }
 
-    public /* synthetic */ te1(we1 we1Var, TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers, int[] iArr, int i10, ArrayList arrayList, long j10) {
-        this.d = we1Var;
-        this.e = tL_messages_invitedUsers;
-        this.f = iArr;
-        this.b = i10;
-        this.g = arrayList;
-        this.c = j10;
+    @Override // f2.j0
+    public final void b1(View view, View view2, int i10, int i11) {
+        this.I = true;
+        super.b1(view, view2, i10, i11);
+        this.I = false;
+    }
+
+    @Override // f2.j0
+    public final void h1(int i10, int i11) {
+        if (this.I) {
+            i11 -= this.J.K.getPaddingTop();
+        }
+        super.h1(i10, i11);
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00c6  */
+    /* JADX WARN: Removed duplicated region for block: B:40:0x00ca  */
+    @Override // f2.j0, f2.w0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int o0(int i10, bf.f fVar, f2.j1 j1Var) {
+        int i11;
+        df1 df1Var;
+        ww wwVar;
+        float f10;
+        int i12;
+        sf1 sf1Var = this.J;
+        df1 df1Var2 = sf1Var.K;
+        boolean z4 = false;
+        if (df1Var2.U1) {
+            return 0;
+        }
+        boolean z10 = df1Var2.getScrollState() == 1;
+        int paddingTop = sf1Var.K.getPaddingTop();
+        if (i10 < 0 && sf1Var.x > 0 && sf1Var.y == 2) {
+            sf1Var.K.setOverScrollMode(0);
+            int L0 = sf1Var.C.L0();
+            if (L0 == 0) {
+                View m9 = sf1Var.C.m(L0);
+                if (m9 != null) {
+                    m9.setTranslationX(0.0f);
+                }
+                if (m9 != null && m9.getBottom() - paddingTop <= AndroidUtilities.dp(1.0f)) {
+                    L0 = 1;
+                }
+            }
+            if (!z10) {
+                View m10 = sf1Var.C.m(L0);
+                if (m10 != null) {
+                    int e6 = e2.c.e(L0, 1, AndroidUtilities.dp(SharedConfig.useThreeLinesLayout ? 78.0f : 72.0f) + 1, -(m10.getTop() - paddingTop));
+                    if (e6 < Math.abs(i10)) {
+                        i11 = -e6;
+                    }
+                }
+            } else if (L0 == 0) {
+                View m11 = sf1Var.C.m(L0);
+                float top = ((m11.getTop() - paddingTop) / m11.getMeasuredHeight()) + 1.0f;
+                if (top > 1.0f) {
+                    top = 1.0f;
+                }
+                sf1Var.K.setOverScrollMode(2);
+                i11 = (int) ((0.45f - (top * 0.25f)) * i10);
+                if (i11 > -1) {
+                    i11 = -1;
+                }
+            }
+            df1Var = sf1Var.K;
+            if (df1Var.c3 != 0.0f && i10 > 0 && z10) {
+                f10 = ((int) r15) - i10;
+                if (f10 >= 0.0f) {
+                    i12 = (int) f10;
+                    f10 = 0.0f;
+                } else {
+                    i12 = 0;
+                }
+                df1Var.setViewsOffset(f10);
+                i11 = i12;
+            }
+            if (sf1Var.y != 0 || sf1Var.x <= 0) {
+                return super.o0(i11, fVar, j1Var);
+            }
+            int o02 = super.o0(i11, fVar, j1Var);
+            ww wwVar2 = sf1Var.w;
+            if (wwVar2 != null) {
+                wwVar2.a = o02;
+            }
+            int L02 = sf1Var.C.L0();
+            View m12 = L02 == 0 ? sf1Var.C.m(L02) : null;
+            if (m12 != null) {
+                m12.setTranslationX(0.0f);
+            }
+            int i13 = i11;
+            if (L02 != 0 || m12 == null || m12.getBottom() - paddingTop < AndroidUtilities.dp(4.0f)) {
+                sf1Var.V = 0L;
+                sf1Var.W = false;
+                sf1Var.y = 2;
+                ww wwVar3 = sf1Var.w;
+                if (wwVar3 != null) {
+                    ValueAnimator valueAnimator = wwVar3.z;
+                    if (valueAnimator != null) {
+                        valueAnimator.cancel();
+                    }
+                    org.telegram.ui.Cells.r2 r2Var = wwVar3.H;
+                    if (r2Var != null) {
+                        r2Var.removeCallbacks(wwVar3.d0);
+                    }
+                    wwVar3.x = 0.0f;
+                    wwVar3.y = false;
+                    wwVar3.e0 = false;
+                    sf1Var.w.f(0.0f);
+                    sf1Var.w.I = sf1Var.K;
+                }
+            } else {
+                if (sf1Var.V == 0) {
+                    sf1Var.V = System.currentTimeMillis();
+                }
+                if (sf1Var.y == 2 && (wwVar = sf1Var.w) != null) {
+                    wwVar.h();
+                }
+                float top2 = ((m12.getTop() - paddingTop) / m12.getMeasuredHeight()) + 1.0f;
+                if (top2 > 1.0f) {
+                    top2 = 1.0f;
+                }
+                long currentTimeMillis = System.currentTimeMillis() - sf1Var.V;
+                if (top2 > 0.85f && currentTimeMillis > 220) {
+                    z4 = true;
+                }
+                if (sf1Var.W != z4) {
+                    sf1Var.W = z4;
+                    if (sf1Var.y == 2) {
+                        try {
+                            sf1Var.K.performHapticFeedback(3, 2);
+                        } catch (Exception unused) {
+                        }
+                        ww wwVar4 = sf1Var.w;
+                        if (wwVar4 != null) {
+                            wwVar4.a(z4);
+                        }
+                    }
+                }
+                if (sf1Var.y == 2 && i13 - o02 != 0 && i10 < 0 && z10) {
+                    float dp = 1.0f - (sf1Var.K.c3 / AndroidUtilities.dp(72.0f));
+                    df1 df1Var3 = sf1Var.K;
+                    df1Var3.setViewsOffset(df1Var3.c3 - ((i10 * 0.2f) * dp));
+                }
+                ww wwVar5 = sf1Var.w;
+                if (wwVar5 != null) {
+                    wwVar5.f(top2);
+                    sf1Var.w.I = sf1Var.K;
+                }
+            }
+            if (m12 != null) {
+                m12.invalidate();
+            }
+            return o02;
+        }
+        i11 = i10;
+        df1Var = sf1Var.K;
+        if (df1Var.c3 != 0.0f) {
+            f10 = ((int) r15) - i10;
+            if (f10 >= 0.0f) {
+            }
+            df1Var.setViewsOffset(f10);
+            i11 = i12;
+        }
+        if (sf1Var.y != 0) {
+        }
+        return super.o0(i11, fVar, j1Var);
+    }
+
+    @Override // f2.j0, f2.w0
+    public final void v0(RecyclerView recyclerView, f2.j1 j1Var, int i10) {
+        if (this.J.x > 0 && i10 == 1) {
+            super.v0(recyclerView, j1Var, i10);
+            return;
+        }
+        xh.o oVar = new xh.o(recyclerView.getContext(), 0);
+        oVar.a = i10;
+        w0(oVar);
     }
 }

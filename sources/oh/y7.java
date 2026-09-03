@@ -13,13 +13,13 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.bm0;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.h90;
 import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class y7 {
     public h90 a;
@@ -418,7 +418,7 @@ public final class y7 {
             x7 x7Var = new x7(this, 0);
             v7Var.r = z7Var;
             v7Var.s = x7Var;
-            new bm0(z7Var);
+            new am0(z7Var);
             v7Var.j.setCallback(z7Var);
             v7Var.h.a = z7Var;
             v7Var.i.a = z7Var;
@@ -429,7 +429,7 @@ public final class y7 {
             x7 x7Var2 = new x7(this, 1);
             v7Var3.r = z7Var;
             v7Var3.s = x7Var2;
-            new bm0(z7Var);
+            new am0(z7Var);
             v7Var3.j.setCallback(z7Var);
             v7Var3.h.a = z7Var;
             v7Var3.i.a = z7Var;

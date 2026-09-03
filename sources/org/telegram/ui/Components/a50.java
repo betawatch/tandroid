@@ -19,17 +19,17 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class a50 extends org.telegram.ui.ActionBar.h3 implements NotificationCenter.NotificationCenterDelegate {
     public final TextView[] b;
     public final TextView c;
     public final p80 d;
     public final org.telegram.ui.xn e;
-    public final lj0 f;
+    public final kj0 f;
     public final z40 h;
     public boolean n;
-    public final ij0 r;
+    public final hj0 r;
     public final TextView[] s;
     public final String v;
 
@@ -52,16 +52,16 @@ public final class a50 extends org.telegram.ui.ActionBar.h3 implements Notificat
         TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
         textView.setEllipsize(truncateAt);
         frameLayout.addView(textView, k7.c6.d(-2, -2.0f, 51, 17.0f, 20.0f, 17.0f, 0.0f));
-        ij0 ij0Var = new ij0(R.raw.import_finish, "" + R.raw.import_finish, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f), false, null);
-        this.r = ij0Var;
-        ij0Var.H(true);
-        lj0 lj0Var = new lj0(context);
-        this.f = lj0Var;
-        lj0Var.setAutoRepeat(true);
-        lj0Var.f(R.raw.import_loop, 120, 120, null);
-        lj0Var.d();
-        frameLayout.addView(lj0Var, k7.c6.d(160, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
-        lj0Var.getAnimatedDrawable().P(178, xpVar);
+        hj0 hj0Var = new hj0(R.raw.import_finish, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f), false, null);
+        this.r = hj0Var;
+        hj0Var.H(true);
+        kj0 kj0Var = new kj0(context);
+        this.f = kj0Var;
+        kj0Var.setAutoRepeat(true);
+        kj0Var.f(R.raw.import_loop, 120, 120, null);
+        kj0Var.d();
+        frameLayout.addView(kj0Var, k7.c6.d(160, 160.0f, 49, 17.0f, 79.0f, 17.0f, 0.0f));
+        kj0Var.getAnimatedDrawable().P(178, xpVar);
         TextView textView2 = new TextView(context);
         this.c = textView2;
         textView2.setTypeface(AndroidUtilities.bold());
@@ -86,17 +86,17 @@ public final class a50 extends org.telegram.ui.ActionBar.h3 implements Notificat
         z40Var.d = linearLayout;
         linearLayout.setOrientation(0);
         z40Var.addView(linearLayout, k7.c6.e(-2, -2, 17));
-        lj0 lj0Var2 = new lj0(context);
-        z40Var.c = lj0Var2;
+        kj0 kj0Var2 = new kj0(context);
+        z40Var.c = kj0Var2;
         int dp2 = AndroidUtilities.dp(20.0f);
         int i12 = org.telegram.ui.ActionBar.k6.Sh;
-        lj0Var2.setBackground(org.telegram.ui.ActionBar.k6.K(dp2, org.telegram.ui.ActionBar.k6.v0(i12, g6Var)));
-        lj0Var2.setScaleType(ImageView.ScaleType.CENTER);
-        lj0Var2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(i11, g6Var), PorterDuff.Mode.MULTIPLY));
-        lj0Var2.f(R.raw.import_check, 26, 26, null);
-        lj0Var2.setScaleX(0.8f);
-        lj0Var2.setScaleY(0.8f);
-        linearLayout.addView(lj0Var2, k7.c6.q(20, 20, 16));
+        kj0Var2.setBackground(org.telegram.ui.ActionBar.k6.K(dp2, org.telegram.ui.ActionBar.k6.v0(i12, g6Var)));
+        kj0Var2.setScaleType(ImageView.ScaleType.CENTER);
+        kj0Var2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(i11, g6Var), PorterDuff.Mode.MULTIPLY));
+        kj0Var2.f(R.raw.import_check, 26, 26, null);
+        kj0Var2.setScaleX(0.8f);
+        kj0Var2.setScaleY(0.8f);
+        linearLayout.addView(kj0Var2, k7.c6.q(20, 20, 16));
         TextView textView3 = new TextView(context);
         z40Var.b = textView3;
         textView3.setLines(1);
@@ -162,7 +162,7 @@ public final class a50 extends org.telegram.ui.ActionBar.h3 implements Notificat
         p80 p80Var = this.d;
         TextView[] textViewArr = this.b;
         TextView textView = this.c;
-        lj0 lj0Var = this.f;
+        kj0 kj0Var = this.f;
         if (i10 == i12) {
             if (objArr.length > 1) {
                 dismiss();
@@ -174,8 +174,8 @@ public final class a50 extends org.telegram.ui.ActionBar.h3 implements Notificat
                 m();
                 return;
             }
-            if (!this.n && ((180 - lj0Var.getAnimatedDrawable().Y) * 16.6d) + 3000.0d >= importingHistory.timeUntilFinish) {
-                lj0Var.setAutoRepeat(false);
+            if (!this.n && ((180 - kj0Var.getAnimatedDrawable().Y) * 16.6d) + 3000.0d >= importingHistory.timeUntilFinish) {
+                kj0Var.setAutoRepeat(false);
                 this.n = true;
             }
             textView.setText(String.format("%d%%", Integer.valueOf(importingHistory.uploadProgress)));
@@ -193,8 +193,8 @@ public final class a50 extends org.telegram.ui.ActionBar.h3 implements Notificat
                 m();
                 return;
             }
-            if (!this.n && ((180 - lj0Var.getAnimatedDrawable().Y) * 16.6d) + 3000.0d >= importingStickers.timeUntilFinish) {
-                lj0Var.setAutoRepeat(false);
+            if (!this.n && ((180 - kj0Var.getAnimatedDrawable().Y) * 16.6d) + 3000.0d >= importingStickers.timeUntilFinish) {
+                kj0Var.setAutoRepeat(false);
                 this.n = true;
             }
             textView.setText(String.format("%d%%", Integer.valueOf(importingStickers.uploadProgress)));

@@ -1,6 +1,6 @@
 package q5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract class y {
     public static final y5.c a;
@@ -26,9 +26,9 @@ public abstract class y {
     }
 
     public static String a(String str) {
-        if (str != null) {
-            return g0.K(new g0(0, str, null));
+        if (str == null) {
+            throw new IllegalArgumentException("applicationId cannot be null");
         }
-        throw new IllegalArgumentException("applicationId cannot be null");
+        return c0.K(new c0(str, null, false, 1));
     }
 }

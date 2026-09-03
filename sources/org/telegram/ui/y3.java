@@ -13,7 +13,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.ActionBar.u3 {
     public ValueAnimator B;
@@ -44,7 +44,7 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         p2Var.getResourceProvider();
         x3 x3Var = new x3(this, p2Var.getContext());
         this.c = x3Var;
-        new qh.i3(x3Var, true, new w3(this, 0));
+        new qh.h3(x3Var, true, new w3(this, 0));
     }
 
     @Override // org.telegram.ui.ActionBar.u3
@@ -106,7 +106,7 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         dismiss(true);
     }
 
-    public final void e(boolean z4, tt0 tt0Var) {
+    public final void e(boolean z4, yt0 yt0Var) {
         ValueAnimator valueAnimator = this.B;
         if (valueAnimator != null) {
             valueAnimator.cancel();
@@ -114,7 +114,7 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.x, z4 ? 1.0f : 0.0f);
         this.B = ofFloat;
         ofFloat.addUpdateListener(new v3(this, 2));
-        this.B.addListener(new androidx.fragment.app.g(this, z4, tt0Var, 3));
+        this.B.addListener(new androidx.fragment.app.g(this, z4, yt0Var, 3));
         this.B.setInterpolator(org.telegram.ui.Components.pr.h);
         this.B.setDuration(250L);
         this.B.start();
@@ -437,7 +437,7 @@ public final class y3 implements org.telegram.ui.ActionBar.l2, org.telegram.ui.A
         if (z4) {
             LaunchActivity.D1.v0.b(this);
         } else {
-            e(true, new tt0(this, 10));
+            e(true, new yt0(this, 10));
         }
         i();
         h();

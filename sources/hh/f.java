@@ -43,13 +43,13 @@ import org.telegram.ui.Components.d20;
 import org.telegram.ui.Components.h20;
 import org.telegram.ui.Components.p30;
 import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import r0.b0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f extends sa implements xd.b {
     public static final /* synthetic */ int o0 = 0;
@@ -59,7 +59,7 @@ public final class f extends sa implements xd.b {
     public final ArrayList X;
     public final ArrayList Y;
     public String Z;
-    public x51 a0;
+    public w51 a0;
     public final qh.d b0;
     public final s0 c0;
     public final q1 d0;
@@ -90,9 +90,9 @@ public final class f extends sa implements xd.b {
         this.w = false;
         this.j0 = MessagesController.getInstance(this.currentAccount).config.pollCountriesMax.get();
         AndroidUtilities.enableEdgeToEdge(getWindow());
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
+        sl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(68.0f) + AndroidUtilities.navigationBarHeight);
         this.d.setClipToPadding(false);
         this.d.j(new e2(this, 2));
         this.d.setOnItemClickListener(new c(context, this, g6Var));
@@ -215,23 +215,23 @@ public final class f extends sa implements xd.b {
         Rect rect = this.m0;
         boolean z4 = (rect.top == dp && rect.bottom == measuredHeight) ? false : true;
         rect.set(0, dp, this.containerView.getMeasuredWidth(), measuredHeight);
-        tl0 tl0Var = this.d;
-        tl0Var.setClipBounds(rect);
+        sl0 sl0Var = this.d;
+        sl0Var.setClipBounds(rect);
         if (z4) {
-            tl0Var.invalidate();
+            sl0Var.invalidate();
         }
     }
 
     public final void R() {
-        tl0 tl0Var;
+        sl0 sl0Var;
         float f10 = AndroidUtilities.displaySize.y;
         int i10 = 0;
         while (true) {
-            tl0Var = this.d;
-            if (i10 >= tl0Var.getChildCount()) {
+            sl0Var = this.d;
+            if (i10 >= sl0Var.getChildCount()) {
                 break;
             }
-            View childAt = tl0Var.getChildAt(i10);
+            View childAt = sl0Var.getChildAt(i10);
             if (RecyclerView.R(childAt) >= 1 && childAt.getY() < f10) {
                 f10 = childAt.getY();
             }
@@ -241,7 +241,7 @@ public final class f extends sa implements xd.b {
         q1 q1Var = this.d0;
         if (q1Var.getTranslationY() != max) {
             q1Var.setTranslationY(max);
-            tl0Var.invalidate();
+            sl0Var.invalidate();
         }
     }
 
@@ -273,11 +273,11 @@ public final class f extends sa implements xd.b {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(tl0Var, getContext(), this.currentAccount, 0, true, new p1(this, 1), this.resourcesProvider);
-        this.a0 = x51Var;
-        x51Var.r = false;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(sl0Var, getContext(), this.currentAccount, 0, true, new p1(this, 1), this.resourcesProvider);
+        this.a0 = w51Var;
+        w51Var.r = false;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

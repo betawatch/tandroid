@@ -15,7 +15,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.iw;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i6 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -62,24 +62,24 @@ public final /* synthetic */ class i6 implements Runnable {
                 ((t7) obj3).i((TL_stars.StarGift) tLObject2, this.b, this.d, this.c, (TLRPC.TL_textWithEntities) tLObject, (lh.s5) obj);
                 break;
             default:
-                qh.ca caVar = (qh.ca) obj3;
+                qh.ba baVar = (qh.ba) obj3;
                 TLObject tLObject3 = (TLObject) obj2;
                 TL_stories.TL_startLive tL_startLive = (TL_stories.TL_startLive) tLObject2;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) tLObject;
                 org.telegram.ui.web.s0 s0Var = (org.telegram.ui.web.s0) obj;
-                oh.b bVar = caVar.a;
-                int i12 = caVar.c;
+                oh.b bVar = baVar.a;
+                int i12 = baVar.c;
                 if (!(tLObject3 instanceof TLRPC.Updates)) {
                     if (tL_error != null) {
                         if (!tL_error.text.startsWith("STORY_LIVE_ALREADY_")) {
-                            qh.d8 d8Var = caVar.n0;
-                            if (d8Var != null) {
-                                new qc(d8Var.container, bVar).d0(tL_error, true);
+                            qh.c8 c8Var = baVar.n0;
+                            if (c8Var != null) {
+                                new qc(c8Var.container, bVar).d0(tL_error, true);
                                 s0Var.run();
                                 break;
                             }
                         } else {
-                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(caVar.b, 0, bVar);
+                            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(baVar.b, 0, bVar);
                             String string = LocaleController.getString(R.string.LiveStoryAlreadyStreamingTitle);
                             org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
                             d2Var.O = string;
@@ -91,9 +91,9 @@ public final /* synthetic */ class i6 implements Runnable {
                 } else {
                     TLRPC.Updates updates = (TLRPC.Updates) tLObject3;
                     MessagesController.getInstance(i12).processUpdates(updates, false);
-                    qh.g9 g9Var = caVar.y0;
-                    if (g9Var != null) {
-                        g9Var.destroy(true, null);
+                    qh.f9 f9Var = baVar.y0;
+                    if (f9Var != null) {
+                        f9Var.destroy(true, null);
                     }
                     ArrayList findUpdates = MessagesController.findUpdates(updates, TL_update.TL_updateStoryID.class);
                     int size = findUpdates.size();
@@ -138,7 +138,7 @@ public final /* synthetic */ class i6 implements Runnable {
                                                 notificationCenter.lambda$postNotificationNameOnUIThread$1(i15, objArr);
                                             }
                                         }
-                                        AndroidUtilities.runOnUIThread(new iw(caVar, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
+                                        AndroidUtilities.runOnUIThread(new iw(baVar, this.b, storyItem, this.c, inputGroupCall, this.d), 100L);
                                         break;
                                     }
                                 }
@@ -159,8 +159,8 @@ public final /* synthetic */ class i6 implements Runnable {
         }
     }
 
-    public /* synthetic */ i6(qh.ca caVar, TLObject tLObject, TL_stories.TL_startLive tL_startLive, boolean z4, long j10, boolean z10, TLRPC.TL_error tL_error, org.telegram.ui.web.s0 s0Var) {
-        this.e = caVar;
+    public /* synthetic */ i6(qh.ba baVar, TLObject tLObject, TL_stories.TL_startLive tL_startLive, boolean z4, long j10, boolean z10, TLRPC.TL_error tL_error, org.telegram.ui.web.s0 s0Var) {
+        this.e = baVar;
         this.f = tLObject;
         this.h = tL_startLive;
         this.b = z4;

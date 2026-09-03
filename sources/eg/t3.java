@@ -19,6 +19,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import k7.c6;
 import mh.ea;
+import mh.f5;
 import oh.r5;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.g6;
@@ -27,15 +28,15 @@ import org.telegram.ui.Components.d6;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.w21;
+import org.telegram.ui.Components.v21;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.w80;
 import org.telegram.ui.Components.y80;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.z60;
-import qh.f5;
+import qh.e5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class t3 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -73,16 +74,16 @@ public final class t3 extends FrameLayout {
                 super.dispatchDraw(canvas);
                 break;
             case 8:
-                w21 w21Var = (w21) this.b;
-                float g10 = w21Var.f.g();
+                v21 v21Var = (v21) this.b;
+                float g10 = v21Var.f.g();
                 int i11 = (g10 > 0.0f ? 1 : (g10 == 0.0f ? 0 : -1));
                 boolean z4 = i11 > 0;
-                float lerp = AndroidUtilities.lerp(0.5f, 1.0f, g10) * w21Var.H;
+                float lerp = AndroidUtilities.lerp(0.5f, 1.0f, g10) * v21Var.H;
                 float dp = AndroidUtilities.dp(10.0f);
                 float dp2 = AndroidUtilities.dp(8.33f);
                 float width = (getWidth() / 2.0f) + AndroidUtilities.dp(12.0f);
                 float dp3 = AndroidUtilities.dp(12.0f);
-                float max = Math.max(dp2 + dp2, w21Var.f.d() + AndroidUtilities.dp(10.0f));
+                float max = Math.max(dp2 + dp2, v21Var.f.d() + AndroidUtilities.dp(10.0f));
                 if (z4) {
                     i10 = i11;
                     f11 = dp3;
@@ -110,10 +111,10 @@ public final class t3 extends FrameLayout {
                     float f14 = max / 2.0f;
                     rectF3.set(f10 - f14, f11 - dp2, f10 + f14, f11 + dp2);
                     d6 d6Var = (d6) this.d;
-                    d6Var.setColor(k6.l1(g10, d6Var.b.a(k6.v0(w21Var.B, d6Var.a), false)));
+                    d6Var.setColor(k6.l1(g10, d6Var.b.a(k6.v0(v21Var.B, d6Var.a), false)));
                     canvas.drawRoundRect(rectF3, dp2, dp2, d6Var);
-                    w21Var.f.m(rectF3);
-                    j6 j6Var = w21Var.f;
+                    v21Var.f.m(rectF3);
+                    j6 j6Var = v21Var.f;
                     j6Var.w = (int) (g10 * 255.0f);
                     j6Var.draw(canvas);
                     canvas.restore();
@@ -139,13 +140,13 @@ public final class t3 extends FrameLayout {
                 Paint paint3 = (Paint) this.c;
                 paint3.setColor(-1);
                 float width2 = getWidth() - (AndroidUtilities.dpf2(5.0f) * 2.0f);
-                f5 f5Var = (f5) this.b;
-                float dpf2 = (width2 - AndroidUtilities.dpf2((f5Var.b - 1) * 2)) / f5Var.b;
+                e5 e5Var = (e5) this.b;
+                float dpf2 = (width2 - AndroidUtilities.dpf2((e5Var.b - 1) * 2)) / e5Var.b;
                 float dpf22 = AndroidUtilities.dpf2(5.0f);
                 int i12 = 0;
-                while (i12 < f5Var.b) {
+                while (i12 < e5Var.b) {
                     rectF5.set(dpf22, AndroidUtilities.dpf2(8.0f), dpf22 + dpf2, AndroidUtilities.dpf2(10.0f));
-                    paint3.setAlpha(i12 < f5Var.b + (-1) ? 255 : 133);
+                    paint3.setAlpha(i12 < e5Var.b + (-1) ? 255 : 133);
                     canvas.drawRoundRect(rectF5, AndroidUtilities.dpf2(1.0f), AndroidUtilities.dpf2(1.0f), paint3);
                     dpf22 += AndroidUtilities.dpf2(2.0f) + dpf2;
                     i12++;
@@ -267,7 +268,7 @@ public final class t3 extends FrameLayout {
     public boolean verifyDrawable(Drawable drawable) {
         switch (this.a) {
             case 8:
-                return ((w21) this.b).f == drawable || super.verifyDrawable(drawable);
+                return ((v21) this.b).f == drawable || super.verifyDrawable(drawable);
             default:
                 return super.verifyDrawable(drawable);
         }
@@ -282,7 +283,7 @@ public final class t3 extends FrameLayout {
         p9Var.setRoundRadius(AndroidUtilities.dp(23.0f));
         addView(p9Var, c6.d(46, 46.0f, 19, 21.0f, 6.0f, 0.0f, 6.0f));
         if (z4) {
-            addView(new mh.f5(context, g6Var), c6.b(22.66f, 22.66f, 83, 48.66f, 0.0f, 0.0f, 3.6599998f));
+            addView(new f5(context, g6Var), c6.b(22.66f, 22.66f, 83, 48.66f, 0.0f, 0.0f, 3.6599998f));
         }
         TextView textView = new TextView(context);
         this.d = textView;
@@ -302,10 +303,10 @@ public final class t3 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t3(f5 f5Var, Context context) {
+    public t3(e5 e5Var, Context context) {
         super(context);
         this.a = 10;
-        this.b = f5Var;
+        this.b = e5Var;
         this.d = new RectF();
         this.c = new Paint(1);
     }
@@ -413,15 +414,15 @@ public final class t3 extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public t3(w21 w21Var, Context context, g6 g6Var) {
+    public t3(v21 v21Var, Context context, g6 g6Var) {
         super(context);
         this.a = 8;
-        this.b = w21Var;
+        this.b = v21Var;
         Paint paint = new Paint(1);
         this.c = paint;
         this.d = new d6(this, g6Var);
         paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
-        w21Var.f.setCallback(this);
+        v21Var.f.setCallback(this);
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

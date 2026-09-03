@@ -33,12 +33,12 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class f4 extends FrameLayout {
     public final org.telegram.ui.Components.t5 B;
@@ -46,7 +46,7 @@ public final class f4 extends FrameLayout {
     public final LinearLayout D;
     public final org.telegram.ui.Components.k6 E;
     public final org.telegram.ui.Components.k6 F;
-    public final lj0 G;
+    public final kj0 G;
     public final TextView H;
     public final TextView I;
     public final TextView J;
@@ -56,7 +56,7 @@ public final class f4 extends FrameLayout {
     public final FrameLayout N;
     public final FrameLayout O;
     public final FrameLayout P;
-    public qh.f3 Q;
+    public qh.e3 Q;
     public final int[] R;
     public final int[] S;
     public int T;
@@ -78,7 +78,7 @@ public final class f4 extends FrameLayout {
     public boolean g0;
     public final y3 h;
     public Runnable h0;
-    public lj0 i0;
+    public kj0 i0;
     public SpannableStringBuilder j0;
     public final d4[] n;
     public final jh.s r;
@@ -280,11 +280,11 @@ public final class f4 extends FrameLayout {
         LinearLayout linearLayout6 = new LinearLayout(context);
         linearLayout6.setOrientation(0);
         linearLayout6.setGravity(17);
-        lj0 lj0Var = new lj0(context);
-        this.G = lj0Var;
-        lj0Var.setAutoRepeat(true);
-        lj0Var.f(R.raw.gift_crafting, 30, 30, null);
-        linearLayout6.addView(lj0Var, k7.c6.t(30, 30, 17, 0, 0, 4, 0));
+        kj0 kj0Var = new kj0(context);
+        this.G = kj0Var;
+        kj0Var.setAutoRepeat(true);
+        kj0Var.f(R.raw.gift_crafting, 30, 30, null);
+        linearLayout6.addView(kj0Var, k7.c6.t(30, 30, 17, 0, 0, 4, 0));
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 20.0f);
         textView2.setTextColor(-1);
@@ -439,9 +439,9 @@ public final class f4 extends FrameLayout {
     }
 
     public final void c(u3 u3Var, SpannableStringBuilder spannableStringBuilder) {
-        qh.f3 f3Var = this.Q;
-        if (f3Var != null) {
-            f3Var.e(true);
+        qh.e3 e3Var = this.Q;
+        if (e3Var != null) {
+            e3Var.e(true);
             this.Q = null;
         }
         if (this.e0 || this.g0) {
@@ -450,19 +450,19 @@ public final class f4 extends FrameLayout {
         View view = u3Var.getParent() instanceof View ? (View) u3Var.getParent() : null;
         float x10 = u3Var.getX() + (view != null ? view.getX() : 0.0f);
         float y10 = u3Var.getY() + (view != null ? view.getY() : 0.0f);
-        qh.f3 f3Var2 = new qh.f3(getContext(), 3);
-        this.Q = f3Var2;
-        f3Var2.q(true);
-        this.Q.t(spannableStringBuilder);
-        qh.f3 f3Var3 = this.Q;
-        f3Var3.h = qh.f3.a(f3Var3.getText(), this.Q.getTextPaint());
-        qh.f3 f3Var4 = this.Q;
-        f3Var4.H = Layout.Alignment.ALIGN_CENTER;
-        f3Var4.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
+        qh.e3 e3Var2 = new qh.e3(getContext(), 3);
+        this.Q = e3Var2;
+        e3Var2.p(true);
+        this.Q.s(spannableStringBuilder);
+        qh.e3 e3Var3 = this.Q;
+        e3Var3.h = qh.e3.a(e3Var3.getText(), this.Q.getTextPaint());
+        qh.e3 e3Var4 = this.Q;
+        e3Var4.H = Layout.Alignment.ALIGN_CENTER;
+        e3Var4.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
         addView(this.Q, k7.c6.d(-1, 100.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
         this.Q.setTranslationY(y10 - AndroidUtilities.dp(100.0f));
-        this.Q.n(0.0f, ((u3Var.getWidth() / 2.0f) + x10) - AndroidUtilities.dp(2.0f));
-        this.Q.v();
+        this.Q.m(0.0f, ((u3Var.getWidth() / 2.0f) + x10) - AndroidUtilities.dp(2.0f));
+        this.Q.u();
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:118:0x04a9, code lost:

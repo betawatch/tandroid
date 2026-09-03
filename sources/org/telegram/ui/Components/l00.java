@@ -29,7 +29,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class l00 extends FrameLayout {
     public static final /* synthetic */ int x0 = 0;
@@ -419,7 +419,7 @@ public abstract class l00 extends FrameLayout {
             z10 = r3;
         }
         if (z10) {
-            d1Var.f1();
+            d1Var.e1();
             d1Var.invalidate();
             invalidate();
         }
@@ -488,7 +488,7 @@ public abstract class l00 extends FrameLayout {
         }
         this.M = f10;
         mh.d1 d1Var = this.C;
-        d1Var.f1();
+        d1Var.e1();
         d1Var.invalidate();
         invalidate();
         e(i11);
@@ -524,7 +524,7 @@ public abstract class l00 extends FrameLayout {
         return this.g0.get(getTabsCount() - 1, 0);
     }
 
-    public tl0 getListView() {
+    public sl0 getListView() {
         return this.C;
     }
 
@@ -536,7 +536,7 @@ public abstract class l00 extends FrameLayout {
         return this.Q;
     }
 
-    public tl0 getTabsContainer() {
+    public sl0 getTabsContainer() {
         return this.C;
     }
 
@@ -665,7 +665,7 @@ public abstract class l00 extends FrameLayout {
     public void setAnimationIdicatorProgress(float f10) {
         this.M = f10;
         mh.d1 d1Var = this.C;
-        d1Var.f1();
+        d1Var.e1();
         d1Var.invalidate();
         invalidate();
         g00 g00Var = this.G;
@@ -687,7 +687,7 @@ public abstract class l00 extends FrameLayout {
         this.n = z4;
         this.s = true;
         mh.d1 d1Var = this.C;
-        d1Var.f1();
+        d1Var.e1();
         d1Var.invalidate();
         this.F.l();
         invalidate();

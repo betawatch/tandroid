@@ -1,73 +1,59 @@
 package org.telegram.ui.Components;
 
-import android.R;
-import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
-import java.util.ArrayList;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.text.style.ImageSpan;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class mn extends org.telegram.ui.Cells.c6 {
-    public final /* synthetic */ int C;
-    public final /* synthetic */ qn D;
+public final class mn implements TextWatcher {
+    public final /* synthetic */ ln a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ pn c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mn(qn qnVar, Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var, int i11) {
-        super(context, i10, null, g6Var);
-        this.D = qnVar;
-        this.C = i11;
+    public mn(pn pnVar, ln lnVar, int i10) {
+        this.c = pnVar;
+        this.a = lnVar;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Cells.c6
-    public final void g(eh.b bVar, ActionMode actionMode) {
-        sn snVar = this.D.d;
-        if (!snVar.n && this.C == 11 && bVar.isFocused() && bVar.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
-                return;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        rn rnVar = this.c.d;
+        ln lnVar = this.a;
+        if (lnVar.getTag() != null) {
+            return;
+        }
+        int i10 = this.b;
+        int i11 = i10 == 11 ? rnVar.k0 : rnVar.j0;
+        f2.m1 K = rnVar.s.K(i11);
+        if (K != null && rnVar.x != null) {
+            for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
+                editable.removeSpan(imageSpan);
             }
-            org.telegram.ui.xn.k8(menu, ((org.telegram.ui.xn) snVar.b.c0).h, false, true, true, true);
+            Emoji.replaceEmoji(editable, lnVar.getEditField().getPaint().getFontMetricsInt(), false);
+            rnVar.x.setDirection(1);
+            rnVar.x.setDelegate(lnVar);
+            rnVar.x.setTranslationY(K.a.getY());
+            rnVar.x.e();
         }
-    }
-
-    @Override // org.telegram.ui.Cells.c6
-    public final void i(boolean z4) {
-        sn.M(this.D.d, this, z4);
-    }
-
-    @Override // org.telegram.ui.Cells.c6
-    public final void j(org.telegram.ui.Cells.c6 c6Var) {
-        sn.N(this.D.d, c6Var);
-    }
-
-    @Override // org.telegram.ui.Cells.c6
-    public final void k(eh.b bVar) {
-        this.D.d.b.t1(bVar, true);
-    }
-
-    @Override // org.telegram.ui.Cells.c6
-    public final boolean l(ArrayList arrayList) {
-        sn snVar = this.D.d;
-        if (arrayList.isEmpty()) {
-            return false;
+        if (i10 == 11) {
+            rnVar.L = editable;
+        } else {
+            rnVar.K = editable;
         }
-        eh.b bVar = this.d;
-        bVar.getText().replace(bVar.getSelectionStart(), bVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
-        int i10 = 0;
-        while (!arrayList.isEmpty() && i10 < snVar.G) {
-            for (int length = snVar.H.length - 1; length > i10; length--) {
-                CharSequence[] charSequenceArr = snVar.H;
-                charSequenceArr[length] = charSequenceArr[length - 1];
-            }
-            snVar.H[i10] = (CharSequence) arrayList.remove(0);
-            snVar.J++;
-            i10++;
+        if (K != null) {
+            rn.K(rnVar, K.a, i11);
         }
-        snVar.h0();
-        snVar.h0 = (snVar.q0 + i10) - 1;
-        snVar.s.setItemAnimator(snVar.v);
-        snVar.r.l();
-        return true;
+        rnVar.T();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

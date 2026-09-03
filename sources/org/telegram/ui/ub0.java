@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ub0 extends z60 {
     public ub0(xb0 xb0Var, Bundle bundle) {
@@ -38,7 +38,7 @@ public final class ub0 extends z60 {
             TLRPC.GroupCall groupCall = groupcall.call;
             tL_inputGroupCall.id = groupCall.id;
             tL_inputGroupCall.access_hash = groupCall.access_hash;
-            org.telegram.ui.Components.voip.g2.h(LaunchActivity.D1, ub0Var.currentAccount, tL_inputGroupCall, false, groupCall, hashSet);
+            org.telegram.ui.Components.voip.g2.g(LaunchActivity.D1, ub0Var.currentAccount, tL_inputGroupCall, false, groupCall, hashSet);
             return;
         }
         TLRPC.Updates updates = (TLRPC.Updates) tLObject;
@@ -58,7 +58,7 @@ public final class ub0 extends z60 {
         TLRPC.TL_inputGroupCall tL_inputGroupCall2 = new TLRPC.TL_inputGroupCall();
         tL_inputGroupCall2.id = groupCall2.id;
         tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-        org.telegram.ui.Components.voip.g2.h(LaunchActivity.D1, ub0Var.currentAccount, tL_inputGroupCall2, false, groupCall2, hashSet);
+        org.telegram.ui.Components.voip.g2.g(LaunchActivity.D1, ub0Var.currentAccount, tL_inputGroupCall2, false, groupCall2, hashSet);
     }
 
     @Override // org.telegram.ui.z60
@@ -72,7 +72,7 @@ public final class ub0 extends z60 {
                 getConnectionsManager().sendRequest(tL_users_getFullUser, new lo(29, this, user));
                 return;
             }
-            org.telegram.ui.Components.voip.g2.n(user, false, userFull.video_calls_available, getParentActivity(), userFull, getAccountInstance());
+            org.telegram.ui.Components.voip.g2.m(user, false, userFull.video_calls_available, getParentActivity(), userFull, getAccountInstance());
         } else {
             TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
             createconferencecall.random_id = Utilities.random.nextInt();

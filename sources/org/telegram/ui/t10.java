@@ -34,7 +34,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class t10 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, xd.b {
     public static final SpannableStringBuilder[] p0 = new SpannableStringBuilder[3];
@@ -64,14 +64,14 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
     public final ArrayList a0;
     public final mh.d1 b;
     public boolean b0;
-    public final org.telegram.ui.Components.ax0 c;
+    public final org.telegram.ui.Components.zw0 c;
     public final z5 c0;
-    public org.telegram.ui.Components.sl0 d;
+    public org.telegram.ui.Components.rl0 d;
     public final g10 d0;
     public d10 e;
     public k10 e0;
     public final ArrayList f;
-    public org.telegram.ui.Components.ao0 f0;
+    public org.telegram.ui.Components.zn0 f0;
     public final f2.j0 g0;
     public final SparseArray h;
     public final h10 h0;
@@ -137,11 +137,11 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
         this.T = new q10(this, getContext());
         this.U = new o10(this, getContext(), 4);
         this.V = new o10(this, getContext(), 2);
-        org.telegram.ui.Components.ax0 ax0Var = new org.telegram.ui.Components.ax0(parentActivity, h10Var, 1, null);
-        this.c = ax0Var;
-        addView(ax0Var);
-        d1Var.setEmptyView(ax0Var);
-        ax0Var.setVisibility(8);
+        org.telegram.ui.Components.zw0 zw0Var = new org.telegram.ui.Components.zw0(parentActivity, h10Var, 1, null);
+        this.c = zw0Var;
+        addView(zw0Var);
+        d1Var.setEmptyView(zw0Var);
+        zw0Var.setVisibility(8);
         b();
     }
 
@@ -285,7 +285,7 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void e(long j10, ArrayList arrayList) {
-        org.telegram.ui.Components.sl0 sl0Var;
+        org.telegram.ui.Components.rl0 rl0Var;
         int i10;
         int i11 = 0;
         boolean z4 = false;
@@ -321,10 +321,10 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
             }
             i11++;
         }
-        if (!z4 || (sl0Var = this.d) == null) {
+        if (!z4 || (rl0Var = this.d) == null) {
             return;
         }
-        sl0Var.l();
+        rl0Var.l();
     }
 
     public final void f(int i10, View view, MessageObject messageObject, int i11) {
@@ -516,9 +516,9 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
         arrayList.add(new org.telegram.ui.ActionBar.m6(d1Var, 16384, new Class[]{org.telegram.ui.Cells.r2.class}, new String[]{"checkBox"}, null, null, -1, null, i14));
         arrayList.add(new org.telegram.ui.ActionBar.m6(d1Var, TLObject.FLAG_19, new Class[]{org.telegram.ui.Cells.u3.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.f7));
         arrayList.add(new org.telegram.ui.ActionBar.m6(d1Var, 524304, new Class[]{org.telegram.ui.Cells.u3.class}, null, null, null, org.telegram.ui.ActionBar.k6.e7));
-        org.telegram.ui.Components.ax0 ax0Var = this.c;
-        arrayList.add(new org.telegram.ui.ActionBar.m6(ax0Var.d, 4, null, null, null, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(ax0Var.e, 4, null, null, null, null, org.telegram.ui.ActionBar.k6.y6));
+        org.telegram.ui.Components.zw0 zw0Var = this.c;
+        arrayList.add(new org.telegram.ui.ActionBar.m6(zw0Var.d, 4, null, null, null, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(zw0Var.e, 4, null, null, null, null, org.telegram.ui.ActionBar.k6.y6));
         return arrayList;
     }
 
@@ -550,17 +550,17 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
         ArrayList arrayList2 = this.a0;
         final boolean z13 = z11;
         ArrayList arrayList3 = this.W;
-        org.telegram.ui.Components.ax0 ax0Var = this.c;
+        org.telegram.ui.Components.zw0 zw0Var = this.c;
         ArrayList arrayList4 = this.f;
         if (z12 || (e0Var == null && j11 == 0 && j10 == 0 && j12 == 0 && j13 == 0)) {
             arrayList4.clear();
             this.n.clear();
             this.r.clear();
             this.J = true;
-            ax0Var.setVisibility(0);
-            org.telegram.ui.Components.sl0 sl0Var = this.d;
-            if (sl0Var != null) {
-                sl0Var.l();
+            zw0Var.setVisibility(0);
+            org.telegram.ui.Components.rl0 rl0Var = this.d;
+            if (rl0Var != null) {
+                rl0Var.l();
             }
             this.M++;
             mh.d1 d1Var = this.b;
@@ -581,13 +581,13 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
             arrayList = arrayList4;
         }
         this.J = true;
-        org.telegram.ui.Components.sl0 sl0Var2 = this.d;
-        if (sl0Var2 != null) {
-            sl0Var2.l();
+        org.telegram.ui.Components.rl0 rl0Var2 = this.d;
+        if (rl0Var2 != null) {
+            rl0Var2.l();
         }
         if (!z13) {
             z5Var.run();
-            ax0Var.e(true, !z10);
+            zw0Var.e(true, !z10);
         }
         if (TextUtils.isEmpty(str2)) {
             arrayList2.clear();
@@ -698,7 +698,7 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
                 t10Var.w = str5;
                 t10Var.x = str3;
                 final ArrayList arrayList10 = new ArrayList();
-                uf.g0.y1(t10Var.w, arrayList10);
+                uf.g0.x1(t10Var.w, arrayList10);
                 ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i12);
                 final int i16 = i10;
                 final ArrayList<Object> arrayList11 = arrayList6;
@@ -755,23 +755,23 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
                                 ArrayList arrayList19 = t10Var3.f;
                                 ArrayList arrayList20 = t10Var3.W;
                                 mh.d1 d1Var2 = t10Var3.b;
-                                org.telegram.ui.Components.ax0 ax0Var2 = t10Var3.c;
+                                org.telegram.ui.Components.zw0 zw0Var2 = t10Var3.c;
                                 if (i20 != t10Var3.M) {
                                     return;
                                 }
                                 t10Var3.J = false;
                                 if (tL_error != null) {
-                                    jh.s sVar = ax0Var2.d;
-                                    org.telegram.ui.Components.g90 g90Var = ax0Var2.e;
+                                    jh.s sVar = zw0Var2.d;
+                                    org.telegram.ui.Components.g90 g90Var = zw0Var2.e;
                                     sVar.setText(LocaleController.getString(R.string.SearchEmptyViewTitle2));
                                     g90Var.setVisibility(0);
                                     g90Var.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                                    ax0Var2.e(false, true);
+                                    zw0Var2.e(false, true);
                                     return;
                                 }
-                                ax0Var2.e(false, true);
-                                jh.s sVar2 = ax0Var2.d;
-                                org.telegram.ui.Components.g90 g90Var2 = ax0Var2.e;
+                                zw0Var2.e(false, true);
+                                jh.s sVar2 = zw0Var2.d;
+                                org.telegram.ui.Components.g90 g90Var2 = zw0Var2.e;
                                 TLRPC.messages_Messages messages_messages2 = messages_messages;
                                 t10Var3.v = messages_messages2.next_rate;
                                 int i23 = i18;
@@ -885,9 +885,9 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
                                     t10Var3.d = m10Var;
                                 }
                                 f2.p0 adapter = d1Var2.getAdapter();
-                                org.telegram.ui.Components.sl0 sl0Var3 = t10Var3.d;
-                                if (adapter != sl0Var3) {
-                                    d1Var2.setAdapter(sl0Var3);
+                                org.telegram.ui.Components.rl0 rl0Var3 = t10Var3.d;
+                                if (adapter != rl0Var3) {
+                                    d1Var2.setAdapter(rl0Var3);
                                 }
                                 if (z20) {
                                     i21 = 0;
@@ -1007,7 +1007,7 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
         setPadding(0, i10, 0, i11);
         mh.d1 d1Var = this.b;
         if (z4) {
-            d1Var.o1(0, i10, 0, i11);
+            d1Var.n1(0, i10, 0, i11);
         } else {
             d1Var.setPadding(0, i10, 0, i11);
         }
@@ -1033,7 +1033,7 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        org.telegram.ui.Components.sl0 sl0Var;
+        org.telegram.ui.Components.rl0 rl0Var;
         int i12 = this.s;
         if (AndroidUtilities.isTablet()) {
             this.s = 3;
@@ -1042,9 +1042,9 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
         } else {
             this.s = 3;
         }
-        if (i12 != this.s && (sl0Var = this.d) == this.R) {
+        if (i12 != this.s && (rl0Var = this.d) == this.R) {
             this.o0 = true;
-            sl0Var.l();
+            rl0Var.l();
             this.o0 = false;
         }
         super.onMeasure(i10, i11);
@@ -1073,8 +1073,8 @@ public final class t10 extends FrameLayout implements NotificationCenter.Notific
         ((qg.b) b3Var.c).o(AndroidUtilities.dp(5.0f));
     }
 
-    public void setChatPreviewDelegate(org.telegram.ui.Components.ao0 ao0Var) {
-        this.f0 = ao0Var;
+    public void setChatPreviewDelegate(org.telegram.ui.Components.zn0 zn0Var) {
+        this.f0 = zn0Var;
     }
 
     public void setUiCallback(s10 s10Var) {

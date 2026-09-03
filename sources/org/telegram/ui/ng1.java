@@ -1,138 +1,83 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ng1 implements TextWatcher {
+public final /* synthetic */ class ng1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qg1 b;
+    public final /* synthetic */ vg1 b;
 
-    public /* synthetic */ ng1(qg1 qg1Var, int i10) {
+    public /* synthetic */ ng1(vg1 vg1Var, int i10) {
         this.a = i10;
-        this.b = qg1Var;
+        this.b = vg1Var;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        org.telegram.ui.Components.ij0 ij0Var;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.getClass();
+                vg1 vg1Var = this.b;
+                EditTextBoldCursor editTextBoldCursor = vg1Var.n;
+                if (editTextBoldCursor != null && editTextBoldCursor.getVisibility() == 0) {
+                    vg1Var.n.requestFocus();
+                    AndroidUtilities.showKeyboard(vg1Var.n);
+                    break;
+                }
                 break;
             case 1:
-                qg1 qg1Var = this.b;
-                if (!qg1Var.J) {
-                    int i10 = qg1Var.L;
-                    if (i10 != 0) {
-                        if (i10 != 1) {
-                            if (i10 == 8 && editable.length() > 0) {
-                                qg1Var.H0(true);
-                                break;
-                            }
-                        } else {
-                            try {
-                                qg1Var.c0[6].N((int) ((Math.min(1.0f, qg1Var.n.getLayout().getLineWidth(0) / qg1Var.n.getWidth()) * 142.0f) + 18.0f));
-                                qg1Var.a.d();
-                                break;
-                            } catch (Exception e6) {
-                                FileLog.e(e6);
-                                return;
-                            }
-                        }
+                vg1 vg1Var2 = this.b;
+                wd0 wd0Var = vg1Var2.w;
+                if (wd0Var != null && wd0Var.getVisibility() == 0) {
+                    vg1Var2.w.f[0].requestFocus();
+                    break;
+                }
+                break;
+            case 2:
+                int i10 = 0;
+                while (true) {
+                    cs[] csVarArr = this.b.w.f;
+                    if (i10 >= csVarArr.length) {
+                        break;
                     } else {
-                        org.telegram.ui.Components.ij0 animatedDrawable = qg1Var.a.getAnimatedDrawable();
-                        if (qg1Var.n.length() <= 0) {
-                            if (animatedDrawable != qg1Var.c0[3] || qg1Var.n.getTransformationMethod() != null) {
-                                org.telegram.ui.Components.ij0[] ij0VarArr = qg1Var.c0;
-                                if (animatedDrawable != ij0VarArr[5]) {
-                                    ij0VarArr[2].N(-1);
-                                    org.telegram.ui.Components.ij0 ij0Var2 = qg1Var.c0[2];
-                                    if (animatedDrawable != ij0Var2) {
-                                        qg1Var.a.setAnimation(ij0Var2);
-                                        qg1Var.c0[2].L(49, false, false);
-                                    }
-                                    qg1Var.a.d();
-                                    break;
-                                }
-                            }
-                            qg1Var.a.setAnimation(qg1Var.c0[4]);
-                            qg1Var.c0[4].Q(0.0f, false);
-                            qg1Var.a.d();
-                            break;
-                        } else if (qg1Var.n.getTransformationMethod() != null) {
-                            org.telegram.ui.Components.ij0[] ij0VarArr2 = qg1Var.c0;
-                            if (animatedDrawable != ij0VarArr2[3]) {
-                                org.telegram.ui.Components.ij0 ij0Var3 = ij0VarArr2[2];
-                                if (animatedDrawable == ij0Var3) {
-                                    if (ij0Var3.Y < 49) {
-                                        ij0Var3.N(49);
-                                        break;
-                                    }
-                                } else {
-                                    qg1Var.a.setAnimation(ij0Var3);
-                                    qg1Var.c0[2].N(49);
-                                    qg1Var.c0[2].Q(0.0f, false);
-                                    qg1Var.a.d();
-                                    break;
-                                }
-                            }
-                        } else {
-                            org.telegram.ui.Components.ij0[] ij0VarArr3 = qg1Var.c0;
-                            if (animatedDrawable != ij0VarArr3[3] && animatedDrawable != (ij0Var = ij0VarArr3[5])) {
-                                qg1Var.a.setAnimation(ij0Var);
-                                qg1Var.c0[5].Q(0.0f, false);
-                                qg1Var.a.d();
-                                break;
-                            }
-                        }
+                        csVarArr[i10].i(0.0f);
+                        i10++;
+                    }
+                }
+            case 3:
+                vg1 vg1Var3 = this.b;
+                EditTextBoldCursor editTextBoldCursor2 = vg1Var3.n;
+                if (editTextBoldCursor2 != null) {
+                    if (editTextBoldCursor2.length() != 0) {
+                        vg1Var3.c0[2].N(49);
+                        vg1Var3.c0[2].Q(0.0f, false);
+                        vg1Var3.a.d();
+                        break;
+                    } else {
+                        vg1Var3.F0(true);
+                        break;
                     }
                 }
                 break;
+            case 4:
+                vg1 vg1Var4 = this.b;
+                if (vg1Var4.d0 != null) {
+                    vg1Var4.F0(false);
+                    break;
+                }
+                break;
+            case 5:
+                vg1.f0(this.b);
+                break;
+            case 6:
+                AndroidUtilities.runOnUIThread(new ng1(this.b, 7), 150L);
+                break;
             default:
-                qg1 qg1Var2 = this.b;
-                if (qg1Var2.C) {
-                    if (qg1Var2.B.getVisibility() != 0 && !TextUtils.isEmpty(editable)) {
-                        AndroidUtilities.updateViewVisibilityAnimated(qg1Var2.B, true, 0.1f, true);
-                        break;
-                    } else if (qg1Var2.B.getVisibility() != 8 && TextUtils.isEmpty(editable)) {
-                        AndroidUtilities.updateViewVisibilityAnimated(qg1Var2.B, false, 0.1f, true);
-                        break;
-                    }
+                for (cs csVar : this.b.w.f) {
+                    csVar.i(0.0f);
                 }
                 break;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void e(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void f(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

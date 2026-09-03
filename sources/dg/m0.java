@@ -15,10 +15,10 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BotWebViewVibrationEffect;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class m0 {
     public static final pr B = new pr(0.0d, 0.5d, 0.0d, 1.0d);
@@ -645,15 +645,15 @@ public final class m0 {
             if (z4 && (n1Var = o1Var.a) != null) {
                 n1Var.f();
             }
-            kv0 kv0Var = o1Var.getPainting().g;
+            jv0 jv0Var = o1Var.getPainting().g;
             g1 g1Var = this.g;
             float a2 = o6.a((float) g1Var.a, (float) g1Var.b, 0.0f, 0.0f);
             g1 g1Var2 = this.g;
-            float max = Math.max(a2, o6.a((float) g1Var2.a, (float) g1Var2.b, kv0Var.a, 0.0f));
+            float max = Math.max(a2, o6.a((float) g1Var2.a, (float) g1Var2.b, jv0Var.a, 0.0f));
             g1 g1Var3 = this.g;
-            float a10 = o6.a((float) g1Var3.a, (float) g1Var3.b, 0.0f, kv0Var.b);
+            float a10 = o6.a((float) g1Var3.a, (float) g1Var3.b, 0.0f, jv0Var.b);
             g1 g1Var4 = this.g;
-            final float max2 = Math.max(max, Math.max(a10, o6.a((float) g1Var4.a, (float) g1Var4.b, kv0Var.a, kv0Var.b))) / 0.84f;
+            final float max2 = Math.max(max, Math.max(a10, o6.a((float) g1Var4.a, (float) g1Var4.b, jv0Var.a, jv0Var.b))) / 0.84f;
             ValueAnimator valueAnimator = this.r;
             if (valueAnimator != null) {
                 valueAnimator.cancel();

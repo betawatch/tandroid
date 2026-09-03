@@ -1,13 +1,33 @@
 package org.telegram.ui;
 
-import android.view.animation.DecelerateInterpolator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class st0 {
-    public static final st0 e = new st0();
-    public DecelerateInterpolator b;
-    public int a = 200;
-    public boolean c = true;
-    public boolean d = true;
+public final class st0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ tt0 a;
+
+    public st0(tt0 tt0Var) {
+        this.a = tt0Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        super.onAnimationEnd(animator);
+        tt0 tt0Var = this.a;
+        PhotoViewer photoViewer = tt0Var.c;
+        photoViewer.k4 = 0;
+        photoViewer.F1();
+        photoViewer.I0.setAlpha(255);
+        photoViewer.b0.invalidate();
+        photoViewer.M0.setTranslationY(0.0f);
+        if (photoViewer.q4) {
+            PhotoViewer.a0(photoViewer, tt0Var.b.intValue());
+        }
+        ou0 ou0Var = tt0Var.a;
+        if (ou0Var != null) {
+            ou0Var.d();
+        }
+    }
 }

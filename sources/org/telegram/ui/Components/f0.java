@@ -38,7 +38,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f0 extends sa implements NotificationCenter.NotificationCenterDelegate {
     public final qh.d A0;
@@ -51,8 +51,8 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
     public boolean H0;
     public boolean I0;
     public String J0;
-    public ij0 K0;
-    public x51 L0;
+    public hj0 K0;
+    public w51 L0;
     public boolean M0;
     public int N0;
     public boolean O0;
@@ -88,7 +88,7 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
     public final ImageView v0;
     public final FrameLayout w0;
     public final org.telegram.ui.Cells.i3 x0;
-    public qh.f3 y0;
+    public qh.e3 y0;
     public final LinearLayout z0;
 
     public f0(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
@@ -147,7 +147,7 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
         e0Var2.n = new i(this, g6Var, context, 0);
         s0();
         e0Var2.c(-1);
-        String B = w31.B();
+        String B = v31.B();
         this.p0 = B;
         if (B == null) {
             this.p0 = TranslateController.currentLanguage();
@@ -201,11 +201,11 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
         d10.rightMargin += i18;
         this.containerView.addView(frameLayout3, d10);
         p0(false);
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i19 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i19, 0, i19, AndroidUtilities.dp(66.0f));
+        sl0Var.setPadding(i19, 0, i19, AndroidUtilities.dp(66.0f));
         this.d.setClipToPadding(false);
-        this.d.p1();
+        this.d.o1();
         this.d.setOnItemClickListener(new k(this, 0));
         this.L = true;
         n nVar = new n(this);
@@ -229,31 +229,31 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
     }
 
     public static void Q(f0 f0Var) {
-        qh.f3 f3Var = f0Var.y0;
-        if (f3Var != null) {
-            f3Var.e(true);
+        qh.e3 e3Var = f0Var.y0;
+        if (e3Var != null) {
+            e3Var.e(true);
             f0Var.y0 = null;
         }
-        qh.f3 f3Var2 = new qh.f3(f0Var.getContext(), 1);
-        f0Var.y0 = f3Var2;
-        f3Var2.s();
+        qh.e3 e3Var2 = new qh.e3(f0Var.getContext(), 1);
+        f0Var.y0 = e3Var2;
+        e3Var2.r();
         f0Var.y0.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-        f0Var.y0.r(20.0f);
-        qh.f3 f3Var3 = f0Var.y0;
+        f0Var.y0.q(20.0f);
+        qh.e3 e3Var3 = f0Var.y0;
         float dp = AndroidUtilities.dp(12.0f);
         float dp2 = AndroidUtilities.dp(4.0f);
         int l1 = org.telegram.ui.ActionBar.k6.l1(0.25f, -16777216);
-        Paint paint = f3Var3.C;
-        f3Var3.f0 = dp;
-        f3Var3.g0 = dp2;
-        f3Var3.h0 = l1;
+        Paint paint = e3Var3.C;
+        e3Var3.f0 = dp;
+        e3Var3.g0 = dp2;
+        e3Var3.h0 = l1;
         paint.setShadowLayer(dp, 0.0f, dp2, l1);
-        f0Var.y0.t(LocaleController.getString(R.string.AIEditorChooseStyle));
-        f0Var.y0.m(0.5f, 0.0f);
-        qh.f3 f3Var4 = f0Var.y0;
-        f3Var4.d = 8000L;
-        f0Var.containerView.addView(f3Var4, k7.c6.d(-1, 200.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
-        f0Var.y0.v();
+        f0Var.y0.s(LocaleController.getString(R.string.AIEditorChooseStyle));
+        f0Var.y0.l(0.5f, 0.0f);
+        qh.e3 e3Var4 = f0Var.y0;
+        e3Var4.d = 8000L;
+        f0Var.containerView.addView(e3Var4, k7.c6.d(-1, 200.0f, 55, 0.0f, 0.0f, 0.0f, 0.0f));
+        f0Var.y0.u();
         f0Var.r0();
     }
 
@@ -273,9 +273,9 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
         if (e0Var.getSelectedTab() == i10) {
             return;
         }
-        qh.f3 f3Var = f0Var.y0;
-        if (f3Var != null) {
-            f3Var.e(true);
+        qh.e3 e3Var = f0Var.y0;
+        if (e3Var != null) {
+            e3Var.e(true);
         }
         e0Var.c(i10);
         f0Var.k0();
@@ -290,9 +290,9 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
 
     public static void U(f0 f0Var, TL_aicompose.AiComposeTone aiComposeTone) {
         e0 e0Var = f0Var.u0;
-        qh.f3 f3Var = f0Var.y0;
-        if (f3Var != null) {
-            f3Var.e(true);
+        qh.e3 e3Var = f0Var.y0;
+        if (e3Var != null) {
+            e3Var.e(true);
         }
         if (aiComposeTone instanceof b0) {
             e0Var.d(aiComposeTone);
@@ -396,7 +396,7 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
             f0Var2 = f0Var;
         } else {
             f0Var2 = f0Var;
-            f0Var2.b0(F, linearLayout, true, w31.y(w31.D(f0Var.p0, null, null)), null);
+            f0Var2.b0(F, linearLayout, true, v31.y(v31.D(f0Var.p0, null, null)), null);
         }
         int size = suggestedLanguages.size();
         int i11 = 0;
@@ -421,7 +421,7 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
                                 f0Var3.c0();
                                 String str = language2.code;
                                 f0Var3.p0 = str;
-                                w31.H(str);
+                                v31.H(str);
                                 f0Var3.k0();
                                 break;
                             default:
@@ -429,7 +429,7 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
                                 f0Var4.c0();
                                 String str2 = language2.code;
                                 f0Var4.p0 = str2;
-                                w31.H(str2);
+                                v31.H(str2);
                                 f0Var4.k0();
                                 break;
                         }
@@ -461,7 +461,7 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
                             f0Var3.c0();
                             String str = language4.code;
                             f0Var3.p0 = str;
-                            w31.H(str);
+                            v31.H(str);
                             f0Var3.k0();
                             break;
                         default:
@@ -469,7 +469,7 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
                             f0Var4.c0();
                             String str2 = language4.code;
                             f0Var4.p0 = str2;
-                            w31.H(str2);
+                            v31.H(str2);
                             f0Var4.k0();
                             break;
                     }
@@ -800,11 +800,11 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
         return this.V != null;
     }
 
-    public final j51 j0(int i10, TL_iv.RichMessage richMessage, boolean z4) {
+    public final h51 j0(int i10, TL_iv.RichMessage richMessage, boolean z4) {
         if (richMessage == null) {
             richMessage = this.V;
         }
-        j51 of2 = RichMessageLayout.PreviewView.Factory.of(richMessage);
+        h51 of2 = RichMessageLayout.PreviewView.Factory.of(richMessage);
         of2.d = i10;
         of2.e = z4;
         return of2;
@@ -1045,7 +1045,7 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
         int i11 = 0;
         if (e2.c.s(editable)) {
             spannableStringBuilder = new SpannableStringBuilder(editable.toString());
-            Class[] clsArr = {u01.class, CodeHighlighting.Span.class, dw0.class, q51.class, p51.class, m51.class, n51.class, i10.class, l51.class, k51.class, u5.class};
+            Class[] clsArr = {t01.class, CodeHighlighting.Span.class, cw0.class, o51.class, n51.class, k51.class, l51.class, i10.class, j51.class, i51.class, u5.class};
             for (int i12 = 0; i12 < 11; i12++) {
                 for (Object obj : editable.getSpans(0, editable.length(), clsArr[i12])) {
                     spannableStringBuilder.setSpan(obj, editable.getSpanStart(obj), editable.getSpanEnd(obj), 33);
@@ -1145,20 +1145,20 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
     }
 
     public final void r0() {
-        tl0 tl0Var;
+        sl0 sl0Var;
         View view;
         if (this.y0 == null) {
             return;
         }
         int i10 = 0;
         while (true) {
-            tl0Var = this.d;
-            if (i10 >= tl0Var.getChildCount()) {
+            sl0Var = this.d;
+            if (i10 >= sl0Var.getChildCount()) {
                 view = null;
                 break;
             }
-            view = tl0Var.getChildAt(i10);
-            j51 G = this.L0.G(RecyclerView.R(view) - 1);
+            view = sl0Var.getChildAt(i10);
+            h51 G = this.L0.G(RecyclerView.R(view) - 1);
             if (G != null && G.c == this.u0) {
                 break;
             } else {
@@ -1170,7 +1170,7 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
             this.y0.e(true);
         } else {
             this.y0.setVisibility(0);
-            this.y0.setTranslationY(view.getY() + tl0Var.getY() + view.getHeight());
+            this.y0.setTranslationY(view.getY() + sl0Var.getY() + view.getHeight());
         }
     }
 
@@ -1216,20 +1216,20 @@ public final class f0 extends sa implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(tl0Var, getContext(), this.currentAccount, 0, true, new d(this, 0), this.resourcesProvider);
-        this.L0 = x51Var;
-        x51Var.r = false;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(sl0Var, getContext(), this.currentAccount, 0, true, new d(this, 0), this.resourcesProvider);
+        this.L0 = w51Var;
+        w51Var.r = false;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa
     public final CharSequence y() {
         if (this.J0 == null) {
             this.J0 = LocaleController.getString(R.string.AIEditor);
-            ij0 ij0Var = new ij0(R.raw.emoji_stars, AndroidUtilities.dp(24.0f), "emoji_stars", AndroidUtilities.dp(24.0f));
-            this.K0 = ij0Var;
-            ij0Var.H(true);
+            hj0 hj0Var = new hj0(R.raw.emoji_stars, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+            this.K0 = hj0Var;
+            hj0Var.H(true);
             this.K0.I(1);
         }
         return this.J0;

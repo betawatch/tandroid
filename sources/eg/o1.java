@@ -21,10 +21,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.BubbleActivity;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class o1 extends FrameLayout {
     public float B;
@@ -45,7 +45,7 @@ public abstract class o1 extends FrameLayout {
     public final TextView s;
     public final TextView v;
     public final r2 w;
-    public kv0 x;
+    public jv0 x;
     public boolean y;
 
     public o1(Context context, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, MediaController.CropState cropState) {
@@ -111,23 +111,23 @@ public abstract class o1 extends FrameLayout {
         frameLayout.addView(h, c6.d(-2, 44.0f, 5, 0.0f, 0.0f, -8.0f, 0.0f));
     }
 
-    private kv0 getPaintingSize() {
-        kv0 kv0Var = this.x;
-        if (kv0Var != null) {
-            return kv0Var;
+    private jv0 getPaintingSize() {
+        jv0 jv0Var = this.x;
+        if (jv0Var != null) {
+            return jv0Var;
         }
         Bitmap bitmap = this.f;
-        kv0 kv0Var2 = new kv0(bitmap.getWidth(), bitmap.getHeight());
+        jv0 jv0Var2 = new jv0(bitmap.getWidth(), bitmap.getHeight());
         float f10 = 1280;
-        kv0Var2.a = f10;
+        jv0Var2.a = f10;
         float floor = (float) Math.floor((f10 * r0) / r1);
-        kv0Var2.b = floor;
+        jv0Var2.b = floor;
         if (floor > f10) {
-            kv0Var2.b = f10;
-            kv0Var2.a = (float) Math.floor((f10 * r1) / r0);
+            jv0Var2.b = f10;
+            jv0Var2.a = (float) Math.floor((f10 * r1) / r0);
         }
-        this.x = kv0Var2;
-        return kv0Var2;
+        this.x = jv0Var2;
+        return jv0Var2;
     }
 
     public final void a(MotionEvent motionEvent) {

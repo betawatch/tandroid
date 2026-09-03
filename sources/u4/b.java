@@ -15,10 +15,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import org.telegram.tgnet.ConnectionsManager;
-import qh.d6;
+import qh.l6;
 import s8.v;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class b implements h0 {
     public final Uri a;
@@ -86,7 +86,7 @@ public final class b implements h0 {
             b(uri);
         } else {
             this.r = true;
-            this.v.n.postDelayed(new d6(22, this, uri), j10 - elapsedRealtime);
+            this.v.n.postDelayed(new l6(21, this, uri), j10 - elapsedRealtime);
         }
     }
 

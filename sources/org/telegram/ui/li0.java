@@ -9,9 +9,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class li0 extends org.telegram.ui.Components.qv0 {
+public final class li0 extends org.telegram.ui.Components.pv0 {
     public final /* synthetic */ ti0 A0;
     public final int[] t0;
     public final int[] u0;
@@ -39,7 +39,7 @@ public final class li0 extends org.telegram.ui.Components.qv0 {
     
         if ((r5[1] - r3[1]) > r4) goto L81;
      */
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

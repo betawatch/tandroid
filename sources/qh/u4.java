@@ -1,26 +1,29 @@
 package qh;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.View;
-
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class u4 extends View {
-    public final /* synthetic */ f9 a;
+public final class u4 implements eg.c {
+    public final /* synthetic */ e9 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u4(f9 f9Var, Context context) {
-        super(context);
-        this.a = f9Var;
+    public u4(e9 e9Var) {
+        this.a = e9Var;
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        s4 s4Var = this.a.L0;
-        if (s4Var != null) {
-            s4Var.d(canvas);
+    @Override // eg.c
+    public final void a() {
+        e9 e9Var = this.a;
+        e9Var.D0(null, true);
+        if (e9Var.J0) {
+            ba baVar = e9Var.x2;
+            baVar.Z0.f.d();
+            baVar.l0(-1, false, true);
+            e9Var.J0 = false;
         }
+        e9Var.O0(false);
+    }
+
+    @Override // eg.c
+    public final eg.j b() {
+        return this.a.G0;
     }
 }

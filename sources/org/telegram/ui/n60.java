@@ -17,10 +17,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class n60 extends bd {
-    public uc w0;
+    public tc w0;
     public float x0;
     public boolean y0;
 
@@ -128,9 +128,9 @@ public final class n60 extends bd {
     @Override // org.telegram.ui.bd
     public final void X0(boolean z4) {
         super.X0(z4);
-        uc ucVar = this.w0;
-        if (ucVar != null) {
-            TextView textView = ucVar.d;
+        tc tcVar = this.w0;
+        if (tcVar != null) {
+            TextView textView = tcVar.d;
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = this.c;
             textView.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("BoostingGroupBoostCount", tL_premium_boostsStatus != null ? tL_premium_boostsStatus.boosts : 0, new Object[0])));
         }
@@ -143,19 +143,19 @@ public final class n60 extends bd {
         org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(new ColorDrawable(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, this.resourceProvider)), org.telegram.ui.ActionBar.k6.V0(getParentActivity(), R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.k6.b7), 0, 0);
         pqVar.w = true;
         this.L.setBackground(pqVar);
-        uc ucVar = this.w0;
-        if (ucVar == null || z4) {
+        tc tcVar = this.w0;
+        if (tcVar == null || z4) {
             return;
         }
-        ucVar.a.b(this.currentAccount, this.s, false);
+        tcVar.a.b(this.currentAccount, this.s, false);
         this.w0.b.b(this.s, false);
         this.w0.e();
     }
 
     @Override // org.telegram.ui.bd
     public final void c1() {
-        nc ncVar;
-        nc ncVar2;
+        mc mcVar;
+        mc mcVar2;
         this.W = 0;
         int i10 = 1 + 1;
         this.X = 1;
@@ -167,16 +167,16 @@ public final class n60 extends bd {
             boolean z4 = this.b0 >= 0;
             this.O = i10 + 3;
             this.b0 = i11;
-            if (!z4 && (ncVar = this.K) != null) {
-                ncVar.o(i11);
+            if (!z4 && (mcVar = this.K) != null) {
+                mcVar.o(i11);
                 this.K.m(this.Z);
                 this.J.u0(0);
             }
         } else {
             int i12 = this.b0;
             this.b0 = -1;
-            if (i12 >= 0 && (ncVar2 = this.K) != null) {
-                ncVar2.u(i12);
+            if (i12 >= 0 && (mcVar2 = this.K) != null) {
+                mcVar2.u(i12);
                 this.K.m(this.Z);
             }
         }
@@ -227,9 +227,9 @@ public final class n60 extends bd {
     @Override // org.telegram.ui.ActionBar.p2
     public final void onConfigurationChanged(Configuration configuration) {
         super.onConfigurationChanged(configuration);
-        uc ucVar = this.w0;
-        if (ucVar != null) {
-            ucVar.a();
+        tc tcVar = this.w0;
+        if (tcVar != null) {
+            tcVar.a();
         }
     }
 

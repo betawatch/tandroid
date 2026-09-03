@@ -40,9 +40,9 @@ import org.telegram.ui.Components.pr;
 import org.telegram.ui.bz;
 import org.telegram.ui.cz;
 import org.telegram.ui.xn;
-import qh.xa;
+import qh.wa;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class m8 extends FrameLayout implements View.OnClickListener {
     public final Path B;
@@ -50,7 +50,7 @@ public abstract class m8 extends FrameLayout implements View.OnClickListener {
     public boolean D;
     public k8 a;
     public k8 b;
-    public qh.f3 c;
+    public qh.e3 c;
     public final FrameLayout d;
     public final Matrix e;
     public final float[] f;
@@ -89,14 +89,14 @@ public abstract class m8 extends FrameLayout implements View.OnClickListener {
         setLayerType(2, null);
     }
 
-    public static ArrayList a(qh.s6 s6Var) {
-        if (s6Var == null || s6Var.T0 == null) {
+    public static ArrayList a(qh.r6 r6Var) {
+        if (r6Var == null || r6Var.T0 == null) {
             return null;
         }
         ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < s6Var.T0.size(); i10++) {
-            if (((VideoEditedInfo.MediaEntity) s6Var.T0.get(i10)).mediaArea instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
-                arrayList.add(((VideoEditedInfo.MediaEntity) s6Var.T0.get(i10)).mediaArea);
+        for (int i10 = 0; i10 < r6Var.T0.size(); i10++) {
+            if (((VideoEditedInfo.MediaEntity) r6Var.T0.get(i10)).mediaArea instanceof TL_stories.TL_mediaAreaSuggestedReaction) {
+                arrayList.add(((VideoEditedInfo.MediaEntity) r6Var.T0.get(i10)).mediaArea);
             }
         }
         return arrayList;
@@ -111,9 +111,9 @@ public abstract class m8 extends FrameLayout implements View.OnClickListener {
         if (arrayList == arrayList2 && (arrayList == null || arrayList2 == null || arrayList.size() == this.r.size())) {
             return;
         }
-        qh.f3 f3Var = this.c;
-        if (f3Var != null) {
-            f3Var.e(true);
+        qh.e3 e3Var = this.c;
+        if (e3Var != null) {
+            e3Var.e(true);
             this.c = null;
         }
         int i10 = 0;
@@ -151,14 +151,14 @@ public abstract class m8 extends FrameLayout implements View.OnClickListener {
                     view = p8Var;
                 } else if (mediaArea instanceof TL_stories.TL_mediaAreaWeather) {
                     TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather = (TL_stories.TL_mediaAreaWeather) mediaArea;
-                    xa xaVar = new xa();
-                    xaVar.c = tL_mediaAreaWeather.emoji;
-                    xaVar.d = (float) tL_mediaAreaWeather.temperature_c;
+                    wa waVar = new wa();
+                    waVar.c = tL_mediaAreaWeather.emoji;
+                    waVar.d = (float) tL_mediaAreaWeather.temperature_c;
                     eg.j1 j1Var = new eg.j1(getContext(), AndroidUtilities.density);
                     j1Var.setMaxWidth(AndroidUtilities.displaySize.x);
                     j1Var.setIsVideo(true);
-                    j1Var.d(UserConfig.selectedAccount, xaVar.c);
-                    j1Var.setText(xaVar.a());
+                    j1Var.d(UserConfig.selectedAccount, waVar.c);
+                    j1Var.setText(waVar.a());
                     j1Var.e(3, tL_mediaAreaWeather.color);
                     view = new l8(getContext(), j1Var, mediaArea);
                 } else {
@@ -500,21 +500,21 @@ public abstract class m8 extends FrameLayout implements View.OnClickListener {
             this.a = k8Var2;
             this.b = k8Var2;
             invalidate();
-            qh.f3 f3Var = this.c;
-            if (f3Var != null) {
-                f3Var.e(true);
+            qh.e3 e3Var = this.c;
+            if (e3Var != null) {
+                e3Var.e(true);
                 this.c = null;
             }
-            qh.f3 f3Var2 = new qh.f3(getContext(), 0);
+            qh.e3 e3Var2 = new qh.e3(getContext(), 0);
             Paint paint = new Paint(1);
-            f3Var2.V = paint;
-            paint.setPathEffect(new CornerPathEffect(f3Var2.v));
-            org.telegram.ui.Cells.z zVar = new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{687865855}), null, new eg.i1(f3Var2, 7));
-            f3Var2.U = zVar;
-            zVar.setCallback(f3Var2);
-            f3Var2.n(0.0f, this.b.getTranslationX() - AndroidUtilities.dp(8.0f));
-            f3Var2.d = 5000L;
-            this.c = f3Var2;
+            e3Var2.V = paint;
+            paint.setPathEffect(new CornerPathEffect(e3Var2.v));
+            org.telegram.ui.Cells.z zVar = new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{687865855}), null, new eg.i1(e3Var2, 7));
+            e3Var2.U = zVar;
+            zVar.setCallback(e3Var2);
+            e3Var2.m(0.0f, this.b.getTranslationX() - AndroidUtilities.dp(8.0f));
+            e3Var2.d = 5000L;
+            this.c = e3Var2;
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
             TL_stories.MediaArea mediaArea4 = this.b.b;
             if (mediaArea4 instanceof TL_stories.TL_mediaAreaChannelPost) {
@@ -523,7 +523,7 @@ public abstract class m8 extends FrameLayout implements View.OnClickListener {
                 spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.StoryViewGift));
             } else {
                 if (mediaArea4 instanceof TL_stories.TL_mediaAreaUrl) {
-                    f3Var2.q(true);
+                    e3Var2.p(true);
                     spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.StoryOpenLink));
                     spannableStringBuilder.append((CharSequence) "\n");
                     TL_stories.TL_mediaAreaUrl tL_mediaAreaUrl = (TL_stories.TL_mediaAreaUrl) this.b.b;
@@ -532,7 +532,7 @@ public abstract class m8 extends FrameLayout implements View.OnClickListener {
                     spannableStringBuilder.setSpan(new RelativeSizeSpan(0.85f), length, spannableStringBuilder.length(), 33);
                     spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.k6.l1(0.6f, -1)), length, spannableStringBuilder.length(), 33);
                     spannableStringBuilder.setSpan(new j8(0), length, spannableStringBuilder.length(), 33);
-                    f3Var2.l(11.0f, 7.0f, 11.0f, 7.0f);
+                    e3Var2.k(11.0f, 7.0f, 11.0f, 7.0f);
                     z4 = true;
                     SpannableString spannableString = new SpannableString(">");
                     oq oqVar = new oq(R.drawable.photos_arrow, 0);
@@ -547,23 +547,23 @@ public abstract class m8 extends FrameLayout implements View.OnClickListener {
                         spannableString = spannableString2;
                     }
                     AndroidUtilities.replaceCharSequence(">", spannableStringBuilder, spannableString);
-                    f3Var2.t(spannableStringBuilder);
-                    f3Var2.i0 = new z1(22, this, f3Var2);
+                    e3Var2.s(spannableStringBuilder);
+                    e3Var2.i0 = new z1(22, this, e3Var2);
                     float f16 = !z4 ? 100 : 50;
                     z10 = this.b.getTranslationY() - ((float) AndroidUtilities.dp(f16)) < ((float) AndroidUtilities.dp(100.0f));
-                    f3Var2.a = z10 ? 1 : 3;
+                    e3Var2.a = z10 ? 1 : 3;
                     k8Var = this.b;
                     if (!(k8Var.b instanceof TL_stories.TL_mediaAreaChannelPost) && (!z10 ? (k8Var.getTranslationY() - (this.b.getMeasuredHeight() / 2.0f)) - AndroidUtilities.dp(f16) >= AndroidUtilities.dp(120.0f) : (this.b.getMeasuredHeight() / 2.0f) + k8Var.getTranslationY() <= getMeasuredHeight() - AndroidUtilities.dp(120.0f))) {
-                        f3Var2.setTranslationY(this.b.getTranslationY() - (this.b.getMeasuredHeight() / 3.0f));
+                        e3Var2.setTranslationY(this.b.getTranslationY() - (this.b.getMeasuredHeight() / 3.0f));
                     } else if (z10) {
-                        f3Var2.setTranslationY((this.b.getTranslationY() - (this.b.getMeasuredHeight() / 2.0f)) - AndroidUtilities.dp(f16));
+                        e3Var2.setTranslationY((this.b.getTranslationY() - (this.b.getMeasuredHeight() / 2.0f)) - AndroidUtilities.dp(f16));
                     } else {
-                        f3Var2.setTranslationY((this.b.getMeasuredHeight() / 2.0f) + this.b.getTranslationY());
+                        e3Var2.setTranslationY((this.b.getMeasuredHeight() / 2.0f) + this.b.getTranslationY());
                     }
-                    f3Var2.setOnClickListener(new androidx.mediarouter.app.c(this, 28));
-                    f3Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-                    this.d.addView(f3Var2, k7.c6.c(f16, -1));
-                    f3Var2.v();
+                    e3Var2.setOnClickListener(new androidx.mediarouter.app.c(this, 28));
+                    e3Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+                    this.d.addView(e3Var2, k7.c6.c(f16, -1));
+                    e3Var2.u();
                     b(true);
                 }
                 spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.StoryViewLocation));
@@ -581,21 +581,21 @@ public abstract class m8 extends FrameLayout implements View.OnClickListener {
             if (AndroidUtilities.isRTL(spannableStringBuilder)) {
             }
             AndroidUtilities.replaceCharSequence(">", spannableStringBuilder, spannableString3);
-            f3Var2.t(spannableStringBuilder);
-            f3Var2.i0 = new z1(22, this, f3Var2);
+            e3Var2.s(spannableStringBuilder);
+            e3Var2.i0 = new z1(22, this, e3Var2);
             float f162 = !z4 ? 100 : 50;
             if (this.b.getTranslationY() - ((float) AndroidUtilities.dp(f162)) < ((float) AndroidUtilities.dp(100.0f))) {
             }
-            f3Var2.a = z10 ? 1 : 3;
+            e3Var2.a = z10 ? 1 : 3;
             k8Var = this.b;
             if (!(k8Var.b instanceof TL_stories.TL_mediaAreaChannelPost)) {
             }
             if (z10) {
             }
-            f3Var2.setOnClickListener(new androidx.mediarouter.app.c(this, 28));
-            f3Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-            this.d.addView(f3Var2, k7.c6.c(f162, -1));
-            f3Var2.v();
+            e3Var2.setOnClickListener(new androidx.mediarouter.app.c(this, 28));
+            e3Var2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+            this.d.addView(e3Var2, k7.c6.c(f162, -1));
+            e3Var2.u();
             b(true);
         }
     }
@@ -660,14 +660,14 @@ public abstract class m8 extends FrameLayout implements View.OnClickListener {
 
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
-        qh.f3 f3Var;
-        if (getChildCount() == 0 || (f3Var = this.c) == null || !f3Var.S) {
+        qh.e3 e3Var;
+        if (getChildCount() == 0 || (e3Var = this.c) == null || !e3Var.S) {
             return false;
         }
         if (motionEvent.getAction() == 1) {
-            qh.f3 f3Var2 = this.c;
-            if (f3Var2 != null) {
-                f3Var2.e(true);
+            qh.e3 e3Var2 = this.c;
+            if (e3Var2 != null) {
+                e3Var2.e(true);
                 this.c = null;
             }
             this.b = null;

@@ -30,21 +30,21 @@ import org.telegram.ui.Components.w9;
 import org.telegram.ui.Components.x9;
 import org.telegram.ui.Components.y80;
 import org.telegram.ui.af0;
-import org.telegram.ui.ed1;
 import org.telegram.ui.f70;
+import org.telegram.ui.jd1;
 import org.telegram.ui.ld;
 import org.telegram.ui.nd;
 import org.telegram.ui.os;
-import org.telegram.ui.p81;
 import org.telegram.ui.po;
-import org.telegram.ui.qg1;
-import org.telegram.ui.r61;
 import org.telegram.ui.sz;
+import org.telegram.ui.v81;
+import org.telegram.ui.vg1;
 import org.telegram.ui.vn;
+import org.telegram.ui.w61;
 import org.telegram.ui.xn;
 import org.telegram.ui.xz;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class i0 extends View implements xd.b {
     public final /* synthetic */ int a;
@@ -409,7 +409,7 @@ public final class i0 extends View implements xd.b {
                 }
                 break;
             case 12:
-                if (((r61) this.c).N0) {
+                if (((w61) this.c).N0) {
                     canvas.drawColor(k6.v0(k6.G8, (g6) this.b));
                     break;
                 } else {
@@ -417,27 +417,27 @@ public final class i0 extends View implements xd.b {
                     break;
                 }
             case 13:
-                p81 p81Var = (p81) this.c;
-                kVar = ((org.telegram.ui.ActionBar.p2) p81Var).actionBar;
+                v81 v81Var = (v81) this.c;
+                kVar = ((org.telegram.ui.ActionBar.p2) v81Var).actionBar;
                 int height = kVar.getHeight();
                 Rect rect = AndroidUtilities.rectTmp2;
                 rect.set(0, 0, getMeasuredWidth(), height);
                 Paint paint9 = (Paint) this.b;
                 int i12 = k6.s8;
-                g6Var = ((org.telegram.ui.ActionBar.p2) p81Var).resourceProvider;
+                g6Var = ((org.telegram.ui.ActionBar.p2) v81Var).resourceProvider;
                 paint9.setColor(k6.v0(i12, g6Var));
-                p81Var.b.J(canvas, 0.0f, rect, paint9, true);
-                if (p81Var.getParentLayout() != null) {
-                    ((ActionBarLayout) p81Var.getParentLayout()).q(canvas, height);
+                v81Var.b.J(canvas, 0.0f, rect, paint9, true);
+                if (v81Var.getParentLayout() != null) {
+                    ((ActionBarLayout) v81Var.getParentLayout()).q(canvas, height);
                     break;
                 }
                 break;
             case 14:
-                ed1 ed1Var = (ed1) this.c;
-                int currentItem = ed1Var.g0.getCurrentItem();
+                jd1 jd1Var = (jd1) this.c;
+                int currentItem = jd1Var.g0.getCurrentItem();
                 Paint paint10 = (Paint) this.b;
                 int i13 = k6.Ae;
-                paint10.setColor(ed1Var.d ? k6.C0(i13) : ed1Var.getThemedColor(i13));
+                paint10.setColor(jd1Var.d ? k6.C0(i13) : jd1Var.getThemedColor(i13));
                 int i14 = 0;
                 while (i14 < 2) {
                     paint10.setAlpha(i14 == currentItem ? 255 : 127);
@@ -450,7 +450,7 @@ public final class i0 extends View implements xd.b {
                 paint11.setColor(k6.w0(null, k6.d6, false));
                 int measuredHeight3 = getMeasuredHeight() - AndroidUtilities.dp(3.0f);
                 canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), measuredHeight3, paint11);
-                f5Var = ((org.telegram.ui.ActionBar.p2) ((qg1) this.c)).parentLayout;
+                f5Var = ((org.telegram.ui.ActionBar.p2) ((vg1) this.c)).parentLayout;
                 ((ActionBarLayout) f5Var).q(canvas, measuredHeight3);
                 break;
             case 16:
@@ -638,10 +638,10 @@ public final class i0 extends View implements xd.b {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(p81 p81Var, Context context) {
+    public i0(v81 v81Var, Context context) {
         super(context);
         this.a = 13;
-        this.c = p81Var;
+        this.c = v81Var;
         this.b = new Paint(1);
     }
 
@@ -654,18 +654,18 @@ public final class i0 extends View implements xd.b {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(qg1 qg1Var, Context context) {
+    public i0(vg1 vg1Var, Context context) {
         super(context);
         this.a = 15;
-        this.c = qg1Var;
+        this.c = vg1Var;
         this.b = new Paint();
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(Context context, ed1 ed1Var) {
+    public i0(Context context, jd1 jd1Var) {
         super(context);
         this.a = 14;
-        this.c = ed1Var;
+        this.c = jd1Var;
         this.b = new Paint(1);
     }
 

@@ -49,7 +49,7 @@ import r0.j0;
 import r0.m0;
 import r0.m1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements com.google.android.gms.common.api.internal.s, g5.l, SuccessContinuation, o4.z, o3.m, od.b, r0.o, o0 {
     public final /* synthetic */ int a;
@@ -388,8 +388,8 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
     }
 
     public void t(k.a aVar) {
-        sf.e eVar = (sf.e) this.b;
-        ((ActionMode.Callback) eVar.b).onDestroyActionMode(eVar.s(aVar));
+        sf.f fVar = (sf.f) this.b;
+        ((ActionMode.Callback) fVar.b).onDestroyActionMode(fVar.s(aVar));
         g.q qVar = (g.q) this.c;
         if (qVar.B != null) {
             qVar.f.getDecorView().removeCallbacks(qVar.C);
@@ -445,13 +445,13 @@ public final /* synthetic */ class b implements com.google.android.gms.common.ap
         ViewGroup viewGroup = ((g.q) this.c).G;
         WeakHashMap weakHashMap = j0.a;
         r0.z.c(viewGroup);
-        sf.e eVar = (sf.e) this.b;
-        ActionMode.Callback callback = (ActionMode.Callback) eVar.b;
-        k.e s6 = eVar.s(aVar);
-        a0.k kVar = (a0.k) eVar.e;
+        sf.f fVar = (sf.f) this.b;
+        ActionMode.Callback callback = (ActionMode.Callback) fVar.b;
+        k.e s6 = fVar.s(aVar);
+        a0.k kVar = (a0.k) fVar.e;
         Menu menu2 = (Menu) kVar.get(menu);
         if (menu2 == null) {
-            menu2 = new b0((Context) eVar.c, (l.l) menu);
+            menu2 = new b0((Context) fVar.c, (l.l) menu);
             kVar.put(menu, menu2);
         }
         return callback.onPrepareActionMode(s6, menu2);

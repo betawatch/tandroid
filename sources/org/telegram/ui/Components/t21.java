@@ -1,30 +1,34 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+import android.animation.ValueAnimator;
+
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class t21 {
-    public static final t21 a;
-    public static final t21 b;
-    public static final t21 c;
-    public static final /* synthetic */ t21[] d;
+public final /* synthetic */ class t21 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v21 b;
 
-    static {
-        t21 t21Var = new t21("TOP", 0);
-        a = t21Var;
-        t21 t21Var2 = new t21("LEFT", 1);
-        b = t21Var2;
-        t21 t21Var3 = new t21("BOTTOM", 2);
-        c = t21Var3;
-        d = new t21[]{t21Var, t21Var2, t21Var3};
+    public /* synthetic */ t21(v21 v21Var, int i10) {
+        this.a = i10;
+        this.b = v21Var;
     }
 
-    public static t21 valueOf(String str) {
-        return (t21) Enum.valueOf(t21.class, str);
-    }
-
-    public static t21[] values() {
-        return (t21[]) d.clone();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                v21 v21Var = this.b;
+                v21Var.getClass();
+                v21Var.N = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v21Var.h();
+                v21Var.g();
+                break;
+            default:
+                float max = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                v21 v21Var2 = this.b;
+                v21Var2.H = max;
+                v21Var2.h.invalidate();
+                break;
+        }
     }
 }

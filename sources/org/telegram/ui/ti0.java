@@ -34,7 +34,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class ti0 extends Dialog implements NotificationCenter.NotificationCenterDelegate {
     public float B;
@@ -94,7 +94,7 @@ public class ti0 extends Dialog implements NotificationCenter.NotificationCenter
     public boolean t0;
     public org.telegram.ui.Cells.t1 u0;
     public boolean v;
-    public org.telegram.ui.Components.l01 v0;
+    public org.telegram.ui.Components.k01 v0;
     public boolean w;
     public Paint w0;
     public boolean x;
@@ -257,17 +257,17 @@ public class ti0 extends Dialog implements NotificationCenter.NotificationCenter
             if (d0Var != null && (zVar = d0Var.m) != null && !zVar.H1) {
                 zVar.H1 = true;
                 zVar.I1 = true;
-                o51 o51Var = zVar.e0;
-                if (o51Var != null) {
-                    o51Var.invalidate();
+                t51 t51Var = zVar.e0;
+                if (t51Var != null) {
+                    t51Var.invalidate();
                 }
-                d51 d51Var = zVar.f0;
-                if (d51Var != null) {
-                    d51Var.invalidate();
+                i51 i51Var = zVar.f0;
+                if (i51Var != null) {
+                    i51Var.invalidate();
                 }
             }
         }
-        new qh.i3(this.C, false, new w3(this, 9));
+        new qh.h3(this.C, false, new w3(this, 9));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
@@ -536,7 +536,7 @@ public class ti0 extends Dialog implements NotificationCenter.NotificationCenter
         int i10 = org.telegram.ui.ActionBar.k6.E8;
         org.telegram.ui.ActionBar.g6 g6Var = this.b;
         q70Var.T(org.telegram.ui.ActionBar.k6.l1(0.06f, org.telegram.ui.ActionBar.k6.v0(i10, g6Var)));
-        q70Var.Q(this.h0, sg.b.j(g6Var), false);
+        q70Var.Q(this.h0, sg.b.k(g6Var), false);
         ViewGroup viewGroup = q70Var.A;
         this.W = viewGroup;
         this.D.addView(viewGroup, k7.c6.c(-2.0f, -2));
@@ -691,7 +691,7 @@ public class ti0 extends Dialog implements NotificationCenter.NotificationCenter
     public final void s(long j10) {
         TLRPC.Message message;
         TLRPC.MessageMedia messageMedia;
-        this.v0 = j10 > 0 ? new org.telegram.ui.Components.l01(mh.ja.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j10), 0.7f, null), 14.0f, AndroidUtilities.bold()) : null;
+        this.v0 = j10 > 0 ? new org.telegram.ui.Components.k01(mh.ja.X0(false, LocaleController.formatPluralStringComma("UnlockPaidContent", (int) j10), 0.7f, null), 14.0f, AndroidUtilities.bold()) : null;
         if (this.w0 == null) {
             Paint paint = new Paint(1);
             this.w0 = paint;
@@ -723,7 +723,7 @@ public class ti0 extends Dialog implements NotificationCenter.NotificationCenter
             if (lgVar != null) {
                 lgVar.setAlpha(0.0f);
             }
-            org.telegram.ui.Components.jm0.d(new Utilities.Callback2() { // from class: org.telegram.ui.ai0
+            org.telegram.ui.Components.im0.d(new Utilities.Callback2() { // from class: org.telegram.ui.ai0
                 @Override // org.telegram.messenger.Utilities.Callback2
                 public final void run(Object obj, Object obj2) {
                     ti0 ti0Var = ti0.this;

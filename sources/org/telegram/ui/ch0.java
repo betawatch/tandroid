@@ -3,16 +3,16 @@ package org.telegram.ui;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ch0 implements org.telegram.ui.Components.ll0, org.telegram.ui.ActionBar.c2 {
+public final /* synthetic */ class ch0 implements org.telegram.ui.Components.kl0, org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ qh0 a;
 
     public /* synthetic */ ch0(qh0 qh0Var) {
         this.a = qh0Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         qh0 qh0Var = this.a;
         if ((i10 < qh0Var.y || i10 >= qh0Var.B) && (i10 < qh0Var.E || i10 >= qh0Var.F)) {

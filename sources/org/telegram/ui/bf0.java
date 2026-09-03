@@ -12,11 +12,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class bf0 extends org.telegram.ui.Components.wv0 {
+public final class bf0 extends org.telegram.ui.Components.vv0 {
     public final /* synthetic */ og0 B;
-    public final org.telegram.ui.Components.lj0 a;
+    public final org.telegram.ui.Components.kj0 a;
     public final TextView b;
     public final TextView c;
     public final TextView d;
@@ -40,11 +40,11 @@ public final class bf0 extends org.telegram.ui.Components.wv0 {
         linearLayout.setOrientation(1);
         linearLayout.setGravity(17);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        this.a = lj0Var;
-        lj0Var.setAutoRepeat(true);
-        lj0Var.f(R.raw.sandclock, 120, 120, null);
-        frameLayout.addView(lj0Var, k7.c6.e(120, 120, 1));
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
+        this.a = kj0Var;
+        kj0Var.setAutoRepeat(true);
+        kj0Var.f(R.raw.sandclock, 120, 120, null);
+        frameLayout.addView(kj0Var, k7.c6.e(120, 120, 1));
         Point point = AndroidUtilities.displaySize;
         frameLayout.setVisibility((point.x <= point.y || AndroidUtilities.isTablet()) ? 0 : 8);
         linearLayout.addView(frameLayout, k7.c6.e(-1, -2, 1));
@@ -89,12 +89,12 @@ public final class bf0 extends org.telegram.ui.Components.wv0 {
         textView5.setOnClickListener(new f60(this, 7));
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final boolean b() {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final boolean c(boolean z4) {
         this.B.k1(true, true);
         AndroidUtilities.cancelRunOnUIThread(this.h);
@@ -103,12 +103,12 @@ public final class bf0 extends org.telegram.ui.Components.wv0 {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public String getHeaderName() {
         return LocaleController.getString("ResetAccount", R.string.ResetAccount);
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("resetview_params");
         this.n = bundle2;
@@ -117,7 +117,7 @@ public final class bf0 extends org.telegram.ui.Components.wv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void l(Bundle bundle) {
         Bundle bundle2 = this.n;
         if (bundle2 != null) {
@@ -125,7 +125,7 @@ public final class bf0 extends org.telegram.ui.Components.wv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void m(Bundle bundle, boolean z4) {
         if (bundle == null) {
             return;
@@ -143,7 +143,7 @@ public final class bf0 extends org.telegram.ui.Components.wv0 {
         AndroidUtilities.runOnUIThread(z5Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void n() {
         int i10 = org.telegram.ui.ActionBar.k6.G6;
         this.b.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
@@ -175,13 +175,13 @@ public final class bf0 extends org.telegram.ui.Components.wv0 {
         boolean z4 = max == 0;
         Boolean bool = this.y;
         if (bool == null || bool.booleanValue() != z4) {
-            org.telegram.ui.Components.lj0 lj0Var = this.a;
+            org.telegram.ui.Components.kj0 kj0Var = this.a;
             if (z4) {
-                lj0Var.getAnimatedDrawable().I(0);
+                kj0Var.getAnimatedDrawable().I(0);
             } else {
-                lj0Var.setAutoRepeat(true);
-                if (!lj0Var.b()) {
-                    lj0Var.d();
+                kj0Var.setAutoRepeat(true);
+                if (!kj0Var.b()) {
+                    kj0Var.d();
                 }
             }
             textView.setVisibility(z4 ? 4 : 0);

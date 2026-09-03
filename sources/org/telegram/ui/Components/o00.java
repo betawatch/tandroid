@@ -19,7 +19,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class o00 extends org.telegram.ui.ActionBar.h3 implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int w = 0;
@@ -110,9 +110,9 @@ public final class o00 extends org.telegram.ui.ActionBar.h3 implements Notificat
         }
         int i10 = 0;
         View childAt = d1Var.getChildAt(0);
-        fl0 fl0Var = (fl0) d1Var.G(childAt);
+        el0 el0Var = (el0) d1Var.G(childAt);
         int top = childAt.getTop();
-        if (top < 0 || fl0Var == null || fl0Var.b() != 0) {
+        if (top < 0 || el0Var == null || el0Var.b() != 0) {
             o00Var.I(true);
         } else {
             o00Var.I(false);

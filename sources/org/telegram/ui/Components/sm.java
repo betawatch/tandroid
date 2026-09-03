@@ -1,30 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class sm implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sn b;
-    public final /* synthetic */ int c;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-    public /* synthetic */ sm(sn snVar, int i10, int i11) {
-        this.a = i11;
-        this.b = snVar;
-        this.c = i10;
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class sm implements wk, org.telegram.ui.ActionBar.c2 {
+    public final /* synthetic */ Utilities.Callback a;
+
+    public /* synthetic */ sm(Utilities.Callback callback) {
+        this.a = callback;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.e0(this.c, null);
-                break;
-            case 1:
-                this.b.b0(this.c);
-                break;
-            default:
-                this.b.e0(this.c, null);
-                break;
+    @Override // org.telegram.ui.Components.wk
+    public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z4, int i11, long j10) {
+        this.a.run(new fh.g(messageMedia));
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        Utilities.Callback callback = this.a;
+        if (callback != null) {
+            callback.run(Boolean.FALSE);
         }
     }
 }

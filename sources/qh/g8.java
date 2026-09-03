@@ -1,440 +1,464 @@
 package qh;
 
-import android.text.SpannableString;
-import android.text.TextUtils;
-import android.view.View;
+import android.graphics.Bitmap;
 import android.view.WindowManager;
-import java.io.File;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.camera.CameraController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.bb;
+import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.lc0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g8 implements Runnable {
+public final /* synthetic */ class g8 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ca b;
+    public final /* synthetic */ ba b;
 
-    public /* synthetic */ g8(ca caVar, int i10) {
+    public /* synthetic */ g8(ba baVar, int i10) {
         this.a = i10;
-        this.b = caVar;
+        this.b = baVar;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:229:0x035c  */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        int i10;
-        char c3;
-        ArrayList arrayList;
-        q9 q9Var;
-        ba baVar;
-        int i11 = this.a;
-        int i12 = 2;
-        int i13 = 1;
-        ca caVar = this.b;
-        switch (i11) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        boolean z4;
+        la laVar;
+        t8 t8Var;
+        switch (this.a) {
             case 0:
-                caVar.r();
+                c2 c2Var = this.b.s;
+                c2Var.p = ((Float) obj).floatValue();
+                c2Var.i();
                 break;
             case 1:
-                if (caVar.q2 >= 0) {
-                    MessagesController.getGlobalMainSettings().edit().putFloat("frontflash_warmth", caVar.s.o).putFloat("frontflash_intensity", caVar.s.p).apply();
+                Bitmap bitmap = (Bitmap) obj;
+                ba baVar = this.b;
+                r6 r6Var = baVar.H1;
+                if (r6Var != null) {
+                    AndroidUtilities.recycleBitmap(r6Var.g0);
+                    baVar.H1.g0 = bitmap;
+                    c8 c8Var = baVar.n0;
+                    if (c8Var != null) {
+                        c8Var.n1(bitmap);
+                        break;
+                    }
                 }
-                caVar.s.e(0.0f, 240L, null);
-                caVar.B0.setSelected(false);
                 break;
             case 2:
-                caVar.m();
-                caVar.T1 = false;
-                int i14 = caVar.c;
-                if (caVar.H1 == null) {
-                    caVar.q(true);
-                    break;
+                r6 r6Var2 = (r6) obj;
+                ba baVar2 = this.b;
+                baVar2.W(r6Var2, false);
+                int i10 = baVar2.c;
+                oh.t6 storiesController = MessagesController.getInstance(i10).getStoriesController();
+                a0.h hVar = storiesController.e;
+                int i11 = storiesController.a;
+                ArrayList arrayList = storiesController.h;
+                ArrayList arrayList2 = storiesController.g;
+                oh.s6 s6Var = new oh.s6(storiesController, r6Var2);
+                boolean z10 = r6Var2.g;
+                long j10 = s6Var.G;
+                if (z10) {
+                    HashMap hashMap = (HashMap) hVar.f(j10);
+                    if (hashMap == null) {
+                        hashMap = new HashMap();
+                        hVar.k(hashMap, j10);
+                    }
+                    hashMap.put(Integer.valueOf(r6Var2.f), s6Var);
                 } else {
-                    caVar.y();
-                    h8 h8Var = new h8(caVar, i12);
-                    if (caVar.E1 == null) {
-                        s6 s6Var = caVar.H1;
-                        if (s6Var.K && !s6Var.v() && !s6Var.g) {
-                            long j10 = s6Var.h0;
-                            if (j10 > 0 && !s6Var.n) {
-                                long j11 = (long) ((s6Var.a0 - s6Var.Z) * j10);
-                                if (j11 < 68999) {
-                                    i10 = i14;
-                                    arrayList = null;
-                                    c3 = 0;
+                    storiesController.d(j10, s6Var, storiesController.b, false);
+                }
+                storiesController.d(j10, s6Var, storiesController.c, true);
+                if (j10 != UserConfig.getInstance(i11).clientUserId) {
+                    int i12 = 0;
+                    while (true) {
+                        if (i12 >= arrayList2.size()) {
+                            z4 = false;
+                        } else if (DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList2.get(i12)).peer) == j10) {
+                            arrayList2.add(0, (TL_stories.PeerStories) arrayList2.remove(i12));
+                            z4 = true;
+                        } else {
+                            i12++;
+                        }
+                    }
+                    if (!z4) {
+                        int i13 = 0;
+                        while (true) {
+                            if (i13 < arrayList.size()) {
+                                if (DialogObject.getPeerDialogId(((TL_stories.PeerStories) arrayList.get(i13)).peer) == j10) {
+                                    arrayList.add(0, (TL_stories.PeerStories) arrayList.remove(i13));
+                                    z4 = true;
                                 } else {
-                                    arrayList = new ArrayList();
-                                    s6Var.a0 = (59000.0f / s6Var.h0) + s6Var.Z;
-                                    arrayList.add(s6Var);
-                                    long j12 = 59000;
-                                    long j13 = 59000;
-                                    while (true) {
-                                        c3 = 0;
-                                        if (j13 < j11) {
-                                            if (Math.min(j12, j11 - j13) >= 1000) {
-                                                long j14 = j12;
-                                                s6 g10 = s6Var.g();
-                                                float f10 = s6Var.Z;
-                                                float f11 = s6Var.h0;
-                                                g10.Z = (j13 / f11) + f10;
-                                                g10.a0 = ((r9 + j13) / f11) + s6Var.Z;
-                                                g10.C0 = "";
-                                                j13 += j14;
-                                                arrayList.add(g10);
-                                                j12 = j14;
-                                                i14 = i14;
-                                            }
-                                        }
-                                    }
-                                    i10 = i14;
-                                }
-                                caVar.E1 = arrayList;
-                                if (arrayList != null) {
-                                    caVar.F1 = new ArrayList();
-                                    caVar.G1 = new ArrayList();
-                                    for (int i15 = 0; i15 < caVar.E1.size(); i15 = yh.d(i15, i15, 1, caVar.G1)) {
-                                        caVar.F1.add(Integer.valueOf(i15));
-                                    }
+                                    i13++;
                                 }
                             }
                         }
-                        i10 = i14;
-                        c3 = 0;
-                        arrayList = null;
-                        caVar.E1 = arrayList;
-                        if (arrayList != null) {
-                        }
-                    } else {
-                        i10 = i14;
-                        c3 = 0;
                     }
-                    if (caVar.E1 != null) {
-                        ArrayList arrayList2 = caVar.G1;
-                        int size = arrayList2.size();
-                        int i16 = 0;
-                        while (i16 < size) {
-                            Object obj = arrayList2.get(i16);
-                            i16++;
-                            Integer num = (Integer) obj;
-                            if (caVar.F1.contains(num)) {
-                                s6 s6Var2 = (s6) caVar.E1.get(num.intValue());
-                                s6 s6Var3 = caVar.H1;
-                                if (s6Var3 == s6Var2) {
-                                    CharSequence[] charSequenceArr = new CharSequence[1];
-                                    charSequenceArr[c3] = caVar.Z0.getText();
-                                    ArrayList<TLRPC.MessageEntity> entities = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(charSequenceArr, true) : new ArrayList<>();
-                                    CharSequence[] charSequenceArr2 = new CharSequence[1];
-                                    charSequenceArr2[c3] = caVar.H1.C0;
-                                    ArrayList<TLRPC.MessageEntity> entities2 = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(charSequenceArr2, true) : new ArrayList<>();
-                                    s6 s6Var4 = caVar.H1;
-                                    s6Var4.k = (TextUtils.equals(s6Var4.C0, charSequenceArr[c3]) && MediaDataController.entitiesEqual(entities, entities2)) ? false : true;
-                                    caVar.H1.C0 = new SpannableString(caVar.Z0.getText());
-                                } else if (s6Var2.C0 == null) {
-                                    s6Var3.k = false;
-                                    s6Var3.C0 = new SpannableString("");
-                                }
-                                h8Var.run(s6Var2);
-                                c3 = 0;
-                            }
-                        }
-                    } else {
-                        CharSequence[] charSequenceArr3 = {caVar.Z0.getText()};
-                        ArrayList<TLRPC.MessageEntity> entities3 = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(charSequenceArr3, true) : new ArrayList<>();
-                        ArrayList<TLRPC.MessageEntity> entities4 = MessagesController.getInstance(i10).storyEntitiesAllowed() ? MediaDataController.getInstance(i10).getEntities(new CharSequence[]{caVar.H1.C0}, true) : new ArrayList<>();
-                        s6 s6Var5 = caVar.H1;
-                        s6Var5.k = (TextUtils.equals(s6Var5.C0, charSequenceArr3[0]) && MediaDataController.entitiesEqual(entities3, entities4)) ? false : true;
-                        caVar.H1.C0 = new SpannableString(caVar.Z0.getText());
-                        h8Var.run(caVar.H1);
+                    if (!z4) {
+                        TL_stories.TL_peerStories tL_peerStories = new TL_stories.TL_peerStories();
+                        tL_peerStories.peer = MessagesController.getInstance(i11).getPeer(j10);
+                        storiesController.b0(j10, tL_peerStories);
+                        arrayList2.add(0, tL_peerStories);
+                        storiesController.O(j10);
                     }
-                    long j15 = UserConfig.getInstance(i10).clientUserId;
-                    TLRPC.InputPeer inputPeer = caVar.H1.v0;
-                    if (inputPeer != null && !(inputPeer instanceof TLRPC.TL_inputPeerSelf)) {
-                        j15 = DialogObject.getPeerDialogId(inputPeer);
-                    }
-                    caVar.H1 = null;
-                    caVar.v = true;
-                    caVar.w = j15;
-                    caVar.y2 = true;
-                    caVar.o();
-                    hg.y1 y1Var = new hg.y1(caVar, j15, 26);
-                    s9 s9Var = caVar.x;
-                    if (s9Var != null) {
-                        s9Var.b(j15, y1Var);
-                    } else {
-                        y1Var.run();
-                    }
-                    MessagesController.getGlobalMainSettings().edit().putInt("storyhint2", 2).apply();
+                }
+                s6Var.d();
+                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesUpdated, new Object[0]);
+                if (r6Var2.c && !r6Var2.g) {
+                    MessagesController.getInstance(i10).getStoriesController().w.c(r6Var2);
+                }
+                if (r6Var2.e1 != 0) {
+                    ConnectionsManager.getInstance(r6Var2.a).cancelRequest(r6Var2.e1, true);
                     break;
                 }
                 break;
             case 3:
-                caVar.Z(false);
+                k5 k5Var = (k5) obj;
+                ba baVar3 = this.b;
+                if (baVar3.z0 != null) {
+                    baVar3.A0.setLink(k5Var == null ? null : k5Var.a);
+                    o9 o9Var = baVar3.x0;
+                    if (o9Var != null) {
+                        o9Var.c.a(baVar3.A0.y ? baVar3.z0.d : null);
+                        break;
+                    }
+                }
                 break;
             case 4:
-                s6 s6Var6 = caVar.H1;
-                if (s6Var6 != null) {
-                    s6Var6.y0 = !s6Var6.y0;
-                    q9 q9Var2 = caVar.U0;
-                    if (q9Var2 != null) {
-                        q9Var2.u(s6Var6);
-                    }
-                    f9 f9Var = caVar.s1;
-                    if (f9Var != null && f9Var.O0 != null) {
-                        while (r9 < caVar.s1.O0.getChildCount()) {
-                            View childAt = caVar.s1.O0.getChildAt(r9);
-                            if (childAt instanceof eg.y1) {
-                                ((eg.y1) childAt).setupTheme(caVar.H1);
-                            }
-                            r9++;
-                        }
-                    }
-                    caVar.o0(true);
+                Integer num = (Integer) obj;
+                r6 r6Var3 = this.b.H1;
+                if (r6Var3 != null) {
+                    r6Var3.I0 = num.intValue();
+                    MessagesController.getGlobalMainSettings().edit().putInt("story_period", num.intValue()).apply();
                     break;
                 }
                 break;
             case 5:
-                caVar.q(true);
+                ba baVar4 = this.b;
+                oh.b bVar = baVar4.a;
+                int intValue = ((Integer) obj).intValue() / 3600;
+                bb bbVar = new cb(baVar4.b, new hg.w(13)).a;
+                WindowManager.LayoutParams layout = bbVar.getLayout();
+                if (layout != null) {
+                    layout.height = -2;
+                    layout.width = baVar4.r.getWidth();
+                    layout.y = (int) (baVar4.r.getY() + AndroidUtilities.dp(56.0f));
+                    cb cbVar = bbVar.a;
+                    cbVar.getWindow().setAttributes(cbVar.b);
+                }
+                bbVar.setTouchable(true);
+                new qc(bbVar, bVar).G(R.raw.fire_on, 3, AndroidUtilities.replaceSingleTag(LocaleController.formatPluralString("StoryPeriodPremium", intValue, new Object[0]), org.telegram.ui.ActionBar.k6.gc, 0, new f8(baVar4, 27), bVar)).k(true);
                 break;
             case 6:
-                caVar.d = true;
-                caVar.v = false;
-                if (caVar.G == 1) {
-                    caVar.e0.setAlpha(1.0f);
-                    caVar.e0.setTranslationX(0.0f);
-                    caVar.e0.setTranslationY(0.0f);
-                    caVar.f0.setAlpha(1.0f);
-                    caVar.h0.setAlpha(1.0f);
-                    caVar.n.setBackgroundColor(-16777216);
-                    if (caVar.c0 == 2) {
-                        caVar.r1.setAlpha(1.0f);
+                Boolean bool = (Boolean) obj;
+                boolean booleanValue = bool.booleanValue();
+                ba baVar5 = this.b;
+                if (booleanValue && (laVar = baVar5.W0) != null && laVar.M) {
+                    laVar.M = false;
+                    if (laVar.B && laVar.h == null) {
+                        laVar.D = true;
+                        fa faVar = laVar.a;
+                        if (faVar != null) {
+                            faVar.j0(true);
+                        }
                     }
                 }
-                g8 g8Var = caVar.u2;
-                if (g8Var != null) {
-                    g8Var.run();
-                    caVar.u2 = null;
-                } else {
-                    caVar.P();
-                }
-                s6 s6Var7 = caVar.H1;
-                if (s6Var7 != null && s6Var7.n) {
-                    caVar.u();
-                    caVar.H();
-                    caVar.s();
-                    break;
-                } else if (s6Var7 != null && s6Var7.u) {
-                    if (s6Var7.K) {
-                        caVar.U0.t(s6Var7, null, 0L);
-                    }
-                    caVar.s();
+                baVar5.U0.x(2, bool.booleanValue());
+                baVar5.V0.clearAnimation();
+                baVar5.V0.animate().alpha(bool.booleanValue() ? 0.0f : 1.0f).setDuration(120L).start();
+                ic icVar = ic.w;
+                if (icVar != null && icVar.a == 2) {
+                    icVar.l();
                     break;
                 }
                 break;
             case 7:
-                caVar.g(1.0f, true, new g8(caVar, 6));
+                ba baVar6 = this.b;
+                baVar6.l();
+                baVar6.m();
+                baVar6.i((Runnable) obj);
                 break;
             case 8:
-                caVar.x0.setCameraThumb(caVar.A());
-                g9 g9Var = caVar.y0;
-                if (g9Var != null) {
-                    g9Var.destroy(true, null);
-                    AndroidUtilities.removeFromParent(caVar.y0);
-                    p9 p9Var = caVar.x0;
-                    if (p9Var != null) {
-                        p9Var.setCameraView(null);
-                    }
-                    caVar.y0 = null;
+                r rVar = (r) obj;
+                ba baVar7 = this.b;
+                o9 o9Var2 = baVar7.x0;
+                baVar7.w0 = rVar;
+                o9Var2.o(rVar);
+                baVar7.F0.setSelected(rVar);
+                f9 f9Var = baVar7.y0;
+                if (f9Var != null) {
+                    f9Var.recordHevc = !baVar7.x0.j();
+                }
+                baVar7.D0.setDrawable(new lc0(rVar, false));
+                baVar7.c0(baVar7.E0, baVar7.F0.e, true);
+                baVar7.L0.e(baVar7.x0.j() ? baVar7.x0.getFilledProgress() : 0.0f, true);
+                b9 b9Var = baVar7.J0;
+                if (b9Var != null) {
+                    b9Var.setMultipleOnClick(baVar7.x0.j());
+                    baVar7.J0.setMaxCount(Math.min(10, r.b() - baVar7.x0.getFilledCount()));
                     break;
                 }
                 break;
             case 9:
-                caVar.x0.setCameraThumb(caVar.A());
+                ba baVar8 = this.b;
+                baVar8.L = true;
+                baVar8.q(true);
+                AndroidUtilities.runOnUIThread(new hg.n0(3, (Utilities.Callback) obj), 210L);
                 break;
             case 10:
-                if (caVar.c0 == 1) {
-                    caVar.l0(2, false, true);
+                Integer num2 = (Integer) obj;
+                ba baVar9 = this.b;
+                if (!baVar9.M1 && !baVar9.N1) {
+                    int intValue2 = num2.intValue();
+                    baVar9.L1 = intValue2;
+                    baVar9.l0.a(intValue2 == -1, true);
+                    baVar9.i0(baVar9.L1 == 1 && !baVar9.F0.e, true);
+                    baVar9.N0.a(num2.intValue());
+                    q5 q5Var = baVar9.L0;
+                    boolean z11 = num2.intValue() == 1;
+                    q5Var.k0 = -1.0f;
+                    q5Var.l0 = z11;
+                    q5Var.invalidate();
+                    if (num2.intValue() == -1) {
+                        f9 f9Var2 = baVar9.y0;
+                        if (f9Var2 != null && f9Var2.isDual()) {
+                            baVar9.y0.toggleDual();
+                        }
+                        e3 e3Var = baVar9.i1;
+                        if (e3Var != null) {
+                            e3Var.e(true);
+                        }
+                        e3 e3Var2 = baVar9.j1;
+                        if (e3Var2 != null) {
+                            e3Var2.e(true);
+                        }
+                        e3 e3Var3 = baVar9.T0;
+                        if (e3Var3 != null) {
+                            e3Var3.e(true);
+                        }
+                        baVar9.x0.o(null);
+                        baVar9.x0.e();
+                        baVar9.F0.setSelected((r) null);
+                        f9 f9Var3 = baVar9.y0;
+                        if (f9Var3 != null) {
+                            f9Var3.recordHevc = !baVar9.x0.j();
+                        }
+                    }
+                    baVar9.F0.a(false, true);
+                    baVar9.m0(true);
                     break;
                 }
                 break;
             case 11:
-                u8 u8Var = caVar.a1;
-                if (u8Var != null) {
-                    int i17 = -(AndroidUtilities.dp(24.0f) + caVar.Z0.getEditTextHeight());
-                    u8Var.setTranslationY(i17 - (caVar.W0 != null ? r3.getContentHeight() - AndroidUtilities.dp(5.0f) : 0));
+                Float f10 = (Float) obj;
+                ba baVar10 = this.b;
+                q5 q5Var2 = baVar10.L0;
+                q5Var2.k0 = f10.floatValue();
+                q5Var2.invalidate();
+                baVar10.L0.setVisibility(f10.floatValue() <= -1.0f ? 8 : 0);
+                baVar10.L0.setAlpha(Utilities.clamp01(f10.floatValue() + 1.0f));
+                baVar10.M0.setVisibility(f10.floatValue() < 0.0f ? 0 : 8);
+                baVar10.M0.setAlpha(AndroidUtilities.ilerp(f10.floatValue(), 0.0f, -1.0f));
+                baVar10.M0.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, AndroidUtilities.ilerp(f10.floatValue(), 0.0f, -1.0f)));
+                baVar10.M0.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, AndroidUtilities.ilerp(f10.floatValue(), 0.0f, -1.0f)));
+                baVar10.M0.setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.ilerp(f10.floatValue(), 0.0f, -1.0f)));
+                if (f10.floatValue() < 0.0f) {
+                    baVar10.f(false);
                     break;
                 }
                 break;
             case 12:
-                p9 p9Var2 = caVar.x0;
-                if (p9Var2 != null) {
-                    p9Var2.c.a(caVar.A0.y ? caVar.z0.d : null);
-                    break;
-                }
-                break;
-            case 13:
-                caVar.m0(true);
-                break;
-            case 14:
-                caVar.s();
-                break;
-            case 15:
-                r9 r9Var = caVar.Z0;
-                if (r9Var != null) {
-                    r9Var.m();
-                    break;
-                }
-                break;
-            case 16:
-                if (caVar.d0 == -1 && caVar.c0 == 1) {
-                    r9 r9Var2 = caVar.Z0;
-                    if (!r9Var2.m0 && !r9Var2.L1) {
-                        ma maVar = caVar.W0;
-                        if (!maVar.M) {
-                            u8 u8Var2 = caVar.a1;
-                            if (u8Var2.J) {
-                                u8Var2.c(false, true);
-                                break;
+                Integer num3 = (Integer) obj;
+                ba baVar11 = this.b;
+                if (baVar11.H1 != null) {
+                    q9 q9Var = baVar11.Z0;
+                    if (!q9Var.L1) {
+                        q9Var.clearFocus();
+                        if (num3.intValue() != 5) {
+                            if (num3.intValue() != 0) {
+                                if (num3.intValue() != 1) {
+                                    if (num3.intValue() != 2) {
+                                        if (num3.intValue() != 4) {
+                                            if (num3.intValue() == 3) {
+                                                baVar11.l0(3, false, true);
+                                                break;
+                                            }
+                                        } else {
+                                            baVar11.l0(1, false, true);
+                                            break;
+                                        }
+                                    } else {
+                                        baVar11.u();
+                                        baVar11.H();
+                                        e9 e9Var = baVar11.s1;
+                                        if (e9Var != null) {
+                                            e9Var.R0(1);
+                                            e9Var.A0();
+                                            break;
+                                        }
+                                    }
+                                } else {
+                                    baVar11.l0(0, false, true);
+                                    e9 e9Var2 = baVar11.s1;
+                                    if (e9Var2 != null) {
+                                        e9Var2.R0(2);
+                                        e9Var2.i2 = true;
+                                        e9Var2.o0(true);
+                                        baVar11.s1.J0 = true;
+                                        break;
+                                    }
+                                }
                             } else {
-                                caVar.l0(0, false, true);
-                                f9 f9Var2 = caVar.s1;
-                                if (f9Var2 != null) {
-                                    f9Var2.R0(2);
-                                    f9Var2.i2 = true;
-                                    f9Var2.o0(true);
-                                    caVar.s1.J0 = true;
+                                baVar11.l0(0, false, true);
+                                e9 e9Var3 = baVar11.s1;
+                                if (e9Var3 != null) {
+                                    e9Var3.J0 = false;
+                                    e9Var3.R0(0);
+                                    e9Var3.D0(null, true);
                                     break;
                                 }
                             }
                         } else {
-                            maVar.M = false;
-                            if (maVar.B && maVar.h == null) {
-                                maVar.D = true;
-                                ga gaVar = maVar.a;
-                                if (gaVar != null) {
-                                    gaVar.j0(true);
-                                    break;
-                                }
-                            }
+                            baVar11.X();
+                            break;
                         }
                     }
                 }
                 break;
+            case 13:
+                ba baVar12 = this.b;
+                FrameLayout frameLayout = baVar12.V0;
+                if (frameLayout != null) {
+                    frameLayout.setTranslationY(baVar12.d0 == 2 ? AndroidUtilities.dp(68.0f) : AndroidUtilities.dp(64.0f) + (-(AndroidUtilities.dp(12.0f) + baVar12.Z0.getEditTextHeight())));
+                }
+                t8 t8Var2 = baVar12.a1;
+                if (t8Var2 != null) {
+                    int i14 = -(AndroidUtilities.dp(24.0f) + baVar12.Z0.getEditTextHeight());
+                    t8Var2.setTranslationY(i14 - (baVar12.W0 == null ? 0 : r6.getContentHeight() - AndroidUtilities.dp(5.0f)));
+                }
+                ic icVar2 = ic.w;
+                if (icVar2 != null && icVar2.a == 2) {
+                    icVar2.l();
+                }
+                if (baVar12.Z0.m0 && (t8Var = baVar12.a1) != null) {
+                    t8Var.c(false, true);
+                    break;
+                }
+                break;
+            case 14:
+                a8 a8Var = (a8) obj;
+                ba baVar13 = this.b;
+                r6 r6Var4 = baVar13.H1;
+                if (r6Var4 != null) {
+                    r6Var4.E0 = a8Var;
+                }
+                ArrayList arrayList3 = baVar13.E1;
+                if (arrayList3 != null) {
+                    int size = arrayList3.size();
+                    int i15 = 0;
+                    while (i15 < size) {
+                        Object obj2 = arrayList3.get(i15);
+                        i15++;
+                        ((r6) obj2).E0 = a8Var;
+                    }
+                    break;
+                }
+                break;
+            case 15:
+                TLRPC.InputPeer inputPeer = (TLRPC.InputPeer) obj;
+                ba baVar14 = this.b;
+                r6 r6Var5 = baVar14.H1;
+                if (r6Var5 != null) {
+                    if (inputPeer == null) {
+                        inputPeer = new TLRPC.TL_inputPeerSelf();
+                    }
+                    r6Var5.v0 = inputPeer;
+                    ArrayList arrayList4 = baVar14.E1;
+                    if (arrayList4 != null) {
+                        int size2 = arrayList4.size();
+                        int i16 = 0;
+                        while (i16 < size2) {
+                            Object obj3 = arrayList4.get(i16);
+                            i16++;
+                            ((r6) obj3).v0 = baVar14.H1.v0;
+                        }
+                        break;
+                    }
+                }
+                break;
+            case 16:
+                HashSet hashSet = (HashSet) obj;
+                ba baVar15 = this.b;
+                r6 r6Var6 = baVar15.H1;
+                if (r6Var6 != null) {
+                    r6Var6.w0 = hashSet;
+                    ArrayList arrayList5 = baVar15.E1;
+                    if (arrayList5 != null) {
+                        int size3 = arrayList5.size();
+                        int i17 = 0;
+                        while (i17 < size3) {
+                            Object obj4 = arrayList5.get(i17);
+                            i17++;
+                            ((r6) obj4).w0 = hashSet;
+                        }
+                        break;
+                    }
+                }
+                break;
             case 17:
-                caVar.K1 = true;
-                caVar.Y0.setShareEnabled(false);
-                n0 n0Var = caVar.b1;
-                n0Var.getClass();
-                n0Var.c(R.raw.error, LocaleController.getString("VideoConvertFail"));
+                Bitmap bitmap2 = (Bitmap) obj;
+                ba baVar16 = this.b;
+                r6 r6Var7 = baVar16.H1;
+                if (r6Var7 != null) {
+                    Bitmap bitmap3 = r6Var7.g0;
+                    if (bitmap3 != null) {
+                        bitmap3.recycle();
+                    }
+                    baVar16.H1.g0 = bitmap2;
+                    c8 c8Var2 = baVar16.n0;
+                    if (c8Var2 != null) {
+                        c8Var2.n1(bitmap2);
+                        break;
+                    }
+                }
                 break;
             case 18:
-                caVar.x0.setCameraThumb(caVar.A());
+                this.b.v0 = (a8) obj;
                 break;
             case 19:
-                ba baVar2 = caVar.n;
-                oh.b bVar = caVar.a;
-                new qc(baVar2, bVar).Q(R.raw.voip_invite, 36, AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.StoryPremiumFormatting), org.telegram.ui.ActionBar.k6.gc, 0, new g8(caVar, 27), bVar)).k(true);
+                TLRPC.InputPeer inputPeer2 = (TLRPC.InputPeer) obj;
+                ba baVar17 = this.b;
+                j6 j6Var = baVar17.l0;
+                baVar17.u0 = inputPeer2;
+                j6Var.set(inputPeer2);
                 break;
             case 20:
-                d8 d8Var = caVar.n0;
-                if (d8Var != null) {
-                    d8Var.dismiss();
-                }
-                caVar.K(2, true);
-                break;
-            case 21:
-                caVar.l0(-1, false, true);
-                break;
-            case 22:
-                caVar.l0(-1, false, true);
-                break;
-            case 23:
-                caVar.d = false;
-                AndroidUtilities.unlockOrientation(caVar.b);
-                if (caVar.y0 != null) {
-                    if (caVar.N1) {
-                        CameraController.getInstance().stopVideoRecording(caVar.y0.getCameraSession(), false);
-                    }
-                    caVar.v(false);
-                }
-                q9 q9Var3 = caVar.U0;
-                if (q9Var3 != null) {
-                    q9Var3.set(null);
-                }
-                caVar.z();
-                caVar.y();
-                File file = caVar.D1;
-                if (file != null && !caVar.v) {
-                    try {
-                        file.delete();
-                    } catch (Exception unused) {
-                    }
-                }
-                caVar.D1 = null;
-                AndroidUtilities.runOnUIThread(new g8(caVar, 28), 16L);
-                x9 x9Var = caVar.C;
-                if (x9Var != null) {
-                    x9Var.f(false);
-                }
-                if (caVar.u2 != null) {
-                    caVar.u2 = null;
-                }
-                caVar.i2 = null;
-                ca caVar2 = ca.C2;
-                if (caVar2 != null) {
-                    caVar2.q(false);
-                }
-                ca.C2 = null;
-                ba baVar3 = caVar.n;
-                if (baVar3 != null) {
-                    ic.h(baVar3);
-                }
-                o9 o9Var = caVar.i0;
-                if (o9Var != null) {
-                    ic.h(o9Var);
-                }
-                p9 p9Var3 = caVar.x0;
-                if (p9Var3 != null) {
-                    p9Var3.e();
-                    break;
-                }
-                break;
-            case 24:
-                if (!caVar.H1.b0 && caVar.n0 != null && (q9Var = caVar.U0) != null) {
-                    q9Var.h(new h8(caVar, i13), q9Var, caVar.t1, caVar.w1);
-                }
-                caVar.K(1, true);
-                break;
-            case 25:
-                caVar.j0(false);
-                caVar.b2 = null;
-                break;
-            case 26:
-                caVar.j0(false);
-                caVar.b2 = null;
-                break;
-            case 27:
-                caVar.T();
+                TLRPC.InputPeer inputPeer3 = (TLRPC.InputPeer) obj;
+                ba baVar18 = this.b;
+                j6 j6Var2 = baVar18.l0;
+                baVar18.u0 = inputPeer3;
+                j6Var2.set(inputPeer3);
                 break;
             default:
-                WindowManager windowManager = caVar.f;
-                if (windowManager != null && (baVar = caVar.n) != null && baVar.getParent() != null) {
-                    windowManager.removeView(caVar.n);
-                    break;
-                }
+                c2 c2Var2 = this.b.s;
+                float floatValue = ((Float) obj).floatValue();
+                c2Var2.o = floatValue;
+                c2Var2.n = c2.f(floatValue);
+                c2Var2.g();
                 break;
         }
     }

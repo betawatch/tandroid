@@ -13,11 +13,11 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.rc;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class m0 extends View {
     public boolean B;
@@ -40,7 +40,7 @@ public final class m0 extends View {
     public final Paint e;
     public final Paint f;
     public final rc h;
-    public ij0 n;
+    public hj0 n;
     public final StaticLayout r;
     public final float s;
     public final float v;
@@ -63,14 +63,14 @@ public final class m0 extends View {
     }
 
     public final void b(int i10, int i11, CharSequence charSequence) {
-        ij0 ij0Var = this.n;
-        if (ij0Var != null) {
-            ij0Var.setCallback(null);
+        hj0 hj0Var = this.n;
+        if (hj0Var != null) {
+            hj0Var.setCallback(null);
             this.n.A(true);
         }
-        ij0 ij0Var2 = new ij0(i10, AndroidUtilities.dp(36.0f), l.d.j(i10, ""), AndroidUtilities.dp(36.0f));
-        this.n = ij0Var2;
-        ij0Var2.setCallback(this);
+        hj0 hj0Var2 = new hj0(i10, AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f));
+        this.n = hj0Var2;
+        hj0Var2.setCallback(this);
         this.n.start();
         StaticLayout staticLayout = new StaticLayout(charSequence, this.c, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.w = staticLayout;
@@ -173,9 +173,9 @@ public final class m0 extends View {
         }
         if (d10 > 0.0f) {
             float f14 = d10 * d;
-            ij0 ij0Var = this.n;
-            if (ij0Var != null) {
-                ij0Var.setAlpha((int) (f14 * f11));
+            hj0 hj0Var = this.n;
+            if (hj0Var != null) {
+                hj0Var.setAlpha((int) (f14 * f11));
                 this.n.setBounds((int) (rectF.left + AndroidUtilities.dp(9.0f)), (int) (rectF.top + AndroidUtilities.dp(6.0f)), (int) (rectF.left + AndroidUtilities.dp(45.0f)), (int) (rectF.top + AndroidUtilities.dp(f10)));
                 this.n.draw(canvas2);
             }

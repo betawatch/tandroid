@@ -16,9 +16,9 @@ import com.google.android.gms.internal.play_billing.l3;
 import com.google.android.gms.internal.play_billing.z3;
 import java.util.concurrent.TimeUnit;
 import n7.qa;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.tl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class t implements ServiceConnection {
     public final c a;
@@ -186,7 +186,7 @@ public final class t implements ServiceConnection {
                     aVar = queryLocalInterface instanceof com.google.android.gms.internal.play_billing.c ? (com.google.android.gms.internal.play_billing.c) queryLocalInterface : new com.google.android.gms.internal.play_billing.a(iBinder, "com.android.vending.billing.IInAppBillingService", 2);
                 }
                 bVar.i = aVar;
-                if (b.f(new h2.f(this, 8), 30000L, new ul0(this, 6), bVar.r(), bVar.e()) == null) {
+                if (b.f(new h2.f(this, 8), 30000L, new tl0(this, 6), bVar.r(), bVar.e()) == null) {
                     h u10 = bVar.u();
                     bVar.j(25, u10);
                     c(u10);

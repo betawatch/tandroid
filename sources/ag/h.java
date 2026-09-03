@@ -37,38 +37,38 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.n4;
 import org.telegram.ui.Cells.r7;
 import org.telegram.ui.Components.ga0;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.l5;
 import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.or0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.nr0;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ay;
-import org.telegram.ui.ht0;
 import org.telegram.ui.hx;
+import org.telegram.ui.mt0;
 import org.telegram.ui.oy;
 import org.telegram.ui.py;
-import org.telegram.ui.web.v1;
+import org.telegram.ui.web.a2;
 import org.telegram.ui.xn;
 import org.telegram.ui.xw;
 import qh.c1;
-import qh.f9;
-import qh.i1;
+import qh.e9;
+import qh.h1;
+import qh.m1;
 import qh.n1;
-import qh.o1;
 import qh.r;
 import qh.u;
-import qh.y1;
 import uf.z;
 import vf.a0;
 import vf.c0;
-import vf.f0;
+import vf.e0;
+import vf.o1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h implements jl0 {
+public final /* synthetic */ class h implements il0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -77,9 +77,9 @@ public final /* synthetic */ class h implements jl0 {
         this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.il0
     public final void f(int i10, View view) {
-        j51 G;
+        h51 G;
         TLRPC.Document document;
         TLRPC.BotInlineResult botInlineResult;
         int i11;
@@ -97,18 +97,18 @@ public final /* synthetic */ class h implements jl0 {
                 }
                 break;
             case 1:
-                ht0 ht0Var = (ht0) this.b;
+                mt0 mt0Var = (mt0) this.b;
                 s0 s0Var = (s0) s0.c().get(i10);
-                ht0Var.r1.setTypeface(s0Var.a);
-                e1 e6 = e1.e(ht0Var.M1);
+                mt0Var.r1.setTypeface(s0Var.a);
+                e1 e6 = e1.e(mt0Var.M1);
                 String str = s0Var.a;
                 e6.j = str;
                 e6.a.edit().putString("typeface", str).apply();
-                eg.j jVar = ht0Var.P0;
+                eg.j jVar = mt0Var.P0;
                 if (jVar instanceof z3) {
                     ((z3) jVar).setTypeface(s0Var);
                 }
-                ht0Var.z0(false);
+                mt0Var.z0(false);
                 break;
             case 2:
                 c2 c2Var = (c2) this.b;
@@ -123,7 +123,7 @@ public final /* synthetic */ class h implements jl0 {
             case 4:
                 f1 f1Var = (f1) this.b;
                 if (view != null) {
-                    f1Var.w1(view, true);
+                    f1Var.v1(view, true);
                     f1Var.a3 = false;
                     f1Var.v0(0, view.getTop() - ((f1Var.getMeasuredHeight() - view.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
                     break;
@@ -139,8 +139,8 @@ public final /* synthetic */ class h implements jl0 {
                 s3 s3Var = (s3) this.b;
                 qh.d dVar = s3Var.Y;
                 HashSet hashSet = s3Var.W;
-                x51 x51Var = s3Var.a0;
-                if (x51Var != null && (G = x51Var.G(i10 - 1)) != null) {
+                w51 w51Var = s3Var.a0;
+                if (w51Var != null && (G = w51Var.G(i10 - 1)) != null) {
                     Object obj = G.G;
                     if (obj instanceof TL_stars.SavedStarGift) {
                         TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
@@ -176,11 +176,11 @@ public final /* synthetic */ class h implements jl0 {
                 break;
             case 13:
                 ph.l lVar = (ph.l) this.b;
-                or0 or0Var = lVar.T;
-                p2 p2Var = or0Var.a;
+                nr0 nr0Var = lVar.T;
+                p2 p2Var = nr0Var.a;
                 if (view instanceof r7) {
                     MessageObject messageObject = ((r7) view).getMessageObject();
-                    if (!or0Var.D.z1) {
+                    if (!nr0Var.D.z1) {
                         i9 orCreateStoryViewer = p2Var.getOrCreateStoryViewer();
                         Context context = lVar.getContext();
                         int id2 = messageObject.getId();
@@ -189,11 +189,11 @@ public final /* synthetic */ class h implements jl0 {
                         a2.s += ((p2Var instanceof ProfileActivity) && ((ProfileActivity) p2Var).p1) ? AndroidUtilities.dp(68.0f) : 0;
                         orCreateStoryViewer.C(context, id2, d6Var, a2);
                         break;
-                    } else if (!or0Var.c(messageObject)) {
-                        or0Var.e(messageObject);
+                    } else if (!nr0Var.c(messageObject)) {
+                        nr0Var.e(messageObject);
                         break;
                     } else {
-                        or0Var.g(messageObject);
+                        nr0Var.g(messageObject);
                         break;
                     }
                 }
@@ -206,9 +206,9 @@ public final /* synthetic */ class h implements jl0 {
                 }
                 break;
             case 15:
-                i1 i1Var = (i1) this.b;
-                y1 y1Var = i1Var.r;
-                Object F = i1Var.c.F(i10);
+                h1 h1Var = (h1) this.b;
+                qh.x1 x1Var = h1Var.r;
+                Object F = h1Var.c.F(i10);
                 if (F instanceof TLRPC.BotInlineResult) {
                     botInlineResult = (TLRPC.BotInlineResult) F;
                     document = botInlineResult.document;
@@ -216,71 +216,71 @@ public final /* synthetic */ class h implements jl0 {
                     document = (TLRPC.Document) F;
                     botInlineResult = null;
                 }
-                Utilities.Callback3Return callback3Return = y1Var.y;
+                Utilities.Callback3Return callback3Return = x1Var.y;
                 if (callback3Return != null) {
                     callback3Return.run(botInlineResult, document, Boolean.TRUE);
                 }
-                y1Var.dismiss();
+                x1Var.dismiss();
                 break;
             case 16:
-                o1 o1Var = (o1) this.b;
-                y1 y1Var2 = o1Var.s;
-                n1 n1Var = o1Var.c;
+                n1 n1Var = (n1) this.b;
+                qh.x1 x1Var2 = n1Var.s;
+                m1 m1Var = n1Var.c;
                 if (i10 >= 0) {
-                    o1Var.d.getClass();
+                    n1Var.d.getClass();
                     if (RecyclerView.U(view).f != 4) {
-                        ArrayList arrayList = n1Var.s;
-                        ArrayList arrayList2 = n1Var.v;
-                        TLRPC.Document document2 = i10 >= arrayList.size() ? null : (TLRPC.Document) n1Var.s.get(i10);
-                        if (document2 != y1Var2.e) {
+                        ArrayList arrayList = m1Var.s;
+                        ArrayList arrayList2 = m1Var.v;
+                        TLRPC.Document document2 = i10 >= arrayList.size() ? null : (TLRPC.Document) m1Var.s.get(i10);
+                        if (document2 != x1Var2.e) {
                             long longValue = i10 >= arrayList2.size() ? 0L : ((Long) arrayList2.get(i10)).longValue();
                             if (document2 == null && (view instanceof c1) && (l5Var = ((c1) view).c) != null) {
                                 document2 = l5Var.e;
                             }
                             if (document2 == null && longValue != 0) {
-                                i11 = ((h3) y1Var2).currentAccount;
+                                i11 = ((h3) x1Var2).currentAccount;
                                 document2 = l5.f(i11, longValue);
                             }
                             if (document2 != null) {
-                                Utilities.Callback3Return callback3Return2 = y1Var2.y;
+                                Utilities.Callback3Return callback3Return2 = x1Var2.y;
                                 if (callback3Return2 != null) {
-                                    callback3Return2.run(n1Var.f.get(Long.valueOf(document2.id)), document2, Boolean.FALSE);
+                                    callback3Return2.run(m1Var.f.get(Long.valueOf(document2.id)), document2, Boolean.FALSE);
                                 }
-                                y1Var2.dismiss();
+                                x1Var2.dismiss();
                                 break;
                             }
                         } else {
-                            vf.g gVar = y1Var2.B;
+                            vf.g gVar = x1Var2.B;
                             if (gVar != null) {
                                 gVar.run();
                             }
-                            y1Var2.dismiss();
+                            x1Var2.dismiss();
                             break;
                         }
                     }
                 }
                 break;
             case 17:
-                f9 f9Var = (f9) this.b;
+                e9 e9Var = (e9) this.b;
                 s0 s0Var2 = (s0) s0.c().get(i10);
-                f9Var.i1.setTypeface(s0Var2.a);
-                e1 e10 = e1.e(f9Var.C1);
+                e9Var.i1.setTypeface(s0Var2.a);
+                e1 e10 = e1.e(e9Var.C1);
                 String str2 = s0Var2.a;
                 e10.j = str2;
                 e10.a.edit().putString("typeface", str2).apply();
-                eg.j jVar2 = f9Var.G0;
+                eg.j jVar2 = e9Var.G0;
                 if (jVar2 instanceof z3) {
                     ((z3) jVar2).setTypeface(s0Var2);
                 }
-                f9Var.P0(false);
+                e9Var.P0(false);
                 break;
             case 18:
                 rh.g.x0((rh.g) this.b, i10);
                 break;
             case 19:
-                x51 x51Var2 = ((rh.f) this.b).Y;
-                if (x51Var2 != null) {
-                    x51Var2.G(i10 - 1);
+                w51 w51Var2 = ((rh.f) this.b).Y;
+                if (w51Var2 != null) {
+                    w51Var2.G(i10 - 1);
                     break;
                 }
                 break;
@@ -366,41 +366,41 @@ public final /* synthetic */ class h implements jl0 {
                         O = zVar2.O(S, Q);
                     }
                 }
-                if (O instanceof vf.o1) {
+                if (O instanceof o1) {
                     if (!UserConfig.getInstance(miVar.G1).isPremium()) {
                         if (miVar.c0 != null) {
                             new fg.n1(miVar.c0, c0Var.getContext(), miVar.G1, true, 31, false, null).show();
                             break;
                         }
                     } else {
-                        vf.o1 o1Var2 = (vf.o1) O;
-                        z4.a0(miVar.G1, o1Var2.a(), miVar.n1(), new v1(18, c0Var, o1Var2));
+                        o1 o1Var = (o1) O;
+                        z4.a0(miVar.G1, o1Var.a(), miVar.n1(), new a2(17, c0Var, o1Var));
                         break;
                     }
                 }
                 break;
             case 23:
-                f0 f0Var = (f0) this.b;
-                j51 G2 = f0Var.a0.G(i10 - 1);
+                e0 e0Var = (e0) this.b;
+                h51 G2 = e0Var.a0.G(i10 - 1);
                 if (G2 != null) {
-                    vf.v vVar = f0Var.W;
+                    vf.v vVar = e0Var.W;
                     if (!vVar.h(G2)) {
                         int i15 = G2.d;
-                        int i16 = f0.d0;
+                        int i16 = e0.d0;
                         if (i15 != -1) {
-                            int i17 = f0.e0;
+                            int i17 = e0.e0;
                             if (i15 == -2) {
-                                f0Var.b0 = false;
+                                e0Var.b0 = false;
                                 vVar.h = false;
-                                f0Var.a0.N(true);
-                                f0Var.T(true);
+                                e0Var.a0.N(true);
+                                e0Var.T(true);
                                 break;
                             }
                         } else {
-                            f0Var.b0 = true;
+                            e0Var.b0 = true;
                             vVar.h = true;
-                            f0Var.a0.N(true);
-                            f0Var.T(true);
+                            e0Var.a0.N(true);
+                            e0Var.T(true);
                             break;
                         }
                     }

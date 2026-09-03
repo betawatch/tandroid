@@ -5,10 +5,10 @@ import com.googlecode.mp4parser.g;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import org.telegram.ui.yh;
-import sf.e;
+import sf.f;
 import yb.c;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class a extends com.googlecode.mp4parser.a {
     public static final /* synthetic */ f0 b;
@@ -228,7 +228,7 @@ public final class a extends com.googlecode.mp4parser.a {
     }
 
     public final String toString() {
-        e b10 = de.a.b(y, this, this);
+        f b10 = de.a.b(y, this, this);
         g.a().getClass();
         g.b(b10);
         return "AvcConfigurationBox{avcDecoderConfigurationRecord=" + this.a + '}';

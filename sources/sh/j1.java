@@ -11,19 +11,19 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.mf1;
 import org.telegram.ui.py;
+import org.telegram.ui.sf1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j1 implements Utilities.Callback {
-    public final /* synthetic */ mf1 a;
+    public final /* synthetic */ sf1 a;
     public final /* synthetic */ py b;
     public final /* synthetic */ long c;
     public final /* synthetic */ int d;
 
-    public /* synthetic */ j1(mf1 mf1Var, py pyVar, long j10, int i10) {
-        this.a = mf1Var;
+    public /* synthetic */ j1(sf1 sf1Var, py pyVar, long j10, int i10) {
+        this.a = sf1Var;
         this.b = pyVar;
         this.c = j10;
         this.d = i10;
@@ -35,10 +35,10 @@ public final /* synthetic */ class j1 implements Utilities.Callback {
         String str;
         TLRPC.Chat chat;
         Boolean bool = (Boolean) obj;
-        mf1 mf1Var = this.a;
+        sf1 sf1Var = this.a;
         py pyVar = this.b;
-        if (mf1Var != null) {
-            mf1Var.finishFragment();
+        if (sf1Var != null) {
+            sf1Var.finishFragment();
             pyVar.removeSelfFromStack();
         } else {
             pyVar.finishFragment();

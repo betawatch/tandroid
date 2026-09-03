@@ -12,16 +12,16 @@ import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.xi;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bd;
-import org.telegram.ui.fc;
 import org.telegram.ui.ke;
 import org.telegram.ui.lo;
-import org.telegram.ui.p81;
+import org.telegram.ui.qc;
 import org.telegram.ui.rc;
-import org.telegram.ui.sc;
+import org.telegram.ui.v81;
+import org.telegram.ui.xc;
 import org.telegram.ui.xn;
-import qh.ca;
+import qh.ba;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a2 implements h5.d {
     public final /* synthetic */ int a;
@@ -71,17 +71,17 @@ public final /* synthetic */ class a2 implements h5.d {
                 }
                 break;
             case 2:
-                sc scVar = (sc) this.b;
+                rc rcVar = (rc) this.b;
                 MessagesController.PeerColors peerColors = (MessagesController.PeerColors) this.c;
                 View view = (View) obj;
-                scVar.getClass();
-                if (view instanceof rc) {
-                    rc rcVar = (rc) view;
-                    rcVar.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, scVar.a));
-                    scVar.b.getClass();
+                rcVar.getClass();
+                if (view instanceof qc) {
+                    qc qcVar = (qc) view;
+                    qcVar.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, rcVar.a));
+                    rcVar.b.getClass();
                     int R = RecyclerView.R(view);
                     if (peerColors != null && R >= 0 && R < peerColors.colors.size()) {
-                        rcVar.a(peerColors.colors.get(R));
+                        qcVar.a(peerColors.colors.get(R));
                         break;
                     }
                 }
@@ -94,9 +94,9 @@ public final /* synthetic */ class a2 implements h5.d {
                 break;
             case 4:
                 xn xnVar = (xn) this.b;
-                fc fcVar = (fc) this.c;
+                xc xcVar = (xc) this.c;
                 xnVar.gb = true;
-                fcVar.run();
+                xcVar.run();
                 break;
             case 5:
                 mi miVar = (mi) this.b;
@@ -125,19 +125,19 @@ public final /* synthetic */ class a2 implements h5.d {
                 ProfileActivity profileActivity = (ProfileActivity) this.b;
                 ((org.telegram.ui.ActionBar.d2) this.c).dismiss();
                 if (((Boolean) obj).booleanValue()) {
-                    ca E = ca.E(profileActivity.getParentActivity(), profileActivity.getCurrentAccount());
+                    ba E = ba.E(profileActivity.getParentActivity(), profileActivity.getCurrentAccount());
                     long a2 = profileActivity.a();
                     E.K = a2;
-                    qh.r9 r9Var = E.Z0;
-                    if (r9Var != null) {
-                        r9Var.setDialogId(a2);
+                    qh.q9 q9Var = E.Z0;
+                    if (q9Var != null) {
+                        q9Var.setDialogId(a2);
                     }
                     E.R(null);
                     break;
                 }
                 break;
             default:
-                p81.f0((p81) this.b, (TLRPC.TL_attachMenuBot) this.c);
+                v81.f0((v81) this.b, (TLRPC.TL_attachMenuBot) this.c);
                 break;
         }
     }

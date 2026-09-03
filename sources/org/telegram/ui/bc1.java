@@ -1,68 +1,87 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class bc1 extends FrameLayout {
+public final /* synthetic */ class bc1 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final RectF b;
-    public final /* synthetic */ ed1 c;
+    public final /* synthetic */ jd1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bc1(ed1 ed1Var, Context context, int i10) {
-        super(context);
+    public /* synthetic */ bc1(jd1 jd1Var, int i10) {
         this.a = i10;
-        switch (i10) {
-            case 1:
-                this.c = ed1Var;
-                super(context);
-                this.b = new RectF();
-                break;
-            default:
-                this.c = ed1Var;
-                this.b = new RectF();
-                break;
-        }
+        this.b = jd1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                float measuredWidth = getMeasuredWidth();
-                float measuredHeight = getMeasuredHeight();
-                RectF rectF = this.b;
-                rectF.set(0.0f, 0.0f, measuredWidth, measuredHeight);
-                ed1 ed1Var = this.c;
-                bc1 bc1Var = ed1Var.A0;
-                tc1 tc1Var = ed1Var.u0;
-                dc1 dc1Var = ed1Var.a;
-                org.telegram.ui.ActionBar.k6.s(bc1Var, tc1Var, dc1Var);
-                canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, dc1Var.F("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.k6.a1()) {
-                    canvas.drawRoundRect(rectF, getMeasuredHeight() / 2, getMeasuredHeight() / 2, dc1Var.F("paintChatActionBackgroundDarken"));
-                    break;
-                }
+                final int i10 = 1;
+                final jd1 jd1Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.zb1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                jd1.V(jd1Var, tLObject);
+                                break;
+                            default:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
+                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
+                                    if (tL_wallPaper.pattern) {
+                                        jd1 jd1Var2 = jd1Var;
+                                        jd1Var2.T0 = tL_wallPaper;
+                                        jd1Var2.b1(false);
+                                        jd1Var2.j1();
+                                        jd1Var2.R0.add(0, jd1Var2.T0);
+                                        hd1 hd1Var = jd1Var2.N0;
+                                        if (hd1Var != null) {
+                                            hd1Var.l();
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
             default:
-                float measuredWidth2 = getMeasuredWidth();
-                float measuredHeight2 = getMeasuredHeight();
-                RectF rectF2 = this.b;
-                rectF2.set(0.0f, 0.0f, measuredWidth2, measuredHeight2);
-                ed1 ed1Var2 = this.c;
-                bc1 bc1Var2 = ed1Var2.B0;
-                tc1 tc1Var2 = ed1Var2.u0;
-                dc1 dc1Var2 = ed1Var2.a;
-                org.telegram.ui.ActionBar.k6.s(bc1Var2, tc1Var2, dc1Var2);
-                canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, dc1Var2.F("paintChatActionBackground"));
-                if (org.telegram.ui.ActionBar.k6.a1()) {
-                    canvas.drawRoundRect(rectF2, getMeasuredHeight() / 2, getMeasuredHeight() / 2, dc1Var2.F("paintChatActionBackgroundDarken"));
-                    break;
-                }
+                final int i11 = 0;
+                final jd1 jd1Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.zb1
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                jd1.V(jd1Var2, tLObject);
+                                break;
+                            default:
+                                TLObject tLObject2 = tLObject;
+                                if (tLObject2 instanceof TLRPC.TL_wallPaper) {
+                                    TLRPC.TL_wallPaper tL_wallPaper = (TLRPC.TL_wallPaper) tLObject2;
+                                    if (tL_wallPaper.pattern) {
+                                        jd1 jd1Var22 = jd1Var2;
+                                        jd1Var22.T0 = tL_wallPaper;
+                                        jd1Var22.b1(false);
+                                        jd1Var22.j1();
+                                        jd1Var22.R0.add(0, jd1Var22.T0);
+                                        hd1 hd1Var = jd1Var22.N0;
+                                        if (hd1Var != null) {
+                                            hd1Var.l();
+                                            break;
+                                        }
+                                    }
+                                }
+                                break;
+                        }
+                    }
+                });
                 break;
         }
     }

@@ -8,23 +8,23 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class y9 extends FrameLayout {
-    public final qv0 a;
+    public final pv0 a;
     public Paint b;
     public int c;
     public final boolean d;
     public final boolean e;
     public final Rect f;
 
-    public y9(Context context, qv0 qv0Var) {
+    public y9(Context context, pv0 pv0Var) {
         super(context);
         this.c = 0;
         this.d = true;
         this.e = true;
         this.f = new Rect();
-        this.a = qv0Var;
+        this.a = pv0Var;
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -39,10 +39,10 @@ public abstract class y9 extends FrameLayout {
             float f10 = 0.0f;
             View view = this;
             while (true) {
-                qv0 qv0Var = this.a;
-                if (view == qv0Var) {
+                pv0 pv0Var = this.a;
+                if (view == pv0Var) {
                     canvas2 = canvas;
-                    qv0Var.J(canvas2, f10, this.f, this.b, this.d);
+                    pv0Var.J(canvas2, f10, this.f, this.b, this.d);
                     break;
                 }
                 f10 += view.getY();
@@ -61,18 +61,18 @@ public abstract class y9 extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public void onAttachedToWindow() {
-        qv0 qv0Var;
-        if (SharedConfig.chatBlurEnabled() && (qv0Var = this.a) != null) {
-            qv0Var.Q.add(this);
+        pv0 pv0Var;
+        if (SharedConfig.chatBlurEnabled() && (pv0Var = this.a) != null) {
+            pv0Var.Q.add(this);
         }
         super.onAttachedToWindow();
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
-        qv0 qv0Var = this.a;
-        if (qv0Var != null) {
-            qv0Var.Q.remove(this);
+        pv0 pv0Var = this.a;
+        if (pv0Var != null) {
+            pv0Var.Q.remove(this);
         }
         super.onDetachedFromWindow();
     }

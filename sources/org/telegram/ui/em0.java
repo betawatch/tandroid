@@ -8,16 +8,16 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SecureDocument;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class em0 extends au0 {
+public final class em0 extends fu0 {
     public final /* synthetic */ fn0 a;
 
     public em0(fn0 fn0Var) {
         this.a = fn0Var;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void B(int i10) {
         fn0 fn0Var = this.a;
         int i11 = fn0Var.P0;
@@ -57,8 +57,8 @@ public final class em0 extends au0 {
         fn0Var.f0.removeView(dn0Var);
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
-    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
         if (i10 < 0) {
             return null;
         }
@@ -69,17 +69,17 @@ public final class em0 extends au0 {
         dn0 dn0Var = (dn0) fn0Var.f0.getChildAt(i10);
         int[] iArr = new int[2];
         dn0Var.c.getLocationInWindow(iArr);
-        lu0 lu0Var = new lu0();
-        lu0Var.b = iArr[0];
-        lu0Var.c = iArr[1];
-        lu0Var.d = fn0Var.f0;
+        qu0 qu0Var = new qu0();
+        qu0Var.b = iArr[0];
+        qu0Var.c = iArr[1];
+        qu0Var.d = fn0Var.f0;
         ImageReceiver imageReceiver = dn0Var.c.getImageReceiver();
-        lu0Var.a = imageReceiver;
-        lu0Var.e = imageReceiver.getBitmapSafe();
-        return lu0Var;
+        qu0Var.a = imageReceiver;
+        qu0Var.e = imageReceiver.getBitmapSafe();
+        return qu0Var;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final String a0() {
         return this.a.P0 == 1 ? LocaleController.formatString("PassportDeleteSelfieAlert", R.string.PassportDeleteSelfieAlert, new Object[0]) : LocaleController.formatString("PassportDeleteScanAlert", R.string.PassportDeleteScanAlert, new Object[0]);
     }

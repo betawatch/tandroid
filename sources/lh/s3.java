@@ -12,13 +12,13 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.pz;
 import org.telegram.ui.Components.q70;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class s3 extends sa implements NotificationCenter.NotificationCenterDelegate {
     public final int U;
@@ -27,7 +27,7 @@ public final class s3 extends sa implements NotificationCenter.NotificationCente
     public final pz X;
     public final qh.d Y;
     public q70 Z;
-    public x51 a0;
+    public w51 a0;
 
     public s3(org.telegram.ui.ActionBar.p2 p2Var, long j10, int i10, eg.h3 h3Var) {
         super(p2Var);
@@ -74,10 +74,10 @@ public final class s3 extends sa implements NotificationCenter.NotificationCente
     }
 
     public final boolean S() {
-        tl0 tl0Var = this.d;
-        if (tl0Var != null && tl0Var.D) {
-            for (int i10 = 0; i10 < tl0Var.getChildCount(); i10++) {
-                if (tl0Var.getChildAt(i10) instanceof u00) {
+        sl0 sl0Var = this.d;
+        if (sl0Var != null && sl0Var.D) {
+            for (int i10 = 0; i10 < sl0Var.getChildCount(); i10++) {
+                if (sl0Var.getChildAt(i10) instanceof u00) {
                     return true;
                 }
             }
@@ -87,11 +87,11 @@ public final class s3 extends sa implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        x51 x51Var;
-        if (i10 != NotificationCenter.starUserGiftsLoaded || (x51Var = this.a0) == null) {
+        w51 w51Var;
+        if (i10 != NotificationCenter.starUserGiftsLoaded || (w51Var = this.a0) == null) {
             return;
         }
-        x51Var.N(true);
+        w51Var.N(true);
         if (S()) {
             this.V.a();
         }
@@ -104,11 +104,11 @@ public final class s3 extends sa implements NotificationCenter.NotificationCente
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(tl0Var, getContext(), this.currentAccount, 0, false, new eg.p1(this, 11), this.resourcesProvider);
-        this.a0 = x51Var;
-        x51Var.r = false;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(sl0Var, getContext(), this.currentAccount, 0, false, new eg.p1(this, 11), this.resourcesProvider);
+        this.a0 = w51Var;
+        w51Var.r = false;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

@@ -15,13 +15,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.jl0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.jd1;
+import org.telegram.ui.Components.il0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.od1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class la extends tl0 implements NotificationCenter.NotificationCenterDelegate {
+public abstract class la extends sl0 implements NotificationCenter.NotificationCenterDelegate {
     public static final byte[] f3 = new byte[1024];
     public boolean U2;
     public final org.telegram.ui.k V2;
@@ -59,12 +59,12 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
         ka kaVar = new ka(this, context);
         this.Z2 = kaVar;
         setAdapter(kaVar);
-        setOnItemClickListener(new jl0() { // from class: org.telegram.ui.Cells.ga
-            @Override // org.telegram.ui.Components.jl0
+        setOnItemClickListener(new il0() { // from class: org.telegram.ui.Cells.ga
+            @Override // org.telegram.ui.Components.il0
             public final void f(int i11, View view) {
                 la laVar = la.this;
                 laVar.getClass();
-                laVar.y1(((ThemesHorizontalListCell$InnerThemeView) view).b);
+                laVar.x1(((ThemesHorizontalListCell$InnerThemeView) view).b);
                 int left = view.getLeft();
                 int right = view.getRight();
                 if (left < 0) {
@@ -76,8 +76,6 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
         });
         setOnItemLongClickListener(new ha(this, 0));
     }
-
-    public abstract void A1();
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
@@ -96,12 +94,12 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
             if (this.X2.remove(j6Var) != null) {
                 Utilities.globalQueue.postRunnable(new mh.p6(this, j6Var, file, 22));
             } else {
-                w1(j6Var);
+                v1(j6Var);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         for (int i10 = 0; i10 < 4; i10++) {
@@ -110,7 +108,7 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         for (int i10 = 0; i10 < 4; i10++) {
@@ -127,7 +125,7 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (getParent() != null && getParent().getParent() != null) {
             getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
@@ -138,14 +136,14 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
     @Override // android.view.View
     public void setBackgroundColor(int i10) {
         super.setBackgroundColor(i10);
-        f1();
+        e1();
     }
 
     public void setDrawDivider(boolean z4) {
         this.U2 = z4;
     }
 
-    public final void w1(org.telegram.ui.ActionBar.j6 j6Var) {
+    public final void v1(org.telegram.ui.ActionBar.j6 j6Var) {
         int childCount = getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = getChildAt(i10);
@@ -159,7 +157,7 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
         }
     }
 
-    public final void x1(int i10) {
+    public final void w1(int i10) {
         View view;
         if (i10 == 0 && (view = (View) getParent()) != null) {
             i10 = view.getMeasuredWidth();
@@ -176,7 +174,7 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
         }
     }
 
-    public final void y1(org.telegram.ui.ActionBar.j6 j6Var) {
+    public final void x1(org.telegram.ui.ActionBar.j6 j6Var) {
         TLRPC.TL_theme tL_theme = j6Var.C;
         if (tL_theme != null) {
             if (!j6Var.R) {
@@ -185,7 +183,7 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
             if (tL_theme.document == null) {
                 org.telegram.ui.ActionBar.p2 p2Var = this.e3;
                 if (p2Var != null) {
-                    p2Var.presentFragment(new jd1(j6Var, null, true));
+                    p2Var.presentFragment(new od1(j6Var, null, true));
                     return;
                 }
                 return;
@@ -211,7 +209,7 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
         } else {
             NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, j6Var, Boolean.FALSE, null, -1);
         }
-        A1();
+        z1();
         int childCount = getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = getChildAt(i10);
@@ -226,6 +224,8 @@ public abstract class la extends tl0 implements NotificationCenter.NotificationC
         }
     }
 
-    public void z1(org.telegram.ui.ActionBar.j6 j6Var) {
+    public abstract void z1();
+
+    public void y1(org.telegram.ui.ActionBar.j6 j6Var) {
     }
 }

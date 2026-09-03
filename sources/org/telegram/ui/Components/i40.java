@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class i40 extends x51 {
+public abstract class i40 extends w51 {
     public final int K;
     public final ArrayList L;
     public boolean M;
@@ -25,8 +25,8 @@ public abstract class i40 extends x51 {
     public gy X;
     public final boolean[] Y;
 
-    public i40(tl0 tl0Var, Context context, int i10) {
-        super(tl0Var, context, i10, 0, false, null, null);
+    public i40(sl0 sl0Var, Context context, int i10) {
+        super(sl0Var, context, i10, 0, false, null, null);
         this.L = new ArrayList();
         this.Q = 0;
         this.R = -1;
@@ -72,12 +72,12 @@ public abstract class i40 extends x51 {
     }
 
     public final void W() {
-        tl0 tl0Var;
-        if (TextUtils.isEmpty(this.U) || this.S || this.P || (tl0Var = this.d) == null) {
+        sl0 sl0Var;
+        if (TextUtils.isEmpty(this.U) || this.S || this.P || (sl0Var = this.d) == null) {
             return;
         }
-        for (int i10 = 0; i10 < tl0Var.getChildCount(); i10++) {
-            if (tl0Var.getChildAt(i10) instanceof u00) {
+        for (int i10 = 0; i10 < sl0Var.getChildCount(); i10++) {
+            if (sl0Var.getChildAt(i10) instanceof u00) {
                 Y(this.U);
                 return;
             }

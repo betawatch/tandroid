@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_aicompose;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class z extends sa {
     public final FrameLayout U;
@@ -36,7 +36,7 @@ public final class z extends sa {
     public TL_aicompose.TL_aiComposeTone g0;
     public e h0;
     public e i0;
-    public x51 j0;
+    public w51 j0;
 
     public z(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context, null, true, false, false, false, false, 2, g6Var);
@@ -157,11 +157,11 @@ public final class z extends sa {
         int i14 = org.telegram.ui.ActionBar.k6.a7;
         this.behindKeyboardColorKey = i14;
         setBackgroundColor(getThemedColor(i14));
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i15 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(66.0f));
+        sl0Var.setPadding(i15, 0, i15, AndroidUtilities.dp(66.0f));
         this.d.setClipToPadding(false);
-        this.d.p1();
+        this.d.o1();
         this.d.setOnItemClickListener(new hg.v0(8, this, g6Var));
         this.I = false;
         this.H = AndroidUtilities.dp(12.0f);
@@ -354,9 +354,9 @@ public final class z extends sa {
         xVar.setSaveState(1);
         y yVar = new y(this, xVar);
         this.f0 = yVar;
-        org.telegram.ui.i61[] i61VarArr = {yVar};
+        org.telegram.ui.n61[] n61VarArr = {yVar};
         yVar.showAsDropDown(this.V, AndroidUtilities.dp(150.0f), -AndroidUtilities.dp(390.0f), 80);
-        i61VarArr[0].b();
+        n61VarArr[0].b();
     }
 
     public final void W() {
@@ -383,11 +383,11 @@ public final class z extends sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(tl0Var, getContext(), this.currentAccount, 0, true, new d(this, 2), this.resourcesProvider);
-        this.j0 = x51Var;
-        x51Var.r = false;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(sl0Var, getContext(), this.currentAccount, 0, true, new d(this, 2), this.resourcesProvider);
+        this.j0 = w51Var;
+        w51Var.r = false;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

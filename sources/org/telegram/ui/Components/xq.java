@@ -16,7 +16,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xq implements Runnable {
     public final /* synthetic */ String[] a;
@@ -115,13 +115,13 @@ public final /* synthetic */ class xq implements Runnable {
                         int i13 = R.raw.error;
                         String string = LocaleController.getString(R.string.CreateManagedBotLimitTitle);
                         SpannableStringBuilder replaceSingleLink = AndroidUtilities.replaceSingleLink(isPremium ? LocaleController.formatString(R.string.CreateManagedBotLimitText, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get())) : LocaleController.formatString(R.string.CreateManagedBotLimitTextPremium, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get()), Integer.valueOf(messagesController2.config.botsCreateLimitDefault.get())), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Gi, g6Var2), new xp(h3Var2, 2));
-                        gm gmVar = new gm(4, h3Var2, context);
+                        eo eoVar = new eo(3, h3Var2, context);
                         if (replaceSingleLink == null) {
                             replaceSingleLink = new SpannableStringBuilder(replaceSingleLink);
                         }
                         int charSequenceIndexOf = AndroidUtilities.charSequenceIndexOf(replaceSingleLink, "@BotFather");
                         if (charSequenceIndexOf >= 0) {
-                            replaceSingleLink.setSpan(new org.telegram.ui.Cells.i(g6Var2, gmVar, 6), charSequenceIndexOf, charSequenceIndexOf + 10, 33);
+                            replaceSingleLink.setSpan(new org.telegram.ui.Cells.i(g6Var2, eoVar, 6), charSequenceIndexOf, charSequenceIndexOf + 10, 33);
                         }
                         ic M = qcVar.M(string, replaceSingleLink, i13);
                         M.j = 8000;

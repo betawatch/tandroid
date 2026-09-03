@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class b0 extends View {
     public final Paint a;
@@ -84,8 +84,8 @@ public final class b0 extends View {
         boolean z10 = (c0Var.x.Q / 90) % 2 == 1;
         matrix.preTranslate(fVar.d, fVar.e);
         float f15 = (fVar.f / f12) * containerWidth;
-        s6 s6Var = c0Var.x;
-        if (s6Var != null && (cropState = s6Var.m0) != null) {
+        r6 r6Var = c0Var.x;
+        if (r6Var != null && (cropState = r6Var.m0) != null) {
             if (z4) {
                 f10 = cropState.cropScale;
             }
@@ -102,9 +102,9 @@ public final class b0 extends View {
             f17 = f19;
         }
         matrix.preTranslate(f16 * f13, f17 * f14);
-        s6 s6Var2 = c0Var.x;
-        float f20 = s6Var2.Q + fVar.g + i10;
-        MediaController.CropState cropState3 = s6Var2.m0;
+        r6 r6Var2 = c0Var.x;
+        float f20 = r6Var2.Q + fVar.g + i10;
+        MediaController.CropState cropState3 = r6Var2.m0;
         if (cropState3 != null) {
             if (z4) {
                 f11 = cropState3.cropRotate + cropState3.transformRotation;
@@ -132,7 +132,7 @@ public final class b0 extends View {
         c0 c0Var = this.s;
         int[] iArr = c0Var.s;
         int[] iArr2 = c0Var.v;
-        j5 j5Var = c0Var.a;
+        i5 i5Var = c0Var.a;
         if (!z4) {
             canvas2 = canvas;
             f10 = 2.0f;
@@ -144,7 +144,7 @@ public final class b0 extends View {
             canvas2 = canvas;
             f10 = 2.0f;
             f11 = 255.0f;
-            canvas2.saveLayerAlpha(0.0f, 0.0f, j5Var.getWidth(), j5Var.getHeight(), (int) (Math.min(1.0f, (1.0f - c0Var.r) * 2.0f) * 255.0f), 31);
+            canvas2.saveLayerAlpha(0.0f, 0.0f, i5Var.getWidth(), i5Var.getHeight(), (int) (Math.min(1.0f, (1.0f - c0Var.r) * 2.0f) * 255.0f), 31);
             canvas2.translate(iArr[0] - iArr2[0], iArr[1] - iArr2[1]);
         }
         canvas2.save();
@@ -155,8 +155,8 @@ public final class b0 extends View {
         if (c0Var.r < 1.0f && !z4) {
             Path path = this.b;
             path.rewind();
-            float width = j5Var.getWidth();
-            float height = j5Var.getHeight();
+            float width = i5Var.getWidth();
+            float height = i5Var.getHeight();
             RectF rectF = this.c;
             rectF.set(0.0f, 0.0f, width, height);
             rectF.offset(iArr2[0], iArr2[1]);
@@ -174,9 +174,9 @@ public final class b0 extends View {
         matrix2.reset();
         matrix.preTranslate(-iArr[0], -iArr[1]);
         matrix.preTranslate(iArr2[0], iArr2[1]);
-        matrix.preScale(j5Var.getWidth() / c0Var.x.i0, j5Var.getHeight() / c0Var.x.j0);
+        matrix.preScale(i5Var.getWidth() / c0Var.x.i0, i5Var.getHeight() / c0Var.x.j0);
         matrix.preConcat(c0Var.x.n0);
-        matrix.preTranslate(j5Var.getContentWidth() / f10, j5Var.getContentHeight() / f10);
+        matrix.preTranslate(i5Var.getContentWidth() / f10, i5Var.getContentHeight() / f10);
         matrix2.preTranslate((getContainerWidth() / f10) + AndroidUtilities.dp(16.0f), l.d.b(getContainerHeight(), AndroidUtilities.dp(32.0f), f10, !(getContext() instanceof BubbleActivity) ? AndroidUtilities.statusBarHeight : 0.0f));
         if (z4) {
             Matrix matrix3 = this.d;
@@ -186,13 +186,13 @@ public final class b0 extends View {
             matrix4.preRotate(-c0Var.x.Q);
             Matrix matrix5 = this.r;
             if (matrix4.invert(matrix5)) {
-                s6 s6Var = c0Var.x;
+                r6 r6Var = c0Var.x;
                 f12 = 2.0f;
-                int i10 = s6Var.Q;
-                MediaController.CropState cropState = s6Var.m0;
+                int i10 = r6Var.Q;
+                MediaController.CropState cropState = r6Var.m0;
                 boolean z11 = ((i10 + (cropState != null ? cropState.transformRotation : 0)) / 90) % 2 == 1;
-                float contentWidth = j5Var.getContentWidth();
-                float contentHeight = j5Var.getContentHeight();
+                float contentWidth = i5Var.getContentWidth();
+                float contentHeight = i5Var.getContentHeight();
                 MediaController.CropState cropState2 = c0Var.x.m0;
                 float f15 = cropState2 != null ? cropState2.cropPw : 1.0f;
                 float f16 = cropState2 != null ? cropState2.cropPh : 1.0f;
@@ -228,25 +228,25 @@ public final class b0 extends View {
                 float y10 = org.telegram.messenger.y3.y(1.0f, e6, 4.0f * e6, 0.25f);
                 matrix2.preSkew(0.0f, y10);
                 matrix.preSkew(0.0f, y10);
-                matrix2.preTranslate((-j5Var.getContentWidth()) / f12, (-j5Var.getContentHeight()) / f12);
-                matrix.preTranslate((-j5Var.getContentWidth()) / f12, (-j5Var.getContentHeight()) / f12);
+                matrix2.preTranslate((-i5Var.getContentWidth()) / f12, (-i5Var.getContentHeight()) / f12);
+                matrix.preTranslate((-i5Var.getContentWidth()) / f12, (-i5Var.getContentHeight()) / f12);
                 float f20 = c0Var.r;
                 Matrix matrix6 = this.e;
                 AndroidUtilities.lerp(matrix, matrix2, f20, matrix6);
                 canvas2.concat(matrix6);
-                Paint paint2 = j5Var.N;
-                Matrix matrix7 = j5Var.T;
-                if (j5Var.n == null) {
+                Paint paint2 = i5Var.N;
+                Matrix matrix7 = i5Var.T;
+                if (i5Var.n == null) {
                     canvas2.save();
-                    canvas2.scale(j5Var.getContentWidth() / j5Var.getWidth(), j5Var.getContentHeight() / j5Var.getHeight());
-                    canvas2.concat(j5Var.g0);
-                    j5Var.n.draw(canvas2);
+                    canvas2.scale(i5Var.getContentWidth() / i5Var.getWidth(), i5Var.getContentHeight() / i5Var.getHeight());
+                    canvas2.concat(i5Var.g0);
+                    i5Var.n.draw(canvas2);
                     canvas2.restore();
-                } else if (j5Var.a != null && j5Var.d != null) {
+                } else if (i5Var.a != null && i5Var.d != null) {
                     matrix7.reset();
-                    matrix7.preScale(j5Var.d.k0 / j5Var.a.getWidth(), j5Var.d.l0 / j5Var.a.getHeight());
+                    matrix7.preScale(i5Var.d.k0 / i5Var.a.getWidth(), i5Var.d.l0 / i5Var.a.getHeight());
                     paint2.setAlpha(255);
-                    canvas2.drawBitmap(j5Var.a, matrix7, paint2);
+                    canvas2.drawBitmap(i5Var.a, matrix7, paint2);
                 }
                 canvas2.restore();
                 if (z4) {
@@ -269,15 +269,15 @@ public final class b0 extends View {
         float y102 = org.telegram.messenger.y3.y(1.0f, e62, 4.0f * e62, 0.25f);
         matrix2.preSkew(0.0f, y102);
         matrix.preSkew(0.0f, y102);
-        matrix2.preTranslate((-j5Var.getContentWidth()) / f12, (-j5Var.getContentHeight()) / f12);
-        matrix.preTranslate((-j5Var.getContentWidth()) / f12, (-j5Var.getContentHeight()) / f12);
+        matrix2.preTranslate((-i5Var.getContentWidth()) / f12, (-i5Var.getContentHeight()) / f12);
+        matrix.preTranslate((-i5Var.getContentWidth()) / f12, (-i5Var.getContentHeight()) / f12);
         float f202 = c0Var.r;
         Matrix matrix62 = this.e;
         AndroidUtilities.lerp(matrix, matrix2, f202, matrix62);
         canvas2.concat(matrix62);
-        Paint paint22 = j5Var.N;
-        Matrix matrix72 = j5Var.T;
-        if (j5Var.n == null) {
+        Paint paint22 = i5Var.N;
+        Matrix matrix72 = i5Var.T;
+        if (i5Var.n == null) {
         }
         canvas2.restore();
         if (z4) {

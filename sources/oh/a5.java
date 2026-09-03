@@ -17,15 +17,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.b80;
 import org.telegram.ui.Components.dc0;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.ib1;
+import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class a5 extends sl0 {
+public final class a5 extends rl0 {
     public final ArrayList c = new ArrayList();
     public final /* synthetic */ e5 d;
 
@@ -33,7 +33,7 @@ public final class a5 extends sl0 {
         this.d = e5Var;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return m1Var.f == 1;
     }
@@ -328,9 +328,9 @@ public final class a5 extends sl0 {
                         dVar.setBackground(org.telegram.ui.ActionBar.k6.i0(dp, dp, dp, dp, v02, k10, k10));
                         k7.e6.b(dVar, 0.05f, 1.5f);
                         dVar.addView(textView);
-                        ib1 ib1Var = z4Var.a;
-                        ib1Var.setClipChildren(false);
-                        ib1Var.addView(dVar, k7.c6.t(-2, -2, 1, 0, 28, 0, 4));
+                        ob1 ob1Var = z4Var.a;
+                        ob1Var.setClipChildren(false);
+                        ob1Var.addView(dVar, k7.c6.t(-2, -2, 1, 0, 28, 0, 4));
                     }
                     g90Var.setText(spannableStringBuilder);
                 } else {
@@ -376,6 +376,6 @@ public final class a5 extends sl0 {
                 view = g90Var2;
                 break;
         }
-        return new fl0(view);
+        return new el0(view);
     }
 }

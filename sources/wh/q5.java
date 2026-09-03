@@ -13,10 +13,10 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.p6;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.m9;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.bu0;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.gu0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class q5 implements d1 {
     public final /* synthetic */ v5 a;
@@ -33,7 +33,7 @@ public final class q5 implements d1 {
         if (s5Var == null || (aVar = v5Var.x) == null) {
             return false;
         }
-        return r3.Q1(((a3) s5Var).a, aVar, false);
+        return r3.P1(((a3) s5Var).a, aVar, false);
     }
 
     @Override // wh.d1
@@ -44,7 +44,7 @@ public final class q5 implements d1 {
             if (charSequence == null || charSequence.length() <= 0) {
                 return;
             }
-            a3Var.a.t4(charSequence.toString());
+            a3Var.a.s4(charSequence.toString());
         }
     }
 
@@ -89,7 +89,7 @@ public final class q5 implements d1 {
                 v5Var.post(new uf.h1(this, v5Var.x, s6, 13));
             }
         } else {
-            v5Var.post(new bu0(this, v5Var.x, i10, 20));
+            v5Var.post(new gu0(this, v5Var.x, i10, 20));
         }
         if (v5Var.Q || ((aVar = v5Var.x) != null && (aVar.b instanceof TL_iv.pageBlockPullquote))) {
             v5Var.invalidate();
@@ -104,7 +104,7 @@ public final class q5 implements d1 {
         if (s5Var == null || (aVar = v5Var.x) == null) {
             return false;
         }
-        return ((a3) s5Var).a.W3(aVar, z4);
+        return ((a3) s5Var).a.V3(aVar, z4);
     }
 
     @Override // wh.d1
@@ -112,7 +112,7 @@ public final class q5 implements d1 {
         s5 s5Var = this.a.y;
         if (s5Var != null) {
             r3 r3Var = ((a3) s5Var).a;
-            r3.M1(r3Var, e1Var);
+            r3.L1(r3Var, e1Var);
             r3Var.e3.h(e1Var, true);
         }
     }
@@ -124,7 +124,7 @@ public final class q5 implements d1 {
         if (s5Var == null || v5Var.x == null) {
             return false;
         }
-        return ((a3) s5Var).a.S4();
+        return ((a3) s5Var).a.R4();
     }
 
     @Override // wh.d1
@@ -178,7 +178,7 @@ public final class q5 implements d1 {
         a aVar = v5Var.x;
         r3 r3Var = ((a3) s5Var).a;
         ArrayList arrayList = r3Var.m4;
-        x51 x51Var = r3Var.V2;
+        w51 w51Var = r3Var.V2;
         ArrayList arrayList2 = r3Var.i3;
         int indexOf = arrayList2.indexOf(aVar);
         if (indexOf < 0) {
@@ -188,10 +188,10 @@ public final class q5 implements d1 {
         if (d2Var != null) {
             d2Var.d();
         }
-        View z12 = r3Var.z1(aVar);
-        boolean z10 = z12 instanceof v5;
+        View y12 = r3Var.y1(aVar);
+        boolean z10 = y12 instanceof v5;
         if (z10) {
-            e1 editText2 = ((v5) z12).getEditText();
+            e1 editText2 = ((v5) y12).getEditText();
             Spanned text2 = editText2.getText();
             length = editText2.getSelectionEnd();
             spanned = text2;
@@ -207,8 +207,8 @@ public final class q5 implements d1 {
             if (!aVar.k.isEmpty()) {
                 ArrayList arrayList3 = aVar.k;
                 arrayList3.remove(arrayList3.size() - 1);
-                r3Var.s4();
-                x51Var.N(false);
+                r3Var.r4();
+                w51Var.N(false);
                 d2 d2Var2 = r3Var.G3;
                 if (d2Var2 != null) {
                     d2Var2.h();
@@ -217,9 +217,9 @@ public final class q5 implements d1 {
                 return;
             }
             if (aVar.c > 0) {
-                r3Var.t2(indexOf);
-                r3Var.s4();
-                x51Var.N(false);
+                r3Var.s2(indexOf);
+                r3Var.r4();
+                w51Var.N(false);
                 d2 d2Var3 = r3Var.G3;
                 if (d2Var3 != null) {
                     d2Var3.h();
@@ -256,9 +256,9 @@ public final class q5 implements d1 {
         aVar2.k.addAll(arrayList4);
         int i12 = indexOf + 1;
         arrayList2.add(i12, aVar2);
-        r3Var.s4();
+        r3Var.r4();
         if (z4) {
-            x51Var.N(false);
+            w51Var.N(false);
             d2 d2Var4 = r3Var.G3;
             if (d2Var4 != null) {
                 d2Var4.h();
@@ -266,22 +266,22 @@ public final class q5 implements d1 {
             r3Var.post(new k2(r3Var, aVar2, 29));
             return;
         }
-        if (z10 && (text = (editText = ((v5) z12).getEditText()).getText()) != null && length >= 0 && length < text.length()) {
+        if (z10 && (text = (editText = ((v5) y12).getEditText()).getText()) != null && length >= 0 && length < text.length()) {
             editText.h = true;
             text.delete(length, text.length());
             editText.h = false;
         }
-        x51Var.S();
-        r3Var.p4(i12);
+        w51Var.S();
+        r3Var.o4(i12);
         int indexOf2 = arrayList.indexOf(aVar2);
         if (indexOf2 < 0) {
-            x51Var.l();
+            w51Var.l();
         } else {
             f2.u0 itemAnimator = r3Var.getItemAnimator();
             r3Var.setItemAnimator(null);
-            x51Var.o(indexOf2);
+            w51Var.o(indexOf2);
             if (aVar.d > 0 && (i10 = indexOf2 + 1) < arrayList.size()) {
-                x51Var.q(i10, (arrayList.size() - indexOf2) - 1);
+                w51Var.q(i10, (arrayList.size() - indexOf2) - 1);
             }
             r3Var.post(new u2(r3Var, itemAnimator, 0));
         }
@@ -308,14 +308,14 @@ public final class q5 implements d1 {
                     if (!TextUtils.isEmpty(htmlText)) {
                         HashMap hashMap = new HashMap();
                         try {
-                            ArrayList w42 = r3Var.w4(x3.z(htmlText, hashMap));
-                            if (!w42.isEmpty() && ((w42.size() != 1 || !r3.F3((a) w42.get(0))) && (indexOf = r3Var.i3.indexOf(aVar)) >= 0)) {
+                            ArrayList v42 = r3Var.v4(x3.z(htmlText, hashMap));
+                            if (!v42.isEmpty() && ((v42.size() != 1 || !r3.E3((a) v42.get(0))) && (indexOf = r3Var.i3.indexOf(aVar)) >= 0)) {
                                 int max = Math.max(0, Math.min(e1Var.getSelectionStart(), e1Var.getSelectionEnd()));
-                                boolean I4 = r3Var.I4(indexOf, indexOf, max, Math.max(max, Math.max(e1Var.getSelectionStart(), e1Var.getSelectionEnd())), w42);
-                                if (I4 && !hashMap.isEmpty()) {
+                                boolean H4 = r3Var.H4(indexOf, indexOf, max, Math.max(max, Math.max(e1Var.getSelectionStart(), e1Var.getSelectionEnd())), v42);
+                                if (H4 && !hashMap.isEmpty()) {
                                     r3Var.j3.putAll(hashMap);
                                 }
-                                return I4;
+                                return H4;
                             }
                         } catch (Exception e6) {
                             FileLog.e(e6);
@@ -347,6 +347,6 @@ public final class q5 implements d1 {
         if (s5Var == null || (aVar = v5Var.x) == null) {
             return;
         }
-        r3.Q1(((a3) s5Var).a, aVar, true);
+        r3.P1(((a3) s5Var).a, aVar, true);
     }
 }

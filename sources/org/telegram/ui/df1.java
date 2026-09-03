@@ -1,28 +1,28 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class df1 extends cg.b {
-    public final TLRPC.TL_forumTopic c;
+public final class df1 extends qf1 {
+    public final /* synthetic */ sf1 f3;
 
-    public df1(int i10, TLRPC.TL_forumTopic tL_forumTopic) {
-        super(i10, true);
-        this.c = tL_forumTopic;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public df1(sf1 sf1Var, Context context) {
+        super(sf1Var, context);
+        this.f3 = sf1Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && df1.class == obj.getClass()) {
-            df1 df1Var = (df1) obj;
-            int i10 = this.a;
-            if (i10 == df1Var.a && i10 == 0 && this.c.id == df1Var.c.id) {
-                return true;
-            }
-        }
-        return false;
+    @Override // org.telegram.ui.Components.sl0
+    public final boolean R0() {
+        ArrayList arrayList = this.f3.b;
+        return (getAdapter() == null || this.U1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((jf1) arrayList.get(0)).c == null || ((jf1) arrayList.get(0)).c.id != 1 ? getAdapter().h() > 1 : getAdapter().h() > 2)) ? false : true;
+    }
+
+    @Override // org.telegram.ui.qf1, org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        this.f3.y0();
     }
 }

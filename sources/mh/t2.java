@@ -4,10 +4,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.xk;
-import org.telegram.ui.ip0;
+import org.telegram.ui.no0;
+import org.telegram.ui.np0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class t2 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -48,7 +48,7 @@ public final /* synthetic */ class t2 implements Utilities.Callback2 {
                 }
                 break;
             default:
-                ip0.V((ip0) this.d, (boolean[]) this.e, this.b, this.c, (xk) this.f, (i4) obj, (af.f) obj2);
+                np0.U((np0) this.d, (boolean[]) this.e, this.b, this.c, (no0) this.f, (i4) obj, (af.f) obj2);
                 break;
         }
     }

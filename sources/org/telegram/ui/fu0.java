@@ -1,35 +1,264 @@
 package org.telegram.ui;
 
-import java.io.File;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public interface fu0 {
-    boolean a(int i10);
+public class fu0 implements ou0 {
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean A() {
+        return false;
+    }
 
-    File b(int i10);
+    @Override // org.telegram.ui.ou0
+    public CharSequence C(int i10) {
+        return null;
+    }
 
-    String c(int i10);
+    @Override // org.telegram.ui.ou0
+    public qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+        return null;
+    }
 
-    TLObject d(int i10);
+    @Override // org.telegram.ui.ou0
+    public int H() {
+        return 0;
+    }
 
-    boolean e(int i10);
+    @Override // org.telegram.ui.ou0
+    public boolean J() {
+        return false;
+    }
 
-    TLRPC.PhotoSize f(TLObject tLObject, int[] iArr);
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean K() {
+        return false;
+    }
 
-    Object g();
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean M() {
+        return true;
+    }
 
-    TL_iv.PageBlock get(int i10);
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean N() {
+        return false;
+    }
 
-    List getAll();
+    @Override // org.telegram.ui.ou0
+    public boolean O() {
+        return false;
+    }
 
-    void h(TL_iv.PageBlock pageBlock);
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean P() {
+        return false;
+    }
 
-    CharSequence i(int i10);
+    @Override // org.telegram.ui.ou0
+    public int Q(Object obj) {
+        return -1;
+    }
 
-    int j();
+    @Override // org.telegram.ui.ou0
+    public int R(int i10) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public boolean S() {
+        return !(this instanceof rl);
+    }
+
+    @Override // org.telegram.ui.ou0
+    public boolean T() {
+        return !(this instanceof tl);
+    }
+
+    @Override // org.telegram.ui.ou0
+    public MessageObject U() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public boolean Y() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public String a0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public CharSequence b0(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public ArrayList c() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public boolean g() {
+        return !(this instanceof rl);
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean h() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public ImageReceiver.BitmapHolder j(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public int k(int i10, VideoEditedInfo videoEditedInfo) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean l() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public boolean p() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public boolean r() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean t() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public boolean u() {
+        return !(this instanceof org.telegram.ui.Components.vl);
+    }
+
+    @Override // org.telegram.ui.ou0
+    public HashMap v() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ boolean w() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public boolean x(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public int y() {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.ou0
+    public boolean z() {
+        return !(this instanceof org.telegram.ui.Components.lh);
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void B(int i10) {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void D() {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ void F(boolean z4) {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void G() {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ void I() {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void L(VideoEditedInfo videoEditedInfo) {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ void V() {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void W(int i10) {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ void X(int i10) {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void Z(int i10) {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void d() {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void e(CharSequence charSequence) {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ void i() {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ void m() {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void n() {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void f(String str, String str2, boolean z4) {
+    }
+
+    @Override // org.telegram.ui.ou0
+    public void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
+    }
 }

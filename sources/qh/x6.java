@@ -1,15 +1,38 @@
 package qh;
 
-import org.telegram.ui.Components.x51;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.tp;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class x6 extends x51 {
-    @Override // org.telegram.ui.Components.x51
-    public final int I(int i10) {
-        if (i10 == org.telegram.ui.ActionBar.k6.i5) {
-            return -15921907;
+public final class x6 extends tp {
+    public final /* synthetic */ int i = 0;
+
+    public /* synthetic */ x6(float f10, float f11, int i10) {
+        super(f10, f11, i10);
+    }
+
+    @Override // org.telegram.ui.Components.tp, android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        switch (this.i) {
+            case 0:
+                return AndroidUtilities.dp(26.0f);
+            default:
+                return (int) ((this.b * 2.0f) + this.a);
         }
-        return org.telegram.ui.ActionBar.k6.v0(i10, this.v);
+    }
+
+    @Override // org.telegram.ui.Components.tp, android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        switch (this.i) {
+            case 0:
+                return AndroidUtilities.dp(26.0f);
+            default:
+                return (int) ((this.b * 2.0f) + this.a);
+        }
+    }
+
+    public /* synthetic */ x6(int i10) {
+        super(i10);
     }
 }

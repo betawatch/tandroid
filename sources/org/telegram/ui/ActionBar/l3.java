@@ -18,10 +18,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class l3 {
     public final n3 a;
@@ -43,8 +43,8 @@ public final class l3 {
     public final Bitmap q;
     public final Drawable r;
     public int s;
-    public final l01 t;
-    public l01 u;
+    public final k01 t;
+    public k01 u;
     public float v;
     public final float[] w;
     public final Path x;
@@ -77,7 +77,7 @@ public final class l3 {
         this.q = n3Var.D;
         String b10 = n3Var.b();
         textPaint = o3.getTextPaint();
-        this.t = new l01(Emoji.replaceEmoji(b10, textPaint.getFontMetricsInt(), false), 17.0f, AndroidUtilities.bold());
+        this.t = new k01(Emoji.replaceEmoji(b10, textPaint.getFontMetricsInt(), false), 17.0f, AndroidUtilities.bold());
         int i10 = n3Var.o;
         this.m = i10;
         this.o = AndroidUtilities.computePerceivedBrightness(i10) < 0.721f;
@@ -201,16 +201,16 @@ public final class l3 {
                 i10 = intrinsicHeight - AndroidUtilities.dp(2.0f);
             }
         }
-        l01 l01Var = this.u;
-        if (l01Var != null) {
-            l01Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
-            l01Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.y3.y(1.0f, this.v, f11, f12), d10, canvas2);
+        k01 k01Var = this.u;
+        if (k01Var != null) {
+            k01Var.p = (int) ((rectF.width() - AndroidUtilities.dp(100.0f)) - r3);
+            k01Var.c(rectF.left + AndroidUtilities.dp(60.0f) + i10, rectF.centerY(), org.telegram.messenger.y3.y(1.0f, this.v, f11, f12), d10, canvas2);
         }
         float width = rectF.width() - AndroidUtilities.dp(100.0f);
         float f20 = i10;
-        l01 l01Var2 = this.t;
-        l01Var2.p = (int) (width - f20);
-        l01Var2.c(f20 + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), (this.u == null ? 1.0f : this.v) * f11 * f12, d10, canvas);
+        k01 k01Var2 = this.t;
+        k01Var2.p = (int) (width - f20);
+        k01Var2.c(f20 + rectF.left + AndroidUtilities.dp(60.0f), rectF.centerY(), (this.u == null ? 1.0f : this.v) * f11 * f12, d10, canvas);
     }
 
     public final float b() {

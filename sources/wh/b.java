@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.q70;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -32,15 +32,15 @@ public final /* synthetic */ class b implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.C2();
+                this.b.B2();
                 break;
             case 1:
-                this.b.t3();
+                this.b.s3();
                 break;
             case 2:
                 r3 r3Var = this.b;
                 if (r3Var.u3 != null && !r3Var.k3.y()) {
-                    if (r3Var.T4(r3Var.u3, r3Var.s3, r3Var.t3)) {
+                    if (r3Var.S4(r3Var.u3, r3Var.s3, r3Var.t3)) {
                         r3Var.x3 = true;
                         break;
                     } else {
@@ -69,7 +69,7 @@ public final /* synthetic */ class b implements Runnable {
                         View view2 = r3Var.u3;
                         if (view2 instanceof i5) {
                             i5 i5Var = (i5) view2;
-                            if (r3Var.j3(i5Var, left, top)) {
+                            if (r3Var.i3(i5Var, left, top)) {
                                 try {
                                     i5Var.performHapticFeedback(0);
                                 } catch (Exception unused) {
@@ -84,7 +84,7 @@ public final /* synthetic */ class b implements Runnable {
                                         r3Var.g4 = null;
                                         q70Var.u();
                                     }
-                                    r3Var.g2(i5Var);
+                                    r3Var.f2(i5Var);
                                     r3Var.B0();
                                     r3Var.requestDisallowInterceptTouchEvent(true);
                                     r3Var.y3 = true;
@@ -98,7 +98,7 @@ public final /* synthetic */ class b implements Runnable {
                                     r3Var.x3 = true;
                                     break;
                                 } else {
-                                    r3Var.J4(r3Var.u3);
+                                    r3Var.I4(r3Var.u3);
                                     break;
                                 }
                             }
@@ -111,7 +111,7 @@ public final /* synthetic */ class b implements Runnable {
                                 if (e1Var.getVisibility() == 0) {
                                     break;
                                 }
-                                r3Var.J4(r3Var.u3);
+                                r3Var.I4(r3Var.u3);
                                 break;
                             }
                             r3Var.x3 = true;
@@ -125,7 +125,7 @@ public final /* synthetic */ class b implements Runnable {
                                     }
                                 }
                             }
-                            r3Var.J4(r3Var.u3);
+                            r3Var.I4(r3Var.u3);
                         }
                     }
                 }
@@ -145,10 +145,10 @@ public final /* synthetic */ class b implements Runnable {
                 }
                 break;
             case 4:
-                this.b.o3(true);
+                this.b.n3(true);
                 break;
             default:
-                this.b.a3();
+                this.b.Z2();
                 break;
         }
     }

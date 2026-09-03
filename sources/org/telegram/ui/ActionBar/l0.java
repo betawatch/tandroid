@@ -8,10 +8,10 @@ import java.util.ArrayList;
 import org.telegram.ui.Components.i90;
 import org.telegram.ui.Components.mq;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.fs0;
-import org.telegram.ui.qg1;
+import org.telegram.ui.ks0;
+import org.telegram.ui.vg1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class l0 extends ImageView {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final class l0 extends ImageView {
             case 3:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 accessibilityNodeInfo.setCheckable(true);
-                accessibilityNodeInfo.setChecked(((qg1) this.b).n.getTransformationMethod() == null);
+                accessibilityNodeInfo.setChecked(((vg1) this.b).n.getTransformationMethod() == null);
                 break;
             default:
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
@@ -104,12 +104,12 @@ public final class l0 extends ImageView {
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        ((qh.f3) obj).setTranslationY(f10);
+                        ((qh.e3) obj).setTranslationY(f10);
                     }
                 }
-                fs0 fs0Var = photoViewer.d1;
-                if (fs0Var != null) {
-                    fs0Var.setTranslationY(f10);
+                ks0 ks0Var = photoViewer.d1;
+                if (ks0Var != null) {
+                    ks0Var.setTranslationY(f10);
                 }
                 i90 i90Var = photoViewer.c1;
                 if (i90Var != null) {

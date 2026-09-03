@@ -17,9 +17,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class yg0 extends org.telegram.ui.Cells.a0 implements go0, DownloadController.FileDownloadProgressListener {
+public final class yg0 extends org.telegram.ui.Cells.a0 implements fo0, DownloadController.FileDownloadProgressListener {
     public int B;
     public int C;
     public int D;
@@ -31,13 +31,13 @@ public final class yg0 extends org.telegram.ui.Cells.a0 implements go0, Download
     public MessageObject h;
     public int n;
     public TextPaint r;
-    public ho0 s;
+    public go0 s;
     public hi0 v;
     public int w;
     public int x;
     public int y;
 
-    @Override // org.telegram.ui.Components.go0
+    @Override // org.telegram.ui.Components.fo0
     public final void b(float f10) {
         MessageObject messageObject = this.h;
         if (messageObject == null) {
@@ -272,9 +272,9 @@ public final class yg0 extends org.telegram.ui.Cells.a0 implements go0, Download
         if (messageObject == null) {
             return;
         }
-        ho0 ho0Var = this.s;
-        if (!ho0Var.e) {
-            ho0Var.i(messageObject.audioProgress);
+        go0 go0Var = this.s;
+        if (!go0Var.e) {
+            go0Var.i(messageObject.audioProgress);
         }
         if (!MediaController.getInstance().isPlayingMessage(this.h)) {
             i10 = 0;
@@ -302,12 +302,12 @@ public final class yg0 extends org.telegram.ui.Cells.a0 implements go0, Download
     public void setMessageObject(MessageObject messageObject) {
         if (this.h != messageObject) {
             this.n = messageObject.currentAccount;
-            ho0 ho0Var = this.s;
+            go0 go0Var = this.s;
             int i10 = org.telegram.ui.ActionBar.k6.ud;
             int w02 = org.telegram.ui.ActionBar.k6.w0(null, i10, false);
             int w03 = org.telegram.ui.ActionBar.k6.w0(null, i10, false);
             int i11 = org.telegram.ui.ActionBar.k6.xd;
-            ho0Var.h(w02, w03, org.telegram.ui.ActionBar.k6.w0(null, i11, false), org.telegram.ui.ActionBar.k6.w0(null, i11, false), org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.wd, false));
+            go0Var.h(w02, w03, org.telegram.ui.ActionBar.k6.w0(null, i11, false), org.telegram.ui.ActionBar.k6.w0(null, i11, false), org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.wd, false));
             hi0 hi0Var = this.v;
             hi0Var.a.setColor(-2497813);
             hi0Var.b.setColor(-7944712);
@@ -318,7 +318,7 @@ public final class yg0 extends org.telegram.ui.Cells.a0 implements go0, Download
         r();
     }
 
-    @Override // org.telegram.ui.Components.go0
+    @Override // org.telegram.ui.Components.fo0
     public final /* synthetic */ void d(float f10) {
     }
 

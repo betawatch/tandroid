@@ -25,9 +25,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.op;
-import org.telegram.ui.sw0;
+import org.telegram.ui.xw0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class j2 extends ViewGroup {
     public j2 B;
@@ -46,7 +46,7 @@ public class j2 extends ViewGroup {
     public final TextView e;
     public final int f;
     public final int h;
-    public sw0 n;
+    public xw0 n;
     public final TextView r;
     public final int s;
     public final int v;
@@ -116,12 +116,12 @@ public class j2 extends ViewGroup {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(sw0 sw0Var, boolean z4) {
+    public final void a(xw0 xw0Var, boolean z4) {
         boolean z10;
-        this.n = sw0Var;
+        this.n = xw0Var;
         this.J = z4;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = sw0Var.a;
-        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = sw0Var.a;
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption = xw0Var.a;
+        TLRPC.TL_premiumSubscriptionOption tL_premiumSubscriptionOption2 = xw0Var.a;
         int i10 = tL_premiumSubscriptionOption.months;
         TextView textView = this.b;
         if (i10 == 1) {
@@ -135,7 +135,7 @@ public class j2 extends ViewGroup {
         }
         if (!BuildVars.useInvoiceBilling()) {
             if (BillingController.getInstance().isReady()) {
-                sw0Var.a();
+                xw0Var.a();
             }
             z10 = true;
             this.I = z10;
@@ -144,19 +144,19 @@ public class j2 extends ViewGroup {
             TextView textView4 = this.r;
             TextView textView5 = this.e;
             if (z10) {
-                if (sw0Var.c() <= 0) {
+                if (xw0Var.c() <= 0) {
                     textView4.setVisibility(8);
                     textView3.setVisibility(8);
                     textView5.setVisibility(8);
                 } else {
-                    textView4.setText(LocaleController.formatString(R.string.GiftPremiumOptionDiscount, Integer.valueOf(sw0Var.c())));
+                    textView4.setText(LocaleController.formatString(R.string.GiftPremiumOptionDiscount, Integer.valueOf(xw0Var.c())));
                     textView4.setVisibility(0);
                     textView3.setVisibility(0);
                     textView5.setVisibility(0);
                 }
-                textView3.setText((BuildVars.useInvoiceBilling() || tL_premiumSubscriptionOption2.store_product == null) ? BillingController.getInstance().formatCurrency(sw0Var.e, sw0Var.b()) : sw0Var.f == null ? "" : BillingController.getInstance().formatCurrency(sw0Var.e, sw0Var.b(), 6));
-                textView5.setText(LocaleController.formatString(R.string.PricePerYear, sw0Var.f()));
-                textView2.setText(LocaleController.formatString(R.string.PricePerMonthMe, sw0Var.e()));
+                textView3.setText((BuildVars.useInvoiceBilling() || tL_premiumSubscriptionOption2.store_product == null) ? BillingController.getInstance().formatCurrency(xw0Var.e, xw0Var.b()) : xw0Var.f == null ? "" : BillingController.getInstance().formatCurrency(xw0Var.e, xw0Var.b(), 6));
+                textView5.setText(LocaleController.formatString(R.string.PricePerYear, xw0Var.f()));
+                textView2.setText(LocaleController.formatString(R.string.PricePerMonthMe, xw0Var.e()));
                 if (tL_premiumSubscriptionOption2.current) {
                     textView5.setVisibility(0);
                     textView5.setText(LocaleController.getString(R.string.YourCurrentPlan));
@@ -273,7 +273,7 @@ public class j2 extends ViewGroup {
         }
     }
 
-    public sw0 getTier() {
+    public xw0 getTier() {
         return this.n;
     }
 

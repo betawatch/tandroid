@@ -1,56 +1,32 @@
 package org.telegram.ui;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class m21 implements org.telegram.ui.ActionBar.l6 {
-    public boolean a = false;
-    public final /* synthetic */ n21 b;
+public final /* synthetic */ class m21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ o21 b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ int d;
 
-    public m21(n21 n21Var) {
-        this.b = n21Var;
+    public /* synthetic */ m21(o21 o21Var, int i10, int i11, int i12) {
+        this.a = i12;
+        this.b = o21Var;
+        this.c = i10;
+        this.d = i11;
     }
 
-    @Override // org.telegram.ui.ActionBar.l6
-    public final void a(float f10) {
-        ArrayList arrayList;
-        n21 n21Var = this.b;
-        if (f10 == 0.0f && !this.a) {
-            org.telegram.ui.Components.kp kpVar = n21Var.b;
-            if (kpVar != null && (arrayList = kpVar.d) != null) {
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((org.telegram.ui.Components.lp) obj).c = n21Var.J ? 1 : 0;
-                }
-            }
-            if (!n21Var.N) {
-                org.telegram.ui.Components.kp kpVar2 = n21Var.b;
-                for (int i11 = 0; i11 < kpVar2.h(); i11++) {
-                    ((org.telegram.ui.Components.lp) kpVar2.d.get(i11)).getClass();
-                }
-            }
-            this.a = true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.b(this.c, this.d);
+                break;
+            case 1:
+                this.b.b(this.c, this.d);
+                break;
+            default:
+                this.b.b(this.c, this.d);
+                break;
         }
-        n21Var.B.setColorFilter(new PorterDuffColorFilter(n21Var.d.getThemedColor(org.telegram.ui.ActionBar.k6.Oh), PorterDuff.Mode.SRC_IN));
-        if (n21Var.N) {
-            org.telegram.ui.Components.kp kpVar3 = n21Var.b;
-            for (int i12 = 0; i12 < kpVar3.h(); i12++) {
-                ((org.telegram.ui.Components.lp) kpVar3.d.get(i12)).getClass();
-            }
-        }
-        if (f10 == 1.0f && this.a) {
-            n21Var.N = false;
-            this.a = false;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.l6
-    public final void b() {
     }
 }

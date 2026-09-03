@@ -15,9 +15,8 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.Components.qc;
-import q5.g0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class d {
     public static void A(SQLiteDatabase sQLiteDatabase, String str, String str2, String str3) {
@@ -137,13 +136,13 @@ public abstract /* synthetic */ class d {
         return new n7.s(i10);
     }
 
-    public static u9.c s(int i10, g0 g0Var) {
+    public static u9.c s(int i10, q5.c0 c0Var) {
         n7.s sVar = new n7.s(i10);
-        if (((HashMap) g0Var.c) == null) {
-            g0Var.c = new HashMap();
+        if (((HashMap) c0Var.c) == null) {
+            c0Var.c = new HashMap();
         }
-        ((HashMap) g0Var.c).put(n7.w.class, sVar);
-        return new u9.c((String) g0Var.b, ((HashMap) g0Var.c) == null ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(new HashMap((HashMap) g0Var.c)));
+        ((HashMap) c0Var.c).put(n7.w.class, sVar);
+        return new u9.c((String) c0Var.b, ((HashMap) c0Var.c) == null ? Collections.EMPTY_MAP : DesugarCollections.unmodifiableMap(new HashMap((HashMap) c0Var.c)));
     }
 
     public static void t(int i10, StringBuilder sb) {

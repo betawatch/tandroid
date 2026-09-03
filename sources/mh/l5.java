@@ -16,13 +16,13 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class l5 extends View {
     public ValueAnimator B;
@@ -151,18 +151,17 @@ public final class l5 extends View {
             if (arrayList.size() <= 4) {
                 break;
             } else {
-                ((ij0) arrayList.remove(0)).A(true);
+                ((hj0) arrayList.remove(0)).A(true);
             }
         }
         Random random = Utilities.fastRandom;
         int[] iArr = this.H;
-        int i10 = iArr[random.nextInt(iArr.length)];
-        ij0 ij0Var = new ij0(i10, AndroidUtilities.dp(70.0f), l.d.j(i10, ""), AndroidUtilities.dp(70.0f));
-        ij0Var.s0 = this;
-        ij0Var.H(true);
-        ij0Var.I(0);
-        ij0Var.start();
-        arrayList.add(ij0Var);
+        hj0 hj0Var = new hj0(iArr[random.nextInt(iArr.length)], AndroidUtilities.dp(70.0f), AndroidUtilities.dp(70.0f));
+        hj0Var.s0 = this;
+        hj0Var.H(true);
+        hj0Var.I(0);
+        hj0Var.start();
+        arrayList.add(hj0Var);
         invalidate();
         ng.o0 l10 = reactionsLayoutInBubble.l("stars");
         if (l10 != null) {
@@ -323,15 +322,15 @@ public final class l5 extends View {
                     if (i12 >= arrayList.size()) {
                         break;
                     }
-                    ij0 ij0Var = (ij0) arrayList.get(i12);
-                    if (ij0Var.Y >= ij0Var.e[c10]) {
+                    hj0 hj0Var = (hj0) arrayList.get(i12);
+                    if (hj0Var.Y >= hj0Var.e[c10]) {
                         arrayList.remove(i12);
                         i12--;
                     } else {
                         float f16 = dp / 2.0f;
-                        ij0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f16), (int) (rectF.centerY() - f16), (int) e2.c.A(AndroidUtilities.dp(15.0f), lerp, rectF.left, f16), (int) (rectF.centerY() + f16));
-                        ij0Var.setAlpha((int) (this.y * f11));
-                        ij0Var.draw(canvas);
+                        hj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f16), (int) (rectF.centerY() - f16), (int) e2.c.A(AndroidUtilities.dp(15.0f), lerp, rectF.left, f16), (int) (rectF.centerY() + f16));
+                        hj0Var.setAlpha((int) (this.y * f11));
+                        hj0Var.draw(canvas);
                     }
                     i12++;
                 }

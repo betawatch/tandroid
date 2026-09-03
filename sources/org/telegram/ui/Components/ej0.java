@@ -10,9 +10,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public class ej0 extends ij0 {
+public class ej0 extends hj0 {
     public volatile RLottieNative R0;
     public boolean S0;
     public boolean T0;
@@ -36,10 +36,10 @@ public class ej0 extends ij0 {
         if (TextUtils.isEmpty(readRes)) {
             return;
         }
-        this.k0 = RLottieNative.b(readRes, "dice", this.e, null, null);
+        this.k0 = RLottieNative.b(readRes, this.e, null, null);
     }
 
-    @Override // org.telegram.ui.Components.ij0
+    @Override // org.telegram.ui.Components.hj0
     public void A(boolean z4) {
         this.i0 = false;
         this.j0 = true;
@@ -71,7 +71,7 @@ public class ej0 extends ij0 {
         C();
     }
 
-    @Override // org.telegram.ui.Components.ij0
+    @Override // org.telegram.ui.Components.hj0
     public final void B(boolean z4) {
         RLottieNative rLottieNative = this.k0;
         RLottieNative rLottieNative2 = this.R0;
@@ -80,15 +80,15 @@ public class ej0 extends ij0 {
         if (rLottieNative == null && rLottieNative2 == null) {
             return;
         }
-        a90 a90Var = new a90(9, rLottieNative, rLottieNative2);
+        b90 b90Var = new b90(8, rLottieNative, rLottieNative2);
         if (z4) {
-            DispatchQueuePoolBackground.execute(a90Var);
+            DispatchQueuePoolBackground.execute(b90Var);
         } else {
-            Utilities.globalQueue.postRunnable(a90Var);
+            Utilities.globalQueue.postRunnable(b90Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.ij0
+    @Override // org.telegram.ui.Components.hj0
     public void n() {
         if (this.T) {
             l();
@@ -109,18 +109,18 @@ public class ej0 extends ij0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.ij0
+    @Override // org.telegram.ui.Components.hj0
     public final boolean u() {
         return this.V0;
     }
 
-    @Override // org.telegram.ui.Components.ij0
+    @Override // org.telegram.ui.Components.hj0
     public final boolean x() {
         return false;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:17:0x0032 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.ij0
+    @Override // org.telegram.ui.Components.hj0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

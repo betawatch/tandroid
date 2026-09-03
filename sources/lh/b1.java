@@ -19,25 +19,25 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.ky0;
-import org.telegram.ui.Components.yx0;
+import org.telegram.ui.Components.jy0;
+import org.telegram.ui.Components.xx0;
 import org.telegram.ui.PrivacyControlActivity;
+import org.telegram.ui.cs0;
 import org.telegram.ui.fn0;
 import org.telegram.ui.gl0;
 import org.telegram.ui.ih;
 import org.telegram.ui.lo;
-import org.telegram.ui.m31;
 import org.telegram.ui.mb;
 import org.telegram.ui.nm0;
 import org.telegram.ui.og0;
+import org.telegram.ui.q31;
 import org.telegram.ui.sb;
-import org.telegram.ui.t61;
 import org.telegram.ui.vm0;
-import org.telegram.ui.xr0;
+import org.telegram.ui.y61;
 import org.telegram.ui.zi;
-import qh.s6;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -113,35 +113,35 @@ public final /* synthetic */ class b1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new hg.j0(obj4, tL_error, obj, obj3, (TLObject) obj2, 26));
                 break;
             case 10:
-                yx0.p((xr0) obj4, this.c, (TLRPC.TL_messages_getAttachedStickers) obj3, (lo) obj2, tLObject, tL_error);
+                xx0.p((cs0) obj4, this.c, (TLRPC.TL_messages_getAttachedStickers) obj3, (lo) obj2, tLObject, tL_error);
                 break;
             case 11:
-                AndroidUtilities.runOnUIThread(new ky0(11, (og0) obj4, (String) obj, (String) obj3, (String) obj2, tL_error));
+                AndroidUtilities.runOnUIThread(new jy0(11, (og0) obj4, (String) obj, (String) obj3, (String) obj2, tL_error));
                 break;
             case 12:
                 AndroidUtilities.runOnUIThread(new e1((fn0) obj4, tL_error, (String) obj, (vm0) obj3, tLObject, (TL_account.sendVerifyPhoneCode) obj2));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new ky0(18, (nm0) obj4, (gl0) obj, (qa) obj3, (TL_account.verifyEmail) obj2, tL_error));
+                AndroidUtilities.runOnUIThread(new jy0(18, (nm0) obj4, (gl0) obj, (qa) obj3, (TL_account.verifyEmail) obj2, tL_error));
                 break;
             case 14:
-                AndroidUtilities.runOnUIThread(new ky0(22, (PrivacyControlActivity) obj4, (boolean[]) obj, (TLRPC.GlobalPrivacySettings) obj3, (TL_account.setGlobalPrivacySettings) obj2, tL_error));
+                AndroidUtilities.runOnUIThread(new jy0(22, (PrivacyControlActivity) obj4, (boolean[]) obj, (TLRPC.GlobalPrivacySettings) obj3, (TL_account.setGlobalPrivacySettings) obj2, tL_error));
                 break;
             case 15:
-                m31 m31Var = (m31) obj4;
-                m31Var.getClass();
-                AndroidUtilities.runOnUIThread(new e1(m31Var, tLObject, (CharSequence) obj, tL_error, (byte[]) obj3, (String) obj2));
+                q31 q31Var = (q31) obj4;
+                q31Var.getClass();
+                AndroidUtilities.runOnUIThread(new e1(q31Var, tLObject, (CharSequence) obj, tL_error, (byte[]) obj3, (String) obj2));
                 break;
             case 16:
                 AndroidUtilities.runOnUIThread(new e1((org.telegram.ui.web.a1) obj4, tLObject, (TLRPC.TL_messages_requestUrlAuth) obj, (String) obj3, tL_error, (String) obj2));
                 break;
             case 17:
-                s6 s6Var = (s6) obj4;
+                r6 r6Var = (r6) obj4;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
                 TLRPC.TL_messages_getAttachedStickers tL_messages_getAttachedStickers = (TLRPC.TL_messages_getAttachedStickers) obj3;
                 gf.a aVar = (gf.a) obj2;
                 if (tL_error != null && FileRefController.isFileRefError(tL_error.text) && storyItem != null) {
-                    FileRefController.getInstance(s6Var.a).requestReference(storyItem, tL_messages_getAttachedStickers, aVar);
+                    FileRefController.getInstance(r6Var.a).requestReference(storyItem, tL_messages_getAttachedStickers, aVar);
                     break;
                 } else {
                     aVar.run(tLObject, tL_error);
@@ -151,7 +151,7 @@ public final /* synthetic */ class b1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new e1((uf.m0) obj4, (String) obj, tL_error, tLObject, (MessagesController) obj3, (MessagesStorage) obj2));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new t61((uf.l1) obj4, (TLRPC.TL_messages_getStickers) obj, tLObject, (ArrayList) obj3, (LongSparseArray) obj2, 3));
+                AndroidUtilities.runOnUIThread(new y61((uf.l1) obj4, (TLRPC.TL_messages_getStickers) obj, tLObject, (ArrayList) obj3, (LongSparseArray) obj2, 3));
                 break;
         }
     }

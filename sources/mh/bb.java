@@ -20,11 +20,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class bb extends View {
     public final Matrix B;
@@ -34,7 +34,7 @@ public abstract class bb extends View {
     public final org.telegram.ui.Components.j6 F;
     public final oq[] G;
     public final Paint H;
-    public final l01 I;
+    public final k01 I;
     public final org.telegram.ui.Components.z5 J;
     public final org.telegram.ui.Components.z5 K;
     public boolean L;
@@ -96,7 +96,7 @@ public abstract class bb extends View {
         this.G = new oq[1];
         Paint paint = new Paint(1);
         this.H = paint;
-        this.I = new l01(LocaleController.getString(R.string.StarsReactionTop), 14.0f, AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
+        this.I = new k01(LocaleController.getString(R.string.StarsReactionTop), 14.0f, AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
         pr prVar = pr.h;
         this.J = new org.telegram.ui.Components.z5(this, 0L, 320L, prVar);
         this.K = new org.telegram.ui.Components.z5(this, 0L, 320L, prVar);
@@ -245,7 +245,7 @@ public abstract class bb extends View {
         long j10 = this.M;
         org.telegram.ui.Components.z5 z5Var3 = this.K;
         org.telegram.ui.Components.z5 z5Var4 = this.J;
-        l01 l01Var = this.I;
+        k01 k01Var = this.I;
         Paint paint5 = this.H;
         if (j10 == -1 || b((int) j10) >= 1.0f || b((int) this.M) <= 0.0f) {
             z5Var = z5Var3;
@@ -261,7 +261,7 @@ public abstract class bb extends View {
             float clamp01 = (Utilities.clamp01(b((int) this.M)) * (rectF2.width() - AndroidUtilities.dp(24.0f))) + rectF2.left + AndroidUtilities.dp(12.0f);
             float e6 = z5Var4.e(Math.abs((rectF3.right - ((float) AndroidUtilities.dp(10.0f))) - clamp01) < ((float) AndroidUtilities.dp(14.0f)));
             float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), z5Var3.e(Math.abs((rectF3.right - ((float) AndroidUtilities.dp(10.0f))) - clamp01) < ((float) AndroidUtilities.dp(12.0f))));
-            float f13 = (clamp01 + l01Var.c) + ((float) (AndroidUtilities.dp(16.0f) * 2)) > rectF2.right ? (clamp01 - lerp) - l01Var.c : clamp01 + lerp;
+            float f13 = (clamp01 + k01Var.c) + ((float) (AndroidUtilities.dp(16.0f) * 2)) > rectF2.right ? (clamp01 - lerp) - k01Var.c : clamp01 + lerp;
             paint5.setStrokeWidth(AndroidUtilities.dp(1.0f));
             paint5.setColor(org.telegram.ui.ActionBar.k6.l1(0.6f, d));
             z5Var = z5Var3;
@@ -286,7 +286,7 @@ public abstract class bb extends View {
             float dp3 = rectF2.left + AndroidUtilities.dp(12.0f) + (Utilities.clamp01(b((int) this.M)) * (rectF2.width() - AndroidUtilities.dp(24.0f)));
             float e10 = z5Var2.e(Math.abs((rectF.right - ((float) AndroidUtilities.dp(10.0f))) - dp3) < ((float) AndroidUtilities.dp(14.0f)));
             float lerp2 = AndroidUtilities.lerp(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), z5Var.e(Math.abs((rectF.right - ((float) AndroidUtilities.dp(10.0f))) - dp3) < ((float) AndroidUtilities.dp(12.0f))));
-            float f14 = (l01Var.c + dp3) + ((float) (AndroidUtilities.dp(16.0f) * 2)) > rectF2.right ? (dp3 - lerp2) - l01Var.c : lerp2 + dp3;
+            float f14 = (k01Var.c + dp3) + ((float) (AndroidUtilities.dp(16.0f) * 2)) > rectF2.right ? (dp3 - lerp2) - k01Var.c : lerp2 + dp3;
             paint2.setStrokeWidth(AndroidUtilities.dp(1.0f));
             paint2.setColor(org.telegram.ui.ActionBar.k6.l1(0.4f, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.h5, this.a)));
             i11 = i10;

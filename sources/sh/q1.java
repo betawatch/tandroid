@@ -15,10 +15,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.m31;
+import org.telegram.ui.q31;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class q1 implements Runnable {
     public final /* synthetic */ int a;
@@ -149,8 +149,8 @@ public final /* synthetic */ class q1 implements Runnable {
                 Context context = p2Var.getContext();
                 qc qcVar = new qc(cb.a(p2Var.getContext()), p2Var.B);
                 long j10 = p2Var.E;
-                int i14 = m31.v;
-                m31.J(i13, context, j10, false, false, new ArrayList(), qcVar, null, new byte[0], null, null);
+                int i14 = q31.v;
+                q31.J(i13, context, j10, false, false, new ArrayList(), qcVar, null, new byte[0], null, null);
                 break;
             case 15:
                 p2.j(p2Var.D, p2Var.E, new q1(p2Var, 16));

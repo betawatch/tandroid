@@ -17,7 +17,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.cx0;
+import org.telegram.ui.Components.bx0;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.ov;
 import org.telegram.ui.Components.sc;
@@ -25,7 +25,7 @@ import org.telegram.ui.Components.tc;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.mw;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class e8 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -68,7 +68,7 @@ public final /* synthetic */ class e8 implements Utilities.Callback {
                 }
                 if (iArr[0] == this.b && iArr[1] > 0) {
                     ovVar.dismiss();
-                    ic.g(p2Var, new cx0(p2Var.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, p2Var.getResourceProvider()), 1500).j();
+                    ic.g(p2Var, new bx0(p2Var.getFragmentView().getContext(), (TLObject) arrayList.get(0), iArr[1], 2, null, p2Var.getResourceProvider()), 1500).j();
                     break;
                 }
                 break;

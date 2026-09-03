@@ -1,157 +1,373 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.view.animation.DecelerateInterpolator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.UserConfig;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import android.view.View;
+import j$.util.Objects;
+import java.util.HashMap;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.z91;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class h51 extends nw0 {
-    public final int a = UserConfig.selectedAccount;
-    public boolean b = false;
-    public final float[] c = new float[3];
-    public final float[] d = {0.0f, 150.0f, 300.0f};
-    public final float[] e = {0.0f, 0.0f, 0.0f};
-    public long f = 0;
-    public boolean g = false;
-    public final DecelerateInterpolator h = new DecelerateInterpolator();
-    public boolean i;
-    public final Paint j;
+public final class h51 extends cg.b {
+    public static int J = 10000;
+    public static LongSparseArray K;
+    public static HashMap L;
+    public float A;
+    public long B;
+    public Utilities.Callback C;
+    public View.OnClickListener D;
+    public View.OnClickListener E;
+    public org.telegram.ui.w3 F;
+    public Object G;
+    public Object H;
+    public boolean I;
+    public View c;
+    public int d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public boolean h;
+    public int i;
+    public boolean j;
+    public int k;
+    public CharSequence l;
+    public CharSequence m;
+    public CharSequence n;
+    public CharSequence o;
+    public String[] p;
+    public boolean q;
+    public boolean r;
+    public boolean s;
+    public boolean t;
+    public int u;
+    public int v;
+    public boolean w;
+    public long x;
+    public int y;
+    public int z;
 
-    public h51(boolean z4) {
-        if (z4) {
-            this.j = new Paint(1);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.nw0
-    public final void b(int i10) {
-        Paint paint = this.j;
-        if (paint != null) {
-            paint.setColor(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.nw0
-    public final void c(boolean z4) {
-        this.b = z4;
-    }
-
-    @Override // org.telegram.ui.Components.nw0
-    public final void d() {
-        this.f = System.currentTimeMillis();
+    public h51(int i10) {
+        super(i10, false);
         this.g = true;
-        invalidateSelf();
+        this.u = -1;
+        this.I = true;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int dp;
-        int i10;
-        int i11 = getBounds().left;
-        if (this.b) {
-            dp = AndroidUtilities.dp(8.5f);
-            i10 = getBounds().top;
-        } else {
-            dp = AndroidUtilities.dp(9.3f);
-            i10 = getBounds().top;
-        }
-        int i12 = dp + i10;
-        Paint paint = this.j;
-        if (paint == null) {
-            paint = org.telegram.ui.ActionBar.k6.c2;
-            paint.setAlpha(255);
-        }
-        float dp2 = AndroidUtilities.dp(3.0f) + i11;
-        float f10 = i12;
-        float[] fArr = this.c;
-        canvas.drawCircle(dp2, f10, fArr[0] * AndroidUtilities.density, paint);
-        canvas.drawCircle(AndroidUtilities.dp(9.0f) + i11, f10, fArr[1] * AndroidUtilities.density, paint);
-        canvas.drawCircle(AndroidUtilities.dp(15.0f) + i11, f10, fArr[2] * AndroidUtilities.density, paint);
-        f();
+    public static h51 A(int i10, CharSequence charSequence) {
+        h51 h51Var = new h51(7);
+        h51Var.d = i10;
+        h51Var.l = charSequence;
+        return h51Var;
     }
 
-    @Override // org.telegram.ui.Components.nw0
-    public final void e() {
-        for (int i10 = 0; i10 < 3; i10++) {
-            this.e[i10] = 0.0f;
-            this.c[i10] = 1.33f;
-        }
-        float[] fArr = this.d;
-        fArr[0] = 0.0f;
-        fArr[1] = 150.0f;
-        fArr[2] = 300.0f;
-        this.g = false;
+    public static h51 B(CharSequence charSequence) {
+        h51 h51Var = new h51(7);
+        h51Var.l = charSequence;
+        return h51Var;
     }
 
-    public final void f() {
-        if (this.g) {
-            if (NotificationCenter.getInstance(this.a).isAnimationInProgress() && !this.i) {
-                AndroidUtilities.runOnUIThread(new oq0(this, 26), 100L);
-                return;
-            }
-            long currentTimeMillis = System.currentTimeMillis();
-            long j10 = currentTimeMillis - this.f;
-            this.f = currentTimeMillis;
-            if (j10 > 50) {
-                j10 = 50;
-            }
-            for (int i10 = 0; i10 < 3; i10++) {
-                float[] fArr = this.e;
-                float f10 = fArr[i10] + j10;
-                fArr[i10] = f10;
-                float[] fArr2 = this.d;
-                float f11 = f10 - fArr2[i10];
-                float[] fArr3 = this.c;
-                if (f11 > 0.0f) {
-                    DecelerateInterpolator decelerateInterpolator = this.h;
-                    if (f11 <= 320.0f) {
-                        fArr3[i10] = decelerateInterpolator.getInterpolation(f11 / 320.0f) + 1.33f;
-                    } else if (f11 <= 640.0f) {
-                        fArr3[i10] = (1.0f - decelerateInterpolator.getInterpolation((f11 - 320.0f) / 320.0f)) + 1.33f;
-                    } else if (f11 >= 800.0f) {
-                        fArr[i10] = 0.0f;
-                        fArr2[i10] = 0.0f;
-                        fArr3[i10] = 1.33f;
-                    } else {
-                        fArr3[i10] = 1.33f;
+    public static h51 C(int i10) {
+        h51 h51Var = new h51(28);
+        h51Var.z = i10;
+        return h51Var;
+    }
+
+    public static h51 D(int i10, int i11) {
+        h51 h51Var = new h51(28);
+        h51Var.d = i10;
+        h51Var.z = i11;
+        return h51Var;
+    }
+
+    public static h51 E(int i10, String str) {
+        h51 h51Var = new h51(39);
+        h51Var.d = i10;
+        h51Var.l = str;
+        h51Var.z = 1;
+        return h51Var;
+    }
+
+    public static g51 F(int i10) {
+        LongSparseArray longSparseArray = K;
+        if (longSparseArray == null) {
+            return null;
+        }
+        return (g51) longSparseArray.get(i10);
+    }
+
+    public static h51 J(Class cls) {
+        if (L == null) {
+            L = new HashMap();
+        }
+        if (K == null) {
+            K = new LongSparseArray();
+        }
+        g51 g51Var = (g51) L.get(cls);
+        if (g51Var != null) {
+            return new h51(g51Var.viewType);
+        }
+        throw new RuntimeException("UItemFactory was not setuped: " + cls);
+    }
+
+    public static h51 b(String str) {
+        h51 h51Var = new h51(1);
+        h51Var.l = str;
+        return h51Var;
+    }
+
+    public static h51 c(int i10, int i11, String str) {
+        h51 h51Var = new h51(3);
+        h51Var.d = i10;
+        h51Var.k = i11;
+        h51Var.l = str;
+        return h51Var;
+    }
+
+    public static h51 d(int i10, int i11, String str, String str2) {
+        h51 h51Var = new h51(3);
+        h51Var.d = i10;
+        h51Var.k = i11;
+        h51Var.l = str;
+        h51Var.n = str2;
+        return h51Var;
+    }
+
+    public static h51 e(int i10, String str) {
+        h51 h51Var = new h51(3);
+        h51Var.d = i10;
+        h51Var.l = str;
+        return h51Var;
+    }
+
+    public static h51 f(String str, CharSequence charSequence, int i10) {
+        h51 h51Var = new h51(3);
+        h51Var.d = i10;
+        h51Var.l = str;
+        h51Var.n = charSequence;
+        return h51Var;
+    }
+
+    public static h51 g(CharSequence charSequence) {
+        h51 h51Var = new h51(7);
+        h51Var.l = charSequence;
+        h51Var.q = true;
+        return h51Var;
+    }
+
+    public static h51 h(int i10, int i11, z91 z91Var) {
+        h51 h51Var = new h51(i10 + 18);
+        h51Var.z = i11;
+        h51Var.G = z91Var;
+        return h51Var;
+    }
+
+    public static h51 i(int i10, CharSequence charSequence) {
+        h51 h51Var = new h51(4);
+        h51Var.d = i10;
+        h51Var.l = charSequence;
+        return h51Var;
+    }
+
+    public static h51 j(int i10, View view) {
+        h51 h51Var = new h51(-1);
+        h51Var.d = i10;
+        h51Var.c = view;
+        h51Var.z = -1;
+        return h51Var;
+    }
+
+    public static h51 k(View view) {
+        h51 h51Var = new h51(-1);
+        h51Var.c = view;
+        h51Var.z = -1;
+        return h51Var;
+    }
+
+    public static h51 l(View view) {
+        h51 h51Var = new h51(-4);
+        h51Var.c = view;
+        h51Var.z = -1;
+        return h51Var;
+    }
+
+    public static h51 m(int i10, String str, String str2) {
+        h51 h51Var = new h51(40);
+        h51Var.d = i10;
+        h51Var.l = str;
+        h51Var.o = str2;
+        return h51Var;
+    }
+
+    public static h51 n(int i10) {
+        h51 h51Var = new h51(34);
+        h51Var.z = i10;
+        return h51Var;
+    }
+
+    public static h51 o(int i10, int i11) {
+        h51 h51Var = new h51(34);
+        h51Var.d = i10;
+        h51Var.z = i11;
+        return h51Var;
+    }
+
+    public static h51 p(View view, int i10, boolean z4) {
+        h51 h51Var = new h51(-3);
+        h51Var.c = view;
+        h51Var.z = i10;
+        h51Var.y = z4 ? 1 : 0;
+        return h51Var;
+    }
+
+    public static h51 q(String str) {
+        h51 h51Var = new h51(31);
+        h51Var.l = str;
+        return h51Var;
+    }
+
+    public static h51 r(String str, String str2, View.OnClickListener onClickListener) {
+        h51 h51Var = new h51(31);
+        h51Var.l = str;
+        h51Var.m = str2;
+        h51Var.D = onClickListener;
+        return h51Var;
+    }
+
+    public static h51 s(int i10, String str) {
+        h51 h51Var = new h51(0);
+        h51Var.d = i10;
+        h51Var.l = str;
+        return h51Var;
+    }
+
+    public static h51 t(String str) {
+        h51 h51Var = new h51(0);
+        h51Var.l = str;
+        return h51Var;
+    }
+
+    public static h51 u(org.telegram.ui.he heVar) {
+        h51 h51Var = new h51(24);
+        h51Var.G = heVar;
+        return h51Var;
+    }
+
+    public static h51 v(TLObject tLObject) {
+        h51 h51Var = new h51(32);
+        h51Var.G = tLObject;
+        return h51Var;
+    }
+
+    public static h51 w(int i10, String str) {
+        h51 h51Var = new h51(10);
+        h51Var.d = i10;
+        h51Var.l = str;
+        return h51Var;
+    }
+
+    public static h51 x(int i10, String str, String str2) {
+        h51 h51Var = new h51(44);
+        h51Var.d = i10;
+        h51Var.l = str;
+        h51Var.n = str2;
+        return h51Var;
+    }
+
+    public static h51 y(int i10, CharSequence charSequence) {
+        h51 h51Var = new h51(35);
+        h51Var.d = i10;
+        h51Var.l = charSequence;
+        return h51Var;
+    }
+
+    public static h51 z(String str, CharSequence charSequence, int i10) {
+        h51 h51Var = new h51(41);
+        h51Var.d = i10;
+        h51Var.l = charSequence;
+        h51Var.o = str;
+        return h51Var;
+    }
+
+    public final boolean G(Class cls) {
+        HashMap hashMap;
+        g51 g51Var;
+        return this.a >= 10000 && (hashMap = L) != null && (g51Var = (g51) hashMap.get(cls)) != null && g51Var.viewType == this.a;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:27:0x0035, code lost:
+    
+        if (r4.l == null) goto L42;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean H(h51 h51Var) {
+        int i10 = this.a;
+        if (i10 != h51Var.a || this.d != h51Var.d || this.g != h51Var.g) {
+            return false;
+        }
+        if (i10 != 0 && i10 != 1) {
+            if (i10 != 3) {
+                if (i10 != 7) {
+                    if (i10 != 26) {
+                        if (i10 != 34 || this.z != h51Var.z) {
+                            return false;
+                        }
                     }
-                } else {
-                    fArr3[i10] = 1.33f;
+                } else if (this.l == null) {
                 }
+            } else if (this.G != h51Var.G || !TextUtils.equals(this.l, h51Var.l) || !TextUtils.equals(this.n, h51Var.n) || this.k != h51Var.k || this.q != h51Var.q || this.r != h51Var.r) {
+                return false;
             }
-            a();
+            return true;
+        }
+        return TextUtils.equals(this.l, h51Var.l);
+    }
+
+    public final boolean I(h51 h51Var) {
+        return this.d == h51Var.d && this.i == h51Var.i && this.x == h51Var.x && this.k == h51Var.k && this.j == h51Var.j && this.s == h51Var.s && this.r == h51Var.r && this.t == h51Var.t && this.q == h51Var.q && this.c == h51Var.c && TextUtils.equals(this.l, h51Var.l) && TextUtils.equals(this.m, h51Var.m) && TextUtils.equals(this.n, h51Var.n) && this.c == h51Var.c && this.z == h51Var.z && Math.abs(this.A - h51Var.A) < 0.01f && this.B == h51Var.B && Objects.equals(this.G, h51Var.G) && Objects.equals(this.H, h51Var.H);
+    }
+
+    public final void K(boolean z4) {
+        this.e = z4;
+        if (this.a == 11) {
+            this.a = 12;
         }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(18.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        Paint paint = this.j;
-        if (paint != null) {
-            paint.setColorFilter(colorFilter);
+    @Override // cg.b
+    public final boolean a(cg.b bVar) {
+        g51 F;
+        if (this == bVar) {
+            return true;
         }
+        if (h51.class != bVar.getClass()) {
+            return false;
+        }
+        h51 h51Var = (h51) bVar;
+        int i10 = this.a;
+        if (i10 != h51Var.a) {
+            return false;
+        }
+        return i10 == 31 ? TextUtils.equals(this.l, h51Var.l) && TextUtils.equals(this.m, h51Var.m) : i10 == 28 ? this.z == h51Var.z : (i10 == 35 || i10 == 37) ? this.d == h51Var.d && TextUtils.equals(this.l, h51Var.l) && this.e == h51Var.e : (i10 < 10000 || (F = F(i10)) == null) ? H(h51Var) : F.contentsEquals(this, h51Var);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
+    public final boolean equals(Object obj) {
+        g51 F;
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || h51.class != obj.getClass()) {
+            return false;
+        }
+        h51 h51Var = (h51) obj;
+        int i10 = this.a;
+        if (i10 != h51Var.a) {
+            return false;
+        }
+        return (i10 == 36 || i10 == 35) ? this.d == h51Var.d : i10 == 28 ? this.d == h51Var.d : i10 == 31 ? TextUtils.equals(this.l, h51Var.l) : (i10 < 10000 || (F = F(i10)) == null) ? I(h51Var) : F.equals(this, h51Var);
     }
 }

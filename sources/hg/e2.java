@@ -13,13 +13,13 @@ import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.nv;
 import org.telegram.ui.Components.ov;
 import org.telegram.ui.Components.p9;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.dp0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.hp0;
 import org.telegram.ui.ij0;
 import org.telegram.ui.k3;
 import org.telegram.ui.xh0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class e2 extends f2.v0 {
     public final /* synthetic */ int a;
@@ -80,7 +80,7 @@ public final class e2 extends f2.v0 {
                 mz mzVar = (mz) this.b;
                 kx kxVar = mzVar.M;
                 if (!(view instanceof m8)) {
-                    if (!(view instanceof tl0) && !(view instanceof cy)) {
+                    if (!(view instanceof sl0) && !(view instanceof cy)) {
                         if (view instanceof p9) {
                             rect.bottom = AndroidUtilities.dp(12.0f);
                             break;
@@ -130,10 +130,10 @@ public final class e2 extends f2.v0 {
             case 7:
                 recyclerView.getClass();
                 int R3 = RecyclerView.R(view);
-                dp0 dp0Var = (dp0) this.b;
-                int i10 = dp0Var.Q;
+                hp0 hp0Var = (hp0) this.b;
+                int i10 = hp0Var.V;
                 if (R3 >= i10) {
-                    int i11 = dp0Var.U;
+                    int i11 = hp0Var.c0;
                     if (R3 < i10 + i11) {
                         int i12 = R3 - i10;
                         int i13 = i12 / 3;
@@ -144,16 +144,16 @@ public final class e2 extends f2.v0 {
                         boolean z12 = i14 == 2;
                         rect.top = z4 ? AndroidUtilities.dp(8.0f) : 0;
                         rect.bottom = z10 ? AndroidUtilities.dp(8.0f) : 0;
-                        rect.left = z11 ? AndroidUtilities.dp(8.0f) : 0;
-                        rect.right = z12 ? AndroidUtilities.dp(8.0f) : 0;
+                        rect.left = z11 ? AndroidUtilities.dp(10.0f) : 0;
+                        rect.right = z12 ? AndroidUtilities.dp(10.0f) : 0;
                         break;
                     }
                 }
                 break;
             default:
-                qh.h1 h1Var = ((qh.i1) this.b).e;
+                qh.g1 g1Var = ((qh.h1) this.b).e;
                 recyclerView.getClass();
-                rect.right = h1Var.E1(RecyclerView.R(view)) ? 0 : AndroidUtilities.dp(4.0f);
+                rect.right = g1Var.E1(RecyclerView.R(view)) ? 0 : AndroidUtilities.dp(4.0f);
                 rect.bottom = AndroidUtilities.dp(4.0f);
                 break;
         }

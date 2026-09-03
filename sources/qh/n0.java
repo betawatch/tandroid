@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.tp;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class n0 extends ImageView {
     public int a;
@@ -24,16 +24,16 @@ public final class n0 extends ImageView {
     public boolean d;
     public boolean e;
     public tp f;
-    public h8 h;
+    public g8 h;
     public m0 n;
-    public s6 r;
+    public r6 r;
     public k0 s;
     public Uri v;
     public boolean w;
     public boolean x;
 
     public static void a(n0 n0Var) {
-        h8 h8Var = n0Var.h;
+        g8 g8Var = n0Var.h;
         int i10 = Build.VERSION.SDK_INT;
         if (i10 >= 23 && ((i10 <= 28 || BuildVars.NO_SCOPED_STORAGE) && n0Var.getContext().checkSelfPermission("android.permission.WRITE_EXTERNAL_STORAGE") != 0)) {
             Activity findActivity = AndroidUtilities.findActivity(n0Var.getContext());
@@ -70,23 +70,23 @@ public final class n0 extends ImageView {
             k0Var.a(true);
             n0Var.s = null;
         }
-        if (h8Var != null) {
+        if (g8Var != null) {
             n0Var.e = true;
-            h8Var.run(new h0(n0Var, 0));
+            g8Var.run(new h0(n0Var, 0));
         }
         n0Var.d();
-        if (h8Var == null) {
+        if (g8Var == null) {
             n0Var.b();
         }
     }
 
     public final void b() {
-        s6 s6Var;
-        if (!this.e || (s6Var = this.r) == null) {
+        r6 r6Var;
+        if (!this.e || (r6Var = this.r) == null) {
             return;
         }
         this.e = false;
-        if (s6Var.E()) {
+        if (r6Var.E()) {
             this.d = true;
             m0 m0Var = new m0(getContext());
             this.n = m0Var;
@@ -144,9 +144,9 @@ public final class n0 extends ImageView {
         }
     }
 
-    public void setEntry(s6 s6Var) {
+    public void setEntry(r6 r6Var) {
         this.v = null;
-        this.r = s6Var;
+        this.r = r6Var;
         k0 k0Var = this.s;
         if (k0Var != null) {
             k0Var.a(true);
@@ -157,7 +157,7 @@ public final class n0 extends ImageView {
             m0Var.a();
             this.n = null;
         }
-        if (s6Var == null) {
+        if (r6Var == null) {
             this.c = false;
             d();
         }

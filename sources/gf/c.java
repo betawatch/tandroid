@@ -61,17 +61,17 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.g5;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.p9;
-import org.telegram.ui.Components.pr0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.xh0;
 import org.telegram.ui.Components.xk;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
@@ -253,7 +253,7 @@ public final /* synthetic */ class c implements Runnable {
                 while (i11 < size) {
                     Object obj2 = arrayList2.get(i11);
                     i11++;
-                    ((k71) ((t) obj2)).G.onSurfaceTextureUpdated(surfaceTexture);
+                    ((j71) ((t) obj2)).G.onSurfaceTextureUpdated(surfaceTexture);
                 }
                 return;
             case 18:
@@ -285,7 +285,7 @@ public final /* synthetic */ class c implements Runnable {
                     return;
                 }
                 if (vVar2.s == null) {
-                    kh.u uVar = new kh.u(vVar2, p2Var.getParentActivity(), (tl0) g5Var.getParent(), p2Var.getResourceProvider(), vVar2.a);
+                    kh.u uVar = new kh.u(vVar2, p2Var.getParentActivity(), (sl0) g5Var.getParent(), p2Var.getResourceProvider(), vVar2.a);
                     vVar2.s = uVar;
                     TLRPC.TL_chatInviteImporter tL_chatInviteImporter = vVar2.r;
                     p9 avatarImageView = g5Var.getAvatarImageView();
@@ -373,9 +373,9 @@ public final /* synthetic */ class c implements Runnable {
                 x1Var.C.setVisibility(8);
                 return;
             case 25:
-                pr0 pr0Var = (pr0) this.b;
+                or0 or0Var = (or0) this.b;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.c;
-                pr0Var.h(tL_starGiftCollection.title, new a1(i10, pr0Var, tL_starGiftCollection));
+                or0Var.h(tL_starGiftCollection.title, new a1(i10, or0Var, tL_starGiftCollection));
                 return;
             case 26:
                 n3 n3Var = (n3) this.b;

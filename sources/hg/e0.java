@@ -25,12 +25,12 @@ import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ml;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.yx0;
+import org.telegram.ui.Components.xx0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.b30;
 import org.telegram.ui.c10;
-import org.telegram.ui.c71;
+import org.telegram.ui.h71;
 import org.telegram.ui.hm0;
 import org.telegram.ui.if0;
 import org.telegram.ui.im0;
@@ -39,9 +39,9 @@ import org.telegram.ui.tm0;
 import org.telegram.ui.uf0;
 import org.telegram.ui.xf0;
 import org.telegram.ui.xn;
-import qh.va;
+import qh.ua;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final /* synthetic */ class e0 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new lh.e1(tL_error, (Context) obj5, (g6) obj4, (qh.d) obj3, (h3) obj2, (Runnable) obj));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new lh.e1((yx0) obj5, tLObject, (EditTextBoldCursor) obj4, (TextView) obj3, (TextView) obj2, (int[]) obj, 13, false));
+                AndroidUtilities.runOnUIThread(new lh.e1((xx0) obj5, tLObject, (EditTextBoldCursor) obj4, (TextView) obj3, (TextView) obj2, (int[]) obj, 13, false));
                 break;
             case 9:
                 Pattern pattern = LaunchActivity.y1;
@@ -138,10 +138,10 @@ public final /* synthetic */ class e0 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new g0((hm0) obj5, tLObject, (String) obj4, (TLRPC.TL_secureRequiredType) obj3, (im0) obj2, tL_error, (tm0) obj));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new lh.e1((c71) obj5, tL_error, (TLRPC.InputCheckPasswordSRP) obj4, (TLRPC.User) obj3, (TwoStepVerificationActivity) obj2, (TLRPC.TL_channels_editCreator) obj));
+                AndroidUtilities.runOnUIThread(new lh.e1((h71) obj5, tL_error, (TLRPC.InputCheckPasswordSRP) obj4, (TLRPC.User) obj3, (TwoStepVerificationActivity) obj2, (TLRPC.TL_channels_editCreator) obj));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new lh.e1((int[]) obj5, tLObject, (MessagesController) obj4, (TLRPC.User[]) obj3, (va) obj2, (ml) obj, 20, false));
+                AndroidUtilities.runOnUIThread(new lh.e1((int[]) obj5, tLObject, (MessagesController) obj4, (TLRPC.User[]) obj3, (ua) obj2, (ml) obj, 20, false));
                 break;
         }
     }

@@ -23,14 +23,14 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.bk0;
+import org.telegram.ui.Components.ak0;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.yc0;
-import org.telegram.ui.jv0;
+import org.telegram.ui.ov0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s8 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -85,17 +85,17 @@ public final /* synthetic */ class s8 implements View.OnClickListener {
                 LinearLayout linearLayout = (LinearLayout) obj4;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) obj3;
                 HorizontalScrollView horizontalScrollView = (HorizontalScrollView) obj2;
-                bk0 bk0Var = (bk0) obj;
+                ak0 ak0Var = (ak0) obj;
                 int currentItem = hVar.getCurrentItem();
                 if (i11 != currentItem) {
-                    bk0 bk0Var2 = (bk0) linearLayout.getChildAt(currentItem);
+                    ak0 ak0Var2 = (ak0) linearLayout.getChildAt(currentItem);
                     atomicBoolean.set(true);
                     hVar.x(i11, true);
                     float scrollX = horizontalScrollView.getScrollX();
-                    float x10 = bk0Var.getX() - ((horizontalScrollView.getWidth() - bk0Var.getWidth()) / 2.0f);
+                    float x10 = ak0Var.getX() - ((horizontalScrollView.getWidth() - ak0Var.getWidth()) / 2.0f);
                     ValueAnimator duration = ValueAnimator.ofFloat(0.0f, 1.0f).setDuration(150L);
                     duration.setInterpolator(pr.f);
-                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x10, bk0Var2, bk0Var));
+                    duration.addUpdateListener(new org.telegram.ui.Cells.b(horizontalScrollView, scrollX, x10, ak0Var2, ak0Var));
                     duration.start();
                     break;
                 }
@@ -188,7 +188,7 @@ public final /* synthetic */ class s8 implements View.OnClickListener {
                         }
                     }
                     long j11 = j10;
-                    F.g(tLObject2, j11 == jArr[0], new jv0(jArr, j11, d3Var, 3));
+                    F.g(tLObject2, j11 == jArr[0], new ov0(jArr, j11, d3Var, 3));
                 }
                 F.t = false;
                 F.s = 0;
@@ -209,14 +209,14 @@ public final /* synthetic */ class s8 implements View.OnClickListener {
         this.b = i10;
     }
 
-    public /* synthetic */ s8(m2.h hVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, bk0 bk0Var) {
+    public /* synthetic */ s8(m2.h hVar, int i10, LinearLayout linearLayout, AtomicBoolean atomicBoolean, HorizontalScrollView horizontalScrollView, ak0 ak0Var) {
         this.a = 1;
         this.c = hVar;
         this.b = i10;
         this.d = linearLayout;
         this.e = atomicBoolean;
         this.f = horizontalScrollView;
-        this.h = bk0Var;
+        this.h = ak0Var;
     }
 
     public /* synthetic */ s8(yc0 yc0Var, yc0 yc0Var2, yc0 yc0Var3, int i10, org.telegram.ui.ActionBar.c3 c3Var, Utilities.Callback callback) {

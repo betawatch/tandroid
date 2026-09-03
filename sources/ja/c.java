@@ -65,16 +65,16 @@ import oh.z8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.beta.R;
-import org.telegram.ui.Components.ko0;
+import org.telegram.ui.Components.jo0;
 import org.telegram.ui.Components.m6;
-import org.telegram.ui.Components.qk0;
-import org.telegram.ui.tu0;
+import org.telegram.ui.Components.pk0;
+import org.telegram.ui.yu0;
 import r0.m1;
 import r4.g;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, h0, p, t, OnCompleteListener, x0, qk0, s, tu0 {
+public class c implements jo0, a0, androidx.activity.result.b, q2, q1, o, r0.o, h0, p, t, OnCompleteListener, x0, pk0, s, yu0 {
     public static volatile c b;
     public Object a;
 
@@ -105,7 +105,7 @@ public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, 
         recyclerView.removeViewAt(i10);
     }
 
-    @Override // org.telegram.ui.tu0
+    @Override // org.telegram.ui.yu0
     public void G(MessageObject messageObject) {
         ((z8) ((f4) this.a).N1).f(false);
     }
@@ -234,7 +234,7 @@ public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, 
         handler.postDelayed(iVar, 2000L);
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public void X(float f10, boolean z4) {
         n nVar = (n) this.a;
         float f11 = nVar.b;
@@ -298,7 +298,7 @@ public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, 
         ((u7.c) obj).onLocationResult((LocationResult) this.a);
     }
 
-    @Override // org.telegram.ui.Components.qk0
+    @Override // org.telegram.ui.Components.pk0
     public /* synthetic */ boolean g() {
         return true;
     }
@@ -308,19 +308,19 @@ public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, 
         return ((o3) this.a).C;
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public CharSequence getContentDescription() {
         n nVar = (n) this.a;
         float f10 = nVar.b;
         return String.valueOf(Math.round((nVar.a.getProgress() * (nVar.c - f10)) + f10));
     }
 
-    @Override // org.telegram.ui.Components.qk0
+    @Override // org.telegram.ui.Components.pk0
     public /* synthetic */ boolean h() {
         return false;
     }
 
-    @Override // org.telegram.ui.tu0
+    @Override // org.telegram.ui.yu0
     public /* synthetic */ TextureView h0() {
         return null;
     }
@@ -367,7 +367,7 @@ public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, 
         }
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public /* synthetic */ int m0() {
         return 0;
     }
@@ -377,7 +377,7 @@ public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, 
         return ((w0) this.a).G();
     }
 
-    @Override // org.telegram.ui.Components.qk0
+    @Override // org.telegram.ui.Components.pk0
     public void o(View view, q0 q0Var, boolean z4, boolean z10) {
         v vVar = (v) this.a;
         vVar.a.ab(null, vVar.e, vVar.b, view, 0.0f, 0.0f, q0Var, false, z4, z10, false);
@@ -422,7 +422,7 @@ public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, 
         fVar.a(((WindowManager) this.a).getDefaultDisplay());
     }
 
-    @Override // org.telegram.ui.Components.qk0
+    @Override // org.telegram.ui.Components.pk0
     public /* synthetic */ boolean t() {
         return false;
     }
@@ -458,7 +458,7 @@ public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, 
         }
     }
 
-    @Override // org.telegram.ui.tu0
+    @Override // org.telegram.ui.yu0
     public void y0(MessageObject messageObject) {
         ((z8) ((f4) this.a).N1).f(true);
     }
@@ -507,11 +507,11 @@ public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, 
         }
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public void A() {
     }
 
-    @Override // org.telegram.ui.Components.qk0
+    @Override // org.telegram.ui.Components.pk0
     public /* synthetic */ void m() {
     }
 
@@ -531,7 +531,7 @@ public class c implements ko0, a0, androidx.activity.result.b, q2, q1, o, r0.o, 
     public void u(g5.j0 j0Var, long j10, long j11, boolean z4) {
     }
 
-    @Override // org.telegram.ui.Components.qk0
+    @Override // org.telegram.ui.Components.pk0
     public /* synthetic */ void j(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
     }
 }

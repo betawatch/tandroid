@@ -12,18 +12,18 @@ import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.gv0;
 import org.telegram.ui.Components.hv0;
 import org.telegram.ui.Components.iv0;
-import org.telegram.ui.Components.jv0;
 import rg.c;
 import sh.j3;
 import sh.m3;
 import sh.p2;
 import v2.g;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a implements c, hv0, iv0, GenericProvider, f, c2, ug.b, g, j4.g {
+public final /* synthetic */ class a implements c, gv0, hv0, GenericProvider, f, c2, ug.b, g {
     public final /* synthetic */ int a;
 
     public /* synthetic */ a(int i10) {
@@ -33,14 +33,14 @@ public final /* synthetic */ class a implements c, hv0, iv0, GenericProvider, f,
     @Override // ug.b
     public Object a(Bitmap bitmap) {
         switch (this.a) {
-            case 20:
+            case 21:
                 if (bitmap == null || bitmap.isRecycled()) {
                     return null;
                 }
                 Bitmap stackBlurBitmapWithScaleFactor = Utilities.stackBlurBitmapWithScaleFactor(bitmap, Math.max(bitmap.getWidth() / 90.0f, bitmap.getHeight() / 120.0f));
                 stackBlurBitmapWithScaleFactor.setHasAlpha(false);
                 return stackBlurBitmapWithScaleFactor;
-            case 21:
+            case 22:
                 int i10 = 0;
                 if (bitmap != null && !bitmap.isRecycled()) {
                     int height = bitmap.getHeight();
@@ -56,10 +56,10 @@ public final /* synthetic */ class a implements c, hv0, iv0, GenericProvider, f,
         }
     }
 
-    @Override // org.telegram.ui.Components.iv0
+    @Override // org.telegram.ui.Components.hv0
     public void b(Object obj, float f10) {
         switch (this.a) {
-            case 3:
+            case 4:
                 p2 p2Var = (p2) obj;
                 p2Var.b = f10;
                 p2Var.e.invalidate();
@@ -67,11 +67,11 @@ public final /* synthetic */ class a implements c, hv0, iv0, GenericProvider, f,
                 p2Var.E();
                 p2Var.C();
                 break;
-            case 4:
+            case 5:
             default:
                 ((m3) obj).setSwipeOffsetY(f10);
                 break;
-            case 5:
+            case 6:
                 ((j3) obj).setLoadProgress(f10);
                 break;
         }
@@ -208,21 +208,12 @@ public final /* synthetic */ class a implements c, hv0, iv0, GenericProvider, f,
         return new v4.b(charSequence2, alignment2, alignment4, bitmap2, f10, i10, i13, f12, i14, i11, f11, f14, f15, z10, i12, i15, bundle.containsKey(str1222) ? bundle.getFloat(str1222) : 0.0f);
     }
 
-    @Override // j4.g
-    public boolean d(int i10, int i11, int i12, int i13, int i14) {
-        if (i11 == 67 && i12 == 79 && i13 == 77 && (i14 == 77 || i10 == 2)) {
-            return true;
-        }
-        if (i11 == 77 && i12 == 76 && i13 == 76) {
-            return i14 == 84 || i10 == 2;
-        }
-        return false;
-    }
-
     @Override // rg.c
     public int g(g6 g6Var, boolean z4) {
         switch (this.a) {
             case 0:
+                return k6.l1(0.7f, k6.v0(k6.d6, g6Var));
+            case 1:
                 LiteMode.isEnabled(262144);
                 return 0;
             default:
@@ -230,15 +221,15 @@ public final /* synthetic */ class a implements c, hv0, iv0, GenericProvider, f,
         }
     }
 
-    @Override // org.telegram.ui.Components.hv0
+    @Override // org.telegram.ui.Components.gv0
     public float get(Object obj) {
         switch (this.a) {
-            case 2:
-                return ((p2) obj).b;
             case 3:
+                return ((p2) obj).b;
+            case 4:
             default:
                 return ((m3) obj).getSwipeOffsetY();
-            case 4:
+            case 5:
                 return ((j3) obj).c;
         }
     }
@@ -246,7 +237,7 @@ public final /* synthetic */ class a implements c, hv0, iv0, GenericProvider, f,
     @Override // org.telegram.ui.ActionBar.c2
     public void j(d2 d2Var, int i10) {
         switch (this.a) {
-            case 18:
+            case 19:
                 d2Var.dismiss();
                 break;
             default:
@@ -257,11 +248,11 @@ public final /* synthetic */ class a implements c, hv0, iv0, GenericProvider, f,
 
     @Override // org.telegram.messenger.GenericProvider
     public Object provide(Object obj) {
-        jv0 jv0Var = m3.V;
+        iv0 iv0Var = m3.V;
         return Boolean.FALSE;
     }
 
     @Override // v2.g
-    public void e(Exception exc) {
+    public void d(Exception exc) {
     }
 }

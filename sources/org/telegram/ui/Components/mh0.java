@@ -19,22 +19,22 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mh0 implements org.telegram.ui.ActionBar.c2, hv0, iv0, GenericProvider, ImageReceiver.ImageReceiverDelegate, LanguageDetector.ExceptionCallback, uc0, FlagSecureReason.FlagSecureCondition {
+public final /* synthetic */ class mh0 implements org.telegram.ui.ActionBar.c2, gv0, hv0, GenericProvider, ImageReceiver.ImageReceiverDelegate, LanguageDetector.ExceptionCallback, uc0, FlagSecureReason.FlagSecureCondition {
     public final /* synthetic */ int a;
 
     public /* synthetic */ mh0(int i10) {
         this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.iv0
+    @Override // org.telegram.ui.Components.hv0
     public void b(Object obj, float f10) {
         switch (this.a) {
             case 4:
-                bp0 bp0Var = (bp0) obj;
-                bp0Var.n = f10;
-                bp0Var.invalidate();
+                ap0 ap0Var = (ap0) obj;
+                ap0Var.n = f10;
+                ap0Var.invalidate();
                 break;
             case 15:
                 org.telegram.ui.Components.voip.h1 h1Var = (org.telegram.ui.Components.voip.h1) obj;
@@ -72,11 +72,11 @@ public final /* synthetic */ class mh0 implements org.telegram.ui.ActionBar.c2, 
         return String.format("%02d", Integer.valueOf(i10));
     }
 
-    @Override // org.telegram.ui.Components.hv0
+    @Override // org.telegram.ui.Components.gv0
     public float get(Object obj) {
         switch (this.a) {
             case 3:
-                return ((bp0) obj).n;
+                return ((ap0) obj).n;
             case 14:
                 return ((org.telegram.ui.Components.voip.h1) obj).N;
             default:
@@ -115,7 +115,7 @@ public final /* synthetic */ class mh0 implements org.telegram.ui.ActionBar.c2, 
                 d2Var.dismiss();
                 break;
             case 9:
-                int i11 = yx0.r0;
+                int i11 = xx0.r0;
                 break;
             case 10:
                 d2Var.dismiss();
@@ -146,7 +146,7 @@ public final /* synthetic */ class mh0 implements org.telegram.ui.ActionBar.c2, 
     public Object provide(Object obj) {
         switch (this.a) {
             case 5:
-                int i10 = mq0.X0;
+                int i10 = lq0.X0;
                 return 0;
             case 24:
                 int dp = AndroidUtilities.dp(150.0f);

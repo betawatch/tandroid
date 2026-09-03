@@ -16,13 +16,13 @@ import org.telegram.messenger.SecureDocument;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class dn0 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public final TextView a;
     public final TextView b;
     public final org.telegram.ui.Components.p9 c;
-    public final org.telegram.ui.Components.mj0 d;
+    public final org.telegram.ui.Components.lj0 d;
     public int e;
     public SecureDocument f;
     public final int h;
@@ -35,7 +35,7 @@ public final class dn0 extends FrameLayout implements DownloadController.FileDow
         this.n = fn0Var;
         i10 = ((org.telegram.ui.ActionBar.p2) fn0Var).currentAccount;
         this.h = DownloadController.getInstance(i10).generateObserverTag();
-        this.d = new org.telegram.ui.Components.mj0(this);
+        this.d = new org.telegram.ui.Components.lj0(this);
         org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(activity);
         this.c = p9Var;
         addView(p9Var, k7.c6.d(48, 48.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 8.0f, 21.0f, 0.0f));
@@ -70,9 +70,9 @@ public final class dn0 extends FrameLayout implements DownloadController.FileDow
         String attachFileName = FileLoader.getAttachFileName(this.f);
         boolean exists = FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(this.f).exists();
         boolean isEmpty = TextUtils.isEmpty(attachFileName);
-        org.telegram.ui.Components.mj0 mj0Var = this.d;
+        org.telegram.ui.Components.lj0 lj0Var = this.d;
         if (isEmpty) {
-            mj0Var.d(null, false, false);
+            lj0Var.d(null, false, false);
             return;
         }
         SecureDocument secureDocument = this.f;
@@ -82,7 +82,7 @@ public final class dn0 extends FrameLayout implements DownloadController.FileDow
             if (secureDocument.inputFile != null) {
                 i13 = ((org.telegram.ui.ActionBar.p2) fn0Var).currentAccount;
                 DownloadController.getInstance(i13).removeLoadingFileObserver(this);
-                mj0Var.d(null, false, z4);
+                lj0Var.d(null, false, z4);
                 this.e = -1;
                 return;
             }
@@ -90,8 +90,8 @@ public final class dn0 extends FrameLayout implements DownloadController.FileDow
             DownloadController.getInstance(i12).addLoadingFileObserver(this.f.path, this);
             this.e = 1;
             Float fileProgress = ImageLoader.getInstance().getFileProgress(this.f.path);
-            mj0Var.d(getResources().getDrawable(R.drawable.circle), true, z4);
-            mj0Var.e(fileProgress != null ? fileProgress.floatValue() : 0.0f, false);
+            lj0Var.d(getResources().getDrawable(R.drawable.circle), true, z4);
+            lj0Var.e(fileProgress != null ? fileProgress.floatValue() : 0.0f, false);
             invalidate();
             return;
         }
@@ -99,7 +99,7 @@ public final class dn0 extends FrameLayout implements DownloadController.FileDow
             i11 = ((org.telegram.ui.ActionBar.p2) fn0Var).currentAccount;
             DownloadController.getInstance(i11).removeLoadingFileObserver(this);
             this.e = -1;
-            mj0Var.d(null, false, z4);
+            lj0Var.d(null, false, z4);
             invalidate();
             return;
         }
@@ -107,8 +107,8 @@ public final class dn0 extends FrameLayout implements DownloadController.FileDow
         DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this);
         this.e = 1;
         Float fileProgress2 = ImageLoader.getInstance().getFileProgress(attachFileName);
-        mj0Var.d(getResources().getDrawable(R.drawable.circle), true, z4);
-        mj0Var.e(fileProgress2 != null ? fileProgress2.floatValue() : 0.0f, z4);
+        lj0Var.d(getResources().getDrawable(R.drawable.circle), true, z4);
+        lj0Var.e(fileProgress2 != null ? fileProgress2.floatValue() : 0.0f, z4);
         invalidate();
     }
 

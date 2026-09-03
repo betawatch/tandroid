@@ -4,9 +4,9 @@ import android.view.View;
 import androidx.biometric.f0;
 import java.util.ArrayList;
 import java.util.HashMap;
-import org.telegram.ui.Components.sn;
+import org.telegram.ui.Components.rn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -26,13 +26,13 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 f0 f0Var = fVar.h0;
                 if (f0Var != null) {
                     ArrayList arrayList = new ArrayList(fVar.g0.keySet());
-                    sn snVar = (sn) f0Var.b;
-                    ArrayList arrayList2 = snVar.M0;
+                    rn rnVar = (rn) f0Var.b;
+                    ArrayList arrayList2 = rnVar.M0;
                     arrayList2.clear();
                     arrayList2.addAll(arrayList);
-                    int i11 = snVar.I0;
+                    int i11 = rnVar.I0;
                     if (i11 >= 0) {
-                        snVar.r.m(i11);
+                        rnVar.r.m(i11);
                     }
                 }
                 fVar.dismiss();
@@ -41,13 +41,13 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 f0 f0Var2 = fVar.h0;
                 if (f0Var2 != null) {
                     ArrayList arrayList3 = new ArrayList(fVar.g0.keySet());
-                    sn snVar2 = (sn) f0Var2.b;
-                    ArrayList arrayList4 = snVar2.M0;
+                    rn rnVar2 = (rn) f0Var2.b;
+                    ArrayList arrayList4 = rnVar2.M0;
                     arrayList4.clear();
                     arrayList4.addAll(arrayList3);
-                    int i12 = snVar2.I0;
+                    int i12 = rnVar2.I0;
                     if (i12 >= 0) {
-                        snVar2.r.m(i12);
+                        rnVar2.r.m(i12);
                     }
                 }
                 fVar.dismiss();

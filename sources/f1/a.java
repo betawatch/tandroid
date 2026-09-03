@@ -36,8 +36,8 @@ import org.telegram.ui.Components.yc0;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.b30;
-import org.telegram.ui.bz0;
-import org.telegram.ui.r61;
+import org.telegram.ui.fz0;
+import org.telegram.ui.w61;
 import org.telegram.ui.xf0;
 import p2.h;
 import p2.n;
@@ -45,7 +45,7 @@ import qh.d;
 import v0.i;
 import v0.p;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements OnFailureListener, BillingController.ProductDetailsResponseListenerLegacy, c9, c2, wc0, n, MediaDataController.KeywordResultCallback {
     public final /* synthetic */ Object a;
@@ -88,9 +88,9 @@ public final /* synthetic */ class a implements OnFailureListener, BillingContro
             rectF5.set(centerX - width2, centerY - height, centerX + width2, centerY + height);
         } catch (Exception unused) {
         }
-        bz0 bz0Var = (bz0) h4Var.b;
+        fz0 fz0Var = (fz0) h4Var.b;
         int i10 = ProfileStoriesView.p0;
-        bz0Var.a(canvas, i4Var, i4Var2);
+        fz0Var.a(canvas, i4Var, i4Var2);
         rectF4.set(rectF2);
         rectF5.set(rectF3);
     }
@@ -137,18 +137,18 @@ public final /* synthetic */ class a implements OnFailureListener, BillingContro
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
     public void run(ArrayList arrayList, String str) {
         TLRPC.TL_availableReaction tL_availableReaction;
-        r61 r61Var = (r61) this.a;
+        w61 w61Var = (w61) this.a;
         LinkedHashSet linkedHashSet = (LinkedHashSet) this.b;
         HashMap hashMap = (HashMap) this.c;
         ArrayList arrayList2 = (ArrayList) this.d;
         Runnable runnable = (Runnable) this.e;
-        r61Var.getClass();
+        w61Var.getClass();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             try {
                 if (((MediaDataController.KeywordResult) arrayList.get(i10)).emoji.startsWith("animated_")) {
                     linkedHashSet.add(Long.valueOf(Long.parseLong(((MediaDataController.KeywordResult) arrayList.get(i10)).emoji.substring(9))));
                 } else {
-                    int i11 = r61Var.T;
+                    int i11 = w61Var.T;
                     if ((i11 == 1 || i11 == 11 || i11 == 2) && (tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(((MediaDataController.KeywordResult) arrayList.get(i10)).emoji)) != null) {
                         arrayList2.add(q0.c(tL_availableReaction));
                     }

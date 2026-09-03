@@ -14,11 +14,11 @@ import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.xe0;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class f0 extends FrameLayout {
     public boolean B;
-    public final j5 a;
+    public final i5 a;
     public eg.t2 b;
     public final org.telegram.ui.Components.z5 c;
     public final org.telegram.ui.Components.z5 d;
@@ -33,14 +33,14 @@ public abstract class f0 extends FrameLayout {
     public final int[] x;
     public final zf.f y;
 
-    public f0(Context context, j5 j5Var) {
+    public f0(Context context, i5 i5Var) {
         super(context);
         this.s = 0.0f;
         this.v = new int[2];
         this.w = new int[2];
         this.x = new int[2];
         this.y = new zf.f();
-        this.a = j5Var;
+        this.a = i5Var;
         e0 e0Var = new e0(this, context);
         this.e = e0Var;
         pr prVar = pr.h;
@@ -78,7 +78,7 @@ public abstract class f0 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i10) {
                     case 0:
-                        ((m9) this.b).C.l0(-1, false, true);
+                        ((l9) this.b).C.l0(-1, false, true);
                         break;
                     case 1:
                         f0 f0Var = this.b;
@@ -102,7 +102,7 @@ public abstract class f0 extends FrameLayout {
                             f0Var2.b.w0.invalidate();
                             f0Var2.b.w0.post(new org.telegram.ui.web.s0(f0Var2, 11));
                         }
-                        ((m9) f0Var2).C.l0(-1, false, true);
+                        ((l9) f0Var2).C.l0(-1, false, true);
                         break;
                 }
             }
@@ -126,7 +126,7 @@ public abstract class f0 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i11) {
                     case 0:
-                        ((m9) this.b).C.l0(-1, false, true);
+                        ((l9) this.b).C.l0(-1, false, true);
                         break;
                     case 1:
                         f0 f0Var = this.b;
@@ -150,7 +150,7 @@ public abstract class f0 extends FrameLayout {
                             f0Var2.b.w0.invalidate();
                             f0Var2.b.w0.post(new org.telegram.ui.web.s0(f0Var2, 11));
                         }
-                        ((m9) f0Var2).C.l0(-1, false, true);
+                        ((l9) f0Var2).C.l0(-1, false, true);
                         break;
                 }
             }
@@ -174,7 +174,7 @@ public abstract class f0 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i12) {
                     case 0:
-                        ((m9) this.b).C.l0(-1, false, true);
+                        ((l9) this.b).C.l0(-1, false, true);
                         break;
                     case 1:
                         f0 f0Var = this.b;
@@ -198,7 +198,7 @@ public abstract class f0 extends FrameLayout {
                             f0Var2.b.w0.invalidate();
                             f0Var2.b.w0.post(new org.telegram.ui.web.s0(f0Var2, 11));
                         }
-                        ((m9) f0Var2).C.l0(-1, false, true);
+                        ((l9) f0Var2).C.l0(-1, false, true);
                         break;
                 }
             }

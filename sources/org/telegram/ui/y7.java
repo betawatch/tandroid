@@ -4,6 +4,7 @@ import android.content.Context;
 import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.text.SpannableString;
+import android.text.TextUtils;
 import android.util.SparseArray;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -21,7 +22,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class y7 extends f2.p0 {
     public final /* synthetic */ int c;
@@ -43,8 +44,10 @@ public final class y7 extends f2.p0 {
                 return ((org.telegram.ui.Components.t8) this.d).U2.size() + 1;
             case 3:
                 return 1;
-            default:
+            case 4:
                 return 1;
+            default:
+                return ((mp0) this.d).f.size();
         }
     }
 
@@ -75,9 +78,9 @@ public final class y7 extends f2.p0 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:14:0x0040  */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x0053  */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x005f  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0072  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x0077  */
     @Override // f2.p0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -278,6 +281,15 @@ public final class y7 extends f2.p0 {
                     }
                 }
                 break;
+            case 3:
+            case 4:
+                break;
+            default:
+                TextView textView2 = (TextView) m1Var.a;
+                mp0 mp0Var = (mp0) this.d;
+                textView2.setText((CharSequence) mp0Var.f.get(i10));
+                textView2.setTextColor(i10 == mp0Var.d ? mp0Var.B : mp0Var.y);
+                break;
         }
     }
 
@@ -285,7 +297,7 @@ public final class y7 extends f2.p0 {
     public final f2.m1 x(ViewGroup viewGroup, int i10) {
         switch (this.c) {
             case 0:
-                return new org.telegram.ui.Components.fl0(new g8((j8) this.d, viewGroup.getContext()));
+                return new org.telegram.ui.Components.el0(new g8((j8) this.d, viewGroup.getContext()));
             case 1:
                 Context context = viewGroup.getContext();
                 org.telegram.ui.Cells.s sVar = new org.telegram.ui.Cells.s(context);
@@ -308,14 +320,26 @@ public final class y7 extends f2.p0 {
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setStrokeWidth(Math.max(2, AndroidUtilities.dp(0.5f)));
                 paint2.setColor(-1);
-                return new org.telegram.ui.Components.fl0(sVar);
+                return new org.telegram.ui.Components.el0(sVar);
             case 2:
                 org.telegram.ui.Components.t8 t8Var = (org.telegram.ui.Components.t8) this.d;
-                return new org.telegram.ui.Components.fl0(new org.telegram.ui.Components.u8(t8Var.Z2, t8Var.getContext()));
+                return new org.telegram.ui.Components.el0(new org.telegram.ui.Components.u8(t8Var.Z2, t8Var.getContext()));
             case 3:
-                return new org.telegram.ui.Components.fl0(((org.telegram.ui.Components.qm) this.d).v);
+                return new org.telegram.ui.Components.el0(((org.telegram.ui.Components.pm) this.d).v);
+            case 4:
+                return new org.telegram.ui.Components.el0(new fg.h0(this, ((org.telegram.ui.Components.sn) this.d).getContext(), 10));
             default:
-                return new org.telegram.ui.Components.fl0(new fg.h0(this, ((org.telegram.ui.Components.tn) this.d).getContext(), 10));
+                org.telegram.ui.Components.g90 g90Var = new org.telegram.ui.Components.g90(viewGroup.getContext(), null);
+                g90Var.setGravity(17);
+                g90Var.setTypeface(AndroidUtilities.bold());
+                g90Var.setTextSize(1, 14.0f);
+                g90Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+                g90Var.setEllipsize(TextUtils.TruncateAt.END);
+                g90Var.setSingleLine();
+                g90Var.setMaxLines(1);
+                g90Var.setLayoutParams(new f2.x0(-2, AndroidUtilities.dp(28.0f)));
+                k7.e6.b(g90Var, 0.075f, 1.4f);
+                return new org.telegram.ui.Components.el0(g90Var);
         }
     }
 

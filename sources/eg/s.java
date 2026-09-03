@@ -1,13 +1,13 @@
 package eg;
 
 import android.animation.ValueAnimator;
-import org.telegram.ui.Components.sv0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.ts0;
-import qh.b5;
-import qh.y4;
+import org.telegram.ui.Components.rv0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.ss0;
+import qh.a5;
+import qh.x4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -15,11 +15,11 @@ public final /* synthetic */ class s implements ValueAnimator.AnimatorUpdateList
     public final /* synthetic */ Object c;
     public final /* synthetic */ Object d;
 
-    public /* synthetic */ s(ts0 ts0Var, int i10, tl0 tl0Var) {
+    public /* synthetic */ s(ss0 ss0Var, int i10, sl0 sl0Var) {
         this.a = 1;
-        this.c = ts0Var;
+        this.c = ss0Var;
         this.b = i10;
-        this.d = tl0Var;
+        this.d = sl0Var;
     }
 
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
@@ -37,28 +37,28 @@ public final /* synthetic */ class s implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 1:
-                ts0 ts0Var = (ts0) this.c;
-                tl0 tl0Var = (tl0) this.d;
-                ts0Var.e.L1.put(this.b, (Float) valueAnimator.getAnimatedValue());
-                tl0Var.invalidate();
+                ss0 ss0Var = (ss0) this.c;
+                sl0 sl0Var = (sl0) this.d;
+                ss0Var.e.L1.put(this.b, (Float) valueAnimator.getAnimatedValue());
+                sl0Var.invalidate();
                 break;
             default:
-                b5 b5Var = (b5) this.c;
+                a5 a5Var = (a5) this.c;
                 Integer num2 = (Integer) this.d;
                 float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b5Var.x1.a = i0.a.d(floatValue2, num2.intValue(), this.b);
-                y4 y4Var = b5Var.Q0;
-                if (y4Var != null) {
-                    y4Var.invalidate();
+                a5Var.x1.a = i0.a.d(floatValue2, num2.intValue(), this.b);
+                x4 x4Var = a5Var.Q0;
+                if (x4Var != null) {
+                    x4Var.invalidate();
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ s(sv0 sv0Var, Integer num, int i10, int i11) {
+    public /* synthetic */ s(rv0 rv0Var, Integer num, int i10, int i11) {
         this.a = i11;
-        this.c = sv0Var;
+        this.c = rv0Var;
         this.d = num;
         this.b = i10;
     }

@@ -26,19 +26,19 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.qd;
 import org.telegram.ui.Components.td0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bu0;
+import org.telegram.ui.bi1;
+import org.telegram.ui.dy0;
+import org.telegram.ui.gu0;
 import org.telegram.ui.lf;
 import org.telegram.ui.ti0;
-import org.telegram.ui.vh1;
-import org.telegram.ui.yx0;
+import qh.c5;
 import qh.d5;
-import qh.e5;
-import qh.p7;
-import qh.r9;
+import qh.o7;
+import qh.q9;
 import wh.g4;
 import wh.i4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -75,13 +75,13 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 }
                 break;
             case 2:
-                vh1 vh1Var = (vh1) this.b;
-                if (!vh1Var.a) {
-                    if (vh1Var.w != 0) {
-                        vh1Var.a(false, true);
+                bi1 bi1Var = (bi1) this.b;
+                if (!bi1Var.a) {
+                    if (bi1Var.w != 0) {
+                        bi1Var.a(false, true);
                         break;
                     } else {
-                        ((Activity) vh1Var.getContext()).startActivityForResult(((MediaProjectionManager) vh1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
+                        ((Activity) bi1Var.getContext()).startActivityForResult(((MediaProjectionManager) bi1Var.getContext().getSystemService("media_projection")).createScreenCaptureIntent(), 520);
                         break;
                     }
                 }
@@ -120,25 +120,25 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 eVar.run();
                 break;
             case 7:
-                ((r9) this.b).B();
+                ((q9) this.b).B();
                 break;
             case 8:
                 qh.n0.a((qh.n0) this.b);
                 break;
             case 9:
-                ((bu0) this.b).run();
+                ((gu0) this.b).run();
                 break;
             case 10:
-                e5 e5Var = ((d5) this.b).x;
-                if (e5Var.r && (callback = e5Var.f) != null) {
+                d5 d5Var = ((c5) this.b).x;
+                if (d5Var.r && (callback = d5Var.f) != null) {
                     callback.run(5);
                     break;
                 }
                 break;
             case 11:
-                p7 p7Var = (p7) ((td0) this.b).h;
-                if (p7Var != null) {
-                    p7Var.run();
+                o7 o7Var = (o7) ((td0) this.b).h;
+                if (o7Var != null) {
+                    o7Var.run();
                     break;
                 }
                 break;
@@ -152,7 +152,7 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 ChatActivityEnterView.h(((qd) ((sh.l0) this.b).d).a, (TL_keyboard.KeyboardButton) view.getTag());
                 break;
             case 15:
-                ((yx0) this.b).run();
+                ((dy0) this.b).run();
                 break;
             case 16:
                 th.n nVar = (th.n) this.b;
@@ -251,7 +251,7 @@ public final /* synthetic */ class o implements View.OnClickListener {
                 if (z2Var != null && (aVar = r0Var.f) != null) {
                     wh.r3 r3Var2 = z2Var.a;
                     r3Var2.getClass();
-                    if (wh.r3.x3(aVar)) {
+                    if (wh.r3.w3(aVar)) {
                         TL_iv.pageBlockDetails pageblockdetails = (TL_iv.pageBlockDetails) aVar.b;
                         wh.d2 d2Var = r3Var2.G3;
                         if (d2Var != null) {

@@ -19,12 +19,12 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.RLottieNative;
+import org.telegram.ui.Components.wv0;
 import org.telegram.ui.Components.xv0;
 import org.telegram.ui.Components.yv0;
-import org.telegram.ui.Components.zv0;
-import org.telegram.ui.hq0;
+import org.telegram.ui.mq0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a = 3;
@@ -96,15 +96,15 @@ public final /* synthetic */ class s1 implements Runnable {
                 ((SendMessagesHelper) this.e).lambda$performSendMessageRequestMulti$65((TLObject) this.f, this.b, (SendMessagesHelper.DelayedMessage) this.h, (ArrayList) this.c, this.d);
                 return;
             case 2:
-                zv0 zv0Var = (zv0) this.e;
+                yv0 yv0Var = (yv0) this.e;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.c;
                 MessageObject messageObject = (MessageObject) this.f;
                 org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.h;
-                RLottieNative[] rLottieNativeArr = zv0Var.c1;
-                RLottieNative[] rLottieNativeArr2 = zv0Var.f1;
-                int[] iArr = zv0Var.e;
-                if (zv0Var.T0) {
-                    AndroidUtilities.runOnUIThread(new xv0(zv0Var, 0));
+                RLottieNative[] rLottieNativeArr = yv0Var.c1;
+                RLottieNative[] rLottieNativeArr2 = yv0Var.f1;
+                int[] iArr = yv0Var.e;
+                if (yv0Var.T0) {
+                    AndroidUtilities.runOnUIThread(new wv0(yv0Var, 0));
                     return;
                 }
                 boolean z10 = false;
@@ -114,38 +114,38 @@ public final /* synthetic */ class s1 implements Runnable {
                     int i23 = this.b;
                     if (i22 >= length) {
                         if (z10) {
-                            AndroidUtilities.runOnUIThread(new xv0(zv0Var, 1));
+                            AndroidUtilities.runOnUIThread(new wv0(yv0Var, 1));
                             return;
                         } else {
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(zv0Var, this.d, i23, t1Var));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.l0(yv0Var, this.d, i23, t1Var));
                             return;
                         }
                     }
                     if (i22 <= 2) {
                         if (rLottieNativeArr2[i22] == null) {
                             if (i22 == 0) {
-                                int i24 = zv0Var.Y0;
+                                int i24 = yv0Var.Y0;
                                 i10 = i24 == 1 ? 5 : i24 == 2 ? 6 : i24 == 3 ? 7 : i24 == 4 ? 4 : 3;
                             } else if (i22 == 1) {
-                                int i25 = zv0Var.Z0;
+                                int i25 = yv0Var.Z0;
                                 i10 = i25 == 1 ? 11 : i25 == 2 ? 12 : i25 == 3 ? 13 : i25 == 4 ? 10 : 9;
                             } else {
-                                int i26 = zv0Var.a1;
+                                int i26 = yv0Var.a1;
                                 i10 = i26 == 1 ? 17 : i26 == 2 ? 18 : i26 == 3 ? 19 : i26 == 4 ? 16 : 15;
                             }
                             TLRPC.Document document = tL_messages_stickerSet.documents.get(i10);
                             readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
                             if (TextUtils.isEmpty(readRes)) {
-                                RLottieNative b10 = RLottieNative.b(readRes, "dice", iArr, null, null);
+                                RLottieNative b10 = RLottieNative.b(readRes, iArr, null, null);
                                 if (i22 <= 2) {
                                     rLottieNativeArr2[i22] = b10;
-                                    zv0Var.g1[i22] = iArr[0];
+                                    yv0Var.g1[i22] = iArr[0];
                                 } else {
                                     rLottieNativeArr[i22 == 3 ? (char) 0 : (char) 4] = b10;
-                                    zv0Var.d1[i22 == 3 ? (char) 0 : (char) 4] = iArr[0];
+                                    yv0Var.d1[i22 == 3 ? (char) 0 : (char) 4] = iArr[0];
                                 }
                             } else {
-                                AndroidUtilities.runOnUIThread(new yv0(document, i23, messageObject, t1Var, tL_messages_stickerSet, 0));
+                                AndroidUtilities.runOnUIThread(new xv0(document, i23, messageObject, t1Var, tL_messages_stickerSet, 0));
                                 z10 = true;
                             }
                         }
@@ -164,16 +164,16 @@ public final /* synthetic */ class s1 implements Runnable {
                 TLRPC.GroupCall groupCall = (TLRPC.GroupCall) this.f;
                 HashSet hashSet = (HashSet) this.h;
                 org.telegram.ui.Components.voip.g2.a = 0L;
-                org.telegram.ui.Components.voip.g2.h(activity, this.b, inputGroupCall, this.d, groupCall, hashSet);
+                org.telegram.ui.Components.voip.g2.g(activity, this.b, inputGroupCall, this.d, groupCall, hashSet);
                 return;
             case 4:
-                hq0 hq0Var = (hq0) this.e;
+                mq0 mq0Var = (mq0) this.e;
                 String str3 = (String) this.c;
                 TLObject tLObject = (TLObject) this.f;
                 TLRPC.User user = (TLRPC.User) this.h;
-                HashMap hashMap = hq0Var.h;
-                ArrayList arrayList = hq0Var.f;
-                ArrayList arrayList2 = hq0Var.n;
+                HashMap hashMap = mq0Var.h;
+                ArrayList arrayList = mq0Var.f;
+                ArrayList arrayList2 = mq0Var.n;
                 int size = arrayList2.size();
                 int i27 = 0;
                 while (true) {
@@ -189,14 +189,14 @@ public final /* synthetic */ class s1 implements Runnable {
                 while (arrayList2.size() > 20) {
                     android.support.v4.media.a.u(1, arrayList2);
                 }
-                hq0Var.c0();
-                if (this.b != hq0Var.y) {
+                mq0Var.c0();
+                if (this.b != mq0Var.y) {
                     return;
                 }
                 int size2 = arrayList.size();
                 if (tLObject != null) {
                     TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject;
-                    hq0Var.w = messages_botresults.next_offset;
+                    mq0Var.w = messages_botresults.next_offset;
                     int size3 = messages_botresults.results.size();
                     i11 = 0;
                     for (int i28 = 0; i28 < size3; i28++) {
@@ -213,7 +213,7 @@ public final /* synthetic */ class s1 implements Runnable {
                                         searchImage.document = botInlineResult.document;
                                         searchImage.size = 0;
                                         photo2 = botInlineResult.photo;
-                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, hq0Var.O, true)) != null) {
+                                        if (photo2 != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(photo2.sizes, mq0Var.O, true)) != null) {
                                             botInlineResult.document.thumbs.add(closestPhotoSizeWithSize);
                                             botInlineResult.document.flags |= 1;
                                         }
@@ -273,18 +273,18 @@ public final /* synthetic */ class s1 implements Runnable {
                             i11++;
                         }
                     }
-                    hq0Var.s = size2 == arrayList.size() || hq0Var.w == null;
+                    mq0Var.s = size2 == arrayList.size() || mq0Var.w == null;
                 } else {
                     i11 = 0;
                 }
-                hq0Var.r = false;
+                mq0Var.r = false;
                 if (i11 != 0) {
-                    hq0Var.I.s(size2, i11);
-                } else if (hq0Var.s) {
+                    mq0Var.I.s(size2, i11);
+                } else if (mq0Var.s) {
                     z4 = true;
-                    hq0Var.I.u(arrayList.size() - 1);
+                    mq0Var.I.u(arrayList.size() - 1);
                     if (arrayList.size() > 0) {
-                        hq0Var.K.e(false, z4);
+                        mq0Var.K.e(false, z4);
                         return;
                     }
                     return;
@@ -464,10 +464,10 @@ public final /* synthetic */ class s1 implements Runnable {
                                             MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str2, z13 ? i16 : 0, z13, i18, i21, 0L);
                                             photoEntry.setOrientation(i20, i19);
                                             a aVar2 = aVar;
-                                            if (aVar2 == null || !r3.D3(aVar2.b)) {
-                                                r3Var2.f2(photoEntry);
+                                            if (aVar2 == null || !r3.C3(aVar2.b)) {
+                                                r3Var2.e2(photoEntry);
                                             } else {
-                                                r3Var2.T1(aVar2, photoEntry);
+                                                r3Var2.S1(aVar2, photoEntry);
                                             }
                                         }
                                     });
@@ -504,10 +504,10 @@ public final /* synthetic */ class s1 implements Runnable {
                                             MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str2, z13 ? i16 : 0, z13, i18, i21, 0L);
                                             photoEntry.setOrientation(i20, i19);
                                             a aVar2 = aVar;
-                                            if (aVar2 == null || !r3.D3(aVar2.b)) {
-                                                r3Var2.f2(photoEntry);
+                                            if (aVar2 == null || !r3.C3(aVar2.b)) {
+                                                r3Var2.e2(photoEntry);
                                             } else {
-                                                r3Var2.T1(aVar2, photoEntry);
+                                                r3Var2.S1(aVar2, photoEntry);
                                             }
                                         }
                                     });
@@ -555,10 +555,10 @@ public final /* synthetic */ class s1 implements Runnable {
                                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str2, z13 ? i16 : 0, z13, i18, i21, 0L);
                                 photoEntry.setOrientation(i20, i19);
                                 a aVar2 = aVar;
-                                if (aVar2 == null || !r3.D3(aVar2.b)) {
-                                    r3Var2.f2(photoEntry);
+                                if (aVar2 == null || !r3.C3(aVar2.b)) {
+                                    r3Var2.e2(photoEntry);
                                 } else {
-                                    r3Var2.T1(aVar2, photoEntry);
+                                    r3Var2.S1(aVar2, photoEntry);
                                 }
                             }
                         });
@@ -606,10 +606,10 @@ public final /* synthetic */ class s1 implements Runnable {
                                 MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str2, z13 ? i16 : 0, z13, i18, i21, 0L);
                                 photoEntry.setOrientation(i20, i19);
                                 a aVar2 = aVar;
-                                if (aVar2 == null || !r3.D3(aVar2.b)) {
-                                    r3Var2.f2(photoEntry);
+                                if (aVar2 == null || !r3.C3(aVar2.b)) {
+                                    r3Var2.e2(photoEntry);
                                 } else {
-                                    r3Var2.T1(aVar2, photoEntry);
+                                    r3Var2.S1(aVar2, photoEntry);
                                 }
                             }
                         });
@@ -632,10 +632,10 @@ public final /* synthetic */ class s1 implements Runnable {
                         MediaController.PhotoEntry photoEntry = new MediaController.PhotoEntry(0, i14, 0L, str2, z13 ? i16 : 0, z13, i18, i21, 0L);
                         photoEntry.setOrientation(i20, i19);
                         a aVar2 = aVar;
-                        if (aVar2 == null || !r3.D3(aVar2.b)) {
-                            r3Var2.f2(photoEntry);
+                        if (aVar2 == null || !r3.C3(aVar2.b)) {
+                            r3Var2.e2(photoEntry);
                         } else {
-                            r3Var2.T1(aVar2, photoEntry);
+                            r3Var2.S1(aVar2, photoEntry);
                         }
                     }
                 });
@@ -661,8 +661,8 @@ public final /* synthetic */ class s1 implements Runnable {
         this.d = z4;
     }
 
-    public /* synthetic */ s1(zv0 zv0Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var, boolean z4) {
-        this.e = zv0Var;
+    public /* synthetic */ s1(yv0 yv0Var, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10, MessageObject messageObject, org.telegram.ui.Cells.t1 t1Var, boolean z4) {
+        this.e = yv0Var;
         this.c = tL_messages_stickerSet;
         this.b = i10;
         this.f = messageObject;
@@ -670,8 +670,8 @@ public final /* synthetic */ class s1 implements Runnable {
         this.d = z4;
     }
 
-    public /* synthetic */ s1(hq0 hq0Var, String str, int i10, TLObject tLObject, boolean z4, TLRPC.User user) {
-        this.e = hq0Var;
+    public /* synthetic */ s1(mq0 mq0Var, String str, int i10, TLObject tLObject, boolean z4, TLRPC.User user) {
+        this.e = mq0Var;
         this.c = str;
         this.b = i10;
         this.f = tLObject;

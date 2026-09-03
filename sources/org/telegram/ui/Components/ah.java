@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ah implements pg.a {
     public final /* synthetic */ int a;
@@ -49,15 +49,15 @@ public final /* synthetic */ class ah implements pg.a {
                 }
                 break;
             default:
-                zu0 zu0Var = (zu0) this.b;
-                for (rt0 rt0Var : zu0Var.h0) {
-                    og.k kVar = rt0Var.n;
+                yu0 yu0Var = (yu0) this.b;
+                for (qt0 qt0Var : yu0Var.h0) {
+                    og.k kVar = qt0Var.n;
                     if (kVar != null) {
                         kVar.e(canvas, rectF);
                     }
                 }
-                pr0 pr0Var = zu0Var.S;
-                if (pr0Var != null && (n2Var = pr0Var.O) != null) {
+                or0 or0Var = yu0Var.S;
+                if (or0Var != null && (n2Var = or0Var.O) != null) {
                     n2Var.e(canvas, rectF);
                     break;
                 }

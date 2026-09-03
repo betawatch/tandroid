@@ -23,12 +23,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.ov;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class d8 extends View {
     public static Object F;
@@ -207,7 +207,7 @@ public final class d8 extends View {
         }
         SpannableString spannableString = new SpannableString("x " + tL_messages_stickerSet.set.title);
         spannableString.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.gc, this.h.a)), 0, spannableString.length(), 33);
-        spannableString.setSpan(new g51(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+        spannableString.setSpan(new e51(AndroidUtilities.bold()), 0, spannableString.length(), 33);
         ArrayList<TLRPC.Document> arrayList = tL_messages_stickerSet.documents;
         int i10 = 0;
         while (true) {
@@ -348,7 +348,7 @@ public final class d8 extends View {
         String string;
         SpannableString spannableString = new SpannableString("x " + stickerSetCovered.set.title);
         spannableString.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.gc, this.h.a)), 0, spannableString.length(), 33);
-        spannableString.setSpan(new g51(AndroidUtilities.bold()), 0, spannableString.length(), 33);
+        spannableString.setSpan(new e51(AndroidUtilities.bold()), 0, spannableString.length(), 33);
         TLRPC.Document document = stickerSetCovered.cover;
         if (document == null && (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered)) {
             ArrayList<TLRPC.Document> arrayList = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;

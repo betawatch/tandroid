@@ -1,20 +1,15 @@
 package qh;
 
-import android.view.ViewGroup;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class w6 extends f2.l {
-    public final /* synthetic */ b7 F;
-
-    public w6(b7 b7Var) {
-        this.F = b7Var;
-    }
-
-    @Override // f2.l
-    public final void P(f2.m1 m1Var) {
-        ViewGroup viewGroup;
-        viewGroup = ((org.telegram.ui.ActionBar.h3) this.F).containerView;
-        viewGroup.invalidate();
+public final class w6 extends w51 {
+    @Override // org.telegram.ui.Components.w51
+    public final int I(int i10) {
+        if (i10 == org.telegram.ui.ActionBar.k6.i5) {
+            return -15921907;
+        }
+        return org.telegram.ui.ActionBar.k6.v0(i10, this.v);
     }
 }

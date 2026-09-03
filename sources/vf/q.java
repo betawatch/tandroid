@@ -29,25 +29,25 @@ import org.telegram.ui.ActionBar.g2;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p2;
+import org.telegram.ui.Components.a61;
 import org.telegram.ui.Components.b2;
 import org.telegram.ui.Components.b61;
-import org.telegram.ui.Components.c61;
 import org.telegram.ui.Components.h4;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.qv0;
-import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.s01;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.web.v1;
+import org.telegram.ui.web.a2;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
-import qh.v9;
+import qh.u9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class q extends c61 implements NotificationCenter.NotificationCenterDelegate {
+public final class q extends b61 implements NotificationCenter.NotificationCenterDelegate {
     public static d2 d;
 
     public static void Y(q qVar, TL_account.TL_businessChatLink tL_businessChatLink) {
@@ -82,7 +82,7 @@ public final class q extends c61 implements NotificationCenter.NotificationCente
         p2 R = LaunchActivity.R();
         Activity findActivity = AndroidUtilities.findActivity(activity);
         View currentFocus = findActivity != null ? findActivity.getCurrentFocus() : null;
-        boolean z4 = R != null && (R.getFragmentView() instanceof qv0) && ((qv0) R.getFragmentView()).R() > AndroidUtilities.dp(20.0f);
+        boolean z4 = R != null && (R.getFragmentView() instanceof pv0) && ((pv0) R.getFragmentView()).R() > AndroidUtilities.dp(20.0f);
         View view = currentFocus;
         d2[] d2VarArr = new d2[1];
         AlertDialog$Builder g2Var = z4 ? new g2(activity, 0, g6Var) : new AlertDialog$Builder(activity, 0, g6Var);
@@ -115,7 +115,7 @@ public final class q extends c61 implements NotificationCenter.NotificationCente
         d2Var.a = AndroidUtilities.dp(292.0f);
         nVar.setOnEditorActionListener(new b2(nVar, i10, tL_businessChatLink, d2VarArr, view, 1));
         g2Var.k(LocaleController.getString(R.string.Done), new e3.d(nVar, i10, tL_businessChatLink, 16));
-        g2Var.h(LocaleController.getString(R.string.Cancel), new sg.a(18));
+        g2Var.h(LocaleController.getString(R.string.Cancel), new sg.a(19));
         if (z4) {
             d = d2Var;
             d2VarArr[0] = d2Var;
@@ -123,7 +123,7 @@ public final class q extends c61 implements NotificationCenter.NotificationCente
             d.setOnShowListener(new lh.j(2, nVar));
             d.q(250L);
         } else {
-            d2Var.L = new v1(17, view, nVar);
+            d2Var.L = new a2(16, view, nVar);
             d2VarArr[0] = d2Var;
             d2Var.setOnDismissListener(new fg.d0(nVar, 11));
             d2VarArr[0].setOnShowListener(new org.telegram.messenger.voip.r0(view, nVar, 1));
@@ -133,20 +133,20 @@ public final class q extends c61 implements NotificationCenter.NotificationCente
         nVar.setSelection(nVar.getText().length());
     }
 
-    @Override // org.telegram.ui.Components.c61
-    public final void U(ArrayList arrayList, x51 x51Var) {
+    @Override // org.telegram.ui.Components.b61
+    public final void U(ArrayList arrayList, w51 w51Var) {
         String string = LocaleController.getString(R.string.BusinessLinks);
         String string2 = LocaleController.getString(R.string.BusinessLinksInfo);
         int i10 = R.raw.biz_links;
-        j51 j51Var = new j51(2);
-        j51Var.l = string;
-        j51Var.o = string2;
-        j51Var.k = i10;
-        arrayList.add(j51Var);
-        x51Var.U();
+        h51 h51Var = new h51(2);
+        h51Var.l = string;
+        h51Var.o = string2;
+        h51Var.k = i10;
+        arrayList.add(h51Var);
+        w51Var.U();
         t d10 = t.d(this.currentAccount);
         if (d10.b.size() < MessagesController.getInstance(d10.a).businessChatLinksLimit) {
-            j51 c3 = j51.c(1, R.drawable.menu_link_create, LocaleController.getString(R.string.BusinessLinksAdd));
+            h51 c3 = h51.c(1, R.drawable.menu_link_create, LocaleController.getString(R.string.BusinessLinksAdd));
             c3.q = true;
             arrayList.add(c3);
         }
@@ -159,11 +159,11 @@ public final class q extends c61 implements NotificationCenter.NotificationCente
             i12++;
             p pVar = new p();
             pVar.a = (TL_account.TL_businessChatLink) obj;
-            j51 j51Var2 = new j51(29);
-            j51Var2.G = pVar;
-            arrayList.add(j51Var2);
+            h51 h51Var2 = new h51(29);
+            h51Var2.G = pVar;
+            arrayList.add(h51Var2);
         }
-        x51Var.T();
+        w51Var.T();
         TLRPC.User currentUser = UserConfig.getInstance(this.currentAccount).getCurrentUser();
         String r10 = android.support.v4.media.a.r(new StringBuilder(), MessagesController.getInstance(this.currentAccount).linkPrefix, "/");
         ArrayList arrayList3 = new ArrayList(2);
@@ -190,22 +190,22 @@ public final class q extends c61 implements NotificationCenter.NotificationCente
             String str = (String) obj2;
             int indexOf = formatString.indexOf(str);
             if (indexOf > -1) {
-                h4 h4Var = new h4(yh.k("https://", str), (t01) null);
+                h4 h4Var = new h4(yh.k("https://", str), (s01) null);
                 h4Var.f = this;
                 spannableString.setSpan(h4Var, indexOf, str.length() + indexOf, 33);
             }
         }
-        arrayList.add(j51.B(spannableString));
+        arrayList.add(h51.B(spannableString));
     }
 
-    @Override // org.telegram.ui.Components.c61
+    @Override // org.telegram.ui.Components.b61
     public final CharSequence V() {
         return LocaleController.getString(R.string.BusinessLinks);
     }
 
-    @Override // org.telegram.ui.Components.c61
-    public final void W(j51 j51Var, View view) {
-        if (j51Var.d == 1) {
+    @Override // org.telegram.ui.Components.b61
+    public final void W(h51 h51Var, View view) {
+        if (h51Var.d == 1) {
             t d10 = t.d(this.currentAccount);
             TL_account.createBusinessChatLink createbusinesschatlink = new TL_account.createBusinessChatLink();
             TL_account.TL_inputBusinessChatLink tL_inputBusinessChatLink = new TL_account.TL_inputBusinessChatLink();
@@ -214,8 +214,8 @@ public final class q extends c61 implements NotificationCenter.NotificationCente
             ConnectionsManager.getInstance(d10.a).sendRequest(createbusinesschatlink, new s(d10, 1));
             return;
         }
-        if (j51Var.a == 29) {
-            Object obj = j51Var.G;
+        if (h51Var.a == 29) {
+            Object obj = h51Var.G;
             if (obj instanceof p) {
                 Bundle h = android.support.v4.media.a.h(6, "chatMode");
                 h.putString("business_link", ((p) obj).a.link);
@@ -224,14 +224,14 @@ public final class q extends c61 implements NotificationCenter.NotificationCente
         }
     }
 
-    @Override // org.telegram.ui.Components.c61
-    public final boolean X(j51 j51Var, View view) {
-        if (j51Var.a == 29) {
-            Object obj = j51Var.G;
+    @Override // org.telegram.ui.Components.b61
+    public final boolean X(h51 h51Var, View view) {
+        if (h51Var.a == 29) {
+            Object obj = h51Var.G;
             if (obj instanceof p) {
                 final TL_account.TL_businessChatLink tL_businessChatLink = ((p) obj).a;
                 q70 H = q70.H(this, view);
-                H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new v9(tL_businessChatLink, 19), false);
+                H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new u9(tL_businessChatLink, 19), false);
                 final int i10 = 0;
                 H.c(R.drawable.msg_share, LocaleController.getString(R.string.LinkActionShare), new Runnable(this) { // from class: vf.l
                     public final /* synthetic */ q b;
@@ -355,7 +355,7 @@ public final class q extends c61 implements NotificationCenter.NotificationCente
                         }
                     }
                 }, true);
-                H.W(this.a.V0(view, false));
+                H.W(this.a.U0(view, false));
                 H.Z();
                 return true;
             }
@@ -363,25 +363,25 @@ public final class q extends c61 implements NotificationCenter.NotificationCente
         return false;
     }
 
-    @Override // org.telegram.ui.Components.c61, org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.Components.b61, org.telegram.ui.ActionBar.p2
     public final View createView(Context context) {
         super.createView(context);
-        this.a.p1();
-        b61 b61Var = this.a;
-        b61Var.V2.r = false;
-        this.actionBar.A(b61Var, true);
+        this.a.o1();
+        a61 a61Var = this.a;
+        a61Var.V2.r = false;
+        this.actionBar.A(a61Var, true);
         return this.fragmentView;
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        x51 x51Var;
+        w51 w51Var;
         if (i10 == NotificationCenter.businessLinksUpdated || i10 == NotificationCenter.privacyRulesUpdated) {
-            b61 b61Var = this.a;
-            if (b61Var == null || (x51Var = b61Var.V2) == null) {
+            a61 a61Var = this.a;
+            if (a61Var == null || (w51Var = a61Var.V2) == null) {
                 return;
             }
-            x51Var.N(true);
+            w51Var.N(true);
             return;
         }
         if (i10 != NotificationCenter.businessLinkCreated) {

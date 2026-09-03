@@ -2,7 +2,7 @@ package com.google.android.gms.internal.cast;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y implements v2.e, a0 {
     public static final /* synthetic */ y a = new y();
@@ -36,7 +36,7 @@ public final /* synthetic */ class y implements v2.e, a0 {
     public static final y P = new y();
     public static final y Q = new y();
 
-    @Override // v2.e
+    @Override // v2.e, f3.f
     public Object apply(Object obj) {
         r1 r1Var = (r1) obj;
         try {

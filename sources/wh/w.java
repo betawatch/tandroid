@@ -24,18 +24,18 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.x51;
-import qh.v9;
+import org.telegram.ui.Components.w51;
+import qh.u9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class w extends sa {
     public final int U;
     public final Utilities.Callback V;
-    public x51 W;
+    public w51 W;
     public final FrameLayout X;
     public final FrameLayout Y;
     public final RichMessageLayout.PreviewView Z;
@@ -193,9 +193,9 @@ public final class w extends sa {
         lVar.o(pr.h);
         lVar.n(350L);
         this.d.setItemAnimator(lVar);
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i16 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i16, 0, i16, AndroidUtilities.dp(72.0f));
+        sl0Var.setPadding(i16, 0, i16, AndroidUtilities.dp(72.0f));
         this.d.setClipToPadding(false);
         this.W.N(false);
         P();
@@ -224,14 +224,14 @@ public final class w extends sa {
     @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog
     public final void show() {
         super.show();
-        AndroidUtilities.runOnUIThread(new v9(this, 27), 200L);
+        AndroidUtilities.runOnUIThread(new u9(this, 27), 200L);
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(tl0Var, getContext(), this.U, 0, true, new qh.d4(this, 28), this.resourcesProvider);
-        this.W = x51Var;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(sl0Var, getContext(), this.U, 0, true, new qh.c4(this, 28), this.resourcesProvider);
+        this.W = w51Var;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

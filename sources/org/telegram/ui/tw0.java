@@ -1,37 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class tw0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PrivacyControlActivity b;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ tw0(PrivacyControlActivity privacyControlActivity, int i10) {
-        this.a = i10;
-        this.b = privacyControlActivity;
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* loaded from: classes3.dex */
+public final class tw0 extends fg.j2 {
+    public final /* synthetic */ uw0 K;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tw0(uw0 uw0Var, Context context) {
+        super(context);
+        this.K = uw0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                PrivacyControlActivity privacyControlActivity = this.b;
-                privacyControlActivity.getClass();
-                privacyControlActivity.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
-                break;
-            case 1:
-                PrivacyControlActivity.U(this.b);
-                break;
-            case 2:
-                PrivacyControlActivity privacyControlActivity2 = this.b;
-                privacyControlActivity2.getClass();
-                privacyControlActivity2.presentFragment(new PremiumPreviewFragment(0, "noncontacts"));
-                break;
-            default:
-                PrivacyControlActivity privacyControlActivity3 = this.b;
-                privacyControlActivity3.getClass();
-                privacyControlActivity3.presentFragment(new PremiumPreviewFragment(0, "settings"));
-                break;
+    @Override // fg.j2, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.r.getVisibility() == 0) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(r0.getLeft(), r0.getTop(), r0.getRight(), r0.getBottom());
+            uw0 uw0Var = this.K;
+            uw0Var.d.n.k0.d(0, 0.0f, 0, getMeasuredWidth(), -this.n.h, uw0Var.d.n.L);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), uw0Var.d.n.k0.f);
         }
+        super.dispatchDraw(canvas);
     }
 }

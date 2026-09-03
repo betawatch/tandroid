@@ -14,13 +14,13 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class d7 extends Drawable {
     public final Paint a;
-    public final ij0 b;
+    public final hj0 b;
     public final Drawable c;
     public int d;
 
@@ -86,10 +86,10 @@ public final class d7 extends Drawable {
             mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
             return;
         }
-        ij0 ij0Var = new ij0(R.raw.story_repost, "story_repost", AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
-        this.b = ij0Var;
-        ij0Var.s0 = view;
-        AndroidUtilities.runOnUIThread(new q0(ij0Var, 1), 450L);
+        hj0 hj0Var = new hj0(R.raw.story_repost, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
+        this.b = hj0Var;
+        hj0Var.s0 = view;
+        AndroidUtilities.runOnUIThread(new q0(hj0Var, 1), 450L);
         this.c = null;
     }
 

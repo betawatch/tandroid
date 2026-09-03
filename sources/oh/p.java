@@ -36,17 +36,17 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.q20;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.hx;
 import org.telegram.ui.py;
-import qh.ca;
-import qh.x9;
+import qh.ba;
+import qh.w9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class p extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, xd.b {
     public ValueAnimator A0;
@@ -60,7 +60,7 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
     public ValueAnimator E0;
     public final xc F;
     public float F0;
-    public qh.f3 G;
+    public qh.e3 G;
     public OvershootInterpolator G0;
     public boolean H;
     public AnimatorSet H0;
@@ -102,7 +102,7 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
     public float k0;
     public int l0;
     public o m0;
-    public mj0 n;
+    public lj0 n;
     public org.telegram.ui.ActionBar.k n0;
     public j7 o0;
     public float p0;
@@ -795,7 +795,7 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
             if (hVar.getChildCount() > 0) {
                 lerp8 += hVar2.getChildAt(0).getLeft();
             }
-            this.G.m(0.0f, lerp8);
+            this.G.l(0.0f, lerp8);
         } else {
             hVar2 = hVar;
             i11 = 0;
@@ -903,7 +903,7 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
         return this.q0;
     }
 
-    public qh.f3 getPremiumHint() {
+    public qh.e3 getPremiumHint() {
         return this.G;
     }
 
@@ -986,7 +986,7 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
             return;
         }
         if (j10 == 0) {
-            ca.E(pyVar.getParentActivity(), i10).R(x9.c(oVar));
+            ba.E(pyVar.getParentActivity(), i10).R(w9.c(oVar));
             return;
         }
         org.telegram.ui.ActionBar.g6 resourceProvider = pyVar != null ? pyVar.getResourceProvider() : null;
@@ -1232,31 +1232,31 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
 
     public final void n() {
         if (this.G == null) {
-            qh.f3 f3Var = new qh.f3(getContext(), 1);
-            f3Var.h(f(org.telegram.ui.ActionBar.k6.Fi));
-            f3Var.q(true);
-            f3Var.H = Layout.Alignment.ALIGN_CENTER;
-            f3Var.m(0.0f, 29.0f);
-            this.G = f3Var;
+            qh.e3 e3Var = new qh.e3(getContext(), 1);
+            e3Var.h(f(org.telegram.ui.ActionBar.k6.Fi));
+            e3Var.p(true);
+            e3Var.H = Layout.Alignment.ALIGN_CENTER;
+            e3Var.l(0.0f, 29.0f);
+            this.G = e3Var;
             SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(LocaleController.getString("StoriesPremiumHint2").replace('\n', ' '), org.telegram.ui.ActionBar.k6.Gi, 0, new d(this, 1));
             ClickableSpan[] clickableSpanArr = (ClickableSpan[]) replaceSingleTag.getSpans(0, replaceSingleTag.length(), ClickableSpan.class);
             if (clickableSpanArr != null && clickableSpanArr.length >= 1) {
-                replaceSingleTag.setSpan(new g51(AndroidUtilities.bold()), replaceSingleTag.getSpanStart(clickableSpanArr[0]), replaceSingleTag.getSpanEnd(clickableSpanArr[0]), 33);
+                replaceSingleTag.setSpan(new e51(AndroidUtilities.bold()), replaceSingleTag.getSpanStart(clickableSpanArr[0]), replaceSingleTag.getSpanEnd(clickableSpanArr[0]), 33);
             }
-            qh.f3 f3Var2 = this.G;
-            f3Var2.h = qh.f3.a(replaceSingleTag, f3Var2.getTextPaint());
-            this.G.t(replaceSingleTag);
+            qh.e3 e3Var2 = this.G;
+            e3Var2.h = qh.e3.a(replaceSingleTag, e3Var2.getTextPaint());
+            this.G.s(replaceSingleTag);
             this.G.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(8.0f), 0);
             if (getParent() instanceof FrameLayout) {
                 ((FrameLayout) getParent()).addView(this.G, k7.c6.e(-1, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 51));
             }
         }
-        qh.f3 f3Var3 = this.G;
-        if (f3Var3 != null) {
-            if (f3Var3.S) {
+        qh.e3 e3Var3 = this.G;
+        if (e3Var3 != null) {
+            if (e3Var3.S) {
                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
             }
-            this.G.v();
+            this.G.u();
         }
     }
 
@@ -1483,9 +1483,9 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
     @Override // android.view.View
     public void setTranslationY(float f10) {
         super.setTranslationY(f10);
-        qh.f3 f3Var = this.G;
-        if (f3Var != null) {
-            f3Var.setTranslationY(f10);
+        qh.e3 e3Var = this.G;
+        if (e3Var != null) {
+            e3Var.setTranslationY(f10);
         }
     }
 

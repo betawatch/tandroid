@@ -22,10 +22,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.i71;
+import org.telegram.ui.Components.h71;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class DownloadController extends BaseController implements NotificationCenter.NotificationCenterDelegate {
     public static final int AUTODOWNLOAD_TYPE_AUDIO = 2;
@@ -71,7 +71,7 @@ public class DownloadController extends BaseController implements NotificationCe
     private ArrayList<DownloadObject> videoDownloadQueue;
     public Preset wifiPreset;
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public class DownloadingDocumentEntry {
         int hash;
         long id;
@@ -80,7 +80,7 @@ public class DownloadController extends BaseController implements NotificationCe
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public interface FileDownloadProgressListener {
         int getObserverTag();
 
@@ -246,7 +246,7 @@ public class DownloadController extends BaseController implements NotificationCe
         TLRPC.Message message2;
         int i11;
         long j10;
-        i71 i71Var;
+        h71 h71Var;
         long messageSize;
         if (messageObject == null || (message = messageObject.messageOwner) == null) {
             return 0;
@@ -311,12 +311,12 @@ public class DownloadController extends BaseController implements NotificationCe
                     i11 = 0;
                     j10 = currentMobilePreset.sizes[typeToIndex(i10)];
                 }
-                i71Var = messageObject.highestQuality;
-                if (i71Var != null) {
-                    messageSize = i71Var.g.size;
+                h71Var = messageObject.highestQuality;
+                if (h71Var != null) {
+                    messageSize = h71Var.g.size;
                 } else {
-                    i71 i71Var2 = messageObject.thumbQuality;
-                    messageSize = i71Var2 != null ? i71Var2.g.size : MessageObject.getMessageSize(message2);
+                    h71 h71Var2 = messageObject.thumbQuality;
+                    messageSize = h71Var2 != null ? h71Var2.g.size : MessageObject.getMessageSize(message2);
                 }
                 if (!isVideoMessage && currentMobilePreset.preloadVideo && messageSize > j10 && j10 > 2097152) {
                     if ((i12 & i10) != 0) {
@@ -336,8 +336,8 @@ public class DownloadController extends BaseController implements NotificationCe
             int i122 = currentMobilePreset.mask[c3];
             if (i10 == 2) {
             }
-            i71Var = messageObject.highestQuality;
-            if (i71Var != null) {
+            h71Var = messageObject.highestQuality;
+            if (h71Var != null) {
             }
             if (!isVideoMessage) {
             }
@@ -352,8 +352,8 @@ public class DownloadController extends BaseController implements NotificationCe
         int i1222 = currentMobilePreset.mask[c3];
         if (i10 == 2) {
         }
-        i71Var = messageObject.highestQuality;
-        if (i71Var != null) {
+        h71Var = messageObject.highestQuality;
+        if (h71Var != null) {
         }
         if (!isVideoMessage) {
         }
@@ -1453,7 +1453,7 @@ public class DownloadController extends BaseController implements NotificationCe
         this.observersByTag.put(fileDownloadProgressListener.getObserverTag(), str);
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class Preset {
         public boolean enabled;
         public boolean lessCallData;

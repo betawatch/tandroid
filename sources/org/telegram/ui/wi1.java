@@ -1,31 +1,19 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
+import java.io.File;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class wi1 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ yi1 a;
+public final class wi1 {
+    public String a;
+    public int b;
+    public int c;
+    public File d;
+    public final File e;
 
-    public wi1(yi1 yi1Var) {
-        this.a = yi1Var;
-    }
-
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        yi1 yi1Var = this.a;
-        MessageObject messageObject = yi1Var.n;
-        if (i10 == -1) {
-            yi1Var.finishFragment();
-            return;
-        }
-        if (i10 != 1) {
-            if (i10 == 2) {
-                yi1.V(yi1Var.d, messageObject, yi1Var.getParentActivity(), yi1Var.r, yi1Var.e);
-            }
-        } else if (messageObject != null) {
-            messageObject.messageOwner.with_my_score = false;
-            yi1Var.showDialog(org.telegram.ui.Components.mq0.N0(yi1Var.getParentActivity(), messageObject, null, false, yi1Var.h));
-        }
+    public wi1(File file, File file2, String str) {
+        this.a = str;
+        this.d = file;
+        this.e = file2;
     }
 }

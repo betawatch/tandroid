@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class s1 implements Runnable {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:178:0x0468 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:178:0x0467 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r3v71 */
     /* JADX WARN: Type inference failed for: r3v72 */
     /* JADX WARN: Type inference failed for: r3v80 */
@@ -47,6 +47,7 @@ public final /* synthetic */ class s1 implements Runnable {
     public final void run() {
         String str;
         String str2;
+        MediaMetadataRetriever mediaMetadataRetriever;
         ArrayList arrayList;
         ?? r32;
         switch (this.a) {
@@ -100,66 +101,66 @@ public final /* synthetic */ class s1 implements Runnable {
                 for (int i10 = 0; i10 < arrayList2.size(); i10++) {
                     ((nh.a) arrayList2.get(i10)).a.delete();
                 }
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(20, b7Var, d2Var));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(19, b7Var, d2Var));
                 return;
             case 4:
                 u7 u7Var = (u7) this.d;
                 nh.a aVar = (nh.a) this.b;
                 TLRPC.TL_documentAttributeAudio tL_documentAttributeAudio = (TLRPC.TL_documentAttributeAudio) this.c;
                 String str7 = "";
-                MediaMetadataRetriever mediaMetadataRetriever = null;
+                MediaMetadataRetriever mediaMetadataRetriever2 = null;
                 try {
                     try {
-                        MediaMetadataRetriever mediaMetadataRetriever2 = new MediaMetadataRetriever();
+                        mediaMetadataRetriever = new MediaMetadataRetriever();
+                    } catch (Exception e6) {
+                        e = e6;
+                    }
+                    try {
                         try {
-                            try {
-                                mediaMetadataRetriever2.setDataSource(u7Var.getContext(), Uri.fromFile(aVar.a));
-                                str2 = mediaMetadataRetriever2.extractMetadata(7);
-                            } catch (Throwable th3) {
-                                th = th3;
-                                mediaMetadataRetriever = mediaMetadataRetriever2;
-                                if (mediaMetadataRetriever != null) {
-                                    try {
-                                        mediaMetadataRetriever.release();
-                                    } catch (Throwable unused2) {
-                                    }
-                                }
-                                throw th;
-                            }
-                        } catch (Exception e6) {
-                            e = e6;
-                            mediaMetadataRetriever = mediaMetadataRetriever2;
-                            str = "";
-                            FileLog.e(e);
-                            if (mediaMetadataRetriever != null) {
+                            mediaMetadataRetriever.setDataSource(u7Var.getContext(), Uri.fromFile(aVar.a));
+                            str2 = mediaMetadataRetriever.extractMetadata(7);
+                        } catch (Throwable th3) {
+                            th = th3;
+                            mediaMetadataRetriever2 = mediaMetadataRetriever;
+                            if (mediaMetadataRetriever2 != null) {
                                 try {
-                                    mediaMetadataRetriever.release();
-                                } catch (Throwable unused3) {
+                                    mediaMetadataRetriever2.release();
+                                } catch (Throwable unused2) {
                                 }
                             }
-                            str2 = str;
-                            AndroidUtilities.runOnUIThread(new hg.j0(u7Var, aVar, tL_documentAttributeAudio, str2, str7, 18));
-                            return;
+                            throw th;
                         }
-                        try {
-                            str7 = mediaMetadataRetriever2.extractMetadata(2);
+                    } catch (Exception e10) {
+                        e = e10;
+                        mediaMetadataRetriever2 = mediaMetadataRetriever;
+                        str = "";
+                        FileLog.e(e);
+                        if (mediaMetadataRetriever2 != null) {
                             try {
                                 mediaMetadataRetriever2.release();
-                            } catch (Throwable unused4) {
+                            } catch (Throwable unused3) {
                             }
-                        } catch (Exception e10) {
-                            e = e10;
-                            str = str2;
-                            mediaMetadataRetriever = mediaMetadataRetriever2;
-                            FileLog.e(e);
-                            if (mediaMetadataRetriever != null) {
-                            }
-                            str2 = str;
-                            AndroidUtilities.runOnUIThread(new hg.j0(u7Var, aVar, tL_documentAttributeAudio, str2, str7, 18));
-                            return;
+                        }
+                        str2 = str;
+                        AndroidUtilities.runOnUIThread(new hg.j0(u7Var, aVar, tL_documentAttributeAudio, str2, str7, 18));
+                        return;
+                    }
+                    try {
+                        str7 = mediaMetadataRetriever.extractMetadata(2);
+                        try {
+                            mediaMetadataRetriever.release();
+                        } catch (Throwable unused4) {
                         }
                     } catch (Exception e11) {
                         e = e11;
+                        str = str2;
+                        mediaMetadataRetriever2 = mediaMetadataRetriever;
+                        FileLog.e(e);
+                        if (mediaMetadataRetriever2 != null) {
+                        }
+                        str2 = str;
+                        AndroidUtilities.runOnUIThread(new hg.j0(u7Var, aVar, tL_documentAttributeAudio, str2, str7, 18));
+                        return;
                     }
                     AndroidUtilities.runOnUIThread(new hg.j0(u7Var, aVar, tL_documentAttributeAudio, str2, str7, 18));
                     return;
@@ -229,20 +230,20 @@ public final /* synthetic */ class s1 implements Runnable {
                 AndroidUtilities.runOnUIThread(new pd(keVar, 5), 1000L);
                 return;
             case 13:
-                ((ha1) this.d).showDialog(ke.d0((Context) this.b, (org.telegram.ui.ActionBar.g6) this.c, false));
+                ((na1) this.d).showDialog(ke.d0((Context) this.b, (org.telegram.ui.ActionBar.g6) this.c, false));
                 return;
             case 14:
-                AndroidUtilities.runOnUIThread(new fc(8, (mh.f2) this.c, ((xn) this.d).getMessagesStorage().getUser(((TLRPC.TL_contact) this.b).user_id)));
+                AndroidUtilities.runOnUIThread(new xc(7, (mh.f2) this.c, ((xn) this.d).getMessagesStorage().getUser(((TLRPC.TL_contact) this.b).user_id)));
                 return;
             case 15:
                 xn.J0((xn) this.d, (TLRPC.User) this.b, (TLRPC.EmojiStatus) this.c);
                 return;
             case 16:
                 xn xnVar2 = (xn) this.d;
-                org.telegram.ui.Components.jm0 jm0Var = (org.telegram.ui.Components.jm0) this.b;
+                org.telegram.ui.Components.im0 im0Var = (org.telegram.ui.Components.im0) this.b;
                 TLRPC.User user = (TLRPC.User) this.c;
                 xnVar2.getClass();
-                jm0Var.dismiss();
+                im0Var.dismiss();
                 xnVar2.presentFragment(ProfileActivity.m4(user.id));
                 return;
             case 17:

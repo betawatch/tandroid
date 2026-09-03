@@ -14,7 +14,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class i20 extends LinearLayout {
     public final qh.d a;
@@ -27,7 +27,7 @@ public final class i20 extends LinearLayout {
         TLRPC.TL_emojiList a2 = y8.a(i10);
         setOrientation(1);
         p9 p9Var = new p9(context);
-        p9Var.setImageDrawable(new ij0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), "utyan_gallery", AndroidUtilities.dp(110.0f)));
+        p9Var.setImageDrawable(new hj0(R.raw.utyan_gallery, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
         if (!AndroidUtilities.isTablet()) {
             addView(p9Var, k7.c6.q(110, 110, 49));
         }

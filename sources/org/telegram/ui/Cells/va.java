@@ -26,12 +26,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBoxSquare;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.lk0;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class va extends FrameLayout implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.z8 B;
@@ -281,8 +281,8 @@ public class va extends FrameLayout implements NotificationCenter.NotificationCe
         return this.b.getText();
     }
 
-    public final void h(int i10, j51 j51Var, boolean z4) {
-        long j10 = j51Var.x;
+    public final void h(int i10, h51 h51Var, boolean z4) {
+        long j10 = h51Var.x;
         if (j10 <= 0) {
             TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
             if (chat != null) {

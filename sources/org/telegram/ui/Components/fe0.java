@@ -18,14 +18,14 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class fe0 extends org.telegram.ui.ActionBar.h3 {
     public final TextView b;
     public final TextView c;
     public final TextView d;
-    public final lj0 e;
-    public final ij0 f;
+    public final kj0 e;
+    public final hj0 f;
     public final y80 h;
     public final long n;
     public boolean r;
@@ -54,12 +54,12 @@ public final class fe0 extends org.telegram.ui.ActionBar.h3 {
         y80 y80Var = new y80(context, z60Var, this, true, z4);
         this.h = y80Var;
         y80Var.setPermanent(true);
-        lj0 lj0Var = new lj0(context);
-        this.e = lj0Var;
-        ij0 ij0Var = new ij0(R.raw.shared_link_enter, "" + R.raw.shared_link_enter, AndroidUtilities.dp(90.0f), AndroidUtilities.dp(90.0f), false, null);
-        this.f = ij0Var;
-        ij0Var.N(42);
-        lj0Var.setAnimation(ij0Var);
+        kj0 kj0Var = new kj0(context);
+        this.e = kj0Var;
+        hj0 hj0Var = new hj0(R.raw.shared_link_enter, AndroidUtilities.dp(90.0f), AndroidUtilities.dp(90.0f), false, null);
+        this.f = hj0Var;
+        hj0Var.N(42);
+        kj0Var.setAnimation(hj0Var);
         y80Var.d(0, null, false);
         y80Var.b(true);
         y80Var.setDelegate(new hv(this, 9));
@@ -91,7 +91,7 @@ public final class fe0 extends org.telegram.ui.ActionBar.h3 {
         textView3.setBackground(org.telegram.ui.ActionBar.k6.i0(dp2, dp2, dp2, dp2, 0, k10, k10));
         textView3.setLetterSpacing(0.025f);
         textView3.setOnClickListener(new eg.o(this, chatFull, z60Var, 28));
-        linearLayout.addView(lj0Var, k7.c6.t(90, 90, 1, 0, 33, 0, 0));
+        linearLayout.addView(kj0Var, k7.c6.t(90, 90, 1, 0, 33, 0, 0));
         linearLayout.addView(textView, k7.c6.t(-1, -2, 1, 60, 10, 60, 0));
         linearLayout.addView(textView2, k7.c6.t(-1, -2, 1, 28, 7, 28, 2));
         linearLayout.addView(y80Var, k7.c6.n(-1, -2));
@@ -168,10 +168,10 @@ public final class fe0 extends org.telegram.ui.ActionBar.h3 {
         int k10 = i0.a.k(org.telegram.ui.ActionBar.k6.w0(null, i10, false), 120);
         this.d.setBackground(org.telegram.ui.ActionBar.k6.i0(dp2, dp2, dp2, dp2, 0, k10, k10));
         int w02 = org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Sh, false);
-        ij0 ij0Var = this.f;
-        ij0Var.O(w02, "Top");
-        ij0Var.O(w02, "Bottom");
-        ij0Var.O(w02, "Center");
+        hj0 hj0Var = this.f;
+        hj0Var.O(w02, "Top");
+        hj0Var.O(w02, "Bottom");
+        hj0Var.O(w02, "Center");
         this.h.f();
         setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.h5, false));
     }

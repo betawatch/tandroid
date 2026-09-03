@@ -8,24 +8,24 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.ta0;
-import org.telegram.ui.Components.tl0;
-import qh.o4;
+import qh.n4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class r1 extends tl0 {
+public final class r1 extends sl0 {
     public final ArrayList U2;
     public final ArrayList V2;
     public final ArrayList W2;
     public final ArrayList X2;
     public final ArrayList Y2;
-    public final /* synthetic */ o4 Z2;
+    public final /* synthetic */ n4 Z2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r1(o4 o4Var, Context context, a9.a aVar) {
+    public r1(n4 n4Var, Context context, a9.a aVar) {
         super(context, aVar);
-        this.Z2 = o4Var;
+        this.Z2 = n4Var;
         this.U2 = new ArrayList();
         this.V2 = new ArrayList();
         this.W2 = new ArrayList();
@@ -34,7 +34,7 @@ public final class r1 extends tl0 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float f10;
         int i10;
@@ -357,7 +357,7 @@ public final class r1 extends tl0 {
         if ((r10 & 1) != 0) goto L65;
      */
     /* JADX WARN: Removed duplicated region for block: B:129:0x035a  */
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -369,8 +369,8 @@ public final class r1 extends tl0 {
         int b10;
         int b11;
         int i11;
-        o4 o4Var = this.Z2;
-        MessageObject.GroupedMessages groupedMessages = o4Var.q0;
+        n4 n4Var = this.Z2;
+        MessageObject.GroupedMessages groupedMessages = n4Var.q0;
         org.telegram.ui.Cells.t1 t1Var = null;
         if (view instanceof org.telegram.ui.Cells.t1) {
             t1Var = (org.telegram.ui.Cells.t1) view;
@@ -432,7 +432,7 @@ public final class r1 extends tl0 {
             if (avatarImage != null) {
                 boolean z4 = this.U1 || (groupedMessages != null && groupedMessages.transitionParams.backgroundChangeBounds);
                 int top = z4 ? view.getTop() : (int) view.getY();
-                if (!t1Var.j() || (b11 = o4Var.o0.T(view).b()) < 0) {
+                if (!t1Var.j() || (b11 = n4Var.o0.T(view).b()) < 0) {
                     f11 = 0.0f;
                 } else {
                     if (groupedMessages == null || currentPosition == null) {

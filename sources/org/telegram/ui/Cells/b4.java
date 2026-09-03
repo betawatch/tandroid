@@ -3,15 +3,15 @@ package org.telegram.ui.Cells;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.cy;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qp;
 import org.telegram.ui.Components.rh0;
-import org.telegram.ui.Components.ts0;
+import org.telegram.ui.Components.ss0;
+import org.telegram.ui.Components.zk0;
 import org.telegram.ui.wq;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class b4 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -58,15 +58,15 @@ public final class b4 extends AnimatorListenerAdapter {
                 break;
             case 6:
                 wq wqVar = (wq) this.c;
-                ((al0) wqVar.d).b.remove(this.b);
-                al0 al0Var = (al0) wqVar.d;
-                al0Var.d = true;
-                al0Var.a.invalidate();
+                ((zk0) wqVar.d).b.remove(this.b);
+                zk0 zk0Var = (zk0) wqVar.d;
+                zk0Var.d = true;
+                zk0Var.a.invalidate();
                 break;
             case 7:
-                ts0 ts0Var = (ts0) this.c;
-                ts0Var.e.L1.remove(this.b);
-                ts0Var.a.invalidate();
+                ss0 ss0Var = (ss0) this.c;
+                ss0Var.e.L1.remove(this.b);
+                ss0Var.a.invalidate();
                 break;
             case 8:
                 org.telegram.ui.Components.voip.b1 b1Var2 = (org.telegram.ui.Components.voip.b1) this.c;

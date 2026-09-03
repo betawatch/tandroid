@@ -17,39 +17,39 @@ import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.h6;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.Components.z8;
+import org.telegram.ui.web.a2;
 import org.telegram.ui.web.d1;
-import org.telegram.ui.web.v1;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class g extends p2 implements NotificationCenter.NotificationCenterDelegate {
     public long a;
     public TLRPC.Chat b;
     public TLRPC.User c;
     public FrameLayout d;
-    public i61 e;
+    public h61 e;
     public f f;
     public ArrayList h;
     public NotificationCenter.ObserversGroup n;
 
-    public static void U(g gVar, j51 j51Var) {
+    public static void U(g gVar, h51 h51Var) {
         g gVar2;
-        if (j51Var.d == 1) {
+        if (h51Var.d == 1) {
             gVar2 = gVar;
             z4.R(gVar.getParentActivity(), gVar2, LocaleController.getString(R.string.CommunityNewCommunityTitle), null, LocaleController.getString(R.string.CommunityNewCommunityNameHint), null, ConnectionsManager.DEFAULT_DATACENTER_ID, LocaleController.getString(R.string.Create), gVar.resourceProvider, new c(gVar));
         } else {
             gVar2 = gVar;
         }
-        Object obj = j51Var.G;
+        Object obj = h51Var.G;
         if (obj instanceof TLRPC.Chat) {
             TLRPC.Chat chat = (TLRPC.Chat) obj;
             gVar2.getMessagesController().getChat(Long.valueOf(-gVar2.a));
-            gVar2.showDialog(new vh.a(gVar2.getParentActivity(), chat, gVar2.a, new v1(14, gVar2, chat)));
+            gVar2.showDialog(new vh.a(gVar2.getParentActivity(), chat, gVar2.a, new a2(13, gVar2, chat)));
         }
     }
 
@@ -87,7 +87,7 @@ public final class g extends p2 implements NotificationCenter.NotificationCenter
         cVar.a(getThemedColor(k6.d6));
         og.a aVar = new og.a(cVar);
         this.actionBar.setBackground(null);
-        this.actionBar.M(aVar, sg.b.n(this.resourceProvider), false);
+        this.actionBar.M(aVar, sg.b.o(this.resourceProvider), false);
         this.actionBar.M0 = true;
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
@@ -106,12 +106,12 @@ public final class g extends p2 implements NotificationCenter.NotificationCenter
                 this.f.a.e(chat, new z8(this.b));
             }
         }
-        i61 i61Var = new i61(this, new b(this, 0), new c(this), new c(this));
-        this.e = i61Var;
-        i61Var.setClipToPadding(false);
-        i61 i61Var2 = this.e;
-        i61Var2.V2.r = false;
-        i61Var2.p1();
+        h61 h61Var = new h61(this, new b(this, 0), new c(this), new c(this));
+        this.e = h61Var;
+        h61Var.setClipToPadding(false);
+        h61 h61Var2 = this.e;
+        h61Var2.V2.r = false;
+        h61Var2.o1();
         this.d.addView(this.e, c6.c(-1.0f, -1));
         this.d.addView(this.actionBar, c6.e(-1, -2, 48));
         FrameLayout frameLayout2 = this.d;
@@ -124,12 +124,12 @@ public final class g extends p2 implements NotificationCenter.NotificationCenter
         if (i10 == NotificationCenter.chatInfoDidLoad) {
             TLRPC.ChatFull chatFull = (TLRPC.ChatFull) objArr[0];
             long j10 = chatFull.id;
-            View y12 = this.e.y1((int) (j10 ^ (j10 >>> 32)));
-            if (!(y12 instanceof h6)) {
+            View x12 = this.e.x1((int) (j10 ^ (j10 >>> 32)));
+            if (!(x12 instanceof h6)) {
                 this.e.V2.N(false);
                 return;
             }
-            h6 h6Var = (h6) y12;
+            h6 h6Var = (h6) x12;
             ArrayList<TL_communities.CommunityPeer> arrayList = chatFull.linked_peers;
             h6Var.setSubLabel(LocaleController.formatPluralString("Chats", arrayList != null ? arrayList.size() : 0, new Object[0]));
         }

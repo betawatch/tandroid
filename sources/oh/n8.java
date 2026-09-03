@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.rc;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class n8 extends View {
     public int a;
@@ -58,13 +58,13 @@ public final class n8 extends View {
     }
 
     public final void a(boolean z4, s6 s6Var, boolean z10) {
-        qh.b8 b8Var;
+        qh.a8 a8Var;
         this.s = z4;
         this.f = true;
-        if (s6Var == null || (b8Var = s6Var.c.E0) == null) {
+        if (s6Var == null || (a8Var = s6Var.c.E0) == null) {
             this.f = false;
         } else {
-            int i10 = b8Var.a;
+            int i10 = a8Var.a;
             org.telegram.ui.Components.z5 z5Var = this.e;
             if (i10 == 1) {
                 c(15.0f, R.drawable.msg_stories_closefriends);

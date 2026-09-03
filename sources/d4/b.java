@@ -9,12 +9,12 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.uc0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements r8.i, h5.j, gl0, uc0, c2 {
+public final /* synthetic */ class b implements r8.i, h5.j, fl0, uc0, c2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
 
@@ -64,7 +64,7 @@ public final /* synthetic */ class b implements r8.i, h5.j, gl0, uc0, c2 {
         MessagesController.getInstance(this.b).performLogout(1);
     }
 
-    @Override // org.telegram.ui.Components.gl0
+    @Override // org.telegram.ui.Components.fl0
     public int run() {
         return this.b;
     }

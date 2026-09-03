@@ -23,7 +23,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class v0 extends CameraView {
     public static final int[] U = {1893745684, -215458996, -862041025, -1258375037, -1320049076, -215749424, 1901578030, -215451421, 1908491424, -1321491332, -1155551678, 1908524435, 976847578, -1489198134, 1910814392, -713271737, -2010722764, 1407170066, -821405251, -1394190955, -1394190055, 1407170066, 1407159934, 1407172057, 1231389747, -2076538925, 41497626, 846150482, -1198092731, -251277614, -2073158771, 1273004781};
@@ -167,13 +167,13 @@ public abstract class v0 extends CameraView {
     public final void onDualCameraSuccess() {
         v();
         if (this.E) {
-            g9 g9Var = (g9) this;
+            f9 f9Var = (f9) this;
             if (MessagesController.getGlobalMainSettings().getInt("storysvddualhint", 0) < 2) {
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.s0(g9Var, 29), 340L);
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.s0(f9Var, 29), 340L);
             }
-            ca caVar = g9Var.V;
-            caVar.C0.setValue(g9Var.isDual());
-            caVar.C0.setContentDescription(LocaleController.getString(g9Var.isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
+            ba baVar = f9Var.V;
+            baVar.C0.setValue(f9Var.isDual());
+            baVar.C0.setContentDescription(LocaleController.getString(f9Var.isDual() ? R.string.AccDescrDualCameraOn : R.string.AccDescrDualCameraOff));
         }
         t(true);
     }
@@ -610,8 +610,8 @@ public abstract class v0 extends CameraView {
                     boolean z15 = Math.max(f45, (this.Q / 2.0f) + f45) > ((float) (getHeight() - AndroidUtilities.dp(66.0f)));
                     if (this.C != z14) {
                         this.C = z14;
-                        ca caVar = ((g9) this).V;
-                        caVar.l1.a(true, z14, caVar.f0);
+                        ba baVar = ((f9) this).V;
+                        baVar.l1.a(true, z14, baVar.f0);
                     }
                     if (this.D != z15) {
                         this.D = z15;
@@ -626,8 +626,8 @@ public abstract class v0 extends CameraView {
                     this.s = false;
                     if (this.C) {
                         this.C = false;
-                        ca caVar2 = ((g9) this).V;
-                        caVar2.l1.a(true, false, caVar2.f0);
+                        ba baVar2 = ((f9) this).V;
+                        baVar2.l1.a(true, false, baVar2.f0);
                     }
                     if (this.D) {
                         this.D = false;
@@ -637,8 +637,8 @@ public abstract class v0 extends CameraView {
                     this.s = false;
                     if (this.C) {
                         this.C = false;
-                        ca caVar3 = ((g9) this).V;
-                        caVar3.l1.a(true, false, caVar3.f0);
+                        ba baVar3 = ((f9) this).V;
+                        baVar3.l1.a(true, false, baVar3.f0);
                     }
                     if (this.D) {
                         this.D = false;

@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gg0 implements Utilities.Callback3 {
     public final /* synthetic */ int a;
@@ -160,7 +160,7 @@ public final /* synthetic */ class gg0 implements Utilities.Callback3 {
                             CharSequence[] charSequenceArr = new CharSequence[2];
                             charSequenceArr[0] = string;
                             charSequenceArr[c3] = string2;
-                            DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.yq0
+                            DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.dr0
                                 @Override // android.content.DialogInterface.OnClickListener
                                 public final void onClick(DialogInterface dialogInterface, int i14) {
                                     Drawable[] drawableArr2 = PhotoViewer.Q8;
@@ -206,7 +206,7 @@ public final /* synthetic */ class gg0 implements Utilities.Callback3 {
                         CharSequence[] charSequenceArr2 = new CharSequence[2];
                         charSequenceArr2[0] = string3;
                         charSequenceArr2[c3] = string22;
-                        DialogInterface.OnClickListener onClickListener2 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.yq0
+                        DialogInterface.OnClickListener onClickListener2 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.dr0
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i14) {
                                 Drawable[] drawableArr2 = PhotoViewer.Q8;
@@ -251,7 +251,7 @@ public final /* synthetic */ class gg0 implements Utilities.Callback3 {
                     CharSequence[] charSequenceArr22 = new CharSequence[2];
                     charSequenceArr22[0] = string32;
                     charSequenceArr22[c3] = string222;
-                    DialogInterface.OnClickListener onClickListener22 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.yq0
+                    DialogInterface.OnClickListener onClickListener22 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.dr0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i14) {
                             Drawable[] drawableArr2 = PhotoViewer.Q8;

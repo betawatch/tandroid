@@ -19,9 +19,9 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.PrivacySettingsActivity;
-import org.telegram.ui.tt0;
+import org.telegram.ui.yt0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class h0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class h0 implements Utilities.Callback2 {
                     if (!z10) {
                         MessagesController.getInstance(i10).generateJoinMessage(chat.id, true);
                     }
-                    AndroidUtilities.runOnUIThread(new tt0(e1Var, 5));
+                    AndroidUtilities.runOnUIThread(new yt0(e1Var, 5));
                     AndroidUtilities.runOnUIThread(new af.b(i10, chat, 13), 1000L);
                     MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
                     long j10 = chat.id;

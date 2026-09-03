@@ -18,30 +18,30 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
+import org.telegram.ui.Components.fw0;
 import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.gw0;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.s00;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.jk;
 import org.telegram.ui.xa0;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class t9 extends org.telegram.ui.Components.sa implements NotificationCenter.NotificationCenterDelegate {
     public final dg.u U;
     public final FrameLayout V;
     public final TLRPC.User W;
     public final hg.g2 X;
-    public x51 Y;
+    public w51 Y;
     public boolean Z;
 
     public t9(Context context, org.telegram.ui.ActionBar.g6 g6Var, TLRPC.User user, hg.g2 g2Var) {
@@ -52,10 +52,10 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starGiftOptionsLoaded);
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.starBalanceUpdated);
         fixNavigationBar();
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
         final int i11 = 0;
-        tl0Var.setPadding(i10, 0, i10, 0);
+        sl0Var.setPadding(i10, 0, i10, 0);
         this.d.setOnItemClickListener(new ag.h(this, 9));
         f2.l lVar = new f2.l();
         lVar.m = false;
@@ -82,11 +82,11 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
                 switch (i11) {
                     case 0:
                         t9 t9Var = this.b;
-                        gw0 gw0Var = new gw0(t9Var.getContext());
+                        fw0 fw0Var = new fw0(t9Var.getContext());
                         if (!AndroidUtilities.isTablet() && !AndroidUtilities.hasDialogOnTop(t9Var.attachedFragment) && (p2Var = t9Var.attachedFragment) != null) {
-                            gw0Var.makeAttached(p2Var);
+                            fw0Var.makeAttached(p2Var);
                         }
-                        gw0Var.show();
+                        fw0Var.show();
                         break;
                     default:
                         af.g.s(this.b.getContext(), LocaleController.getString(R.string.StarsTOSLink));
@@ -94,7 +94,7 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
                 }
             }
         }), true)));
-        g90Var.setMaxWidth(qh.f3.a(g90Var.getText(), g90Var.getPaint()) + 1);
+        g90Var.setMaxWidth(qh.e3.a(g90Var.getText(), g90Var.getPaint()) + 1);
         this.e.setTitle(y());
         org.telegram.ui.Components.z8 z8Var = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.g6) null);
         z8Var.r(user);
@@ -119,11 +119,11 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
                 switch (i12) {
                     case 0:
                         t9 t9Var = this.b;
-                        gw0 gw0Var = new gw0(t9Var.getContext());
+                        fw0 fw0Var = new fw0(t9Var.getContext());
                         if (!AndroidUtilities.isTablet() && !AndroidUtilities.hasDialogOnTop(t9Var.attachedFragment) && (p2Var = t9Var.attachedFragment) != null) {
-                            gw0Var.makeAttached(p2Var);
+                            fw0Var.makeAttached(p2Var);
                         }
-                        gw0Var.show();
+                        fw0Var.show();
                         break;
                     default:
                         af.g.s(this.b.getContext(), LocaleController.getString(R.string.StarsTOSLink));
@@ -132,26 +132,26 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
             }
         }));
         g90Var2.setGravity(17);
-        g90Var2.setMaxWidth(qh.f3.a(g90Var2.getText(), g90Var2.getPaint()));
+        g90Var2.setMaxWidth(qh.e3.a(g90Var2.getText(), g90Var2.getPaint()));
         frameLayout.addView(g90Var2, k7.c6.e(-2, -1, 17));
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.h5, g6Var));
         this.containerView.addView(new s00(getContext()), k7.c6.c(-1.0f, -1));
-        x51 x51Var = this.Y;
-        if (x51Var != null) {
-            x51Var.N(false);
+        w51 w51Var = this.Y;
+        if (w51Var != null) {
+            w51Var.N(false);
         }
     }
 
     public static void P(t9 t9Var, int i10) {
-        j51 G;
-        x51 x51Var = t9Var.Y;
-        if (x51Var == null || (G = x51Var.G(i10 - 1)) == null) {
+        h51 G;
+        w51 w51Var = t9Var.Y;
+        if (w51Var == null || (G = w51Var.G(i10 - 1)) == null) {
             return;
         }
-        x51 x51Var2 = t9Var.Y;
+        w51 w51Var2 = t9Var.Y;
         if (G.d == -1) {
             t9Var.Z = !t9Var.Z;
-            x51Var2.N(true);
+            w51Var2.N(true);
             t9Var.d.v0(0, AndroidUtilities.dp(200.0f), pr.g);
             return;
         }
@@ -211,7 +211,7 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
         }
     }
 
-    public static void Q(t9 t9Var, j51 j51Var, long j10, Boolean bool, String str) {
+    public static void Q(t9 t9Var, h51 h51Var, long j10, Boolean bool, String str) {
         hg.g2 g2Var;
         if (t9Var.getContext() == null) {
             return;
@@ -231,7 +231,7 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
                 yh.s(R.string.UnknownErrorCode, new Object[]{str}, qc.a0(U), R.raw.error, 36);
             }
         } else {
-            ic K = qc.a0(U).K(R.raw.stars_send, LocaleController.getString(R.string.StarsGiftSentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsGiftSentPopupInfo", (int) j51Var.B, UserObject.getForcedFirstName(t9Var.W))), LocaleController.getString(R.string.ViewInChat), new s9(j10, i10));
+            ic K = qc.a0(U).K(R.raw.stars_send, LocaleController.getString(R.string.StarsGiftSentPopup), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsGiftSentPopupInfo", (int) h51Var.B, UserObject.getForcedFirstName(t9Var.W))), LocaleController.getString(R.string.ViewInChat), new s9(j10, i10));
             K.j = 5000;
             K.k(true);
             if (xa0Var != null) {
@@ -241,14 +241,14 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
         }
     }
 
-    public final void R(ArrayList arrayList, x51 x51Var) {
-        arrayList.add(j51.k(this.U));
+    public final void R(ArrayList arrayList, w51 w51Var) {
+        arrayList.add(h51.k(this.U));
         yh.r(R.string.TelegramStarsChoose, arrayList);
         ArrayList u10 = t7.y(this.currentAccount, false).u();
         if (u10 == null || u10.isEmpty()) {
-            arrayList.add(j51.n(31));
-            arrayList.add(j51.n(31));
-            arrayList.add(j51.n(31));
+            arrayList.add(h51.n(31));
+            arrayList.add(h51.n(31));
+            arrayList.add(h51.n(31));
         } else {
             int i10 = 0;
             int i11 = 1;
@@ -257,7 +257,7 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
                 if (this.Z || !tL_starsGiftOption.extended) {
                     int i13 = i11 + 1;
                     int i14 = v9.a;
-                    j51 J = j51.J(v9.class);
+                    h51 J = h51.J(v9.class);
                     J.d = i12;
                     J.z = i11;
                     long j10 = tL_starsGiftOption.stars;
@@ -276,7 +276,7 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
                 String string = LocaleController.getString(z4 ? R.string.NotifyLessOptions : R.string.NotifyMoreOptions);
                 boolean z10 = !this.Z;
                 int i15 = p9.a;
-                j51 J2 = j51.J(p9.class);
+                h51 J2 = h51.J(p9.class);
                 J2.d = -1;
                 J2.l = string;
                 J2.f = z10;
@@ -284,14 +284,14 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
                 arrayList.add(J2);
             }
         }
-        arrayList.add(j51.k(this.V));
+        arrayList.add(h51.k(this.V));
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        x51 x51Var;
-        if ((i10 == NotificationCenter.starGiftOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) && (x51Var = this.Y) != null) {
-            x51Var.N(true);
+        w51 w51Var;
+        if ((i10 == NotificationCenter.starGiftOptionsLoaded || i10 == NotificationCenter.starBalanceUpdated) && (w51Var = this.Y) != null) {
+            w51Var.N(true);
         }
     }
 
@@ -316,10 +316,10 @@ public final class t9 extends org.telegram.ui.Components.sa implements Notificat
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(this.d, getContext(), this.currentAccount, 0, true, new eg.p1(this, 20), this.resourcesProvider);
-        this.Y = x51Var;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new eg.p1(this, 20), this.resourcesProvider);
+        this.Y = w51Var;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

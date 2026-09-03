@@ -11,13 +11,13 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.tp;
 import org.telegram.ui.Components.z5;
-import qh.v9;
+import qh.u9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class e0 extends Drawable {
     public final ImageView a;
@@ -31,18 +31,18 @@ public final class e0 extends Drawable {
     public final z5 i;
     public final z5 j;
     public final z5 k;
-    public ij0 l;
+    public hj0 l;
 
     public e0(Context context, ImageView imageView) {
         Paint paint = new Paint(1);
         this.b = paint;
         this.c = new RectF();
         this.h = false;
-        v9 v9Var = new v9(this, 7);
+        u9 u9Var = new u9(this, 7);
         pr prVar = pr.h;
-        this.i = new z5(v9Var, 320L, prVar, 0);
-        this.j = new z5(new v9(this, 7), 320L, prVar, 0);
-        this.k = new z5(new v9(this, 7), 320L, prVar, 0);
+        this.i = new z5(u9Var, 320L, prVar, 0);
+        this.j = new z5(new u9(this, 7), 320L, prVar, 0);
+        this.k = new z5(new u9(this, 7), 320L, prVar, 0);
         this.a = imageView;
         this.d = System.currentTimeMillis();
         this.e = context.getResources().getDrawable(R.drawable.search_files_filled).mutate();
@@ -56,7 +56,7 @@ public final class e0 extends Drawable {
     public final void draw(Canvas canvas) {
         float f10;
         float f11;
-        ij0 ij0Var;
+        hj0 hj0Var;
         Canvas canvas2 = canvas;
         Rect bounds = getBounds();
         int centerX = bounds.centerX();
@@ -109,12 +109,12 @@ public final class e0 extends Drawable {
             f10 = 255.0f;
             f11 = 0.0f;
         }
-        if (e6 <= f11 || (ij0Var = this.l) == null) {
+        if (e6 <= f11 || (hj0Var = this.l) == null) {
             return;
         }
-        int i11 = ij0Var.b / 2;
-        int i12 = ij0Var.c / 2;
-        ij0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
+        int i11 = hj0Var.b / 2;
+        int i12 = hj0Var.c / 2;
+        hj0Var.setBounds(centerX - i11, centerY - i12, i11 + centerX, i12 + centerY);
         this.l.setAlpha((int) (e6 * f10));
         this.l.draw(canvas2);
     }

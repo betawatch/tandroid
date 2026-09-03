@@ -7,11 +7,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.ti1;
-import org.telegram.ui.ui1;
+import org.telegram.ui.aj1;
 import org.telegram.ui.vl0;
+import org.telegram.ui.zi1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class mh implements Utilities.Callback2 {
     public final /* synthetic */ int a = 0;
@@ -65,13 +65,13 @@ public final /* synthetic */ class mh implements Utilities.Callback2 {
                         FileLog.d(m9.toString());
                         Context applicationContext = view.getContext().getApplicationContext();
                         try {
-                            byte[] c3 = ui1.c(jVar, queryParameter, currentDatacenterId, isTestBackend);
+                            byte[] c3 = aj1.c(jVar, queryParameter, currentDatacenterId, isTestBackend);
                             a8.e eVar = new a8.e(applicationContext, com.google.android.gms.common.api.i.c);
                             String str = (String) jVar.c;
                             com.google.android.gms.common.api.internal.t0 t0Var = eVar.h;
                             m8.i0 i0Var = new m8.i0(t0Var, str, "/tg-wear-auth/token", c3);
                             t0Var.b.d(0, i0Var);
-                            b6.m.n(i0Var, m8.k0.a).addOnSuccessListener(new vl0(28, jVar, dVar)).addOnFailureListener(new ti1(dVar, 1));
+                            b6.m.n(i0Var, m8.k0.a).addOnSuccessListener(new vl0(28, jVar, dVar)).addOnFailureListener(new zi1(dVar, 1));
                             h3Var.dismiss();
                             break;
                         } catch (Exception e6) {

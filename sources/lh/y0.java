@@ -21,11 +21,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.jy;
-import org.telegram.ui.oq0;
 import org.telegram.ui.px;
 import org.telegram.ui.py;
+import org.telegram.ui.tq0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class y0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -94,7 +94,7 @@ public final /* synthetic */ class y0 implements Utilities.Callback {
                 Bitmap bitmap = (Bitmap) obj;
                 Drawable[] drawableArr = PhotoViewer.Q8;
                 if (bitmap == null) {
-                    AndroidUtilities.runOnUIThread(new oq0(photoViewer, 16));
+                    AndroidUtilities.runOnUIThread(new tq0(photoViewer, 16));
                     break;
                 } else {
                     try {
@@ -112,7 +112,7 @@ public final /* synthetic */ class y0 implements Utilities.Callback {
                         break;
                     } catch (Exception e6) {
                         FileLog.e(e6);
-                        AndroidUtilities.runOnUIThread(new oq0(photoViewer, 17));
+                        AndroidUtilities.runOnUIThread(new tq0(photoViewer, 17));
                     }
                 }
         }

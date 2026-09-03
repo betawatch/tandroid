@@ -28,7 +28,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class lh0 extends View {
     public float B;
@@ -62,7 +62,7 @@ public final class lh0 extends View {
     public float f;
     public final Path h;
     public final Path n;
-    public org.telegram.ui.vz0 r;
+    public org.telegram.ui.a01 r;
     public float s;
     public float v;
     public RenderNode w;
@@ -200,7 +200,7 @@ public final class lh0 extends View {
             m(0, arrayList);
             m(1, arrayList);
         }
-        AndroidUtilities.runOnUIThread(new a90(6, this, arrayList));
+        AndroidUtilities.runOnUIThread(new b90(5, this, arrayList));
     }
 
     public final void e() {
@@ -642,9 +642,9 @@ public final class lh0 extends View {
         RenderNode renderNode2 = this.w;
         if (renderNode2 != null && Build.VERSION.SDK_INT >= 29 && renderNode2.hasDisplayList() && canvas.isHardwareAccelerated()) {
             canvas.save();
-            org.telegram.ui.vz0 vz0Var = this.r;
-            if (vz0Var != null) {
-                View view = (View) vz0Var.getParent();
+            org.telegram.ui.a01 a01Var = this.r;
+            if (a01Var != null) {
+                View view = (View) a01Var.getParent();
                 float x10 = view.getX();
                 float y11 = view.getY() - getTranslationY();
                 float scaleX = view.getScaleX() * view.getWidth();
@@ -694,9 +694,9 @@ public final class lh0 extends View {
                         ih0Var11.m = ih0Var11.l.b.getLineCount() >= 3 ? 0.75f : ih0Var11.l.b.getLineCount() >= 2 ? 0.85f : 1.0f;
                         float max2 = Math.max(0.0f, AndroidUtilities.dpf2(1.33f) + e2.c.d(ih0Var11.l.j(), ih0Var11.m, f27, 3.0f));
                         rect.set((int) (centerX3 - f32), (int) max2, (int) (centerX3 + f32), (int) (max2 + dp));
-                        ij0 ij0Var = ih0Var11.k;
-                        if (ij0Var != null) {
-                            ij0Var.setBounds(rect);
+                        hj0 hj0Var = ih0Var11.k;
+                        if (hj0Var != null) {
+                            hj0Var.setBounds(rect);
                         }
                         Drawable drawable = ih0Var11.i;
                         if (drawable != null) {
@@ -711,8 +711,8 @@ public final class lh0 extends View {
                         float f33 = ih0Var11.m;
                         f10 = f27;
                         canvas.scale(f33, f33, centerX2, android.support.v4.media.a.d(ih0Var11.l.j(), ih0Var11.m, 2.0f, j10));
-                        l01 l01Var = ih0Var11.l;
-                        l01Var.c(centerX2 - (l01Var.l() / 2.0f), j10, b11, d, canvas);
+                        k01 k01Var = ih0Var11.l;
+                        k01Var.c(centerX2 - (k01Var.l() / 2.0f), j10, b11, d, canvas);
                         canvas.restore();
                         float f34 = ih0Var11.q;
                         if (f34 != 1.0f) {
@@ -720,15 +720,15 @@ public final class lh0 extends View {
                         }
                         float f35 = (1.0f - f31) * b11;
                         float f36 = f31 * b11;
-                        ij0 ij0Var2 = ih0Var11.k;
-                        if (ij0Var2 == null) {
+                        hj0 hj0Var2 = ih0Var11.k;
+                        if (hj0Var2 == null) {
                             h(canvas, ih0Var11.j, f35);
                             h(canvas, ih0Var11.i, f36);
                         } else if (ih0Var11.a == 1) {
                             h(canvas, ih0Var11.j, f35);
                             h(canvas, ih0Var11.k, f36);
                         } else {
-                            h(canvas, ij0Var2, b11);
+                            h(canvas, hj0Var2, b11);
                         }
                         canvas.restore();
                         if (ih0Var11.x > 0 && System.currentTimeMillis() > ih0Var11.x + ih0Var11.w) {
@@ -848,9 +848,9 @@ public final class lh0 extends View {
                         if (i12 == 0) {
                             int i13 = ih0Var5.a;
                             RectF rectF = ih0Var5.d;
-                            ProfileActivity.Y(((org.telegram.ui.rx0) kh0Var).b, i13, rectF.left, rectF.top);
+                            ProfileActivity.Y(((org.telegram.ui.wx0) kh0Var).b, i13, rectF.left, rectF.top);
                         } else {
-                            postDelayed(new a90(7, this, ih0Var5), i12);
+                            postDelayed(new b90(6, this, ih0Var5), i12);
                         }
                     }
                 }

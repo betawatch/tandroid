@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f70 extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.x40 {
     public TLRPC.FileLocation B;
@@ -46,7 +46,7 @@ public final class f70 extends org.telegram.ui.ActionBar.p2 implements Notificat
     public String L;
     public final int M;
     public final boolean N;
-    public org.telegram.ui.Components.ij0 O;
+    public org.telegram.ui.Components.hj0 O;
     public final boolean P;
     public String Q;
     public final Location R;
@@ -55,7 +55,7 @@ public final class f70 extends org.telegram.ui.ActionBar.p2 implements Notificat
     public org.telegram.ui.Components.rz U;
     public e70 V;
     public d70 a;
-    public org.telegram.ui.Components.tl0 b;
+    public org.telegram.ui.Components.sl0 b;
     public org.telegram.ui.Components.fu c;
     public oh.a4 d;
     public fg.i0 e;
@@ -154,13 +154,12 @@ public final class f70 extends org.telegram.ui.ActionBar.p2 implements Notificat
         this.h.start();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:62:0x030e  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x02fb  */
     @Override // org.telegram.ui.ActionBar.p2
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final View createView(Context context) {
-        String str;
         org.telegram.ui.Components.fu fuVar = this.c;
         if (fuVar != null) {
             fuVar.o();
@@ -174,20 +173,20 @@ public final class f70 extends org.telegram.ui.ActionBar.p2 implements Notificat
         kVar.setBackgroundColor(getThemedColor(i11));
         final int i12 = 0;
         this.actionBar.setCastShadows(false);
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 14));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 14));
         jd jdVar = new jd(2, context, this);
         jdVar.setBackgroundColor(getThemedColor(i11));
         this.fragmentView = jdVar;
         jdVar.setLayoutParams(new ViewGroup.LayoutParams(-1, -1));
         this.fragmentView.setOnTouchListener(new org.telegram.ui.ActionBar.s2(1));
         this.x = context.getResources().getDrawable(R.drawable.greydivider_top).mutate();
-        ib1 ib1Var = new ib1(this, context, 14);
-        ib1Var.setOrientation(1);
-        jdVar.addView(ib1Var, k7.c6.c(-1.0f, -1));
+        ob1 ob1Var = new ob1(this, context, 14);
+        ob1Var.setOrientation(1);
+        jdVar.addView(ob1Var, k7.c6.c(-1.0f, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.s = frameLayout;
         frameLayout.setBackground(org.telegram.ui.ActionBar.k6.d0(AndroidUtilities.dp(16.0f), getThemedColor(org.telegram.ui.ActionBar.k6.d6)));
-        ib1Var.addView(this.s, k7.c6.k(9.0f, 0.0f, 9.0f, 0.0f, -1, -2));
+        ob1Var.addView(this.s, k7.c6.k(9.0f, 0.0f, 9.0f, 0.0f, -1, -2));
         oh.a4 a4Var = new oh.a4(this, context, 8);
         this.d = a4Var;
         int i13 = this.M;
@@ -255,7 +254,7 @@ public final class f70 extends org.telegram.ui.ActionBar.p2 implements Notificat
                 }
             }
         });
-        this.O = new org.telegram.ui.Components.ij0(R.raw.camera, "" + R.raw.camera, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
+        this.O = new org.telegram.ui.Components.hj0(R.raw.camera, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
         kd kdVar = new kd(this, context, 2);
         this.f = kdVar;
         kdVar.setScaleType(ImageView.ScaleType.CENTER);
@@ -280,9 +279,9 @@ public final class f70 extends org.telegram.ui.ActionBar.p2 implements Notificat
         org.telegram.ui.Components.fu fuVar2 = new org.telegram.ui.Components.fu(context, jdVar, this, 0, false, null);
         this.c = fuVar2;
         fuVar2.setHint(LocaleController.getString((i13 == 0 || i13 == 4 || i13 == 5) ? R.string.EnterGroupNamePlaceholder : R.string.EnterListName));
-        String str2 = this.L;
-        if (str2 != null) {
-            this.c.setText(str2);
+        String str = this.L;
+        if (str != null) {
+            this.c.setText(str);
             org.telegram.ui.Components.fu fuVar3 = this.c;
             fuVar3.setSelection(fuVar3.getText().length());
             this.L = null;
@@ -290,28 +289,28 @@ public final class f70 extends org.telegram.ui.ActionBar.p2 implements Notificat
         TLRPC.User currentUser = getUserConfig().getCurrentUser();
         int size = this.H.size() + 1;
         if (size >= 2 && size <= 5 && TextUtils.isEmpty(this.c.getText())) {
+            String str2 = "";
             try {
             } catch (Exception e6) {
                 FileLog.e(e6);
             }
             if (size == 2) {
-                str = LocaleController.formatString("GroupCreateMembersTwo", R.string.GroupCreateMembersTwo, currentUser.first_name, Y(0));
+                str2 = LocaleController.formatString("GroupCreateMembersTwo", R.string.GroupCreateMembersTwo, currentUser.first_name, Y(0));
             } else if (size == 3) {
-                str = LocaleController.formatString("GroupCreateMembersThree", R.string.GroupCreateMembersThree, currentUser.first_name, Y(0), Y(1));
+                str2 = LocaleController.formatString("GroupCreateMembersThree", R.string.GroupCreateMembersThree, currentUser.first_name, Y(0), Y(1));
             } else if (size != 4) {
                 if (size == 5) {
-                    str = LocaleController.formatString("GroupCreateMembersFive", R.string.GroupCreateMembersFive, currentUser.first_name, Y(0), Y(1), Y(2), Y(3));
+                    str2 = LocaleController.formatString("GroupCreateMembersFive", R.string.GroupCreateMembersFive, currentUser.first_name, Y(0), Y(1), Y(2), Y(3));
                 }
-                str = "";
-                if (!TextUtils.isEmpty(str)) {
-                    this.c.setText(str);
+                if (!TextUtils.isEmpty(str2)) {
+                    this.c.setText(str2);
                     org.telegram.ui.Components.fu fuVar4 = this.c;
                     fuVar4.w(0, fuVar4.getText().length());
                 }
             } else {
-                str = LocaleController.formatString("GroupCreateMembersFour", R.string.GroupCreateMembersFour, currentUser.first_name, Y(0), Y(1), Y(2));
+                str2 = LocaleController.formatString("GroupCreateMembersFour", R.string.GroupCreateMembersFour, currentUser.first_name, Y(0), Y(1), Y(2));
             }
-            if (!TextUtils.isEmpty(str)) {
+            if (!TextUtils.isEmpty(str2)) {
             }
         }
         this.c.setFilters(new InputFilter[]{new InputFilter.LengthFilter(100)});
@@ -319,18 +318,18 @@ public final class f70 extends org.telegram.ui.ActionBar.p2 implements Notificat
         org.telegram.ui.Components.fu fuVar5 = this.c;
         boolean z13 = LocaleController.isRTL;
         frameLayout6.addView(fuVar5, k7.c6.d(-1, -2.0f, 16, z13 ? 5.0f : 96.0f, 0.0f, z13 ? 96.0f : 5.0f, 0.0f));
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.b = tl0Var;
-        tl0Var.p1();
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.b = sl0Var;
+        sl0Var.o1();
         this.U = new org.telegram.ui.Components.rz(this.b, 1);
-        org.telegram.ui.Components.tl0 tl0Var2 = this.b;
+        org.telegram.ui.Components.sl0 sl0Var2 = this.b;
         d70 d70Var = new d70(this, context);
         this.a = d70Var;
-        tl0Var2.setAdapter(d70Var);
+        sl0Var2.setAdapter(d70Var);
         this.b.setLayoutManager(this.U);
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
-        ib1Var.addView(this.b, k7.c6.n(-1, -1));
+        ob1Var.addView(this.b, k7.c6.n(-1, -1));
         this.b.setOnScrollListener(new l3(this, 14));
         this.b.setOnItemClickListener(new b70(this));
         org.telegram.ui.Components.a20 a20Var = new org.telegram.ui.Components.a20(context, this.resourceProvider, false);
@@ -462,7 +461,7 @@ public final class f70 extends org.telegram.ui.ActionBar.p2 implements Notificat
     }
 
     @Override // org.telegram.ui.Components.x40
-    public final /* synthetic */ lu0 getCloseIntoObject() {
+    public final /* synthetic */ qu0 getCloseIntoObject() {
         return null;
     }
 

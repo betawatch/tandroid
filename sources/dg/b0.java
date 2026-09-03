@@ -18,20 +18,20 @@ import lh.m5;
 import lh.n4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Emoji;
+import org.telegram.ui.Components.nn;
 import org.telegram.ui.Components.on;
 import org.telegram.ui.Components.pn;
-import org.telegram.ui.Components.qn;
-import org.telegram.ui.Components.sn;
+import org.telegram.ui.Components.rn;
 import org.telegram.ui.PasscodeActivity;
-import org.telegram.ui.cv0;
-import org.telegram.ui.dv0;
-import org.telegram.ui.ev0;
-import org.telegram.ui.fv0;
 import org.telegram.ui.hv0;
-import org.telegram.ui.kb1;
+import org.telegram.ui.iv0;
+import org.telegram.ui.jv0;
+import org.telegram.ui.kv0;
+import org.telegram.ui.mv0;
+import org.telegram.ui.qb1;
 import org.telegram.ui.sq;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class b0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -87,58 +87,58 @@ public final class b0 implements TextWatcher {
                 ((m5) obj).V2.N(true);
                 break;
             case 7:
-                sn snVar = ((qn) obj).d;
-                on onVar = (on) this.b;
-                if (onVar.getTag() == null) {
-                    f2.m1 K = snVar.s.K(snVar.m0);
-                    if (K != null && snVar.x != null) {
+                rn rnVar = ((pn) obj).d;
+                nn nnVar = (nn) this.b;
+                if (nnVar.getTag() == null) {
+                    f2.m1 K = rnVar.s.K(rnVar.m0);
+                    if (K != null && rnVar.x != null) {
                         for (ImageSpan imageSpan : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                             editable.removeSpan(imageSpan);
                         }
-                        Emoji.replaceEmoji(editable, onVar.getEditField().getPaint().getFontMetricsInt(), false);
-                        snVar.x.setDirection(1);
-                        snVar.x.setDelegate(onVar);
-                        snVar.x.setTranslationY(K.a.getY());
-                        snVar.x.e();
+                        Emoji.replaceEmoji(editable, nnVar.getEditField().getPaint().getFontMetricsInt(), false);
+                        rnVar.x.setDirection(1);
+                        rnVar.x.setDelegate(nnVar);
+                        rnVar.x.setTranslationY(K.a.getY());
+                        rnVar.x.e();
                     }
-                    snVar.M = editable;
+                    rnVar.M = editable;
                     if (K != null) {
-                        sn.K(snVar, K.a, snVar.m0);
+                        rn.K(rnVar, K.a, rnVar.m0);
                     }
-                    snVar.T();
+                    rnVar.T();
                     break;
                 }
                 break;
             case 8:
-                sn snVar2 = ((qn) obj).d;
-                kb1 kb1Var = snVar2.s;
-                pn pnVar = (pn) this.b;
-                View F = kb1Var.F(pnVar);
-                T = F != null ? kb1Var.T(F) : null;
+                rn rnVar2 = ((pn) obj).d;
+                qb1 qb1Var = rnVar2.s;
+                on onVar = (on) this.b;
+                View F = qb1Var.F(onVar);
+                T = F != null ? qb1Var.T(F) : null;
                 if (T != null) {
                     View view = T.a;
                     int b11 = T.b();
-                    int i13 = b11 - snVar2.q0;
-                    if (i13 >= 0 && i13 < snVar2.H.length) {
-                        if (snVar2.x != null) {
+                    int i13 = b11 - rnVar2.q0;
+                    if (i13 >= 0 && i13 < rnVar2.H.length) {
+                        if (rnVar2.x != null) {
                             for (ImageSpan imageSpan2 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                                 editable.removeSpan(imageSpan2);
                             }
-                            Emoji.replaceEmoji(editable, pnVar.getEditField().getPaint().getFontMetricsInt(), false);
+                            Emoji.replaceEmoji(editable, onVar.getEditField().getPaint().getFontMetricsInt(), false);
                             float y10 = (view.getY() - AndroidUtilities.dp(166.0f)) + view.getMeasuredHeight();
                             if (y10 > 0.0f) {
-                                snVar2.x.setDirection(0);
-                                snVar2.x.setTranslationY(y10);
+                                rnVar2.x.setDirection(0);
+                                rnVar2.x.setTranslationY(y10);
                             } else {
-                                snVar2.x.setDirection(1);
-                                snVar2.x.setTranslationY(view.getY());
+                                rnVar2.x.setDirection(1);
+                                rnVar2.x.setTranslationY(view.getY());
                             }
-                            snVar2.x.setDelegate(pnVar);
-                            snVar2.x.e();
+                            rnVar2.x.setDelegate(onVar);
+                            rnVar2.x.e();
                         }
-                        snVar2.H[i13] = editable;
-                        sn.K(snVar2, pnVar, b11);
-                        snVar2.T();
+                        rnVar2.H[i13] = editable;
+                        rn.K(rnVar2, onVar, b11);
+                        rnVar2.T();
                         break;
                     }
                 }
@@ -161,80 +161,80 @@ public final class b0 implements TextWatcher {
                 }
                 break;
             case 11:
-                hv0 hv0Var = ((fv0) obj).d;
-                cv0 cv0Var = (cv0) this.b;
-                if (cv0Var.getTag() == null) {
-                    f2.m1 K2 = hv0Var.c.K(hv0Var.f0);
-                    if (K2 != null && hv0Var.N != null) {
+                mv0 mv0Var = ((kv0) obj).d;
+                hv0 hv0Var = (hv0) this.b;
+                if (hv0Var.getTag() == null) {
+                    f2.m1 K2 = mv0Var.c.K(mv0Var.f0);
+                    if (K2 != null && mv0Var.N != null) {
                         for (ImageSpan imageSpan3 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                             editable.removeSpan(imageSpan3);
                         }
-                        Emoji.replaceEmoji(editable, cv0Var.getEditField().getPaint().getFontMetricsInt(), false);
-                        hv0Var.N.setDirection(1);
-                        hv0Var.N.setDelegate(cv0Var);
-                        hv0Var.N.setTranslationY(K2.a.getY());
-                        hv0Var.N.e();
+                        Emoji.replaceEmoji(editable, hv0Var.getEditField().getPaint().getFontMetricsInt(), false);
+                        mv0Var.N.setDirection(1);
+                        mv0Var.N.setDelegate(hv0Var);
+                        mv0Var.N.setTranslationY(K2.a.getY());
+                        mv0Var.N.e();
                     }
-                    hv0Var.B = editable;
+                    mv0Var.B = editable;
                     if (K2 != null) {
-                        hv0.c0(hv0Var, K2.a, hv0Var.f0);
+                        mv0.c0(mv0Var, K2.a, mv0Var.f0);
                     }
-                    hv0Var.i0();
+                    mv0Var.i0();
                     break;
                 }
                 break;
             case 12:
-                hv0 hv0Var2 = ((fv0) obj).d;
-                dv0 dv0Var = (dv0) this.b;
-                if (dv0Var.getTag() == null) {
-                    f2.m1 K3 = hv0Var2.c.K(hv0Var2.f0);
-                    if (K3 != null && hv0Var2.N != null) {
+                mv0 mv0Var2 = ((kv0) obj).d;
+                iv0 iv0Var = (iv0) this.b;
+                if (iv0Var.getTag() == null) {
+                    f2.m1 K3 = mv0Var2.c.K(mv0Var2.f0);
+                    if (K3 != null && mv0Var2.N != null) {
                         for (ImageSpan imageSpan4 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                             editable.removeSpan(imageSpan4);
                         }
-                        Emoji.replaceEmoji(editable, dv0Var.getEditField().getPaint().getFontMetricsInt(), false);
-                        hv0Var2.N.setDirection(1);
-                        hv0Var2.N.setDelegate(dv0Var);
-                        hv0Var2.N.setTranslationY(K3.a.getY());
-                        hv0Var2.N.e();
+                        Emoji.replaceEmoji(editable, iv0Var.getEditField().getPaint().getFontMetricsInt(), false);
+                        mv0Var2.N.setDirection(1);
+                        mv0Var2.N.setDelegate(iv0Var);
+                        mv0Var2.N.setTranslationY(K3.a.getY());
+                        mv0Var2.N.e();
                     }
-                    hv0Var2.C = editable;
+                    mv0Var2.C = editable;
                     if (K3 != null) {
-                        hv0.c0(hv0Var2, K3.a, hv0Var2.g0);
+                        mv0.c0(mv0Var2, K3.a, mv0Var2.g0);
                     }
-                    hv0Var2.i0();
+                    mv0Var2.i0();
                     break;
                 }
                 break;
             default:
-                hv0 hv0Var3 = ((fv0) obj).d;
-                kb1 kb1Var2 = hv0Var3.c;
-                ev0 ev0Var = (ev0) this.b;
-                View F2 = kb1Var2.F(ev0Var);
-                T = F2 != null ? kb1Var2.T(F2) : null;
+                mv0 mv0Var3 = ((kv0) obj).d;
+                qb1 qb1Var2 = mv0Var3.c;
+                jv0 jv0Var = (jv0) this.b;
+                View F2 = qb1Var2.F(jv0Var);
+                T = F2 != null ? qb1Var2.T(F2) : null;
                 if (T != null) {
                     View view2 = T.a;
-                    int b12 = T.b() - hv0Var3.k0;
-                    if (b12 >= 0 && b12 < hv0Var3.v.length) {
-                        if (hv0Var3.N != null) {
+                    int b12 = T.b() - mv0Var3.k0;
+                    if (b12 >= 0 && b12 < mv0Var3.v.length) {
+                        if (mv0Var3.N != null) {
                             for (ImageSpan imageSpan5 : (ImageSpan[]) editable.getSpans(0, editable.length(), ImageSpan.class)) {
                                 editable.removeSpan(imageSpan5);
                             }
-                            Emoji.replaceEmoji(editable, ev0Var.getEditField().getPaint().getFontMetricsInt(), false);
+                            Emoji.replaceEmoji(editable, jv0Var.getEditField().getPaint().getFontMetricsInt(), false);
                             float y11 = (view2.getY() - AndroidUtilities.dp(166.0f)) + view2.getMeasuredHeight();
                             if (y11 > 0.0f) {
-                                hv0Var3.N.setDirection(0);
-                                hv0Var3.N.setTranslationY(y11);
+                                mv0Var3.N.setDirection(0);
+                                mv0Var3.N.setTranslationY(y11);
                             } else {
-                                hv0Var3.N.setDirection(1);
-                                hv0Var3.N.setTranslationY(view2.getY());
+                                mv0Var3.N.setDirection(1);
+                                mv0Var3.N.setTranslationY(view2.getY());
                             }
-                            hv0Var3.N.setDelegate(ev0Var);
-                            hv0Var3.N.e();
+                            mv0Var3.N.setDelegate(jv0Var);
+                            mv0Var3.N.e();
                         }
-                        hv0Var3.v[b12] = editable;
-                        hv0.c0(hv0Var3, ev0Var, b12);
-                        hv0Var3.i0();
+                        mv0Var3.v[b12] = editable;
+                        mv0.c0(mv0Var3, jv0Var, b12);
+                        mv0Var3.i0();
                         break;
                     }
                 }

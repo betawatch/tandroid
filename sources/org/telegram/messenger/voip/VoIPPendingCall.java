@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.voip.g2;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class VoIPPendingCall {
     private AccountInstance accountInstance;
@@ -32,7 +32,7 @@ public final class VoIPPendingCall {
             }
         };
         this.observer = notificationCenterDelegate;
-        s0 s0Var = new s0(this, 3);
+        s0 s0Var = new s0(this, 2);
         this.releaseRunnable = s0Var;
         this.activity = activity;
         this.userId = j10;
@@ -77,9 +77,9 @@ public final class VoIPPendingCall {
         TLRPC.User user = messagesController.getUser(Long.valueOf(this.userId));
         if (user != null) {
             TLRPC.UserFull userFull = messagesController.getUserFull(user.id);
-            g2.n(user, this.video, userFull != null && userFull.video_calls_available, this.activity, userFull, this.accountInstance);
+            g2.m(user, this.video, userFull != null && userFull.video_calls_available, this.activity, userFull, this.accountInstance);
         } else if (isAirplaneMode()) {
-            g2.n(null, this.video, false, this.activity, null, this.accountInstance);
+            g2.m(null, this.video, false, this.activity, null, this.accountInstance);
         }
         release();
         return true;

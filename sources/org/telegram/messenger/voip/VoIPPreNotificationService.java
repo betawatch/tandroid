@@ -17,6 +17,8 @@ import android.media.MediaPlayer;
 import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Build;
+import android.os.VibrationAttributes;
+import android.os.VibrationEffect;
 import android.os.Vibrator;
 import android.provider.Settings;
 import android.text.SpannableString;
@@ -42,10 +44,10 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.Components.ie0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.VoIPPermissionActivity;
-import org.telegram.ui.ci1;
+import org.telegram.ui.ii1;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class VoIPPreNotificationService {
     public static State currentState;
@@ -55,7 +57,7 @@ public class VoIPPreNotificationService {
     private static final Object sync = new Object();
     private static Vibrator vibrator;
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static final class State implements VoIPServiceState {
         private final TL_phone.PhoneCall call;
         private final int currentAccount;
@@ -83,9 +85,9 @@ public class VoIPPreNotificationService {
                 return;
             }
             this.destroyed = true;
-            ci1 ci1Var = ci1.k1;
-            if (ci1Var != null) {
-                ci1Var.onStateChanged(getCallState());
+            ii1 ii1Var = ii1.k1;
+            if (ii1Var != null) {
+                ii1Var.onStateChanged(getCallState());
             }
         }
 
@@ -322,9 +324,9 @@ public class VoIPPreNotificationService {
         LaunchActivity launchActivity = LaunchActivity.D1;
         if (launchActivity != null && launchActivity.e1 && VoIPService.getSharedInstance() == null) {
             launchActivity.e1 = false;
-            ci1 ci1Var = ci1.k1;
-            if (ci1Var != null) {
-                ci1Var.n();
+            ii1 ii1Var = ii1.k1;
+            if (ii1Var != null) {
+                ii1Var.n();
             }
             launchActivity.moveTaskToBack(true);
         }
@@ -541,10 +543,12 @@ public class VoIPPreNotificationService {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00e9 A[Catch: all -> 0x0038, TryCatch #0 {all -> 0x0038, Exception -> 0x0081, blocks: (B:11:0x0032, B:13:0x0036, B:16:0x003b, B:18:0x0052, B:21:0x005e, B:23:0x0070, B:25:0x008b, B:27:0x00a9, B:28:0x00d7, B:30:0x00e9, B:34:0x0106, B:36:0x010c, B:38:0x011a, B:41:0x0132, B:42:0x0141, B:49:0x0114, B:51:0x00fa, B:53:0x0091, B:55:0x0095, B:57:0x009f, B:58:0x00a4, B:59:0x0083, B:62:0x00cb, B:64:0x00d2, B:65:0x0058), top: B:10:0x0032 }] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00e9 A[Catch: all -> 0x0038, TryCatch #0 {all -> 0x0038, Exception -> 0x0081, blocks: (B:11:0x0032, B:13:0x0036, B:16:0x003b, B:18:0x0052, B:21:0x005e, B:23:0x0070, B:25:0x008b, B:27:0x00a9, B:28:0x00d7, B:30:0x00e9, B:34:0x0106, B:36:0x010c, B:38:0x011a, B:41:0x0132, B:43:0x0144, B:44:0x0162, B:47:0x015d, B:52:0x0114, B:54:0x00fa, B:56:0x0091, B:58:0x0095, B:60:0x009f, B:61:0x00a4, B:62:0x0083, B:65:0x00cb, B:67:0x00d2, B:68:0x0058), top: B:10:0x0032 }] */
     /* JADX WARN: Removed duplicated region for block: B:40:0x0128  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x012b  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x00fa A[Catch: all -> 0x0038, TryCatch #0 {all -> 0x0038, Exception -> 0x0081, blocks: (B:11:0x0032, B:13:0x0036, B:16:0x003b, B:18:0x0052, B:21:0x005e, B:23:0x0070, B:25:0x008b, B:27:0x00a9, B:28:0x00d7, B:30:0x00e9, B:34:0x0106, B:36:0x010c, B:38:0x011a, B:41:0x0132, B:42:0x0141, B:49:0x0114, B:51:0x00fa, B:53:0x0091, B:55:0x0095, B:57:0x009f, B:58:0x00a4, B:59:0x0083, B:62:0x00cb, B:64:0x00d2, B:65:0x0058), top: B:10:0x0032 }] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0144 A[Catch: all -> 0x0038, TryCatch #0 {all -> 0x0038, Exception -> 0x0081, blocks: (B:11:0x0032, B:13:0x0036, B:16:0x003b, B:18:0x0052, B:21:0x005e, B:23:0x0070, B:25:0x008b, B:27:0x00a9, B:28:0x00d7, B:30:0x00e9, B:34:0x0106, B:36:0x010c, B:38:0x011a, B:41:0x0132, B:43:0x0144, B:44:0x0162, B:47:0x015d, B:52:0x0114, B:54:0x00fa, B:56:0x0091, B:58:0x0095, B:60:0x009f, B:61:0x00a4, B:62:0x0083, B:65:0x00cb, B:67:0x00d2, B:68:0x0058), top: B:10:0x0032 }] */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x015d A[Catch: all -> 0x0038, TryCatch #0 {all -> 0x0038, Exception -> 0x0081, blocks: (B:11:0x0032, B:13:0x0036, B:16:0x003b, B:18:0x0052, B:21:0x005e, B:23:0x0070, B:25:0x008b, B:27:0x00a9, B:28:0x00d7, B:30:0x00e9, B:34:0x0106, B:36:0x010c, B:38:0x011a, B:41:0x0132, B:43:0x0144, B:44:0x0162, B:47:0x015d, B:52:0x0114, B:54:0x00fa, B:56:0x0091, B:58:0x0095, B:60:0x009f, B:61:0x00a4, B:62:0x0083, B:65:0x00cb, B:67:0x00d2, B:68:0x0058), top: B:10:0x0032 }] */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x012b  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x00fa A[Catch: all -> 0x0038, TryCatch #0 {all -> 0x0038, Exception -> 0x0081, blocks: (B:11:0x0032, B:13:0x0036, B:16:0x003b, B:18:0x0052, B:21:0x005e, B:23:0x0070, B:25:0x008b, B:27:0x00a9, B:28:0x00d7, B:30:0x00e9, B:34:0x0106, B:36:0x010c, B:38:0x011a, B:41:0x0132, B:43:0x0144, B:44:0x0162, B:47:0x015d, B:52:0x0114, B:54:0x00fa, B:56:0x0091, B:58:0x0095, B:60:0x009f, B:61:0x00a4, B:62:0x0083, B:65:0x00cb, B:67:0x00d2, B:68:0x0058), top: B:10:0x0032 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -602,9 +606,13 @@ public class VoIPPreNotificationService {
                             i11 = notificationsSettings.getInt("calls_vibrate_" + j10, 0);
                         }
                         if ((i11 != 2 && i11 != 4 && (audioManager.getRingerMode() == 1 || audioManager.getRingerMode() == 2)) || (i11 == 4 && audioManager.getRingerMode() == 1)) {
-                            Vibrator vibrator2 = (Vibrator) context.getSystemService("vibrator");
-                            vibrator = vibrator2;
-                            vibrator2.vibrate(new long[]{0, i11 == 1 ? 350L : i11 == 3 ? 1400L : 700L, 500}, 0);
+                            vibrator = (Vibrator) context.getSystemService("vibrator");
+                            long[] jArr = {0, i11 == 1 ? 350L : i11 == 3 ? 1400L : 700L, 500};
+                            if (Build.VERSION.SDK_INT >= 33) {
+                                vibrator.vibrate(VibrationEffect.createWaveform(jArr, 0), new VibrationAttributes.Builder().setUsage(33).build());
+                            } else {
+                                vibrator.vibrate(jArr, 0);
+                            }
                         }
                     }
                     parse = RingtoneManager.getDefaultUri(1);
@@ -616,13 +624,15 @@ public class VoIPPreNotificationService {
                 if (notificationsSettings.getBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + j10, false)) {
                 }
                 if (i11 != 2) {
-                    Vibrator vibrator22 = (Vibrator) context.getSystemService("vibrator");
-                    vibrator = vibrator22;
-                    vibrator22.vibrate(new long[]{0, i11 == 1 ? 350L : i11 == 3 ? 1400L : 700L, 500}, 0);
+                    vibrator = (Vibrator) context.getSystemService("vibrator");
+                    long[] jArr2 = {0, i11 == 1 ? 350L : i11 == 3 ? 1400L : 700L, 500};
+                    if (Build.VERSION.SDK_INT >= 33) {
+                    }
                 }
-                Vibrator vibrator222 = (Vibrator) context.getSystemService("vibrator");
-                vibrator = vibrator222;
-                vibrator222.vibrate(new long[]{0, i11 == 1 ? 350L : i11 == 3 ? 1400L : 700L, 500}, 0);
+                vibrator = (Vibrator) context.getSystemService("vibrator");
+                long[] jArr22 = {0, i11 == 1 ? 350L : i11 == 3 ? 1400L : 700L, 500};
+                if (Build.VERSION.SDK_INT >= 33) {
+                }
             }
         }
     }

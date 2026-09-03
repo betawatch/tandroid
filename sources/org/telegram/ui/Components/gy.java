@@ -56,7 +56,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gy implements Runnable {
     public final /* synthetic */ int a;
@@ -72,15 +72,15 @@ public final /* synthetic */ class gy implements Runnable {
     }
 
     private final void a() {
-        p11 p11Var = (p11) this.c;
+        o11 o11Var = (o11) this.c;
         String str = (String) this.d;
         int i10 = this.b;
-        o11 o11Var = p11Var.r.n;
+        n11 n11Var = o11Var.r.n;
         try {
             String lowerCase = str.trim().toLowerCase();
             if (lowerCase.length() == 0) {
-                p11Var.d = -1;
-                AndroidUtilities.runOnUIThread(new dg.u1((Object) p11Var, p11Var.d, new ArrayList(), (Serializable) new ArrayList(), 28));
+                o11Var.d = -1;
+                AndroidUtilities.runOnUIThread(new dg.u1((Object) o11Var, o11Var.d, new ArrayList(), (Serializable) new ArrayList(), 28));
                 return;
             }
             String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -95,9 +95,9 @@ public final /* synthetic */ class gy implements Runnable {
             }
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
-            int size = o11Var.d.size();
+            int size = n11Var.d.size();
             for (int i12 = 0; i12 < size; i12++) {
-                ArrayList arrayList3 = (ArrayList) o11Var.d.get(i12);
+                ArrayList arrayList3 = (ArrayList) n11Var.d.get(i12);
                 String i13 = org.telegram.ui.ActionBar.i5.i(((org.telegram.ui.ActionBar.m6) arrayList3.get(0)).f);
                 String lowerCase2 = i13.toLowerCase();
                 int i14 = 0;
@@ -106,14 +106,14 @@ public final /* synthetic */ class gy implements Runnable {
                         String str2 = strArr[i14];
                         if (lowerCase2.contains(str2)) {
                             arrayList.add(arrayList3);
-                            arrayList2.add(p11.E(i13, str2));
+                            arrayList2.add(o11.E(i13, str2));
                             break;
                         }
                         i14++;
                     }
                 }
             }
-            AndroidUtilities.runOnUIThread(new dg.u1((Object) p11Var, i10, arrayList, (Serializable) arrayList2, 28));
+            AndroidUtilities.runOnUIThread(new dg.u1((Object) o11Var, i10, arrayList, (Serializable) arrayList2, 28));
         } catch (Exception e6) {
             FileLog.e(e6);
         }
@@ -276,7 +276,7 @@ public final /* synthetic */ class gy implements Runnable {
                 }
                 u30Var.h = false;
                 TLRPC.Chat chat = v30Var.S;
-                ax0 ax0Var = v30Var.s;
+                zw0 zw0Var = v30Var.s;
                 if (!ChatObject.isChannel(chat)) {
                     a0.h hVar = k1Var.h;
                     ArrayList arrayList3 = k1Var.g;
@@ -294,15 +294,15 @@ public final /* synthetic */ class gy implements Runnable {
                     k1Var.i();
                 }
                 int i20 = u30Var.f - 1;
-                boolean z4 = ax0Var.getVisibility() == 0;
+                boolean z4 = zw0Var.getVisibility() == 0;
                 u30Var.l();
                 if (u30Var.f > i20) {
                     v30Var.I(i20);
                 }
-                if (u30Var.h || k1Var.e() || !v30Var.d.S0()) {
+                if (u30Var.h || k1Var.e() || !v30Var.d.R0()) {
                     return;
                 }
-                ax0Var.e(false, z4);
+                zw0Var.e(false, z4);
                 return;
             case 3:
                 i40 i40Var = (i40) this.c;
@@ -476,23 +476,23 @@ public final /* synthetic */ class gy implements Runnable {
                 z50Var2.K = null;
                 return;
             case 6:
-                qj0 qj0Var = (qj0) this.c;
+                pj0 pj0Var = (pj0) this.c;
                 int i27 = this.b;
                 TLRPC.TL_messages_messageReactionsList tL_messages_messageReactionsList = (TLRPC.TL_messages_messageReactionsList) this.d;
-                int i28 = qj0Var.f;
-                TextView textView = qj0Var.b;
-                MessageObject messageObject2 = qj0Var.s;
-                ImageView imageView = qj0Var.d;
-                p9 p9Var = qj0Var.e;
-                ArrayList arrayList5 = qj0Var.r;
-                ArrayList arrayList6 = qj0Var.n;
+                int i28 = pj0Var.f;
+                TextView textView = pj0Var.b;
+                MessageObject messageObject2 = pj0Var.s;
+                ImageView imageView = pj0Var.d;
+                p9 p9Var = pj0Var.e;
+                ArrayList arrayList5 = pj0Var.r;
+                ArrayList arrayList6 = pj0Var.n;
                 if (arrayList6.isEmpty() || arrayList6.size() < i27) {
                     formatPluralString = LocaleController.formatPluralString("ReactionsCount", i27, new Object[0]);
                 } else {
                     formatPluralString = String.format(LocaleController.getPluralString("Reacted", i27), i27 == arrayList6.size() ? String.valueOf(i27) : i27 + "/" + arrayList6.size());
                 }
-                if (qj0Var.getMeasuredWidth() > 0) {
-                    qj0Var.v = qj0Var.getMeasuredWidth();
+                if (pj0Var.getMeasuredWidth() > 0) {
+                    pj0Var.v = pj0Var.getMeasuredWidth();
                 }
                 textView.setText(formatPluralString);
                 TLRPC.TL_messageReactions tL_messageReactions = messageObject2.messageOwner.reactions;
@@ -518,13 +518,13 @@ public final /* synthetic */ class gy implements Runnable {
                                     while (true) {
                                         if (i30 < arrayList.size()) {
                                             int i31 = i30;
-                                            if (((pj0) arrayList.get(i30)).b == user2.id) {
+                                            if (((oj0) arrayList.get(i30)).b == user2.id) {
                                                 break;
                                             } else {
                                                 i30 = i31 + 1;
                                             }
                                         } else {
-                                            arrayList.add(new pj0(0, user2));
+                                            arrayList.add(new oj0(0, user2));
                                         }
                                     }
                                 }
@@ -542,8 +542,8 @@ public final /* synthetic */ class gy implements Runnable {
                                     int i32 = 0;
                                     while (true) {
                                         if (i32 >= arrayList.size()) {
-                                            arrayList.add(new pj0(0, chat3));
-                                        } else if (((pj0) arrayList.get(i32)).b == (-chat3.id)) {
+                                            arrayList.add(new oj0(0, chat3));
+                                        } else if (((oj0) arrayList.get(i32)).b == (-chat3.id)) {
                                             break;
                                         } else {
                                             i32++;
@@ -551,12 +551,12 @@ public final /* synthetic */ class gy implements Runnable {
                                     }
                                 }
                             }
-                            u00 u00Var = qj0Var.a;
-                            d9 d9Var = qj0Var.c;
-                            qj0Var.setEnabled(arrayList.size() <= 0);
+                            u00 u00Var = pj0Var.a;
+                            d9 d9Var = pj0Var.c;
+                            pj0Var.setEnabled(arrayList.size() <= 0);
                             for (i12 = 0; i12 < 3; i12++) {
                                 if (i12 < arrayList.size()) {
-                                    d9Var.b(i12, ((pj0) arrayList.get(i12)).a, i28);
+                                    d9Var.b(i12, ((oj0) arrayList.get(i12)).a, i28);
                                 } else {
                                     d9Var.b(i12, null, i28);
                                 }
@@ -605,9 +605,9 @@ public final /* synthetic */ class gy implements Runnable {
                 i11 = 0;
                 while (i11 < size2) {
                 }
-                u00 u00Var2 = qj0Var.a;
-                d9 d9Var2 = qj0Var.c;
-                qj0Var.setEnabled(arrayList.size() <= 0);
+                u00 u00Var2 = pj0Var.a;
+                d9 d9Var2 = pj0Var.c;
+                pj0Var.setEnabled(arrayList.size() <= 0);
                 while (i12 < 3) {
                 }
                 size3 = arrayList.size();
@@ -623,74 +623,74 @@ public final /* synthetic */ class gy implements Runnable {
                 u00Var2.animate().alpha(0.0f).setDuration(220L).setListener(new x20(u00Var2)).start();
                 return;
             case 7:
-                iq0 iq0Var = (iq0) this.c;
+                hq0 hq0Var = (hq0) this.c;
                 int i33 = this.b;
                 ArrayList arrayList9 = (ArrayList) this.d;
-                gq0 gq0Var = iq0Var.e;
-                mq0 mq0Var = iq0Var.H;
-                if (i33 != iq0Var.r) {
+                fq0 fq0Var = hq0Var.e;
+                lq0 lq0Var = hq0Var.H;
+                if (i33 != hq0Var.r) {
                     return;
                 }
-                iq0Var.h();
-                iq0Var.F = false;
-                iq0Var.v = i33;
-                if (iq0Var.s != i33) {
-                    gq0Var.b();
+                hq0Var.h();
+                hq0Var.F = false;
+                hq0Var.v = i33;
+                if (hq0Var.s != i33) {
+                    fq0Var.b();
                 }
-                np0 np0Var = mq0Var.C;
-                iq0 iq0Var2 = mq0Var.J;
-                if (np0Var.getAdapter() != iq0Var2) {
-                    mq0.F0(mq0Var);
-                    iq0Var2.l();
+                mp0 mp0Var = lq0Var.C;
+                hq0 hq0Var2 = lq0Var.J;
+                if (mp0Var.getAdapter() != hq0Var2) {
+                    lq0.F0(lq0Var);
+                    hq0Var2.l();
                 }
                 for (int i34 = 0; i34 < arrayList9.size(); i34++) {
-                    TLObject tLObject2 = ((aq0) arrayList9.get(i34)).b;
+                    TLObject tLObject2 = ((zp0) arrayList9.get(i34)).b;
                     if (tLObject2 instanceof TLRPC.User) {
-                        i14 = ((org.telegram.ui.ActionBar.h3) mq0Var).currentAccount;
+                        i14 = ((org.telegram.ui.ActionBar.h3) lq0Var).currentAccount;
                         MessagesController.getInstance(i14).putUser((TLRPC.User) tLObject2, true);
                     } else if (tLObject2 instanceof TLRPC.Chat) {
-                        i13 = ((org.telegram.ui.ActionBar.h3) mq0Var).currentAccount;
+                        i13 = ((org.telegram.ui.ActionBar.h3) lq0Var).currentAccount;
                         MessagesController.getInstance(i13).putChat((TLRPC.Chat) tLObject2, true);
                     }
                 }
-                boolean z10 = !iq0Var.d.isEmpty() && arrayList9.isEmpty();
-                if (iq0Var.d.isEmpty()) {
+                boolean z10 = !hq0Var.d.isEmpty() && arrayList9.isEmpty();
+                if (hq0Var.d.isEmpty()) {
                     arrayList9.isEmpty();
                 }
                 if (z10) {
-                    mq0.F0(mq0Var);
+                    lq0.F0(lq0Var);
                 }
-                iq0Var.d = arrayList9;
-                gq0Var.f(arrayList9, null);
-                int i35 = iq0Var.G;
-                if (iq0Var.h() != 0 || gq0Var.e() || iq0Var.F) {
-                    mq0Var.u0.b(i35);
+                hq0Var.d = arrayList9;
+                fq0Var.f(arrayList9, null);
+                int i35 = hq0Var.G;
+                if (hq0Var.h() != 0 || fq0Var.e() || hq0Var.F) {
+                    lq0Var.u0.b(i35);
                 } else {
-                    mq0Var.N.e(false, true);
+                    lq0Var.N.e(false, true);
                 }
-                iq0Var.l();
-                mq0Var.K0(true);
+                hq0Var.l();
+                lq0Var.K0(true);
                 return;
             case 8:
-                r0.getStoriesController().c(this.b, ((zu0) this.c).g1, (TL_stories.StoryItem) this.d);
+                r0.getStoriesController().c(this.b, ((yu0) this.c).g1, (TL_stories.StoryItem) this.d);
                 return;
             case 9:
-                zu0 zu0Var = (zu0) this.c;
+                yu0 yu0Var = (yu0) this.c;
                 int i36 = this.b;
                 q70 q70Var = (q70) this.d;
-                zu0Var.d1(i36);
+                yu0Var.d1(i36);
                 q70Var.u();
                 return;
             case 10:
-                zu0 zu0Var2 = (zu0) this.c;
-                zu0Var2.S(this.b, (tl0) this.d, false);
-                zu0Var2.G1 = null;
+                yu0 yu0Var2 = (yu0) this.c;
+                yu0Var2.S(this.b, (sl0) this.d, false);
+                yu0Var2.G1 = null;
                 return;
             case 11:
-                ct0 ct0Var = (ct0) this.c;
+                bt0 bt0Var = (bt0) this.c;
                 int i37 = this.b;
                 q70 q70Var2 = (q70) this.d;
-                ct0Var.d.c1(i37, false);
+                bt0Var.d.c1(i37, false);
                 q70Var2.u();
                 return;
             case 12:
@@ -716,21 +716,21 @@ public final /* synthetic */ class gy implements Runnable {
                 }
                 return;
             case 13:
-                ku0 ku0Var = (ku0) this.c;
+                ju0 ju0Var = (ju0) this.c;
                 int i39 = this.b;
                 TLRPC.TL_messages_search tL_messages_search = (TLRPC.TL_messages_search) this.d;
-                if (i39 != ku0Var.B) {
+                if (i39 != ju0Var.B) {
                     return;
                 }
-                ku0Var.y = ConnectionsManager.getInstance(ku0Var.d).sendRequest(tL_messages_search, new mh.r1(ku0Var, i39, i15));
+                ju0Var.y = ConnectionsManager.getInstance(ju0Var.d).sendRequest(tL_messages_search, new mh.r1(ju0Var, i39, i15));
                 return;
             case 14:
-                ku0 ku0Var2 = (ku0) this.c;
+                ju0 ju0Var2 = (ju0) this.c;
                 TLObject tLObject3 = (TLObject) this.d;
                 int i40 = this.b;
-                ArrayList arrayList10 = ku0Var2.h;
-                int i41 = ku0Var2.d;
-                if ((tLObject3 instanceof TLRPC.messages_Messages) && i40 == ku0Var2.B) {
+                ArrayList arrayList10 = ju0Var2.h;
+                int i41 = ju0Var2.d;
+                if ((tLObject3 instanceof TLRPC.messages_Messages) && i40 == ju0Var2.B) {
                     TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject3;
                     MessagesController.getInstance(i41).putUsers(messages_messages.users, false);
                     MessagesController.getInstance(i41).putChats(messages_messages.chats, false);
@@ -740,35 +740,35 @@ public final /* synthetic */ class gy implements Runnable {
                         if (messageObject3.hasValidGroupId()) {
                             messageObject3.isPrimaryGroupMessage = true;
                         }
-                        messageObject3.setQuery(ku0Var2.w);
+                        messageObject3.setQuery(ju0Var2.w);
                         arrayList10.add(messageObject3);
                     }
-                    ku0Var2.v = messages_messages.count;
+                    ju0Var2.v = messages_messages.count;
                     if (messages_messages instanceof TLRPC.TL_messages_messagesSlice) {
-                        ku0Var2.s = arrayList10.size() >= messages_messages.count;
+                        ju0Var2.s = arrayList10.size() >= messages_messages.count;
                     } else if (messages_messages instanceof TLRPC.TL_messages_messages) {
-                        ku0Var2.s = true;
+                        ju0Var2.s = true;
                     }
-                    ku0Var2.G(false);
-                    ku0Var2.r = false;
-                    ku0Var2.y = -1;
+                    ju0Var2.G(false);
+                    ju0Var2.r = false;
+                    ju0Var2.y = -1;
                     return;
                 }
                 return;
             case 15:
-                zv0 zv0Var = (zv0) this.c;
+                yv0 yv0Var = (yv0) this.c;
                 int i43 = this.b;
                 org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.d;
-                zv0Var.V0 = false;
-                if (!zv0Var.S0 && zv0Var.T0) {
-                    zv0Var.A(true);
+                yv0Var.V0 = false;
+                if (!yv0Var.S0 && yv0Var.T0) {
+                    yv0Var.A(true);
                     return;
                 }
-                zv0Var.k0 = zv0Var.c1[0];
-                zv0Var.j();
+                yv0Var.k0 = yv0Var.c1[0];
+                yv0Var.j();
                 DownloadController.getInstance(i43).removeLoadingFileObserver(t1Var);
-                zv0Var.G();
-                zv0Var.v();
+                yv0Var.G();
+                yv0Var.v();
                 return;
             case 16:
                 int i44 = this.b;
@@ -853,10 +853,10 @@ public final /* synthetic */ class gy implements Runnable {
                 }
                 break;
             case 18:
-                kx0 kx0Var = (kx0) this.c;
+                jx0 jx0Var = (jx0) this.c;
                 a0.h hVar3 = (a0.h) this.d;
                 int i46 = this.b;
-                org.telegram.ui.ActionBar.p2 p2Var3 = kx0Var.Y0.I;
+                org.telegram.ui.ActionBar.p2 p2Var3 = jx0Var.Y0.I;
                 if (p2Var3 instanceof org.telegram.ui.xn) {
                     org.telegram.ui.xn xnVar2 = (org.telegram.ui.xn) p2Var3;
                     xnVar2.Q7();
@@ -876,26 +876,26 @@ public final /* synthetic */ class gy implements Runnable {
                 }
                 return;
             case 19:
-                ry0 ry0Var = (ry0) this.c;
+                qy0 qy0Var = (qy0) this.c;
                 String str3 = (String) this.d;
                 int i47 = this.b;
                 ArrayList<MediaDataController.KeywordResult> arrayList11 = new ArrayList<>(1);
                 arrayList11.add(new MediaDataController.KeywordResult(str3, null));
-                MediaDataController.getInstance(ry0Var.a).fillWithAnimatedEmoji(arrayList11, 15, false, false, false, new dg.u1(ry0Var, i47, str3, arrayList11, 27));
+                MediaDataController.getInstance(qy0Var.a).fillWithAnimatedEmoji(arrayList11, 15, false, false, false, new dg.u1(qy0Var, i47, str3, arrayList11, 27));
                 return;
             case 20:
                 a();
                 return;
             case 21:
-                AndroidUtilities.runOnUIThread(new dg.u1((x11) this.c, (lp) this.d, this.b, SvgHelper.getBitmap(R.raw.default_pattern, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(140.0f), -16777216, AndroidUtilities.density), 29));
+                AndroidUtilities.runOnUIThread(new dg.u1((w11) this.c, (lp) this.d, this.b, SvgHelper.getBitmap(R.raw.default_pattern, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(140.0f), -16777216, AndroidUtilities.density), 29));
                 return;
             case 22:
                 MessageObject messageObject4 = (MessageObject) this.c;
                 org.telegram.ui.Cells.k1 k1Var2 = (org.telegram.ui.Cells.k1) this.d;
                 int i48 = this.b;
-                HashMap hashMap = e31.P;
+                HashMap hashMap = d31.P;
                 if (hashMap != null) {
-                    hashMap.remove(Integer.valueOf(e31.o(messageObject4)));
+                    hashMap.remove(Integer.valueOf(d31.o(messageObject4)));
                 }
                 if (k1Var2 != null) {
                     k1Var2.f0(3);

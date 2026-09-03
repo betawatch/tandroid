@@ -11,12 +11,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.i2;
 import org.telegram.ui.Cells.n4;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.rl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public class t extends sl0 {
+public class t extends rl0 {
     public final Context c;
     public final int d;
     public final boolean e;
@@ -31,7 +31,7 @@ public class t extends sl0 {
         this.h = g6Var;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return true;
     }
@@ -83,6 +83,6 @@ public class t extends sl0 {
             NotificationCenter.getInstance(n4Var.h).listen(n4Var, NotificationCenter.userIsPremiumBlockedUpadted, new i2(n4Var, 1));
         }
         n4Var.setLayoutParams(new f2.x0(AndroidUtilities.dp(80.0f), AndroidUtilities.dp(86.0f)));
-        return new fl0(n4Var);
+        return new el0(n4Var);
     }
 }

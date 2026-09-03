@@ -44,8 +44,8 @@ import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.ga;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.o71;
-import org.telegram.ui.Components.ox0;
+import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.nx0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qy;
 import org.telegram.ui.Components.ty;
@@ -58,15 +58,15 @@ import org.telegram.ui.fg;
 import org.telegram.ui.ke;
 import org.telegram.ui.lo0;
 import org.telegram.ui.py;
-import org.telegram.ui.qg1;
 import org.telegram.ui.qt;
+import org.telegram.ui.vg1;
 import org.telegram.ui.xn;
-import qh.ca;
-import qh.s6;
+import qh.ba;
+import qh.r6;
 import wh.d4;
 import wh.o3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j implements Runnable {
     public final /* synthetic */ int a;
@@ -242,7 +242,7 @@ public final /* synthetic */ class j implements Runnable {
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj4;
                 TLRPC.Document document = (TLRPC.Document) obj3;
                 xn xnVar2 = (xn) obj2;
-                File w10 = s6.w(p2Var2.getCurrentAccount(), "webp");
+                File w10 = r6.w(p2Var2.getCurrentAccount(), "webp");
                 int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
                 float f10 = 512;
                 float f11 = devicePerformanceClass != 0 ? devicePerformanceClass != 2 ? 2560 : 3840 : 1280;
@@ -304,7 +304,7 @@ public final /* synthetic */ class j implements Runnable {
                     photoEntry.averageDuration = (long) (MessageObject.getDocumentDuration(document) * 1000.0d);
                 }
                 PhotoViewer.t1().K2(p2Var2.getParentActivity(), null, p2Var2.getResourceProvider());
-                PhotoViewer.t1().f2(arrayList, 0, 11, false, new ox0(), xnVar2);
+                PhotoViewer.t1().f2(arrayList, 0, 11, false, new nx0(), xnVar2);
                 PhotoViewer.t1().Y0(document, z10 ? document : null, true, null);
                 qt.q().T = z10 ? tL_messages_stickerSet : null;
                 break;
@@ -416,45 +416,45 @@ public final /* synthetic */ class j implements Runnable {
                 lo0.i0((lo0) obj4, (TLRPC.TL_error) obj2, z10, (TLObject) obj5, (String) obj3);
                 break;
             case 19:
-                qg1.U((qg1) obj4, (TLObject) obj2, z10, (String) obj3, (TL_account.passwordInputSettings) obj5);
+                vg1.U((vg1) obj4, (TLObject) obj2, z10, (String) obj3, (TL_account.passwordInputSettings) obj5);
                 break;
             case 20:
-                qh.g1 g1Var = (qh.g1) obj4;
+                qh.f1 f1Var = (qh.f1) obj4;
                 TLObject tLObject5 = (TLObject) obj2;
                 TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults = (TLRPC.TL_messages_getInlineBotResults) obj5;
                 String str6 = (String) obj3;
-                qh.i1 i1Var = g1Var.s;
-                ArrayList arrayList5 = i1Var.n;
-                if (g1Var.r) {
+                qh.h1 h1Var = f1Var.s;
+                ArrayList arrayList5 = h1Var.n;
+                if (f1Var.r) {
                     if (!(tLObject5 instanceof TLRPC.messages_BotResults)) {
-                        i17 = ((h3) i1Var.r).currentAccount;
-                        g1Var.d = ConnectionsManager.getInstance(i17).sendRequest(tL_messages_getInlineBotResults, new k7(g1Var, str6, z10, 7));
+                        i17 = ((h3) h1Var.r).currentAccount;
+                        f1Var.d = ConnectionsManager.getInstance(i17).sendRequest(tL_messages_getInlineBotResults, new k7(f1Var, str6, z10, 7));
                         break;
                     } else {
                         TLRPC.messages_BotResults messages_botresults = (TLRPC.messages_BotResults) tLObject5;
-                        g1Var.h = messages_botresults.next_offset;
+                        f1Var.h = messages_botresults.next_offset;
                         if (z10) {
                             arrayList5.clear();
                         }
                         arrayList5.size();
                         arrayList5.addAll(messages_botresults.results);
-                        g1Var.l();
-                        i1Var.d.c(false);
-                        g1Var.r = false;
+                        f1Var.l();
+                        h1Var.d.c(false);
+                        f1Var.r = false;
                         break;
                     }
                 }
                 break;
             case 21:
-                ca caVar = (ca) obj4;
+                ba baVar = (ba) obj4;
                 File file = (File) obj2;
-                s6 s6Var = (s6) obj5;
+                r6 r6Var = (r6) obj5;
                 try {
                     ((Bitmap) obj3).compress(Bitmap.CompressFormat.JPEG, z10 ? 95 : 99, new FileOutputStream(file));
                 } catch (Exception e10) {
                     FileLog.e(e10);
                 }
-                AndroidUtilities.runOnUIThread(new o71(caVar, s6Var, file, 19));
+                AndroidUtilities.runOnUIThread(new n71(baVar, r6Var, file, 19));
                 break;
             case 22:
                 vf.t tVar = (vf.t) obj4;
@@ -555,9 +555,9 @@ public final /* synthetic */ class j implements Runnable {
         this.f = updatepasswordsettings;
     }
 
-    public /* synthetic */ j(qg1 qg1Var, TLObject tLObject, boolean z4, String str, TL_account.passwordInputSettings passwordinputsettings) {
+    public /* synthetic */ j(vg1 vg1Var, TLObject tLObject, boolean z4, String str, TL_account.passwordInputSettings passwordinputsettings) {
         this.a = 19;
-        this.c = qg1Var;
+        this.c = vg1Var;
         this.e = tLObject;
         this.b = z4;
         this.d = str;

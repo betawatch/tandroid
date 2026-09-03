@@ -5,11 +5,11 @@ import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.ui.Components.fc0;
-import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.pv0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final class p0 extends qv0 {
+public final class p0 extends pv0 {
     public final /* synthetic */ u0 t0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,17 +18,17 @@ public final class p0 extends qv0 {
         this.t0 = u0Var;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.pv0
     public final boolean P() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.pv0
     public final boolean Q() {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.pv0
     public final void U(Drawable drawable) {
         if (drawable instanceof fc0) {
             ((fc0) drawable).p();
@@ -51,13 +51,13 @@ public final class p0 extends qv0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.pv0
     public final Drawable getNewDrawable() {
         Drawable drawable = this.t0.y;
         return drawable != null ? drawable : super.getNewDrawable();
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         super.onLayout(z4, i10, i11, i12, i13);
         this.t0.o();

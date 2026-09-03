@@ -21,15 +21,15 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.qv0;
-import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class w8 extends qv0 {
+public final class w8 extends pv0 {
     public final RectF A0;
     public final RectF B0;
     public final RectF C0;
@@ -63,7 +63,7 @@ public final class w8 extends qv0 {
     /* JADX WARN: Removed duplicated region for block: B:224:0x0769  */
     /* JADX WARN: Removed duplicated region for block: B:47:0x07c6  */
     /* JADX WARN: Removed duplicated region for block: B:69:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -100,7 +100,7 @@ public final class w8 extends qv0 {
         i7 i7Var3;
         int i10;
         f4 t6;
-        mj0 mj0Var;
+        lj0 lj0Var;
         i9 i9Var = this.F0;
         RectF rectF5 = i9Var.Q;
         f9 f9Var = i9Var.p0;
@@ -438,13 +438,13 @@ public final class w8 extends qv0 {
                             i9Var.d = false;
                             i9.u1 = true;
                             i9Var.Y = i9Var.T;
-                            if (f9Var.d != null && (t6 = i9Var.t()) != null && (mj0Var = t6.l1.d) != null) {
-                                mj0 mj0Var2 = f9Var.d;
-                                mj0Var.c = mj0Var2.c;
-                                mj0Var.f = mj0Var2.f;
-                                mj0Var.b = mj0Var2.b;
-                                mj0Var.a = System.currentTimeMillis();
-                                mj0Var.c();
+                            if (f9Var.d != null && (t6 = i9Var.t()) != null && (lj0Var = t6.l1.d) != null) {
+                                lj0 lj0Var2 = f9Var.d;
+                                lj0Var.c = lj0Var2.c;
+                                lj0Var.f = lj0Var2.f;
+                                lj0Var.b = lj0Var2.b;
+                                lj0Var.a = System.currentTimeMillis();
+                                lj0Var.c();
                             }
                             i9Var.B = true;
                             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
@@ -554,7 +554,7 @@ public final class w8 extends qv0 {
         boolean z10;
         y8 y8Var;
         int i10;
-        rk0 rk0Var;
+        qk0 qk0Var;
         i9 i9Var = this.F0;
         float[] fArr = i9Var.l0;
         f4 currentPeerView = i9Var.k0.getCurrentPeerView();
@@ -572,7 +572,7 @@ public final class w8 extends qv0 {
         }
         float f10 = 0.0f;
         int i11 = 0;
-        if (i9Var.m1 && currentPeerView != null && (rk0Var = currentPeerView.o3) != null) {
+        if (i9Var.m1 && currentPeerView != null && (qk0Var = currentPeerView.o3) != null) {
             float f11 = 0.0f;
             for (View view = currentPeerView; view != null && (view.getParent() instanceof View); view = (View) view.getParent()) {
                 f10 += view.getX();
@@ -584,14 +584,14 @@ public final class w8 extends qv0 {
                 return true;
             }
             Rect rect = AndroidUtilities.rectTmp2;
-            rk0Var.getHitRect(rect);
+            qk0Var.getHitRect(rect);
             rect.offset((int) f10, (int) f11);
             if (motionEvent.getAction() == 0 && !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                 currentPeerView.b1(false);
                 return true;
             }
             motionEvent.offsetLocation(-rect.left, -rect.top);
-            rk0Var.dispatchTouchEvent(motionEvent);
+            qk0Var.dispatchTouchEvent(motionEvent);
             return true;
         }
         if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
@@ -622,12 +622,12 @@ public final class w8 extends qv0 {
                 eh.d dVar = currentPeerView.v0;
                 n8 n8Var = currentPeerView.z0;
                 j3 j3Var = currentPeerView.Z0;
-                qh.f3 f3Var = currentPeerView.C0;
-                if (f3Var != null && f3Var.S && n8Var != null && !f3Var.o0.contains(motionEvent.getX() - (currentPeerView.C0.getX() + (j3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.C0.getY() + (j3Var.getY() + currentPeerView.getY()))) && !currentPeerView.H0(motionEvent, n8Var)) {
+                qh.e3 e3Var = currentPeerView.C0;
+                if (e3Var != null && e3Var.S && n8Var != null && !e3Var.o0.contains(motionEvent.getX() - (currentPeerView.C0.getX() + (j3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.C0.getY() + (j3Var.getY() + currentPeerView.getY()))) && !currentPeerView.H0(motionEvent, n8Var)) {
                     currentPeerView.C0.e(true);
                 }
-                qh.f3 f3Var2 = currentPeerView.D0;
-                if (f3Var2 != null && f3Var2.S && dVar != null && !f3Var2.o0.contains(motionEvent.getX() - (currentPeerView.D0.getX() + (j3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.D0.getY() + (j3Var.getY() + currentPeerView.getY()))) && !currentPeerView.H0(motionEvent, dVar)) {
+                qh.e3 e3Var2 = currentPeerView.D0;
+                if (e3Var2 != null && e3Var2.S && dVar != null && !e3Var2.o0.contains(motionEvent.getX() - (currentPeerView.D0.getX() + (j3Var.getX() + currentPeerView.getX())), motionEvent.getY() - (currentPeerView.D0.getY() + (j3Var.getY() + currentPeerView.getY()))) && !currentPeerView.H0(motionEvent, dVar)) {
                     currentPeerView.D0.e(true);
                 }
             }
@@ -712,7 +712,7 @@ public final class w8 extends qv0 {
         return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         i9 i9Var = this.F0;
@@ -728,7 +728,7 @@ public final class w8 extends qv0 {
         NotificationCenter.getInstance(i9Var.h).addObserver(i9Var, NotificationCenter.storyDeleted);
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         ic.h(this);

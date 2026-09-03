@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class xb0 {
     public final LaunchActivity a;
@@ -257,7 +257,7 @@ public final class xb0 {
     /* JADX WARN: Type inference failed for: r15v23, types: [int] */
     /* JADX WARN: Type inference failed for: r15v28 */
     /* JADX WARN: Type inference failed for: r15v55 */
-    /* JADX WARN: Type inference failed for: r2v25, types: [qh.e7, qh.v8] */
+    /* JADX WARN: Type inference failed for: r2v25, types: [qh.d7, qh.u8] */
     public final boolean e(Uri uri) {
         String scheme;
         String schemeSpecificPart;
@@ -393,7 +393,7 @@ public final class xb0 {
                                 if ("live".equalsIgnoreCase(str5)) {
                                     r15 = -1;
                                 }
-                                qh.ca E = qh.ca.E(launchActivity, this.b);
+                                qh.ba E = qh.ba.E(launchActivity, this.b);
                                 if (E.L1 != r15) {
                                     E.L1 = r15;
                                     ?? r22 = E.N0;
@@ -499,12 +499,12 @@ public final class xb0 {
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:603:0x0a74  */
-    /* JADX WARN: Removed duplicated region for block: B:606:0x0a81  */
-    /* JADX WARN: Removed duplicated region for block: B:609:0x0a8e  */
-    /* JADX WARN: Removed duplicated region for block: B:612:0x0a99  */
-    /* JADX WARN: Removed duplicated region for block: B:615:0x0aa6  */
-    /* JADX WARN: Removed duplicated region for block: B:618:0x0ab3  */
+    /* JADX WARN: Removed duplicated region for block: B:603:0x0a76  */
+    /* JADX WARN: Removed duplicated region for block: B:606:0x0a83  */
+    /* JADX WARN: Removed duplicated region for block: B:609:0x0a90  */
+    /* JADX WARN: Removed duplicated region for block: B:612:0x0a9b  */
+    /* JADX WARN: Removed duplicated region for block: B:615:0x0aa8  */
+    /* JADX WARN: Removed duplicated region for block: B:618:0x0ab5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -520,7 +520,7 @@ public final class xb0 {
             return false;
         }
         if (list.isEmpty()) {
-            m(new p81());
+            m(new v81());
             return true;
         }
         String str = (String) list.get(0);
@@ -549,7 +549,7 @@ public final class xb0 {
             FiltersSetupActivity filtersSetupActivity = new FiltersSetupActivity();
             m(new FiltersSetupActivity());
             if ("create".equalsIgnoreCase(str2)) {
-                AndroidUtilities.runOnUIThread(new v10(this, filtersSetupActivity), 300L);
+                AndroidUtilities.runOnUIThread(new z10(23, this, filtersSetupActivity), 300L);
             }
             if ("show-tags".equalsIgnoreCase(str2)) {
                 o("showTagsRow");
@@ -562,7 +562,7 @@ public final class xb0 {
             }
             if ("language".equalsIgnoreCase(str)) {
                 if ("do-not-translate".equalsIgnoreCase(str2)) {
-                    m(new p31());
+                    m(new t31());
                     return true;
                 }
                 m(new LanguageSelectActivity());
@@ -629,7 +629,7 @@ public final class xb0 {
                 }
                 if ("qr-code".equalsIgnoreCase(str)) {
                     if ("scan".equalsIgnoreCase(str2) && (U = LaunchActivity.U()) != null) {
-                        o21.f0(U);
+                        u21.f0(U);
                         return true;
                     }
                     if ("share".equalsIgnoreCase(str2)) {
@@ -640,7 +640,7 @@ public final class xb0 {
                     }
                     Bundle bundle2 = new Bundle();
                     bundle2.putLong("user_id", d().getClientUserId());
-                    m(new o21(bundle2));
+                    m(new u21(bundle2));
                     return true;
                 }
                 if (!"chat".equalsIgnoreCase(str) || !"browser".equalsIgnoreCase(str2)) {
@@ -749,7 +749,7 @@ public final class xb0 {
                                 return true;
                             }
                             if (!TextUtils.isEmpty(str7) && "blocked".equalsIgnoreCase(str2)) {
-                                m(new ox0());
+                                m(new tx0());
                                 return true;
                             }
                             if (!TextUtils.isEmpty(str7) && "active-websites".equalsIgnoreCase(str2)) {
@@ -1097,7 +1097,7 @@ public final class xb0 {
                                 }
                             } else {
                                 if (!TextUtils.isEmpty(str7) && ("your-color".equalsIgnoreCase(str2) || "color".equalsIgnoreCase(str2))) {
-                                    m(new ip0());
+                                    m(new np0());
                                     return true;
                                 }
                                 if (TextUtils.isEmpty(str7) || !"stickers-and-emoji".equalsIgnoreCase(str2)) {
@@ -1233,7 +1233,7 @@ public final class xb0 {
                                     af.g.s(launchActivity, LocaleController.getString(R.string.PrivacyPolicyUrl));
                                     return true;
                                 }
-                                m(new p81());
+                                m(new v81());
                                 return true;
                             }
                             fc0 fc0Var = new fc0();
@@ -1267,7 +1267,7 @@ public final class xb0 {
                                         break;
                                     }
                                     if (((zb0) arrayList.get(i14)).f == 1) {
-                                        fc0Var.b.e1(new hg.m2(fc0Var, i14, 12), 700, true);
+                                        fc0Var.b.d1(new hg.m2(fc0Var, i14, 12), 700, true);
                                         return true;
                                     }
                                     i14++;
@@ -1311,7 +1311,7 @@ public final class xb0 {
                         o("browserRow");
                         return true;
                     }
-                    m(new org.telegram.ui.web.y1(null));
+                    m(new org.telegram.ui.web.x1(null));
                     if ("enable-browser".equalsIgnoreCase(str3)) {
                         o("enableRow");
                     }

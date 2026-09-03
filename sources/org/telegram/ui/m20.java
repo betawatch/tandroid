@@ -20,7 +20,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class m20 extends org.telegram.ui.ActionBar.p2 {
     public int B;
@@ -36,7 +36,7 @@ public abstract class m20 extends org.telegram.ui.ActionBar.p2 {
     public int L;
     public final j20 a;
     public final j20 b;
-    public org.telegram.ui.Components.tl0 c;
+    public org.telegram.ui.Components.sl0 c;
     public Drawable d;
     public fg.p2 e;
     public boolean f;
@@ -82,7 +82,7 @@ public abstract class m20 extends org.telegram.ui.ActionBar.p2 {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAddToContainer(false);
-        this.c = new org.telegram.ui.Components.tl0(context, null);
+        this.c = new org.telegram.ui.Components.sl0(context, null);
         if (this.D) {
             this.C = new org.telegram.ui.Components.rz(this.c, (AndroidUtilities.dp(68.0f) + this.F) - AndroidUtilities.dp(16.0f));
         } else {
@@ -95,14 +95,14 @@ public abstract class m20 extends org.telegram.ui.ActionBar.p2 {
         }
         f2.p0 n02 = n0();
         this.c.setAdapter(n02);
-        if (n02 instanceof org.telegram.ui.Components.x51) {
-            org.telegram.ui.Components.tl0 tl0Var = this.c;
+        if (n02 instanceof org.telegram.ui.Components.w51) {
+            org.telegram.ui.Components.sl0 sl0Var = this.c;
             i20 i20Var = new i20(this, 0);
             int dp = AndroidUtilities.dp(12.0f);
             float dp2 = AndroidUtilities.dp(16.0f);
-            org.telegram.ui.Components.tl0 tl0Var2 = this.c;
-            Objects.requireNonNull(tl0Var2);
-            tl0Var.r1(i20Var, dp, dp2, new gu(tl0Var2, 10), true);
+            org.telegram.ui.Components.sl0 sl0Var2 = this.c;
+            Objects.requireNonNull(sl0Var2);
+            sl0Var.q1(i20Var, dp, dp2, new gu(sl0Var2, 10), true);
         } else {
             this.c.setSections(true);
         }
@@ -120,7 +120,7 @@ public abstract class m20 extends org.telegram.ui.ActionBar.p2 {
         this.actionBar.setBackground(null);
         this.actionBar.setCastShadows(false);
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 12));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 12));
         this.actionBar.setForceSkipTouches(true);
         v0();
         return this.fragmentView;
@@ -152,12 +152,12 @@ public abstract class m20 extends org.telegram.ui.ActionBar.p2 {
     }
 
     public final void l0() {
-        org.telegram.ui.Components.tl0 tl0Var = this.c;
-        if (tl0Var == null || this.C == null || this.K < 0) {
+        org.telegram.ui.Components.sl0 sl0Var = this.c;
+        if (sl0Var == null || this.C == null || this.K < 0) {
             return;
         }
         int i10 = this.L;
-        tl0Var.K(0);
+        sl0Var.K(0);
         this.C.h1(this.K, i10);
         this.K = -1;
     }
@@ -169,7 +169,7 @@ public abstract class m20 extends org.telegram.ui.ActionBar.p2 {
         ((TextView) aVar.b).setText(str);
         org.telegram.ui.Components.g90 g90Var = (org.telegram.ui.Components.g90) aVar.c;
         g90Var.setText(charSequence);
-        g90Var.setMaxWidth(qh.f3.a(g90Var.getText(), g90Var.getPaint()));
+        g90Var.setMaxWidth(qh.e3.a(g90Var.getText(), g90Var.getPaint()));
         if (frameLayout != null) {
             frameLayout3.removeAllViews();
             frameLayout3.addView(frameLayout, k7.c6.e(-1, -2, 1));
@@ -236,8 +236,8 @@ public abstract class m20 extends org.telegram.ui.ActionBar.p2 {
     public final void s0() {
         View view;
         int i10;
-        org.telegram.ui.Components.tl0 tl0Var = this.c;
-        if (tl0Var == null || tl0Var.getChildCount() <= 0) {
+        org.telegram.ui.Components.sl0 sl0Var = this.c;
+        if (sl0Var == null || sl0Var.getChildCount() <= 0) {
             return;
         }
         int i11 = 0;

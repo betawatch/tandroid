@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f80 implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -27,11 +27,11 @@ public final /* synthetic */ class f80 implements DialogInterface.OnDismissListe
                 j80.w(j80Var2.getContext(), j80Var2.c, j80Var2.n, this.c);
                 break;
             default:
-                qh.ca caVar = (qh.ca) this.b;
-                caVar.w2 = false;
-                caVar.U0.x(7, true);
+                qh.ba baVar = (qh.ba) this.b;
+                baVar.w2 = false;
+                baVar.U0.x(7, true);
                 if (this.c) {
-                    caVar.q(true);
+                    baVar.q(true);
                     break;
                 }
                 break;

@@ -27,7 +27,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class DataSettingsActivity extends org.telegram.ui.ActionBar.p2 {
     public int B;
@@ -296,9 +296,9 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.p2 {
                 return;
             }
             if (i10 == dataSettingsActivity.K) {
-                q21 q21Var = new q21(null);
-                q21Var.n = new org.telegram.ui.Cells.j3[4];
-                dataSettingsActivity.presentFragment(q21Var);
+                w21 w21Var = new w21(null);
+                w21Var.n = new org.telegram.ui.Cells.j3[4];
+                dataSettingsActivity.presentFragment(w21Var);
                 return;
             }
             if (i10 == dataSettingsActivity.G) {
@@ -474,7 +474,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.p2 {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setTitle(LocaleController.getString(R.string.DataSettings));
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 5));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 5));
         org.telegram.ui.ActionBar.f5 f5Var = this.parentLayout;
         if (f5Var != null && ((ActionBarLayout) f5Var).K0) {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
@@ -486,7 +486,7 @@ public class DataSettingsActivity extends org.telegram.ui.ActionBar.p2 {
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
         mh.d1 d1Var = new mh.d1(this, context, 24);
         this.b = d1Var;
-        d1Var.p1();
+        d1Var.o1();
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setVerticalScrollBarEnabled(false);
         this.b.setLayoutManager(new f2.j0(1, false));

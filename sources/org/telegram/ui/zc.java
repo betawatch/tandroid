@@ -13,16 +13,16 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class zc extends FrameLayout {
     public final int a;
     public final org.telegram.ui.ActionBar.g6 b;
     public final ArrayList c;
-    public final kb1 d;
+    public final qb1 d;
     public final org.telegram.ui.Components.u00 e;
     public boolean f;
-    public final xc h;
+    public final wc h;
     public boolean n;
     public Utilities.Callback r;
     public String s;
@@ -42,20 +42,20 @@ public final class zc extends FrameLayout {
         u00Var.setViewType(14);
         u00Var.setVisibility(0);
         addView(u00Var, k7.c6.d(-1, 104.0f, 8388611, 16.0f, 13.0f, 16.0f, 6.0f));
-        kb1 kb1Var = new kb1(activity, 3, g6Var);
-        this.d = kb1Var;
-        kb1Var.setClipToPadding(false);
-        kb1Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
+        qb1 qb1Var = new qb1(activity, 3, g6Var);
+        this.d = qb1Var;
+        qb1Var.setClipToPadding(false);
+        qb1Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(13.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(6.0f));
         getContext();
         f2.j0 j0Var = new f2.j0();
         j0Var.j1(0);
-        kb1Var.setLayoutManager(j0Var);
-        kb1Var.setAlpha(0.0f);
-        xc xcVar = new xc(this, i10, g6Var);
-        this.h = xcVar;
-        kb1Var.setAdapter(xcVar);
-        addView(kb1Var, k7.c6.c(130.0f, -1));
-        kb1Var.setOnItemClickListener(new j(this, 2));
+        qb1Var.setLayoutManager(j0Var);
+        qb1Var.setAlpha(0.0f);
+        wc wcVar = new wc(this, i10, g6Var);
+        this.h = wcVar;
+        qb1Var.setAdapter(wcVar);
+        addView(qb1Var, k7.c6.c(130.0f, -1));
+        qb1Var.setOnItemClickListener(new j(this, 2));
         ChatThemeController chatThemeController = ChatThemeController.getInstance(i10);
         chatThemeController.preloadAllWallpaperThumbs(true);
         chatThemeController.preloadAllWallpaperThumbs(false);
@@ -91,14 +91,14 @@ public final class zc extends FrameLayout {
             }
             i11++;
         }
-        kb1 kb1Var = this.d;
-        if (i10 >= 0 && !z4 && (kb1Var.getLayoutManager() instanceof f2.j0)) {
-            ((f2.j0) kb1Var.getLayoutManager()).h1(i10, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
+        qb1 qb1Var = this.d;
+        if (i10 >= 0 && !z4 && (qb1Var.getLayoutManager() instanceof f2.j0)) {
+            ((f2.j0) qb1Var.getLayoutManager()).h1(i10, (AndroidUtilities.displaySize.x - AndroidUtilities.dp(83.0f)) / 2);
         }
-        for (int i12 = 0; i12 < kb1Var.getChildCount(); i12++) {
-            View childAt = kb1Var.getChildAt(i12);
-            if ((childAt instanceof org.telegram.ui.Components.x11) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
-                ((org.telegram.ui.Components.x11) childAt).g(((org.telegram.ui.Components.lp) arrayList.get(R)).d, true);
+        for (int i12 = 0; i12 < qb1Var.getChildCount(); i12++) {
+            View childAt = qb1Var.getChildAt(i12);
+            if ((childAt instanceof org.telegram.ui.Components.w11) && (R = RecyclerView.R(childAt)) >= 0 && R < arrayList.size()) {
+                ((org.telegram.ui.Components.w11) childAt).g(((org.telegram.ui.Components.lp) arrayList.get(R)).d, true);
             }
         }
     }
@@ -110,7 +110,7 @@ public final class zc extends FrameLayout {
 
     public void setGalleryWallpaper(TLRPC.WallPaper wallPaper) {
         this.v = wallPaper;
-        AndroidUtilities.forEachViews((RecyclerView) this.d, (h5.d) new vc(this, 1));
+        AndroidUtilities.forEachViews((RecyclerView) this.d, (h5.d) new uc(this, 1));
         if (this.v != null) {
             ArrayList arrayList = this.c;
             if ((arrayList.isEmpty() || ((org.telegram.ui.Components.lp) arrayList.get(0)).a.a) && this.f) {

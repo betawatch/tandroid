@@ -10,9 +10,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class x3 extends org.telegram.ui.Components.qv0 implements org.telegram.ui.ActionBar.m2, org.telegram.ui.ActionBar.v3 {
+public final class x3 extends org.telegram.ui.Components.pv0 implements org.telegram.ui.ActionBar.m2, org.telegram.ui.ActionBar.v3 {
     public final RectF A0;
     public final RectF B0;
     public final Path C0;
@@ -43,7 +43,7 @@ public final class x3 extends org.telegram.ui.Components.qv0 implements org.tele
         this.C0 = new Path();
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         boolean z4;
         float f10;
@@ -150,7 +150,7 @@ public final class x3 extends org.telegram.ui.Components.qv0 implements org.tele
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.pv0
     public /* bridge */ /* synthetic */ int[] getColorKeys() {
         return null;
     }

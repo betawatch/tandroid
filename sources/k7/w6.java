@@ -3,7 +3,7 @@ package k7;
 import java.io.EOFException;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract class w6 {
     public static e4.c a(r3.l lVar, boolean z4) {
@@ -41,7 +41,7 @@ public abstract class w6 {
         return cVar;
     }
 
-    public static q5.g0 b(h5.w wVar) {
+    public static q5.c0 b(h5.w wVar) {
         wVar.G(1);
         int w10 = wVar.w();
         long j10 = wVar.b + w10;
@@ -65,6 +65,6 @@ public abstract class w6 {
             i11++;
         }
         wVar.G((int) (j10 - wVar.b));
-        return new q5.g0(5, jArr, jArr2);
+        return new q5.c0(6, jArr, jArr2);
     }
 }

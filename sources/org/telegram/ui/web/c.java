@@ -2,11 +2,11 @@ package org.telegram.ui.web;
 
 import android.content.Context;
 import n7.qa;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.h61;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class c extends i61 {
+public final class c extends h61 {
     public final /* synthetic */ k c3;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

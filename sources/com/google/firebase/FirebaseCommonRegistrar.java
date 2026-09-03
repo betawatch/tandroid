@@ -13,13 +13,14 @@ import j7.m8;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.Executor;
+import sf.h;
 import w8.g;
 import z9.c;
 import z9.d;
 import z9.e;
 import z9.f;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class FirebaseCommonRegistrar implements ComponentRegistrar {
     public static /* synthetic */ String a(Context context) {
@@ -46,18 +47,17 @@ public class FirebaseCommonRegistrar implements ComponentRegistrar {
         aVar.a(new l(2, 0, d.class));
         aVar.a(new l(1, 1, ja.b.class));
         aVar.a(new l(tVar, 1, 0));
-        int i10 = 23;
-        aVar.g = new sf.g(tVar, i10);
+        aVar.g = new h(tVar, 23);
         arrayList.add(aVar.b());
         arrayList.add(m8.a("fire-android", String.valueOf(Build.VERSION.SDK_INT)));
         arrayList.add(m8.a("fire-core", "20.4.2"));
         arrayList.add(m8.a("device-name", b(Build.PRODUCT)));
         arrayList.add(m8.a("device-model", b(Build.DEVICE)));
         arrayList.add(m8.a("device-brand", b(Build.BRAND)));
-        arrayList.add(m8.b("android-target-sdk", new sg.a(i10)));
-        arrayList.add(m8.b("android-min-sdk", new sg.a(24)));
-        arrayList.add(m8.b("android-platform", new sg.a(25)));
-        arrayList.add(m8.b("android-installer", new sg.a(26)));
+        arrayList.add(m8.b("android-target-sdk", new sg.a(24)));
+        arrayList.add(m8.b("android-min-sdk", new sg.a(25)));
+        arrayList.add(m8.b("android-platform", new sg.a(26)));
+        arrayList.add(m8.b("android-installer", new sg.a(27)));
         try {
             sc.b.b.getClass();
             str = "2.1.20";

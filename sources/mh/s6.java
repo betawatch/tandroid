@@ -20,10 +20,10 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.fn0;
 import org.telegram.ui.og0;
-import org.telegram.ui.v10;
 import org.telegram.ui.xf0;
+import org.telegram.ui.z10;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s6 implements Runnable {
     public final /* synthetic */ int a;
@@ -155,7 +155,7 @@ public final /* synthetic */ class s6 implements Runnable {
                 break;
             case 3:
                 LaunchActivity launchActivity = (LaunchActivity) obj8;
-                v10 v10Var = (v10) obj7;
+                z10 z10Var = (z10) obj7;
                 TLObject tLObject = (TLObject) obj6;
                 TL_account.authorizationForm authorizationform = (TL_account.authorizationForm) obj5;
                 TL_account.getAuthorizationForm getauthorizationform = (TL_account.getAuthorizationForm) obj4;
@@ -164,7 +164,7 @@ public final /* synthetic */ class s6 implements Runnable {
                 String str4 = (String) obj;
                 Pattern pattern = LaunchActivity.y1;
                 try {
-                    v10Var.run();
+                    z10Var.run();
                 } catch (Exception e6) {
                     FileLog.e(e6);
                 }
@@ -178,7 +178,7 @@ public final /* synthetic */ class s6 implements Runnable {
                 LaunchActivity launchActivity2 = (LaunchActivity) obj8;
                 TLObject tLObject2 = (TLObject) obj7;
                 int[] iArr3 = (int[]) obj6;
-                v10 v10Var2 = (v10) obj5;
+                z10 z10Var2 = (z10) obj5;
                 Integer num = (Integer) obj4;
                 Integer num2 = (Integer) obj3;
                 Long l10 = (Long) obj2;
@@ -188,12 +188,12 @@ public final /* synthetic */ class s6 implements Runnable {
                     TLRPC.TL_messages_chats tL_messages_chats = (TLRPC.TL_messages_chats) tLObject2;
                     if (!tL_messages_chats.chats.isEmpty()) {
                         MessagesController.getInstance(launchActivity2.L).putChats(tL_messages_chats.chats, false);
-                        iArr3[0] = launchActivity2.v0(this.b, v10Var2, num, num2, l10, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
+                        iArr3[0] = launchActivity2.v0(this.b, z10Var2, num, num2, l10, num3, null, tL_messages_chats.chats.get(0), null, null, 0, -1);
                         break;
                     }
                 }
                 try {
-                    v10Var2.run();
+                    z10Var2.run();
                 } catch (Exception e10) {
                     FileLog.e(e10);
                 }

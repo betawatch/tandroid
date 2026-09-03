@@ -8,25 +8,25 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class d extends c {
     public final j6 d;
-    public final mj0 e;
+    public final lj0 e;
     public final xd.a f;
     public float h;
 
     public d(t1 t1Var, g6 g6Var) {
         super(g6Var);
-        mj0 mj0Var = new mj0(t1Var);
-        this.e = mj0Var;
-        mj0Var.d(null, true, false);
-        mj0Var.v = 650.0f;
-        mj0Var.e(0.69f, false);
-        mj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
+        lj0 lj0Var = new lj0(t1Var);
+        this.e = lj0Var;
+        lj0Var.d(null, true, false);
+        lj0Var.v = 650.0f;
+        lj0Var.e(0.69f, false);
+        lj0Var.p.setStrokeWidth(AndroidUtilities.dp(1.5f));
         this.f = new xd.a(t1Var, pr.h, 260L);
         j6 j6Var = new j6(true, false, false, false);
         this.d = j6Var;

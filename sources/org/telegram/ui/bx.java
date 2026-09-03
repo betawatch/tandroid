@@ -7,7 +7,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class bx implements org.telegram.ui.Components.eg {
     public final /* synthetic */ py a;
@@ -89,20 +89,20 @@ public final class bx implements org.telegram.ui.Components.eg {
     public final void r1(CharSequence charSequence, boolean z4, boolean z10) {
         py pyVar = this.a;
         AndroidUtilities.runOnUIThread(new ew(pyVar, 12), 100L);
-        org.telegram.ui.Components.rq0 rq0Var = pyVar.D2;
-        if (rq0Var != null) {
+        org.telegram.ui.Components.qq0 qq0Var = pyVar.D2;
+        if (qq0Var != null) {
             if (z4) {
-                if (rq0Var.h) {
-                    rq0Var.e(charSequence, true);
+                if (qq0Var.h) {
+                    qq0Var.e(charSequence, true);
                 }
             } else {
-                org.telegram.ui.Components.l41 l41Var = pyVar.E2;
-                if (l41Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(l41Var);
+                org.telegram.ui.Components.q51 q51Var = pyVar.E2;
+                if (q51Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(q51Var);
                 }
-                org.telegram.ui.Components.l41 l41Var2 = new org.telegram.ui.Components.l41(21, this, charSequence);
-                pyVar.E2 = l41Var2;
-                AndroidUtilities.runOnUIThread(l41Var2, 1000L);
+                org.telegram.ui.Components.q51 q51Var2 = new org.telegram.ui.Components.q51(20, this, charSequence);
+                pyVar.E2 = q51Var2;
+                AndroidUtilities.runOnUIThread(q51Var2, 1000L);
             }
         }
     }

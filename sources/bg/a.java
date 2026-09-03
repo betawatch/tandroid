@@ -28,9 +28,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.ei;
+import org.telegram.ui.Components.ey0;
 import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.fy0;
-import org.telegram.ui.Components.gy0;
 import org.telegram.ui.Components.hu;
 import org.telegram.ui.Components.il;
 import org.telegram.ui.Components.li;
@@ -39,7 +39,7 @@ import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.qh;
 import org.telegram.ui.Components.sg;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.voip.a3;
 import org.telegram.ui.Components.voip.d3;
 import org.telegram.ui.Components.voip.l0;
@@ -50,19 +50,19 @@ import org.telegram.ui.Components.xa;
 import org.telegram.ui.Components.xt;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.cu0;
-import org.telegram.ui.fi1;
-import org.telegram.ui.j21;
+import org.telegram.ui.hu0;
+import org.telegram.ui.li1;
 import org.telegram.ui.o21;
 import org.telegram.ui.oy;
 import org.telegram.ui.po;
 import org.telegram.ui.py;
 import org.telegram.ui.tw;
+import org.telegram.ui.u21;
 import org.telegram.ui.xn;
 import wf.g;
 import wf.n;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -263,15 +263,15 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 15:
-                gy0 gy0Var = (gy0) this.b;
-                fy0[] fy0VarArr = (fy0[]) this.c;
-                gy0Var.getClass();
+                fy0 fy0Var = (fy0) this.b;
+                ey0[] ey0VarArr = (ey0[]) this.c;
+                fy0Var.getClass();
                 float floatValue9 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                while (i11 < fy0VarArr.length) {
-                    gy0Var.c[i11] = (gy0Var.d[i11] * floatValue9) + ((1.0f - floatValue9) * gy0Var.e[i11]);
+                while (i11 < ey0VarArr.length) {
+                    fy0Var.c[i11] = (fy0Var.d[i11] * floatValue9) + ((1.0f - floatValue9) * fy0Var.e[i11]);
                     i11++;
                 }
-                gy0Var.invalidate();
+                fy0Var.invalidate();
                 break;
             case 16:
                 l0 l0Var = (l0) this.b;
@@ -326,36 +326,36 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 if (imageView != null) {
                     imageView.invalidateOutline();
                 }
-                cu0 cu0Var = photoViewer.B2;
-                if (cu0Var != null) {
-                    cu0Var.invalidateOutline();
+                hu0 hu0Var = photoViewer.B2;
+                if (hu0Var != null) {
+                    hu0Var.invalidateOutline();
                     break;
                 }
                 break;
             case 22:
-                o21 o21Var = (o21) this.b;
+                u21 u21Var = (u21) this.b;
                 int[] iArr2 = (int[]) this.c;
                 float floatValue11 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                fc0 fc0Var = o21Var.n;
+                fc0 fc0Var = u21Var.n;
                 if (fc0Var != null) {
                     fc0Var.K = 1.0f;
                     fc0Var.i();
-                    o21Var.n.s(1.0f - floatValue11);
+                    u21Var.n.s(1.0f - floatValue11);
                 }
-                fc0 fc0Var2 = o21Var.h;
+                fc0 fc0Var2 = u21Var.h;
                 fc0Var2.K = floatValue11;
                 fc0Var2.i();
-                o21Var.h.s(floatValue11);
+                u21Var.h.s(floatValue11);
                 if (iArr2 != null) {
-                    int d = i0.a.d(floatValue11, o21Var.e[0], iArr2[0]);
-                    int d10 = i0.a.d(floatValue11, o21Var.e[1], iArr2[1]);
-                    int d11 = i0.a.d(floatValue11, o21Var.e[2], iArr2[2]);
-                    int d12 = i0.a.d(floatValue11, o21Var.e[3], iArr2[3]);
-                    j21 j21Var = o21Var.B;
-                    j21Var.a.n(d, d10, d11, d12);
-                    j21Var.invalidate();
+                    int d = i0.a.d(floatValue11, u21Var.e[0], iArr2[0]);
+                    int d10 = i0.a.d(floatValue11, u21Var.e[1], iArr2[1]);
+                    int d11 = i0.a.d(floatValue11, u21Var.e[2], iArr2[2]);
+                    int d12 = i0.a.d(floatValue11, u21Var.e[3], iArr2[3]);
+                    o21 o21Var = u21Var.B;
+                    o21Var.a.n(d, d10, d11, d12);
+                    o21Var.invalidate();
                 }
-                o21Var.w.invalidate();
+                u21Var.w.invalidate();
                 break;
             case 23:
                 e0 e0Var = (e0) this.b;
@@ -363,15 +363,15 @@ public final /* synthetic */ class a implements ValueAnimator.AnimatorUpdateList
                 e0Var.getClass();
                 int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
                 int i14 = intValue - e0Var.b;
-                ((tl0) e0Var.d).scrollBy(0, i14);
+                ((sl0) e0Var.d).scrollBy(0, i14);
                 iArr3[0] = iArr3[0] + i14;
                 e0Var.b = intValue;
                 break;
             case 24:
-                fi1 fi1Var = (fi1) this.b;
+                li1 li1Var = (li1) this.b;
                 li liVar = (li) this.c;
-                fi1Var.getClass();
-                fi1Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                li1Var.getClass();
+                li1Var.d = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 liVar.invalidate();
                 break;
             case 25:

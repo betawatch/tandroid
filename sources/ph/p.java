@@ -13,6 +13,7 @@ import k7.c6;
 import mh.m5;
 import oh.d6;
 import oh.f5;
+import oh.s6;
 import oh.t6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
@@ -31,17 +32,17 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.r7;
-import org.telegram.ui.Components.l81;
+import org.telegram.ui.Components.k81;
 import org.telegram.ui.Components.mi;
+import org.telegram.ui.Components.nr0;
 import org.telegram.ui.Components.oq;
-import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.k11;
-import org.telegram.ui.qd1;
-import qh.s6;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.o11;
+import org.telegram.ui.vd1;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class p extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static LongSparseArray B;
@@ -53,8 +54,8 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
     public final d6 e;
     public final ArrayList f;
     public final ArrayList h;
-    public final k11 n;
-    public final l81 r;
+    public final o11 n;
+    public final k81 r;
     public Boolean s;
     public int v;
     public float w;
@@ -93,16 +94,16 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
             d6Var = d6Var2;
         }
         this.e = d6Var;
-        or0 or0Var = (or0) this;
-        k11 k11Var = new k11(or0Var, context);
-        this.n = k11Var;
-        k11Var.setAllowDisallowInterceptTouch(true);
-        k11Var.setAdapter(new a(or0Var, context));
-        addView(k11Var, c6.e(-1, -1, 119));
-        l81 n10 = k11Var.n(9, true);
+        nr0 nr0Var = (nr0) this;
+        o11 o11Var = new o11(nr0Var, context);
+        this.n = o11Var;
+        o11Var.setAllowDisallowInterceptTouch(true);
+        o11Var.setAdapter(new a(nr0Var, context));
+        addView(o11Var, c6.e(-1, -1, 119));
+        k81 n10 = o11Var.n(9, true);
         this.r = n10;
         n10.r = 12;
-        n10.setPreTabClick(new m5(or0Var, 21));
+        n10.setPreTabClick(new m5(nr0Var, 21));
         addView(n10, c6.e(-1, 42, 48));
         i(false);
     }
@@ -187,12 +188,12 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
         int i12 = NotificationCenter.storiesListUpdated;
-        k11 k11Var = this.n;
+        o11 o11Var = this.n;
         int i13 = 0;
         if (i10 != i12) {
             if (i10 == NotificationCenter.storiesUpdated) {
                 i(true);
-                View[] viewPages = k11Var.getViewPages();
+                View[] viewPages = o11Var.getViewPages();
                 int length = viewPages.length;
                 while (i13 < length) {
                     View view = viewPages[i13];
@@ -209,7 +210,7 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
         d6 d6Var = this.e;
         if (obj == d6Var) {
             i(true);
-            View[] viewPages2 = k11Var.getViewPages();
+            View[] viewPages2 = o11Var.getViewPages();
             int length2 = viewPages2.length;
             while (i13 < length2) {
                 View view2 = viewPages2[i13];
@@ -224,7 +225,7 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
             return;
         }
         if (this.f.indexOf(obj) >= 0) {
-            View[] viewPages3 = k11Var.getViewPages();
+            View[] viewPages3 = o11Var.getViewPages();
             for (View view3 : viewPages3) {
                 if (view3 instanceof l) {
                     l lVar2 = (l) view3;
@@ -300,9 +301,9 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
     public String getCurrentLang() {
         View view;
         d6 d6Var;
-        k11 k11Var = this.n;
-        View[] viewPages = k11Var.getViewPages();
-        if (Math.abs(k11Var.getCurrentPosition() - k11Var.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
+        o11 o11Var = this.n;
+        View[] viewPages = o11Var.getViewPages();
+        if (Math.abs(o11Var.getCurrentPosition() - o11Var.getPositionAnimated()) >= 0.5f || (view = viewPages[1]) == null) {
             view = viewPages[0];
         }
         if (!(view instanceof l) || (d6Var = ((l) view).a) == null) {
@@ -320,7 +321,7 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
         return d6Var;
     }
 
-    public tl0 getCurrentListView() {
+    public sl0 getCurrentListView() {
         View currentView = this.n.getCurrentView();
         if (currentView instanceof l) {
             return ((l) currentView).f;
@@ -357,7 +358,7 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
 
     public final void i(boolean z4) {
         d6 d6Var;
-        s6 s6Var;
+        r6 r6Var;
         ArrayList arrayList = new ArrayList(this.e.G);
         ArrayList arrayList2 = this.h;
         int size = arrayList2.size();
@@ -379,9 +380,9 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
             while (i11 < size2) {
                 Object obj2 = E.get(i11);
                 i11++;
-                oh.s6 s6Var2 = (oh.s6) obj2;
-                if (s6Var2 != null && (s6Var = s6Var2.c) != null && s6Var.J0 == j10 && !TextUtils.isEmpty(s6Var.K0) && !arrayList.contains(s6Var.K0)) {
-                    arrayList.add(s6Var.K0);
+                s6 s6Var = (s6) obj2;
+                if (s6Var != null && (r6Var = s6Var.c) != null && r6Var.J0 == j10 && !TextUtils.isEmpty(r6Var.K0) && !arrayList.contains(r6Var.K0)) {
+                    arrayList.add(r6Var.K0);
                 }
             }
         }
@@ -414,16 +415,16 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
             }
             arrayList3.add(d6Var);
         }
-        k11 k11Var = this.n;
-        k11Var.o(true);
+        o11 o11Var = this.n;
+        o11Var.o(true);
         SpannableString spannableString = new SpannableString(y3.h(R.string.ProfileBotLanguageAdd, new StringBuilder("+ ")));
         oq oqVar = new oq(R.drawable.msg_filled_plus, 0);
         oqVar.setScale(0.9f, 0.9f);
         oqVar.spaceScaleX = 0.85f;
         spannableString.setSpan(oqVar, 0, 1, 33);
-        l81 l81Var = this.r;
-        l81Var.a(-1, spannableString);
-        l81Var.x.l();
+        k81 k81Var = this.r;
+        k81Var.a(-1, spannableString);
+        k81Var.x.l();
         boolean z10 = arrayList3.size() + 1 > 1;
         Boolean bool = this.s;
         if (bool == null || bool.booleanValue() != z10) {
@@ -434,14 +435,14 @@ public abstract class p extends FrameLayout implements NotificationCenter.Notifi
             this.s = Boolean.valueOf(z10);
             if (!z4) {
                 this.w = z10 ? 1.0f : 0.0f;
-                l81Var.setTranslationY(AndroidUtilities.dp(z10 ? 0.0f : -42.0f));
-                k11Var.setTranslationY(AndroidUtilities.dp(z10 ? 42.0f : 0.0f));
+                k81Var.setTranslationY(AndroidUtilities.dp(z10 ? 0.0f : -42.0f));
+                o11Var.setTranslationY(AndroidUtilities.dp(z10 ? 42.0f : 0.0f));
                 return;
             }
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.w, z10 ? 1.0f : 0.0f);
             this.x = ofFloat;
             ofFloat.addUpdateListener(new f5(this, 11));
-            this.x.addListener(new qd1(4, this, z10));
+            this.x.addListener(new vd1(4, this, z10));
             this.x.setDuration(320L);
             this.x.setInterpolator(pr.h);
             this.x.start();

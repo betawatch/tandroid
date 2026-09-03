@@ -1,29 +1,39 @@
 package qh;
 
 import android.view.View;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class g3 implements View.OnLayoutChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class g3 implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ View b;
+    public final /* synthetic */ h3 c;
 
-    public /* synthetic */ g3(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public g3(h3 h3Var, boolean z4, View view) {
+        this.c = h3Var;
+        this.a = z4;
+        this.b = view;
     }
 
-    @Override // android.view.View.OnLayoutChangeListener
-    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        switch (this.a) {
-            case 0:
-                ((i3) this.b).d();
-                break;
-            default:
-                yf.c cVar = (yf.c) this.b;
-                cVar.c.setPivotX(r2.getMeasuredWidth() * 0.7f);
-                cVar.b.setPivotX(r1.getMeasuredWidth() * 0.7f);
-                break;
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        boolean z4 = this.a;
+        h3 h3Var = this.c;
+        if (z4) {
+            h3Var.b = view.getRootView();
         }
+        View view2 = this.b;
+        view2.getViewTreeObserver().addOnGlobalLayoutListener(h3Var.j);
+        view2.addOnLayoutChangeListener(h3Var.i);
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        View view2 = this.b;
+        ViewTreeObserver viewTreeObserver = view2.getViewTreeObserver();
+        h3 h3Var = this.c;
+        viewTreeObserver.removeOnGlobalLayoutListener(h3Var.j);
+        view2.removeOnLayoutChangeListener(h3Var.i);
     }
 }

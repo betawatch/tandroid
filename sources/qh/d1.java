@@ -11,12 +11,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.fx;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.f51;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.k51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class d1 extends tl0 {
+public final class d1 extends sl0 {
     public c2.y U2;
     public boolean V2;
     public float W2;
@@ -40,7 +40,7 @@ public final class d1 extends tl0 {
         this.e3 = new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN);
     }
 
-    public static void w1(d1 d1Var, int i10, int i11) {
+    public static void v1(d1 d1Var, int i10, int i11) {
         if (d1Var.U2 == null || !(d1Var.getLayoutManager() instanceof f2.w)) {
             return;
         }
@@ -58,7 +58,7 @@ public final class d1 extends tl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         SparseArray sparseArray;
         ArrayList arrayList;
@@ -201,7 +201,7 @@ public final class d1 extends tl0 {
         if (w0Var instanceof f2.j0) {
             c2.y yVar = new c2.y(this, (f2.j0) w0Var);
             this.U2 = yVar;
-            yVar.i = new f51(this, 1);
+            yVar.i = new k51(this, 1);
             yVar.h = new mh.m5(this, 24);
         }
     }

@@ -10,7 +10,7 @@ import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j3 implements q0.a {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class j3 implements q0.a {
                 }
                 break;
             case 1:
-                ((org.telegram.ui.Components.ak0) this.b).h((List) obj);
+                ((org.telegram.ui.Components.zj0) this.b).h((List) obj);
                 break;
             case 2:
                 TLRPC.User user = (TLRPC.User) obj;
@@ -75,7 +75,7 @@ public final /* synthetic */ class j3 implements q0.a {
             case 3:
                 w3 w3Var = (w3) this.b;
                 int i10 = ((p2.h) obj).a;
-                AndroidUtilities.runOnUIThread(new he0(8, w3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
+                AndroidUtilities.runOnUIThread(new ue0(7, w3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
                 break;
             case 4:
                 ii0 ii0Var = (ii0) this.b;
@@ -100,10 +100,10 @@ public final /* synthetic */ class j3 implements q0.a {
                 break;
             default:
                 View view = ((ProxyListActivity) this.b).b.T((View) obj).a;
-                if (view instanceof r11) {
-                    r11 r11Var = (r11) view;
-                    r11Var.setChecked(r11Var.d == SharedConfig.currentProxy);
-                    r11Var.b();
+                if (view instanceof v11) {
+                    v11 v11Var = (v11) view;
+                    v11Var.setChecked(v11Var.d == SharedConfig.currentProxy);
+                    v11Var.b();
                     break;
                 }
                 break;

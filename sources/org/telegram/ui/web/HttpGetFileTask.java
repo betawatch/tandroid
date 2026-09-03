@@ -16,9 +16,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import qh.s6;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public class HttpGetFileTask extends AsyncTask<String, Void, File> {
     private Utilities.Callback<File> doneCallback;
@@ -242,7 +242,7 @@ public class HttpGetFileTask extends AsyncTask<String, Void, File> {
                     if (str2 == null) {
                         str2 = MimeTypeMap.getSingleton().getExtensionFromMimeType(httpURLConnection.getContentType());
                     }
-                    this.file = s6.w(UserConfig.selectedAccount, str2);
+                    this.file = r6.w(UserConfig.selectedAccount, str2);
                 }
                 bufferedInputStream = new BufferedInputStream(errorStream, 16384);
             } catch (Exception e12) {

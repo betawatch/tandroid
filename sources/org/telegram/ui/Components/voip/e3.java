@@ -7,9 +7,9 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Shader;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final class e3 extends qh.f3 {
+public final class e3 extends qh.e3 {
     public final Paint I0;
     public final o1 J0;
 
@@ -25,7 +25,7 @@ public final class e3 extends qh.f3 {
         }
     }
 
-    @Override // qh.f3
+    @Override // qh.e3
     public final void c(Canvas canvas, float f10) {
         o1 o1Var = this.J0;
         Shader shader = o1Var.b().getShader();
@@ -41,7 +41,7 @@ public final class e3 extends qh.f3 {
         canvas.restore();
     }
 
-    @Override // qh.f3, android.view.View
+    @Override // qh.e3, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         this.J0.d(getX(), getY());
         super.dispatchDraw(canvas);

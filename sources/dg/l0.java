@@ -22,14 +22,14 @@ import oh.u4;
 import oh.w6;
 import oh.x6;
 import oh.z7;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.a01;
 import org.telegram.ui.l4;
 import org.telegram.ui.t4;
-import org.telegram.ui.vz0;
 import org.telegram.ui.w4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class l0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -209,10 +209,10 @@ public final class l0 extends AnimatorListenerAdapter {
                 break;
             case 21:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                vz0 vz0Var = profileStoriesView.h;
+                a01 a01Var = profileStoriesView.h;
                 profileStoriesView.D = 1.0f;
-                vz0Var.O = 1.0f;
-                vz0Var.invalidate();
+                a01Var.O = 1.0f;
+                a01Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             case 22:
@@ -272,9 +272,9 @@ public final class l0 extends AnimatorListenerAdapter {
             case 24:
                 super.onAnimationStart(animator);
                 x6 x6Var = (x6) this.b;
-                ij0 ij0Var = ((w6) x6Var.a.get(x6Var.d)).c;
-                ij0Var.J = 2;
-                ij0Var.start();
+                hj0 hj0Var = ((w6) x6Var.a.get(x6Var.d)).c;
+                hj0Var.J = 2;
+                hj0Var.start();
                 break;
             case 28:
                 ((t4) this.b).setVisibility(0);

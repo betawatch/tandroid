@@ -1,9 +1,9 @@
 package r3;
 
 import h5.d0;
-import q5.g0;
+import q5.c0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class n implements s {
     public final /* synthetic */ int a;
@@ -34,9 +34,9 @@ public class n implements s {
             case 0:
                 o oVar = (o) this.c;
                 h5.a.j(oVar.k);
-                g0 g0Var = oVar.k;
-                long[] jArr = (long[]) g0Var.b;
-                long[] jArr2 = (long[]) g0Var.c;
+                c0 c0Var = oVar.k;
+                long[] jArr = (long[]) c0Var.c;
+                long[] jArr2 = (long[]) c0Var.b;
                 int e6 = d0.e(jArr, d0.i((oVar.e * j10) / 1000000, 0L, oVar.j - 1), false);
                 long j11 = e6 == -1 ? 0L : jArr[e6];
                 long j12 = e6 != -1 ? jArr2[e6] : 0L;

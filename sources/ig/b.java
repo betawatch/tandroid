@@ -46,15 +46,15 @@ import org.telegram.ui.Cells.o8;
 import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.z8;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class b extends cg.c {
     public final g6 d;
-    public tl0 f;
+    public sl0 f;
     public r0 h;
     public r0 n;
     public s r;
@@ -70,7 +70,7 @@ public final class b extends cg.c {
         messagesStorage.getStorageQueue().postRunnable(new gf.c(8, messagesStorage, h0Var));
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(m1 m1Var) {
         int i10 = m1Var.f;
         return i10 == 2 || i10 == 11 || i10 == 8 || i10 == 10 || i10 == 15 || i10 == 12 || i10 == 17 || i10 == 18;

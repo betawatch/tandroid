@@ -59,10 +59,10 @@ import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.n6;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.m81;
+import org.telegram.ui.Components.l81;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.yx0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.xx0;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
@@ -87,12 +87,11 @@ import org.telegram.ui.u7;
 import org.telegram.ui.v5;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
-import qh.b8;
-import qh.ca;
-import qh.s6;
-import qh.x9;
+import qh.a8;
+import qh.r6;
+import qh.w9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -251,7 +250,7 @@ public final /* synthetic */ class j0 implements Runnable {
         f4 f4Var;
         h9 h9Var;
         int i13;
-        int i14 = 23;
+        int i14 = 24;
         int i15 = 2;
         ?? r12 = 0;
         SQLiteCursor sQLiteCursor = null;
@@ -651,12 +650,12 @@ public final /* synthetic */ class j0 implements Runnable {
                 oh.o oVar = (oh.o) this.b;
                 oh.p pVar = (oh.p) this.e;
                 Long l10 = (Long) this.f;
-                ca caVar = (ca) this.c;
+                qh.ba baVar = (qh.ba) this.c;
                 Runnable runnable = (Runnable) this.d;
                 if (oVar == null) {
                     oVar = pVar.e(l10.longValue());
                 }
-                caVar.Y(x9.c(oVar));
+                baVar.Y(w9.c(oVar));
                 runnable.run();
                 return;
             case 14:
@@ -664,17 +663,17 @@ public final /* synthetic */ class j0 implements Runnable {
                 Runnable runnable2 = (Runnable) this.f;
                 TLRPC.TL_error tL_error9 = (TLRPC.TL_error) this.b;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) this.c;
-                b8 b8Var = (b8) this.d;
+                a8 a8Var = (a8) this.d;
                 g6 g6Var = f4Var2.y0;
                 j3 j3Var = f4Var2.Z0;
                 if (runnable2 != null) {
                     runnable2.run();
                 }
                 if (tL_error9 == null || "STORY_NOT_MODIFIED".equals(tL_error9.text)) {
-                    storyItem.parsedPrivacy = b8Var;
-                    ArrayList arrayList8 = b8Var.b;
-                    int i22 = b8Var.a;
-                    ArrayList arrayList9 = b8Var.c;
+                    storyItem.parsedPrivacy = a8Var;
+                    ArrayList arrayList8 = a8Var.b;
+                    int i22 = a8Var.a;
+                    ArrayList arrayList9 = a8Var.c;
                     ArrayList<TLRPC.PrivacyRule> arrayList10 = new ArrayList<>();
                     while (i16 < arrayList8.size()) {
                         TLRPC.InputPrivacyRule inputPrivacyRule = (TLRPC.InputPrivacyRule) arrayList8.get(i16);
@@ -737,7 +736,7 @@ public final /* synthetic */ class j0 implements Runnable {
                     } else if (i22 == 3) {
                         HashSet hashSet = new HashSet();
                         hashSet.addAll(arrayList9);
-                        Iterator it = b8Var.d.values().iterator();
+                        Iterator it = a8Var.d.values().iterator();
                         while (it.hasNext()) {
                             hashSet.addAll((ArrayList) it.next());
                         }
@@ -758,10 +757,10 @@ public final /* synthetic */ class j0 implements Runnable {
                 TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) this.f;
                 i9 i9Var = (i9) this.c;
                 c4 c4Var = (c4) this.d;
-                ca E = ca.E(activity2, y3Var.l.z2);
+                qh.ba E = qh.ba.E(activity2, y3Var.l.z2);
                 e4 e4Var = y3Var.l.J2;
                 long j14 = (e4Var == null || (h9Var = e4Var.b) == null) ? 0L : h9Var.currentPosition;
-                s6 n10 = s6.n(y3Var.l.L1.h(), y3Var.l.L1.a);
+                r6 n10 = r6.n(y3Var.l.L1.h(), y3Var.l.L1.a);
                 f4 f4Var3 = y3Var.l;
                 n10.e = f4Var3.y1;
                 TL_stories.StoryItem storyItem3 = f4Var3.L1.a;
@@ -779,7 +778,7 @@ public final /* synthetic */ class j0 implements Runnable {
                     if (tL_documentAttributeVideo != null) {
                         j12 = (long) (tL_documentAttributeVideo.video_start_ts * 1000.0d);
                         n10.e0 = j12;
-                        s6 g10 = n10.g();
+                        r6 g10 = n10.g();
                         g10.b0 = true;
                         f4Var = y3Var.l;
                         TL_stories.StoryItem storyItem4 = f4Var.L1.a;
@@ -794,7 +793,7 @@ public final /* synthetic */ class j0 implements Runnable {
                                 g10.K0 = ((d6) l6Var).E;
                             }
                         }
-                        E.S(x9.d(i9Var), g10, j14);
+                        E.S(w9.d(i9Var), g10, j14);
                         E.N = new r3(y3Var, i15);
                         E.O = new u3(y3Var, c4Var, i16);
                         return;
@@ -802,7 +801,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 }
                 j12 = 0;
                 n10.e0 = j12;
-                s6 g102 = n10.g();
+                r6 g102 = n10.g();
                 g102.b0 = true;
                 f4Var = y3Var.l;
                 TL_stories.StoryItem storyItem42 = f4Var.L1.a;
@@ -810,7 +809,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 g102.d0 = new lh.h(y3Var, storyItem42, storyItem2, 5);
                 if (f4Var.I0()) {
                 }
-                E.S(x9.d(i9Var), g102, j14);
+                E.S(w9.d(i9Var), g102, j14);
                 E.N = new r3(y3Var, i15);
                 E.O = new u3(y3Var, c4Var, i16);
                 return;
@@ -840,11 +839,11 @@ public final /* synthetic */ class j0 implements Runnable {
                 aVar.e.a = false;
                 tL_documentAttributeAudio.title = str3;
                 tL_documentAttributeAudio.performer = str4;
-                m81 m81Var = u7Var.h;
-                for (int i26 = 0; i26 < m81Var.getViewPages().length; i26++) {
-                    tl0 tl0Var = (tl0) m81Var.getViewPages()[i26];
-                    if (tl0Var != null && ((h7) tl0Var.getAdapter()).d == 3) {
-                        h7 h7Var = (h7) tl0Var.getAdapter();
+                l81 l81Var = u7Var.h;
+                for (int i26 = 0; i26 < l81Var.getViewPages().length; i26++) {
+                    sl0 sl0Var = (sl0) l81Var.getViewPages()[i26];
+                    if (sl0Var != null && ((h7) sl0Var.getAdapter()).d == 3) {
+                        h7 h7Var = (h7) sl0Var.getAdapter();
                         int i27 = 0;
                         while (true) {
                             if (i27 >= h7Var.e.size()) {
@@ -1043,25 +1042,25 @@ public final /* synthetic */ class j0 implements Runnable {
                 windowManager.removeView(view4);
                 return;
             default:
-                yx0 yx0Var = (yx0) this.e;
+                xx0 xx0Var = (xx0) this.e;
                 String str9 = (String) this.f;
                 TLRPC.TL_error tL_error13 = (TLRPC.TL_error) this.b;
                 TLObject tLObject11 = (TLObject) this.c;
                 TextView textView = (TextView) this.d;
-                yx0Var.m0 = 0;
-                String str10 = yx0Var.l0;
+                xx0Var.m0 = 0;
+                String str10 = xx0Var.l0;
                 if (str10 == null || !str10.equals(str9)) {
                     return;
                 }
                 if (tL_error13 == null && (tLObject11 instanceof TLRPC.TL_boolTrue)) {
                     textView.setText(LocaleController.getString(R.string.ImportStickersLinkAvailable));
-                    textView.setTextColor(yx0Var.getThemedColor(k6.w6));
-                    yx0Var.n0 = true;
+                    textView.setTextColor(xx0Var.getThemedColor(k6.w6));
+                    xx0Var.n0 = true;
                     return;
                 } else {
                     textView.setText(LocaleController.getString(R.string.ImportStickersLinkTaken));
-                    textView.setTextColor(yx0Var.getThemedColor(k6.p7));
-                    yx0Var.n0 = false;
+                    textView.setTextColor(xx0Var.getThemedColor(k6.p7));
+                    xx0Var.n0 = false;
                     return;
                 }
         }

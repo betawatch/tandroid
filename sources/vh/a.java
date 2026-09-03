@@ -18,20 +18,20 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.h6;
 import org.telegram.ui.Cells.i6;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q31;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.z4;
-import org.telegram.ui.xq0;
+import org.telegram.ui.cr0;
+import qh.c4;
 import qh.d;
-import qh.d4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class a extends sa {
-    public x51 U;
+    public w51 U;
     public boolean V;
     public final FrameLayout W;
     public final boolean X;
@@ -59,10 +59,10 @@ public final class a extends sa {
             h6Var.t(user, null, DialogObject.getName(user), LocaleController.getString(R.string.Bot), false, false);
         }
         frameLayout.addView(h6Var, c6.c(-2.0f, -1));
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i10 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
-        this.d.p1();
+        sl0Var.setPadding(i10, 0, i10, AndroidUtilities.dp(64.0f) + AndroidUtilities.navigationBarHeight);
+        this.d.o1();
         this.d.setClipToPadding(false);
         this.d.setOnItemClickListener(new h(this, 24));
         d dVar = new d(context, this.resourcesProvider, true);
@@ -72,14 +72,14 @@ public final class a extends sa {
             dVar.setText(LocaleController.getString(R.string.CommunityCreateCommunity));
         }
         dVar.e();
-        dVar.setOnClickListener(new r31(this, callback, chat, 7));
+        dVar.setOnClickListener(new q31(this, callback, chat, 7));
         this.containerView.addView(dVar, c6.f(48.0f, 80, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, 0, AndroidUtilities.dp(12.0f) + this.backgroundPaddingLeft, AndroidUtilities.dp(12.0f) + AndroidUtilities.navigationBarHeight));
         this.U.N(false);
     }
 
     public final void P(Utilities.Callback callback, boolean z4, boolean z10) {
         if (z10 && !z4 && !this.Y) {
-            z4.P(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityAddToCommunityTitle), LocaleController.getString(this.X ? R.string.CommunityAddToCommunityChannelMessage : R.string.CommunityAddToCommunityGroupMessage), LocaleController.getString(R.string.Add), new xq0(this, callback, z4, 11)).show();
+            z4.P(getContext(), this.resourcesProvider, LocaleController.getString(R.string.CommunityAddToCommunityTitle), LocaleController.getString(this.X ? R.string.CommunityAddToCommunityChannelMessage : R.string.CommunityAddToCommunityGroupMessage), LocaleController.getString(R.string.Add), new cr0(this, callback, z4, 11)).show();
         } else {
             callback.run(Boolean.valueOf(z4));
             dismiss();
@@ -93,17 +93,17 @@ public final class a extends sa {
         }
         this.V = z4;
         int i10 = this.Z + 1;
-        tl0 tl0Var = this.d;
-        View U0 = tl0Var.U0(i10);
-        if (U0 instanceof i6) {
-            ((i6) U0).a(!z4);
+        sl0 sl0Var = this.d;
+        View T0 = sl0Var.T0(i10);
+        if (T0 instanceof i6) {
+            ((i6) T0).a(!z4);
             z10 = false;
         } else {
             z10 = true;
         }
-        View U02 = tl0Var.U0(this.Z + 2);
-        if (U02 instanceof i6) {
-            ((i6) U02).a(z4);
+        View T02 = sl0Var.T0(this.Z + 2);
+        if (T02 instanceof i6) {
+            ((i6) T02).a(z4);
         } else {
             z10 = true;
         }
@@ -113,11 +113,11 @@ public final class a extends sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(this.d, getContext(), this.currentAccount, 0, false, new d4(this, 25), this.resourcesProvider);
-        this.U = x51Var;
-        x51Var.r = false;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, false, new c4(this, 25), this.resourcesProvider);
+        this.U = w51Var;
+        w51Var.r = false;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

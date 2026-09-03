@@ -25,10 +25,10 @@ import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.d60;
 import org.telegram.ui.kq;
 import org.telegram.ui.py;
-import org.telegram.ui.pz0;
-import org.telegram.ui.qz0;
+import org.telegram.ui.uz0;
+import org.telegram.ui.vz0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -199,10 +199,10 @@ public final /* synthetic */ class i implements Runnable {
                 d60.y((d60) obj4, (org.telegram.ui.ActionBar.d2[]) obj2, this.c, (TLRPC.TL_error) obj3, this.b, (TL_phone.inviteToGroupCall) obj);
                 return;
             default:
-                qz0 qz0Var = (qz0) obj4;
-                ProfileActivity profileActivity = qz0Var.b;
+                vz0 vz0Var = (vz0) obj4;
+                ProfileActivity profileActivity = vz0Var.b;
                 kq kqVar = new kq(profileActivity.b1, -j10, (TLRPC.TL_chatAdminRights) obj3, null, null, (String) obj2, 2, true, !z4, null);
-                kqVar.U0 = new pz0(qz0Var, (py) obj);
+                kqVar.U0 = new uz0(vz0Var, (py) obj);
                 profileActivity.presentFragment(kqVar);
                 return;
         }
@@ -244,8 +244,8 @@ public final /* synthetic */ class i implements Runnable {
         this.h = invitetogroupcall;
     }
 
-    public /* synthetic */ i(qz0 qz0Var, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z4, py pyVar) {
-        this.e = qz0Var;
+    public /* synthetic */ i(vz0 vz0Var, long j10, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str, boolean z4, py pyVar) {
+        this.e = vz0Var;
         this.b = j10;
         this.f = tL_chatAdminRights;
         this.d = str;

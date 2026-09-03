@@ -4,11 +4,11 @@ import android.view.View;
 import org.telegram.messenger.MessageObject;
 import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.eo0;
+import org.telegram.ui.Components.do0;
 import org.telegram.ui.l10;
 import org.telegram.ui.s10;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class y implements s10 {
     public final /* synthetic */ i0 a;
@@ -28,7 +28,7 @@ public final class y implements s10 {
         i0 i0Var = this.a;
         p2 p2Var = i0Var.s;
         i10 = ((h3) i0Var).currentAccount;
-        p2Var.presentFragment(eo0.K(messageObject, i10));
+        p2Var.presentFragment(do0.K(messageObject, i10));
         i0Var.dismiss();
     }
 

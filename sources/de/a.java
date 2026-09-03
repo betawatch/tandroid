@@ -3,9 +3,9 @@ package de;
 import androidx.biometric.f0;
 import java.util.Hashtable;
 import java.util.StringTokenizer;
-import sf.e;
+import sf.f;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class a {
     public static final Hashtable b;
@@ -56,12 +56,12 @@ public final class a {
         }
     }
 
-    public static e b(f0 f0Var, Object obj, Object obj2) {
-        return new e(f0Var, obj, obj2, c);
+    public static f b(f0 f0Var, Object obj, Object obj2) {
+        return new f(f0Var, obj, obj2, c);
     }
 
-    public static e c(f0 f0Var, Object obj, Object obj2, Object obj3) {
-        return new e(f0Var, obj, obj2, new Object[]{obj3});
+    public static f c(f0 f0Var, Object obj, Object obj2, Object obj3) {
+        return new f(f0Var, obj, obj2, new Object[]{obj3});
     }
 
     public final da.a d(String str, String str2, String str3, String str4, String str5) {

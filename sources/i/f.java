@@ -4,12 +4,12 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import mh.t4;
 import ng.o0;
-import org.telegram.ui.Components.d31;
+import org.telegram.ui.Components.c31;
 import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.po0;
+import org.telegram.ui.Components.oo0;
 import wh.r0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class f implements Drawable.Callback {
     public final /* synthetic */ int a;
@@ -47,13 +47,13 @@ public final class f implements Drawable.Callback {
                 ((eq) this.b).invalidateSelf();
                 break;
             case 7:
-                ((po0) this.b).b.run();
+                ((oo0) this.b).b.run();
                 break;
             case 8:
                 ((ef.f) this.b).invalidateSelf();
                 break;
             case 9:
-                ((d31) this.b).invalidateSelf();
+                ((c31) this.b).invalidateSelf();
                 break;
             default:
                 ((r0) this.b).b.invalidate();

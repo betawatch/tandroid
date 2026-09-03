@@ -1,256 +1,157 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
+import android.content.Context;
+import android.view.Gravity;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.DataAutoDownloadActivity;
-import org.telegram.ui.DataSettingsActivity;
-import org.telegram.ui.FiltersSetupActivity;
-import org.telegram.ui.LanguageSelectActivity;
-import org.telegram.ui.NotificationsCustomSettingsActivity;
-import org.telegram.ui.NotificationsSettingsActivity;
-import org.telegram.ui.PasscodeActivity;
-import org.telegram.ui.ha1;
-import org.telegram.ui.vh1;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class z51 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class z51 extends pv0 {
+    public final /* synthetic */ int t0;
 
-    public /* synthetic */ z51(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ z51(Context context, org.telegram.ui.ActionBar.f5 f5Var, int i10) {
+        super(context, f5Var);
+        this.t0 = i10;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == -1) {
-                    ((c61) this.b).finishFragment();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.pv0
+    public boolean P() {
+        switch (this.t0) {
             case 1:
-                if (i10 == -1) {
-                    ((org.telegram.ui.Components.voip.v0) this.b).b(false, false);
-                    break;
-                }
-                break;
+                return false;
             case 2:
-                if (i10 == -1) {
-                    ((vh1) this.b).a(false, false);
-                    break;
-                }
-                break;
+                return false;
             case 3:
-                if (i10 == -1) {
-                    ((org.telegram.ui.zt) this.b).finishFragment();
-                    break;
-                }
-                break;
+            default:
+                return super.P();
             case 4:
-                if (i10 == -1) {
-                    ((DataAutoDownloadActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 5:
-                if (i10 == -1) {
-                    ((DataSettingsActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 6:
-                if (i10 == -1) {
-                    ((org.telegram.ui.yu) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 7:
-                if (i10 == -1) {
-                    ((org.telegram.ui.lv) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 8:
-                if (i10 == -1) {
-                    ((org.telegram.ui.iz) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 9:
-                org.telegram.ui.zz zzVar = (org.telegram.ui.zz) this.b;
-                if (i10 == -1) {
-                    if (zzVar.W(true)) {
-                        zzVar.finishFragment();
-                        break;
+                return false;
+        }
+    }
+
+    @Override // android.view.ViewGroup
+    public void addView(View view) {
+        switch (this.t0) {
+            case 3:
+                if (view instanceof mz) {
+                    ViewGroup.LayoutParams layoutParams = ((mz) view).getLayoutParams();
+                    if (layoutParams == null) {
+                        layoutParams = new FrameLayout.LayoutParams(-1, -2);
                     }
-                } else if (i10 == 1) {
-                    if (Math.abs(zzVar.Q - 1.0f) < 0.1f) {
-                        zzVar.c0();
-                        break;
-                    } else if (Math.abs(zzVar.Q - 0.5f) < 0.1f) {
-                        for (int i11 = 0; i11 < zzVar.a.getChildCount(); i11++) {
-                            View childAt = zzVar.a.getChildAt(i11);
-                            zzVar.a.getClass();
-                            if (RecyclerView.R(childAt) == zzVar.I && (childAt instanceof a10)) {
-                                int i12 = -zzVar.s;
-                                zzVar.s = i12;
-                                AndroidUtilities.shakeViewSpring(childAt, i12);
-                                break;
-                            }
-                        }
-                        break;
+                    if (layoutParams instanceof FrameLayout.LayoutParams) {
+                        ((FrameLayout.LayoutParams) layoutParams).gravity = 87;
                     }
+                    view.setLayoutParams(layoutParams);
                 }
-                break;
-            case 10:
-                org.telegram.ui.b10 b10Var = (org.telegram.ui.b10) this.b;
-                if (i10 == -1) {
-                    if (b10Var.h0(true)) {
-                        b10Var.finishFragment();
-                        break;
-                    }
-                } else if (i10 == 1) {
-                    b10Var.q0();
-                    break;
-                }
-                break;
-            case 11:
-                if (i10 == -1) {
-                    ((FiltersSetupActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 12:
-                if (i10 == -1) {
-                    ((org.telegram.ui.m20) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 13:
-                org.telegram.ui.z60 z60Var = (org.telegram.ui.z60) this.b;
-                if (i10 == -1) {
-                    if (z60Var.f0(true)) {
-                        z60Var.finishFragment();
-                        break;
-                    }
-                } else if (i10 == 1) {
-                    z60Var.o0();
-                    break;
-                }
-                break;
-            case 14:
-                if (i10 == -1) {
-                    ((org.telegram.ui.f70) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 15:
-                if (i10 == -1) {
-                    ((org.telegram.ui.h70) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 16:
-                if (i10 == -1) {
-                    ((org.telegram.ui.n70) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 17:
-                if (i10 == -1) {
-                    ((org.telegram.ui.p70) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 18:
-                if (i10 == -1) {
-                    ((org.telegram.ui.d80) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 19:
-                if (i10 == -1) {
-                    ((LanguageSelectActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 20:
-                org.telegram.ui.ob0 ob0Var = (org.telegram.ui.ob0) this.b;
-                if (i10 == -1) {
-                    ob0Var.finishFragment();
-                    AndroidUtilities.hideKeyboard(ob0Var.C);
-                    break;
-                }
-                break;
-            case 21:
-                if (i10 == -1) {
-                    ((org.telegram.ui.fc0) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 22:
-                org.telegram.ui.og0 og0Var = (org.telegram.ui.og0) this.b;
-                if (i10 == 1) {
-                    og0Var.p1();
-                    break;
-                } else if (i10 == -1 && og0Var.onBackPressed(true)) {
-                    og0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 23:
-                if (i10 == -1) {
-                    ((org.telegram.ui.qg0) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 24:
-                if (i10 == -1) {
-                    ((org.telegram.ui.qh0) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 25:
-                if (i10 == -1) {
-                    ((org.telegram.ui.rh0) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 26:
-                org.telegram.ui.bj0 bj0Var = (org.telegram.ui.bj0) this.b;
-                if (i10 == -1) {
-                    bj0Var.finishFragment();
-                    break;
-                } else if (i10 == 1) {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", bj0Var.b);
-                    bj0Var.presentFragment(new ha1(bundle));
-                    break;
-                }
-                break;
-            case 27:
-                if (i10 == -1) {
-                    ((NotificationsCustomSettingsActivity) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 28:
-                if (i10 == -1) {
-                    ((NotificationsSettingsActivity) this.b).finishFragment();
-                    break;
-                }
+                super.addView(view);
                 break;
             default:
-                if (i10 == -1) {
-                    ((PasscodeActivity) this.b).finishFragment();
-                    break;
+                super.addView(view);
+                break;
+        }
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:20:0x007a  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x00a0  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x0090  */
+    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        int i20;
+        switch (this.t0) {
+            case 3:
+                int childCount = getChildCount();
+                int R = R();
+                int paddingLeft = getPaddingLeft();
+                int paddingRight = (i12 - i10) - getPaddingRight();
+                int paddingTop = getPaddingTop();
+                int i21 = i13 - i11;
+                int paddingBottom = i21 - getPaddingBottom();
+                for (int i22 = 0; i22 < childCount; i22++) {
+                    View childAt = getChildAt(i22);
+                    if (childAt.getVisibility() != 8) {
+                        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                        int measuredWidth = childAt.getMeasuredWidth();
+                        int measuredHeight = childAt.getMeasuredHeight();
+                        int i23 = layoutParams.gravity;
+                        if (i23 == -1) {
+                            i23 = 51;
+                        }
+                        int absoluteGravity = Gravity.getAbsoluteGravity(i23, getLayoutDirection());
+                        int i24 = i23 & 112;
+                        int i25 = absoluteGravity & 7;
+                        if (i25 == 1) {
+                            i14 = (((paddingRight - paddingLeft) - measuredWidth) / 2) + paddingLeft + layoutParams.leftMargin;
+                            i15 = layoutParams.rightMargin;
+                        } else if (i25 != 5) {
+                            i16 = layoutParams.leftMargin + paddingLeft;
+                            if (i24 == 16) {
+                                if (i24 == 48) {
+                                    i20 = layoutParams.topMargin;
+                                } else if (i24 != 80) {
+                                    i20 = layoutParams.topMargin;
+                                } else {
+                                    i17 = paddingBottom - measuredHeight;
+                                    i18 = layoutParams.bottomMargin;
+                                }
+                                i19 = i20 + paddingTop;
+                                if (childAt instanceof mz) {
+                                    i19 = AndroidUtilities.isTablet() ? i21 - measuredHeight : (i21 + R) - measuredHeight;
+                                }
+                                childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                            } else {
+                                i17 = (((paddingBottom - paddingTop) - measuredHeight) / 2) + paddingTop + layoutParams.topMargin;
+                                i18 = layoutParams.bottomMargin;
+                            }
+                            i19 = i17 - i18;
+                            if (childAt instanceof mz) {
+                            }
+                            childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                        } else {
+                            i14 = paddingRight - measuredWidth;
+                            i15 = layoutParams.rightMargin;
+                        }
+                        i16 = i14 - i15;
+                        if (i24 == 16) {
+                        }
+                        i19 = i17 - i18;
+                        if (childAt instanceof mz) {
+                        }
+                        childAt.layout(i16, i19, measuredWidth + i16, measuredHeight + i19);
+                    }
                 }
+                S();
+                break;
+            default:
+                super.onLayout(z4, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.t0) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+                break;
+            case 5:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+                break;
+            default:
+                super.onMeasure(i10, i11);
                 break;
         }
     }

@@ -25,10 +25,10 @@ import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.ei;
 import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.m31;
+import org.telegram.ui.q31;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class n3 extends ei implements NotificationCenter.NotificationCenterDelegate {
     public long B;
@@ -373,8 +373,8 @@ public final class n3 extends ei implements NotificationCenter.NotificationCente
                 Context context = getContext();
                 qc qcVar = new qc(cb.a(getContext()), this.a);
                 long j10 = this.v;
-                int i14 = m31.v;
-                m31.J(i13, context, j10, false, false, new ArrayList(), qcVar, null, new byte[0], null, null);
+                int i14 = q31.v;
+                q31.J(i13, context, j10, false, false, new ArrayList(), qcVar, null, new byte[0], null, null);
             }
         }
     }

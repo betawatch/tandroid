@@ -40,13 +40,13 @@ import org.telegram.ui.Cells.l9;
 import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.x9;
 import org.telegram.ui.Components.CheckBoxBase;
-import org.telegram.ui.Components.bm0;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.ti0;
 import org.telegram.ui.Components.vt;
 import org.telegram.ui.Components.wa0;
-import org.telegram.ui.iw0;
+import org.telegram.ui.nw0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class v5 extends FrameLayout implements b6, l9 {
     public static final /* synthetic */ int S = 0;
@@ -55,7 +55,7 @@ public final class v5 extends FrameLayout implements b6, l9 {
     public g2 D;
     public String E;
     public int F;
-    public bm0 G;
+    public am0 G;
     public Drawable H;
     public ti0 I;
     public final RectF J;
@@ -71,7 +71,7 @@ public final class v5 extends FrameLayout implements b6, l9 {
     public final LinearLayout b;
     public final View c;
     public final fg.s0 d;
-    public final iw0 e;
+    public final nw0 e;
     public final e1 f;
     public final e1 h;
     public boolean n;
@@ -106,11 +106,11 @@ public final class v5 extends FrameLayout implements b6, l9 {
         s0Var.setIncludeFontPadding(false);
         s0Var.setTextSize(1, 16.0f);
         linearLayout.addView(s0Var, c6.n(18, -2));
-        iw0 iw0Var = new iw0(context, g6Var);
-        this.e = iw0Var;
-        iw0Var.setVisibility(8);
-        iw0Var.setOnClickListener(new n5(this, 0));
-        linearLayout.addView(iw0Var, c6.n(18, -2));
+        nw0 nw0Var = new nw0(context, g6Var);
+        this.e = nw0Var;
+        nw0Var.setVisibility(8);
+        nw0Var.setOnClickListener(new n5(this, 0));
+        linearLayout.addView(nw0Var, c6.n(18, -2));
         e1 e1Var = new e1(context, g6Var);
         this.f = e1Var;
         e1Var.setPadding(AndroidUtilities.dp(2.0f), 0, AndroidUtilities.dp(2.0f), 0);
@@ -133,7 +133,7 @@ public final class v5 extends FrameLayout implements b6, l9 {
                             v5.d(v5Var.x.b, v5Var.f.getText());
                             s5 s5Var = v5Var.y;
                             if (s5Var != null) {
-                                r3.O1(((a3) s5Var).a);
+                                r3.N1(((a3) s5Var).a);
                                 break;
                             }
                         }
@@ -144,7 +144,7 @@ public final class v5 extends FrameLayout implements b6, l9 {
                             v5Var2.w();
                             s5 s5Var2 = v5Var2.y;
                             if (s5Var2 != null) {
-                                r3.O1(((a3) s5Var2).a);
+                                r3.N1(((a3) s5Var2).a);
                                 break;
                             }
                         }
@@ -179,7 +179,7 @@ public final class v5 extends FrameLayout implements b6, l9 {
                             v5.d(v5Var.x.b, v5Var.f.getText());
                             s5 s5Var = v5Var.y;
                             if (s5Var != null) {
-                                r3.O1(((a3) s5Var).a);
+                                r3.N1(((a3) s5Var).a);
                                 break;
                             }
                         }
@@ -190,7 +190,7 @@ public final class v5 extends FrameLayout implements b6, l9 {
                             v5Var2.w();
                             s5 s5Var2 = v5Var2.y;
                             if (s5Var2 != null) {
-                                r3.O1(((a3) s5Var2).a);
+                                r3.N1(((a3) s5Var2).a);
                                 break;
                             }
                         }
@@ -607,7 +607,7 @@ public final class v5 extends FrameLayout implements b6, l9 {
 
     public final void E(Editable editable) {
         a aVar = this.x;
-        if (aVar != null && r3.C3(aVar.b) && e2.c.s(editable)) {
+        if (aVar != null && r3.B3(aVar.b) && e2.c.s(editable)) {
             e1 e1Var = this.f;
             Paint.FontMetricsInt fontMetricsInt = e1Var.getPaint().getFontMetricsInt();
             int max = Math.max(1, Math.round((e1Var.getTextSize() * 0.85f) / 1.2f));
@@ -773,13 +773,13 @@ public final class v5 extends FrameLayout implements b6, l9 {
         a aVar2;
         int i11;
         int i12 = aVar.c;
-        iw0 iw0Var = this.e;
+        nw0 nw0Var = this.e;
         View view = this.c;
         fg.s0 s0Var = this.d;
         if (i12 <= 0) {
             view.setVisibility(8);
             s0Var.setVisibility(8);
-            iw0Var.setVisibility(8);
+            nw0Var.setVisibility(8);
             return;
         }
         LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) view.getLayoutParams();
@@ -788,11 +788,11 @@ public final class v5 extends FrameLayout implements b6, l9 {
         view.setVisibility(i12 > 1 ? 0 : 8);
         if (aVar.e) {
             s0Var.setVisibility(8);
-            iw0Var.setVisibility(0);
-            ((CheckBoxBase) iw0Var.b).f(-1, aVar.f, false);
+            nw0Var.setVisibility(0);
+            ((CheckBoxBase) nw0Var.b).f(-1, aVar.f, false);
             return;
         }
-        iw0Var.setVisibility(8);
+        nw0Var.setVisibility(8);
         s0Var.setVisibility(0);
         LinearLayout.LayoutParams layoutParams2 = (LinearLayout.LayoutParams) s0Var.getLayoutParams();
         if (aVar.d == 0) {
@@ -864,9 +864,9 @@ public final class v5 extends FrameLayout implements b6, l9 {
                 canvas2 = canvas;
                 if (aVar != null && (aVar.b instanceof TL_iv.pageBlockPullquote)) {
                     if (this.G == null) {
-                        bm0 bm0Var = new bm0(this);
-                        this.G = bm0Var;
-                        bm0Var.a(null, null, null, this.a, 1);
+                        am0 am0Var = new am0(this);
+                        this.G = am0Var;
+                        am0Var.a(null, null, null, this.a, 1);
                         l8.a(this.G, g6Var);
                     }
                     if (this.H == null) {
@@ -928,9 +928,9 @@ public final class v5 extends FrameLayout implements b6, l9 {
                 }
             } else {
                 if (this.G == null) {
-                    bm0 bm0Var2 = new bm0(this);
-                    this.G = bm0Var2;
-                    bm0Var2.a(null, null, null, this.a, 1);
+                    am0 am0Var2 = new am0(this);
+                    this.G = am0Var2;
+                    am0Var2.a(null, null, null, this.a, 1);
                     l8.a(this.G, g6Var);
                 }
                 RectF rectF2 = AndroidUtilities.rectTmp;
@@ -1072,9 +1072,9 @@ public final class v5 extends FrameLayout implements b6, l9 {
         if (drawable != null) {
             drawable.setColorFilter(new PorterDuffColorFilter(k6.v0(k6.Oh, g6Var), PorterDuff.Mode.SRC_IN));
         }
-        bm0 bm0Var = this.G;
-        if (bm0Var != null) {
-            l8.a(bm0Var, g6Var);
+        am0 am0Var = this.G;
+        if (am0Var != null) {
+            l8.a(am0Var, g6Var);
         }
     }
 
@@ -1221,13 +1221,13 @@ public final class v5 extends FrameLayout implements b6, l9 {
                     I(aVar.b, false);
                     if (!String.valueOf(e1Var.getText()).equals(z(aVar.b))) {
                         SpannableStringBuilder A = A(aVar.b);
-                        if (r3.C3(aVar.b)) {
+                        if (r3.B3(aVar.b)) {
                             SpannableString spannableString = new SpannableString(A);
                             x5.o(spannableString, 0, spannableString.length(), 1, false, null);
                             x5.o(spannableString, 0, spannableString.length(), 2, false, null);
                             A = spannableString;
                         }
-                        e1Var.setTextSilently(Emoji.replaceEmoji((CharSequence) A, e1Var.getPaint().getFontMetricsInt(), false, r3.C3(aVar.b) ? 0.85f : 1.0f));
+                        e1Var.setTextSilently(Emoji.replaceEmoji((CharSequence) A, e1Var.getPaint().getFontMetricsInt(), false, r3.B3(aVar.b) ? 0.85f : 1.0f));
                         E(e1Var.getText());
                         e1Var.invalidateEffects();
                         this.E = null;

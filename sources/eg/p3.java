@@ -11,13 +11,13 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class p3 extends j {
     public final TLRPC.Document n0;
@@ -25,11 +25,11 @@ public class p3 extends j {
     public final int p0;
     public boolean q0;
     public final z5 r0;
-    public final kv0 s0;
+    public final jv0 s0;
     public final s2 t0;
     public final ImageReceiver u0;
 
-    public p3(Context context, PointF pointF, float f10, float f11, kv0 kv0Var, TLRPC.Document document, Object obj) {
+    public p3(Context context, PointF pointF, float f10, float f11, jv0 jv0Var, TLRPC.Document document, Object obj) {
         super(context, pointF);
         this.p0 = -1;
         int i10 = 0;
@@ -38,7 +38,7 @@ public class p3 extends j {
         setRotation(f10);
         setScale(f11);
         this.n0 = document;
-        this.s0 = kv0Var;
+        this.s0 = jv0Var;
         this.o0 = obj;
         while (true) {
             if (i10 >= document.attributes.size()) {
@@ -77,13 +77,13 @@ public class p3 extends j {
         return this.p0;
     }
 
-    public kv0 getBaseSize() {
+    public jv0 getBaseSize() {
         return this.s0;
     }
 
     public long getDuration() {
         ImageReceiver imageReceiver = this.u0;
-        ij0 lottieAnimation = imageReceiver.getLottieAnimation();
+        hj0 lottieAnimation = imageReceiver.getLottieAnimation();
         if (lottieAnimation != null) {
             return lottieAnimation.p();
         }
@@ -98,16 +98,16 @@ public class p3 extends j {
     }
 
     @Override // eg.j
-    public tk0 getSelectionBounds() {
+    public sk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new tk0();
+            return new sk0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.5f) * getMeasuredWidth();
         float f10 = scale / 2.0f;
         float f11 = scale * scaleX;
-        return new tk0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
+        return new sk0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
     }
 
     public TLRPC.Document getSticker() {
@@ -116,9 +116,9 @@ public class p3 extends j {
 
     @Override // eg.j
     public final void k() {
-        kv0 kv0Var = this.s0;
-        float f10 = kv0Var.a / 2.0f;
-        float f11 = kv0Var.b / 2.0f;
+        jv0 jv0Var = this.s0;
+        float f10 = jv0Var.a / 2.0f;
+        float f11 = jv0Var.b / 2.0f;
         setX(getPositionX() - f10);
         setY(getPositionY() - f11);
         m();
@@ -138,8 +138,8 @@ public class p3 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        kv0 kv0Var = this.s0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) kv0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) kv0Var.b, TLObject.FLAG_30));
+        jv0 jv0Var = this.s0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) jv0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) jv0Var.b, TLObject.FLAG_30));
     }
 
     public final void r(boolean z4) {
@@ -158,6 +158,6 @@ public class p3 extends j {
         }
     }
 
-    public void q(ij0 ij0Var) {
+    public void q(hj0 hj0Var) {
     }
 }

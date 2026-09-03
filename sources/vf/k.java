@@ -35,28 +35,28 @@ import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.x5;
 import org.telegram.ui.Cells.g3;
+import org.telegram.ui.Components.a61;
 import org.telegram.ui.Components.b61;
-import org.telegram.ui.Components.c61;
-import org.telegram.ui.Components.eo;
+import org.telegram.ui.Components.co;
 import org.telegram.ui.Components.fo;
 import org.telegram.ui.Components.ge;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.ho;
-import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.nb0;
 import org.telegram.ui.Components.or;
 import org.telegram.ui.Components.ph;
 import org.telegram.ui.Components.tp;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.qt;
 import org.telegram.ui.yh;
-import qh.d4;
-import qh.i3;
-import qh.j5;
-import qh.y1;
+import qh.c4;
+import qh.h3;
+import qh.i5;
+import qh.x1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class k extends c61 implements NotificationCenter.NotificationCenterDelegate {
+public final class k extends b61 implements NotificationCenter.NotificationCenterDelegate {
     public TLRPC.InputDocument B;
     public boolean C;
     public String D;
@@ -95,7 +95,7 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
         kVar2.I.J1(1, false);
         u2 u2Var2 = kVar2.I;
         u2Var2.R1 = true;
-        u2Var2.i1(new d4(kVar2, 17));
+        u2Var2.i1(new c4(kVar2, 17));
         kVar2.I.r1();
         u2 u2Var3 = kVar2.I;
         u2Var3.r = null;
@@ -127,7 +127,7 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
             } else {
                 iVar2.n.j(ImageLocation.getForDocument(greetingsSticker), ho.b(greetingsSticker), ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(greetingsSticker.thumbs, 90), greetingsSticker), null, 0, greetingsSticker);
             }
-            iVar2.n.setOnClickListener(new eo(iVar2, greetingsSticker, 1));
+            iVar2.n.setOnClickListener(new co(iVar2, greetingsSticker, 1));
         }
     }
 
@@ -142,70 +142,70 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
         }
     }
 
-    @Override // org.telegram.ui.Components.c61
-    public final void U(ArrayList arrayList, x51 x51Var) {
-        arrayList.add(j51.k(this.h));
+    @Override // org.telegram.ui.Components.b61
+    public final void U(ArrayList arrayList, w51 w51Var) {
+        arrayList.add(h51.k(this.h));
         yh.r(R.string.BusinessIntroHeader, arrayList);
-        arrayList.add(j51.k(this.s));
-        arrayList.add(j51.k(this.v));
+        arrayList.add(h51.k(this.s));
+        arrayList.add(h51.k(this.v));
         if (this.w) {
-            arrayList.add(j51.f(LocaleController.getString(R.string.BusinessIntroSticker), LocaleController.getString(R.string.BusinessIntroStickerRandom), 1));
+            arrayList.add(h51.f(LocaleController.getString(R.string.BusinessIntroSticker), LocaleController.getString(R.string.BusinessIntroStickerRandom), 1));
         } else if (this.y != null) {
             String string = LocaleController.getString(R.string.BusinessIntroSticker);
             String str = this.y;
-            j51 j51Var = new j51(3);
-            j51Var.d = 1;
-            j51Var.l = string;
-            j51Var.G = str;
-            arrayList.add(j51Var);
+            h51 h51Var = new h51(3);
+            h51Var.d = 1;
+            h51Var.l = string;
+            h51Var.G = str;
+            arrayList.add(h51Var);
         } else {
             String string2 = LocaleController.getString(R.string.BusinessIntroSticker);
             TLRPC.Document document = this.x;
-            j51 j51Var2 = new j51(3);
-            j51Var2.d = 1;
-            j51Var2.l = string2;
-            j51Var2.G = document;
-            arrayList.add(j51Var2);
+            h51 h51Var2 = new h51(3);
+            h51Var2.d = 1;
+            h51Var2.l = string2;
+            h51Var2.G = document;
+            arrayList.add(h51Var2);
         }
-        arrayList.add(j51.B(LocaleController.getString(R.string.BusinessIntroInfo)));
+        arrayList.add(h51.B(LocaleController.getString(R.string.BusinessIntroInfo)));
         boolean g02 = g0();
         this.H = !g02;
         if (!g02) {
-            arrayList.add(j51.B(null));
-            j51 e6 = j51.e(2, LocaleController.getString(R.string.BusinessIntroReset));
+            arrayList.add(h51.B(null));
+            h51 e6 = h51.e(2, LocaleController.getString(R.string.BusinessIntroReset));
             e6.r = true;
             arrayList.add(e6);
         }
-        j51 j51Var3 = new j51(8);
-        j51Var3.l = null;
-        arrayList.add(j51Var3);
+        h51 h51Var3 = new h51(8);
+        h51Var3.l = null;
+        arrayList.add(h51Var3);
     }
 
-    @Override // org.telegram.ui.Components.c61
+    @Override // org.telegram.ui.Components.b61
     public final CharSequence V() {
         return LocaleController.getString(R.string.BusinessIntro);
     }
 
-    @Override // org.telegram.ui.Components.c61
-    public final void W(j51 j51Var, View view) {
-        int i10 = j51Var.d;
+    @Override // org.telegram.ui.Components.b61
+    public final void W(h51 h51Var, View view) {
+        int i10 = h51Var.d;
         if (i10 == 1) {
-            y1 y1Var = new y1(getParentActivity(), getResourceProvider(), true, true);
-            y1Var.y = new org.telegram.ui.web.m(8, this, view);
+            x1 x1Var = new x1(getParentActivity(), getResourceProvider(), true, true);
+            x1Var.y = new org.telegram.ui.web.m(8, this, view);
             int i11 = 0;
-            y1Var.B = new g(this, i11);
-            View[] viewPages = y1Var.f.getViewPages();
+            x1Var.B = new g(this, i11);
+            View[] viewPages = x1Var.f.getViewPages();
             while (i11 < viewPages.length) {
                 View view2 = viewPages[i11];
-                if (view2 instanceof qh.o1) {
-                    qh.n1 n1Var = ((qh.o1) view2).c;
-                    if (n1Var.E == null) {
-                        n1Var.D(null);
+                if (view2 instanceof qh.n1) {
+                    qh.m1 m1Var = ((qh.n1) view2).c;
+                    if (m1Var.E == null) {
+                        m1Var.D(null);
                     }
                 }
                 i11++;
             }
-            showDialog(y1Var);
+            showDialog(x1Var);
             return;
         }
         if (i10 == 2) {
@@ -226,12 +226,12 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
         }
     }
 
-    @Override // org.telegram.ui.Components.c61
-    public final boolean X(j51 j51Var, View view) {
+    @Override // org.telegram.ui.Components.b61
+    public final boolean X(h51 h51Var, View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.c61, org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.Components.b61, org.telegram.ui.ActionBar.p2
     public final View createView(Context context) {
         AndroidUtilities.requestAdjustResize(getParentActivity(), this.classGuid);
         getUserConfig().getCurrentUser();
@@ -243,7 +243,7 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
         this.n.setBackground(new ColorDrawable(0));
         ge geVar = new ge(context, 5);
         geVar.setScaleType(ImageView.ScaleType.MATRIX);
-        geVar.setImageDrawable(j5.e(null, this.currentAccount, getUserConfig().getClientUserId(), k6.I.q()));
+        geVar.setImageDrawable(i5.e(null, this.currentAccount, getUserConfig().getClientUserId(), k6.I.q()));
         this.h.addView(geVar, c6.e(-1, -1, 119));
         this.h.addView(this.n, c6.d(-2, -2.0f, 17, 42.0f, 18.0f, 42.0f, 18.0f));
         j jVar = new j(this, context, LocaleController.getString(R.string.BusinessIntroTitleHint), getMessagesController().introTitleLengthLimit, this.resourceProvider, 0);
@@ -273,10 +273,10 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
         g3Var2.setOnEditorActionListener(new t2(gVar2, 2));
         this.n.d("", "");
         super.createView(context);
-        this.a.p1();
-        b61 b61Var = this.a;
-        b61Var.V2.r = false;
-        this.actionBar.setAdaptiveBackground(b61Var);
+        this.a.o1();
+        a61 a61Var = this.a;
+        a61Var.V2.r = false;
+        this.actionBar.setAdaptiveBackground(a61Var);
         this.actionBar.setActionBarMenuOnItemClick(new th.e(this, 7));
         Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
         int i11 = k6.v8;
@@ -286,15 +286,15 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
         e0(false);
         this.a.addOnLayoutChangeListener(new s2(this, 2));
         this.a.j(new nb0(this, 19));
-        b61 b61Var2 = this.a;
-        b61Var2.X2 = true;
-        b61Var2.setClipChildren(false);
+        a61 a61Var2 = this.a;
+        a61Var2.X2 = true;
+        a61Var2.setClipChildren(false);
         View view = this.fragmentView;
         if (view instanceof ViewGroup) {
             ((ViewGroup) view).setClipChildren(false);
         }
         i0();
-        new i3(this.fragmentView, false, new org.telegram.ui.web.d1(this, 17));
+        new h3(this.fragmentView, false, new org.telegram.ui.web.d1(this, 17));
         return this.fragmentView;
     }
 
@@ -318,12 +318,12 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
             this.f.setScaleX(f02 ? 1.0f : 0.0f);
             this.f.setScaleY(f02 ? 1.0f : 0.0f);
         }
-        b61 b61Var = this.a;
-        if (b61Var == null || b61Var.V2 == null || this.H == (!g0())) {
+        a61 a61Var = this.a;
+        if (a61Var == null || a61Var.V2 == null || this.H == (!g0())) {
             return;
         }
-        b61 b61Var2 = this.a;
-        if (b61Var2 != null && b61Var2.getChildCount() > 0) {
+        a61 a61Var2 = this.a;
+        if (a61Var2 != null && a61Var2.getChildCount() > 0) {
             View view = null;
             int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             int i11 = -1;
@@ -349,8 +349,8 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
         this.a.V2.N(true);
         int i13 = this.b;
         if (i13 >= 0) {
-            b61 b61Var3 = this.a;
-            b61Var3.U2.h1(i13, this.c - b61Var3.getPaddingTop());
+            a61 a61Var3 = this.a;
+            a61Var3.U2.h1(i13, this.c - a61Var3.getPaddingTop());
         }
     }
 
@@ -430,7 +430,7 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
     }
 
     public final void i0() {
-        x51 x51Var;
+        w51 w51Var;
         if (this.G) {
             return;
         }
@@ -478,9 +478,9 @@ public final class k extends c61 implements NotificationCenter.NotificationCente
             AndroidUtilities.cancelRunOnUIThread(gVar);
             AndroidUtilities.runOnUIThread(gVar, 5000L);
         }
-        b61 b61Var = this.a;
-        if (b61Var != null && (x51Var = b61Var.V2) != null) {
-            x51Var.N(true);
+        a61 a61Var = this.a;
+        if (a61Var != null && (w51Var = a61Var.V2) != null) {
+            w51Var.N(true);
         }
         this.G = true;
     }

@@ -22,10 +22,10 @@ import org.telegram.ui.Components.dd0;
 import org.telegram.ui.Components.du;
 import org.telegram.ui.Components.jv;
 import org.telegram.ui.LaunchActivity;
-import qh.b5;
-import qh.l4;
+import qh.a5;
+import qh.k4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class x1 extends org.telegram.ui.ActionBar.p2 {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final class x1 extends org.telegram.ui.ActionBar.p2 {
             case 6:
                 return ((du) this.b).a.getContext();
             case 12:
-                return ((b5) this.b).getContext();
+                return ((a5) this.b).getContext();
             default:
                 return super.getContext();
         }
@@ -176,7 +176,7 @@ public final class x1 extends org.telegram.ui.ActionBar.p2 {
             case 11:
                 return LaunchActivity.D1;
             case 12:
-                return AndroidUtilities.findActivity(((b5) this.b).getContext());
+                return AndroidUtilities.findActivity(((a5) this.b).getContext());
         }
     }
 
@@ -208,10 +208,10 @@ public final class x1 extends org.telegram.ui.ActionBar.p2 {
             case 10:
                 return new oh.n2(5, ((org.telegram.ui.web.a1) this.b).e);
             case 11:
-                g6Var3 = ((h3) ((l4) this.b)).resourcesProvider;
+                g6Var3 = ((h3) ((k4) this.b)).resourcesProvider;
                 return new oh.n2(6, g6Var3);
             case 12:
-                return ((b5) this.b).D1;
+                return ((a5) this.b).D1;
         }
     }
 
@@ -318,12 +318,12 @@ public final class x1 extends org.telegram.ui.ActionBar.p2 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x1(l4 l4Var) {
+    public x1(k4 k4Var) {
         super(null);
         int i10;
         this.a = 11;
-        this.b = l4Var;
-        i10 = ((h3) l4Var).currentAccount;
+        this.b = k4Var;
+        i10 = ((h3) k4Var).currentAccount;
         this.currentAccount = i10;
     }
 

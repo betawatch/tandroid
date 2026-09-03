@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class mg0 extends FrameLayout {
     public final /* synthetic */ int a;
@@ -29,8 +29,8 @@ public final class mg0 extends FrameLayout {
             case 1:
                 super.dispatchDraw(canvas);
                 ng0 ng0Var = this.b;
-                po0 po0Var = ng0Var.O;
-                if (po0Var != null && po0Var.a()) {
+                oo0 oo0Var = ng0Var.O;
+                if (oo0Var != null && oo0Var.a()) {
                     ng0Var.O.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     ng0Var.O.draw(canvas);
                     break;
@@ -45,7 +45,7 @@ public final class mg0 extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         PhotoViewer photoViewer;
-        org.telegram.ui.rs0 rs0Var;
+        org.telegram.ui.ws0 ws0Var;
         switch (this.a) {
             case 0:
                 int actionMasked = motionEvent.getActionMasked();
@@ -65,8 +65,8 @@ public final class mg0 extends FrameLayout {
                     ng0Var.c0 = false;
                     ng0Var.i();
                     AndroidUtilities.cancelRunOnUIThread(ng0Var.e0);
-                } else if (actionMasked == 2 && (photoViewer = ng0Var.S) != null && (rs0Var = photoViewer.Z3) != null && rs0Var.rewinding) {
-                    rs0Var.setX(motionEvent.getX());
+                } else if (actionMasked == 2 && (photoViewer = ng0Var.S) != null && (ws0Var = photoViewer.Z3) != null && ws0Var.rewinding) {
+                    ws0Var.setX(motionEvent.getX());
                 }
                 if (ng0Var.y != null) {
                     MotionEvent obtain = MotionEvent.obtain(motionEvent);
@@ -169,9 +169,9 @@ public final class mg0 extends FrameLayout {
         switch (this.a) {
             case 1:
                 ng0 ng0Var = this.b;
-                a71 a71Var = ng0Var.N;
-                if (a71Var.j) {
-                    a71Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
+                z61 z61Var = ng0Var.N;
+                if (z61Var.j) {
+                    z61Var.setBounds(getLeft(), getTop(), getRight(), getBottom());
                     ng0Var.N.draw(canvas);
                 }
                 PhotoViewer photoViewer = ng0Var.S;

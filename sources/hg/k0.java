@@ -27,9 +27,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.UserInfoActivity;
-import qh.d4;
+import qh.c4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k0 implements Runnable {
     public final /* synthetic */ int a;
@@ -73,7 +73,7 @@ public final /* synthetic */ class k0 implements Runnable {
                         BillingController billingController = BillingController.getInstance();
                         Activity parentActivity = p2Var.getParentActivity();
                         AccountInstance accountInstance = AccountInstance.getInstance(UserConfig.selectedAccount);
-                        qa qaVar = new qa(23);
+                        qa qaVar = new qa(24);
                         qaVar.i1((p2.m) list.get(0));
                         billingController.launchBillingFlow(parentActivity, accountInstance, tL_inputStorePaymentPremiumGiveaway, Collections.singletonList(qaVar.O0()));
                         break;
@@ -99,7 +99,7 @@ public final /* synthetic */ class k0 implements Runnable {
                         BillingController billingController2 = BillingController.getInstance();
                         Activity parentActivity2 = p2Var2.getParentActivity();
                         AccountInstance accountInstance2 = AccountInstance.getInstance(UserConfig.selectedAccount);
-                        qa qaVar2 = new qa(23);
+                        qa qaVar2 = new qa(24);
                         qaVar2.i1((p2.m) list2.get(0));
                         billingController2.launchBillingFlow(parentActivity2, accountInstance2, tL_inputStorePaymentPremiumGiftCode, Collections.singletonList(qaVar2.O0()));
                         break;
@@ -131,7 +131,7 @@ public final /* synthetic */ class k0 implements Runnable {
                     BillingController.getInstance().setOnCanceled(new w5(wVar, 2));
                     BillingController billingController3 = BillingController.getInstance();
                     AccountInstance accountInstance3 = AccountInstance.getInstance(UserConfig.selectedAccount);
-                    qa qaVar3 = new qa(23);
+                    qa qaVar3 = new qa(24);
                     qaVar3.i1((p2.m) list3.get(0));
                     billingController3.launchBillingFlow(activity, accountInstance3, tL_inputStorePaymentStarsGiveaway, Collections.singletonList(qaVar3.O0()));
                     break;
@@ -158,7 +158,7 @@ public final /* synthetic */ class k0 implements Runnable {
                     BillingController.getInstance().setOnCanceled(new y5(i5Var, 0));
                     BillingController billingController4 = BillingController.getInstance();
                     AccountInstance accountInstance4 = AccountInstance.getInstance(UserConfig.selectedAccount);
-                    qa qaVar4 = new qa(23);
+                    qa qaVar4 = new qa(24);
                     qaVar4.i1((p2.m) list4.get(0));
                     billingController4.launchBillingFlow(activity2, accountInstance4, tL_inputStorePaymentStarsGift, Collections.singletonList(qaVar4.O0()));
                     break;
@@ -174,14 +174,14 @@ public final /* synthetic */ class k0 implements Runnable {
                 final HorizontalScrollView horizontalScrollView = (HorizontalScrollView) this.h;
                 final qh.d dVar = (qh.d) this.c;
                 final boolean[] zArr = (boolean[]) this.d;
-                d4 d4Var = (d4) this.e;
+                c4 c4Var = (c4) this.e;
                 final ImageView imageView = (ImageView) this.n;
                 final g6 g6Var = (g6) this.f;
                 final int[] iArr = (int[]) this.r;
                 if (!TextUtils.isEmpty(strArr[0].trim())) {
                     final boolean z4 = zArr[0];
                     final String str = strArr[0];
-                    d4Var.run(str, new Utilities.Callback2() { // from class: wh.c
+                    c4Var.run(str, new Utilities.Callback2() { // from class: wh.c
                         @Override // org.telegram.messenger.Utilities.Callback2
                         public final void run(Object obj, Object obj2) {
                             Bitmap bitmap = (Bitmap) obj;

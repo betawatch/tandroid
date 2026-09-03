@@ -23,7 +23,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class oh0 extends View {
     public int B;
@@ -35,7 +35,7 @@ public final class oh0 extends View {
     public boolean H;
     public RenderNode I;
     public RenderNode J;
-    public final nv0[] K;
+    public final mv0[] K;
     public final z5 L;
     public final oh.i5 M;
     public boolean a;
@@ -70,7 +70,7 @@ public final class oh0 extends View {
         this.C = false;
         this.D = false;
         this.E = false;
-        this.K = new nv0[3];
+        this.K = new mv0[3];
         z5 z5Var = new z5(this, 0L, 350L, pr.f);
         this.L = z5Var;
         this.M = new oh.i5(2, this);
@@ -157,7 +157,7 @@ public final class oh0 extends View {
         this.f[i10].setShader(new ComposeShader(new BitmapShader(bitmap, tileMode, tileMode), linearGradient, PorterDuff.Mode.DST_IN));
     }
 
-    public final void c(float f10, org.telegram.ui.vz0 vz0Var, float f11, float f12) {
+    public final void c(float f10, org.telegram.ui.a01 a01Var, float f11, float f12) {
         if (this.F == null && this.G == null) {
             this.H = false;
         } else {
@@ -191,9 +191,9 @@ public final class oh0 extends View {
         this.J.setAlpha(this.L.d(1.0f, false));
         lh0 lh0Var2 = this.F;
         if (lh0Var2 != null) {
-            if (vz0Var != null) {
+            if (a01Var != null) {
                 lh0Var2.w = this.J;
-                lh0Var2.r = vz0Var;
+                lh0Var2.r = a01Var;
                 lh0Var2.s = renderNodeScale / f11;
                 lh0Var2.v = -f12;
                 lh0Var2.invalidate();
@@ -207,7 +207,7 @@ public final class oh0 extends View {
         }
         ei0 ei0Var2 = this.G;
         if (ei0Var2 != null) {
-            if (vz0Var == null) {
+            if (a01Var == null) {
                 ei0Var2.F = this.J;
                 ei0Var2.G = renderNodeScale;
                 ei0Var2.H = (-f12) + AndroidUtilities.dp(22.0f);
@@ -230,11 +230,11 @@ public final class oh0 extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean d() {
-        org.telegram.ui.xu0 xu0Var;
-        nv0[] nv0VarArr;
+        org.telegram.ui.cv0 cv0Var;
+        mv0[] mv0VarArr;
         xh0 xh0Var = this.h;
         boolean z4 = false;
-        if (xh0Var != null && ((xu0Var = xh0Var.e1) == null || !xu0Var.n)) {
+        if (xh0Var != null && ((cv0Var = xh0Var.e1) == null || !cv0Var.n)) {
             int measuredWidth = (int) (xh0Var.getMeasuredWidth() / 6.0f);
             int i10 = (int) (this.r / 6.0f);
             if (measuredWidth > 0 && i10 > 0) {
@@ -247,13 +247,13 @@ public final class oh0 extends View {
                 this.E = false;
                 int i11 = 0;
                 while (true) {
-                    nv0VarArr = this.K;
+                    mv0VarArr = this.K;
                     if (i11 >= length) {
                         break;
                     }
-                    nv0 nv0Var = nv0VarArr[i11];
-                    if (nv0Var != null) {
-                        nv0Var.g(null);
+                    mv0 mv0Var = mv0VarArr[i11];
+                    if (mv0Var != null) {
+                        mv0Var.g(null);
                     }
                     ci0 ci0Var = ci0VarArr[i11];
                     if (ci0Var != null) {
@@ -284,9 +284,9 @@ public final class oh0 extends View {
                 h(0, E);
                 nh0 nh0Var = this.v;
                 if (length == 1) {
-                    nv0 nv0Var2 = nv0VarArr[0];
-                    if (nv0Var2 != null) {
-                        nv0Var2.g(nh0Var);
+                    mv0 mv0Var2 = mv0VarArr[0];
+                    if (mv0Var2 != null) {
+                        mv0Var2.g(nh0Var);
                     }
                     return !this.D;
                 }
@@ -295,12 +295,12 @@ public final class oh0 extends View {
                 if (this.x == 0) {
                     h(2, this.h.E(this.w - 1));
                 }
-                for (nv0 nv0Var3 : nv0VarArr) {
-                    if (nv0Var3 != null) {
-                        nv0Var3.g(nh0Var);
+                for (mv0 mv0Var3 : mv0VarArr) {
+                    if (mv0Var3 != null) {
+                        mv0Var3.g(nh0Var);
                     }
                 }
-                if ((E != null && nv0VarArr[0] == null) || (this.x != 0 && E2 != null && nv0VarArr[1] == null)) {
+                if ((E != null && mv0VarArr[0] == null) || (this.x != 0 && E2 != null && mv0VarArr[1] == null)) {
                     z4 = true;
                 }
                 this.C = z4;
@@ -349,9 +349,9 @@ public final class oh0 extends View {
                         ci0Var2.a();
                         this.d[i10] = null;
                     }
-                    nv0 nv0Var = this.K[i10];
-                    if (nv0Var != null) {
-                        nv0Var.g(null);
+                    mv0 mv0Var = this.K[i10];
+                    if (mv0Var != null) {
+                        mv0Var.g(null);
                         this.K[i10] = null;
                     }
                 } catch (Throwable th2) {
@@ -363,7 +363,7 @@ public final class oh0 extends View {
         }
     }
 
-    public final void f(Canvas canvas, org.telegram.ui.vz0 vz0Var, float f10, float f11, boolean z4, float f12, float f13) {
+    public final void f(Canvas canvas, org.telegram.ui.a01 a01Var, float f10, float f11, boolean z4, float f12, float f13) {
         int i10;
         float f14;
         char c3;
@@ -374,8 +374,8 @@ public final class oh0 extends View {
         }
         if (this.a && Build.VERSION.SDK_INT >= 31) {
             if (canvas2.isHardwareAccelerated()) {
-                if (vz0Var != null || getVisibility() != 0 || getAlpha() <= 0.0f) {
-                    if (vz0Var != null) {
+                if (a01Var != null || getVisibility() != 0 || getAlpha() <= 0.0f) {
+                    if (a01Var != null) {
                         float measuredWidth = f10 / this.h.getMeasuredWidth();
                         float f15 = this.r * (1.0f - f12);
                         float f16 = f15 * measuredWidth;
@@ -385,30 +385,30 @@ public final class oh0 extends View {
                         RecordingCanvas beginRecording = this.I.beginRecording();
                         float f17 = 1.0f / renderNodeScale;
                         beginRecording.scale(f17, f17);
-                        l5 l5Var = vz0Var.e;
-                        g(l5Var != null ? l5Var.k : vz0Var.a, beginRecording, f16, f11);
-                        if (vz0Var.U && vz0Var.S > 0.0f) {
-                            g(vz0Var.R, beginRecording, f16, f11);
+                        l5 l5Var = a01Var.e;
+                        g(l5Var != null ? l5Var.k : a01Var.a, beginRecording, f16, f11);
+                        if (a01Var.U && a01Var.S > 0.0f) {
+                            g(a01Var.R, beginRecording, f16, f11);
                         }
                         this.I.endRecording();
                         this.I.setAlpha(f13);
                         canvas2.translate(0.0f, -f16);
                         canvas2.scale(renderNodeScale, renderNodeScale);
                         canvas2.drawRenderNode(this.I);
-                        c(f10, vz0Var, measuredWidth, f15);
+                        c(f10, a01Var, measuredWidth, f15);
                         return;
                     }
                     return;
                 }
                 j();
-                nv0[] nv0VarArr = this.K;
-                nv0 nv0Var = nv0VarArr[0];
-                if (nv0Var != null) {
-                    nv0Var.g(null);
+                mv0[] mv0VarArr = this.K;
+                mv0 mv0Var = mv0VarArr[0];
+                if (mv0Var != null) {
+                    mv0Var.g(null);
                 }
-                nv0 nv0Var2 = nv0VarArr[1];
-                if (nv0Var2 != null) {
-                    nv0Var2.g(null);
+                mv0 mv0Var2 = mv0VarArr[1];
+                if (mv0Var2 != null) {
+                    mv0Var2.g(null);
                 }
                 float renderNodeScale2 = getRenderNodeScale();
                 this.I.setPosition(0, 0, (int) (f10 / renderNodeScale2), (int) ((this.r + this.n) / renderNodeScale2));
@@ -437,7 +437,7 @@ public final class oh0 extends View {
                 c(f10, null, 1.0f, this.r);
                 return;
             }
-            if (vz0Var != null || AndroidUtilities.makingGlobalBlurBitmap) {
+            if (a01Var != null || AndroidUtilities.makingGlobalBlurBitmap) {
                 return;
             }
             this.a = false;
@@ -527,12 +527,12 @@ public final class oh0 extends View {
             ci0Var.f = true;
         }
         if (i10 == 0 || (this.x != 0 && i10 == 1)) {
-            boolean z4 = view instanceof nv0;
-            nv0[] nv0VarArr = this.K;
+            boolean z4 = view instanceof mv0;
+            mv0[] mv0VarArr = this.K;
             if (z4) {
-                nv0VarArr[i10] = (nv0) view;
+                mv0VarArr[i10] = (mv0) view;
             } else {
-                nv0VarArr[i10] = null;
+                mv0VarArr[i10] = null;
             }
         }
     }
@@ -553,15 +553,15 @@ public final class oh0 extends View {
             E.draw(canvas);
             canvas.restore();
         }
-        boolean z4 = E instanceof nv0;
-        nv0[] nv0VarArr = this.K;
+        boolean z4 = E instanceof mv0;
+        mv0[] mv0VarArr = this.K;
         if (!z4) {
-            nv0VarArr[i10] = null;
+            mv0VarArr[i10] = null;
             return;
         }
-        nv0 nv0Var = (nv0) E;
-        nv0VarArr[i10] = nv0Var;
-        nv0Var.g(this.v);
+        mv0 mv0Var = (mv0) E;
+        mv0VarArr[i10] = mv0Var;
+        mv0Var.g(this.v);
     }
 
     public final void j() {

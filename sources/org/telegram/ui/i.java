@@ -21,10 +21,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class i extends org.telegram.ui.ActionBar.p2 implements LocationController.LocationFetchCallback {
-    public org.telegram.ui.Components.lj0 a;
+    public org.telegram.ui.Components.kj0 a;
     public GradientDrawable b;
     public fg.s0 c;
     public TextView d;
@@ -119,12 +119,12 @@ public final class i extends org.telegram.ui.ActionBar.p2 implements LocationCon
         int[] iArr4 = this.s;
         iArr4[6] = 2170912;
         iArr4[7] = org.telegram.ui.ActionBar.k6.w0(null, i11, false);
-        org.telegram.ui.Components.lj0 lj0Var = this.a;
+        org.telegram.ui.Components.kj0 kj0Var = this.a;
         int[] iArr5 = this.s;
-        org.telegram.ui.Components.ij0 ij0Var = lj0Var.b;
-        if (ij0Var != null) {
-            ij0Var.n = iArr5;
-            ij0Var.E();
+        org.telegram.ui.Components.hj0 hj0Var = kj0Var.b;
+        if (hj0Var != null) {
+            hj0Var.n = iArr5;
+            hj0Var.E();
         }
     }
 
@@ -154,9 +154,9 @@ public final class i extends org.telegram.ui.ActionBar.p2 implements LocationCon
         if (kVar2 != null) {
             viewGroup.addView(kVar2);
         }
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        this.a = lj0Var;
-        viewGroup.addView(lj0Var);
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
+        this.a = kj0Var;
+        viewGroup.addView(kj0Var);
         TextView textView = new TextView(context);
         this.e = textView;
         int i12 = org.telegram.ui.ActionBar.k6.G6;
@@ -237,7 +237,7 @@ public final class i extends org.telegram.ui.ActionBar.p2 implements LocationCon
                         textViewArr[i20].setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
                         spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 1, (CharSequence) "");
                         spannableStringBuilder.replace(indexOf, indexOf + 1, (CharSequence) "");
-                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.n51(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl), (org.telegram.ui.Components.t01) null), indexOf, lastIndexOf - 1, 33);
+                        spannableStringBuilder.setSpan(new org.telegram.ui.Components.l51(LocaleController.getString(R.string.AuthAnotherClientDownloadClientUrl), (org.telegram.ui.Components.s01) null), indexOf, lastIndexOf - 1, 33);
                     }
                     textViewArr[i20].setText(spannableStringBuilder);
                 } else if (i15 == 1) {

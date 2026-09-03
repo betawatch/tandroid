@@ -6,11 +6,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.m81;
+import org.telegram.ui.Components.l81;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class o3 extends m81 {
+public final class o3 extends l81 {
     public final /* synthetic */ g5 Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -19,7 +19,7 @@ public final class o3 extends m81 {
         this.Q = g5Var;
     }
 
-    @Override // org.telegram.ui.Components.m81
+    @Override // org.telegram.ui.Components.l81
     public final void E(View view, float f10) {
         int i10;
         View view2;
@@ -73,7 +73,7 @@ public final class o3 extends m81 {
     }
 
     /* JADX WARN: Type inference failed for: r1v1, types: [boolean] */
-    @Override // org.telegram.ui.Components.m81
+    @Override // org.telegram.ui.Components.l81
     public final void F() {
         super.F();
         int i10 = this.b;
@@ -83,7 +83,7 @@ public final class o3 extends m81 {
         }
     }
 
-    @Override // org.telegram.ui.Components.m81
+    @Override // org.telegram.ui.Components.l81
     public final boolean i(MotionEvent motionEvent) {
         c5.d dVar = this.Q.V0;
         return dVar == null || dVar.c(0);

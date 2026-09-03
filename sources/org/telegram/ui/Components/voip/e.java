@@ -22,11 +22,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.y3;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.rc;
-import org.telegram.ui.ai1;
+import org.telegram.ui.gi1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class e extends View {
     public boolean B;
@@ -45,7 +45,7 @@ public final class e extends View {
     public boolean O;
     public org.telegram.ui.Cells.z P;
     public final Paint Q;
-    public final ij0 R;
+    public final hj0 R;
     public final Drawable S;
     public final q0 T;
     public final Paint U;
@@ -111,11 +111,11 @@ public final class e extends View {
         Drawable mutate = activity.getDrawable(R.drawable.ic_close_white).mutate();
         this.d = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
-        ij0 ij0Var = new ij0(R.raw.call_accept, "" + R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
-        this.R = ij0Var;
-        ij0Var.I(1);
-        ij0Var.N(90);
-        ij0Var.s0 = this;
+        hj0 hj0Var = new hj0(R.raw.call_accept, AndroidUtilities.dp(48.0f), AndroidUtilities.dp(48.0f), true, null);
+        this.R = hj0Var;
+        hj0Var.I(1);
+        hj0Var.N(90);
+        hj0Var.s0 = this;
         this.S = activity.getDrawable(R.drawable.calls_video).mutate();
         paint.setColor(-1);
         paint.setAlpha(20);
@@ -361,7 +361,7 @@ public final class e extends View {
                         ofFloat.start();
                         this.L = ofFloat;
                         if (this.N != null && (Math.abs(y10) < f10 || this.G > this.I * 0.8f)) {
-                            ((ai1) this.N).b();
+                            ((gi1) this.N).b();
                         }
                     } else {
                         ValueAnimator ofFloat2 = ValueAnimator.ofFloat(this.H, 0.0f);
@@ -369,7 +369,7 @@ public final class e extends View {
                         ofFloat2.start();
                         this.M = ofFloat2;
                         if (this.N != null && (Math.abs(y10) < f10 || (-this.H) > this.I * 0.8f)) {
-                            ((ai1) this.N).a();
+                            ((gi1) this.N).a();
                         }
                     }
                 }

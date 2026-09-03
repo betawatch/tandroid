@@ -10,10 +10,10 @@ import java.util.List;
 import org.telegram.messenger.CodeHighlighting;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.bj0;
+import org.telegram.ui.Components.s01;
 import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.u01;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class w4 {
     public static Object a(Spanned spanned, int i10, int i11, Class cls) {
@@ -454,9 +454,9 @@ public abstract class w4 {
             return spannableStringBuilder;
         }
         SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(spannableStringBuilder);
-        t01 t01Var = new t01();
-        t01Var.a = i10;
-        spannableStringBuilder2.setSpan(new u01(t01Var, 0), 0, spannableStringBuilder2.length(), 33);
+        s01 s01Var = new s01();
+        s01Var.a = i10;
+        spannableStringBuilder2.setSpan(new t01(s01Var, 0), 0, spannableStringBuilder2.length(), 33);
         return spannableStringBuilder2;
     }
 }

@@ -6,15 +6,15 @@ import android.widget.TextView;
 import oh.k4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Cells.r7;
-import org.telegram.ui.Components.c81;
+import org.telegram.ui.Components.b81;
 import org.telegram.ui.Components.d70;
-import org.telegram.ui.Components.m81;
+import org.telegram.ui.Components.l81;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.voip.s1;
 import org.telegram.ui.Components.voip.t1;
-import org.telegram.ui.kh1;
+import org.telegram.ui.qh1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class d0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -57,23 +57,23 @@ public final class d0 implements ValueAnimator.AnimatorUpdateListener {
                 mh.d1 d1Var = ((d70) this.b).e.d;
                 int i10 = d1Var.B1;
                 if (i10 != -1 && (view = d1Var.C1) != null) {
-                    d1Var.i1(i10, view);
+                    d1Var.h1(i10, view);
                     d1Var.invalidate();
                     break;
                 }
                 break;
             case 7:
-                m81 m81Var = (m81) this.b;
-                View[] viewArr = m81Var.e;
-                if (m81Var.x) {
+                l81 l81Var = (l81) this.b;
+                View[] viewArr = l81Var.e;
+                if (l81Var.x) {
                     float abs = 1.0f - (Math.abs(viewArr[0].getTranslationX()) / viewArr[0].getMeasuredWidth());
-                    m81Var.c = abs;
-                    c81 c81Var = m81Var.J;
-                    if (c81Var != null) {
-                        c81Var.e(abs, m81Var.d, m81Var.b);
+                    l81Var.c = abs;
+                    b81 b81Var = l81Var.J;
+                    if (b81Var != null) {
+                        b81Var.e(abs, l81Var.d, l81Var.b);
                     }
                 }
-                m81Var.w(false);
+                l81Var.w(false);
                 break;
             case 8:
                 t1 t1Var = (t1) this.b;
@@ -81,7 +81,7 @@ public final class d0 implements ValueAnimator.AnimatorUpdateListener {
                 t1Var.G = floatValue;
                 s1 s1Var = t1Var.f0;
                 if (s1Var != null) {
-                    ((kh1) s1Var).b.a0.d(floatValue, t1Var.M);
+                    ((qh1) s1Var).b.a0.d(floatValue, t1Var.M);
                 }
                 t1Var.invalidate();
                 break;

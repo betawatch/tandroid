@@ -15,9 +15,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.go, MessagesStorage.BooleanCallback, org.telegram.ui.Components.xj0, ResultCallback, kh.d, xg.a, xg.b, u60, ns, org.telegram.ui.Components.ll0, xg.d, org.telegram.ui.Components.zk0, FlagSecureReason.FlagSecureCondition, uu0 {
+public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.go, MessagesStorage.BooleanCallback, org.telegram.ui.Components.wj0, ResultCallback, kh.d, xg.a, xg.b, u60, ns, org.telegram.ui.Components.kl0, xg.d, org.telegram.ui.Components.yk0, FlagSecureReason.FlagSecureCondition, zu0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ xn b;
 
@@ -48,21 +48,21 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
         }
     }
 
-    @Override // org.telegram.ui.uu0
+    @Override // org.telegram.ui.zu0
     public void c(float[] fArr) {
         xn xnVar = this.b;
         fArr[1] = xnVar.u0.getBottom() - xnVar.xa;
         fArr[0] = (xnVar.u0.getTop() + xnVar.p9) - AndroidUtilities.dp(4.0f);
     }
 
-    @Override // org.telegram.ui.Components.zk0
+    @Override // org.telegram.ui.Components.yk0
     public void d() {
         xn xnVar = this.b;
         xnVar.q9(1);
         xnVar.r9();
     }
 
-    @Override // org.telegram.ui.Components.xj0
+    @Override // org.telegram.ui.Components.wj0
     public void e(ArrayList arrayList) {
         switch (this.a) {
             case 9:
@@ -90,7 +90,7 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         xn xnVar = this.b;
         boolean z4 = false;
@@ -104,7 +104,7 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
                 Object J = xnVar.F1.getAdapter().J(i10 - 1);
                 if (J instanceof uf.r0) {
                     uf.r0 r0Var = (uf.r0) J;
-                    if (xnVar.F1.getAdapter().G != null && org.telegram.ui.Components.k51.h) {
+                    if (xnVar.F1.getAdapter().G != null && org.telegram.ui.Components.i51.h) {
                         xnVar.V.setFieldText("");
                         jk jkVar = xnVar.V;
                         String str = r0Var.a;
@@ -125,7 +125,7 @@ public final /* synthetic */ class te implements org.telegram.ui.ActionBar.c2, o
                         xnVar.showDialog(alertDialog$Builder.a);
                         return true;
                     }
-                    if (org.telegram.ui.Components.k51.h) {
+                    if (org.telegram.ui.Components.i51.h) {
                         xnVar.V.setFieldText("");
                         jk jkVar2 = xnVar.V;
                         String str2 = (String) J;

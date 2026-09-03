@@ -34,27 +34,27 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.cf;
+import org.telegram.ui.Components.e71;
 import org.telegram.ui.Components.ei;
-import org.telegram.ui.Components.f71;
-import org.telegram.ui.Components.k71;
+import org.telegram.ui.Components.j71;
 import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.x21;
-import org.telegram.ui.Components.xn0;
+import org.telegram.ui.Components.w21;
+import org.telegram.ui.Components.wn0;
 import org.telegram.ui.Components.y4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ay;
+import org.telegram.ui.cf1;
 import org.telegram.ui.py;
-import org.telegram.ui.te1;
 import org.telegram.ui.u60;
 import org.telegram.ui.wc0;
-import org.telegram.ui.we1;
 import org.telegram.ui.xn;
-import qh.q7;
-import qh.x7;
+import org.telegram.ui.ze1;
+import qh.p7;
+import qh.w7;
 import uf.n;
 import uf.y;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements f, RequestDelegateTimestamp, ImageReceiver.ImageReceiverDelegate, y4, wc0, MessagesStorage.BooleanCallback, l, c2, u60, MessagesStorage.StringCallback {
     public final /* synthetic */ int a;
@@ -108,7 +108,7 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
 
     @Override // g5.l
     public m createDataSource() {
-        return new f71(((k71) this.c).h.createDataSource(), this.b);
+        return new e71(((j71) this.c).h.createDataSource(), this.b);
     }
 
     @Override // org.telegram.ui.wc0
@@ -151,8 +151,8 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
 
     @Override // org.telegram.ui.u60
     public void i(int i10, ArrayList arrayList) {
-        we1 we1Var = (we1) this.c;
-        p2 p2Var = we1Var.b;
+        cf1 cf1Var = (cf1) this.c;
+        p2 p2Var = cf1Var.b;
         int size = arrayList.size();
         int[] iArr = new int[1];
         TLRPC.TL_messages_invitedUsers tL_messages_invitedUsers = new TLRPC.TL_messages_invitedUsers();
@@ -163,7 +163,7 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
             MessagesController messagesController = p2Var.getMessagesController();
             ag.f fVar = new ag.f(23);
             long j10 = this.b;
-            messagesController.addUserToChat(j10, user, i10, null, p2Var, false, fVar, null, new te1(we1Var, tL_messages_invitedUsers, iArr, size, arrayList, j10));
+            messagesController.addUserToChat(j10, user, i10, null, p2Var, false, fVar, null, new ze1(cf1Var, tL_messages_invitedUsers, iArr, size, arrayList, j10));
             i11++;
             size = size;
             iArr = iArr;
@@ -175,17 +175,17 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
     public void j(d2 d2Var, int i10) {
         switch (this.a) {
             case 7:
-                xn0 xn0Var = ((py) this.c).z0.V;
-                a0.h hVar = xn0Var.u0;
+                wn0 wn0Var = ((py) this.c).z0.V;
+                a0.h hVar = wn0Var.u0;
                 long j10 = this.b;
                 y yVar = (y) hVar.f(j10);
                 if (yVar != null) {
-                    xn0Var.u0.l(j10);
-                    xn0Var.q0.remove(yVar);
-                    xn0Var.s0.remove(yVar);
-                    xn0Var.r0.remove(yVar);
-                    xn0Var.l();
-                    MessagesStorage.getInstance(xn0Var.p0).getStorageQueue().postRunnable(new n(xn0Var, j10, 0));
+                    wn0Var.u0.l(j10);
+                    wn0Var.q0.remove(yVar);
+                    wn0Var.s0.remove(yVar);
+                    wn0Var.r0.remove(yVar);
+                    wn0Var.l();
+                    MessagesStorage.getInstance(wn0Var.p0).getStorageQueue().postRunnable(new n(wn0Var, j10, 0));
                     break;
                 }
                 break;
@@ -252,13 +252,13 @@ public final /* synthetic */ class e implements f, RequestDelegateTimestamp, Ima
 
     @Override // org.telegram.messenger.MessagesStorage.StringCallback
     public void run(String str) {
-        x7 x7Var = (x7) this.c;
-        x7Var.T.i1().r(this.b, str, new q7(x7Var, 2));
+        w7 w7Var = (w7) this.c;
+        w7Var.T.i1().r(this.b, str, new p7(w7Var, 2));
     }
 
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z4) {
-        xn xnVar = ((x21) this.c).h;
+        xn xnVar = ((w21) this.c).h;
         if (e2.c.s(xnVar)) {
             xnVar.qa(this.b, false);
         }

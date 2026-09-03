@@ -1,14 +1,14 @@
 package oh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v3 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qh.d8 b;
+    public final /* synthetic */ qh.c8 b;
 
-    public /* synthetic */ v3(qh.d8 d8Var, int i10) {
+    public /* synthetic */ v3(qh.c8 c8Var, int i10) {
         this.a = i10;
-        this.b = d8Var;
+        this.b = c8Var;
     }
 
     @Override // java.lang.Runnable

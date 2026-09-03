@@ -1,42 +1,53 @@
 package qh;
 
-import org.telegram.messenger.Utilities;
+import android.os.Bundle;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.UserObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class x5 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b6 b;
+public final class x5 extends z5 {
+    public final /* synthetic */ TLRPC.User b;
 
-    public /* synthetic */ x5(b6 b6Var, int i10) {
-        this.a = i10;
-        this.b = b6Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public x5(String str, TLRPC.User user) {
+        super(str);
+        this.b = user;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                a6 a6Var = (a6) obj;
-                b6 b6Var = this.b;
-                b6Var.E = null;
-                b6Var.B = a6Var;
-                b6Var.y = a6Var != null;
-                b6Var.a();
-                b6Var.invalidate();
-                g8 g8Var = b6Var.b;
-                if (g8Var != null) {
-                    g8Var.run();
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) obj;
-                a6 a6Var2 = this.b.B;
-                if (a6Var2 != null || p2Var == null) {
-                    a6Var2.c(p2Var);
-                    break;
-                }
+    @Override // qh.z5
+    public final String a() {
+        return LocaleController.getString(R.string.ViewProfile);
+    }
+
+    @Override // qh.z5
+    public final String b() {
+        return UserObject.getUserName(this.b);
+    }
+
+    @Override // qh.z5
+    public final void c(org.telegram.ui.ActionBar.p2 p2Var) {
+        TLRPC.User user = this.b;
+        if (user.id != UserConfig.getInstance(UserConfig.selectedAccount).getClientUserId()) {
+            p2Var.presentFragment(ProfileActivity.m4(user.id));
+            return;
         }
+        Bundle bundle = new Bundle();
+        bundle.putLong("user_id", user.id);
+        bundle.putBoolean("my_profile", true);
+        p2Var.presentFragment(new ProfileActivity(bundle, null));
+    }
+
+    @Override // qh.z5
+    public final void d(ImageReceiver imageReceiver) {
+        org.telegram.ui.Components.z8 z8Var = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.g6) null);
+        TLRPC.User user = this.b;
+        z8Var.r(user);
+        imageReceiver.setForUserOrChat(user, z8Var);
     }
 }

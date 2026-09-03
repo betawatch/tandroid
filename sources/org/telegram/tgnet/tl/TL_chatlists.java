@@ -8,11 +8,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.l;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class TL_chatlists {
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_chatlistInvite extends chatlist_ChatlistInvite {
         public static final int constructor = -250687953;
         public String emoticon;
@@ -53,7 +53,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_chatlistInviteAlready extends chatlist_ChatlistInvite {
         public static final int constructor = -91752871;
         public int filter_id;
@@ -83,7 +83,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_chatlistInvite_layer195 extends TL_chatlists_chatlistInvite {
         public static final int constructor = 500007837;
 
@@ -115,7 +115,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_chatlistUpdates extends TLObject {
         public static final int constructor = -1816295539;
         public ArrayList<TLRPC.Peer> missing_peers = new ArrayList<>();
@@ -142,7 +142,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_checkChatlistInvite extends TLObject {
         public static final int constructor = 1103171583;
         public String slug;
@@ -159,7 +159,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_deleteExportedInvite extends TLObject {
         public static final int constructor = 1906072670;
         public TL_inputChatlistDialogFilter chatlist;
@@ -178,7 +178,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_editExportedInvite extends TLObject {
         public static final int constructor = 1698543165;
         public TL_inputChatlistDialogFilter chatlist;
@@ -210,7 +210,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_exportChatlistInvite extends TLObject {
         public static final int constructor = -2072885362;
         public TL_inputChatlistDialogFilter chatlist;
@@ -231,7 +231,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_exportedChatlistInvite extends TLObject {
         public static final int constructor = 283567014;
         public TLRPC.DialogFilter filter;
@@ -255,7 +255,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_exportedInvites extends TLObject {
         public static final int constructor = 279670215;
         public ArrayList<TL_exportedChatlistInvite> invites = new ArrayList<>();
@@ -282,7 +282,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_getChatlistUpdates extends TLObject {
         public static final int constructor = -1992190687;
         public TL_inputChatlistDialogFilter chatlist;
@@ -299,7 +299,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_getExportedInvites extends TLObject {
         public static final int constructor = -838608253;
         public TL_inputChatlistDialogFilter chatlist;
@@ -316,7 +316,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_getLeaveChatlistSuggestions extends TLObject {
         public static final int constructor = -37955820;
         public TL_inputChatlistDialogFilter chatlist;
@@ -333,7 +333,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_hideChatlistUpdates extends TLObject {
         public static final int constructor = 1726252795;
         public TL_inputChatlistDialogFilter chatlist;
@@ -350,7 +350,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_joinChatlistInvite extends TLObject {
         public static final int constructor = -1498291302;
         public ArrayList<TLRPC.InputPeer> peers = new ArrayList<>();
@@ -369,7 +369,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_joinChatlistUpdates extends TLObject {
         public static final int constructor = -527828747;
         public TL_inputChatlistDialogFilter chatlist;
@@ -388,7 +388,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_chatlists_leaveChatlist extends TLObject {
         public static final int constructor = 1962598714;
         public TL_inputChatlistDialogFilter chatlist;
@@ -407,7 +407,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_exportedChatlistInvite extends TLObject {
         public static final int constructor = 206668204;
         public int flags;
@@ -442,7 +442,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class TL_inputChatlistDialogFilter extends TLObject {
         public static final int constructor = -203367885;
         public int filter_id;
@@ -463,7 +463,7 @@ public class TL_chatlists {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static abstract class chatlist_ChatlistInvite extends TLObject {
         public static chatlist_ChatlistInvite TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
             return (chatlist_ChatlistInvite) TLObject.TLdeserialize(chatlist_ChatlistInvite.class, i10 != -250687953 ? i10 != -91752871 ? i10 != 500007837 ? null : new TL_chatlists_chatlistInvite_layer195() : new TL_chatlists_chatlistInviteAlready() : new TL_chatlists_chatlistInvite(), inputSerializedData, i10, z4);

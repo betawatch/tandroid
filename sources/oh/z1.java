@@ -2,6 +2,7 @@ package oh;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Point;
 import android.graphics.RectF;
 import android.text.style.CharacterStyle;
 import android.text.style.URLSpan;
@@ -11,7 +12,6 @@ import android.view.ViewParent;
 import android.view.WindowManager;
 import j$.util.Objects;
 import java.io.File;
-import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -28,8 +28,8 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.messenger.video.VideoAds;
-import org.telegram.messenger.voip.AudioRecordJNI;
 import org.telegram.messenger.voip.ConferenceCall;
+import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
@@ -37,13 +37,13 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.h90;
 import org.telegram.ui.Components.rc;
-import org.telegram.ui.r31;
+import org.telegram.ui.w31;
+import qh.aa;
 import qh.ba;
-import qh.ca;
-import qh.u9;
-import qh.x9;
+import qh.t9;
+import qh.w9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z1 implements Runnable {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class z1 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        ba baVar;
+        aa aaVar;
         h9 h9Var;
         int i10;
         boolean z4;
@@ -72,39 +72,39 @@ public final /* synthetic */ class z1 implements Runnable {
         switch (this.a) {
             case 0:
                 f4 f4Var = (f4) this.b;
-                qh.f3 f3Var = (qh.f3) this.c;
-                f4Var.removeView(f3Var);
-                if (f4Var.a2 == f3Var) {
+                qh.e3 e3Var = (qh.e3) this.c;
+                f4Var.removeView(e3Var);
+                if (f4Var.a2 == e3Var) {
                     f4Var.a2 = null;
                     break;
                 }
                 break;
             case 1:
                 f4 f4Var2 = (f4) this.b;
-                ca E = ca.E((Activity) this.c, f4Var2.z2);
+                ba E = ba.E((Activity) this.c, f4Var2.z2);
                 e4 e4Var2 = f4Var2.J2;
                 long j10 = (e4Var2 == null || (h9Var = e4Var2.b) == null) ? 0L : h9Var.currentPosition;
                 File h = f4Var2.L1.h();
                 TL_stories.StoryItem storyItem = f4Var2.L1.a;
-                qh.s6 s6Var = new qh.s6();
-                s6Var.n = true;
-                s6Var.t = storyItem.media;
-                int i11 = s6Var.a;
-                s6Var.q = MessagesController.getInstance(i11).getPeer(storyItem.dialogId);
-                s6Var.r = storyItem.id;
-                s6Var.s = storyItem.caption;
-                s6Var.L = h;
-                s6Var.M = false;
-                s6Var.k0 = 720;
-                s6Var.l0 = 1280;
+                qh.r6 r6Var = new qh.r6();
+                r6Var.n = true;
+                r6Var.t = storyItem.media;
+                int i11 = r6Var.a;
+                r6Var.q = MessagesController.getInstance(i11).getPeer(storyItem.dialogId);
+                r6Var.r = storyItem.id;
+                r6Var.s = storyItem.caption;
+                r6Var.L = h;
+                r6Var.M = false;
+                r6Var.k0 = 720;
+                r6Var.l0 = 1280;
                 TLRPC.MessageMedia messageMedia = storyItem.media;
                 if (messageMedia instanceof TLRPC.TL_messageMediaPhoto) {
-                    s6Var.K = false;
+                    r6Var.K = false;
                     if (h != null) {
-                        s6Var.h(h.getAbsolutePath());
+                        r6Var.h(h.getAbsolutePath());
                     }
                 } else if (messageMedia instanceof TLRPC.TL_messageMediaDocument) {
-                    s6Var.K = true;
+                    r6Var.K = true;
                     TLRPC.Document document = messageMedia.document;
                     if (document != null && document.attributes != null) {
                         int i12 = 0;
@@ -112,9 +112,9 @@ public final /* synthetic */ class z1 implements Runnable {
                             if (i12 < storyItem.media.document.attributes.size()) {
                                 TLRPC.DocumentAttribute documentAttribute = storyItem.media.document.attributes.get(i12);
                                 if (documentAttribute instanceof TLRPC.TL_documentAttributeVideo) {
-                                    s6Var.k0 = documentAttribute.w;
-                                    s6Var.l0 = documentAttribute.h;
-                                    s6Var.i = documentAttribute.duration;
+                                    r6Var.k0 = documentAttribute.w;
+                                    r6Var.l0 = documentAttribute.h;
+                                    r6Var.i = documentAttribute.duration;
                                 } else {
                                     i12++;
                                 }
@@ -125,25 +125,25 @@ public final /* synthetic */ class z1 implements Runnable {
                     if (document2 != null) {
                         String str2 = storyItem.firstFramePath;
                         if (str2 != null) {
-                            s6Var.N = str2;
+                            r6Var.N = str2;
                         } else if (document2.thumbs != null) {
                             for (int i13 = 0; i13 < storyItem.media.document.thumbs.size(); i13++) {
                                 TLRPC.PhotoSize photoSize = storyItem.media.document.thumbs.get(i13);
                                 if (photoSize instanceof TLRPC.TL_photoStrippedSize) {
-                                    s6Var.O = ImageLoader.getStrippedPhotoBitmap(photoSize.bytes, null);
+                                    r6Var.O = ImageLoader.getStrippedPhotoBitmap(photoSize.bytes, null);
                                 } else {
                                     File pathToAttach = FileLoader.getInstance(i11).getPathToAttach(photoSize, true);
                                     if (pathToAttach != null && pathToAttach.exists()) {
-                                        s6Var.N = pathToAttach.getAbsolutePath();
+                                        r6Var.N = pathToAttach.getAbsolutePath();
                                     }
                                 }
                             }
                         }
                     }
                 }
-                s6Var.A();
-                s6Var.e(storyItem);
-                u9 d = x9.d(f4Var2.G0);
+                r6Var.A();
+                r6Var.e(storyItem);
+                t9 d = w9.d(f4Var2.G0);
                 RectF rectF = E.E;
                 WindowManager.LayoutParams layoutParams = E.h;
                 WindowManager windowManager = E.f;
@@ -155,15 +155,15 @@ public final /* synthetic */ class z1 implements Runnable {
                         E.r0 = false;
                         E.e = false;
                         E.y2 = false;
-                        if (windowManager != null && (baVar = E.n) != null && baVar.getParent() == null) {
+                        if (windowManager != null && (aaVar = E.n) != null && aaVar.getParent() == null) {
                             AndroidUtilities.setPreferredMaxRefreshRate(windowManager, E.n, layoutParams);
                             windowManager.addView(E.n, layoutParams);
                             E.g0();
                         }
-                        E.H1 = s6Var;
-                        qh.f8.a(i14, s6Var);
-                        qh.s6 s6Var2 = E.H1;
-                        E.L1 = (s6Var2 == null || !s6Var2.K) ? 0 : 1;
+                        E.H1 = r6Var;
+                        qh.e8.a(i14, r6Var);
+                        qh.r6 r6Var2 = E.H1;
+                        E.L1 = (r6Var2 == null || !r6Var2.K) ? 0 : 1;
                         E.p0.g = false;
                         if (d != null) {
                             E.C = d;
@@ -177,9 +177,9 @@ public final /* synthetic */ class z1 implements Runnable {
                             E.D = AndroidUtilities.dp(8.0f);
                         }
                         E.r.c();
-                        qh.n9 n9Var = E.e0;
+                        qh.m9 m9Var = E.e0;
                         int i15 = E.G;
-                        n9Var.setBackgroundColor((i15 == 1 || i15 == 0) ? 0 : -14737633);
+                        m9Var.setBackgroundColor((i15 == 1 || i15 == 0) ? 0 : -14737633);
                         E.r.setTranslationX(0.0f);
                         E.r.setTranslationY(0.0f);
                         E.r.b(0.0f);
@@ -187,11 +187,11 @@ public final /* synthetic */ class z1 implements Runnable {
                         E.r.setScaleY(1.0f);
                         E.H = 0.0f;
                         AndroidUtilities.lockOrientation(E.b, 1);
-                        qh.s6 s6Var3 = E.H1;
-                        if (s6Var3 != null) {
-                            E.Z0.setText(s6Var3.C0);
+                        qh.r6 r6Var3 = E.H1;
+                        if (r6Var3 != null) {
+                            E.Z0.setText(r6Var3.C0);
                         }
-                        E.L(new qh.g8(E, 7), j10);
+                        E.L(new qh.f8(E, 7), j10);
                         E.Y0.b(true, false);
                         E.K(1, false);
                         E.l0(-1, false, false);
@@ -321,25 +321,25 @@ public final /* synthetic */ class z1 implements Runnable {
                 MessagesController.getInstance(((s6) this.b).J.a).getStoriesController().Z((TL_stories.TL_updateStory) this.c);
                 break;
             case 10:
-                s6 s6Var4 = (s6) this.b;
+                s6 s6Var = (s6) this.b;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.c;
-                qh.s6 s6Var5 = s6Var4.c;
-                s6Var5.w = true;
-                t6 t6Var = s6Var4.J;
+                qh.r6 r6Var4 = s6Var.c;
+                r6Var4.w = true;
+                t6 t6Var = s6Var.J;
                 if (t6Var.n(tL_error2)) {
-                    s6Var5.x = null;
+                    r6Var4.x = null;
                 } else {
-                    s6Var5.x = tL_error2;
+                    r6Var4.x = tL_error2;
                 }
-                s6Var4.d = true;
-                s6Var4.F = true;
-                s6Var4.E = true;
-                t6Var.w.d(s6Var5);
+                s6Var.d = true;
+                s6Var.F = true;
+                s6Var.E = true;
+                t6Var.w.d(r6Var4);
                 break;
             case 11:
-                s6 s6Var6 = (s6) this.b;
-                s6Var6.c.c((File) this.c);
-                AndroidUtilities.runOnUIThread(new q6(s6Var6, r6));
+                s6 s6Var2 = (s6) this.b;
+                s6Var2.c.c((File) this.c);
+                AndroidUtilities.runOnUIThread(new q6(s6Var2, r6));
                 break;
             case 12:
                 ((w5) this.b).accept((TL_stories.TL_stories_allStories) this.c);
@@ -498,9 +498,9 @@ public final /* synthetic */ class z1 implements Runnable {
                 break;
             case 22:
                 m8 m8Var = (m8) this.b;
-                qh.f3 f3Var2 = (qh.f3) this.c;
-                m8Var.d.removeView(f3Var2);
-                if (f3Var2 == m8Var.c) {
+                qh.e3 e3Var2 = (qh.e3) this.c;
+                m8Var.d.removeView(e3Var2);
+                if (e3Var2 == m8Var.c) {
                     m8Var.b = null;
                     m8Var.invalidate();
                     m8Var.b(false);
@@ -527,13 +527,13 @@ public final /* synthetic */ class z1 implements Runnable {
                 ((VideoAds) this.b).lambda$show$16((Utilities.Callback) this.c);
                 break;
             case 27:
-                r31.T((Context) this.b, null, false, (h0) this.c, null);
+                w31.T((Context) this.b, null, false, (h0) this.c, null);
                 break;
             case 28:
-                ((AudioRecordJNI) this.b).lambda$startThread$0((ByteBuffer) this.c);
+                ((ConferenceCall) this.b).lambda$processUpdates$4((TLRPC.Updates) this.c);
                 break;
             default:
-                ((ConferenceCall) this.b).lambda$processUpdates$4((TLRPC.Updates) this.c);
+                VideoCapturerDevice.lambda$checkScreenCapturerSize$1((VideoCapturerDevice) this.b, (Point) this.c);
                 break;
         }
     }

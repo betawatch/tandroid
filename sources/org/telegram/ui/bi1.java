@@ -1,57 +1,23 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class bi1 extends View {
-    public final Paint a;
-    public final org.telegram.ui.Components.c9 b;
-    public org.telegram.ui.Components.l01 c;
+public final class bi1 extends org.telegram.ui.Components.voip.b1 {
+    public final /* synthetic */ ii1 S;
 
-    public bi1(Activity activity) {
-        super(activity);
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setColor(-14538189);
-        org.telegram.ui.Components.c9 c9Var = new org.telegram.ui.Components.c9(this, false);
-        this.b = c9Var;
-        c9Var.p = AndroidUtilities.dp(100.0f);
-        c9Var.o = AndroidUtilities.dp(30.0f);
-        c9Var.x = false;
-        c9Var.s = AndroidUtilities.dp(24.0f);
-        c9Var.j(AndroidUtilities.dp(18.0f));
-        c9Var.t = 0.58f;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public bi1(ii1 ii1Var, Context context, float f10, float f11) {
+        super(context, f10, f11);
+        this.S = ii1Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.c == null) {
-            return;
-        }
-        float dp = AndroidUtilities.dp(4.0f);
-        org.telegram.ui.Components.c9 c9Var = this.b;
-        float e6 = c9Var.e() + dp + AndroidUtilities.dp(7.0f) + this.c.c + AndroidUtilities.dp(13.0f);
-        float dp2 = AndroidUtilities.dp(30.0f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set((getWidth() - e6) / 2.0f, 0.0f, (getWidth() + e6) / 2.0f, getHeight());
-        float f10 = dp2 / 2.0f;
-        canvas.drawRoundRect(rectF, f10, f10, this.a);
-        canvas.save();
-        canvas.translate(rectF.left + AndroidUtilities.dp(4.0f), 0.0f);
-        c9Var.i(canvas);
-        canvas.translate(c9Var.A + AndroidUtilities.dp(7.0f), 0.0f);
-        this.c.c(0.0f, f10, 1.0f, -1, canvas);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(30.0f));
+    @Override // org.telegram.ui.Components.voip.b1
+    public final int[] getFloatingViewLocation() {
+        int[] iArr = new int[2];
+        ii1 ii1Var = this.S;
+        ii1Var.V.getLocationOnScreen(iArr);
+        return new int[]{iArr[0], iArr[1], ii1Var.V.getMeasuredWidth()};
     }
 }

@@ -1,87 +1,90 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import android.view.WindowInsets;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class qh1 extends AnimatorListenerAdapter {
+public final /* synthetic */ class qh1 implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.voip.s1, r0.o, org.telegram.ui.Components.voip.j3 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ci1 b;
+    public final /* synthetic */ ii1 b;
 
-    public /* synthetic */ qh1(ci1 ci1Var, int i10) {
+    public /* synthetic */ qh1(ii1 ii1Var, int i10) {
         this.a = i10;
-        this.b = ci1Var;
+        this.b = ii1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        oh.z2 z2Var;
-        oh.z2 z2Var2;
+    @Override // r0.o
+    public r0.m1 M0(View view, r0.m1 m1Var) {
+        WindowInsets g10 = m1Var.g();
+        ii1 ii1Var = this.b;
+        ii1Var.o0 = g10;
+        ((FrameLayout.LayoutParams) ii1Var.g0.getLayoutParams()).bottomMargin = ii1Var.o0.getSystemWindowInsetBottom();
+        ((FrameLayout.LayoutParams) ii1Var.b0.getLayoutParams()).bottomMargin = ii1Var.o0.getSystemWindowInsetBottom();
+        ((FrameLayout.LayoutParams) ii1Var.E.getLayoutParams()).topMargin = ii1Var.o0.getSystemWindowInsetTop();
+        ((FrameLayout.LayoutParams) ii1Var.F.getLayoutParams()).topMargin = ii1Var.o0.getSystemWindowInsetTop();
+        ((FrameLayout.LayoutParams) ii1Var.H.getLayoutParams()).topMargin = ii1Var.o0.getSystemWindowInsetTop() + AndroidUtilities.dp(56.0f);
+        ((FrameLayout.LayoutParams) ii1Var.U.getLayoutParams()).topMargin = ii1Var.o0.getSystemWindowInsetTop() + AndroidUtilities.dp(135.0f);
+        ((FrameLayout.LayoutParams) ii1Var.K.getLayoutParams()).topMargin = ii1Var.o0.getSystemWindowInsetTop() + AndroidUtilities.dp(17.0f);
+        ((FrameLayout.LayoutParams) ii1Var.y.getLayoutParams()).topMargin = ii1Var.o0.getSystemWindowInsetTop() + AndroidUtilities.dp(93.0f);
+        ((FrameLayout.LayoutParams) ii1Var.L.getLayoutParams()).topMargin = ii1Var.o0.getSystemWindowInsetTop();
+        ((FrameLayout.LayoutParams) ii1Var.O.getLayoutParams()).topMargin = ii1Var.o0.getSystemWindowInsetTop() + AndroidUtilities.dp(118.0f);
+        ((FrameLayout.LayoutParams) ii1Var.N.getLayoutParams()).topMargin = ii1Var.o0.getSystemWindowInsetTop() + AndroidUtilities.dp(380.0f);
+        ((FrameLayout.LayoutParams) ii1Var.W.getLayoutParams()).bottomMargin = ii1Var.o0.getSystemWindowInsetBottom();
+        ((FrameLayout.LayoutParams) ii1Var.J0.getLayoutParams()).bottomMargin = ii1Var.o0.getSystemWindowInsetBottom();
+        ii1Var.V.setInsets(ii1Var.o0);
+        ii1Var.W.setInsets(ii1Var.o0);
+        ii1Var.s.requestLayout();
+        bi1 bi1Var = ii1Var.l0;
+        if (bi1Var != null) {
+            bi1Var.setBottomPadding(ii1Var.o0.getSystemWindowInsetBottom());
+        }
+        return r0.m1.b;
+    }
+
+    @Override // org.telegram.ui.Components.voip.j3
+    public void d(org.telegram.ui.Components.voip.k3 k3Var) {
         switch (this.a) {
-            case 0:
-                ci1 ci1Var = this.b;
-                ci1Var.f1 = null;
-                ci1Var.c1 = 1.0f;
-                ci1Var.V0 = 0.0f;
-                ci1Var.W0 = 0.0f;
-                ci1Var.s.invalidate();
-                break;
-            case 1:
-                org.telegram.ui.Components.voip.n2.k().a.setAlpha(1.0f);
-                AndroidUtilities.runOnUIThread(new xy0(this, 24), 200L);
-                break;
-            case 2:
-                ci1 ci1Var2 = this.b;
-                ci1Var2.I0.unlock();
-                ci1Var2.V.setCornerRadius(-1.0f);
-                ci1Var2.B0 = false;
-                ci1Var2.V.V = false;
-                ci1Var2.n0 = ci1Var2.m0;
-                ci1Var2.H();
-                break;
-            case 3:
-                for (org.telegram.ui.Components.p9 p9Var : this.b.S) {
-                    org.telegram.ui.Components.l5 l5Var = p9Var.e;
-                    if (l5Var != null && (z2Var = l5Var.k) != null) {
-                        z2Var.setAllowStartAnimation(true);
-                        p9Var.e.k.startAnimation();
-                    }
-                }
-                break;
-            case 4:
-                ci1 ci1Var3 = this.b;
-                ci1Var3.B();
-                for (org.telegram.ui.Components.p9 p9Var2 : ci1Var3.S) {
-                    org.telegram.ui.Components.l5 l5Var2 = p9Var2.e;
-                    if (l5Var2 != null && (z2Var2 = l5Var2.k) != null) {
-                        z2Var2.setAllowStartAnimation(false);
-                        p9Var2.e.k.stopAnimation();
-                    }
-                }
-                ci1Var3.O.setVisibility(8);
-                break;
             case 5:
-                ci1 ci1Var4 = this.b;
-                if (ci1Var4.W.getTag() == null) {
-                    ci1Var4.W.setVisibility(8);
+                VoIPService sharedInstance = VoIPService.getSharedInstance();
+                if (sharedInstance != null) {
+                    ii1 ii1Var = this.b;
+                    AndroidUtilities.cancelRunOnUIThread(ii1Var.P0);
+                    ii1Var.O0 = false;
+                    boolean isMicMute = sharedInstance.isMicMute();
+                    boolean z4 = !isMicMute;
+                    if (ii1Var.t0.isTouchExplorationEnabled()) {
+                        k3Var.announceForAccessibility(LocaleController.getString(!isMicMute ? R.string.AccDescrVoipMicOff : R.string.AccDescrVoipMicOn));
+                    }
+                    sharedInstance.setMicMute(z4, false, true);
+                    ii1Var.n0 = ii1Var.m0;
+                    ii1Var.H();
                     break;
                 }
                 break;
-            case 6:
-                ci1 ci1Var5 = this.b;
-                ci1Var5.V.setTranslationX(0.0f);
-                ci1Var5.V.setTranslationY(0.0f);
-                ci1Var5.V.setScaleY(1.0f);
-                ci1Var5.V.setScaleX(1.0f);
-                ci1Var5.V.setVisibility(8);
+            default:
+                ii1.i(this.b);
                 break;
-            case 7:
-                this.b.y.setVisibility(8);
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.c2
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                ai1 ai1Var = this.b.r0;
+                if (ai1Var != null) {
+                    ai1Var.b();
+                    break;
+                }
                 break;
             default:
-                this.b.b0.setVisibility(8);
+                this.b.r0.b();
                 break;
         }
     }

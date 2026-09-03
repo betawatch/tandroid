@@ -16,7 +16,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class s4 extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public r4 a;
@@ -145,15 +145,15 @@ public final class s4 extends org.telegram.ui.ActionBar.p2 implements Notificati
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
         eg.s3 s3Var = new eg.s3(getParentActivity());
-        org.telegram.ui.Components.fo0 fo0Var = new org.telegram.ui.Components.fo0(getParentActivity(), s3Var, this.resourceProvider, true);
+        org.telegram.ui.Components.eo0 eo0Var = new org.telegram.ui.Components.eo0(getParentActivity(), s3Var, this.resourceProvider, true);
         s3Var.setOrientation(1);
-        fo0Var.addView(s3Var);
-        frameLayout.addView(fo0Var);
-        this.actionBar.setAdaptiveBackground(fo0Var);
+        eo0Var.addView(s3Var);
+        frameLayout.addView(eo0Var);
+        this.actionBar.setAdaptiveBackground(eo0Var);
         FrameLayout frameLayout2 = new FrameLayout(context);
-        org.telegram.ui.Components.bx0 bx0Var = new org.telegram.ui.Components.bx0(context, this.currentAccount);
-        bx0Var.setStickerNum(10);
-        frameLayout2.addView(bx0Var, k7.c6.e(130, 130, 17));
+        org.telegram.ui.Components.ax0 ax0Var = new org.telegram.ui.Components.ax0(context, this.currentAccount);
+        ax0Var.setStickerNum(10);
+        frameLayout2.addView(ax0Var, k7.c6.e(130, 130, 17));
         frameLayout2.setTag(-33024);
         s3Var.addView(frameLayout2, k7.c6.n(-1, 170));
         LinearLayout linearLayout = new LinearLayout(getParentActivity());

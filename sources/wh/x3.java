@@ -16,12 +16,12 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.s01;
 import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.u01;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class x3 {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
@@ -737,7 +737,7 @@ public abstract class x3 {
 
     public static a B(w3 w3Var, boolean z4) {
         TL_iv.PageBlock pageblockslideshow = z4 ? new TL_iv.pageBlockSlideshow() : new TL_iv.pageBlockCollage();
-        ArrayList g32 = r3.g3(pageblockslideshow);
+        ArrayList f32 = r3.f3(pageblockslideshow);
         ArrayList arrayList = w3Var.e;
         int size = arrayList.size();
         CharSequence charSequence = null;
@@ -756,17 +756,17 @@ public abstract class x3 {
                         if (E > 0) {
                             TL_iv.PageBlock y10 = y(E, equals, w3Var2.b("data-spoiler"));
                             J(y10);
-                            g32.add(y10);
+                            f32.add(y10);
                         }
                     }
                 }
             }
         }
-        if (g32.isEmpty()) {
+        if (f32.isEmpty()) {
             return null;
         }
-        if (g32.size() == 1) {
-            TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) g32.get(0);
+        if (f32.size() == 1) {
+            TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) f32.get(0);
             if (charSequence != null && charSequence.length() > 0) {
                 I(pageBlock, charSequence);
             }
@@ -904,7 +904,7 @@ public abstract class x3 {
                     i17 = i10;
                     i18 = i15;
                 } else {
-                    if (r3.x3(aVar)) {
+                    if (r3.w3(aVar)) {
                         h4Var2.c0(sb2);
                         a aVar3 = (a) list3.get(iArr[0]);
                         sb2.append(((TL_iv.pageBlockDetails) aVar3.b).open ? "<details open>" : "<details>");
@@ -976,16 +976,16 @@ public abstract class x3 {
                                 } else {
                                     sb2 = sb;
                                     String str3 = "<figcaption>";
-                                    if (r3.B3(pageBlock)) {
+                                    if (r3.A3(pageBlock)) {
                                         String str4 = pageBlock instanceof TL_iv.pageBlockSlideshow ? "slideshow" : "collage";
                                         sb2.append("<div class=\"");
                                         sb2.append(str4);
                                         sb2.append("\">");
-                                        ArrayList g32 = r3.g3(pageBlock);
-                                        if (g32 != null) {
+                                        ArrayList f32 = r3.f3(pageBlock);
+                                        if (f32 != null) {
                                             int i25 = 0;
-                                            while (i25 < g32.size()) {
-                                                TL_iv.PageBlock pageBlock2 = (TL_iv.PageBlock) g32.get(i25);
+                                            while (i25 < f32.size()) {
+                                                TL_iv.PageBlock pageBlock2 = (TL_iv.PageBlock) f32.get(i25);
                                                 ArrayList arrayList3 = aVar.h;
                                                 t tVar = (arrayList3 == null || i25 >= arrayList3.size()) ? null : (t) aVar.h.get(i25);
                                                 if (pageBlock2 instanceof TL_iv.pageBlockVideo) {
@@ -1277,7 +1277,7 @@ public abstract class x3 {
     }
 
     public static CharSequence K(a aVar, int i10, int i11, int i12, int i13, int i14) {
-        CharSequence r10 = r3.x3(aVar) ? x5.r(((TL_iv.pageBlockDetails) aVar.b).title, null, true) : v5.A(aVar.b);
+        CharSequence r10 = r3.w3(aVar) ? x5.r(((TL_iv.pageBlockDetails) aVar.b).title, null, true) : v5.A(aVar.b);
         if (r10 == null) {
             r10 = "";
         }
@@ -1493,14 +1493,14 @@ public abstract class x3 {
             } else {
                 int nextSpanTransition = spanned.nextSpanTransition(i22, length, CharacterStyle.class);
                 int i24 = 0;
-                for (u01 u01Var : (u01[]) spanned.getSpans(i22, nextSpanTransition, u01.class)) {
-                    t01 t01Var = u01Var.b;
-                    if (t01Var != null) {
-                        i24 |= t01Var.a;
+                for (t01 t01Var : (t01[]) spanned.getSpans(i22, nextSpanTransition, t01.class)) {
+                    s01 s01Var = t01Var.b;
+                    if (s01Var != null) {
+                        i24 |= s01Var.a;
                     }
                 }
-                p51[] p51VarArr = (p51[]) spanned.getSpans(i22, nextSpanTransition, p51.class);
-                String url = p51VarArr.length > 0 ? p51VarArr[c3].getURL() : null;
+                n51[] n51VarArr = (n51[]) spanned.getSpans(i22, nextSpanTransition, n51.class);
+                String url = n51VarArr.length > 0 ? n51VarArr[c3].getURL() : null;
                 org.telegram.ui.Components.u5[] u5VarArr = (org.telegram.ui.Components.u5[]) spanned.getSpans(i22, nextSpanTransition, org.telegram.ui.Components.u5.class);
                 if (u5VarArr.length > 0) {
                     org.telegram.ui.Components.u5 u5Var = u5VarArr[c3];
@@ -1860,9 +1860,9 @@ public abstract class x3 {
             spannableStringBuilder.setSpan(new org.telegram.ui.Components.u5(j10, (Paint.FontMetricsInt) null), length, length2, 33);
         }
         if (i10 != 0) {
-            t01 t01Var = new t01();
-            t01Var.a = i10 & 114975;
-            spannableStringBuilder.setSpan(new u01(t01Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
+            s01 s01Var = new s01();
+            s01Var.a = i10 & 114975;
+            spannableStringBuilder.setSpan(new t01(s01Var, AndroidUtilities.dp(SharedConfig.fontSize)), length, length2, 33);
         }
         if (str2 != null) {
             spannableStringBuilder.setSpan(x5.k(str2), length, length2, 33);

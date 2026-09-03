@@ -6,7 +6,7 @@ import android.view.View;
 import androidx.appcompat.widget.ActionBarContextView;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class z extends k.a implements l.j {
     public final Context c;
@@ -143,7 +143,7 @@ public final class z extends k.a implements l.j {
     public final boolean s(l.l lVar, MenuItem menuItem) {
         f7.b bVar = this.e;
         if (bVar != null) {
-            return ((sf.e) bVar.b).A(this, menuItem);
+            return ((sf.f) bVar.b).A(this, menuItem);
         }
         return false;
     }

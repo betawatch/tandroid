@@ -10,11 +10,11 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class i2 extends tl0 implements NotificationCenter.NotificationCenterDelegate, x0 {
+public abstract class i2 extends sl0 implements NotificationCenter.NotificationCenterDelegate, x0 {
     public final ArrayList U2;
     public final f2.j0 V2;
     public boolean W2;
@@ -71,7 +71,7 @@ public abstract class i2 extends tl0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         if (this.j3) {
             ArrayList arrayList = this.d3;
@@ -91,7 +91,7 @@ public abstract class i2 extends tl0 implements NotificationCenter.NotificationC
             if ((this.X2 || this.g3) && arrayList.size() > 0 && !this.U2.isEmpty()) {
                 View view = (View) l.d.i(1, arrayList);
                 this.f3 = view;
-                w1(view, !this.X2);
+                v1(view, !this.X2);
                 this.X2 = false;
                 this.g3 = false;
             } else if (this.f3 != l.d.i(1, arrayList)) {
@@ -112,25 +112,25 @@ public abstract class i2 extends tl0 implements NotificationCenter.NotificationC
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
         return true;
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         NotificationCenter.getInstance(this.Y2).addObserver(this, NotificationCenter.premiumStickersPreviewLoaded);
-        x1();
+        w1();
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         NotificationCenter.getInstance(this.Y2).removeObserver(this, NotificationCenter.premiumStickersPreviewLoaded);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         super.onLayout(z4, i10, i11, i12, i13);
         if (this.W2 && !this.U2.isEmpty() && getChildCount() > 0) {
@@ -141,13 +141,13 @@ public abstract class i2 extends tl0 implements NotificationCenter.NotificationC
         if (i14 > 0) {
             f2.m1 K = K(i14);
             if (K != null) {
-                w1(K.a, false);
+                v1(K.a, false);
             }
             this.i3 = -1;
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         if (View.MeasureSpec.getSize(i11) > View.MeasureSpec.getSize(i10)) {
             this.h3 = View.MeasureSpec.getSize(i10);
@@ -162,9 +162,9 @@ public abstract class i2 extends tl0 implements NotificationCenter.NotificationC
             this.k3 = z4;
             if (!z4) {
                 AndroidUtilities.cancelRunOnUIThread(this.b3);
-                w1(null, true);
+                v1(null, true);
             } else {
-                x1();
+                w1();
                 this.g3 = true;
                 invalidate();
             }
@@ -179,7 +179,7 @@ public abstract class i2 extends tl0 implements NotificationCenter.NotificationC
         }
     }
 
-    public final void w1(View view, boolean z4) {
+    public final void v1(View view, boolean z4) {
         this.Z2 = view != null;
         for (int i10 = 0; i10 < getChildCount(); i10++) {
             h2 h2Var = (h2) getChildAt(i10);
@@ -191,7 +191,7 @@ public abstract class i2 extends tl0 implements NotificationCenter.NotificationC
         }
     }
 
-    public final void x1() {
+    public final void w1() {
         if (this.k3) {
             androidx.activity.i iVar = this.b3;
             AndroidUtilities.cancelRunOnUIThread(iVar);

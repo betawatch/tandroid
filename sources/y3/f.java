@@ -1,11 +1,17 @@
 package y3;
 
-import r3.s;
+import r3.n;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public interface f extends s {
-    long a(long j10);
+public final class f extends n implements g {
+    @Override // y3.g
+    public final long a(long j10) {
+        return 0L;
+    }
 
-    long b();
+    @Override // y3.g
+    public final long b() {
+        return -1L;
+    }
 }

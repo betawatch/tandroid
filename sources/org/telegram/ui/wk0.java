@@ -14,7 +14,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wk0 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -30,8 +30,8 @@ public final /* synthetic */ class wk0 implements Utilities.Callback {
     public final /* synthetic */ Object k;
     public final /* synthetic */ Object l;
 
-    public /* synthetic */ wk0(r61 r61Var, String str, boolean z4, ArrayList arrayList, HashMap hashMap, ArrayList arrayList2, LinkedHashSet linkedHashSet, LinkedHashSet linkedHashSet2, ArrayList arrayList3, ArrayList arrayList4, boolean z10) {
-        this.e = r61Var;
+    public /* synthetic */ wk0(w61 w61Var, String str, boolean z4, ArrayList arrayList, HashMap hashMap, ArrayList arrayList2, LinkedHashSet linkedHashSet, LinkedHashSet linkedHashSet2, ArrayList arrayList3, ArrayList arrayList4, boolean z10) {
+        this.e = w61Var;
         this.b = str;
         this.c = z4;
         this.f = arrayList;
@@ -93,7 +93,7 @@ public final /* synthetic */ class wk0 implements Utilities.Callback {
                 }
                 break;
             default:
-                final r61 r61Var = (r61) this.e;
+                final w61 w61Var = (w61) this.e;
                 final String str3 = this.b;
                 final boolean z11 = this.c;
                 final ArrayList arrayList = (ArrayList) this.f;
@@ -104,73 +104,73 @@ public final /* synthetic */ class wk0 implements Utilities.Callback {
                 final ArrayList arrayList3 = (ArrayList) this.k;
                 final ArrayList arrayList4 = (ArrayList) this.l;
                 final boolean z12 = this.d;
-                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.a51
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.f51
                     @Override // java.lang.Runnable
                     public final void run() {
-                        r61 r61Var2 = r61.this;
-                        t41 t41Var = r61Var2.F1;
-                        if (t41Var != null) {
-                            AndroidUtilities.cancelRunOnUIThread(t41Var);
-                            r61Var2.F1 = null;
+                        w61 w61Var2 = w61.this;
+                        y41 y41Var = w61Var2.F1;
+                        if (y41Var != null) {
+                            AndroidUtilities.cancelRunOnUIThread(y41Var);
+                            w61Var2.F1 = null;
                         }
-                        String str4 = r61Var2.w1;
+                        String str4 = w61Var2.w1;
                         String str5 = str3;
                         if (str5 != str4) {
                             return;
                         }
-                        r61Var2.v1 = true;
-                        r61Var2.z(true, z11);
-                        i51 i51Var = r61Var2.c0;
-                        if (i51Var != null) {
-                            i51Var.d(true);
+                        w61Var2.v1 = true;
+                        w61Var2.z(true, z11);
+                        n51 n51Var = w61Var2.c0;
+                        if (n51Var != null) {
+                            n51Var.d(true);
                         }
-                        ArrayList arrayList5 = r61Var2.x1;
+                        ArrayList arrayList5 = w61Var2.x1;
                         if (arrayList5 == null) {
-                            r61Var2.x1 = new ArrayList();
+                            w61Var2.x1 = new ArrayList();
                         } else {
                             arrayList5.clear();
                         }
-                        ArrayList arrayList6 = r61Var2.A1;
+                        ArrayList arrayList6 = w61Var2.A1;
                         if (arrayList6 == null) {
-                            r61Var2.A1 = new ArrayList();
+                            w61Var2.A1 = new ArrayList();
                         } else {
                             arrayList6.clear();
                         }
-                        ArrayList arrayList7 = r61Var2.z1;
+                        ArrayList arrayList7 = w61Var2.z1;
                         if (arrayList7 == null) {
-                            r61Var2.z1 = new ArrayList();
+                            w61Var2.z1 = new ArrayList();
                         } else {
                             arrayList7.clear();
                         }
-                        ArrayList arrayList8 = r61Var2.y1;
+                        ArrayList arrayList8 = w61Var2.y1;
                         if (arrayList8 == null) {
-                            r61Var2.y1 = new ArrayList();
+                            w61Var2.y1 = new ArrayList();
                         } else {
                             arrayList8.clear();
                         }
                         int i10 = 0;
-                        r61Var2.f0.u0(0);
-                        int i11 = r61Var2.T;
+                        w61Var2.f0.u0(0);
+                        int i11 = w61Var2.T;
                         if (i11 == 1 || i11 == 14 || i11 == 11 || i11 == 2) {
                             ArrayList arrayList9 = arrayList;
                             if (arrayList9.isEmpty()) {
                                 TLRPC.TL_availableReaction tL_availableReaction = (TLRPC.TL_availableReaction) hashMap.get(str5);
                                 if (tL_availableReaction != null) {
-                                    r61Var2.x1.add(ng.q0.c(tL_availableReaction));
+                                    w61Var2.x1.add(ng.q0.c(tL_availableReaction));
                                 }
                             } else {
-                                r61Var2.x1.addAll(arrayList9);
+                                w61Var2.x1.addAll(arrayList9);
                             }
                             ArrayList arrayList10 = arrayList2;
                             if (!arrayList10.isEmpty()) {
-                                r61Var2.y1.addAll(arrayList10);
+                                w61Var2.y1.addAll(arrayList10);
                             }
                         }
                         Iterator it = linkedHashSet.iterator();
                         while (it.hasNext()) {
                             Long l10 = (Long) it.next();
                             l10.getClass();
-                            ArrayList arrayList11 = r61Var2.x1;
+                            ArrayList arrayList11 = w61Var2.x1;
                             ng.q0 q0Var = new ng.q0();
                             long longValue = l10.longValue();
                             q0Var.g = longValue;
@@ -179,17 +179,17 @@ public final /* synthetic */ class wk0 implements Utilities.Callback {
                         }
                         Iterator it2 = linkedHashSet2.iterator();
                         while (it2.hasNext()) {
-                            r61Var2.x1.add(ng.q0.b((String) it2.next()));
+                            w61Var2.x1.add(ng.q0.b((String) it2.next()));
                         }
-                        r61Var2.A1.addAll(arrayList3);
+                        w61Var2.A1.addAll(arrayList3);
                         ArrayList arrayList12 = arrayList4;
                         int size = arrayList12.size();
                         while (i10 < size) {
                             Object obj2 = arrayList12.get(i10);
                             i10++;
-                            r61Var2.z1.addAll((ArrayList) obj2);
+                            w61Var2.z1.addAll((ArrayList) obj2);
                         }
-                        r61Var2.n0.E(true ^ z12);
+                        w61Var2.n0.E(true ^ z12);
                     }
                 });
                 break;

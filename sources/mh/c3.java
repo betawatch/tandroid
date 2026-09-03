@@ -12,15 +12,15 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.NativeInstance;
+import org.telegram.ui.Components.gv0;
+import org.telegram.ui.Components.hl0;
 import org.telegram.ui.Components.hv0;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.iv0;
-import org.telegram.ui.Components.uv0;
+import org.telegram.ui.Components.tv0;
 import org.telegram.ui.cs;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class c3 implements org.telegram.ui.ActionBar.c2, o3.n, j3.f, v2.e, NativeInstance.AudioLevelsCallback, hv0, iv0, uv0, Utilities.Callback2Return, vg.g, il0 {
+public final /* synthetic */ class c3 implements org.telegram.ui.ActionBar.c2, o3.n, j3.f, v2.e, NativeInstance.AudioLevelsCallback, gv0, hv0, tv0, Utilities.Callback2Return, vg.g, hl0 {
     public final /* synthetic */ int a;
 
     public /* synthetic */ c3(int i10) {
@@ -31,13 +31,13 @@ public final /* synthetic */ class c3 implements org.telegram.ui.ActionBar.c2, o
         return (ActionMode.Callback2) obj;
     }
 
-    @Override // v2.e
+    @Override // v2.e, f3.f
     public Object apply(Object obj) {
         o9.a.b.getClass();
         return l9.a.a.d((k9.e2) obj).getBytes(Charset.forName("UTF-8"));
     }
 
-    @Override // org.telegram.ui.Components.iv0
+    @Override // org.telegram.ui.Components.hv0
     public void b(Object obj, float f10) {
         switch (this.a) {
             case 9:
@@ -97,7 +97,7 @@ public final /* synthetic */ class c3 implements org.telegram.ui.ActionBar.c2, o
         view.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.hv0
+    @Override // org.telegram.ui.Components.gv0
     public float get(Object obj) {
         switch (this.a) {
             case 8:
@@ -113,7 +113,7 @@ public final /* synthetic */ class c3 implements org.telegram.ui.ActionBar.c2, o
         }
     }
 
-    @Override // org.telegram.ui.Components.uv0
+    @Override // org.telegram.ui.Components.tv0
     public void i(int i10) {
         if (i10 == 0) {
             SharedConfig.setKeepMedia(3);
@@ -174,7 +174,7 @@ public final /* synthetic */ class c3 implements org.telegram.ui.ActionBar.c2, o
         }
     }
 
-    @Override // org.telegram.ui.Components.uv0
+    @Override // org.telegram.ui.Components.tv0
     public /* synthetic */ void m() {
     }
 

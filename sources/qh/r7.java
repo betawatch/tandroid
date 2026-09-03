@@ -1,39 +1,55 @@
 package qh;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class r7 extends a8 {
-    public final /* synthetic */ x7 I;
+public final class r7 extends f2.l {
+    public final /* synthetic */ w7 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r7(x7 x7Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, p7 p7Var) {
-        super(context, g6Var, p7Var);
-        this.I = x7Var;
+    public r7(w7 w7Var) {
+        this.F = w7Var;
     }
 
-    @Override // qh.a8
-    public final void setContainerHeight(float f10) {
-        super.setContainerHeight(f10);
-        x7 x7Var = this.I;
-        x7Var.y.setTranslationY((Math.min(AndroidUtilities.dp(150.0f), this.F) + (getY() - (x7Var.e == null ? 0 : r2.getPaddingTop()))) - 1.0f);
-        FrameLayout frameLayout = x7Var.e;
-        if (frameLayout != null) {
-            frameLayout.invalidate();
-        }
+    @Override // f2.l
+    public final void M() {
+        ViewGroup viewGroup;
+        w7 w7Var = this.F;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) w7Var.T).containerView;
+        viewGroup.invalidate();
+        w7Var.e.invalidate();
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        x7 x7Var = this.I;
-        x7Var.y.setTranslationY((Math.min(AndroidUtilities.dp(150.0f), this.F) + (getY() - (x7Var.e == null ? 0 : r2.getPaddingTop()))) - 1.0f);
-        FrameLayout frameLayout = x7Var.e;
-        if (frameLayout != null) {
-            frameLayout.invalidate();
-        }
+    @Override // f2.l
+    public final void O() {
+        ViewGroup viewGroup;
+        w7 w7Var = this.F;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) w7Var.T).containerView;
+        viewGroup.invalidate();
+        w7Var.e.invalidate();
+    }
+
+    @Override // f2.l
+    public final void P(f2.m1 m1Var) {
+        ViewGroup viewGroup;
+        w7 w7Var = this.F;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) w7Var.T).containerView;
+        viewGroup.invalidate();
+        w7Var.e.invalidate();
+        w7Var.f.invalidate();
+    }
+
+    @Override // f2.l
+    public final void Q() {
+        ViewGroup viewGroup;
+        w7 w7Var = this.F;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) w7Var.T).containerView;
+        viewGroup.invalidate();
+        w7Var.e.invalidate();
+    }
+
+    @Override // f2.p1
+    public final boolean t(f2.m1 m1Var) {
+        return true;
     }
 }

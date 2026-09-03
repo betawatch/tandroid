@@ -5,14 +5,14 @@ import android.graphics.Bitmap;
 import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.b71;
+import org.telegram.ui.Components.a71;
 import org.telegram.ui.Components.c30;
-import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.e91;
 import org.telegram.ui.Components.g30;
 import org.telegram.ui.Components.i30;
 import org.telegram.ui.Components.ku;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ba implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -89,20 +89,20 @@ public final class ba implements ViewTreeObserver.OnPreDrawListener {
                 ((fg.i0) obj).invalidate();
                 break;
             default:
-                f91 f91Var = (f91) ((jh.h) obj).b;
-                f91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
-                ImageView imageView = f91Var.e;
+                e91 e91Var = (e91) ((jh.h) obj).b;
+                e91Var.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                ImageView imageView = e91Var.e;
                 if (imageView != null) {
                     imageView.setVisibility(4);
-                    f91Var.e.setImageDrawable(null);
-                    Bitmap bitmap = f91Var.h;
+                    e91Var.e.setImageDrawable(null);
+                    Bitmap bitmap = e91Var.h;
                     if (bitmap != null) {
                         bitmap.recycle();
-                        f91Var.h = null;
+                        e91Var.h = null;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new b71(this, i11));
-                f91Var.r = 0;
+                AndroidUtilities.runOnUIThread(new a71(this, i11));
+                e91Var.r = 0;
                 break;
         }
         return true;

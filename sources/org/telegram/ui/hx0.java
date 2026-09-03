@@ -1,111 +1,101 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.ColorDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
-import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class hx0 extends FrameLayout {
-    public org.telegram.ui.Components.n9 a;
-    public org.telegram.ui.Cells.t1 b;
-    public Drawable c;
-    public Drawable d;
-    public org.telegram.ui.Components.m40 e;
-    public MessageObject f;
+public final class hx0 extends f2.q {
+    public int b;
+    public final SparseIntArray c = new SparseIntArray();
+    public final SparseIntArray d = new SparseIntArray();
+    public final /* synthetic */ PrivacyControlActivity e;
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        this.e.e(this.b, null, 0, 0, false);
+    public hx0(PrivacyControlActivity privacyControlActivity) {
+        this.e = privacyControlActivity;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.b.invalidate();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        org.telegram.ui.Components.n9 n9Var = this.a;
-        if (n9Var != null) {
-            n9Var.dispose();
-            this.a = null;
+    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
+        if (i11 >= 0) {
+            sparseIntArray.put(i11, i10);
         }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        Drawable drawable = this.d;
-        Drawable s02 = org.telegram.ui.ActionBar.k6.s0();
-        if (s02 != null && this.c != s02) {
-            org.telegram.ui.Components.n9 n9Var = this.a;
-            if (n9Var != null) {
-                n9Var.dispose();
-                this.a = null;
-            }
-            this.c = s02;
-        }
-        Drawable drawable2 = this.c;
-        if ((drawable2 instanceof ColorDrawable) || (drawable2 instanceof GradientDrawable) || (drawable2 instanceof org.telegram.ui.Components.fc0)) {
-            drawable2.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            Drawable drawable3 = this.c;
-            if (drawable3 instanceof org.telegram.ui.Components.o9) {
-                this.a = ((org.telegram.ui.Components.o9) drawable3).c(canvas, this);
-            } else {
-                drawable3.draw(canvas);
-            }
-        } else if (drawable2 instanceof BitmapDrawable) {
-            if (((BitmapDrawable) drawable2).getTileModeX() == Shader.TileMode.REPEAT) {
-                canvas.save();
-                float f10 = 2.0f / AndroidUtilities.density;
-                canvas.scale(f10, f10);
-                this.c.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f10), (int) Math.ceil(getMeasuredHeight() / f10));
-            } else {
-                int measuredHeight = getMeasuredHeight();
-                float max = Math.max(getMeasuredWidth() / this.c.getIntrinsicWidth(), measuredHeight / this.c.getIntrinsicHeight());
-                int ceil = (int) Math.ceil(this.c.getIntrinsicWidth() * max);
-                int ceil2 = (int) Math.ceil(this.c.getIntrinsicHeight() * max);
-                int measuredWidth = (getMeasuredWidth() - ceil) / 2;
-                int i10 = (measuredHeight - ceil2) / 2;
-                canvas.save();
-                canvas.clipRect(0, 0, ceil, getMeasuredHeight());
-                this.c.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
-            }
-            this.c.draw(canvas);
-            canvas.restore();
-        } else {
-            super.onDraw(canvas);
-        }
-        drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
-        drawable.draw(canvas);
+    @Override // f2.q
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        return false;
+    @Override // f2.q
+    public final boolean b(int i10, int i11) {
+        int i12 = this.c.get(i10, -1);
+        return i12 == this.d.get(i11, -1) && i12 >= 0;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return false;
+    @Override // f2.q
+    public final int d() {
+        return this.e.o0;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchSetPressed(boolean z4) {
+    @Override // f2.q
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f(SparseIntArray sparseIntArray) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        sparseIntArray.clear();
+        PrivacyControlActivity privacyControlActivity = this.e;
+        g(1, privacyControlActivity.J, sparseIntArray);
+        g(2, privacyControlActivity.K, sparseIntArray);
+        i10 = privacyControlActivity.everybodyRow;
+        g(3, i10, sparseIntArray);
+        g(4, privacyControlActivity.L, sparseIntArray);
+        i11 = privacyControlActivity.nobodyRow;
+        g(5, i11, sparseIntArray);
+        g(6, privacyControlActivity.d0, sparseIntArray);
+        g(7, privacyControlActivity.M, sparseIntArray);
+        g(8, privacyControlActivity.O, sparseIntArray);
+        g(9, privacyControlActivity.P, sparseIntArray);
+        g(10, privacyControlActivity.Q, sparseIntArray);
+        g(11, privacyControlActivity.R, sparseIntArray);
+        g(12, privacyControlActivity.S, sparseIntArray);
+        g(13, privacyControlActivity.T, sparseIntArray);
+        g(14, privacyControlActivity.U, sparseIntArray);
+        g(15, privacyControlActivity.V, sparseIntArray);
+        i12 = privacyControlActivity.photoForRestRow;
+        g(16, i12, sparseIntArray);
+        i13 = privacyControlActivity.currentPhotoForRestRow;
+        g(17, i13, sparseIntArray);
+        g(18, privacyControlActivity.W, sparseIntArray);
+        g(19, privacyControlActivity.X, sparseIntArray);
+        g(20, privacyControlActivity.Y, sparseIntArray);
+        g(21, privacyControlActivity.Z, sparseIntArray);
+        i14 = privacyControlActivity.readRow;
+        g(22, i14, sparseIntArray);
+        g(23, privacyControlActivity.a0, sparseIntArray);
+        g(24, privacyControlActivity.b0, sparseIntArray);
+        g(25, privacyControlActivity.c0, sparseIntArray);
+        g(26, privacyControlActivity.e0, sparseIntArray);
+        i15 = privacyControlActivity.priceRow;
+        g(27, i15, sparseIntArray);
+        g(28, privacyControlActivity.g0, sparseIntArray);
+        i16 = privacyControlActivity.showGiftIconRow;
+        g(29, i16, sparseIntArray);
+        g(30, privacyControlActivity.h0, sparseIntArray);
+        i17 = privacyControlActivity.giftTypesHeaderRow;
+        g(31, i17, sparseIntArray);
+        g(32, privacyControlActivity.j0, sparseIntArray);
+        g(33, privacyControlActivity.i0, sparseIntArray);
+        g(34, privacyControlActivity.k0, sparseIntArray);
+        g(35, privacyControlActivity.l0, sparseIntArray);
+        g(36, privacyControlActivity.m0, sparseIntArray);
+        g(37, privacyControlActivity.n0, sparseIntArray);
     }
 }

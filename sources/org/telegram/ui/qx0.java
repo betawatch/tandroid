@@ -1,109 +1,48 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
 import android.view.View;
-import java.util.HashSet;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import java.util.ArrayList;
+import java.util.Iterator;
+import org.telegram.messenger.GenericProvider;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qx0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final /* synthetic */ class qx0 implements GenericProvider, org.telegram.ui.Components.kl0, v60 {
+    public final /* synthetic */ tx0 a;
 
-    public /* synthetic */ qx0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public /* synthetic */ qx0(tx0 tx0Var) {
+        this.a = tx0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        ProfileActivity profileActivity = this.b;
-        switch (i10) {
-            case 0:
-                ProfileActivity.i0(profileActivity);
-                break;
-            case 1:
-                if (profileActivity.v.getTag() == null) {
-                    profileActivity.u4();
-                    break;
-                }
-                break;
-            case 2:
-                profileActivity.finishPreviewFragment();
-                break;
-            case 3:
-                profileActivity.R4();
-                break;
-            case 4:
-                ProfileActivity.g0(profileActivity);
-                break;
-            case 5:
-                ProfileActivity.a0(profileActivity);
-                break;
-            case 6:
-                profileActivity.getClass();
-                Bundle bundle = new Bundle();
-                bundle.putLong("chat_id", profileActivity.c1);
-                bundle.putLong("user_id", profileActivity.b1);
-                profileActivity.presentFragment(new o21(bundle));
-                break;
-            case 7:
-                ProfileActivity.h0(profileActivity);
-                break;
-            case 8:
-                profileActivity.Q4();
-                break;
-            case 9:
-                profileActivity.Q4();
-                break;
-            case 10:
-                if (profileActivity.getParentLayout() != null && profileActivity.getParentLayout().getFragmentStack() != null) {
-                    int i11 = 0;
-                    while (i11 < profileActivity.getParentLayout().getFragmentStack().size()) {
-                        org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) profileActivity.getParentLayout().getFragmentStack().get(i11);
-                        if (p2Var instanceof py) {
-                            py pyVar = (py) p2Var;
-                            kx kxVar = pyVar.C3;
-                            if (kxVar != null) {
-                                org.telegram.ui.ActionBar.p2 fragment = kxVar.getFragment();
-                                if ((fragment instanceof mf1) && (-((mf1) fragment).a) == profileActivity.a()) {
-                                    pyVar.C3.a();
-                                }
-                            }
-                        } else if (p2Var instanceof xn) {
-                            if (((xn) p2Var).a() == profileActivity.a()) {
-                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(p2Var, false);
-                                i11--;
-                            }
-                        } else if (p2Var instanceof mf1) {
-                            if ((-((mf1) p2Var).a) == profileActivity.a()) {
-                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(p2Var, false);
-                                i11--;
-                            }
-                        } else if ((p2Var instanceof ProfileActivity) && p2Var != profileActivity) {
-                            ProfileActivity profileActivity2 = (ProfileActivity) p2Var;
-                            if (profileActivity2.a() == profileActivity.a() && profileActivity2.n1) {
-                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(p2Var, false);
-                                i11--;
-                            }
-                        }
-                        i11++;
-                    }
-                }
-                profileActivity.G1 = 0;
-                Bundle bundle2 = new Bundle();
-                bundle2.putLong("chat_id", profileActivity.c1);
-                HashSet hashSet = mf1.k1;
-                profileActivity.presentFragment(mf1.E0(profileActivity.getMessagesController(), profileActivity.getMessagesStorage(), bundle2));
-                break;
-            case 11:
-                profileActivity.t4(view);
-                break;
-            default:
-                profileActivity.t4(view);
-                break;
+    @Override // org.telegram.ui.v60
+    public void b(ArrayList arrayList, boolean z4, boolean z10) {
+        Iterator it = arrayList.iterator();
+        if (it.hasNext()) {
+            throw null;
         }
+        this.a.V();
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public boolean f(int i10, View view) {
+        tx0 tx0Var = this.a;
+        if (i10 < tx0Var.r || i10 >= tx0Var.s) {
+            return false;
+        }
+        if (tx0Var.y != 1) {
+            throw null;
+        }
+        tx0Var.U(Long.valueOf(tx0Var.getMessagesController().blockePeers.keyAt(i10 - tx0Var.r)), view);
+        return true;
+    }
+
+    @Override // org.telegram.messenger.GenericProvider
+    public Object provide(Object obj) {
+        tx0 tx0Var = this.a;
+        tx0Var.getClass();
+        if (((Integer) obj).intValue() == tx0Var.w) {
+            return Integer.valueOf(org.telegram.ui.ActionBar.k6.l1(0.12f, org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.p7, false)));
+        }
+        return null;
     }
 }

@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.os.Build;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class yx extends org.telegram.ui.Components.eo0 {
+public final class yx extends org.telegram.ui.Components.do0 {
     public final lf.b0 V0;
     public final lf.b0 W0;
     public final /* synthetic */ py X0;
@@ -66,13 +66,13 @@ public final class yx extends org.telegram.ui.Components.eo0 {
     @Override // android.view.View
     public final void setTranslationY(float f10) {
         super.setTranslationY(f10);
-        c41 c41Var = this.X0.W;
-        if (c41Var != null) {
-            c41Var.setTranslationY(f10);
+        h41 h41Var = this.X0.W;
+        if (h41Var != null) {
+            h41Var.setTranslationY(f10);
         }
     }
 
-    @Override // org.telegram.ui.Components.m81
+    @Override // org.telegram.ui.Components.l81
     public final void w(boolean z4) {
         if (Build.VERSION.SDK_INT >= 31) {
             py pyVar = this.X0;
@@ -82,9 +82,9 @@ public final class yx extends org.telegram.ui.Components.eo0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.m81
+    @Override // org.telegram.ui.Components.l81
     public final void x(int i10) {
-        org.telegram.ui.Components.do0 do0Var = this.Q;
-        this.X0.c5(do0Var != null && do0Var.h(i10) == 2);
+        org.telegram.ui.Components.co0 co0Var = this.Q;
+        this.X0.c5(co0Var != null && co0Var.h(i10) == 2);
     }
 }

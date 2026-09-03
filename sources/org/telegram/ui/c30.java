@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class c30 extends f2.a1 {
     public final /* synthetic */ d60 a;
@@ -38,9 +38,9 @@ public final class c30 extends f2.a1 {
             return;
         }
         k50Var.getChildAt(0);
-        org.telegram.ui.Components.fl0 fl0Var = (org.telegram.ui.Components.fl0) k50Var.K(0);
-        if (fl0Var != null) {
-            View view = fl0Var.a;
+        org.telegram.ui.Components.el0 el0Var = (org.telegram.ui.Components.el0) k50Var.K(0);
+        if (el0Var != null) {
+            View view = el0Var.a;
             if (view.getTop() > 0) {
                 k50Var.v0(0, view.getTop(), null);
             }

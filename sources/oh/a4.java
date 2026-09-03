@@ -16,11 +16,11 @@ import org.telegram.ui.Components.vv;
 import org.telegram.ui.af0;
 import org.telegram.ui.f70;
 import org.telegram.ui.nd;
-import org.telegram.ui.pi1;
 import org.telegram.ui.po;
-import org.telegram.ui.qi1;
+import org.telegram.ui.vi1;
+import org.telegram.ui.wi1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class a4 extends org.telegram.ui.Components.p9 {
     public final /* synthetic */ int D;
@@ -91,7 +91,7 @@ public final class a4 extends org.telegram.ui.Components.p9 {
                 super.onDraw(canvas);
                 ya yaVar = (ya) this.E;
                 Object obj = yaVar.h;
-                if ((obj instanceof pi1) || (obj instanceof qi1)) {
+                if ((obj instanceof vi1) || (obj instanceof wi1)) {
                     canvas.drawLine(1.0f, 0.0f, getMeasuredWidth() - 1, 0.0f, yaVar.n.n);
                     canvas2 = canvas;
                     canvas2.drawLine(0.0f, 0.0f, 0.0f, getMeasuredHeight(), yaVar.n.n);

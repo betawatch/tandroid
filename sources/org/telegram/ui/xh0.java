@@ -18,7 +18,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class xh0 extends FrameLayout {
     public final ArrayList a;
@@ -30,7 +30,7 @@ public final class xh0 extends FrameLayout {
     public final boolean h;
     public final org.telegram.ui.Components.u00 n;
     public boolean r;
-    public kb1 s;
+    public qb1 s;
 
     public xh0(Context context, int i10, MessageObject messageObject, TLRPC.Chat chat) {
         super(context);
@@ -74,15 +74,15 @@ public final class xh0 extends FrameLayout {
         setEnabled(false);
     }
 
-    public final org.telegram.ui.Components.tl0 a() {
-        kb1 kb1Var = this.s;
-        if (kb1Var != null) {
-            return kb1Var;
+    public final org.telegram.ui.Components.sl0 a() {
+        qb1 qb1Var = this.s;
+        if (qb1Var != null) {
+            return qb1Var;
         }
-        kb1 kb1Var2 = new kb1(getContext(), 9, null);
-        this.s = kb1Var2;
+        qb1 qb1Var2 = new qb1(getContext(), 9, null);
+        this.s = qb1Var2;
         getContext();
-        kb1Var2.setLayoutManager(new f2.j0());
+        qb1Var2.setLayoutManager(new f2.j0());
         this.s.i(new hg.e2(this, 5));
         this.s.setAdapter(new fg.g(this, 4));
         return this.s;
@@ -130,9 +130,9 @@ public final class xh0 extends FrameLayout {
         d9Var.animate().alpha(1.0f).setDuration(220L).start();
         org.telegram.ui.Components.u00 u00Var = this.n;
         u00Var.animate().alpha(0.0f).setDuration(220L).setListener(new org.telegram.ui.Components.x20(u00Var)).start();
-        kb1 kb1Var = this.s;
-        if (kb1Var != null) {
-            kb1Var.getAdapter();
+        qb1 qb1Var = this.s;
+        if (qb1Var != null) {
+            qb1Var.getAdapter();
         }
     }
 

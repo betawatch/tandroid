@@ -8,9 +8,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.xu0;
+import org.telegram.ui.cv0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public interface k1 {
     boolean A0(MessageObject messageObject);
@@ -135,7 +135,7 @@ public interface k1 {
 
     boolean g1(int i10, t1 t1Var);
 
-    xu0 g2();
+    cv0 g2();
 
     void i(t1 t1Var, ArrayList arrayList, int i10, int i11, int i12);
 

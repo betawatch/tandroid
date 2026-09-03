@@ -5,9 +5,9 @@ import android.view.KeyEvent;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ra extends sl0 {
+public final class ra extends rl0 {
     public final /* synthetic */ int c;
     public final Context d;
     public final Object e;
@@ -24,7 +24,7 @@ public final class ra extends sl0 {
     public void B(f2.r0 r0Var) {
         switch (this.c) {
             case 0:
-                ((sl0) this.e).B(new qa(this, r0Var));
+                ((rl0) this.e).B(new qa(this, r0Var));
                 break;
             default:
                 super.B(r0Var);
@@ -32,11 +32,11 @@ public final class ra extends sl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         switch (this.c) {
             case 0:
-                return ((sl0) this.e).D(m1Var);
+                return ((rl0) this.e).D(m1Var);
             default:
                 return m1Var.f == 0;
         }
@@ -46,7 +46,7 @@ public final class ra extends sl0 {
     public final int h() {
         switch (this.c) {
             case 0:
-                return ((sl0) this.e).h() + 1;
+                return ((rl0) this.e).h() + 1;
             default:
                 return ((ArrayList) this.e).size();
         }
@@ -60,7 +60,7 @@ public final class ra extends sl0 {
                 if (i10 == (saVar.N ? h() - 1 : 0)) {
                     return -1000;
                 }
-                return ((sl0) this.e).j(i10 - (!saVar.N ? 1 : 0));
+                return ((rl0) this.e).j(i10 - (!saVar.N ? 1 : 0));
             default:
                 return 0;
         }
@@ -72,7 +72,7 @@ public final class ra extends sl0 {
             case 0:
                 sa saVar = (sa) this.f;
                 if (i10 != (saVar.N ? h() - 1 : 0)) {
-                    ((sl0) this.e).v(m1Var, i10 - (!saVar.N ? 1 : 0));
+                    ((rl0) this.e).v(m1Var, i10 - (!saVar.N ? 1 : 0));
                     break;
                 }
                 break;
@@ -89,18 +89,18 @@ public final class ra extends sl0 {
     public final f2.m1 x(ViewGroup viewGroup, int i10) {
         switch (this.c) {
             case 0:
-                return i10 == -1000 ? new fl0(new fg.h0((sa) this.f, this.d)) : ((sl0) this.e).x(viewGroup, i10);
+                return i10 == -1000 ? new el0(new fg.h0((sa) this.f, this.d)) : ((rl0) this.e).x(viewGroup, i10);
             default:
                 aj ajVar = new aj(this, this.d);
                 ajVar.b = false;
-                return new fl0(ajVar);
+                return new el0(ajVar);
         }
     }
 
-    public ra(sa saVar, sl0 sl0Var, Context context) {
+    public ra(sa saVar, rl0 rl0Var, Context context) {
         this.c = 0;
         this.f = saVar;
-        this.e = sl0Var;
+        this.e = rl0Var;
         this.d = context;
     }
 }

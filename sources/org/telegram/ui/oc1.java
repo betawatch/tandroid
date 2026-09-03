@@ -1,31 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class oc1 implements vc1 {
-    public boolean a;
-    public final /* synthetic */ xn b;
+public final class oc1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ jd1 a;
 
-    public oc1(xn xnVar, boolean z4) {
-        this.b = xnVar;
-        this.a = z4;
+    public oc1(jd1 jd1Var) {
+        this.a = jd1Var;
     }
 
-    @Override // org.telegram.ui.vc1
-    public final boolean T0() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.vc1
-    public final boolean a() {
-        return this.a;
-    }
-
-    @Override // org.telegram.ui.vc1
-    public final void l1(boolean z4) {
-        boolean z10 = !this.a;
-        this.a = z10;
-        vn vnVar = this.b.ba;
-        vnVar.i(vnVar.f, vnVar.h, z4, Boolean.valueOf(z10), false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        jd1 jd1Var = this.a;
+        jd1Var.G0[jd1Var.T0 != null ? (char) 0 : (char) 2].setVisibility(4);
     }
 }

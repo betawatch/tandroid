@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class vg0 extends FrameLayout {
     public final t5 a;
@@ -70,7 +70,7 @@ public abstract class vg0 extends FrameLayout {
         }
         String format = String.format("%d", Integer.valueOf(i10));
         SpannableStringBuilder spannableStringBuilder2 = LocaleController.isRTL ? new SpannableStringBuilder(android.support.v4.media.a.l(i10, "% – ")) : new SpannableStringBuilder(l.d.k(i10, " – ", "%"));
-        spannableStringBuilder2.setSpan(new g51(AndroidUtilities.bold()), 3, format.length() + 3, 33);
+        spannableStringBuilder2.setSpan(new e51(AndroidUtilities.bold()), 3, format.length() + 3, 33);
         this.b.setText(spannableStringBuilder2);
         org.telegram.ui.Cells.w1 w1Var = this.c;
         if (i12 == 0) {

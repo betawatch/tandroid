@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class jj extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ Context a;
@@ -116,7 +116,7 @@ public final class jj extends org.telegram.ui.ActionBar.j {
                     return;
                 } else {
                     xnVar.getMessagesController().getTopicsController().toggleViewForumAsMessages(-xnVar.Q5, false);
-                    mf1.I0(xnVar);
+                    sf1.I0(xnVar);
                     return;
                 }
             }
@@ -293,14 +293,14 @@ public final class jj extends org.telegram.ui.ActionBar.j {
                     }
                     int i29 = 21;
                     if (i10 == 21) {
-                        int i30 = m31.v;
+                        int i30 = q31.v;
                         int currentAccount = xnVar.getCurrentAccount();
                         Activity parentActivity = xnVar.getParentActivity();
                         long a2 = xnVar.a();
                         if (parentActivity == null) {
                             return;
                         }
-                        m31.J(currentAccount, parentActivity, a2, false, false, new ArrayList(), null, null, new byte[0], null, null);
+                        q31.J(currentAccount, parentActivity, a2, false, false, new ArrayList(), null, null, new byte[0], null, null);
                         return;
                     }
                     if (i10 == 22) {
@@ -384,7 +384,7 @@ public final class jj extends org.telegram.ui.ActionBar.j {
                         TLRPC.User user4 = xnVar.f;
                         boolean z12 = i10 == 33;
                         TLRPC.UserFull userFull = xnVar.X7;
-                        org.telegram.ui.Components.voip.g2.n(user4, z12, userFull != null && userFull.video_calls_available, xnVar.getParentActivity(), xnVar.getMessagesController().getUserFull(xnVar.f.id), xnVar.getAccountInstance());
+                        org.telegram.ui.Components.voip.g2.m(user4, z12, userFull != null && userFull.video_calls_available, xnVar.getParentActivity(), xnVar.getMessagesController().getUserFull(xnVar.f.id), xnVar.getAccountInstance());
                         return;
                     }
                     if (i10 == 50) {
@@ -497,7 +497,7 @@ public final class jj extends org.telegram.ui.ActionBar.j {
                         return;
                     }
                     if (i10 == 61) {
-                        mf1.I0(xnVar);
+                        sf1.I0(xnVar);
                         return;
                     }
                     if (i10 == 65) {
@@ -565,7 +565,7 @@ public final class jj extends org.telegram.ui.ActionBar.j {
                         return;
                     }
                     if (i10 == 73) {
-                        ie1 a02 = ie1.a0(-xnVar.Q5, 0L);
+                        oe1 a02 = oe1.a0(-xnVar.Q5, 0L);
                         a02.y = xnVar;
                         xnVar.presentFragment(a02);
                         return;

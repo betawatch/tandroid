@@ -34,16 +34,16 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.c9;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.l5;
-import org.telegram.ui.Components.nn0;
+import org.telegram.ui.Components.mn0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.Components.vq;
 import org.telegram.ui.Components.y5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class o0 {
     public int A;
@@ -73,7 +73,7 @@ public abstract class o0 {
     public final rc Y;
     public final wa Z;
     public final TLRPC.ReactionCount a;
-    public final ij0 a0;
+    public final hj0 a0;
     public final boolean b;
     public int c;
     public int d;
@@ -108,7 +108,7 @@ public abstract class o0 {
 
     public o0(o0 o0Var, int i10, View view, TLRPC.ReactionCount reactionCount, boolean z4, boolean z10, g6 g6Var) {
         wa waVar;
-        ij0 ij0Var;
+        hj0 hj0Var;
         i.f fVar = new i.f(this, 5);
         this.V = i10;
         this.W = view;
@@ -173,10 +173,10 @@ public abstract class o0 {
             if (d.a) {
                 this.m = true;
                 if (LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS)) {
-                    if (o0Var == null || (ij0Var = o0Var.a0) == null) {
-                        this.a0 = new ij0(R.raw.star_reaction_click, AndroidUtilities.dp(40.0f), "star_reaction_click", AndroidUtilities.dp(40.0f));
+                    if (o0Var == null || (hj0Var = o0Var.a0) == null) {
+                        this.a0 = new hj0(R.raw.star_reaction_click, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
                     } else {
-                        this.a0 = ij0Var;
+                        this.a0 = hj0Var;
                     }
                     this.C.setImageBitmap(this.a0);
                 } else {
@@ -204,7 +204,7 @@ public abstract class o0 {
         if (this.u) {
             j6 j6Var3 = this.G;
             j6Var3.q(Emoji.replaceEmoji(this.v, j6Var3.a.getFontMetricsInt(), false), !LocaleController.isRTL, true);
-            if (this instanceof nn0) {
+            if (this instanceof mn0) {
                 Integer.toString(reactionCount.count);
                 this.F.c(this.w, false);
             } else {
@@ -801,7 +801,7 @@ public abstract class o0 {
             imageReceiver = this.C;
         }
         if (imageReceiver != null) {
-            ij0 lottieAnimation = imageReceiver.getLottieAnimation();
+            hj0 lottieAnimation = imageReceiver.getLottieAnimation();
             if (lottieAnimation != null) {
                 lottieAnimation.F(true);
                 return;
@@ -820,7 +820,7 @@ public abstract class o0 {
             imageReceiver = this.C;
         }
         if (imageReceiver != null) {
-            ij0 lottieAnimation = imageReceiver.getLottieAnimation();
+            hj0 lottieAnimation = imageReceiver.getLottieAnimation();
             if (lottieAnimation != null) {
                 lottieAnimation.stop();
                 return;

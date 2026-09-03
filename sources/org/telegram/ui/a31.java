@@ -1,42 +1,82 @@
 package org.telegram.ui;
 
 import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a31 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.messenger.video.a b;
-    public final /* synthetic */ org.telegram.ui.Components.qc c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ oh.h0 e;
+public final class a31 extends FrameLayout {
+    public final org.telegram.ui.Components.j5 a;
+    public final /* synthetic */ b31 b;
 
-    public /* synthetic */ a31(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.qc qcVar, Context context, oh.h0 h0Var, int i10) {
-        this.a = i10;
-        this.b = aVar;
-        this.c = qcVar;
-        this.d = context;
-        this.e = h0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a31(b31 b31Var, Context context) {
+        super(context);
+        this.b = b31Var;
+        TextView g10 = org.telegram.messenger.y3.g(context, 1, 16.0f);
+        g10.setTextColor(b31Var.getThemedColor(org.telegram.ui.ActionBar.k6.G6));
+        g10.setText(LocaleController.getString(R.string.DoubleTapSetting));
+        addView(g10, k7.c6.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
+        this.a = new org.telegram.ui.Components.j5(AndroidUtilities.dp(24.0f), this);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.run();
-                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new mv(this.d, 2), this.e)).j();
-                break;
-            case 1:
-                this.b.run();
-                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new mv(this.d, 5), this.e)).j();
-                break;
-            default:
-                this.b.run();
-                this.c.c(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.AdReported), -1, 2, new mv(this.d, 6), this.e)).j();
-                break;
+    public final void a(boolean z4) {
+        int i10;
+        int i11;
+        b31 b31Var = this.b;
+        i10 = ((org.telegram.ui.ActionBar.p2) b31Var).currentAccount;
+        String doubleTapReaction = MediaDataController.getInstance(i10).getDoubleTapReaction();
+        org.telegram.ui.Components.j5 j5Var = this.a;
+        if (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")) {
+            try {
+                j5Var.j(Long.parseLong(doubleTapReaction.substring(9)), z4);
+                return;
+            } catch (Exception unused) {
+            }
         }
+        i11 = ((org.telegram.ui.ActionBar.p2) b31Var).currentAccount;
+        TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(doubleTapReaction);
+        if (tL_availableReaction != null) {
+            j5Var.i(tL_availableReaction.static_icon, z4);
+        }
+    }
+
+    public final void b() {
+        int width = getWidth();
+        org.telegram.ui.Components.j5 j5Var = this.a;
+        j5Var.setBounds((width - j5Var.s) - AndroidUtilities.dp(21.0f), (getHeight() - j5Var.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + j5Var.s) / 2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        b();
+        this.a.draw(canvas);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

@@ -19,9 +19,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.y5;
-import qh.f3;
+import qh.e3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class w extends View {
     public final Path a;
@@ -218,7 +218,7 @@ public final class w extends View {
     public final void onMeasure(int i10, int i11) {
         SpannableStringBuilder spannableStringBuilder = this.f;
         TextPaint textPaint = this.c;
-        this.e = f3.g(spannableStringBuilder, textPaint);
+        this.e = e3.g(spannableStringBuilder, textPaint);
         this.d = new StaticLayout(this.f, textPaint, AndroidUtilities.dp(12.0f) + ((int) this.e), Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
         this.e = 0.0f;
         for (int i12 = 0; i12 < this.d.getLineCount(); i12++) {

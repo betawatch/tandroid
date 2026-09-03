@@ -16,29 +16,29 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.ax0;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.nb0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.zw0;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
-import qh.d4;
-import qh.d6;
+import qh.c4;
+import qh.l6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class q extends p2 implements xd.b {
     public final xd.a a;
     public long b;
     public FrameLayout c;
-    public i61 d;
+    public h61 d;
     public xg.f e;
     public LinearLayout f;
     public qh.d h;
     public qh.d n;
-    public ax0 r;
+    public zw0 r;
     public TLRPC.ChatFull s;
     public n0 v;
 
@@ -47,8 +47,8 @@ public final class q extends p2 implements xd.b {
         this.a = new xd.a(0, this, pr.h, 320L, false);
     }
 
-    public static void U(q qVar, j51 j51Var) {
-        Object obj = j51Var.G;
+    public static void U(q qVar, h51 h51Var) {
+        Object obj = h51Var.G;
         if (obj instanceof uh.e) {
             uh.e eVar = (uh.e) obj;
             long j10 = eVar.a;
@@ -59,7 +59,7 @@ public final class q extends p2 implements xd.b {
             } else if (ChatObject.isPublic(chat) || ChatObject.isInChat(chat)) {
                 qVar.presentFragment(xn.R9(-chat.id));
             } else {
-                new vh.b(qVar.getParentActivity(), chat, new d6(20, qVar, eVar)).show();
+                new vh.b(qVar.getParentActivity(), chat, new l6(19, qVar, eVar)).show();
             }
         }
     }
@@ -99,12 +99,12 @@ public final class q extends p2 implements xd.b {
         this.c = frameLayout;
         int i11 = k6.a7;
         frameLayout.setBackgroundColor(k6.w0(null, i11, false));
-        i61 i61Var = new i61(this, new d4(this, 14), new o(this), new o(this));
-        this.d = i61Var;
-        i61Var.setClipToPadding(false);
-        i61 i61Var2 = this.d;
-        i61Var2.V2.r = false;
-        i61Var2.p1();
+        h61 h61Var = new h61(this, new c4(this, 14), new o(this), new o(this));
+        this.d = h61Var;
+        h61Var.setClipToPadding(false);
+        h61 h61Var2 = this.d;
+        h61Var2.V2.r = false;
+        h61Var2.o1();
         this.d.j(new nb0(this, 16));
         this.actionBar.setAdaptiveBackground(this.d);
         this.c.addView(this.d, c6.c(-1.0f, -1));
@@ -172,9 +172,9 @@ public final class q extends p2 implements xd.b {
         });
         this.f.addView(this.h, c6.p(0, 48, 1.0f, 0, 4, 0, 4, 0));
         this.c.addView(this.f, c6.e(-1, -2, 80));
-        ax0 ax0Var = new ax0(getParentActivity(), null, 16, this.resourceProvider);
-        this.r = ax0Var;
-        ax0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
+        zw0 zw0Var = new zw0(getParentActivity(), null, 16, this.resourceProvider);
+        this.r = zw0Var;
+        zw0Var.d.setText(LocaleController.getString(R.string.NoCommunityJoinRequests));
         this.r.e.setText(LocaleController.getString(R.string.NoCommunityJoinRequestsDescription));
         this.r.setAnimateLayoutChange(true);
         this.r.setVisibility(8);

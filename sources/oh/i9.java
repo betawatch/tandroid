@@ -43,16 +43,16 @@ import org.telegram.ui.Components.xt;
 import org.telegram.ui.LaunchActivity;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class i9 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.l2, ef.a {
     public static boolean A1;
     public static boolean u1;
     public static TL_stories.StoryItem w1;
     public static boolean x1;
-    public qh.k3 A0;
+    public qh.j3 A0;
     public boolean B;
-    public qh.k3 B0;
+    public qh.j3 B0;
     public ValueAnimator C;
     public Uri C0;
     public ValueAnimator D;
@@ -355,9 +355,9 @@ public final class i9 implements NotificationCenter.NotificationCenterDelegate, 
                 this.y0 = a9Var;
                 this.v0.addView(a9Var);
             }
-            qh.k3 k3Var = new qh.k3(context, this.h);
-            this.A0 = k3Var;
-            k3Var.setVisibility(8);
+            qh.j3 j3Var = new qh.j3(context, this.h);
+            this.A0 = j3Var;
+            j3Var.setVisibility(8);
             this.v0.addView(this.A0);
             s7 s7Var = new s7(context);
             Paint paint = new Paint(1);
@@ -369,9 +369,9 @@ public final class i9 implements NotificationCenter.NotificationCenterDelegate, 
             this.a1 = s7Var;
             this.v.addView(s7Var, k7.c6.d(-1, -1.0f, 0, 4.0f, 0.0f, 4.0f, 0.0f));
         }
-        qh.k3 k3Var2 = this.A0;
-        if (k3Var2 != null) {
-            k3Var2.setAccount(this.h);
+        qh.j3 j3Var2 = this.A0;
+        if (j3Var2 != null) {
+            j3Var2.setAccount(this.h);
         }
         AndroidUtilities.removeFromParent(this.v0);
         this.s.addView(this.v0);
@@ -534,9 +534,9 @@ public final class i9 implements NotificationCenter.NotificationCenterDelegate, 
             h9Var.release(null);
             this.w0 = null;
         }
-        qh.k3 k3Var = this.A0;
-        if (k3Var != null) {
-            k3Var.d(0L, null);
+        qh.j3 j3Var = this.A0;
+        if (j3Var != null) {
+            j3Var.d(0L, null);
         }
         e1 e1Var = this.x0;
         if (e1Var != null) {
@@ -907,9 +907,9 @@ public final class i9 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // ef.a
     public final void a(c2.p pVar) {
-        qh.k3 k3Var = this.B0;
-        if (k3Var != null) {
-            k3Var.setOnFirstFrameCallback(pVar);
+        qh.j3 j3Var = this.B0;
+        if (j3Var != null) {
+            j3Var.setOnFirstFrameCallback(pVar);
         }
         if (this.b) {
             AndroidUtilities.removeFromParent(this.s);
@@ -917,9 +917,9 @@ public final class i9 implements NotificationCenter.NotificationCenterDelegate, 
         } else {
             this.n.addView(this.s, this.r);
         }
-        qh.k3 k3Var2 = this.B0;
-        if (k3Var2 != null) {
-            k3Var2.b();
+        qh.j3 j3Var2 = this.B0;
+        if (j3Var2 != null) {
+            j3Var2.b();
             this.B0 = null;
         }
         this.s.invalidate();
@@ -933,8 +933,8 @@ public final class i9 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // ef.a
     public final Bitmap b() {
-        qh.k3 k3Var = this.B0;
-        if (k3Var == null || !k3Var.a()) {
+        qh.j3 j3Var = this.B0;
+        if (j3Var == null || !j3Var.a()) {
             return null;
         }
         return this.B0.getBitmap();
@@ -942,8 +942,8 @@ public final class i9 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // ef.a
     public final Bitmap d() {
-        qh.k3 k3Var = this.A0;
-        if (k3Var == null || !k3Var.a()) {
+        qh.j3 j3Var = this.A0;
+        if (j3Var == null || !j3Var.a()) {
             return null;
         }
         return this.A0.getBitmap();
@@ -1049,9 +1049,9 @@ public final class i9 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // ef.a
     public final void e(c2.p pVar) {
-        qh.k3 k3Var = this.B0;
-        if (k3Var != null) {
-            k3Var.setOnFirstFrameCallback(pVar);
+        qh.j3 j3Var = this.B0;
+        if (j3Var != null) {
+            j3Var.setOnFirstFrameCallback(pVar);
             this.x0.s(this.B0.getSink());
         }
         if (this.b) {
@@ -1085,9 +1085,9 @@ public final class i9 implements NotificationCenter.NotificationCenterDelegate, 
 
     @Override // ef.a
     public final View h() {
-        qh.k3 k3Var = new qh.k3(this.A0.getContext(), this.h);
-        this.B0 = k3Var;
-        return k3Var;
+        qh.j3 j3Var = new qh.j3(this.A0.getContext(), this.h);
+        this.B0 = j3Var;
+        return j3Var;
     }
 
     @Override // org.telegram.ui.ActionBar.l2
@@ -1116,9 +1116,9 @@ public final class i9 implements NotificationCenter.NotificationCenterDelegate, 
             if (surfaceView != null) {
                 surfaceView.setSecure(!z10);
             }
-            qh.k3 k3Var = this.A0;
-            if (k3Var != null) {
-                k3Var.setSecure(!z10);
+            qh.j3 j3Var = this.A0;
+            if (j3Var != null) {
+                j3Var.setSecure(!z10);
             }
             if (this.b) {
                 org.telegram.ui.ActionBar.p2 p2Var = this.f;

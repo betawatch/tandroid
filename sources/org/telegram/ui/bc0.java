@@ -7,7 +7,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class bc0 extends org.telegram.ui.Components.a60 {
     public final /* synthetic */ dc0 d;
@@ -16,7 +16,7 @@ public final class bc0 extends org.telegram.ui.Components.a60 {
         this.d = dc0Var;
     }
 
-    @Override // org.telegram.ui.Components.io0
+    @Override // org.telegram.ui.Components.ho0
     public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
         super.e(view, accessibilityNodeInfo);
         accessibilityNodeInfo.setEnabled(true);

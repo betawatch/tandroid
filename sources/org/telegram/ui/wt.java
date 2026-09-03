@@ -5,16 +5,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class wt extends TimerTask {
     public final /* synthetic */ int a;
     public final /* synthetic */ String b;
-    public final /* synthetic */ org.telegram.ui.Components.sl0 c;
+    public final /* synthetic */ org.telegram.ui.Components.rl0 c;
 
-    public /* synthetic */ wt(org.telegram.ui.Components.sl0 sl0Var, String str, int i10) {
+    public /* synthetic */ wt(org.telegram.ui.Components.rl0 rl0Var, String str, int i10) {
         this.a = i10;
-        this.c = sl0Var;
+        this.c = rl0Var;
         this.b = str;
     }
 
@@ -28,7 +28,7 @@ public final class wt extends TimerTask {
                 } catch (Exception e6) {
                     FileLog.e(e6);
                 }
-                Utilities.searchQueue.postRunnable(new org.telegram.ui.Components.l41(11, (xt) this.c, this.b));
+                Utilities.searchQueue.postRunnable(new org.telegram.ui.Components.q51(10, (xt) this.c, this.b));
                 break;
             default:
                 uf.c1 c1Var = (uf.c1) this.c;
@@ -40,7 +40,7 @@ public final class wt extends TimerTask {
                 }
                 String str = this.b;
                 c1Var.getClass();
-                AndroidUtilities.runOnUIThread(new qh.d6(27, c1Var, str));
+                AndroidUtilities.runOnUIThread(new qh.l6(26, c1Var, str));
                 break;
         }
     }

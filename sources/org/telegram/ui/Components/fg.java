@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fg implements Runnable {
     public final /* synthetic */ int a;
@@ -56,7 +56,7 @@ public final /* synthetic */ class fg implements Runnable {
                 new fg.n1(qcVar.W(), 42, qcVar.c).show();
                 break;
             case 2:
-                AndroidUtilities.removeFromParent((qh.f3) obj);
+                AndroidUtilities.removeFromParent((qh.e3) obj);
                 break;
             case 3:
                 AndroidUtilities.showKeyboard((EditText) obj);
@@ -197,9 +197,9 @@ public final /* synthetic */ class fg implements Runnable {
                 }
                 break;
             case 25:
-                qm qmVar = (qm) obj;
-                mi miVar = qmVar.b;
-                if (qmVar.N && (chatAttachAlertPhotoLayout = miVar.g0) != null) {
+                pm pmVar = (pm) obj;
+                mi miVar = pmVar.b;
+                if (pmVar.N && (chatAttachAlertPhotoLayout = miVar.g0) != null) {
                     org.telegram.ui.ActionBar.g1 g1Var = chatAttachAlertPhotoLayout.Z0;
                     g1Var.setIcon(R.drawable.ic_ab_back);
                     g1Var.setText(LocaleController.getString(R.string.Back));
@@ -208,9 +208,9 @@ public final /* synthetic */ class fg implements Runnable {
                 }
                 break;
             case 26:
-                sn snVar = (sn) obj;
-                snVar.h1 = -1;
-                snVar.g1 = null;
+                rn rnVar = (rn) obj;
+                rnVar.h1 = -1;
+                rnVar.g1 = null;
                 break;
             case 27:
                 ((mo) obj).k();

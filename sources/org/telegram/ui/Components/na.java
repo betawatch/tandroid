@@ -7,7 +7,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class na extends qc0 {
     public final /* synthetic */ boolean A0;
@@ -22,7 +22,7 @@ public final class na extends qc0 {
         this.B0 = z10;
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         sa saVar = this.C0;
         saVar.H(canvas, this);

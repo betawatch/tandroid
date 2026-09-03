@@ -1,38 +1,20 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gg1 implements org.telegram.ui.ActionBar.c2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qg1 b;
+import org.telegram.tgnet.tl.TL_account;
 
-    public /* synthetic */ gg1(qg1 qg1Var, int i10) {
-        this.a = i10;
-        this.b = qg1Var;
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* loaded from: classes3.dex */
+public final class gg1 extends vg1 {
+    public final /* synthetic */ TwoStepVerificationActivity h0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gg1(TwoStepVerificationActivity twoStepVerificationActivity, int i10, TL_account.Password password) {
+        super(i10, 4, password);
+        this.h0 = twoStepVerificationActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.finishFragment();
-                break;
-            case 1:
-                qg1 qg1Var = this.b;
-                qg1Var.B0();
-                qg1Var.finishFragment();
-                break;
-            case 2:
-                qg1 qg1Var2 = this.b;
-                qg1Var2.O = "";
-                qg1Var2.E0(false);
-                break;
-            case 3:
-                qg1.a0(this.b);
-                break;
-            default:
-                qg1.X(this.b);
-                break;
-        }
+    @Override // org.telegram.ui.vg1
+    public final void B0() {
+        this.h0.K = true;
     }
 }

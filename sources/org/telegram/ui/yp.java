@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class yp extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.Cells.j6 B;
@@ -25,7 +25,7 @@ public final class yp extends org.telegram.ui.ActionBar.p2 implements Notificati
     public long c;
     public ArrayList d;
     public LinearLayout e;
-    public org.telegram.ui.Components.tl0 f;
+    public org.telegram.ui.Components.sl0 f;
     public xp h;
     public org.telegram.ui.Cells.s8 n;
     public ArrayList r;
@@ -471,16 +471,16 @@ public final class yp extends org.telegram.ui.ActionBar.p2 implements Notificati
         this.y.setBackground(org.telegram.ui.ActionBar.k6.g0(org.telegram.ui.ActionBar.k6.w0(null, i14, false), org.telegram.ui.ActionBar.k6.w0(null, i15, false)));
         this.B.setBackground(org.telegram.ui.ActionBar.k6.g0(org.telegram.ui.ActionBar.k6.w0(null, i14, false), org.telegram.ui.ActionBar.k6.w0(null, i15, false)));
         V(this.w, false);
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.f = tl0Var;
-        tl0Var.setLayoutManager(new f2.j0());
-        org.telegram.ui.Components.tl0 tl0Var2 = this.f;
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.f = sl0Var;
+        sl0Var.setLayoutManager(new f2.j0());
+        org.telegram.ui.Components.sl0 sl0Var2 = this.f;
         xp xpVar = new xp(this, context);
         this.h = xpVar;
-        tl0Var2.setAdapter(xpVar);
+        sl0Var2.setAdapter(xpVar);
         this.f.setOnItemClickListener(new j(this, 4));
         linearLayout.addView(this.f, k7.c6.l(1.0f, -1, 0));
-        this.f.p1();
+        this.f.o1();
         this.actionBar.setAdaptiveBackground(this.f);
         this.e = linearLayout;
         this.fragmentView = linearLayout;

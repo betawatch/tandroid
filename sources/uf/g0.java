@@ -21,12 +21,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.m6;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.cr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class g0 extends tl0 {
+public final class g0 extends sl0 {
     public static final e0[] Z2 = {new e0(R.drawable.search_media_filled, R.string.SharedMediaTab2, new TLRPC.TL_inputMessagesFilterPhotoVideo(), 0), new e0(R.drawable.search_links_filled, R.string.SharedLinksTab2, new TLRPC.TL_inputMessagesFilterUrl(), 2), new e0(R.drawable.search_files_filled, R.string.SharedFilesTab2, new TLRPC.TL_inputMessagesFilterDocument(), 1), new e0(R.drawable.search_music_filled, R.string.SharedMusicTab2, new TLRPC.TL_inputMessagesFilterMusic(), 3), new e0(R.drawable.search_voice_filled, R.string.SharedVoiceTab2, new TLRPC.TL_inputMessagesFilterRoundVoice(), 5)};
     public static final Pattern a3 = Pattern.compile("20[0-9]{1,2}");
     public static final Pattern b3 = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
@@ -59,7 +59,7 @@ public final class g0 extends tl0 {
         setSelectorDrawableColor(k6.v0(k6.i6, this.m2));
     }
 
-    public static void w1(int i10, int i11, ArrayList arrayList) {
+    public static void v1(int i10, int i11, ArrayList arrayList) {
         int i12 = i11;
         if (i12 < 0 || i12 >= 12 || i10 < 0 || i10 >= f3[i12]) {
             return;
@@ -88,7 +88,7 @@ public final class g0 extends tl0 {
         }
     }
 
-    public static void x1(int i10, int i11, ArrayList arrayList) {
+    public static void w1(int i10, int i11, ArrayList arrayList) {
         int i12 = Calendar.getInstance().get(1);
         long timeInMillis = Calendar.getInstance().getTimeInMillis();
         if (i11 < 2013 || i11 > i12) {
@@ -104,7 +104,7 @@ public final class g0 extends tl0 {
         arrayList.add(new c0(timeInMillis2, calendar.getTimeInMillis() - 1, LocaleController.getInstance().getFormatterMonthYear().format(timeInMillis2)));
     }
 
-    public static void y1(String str, ArrayList arrayList) {
+    public static void x1(String str, ArrayList arrayList) {
         arrayList.clear();
         if (str == null) {
             return;
@@ -173,15 +173,15 @@ public final class g0 extends tl0 {
                 if (parseInt < 2013 || parseInt2 > 12) {
                     return;
                 }
-                x1(parseInt2 - 1, parseInt, arrayList);
+                w1(parseInt2 - 1, parseInt, arrayList);
                 return;
             }
             if (parseInt2 >= 2013 && parseInt <= 12) {
-                x1(parseInt - 1, parseInt2, arrayList);
+                w1(parseInt - 1, parseInt2, arrayList);
                 return;
             } else {
                 if (parseInt2 <= 12) {
-                    w1(parseInt - 1, parseInt2 - 1, arrayList);
+                    v1(parseInt - 1, parseInt2 - 1, arrayList);
                     return;
                 }
                 return;
@@ -242,14 +242,14 @@ public final class g0 extends tl0 {
         if (matcher3.matches()) {
             String group6 = matcher3.group(1);
             String group7 = matcher3.group(2);
-            int z12 = z1(group6);
-            if (z12 >= 0) {
+            int y12 = y1(group6);
+            if (y12 >= 0) {
                 int intValue2 = Integer.valueOf(group7).intValue();
                 if (intValue2 > 0 && intValue2 <= 31) {
-                    w1(intValue2 - 1, z12, arrayList);
+                    v1(intValue2 - 1, y12, arrayList);
                     return;
                 } else if (intValue2 >= 2013) {
-                    x1(z12, intValue2, arrayList);
+                    w1(y12, intValue2, arrayList);
                     return;
                 }
             }
@@ -257,26 +257,26 @@ public final class g0 extends tl0 {
         Matcher matcher4 = c3.matcher(trim);
         if (matcher4.matches()) {
             String group8 = matcher4.group(1);
-            int z13 = z1(matcher4.group(2));
-            if (z13 >= 0) {
+            int y13 = y1(matcher4.group(2));
+            if (y13 >= 0) {
                 int intValue3 = Integer.valueOf(group8).intValue();
                 if (intValue3 > 0 && intValue3 <= 31) {
-                    w1(intValue3 - 1, z13, arrayList);
+                    v1(intValue3 - 1, y13, arrayList);
                     return;
                 } else if (intValue3 >= 2013) {
-                    x1(z13, intValue3, arrayList);
+                    w1(y13, intValue3, arrayList);
                 }
             }
         }
         if (TextUtils.isEmpty(trim) || trim.length() <= 2) {
             return;
         }
-        int z14 = z1(trim);
+        int y14 = y1(trim);
         long timeInMillis8 = Calendar.getInstance().getTimeInMillis();
-        if (z14 >= 0) {
+        if (y14 >= 0) {
             for (int i25 = Calendar.getInstance().get(1); i25 >= 2013; i25--) {
                 Calendar calendar8 = Calendar.getInstance();
-                calendar8.set(i25, z14, 1, 0, 0, 0);
+                calendar8.set(i25, y14, 1, 0, 0, 0);
                 long timeInMillis9 = calendar8.getTimeInMillis();
                 if (timeInMillis9 <= timeInMillis8) {
                     calendar8.add(2, 1);
@@ -286,7 +286,7 @@ public final class g0 extends tl0 {
         }
     }
 
-    public static int z1(String str) {
+    public static int y1(String str) {
         String[] strArr = {LocaleController.getString(R.string.January).toLowerCase(), LocaleController.getString(R.string.February).toLowerCase(), LocaleController.getString(R.string.March).toLowerCase(), LocaleController.getString(R.string.April).toLowerCase(), LocaleController.getString(R.string.May).toLowerCase(), LocaleController.getString(R.string.June).toLowerCase(), LocaleController.getString(R.string.July).toLowerCase(), LocaleController.getString(R.string.August).toLowerCase(), LocaleController.getString(R.string.September).toLowerCase(), LocaleController.getString(R.string.October).toLowerCase(), LocaleController.getString(R.string.November).toLowerCase(), LocaleController.getString(R.string.December).toLowerCase()};
         String[] strArr2 = new String[12];
         Calendar calendar = Calendar.getInstance();
@@ -303,7 +303,64 @@ public final class g0 extends tl0 {
         return -1;
     }
 
-    public final void A1(ArrayList arrayList, ArrayList arrayList2, boolean z4) {
+    public final void A1() {
+        getRecycledViewPool().a();
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            View childAt = getChildAt(i10);
+            if (childAt instanceof d0) {
+                int i11 = d0.f;
+                ((d0) childAt).a();
+            }
+        }
+        for (int i12 = 0; i12 < getCachedChildCount(); i12++) {
+            View P = P(i12);
+            if (P instanceof d0) {
+                int i13 = d0.f;
+                ((d0) P).a();
+            }
+        }
+        for (int i14 = 0; i14 < getAttachedScrapChildCount(); i14++) {
+            View O = O(i14);
+            if (O instanceof d0) {
+                int i15 = d0.f;
+                ((d0) O).a();
+            }
+        }
+        setSelectorDrawableColor(k6.v0(k6.i6, this.m2));
+    }
+
+    public ArrayList<m6> getThemeDescriptions() {
+        ArrayList<m6> arrayList = new ArrayList<>();
+        arrayList.add(new m6(this, 0, null, null, null, null, k6.e7));
+        arrayList.add(new m6(this, 0, null, null, null, null, k6.f7));
+        return arrayList;
+    }
+
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.X2) {
+            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), k6.k0);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onInterceptTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (isEnabled()) {
+            return super.onTouchEvent(motionEvent);
+        }
+        return false;
+    }
+
+    public final void z1(ArrayList arrayList, ArrayList arrayList2, boolean z4) {
         ArrayList arrayList3 = this.V2;
         arrayList3.clear();
         ArrayList arrayList4 = this.U2;
@@ -348,62 +405,5 @@ public final class g0 extends tl0 {
             }
             this.W2.h1(0, 0);
         }
-    }
-
-    public final void B1() {
-        getRecycledViewPool().a();
-        for (int i10 = 0; i10 < getChildCount(); i10++) {
-            View childAt = getChildAt(i10);
-            if (childAt instanceof d0) {
-                int i11 = d0.f;
-                ((d0) childAt).a();
-            }
-        }
-        for (int i12 = 0; i12 < getCachedChildCount(); i12++) {
-            View P = P(i12);
-            if (P instanceof d0) {
-                int i13 = d0.f;
-                ((d0) P).a();
-            }
-        }
-        for (int i14 = 0; i14 < getAttachedScrapChildCount(); i14++) {
-            View O = O(i14);
-            if (O instanceof d0) {
-                int i15 = d0.f;
-                ((d0) O).a();
-            }
-        }
-        setSelectorDrawableColor(k6.v0(k6.i6, this.m2));
-    }
-
-    public ArrayList<m6> getThemeDescriptions() {
-        ArrayList<m6> arrayList = new ArrayList<>();
-        arrayList.add(new m6(this, 0, null, null, null, null, k6.e7));
-        arrayList.add(new m6(this, 0, null, null, null, null, k6.f7));
-        return arrayList;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (this.X2) {
-            canvas.drawRect(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight(), k6.k0);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.onInterceptTouchEvent(motionEvent);
-        }
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (isEnabled()) {
-            return super.onTouchEvent(motionEvent);
-        }
-        return false;
     }
 }

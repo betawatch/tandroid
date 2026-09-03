@@ -23,13 +23,13 @@ import org.telegram.messenger.y3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.fx0;
+import org.telegram.ui.Components.ex0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.kl0;
-import org.telegram.ui.r91;
-import qh.j2;
+import org.telegram.ui.x91;
+import qh.i2;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class g extends View implements i {
     public static final float h1 = AndroidUtilities.dpf2(16.0f);
@@ -73,7 +73,7 @@ public abstract class g extends View implements i {
     public final TextPaint K;
     public final d K0;
     public final TextPaint L;
-    public final j2 L0;
+    public final i2 L0;
     public final TextPaint M;
     public boolean M0;
     public final Paint N;
@@ -258,7 +258,7 @@ public abstract class g extends View implements i {
             }
         };
         this.K0 = new d(this, 2);
-        this.L0 = new j2(this, 11);
+        this.L0 = new i2(this, 11);
         this.M0 = false;
         this.U0 = 0;
         this.V0 = 0;
@@ -404,9 +404,9 @@ public abstract class g extends View implements i {
             e eVar = this.N0;
             if (eVar != null) {
                 getSelectedDate();
-                r91 r91Var = (r91) ((kl0) eVar).b;
-                r91Var.f();
-                r91Var.b.q0.d(false, false);
+                x91 x91Var = (x91) ((kl0) eVar).b;
+                x91Var.f();
+                x91Var.b.q0.d(false, false);
             }
             B();
             invalidate();
@@ -565,7 +565,7 @@ public abstract class g extends View implements i {
             }
             ValueAnimator e6 = e(0.0f, 255.0f, new bg.a(26, this, f10));
             this.V = e6;
-            e6.addListener(new fx0(20, this, f10));
+            e6.addListener(new ex0(20, this, f10));
             this.V.start();
         }
     }
@@ -713,7 +713,7 @@ public abstract class g extends View implements i {
                     }
                     ValueAnimator duration = e(0.0f, 1.0f, new bg.a(27, this, bVar4)).setDuration(200L);
                     this.W = duration;
-                    duration.addListener(new fx0(21, this, bVar4));
+                    duration.addListener(new ex0(21, this, bVar4));
                     this.W.start();
                 }
             }

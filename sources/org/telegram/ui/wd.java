@@ -8,7 +8,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wd implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -57,9 +57,9 @@ public final /* synthetic */ class wd implements RequestDelegate {
         this.e = serializable;
     }
 
-    public /* synthetic */ wd(qh.g1 g1Var, boolean z4, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, String str) {
+    public /* synthetic */ wd(qh.f1 f1Var, boolean z4, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, String str) {
         this.a = 5;
-        this.c = g1Var;
+        this.c = f1Var;
         this.b = z4;
         this.d = tL_messages_getInlineBotResults;
         this.e = str;

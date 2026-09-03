@@ -36,15 +36,15 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.dg;
 import org.telegram.ui.Components.dh;
 import org.telegram.ui.Components.ei;
-import org.telegram.ui.Components.gv0;
+import org.telegram.ui.Components.fv0;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.we;
 import org.telegram.ui.Components.wg;
-import org.telegram.ui.Components.zo0;
+import org.telegram.ui.Components.yo0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p6 implements Runnable {
     public final /* synthetic */ int a;
@@ -470,8 +470,8 @@ public final /* synthetic */ class p6 implements Runnable {
             case 25:
                 we weVar = (we) obj2;
                 weVar.getClass();
-                ((gv0) r82).getViewTreeObserver().removeOnDrawListener(weVar);
-                ((zo0) obj).a.setHideAvatar(true);
+                ((fv0) r82).getViewTreeObserver().removeOnDrawListener(weVar);
+                ((yo0) obj).a.setHideAvatar(true);
                 break;
             case 26:
                 dg dgVar = (dg) obj2;

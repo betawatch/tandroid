@@ -42,7 +42,7 @@ import org.telegram.ui.Components.bd;
 import org.telegram.ui.Components.eg;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.h8;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.l1;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.u1;
@@ -50,18 +50,18 @@ import org.telegram.ui.Components.uf;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.fe;
 import org.telegram.ui.h;
-import org.telegram.ui.ht0;
-import org.telegram.ui.is0;
 import org.telegram.ui.jn;
+import org.telegram.ui.mt0;
+import org.telegram.ui.ns0;
 import org.telegram.ui.pm;
 import org.telegram.ui.s4;
 import org.telegram.ui.vi;
 import org.telegram.ui.wi;
 import org.telegram.ui.xi;
 import org.telegram.ui.xn;
-import qh.f3;
+import qh.e3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements Runnable {
     public final /* synthetic */ int a;
@@ -130,9 +130,9 @@ public final /* synthetic */ class b implements Runnable {
                 jVar.M.start();
                 break;
             case 3:
-                ht0 ht0Var = (ht0) obj;
-                e2 e2Var = ht0Var.H1;
-                ht0Var.s0(e2Var, null);
+                mt0 mt0Var = (mt0) obj;
+                e2 e2Var = mt0Var.H1;
+                mt0Var.s0(e2Var, null);
                 e1.e(i12).j(e2Var.c);
                 break;
             case 4:
@@ -346,7 +346,7 @@ public final /* synthetic */ class b implements Runnable {
                 break;
             case 28:
                 bd bdVar = (bd) obj;
-                f3 f3Var = bdVar.a1;
+                e3 e3Var = bdVar.a1;
                 if (bdVar.Y0 != i12) {
                     bdVar.setTimer(i12);
                     Utilities.Callback callback2 = bdVar.o1;
@@ -355,34 +355,33 @@ public final /* synthetic */ class b implements Runnable {
                     }
                     if (i12 == 0) {
                         charSequence = LocaleController.getString(bdVar.n1 ? R.string.TimerPeriodVideoKeep : R.string.TimerPeriodPhotoKeep);
-                        f3Var.h = bdVar.getMeasuredWidth();
-                        f3Var.q(false);
-                        f3Var.l(13.0f, 4.0f, 10.0f, 4.0f);
-                        f3Var.b0 = AndroidUtilities.dp(0);
-                        f3Var.a0 = -AndroidUtilities.dp(1.0f);
+                        e3Var.h = bdVar.getMeasuredWidth();
+                        e3Var.p(false);
+                        e3Var.k(13.0f, 4.0f, 10.0f, 4.0f);
+                        e3Var.b0 = AndroidUtilities.dp(0);
+                        e3Var.a0 = -AndroidUtilities.dp(1.0f);
                     } else if (i12 == Integer.MAX_VALUE) {
                         charSequence = LocaleController.getString(bdVar.n1 ? R.string.TimerPeriodVideoSetOnce : R.string.TimerPeriodPhotoSetOnce);
-                        f3Var.h = bdVar.getMeasuredWidth();
-                        f3Var.q(false);
-                        f3Var.l(13.0f, 4.0f, 10.0f, 4.0f);
-                        f3Var.b0 = AndroidUtilities.dp(0);
-                        f3Var.a0 = -AndroidUtilities.dp(1.0f);
+                        e3Var.h = bdVar.getMeasuredWidth();
+                        e3Var.p(false);
+                        e3Var.k(13.0f, 4.0f, 10.0f, 4.0f);
+                        e3Var.b0 = AndroidUtilities.dp(0);
+                        e3Var.a0 = -AndroidUtilities.dp(1.0f);
                     } else if (i12 > 0) {
                         SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatPluralString(bdVar.n1 ? "TimerPeriodVideoSetSeconds" : "TimerPeriodPhotoSetSeconds", i12, new Object[0]));
-                        f3Var.q(true);
-                        f3Var.h = f3.a(replaceTags, f3Var.getTextPaint());
-                        f3Var.l(12.0f, 7.0f, 11.0f, 7.0f);
-                        f3Var.b0 = AndroidUtilities.dp(2);
-                        f3Var.a0 = 0.0f;
+                        e3Var.p(true);
+                        e3Var.h = e3.a(replaceTags, e3Var.getTextPaint());
+                        e3Var.k(12.0f, 7.0f, 11.0f, 7.0f);
+                        e3Var.b0 = AndroidUtilities.dp(2);
+                        e3Var.a0 = 0.0f;
                         charSequence = replaceTags;
                     }
-                    f3Var.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), bdVar.getEditTextHeight())) - AndroidUtilities.dp(14.0f)) * (bdVar instanceof is0 ? -1.0f : 1.0f));
-                    f3Var.t(charSequence);
-                    int i15 = i12 > 0 ? R.raw.fire_on : R.raw.fire_off;
-                    ij0 ij0Var = new ij0(i15, AndroidUtilities.dp(34.0f), l.d.j(i15, ""), AndroidUtilities.dp(34.0f));
-                    ij0Var.start();
-                    f3Var.k(ij0Var);
-                    f3Var.v();
+                    e3Var.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), bdVar.getEditTextHeight())) - AndroidUtilities.dp(14.0f)) * (bdVar instanceof ns0 ? -1.0f : 1.0f));
+                    e3Var.s(charSequence);
+                    hj0 hj0Var = new hj0(i12 > 0 ? R.raw.fire_on : R.raw.fire_off, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
+                    hj0Var.start();
+                    e3Var.j(hj0Var);
+                    e3Var.u();
                     bdVar.l1 = false;
                     AndroidUtilities.cancelRunOnUIThread(bdVar.m1);
                     bdVar.invalidate();

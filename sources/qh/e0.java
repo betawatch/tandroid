@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.ui.BubbleActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class e0 extends View {
     public final Paint a;
@@ -53,7 +53,7 @@ public final class e0 extends View {
         f0 f0Var = this.d;
         a0 a0Var = f0Var.h;
         int[] iArr = f0Var.x;
-        j5 j5Var = f0Var.a;
+        i5 i5Var = f0Var.a;
         if (f0Var.b == null) {
             return;
         }
@@ -65,8 +65,8 @@ public final class e0 extends View {
         if (f0Var.s < 1.0f) {
             Path path = this.b;
             path.rewind();
-            float width = j5Var.getWidth();
-            float height = j5Var.getHeight();
+            float width = i5Var.getWidth();
+            float height = i5Var.getHeight();
             RectF rectF = this.c;
             rectF.set(0.0f, 0.0f, width, height);
             int[] iArr2 = f0Var.w;
@@ -95,7 +95,7 @@ public final class e0 extends View {
                 f10 = 1.0f;
                 f11 = 1.0f;
             }
-            float lerp2 = AndroidUtilities.lerp(1.0f, (f0Var.b.getScaleX() * (r9.getWidth() / f11)) / j5Var.getWidth(), f13);
+            float lerp2 = AndroidUtilities.lerp(1.0f, (f0Var.b.getScaleX() * (r9.getWidth() / f11)) / i5Var.getWidth(), f13);
             canvas.scale(lerp2, lerp2);
             canvas.rotate(f0Var.b.getRotation() * f13);
             canvas.translate(((f0Var.b.getContentWidth() * f11) / 2.0f) * f13, ((f0Var.b.getContentHeight() * f10) / 2.0f) * f13);

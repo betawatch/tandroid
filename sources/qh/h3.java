@@ -1,39 +1,95 @@
 package qh;
 
+import android.graphics.Rect;
 import android.view.View;
-import android.view.ViewTreeObserver;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class h3 implements View.OnAttachStateChangeListener {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ i3 c;
+public class h3 {
+    public final View a;
+    public View b;
+    public final Utilities.Callback c;
+    public boolean d;
+    public boolean e;
+    public boolean f;
+    public boolean g;
+    public final Rect h = new Rect();
+    public final f3 i;
+    public final cf.d j;
+    public int k;
+    public int l;
 
-    public h3(i3 i3Var, boolean z4, View view) {
-        this.c = i3Var;
-        this.a = z4;
+    public h3(View view, boolean z4, Utilities.Callback callback) {
+        f3 f3Var = new f3(this, 0);
+        this.i = f3Var;
+        cf.d dVar = new cf.d(this, 1);
+        this.j = dVar;
+        this.a = view;
+        this.c = callback;
         this.b = view;
-    }
-
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewAttachedToWindow(View view) {
-        boolean z4 = this.a;
-        i3 i3Var = this.c;
-        if (z4) {
-            i3Var.b = view.getRootView();
+        if (view.isAttachedToWindow()) {
+            view.getViewTreeObserver().addOnGlobalLayoutListener(dVar);
+            view.addOnLayoutChangeListener(f3Var);
         }
-        View view2 = this.b;
-        view2.getViewTreeObserver().addOnGlobalLayoutListener(i3Var.j);
-        view2.addOnLayoutChangeListener(i3Var.i);
+        view.addOnAttachStateChangeListener(new g3(this, z4, view));
     }
 
-    @Override // android.view.View.OnAttachStateChangeListener
-    public final void onViewDetachedFromWindow(View view) {
-        View view2 = this.b;
-        ViewTreeObserver viewTreeObserver = view2.getViewTreeObserver();
-        i3 i3Var = this.c;
-        viewTreeObserver.removeOnGlobalLayoutListener(i3Var.j);
-        view2.removeOnLayoutChangeListener(i3Var.i);
+    public final void a() {
+        if (this.e) {
+            if (this.l < AndroidUtilities.dp(20.0f) + AndroidUtilities.navigationBarHeight) {
+                return;
+            } else {
+                this.e = false;
+            }
+        }
+        Utilities.Callback callback = this.c;
+        if (callback != null) {
+            callback.run(Integer.valueOf(this.l));
+        }
+    }
+
+    public void b(boolean z4) {
+        this.d = z4;
+        d();
+    }
+
+    public final boolean c() {
+        return this.l > AndroidUtilities.dp(20.0f) + AndroidUtilities.navigationBarHeight || this.e;
+    }
+
+    public final void d() {
+        if (this.d) {
+            return;
+        }
+        boolean z4 = this.f;
+        View view = this.a;
+        if (z4) {
+            View view2 = this.b;
+            if (view2 != null) {
+                view = view2;
+            }
+            r0.m1 f10 = r0.j0.f(view);
+            this.l = f10 != null ? f10.a.f(8).d : 0;
+        } else {
+            Rect rect = this.h;
+            view.getWindowVisibleDisplayFrame(rect);
+            View view3 = this.b;
+            if (view3 != null) {
+                view = view3;
+            }
+            this.l = view.getHeight() - rect.bottom;
+        }
+        if (this.g) {
+            this.l = Math.max(0, this.l - AndroidUtilities.navigationBarHeight);
+        }
+        int i10 = this.k;
+        int i11 = this.l;
+        boolean z10 = i10 != i11;
+        this.k = i11;
+        if (z10) {
+            a();
+        }
     }
 }

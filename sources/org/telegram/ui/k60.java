@@ -4,7 +4,7 @@ import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.ChannelBoostsController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class k60 implements h5.d {
     public final /* synthetic */ int a;
@@ -24,17 +24,17 @@ public final /* synthetic */ class k60 implements h5.d {
                 n60.e1((n60) this.c, this.b, (ChannelBoostsController.CanApplyBoost) obj);
                 break;
             default:
-                qh.r3 r3Var = (qh.r3) this.c;
+                qh.q3 q3Var = (qh.q3) this.c;
                 View view = (View) obj;
-                qh.m3 m3Var = r3Var.b;
-                if (view instanceof qh.q3) {
-                    m3Var.getClass();
+                qh.l3 l3Var = q3Var.b;
+                if (view instanceof qh.p3) {
+                    l3Var.getClass();
                     int R = RecyclerView.R(view);
-                    org.telegram.ui.Components.j51 G = m3Var.V2.G(R);
+                    org.telegram.ui.Components.h51 G = l3Var.V2.G(R);
                     if (G != null) {
-                        qh.q3 q3Var = (qh.q3) view;
-                        q3Var.setPosition(r3Var.b(R));
-                        q3Var.b(this.b == G.d, true);
+                        qh.p3 p3Var = (qh.p3) view;
+                        p3Var.setPosition(q3Var.b(R));
+                        p3Var.b(this.b == G.d, true);
                         view.setPressed(false);
                         break;
                     }

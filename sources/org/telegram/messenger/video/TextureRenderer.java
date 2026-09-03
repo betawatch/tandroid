@@ -56,10 +56,10 @@ import org.telegram.ui.Components.v5;
 import org.telegram.ui.Components.y5;
 import org.telegram.ui.Components.yz;
 import org.telegram.ui.Components.zt;
-import qh.j5;
-import qh.r6;
+import qh.i5;
+import qh.q6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class TextureRenderer {
     private static final String FRAGMENT_EXTERNAL_MASK_SHADER = "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nvarying vec2 MTextureCoord;\nuniform samplerExternalOES sTexture;\nuniform sampler2D sMask;\nvoid main() {\n  gl_FragColor = texture2D(sTexture, vTextureCoord) * texture2D(sMask, MTextureCoord).a;\n}\n";
@@ -168,7 +168,7 @@ public class TextureRenderer {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public TextureRenderer(MediaController.SavedFilterState savedFilterState, String str, String str2, String str3, ArrayList<VideoEditedInfo.MediaEntity> arrayList, MediaController.CropState cropState, int i10, int i11, int i12, int i13, int i14, float f10, boolean z4, Integer num, Integer num2, r6 r6Var, MediaCodecVideoConvertor.ConvertVideoParams convertVideoParams) {
+    public TextureRenderer(MediaController.SavedFilterState savedFilterState, String str, String str2, String str3, ArrayList<VideoEditedInfo.MediaEntity> arrayList, MediaController.CropState cropState, int i10, int i11, int i12, int i13, int i14, float f10, boolean z4, Integer num, Integer num2, q6 q6Var, MediaCodecVideoConvertor.ConvertVideoParams convertVideoParams) {
         char c3;
         char c10;
         int i15;
@@ -209,7 +209,7 @@ public class TextureRenderer {
         Matrix.setIdentityM(this.mSTMatrix, 0);
         Matrix.setIdentityM(this.mSTMatrixIdentity, 0);
         if (savedFilterState != null) {
-            b00 b00Var = new b00(true, r6Var);
+            b00 b00Var = new b00(true, q6Var);
             this.filterShaders = b00Var;
             b00Var.f1 = new yz(savedFilterState);
         }
@@ -232,7 +232,7 @@ public class TextureRenderer {
         if (j10 != Long.MIN_VALUE) {
             c3 = 6;
             c10 = 7;
-            this.backgroundDrawable = j5.e(null, convertVideoParams.account, j10, convertVideoParams.isDark);
+            this.backgroundDrawable = i5.e(null, convertVideoParams.account, j10, convertVideoParams.isDark);
         } else {
             c3 = 6;
             c10 = 7;

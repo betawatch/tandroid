@@ -1,69 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class w41 extends qz {
-    public final /* synthetic */ f51 Y;
+public final class w41 extends f2.a1 {
+    public final /* synthetic */ d51 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w41(f51 f51Var, int i10, v41 v41Var) {
-        super(5, i10, v41Var);
-        this.Y = f51Var;
+    public w41(d51 d51Var) {
+        this.a = d51Var;
     }
 
-    @Override // org.telegram.ui.Components.qz
-    public final boolean D1() {
-        f51 f51Var = this.Y;
-        return f51Var.n.getAdapter() == f51Var.v;
-    }
-
-    @Override // f2.j0
-    public final boolean Y0() {
-        return LocaleController.isRTL;
-    }
-
-    @Override // f2.w, f2.j0, f2.w0
-    public final int o0(int i10, bf.f fVar, f2.j1 j1Var) {
-        int i11;
-        View m9;
-        f51 f51Var = this.Y;
-        if (f51Var.K) {
-            return super.o0(i10, fVar, j1Var);
+    @Override // f2.a1
+    public final void a(RecyclerView recyclerView, int i10) {
+        f2.a1 a1Var = this.a.y;
+        if (a1Var != null) {
+            a1Var.a(recyclerView, i10);
         }
-        int i12 = 0;
-        if (f51Var.I != null) {
-            return 0;
+    }
+
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        d51 d51Var = this.a;
+        c51 c51Var = d51Var.s;
+        t41 t41Var = d51Var.n;
+        f2.a1 a1Var = d51Var.y;
+        if (a1Var != null) {
+            a1Var.b(t41Var, i10, i11);
         }
-        if (f51Var.J) {
-            while (true) {
-                i11 = 1;
-                if (i12 >= r()) {
-                    break;
-                }
-                v41 v41Var = f51Var.n;
-                View q10 = q(i12);
-                v41Var.getClass();
-                int R = RecyclerView.R(q10);
-                if (R < 1) {
-                    i11 = R;
-                    break;
-                }
-                i12++;
+        if (i11 <= 0 || t41Var.getAdapter() != c51Var || !d51Var.G || c51Var.r || c51Var.s) {
+            return;
+        }
+        if (d51Var.r.N0() >= ((c51Var.w + 1) - ((c51Var.v + 1) * 10)) - 1) {
+            d51 d51Var2 = c51Var.x;
+            if (!d51Var2.G || c51Var.r || c51Var.s) {
+                return;
             }
-            if (i11 == 0 && (m9 = f51Var.r.m(i11)) != null && m9.getTop() - i10 > AndroidUtilities.dp(58.0f)) {
-                i10 = m9.getTop() - AndroidUtilities.dp(58.0f);
-            }
+            c51Var.r = true;
+            TLRPC.TL_messages_getOldFeaturedStickers tL_messages_getOldFeaturedStickers = new TLRPC.TL_messages_getOldFeaturedStickers();
+            tL_messages_getOldFeaturedStickers.offset = c51Var.n.size();
+            tL_messages_getOldFeaturedStickers.limit = 40;
+            ConnectionsManager.getInstance(d51Var2.a).sendRequest(tL_messages_getOldFeaturedStickers, new y1(c51Var, 17));
         }
-        return super.o0(i10, fVar, j1Var);
-    }
-
-    @Override // f2.w, f2.j0, f2.w0
-    public final boolean y0() {
-        return false;
     }
 }

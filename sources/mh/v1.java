@@ -6,7 +6,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.po;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class v1 implements h5.d {
     public final /* synthetic */ int a;
@@ -39,14 +39,14 @@ public final /* synthetic */ class v1 implements h5.d {
                 oh.o oVar = (oh.o) obj3;
                 ((org.telegram.ui.ActionBar.d2) obj2).dismiss();
                 if (((Boolean) obj).booleanValue()) {
-                    qh.ca E = qh.ca.E(pVar.b0.getParentActivity(), pVar.f);
+                    qh.ba E = qh.ba.E(pVar.b0.getParentActivity(), pVar.f);
                     E.K = j10;
-                    qh.r9 r9Var = E.Z0;
-                    if (r9Var != null) {
-                        r9Var.setDialogId(j10);
+                    qh.q9 q9Var = E.Z0;
+                    if (q9Var != null) {
+                        q9Var.setDialogId(j10);
                     }
                     E.J = false;
-                    E.R(qh.x9.c(oVar));
+                    E.R(qh.w9.c(oVar));
                     break;
                 }
                 break;

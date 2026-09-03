@@ -5,7 +5,7 @@ import java.net.URL;
 import k7.l8;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class h0 {
     public int a;
@@ -18,7 +18,7 @@ public final class h0 {
         this.b = j10;
     }
 
-    public void a(wh.a aVar, sf.g gVar) {
+    public void a(wh.a aVar, sf.h hVar) {
         int i10;
         int b10 = l8.b(aVar);
         long j10 = aVar != null ? aVar.a : Long.MIN_VALUE;
@@ -31,11 +31,11 @@ public final class h0 {
         }
         if (!z4 || (i10 = this.a) == b10) {
             this.a = b10;
-            gVar.c(b10);
+            hVar.c(b10);
             return;
         }
         ValueAnimator ofInt = ValueAnimator.ofInt(i10, b10);
-        ofInt.addUpdateListener(new xh.d(1, this, gVar));
+        ofInt.addUpdateListener(new xh.d(1, this, hVar));
         ofInt.setInterpolator(pr.f);
         ofInt.setDuration(200L);
         this.c = ofInt;

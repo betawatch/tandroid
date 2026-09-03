@@ -23,11 +23,11 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.StickersActivity;
-import org.telegram.ui.mf1;
+import org.telegram.ui.sf1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, Utilities.Callback5, org.telegram.ui.ActionBar.c2, uf.j1, GenericProvider, x80, bf0, ll0, org.telegram.ui.jy, oh.b7, MessagesStorage.StringCallback, o81, LanguageDetector.StringCallback, uv0, ImageReceiver.ImageReceiverDelegate {
+public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, Utilities.Callback5, org.telegram.ui.ActionBar.c2, uf.j1, GenericProvider, x80, bf0, kl0, org.telegram.ui.jy, oh.b7, MessagesStorage.StringCallback, n81, LanguageDetector.StringCallback, tv0, ImageReceiver.ImageReceiverDelegate {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -69,12 +69,12 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
         ((fe0) this.b).p(true);
     }
 
-    @Override // org.telegram.ui.Components.o81
+    @Override // org.telegram.ui.Components.n81
     public void d(int i10, int i11) {
-        qv0 qv0Var = (qv0) this.b;
-        qv0Var.w = i10;
-        qv0Var.x = i11;
-        fg.h0 h0Var = qv0Var.I;
+        pv0 pv0Var = (pv0) this.b;
+        pv0Var.w = i10;
+        pv0Var.x = i11;
+        fg.h0 h0Var = pv0Var.I;
         if (h0Var != null) {
             h0Var.invalidate();
         }
@@ -82,80 +82,80 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
-        q71 q71Var;
+        p71 p71Var;
         int i10;
         int i11;
-        r71 r71Var = (r71) this.b;
-        ImageReceiver imageReceiver2 = r71Var.N;
+        q71 q71Var = (q71) this.b;
+        ImageReceiver imageReceiver2 = q71Var.N;
         if (z4) {
-            if (r71Var.K == null && r71Var.a0 == null) {
+            if (q71Var.K == null && q71Var.a0 == null) {
                 return;
             }
             int dp = AndroidUtilities.dp(150.0f);
-            org.telegram.ui.pt0 pt0Var = r71Var.K;
-            if (pt0Var != null) {
-                int i12 = (int) r71Var.L;
-                ArrayList arrayList = pt0Var.v;
-                int indexOf = arrayList.indexOf(pt0Var.c(i12));
+            org.telegram.ui.ut0 ut0Var = q71Var.K;
+            if (ut0Var != null) {
+                int i12 = (int) q71Var.L;
+                ArrayList arrayList = ut0Var.v;
+                int indexOf = arrayList.indexOf(ut0Var.c(i12));
                 if (indexOf == -1) {
                     i11 = 0;
                 } else if (indexOf == arrayList.size() - 1) {
-                    int videoDuration = pt0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+                    int videoDuration = ut0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
                     i11 = Math.min(25, (((int) (videoDuration <= 100 ? Math.ceil(videoDuration) : videoDuration <= 250 ? Math.ceil(videoDuration / 2.0f) : videoDuration <= 500 ? Math.ceil(videoDuration / 4.0f) : videoDuration <= 1000 ? Math.ceil(videoDuration / 5.0f) : Math.ceil(videoDuration / 10.0f))) - ((arrayList.size() - 1) * 25)) + 1);
                 } else {
                     i11 = 25;
                 }
                 float bitmapWidth = imageReceiver2.getBitmapWidth() / Math.min(i11, 5);
                 float bitmapHeight = imageReceiver2.getBitmapHeight() / ((int) Math.ceil(i11 / 5.0f));
-                org.telegram.ui.pt0 pt0Var2 = r71Var.K;
-                int i13 = (int) r71Var.L;
-                int videoDuration2 = pt0Var2.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+                org.telegram.ui.ut0 ut0Var2 = q71Var.K;
+                int i13 = (int) q71Var.L;
+                int videoDuration2 = ut0Var2.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
                 int min = Math.min(videoDuration2 <= 100 ? ((int) Math.ceil(i13)) % 25 : videoDuration2 <= 250 ? ((int) Math.ceil(i13 / 2.0f)) % 25 : videoDuration2 <= 500 ? ((int) Math.ceil(i13 / 4.0f)) % 25 : videoDuration2 <= 1000 ? ((int) Math.ceil(i13 / 5.0f)) % 25 : ((int) Math.ceil(i13 / 10.0f)) % 25, i11 - 1);
-                r71Var.O = (int) ((min % 5) * bitmapWidth);
-                r71Var.P = (int) ((min / 5) * bitmapHeight);
-                r71Var.Q = (int) bitmapWidth;
-                r71Var.R = (int) bitmapHeight;
+                q71Var.O = (int) ((min % 5) * bitmapWidth);
+                q71Var.P = (int) ((min / 5) * bitmapHeight);
+                q71Var.Q = (int) bitmapWidth;
+                q71Var.R = (int) bitmapHeight;
             } else {
                 int i14 = 0;
                 while (true) {
-                    if (i14 >= r71Var.a0.size()) {
-                        q71Var = null;
+                    if (i14 >= q71Var.a0.size()) {
+                        p71Var = null;
                         break;
                     }
-                    q71Var = (q71) r71Var.a0.get(i14);
-                    double d = i14 == 0 ? 0.0d : q71Var.a;
-                    double d10 = i14 == r71Var.a0.size() + (-1) ? 9.9999999E7d : ((q71) r71Var.a0.get(i14 + 1)).a;
-                    double d11 = r71Var.L;
+                    p71Var = (p71) q71Var.a0.get(i14);
+                    double d = i14 == 0 ? 0.0d : p71Var.a;
+                    double d10 = i14 == q71Var.a0.size() + (-1) ? 9.9999999E7d : ((p71) q71Var.a0.get(i14 + 1)).a;
+                    double d11 = q71Var.L;
                     if (d11 >= d && d11 <= d10) {
                         break;
                     } else {
                         i14++;
                     }
                 }
-                if (q71Var == null) {
+                if (p71Var == null) {
                     return;
                 }
-                r71Var.O = q71Var.b;
-                r71Var.P = q71Var.c;
-                r71Var.Q = r71Var.V;
-                r71Var.R = r71Var.W;
+                q71Var.O = p71Var.b;
+                q71Var.P = p71Var.c;
+                q71Var.Q = q71Var.V;
+                q71Var.R = q71Var.W;
             }
-            r71Var.M = true;
-            float f10 = r71Var.Q / r71Var.R;
+            q71Var.M = true;
+            float f10 = q71Var.Q / q71Var.R;
             if (f10 > 1.0f) {
                 i10 = (int) (dp / f10);
             } else {
                 dp = (int) (dp * f10);
                 i10 = dp;
             }
-            ViewGroup.LayoutParams layoutParams = r71Var.getLayoutParams();
-            if (r71Var.getVisibility() == 0 && layoutParams.width == dp && layoutParams.height == i10) {
+            ViewGroup.LayoutParams layoutParams = q71Var.getLayoutParams();
+            if (q71Var.getVisibility() == 0 && layoutParams.width == dp && layoutParams.height == i10) {
                 return;
             }
             layoutParams.width = dp;
             layoutParams.height = i10;
-            r71Var.setVisibility(0);
-            r71Var.requestLayout();
+            q71Var.setVisibility(0);
+            q71Var.requestLayout();
         }
     }
 
@@ -164,36 +164,36 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
         org.telegram.messenger.j5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
-        zj0 zj0Var;
+        yj0 yj0Var;
         switch (this.a) {
             case 14:
-                ak0 ak0Var = (ak0) this.b;
-                ArrayList arrayList = ak0Var.n;
-                if (ak0Var.f.j(i10) != 0 || (zj0Var = ak0Var.C) == null) {
+                zj0 zj0Var = (zj0) this.b;
+                ArrayList arrayList = zj0Var.n;
+                if (zj0Var.f.j(i10) != 0 || (yj0Var = zj0Var.C) == null) {
                     return true;
                 }
-                zj0Var.a(MessageObject.getPeerId(((TLRPC.MessagePeerReaction) arrayList.get(i10)).peer_id), (TLRPC.MessagePeerReaction) arrayList.get(i10));
+                yj0Var.a(MessageObject.getPeerId(((TLRPC.MessagePeerReaction) arrayList.get(i10)).peer_id), (TLRPC.MessagePeerReaction) arrayList.get(i10));
                 return true;
             default:
-                en0 en0Var = (en0) this.b;
-                dn0 dn0Var = en0Var.c;
-                MessageObject E = dn0Var.E(i10);
-                en0 en0Var2 = dn0Var.c;
+                dn0 dn0Var = (dn0) this.b;
+                cn0 cn0Var = dn0Var.c;
+                MessageObject E = cn0Var.E(i10);
+                dn0 dn0Var2 = cn0Var.c;
                 if (E == null) {
                     return false;
                 }
-                if (!en0Var.F.f()) {
-                    en0Var.F.a();
-                    dn0Var.q(0, en0Var2.r);
+                if (!dn0Var.F.f()) {
+                    dn0Var.F.a();
+                    cn0Var.q(0, dn0Var2.r);
                 }
-                if (en0Var.F.f()) {
-                    en0Var.F.d(E, view, 0);
-                    if (!en0Var.F.f()) {
-                        dn0Var.q(0, en0Var2.r);
+                if (dn0Var.F.f()) {
+                    dn0Var.F.d(E, view, 0);
+                    if (!dn0Var.F.f()) {
+                        cn0Var.q(0, dn0Var2.r);
                     }
-                    org.telegram.ui.l10 l10Var = en0Var.G;
+                    org.telegram.ui.l10 l10Var = dn0Var.G;
                     int id2 = E.getId();
                     l10Var.a = E.getDialogId();
                     l10Var.b = id2;
@@ -218,9 +218,9 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
         ov.P((ov) this.b, i10);
     }
 
-    @Override // org.telegram.ui.Components.uv0
+    @Override // org.telegram.ui.Components.tv0
     public void i(int i10) {
-        Utilities.Callback callback = ((j51) this.b).C;
+        Utilities.Callback callback = ((h51) this.b).C;
         if (callback != null) {
             callback.run(Integer.valueOf(i10));
         }
@@ -245,12 +245,12 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                 AndroidUtilities.hideKeyboard((EditTextBoldCursor) this.b);
                 break;
             case 23:
-                ay0 ay0Var = (ay0) this.b;
-                ay0Var.e.presentFragment(new StickersActivity(ay0Var.d, null));
+                zx0 zx0Var = (zx0) this.b;
+                zx0Var.e.presentFragment(new StickersActivity(zx0Var.d, null));
                 d2Var.dismiss();
                 break;
             default:
-                AndroidUtilities.hideKeyboard((cy0) this.b);
+                AndroidUtilities.hideKeyboard((by0) this.b);
                 d2Var.dismiss();
                 break;
         }
@@ -307,74 +307,74 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
         oh.t6 storiesController2;
         switch (this.a) {
             case 19:
-                final zu0 zu0Var = ((sr0) this.b).d;
-                storiesController = zu0Var.getStoriesController();
+                final yu0 yu0Var = ((rr0) this.b).d;
+                storiesController = yu0Var.getStoriesController();
                 final int i10 = 0;
-                storiesController.r(zu0Var.g1, str, new Utilities.Callback() { // from class: org.telegram.ui.Components.rr0
+                storiesController.r(yu0Var.g1, str, new Utilities.Callback() { // from class: org.telegram.ui.Components.qr0
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         int i11 = i10;
-                        int i12 = 18;
-                        zu0 zu0Var2 = zu0Var;
+                        int i12 = 17;
+                        yu0 yu0Var2 = yu0Var;
                         oh.m6 m6Var = (oh.m6) obj;
                         switch (i11) {
                             case 0:
-                                int[] iArr = zu0.a2;
-                                AndroidUtilities.runOnUIThread(new a90(i12, zu0Var2, m6Var), 100L);
+                                int[] iArr = yu0.a2;
+                                AndroidUtilities.runOnUIThread(new b90(i12, yu0Var2, m6Var), 100L);
                                 break;
                             default:
-                                int[] iArr2 = zu0.a2;
-                                AndroidUtilities.runOnUIThread(new a90(i12, zu0Var2, m6Var), 100L);
+                                int[] iArr2 = yu0.a2;
+                                AndroidUtilities.runOnUIThread(new b90(i12, yu0Var2, m6Var), 100L);
                                 break;
                         }
                     }
                 });
                 break;
             case 20:
-                final zu0 zu0Var2 = ((ct0) this.b).d;
-                storiesController2 = zu0Var2.getStoriesController();
+                final yu0 yu0Var2 = ((bt0) this.b).d;
+                storiesController2 = yu0Var2.getStoriesController();
                 final int i11 = 1;
-                storiesController2.r(zu0Var2.g1, str, new Utilities.Callback() { // from class: org.telegram.ui.Components.rr0
+                storiesController2.r(yu0Var2.g1, str, new Utilities.Callback() { // from class: org.telegram.ui.Components.qr0
                     @Override // org.telegram.messenger.Utilities.Callback
                     public final void run(Object obj) {
                         int i112 = i11;
-                        int i12 = 18;
-                        zu0 zu0Var22 = zu0Var2;
+                        int i12 = 17;
+                        yu0 yu0Var22 = yu0Var2;
                         oh.m6 m6Var = (oh.m6) obj;
                         switch (i112) {
                             case 0:
-                                int[] iArr = zu0.a2;
-                                AndroidUtilities.runOnUIThread(new a90(i12, zu0Var22, m6Var), 100L);
+                                int[] iArr = yu0.a2;
+                                AndroidUtilities.runOnUIThread(new b90(i12, yu0Var22, m6Var), 100L);
                                 break;
                             default:
-                                int[] iArr2 = zu0.a2;
-                                AndroidUtilities.runOnUIThread(new a90(i12, zu0Var22, m6Var), 100L);
+                                int[] iArr2 = yu0.a2;
+                                AndroidUtilities.runOnUIThread(new b90(i12, yu0Var22, m6Var), 100L);
                                 break;
                         }
                     }
                 });
                 break;
             default:
-                h41 h41Var = (h41) this.b;
-                h41Var.b0 = str;
-                h41Var.g0.N(true);
+                g41 g41Var = (g41) this.b;
+                g41Var.b0 = str;
+                g41Var.g0.N(true);
                 break;
         }
     }
 
     @Override // org.telegram.ui.jy
-    public boolean v(org.telegram.ui.py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, mf1 mf1Var) {
+    public boolean v(org.telegram.ui.py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
         long j10;
-        eo0 eo0Var = (eo0) this.b;
-        int i12 = eo0Var.E0;
+        do0 do0Var = (do0) this.b;
+        int i12 = do0Var.E0;
         ArrayList<MessageObject> arrayList2 = new ArrayList<>();
-        HashMap hashMap = eo0Var.w0;
+        HashMap hashMap = do0Var.w0;
         Iterator it = hashMap.keySet().iterator();
         while (it.hasNext()) {
             arrayList2.add((MessageObject) hashMap.get((org.telegram.ui.l10) it.next()));
         }
         hashMap.clear();
-        eo0Var.Q(false);
+        do0Var.Q(false);
         if (arrayList.size() > 1 || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId == AccountInstance.getInstance(i12).getUserConfig().getClientUserId() || charSequence != null) {
             for (int i13 = 0; i13 < arrayList.size(); i13++) {
                 long j11 = ((MessagesStorage.TopicKey) arrayList.get(i13)).dialogId;
@@ -452,16 +452,16 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
         switch (this.a) {
             case 1:
                 ly lyVar = (ly) this.b;
-                j51 j51Var = (j51) obj;
+                h51 h51Var = (h51) obj;
                 View view = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
                 fy fyVar = lyVar.c;
                 mz mzVar = lyVar.C;
-                Object obj6 = j51Var.G;
+                Object obj6 = h51Var.G;
                 if (obj6 instanceof TLRPC.StickerSetCovered) {
-                    dy dyVar = (dy) j51Var.H;
+                    dy dyVar = (dy) h51Var.H;
                     long j10 = lyVar.d;
                     stickerSet = ((TLRPC.StickerSetCovered) obj6).set;
                     long j11 = stickerSet.id;
@@ -478,7 +478,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                         if (lyVar.d != 0 && lyVar.f.size() < lyVar.e.count && (stickerSet2 = MediaDataController.getInstance(mzVar.Z0).getStickerSet(lyVar.e, false)) != null) {
                             lyVar.f = stickerSet2.documents;
                         }
-                        TLObject tLObject = (TLObject) j51Var.G;
+                        TLObject tLObject = (TLObject) h51Var.G;
                         document = null;
                         TLRPC.StickerSet stickerSet5 = stickerSet;
                         bh.c cVar = mzVar.I;
@@ -493,7 +493,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                         lyVar.l();
                         mzVar.S.b();
                         if (lyVar.d == 0) {
-                            fyVar.I1(view);
+                            fyVar.H1(view);
                             break;
                         }
                     } else {
@@ -506,7 +506,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                         if (lyVar.d != 0) {
                             lyVar.f = stickerSet2.documents;
                         }
-                        TLObject tLObject2 = (TLObject) j51Var.G;
+                        TLObject tLObject2 = (TLObject) h51Var.G;
                         document = null;
                         TLRPC.StickerSet stickerSet52 = stickerSet;
                         bh.c cVar2 = mzVar.I;
@@ -541,7 +541,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                             }
                             if (lyVar.d != 0) {
                             }
-                            TLObject tLObject22 = (TLObject) j51Var.G;
+                            TLObject tLObject22 = (TLObject) h51Var.G;
                             document = null;
                             TLRPC.StickerSet stickerSet522 = stickerSet;
                             bh.c cVar22 = mzVar.I;
@@ -564,7 +564,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                     }
                     if (lyVar.d != 0) {
                     }
-                    TLObject tLObject222 = (TLObject) j51Var.G;
+                    TLObject tLObject222 = (TLObject) h51Var.G;
                     document = null;
                     TLRPC.StickerSet stickerSet5222 = stickerSet;
                     bh.c cVar222 = mzVar.I;
@@ -583,16 +583,16 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                 break;
             case 3:
                 hz hzVar = (hz) this.b;
-                j51 j51Var2 = (j51) obj;
+                h51 h51Var2 = (h51) obj;
                 View view2 = (View) obj2;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
                 gz gzVar = hzVar.c;
                 mz mzVar2 = hzVar.N;
-                Object obj7 = j51Var2.G;
+                Object obj7 = h51Var2.G;
                 if (obj7 instanceof TLRPC.StickerSetCovered) {
-                    dy dyVar2 = (dy) j51Var2.H;
+                    dy dyVar2 = (dy) h51Var2.H;
                     long j14 = hzVar.d;
                     stickerSet3 = ((TLRPC.StickerSetCovered) obj7).set;
                     long j15 = stickerSet3.id;
@@ -609,7 +609,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                         if (hzVar.d != 0 && hzVar.f.size() < hzVar.e.count && (stickerSet4 = MediaDataController.getInstance(mzVar2.Z0).getStickerSet(hzVar.e, false)) != null) {
                             hzVar.f = stickerSet4.documents;
                         }
-                        TLObject tLObject3 = (TLObject) j51Var2.G;
+                        TLObject tLObject3 = (TLObject) h51Var2.G;
                         document2 = null;
                         TLRPC.StickerSet stickerSet7 = stickerSet3;
                         bh.c cVar3 = mzVar2.K;
@@ -624,7 +624,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                         hzVar.l();
                         mzVar2.D0.b();
                         if (hzVar.d == 0) {
-                            gzVar.I1(view2);
+                            gzVar.H1(view2);
                             break;
                         }
                     } else {
@@ -637,7 +637,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                         if (hzVar.d != 0) {
                             hzVar.f = stickerSet4.documents;
                         }
-                        TLObject tLObject32 = (TLObject) j51Var2.G;
+                        TLObject tLObject32 = (TLObject) h51Var2.G;
                         document2 = null;
                         TLRPC.StickerSet stickerSet72 = stickerSet3;
                         bh.c cVar32 = mzVar2.K;
@@ -672,7 +672,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                             }
                             if (hzVar.d != 0) {
                             }
-                            TLObject tLObject322 = (TLObject) j51Var2.G;
+                            TLObject tLObject322 = (TLObject) h51Var2.G;
                             document2 = null;
                             TLRPC.StickerSet stickerSet722 = stickerSet3;
                             bh.c cVar322 = mzVar2.K;
@@ -695,7 +695,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                     }
                     if (hzVar.d != 0) {
                     }
-                    TLObject tLObject3222 = (TLObject) j51Var2.G;
+                    TLObject tLObject3222 = (TLObject) h51Var2.G;
                     document2 = null;
                     TLRPC.StickerSet stickerSet7222 = stickerSet3;
                     bh.c cVar3222 = mzVar2.K;
@@ -717,7 +717,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                Object obj8 = ((j51) obj).G;
+                Object obj8 = ((h51) obj).G;
                 if (obj8 instanceof MessageObject) {
                     MessageObject messageObject = (MessageObject) obj8;
                     Bundle bundle = new Bundle();
@@ -735,10 +735,10 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
                 }
                 break;
             case 15:
-                tl0.N0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((tl0) this.b).m2);
+                sl0.N0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((sl0) this.b).m2);
                 break;
             default:
-                tl0.N0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((i61) this.b).m2);
+                sl0.N0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((h61) this.b).m2);
                 break;
         }
     }
@@ -759,7 +759,7 @@ public final /* synthetic */ class hv implements org.telegram.ui.ActionBar.s0, U
     public /* synthetic */ void k() {
     }
 
-    @Override // org.telegram.ui.Components.uv0
+    @Override // org.telegram.ui.Components.tv0
     public /* synthetic */ void m() {
     }
 }

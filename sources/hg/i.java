@@ -3,10 +3,10 @@ package hg;
 import mh.g5;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ha1;
+import org.telegram.ui.na1;
 import org.telegram.ui.y5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -29,7 +29,7 @@ public final /* synthetic */ class i implements Runnable {
                 }
                 break;
             default:
-                g5.d2(ha1.d0(this.b, true));
+                g5.d2(na1.d0(this.b, true));
                 break;
         }
     }

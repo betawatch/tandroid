@@ -10,15 +10,15 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.e21;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.d21;
+import org.telegram.ui.Components.k01;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class b0 extends View {
     public final org.telegram.ui.ActionBar.g6 a;
     public final c0 b;
-    public final e21 c;
+    public final d21 c;
     public int d;
     public float e;
 
@@ -26,9 +26,9 @@ public abstract class b0 extends View {
         super(context);
         this.a = g6Var;
         this.b = new c0(context, i10, g6Var);
-        e21 e21Var = new e21(i10, this, g6Var, true);
-        this.c = e21Var;
-        e21Var.e = new l01("", 14.0f, AndroidUtilities.bold());
+        d21 d21Var = new d21(i10, this, g6Var, true);
+        this.c = d21Var;
+        d21Var.e = new k01("", 14.0f, AndroidUtilities.bold());
     }
 
     public final void a(float f10, int i10) {
@@ -69,21 +69,21 @@ public abstract class b0 extends View {
 
     public void setDialogId(long j10) {
         c0 c0Var = this.b;
-        l01 l01Var = c0Var.d;
+        k01 k01Var = c0Var.d;
         TLRPC.User user = MessagesController.getInstance(c0Var.b).getUser(Long.valueOf(j10));
-        l01 l01Var2 = c0Var.e;
-        l01Var2.n(1);
-        l01Var2.q(9999.0f);
-        l01Var2.r(LocaleController.formatString(R.string.BotForumAskForStartNewChat, UserObject.getUserName(user)));
-        float b10 = (l01Var2.b() / 2.0f) * 1.2f;
-        l01Var2.n(4);
+        k01 k01Var2 = c0Var.e;
+        k01Var2.n(1);
+        k01Var2.q(9999.0f);
+        k01Var2.r(LocaleController.formatString(R.string.BotForumAskForStartNewChat, UserObject.getUserName(user)));
+        float b10 = (k01Var2.b() / 2.0f) * 1.2f;
+        k01Var2.n(4);
         float f10 = (int) (AndroidUtilities.displaySize.x * 0.95f);
-        l01Var2.q(Math.min(f10, b10));
-        if (l01Var2.b.getLineCount() > 2) {
-            l01Var2.q(Math.min(f10, b10 * 1.2f));
+        k01Var2.q(Math.min(f10, b10));
+        if (k01Var2.b.getLineCount() > 2) {
+            k01Var2.q(Math.min(f10, b10 * 1.2f));
         }
-        float min = Math.min(Math.max(Math.max(0.0f, l01Var2.b()), l01Var.b()) + AndroidUtilities.dp(32.0f), f10);
-        float j11 = l01Var2.j() + l01Var.j() + AndroidUtilities.dp(17.0f) + 0.0f + AndroidUtilities.dp(70.0f) + AndroidUtilities.dp(14.0f) + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(5.0f);
+        float min = Math.min(Math.max(Math.max(0.0f, k01Var2.b()), k01Var.b()) + AndroidUtilities.dp(32.0f), f10);
+        float j11 = k01Var2.j() + k01Var.j() + AndroidUtilities.dp(17.0f) + 0.0f + AndroidUtilities.dp(70.0f) + AndroidUtilities.dp(14.0f) + AndroidUtilities.dp(4.0f) + AndroidUtilities.dp(2.0f) + AndroidUtilities.dp(20.0f) + AndroidUtilities.dp(5.0f);
         c0Var.h = (int) min;
         c0Var.i = (int) j11;
     }

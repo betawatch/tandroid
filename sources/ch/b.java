@@ -25,15 +25,15 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.z8;
 import org.telegram.ui.xg0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class b extends FrameLayout implements xg0, xd.b {
     public static final RectF S = new RectF();
@@ -55,7 +55,7 @@ public final class b extends FrameLayout implements xg0, xd.b {
     public TextPaint Q;
     public z8 R;
     public final TextView a;
-    public final lj0 b;
+    public final kj0 b;
     public p9 c;
     public g6 d;
     public final Paint e;
@@ -77,10 +77,10 @@ public final class b extends FrameLayout implements xg0, xd.b {
         this.n = new xd.a(1, this, prVar, 380L, false);
         this.r = new xd.a(2, this, prVar, 380L, false);
         this.P = 1.0f;
-        lj0 lj0Var = new lj0(context);
-        this.b = lj0Var;
-        addView(lj0Var, c6.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
-        lj0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
+        kj0 kj0Var = new kj0(context);
+        this.b = kj0Var;
+        addView(kj0Var, c6.d(44, 44.0f, 49, 0.0f, -6.0f, 0.0f, 0.0f));
+        kj0Var.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.SRC_IN));
         TextView textView = new TextView(context);
         this.a = textView;
         textView.setTextSize(1, 12.0f);
@@ -149,9 +149,9 @@ public final class b extends FrameLayout implements xg0, xd.b {
         int i10 = aVar.b;
         int i11 = aVar.a;
         int i12 = aVar.c;
-        lj0 lj0Var = this.b;
+        kj0 kj0Var = this.b;
         if (i12 != -1) {
-            lj0Var.setImageResource(i12);
+            kj0Var.setImageResource(i12);
             f();
             return;
         }
@@ -160,11 +160,11 @@ public final class b extends FrameLayout implements xg0, xd.b {
             boolean z12 = this.K != z10;
             if (this.L != i13) {
                 this.L = i13;
-                lj0Var.f(i13, 24, 24, null);
+                kj0Var.f(i13, 24, 24, null);
                 z12 = true;
             }
             if (z12) {
-                ij0 animatedDrawable = lj0Var.getAnimatedDrawable();
+                hj0 animatedDrawable = kj0Var.getAnimatedDrawable();
                 if (animatedDrawable == null) {
                     return;
                 }
@@ -198,23 +198,23 @@ public final class b extends FrameLayout implements xg0, xd.b {
         if (i11 != i10) {
             if (this.L != i13) {
                 this.L = i13;
-                lj0Var.f(i13, 24, 24, null);
-                lj0Var.getAnimatedDrawable().h = false;
+                kj0Var.f(i13, 24, 24, null);
+                kj0Var.getAnimatedDrawable().h = false;
                 if (!z4) {
-                    lj0Var.getAnimatedDrawable().Q(0.99f, true);
+                    kj0Var.getAnimatedDrawable().Q(0.99f, true);
                     return;
                 } else {
-                    lj0Var.getAnimatedDrawable().K(0);
-                    lj0Var.d();
+                    kj0Var.getAnimatedDrawable().K(0);
+                    kj0Var.d();
                     return;
                 }
             }
             return;
         }
-        if (lj0Var.getAnimatedDrawable() == null) {
-            lj0Var.f(this.y.a, 24, 24, null);
+        if (kj0Var.getAnimatedDrawable() == null) {
+            kj0Var.f(this.y.a, 24, 24, null);
         }
-        ij0 animatedDrawable2 = lj0Var.getAnimatedDrawable();
+        hj0 animatedDrawable2 = kj0Var.getAnimatedDrawable();
         if (animatedDrawable2 == null) {
             return;
         }
@@ -230,7 +230,7 @@ public final class b extends FrameLayout implements xg0, xd.b {
                 animatedDrawable2.K(iArr[0]);
                 animatedDrawable2.N(0);
             }
-            lj0Var.d();
+            kj0Var.d();
         }
     }
 
@@ -360,9 +360,9 @@ public final class b extends FrameLayout implements xg0, xd.b {
         TextView textView = this.a;
         textView.setScaleX(f10);
         textView.setScaleY(f10);
-        lj0 lj0Var = this.b;
-        lj0Var.setScaleX(f10);
-        lj0Var.setScaleY(f10);
+        kj0 kj0Var = this.b;
+        kj0Var.setScaleX(f10);
+        kj0Var.setScaleY(f10);
         p9 p9Var = this.c;
         if (p9Var != null) {
             p9Var.setScaleX(f10);

@@ -1,12 +1,27 @@
 package qh;
 
-import org.telegram.ui.Components.u00;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class h2 extends u00 {
-    @Override // org.telegram.ui.Components.u00
-    public final int getColumnsCount() {
-        return 3;
+public final /* synthetic */ class h2 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ j2 b;
+
+    public /* synthetic */ h2(j2 j2Var, int i10) {
+        this.a = i10;
+        this.b = j2Var;
+    }
+
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                this.b.h.invalidate();
+                break;
+            default:
+                this.b.h.invalidate();
+                break;
+        }
     }
 }

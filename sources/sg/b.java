@@ -11,12 +11,12 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import rg.d;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class b {
     public static d a(g6 g6Var) {
         d dVar = new d(g6Var);
-        dVar.e = new s0.b(27);
+        dVar.e = new s0.b(28);
         dVar.d(385875968, 402653183);
         dVar.c(385875968, 402653183);
         dVar.b(285212672, 83886079);
@@ -58,7 +58,7 @@ public abstract class b {
 
     public static d d(g6 g6Var) {
         d dVar = new d(g6Var);
-        dVar.e = new a(1);
+        dVar.e = new a(2);
         dVar.d(-1, 687865855);
         dVar.c(-1, 352321535);
         dVar.b(TLObject.FLAG_30, 0);
@@ -92,7 +92,7 @@ public abstract class b {
 
     public static d f(g6 g6Var) {
         d dVar = new d(g6Var);
-        dVar.e = new s0.b(26);
+        dVar.e = new s0.b(27);
         dVar.d(285212672, 117440511);
         dVar.c(TLObject.FLAG_29, 301989887);
         dVar.b(TLObject.FLAG_29, 83886079);
@@ -128,7 +128,7 @@ public abstract class b {
 
     public static d i(g6 g6Var) {
         d dVar = new d(g6Var);
-        dVar.e = new a(0);
+        dVar.e = new a(1);
         dVar.d(687865855, 687865855);
         dVar.c(352321535, 352321535);
         float dpf2 = AndroidUtilities.dpf2(0.6666667f);
@@ -140,7 +140,24 @@ public abstract class b {
 
     public static d j(g6 g6Var) {
         d dVar = new d(g6Var);
-        dVar.e = new s0.b(25);
+        dVar.e = new s0.b(29);
+        dVar.d(-1, 553648127);
+        dVar.c(0, 553648127);
+        dVar.b(805306368, 83886079);
+        float dpf2 = AndroidUtilities.dpf2(4.0f);
+        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
+        dVar.n = dpf2;
+        dVar.r = dpf22;
+        float dpf23 = AndroidUtilities.dpf2(0.67f);
+        float dpf24 = AndroidUtilities.dpf2(0.67f);
+        dVar.f = dpf23;
+        dVar.h = dpf24;
+        return dVar;
+    }
+
+    public static d k(g6 g6Var) {
+        d dVar = new d(g6Var);
+        dVar.e = new s0.b(26);
         dVar.d(1157627903, 0);
         dVar.c(587202559, 0);
         dVar.b(637534208, 0);
@@ -153,7 +170,7 @@ public abstract class b {
         return dVar;
     }
 
-    public static d k(g6 g6Var) {
+    public static d l(g6 g6Var) {
         d dVar = new d(g6Var);
         dVar.d(0, 687865855);
         dVar.c(0, 352321535);
@@ -169,7 +186,7 @@ public abstract class b {
         return dVar;
     }
 
-    public static int l(float f10, int i10, int i11) {
+    public static int m(float f10, int i10, int i11) {
         float a2 = o.a(f10, 0.0f, 1.0f);
         if (a2 <= 0.0f) {
             return Color.argb(0, 0, 0, 0);
@@ -184,7 +201,7 @@ public abstract class b {
         return Color.argb(o.b(Math.round(a2 * 255.0f), 0, 255), o.b(Math.round((Color.red(i11) - (red * f11)) / a2), 0, 255), o.b(Math.round((Color.green(i11) - (green * f11)) / a2), 0, 255), o.b(Math.round((Color.blue(i11) - (blue * f11)) / a2), 0, 255));
     }
 
-    public static d m(g6 g6Var) {
+    public static d n(g6 g6Var) {
         d dVar = new d(g6Var);
         dVar.e = new s0.b(20);
         dVar.d(285212672, 117440511);
@@ -201,7 +218,7 @@ public abstract class b {
         return dVar;
     }
 
-    public static d n(g6 g6Var) {
+    public static d o(g6 g6Var) {
         d dVar = new d(g6Var);
         dVar.e = new f0(3, g6Var);
         dVar.d(-1, 553648127);
@@ -214,9 +231,9 @@ public abstract class b {
         return dVar;
     }
 
-    public static d o(g6 g6Var) {
+    public static d p(g6 g6Var) {
         d dVar = new d(g6Var);
-        dVar.e = new s0.b(29);
+        dVar.e = new a(0);
         dVar.d(0, 0);
         dVar.c(0, 0);
         dVar.b(0, 0);
@@ -227,7 +244,7 @@ public abstract class b {
         return dVar;
     }
 
-    public static d p(g6 g6Var) {
+    public static d q(g6 g6Var) {
         d dVar = new d(g6Var);
         dVar.e = new f0(2, g6Var);
         dVar.d(0, 0);

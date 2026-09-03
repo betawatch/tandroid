@@ -18,11 +18,11 @@ import org.telegram.messenger.y3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.p30;
 import org.telegram.ui.web.s0;
-import qh.a8;
-import qh.p7;
+import qh.o7;
+import qh.y7;
 import qh.z7;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class j extends ViewGroup {
     public final /* synthetic */ int a = 0;
@@ -45,10 +45,10 @@ public final class j extends ViewGroup {
     }
 
     public void a() {
-        a8 a8Var = (a8) this.n;
+        z7 z7Var = (z7) this.n;
         int i10 = 1;
-        a8Var.D = true;
-        ArrayList arrayList = a8Var.d;
+        z7Var.D = true;
+        ArrayList arrayList = z7Var.d;
         ArrayList arrayList2 = new ArrayList(arrayList);
         ArrayList arrayList3 = this.h;
         arrayList3.clear();
@@ -61,7 +61,7 @@ public final class j extends ViewGroup {
         this.c = false;
         AnimatorSet animatorSet = new AnimatorSet();
         this.b = animatorSet;
-        animatorSet.addListener(new z7(this, arrayList2, i10));
+        animatorSet.addListener(new y7(this, arrayList2, i10));
         ArrayList arrayList4 = this.f;
         arrayList4.clear();
         ArrayList arrayList5 = this.d;
@@ -225,7 +225,7 @@ public final class j extends ViewGroup {
         int i17;
         char c3;
         int x11;
-        p7 p7Var;
+        o7 o7Var;
         int i18;
         int i19;
         boolean z4;
@@ -381,9 +381,9 @@ public final class j extends ViewGroup {
                 setMeasuredDimension(size, (int) kVar.F);
                 break;
             default:
-                a8 a8Var = (a8) scrollView;
-                p7 p7Var2 = a8Var.f;
-                f fVar2 = a8Var.a;
+                z7 z7Var = (z7) scrollView;
+                o7 o7Var2 = z7Var.f;
+                f fVar2 = z7Var.a;
                 int childCount2 = getChildCount();
                 int size2 = View.MeasureSpec.getSize(i10);
                 int dp8 = size2 - AndroidUtilities.dp(14.0f);
@@ -396,7 +396,7 @@ public final class j extends ViewGroup {
                 while (i31 < childCount2) {
                     View childAt2 = getChildAt(i31);
                     if (childAt2 instanceof p30) {
-                        p7Var = p7Var2;
+                        o7Var = o7Var2;
                         i18 = childCount2;
                         childAt2.measure(View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
                         boolean contains2 = arrayList2.contains(childAt2);
@@ -443,16 +443,16 @@ public final class j extends ViewGroup {
                         i33 = y3.C(f10, childAt2.getMeasuredWidth(), i20);
                         i32 = i19;
                     } else {
-                        p7Var = p7Var2;
+                        o7Var = o7Var2;
                         i18 = childCount2;
                         i21 = dp8;
                     }
                     i31++;
-                    p7Var2 = p7Var;
+                    o7Var2 = o7Var;
                     childCount2 = i18;
                     dp8 = i21;
                 }
-                p7 p7Var3 = p7Var2;
+                o7 o7Var3 = o7Var2;
                 int i34 = dp8;
                 if (AndroidUtilities.isTablet()) {
                     x11 = AndroidUtilities.dp(394.0f) / 3;
@@ -468,19 +468,19 @@ public final class j extends ViewGroup {
                     dp10 += AndroidUtilities.dp(36.0f);
                 }
                 fVar2.measure(View.MeasureSpec.makeMeasureSpec(i34 - i32, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(28.0f), TLObject.FLAG_30));
-                fVar2.setHintVisible(fVar2.getMeasuredWidth() > a8Var.b, true);
+                fVar2.setHintVisible(fVar2.getMeasuredWidth() > z7Var.b, true);
                 if (!this.c) {
                     int dp12 = AndroidUtilities.dp(38.0f) + dp10;
                     int dp13 = AndroidUtilities.dp(16.0f) + i32;
-                    a8Var.E = i30;
+                    z7Var.E = i30;
                     if (this.b != null) {
                         int dp14 = AndroidUtilities.dp(38.0f) + i30;
-                        a8Var.G = dp14;
-                        float f19 = a8Var.F;
+                        z7Var.G = dp14;
+                        float f19 = z7Var.F;
                         float f20 = dp14;
                         if (f19 != f20) {
                             ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f19, f20);
-                            ofFloat2.addUpdateListener(new f5(a8Var, 23));
+                            ofFloat2.addUpdateListener(new f5(z7Var, 23));
                             arrayList.add(ofFloat2);
                         }
                         float f21 = dp13;
@@ -488,7 +488,7 @@ public final class j extends ViewGroup {
                             arrayList.add(ObjectAnimator.ofFloat(fVar2, (Property<f, Float>) property, f21));
                         }
                         float translationY2 = fVar2.getTranslationY();
-                        float f22 = a8Var.E;
+                        float f22 = z7Var.E;
                         if (translationY2 != f22) {
                             arrayList.add(ObjectAnimator.ofFloat(fVar2, (Property<f, Float>) property2, f22));
                         }
@@ -498,40 +498,40 @@ public final class j extends ViewGroup {
                         this.b.setInterpolator(new LinearInterpolator());
                         this.b.start();
                         this.c = true;
-                        if (p7Var3 != null) {
-                            p7Var3.run();
+                        if (o7Var3 != null) {
+                            o7Var3.run();
                         }
                     } else {
-                        a8Var.G = dp12;
-                        a8Var.F = dp12;
+                        z7Var.G = dp12;
+                        z7Var.F = dp12;
                         fVar2.setTranslationX(dp13);
-                        fVar2.setTranslationY(a8Var.E);
-                        if (p7Var3 != null) {
-                            p7Var3.run();
+                        fVar2.setTranslationY(z7Var.E);
+                        if (o7Var3 != null) {
+                            o7Var3.run();
                         }
-                        if (a8Var.H) {
+                        if (z7Var.H) {
                             post(new s0(this, 25));
-                            a8Var.H = false;
+                            z7Var.H = false;
                         }
                     }
                 } else if (this.b != null) {
-                    if (!a8Var.D && arrayList2.isEmpty()) {
+                    if (!z7Var.D && arrayList2.isEmpty()) {
                         fVar2.bringPointIntoView(fVar2.getSelectionStart());
                     }
-                    if (a8Var.H) {
-                        a8Var.fullScroll(130);
-                        a8Var.H = false;
+                    if (z7Var.H) {
+                        z7Var.fullScroll(130);
+                        z7Var.H = false;
                     }
                 }
-                setMeasuredDimension(size2, (int) a8Var.F);
+                setMeasuredDimension(size2, (int) z7Var.F);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j(a8 a8Var, Context context) {
+    public j(z7 z7Var, Context context) {
         super(context);
-        this.n = a8Var;
+        this.n = z7Var;
         this.d = new ArrayList();
         this.e = new ArrayList();
         this.f = new ArrayList();

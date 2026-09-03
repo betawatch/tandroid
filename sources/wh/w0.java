@@ -9,28 +9,28 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.h61;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class w0 extends i51 {
+public final class w0 extends g51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        i51.setup(new w0());
+        g51.setup(new w0());
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final void bindView(View view, j51 j51Var, boolean z4, x51 x51Var, i61 i61Var) {
+    @Override // org.telegram.ui.Components.g51
+    public final void bindView(View view, h51 h51Var, boolean z4, w51 w51Var, h61 h61Var) {
         MessageObject messageObject;
         t tVar;
         x0 x0Var = (x0) view;
-        a aVar = (a) j51Var.G;
-        m3 m3Var = (m3) j51Var.H;
+        a aVar = (a) h51Var.G;
+        m3 m3Var = (m3) h51Var.H;
         x0Var.a = aVar;
         x0Var.P = m3Var;
         x0Var.J = LocaleController.isRTL;
@@ -77,14 +77,14 @@ public final class w0 extends i51 {
         x0Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final View createView(Context context, tl0 tl0Var, int i10, int i11, g6 g6Var) {
+    @Override // org.telegram.ui.Components.g51
+    public final View createView(Context context, sl0 sl0Var, int i10, int i11, g6 g6Var) {
         x0 x0Var = new x0(context, i10, g6Var);
         x0Var.setBackground(new w1(k6.v0(k6.d6, g6Var)));
         return x0Var;
     }
 
-    @Override // org.telegram.ui.Components.i51
+    @Override // org.telegram.ui.Components.g51
     public final boolean isClickable() {
         return false;
     }

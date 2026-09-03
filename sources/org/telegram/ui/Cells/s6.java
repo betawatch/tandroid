@@ -18,11 +18,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.nq0;
+import org.telegram.ui.Components.mq0;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class s6 extends FrameLayout {
     public final org.telegram.ui.Components.j6 B;
@@ -115,9 +115,9 @@ public final class s6 extends FrameLayout {
                     imageView.setBackgroundDrawable(pqVar);
                 } else {
                     this.f = new RectF();
-                    nq0 nq0Var = new nq0(getContext(), z10 ? 5 : 4);
-                    nq0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.qi, g6Var), PorterDuff.Mode.MULTIPLY));
-                    pq pqVar2 = new pq(h02, nq0Var);
+                    mq0 mq0Var = new mq0(getContext(), z10 ? 5 : 4);
+                    mq0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.qi, g6Var), PorterDuff.Mode.MULTIPLY));
+                    pq pqVar2 = new pq(h02, mq0Var);
                     int dp5 = AndroidUtilities.dp(46.0f);
                     int dp6 = AndroidUtilities.dp(46.0f);
                     pqVar2.h = dp5;

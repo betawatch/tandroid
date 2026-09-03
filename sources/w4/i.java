@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 import v4.j;
 import v4.k;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract class i implements v4.g {
     public final ArrayDeque a = new ArrayDeque();
@@ -25,10 +25,10 @@ public abstract class i implements v4.g {
         this.b = new ArrayDeque();
         for (int i11 = 0; i11 < 2; i11++) {
             ArrayDeque arrayDeque = this.b;
-            sf.g gVar = new sf.g(this, 11);
-            h hVar = new h();
-            hVar.h = gVar;
-            arrayDeque.add(hVar);
+            sf.h hVar = new sf.h(this, 11);
+            h hVar2 = new h();
+            hVar2.h = hVar;
+            arrayDeque.add(hVar2);
         }
         this.c = new PriorityQueue();
     }

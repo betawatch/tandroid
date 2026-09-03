@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class lg0 extends n20 {
     public float a;
@@ -44,7 +44,7 @@ public final class lg0 extends n20 {
         boolean z4;
         ng0 ng0Var = this.d;
         PhotoViewer photoViewer = ng0Var.S;
-        a71 a71Var = ng0Var.N;
+        z61 z61Var = ng0Var.N;
         if (photoViewer != null && ((photoViewer.C2 != null || ng0Var.r != null) && !ng0Var.Z && !ng0Var.V && !ng0Var.w && !ng0Var.s.isInProgress() && ng0Var.c0)) {
             ng0Var.S.getClass();
             boolean z10 = motionEvent.getX() >= (((float) ng0Var.t()) * ng0Var.G) * 0.5f;
@@ -59,21 +59,21 @@ public final class lg0 extends n20 {
                         z4 = j10 >= -9000;
                         j10 = 0;
                         if (z4) {
-                            a71Var.e(true);
-                            a71Var.d(!z10);
-                            long j11 = a71Var.o + 10000;
-                            a71Var.o = j11;
-                            a71Var.p = LocaleController.formatPluralString("Seconds", (int) (j11 / 1000), new Object[0]);
+                            z61Var.e(true);
+                            z61Var.d(!z10);
+                            long j11 = z61Var.o + 10000;
+                            z61Var.o = j11;
+                            z61Var.p = LocaleController.formatPluralString("Seconds", (int) (j11 / 1000), new Object[0]);
                             xf0 xf0Var = ng0Var.r;
                             if (xf0Var != null) {
                                 xf0Var.i(j10);
                             } else {
-                                k71 k71Var = ng0Var.S.C2;
-                                if (k71Var != null) {
-                                    k71Var.K(j10);
+                                j71 j71Var = ng0Var.S.C2;
+                                if (j71Var != null) {
+                                    j71Var.K(j10);
                                 }
                             }
-                            a71Var.g(0L);
+                            z61Var.g(0L);
                             ng0Var.W = j10 / m9;
                             oh.b3 b3Var = ng0Var.Y;
                             if (b3Var != null) {

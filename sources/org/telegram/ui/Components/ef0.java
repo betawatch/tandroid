@@ -8,7 +8,7 @@ import android.view.MotionEvent;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ef0 extends FrameLayout {
     public static final float K = AndroidUtilities.dp(20.0f);
@@ -26,7 +26,7 @@ public final class ef0 extends FrameLayout {
     public PointF a;
     public float b;
     public float c;
-    public kv0 d;
+    public jv0 d;
     public PointF e;
     public float f;
     public float h;
@@ -55,25 +55,25 @@ public final class ef0 extends FrameLayout {
 
     private PointF getActualCenterPoint() {
         float width = getWidth();
-        kv0 kv0Var = this.d;
-        float f10 = kv0Var.a;
+        jv0 jv0Var = this.d;
+        float f10 = jv0Var.a;
         float f11 = (this.e.x * f10) + ((width - f10) / 2.0f);
         int i10 = !this.H ? AndroidUtilities.statusBarHeight : 0;
         float height = getHeight();
-        float f12 = kv0Var.b;
+        float f12 = jv0Var.b;
         float x10 = e2.c.x(height, f12, 2.0f, i10);
-        float f13 = kv0Var.a;
+        float f13 = jv0Var.a;
         return new PointF(f11, (this.e.y * f13) + org.telegram.messenger.y3.a(f13, f12, 2.0f, x10));
     }
 
     private float getActualInnerRadius() {
-        kv0 kv0Var = this.d;
-        return Math.min(kv0Var.a, kv0Var.b) * this.f;
+        jv0 jv0Var = this.d;
+        return Math.min(jv0Var.a, jv0Var.b) * this.f;
     }
 
     private float getActualOuterRadius() {
-        kv0 kv0Var = this.d;
-        return Math.min(kv0Var.a, kv0Var.b) * this.h;
+        jv0 jv0Var = this.d;
+        return Math.min(jv0Var.a, jv0Var.b) * this.h;
     }
 
     public final void c(int i10, MotionEvent motionEvent) {
@@ -84,8 +84,8 @@ public final class ef0 extends FrameLayout {
         float f10 = x10 - actualCenterPoint.x;
         float f11 = y10 - actualCenterPoint.y;
         float sqrt = (float) Math.sqrt((f11 * f11) + (f10 * f10));
-        kv0 kv0Var = this.d;
-        float min = Math.min(kv0Var.a, kv0Var.b);
+        jv0 jv0Var = this.d;
+        float min = Math.min(jv0Var.a, jv0Var.b);
         float f12 = this.f * min;
         float f13 = this.h * min;
         float abs = (float) Math.abs((Math.sin(a(this.n) + 1.5707963267948966d) * f11) + (Math.cos(a(this.n) + 1.5707963267948966d) * f10));
@@ -159,15 +159,15 @@ public final class ef0 extends FrameLayout {
             if (c3 == 1) {
                 float f19 = x10 - this.s;
                 float f20 = y10 - this.v;
-                float width = (getWidth() - kv0Var.a) / 2.0f;
+                float width = (getWidth() - jv0Var.a) / 2.0f;
                 int i13 = !z4 ? AndroidUtilities.statusBarHeight : 0;
                 float height = getHeight();
-                float f21 = kv0Var.b;
+                float f21 = jv0Var.b;
                 float x11 = e2.c.x(height, f21, 2.0f, i13);
-                PointF pointF = new PointF(Math.max(width, Math.min(kv0Var.a + width, this.a.x + f19)), Math.max(x11, Math.min(f21 + x11, this.a.y + f20)));
+                PointF pointF = new PointF(Math.max(width, Math.min(jv0Var.a + width, this.a.x + f19)), Math.max(x11, Math.min(f21 + x11, this.a.y + f20)));
                 float f22 = pointF.x - width;
-                float f23 = kv0Var.a;
-                this.e = new PointF(f22 / f23, (((f23 - kv0Var.b) / 2.0f) + (pointF.y - x11)) / f23);
+                float f23 = jv0Var.a;
+                this.e = new PointF(f22 / f23, (((f23 - jv0Var.b) / 2.0f) + (pointF.y - x11)) / f23);
             } else if (c3 == 2) {
                 this.f = Math.min(Math.max(0.1f, (this.c + (abs - this.b)) / min), this.h - 0.02f);
             } else if (c3 == 3) {
@@ -187,15 +187,15 @@ public final class ef0 extends FrameLayout {
             if (c10 == 1) {
                 float f26 = x10 - this.s;
                 float f27 = y10 - this.v;
-                float width2 = (getWidth() - kv0Var.a) / 2.0f;
+                float width2 = (getWidth() - jv0Var.a) / 2.0f;
                 int i14 = !z4 ? AndroidUtilities.statusBarHeight : 0;
                 float height2 = getHeight();
-                float f28 = kv0Var.b;
+                float f28 = jv0Var.b;
                 float x12 = e2.c.x(height2, f28, 2.0f, i14);
-                PointF pointF2 = new PointF(Math.max(width2, Math.min(kv0Var.a + width2, this.a.x + f26)), Math.max(x12, Math.min(f28 + x12, this.a.y + f27)));
+                PointF pointF2 = new PointF(Math.max(width2, Math.min(jv0Var.a + width2, this.a.x + f26)), Math.max(x12, Math.min(f28 + x12, this.a.y + f27)));
                 float f29 = pointF2.x - width2;
-                float f30 = kv0Var.a;
-                this.e = new PointF(f29 / f30, (((f30 - kv0Var.b) / 2.0f) + (pointF2.y - x12)) / f30);
+                float f30 = jv0Var.a;
+                this.e = new PointF(f29 / f30, (((f30 - jv0Var.b) / 2.0f) + (pointF2.y - x12)) / f30);
             } else if (c10 == 2) {
                 this.f = Math.min(Math.max(0.1f, (this.c + (sqrt - this.b)) / min), this.h - 0.02f);
             } else if (c10 == 3) {

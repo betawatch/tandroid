@@ -5,7 +5,7 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o2 implements f5, c1 {
     public final /* synthetic */ r3 a;
@@ -24,7 +24,7 @@ public final /* synthetic */ class o2 implements f5, c1 {
             return;
         }
         if (z4) {
-            r3Var.o3(false);
+            r3Var.n3(false);
             p3Var.x(new q3(r3Var, e1Var, spanStart, spanEnd, e4Var), e1Var);
             return;
         }

@@ -1,29 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.style.ReplacementSpan;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d91 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ha1 b;
+public final class d91 extends ReplacementSpan {
+    public final org.telegram.ui.Components.k01 a = new org.telegram.ui.Components.k01(LocaleController.getString(R.string.StakeDiceTitleBeta), 12.0f, AndroidUtilities.bold());
+    public final Paint b = new Paint(1);
+    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
 
-    public /* synthetic */ d91(ha1 ha1Var, int i10) {
-        this.a = i10;
-        this.b = ha1Var;
+    public d91(org.telegram.ui.ActionBar.g6 g6Var) {
+        this.c = g6Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                ha1.U(this.b, tLObject);
-                break;
-            default:
-                ha1.V(this.b, tLObject);
-                break;
-        }
+    @Override // android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+        float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.0f);
+        int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oh, this.c);
+        Paint paint2 = this.b;
+        paint2.setColor(v02);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(f10, dp - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f) + f10 + this.a.c, AndroidUtilities.dp(9.0f) + dp);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), paint2);
+        this.a.c(f10 + AndroidUtilities.dp(8.0f), dp, 1.0f, -1, canvas);
+    }
+
+    @Override // android.text.style.ReplacementSpan
+    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
+        return (int) (AndroidUtilities.dp(16.0f) + this.a.c);
     }
 }

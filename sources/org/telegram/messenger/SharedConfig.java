@@ -29,10 +29,9 @@ import org.telegram.tgnet.OutputSerializedData;
 import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.hj0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
@@ -186,7 +185,7 @@ public class SharedConfig {
     public static boolean useSystemEmoji;
     public static boolean useThreeLinesLayout;
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 
@@ -207,33 +206,33 @@ public class SharedConfig {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PasscodeType {
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PerformanceClass {
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class ProxyInfo {
         public boolean available;
         public long availableCheckTime;
         public boolean checking;
         public long ping;
-        public sf.a settings;
+        public sf.b settings;
 
-        public ProxyInfo(sf.a aVar) {
-            this.settings = aVar;
+        public ProxyInfo(sf.b bVar) {
+            this.settings = bVar;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static ProxyInfo fromSerializedData(int i10, InputSerializedData inputSerializedData) {
             long j10;
             long j11;
-            hj0 a2 = sf.a.a();
+            sf.a a2 = sf.b.a();
             String readString = inputSerializedData.readString(false);
             if (readString == null) {
                 readString = "";
@@ -260,12 +259,12 @@ public class SharedConfig {
                 j11 = 0;
             }
             if (i10 >= 3) {
-                int d = sf.a.d(inputSerializedData.readInt32(false));
+                int d = sf.b.d(inputSerializedData.readInt32(false));
                 a2.a = d != 0 ? d : 1;
             } else {
                 a2.a = TextUtils.isEmpty(readString4) ? 1 : 2;
             }
-            ProxyInfo proxyInfo = new ProxyInfo(new sf.a(a2));
+            ProxyInfo proxyInfo = new ProxyInfo(new sf.b(a2));
             proxyInfo.availableCheckTime = j11;
             proxyInfo.ping = j10;
             return proxyInfo;
@@ -864,13 +863,13 @@ public class SharedConfig {
         return Long.compare(proxyInfo.ping + j10, proxyInfo2.ping + j11);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:41:0x02af A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x021a, B:34:0x0226, B:36:0x024b, B:39:0x0256, B:41:0x02af, B:42:0x02b1, B:45:0x047e, B:48:0x048c, B:49:0x04f4, B:53:0x0473, B:82:0x01b2, B:83:0x0125, B:84:0x04f6), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:44:0x0472  */
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0489  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x048b  */
-    /* JADX WARN: Removed duplicated region for block: B:53:0x0473 A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x021a, B:34:0x0226, B:36:0x024b, B:39:0x0256, B:41:0x02af, B:42:0x02b1, B:45:0x047e, B:48:0x048c, B:49:0x04f4, B:53:0x0473, B:82:0x01b2, B:83:0x0125, B:84:0x04f6), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0189 A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x021a, B:34:0x0226, B:36:0x024b, B:39:0x0256, B:41:0x02af, B:42:0x02b1, B:45:0x047e, B:48:0x048c, B:49:0x04f4, B:53:0x0473, B:82:0x01b2, B:83:0x0125, B:84:0x04f6), top: B:3:0x0003 }] */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x018f A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x021a, B:34:0x0226, B:36:0x024b, B:39:0x0256, B:41:0x02af, B:42:0x02b1, B:45:0x047e, B:48:0x048c, B:49:0x04f4, B:53:0x0473, B:82:0x01b2, B:83:0x0125, B:84:0x04f6), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x02ae A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x0219, B:34:0x0225, B:36:0x024a, B:39:0x0255, B:41:0x02ae, B:42:0x02b0, B:45:0x047d, B:48:0x048b, B:49:0x04f3, B:53:0x0472, B:82:0x01b2, B:83:0x0125, B:84:0x04f5), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:44:0x0471  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0488  */
+    /* JADX WARN: Removed duplicated region for block: B:52:0x048a  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x0472 A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x0219, B:34:0x0225, B:36:0x024a, B:39:0x0255, B:41:0x02ae, B:42:0x02b0, B:45:0x047d, B:48:0x048b, B:49:0x04f3, B:53:0x0472, B:82:0x01b2, B:83:0x0125, B:84:0x04f5), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0189 A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x0219, B:34:0x0225, B:36:0x024a, B:39:0x0255, B:41:0x02ae, B:42:0x02b0, B:45:0x047d, B:48:0x048b, B:49:0x04f3, B:53:0x0472, B:82:0x01b2, B:83:0x0125, B:84:0x04f5), top: B:3:0x0003 }] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x018f A[Catch: all -> 0x00f3, Exception -> 0x0164, Merged into TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x0219, B:34:0x0225, B:36:0x024a, B:39:0x0255, B:41:0x02ae, B:42:0x02b0, B:45:0x047d, B:48:0x048b, B:49:0x04f3, B:53:0x0472, B:82:0x01b2, B:83:0x0125, B:84:0x04f5), top: B:3:0x0003 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1176,7 +1175,7 @@ public class SharedConfig {
             return;
         }
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
-        sf.a b10 = sf.a.b(sharedPreferences);
+        sf.b b10 = sf.b.b(sharedPreferences);
         proxyListLoaded = true;
         proxyList.clear();
         currentProxy = null;

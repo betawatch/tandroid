@@ -3,20 +3,20 @@ package z2;
 import android.content.Context;
 import com.google.android.datatransport.cct.CctBackendFactory;
 import java.util.HashMap;
-import q5.g0;
+import q5.c0;
 import s5.m;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class e {
-    public final g0 a;
+    public final c0 a;
     public final m b;
     public final HashMap c;
 
     public e(Context context, m mVar) {
-        g0 g0Var = new g0(context, 19);
+        c0 c0Var = new c0(context);
         this.c = new HashMap();
-        this.a = g0Var;
+        this.a = c0Var;
         this.b = mVar;
     }
 

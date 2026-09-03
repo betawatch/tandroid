@@ -6,9 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class yi0 extends r91 {
+public final class yi0 extends x91 {
     public final /* synthetic */ zi0 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -17,7 +17,7 @@ public final class yi0 extends r91 {
         this.v = zi0Var;
     }
 
-    @Override // org.telegram.ui.r91
+    @Override // org.telegram.ui.x91
     public final void c() {
         int i10;
         int i11;
@@ -31,8 +31,8 @@ public final class yi0 extends r91 {
         if (gVar.q0.D) {
             long selectedDate = gVar.getSelectedDate();
             if (this.s == 4) {
-                t91 t91Var = this.r;
-                t91Var.e = new xf.e(t91Var.d, selectedDate);
+                z91 z91Var = this.r;
+                z91Var.e = new xf.e(z91Var.d, selectedDate);
                 g(false);
                 return;
             }
@@ -53,13 +53,13 @@ public final class yi0 extends r91 {
                 tL_loadAsyncGraph.x = selectedDate;
                 tL_loadAsyncGraph.flags |= 1;
             }
-            ga1 ga1Var = new ga1();
-            bj0Var.w = ga1Var;
+            ma1 ma1Var = new ma1();
+            bj0Var.w = ma1Var;
             bj0Var.f.getClass();
-            ga1Var.a = RecyclerView.R(this);
+            ma1Var.a = RecyclerView.R(this);
             gVar.q0.d(true, false);
             i10 = ((org.telegram.ui.ActionBar.p2) bj0Var).currentAccount;
-            int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new ba(this, str, ga1Var, 25), null, null, 0, bj0Var.a.stats_dc, 1, true);
+            int sendRequest = ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new ba(this, str, ma1Var, 25), null, null, 0, bj0Var.a.stats_dc, 1, true);
             i11 = ((org.telegram.ui.ActionBar.p2) bj0Var).currentAccount;
             ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
             i12 = ((org.telegram.ui.ActionBar.p2) bj0Var).classGuid;
@@ -67,24 +67,24 @@ public final class yi0 extends r91 {
         }
     }
 
-    @Override // org.telegram.ui.r91
+    @Override // org.telegram.ui.x91
     public final void f() {
         zi0 zi0Var = this.v;
         bj0 bj0Var = zi0Var.d;
-        ga1 ga1Var = bj0Var.w;
-        if (ga1Var != null) {
-            ga1Var.b = true;
+        ma1 ma1Var = bj0Var.w;
+        if (ma1Var != null) {
+            ma1Var.b = true;
         }
         int childCount = bj0Var.f.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
             View childAt = zi0Var.d.f.getChildAt(i10);
-            if (childAt instanceof r91) {
-                ((r91) childAt).b.q0.d(false, true);
+            if (childAt instanceof x91) {
+                ((x91) childAt).b.q0.d(false, true);
             }
         }
     }
 
-    @Override // org.telegram.ui.r91
-    public final void b(t91 t91Var) {
+    @Override // org.telegram.ui.x91
+    public final void b(z91 z91Var) {
     }
 }

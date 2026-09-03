@@ -15,11 +15,11 @@ import android.widget.FrameLayout;
 import k7.c6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.y3;
-import org.telegram.ui.iw0;
-import qh.o9;
+import org.telegram.ui.nw0;
+import qh.n9;
 import r0.m1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f extends FrameLayout {
     public float B;
@@ -31,9 +31,9 @@ public final class f extends FrameLayout {
     public float H;
     public boolean I;
     public dh.g a;
-    public final iw0 b;
+    public final nw0 b;
     public final FrameLayout c;
-    public final o9 d;
+    public final n9 d;
     public boolean e;
     public qg.b f;
     public qg.b h;
@@ -54,10 +54,10 @@ public final class f extends FrameLayout {
         FrameLayout frameLayout = new FrameLayout(context);
         this.c = frameLayout;
         addView(frameLayout, c6.e(-1, -2, 80));
-        o9 o9Var = new o9(this, context, 3);
-        this.d = o9Var;
-        addView(o9Var, c6.e(-1, -2, 80));
-        this.b = new iw0(this, context, 11);
+        n9 n9Var = new n9(this, context, 3);
+        this.d = n9Var;
+        addView(n9Var, c6.e(-1, -2, 80));
+        this.b = new nw0(this, context, 11);
     }
 
     public final void a(boolean z4) {
@@ -96,10 +96,10 @@ public final class f extends FrameLayout {
         m1 m1Var = ((dh.i) this.a).r;
         int i10 = m1Var != null ? m1Var.a.f(2).d : 0;
         float b10 = ((dh.i) this.a).b();
-        o9 o9Var = this.d;
-        int childCount = o9Var.getChildCount();
+        n9 n9Var = this.d;
+        int childCount = n9Var.getChildCount();
         for (int i11 = 0; i11 < childCount; i11++) {
-            KeyEvent.Callback childAt = o9Var.getChildAt(i11);
+            KeyEvent.Callback childAt = n9Var.getChildAt(i11);
             if (childAt instanceof dh.a) {
                 dh.a aVar = (dh.a) childAt;
                 aVar.b(i10);
@@ -115,13 +115,13 @@ public final class f extends FrameLayout {
         this.v = ((dh.i) this.a).b();
         int i11 = 0;
         this.w = ((dh.i) this.a).s != 1;
-        o9 o9Var = this.d;
-        boolean z4 = o9Var.getVisibility() == 0;
+        n9 n9Var = this.d;
+        boolean z4 = n9Var.getVisibility() == 0;
         boolean z10 = this.w;
         if (z4 != z10) {
-            o9Var.setVisibility(z10 ? 0 : 8);
+            n9Var.setVisibility(z10 ? 0 : 8);
         }
-        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) o9Var.getLayoutParams();
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) n9Var.getLayoutParams();
         int i12 = layoutParams.height;
         int i13 = ((dh.i) this.a).w;
         if (i12 != i13) {

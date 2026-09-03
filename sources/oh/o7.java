@@ -6,10 +6,10 @@ import android.widget.FrameLayout;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
-import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.z50;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class o7 extends m2.a {
     public final ArrayList c = new ArrayList();
@@ -59,13 +59,13 @@ public final class o7 extends m2.a {
                 n7Var.Y1.P0();
                 n7Var.Y1.setAlpha(1.0f - n7Var.a4);
             }
-            rk0 rk0Var = n7Var.c2;
-            if (rk0Var != null) {
-                rk0Var.n();
+            qk0 qk0Var = n7Var.c2;
+            if (qk0Var != null) {
+                qk0Var.n();
             }
-            rk0 rk0Var2 = n7Var.o3;
-            if (rk0Var2 != null) {
-                rk0Var2.n();
+            qk0 qk0Var2 = n7Var.o3;
+            if (qk0Var2 != null) {
+                qk0Var2.n();
             }
             z50 z50Var = n7Var.G2;
             if (z50Var != null) {

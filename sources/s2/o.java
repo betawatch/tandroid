@@ -5,7 +5,7 @@ import j7.l5;
 import java.nio.ByteBuffer;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class o extends com.googlecode.mp4parser.c {
     public static final /* synthetic */ f0 n;
@@ -61,7 +61,7 @@ public final class o extends com.googlecode.mp4parser.c {
     }
 
     public final String toString() {
-        sf.e b10 = de.a.b(v, this, this);
+        sf.f b10 = de.a.b(v, this, this);
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(b10);
         StringBuilder sb = new StringBuilder("SampleSizeBox[sampleSize=");

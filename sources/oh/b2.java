@@ -30,22 +30,22 @@ import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.ng0;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.ru;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.cu0;
-import org.telegram.ui.hq0;
-import org.telegram.ui.ib1;
-import org.telegram.ui.lq0;
-import org.telegram.ui.lu0;
+import org.telegram.ui.hu0;
 import org.telegram.ui.mq0;
 import org.telegram.ui.ob0;
+import org.telegram.ui.ob1;
 import org.telegram.ui.og0;
-import org.telegram.ui.os0;
-import org.telegram.ui.pt0;
+import org.telegram.ui.qq0;
+import org.telegram.ui.qu0;
+import org.telegram.ui.rq0;
+import org.telegram.ui.ts0;
+import org.telegram.ui.ut0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -116,10 +116,10 @@ public final /* synthetic */ class b2 implements View.OnClickListener {
                 }
                 break;
             case 3:
-                ib1 ib1Var = (ib1) this.c;
+                ob1 ob1Var = (ob1) this.c;
                 boolean z13 = this.b;
                 for (int i10 = 0; i10 < 2; i10++) {
-                    org.telegram.ui.Cells.x0 x0Var = ((org.telegram.ui.Cells.x0[]) ib1Var.b)[i10];
+                    org.telegram.ui.Cells.x0 x0Var = ((org.telegram.ui.Cells.x0[]) ob1Var.b)[i10];
                     x0Var.a.a(x0Var == view, true);
                 }
                 SharedConfig.setUseThreeLinesLayout(z13);
@@ -151,22 +151,22 @@ public final /* synthetic */ class b2 implements View.OnClickListener {
                 } else {
                     HashMap hashMap = new HashMap();
                     ArrayList arrayList = new ArrayList();
-                    mq0 mq0Var = new mq0(hashMap, arrayList, 0, true, (xn) p2Var);
+                    rq0 rq0Var = new rq0(hashMap, arrayList, 0, true, (xn) p2Var);
                     jh jhVar = new jh(miVar, hashMap, arrayList);
-                    hq0 hq0Var = mq0Var.a;
-                    hq0Var.p0 = jhVar;
-                    hq0 hq0Var2 = mq0Var.b;
-                    hq0Var2.p0 = jhVar;
-                    hq0Var.q0 = new lq0(mq0Var, 0);
-                    hq0Var2.q0 = new lq0(mq0Var, 1);
+                    mq0 mq0Var = rq0Var.a;
+                    mq0Var.p0 = jhVar;
+                    mq0 mq0Var2 = rq0Var.b;
+                    mq0Var2.p0 = jhVar;
+                    mq0Var.q0 = new qq0(rq0Var, 0);
+                    mq0Var2.q0 = new qq0(rq0Var, 1);
                     int i11 = miVar.P1;
                     boolean z16 = miVar.Q1;
-                    hq0Var.f0(i11, z16);
-                    mq0Var.b.f0(i11, z16);
+                    mq0Var.f0(i11, z16);
+                    rq0Var.b.f0(i11, z16);
                     if (z15) {
-                        p2Var.showAsSheet(mq0Var);
+                        p2Var.showAsSheet(rq0Var);
                     } else {
-                        p2Var.presentFragment(mq0Var);
+                        p2Var.presentFragment(rq0Var);
                     }
                     miVar.dismiss();
                     break;
@@ -195,21 +195,21 @@ public final /* synthetic */ class b2 implements View.OnClickListener {
                             if (PhotoViewer.W8 != null) {
                                 PhotoViewer.W8.G0(false, true);
                             }
-                            pt0 pt0Var = photoViewer.c0;
-                            if (pt0Var != null && pt0Var.f != null) {
+                            ut0 ut0Var = photoViewer.c0;
+                            if (ut0Var != null && ut0Var.f != null) {
                                 if (ApplicationLoader.mainInterfacePaused) {
                                     try {
-                                        pt0Var.getContext().startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) BringAppForegroundService.class));
+                                        ut0Var.getContext().startService(new Intent(ApplicationLoader.applicationContext, (Class<?>) BringAppForegroundService.class));
                                     } catch (Throwable th2) {
                                         FileLog.e(th2);
                                     }
                                 }
-                                pt0Var.h.setVisibility(0);
-                                ViewGroup viewGroup = (ViewGroup) pt0Var.f.getParent();
+                                ut0Var.h.setVisibility(0);
+                                ViewGroup viewGroup = (ViewGroup) ut0Var.f.getParent();
                                 if (viewGroup != null) {
-                                    viewGroup.removeView(pt0Var.f);
+                                    viewGroup.removeView(ut0Var.f);
                                 }
-                                pt0Var.addView(pt0Var.f, 0, k7.c6.e(-1, -1, 51));
+                                ut0Var.addView(ut0Var.f, 0, k7.c6.e(-1, -1, 51));
                                 ng0.j(false);
                             }
                             PhotoViewer.W8 = PhotoViewer.X8;
@@ -241,7 +241,7 @@ public final /* synthetic */ class b2 implements View.OnClickListener {
                                 photoViewer.j6 = 0.0f;
                             } else if (view2 != null) {
                                 photoViewer.y3 = true;
-                                tk0 o10 = ng0.o(photoViewer.v2.getAspectRatio(), false);
+                                sk0 o10 = ng0.o(photoViewer.v2.getAspectRatio(), false);
                                 float f10 = o10.c / photoViewer.u3.getLayoutParams().width;
                                 photoViewer.u3.setScaleX(f10);
                                 photoViewer.u3.setScaleY(f10);
@@ -251,22 +251,22 @@ public final /* synthetic */ class b2 implements View.OnClickListener {
                                 view2.setScaleY(f10);
                                 view2.setTranslationX(o10.a - photoViewer.v2.getX());
                                 view2.setTranslationY(o10.b - photoViewer.v2.getY());
-                                cu0 cu0Var = photoViewer.B2;
-                                if (cu0Var != null) {
-                                    cu0Var.setScaleX(f10);
+                                hu0 hu0Var = photoViewer.B2;
+                                if (hu0Var != null) {
+                                    hu0Var.setScaleX(f10);
                                     photoViewer.B2.setScaleY(f10);
                                     photoViewer.B2.setTranslationX(view2.getTranslationX());
                                     photoViewer.B2.setTranslationY(view2.getTranslationY());
                                 }
                                 photoViewer.T = 0.0f;
-                                os0 os0Var = new os0(photoViewer, f10, 1);
-                                view2.setOutlineProvider(os0Var);
+                                ts0 ts0Var = new ts0(photoViewer, f10, 1);
+                                view2.setOutlineProvider(ts0Var);
                                 view2.setClipToOutline(true);
-                                photoViewer.u3.setOutlineProvider(os0Var);
+                                photoViewer.u3.setOutlineProvider(ts0Var);
                                 photoViewer.u3.setClipToOutline(true);
-                                cu0 cu0Var2 = photoViewer.B2;
-                                if (cu0Var2 != null) {
-                                    cu0Var2.setOutlineProvider(os0Var);
+                                hu0 hu0Var2 = photoViewer.B2;
+                                if (hu0Var2 != null) {
+                                    hu0Var2.setOutlineProvider(ts0Var);
                                     photoViewer.B2.setClipToOutline(true);
                                 }
                             } else {
@@ -280,9 +280,9 @@ public final /* synthetic */ class b2 implements View.OnClickListener {
                                 if (activity instanceof LaunchActivity) {
                                     ((LaunchActivity) activity).X0.add(photoViewer.p1);
                                 }
-                                lu0 lu0Var = photoViewer.a5;
-                                if (lu0Var != null && !lu0Var.s) {
-                                    lu0Var.a.setVisible(false, false);
+                                qu0 qu0Var = photoViewer.a5;
+                                if (qu0Var != null && !qu0Var.s) {
+                                    qu0Var.a.setVisible(false, false);
                                 }
                             } catch (Exception e6) {
                                 FileLog.e(e6);

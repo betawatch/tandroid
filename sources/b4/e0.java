@@ -58,11 +58,11 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.xmlpull.v1.XmlPullParserException;
 import s8.n0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class e0 implements r3.e {
     public final /* synthetic */ int a;
@@ -1073,9 +1073,9 @@ public final class e0 implements r3.e {
         this.b = i10;
     }
 
-    public e0(tl0 tl0Var) {
+    public e0(sl0 sl0Var) {
         this.a = 20;
-        this.d = tl0Var;
+        this.d = sl0Var;
     }
 
     public e0(ByteBuffer byteBuffer, int i10, RectF rectF) {

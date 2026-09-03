@@ -43,7 +43,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class v9 extends org.telegram.ui.ActionBar.p2 {
     public final PointF[] B;
@@ -242,7 +242,7 @@ public class v9 extends org.telegram.ui.ActionBar.p2 {
                                     if (recognize.gender != 0) {
                                         this.J = true;
                                         CameraController.getInstance().stopPreview(this.c.getCameraSession());
-                                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(24, this, recognize));
+                                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(23, this, recognize));
                                         return;
                                     }
                                 }
@@ -270,7 +270,7 @@ public class v9 extends org.telegram.ui.ActionBar.p2 {
                             v9Var.K = SystemClock.elapsedRealtime();
                             AndroidUtilities.runOnUIThread(new m9(this, 8));
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(25, this, g02));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(24, this, g02));
                     } else if (z4) {
                         int i11 = v9Var.L + 1;
                         v9Var.L = i11;
@@ -288,7 +288,7 @@ public class v9 extends org.telegram.ui.ActionBar.p2 {
                         if (cameraView != null && cameraView.getCameraSession() != null && i10 != 3) {
                             CameraController.getInstance().stopPreview(v9Var.c.getCameraSession());
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(23, this, v9Var.N));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(22, this, v9Var.N));
                         if (i10 == 3) {
                             AndroidUtilities.runOnUIThread(new m9(this, 1));
                         }
@@ -425,8 +425,8 @@ public class v9 extends org.telegram.ui.ActionBar.p2 {
                     this.a.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
                     spannableStringBuilder.replace(indexOf2, indexOf2 + 1, (CharSequence) " ");
                     spannableStringBuilder.replace(indexOf, i14, (CharSequence) " ");
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.n51(strArr[i12], 0), i14, indexOf2, 33);
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.g51(AndroidUtilities.bold()), i14, indexOf2, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.l51(strArr[i12], 0), i14, indexOf2, 33);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.e51(AndroidUtilities.bold()), i14, indexOf2, 33);
                     i12++;
                 }
                 this.a.setLinkTextColor(-1);

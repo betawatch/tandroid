@@ -6,7 +6,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ay {
     public final /* synthetic */ py a;
@@ -18,20 +18,20 @@ public final class ay {
     public final long a() {
         py pyVar = this.a;
         kx kxVar = pyVar.C3;
-        if (kxVar == null || !(kxVar.getFragment() instanceof mf1)) {
+        if (kxVar == null || !(kxVar.getFragment() instanceof sf1)) {
             return 0L;
         }
-        return -((mf1) pyVar.C3.getFragment()).a;
+        return -((sf1) pyVar.C3.getFragment()).a;
     }
 
     public final void b() {
         py pyVar = this.a;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(pyVar.getParentActivity());
-        org.telegram.ui.Components.xn0 xn0Var = pyVar.z0.V;
-        if (xn0Var.K && xn0Var.P()) {
+        org.telegram.ui.Components.wn0 wn0Var = pyVar.z0.V;
+        if (wn0Var.K && wn0Var.P()) {
             alertDialog$Builder.a.O = LocaleController.getString(R.string.ClearSearchAlertPartialTitle);
-            org.telegram.ui.Components.xn0 xn0Var2 = pyVar.z0.V;
-            ArrayList arrayList = xn0Var2.K ? xn0Var2.s0 : xn0Var2.r0;
+            org.telegram.ui.Components.wn0 wn0Var2 = pyVar.z0.V;
+            ArrayList arrayList = wn0Var2.K ? wn0Var2.s0 : wn0Var2.r0;
             alertDialog$Builder.a.Q = LocaleController.formatPluralString("ClearSearchAlertPartial", arrayList != null ? arrayList.size() : 0, new Object[0]);
             final int i10 = 0;
             alertDialog$Builder.k(LocaleController.getString(R.string.Clear), new org.telegram.ui.ActionBar.c2(this) { // from class: org.telegram.ui.zx
@@ -50,10 +50,10 @@ public final class ay {
                         default:
                             py pyVar2 = this.b.a;
                             if (!pyVar2.z0.V.P()) {
-                                org.telegram.ui.Components.xn0 xn0Var3 = pyVar2.z0.V;
-                                xn0Var3.g0.c();
-                                xn0Var3.G.clear();
-                                xn0Var3.l();
+                                org.telegram.ui.Components.wn0 wn0Var3 = pyVar2.z0.V;
+                                wn0Var3.g0.c();
+                                wn0Var3.G.clear();
+                                wn0Var3.l();
                                 break;
                             } else {
                                 pyVar2.z0.V.E();
@@ -82,10 +82,10 @@ public final class ay {
                         default:
                             py pyVar2 = this.b.a;
                             if (!pyVar2.z0.V.P()) {
-                                org.telegram.ui.Components.xn0 xn0Var3 = pyVar2.z0.V;
-                                xn0Var3.g0.c();
-                                xn0Var3.G.clear();
-                                xn0Var3.l();
+                                org.telegram.ui.Components.wn0 wn0Var3 = pyVar2.z0.V;
+                                wn0Var3.g0.c();
+                                wn0Var3.G.clear();
+                                wn0Var3.l();
                                 break;
                             } else {
                                 pyVar2.z0.V.E();
@@ -107,9 +107,9 @@ public final class ay {
     public final void c() {
         yx yxVar = this.a.z0;
         if (yxVar != null) {
-            org.telegram.ui.Components.al0 al0Var = yxVar.a0;
+            org.telegram.ui.Components.zk0 zk0Var = yxVar.a0;
             int i10 = yxVar.P0;
-            al0Var.b(i10 > 0 ? i10 + 1 : 0);
+            zk0Var.b(i10 > 0 ? i10 + 1 : 0);
             yxVar.P0 = yxVar.V.h();
         }
     }

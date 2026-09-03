@@ -1,32 +1,29 @@
 package qh;
 
-import android.content.DialogInterface;
-
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class s8 implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class s8 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ca b;
+    public final /* synthetic */ ba b;
 
-    public /* synthetic */ s8(ca caVar, int i10) {
+    public /* synthetic */ s8(ba baVar, int i10) {
         this.a = i10;
-        this.b = caVar;
+        this.b = baVar;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ca caVar = this.b;
-                caVar.U0.x(3, false);
-                caVar.n0 = null;
+                ba baVar = this.b;
+                baVar.getClass();
+                baVar.g(1.0f, true, new f8(baVar, 6));
+                baVar.Y0.b(true, true);
                 break;
             default:
-                q9 q9Var = this.b.U0;
-                if (q9Var != null) {
-                    q9Var.x(4, false);
-                    break;
-                }
+                ba baVar2 = this.b;
+                baVar2.f(false);
+                baVar2.j2 = null;
                 break;
         }
     }

@@ -28,10 +28,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Cells.v9;
 import org.telegram.ui.Cells.w9;
 import org.telegram.ui.Components.d90;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class z7 extends View implements v9 {
     public int B;
@@ -93,9 +93,9 @@ public final class z7 extends View implements v9 {
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), textPaint, i10).setBreakStrategy(0).setHyphenationFrequency(0);
         if (LocaleController.isRTL) {
-            alignment = lw0.a();
+            alignment = kw0.a();
         } else {
-            Layout.Alignment[] alignmentArr = lw0.a;
+            Layout.Alignment[] alignmentArr = kw0.a;
             alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
         }
         return hyphenationFrequency.setAlignment(alignment).build();
@@ -708,7 +708,7 @@ public final class z7 extends View implements v9 {
      */
     /* JADX WARN: Code restructure failed: missing block: B:75:0x00f4, code lost:
     
-        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.m51.class);
+        r9 = (android.text.style.CharacterStyle[]) r5.getSpans(r11, r11, org.telegram.ui.Components.k51.class);
      */
     /* JADX WARN: Code restructure failed: missing block: B:76:0x0198, code lost:
     

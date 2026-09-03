@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class gg implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -46,21 +46,21 @@ public final /* synthetic */ class gg implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             case 2:
-                ((org.telegram.ui.Components.sn) this.c).B.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ((org.telegram.ui.Components.rn) this.c).B.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 3:
-                ((hv0) this.c).O.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
+                ((mv0) this.c).O.setTranslationY(AndroidUtilities.lerp(this.b, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             default:
-                r11 r11Var = (r11) this.c;
-                r11Var.getClass();
+                v11 v11Var = (v11) this.c;
+                v11Var.getClass();
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float lerp = AndroidUtilities.lerp(0.0f, this.b, floatValue3);
-                r11Var.a.setTranslationX(lerp);
-                r11Var.b.setTranslationX(lerp);
-                ImageView imageView = r11Var.c;
+                v11Var.a.setTranslationX(lerp);
+                v11Var.b.setTranslationX(lerp);
+                ImageView imageView = v11Var.c;
                 imageView.setTranslationX(lerp);
-                org.telegram.ui.Components.np npVar = r11Var.f;
+                org.telegram.ui.Components.np npVar = v11Var.f;
                 npVar.setTranslationX((LocaleController.isRTL ? AndroidUtilities.dp(32.0f) : -AndroidUtilities.dp(32.0f)) + lerp);
                 float f10 = (floatValue3 * 0.5f) + 0.5f;
                 npVar.setScaleX(f10);

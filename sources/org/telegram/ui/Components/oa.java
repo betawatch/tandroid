@@ -9,9 +9,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class oa extends qv0 {
+public final class oa extends pv0 {
     public final /* synthetic */ boolean t0;
     public final /* synthetic */ boolean u0;
     public final /* synthetic */ sa v0;
@@ -24,7 +24,7 @@ public final class oa extends qv0 {
         this.u0 = z10;
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         sa saVar = this.v0;
         saVar.H(canvas, this);
@@ -57,7 +57,7 @@ public final class oa extends qv0 {
     /* JADX WARN: Removed duplicated region for block: B:31:0x0095  */
     /* JADX WARN: Removed duplicated region for block: B:38:0x00c1  */
     /* JADX WARN: Removed duplicated region for block: B:49:0x00b1  */
-    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

@@ -1,26 +1,29 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class xr0 extends org.telegram.ui.Components.yx0 {
-    public final /* synthetic */ yr0 s0;
+public final /* synthetic */ class xr0 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ds0 b;
+    public final /* synthetic */ boolean c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xr0(yr0 yr0Var, Activity activity, MessageObject messageObject, TLObject tLObject, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(activity, messageObject, tLObject, g6Var);
-        this.s0 = yr0Var;
+    public /* synthetic */ xr0(ds0 ds0Var, boolean z4, int i10) {
+        this.a = i10;
+        this.b = ds0Var;
+        this.c = z4;
     }
 
-    @Override // org.telegram.ui.Components.yx0, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
-    public final void dismiss() {
-        super.dismiss();
-        PhotoViewer photoViewer = this.s0.b;
-        if (photoViewer.R3 == this) {
-            photoViewer.R3 = null;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.Components.qc.F(this.b.b.b0, this.c).j();
+                break;
+            default:
+                org.telegram.ui.Components.qc.F(this.b.b.b0, this.c).j();
+                break;
         }
     }
 }

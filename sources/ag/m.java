@@ -13,19 +13,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.z1;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.h81;
 import org.telegram.ui.Components.i81;
 import org.telegram.ui.Components.j81;
 import org.telegram.ui.Components.k81;
-import org.telegram.ui.Components.l81;
-import org.telegram.ui.Components.lo0;
+import org.telegram.ui.Components.ko0;
 import org.telegram.ui.Components.m6;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class m extends sl0 {
+public final class m extends rl0 {
     public final /* synthetic */ int c = 0;
     public final Context d;
     public final /* synthetic */ FrameLayout e;
@@ -35,7 +35,7 @@ public final class m extends sl0 {
         this.d = launchActivity;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(m1 m1Var) {
         switch (this.c) {
             case 0:
@@ -52,7 +52,7 @@ public final class m extends sl0 {
             case 0:
                 return ((o) this.e).B.size();
             default:
-                return ((l81) this.e).h.size();
+                return ((k81) this.e).h.size();
         }
     }
 
@@ -60,7 +60,7 @@ public final class m extends sl0 {
     public long i(int i10) {
         switch (this.c) {
             case 1:
-                return ((i81) ((l81) this.e).h.get(i10)).a;
+                return ((h81) ((k81) this.e).h.get(i10)).a;
             default:
                 return super.i(i10);
         }
@@ -78,7 +78,7 @@ public final class m extends sl0 {
 
     @Override // f2.p0
     public final void v(m1 m1Var, int i10) {
-        k81 k81Var;
+        j81 j81Var;
         switch (this.c) {
             case 0:
                 View view = m1Var.a;
@@ -109,14 +109,14 @@ public final class m extends sl0 {
                 }
                 break;
             default:
-                j81 j81Var = (j81) m1Var.a;
-                l81 l81Var = (l81) this.e;
-                i81 i81Var = (i81) l81Var.h.get(i10);
-                j81Var.a = i81Var;
-                j81Var.setContentDescription(i81Var.b);
-                j81Var.setAlpha(1.0f);
-                j81Var.requestLayout();
-                j81Var.setReordering(l81Var.j0 && (k81Var = l81Var.y) != null && ((h4) k81Var).Q(i10));
+                i81 i81Var = (i81) m1Var.a;
+                k81 k81Var = (k81) this.e;
+                h81 h81Var = (h81) k81Var.h.get(i10);
+                i81Var.a = h81Var;
+                i81Var.setContentDescription(h81Var.b);
+                i81Var.setAlpha(1.0f);
+                i81Var.requestLayout();
+                i81Var.setReordering(k81Var.j0 && (j81Var = k81Var.y) != null && ((h4) j81Var).Q(i10));
                 break;
         }
     }
@@ -138,23 +138,23 @@ public final class m extends sl0 {
                     TextPaint textPaint = new TextPaint(1);
                     nVar.h = textPaint;
                     textPaint.setTextSize(AndroidUtilities.dp(16.0f));
-                    lo0 lo0Var = new lo0(context);
-                    nVar.a = lo0Var;
-                    lo0Var.setReportChanges(true);
-                    lo0Var.setDelegate(new ja.c(nVar));
-                    lo0Var.setImportantForAccessibility(2);
-                    nVar.addView(lo0Var, c6.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
+                    ko0 ko0Var = new ko0(context);
+                    nVar.a = ko0Var;
+                    ko0Var.setReportChanges(true);
+                    ko0Var.setDelegate(new ja.c(nVar));
+                    ko0Var.setImportantForAccessibility(2);
+                    nVar.addView(ko0Var, c6.d(-1, 38.0f, 83, 5.0f, 29.0f, 47.0f, 0.0f));
                     frameLayout = nVar;
                 }
                 frameLayout.setLayoutParams(new x0(-1, -2));
-                return new fl0(frameLayout);
+                return new el0(frameLayout);
             default:
-                return new fl0(new j81((l81) this.e, this.d));
+                return new el0(new i81((k81) this.e, this.d));
         }
     }
 
-    public m(l81 l81Var, Context context) {
-        this.e = l81Var;
+    public m(k81 k81Var, Context context) {
+        this.e = k81Var;
         this.d = context;
     }
 }

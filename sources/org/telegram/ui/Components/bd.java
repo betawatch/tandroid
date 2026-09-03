@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class bd extends qh.k {
     public boolean P0;
@@ -34,10 +34,10 @@ public abstract class bd extends qh.k {
     public q70 U0;
     public final j0 V0;
     public final ImageView W0;
-    public qh.f3 X0;
+    public qh.e3 X0;
     public int Y0;
     public final int[] Z0;
-    public final qh.f3 a1;
+    public final qh.e3 a1;
     public final Runnable b1;
     public final RectF c1;
     public final Drawable d1;
@@ -54,8 +54,8 @@ public abstract class bd extends qh.k {
     public Utilities.Callback o1;
     public boolean p1;
 
-    public bd(Context context, FrameLayout frameLayout, qv0 qv0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.g6 g6Var, ba baVar, Runnable runnable) {
-        super(context, frameLayout, qv0Var, frameLayout2, g6Var, baVar);
+    public bd(Context context, FrameLayout frameLayout, pv0 pv0Var, FrameLayout frameLayout2, org.telegram.ui.ActionBar.g6 g6Var, ba baVar, Runnable runnable) {
+        super(context, frameLayout, pv0Var, frameLayout2, g6Var, baVar);
         this.Y0 = 0;
         this.Z0 = new int[]{ConnectionsManager.DEFAULT_DATACENTER_ID, 3, 10, 30, 0};
         this.c1 = new RectF();
@@ -71,7 +71,7 @@ public abstract class bd extends qh.k {
         j6Var.t(AndroidUtilities.dp(14.0f));
         j6Var.G = AndroidUtilities.displaySize.x;
         j6Var.r(-1);
-        boolean z4 = this instanceof org.telegram.ui.is0;
+        boolean z4 = this instanceof org.telegram.ui.ns0;
         if (z4) {
             j6Var.q(LocaleController.getString(R.string.MoveCaptionDown), true, true);
             this.d1 = context.getResources().getDrawable(R.drawable.menu_link_below);
@@ -97,13 +97,13 @@ public abstract class bd extends qh.k {
         imageView2.setScaleType(scaleType);
         E(false, false);
         addView(imageView2, k7.c6.d(44, 44.0f, (z4 ? 48 : 80) | 5, 0.0f, z4 ? 6.0f : 0.0f, 10.0f, z4 ? 0.0f : 6.0f));
-        qh.f3 f3Var = new qh.f3(context, z4 ? 1 : 3);
-        this.a1 = f3Var;
-        f3Var.r(12.0f);
-        f3Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(z4 ? 8.0f : 0.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(z4 ? 0.0f : 8.0f));
-        f3Var.m(1.0f, -21.0f);
-        f3Var.q(true);
-        addView(f3Var, k7.c6.e(-1, 80, (z4 ? 48 : 80) | 5));
+        qh.e3 e3Var = new qh.e3(context, z4 ? 1 : 3);
+        this.a1 = e3Var;
+        e3Var.q(12.0f);
+        e3Var.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(z4 ? 8.0f : 0.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(z4 ? 0.0f : 8.0f));
+        e3Var.l(1.0f, -21.0f);
+        e3Var.p(true);
+        addView(e3Var, k7.c6.e(-1, 80, (z4 ? 48 : 80) | 5));
         ImageView imageView3 = new ImageView(context);
         this.W0 = imageView3;
         j0 j0Var = new j0(context);
@@ -191,9 +191,9 @@ public abstract class bd extends qh.k {
         imageView.setVisibility(0);
         imageView.animate().alpha(z4 ? 1.0f : 0.0f).scaleX(z4 ? 1.0f : 0.6f).scaleY(z4 ? 1.0f : 0.6f).setInterpolator(pr.h).setDuration(420L).withEndAction(new ad(this, z4, 0)).start();
         if (!z4) {
-            qh.f3 f3Var = this.X0;
-            if (f3Var != null) {
-                f3Var.e(true);
+            qh.e3 e3Var = this.X0;
+            if (e3Var != null) {
+                e3Var.e(true);
                 this.X0 = null;
                 return;
             }
@@ -202,22 +202,22 @@ public abstract class bd extends qh.k {
         j0 j0Var = this.V0;
         Objects.requireNonNull(j0Var);
         imageView.postDelayed(new i0(j0Var, 1), 220L);
-        qh.f3 f3Var2 = this.X0;
-        if (f3Var2 != null) {
-            f3Var2.e(true);
+        qh.e3 e3Var2 = this.X0;
+        if (e3Var2 != null) {
+            e3Var2.e(true);
             this.X0 = null;
         }
         if (MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) < 3) {
-            qh.f3 f3Var3 = new qh.f3(getContext(), 3);
-            this.X0 = f3Var3;
-            f3Var3.q(true);
-            this.X0.t(LocaleController.getString(R.string.AIEditorHint));
-            this.X0.n(1.0f, ((-imageView.getWidth()) / 2.0f) + AndroidUtilities.dp(4.0f));
+            qh.e3 e3Var3 = new qh.e3(getContext(), 3);
+            this.X0 = e3Var3;
+            e3Var3.p(true);
+            this.X0.s(LocaleController.getString(R.string.AIEditorHint));
+            this.X0.m(1.0f, ((-imageView.getWidth()) / 2.0f) + AndroidUtilities.dp(4.0f));
             addView(this.X0, k7.c6.d(-1, 200.0f, 48, 0.0f, -196.0f, 0.0f, 0.0f));
-            qh.f3 f3Var4 = this.X0;
-            f3Var4.i0 = new org.telegram.ui.mp(12, this, f3Var3);
-            f3Var4.d = 4000L;
-            f3Var4.v();
+            qh.e3 e3Var4 = this.X0;
+            e3Var4.i0 = new org.telegram.ui.mp(11, this, e3Var3);
+            e3Var4.d = 4000L;
+            e3Var4.u();
             MessagesController.getGlobalMainSettings().edit().putInt("aihintshown", MessagesController.getGlobalMainSettings().getInt("aihintshown", 0) + 1).apply();
         }
     }
@@ -261,9 +261,9 @@ public abstract class bd extends qh.k {
             this.S0.setVisibility(this.R0 ? 0 : 8);
             this.Q0.setVisibility(this.P0 ? 0 : 8);
         }
-        qh.f3 f3Var = this.a1;
-        if (f3Var != null) {
-            f3Var.e(true);
+        qh.e3 e3Var = this.a1;
+        if (e3Var != null) {
+            e3Var.e(true);
         }
     }
 
@@ -275,7 +275,7 @@ public abstract class bd extends qh.k {
         ImageView imageView = this.W0;
         if (imageView != null) {
             imageView.setTranslationX(-AndroidUtilities.dp((1.0f - this.l0) * 4.0f));
-            boolean z4 = this instanceof org.telegram.ui.is0;
+            boolean z4 = this instanceof org.telegram.ui.ns0;
             imageView.setTranslationY((Utilities.clamp01((-this.h1.d(this.f.getEditText().getLineCount(), false)) + 4.0f) * AndroidUtilities.dp(3.0f) * (z4 ? 1 : -1)) + (z4 ? rectF.bottom - AndroidUtilities.dp(44.0f) : rectF.top));
         }
         float f11 = this.i1.f(this.k1, true ^ G());
@@ -283,7 +283,7 @@ public abstract class bd extends qh.k {
         if (f11 > 0.0f) {
             float a2 = this.f1.a(0.03f);
             int dp = AndroidUtilities.dp((1.0f - this.l0) * 4.0f);
-            boolean z10 = this instanceof org.telegram.ui.is0;
+            boolean z10 = this instanceof org.telegram.ui.ns0;
             j6 j6Var = this.e1;
             RectF rectF2 = this.c1;
             if (z10) {
@@ -345,7 +345,7 @@ public abstract class bd extends qh.k {
         } else if ((motionEvent.getAction() == 1 || motionEvent.getAction() == 3) && rcVar.h) {
             if (motionEvent.getAction() == 1) {
                 A();
-                this.e1.q(LocaleController.getString(this instanceof org.telegram.ui.is0 ? R.string.MoveCaptionDown : R.string.MoveCaptionUp), true, true);
+                this.e1.q(LocaleController.getString(this instanceof org.telegram.ui.ns0 ? R.string.MoveCaptionDown : R.string.MoveCaptionUp), true, true);
             }
             rcVar.c(false);
             return true;
@@ -393,7 +393,7 @@ public abstract class bd extends qh.k {
 
     @Override // qh.k
     public final void r(int i10) {
-        this.a1.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), i10)) - AndroidUtilities.dp(10.0f)) * (this instanceof org.telegram.ui.is0 ? -1.0f : 1.0f));
+        this.a1.setTranslationY(((-Math.min(AndroidUtilities.dp(34.0f), i10)) - AndroidUtilities.dp(10.0f)) * (this instanceof org.telegram.ui.ns0 ? -1.0f : 1.0f));
     }
 
     @Override // qh.k
@@ -427,9 +427,9 @@ public abstract class bd extends qh.k {
     public void setTimer(int i10) {
         this.Y0 = i10;
         this.T0.d(i10 == Integer.MAX_VALUE ? 1 : Math.max(1, i10), this.Y0 > 0, true);
-        qh.f3 f3Var = this.a1;
-        if (f3Var != null) {
-            f3Var.e(true);
+        qh.e3 e3Var = this.a1;
+        if (e3Var != null) {
+            e3Var.e(true);
         }
     }
 

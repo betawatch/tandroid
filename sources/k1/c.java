@@ -27,7 +27,7 @@ import la.n0;
 import la.o0;
 import la.p0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class c extends wc.i implements dd.p {
     public final /* synthetic */ int a;
@@ -59,7 +59,7 @@ public final class c extends wc.i implements dd.p {
             case 4:
                 return new c((la.z) this.c, (String) this.d, cVar, 4);
             case 5:
-                return new c((sf.e) this.c, (ArrayList) this.d, cVar, 5);
+                return new c((sf.f) this.c, (ArrayList) this.d, cVar, 5);
             default:
                 return new c((na.k) this.d, cVar, 6);
         }
@@ -384,11 +384,11 @@ public final class c extends wc.i implements dd.p {
                             return iVar2;
                         }
                         uc.h hVar7 = (uc.h) obj4;
-                        sf.e eVar3 = new sf.e(hVar7);
+                        sf.f fVar = new sf.f(hVar7);
                         Object b13 = w8.g.c().b(n0.class);
                         kotlin.jvm.internal.j.d(b13, "Firebase.app[SessionLife…erviceBinder::class.java]");
                         Messenger messenger = new Messenger(new androidx.mediarouter.app.d(hVar7));
-                        jf.a serviceConnection = (jf.a) eVar3.e;
+                        jf.a serviceConnection = (jf.a) fVar.e;
                         kotlin.jvm.internal.j.e(serviceConnection, "serviceConnection");
                         w8.g gVar = ((o0) ((n0) b13)).a;
                         gVar.a();
@@ -398,15 +398,15 @@ public final class c extends wc.i implements dd.p {
                         intent.setAction(String.valueOf(Process.myPid()));
                         intent.putExtra("ClientCallbackMessenger", messenger);
                         applicationContext.bindService(intent, serviceConnection, 65);
-                        p0.c = eVar3;
+                        p0.c = fVar;
                         if (p0.b) {
                             p0.b = false;
-                            eVar3.F(1);
+                            fVar.F(1);
                         }
                         w8.g gVar2 = lVar.a;
-                        k3.e eVar4 = new k3.e(16);
+                        k3.e eVar3 = new k3.e(16);
                         gVar2.a();
-                        gVar2.j.add(eVar4);
+                        gVar2.j.add(eVar3);
                         return iVar2;
                     }
                     q7.b(obj);
@@ -444,7 +444,7 @@ public final class c extends wc.i implements dd.p {
                 return a10.d(new n1.c(qVar, null, 1), this) == aVar8 ? aVar8 : iVar2;
             case 5:
                 ArrayList arrayList = (ArrayList) obj4;
-                sf.e eVar5 = (sf.e) this.c;
+                sf.f fVar2 = (sf.f) this.c;
                 vc.a aVar9 = vc.a.a;
                 int i19 = this.b;
                 if (i19 == 0) {
@@ -472,7 +472,7 @@ public final class c extends wc.i implements dd.p {
                     Iterator it2 = values2.iterator();
                     while (it2.hasNext()) {
                         if (((i9.k) it2.next()).a.a()) {
-                            ArrayList f10 = tc.g.f(new ArrayList(new tc.d(new Message[]{sf.e.l(eVar5, arrayList, 2), sf.e.l(eVar5, arrayList, 1)}, true)));
+                            ArrayList f10 = tc.g.f(new ArrayList(new tc.d(new Message[]{sf.f.l(fVar2, arrayList, 2), sf.f.l(fVar2, arrayList, 1)}, true)));
                             l0 l0Var = new l0();
                             if (f10.size() <= 1) {
                                 asList = tc.g.m(f10);
@@ -486,19 +486,19 @@ public final class c extends wc.i implements dd.p {
                                 kotlin.jvm.internal.j.d(asList, "asList(...)");
                             }
                             for (Message message : asList) {
-                                if (((Messenger) eVar5.c) != null) {
+                                if (((Messenger) fVar2.c) != null) {
                                     try {
                                         Log.d("SessionLifecycleClient", "Sending lifecycle " + message.what + " to service");
-                                        Messenger messenger2 = (Messenger) eVar5.c;
+                                        Messenger messenger2 = (Messenger) fVar2.c;
                                         if (messenger2 != null) {
                                             messenger2.send(message);
                                         }
                                     } catch (RemoteException e12) {
                                         Log.w("SessionLifecycleClient", "Unable to deliver message: " + message.what, e12);
-                                        eVar5.E(message);
+                                        fVar2.E(message);
                                     }
                                 } else {
-                                    eVar5.E(message);
+                                    fVar2.E(message);
                                 }
                             }
                             return iVar2;

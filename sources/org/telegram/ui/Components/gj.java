@@ -4,15 +4,15 @@ import android.graphics.Rect;
 import android.view.View;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class gj extends rz {
     public final /* synthetic */ int U;
     public final /* synthetic */ ei V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ gj(ei eiVar, int i10, tl0 tl0Var, int i11) {
-        super(i10, 0, tl0Var);
+    public /* synthetic */ gj(ei eiVar, int i10, sl0 sl0Var, int i11) {
+        super(i10, 0, sl0Var);
         this.U = i11;
         this.V = eiVar;
     }
@@ -54,9 +54,9 @@ public final class gj extends rz {
                 w0(tkVar);
                 break;
             case 3:
-                hn hnVar = new hn(this, recyclerView.getContext());
-                hnVar.a = i10;
-                w0(hnVar);
+                gn gnVar = new gn(this, recyclerView.getContext());
+                gnVar.a = i10;
+                w0(gnVar);
                 break;
             default:
                 vf.y yVar = new vf.y(this, recyclerView.getContext());

@@ -12,20 +12,20 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ml0 extends org.telegram.ui.Components.i51 {
+public final class ml0 extends org.telegram.ui.Components.g51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        org.telegram.ui.Components.i51.setup(new ml0());
+        org.telegram.ui.Components.g51.setup(new ml0());
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final void bindView(View view, org.telegram.ui.Components.j51 j51Var, boolean z4, org.telegram.ui.Components.x51 x51Var, org.telegram.ui.Components.i61 i61Var) {
+    @Override // org.telegram.ui.Components.g51
+    public final void bindView(View view, org.telegram.ui.Components.h51 h51Var, boolean z4, org.telegram.ui.Components.w51 w51Var, org.telegram.ui.Components.h61 h61Var) {
         nl0 nl0Var = (nl0) view;
-        TL_account.Passkey passkey = (TL_account.Passkey) j51Var.G;
-        View.OnClickListener onClickListener = j51Var.D;
+        TL_account.Passkey passkey = (TL_account.Passkey) h51Var.G;
+        View.OnClickListener onClickListener = h51Var.D;
         TextView textView = nl0Var.f;
         TextView textView2 = nl0Var.e;
         org.telegram.ui.ActionBar.g6 g6Var = nl0Var.b;
@@ -65,8 +65,8 @@ public final class ml0 extends org.telegram.ui.Components.i51 {
         nl0Var.setWillNotDraw(!z4);
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final View createView(Context context, org.telegram.ui.Components.tl0 tl0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
+    @Override // org.telegram.ui.Components.g51
+    public final View createView(Context context, org.telegram.ui.Components.sl0 sl0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
         return new nl0(context, i10, g6Var);
     }
 }

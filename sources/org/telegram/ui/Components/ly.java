@@ -17,9 +17,9 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ly extends sl0 {
+public final class ly extends rl0 {
     public boolean B;
     public final /* synthetic */ mz C;
     public final fy c;
@@ -58,7 +58,7 @@ public final class ly extends sl0 {
         MediaDataController.getInstance(mzVar.Z0).searchStickers(true, str, str2, new hg.c1(10, lyVar, arrayList, runnable, str2), z4);
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         int i10 = m1Var.f;
         return i10 == 0 || i10 == 4;
@@ -354,6 +354,6 @@ public final class ly extends sl0 {
             view4.setLayoutParams(new f2.x0(-1, AndroidUtilities.dp(68.0f)));
             view = view4;
         }
-        return new fl0(view);
+        return new el0(view);
     }
 }

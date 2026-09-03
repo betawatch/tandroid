@@ -1,124 +1,135 @@
 package qh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
+import android.text.TextUtils;
+import android.util.Property;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import org.telegram.ui.Components.Crop.CropAreaView;
+import android.widget.EditText;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class j2 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class j2 extends org.telegram.ui.ActionBar.i5 {
+    public AnimatorSet f;
+    public final /* synthetic */ z2 h;
 
-    public /* synthetic */ j2(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public j2(z2 z2Var) {
+        this.h = z2Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 7:
-                ((r0.n0) this.b).a();
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // org.telegram.ui.ActionBar.i5
+    public final void m() {
+        z2 z2Var = this.h;
+        k2 k2Var = z2Var.d;
+        q2 q2Var = z2Var.C;
+        AnimatorSet animatorSet = this.f;
+        if (animatorSet != null) {
+            animatorSet.cancel();
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                a3 a3Var = ((k2) this.b).h;
-                a3Var.C.setVisibility(8);
-                a3Var.d.setVisibility(8);
-                break;
-            case 1:
-                f3 f3Var = (f3) this.b;
-                f3Var.l0 = 1.0f;
-                f3Var.invalidate();
-                break;
-            case 2:
-                super.onAnimationEnd(animator);
-                z4 z4Var = (z4) this.b;
-                ImageView imageView = z4Var.c;
-                z4Var.c = z4Var.d;
-                z4Var.d = imageView;
-                imageView.bringToFront();
-                z4Var.d.setVisibility(8);
-                z4Var.h = null;
-                break;
-            case 3:
-                super.onAnimationEnd(animator);
-                ((d5) this.b).w = null;
-                break;
-            case 4:
-                w5 w5Var = (w5) this.b;
-                if (w5Var.getParent() instanceof ViewGroup) {
-                    ((ViewGroup) w5Var.getParent()).removeView(w5Var);
-                    break;
-                }
-                break;
-            case 5:
-                ((x7) this.b).K = false;
-                break;
-            case 6:
-                v7 v7Var = (v7) this.b;
-                v7Var.setTranslationY(0.0f);
-                v7Var.d = null;
-                break;
-            case 7:
-                ((r0.n0) this.b).c();
-                break;
-            case 8:
-                sh.v vVar = (sh.v) this.b;
-                vVar.setVisibility(8);
-                vVar.a = null;
-                break;
-            case 9:
-                ((sh.p2) this.b).y.setVisibility(8);
-                break;
-            case 10:
-                ((sh.n3) this.b).F.setVisibility(8);
-                break;
-            case 11:
-                super.onAnimationEnd(animator);
-                wf.g gVar = (wf.g) this.b;
-                if (!gVar.f1) {
-                    gVar.r0 = false;
-                    gVar.q0.setVisibility(8);
-                    gVar.invalidate();
-                }
-                gVar.c0 = false;
-                break;
-            case 12:
-                ((yf.e) this.b).h.setVisibility(8);
-                break;
-            default:
-                ((CropAreaView) this.b).W = null;
-                break;
+        ArrayList arrayList = new ArrayList();
+        q2Var.setVisibility(0);
+        Property property = View.SCALE_X;
+        int i10 = 1;
+        arrayList.add(ObjectAnimator.ofFloat(q2Var, (Property<q2, Float>) property, 1.0f));
+        Property property2 = View.SCALE_Y;
+        arrayList.add(ObjectAnimator.ofFloat(q2Var, (Property<q2, Float>) property2, 1.0f));
+        Property property3 = View.ALPHA;
+        arrayList.add(ObjectAnimator.ofFloat(q2Var, (Property<q2, Float>) property3, 1.0f));
+        EditTextBoldCursor searchField = z2Var.D.getSearchField();
+        if (searchField != null) {
+            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property, 0.8f));
+            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property2, 0.8f));
+            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property3, 0.0f));
         }
+        k2Var.setVisibility(0);
+        arrayList.add(ObjectAnimator.ofFloat(k2Var, (Property<k2, Float>) property3, 1.0f));
+        k2Var.setFastScrollVisible(true);
+        arrayList.add(ObjectAnimator.ofFloat(z2Var.h, (Property<FrameLayout, Float>) property3, 0.0f));
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ofFloat.addUpdateListener(new h2(this, i10));
+        arrayList.add(ofFloat);
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.f = animatorSet2;
+        animatorSet2.setDuration(320L);
+        this.f.setInterpolator(pr.h);
+        this.f.playTogether(arrayList);
+        this.f.addListener(new ex0(15, this, searchField));
+        this.f.start();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 7:
-                ((r0.n0) this.b).b();
-                break;
-            default:
-                super.onAnimationStart(animator);
-                break;
+    @Override // org.telegram.ui.ActionBar.i5
+    public final void n() {
+        z2 z2Var = this.h;
+        k2 k2Var = z2Var.d;
+        FrameLayout frameLayout = z2Var.h;
+        q2 q2Var = z2Var.C;
+        AnimatorSet animatorSet = this.f;
+        if (animatorSet != null) {
+            animatorSet.cancel();
         }
+        ArrayList arrayList = new ArrayList();
+        Property property = View.SCALE_X;
+        int i10 = 0;
+        arrayList.add(ObjectAnimator.ofFloat(q2Var, (Property<q2, Float>) property, 0.8f));
+        Property property2 = View.SCALE_Y;
+        arrayList.add(ObjectAnimator.ofFloat(q2Var, (Property<q2, Float>) property2, 0.8f));
+        Property property3 = View.ALPHA;
+        arrayList.add(ObjectAnimator.ofFloat(q2Var, (Property<q2, Float>) property3, 0.0f));
+        EditTextBoldCursor searchField = z2Var.D.getSearchField();
+        if (searchField != null) {
+            searchField.setVisibility(0);
+            searchField.setHandlesColor(-1);
+            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property, 1.0f));
+            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property2, 1.0f));
+            arrayList.add(ObjectAnimator.ofFloat(searchField, (Property<EditTextBoldCursor, Float>) property3, 1.0f));
+        }
+        frameLayout.setVisibility(0);
+        arrayList.add(ObjectAnimator.ofFloat(k2Var, (Property<k2, Float>) property3, 0.0f));
+        k2Var.setFastScrollVisible(false);
+        arrayList.add(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) property3, 1.0f));
+        z2Var.s.setVisibility(0);
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        ofFloat.addUpdateListener(new h2(this, i10));
+        arrayList.add(ofFloat);
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        this.f = animatorSet2;
+        animatorSet2.setDuration(320L);
+        this.f.setInterpolator(pr.h);
+        this.f.playTogether(arrayList);
+        this.f.addListener(new i2(this, 0));
+        this.f.start();
     }
 
-    public j2(r0.n0 n0Var, View view) {
-        this.a = 7;
-        this.b = n0Var;
+    @Override // org.telegram.ui.ActionBar.i5
+    public final void q(EditText editText) {
+        String obj = editText.getText().toString();
+        r2 r2Var = this.h.r;
+        org.telegram.ui.web.s0 s0Var = r2Var.v;
+        if (!TextUtils.equals(r2Var.f, obj)) {
+            if (r2Var.e != -1) {
+                ConnectionsManager.getInstance(r2Var.w.a).cancelRequest(r2Var.e, true);
+                r2Var.e = -1;
+            }
+            r2Var.d = false;
+            r2Var.h = null;
+        }
+        r2Var.f = obj;
+        AndroidUtilities.cancelRunOnUIThread(s0Var);
+        if (!TextUtils.isEmpty(obj)) {
+            r2Var.F(true);
+            AndroidUtilities.runOnUIThread(s0Var, 1500L);
+        } else {
+            r2Var.c.clear();
+            r2Var.F(false);
+            r2Var.l();
+        }
     }
 }

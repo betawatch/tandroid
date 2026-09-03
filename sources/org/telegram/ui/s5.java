@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class s5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final class s5 extends AnimatorListenerAdapter {
                 break;
             case 3:
                 org.telegram.ui.Cells.j jVar = (org.telegram.ui.Cells.j) this.b;
-                ((d01) jVar).W.e.c.r = false;
+                ((i01) jVar).W.e.c.r = false;
                 FrameLayout frameLayout = jVar.G;
                 if (frameLayout.getBackground() == null) {
                     frameLayout.setBackground(jVar.H);
@@ -141,9 +141,9 @@ public final class s5 extends AnimatorListenerAdapter {
                 break;
             case 16:
                 bd bdVar = (bd) this.b;
-                kc kcVar = bdVar.j0;
-                if (kcVar != null) {
-                    if (kcVar.getParent() != null) {
+                jc jcVar = bdVar.j0;
+                if (jcVar != null) {
+                    if (jcVar.getParent() != null) {
                         ((ViewGroup) bdVar.j0.getParent()).removeView(bdVar.j0);
                     }
                     bdVar.j0 = null;
@@ -296,7 +296,7 @@ public final class s5 extends AnimatorListenerAdapter {
                 super.onAnimationStart(animator);
                 break;
             case 3:
-                ((d01) ((org.telegram.ui.Cells.j) this.b)).W.e.c.r = true;
+                ((i01) ((org.telegram.ui.Cells.j) this.b)).W.e.c.r = true;
                 break;
         }
     }

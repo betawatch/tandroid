@@ -1,119 +1,110 @@
 package org.telegram.ui;
 
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.TopicsController;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class lf1 extends f2.b0 {
-    public boolean d;
-    public final /* synthetic */ mf1 e;
+public final class lf1 extends org.telegram.ui.Components.rl0 {
+    public final /* synthetic */ of1 c;
 
-    public lf1(mf1 mf1Var) {
-        this.e = mf1Var;
+    public lf1(of1 of1Var) {
+        this.c = of1Var;
     }
 
-    @Override // f2.b0
-    public final void a(RecyclerView recyclerView, f2.m1 m1Var) {
-        super.a(recyclerView, m1Var);
-        m1Var.a.setPressed(false);
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.m1 m1Var) {
+        int i10 = m1Var.f;
+        return i10 == 3 || i10 == 2;
     }
 
-    @Override // f2.b0
-    public final int e(RecyclerView recyclerView, f2.m1 m1Var) {
-        int l10 = f2.b0.l(0, 0);
-        int b10 = m1Var.b();
-        if (b10 >= 0) {
-            mf1 mf1Var = this.e;
-            if (b10 < mf1Var.b.size() && ((df1) mf1Var.b.get(b10)).c != null && ChatObject.canManageTopics(mf1Var.g())) {
-                TLRPC.TL_forumTopic tL_forumTopic = ((df1) mf1Var.b.get(b10)).c;
-                if (mf1Var.X.isEmpty()) {
-                    View view = m1Var.a;
-                    if ((view instanceof jf1) && tL_forumTopic.id == 1) {
-                        this.d = true;
-                        ((jf1) view).setSliding(true);
-                        return f2.b0.l(0, 4);
-                    }
-                }
-                return !tL_forumTopic.pinned ? l10 : f2.b0.l(3, 0);
+    @Override // f2.p0
+    public final int h() {
+        of1 of1Var = this.c;
+        if (of1Var.i0) {
+            return 0;
+        }
+        return of1Var.h0;
+    }
+
+    @Override // f2.p0
+    public final int j(int i10) {
+        of1 of1Var = this.c;
+        if (i10 == of1Var.e0 || i10 == of1Var.b0) {
+            return 1;
+        }
+        if (i10 < of1Var.c0 || i10 >= of1Var.d0) {
+            return (i10 < of1Var.f0 || i10 >= of1Var.g0) ? 0 : 3;
+        }
+        return 2;
+    }
+
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        int i11;
+        View view = m1Var.a;
+        of1 of1Var = this.c;
+        sf1 sf1Var = of1Var.q0;
+        if (j(i10) == 1) {
+            org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) view;
+            if (i10 == of1Var.b0) {
+                u3Var.setText(LocaleController.getString(R.string.Topics));
+            }
+            if (i10 == of1Var.e0) {
+                u3Var.setText(LocaleController.getString(R.string.SearchMessages));
             }
         }
-        return l10;
-    }
-
-    @Override // f2.b0
-    public final boolean k() {
-        return !this.e.X.isEmpty();
-    }
-
-    @Override // f2.b0
-    public final boolean n(RecyclerView recyclerView, f2.m1 m1Var, f2.m1 m1Var2) {
-        int b10;
-        mf1 mf1Var = this.e;
-        ArrayList arrayList = mf1Var.b;
-        if (m1Var.f != m1Var2.f || (b10 = m1Var2.b()) < 0 || b10 >= arrayList.size() || ((df1) arrayList.get(b10)).c == null || !((df1) arrayList.get(b10)).c.pinned) {
-            return false;
+        if (j(i10) == 2) {
+            org.telegram.ui.Cells.oa oaVar = (org.telegram.ui.Cells.oa) view;
+            oaVar.setTopic((TLRPC.TL_forumTopic) of1Var.W.get(i10 - of1Var.c0));
+            oaVar.d = i10 != of1Var.d0 - 1;
         }
-        bf1 bf1Var = mf1Var.r;
-        int b11 = m1Var.b();
-        int b12 = m1Var2.b();
-        mf1 mf1Var2 = bf1Var.d;
-        ArrayList arrayList2 = mf1Var2.b;
-        arrayList2.add(b12, (df1) arrayList2.remove(b11));
-        f2.u0 itemAnimator = mf1Var2.K.getItemAnimator();
-        ze1 ze1Var = mf1Var2.F0;
-        if (itemAnimator != ze1Var) {
-            mf1Var2.K.setItemAnimator(ze1Var);
-        }
-        bf1Var.p(b11, b12);
-        return true;
-    }
-
-    @Override // f2.b0
-    public final void p(f2.m1 m1Var, int i10) {
-        mf1 mf1Var = this.e;
-        if (i10 != 0) {
-            mf1Var.K.I0(false);
-            m1Var.a.setPressed(true);
-            return;
-        }
-        ArrayList arrayList = mf1Var.b;
-        ArrayList<Integer> arrayList2 = new ArrayList<>();
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            TLRPC.TL_forumTopic tL_forumTopic = ((df1) arrayList.get(i11)).c;
-            if (tL_forumTopic != null && tL_forumTopic.pinned) {
-                arrayList2.add(Integer.valueOf(tL_forumTopic.id));
+        if (j(i10) == 3) {
+            MessageObject messageObject = (MessageObject) of1Var.a0.get(i10 - of1Var.f0);
+            pf1 pf1Var = (pf1) view;
+            pf1Var.T4 = i10 != of1Var.g0 - 1;
+            i11 = ((org.telegram.ui.ActionBar.p2) sf1Var).currentAccount;
+            long topicId = MessageObject.getTopicId(i11, messageObject.messageOwner, true);
+            if (topicId == 0) {
+                topicId = 1;
+            }
+            TLRPC.TL_forumTopic findTopic = sf1Var.s.findTopic(sf1Var.a, topicId);
+            if (findTopic != null) {
+                pf1Var.Y(findTopic, messageObject.getDialogId(), messageObject, false, false);
+                pf1Var.setTopicIcon(findTopic);
+            } else {
+                FileLog.d("cant find topic " + topicId);
             }
         }
-        mf1Var.getMessagesController().getTopicsController().reorderPinnedTopics(mf1Var.a, arrayList2);
     }
 
-    @Override // f2.b0
-    public final void q(f2.m1 m1Var) {
-        if (m1Var != null) {
-            jf1 jf1Var = (jf1) m1Var.a;
-            TLRPC.TL_forumTopic tL_forumTopic = jf1Var.K;
-            mf1 mf1Var = this.e;
-            if (tL_forumTopic != null) {
-                TopicsController topicsController = mf1Var.getMessagesController().getTopicsController();
-                long j10 = mf1Var.a;
-                TLRPC.TL_forumTopic tL_forumTopic2 = jf1Var.K;
-                topicsController.toggleShowTopic(j10, tL_forumTopic2.id, tL_forumTopic2.hidden);
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r5v5, types: [org.telegram.ui.Cells.r2, org.telegram.ui.pf1] */
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        boolean z4;
+        sf1 sf1Var = this.c.q0;
+        if (i10 == 1) {
+            frameLayout = new org.telegram.ui.Cells.u3(viewGroup.getContext(), null);
+        } else if (i10 == 2) {
+            frameLayout = new org.telegram.ui.Cells.oa(viewGroup.getContext());
+        } else {
+            if (i10 != 3) {
+                throw new RuntimeException("unsupported view type");
             }
-            mf1Var.Y0 = jf1Var;
-            xe1 xe1Var = mf1Var.K;
-            boolean z4 = !jf1Var.K.hidden;
-            int i10 = kf1.e3;
-            xe1Var.z1(z4, jf1Var);
-            mf1Var.U0(true, true);
-            TLRPC.TL_forumTopic tL_forumTopic3 = jf1Var.V4;
-            if (tL_forumTopic3 != null) {
-                jf1Var.setTopicIcon(tL_forumTopic3);
-            }
+            ?? pf1Var = new pf1(sf1Var, viewGroup.getContext(), true);
+            z4 = ((org.telegram.ui.ActionBar.p2) sf1Var).inPreviewMode;
+            pf1Var.h0 = z4;
+            frameLayout = pf1Var;
         }
+        frameLayout.setLayoutParams(new f2.x0(-1, -2));
+        return new org.telegram.ui.Components.el0(frameLayout);
     }
 }

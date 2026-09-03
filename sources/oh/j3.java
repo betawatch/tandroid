@@ -20,10 +20,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.pr;
+import org.telegram.ui.cv0;
 import org.telegram.ui.cz;
-import org.telegram.ui.xu0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class j3 extends t {
     public final org.telegram.ui.Components.z5 d;
@@ -403,17 +403,17 @@ public final class j3 extends t {
                 invalidate();
             }
             canvas2.save();
-            xu0 xu0Var = f4Var.U2;
-            if (xu0Var.n) {
+            cv0 cv0Var = f4Var.U2;
+            if (cv0Var.n) {
                 canvas2.save();
-                float f16 = xu0Var.O;
-                float f17 = xu0Var.A;
+                float f16 = cv0Var.O;
+                float f17 = cv0Var.A;
                 float f18 = ((f16 * f17) + 1.0f) - f17;
-                canvas2.scale(f18, f18, xu0Var.o + xu0Var.s, xu0Var.p + xu0Var.t);
-                float f19 = xu0Var.o;
-                float f20 = xu0Var.J;
-                float f21 = xu0Var.A;
-                canvas2.translate((f20 * f21) + f19, (xu0Var.K * f21) + xu0Var.p);
+                canvas2.scale(f18, f18, cv0Var.o + cv0Var.s, cv0Var.p + cv0Var.t);
+                float f19 = cv0Var.o;
+                float f20 = cv0Var.J;
+                float f21 = cv0Var.A;
+                canvas2.translate((f20 * f21) + f19, (cv0Var.K * f21) + cv0Var.p);
             }
             org.telegram.ui.o4 o4Var = e4Var.d;
             if (o4Var == null || (!e4Var.f && e4Var.a == null)) {

@@ -33,31 +33,31 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.ey0;
-import org.telegram.ui.Components.jm;
-import org.telegram.ui.Components.oq0;
+import org.telegram.ui.Components.dy0;
+import org.telegram.ui.Components.im;
+import org.telegram.ui.Components.nq0;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.v31;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.b30;
-import org.telegram.ui.ed1;
-import org.telegram.ui.kb1;
-import org.telegram.ui.mf1;
+import org.telegram.ui.cr0;
+import org.telegram.ui.jd1;
 import org.telegram.ui.mt;
 import org.telegram.ui.ot;
-import org.telegram.ui.p31;
 import org.telegram.ui.py;
+import org.telegram.ui.qb1;
 import org.telegram.ui.qt;
-import org.telegram.ui.tt0;
+import org.telegram.ui.sf1;
+import org.telegram.ui.t31;
 import org.telegram.ui.wk;
 import org.telegram.ui.wk0;
 import org.telegram.ui.xf0;
 import org.telegram.ui.xn;
-import org.telegram.ui.xq0;
+import org.telegram.ui.yt0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -128,7 +128,7 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                         t0Var.d = true;
                         qh.q0 q0Var = new qh.q0(t0Var, i11);
                         MessagesStorage messagesStorage = MessagesStorage.getInstance(t0Var.a);
-                        messagesStorage.getStorageQueue().postRunnable(new xq0(messagesStorage, z11, q0Var, i10));
+                        messagesStorage.getStorageQueue().postRunnable(new cr0(messagesStorage, z11, q0Var, i10));
                     }
                 } else {
                     j10 = 0;
@@ -228,8 +228,8 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                 org.telegram.ui.g7 g7Var = (org.telegram.ui.g7) this.b;
                 org.telegram.ui.o7 o7Var = (org.telegram.ui.o7) this.c;
                 org.telegram.ui.h7 h7Var = (org.telegram.ui.h7) this.d;
-                tl0 tl0Var = (tl0) this.e;
-                org.telegram.ui.u7.a(g7Var.d, o7Var, (org.telegram.ui.q7) h7Var, tl0Var);
+                sl0 sl0Var = (sl0) this.e;
+                org.telegram.ui.u7.a(g7Var.d, o7Var, (org.telegram.ui.q7) h7Var, sl0Var);
                 org.telegram.ui.ActionBar.p1 p1Var = g7Var.a;
                 if (p1Var != null) {
                     p1Var.d(true);
@@ -254,7 +254,7 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                 g1Var.setOnClickListener(new b0(xnVar, str, str2, charSequence, r12, 7));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.addView(g1Var);
                 org.telegram.ui.ActionBar.p1 p1Var2 = new org.telegram.ui.ActionBar.p1(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-                Runnable[] runnableArr = {new tt0(p1Var2, 27)};
+                Runnable[] runnableArr = {new yt0(p1Var2, 27)};
                 p1Var2.e = true;
                 p1Var2.c = 220;
                 p1Var2.setOutsideTouchable(true);
@@ -269,7 +269,7 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                 String str4 = (String) this.d;
                 CharSequence charSequence2 = (CharSequence) this.e;
                 Runnable[] runnableArr2 = (Runnable[]) this.f;
-                w31.J(xnVar2.getParentActivity(), xnVar2, str3, str4, charSequence2, null, null);
+                v31.J(xnVar2.getParentActivity(), xnVar2, str3, str4, charSequence2, null, null);
                 Runnable runnable = runnableArr2[0];
                 if (runnable != null) {
                     runnable.run();
@@ -291,7 +291,7 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                         AndroidUtilities.shakeView(editTextBoldCursor);
                         break;
                     } else {
-                        if (p2Var instanceof ed1) {
+                        if (p2Var instanceof jd1) {
                             org.telegram.ui.ActionBar.k6.o();
                             p2Var.finishFragment();
                         }
@@ -379,10 +379,10 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                     bundle2.putLong("dialog_id", g9Var.f);
                     p2Var2.presentFragment(new ProfileActivity(bundle2, null), true);
                 }
-                if (g9Var.a == mf1.class) {
+                if (g9Var.a == sf1.class) {
                     Bundle bundle3 = new Bundle();
                     bundle3.putLong("chat_id", g9Var.c.id);
-                    p2Var2.presentFragment(new mf1(bundle3), true);
+                    p2Var2.presentFragment(new sf1(bundle3), true);
                 }
                 if (g9Var.a == py.class) {
                     p2Var2.presentFragment(new py(null), true);
@@ -398,7 +398,7 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                 int intValue = ((Integer) view.getTag()).intValue();
                 p1Var3.dismiss();
                 if (((Integer) arrayList2.get(intValue)).intValue() == 1) {
-                    ey0.a(tL_messages_stickerSet, p2Var4, g6Var3);
+                    dy0.a(tL_messages_stickerSet, p2Var4, g6Var3);
                     break;
                 } else {
                     ((xn) p2Var4).Y9();
@@ -414,30 +414,30 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                 if (str5 != null) {
                     String lowerCase = str5.toLowerCase();
                     LocaleController.LocaleInfo currentLocaleInfo = LocaleController.getInstance().getCurrentLocaleInfo();
-                    HashSet Y = p31.Y();
+                    HashSet Y = t31.Y();
                     Y.add(lowerCase);
                     if (Y.size() == 1 && Y.contains(currentLocaleInfo.pluralLangCode)) {
-                        p31.a0(null, Boolean.FALSE);
+                        t31.a0(null, Boolean.FALSE);
                     } else {
-                        p31.a0(Y, Boolean.FALSE);
+                        t31.a0(Y, Boolean.FALSE);
                     }
                     TranslateController.invalidateSuggestedLanguageCodes();
                 }
                 translateController.checkRestrictedLanguagesUpdate();
                 translateController.setHideTranslateDialog(wkVar.b, true);
                 SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(wkVar.r[0] ? LocaleController.formatString(R.string.AddedToDoNotTranslate, str6) : LocaleController.formatString(R.string.AddedToDoNotTranslateOther, str6));
-                String[] strArr = w31.O;
+                String[] strArr = v31.O;
                 if (replaceTags != null && replaceTags.length() > 0) {
                     replaceTags.replace(0, 1, (CharSequence) replaceTags.toString().substring(0, 1).toUpperCase());
                     spannableStringBuilder = replaceTags;
                 }
-                qc.a0(wkVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new oq0(wkVar, 24)).j();
+                qc.a0(wkVar.c).J(R.raw.msg_translate, spannableStringBuilder, LocaleController.getString(R.string.Settings), new nq0(wkVar, 24)).j();
                 p1Var4.d(true);
                 break;
             case 12:
                 mt mtVar = (mt) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
-                kb1 kb1Var = (kb1) this.d;
+                qb1 qb1Var = (qb1) this.d;
                 LinearLayout linearLayout = (LinearLayout) this.e;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout2 = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.f;
                 qt qtVar = mtVar.a;
@@ -446,9 +446,9 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                     if (((Integer) arrayList3.get(intValue2)).intValue() == 2) {
                         TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = qtVar.T;
                         if (tL_messages_stickerSet2 == null) {
-                            kb1Var.requestLayout();
+                            qb1Var.requestLayout();
                             linearLayout.requestLayout();
-                            kb1Var.getAdapter().l();
+                            qb1Var.getAdapter().l();
                             actionBarPopupWindow$ActionBarPopupWindowLayout2.getSwipeBack().e(1);
                             break;
                         } else {
@@ -505,7 +505,7 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                     i15++;
                     int intValue3 = ((Integer) obj).intValue();
                     if (UserConfig.getInstance(intValue3).getCurrentUser() != null) {
-                        F.e(intValue3, iArr[0] == intValue3, new jm(wk0Var, intValue3, 18));
+                        F.e(intValue3, iArr[0] == intValue3, new im(wk0Var, intValue3, 18));
                     }
                 }
                 F.t = false;

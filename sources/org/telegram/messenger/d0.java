@@ -23,12 +23,12 @@ import org.telegram.tgnet.RequestTimeDelegate;
 import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.WriteToSocketDelegate;
-import org.telegram.ui.Components.go0;
+import org.telegram.ui.Components.fo0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, qh.q6, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, go0, org.telegram.ui.ActionBar.c2 {
+public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDelegate, OnSuccessListener, OnFailureListener, qh.p6, TelegramMediaSession.BrowseChildrenCallback, ImageReceiver.ImageReceiverDelegate, RequestTimeDelegate, OnCompleteListener, fo0, org.telegram.ui.ActionBar.c2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -41,12 +41,12 @@ public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDe
         BillingController.lambda$queryProductDetails$0((BillingController.ProductDetailsResponseListenerLegacy) this.b, hVar, qVar);
     }
 
-    @Override // org.telegram.ui.Components.go0
+    @Override // org.telegram.ui.Components.fo0
     public void b(float f10) {
         ((RichMessageLayout.RichAudioBlock) this.b).lambda$new$0(f10);
     }
 
-    @Override // qh.q6
+    @Override // qh.p6
     public Bitmap c(BitmapFactory.Options options) {
         Bitmap lambda$rebuildPhoto$0;
         lambda$rebuildPhoto$0 = ((MediaController.PhotoEntry) this.b).lambda$rebuildPhoto$0(options);
@@ -127,7 +127,7 @@ public final /* synthetic */ class d0 implements ResultCallback, WriteToSocketDe
         ProxyRotationController.lambda$new$1((SharedConfig.ProxyInfo) this.b, j10);
     }
 
-    @Override // org.telegram.ui.Components.go0
+    @Override // org.telegram.ui.Components.fo0
     public /* synthetic */ void d(float f10) {
     }
 }

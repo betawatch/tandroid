@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.view.View;
 import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cb0 implements h5.d {
     public final /* synthetic */ int a;
@@ -22,8 +22,8 @@ public final /* synthetic */ class cb0 implements h5.d {
                 sb0Var.n.y(sb0Var.f.T((View) obj));
                 break;
             default:
-                i61 i61Var = (i61) this.b;
-                i61Var.V2.Q(i61Var.T((View) obj), i61Var.Z2);
+                h61 h61Var = (h61) this.b;
+                h61Var.V2.Q(h61Var.T((View) obj), h61Var.Z2);
                 break;
         }
     }

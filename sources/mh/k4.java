@@ -21,10 +21,10 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.p40;
-import org.telegram.ui.Components.tz0;
+import org.telegram.ui.Components.sz0;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class k4 {
     public final TL_stars.TL_starGiftUnique a;
@@ -44,7 +44,7 @@ public final class k4 {
     public final HashMap o;
     public final HashSet p;
     public mf.b q;
-    public qh.f3 r;
+    public qh.e3 r;
 
     public k4(Context context, org.telegram.ui.ActionBar.g6 g6Var, TL_stars.TL_starGiftUnique tL_starGiftUnique, i4 i4Var, int i10, long j10, String str, boolean z4, Utilities.Callback2 callback2) {
         HashMap hashMap = new HashMap();
@@ -86,14 +86,14 @@ public final class k4 {
         org.telegram.ui.b.l(org.telegram.ui.ActionBar.k6.j5, g6Var, textView2, 1, 16.0f);
         f10.addView(textView2, k7.c6.t(-1, -2, 48, 24, 4, 24, 4));
         if (z4) {
-            tz0 tz0Var = new tz0(context, g6Var);
-            g5.q1(tz0Var, t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
-            g5.q1(tz0Var, t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
-            g5.q1(tz0Var, t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
+            sz0 sz0Var = new sz0(context, g6Var);
+            g5.q1(sz0Var, t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeModel.class));
+            g5.q1(sz0Var, t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class));
+            g5.q1(sz0Var, t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class));
             if (!TextUtils.isEmpty(tL_starGiftUnique.slug) && (tL_starGiftUnique.flags & 256) != 0) {
-                tz0Var.c(LocaleController.getString(R.string.GiftValue2), yh.k("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
+                sz0Var.c(LocaleController.getString(R.string.GiftValue2), yh.k("~", BillingController.getInstance().formatCurrency(tL_starGiftUnique.value_amount, tL_starGiftUnique.value_currency, BillingController.getInstance().getCurrencyExp(tL_starGiftUnique.value_currency), true)), null, null);
             }
-            f10.addView(tz0Var, k7.c6.t(-1, -2, 48, 23, 16, 23, 4));
+            f10.addView(sz0Var, k7.c6.t(-1, -2, 48, 23, 16, 23, 4));
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, g6Var);
         alertDialog$Builder.n(j4Var);
@@ -103,7 +103,7 @@ public final class k4 {
     }
 
     public final void a(boolean z4) {
-        qh.f3 f3Var;
+        qh.e3 e3Var;
         mf.b bVar = this.q;
         i4 i4Var = (i4) this.o.get(bVar);
         TextView textView = this.j;
@@ -120,8 +120,8 @@ public final class k4 {
         if (p40Var != null) {
             p40Var.a(bVar == bVar3 ? 1 : 0, z4);
         }
-        if (bVar == bVar3 && (f3Var = this.r) != null && f3Var.S) {
-            f3Var.e(true);
+        if (bVar == bVar3 && (e3Var = this.r) != null && e3Var.S) {
+            e3Var.e(true);
         }
         b bVar4 = this.k;
         mf.b bVar5 = mf.b.a;
@@ -172,14 +172,14 @@ public final class k4 {
         FrameLayout frameLayout = d2Var.V0;
         this.m = frameLayout;
         if (frameLayout != null && this.f) {
-            qh.f3 f3Var = new qh.f3(this.b, 3);
-            f3Var.q(true);
-            f3Var.H = Layout.Alignment.ALIGN_NORMAL;
-            f3Var.d = 5000L;
-            f3Var.t(LocaleController.getString(R.string.Gift2BuyPricePayHintTON));
-            f3Var.v();
-            this.r = f3Var;
-            f3Var.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
+            qh.e3 e3Var = new qh.e3(this.b, 3);
+            e3Var.p(true);
+            e3Var.H = Layout.Alignment.ALIGN_NORMAL;
+            e3Var.d = 5000L;
+            e3Var.s(LocaleController.getString(R.string.Gift2BuyPricePayHintTON));
+            e3Var.u();
+            this.r = e3Var;
+            e3Var.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
             this.m.addView(this.r, k7.c6.d(-2, 100.0f, 48, 0.0f, 26.0f, 0.0f, 0.0f));
         }
         a(false);

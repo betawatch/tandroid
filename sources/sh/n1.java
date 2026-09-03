@@ -19,9 +19,9 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.l5;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.z8;
-import org.telegram.ui.li1;
+import org.telegram.ui.ri1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class n1 {
     /* JADX WARN: Multi-variable type inference failed */
@@ -83,7 +83,7 @@ public abstract class n1 {
                 int i12 = i10;
                 setcustomverification.bot = MessagesController.getInstance(i12).getInputUser(j10);
                 setcustomverification.peer = MessagesController.getInstance(i12).getInputPeer(j11);
-                ConnectionsManager.getInstance(i12).sendRequest(setcustomverification, new li1(4, zArr2, j1Var));
+                ConnectionsManager.getInstance(i12).sendRequest(setcustomverification, new ri1(4, zArr2, j1Var));
             }
         });
         alertDialog$Builder.d(-1);

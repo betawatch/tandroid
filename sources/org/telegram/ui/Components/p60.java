@@ -20,16 +20,16 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class p60 extends sl0 {
+public final class p60 extends rl0 {
     public final /* synthetic */ u60 c;
 
     public p60(u60 u60Var) {
         this.c = u60Var;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         int i10;
         int b10 = m1Var.b();
@@ -414,7 +414,7 @@ public final class p60 extends sl0 {
                             String string = i32 == 2592000 ? LocaleController.getString(R.string.StarsParticipantSubscriptionPerMonth) : i32 == 300 ? "per 5 minutes" : "per each minute";
                             textView4.setText(X0);
                             textView3.setText(string);
-                            s60Var.i((int) Math.max(qh.f3.g(X0, textView4.getPaint()), qh.f3.g(string, textView3.getPaint())), true);
+                            s60Var.i((int) Math.max(qh.e3.g(X0, textView4.getPaint()), qh.e3.g(string, textView3.getPaint())), true);
                             s60Var.c.l(LocaleController.formatJoined(i31), false);
                             return;
                         }
@@ -494,7 +494,7 @@ public final class p60 extends sl0 {
                 view = u00Var;
                 break;
             case 6:
-                view = new jn(context, 9);
+                view = new in(context, 9);
                 break;
             case 7:
                 view = new org.telegram.ui.Cells.z6(context, (org.telegram.ui.b) null);

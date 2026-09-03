@@ -1,46 +1,58 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vf1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TwoStepVerificationActivity b;
+public final class vf1 implements org.telegram.ui.Components.il0 {
+    public final /* synthetic */ yf1 a;
 
-    public /* synthetic */ vf1(TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
-        this.a = i10;
-        this.b = twoStepVerificationActivity;
+    public vf1(yf1 yf1Var) {
+        this.a = yf1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        EditTextBoldCursor editTextBoldCursor;
-        switch (this.a) {
-            case 0:
-                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
-                if (!twoStepVerificationActivity.isFinishing() && !twoStepVerificationActivity.E && (editTextBoldCursor = twoStepVerificationActivity.s) != null) {
-                    editTextBoldCursor.requestFocus();
-                    AndroidUtilities.showKeyboard(twoStepVerificationActivity.s);
-                    break;
-                }
-                break;
-            case 1:
-                TwoStepVerificationActivity twoStepVerificationActivity2 = this.b;
-                twoStepVerificationActivity2.R = false;
-                twoStepVerificationActivity2.v.a(0.0f);
-                break;
-            case 2:
-                this.b.y0();
-                break;
-            default:
-                TwoStepVerificationActivity twoStepVerificationActivity3 = this.b;
-                vf1 vf1Var = twoStepVerificationActivity3.S;
-                AndroidUtilities.cancelRunOnUIThread(vf1Var);
-                AndroidUtilities.runOnUIThread(vf1Var, 1500L);
-                twoStepVerificationActivity3.R = true;
-                break;
+    @Override // org.telegram.ui.Components.il0
+    public final void f(int i10, View view) {
+        yf1 yf1Var = this.a;
+        ArrayList arrayList = yf1Var.d;
+        if (((xf1) arrayList.get(i10)).a == 1) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("chat_id", -yf1Var.c);
+            bundle.putBoolean("for_select", true);
+            sf1 sf1Var = new sf1(bundle);
+            sf1Var.x0 = yf1Var.e;
+            sf1Var.v = new tf1(this);
+            yf1Var.presentFragment(sf1Var);
+        }
+        if (((xf1) arrayList.get(i10)).a == 2) {
+            TLRPC.TL_forumTopic tL_forumTopic = ((xf1) arrayList.get(i10)).c;
+            Bundle bundle2 = new Bundle();
+            bundle2.putLong("dialog_id", yf1Var.c);
+            bundle2.putLong("topic_id", tL_forumTopic.id);
+            bundle2.putBoolean("exception", false);
+            k11 k11Var = new k11(bundle2, null);
+            k11Var.r = new uf1(this, tL_forumTopic);
+            yf1Var.presentFragment(k11Var);
+        }
+        if (((xf1) arrayList.get(i10)).a == 4) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(yf1Var.getParentActivity());
+            alertDialog$Builder.a.O = LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle);
+            alertDialog$Builder.a.Q = LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert);
+            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new tf1(this));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
+            yf1Var.showDialog(d2Var);
+            TextView textView = (TextView) d2Var.d(-1);
+            if (textView != null) {
+                textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q7, false));
+            }
         }
     }
 }

@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class e1 extends FrameLayout implements org.telegram.ui.Cells.l9 {
     public TL_iv.pageBlockChannel B;
@@ -194,7 +194,7 @@ public final class e1 extends FrameLayout implements org.telegram.ui.Cells.l9 {
             String str = pageblockchannel.channel.title;
             int dp = (size - AndroidUtilities.dp(52.0f)) - this.n;
             TL_iv.pageBlockChannel pageblockchannel2 = this.B;
-            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.lw0.a;
+            Layout.Alignment[] alignmentArr = org.telegram.ui.Components.kw0.a;
             this.h = l4.p(this.a, this, str, null, dp, this.s, pageblockchannel2, alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL, 1, this.b);
             int i12 = this.r;
             j4 j4Var = this.b;

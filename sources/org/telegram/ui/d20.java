@@ -7,7 +7,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class d20 extends f2.b0 {
     public final /* synthetic */ FiltersSetupActivity d;
@@ -48,16 +48,16 @@ public final class d20 extends f2.b0 {
         int i10 = filtersSetupActivity.r;
         ArrayList arrayList = filtersSetupActivity.n;
         if (b10 >= i10 && b11 >= i10) {
-            y10 y10Var = (y10) arrayList.get(b10);
-            y10 y10Var2 = (y10) arrayList.get(b11);
-            if (y10Var != null && y10Var2 != null && (dialogFilter = y10Var.d) != null && (dialogFilter2 = y10Var2.d) != null) {
+            x10 x10Var = (x10) arrayList.get(b10);
+            x10 x10Var2 = (x10) arrayList.get(b11);
+            if (x10Var != null && x10Var2 != null && (dialogFilter = x10Var.d) != null && (dialogFilter2 = x10Var2.d) != null) {
                 int i11 = dialogFilter.order;
                 dialogFilter.order = dialogFilter2.order;
                 dialogFilter2.order = i11;
                 ArrayList<MessagesController.DialogFilter> arrayList2 = filtersSetupActivity.getMessagesController().dialogFilters;
                 try {
-                    arrayList2.set(b10 - filtersSetupActivity.r, y10Var2.d);
-                    arrayList2.set(b11 - filtersSetupActivity.r, y10Var.d);
+                    arrayList2.set(b10 - filtersSetupActivity.r, x10Var2.d);
+                    arrayList2.set(b11 - filtersSetupActivity.r, x10Var.d);
                 } catch (Exception unused) {
                 }
                 filtersSetupActivity.e = true;

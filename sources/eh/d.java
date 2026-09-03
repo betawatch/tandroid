@@ -20,11 +20,11 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.g90;
-import org.telegram.ui.b41;
-import org.telegram.ui.r31;
+import org.telegram.ui.g41;
+import org.telegram.ui.w31;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class d extends FrameLayout {
     public final /* synthetic */ int a;
@@ -250,7 +250,7 @@ public final class d extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(b41 b41Var, Context context, int i10, String str, CharSequence charSequence) {
+    public d(g41 g41Var, Context context, int i10, String str, CharSequence charSequence) {
         super(context);
         g6 g6Var;
         g6 g6Var2;
@@ -261,13 +261,13 @@ public final class d extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
         int i11 = k6.G6;
-        g6Var = ((h3) b41Var).resourcesProvider;
+        g6Var = ((h3) g41Var).resourcesProvider;
         mutate.setColorFilter(new PorterDuffColorFilter(k6.v0(i11, g6Var), PorterDuff.Mode.MULTIPLY));
         imageView.setImageDrawable(mutate);
         addView(imageView, c6.d(24, 24.0f, z4 ? 5 : 3, z4 ? 0.0f : 27.0f, 6.0f, z4 ? 27.0f : 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         textView.setText(str);
-        g6Var2 = ((h3) b41Var).resourcesProvider;
+        g6Var2 = ((h3) g41Var).resourcesProvider;
         textView.setTextColor(k6.v0(i11, g6Var2));
         yh.p(14.0f, 1, textView);
         addView(textView, c6.d(-2, -2.0f, z4 ? 5 : 3, z4 ? 27.0f : 68.0f, 0.0f, z4 ? 68.0f : 27.0f, 0.0f));
@@ -275,10 +275,10 @@ public final class d extends FrameLayout {
         g90Var.setText(charSequence);
         g90Var.setTextSize(1, 14.0f);
         int i12 = k6.Pi;
-        g6Var3 = ((h3) b41Var).resourcesProvider;
+        g6Var3 = ((h3) g41Var).resourcesProvider;
         g90Var.setTextColor(k6.v0(i12, g6Var3));
         int i13 = k6.gc;
-        g6Var4 = ((h3) b41Var).resourcesProvider;
+        g6Var4 = ((h3) g41Var).resourcesProvider;
         g90Var.setLinkTextColor(k6.v0(i13, g6Var4));
         g90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         g90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
@@ -286,7 +286,7 @@ public final class d extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(r31 r31Var, Context context, int i10, String str, CharSequence charSequence) {
+    public d(w31 w31Var, Context context, int i10, String str, CharSequence charSequence) {
         super(context);
         g6 g6Var;
         g6 g6Var2;
@@ -297,13 +297,13 @@ public final class d extends FrameLayout {
         ImageView imageView = new ImageView(getContext());
         Drawable mutate = getContext().getResources().getDrawable(i10).mutate();
         int i11 = k6.G6;
-        g6Var = ((h3) r31Var).resourcesProvider;
+        g6Var = ((h3) w31Var).resourcesProvider;
         mutate.setColorFilter(new PorterDuffColorFilter(k6.v0(i11, g6Var), PorterDuff.Mode.MULTIPLY));
         imageView.setImageDrawable(mutate);
         addView(imageView, c6.d(24, 24.0f, z4 ? 5 : 3, z4 ? 0.0f : 27.0f, 6.0f, z4 ? 27.0f : 0.0f, 0.0f));
         TextView textView = new TextView(getContext());
         textView.setText(str);
-        g6Var2 = ((h3) r31Var).resourcesProvider;
+        g6Var2 = ((h3) w31Var).resourcesProvider;
         textView.setTextColor(k6.v0(i11, g6Var2));
         yh.p(14.0f, 1, textView);
         addView(textView, c6.d(-2, -2.0f, z4 ? 5 : 3, z4 ? 27.0f : 68.0f, 0.0f, z4 ? 68.0f : 27.0f, 0.0f));
@@ -311,10 +311,10 @@ public final class d extends FrameLayout {
         g90Var.setText(charSequence);
         g90Var.setTextSize(1, 14.0f);
         int i12 = k6.Pi;
-        g6Var3 = ((h3) r31Var).resourcesProvider;
+        g6Var3 = ((h3) w31Var).resourcesProvider;
         g90Var.setTextColor(k6.v0(i12, g6Var3));
         int i13 = k6.gc;
-        g6Var4 = ((h3) r31Var).resourcesProvider;
+        g6Var4 = ((h3) w31Var).resourcesProvider;
         g90Var.setLinkTextColor(k6.v0(i13, g6Var4));
         g90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
         addView(g90Var, c6.d(-2, -2.0f, z4 ? 5 : 3, z4 ? 27.0f : 68.0f, 18.0f, z4 ? 68.0f : 27.0f, 0.0f));

@@ -30,9 +30,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b, NotificationCenter.NotificationCenterDelegate {
+public final class fa0 extends org.telegram.ui.ActionBar.p2 implements ru0, ag.b, NotificationCenter.NotificationCenterDelegate {
     public org.telegram.ui.ActionBar.i2 B;
     public k6 C;
     public org.telegram.ui.ActionBar.w0 D;
@@ -58,7 +58,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
     public final boolean[] X;
     public final ValueAnimator[] Y;
     public int a;
-    public ru0 b;
+    public qu0 b;
     public TLRPC.ChatFull c;
     public TLRPC.UserFull d;
     public long e;
@@ -72,7 +72,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
     public final k6[] x;
     public aa0 y;
 
-    public fa0(Bundle bundle, ru0 ru0Var) {
+    public fa0(Bundle bundle, qu0 qu0Var) {
         super(bundle);
         this.v = new FrameLayout[2];
         this.w = new org.telegram.ui.ActionBar.l5[2];
@@ -84,7 +84,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
         this.W = new float[2];
         this.X = new boolean[]{true, true};
         this.Y = new ValueAnimator[2];
-        this.b = ru0Var;
+        this.b = qu0Var;
     }
 
     @Override // ag.b
@@ -94,12 +94,12 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
         return Arrays.asList(new ag.a((parentActivity.getSharedPreferences("shapedetector_conf", 0).getBoolean("learning", false) ? "Disable" : "Enable").concat(" shape detector learning debug"), new xp(this, 26)));
     }
 
-    @Override // org.telegram.ui.Components.su0
+    @Override // org.telegram.ui.Components.ru0
     public final void M() {
-        ru0 ru0Var;
+        qu0 qu0Var;
         ca0 ca0Var = this.S;
-        if (ca0Var != null && (ru0Var = this.b) != null) {
-            ca0Var.setNewMediaCounts(ru0Var.c);
+        if (ca0Var != null && (qu0Var = this.b) != null) {
+            ca0Var.setNewMediaCounts(qu0Var.c);
         }
         a0();
     }
@@ -181,7 +181,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
     */
     public final void a0() {
         boolean z4;
-        rt0 rt0Var;
+        qt0 qt0Var;
         ca0 ca0Var = this.S;
         if (ca0Var != null) {
             k6[] k6VarArr = this.x;
@@ -262,9 +262,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                 org.telegram.ui.ActionBar.g1 g1Var3 = this.M;
                 if (g1Var3 != null) {
                     ca0 ca0Var2 = this.S;
-                    rt0[] rt0VarArr = ca0Var2.h0;
-                    if (rt0VarArr != null && (rt0Var = rt0VarArr[0]) != null) {
-                        boolean p02 = zu0.p0(rt0Var.C);
+                    qt0[] qt0VarArr = ca0Var2.h0;
+                    if (qt0VarArr != null && (qt0Var = qt0VarArr[0]) != null) {
+                        boolean p02 = yu0.p0(qt0Var.C);
                         int i12 = ca0Var2.j1[p02 ? 1 : 0];
                         if (i12 != ca0Var2.X(p02 ? 1 : 0, i12, true)) {
                             z4 = true;
@@ -410,6 +410,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                     int i17;
                     int i18 = i16;
                     fa0 fa0Var = this.b;
+                    int i19 = 1;
                     switch (i18) {
                         case 0:
                             fa0Var.D.M(null, null);
@@ -440,9 +441,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z4 && !fa0Var.J) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var = fa0Var.G;
-                                int i19 = -fa0Var.K;
-                                fa0Var.K = i19;
-                                AndroidUtilities.shakeViewSpring(g1Var, i19);
+                                int i20 = -fa0Var.K;
+                                fa0Var.K = i20;
+                                AndroidUtilities.shakeViewSpring(g1Var, i20);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var2 = fa0Var.G;
@@ -452,14 +453,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var2 = fa0Var.S;
                                 boolean z11 = fa0Var.I;
                                 boolean z12 = fa0Var.J;
-                                gt0 gt0Var = ca0Var2.W;
-                                if (gt0Var != null && (l6Var2 = gt0Var.s) != null) {
+                                ft0 ft0Var = ca0Var2.W;
+                                if (ft0Var != null && (l6Var2 = ft0Var.s) != null) {
                                     l6Var2.n = z11;
                                     l6Var2.o = z12;
                                     l6Var2.d(true);
                                 }
-                                nr0 nr0Var = ca0Var2.b0;
-                                if (nr0Var != null && (l6Var = nr0Var.s) != null) {
+                                mr0 mr0Var = ca0Var2.b0;
+                                if (mr0Var != null && (l6Var = mr0Var.s) != null) {
                                     l6Var.n = z11;
                                     l6Var.o = z12;
                                     l6Var.d(true);
@@ -472,9 +473,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z13 && !fa0Var.I) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var3 = fa0Var.H;
-                                int i20 = -fa0Var.K;
-                                fa0Var.K = i20;
-                                AndroidUtilities.shakeViewSpring(g1Var3, i20);
+                                int i21 = -fa0Var.K;
+                                fa0Var.K = i21;
+                                AndroidUtilities.shakeViewSpring(g1Var3, i21);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var4 = fa0Var.H;
@@ -484,14 +485,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var3 = fa0Var.S;
                                 boolean z15 = fa0Var.I;
                                 boolean z16 = fa0Var.J;
-                                gt0 gt0Var2 = ca0Var3.W;
-                                if (gt0Var2 != null && (l6Var4 = gt0Var2.s) != null) {
+                                ft0 ft0Var2 = ca0Var3.W;
+                                if (ft0Var2 != null && (l6Var4 = ft0Var2.s) != null) {
                                     l6Var4.n = z15;
                                     l6Var4.o = z16;
                                     l6Var4.d(true);
                                 }
-                                nr0 nr0Var2 = ca0Var3.b0;
-                                if (nr0Var2 != null && (l6Var3 = nr0Var2.s) != null) {
+                                mr0 mr0Var2 = ca0Var3.b0;
+                                if (mr0Var2 != null && (l6Var3 = mr0Var2.s) != null) {
                                     l6Var3.n = z15;
                                     l6Var3.o = z16;
                                     l6Var3.d(true);
@@ -511,8 +512,8 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             ArrayList arrayList = new ArrayList();
                             if (fa0Var2.F != null) {
                                 i17 = 0;
-                                for (int i21 = 0; i21 < fa0Var2.F.size(); i21++) {
-                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i21)).storyItem;
+                                for (int i22 = 0; i22 < fa0Var2.F.size(); i22++) {
+                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i22)).storyItem;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i17++;
@@ -527,16 +528,16 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i22 = 0; i22 < arrayList.size(); i22++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i22);
-                                    zArr[i22] = storyItem2.pinned;
+                                for (int i23 = 0; i23 < arrayList.size(); i23++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i23);
+                                    zArr[i23] = storyItem2.pinned;
                                     storyItem2.pinned = z17;
                                 }
                                 fa0Var2.getMessagesController().getStoriesController().n0(fa0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
                                 fa0Var2.R = new mh.r5(fa0Var2, arrayList, z17, 15);
                                 org.telegram.ui.ih ihVar = new org.telegram.ui.ih(fa0Var2, zArr2, arrayList, zArr, 18);
-                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i17, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i17, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new a90(2, fa0Var2, zArr2);
+                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i17, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i17, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new b90(i19, fa0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -565,6 +566,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                     int i172;
                     int i18 = i17;
                     fa0 fa0Var = this.b;
+                    int i19 = 1;
                     switch (i18) {
                         case 0:
                             fa0Var.D.M(null, null);
@@ -595,9 +597,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z4 && !fa0Var.J) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var = fa0Var.G;
-                                int i19 = -fa0Var.K;
-                                fa0Var.K = i19;
-                                AndroidUtilities.shakeViewSpring(g1Var, i19);
+                                int i20 = -fa0Var.K;
+                                fa0Var.K = i20;
+                                AndroidUtilities.shakeViewSpring(g1Var, i20);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var2 = fa0Var.G;
@@ -607,14 +609,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var2 = fa0Var.S;
                                 boolean z11 = fa0Var.I;
                                 boolean z12 = fa0Var.J;
-                                gt0 gt0Var = ca0Var2.W;
-                                if (gt0Var != null && (l6Var2 = gt0Var.s) != null) {
+                                ft0 ft0Var = ca0Var2.W;
+                                if (ft0Var != null && (l6Var2 = ft0Var.s) != null) {
                                     l6Var2.n = z11;
                                     l6Var2.o = z12;
                                     l6Var2.d(true);
                                 }
-                                nr0 nr0Var = ca0Var2.b0;
-                                if (nr0Var != null && (l6Var = nr0Var.s) != null) {
+                                mr0 mr0Var = ca0Var2.b0;
+                                if (mr0Var != null && (l6Var = mr0Var.s) != null) {
                                     l6Var.n = z11;
                                     l6Var.o = z12;
                                     l6Var.d(true);
@@ -627,9 +629,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z13 && !fa0Var.I) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var3 = fa0Var.H;
-                                int i20 = -fa0Var.K;
-                                fa0Var.K = i20;
-                                AndroidUtilities.shakeViewSpring(g1Var3, i20);
+                                int i21 = -fa0Var.K;
+                                fa0Var.K = i21;
+                                AndroidUtilities.shakeViewSpring(g1Var3, i21);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var4 = fa0Var.H;
@@ -639,14 +641,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var3 = fa0Var.S;
                                 boolean z15 = fa0Var.I;
                                 boolean z16 = fa0Var.J;
-                                gt0 gt0Var2 = ca0Var3.W;
-                                if (gt0Var2 != null && (l6Var4 = gt0Var2.s) != null) {
+                                ft0 ft0Var2 = ca0Var3.W;
+                                if (ft0Var2 != null && (l6Var4 = ft0Var2.s) != null) {
                                     l6Var4.n = z15;
                                     l6Var4.o = z16;
                                     l6Var4.d(true);
                                 }
-                                nr0 nr0Var2 = ca0Var3.b0;
-                                if (nr0Var2 != null && (l6Var3 = nr0Var2.s) != null) {
+                                mr0 mr0Var2 = ca0Var3.b0;
+                                if (mr0Var2 != null && (l6Var3 = mr0Var2.s) != null) {
                                     l6Var3.n = z15;
                                     l6Var3.o = z16;
                                     l6Var3.d(true);
@@ -666,8 +668,8 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             ArrayList arrayList = new ArrayList();
                             if (fa0Var2.F != null) {
                                 i172 = 0;
-                                for (int i21 = 0; i21 < fa0Var2.F.size(); i21++) {
-                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i21)).storyItem;
+                                for (int i22 = 0; i22 < fa0Var2.F.size(); i22++) {
+                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i22)).storyItem;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i172++;
@@ -682,16 +684,16 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i22 = 0; i22 < arrayList.size(); i22++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i22);
-                                    zArr[i22] = storyItem2.pinned;
+                                for (int i23 = 0; i23 < arrayList.size(); i23++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i23);
+                                    zArr[i23] = storyItem2.pinned;
                                     storyItem2.pinned = z17;
                                 }
                                 fa0Var2.getMessagesController().getStoriesController().n0(fa0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
                                 fa0Var2.R = new mh.r5(fa0Var2, arrayList, z17, 15);
                                 org.telegram.ui.ih ihVar = new org.telegram.ui.ih(fa0Var2, zArr2, arrayList, zArr, 18);
-                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new a90(2, fa0Var2, zArr2);
+                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new b90(i19, fa0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -717,6 +719,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                     int i172;
                     int i182 = i18;
                     fa0 fa0Var = this.b;
+                    int i19 = 1;
                     switch (i182) {
                         case 0:
                             fa0Var.D.M(null, null);
@@ -747,9 +750,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z4 && !fa0Var.J) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var = fa0Var.G;
-                                int i19 = -fa0Var.K;
-                                fa0Var.K = i19;
-                                AndroidUtilities.shakeViewSpring(g1Var, i19);
+                                int i20 = -fa0Var.K;
+                                fa0Var.K = i20;
+                                AndroidUtilities.shakeViewSpring(g1Var, i20);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var2 = fa0Var.G;
@@ -759,14 +762,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var2 = fa0Var.S;
                                 boolean z11 = fa0Var.I;
                                 boolean z12 = fa0Var.J;
-                                gt0 gt0Var = ca0Var2.W;
-                                if (gt0Var != null && (l6Var2 = gt0Var.s) != null) {
+                                ft0 ft0Var = ca0Var2.W;
+                                if (ft0Var != null && (l6Var2 = ft0Var.s) != null) {
                                     l6Var2.n = z11;
                                     l6Var2.o = z12;
                                     l6Var2.d(true);
                                 }
-                                nr0 nr0Var = ca0Var2.b0;
-                                if (nr0Var != null && (l6Var = nr0Var.s) != null) {
+                                mr0 mr0Var = ca0Var2.b0;
+                                if (mr0Var != null && (l6Var = mr0Var.s) != null) {
                                     l6Var.n = z11;
                                     l6Var.o = z12;
                                     l6Var.d(true);
@@ -779,9 +782,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z13 && !fa0Var.I) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var3 = fa0Var.H;
-                                int i20 = -fa0Var.K;
-                                fa0Var.K = i20;
-                                AndroidUtilities.shakeViewSpring(g1Var3, i20);
+                                int i21 = -fa0Var.K;
+                                fa0Var.K = i21;
+                                AndroidUtilities.shakeViewSpring(g1Var3, i21);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var4 = fa0Var.H;
@@ -791,14 +794,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var3 = fa0Var.S;
                                 boolean z15 = fa0Var.I;
                                 boolean z16 = fa0Var.J;
-                                gt0 gt0Var2 = ca0Var3.W;
-                                if (gt0Var2 != null && (l6Var4 = gt0Var2.s) != null) {
+                                ft0 ft0Var2 = ca0Var3.W;
+                                if (ft0Var2 != null && (l6Var4 = ft0Var2.s) != null) {
                                     l6Var4.n = z15;
                                     l6Var4.o = z16;
                                     l6Var4.d(true);
                                 }
-                                nr0 nr0Var2 = ca0Var3.b0;
-                                if (nr0Var2 != null && (l6Var3 = nr0Var2.s) != null) {
+                                mr0 mr0Var2 = ca0Var3.b0;
+                                if (mr0Var2 != null && (l6Var3 = mr0Var2.s) != null) {
                                     l6Var3.n = z15;
                                     l6Var3.o = z16;
                                     l6Var3.d(true);
@@ -818,8 +821,8 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             ArrayList arrayList = new ArrayList();
                             if (fa0Var2.F != null) {
                                 i172 = 0;
-                                for (int i21 = 0; i21 < fa0Var2.F.size(); i21++) {
-                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i21)).storyItem;
+                                for (int i22 = 0; i22 < fa0Var2.F.size(); i22++) {
+                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i22)).storyItem;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i172++;
@@ -834,16 +837,16 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i22 = 0; i22 < arrayList.size(); i22++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i22);
-                                    zArr[i22] = storyItem2.pinned;
+                                for (int i23 = 0; i23 < arrayList.size(); i23++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i23);
+                                    zArr[i23] = storyItem2.pinned;
                                     storyItem2.pinned = z17;
                                 }
                                 fa0Var2.getMessagesController().getStoriesController().n0(fa0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
                                 fa0Var2.R = new mh.r5(fa0Var2, arrayList, z17, 15);
                                 org.telegram.ui.ih ihVar = new org.telegram.ui.ih(fa0Var2, zArr2, arrayList, zArr, 18);
-                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new a90(2, fa0Var2, zArr2);
+                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new b90(i19, fa0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -876,6 +879,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                     int i172;
                     int i182 = i19;
                     fa0 fa0Var = this.b;
+                    int i192 = 1;
                     switch (i182) {
                         case 0:
                             fa0Var.D.M(null, null);
@@ -906,9 +910,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z4 && !fa0Var.J) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var = fa0Var.G;
-                                int i192 = -fa0Var.K;
-                                fa0Var.K = i192;
-                                AndroidUtilities.shakeViewSpring(g1Var, i192);
+                                int i20 = -fa0Var.K;
+                                fa0Var.K = i20;
+                                AndroidUtilities.shakeViewSpring(g1Var, i20);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var2 = fa0Var.G;
@@ -918,14 +922,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var2 = fa0Var.S;
                                 boolean z11 = fa0Var.I;
                                 boolean z12 = fa0Var.J;
-                                gt0 gt0Var = ca0Var2.W;
-                                if (gt0Var != null && (l6Var2 = gt0Var.s) != null) {
+                                ft0 ft0Var = ca0Var2.W;
+                                if (ft0Var != null && (l6Var2 = ft0Var.s) != null) {
                                     l6Var2.n = z11;
                                     l6Var2.o = z12;
                                     l6Var2.d(true);
                                 }
-                                nr0 nr0Var = ca0Var2.b0;
-                                if (nr0Var != null && (l6Var = nr0Var.s) != null) {
+                                mr0 mr0Var = ca0Var2.b0;
+                                if (mr0Var != null && (l6Var = mr0Var.s) != null) {
                                     l6Var.n = z11;
                                     l6Var.o = z12;
                                     l6Var.d(true);
@@ -938,9 +942,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z13 && !fa0Var.I) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var3 = fa0Var.H;
-                                int i20 = -fa0Var.K;
-                                fa0Var.K = i20;
-                                AndroidUtilities.shakeViewSpring(g1Var3, i20);
+                                int i21 = -fa0Var.K;
+                                fa0Var.K = i21;
+                                AndroidUtilities.shakeViewSpring(g1Var3, i21);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var4 = fa0Var.H;
@@ -950,14 +954,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var3 = fa0Var.S;
                                 boolean z15 = fa0Var.I;
                                 boolean z16 = fa0Var.J;
-                                gt0 gt0Var2 = ca0Var3.W;
-                                if (gt0Var2 != null && (l6Var4 = gt0Var2.s) != null) {
+                                ft0 ft0Var2 = ca0Var3.W;
+                                if (ft0Var2 != null && (l6Var4 = ft0Var2.s) != null) {
                                     l6Var4.n = z15;
                                     l6Var4.o = z16;
                                     l6Var4.d(true);
                                 }
-                                nr0 nr0Var2 = ca0Var3.b0;
-                                if (nr0Var2 != null && (l6Var3 = nr0Var2.s) != null) {
+                                mr0 mr0Var2 = ca0Var3.b0;
+                                if (mr0Var2 != null && (l6Var3 = mr0Var2.s) != null) {
                                     l6Var3.n = z15;
                                     l6Var3.o = z16;
                                     l6Var3.d(true);
@@ -977,8 +981,8 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             ArrayList arrayList = new ArrayList();
                             if (fa0Var2.F != null) {
                                 i172 = 0;
-                                for (int i21 = 0; i21 < fa0Var2.F.size(); i21++) {
-                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i21)).storyItem;
+                                for (int i22 = 0; i22 < fa0Var2.F.size(); i22++) {
+                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i22)).storyItem;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i172++;
@@ -993,16 +997,16 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i22 = 0; i22 < arrayList.size(); i22++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i22);
-                                    zArr[i22] = storyItem2.pinned;
+                                for (int i23 = 0; i23 < arrayList.size(); i23++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i23);
+                                    zArr[i23] = storyItem2.pinned;
                                     storyItem2.pinned = z17;
                                 }
                                 fa0Var2.getMessagesController().getStoriesController().n0(fa0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
                                 fa0Var2.R = new mh.r5(fa0Var2, arrayList, z17, 15);
                                 org.telegram.ui.ih ihVar = new org.telegram.ui.ih(fa0Var2, zArr2, arrayList, zArr, 18);
-                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new a90(2, fa0Var2, zArr2);
+                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new b90(i192, fa0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -1030,6 +1034,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                     int i172;
                     int i182 = i20;
                     fa0 fa0Var = this.b;
+                    int i192 = 1;
                     switch (i182) {
                         case 0:
                             fa0Var.D.M(null, null);
@@ -1060,9 +1065,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z4 && !fa0Var.J) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var = fa0Var.G;
-                                int i192 = -fa0Var.K;
-                                fa0Var.K = i192;
-                                AndroidUtilities.shakeViewSpring(g1Var, i192);
+                                int i202 = -fa0Var.K;
+                                fa0Var.K = i202;
+                                AndroidUtilities.shakeViewSpring(g1Var, i202);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var2 = fa0Var.G;
@@ -1072,14 +1077,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var2 = fa0Var.S;
                                 boolean z11 = fa0Var.I;
                                 boolean z12 = fa0Var.J;
-                                gt0 gt0Var = ca0Var2.W;
-                                if (gt0Var != null && (l6Var2 = gt0Var.s) != null) {
+                                ft0 ft0Var = ca0Var2.W;
+                                if (ft0Var != null && (l6Var2 = ft0Var.s) != null) {
                                     l6Var2.n = z11;
                                     l6Var2.o = z12;
                                     l6Var2.d(true);
                                 }
-                                nr0 nr0Var = ca0Var2.b0;
-                                if (nr0Var != null && (l6Var = nr0Var.s) != null) {
+                                mr0 mr0Var = ca0Var2.b0;
+                                if (mr0Var != null && (l6Var = mr0Var.s) != null) {
                                     l6Var.n = z11;
                                     l6Var.o = z12;
                                     l6Var.d(true);
@@ -1092,9 +1097,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z13 && !fa0Var.I) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var3 = fa0Var.H;
-                                int i202 = -fa0Var.K;
-                                fa0Var.K = i202;
-                                AndroidUtilities.shakeViewSpring(g1Var3, i202);
+                                int i21 = -fa0Var.K;
+                                fa0Var.K = i21;
+                                AndroidUtilities.shakeViewSpring(g1Var3, i21);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var4 = fa0Var.H;
@@ -1104,14 +1109,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var3 = fa0Var.S;
                                 boolean z15 = fa0Var.I;
                                 boolean z16 = fa0Var.J;
-                                gt0 gt0Var2 = ca0Var3.W;
-                                if (gt0Var2 != null && (l6Var4 = gt0Var2.s) != null) {
+                                ft0 ft0Var2 = ca0Var3.W;
+                                if (ft0Var2 != null && (l6Var4 = ft0Var2.s) != null) {
                                     l6Var4.n = z15;
                                     l6Var4.o = z16;
                                     l6Var4.d(true);
                                 }
-                                nr0 nr0Var2 = ca0Var3.b0;
-                                if (nr0Var2 != null && (l6Var3 = nr0Var2.s) != null) {
+                                mr0 mr0Var2 = ca0Var3.b0;
+                                if (mr0Var2 != null && (l6Var3 = mr0Var2.s) != null) {
                                     l6Var3.n = z15;
                                     l6Var3.o = z16;
                                     l6Var3.d(true);
@@ -1131,8 +1136,8 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             ArrayList arrayList = new ArrayList();
                             if (fa0Var2.F != null) {
                                 i172 = 0;
-                                for (int i21 = 0; i21 < fa0Var2.F.size(); i21++) {
-                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i21)).storyItem;
+                                for (int i22 = 0; i22 < fa0Var2.F.size(); i22++) {
+                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i22)).storyItem;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i172++;
@@ -1147,16 +1152,16 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i22 = 0; i22 < arrayList.size(); i22++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i22);
-                                    zArr[i22] = storyItem2.pinned;
+                                for (int i23 = 0; i23 < arrayList.size(); i23++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i23);
+                                    zArr[i23] = storyItem2.pinned;
                                     storyItem2.pinned = z17;
                                 }
                                 fa0Var2.getMessagesController().getStoriesController().n0(fa0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
                                 fa0Var2.R = new mh.r5(fa0Var2, arrayList, z17, 15);
                                 org.telegram.ui.ih ihVar = new org.telegram.ui.ih(fa0Var2, zArr2, arrayList, zArr, 18);
-                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new a90(2, fa0Var2, zArr2);
+                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new b90(i192, fa0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -1256,6 +1261,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                     int i172;
                     int i182 = i25;
                     fa0 fa0Var = this.b;
+                    int i192 = 1;
                     switch (i182) {
                         case 0:
                             fa0Var.D.M(null, null);
@@ -1286,9 +1292,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z42 && !fa0Var.J) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var = fa0Var.G;
-                                int i192 = -fa0Var.K;
-                                fa0Var.K = i192;
-                                AndroidUtilities.shakeViewSpring(g1Var, i192);
+                                int i202 = -fa0Var.K;
+                                fa0Var.K = i202;
+                                AndroidUtilities.shakeViewSpring(g1Var, i202);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var2 = fa0Var.G;
@@ -1298,14 +1304,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var2 = fa0Var.S;
                                 boolean z11 = fa0Var.I;
                                 boolean z12 = fa0Var.J;
-                                gt0 gt0Var = ca0Var2.W;
-                                if (gt0Var != null && (l6Var2 = gt0Var.s) != null) {
+                                ft0 ft0Var = ca0Var2.W;
+                                if (ft0Var != null && (l6Var2 = ft0Var.s) != null) {
                                     l6Var2.n = z11;
                                     l6Var2.o = z12;
                                     l6Var2.d(true);
                                 }
-                                nr0 nr0Var = ca0Var2.b0;
-                                if (nr0Var != null && (l6Var = nr0Var.s) != null) {
+                                mr0 mr0Var = ca0Var2.b0;
+                                if (mr0Var != null && (l6Var = mr0Var.s) != null) {
                                     l6Var.n = z11;
                                     l6Var.o = z12;
                                     l6Var.d(true);
@@ -1318,9 +1324,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             if (z13 && !fa0Var.I) {
                                 BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                 org.telegram.ui.ActionBar.g1 g1Var3 = fa0Var.H;
-                                int i202 = -fa0Var.K;
-                                fa0Var.K = i202;
-                                AndroidUtilities.shakeViewSpring(g1Var3, i202);
+                                int i212 = -fa0Var.K;
+                                fa0Var.K = i212;
+                                AndroidUtilities.shakeViewSpring(g1Var3, i212);
                                 break;
                             } else {
                                 org.telegram.ui.ActionBar.g1 g1Var4 = fa0Var.H;
@@ -1330,14 +1336,14 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                                 ca0 ca0Var3 = fa0Var.S;
                                 boolean z15 = fa0Var.I;
                                 boolean z16 = fa0Var.J;
-                                gt0 gt0Var2 = ca0Var3.W;
-                                if (gt0Var2 != null && (l6Var4 = gt0Var2.s) != null) {
+                                ft0 ft0Var2 = ca0Var3.W;
+                                if (ft0Var2 != null && (l6Var4 = ft0Var2.s) != null) {
                                     l6Var4.n = z15;
                                     l6Var4.o = z16;
                                     l6Var4.d(true);
                                 }
-                                nr0 nr0Var2 = ca0Var3.b0;
-                                if (nr0Var2 != null && (l6Var3 = nr0Var2.s) != null) {
+                                mr0 mr0Var2 = ca0Var3.b0;
+                                if (mr0Var2 != null && (l6Var3 = mr0Var2.s) != null) {
                                     l6Var3.n = z15;
                                     l6Var3.o = z16;
                                     l6Var3.d(true);
@@ -1357,8 +1363,8 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             ArrayList arrayList = new ArrayList();
                             if (fa0Var2.F != null) {
                                 i172 = 0;
-                                for (int i212 = 0; i212 < fa0Var2.F.size(); i212++) {
-                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i212)).storyItem;
+                                for (int i222 = 0; i222 < fa0Var2.F.size(); i222++) {
+                                    TL_stories.StoryItem storyItem = ((MessageObject) fa0Var2.F.valueAt(i222)).storyItem;
                                     if (storyItem != null) {
                                         arrayList.add(storyItem);
                                         i172++;
@@ -1373,16 +1379,16 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             }
                             if (!arrayList.isEmpty()) {
                                 boolean[] zArr = new boolean[arrayList.size()];
-                                for (int i222 = 0; i222 < arrayList.size(); i222++) {
-                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i222);
-                                    zArr[i222] = storyItem2.pinned;
+                                for (int i232 = 0; i232 < arrayList.size(); i232++) {
+                                    TL_stories.StoryItem storyItem2 = (TL_stories.StoryItem) arrayList.get(i232);
+                                    zArr[i232] = storyItem2.pinned;
                                     storyItem2.pinned = z17;
                                 }
                                 fa0Var2.getMessagesController().getStoriesController().n0(fa0Var2.e, arrayList, false);
                                 boolean[] zArr2 = {false};
                                 fa0Var2.R = new mh.r5(fa0Var2, arrayList, z17, 15);
                                 org.telegram.ui.ih ihVar = new org.telegram.ui.ih(fa0Var2, zArr2, arrayList, zArr, 18);
-                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new a90(2, fa0Var2, zArr2);
+                                (z17 ? qc.a0(fa0Var2).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i172, new Object[0]), LocaleController.getString("StorySavedSubtitle"), LocaleController.getString("Undo"), ihVar).j() : qc.a0(fa0Var2).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i172, new Object[0]), LocaleController.getString("Undo"), 5000, false, ihVar).j()).v = new b90(i192, fa0Var2, zArr2);
                                 break;
                             }
                             break;
@@ -1524,9 +1530,9 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                             this.S.A(!r0.s0(r0.h0[0].C), false);
                             this.S.getSearchOptionsItem().setVisibility(0);
                         }
-                        rt0[] rt0VarArr = this.S.h0;
-                        i12 = rt0VarArr[r10].C;
-                        if ((i12 != 0 || zu0.p0(i12) || rt0VarArr[r10].C == i11) && this.a != 1) {
+                        qt0[] qt0VarArr = this.S.h0;
+                        i12 = qt0VarArr[r10].C;
+                        if ((i12 != 0 || yu0.p0(i12) || qt0VarArr[r10].C == i11) && this.a != 1) {
                             this.S.o0.setVisibility(r10);
                         } else {
                             this.S.o0.setVisibility(4);
@@ -1562,8 +1568,8 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
                 if (this.S.getSearchOptionsItem() != null) {
                 }
                 r10 = 0;
-                rt0[] rt0VarArr2 = this.S.h0;
-                i12 = rt0VarArr2[r10].C;
+                qt0[] qt0VarArr2 = this.S.h0;
+                i12 = qt0VarArr2[r10].C;
                 if (i12 != 0) {
                 }
                 this.S.o0.setVisibility(r10);
@@ -1595,8 +1601,8 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
         if (this.S.getSearchOptionsItem() != null) {
         }
         r10 = 0;
-        rt0[] rt0VarArr22 = this.S.h0;
-        i12 = rt0VarArr22[r10].C;
+        qt0[] qt0VarArr22 = this.S.h0;
+        i12 = qt0VarArr22[r10].C;
         if (i12 != 0) {
         }
         this.S.o0.setVisibility(r10);
@@ -1704,7 +1710,7 @@ public final class fa0 extends org.telegram.ui.ActionBar.p2 implements su0, ag.b
             }
         }
         if (this.b == null) {
-            this.b = new ru0(this);
+            this.b = new qu0(this);
         }
         this.b.x.add(this);
         return super.onFragmentCreate();

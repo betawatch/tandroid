@@ -25,16 +25,16 @@ import org.telegram.ui.Components.f40;
 import org.telegram.ui.Components.fa0;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.jc;
-import org.telegram.ui.Components.m51;
+import org.telegram.ui.Components.k51;
+import org.telegram.ui.Components.l51;
 import org.telegram.ui.Components.n51;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.o51;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.s01;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class n3 extends a8 {
     public final /* synthetic */ i9 u0;
@@ -76,36 +76,36 @@ public final class n3 extends a8 {
 
     @Override // oh.a8
     public final void G(CharacterStyle characterStyle, View view) {
-        boolean z4 = characterStyle instanceof q51;
+        boolean z4 = characterStyle instanceof o51;
         i9 i9Var = this.u0;
         f4 f4Var = this.w0;
         if (z4) {
-            TLRPC.User user = MessagesController.getInstance(f4Var.z2).getUser(Utilities.parseLong(((q51) characterStyle).getURL()));
+            TLRPC.User user = MessagesController.getInstance(f4Var.z2).getUser(Utilities.parseLong(((o51) characterStyle).getURL()));
             if (user != null) {
                 MessagesController.getInstance(f4Var.z2).openChatOrProfileWith(user, null, i9Var.f, 0, false);
                 return;
             }
             return;
         }
-        if (!(characterStyle instanceof n51)) {
+        if (!(characterStyle instanceof l51)) {
             if (characterStyle instanceof URLSpan) {
-                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof p51);
+                M(2, ((URLSpan) characterStyle).getURL(), characterStyle, characterStyle instanceof n51);
                 return;
             }
-            if (!(characterStyle instanceof m51)) {
+            if (!(characterStyle instanceof k51)) {
                 if (characterStyle instanceof ClickableSpan) {
                     ((ClickableSpan) characterStyle).onClick(view);
                     return;
                 }
                 return;
             } else {
-                m51 m51Var = (m51) characterStyle;
-                AndroidUtilities.addToClipboard(m51Var.a.subSequence(m51Var.b, m51Var.c).toString());
+                k51 k51Var = (k51) characterStyle;
+                AndroidUtilities.addToClipboard(k51Var.a.subSequence(k51Var.b, k51Var.c).toString());
                 org.telegram.ui.b.m(R.string.TextCopied, new qc(f4Var.Z0, this.v0));
                 return;
             }
         }
-        String url = ((n51) characterStyle).getURL();
+        String url = ((l51) characterStyle).getURL();
         if (url != null && (url.startsWith("#") || url.startsWith("$"))) {
             if (url.contains("@")) {
                 i9Var.H(new f40(url, null));
@@ -294,11 +294,11 @@ public final class n3 extends a8 {
     }
 
     public final void M(int i10, String str, CharacterStyle characterStyle, boolean z4) {
-        t01 t01Var;
+        s01 s01Var;
         if (z4 || AndroidUtilities.shouldShowUrlInAlert(str)) {
             i9 i9Var = this.u0;
             if (i10 == 0 || i10 == 2) {
-                org.telegram.ui.Components.z4.r0(i9Var.f, str, true, true, true, (!(characterStyle instanceof p51) || (t01Var = ((p51) characterStyle).a) == null || (t01Var.a & 1024) == 0) ? false : true, null, null, this.v0);
+                org.telegram.ui.Components.z4.r0(i9Var.f, str, true, true, true, (!(characterStyle instanceof n51) || (s01Var = ((n51) characterStyle).a) == null || (s01Var.a & 1024) == 0) ? false : true, null, null, this.v0);
                 return;
             } else {
                 if (i10 == 1) {

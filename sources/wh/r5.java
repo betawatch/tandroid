@@ -5,7 +5,7 @@ import org.telegram.messenger.p6;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.m9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class r5 implements d1 {
     public final /* synthetic */ v5 a;
@@ -31,7 +31,7 @@ public final class r5 implements d1 {
             if (charSequence == null || charSequence.length() <= 0) {
                 return;
             }
-            a3Var.a.t4(charSequence.toString());
+            a3Var.a.s4(charSequence.toString());
         }
     }
 
@@ -78,7 +78,7 @@ public final class r5 implements d1 {
         s5 s5Var = this.a.y;
         if (s5Var != null) {
             r3 r3Var = ((a3) s5Var).a;
-            r3.M1(r3Var, e1Var);
+            r3.L1(r3Var, e1Var);
             r3Var.e3.h(e1Var, true);
         }
     }
@@ -90,7 +90,7 @@ public final class r5 implements d1 {
         if (s5Var == null || v5Var.x == null) {
             return false;
         }
-        return ((a3) s5Var).a.S4();
+        return ((a3) s5Var).a.R4();
     }
 
     @Override // wh.d1
@@ -112,7 +112,7 @@ public final class r5 implements d1 {
         if (s5Var == null || (aVar = v5Var.x) == null) {
             return;
         }
-        r3.P1(((a3) s5Var).a, aVar);
+        r3.O1(((a3) s5Var).a, aVar);
     }
 
     @Override // wh.d1

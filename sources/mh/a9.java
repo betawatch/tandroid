@@ -13,11 +13,11 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.zu0;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class a9 implements Runnable {
     public final /* synthetic */ int a;
@@ -88,7 +88,7 @@ public final /* synthetic */ class a9 implements Runnable {
                 }
                 break;
             default:
-                zu0.n((zu0) this.d, this.b, this.c);
+                yu0.n((yu0) this.d, this.b, this.c);
                 break;
         }
     }

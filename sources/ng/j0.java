@@ -14,13 +14,13 @@ import org.telegram.messenger.y3;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.v0;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.pk0;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.ok0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.qj;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class j0 extends FrameLayout {
     public final /* synthetic */ p2 a;
@@ -149,9 +149,9 @@ public final class j0 extends FrameLayout {
             invalidate();
             return;
         }
-        pk0 pk0Var = m0Var.t;
-        if (pk0Var != null) {
-            pk0Var.a.setAlpha(0.0f);
+        ok0 ok0Var = m0Var.t;
+        if (ok0Var != null) {
+            ok0Var.a.setAlpha(0.0f);
             this.x.t.c.setAlpha(0.0f);
         }
         p2 p2Var = this.a;
@@ -363,7 +363,7 @@ public final class j0 extends FrameLayout {
                     if (!this.x.x.isEmpty()) {
                         k0 k0Var3 = this.x.b;
                         if (k0Var3.D) {
-                            ij0 lottieAnimation = k0Var3.getImageReceiver().getLottieAnimation();
+                            hj0 lottieAnimation = k0Var3.getImageReceiver().getLottieAnimation();
                             int i15 = 0;
                             while (i15 < this.x.x.size()) {
                                 l0 l0Var = (l0) this.x.x.get(i15);

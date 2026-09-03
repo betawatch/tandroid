@@ -12,7 +12,7 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nj implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -232,7 +232,7 @@ public final /* synthetic */ class nj implements Runnable {
                 wh.e1 e1Var = (wh.e1) obj3;
                 org.telegram.ui.Cells.m9 m9Var = (org.telegram.ui.Cells.m9) obj2;
                 wh.h0 h0Var = (wh.h0) obj;
-                wh.i0 i0Var = (wh.i0) ((q5.g0) obj4).c;
+                wh.i0 i0Var = (wh.i0) ((q5.c0) obj4).b;
                 if (e1Var.length() >= i13 && e1Var.getSelectionStart() != e1Var.getSelectionEnd() && m9Var.k0(h0Var.E(), 0, this.d, i13)) {
                     i0Var.d = true;
                     e1Var.setSelection(i13);
@@ -252,8 +252,8 @@ public final /* synthetic */ class nj implements Runnable {
         this.h = xnVar;
     }
 
-    public /* synthetic */ nj(q5.g0 g0Var, wh.e1 e1Var, int i10, org.telegram.ui.Cells.m9 m9Var, wh.h0 h0Var, int i11) {
-        this.e = g0Var;
+    public /* synthetic */ nj(q5.c0 c0Var, wh.e1 e1Var, int i10, org.telegram.ui.Cells.m9 m9Var, wh.h0 h0Var, int i11) {
+        this.e = c0Var;
         this.f = e1Var;
         this.b = i10;
         this.c = m9Var;

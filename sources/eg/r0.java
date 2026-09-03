@@ -1,17 +1,17 @@
 package eg;
 
-import org.telegram.ui.ht0;
-import org.telegram.ui.oq0;
+import org.telegram.ui.mt0;
+import org.telegram.ui.tq0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class r0 implements dg.n1 {
-    public final /* synthetic */ oq0 a;
-    public final /* synthetic */ ht0 b;
+    public final /* synthetic */ tq0 a;
+    public final /* synthetic */ mt0 b;
 
-    public r0(ht0 ht0Var, oq0 oq0Var) {
-        this.b = ht0Var;
-        this.a = oq0Var;
+    public r0(mt0 mt0Var, tq0 tq0Var) {
+        this.b = mt0Var;
+        this.a = tq0Var;
     }
 
     @Override // dg.n1
@@ -29,38 +29,38 @@ public final class r0 implements dg.n1 {
 
     @Override // dg.n1
     public final void c() {
-        ht0 ht0Var = this.b;
-        if (ht0Var.h1) {
-            ht0Var.h1 = false;
+        mt0 mt0Var = this.b;
+        if (mt0Var.h1) {
+            mt0Var.h1 = false;
         } else {
-            ht0Var.q1.b(1);
-            ht0Var.g((dg.m) dg.m.a.get(0));
+            mt0Var.q1.b(1);
+            mt0Var.g((dg.m) dg.m.a.get(0));
         }
     }
 
     @Override // dg.n1
     public final boolean d() {
-        ht0 ht0Var = this.b;
-        boolean z4 = ht0Var.P0 == null;
+        mt0 mt0Var = this.b;
+        boolean z4 = mt0Var.P0 == null;
         if (!z4) {
-            ht0Var.r0(null, true);
+            mt0Var.r0(null, true);
         }
         return z4;
     }
 
     @Override // dg.n1
     public final void e() {
-        ht0 ht0Var = this.b;
-        ht0Var.C0.a.e();
-        ht0Var.i1.setViewHidden(false);
+        mt0 mt0Var = this.b;
+        mt0Var.C0.a.e();
+        mt0Var.i1.setViewHidden(false);
     }
 
     @Override // dg.n1
     public final void f() {
-        ht0 ht0Var = this.b;
-        if (ht0Var.P0 != null) {
-            ht0Var.r0(null, true);
+        mt0 mt0Var = this.b;
+        if (mt0Var.P0 != null) {
+            mt0Var.r0(null, true);
         }
-        ht0Var.i1.setViewHidden(true);
+        mt0Var.i1.setViewHidden(true);
     }
 }

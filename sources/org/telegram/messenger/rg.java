@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.view.KeyEvent;
 import android.view.TextureView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rg implements Runnable {
     public final /* synthetic */ int a;
@@ -28,16 +28,16 @@ public final /* synthetic */ class rg implements Runnable {
                 break;
             case 1:
                 qh.x xVar = (qh.x) ((fg.s2) this.e).b;
-                qh.s6 s6Var = xVar.n;
-                if (s6Var != null) {
-                    int i10 = s6Var.k0;
+                qh.r6 r6Var = xVar.n;
+                if (r6Var != null) {
+                    int i10 = r6Var.k0;
                     int i11 = this.b;
                     int i12 = this.c;
                     int i13 = this.d;
-                    if (i10 != i11 || s6Var.l0 != i12 || s6Var.Q != i13) {
-                        s6Var.k0 = i11;
-                        s6Var.l0 = i12;
-                        s6Var.Q = i13;
+                    if (i10 != i11 || r6Var.l0 != i12 || r6Var.Q != i13) {
+                        r6Var.k0 = i11;
+                        r6Var.l0 = i12;
+                        r6Var.Q = i13;
                         TextureView textureView = xVar.e;
                         if (textureView != null) {
                             textureView.requestLayout();
@@ -48,15 +48,15 @@ public final /* synthetic */ class rg implements Runnable {
                 break;
             case 2:
                 wh.r3 r3Var = (wh.r3) this.e;
-                KeyEvent.Callback A4 = r3Var.A4(this.b);
-                if (A4 instanceof org.telegram.ui.Cells.l9) {
-                    r3Var.k3.c0(this.c, this.d, (org.telegram.ui.Cells.l9) A4);
+                KeyEvent.Callback z4 = r3Var.z4(this.b);
+                if (z4 instanceof org.telegram.ui.Cells.l9) {
+                    r3Var.k3.c0(this.c, this.d, (org.telegram.ui.Cells.l9) z4);
                     break;
                 }
                 break;
             default:
                 wh.h3 h3Var = (wh.h3) this.e;
-                wh.r3.K1(h3Var.b, this.b, this.c, this.d);
+                wh.r3.J1(h3Var.b, this.b, this.c, this.d);
                 break;
         }
     }

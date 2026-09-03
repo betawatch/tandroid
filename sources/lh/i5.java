@@ -4,11 +4,11 @@ import mh.t9;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.j80;
 import org.telegram.ui.Components.sa;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i5 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -30,7 +30,7 @@ public final /* synthetic */ class i5 implements Utilities.Callback2 {
                 q5.V((q5) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (mh.i4) obj, (af.f) obj2);
                 break;
             case 1:
-                t9.Q((t9) this.c, (j51) this.d, this.b, (Boolean) obj, (String) obj2);
+                t9.Q((t9) this.c, (h51) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
             default:
                 j80.m((j80) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);

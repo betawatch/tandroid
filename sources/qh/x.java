@@ -8,9 +8,9 @@ import android.view.TextureView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.ns0;
+import org.telegram.ui.ss0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class x {
     public int a;
@@ -21,7 +21,7 @@ public final class x {
     public boolean f;
     public q h;
     public boolean m;
-    public s6 n;
+    public r6 n;
     public ValueAnimator o;
     public final /* synthetic */ y p;
     public volatile long g = -1;
@@ -36,7 +36,7 @@ public final class x {
         this.c = new ImageReceiver(yVar);
     }
 
-    public final void a(s6 s6Var) {
+    public final void a(r6 r6Var) {
         float f10;
         fg.s2 s2Var = this.d;
         if (s2Var != null) {
@@ -50,27 +50,27 @@ public final class x {
             this.e = null;
         }
         this.f = false;
-        this.n = s6Var;
+        this.n = r6Var;
         StringBuilder sb = new StringBuilder();
         sb.append((int) Math.ceil(AndroidUtilities.displaySize.x / AndroidUtilities.density));
         sb.append("_");
         sb.append((int) Math.ceil(AndroidUtilities.displaySize.y / AndroidUtilities.density));
-        String r10 = android.support.v4.media.a.r(sb, (s6Var == null || !s6Var.K) ? "" : "_g", "_exif");
-        s6 s6Var2 = this.n;
+        String r10 = android.support.v4.media.a.r(sb, (r6Var == null || !r6Var.K) ? "" : "_g", "_exif");
+        r6 r6Var2 = this.n;
         y yVar = this.p;
         ImageReceiver imageReceiver = this.c;
-        if (s6Var2 == null) {
+        if (r6Var2 == null) {
             imageReceiver.clearImage();
-        } else if (s6Var2.K) {
-            Bitmap bitmap = s6Var2.M0;
+        } else if (r6Var2.K) {
+            Bitmap bitmap = r6Var2.M0;
             if (bitmap != null) {
                 imageReceiver.setImageBitmap(bitmap);
             } else {
-                Bitmap bitmap2 = s6Var2.b1;
+                Bitmap bitmap2 = r6Var2.b1;
                 if (bitmap2 != null) {
                     imageReceiver.setImageBitmap(bitmap2);
                 } else {
-                    String str = s6Var2.N;
+                    String str = r6Var2.N;
                     if (str != null) {
                         imageReceiver.setImage(str, r10, null, null, 0L);
                     } else {
@@ -88,9 +88,9 @@ public final class x {
             this.d.preparePlayer(Uri.fromFile(this.n.L), false, 1.0f);
             fg.s2 s2Var3 = this.d;
             if (!yVar.s0) {
-                s6 s6Var3 = this.n;
-                if (!s6Var3.Y && yVar.k0) {
-                    f10 = s6Var3.P;
+                r6 r6Var3 = this.n;
+                if (!r6Var3.Y && yVar.k0) {
+                    f10 = r6Var3.P;
                     s2Var3.setVolume(f10);
                     if (yVar.k0 || yVar.n0) {
                         this.d.play();
@@ -105,7 +105,7 @@ public final class x {
             }
             this.d.play();
         } else {
-            imageReceiver.setImage(s6Var2.L.getAbsolutePath(), r10, null, null, 0L);
+            imageReceiver.setImage(r6Var2.L.getAbsolutePath(), r10, null, null, 0L);
         }
         yVar.invalidate();
     }
@@ -139,7 +139,7 @@ public final class x {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
             this.o = ofFloat;
             ofFloat.addUpdateListener(new f2.d0(this, 10));
-            this.o.addListener(new ns0(this, 29));
+            this.o.addListener(new ss0(this, 29));
             this.o.setInterpolator(pr.h);
             this.o.setDuration(360L);
             this.o.start();

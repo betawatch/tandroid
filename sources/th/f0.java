@@ -7,18 +7,18 @@ import f2.m1;
 import k7.c6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.nb0;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class f0 extends FrameLayout {
     public org.telegram.ui.ActionBar.k a;
     public final xg.f b;
     public final FrameLayout c;
-    public i61 d;
+    public h61 d;
     public boolean e;
     public final /* synthetic */ i0 f;
 
@@ -57,7 +57,7 @@ public abstract class f0 extends FrameLayout {
             View childAt = this.d.getChildAt(i10);
             m1 T = this.d.T(childAt);
             if (T != null) {
-                j51 G = this.d.V2.G(T.b());
+                h51 G = this.d.V2.G(T.b());
                 if (G != null && G.d != 99) {
                     f10 = Math.min(childAt.getY() + this.c.getPaddingTop(), f10);
                 }

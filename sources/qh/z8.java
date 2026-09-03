@@ -1,13 +1,37 @@
 package qh;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class z8 extends CharacterStyle {
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        textPaint.setAlpha(128);
+public final class z8 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ ba d;
+
+    public /* synthetic */ z8(ba baVar, int i10, int i11, int i12) {
+        this.a = i12;
+        this.d = baVar;
+        this.b = i10;
+        this.c = i11;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.d.N(this.b, this.c);
+                break;
+            default:
+                int i10 = this.b;
+                int i11 = this.c;
+                if (i10 != i11) {
+                    this.d.Q(i10, i11);
+                    break;
+                }
+                break;
+        }
     }
 }

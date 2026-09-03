@@ -11,9 +11,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class u3 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.Components.t5 a;
@@ -27,11 +27,11 @@ public final class u3 extends FrameLayout implements org.telegram.ui.ActionBar.b
         this(context, 16, g6Var);
     }
 
-    public static void a(ArrayList arrayList, tl0 tl0Var) {
+    public static void a(ArrayList arrayList, sl0 sl0Var) {
         int i10 = org.telegram.ui.ActionBar.k6.f7;
-        arrayList.add(new org.telegram.ui.ActionBar.m6(tl0Var, 0, new Class[]{u3.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(tl0Var, 0, new Class[]{u3.class}, new String[]{"rightTextView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(tl0Var, 16, new Class[]{u3.class}, null, null, null, org.telegram.ui.ActionBar.k6.e7));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 0, new Class[]{u3.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 0, new Class[]{u3.class}, new String[]{"rightTextView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 16, new Class[]{u3.class}, null, null, null, org.telegram.ui.ActionBar.k6.e7));
     }
 
     public final void b(CharSequence charSequence, View.OnClickListener onClickListener) {

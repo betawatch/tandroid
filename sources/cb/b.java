@@ -25,14 +25,14 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Cells.k1;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.ko0;
+import org.telegram.ui.Components.jo0;
 import org.telegram.ui.Components.u5;
-import org.telegram.ui.q61;
-import org.telegram.ui.xu0;
+import org.telegram.ui.cv0;
+import org.telegram.ui.v61;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final class b implements c9.e, e2.d, g5.l, SuccessContinuation, j9.c, m6.d, q61, c9.f, of.a, ko0, k1, pf.a, r3.c, ra.m, s0 {
+public final class b implements c9.e, e2.d, g5.l, SuccessContinuation, j9.c, m6.d, v61, c9.f, of.a, jo0, k1, pf.a, r3.c, ra.m, s0 {
     public static volatile b b;
     public final /* synthetic */ int a;
 
@@ -129,7 +129,7 @@ public final class b implements c9.e, e2.d, g5.l, SuccessContinuation, j9.c, m6.
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public void X(float f10, boolean z4) {
         s3.b = f10 * 2.0f;
     }
@@ -244,11 +244,11 @@ public final class b implements c9.e, e2.d, g5.l, SuccessContinuation, j9.c, m6.
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ xu0 g2() {
+    public /* synthetic */ cv0 g2() {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public /* synthetic */ CharSequence getContentDescription() {
         return null;
     }
@@ -296,7 +296,7 @@ public final class b implements c9.e, e2.d, g5.l, SuccessContinuation, j9.c, m6.
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public /* synthetic */ int m0() {
         return 0;
     }
@@ -355,7 +355,7 @@ public final class b implements c9.e, e2.d, g5.l, SuccessContinuation, j9.c, m6.
         }
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public void A() {
     }
 

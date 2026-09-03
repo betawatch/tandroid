@@ -10,28 +10,28 @@ import java.util.ArrayList;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class h40 extends FrameLayout {
     public final int a;
     public final org.telegram.ui.ActionBar.g6 b;
     public ArrayList c;
     public final FrameLayout d;
-    public final i61 e;
-    public final x51 f;
+    public final h61 e;
+    public final w51 f;
     public Utilities.Callback h;
 
     public h40(int i10, Activity activity, org.telegram.ui.ActionBar.g6 g6Var) {
         super(activity);
         this.a = i10;
         this.b = g6Var;
-        i61 i61Var = new i61(activity, i10, 0, false, new d(this, 15), new g40(this), new g40(this), g6Var);
-        this.e = i61Var;
-        i61Var.setClipToPadding(false);
-        x51 x51Var = (x51) i61Var.getAdapter();
-        this.f = x51Var;
-        x51Var.r = false;
-        addView(i61Var, -1, -1);
+        h61 h61Var = new h61(activity, i10, 0, false, new d(this, 15), new g40(this), new g40(this), g6Var);
+        this.e = h61Var;
+        h61Var.setClipToPadding(false);
+        w51 w51Var = (w51) h61Var.getAdapter();
+        this.f = w51Var;
+        w51Var.r = false;
+        addView(h61Var, -1, -1);
         FrameLayout frameLayout = new FrameLayout(activity);
         this.d = frameLayout;
         ImageView imageView = new ImageView(activity);
@@ -45,7 +45,7 @@ public final class h40 extends FrameLayout {
         org.telegram.messenger.y3.r(R.string.HashtagSearchPlaceholder, textView, 17);
         frameLayout.addView(textView, k7.c6.d(-2, -2.0f, 81, 0.0f, 56.0f, 0.0f, 0.0f));
         addView(frameLayout, k7.c6.e(210, -2, 17));
-        i61Var.setEmptyView(frameLayout);
+        h61Var.setEmptyView(frameLayout);
     }
 
     public void setOnHashtagClickListener(Utilities.Callback<String> callback) {

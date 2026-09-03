@@ -10,7 +10,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class sa0 implements Menu {
     public final q70 a;
@@ -87,9 +87,9 @@ public final class sa0 implements Menu {
     public final MenuItem add(int i10, int i11, int i12, CharSequence charSequence) {
         Runnable runnable = this.c;
         if (runnable == null || !org.telegram.ui.ActionBar.z4.r.contains(Integer.valueOf(i11)) || !MessagesController.getInstance(UserConfig.selectedAccount).premiumFeaturesBlocked()) {
-            jm jmVar = new jm(this, i11, 2);
+            im imVar = new im(this, i11, 2);
             q70 q70Var = this.a;
-            q70Var.c(0, charSequence, jmVar, false);
+            q70Var.c(0, charSequence, imVar, false);
             if (runnable != null && org.telegram.ui.ActionBar.z4.r.contains(Integer.valueOf(i11))) {
                 q70Var.M(runnable);
             }

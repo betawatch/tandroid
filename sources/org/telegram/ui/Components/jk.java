@@ -43,7 +43,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class jk extends ei {
     public static final /* synthetic */ int d0 = 0;
@@ -212,7 +212,7 @@ public final class jk extends ei {
         xjVar.setVisibility(8);
         xj xjVar2 = new xj(this, context, g6Var, 1);
         this.r = xjVar2;
-        xjVar2.p1();
+        xjVar2.o1();
         this.c = xjVar2;
         this.d = xjVar2;
         this.h = true;
@@ -228,14 +228,14 @@ public final class jk extends ei {
         this.y = new ik(this, context);
         xjVar2.setOnScrollListener(new fg.e2(this, 20));
         final int i12 = 0;
-        xjVar2.setOnItemClickListener(new jl0(this) { // from class: org.telegram.ui.Components.tj
+        xjVar2.setOnItemClickListener(new il0(this) { // from class: org.telegram.ui.Components.tj
             public final /* synthetic */ jk b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.jl0
+            @Override // org.telegram.ui.Components.il0
             public final void f(int i13, View view) {
                 switch (i12) {
                     case 0:
@@ -269,14 +269,14 @@ public final class jk extends ei {
         uf.g0 g0Var = new uf.g0(context, g6Var);
         this.E = g0Var;
         final int i13 = 1;
-        g0Var.setOnItemClickListener(new jl0(this) { // from class: org.telegram.ui.Components.tj
+        g0Var.setOnItemClickListener(new il0(this) { // from class: org.telegram.ui.Components.tj
             public final /* synthetic */ jk b;
 
             {
                 this.b = this;
             }
 
-            @Override // org.telegram.ui.Components.jl0
+            @Override // org.telegram.ui.Components.il0
             public final void f(int i132, View view) {
                 switch (i13) {
                     case 0:
@@ -371,17 +371,17 @@ public final class jk extends ei {
             ArrayList arrayList = new ArrayList();
             org.telegram.ui.ActionBar.p2 p2Var = miVar.c0;
             org.telegram.ui.xn xnVar = p2Var instanceof org.telegram.ui.xn ? (org.telegram.ui.xn) p2Var : null;
-            org.telegram.ui.hq0 hq0Var = new org.telegram.ui.hq0(0, MediaController.allMediaAlbumEntry, hashMap, arrayList, 0, xnVar != null, xnVar, false);
-            hq0Var.i0 = true;
-            hq0Var.p0 = new l7.w0(jkVar, hashMap, arrayList, 20);
-            hq0Var.f0(jkVar.S, false);
+            org.telegram.ui.mq0 mq0Var = new org.telegram.ui.mq0(0, MediaController.allMediaAlbumEntry, hashMap, arrayList, 0, xnVar != null, xnVar, false);
+            mq0Var.i0 = true;
+            mq0Var.p0 = new l7.w0(jkVar, hashMap, arrayList, 20);
+            mq0Var.f0(jkVar.S, false);
             org.telegram.ui.ActionBar.p2 p2Var2 = miVar.c0;
             if (p2Var2 != null) {
-                p2Var2.presentFragment(hq0Var);
+                p2Var2.presentFragment(mq0Var);
             } else {
                 org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
                 if (R != null) {
-                    R.presentFragment(hq0Var);
+                    R.presentFragment(mq0Var);
                 }
             }
             miVar.dismiss(true);
@@ -979,12 +979,12 @@ public final class jk extends ei {
         }
         int i10 = 0;
         View childAt = xjVar.getChildAt(0);
-        fl0 fl0Var = (fl0) xjVar.G(childAt);
+        el0 el0Var = (el0) xjVar.G(childAt);
         int y10 = ((((int) childAt.getY()) - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(8.0f);
-        if (y10 > 0 && fl0Var != null && fl0Var.b() == 0) {
+        if (y10 > 0 && el0Var != null && el0Var.b() == 0) {
             i10 = y10;
         }
-        if (y10 < 0 || fl0Var == null || fl0Var.b() != 0) {
+        if (y10 < 0 || el0Var == null || el0Var.b() != 0) {
             y10 = i10;
         }
         return AndroidUtilities.dp(13.0f) + y10;
@@ -1144,7 +1144,7 @@ public final class jk extends ei {
             }
             miVar.setAllowNestedScroll(true);
         }
-        this.r.o1(0, dp + AndroidUtilities.statusBarHeight, 0, this.e);
+        this.r.n1(0, dp + AndroidUtilities.statusBarHeight, 0, this.e);
         ((FrameLayout.LayoutParams) this.E.getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
     }
 }

@@ -30,19 +30,18 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.r8;
 import org.telegram.ui.Cells.z1;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.or;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.tp;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.c51;
+import org.telegram.ui.h51;
 import org.telegram.ui.yh;
-import qh.d4;
-import qh.y6;
+import qh.c4;
+import qh.x6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class l0 extends p2 {
     public static final int R = -1;
@@ -67,7 +66,7 @@ public final class l0 extends p2 {
     public static final int k0 = -20;
     public static final int l0 = -21;
     public int B;
-    public final h0 C;
+    public final g0 C;
     public TL_account.connectedBots D;
     public TL_account.TL_connectedBot E;
     public boolean F;
@@ -84,12 +83,12 @@ public final class l0 extends p2 {
     public boolean Q;
     public or a;
     public org.telegram.ui.ActionBar.w0 b;
-    public i61 c;
+    public h61 c;
     public uf.k1 d;
     public FrameLayout e;
     public EditTextBoldCursor f;
     public View h;
-    public c51 n;
+    public h51 n;
     public TextView r;
     public ImageView s;
     public v v;
@@ -100,7 +99,7 @@ public final class l0 extends p2 {
     public l0() {
         super(null);
         this.B = 0;
-        this.C = new h0(this, 4);
+        this.C = new g0(this, 4);
         this.G = TL_account.TL_businessBotRights.makeDefault();
         this.J = null;
         this.K = new LongSparseArray();
@@ -122,9 +121,9 @@ public final class l0 extends p2 {
             y3.s(R.string.UnknownError, qc.a0(l0Var), null);
             return;
         }
-        int i10 = 1;
+        int i10 = 0;
         if (tLObject instanceof TLRPC.Updates) {
-            Utilities.stageQueue.postRunnable(new d0(i10, l0Var, tLObject));
+            Utilities.stageQueue.postRunnable(new k0(i10, l0Var, tLObject));
         }
         int i11 = iArr[0] + 1;
         iArr[0] = i11;
@@ -146,9 +145,9 @@ public final class l0 extends p2 {
         }
     }
 
-    public static void W(final l0 l0Var, j51 j51Var, final View view) {
-        if (j51Var.g && !l0Var.v.h(j51Var)) {
-            int i10 = j51Var.d;
+    public static void W(final l0 l0Var, org.telegram.ui.Components.h51 h51Var, final View view) {
+        if (h51Var.g && !l0Var.v.h(h51Var)) {
+            int i10 = h51Var.d;
             if (i10 == R) {
                 v vVar = l0Var.v;
                 l0Var.F = true;
@@ -171,8 +170,8 @@ public final class l0 extends p2 {
                 l0Var.Y(true);
                 return;
             }
-            if (j51Var.a == 13) {
-                TLRPC.User user = (TLRPC.User) l0Var.K.get(j51Var.x);
+            if (h51Var.a == 13) {
+                TLRPC.User user = (TLRPC.User) l0Var.K.get(h51Var.x);
                 if (user == null) {
                     return;
                 }
@@ -275,7 +274,7 @@ public final class l0 extends p2 {
             }
             if (i10 == e0) {
                 final int i12 = 5;
-                l0Var.X(i10, !l0Var.G.edit_username, new Runnable(l0Var) { // from class: vf.g0
+                l0Var.X(i10, !l0Var.G.edit_username, new Runnable(l0Var) { // from class: vf.f0
                     public final /* synthetic */ l0 b;
 
                     {
@@ -365,7 +364,7 @@ public final class l0 extends p2 {
             }
             if (i10 == g0) {
                 final int i13 = 0;
-                l0Var.X(i10, !l0Var.G.view_gifts, new Runnable(l0Var) { // from class: vf.g0
+                l0Var.X(i10, !l0Var.G.view_gifts, new Runnable(l0Var) { // from class: vf.f0
                     public final /* synthetic */ l0 b;
 
                     {
@@ -448,7 +447,7 @@ public final class l0 extends p2 {
             }
             if (i10 == h0) {
                 final int i14 = 1;
-                l0Var.X(i10, !l0Var.G.sell_gifts, new Runnable(l0Var) { // from class: vf.g0
+                l0Var.X(i10, !l0Var.G.sell_gifts, new Runnable(l0Var) { // from class: vf.f0
                     public final /* synthetic */ l0 b;
 
                     {
@@ -531,7 +530,7 @@ public final class l0 extends p2 {
             }
             if (i10 == i0) {
                 final int i15 = 2;
-                l0Var.X(i10, !l0Var.G.change_gift_settings, new Runnable(l0Var) { // from class: vf.g0
+                l0Var.X(i10, !l0Var.G.change_gift_settings, new Runnable(l0Var) { // from class: vf.f0
                     public final /* synthetic */ l0 b;
 
                     {
@@ -614,7 +613,7 @@ public final class l0 extends p2 {
             }
             if (i10 == j0) {
                 final int i16 = 3;
-                l0Var.X(i10, !l0Var.G.transfer_and_upgrade_gifts, new Runnable(l0Var) { // from class: vf.g0
+                l0Var.X(i10, !l0Var.G.transfer_and_upgrade_gifts, new Runnable(l0Var) { // from class: vf.f0
                     public final /* synthetic */ l0 b;
 
                     {
@@ -695,7 +694,7 @@ public final class l0 extends p2 {
                 });
             } else if (i10 == k0) {
                 final int i17 = 4;
-                l0Var.X(i10, !l0Var.G.transfer_stars, new Runnable(l0Var) { // from class: vf.g0
+                l0Var.X(i10, !l0Var.G.transfer_stars, new Runnable(l0Var) { // from class: vf.f0
                     public final /* synthetic */ l0 b;
 
                     {
@@ -775,7 +774,7 @@ public final class l0 extends p2 {
                     }
                 });
             } else if (i10 == l0) {
-                l0Var.X(i10, !l0Var.G.manage_stories, new h0(l0Var, 0));
+                l0Var.X(i10, !l0Var.G.manage_stories, new g0(l0Var, 0));
             }
         }
     }
@@ -790,7 +789,7 @@ public final class l0 extends p2 {
             d2Var.O = string;
             d2Var.Q = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BusinessBotPermissionsUsernamesWarningText, UserObject.getPublicUsername(this.J)));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            alertDialog$Builder.k(LocaleController.getString(R.string.Allow), new c2(this) { // from class: vf.k0
+            alertDialog$Builder.k(LocaleController.getString(R.string.Allow), new c2(this) { // from class: vf.j0
                 public final /* synthetic */ l0 b;
 
                 {
@@ -825,7 +824,7 @@ public final class l0 extends p2 {
         d2Var2.O = string2;
         d2Var2.Q = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.BusinessBotPermissionsGiftsWarningText, UserObject.getPublicUsername(this.J)));
         alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder2.k(LocaleController.getString(R.string.Allow), new c2(this) { // from class: vf.k0
+        alertDialog$Builder2.k(LocaleController.getString(R.string.Allow), new c2(this) { // from class: vf.j0
             public final /* synthetic */ l0 b;
 
             {
@@ -994,9 +993,9 @@ public final class l0 extends p2 {
         float f10 = 1.0f / AndroidUtilities.density;
         boolean z4 = LocaleController.isRTL;
         frameLayout4.addView(view2, c6.d(-1, f10, 87, z4 ? 0 : 21, 0.0f, z4 ? 21 : 0, 0.0f));
-        c51 c51Var = new c51(context, 10);
-        this.n = c51Var;
-        c51Var.setBackgroundColor(getThemedColor(i12));
+        h51 h51Var = new h51(context, 10);
+        this.n = h51Var;
+        h51Var.setBackgroundColor(getThemedColor(i12));
         TextView textView = new TextView(context);
         this.r = textView;
         textView.setText(LocaleController.getString(R.string.BusinessBotNotFound));
@@ -1006,25 +1005,25 @@ public final class l0 extends p2 {
         textView2.setTextColor(getThemedColor(i13));
         this.n.addView(this.r, c6.e(-2, -2, 17));
         this.s = new ImageView(context);
-        y6 y6Var = new y6(getThemedColor(i13));
+        x6 x6Var = new x6(getThemedColor(i13));
         this.s.setScaleType(ImageView.ScaleType.CENTER);
-        this.s.setImageDrawable(y6Var);
+        this.s.setImageDrawable(x6Var);
         this.n.addView(this.s, c6.e(-2, -2, 17));
         this.s.setAlpha(0.0f);
         this.s.setTranslationY(AndroidUtilities.dp(8.0f));
         uf.k1 k1Var = new uf.k1(true);
         this.d = k1Var;
         k1Var.a = new org.telegram.ui.Cells.f1(this, 24);
-        v vVar = new v(this, new h0(this, 3));
+        v vVar = new v(this, new g0(this, 3));
         this.v = vVar;
         TL_account.TL_connectedBot tL_connectedBot = this.E;
         vVar.i(tL_connectedBot == null ? null : tL_connectedBot.recipients);
-        i61 i61Var = new i61(this, new d4(this, 19), new j0(this, 3), null);
-        this.c = i61Var;
-        i61Var.p1();
-        i61 i61Var2 = this.c;
-        i61Var2.V2.r = false;
-        frameLayout.addView(i61Var2, c6.c(-1.0f, -1));
+        h61 h61Var = new h61(this, new c4(this, 19), new i0(this, 3), null);
+        this.c = h61Var;
+        h61Var.o1();
+        h61 h61Var2 = this.c;
+        h61Var2.V2.r = false;
+        frameLayout.addView(h61Var2, c6.c(-1.0f, -1));
         this.actionBar.A(this.c, true);
         this.fragmentView = frameLayout;
         return frameLayout;
@@ -1042,8 +1041,8 @@ public final class l0 extends p2 {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
                 alertDialog$Builder.a.O = LocaleController.getString(R.string.UnsavedChanges);
                 alertDialog$Builder.a.Q = LocaleController.getString(R.string.BusinessBotUnsavedChanges);
-                alertDialog$Builder.k(LocaleController.getString(R.string.ApplyTheme), new j0(this, 0));
-                alertDialog$Builder.h(LocaleController.getString(R.string.PassportDiscard), new j0(this, 1));
+                alertDialog$Builder.k(LocaleController.getString(R.string.ApplyTheme), new i0(this, 0));
+                alertDialog$Builder.h(LocaleController.getString(R.string.PassportDiscard), new i0(this, 1));
                 showDialog(alertDialog$Builder.a);
                 return false;
             }
@@ -1055,7 +1054,7 @@ public final class l0 extends p2 {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(getParentActivity());
                 alertDialog$Builder2.a.O = LocaleController.getString(R.string.BusinessBotNoAddedTitle);
                 alertDialog$Builder2.a.Q = LocaleController.getString(R.string.BusinessBotNoAddedText);
-                alertDialog$Builder2.k(LocaleController.getString(R.string.BusinessBotNoAddedButton), new j0(this, 2));
+                alertDialog$Builder2.k(LocaleController.getString(R.string.BusinessBotNoAddedButton), new i0(this, 2));
                 alertDialog$Builder2.h(LocaleController.getString(R.string.Cancel), null);
                 showDialog(alertDialog$Builder2.a);
             }

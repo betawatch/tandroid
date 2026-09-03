@@ -1,19 +1,41 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
-/* loaded from: classes3.dex */
-public final class b61 extends i61 {
-    public final /* synthetic */ c61 c3;
+import android.content.Context;
+import android.view.View;
+import java.util.ArrayList;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b61(c61 c61Var, c61 c61Var2, d dVar, y51 y51Var, y51 y51Var2) {
-        super(c61Var2, dVar, y51Var, y51Var2);
-        this.c3 = c61Var;
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* loaded from: classes3.dex */
+public abstract class b61 extends org.telegram.ui.ActionBar.p2 {
+    public a61 a;
+    public int b;
+    public int c;
+
+    public b61() {
+        super(null);
+        this.b = -1;
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        this.c3.b = -1;
+    public abstract void U(ArrayList arrayList, w51 w51Var);
+
+    public abstract CharSequence V();
+
+    public abstract void W(h51 h51Var, View view);
+
+    public abstract boolean X(h51 h51Var, View view);
+
+    @Override // org.telegram.ui.ActionBar.p2
+    public View createView(Context context) {
+        org.telegram.ui.yh.z(false, this.actionBar);
+        this.actionBar.setAllowOverlayTitle(true);
+        this.actionBar.setTitle(V());
+        this.actionBar.setActionBarMenuOnItemClick(new y51(this, 0));
+        z51 z51Var = new z51(context, null, 0);
+        z51Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
+        a61 a61Var = new a61(this, this, new d(this, 22), new x51(this), new x51(this));
+        this.a = a61Var;
+        z51Var.addView(a61Var, k7.c6.c(-1.0f, -1));
+        this.fragmentView = z51Var;
+        return z51Var;
     }
 }

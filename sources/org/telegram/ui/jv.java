@@ -16,7 +16,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class jv extends FrameLayout {
     public int a;
@@ -150,9 +150,9 @@ public final class jv extends FrameLayout {
         for (int i12 = 0; i12 < kvVarArr.length; i12++) {
             kv kvVar = kvVarArr[i12];
             if (kvVar != null) {
-                org.telegram.ui.Components.tl0 tl0Var = kvVar.d;
-                if (tl0Var != null) {
-                    tl0Var.setPadding(0, measuredHeight, 0, 0);
+                org.telegram.ui.Components.sl0 sl0Var = kvVar.d;
+                if (sl0Var != null) {
+                    sl0Var.setPadding(0, measuredHeight, 0, 0);
                 }
                 mh.d1 d1Var = kvVarArr[i12].e;
                 if (d1Var != null) {
@@ -262,7 +262,7 @@ public final class jv extends FrameLayout {
                 float f12 = measuredWidth2 / 2;
                 float distanceInfluenceForSnapDuration = (AndroidUtilities.distanceInfluenceForSnapDuration(Math.min(1.0f, (measuredWidth * 1.0f) / measuredWidth2)) * f12) + f12;
                 lvVar.h.setDuration(Math.max(ImageReceiver.DEFAULT_CROSSFADE_DURATION, Math.min(Math.abs(f10) > 0.0f ? Math.round(Math.abs(distanceInfluenceForSnapDuration / r4) * 1000.0f) * 4 : (int) (((measuredWidth / getMeasuredWidth()) + 1.0f) * 100.0f), 600)));
-                lvVar.h.addListener(new org.telegram.ui.Components.g91(this, 14));
+                lvVar.h.addListener(new org.telegram.ui.Components.f91(this, 14));
                 lvVar.h.start();
                 lvVar.n = true;
                 this.b = false;

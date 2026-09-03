@@ -3,12 +3,12 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsSettingsActivity;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class uj implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -35,12 +35,12 @@ public final /* synthetic */ class uj implements Runnable {
                 break;
             case 1:
                 xn xnVar = (xn) this.e;
-                rk0 rk0Var = (rk0) this.f;
+                qk0 qk0Var = (qk0) this.f;
                 org.telegram.ui.ActionBar.p1 p1Var = xnVar.N8;
                 if (p1Var != null && xnVar.fragmentView != null && !p1Var.isShowing() && AndroidUtilities.isActivityRunning(xnVar.getParentActivity())) {
                     xnVar.N8.showAtLocation(xnVar.u0, 51, this.b, this.c);
-                    if (this.d && rk0Var != null) {
-                        rk0Var.r(true);
+                    if (this.d && qk0Var != null) {
+                        qk0Var.r(true);
                     }
                     AndroidUtilities.runOnUIThread(new org.telegram.ui.lf(xnVar, 25), 420L);
                     break;
@@ -99,12 +99,12 @@ public final /* synthetic */ class uj implements Runnable {
         }
     }
 
-    public /* synthetic */ uj(xn xnVar, int i10, int i11, boolean z4, rk0 rk0Var) {
+    public /* synthetic */ uj(xn xnVar, int i10, int i11, boolean z4, qk0 qk0Var) {
         this.e = xnVar;
         this.b = i10;
         this.c = i11;
         this.d = z4;
-        this.f = rk0Var;
+        this.f = qk0Var;
     }
 
     public /* synthetic */ uj(org.telegram.ui.Components.sb sbVar, ng.q0 q0Var, boolean z4, int i10, int i11) {

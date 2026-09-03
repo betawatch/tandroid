@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class rh0 extends org.telegram.ui.ActionBar.p2 {
     public final org.telegram.ui.Components.ga0 a;
@@ -19,7 +19,7 @@ public final class rh0 extends org.telegram.ui.ActionBar.p2 {
     @Override // org.telegram.ui.ActionBar.p2
     public final View createView(Context context) {
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 25));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 25));
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         org.telegram.ui.ActionBar.k kVar = this.actionBar;
         org.telegram.ui.Components.ga0 ga0Var = this.a;
@@ -37,18 +37,18 @@ public final class rh0 extends org.telegram.ui.ActionBar.p2 {
             org.telegram.ui.Components.u00 b10 = ga0Var.b();
             ga0Var.q = b10;
             ga0Var.m.addView(b10, -1, -1);
-            org.telegram.ui.Components.ax0 c3 = ga0Var.c();
+            org.telegram.ui.Components.zw0 c3 = ga0Var.c();
             ga0Var.o = c3;
             ga0Var.m.addView(c3, -1, -1);
-            org.telegram.ui.Components.ax0 a10 = ga0Var.a();
+            org.telegram.ui.Components.zw0 a10 = ga0Var.a();
             ga0Var.n = a10;
             ga0Var.m.addView(a10, k7.c6.c(-1.0f, -1));
             p2Var.getParentActivity();
             f2.j0 j0Var = new f2.j0();
-            org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(p2Var.getParentActivity(), null);
-            ga0Var.p = tl0Var;
-            tl0Var.setAdapter(ga0Var.f);
-            ga0Var.p.p1();
+            org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(p2Var.getParentActivity(), null);
+            ga0Var.p = sl0Var;
+            sl0Var.setAdapter(ga0Var.f);
+            ga0Var.p.o1();
             ga0Var.p.setLayoutManager(j0Var);
             ga0Var.p.setOnItemClickListener(new ag.h(ga0Var, 6));
             ga0Var.p.setOnScrollListener(ga0Var.D);

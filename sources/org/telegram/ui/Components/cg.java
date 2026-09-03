@@ -10,9 +10,9 @@ import org.telegram.messenger.SendMessageChatArguments;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class cg extends org.telegram.ui.au0 {
+public final class cg extends org.telegram.ui.fu0 {
     public boolean a;
     public final /* synthetic */ MediaController.PhotoEntry b;
     public final /* synthetic */ File c;
@@ -24,7 +24,7 @@ public final class cg extends org.telegram.ui.au0 {
         this.c = file;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void G() {
         if (this.a) {
             return;
@@ -35,12 +35,12 @@ public final class cg extends org.telegram.ui.au0 {
         }
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean g() {
         return false;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
         MessageObject threadMessage;
         String str;

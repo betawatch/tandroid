@@ -13,16 +13,16 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class er extends sl0 {
+public final class er extends rl0 {
     public final /* synthetic */ gr c;
 
     public er(gr grVar) {
         this.c = grVar;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return m1Var.f == 3;
     }
@@ -110,11 +110,11 @@ public final class er extends sl0 {
             boolean z4 = grVar.Y;
             ?? frVar = new fr(context);
             frVar.setOrientation(1);
-            lj0 lj0Var = new lj0(context);
-            lj0Var.setAutoRepeat(true);
-            lj0Var.f(R.raw.utyan_schedule, 112, 112, null);
-            lj0Var.d();
-            frVar.addView(lj0Var, k7.c6.t(112, 112, 49, 0, 24, 0, 0));
+            kj0 kj0Var = new kj0(context);
+            kj0Var.setAutoRepeat(true);
+            kj0Var.f(R.raw.utyan_schedule, 112, 112, null);
+            kj0Var.d();
+            frVar.addView(kj0Var, k7.c6.t(112, 112, 49, 0, 24, 0, 0));
             TextView textView = new TextView(context);
             textView.setTypeface(AndroidUtilities.bold());
             textView.setText(z4 ? LocaleController.formatString(R.string.StartVoipChannelTitle, new Object[0]) : LocaleController.formatString(R.string.StartVoipChatTitle, new Object[0]));
@@ -133,6 +133,6 @@ public final class er extends sl0 {
             frameLayout = new org.telegram.ui.Cells.g4(context, 1, 0, false);
         }
         frameLayout.setLayoutParams(new f2.x0(-1, -2));
-        return new fl0(frameLayout);
+        return new el0(frameLayout);
     }
 }

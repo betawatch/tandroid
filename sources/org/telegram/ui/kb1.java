@@ -1,164 +1,62 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
+import android.graphics.Paint;
 import android.view.View;
-import android.view.ViewParent;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.Button;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class kb1 extends org.telegram.ui.Components.tl0 {
-    public final /* synthetic */ int U2;
+public final class kb1 extends View {
+    public static final /* synthetic */ int c = 0;
+    public final Paint a;
+    public int[] b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ kb1(Context context, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, g6Var);
-        this.U2 = i10;
-    }
-
-    @Override // org.telegram.ui.Components.tl0
-    public Integer W0(int i10) {
-        switch (this.U2) {
-            case 1:
-                return 0;
-            case 2:
-                return 0;
-            case 3:
-                return 0;
-            case 4:
-            case 5:
-            case 6:
-            default:
-                return super.W0(i10);
-            case 7:
-                return 0;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.U2) {
-            case 0:
-                if (getParent() != null && getParent().getParent() != null) {
-                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-                }
-                break;
-            case 5:
-                if (getParent() != null && getParent().getParent() != null) {
-                    ViewParent parent = getParent().getParent();
-                    boolean z4 = true;
-                    if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
-                        z4 = false;
-                    }
-                    parent.requestDisallowInterceptTouchEvent(z4);
-                }
-                break;
-            case 12:
-                if (getParent() != null && getParent().getParent() != null) {
-                    getParent().getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-                }
-                break;
-            case 13:
-                if (getParent() != null && getParent().getParent() != null) {
-                    ViewParent parent2 = getParent().getParent();
-                    boolean z10 = true;
-                    if (!canScrollHorizontally(-1) && !canScrollHorizontally(1)) {
-                        z10 = false;
-                    }
-                    parent2.requestDisallowInterceptTouchEvent(z10);
-                }
-                break;
-        }
-        return super.onInterceptTouchEvent(motionEvent);
-    }
-
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.U2) {
-            case 6:
-                int size = View.MeasureSpec.getSize(i11);
-                int h = (getAdapter().h() * AndroidUtilities.dp(50.0f)) + AndroidUtilities.dp(4.0f);
-                if (h <= size) {
-                    size = h;
-                }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30));
-                break;
-            case 9:
-                int size2 = View.MeasureSpec.getSize(i11);
-                int h9 = (getAdapter().h() * AndroidUtilities.dp(50.0f)) + AndroidUtilities.dp(4.0f);
-                if (h9 <= size2) {
-                    size2 = h9;
-                }
-                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.U2) {
-            case 11:
-                if (motionEvent.getAction() == 0) {
-                    getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public void q0(View view, View view2) {
-        switch (this.U2) {
-            case 4:
-                if (view instanceof org.telegram.ui.Cells.c6) {
-                    super.q0(view, view2);
-                    break;
-                }
-                break;
-            case 10:
-                if (view instanceof org.telegram.ui.Cells.c6) {
-                    super.q0(view, view2);
-                    break;
-                }
-                break;
-            default:
-                super.q0(view, view2);
-                break;
-        }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
-    public boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z4) {
-        switch (this.U2) {
-            case 4:
-                rect.bottom = AndroidUtilities.dp(60.0f) + rect.bottom;
-                break;
-            case 10:
-                rect.bottom = AndroidUtilities.dp(60.0f) + rect.bottom;
-                break;
-        }
-        return super.requestChildRectangleOnScreen(view, rect, z4);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public boolean requestFocus(int i10, Rect rect) {
-        switch (this.U2) {
-            case 8:
-                return false;
-            default:
-                return super.requestFocus(i10, rect);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public kb1(Context context) {
-        super(context, null);
-        this.U2 = 11;
+        super(context);
+        this.a = new Paint(1);
+        this.b = new int[7];
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float measuredWidth = getMeasuredWidth() * 0.5f;
+        float measuredHeight = getMeasuredHeight() * 0.5f;
+        float dp = AndroidUtilities.dp(5.0f);
+        float dp2 = AndroidUtilities.dp(20.0f) - dp;
+        Paint.Style style = Paint.Style.FILL;
+        Paint paint = this.a;
+        paint.setStyle(style);
+        int i10 = 0;
+        paint.setColor(this.b[0]);
+        canvas.drawCircle(measuredWidth, measuredHeight, dp, paint);
+        double d = 0.0d;
+        while (i10 < 6) {
+            float sin = (((float) Math.sin(d)) * dp2) + measuredWidth;
+            float cos = measuredHeight - (((float) Math.cos(d)) * dp2);
+            i10++;
+            paint.setColor(this.b[i10]);
+            canvas.drawCircle(sin, cos, dp, paint);
+            d += 1.0471975511965976d;
+        }
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setText(LocaleController.getString("ColorPickerMainColor", R.string.ColorPickerMainColor));
+        accessibilityNodeInfo.setClassName(Button.class.getName());
+        accessibilityNodeInfo.setEnabled(true);
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(62.0f), TLObject.FLAG_30));
     }
 }

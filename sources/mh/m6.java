@@ -29,10 +29,10 @@ import org.telegram.ui.Components.pc;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.qz0;
-import org.telegram.ui.xq0;
+import org.telegram.ui.cr0;
+import org.telegram.ui.vz0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m6 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -54,7 +54,7 @@ public final /* synthetic */ class m6 implements Utilities.Callback {
     public final void run(Object obj) {
         int[] iArr;
         int i10 = 4;
-        qh.d6 d6Var = null;
+        qh.l6 l6Var = null;
         int i11 = 0;
         switch (this.a) {
             case 0:
@@ -75,21 +75,21 @@ public final /* synthetic */ class m6 implements Utilities.Callback {
                 new qc(j3Var, g6Var).o(z4 ? pc.h : pc.e, g6Var).j();
                 break;
             case 2:
-                qz0 qz0Var = (qz0) this.c;
+                vz0 vz0Var = (vz0) this.c;
                 boolean z10 = this.b;
-                ProfileActivity profileActivity = qz0Var.b;
+                ProfileActivity profileActivity = vz0Var.b;
                 if (profileActivity.getParentActivity() != null) {
                     qc.a0(profileActivity).o(z10 ? pc.h : pc.e, null).j();
                     break;
                 }
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new xq0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 6));
+                AndroidUtilities.runOnUIThread(new cr0((org.telegram.ui.web.k) this.c, (String) obj, this.b, 6));
                 break;
             case 4:
-                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.c;
-                y1Var.getMessagesController().addWebBrowserException((String) obj, this.b);
-                y1Var.a.V2.N(true);
+                org.telegram.ui.web.x1 x1Var = (org.telegram.ui.web.x1) this.c;
+                x1Var.getMessagesController().addWebBrowserException((String) obj, this.b);
+                x1Var.a.V2.N(true);
                 break;
             case 5:
                 Utilities.Callback callback = (Utilities.Callback) this.c;
@@ -118,28 +118,28 @@ public final /* synthetic */ class m6 implements Utilities.Callback {
                         Calendar calendar = Calendar.getInstance(DesugarTimeZone.getTimeZone("UTC"));
                         calendar.setTime(date);
                         String str = Math.round(latitude * 1000.0d) + ":" + Math.round(longitude * 1000.0d) + "at" + (((calendar.getTimeInMillis() / 1000) / 60) / 60);
-                        if (qh.ya.b == null || !TextUtils.equals(qh.ya.a, str)) {
+                        if (qh.xa.b == null || !TextUtils.equals(qh.xa.a, str)) {
                             int[] iArr2 = new int[1];
                             MessagesController messagesController = MessagesController.getInstance(UserConfig.selectedAccount);
                             ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
                             String str2 = messagesController.weatherSearchUsername;
                             TLRPC.User[] userArr = {messagesController.getUser(str2)};
-                            qh.va vaVar = new qh.va(messagesController, userArr, latitude, longitude, iArr2, connectionsManager, mlVar, str);
+                            qh.ua uaVar = new qh.ua(messagesController, userArr, latitude, longitude, iArr2, connectionsManager, mlVar, str);
                             if (userArr[0] == null) {
                                 TLRPC.TL_contacts_resolveUsername tL_contacts_resolveUsername = new TLRPC.TL_contacts_resolveUsername();
                                 tL_contacts_resolveUsername.username = str2;
                                 iArr = iArr2;
-                                iArr[0] = connectionsManager.sendRequest(tL_contacts_resolveUsername, new hg.e0(iArr2, messagesController, userArr, vaVar, mlVar, 14));
+                                iArr[0] = connectionsManager.sendRequest(tL_contacts_resolveUsername, new hg.e0(iArr2, messagesController, userArr, uaVar, mlVar, 14));
                             } else {
                                 iArr = iArr2;
-                                vaVar.run();
+                                uaVar.run();
                             }
-                            d6Var = new qh.d6(8, iArr, connectionsManager);
+                            l6Var = new qh.l6(7, iArr, connectionsManager);
                         } else {
-                            mlVar.run(qh.ya.b);
+                            mlVar.run(qh.xa.b);
                         }
-                        if (z11 && d6Var != null) {
-                            d2Var.setOnCancelListener(new qh.ua(d6Var, i11));
+                        if (z11 && l6Var != null) {
+                            d2Var.setOnCancelListener(new qh.ta(l6Var, i11));
                             break;
                         }
                     }
@@ -180,7 +180,7 @@ public final /* synthetic */ class m6 implements Utilities.Callback {
                                     try {
                                         final Utilities.Callback[] callbackArr = {m6Var};
                                         final LocationListener[] locationListenerArr = {null};
-                                        LocationListener locationListener = new LocationListener() { // from class: qh.wa
+                                        LocationListener locationListener = new LocationListener() { // from class: qh.va
                                             @Override // android.location.LocationListener
                                             public final void onLocationChanged(Location location3) {
                                                 LocationListener[] locationListenerArr2 = locationListenerArr;

@@ -30,9 +30,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0, org.telegram.ui.ActionBar.c2, MessagesController.ErrorDelegate, org.telegram.ui.Components.ah0, Utilities.Callback5, org.telegram.ui.Components.wd0, org.telegram.ui.ActionBar.n1, org.telegram.ui.Components.gl0, uf.j1, org.telegram.ui.Components.ll0, r0.o, org.telegram.ui.Components.kl0, yt, xd.b, kj0 {
+public final /* synthetic */ class gu implements org.telegram.ui.Components.tv0, org.telegram.ui.ActionBar.c2, MessagesController.ErrorDelegate, org.telegram.ui.Components.ah0, Utilities.Callback5, org.telegram.ui.Components.wd0, org.telegram.ui.ActionBar.n1, org.telegram.ui.Components.fl0, uf.j1, org.telegram.ui.Components.kl0, r0.o, org.telegram.ui.Components.jl0, yt, xd.b, kj0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -100,7 +100,7 @@ public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0,
         kg0Var.setSelection(kg0Var.length());
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         switch (this.a) {
         }
@@ -112,7 +112,7 @@ public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0,
         ((Layout) this.b).draw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         int U;
         switch (this.a) {
@@ -158,7 +158,7 @@ public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0,
         }
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         switch (this.a) {
             case 13:
@@ -274,7 +274,7 @@ public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0,
         NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.passcodeDismissed, xd0Var);
     }
 
-    @Override // org.telegram.ui.Components.uv0
+    @Override // org.telegram.ui.Components.tv0
     public void i(int i10) {
         int i11;
         int i12;
@@ -312,9 +312,9 @@ public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0,
         i14 = ((org.telegram.ui.ActionBar.p2) dataAutoDownloadActivity).currentAccount;
         DownloadController.getInstance(i14).checkAutodownloadSettings();
         for (int i19 = 0; i19 < 4; i19++) {
-            org.telegram.ui.Components.tl0 tl0Var = dataAutoDownloadActivity.b;
+            org.telegram.ui.Components.sl0 sl0Var = dataAutoDownloadActivity.b;
             i15 = dataAutoDownloadActivity.photosRow;
-            f2.m1 K = tl0Var.K(i15 + i19);
+            f2.m1 K = sl0Var.K(i15 + i19);
             if (K != null) {
                 hu huVar = dataAutoDownloadActivity.a;
                 i16 = dataAutoDownloadActivity.photosRow;
@@ -354,8 +354,8 @@ public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0,
                 zd0Var.T.getConnectionsManager().sendRequest(tL_auth_resetLoginEmail, new qd0(zd0Var, bundle, tL_auth_resetLoginEmail, i13), 10);
                 break;
             case 18:
-                ie0 ie0Var = (ie0) obj;
-                og0.n0(ie0Var.y, ie0Var.s, ie0Var.v, ie0Var.w);
+                he0 he0Var = (he0) obj;
+                og0.n0(he0Var.y, he0Var.s, he0Var.v, he0Var.w);
                 break;
             case 19:
                 bf0 bf0Var = (bf0) obj;
@@ -469,12 +469,12 @@ public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0,
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.gl0
+    @Override // org.telegram.ui.Components.fl0
     public int run() {
         return ((FiltersSetupActivity) this.b).w;
     }
@@ -495,7 +495,7 @@ public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0,
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                if (((org.telegram.ui.Components.j51) obj).d == 1 && izVar.b != null) {
+                if (((org.telegram.ui.Components.h51) obj).d == 1 && izVar.b != null) {
                     boolean z4 = !izVar.c;
                     izVar.c = z4;
                     eh.w wVar = izVar.f;
@@ -508,7 +508,7 @@ public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0,
                 }
                 break;
             default:
-                org.telegram.ui.Components.tl0.N0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((org.telegram.ui.Components.tl0) this.b).m2);
+                org.telegram.ui.Components.sl0.N0((Canvas) obj, (RectF) obj2, ((Float) obj3).floatValue(), ((Float) obj4).floatValue(), ((Float) obj5).floatValue(), ((org.telegram.ui.Components.sl0) this.b).m2);
                 break;
         }
     }
@@ -525,7 +525,7 @@ public final /* synthetic */ class gu implements org.telegram.ui.Components.uv0,
     private final /* synthetic */ void k(ArrayList arrayList) {
     }
 
-    @Override // org.telegram.ui.Components.uv0
+    @Override // org.telegram.ui.Components.tv0
     public /* synthetic */ void m() {
     }
 

@@ -8,13 +8,13 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.bb0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class d0 implements jl0 {
+public final /* synthetic */ class d0 implements il0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -27,7 +27,7 @@ public final /* synthetic */ class d0 implements jl0 {
         this.d = obj3;
     }
 
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.il0
     public final void f(int i10, View view) {
         int i11 = this.a;
         boolean z4 = true;
@@ -77,10 +77,10 @@ public final /* synthetic */ class d0 implements jl0 {
                 }
                 break;
             case 2:
-                qh.k6.Q((qh.k6) obj3, (Utilities.Callback) obj2, (org.telegram.ui.ActionBar.g6) obj, view, i10);
+                qh.i6.Q((qh.i6) obj3, (Utilities.Callback) obj2, (org.telegram.ui.ActionBar.g6) obj, view, i10);
                 break;
             default:
-                qh.b7.P((qh.b7) obj3, (Context) obj2, (qh.j5) obj, view, i10);
+                qh.a7.P((qh.a7) obj3, (Context) obj2, (qh.i5) obj, view, i10);
                 break;
         }
     }

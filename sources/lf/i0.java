@@ -24,10 +24,10 @@ import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.os;
 import org.telegram.ui.p60;
 import org.telegram.ui.sq;
-import org.telegram.ui.v10;
+import org.telegram.ui.z10;
 import org.telegram.ui.zi;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -89,11 +89,11 @@ public final /* synthetic */ class i0 implements RequestDelegate {
                 break;
             case 11:
                 Pattern pattern = LaunchActivity.y1;
-                AndroidUtilities.runOnUIThread(new l2((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj2, (v10) obj, this.b, (String) obj3, 10));
+                AndroidUtilities.runOnUIThread(new l2((LaunchActivity) obj4, tL_error, tLObject, (TLRPC.TL_inputInvoiceSlug) obj2, (z10) obj, this.b, (String) obj3, 10));
                 break;
             case 12:
                 Pattern pattern2 = LaunchActivity.y1;
-                AndroidUtilities.runOnUIThread(new l2((LaunchActivity) obj4, tL_error, tLObject, this.b, (d2) obj2, (v10) obj, (String) obj3));
+                AndroidUtilities.runOnUIThread(new l2((LaunchActivity) obj4, tL_error, tLObject, this.b, (d2) obj2, (z10) obj, (String) obj3));
                 break;
             default:
                 AndroidUtilities.runOnUIThread(new l2((uf.p0) obj4, this.b, (ArrayList) obj2, (a0.h) obj, tL_error, tLObject, (MessagesController) obj3, 14));

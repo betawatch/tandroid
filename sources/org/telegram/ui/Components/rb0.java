@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagePreviewParams;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class rb0 extends f2.p0 {
     public final /* synthetic */ sb0 c;
@@ -116,7 +116,7 @@ public final class rb0 extends f2.p0 {
         pb0Var.setClipChildren(false);
         pb0Var.setClipToPadding(false);
         pb0Var.setDelegate(new qb0(this));
-        return new fl0(pb0Var);
+        return new el0(pb0Var);
     }
 
     @Override // f2.p0

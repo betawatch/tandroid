@@ -2,9 +2,9 @@ package gg;
 
 import android.animation.ValueAnimator;
 import org.telegram.ui.Components.voip.l0;
-import org.telegram.ui.ci1;
+import org.telegram.ui.ii1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -43,12 +43,12 @@ public final /* synthetic */ class c implements ValueAnimator.AnimatorUpdateList
                 l0Var.invalidate();
                 break;
             default:
-                ci1 ci1Var = (ci1) this.e;
+                ii1 ii1Var = (ii1) this.e;
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ci1Var.c1 = e2.c.w(1.0f, floatValue3, 1.0f, this.b * floatValue3);
-                ci1Var.V0 = this.c * floatValue3;
-                ci1Var.W0 = this.d * floatValue3;
-                ci1Var.s.invalidate();
+                ii1Var.c1 = e2.c.w(1.0f, floatValue3, 1.0f, this.b * floatValue3);
+                ii1Var.V0 = this.c * floatValue3;
+                ii1Var.W0 = this.d * floatValue3;
+                ii1Var.s.invalidate();
                 break;
         }
     }

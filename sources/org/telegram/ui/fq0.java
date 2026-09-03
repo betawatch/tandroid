@@ -1,172 +1,204 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
+import android.graphics.Point;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.RadialProgressView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class fq0 extends org.telegram.ui.Components.sl0 {
-    public final Context c;
-    public final /* synthetic */ hq0 d;
+public final class fq0 extends org.telegram.ui.Components.pv0 {
+    public int t0;
+    public boolean u0;
+    public int v0;
+    public final /* synthetic */ mq0 w0;
 
-    public fq0(hq0 hq0Var, Context context) {
-        this.d = hq0Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fq0(mq0 mq0Var, Context context) {
+        super(context, null);
+        this.w0 = mq0Var;
     }
 
-    @Override // org.telegram.ui.Components.sl0
-    public final boolean D(f2.m1 m1Var) {
-        hq0 hq0Var = this.d;
-        if (hq0Var.G == null) {
-            return TextUtils.isEmpty(hq0Var.v) ? m1Var.f == 3 : m1Var.b() < hq0Var.f.size();
-        }
-        return true;
-    }
-
-    @Override // f2.p0
-    public final int h() {
-        hq0 hq0Var = this.d;
-        MediaController.AlbumEntry albumEntry = hq0Var.G;
-        if (albumEntry != null) {
-            return albumEntry.photos.size();
-        }
-        if (!hq0Var.f.isEmpty()) {
-            return hq0Var.f.size() + (!hq0Var.s ? 1 : 0);
-        }
-        if (!TextUtils.isEmpty(hq0Var.v) || hq0Var.n.isEmpty()) {
-            return 0;
-        }
-        return hq0Var.n.size() + 2;
-    }
-
-    @Override // f2.p0
-    public final long i(int i10) {
-        return i10;
-    }
-
-    @Override // f2.p0
-    public final int j(int i10) {
-        hq0 hq0Var = this.d;
-        if (hq0Var.V) {
-            return 2;
-        }
-        if (hq0Var.G != null) {
-            return 0;
-        }
-        return hq0Var.f.isEmpty() ? i10 == hq0Var.n.size() ? 4 : 3 : i10 < hq0Var.f.size() ? 0 : 1;
-    }
-
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
-        boolean L1;
-        hq0 hq0Var = this.d;
-        MediaController.AlbumEntry albumEntry = hq0Var.G;
-        ArrayList arrayList = hq0Var.n;
-        ArrayList arrayList2 = hq0Var.c;
-        HashMap hashMap = hq0Var.b;
-        int i11 = m1Var.f;
-        View view = m1Var.a;
-        if (i11 == 0) {
-            org.telegram.ui.Cells.t5 t5Var = (org.telegram.ui.Cells.t5) view;
-            t5Var.setItemSize(hq0Var.O);
-            org.telegram.ui.Components.p9 imageView = t5Var.getImageView();
-            t5Var.setTag(Integer.valueOf(i10));
-            imageView.q(0, true);
-            if (albumEntry != null) {
-                MediaController.PhotoEntry photoEntry = albumEntry.photos.get(i10);
-                t5Var.d(photoEntry, arrayList2.size() > 1, true, false, false);
-                t5Var.b(hq0Var.e ? arrayList2.indexOf(Integer.valueOf(photoEntry.imageId)) : -1, hashMap.containsKey(Integer.valueOf(photoEntry.imageId)), false);
-                L1 = PhotoViewer.L1(photoEntry.path);
-            } else {
-                MediaController.SearchImage searchImage = (MediaController.SearchImage) hq0Var.f.get(i10);
-                t5Var.e(searchImage);
-                t5Var.getVideoInfoContainer().setVisibility(4);
-                t5Var.b(hq0Var.e ? arrayList2.indexOf(searchImage.id) : -1, hashMap.containsKey(searchImage.id), false);
-                L1 = PhotoViewer.L1(searchImage.getPathToAttach());
+    /* JADX WARN: Removed duplicated region for block: B:36:0x009e  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x00ca  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x00d6  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00e0  */
+    /* JADX WARN: Removed duplicated region for block: B:56:0x00ba  */
+    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        int i19;
+        org.telegram.ui.Components.fu fuVar;
+        int measuredHeight;
+        int measuredHeight2;
+        int i20 = this.t0;
+        int i21 = i12 - i10;
+        mq0 mq0Var = this.w0;
+        if (i20 != i21) {
+            this.t0 = i21;
+            kq0 kq0Var = mq0Var.I;
+            if (kq0Var != null) {
+                kq0Var.l();
             }
-            imageView.getImageReceiver().setVisible(!L1, true);
-            t5Var.getCheckBox().setVisibility((hq0Var.Q != 0 || L1) ? 8 : 0);
-            return;
-        }
-        if (i11 == 1) {
-            ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-            if (layoutParams != null) {
-                layoutParams.width = -1;
-                layoutParams.height = hq0Var.O;
-                view.setLayoutParams(layoutParams);
-                return;
+            org.telegram.ui.ActionBar.p1 p1Var = mq0Var.j0;
+            if (p1Var != null && p1Var.isShowing()) {
+                mq0Var.j0.d(true);
             }
-            return;
         }
-        if (i11 == 2) {
-            MediaController.PhotoEntry photoEntry2 = albumEntry.photos.get(i10);
-            org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) view;
-            i7Var.setPhotoEntry(photoEntry2);
-            i7Var.b(hashMap.containsKey(Integer.valueOf(photoEntry2.imageId)), false);
-            i7Var.setTag(Integer.valueOf(i10));
-            return;
+        int childCount = getChildCount();
+        int emojiPadding = (mq0Var.a0 == null || mq0Var.W.getParent() != this || AndroidUtilities.dp(20.0f) < 0 || AndroidUtilities.isInMultiwindow || AndroidUtilities.isTablet()) ? 0 : mq0Var.a0.getEmojiPadding();
+        setBottomClip(emojiPadding);
+        for (int i22 = 0; i22 < childCount; i22++) {
+            View childAt = getChildAt(i22);
+            if (childAt.getVisibility() != 8) {
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) childAt.getLayoutParams();
+                int measuredWidth = childAt.getMeasuredWidth();
+                int measuredHeight3 = childAt.getMeasuredHeight();
+                int i23 = layoutParams.gravity;
+                if (i23 == -1) {
+                    i23 = 51;
+                }
+                int i24 = i23 & 112;
+                int i25 = i23 & 7;
+                if (i25 == 1) {
+                    i14 = ((i21 - measuredWidth) / 2) + layoutParams.leftMargin;
+                    i15 = layoutParams.rightMargin;
+                } else if (i25 != 5) {
+                    i16 = getPaddingLeft() + layoutParams.leftMargin;
+                    if (i24 == 16) {
+                        if (i24 == 48) {
+                            i19 = layoutParams.topMargin + getPaddingTop();
+                        } else if (i24 != 80) {
+                            i19 = layoutParams.topMargin;
+                        } else {
+                            i17 = ((i13 - emojiPadding) - i11) - measuredHeight3;
+                            i18 = layoutParams.bottomMargin;
+                        }
+                        fuVar = mq0Var.a0;
+                        if (fuVar != null && fuVar.l(childAt)) {
+                            if (AndroidUtilities.isTablet()) {
+                                measuredHeight = getMeasuredHeight();
+                                measuredHeight2 = childAt.getMeasuredHeight();
+                            } else {
+                                measuredHeight = getMeasuredHeight();
+                                measuredHeight2 = childAt.getMeasuredHeight();
+                            }
+                            i19 = measuredHeight - measuredHeight2;
+                        }
+                        childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
+                    } else {
+                        i17 = ((((i13 - emojiPadding) - i11) - measuredHeight3) / 2) + layoutParams.topMargin;
+                        i18 = layoutParams.bottomMargin;
+                    }
+                    i19 = i17 - i18;
+                    fuVar = mq0Var.a0;
+                    if (fuVar != null) {
+                        if (AndroidUtilities.isTablet()) {
+                        }
+                        i19 = measuredHeight - measuredHeight2;
+                    }
+                    childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
+                } else {
+                    i14 = (i21 - measuredWidth) - layoutParams.rightMargin;
+                    i15 = getPaddingRight();
+                }
+                i16 = i14 - i15;
+                if (i24 == 16) {
+                }
+                i19 = i17 - i18;
+                fuVar = mq0Var.a0;
+                if (fuVar != null) {
+                }
+                childAt.layout(i16, i19, measuredWidth + i16, measuredHeight3 + i19);
+            }
         }
-        if (i11 != 3) {
-            return;
-        }
-        org.telegram.ui.Cells.o8 o8Var = (org.telegram.ui.Cells.o8) view;
-        if (i10 < arrayList.size()) {
-            o8Var.m(R.drawable.msg_recent, (CharSequence) arrayList.get(i10), false);
+        S();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        org.telegram.ui.Components.fu fuVar;
+        int size = View.MeasureSpec.getSize(i11);
+        int size2 = View.MeasureSpec.getSize(i10);
+        boolean isTablet = AndroidUtilities.isTablet();
+        mq0 mq0Var = this.w0;
+        if (isTablet) {
+            mq0Var.d0 = 4;
         } else {
-            o8Var.m(R.drawable.msg_clear_recent, LocaleController.getString(R.string.ClearRecentHistory), false);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        ViewGroup viewGroup2;
-        ViewGroup viewGroup3;
-        hq0 hq0Var = this.d;
-        boolean z4 = hq0Var.o0;
-        Context context = this.c;
-        if (i10 != 0) {
-            if (i10 == 1) {
-                ViewGroup frameLayout = new FrameLayout(context);
-                frameLayout.setLayoutParams(new f2.x0(-1, -2));
-                RadialProgressView radialProgressView = new RadialProgressView(context, null);
-                radialProgressView.setProgressColor(-11371101);
-                frameLayout.addView(radialProgressView, k7.c6.c(-1.0f, -1));
-                viewGroup3 = frameLayout;
-            } else if (i10 == 2) {
-                viewGroup3 = new org.telegram.ui.Cells.i7(context, 1, null);
-            } else if (i10 != 3) {
-                org.telegram.ui.Cells.c3 c3Var = new org.telegram.ui.Cells.c3(context, null);
-                c3Var.setForceDarkTheme(z4);
-                viewGroup3 = c3Var;
+            Point point = AndroidUtilities.displaySize;
+            if (point.x > point.y) {
+                mq0Var.d0 = 4;
             } else {
-                org.telegram.ui.Cells.o8 o8Var = new org.telegram.ui.Cells.o8(23, context, true);
-                o8Var.setLayoutParams(new f2.x0(-1, -2));
-                viewGroup2 = o8Var;
-                if (z4) {
-                    o8Var.a.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, hq0Var.s0, false));
-                    o8Var.e.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.rg, false), PorterDuff.Mode.MULTIPLY));
-                    viewGroup2 = o8Var;
+                mq0Var.d0 = 3;
+            }
+        }
+        this.u0 = true;
+        int dp = ((size2 - AndroidUtilities.dp(4.0f)) - AndroidUtilities.dp(4.0f)) / mq0Var.d0;
+        mq0Var.O = dp;
+        if (this.v0 != dp) {
+            this.v0 = dp;
+            AndroidUtilities.runOnUIThread(new gl0(this, 12));
+        }
+        if (mq0Var.V) {
+            mq0Var.J.y1(1);
+        } else {
+            mq0Var.J.y1(Math.max(1, ((mq0Var.d0 - 1) * AndroidUtilities.dp(2.0f)) + (mq0Var.O * mq0Var.d0)));
+        }
+        this.u0 = false;
+        int makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30);
+        int size3 = View.MeasureSpec.getSize(i10);
+        int size4 = View.MeasureSpec.getSize(makeMeasureSpec);
+        setMeasuredDimension(size3, size4);
+        int R = R();
+        if (AndroidUtilities.dp(20.0f) >= 0 && !AndroidUtilities.isInMultiwindow && mq0Var.a0 != null && mq0Var.W.getParent() == this) {
+            size4 -= mq0Var.a0.getEmojiPadding();
+            makeMeasureSpec = View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30);
+        }
+        int i12 = size4;
+        int i13 = makeMeasureSpec;
+        if (R > AndroidUtilities.dp(20.0f) && (fuVar = mq0Var.a0) != null) {
+            this.u0 = true;
+            fuVar.j();
+            this.u0 = false;
+        }
+        org.telegram.ui.Components.fu fuVar2 = mq0Var.a0;
+        if (fuVar2 != null && fuVar2.e) {
+            mq0Var.fragmentView.setTranslationY(0.0f);
+            mq0Var.H.setTranslationY(0.0f);
+            mq0Var.K.setTranslationY(0.0f);
+        }
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            if (childAt != null && childAt.getVisibility() != 8) {
+                org.telegram.ui.Components.fu fuVar3 = mq0Var.a0;
+                if (fuVar3 == null || !fuVar3.l(childAt)) {
+                    measureChildWithMargins(childAt, i10, 0, i13, 0);
+                } else if (!AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getLayoutParams().height, TLObject.FLAG_30));
+                } else if (AndroidUtilities.isTablet()) {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(AndroidUtilities.isTablet() ? 200.0f : 320.0f), getPaddingTop() + (i12 - AndroidUtilities.statusBarHeight)), TLObject.FLAG_30));
+                } else {
+                    childAt.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingTop() + (i12 - AndroidUtilities.statusBarHeight), TLObject.FLAG_30));
                 }
             }
-            return new org.telegram.ui.Components.fl0(viewGroup3);
         }
-        org.telegram.ui.Cells.t5 t5Var = new org.telegram.ui.Cells.t5(context, null);
-        t5Var.setDelegate(new eq0(this));
-        t5Var.getCheckFrame().setVisibility(hq0Var.Q != 0 ? 8 : 0);
-        viewGroup2 = t5Var;
-        viewGroup3 = viewGroup2;
-        return new org.telegram.ui.Components.fl0(viewGroup3);
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.u0) {
+            return;
+        }
+        super.requestLayout();
     }
 }

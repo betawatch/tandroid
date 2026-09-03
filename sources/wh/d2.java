@@ -14,7 +14,7 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class d2 {
     public final ai a;
@@ -211,10 +211,10 @@ public final class d2 {
         ArrayList arrayList3 = r3Var.i3;
         arrayList3.clear();
         arrayList3.addAll(arrayList2);
-        r3Var.s4();
+        r3Var.r4();
         r3Var.V2.N(false);
         if (a2Var.a >= 0) {
-            r3Var.post(new vf.d0(10, r3Var, a2Var));
+            r3Var.post(new vf.k0(9, r3Var, a2Var));
         }
         r3Var.e3.onContentChanged();
         this.f = false;
@@ -287,8 +287,8 @@ public final class d2 {
             ?? r12 = (e1) findFocus;
             int selectionStart = r12.getSelectionStart();
             int selectionEnd = r12.getSelectionEnd();
-            ?? U2 = r3.U2(r12);
-            if (U2 == 0 || U2.getRow() == null) {
+            ?? T2 = r3.T2(r12);
+            if (T2 == 0 || T2.getRow() == null) {
                 if (!(r12 instanceof j0)) {
                     ViewParent parent = r12.getParent();
                     while (true) {
@@ -319,11 +319,11 @@ public final class d2 {
                 } else {
                     a2Var = new a2(j0Var.getRow().a, -1, selectionStart, selectionEnd);
                 }
-            } else if (r12 == U2.getTitleEditText()) {
-                a2Var = new a2(U2.getRow().a, 0, selectionStart, selectionEnd);
+            } else if (r12 == T2.getTitleEditText()) {
+                a2Var = new a2(T2.getRow().a, 0, selectionStart, selectionEnd);
             } else {
-                l5 o10 = U2.o(r12);
-                a2Var = new a2(U2.getRow().a, o10 != null ? U2.k(o10.b) : -1, selectionStart, selectionEnd);
+                l5 o10 = T2.o(r12);
+                a2Var = new a2(T2.getRow().a, o10 != null ? T2.k(o10.b) : -1, selectionStart, selectionEnd);
             }
             return new c2(b2VarArr, a2Var);
         }

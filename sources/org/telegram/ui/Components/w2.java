@@ -28,9 +28,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.kb1;
+import org.telegram.ui.qb1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -110,7 +110,7 @@ public final /* synthetic */ class w2 implements View.OnClickListener {
             case 4:
                 w8 w8Var = (w8) obj;
                 ((boolean[]) obj2)[0] = true;
-                w8Var.G.w1(w8Var.V);
+                w8Var.G.v1(w8Var.V);
                 w8Var.P.dismiss();
                 break;
             case 5:
@@ -181,48 +181,48 @@ public final /* synthetic */ class w2 implements View.OnClickListener {
                     break;
                 }
             case 8:
-                sn snVar = ((qn) obj2).d;
-                kb1 kb1Var = snVar.s;
-                View F2 = kb1Var.F((pn) obj);
-                f2.m1 T2 = F2 != null ? kb1Var.T(F2) : null;
-                if (T2 != null && (b10 = T2.b() - snVar.q0) >= 0 && b10 < snVar.H.length) {
-                    sn.O(snVar, b10);
+                rn rnVar = ((pn) obj2).d;
+                qb1 qb1Var = rnVar.s;
+                View F2 = qb1Var.F((on) obj);
+                f2.m1 T2 = F2 != null ? qb1Var.T(F2) : null;
+                if (T2 != null && (b10 = T2.b() - rnVar.q0) >= 0 && b10 < rnVar.H.length) {
+                    rn.O(rnVar, b10);
                     break;
                 }
                 break;
             case 9:
-                bo boVar = (bo) obj2;
+                ao aoVar = (ao) obj2;
                 org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj;
-                org.telegram.ui.xn xnVar2 = boVar.D;
-                if (boVar.Q) {
-                    xnVar2.showDialog(z4.V(boVar.getContext(), xnVar2.h, g6Var).a);
+                org.telegram.ui.xn xnVar2 = aoVar.D;
+                if (aoVar.Q) {
+                    xnVar2.showDialog(z4.V(aoVar.getContext(), xnVar2.h, g6Var).a);
                     break;
                 } else {
-                    xn xnVar3 = boVar.e;
+                    wn wnVar = aoVar.e;
                     if (xnVar2.getParentActivity() != null) {
                         TLRPC.Chat chat = xnVar2.e;
                         if (chat == null || ChatObject.canUserDoAdminAction(chat, 13)) {
                             TLRPC.ChatFull chatFull = xnVar2.W7;
                             TLRPC.UserFull userFull = xnVar2.X7;
                             int i18 = userFull != null ? userFull.ttl_period : chatFull != null ? chatFull.ttl_period : 0;
-                            h8 h8Var = new h8(boVar.getContext(), null, new yn(boVar, r3), true, 0, boVar.a0);
+                            h8 h8Var = new h8(aoVar.getContext(), null, new xn(aoVar, r3), true, 0, aoVar.a0);
                             h8Var.b(i18);
                             ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = h8Var.a;
-                            zn znVar = new zn(boVar, actionBarPopupWindow$ActionBarPopupWindowLayout);
-                            org.telegram.ui.ActionBar.p1[] p1VarArr = {znVar};
-                            znVar.e = true;
-                            znVar.c = 220;
-                            znVar.setOutsideTouchable(true);
+                            yn ynVar = new yn(aoVar, actionBarPopupWindow$ActionBarPopupWindowLayout);
+                            org.telegram.ui.ActionBar.p1[] p1VarArr = {ynVar};
+                            ynVar.e = true;
+                            ynVar.c = 220;
+                            ynVar.setOutsideTouchable(true);
                             p1VarArr[0].setClippingEnabled(true);
                             p1VarArr[0].setAnimationStyle(R.style.PopupContextAnimation);
                             p1VarArr[0].setFocusable(true);
                             actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
                             p1VarArr[0].setInputMethodMode(2);
                             p1VarArr[0].getContentView().setFocusableInTouchMode(true);
-                            p1VarArr[0].showAtLocation(xnVar3, 0, (int) (boVar.getX() + xnVar3.getX()), (int) xnVar3.getY());
+                            p1VarArr[0].showAtLocation(wnVar, 0, (int) (aoVar.getX() + wnVar.getX()), (int) wnVar.getY());
                             xnVar2.g8(false, true, 0.2f);
                             break;
-                        } else if (boVar.a.f && xnVar2.getParentActivity() != null && xnVar2.fragmentView != null && xnVar2.W7 != null) {
+                        } else if (aoVar.a.f && xnVar2.getParentActivity() != null && xnVar2.fragmentView != null && xnVar2.W7 != null) {
                             if (xnVar2.l2 == null) {
                                 m40 m40Var = new m40(7, xnVar2.getParentActivity(), xnVar2.ba, true);
                                 xnVar2.l2 = m40Var;
@@ -295,7 +295,7 @@ public final /* synthetic */ class w2 implements View.OnClickListener {
                 break;
             case 14:
                 ((gs) obj2).y0 = !r14.y0;
-                ((x51) obj).N(true);
+                ((w51) obj).N(true);
                 break;
             case 15:
                 ((dt) obj2).dismiss();
@@ -420,7 +420,7 @@ public final /* synthetic */ class w2 implements View.OnClickListener {
                 break;
             case 22:
                 ((q70) obj2).u();
-                ((org.telegram.ui.jv0) obj).run();
+                ((org.telegram.ui.ov0) obj).run();
                 break;
             case 23:
                 q70 q70Var2 = (q70) obj2;

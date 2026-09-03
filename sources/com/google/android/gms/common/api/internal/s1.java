@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.dg;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class s1 implements Runnable {
     public final /* synthetic */ int a;
@@ -116,16 +116,16 @@ public final class s1 implements Runnable {
 
     private final void b() {
         q5.f fVar;
-        q5.d0 d0Var = (q5.d0) this.b;
-        HashMap hashMap = d0Var.b.C;
+        q5.e0 e0Var = (q5.e0) this.b;
+        HashMap hashMap = e0Var.b.C;
         String str = (String) this.c;
         synchronized (hashMap) {
-            fVar = (q5.f) d0Var.b.C.get(str);
+            fVar = (q5.f) e0Var.b.C.get(str);
         }
         if (fVar != null) {
             ((s5.h) fVar).o((String) this.d);
         } else {
-            q5.e0.G.b("Discarded message for unknown namespace '%s'", str);
+            q5.f0.G.b("Discarded message for unknown namespace '%s'", str);
         }
     }
 

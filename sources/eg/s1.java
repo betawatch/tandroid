@@ -8,9 +8,9 @@ import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.fa;
-import qh.o4;
+import qh.n4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class s1 extends org.telegram.ui.Cells.v0 {
     public final fa h2;
@@ -35,9 +35,9 @@ public final class s1 extends org.telegram.ui.Cells.v0 {
             return this.i2;
         }
         if ("paintChatActionBackground".equals(str)) {
-            o4 o4Var = this.j2.h;
-            o4Var.s0 = true;
-            boolean z4 = o4Var.y0;
+            n4 n4Var = this.j2.h;
+            n4Var.s0 = true;
+            boolean z4 = n4Var.y0;
             fa faVar = this.h2;
             if (faVar.r != z4) {
                 faVar.r = z4;

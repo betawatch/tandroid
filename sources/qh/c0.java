@@ -13,10 +13,10 @@ import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.xe0;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class c0 extends FrameLayout {
-    public final j5 a;
+    public final i5 a;
     public final org.telegram.ui.Components.z5 b;
     public final org.telegram.ui.Components.z5 c;
     public final b0 d;
@@ -28,16 +28,16 @@ public abstract class c0 extends FrameLayout {
     public final int[] s;
     public final int[] v;
     public final zf.f w;
-    public s6 x;
+    public r6 x;
     public boolean y;
 
-    public c0(Context context, j5 j5Var) {
+    public c0(Context context, i5 i5Var) {
         super(context);
         this.r = 0.0f;
         this.s = new int[2];
         this.v = new int[2];
         this.w = new zf.f();
-        this.a = j5Var;
+        this.a = i5Var;
         b0 b0Var = new b0(this, context);
         this.d = b0Var;
         pr prVar = pr.h;
@@ -75,7 +75,7 @@ public abstract class c0 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i10) {
                     case 0:
-                        ((l9) this.b).B.l0(-1, false, true);
+                        ((k9) this.b).B.l0(-1, false, true);
                         break;
                     case 1:
                         c0 c0Var = this.b;
@@ -88,14 +88,14 @@ public abstract class c0 extends FrameLayout {
                         break;
                     default:
                         c0 c0Var2 = this.b;
-                        s6 s6Var = c0Var2.x;
-                        if (s6Var != null) {
-                            s6Var.m0 = new MediaController.CropState();
+                        r6 r6Var = c0Var2.x;
+                        if (r6Var != null) {
+                            r6Var.m0 = new MediaController.CropState();
                             c0Var2.f.b(c0Var2.x.m0);
-                            s6 s6Var2 = c0Var2.x;
-                            s6Var2.m0.orientation = s6Var2.Q;
+                            r6 r6Var2 = c0Var2.x;
+                            r6Var2.m0.orientation = r6Var2.Q;
                         }
-                        ((l9) c0Var2).B.l0(-1, false, true);
+                        ((k9) c0Var2).B.l0(-1, false, true);
                         break;
                 }
             }
@@ -119,7 +119,7 @@ public abstract class c0 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i11) {
                     case 0:
-                        ((l9) this.b).B.l0(-1, false, true);
+                        ((k9) this.b).B.l0(-1, false, true);
                         break;
                     case 1:
                         c0 c0Var = this.b;
@@ -132,14 +132,14 @@ public abstract class c0 extends FrameLayout {
                         break;
                     default:
                         c0 c0Var2 = this.b;
-                        s6 s6Var = c0Var2.x;
-                        if (s6Var != null) {
-                            s6Var.m0 = new MediaController.CropState();
+                        r6 r6Var = c0Var2.x;
+                        if (r6Var != null) {
+                            r6Var.m0 = new MediaController.CropState();
                             c0Var2.f.b(c0Var2.x.m0);
-                            s6 s6Var2 = c0Var2.x;
-                            s6Var2.m0.orientation = s6Var2.Q;
+                            r6 r6Var2 = c0Var2.x;
+                            r6Var2.m0.orientation = r6Var2.Q;
                         }
-                        ((l9) c0Var2).B.l0(-1, false, true);
+                        ((k9) c0Var2).B.l0(-1, false, true);
                         break;
                 }
             }
@@ -163,7 +163,7 @@ public abstract class c0 extends FrameLayout {
             public final void onClick(View view) {
                 switch (i12) {
                     case 0:
-                        ((l9) this.b).B.l0(-1, false, true);
+                        ((k9) this.b).B.l0(-1, false, true);
                         break;
                     case 1:
                         c0 c0Var = this.b;
@@ -176,14 +176,14 @@ public abstract class c0 extends FrameLayout {
                         break;
                     default:
                         c0 c0Var2 = this.b;
-                        s6 s6Var = c0Var2.x;
-                        if (s6Var != null) {
-                            s6Var.m0 = new MediaController.CropState();
+                        r6 r6Var = c0Var2.x;
+                        if (r6Var != null) {
+                            r6Var.m0 = new MediaController.CropState();
                             c0Var2.f.b(c0Var2.x.m0);
-                            s6 s6Var2 = c0Var2.x;
-                            s6Var2.m0.orientation = s6Var2.Q;
+                            r6 r6Var2 = c0Var2.x;
+                            r6Var2.m0.orientation = r6Var2.Q;
                         }
-                        ((l9) c0Var2).B.l0(-1, false, true);
+                        ((k9) c0Var2).B.l0(-1, false, true);
                         break;
                 }
             }
@@ -192,24 +192,24 @@ public abstract class c0 extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getCurrentHeight() {
-        s6 s6Var = this.x;
-        if (s6Var == null) {
+        r6 r6Var = this.x;
+        if (r6Var == null) {
             return 1;
         }
-        int i10 = s6Var.Q;
-        j5 j5Var = this.a;
-        return (i10 == 90 || i10 == 270) ? j5Var.getContentWidth() : j5Var.getContentHeight();
+        int i10 = r6Var.Q;
+        i5 i5Var = this.a;
+        return (i10 == 90 || i10 == 270) ? i5Var.getContentWidth() : i5Var.getContentHeight();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public int getCurrentWidth() {
-        s6 s6Var = this.x;
-        if (s6Var == null) {
+        r6 r6Var = this.x;
+        if (r6Var == null) {
             return 1;
         }
-        int i10 = s6Var.Q;
-        j5 j5Var = this.a;
-        return (i10 == 90 || i10 == 270) ? j5Var.getContentHeight() : j5Var.getContentWidth();
+        int i10 = r6Var.Q;
+        i5 i5Var = this.a;
+        return (i10 == 90 || i10 == 270) ? i5Var.getContentHeight() : i5Var.getContentWidth();
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -244,23 +244,23 @@ public abstract class c0 extends FrameLayout {
         this.a.invalidate();
     }
 
-    public void setEntry(s6 s6Var) {
-        if (s6Var == null) {
+    public void setEntry(r6 r6Var) {
+        if (r6Var == null) {
             return;
         }
-        this.x = s6Var;
+        this.x = r6Var;
         this.y = false;
         a0 a0Var = this.f;
         a0Var.G = true;
         getLocationOnScreen(this.s);
         int[] iArr = this.v;
-        j5 j5Var = this.a;
-        j5Var.getLocationOnScreen(iArr);
-        MediaController.CropState cropState = s6Var.m0;
+        i5 i5Var = this.a;
+        i5Var.getLocationOnScreen(iArr);
+        MediaController.CropState cropState = r6Var.m0;
         if (cropState == null) {
             cropState = null;
         }
-        a0Var.p(s6Var.Q, this.w, cropState);
+        a0Var.p(r6Var.Q, this.w, cropState);
         float rotation = a0Var.getRotation();
         zf.e eVar = this.h;
         eVar.setRotation(rotation);
@@ -282,6 +282,6 @@ public abstract class c0 extends FrameLayout {
         b0 b0Var = this.d;
         b0Var.setVisibility(0);
         b0Var.invalidate();
-        j5Var.setCropEditorDrawing(this);
+        i5Var.setCropEditorDrawing(this);
     }
 }

@@ -6,11 +6,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ei;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.wg;
 import org.telegram.ui.Components.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class k3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final class k3 extends AnimatorListenerAdapter {
                 break;
             default:
                 b4.e0 e0Var = (b4.e0) this.d;
-                ((tl0) e0Var.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
+                ((sl0) e0Var.d).scrollBy(0, this.b - ((int[]) this.c)[0]);
                 e0Var.c = null;
                 break;
         }

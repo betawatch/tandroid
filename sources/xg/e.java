@@ -24,9 +24,9 @@ import org.telegram.ui.Components.n40;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.te;
 import org.telegram.ui.xn;
-import qh.f3;
+import qh.e3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout implements xd.b {
     public static final int[] E;
@@ -343,7 +343,7 @@ public class e extends FrameLayout implements xd.b {
     @Override // xd.b
     public final void z(float f10, int i10) {
         o oVar;
-        f3 f3Var;
+        e3 e3Var;
         if (i10 == 99 || i10 == 100) {
             invalidate();
         }
@@ -362,7 +362,7 @@ public class e extends FrameLayout implements xd.b {
                 final xn xnVar = teVar.b;
                 switch (i13) {
                     case 24:
-                        if (xnVar.G0 == null && !z4 && (((f3Var = xnVar.I0) == null || !f3Var.S) && n40.h.c())) {
+                        if (xnVar.G0 == null && !z4 && (((e3Var = xnVar.I0) == null || !e3Var.S) && n40.h.c())) {
                             final int i14 = 1;
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ye
                                 @Override // java.lang.Runnable
@@ -373,22 +373,22 @@ public class e extends FrameLayout implements xd.b {
                                             if (xnVar2.getParentActivity() != null) {
                                                 float f11 = xnVar2.v.e(2).d / AndroidUtilities.density;
                                                 float width = ((r3.getWidth() / 2.0f) + (xnVar2.U0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
-                                                qh.f3 f3Var2 = new qh.f3(xnVar2.getParentActivity(), 3);
-                                                xnVar2.I0 = f3Var2;
-                                                f3Var2.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                                                xnVar2.I0.q(false);
-                                                qh.f3 f3Var3 = xnVar2.I0;
+                                                qh.e3 e3Var2 = new qh.e3(xnVar2.getParentActivity(), 3);
+                                                xnVar2.I0 = e3Var2;
+                                                e3Var2.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
+                                                xnVar2.I0.p(false);
+                                                qh.e3 e3Var3 = xnVar2.I0;
                                                 String string = LocaleController.getString(R.string.Suggest2ChannelSendHint);
-                                                if (f3Var3.getMeasuredWidth() < 0) {
-                                                    f3Var3.D = string;
+                                                if (e3Var3.getMeasuredWidth() < 0) {
+                                                    e3Var3.D = string;
                                                 } else {
-                                                    f3Var3.E.q(string, !LocaleController.isRTL, true);
+                                                    e3Var3.E.q(string, !LocaleController.isRTL, true);
                                                 }
-                                                xnVar2.I0.m(1.0f, (-width) + 7.33f);
+                                                xnVar2.I0.l(1.0f, (-width) + 7.33f);
                                                 xnVar2.U0.addView(xnVar2.I0, k7.c6.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
-                                                qh.f3 f3Var4 = xnVar2.I0;
-                                                f3Var4.i0 = new lf(xnVar2, 21);
-                                                f3Var4.v();
+                                                qh.e3 e3Var4 = xnVar2.I0;
+                                                e3Var4.i0 = new lf(xnVar2, 21);
+                                                e3Var4.u();
                                                 org.telegram.ui.Components.n40.f.b();
                                                 break;
                                             }
@@ -398,16 +398,16 @@ public class e extends FrameLayout implements xd.b {
                                             if (xnVar3.getParentActivity() != null) {
                                                 float f12 = xnVar3.v.e(2).d / AndroidUtilities.density;
                                                 float width2 = ((r3.getWidth() / 2.0f) + (xnVar3.U0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
-                                                qh.f3 f3Var5 = new qh.f3(xnVar3.getParentActivity(), 3);
-                                                xnVar3.G0 = f3Var5;
-                                                f3Var5.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                                                xnVar3.G0.q(false);
-                                                xnVar3.G0.t(LocaleController.getString(R.string.Gift2ChannelSendHint));
-                                                xnVar3.G0.m(1.0f, (-width2) + 7.33f);
+                                                qh.e3 e3Var5 = new qh.e3(xnVar3.getParentActivity(), 3);
+                                                xnVar3.G0 = e3Var5;
+                                                e3Var5.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
+                                                xnVar3.G0.p(false);
+                                                xnVar3.G0.s(LocaleController.getString(R.string.Gift2ChannelSendHint));
+                                                xnVar3.G0.l(1.0f, (-width2) + 7.33f);
                                                 xnVar3.U0.addView(xnVar3.G0, k7.c6.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f12 + 50.0f));
-                                                qh.f3 f3Var6 = xnVar3.G0;
-                                                f3Var6.i0 = new ng(xnVar3, 0);
-                                                f3Var6.v();
+                                                qh.e3 e3Var6 = xnVar3.G0;
+                                                e3Var6.i0 = new ng(xnVar3, 0);
+                                                e3Var6.u();
                                                 org.telegram.ui.Components.n40.h.b();
                                                 break;
                                             }
@@ -430,22 +430,22 @@ public class e extends FrameLayout implements xd.b {
                                             if (xnVar2.getParentActivity() != null) {
                                                 float f11 = xnVar2.v.e(2).d / AndroidUtilities.density;
                                                 float width = ((r3.getWidth() / 2.0f) + (xnVar2.U0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
-                                                qh.f3 f3Var2 = new qh.f3(xnVar2.getParentActivity(), 3);
-                                                xnVar2.I0 = f3Var2;
-                                                f3Var2.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                                                xnVar2.I0.q(false);
-                                                qh.f3 f3Var3 = xnVar2.I0;
+                                                qh.e3 e3Var2 = new qh.e3(xnVar2.getParentActivity(), 3);
+                                                xnVar2.I0 = e3Var2;
+                                                e3Var2.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
+                                                xnVar2.I0.p(false);
+                                                qh.e3 e3Var3 = xnVar2.I0;
                                                 String string = LocaleController.getString(R.string.Suggest2ChannelSendHint);
-                                                if (f3Var3.getMeasuredWidth() < 0) {
-                                                    f3Var3.D = string;
+                                                if (e3Var3.getMeasuredWidth() < 0) {
+                                                    e3Var3.D = string;
                                                 } else {
-                                                    f3Var3.E.q(string, !LocaleController.isRTL, true);
+                                                    e3Var3.E.q(string, !LocaleController.isRTL, true);
                                                 }
-                                                xnVar2.I0.m(1.0f, (-width) + 7.33f);
+                                                xnVar2.I0.l(1.0f, (-width) + 7.33f);
                                                 xnVar2.U0.addView(xnVar2.I0, k7.c6.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f11 + 50.0f));
-                                                qh.f3 f3Var4 = xnVar2.I0;
-                                                f3Var4.i0 = new lf(xnVar2, 21);
-                                                f3Var4.v();
+                                                qh.e3 e3Var4 = xnVar2.I0;
+                                                e3Var4.i0 = new lf(xnVar2, 21);
+                                                e3Var4.u();
                                                 org.telegram.ui.Components.n40.f.b();
                                                 break;
                                             }
@@ -455,16 +455,16 @@ public class e extends FrameLayout implements xd.b {
                                             if (xnVar3.getParentActivity() != null) {
                                                 float f12 = xnVar3.v.e(2).d / AndroidUtilities.density;
                                                 float width2 = ((r3.getWidth() / 2.0f) + (xnVar3.U0.getWidth() - (aVar.getX() + r3.getWidth()))) / AndroidUtilities.density;
-                                                qh.f3 f3Var5 = new qh.f3(xnVar3.getParentActivity(), 3);
-                                                xnVar3.G0 = f3Var5;
-                                                f3Var5.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
-                                                xnVar3.G0.q(false);
-                                                xnVar3.G0.t(LocaleController.getString(R.string.Gift2ChannelSendHint));
-                                                xnVar3.G0.m(1.0f, (-width2) + 7.33f);
+                                                qh.e3 e3Var5 = new qh.e3(xnVar3.getParentActivity(), 3);
+                                                xnVar3.G0 = e3Var5;
+                                                e3Var5.setPadding(AndroidUtilities.dp(7.33f), 0, AndroidUtilities.dp(7.33f), 0);
+                                                xnVar3.G0.p(false);
+                                                xnVar3.G0.s(LocaleController.getString(R.string.Gift2ChannelSendHint));
+                                                xnVar3.G0.l(1.0f, (-width2) + 7.33f);
                                                 xnVar3.U0.addView(xnVar3.G0, k7.c6.d(-1, 100.0f, 87, 0.0f, 0.0f, 0.0f, f12 + 50.0f));
-                                                qh.f3 f3Var6 = xnVar3.G0;
-                                                f3Var6.i0 = new ng(xnVar3, 0);
-                                                f3Var6.v();
+                                                qh.e3 e3Var6 = xnVar3.G0;
+                                                e3Var6.i0 = new ng(xnVar3, 0);
+                                                e3Var6.u();
                                                 org.telegram.ui.Components.n40.h.b();
                                                 break;
                                             }

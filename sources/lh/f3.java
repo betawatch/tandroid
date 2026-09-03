@@ -17,12 +17,12 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ n3 a;
@@ -33,21 +33,21 @@ public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        j51 j51Var = (j51) obj;
+        h51 h51Var = (h51) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
         n3 n3Var = this.a;
-        pr0 pr0Var = n3Var.a;
+        or0 or0Var = n3Var.a;
         int i10 = n3Var.b;
         if (n3Var.e == null) {
             return;
         }
-        Object obj6 = j51Var.G;
+        Object obj6 = h51Var.G;
         if (obj6 instanceof TL_stars.SavedStarGift) {
             TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj6;
             if (!n3Var.n) {
-                mh.g5 g5Var = new mh.g5(n3Var.getContext(), n3Var.b, pr0Var.c, n3Var.c, null);
+                mh.g5 g5Var = new mh.g5(n3Var.getContext(), n3Var.b, or0Var.c, n3Var.c, null);
                 g5Var.a1 = new z2(n3Var, 2);
                 g5Var.L0 = new c1.b(24, n3Var, savedStarGift);
                 g5Var.j2(savedStarGift, n3Var.e);
@@ -65,7 +65,7 @@ public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.
                     ConnectionsManager.getInstance(i10).sendRequest(savestargift, null, 64);
                 }
                 if (n3Var.e.m(savedStarGift, z10, true)) {
-                    qc.a0(pr0Var.a).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralStringComma("GiftsPinLimit", MessagesController.getInstance(i10).stargiftsPinnedToTopLimit)).j();
+                    qc.a0(or0Var.a).Q(R.raw.chats_infotip, 36, LocaleController.formatPluralStringComma("GiftsPinLimit", MessagesController.getInstance(i10).stargiftsPinnedToTopLimit)).j();
                 }
                 if (z4) {
                     return;
@@ -78,12 +78,12 @@ public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.
     @Override // org.telegram.messenger.Utilities.Callback5Return
     public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
         n3 n3Var;
-        pr0 pr0Var;
+        or0 or0Var;
         x1 x1Var;
         j7 j7Var;
         String str;
         final n3 n3Var2;
-        pr0 pr0Var2;
+        or0 or0Var2;
         x1 x1Var2;
         boolean z4;
         boolean z10;
@@ -92,7 +92,7 @@ public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.
         boolean z11;
         g6 g6Var;
         Object obj6;
-        j51 j51Var = (j51) obj;
+        h51 h51Var = (h51) obj;
         View view = (View) obj2;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
@@ -100,18 +100,18 @@ public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.
         n3 n3Var3 = this.a;
         g6 g6Var2 = n3Var3.c;
         int i10 = n3Var3.b;
-        pr0 pr0Var3 = n3Var3.a;
+        or0 or0Var3 = n3Var3.a;
         boolean z12 = false;
         if (n3Var3.e != null) {
             if (view instanceof x1) {
-                Object obj7 = j51Var.G;
+                Object obj7 = h51Var.G;
                 if (obj7 instanceof TL_stars.SavedStarGift) {
                     x1 x1Var3 = (x1) view;
                     final TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj7;
-                    org.telegram.ui.ActionBar.p2 p2Var = pr0Var3.a;
-                    j7 j7Var2 = pr0Var3.e;
+                    org.telegram.ui.ActionBar.p2 p2Var = or0Var3.a;
+                    j7 j7Var2 = or0Var3.e;
                     q70 I = q70.I(p2Var, view);
-                    pr0Var3.F = I;
+                    or0Var3.F = I;
                     if (j7Var2.h()) {
                         if (!n3Var3.d) {
                             j7Var2.d().size();
@@ -141,7 +141,7 @@ public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.
                             int i13 = i12 + 1;
                             TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) d.get(i12);
                             ArrayList arrayList = j7Var2.e(tL_starGiftCollection.collection_id).l;
-                            pr0 pr0Var4 = pr0Var3;
+                            or0 or0Var4 = or0Var3;
                             int size2 = arrayList.size();
                             x1 x1Var4 = x1Var3;
                             int i14 = 0;
@@ -185,7 +185,7 @@ public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.
                             linearLayout3.addView(g1Var2, k7.c6.n(-1, -2));
                             linearLayout2 = linearLayout3;
                             n3Var3 = n3Var4;
-                            pr0Var3 = pr0Var4;
+                            or0Var3 = or0Var4;
                             i12 = i13;
                             x1Var3 = x1Var4;
                             j7Var2 = j7Var3;
@@ -193,7 +193,7 @@ public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.
                             g6Var2 = g6Var;
                         }
                         n3Var = n3Var3;
-                        pr0Var = pr0Var3;
+                        or0Var = or0Var3;
                         x1Var = x1Var3;
                         j7Var = j7Var2;
                         str = null;
@@ -201,26 +201,26 @@ public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.
                         I.k();
                     } else {
                         n3Var = n3Var3;
-                        pr0Var = pr0Var3;
+                        or0Var = or0Var3;
                         x1Var = x1Var3;
                         j7Var = j7Var2;
                         str = null;
                     }
                     if (savedStarGift.gift instanceof TL_stars.TL_starGiftUnique) {
-                        if (pr0Var.c() && !n3Var.d && (!savedStarGift.unsaved || !savedStarGift.pinned_to_top)) {
+                        if (or0Var.c() && !n3Var.d && (!savedStarGift.unsaved || !savedStarGift.pinned_to_top)) {
                             boolean z13 = savedStarGift.pinned_to_top;
                             n3Var2 = n3Var;
-                            pr0Var2 = pr0Var;
+                            or0Var2 = or0Var;
                             x1Var2 = x1Var;
                             z4 = false;
                             I.c(z13 ? R.drawable.msg_unpin : R.drawable.msg_pin, LocaleController.getString(z13 ? R.string.Gift2Unpin : R.string.Gift2Pin), new androidx.car.app.utils.c(n3Var2, savedStarGift, x1Var2, view, 5), false);
                             I.l(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new z2(n3Var2, 0), savedStarGift.pinned_to_top);
                         } else {
                             n3Var2 = n3Var;
-                            pr0Var2 = pr0Var;
+                            or0Var2 = or0Var;
                             x1Var2 = x1Var;
                             z4 = false;
-                            if (pr0Var2.c() && n3Var2.d) {
+                            if (or0Var2.c() && n3Var2.d) {
                                 I.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new z2(n3Var2, 1), false);
                             }
                         }
@@ -289,14 +289,14 @@ public final /* synthetic */ class f3 implements Utilities.Callback5, Utilities.
                         }, str2 != null);
                     } else {
                         n3Var2 = n3Var;
-                        pr0Var2 = pr0Var;
+                        or0Var2 = or0Var;
                         x1Var2 = x1Var;
                         z4 = false;
-                        if (pr0Var2.c() && n3Var2.d) {
+                        if (or0Var2.c() && n3Var2.d) {
                             I.c(R.drawable.tabs_reorder, LocaleController.getString(R.string.Gift2Reorder), new z2(n3Var2, 3), false);
                         }
                     }
-                    if (mh.g5.O1(i10, pr0Var2.c)) {
+                    if (mh.g5.O1(i10, or0Var2.c)) {
                         boolean z14 = savedStarGift.unsaved;
                         I.c(z14 ? R.drawable.msg_message : R.drawable.menu_hide_gift, LocaleController.getString(z14 ? R.string.Gift2ShowGift : R.string.Gift2HideGift), new androidx.car.app.utils.b(n3Var2, savedStarGift, x1Var2, 17), z4);
                     }

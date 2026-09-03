@@ -1,25 +1,52 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.ChatObject;
-import org.telegram.tgnet.TLRPC;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ue1 extends org.telegram.ui.Components.e70 {
-    public final /* synthetic */ long x0;
-    public final /* synthetic */ we1 y0;
+public final class ue1 extends f2.a1 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ sf1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ue1(we1 we1Var, Context context, int i10, a0.h hVar, long j10, org.telegram.ui.ActionBar.p2 p2Var, long j11) {
-        super(context, i10, hVar, j10, p2Var, null);
-        this.y0 = we1Var;
-        this.x0 = j11;
+    public /* synthetic */ ue1(sf1 sf1Var, int i10) {
+        this.a = i10;
+        this.b = sf1Var;
     }
 
-    @Override // org.telegram.ui.Components.e70
-    public final boolean X() {
-        TLRPC.Chat chat = this.y0.b.getMessagesController().getChat(Long.valueOf(this.x0));
-        return chat != null && ChatObject.canUserDoAdminAction(chat, 3);
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        boolean z4;
+        sf1 sf1Var;
+        og.e eVar;
+        switch (this.a) {
+            case 0:
+                sf1 sf1Var2 = this.b;
+                int L0 = sf1Var2.C.L0();
+                if (L0 != -1) {
+                    f2.m1 K = recyclerView.K(L0);
+                    int top = K != null ? K.a.getTop() : 0;
+                    if (L0 == 0) {
+                        int i12 = 0 - top;
+                        z4 = top < 0;
+                        Math.abs(i12);
+                    } else {
+                        z4 = L0 > 0;
+                    }
+                    sf1Var2.G0(z4 || !sf1Var2.H, true);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.y0();
+                break;
+            default:
+                if (Build.VERSION.SDK_INT >= 31 && (eVar = (sf1Var = this.b).c1) != null) {
+                    eVar.f(i10, i11);
+                    sf1Var.x0();
+                    break;
+                }
+                break;
+        }
     }
 }

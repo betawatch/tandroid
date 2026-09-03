@@ -1,27 +1,25 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e61 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ eh.b b;
+public final class e61 extends fg.r1 {
+    public final /* synthetic */ f61 J;
 
-    public /* synthetic */ e61(eh.b bVar, int i10) {
-        this.a = i10;
-        this.b = bVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public e61(f61 f61Var, Context context) {
+        super(context, 2, null);
+        this.J = f61Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.showKeyboard(((i51) this.b.d).h);
-                break;
-            default:
-                this.b.requestFocus();
-                break;
+    @Override // android.view.View
+    public final void invalidate() {
+        super.invalidate();
+        f61 f61Var = this.J;
+        if (f61Var.getParent() instanceof View) {
+            ((View) f61Var.getParent()).invalidate();
         }
     }
 }

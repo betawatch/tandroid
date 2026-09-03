@@ -7,16 +7,16 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class qf0 extends FrameLayout {
-    public final qh.ma a;
+    public final qh.la a;
     public final qh.d b;
     public final nt c;
-    public k71 d;
+    public j71 d;
     public long e;
     public float f;
-    public qh.d3 h;
+    public qh.c3 h;
     public Utilities.Callback n;
     public Runnable r;
 
@@ -31,10 +31,10 @@ public final class qf0 extends FrameLayout {
         kVar.B(587202559, false);
         kVar.setActionBarMenuOnItemClick(new fg.l1(this, 27));
         addView(kVar, k7.c6.e(-1, -2, 55));
-        qh.ma maVar = new qh.ma(context, null, null, g6Var, baVar);
-        this.a = maVar;
-        maVar.U0 = true;
-        addView(maVar, k7.c6.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
+        qh.la laVar = new qh.la(context, null, null, g6Var, baVar);
+        this.a = laVar;
+        laVar.U0 = true;
+        addView(laVar, k7.c6.d(-1, 388, 87, 0.0f, 0.0f, 0.0f, 74.0f));
         qh.d dVar = new qh.d(context, g6Var, true);
         this.b = dVar;
         dVar.g(LocaleController.getString(R.string.EditorSetCoverSave), false, true);
@@ -44,10 +44,10 @@ public final class qf0 extends FrameLayout {
         this.c = ntVar;
         ntVar.setOnClickListener(new eg.o(this, context, g6Var, 29));
         addView(ntVar, k7.c6.d(-1, 32.0f, 87, 60.0f, 0.0f, 60.0f, 134.0f));
-        maVar.setDelegate(new n7.qa(this));
+        laVar.setDelegate(new n7.qa(this));
     }
 
-    public final void a(MediaController.PhotoEntry photoEntry, k71 k71Var, org.telegram.ui.ActionBar.g6 g6Var) {
+    public final void a(MediaController.PhotoEntry photoEntry, j71 j71Var, org.telegram.ui.ActionBar.g6 g6Var) {
         int i10;
         qh.d dVar = this.b;
         dVar.a = g6Var;
@@ -58,32 +58,32 @@ public final class qf0 extends FrameLayout {
         } else {
             this.f = Utilities.clamp(i10 / i11, 1.39f, 0.85f);
         }
-        this.d = k71Var;
+        this.d = j71Var;
         long j10 = photoEntry.coverSavedPosition;
         if (j10 >= 0) {
             this.e = j10;
-            k71Var.L(j10, false);
+            j71Var.L(j10, false);
         } else {
-            this.e = k71Var.n();
+            this.e = j71Var.n();
         }
-        String path = k71Var.C.getPath();
-        long p10 = k71Var.p();
-        j3.f0 f0Var = k71Var.d;
+        String path = j71Var.C.getPath();
+        long p10 = j71Var.p();
+        j3.f0 f0Var = j71Var.d;
         f0Var.j0();
         this.a.o(false, path, p10, f0Var.Y);
-        long p11 = k71Var.p();
+        long p11 = j71Var.p();
         float max = 2.8f / Math.max(60L, p11);
-        float max2 = (1.0f - max) * (this.e / Math.max(1L, k71Var.p()));
-        qh.ma maVar = this.a;
-        maVar.setVideoLeft(max2);
-        maVar.setVideoRight(max2 + max);
-        maVar.W0 = 0L;
-        maVar.X0 = p11;
-        qh.ha haVar = maVar.h;
-        if (haVar != null) {
-            qh.ha.a(haVar, true);
+        float max2 = (1.0f - max) * (this.e / Math.max(1L, j71Var.p()));
+        qh.la laVar = this.a;
+        laVar.setVideoLeft(max2);
+        laVar.setVideoRight(max2 + max);
+        laVar.W0 = 0L;
+        laVar.X0 = p11;
+        qh.ga gaVar = laVar.h;
+        if (gaVar != null) {
+            qh.ga.a(gaVar, true);
         }
-        maVar.k();
+        laVar.k();
     }
 
     public long getTime() {

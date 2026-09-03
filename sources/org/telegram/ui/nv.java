@@ -13,7 +13,7 @@ import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nv implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final /* synthetic */ class nv implements Runnable {
     public final void run() {
         org.telegram.ui.ActionBar.w0 w0Var;
         int i10;
-        mf1 mf1Var = null;
+        sf1 sf1Var = null;
         switch (this.a) {
             case 0:
                 MessagesController.getInstance(this.b.currentAccount).deleteUserPhoto(null);
@@ -82,11 +82,11 @@ public final /* synthetic */ class nv implements Runnable {
                 py pyVar5 = this.b;
                 pyVar5.b0[0].a.requestLayout();
                 kx kxVar = pyVar5.C3;
-                if (kxVar != null && (kxVar.getFragment() instanceof mf1)) {
-                    mf1Var = (mf1) pyVar5.C3.getFragment();
+                if (kxVar != null && (kxVar.getFragment() instanceof sf1)) {
+                    sf1Var = (sf1) pyVar5.C3.getFragment();
                 }
-                if (mf1Var != null) {
-                    mf1Var.B0();
+                if (sf1Var != null) {
+                    sf1Var.B0();
                 }
                 pyVar5.G3(false);
                 pyVar5.S4();
@@ -99,7 +99,7 @@ public final /* synthetic */ class nv implements Runnable {
             case 6:
                 py pyVar6 = this.b;
                 pyVar6.getClass();
-                pyVar6.presentFragment(new p81(null));
+                pyVar6.presentFragment(new v81(null));
                 break;
             case 7:
                 py pyVar7 = this.b;

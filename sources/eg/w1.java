@@ -2,15 +2,15 @@ package eg;
 
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
-import qh.o4;
+import qh.n4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class w1 extends f2.v {
-    public final /* synthetic */ o4 c;
+    public final /* synthetic */ n4 c;
 
-    public w1(o4 o4Var) {
-        this.c = o4Var;
+    public w1(n4 n4Var) {
+        this.c = n4Var;
     }
 
     @Override // f2.v

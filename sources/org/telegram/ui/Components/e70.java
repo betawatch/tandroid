@@ -31,9 +31,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public class e70 extends s61 implements NotificationCenter.NotificationCenterDelegate {
+public class e70 extends r61 implements NotificationCenter.NotificationCenterDelegate {
     public final a0.h Q;
     public final d70 R;
     public final org.telegram.ui.ActionBar.x1 S;
@@ -251,7 +251,7 @@ public class e70 extends s61 implements NotificationCenter.NotificationCenterDel
             String format = String.format("%d", Integer.valueOf(hVar.m()));
             int indexOf = TextUtils.indexOf(spannableStringBuilder, format);
             if (indexOf >= 0) {
-                spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
+                spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), indexOf, format.length() + indexOf, 33);
             }
             d2Var.Q = spannableStringBuilder;
         } else {
@@ -296,12 +296,12 @@ public class e70 extends s61 implements NotificationCenter.NotificationCenterDel
         e70Var.dismiss();
     }
 
-    @Override // org.telegram.ui.Components.s61
-    public final q61 C(Context context) {
+    @Override // org.telegram.ui.Components.r61
+    public final p61 C(Context context) {
         return new v60(this, context);
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.r61
     public final void D(MotionEvent motionEvent, lg.f fVar) {
         org.telegram.ui.ActionBar.p2 p2Var;
         if (motionEvent.getAction() == 0) {
@@ -321,7 +321,7 @@ public class e70 extends s61 implements NotificationCenter.NotificationCenterDel
         if (p2Var instanceof org.telegram.ui.xn) {
             boolean P9 = ((org.telegram.ui.xn) p2Var).P9();
             this.t0 = true;
-            AndroidUtilities.runOnUIThread(new gm(28, this, fVar), P9 ? 200L : 0L);
+            AndroidUtilities.runOnUIThread(new eo(27, this, fVar), P9 ? 200L : 0L);
         } else {
             this.t0 = true;
             setFocusable(true);
@@ -330,7 +330,7 @@ public class e70 extends s61 implements NotificationCenter.NotificationCenterDel
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.r61
     public final void F(String str) {
         a70 a70Var = this.T;
         if (a70Var.h != null) {
@@ -345,18 +345,18 @@ public class e70 extends s61 implements NotificationCenter.NotificationCenterDel
         if (TextUtils.isEmpty(str)) {
             f2.p0 adapter = a70Var.n.d.getAdapter();
             e70 e70Var = a70Var.n;
-            sl0 sl0Var = e70Var.f;
-            if (adapter != sl0Var) {
-                e70Var.d.setAdapter(sl0Var);
+            rl0 rl0Var = e70Var.f;
+            if (adapter != rl0Var) {
+                e70Var.d.setAdapter(rl0Var);
                 return;
             }
             return;
         }
         f2.p0 adapter2 = a70Var.n.d.getAdapter();
         e70 e70Var2 = a70Var.n;
-        sl0 sl0Var2 = e70Var2.e;
-        if (adapter2 != sl0Var2) {
-            e70Var2.d.setAdapter(sl0Var2);
+        rl0 rl0Var2 = e70Var2.e;
+        if (adapter2 != rl0Var2) {
+            e70Var2.d.setAdapter(rl0Var2);
         }
         a70Var.n.s.e(true, false);
         DispatchQueue dispatchQueue = Utilities.searchQueue;
@@ -553,7 +553,7 @@ public class e70 extends s61 implements NotificationCenter.NotificationCenterDel
         }
     }
 
-    @Override // org.telegram.ui.Components.s61, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    @Override // org.telegram.ui.Components.r61, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
     public final void dismiss() {
         super.dismiss();
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.dialogsNeedReload);

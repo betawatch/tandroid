@@ -10,11 +10,11 @@ import ng.q0;
 import org.telegram.messenger.R;
 import org.telegram.messenger.voip.GroupCallMessage;
 import org.telegram.ui.ActionBar.h3;
-import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.c40;
 import org.telegram.ui.d60;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f extends l {
     public final /* synthetic */ h F;
@@ -50,9 +50,9 @@ public final class f extends l {
         }
         d60 d60Var = ((c40) gVar).a;
         Context context = d60Var.getContext();
-        rk0 rk0Var = d60Var.H;
+        qk0 qk0Var = d60Var.H;
         i10 = ((h3) d60Var).currentAccount;
-        m0 m0Var = new m0(context, null, rk0Var, (c) view, null, 0.0f, 0.0f, q0Var, i10, 1, false);
+        m0 m0Var = new m0(context, null, qk0Var, (c) view, null, 0.0f, 0.0f, q0Var, i10, 1, false);
         m0.B = m0Var;
         m0Var.i.setTag(R.id.parent_tag, 1);
         d60Var.container.addView(m0Var.i);

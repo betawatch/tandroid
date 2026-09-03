@@ -5,9 +5,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class tl extends au0 {
+public final class tl extends fu0 {
     public final /* synthetic */ MessageObject a;
     public final /* synthetic */ MediaController.PhotoEntry b;
     public final /* synthetic */ xn c;
@@ -18,12 +18,12 @@ public final class tl extends au0 {
         this.b = photoEntry;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
-    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
         return xn.A1(this.c, this.a, null, i10, z4, true);
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean O() {
         xn xnVar = this.c;
         if (xnVar.V == null || !xnVar.x9()) {
@@ -33,7 +33,7 @@ public final class tl extends au0 {
         return true;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final MessageObject U() {
         MessageObject messageObject = this.c.m5;
         MessageObject messageObject2 = this.a;
@@ -43,17 +43,17 @@ public final class tl extends au0 {
         return null;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void e(CharSequence charSequence) {
         this.c.V.f1(charSequence, false);
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean g() {
         return false;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
         xn xnVar = this.c;
         if (xnVar.m5 != this.a) {

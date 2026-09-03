@@ -18,9 +18,9 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ci extends qv0 {
+public final class ci extends pv0 {
     public int t0;
     public final RectF u0;
     public boolean v0;
@@ -36,7 +36,7 @@ public final class ci extends qv0 {
         this.x0 = new bi(this, this);
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10;
         int i11;
@@ -91,8 +91,8 @@ public final class ci extends qv0 {
         }
         canvas.save();
         ei eiVar2 = miVar.v0;
-        qm qmVar = miVar.n0;
-        if ((eiVar2 == qmVar || (eiVar = miVar.w0) == qmVar || (eiVar2 == miVar.g0 && eiVar == null)) && eiVar2 != null) {
+        pm pmVar = miVar.n0;
+        if ((eiVar2 == pmVar || (eiVar = miVar.w0) == pmVar || (eiVar2 == miVar.g0 && eiVar == null)) && eiVar2 != null) {
             canvas.save();
             float f14 = miVar.i2;
             boolean z4 = miVar.d0;
@@ -422,8 +422,8 @@ public final class ci extends qv0 {
         int i32 = i29;
         int customBackground = miVar.v0.f() ? miVar.v0.getCustomBackground() : miVar.q1(true);
         ei eiVar4 = miVar.v0;
-        qm qmVar = miVar.n0;
-        boolean z10 = (eiVar4 == qmVar || (eiVar = miVar.w0) == qmVar || (eiVar4 == miVar.g0 && eiVar == null)) ? false : true;
+        pm pmVar = miVar.n0;
+        boolean z10 = (eiVar4 == pmVar || (eiVar = miVar.w0) == pmVar || (eiVar4 == miVar.g0 && eiVar == null)) ? false : true;
         RectF rectF = this.u0;
         if (z10) {
             drawable = ((org.telegram.ui.ActionBar.h3) miVar).shadowDrawable;
@@ -483,7 +483,7 @@ public final class ci extends qv0 {
         return drawChild;
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         bi biVar = this.x0;
@@ -494,7 +494,7 @@ public final class ci extends qv0 {
         miVar.M0.setAdjustPanLayoutHelper(biVar);
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         this.x0.d();
@@ -542,7 +542,7 @@ public final class ci extends qv0 {
     /* JADX WARN: Removed duplicated region for block: B:77:0x012d  */
     /* JADX WARN: Removed duplicated region for block: B:84:0x0158  */
     /* JADX WARN: Removed duplicated region for block: B:88:0x0161  */
-    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -557,8 +557,8 @@ public final class ci extends qv0 {
         int i19;
         qh qhVar;
         th thVar;
-        sn snVar;
-        sn snVar2;
+        rn rnVar;
+        rn rnVar2;
         int i20;
         int max;
         int measuredHeight;
@@ -587,10 +587,10 @@ public final class ci extends qv0 {
         int paddingBottom = ciVar.getPaddingBottom();
         z10 = ((org.telegram.ui.ActionBar.h3) miVar).keyboardVisible;
         if (!z10) {
-            sn snVar3 = miVar.j0;
-            if (snVar3 == null || miVar.v0 != snVar3 || snVar3.B == null) {
-                sn snVar4 = miVar.k0;
-                if (snVar4 == null || miVar.v0 != snVar4 || snVar4.B == null) {
+            rn rnVar3 = miVar.j0;
+            if (rnVar3 == null || miVar.v0 != rnVar3 || rnVar3.B == null) {
+                rn rnVar4 = miVar.k0;
+                if (rnVar4 == null || miVar.v0 != rnVar4 || rnVar4.B == null) {
                     if (i23 <= AndroidUtilities.dp(20.0f) && !AndroidUtilities.isInMultiwindow && !AndroidUtilities.isTablet()) {
                         emojiPadding = miVar.m1().getEmojiPadding();
                         if (emojiPadding > 0) {
@@ -664,7 +664,7 @@ public final class ci extends qv0 {
                             i19 = 0;
                         }
                         qhVar = miVar.B0;
-                        if ((qhVar == null && qhVar.l(childAt)) || (((thVar = miVar.M0) != null && thVar.l(childAt)) || (((snVar = miVar.j0) != null && childAt == snVar.B) || ((snVar2 = miVar.k0) != null && childAt == snVar2.B)))) {
+                        if ((qhVar == null && qhVar.l(childAt)) || (((thVar = miVar.M0) != null && thVar.l(childAt)) || (((rnVar = miVar.j0) != null && childAt == rnVar.B) || ((rnVar2 = miVar.k0) != null && childAt == rnVar2.B)))) {
                             if (AndroidUtilities.isTablet()) {
                                 measuredHeight = getMeasuredHeight();
                                 measuredHeight2 = childAt.getMeasuredHeight();
@@ -737,8 +737,8 @@ public final class ci extends qv0 {
         int i12;
         int i13;
         int i14;
-        sn snVar;
-        sn snVar2;
+        rn rnVar;
+        rn rnVar2;
         boolean z4;
         int o12;
         int i15;
@@ -795,18 +795,18 @@ public final class ci extends qv0 {
             ciVar.v0 = false;
         }
         if (miVar.j0 != null && AndroidUtilities.dp(20.0f) >= 0) {
-            sn snVar3 = miVar.j0;
-            if (!snVar3.D && !snVar3.X0 && !snVar3.c1 && !snVar3.e1) {
+            rn rnVar3 = miVar.j0;
+            if (!rnVar3.D && !rnVar3.X0 && !rnVar3.c1 && !rnVar3.e1) {
                 ciVar.v0 = true;
-                snVar3.a0();
+                rnVar3.a0();
                 ciVar.v0 = false;
             }
         }
         if (miVar.k0 != null && AndroidUtilities.dp(20.0f) >= 0) {
-            sn snVar4 = miVar.k0;
-            if (!snVar4.D && !snVar4.X0 && !snVar4.c1 && !snVar4.e1) {
+            rn rnVar4 = miVar.k0;
+            if (!rnVar4.D && !rnVar4.X0 && !rnVar4.c1 && !rnVar4.e1) {
                 ciVar.v0 = true;
-                snVar4.a0();
+                rnVar4.a0();
                 ciVar.v0 = false;
             }
         }
@@ -814,12 +814,12 @@ public final class ci extends qv0 {
             z4 = ((org.telegram.ui.ActionBar.h3) miVar).keyboardVisible;
             if (z4) {
                 ei eiVar = miVar.v0;
-                sn snVar5 = miVar.j0;
-                if (eiVar == snVar5 && snVar5.B != null && snVar5.e1) {
+                rn rnVar5 = miVar.j0;
+                if (eiVar == rnVar5 && rnVar5.B != null && rnVar5.e1) {
                     o12 = AndroidUtilities.dp(120.0f);
                 } else {
-                    sn snVar6 = miVar.k0;
-                    o12 = (eiVar == snVar6 && snVar6.B != null && snVar6.e1) ? AndroidUtilities.dp(120.0f) : 0;
+                    rn rnVar6 = miVar.k0;
+                    o12 = (eiVar == rnVar6 && rnVar6.B != null && rnVar6.e1) ? AndroidUtilities.dp(120.0f) : 0;
                 }
             } else {
                 o12 = miVar.o1();
@@ -873,7 +873,7 @@ public final class ci extends qv0 {
                         i23 = 0;
                     }
                 }
-                if (!qhVar.l(childAt) && !thVar.l(childAt) && (((snVar = miVar.j0) == null || childAt != snVar.B) && ((snVar2 = miVar.k0) == null || childAt != snVar2.B))) {
+                if (!qhVar.l(childAt) && !thVar.l(childAt) && (((rnVar = miVar.j0) == null || childAt != rnVar.B) && ((rnVar2 = miVar.k0) == null || childAt != rnVar2.B))) {
                     measureChildWithMargins(childAt, i10, 0, makeMeasureSpec, i22 + i23);
                 } else if (z10) {
                     childAt.measure(View.MeasureSpec.makeMeasureSpec(i18, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getPaddingTop() + size4, TLObject.FLAG_30));
@@ -965,7 +965,7 @@ public final class ci extends qv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.pv0
     public final void J(Canvas canvas, float f10, Rect rect, Paint paint, boolean z4) {
     }
 }

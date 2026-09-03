@@ -46,8 +46,8 @@ import org.telegram.ui.Components.o9;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.xg0;
 import org.telegram.ui.Components.xk;
-import org.telegram.ui.c71;
 import org.telegram.ui.e1;
+import org.telegram.ui.h71;
 import org.telegram.ui.ii0;
 import org.telegram.ui.j3;
 import org.telegram.ui.j4;
@@ -55,14 +55,14 @@ import org.telegram.ui.l9;
 import org.telegram.ui.o70;
 import org.telegram.ui.os;
 import org.telegram.ui.p60;
-import org.telegram.ui.sw0;
 import org.telegram.ui.web.a1;
 import org.telegram.ui.web.x0;
 import org.telegram.ui.xk0;
+import org.telegram.ui.xw0;
 import org.telegram.ui.zi;
 import org.telegram.ui.zk0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class j0 implements Runnable {
     public final /* synthetic */ int a;
@@ -259,7 +259,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 TLRPC.Chat chat2 = (TLRPC.Chat) this.d;
                 TLRPC.User user2 = (TLRPC.User) this.e;
                 MessagesStorage.BooleanCallback booleanCallback = (MessagesStorage.BooleanCallback) this.f;
-                new c71(context2, chat2, user2, new af.b(this.c, booleanCallback, 25), (g6) this.h).show();
+                new h71(context2, chat2, user2, new af.b(this.c, booleanCallback, 25), (g6) this.h).show();
                 break;
             case 9:
                 o9.a((o9) this.b, (Runnable[]) this.d, (Bitmap) this.e, (b60) this.f, this.c, (z5[]) this.h);
@@ -289,7 +289,7 @@ public final /* synthetic */ class j0 implements Runnable {
                 p2 p2Var2 = (p2) this.d;
                 List<Purchase> list = (List) this.e;
                 p2.e eVar = (p2.e) this.f;
-                sw0 sw0Var = (sw0) this.h;
+                xw0 xw0Var = (xw0) this.h;
                 if (hVar.a == 0) {
                     ii0 ii0Var = new ii0(1, p2Var2);
                     int i15 = this.c;
@@ -318,7 +318,7 @@ public final /* synthetic */ class j0 implements Runnable {
                         tL_inputStorePaymentPremiumSubscription2.upgrade = true;
                     }
                     tL_payments_canPurchaseStore.purpose = tL_inputStorePaymentPremiumSubscription2;
-                    ConnectionsManager.getInstance(i15).sendRequest(tL_payments_canPurchaseStore, new li(p2Var2, tL_inputStorePaymentPremiumSubscription2, sw0Var, eVar, i15, tL_payments_canPurchaseStore, 5));
+                    ConnectionsManager.getInstance(i15).sendRequest(tL_payments_canPurchaseStore, new li(p2Var2, tL_inputStorePaymentPremiumSubscription2, xw0Var, eVar, i15, tL_payments_canPurchaseStore, 5));
                     break;
                 }
                 break;

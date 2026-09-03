@@ -43,12 +43,12 @@ import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.h90;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.o80;
+import org.telegram.ui.Components.s01;
 import org.telegram.ui.Components.t01;
-import org.telegram.ui.Components.u01;
 import org.telegram.ui.Components.z80;
 import org.telegram.ui.t10;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class l7 extends FrameLayout {
     public final ArrayList B;
@@ -667,12 +667,12 @@ public final class l7 extends FrameLayout {
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             arrayList2 = arrayList7;
                                                         } else {
-                                                            t01 t01Var = new t01();
+                                                            s01 s01Var = new s01();
                                                             spannableStringBuilder3 = spannableStringBuilder5;
                                                             try {
-                                                                t01Var.a |= 256;
+                                                                s01Var.a |= 256;
                                                                 arrayList2 = arrayList7;
-                                                                valueOf.setSpan(new u01(t01Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
+                                                                valueOf.setSpan(new t01(s01Var, 0), Math.max(i26, i32), Math.min(i27, i33) + i28, 33);
                                                             } catch (Exception e10) {
                                                                 e = e10;
                                                                 str2 = str7;

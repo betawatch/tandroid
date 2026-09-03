@@ -20,7 +20,7 @@ import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class xz extends DispatchQueue {
     public final int[] B;
@@ -208,7 +208,7 @@ public final class xz extends DispatchQueue {
     }
 
     public final void f(a00 a00Var) {
-        postRunnable(new gm(20, this, a00Var));
+        postRunnable(new eo(19, this, a00Var));
     }
 
     public final void finish() {
@@ -261,10 +261,10 @@ public final class xz extends DispatchQueue {
         this.S = b00Var.Y0;
     }
 
-    public final boolean h(qh.r6 r6Var) {
+    public final boolean h(qh.q6 q6Var) {
         int h;
         int h9;
-        int a2 = r6Var != null ? r6Var.a() : 0;
+        int a2 = q6Var != null ? q6Var.a() : 0;
         String readRes = a2 == 1 ? AndroidUtilities.readRes(R.raw.hdr2sdr_hlg) : a2 == 2 ? AndroidUtilities.readRes(R.raw.hdr2sdr_pq) : "";
         if (a2 != 0) {
             h = b00.h(35633, "attribute vec4 position;uniform mat4 videoMatrix;attribute vec4 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = vec2(videoMatrix * inputTexCoord).xy;}");
@@ -463,7 +463,7 @@ public final class xz extends DispatchQueue {
         super.run();
     }
 
-    public xz(SurfaceTexture surfaceTexture, hv hvVar, qh.r6 r6Var, ba baVar, int i10, int i11) {
+    public xz(SurfaceTexture surfaceTexture, hv hvVar, qh.q6 q6Var, ba baVar, int i10, int i11) {
         super("VideoFilterGLThread", false);
         this.y = new float[16];
         this.B = new int[1];
@@ -489,7 +489,7 @@ public final class xz extends DispatchQueue {
             }
         }
         this.h = true;
-        this.G = new b00(true, r6Var);
+        this.G = new b00(true, q6Var);
         start();
     }
 }

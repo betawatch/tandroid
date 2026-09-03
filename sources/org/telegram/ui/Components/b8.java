@@ -17,9 +17,9 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class b8 extends sl0 {
+public final class b8 extends rl0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public String e;
@@ -32,7 +32,7 @@ public final class b8 extends sl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return (this.n.s0 && m1Var.b() == 0) ? false : true;
     }
@@ -238,12 +238,12 @@ public final class b8 extends sl0 {
         org.telegram.ui.ActionBar.g6 g6Var;
         Context context = this.c;
         if (i10 == 1) {
-            jn jnVar = new jn(context, 7);
-            jnVar.setTag(-33024);
-            return new fl0(jnVar);
+            in inVar = new in(context, 7);
+            inVar.setTag(-33024);
+            return new el0(inVar);
         }
         boolean currentPlaylistIsGlobalSearch = MediaController.getInstance().currentPlaylistIsGlobalSearch();
         g6Var = ((org.telegram.ui.ActionBar.h3) this.n).resourcesProvider;
-        return new fl0(new org.telegram.ui.Cells.x(context, currentPlaylistIsGlobalSearch ? 1 : 0, g6Var));
+        return new el0(new org.telegram.ui.Cells.x(context, currentPlaylistIsGlobalSearch ? 1 : 0, g6Var));
     }
 }

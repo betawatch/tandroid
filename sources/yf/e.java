@@ -28,11 +28,11 @@ import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.t5;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.ke;
-import qh.j2;
+import qh.i2;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class e extends FrameLayout {
     public boolean B;
@@ -41,11 +41,11 @@ public class e extends FrameLayout {
     public Drawable E;
     public z F;
     public final g6 G;
-    public final ul0 H;
+    public final tl0 H;
     public DecimalFormat I;
     public boolean a;
     public final LinearLayout b;
-    public sf.e[] c;
+    public sf.f[] c;
     public final TextView d;
     public final TextView e;
     public final ImageView f;
@@ -66,7 +66,7 @@ public class e extends FrameLayout {
         this.v = new SimpleDateFormat("d MMM");
         this.w = new SimpleDateFormat(" HH:mm");
         this.D = true;
-        this.H = new ul0(this, 12);
+        this.H = new tl0(this, 12);
         this.G = g6Var;
         setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         LinearLayout linearLayout = new LinearLayout(getContext());
@@ -167,16 +167,16 @@ public class e extends FrameLayout {
         }
         int i20 = 0;
         while (i20 < length) {
-            sf.e eVar = this.c[i20];
+            sf.f fVar = this.c[i20];
             int i21 = i20 % 2;
-            f fVar = (f) arrayList.get((i11 == i17 || i11 == i16) ? i20 / 2 : i20);
-            boolean z12 = fVar.n;
-            xf.a aVar = fVar.a;
+            f fVar2 = (f) arrayList.get((i11 == i17 || i11 == i16) ? i20 / 2 : i20);
+            boolean z12 = fVar2.n;
+            xf.a aVar = fVar2.a;
             if (z12) {
-                LinearLayout linearLayout = (LinearLayout) eVar.e;
-                t5 t5Var = (t5) eVar.b;
-                TextView textView2 = (TextView) eVar.d;
-                TextView textView3 = (TextView) eVar.c;
+                LinearLayout linearLayout = (LinearLayout) fVar.e;
+                t5 t5Var = (t5) fVar.b;
+                TextView textView2 = (TextView) fVar.d;
+                TextView textView3 = (TextView) fVar.c;
                 if (linearLayout.getMeasuredHeight() == 0) {
                     linearLayout.requestLayout();
                 }
@@ -278,7 +278,7 @@ public class e extends FrameLayout {
                 }
                 i14 = i22;
             } else {
-                ((LinearLayout) eVar.e).setVisibility(8);
+                ((LinearLayout) fVar.e).setVisibility(8);
                 i14 = i20;
             }
             i20 = i14 + 1;
@@ -298,12 +298,12 @@ public class e extends FrameLayout {
     }
 
     public final void d(boolean z4, boolean z10) {
-        ul0 ul0Var = this.H;
+        tl0 tl0Var = this.H;
         if (z4) {
-            AndroidUtilities.runOnUIThread(ul0Var, 300L);
+            AndroidUtilities.runOnUIThread(tl0Var, 300L);
             return;
         }
-        AndroidUtilities.cancelRunOnUIThread(ul0Var);
+        AndroidUtilities.cancelRunOnUIThread(tl0Var);
         RadialProgressView radialProgressView = this.h;
         if (z10) {
             radialProgressView.setVisibility(8);
@@ -311,16 +311,16 @@ public class e extends FrameLayout {
         }
         this.f.animate().setDuration(80L).alpha(1.0f).start();
         if (radialProgressView.getVisibility() == 0) {
-            radialProgressView.animate().setDuration(80L).alpha(0.0f).setListener(new j2(this, 12)).start();
+            radialProgressView.animate().setDuration(80L).alpha(0.0f).setListener(new i2(this, 12)).start();
         }
     }
 
     public void setSize(int i10) {
         LinearLayout linearLayout = this.b;
         linearLayout.removeAllViews();
-        this.c = new sf.e[i10];
+        this.c = new sf.f[i10];
         for (int i11 = 0; i11 < i10; i11++) {
-            this.c[i11] = new sf.e(this);
+            this.c[i11] = new sf.f(this);
             linearLayout.addView((LinearLayout) this.c[i11].e);
         }
     }

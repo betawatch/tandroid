@@ -9,9 +9,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class ts extends x51 {
+public abstract class ts extends w51 {
     public final int K;
     public final int L;
     public final ArrayList M;
@@ -29,16 +29,16 @@ public abstract class ts extends x51 {
     public String Y;
     public final xp Z;
 
-    public ts(tl0 tl0Var, Context context, int i10, int i11) {
-        super(tl0Var, context, i10, 0, false, null, null);
+    public ts(sl0 sl0Var, Context context, int i10, int i11) {
+        super(sl0Var, context, i10, 0, false, null, null);
         this.M = new ArrayList();
         this.N = new ArrayList();
         this.O = new ArrayList();
         this.P = new ArrayList();
         this.S = new ArrayList();
-        zn0 zn0Var = (zn0) this;
-        this.Z = new xp(zn0Var, 6);
-        this.s = new d(zn0Var, 9);
+        yn0 yn0Var = (yn0) this;
+        this.Z = new xp(yn0Var, 6);
+        this.s = new d(yn0Var, 9);
         this.K = i10;
         this.L = i11;
         N(false);

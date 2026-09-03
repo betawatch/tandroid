@@ -1,82 +1,130 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class v21 extends FrameLayout {
-    public final org.telegram.ui.Components.j5 a;
-    public final /* synthetic */ w21 b;
+public final class v21 extends org.telegram.ui.Components.rl0 {
+    public final Context c;
+    public final /* synthetic */ w21 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public v21(w21 w21Var, Context context) {
-        super(context);
-        this.b = w21Var;
-        TextView g10 = org.telegram.messenger.y3.g(context, 1, 16.0f);
-        g10.setTextColor(w21Var.getThemedColor(org.telegram.ui.ActionBar.k6.G6));
-        g10.setText(LocaleController.getString(R.string.DoubleTapSetting));
-        addView(g10, k7.c6.d(-1, -2.0f, 23, 20.0f, 0.0f, 48.0f, 0.0f));
-        this.a = new org.telegram.ui.Components.j5(AndroidUtilities.dp(24.0f), this);
+        this.d = w21Var;
+        this.c = context;
     }
 
-    public final void a(boolean z4) {
-        int i10;
-        int i11;
-        w21 w21Var = this.b;
-        i10 = ((org.telegram.ui.ActionBar.p2) w21Var).currentAccount;
-        String doubleTapReaction = MediaDataController.getInstance(i10).getDoubleTapReaction();
-        org.telegram.ui.Components.j5 j5Var = this.a;
-        if (doubleTapReaction != null && doubleTapReaction.startsWith("animated_")) {
-            try {
-                j5Var.j(Long.parseLong(doubleTapReaction.substring(9)), z4);
-                return;
-            } catch (Exception unused) {
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.m1 m1Var) {
+        int b10 = m1Var.b();
+        if (b10 == 0) {
+            return true;
+        }
+        w21 w21Var = this.d;
+        return b10 == w21Var.c || b10 == w21Var.d || b10 == w21Var.e;
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        return this.d.h;
+    }
+
+    @Override // f2.p0
+    public final int j(int i10) {
+        w21 w21Var = this.d;
+        if (i10 == w21Var.f) {
+            return 0;
+        }
+        if (i10 == 0 || i10 == w21Var.c || i10 == w21Var.d || i10 == w21Var.e) {
+            return i10 + 9;
+        }
+        return 1;
+    }
+
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        String str;
+        String str2;
+        int i11 = m1Var.f;
+        View view = m1Var.a;
+        if (i11 == 0) {
+            org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) view;
+            a9Var.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.V0(this.c, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.k6.b7));
+            a9Var.setText(LocaleController.getString(R.string.VoipQuickRepliesExplain));
+            return;
+        }
+        if (i11 == 1) {
+            return;
+        }
+        w21 w21Var = this.d;
+        if (i11 == 4) {
+            ((org.telegram.ui.Cells.s8) view).f(LocaleController.getString(R.string.AllowCustomQuickReply), w21Var.getParentActivity().getSharedPreferences("mainconfig", 0).getBoolean("quick_reply_allow_custom", true), false);
+            return;
+        }
+        switch (i11) {
+            case 9:
+            case 10:
+            case 11:
+            case 12:
+                org.telegram.ui.Cells.j3 j3Var = (org.telegram.ui.Cells.j3) view;
+                if (i10 == 0) {
+                    str = LocaleController.getString(R.string.QuickReplyDefault1);
+                    str2 = "quick_reply_msg1";
+                } else if (i10 == w21Var.c) {
+                    str = LocaleController.getString(R.string.QuickReplyDefault2);
+                    str2 = "quick_reply_msg2";
+                } else if (i10 == w21Var.d) {
+                    str = LocaleController.getString(R.string.QuickReplyDefault3);
+                    str2 = "quick_reply_msg3";
+                } else if (i10 == w21Var.e) {
+                    str = LocaleController.getString(R.string.QuickReplyDefault4);
+                    str2 = "quick_reply_msg4";
+                } else {
+                    str = null;
+                    str2 = null;
+                }
+                String string = w21Var.getParentActivity().getSharedPreferences("mainconfig", 0).getString(str2, "");
+                boolean z4 = i10 != w21Var.e;
+                EditTextBoldCursor editTextBoldCursor = j3Var.a;
+                editTextBoldCursor.setText(string);
+                editTextBoldCursor.setHint(str);
+                j3Var.b = z4;
+                j3Var.setWillNotDraw(!z4);
+                break;
+        }
+    }
+
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+        View a9Var;
+        Context context = this.c;
+        if (i10 == 0) {
+            a9Var = new org.telegram.ui.Cells.a9(context);
+        } else if (i10 != 1) {
+            switch (i10) {
+                case 9:
+                case 10:
+                case 11:
+                case 12:
+                    org.telegram.ui.Cells.j3 j3Var = new org.telegram.ui.Cells.j3(context);
+                    j3Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
+                    this.d.n[i10 - 9] = j3Var;
+                    a9Var = j3Var;
+                    break;
+                default:
+                    a9Var = new org.telegram.ui.Cells.s8(context);
+                    a9Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
+                    break;
             }
+        } else {
+            a9Var = new org.telegram.ui.Cells.aa(context);
+            a9Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
         }
-        i11 = ((org.telegram.ui.ActionBar.p2) w21Var).currentAccount;
-        TLRPC.TL_availableReaction tL_availableReaction = MediaDataController.getInstance(i11).getReactionsMap().get(doubleTapReaction);
-        if (tL_availableReaction != null) {
-            j5Var.i(tL_availableReaction.static_icon, z4);
-        }
-    }
-
-    public final void b() {
-        int width = getWidth();
-        org.telegram.ui.Components.j5 j5Var = this.a;
-        j5Var.setBounds((width - j5Var.s) - AndroidUtilities.dp(21.0f), (getHeight() - j5Var.s) / 2, getWidth() - AndroidUtilities.dp(21.0f), (getHeight() + j5Var.s) / 2);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        b();
-        this.a.draw(canvas);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.a();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.a.b();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+        a9Var.setLayoutParams(new f2.x0(-1, -2));
+        return new org.telegram.ui.Components.el0(a9Var);
     }
 }

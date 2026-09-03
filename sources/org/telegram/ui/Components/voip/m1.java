@@ -4,15 +4,15 @@ import android.app.Activity;
 import android.widget.FrameLayout;
 import k7.c6;
 import mh.m5;
-import org.telegram.ui.kh1;
+import org.telegram.ui.qh1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class m1 extends FrameLayout {
     public final j1 a;
     public final FrameLayout b;
     public final l1[] c;
-    public kh1 d;
+    public qh1 d;
 
     public m1(Activity activity, o1 o1Var) {
         super(activity);

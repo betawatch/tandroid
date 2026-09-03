@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kd implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -159,9 +159,9 @@ public final /* synthetic */ class kd implements View.OnClickListener {
             case 6:
                 AnimatorSet animatorSet2 = chatActivityEnterView.p2;
                 if (animatorSet2 == null || !animatorSet2.isRunning()) {
-                    sk0 sk0Var = chatActivityEnterView.e1;
-                    if (sk0Var != null) {
-                        sk0Var.setPlaying(false);
+                    rk0 rk0Var = chatActivityEnterView.e1;
+                    if (rk0Var != null) {
+                        rk0Var.setPlaying(false);
                     }
                     if (chatActivityEnterView.a3 != null) {
                         CameraController.getInstance().cancelOnInitRunnable(chatActivityEnterView.D3);
@@ -222,16 +222,16 @@ public final /* synthetic */ class kd implements View.OnClickListener {
                     if (chatActivityEnterView.j0 == null) {
                         df dfVar2 = new df(chatActivityEnterView, chatActivityEnterView.getContext());
                         chatActivityEnterView.j0 = dfVar2;
-                        qh.e1 e1Var = dfVar2.c;
+                        org.telegram.ui.c81 c81Var = dfVar2.c;
                         chatActivityEnterView.getContext();
-                        e1Var.setLayoutManager(new f2.j0());
-                        qh.e1 e1Var2 = chatActivityEnterView.j0.c;
+                        c81Var.setLayoutManager(new f2.j0());
+                        org.telegram.ui.c81 c81Var2 = chatActivityEnterView.j0.c;
                         sh.y yVar = new sh.y();
                         yVar.c = new ArrayList();
                         yVar.d = new ArrayList();
                         yVar.e = new ArrayList();
                         chatActivityEnterView.k0 = yVar;
-                        e1Var2.setAdapter(yVar);
+                        c81Var2.setAdapter(yVar);
                         chatActivityEnterView.j0.c.setOnItemClickListener(new ef(chatActivityEnterView));
                         chatActivityEnterView.j0.c.setOnItemLongClickListener(new ie(chatActivityEnterView));
                         chatActivityEnterView.j0.setClipToPadding(false);
@@ -356,10 +356,10 @@ public final /* synthetic */ class kd implements View.OnClickListener {
                         boolean z15 = ffVar4 != null && ffVar4.length() > 0;
                         org.telegram.ui.xn xnVar3 = chatActivityEnterView.L2;
                         if (xnVar3 != null) {
-                            qh.f3 f3Var = xnVar3.v1;
-                            if (f3Var != null) {
-                                if (f3Var.S) {
-                                    f3Var.e(true);
+                            qh.e3 e3Var = xnVar3.v1;
+                            if (e3Var != null) {
+                                if (e3Var.S) {
+                                    e3Var.e(true);
                                 }
                                 z11 = true;
                             } else {
@@ -500,9 +500,9 @@ public final /* synthetic */ class kd implements View.OnClickListener {
                             }
                             ve veVar3 = chatActivityEnterView4.n0;
                             View view2 = veVar3.u;
-                            tl0 tl0Var = veVar3.v;
+                            sl0 sl0Var = veVar3.v;
                             TLRPC.Peer peer3 = veVar3.r;
-                            uo0 uo0Var = veVar3.o;
+                            to0 to0Var = veVar3.o;
                             eg.s2 s2Var = veVar3.t;
                             ArrayList arrayList2 = veVar3.z;
                             int size = arrayList2.size();
@@ -515,8 +515,8 @@ public final /* synthetic */ class kd implements View.OnClickListener {
                             arrayList2.clear();
                             s2Var.setPivotX(AndroidUtilities.dp(8.0f));
                             s2Var.setPivotY(s2Var.getMeasuredHeight() - AndroidUtilities.dp(8.0f));
-                            uo0Var.setPivotX(0.0f);
-                            uo0Var.setPivotY(0.0f);
+                            to0Var.setPivotX(0.0f);
+                            to0Var.setPivotY(0.0f);
                             ArrayList<TLRPC.TL_sendAsPeer> arrayList3 = veVar3.s.peers;
                             if (peer3 != null) {
                                 int dp = AndroidUtilities.dp(54.0f);
@@ -538,8 +538,8 @@ public final /* synthetic */ class kd implements View.OnClickListener {
                                             }
                                         }
                                     }
-                                    veVar3.w.h1(i19, (size2 - ((arrayList4.size() - 2) * i20)) + AndroidUtilities.dp(7.0f) + ((i19 == arrayList4.size() + (-1) || tl0Var.getMeasuredHeight() >= size2) ? 0 : tl0Var.getMeasuredHeight() % i20));
-                                    if (tl0Var.computeVerticalScrollOffset() > 0) {
+                                    veVar3.w.h1(i19, (size2 - ((arrayList4.size() - 2) * i20)) + AndroidUtilities.dp(7.0f) + ((i19 == arrayList4.size() + (-1) || sl0Var.getMeasuredHeight() >= size2) ? 0 : sl0Var.getMeasuredHeight() % i20));
+                                    if (sl0Var.computeVerticalScrollOffset() > 0) {
                                         view2.animate().cancel();
                                         view2.animate().alpha(1.0f).setDuration(150L).start();
                                     }
@@ -547,21 +547,21 @@ public final /* synthetic */ class kd implements View.OnClickListener {
                             }
                             s2Var.setScaleX(0.25f);
                             s2Var.setScaleY(0.25f);
-                            uo0Var.setAlpha(0.25f);
+                            to0Var.setAlpha(0.25f);
                             o1.j jVar = new o1.j(s2Var, o1.h.o);
                             jVar.u = org.telegram.ui.yh.n(1.0f, 750.0f, 1.0f);
-                            jVar.b(new ro0(veVar3, 2));
+                            jVar.b(new qo0(veVar3, 2));
                             o1.j jVar2 = new o1.j(s2Var, o1.h.p);
                             jVar2.u = org.telegram.ui.yh.n(1.0f, 750.0f, 1.0f);
-                            jVar2.b(new ro0(veVar3, 3));
+                            jVar2.b(new qo0(veVar3, 3));
                             o1.c cVar = o1.h.t;
                             o1.j jVar3 = new o1.j(s2Var, cVar);
                             jVar3.u = org.telegram.ui.yh.n(1.0f, 750.0f, 1.0f);
-                            o1.j jVar4 = new o1.j(uo0Var, cVar);
+                            o1.j jVar4 = new o1.j(to0Var, cVar);
                             jVar4.u = org.telegram.ui.yh.n(1.0f, 750.0f, 1.0f);
                             for (o1.j jVar5 : Arrays.asList(jVar, jVar2, jVar3, jVar4)) {
                                 arrayList2.add(jVar5);
-                                jVar5.a(new so0(veVar3, jVar5, 1));
+                                jVar5.a(new ro0(veVar3, jVar5, 1));
                                 jVar5.f();
                             }
                             ve veVar4 = chatActivityEnterView4.n0;

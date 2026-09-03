@@ -11,10 +11,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.n51;
-import org.telegram.ui.Components.t01;
+import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.s01;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class y6 extends LinearLayout {
     public TextView a;
@@ -63,7 +63,7 @@ public abstract class y6 extends LinearLayout {
             spannableStringBuilder.replace(lastIndexOf, lastIndexOf + 2, (CharSequence) "");
             spannableStringBuilder.replace(indexOf, indexOf + 2, (CharSequence) "");
             try {
-                spannableStringBuilder.setSpan(new n51(LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl), (t01) null), indexOf, lastIndexOf - 2, 33);
+                spannableStringBuilder.setSpan(new l51(LocaleController.getString(R.string.CheckPhoneNumberLearnMoreUrl), (s01) null), indexOf, lastIndexOf - 2, 33);
             } catch (Exception e6) {
                 FileLog.e(e6);
             }

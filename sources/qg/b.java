@@ -24,10 +24,10 @@ import lf.l0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.tl;
-import org.telegram.ui.zw0;
+import org.telegram.ui.ex0;
 import tg.e;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class b extends Drawable {
     public static final float[] C = new float[8];
@@ -237,7 +237,7 @@ public abstract class b extends Drawable {
         long j10 = xVar.b ? -1L : xVar.a;
         if (this.A == null || this.B != j10) {
             this.B = j10;
-            NinePatchDrawable b10 = c8.b(null, aVar.b, this.l, this.m, Color.alpha(i10) == 255 ? i10 : 1, new zw0(i10, this, z4));
+            NinePatchDrawable b10 = c8.b(null, aVar.b, this.l, this.m, Color.alpha(i10) == 255 ? i10 : 1, new ex0(i10, this, z4));
             this.A = b10;
             b10.getPadding(this.z);
         }

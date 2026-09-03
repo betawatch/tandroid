@@ -20,14 +20,14 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ib1;
+import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class d20 extends FrameLayout implements xd.b, org.telegram.ui.ActionBar.b6 {
     public final AnimationNotificationsLocker B;
     public final ArrayList C;
-    public final ib1 D;
+    public final ob1 D;
     public c20 E;
     public int F;
     public final xd.a a;
@@ -89,11 +89,11 @@ public class d20 extends FrameLayout implements xd.b, org.telegram.ui.ActionBar.
         imageView2.setVisibility(8);
         imageView2.setOnClickListener(new g0(this, 17));
         addView(imageView2, k7.c6.d(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, 12.0f, 0.0f, 12.0f, 0.0f));
-        ib1 ib1Var = new ib1(this, getContext(), 8);
-        this.D = ib1Var;
-        ib1Var.setOrientation(0);
-        ib1Var.setVisibility(0);
-        addView(ib1Var, k7.c6.d(-2, 32.0f, (LocaleController.isRTL ? 5 : 3) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
+        ob1 ob1Var = new ob1(this, getContext(), 8);
+        this.D = ob1Var;
+        ob1Var.setOrientation(0);
+        ob1Var.setVisibility(0);
+        addView(ob1Var, k7.c6.d(-2, 32.0f, (LocaleController.isRTL ? 5 : 3) | 16, 4.0f, 0.0f, 4.0f, 0.0f));
         setWillNotDraw(false);
         b();
         e();
@@ -223,11 +223,11 @@ public class d20 extends FrameLayout implements xd.b, org.telegram.ui.ActionBar.
                 childAt.setBackground(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.i6, g6Var), 1, AndroidUtilities.dp(17.0f)));
             }
         }
-        ib1 ib1Var = this.D;
-        int childCount2 = ib1Var.getChildCount();
+        ob1 ob1Var = this.D;
+        int childCount2 = ob1Var.getChildCount();
         for (int i12 = 0; i12 < childCount2; i12++) {
-            if (ib1Var.getChildAt(i12) instanceof org.telegram.ui.ActionBar.v0) {
-                ((org.telegram.ui.ActionBar.v0) ib1Var.getChildAt(i12)).a();
+            if (ob1Var.getChildAt(i12) instanceof org.telegram.ui.ActionBar.v0) {
+                ((org.telegram.ui.ActionBar.v0) ob1Var.getChildAt(i12)).a();
             }
         }
         invalidate();
@@ -245,12 +245,12 @@ public class d20 extends FrameLayout implements xd.b, org.telegram.ui.ActionBar.
         transitionSet.setOrdering(0);
         transitionSet.setInterpolator((TimeInterpolator) pr.g);
         transitionSet.addListener((Transition.TransitionListener) new b20(this));
-        ib1 ib1Var = this.D;
-        TransitionManager.beginDelayedTransition(ib1Var, transitionSet);
+        ob1 ob1Var = this.D;
+        TransitionManager.beginDelayedTransition(ob1Var, transitionSet);
         int i10 = 0;
-        while (i10 < ib1Var.getChildCount()) {
-            if (!arrayList2.remove(((org.telegram.ui.ActionBar.v0) ib1Var.getChildAt(i10)).getFilter())) {
-                ib1Var.removeViewAt(i10);
+        while (i10 < ob1Var.getChildCount()) {
+            if (!arrayList2.remove(((org.telegram.ui.ActionBar.v0) ob1Var.getChildAt(i10)).getFilter())) {
+                ob1Var.removeViewAt(i10);
                 i10--;
             }
             i10++;
@@ -264,14 +264,14 @@ public class d20 extends FrameLayout implements xd.b, org.telegram.ui.ActionBar.
             v0Var.setData(e0Var);
             v0Var.setOnClickListener(new w2(19, this, v0Var));
             boolean z4 = LocaleController.isRTL;
-            ib1Var.addView(v0Var, k7.c6.t(-2, -1, 0, z4 ? 6 : 0, 0, z4 ? 0 : 6, 0));
+            ob1Var.addView(v0Var, k7.c6.t(-2, -1, 0, z4 ? 6 : 0, 0, z4 ? 0 : 6, 0));
         }
         int i12 = 0;
-        while (i12 < ib1Var.getChildCount()) {
-            ((org.telegram.ui.ActionBar.v0) ib1Var.getChildAt(i12)).setExpanded(i12 == this.F);
+        while (i12 < ob1Var.getChildCount()) {
+            ((org.telegram.ui.ActionBar.v0) ob1Var.getChildAt(i12)).setExpanded(i12 == this.F);
             i12++;
         }
-        ib1Var.setTag(!isEmpty ? 1 : null);
+        ob1Var.setTag(!isEmpty ? 1 : null);
     }
 
     public final void g(uf.e0 e0Var) {

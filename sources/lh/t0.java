@@ -10,10 +10,10 @@ import org.telegram.ui.Components.fb;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.r7;
-import org.telegram.ui.Components.yx0;
-import qh.ca;
+import org.telegram.ui.Components.xx0;
+import qh.ba;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class t0 implements fb {
     public final /* synthetic */ int a;
@@ -122,7 +122,7 @@ public final class t0 implements fb {
                 bottomInset = ((bm) this.b).c.b.getBottomInset();
                 break;
             case 9:
-                FrameLayout frameLayout = ((yx0) this.b).w;
+                FrameLayout frameLayout = ((xx0) this.b).w;
                 if (frameLayout != null) {
                     return frameLayout.getHeight();
                 }
@@ -135,7 +135,7 @@ public final class t0 implements fb {
                 sh.m3 m3Var = (sh.m3) a1Var.getParent();
                 return (int) ((m3Var.getSwipeOffsetY() + m3Var.getOffsetY()) - m3Var.getTopActionBarOffsetY());
             default:
-                dp = ((ca) this.b).Z0.getEditTextHeight();
+                dp = ((ba) this.b).Z0.getEditTextHeight();
                 bottomInset = AndroidUtilities.dp(12.0f);
                 break;
         }

@@ -5,18 +5,18 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ka0 implements h5.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ LaunchActivity b;
-    public final /* synthetic */ v10 c;
+    public final /* synthetic */ z10 c;
     public final /* synthetic */ Long d;
 
-    public /* synthetic */ ka0(LaunchActivity launchActivity, v10 v10Var, Long l10, int i10) {
+    public /* synthetic */ ka0(LaunchActivity launchActivity, z10 z10Var, Long l10, int i10) {
         this.a = i10;
         this.b = launchActivity;
-        this.c = v10Var;
+        this.c = z10Var;
         this.d = l10;
     }
 
@@ -30,14 +30,14 @@ public final /* synthetic */ class ka0 implements h5.d {
         int i13;
         int i14 = this.a;
         Long l10 = this.d;
-        v10 v10Var = this.c;
+        z10 z10Var = this.c;
         LaunchActivity launchActivity = this.b;
         TL_stories.StoryItem storyItem = (TL_stories.StoryItem) obj;
         switch (i14) {
             case 0:
                 Pattern pattern = LaunchActivity.y1;
                 try {
-                    v10Var.run();
+                    z10Var.run();
                 } catch (Exception e6) {
                     FileLog.e(e6);
                 }
@@ -70,7 +70,7 @@ public final /* synthetic */ class ka0 implements h5.d {
             default:
                 Pattern pattern2 = LaunchActivity.y1;
                 try {
-                    v10Var.run();
+                    z10Var.run();
                 } catch (Exception e10) {
                     FileLog.e(e10);
                 }

@@ -36,9 +36,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.ot;
-import org.telegram.ui.ib1;
+import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class z4 {
     public static final l4 p = new l4();
@@ -206,9 +206,9 @@ public final class z4 {
         x4Var.J = null;
         x4Var.N = false;
         x4Var.n();
-        ib1 ib1Var = x4Var.g;
-        ib1Var.removeAllViews();
-        ib1Var.setPaddingRelative(0, 0, 0, 0);
+        ob1 ob1Var = x4Var.g;
+        ob1Var.removeAllViews();
+        ob1Var.setPaddingRelative(0, 0, 0, 0);
         w4 w4Var = x4Var.h;
         ArrayAdapter arrayAdapter = (ArrayAdapter) w4Var.getAdapter();
         arrayAdapter.clear();
@@ -247,7 +247,7 @@ public final class z4 {
                 }
                 b10.setTag(menuItem3);
                 b10.setOnClickListener(x4Var.L);
-                ib1Var.addView(b10);
+                ob1Var.addView(b10);
                 ViewGroup.LayoutParams layoutParams = b10.getLayoutParams();
                 layoutParams.width = min2;
                 b10.setLayoutParams(layoutParams);
@@ -260,10 +260,10 @@ public final class z4 {
             i10 = 0;
         } else {
             i10 = 0;
-            ib1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
+            ob1Var.setPaddingRelative(0, 0, size2.getWidth(), 0);
         }
-        ib1Var.measure(i10, i10);
-        x4Var.J = new Size(ib1Var.getMeasuredWidth(), ib1Var.getMeasuredHeight());
+        ob1Var.measure(i10, i10);
+        x4Var.J = new Size(ob1Var.getMeasuredWidth(), ob1Var.getMeasuredHeight());
         if (!linkedList.isEmpty()) {
             ArrayAdapter arrayAdapter2 = (ArrayAdapter) w4Var.getAdapter();
             arrayAdapter2.clear();

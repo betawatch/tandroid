@@ -25,10 +25,10 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.ui.Components.jc;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.rx0;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class n2 implements VoIPService.StateListener, ef.a, NotificationCenter.NotificationCenterDelegate {
     public static boolean Q = false;
@@ -107,7 +107,7 @@ public final class n2 implements VoIPService.StateListener, ef.a, NotificationCe
             imageView2.setContentDescription(LocaleController.getString(R.string.Open));
             m2Var.addView(imageView2, c6.d(40, 40.0f, 51, 4.0f, 4.0f, 4.0f, 0.0f));
             imageView.setOnClickListener(new eg.m(17));
-            imageView2.setOnClickListener(new sx0(11, this, context));
+            imageView2.setOnClickListener(new rx0(11, this, context));
         }
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {

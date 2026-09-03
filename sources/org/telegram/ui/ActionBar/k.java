@@ -40,19 +40,19 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.bo;
-import org.telegram.ui.Components.cw0;
-import org.telegram.ui.Components.fo0;
+import org.telegram.ui.Components.ao;
+import org.telegram.ui.Components.bw0;
+import org.telegram.ui.Components.eo0;
 import org.telegram.ui.Components.p00;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.q00;
-import org.telegram.ui.Components.qv0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.xn;
-import org.telegram.ui.xy0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.wn;
+import org.telegram.ui.sz0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class k extends FrameLayout implements xd.b, b6 {
     public boolean A0;
@@ -67,7 +67,7 @@ public class k extends FrameLayout implements xd.b, b6 {
     public boolean F;
     public final g6 F0;
     public boolean G;
-    public qv0 G0;
+    public pv0 G0;
     public boolean H;
     public boolean H0;
     public boolean I;
@@ -83,13 +83,13 @@ public class k extends FrameLayout implements xd.b, b6 {
     public View[] N;
     public boolean N0;
     public boolean O;
-    public bo O0;
-    public cw0 P;
+    public ao O0;
+    public bw0 P;
     public boolean P0;
     public q00 Q;
     public Runnable Q0;
     public Paint.FontMetricsInt R;
-    public xy0 R0;
+    public sz0 R0;
     public boolean S;
     public AnimatorSet S0;
     public Rect T;
@@ -200,8 +200,8 @@ public class k extends FrameLayout implements xd.b, b6 {
         return null;
     }
 
-    public final void A(tl0 tl0Var, boolean z4) {
-        y(tl0Var, z4, k6.a7, k6.s8);
+    public final void A(sl0 sl0Var, boolean z4) {
+        y(sl0Var, z4, k6.a7, k6.s8);
     }
 
     public final void B(int i10, boolean z4) {
@@ -760,12 +760,12 @@ public class k extends FrameLayout implements xd.b, b6 {
     }
 
     public final void d(boolean z4) {
-        bo boVar = this.O0;
-        if (boVar == null) {
+        ao aoVar = this.O0;
+        if (aoVar == null) {
             return;
         }
-        xn xnVar = boVar.e;
-        boolean z10 = xnVar != null && xnVar.getVisibility() == 0;
+        wn wnVar = aoVar.e;
+        boolean z10 = wnVar != null && wnVar.getVisibility() == 0;
         int min = Math.min(getMeasuredWidth() - AndroidUtilities.dp(116.0f), this.O0.getVisualWidth());
         xd.c cVar = this.Y0;
         if (z4) {
@@ -810,9 +810,9 @@ public class k extends FrameLayout implements xd.b, b6 {
             int i14 = i10 + i11;
             int i15 = dp + dp2;
             int max = Math.max(i14, i15);
-            bo boVar = this.O0;
+            ao aoVar = this.O0;
             xd.a aVar2 = this.Z0;
-            int lerp = AndroidUtilities.lerp(i14, max, boVar == null ? 0.0f : f10 - aVar2.e);
+            int lerp = AndroidUtilities.lerp(i14, max, aoVar == null ? 0.0f : f10 - aVar2.e);
             int lerp2 = AndroidUtilities.lerp(z4 ? i15 : 0, i15, this.O0 == null ? 0.0f : f10 - aVar2.e);
             int width = getWidth() - lerp;
             int i16 = width - lerp2;
@@ -844,11 +844,11 @@ public class k extends FrameLayout implements xd.b, b6 {
             Paint paint = this.I0;
             paint.setColor(i17);
             if (this.j1) {
-                qv0 qv0Var = this.G0;
+                pv0 pv0Var = this.G0;
                 float y10 = getY();
                 float f11 = f10 - this.o1;
-                qv0Var.getClass();
-                qv0Var.K(canvas, y10, this.J0, paint, true, AndroidUtilities.lerp(255, Color.alpha(k6.v0((qv0.F() && SharedConfig.getDevicePerformanceClass() == 2) ? k6.xf : k6.yf, qv0Var.getResourceProvider())), f11));
+                pv0Var.getClass();
+                pv0Var.K(canvas, y10, this.J0, paint, true, AndroidUtilities.lerp(255, Color.alpha(k6.v0((pv0.F() && SharedConfig.getDevicePerformanceClass() == 2) ? k6.xf : k6.yf, pv0Var.getResourceProvider())), f11));
             } else {
                 this.G0.J(canvas, getY(), this.J0, paint, true);
             }
@@ -933,14 +933,14 @@ public class k extends FrameLayout implements xd.b, b6 {
                 }
                 if (k6.G1) {
                     if (this.P == null) {
-                        this.P = new cw0(0);
+                        this.P = new bw0(0);
                     }
                 } else if (!this.S && this.P != null) {
                     this.P = null;
                 }
-                cw0 cw0Var = this.P;
-                if (cw0Var != null) {
-                    cw0Var.b(canvas, this);
+                bw0 bw0Var = this.P;
+                if (bw0Var != null) {
+                    bw0Var.b(canvas, this);
                 } else {
                     q00 q00Var = this.Q;
                     if (q00Var != null) {
@@ -1356,11 +1356,11 @@ public class k extends FrameLayout implements xd.b, b6 {
         Drawable y02;
         if (this.O && !this.f0 && !LocaleController.isRTL && motionEvent.getAction() == 0 && (y02 = k6.y0()) != null && y02.getBounds().contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
             this.S = true;
-            cw0 cw0Var = this.P;
+            bw0 bw0Var = this.P;
             l5[] l5VarArr = this.n;
-            if (cw0Var == null) {
+            if (bw0Var == null) {
                 this.Q = null;
-                this.P = new cw0(0);
+                this.P = new bw0(0);
                 l5VarArr[0].invalidate();
                 invalidate();
             } else {
@@ -1926,8 +1926,8 @@ public class k extends FrameLayout implements xd.b, b6 {
         this.h0 = z4;
     }
 
-    public void setChatAvatarContainer(bo boVar) {
-        this.O0 = boVar;
+    public void setChatAvatarContainer(ao aoVar) {
+        this.O0 = aoVar;
     }
 
     public void setClipContent(boolean z4) {
@@ -1942,10 +1942,10 @@ public class k extends FrameLayout implements xd.b, b6 {
         }
     }
 
-    public void setDrawBlurBackground(qv0 qv0Var) {
+    public void setDrawBlurBackground(pv0 pv0Var) {
         this.H0 = true;
-        this.G0 = qv0Var;
-        qv0Var.Q.add(this);
+        this.G0 = pv0Var;
+        pv0Var.Q.add(this);
         setBackground(null);
     }
 
@@ -2290,7 +2290,7 @@ public class k extends FrameLayout implements xd.b, b6 {
     public final void y(RecyclerView recyclerView, boolean z4, int i10, int i11) {
         this.l1 = i10;
         this.m1 = i11;
-        org.telegram.messenger.voip.h hVar = new org.telegram.messenger.voip.h(8, this, recyclerView);
+        org.telegram.messenger.voip.h hVar = new org.telegram.messenger.voip.h(7, this, recyclerView);
         recyclerView.j(new fg.e2(hVar, 13));
         this.k1 = z4;
         if (this.j1) {
@@ -2304,20 +2304,20 @@ public class k extends FrameLayout implements xd.b, b6 {
         b();
     }
 
-    public void setAdaptiveBackground(fo0 fo0Var) {
+    public void setAdaptiveBackground(eo0 eo0Var) {
         int i10 = k6.a7;
         int i11 = k6.s8;
         this.l1 = i10;
         this.m1 = i11;
         b();
-        org.telegram.messenger.voip.h hVar = new org.telegram.messenger.voip.h(7, this, fo0Var);
-        fo0Var.f.add(hVar);
+        org.telegram.messenger.voip.h hVar = new org.telegram.messenger.voip.h(6, this, eo0Var);
+        eo0Var.f.add(hVar);
         if (this.j1) {
             hVar.run();
             return;
         }
         this.j1 = true;
-        boolean canScrollVertically = fo0Var.canScrollVertically(-1);
+        boolean canScrollVertically = eo0Var.canScrollVertically(-1);
         this.n1 = !canScrollVertically;
         this.o1 = !canScrollVertically ? 1.0f : 0.0f;
         b();

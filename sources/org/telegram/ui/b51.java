@@ -1,41 +1,47 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class b51 extends f2.v {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ r61 d;
+public final /* synthetic */ class b51 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w61 b;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ b51(r61 r61Var, int i10) {
-        this.c = i10;
-        this.d = r61Var;
+    public /* synthetic */ b51(w61 w61Var, boolean z4, int i10) {
+        this.a = i10;
+        this.b = w61Var;
+        this.c = z4;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        int i11;
-        ArrayList arrayList;
-        int i12;
-        switch (this.c) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                r61 r61Var = this.d;
-                return (r61Var.t0.indexOfKey(i10) >= 0 || r61Var.w0.indexOfKey(i10) >= 0 || i10 == r61Var.f || i10 == r61Var.y || i10 == r61Var.n || i10 == r61Var.h || i10 == r61Var.v || i10 == r61Var.a || i10 == r61Var.x) ? r61Var.o0.J : ((i10 < r61Var.B || i10 >= r61Var.C) && !r61Var.N) ? 5 : 8;
+                w61 w61Var = this.b;
+                t51 t51Var = w61Var.e0;
+                i51 i51Var = w61Var.f0;
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue = 1.0f - floatValue;
+                }
+                float f10 = 1.0f - floatValue;
+                t51Var.setAlpha(f10);
+                t51Var.setTranslationY(AndroidUtilities.dp(8.0f) * floatValue);
+                i51Var.setAlpha(floatValue);
+                i51Var.setTranslationY(AndroidUtilities.dp(8.0f) * f10);
+                w61Var.g0.setAlpha(i51Var.getAlpha() * floatValue);
+                break;
             default:
-                r61 r61Var2 = this.d;
-                b61 b61Var = r61Var2.n0;
-                int j10 = b61Var.j(i10);
-                if (j10 == 6) {
-                    return r61Var2.o0.J;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                if (!this.c) {
+                    floatValue2 = 1.0f - floatValue2;
                 }
-                if (j10 != 5) {
-                    r61 r61Var3 = b61Var.s;
-                    if (r61Var3.T != 14 ? i10 <= (i11 = b61Var.c) || (i10 - i11) - 1 >= r61Var3.z1.size() : (arrayList = r61Var3.y1) == null || i10 < (i12 = b61Var.c) || i10 - i12 >= arrayList.size()) {
-                        return 5;
-                    }
-                }
-                return 8;
+                w61 w61Var2 = this.b;
+                w61Var2.g0.setAlpha(w61Var2.f0.getAlpha() * floatValue2);
+                break;
         }
     }
 }

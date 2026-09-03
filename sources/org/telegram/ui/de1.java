@@ -1,30 +1,32 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class de1 implements Runnable {
+public final class de1 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ie1 b;
+    public final /* synthetic */ he1 b;
 
-    public /* synthetic */ de1(ie1 ie1Var, int i10) {
+    public /* synthetic */ de1(he1 he1Var, int i10) {
         this.a = i10;
-        this.b = ie1Var;
+        this.b = he1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                ie1 ie1Var = this.b;
-                ie1Var.getClass();
-                new fg.n1((org.telegram.ui.ActionBar.p2) ie1Var, 11, false).show();
+                he1 he1Var = this.b;
+                he1Var.v = 0;
+                he1Var.n.setVisibility(8);
+                break;
+            case 1:
+                this.b.v = 0;
                 break;
             default:
-                ie1 ie1Var2 = this.b;
-                ie1Var2.e.requestFocus();
-                AndroidUtilities.showKeyboard(ie1Var2.e);
+                this.b.C.setVisibility(8);
                 break;
         }
     }

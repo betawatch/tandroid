@@ -2,11 +2,11 @@ package kc;
 
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.pg;
 import org.telegram.ui.Components.qg;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class f extends HashMap {
     public final /* synthetic */ int a;
@@ -22,15 +22,14 @@ public final class f extends HashMap {
         switch (this.a) {
             case 1:
                 int i10 = ((qg) this.b).v;
-                ij0 ij0Var = (ij0) super.get(obj);
-                if (ij0Var != null) {
-                    return ij0Var;
+                hj0 hj0Var = (hj0) super.get(obj);
+                if (hj0Var != null) {
+                    return hj0Var;
                 }
                 pg pgVar = (pg) obj;
-                int i11 = pgVar.c;
-                ij0 ij0Var2 = new ij0(i11, AndroidUtilities.dp(i10), String.valueOf(i11), AndroidUtilities.dp(i10));
-                put(pgVar, ij0Var2);
-                return ij0Var2;
+                hj0 hj0Var2 = new hj0(pgVar.c, AndroidUtilities.dp(i10), AndroidUtilities.dp(i10));
+                put(pgVar, hj0Var2);
+                return hj0Var2;
             default:
                 return super.get(obj);
         }

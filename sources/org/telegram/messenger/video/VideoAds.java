@@ -54,7 +54,7 @@ import org.telegram.ui.Components.eb;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
@@ -63,9 +63,9 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.r70;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.m31;
+import org.telegram.ui.q31;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class VideoAds {
     private static HashMap<VideoAdsLocation, VideoAds> cached = new HashMap<>();
@@ -94,7 +94,7 @@ public class VideoAds {
     private boolean first = true;
     private final Runnable showRunnable = new d(this, 0);
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class AdLayout extends eb {
         public final ImageView buttonView;
         public final p9 imageView;
@@ -153,7 +153,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class CloseDrawable extends Drawable {
         private int alpha;
         private final long max_display_duration;
@@ -284,7 +284,7 @@ public class VideoAds {
         }
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class VideoAdsLocation {
         int currentAccount;
         long dialogId;
@@ -404,7 +404,7 @@ public class VideoAds {
         d dVar = new d(this, i11);
         Objects.requireNonNull(q70Var);
         a aVar = new a(q70Var, i11);
-        int i12 = m31.v;
+        int i12 = q31.v;
         if (context == null) {
             return;
         }
@@ -1064,12 +1064,12 @@ public class VideoAds {
         setWaitingPaused(true);
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class AdOptionsDrawable extends Drawable {
         public final int color;
         public final Drawable icon;
         public final Paint backgroundPaint = new Paint(1);
-        public final l01 text = new l01(LocaleController.getString(R.string.SponsoredMessageAd), 11.0f, AndroidUtilities.bold());
+        public final k01 text = new k01(LocaleController.getString(R.string.SponsoredMessageAd), 11.0f, AndroidUtilities.bold());
         private float alpha = 1.0f;
 
         public AdOptionsDrawable(Context context, int i10) {

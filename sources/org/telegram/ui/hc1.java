@@ -1,137 +1,116 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.os.SystemClock;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class hc1 extends FrameLayout {
-    public final /* synthetic */ int a = 0;
-    public final Object b;
-    public final /* synthetic */ Object c;
+public final class hc1 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public int b = 0;
+    public final /* synthetic */ jd1 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hc1(uf.d dVar, Context context, ViewGroup viewGroup) {
-        super(context);
-        this.c = dVar;
-        this.b = viewGroup;
+    public /* synthetic */ hc1(jd1 jd1Var, int i10) {
+        this.a = i10;
+        this.c = jd1Var;
     }
 
-    @Override // android.view.ViewGroup
-    public boolean drawChild(Canvas canvas, View view, long j10) {
-        boolean z4;
-        switch (this.a) {
-            case 1:
-                Path path = (Path) this.b;
-                qh.z4 z4Var = (qh.z4) this.c;
-                if (z4Var.h == null || (!((z4 = z4Var.f) && view == z4Var.d) && (z4 || view != z4Var.c))) {
-                    return super.drawChild(canvas, view, j10);
-                }
-                float measuredWidth = ((z4 ? z4Var.e : 1.0f - z4Var.e) * getMeasuredWidth()) / 2.0f;
-                canvas.save();
-                path.rewind();
-                path.addCircle(getMeasuredWidth() / 2.0f, getMeasuredHeight() / 2.0f, measuredWidth, Path.Direction.CW);
-                canvas.clipPath(path);
-                boolean drawChild = super.drawChild(canvas, view, j10);
-                canvas.restore();
-                return drawChild;
-            default:
-                return super.drawChild(canvas, view, j10);
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                super.invalidate();
-                org.telegram.ui.ActionBar.r0 r0Var = ((ed1) this.c).q0;
-                if (r0Var != null) {
-                    r0Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                int[] iArr = (int[]) this.b;
-                ed1 ed1Var = (ed1) this.c;
-                if (!AndroidUtilities.usingHardwareInput) {
-                    getLocationInWindow(iArr);
-                    if (ed1Var.p0.getTranslationY() != iArr[1]) {
-                        ed1Var.p0.setTranslationY(-r6);
-                        ed1Var.q0.invalidate();
+                jd1 jd1Var = this.c;
+                jd1Var.C0.setRotation(this.b);
+                this.b -= 45;
+                jd1Var.C0.animate().rotationBy(-45.0f).setDuration(300L).setInterpolator(org.telegram.ui.Components.pr.g).start();
+                yc1[] yc1VarArr = jd1Var.t0;
+                yc1 yc1Var = yc1VarArr[0];
+                if (yc1Var != null) {
+                    Drawable background = yc1Var.getBackground();
+                    if (background instanceof org.telegram.ui.Components.fc0) {
+                        ((org.telegram.ui.Components.fc0) background).x(false);
+                    } else {
+                        org.telegram.ui.ActionBar.i6 i6Var = jd1Var.s;
+                        if (jd1Var.b == 2) {
+                            jd1Var.e1 += 45;
+                            while (true) {
+                                int i10 = jd1Var.e1;
+                                if (i10 >= 360) {
+                                    jd1Var.e1 = i10 - 360;
+                                } else {
+                                    jd1Var.a1(jd1Var.W0, 0, true);
+                                }
+                            }
+                        } else if (i6Var != null) {
+                            i6Var.n += 45;
+                            while (true) {
+                                int i11 = i6Var.n;
+                                if (i11 >= 360) {
+                                    i6Var.n = i11 - 360;
+                                } else {
+                                    org.telegram.ui.ActionBar.k6.n1(false, false);
+                                }
+                            }
+                        }
                     }
-                    if (SystemClock.elapsedRealtime() < ed1Var.M) {
-                        invalidate();
+                }
+                yc1 yc1Var2 = yc1VarArr[1];
+                if (yc1Var2 != null) {
+                    Drawable background2 = yc1Var2.getBackground();
+                    if (background2 instanceof org.telegram.ui.Components.fc0) {
+                        ((org.telegram.ui.Components.fc0) background2).x(false);
                         break;
                     }
                 }
                 break;
             default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.a) {
-            case 2:
-                ViewGroup viewGroup = (ViewGroup) this.b;
-                uf.d dVar = (uf.d) this.c;
-                if (!dVar.H || !dVar.G) {
-                    int size = View.MeasureSpec.getSize(i11);
-                    if (size == 0) {
-                        size = viewGroup.getMeasuredHeight();
+                jd1 jd1Var2 = this.c;
+                org.telegram.ui.ActionBar.r5 r5Var = jd1Var2.O;
+                jd1Var2.D0.setRotation(this.b);
+                this.b -= 45;
+                jd1Var2.D0.animate().rotationBy(-45.0f).setDuration(300L).setInterpolator(org.telegram.ui.Components.pr.g).start();
+                org.telegram.ui.ActionBar.i6 i6Var2 = jd1Var2.s;
+                if (!i6Var2.i) {
+                    int i12 = i6Var2.h;
+                    if (i12 != 0) {
+                        int i13 = i6Var2.e;
+                        if (i13 == 0) {
+                            i13 = i6Var2.c;
+                        }
+                        i6Var2.e = i6Var2.f;
+                        i6Var2.f = i6Var2.g;
+                        i6Var2.g = i12;
+                        i6Var2.h = i13;
+                    } else {
+                        int i14 = i6Var2.e;
+                        if (i14 == 0) {
+                            i14 = i6Var2.c;
+                        }
+                        i6Var2.e = i6Var2.f;
+                        i6Var2.f = i6Var2.g;
+                        i6Var2.g = i14;
                     }
-                    if (size == 0) {
-                        size = (AndroidUtilities.displaySize.y - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight;
+                    jd1Var2.S.e(i6Var2.h, 3);
+                    jd1Var2.S.e(i6Var2.g, 2);
+                    jd1Var2.S.e(i6Var2.f, 1);
+                    org.telegram.ui.Components.mq mqVar = jd1Var2.S;
+                    int i15 = i6Var2.e;
+                    if (i15 == 0) {
+                        i15 = i6Var2.c;
                     }
-                    int dp = AndroidUtilities.dp(50.0f);
-                    int dp2 = dVar.v != 0 ? 0 : AndroidUtilities.dp(30.0f) + dp;
-                    if (!dVar.B && !dVar.w) {
-                        dp2 += dp;
-                    }
-                    int paddingTop = (size - viewGroup.getPaddingTop()) - viewGroup.getPaddingBottom();
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(dp2 < paddingTop ? paddingTop - dp2 : 0, TLObject.FLAG_30));
+                    mqVar.e(i15, 0);
+                    jd1Var2.H0[1].b(0, i6Var2.e);
+                    jd1Var2.H0[1].b(1, i6Var2.f);
+                    jd1Var2.H0[1].b(2, i6Var2.g);
+                    jd1Var2.H0[1].b(3, i6Var2.h);
+                    org.telegram.ui.ActionBar.k6.n1(true, true);
+                    jd1Var2.r0.e1();
                     break;
-                } else {
-                    super.onMeasure(i10, i11);
+                } else if (r5Var.i() != null) {
+                    r5Var.i().x(false);
                     break;
                 }
                 break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hc1(Context context, ed1 ed1Var) {
-        super(context);
-        this.c = ed1Var;
-        this.b = new int[2];
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hc1(qh.z4 z4Var, Context context) {
-        super(context);
-        this.c = z4Var;
-        this.b = new Path();
     }
 }

@@ -1,88 +1,89 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.MessageObject;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ov0 implements org.telegram.ui.Components.qk0 {
-    public final /* synthetic */ xn a;
-    public final /* synthetic */ MessageObject b;
-    public final /* synthetic */ org.telegram.ui.Components.rk0 c;
-    public final /* synthetic */ tv0 d;
+public final /* synthetic */ class ov0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public ov0(tv0 tv0Var, xn xnVar, MessageObject messageObject, org.telegram.ui.Components.rk0 rk0Var) {
-        this.d = tv0Var;
-        this.a = xnVar;
-        this.b = messageObject;
-        this.c = rk0Var;
+    public /* synthetic */ ov0(Object obj, long j10, Object obj2, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.b = j10;
+        this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.qk0
-    public final /* synthetic */ boolean g() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.qk0
-    public final /* synthetic */ boolean h() {
-        return false;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
-    @Override // org.telegram.ui.Components.qk0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void o(View view, ng.q0 q0Var, boolean z4, boolean z10) {
-        float f10;
-        ng.r0 r0Var;
-        ng.o0 m9;
-        float f11;
-        int i10;
-        float f12;
-        int id2 = this.b.getId();
-        xn xnVar = this.a;
-        org.telegram.ui.Cells.a0 q82 = xnVar.q8(id2, true);
-        float f13 = 0.0f;
-        if (q82 instanceof org.telegram.ui.Cells.t1) {
-            ng.r0 r0Var2 = ((org.telegram.ui.Cells.t1) q82).K;
-            ng.o0 m10 = r0Var2.m(q0Var);
-            if (m10 == null) {
-                f12 = 0.0f;
-                f10 = f12;
-                xnVar.ab(q82, this.b, this.c, view, f13, f10, q0Var, false, (q0Var == null && q0Var.a) ? true : z4, z10, false);
-                this.d.c(false);
-            }
-            f13 = r0Var2.c + m10.x + (m10.A / 2.0f);
-            f11 = r0Var2.d + m10.y;
-            i10 = m10.B;
-        } else if (!(q82 instanceof org.telegram.ui.Cells.v0) || (m9 = (r0Var = ((org.telegram.ui.Cells.v0) q82).z0).m(q0Var)) == null) {
-            f10 = 0.0f;
-            xnVar.ab(q82, this.b, this.c, view, f13, f10, q0Var, false, (q0Var == null && q0Var.a) ? true : z4, z10, false);
-            this.d.c(false);
-        } else {
-            f13 = r0Var.c + m9.x + (m9.A / 2.0f);
-            f11 = r0Var.d + m9.y;
-            i10 = m9.B;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                yv0 yv0Var = (yv0) this.c;
+                long j10 = this.b;
+                org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.d;
+                yv0Var.getClass();
+                Bundle bundle = new Bundle();
+                if (j10 > 0) {
+                    bundle.putLong("user_id", j10);
+                } else {
+                    bundle.putLong("chat_id", -j10);
+                }
+                p2Var.presentFragment(new ProfileActivity(bundle, null));
+                yv0Var.c(false);
+                return;
+            case 1:
+                qh.w7 w7Var = (qh.w7) this.c;
+                long j11 = this.b;
+                TLRPC.ChatFull chatFull = (TLRPC.ChatFull) this.d;
+                w7Var.getClass();
+                w7Var.d(j11, chatFull.participants);
+                return;
+            case 2:
+                sf.f fVar = (sf.f) this.c;
+                sf.e eVar = (sf.e) this.d;
+                long j12 = this.b;
+                if (((sf.e) fVar.c) != eVar) {
+                    return;
+                }
+                sf.c cVar = (sf.c) fVar.e;
+                if (cVar != null) {
+                    AndroidUtilities.cancelRunOnUIThread(cVar);
+                    fVar.e = null;
+                }
+                synchronized (sf.k.t) {
+                    try {
+                        sf.k kVar = sf.k.v;
+                        if (kVar != null) {
+                            kVar.m();
+                            sf.k.v = null;
+                        }
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
+                }
+                fVar.c = null;
+                eVar.c.run(j12);
+                fVar.D();
+                return;
+            default:
+                long[] jArr = (long[]) this.c;
+                long j13 = this.b;
+                eg.d3 d3Var = (eg.d3) this.d;
+                jArr[0] = j13;
+                d3Var.run();
+                return;
         }
-        f12 = f11 + (i10 / 2.0f);
-        f10 = f12;
-        xnVar.ab(q82, this.b, this.c, view, f13, f10, q0Var, false, (q0Var == null && q0Var.a) ? true : z4, z10, false);
-        this.d.c(false);
     }
 
-    @Override // org.telegram.ui.Components.qk0
-    public final /* synthetic */ boolean t() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.qk0
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // org.telegram.ui.Components.qk0
-    public final /* synthetic */ void j(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
+    public /* synthetic */ ov0(sf.f fVar, sf.e eVar, long j10) {
+        this.a = 2;
+        this.c = fVar;
+        this.d = eVar;
+        this.b = j10;
     }
 }

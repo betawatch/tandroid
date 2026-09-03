@@ -28,27 +28,27 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.f4;
 import org.telegram.ui.Components.d10;
-import org.telegram.ui.Components.en0;
+import org.telegram.ui.Components.dn0;
 import org.telegram.ui.Components.f40;
 import org.telegram.ui.Components.fa0;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.kp;
 import org.telegram.ui.Components.lp;
 import org.telegram.ui.Components.mp;
-import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.or0;
+import org.telegram.ui.Components.ov0;
 import org.telegram.ui.Components.pv0;
-import org.telegram.ui.Components.qv0;
-import org.telegram.ui.Components.ry0;
-import org.telegram.ui.Components.tr0;
+import org.telegram.ui.Components.qy0;
+import org.telegram.ui.Components.sr0;
 import org.telegram.ui.Components.y50;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.Components.z50;
-import org.telegram.ui.Components.zu0;
 import org.telegram.ui.Components.zv;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.nm;
 import org.telegram.ui.po;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements Runnable {
     public final /* synthetic */ int a;
@@ -177,9 +177,9 @@ public final /* synthetic */ class f implements Runnable {
                 af.g.s((Context) obj, LocaleController.getString(z4 ? R.string.BotMonetizationInfoTONLink : R.string.MonetizationInfoTONLink));
                 break;
             case 17:
-                ry0 ry0Var = ((nm) obj).c.a1;
-                if (ry0Var != null && z4) {
-                    ry0Var.setVisibility(8);
+                qy0 qy0Var = ((nm) obj).c.a1;
+                if (qy0Var != null && z4) {
+                    qy0Var.setVisibility(8);
                     break;
                 }
                 break;
@@ -260,44 +260,44 @@ public final /* synthetic */ class f implements Runnable {
                     break;
                 }
             case 25:
-                ((en0) obj).D.presentFragment(new PremiumPreviewFragment(0, z4 ? "upload_speed" : "download_speed"));
+                ((dn0) obj).D.presentFragment(new PremiumPreviewFragment(0, z4 ? "upload_speed" : "download_speed"));
                 break;
             case 26:
-                zu0 zu0Var = (zu0) obj;
+                yu0 yu0Var = (yu0) obj;
                 if (!z4) {
-                    zu0Var.j0.setVisibility(8);
+                    yu0Var.j0.setVisibility(8);
                     break;
                 } else {
-                    zu0Var.getClass();
+                    yu0Var.getClass();
                     break;
                 }
             case 27:
-                pr0 pr0Var = (pr0) obj;
+                or0 or0Var = (or0) obj;
                 if (!z4) {
-                    pr0Var.R.n0.setVisibility(0);
+                    or0Var.R.n0.setVisibility(0);
                     break;
                 } else {
-                    pr0Var.getClass();
+                    or0Var.getClass();
                     break;
                 }
             case 28:
-                tr0 tr0Var = (tr0) obj;
+                sr0 sr0Var = (sr0) obj;
                 if (!z4) {
-                    tr0Var.E.n0.setVisibility(0);
+                    sr0Var.E.n0.setVisibility(0);
                     break;
                 } else {
-                    tr0Var.getClass();
+                    sr0Var.getClass();
                     break;
                 }
             default:
-                qv0 qv0Var = (qv0) obj;
-                ArrayList arrayList2 = qv0Var.r;
-                pv0 pv0Var = qv0Var.n;
-                if (pv0Var != null) {
-                    pv0Var.G(qv0Var.f, z4);
+                pv0 pv0Var = (pv0) obj;
+                ArrayList arrayList2 = pv0Var.r;
+                ov0 ov0Var = pv0Var.n;
+                if (ov0Var != null) {
+                    ov0Var.G(pv0Var.f, z4);
                 }
                 while (i12 < arrayList2.size()) {
-                    ((pv0) arrayList2.get(i12)).G(qv0Var.f, z4);
+                    ((ov0) arrayList2.get(i12)).G(pv0Var.f, z4);
                     i12++;
                 }
                 break;

@@ -39,11 +39,11 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Cells.t1;
-import org.telegram.ui.mf1;
+import org.telegram.ui.sf1;
 import org.telegram.ui.xn;
-import qh.o4;
+import qh.n4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -213,14 +213,14 @@ public final /* synthetic */ class e implements Runnable {
                 }
                 return;
             case 8:
-                mf1 mf1Var = (mf1) this.b;
-                if (mf1Var.getParentLayout() != null) {
-                    mf1Var.E = true;
+                sf1 sf1Var = (sf1) this.b;
+                if (sf1Var.getParentLayout() != null) {
+                    sf1Var.E = true;
                     Bundle bundle = new Bundle();
-                    bundle.putLong("chat_id", mf1Var.a);
+                    bundle.putLong("chat_id", sf1Var.a);
                     xn xnVar = new xn(bundle);
                     xnVar.ga = true;
-                    mf1Var.presentFragment(xnVar);
+                    sf1Var.presentFragment(xnVar);
                     return;
                 }
                 return;
@@ -309,9 +309,9 @@ public final /* synthetic */ class e implements Runnable {
                 ((c5.j) this.b).A();
                 return;
             case 24:
-                o4 o4Var = (o4) this.b;
-                o4Var.u0 = true;
-                o4Var.s();
+                n4 n4Var = (n4) this.b;
+                n4Var.u0 = true;
+                n4Var.s();
                 return;
             case 25:
                 ((View) this.b).performClick();

@@ -9,9 +9,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.xq0;
+import org.telegram.ui.cr0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class t0 {
     public final int a;
@@ -30,7 +30,7 @@ public final class t0 {
         this.f = true;
         q0 q0Var = new q0(this, 0);
         MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-        messagesStorage.getStorageQueue().postRunnable(new xq0((Object) messagesStorage, true, (Object) q0Var, 8));
+        messagesStorage.getStorageQueue().postRunnable(new cr0((Object) messagesStorage, true, (Object) q0Var, 8));
     }
 
     public final void a(s0 s0Var) {
@@ -80,27 +80,27 @@ public final class t0 {
         }
         ArrayList arrayList2 = new ArrayList();
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
-            s6 s6Var = (s6) arrayList.get(i10);
-            if (s6Var != null) {
+            r6 r6Var = (r6) arrayList.get(i10);
+            if (r6Var != null) {
                 StringBuilder sb2 = new StringBuilder("StoryDraft delete ");
-                sb2.append(s6Var.b);
+                sb2.append(r6Var.b);
                 sb2.append(" (edit=");
-                sb2.append(s6Var.g);
-                if (s6Var.g) {
+                sb2.append(r6Var.g);
+                if (r6Var.g) {
                     StringBuilder sb3 = new StringBuilder(", storyId=");
-                    sb3.append(s6Var.f);
+                    sb3.append(r6Var.f);
                     sb3.append(", ");
-                    if (s6Var.H != 0) {
+                    if (r6Var.H != 0) {
                         sb = new StringBuilder("documentId=");
-                        j10 = s6Var.H;
+                        j10 = r6Var.H;
                     } else {
                         sb = new StringBuilder("photoId=");
-                        j10 = s6Var.I;
+                        j10 = r6Var.I;
                     }
                     sb.append(j10);
                     sb3.append(sb.toString());
                     sb3.append(", expireDate=");
-                    sb3.append(s6Var.J);
+                    sb3.append(r6Var.J);
                     str = sb3.toString();
                 } else {
                     str = "";
@@ -110,8 +110,8 @@ public final class t0 {
                 sb2.append(System.currentTimeMillis());
                 sb2.append(")");
                 FileLog.d(sb2.toString());
-                arrayList2.add(Long.valueOf(s6Var.b));
-                s6Var.i(true);
+                arrayList2.add(Long.valueOf(r6Var.b));
+                r6Var.i(true);
             }
         }
         if (arrayList2.isEmpty()) {
@@ -124,53 +124,53 @@ public final class t0 {
         NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
     }
 
-    public final void c(s6 s6Var) {
+    public final void c(r6 r6Var) {
         ArrayList arrayList = new ArrayList(1);
-        arrayList.add(s6Var);
+        arrayList.add(r6Var);
         b(arrayList);
     }
 
-    public final void d(s6 s6Var) {
-        if (s6Var == null) {
+    public final void d(r6 r6Var) {
+        if (r6Var == null) {
             return;
         }
-        e(s6Var);
+        e(r6Var);
         ArrayList arrayList = this.b;
-        arrayList.remove(s6Var);
-        if (!s6Var.w) {
-            arrayList.add(0, s6Var);
+        arrayList.remove(r6Var);
+        if (!r6Var.w) {
+            arrayList.add(0, r6Var);
         }
-        s0 s0Var = new s0(s6Var);
+        s0 s0Var = new s0(r6Var);
         int i10 = this.a;
         MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
         messagesStorage.getStorageQueue().postRunnable(new r0(messagesStorage, s0Var, 0));
         NotificationCenter.getInstance(i10).lambda$postNotificationNameOnUIThread$1(NotificationCenter.storiesDraftsUpdated, new Object[0]);
     }
 
-    public final void e(s6 s6Var) {
-        if (s6Var == null) {
+    public final void e(r6 r6Var) {
+        if (r6Var == null) {
             return;
         }
-        if (s6Var.b == 0) {
-            s6Var.b = Utilities.random.nextLong();
+        if (r6Var.b == 0) {
+            r6Var.b = Utilities.random.nextLong();
         }
-        s6Var.d = System.currentTimeMillis();
-        s6Var.c = true;
-        if (s6Var.M) {
-            s6Var.L = f(s6Var.L);
-        } else if (s6Var.L != null) {
-            File x10 = s6.x(this.a, s6Var.K);
+        r6Var.d = System.currentTimeMillis();
+        r6Var.c = true;
+        if (r6Var.M) {
+            r6Var.L = f(r6Var.L);
+        } else if (r6Var.L != null) {
+            File x10 = r6.x(this.a, r6Var.K);
             try {
-                AndroidUtilities.copyFile(s6Var.L, x10);
-                s6Var.L = f(x10);
-                s6Var.M = true;
+                AndroidUtilities.copyFile(r6Var.L, x10);
+                r6Var.L = f(x10);
+                r6Var.M = true;
             } catch (IOException e6) {
                 FileLog.e(e6);
             }
         }
-        s6Var.Z0 = f(s6Var.Z0);
-        s6Var.P0 = f(s6Var.P0);
-        s6Var.O0 = f(s6Var.O0);
+        r6Var.Z0 = f(r6Var.Z0);
+        r6Var.P0 = f(r6Var.P0);
+        r6Var.O0 = f(r6Var.O0);
     }
 
     public final File f(File file) {

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class wd0 extends zr {
     public final /* synthetic */ int h;
@@ -22,7 +22,7 @@ public final class wd0 extends zr {
                 ((zd0) this.n).h(null);
                 break;
             case 1:
-                ((te0) this.n).h(null);
+                ((se0) this.n).h(null);
                 break;
             case 2:
                 PasscodeActivity passcodeActivity = (PasscodeActivity) this.n;
@@ -34,7 +34,7 @@ public final class wd0 extends zr {
                     break;
                 }
             default:
-                ((qg1) this.n).C0();
+                ((vg1) this.n).C0();
                 break;
         }
     }

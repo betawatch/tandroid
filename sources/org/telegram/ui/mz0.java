@@ -1,75 +1,24 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class mz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ ProfileActivity c;
+public final class mz0 extends org.telegram.ui.Components.lq0 {
+    public final /* synthetic */ ProfileActivity Y0;
 
-    public /* synthetic */ mz0(ProfileActivity profileActivity, boolean z4, int i10) {
-        this.a = i10;
-        this.c = profileActivity;
-        this.b = z4;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mz0(ProfileActivity profileActivity, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.Y0 = profileActivity;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                this.c.c0 = null;
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
-        org.telegram.ui.Cells.y3 y3Var;
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.c;
-                boolean z4 = this.b;
-                ProfileActivity.n1(profileActivity, z4);
-                profileActivity.V.setClickable(true);
-                if (z4) {
-                    org.telegram.ui.ActionBar.w0 w0Var = profileActivity.R0;
-                    if (w0Var.C.getWidth() != 0 && !w0Var.e.isFocused()) {
-                        w0Var.e.requestFocus();
-                        AndroidUtilities.showKeyboard(w0Var.e);
-                    }
-                }
-                profileActivity.k4(true);
-                profileActivity.S1 = null;
-                profileActivity.fragmentView.invalidate();
-                if (z4) {
-                    profileActivity.R4 = true;
-                    profileActivity.F4();
-                    Activity parentActivity = profileActivity.getParentActivity();
-                    i10 = ((org.telegram.ui.ActionBar.p2) profileActivity).classGuid;
-                    AndroidUtilities.requestAdjustResize(parentActivity, i10);
-                    profileActivity.M.setPreventMoving(false);
-                    break;
-                }
-                break;
-            default:
-                ProfileActivity profileActivity2 = this.c;
-                if (profileActivity2.c0 != null && (y3Var = profileActivity2.d0) != null) {
-                    if (!this.b) {
-                        y3Var.setVisibility(4);
-                    }
-                    profileActivity2.c0 = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.lq0
+    public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z4) {
+        if (z4) {
+            AndroidUtilities.runOnUIThread(new pr0(this, hVar, i10, 24), 250L);
         }
     }
 }

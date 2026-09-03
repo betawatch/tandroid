@@ -17,10 +17,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.u5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class z3 extends j {
     public final x3 n0;
@@ -106,10 +106,10 @@ public final class z3 extends j {
     }
 
     @Override // eg.j
-    public tk0 getSelectionBounds() {
+    public sk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new tk0();
+            return new sk0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -117,7 +117,7 @@ public final class z3 extends j {
         float c3 = org.telegram.ui.b.c(dp, 2.0f, getPositionX(), scaleX);
         float positionY = getPositionY();
         x3 x3Var = this.n0;
-        return new tk0(c3, (positionY - (((dp2 - x3Var.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((dp * scaleX) + c3) - c3, (dp2 - x3Var.getExtendedPaddingBottom()) * scaleX);
+        return new sk0(c3, (positionY - (((dp2 - x3Var.getExtendedPaddingTop()) - AndroidUtilities.dpf2(4.0f)) / 2.0f)) * scaleX, ((dp * scaleX) + c3) - c3, (dp2 - x3Var.getExtendedPaddingBottom()) * scaleX);
     }
 
     @Override // eg.j

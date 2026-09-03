@@ -29,7 +29,7 @@ import org.telegram.messenger.beta.R;
 import r0.j0;
 import r0.m0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class m implements Window.Callback {
     public final Window.Callback a;
@@ -157,12 +157,12 @@ public final class m implements Window.Callback {
         ViewGroup viewGroup;
         q qVar = this.e;
         Context context = qVar.e;
-        sf.e eVar = new sf.e(context, callback);
+        sf.f fVar = new sf.f(context, callback);
         k.a aVar = qVar.x;
         if (aVar != null) {
             aVar.a();
         }
-        f7.b bVar = new f7.b(qVar, eVar, false, 2);
+        f7.b bVar = new f7.b(qVar, fVar, false, 2);
         a0 q10 = qVar.q();
         int i10 = 1;
         if (q10 != null) {
@@ -176,7 +176,7 @@ public final class m implements Window.Callback {
             l.l lVar = zVar2.d;
             lVar.w();
             try {
-                if (((sf.e) zVar2.e.b).B(zVar2, lVar)) {
+                if (((sf.f) zVar2.e.b).B(zVar2, lVar)) {
                     q10.i = zVar2;
                     zVar2.g();
                     q10.f.c(zVar2);
@@ -245,7 +245,7 @@ public final class m implements Window.Callback {
                 lVar2.l = 1;
                 dVar.n = lVar2;
                 lVar2.e = dVar;
-                if (eVar.B(dVar, lVar2)) {
+                if (fVar.B(dVar, lVar2)) {
                     dVar.g();
                     qVar.y.c(dVar);
                     qVar.x = dVar;
@@ -281,7 +281,7 @@ public final class m implements Window.Callback {
         qVar.y();
         k.a aVar3 = qVar.x;
         if (aVar3 != null) {
-            return eVar.s(aVar3);
+            return fVar.s(aVar3);
         }
         return null;
     }

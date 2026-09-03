@@ -8,7 +8,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class p6 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -157,7 +157,7 @@ public final /* synthetic */ class p6 implements Utilities.Callback2 {
                     if (U != null) {
                         PasskeysActivity passkeysActivity = new PasskeysActivity(passkeys.passkeys);
                         U.presentFragment(passkeysActivity);
-                        AndroidUtilities.runOnUIThread(new he0(18, passkeysActivity, passkey), 150L);
+                        AndroidUtilities.runOnUIThread(new ue0(17, passkeysActivity, passkey), 150L);
                         break;
                     }
                 }

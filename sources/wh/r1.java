@@ -12,12 +12,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.qv0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class r1 extends qv0 {
+public final class r1 extends pv0 {
     public boolean t0;
     public final Paint u0;
     public final RectF v0;
@@ -32,7 +32,7 @@ public final class r1 extends qv0 {
         this.v0 = new RectF();
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         z1 z1Var = this.w0;
         Rect rect = z1Var.w;
@@ -87,7 +87,7 @@ public final class r1 extends qv0 {
                 l.d.v(R.string.RichEditorDraftSaved, new qc(z1Var.U, z1Var.getResourceProvider()), R.raw.contact_check, 36);
                 return true;
             }
-        } else if (!z1Var.M.h3(keyEvent)) {
+        } else if (!z1Var.M.g3(keyEvent)) {
             return super.dispatchKeyEvent(keyEvent);
         }
         return true;
@@ -116,7 +116,7 @@ public final class r1 extends qv0 {
                 if (motionEvent.getAction() == 0) {
                     this.t0 = z1Var.X.getVisibility() == 0 && motionEvent.getY() >= ((float) ((getHeight() - AndroidUtilities.dp(60.0f)) - Math.max(Math.max(z1Var.A0, z1Var.Q0), z1Var.R0)));
                 }
-                if (!this.t0 || !z1Var.M.i3(motionEvent)) {
+                if (!this.t0 || !z1Var.M.h3(motionEvent)) {
                     return super.dispatchTouchEvent(motionEvent);
                 }
             }

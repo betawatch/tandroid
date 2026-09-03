@@ -8,13 +8,11 @@ import android.graphics.Point;
 import android.graphics.SurfaceTexture;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import android.os.Parcel;
 import android.text.TextUtils;
 import android.text.style.CharacterStyle;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.EditText;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.TaskCompletionSource;
@@ -32,35 +30,35 @@ import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.ec0;
-import org.telegram.ui.Components.fy0;
-import org.telegram.ui.Components.g01;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.ml0;
+import org.telegram.ui.Components.ey0;
+import org.telegram.ui.Components.f01;
+import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.qf0;
-import org.telegram.ui.Components.v61;
+import org.telegram.ui.Components.u61;
 import org.telegram.ui.Components.vt;
 import org.telegram.ui.Components.xt;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.SecretMediaViewer;
-import org.telegram.ui.d41;
+import org.telegram.ui.cv0;
 import org.telegram.ui.fn0;
 import org.telegram.ui.gl0;
 import org.telegram.ui.gv;
+import org.telegram.ui.h21;
 import org.telegram.ui.hv;
+import org.telegram.ui.i41;
 import org.telegram.ui.nm0;
-import org.telegram.ui.o21;
 import org.telegram.ui.ow;
 import org.telegram.ui.oy;
 import org.telegram.ui.py;
 import org.telegram.ui.tm0;
-import org.telegram.ui.w01;
-import org.telegram.ui.xu0;
+import org.telegram.ui.u21;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g6, vt, qh.ga, org.telegram.ui.Cells.k1, org.telegram.ui.k7, ml0, tm0, tg.a, h71, p2.z, com.google.android.gms.common.api.internal.s {
+public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g6, vt, qh.fa, org.telegram.ui.Cells.k1, org.telegram.ui.k7, ll0, tm0, tg.a, g71, p2.z {
     public final /* synthetic */ int a;
     public Object b;
     public Object c;
@@ -85,7 +83,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
                 SparseIntArray sparseIntArray = (SparseIntArray) this.b;
                 int indexOfKey = sparseIntArray.indexOfKey(i10);
                 return indexOfKey >= 0 ? sparseIntArray.valueAt(indexOfKey) : org.telegram.ui.ActionBar.k6.w0(null, i10, false);
-            case 20:
+            case 21:
                 SparseIntArray sparseIntArray2 = (SparseIntArray) this.b;
                 return sparseIntArray2 != null ? sparseIntArray2.get(i10) : org.telegram.ui.ActionBar.k6.w0(null, i10, false);
             default:
@@ -119,7 +117,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         switch (this.a) {
             case 8:
                 return org.telegram.ui.ActionBar.k6.S0(str);
-            case 20:
+            case 21:
                 return org.telegram.ui.ActionBar.k6.S0(str);
             default:
                 org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.c;
@@ -135,7 +133,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     @Override // tg.a
     public void I(Canvas canvas, float f10, float f11, float f12, float f13) {
         switch (this.a) {
-            case 18:
+            case 19:
                 canvas.save();
                 canvas.clipRect(f10, f11, f12, f13);
                 ((PhotoViewer) this.c).T0(canvas, (org.telegram.ui.Components.fa) this.b, -14277082, 855638016, false, true, true);
@@ -167,7 +165,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public void J0(int i10, int i11) {
         switch (this.a) {
             case 8:
-            case 20:
+            case 21:
                 break;
             default:
                 org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.c;
@@ -218,7 +216,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
 
     @Override // org.telegram.ui.Cells.k1
     public boolean R0(long j10) {
-        return ((g01) this.c).v;
+        return ((f01) this.c).v;
     }
 
     public pb.b T0() {
@@ -356,41 +354,41 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
             ((nh.b) this.b).i(aVar);
             hvVar.b0.d();
             nh.b bVar = hvVar.d0;
-            fy0[] fy0VarArr = hvVar.Y;
+            ey0[] ey0VarArr = hvVar.Y;
             org.telegram.ui.Cells.z1[] z1VarArr = hvVar.Z;
             org.telegram.ui.Cells.z1 z1Var = z1VarArr[0];
             if (z1Var != null) {
-                fy0 fy0Var = fy0VarArr[0];
+                ey0 ey0Var = ey0VarArr[0];
                 boolean z10 = bVar.m;
-                fy0Var.c = z10;
+                ey0Var.c = z10;
                 z1Var.c(z10, true);
             }
             org.telegram.ui.Cells.z1 z1Var2 = z1VarArr[1];
             if (z1Var2 != null) {
-                fy0 fy0Var2 = fy0VarArr[1];
+                ey0 ey0Var2 = ey0VarArr[1];
                 boolean z11 = bVar.n;
-                fy0Var2.c = z11;
+                ey0Var2.c = z11;
                 z1Var2.c(z11, true);
             }
             org.telegram.ui.Cells.z1 z1Var3 = z1VarArr[2];
             if (z1Var3 != null) {
-                fy0 fy0Var3 = fy0VarArr[2];
+                ey0 ey0Var3 = ey0VarArr[2];
                 boolean z12 = bVar.o;
-                fy0Var3.c = z12;
+                ey0Var3.c = z12;
                 z1Var3.c(z12, true);
             }
             org.telegram.ui.Cells.z1 z1Var4 = z1VarArr[3];
             if (z1Var4 != null) {
-                fy0 fy0Var4 = fy0VarArr[3];
+                ey0 ey0Var4 = ey0VarArr[3];
                 boolean z13 = bVar.p;
-                fy0Var4.c = z13;
+                ey0Var4.c = z13;
                 z1Var4.c(z13, true);
             }
             org.telegram.ui.Cells.z1 z1Var5 = z1VarArr[4];
             if (z1Var5 != null) {
-                fy0 fy0Var5 = fy0VarArr[4];
+                ey0 ey0Var5 = ey0VarArr[4];
                 boolean z14 = bVar.q;
-                fy0Var5.c = z14;
+                ey0Var5.c = z14;
                 z1Var5.c(z14, true);
             }
             hvVar.X.a(gvVar.d(), true);
@@ -424,7 +422,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         switch (this.a) {
             case 8:
                 return ((SparseIntArray) this.b).get(i10);
-            case 20:
+            case 21:
                 return B0(i10);
             default:
                 org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.c;
@@ -445,30 +443,6 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         return false;
     }
 
-    @Override // com.google.android.gms.common.api.internal.s
-    public void accept(Object obj, Object obj2) {
-        q5.e0 e0Var = (q5.e0) this.b;
-        String str = (String) this.c;
-        u5.x xVar = (u5.x) obj;
-        TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
-        b6.m.j("Not connected to device", e0Var.F == 2);
-        u5.f fVar = (u5.f) xVar.u();
-        Parcel M0 = fVar.M0();
-        M0.writeString(str);
-        fVar.R0(M0, 5);
-        synchronized (e0Var.s) {
-            try {
-                if (e0Var.p != null) {
-                    taskCompletionSource.setException(b6.m.m(new Status(2001, null, null, null)));
-                } else {
-                    e0Var.p = taskCompletionSource;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
     @Override // tg.a
     public /* synthetic */ void b() {
         int i10 = this.a;
@@ -486,7 +460,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean c(float f10, float f11, int i10, View view) {
         py pyVar = (py) this.c;
         if (view instanceof org.telegram.ui.Cells.r2) {
@@ -513,16 +487,16 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         return false;
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public void d0(float f10, boolean z4) {
         ec0 ec0Var = (ec0) this.b;
         qf0 qf0Var = (qf0) this.c;
-        k71 k71Var = qf0Var.d;
-        if (k71Var == null) {
+        j71 j71Var = qf0Var.d;
+        if (j71Var == null) {
             return;
         }
         float max = 2.8f / Math.max(60L, r2);
-        long p10 = (long) ((((f10 / (1.0f - max)) * max) + f10) * k71Var.p());
+        long p10 = (long) ((((f10 / (1.0f - max)) * max) + f10) * j71Var.p());
         qf0Var.e = p10;
         qf0Var.d.L(p10, !z4);
         if (z4) {
@@ -547,7 +521,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         switch (this.a) {
             case 8:
                 return B0(i10);
-            case 20:
+            case 21:
                 return B0(i10);
             default:
                 org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.c;
@@ -576,7 +550,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ xu0 g2() {
+    public /* synthetic */ cv0 g2() {
         return null;
     }
 
@@ -585,7 +559,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         switch (this.a) {
             case 8:
                 return null;
-            case 20:
+            case 21:
                 return null;
             default:
                 org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.c;
@@ -593,7 +567,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public void h() {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
@@ -629,13 +603,13 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
 
     @Override // org.telegram.ui.Cells.k1
     public boolean j2(long j10) {
-        return ((g01) this.c).s;
+        return ((f01) this.c).s;
     }
 
     @Override // tg.a
     public qg.b k() {
         switch (this.a) {
-            case 18:
+            case 19:
                 if (Build.VERSION.SDK_INT < 29) {
                     break;
                 } else {
@@ -666,7 +640,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
             case 8:
                 org.telegram.ui.ActionBar.k6.q(f10, f11, i10, i11);
                 break;
-            case 20:
+            case 21:
                 org.telegram.ui.ActionBar.k6.q(f10, f11, i10, i11);
                 break;
             default:
@@ -744,7 +718,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         switch (this.a) {
             case 8:
                 return false;
-            case 20:
+            case 21:
                 return false;
             default:
                 org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.c;
@@ -789,8 +763,8 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         }
     }
 
-    @Override // org.telegram.ui.Components.h71
-    public void onError(k71 k71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.g71
+    public void onError(j71 j71Var, Exception exc) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         int i10 = secretMediaViewer.Y;
         if (i10 <= 0) {
@@ -798,22 +772,22 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
             return;
         }
         secretMediaViewer.Y = i10 - 1;
-        AndroidUtilities.runOnUIThread(new w01(9, this, (File) this.b), 100L);
+        AndroidUtilities.runOnUIThread(new h21(8, this, (File) this.b), 100L);
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public /* synthetic */ void onRenderedFirstFrame(k3.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public void onStateChanged(boolean z4, int i10) {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
-        d41 d41Var = secretMediaViewer.f1;
+        i41 i41Var = secretMediaViewer.f1;
         if (secretMediaViewer.y == null || secretMediaViewer.e0 == null) {
             return;
         }
-        AndroidUtilities.cancelRunOnUIThread(d41Var);
-        AndroidUtilities.runOnUIThread(d41Var);
+        AndroidUtilities.cancelRunOnUIThread(i41Var);
+        AndroidUtilities.runOnUIThread(i41Var);
         if (i10 == 4 || i10 == 1) {
             try {
                 secretMediaViewer.b.getWindow().clearFlags(128);
@@ -849,12 +823,12 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         }
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f10) {
         org.telegram.ui.o4 o4Var = ((SecretMediaViewer) this.c).w;
         if (o4Var != null) {
@@ -866,7 +840,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public void p(float f10) {
         Point point = AndroidUtilities.displaySize;
         if (point.x > point.y) {
@@ -953,7 +927,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         if (trim.length() > 16) {
             trim = trim.substring(0, 16);
         }
-        if (((g01) this.c).s || !TextUtils.isEmpty(trim)) {
+        if (((f01) this.c).s || !TextUtils.isEmpty(trim)) {
             return trim;
         }
         return null;
@@ -969,7 +943,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         switch (this.a) {
             case 8:
                 return org.telegram.ui.ActionBar.k6.v3;
-            case 20:
+            case 21:
                 return org.telegram.ui.ActionBar.k6.v3;
             default:
                 org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.c;
@@ -1063,7 +1037,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         this.c = obj2;
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public void onRenderedFirstFrame() {
         SecretMediaViewer secretMediaViewer = (SecretMediaViewer) this.c;
         if (secretMediaViewer.Z) {
@@ -1080,7 +1054,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     }
 
     public qa(Context context, com.google.android.gms.internal.play_billing.p3 p3Var) {
-        this.a = 24;
+        this.a = 25;
         c2.u uVar = new c2.u(5);
         try {
             y2.q.b(context);
@@ -1093,7 +1067,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     }
 
     public qa(org.telegram.ui.ActionBar.g6 g6Var) {
-        this.a = 22;
+        this.a = 23;
         this.b = new SparseIntArray();
         this.c = g6Var;
         L0();
@@ -1106,9 +1080,9 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
 
     public qa(View view) {
         this.a = 14;
-        v61 v61Var = new v61(this, view);
-        this.b = v61Var;
-        view.addOnLayoutChangeListener(v61Var);
+        u61 u61Var = new u61(this, view);
+        this.b = u61Var;
+        view.addOnLayoutChangeListener(u61Var);
     }
 
     public qa(qf0 qf0Var) {
@@ -1118,7 +1092,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     }
 
     public qa(EditText editText) {
-        this.a = 26;
+        this.a = 27;
         this.b = editText;
         q1.i iVar = new q1.i(editText);
         this.c = iVar;
@@ -1151,7 +1125,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void D0() {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void G() {
     }
 
@@ -1190,7 +1164,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void r() {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void w0() {
     }
 
@@ -1198,7 +1172,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void z2() {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void A(float f10) {
     }
 
@@ -1214,7 +1188,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void H(MessageObject.TextLayoutBlock textLayoutBlock) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void H0(long j10) {
     }
 
@@ -1222,7 +1196,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public void I0(org.telegram.ui.Cells.t1 t1Var) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void J(float f10) {
     }
 
@@ -1262,11 +1236,11 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void T1(MessageObject messageObject) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void U(boolean z4) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void X(float f10) {
     }
 
@@ -1278,7 +1252,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void d1(org.telegram.ui.Cells.t1 t1Var) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void f(int i10) {
     }
 
@@ -1286,11 +1260,11 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void f0(int i10) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void h0(long j10) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void j0(boolean z4) {
     }
 
@@ -1306,15 +1280,15 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void o2(org.telegram.ui.Cells.t1 t1Var) {
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public /* synthetic */ void onSeekFinished(k3.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public /* synthetic */ void onSeekStarted(k3.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -1326,7 +1300,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void q(org.telegram.ui.Cells.t1 t1Var) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void r0(float f10) {
     }
 
@@ -1338,15 +1312,15 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void t(org.telegram.ui.Cells.t1 t1Var) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void t0(float f10) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void u(float f10) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void v0(float f10) {
     }
 
@@ -1358,7 +1332,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void y(org.telegram.ui.Cells.t1 t1Var) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void y0(float f10) {
     }
 
@@ -1367,7 +1341,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     }
 
     public qa(PremiumPreviewFragment premiumPreviewFragment) {
-        this.a = 19;
+        this.a = 20;
         this.c = premiumPreviewFragment;
         this.b = new Paint();
     }
@@ -1378,7 +1352,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     private final /* synthetic */ void h1(int i10, int i11) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void B(long j10, boolean z4) {
     }
 
@@ -1386,7 +1360,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void D(org.telegram.ui.Cells.t1 t1Var, BotInlineKeyboard.ButtonCustom buttonCustom) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void E0(int i10, long j10) {
     }
 
@@ -1410,7 +1384,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void U0(int i10, org.telegram.ui.Cells.t1 t1Var) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void W(float f10, int i10) {
     }
 
@@ -1422,7 +1396,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void c2(org.telegram.ui.Cells.t1 t1Var, TLRPC.MessageExtendedMedia messageExtendedMedia) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void m0(float f10, int i10) {
     }
 
@@ -1434,7 +1408,7 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
     public /* synthetic */ void s1(org.telegram.ui.Cells.t1 t1Var, TL_keyboard.KeyboardButtonProto keyboardButtonProto) {
     }
 
-    @Override // qh.ga
+    @Override // qh.fa
     public /* synthetic */ void u0(float f10, int i10) {
     }
 
@@ -1447,19 +1421,19 @@ public class qa implements OnCompleteListener, od.b, org.telegram.ui.ActionBar.g
         this.b = new HashSet();
     }
 
-    public qa(o21 o21Var) {
-        this.a = 20;
-        this.c = o21Var;
+    public qa(u21 u21Var) {
+        this.a = 21;
+        this.c = u21Var;
     }
 
     public qa(bf.b bVar) {
-        this.a = 27;
+        this.a = 28;
         this.b = bVar;
         this.c = "";
     }
 
     public qa(PhotoViewer photoViewer) {
-        this.a = 18;
+        this.a = 19;
         this.c = photoViewer;
         this.b = new org.telegram.ui.Components.fa(photoViewer.Y, photoViewer.b0, 0, false);
     }

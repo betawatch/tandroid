@@ -13,27 +13,27 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.e81;
-import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.d81;
+import org.telegram.ui.Components.or0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final class r2 extends e81 {
+public final class r2 extends d81 {
     public final /* synthetic */ int a;
     public final /* synthetic */ g6 b;
-    public final /* synthetic */ pr0 c;
+    public final /* synthetic */ or0 c;
 
-    public r2(pr0 pr0Var, int i10, g6 g6Var) {
-        this.c = pr0Var;
+    public r2(or0 or0Var, int i10, g6 g6Var) {
+        this.c = or0Var;
         this.a = i10;
         this.b = g6Var;
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final void a(ArrayList arrayList) {
-        pr0 pr0Var = this.c;
-        k2 k2Var = pr0Var.K;
-        j7 j7Var = pr0Var.e;
+        or0 or0Var = this.c;
+        k2 k2Var = or0Var.K;
+        j7 j7Var = or0Var.e;
         ArrayList arrayList2 = new ArrayList();
         int size = arrayList.size();
         int i10 = 0;
@@ -73,24 +73,24 @@ public final class r2 extends e81 {
         arrayList3.clear();
         arrayList3.addAll(arrayList4);
         j7Var.j();
-        n3 currentPage = pr0Var.getCurrentPage();
+        n3 currentPage = or0Var.getCurrentPage();
         if (currentPage != null) {
             int f10 = currentPage.d ? j7Var.f(currentPage.e.d) + 1 : 0;
-            pr0Var.n.e(0.0f, f10, f10);
+            or0Var.n.e(0.0f, f10, f10);
         }
         AndroidUtilities.cancelRunOnUIThread(k2Var);
         AndroidUtilities.runOnUIThread(k2Var, 1000L);
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final void b(View view, int i10, int i11) {
         l7 l7Var;
         boolean z4;
-        pr0 pr0Var = this.c;
-        j7 j7Var = pr0Var.e;
+        or0 or0Var = this.c;
+        j7 j7Var = or0Var.e;
         n3 n3Var = (n3) view;
         if (i11 == 0) {
-            l7Var = pr0Var.d;
+            l7Var = or0Var.d;
             z4 = false;
         } else {
             int i12 = i10 - 1;
@@ -113,16 +113,16 @@ public final class r2 extends e81 {
         if (linearLayout != null) {
             linearLayout.setVisibility(n3Var.a.e.h() ? 0 : 8);
         }
-        n3Var.setVisibleHeight(pr0Var.N);
+        n3Var.setVisibleHeight(or0Var.N);
         n3Var.setHasTabs(!j7Var.d().isEmpty());
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final boolean c(int i10) {
         return i10 != 0;
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final View d(int i10) {
         if (i10 == -1) {
             return null;
@@ -130,12 +130,12 @@ public final class r2 extends e81 {
         return new n3(this.c, this.a, this.b);
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final int e() {
         return this.c.e.d().size() + 1;
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final int f(int i10) {
         if (i10 == 0) {
             return -2;
@@ -143,7 +143,7 @@ public final class r2 extends e81 {
         return ((TL_stars.TL_starGiftCollection) this.c.e.d().get(i10 - 1)).collection_id;
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final CharSequence g(int i10) {
         if (i10 == 0) {
             return LocaleController.getString(R.string.Gift2CollectionAll);
@@ -163,7 +163,7 @@ public final class r2 extends e81 {
         return spannableStringBuilder;
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final int h(int i10) {
         return i10 == 0 ? 0 : 1;
     }

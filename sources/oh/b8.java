@@ -13,13 +13,13 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.gs;
 import org.telegram.ui.Components.ms;
-import org.telegram.ui.Components.zu0;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.dt;
 import org.telegram.ui.ii0;
 import org.telegram.ui.o70;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class b8 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -72,12 +72,12 @@ public final /* synthetic */ class b8 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new eg.d3((gs) obj3, tLObject, (TLRPC.InputPeer) obj2, this.b, (int[]) obj, 18));
                 break;
             case 4:
-                zu0 zu0Var = (zu0) obj3;
+                yu0 yu0Var = (yu0) obj3;
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = (TLRPC.TL_messages_editMessage) obj;
                 AndroidUtilities.runOnUIThread(new ms((org.telegram.ui.ActionBar.d2[]) obj2, 2));
                 int i11 = this.b;
                 if (tL_error != null) {
-                    AndroidUtilities.runOnUIThread(new dg.u1(zu0Var, i11, tL_error, tL_messages_editMessage, 24));
+                    AndroidUtilities.runOnUIThread(new dg.u1(yu0Var, i11, tL_error, tL_messages_editMessage, 24));
                     break;
                 } else {
                     MessagesController.getInstance(i11).processUpdates((TLRPC.Updates) tLObject, false);

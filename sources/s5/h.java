@@ -25,8 +25,9 @@ import org.scilab.forge.jlatexmath.TeXSymbolParser;
 import org.telegram.ui.web.e0;
 import q5.a0;
 import q5.f0;
+import q5.g0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class h implements q5.f {
     public static final u5.b k = new u5.b("RemoteMediaClient", null);
@@ -35,7 +36,7 @@ public final class h implements q5.f {
     public final u5.n c;
     public final m d;
     public final c e;
-    public f0 f;
+    public g0 f;
     public TaskCompletionSource g;
     public final CopyOnWriteArrayList h = new CopyOnWriteArrayList();
     public final CopyOnWriteArrayList i = new CopyOnWriteArrayList();
@@ -638,21 +639,21 @@ public final class h implements q5.f {
     }
 
     public final void u() {
-        f0 f0Var = this.f;
-        if (f0Var == null) {
+        g0 g0Var = this.f;
+        if (g0Var == null) {
             return;
         }
         b6.m.e("Must be called from the main thread.");
         String str = this.c.b;
-        q5.e0 e0Var = (q5.e0) f0Var;
+        f0 f0Var = (f0) g0Var;
         u5.a.b(str);
-        synchronized (e0Var.C) {
-            e0Var.C.put(str, this);
+        synchronized (f0Var.C) {
+            f0Var.C.put(str, this);
         }
         v e6 = w.e();
-        e6.c = new a0(e0Var, str, this);
+        e6.c = new a0(f0Var, str, this);
         e6.a = 8413;
-        e0Var.e(1, e6.e());
+        f0Var.e(1, e6.e());
         b6.m.e("Must be called from the main thread.");
         if (w()) {
             x(new i(this, 0));
@@ -661,34 +662,34 @@ public final class h implements q5.f {
         }
     }
 
-    public final void v(q5.e0 e0Var) {
+    public final void v(f0 f0Var) {
         q5.f fVar;
-        f0 f0Var = this.f;
-        if (f0Var == e0Var) {
+        g0 g0Var = this.f;
+        if (g0Var == f0Var) {
             return;
         }
-        if (f0Var != null) {
+        if (g0Var != null) {
             this.c.n();
             this.e.c();
             b6.m.e("Must be called from the main thread.");
             String str = this.c.b;
-            q5.e0 e0Var2 = (q5.e0) f0Var;
+            f0 f0Var2 = (f0) g0Var;
             if (TextUtils.isEmpty(str)) {
                 throw new IllegalArgumentException("Channel namespace cannot be null or empty");
             }
-            synchronized (e0Var2.C) {
-                fVar = (q5.f) e0Var2.C.remove(str);
+            synchronized (f0Var2.C) {
+                fVar = (q5.f) f0Var2.C.remove(str);
             }
             v e6 = w.e();
-            e6.c = new a0(e0Var2, fVar, str);
+            e6.c = new a0(f0Var2, fVar, str);
             e6.a = 8414;
-            e0Var2.e(1, e6.e());
+            f0Var2.e(1, e6.e());
             this.d.b = null;
             this.b.removeCallbacksAndMessages(null);
         }
-        this.f = e0Var;
-        if (e0Var != null) {
-            this.d.b = e0Var;
+        this.f = f0Var;
+        if (f0Var != null) {
+            this.d.b = f0Var;
         }
     }
 

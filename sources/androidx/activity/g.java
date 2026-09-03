@@ -18,11 +18,11 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.kv0;
 import org.telegram.ui.Components.lv0;
-import org.telegram.ui.Components.mv0;
-import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.pv0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class g implements Runnable {
     public final /* synthetic */ int a;
@@ -113,7 +113,7 @@ public final class g implements Runnable {
                     b6.m.h(aVar2);
                     pVar = n0Var.g;
                     if (pVar == null) {
-                        pVar.a(aVar2, new sg.a(28));
+                        pVar.a(aVar2, new sg.a(29));
                         return;
                     }
                     return;
@@ -161,18 +161,18 @@ public final class g implements Runnable {
                 return;
             default:
                 long currentTimeMillis = System.currentTimeMillis();
-                Utilities.stackBlurBitmap(((mv0) this.d).c, this.b);
-                ((mv0) this.d).getClass();
-                qv0 qv0Var = (qv0) this.c;
-                qv0Var.g0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + qv0Var.g0);
-                int i16 = qv0Var.f0 + 1;
-                qv0Var.f0 = i16;
+                Utilities.stackBlurBitmap(((lv0) this.d).c, this.b);
+                ((lv0) this.d).getClass();
+                pv0 pv0Var = (pv0) this.c;
+                pv0Var.g0 = (int) ((System.currentTimeMillis() - currentTimeMillis) + pv0Var.g0);
+                int i16 = pv0Var.f0 + 1;
+                pv0Var.f0 = i16;
                 if (i16 > 1000) {
-                    FileLog.d("chat blur generating average time" + (qv0Var.g0 / qv0Var.f0));
-                    qv0Var.f0 = 0;
-                    qv0Var.g0 = 0;
+                    FileLog.d("chat blur generating average time" + (pv0Var.g0 / pv0Var.f0));
+                    pv0Var.f0 = 0;
+                    pv0Var.g0 = 0;
                 }
-                AndroidUtilities.runOnUIThread(new lv0(this, i10));
+                AndroidUtilities.runOnUIThread(new kv0(this, i10));
                 return;
         }
     }
@@ -184,8 +184,8 @@ public final class g implements Runnable {
         this.b = i10;
     }
 
-    public g(qv0 qv0Var) {
+    public g(pv0 pv0Var) {
         this.a = 8;
-        this.c = qv0Var;
+        this.c = pv0Var;
     }
 }

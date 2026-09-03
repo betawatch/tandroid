@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class cc0 extends FrameLayout {
     public boolean B;
@@ -99,13 +99,13 @@ public final class cc0 extends FrameLayout {
         boolean premiumFeaturesBlocked = MessagesController.getInstance(i10).premiumFeaturesBlocked();
         LinearLayout f10 = org.telegram.messenger.y3.f(context, 1);
         f10.setPadding(AndroidUtilities.dp(16.0f), 0, AndroidUtilities.dp(16.0f), 0);
-        lj0 lj0Var = new lj0(context);
-        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        lj0Var.f(z4 ? R.raw.large_lastseen : R.raw.large_readtime, 70, 70, null);
-        lj0Var.d();
-        lj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        lj0Var.setBackground(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oh, g6Var)));
-        f10.addView(lj0Var, k7.c6.t(80, 80, 1, 0, 16, 0, 16));
+        kj0 kj0Var = new kj0(context);
+        kj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        kj0Var.f(z4 ? R.raw.large_lastseen : R.raw.large_readtime, 70, 70, null);
+        kj0Var.d();
+        kj0Var.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+        kj0Var.setBackground(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oh, g6Var)));
+        f10.addView(kj0Var, k7.c6.t(80, 80, 1, 0, 16, 0, 16));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.bold());
         textView.setGravity(17);

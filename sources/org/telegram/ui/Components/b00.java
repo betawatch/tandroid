@@ -17,7 +17,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class b00 {
     public int A;
@@ -84,7 +84,7 @@ public final class b00 {
     public final boolean g1;
     public boolean h;
     public int h0;
-    public qh.r6 h1;
+    public qh.q6 h1;
     public int i;
     public int i0;
     public int j;
@@ -134,9 +134,9 @@ public final class b00 {
     public final int[] V0 = new int[1];
     public boolean i1 = true;
 
-    public b00(boolean z4, qh.r6 r6Var) {
+    public b00(boolean z4, qh.q6 q6Var) {
         this.g1 = z4;
-        this.h1 = r6Var;
+        this.h1 = q6Var;
         ByteBuffer allocateDirect = ByteBuffer.allocateDirect(32);
         allocateDirect.order(ByteOrder.nativeOrder());
         FloatBuffer asFloatBuffer = allocateDirect.asFloatBuffer();
@@ -889,8 +889,8 @@ public final class b00 {
         boolean z4;
         int h12;
         int h13;
-        qh.r6 r6Var = this.h1;
-        int a2 = r6Var != null ? r6Var.a() : 0;
+        qh.q6 q6Var = this.h1;
+        int a2 = q6Var != null ? q6Var.a() : 0;
         String str = "";
         String readRes = a2 == 1 ? AndroidUtilities.readRes(R.raw.hdr2sdr_hlg) : a2 == 2 ? AndroidUtilities.readRes(R.raw.hdr2sdr_pq) : "";
         boolean z10 = this.g1;

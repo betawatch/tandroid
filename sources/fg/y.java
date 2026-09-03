@@ -25,12 +25,12 @@ import org.telegram.ui.Components.rg0;
 import org.telegram.ui.Components.t5;
 import org.telegram.ui.Components.tg0;
 import org.telegram.ui.Components.xg0;
-import org.telegram.ui.i51;
+import org.telegram.ui.n51;
 import org.telegram.ui.py;
 import org.telegram.ui.wg0;
 import org.telegram.ui.y5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class y extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -72,8 +72,8 @@ public final class y extends FrameLayout {
                 super.dispatchDraw(canvas);
                 break;
             case 4:
-                i51 i51Var = (i51) obj;
-                if (!this.b && i51Var.r > 0.0f) {
+                n51 n51Var = (n51) obj;
+                if (!this.b && n51Var.r > 0.0f) {
                     if (((Paint) this.c) == null) {
                         Paint paint3 = new Paint();
                         this.c = paint3;
@@ -82,7 +82,7 @@ public final class y extends FrameLayout {
                     }
                     canvas.saveLayerAlpha(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
                     super.dispatchDraw(canvas);
-                    ((Paint) this.c).setAlpha((int) (i51Var.r * 255.0f));
+                    ((Paint) this.c).setAlpha((int) (n51Var.r * 255.0f));
                     canvas.drawRect(0.0f, 0.0f, AndroidUtilities.dp(18.0f), getMeasuredHeight(), (Paint) this.c);
                     canvas.restore();
                     break;
@@ -339,9 +339,9 @@ public final class y extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y(i51 i51Var, Context context, boolean z4) {
+    public y(n51 n51Var, Context context, boolean z4) {
         super(context);
-        this.d = i51Var;
+        this.d = n51Var;
         this.b = z4;
     }
 

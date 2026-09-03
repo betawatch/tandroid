@@ -5,7 +5,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class px implements e70 {
     public final /* synthetic */ org.telegram.ui.ActionBar.d2 a;
@@ -53,7 +53,7 @@ public final class px implements e70 {
                     default:
                         px pxVar = this.b;
                         py pyVar2 = pxVar.b;
-                        pyVar2.Q4(pyVar2.getMessagesController().getChat(Long.valueOf(j10)), runnable, new org.telegram.ui.Components.l41(22, pxVar, p2VarArr));
+                        pyVar2.Q4(pyVar2.getMessagesController().getChat(Long.valueOf(j10)), runnable, new org.telegram.ui.Components.q51(21, pxVar, p2VarArr));
                         break;
                 }
             }
@@ -90,7 +90,7 @@ public final class px implements e70 {
                     default:
                         px pxVar = this.b;
                         py pyVar2 = pxVar.b;
-                        pyVar2.Q4(pyVar2.getMessagesController().getChat(Long.valueOf(j10)), runnable, new org.telegram.ui.Components.l41(22, pxVar, p2VarArr));
+                        pyVar2.Q4(pyVar2.getMessagesController().getChat(Long.valueOf(j10)), runnable, new org.telegram.ui.Components.q51(21, pxVar, p2VarArr));
                         break;
                 }
             }

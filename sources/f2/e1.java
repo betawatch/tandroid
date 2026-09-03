@@ -5,9 +5,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.BuildVars;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class e1 extends r0 {
     public final /* synthetic */ int a;
@@ -35,15 +35,15 @@ public final class e1 extends r0 {
                 }
                 break;
             case 1:
-                tl0 tl0Var = (tl0) this.b;
-                tl0Var.J0(true);
-                if (tl0Var.p2) {
-                    tl0Var.p1 = -1;
-                    if (tl0Var.S1 == null) {
-                        tl0Var.D1.setEmpty();
+                sl0 sl0Var = (sl0) this.b;
+                sl0Var.J0(true);
+                if (sl0Var.p2) {
+                    sl0Var.p1 = -1;
+                    if (sl0Var.S1 == null) {
+                        sl0Var.D1.setEmpty();
                     }
                 }
-                tl0Var.invalidate();
+                sl0Var.invalidate();
                 break;
             default:
                 ((uf.z0) this.b).l();
@@ -110,12 +110,12 @@ public final class e1 extends r0 {
                 }
                 break;
             case 1:
-                tl0 tl0Var = (tl0) this.b;
-                tl0Var.J0(true);
-                View view = tl0Var.o1;
+                sl0 sl0Var = (sl0) this.b;
+                sl0Var.J0(true);
+                View view = sl0Var.o1;
                 if (view != null && view.getAlpha() == 0.0f) {
-                    tl0Var.p1 = -1;
-                    tl0Var.f1();
+                    sl0Var.p1 = -1;
+                    sl0Var.e1();
                     break;
                 }
                 break;
@@ -172,7 +172,7 @@ public final class e1 extends r0 {
                 }
                 break;
             case 1:
-                ((tl0) this.b).J0(true);
+                ((sl0) this.b).J0(true);
                 break;
             default:
                 ((uf.z0) this.b).t(i10 + 1, i11);

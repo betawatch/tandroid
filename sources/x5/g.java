@@ -9,9 +9,9 @@ import android.util.Log;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 import org.telegram.ui.zy;
-import q5.g0;
+import q5.c0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
@@ -74,12 +74,12 @@ public final /* synthetic */ class g implements Runnable {
                     bundle.putBundle("data", jVar.d);
                     obtain.setData(bundle);
                     try {
-                        g0 g0Var = iVar.c;
-                        Messenger messenger2 = (Messenger) g0Var.b;
+                        c0 c0Var = iVar.c;
+                        Messenger messenger2 = (Messenger) c0Var.c;
                         if (messenger2 != null) {
                             messenger2.send(obtain);
                         } else {
-                            f fVar = (f) g0Var.c;
+                            f fVar = (f) c0Var.b;
                             if (fVar == null) {
                                 throw new IllegalStateException("Both messengers are null");
                             }

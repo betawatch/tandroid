@@ -60,11 +60,11 @@ import org.telegram.ui.Components.gs;
 import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.Components.wv0;
 import org.telegram.ui.Components.xv0;
 import org.telegram.ui.Components.yv0;
 import org.telegram.ui.Components.z8;
-import org.telegram.ui.Components.zv0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.SecretMediaViewer;
@@ -75,16 +75,16 @@ import org.telegram.ui.en;
 import org.telegram.ui.jn;
 import org.telegram.ui.l4;
 import org.telegram.ui.py;
-import org.telegram.ui.uq0;
-import org.telegram.ui.v10;
 import org.telegram.ui.vm;
 import org.telegram.ui.wg0;
 import org.telegram.ui.wi;
 import org.telegram.ui.xf0;
 import org.telegram.ui.xn;
-import qh.ca;
+import org.telegram.ui.z10;
+import org.telegram.ui.zq0;
+import qh.ba;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d3 implements Runnable {
     public final /* synthetic */ int a;
@@ -130,7 +130,7 @@ public final /* synthetic */ class d3 implements Runnable {
                 int i15 = this.b;
                 List list = (List) this.d;
                 ArrayList arrayList3 = (ArrayList) this.e;
-                uq0 uq0Var = (uq0) this.f;
+                zq0 zq0Var = (zq0) this.f;
                 if (o3Var.F != null && !o3Var.y) {
                     Matrix matrix = new Matrix();
                     matrix.postScale(1.0f / o3Var.F.getWidth(), 1.0f / o3Var.F.getHeight());
@@ -159,7 +159,7 @@ public final /* synthetic */ class d3 implements Runnable {
                             o3Var.L = l3Var.j;
                             o3Var.M = l3Var.k;
                             arrayList3.add(l3Var);
-                            AndroidUtilities.runOnUIThread(new androidx.car.app.utils.c(o3Var, arrayList3, uq0Var, l3Var, 2));
+                            AndroidUtilities.runOnUIThread(new androidx.car.app.utils.c(o3Var, arrayList3, zq0Var, l3Var, 2));
                             o3Var.B = l3Var;
                             o3Var.y = true;
                             o3Var.x = false;
@@ -321,7 +321,7 @@ public final /* synthetic */ class d3 implements Runnable {
                         TLRPC.TL_inputGroupCall tL_inputGroupCall = new TLRPC.TL_inputGroupCall();
                         tL_inputGroupCall.id = groupCall.id;
                         tL_inputGroupCall.access_hash = groupCall.access_hash;
-                        org.telegram.ui.Components.voip.g2.h(LaunchActivity.D1, i24, tL_inputGroupCall, false, groupCall, hashSet);
+                        org.telegram.ui.Components.voip.g2.g(LaunchActivity.D1, i24, tL_inputGroupCall, false, groupCall, hashSet);
                         break;
                     }
                 } else if (tLObject2 instanceof TL_phone.groupCall) {
@@ -333,7 +333,7 @@ public final /* synthetic */ class d3 implements Runnable {
                         TLRPC.GroupCall groupCall2 = groupcall.call;
                         tL_inputGroupCall2.id = groupCall2.id;
                         tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-                        org.telegram.ui.Components.voip.g2.h(LaunchActivity.D1, i24, tL_inputGroupCall2, false, groupCall2, hashSet);
+                        org.telegram.ui.Components.voip.g2.g(LaunchActivity.D1, i24, tL_inputGroupCall2, false, groupCall2, hashSet);
                         break;
                     }
                 } else if (tL_error != null) {
@@ -414,15 +414,15 @@ public final /* synthetic */ class d3 implements Runnable {
                 gs.P((gs) this.c, (TLObject) this.d, (TLRPC.InputPeer) this.e, this.b, (int[]) this.f);
                 break;
             case 19:
-                zv0 zv0Var = (zv0) this.c;
+                yv0 yv0Var = (yv0) this.c;
                 TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) this.d;
                 int i30 = this.b;
                 MessageObject messageObject2 = (MessageObject) this.e;
                 org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.f;
-                int[] iArr2 = zv0Var.e;
-                RLottieNative[] rLottieNativeArr = zv0Var.c1;
-                if (zv0Var.T0) {
-                    AndroidUtilities.runOnUIThread(new xv0(zv0Var, i14));
+                int[] iArr2 = yv0Var.e;
+                RLottieNative[] rLottieNativeArr = yv0Var.c1;
+                if (yv0Var.T0) {
+                    AndroidUtilities.runOnUIThread(new wv0(yv0Var, i14));
                     break;
                 } else {
                     int i31 = 0;
@@ -434,21 +434,21 @@ public final /* synthetic */ class d3 implements Runnable {
                                 TLRPC.Document document = tL_messages_stickerSet.documents.get(i32);
                                 String readRes = AndroidUtilities.readRes(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(document, true), 0);
                                 if (TextUtils.isEmpty(readRes)) {
-                                    AndroidUtilities.runOnUIThread(new yv0(document, i30, messageObject2, t1Var, tL_messages_stickerSet, 1));
+                                    AndroidUtilities.runOnUIThread(new xv0(document, i30, messageObject2, t1Var, tL_messages_stickerSet, 1));
                                     z13 = true;
                                 } else {
-                                    rLottieNativeArr[i31] = RLottieNative.b(readRes, "dice", iArr2, null, null);
-                                    zv0Var.d1[i31] = iArr2[0];
+                                    rLottieNativeArr[i31] = RLottieNative.b(readRes, iArr2, null, null);
+                                    yv0Var.d1[i31] = iArr2[0];
                                 }
                             }
                         }
                         i31++;
                     }
                     if (z13) {
-                        AndroidUtilities.runOnUIThread(new xv0(zv0Var, i13));
+                        AndroidUtilities.runOnUIThread(new wv0(yv0Var, i13));
                         break;
                     } else {
-                        AndroidUtilities.runOnUIThread(new gy(zv0Var, i30, t1Var, 15));
+                        AndroidUtilities.runOnUIThread(new gy(yv0Var, i30, t1Var, 15));
                         break;
                     }
                 }
@@ -509,7 +509,7 @@ public final /* synthetic */ class d3 implements Runnable {
                         } else if (l4.I() && l4.x().S) {
                             l4.x().o(false, true);
                         }
-                        ca.x();
+                        ba.x();
                         d60 d60Var = d60.A3;
                         if (d60Var != null) {
                             d60Var.dismiss();
@@ -536,7 +536,7 @@ public final /* synthetic */ class d3 implements Runnable {
                 TLObject tLObject4 = (TLObject) this.d;
                 int i35 = this.b;
                 String str3 = (String) this.e;
-                v10 v10Var = (v10) this.f;
+                z10 z10Var = (z10) this.f;
                 org.telegram.ui.ActionBar.p2 p2Var4 = (org.telegram.ui.ActionBar.p2) l.d.i(1, launchActivity2.a0);
                 try {
                     if (tLObject4 instanceof TL_chatlists.chatlist_ChatlistInvite) {
@@ -601,7 +601,7 @@ public final /* synthetic */ class d3 implements Runnable {
                             }
                             d10Var.S();
                             p2Var4.showDialog(d10Var);
-                            v10Var.run();
+                            z10Var.run();
                             break;
                         } else {
                             a02 = qc.a0(p2Var4);
@@ -611,7 +611,7 @@ public final /* synthetic */ class d3 implements Runnable {
                         a02 = qc.a0(p2Var4);
                         i11 = R.string.NoFolderFound;
                     }
-                    v10Var.run();
+                    z10Var.run();
                 } catch (Exception e11) {
                     FileLog.e(e11);
                     return;
@@ -620,14 +620,14 @@ public final /* synthetic */ class d3 implements Runnable {
                 break;
             case 22:
                 LaunchActivity launchActivity3 = (LaunchActivity) this.c;
-                v10 v10Var2 = (v10) this.d;
+                z10 z10Var2 = (z10) this.d;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) this.e;
                 TLRPC.Updates updates2 = (TLRPC.Updates) this.f;
                 int i37 = this.b;
                 ArrayList arrayList12 = launchActivity3.a0;
                 if (!launchActivity3.isFinishing()) {
                     try {
-                        v10Var2.run();
+                        z10Var2.run();
                     } catch (Exception e12) {
                         FileLog.e(e12);
                     }
@@ -949,9 +949,9 @@ public final /* synthetic */ class d3 implements Runnable {
         this.b = i10;
     }
 
-    public /* synthetic */ d3(sl0 sl0Var, int i10, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, int i11) {
+    public /* synthetic */ d3(rl0 rl0Var, int i10, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, int i11) {
         this.a = i11;
-        this.c = sl0Var;
+        this.c = rl0Var;
         this.b = i10;
         this.e = arrayList;
         this.d = arrayList2;

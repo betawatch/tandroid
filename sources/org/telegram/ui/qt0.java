@@ -1,81 +1,135 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.text.TextUtils;
+import org.telegram.messenger.AccountInstance;
+import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.camera.Size;
-import org.telegram.ui.Components.AnimatedFileNative;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class qt0 implements Runnable {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ PhotoViewer d;
+public final class qt0 extends fu0 {
+    public final ImageReceiver.BitmapHolder a;
+    public final /* synthetic */ ou0 b;
+    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ MediaController.PhotoEntry d;
+    public final /* synthetic */ boolean e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ PhotoViewer g;
 
-    public qt0(PhotoViewer photoViewer, String str, long j10, int i10) {
-        this.d = photoViewer;
-        this.a = str;
-        this.b = j10;
-        this.c = i10;
+    public qt0(PhotoViewer photoViewer, ou0 ou0Var, MessageObject messageObject, MediaController.PhotoEntry photoEntry, boolean z4, boolean z10) {
+        this.g = photoViewer;
+        this.b = ou0Var;
+        this.c = messageObject;
+        this.d = photoEntry;
+        this.e = z4;
+        this.f = z10;
+        this.a = photoViewer.z4.getBitmapSafe();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (this.d.t8 != this) {
-            return;
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+        ou0 ou0Var = this.b;
+        if (ou0Var != null) {
+            return ou0Var.E(this.c, null, 0, z4, false);
         }
-        int videoBitrate = MediaController.getVideoBitrate(this.a);
-        int[] iArr = new int[11];
-        AnimatedFileNative.d(this.a, iArr, this.b);
-        boolean z4 = iArr[10] != 0;
-        this.d.g8 = (iArr[0] == 0 || (z4 && iArr[9] == 0)) ? false : true;
-        PhotoViewer photoViewer = this.d;
-        if (videoBitrate == -1) {
-            videoBitrate = iArr[3];
+        return null;
+    }
+
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final void L(VideoEditedInfo videoEditedInfo) {
+        MediaController.PhotoEntry photoEntry = this.d;
+        if (photoEntry.isCropped || photoEntry.isPainted || photoEntry.isFiltered || videoEditedInfo != null || !TextUtils.isEmpty(photoEntry.caption)) {
+            c0(videoEditedInfo, false, 0, true, false);
         }
-        photoViewer.c8 = videoBitrate;
-        photoViewer.d8 = videoBitrate;
-        if (this.d.g8) {
-            PhotoViewer photoViewer2 = this.d;
-            int i10 = iArr[1];
-            photoViewer2.Y7 = i10;
-            photoViewer2.a8 = i10;
-            PhotoViewer photoViewer3 = this.d;
-            int i11 = iArr[2];
-            photoViewer3.Z7 = i11;
-            photoViewer3.b8 = i11;
-            PhotoViewer photoViewer4 = this.d;
-            int max = Math.max(photoViewer4.Y7, this.d.Z7);
-            if (max > 1280) {
-                photoViewer4.V7 = 4;
-            } else if (max > 854) {
-                photoViewer4.V7 = 3;
-            } else if (max > 640) {
-                photoViewer4.V7 = 2;
-            } else {
-                photoViewer4.V7 = 1;
+    }
+
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final MessageObject U() {
+        return this.c;
+    }
+
+    public final void c0(VideoEditedInfo videoEditedInfo, boolean z4, int i10, boolean z10, boolean z11) {
+        PhotoViewer photoViewer = this.g;
+        if (photoViewer.i4 != null) {
+            nn nnVar = null;
+            MessageObject messageObject = this.c;
+            MessageObject messageObject2 = z10 ? messageObject : null;
+            MediaController.PhotoEntry photoEntry = this.d;
+            if (messageObject2 != null && !TextUtils.isEmpty(photoEntry.caption)) {
+                messageObject2.editingMessage = photoEntry.caption;
+                messageObject2.editingMessageEntities = photoEntry.entities;
             }
-            PhotoViewer photoViewer5 = this.d;
-            int i12 = this.c;
-            if (i12 == -1) {
-                i12 = photoViewer5.v2();
+            if (z10 || messageObject == null) {
+                xn xnVar = photoViewer.i4;
+                messageObject = xnVar.k5;
+                nnVar = xnVar.i5;
             }
-            photoViewer5.U7 = i12;
-            PhotoViewer photoViewer6 = this.d;
-            if (photoViewer6.c8 != 0 && photoViewer6.Z1 != 1) {
-                Size p02 = photoViewer6.p0();
-                if (p02.getWidth() == photoViewer6.Y7 && p02.getHeight() == photoViewer6.Z7) {
-                    MediaController.extractRealEncoderBitrate(p02.getWidth(), p02.getHeight(), photoViewer6.d8, false);
-                } else {
-                    MediaController.extractRealEncoderBitrate(p02.getWidth(), p02.getHeight(), MediaController.makeVideoBitrate(photoViewer6.Z7, photoViewer6.Y7, photoViewer6.d8, p02.getHeight(), p02.getWidth()), false);
+            nn nnVar2 = nnVar;
+            MessageObject messageObject3 = messageObject;
+            if (photoEntry.isVideo) {
+                if (videoEditedInfo != null) {
+                    AccountInstance accountInstance = photoViewer.i4.getAccountInstance();
+                    String str = photoEntry.path;
+                    long a2 = photoViewer.i4.a();
+                    xn xnVar2 = photoViewer.i4;
+                    SendMessagesHelper.prepareSendingVideo(accountInstance, str, videoEditedInfo, null, null, a2, messageObject3, xnVar2.U3, null, nnVar2, photoEntry.entities, photoEntry.ttl, messageObject2, z4, i10, 0, z11, photoEntry.hasSpoiler, photoEntry.caption, xnVar2.C8(), 0L, 0L, photoViewer.i4.N8(), photoViewer.i4.d5);
+                    return;
                 }
+                MessageObject messageObject4 = messageObject2;
+                AccountInstance accountInstance2 = photoViewer.i4.getAccountInstance();
+                String str2 = photoEntry.path;
+                long a10 = photoViewer.i4.a();
+                xn xnVar3 = photoViewer.i4;
+                SendMessagesHelper.prepareSendingVideo(accountInstance2, str2, null, null, null, a10, messageObject3, xnVar3.U3, null, nnVar2, photoEntry.entities, photoEntry.ttl, messageObject4, z4, i10, 0, z11, photoEntry.hasSpoiler, photoEntry.caption, xnVar3.C8(), 0L, 0L, photoViewer.i4.N8(), photoViewer.i4.d5);
+                return;
             }
-            this.d.h8 = MediaController.isH264Video(this.a);
+            MessageObject messageObject5 = messageObject2;
+            if (photoEntry.imagePath != null) {
+                AccountInstance accountInstance3 = photoViewer.i4.getAccountInstance();
+                String str3 = photoEntry.imagePath;
+                String str4 = photoEntry.thumbPath;
+                long a11 = photoViewer.i4.a();
+                xn xnVar4 = photoViewer.i4;
+                SendMessagesHelper.prepareSendingPhoto(accountInstance3, str3, str4, null, a11, messageObject3, xnVar4.U3, null, nnVar2, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, messageObject5, videoEditedInfo, z4, i10, 0, 0, z11, photoEntry.caption, xnVar4.C8(), 0L, 0L, photoViewer.i4.N8(), photoViewer.i4.d5);
+                return;
+            }
+            if (photoEntry.path != null) {
+                AccountInstance accountInstance4 = photoViewer.i4.getAccountInstance();
+                String str5 = photoEntry.path;
+                String str6 = photoEntry.thumbPath;
+                long a12 = photoViewer.i4.a();
+                xn xnVar5 = photoViewer.i4;
+                SendMessagesHelper.prepareSendingPhoto(accountInstance4, str5, str6, null, a12, messageObject3, xnVar5.U3, null, nnVar2, photoEntry.entities, photoEntry.stickers, null, photoEntry.ttl, messageObject5, videoEditedInfo, z4, i10, 0, 0, z11, photoEntry.caption, xnVar5.C8(), 0L, 0L, photoViewer.i4.N8(), photoViewer.i4.d5);
+            }
         }
-        if (this.d.t8 != this) {
-            return;
-        }
-        AndroidUtilities.runOnUIThread(new if0(this, this, iArr, 20));
+    }
+
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final ImageReceiver.BitmapHolder j(int i10) {
+        return this.a;
+    }
+
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
+        c0(videoEditedInfo, z4, i11, false, z10);
+    }
+
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final boolean p() {
+        return this.b != null && this.e;
+    }
+
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final boolean r() {
+        return this.b != null && this.f;
     }
 }

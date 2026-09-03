@@ -1,50 +1,115 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Bitmap;
+import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class vi1 {
-    public org.telegram.ui.Cells.z1 a;
-    public org.telegram.ui.ActionBar.d2 b;
-    public TextView c;
+    public String a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public int f;
+    public TLRPC.TL_wallPaper g;
+    public float h;
+    public final File i;
+    public final boolean j;
+    public final boolean k;
+    public TLRPC.WallPaper l;
+    public Bitmap m;
 
-    public static void a(Context context, h5.d dVar, Runnable runnable) {
-        vi1 vi1Var = new vi1();
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
-        alertDialog$Builder.a.O = LocaleController.getString(R.string.TermsOfUse);
-        LinearLayout f10 = org.telegram.messenger.y3.f(context, 1);
-        TextView textView = new TextView(context);
-        textView.setLetterSpacing(0.025f);
-        textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.j5, false));
-        textView.setTextSize(1, 14.0f);
-        f10.addView(textView, k7.c6.t(-1, -2, 0, 24, 0, 24, 0));
-        org.telegram.ui.Cells.z1 z1Var = new org.telegram.ui.Cells.z1(context, 1, null);
-        vi1Var.a = z1Var;
-        z1Var.getTextView().getLayoutParams().width = -1;
-        vi1Var.a.getTextView().setTextSize(1, 14.0f);
-        f10.addView(vi1Var.a, k7.c6.t(-1, 48, 3, 8, 0, 8, 0));
-        boolean[] zArr = new boolean[1];
-        org.telegram.messenger.y3.q(R.string.BotWebAppDisclaimerSubtitle, textView);
-        vi1Var.a.e(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.BotWebAppDisclaimerCheck), new mv(context, 8)), "", false, false, false);
-        alertDialog$Builder.n(f10);
-        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new vl0(29, dVar, zArr));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new cl0(9));
-        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-        vi1Var.b = d2Var;
-        d2Var.show();
-        TextView textView2 = (TextView) vi1Var.b.d(-1);
-        vi1Var.c = textView2;
-        textView2.setEnabled(false);
-        vi1Var.c.setAlpha(0.5f);
-        vi1Var.a.setOnClickListener(new k31(vi1Var, 10));
-        vi1Var.a.setBackground(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i6, false), 7, -1));
-        vi1Var.b.setOnDismissListener(new org.telegram.ui.Components.m2(zArr, runnable));
+    public vi1(int i10, int i11, String str, int i12) {
+        this.a = str;
+        this.b = i10 | (-16777216);
+        int i13 = i11 == 0 ? 0 : i11 | (-16777216);
+        this.c = i13;
+        this.f = i13 == 0 ? 0 : i12;
+        this.h = 1.0f;
+    }
+
+    public final String a() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(String.valueOf(this.b));
+        sb.append(this.c);
+        sb.append(this.d);
+        sb.append(this.e);
+        sb.append(this.f);
+        sb.append(this.h);
+        String str = this.a;
+        if (str == null) {
+            str = "";
+        }
+        sb.append(str);
+        return Utilities.MD5(sb.toString());
+    }
+
+    public final String b() {
+        int i10 = this.c;
+        String lowerCase = i10 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i10 >> 16)) & 255), Integer.valueOf(((byte) (i10 >> 8)) & 255), Byte.valueOf((byte) (i10 & 255))).toLowerCase() : null;
+        int i11 = this.b;
+        String lowerCase2 = String.format("%02x%02x%02x", Integer.valueOf(((byte) (i11 >> 16)) & 255), Integer.valueOf(((byte) (i11 >> 8)) & 255), Byte.valueOf((byte) (i11 & 255))).toLowerCase();
+        int i12 = this.d;
+        String lowerCase3 = i12 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i12 >> 16)) & 255), Integer.valueOf(((byte) (i12 >> 8)) & 255), Byte.valueOf((byte) (i12 & 255))).toLowerCase() : null;
+        int i13 = this.e;
+        String lowerCase4 = i13 != 0 ? String.format("%02x%02x%02x", Integer.valueOf(((byte) (i13 >> 16)) & 255), Integer.valueOf(((byte) (i13 >> 8)) & 255), Byte.valueOf((byte) (i13 & 255))).toLowerCase() : null;
+        if (lowerCase == null || lowerCase3 == null) {
+            if (lowerCase != null) {
+                String z4 = android.support.v4.media.a.z(lowerCase2, "-", lowerCase);
+                if (this.g != null) {
+                    StringBuilder f10 = w.c.f(z4, "&rotation=");
+                    f10.append(AndroidUtilities.getWallpaperRotation(this.f, true));
+                    lowerCase2 = f10.toString();
+                } else {
+                    StringBuilder f11 = w.c.f(z4, "?rotation=");
+                    f11.append(AndroidUtilities.getWallpaperRotation(this.f, true));
+                    lowerCase2 = f11.toString();
+                }
+            }
+        } else if (lowerCase4 != null) {
+            StringBuilder sb = new StringBuilder();
+            sb.append(lowerCase2);
+            sb.append("~");
+            sb.append(lowerCase);
+            sb.append("~");
+            sb.append(lowerCase3);
+            lowerCase2 = android.support.v4.media.a.r(sb, "~", lowerCase4);
+        } else {
+            lowerCase2 = lowerCase2 + "~" + lowerCase + "~" + lowerCase3;
+        }
+        if (this.g == null) {
+            return android.support.v4.media.a.p(MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix, "/bg/", lowerCase2, new StringBuilder("https://"));
+        }
+        String str = "https://" + MessagesController.getInstance(UserConfig.selectedAccount).linkPrefix + "/bg/" + this.g.slug + "?intensity=" + ((int) (this.h * 100.0f)) + "&bg_color=" + lowerCase2;
+        return this.j ? w.c.e(str, "&mode=motion") : str;
+    }
+
+    public vi1(String str, int i10, int i11, int i12, int i13) {
+        this.a = str;
+        this.b = i10 | (-16777216);
+        this.c = i11 == 0 ? 0 : i11 | (-16777216);
+        this.d = i12 == 0 ? 0 : i12 | (-16777216);
+        this.e = i13 != 0 ? i13 | (-16777216) : 0;
+        this.h = 1.0f;
+        this.k = true;
+    }
+
+    public vi1(String str, int i10, int i11, int i12, int i13, int i14, float f10, boolean z4, File file) {
+        this.a = str;
+        this.b = i10 | (-16777216);
+        int i15 = i11 == 0 ? 0 : i11 | (-16777216);
+        this.c = i15;
+        this.d = i12 == 0 ? 0 : i12 | (-16777216);
+        this.e = i13 != 0 ? i13 | (-16777216) : 0;
+        this.f = i15 == 0 ? 45 : i14;
+        this.h = f10;
+        this.i = file;
+        this.j = z4;
     }
 }

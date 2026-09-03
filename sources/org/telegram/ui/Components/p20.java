@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class p20 extends org.telegram.ui.ActionBar.h3 {
     public p20(Context context, org.telegram.ui.ActionBar.p2 p2Var) {
@@ -22,11 +22,11 @@ public abstract class p20 extends org.telegram.ui.ActionBar.h3 {
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         setCustomView(linearLayout);
-        lj0 lj0Var = new lj0(context);
-        lj0Var.setAutoRepeat(true);
-        lj0Var.f(R.raw.utyan_gigagroup, 120, 120, null);
-        lj0Var.d();
-        linearLayout.addView(lj0Var, k7.c6.t(160, 160, 49, 17, 30, 17, 0));
+        kj0 kj0Var = new kj0(context);
+        kj0Var.setAutoRepeat(true);
+        kj0Var.f(R.raw.utyan_gigagroup, 120, 120, null);
+        kj0Var.d();
+        linearLayout.addView(kj0Var, k7.c6.t(160, 160, 49, 17, 30, 17, 0));
         TextView textView = new TextView(context);
         org.telegram.ui.b.g(24.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.j5, false));

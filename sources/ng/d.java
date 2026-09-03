@@ -14,12 +14,12 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.l5;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.cz;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class d {
     public static int m;
@@ -248,13 +248,13 @@ public final class d {
                 z10 = true;
             }
         }
-        if (z10) {
-            if (imageReceiver.getLottieAnimation() != null) {
-                imageReceiver.getLottieAnimation().L(0, false, z4);
-            }
-            imageReceiver.setAutoRepeat(0);
-        } else {
-            imageReceiver.setImageBitmap(new ij0(R.raw.custom_emoji_reaction, "" + R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
+        if (!z10) {
+            imageReceiver.setImageBitmap(new hj0(R.raw.custom_emoji_reaction, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null));
+            return;
         }
+        if (imageReceiver.getLottieAnimation() != null) {
+            imageReceiver.getLottieAnimation().L(0, false, z4);
+        }
+        imageReceiver.setAutoRepeat(0);
     }
 }

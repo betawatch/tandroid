@@ -8,9 +8,9 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.fo0;
+import org.telegram.ui.Components.eo0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class s3 extends LinearLayout {
     public static float b = 1.0f;
@@ -26,23 +26,23 @@ public class s3 extends LinearLayout {
     public boolean drawChild(Canvas canvas, View view, long j10) {
         switch (this.a) {
             case 7:
-                if (!(getParent() instanceof fo0)) {
+                if (!(getParent() instanceof eo0)) {
                     return super.drawChild(canvas, view, j10);
                 }
-                fo0 fo0Var = (fo0) getParent();
+                eo0 eo0Var = (eo0) getParent();
                 canvas.save();
-                LinearLayout linearLayout = fo0Var.b;
-                Path path = fo0Var.n;
-                if (view != null && fo0.e(view)) {
+                LinearLayout linearLayout = eo0Var.b;
+                Path path = eo0Var.n;
+                if (view != null && eo0.e(view)) {
                     int indexOfChild = linearLayout.indexOfChild(view);
                     int i10 = indexOfChild - 1;
                     View childAt = i10 < 0 ? null : linearLayout.getChildAt(i10);
                     int i11 = indexOfChild + 1;
                     View childAt2 = i11 < linearLayout.getChildCount() ? linearLayout.getChildAt(i11) : null;
-                    boolean z4 = childAt != null && fo0.e(childAt);
-                    boolean z10 = childAt2 != null && fo0.e(childAt2);
+                    boolean z4 = childAt != null && eo0.e(childAt);
+                    boolean z10 = childAt2 != null && eo0.e(childAt2);
                     RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set(view.getX(), Math.max(fo0Var.getScrollY() - AndroidUtilities.dp(16.0f), view.getY() + linearLayout.getY()), view.getX() + view.getWidth(), Math.min(AndroidUtilities.dp(16.0f) + fo0Var.getScrollY() + fo0Var.getHeight(), view.getY() + linearLayout.getY() + view.getHeight()));
+                    rectF.set(view.getX(), Math.max(eo0Var.getScrollY() - AndroidUtilities.dp(16.0f), view.getY() + linearLayout.getY()), view.getX() + view.getWidth(), Math.min(AndroidUtilities.dp(16.0f) + eo0Var.getScrollY() + eo0Var.getHeight(), view.getY() + linearLayout.getY() + view.getHeight()));
                     if (z4 && z10) {
                         z4 = view.getY() >= rectF.top;
                         boolean z11 = view.getY() + ((float) view.getHeight()) <= rectF.bottom;
@@ -52,16 +52,16 @@ public class s3 extends LinearLayout {
                     }
                     if (!z4 && !z10) {
                         path.rewind();
-                        float f10 = fo0Var.c;
+                        float f10 = eo0Var.c;
                         path.addRoundRect(rectF, f10, f10, Path.Direction.CW);
                         canvas.clipPath(path);
                     } else if (!z4) {
                         path.rewind();
-                        path.addRoundRect(rectF, fo0Var.d, Path.Direction.CW);
+                        path.addRoundRect(rectF, eo0Var.d, Path.Direction.CW);
                         canvas.clipPath(path);
                     } else if (!z10) {
                         path.rewind();
-                        path.addRoundRect(rectF, fo0Var.e, Path.Direction.CW);
+                        path.addRoundRect(rectF, eo0Var.e, Path.Direction.CW);
                         canvas.clipPath(path);
                     }
                 }
@@ -86,8 +86,8 @@ public class s3 extends LinearLayout {
                 break;
             case 7:
                 super.onLayout(z4, i10, i11, i12, i13);
-                if (getParent() instanceof fo0) {
-                    ((fo0) getParent()).invalidate();
+                if (getParent() instanceof eo0) {
+                    ((eo0) getParent()).invalidate();
                     break;
                 }
                 break;

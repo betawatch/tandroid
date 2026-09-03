@@ -7,7 +7,7 @@ import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ih0 {
     public int a;
@@ -15,8 +15,8 @@ public final class ih0 {
     public final z5 e;
     public Drawable i;
     public Drawable j;
-    public ij0 k;
-    public l01 l;
+    public hj0 k;
+    public k01 l;
     public k90 r;
     public boolean s;
     public boolean t;
@@ -74,29 +74,29 @@ public final class ih0 {
     }
 
     public final void c(String str) {
-        l01 l01Var = new l01(str, 11.0f, AndroidUtilities.bold());
-        l01Var.n(3);
+        k01 k01Var = new k01(str, 11.0f, AndroidUtilities.bold());
+        k01Var.n(3);
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        l01Var.a();
-        this.l = l01Var;
+        k01Var.a();
+        this.l = k01Var;
     }
 
     public final void d(int i10, int i11, int i12) {
         lh0 lh0Var = this.y;
         if (i10 != 0) {
-            ij0 ij0Var = new ij0(i10, String.valueOf(i10), AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), false, null);
-            ij0Var.s0 = lh0Var;
-            ij0Var.start();
-            this.k = ij0Var;
+            hj0 hj0Var = new hj0(i10, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), false, null);
+            hj0Var.s0 = lh0Var;
+            hj0Var.start();
+            this.k = hj0Var;
         } else {
             this.k = null;
         }
         this.i = i11 != 0 ? lh0Var.getResources().getDrawable(i11).mutate() : null;
         this.j = i12 != 0 ? lh0Var.getResources().getDrawable(i12).mutate() : null;
-        ij0 ij0Var2 = this.k;
+        hj0 hj0Var2 = this.k;
         Rect rect = this.h;
-        if (ij0Var2 != null) {
-            ij0Var2.setBounds(rect);
+        if (hj0Var2 != null) {
+            hj0Var2.setBounds(rect);
         }
         Drawable drawable = this.i;
         if (drawable != null) {

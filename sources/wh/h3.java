@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.rg;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class h3 extends k7.y5 {
     public final /* synthetic */ p3 a;
@@ -25,8 +25,8 @@ public final class h3 extends k7.y5 {
             r3Var.n3 = f3Var.H0;
             r3Var.o3 = f3Var.I0;
             r3Var.setEditTextsLocked(true);
-            r3Var.n3();
-            r3Var.V2();
+            r3Var.m3();
+            r3Var.U2();
             return;
         }
         final int i10 = r3Var.m3;
@@ -40,7 +40,7 @@ public final class h3 extends k7.y5 {
         final float f11 = r3Var.r3;
         r3Var.p3 = false;
         r3Var.setEditTextsLocked(false);
-        r3Var.V2();
+        r3Var.U2();
         if (z10) {
             r3Var.post(new Runnable() { // from class: wh.g3
                 @Override // java.lang.Runnable
@@ -53,23 +53,23 @@ public final class h3 extends k7.y5 {
                         float f13 = f11;
                         if (z11) {
                             v5 v5Var = (v5) childAt;
-                            if (r3.h4(v5Var.getEditText(), f12, f13)) {
+                            if (r3.g4(v5Var.getEditText(), f12, f13)) {
                                 return;
                             }
-                            if (v5Var.n() && r3.h4(v5Var.getAuthorEditText(), f12, f13)) {
+                            if (v5Var.n() && r3.g4(v5Var.getAuthorEditText(), f12, f13)) {
                                 return;
                             }
                         } else if (childAt instanceof j0) {
-                            if (r3.h4(((j0) childAt).getCaptionEditText(), f12, f13)) {
+                            if (r3.g4(((j0) childAt).getCaptionEditText(), f12, f13)) {
                                 return;
                             }
-                        } else if ((childAt instanceof r0) && r3.h4(((r0) childAt).getEditText(), f12, f13)) {
+                        } else if ((childAt instanceof r0) && r3.g4(((r0) childAt).getEditText(), f12, f13)) {
                             return;
                         }
                     }
                     int i14 = i10;
                     if (i14 >= 0) {
-                        r3.K1(r3Var2, i14, i12, i11);
+                        r3.J1(r3Var2, i14, i12, i11);
                     }
                 }
             });

@@ -22,7 +22,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class nh0 extends FrameLayout {
     public float B;
@@ -30,7 +30,7 @@ public final class nh0 extends FrameLayout {
     public boolean D;
     public boolean E;
     public boolean F;
-    public final org.telegram.ui.Components.a21 G;
+    public final org.telegram.ui.Components.z11 G;
     public final /* synthetic */ qh0 H;
     public int a;
     public final LinearLayout b;
@@ -56,7 +56,7 @@ public final class nh0 extends FrameLayout {
         this.v = paint;
         this.w = new RectF();
         this.B = 1.0f;
-        this.G = new org.telegram.ui.Components.a21();
+        this.G = new org.telegram.ui.Components.z11();
         paint.setStyle(Paint.Style.STROKE);
         paint.setStrokeCap(Paint.Cap.ROUND);
         LinearLayout linearLayout = new LinearLayout(context);
@@ -160,7 +160,7 @@ public final class nh0 extends FrameLayout {
             } else if (i13 == 60) {
                 textView2.setText("each minute");
             }
-            dp = AndroidUtilities.dp(28.0f) + ((int) Math.max(qh.f3.g(textView.getText(), textView.getPaint()), qh.f3.g(textView2.getText(), textView2.getPaint())));
+            dp = AndroidUtilities.dp(28.0f) + ((int) Math.max(qh.e3.g(textView.getText(), textView.getPaint()), qh.e3.g(textView2.getText(), textView2.getPaint())));
         } else {
             linearLayout.setVisibility(8);
             imageView.setVisibility(8);

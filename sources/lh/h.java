@@ -18,16 +18,16 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.g6;
+import org.telegram.ui.Components.by0;
 import org.telegram.ui.Components.c8;
-import org.telegram.ui.Components.cy0;
 import org.telegram.ui.Components.dy;
 import org.telegram.ui.Components.ky;
 import org.telegram.ui.Components.ov;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.sn;
+import org.telegram.ui.Components.rn;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -135,16 +135,16 @@ public final /* synthetic */ class h implements Utilities.Callback {
                 c8.J((c8) obj4, (org.telegram.ui.ActionBar.d2) obj3, (TLRPC.Document) obj2, (TLRPC.InputFile) obj);
                 break;
             case 8:
-                sn snVar = (sn) obj4;
+                rn rnVar = (rn) obj4;
                 xn xnVar = (xn) obj3;
                 TLRPC.TL_messageMediaToDo tL_messageMediaToDo = (TLRPC.TL_messageMediaToDo) obj2;
                 Long l10 = (Long) obj;
                 if (!xnVar.c()) {
-                    snVar.g0.b(tL_messageMediaToDo, null, null, null, true, 0, l10.longValue());
-                    snVar.b.dismiss(true);
+                    rnVar.g0.b(tL_messageMediaToDo, null, null, null, true, 0, l10.longValue());
+                    rnVar.b.dismiss(true);
                     break;
                 } else {
-                    org.telegram.ui.Components.z4.L(xnVar.getParentActivity(), xnVar.a(), new androidx.car.app.utils.a(snVar, tL_messageMediaToDo, l10, 21));
+                    org.telegram.ui.Components.z4.L(xnVar.getParentActivity(), xnVar.a(), new androidx.car.app.utils.a(rnVar, tL_messageMediaToDo, l10, 21));
                     break;
                 }
             case 9:
@@ -173,13 +173,13 @@ public final /* synthetic */ class h implements Utilities.Callback {
                 break;
             case 10:
                 org.telegram.ui.ActionBar.d2 d2Var = (org.telegram.ui.ActionBar.d2) obj3;
-                cy0 cy0Var = (cy0) obj2;
+                by0 by0Var = (by0) obj2;
                 ((org.telegram.ui.ActionBar.d2) obj4).dismiss();
                 if (!((Boolean) obj).booleanValue()) {
-                    cy0Var.setErrorText(".");
-                    AndroidUtilities.shakeViewSpring(cy0Var, -6.0f);
+                    by0Var.setErrorText(".");
+                    AndroidUtilities.shakeViewSpring(by0Var, -6.0f);
                     BotWebViewVibrationEffect.APP_ERROR.vibrate();
-                    AndroidUtilities.showKeyboard(cy0Var);
+                    AndroidUtilities.showKeyboard(by0Var);
                     break;
                 } else {
                     d2Var.dismiss();

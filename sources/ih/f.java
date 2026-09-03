@@ -14,14 +14,14 @@ import org.telegram.ui.Components.PipRoundVideoView;
 import org.telegram.ui.Components.n6;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qb;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.t50;
-import org.telegram.ui.Components.tk0;
 import org.telegram.ui.dl;
 import org.telegram.ui.jm;
 import org.telegram.ui.ux;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final class f implements ViewTreeObserver.OnPreDrawListener {
                 t1Var.getViewTreeObserver().removeOnPreDrawListener(this);
                 ImageReceiver photoImage = t1Var.getPhotoImage();
                 float imageWidth = photoImage.getImageWidth();
-                tk0 cameraRect = xnVar.Y2.getCameraRect();
+                sk0 cameraRect = xnVar.Y2.getCameraRect();
                 float f13 = imageWidth / cameraRect.c;
                 t1Var.getTransitionParams().x0 = true;
                 t1Var.setAlpha(0.0f);

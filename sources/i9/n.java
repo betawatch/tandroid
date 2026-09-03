@@ -57,7 +57,7 @@ import k9.t0;
 import m.r3;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class n {
     public static final i r = new i(1);
@@ -65,7 +65,7 @@ public final class n {
     public final s b;
     public final f7.b c;
     public final r3 d;
-    public final sf.e e;
+    public final sf.f e;
     public final w f;
     public final n9.b g;
     public final a h;
@@ -79,17 +79,17 @@ public final class n {
     public final TaskCompletionSource p = new TaskCompletionSource();
     public final TaskCompletionSource q = new TaskCompletionSource();
 
-    public n(Context context, sf.e eVar, w wVar, s sVar, n9.b bVar, f7.b bVar2, a aVar, r3 r3Var, j9.e eVar2, a9.a aVar2, f9.a aVar3, g9.a aVar4, k kVar) {
+    public n(Context context, sf.f fVar, w wVar, s sVar, n9.b bVar, f7.b bVar2, a aVar, r3 r3Var, j9.e eVar, a9.a aVar2, f9.a aVar3, g9.a aVar4, k kVar) {
         new AtomicBoolean(false);
         this.a = context;
-        this.e = eVar;
+        this.e = fVar;
         this.f = wVar;
         this.b = sVar;
         this.g = bVar;
         this.c = bVar2;
         this.h = aVar;
         this.d = r3Var;
-        this.i = eVar2;
+        this.i = eVar;
         this.j = aVar3;
         this.k = aVar4;
         this.l = kVar;
@@ -228,19 +228,19 @@ public final class n {
         }
         g0Var.g = new i0(str13, str10, str11, str14, str15, ((b6.h) bVar.c).c);
         int i11 = 7;
-        sf.e eVar2 = new sf.e(7, false);
+        sf.f fVar = new sf.f(7, false);
         Integer valueOf = Integer.valueOf(i10);
-        eVar2.b = valueOf;
+        fVar.b = valueOf;
         if (str2 == null) {
             throw new NullPointerException("Null version");
         }
-        eVar2.c = str2;
+        fVar.c = str2;
         if (str3 == null) {
             throw new NullPointerException("Null buildVersion");
         }
-        eVar2.d = str3;
-        eVar2.e = Boolean.valueOf(h.h());
-        g0Var.i = eVar2.o();
+        fVar.d = str3;
+        fVar.e = Boolean.valueOf(h.h());
+        g0Var.i = fVar.o();
         StatFs statFs2 = new StatFs(Environment.getDataDirectory().getPath());
         if (!TextUtils.isEmpty(str4) && (num = (Integer) q.f.get(str4.toLowerCase(locale))) != null) {
             i11 = num.intValue();
@@ -412,9 +412,9 @@ public final class n {
                         eVar.b = new j9.m(bVar.b(str4, "userlog"));
                     }
                     n9.b bVar2 = this.g;
-                    sf.e eVar2 = this.e;
+                    sf.f fVar = this.e;
                     j9.g gVar2 = new j9.g(bVar2);
-                    r3 r3Var = new r3(str4, bVar2, eVar2);
+                    r3 r3Var = new r3(str4, bVar2, fVar);
                     ((j9.d) ((AtomicMarkableReference) ((cb.m) r3Var.d).b).getReference()).d(gVar2.c(str4, false));
                     ((j9.d) ((AtomicMarkableReference) ((cb.m) r3Var.e).b).getReference()).d(gVar2.c(str4, true));
                     ((AtomicMarkableReference) r3Var.h).set(gVar2.d(str4), false);
@@ -539,17 +539,17 @@ public final class n {
                                     Object obj = arrayList3.get(i13);
                                     int i14 = i13 + 1;
                                     int i15 = size;
-                                    e eVar3 = (e) obj;
-                                    String str6 = eVar3.a;
+                                    e eVar2 = (e) obj;
+                                    String str6 = eVar2.a;
                                     if (str6 == null) {
                                         throw new NullPointerException("Null libraryName");
                                     }
                                     ArrayList arrayList4 = arrayList3;
-                                    String str7 = eVar3.b;
+                                    String str7 = eVar2.b;
                                     if (str7 == null) {
                                         throw new NullPointerException("Null arch");
                                     }
-                                    String str8 = eVar3.c;
+                                    String str8 = eVar2.c;
                                     if (str8 == null) {
                                         throw new NullPointerException("Null buildId");
                                     }
@@ -585,12 +585,12 @@ public final class n {
                             if ((8 & 4) != 0) {
                                 i17 = 0;
                             }
-                            sf.e eVar4 = new sf.e(6, false);
-                            eVar4.b = processName2;
-                            eVar4.c = Integer.valueOf(i16);
-                            eVar4.d = Integer.valueOf(i17);
-                            eVar4.e = Boolean.FALSE;
-                            t0 n10 = eVar4.n();
+                            sf.f fVar2 = new sf.f(6, false);
+                            fVar2.b = processName2;
+                            fVar2.c = Integer.valueOf(i16);
+                            fVar2.d = Integer.valueOf(i17);
+                            fVar2.e = Boolean.FALSE;
+                            t0 n10 = fVar2.n();
                             q0 q0Var = new q0(0L, "0", "0");
                             List a11 = qVar.a();
                             if (a11 == null) {

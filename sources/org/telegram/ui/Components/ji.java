@@ -16,9 +16,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ji extends sl0 {
+public final class ji extends rl0 {
     public int B;
     public int C;
     public int D;
@@ -43,7 +43,7 @@ public final class ji extends sl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return false;
     }
@@ -419,7 +419,7 @@ public final class ji extends sl0 {
         fiVar.setImportantForAccessibility(1);
         fiVar.setFocusable(true);
         fiVar.setLayoutParams(new f2.x0(-2, -1));
-        return new fl0(fiVar);
+        return new el0(fiVar);
     }
 
     @Override // f2.p0

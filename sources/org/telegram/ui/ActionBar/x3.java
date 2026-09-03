@@ -34,13 +34,13 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.h20;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class x3 extends View {
     public float B;
@@ -72,7 +72,7 @@ public final class x3 extends View {
     public l3 c;
     public final Path c0;
     public ValueAnimator d;
-    public l01 d0;
+    public k01 d0;
     public float e;
     public boolean e0;
     public final org.telegram.ui.Components.z5 f;
@@ -546,7 +546,7 @@ public final class x3 extends View {
         canvas.restore();
         canvas.restore();
         if (this.d0 == null) {
-            this.d0 = new l01(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
+            this.d0 = new k01(LocaleController.getString(R.string.BotCloseAllTabs), 14.0f, AndroidUtilities.bold());
         }
         if (this.f0 == null || this.e0 != k6.I.q()) {
             boolean q10 = k6.I.q();

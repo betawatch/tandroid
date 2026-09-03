@@ -3,10 +3,10 @@ package lh;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.xk;
-import org.telegram.ui.ip0;
+import org.telegram.ui.no0;
+import org.telegram.ui.np0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h5 implements Utilities.Callback {
     public final /* synthetic */ int a = 0;
@@ -31,16 +31,16 @@ public final /* synthetic */ class h5 implements Utilities.Callback {
                 q5.U((q5) this.e, (org.telegram.ui.ActionBar.d2) this.f, this.b, this.c, this.d, (TLRPC.TL_payments_paymentFormStarGift) obj);
                 break;
             default:
-                ip0.U((ip0) this.e, this.b, this.c, this.d, (xk) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
+                np0.V((np0) this.e, this.b, this.c, this.d, (no0) this.f, (TLRPC.TL_payments_paymentFormStarGift) obj);
                 break;
         }
     }
 
-    public /* synthetic */ h5(ip0 ip0Var, mf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, xk xkVar) {
-        this.e = ip0Var;
+    public /* synthetic */ h5(np0 np0Var, mf.b bVar, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j10, no0 no0Var) {
+        this.e = np0Var;
         this.b = bVar;
         this.c = tL_starGiftUnique;
         this.d = j10;
-        this.f = xkVar;
+        this.f = no0Var;
     }
 }

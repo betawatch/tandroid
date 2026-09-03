@@ -5,7 +5,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class z8 extends FragmentContextView {
     public final /* synthetic */ int K0;
@@ -30,16 +30,16 @@ public final class z8 extends FragmentContextView {
                 xiVar.x.i(xiVar.y, i10 == 0, true);
                 break;
             default:
-                mf1 mf1Var = (mf1) this.L0;
-                mf1Var.R0.i(mf1Var.C0, i10 == 0, true);
+                sf1 sf1Var = (sf1) this.L0;
+                sf1Var.R0.i(sf1Var.C0, i10 == 0, true);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z8(mf1 mf1Var, Context context, mf1 mf1Var2) {
-        super(context, mf1Var2, null, false, null);
+    public z8(sf1 sf1Var, Context context, sf1 sf1Var2) {
+        super(context, sf1Var2, null, false, null);
         this.K0 = 2;
-        this.L0 = mf1Var;
+        this.L0 = sf1Var;
     }
 }

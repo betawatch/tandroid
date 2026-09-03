@@ -29,10 +29,10 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.bt;
 import org.telegram.ui.Components.dc0;
-import org.telegram.ui.Components.mw0;
+import org.telegram.ui.Components.lw0;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class n6 extends FrameLayout {
     public static final dc0 D;
@@ -50,7 +50,7 @@ public class n6 extends FrameLayout {
     public final org.telegram.ui.Components.p9 h;
     public int n;
     public final org.telegram.ui.Components.z8 r;
-    public final mw0 s;
+    public final lw0 s;
     public final org.telegram.ui.ActionBar.g6 v;
     public final int w;
     public long x;
@@ -102,10 +102,10 @@ public class n6 extends FrameLayout {
         float f11 = i10 == 1 ? 7.66f : 5.33f;
         float f12 = i10 == 1 ? 73.0f : 55.0f;
         addView(cVar, k7.c6.i(-1.0f, -2.0f, 55, f12, f11, 12.0f, 0.0f));
-        mw0 mw0Var = new mw0(this);
-        this.s = mw0Var;
+        lw0 lw0Var = new lw0(this);
+        this.s = lw0Var;
         cVar.setDrawablePadding(AndroidUtilities.dp(3.0f));
-        cVar.i(mw0Var.a);
+        cVar.i(lw0Var.a);
         org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(context);
         this.e = l5Var;
         l5Var.setTextSize(13);

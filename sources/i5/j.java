@@ -28,7 +28,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import s8.i0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class j extends d4.r {
     public static boolean A1;
@@ -93,16 +93,16 @@ public final class j extends d4.r {
     }
 
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    /* JADX WARN: Code restructure failed: missing block: B:396:0x0742, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:396:0x0740, code lost:
     
         if (r0.equals("ELUGA_Ray_X") == false) goto L101;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x08cc, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:61:0x08ca, code lost:
     
         if (r13.equals("JSN-L21") == false) goto L664;
      */
     /* JADX WARN: Failed to restore switch over string. Please report as a decompilation issue */
-    /* JADX WARN: Removed duplicated region for block: B:17:0x008d A[FALL_THROUGH] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x008b A[FALL_THROUGH] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */

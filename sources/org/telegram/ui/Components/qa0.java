@@ -6,9 +6,9 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class qa0 extends tl0 {
+public final class qa0 extends sl0 {
     public boolean U2;
     public boolean V2;
     public int W2;
@@ -30,7 +30,7 @@ public final class qa0 extends tl0 {
         ra0Var.b();
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         ra0 ra0Var = this.Y2;
         uf.u0 u0Var = ra0Var.f;
@@ -52,7 +52,7 @@ public final class qa0 extends tl0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         int i14;
         int i15 = i12 - i10;
@@ -84,16 +84,16 @@ public final class qa0 extends tl0 {
         this.W2 = i15;
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         int size = View.MeasureSpec.getSize(i11);
         ra0 ra0Var = this.Y2;
         uf.z0 z0Var = ra0Var.e;
         if (z0Var != null) {
             z0Var.d = Integer.valueOf(size);
-            org.telegram.ui.iw0 iw0Var = z0Var.e;
-            if (iw0Var != null) {
-                iw0Var.requestLayout();
+            org.telegram.ui.nw0 nw0Var = z0Var.e;
+            if (nw0Var != null) {
+                nw0Var.requestLayout();
             }
         }
         float min = (int) Math.min(AndroidUtilities.dp(126.0f), AndroidUtilities.displaySize.y * 0.22f);
@@ -101,7 +101,7 @@ public final class qa0 extends tl0 {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(size + ((int) min), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         ra0 ra0Var = this.Y2;
         uf.z0 z0Var = ra0Var.e;
@@ -115,7 +115,7 @@ public final class qa0 extends tl0 {
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.Y2.D) {
             return;
@@ -123,7 +123,7 @@ public final class qa0 extends tl0 {
         super.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.View
     public void setTranslationY(float f10) {
         super.setTranslationY(f10);
         ra0 ra0Var = this.Y2;

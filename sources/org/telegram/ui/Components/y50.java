@@ -47,7 +47,7 @@ import org.telegram.messenger.video.Mp4Movie;
 import org.webrtc.EglBase;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class y50 implements Runnable {
     public volatile boolean A0;
@@ -309,7 +309,7 @@ public final class y50 implements Runnable {
         } else {
             if (!y50Var.D0) {
                 y50Var.D0 = true;
-                AndroidUtilities.runOnUIThread(new gm(24, y50Var, u50Var));
+                AndroidUtilities.runOnUIThread(new eo(23, y50Var, u50Var));
             }
             z4 = false;
         }
@@ -697,11 +697,11 @@ public final class y50 implements Runnable {
     }
 
     public final void h(File file) {
-        k71 k71Var = new k71();
+        j71 j71Var = new j71();
         z50 z50Var = this.E0;
-        z50Var.L = k71Var;
-        k71Var.G = new oh.h4(this, 3);
-        k71Var.V(z50Var.i0);
+        z50Var.L = j71Var;
+        j71Var.G = new oh.h4(this, 3);
+        j71Var.V(z50Var.i0);
         z50Var.L.D(Uri.fromFile(file), "other");
         z50Var.L.C();
         z50Var.L.O(true);

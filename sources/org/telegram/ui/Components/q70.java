@@ -39,7 +39,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.ContactsActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class q70 {
     public ViewGroup A;
@@ -126,7 +126,7 @@ public final class q70 {
         if (p2Var.getContext() == null) {
             return;
         }
-        if ((((p2Var instanceof ProfileActivity) && ((ProfileActivity) p2Var).F0) || (((p2Var instanceof org.telegram.ui.py) && ((org.telegram.ui.py) p2Var).T) || (((p2Var instanceof ContactsActivity) && ((ContactsActivity) p2Var).F) || ((p2Var instanceof org.telegram.ui.p81) && ((org.telegram.ui.p81) p2Var).J)))) && (parentLayout = p2Var.getParentLayout()) != null) {
+        if ((((p2Var instanceof ProfileActivity) && ((ProfileActivity) p2Var).F0) || (((p2Var instanceof org.telegram.ui.py) && ((org.telegram.ui.py) p2Var).T) || (((p2Var instanceof ContactsActivity) && ((ContactsActivity) p2Var).F) || ((p2Var instanceof org.telegram.ui.v81) && ((org.telegram.ui.v81) p2Var).J)))) && (parentLayout = p2Var.getParentLayout()) != null) {
             org.telegram.ui.ActionBar.p2 safeLastFragment = parentLayout.getSafeLastFragment();
             if (safeLastFragment instanceof org.telegram.ui.wg0) {
                 p2Var = safeLastFragment;
@@ -903,7 +903,7 @@ public final class q70 {
                         bVar.getClass();
                         qg.d dVar = new qg.d(bVar);
                         dVar.n(null);
-                        dVar.n(sg.b.j(g6Var));
+                        dVar.n(sg.b.k(g6Var));
                         dVar.o(AndroidUtilities.dp(8.0f));
                         dVar.h.e = true;
                         dVar.p(AndroidUtilities.dp(12.0f));
@@ -959,7 +959,7 @@ public final class q70 {
                 bVar2.getClass();
                 qg.d dVar2 = new qg.d(bVar2);
                 dVar2.n(null);
-                dVar2.n(sg.b.j(g6Var2));
+                dVar2.n(sg.b.k(g6Var2));
                 dVar2.o(AndroidUtilities.dp(8.0f));
                 dVar2.h.e = true;
                 dVar2.p(AndroidUtilities.dp(12.0f));
@@ -1358,7 +1358,7 @@ public final class q70 {
         View childAt = this.D.I.getChildAt(r0.getItemsCount() - 1);
         if (childAt instanceof org.telegram.ui.ActionBar.g1) {
             t5 textView = ((org.telegram.ui.ActionBar.g1) childAt).getTextView();
-            textView.setMaxWidth(textView.getPaddingRight() + textView.getPaddingLeft() + qh.f3.a(textView.getText(), textView.getPaint()));
+            textView.setMaxWidth(textView.getPaddingRight() + textView.getPaddingLeft() + qh.e3.a(textView.getText(), textView.getPaint()));
         }
     }
 

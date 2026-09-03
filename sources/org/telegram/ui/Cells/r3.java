@@ -23,9 +23,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.gi0;
 import org.telegram.ui.Components.nq;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class r3 extends FrameLayout {
     public int B;
@@ -84,14 +84,14 @@ public final class r3 extends FrameLayout {
         d();
     }
 
-    public static void a(ArrayList arrayList, tl0 tl0Var, org.telegram.ui.ActionBar.l6 l6Var) {
-        arrayList.add(new org.telegram.ui.ActionBar.m6(tl0Var, 4, new Class[]{r3.class}, new String[]{"nameTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.Se));
+    public static void a(ArrayList arrayList, sl0 sl0Var, org.telegram.ui.ActionBar.l6 l6Var) {
+        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 4, new Class[]{r3.class}, new String[]{"nameTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.Se));
         int i10 = org.telegram.ui.ActionBar.k6.We;
-        arrayList.add(new org.telegram.ui.ActionBar.m6(tl0Var, 4, new Class[]{r3.class}, new String[]{"infoTextView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(tl0Var, 4, new Class[]{r3.class}, new String[]{"addButton"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.Sh));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(tl0Var, 4, new Class[]{r3.class}, new String[]{"delButton"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.Rh));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(tl0Var, 0, new Class[]{r3.class}, null, null, null, org.telegram.ui.ActionBar.k6.Th));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(tl0Var, 0, new Class[]{r3.class}, org.telegram.ui.ActionBar.k6.k0, null, null, org.telegram.ui.ActionBar.k6.d7));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 4, new Class[]{r3.class}, new String[]{"infoTextView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 4, new Class[]{r3.class}, new String[]{"addButton"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.Sh));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 4, new Class[]{r3.class}, new String[]{"delButton"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.Rh));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 0, new Class[]{r3.class}, null, null, null, org.telegram.ui.ActionBar.k6.Th));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(sl0Var, 0, new Class[]{r3.class}, org.telegram.ui.ActionBar.k6.k0, null, null, org.telegram.ui.ActionBar.k6.d7));
         arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, l6Var, org.telegram.ui.ActionBar.k6.Nh));
         arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, l6Var, org.telegram.ui.ActionBar.k6.Oh));
         arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, l6Var, org.telegram.ui.ActionBar.k6.Qh));

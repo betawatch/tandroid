@@ -16,9 +16,9 @@ import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.yh;
-import qh.g3;
+import qh.f3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class c extends FrameLayout {
     public final TextView a;
@@ -72,7 +72,7 @@ public class c extends FrameLayout {
         textView2.setCompoundDrawablePadding(AndroidUtilities.dp(4.0f));
         textView2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(4.0f));
         textView2.setBackground(k6.G0(AndroidUtilities.dp(3.0f), k6.v0(k6.Rh, g6Var)));
-        textView4.addOnLayoutChangeListener(new g3(this, 1));
+        textView4.addOnLayoutChangeListener(new f3(this, 1));
         a();
     }
 

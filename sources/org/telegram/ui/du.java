@@ -11,7 +11,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class du implements Comparator {
     public final /* synthetic */ int a;
@@ -109,8 +109,8 @@ public final /* synthetic */ class du implements Comparator {
             case 8:
                 return (int) (((View) obj).getY() - ((View) obj2).getY());
             case 9:
-                int i17 = obj instanceof r01 ? ((r01) obj).g : obj instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj).num : 0;
-                int i18 = obj2 instanceof r01 ? ((r01) obj2).g : obj2 instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj2).num : 0;
+                int i17 = obj instanceof w01 ? ((w01) obj).g : obj instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj).num : 0;
+                int i18 = obj2 instanceof w01 ? ((w01) obj2).g : obj2 instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj2).num : 0;
                 if (i17 < i18) {
                     return -1;
                 }
@@ -152,7 +152,7 @@ public final /* synthetic */ class du implements Comparator {
                 }
                 return i19 - i10;
             case 17:
-                return (int) (((qh.ha) obj2).e - ((qh.ha) obj).e);
+                return (int) (((qh.ga) obj2).e - ((qh.ga) obj).e);
             case 18:
                 s4.b bVar = (s4.b) obj;
                 s4.b bVar2 = (s4.b) obj2;

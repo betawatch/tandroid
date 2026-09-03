@@ -17,7 +17,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f40 extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public float B;
@@ -159,7 +159,7 @@ public final class f40 extends org.telegram.ui.ActionBar.p2 implements Notificat
         fkVar.h = false;
         this.f = fkVar;
         this.e.addView(fkVar, k7.c6.e(-1, -1, 119));
-        c40 c40Var = new c40(this, context, new ru0(null), this, new b40(), this.resourceProvider);
+        c40 c40Var = new c40(this, context, new qu0(null), this, new b40(), this.resourceProvider);
         this.n = c40Var;
         if (c40Var.getSearchOptionsItem() != null) {
             this.n.getSearchOptionsItem().setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(i11, this.resourceProvider), PorterDuff.Mode.SRC_IN));
@@ -173,12 +173,12 @@ public final class f40 extends org.telegram.ui.ActionBar.p2 implements Notificat
         c40 c40Var2 = this.n;
         oh.f6 f6Var = this.d;
         c40Var2.Q1 = f6Var;
-        gt0 gt0Var = c40Var2.W;
-        gt0Var.s = f6Var;
-        gt0Var.l();
-        wu0 wu0Var = c40Var2.a0;
-        wu0Var.s = f6Var;
-        wu0Var.l();
+        ft0 ft0Var = c40Var2.W;
+        ft0Var.s = f6Var;
+        ft0Var.l();
+        vu0 vu0Var = c40Var2.a0;
+        vu0Var.s = f6Var;
+        vu0Var.l();
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.h = frameLayout2;
         frameLayout2.setBackgroundColor(getThemedColor(i10));

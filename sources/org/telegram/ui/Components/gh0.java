@@ -17,7 +17,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class gh0 extends FrameLayout {
     public final p9 B;
@@ -40,7 +40,7 @@ public final class gh0 extends FrameLayout {
     public final dh0 S;
     public final org.telegram.ui.py a;
     public final int b;
-    public final i61 c;
+    public final h61 c;
     public TLRPC.SearchPostsFlood d;
     public final ArrayList e;
     public int f;
@@ -65,10 +65,10 @@ public final class gh0 extends FrameLayout {
         this.a = pyVar;
         int currentAccount = pyVar.getCurrentAccount();
         this.b = currentAccount;
-        i61 i61Var = new i61(context, currentAccount, 0, false, new d(this, 18), new hv(this, 11), null, null);
-        this.c = i61Var;
-        i61Var.j(new kh.l(4, this, pyVar));
-        addView(i61Var, k7.c6.e(-1, -1, 119));
+        h61 h61Var = new h61(context, currentAccount, 0, false, new d(this, 18), new hv(this, 11), null, null);
+        this.c = h61Var;
+        h61Var.j(new kh.l(4, this, pyVar));
+        addView(h61Var, k7.c6.e(-1, -1, 119));
         FrameLayout frameLayout = new FrameLayout(context);
         this.x = frameLayout;
         eg.s3 s3Var = new eg.s3(context, 6);
@@ -106,10 +106,10 @@ public final class gh0 extends FrameLayout {
         textView3.setGravity(17);
         s3Var.addView(textView3, k7.c6.k(0.0f, 11.0f, 0.0f, 0.0f, -1, -2));
         addView(frameLayout, k7.c6.e(-1, -1, 119));
-        i61Var.setHideIfEmpty(false);
-        i61Var.setEmptyView(frameLayout);
-        i61Var.V1 = true;
-        i61Var.W1 = 0;
+        h61Var.setHideIfEmpty(false);
+        h61Var.setEmptyView(frameLayout);
+        h61Var.V1 = true;
+        h61Var.W1 = 0;
         c();
         d();
     }
@@ -194,9 +194,9 @@ public final class gh0 extends FrameLayout {
         int i10 = org.telegram.ui.ActionBar.k6.y6;
         this.F.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
         this.D.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
-        i61 i61Var = this.c;
-        i61Var.setAdapter(null);
-        i61Var.setAdapter(i61Var.V2);
+        h61 h61Var = this.c;
+        h61Var.setAdapter(null);
+        h61Var.setAdapter(h61Var.V2);
         if (this.Q != null) {
             this.Q = null;
             d();
@@ -259,7 +259,7 @@ public final class gh0 extends FrameLayout {
         ArrayList arrayList = this.n;
         if (!isEmpty && arrayList.isEmpty() && this.s) {
             if (p9Var.getImageReceiver().getImageDrawable() == null) {
-                p9Var.setImageDrawable(new ij0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), "utyan_empty", AndroidUtilities.dp(130.0f)));
+                p9Var.setImageDrawable(new hj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
             }
             p9Var.setVisibility(0);
             textView2.setText(LocaleController.getString(R.string.SearchPostsNotFound));

@@ -17,11 +17,11 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.gu;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.p80;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class b2 extends LinearLayout {
     public boolean a;
@@ -223,9 +223,9 @@ public final class b2 extends LinearLayout {
             LinearLayout.LayoutParams layoutParams3 = (LinearLayout.LayoutParams) d2Var.h.getLayoutParams();
             i12 -= (d2Var.h.getMeasuredHeight() + layoutParams3.bottomMargin) + layoutParams3.topMargin;
         }
-        lj0 lj0Var = d2Var.h0;
-        if (lj0Var != null) {
-            lj0Var.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(d2Var.X), TLObject.FLAG_30));
+        kj0 kj0Var = d2Var.h0;
+        if (kj0Var != null) {
+            kj0Var.measure(View.MeasureSpec.makeMeasureSpec(paddingLeft, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(d2Var.X), TLObject.FLAG_30));
             i12 -= d2Var.h0.getMeasuredHeight();
         }
         View view = d2Var.S;

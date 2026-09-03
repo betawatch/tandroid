@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import javax.microedition.khronos.egl.EGL10;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class y3 {
     public static float A(float f10, float f11, float f12, float f13) {

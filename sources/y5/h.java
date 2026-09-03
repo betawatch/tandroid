@@ -54,9 +54,9 @@ import l.x;
 import l3.t;
 import org.telegram.messenger.beta.R;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ht0;
+import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class h implements a0, androidx.activity.result.b, v0, q2, a3.b, com.google.android.gms.common.api.internal.o, x, s, t, l.j, k1.g, o0.a {
     public static h c;
@@ -150,11 +150,11 @@ public final class h implements a0, androidx.activity.result.b, v0, q2, a3.b, co
 
     @Override // eg.q2
     public void H(float f10) {
-        ht0 ht0Var = (ht0) this.b;
-        e1.e(ht0Var.M1).k(String.valueOf(dg.m.a.indexOf(ht0Var.T0.getCurrentBrush())), f10);
-        e2 e2Var = ht0Var.H1;
+        mt0 mt0Var = (mt0) this.b;
+        e1.e(mt0Var.M1).k(String.valueOf(dg.m.a.indexOf(mt0Var.T0.getCurrentBrush())), f10);
+        e2 e2Var = mt0Var.H1;
         e2Var.c = f10;
-        ht0Var.s0(e2Var, null);
+        mt0Var.s0(e2Var, null);
     }
 
     @Override // androidx.lifecycle.a0
@@ -605,9 +605,9 @@ public final class h implements a0, androidx.activity.result.b, v0, q2, a3.b, co
 
     @Override // eg.q2
     public float get() {
-        ht0 ht0Var = (ht0) this.b;
-        int i10 = ht0Var.M1;
-        dg.m currentBrush = ht0Var.T0.getCurrentBrush();
+        mt0 mt0Var = (mt0) this.b;
+        int i10 = mt0Var.M1;
+        dg.m currentBrush = mt0Var.T0.getCurrentBrush();
         if (currentBrush == null) {
             return e1.e(i10).i;
         }

@@ -23,22 +23,22 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.v30;
-import org.telegram.ui.Components.x21;
+import org.telegram.ui.Components.w21;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.b10;
 import org.telegram.ui.d60;
-import org.telegram.ui.he0;
-import org.telegram.ui.jv0;
+import org.telegram.ui.ov0;
 import org.telegram.ui.oy;
 import org.telegram.ui.py;
 import org.telegram.ui.qa0;
 import org.telegram.ui.ra0;
 import org.telegram.ui.sq;
-import org.telegram.ui.t61;
+import org.telegram.ui.ue0;
 import org.telegram.ui.xn;
+import org.telegram.ui.y61;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class di implements Runnable {
     public final /* synthetic */ int a;
@@ -56,8 +56,8 @@ public final /* synthetic */ class di implements Runnable {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:36:0x00db  */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0260  */
-    /* JADX WARN: Removed duplicated region for block: B:65:0x0278  */
+    /* JADX WARN: Removed duplicated region for block: B:59:0x025f  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0276  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -110,21 +110,21 @@ public final /* synthetic */ class di implements Runnable {
                 new mh.r0(context, i14, this.d, messageSuggestionParams, xnVar, g6Var, 0, new lh.a1(28, miVar, xnVar)).show();
                 return;
             case 4:
-                x21 x21Var = (x21) obj3;
+                w21 w21Var = (w21) obj3;
                 TLRPC.Chat chat = (TLRPC.Chat) obj;
                 ((q70) obj2).u();
-                TLRPC.User user = MessagesController.getInstance(x21Var.b).getUser(Long.valueOf(j10));
+                TLRPC.User user = MessagesController.getInstance(w21Var.b).getUser(Long.valueOf(j10));
                 if (user != null) {
-                    xn xnVar2 = x21Var.h;
-                    org.telegram.ui.Components.z4.r(xnVar2, -1, user, chat, true, new f3.e(x21Var, j10, 5), xnVar2.getResourceProvider());
+                    xn xnVar2 = w21Var.h;
+                    org.telegram.ui.Components.z4.r(xnVar2, -1, user, chat, true, new f3.e(w21Var, j10, 5), xnVar2.getResourceProvider());
                     return;
                 }
                 return;
             case 5:
-                x21 x21Var2 = (x21) obj3;
+                w21 w21Var2 = (w21) obj3;
                 ArrayList arrayList5 = (ArrayList) obj;
-                x21Var2.b0.removeAll((HashSet) obj2);
-                x21Var2.o();
+                w21Var2.b0.removeAll((HashSet) obj2);
+                w21Var2.o();
                 int size = arrayList5.size();
                 int i15 = 0;
                 while (i15 < size) {
@@ -132,7 +132,7 @@ public final /* synthetic */ class di implements Runnable {
                     i15++;
                     long intValue = ((Integer) obj4).intValue();
                     if (j10 == intValue) {
-                        x21Var2.m(intValue, false);
+                        w21Var2.m(intValue, false);
                         return;
                     }
                 }
@@ -175,6 +175,7 @@ public final /* synthetic */ class di implements Runnable {
                 }
                 if (dialogFilter != null) {
                     b10.t0(dialogFilter, dialogFilter.flags, dialogFilter.name, dialogFilter.entities, dialogFilter.title_noanimate, dialogFilter.color, dialogFilter.alwaysShow, dialogFilter.neverShow, dialogFilter.pinnedDialogs, false, false, true, true, false, pyVar, null);
+                    pyVar = pyVar;
                 }
                 pyVar.getMessagesController().reorderPinnedDialogs(pyVar.S2, null, 0L);
                 pyVar.T4(true);
@@ -237,7 +238,7 @@ public final /* synthetic */ class di implements Runnable {
                     if (messagesController2.getGroupCall(j13, false) != null) {
                         TLRPC.Chat chat2 = accountInstance.getMessagesController().getChat(Long.valueOf(j13));
                         accountInstance.getMessagesController().getInputPeer(j12);
-                        org.telegram.ui.Components.voip.g2.m(chat2, null, false, Boolean.valueOf(!r0.call.rtmp_stream), launchActivity, p2Var, accountInstance);
+                        org.telegram.ui.Components.voip.g2.l(chat2, null, false, Boolean.valueOf(!r0.call.rtmp_stream), launchActivity, p2Var, accountInstance);
                         return;
                     }
                     TLRPC.ChatFull chatFull = accountInstance.getMessagesController().getChatFull(j13);
@@ -264,7 +265,7 @@ public final /* synthetic */ class di implements Runnable {
                 lh.y0 y0Var = new lh.y0(photoViewer, (String) obj2, photoEntry, j14, 5);
                 if (photoViewer.A2) {
                     Bitmap createBitmap = Bitmap.createBitmap(photoViewer.z2.getWidth(), photoViewer.z2.getHeight(), Bitmap.Config.ARGB_8888);
-                    AndroidUtilities.getBitmapFromSurface(photoViewer.z2, createBitmap, new he0(29, y0Var, createBitmap));
+                    AndroidUtilities.getBitmapFromSurface(photoViewer.z2, createBitmap, new ue0(28, y0Var, createBitmap));
                     return;
                 }
                 TextureView textureView = photoViewer.y2;
@@ -277,15 +278,15 @@ public final /* synthetic */ class di implements Runnable {
                     return;
                 }
             case 11:
-                qh.x7 x7Var = (qh.x7) obj3;
+                qh.w7 w7Var = (qh.w7) obj3;
                 boolean isChannel = ChatObject.isChannel((TLRPC.Chat) obj);
                 long j15 = this.d;
                 TLRPC.ChatFull loadChatInfoInQueue = ((MessagesStorage) obj2).loadChatInfoInQueue(j15, isChannel, true, true, 0);
                 if (loadChatInfoInQueue == null || (chatParticipants = loadChatInfoInQueue.participants) == null || ((arrayList = chatParticipants.participants) != null && arrayList.size() < loadChatInfoInQueue.participants_count - 1)) {
-                    AndroidUtilities.runOnUIThread(new mh.pa(x7Var, isChannel, j15, 5));
+                    AndroidUtilities.runOnUIThread(new mh.pa(w7Var, isChannel, j15, 5));
                     return;
                 } else {
-                    AndroidUtilities.runOnUIThread(new jv0(x7Var, j15, loadChatInfoInQueue, 1));
+                    AndroidUtilities.runOnUIThread(new ov0(w7Var, j15, loadChatInfoInQueue, 1));
                     return;
                 }
             case 12:
@@ -319,7 +320,7 @@ public final /* synthetic */ class di implements Runnable {
                                         FileLog.e(e);
                                         if (sQLiteCursor != null) {
                                         }
-                                        AndroidUtilities.runOnUIThread(new t61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                                        AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                                         return;
                                     } catch (Throwable th2) {
                                         th = th2;
@@ -412,7 +413,7 @@ public final /* synthetic */ class di implements Runnable {
                                                     FileLog.e(e);
                                                     if (sQLiteCursor != null) {
                                                     }
-                                                    AndroidUtilities.runOnUIThread(new t61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                                                    AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                                                     return;
                                                 }
                                             } catch (Exception e14) {
@@ -422,7 +423,7 @@ public final /* synthetic */ class di implements Runnable {
                                                 FileLog.e(e);
                                                 if (sQLiteCursor != null) {
                                                 }
-                                                AndroidUtilities.runOnUIThread(new t61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                                                AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                                                 return;
                                             }
                                         }
@@ -461,7 +462,7 @@ public final /* synthetic */ class di implements Runnable {
                             FileLog.e(e);
                             if (sQLiteCursor != null) {
                             }
-                            AndroidUtilities.runOnUIThread(new t61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                            AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                             return;
                         }
                     }
@@ -483,7 +484,7 @@ public final /* synthetic */ class di implements Runnable {
                         if (sQLiteCursor != null) {
                             sQLiteCursor.dispose();
                         }
-                        AndroidUtilities.runOnUIThread(new t61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                        AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                         return;
                     }
                 } catch (Exception e18) {
@@ -496,7 +497,7 @@ public final /* synthetic */ class di implements Runnable {
                     th = th6;
                     sQLiteCursor = null;
                 }
-                AndroidUtilities.runOnUIThread(new t61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
+                AndroidUtilities.runOnUIThread(new y61(p1Var, arrayList7, arrayList8, arrayList2, runnable, 4));
                 return;
             default:
                 vf.p1 p1Var3 = (vf.p1) obj3;
@@ -538,7 +539,7 @@ public final /* synthetic */ class di implements Runnable {
                     if (!arrayList3.isEmpty()) {
                         messagesStorage2.getUsersInternal(arrayList3, arrayList11);
                     }
-                    AndroidUtilities.runOnUIThread(new t61(p1Var3, arrayList11, arrayList12, o1Var3, messageObject, 5));
+                    AndroidUtilities.runOnUIThread(new y61(p1Var3, arrayList11, arrayList12, o1Var3, messageObject, 5));
                     queryFinalized.dispose();
                     return;
                 } catch (Exception e20) {
@@ -584,9 +585,9 @@ public final /* synthetic */ class di implements Runnable {
         this.e = obj2;
     }
 
-    public /* synthetic */ di(qh.x7 x7Var, TLRPC.Chat chat, MessagesStorage messagesStorage, long j10) {
+    public /* synthetic */ di(qh.w7 w7Var, TLRPC.Chat chat, MessagesStorage messagesStorage, long j10) {
         this.a = 11;
-        this.b = x7Var;
+        this.b = w7Var;
         this.e = chat;
         this.c = messagesStorage;
         this.d = j10;

@@ -1,28 +1,28 @@
 package org.telegram.ui.Components;
 
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.vc1;
+import org.telegram.ui.ad1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class dp implements vc1 {
+public final class dp implements ad1 {
     public final /* synthetic */ mp a;
 
     public dp(mp mpVar) {
         this.a = mpVar;
     }
 
-    @Override // org.telegram.ui.vc1
+    @Override // org.telegram.ui.ad1
     public final boolean T0() {
         return true;
     }
 
-    @Override // org.telegram.ui.vc1
+    @Override // org.telegram.ui.ad1
     public final boolean a() {
         return this.a.K;
     }
 
-    @Override // org.telegram.ui.vc1
+    @Override // org.telegram.ui.ad1
     public final void l1(boolean z4) {
         mp mpVar = this.a;
         org.telegram.ui.xn xnVar = mpVar.v;

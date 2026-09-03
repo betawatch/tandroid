@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ig extends FrameLayout {
     public final Drawable B;
@@ -46,8 +46,8 @@ public final class ig extends FrameLayout {
     public boolean Q;
     public boolean R;
     public final /* synthetic */ ChatActivityEnterView S;
-    public qh.f3 a;
-    public qh.f3 b;
+    public qh.e3 a;
+    public qh.e3 b;
     public ShapeDrawable c;
     public final Drawable d;
     public final String e;
@@ -105,39 +105,44 @@ public final class ig extends FrameLayout {
     }
 
     public final void a() {
-        qh.f3 f3Var = this.a;
-        if (f3Var != null) {
-            f3Var.i0 = new gg(this, f3Var, 1);
-            f3Var.e(true);
+        qh.e3 e3Var = this.a;
+        if (e3Var != null) {
+            e3Var.i0 = new gg(this, e3Var, 1);
+            e3Var.e(true);
             this.a = null;
         }
-        qh.f3 f3Var2 = this.b;
-        if (f3Var2 != null) {
-            f3Var2.i0 = new gg(this, f3Var2, 2);
-            f3Var2.e(true);
+        qh.e3 e3Var2 = this.b;
+        if (e3Var2 != null) {
+            e3Var2.i0 = new gg(this, e3Var2, 2);
+            e3Var2.e(true);
             this.b = null;
         }
     }
 
     public final void b() {
         a();
-        qh.f3 f3Var = new qh.f3(getContext(), 2);
-        this.b = f3Var;
-        f3Var.m(1.0f, 0.0f);
-        this.b.q(true);
+        qh.e3 e3Var = new qh.e3(getContext(), 2);
+        this.b = e3Var;
+        e3Var.l(1.0f, 0.0f);
+        this.b.p(true);
         ChatActivityEnterView chatActivityEnterView = this.S;
-        this.b.t(AndroidUtilities.replaceTags(LocaleController.getString(chatActivityEnterView.Z0 ? chatActivityEnterView.L ? R.string.VideoSetOnceHintEnabled : R.string.VideoSetOnceHint : chatActivityEnterView.L ? R.string.VoiceSetOnceHintEnabled : R.string.VoiceSetOnceHint)));
-        qh.f3 f3Var2 = this.b;
-        f3Var2.h = qh.f3.a(f3Var2.getText(), this.b.getTextPaint());
+        this.b.s(AndroidUtilities.replaceTags(LocaleController.getString(chatActivityEnterView.Z0 ? chatActivityEnterView.L ? R.string.VideoSetOnceHintEnabled : R.string.VideoSetOnceHint : chatActivityEnterView.L ? R.string.VoiceSetOnceHintEnabled : R.string.VoiceSetOnceHint)));
+        qh.e3 e3Var2 = this.b;
+        e3Var2.h = qh.e3.a(e3Var2.getText(), this.b.getTextPaint());
         if (chatActivityEnterView.L) {
-            this.b.j(R.raw.fire_on);
+            qh.e3 e3Var3 = this.b;
+            int i10 = R.raw.fire_on;
+            e3Var3.getClass();
+            hj0 hj0Var = new hj0(i10, AndroidUtilities.dp(34.0f), AndroidUtilities.dp(34.0f));
+            hj0Var.start();
+            e3Var3.j(hj0Var);
         } else {
             MessagesController.getGlobalMainSettings().edit().putInt("voiceoncehint", MessagesController.getGlobalMainSettings().getInt("voiceoncehint", 0) + 1).apply();
         }
         addView(this.b, k7.c6.d(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
-        qh.f3 f3Var3 = this.b;
-        f3Var3.i0 = new gg(this, f3Var3, 0);
-        f3Var3.v();
+        qh.e3 e3Var4 = this.b;
+        e3Var4.i0 = new gg(this, e3Var4, 0);
+        e3Var4.u();
     }
 
     public final void c() {
@@ -223,7 +228,7 @@ public final class ig extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:111:0x07f6, code lost:
     
-        r2.n(0.0f, r12.centerY());
+        r2.m(0.0f, r12.centerY());
         r45.b.invalidate();
      */
     /* JADX WARN: Code restructure failed: missing block: B:112:0x0803, code lost:
@@ -640,7 +645,7 @@ public final class ig extends FrameLayout {
      */
     /* JADX WARN: Code restructure failed: missing block: B:77:0x04b1, code lost:
     
-        r2.n(0.0f, r12.centerY());
+        r2.m(0.0f, r12.centerY());
         r45.a.invalidate();
      */
     /* JADX WARN: Code restructure failed: missing block: B:78:0x04be, code lost:
@@ -893,18 +898,18 @@ public final class ig extends FrameLayout {
                     chatActivityEnterView.V2.t1();
                 } else {
                     fg fgVar = new fg(this, 0);
-                    qh.f3 f3Var = this.a;
-                    if (f3Var != null && f3Var.S) {
+                    qh.e3 e3Var = this.a;
+                    if (e3Var != null && e3Var.S) {
                         a();
                     }
-                    sk0 sk0Var = chatActivityEnterView.e1;
-                    if (sk0Var != null) {
-                        sk0Var.setPlaying(false);
+                    rk0 rk0Var = chatActivityEnterView.e1;
+                    if (rk0Var != null) {
+                        rk0Var.setPlaying(false);
                     }
                     if (!MediaController.getInstance().isRecordingPaused() || (chatActivityEnterView.e1.getAudioLeft() <= 0.01f && chatActivityEnterView.e1.getAudioRight() >= 0.99f)) {
                         fgVar.run();
                     } else {
-                        org.telegram.ui.mp mpVar = new org.telegram.ui.mp(16, this, fgVar);
+                        org.telegram.ui.mp mpVar = new org.telegram.ui.mp(15, this, fgVar);
                         if (MessagesController.getGlobalMainSettings().getBoolean("trimvoicehint", true)) {
                             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getContext(), 0, chatActivityEnterView.S3);
                             alertDialog$Builder.a.O = LocaleController.getString(R.string.RecordingTrimTitle);

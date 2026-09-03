@@ -56,9 +56,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.ht0;
+import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class i implements Runnable {
     public final /* synthetic */ int a;
@@ -344,7 +344,7 @@ public final class i implements Runnable {
                 b();
                 return;
             case 17:
-                eg.j jVar = ((ht0) this.b).P0;
+                eg.j jVar = ((mt0) this.b).P0;
                 if (jVar instanceof z3) {
                     ((z3) jVar).getEditText();
                     return;
@@ -419,11 +419,11 @@ public final class i implements Runnable {
                         View m9 = f1Var.V2.m(R + 1);
                         if (m9 != null) {
                             f1Var.a3 = false;
-                            f1Var.w1(m9, true);
+                            f1Var.v1(m9, true);
                             f1Var.v0(0, m9.getTop() - ((f1Var.getMeasuredHeight() - m9.getMeasuredHeight()) / 2), AndroidUtilities.overshootInterpolator);
                         }
                     }
-                    f1Var.x1();
+                    f1Var.w1();
                     return;
                 }
                 return;
@@ -452,7 +452,7 @@ public final class i implements Runnable {
                 eVar2.invalidateSelf();
                 return;
             case 24:
-                ((ThreadLocal) ((sf.e) this.b).e).set(Boolean.TRUE);
+                ((ThreadLocal) ((sf.f) this.b).e).set(Boolean.TRUE);
                 return;
             case 25:
                 la laVar = (la) this.b;

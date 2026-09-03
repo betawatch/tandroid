@@ -17,12 +17,12 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class g1 extends FrameLayout {
     public int B;
@@ -34,7 +34,7 @@ public class g1 extends FrameLayout {
     public int H;
     public final org.telegram.ui.Components.t5 a;
     public TextView b;
-    public final lj0 c;
+    public final kj0 c;
     public boolean d;
     public np e;
     public ImageView f;
@@ -115,21 +115,21 @@ public class g1 extends FrameLayout {
         int dp2;
         org.telegram.ui.Components.t5 t5Var = this.a;
         t5Var.setText(charSequence);
-        lj0 lj0Var = this.c;
+        kj0 kj0Var = this.c;
         if (i10 == 0 && drawable == null && this.e == null) {
             this.H = 0;
-            lj0Var.setVisibility(4);
+            kj0Var.setVisibility(4);
             t5Var.setPadding(0, 0, 0, 0);
             return;
         }
         if (drawable != null) {
             this.H = 0;
-            lj0Var.setImageDrawable(drawable);
+            kj0Var.setImageDrawable(drawable);
         } else {
             this.H = i10;
-            lj0Var.setImageResource(i10);
+            kj0Var.setImageResource(i10);
         }
-        lj0Var.setVisibility(0);
+        kj0Var.setVisibility(0);
         if (this.d) {
             dp = this.e != null ? AndroidUtilities.dp(43.0f) : 0;
         } else {
@@ -375,11 +375,11 @@ public class g1 extends FrameLayout {
         this.v = k6.v0(k6.I5, g6Var);
         i();
         setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
-        lj0 lj0Var = new lj0(context);
-        this.c = lj0Var;
-        lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        lj0Var.setColorFilter(new PorterDuffColorFilter(this.r, PorterDuff.Mode.SRC_IN));
-        addView(lj0Var, k7.c6.e(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
+        kj0 kj0Var = new kj0(context);
+        this.c = kj0Var;
+        kj0Var.setScaleType(ImageView.ScaleType.CENTER);
+        kj0Var.setColorFilter(new PorterDuffColorFilter(this.r, PorterDuff.Mode.SRC_IN));
+        addView(kj0Var, k7.c6.e(-2, 40, (LocaleController.isRTL ? 5 : 3) | 16));
         org.telegram.ui.Components.t5 t5Var = new org.telegram.ui.Components.t5(context);
         this.a = t5Var;
         t5Var.setLines(1);

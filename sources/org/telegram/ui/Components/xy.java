@@ -3,9 +3,9 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import org.telegram.messenger.LiteMode;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class xy extends yw0 {
+public final class xy extends xw0 {
     public final /* synthetic */ int w3;
     public final /* synthetic */ yy x3;
 
@@ -16,16 +16,11 @@ public final class xy extends yw0 {
         this.w3 = i11;
     }
 
-    @Override // org.telegram.ui.Components.yw0
-    public final boolean A1() {
-        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
-    }
-
-    @Override // org.telegram.ui.Components.yw0
-    public final void E1(int i10) {
+    @Override // org.telegram.ui.Components.xw0
+    public final void D1(int i10) {
         vw vwVar;
         hw hwVar;
-        super.E1(i10);
+        super.D1(i10);
         yy yyVar = this.x3;
         mz mzVar = yyVar.D;
         xy xyVar = yyVar.r;
@@ -40,5 +35,10 @@ public final class xy extends yw0 {
             vwVar.invalidate();
         }
         yyVar.g(false);
+    }
+
+    @Override // org.telegram.ui.Components.xw0
+    public final boolean z1() {
+        return LiteMode.isEnabled(LiteMode.FLAG_ANIMATED_EMOJI_REACTIONS);
     }
 }

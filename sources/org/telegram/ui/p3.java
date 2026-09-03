@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class p3 extends FrameLayout {
     public boolean B;
@@ -409,7 +409,7 @@ public final class p3 extends FrameLayout {
         return height;
     }
 
-    public org.telegram.ui.Components.tl0 getListView() {
+    public org.telegram.ui.Components.sl0 getListView() {
         return this.b;
     }
 
@@ -476,7 +476,7 @@ public final class p3 extends FrameLayout {
                         }
                         String a2 = af.g.a(parse.getHost());
                         String[] split = a2.split("\\.");
-                        if (split.length > 2 && (m0Var = this.H.e0) != null && qh.f3.g(a2, m0Var.B) > AndroidUtilities.displaySize.x - AndroidUtilities.dp(162.0f)) {
+                        if (split.length > 2 && (m0Var = this.H.e0) != null && qh.e3.g(a2, m0Var.B) > AndroidUtilities.displaySize.x - AndroidUtilities.dp(162.0f)) {
                             a2 = split[split.length - 2] + '.' + split[split.length - 1];
                         }
                         uri = af.g.v(parse, null, "", a2, null);

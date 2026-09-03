@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class dy implements org.telegram.ui.Components.x40 {
     public final /* synthetic */ py a;
@@ -123,28 +123,28 @@ public final class dy implements org.telegram.ui.Components.x40 {
     }
 
     @Override // org.telegram.ui.Components.x40
-    public final lu0 getCloseIntoObject() {
+    public final qu0 getCloseIntoObject() {
         py pyVar = this.a;
         org.telegram.ui.Components.ic icVar = pyVar.b4;
         if (icVar == null) {
             return null;
         }
         org.telegram.ui.Components.zb zbVar = (org.telegram.ui.Components.zb) icVar.e;
-        lu0 lu0Var = new lu0();
+        qu0 qu0Var = new qu0();
         int[] iArr = new int[2];
         org.telegram.ui.Components.p9 p9Var = zbVar.c;
         org.telegram.ui.Components.p9 p9Var2 = zbVar.c;
         p9Var.getLocationInWindow(iArr);
-        lu0Var.b = iArr[0];
-        lu0Var.c = iArr[1];
-        lu0Var.d = pyVar.fragmentView;
+        qu0Var.b = iArr[0];
+        qu0Var.c = iArr[1];
+        qu0Var.d = pyVar.fragmentView;
         ImageReceiver imageReceiver = p9Var2.getImageReceiver();
-        lu0Var.a = imageReceiver;
-        lu0Var.e = imageReceiver.getBitmapSafe();
-        lu0Var.i = 0;
-        lu0Var.h = lu0Var.a.getRoundRadius();
-        lu0Var.k = p9Var2.getScaleX();
-        return lu0Var;
+        qu0Var.a = imageReceiver;
+        qu0Var.e = imageReceiver.getBitmapSafe();
+        qu0Var.i = 0;
+        qu0Var.h = qu0Var.a.getRoundRadius();
+        qu0Var.k = p9Var2.getScaleX();
+        return qu0Var;
     }
 
     @Override // org.telegram.ui.Components.x40

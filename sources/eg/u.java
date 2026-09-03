@@ -2,18 +2,18 @@ package eg;
 
 import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.ui.Components.sv0;
-import qh.b5;
+import org.telegram.ui.Components.rv0;
+import qh.a5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u implements View.OnTouchListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ sv0 b;
+    public final /* synthetic */ rv0 b;
 
-    public /* synthetic */ u(sv0 sv0Var, int i10) {
+    public /* synthetic */ u(rv0 rv0Var, int i10) {
         this.a = i10;
-        this.b = sv0Var;
+        this.b = rv0Var;
     }
 
     @Override // android.view.View.OnTouchListener
@@ -33,12 +33,12 @@ public final /* synthetic */ class u implements View.OnTouchListener {
                 }
                 break;
             default:
-                b5 b5Var = (b5) this.b;
-                b5Var.getClass();
-                if (motionEvent.getActionMasked() == 0 && (p1Var2 = b5Var.E1) != null && p1Var2.isShowing()) {
-                    view.getHitRect(b5Var.G1);
-                    if (!b5Var.G1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                        b5Var.E1.d(true);
+                a5 a5Var = (a5) this.b;
+                a5Var.getClass();
+                if (motionEvent.getActionMasked() == 0 && (p1Var2 = a5Var.E1) != null && p1Var2.isShowing()) {
+                    view.getHitRect(a5Var.G1);
+                    if (!a5Var.G1.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        a5Var.E1.d(true);
                         break;
                     }
                 }

@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_keyboard;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -83,10 +83,10 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.ak0 ak0Var = (org.telegram.ui.Components.ak0) obj3;
+                org.telegram.ui.Components.zj0 zj0Var = (org.telegram.ui.Components.zj0) obj3;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) obj2;
                 int[] iArr = (int[]) obj;
-                if (ak0Var == null || ak0Var.w) {
+                if (zj0Var == null || zj0Var.w) {
                     actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().e(iArr[0]);
                     break;
                 }
@@ -138,7 +138,7 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                 MessageObject messageObject2 = (MessageObject) obj2;
                 PhotoViewer photoViewer = ((sr) obj3).c.a;
                 Drawable[] drawableArr = PhotoViewer.Q8;
-                ArrayList arrayList = ((org.telegram.ui.Components.g71) obj).d;
+                ArrayList arrayList = ((org.telegram.ui.Components.f71) obj).d;
                 if (arrayList.isEmpty()) {
                     document = null;
                 } else {
@@ -148,21 +148,21 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                         if (i13 < size) {
                             Object obj4 = arrayList.get(i13);
                             i13++;
-                            org.telegram.ui.Components.i71 i71Var = (org.telegram.ui.Components.i71) obj4;
-                            if (i71Var.b()) {
-                                document = i71Var.g;
+                            org.telegram.ui.Components.h71 h71Var = (org.telegram.ui.Components.h71) obj4;
+                            if (h71Var.b()) {
+                                document = h71Var.g;
                             }
                         } else {
                             long j11 = Long.MAX_VALUE;
-                            org.telegram.ui.Components.i71 i71Var2 = null;
+                            org.telegram.ui.Components.h71 h71Var2 = null;
                             for (int i14 = 0; i14 < arrayList.size(); i14++) {
-                                org.telegram.ui.Components.i71 i71Var3 = (org.telegram.ui.Components.i71) arrayList.get(i14);
-                                if (i71Var3.k < j11 && org.telegram.ui.Components.k71.Y(i71Var3.m)) {
-                                    j11 = i71Var3.k;
-                                    i71Var2 = i71Var3;
+                                org.telegram.ui.Components.h71 h71Var3 = (org.telegram.ui.Components.h71) arrayList.get(i14);
+                                if (h71Var3.k < j11 && org.telegram.ui.Components.j71.Y(h71Var3.m)) {
+                                    j11 = h71Var3.k;
+                                    h71Var2 = h71Var3;
                                 }
                             }
-                            document = i71Var2 != null ? i71Var2.g : ((org.telegram.ui.Components.i71) arrayList.get(0)).g;
+                            document = h71Var2 != null ? h71Var2.g : ((org.telegram.ui.Components.h71) arrayList.get(0)).g;
                         }
                     }
                 }
@@ -177,7 +177,7 @@ public final /* synthetic */ class b0 implements View.OnClickListener {
                         arrayList2.add(messageObject2);
                         MediaController.saveFilesFromMessages(photoViewer.y, AccountInstance.getInstance(photoViewer.Q), arrayList2, new ta(photoViewer, i11));
                     } else {
-                        MediaController.saveFile(pathToAttach.toString(), photoViewer.y, 1, null, null, new uq0(photoViewer, i12));
+                        MediaController.saveFile(pathToAttach.toString(), photoViewer.y, 1, null, null, new zq0(photoViewer, i12));
                     }
                     photoViewer.l0.M(null, null);
                     break;

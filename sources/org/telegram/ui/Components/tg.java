@@ -11,9 +11,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tg implements wk, xd.i, org.telegram.ui.ActionBar.c2, ll0, rg.c, org.telegram.ui.ActionBar.s0, rn, AndroidUtilities.IntColorCallback, y4, ui {
+public final /* synthetic */ class tg implements wk, xd.i, org.telegram.ui.ActionBar.c2, kl0, rg.c, org.telegram.ui.ActionBar.s0, qn, AndroidUtilities.IntColorCallback, y4, ui {
     public final /* synthetic */ int a;
     public final /* synthetic */ mi b;
 
@@ -66,7 +66,7 @@ public final /* synthetic */ class tg implements wk, xd.i, org.telegram.ui.Actio
         }
     }
 
-    @Override // org.telegram.ui.Components.rn
+    @Override // org.telegram.ui.Components.qn
     public void b(TLRPC.MessageMedia messageMedia, Editable editable, eh.i iVar, ArrayList arrayList, boolean z4, int i10, long j10) {
         String str;
         ArrayList<TLRPC.MessageEntity> arrayList2;
@@ -129,7 +129,7 @@ public final /* synthetic */ class tg implements wk, xd.i, org.telegram.ui.Actio
         this.b.u1();
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         TLRPC.User user;
         if (!(view instanceof fi)) {
@@ -152,7 +152,7 @@ public final /* synthetic */ class tg implements wk, xd.i, org.telegram.ui.Actio
                 int v02 = org.telegram.ui.ActionBar.k6.v0(z4 ? org.telegram.ui.ActionBar.k6.a7 : org.telegram.ui.ActionBar.k6.i5, g6Var);
                 int v03 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, g6Var);
                 mi miVar = this.b;
-                return miVar.j2 ? i0.a.d(0.75f, v03, miVar.k2) : sg.b.l(f10, v02, v03);
+                return miVar.j2 ? i0.a.d(0.75f, v03, miVar.k2) : sg.b.m(f10, v02, v03);
             case 5:
                 if (this.b.j2) {
                     return 0;

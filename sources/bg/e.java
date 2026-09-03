@@ -35,10 +35,10 @@ import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.u5;
 import org.telegram.ui.Components.z8;
-import org.telegram.ui.mf1;
+import org.telegram.ui.sf1;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class e {
     public static final /* synthetic */ int a = 0;
@@ -328,26 +328,26 @@ public abstract class e {
                 if (((ActionBarLayout) xnVar.getParentLayout()).j()) {
                     AndroidUtilities.runOnUIThread(new c(xnVar, 0), 500L);
                 } else {
-                    mf1.I0(xnVar);
+                    sf1.I0(xnVar);
                 }
             }
         }
-        if (lastFragment instanceof mf1) {
-            mf1 mf1Var = (mf1) lastFragment;
-            long j11 = mf1Var.a;
-            if ((-(-j11)) != j10 || mf1Var.getMessagesController().getChat(Long.valueOf(j10)).forum) {
+        if (lastFragment instanceof sf1) {
+            sf1 sf1Var = (sf1) lastFragment;
+            long j11 = sf1Var.a;
+            if ((-(-j11)) != j10 || sf1Var.getMessagesController().getChat(Long.valueOf(j10)).forum) {
                 return;
             }
-            if (mf1Var.getParentLayout() != null && ((ActionBarLayout) mf1Var.getParentLayout()).j()) {
-                AndroidUtilities.runOnUIThread(new ag.e(mf1Var, 8), 500L);
+            if (sf1Var.getParentLayout() != null && ((ActionBarLayout) sf1Var.getParentLayout()).j()) {
+                AndroidUtilities.runOnUIThread(new ag.e(sf1Var, 8), 500L);
                 return;
             }
-            mf1Var.E = true;
+            sf1Var.E = true;
             Bundle bundle = new Bundle();
             bundle.putLong("chat_id", j11);
             xn xnVar2 = new xn(bundle);
             xnVar2.ga = true;
-            mf1Var.presentFragment(xnVar2);
+            sf1Var.presentFragment(xnVar2);
         }
     }
 }

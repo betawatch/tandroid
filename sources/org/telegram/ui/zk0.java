@@ -28,7 +28,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class zk0 {
     public static org.telegram.ui.ActionBar.h3 a;
@@ -463,7 +463,7 @@ public abstract class zk0 {
             frameLayout.setBackground(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(70.0f), org.telegram.ui.ActionBar.k6.l1(0.05f, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, g6Var))));
             Drawable emojiBigDrawable = Emoji.getEmojiBigDrawable(str2);
             if (emojiBigDrawable == null) {
-                drawable = new yk0(new org.telegram.ui.Components.l01(str2, 30.0f, AndroidUtilities.bold()), g6Var);
+                drawable = new yk0(new org.telegram.ui.Components.k01(str2, 30.0f, AndroidUtilities.bold()), g6Var);
                 z10 = false;
             } else {
                 drawable = emojiBigDrawable;

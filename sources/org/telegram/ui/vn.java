@@ -38,7 +38,7 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class vn implements org.telegram.ui.ActionBar.g6, org.telegram.ui.Components.ub0 {
     public BitmapShader B;
@@ -646,7 +646,7 @@ public final class vn implements org.telegram.ui.ActionBar.g6, org.telegram.ui.C
         if (!TextUtils.isEmpty(ChatThemeController.getWallpaperEmoticon(this.h))) {
             Drawable drawable2 = this.n;
             i12 = ((org.telegram.ui.ActionBar.p2) this.S).currentAccount;
-            this.n = qh.j5.f(drawable2, i12, this.h, this.D);
+            this.n = qh.i5.f(drawable2, i12, this.h, this.D);
         } else if (wallPaper != null) {
             this.n = ao.d(this.n, wallPaper, this.D);
         } else {

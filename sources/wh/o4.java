@@ -41,7 +41,7 @@ import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Components.RadialProgress2;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class o4 extends z implements b6, l9, j0 {
     public static Paint h0;
@@ -395,7 +395,7 @@ public final class o4 extends z implements b6, l9, j0 {
         if (i10 < 0 || i10 >= m9.size() || !((t) m9.get(i10)).a()) {
             return;
         }
-        r3.N1(this.a, (t) m9.get(i10), this.K.a);
+        r3.M1(this.a, (t) m9.get(i10), this.K.a);
     }
 
     public final boolean l() {

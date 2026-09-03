@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class y00 extends cg.c {
     public final Context d;
@@ -26,7 +26,7 @@ public final class y00 extends cg.c {
         this.d = context;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         int i10 = m1Var.f;
         return (i10 == 3 || i10 == 0 || i10 == 2 || i10 == 5 || i10 == 9 || i10 == 11) ? false : true;
@@ -117,10 +117,10 @@ public final class y00 extends cg.c {
                     b10Var.F.setText(LocaleController.getString(R.string.FolderTagColor));
                     break;
                 case 10:
-                    gp0 gp0Var = (gp0) view;
-                    gp0Var.setCloseAsLock(!b10Var.getUserConfig().isPremium());
-                    gp0Var.a(b10Var.getUserConfig().isPremium() ? b10Var.B : -1, false);
-                    gp0Var.setOnColorClick(new org.telegram.ui.Components.xk(13, this, gp0Var));
+                    kp0 kp0Var = (kp0) view;
+                    kp0Var.setCloseAsLock(!b10Var.getUserConfig().isPremium());
+                    kp0Var.a(b10Var.getUserConfig().isPremium() ? b10Var.B : -1, false);
+                    kp0Var.setOnColorClick(new org.telegram.ui.Components.xk(13, this, kp0Var));
                     break;
                 case 11:
                     q00 q00Var = (q00) view;
@@ -194,10 +194,10 @@ public final class y00 extends cg.c {
                 view = vaVar;
                 break;
             case 2:
-                org.telegram.ui.Components.qv0 qv0Var = (org.telegram.ui.Components.qv0) b10Var.fragmentView;
+                org.telegram.ui.Components.pv0 pv0Var = (org.telegram.ui.Components.pv0) b10Var.fragmentView;
                 String string = LocaleController.getString(R.string.FilterNameHint);
                 g6Var = ((org.telegram.ui.ActionBar.p2) b10Var).resourceProvider;
-                v00 v00Var = new v00(this.d, qv0Var, string, false, 12, g6Var);
+                v00 v00Var = new v00(this.d, pv0Var, string, false, 12, g6Var);
                 b10Var.H = v00Var;
                 v00Var.n = false;
                 org.telegram.ui.Cells.d3 d3Var = v00Var.b;
@@ -238,13 +238,13 @@ public final class y00 extends cg.c {
                 break;
             case 5:
                 r00 r00Var = new r00(context);
-                org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-                r00Var.a = lj0Var;
-                lj0Var.f(R.raw.filter_new, 100, 100, null);
-                lj0Var.setScaleType(ImageView.ScaleType.CENTER);
-                lj0Var.d();
-                r00Var.addView(lj0Var, k7.c6.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
-                lj0Var.setOnClickListener(new a(r00Var, 24));
+                org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
+                r00Var.a = kj0Var;
+                kj0Var.f(R.raw.filter_new, 100, 100, null);
+                kj0Var.setScaleType(ImageView.ScaleType.CENTER);
+                kj0Var.d();
+                r00Var.addView(kj0Var, k7.c6.d(100, 100.0f, 17, 0.0f, 0.0f, 0.0f, 0.0f));
+                kj0Var.setOnClickListener(new a(r00Var, 24));
                 view = r00Var;
                 break;
             case 6:
@@ -265,14 +265,14 @@ public final class y00 extends cg.c {
                 Activity parentActivity = b10Var.getParentActivity();
                 i13 = ((org.telegram.ui.ActionBar.p2) b10Var).currentAccount;
                 g6Var2 = ((org.telegram.ui.ActionBar.p2) b10Var).resourceProvider;
-                view = new gp0(2, i13, parentActivity, g6Var2);
+                view = new kp0(2, i13, parentActivity, g6Var2);
                 break;
             case 11:
                 g6Var3 = ((org.telegram.ui.ActionBar.p2) b10Var).resourceProvider;
                 view = new q00(context, g6Var3);
                 break;
         }
-        return new org.telegram.ui.Components.fl0(view);
+        return new org.telegram.ui.Components.el0(view);
     }
 
     @Override // f2.p0

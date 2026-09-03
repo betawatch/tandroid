@@ -24,16 +24,16 @@ import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.rs;
 import org.telegram.ui.Components.ts;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.Components.zv0;
+import org.telegram.ui.Components.w51;
+import org.telegram.ui.Components.yv0;
 import org.telegram.ui.d60;
 import org.telegram.ui.fn0;
-import org.telegram.ui.he0;
 import org.telegram.ui.im0;
 import org.telegram.ui.kl;
+import org.telegram.ui.ue0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l0 implements Runnable {
     public final /* synthetic */ int a;
@@ -109,23 +109,23 @@ public final /* synthetic */ class l0 implements Runnable {
                 }
                 break;
             case 5:
-                zv0 zv0Var = (zv0) this.d;
+                yv0 yv0Var = (yv0) this.d;
                 boolean z12 = this.c;
                 int i15 = this.b;
                 t1 t1Var = (t1) this.e;
-                if (z12 && zv0Var.P == null && zv0Var.O == null && zv0Var.N == null) {
-                    zv0Var.H = 2;
-                    zv0Var.U0 = true;
+                if (z12 && yv0Var.P == null && yv0Var.O == null && yv0Var.N == null) {
+                    yv0Var.H = 2;
+                    yv0Var.U0 = true;
                 }
-                zv0Var.S0 = false;
-                if (zv0Var.V0 || !zv0Var.T0) {
-                    zv0Var.R0 = zv0Var.f1[0];
+                yv0Var.S0 = false;
+                if (yv0Var.V0 || !yv0Var.T0) {
+                    yv0Var.R0 = yv0Var.f1[0];
                     DownloadController.getInstance(i15).removeLoadingFileObserver(t1Var);
-                    zv0Var.G();
-                    zv0Var.v();
+                    yv0Var.G();
+                    yv0Var.v();
                     break;
                 } else {
-                    zv0Var.A(true);
+                    yv0Var.A(true);
                     break;
                 }
                 break;
@@ -235,7 +235,7 @@ public final /* synthetic */ class l0 implements Runnable {
                             recognize = MrzRecognizer.recognize(loadBitmap, fn0Var.C.type instanceof TLRPC.TL_secureValueTypeDriverLicense);
                             if (recognize == null) {
                                 try {
-                                    AndroidUtilities.runOnUIThread(new he0(19, fn0Var, recognize));
+                                    AndroidUtilities.runOnUIThread(new ue0(18, fn0Var, recognize));
                                     z16 = true;
                                 } catch (Throwable th3) {
                                     th = th3;
@@ -263,17 +263,17 @@ public final /* synthetic */ class l0 implements Runnable {
         this.b = i10;
     }
 
-    public /* synthetic */ l0(zv0 zv0Var, boolean z4, int i10, t1 t1Var) {
+    public /* synthetic */ l0(yv0 yv0Var, boolean z4, int i10, t1 t1Var) {
         this.a = 5;
-        this.d = zv0Var;
+        this.d = yv0Var;
         this.c = z4;
         this.b = i10;
         this.e = t1Var;
     }
 
-    public /* synthetic */ l0(x51 x51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z4, int i11) {
+    public /* synthetic */ l0(w51 w51Var, int i10, TLRPC.TL_messages_searchGlobal tL_messages_searchGlobal, boolean z4, int i11) {
         this.a = i11;
-        this.d = x51Var;
+        this.d = w51Var;
         this.b = i10;
         this.e = tL_messages_searchGlobal;
         this.c = z4;

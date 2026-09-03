@@ -24,15 +24,15 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.d9;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.hc;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.rv0;
+import org.telegram.ui.Components.qv0;
 import org.telegram.ui.Components.z4;
-import qh.ua;
+import qh.ta;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class n0 implements uh.d {
     public final Context a;
@@ -82,8 +82,8 @@ public final class n0 implements uh.d {
         }
     }
 
-    public final void b(i61 i61Var) {
-        if (this.m || this.n || i61Var.U2.N0() + 10 <= i61Var.V2.x.size()) {
+    public final void b(h61 h61Var) {
+        if (this.m || this.n || h61Var.U2.N0() + 10 <= h61Var.V2.x.size()) {
             return;
         }
         d();
@@ -107,7 +107,7 @@ public final class n0 implements uh.d {
                     boolean z4 = !communityPeerRequest.visible;
                     boolean z10 = i10 < size + (-1);
                     int i11 = uh.f.a;
-                    j51 J = j51.J(uh.f.class);
+                    h51 J = h51.J(uh.f.class);
                     J.G = new uh.e(peerDialogId, user, z4);
                     J.H = this;
                     J.j = !z10;
@@ -119,7 +119,7 @@ public final class n0 implements uh.d {
         if (this.n) {
             return;
         }
-        arrayList.add(j51.n(29));
+        arrayList.add(h51.n(29));
     }
 
     public final void d() {
@@ -142,7 +142,7 @@ public final class n0 implements uh.d {
         TextView textView;
         if (this.q == null && this.r == 0) {
             if (z10) {
-                d2 P = z4.P(this.a, this.b, LocaleController.getString(z4 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z4 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z4 ? R.string.Add : R.string.Decline), new rv0(16, this, z4));
+                d2 P = z4.P(this.a, this.b, LocaleController.getString(z4 ? R.string.CommunityAddAllChatsTitle : R.string.CommunityDeclineAllTitle), AndroidUtilities.replaceTags(LocaleController.formatPluralString(z4 ? "CommunityAddAllChatsMessage" : "CommunityDeclineAllMessage", this.l, new Object[0])), LocaleController.getString(z4 ? R.string.Add : R.string.Decline), new qv0(16, this, z4));
                 P.show();
                 if (z4 || (textView = (TextView) P.d(-1)) == null) {
                     return;
@@ -157,7 +157,7 @@ public final class n0 implements uh.d {
             this.i = null;
             d2 d2Var = new d2(this.a, 3, this.b);
             this.q = d2Var;
-            d2Var.setOnCancelListener(new ua(this, 3));
+            d2Var.setOnCancelListener(new ta(this, 3));
             this.q.q(500L);
             this.r = MessagesController.getInstance(this.d).resolveCommunityAllJoinPendingRequests(this.e, !z4, new l0(this, 0));
         }

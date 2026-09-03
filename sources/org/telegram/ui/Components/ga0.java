@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ga0 extends kh.v {
     public final /* synthetic */ int E = 0;
@@ -20,7 +20,7 @@ public final class ga0 extends kh.v {
         switch (this.E) {
             case 0:
                 kh.c cVar = (kh.c) this.F;
-                ax0 ax0Var = cVar.T;
+                zw0 zw0Var = cVar.T;
                 if (!this.e.isEmpty()) {
                     if (!z10) {
                         super.f(str, z4, z10);
@@ -29,8 +29,8 @@ public final class ga0 extends kh.v {
                         cVar.w.G.setText("");
                         break;
                     }
-                } else if (ax0Var.getVisibility() != 4) {
-                    ax0Var.setVisibility(4);
+                } else if (zw0Var.getVisibility() != 4) {
+                    zw0Var.setVisibility(4);
                     break;
                 }
                 break;

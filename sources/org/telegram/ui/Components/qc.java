@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class qc {
     public final org.telegram.ui.ActionBar.p2 a;
@@ -182,7 +182,7 @@ public final class qc {
         qb qbVar2 = qbVar;
         int i15 = 0;
         boolean z10 = vVar != null;
-        org.telegram.ui.mp mpVar = vVar != null ? new org.telegram.ui.mp(11, new boolean[]{false}, vVar) : null;
+        org.telegram.ui.mp mpVar = vVar != null ? new org.telegram.ui.mp(10, new boolean[]{false}, vVar) : null;
         int i16 = 2;
         if (i10 > 1) {
             replaceTags = i11 <= 1 ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("FwdMessageToManyChats", i10, new Object[0])) : AndroidUtilities.replaceTags(LocaleController.formatPluralString("FwdMessagesToManyChats", i10, new Object[0]));
@@ -401,8 +401,8 @@ public final class qc {
     public final ic L(Drawable drawable, CharSequence charSequence) {
         qb qbVar = new qb(W(), this.c);
         qbVar.a.setImageDrawable(drawable);
-        if (drawable instanceof org.telegram.ui.ep0) {
-            ((org.telegram.ui.ep0) drawable).e(qbVar.a);
+        if (drawable instanceof org.telegram.ui.ip0) {
+            ((org.telegram.ui.ip0) drawable).e(qbVar.a);
         }
         qbVar.b.setText(charSequence);
         qbVar.b.setSingleLine(false);
@@ -958,12 +958,12 @@ public final class qc {
     public final ic s(TLRPC.Document document, String str, CharSequence charSequence) {
         fc fcVar = new fc(W(), this.c);
         boolean isTextColorEmoji = MessageObject.isTextColorEmoji(document);
-        lj0 lj0Var = fcVar.a;
+        kj0 kj0Var = fcVar.a;
         if (isTextColorEmoji) {
-            lj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Hi, false), PorterDuff.Mode.SRC_IN));
+            kj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Hi, false), PorterDuff.Mode.SRC_IN));
         }
-        lj0Var.setAutoRepeat(true);
-        lj0Var.g(36, 36, document);
+        kj0Var.setAutoRepeat(true);
+        kj0Var.g(36, 36, document);
         fcVar.b.setText(str);
         fcVar.c.setText(charSequence);
         return b(fcVar, charSequence.length() + str.length() < 20 ? 1500 : 2750);
@@ -997,7 +997,7 @@ public final class qc {
         qbVar.b.setLines(2);
         qbVar.b.setMaxLines(4);
         TextView textView = qbVar.b;
-        textView.setMaxWidth(qh.f3.a(textView.getText(), qbVar.b.getPaint()));
+        textView.setMaxWidth(qh.e3.a(textView.getText(), qbVar.b.getPaint()));
         qbVar.b.setLineSpacing(AndroidUtilities.dp(1.33f), 1.0f);
         ((ViewGroup.MarginLayoutParams) qbVar.b.getLayoutParams()).rightMargin = AndroidUtilities.dp(12.0f);
         qbVar.setWrapWidth();

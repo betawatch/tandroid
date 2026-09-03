@@ -35,18 +35,18 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.ib1;
+import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public class c5 extends FrameLayout {
     public final LinearLayout.LayoutParams[] B;
     public final lh.w0[] C;
     public final TextPaint D;
-    public final ib1 E;
+    public final ob1 E;
     public final ag.l[] F;
     public final FrameLayout G;
     public final org.telegram.ui.Components.p9 H;
@@ -200,9 +200,9 @@ public class c5 extends FrameLayout {
         textView2.setVisibility(8);
         textView2.setGravity(17);
         k7.e6.a(textView2);
-        ib1 ib1Var = new ib1(this, context, 3);
-        this.E = ib1Var;
-        ib1Var.setOrientation(0);
+        ob1 ob1Var = new ob1(this, context, 3);
+        this.E = ob1Var;
+        ob1Var.setOrientation(0);
         this.F = new ag.l[3];
         int i13 = 0;
         while (true) {
@@ -236,9 +236,9 @@ public class c5 extends FrameLayout {
             }
             this.F[i13].setBackground(org.telegram.ui.ActionBar.k6.Z(0, 285212671, 16, 16));
             k7.e6.b(this.F[i13], 0.075f, 1.5f);
-            ib1 ib1Var2 = this.E;
+            ob1 ob1Var2 = this.E;
             ag.l[] lVarArr2 = this.F;
-            ib1Var2.addView(lVarArr2[i13], k7.c6.p(0, 56, 1.0f, 119, 0, 0, i13 != lVarArr2.length - 1 ? 11 : 0, 0));
+            ob1Var2.addView(lVarArr2[i13], k7.c6.p(0, 56, 1.0f, 119, 0, 0, i13 != lVarArr2.length - 1 ? 11 : 0, 0));
             i13++;
         }
         this.x = new FrameLayout(context);
@@ -816,14 +816,14 @@ public class c5 extends FrameLayout {
         this.J = false;
         boolean z12 = z4 || z10;
         boolean z13 = starGift instanceof TL_stars.TL_starGiftUnique;
-        ib1 ib1Var = this.E;
+        ob1 ob1Var = this.E;
         g90[] g90VarArr = this.y;
         TL_stars.starGiftAttributeBackdrop[] stargiftattributebackdropArr = this.S;
         if (z13) {
             stargiftattributebackdropArr[0] = (TL_stars.starGiftAttributeBackdrop) t7.l(starGift.attributes, TL_stars.starGiftAttributeBackdrop.class);
             g(0, (TL_stars.starGiftAttributePattern) t7.l(starGift.attributes, TL_stars.starGiftAttributePattern.class), false);
             g90VarArr[0].setTextSize(1, 13.0f);
-            ib1Var.setVisibility(z12 ? 0 : 8);
+            ob1Var.setVisibility(z12 ? 0 : 8);
             ag.l[] lVarArr = this.F;
             if (z12) {
                 lVarArr[1].b(z11 ? R.drawable.filled_crown_off : R.drawable.filled_crown_on, LocaleController.getString(z11 ? R.string.Gift2ActionWearOff : R.string.Gift2ActionWear), false);
@@ -882,7 +882,7 @@ public class c5 extends FrameLayout {
             stargiftattributebackdropArr[0] = null;
             g90VarArr[0].setTextSize(1, 14.0f);
             this.W = false;
-            ib1Var.setVisibility(8);
+            ob1Var.setVisibility(8);
         }
         e(0, stargiftattributebackdropArr[0]);
         ja.a1(this.d[0].getImageReceiver(), starGift, 160);
@@ -1052,8 +1052,8 @@ public class c5 extends FrameLayout {
             int i10 = 1 - this.o0;
             this.o0 = i10;
             org.telegram.ui.Components.p9[] p9VarArr = this.d;
-            ij0 lottieAnimation = p9VarArr[2 - i10].getImageReceiver().getLottieAnimation();
-            ij0 lottieAnimation2 = p9VarArr[this.o0 + 1].getImageReceiver().getLottieAnimation();
+            hj0 lottieAnimation = p9VarArr[2 - i10].getImageReceiver().getLottieAnimation();
+            hj0 lottieAnimation2 = p9VarArr[this.o0 + 1].getImageReceiver().getLottieAnimation();
             if (lottieAnimation2 != null && lottieAnimation != null) {
                 lottieAnimation2.Q(lottieAnimation.r(), false);
             }

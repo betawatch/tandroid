@@ -14,15 +14,15 @@ import android.widget.TextView;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.dp0;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.cp0;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.w21;
+import org.telegram.ui.Components.v21;
 import org.telegram.ui.Components.yc0;
 import org.telegram.ui.Components.z5;
-import qh.b5;
+import qh.a5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class i0 extends LinearLayout {
     public final /* synthetic */ int a;
@@ -52,19 +52,19 @@ public final class i0 extends LinearLayout {
         switch (this.a) {
             case 4:
                 super.dispatchDraw(canvas);
-                ((l01) this.b).e(canvas, ((yc0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
+                ((k01) this.b).e(canvas, ((yc0) this.c).getX() - AndroidUtilities.dp(50.0f), getHeight() / 2.0f);
                 break;
             case 5:
                 canvas.save();
                 z5 z5Var = (z5) this.b;
-                w21 w21Var = (w21) this.c;
-                float e6 = z5Var.e(w21Var.w);
+                v21 v21Var = (v21) this.c;
+                float e6 = z5Var.e(v21Var.w);
                 if (e6 > 0.0f) {
-                    if (w21Var.c == null) {
-                        w21Var.c = new dp0(this);
+                    if (v21Var.c == null) {
+                        v21Var.c = new cp0(this);
                     }
                     canvas.translate(getWidth() / 2.0f, getHeight() / 2.0f);
-                    w21Var.c.a(canvas, e6);
+                    v21Var.c.a(canvas, e6);
                     canvas.translate((-getWidth()) / 2.0f, (-getHeight()) / 2.0f);
                 }
                 super.dispatchDraw(canvas);
@@ -153,16 +153,16 @@ public final class i0 extends LinearLayout {
             case 8:
                 Paint paint2 = (Paint) this.b;
                 super.onDraw(canvas);
-                b5 b5Var = (b5) this.c;
-                TextView textView3 = (TextView) getChildAt(b5Var.V0);
-                int i11 = b5Var.W0;
+                a5 a5Var = (a5) this.c;
+                TextView textView3 = (TextView) getChildAt(a5Var.V0);
+                int i11 = a5Var.W0;
                 TextView textView4 = i11 != -1 ? (TextView) getChildAt(i11) : null;
                 paint2.setColor(textView3.getCurrentTextColor());
                 float y11 = ((textView3.getY() + textView3.getHeight()) - textView3.getPaddingBottom()) + AndroidUtilities.dp(3.0f);
                 Layout layout3 = textView3.getLayout();
                 if (layout3 != null) {
                     Layout layout4 = textView4 != null ? textView4.getLayout() : null;
-                    float interpolation2 = layout4 == null ? 0.0f : pr.f.getInterpolation(b5Var.X0);
+                    float interpolation2 = layout4 == null ? 0.0f : pr.f.getInterpolation(a5Var.X0);
                     float lerp2 = AndroidUtilities.lerp(layout3.getPrimaryHorizontal(layout3.getLineStart(0)) + textView3.getX(), layout4 != null ? layout4.getPrimaryHorizontal(layout3.getLineStart(0)) + textView4.getX() : 0.0f, interpolation2);
                     canvas.drawLine(lerp2, y11, AndroidUtilities.lerp(layout3.getPrimaryHorizontal(layout3.getLineEnd(0)) - layout3.getPrimaryHorizontal(layout3.getLineStart(0)), layout4 != null ? layout4.getPrimaryHorizontal(layout4.getLineEnd(0)) - layout4.getPrimaryHorizontal(layout4.getLineStart(0)) : 0.0f, interpolation2) + lerp2, y11, paint2);
                     break;
@@ -233,10 +233,10 @@ public final class i0 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(w21 w21Var, Context context) {
+    public i0(v21 v21Var, Context context) {
         super(context);
         this.a = 5;
-        this.c = w21Var;
+        this.c = v21Var;
         this.b = new z5(this, 360L, pr.h);
     }
 
@@ -269,10 +269,10 @@ public final class i0 extends LinearLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(b5 b5Var, Context context) {
+    public i0(a5 a5Var, Context context) {
         super(context);
         this.a = 8;
-        this.c = b5Var;
+        this.c = a5Var;
         Paint paint = new Paint(1);
         this.b = paint;
         paint.setStrokeWidth(AndroidUtilities.dp(2.0f));

@@ -19,11 +19,11 @@ import org.telegram.ui.Components.bu;
 import org.telegram.ui.Components.fu;
 import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.xt;
-import org.telegram.ui.ns0;
+import org.telegram.ui.ss0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class f extends fu {
     public org.telegram.ui.Components.fa S;
@@ -33,8 +33,8 @@ public final class f extends fu {
     public final /* synthetic */ k W;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(k kVar, Context context, qv0 qv0Var, int i10, oh.b bVar, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.Components.ba baVar) {
-        super(context, qv0Var, null, i10, true, bVar);
+    public f(k kVar, Context context, pv0 pv0Var, int i10, oh.b bVar, org.telegram.ui.ActionBar.g6 g6Var, org.telegram.ui.Components.ba baVar) {
+        super(context, pv0Var, null, i10, true, bVar);
         this.W = kVar;
         this.U = g6Var;
         this.V = baVar;
@@ -197,7 +197,7 @@ public final class f extends fu {
         kVar.d0 = ofInt;
         ofInt.setDuration(240L);
         kVar.d0.setInterpolator(pr.h);
-        kVar.d0.addListener(new ns0(this, 28));
+        kVar.d0.addListener(new ss0(this, 28));
         kVar.d0.start();
         return false;
     }

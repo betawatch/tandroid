@@ -1,82 +1,164 @@
 package qh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.LinearGradient;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.Shader;
+import android.os.Build;
 import android.view.View;
+import android.widget.ScrollView;
 import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.p30;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class z7 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ lg.j c;
+public abstract class z7 extends ScrollView {
+    public final Paint B;
+    public final Matrix C;
+    public boolean D;
+    public int E;
+    public float F;
+    public int G;
+    public boolean H;
+    public final lg.f a;
+    public final int b;
+    public final lg.j c;
+    public final ArrayList d;
+    public p30 e;
+    public final o7 f;
+    public boolean h;
+    public Utilities.Callback n;
+    public final org.telegram.ui.Components.z5 r;
+    public final LinearGradient s;
+    public final Paint v;
+    public final Matrix w;
+    public final org.telegram.ui.Components.z5 x;
+    public final LinearGradient y;
 
-    public /* synthetic */ z7(lg.j jVar, ArrayList arrayList, int i10) {
-        this.a = i10;
+    public z7(Context context, org.telegram.ui.ActionBar.g6 g6Var, o7 o7Var) {
+        super(context);
+        this.d = new ArrayList();
+        pr prVar = pr.h;
+        this.r = new org.telegram.ui.Components.z5(this, 0L, 300L, prVar);
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{-16777216, 0}, new float[]{0.0f, 1.0f}, tileMode);
+        this.s = linearGradient;
+        Paint paint = new Paint(1);
+        this.v = paint;
+        this.w = new Matrix();
+        this.x = new org.telegram.ui.Components.z5(this, 0L, 300L, prVar);
+        LinearGradient linearGradient2 = new LinearGradient(0.0f, 0.0f, 0.0f, AndroidUtilities.dp(8.0f), new int[]{0, -16777216}, new float[]{0.0f, 1.0f}, tileMode);
+        this.y = linearGradient2;
+        Paint paint2 = new Paint(1);
+        this.B = paint2;
+        this.C = new Matrix();
+        paint.setShader(linearGradient);
+        PorterDuff.Mode mode = PorterDuff.Mode.DST_OUT;
+        paint.setXfermode(new PorterDuffXfermode(mode));
+        paint2.setShader(linearGradient2);
+        paint2.setXfermode(new PorterDuffXfermode(mode));
+        this.f = o7Var;
+        setVerticalScrollBarEnabled(false);
+        AndroidUtilities.setScrollViewEdgeEffectColor(this, org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
+        lg.j jVar = new lg.j(this, context);
         this.c = jVar;
-        this.b = arrayList;
+        addView(jVar, k7.c6.c(-2.0f, -1));
+        lg.f fVar = new lg.f(this, context, 10);
+        this.a = fVar;
+        if (Build.VERSION.SDK_INT >= 25) {
+            fVar.setRevealOnFocusHint(false);
+        }
+        fVar.setTextSize(1, 16.0f);
+        fVar.setHintColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Xh, g6Var));
+        fVar.setTextColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, g6Var));
+        int i10 = org.telegram.ui.ActionBar.k6.Yh;
+        fVar.setCursorColor(org.telegram.ui.ActionBar.k6.v0(i10, g6Var));
+        fVar.setHandlesColor(org.telegram.ui.ActionBar.k6.v0(i10, g6Var));
+        fVar.setCursorWidth(1.5f);
+        fVar.setInputType(fVar.getInputType() | 176);
+        fVar.setSingleLine(true);
+        fVar.setBackgroundDrawable(null);
+        fVar.setVerticalScrollBarEnabled(false);
+        fVar.setHorizontalScrollBarEnabled(false);
+        fVar.setTextIsSelectable(false);
+        fVar.setPadding(0, 0, 0, 0);
+        fVar.setImeOptions(268435462);
+        fVar.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        jVar.addView(fVar);
+        fVar.setHintText(LocaleController.getString(R.string.Search));
+        this.b = (int) fVar.getPaint().measureText(LocaleController.getString(R.string.Search));
+        fVar.addTextChangedListener(new x7(this));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                int i10 = 0;
-                while (true) {
-                    ArrayList arrayList = this.b;
-                    int size = arrayList.size();
-                    lg.j jVar = this.c;
-                    if (i10 >= size) {
-                        jVar.getClass();
-                        a8 a8Var = (a8) jVar.n;
-                        jVar.h.clear();
-                        jVar.b = null;
-                        jVar.c = false;
-                        a8Var.a.setAllowDrawCursor(true);
-                        p7 p7Var = a8Var.f;
-                        if (p7Var != null) {
-                            p7Var.run();
-                        }
-                        if (a8Var.H) {
-                            a8Var.fullScroll(130);
-                            a8Var.H = false;
-                            break;
-                        }
-                    } else {
-                        jVar.removeView((View) arrayList.get(i10));
-                        i10++;
-                    }
-                }
-                break;
-            default:
-                int i11 = 0;
-                while (true) {
-                    ArrayList arrayList2 = this.b;
-                    int size2 = arrayList2.size();
-                    lg.j jVar2 = this.c;
-                    if (i11 >= size2) {
-                        ArrayList arrayList3 = jVar2.h;
-                        a8 a8Var2 = (a8) jVar2.n;
-                        arrayList3.clear();
-                        jVar2.b = null;
-                        jVar2.c = false;
-                        a8Var2.a.setAllowDrawCursor(true);
-                        p7 p7Var2 = a8Var2.f;
-                        if (p7Var2 != null) {
-                            p7Var2.run();
-                        }
-                        if (a8Var2.H) {
-                            a8Var2.fullScroll(130);
-                            a8Var2.H = false;
-                            break;
-                        }
-                    } else {
-                        jVar2.removeView((View) arrayList2.get(i11));
-                        i11++;
-                    }
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float scrollY = getScrollY();
+        canvas.saveLayerAlpha(0.0f, scrollY, getWidth(), getHeight() + r0, 255, 31);
+        super.dispatchDraw(canvas);
+        canvas.save();
+        float e6 = this.r.e(canScrollVertically(-1));
+        Matrix matrix = this.w;
+        matrix.reset();
+        matrix.postTranslate(0.0f, scrollY);
+        this.s.setLocalMatrix(matrix);
+        Paint paint = this.v;
+        paint.setAlpha((int) (e6 * 255.0f));
+        canvas.drawRect(0.0f, scrollY, getWidth(), AndroidUtilities.dp(8.0f) + r0, paint);
+        float e10 = this.x.e(canScrollVertically(1));
+        Matrix matrix2 = this.C;
+        matrix2.reset();
+        matrix2.postTranslate(0.0f, (getHeight() + r0) - AndroidUtilities.dp(8.0f));
+        this.y.setLocalMatrix(matrix2);
+        Paint paint2 = this.B;
+        paint2.setAlpha((int) (e10 * 255.0f));
+        canvas.drawRect(0.0f, (getHeight() + r0) - AndroidUtilities.dp(8.0f), getWidth(), getHeight() + r0, paint2);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.widget.ScrollView, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(150.0f), TLObject.FLAG_31));
+    }
+
+    @Override // android.widget.ScrollView, android.view.ViewGroup, android.view.ViewParent
+    public final boolean requestChildRectangleOnScreen(View view, Rect rect, boolean z4) {
+        if (this.D) {
+            this.D = false;
+            return false;
         }
+        rect.offset(view.getLeft() - view.getScrollX(), view.getTop() - view.getScrollY());
+        rect.top = org.telegram.messenger.y3.C(20.0f, this.E, rect.top);
+        rect.bottom = org.telegram.messenger.y3.C(50.0f, this.E, rect.bottom);
+        return super.requestChildRectangleOnScreen(view, rect, z4);
+    }
+
+    public void setContainerHeight(float f10) {
+        this.F = f10;
+        lg.j jVar = this.c;
+        if (jVar != null) {
+            jVar.requestLayout();
+        }
+    }
+
+    public void setOnSearchTextChange(Utilities.Callback<String> callback) {
+        this.n = callback;
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.h = true;
+        this.a.setText(charSequence);
+        this.h = false;
     }
 }

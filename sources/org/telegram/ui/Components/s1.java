@@ -32,9 +32,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.cd0;
-import org.telegram.ui.mf1;
+import org.telegram.ui.sf1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.c2, ResultCallback, org.telegram.ui.jy {
     public final /* synthetic */ int a = 3;
@@ -143,7 +143,7 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.c2, R
 
     @Override // org.telegram.tgnet.ResultCallback
     public void onComplete(Object obj) {
-        x11 x11Var = (x11) this.d;
+        w11 w11Var = (w11) this.d;
         lp lpVar = (lp) this.e;
         Pair pair = (Pair) obj;
         if (pair == null || ((Long) pair.first).longValue() != this.b) {
@@ -152,10 +152,10 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.c2, R
         Drawable drawable = lpVar.b;
         if (drawable instanceof fc0) {
             fc0 fc0Var = (fc0) drawable;
-            fc0Var.t(x11.e((Bitmap) pair.second), this.c >= 0 ? 100 : -100);
-            fc0Var.u(x11Var.I);
+            fc0Var.t(w11.e((Bitmap) pair.second), this.c >= 0 ? 100 : -100);
+            fc0Var.u(w11Var.I);
         }
-        x11Var.invalidate();
+        w11Var.invalidate();
     }
 
     @Override // org.telegram.tgnet.ResultCallback
@@ -165,7 +165,7 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.c2, R
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // org.telegram.ui.jy
-    public boolean v(org.telegram.ui.py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, mf1 mf1Var) {
+    public boolean v(org.telegram.ui.py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
         Activity activity;
         String str;
         TLRPC.Chat chat;
@@ -180,7 +180,7 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.c2, R
         final long j10 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
         Activity parentActivity = pyVar2.getParentActivity();
         final int i13 = this.c;
-        sh.j1 j1Var = new sh.j1(mf1Var, pyVar2, j10, i13);
+        sh.j1 j1Var = new sh.j1(sf1Var, pyVar2, j10, i13);
         if (parentActivity == null) {
             return true;
         }
@@ -364,8 +364,8 @@ public final /* synthetic */ class s1 implements org.telegram.ui.ActionBar.c2, R
         org.telegram.tgnet.k.b(this, tL_error);
     }
 
-    public /* synthetic */ s1(x11 x11Var, long j10, lp lpVar, int i10) {
-        this.d = x11Var;
+    public /* synthetic */ s1(w11 w11Var, long j10, lp lpVar, int i10) {
+        this.d = w11Var;
         this.b = j10;
         this.e = lpVar;
         this.c = i10;

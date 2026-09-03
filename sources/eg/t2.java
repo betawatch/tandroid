@@ -18,13 +18,13 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.z5;
-import qh.s6;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class t2 extends j {
     public final Rect A0;
@@ -36,7 +36,7 @@ public final class t2 extends j {
     public final int p0;
     public boolean q0;
     public final z5 r0;
-    public final kv0 s0;
+    public final jv0 s0;
     public final int t0;
     public boolean u0;
     public final z5 v0;
@@ -45,7 +45,7 @@ public final class t2 extends j {
     public boolean y0;
     public boolean z0;
 
-    public t2(Context context, PointF pointF, kv0 kv0Var, String str, int i10) {
+    public t2(Context context, PointF pointF, jv0 jv0Var, String str, int i10) {
         super(context, pointF);
         this.p0 = -1;
         this.q0 = false;
@@ -59,7 +59,7 @@ public final class t2 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.o0 = str;
-        this.s0 = kv0Var;
+        this.s0 = jv0Var;
         s2 s2Var = new s2(this, context);
         this.w0 = s2Var;
         addView(s2Var, c6.c(-1.0f, -1));
@@ -67,7 +67,7 @@ public final class t2 extends j {
         this.r0 = new z5(s2Var, 0L, 500L, prVar);
         this.v0 = new z5(s2Var, 0L, 350L, prVar);
         this.t0 = i10;
-        Bitmap q10 = s6.q(new a1.c(str, 20), 1920, 1920, 0, false);
+        Bitmap q10 = r6.q(new a1.c(str, 20), 1920, 1920, 0, false);
         this.x0 = q10;
         if (q10 != null) {
             s(q10);
@@ -90,7 +90,7 @@ public final class t2 extends j {
         return this.p0;
     }
 
-    public kv0 getBaseSize() {
+    public jv0 getBaseSize() {
         return this.s0;
     }
 
@@ -119,10 +119,10 @@ public final class t2 extends j {
     }
 
     @Override // eg.j
-    public tk0 getSelectionBounds() {
+    public sk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new tk0();
+            return new sk0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
@@ -132,14 +132,14 @@ public final class t2 extends j {
         getScale();
         AndroidUtilities.dp(64.0f);
         float c3 = org.telegram.ui.b.c(dp, 2.0f, getPositionX(), scaleX);
-        return new tk0(c3, org.telegram.ui.b.c(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + c3) - c3, dp2 * scaleX);
+        return new sk0(c3, org.telegram.ui.b.c(dp2, 2.0f, getPositionY(), scaleX), ((dp3 * scaleX) + c3) - c3, dp2 * scaleX);
     }
 
     @Override // eg.j
     public final void k() {
-        kv0 kv0Var = this.s0;
-        float f10 = kv0Var.a / 2.0f;
-        float f11 = kv0Var.b / 2.0f;
+        jv0 jv0Var = this.s0;
+        float f10 = jv0Var.a / 2.0f;
+        float f11 = jv0Var.b / 2.0f;
         MediaController.CropState cropState = this.D0;
         if (cropState != null) {
             f10 *= cropState.cropPw;
@@ -162,9 +162,9 @@ public final class t2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        kv0 kv0Var = this.s0;
-        float f10 = kv0Var.a;
-        float f11 = kv0Var.b;
+        jv0 jv0Var = this.s0;
+        float f10 = jv0Var.a;
+        float f11 = jv0Var.b;
         MediaController.CropState cropState = this.D0;
         if (cropState != null) {
             f10 *= cropState.cropPw;
@@ -219,7 +219,7 @@ public final class t2 extends j {
         }
     }
 
-    public t2(Context context, PointF pointF, kv0 kv0Var, TLObject tLObject) {
+    public t2(Context context, PointF pointF, jv0 jv0Var, TLObject tLObject) {
         super(context, pointF);
         this.p0 = -1;
         this.q0 = false;
@@ -233,7 +233,7 @@ public final class t2 extends j {
         setRotation(0.0f);
         setScale(1.0f);
         this.n0 = tLObject;
-        this.s0 = kv0Var;
+        this.s0 = jv0Var;
         s2 s2Var = new s2(this, context);
         this.w0 = s2Var;
         addView(s2Var, c6.c(-1.0f, -1));

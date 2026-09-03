@@ -32,8 +32,8 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.dp0;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.cp0;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.o70;
 import org.telegram.ui.Components.oq;
@@ -43,7 +43,7 @@ import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.z8;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class x1 extends FrameLayout {
     public static final int[] i0 = {-2781403, -3635939};
@@ -57,8 +57,8 @@ public class x1 extends FrameLayout {
     public final TextView I;
     public final TextView J;
     public l8 K;
-    public l01 L;
-    public l01 M;
+    public k01 L;
+    public k01 M;
     public final Rect N;
     public boolean O;
     public boolean P;
@@ -73,7 +73,7 @@ public class x1 extends FrameLayout {
     public boolean a0;
     public final g6 b;
     public boolean b0;
-    public final dp0 c;
+    public final cp0 c;
     public boolean c0;
     public final FrameLayout d;
     public boolean d0;
@@ -99,7 +99,7 @@ public class x1 extends FrameLayout {
         this.a = i10;
         this.b = g6Var;
         k7.e6.b(this, 0.04f, 1.5f);
-        this.c = new dp0(this);
+        this.c = new cp0(this);
         FrameLayout frameLayout = new FrameLayout(context);
         this.d = frameLayout;
         u1 u1Var = new u1(frameLayout, g6Var, true);
@@ -279,18 +279,18 @@ public class x1 extends FrameLayout {
         }
         if (uniqueStarGift != null) {
             if (this.L == null) {
-                this.L = new l01(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
+                this.L = new k01(uniqueStarGift.title, 20.0f, AndroidUtilities.bold());
             }
             if (this.M == null) {
-                this.M = new l01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
+                this.M = new k01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", uniqueStarGift.num), 13.0f, null);
             }
-            l01 l01Var = this.L;
-            l01Var.p = f10 - AndroidUtilities.dp(8.0f);
+            k01 k01Var = this.L;
+            k01Var.p = f10 - AndroidUtilities.dp(8.0f);
             float f16 = f14 - f12;
-            l01Var.c((f10 - this.L.l()) / 2.0f, ((f11 - AndroidUtilities.dp(40.0f)) - (this.L.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f16), f12, -1, canvas);
-            l01 l01Var2 = this.M;
-            l01Var2.p = f10 - AndroidUtilities.dp(8.0f);
-            l01Var2.c((f10 - this.M.l()) / 2.0f, ((f11 - AndroidUtilities.dp(19.0f)) - (this.M.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f16), 0.6f * f12, -1, canvas);
+            k01Var.c((f10 - this.L.l()) / 2.0f, ((f11 - AndroidUtilities.dp(40.0f)) - (this.L.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f16), f12, -1, canvas);
+            k01 k01Var2 = this.M;
+            k01Var2.p = f10 - AndroidUtilities.dp(8.0f);
+            k01Var2.c((f10 - this.M.l()) / 2.0f, ((f11 - AndroidUtilities.dp(19.0f)) - (this.M.j() / 2.0f)) + (AndroidUtilities.dp(50.0f) * f16), 0.6f * f12, -1, canvas);
             canvas2 = canvas;
         }
         eg.s2 s2Var = this.G;

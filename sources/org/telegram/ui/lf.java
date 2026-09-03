@@ -8,7 +8,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class lf implements Runnable {
     public final /* synthetic */ int a;
@@ -171,7 +171,7 @@ public final /* synthetic */ class lf implements Runnable {
                 xn xnVar10 = this.b;
                 nk nkVar = xnVar10.q8;
                 if (nkVar != null && nkVar.getParent() != null) {
-                    xnVar10.u0.f1();
+                    xnVar10.u0.e1();
                     xnVar10.s8.setDrawingReady(false);
                     xnVar10.q8.setTag(null);
                     xnVar10.U0.removeView(xnVar10.q8);

@@ -1,26 +1,47 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.WindowInsets;
+import j$.util.Objects;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e41 implements View.OnApplyWindowInsetsListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class e41 extends cg.b {
+    public final SaveToGallerySettingsHelper.DialogException c;
+    public final String d;
 
-    public /* synthetic */ e41(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public e41(int i10) {
+        super(i10, false);
+        this.c = null;
     }
 
-    @Override // android.view.View.OnApplyWindowInsetsListener
-    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
-        switch (this.a) {
-            case 0:
-                return SecretMediaViewer.a((SecretMediaViewer) this.b, windowInsets);
-            default:
-                return n61.b((g51) this.b, view, windowInsets);
+    public final boolean equals(Object obj) {
+        SaveToGallerySettingsHelper.DialogException dialogException;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || e41.class != obj.getClass()) {
+            return false;
+        }
+        e41 e41Var = (e41) obj;
+        if (this.a != e41Var.a) {
+            return false;
+        }
+        String str = this.d;
+        if (str != null) {
+            return Objects.equals(str, e41Var.d);
+        }
+        SaveToGallerySettingsHelper.DialogException dialogException2 = this.c;
+        return dialogException2 == null || (dialogException = e41Var.c) == null || dialogException2.dialogId == dialogException.dialogId;
+    }
+
+    public e41(SaveToGallerySettingsHelper.DialogException dialogException) {
+        super(2, false);
+        this.c = dialogException;
+    }
+
+    public e41(int i10, String str) {
+        super(i10, false);
+        this.d = str;
+        this.c = null;
     }
 }

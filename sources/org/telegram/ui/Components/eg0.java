@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class eg0 extends org.telegram.ui.o4 {
     public final /* synthetic */ int h;
@@ -44,12 +44,12 @@ public final class eg0 extends org.telegram.ui.o4 {
         switch (this.h) {
             case 1:
                 super.onMeasure(i10, i11);
-                f91 f91Var = (f91) this.n;
-                if (f91Var.f != null) {
-                    ViewGroup.LayoutParams layoutParams = f91Var.d.getLayoutParams();
+                e91 e91Var = (e91) this.n;
+                if (e91Var.f != null) {
+                    ViewGroup.LayoutParams layoutParams = e91Var.d.getLayoutParams();
                     layoutParams.width = getMeasuredWidth();
                     layoutParams.height = getMeasuredHeight();
-                    ImageView imageView = f91Var.e;
+                    ImageView imageView = e91Var.e;
                     if (imageView != null) {
                         ViewGroup.LayoutParams layoutParams2 = imageView.getLayoutParams();
                         layoutParams2.width = getMeasuredWidth();

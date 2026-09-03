@@ -1,30 +1,27 @@
 package qh;
 
-import android.graphics.Canvas;
-import org.telegram.messenger.SharedConfig;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class f6 implements og.g {
-    public final /* synthetic */ k6 a;
+public final class f6 implements View.OnFocusChangeListener {
+    public final /* synthetic */ i6 a;
 
-    public f6(k6 k6Var) {
-        this.a = k6Var;
+    public f6(i6 i6Var) {
+        this.a = i6Var;
     }
 
-    @Override // og.g
-    public final void P(g.x xVar) {
-        xVar.a(this.a.getThemedColor(org.telegram.ui.ActionBar.k6.d6));
-        xVar.b(SharedConfig.chatBlurEnabled());
-    }
-
-    @Override // og.g
-    public final void i(Canvas canvas) {
-        int i10 = org.telegram.ui.ActionBar.k6.d6;
-        k6 k6Var = this.a;
-        canvas.drawColor(k6Var.getThemedColor(i10));
-        if (SharedConfig.chatBlurEnabled()) {
-            k6Var.i0.b(canvas, -2);
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z4) {
+        if (z4) {
+            i6 i6Var = this.a;
+            i6Var.f0 = true;
+            f2.j0 j0Var = (f2.j0) i6Var.d.getLayoutManager();
+            xh.o oVar = new xh.o(i6Var.getContext(), 2);
+            oVar.a = 1;
+            oVar.p = (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(1.0f);
+            j0Var.w0(oVar);
         }
     }
 }

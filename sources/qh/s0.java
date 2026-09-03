@@ -14,7 +14,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class s0 {
     public final long A;
@@ -81,7 +81,7 @@ public final class s0 {
     public final String y;
     public final String z;
 
-    public s0(s6 s6Var) {
+    public s0(r6 r6Var) {
         float[] fArr = new float[9];
         this.s = fArr;
         ArrayList arrayList = new ArrayList();
@@ -90,115 +90,115 @@ public final class s0 {
         this.W = 1.0f;
         this.d0 = 1.0f;
         this.e0 = 1.0f;
-        this.a = s6Var.b;
-        this.b = s6Var.d;
-        File file = s6Var.O0;
+        this.a = r6Var.b;
+        this.b = r6Var.d;
+        File file = r6Var.O0;
         this.c = file == null ? "" : file.toString();
-        File file2 = s6Var.N0;
+        File file2 = r6Var.N0;
         this.d = file2 == null ? "" : file2.toString();
-        this.e = s6Var.K;
-        File file3 = s6Var.L;
+        this.e = r6Var.K;
+        File file3 = r6Var.L;
         this.f = file3 == null ? "" : file3.toString();
-        this.g = s6Var.M;
-        this.h = s6Var.Y;
-        float f10 = s6Var.Z;
-        long j10 = s6Var.h0;
+        this.g = r6Var.M;
+        this.h = r6Var.Y;
+        float f10 = r6Var.Z;
+        long j10 = r6Var.h0;
         this.i = (long) (f10 * j10);
-        this.j = (long) (s6Var.a0 * j10);
-        this.k = s6Var.Q;
-        this.l = s6Var.R;
-        this.m = s6Var.k0;
-        this.n = s6Var.l0;
-        this.o = s6Var.m0;
-        this.p = s6Var.i0;
-        this.q = s6Var.j0;
+        this.j = (long) (r6Var.a0 * j10);
+        this.k = r6Var.Q;
+        this.l = r6Var.R;
+        this.m = r6Var.k0;
+        this.n = r6Var.l0;
+        this.o = r6Var.m0;
+        this.p = r6Var.i0;
+        this.q = r6Var.j0;
         this.r = j10;
-        s6Var.n0.getValues(fArr);
-        this.t = s6Var.A0;
-        this.u = s6Var.B0;
-        CharSequence[] charSequenceArr = {s6Var.C0};
-        this.w = s6Var.D0 ? MediaDataController.getInstance(s6Var.a).getEntities(charSequenceArr, true) : null;
+        r6Var.n0.getValues(fArr);
+        this.t = r6Var.A0;
+        this.u = r6Var.B0;
+        CharSequence[] charSequenceArr = {r6Var.C0};
+        this.w = r6Var.D0 ? MediaDataController.getInstance(r6Var.a).getEntities(charSequenceArr, true) : null;
         CharSequence charSequence = charSequenceArr[0];
         this.v = charSequence == null ? "" : charSequence.toString();
-        arrayList.addAll(s6Var.F0);
-        File file4 = s6Var.P0;
+        arrayList.addAll(r6Var.F0);
+        File file4 = r6Var.P0;
         this.y = file4 == null ? "" : file4.toString();
-        File file5 = s6Var.R0;
+        File file5 = r6Var.R0;
         this.z = file5 == null ? "" : file5.toString();
-        this.A = s6Var.S0;
-        this.B = s6Var.T0;
-        this.C = s6Var.U0;
-        File file6 = s6Var.Z0;
+        this.A = r6Var.S0;
+        this.B = r6Var.T0;
+        this.C = r6Var.U0;
+        File file6 = r6Var.Z0;
         this.D = file6 != null ? file6.toString() : "";
-        this.E = s6Var.a1;
-        this.F = s6Var.I0;
-        this.M = s6Var.w;
-        this.N = s6Var.x;
-        this.O = s6Var.y;
-        this.P = s6Var.z;
-        this.Q = s6Var.A;
-        this.R = s6Var.B;
-        this.S = s6Var.C;
-        this.T = s6Var.D;
-        this.U = s6Var.E;
-        this.V = s6Var.F;
-        this.W = s6Var.G;
-        File file7 = s6Var.o0;
+        this.E = r6Var.a1;
+        this.F = r6Var.I0;
+        this.M = r6Var.w;
+        this.N = r6Var.x;
+        this.O = r6Var.y;
+        this.P = r6Var.z;
+        this.Q = r6Var.A;
+        this.R = r6Var.B;
+        this.S = r6Var.C;
+        this.T = r6Var.D;
+        this.U = r6Var.E;
+        this.V = r6Var.F;
+        this.W = r6Var.G;
+        File file7 = r6Var.o0;
         this.X = file7 != null ? file7.getAbsolutePath() : null;
-        this.Y = s6Var.p0;
-        this.Z = s6Var.q0;
-        this.a0 = s6Var.r0;
-        this.b0 = s6Var.s0;
-        this.c0 = s6Var.t0;
-        this.d0 = s6Var.u0;
-        this.e0 = s6Var.P;
-        this.f0 = s6Var.v0;
-        this.g0 = s6Var.J0;
-        this.h0 = s6Var.K0;
-        this.i0 = s6Var.L0;
-        this.j0 = s6Var.S;
-        this.k0 = VideoEditedInfo.Part.toParts(s6Var);
+        this.Y = r6Var.p0;
+        this.Z = r6Var.q0;
+        this.a0 = r6Var.r0;
+        this.b0 = r6Var.s0;
+        this.c0 = r6Var.t0;
+        this.d0 = r6Var.u0;
+        this.e0 = r6Var.P;
+        this.f0 = r6Var.v0;
+        this.g0 = r6Var.J0;
+        this.h0 = r6Var.K0;
+        this.i0 = r6Var.L0;
+        this.j0 = r6Var.S;
+        this.k0 = VideoEditedInfo.Part.toParts(r6Var);
     }
 
-    public final s6 a() {
-        s6 s6Var = new s6();
-        s6Var.b = this.a;
-        s6Var.c = true;
-        s6Var.d = this.b;
+    public final r6 a() {
+        r6 r6Var = new r6();
+        r6Var.b = this.a;
+        r6Var.c = true;
+        r6Var.d = this.b;
         String str = this.c;
         if (!TextUtils.isEmpty(str)) {
-            s6Var.O0 = new File(str);
+            r6Var.O0 = new File(str);
         }
         String str2 = this.d;
         if (!TextUtils.isEmpty(str2)) {
-            s6Var.N0 = new File(str2);
+            r6Var.N0 = new File(str2);
         }
-        s6Var.K = this.e;
+        r6Var.K = this.e;
         String str3 = this.f;
         if (str3 != null) {
-            s6Var.L = new File(str3);
+            r6Var.L = new File(str3);
         }
-        s6Var.M = this.g;
-        s6Var.Y = this.h;
+        r6Var.M = this.g;
+        r6Var.Y = this.h;
         long j10 = this.r;
-        s6Var.h0 = j10;
+        r6Var.h0 = j10;
         if (j10 > 0) {
-            s6Var.Z = this.i / j10;
-            s6Var.a0 = this.j / j10;
+            r6Var.Z = this.i / j10;
+            r6Var.a0 = this.j / j10;
         } else {
-            s6Var.Z = 0.0f;
-            s6Var.a0 = 1.0f;
+            r6Var.Z = 0.0f;
+            r6Var.a0 = 1.0f;
         }
-        s6Var.Q = this.k;
-        s6Var.R = this.l;
-        s6Var.k0 = this.m;
-        s6Var.l0 = this.n;
-        s6Var.m0 = this.o;
-        s6Var.i0 = this.p;
-        s6Var.j0 = this.q;
-        s6Var.n0.setValues(this.s);
-        s6Var.A0 = this.t;
-        s6Var.B0 = this.u;
+        r6Var.Q = this.k;
+        r6Var.R = this.l;
+        r6Var.k0 = this.m;
+        r6Var.l0 = this.n;
+        r6Var.m0 = this.o;
+        r6Var.i0 = this.p;
+        r6Var.j0 = this.q;
+        r6Var.n0.setValues(this.s);
+        r6Var.A0 = this.t;
+        r6Var.B0 = this.u;
         String str4 = this.v;
         if (str4 != null) {
             SpannableString spannableString = new SpannableString(str4);
@@ -207,65 +207,65 @@ public final class s0 {
             }
             CharSequence replaceEmoji = Emoji.replaceEmoji(spannableString, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), true);
             MessageObject.addEntitiesToText(replaceEmoji, this.w, true, false, true, false);
-            s6Var.C0 = MessageObject.replaceAnimatedEmoji(replaceEmoji, this.w, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt());
+            r6Var.C0 = MessageObject.replaceAnimatedEmoji(replaceEmoji, this.w, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt());
         } else {
-            s6Var.C0 = "";
+            r6Var.C0 = "";
         }
-        ArrayList arrayList = s6Var.F0;
+        ArrayList arrayList = r6Var.F0;
         arrayList.clear();
         arrayList.addAll(this.x);
         String str5 = this.y;
         if (str5 != null) {
-            s6Var.P0 = new File(str5);
+            r6Var.P0 = new File(str5);
         }
         String str6 = this.z;
         if (str6 != null) {
-            s6Var.R0 = new File(str6);
+            r6Var.R0 = new File(str6);
         }
-        s6Var.S0 = this.A;
-        s6Var.T0 = this.B;
-        s6Var.U0 = this.C;
+        r6Var.S0 = this.A;
+        r6Var.T0 = this.B;
+        r6Var.U0 = this.C;
         String str7 = this.D;
         if (str7 != null) {
-            s6Var.Z0 = new File(str7);
+            r6Var.Z0 = new File(str7);
         }
-        s6Var.a1 = this.E;
-        s6Var.I0 = this.F;
-        s6Var.g = this.G;
-        s6Var.f = this.H;
-        s6Var.e = this.I;
-        s6Var.J = this.L;
-        s6Var.I = this.K;
-        s6Var.H = this.J;
-        s6Var.w = this.M;
-        s6Var.x = this.N;
-        s6Var.y = this.O;
-        s6Var.z = this.P;
-        s6Var.A = this.Q;
-        s6Var.B = this.R;
-        s6Var.C = this.S;
-        s6Var.D = this.T;
-        s6Var.E = this.U;
-        s6Var.F = this.V;
-        s6Var.G = this.W;
+        r6Var.a1 = this.E;
+        r6Var.I0 = this.F;
+        r6Var.g = this.G;
+        r6Var.f = this.H;
+        r6Var.e = this.I;
+        r6Var.J = this.L;
+        r6Var.I = this.K;
+        r6Var.H = this.J;
+        r6Var.w = this.M;
+        r6Var.x = this.N;
+        r6Var.y = this.O;
+        r6Var.z = this.P;
+        r6Var.A = this.Q;
+        r6Var.B = this.R;
+        r6Var.C = this.S;
+        r6Var.D = this.T;
+        r6Var.E = this.U;
+        r6Var.F = this.V;
+        r6Var.G = this.W;
         String str8 = this.X;
         if (str8 != null) {
-            s6Var.o0 = new File(str8);
+            r6Var.o0 = new File(str8);
         }
-        s6Var.p0 = this.Y;
-        s6Var.q0 = this.Z;
-        s6Var.r0 = this.a0;
-        s6Var.s0 = this.b0;
-        s6Var.t0 = this.c0;
-        s6Var.u0 = this.d0;
-        s6Var.P = this.e0;
-        s6Var.v0 = this.f0;
-        s6Var.J0 = this.g0;
-        s6Var.K0 = this.h0;
-        s6Var.L0 = this.i0;
-        s6Var.S = this.j0;
-        s6Var.T = VideoEditedInfo.Part.toStoryEntries(this.k0);
-        return s6Var;
+        r6Var.p0 = this.Y;
+        r6Var.q0 = this.Z;
+        r6Var.r0 = this.a0;
+        r6Var.s0 = this.b0;
+        r6Var.t0 = this.c0;
+        r6Var.u0 = this.d0;
+        r6Var.P = this.e0;
+        r6Var.v0 = this.f0;
+        r6Var.J0 = this.g0;
+        r6Var.K0 = this.h0;
+        r6Var.L0 = this.i0;
+        r6Var.S = this.j0;
+        r6Var.T = VideoEditedInfo.Part.toStoryEntries(this.k0);
+        return r6Var;
     }
 
     public final void b(NativeByteBuffer nativeByteBuffer) {

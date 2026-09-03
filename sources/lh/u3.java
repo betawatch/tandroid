@@ -40,15 +40,15 @@ import org.telegram.ui.Components.r80;
 import org.telegram.ui.Components.u80;
 import org.telegram.ui.Components.xb0;
 import org.telegram.ui.Components.y80;
-import org.telegram.ui.b11;
 import org.telegram.ui.b30;
-import org.telegram.ui.g11;
-import org.telegram.ui.r31;
+import org.telegram.ui.f11;
+import org.telegram.ui.k11;
 import org.telegram.ui.ti0;
+import org.telegram.ui.w31;
 import org.telegram.ui.xf0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class u3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -143,8 +143,8 @@ public final /* synthetic */ class u3 implements View.OnClickListener {
                 ((org.telegram.ui.ActionBar.c3) obj).a.dismissRunnable.run();
                 break;
             case 5:
-                b11 b11Var = (b11) obj2;
-                g11.U(b11Var.a, b11Var.b, ((org.telegram.ui.Components.f4) obj4).getValue() + 1, (((org.telegram.ui.Components.g4) obj3).getValue() + 1) * 60);
+                f11 f11Var = (f11) obj2;
+                k11.U(f11Var.a, f11Var.b, ((org.telegram.ui.Components.f4) obj4).getValue() + 1, (((org.telegram.ui.Components.g4) obj3).getValue() + 1) * 60);
                 ((org.telegram.ui.ActionBar.c3) obj).a.dismissRunnable.run();
                 break;
             case 6:
@@ -276,7 +276,7 @@ public final /* synthetic */ class u3 implements View.OnClickListener {
                 H.Z();
                 break;
             case 13:
-                q70 G = q70.G(((r31) obj4).container, (g6) obj2, (ImageView) obj, true);
+                q70 G = q70.G(((w31) obj4).container, (g6) obj2, (ImageView) obj, true);
                 G.V(5);
                 G.t = false;
                 G.a0(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(-32.0f));

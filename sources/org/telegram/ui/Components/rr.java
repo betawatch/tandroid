@@ -6,7 +6,7 @@ import android.view.MotionEvent;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class rr extends ImageView {
     public final /* synthetic */ int a = 1;
@@ -39,8 +39,8 @@ public final class rr extends ImageView {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rr(rk0 rk0Var, Context context) {
+    public rr(qk0 qk0Var, Context context) {
         super(context);
-        this.c = rk0Var;
+        this.c = qk0Var;
     }
 }

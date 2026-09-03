@@ -15,17 +15,17 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.gw0;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.fw0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.hx;
 import org.telegram.ui.py;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c3 implements Runnable {
     public final /* synthetic */ int a;
@@ -64,7 +64,7 @@ public final /* synthetic */ class c3 implements Runnable {
                 mh.o oVar = (mh.o) obj;
                 oVar.getClass();
                 try {
-                    tl0 currentListView = oVar.u0.C.getCurrentListView();
+                    sl0 currentListView = oVar.u0.C.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;
@@ -74,7 +74,7 @@ public final /* synthetic */ class c3 implements Runnable {
                 }
                 break;
             case 3:
-                new gw0(((mh.e0) obj).getContext()).show();
+                new fw0(((mh.e0) obj).getContext()).show();
                 break;
             case 4:
                 AndroidUtilities.showKeyboard(((mh.m0) obj).a0);
@@ -215,8 +215,8 @@ public final /* synthetic */ class c3 implements Runnable {
                         }
                         int i17 = 1 - c5Var.o0;
                         c5Var.o0 = i17;
-                        ij0 lottieAnimation = p9VarArr[2 - i17].getImageReceiver().getLottieAnimation();
-                        ij0 lottieAnimation2 = p9VarArr[c5Var.o0 + 1].getImageReceiver().getLottieAnimation();
+                        hj0 lottieAnimation = p9VarArr[2 - i17].getImageReceiver().getLottieAnimation();
+                        hj0 lottieAnimation2 = p9VarArr[c5Var.o0 + 1].getImageReceiver().getLottieAnimation();
                         if (lottieAnimation2 != null && lottieAnimation != null) {
                             lottieAnimation2.Q(lottieAnimation.r(), false);
                         }
@@ -253,7 +253,7 @@ public final /* synthetic */ class c3 implements Runnable {
                 u9 u9Var = (u9) obj;
                 u9Var.getClass();
                 try {
-                    tl0 currentListView2 = ((ja) u9Var.J0).O.getCurrentListView();
+                    sl0 currentListView2 = ((ja) u9Var.J0).O.getCurrentListView();
                     if (currentListView2 != null && currentListView2.getAdapter() != null) {
                         currentListView2.getAdapter().l();
                         break;

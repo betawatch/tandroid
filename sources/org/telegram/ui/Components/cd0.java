@@ -11,12 +11,12 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class cd0 extends FrameLayout {
-    public static final jv0 F;
-    public static final jv0 G;
-    public static final jv0 H;
+    public static final iv0 F;
+    public static final iv0 G;
+    public static final iv0 H;
     public boolean B;
     public boolean C;
     public final org.telegram.ui.ActionBar.g6 D;
@@ -37,15 +37,15 @@ public class cd0 extends FrameLayout {
     public boolean y;
 
     static {
-        jv0 jv0Var = new jv0(new k2(18), new k2(19));
-        jv0Var.c = 100.0f;
-        F = jv0Var;
-        jv0 jv0Var2 = new jv0(new k2(20), new k2(21));
-        jv0Var2.c = 100.0f;
-        G = jv0Var2;
-        jv0 jv0Var3 = new jv0(new k2(22), new k2(23));
-        jv0Var3.c = 100.0f;
-        H = jv0Var3;
+        iv0 iv0Var = new iv0(new k2(18), new k2(19));
+        iv0Var.c = 100.0f;
+        F = iv0Var;
+        iv0 iv0Var2 = new iv0(new k2(20), new k2(21));
+        iv0Var2.c = 100.0f;
+        G = iv0Var2;
+        iv0 iv0Var3 = new iv0(new k2(22), new k2(23));
+        iv0Var3.c = 100.0f;
+        H = iv0Var3;
     }
 
     public cd0(Context context, org.telegram.ui.ActionBar.g6 g6Var) {

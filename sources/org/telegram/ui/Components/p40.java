@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class p40 extends HorizontalScrollView {
     public static final RectF v = new RectF();
@@ -136,7 +136,7 @@ public final class p40 extends HorizontalScrollView {
             if (i10 < arrayList.size() - 1) {
                 n10.rightMargin = AndroidUtilities.dp(4.0f);
             }
-            h0Var.b = new l01(charSequence, this.f);
+            h0Var.b = new k01(charSequence, this.f);
             linearLayout.addView(h0Var, n10);
         }
     }

@@ -10,15 +10,15 @@ import j$.util.Objects;
 import oh.o8;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class y2 extends j {
-    public kv0 n0;
+    public jv0 n0;
     public o8 o0;
     public o8 p0;
     public ng.h0 q0;
@@ -38,7 +38,7 @@ public final class y2 extends j {
 
     @Override // eg.j, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        kv0 kv0Var = this.n0;
+        jv0 jv0Var = this.n0;
         int padding = getPadding();
         float d = this.u0.d(1.0f, false);
         if (d == 1.0f) {
@@ -50,12 +50,12 @@ public final class y2 extends j {
         o8 o8Var = this.p0;
         if (o8Var != null) {
             o8Var.e = (int) ((1.0f - d) * 255.0f);
-            o8Var.setBounds(padding, padding, ((int) kv0Var.a) - padding, ((int) kv0Var.b) - padding);
+            o8Var.setBounds(padding, padding, ((int) jv0Var.a) - padding, ((int) jv0Var.b) - padding);
             this.p0.draw(canvas);
         }
         o8 o8Var2 = this.o0;
         o8Var2.e = (int) (d * 255.0f);
-        o8Var2.setBounds(padding, padding, ((int) kv0Var.a) - padding, ((int) kv0Var.b) - padding);
+        o8Var2.setBounds(padding, padding, ((int) jv0Var.a) - padding, ((int) jv0Var.b) - padding);
         this.o0.draw(canvas);
         Rect rect = AndroidUtilities.rectTmp2;
         float width = (this.o0.getBounds().width() * 0.61f) / 2.0f;
@@ -103,23 +103,23 @@ public final class y2 extends j {
     }
 
     @Override // eg.j
-    public tk0 getSelectionBounds() {
+    public sk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new tk0();
+            return new sk0();
         }
         float scaleX = viewGroup.getScaleX();
         float scale = (getScale() + 0.4f) * getMeasuredWidth();
         float f10 = scale / 2.0f;
         float f11 = scale * scaleX;
-        return new tk0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
+        return new sk0((getPositionX() - f10) * scaleX, (getPositionY() - f10) * scaleX, f11, f11);
     }
 
     @Override // eg.j
     public final void k() {
-        kv0 kv0Var = this.n0;
-        float f10 = kv0Var.a / 2.0f;
-        float f11 = kv0Var.b / 2.0f;
+        jv0 jv0Var = this.n0;
+        float f10 = jv0Var.a / 2.0f;
+        float f11 = jv0Var.b / 2.0f;
         setX(getPositionX() - f10);
         setY(getPositionY() - f11);
         m();
@@ -141,8 +141,8 @@ public final class y2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        kv0 kv0Var = this.n0;
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) kv0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) kv0Var.b, TLObject.FLAG_30));
+        jv0 jv0Var = this.n0;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) jv0Var.a, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) jv0Var.b, TLObject.FLAG_30));
     }
 
     public final void q(boolean z4) {

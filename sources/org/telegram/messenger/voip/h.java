@@ -4,7 +4,6 @@ import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.Point;
 import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
@@ -38,7 +37,7 @@ import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.fo0;
+import org.telegram.ui.Components.eo0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.si0;
@@ -46,12 +45,14 @@ import org.telegram.ui.Components.z4;
 import org.telegram.ui.a6;
 import org.telegram.ui.ac;
 import org.telegram.ui.b7;
+import org.telegram.ui.bd;
 import org.telegram.ui.c6;
 import org.telegram.ui.d6;
 import org.telegram.ui.h80;
 import org.telegram.ui.h9;
 import org.telegram.ui.l4;
 import org.telegram.ui.m9;
+import org.telegram.ui.na1;
 import org.telegram.ui.p4;
 import org.telegram.ui.p5;
 import org.telegram.ui.pa;
@@ -64,7 +65,7 @@ import org.telegram.ui.y3;
 import org.telegram.ui.y5;
 import org.telegram.ui.y8;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class h implements Runnable {
     public final /* synthetic */ int a;
@@ -77,12 +78,12 @@ public final /* synthetic */ class h implements Runnable {
         this.c = obj2;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:145:0x040d, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:147:0x041c, code lost:
     
         r14 = new java.util.ArrayList();
      */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x014b  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x014f  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x015a  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x015e  */
     @Override // java.lang.Runnable
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -101,29 +102,26 @@ public final /* synthetic */ class h implements Runnable {
         Object obj2 = this.b;
         switch (i12) {
             case 0:
-                VideoCapturerDevice.lambda$checkScreenCapturerSize$1((VideoCapturerDevice) obj2, (Point) obj);
-                break;
-            case 1:
                 ((VideoCapturerDevice) obj2).lambda$init$4((String) obj);
                 break;
-            case 2:
+            case 1:
                 ((VoIPService) obj2).lambda$startGroupCall$21((TL_update.TL_updateGroupCall) obj);
                 break;
-            case 3:
+            case 2:
                 ((VoIPService) obj2).lambda$createGroupInstance$71((String) obj);
                 break;
-            case 4:
+            case 3:
                 ((VoIPService) obj2).lambda$startConferenceGroupCall$56((l0) obj);
                 break;
-            case 5:
+            case 4:
                 ((VoIPService) obj2).lambda$startScreenCapture$58((TLRPC.Updates) obj);
                 break;
-            case 6:
+            case 5:
                 ((VoipAudioManager) obj2).lambda$isBluetoothAndSpeakerOnAsync$2((Utilities.Callback2) obj);
                 break;
-            case 7:
+            case 6:
                 org.telegram.ui.ActionBar.k kVar = (org.telegram.ui.ActionBar.k) obj2;
-                boolean canScrollVertically = ((fo0) obj).canScrollVertically(-1);
+                boolean canScrollVertically = ((eo0) obj).canScrollVertically(-1);
                 boolean z4 = !canScrollVertically;
                 if (kVar.n1 != z4) {
                     ValueAnimator valueAnimator = kVar.p1;
@@ -142,7 +140,7 @@ public final /* synthetic */ class h implements Runnable {
                     break;
                 }
                 break;
-            case 8:
+            case 7:
                 org.telegram.ui.ActionBar.k kVar2 = (org.telegram.ui.ActionBar.k) obj2;
                 boolean canScrollVertically2 = ((RecyclerView) obj).canScrollVertically(-1);
                 boolean z10 = !canScrollVertically2;
@@ -163,7 +161,7 @@ public final /* synthetic */ class h implements Runnable {
                     break;
                 }
                 break;
-            case 9:
+            case 8:
                 ActionBarLayout actionBarLayout = (ActionBarLayout) obj2;
                 Drawable drawable = ActionBarLayout.m1;
                 actionBarLayout.b0((p2) obj, false);
@@ -174,7 +172,7 @@ public final /* synthetic */ class h implements Runnable {
                     break;
                 }
                 break;
-            case 10:
+            case 9:
                 p2 p2Var = (p2) obj2;
                 p2 p2Var2 = (p2) obj;
                 Drawable drawable2 = ActionBarLayout.m1;
@@ -184,7 +182,7 @@ public final /* synthetic */ class h implements Runnable {
                 p2Var2.onTransitionAnimationEnd(true, false);
                 p2Var2.onBecomeFullyVisible();
                 break;
-            case 11:
+            case 10:
                 f6 f6Var = (f6) obj2;
                 ArrayList arrayList2 = (ArrayList) obj;
                 int size = arrayList2.size();
@@ -215,7 +213,7 @@ public final /* synthetic */ class h implements Runnable {
                     break;
                 }
                 break;
-            case 12:
+            case 11:
                 f6 f6Var2 = (f6) obj2;
                 e6 e6Var = (e6) obj;
                 TLRPC.TL_wallPaper tL_wallPaper = e6Var.a;
@@ -239,15 +237,15 @@ public final /* synthetic */ class h implements Runnable {
                 }
                 AndroidUtilities.runOnUIThread(new r5((Object) f6Var2, (Object) arrayList4, false, 6));
                 break;
-            case 13:
+            case 12:
                 j6 j6Var = (j6) obj2;
                 j6Var.d((File) obj, j6Var.e0);
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.p(j6Var, 19));
                 break;
-            case 14:
+            case 13:
                 ((org.telegram.ui.r) obj2).X((TLRPC.TL_messages_archivedStickers) obj);
                 break;
-            case 15:
+            case 14:
                 l4 l4Var = (l4) obj2;
                 af.f fVar = (af.f) obj;
                 y3 y3Var = l4Var.H;
@@ -259,11 +257,11 @@ public final /* synthetic */ class h implements Runnable {
                     break;
                 }
                 break;
-            case 16:
+            case 15:
                 ((l4) obj2).O0.lock();
                 ((AnimatorSet) obj).start();
                 break;
-            case 17:
+            case 16:
                 ArrayList arrayList5 = (ArrayList) obj;
                 s4 s4Var = ((p4) obj2).a;
                 if (!arrayList5.isEmpty()) {
@@ -279,7 +277,7 @@ public final /* synthetic */ class h implements Runnable {
                     }
                 }
                 break;
-            case 18:
+            case 17:
                 y5 y5Var = (y5) obj2;
                 TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = (TL_stories.TL_premium_boostsStatus) obj;
                 y5Var.O = tL_premium_boostsStatus;
@@ -292,7 +290,7 @@ public final /* synthetic */ class h implements Runnable {
                 y5Var.G0(true);
                 y5Var.E0(null);
                 break;
-            case 19:
+            case 18:
                 d6 d6Var = (d6) obj2;
                 CacheByChatsController.KeepMediaException keepMediaException = (CacheByChatsController.KeepMediaException) obj;
                 ArrayList arrayList6 = d6Var.c;
@@ -314,18 +312,18 @@ public final /* synthetic */ class h implements Runnable {
                     break;
                 }
                 break;
-            case 20:
+            case 19:
                 b7.Y((b7) obj2, (d2) obj);
                 break;
-            case 21:
+            case 20:
                 si0 si0Var = new si0((Context) obj2, LocaleController.getString(R.string.InviteByQRCode), ((String[]) obj)[0], LocaleController.getString(R.string.QRCodeLinkGroupCall), false);
                 si0Var.m(R.raw.qr_code_logo);
                 si0Var.show();
                 break;
-            case 22:
+            case 21:
                 ((y8) obj2).b.j0(((TLRPC.Message) l.d.i(1, ((h9) obj).c)).id, 100);
                 break;
-            case 23:
+            case 22:
                 v9 v9Var = (v9) obj2;
                 String str = (String) obj;
                 u9 u9Var = v9Var.I;
@@ -337,7 +335,7 @@ public final /* synthetic */ class h implements Runnable {
                     break;
                 }
                 break;
-            case 24:
+            case 23:
                 v9 v9Var2 = (v9) obj2;
                 MrzRecognizer.Result result = (MrzRecognizer.Result) obj;
                 v9Var2.f.setText(result.rawMRZ);
@@ -348,7 +346,7 @@ public final /* synthetic */ class h implements Runnable {
                 }
                 AndroidUtilities.runOnUIThread(new m9(v9Var2, 3), 1200L);
                 break;
-            case 25:
+            case 24:
                 v9 v9Var3 = (v9) obj2;
                 l7.w0 w0Var = (l7.w0) obj;
                 RectF rectF = (RectF) w0Var.c;
@@ -412,15 +410,15 @@ public final /* synthetic */ class h implements Runnable {
                 }
                 v9Var3.fragmentView.invalidate();
                 break;
-            case 26:
+            case 25:
                 pa.W((pa) obj2, (String) obj);
                 break;
-            case 27:
+            case 26:
                 sb sbVar = (sb) obj2;
                 qc.a0(sbVar).Q(R.raw.ic_ban, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.RestrictedParticipantSending, UserObject.getFirstName((TLRPC.User) obj)))).k(false);
                 sbVar.W0();
                 break;
-            case 28:
+            case 27:
                 sb sbVar2 = (sb) obj2;
                 TLObject tLObject = (TLObject) obj;
                 if (tLObject instanceof TLRPC.TL_boolTrue) {
@@ -438,13 +436,18 @@ public final /* synthetic */ class h implements Runnable {
                 }
                 l.d.v(i11, a02, i10, 36);
                 break;
-            default:
+            case 28:
                 ac acVar = (ac) obj2;
                 acVar.d = (TL_stories.TL_premium_boostsStatus) obj;
                 acVar.F.animate().cancel();
                 acVar.F.animate().alpha(0.0f).setDuration(100L).setStartDelay(0L).setListener(new s5(acVar, 15));
                 acVar.d(true);
                 acVar.c(null);
+                break;
+            default:
+                bd bdVar = (bd) obj2;
+                bdVar.getClass();
+                bdVar.presentFragment(na1.d0((TLRPC.Chat) obj, true));
                 break;
         }
     }

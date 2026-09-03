@@ -16,10 +16,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.jn;
+import org.telegram.ui.Components.in;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class r8 extends FrameLayout {
     public int a;
@@ -30,7 +30,7 @@ public final class r8 extends FrameLayout {
     public LinearLayout f;
     public org.telegram.ui.Components.k6 h;
     public View n;
-    public jn r;
+    public in r;
 
     public r8(Context context) {
         super(context);
@@ -85,9 +85,9 @@ public final class r8 extends FrameLayout {
             this.f.setClipChildren(false);
             setClipChildren(false);
             addView(this.f, k7.c6.e(-2, -2, 16));
-            jn jnVar = new jn(getContext(), 6);
-            this.r = jnVar;
-            jnVar.setBackground(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i6, false), 2, -1));
+            in inVar = new in(getContext(), 6);
+            this.r = inVar;
+            inVar.setBackground(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i6, false), 2, -1));
             addView(this.r, k7.c6.e(76, -1, LocaleController.isRTL ? 3 : 5));
         }
         this.h.setText(str);

@@ -1,60 +1,89 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Canvas;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class vo0 extends org.telegram.ui.Components.tl0 {
-    public final /* synthetic */ int U2;
-    public final /* synthetic */ dp0 V2;
+public final class vo0 extends FrameLayout {
+    public long a;
+    public TL_stars.starGiftAttributeBackdrop b;
+    public TL_stars.starGiftAttributePattern c;
+    public final FrameLayout d;
+    public final lh.u1 e;
+    public final org.telegram.ui.Components.p9 f;
+    public final lh.y1 h;
+    public TLRPC.Document n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vo0(dp0 dp0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
-        super(context, g6Var);
-        this.V2 = dp0Var;
-        this.U2 = i10;
-    }
-
-    @Override // org.telegram.ui.Components.tl0
-    public final Integer W0(int i10) {
-        dp0 dp0Var = this.V2;
-        if ((i10 < dp0Var.Q || i10 >= dp0Var.R) && (i10 < dp0Var.S || i10 >= dp0Var.T)) {
-            return super.W0(i10);
+    public vo0(Context context, org.telegram.ui.ActionBar.g6 g6Var, boolean z4) {
+        super(context);
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.d = frameLayout;
+        lh.u1 u1Var = new lh.u1(frameLayout, g6Var, false);
+        this.e = u1Var;
+        frameLayout.setBackground(u1Var);
+        addView(frameLayout, k7.c6.e(-1, -1, 119));
+        k7.e6.b(frameLayout, 0.025f, 1.25f);
+        org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
+        this.f = p9Var;
+        frameLayout.addView(p9Var, k7.c6.d(80, 80.0f, 17, 0.0f, 12.0f, 0.0f, 12.0f));
+        if (!z4) {
+            this.h = null;
+            return;
         }
-        return 0;
+        lh.y1 y1Var = new lh.y1(context);
+        this.h = y1Var;
+        addView(y1Var, k7.c6.d(-2, -2.0f, 53, 0.0f, 2.0f, 1.0f, 0.0f));
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        O0(canvas, this.V2.Q, Math.max(r0.T, r0.R) - 1, org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, this.m2), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
-        super.onDraw(canvas);
+    public final void a(int i10, TL_stars.TL_starGiftUnique tL_starGiftUnique) {
+        this.a = tL_starGiftUnique.id;
+        boolean z4 = i10 % 3 == 1;
+        setPadding(z4 ? AndroidUtilities.dp(4.0f) : 0, 0, z4 ? AndroidUtilities.dp(4.0f) : 0, 0);
+        c(tL_starGiftUnique.getDocument(), tL_starGiftUnique);
+        this.b = (TL_stars.starGiftAttributeBackdrop) mh.t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributeBackdrop.class);
+        this.c = (TL_stars.starGiftAttributePattern) mh.t7.l(tL_starGiftUnique.attributes, TL_stars.starGiftAttributePattern.class);
+        TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = this.b;
+        lh.u1 u1Var = this.e;
+        u1Var.d(stargiftattributebackdrop);
+        u1Var.e(this.c);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        dp0 dp0Var = this.V2;
-        ip0 ip0Var = dp0Var.g0;
-        dp0.a(dp0Var);
-        if (dp0Var.C != null) {
-            if (dp0Var.B == null || !dp0Var.c()) {
+    public final void b(boolean z4, boolean z10) {
+        this.e.f(z4, z10);
+        float f10 = z4 ? 0.9f : 1.0f;
+        org.telegram.ui.Components.p9 p9Var = this.f;
+        if (z10) {
+            p9Var.animate().scaleX(f10).scaleY(f10).start();
+            return;
+        }
+        p9Var.animate().cancel();
+        p9Var.setScaleX(f10);
+        p9Var.setScaleY(f10);
+    }
+
+    public final void c(TLRPC.Document document, TL_stars.StarGift starGift) {
+        org.telegram.ui.Components.p9 p9Var = this.f;
+        if (document == null) {
+            p9Var.b();
+            this.n = null;
+        } else {
+            if (this.n == document) {
                 return;
             }
-            dp0Var.B.g(false);
-            return;
+            this.n = document;
+            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, AndroidUtilities.dp(100.0f));
+            p9Var.l(ImageLocation.getForDocument(document), "100_100", ImageLocation.getForDocument(closestPhotoSizeWithSize, document), "100_100", DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.k6.a7, 0.3f), starGift);
         }
-        mh.l7 l7Var = this.U2 == 1 ? ip0Var.c : ip0Var.b;
-        if (l7Var == null || !dp0Var.c()) {
-            return;
-        }
-        l7Var.a();
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        dp0.a(this.V2);
+    public long getGiftId() {
+        return this.a;
     }
 }

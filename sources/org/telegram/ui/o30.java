@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class o30 extends org.telegram.ui.Components.w7 {
     public final /* synthetic */ d60 B;
@@ -27,7 +27,7 @@ public final class o30 extends org.telegram.ui.Components.w7 {
         textView.setGravity(51);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setOnClickListener(new org.telegram.ui.Components.sx0(24, this, textView));
+        textView.setOnClickListener(new org.telegram.ui.Components.rx0(24, this, textView));
         return textView;
     }
 }

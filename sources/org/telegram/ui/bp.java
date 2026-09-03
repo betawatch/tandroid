@@ -6,16 +6,16 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class bp extends org.telegram.ui.Components.sl0 {
+public final class bp extends org.telegram.ui.Components.rl0 {
     public final /* synthetic */ dp c;
 
     public bp(dp dpVar) {
         this.c = dpVar;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return m1Var.f == 1;
     }
@@ -71,14 +71,14 @@ public final class bp extends org.telegram.ui.Components.sl0 {
         dp dpVar = this.c;
         org.telegram.ui.ActionBar.g6 g6Var = dpVar.m2;
         if (i10 == 0) {
-            return new org.telegram.ui.Components.fl0(new org.telegram.ui.Cells.m4(dpVar.getContext(), g6Var));
+            return new org.telegram.ui.Components.el0(new org.telegram.ui.Cells.m4(dpVar.getContext(), g6Var));
         }
         if (i10 == 1) {
-            return new org.telegram.ui.Components.fl0(new fa(this, dpVar.getContext(), g6Var));
+            return new org.telegram.ui.Components.el0(new fa(this, dpVar.getContext(), g6Var));
         }
         if (i10 != 2) {
             return null;
         }
-        return new org.telegram.ui.Components.fl0(new org.telegram.ui.Cells.a9(dpVar.getContext(), 12, g6Var));
+        return new org.telegram.ui.Components.el0(new org.telegram.ui.Cells.a9(dpVar.getContext(), 12, g6Var));
     }
 }

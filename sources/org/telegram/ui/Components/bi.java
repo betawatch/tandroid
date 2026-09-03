@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class bi extends org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ ci x;
@@ -23,14 +23,14 @@ public final class bi extends org.telegram.ui.ActionBar.r1 {
                 return true;
             }
             ei eiVar2 = miVar.v0;
-            sn snVar = miVar.j0;
-            if (eiVar2 == snVar && ((mzVar = snVar.B) == null || mzVar.getVisibility() != 0)) {
+            rn rnVar = miVar.j0;
+            if (eiVar2 == rnVar && ((mzVar = rnVar.B) == null || mzVar.getVisibility() != 0)) {
                 return true;
             }
             ei eiVar3 = miVar.v0;
-            sn snVar2 = miVar.k0;
-            if (eiVar3 == snVar2) {
-                mz mzVar2 = snVar2.B;
+            rn rnVar2 = miVar.k0;
+            if (eiVar3 == rnVar2) {
+                mz mzVar2 = rnVar2.B;
                 return mzVar2 == null || mzVar2.getVisibility() != 0;
             }
         }
@@ -56,9 +56,9 @@ public final class bi extends org.telegram.ui.ActionBar.r1 {
         if (w0Var2 != null) {
             w0Var2.setTranslationY(miVar.X0.getTranslationY());
         }
-        qh.f3 f3Var = miVar.a1;
-        if (f3Var != null) {
-            f3Var.setTranslationY(miVar.X0.getTranslationY());
+        qh.e3 e3Var = miVar.a1;
+        if (e3Var != null) {
+            e3Var.setTranslationY(miVar.X0.getTranslationY());
         }
         miVar.c1.setTranslationY(miVar.i2);
         miVar.a2(0);

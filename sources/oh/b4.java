@@ -14,17 +14,17 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.lj0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class b4 extends FrameLayout {
     public final a4 a;
     public final jg.c b;
     public final TextView[] c;
-    public mj0 d;
+    public lj0 d;
     public final d4 e;
     public Paint f;
     public float h;
@@ -89,12 +89,12 @@ public final class b4 extends FrameLayout {
             }
             z10 = false;
         }
-        mj0 mj0Var = this.d;
+        lj0 lj0Var = this.d;
         a4 a4Var = this.a;
-        if (mj0Var == null) {
-            mj0 mj0Var2 = new mj0(a4Var);
-            this.d = mj0Var2;
-            mj0Var2.d(null, true, false);
+        if (lj0Var == null) {
+            lj0 lj0Var2 = new lj0(a4Var);
+            this.d = lj0Var2;
+            lj0Var2.d(null, true, false);
         }
         this.d.q = 0;
         ImageReceiver imageReceiver = a4Var.getImageReceiver();
@@ -108,9 +108,9 @@ public final class b4 extends FrameLayout {
             if (f10 != 1.0f) {
                 Paint t6 = m7.t(imageReceiver, false);
                 t6.setAlpha((int) (this.h * 255.0f));
-                mj0 mj0Var3 = this.d;
-                mj0Var3.t = t6;
-                mj0Var3.a(canvas);
+                lj0 lj0Var3 = this.d;
+                lj0Var3.t = t6;
+                lj0Var3.a(canvas);
             }
             if (this.f == null) {
                 Paint paint = new Paint(1);
@@ -121,9 +121,9 @@ public final class b4 extends FrameLayout {
                 this.f.setStrokeCap(Paint.Cap.ROUND);
             }
             this.f.setAlpha((int) (255.0f * f10 * this.h));
-            mj0 mj0Var4 = this.d;
-            mj0Var4.t = this.f;
-            mj0Var4.a(canvas);
+            lj0 lj0Var4 = this.d;
+            lj0Var4.t = this.f;
+            lj0Var4.a(canvas);
         }
     }
 

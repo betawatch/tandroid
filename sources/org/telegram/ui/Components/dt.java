@@ -13,7 +13,7 @@ import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class dt extends org.telegram.ui.ActionBar.h3 {
     public static /* synthetic */ void m(dt dtVar) {
@@ -61,10 +61,10 @@ public final class dt extends org.telegram.ui.ActionBar.h3 {
         int dp = AndroidUtilities.dp(8.0f);
         imageView.setPadding(dp, dp, dp, dp);
         frameLayout.addView(imageView, k7.c6.d(36, 36.0f, 8388661, 6.0f, 8.0f, 8.0f, 0.0f));
-        bx0 bx0Var = new bx0(activity, dtVar.currentAccount);
-        bx0Var.setStickerNum(9);
-        bx0Var.getImageReceiver().setAutoRepeat(1);
-        linearLayout.addView(bx0Var, k7.c6.t(110, 110, 1, 0, 26, 0, 0));
+        ax0 ax0Var = new ax0(activity, dtVar.currentAccount);
+        ax0Var.setStickerNum(9);
+        ax0Var.getImageReceiver().setAutoRepeat(1);
+        linearLayout.addView(ax0Var, k7.c6.t(110, 110, 1, 0, 26, 0, 0));
         TextView textView = new TextView(activity);
         textView.setGravity(1);
         int i12 = org.telegram.ui.ActionBar.k6.j5;

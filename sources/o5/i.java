@@ -68,17 +68,17 @@ import org.telegram.ui.Cells.ea;
 import org.telegram.ui.Cells.k1;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.bq0;
+import org.telegram.ui.Components.aq0;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.u5;
-import org.telegram.ui.p61;
-import org.telegram.ui.xu0;
-import qh.d6;
+import org.telegram.ui.cv0;
+import org.telegram.ui.u61;
+import qh.l6;
 import s5.m;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final class i implements a0, androidx.activity.result.b, s, l0, a3.b, o, i1, Continuation, m.k, bq0, p61, WebMessageListenerBoundaryInterface, k1 {
+public final class i implements a0, androidx.activity.result.b, s, l0, a3.b, o, i1, Continuation, m.k, aq0, u61, WebMessageListenerBoundaryInterface, k1 {
     public static i c;
     public final /* synthetic */ int a;
     public final Object b;
@@ -452,7 +452,7 @@ public final class i implements a0, androidx.activity.result.b, s, l0, a3.b, o, 
         return false;
     }
 
-    @Override // org.telegram.ui.Components.bq0
+    @Override // org.telegram.ui.Components.aq0
     public /* synthetic */ void U() {
         int i10 = this.a;
     }
@@ -690,7 +690,7 @@ public final class i implements a0, androidx.activity.result.b, s, l0, a3.b, o, 
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ xu0 g2() {
+    public /* synthetic */ cv0 g2() {
         return null;
     }
 
@@ -812,21 +812,21 @@ public final class i implements a0, androidx.activity.result.b, s, l0, a3.b, o, 
                     if (e0Var2 == null) {
                         JsReplyProxyBoundaryInterface jsReplyProxyBoundaryInterface = (JsReplyProxyBoundaryInterface) ee.b.a(JsReplyProxyBoundaryInterface.class, invocationHandler2);
                         o2.f fVar2 = (o2.f) jsReplyProxyBoundaryInterface.getOrCreatePeer(new j9.o(jsReplyProxyBoundaryInterface, 2));
-                        sf.j jVar = (sf.j) ((sf.g) this.b).b;
-                        if (webView == jVar.m && z4 && jVar.d.equals(uri.toString())) {
+                        sf.k kVar = (sf.k) ((sf.h) this.b).b;
+                        if (webView == kVar.m && z4 && kVar.d.equals(uri.toString())) {
                             int i11 = e0Var2.b;
                             if (i11 == 0) {
                                 e0Var2.e(0);
-                                jVar.g((String) e0Var2.c, fVar2);
+                                kVar.g((String) e0Var2.c, fVar2);
                                 return;
                             }
                             if (i11 == 1) {
-                                synchronized (jVar.a) {
-                                    if (!jVar.p && (fVar = jVar.n) != null && fVar == fVar2) {
+                                synchronized (kVar.a) {
+                                    if (!kVar.p && (fVar = kVar.n) != null && fVar == fVar2) {
                                         e0Var2.e(1);
                                         byte[] bArr = (byte[]) e0Var2.d;
                                         Objects.requireNonNull(bArr);
-                                        jVar.i.execute(new d6(11, jVar, bArr));
+                                        kVar.i.execute(new l6(10, kVar, bArr));
                                         return;
                                     }
                                     return;
@@ -849,7 +849,7 @@ public final class i implements a0, androidx.activity.result.b, s, l0, a3.b, o, 
     }
 
     public void p(b0 b0Var) {
-        ((y2.o) ((v2.f) ((ba.b) this.b).get())).a("FIREBASE_APPQUALITY_SESSION", new v2.c("json"), new hg.f(this, 20)).a(new v2.a(null, b0Var, v2.d.a, null), new sg.a(28));
+        ((y2.o) ((v2.f) ((ba.b) this.b).get())).a("FIREBASE_APPQUALITY_SESSION", new v2.c("json"), new hg.f(this, 20)).a(new v2.a(null, b0Var, v2.d.a, null), new sg.a(29));
     }
 
     @Override // org.telegram.ui.Cells.k1
@@ -873,7 +873,7 @@ public final class i implements a0, androidx.activity.result.b, s, l0, a3.b, o, 
         jVar.b = null;
     }
 
-    @Override // org.telegram.ui.Components.bq0
+    @Override // org.telegram.ui.Components.aq0
     public void u0() {
         switch (this.a) {
             case 23:

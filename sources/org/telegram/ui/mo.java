@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mo implements Runnable {
     public final /* synthetic */ int a;
@@ -19,18 +19,18 @@ public final /* synthetic */ class mo implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        org.telegram.ui.Components.x51 x51Var;
+        org.telegram.ui.Components.w51 w51Var;
         switch (this.a) {
             case 0:
                 MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.b, this.c, new d5((po) this.d, 4));
                 break;
             default:
-                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.d;
-                y1Var.f = this.b;
-                y1Var.h = this.c;
-                org.telegram.ui.Components.b61 b61Var = y1Var.a;
-                if (b61Var != null && (x51Var = b61Var.V2) != null && b61Var.D) {
-                    x51Var.N(true);
+                org.telegram.ui.web.x1 x1Var = (org.telegram.ui.web.x1) this.d;
+                x1Var.f = this.b;
+                x1Var.h = this.c;
+                org.telegram.ui.Components.a61 a61Var = x1Var.a;
+                if (a61Var != null && (w51Var = a61Var.V2) != null && a61Var.D) {
+                    w51Var.N(true);
                     break;
                 }
                 break;

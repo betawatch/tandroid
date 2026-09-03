@@ -2,11 +2,11 @@ package org.telegram.ui;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class qf0 extends org.telegram.ui.Components.voip.o2 {
     public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Components.wv0 f;
+    public final /* synthetic */ org.telegram.ui.Components.vv0 f;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public qf0(sf0 sf0Var, Context context, int i10) {
@@ -31,7 +31,7 @@ public final class qf0 extends org.telegram.ui.Components.voip.o2 {
             case 1:
                 return ((sf0) this.f).f0;
             default:
-                return ((qe0) this.f).J;
+                return ((pe0) this.f).J;
         }
     }
 
@@ -53,8 +53,8 @@ public final class qf0 extends org.telegram.ui.Components.voip.o2 {
                 break;
             default:
                 if (getVisibility() == 0) {
-                    qe0 qe0Var = (qe0) this.f;
-                    if (qe0Var.M <= 0 || qe0Var.K == null) {
+                    pe0 pe0Var = (pe0) this.f;
+                    if (pe0Var.M <= 0 || pe0Var.K == null) {
                     }
                 }
                 break;
@@ -63,9 +63,9 @@ public final class qf0 extends org.telegram.ui.Components.voip.o2 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qf0(qe0 qe0Var, Context context) {
-        super(qe0Var.U, context);
+    public qf0(pe0 pe0Var, Context context) {
+        super(pe0Var.U, context);
         this.e = 2;
-        this.f = qe0Var;
+        this.f = pe0Var;
     }
 }

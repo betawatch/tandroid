@@ -1,74 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.UserConfig;
+import android.text.Editable;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class oy0 extends sl0 {
-    public final ry0 c;
-    public final /* synthetic */ ry0 d;
+public interface oy0 {
+    void a(eh.c cVar);
 
-    public oy0(ry0 ry0Var, ry0 ry0Var2) {
-        this.d = ry0Var;
-        this.c = ry0Var2;
-    }
+    EditTextBoldCursor getEditField();
 
-    @Override // org.telegram.ui.Components.sl0
-    public final boolean D(f2.m1 m1Var) {
-        return true;
-    }
+    Editable getEditText();
 
-    @Override // f2.p0
-    public final int h() {
-        ArrayList arrayList = this.c.w;
-        if (arrayList == null) {
-            return 0;
-        }
-        return arrayList.size();
-    }
+    CharSequence getFieldText();
 
-    @Override // f2.p0
-    public final long i(int i10) {
-        if (this.c.w == null) {
-            return 0L;
-        }
-        return ((MediaDataController.KeywordResult) r0.get(i10)).emoji.hashCode();
-    }
+    org.telegram.ui.ActionBar.p2 getParentFragment();
 
-    @Override // f2.p0
-    public final void v(f2.m1 m1Var, int i10) {
-        qy0 qy0Var = (qy0) m1Var.a;
-        ry0 ry0Var = this.c;
-        ArrayList arrayList = ry0Var.w;
-        String str = arrayList == null ? null : ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
-        int direction = ry0Var.getDirection();
-        qy0Var.a = str;
-        if (str == null || !str.startsWith("animated_")) {
-            qy0Var.setImageDrawable(Emoji.getEmojiBigDrawable(str));
-        } else {
-            try {
-                long parseLong = Long.parseLong(str.substring(9));
-                Drawable drawable = qy0Var.b;
-                if (!(drawable instanceof l5) || ((l5) drawable).i() != parseLong) {
-                    qy0Var.setImageDrawable(l5.n(UserConfig.selectedAccount, parseLong, null, qy0Var.f.d()));
-                }
-            } catch (Exception unused) {
-                qy0Var.setImageDrawable(null);
-            }
-        }
-        if (qy0Var.d != direction) {
-            qy0Var.d = direction;
-            qy0Var.requestLayout();
-        }
-    }
+    int getVisibility();
 
-    @Override // f2.p0
-    public final f2.m1 x(ViewGroup viewGroup, int i10) {
-        return new fl0(new qy0(this.d, this.c.getContext()));
-    }
+    void setFieldText(CharSequence charSequence);
 }

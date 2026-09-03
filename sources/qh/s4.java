@@ -1,28 +1,60 @@
 package qh;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class s4 extends dg.o1 {
-    public final /* synthetic */ f9 B;
+public final class s4 implements dg.n1 {
+    public final /* synthetic */ e9 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s4(f9 f9Var, Context context, dg.c1 c1Var, Bitmap bitmap, Bitmap bitmap2, org.telegram.ui.Components.ba baVar) {
-        super(context, c1Var, bitmap, bitmap2, baVar);
-        this.B = f9Var;
+    public s4(e9 e9Var) {
+        this.a = e9Var;
     }
 
-    @Override // dg.o1
-    public final void g(dg.m mVar) {
-        int indexOf = dg.m.a.indexOf(mVar);
-        int i10 = indexOf + 1;
-        if (i10 <= 1) {
-            indexOf = i10;
+    @Override // dg.n1
+    public final void b() {
+        t4 t4Var = this.a.M0;
+        if (t4Var != null) {
+            t4Var.invalidate();
         }
-        f9 f9Var = this.B;
-        f9Var.h1.b(indexOf);
-        f9Var.g(mVar);
+    }
+
+    @Override // dg.n1
+    public final void c() {
+        e9 e9Var = this.a;
+        if (e9Var.Z0) {
+            e9Var.Z0 = false;
+        } else {
+            e9Var.h1.b(1);
+            e9Var.g((dg.m) dg.m.a.get(0));
+        }
+    }
+
+    @Override // dg.n1
+    public final boolean d() {
+        e9 e9Var = this.a;
+        boolean z4 = e9Var.G0 == null;
+        if (!z4) {
+            e9Var.D0(null, true);
+        }
+        return z4;
+    }
+
+    @Override // dg.n1
+    public final void e() {
+        e9 e9Var = this.a;
+        e9Var.A0.a.e();
+        e9Var.a1.setViewHidden(false);
+    }
+
+    @Override // dg.n1
+    public final void f() {
+        e9 e9Var = this.a;
+        if (e9Var.G0 != null) {
+            e9Var.D0(null, true);
+        }
+        e9Var.a1.setViewHidden(true);
+    }
+
+    @Override // dg.n1
+    public final void a() {
     }
 }

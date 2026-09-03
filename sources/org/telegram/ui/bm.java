@@ -26,7 +26,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class bm implements org.telegram.ui.Cells.t0 {
     public final /* synthetic */ jm a;
@@ -298,30 +298,30 @@ public final class bm implements org.telegram.ui.Cells.t0 {
                 if (wallPaper2.pattern || wallPaper2.document == null) {
                     String str2 = wallPaper2.slug;
                     TLRPC.WallPaperSettings wallPaperSettings = wallPaper2.settings;
-                    pi1 pi1Var = new pi1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false), r3.intensity / 100.0f, wallPaper2.settings.motion, null);
-                    wallPaper = pi1Var;
+                    vi1 vi1Var = new vi1(str2, wallPaperSettings.background_color, wallPaperSettings.second_background_color, wallPaperSettings.third_background_color, wallPaperSettings.fourth_background_color, AndroidUtilities.getWallpaperRotation(wallPaperSettings.rotation, false), r3.intensity / 100.0f, wallPaper2.settings.motion, null);
+                    wallPaper = vi1Var;
                     if (wallPaper2 instanceof TLRPC.TL_wallPaper) {
-                        pi1Var.g = (TLRPC.TL_wallPaper) wallPaper2;
-                        wallPaper = pi1Var;
+                        vi1Var.g = (TLRPC.TL_wallPaper) wallPaper2;
+                        wallPaper = vi1Var;
                     }
                 } else {
                     wallPaper = wallPaper2;
                 }
                 boolean q10 = org.telegram.ui.ActionBar.k6.I.q();
-                nc1 nc1Var = new nc1(wallPaper, xnVar, q10);
+                sc1 sc1Var = new sc1(wallPaper, xnVar, q10);
                 TLRPC.WallPaperSettings wallPaperSettings2 = wallPaper2.settings;
                 if (wallPaperSettings2 != null) {
                     boolean z4 = wallPaperSettings2.blur;
                     boolean z10 = wallPaperSettings2.motion;
-                    nc1Var.C1 = z4;
-                    nc1Var.B1 = z10;
-                    nc1Var.k1 = wallPaperSettings2.intensity / 100.0f;
+                    sc1Var.C1 = z4;
+                    sc1Var.B1 = z10;
+                    sc1Var.k1 = wallPaperSettings2.intensity / 100.0f;
                 }
-                nc1Var.n0 = messageObject;
-                nc1Var.c1(messageObject.getDialogId());
-                nc1Var.a.a = xnVar.ba;
-                nc1Var.m1 = new oc1(xnVar, q10);
-                xnVar.presentFragment(nc1Var);
+                sc1Var.n0 = messageObject;
+                sc1Var.c1(messageObject.getDialogId());
+                sc1Var.a.a = xnVar.ba;
+                sc1Var.m1 = new tc1(xnVar, q10);
+                xnVar.presentFragment(sc1Var);
                 return;
             }
             return;

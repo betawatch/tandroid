@@ -12,7 +12,7 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.camera.CameraController;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class rl extends am {
     public final /* synthetic */ boolean b;
@@ -25,7 +25,7 @@ public final class rl extends am {
         this.b = z4;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void D() {
         boolean z4 = ChatAttachAlertPhotoLayout.n1;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
@@ -33,7 +33,7 @@ public final class rl extends am {
         chatAttachAlertPhotoLayout.B(ChatAttachAlertPhotoLayout.p1.size());
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void G() {
         ql qlVar = this.c.B;
         int childCount = qlVar.getChildCount();
@@ -47,7 +47,7 @@ public final class rl extends am {
         }
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean J() {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
         if (!chatAttachAlertPhotoLayout.b.S) {
@@ -59,33 +59,33 @@ public final class rl extends am {
         return false;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean S() {
         return false;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void d() {
         boolean z4 = ChatAttachAlertPhotoLayout.n1;
         this.c.k0();
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean g() {
         return this.c.b.P1 != 1;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void i() {
         boolean z4 = ChatAttachAlertPhotoLayout.n1;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final ImageReceiver.BitmapHolder j(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void n() {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
         TextView textView = chatAttachAlertPhotoLayout.m0;
@@ -104,7 +104,7 @@ public final class rl extends am {
         chatAttachAlertPhotoLayout.y0(false);
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
         mi miVar = this.c.b;
         ArrayList arrayList = ChatAttachAlertPhotoLayout.o1;
@@ -131,7 +131,7 @@ public final class rl extends am {
         z4.a0(miVar.G1, miVar.j1() + ChatAttachAlertPhotoLayout.p1.size(), miVar.n1(), new ll(this, z10, z4, i11));
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean u() {
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.c;
         if (chatAttachAlertPhotoLayout.V && chatAttachAlertPhotoLayout.M != null) {
@@ -168,7 +168,7 @@ public final class rl extends am {
         return true;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean z() {
         mi miVar = this.c.b;
         return (miVar.C || miVar.E) ? false : true;

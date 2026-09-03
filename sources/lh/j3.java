@@ -6,19 +6,19 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import mh.l7;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.or0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class j3 extends f2.b0 {
-    public final /* synthetic */ pr0 d;
+    public final /* synthetic */ or0 d;
     public final /* synthetic */ n3 e;
 
-    public j3(n3 n3Var, pr0 pr0Var) {
+    public j3(n3 n3Var, or0 or0Var) {
         this.e = n3Var;
-        this.d = pr0Var;
+        this.d = or0Var;
     }
 
     @Override // f2.b0
@@ -62,10 +62,10 @@ public final class j3 extends f2.b0 {
         int b10 = m1Var.b();
         int b11 = m1Var2.b();
         boolean z4 = n3Var.d;
-        pr0 pr0Var = this.d;
+        or0 or0Var = this.d;
         if (z4) {
             n3Var.e.k(b10, b11);
-            pr0Var.e.n(n3Var.e.d);
+            or0Var.e.n(n3Var.e.d);
         } else {
             l7 l7Var = n3Var.e;
             if (l7Var.q == null) {
@@ -77,7 +77,7 @@ public final class j3 extends f2.b0 {
         h3Var.V2.S();
         if (n3Var.d) {
             HashMap hashMap = x3.Q;
-            pr0Var.f(true);
+            or0Var.f(true);
         }
         org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
         if ((U instanceof ProfileActivity) && (t0Var = ((ProfileActivity) U).s0) != null) {

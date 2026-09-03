@@ -8,12 +8,12 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.e4;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.nm0;
-import org.telegram.ui.Components.yx0;
-import qh.b5;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.mm0;
+import org.telegram.ui.Components.xx0;
+import qh.a5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -44,9 +44,9 @@ public final /* synthetic */ class e0 implements ValueAnimator.AnimatorUpdateLis
                 e4 e4Var = (e4) obj;
                 e4Var.getClass();
                 int offsetColor = AndroidUtilities.getOffsetColor(i12, i11, valueAnimator.getAnimatedFraction(), 1.0f);
-                lj0 lj0Var = e4Var.f;
-                lj0Var.setColorFilter(new PorterDuffColorFilter(offsetColor, PorterDuff.Mode.SRC_IN));
-                k6.B1(lj0Var.getDrawable(), offsetColor & 620756991, true);
+                kj0 kj0Var = e4Var.f;
+                kj0Var.setColorFilter(new PorterDuffColorFilter(offsetColor, PorterDuff.Mode.SRC_IN));
+                k6.B1(kj0Var.getDrawable(), offsetColor & 620756991, true);
                 break;
             case 2:
                 j6 j6Var = (j6) obj;
@@ -65,20 +65,20 @@ public final /* synthetic */ class e0 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 4:
                 float animatedFraction = valueAnimator.getAnimatedFraction();
-                yx0 yx0Var = (yx0) ((nm0) obj).b;
-                yx0Var.c.setAlpha(animatedFraction);
-                yx0Var.h.setAlpha(animatedFraction);
+                xx0 xx0Var = (xx0) ((mm0) obj).b;
+                xx0Var.c.setAlpha(animatedFraction);
+                xx0Var.h.setAlpha(animatedFraction);
                 if (i12 != 0) {
                     int i14 = (int) ((1.0f - animatedFraction) * i12);
-                    yx0Var.y0(i11 + i14);
-                    yx0Var.c.setTranslationY(i14);
+                    xx0Var.y0(i11 + i14);
+                    xx0Var.c.setTranslationY(i14);
                     break;
                 }
                 break;
             default:
-                b5 b5Var = (b5) obj;
-                b5Var.x1.a = i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
-                b5Var.Q0.invalidate();
+                a5 a5Var = (a5) obj;
+                a5Var.x1.a = i0.a.d(((Float) valueAnimator.getAnimatedValue()).floatValue(), i12, i11);
+                a5Var.Q0.invalidate();
                 break;
         }
     }

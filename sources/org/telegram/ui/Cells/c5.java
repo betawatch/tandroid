@@ -6,20 +6,20 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.g91;
-import org.telegram.ui.Components.ko0;
+import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.jo0;
 import org.telegram.ui.fu;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class c5 implements ko0 {
+public final class c5 implements jo0 {
     public final /* synthetic */ fu a;
 
     public c5(fu fuVar) {
         this.a = fuVar;
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public final void X(float f10, boolean z4) {
         float c3;
         int i10;
@@ -57,14 +57,14 @@ public final class c5 implements ko0 {
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 animatorSetArr[0] = animatorSet2;
                 animatorSet2.playTogether(arrayList);
-                animatorSetArr[0].addListener(new g91(fuVar, 13));
+                animatorSetArr[0].addListener(new f91(fuVar, 13));
                 animatorSetArr[0].setDuration(150L);
                 animatorSetArr[0].start();
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public final CharSequence getContentDescription() {
         StringBuilder sb = new StringBuilder();
         fu fuVar = this.a;
@@ -74,12 +74,12 @@ public final class c5 implements ko0 {
         return sb.toString();
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public final /* synthetic */ int m0() {
         return 0;
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public final void A() {
     }
 }

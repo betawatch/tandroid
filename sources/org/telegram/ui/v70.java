@@ -26,7 +26,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class v70 extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public Drawable B;
@@ -49,7 +49,7 @@ public final class v70 extends org.telegram.ui.ActionBar.p2 implements Notificat
     public fg.s0 n;
     public FrameLayout r;
     public ag.l s;
-    public org.telegram.ui.Components.ij0 v;
+    public org.telegram.ui.Components.hj0 v;
     public int w;
     public boolean x;
     public boolean y;
@@ -146,23 +146,22 @@ public final class v70 extends org.telegram.ui.ActionBar.p2 implements Notificat
         this.actionBar.setAddToContainer(false);
         ScrollView scrollView = new ScrollView(context);
         scrollView.setFillViewport(true);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
         FrameLayout frameLayout = new FrameLayout(context);
-        frameLayout.addView(lj0Var, k7.c6.e(28, 28, 17));
+        frameLayout.addView(kj0Var, k7.c6.e(28, 28, 17));
         ag.l lVar = new ag.l(this, context, frameLayout, 21);
         this.s = lVar;
         scrollView.addView(lVar, k7.c6.x(-1, -2, 51));
-        int i10 = R.raw.sun;
-        org.telegram.ui.Components.ij0 ij0Var = new org.telegram.ui.Components.ij0(i10, String.valueOf(i10), AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-        this.v = ij0Var;
-        ij0Var.h = true;
-        ij0Var.X = true;
-        ij0Var.m();
+        org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(R.raw.sun, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+        this.v = hj0Var;
+        hj0Var.h = true;
+        hj0Var.X = true;
+        hj0Var.m();
         this.v.N(org.telegram.ui.ActionBar.k6.A0().q() ? this.v.e[0] - 1 : 0);
         this.v.L(org.telegram.ui.ActionBar.k6.A0().q() ? this.v.e[0] - 1 : 0, false, false);
-        lj0Var.setContentDescription(LocaleController.getString(org.telegram.ui.ActionBar.k6.A0().q() ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
-        lj0Var.setAnimation(this.v);
-        frameLayout.setOnClickListener(new org.telegram.ui.Components.sx0(26, this, lj0Var));
+        kj0Var.setContentDescription(LocaleController.getString(org.telegram.ui.ActionBar.k6.A0().q() ? R.string.AccDescrSwitchToDayTheme : R.string.AccDescrSwitchToNightTheme));
+        kj0Var.setAnimation(this.v);
+        frameLayout.setOnClickListener(new org.telegram.ui.Components.rx0(26, this, kj0Var));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.r = frameLayout2;
         this.s.addView(frameLayout2, k7.c6.d(-1, -2.0f, 51, 0.0f, 78.0f, 0.0f, 0.0f));
@@ -186,8 +185,51 @@ public final class v70 extends org.telegram.ui.ActionBar.p2 implements Notificat
         this.n.setTextSize(1, 15.0f);
         this.n.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
         this.s.addView(this.n, k7.c6.d(-1, 48.0f, 81, 16.0f, 0.0f, 16.0f, 76.0f));
-        final int i11 = 0;
+        final int i10 = 0;
         this.n.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.r70
+            public final /* synthetic */ v70 b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                switch (i10) {
+                    case 0:
+                        v70 v70Var = this.b;
+                        if (!v70Var.y) {
+                            v70Var.y = true;
+                            v70Var.presentFragment(new og0(), true);
+                            v70Var.J = true;
+                            break;
+                        }
+                        break;
+                    default:
+                        v70 v70Var2 = this.b;
+                        if (!v70Var2.y && v70Var2.I != null) {
+                            v70Var2.y = true;
+                            org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2(view.getContext(), 3, null);
+                            d2Var.d0 = false;
+                            d2Var.q(1000L);
+                            NotificationCenter.getGlobalInstance().addObserver(new t70(v70Var2, d2Var), NotificationCenter.reloadInterface);
+                            LocaleController.getInstance().applyLanguage(v70Var2.I, true, false, v70Var2.c);
+                            break;
+                        }
+                        break;
+                }
+            }
+        });
+        org.telegram.ui.Components.ka kaVar = new org.telegram.ui.Components.ka(context, this.d, 6);
+        this.e = kaVar;
+        this.s.addView(kaVar, k7.c6.d(66, 5.0f, 49, 0.0f, 350.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.f = textView;
+        textView.setGravity(17);
+        this.f.setTextSize(1, 16.0f);
+        this.s.addView(this.f, k7.c6.d(-2, 30.0f, 81, 0.0f, 0.0f, 0.0f, 20.0f));
+        final int i11 = 1;
+        this.f.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.r70
             public final /* synthetic */ v70 b;
 
             {
@@ -221,57 +263,14 @@ public final class v70 extends org.telegram.ui.ActionBar.p2 implements Notificat
                 }
             }
         });
-        org.telegram.ui.Components.ka kaVar = new org.telegram.ui.Components.ka(context, this.d, 6);
-        this.e = kaVar;
-        this.s.addView(kaVar, k7.c6.d(66, 5.0f, 49, 0.0f, 350.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.f = textView;
-        textView.setGravity(17);
-        this.f.setTextSize(1, 16.0f);
-        this.s.addView(this.f, k7.c6.d(-2, 30.0f, 81, 0.0f, 0.0f, 0.0f, 20.0f));
-        final int i12 = 1;
-        this.f.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.r70
-            public final /* synthetic */ v70 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i12) {
-                    case 0:
-                        v70 v70Var = this.b;
-                        if (!v70Var.y) {
-                            v70Var.y = true;
-                            v70Var.presentFragment(new og0(), true);
-                            v70Var.J = true;
-                            break;
-                        }
-                        break;
-                    default:
-                        v70 v70Var2 = this.b;
-                        if (!v70Var2.y && v70Var2.I != null) {
-                            v70Var2.y = true;
-                            org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2(view.getContext(), 3, null);
-                            d2Var.d0 = false;
-                            d2Var.q(1000L);
-                            NotificationCenter.getGlobalInstance().addObserver(new t70(v70Var2, d2Var), NotificationCenter.reloadInterface);
-                            LocaleController.getInstance().applyLanguage(v70Var2.I, true, false, v70Var2.c);
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
         float f10 = 4;
         this.s.addView(frameLayout, k7.c6.d(64, 64.0f, 53, 0.0f, f10, f10, 0.0f));
         this.fragmentView = scrollView;
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.suggestedLangpack);
-        int i13 = this.c;
-        NotificationCenter.getInstance(i13).addObserver(this, NotificationCenter.configLoaded);
-        ConnectionsManager.getInstance(i13).updateDcSettings();
-        LocaleController.getInstance().loadRemoteLanguages(i13);
+        int i12 = this.c;
+        NotificationCenter.getInstance(i12).addObserver(this, NotificationCenter.configLoaded);
+        ConnectionsManager.getInstance(i12).updateDcSettings();
+        LocaleController.getInstance().loadRemoteLanguages(i12);
         U();
         this.x = true;
         V(false);

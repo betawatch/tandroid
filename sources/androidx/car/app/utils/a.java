@@ -66,9 +66,9 @@ import org.telegram.ui.Cells.c6;
 import org.telegram.ui.Cells.r7;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.b4;
+import org.telegram.ui.Components.bl0;
 import org.telegram.ui.Components.c4;
 import org.telegram.ui.Components.cl;
-import org.telegram.ui.Components.cl0;
 import org.telegram.ui.Components.dd0;
 import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.fz;
@@ -77,31 +77,31 @@ import org.telegram.ui.Components.lp;
 import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.sn;
+import org.telegram.ui.Components.rn;
 import org.telegram.ui.Components.t3;
 import org.telegram.ui.Components.u50;
 import org.telegram.ui.Components.v3;
 import org.telegram.ui.Components.voip.g2;
+import org.telegram.ui.Components.w11;
 import org.telegram.ui.Components.wc0;
-import org.telegram.ui.Components.x11;
 import org.telegram.ui.Components.xt;
 import org.telegram.ui.Components.y4;
 import org.telegram.ui.Components.y50;
 import org.telegram.ui.Components.yc0;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.Components.z50;
-import org.telegram.ui.Components.zu0;
 import org.telegram.ui.jy;
 import org.telegram.ui.ko0;
 import org.telegram.ui.lo;
-import org.telegram.ui.mf1;
 import org.telegram.ui.py;
+import org.telegram.ui.sf1;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
 import sh.n3;
 import y2.l;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements e, SuccessContinuation, g3.b, f3.f, c2, jy, MessagesStorage.StringCallback, d9, wc0, s0, ko0, y4, MediaDataController.KeywordResultCallback, ImageReceiver.ImageReceiverDelegate, MessagesStorage.BooleanCallback {
     public final /* synthetic */ int a;
@@ -132,9 +132,9 @@ public final /* synthetic */ class a implements e, SuccessContinuation, g3.b, f3
                 clVar.b.dismiss(true);
                 break;
             case 21:
-                sn snVar = (sn) this.b;
-                snVar.g0.b((TLRPC.TL_messageMediaToDo) this.d, null, null, null, z4, i10, ((Long) this.c).longValue());
-                snVar.b.dismiss(true);
+                rn rnVar = (rn) this.b;
+                rnVar.g0.b((TLRPC.TL_messageMediaToDo) this.d, null, null, null, z4, i10, ((Long) this.c).longValue());
+                rnVar.b.dismiss(true);
                 break;
             default:
                 y50 y50Var = (y50) this.b;
@@ -429,7 +429,7 @@ public final /* synthetic */ class a implements e, SuccessContinuation, g3.b, f3
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
         Bitmap bitmap;
-        x11 x11Var = (x11) this.b;
+        w11 w11Var = (w11) this.b;
         lp lpVar = (lp) this.d;
         TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) this.c;
         ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
@@ -440,9 +440,9 @@ public final /* synthetic */ class a implements e, SuccessContinuation, g3.b, f3
         if (drawable instanceof fc0) {
             fc0 fc0Var = (fc0) drawable;
             TLRPC.WallPaperSettings wallPaperSettings = wallPaper.settings;
-            fc0Var.t(x11.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
-            fc0Var.u(x11Var.I);
-            x11Var.invalidate();
+            fc0Var.t(w11.e(bitmap), (wallPaperSettings == null || wallPaperSettings.intensity >= 0) ? 100 : -100);
+            fc0Var.u(w11Var.I);
+            w11Var.invalidate();
         }
     }
 
@@ -454,7 +454,7 @@ public final /* synthetic */ class a implements e, SuccessContinuation, g3.b, f3
     @Override // oh.d9
     public void f(Canvas canvas, RectF rectF, float f10) {
         r7 r7Var = (r7) this.b;
-        cl0 cl0Var = (cl0) this.d;
+        bl0 bl0Var = (bl0) this.d;
         int[] iArr = (int[]) this.c;
         r7Var.c(canvas, rectF, f10);
         r7Var.f(canvas, rectF, f10);
@@ -463,10 +463,10 @@ public final /* synthetic */ class a implements e, SuccessContinuation, g3.b, f3
         } else {
             r7Var.e(canvas, rectF, f10);
         }
-        if (cl0Var != null && cl0Var.U && cl0Var.getVisibility() == 0) {
+        if (bl0Var != null && bl0Var.U && bl0Var.getVisibility() == 0) {
             canvas.saveLayerAlpha(0.0f, 0.0f, canvas.getWidth(), canvas.getHeight(), (int) (f10 * 255.0f), 31);
             canvas.translate(iArr[0], iArr[1]);
-            cl0Var.draw(canvas);
+            bl0Var.draw(canvas);
             canvas.restore();
         }
     }
@@ -534,20 +534,20 @@ public final /* synthetic */ class a implements e, SuccessContinuation, g3.b, f3
                     break;
                 }
             case 22:
-                sn snVar = (sn) this.b;
+                rn rnVar = (rn) this.b;
                 View view = (View) this.d;
                 c6 c6Var = (c6) this.c;
-                snVar.getClass();
+                rnVar.getClass();
                 view.setTag(null);
-                snVar.X(view, c6Var, false);
+                rnVar.X(view, c6Var, false);
                 break;
             case 26:
-                zu0 zu0Var = (zu0) this.b;
+                yu0 yu0Var = (yu0) this.b;
                 d6 d6Var = (d6) this.d;
                 ArrayList arrayList = (ArrayList) this.c;
                 d6Var.F(arrayList);
-                qc.a0(zu0Var.s1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
-                zu0Var.L(false);
+                qc.a0(yu0Var.s1).Q(R.raw.ic_delete, 36, LocaleController.formatPluralString("BotPreviewsDeleted", arrayList.size(), new Object[0])).j();
+                yu0Var.L(false);
                 break;
             default:
                 boolean[] zArr2 = (boolean[]) this.b;
@@ -583,7 +583,7 @@ public final /* synthetic */ class a implements e, SuccessContinuation, g3.b, f3
     public void run(boolean z4) {
         TLRPC.Chat chat = (TLRPC.Chat) this.b;
         p2 p2Var = (p2) this.d;
-        g2.m(chat, null, true, null, p2Var.getParentActivity(), p2Var, (AccountInstance) this.c);
+        g2.l(chat, null, true, null, p2Var.getParentActivity(), p2Var, (AccountInstance) this.c);
     }
 
     @Override // com.google.android.gms.tasks.SuccessContinuation
@@ -624,7 +624,7 @@ public final /* synthetic */ class a implements e, SuccessContinuation, g3.b, f3
     }
 
     @Override // org.telegram.ui.jy
-    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, mf1 mf1Var) {
+    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
         switch (this.a) {
             case 8:
                 return g5.X((g5) this.b, (TL_stars.TL_starGiftUnique) this.d, (py) this.c, arrayList);

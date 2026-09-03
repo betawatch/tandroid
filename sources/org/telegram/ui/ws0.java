@@ -1,79 +1,59 @@
 package org.telegram.ui;
 
-import android.R;
-import android.net.Uri;
-import org.telegram.messenger.Utilities;
+import android.view.MotionEvent;
+import org.telegram.messenger.video.VideoFramesRewinder;
+import org.telegram.messenger.video.VideoPlayerRewinder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ws0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xs0 b;
+public final class ws0 extends VideoPlayerRewinder {
+    public final /* synthetic */ PhotoViewer a;
 
-    public /* synthetic */ ws0(xs0 xs0Var, int i10) {
-        this.a = i10;
-        this.b = xs0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ws0(PhotoViewer photoViewer, VideoFramesRewinder videoFramesRewinder) {
+        super(videoFramesRewinder);
+        this.a = photoViewer;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
-    
-        if (r2 != 7) goto L32;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        i5.b bVar;
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.b.b;
-                cu0 cu0Var = photoViewer.B2;
-                if (cu0Var != null) {
-                    org.telegram.ui.Components.k71 k71Var = photoViewer.C2;
-                    if (cu0Var.e != k71Var) {
-                        cu0Var.c = false;
-                        cu0Var.d = false;
-                        if (cu0Var.b) {
-                            cu0Var.a++;
-                            cu0Var.b = false;
-                        }
-                        cu0Var.setImageResource(R.color.transparent);
-                    }
-                    if (k71Var != null) {
-                        j3.f0 f0Var = k71Var.d;
-                        if (f0Var != null) {
-                            try {
-                                f0Var.j0();
-                                j3.n0 n0Var = f0Var.N;
-                                if (n0Var != null && (bVar = n0Var.O) != null) {
-                                    int i10 = bVar.c;
-                                    if (i10 != 6) {
-                                        break;
-                                    }
-                                }
-                            } catch (Exception unused) {
-                            }
-                        }
-                        long p10 = k71Var.p() - k71Var.n();
-                        if (!cu0Var.c && !cu0Var.d && !cu0Var.b && p10 < 5250.0f) {
-                            Uri uri = k71Var.C;
-                            int i11 = cu0Var.a + 1;
-                            cu0Var.a = i11;
-                            Utilities.globalQueue.postRunnable(new bu0(cu0Var, uri, i11, 0));
-                            cu0Var.b = true;
-                        }
-                    }
-                    cu0Var.e = k71Var;
-                    break;
-                }
-                break;
-            case 1:
-                cu0.a(this.b.b.B2);
-                break;
-            default:
-                cu0.a(this.b.b.B2);
-                break;
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindCanceled() {
+        MotionEvent obtain = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
+        PhotoViewer photoViewer = this.a;
+        PhotoViewer.k(photoViewer, obtain);
+        photoViewer.w1.f(false);
+        org.telegram.ui.Components.ng0.m0.N.f(false);
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void onRewindStart(boolean z4) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.w1.e(false);
+        photoViewer.w1.d(!z4);
+        photoViewer.w1.f(true);
+        photoViewer.b0.invalidate();
+        org.telegram.ui.Components.ng0.v(z4);
+    }
+
+    @Override // org.telegram.messenger.video.VideoPlayerRewinder
+    public final void updateRewindProgressUi(long j10, float f10, boolean z4) {
+        PhotoViewer photoViewer = this.a;
+        photoViewer.w1.g(Math.abs(j10));
+        if (z4) {
+            photoViewer.n3.h(f10, false);
+            photoViewer.o3.invalidate();
+        }
+        org.telegram.ui.Components.ng0 ng0Var = org.telegram.ui.Components.ng0.m0;
+        ng0Var.N.g(0L);
+        if (z4) {
+            ng0Var.W = f10;
+            oh.b3 b3Var = ng0Var.Y;
+            if (b3Var != null) {
+                b3Var.invalidate();
+            }
+            org.telegram.ui.Components.mg0 mg0Var = ng0Var.h;
+            if (mg0Var != null) {
+                mg0Var.invalidate();
+            }
         }
     }
 }

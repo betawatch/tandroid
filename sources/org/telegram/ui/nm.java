@@ -24,7 +24,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class nm implements org.telegram.ui.Components.eg {
     public int a;
@@ -110,9 +110,9 @@ public final class nm implements org.telegram.ui.Components.eg {
             }
             if (z10) {
                 org.telegram.ui.Components.ic M = org.telegram.ui.Components.qc.a0(xnVar).M(LocaleController.getString(R.string.SwipeToReplyHint), LocaleController.getString(R.string.SwipeToReplyHintMessage), R.raw.hint_swipe_reply);
-                org.telegram.ui.Components.lj0 lj0Var = ((org.telegram.ui.Components.fc) M.e).a;
-                lj0Var.setScaleX(1.8f);
-                lj0Var.setScaleY(1.8f);
+                org.telegram.ui.Components.kj0 kj0Var = ((org.telegram.ui.Components.fc) M.e).a;
+                kj0Var.setScaleX(1.8f);
+                kj0Var.setScaleY(1.8f);
                 M.k(true);
             }
         }
@@ -143,7 +143,7 @@ public final class nm implements org.telegram.ui.Components.eg {
         for (int i14 = 1; i14 < Math.min(5, arrayList.size()); i14++) {
             MessageObject messageObject3 = (MessageObject) arrayList.get(i14);
             if (messageObject3 != null && !messageObject3.isOutOwner() && ((messageObject3.isVoice() || messageObject3.isRoundVideo()) && messageObject3.isContentUnread())) {
-                org.telegram.ui.Components.e31.u(messageObject3, true);
+                org.telegram.ui.Components.d31.u(messageObject3, true);
             }
         }
     }
@@ -230,9 +230,9 @@ public final class nm implements org.telegram.ui.Components.eg {
         }
         kVar = ((org.telegram.ui.ActionBar.p2) xnVar).actionBar;
         final org.telegram.ui.ActionBar.z n10 = kVar.n();
-        org.telegram.ui.Components.ry0 ry0Var = xnVar.a1;
-        if (ry0Var != null) {
-            ry0Var.e();
+        org.telegram.ui.Components.qy0 qy0Var = xnVar.a1;
+        if (qy0Var != null) {
+            qy0Var.e();
         }
         final int i12 = 1;
         final int i13 = 0;
@@ -430,9 +430,9 @@ public final class nm implements org.telegram.ui.Components.eg {
 
     @Override // org.telegram.ui.Components.eg
     public final void h() {
-        org.telegram.ui.Components.ry0 ry0Var = this.c.a1;
-        if (ry0Var != null) {
-            ry0Var.f();
+        org.telegram.ui.Components.qy0 qy0Var = this.c.a1;
+        if (qy0Var != null) {
+            qy0Var.f();
         }
     }
 
@@ -464,17 +464,17 @@ public final class nm implements org.telegram.ui.Components.eg {
 
     @Override // org.telegram.ui.Components.eg
     public final void n2() {
-        org.telegram.ui.Components.ry0 ry0Var = this.c.a1;
-        if (ry0Var != null) {
-            ry0Var.e();
+        org.telegram.ui.Components.qy0 qy0Var = this.c.a1;
+        if (qy0Var != null) {
+            qy0Var.e();
         }
     }
 
     @Override // org.telegram.ui.Components.eg
     public final void o0() {
-        org.telegram.ui.Components.ry0 ry0Var = this.c.a1;
-        if (ry0Var != null) {
-            ry0Var.f();
+        org.telegram.ui.Components.qy0 qy0Var = this.c.a1;
+        if (qy0Var != null) {
+            qy0Var.f();
         }
     }
 
@@ -847,9 +847,9 @@ public final class nm implements org.telegram.ui.Components.eg {
         if (bkVar != null) {
             bkVar.animate().alpha((z4 || xnVar.isInPreviewMode()) ? 0.0f : 1.0f).setInterpolator(org.telegram.ui.Components.pr.f).start();
         }
-        org.telegram.ui.Components.ry0 ry0Var = xnVar.a1;
-        if (ry0Var != null) {
-            ry0Var.setVisibility(0);
+        org.telegram.ui.Components.qy0 qy0Var = xnVar.a1;
+        if (qy0Var != null) {
+            qy0Var.setVisibility(0);
             ViewPropertyAnimator animate = xnVar.a1.animate();
             if (!z4 && !xnVar.isInPreviewMode()) {
                 f10 = 1.0f;

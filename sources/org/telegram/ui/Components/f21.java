@@ -1,39 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f21 implements xd.b, Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ x21 a;
+public final /* synthetic */ class f21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ w21 b;
 
-    public /* synthetic */ f21(x21 x21Var) {
-        this.a = x21Var;
+    public /* synthetic */ f21(w21 w21Var, int i10) {
+        this.a = i10;
+        this.b = w21Var;
     }
 
-    @Override // xd.b
-    public void L(int i10, float f10, float f11, xd.c cVar) {
-        this.a.g();
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        return Boolean.valueOf(x21.c(this.a, (j51) obj, (View) obj2));
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        x21.a(this.a, (j51) obj);
-    }
-
-    @Override // xd.b
-    public /* synthetic */ void z(float f10, int i10) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                w21 w21Var = this.b;
+                m21 m21Var = w21Var.D;
+                m21Var.v1(true);
+                k21 k21Var = w21Var.s;
+                k21Var.v1(true);
+                w21Var.G.a(true, true);
+                AndroidUtilities.updateVisibleRows(k21Var);
+                AndroidUtilities.updateVisibleRows(m21Var);
+                break;
+            default:
+                w21 w21Var2 = this.b;
+                if (w21Var2.k()) {
+                    w21Var2.l();
+                    break;
+                }
+                break;
+        }
     }
 }

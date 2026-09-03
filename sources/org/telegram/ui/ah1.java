@@ -1,54 +1,42 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import android.text.Editable;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ah1 extends LinearLayout {
-    public final org.telegram.ui.ActionBar.g6 a;
-    public final ImageView b;
-    public final LinearLayout c;
-    public final TextView d;
-    public final TextView e;
-    public final ImageView f;
-    public boolean h;
-    public boolean n;
+public final class ah1 extends org.telegram.ui.Cells.i3 {
+    public final /* synthetic */ int x;
+    public final /* synthetic */ UserInfoActivity y;
 
-    public ah1(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context);
-        setOrientation(0);
-        this.a = g6Var;
-        ImageView imageView = new ImageView(context);
-        this.b = imageView;
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        addView(imageView, k7.c6.t(40, 40, 19, 12, 0, 12, 0));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.c = linearLayout;
-        linearLayout.setOrientation(1);
-        linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
-        addView(linearLayout, k7.c6.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 16.0f);
-        TextView i10 = yh.i(linearLayout, textView, k7.c6.t(-1, -2, 7, 0, 0, 0, 0), context);
-        this.e = i10;
-        i10.setTextSize(1, 13.0f);
-        linearLayout.addView(i10, k7.c6.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
-        ImageView imageView2 = new ImageView(context);
-        this.f = imageView2;
-        imageView2.setScaleType(scaleType);
-        addView(imageView2, k7.c6.t(40, 40, 21, 12, 0, 12, 0));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ ah1(UserInfoActivity userInfoActivity, Context context, String str, org.telegram.ui.ActionBar.g6 g6Var, int i10) {
+        super(context, str, false, false, -1, g6Var);
+        this.x = i10;
+        this.y = userInfoActivity;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+    @Override // org.telegram.ui.Cells.i3
+    public final void b(Editable editable) {
+        switch (this.x) {
+            case 0:
+                this.y.b0(true);
+                break;
+            case 1:
+                this.y.b0(true);
+                break;
+            default:
+                UserInfoActivity userInfoActivity = this.y;
+                userInfoActivity.b0(true);
+                userInfoActivity.e0();
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ah1(UserInfoActivity userInfoActivity, Context context, String str, int i10, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, str, true, false, i10, g6Var);
+        this.x = 2;
+        this.y = userInfoActivity;
     }
 }

@@ -18,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class v30 extends s61 {
+public final class v30 extends r61 {
     public final u30 Q;
     public int R;
     public final TLRPC.Chat S;
@@ -119,7 +119,7 @@ public final class v30 extends s61 {
         a0.h hVar;
         ArrayList arrayList;
         a0.h hVar2;
-        ax0 ax0Var = v30Var.s;
+        zw0 zw0Var = v30Var.s;
         a0.h hVar3 = v30Var.X;
         a0.h hVar4 = v30Var.Y;
         ArrayList arrayList2 = v30Var.U;
@@ -185,8 +185,8 @@ public final class v30 extends s61 {
             if (v30Var.n0 == 1) {
                 h = 1;
             } else {
-                sl0 sl0Var = v30Var.f;
-                h = sl0Var != null ? sl0Var.h() - 1 : 0;
+                rl0 rl0Var = v30Var.f;
+                h = rl0Var != null ? rl0Var.h() - 1 : 0;
             }
             v30Var.I(h);
             if (arrayList2.isEmpty()) {
@@ -195,16 +195,16 @@ public final class v30 extends s61 {
             }
         }
         v30Var.U();
-        sl0 sl0Var2 = v30Var.f;
-        if (sl0Var2 != null) {
-            sl0Var2.l();
-            if (ax0Var != null && v30Var.f.h() == 0 && v30Var.a0) {
-                ax0Var.e(false, true);
+        rl0 rl0Var2 = v30Var.f;
+        if (rl0Var2 != null) {
+            rl0Var2.l();
+            if (zw0Var != null && v30Var.f.h() == 0 && v30Var.a0) {
+                zw0Var.e(false, true);
             }
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.r61
     public final void D(MotionEvent motionEvent, lg.f fVar) {
         org.telegram.ui.d60 d60Var = this.d0.a;
         if (d60Var.t0) {
@@ -217,7 +217,7 @@ public final class v30 extends s61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.r61
     public final void F(String str) {
         u30 u30Var = this.Q;
         uf.k1 k1Var = u30Var.d;
@@ -248,13 +248,13 @@ public final class v30 extends s61 {
         u30Var.e = s30Var2;
         AndroidUtilities.runOnUIThread(s30Var2, 300L);
         f2.p0 adapter = d1Var.getAdapter();
-        sl0 sl0Var = v30Var.e;
-        if (adapter != sl0Var) {
-            d1Var.setAdapter(sl0Var);
+        rl0 rl0Var = v30Var.e;
+        if (adapter != rl0Var) {
+            d1Var.setAdapter(rl0Var);
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.r61
     public final void J() {
         this.F = org.telegram.ui.ActionBar.k6.Pg;
         this.G = org.telegram.ui.ActionBar.k6.eg;
@@ -299,13 +299,13 @@ public final class v30 extends s61 {
         TLRPC.ChatFull chatFull = this.T;
         if (isChannel) {
             this.Z = true;
-            ax0 ax0Var = this.s;
-            if (ax0Var != null) {
-                ax0Var.e(true, false);
+            zw0 zw0Var = this.s;
+            if (zw0Var != null) {
+                zw0Var.e(true, false);
             }
-            sl0 sl0Var = this.f;
-            if (sl0Var != null) {
-                sl0Var.l();
+            rl0 rl0Var = this.f;
+            if (rl0Var != null) {
+                rl0Var.l();
             }
             TLRPC.TL_channels_getParticipants tL_channels_getParticipants = new TLRPC.TL_channels_getParticipants();
             tL_channels_getParticipants.channel = MessagesController.getInputChannel(chat);
@@ -352,9 +352,9 @@ public final class v30 extends s61 {
             }
         }
         U();
-        sl0 sl0Var2 = this.f;
-        if (sl0Var2 != null) {
-            sl0Var2.l();
+        rl0 rl0Var2 = this.f;
+        if (rl0Var2 != null) {
+            rl0Var2.l();
         }
     }
 

@@ -11,7 +11,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class h80 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
     public final org.telegram.ui.Components.g90 Q;
@@ -62,7 +62,7 @@ public final class h80 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
         org.telegram.ui.Components.m00 m00Var = new org.telegram.ui.Components.m00(this, context);
         this.V = m00Var;
         a(m00Var, k7.c6.n(-1, 48));
-        m00Var.setOnClickListener(new org.telegram.ui.Components.sx0(27, this, p2Var));
+        m00Var.setOnClickListener(new org.telegram.ui.Components.rx0(27, this, p2Var));
         for (int i11 = 0; i11 < this.U.size(); i11++) {
             ((g80) this.U.get(i11)).a.setOnClickListener(new mh.x0(this, ((g80) this.U.get(i11)).b, 15));
         }

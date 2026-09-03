@@ -1,112 +1,157 @@
 package qh;
 
-import android.text.SpannableString;
-import android.text.TextUtils;
-import java.io.File;
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.SQLite.SQLiteDatabase;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.SerializedData;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.ui.gu0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class e8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ Object c;
+public abstract class e8 extends View {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ e8(int i10, ArrayList arrayList) {
-        this.a = 0;
-        this.b = i10;
-        this.c = arrayList;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        int i11 = this.b;
-        Object obj = this.c;
-        switch (i10) {
-            case 0:
-                MessagesController.getInstance(i11).putUsers((ArrayList) obj, true);
-                break;
-            case 1:
-                ca caVar = (ca) obj;
-                int i12 = caVar.c;
-                caVar.m();
-                caVar.U1 = false;
-                File file = caVar.H1.O0;
-                if (file != null) {
-                    file.delete();
-                    caVar.H1.O0 = null;
-                }
-                caVar.W(caVar.H1, true);
-                CharSequence[] charSequenceArr = {caVar.Z0.getText()};
-                ArrayList<TLRPC.MessageEntity> entities = MessagesController.getInstance(i12).storyEntitiesAllowed() ? MediaDataController.getInstance(i12).getEntities(charSequenceArr, true) : new ArrayList<>();
-                ArrayList<TLRPC.MessageEntity> entities2 = MessagesController.getInstance(i12).storyEntitiesAllowed() ? MediaDataController.getInstance(i12).getEntities(new CharSequence[]{caVar.H1.C0}, true) : new ArrayList<>();
-                s6 s6Var = caVar.H1;
-                s6Var.k = (TextUtils.equals(s6Var.C0, charSequenceArr[0]) && MediaDataController.entitiesEqual(entities, entities2)) ? false : true;
-                caVar.H1.C0 = new SpannableString(caVar.Z0.getText());
-                caVar.z();
-                caVar.y();
-                s6 s6Var2 = caVar.H1;
-                caVar.L1 = (s6Var2 == null || !s6Var2.K) ? 0 : 1;
-                caVar.H1 = (s6) caVar.E1.get(i11);
-                caVar.O(0, 1);
-                caVar.N(0, 1);
-                caVar.a1.b.V2.N(false);
-                caVar.Z0.setText(caVar.H1.C0);
-                break;
-            case 2:
-                ((uf.z) obj).m(i11);
-                break;
-            case 3:
-                try {
-                    SQLiteDatabase database = ((MessagesStorage) obj).getDatabase();
-                    database.executeFast("DELETE FROM business_replies WHERE topic_id = " + i11).stepThis().dispose();
-                    database.executeFast("DELETE FROM quick_replies_messages WHERE topic_id = " + i11).stepThis().dispose();
-                    break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
-                    return;
-                }
-            case 4:
-                f2.o0 o0Var = (f2.o0) obj;
-                o0Var.getClass();
-                try {
-                    o0Var.a.scrollBy(0, i11);
-                    break;
-                } catch (Throwable th2) {
-                    FileLog.e(th2);
-                    return;
-                }
-            default:
-                wh.c0 c0Var = (wh.c0) obj;
-                wh.f0 f0Var = c0Var.f;
-                if (c0Var.c && f0Var.B != null && f0Var.a != null) {
-                    c0Var.d = true;
-                    c0Var.a.setPressed(false);
-                    try {
-                        c0Var.performHapticFeedback(0);
-                    } catch (Exception unused) {
+    public static void a(int i10, r6 r6Var) {
+        a8 a8Var;
+        if (r6Var == null) {
+            return;
+        }
+        try {
+            String string = MessagesController.getInstance(i10).getMainSettings().getString("story_privacy2", null);
+            if (string == null) {
+                a8Var = new a8();
+            } else {
+                SerializedData serializedData = new SerializedData(Utilities.hexToBytes(string));
+                a8Var = b(serializedData);
+                serializedData.cleanup();
+                if (a8Var.f.isEmpty() && a8Var.b.isEmpty()) {
+                    a8Var = new a8();
+                } else {
+                    HashSet hashSet = new HashSet();
+                    hashSet.addAll(a8Var.c);
+                    Iterator it = a8Var.d.values().iterator();
+                    while (it.hasNext()) {
+                        hashSet.addAll((ArrayList) it.next());
                     }
-                    wh.d0 d0Var = f0Var.B;
-                    wh.a aVar = f0Var.a;
-                    wh.r3 r3Var = ((wh.j3) d0Var).a;
-                    r3Var.o3(false);
-                    r3Var.e3.d(new wh.o3(r3Var, aVar, i11), c0Var);
-                    break;
+                    if (!hashSet.isEmpty()) {
+                        MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
+                        messagesStorage.getStorageQueue().postRunnable(new gu0(messagesStorage, hashSet, i10, 13));
+                    }
                 }
-                break;
+            }
+        } catch (Exception e6) {
+            FileLog.e(e6);
+            a8Var = new a8();
+        }
+        r6Var.E0 = a8Var;
+        r6Var.F0.clear();
+        r6Var.F0.addAll(r6Var.E0.b);
+        if (UserConfig.getInstance(i10).isPremium()) {
+            r6Var.I0 = MessagesController.getInstance(i10).getMainSettings().getInt("story_period", 86400);
+        } else {
+            r6Var.I0 = 86400;
         }
     }
 
-    public /* synthetic */ e8(Object obj, int i10, int i11) {
-        this.a = i11;
-        this.c = obj;
-        this.b = i10;
+    public static a8 b(SerializedData serializedData) {
+        int readInt32 = serializedData.readInt32(true);
+        if (serializedData.readInt32(true) != 481674261) {
+            throw new RuntimeException("wrong Vector magic in TL_StoryPrivacy");
+        }
+        int readInt322 = serializedData.readInt32(true);
+        ArrayList arrayList = new ArrayList(readInt322);
+        for (int i10 = 0; i10 < readInt322; i10++) {
+            arrayList.add(TLRPC.InputUser.TLdeserialize(serializedData, serializedData.readInt32(true), true));
+        }
+        if (serializedData.readInt32(true) != 481674261) {
+            throw new RuntimeException("wrong Vector magic in TL_StoryPrivacy (2)");
+        }
+        int readInt323 = serializedData.readInt32(true);
+        ArrayList arrayList2 = new ArrayList(readInt323);
+        for (int i11 = 0; i11 < readInt323; i11++) {
+            arrayList2.add(Long.valueOf(serializedData.readInt64(true)));
+        }
+        if (serializedData.readInt32(true) != 481674261) {
+            throw new RuntimeException("wrong Vector magic in TL_StoryPrivacy (3)");
+        }
+        int readInt324 = serializedData.readInt32(true);
+        HashMap hashMap = new HashMap();
+        for (int i12 = 0; i12 < readInt324; i12++) {
+            long readInt64 = serializedData.readInt64(true);
+            if (serializedData.readInt32(true) != 481674261) {
+                throw new RuntimeException("wrong Vector magic in TL_StoryPrivacy (4)");
+            }
+            int readInt325 = serializedData.readInt32(true);
+            ArrayList arrayList3 = new ArrayList(readInt325);
+            for (int i13 = 0; i13 < readInt325; i13++) {
+                arrayList3.add(Long.valueOf(serializedData.readInt64(true)));
+            }
+            hashMap.put(Long.valueOf(readInt64), arrayList3);
+        }
+        HashSet hashSet = new HashSet();
+        hashSet.addAll(arrayList2);
+        Iterator it = hashMap.values().iterator();
+        while (it.hasNext()) {
+            hashSet.addAll((ArrayList) it.next());
+        }
+        a8 a8Var = new a8(readInt32, arrayList, 0);
+        ArrayList arrayList4 = a8Var.c;
+        arrayList4.clear();
+        arrayList4.addAll(arrayList2);
+        HashMap hashMap2 = a8Var.d;
+        hashMap2.clear();
+        hashMap2.putAll(hashMap);
+        return a8Var;
+    }
+
+    public static void c(SerializedData serializedData, a8 a8Var) {
+        int i10 = a8Var.a;
+        HashMap hashMap = a8Var.d;
+        ArrayList arrayList = a8Var.c;
+        serializedData.writeInt32(i10);
+        serializedData.writeInt32(Vector.constructor);
+        ArrayList arrayList2 = a8Var.e;
+        serializedData.writeInt32(arrayList2.size());
+        int size = arrayList2.size();
+        int i11 = 0;
+        while (i11 < size) {
+            Object obj = arrayList2.get(i11);
+            i11++;
+            ((TLRPC.InputUser) obj).serializeToStream(serializedData);
+        }
+        serializedData.writeInt32(Vector.constructor);
+        serializedData.writeInt32(arrayList.size());
+        int size2 = arrayList.size();
+        int i12 = 0;
+        while (i12 < size2) {
+            Object obj2 = arrayList.get(i12);
+            i12++;
+            serializedData.writeInt64(((Long) obj2).longValue());
+        }
+        serializedData.writeInt32(Vector.constructor);
+        serializedData.writeInt32(hashMap.size());
+        for (Map.Entry entry : hashMap.entrySet()) {
+            serializedData.writeInt64(((Long) entry.getKey()).longValue());
+            serializedData.writeInt32(Vector.constructor);
+            serializedData.writeInt32(((ArrayList) entry.getValue()).size());
+            ArrayList arrayList3 = (ArrayList) entry.getValue();
+            int size3 = arrayList3.size();
+            int i13 = 0;
+            while (i13 < size3) {
+                Object obj3 = arrayList3.get(i13);
+                i13++;
+                serializedData.writeInt64(((Long) obj3).longValue());
+            }
+        }
     }
 }

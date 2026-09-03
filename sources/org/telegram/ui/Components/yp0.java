@@ -1,89 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class yp0 extends lq0 {
-    public final /* synthetic */ mq0 n;
+public final class yp0 implements TextWatcher {
+    public final /* synthetic */ lq0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yp0(mq0 mq0Var, Context context) {
-        super(context);
-        this.n = mq0Var;
-        final int i10 = 1;
-        this.f = new Paint(1);
-        this.h = new RectF();
-        View view = new View(context);
-        int dp = AndroidUtilities.dp(18.0f);
-        int i11 = org.telegram.ui.ActionBar.k6.O5;
-        int i12 = mq0.X0;
-        view.setBackgroundDrawable(org.telegram.ui.ActionBar.k6.b0(dp, mq0Var.getThemedColor(i11)));
-        addView(view, k7.c6.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
-        fg.h0 h0Var = new fg.h0(this, context, 18);
-        this.c = h0Var;
-        addView(h0Var, k7.c6.d(-1, 36.0f, 51, 14.0f, 0.0f, 14.0f, 0.0f));
-        org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(context);
-        this.b = l5Var;
-        int i13 = org.telegram.ui.ActionBar.k6.ng;
-        l5Var.setTextColor(mq0Var.getThemedColor(i13));
-        l5Var.setTextSize(13);
-        l5Var.setLeftDrawable(R.drawable.msg_tabs_mic1);
-        final int i14 = 0;
-        l5Var.l(LocaleController.getString(R.string.VoipGroupInviteCanSpeak), false);
-        l5Var.setGravity(17);
-        addView(l5Var, k7.c6.d(-1, -1.0f, 51, 14.0f, 0.0f, 0.0f, 0.0f));
-        l5Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.kq0
-            public final /* synthetic */ yp0 b;
+    public yp0(lq0 lq0Var) {
+        this.a = lq0Var;
+    }
 
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i14) {
-                    case 0:
-                        this.b.a(0);
-                        break;
-                    default:
-                        this.b.a(1);
-                        break;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        lq0 lq0Var = this.a;
+        dq0 dq0Var = lq0Var.H;
+        zw0 zw0Var = lq0Var.N;
+        d20 d20Var = lq0Var.v0;
+        if (!TextUtils.isEmpty(d20Var.r.getText())) {
+            lq0Var.K0(false);
+        }
+        if (lq0Var.x0) {
+            String obj = d20Var.r.getText().toString();
+            if (obj.length() != 0) {
+                if (zw0Var != null) {
+                    zw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                }
+            } else if (lq0Var.C.getAdapter() != dq0Var) {
+                int F0 = lq0.F0(lq0Var);
+                zw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                zw0Var.e(false, true);
+                lq0Var.K0(false);
+                dq0Var.l();
+                if (F0 > 0) {
+                    lq0Var.E.h1(0, -F0);
                 }
             }
-        });
-        org.telegram.ui.ActionBar.l5 l5Var2 = new org.telegram.ui.ActionBar.l5(context);
-        this.a = l5Var2;
-        l5Var2.setTextColor(mq0Var.getThemedColor(i13));
-        l5Var2.setTextSize(13);
-        l5Var2.setLeftDrawable(R.drawable.msg_tabs_mic2);
-        l5Var2.l(LocaleController.getString(R.string.VoipGroupInviteListenOnly), false);
-        l5Var2.setGravity(17);
-        addView(l5Var2, k7.c6.d(-1, -1.0f, 51, 0.0f, 0.0f, 14.0f, 0.0f));
-        l5Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.kq0
-            public final /* synthetic */ yp0 b;
-
-            {
-                this.b = this;
+            hq0 hq0Var = lq0Var.J;
+            if (hq0Var != null) {
+                hq0Var.E(obj);
             }
+        }
+    }
 
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view2) {
-                switch (i10) {
-                    case 0:
-                        this.b.a(0);
-                        break;
-                    default:
-                        this.b.a(1);
-                        break;
-                }
-            }
-        });
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

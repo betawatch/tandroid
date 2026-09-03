@@ -4,7 +4,7 @@ import android.animation.ValueAnimator;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class rc {
     public View a;
@@ -69,9 +69,9 @@ public class rc {
         this.d = f11;
     }
 
-    public rc(qh.a5 a5Var) {
+    public rc(qh.z4 z4Var) {
         this.e = 0L;
-        this.a = a5Var;
+        this.a = z4Var;
         this.b = 1.5f;
         this.c = 1.0f;
         this.d = 2.0f;

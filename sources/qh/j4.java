@@ -1,21 +1,38 @@
 package qh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
-/* loaded from: classes4.dex */
-public final class j4 extends i3 {
-    public final /* synthetic */ f9 m;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j4(f9 f9Var, ba baVar, org.telegram.ui.web.v1 v1Var) {
-        super(baVar, false, v1Var);
-        this.m = f9Var;
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* loaded from: classes4.dex */
+public final class j4 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a5 b;
+
+    public /* synthetic */ j4(a5 a5Var, int i10) {
+        this.a = i10;
+        this.b = a5Var;
     }
 
-    @Override // qh.i3
-    public final void b(boolean z4) {
-        super.b(z4);
-        if (z4) {
-            this.m.P0(false);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                a5 a5Var = this.b;
+                a5Var.Y1 = 0.0f;
+                a5Var.W1.setAlpha(1.0f);
+                a5Var.W1.setVisibility(8);
+                a5Var.W1.n();
+                break;
+            case 1:
+                this.b.m2.setTranslationY(0.0f);
+                break;
+            default:
+                a5 a5Var2 = this.b;
+                a5Var2.p2 = false;
+                a5Var2.m2.setTranslationY(0.0f);
+                a5Var2.w0();
+                break;
         }
     }
 }

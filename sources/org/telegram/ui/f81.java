@@ -1,32 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f81 implements RequestDelegate {
+public final /* synthetic */ class f81 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p81 b;
+    public final /* synthetic */ g81 b;
 
-    public /* synthetic */ f81(p81 p81Var, int i10) {
+    public /* synthetic */ f81(g81 g81Var, int i10) {
         this.a = i10;
-        this.b = p81Var;
+        this.b = g81Var;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        String sb;
         switch (this.a) {
             case 0:
-                TLRPC.TL_help_dismissSuggestion tL_help_dismissSuggestion = new TLRPC.TL_help_dismissSuggestion();
-                tL_help_dismissSuggestion.suggestion = "VALIDATE_PASSWORD";
-                tL_help_dismissSuggestion.peer = new TLRPC.TL_inputPeerEmpty();
-                p81 p81Var = this.b;
-                p81Var.getConnectionsManager().sendRequest(tL_help_dismissSuggestion, new f81(p81Var, 1));
+                g81 g81Var = this.b;
+                String str = g81Var.b.text;
+                if (str == null || !str.equals("AUTH_TOKEN_EXCEPTION")) {
+                    StringBuilder sb2 = new StringBuilder();
+                    b.i(R.string.ErrorOccurred, "\n", sb2);
+                    sb2.append(g81Var.b.text);
+                    sb = sb2.toString();
+                } else {
+                    sb = LocaleController.getString(R.string.AccountAlreadyLoggedIn);
+                }
+                org.telegram.ui.Components.z4.u0(g81Var.c, LocaleController.getString(R.string.AuthAnotherClient), sb, null);
                 break;
             default:
-                this.b.getMessagesController().loadAppConfig();
+                org.telegram.ui.Components.z4.u0(this.b.c, LocaleController.getString(R.string.AuthAnotherClient), LocaleController.getString(R.string.ErrorOccurred), null);
                 break;
         }
     }

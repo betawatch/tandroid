@@ -4,7 +4,7 @@ import android.content.Context;
 import org.telegram.messenger.ChatObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class np extends org.telegram.ui.Components.n80 {
     public final /* synthetic */ TLRPC.Chat w;
@@ -24,7 +24,7 @@ public final class np extends org.telegram.ui.Components.n80 {
             return false;
         }
         rpVar.M = true;
-        e(new mp(2, this, l80Var), new dg.t0(this, this.w, z4, l80Var, 11));
+        e(new mp(1, this, l80Var), new dg.t0(this, this.w, z4, l80Var, 11));
         return true;
     }
 
@@ -35,7 +35,7 @@ public final class np extends org.telegram.ui.Components.n80 {
             return false;
         }
         rpVar.L = true;
-        e(new mp(2, this, m80Var), new dg.t0(this, this.w, z4, m80Var, 10));
+        e(new mp(1, this, m80Var), new dg.t0(this, this.w, z4, m80Var, 10));
         return true;
     }
 

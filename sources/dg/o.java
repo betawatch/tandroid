@@ -9,14 +9,14 @@ import org.telegram.messenger.BillingController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.pr;
-import qh.b5;
-import qh.f9;
-import qh.j2;
+import qh.a5;
+import qh.e9;
+import qh.i2;
 import sh.g3;
 import sh.n3;
 import sh.p2;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements q0.a {
     public final /* synthetic */ int a;
@@ -52,7 +52,7 @@ public final /* synthetic */ class o implements q0.a {
                 AndroidUtilities.runOnUIThread(new r5(callback2, z4, responseCodeString, i11));
                 break;
             case 3:
-                b5.a0((f9) obj2, (Integer) obj);
+                a5.a0((e9) obj2, (Integer) obj);
                 break;
             case 4:
                 p2 p2Var = (p2) obj2;
@@ -62,7 +62,7 @@ public final /* synthetic */ class o implements q0.a {
                     ValueAnimator duration = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
                     duration.setInterpolator(pr.f);
                     duration.addUpdateListener(new sh.p1(p2Var, 1));
-                    duration.addListener(new j2(p2Var, 9));
+                    duration.addListener(new i2(p2Var, 9));
                     duration.start();
                     break;
                 }
@@ -75,7 +75,7 @@ public final /* synthetic */ class o implements q0.a {
                     ValueAnimator duration2 = ValueAnimator.ofFloat(1.0f, 0.0f).setDuration(200L);
                     duration2.setInterpolator(pr.f);
                     duration2.addUpdateListener(new g3(n3Var, 0));
-                    duration2.addListener(new j2(n3Var, 10));
+                    duration2.addListener(new i2(n3Var, 10));
                     duration2.start();
                     n3Var.K();
                     break;

@@ -13,18 +13,18 @@ import java.util.HashMap;
 import java.util.Iterator;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class p0 {
     public final bf.b a;
-    public final sf.e b;
+    public final sf.f b;
     public final s c;
     public boolean d = false;
     public int e = -1;
 
-    public p0(bf.b bVar, sf.e eVar, s sVar) {
+    public p0(bf.b bVar, sf.f fVar, s sVar) {
         this.a = bVar;
-        this.b = eVar;
+        this.b = fVar;
         this.c = sVar;
     }
 
@@ -65,9 +65,9 @@ public final class p0 {
         }
         s sVar2 = sVar.h;
         p0 p0Var = null;
-        sf.e eVar = this.b;
+        sf.f fVar = this.b;
         if (sVar2 != null) {
-            p0 p0Var2 = (p0) ((HashMap) eVar.c).get(sVar2.e);
+            p0 p0Var2 = (p0) ((HashMap) fVar.c).get(sVar2.e);
             if (p0Var2 == null) {
                 throw new IllegalStateException("Fragment " + sVar + " declared target fragment " + sVar.h + " that does not belong to this FragmentManager!");
             }
@@ -76,7 +76,7 @@ public final class p0 {
             p0Var = p0Var2;
         } else {
             String str = sVar.n;
-            if (str != null && (p0Var = (p0) ((HashMap) eVar.c).get(str)) == null) {
+            if (str != null && (p0Var = (p0) ((HashMap) fVar.c).get(str)) == null) {
                 StringBuilder sb = new StringBuilder("Fragment ");
                 sb.append(sVar);
                 sb.append(" declared target fragment ");
@@ -304,15 +304,15 @@ public final class p0 {
         boolean z4 = true;
         int i10 = 0;
         boolean z10 = sVar.w && !sVar.v();
-        sf.e eVar = this.b;
+        sf.f fVar = this.b;
         if (z10) {
-            eVar.G(sVar.e, null);
+            fVar.G(sVar.e, null);
         }
         if (!z10) {
-            m0 m0Var = (m0) eVar.e;
+            m0 m0Var = (m0) fVar.e;
             if (!((m0Var.d.containsKey(sVar.e) && m0Var.g) ? m0Var.h : true)) {
                 String str = sVar.n;
-                if (str != null && (q10 = eVar.q(str)) != null && q10.P) {
+                if (str != null && (q10 = fVar.q(str)) != null && q10.P) {
                     sVar.h = q10;
                 }
                 sVar.a = 0;
@@ -321,7 +321,7 @@ public final class p0 {
         }
         u uVar = sVar.H;
         if (uVar != null) {
-            z4 = ((m0) eVar.e).h;
+            z4 = ((m0) fVar.e).h;
         } else {
             v vVar = uVar.b;
             if (e2.c.s(vVar)) {
@@ -329,7 +329,7 @@ public final class p0 {
             }
         }
         if (z10 || z4) {
-            ((m0) eVar.e).c(sVar, false);
+            ((m0) fVar.e).c(sVar, false);
         }
         sVar.I.l();
         sVar.a0.e(androidx.lifecycle.m.ON_DESTROY);
@@ -341,7 +341,7 @@ public final class p0 {
             throw new w0("Fragment " + sVar + " did not call through to super.onDestroy()");
         }
         this.a.B(sVar, false);
-        ArrayList t6 = eVar.t();
+        ArrayList t6 = fVar.t();
         int size = t6.size();
         while (i10 < size) {
             Object obj = t6.get(i10);
@@ -357,9 +357,9 @@ public final class p0 {
         }
         String str2 = sVar.n;
         if (str2 != null) {
-            sVar.h = eVar.q(str2);
+            sVar.h = fVar.q(str2);
         }
-        eVar.x(this);
+        fVar.x(this);
     }
 
     public final void g() {
@@ -435,7 +435,7 @@ public final class p0 {
     }
 
     public final void j() {
-        sf.e eVar = this.b;
+        sf.f fVar = this.b;
         boolean z4 = this.d;
         s sVar = this.c;
         if (z4) {
@@ -456,8 +456,8 @@ public final class p0 {
                         if (j0.K(3)) {
                             Log.d("FragmentManager", "Cleaning up state of never attached fragment: " + sVar);
                         }
-                        ((m0) eVar.e).c(sVar, true);
-                        eVar.x(this);
+                        ((m0) fVar.e).c(sVar, true);
+                        fVar.x(this);
                         if (j0.K(3)) {
                             Log.d("FragmentManager", "initState called for fragment: " + sVar);
                         }
@@ -667,9 +667,9 @@ public final class p0 {
         throw new w0("Fragment " + sVar + " did not call through to super.onStop()");
     }
 
-    public p0(bf.b bVar, sf.e eVar, ClassLoader classLoader, c0 c0Var, Bundle bundle) {
+    public p0(bf.b bVar, sf.f fVar, ClassLoader classLoader, c0 c0Var, Bundle bundle) {
         this.a = bVar;
-        this.b = eVar;
+        this.b = fVar;
         o0 o0Var = (o0) bundle.getParcelable("state");
         s a2 = c0Var.a(o0Var.a);
         a2.e = o0Var.b;
@@ -699,9 +699,9 @@ public final class p0 {
         }
     }
 
-    public p0(bf.b bVar, sf.e eVar, s sVar, Bundle bundle) {
+    public p0(bf.b bVar, sf.f fVar, s sVar, Bundle bundle) {
         this.a = bVar;
-        this.b = eVar;
+        this.b = fVar;
         this.c = sVar;
         sVar.c = null;
         sVar.d = null;

@@ -2,9 +2,9 @@ package cf;
 
 import android.view.View;
 import android.view.ViewTreeObserver;
-import qh.i3;
+import qh.h3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -27,7 +27,7 @@ public final /* synthetic */ class d implements ViewTreeObserver.OnGlobalLayoutL
                 }
                 break;
             default:
-                ((i3) this.b).d();
+                ((h3) this.b).d();
                 break;
         }
     }

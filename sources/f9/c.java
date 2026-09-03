@@ -10,12 +10,12 @@ import java.util.List;
 import k9.t0;
 import k9.t1;
 import kotlin.jvm.internal.j;
-import sf.e;
+import sf.f;
 import tc.g;
 import tc.i;
 import tc.o;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class c {
     public static final c a = new c();
@@ -48,16 +48,16 @@ public final class c {
             Object obj2 = arrayList.get(i11);
             i11++;
             ActivityManager.RunningAppProcessInfo runningAppProcessInfo = (ActivityManager.RunningAppProcessInfo) obj2;
-            e eVar = new e(6, false);
+            f fVar = new f(6, false);
             String str2 = runningAppProcessInfo.processName;
             if (str2 == null) {
                 throw new NullPointerException("Null processName");
             }
-            eVar.b = str2;
-            eVar.c = Integer.valueOf(runningAppProcessInfo.pid);
-            eVar.d = Integer.valueOf(runningAppProcessInfo.importance);
-            eVar.e = Boolean.valueOf(j.a(runningAppProcessInfo.processName, str));
-            arrayList2.add(eVar.n());
+            fVar.b = str2;
+            fVar.c = Integer.valueOf(runningAppProcessInfo.pid);
+            fVar.d = Integer.valueOf(runningAppProcessInfo.importance);
+            fVar.e = Boolean.valueOf(j.a(runningAppProcessInfo.processName, str));
+            arrayList2.add(fVar.n());
         }
         return arrayList2;
     }
@@ -93,11 +93,11 @@ public final class c {
             processName = "";
         }
         j.e(processName, "processName");
-        e eVar = new e(6, false);
-        eVar.b = processName;
-        eVar.c = Integer.valueOf(myPid);
-        eVar.d = 0;
-        eVar.e = false;
-        return eVar.n();
+        f fVar = new f(6, false);
+        fVar.b = processName;
+        fVar.c = Integer.valueOf(myPid);
+        fVar.d = 0;
+        fVar.e = false;
+        return fVar.n();
     }
 }

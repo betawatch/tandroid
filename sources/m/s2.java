@@ -7,9 +7,9 @@ import androidx.appcompat.widget.SearchView;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.BotFullscreenButtons;
 import org.telegram.messenger.beta.R;
-import qh.v9;
+import qh.u9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class s2 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
@@ -57,7 +57,7 @@ public final class s2 implements View.OnLayoutChangeListener {
                 final AnimationNotificationsLocker animationNotificationsLocker = new AnimationNotificationsLocker();
                 animationNotificationsLocker.lock();
                 if (p2Var.C0 || p2Var.m()) {
-                    g2Var.f(g2Var.getTopActionBarOffsetY() + (-g2Var.getOffsetY()), false, new v9(animationNotificationsLocker, 14));
+                    g2Var.f(g2Var.getTopActionBarOffsetY() + (-g2Var.getOffsetY()), false, new u9(animationNotificationsLocker, 14));
                 } else {
                     o1.j jVar = new o1.j(g2Var, sh.m3.V, 0.0f);
                     o1.k kVar = new o1.k(0.0f);

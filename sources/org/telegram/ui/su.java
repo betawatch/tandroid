@@ -15,7 +15,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class su extends cg.c {
     public final /* synthetic */ int d;
@@ -26,7 +26,7 @@ public final class su extends cg.c {
         this.e = obj;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         switch (this.d) {
             case 0:
@@ -319,13 +319,13 @@ public final class su extends cg.c {
                 } else if (i10 != 7) {
                     view = new nu(yuVar, uuVar.getContext());
                 } else {
-                    View jnVar = new org.telegram.ui.Components.jn(uuVar.getContext(), 11);
+                    View inVar = new org.telegram.ui.Components.in(uuVar.getContext(), 11);
                     int i12 = org.telegram.ui.ActionBar.k6.d6;
                     int i13 = uu.m3;
-                    jnVar.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(i12, uuVar.m2));
-                    view = jnVar;
+                    inVar.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(i12, uuVar.m2));
+                    view = inVar;
                 }
-                return new org.telegram.ui.Components.fl0(view);
+                return new org.telegram.ui.Components.el0(view);
             default:
                 fc0 fc0Var = (fc0) obj;
                 Context context3 = viewGroup.getContext();
@@ -340,7 +340,7 @@ public final class su extends cg.c {
                 } else if (i10 == 5) {
                     view2 = new org.telegram.ui.Cells.o8(23, context3, null, false, true);
                 }
-                return new org.telegram.ui.Components.fl0(view2);
+                return new org.telegram.ui.Components.el0(view2);
         }
     }
 }

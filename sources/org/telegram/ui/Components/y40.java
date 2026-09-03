@@ -39,9 +39,9 @@ import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class y40 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.tp0 {
+public final class y40 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.yp0 {
     public String B;
     public boolean C;
     public boolean E;
@@ -472,7 +472,7 @@ public final class y40 implements NotificationCenter.NotificationCenterDelegate,
                 if (intent == null || intent.getData() == null) {
                     return;
                 }
-                AndroidUtilities.runOnUIThread(new gm(23, this, intent.getData()));
+                AndroidUtilities.runOnUIThread(new eo(22, this, intent.getData()));
                 return;
             }
             if (i10 == 15) {
@@ -554,10 +554,10 @@ public final class y40 implements NotificationCenter.NotificationCenterDelegate,
             parentActivity.requestPermissions(new String[]{"android.permission.READ_MEDIA_IMAGES", "android.permission.READ_MEDIA_VIDEO"}, 151);
             return;
         }
-        org.telegram.ui.rp0 rp0Var = new org.telegram.ui.rp0(this.N ? 3 : 1, false, false, null);
-        rp0Var.x = this.G;
-        rp0Var.S = new u40(this);
-        this.a.presentFragment(rp0Var);
+        org.telegram.ui.wp0 wp0Var = new org.telegram.ui.wp0(this.N ? 3 : 1, false, false, null);
+        wp0Var.x = this.G;
+        wp0Var.S = new u40(this);
+        this.a.presentFragment(wp0Var);
     }
 
     public final void o(boolean z4, final Runnable runnable, DialogInterface.OnDismissListener onDismissListener, int i10) {
@@ -666,14 +666,14 @@ public final class y40 implements NotificationCenter.NotificationCenterDelegate,
         }
         HashMap hashMap = new HashMap();
         ArrayList arrayList = new ArrayList();
-        org.telegram.ui.hq0 hq0Var = new org.telegram.ui.hq0(0, null, hashMap, arrayList, 1, false, null, this.O);
-        hq0Var.p0 = new s40(this, hashMap, arrayList);
-        hq0Var.f0(1, false);
-        hq0Var.m0 = this.b.getInitialSearchString();
+        org.telegram.ui.mq0 mq0Var = new org.telegram.ui.mq0(0, null, hashMap, arrayList, 1, false, null, this.O);
+        mq0Var.p0 = new s40(this, hashMap, arrayList);
+        mq0Var.f0(1, false);
+        mq0Var.m0 = this.b.getInitialSearchString();
         if (this.P) {
-            this.a.showAsSheet(hq0Var);
+            this.a.showAsSheet(mq0Var);
         } else {
-            this.a.presentFragment(hq0Var);
+            this.a.presentFragment(mq0Var);
         }
     }
 

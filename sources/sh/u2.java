@@ -15,9 +15,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_payments;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.q70;
-import org.telegram.ui.yx0;
+import org.telegram.ui.dy0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class u2 implements View.OnClickListener {
     public final /* synthetic */ int a = 1;
@@ -44,10 +44,10 @@ public final /* synthetic */ class u2 implements View.OnClickListener {
         long j10;
         switch (this.a) {
             case 0:
-                yx0 yx0Var = (yx0) this.n;
+                dy0 dy0Var = (dy0) this.n;
                 TL_payments.connectedBotStarRef connectedbotstarref = this.h;
                 if (!connectedbotstarref.revoked) {
-                    yx0Var.run();
+                    dy0Var.run();
                     break;
                 } else {
                     int i10 = this.b;
@@ -106,13 +106,13 @@ public final /* synthetic */ class u2 implements View.OnClickListener {
         }
     }
 
-    public /* synthetic */ u2(TL_payments.connectedBotStarRef connectedbotstarref, int i10, org.telegram.ui.ActionBar.h3 h3Var, Context context, long j10, g6 g6Var, yx0 yx0Var) {
+    public /* synthetic */ u2(TL_payments.connectedBotStarRef connectedbotstarref, int i10, org.telegram.ui.ActionBar.h3 h3Var, Context context, long j10, g6 g6Var, dy0 dy0Var) {
         this.h = connectedbotstarref;
         this.b = i10;
         this.c = h3Var;
         this.f = context;
         this.e = j10;
         this.d = g6Var;
-        this.n = yx0Var;
+        this.n = dy0Var;
     }
 }

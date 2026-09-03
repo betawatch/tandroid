@@ -1,22 +1,26 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+import android.app.Activity;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class cs0 extends org.telegram.ui.Cells.w9 {
-    public final /* synthetic */ int v0 = 0;
+public final class cs0 extends org.telegram.ui.Components.xx0 {
+    public final /* synthetic */ ds0 s0;
 
-    public /* synthetic */ cs0(oh.z7 z7Var, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(z7Var, g6Var);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cs0(ds0 ds0Var, Activity activity, MessageObject messageObject, TLObject tLObject, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(activity, messageObject, tLObject, g6Var);
+        this.s0 = ds0Var;
     }
 
-    @Override // org.telegram.ui.Cells.z9
-    public final int p() {
-        switch (this.v0) {
+    @Override // org.telegram.ui.Components.xx0, org.telegram.ui.ActionBar.h3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
+    public final void dismiss() {
+        super.dismiss();
+        PhotoViewer photoViewer = this.s0.b;
+        if (photoViewer.R3 == this) {
+            photoViewer.R3 = null;
         }
-        return 0;
-    }
-
-    public cs0(oh.b bVar) {
-        super(null, bVar);
     }
 }

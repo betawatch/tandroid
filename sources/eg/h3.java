@@ -16,9 +16,9 @@ import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.dt;
 import org.telegram.ui.p6;
-import org.telegram.ui.uq0;
+import org.telegram.ui.zq0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class h3 implements Utilities.Callback {
     public final void run(Object obj) {
         switch (this.a) {
             case 0:
-                Utilities.themeQueue.postRunnable(new d3((o3) this.c, this.b, (List) obj, new ArrayList(), (uq0) this.d, 0));
+                Utilities.themeQueue.postRunnable(new d3((o3) this.c, this.b, (List) obj, new ArrayList(), (zq0) this.d, 0));
                 break;
             case 1:
                 lh.x3 x3Var = (lh.x3) this.c;

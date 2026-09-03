@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class c3 implements Runnable {
     public final /* synthetic */ int a;
@@ -35,7 +35,7 @@ public final class c3 implements Runnable {
                             articleViewer$WindowView.performHapticFeedback(0, 2);
                         } catch (Exception unused) {
                         }
-                        l4Var.Z(((org.telegram.ui.Components.p01) l4Var.b.i).b);
+                        l4Var.Z(((org.telegram.ui.Components.o01) l4Var.b.i).b);
                         l4Var.b = null;
                         l4Var.d = null;
                         View view = l4Var.f;

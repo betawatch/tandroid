@@ -27,38 +27,38 @@ import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.ui.ActionBar.f5;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.er0;
+import org.telegram.ui.Components.dr0;
 import org.telegram.ui.Components.g6;
 import org.telegram.ui.Components.h6;
 import org.telegram.ui.Components.hr;
 import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.ll0;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.ln0;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.Components.mn0;
 import org.telegram.ui.Components.nn0;
 import org.telegram.ui.Components.on0;
-import org.telegram.ui.Components.pn0;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.voip.j3;
 import org.telegram.ui.Components.voip.k3;
 import org.telegram.ui.Components.voip.l3;
 import org.telegram.ui.Components.x40;
 import org.telegram.ui.Components.y40;
-import org.telegram.ui.Components.zu0;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.PasskeysActivity;
 import org.telegram.ui.bw;
-import org.telegram.ui.ci1;
 import org.telegram.ui.ea;
-import org.telegram.ui.lu0;
+import org.telegram.ui.ii1;
 import org.telegram.ui.ma;
 import org.telegram.ui.pa;
 import org.telegram.ui.py;
-import org.telegram.ui.sw0;
+import org.telegram.ui.qu0;
+import org.telegram.ui.xw0;
 import org.telegram.ui.zi;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a0 implements BillingController.ProductDetailsResponseListenerLegacy, x40, org.telegram.ui.ActionBar.c2, h6, ll0, MessagesStorage.BooleanCallback, p2.n, j3 {
+public final /* synthetic */ class a0 implements BillingController.ProductDetailsResponseListenerLegacy, x40, org.telegram.ui.ActionBar.c2, h6, kl0, MessagesStorage.BooleanCallback, p2.n, j3 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -127,19 +127,19 @@ public final /* synthetic */ class a0 implements BillingController.ProductDetail
 
     @Override // p2.n
     public void b(p2.h hVar, List list) {
-        AndroidUtilities.runOnUIThread(new lf.j0(hVar, (org.telegram.ui.ActionBar.p2) this.c, list, this.b, (p2.e) this.d, (sw0) this.e, 13));
+        AndroidUtilities.runOnUIThread(new lf.j0(hVar, (org.telegram.ui.ActionBar.p2) this.c, list, this.b, (p2.e) this.d, (xw0) this.e, 13));
     }
 
     @Override // org.telegram.ui.Components.voip.j3
     public void d(k3 k3Var) {
-        ci1 ci1Var = (ci1) this.c;
+        ii1 ii1Var = (ii1) this.c;
         l3 l3Var = (l3) this.d;
         VoIPService voIPService = (VoIPService) this.e;
         if (VoIPService.getSharedInstance() != null) {
-            AndroidUtilities.cancelRunOnUIThread(ci1Var.P0);
-            ci1Var.O0 = false;
-            VoIPService.getSharedInstance().toggleSpeakerphoneOrShowRouteSheet(ci1Var.b, false, Integer.valueOf(this.b));
-            ci1Var.u(l3Var, voIPService);
+            AndroidUtilities.cancelRunOnUIThread(ii1Var.P0);
+            ii1Var.O0 = false;
+            VoIPService.getSharedInstance().toggleSpeakerphoneOrShowRouteSheet(ii1Var.b, false, Integer.valueOf(this.b));
+            ii1Var.u(l3Var, voIPService);
         }
     }
 
@@ -148,12 +148,12 @@ public final /* synthetic */ class a0 implements BillingController.ProductDetail
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
-        pn0 pn0Var = (pn0) this.c;
+        on0 on0Var = (on0) this.c;
         org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.d;
         org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) this.e;
-        ArrayList arrayList = pn0Var.r;
+        ArrayList arrayList = on0Var.r;
         if (i10 >= 0 && i10 < arrayList.size()) {
             int i11 = this.b;
             if (UserConfig.getInstance(i11).isPremium()) {
@@ -161,14 +161,14 @@ public final /* synthetic */ class a0 implements BillingController.ProductDetail
                     new fg.n1(p2Var, 24, true).show();
                     return true;
                 }
-                nn0 nn0Var = ((on0) view).a;
-                if (nn0Var != null) {
-                    nn0Var.q();
+                mn0 mn0Var = ((nn0) view).a;
+                if (mn0Var != null) {
+                    mn0Var.q();
                 }
-                mn0 mn0Var = (mn0) arrayList.get(i10);
+                ln0 ln0Var = (ln0) arrayList.get(i10);
                 q70 H = q70.H(p2Var, view);
                 H.i = 3;
-                H.c(R.drawable.menu_tag_rename, LocaleController.getString(TextUtils.isEmpty(mn0Var.c) ? R.string.SavedTagLabelTag : R.string.SavedTagRenameTag), new dg.u1(pn0Var, i11, mn0Var, g6Var, 20), false);
+                H.c(R.drawable.menu_tag_rename, LocaleController.getString(TextUtils.isEmpty(ln0Var.c) ? R.string.SavedTagLabelTag : R.string.SavedTagRenameTag), new dg.u1(on0Var, i11, ln0Var, g6Var, 20), false);
                 H.Z();
                 return true;
             }
@@ -177,7 +177,7 @@ public final /* synthetic */ class a0 implements BillingController.ProductDetail
     }
 
     @Override // org.telegram.ui.Components.x40
-    public /* synthetic */ lu0 getCloseIntoObject() {
+    public /* synthetic */ qu0 getCloseIntoObject() {
         return null;
     }
 
@@ -248,9 +248,9 @@ public final /* synthetic */ class a0 implements BillingController.ProductDetail
                 }
                 break;
             case 6:
-                zu0 zu0Var = (zu0) obj3;
+                yu0 yu0Var = (yu0) obj3;
                 MessageObject messageObject = (MessageObject) obj;
-                org.telegram.ui.ActionBar.d2[] d2VarArr = {new org.telegram.ui.ActionBar.d2(zu0Var.getContext(), 3, (org.telegram.ui.ActionBar.g6) obj2)};
+                org.telegram.ui.ActionBar.d2[] d2VarArr = {new org.telegram.ui.ActionBar.d2(yu0Var.getContext(), 3, (org.telegram.ui.ActionBar.g6) obj2)};
                 TLRPC.TL_messages_editMessage tL_messages_editMessage = new TLRPC.TL_messages_editMessage();
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) messageObject.messageOwner.media;
                 TLRPC.TL_inputMediaPoll tL_inputMediaPoll = new TLRPC.TL_inputMediaPoll();
@@ -263,10 +263,10 @@ public final /* synthetic */ class a0 implements BillingController.ProductDetail
                 tL_poll.closed = true;
                 tL_messages_editMessage.media = tL_inputMediaPoll;
                 int i16 = this.b;
-                tL_messages_editMessage.peer = MessagesController.getInstance(i16).getInputPeer(zu0Var.g1);
+                tL_messages_editMessage.peer = MessagesController.getInstance(i16).getInputPeer(yu0Var.g1);
                 tL_messages_editMessage.id = messageObject.getId();
                 tL_messages_editMessage.flags |= 16384;
-                AndroidUtilities.runOnUIThread(new er0(d2VarArr, i16, ConnectionsManager.getInstance(i16).sendRequest(tL_messages_editMessage, new b8(zu0Var, d2VarArr, i16, tL_messages_editMessage, 4)), i14), 500L);
+                AndroidUtilities.runOnUIThread(new dr0(d2VarArr, i16, ConnectionsManager.getInstance(i16).sendRequest(tL_messages_editMessage, new b8(yu0Var, d2VarArr, i16, tL_messages_editMessage, 4)), i14), 500L);
                 break;
         }
     }

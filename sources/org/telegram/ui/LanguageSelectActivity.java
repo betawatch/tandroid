@@ -23,12 +23,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class LanguageSelectActivity extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public l80 a;
     private int autoTranslationPosition;
-    public org.telegram.ui.Components.tl0 b;
+    public org.telegram.ui.Components.sl0 b;
     public l80 c;
     public org.telegram.ui.Components.oz d;
     private int doNotTranslatePosition;
@@ -61,7 +61,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.p2 impleme
             org.telegram.ui.Cells.s8 s8Var = null;
             if (!(view instanceof org.telegram.ui.Cells.s8)) {
                 if (view instanceof org.telegram.ui.Cells.aa) {
-                    languageSelectActivity.presentFragment(new p31());
+                    languageSelectActivity.presentFragment(new t31());
                     return;
                 }
                 if (languageSelectActivity.getParentActivity() != null && languageSelectActivity.parentLayout != null && (view instanceof org.telegram.ui.Cells.c9)) {
@@ -94,7 +94,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.p2 impleme
                         }
                         String str = localeInfo2.pluralLangCode;
                         String str2 = currentLocaleInfo.pluralLangCode;
-                        HashSet Y = p31.Y();
+                        HashSet Y = t31.Y();
                         HashSet hashSet = new HashSet(Y);
                         if (Y.contains(str2) && !Y.contains(str)) {
                             Collection.-EL.removeIf(hashSet, new j80(str2, 0));
@@ -102,7 +102,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.p2 impleme
                         if (str != null && !BuildConfig.BETA_URL.equals(str)) {
                             hashSet.add(str);
                         }
-                        p31.a0(hashSet, Boolean.FALSE);
+                        t31.a0(hashSet, Boolean.FALSE);
                         MessagesController.getInstance(languageSelectActivity.currentAccount).getTranslateController().checkRestrictedLanguagesUpdate();
                         MessagesController.getInstance(languageSelectActivity.currentAccount).getTranslateController().cleanup();
                         TranslateController.invalidateSuggestedLanguageCodes();
@@ -257,7 +257,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.p2 impleme
         if (f5Var != null && ((ActionBarLayout) f5Var).K0) {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 19));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 19));
         org.telegram.ui.ActionBar.w0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
         a2.F();
         a2.E = new fb(this, 10);
@@ -274,9 +274,9 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.p2 impleme
         this.d.c();
         this.d.setShowAtCenter(true);
         frameLayout2.addView(this.d, k7.c6.c(-1.0f, -1));
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.b = tl0Var;
-        tl0Var.p1();
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.b = sl0Var;
+        sl0Var.o1();
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setEmptyView(this.d);
         this.b.setLayoutManager(new f2.j0(1, false));
@@ -352,7 +352,7 @@ public class LanguageSelectActivity extends org.telegram.ui.ActionBar.p2 impleme
 
     public final void i0(String str) {
         if (str != null) {
-            Utilities.searchQueue.postRunnable(new v10(12, this, str));
+            Utilities.searchQueue.postRunnable(new z10(11, this, str));
             return;
         }
         this.e = null;

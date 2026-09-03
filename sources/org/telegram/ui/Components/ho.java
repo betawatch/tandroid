@@ -29,7 +29,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class ho extends LinearLayout {
     public static final /* synthetic */ int I = 0;
@@ -50,7 +50,7 @@ public abstract class ho extends LinearLayout {
     public p9 n;
     public final org.telegram.ui.ActionBar.g6 r;
     public boolean s;
-    public lj0 v;
+    public kj0 v;
     public TextView w;
     public fg.s0 x;
     public boolean y;
@@ -95,7 +95,7 @@ public abstract class ho extends LinearLayout {
         String string2 = LocaleController.getString(R.string.NoMessagesGreetingsDescription);
         textView.setText(string);
         textView2.setText(string2);
-        textView2.setMaxWidth(qh.f3.a(textView2.getText(), textView2.getPaint()));
+        textView2.setMaxWidth(qh.e3.a(textView2.getText(), textView2.getPaint()));
         this.h.setContentDescription(textView2.getText());
         this.a = document;
         if (document == null) {
@@ -185,9 +185,9 @@ public abstract class ho extends LinearLayout {
         this.B = z10;
         if (z4) {
             if (this.v == null) {
-                lj0 lj0Var = new lj0(getContext());
-                this.v = lj0Var;
-                lj0Var.setScaleType(ImageView.ScaleType.CENTER);
+                kj0 kj0Var = new kj0(getContext());
+                this.v = kj0Var;
+                kj0Var.setScaleType(ImageView.ScaleType.CENTER);
                 this.v.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
                 this.v.setBackground(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(78.0f), 469762048));
                 if (z10) {
@@ -207,7 +207,7 @@ public abstract class ho extends LinearLayout {
             }
             this.w.setText(spannableStringBuilder);
             TextView textView2 = this.w;
-            textView2.setMaxWidth(qh.f3.a(textView2.getText(), this.w.getPaint()));
+            textView2.setMaxWidth(qh.e3.a(textView2.getText(), this.w.getPaint()));
             TextView textView3 = this.w;
             int i10 = org.telegram.ui.ActionBar.k6.ic;
             org.telegram.ui.ActionBar.g6 g6Var = this.r;
@@ -244,7 +244,7 @@ public abstract class ho extends LinearLayout {
         }
         TextView textView = this.c;
         textView.setText(charSequence2);
-        textView.setMaxWidth(textView.getText().length() > 60 ? Math.min((int) (AndroidUtilities.displaySize.x * 0.5f), qh.f3.a(textView.getText(), textView.getPaint())) : (int) (AndroidUtilities.displaySize.x * 0.5f));
+        textView.setMaxWidth(textView.getText().length() > 60 ? Math.min((int) (AndroidUtilities.displaySize.x * 0.5f), qh.e3.a(textView.getText(), textView.getPaint())) : (int) (AndroidUtilities.displaySize.x * 0.5f));
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -363,7 +363,7 @@ public abstract class ho extends LinearLayout {
             document2 = document;
             this.h.j(ImageLocation.getForDocument(document), b(document), ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90), document), null, 0, document2);
         }
-        this.h.setOnClickListener(new eo(this, document2, 0));
+        this.h.setOnClickListener(new co(this, document2, 0));
     }
 
     public void setSticker(String str) {

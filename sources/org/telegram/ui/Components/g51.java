@@ -1,56 +1,87 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Typeface;
-import android.text.TextPaint;
-import android.text.style.MetricAffectingSpan;
+import android.content.Context;
+import android.util.LongSparseArray;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class g51 extends MetricAffectingSpan {
-    public Typeface a;
-    public int b;
-    public int c;
-
-    public g51(Typeface typeface) {
-        this.c = -1;
-        this.a = typeface;
-    }
-
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        int i10 = this.c;
-        if (i10 >= 0) {
-            this.b = org.telegram.ui.ActionBar.k6.w0(null, i10, false);
-        }
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        int i11 = this.b;
-        if (i11 != 0) {
-            textPaint.setColor(i11);
-        }
-        textPaint.setFlags(textPaint.getFlags() | 128);
-    }
-
-    @Override // android.text.style.MetricAffectingSpan
-    public final void updateMeasureState(TextPaint textPaint) {
-        Typeface typeface = this.a;
-        if (typeface != null) {
-            textPaint.setTypeface(typeface);
-        }
-        textPaint.setFlags(textPaint.getFlags() | 128);
-    }
+public abstract class g51 {
+    private ArrayList<View> cache;
+    public final int viewType;
 
     public g51() {
-        Typeface typeface = Typeface.DEFAULT;
-        this.c = -1;
-        this.a = typeface;
+        int i10 = h51.J;
+        h51.J = i10 + 1;
+        this.viewType = i10;
     }
 
-    public g51(Typeface typeface, int i10) {
-        this.c = -1;
-        this.a = typeface;
-        this.b = i10;
+    public static void setup(g51 g51Var) {
+        if (h51.L == null) {
+            h51.L = new HashMap();
+        }
+        if (h51.K == null) {
+            h51.K = new LongSparseArray();
+        }
+        Class<?> cls = g51Var.getClass();
+        if (h51.L.containsKey(cls)) {
+            return;
+        }
+        h51.L.put(cls, g51Var);
+        h51.K.put(g51Var.viewType, g51Var);
+    }
+
+    public boolean contentsEquals(h51 h51Var, h51 h51Var2) {
+        return h51Var.H(h51Var2);
+    }
+
+    public abstract View createView(Context context, sl0 sl0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var);
+
+    public boolean equals(h51 h51Var, h51 h51Var2) {
+        return h51Var.I(h51Var2);
+    }
+
+    public View getCached() {
+        ArrayList<View> arrayList = this.cache;
+        if (arrayList == null || arrayList.isEmpty()) {
+            return null;
+        }
+        return this.cache.remove(0);
+    }
+
+    public boolean isClickable() {
+        return !(this instanceof vi);
+    }
+
+    public boolean isShadow() {
+        return false;
+    }
+
+    public void precache(org.telegram.ui.ActionBar.p2 p2Var, int i10) {
+        precache(p2Var.getContext(), p2Var.getCurrentAccount(), p2Var.getClassGuid(), p2Var.getResourceProvider(), i10);
+    }
+
+    public void precache(Context context, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var, int i12) {
+        if (context == null) {
+            return;
+        }
+        if (this.cache == null) {
+            this.cache = new ArrayList<>();
+        }
+        int i13 = 0;
+        while (i13 < this.cache.size() - i12) {
+            Context context2 = context;
+            this.cache.add(createView(context2, null, i10, i11, g6Var));
+            i13++;
+            context = context2;
+        }
+    }
+
+    public void attachedView(sl0 sl0Var, View view, h51 h51Var) {
+    }
+
+    public void bindView(View view, h51 h51Var, boolean z4, w51 w51Var, h61 h61Var) {
     }
 }

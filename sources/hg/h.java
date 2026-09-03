@@ -10,9 +10,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.m3;
 import org.telegram.ui.ActionBar.o3;
 import org.telegram.ui.Cells.sa;
-import org.telegram.ui.p31;
+import org.telegram.ui.t31;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -43,7 +43,7 @@ public final /* synthetic */ class h implements Utilities.Callback {
             default:
                 HashSet hashSet = (HashSet) obj;
                 String str = LocaleController.getInstance().getCurrentLocaleInfo().pluralLangCode;
-                hashSet.addAll(p31.Y());
+                hashSet.addAll(t31.Y());
                 SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
                 if (hashSet.size() == 1 && TextUtils.equals((CharSequence) hashSet.iterator().next(), str)) {
                     edit.remove("translate_button_restricted_languages");
@@ -51,7 +51,7 @@ public final /* synthetic */ class h implements Utilities.Callback {
                     edit.putStringSet("translate_button_restricted_languages", hashSet);
                 }
                 edit.putInt("translate_button_restricted_languages_version", 2).apply();
-                p31.s = false;
+                t31.s = false;
                 for (int i12 = 0; i12 < 4; i12++) {
                     try {
                         MessagesController.getInstance(i12).getTranslateController().checkRestrictedLanguagesUpdate();

@@ -3,16 +3,16 @@ package q5;
 import android.os.Parcel;
 import com.google.android.gms.tasks.TaskCompletionSource;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements com.google.android.gms.common.api.internal.s {
     public final /* synthetic */ int a = 1;
-    public final /* synthetic */ e0 b;
+    public final /* synthetic */ f0 b;
     public final /* synthetic */ String c;
     public final /* synthetic */ f d;
 
-    public /* synthetic */ a0(e0 e0Var, String str, s5.h hVar) {
-        this.b = e0Var;
+    public /* synthetic */ a0(f0 f0Var, String str, s5.h hVar) {
+        this.b = f0Var;
         this.c = str;
         this.d = hVar;
     }
@@ -50,8 +50,8 @@ public final /* synthetic */ class a0 implements com.google.android.gms.common.a
         }
     }
 
-    public /* synthetic */ a0(e0 e0Var, f fVar, String str) {
-        this.b = e0Var;
+    public /* synthetic */ a0(f0 f0Var, f fVar, String str) {
+        this.b = f0Var;
         this.d = fVar;
         this.c = str;
     }

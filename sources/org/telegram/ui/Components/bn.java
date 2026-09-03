@@ -1,24 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class bn extends mi {
-    public final /* synthetic */ Runnable M2;
+public final /* synthetic */ class bn implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Utilities.Callback b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bn(Context context, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.g6 g6Var, Runnable runnable) {
-        super(context, p2Var, false, false, true, g6Var);
-        this.M2 = runnable;
+    public /* synthetic */ bn(int i10, Utilities.Callback callback) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // org.telegram.ui.Components.mi, org.telegram.ui.ActionBar.h3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        Runnable runnable = this.M2;
-        if (runnable != null) {
-            runnable.run();
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                this.b.run(new fh.e((String) obj));
+                break;
+            default:
+                int[] iArr = (int[]) obj;
+                boolean z4 = false;
+                if (iArr.length >= 1 && iArr[0] == 0) {
+                    z4 = true;
+                }
+                this.b.run(Boolean.valueOf(z4));
+                break;
         }
     }
 }

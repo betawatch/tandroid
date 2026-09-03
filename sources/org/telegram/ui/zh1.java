@@ -1,11 +1,23 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class zh1 extends org.telegram.ui.Components.voip.w2 {
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchSetPressed(boolean z4) {
-        super.dispatchSetPressed(z4);
-        setPressedBtn(z4);
+public final class zh1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ii1 a;
+
+    public zh1(ii1 ii1Var) {
+        this.a = ii1Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ii1 ii1Var = this.a;
+        ii1Var.B.setText(LocaleController.getString(R.string.VoipCallEnded));
+        ii1Var.B.animate().alpha(1.0f).setDuration(70L).setListener(null).start();
     }
 }

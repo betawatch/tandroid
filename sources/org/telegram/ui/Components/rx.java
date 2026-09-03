@@ -9,9 +9,9 @@ import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public class rx extends qm0 {
+public class rx extends pm0 {
     public final /* synthetic */ mz A0;
     public final int r0;
     public boolean s0;
@@ -31,7 +31,7 @@ public class rx extends qm0 {
         this.r0 = ViewConfiguration.get(context).getScaledTouchSlop();
     }
 
-    @Override // org.telegram.ui.Components.qm0, android.widget.HorizontalScrollView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.pm0, android.widget.HorizontalScrollView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         if (this.s != null) {
             return super.onInterceptTouchEvent(motionEvent);
@@ -60,7 +60,7 @@ public class rx extends qm0 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.qm0, android.widget.HorizontalScrollView, android.view.View
+    @Override // org.telegram.ui.Components.pm0, android.widget.HorizontalScrollView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         boolean z4;
         mz mzVar = this.A0;

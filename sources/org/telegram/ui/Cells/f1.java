@@ -34,17 +34,17 @@ import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.b60;
 import org.telegram.ui.Components.hh0;
-import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.ng0;
 import org.telegram.ui.Components.oa0;
 import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.z61;
+import org.telegram.ui.Components.y61;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androidx.activity.result.b, eg.q2, OnCompleteListener, ra.m, pa.n, o4.m0, com.google.android.gms.common.api.internal.s, uf.j1, wh.h0, wh.p3 {
+public class f1 implements y61, org.telegram.ui.Components.y4, oa0, r0.o, androidx.activity.result.b, eg.q2, OnCompleteListener, ra.m, pa.n, o4.m0, com.google.android.gms.common.api.internal.s, uf.j1, wh.h0, wh.p3 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -230,7 +230,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
                 if (l3Var != null) {
                     l3Var.getClass();
                     if (charSequence != null && charSequence.length() > 0) {
-                        l3Var.a.t4(charSequence.toString());
+                        l3Var.a.s4(charSequence.toString());
                         break;
                     }
                 }
@@ -240,7 +240,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
                 if (k3Var != null) {
                     k3Var.getClass();
                     if (charSequence != null && charSequence.length() > 0) {
-                        k3Var.a.t4(charSequence.toString());
+                        k3Var.a.s4(charSequence.toString());
                         break;
                     }
                 }
@@ -266,7 +266,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
     public void F(wh.v5 v5Var, String str) {
         wh.z1 z1Var = (wh.z1) this.b;
         if (z1Var.w0 == null) {
-            z1Var.w0 = new m.r3(new sf.g(this, 14), z1Var.getResourceProvider());
+            z1Var.w0 = new m.r3(new sf.h(this, 14), z1Var.getResourceProvider());
         }
         z1Var.w0.f(v5Var, str);
     }
@@ -283,11 +283,11 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
 
     @Override // eg.q2
     public void H(float f10) {
-        qh.f9 f9Var = (qh.f9) this.b;
-        dg.e1.e(f9Var.C1).k(String.valueOf(dg.m.a.indexOf(f9Var.L0.getCurrentBrush())), f10);
-        dg.e2 e2Var = f9Var.x1;
+        qh.e9 e9Var = (qh.e9) this.b;
+        dg.e1.e(e9Var.C1).k(String.valueOf(dg.m.a.indexOf(e9Var.L0.getCurrentBrush())), f10);
+        dg.e2 e2Var = e9Var.x1;
         e2Var.c = f10;
-        f9Var.E0(e2Var, null, false);
+        e9Var.E0(e2Var, null, false);
     }
 
     @Override // org.telegram.ui.Components.y4
@@ -316,7 +316,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
                 wh.l3 l3Var = yVar.L;
                 if (l3Var != null) {
                     wh.a aVar = yVar.a;
-                    if (l3Var.a.S4()) {
+                    if (l3Var.a.R4()) {
                     }
                 }
                 break;
@@ -325,7 +325,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
                 wh.k3 k3Var = o4Var.K;
                 if (k3Var != null) {
                     wh.a aVar2 = o4Var.a;
-                    if (k3Var.a.S4()) {
+                    if (k3Var.a.R4()) {
                     }
                 }
                 break;
@@ -366,9 +366,9 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
     @Override // r0.o
     public r0.m1 M0(View view, r0.m1 m1Var) {
         i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        jm0 jm0Var = (jm0) this.b;
-        jm0Var.v.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
-        jm0Var.s.requestLayout();
+        im0 im0Var = (im0) this.b;
+        im0Var.v.setPadding(defaultWindowInsets.a, defaultWindowInsets.b, defaultWindowInsets.c, defaultWindowInsets.d);
+        im0Var.s.requestLayout();
         return r0.m1.b;
     }
 
@@ -507,7 +507,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
                 wh.l3 l3Var = yVar.L;
                 if (l3Var != null) {
                     wh.a aVar = yVar.a;
-                    wh.r3.O1(l3Var.a);
+                    wh.r3.N1(l3Var.a);
                     break;
                 }
                 break;
@@ -516,7 +516,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
                 wh.k3 k3Var = o4Var.K;
                 if (k3Var != null) {
                     wh.a aVar2 = o4Var.a;
-                    wh.r3.O1(k3Var.a);
+                    wh.r3.N1(k3Var.a);
                     break;
                 }
                 break;
@@ -670,7 +670,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
                 wh.l3 l3Var = ((wh.y) this.b).L;
                 if (l3Var != null) {
                     wh.r3 r3Var = l3Var.a;
-                    wh.r3.M1(r3Var, e1Var);
+                    wh.r3.L1(r3Var, e1Var);
                     r3Var.e3.h(e1Var, true);
                     break;
                 }
@@ -679,7 +679,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
                 wh.k3 k3Var = ((wh.o4) this.b).K;
                 if (k3Var != null) {
                     wh.r3 r3Var2 = k3Var.a;
-                    wh.r3.M1(r3Var2, e1Var);
+                    wh.r3.L1(r3Var2, e1Var);
                     r3Var2.e3.h(e1Var, true);
                     break;
                 }
@@ -712,7 +712,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
                 wh.y yVar = (wh.y) this.b;
                 wh.l3 l3Var = yVar.L;
                 if (l3Var != null) {
-                    wh.r3.P1(l3Var.a, yVar.a);
+                    wh.r3.O1(l3Var.a, yVar.a);
                     break;
                 }
                 break;
@@ -720,7 +720,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
                 wh.o4 o4Var = (wh.o4) this.b;
                 wh.k3 k3Var = o4Var.K;
                 if (k3Var != null) {
-                    wh.r3.P1(k3Var.a, o4Var.a);
+                    wh.r3.O1(k3Var.a, o4Var.a);
                     break;
                 }
                 break;
@@ -729,14 +729,14 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
 
     @Override // uf.j1
     public void g(int i10) {
-        AndroidUtilities.runOnUIThread(new qh.v9(this, 21));
+        AndroidUtilities.runOnUIThread(new qh.u9(this, 21));
     }
 
     @Override // eg.q2
     public float get() {
-        qh.f9 f9Var = (qh.f9) this.b;
-        int i10 = f9Var.C1;
-        dg.m currentBrush = f9Var.L0.getCurrentBrush();
+        qh.e9 e9Var = (qh.e9) this.b;
+        int i10 = e9Var.C1;
+        dg.m currentBrush = e9Var.L0.getCurrentBrush();
         return currentBrush == null ? dg.e1.e(i10).i : dg.e1.e(i10).f(String.valueOf(dg.m.a.indexOf(currentBrush)), currentBrush.d());
     }
 
@@ -744,7 +744,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
         return null;
     }
 
-    @Override // org.telegram.ui.Components.z61
+    @Override // org.telegram.ui.Components.y61
     public void invalidate() {
         switch (this.a) {
             case 0:
@@ -1190,7 +1190,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
             miVar.W1 = new h7.u(24);
             miVar.M = true;
             miVar.u1.setVisibility(8);
-            miVar.q2 = new qh.m1(z1Var, aVar, miVar, 6);
+            miVar.q2 = new qh.l1(z1Var, aVar, miVar, 6);
             miVar.r1();
             miVar.show();
         }
@@ -1209,9 +1209,9 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
     public void onContentChanged() {
         wh.z1 z1Var = (wh.z1) this.b;
         if (z1Var.v0 != null) {
-            boolean m32 = z1Var.M.m3();
-            z1Var.I0 = m32;
-            z1Var.v0.h(m32);
+            boolean l32 = z1Var.M.l3();
+            z1Var.I0 = l32;
+            z1Var.v0.h(l32);
             z1Var.v0.invalidate();
         }
         z1Var.C0();
@@ -1229,7 +1229,7 @@ public class f1 implements z61, org.telegram.ui.Components.y4, oa0, r0.o, androi
     public void q() {
         wh.z1 z1Var = (wh.z1) this.b;
         wh.f3 f3Var = z1Var.M.k3;
-        z1Var.x0((f3Var != null && f3Var.y() && z1Var.M.C4()) ? 1 : 0, true);
+        z1Var.x0((f3Var != null && f3Var.y() && z1Var.M.B4()) ? 1 : 0, true);
         z1Var.y0();
         z1Var.w0();
     }

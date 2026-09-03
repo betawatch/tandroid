@@ -16,7 +16,7 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class xu implements org.telegram.ui.ot {
     public final /* synthetic */ ov a;
@@ -193,11 +193,11 @@ public final class xu implements org.telegram.ui.ot {
         ov ovVar = this.a;
         i10 = ((org.telegram.ui.ActionBar.h3) ovVar).currentAccount;
         MessagesController.getInstance(i10).updateEmojiStatus(emojiStatus);
-        gm gmVar = new gm(11, this, tL_emojiStatusEmpty);
+        eo eoVar = new eo(10, this, tL_emojiStatusEmpty);
         if (document != null) {
             viewGroup = ((org.telegram.ui.ActionBar.h3) ovVar).containerView;
             g6Var = ((org.telegram.ui.ActionBar.h3) ovVar).resourcesProvider;
-            new qc((FrameLayout) viewGroup, g6Var).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), gmVar).j();
+            new qc((FrameLayout) viewGroup, g6Var).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), eoVar).j();
             return;
         }
         Context context = ovVar.getContext();
@@ -208,7 +208,7 @@ public final class xu implements org.telegram.ui.ot {
         Context context2 = ovVar.getContext();
         g6Var3 = ((org.telegram.ui.ActionBar.h3) ovVar).resourcesProvider;
         gc gcVar = new gc(context2, g6Var3, true);
-        gcVar.a = gmVar;
+        gcVar.a = eoVar;
         acVar.setButton(gcVar);
         viewGroup2 = ((org.telegram.ui.ActionBar.h3) ovVar).containerView;
         ic.f((FrameLayout) viewGroup2, acVar, 1500).j();

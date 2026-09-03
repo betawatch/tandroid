@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.ContactsController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p6 implements Runnable {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class p6 implements Runnable {
                 int length = lowerCase.length();
                 int i12 = this.b;
                 if (length == 0) {
-                    AndroidUtilities.runOnUIThread(new eg.d3((sl0) c1Var, i12, new ArrayList(), new ArrayList(), c1Var.E, 29));
+                    AndroidUtilities.runOnUIThread(new eg.d3((rl0) c1Var, i12, new ArrayList(), new ArrayList(), c1Var.E, 29));
                     break;
                 } else {
                     String translitString = LocaleController.getInstance().getTranslitString(lowerCase);
@@ -114,7 +114,7 @@ public final /* synthetic */ class p6 implements Runnable {
                                     arrayList5.add(b1Var2.b);
                                 }
                             }
-                            AndroidUtilities.runOnUIThread(new eg.d3((sl0) c1Var, i16, arrayList3, arrayList4, arrayList5, 29));
+                            AndroidUtilities.runOnUIThread(new eg.d3((rl0) c1Var, i16, arrayList3, arrayList4, arrayList5, 29));
                             break;
                         } else {
                             int i19 = i13;

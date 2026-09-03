@@ -1,76 +1,15 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.view.MotionEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class s31 extends k6 {
-    public final Paint s;
-    public final d90 v;
-    public final /* synthetic */ u31 w;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s31(u31 u31Var, Context context) {
-        super(context, false, false, false);
-        this.w = u31Var;
-        this.s = new Paint(1);
-        this.v = new d90();
-    }
-
-    @Override // org.telegram.ui.Components.k6, android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (LocaleController.isRTL) {
-            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        } else {
-            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        }
-        w31 w31Var = this.w.h;
-        int i10 = org.telegram.ui.ActionBar.k6.Pi;
-        String[] strArr = w31.O;
-        int l1 = org.telegram.ui.ActionBar.k6.l1(0.1175f, w31Var.getThemedColor(i10));
-        Paint paint = this.s;
-        paint.setColor(l1);
-        canvas.drawRoundRect(AndroidUtilities.rectTmp, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
-        if (this.v.f(canvas)) {
-            invalidate();
-        }
-        super.onDraw(canvas);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.g6 g6Var;
-        w31 w31Var = this.w.h;
-        int action = motionEvent.getAction();
-        d90 d90Var = this.v;
-        if (action != 0) {
-            if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-                if (motionEvent.getAction() == 1) {
-                    performClick();
-                }
-                d90Var.d(true);
-                invalidate();
-            }
-            return super.onTouchEvent(motionEvent);
-        }
-        g6Var = ((org.telegram.ui.ActionBar.h3) w31Var).resourcesProvider;
-        h90 h90Var = new h90(null, g6Var, motionEvent.getX(), motionEvent.getY(), 0);
-        h90Var.d(org.telegram.ui.ActionBar.k6.l1(0.1175f, w31Var.getThemedColor(org.telegram.ui.ActionBar.k6.Pi)));
-        z80 b10 = h90Var.b();
-        if (LocaleController.isRTL) {
-            AndroidUtilities.rectTmp.set(getWidth() - d(), (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, getWidth(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        } else {
-            AndroidUtilities.rectTmp.set(0.0f, (getHeight() - AndroidUtilities.dp(18.0f)) / 2.0f, d(), (AndroidUtilities.dp(18.0f) + getHeight()) / 2.0f);
-        }
-        b10.addRect(AndroidUtilities.rectTmp, Path.Direction.CW);
-        d90Var.a(h90Var, null);
-        invalidate();
-        return true;
+public final class s31 extends ActionBarPopupWindow$ActionBarPopupWindowLayout {
+    @Override // org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.min((int) (AndroidUtilities.displaySize.y * 0.33f), View.MeasureSpec.getSize(i11)), TLObject.FLAG_30));
     }
 }

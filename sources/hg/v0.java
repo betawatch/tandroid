@@ -49,26 +49,26 @@ import org.telegram.ui.Cells.e7;
 import org.telegram.ui.Cells.g4;
 import org.telegram.ui.Components.a80;
 import org.telegram.ui.Components.cj;
-import org.telegram.ui.Components.h41;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.jl0;
+import org.telegram.ui.Components.g41;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.il0;
 import org.telegram.ui.Components.l5;
 import org.telegram.ui.Components.lj;
 import org.telegram.ui.Components.lp;
 import org.telegram.ui.Components.mi;
+import org.telegram.ui.Components.nq0;
+import org.telegram.ui.Components.o51;
 import org.telegram.ui.Components.oa0;
 import org.telegram.ui.Components.oj;
-import org.telegram.ui.Components.oq0;
-import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.ra0;
 import org.telegram.ui.Components.rj;
 import org.telegram.ui.Components.sj;
 import org.telegram.ui.Components.u5;
 import org.telegram.ui.Components.u60;
 import org.telegram.ui.Components.ue0;
+import org.telegram.ui.Components.w11;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.w70;
-import org.telegram.ui.Components.x11;
-import org.telegram.ui.Components.x51;
 import org.telegram.ui.Components.xg0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PrivacySettingsActivity;
@@ -78,13 +78,13 @@ import org.telegram.ui.bd;
 import org.telegram.ui.bd0;
 import org.telegram.ui.ch0;
 import org.telegram.ui.dv;
-import org.telegram.ui.kb1;
 import org.telegram.ui.kq;
-import org.telegram.ui.nc;
+import org.telegram.ui.mc;
 import org.telegram.ui.ob0;
+import org.telegram.ui.qb1;
 import org.telegram.ui.qh0;
 import org.telegram.ui.qk0;
-import org.telegram.ui.sc;
+import org.telegram.ui.rc;
 import org.telegram.ui.wc0;
 import org.telegram.ui.xh0;
 import org.telegram.ui.xn;
@@ -94,9 +94,9 @@ import org.telegram.ui.z60;
 import org.webrtc.MediaStreamTrack;
 import sh.d3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v0 implements jl0 {
+public final /* synthetic */ class v0 implements il0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -112,7 +112,7 @@ public final /* synthetic */ class v0 implements jl0 {
         if (r13.equals("🎨") != false) goto L98;
      */
     /* JADX WARN: Removed duplicated region for block: B:191:0x0533  */
-    @Override // org.telegram.ui.Components.jl0
+    @Override // org.telegram.ui.Components.il0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -130,12 +130,12 @@ public final /* synthetic */ class v0 implements jl0 {
         ra0 ra0Var;
         Paint.FontMetricsInt fontMetricsInt;
         String str5;
-        oq0 oq0Var;
+        nq0 nq0Var;
         String str6;
         wc0 wc0Var;
         float maxZoomLevel;
         float f10;
-        j51 G;
+        h51 G;
         int i11 = -1;
         int i12 = 0;
         switch (this.a) {
@@ -223,21 +223,21 @@ public final /* synthetic */ class v0 implements jl0 {
                 bd.V((bd) this.b, (TLRPC.ChatFull) this.c, view, i10);
                 break;
             case 5:
-                nc ncVar = (nc) this.b;
-                sc scVar = (sc) this.c;
-                bd bdVar = ncVar.c;
-                int i13 = scVar.d;
-                kb1 kb1Var = scVar.b;
+                mc mcVar = (mc) this.b;
+                rc rcVar = (rc) this.c;
+                bd bdVar = mcVar.c;
+                int i13 = rcVar.d;
+                qb1 qb1Var = rcVar.b;
                 MessagesController.PeerColors peerColors = MessagesController.getInstance(i13).peerColors;
                 bdVar.f = (peerColors == null || i10 < 0 || i10 >= peerColors.colors.size()) ? 0 : peerColors.colors.get(i10).id;
                 bdVar.X0(true);
                 bdVar.a1(true);
                 bdVar.b1();
-                if (view.getLeft() < AndroidUtilities.dp(24.0f) + kb1Var.getPaddingLeft()) {
-                    kb1Var.v0(-((AndroidUtilities.dp(48.0f) + kb1Var.getPaddingLeft()) - view.getLeft()), 0, null);
+                if (view.getLeft() < AndroidUtilities.dp(24.0f) + qb1Var.getPaddingLeft()) {
+                    qb1Var.v0(-((AndroidUtilities.dp(48.0f) + qb1Var.getPaddingLeft()) - view.getLeft()), 0, null);
                     break;
-                } else if (view.getWidth() + view.getLeft() > (kb1Var.getMeasuredWidth() - kb1Var.getPaddingRight()) - AndroidUtilities.dp(24.0f)) {
-                    kb1Var.v0(y3.z(48.0f, kb1Var.getMeasuredWidth() - kb1Var.getPaddingRight(), view.getWidth() + view.getLeft()), 0, null);
+                } else if (view.getWidth() + view.getLeft() > (qb1Var.getMeasuredWidth() - qb1Var.getPaddingRight()) - AndroidUtilities.dp(24.0f)) {
+                    qb1Var.v0(y3.z(48.0f, qb1Var.getMeasuredWidth() - qb1Var.getPaddingRight(), view.getWidth() + view.getLeft()), 0, null);
                     break;
                 }
                 break;
@@ -264,7 +264,7 @@ public final /* synthetic */ class v0 implements jl0 {
             case 8:
                 org.telegram.ui.Components.z zVar = (org.telegram.ui.Components.z) this.b;
                 g6 g6Var = (g6) this.c;
-                j51 G2 = zVar.j0.G(i10 - 1);
+                h51 G2 = zVar.j0.G(i10 - 1);
                 if (G2 != null && G2.d == 1) {
                     AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(zVar.getContext(), 0, g6Var);
                     alertDialog$Builder.a.O = LocaleController.getString(R.string.AIEditorDeleteStyle);
@@ -409,7 +409,7 @@ public final /* synthetic */ class v0 implements jl0 {
                                         StringBuilder sb2 = new StringBuilder("");
                                         ra0Var = ra0Var2;
                                         sb2.append(user3.id);
-                                        spannableString.setSpan(new q51(sb2.toString(), 3, null), 0, spannableString.length(), 33);
+                                        spannableString.setSpan(new o51(sb2.toString(), 3, null), 0, spannableString.length(), 33);
                                         oa0Var.U(i16, i17, spannableString, false);
                                     }
                                 } else {
@@ -473,7 +473,7 @@ public final /* synthetic */ class v0 implements jl0 {
                 xg0.o((xg0) this.b, (Context) this.c, view, i10);
                 break;
             case 14:
-                h41.S((h41) this.b, (g6) this.c, i10);
+                g41.S((g41) this.b, (g6) this.c, i10);
                 break;
             case 15:
                 dv dvVar = (dv) this.b;
@@ -524,13 +524,13 @@ public final /* synthetic */ class v0 implements jl0 {
                 }
                 dvVar.c.E(dvVar.r);
                 for (int i19 = 0; i19 < dvVar.a.getChildCount(); i19++) {
-                    x11 x11Var = (x11) dvVar.a.getChildAt(i19);
-                    if (x11Var != view && (oq0Var = x11Var.G) != null) {
-                        AndroidUtilities.cancelRunOnUIThread(oq0Var);
-                        x11Var.G.run();
+                    w11 w11Var = (w11) dvVar.a.getChildAt(i19);
+                    if (w11Var != view && (nq0Var = w11Var.G) != null) {
+                        AndroidUtilities.cancelRunOnUIThread(nq0Var);
+                        w11Var.G.run();
                     }
                 }
-                ((x11) view).d();
+                ((w11) view).d();
                 if (j10 != null) {
                     SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("themeconfig", 0).edit();
                     edit.putString((dvVar.s == 1 || j10.q()) ? "lastDarkTheme" : "lastDayTheme", j10.m());
@@ -645,8 +645,8 @@ public final /* synthetic */ class v0 implements jl0 {
             case 23:
                 ph.o oVar = (ph.o) this.b;
                 org.telegram.ui.web.d1 d1Var = (org.telegram.ui.web.d1) this.c;
-                x51 x51Var = oVar.W;
-                if (x51Var != null && (G = x51Var.G(i10 - 1)) != null) {
+                w51 w51Var = oVar.W;
+                if (w51Var != null && (G = w51Var.G(i10 - 1)) != null) {
                     Object obj = G.G;
                     if (obj instanceof TranslateController.Language) {
                         d1Var.run(((TranslateController.Language) obj).code);

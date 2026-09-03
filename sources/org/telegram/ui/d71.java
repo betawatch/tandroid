@@ -1,24 +1,18 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
-/* loaded from: classes3.dex */
-public final class d71 extends f2.v {
-    public final /* synthetic */ f71 c;
+import android.view.View;
 
-    public d71(f71 f71Var) {
-        this.c = f71Var;
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* loaded from: classes3.dex */
+public final class d71 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ h71 a;
+
+    public d71(h71 h71Var) {
+        this.a = h71Var;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        int i11;
-        f71 f71Var = this.c;
-        org.telegram.ui.Components.pz pzVar = f71Var.U;
-        org.telegram.ui.Components.x51 x51Var = f71Var.a0;
-        if (x51Var == null) {
-            return pzVar.J;
-        }
-        org.telegram.ui.Components.j51 G = x51Var.G(i10 - 1);
-        return (G == null || (i11 = G.u) == -1) ? pzVar.J : i11;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        h71.S(this.a);
     }
 }

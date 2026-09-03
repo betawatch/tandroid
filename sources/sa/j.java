@@ -2,12 +2,12 @@ package sa;
 
 import j$.util.concurrent.ConcurrentHashMap;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class j implements pa.v {
     public static final i c;
     public static final i d;
-    public final q5.g0 a;
+    public final q5.c0 a;
     public final ConcurrentHashMap b = new ConcurrentHashMap();
 
     static {
@@ -16,13 +16,13 @@ public final class j implements pa.v {
         d = new i(i10);
     }
 
-    public j(q5.g0 g0Var) {
-        this.a = g0Var;
+    public j(q5.c0 c0Var) {
+        this.a = c0Var;
     }
 
-    public final pa.u a(q5.g0 g0Var, pa.g gVar, wa.a aVar, qa.a aVar2, boolean z4) {
+    public final pa.u a(q5.c0 c0Var, pa.g gVar, wa.a aVar, qa.a aVar2, boolean z4) {
         pa.u uVar;
-        Object y22 = g0Var.z(new wa.a(aVar2.value())).y2();
+        Object y22 = c0Var.z(new wa.a(aVar2.value())).y2();
         boolean nullSafe = aVar2.nullSafe();
         if (y22 instanceof pa.u) {
             uVar = (pa.u) y22;

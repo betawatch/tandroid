@@ -1,96 +1,115 @@
 package qh;
 
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.text.TextUtils;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Timer;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.i50;
+import org.telegram.ui.du;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class u1 extends t1 {
-    public Drawable i;
-    public Drawable j;
-    public StaticLayout k;
-    public float l;
-    public float m;
-    public Paint n;
-    public final /* synthetic */ w1 o;
+public final class u1 extends s1 {
+    public ng.h0 i;
+    public ng.h0 j;
+    public int k;
+    public final org.telegram.ui.Components.z5 l;
+    public Timer m;
+    public final oh.o8 n;
+    public final ArrayList o;
+    public final /* synthetic */ v1 p;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u1(w1 w1Var, int i10, int i11, String str) {
-        super(w1Var);
-        this.o = w1Var;
-        this.a = i10;
-        Drawable mutate = w1Var.getContext().getResources().getDrawable(i11).mutate();
-        this.i = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        String upperCase = str.toUpperCase();
-        TextPaint textPaint = w1Var.b;
-        StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(upperCase, textPaint, AndroidUtilities.displaySize.x * 0.8f, TextUtils.TruncateAt.END), textPaint, 99999, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.k = staticLayout;
-        this.l = staticLayout.getLineCount() > 0 ? this.k.getLineWidth(0) : 0.0f;
-        this.m = this.k.getLineCount() > 0 ? this.k.getLineLeft(0) : 0.0f;
-        this.b = AndroidUtilities.dpf2(45.6f) + this.l;
-        this.c = AndroidUtilities.dpf2(36.0f);
+    public u1(v1 v1Var) {
+        super(v1Var);
+        int i10;
+        this.p = v1Var;
+        this.i = new ng.h0(v1Var);
+        this.j = new ng.h0(v1Var);
+        this.l = new org.telegram.ui.Components.z5(v1Var);
+        this.n = new oh.o8(v1Var);
+        this.o = new ArrayList();
+        this.a = 3;
+        this.b = AndroidUtilities.dp(44.0f);
+        this.c = AndroidUtilities.dp(36.0f);
+        i10 = ((org.telegram.ui.ActionBar.h3) v1Var.f).currentAccount;
+        List<TLRPC.TL_availableReaction> reactionsList = MediaDataController.getInstance(i10).getReactionsList();
+        for (int i11 = 0; i11 < Math.min(reactionsList.size(), 8); i11++) {
+            this.o.add(ng.q0.c(reactionsList.get(i11)));
+        }
+        Collections.sort(this.o, new du(16));
+        if (!this.o.isEmpty()) {
+            this.i.e((ng.q0) this.o.get(this.k));
+        }
+        this.l.d(1.0f, true);
     }
 
-    @Override // qh.t1
+    @Override // qh.s1
     public final void a(Canvas canvas, float f10, float f11) {
-        float f12 = this.b + f10;
-        float f13 = this.c + f11;
+        float dp = f11 - AndroidUtilities.dp(4.0f);
+        float f12 = (int) f10;
+        float f13 = (int) dp;
+        float f14 = this.b;
+        float f15 = (int) (f10 + f14);
+        float f16 = (int) (dp + f14);
         RectF rectF = this.f;
-        rectF.set(f10, f11, f12, f13);
+        rectF.set(f12, f13, f15, f16);
         float a2 = this.g.a(0.05f);
         canvas.save();
         canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.o.a);
-        if (this.j != null) {
-            canvas.saveLayerAlpha(rectF, 255, 31);
-        }
-        if (this.i == null) {
-            Drawable emojiBigDrawable = Emoji.getEmojiBigDrawable(null);
-            this.i = emojiBigDrawable;
-            if (emojiBigDrawable instanceof Emoji.EmojiDrawable) {
-                ((Emoji.EmojiDrawable) emojiBigDrawable).fullSize = false;
-            }
-        }
-        if (this.i != null) {
-            float dp = AndroidUtilities.dp(24.0f) / 2;
-            this.i.setBounds((int) ((rectF.left + AndroidUtilities.dp(18.0f)) - dp), (int) (((this.c / 2.0f) + rectF.top) - dp), (int) (rectF.left + AndroidUtilities.dp(18.0f) + dp), (int) ((this.c / 2.0f) + rectF.top + dp));
-            this.i.draw(canvas);
-        }
-        if (this.j != null) {
-            RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(rectF.left + AndroidUtilities.dp(18.55f), ((rectF.top + this.c) - AndroidUtilities.dp(5.0f)) - AndroidUtilities.dp(12.55f), rectF.left + AndroidUtilities.dp(29.45f), rectF.left + AndroidUtilities.dp(31.0f));
-            canvas.drawRoundRect(rectF2, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), this.n);
-            this.j.setBounds((int) (rectF.left + AndroidUtilities.dp(18.0f)), (int) (((rectF.top + this.c) - AndroidUtilities.dp(5.0f)) - AndroidUtilities.dp(12.0f)), (int) (rectF.left + AndroidUtilities.dp(30.0f)), (int) ((rectF.top + this.c) - AndroidUtilities.dp(5.0f)));
-            this.j.draw(canvas);
+        int i10 = (int) rectF.left;
+        int i11 = (int) rectF.top;
+        int i12 = (int) rectF.right;
+        int i13 = (int) rectF.bottom;
+        oh.o8 o8Var = this.n;
+        o8Var.setBounds(i10, i11, i12, i13);
+        o8Var.draw(canvas);
+        float dp2 = AndroidUtilities.dp(30.0f);
+        Rect rect = AndroidUtilities.rectTmp2;
+        float f17 = dp2 / 2.0f;
+        rect.set((int) (rectF.centerX() - f17), (int) (rectF.centerY() - f17), (int) (rectF.centerX() + f17), (int) (rectF.centerY() + f17));
+        float d = this.l.d(1.0f, false);
+        this.j.c(rect);
+        this.i.c(rect);
+        if (d == 1.0f) {
+            this.i.a(canvas);
+        } else {
+            canvas.save();
+            float f18 = 1.0f - d;
+            canvas.scale(f18, f18, rectF.centerX(), rectF.top);
+            ng.h0 h0Var = this.j;
+            h0Var.h = f18;
+            h0Var.a(canvas);
+            canvas.restore();
+            canvas.save();
+            canvas.scale(d, d, rectF.centerX(), rectF.bottom);
+            ng.h0 h0Var2 = this.i;
+            h0Var2.h = d;
+            h0Var2.a(canvas);
             canvas.restore();
         }
-        canvas.translate((rectF.left + AndroidUtilities.dp((this.i != null ? 28 : 0) + 6)) - this.m, ((this.c / 2.0f) + rectF.top) - (this.k.getHeight() / 2.0f));
-        this.k.draw(canvas);
         canvas.restore();
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u1(w1 w1Var, CharSequence charSequence) {
-        super(w1Var);
-        this.o = w1Var;
-        this.a = 5;
-        TextPaint textPaint = w1Var.b;
-        StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(charSequence, textPaint, AndroidUtilities.displaySize.x * 0.8f, TextUtils.TruncateAt.END), textPaint, 99999, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.k = staticLayout;
-        this.l = staticLayout.getLineCount() > 0 ? this.k.getLineWidth(0) : 0.0f;
-        this.m = this.k.getLineCount() > 0 ? this.k.getLineLeft(0) : 0.0f;
-        this.b = AndroidUtilities.dpf2(12.0f) + this.l;
-        this.c = AndroidUtilities.dpf2(36.0f);
+    @Override // qh.s1
+    public final void b(boolean z4) {
+        this.i.b(z4);
+        this.j.b(z4);
+        Timer timer = this.m;
+        if (timer != null) {
+            timer.cancel();
+            this.m = null;
+        }
+        if (z4) {
+            Timer timer2 = new Timer();
+            this.m = timer2;
+            timer2.schedule(new i50(this, 3), 2000L, 2000L);
+        }
     }
 }

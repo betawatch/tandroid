@@ -10,10 +10,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class zt extends org.telegram.ui.ActionBar.p2 {
-    public org.telegram.ui.Components.tl0 a;
+    public org.telegram.ui.Components.sl0 a;
     public org.telegram.ui.Components.oz b;
     public vt c;
     public xt d;
@@ -63,7 +63,7 @@ public final class zt extends org.telegram.ui.ActionBar.p2 {
         kVar.C(org.telegram.ui.ActionBar.k6.w0(null, i10, false), false);
         this.actionBar.B(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.u8, false), false);
         this.actionBar.setTitleColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 3));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 3));
         org.telegram.ui.ActionBar.w0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
         a2.F();
         a2.E = new fb(this, 7);
@@ -84,9 +84,9 @@ public final class zt extends org.telegram.ui.ActionBar.p2 {
         this.b.setShowAtCenter(true);
         this.b.setText(LocaleController.getString(R.string.NoResult));
         frameLayout.addView(this.b, k7.c6.c(-1.0f, -1));
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.a = tl0Var;
-        tl0Var.setSectionsType(3);
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.a = sl0Var;
+        sl0Var.setSectionsType(3);
         this.a.setEmptyView(this.b);
         this.a.setVerticalScrollBarEnabled(false);
         this.a.setFastScrollEnabled(0);

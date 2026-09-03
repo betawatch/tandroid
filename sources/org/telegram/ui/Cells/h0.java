@@ -34,13 +34,13 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 import org.telegram.ui.Components.d90;
+import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.eq;
-import org.telegram.ui.Components.g51;
 import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.l51;
 import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class h0 extends View {
     public final ImageReceiver B;
@@ -205,7 +205,7 @@ public abstract class h0 extends View {
                             z10 = false;
                             MessageObject.addLinks(false, spannableStringBuilder);
                             if (z4) {
-                                spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold()), 0, string.length(), 33);
+                                spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, string.length(), 33);
                             }
                         }
                         Emoji.replaceEmoji(spannableStringBuilder, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), z10);
@@ -448,8 +448,8 @@ public abstract class h0 extends View {
                     if (h90Var != null) {
                         try {
                             ClickableSpan clickableSpan = (ClickableSpan) h90Var.i;
-                            if (clickableSpan instanceof n51) {
-                                String url = ((n51) clickableSpan).getURL();
+                            if (clickableSpan instanceof l51) {
+                                String url = ((l51) clickableSpan).getURL();
                                 if (!url.startsWith("@")) {
                                     if (!url.startsWith("#")) {
                                         if (!url.startsWith("/")) {

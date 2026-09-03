@@ -1,10 +1,10 @@
 package mh;
 
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.qg1;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.vg1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g implements org.telegram.ui.ActionBar.c2, Utilities.Callback5, Utilities.Callback5Return {
     public final /* synthetic */ p a;
@@ -17,7 +17,7 @@ public final /* synthetic */ class g implements org.telegram.ui.ActionBar.c2, Ut
     public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
         p pVar = this.a;
         pVar.getClass();
-        pVar.presentFragment(new qg1(6, null));
+        pVar.presentFragment(new vg1(6, null));
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5Return
@@ -34,6 +34,6 @@ public final /* synthetic */ class g implements org.telegram.ui.ActionBar.c2, Ut
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
-        p.W(this.a, (j51) obj);
+        p.W(this.a, (h51) obj);
     }
 }

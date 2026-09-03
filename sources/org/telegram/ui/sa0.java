@@ -8,18 +8,18 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class sa0 implements MessagesController.MessagesLoadedCallback {
-    public final /* synthetic */ v10 a;
+    public final /* synthetic */ z10 a;
     public final /* synthetic */ boolean[] b;
     public final /* synthetic */ Bundle c;
     public final /* synthetic */ TLRPC.ChatInvite d;
     public final /* synthetic */ LaunchActivity e;
 
-    public sa0(LaunchActivity launchActivity, v10 v10Var, boolean[] zArr, Bundle bundle, TLRPC.ChatInvite chatInvite) {
+    public sa0(LaunchActivity launchActivity, z10 z10Var, boolean[] zArr, Bundle bundle, TLRPC.ChatInvite chatInvite) {
         this.e = launchActivity;
-        this.a = v10Var;
+        this.a = z10Var;
         this.b = zArr;
         this.c = bundle;
         this.d = chatInvite;

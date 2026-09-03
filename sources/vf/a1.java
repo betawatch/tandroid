@@ -33,10 +33,10 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.c51;
 import org.telegram.ui.du;
+import org.telegram.ui.h51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class a1 extends LinearLayout {
     public boolean B;
@@ -71,18 +71,18 @@ public abstract class a1 extends LinearLayout {
         int i10 = 0;
         for (int i11 = 7; i10 < i11; i11 = 7) {
             if (i10 == 0) {
-                ViewGroup c51Var = new c51(context, 11);
-                c51Var.setMinimumHeight(AndroidUtilities.dp(60.0f));
+                ViewGroup h51Var = new h51(context, 11);
+                h51Var.setMinimumHeight(AndroidUtilities.dp(60.0f));
                 TextView textView = new TextView(context);
                 this.b = textView;
                 textView.setGravity(LocaleController.isRTL ? 5 : 3);
                 textView.setTextSize(1, 16.0f);
-                c51Var.addView(textView, c6.i(-1.0f, -2.0f, 8388659, 0.0f, 9.33f, 0.0f, 0.0f));
+                h51Var.addView(textView, c6.i(-1.0f, -2.0f, 8388659, 0.0f, 9.33f, 0.0f, 0.0f));
                 this.h[i10] = new TextView(context);
                 this.h[i10].setGravity(LocaleController.isRTL ? 5 : 3);
                 this.h[i10].setTextSize(1, 13.0f);
                 this.h[i10].setTextColor(k6.v0(k6.z6, g6Var));
-                c51Var.addView(this.h[i10], c6.i(-2.0f, -2.0f, 8388659, 0.0f, 33.0f, 0.0f, 10.0f));
+                h51Var.addView(this.h[i10], c6.i(-2.0f, -2.0f, 8388659, 0.0f, 33.0f, 0.0f, 10.0f));
                 LinearLayout linearLayout = new LinearLayout(context);
                 this.v = linearLayout;
                 linearLayout.setOrientation(1);
@@ -135,9 +135,9 @@ public abstract class a1 extends LinearLayout {
                 FrameLayout frameLayout = new FrameLayout(context);
                 this.e = frameLayout;
                 frameLayout.addView(this.v, c6.i(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 0.0f));
-                c51Var.addView(frameLayout, c6.i(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 12.0f));
-                this.f[i10] = c51Var;
-                addView(c51Var, c6.i(-1.0f, -2.0f, 51, 18.0f, 0.0f, 8.0f, 0.0f));
+                h51Var.addView(frameLayout, c6.i(-1.0f, -2.0f, 8388693, 0.0f, 0.0f, 0.0f, 12.0f));
+                this.f[i10] = h51Var;
+                addView(h51Var, c6.i(-1.0f, -2.0f, 51, 18.0f, 0.0f, 8.0f, 0.0f));
             } else {
                 ViewGroup f10 = y3.f(context, 0);
                 this.h[i10] = new TextView(context);

@@ -13,9 +13,9 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.c2, y4, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, ug.b, hv0, iv0, r0.o {
+public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.c2, y4, ImageReceiver.ImageReceiverDelegate, GenericProvider, p.a, ug.b, gv0, hv0, r0.o {
     public final /* synthetic */ int a;
 
     public /* synthetic */ k2(int i10) {
@@ -48,7 +48,7 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
         return bitmap.getConfig() == Bitmap.Config.ALPHA_8 ? bitmap : bitmap.extractAlpha();
     }
 
-    @Override // org.telegram.ui.Components.iv0
+    @Override // org.telegram.ui.Components.hv0
     public void b(Object obj, float f10) {
         switch (this.a) {
             case 19:
@@ -106,15 +106,15 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
-        ij0 lottieAnimation;
+        hj0 lottieAnimation;
         switch (this.a) {
             case 11:
                 Drawable drawable = imageReceiver.getDrawable();
-                if (drawable instanceof ij0) {
-                    ij0 ij0Var = (ij0) drawable;
-                    ij0Var.N(0);
-                    ij0Var.stop();
-                    ij0Var.Q(0.0f, false);
+                if (drawable instanceof hj0) {
+                    hj0 hj0Var = (hj0) drawable;
+                    hj0Var.N(0);
+                    hj0Var.stop();
+                    hj0Var.Q(0.0f, false);
                     break;
                 }
                 break;
@@ -181,7 +181,7 @@ public final /* synthetic */ class k2 implements uc0, org.telegram.ui.ActionBar.
         }
     }
 
-    @Override // org.telegram.ui.Components.hv0
+    @Override // org.telegram.ui.Components.gv0
     public float get(Object obj) {
         switch (this.a) {
             case 18:

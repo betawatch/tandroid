@@ -16,9 +16,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.w31;
+import org.telegram.ui.Components.v31;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class d4 {
     public TL_stories.StoryItem a = null;
@@ -216,24 +216,24 @@ public final class d4 {
             } else {
                 s6 s6Var = this.b;
                 if (s6Var != null) {
-                    qh.s6 s6Var2 = s6Var.c;
-                    if (s6Var2 != null) {
-                        if (s6Var2.n) {
+                    qh.r6 r6Var = s6Var.c;
+                    if (r6Var != null) {
+                        if (r6Var.n) {
                             v7Var = new v7();
-                            v7Var.k = s6Var2.p;
-                            String str = s6Var2.s;
+                            v7Var.k = r6Var.p;
+                            String str = r6Var.s;
                             v7Var.l = str;
                             v7Var.f = TextUtils.isEmpty(str);
-                        } else if (s6Var2.u && (arrayList = s6Var2.v) != null && arrayList.size() > 0) {
-                            MessageObject messageObject = (MessageObject) s6Var2.v.get(0);
-                            long p10 = qh.s6.p(messageObject);
+                        } else if (r6Var.u && (arrayList = r6Var.v) != null && arrayList.size() > 0) {
+                            MessageObject messageObject = (MessageObject) r6Var.v.get(0);
+                            long p10 = qh.r6.p(messageObject);
                             if (p10 < 0 && (chat = MessagesController.getInstance(messageObject.currentAccount).getChat(Long.valueOf(-p10))) != null) {
                                 v7Var = new v7();
                                 v7Var.b = Long.valueOf(p10);
                                 v7Var.e = true;
                                 v7Var.a = messageObject.currentAccount;
                                 v7Var.f = true;
-                                Boolean D = qh.s6.D(messageObject);
+                                Boolean D = qh.r6.D(messageObject);
                                 v7Var.d = Integer.valueOf(D != null ? D.booleanValue() ? messageObject.messageOwner.fwd_from.channel_post : messageObject.getId() : 0);
                                 v7Var.k = new SpannableStringBuilder(ChatObject.isChannelAndNotMegaGroup(chat) ? MessageObject.channelSpan() : MessageObject.groupSpan()).append((CharSequence) " ").append((CharSequence) chat.title);
                             }
@@ -334,7 +334,7 @@ public final class d4 {
         }
         TL_stories.StoryItem storyItem = d4Var.a;
         if (storyItem != null) {
-            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, w31.B())) {
+            if (!storyItem.translated || storyItem.translatedText == null || !TextUtils.equals(storyItem.translatedLng, v31.B())) {
                 String str = d4Var.a.caption;
                 this.h = str;
                 CharSequence replaceEmoji2 = Emoji.replaceEmoji(str, n3Var.V.getPaint().getFontMetricsInt(), false);

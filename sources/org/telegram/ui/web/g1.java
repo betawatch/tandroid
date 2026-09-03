@@ -11,15 +11,15 @@ import java.util.HashMap;
 import java.util.Map;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class g1 extends AsyncTask {
     public final HashMap a = new HashMap();
-    public final v1 b;
+    public final a2 b;
     public Exception c;
 
-    public g1(v1 v1Var) {
-        this.b = v1Var;
+    public g1(a2 a2Var) {
+        this.b = a2Var;
     }
 
     @Override // android.os.AsyncTask
@@ -48,12 +48,12 @@ public final class g1 extends AsyncTask {
     @Override // android.os.AsyncTask
     public final void onPostExecute(Object obj) {
         Bitmap bitmap = (Bitmap) obj;
-        v1 v1Var = this.b;
-        if (v1Var != null) {
+        a2 a2Var = this.b;
+        if (a2Var != null) {
             if (this.c == null) {
-                v1Var.run(bitmap);
+                a2Var.run(bitmap);
             } else {
-                v1Var.run(null);
+                a2Var.run(null);
             }
         }
     }

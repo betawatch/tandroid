@@ -42,12 +42,12 @@ import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Cells.u3;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f2 extends sa {
     public final qh.d U;
@@ -117,7 +117,7 @@ public final class f2 extends sa {
         ViewGroup viewGroup3 = this.containerView;
         int i12 = this.backgroundPaddingLeft;
         viewGroup3.addView(d2Var, c6.f(-2.0f, 55, i12, 0, i12, 0));
-        lg.a aVar = new lg.a(getContext(), this.resourcesProvider, (tl0) null);
+        lg.a aVar = new lg.a(getContext(), this.resourcesProvider, (sl0) null);
         aVar.setClickable(true);
         aVar.setOrientation(1);
         aVar.setPadding(AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f));
@@ -130,11 +130,11 @@ public final class f2 extends sa {
         int i13 = this.backgroundPaddingLeft;
         viewGroup4.addView(aVar, c6.f(-2.0f, 87, i13, 0, i13, 0));
         ig.h hVar = this.l0;
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         hVar.h = arrayList;
-        hVar.f = tl0Var;
+        hVar.f = sl0Var;
         int i14 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
+        sl0Var.setPadding(i14, 0, i14, AndroidUtilities.dp(60.0f));
         this.d.j(new fg.e2(this, 1));
         this.d.setOnItemClickListener(new f(this, 2));
         f2.l lVar = new f2.l();
@@ -484,15 +484,15 @@ public final class f2 extends sa {
     }
 
     public final void X(boolean z4) {
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         if (!z4) {
-            tl0Var.u0(0);
+            sl0Var.u0(0);
             return;
         }
         xh.o oVar = new xh.o(getContext(), 2, 0.6f);
         oVar.a = 1;
         oVar.p = AndroidUtilities.dp(38.0f);
-        tl0Var.getLayoutManager().w0(oVar);
+        sl0Var.getLayoutManager().w0(oVar);
     }
 
     public final void Y() {
@@ -621,12 +621,12 @@ public final class f2 extends sa {
         a0(z4, z10);
         int i10 = 0;
         while (true) {
-            tl0 tl0Var = this.d;
-            if (i10 >= tl0Var.getChildCount()) {
+            sl0 sl0Var = this.d;
+            if (i10 >= sl0Var.getChildCount()) {
                 Z(z4);
                 return;
             }
-            View childAt = tl0Var.getChildAt(i10);
+            View childAt = sl0Var.getChildAt(i10);
             if (childAt instanceof lg.n) {
                 int R = RecyclerView.R(childAt) - 1;
                 if (R >= 0) {
@@ -693,7 +693,7 @@ public final class f2 extends sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
+    public final rl0 v(sl0 sl0Var) {
         ig.h hVar = new ig.h(getContext(), this.resourcesProvider, true);
         this.l0 = hVar;
         return hVar;

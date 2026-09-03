@@ -1,8 +1,23 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+import android.view.View;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class v51 {
+public final class v51 extends View {
     public int a;
-    public int b;
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    }
+
+    public void setHeight(int i10) {
+        if (this.a == i10) {
+            return;
+        }
+        this.a = i10;
+        requestLayout();
+    }
 }

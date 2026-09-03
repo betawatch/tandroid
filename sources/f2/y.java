@@ -15,12 +15,12 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.Components.ai;
+import org.telegram.ui.Components.ll0;
 import org.telegram.ui.Components.m20;
-import org.telegram.ui.Components.ml0;
-import org.telegram.ui.Components.ol0;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.nl0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class y implements z0 {
     public final /* synthetic */ int a = 0;
@@ -86,7 +86,7 @@ public final class y implements z0 {
     public final boolean b(RecyclerView recyclerView, MotionEvent motionEvent) {
         int findPointerIndex;
         View E;
-        ml0 ml0Var;
+        ll0 ll0Var;
         switch (this.a) {
             case 0:
                 f0 f0Var = (f0) this.b;
@@ -146,21 +146,21 @@ public final class y implements z0 {
                 return f0Var.c != null;
             default:
                 int actionMasked2 = motionEvent.getActionMasked();
-                tl0 tl0Var = (tl0) this.b;
-                Rect rect = tl0Var.D1;
-                boolean z4 = tl0Var.getScrollState() == 0;
-                if ((actionMasked2 == 0 || actionMasked2 == 5) && tl0Var.K1 == null && z4) {
+                sl0 sl0Var = (sl0) this.b;
+                Rect rect = sl0Var.D1;
+                boolean z4 = sl0Var.getScrollState() == 0;
+                if ((actionMasked2 == 0 || actionMasked2 == 5) && sl0Var.K1 == null && z4) {
                     float x10 = motionEvent.getX();
                     float y10 = motionEvent.getY();
-                    tl0Var.W0 = false;
-                    u0 itemAnimator = tl0Var.getItemAnimator();
-                    if ((tl0Var.h1 || itemAnimator == null || !itemAnimator.k()) && tl0Var.E0(y10) && (E = tl0Var.E(x10, y10)) != null && tl0Var.F0(E)) {
-                        tl0Var.K1 = E;
+                    sl0Var.W0 = false;
+                    u0 itemAnimator = sl0Var.getItemAnimator();
+                    if ((sl0Var.h1 || itemAnimator == null || !itemAnimator.k()) && sl0Var.E0(y10) && (E = sl0Var.E(x10, y10)) != null && sl0Var.F0(E)) {
+                        sl0Var.K1 = E;
                     }
-                    if (tl0Var.K1 instanceof ViewGroup) {
-                        float x11 = motionEvent.getX() - tl0Var.K1.getLeft();
-                        float y11 = motionEvent.getY() - tl0Var.K1.getTop();
-                        ViewGroup viewGroup = (ViewGroup) tl0Var.K1;
+                    if (sl0Var.K1 instanceof ViewGroup) {
+                        float x11 = motionEvent.getX() - sl0Var.K1.getLeft();
+                        float y11 = motionEvent.getY() - sl0Var.K1.getTop();
+                        ViewGroup viewGroup = (ViewGroup) sl0Var.K1;
                         int childCount = viewGroup.getChildCount() - 1;
                         while (true) {
                             if (childCount >= 0) {
@@ -168,77 +168,77 @@ public final class y implements z0 {
                                 if (x11 < childAt.getLeft() || x11 > childAt.getRight() || y11 < childAt.getTop() || y11 > childAt.getBottom() || !childAt.isClickable()) {
                                     childCount--;
                                 } else {
-                                    tl0Var.K1 = null;
+                                    sl0Var.K1 = null;
                                 }
                             }
                         }
                     }
-                    tl0Var.L1 = -1;
-                    View view = tl0Var.K1;
+                    sl0Var.L1 = -1;
+                    View view = sl0Var.K1;
                     if (view != null) {
-                        if (tl0Var.e1) {
-                            tl0Var.L1 = RecyclerView.S(view);
+                        if (sl0Var.e1) {
+                            sl0Var.L1 = RecyclerView.S(view);
                         } else {
-                            tl0Var.L1 = RecyclerView.R(view);
+                            sl0Var.L1 = RecyclerView.R(view);
                         }
-                        MotionEvent obtain = MotionEvent.obtain(0L, 0L, motionEvent.getActionMasked(), motionEvent.getX() - tl0Var.K1.getLeft(), motionEvent.getY() - tl0Var.K1.getTop(), 0);
-                        if (tl0Var.K1.onTouchEvent(obtain)) {
-                            tl0Var.M1 = true;
+                        MotionEvent obtain = MotionEvent.obtain(0L, 0L, motionEvent.getActionMasked(), motionEvent.getX() - sl0Var.K1.getLeft(), motionEvent.getY() - sl0Var.K1.getTop(), 0);
+                        if (sl0Var.K1.onTouchEvent(obtain)) {
+                            sl0Var.M1 = true;
                         }
                         obtain.recycle();
                     }
                 }
-                if (tl0Var.K1 != null && !tl0Var.M1) {
+                if (sl0Var.K1 != null && !sl0Var.M1) {
                     try {
-                        tl0Var.J1.J(motionEvent);
+                        sl0Var.J1.J(motionEvent);
                     } catch (Exception e6) {
                         FileLog.e(e6);
                     }
                 }
                 if (actionMasked2 == 0 || actionMasked2 == 5) {
-                    if (tl0Var.M1 || tl0Var.K1 == null) {
+                    if (sl0Var.M1 || sl0Var.K1 == null) {
                         rect.setEmpty();
                     } else {
                         float x12 = motionEvent.getX();
                         float y12 = motionEvent.getY();
                         gg.d dVar = new gg.d(this, x12, y12, 1);
-                        tl0Var.b1 = dVar;
+                        sl0Var.b1 = dVar;
                         AndroidUtilities.runOnUIThread(dVar, ViewConfiguration.getTapTimeout());
-                        if (tl0Var.K1.isEnabled()) {
-                            View view2 = tl0Var.K1;
-                            if (tl0Var.H0(view2, x12 - view2.getX(), y12 - tl0Var.K1.getY())) {
-                                tl0Var.i1(tl0Var.L1, tl0Var.K1);
-                                org.telegram.ui.Cells.z zVar3 = tl0Var.A1;
+                        if (sl0Var.K1.isEnabled()) {
+                            View view2 = sl0Var.K1;
+                            if (sl0Var.H0(view2, x12 - view2.getX(), y12 - sl0Var.K1.getY())) {
+                                sl0Var.h1(sl0Var.L1, sl0Var.K1);
+                                org.telegram.ui.Cells.z zVar3 = sl0Var.A1;
                                 if (zVar3 != null) {
                                     Drawable current = zVar3.getCurrent();
                                     if (current instanceof TransitionDrawable) {
-                                        if (tl0Var.U0 == null && tl0Var.T0 == null) {
+                                        if (sl0Var.U0 == null && sl0Var.T0 == null) {
                                             ((TransitionDrawable) current).resetTransition();
                                         } else {
                                             ((TransitionDrawable) current).startTransition(ViewConfiguration.getLongPressTimeout());
                                         }
                                     }
-                                    tl0Var.A1.setHotspot(motionEvent.getX(), motionEvent.getY());
+                                    sl0Var.A1.setHotspot(motionEvent.getX(), motionEvent.getY());
                                 }
-                                tl0Var.v1();
+                                sl0Var.u1();
                             }
                         }
                         rect.setEmpty();
                     }
-                } else if ((actionMasked2 == 1 || actionMasked2 == 6 || actionMasked2 == 3 || !z4) && tl0Var.K1 != null) {
-                    gg.d dVar2 = tl0Var.b1;
+                } else if ((actionMasked2 == 1 || actionMasked2 == 6 || actionMasked2 == 3 || !z4) && sl0Var.K1 != null) {
+                    gg.d dVar2 = sl0Var.b1;
                     if (dVar2 != null) {
                         AndroidUtilities.cancelRunOnUIThread(dVar2);
-                        tl0Var.b1 = null;
+                        sl0Var.b1 = null;
                     }
-                    View view3 = tl0Var.K1;
-                    tl0Var.h1(view3, 0.0f, 0.0f, false);
-                    tl0Var.K1 = null;
-                    tl0Var.M1 = false;
-                    tl0Var.k1(motionEvent, view3);
-                    if ((actionMasked2 == 1 || actionMasked2 == 6 || actionMasked2 == 3) && (ml0Var = tl0Var.V0) != null && tl0Var.W0) {
-                        ml0Var.h();
-                        tl0Var.W0 = false;
+                    View view3 = sl0Var.K1;
+                    sl0Var.g1(view3, 0.0f, 0.0f, false);
+                    sl0Var.K1 = null;
+                    sl0Var.M1 = false;
+                    sl0Var.j1(motionEvent, view3);
+                    if ((actionMasked2 == 1 || actionMasked2 == 6 || actionMasked2 == 3) && (ll0Var = sl0Var.V0) != null && sl0Var.W0) {
+                        ll0Var.h();
+                        sl0Var.W0 = false;
                     }
                 }
                 return false;
@@ -255,15 +255,15 @@ public final class y implements z0 {
                 }
                 break;
             default:
-                ((tl0) this.b).I0(true);
+                ((sl0) this.b).I0(true);
                 break;
         }
     }
 
-    public y(tl0 tl0Var, Context context) {
-        this.b = tl0Var;
-        ai aiVar = new ai(context, new ol0(this));
-        tl0Var.J1 = aiVar;
+    public y(sl0 sl0Var, Context context) {
+        this.b = sl0Var;
+        ai aiVar = new ai(context, new nl0(this));
+        sl0Var.J1 = aiVar;
         ((m20) aiVar.b).t = false;
     }
 

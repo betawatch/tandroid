@@ -64,31 +64,31 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.ThemeEditorView;
 import org.telegram.ui.Components.d10;
 import org.telegram.ui.Components.fc0;
+import org.telegram.ui.Components.g11;
 import org.telegram.ui.Components.gy;
-import org.telegram.ui.Components.h11;
 import org.telegram.ui.Components.i40;
 import org.telegram.ui.Components.io;
+import org.telegram.ui.Components.ln0;
 import org.telegram.ui.Components.lp;
-import org.telegram.ui.Components.mn0;
+import org.telegram.ui.Components.nm;
+import org.telegram.ui.Components.ny0;
+import org.telegram.ui.Components.o11;
 import org.telegram.ui.Components.oj;
 import org.telegram.ui.Components.om;
-import org.telegram.ui.Components.oy0;
-import org.telegram.ui.Components.p11;
+import org.telegram.ui.Components.on0;
 import org.telegram.ui.Components.pm;
-import org.telegram.ui.Components.pn0;
+import org.telegram.ui.Components.pq0;
 import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.qm;
 import org.telegram.ui.Components.qq0;
-import org.telegram.ui.Components.rq0;
-import org.telegram.ui.Components.rt0;
-import org.telegram.ui.Components.ry0;
+import org.telegram.ui.Components.qt0;
+import org.telegram.ui.Components.qy0;
 import org.telegram.ui.Components.sj;
+import org.telegram.ui.Components.tt0;
 import org.telegram.ui.Components.u30;
-import org.telegram.ui.Components.ut0;
-import org.telegram.ui.Components.vn0;
-import org.telegram.ui.Components.x11;
+import org.telegram.ui.Components.un0;
+import org.telegram.ui.Components.w11;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.Components.z4;
-import org.telegram.ui.Components.zu0;
 import org.telegram.ui.e9;
 import org.telegram.ui.jk;
 import org.telegram.ui.l4;
@@ -96,12 +96,12 @@ import org.telegram.ui.ng;
 import org.telegram.ui.qn;
 import org.telegram.ui.sn;
 import org.telegram.ui.tv;
-import org.telegram.ui.uq0;
 import org.telegram.ui.vn;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
+import org.telegram.ui.zq0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class u1 implements Runnable {
     public final /* synthetic */ int a;
@@ -188,7 +188,7 @@ public final /* synthetic */ class u1 implements Runnable {
                 return;
             case 2:
                 o3 o3Var = (o3) obj3;
-                o3Var.m((Bitmap) obj2, this.b, o3Var.Q, o3Var.R, (uq0) obj);
+                o3Var.m((Bitmap) obj2, this.b, o3Var.Q, o3Var.R, (zq0) obj);
                 return;
             case 3:
                 fg.v0.R((fg.v0) obj3, (ArrayList) obj, i16, (TLRPC.TL_messages_inactiveChats) obj2);
@@ -402,7 +402,7 @@ public final /* synthetic */ class u1 implements Runnable {
                     l4Var.B = arrayList6;
                     l4Var.C = str2;
                     l4Var.r0[0].c.y.clear();
-                    l4Var.r0[0].b.f1();
+                    l4Var.r0[0].b.e1();
                     l4Var.W(0);
                     return;
                 }
@@ -419,7 +419,7 @@ public final /* synthetic */ class u1 implements Runnable {
                 } else {
                     userFull = null;
                 }
-                org.telegram.ui.Components.voip.g2.n(user, false, userFull != null && userFull.video_calls_available, e9Var.getParentActivity(), userFull, AccountInstance.getInstance(i16));
+                org.telegram.ui.Components.voip.g2.m(user, false, userFull != null && userFull.video_calls_available, e9Var.getParentActivity(), userFull, AccountInstance.getInstance(i16));
                 return;
             case 11:
                 xn xnVar = (xn) obj3;
@@ -468,19 +468,19 @@ public final /* synthetic */ class u1 implements Runnable {
                 ojVar.l();
                 return;
             case 15:
-                pm pmVar = (pm) obj3;
-                om omVar = (om) obj2;
+                om omVar = (om) obj3;
+                nm nmVar = (nm) obj2;
                 MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
-                qm qmVar = pmVar.M;
-                ValueAnimator valueAnimator = qmVar.I;
+                pm pmVar = omVar.M;
+                ValueAnimator valueAnimator = pmVar.I;
                 if (valueAnimator != null) {
                     valueAnimator.cancel();
                 }
-                qmVar.G = null;
-                pmVar.D = 0.0f;
-                pmVar.f(omVar, photoEntry, i16);
-                pmVar.j();
-                pmVar.i(qmVar.M, false);
+                pmVar.G = null;
+                omVar.D = 0.0f;
+                omVar.f(nmVar, photoEntry, i16);
+                omVar.j();
+                omVar.i(pmVar.M, false);
                 return;
             case 16:
                 z4.G(((q70) obj3).e, (g6) obj2, new m2(i16, (io) obj, i14));
@@ -608,26 +608,26 @@ public final /* synthetic */ class u1 implements Runnable {
                 }
                 i40Var.N(true);
                 if (isEmpty) {
-                    ((vn0) i40Var).Z.q0.h1(0, 0);
+                    ((un0) i40Var).Z.q0.h1(0, 0);
                     return;
                 }
                 return;
             case 20:
-                pn0.c(((pn0) obj3).getContext(), i16, ((mn0) obj2).a.g(), (g6) obj);
+                on0.c(((on0) obj3).getContext(), i16, ((ln0) obj2).a.g(), (g6) obj);
                 return;
             case 21:
-                rq0 rq0Var = (rq0) obj3;
+                qq0 qq0Var = (qq0) obj3;
                 TLObject tLObject5 = (TLObject) obj2;
                 String str5 = (String) obj;
-                HashMap hashMap = rq0Var.v;
-                if (i16 != rq0Var.y) {
+                HashMap hashMap = qq0Var.v;
+                if (i16 != qq0Var.y) {
                     return;
                 }
-                rq0Var.x = 0;
+                qq0Var.x = 0;
                 if (tLObject5 instanceof TL_account.webPagePreview) {
                     TL_account.webPagePreview webpagepreview = (TL_account.webPagePreview) tLObject5;
-                    MessagesController.getInstance(rq0Var.c).putUsers(webpagepreview.users, false);
-                    MessagesController.getInstance(rq0Var.c).putChats(webpagepreview.chats, false);
+                    MessagesController.getInstance(qq0Var.c).putUsers(webpagepreview.users, false);
+                    MessagesController.getInstance(qq0Var.c).putChats(webpagepreview.chats, false);
                     TLRPC.MessageMedia messageMedia = webpagepreview.media;
                     if (messageMedia instanceof TLRPC.TL_messageMediaWebPage) {
                         webPage = ((TLRPC.TL_messageMediaWebPage) messageMedia).webpage;
@@ -640,21 +640,21 @@ public final /* synthetic */ class u1 implements Runnable {
                                 }
                             }
                             hashMap.put(str5, webPage);
-                            rq0Var.w = webPage;
-                            rq0.a(rq0Var.a[0], webPage, str5);
+                            qq0Var.w = webPage;
+                            qq0.a(qq0Var.a[0], webPage, str5);
                             return;
                         }
                         if (webPage instanceof TLRPC.TL_webPagePending) {
-                            rq0Var.w = webPage;
+                            qq0Var.w = webPage;
                             return;
                         }
                         if (webPage instanceof TLRPC.TL_webPageEmpty) {
-                            rq0Var.w = null;
-                            if (rq0Var.b != 0) {
-                                rq0Var.b = 0;
-                                qq0 qq0Var = rq0Var.E;
-                                if (qq0Var != null) {
-                                    ((tv) qq0Var).g(0);
+                            qq0Var.w = null;
+                            if (qq0Var.b != 0) {
+                                qq0Var.b = 0;
+                                pq0 pq0Var = qq0Var.E;
+                                if (pq0Var != null) {
+                                    ((tv) pq0Var).g(0);
                                     return;
                                 }
                                 return;
@@ -668,114 +668,114 @@ public final /* synthetic */ class u1 implements Runnable {
                 if (!(webPage instanceof TLRPC.TL_webPage)) {
                 }
             case 22:
-                ((zu0) obj3).H0((MessageObject) obj2, (View) obj, i16, false);
+                ((yu0) obj3).H0((MessageObject) obj2, (View) obj, i16, false);
                 return;
             case 23:
-                zu0.g((zu0) obj3, i16, (TL_stories.StoryItem) obj2, (String) obj);
+                yu0.g((yu0) obj3, i16, (TL_stories.StoryItem) obj2, (String) obj);
                 return;
             case 24:
-                z4.f0(i16, (TLRPC.TL_error) obj2, ((zu0) obj3).s1, (TLRPC.TL_messages_editMessage) obj, new Object[0]);
+                z4.f0(i16, (TLRPC.TL_error) obj2, ((yu0) obj3).s1, (TLRPC.TL_messages_editMessage) obj, new Object[0]);
                 return;
             case 25:
-                ut0 ut0Var = (ut0) obj3;
+                tt0 tt0Var = (tt0) obj3;
                 ArrayList arrayList13 = (ArrayList) obj;
                 String str6 = (String) obj2;
-                zu0 zu0Var = ut0Var.v;
-                if (ut0Var.h != 0) {
-                    if (i16 == ut0Var.n) {
-                        int h = ut0Var.h();
-                        ut0Var.f = arrayList13;
-                        ut0Var.s--;
-                        int h9 = ut0Var.h();
-                        if (ut0Var.s == 0 || h9 != 0) {
-                            zu0Var.m1(false);
+                yu0 yu0Var = tt0Var.v;
+                if (tt0Var.h != 0) {
+                    if (i16 == tt0Var.n) {
+                        int h = tt0Var.h();
+                        tt0Var.f = arrayList13;
+                        tt0Var.s--;
+                        int h9 = tt0Var.h();
+                        if (tt0Var.s == 0 || h9 != 0) {
+                            yu0Var.m1(false);
                         }
                         int i33 = 0;
                         while (true) {
-                            rt0[] rt0VarArr = zu0Var.h0;
-                            if (i33 < rt0VarArr.length) {
-                                rt0 rt0Var = rt0VarArr[i33];
-                                if (rt0Var.C == ut0Var.r) {
-                                    if (ut0Var.s == 0 && h9 == 0) {
-                                        rt0Var.w.d.setText(LocaleController.formatString("NoResultFoundFor", R.string.NoResultFoundFor, str6));
-                                        rt0VarArr[i33].w.f.setVisibility(8);
-                                        rt0VarArr[i33].w.e(false, true);
+                            qt0[] qt0VarArr = yu0Var.h0;
+                            if (i33 < qt0VarArr.length) {
+                                qt0 qt0Var = qt0VarArr[i33];
+                                if (qt0Var.C == tt0Var.r) {
+                                    if (tt0Var.s == 0 && h9 == 0) {
+                                        qt0Var.w.d.setText(LocaleController.formatString("NoResultFoundFor", R.string.NoResultFoundFor, str6));
+                                        qt0VarArr[i33].w.f.setVisibility(8);
+                                        qt0VarArr[i33].w.e(false, true);
                                     } else if (h == 0) {
-                                        zu0Var.z(rt0Var.h, 0, null);
+                                        yu0Var.z(qt0Var.h, 0, null);
                                     }
                                 }
                                 i33++;
                             } else {
-                                ut0Var.l();
+                                tt0Var.l();
                             }
                         }
                     }
-                    ut0Var.h = 0;
+                    tt0Var.h = 0;
                     return;
                 }
                 return;
             case 26:
-                ry0 ry0Var = (ry0) obj3;
+                qy0 qy0Var = (qy0) obj3;
                 String[] strArr2 = (String[]) obj2;
                 String str7 = (String) obj;
                 HashSet hashSet = new HashSet();
                 ArrayList arrayList14 = new ArrayList();
-                int i34 = ry0Var.a;
-                MediaDataController.getInstance(i34).getEmojiSuggestions(strArr2, str7, true, new j3(ry0Var, this.b, str7, hashSet, arrayList14, 4), SharedConfig.suggestAnimatedEmoji && UserConfig.getInstance(i34).isPremium());
+                int i34 = qy0Var.a;
+                MediaDataController.getInstance(i34).getEmojiSuggestions(strArr2, str7, true, new j3(qy0Var, this.b, str7, hashSet, arrayList14, 4), SharedConfig.suggestAnimatedEmoji && UserConfig.getInstance(i34).isPremium());
                 return;
             case 27:
-                ry0 ry0Var2 = (ry0) obj3;
+                qy0 qy0Var2 = (qy0) obj3;
                 String str8 = (String) obj2;
                 ArrayList arrayList15 = (ArrayList) obj;
-                if (i16 == ry0Var2.F) {
-                    ry0Var2.E = str8;
-                    ry0Var2.D = 2;
+                if (i16 == qy0Var2.F) {
+                    qy0Var2.E = str8;
+                    qy0Var2.D = 2;
                     arrayList15.remove(arrayList15.size() - 1);
                     if (arrayList15.isEmpty()) {
-                        ry0Var2.x = true;
-                        ry0Var2.f();
+                        qy0Var2.x = true;
+                        qy0Var2.f();
                         return;
                     }
-                    ry0Var2.x = false;
-                    ry0Var2.v = false;
-                    ry0Var2.c();
-                    s2 s2Var = ry0Var2.d;
+                    qy0Var2.x = false;
+                    qy0Var2.v = false;
+                    qy0Var2.c();
+                    s2 s2Var = qy0Var2.d;
                     if (s2Var != null) {
                         s2Var.setVisibility(0);
-                        ry0Var2.d.invalidate();
+                        qy0Var2.d.invalidate();
                     }
-                    ry0Var2.w = arrayList15;
-                    oy0 oy0Var = ry0Var2.f;
-                    if (oy0Var != null) {
-                        oy0Var.l();
+                    qy0Var2.w = arrayList15;
+                    ny0 ny0Var = qy0Var2.f;
+                    if (ny0Var != null) {
+                        ny0Var.l();
                         return;
                     }
                     return;
                 }
                 return;
             case 28:
-                p11 p11Var = (p11) obj3;
+                o11 o11Var = (o11) obj3;
                 ArrayList arrayList16 = (ArrayList) obj;
                 ArrayList arrayList17 = (ArrayList) obj2;
-                ThemeEditorView.EditorAlert editorAlert = p11Var.r;
-                h11 h11Var = editorAlert.c;
-                if (i16 != p11Var.d) {
+                ThemeEditorView.EditorAlert editorAlert = o11Var.r;
+                g11 g11Var = editorAlert.c;
+                if (i16 != o11Var.d) {
                     return;
                 }
-                p11 p11Var2 = editorAlert.r;
-                if (h11Var.getAdapter() != p11Var2) {
+                o11 o11Var2 = editorAlert.r;
+                if (g11Var.getAdapter() != o11Var2) {
                     editorAlert.C = ThemeEditorView.EditorAlert.I(editorAlert);
-                    h11Var.setAdapter(p11Var2);
-                    p11Var2.l();
+                    g11Var.setAdapter(o11Var2);
+                    o11Var2.l();
                 }
-                boolean z13 = !p11Var.e.isEmpty() && arrayList16.isEmpty();
-                boolean z14 = p11Var.e.isEmpty() && arrayList16.isEmpty();
+                boolean z13 = !o11Var.e.isEmpty() && arrayList16.isEmpty();
+                boolean z14 = o11Var.e.isEmpty() && arrayList16.isEmpty();
                 if (z13) {
                     editorAlert.C = ThemeEditorView.EditorAlert.I(editorAlert);
                 }
-                p11Var.e = arrayList16;
-                p11Var.f = arrayList17;
-                p11Var.l();
+                o11Var.e = arrayList16;
+                o11Var.f = arrayList17;
+                o11Var.l();
                 if (!z14 && !z13 && (i12 = editorAlert.C) > 0) {
                     editorAlert.h.h1(0, -i12);
                     editorAlert.C = -1000;
@@ -783,14 +783,14 @@ public final /* synthetic */ class u1 implements Runnable {
                 editorAlert.e.c();
                 return;
             default:
-                x11 x11Var = (x11) obj3;
+                w11 w11Var = (w11) obj3;
                 Bitmap bitmap = (Bitmap) obj;
                 Drawable drawable = ((lp) obj2).b;
                 if (drawable instanceof fc0) {
                     fc0 fc0Var = (fc0) drawable;
-                    fc0Var.t(x11.e(bitmap), i16);
-                    fc0Var.u(x11Var.I);
-                    x11Var.invalidate();
+                    fc0Var.t(w11.e(bitmap), i16);
+                    fc0Var.u(w11Var.I);
+                    w11Var.invalidate();
                     return;
                 }
                 return;

@@ -23,7 +23,7 @@ import org.telegram.ui.oy;
 import org.telegram.ui.py;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b0 implements Runnable {
     public final /* synthetic */ int a;
@@ -74,8 +74,8 @@ public final /* synthetic */ class b0 implements Runnable {
                 if (xnVar.x1 != null) {
                     t1Var.getLocationInWindow(new int[2]);
                     xnVar.x1.setTranslationY(org.telegram.ui.b.C(520.0f, r3[1] - r2.getTop(), this.b));
-                    xnVar.x1.n(0.0f, (-AndroidUtilities.dp(16.0f)) + r3[0] + this.c);
-                    xnVar.x1.v();
+                    xnVar.x1.m(0.0f, (-AndroidUtilities.dp(16.0f)) + r3[0] + this.c);
+                    xnVar.x1.u();
                     break;
                 }
                 break;

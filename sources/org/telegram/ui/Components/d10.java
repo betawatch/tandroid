@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class d10 extends sa {
     public long A0;
@@ -134,7 +134,7 @@ public final class d10 extends sa {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(p2Var.getContext());
         alertDialog$Builder.a.O = LocaleController.getString(R.string.FilterDelete);
         alertDialog$Builder.a.Q = LocaleController.getString(R.string.FilterDeleteAlertLinks);
-        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new tm(callback));
+        alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new sm(callback));
         alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new hv(gyVar, 4));
         org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
         p2Var.showDialog(d2Var);
@@ -145,11 +145,11 @@ public final class d10 extends sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final void F(qv0 qv0Var) {
-        tl0 tl0Var = this.d;
-        tl0Var.setOverScrollMode(2);
-        tl0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.i0 != null ? 68.0f : 0.0f));
-        tl0Var.setOnItemClickListener(new k(this, 8));
+    public final void F(pv0 pv0Var) {
+        sl0 sl0Var = this.d;
+        sl0Var.setOverScrollMode(2);
+        sl0Var.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(this.i0 != null ? 68.0f : 0.0f));
+        sl0Var.setOnItemClickListener(new k(this, 8));
     }
 
     public final void Q(boolean z4) {
@@ -183,11 +183,11 @@ public final class d10 extends sa {
         a10Var.a(LocaleController.getString(z4 ? R.string.SelectAll : R.string.DeselectAll), new mh.r5(this, a10Var, z4, 14));
         Q(true);
         while (true) {
-            tl0 tl0Var = this.d;
-            if (i10 >= tl0Var.getChildCount()) {
+            sl0 sl0Var = this.d;
+            if (i10 >= sl0Var.getChildCount()) {
                 return;
             }
-            View childAt = tl0Var.getChildAt(i10);
+            View childAt = sl0Var.getChildAt(i10);
             if (childAt instanceof org.telegram.ui.Cells.g4) {
                 Object tag = childAt.getTag();
                 if (tag instanceof Long) {
@@ -422,7 +422,7 @@ public final class d10 extends sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
+    public final rl0 v(sl0 sl0Var) {
         return new x00(this);
     }
 

@@ -56,7 +56,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.AnimatedFileNative;
 import org.telegram.ui.Components.CheckBox;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b30 implements Runnable {
     public final /* synthetic */ int a;
@@ -101,7 +101,6 @@ public final /* synthetic */ class b30 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        d60 d60Var;
         boolean z4;
         int i10;
         int i11;
@@ -122,9 +121,10 @@ public final /* synthetic */ class b30 implements Runnable {
         int i20 = this.a;
         int i21 = 10;
         String str = "";
-        int i22 = 2;
-        int i23 = 1;
-        int i24 = 0;
+        int i22 = 24;
+        int i23 = 2;
+        int i24 = 1;
+        int i25 = 0;
         Object obj = this.e;
         Object obj2 = this.d;
         Object obj3 = this.c;
@@ -134,25 +134,25 @@ public final /* synthetic */ class b30 implements Runnable {
                 TLObject tLObject = (TLObject) obj4;
                 ArrayList arrayList = (ArrayList) obj3;
                 ArrayList arrayList2 = (ArrayList) obj2;
-                org.telegram.ui.Components.ky0 ky0Var = (org.telegram.ui.Components.ky0) obj;
+                org.telegram.ui.Components.jy0 jy0Var = (org.telegram.ui.Components.jy0) obj;
                 if (tLObject instanceof Vector) {
                     Vector vector = (Vector) tLObject;
-                    for (int i25 = 0; i25 < Math.min(arrayList.size(), vector.objects.size()); i25++) {
-                        if (vector.objects.get(i25) instanceof TL_account.requirementToContactPremium) {
-                            arrayList2.add(Long.valueOf(((TLRPC.User) arrayList.get(i25)).id));
+                    for (int i26 = 0; i26 < Math.min(arrayList.size(), vector.objects.size()); i26++) {
+                        if (vector.objects.get(i26) instanceof TL_account.requirementToContactPremium) {
+                            arrayList2.add(Long.valueOf(((TLRPC.User) arrayList.get(i26)).id));
                         }
                     }
                 }
-                ky0Var.run();
+                jy0Var.run();
                 break;
             case 1:
                 l50 l50Var = (l50) obj3;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 TLObject tLObject2 = (TLObject) obj4;
                 String str2 = (String) obj;
-                d60 d60Var2 = l50Var.f;
-                AccountInstance accountInstance = d60Var2.d;
-                y30 y30Var = d60Var2.b;
+                d60 d60Var = l50Var.f;
+                AccountInstance accountInstance = d60Var.d;
+                y30 y30Var = d60Var.b;
                 ImageLocation imageLocation = l50Var.d;
                 if (imageLocation != null) {
                     y30Var.H0 = imageLocation;
@@ -185,19 +185,17 @@ public final /* synthetic */ class b30 implements Runnable {
                         tL_userProfilePhoto.photo_big = closestPhotoSizeWithSize2.location;
                     }
                     if (closestPhotoSizeWithSize == null || l50Var.c == null) {
-                        d60Var = d60Var2;
                         z4 = true;
                     } else {
-                        i13 = ((org.telegram.ui.ActionBar.h3) d60Var2).currentAccount;
+                        i13 = ((org.telegram.ui.ActionBar.h3) d60Var).currentAccount;
                         File pathToAttach = FileLoader.getInstance(i13).getPathToAttach(closestPhotoSizeWithSize, true);
-                        i14 = ((org.telegram.ui.ActionBar.h3) d60Var2).currentAccount;
+                        i14 = ((org.telegram.ui.ActionBar.h3) d60Var).currentAccount;
                         FileLoader.getInstance(i14).getPathToAttach(l50Var.c, true).renameTo(pathToAttach);
                         StringBuilder sb = new StringBuilder();
                         sb.append(l50Var.c.volume_id);
                         sb.append("_");
                         String m9 = android.support.v4.media.a.m(l50Var.c.local_id, "@50_50", sb);
                         StringBuilder sb2 = new StringBuilder();
-                        d60Var = d60Var2;
                         sb2.append(closestPhotoSizeWithSize.location.volume_id);
                         sb2.append("_");
                         String m10 = android.support.v4.media.a.m(closestPhotoSizeWithSize.location.local_id, "@50_50", sb2);
@@ -252,12 +250,12 @@ public final /* synthetic */ class b30 implements Runnable {
                 break;
             case 4:
                 LaunchActivity launchActivity = (LaunchActivity) obj3;
-                v10 v10Var = (v10) obj2;
+                z10 z10Var = (z10) obj2;
                 TLObject tLObject3 = (TLObject) obj4;
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj;
                 Pattern pattern = LaunchActivity.y1;
                 try {
-                    v10Var.run();
+                    z10Var.run();
                 } catch (Exception e6) {
                     FileLog.e(e6);
                 }
@@ -277,7 +275,7 @@ public final /* synthetic */ class b30 implements Runnable {
                         d2Var.O = LocaleController.getString(R.string.Language);
                         formatString = LocaleController.formatString("LanguageSame", R.string.LanguageSame, tL_langPackLanguage.name);
                         alertDialog$Builder.h(LocaleController.getString(R.string.OK), null);
-                        alertDialog$Builder.i(LocaleController.getString(R.string.SETTINGS), new org.telegram.ui.Components.g1(launchActivity, i24));
+                        alertDialog$Builder.i(LocaleController.getString(R.string.SETTINGS), new org.telegram.ui.Components.g1(launchActivity, i25));
                     } else if (tL_langPackLanguage.strings_count == 0) {
                         d2Var.O = LocaleController.getString(R.string.LanguageUnknownTitle);
                         formatString = LocaleController.formatString("LanguageUnknownCustomAlert", R.string.LanguageUnknownCustomAlert, tL_langPackLanguage.name);
@@ -291,11 +289,11 @@ public final /* synthetic */ class b30 implements Runnable {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(AndroidUtilities.replaceTags(formatString));
                     int indexOf = TextUtils.indexOf((CharSequence) spannableStringBuilder, '[');
                     if (indexOf != -1) {
-                        int i26 = indexOf + 1;
-                        i16 = TextUtils.indexOf((CharSequence) spannableStringBuilder, ']', i26);
+                        int i27 = indexOf + 1;
+                        i16 = TextUtils.indexOf((CharSequence) spannableStringBuilder, ']', i27);
                         if (i16 != -1) {
                             spannableStringBuilder.delete(i16, i16 + 1);
-                            spannableStringBuilder.delete(indexOf, i26);
+                            spannableStringBuilder.delete(indexOf, i27);
                         }
                     } else {
                         i16 = -1;
@@ -338,7 +336,7 @@ public final /* synthetic */ class b30 implements Runnable {
                 } catch (Exception unused) {
                 }
                 if (!(tLObject4 instanceof TLRPC.TL_authorization)) {
-                    AndroidUtilities.runOnUIThread(new v10(15, iVar, tL_error3));
+                    AndroidUtilities.runOnUIThread(new z10(14, iVar, tL_error3));
                     break;
                 }
                 break;
@@ -357,7 +355,7 @@ public final /* synthetic */ class b30 implements Runnable {
                 ((org.telegram.ui.Components.cd0) obj4).a(0.0f);
                 ((View) obj3).setTag(R.id.timeout_callback, null);
                 if (editText != null) {
-                    editText.post(new v10(27, editText, b0Var));
+                    editText.post(new z10(26, editText, b0Var));
                     break;
                 }
                 break;
@@ -367,7 +365,7 @@ public final /* synthetic */ class b30 implements Runnable {
                 String str5 = (String) obj2;
                 TLRPC.TL_auth_recoverPassword tL_auth_recoverPassword = (TLRPC.TL_auth_recoverPassword) obj;
                 byte[] stringBytes = str4 != null ? AndroidUtilities.getStringBytes(str4) : null;
-                de0 de0Var = new de0(ee0Var, str4, str5, i24);
+                de0 de0Var = new de0(ee0Var, str4, str5, i25);
                 TLRPC.PasswordKdfAlgo passwordKdfAlgo = ee0Var.s.new_algo;
                 if (passwordKdfAlgo instanceof TLRPC.TL_passwordKdfAlgoSHA256SHA256PBKDF2HMACSHA512iter100000SHA256ModPow) {
                     if (str4 != null) {
@@ -388,16 +386,16 @@ public final /* synthetic */ class b30 implements Runnable {
                     break;
                 }
             case 10:
-                te0 te0Var = (te0) obj3;
+                se0 se0Var = (se0) obj3;
                 String str6 = (String) obj2;
                 TLRPC.TL_error tL_error6 = (TLRPC.TL_error) obj;
-                og0 og0Var = te0Var.y;
+                og0 og0Var = se0Var.y;
                 og0Var.k1(false, true);
-                te0Var.n = false;
+                se0Var.n = false;
                 if (((TLObject) obj4) instanceof TLRPC.TL_boolTrue) {
                     Bundle bundle = new Bundle();
                     bundle.putString("emailCode", str6);
-                    bundle.putString("password", te0Var.h);
+                    bundle.putString("password", se0Var.h);
                     og0Var.u1(9, true, bundle, false);
                     break;
                 } else if (tL_error6 != null && !tL_error6.text.startsWith("CODE_INVALID")) {
@@ -410,7 +408,7 @@ public final /* synthetic */ class b30 implements Runnable {
                         break;
                     }
                 } else {
-                    te0Var.o(true);
+                    se0Var.o(true);
                     break;
                 }
             case 11:
@@ -464,12 +462,12 @@ public final /* synthetic */ class b30 implements Runnable {
                 og0 og0Var3 = ((xf0) obj4).v;
                 og0Var3.e = true;
                 BillingController.getInstance().addResultListener(mVar.c, new j3(w3Var, 3));
-                BillingController.getInstance().setOnCanceled(new wf0(w3Var, i23));
+                BillingController.getInstance().setOnCanceled(new wf0(w3Var, i24));
                 BillingController billingController = BillingController.getInstance();
                 Activity parentActivity = og0Var3.getParentActivity();
                 i18 = ((org.telegram.ui.ActionBar.p2) og0Var3).currentAccount;
                 AccountInstance accountInstance2 = AccountInstance.getInstance(i18);
-                n7.qa qaVar = new n7.qa(23);
+                n7.qa qaVar = new n7.qa(i22);
                 qaVar.i1(mVar);
                 billingController.launchBillingFlow(parentActivity, accountInstance2, (TLRPC.TL_inputStorePaymentAuthCode) obj, Collections.singletonList(qaVar.O0()));
                 break;
@@ -503,18 +501,18 @@ public final /* synthetic */ class b30 implements Runnable {
                 yi0 yi0Var = (yi0) obj4;
                 xf.b bVar = (xf.b) obj3;
                 String str9 = (String) obj2;
-                ga1 ga1Var = (ga1) obj;
+                ma1 ma1Var = (ma1) obj;
                 bj0 bj0Var = yi0Var.v.d;
                 if (bVar != null) {
                     bj0Var.v.put(str9, bVar);
                 }
-                if (bVar != null && !ga1Var.b && (i19 = ga1Var.a) >= 0) {
+                if (bVar != null && !ma1Var.b && (i19 = ma1Var.a) >= 0) {
                     View m11 = bj0Var.h.m(i19);
-                    if (m11 instanceof r91) {
+                    if (m11 instanceof x91) {
                         yi0Var.r.e = bVar;
-                        r91 r91Var = (r91) m11;
-                        r91Var.b.q0.d(false, false);
-                        r91Var.g(false);
+                        x91 x91Var = (x91) m11;
+                        x91Var.b.q0.d(false, false);
+                        x91Var.g(false);
                     }
                 }
                 yi0Var.f();
@@ -562,7 +560,7 @@ public final /* synthetic */ class b30 implements Runnable {
                     str = chat.title;
                 }
                 long q02 = lo0Var.q0();
-                int i27 = z10 ? (z11 || z12) ? R.raw.stars_send : R.raw.stars_topup : R.raw.payment_success;
+                int i28 = z10 ? (z11 || z12) ? R.raw.stars_send : R.raw.stars_topup : R.raw.payment_success;
                 String string2 = z10 ? LocaleController.getString(z12 ? R.string.StarsGiveawaySentPopup : z11 ? R.string.StarsGiftSentPopup : R.string.StarsAcquired) : null;
                 if (!z10) {
                     formatString2 = LocaleController.formatString(R.string.PaymentInfoHint, lo0Var.O0[0], lo0Var.n0);
@@ -577,9 +575,9 @@ public final /* synthetic */ class b30 implements Runnable {
                     org.telegram.ui.Components.qc a02 = org.telegram.ui.Components.qc.a0(U);
                     if (r02 == 0 || string2 == null || z12) {
                         String str10 = string2;
-                        M = str10 != null ? a02.M(str10, replaceTags, i27) : a02.Q(i27, 36, replaceTags);
+                        M = str10 != null ? a02.M(str10, replaceTags, i28) : a02.Q(i28, 36, replaceTags);
                     } else {
-                        M = a02.K(i27, string2, replaceTags, LocaleController.getString(R.string.ViewInChat), new mh.s9(r02, 2));
+                        M = a02.K(i28, string2, replaceTags, LocaleController.getString(R.string.ViewInChat), new mh.s9(r02, 2));
                     }
                     org.telegram.ui.Components.ic icVar = M;
                     icVar.r = false;
@@ -603,10 +601,10 @@ public final /* synthetic */ class b30 implements Runnable {
                 Drawable[] drawableArr = PhotoViewer.Q8;
                 Bitmap decodeFile = BitmapFactory.decodeFile(((MediaController.PhotoEntry) obj3).path);
                 if (decodeFile == null) {
-                    AndroidUtilities.runOnUIThread(new oq0(photoViewer, i21));
+                    AndroidUtilities.runOnUIThread(new tq0(photoViewer, i21));
                     break;
                 } else {
-                    int i28 = 11;
+                    int i29 = 11;
                     int[] iArr = new int[11];
                     AnimatedFileNative.d(photoEntry.path, iArr, 0L);
                     int max = Math.max(iArr[1], photoEntry.width);
@@ -618,10 +616,10 @@ public final /* synthetic */ class b30 implements Runnable {
                     float f10 = max;
                     float f11 = max2;
                     float max3 = Math.max(decodeFile.getWidth() / f10, decodeFile.getHeight() / f11);
-                    int i29 = (int) (f10 * max3);
-                    int i30 = (int) (f11 * max3);
+                    int i30 = (int) (f10 * max3);
+                    int i31 = (int) (f11 * max3);
                     Bitmap.Config config = Bitmap.Config.ARGB_8888;
-                    Bitmap createBitmap = Bitmap.createBitmap(i29, i30, config);
+                    Bitmap createBitmap = Bitmap.createBitmap(i30, i31, config);
                     Canvas canvas = new Canvas(createBitmap);
                     Paint paint = new Paint(3);
                     canvas.translate(createBitmap.getWidth() / 2, createBitmap.getHeight() / 2);
@@ -642,7 +640,7 @@ public final /* synthetic */ class b30 implements Runnable {
                         break;
                     } catch (Exception e10) {
                         FileLog.e(e10);
-                        AndroidUtilities.runOnUIThread(new oq0(photoViewer, i28));
+                        AndroidUtilities.runOnUIThread(new tq0(photoViewer, i29));
                         return;
                     }
                 }
@@ -664,13 +662,13 @@ public final /* synthetic */ class b30 implements Runnable {
                 photoEntry2.coverPhoto = null;
                 photoEntry2.coverPhotoParentObject = null;
                 photoViewer2.n5.b.setLoading(false);
-                ju0 ju0Var = photoViewer2.d;
-                if (ju0Var != null) {
-                    ju0Var.W(photoViewer2.M4);
+                ou0 ou0Var = photoViewer2.d;
+                if (ou0Var != null) {
+                    ou0Var.W(photoViewer2.M4);
                 }
-                fs0 fs0Var = photoViewer2.d1;
-                if (fs0Var != null) {
-                    fs0Var.setImage(bitmap);
+                ks0 ks0Var = photoViewer2.d1;
+                if (ks0Var != null) {
+                    ks0Var.setImage(bitmap);
                 }
                 photoViewer2.e3(0);
                 CheckBox checkBox = photoViewer2.K0;
@@ -683,7 +681,7 @@ public final /* synthetic */ class b30 implements Runnable {
                 PhotoViewer photoViewer3 = (PhotoViewer) obj4;
                 Bitmap bitmap2 = (Bitmap) obj3;
                 boolean[] zArr = (boolean[]) obj2;
-                lr0 lr0Var = (lr0) obj;
+                qr0 qr0Var = (qr0) obj;
                 ImageView imageView = photoViewer3.u3;
                 if (imageView != null) {
                     imageView.setImageBitmap(bitmap2);
@@ -694,7 +692,7 @@ public final /* synthetic */ class b30 implements Runnable {
                     }
                     if (!zArr[0]) {
                         zArr[0] = true;
-                        lr0Var.run();
+                        qr0Var.run();
                         break;
                     }
                 }
@@ -703,12 +701,12 @@ public final /* synthetic */ class b30 implements Runnable {
                 TLObject tLObject7 = (TLObject) obj4;
                 UserConfig userConfig = (UserConfig) obj2;
                 TLRPC.Photo photo = (TLRPC.Photo) obj;
-                PhotoViewer photoViewer4 = ((yr0) obj3).b;
+                PhotoViewer photoViewer4 = ((ds0) obj3).b;
                 if (tLObject7 instanceof TLRPC.TL_photos_photo) {
                     TLRPC.TL_photos_photo tL_photos_photo2 = (TLRPC.TL_photos_photo) tLObject7;
-                    int i31 = photoViewer4.Q;
+                    int i32 = photoViewer4.Q;
                     ArrayList arrayList8 = photoViewer4.c7;
-                    MessagesController.getInstance(i31).putUsers(tL_photos_photo2.users, false);
+                    MessagesController.getInstance(i32).putUsers(tL_photos_photo2.users, false);
                     TLRPC.User user3 = MessagesController.getInstance(photoViewer4.Q).getUser(Long.valueOf(userConfig.clientUserId));
                     if (tL_photos_photo2.photo instanceof TLRPC.TL_photo) {
                         int indexOf2 = arrayList8.indexOf(photo);
@@ -725,7 +723,7 @@ public final /* synthetic */ class b30 implements Runnable {
                 }
                 break;
             case 23:
-                aw0.U((aw0) obj3, (TLRPC.TL_error) obj2, (TLObject) obj4, (TL_stars.updatePaidMessagesPrice) obj);
+                fw0.U((fw0) obj3, (TLRPC.TL_error) obj2, (TLObject) obj4, (TL_stars.updatePaidMessagesPrice) obj);
                 break;
             case 24:
                 PrivacyControlActivity.V((PrivacyControlActivity) obj3, (TLRPC.TL_error) obj2, (TLObject) obj4, (boolean[]) obj);
@@ -757,10 +755,10 @@ public final /* synthetic */ class b30 implements Runnable {
                 } catch (Exception unused2) {
                 }
                 if (zArr2[0]) {
-                    int i32 = Build.VERSION.SDK_INT;
-                    Uri d = i32 >= 24 ? FileProvider.d(activity, ApplicationLoader.getApplicationId() + ".provider", file) : Uri.fromFile(file);
+                    int i33 = Build.VERSION.SDK_INT;
+                    Uri d = i33 >= 24 ? FileProvider.d(activity, ApplicationLoader.getApplicationId() + ".provider", file) : Uri.fromFile(file);
                     Intent intent = new Intent("android.intent.action.SEND");
-                    if (i32 >= 24) {
+                    if (i33 >= 24) {
                         intent.addFlags(1);
                     }
                     intent.setType("message/rfc822");
@@ -793,7 +791,7 @@ public final /* synthetic */ class b30 implements Runnable {
                 String str13 = (String) obj2;
                 String str14 = (String) obj;
                 if (AndroidUtilities.isContextSafe(profileActivity.getParentActivity())) {
-                    org.telegram.ui.Components.w31.J(profileActivity.getParentActivity(), profileActivity, strArr[0], str13, str14, new i20(profileActivity, i22), null);
+                    org.telegram.ui.Components.v31.J(profileActivity.getParentActivity(), profileActivity, strArr[0], str13, str14, new i20(profileActivity, i23), null);
                     break;
                 }
                 break;

@@ -16,29 +16,29 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ca0 extends zu0 {
+public final class ca0 extends yu0 {
     public AnimatorSet c2;
     public final /* synthetic */ FrameLayout d2;
     public final /* synthetic */ z90 e2;
     public final /* synthetic */ fa0 f2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ca0(fa0 fa0Var, Context context, long j10, ru0 ru0Var, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i10, fa0 fa0Var2, ba0 ba0Var, org.telegram.ui.ActionBar.g6 g6Var, FrameLayout frameLayout, z90 z90Var) {
-        super(context, j10, ru0Var, 0, null, chatFull, userFull, i10, 0, fa0Var2, ba0Var, 0, g6Var, null);
+    public ca0(fa0 fa0Var, Context context, long j10, qu0 qu0Var, TLRPC.ChatFull chatFull, TLRPC.UserFull userFull, int i10, fa0 fa0Var2, ba0 ba0Var, org.telegram.ui.ActionBar.g6 g6Var, FrameLayout frameLayout, z90 z90Var) {
+        super(context, j10, qu0Var, 0, null, chatFull, userFull, i10, 0, fa0Var2, ba0Var, 0, g6Var, null);
         this.f2 = fa0Var;
         this.d2 = frameLayout;
         this.e2 = z90Var;
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final boolean D() {
         int i10 = this.f2.a;
         return (i10 == 1 || i10 == 2) ? false : true;
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final void D0(SparseArray sparseArray) {
         int size = sparseArray.size();
         fa0 fa0Var = this.f2;
@@ -58,7 +58,7 @@ public final class ca0 extends zu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final void K0(boolean z4) {
         int i10;
         fa0 fa0Var = this.f2;
@@ -68,13 +68,13 @@ public final class ca0 extends zu0 {
         AndroidUtilities.updateViewVisibilityAnimated(this.d2, !z4, 0.95f, true);
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final void L0() {
         super.L0();
         this.f2.a0();
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final void M0(float f10) {
         fa0 fa0Var = this.f2;
         if (fa0Var.a != 1) {
@@ -92,13 +92,13 @@ public final class ca0 extends zu0 {
         fa0Var.v[1].setTranslationX(AndroidUtilities.dp(12.0f) * f12);
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final boolean N() {
         int i10 = this.f2.a;
         return i10 == 1 || i10 == 2 || i10 == 3;
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final void N0(boolean z4) {
         ea0 ea0Var = this.f2.O;
         if (ea0Var != null) {
@@ -106,12 +106,12 @@ public final class ca0 extends zu0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final void P(Canvas canvas, float f10, Rect rect, Paint paint) {
         this.e2.J(canvas, getY() + f10, rect, paint, true);
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final void b1(boolean z4) {
         fa0 fa0Var = this.f2;
         if (fa0Var.a == 0) {
@@ -182,44 +182,44 @@ public final class ca0 extends zu0 {
         this.c2.start();
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final int getInitialTab() {
         return this.f2.T;
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final String getStoriesHashtag() {
         return this.f2.h;
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final String getStoriesHashtagUsername() {
         return this.f2.n;
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final boolean l0() {
         fa0 fa0Var = this.f2;
         return fa0Var.a == 0 && fa0Var.e == fa0Var.getUserConfig().getClientUserId() && fa0Var.f == 0;
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final boolean m0() {
         int i10 = this.f2.a;
         return i10 == 1 || i10 == 2;
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final void o0() {
         this.e2.M();
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final boolean q0() {
         return this.f2.a == 2;
     }
 
-    @Override // org.telegram.ui.Components.zu0
+    @Override // org.telegram.ui.Components.yu0
     public final boolean v0() {
         int i10 = this.f2.a;
         return i10 == 1 || i10 == 2;

@@ -11,14 +11,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.gy;
 import org.telegram.ui.Components.jc;
-import org.telegram.ui.Components.ku0;
+import org.telegram.ui.Components.ju0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bu0;
+import org.telegram.ui.gu0;
 import org.telegram.ui.ii;
 import org.telegram.ui.la0;
-import org.telegram.ui.si1;
+import org.telegram.ui.yi1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -65,7 +65,7 @@ public final /* synthetic */ class r1 implements RequestDelegate {
                 ((VoIPService) obj).lambda$startScreenCapture$60(i12, tLObject, tL_error);
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new gy((ku0) obj, tLObject, i12, i11));
+                AndroidUtilities.runOnUIThread(new gy((ju0) obj, tLObject, i12, i11));
                 break;
             case 6:
                 LaunchActivity launchActivity = (LaunchActivity) obj;
@@ -87,10 +87,10 @@ public final /* synthetic */ class r1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new gy((ii) obj, tLObject, i12, 27));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new bu0((si1) obj, i12, tLObject, 8));
+                AndroidUtilities.runOnUIThread(new gu0((yi1) obj, i12, tLObject, 8));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new bu0((sh.n3) obj, tLObject, i12, 16));
+                AndroidUtilities.runOnUIThread(new gu0((sh.n3) obj, tLObject, i12, 16));
                 break;
         }
     }

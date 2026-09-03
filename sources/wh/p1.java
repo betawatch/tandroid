@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.zj;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class p1 implements zj {
     public final /* synthetic */ mi a;
@@ -24,7 +24,7 @@ public final class p1 implements zj {
         boolean isEmpty = arrayList.isEmpty();
         z1 z1Var = this.b;
         if (!isEmpty) {
-            z1Var.M.c2((String) arrayList.get(0));
+            z1Var.M.b2((String) arrayList.get(0));
         } else if (!arrayList3.isEmpty()) {
             r3 r3Var = z1Var.M;
             MessageObject messageObject = (MessageObject) arrayList3.get(0);
@@ -32,7 +32,7 @@ public final class p1 implements zj {
             if (messageObject != null && messageObject.getDocument() != null) {
                 TLRPC.Document document = messageObject.getDocument();
                 TLRPC.Message message = messageObject.messageOwner;
-                r3Var.d2(document, message != null ? message.attachPath : null);
+                r3Var.c2(document, message != null ? message.attachPath : null);
             }
         }
         this.a.dismiss(true);

@@ -7,10 +7,10 @@ import oh.f4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.lc0;
 import org.telegram.ui.Components.pr;
-import qh.b5;
-import qh.na;
+import qh.a5;
+import qh.ma;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -76,19 +76,19 @@ public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 2:
-                b5 b5Var = (b5) this.b;
+                a5 a5Var = (a5) this.b;
                 View view3 = (View) this.c;
                 View view4 = (View) this.d;
-                b5Var.X0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                b5Var.T0.invalidate();
-                b5Var.Q0.invalidate();
-                b5Var.R0.invalidate();
+                a5Var.X0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                a5Var.T0.invalidate();
+                a5Var.Q0.invalidate();
+                a5Var.R0.invalidate();
                 int i11 = 0;
-                while (i11 < b5Var.T0.getChildCount()) {
-                    b5Var.T0.getChildAt(i11).setAlpha(((i11 == b5Var.W0 ? b5Var.X0 : i11 == b5Var.V0 ? 1.0f - b5Var.X0 : 0.0f) * 0.4f) + 0.6f);
+                while (i11 < a5Var.T0.getChildCount()) {
+                    a5Var.T0.getChildAt(i11).setAlpha(((i11 == a5Var.W0 ? a5Var.X0 : i11 == a5Var.V0 ? 1.0f - a5Var.X0 : 0.0f) * 0.4f) + 0.6f);
                     i11++;
                 }
-                float interpolation2 = pr.f.getInterpolation(b5Var.X0);
+                float interpolation2 = pr.f.getInterpolation(a5Var.X0);
                 if (view3 != null && view4 != null) {
                     float f13 = 1.0f - interpolation2;
                     float f14 = (f13 * 0.4f) + 0.6f;
@@ -105,15 +105,15 @@ public final /* synthetic */ class q implements ValueAnimator.AnimatorUpdateList
                 }
                 break;
             case 3:
-                na naVar = (na) this.b;
+                ma maVar = (ma) this.b;
                 AtomicBoolean atomicBoolean = (AtomicBoolean) this.c;
                 lc0 lc0Var = (lc0) this.d;
-                naVar.getClass();
+                maVar.getClass();
                 float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 Math.abs(floatValue - 0.5f);
                 if (floatValue >= 0.5f && !atomicBoolean.get()) {
                     atomicBoolean.set(true);
-                    naVar.setDrawable(lc0Var);
+                    maVar.setDrawable(lc0Var);
                     break;
                 }
                 break;

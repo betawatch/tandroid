@@ -6,7 +6,7 @@ import org.telegram.messenger.p6;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Cells.m9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class o0 implements d1 {
     public final /* synthetic */ r0 a;
@@ -31,7 +31,7 @@ public final class o0 implements d1 {
         if (z2Var == null || charSequence == null || charSequence.length() <= 0) {
             return;
         }
-        z2Var.a.t4(charSequence.toString());
+        z2Var.a.s4(charSequence.toString());
     }
 
     @Override // wh.d1
@@ -70,7 +70,7 @@ public final class o0 implements d1 {
         z2 z2Var = this.a.h;
         if (z2Var != null) {
             r3 r3Var = z2Var.a;
-            r3.M1(r3Var, e1Var);
+            r3.L1(r3Var, e1Var);
             r3Var.e3.h(e1Var, true);
         }
     }
@@ -82,7 +82,7 @@ public final class o0 implements d1 {
         if (z2Var == null || r0Var.f == null) {
             return false;
         }
-        return z2Var.a.S4();
+        return z2Var.a.R4();
     }
 
     @Override // wh.d1
@@ -102,7 +102,7 @@ public final class o0 implements d1 {
             r3Var.V2.N(true);
         }
         int i10 = indexOf + 1;
-        if (i10 >= arrayList.size() || ((a) arrayList.get(i10)).i || r3.x3((a) arrayList.get(i10))) {
+        if (i10 >= arrayList.size() || ((a) arrayList.get(i10)).i || r3.w3((a) arrayList.get(i10))) {
             return;
         }
         r3Var.post(new k2(r3Var, (a) arrayList.get(i10), 24));

@@ -1,26 +1,37 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.text.Editable;
-import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class j31 extends org.telegram.ui.Cells.i3 {
-    public final /* synthetic */ l31 x;
+public final class j31 implements m31 {
+    public final /* synthetic */ org.telegram.messenger.video.a a;
+    public final /* synthetic */ org.telegram.ui.Components.qc b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ oh.h0 d;
+    public final /* synthetic */ org.telegram.messenger.video.d e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j31(l31 l31Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, "", true, false, 1024, g6Var);
-        this.x = l31Var;
+    public j31(org.telegram.messenger.video.a aVar, org.telegram.ui.Components.qc qcVar, Context context, oh.h0 h0Var, org.telegram.messenger.video.d dVar) {
+        this.a = aVar;
+        this.b = qcVar;
+        this.c = context;
+        this.d = h0Var;
+        this.e = dVar;
     }
 
-    @Override // org.telegram.ui.Cells.i3
-    public final void b(Editable editable) {
-        l31 l31Var = this.x;
-        qh.d dVar = l31Var.s;
-        if (dVar != null) {
-            dVar.setEnabled(l31Var.d.optional || !TextUtils.isEmpty(l31Var.n.getText()));
-        }
+    @Override // org.telegram.ui.m31
+    public final void a() {
+        AndroidUtilities.runOnUIThread(new f31(this.a, this.b, this.c, this.d, 2), 200L);
+    }
+
+    @Override // org.telegram.ui.m31
+    public final void b() {
+        AndroidUtilities.runOnUIThread(new h21(5, this.a, this.b), 200L);
+    }
+
+    @Override // org.telegram.ui.m31
+    public final void c() {
+        this.e.run();
     }
 }

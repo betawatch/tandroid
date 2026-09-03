@@ -5,7 +5,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ck implements ot {
     public final /* synthetic */ xn a;
@@ -59,10 +59,10 @@ public final class ck implements ot {
             TLRPC.TL_inputStickerSetID tL_inputStickerSetID = new TLRPC.TL_inputStickerSetID();
             tL_inputStickerSetID.access_hash = inputStickerSet.access_hash;
             tL_inputStickerSetID.id = inputStickerSet.id;
-            org.telegram.ui.Components.yx0 yx0Var = new org.telegram.ui.Components.yx0(xnVar.getParentActivity(), xnVar, tL_inputStickerSetID, null, xnVar.V, xnVar.ba);
-            yx0Var.setCalcMandatoryInsets(xnVar.x9());
-            yx0Var.f0 = z4;
-            xnVar.showDialog(yx0Var);
+            org.telegram.ui.Components.xx0 xx0Var = new org.telegram.ui.Components.xx0(xnVar.getParentActivity(), xnVar, tL_inputStickerSetID, null, xnVar.V, xnVar.ba);
+            xx0Var.setCalcMandatoryInsets(xnVar.x9());
+            xx0Var.f0 = z4;
+            xnVar.showDialog(xx0Var);
         }
     }
 

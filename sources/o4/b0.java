@@ -8,7 +8,7 @@ import java.util.Map;
 import l7.w0;
 import org.telegram.ui.Components.jb;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class b0 implements g5.j0 {
     public final Uri a;
@@ -67,8 +67,8 @@ public final class b0 implements g5.j0 {
                 this.c.x(mVar, this.a, this.b.a.getResponseHeaders(), j10, j11, this.d);
                 if (this.x.E != null) {
                     r3.k kVar = (r3.k) this.c.c;
-                    if (kVar instanceof y3.d) {
-                        ((y3.d) kVar).r = true;
+                    if (kVar instanceof y3.e) {
+                        ((y3.e) kVar).r = true;
                     }
                 }
                 if (this.n) {

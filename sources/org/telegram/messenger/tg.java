@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.mg1;
+import org.telegram.ui.bh1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class tg implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -56,7 +56,7 @@ public final /* synthetic */ class tg implements Runnable {
                     }
                 }
                 Utilities.stackBlurBitmap(createBitmap, 1);
-                AndroidUtilities.runOnUIThread(new mg1(23, callback, createBitmap));
+                AndroidUtilities.runOnUIThread(new bh1(22, callback, createBitmap));
                 break;
         }
     }

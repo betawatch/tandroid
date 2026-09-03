@@ -1,25 +1,20 @@
 package qh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class b3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d3 b;
+import android.content.Context;
 
-    public /* synthetic */ b3(d3 d3Var, int i10) {
-        this.a = i10;
-        this.b = d3Var;
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* loaded from: classes4.dex */
+public final class b3 extends z2 {
+    public final /* synthetic */ String h0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b3(int i10, Context context, oh.b bVar, float f10, String str) {
+        super(i10, context, bVar, null, true, f10, false, false);
+        this.h0 = str;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.dismiss();
-                break;
-            default:
-                super/*org.telegram.ui.ActionBar.h3*/.dismiss();
-                break;
-        }
+    @Override // qh.z2
+    public final String getTitle() {
+        return this.h0;
     }
 }

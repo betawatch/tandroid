@@ -18,9 +18,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class mr extends org.telegram.ui.Components.sl0 {
+public final class mr extends org.telegram.ui.Components.rl0 {
     public final Context c;
     public final /* synthetic */ qr d;
 
@@ -41,7 +41,7 @@ public final class mr extends org.telegram.ui.Components.sl0 {
     
         if (r7 == r3.I0) goto L42;
      */
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -930,10 +930,10 @@ public final class mr extends org.telegram.ui.Components.sl0 {
                 break;
             case 9:
             default:
-                org.telegram.ui.Components.vv0 vv0Var = new org.telegram.ui.Components.vv0(context, null);
-                vv0Var.b(qrVar.m1, null, LocaleController.getString("SlowmodeOff", R.string.SlowmodeOff), LocaleController.formatString(R.string.SlowmodeSeconds, 5), LocaleController.formatString(R.string.SlowmodeSeconds, 10), LocaleController.formatString(R.string.SlowmodeSeconds, 30), LocaleController.formatString(R.string.SlowmodeMinutes, 1), LocaleController.formatString(R.string.SlowmodeMinutes, 5), LocaleController.formatString(R.string.SlowmodeMinutes, 15), LocaleController.formatString(R.string.SlowmodeHours, 1));
-                vv0Var.setCallback(new lr(this, 1));
-                view = vv0Var;
+                org.telegram.ui.Components.uv0 uv0Var = new org.telegram.ui.Components.uv0(context, null);
+                uv0Var.b(qrVar.m1, null, LocaleController.getString("SlowmodeOff", R.string.SlowmodeOff), LocaleController.formatString(R.string.SlowmodeSeconds, 5), LocaleController.formatString(R.string.SlowmodeSeconds, 10), LocaleController.formatString(R.string.SlowmodeSeconds, 30), LocaleController.formatString(R.string.SlowmodeMinutes, 1), LocaleController.formatString(R.string.SlowmodeMinutes, 5), LocaleController.formatString(R.string.SlowmodeMinutes, 15), LocaleController.formatString(R.string.SlowmodeHours, 1));
+                uv0Var.setCallback(new lr(this, 1));
+                view = uv0Var;
                 break;
             case 10:
                 view = new org.telegram.ui.Cells.s4(context, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(120.0f));
@@ -966,12 +966,12 @@ public final class mr extends org.telegram.ui.Components.sl0 {
                 view = z1Var;
                 break;
             case 15:
-                org.telegram.ui.Components.vv0 vv0Var2 = new org.telegram.ui.Components.vv0(context, null);
+                org.telegram.ui.Components.uv0 uv0Var2 = new org.telegram.ui.Components.uv0(context, null);
                 Drawable[] drawableArr = {qrVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge), qrVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2), qrVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2), qrVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2), qrVar.getParentActivity().getDrawable(R.drawable.mini_boost_profile_badge2)};
                 int i12 = qrVar.p1;
-                vv0Var2.b(i12 > 0 ? i12 - 1 : 0, drawableArr, "1", "2", "3", "4", "5");
-                vv0Var2.setCallback(new lr(this, 2));
-                view2 = vv0Var2;
+                uv0Var2.b(i12 > 0 ? i12 - 1 : 0, drawableArr, "1", "2", "3", "4", "5");
+                uv0Var2.setCallback(new lr(this, 2));
+                view2 = uv0Var2;
                 view = view2;
                 break;
             case 16:
@@ -981,6 +981,6 @@ public final class mr extends org.telegram.ui.Components.sl0 {
                 view = new org.telegram.ui.Cells.x7(context, qrVar.getResourceProvider());
                 break;
         }
-        return new org.telegram.ui.Components.fl0(view);
+        return new org.telegram.ui.Components.el0(view);
     }
 }

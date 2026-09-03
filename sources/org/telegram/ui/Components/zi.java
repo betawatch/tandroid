@@ -4,7 +4,7 @@ import android.view.KeyEvent;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class zi extends f2.w {
     public final /* synthetic */ int Q;
@@ -21,7 +21,7 @@ public final class zi extends f2.w {
     public boolean Y0() {
         switch (this.Q) {
             case 2:
-                return ((yx0) this.R).T != null && LocaleController.isRTL;
+                return ((xx0) this.R).T != null && LocaleController.isRTL;
             default:
                 return super.Y0();
         }
@@ -75,10 +75,10 @@ public final class zi extends f2.w {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zi(yx0 yx0Var) {
+    public zi(xx0 xx0Var) {
         super(5);
         this.Q = 2;
-        this.R = yx0Var;
+        this.R = xx0Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

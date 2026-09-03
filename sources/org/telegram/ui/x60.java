@@ -22,9 +22,9 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class x60 extends org.telegram.ui.Components.dl0 {
+public final class x60 extends org.telegram.ui.Components.cl0 {
     public int B;
     public int C;
     public int D;
@@ -113,7 +113,7 @@ public final class x60 extends org.telegram.ui.Components.dl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         if (m1Var.f == 0) {
             return false;
@@ -130,7 +130,7 @@ public final class x60 extends org.telegram.ui.Components.dl0 {
         return !(object instanceof TLRPC.User) || z60Var.G.h(((TLRPC.User) object).id) < 0;
     }
 
-    @Override // org.telegram.ui.Components.dl0
+    @Override // org.telegram.ui.Components.cl0
     public final String F(int i10) {
         String str;
         String str2;
@@ -173,8 +173,8 @@ public final class x60 extends org.telegram.ui.Components.dl0 {
         return "";
     }
 
-    @Override // org.telegram.ui.Components.dl0
-    public final void G(org.telegram.ui.Components.tl0 tl0Var, float f10, int[] iArr) {
+    @Override // org.telegram.ui.Components.cl0
+    public final void G(org.telegram.ui.Components.sl0 sl0Var, float f10, int[] iArr) {
         iArr[0] = (int) (h() * f10);
         iArr[1] = 0;
     }
@@ -485,6 +485,6 @@ public final class x60 extends org.telegram.ui.Components.dl0 {
             x60Var.setAnimateLayoutChange(true);
             u3Var = x60Var;
         }
-        return new org.telegram.ui.Components.fl0(u3Var);
+        return new org.telegram.ui.Components.el0(u3Var);
     }
 }

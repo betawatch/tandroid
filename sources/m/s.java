@@ -24,7 +24,7 @@ import android.widget.TextView;
 import k7.x7;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class s extends EditText implements r0.p, u0.k {
     public final m a;
@@ -146,7 +146,7 @@ public final class s extends EditText implements r0.p, u0.k {
         k7.m.a(editorInfo, onCreateInputConnection, this);
         if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e6 = r0.j0.e(this)) != null) {
             t0.b.b(editorInfo, e6);
-            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new sf.g(this, 4));
+            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new sf.h(this, 4));
         }
         return this.e.c(onCreateInputConnection, editorInfo);
     }

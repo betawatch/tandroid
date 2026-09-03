@@ -27,9 +27,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.kl0, jy, ContactsLoadingObserver.Callback, org.telegram.ui.Components.cv0, org.telegram.ui.Components.ll0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener {
+public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.jl0, jy, ContactsLoadingObserver.Callback, org.telegram.ui.Components.bv0, org.telegram.ui.Components.kl0, ImageReceiver.ImageReceiverDelegate, OnCompleteListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -50,7 +50,7 @@ public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, o
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         switch (this.a) {
             case 2:
@@ -63,7 +63,7 @@ public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, o
         return false;
     }
 
-    @Override // org.telegram.ui.Components.cv0
+    @Override // org.telegram.ui.Components.bv0
     public void b(LocationController.SharingLocationInfo sharingLocationInfo) {
         LaunchActivity launchActivity = (LaunchActivity) this.b;
         int[] iArr = (int[]) this.c;
@@ -77,7 +77,7 @@ public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, o
         launchActivity.p0(bd0Var);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         switch (this.a) {
             case 2:
@@ -112,7 +112,7 @@ public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, o
         org.telegram.messenger.j5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         bd0 bd0Var = (bd0) this.b;
         Context context = (Context) this.c;
@@ -280,15 +280,15 @@ public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, o
                 ((ee0) obj2).B.o1((TLRPC.TL_auth_authorization) ((TLObject) obj), false);
                 break;
             case 25:
-                ie0 ie0Var = (ie0) obj2;
-                ie0Var.getClass();
+                he0 he0Var = (he0) obj2;
+                he0Var.getClass();
                 Bundle bundle = new Bundle();
                 bundle.putString("email_unconfirmed_pattern", ((TLRPC.TL_auth_passwordRecovery) obj).email_pattern);
-                bundle.putString("password", ie0Var.r);
-                bundle.putString("requestPhone", ie0Var.s);
-                bundle.putString("phoneHash", ie0Var.v);
-                bundle.putString("phoneCode", ie0Var.w);
-                ie0Var.y.u1(7, true, bundle, false);
+                bundle.putString("password", he0Var.r);
+                bundle.putString("requestPhone", he0Var.s);
+                bundle.putString("phoneHash", he0Var.v);
+                bundle.putString("phoneCode", he0Var.w);
+                he0Var.y.u1(7, true, bundle, false);
                 break;
             case 27:
                 sf0.o((sf0) obj2, (Context) obj);
@@ -333,13 +333,13 @@ public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, o
         launchActivity.X(intent, true, false, false, null, true, false);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
         int i10 = this.a;
     }
 
     @Override // org.telegram.ui.jy
-    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, mf1 mf1Var) {
+    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
         h80 h80Var = (h80) this.b;
         py pyVar2 = (py) this.c;
         CacheByChatsController.KeepMediaException keepMediaException = null;
@@ -358,7 +358,7 @@ public final /* synthetic */ class rs implements org.telegram.ui.ActionBar.c2, o
         e80Var.d = h80Var.c0;
         e80Var.U();
         h80Var.d0.presentFragment(e80Var);
-        AndroidUtilities.runOnUIThread(new v10(10, e80Var, keepMediaException), 150L);
+        AndroidUtilities.runOnUIThread(new z10(9, e80Var, keepMediaException), 150L);
         return true;
     }
 

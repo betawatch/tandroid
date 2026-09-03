@@ -5,9 +5,9 @@ import eg.c1;
 import eg.o2;
 import oh.a8;
 import org.telegram.messenger.AndroidUtilities;
-import qh.b5;
+import qh.a5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements o1.g {
     public final /* synthetic */ int a;
@@ -48,14 +48,14 @@ public final /* synthetic */ class c implements o1.g {
                 a8Var.c0 = f11;
                 break;
             default:
-                b5 b5Var = (b5) this.b;
+                a5 a5Var = (a5) this.b;
                 float f14 = f10 / 1000.0f;
-                b5Var.q1 = f14;
-                o2 o2Var2 = b5Var.j1;
+                a5Var.q1 = f14;
+                o2 o2Var2 = a5Var.j1;
                 o2Var2.setAlpha(f14);
                 o2Var2.invalidate();
-                b5Var.R0.invalidate();
-                b5Var.i1.getTypefaceCell().setAlpha(1.0f - b5Var.q1);
+                a5Var.R0.invalidate();
+                a5Var.i1.getTypefaceCell().setAlpha(1.0f - a5Var.q1);
                 break;
         }
     }

@@ -23,8 +23,8 @@ import org.telegram.ui.Components.mp;
 import org.telegram.ui.Components.mq;
 import org.telegram.ui.Components.o00;
 import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.rc;
-import org.telegram.ui.Components.rk0;
 import org.telegram.ui.Components.ro;
 import org.telegram.ui.Components.v9;
 import org.telegram.ui.Components.vv;
@@ -40,7 +40,7 @@ import org.telegram.ui.po;
 import org.telegram.ui.u4;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class u2 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -170,7 +170,7 @@ public final class u2 extends AnimatorListenerAdapter {
                 break;
             case 3:
                 ng.d0 d0Var = (ng.d0) this.c;
-                rk0 rk0Var = d0Var.n;
+                qk0 qk0Var = d0Var.n;
                 d0Var.k();
                 d0Var.l();
                 boolean z4 = this.b;
@@ -181,14 +181,14 @@ public final class u2 extends AnimatorListenerAdapter {
                     d0Var.k = true;
                     d0Var.a.invalidate();
                 }
-                rk0Var.setCustomEmojiEnterProgress(Utilities.clamp(d0Var.j, 1.0f, 0.0f));
+                qk0Var.setCustomEmojiEnterProgress(Utilities.clamp(d0Var.j, 1.0f, 0.0f));
                 if (!z4) {
-                    rk0Var.setImportantForAccessibility(0);
-                    rk0Var.setSkipDraw(false);
+                    qk0Var.setImportantForAccessibility(0);
+                    qk0Var.setSkipDraw(false);
                     d0Var.f();
                     Runtime.getRuntime().gc();
                     int i10 = d0Var.y;
-                    rk0Var.setCustomEmojiReactionsBackground((i10 == 4 || i10 == 5) ? false : true);
+                    qk0Var.setCustomEmojiReactionsBackground((i10 == 4 || i10 == 5) ? false : true);
                 }
                 d0Var.C = false;
                 break;

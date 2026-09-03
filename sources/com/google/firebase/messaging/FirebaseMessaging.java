@@ -23,7 +23,7 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
     public static final long k = TimeUnit.HOURS.toSeconds(8);
@@ -44,7 +44,10 @@ public class FirebaseMessaging {
     public FirebaseMessaging(w8.g gVar, ba.b bVar, ba.b bVar2, ca.d dVar, v2.f fVar, y9.b bVar3) {
         gVar.a();
         Context context = gVar.a;
-        final n nVar = new n(context);
+        final n nVar = new n();
+        final int i10 = 0;
+        nVar.b = 0;
+        nVar.c = context;
         gVar.a();
         x5.a aVar = new x5.a(gVar.a);
         final a9.a aVar2 = new a9.a();
@@ -55,10 +58,9 @@ public class FirebaseMessaging {
         aVar2.e = bVar2;
         aVar2.f = dVar;
         ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new i9.u("Firebase-Messaging-Task"));
-        final int i10 = 1;
+        final int i11 = 1;
         ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new i9.u("Firebase-Messaging-Init"));
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new i9.u("Firebase-Messaging-File-Io"));
-        final int i11 = 0;
         this.j = false;
         m = fVar;
         this.a = gVar;
@@ -101,7 +103,7 @@ public class FirebaseMessaging {
                 PackageManager packageManager;
                 ApplicationInfo applicationInfo;
                 Bundle bundle;
-                switch (i11) {
+                switch (i10) {
                     case 0:
                         FirebaseMessaging firebaseMessaging = this.b;
                         if (firebaseMessaging.e.o() && firebaseMessaging.g(firebaseMessaging.d())) {
@@ -192,7 +194,7 @@ public class FirebaseMessaging {
                 PackageManager packageManager;
                 ApplicationInfo applicationInfo;
                 Bundle bundle;
-                switch (i10) {
+                switch (i11) {
                     case 0:
                         FirebaseMessaging firebaseMessaging = this.b;
                         if (firebaseMessaging.e.o() && firebaseMessaging.g(firebaseMessaging.d())) {

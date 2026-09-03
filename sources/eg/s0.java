@@ -3,17 +3,17 @@ package eg;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.ui.ht0;
+import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class s0 extends View {
-    public final /* synthetic */ ht0 a;
+    public final /* synthetic */ mt0 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s0(ht0 ht0Var, Context context) {
+    public s0(mt0 mt0Var, Context context) {
         super(context);
-        this.a = ht0Var;
+        this.a = mt0Var;
     }
 
     @Override // android.view.View

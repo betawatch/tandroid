@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class bj0 extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean B;
@@ -47,7 +47,7 @@ public class bj0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
     public int M;
     public int N;
     public final a0.g O;
-    public org.telegram.ui.Components.lj0 P;
+    public org.telegram.ui.Components.kj0 P;
     public LinearLayout Q;
     public int R;
     public boolean S;
@@ -61,17 +61,17 @@ public class bj0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
     public TLRPC.ChatFull a;
     public final boolean a0;
     public final long b;
-    public ea1 b0;
+    public ka1 b0;
     public final int c;
     public zi0 d;
     public org.telegram.ui.Components.oz e;
-    public org.telegram.ui.Components.tl0 f;
+    public org.telegram.ui.Components.sl0 f;
     public f2.j0 h;
     public final MessageObject n;
-    public t91 r;
-    public t91 s;
+    public z91 r;
+    public z91 s;
     public final LruCache v;
-    public ga1 w;
+    public ma1 w;
     public final ArrayList x;
     public boolean y;
 
@@ -110,18 +110,18 @@ public class bj0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
             statsGraph = tL_messageStats.views_graph;
             statsGraph2 = tL_messageStats.reactions_by_emotion_graph;
         }
-        bj0Var.r = ha1.f0(statsGraph, LocaleController.getString(R.string.ViewsAndSharesChartTitle), 1, false);
-        bj0Var.s = ha1.f0(statsGraph2, LocaleController.getString(R.string.ReactionsByEmotionChartTitle), 2, false);
-        t91 t91Var = bj0Var.r;
-        if (t91Var == null || t91Var.d.a.length > 5) {
+        bj0Var.r = na1.f0(statsGraph, LocaleController.getString(R.string.ViewsAndSharesChartTitle), 1, false);
+        bj0Var.s = na1.f0(statsGraph2, LocaleController.getString(R.string.ReactionsByEmotionChartTitle), 2, false);
+        z91 z91Var = bj0Var.r;
+        if (z91Var == null || z91Var.d.a.length > 5) {
             bj0Var.g0();
             return;
         }
         bj0Var.y = false;
         TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
-        t91 t91Var2 = bj0Var.r;
-        tL_loadAsyncGraph.token = t91Var2.g;
-        long[] jArr = t91Var2.d.a;
+        z91 z91Var2 = bj0Var.r;
+        tL_loadAsyncGraph.token = z91Var2.g;
+        long[] jArr = z91Var2.d.a;
         tL_loadAsyncGraph.x = jArr[jArr.length - 1];
         tL_loadAsyncGraph.flags |= 1;
         ConnectionsManager.getInstance(bj0Var.currentAccount).bindRequestToGuid(ConnectionsManager.getInstance(bj0Var.currentAccount).sendRequest(tL_loadAsyncGraph, new ba(bj0Var, bj0Var.r.g + "_" + tL_loadAsyncGraph.x, tL_loadAsyncGraph, 24), null, null, 0, bj0Var.a.stats_dc, 1, true), bj0Var.classGuid);
@@ -305,9 +305,9 @@ public class bj0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
         LinearLayout linearLayout = new LinearLayout(context);
         this.Q = linearLayout;
         linearLayout.setOrientation(1);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        this.P = lj0Var;
-        lj0Var.setAutoRepeat(true);
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
+        this.P = kj0Var;
+        kj0Var.setAutoRepeat(true);
         this.P.f(R.raw.statistic_preload, 120, 120, null);
         this.P.d();
         TextView textView = new TextView(context);
@@ -329,18 +329,18 @@ public class bj0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
         this.Q.addView(textView2, k7.c6.q(-2, -2, 1));
         this.Q.setAlpha(0.0f);
         frameLayout2.addView(this.Q, k7.c6.d(240, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, getResourceProvider());
-        this.f = tl0Var;
-        tl0Var.p1();
-        org.telegram.ui.Components.tl0 tl0Var2 = this.f;
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, getResourceProvider());
+        this.f = sl0Var;
+        sl0Var.o1();
+        org.telegram.ui.Components.sl0 sl0Var2 = this.f;
         f2.j0 j0Var = new f2.j0(1, false);
         this.h = j0Var;
-        tl0Var2.setLayoutManager(j0Var);
+        sl0Var2.setLayoutManager(j0Var);
         ((f2.p1) this.f.getItemAnimator()).m = false;
-        org.telegram.ui.Components.tl0 tl0Var3 = this.f;
+        org.telegram.ui.Components.sl0 sl0Var3 = this.f;
         zi0 zi0Var = new zi0(this, context);
         this.d = zi0Var;
-        tl0Var3.setAdapter(zi0Var);
+        sl0Var3.setAdapter(zi0Var);
         this.f.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         this.actionBar.setAdaptiveBackground(this.f);
         this.f.setOnItemClickListener(new j(this, 18));
@@ -418,7 +418,7 @@ public class bj0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
         this.actionBar.C(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, getResourceProvider()), false);
         this.actionBar.B(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.z8, getResourceProvider()), false);
         yh.z(false, this.actionBar);
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 26));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 26));
         this.Y.setOnClickListener(new f60(this, 10));
         f0();
         return this.fragmentView;
@@ -427,8 +427,8 @@ public class bj0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
     public final void d0(View view) {
         if (view instanceof org.telegram.ui.Cells.b5) {
             ((org.telegram.ui.Cells.b5) view).c(0);
-        } else if (view instanceof r91) {
-            ((r91) view).d();
+        } else if (view instanceof x91) {
+            ((x91) view).d();
             view.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d6, getResourceProvider()));
         } else if (view instanceof org.telegram.ui.Cells.z6) {
             org.telegram.ui.Components.pq pqVar = new org.telegram.ui.Components.pq(new ColorDrawable(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.a7, getResourceProvider())), org.telegram.ui.ActionBar.k6.V0(ApplicationLoader.applicationContext, R.drawable.greydivider, org.telegram.ui.ActionBar.k6.b7), 0, 0);
@@ -516,7 +516,7 @@ public class bj0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
         if (this.C && this.y) {
             AndroidUtilities.cancelRunOnUIThread(this.W);
             if (this.X.getVisibility() == 8) {
-                this.Q.animate().alpha(0.0f).setListener(new org.telegram.ui.Components.g91(this, 25));
+                this.Q.animate().alpha(0.0f).setListener(new org.telegram.ui.Components.f91(this, 25));
                 this.X.setVisibility(0);
                 this.X.setAlpha(0.0f);
                 this.X.animate().alpha(1.0f).start();
@@ -593,8 +593,8 @@ public class bj0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.actionBar, TLObject.FLAG_31, null, null, null, null, org.telegram.ui.ActionBar.k6.G8));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.actionBar, TLObject.FLAG_30, null, null, null, null, org.telegram.ui.ActionBar.k6.E8));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.actionBar, 1073741832, null, null, null, null, org.telegram.ui.ActionBar.k6.F8));
-        ha1.k0(this.r, arrayList, fVar);
-        ha1.k0(this.s, arrayList, fVar);
+        na1.k0(this.r, arrayList, fVar);
+        na1.k0(this.s, arrayList, fVar);
         return arrayList;
     }
 

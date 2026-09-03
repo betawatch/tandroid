@@ -8,19 +8,19 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.j01;
 import org.telegram.ui.Components.l00;
 import org.telegram.ui.Components.vw;
 import org.telegram.ui.bn0;
 import org.telegram.ui.dp;
 import org.telegram.ui.gl0;
 import org.telegram.ui.lo0;
-import org.telegram.ui.p71;
 import org.telegram.ui.pa;
 import org.telegram.ui.sf0;
 import org.telegram.ui.sj0;
+import org.telegram.ui.u71;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p5 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -69,7 +69,7 @@ public final /* synthetic */ class p5 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new ag.f(i10));
                 break;
             case 12:
-                int i14 = k01.e;
+                int i14 = j01.e;
                 break;
             case 13:
                 int i15 = sf0.q0;
@@ -84,7 +84,7 @@ public final /* synthetic */ class p5 implements RequestDelegate {
                 List list = lo0.d1;
                 break;
             case 17:
-                int i17 = p71.e;
+                int i17 = u71.e;
                 break;
             case 18:
                 int[] iArr = qh.v0.U;

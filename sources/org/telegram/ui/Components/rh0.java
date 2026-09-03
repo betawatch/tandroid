@@ -11,9 +11,9 @@ import android.graphics.drawable.Drawable;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class rh0 extends p9 implements nv0 {
+public final class rh0 extends p9 implements mv0 {
     public final int D;
     public RadialProgress2 E;
     public ValueAnimator F;
@@ -36,7 +36,7 @@ public final class rh0 extends p9 implements nv0 {
         setLayerNum(xh0Var.i1);
     }
 
-    @Override // org.telegram.ui.Components.nv0
+    @Override // org.telegram.ui.Components.mv0
     public final void g(Runnable runnable) {
         this.L = runnable;
     }
@@ -58,8 +58,8 @@ public final class rh0 extends p9 implements nv0 {
         Path path = xh0Var.J0;
         ArrayList arrayList = xh0Var.Y0;
         RectF rectF = xh0Var.K0;
-        org.telegram.ui.xu0 xu0Var = xh0Var.e1;
-        if (xu0Var == null || !xu0Var.n) {
+        org.telegram.ui.cv0 cv0Var = xh0Var.e1;
+        if (cv0Var == null || !cv0Var.n) {
             if (this.E != null) {
                 int k10 = xh0Var.A0.k(this.J);
                 if (xh0Var.f1) {

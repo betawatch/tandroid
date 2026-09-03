@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.l01;
-import qh.j5;
+import org.telegram.ui.Components.k01;
+import qh.i5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class i1 extends Drawable {
     public final /* synthetic */ int a;
@@ -39,7 +39,7 @@ public final class i1 extends Drawable {
             case 1:
                 canvas.save();
                 canvas.translate(getBounds().left, getBounds().top);
-                ((j5) this.b).draw(canvas);
+                ((i5) this.b).draw(canvas);
                 canvas.restore();
                 break;
             case 2:
@@ -79,12 +79,12 @@ public final class i1 extends Drawable {
                 canvas.drawCircle(bounds2.centerX(), bounds2.centerY(), AndroidUtilities.dp(18.0f), ((Switch) this.b).G);
                 break;
             case 6:
-                ((l01) this.b).c(getBounds().centerX() - (((l01) this.b).c / 2.0f), getBounds().centerY(), 1.0f, k6.w0(null, k6.G6, false), canvas);
+                ((k01) this.b).c(getBounds().centerX() - (((k01) this.b).c / 2.0f), getBounds().centerY(), 1.0f, k6.w0(null, k6.G6, false), canvas);
                 break;
             case 7:
                 canvas.save();
-                qh.f3 f3Var = (qh.f3) this.b;
-                canvas.drawPath(f3Var.q0, f3Var.V);
+                qh.e3 e3Var = (qh.e3) this.b;
+                canvas.drawPath(e3Var.q0, e3Var.V);
                 canvas.restore();
                 break;
             default:
@@ -102,7 +102,7 @@ public final class i1 extends Drawable {
     public int getIntrinsicHeight() {
         switch (this.a) {
             case 1:
-                return ((j5) this.b).getHeight();
+                return ((i5) this.b).getHeight();
             case 4:
                 return AndroidUtilities.dp(30.0f);
             case 8:
@@ -116,7 +116,7 @@ public final class i1 extends Drawable {
     public int getIntrinsicWidth() {
         switch (this.a) {
             case 1:
-                return ((j5) this.b).getWidth();
+                return ((i5) this.b).getWidth();
             case 4:
                 return AndroidUtilities.dp(30.0f);
             case 8:
@@ -249,7 +249,7 @@ public final class i1 extends Drawable {
 
     public i1(String str) {
         this.a = 6;
-        this.b = new l01(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
+        this.b = new k01(str.substring(0, !str.isEmpty() ? 1 : 0), 14.0f, AndroidUtilities.bold());
     }
 
     private final void a(int i10) {

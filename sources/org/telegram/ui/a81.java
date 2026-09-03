@@ -1,64 +1,38 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MrzRecognizer;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class a81 implements u9 {
-    public TLObject a = null;
-    public TLRPC.TL_error b = null;
-    public final /* synthetic */ SessionsActivity c;
+public final /* synthetic */ class a81 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ SessionsActivity b;
 
-    public a81(SessionsActivity sessionsActivity) {
-        this.c = sessionsActivity;
+    public /* synthetic */ a81(SessionsActivity sessionsActivity, int i10) {
+        this.a = i10;
+        this.b = sessionsActivity;
     }
 
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ String E0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.u9
-    public final void J(String str) {
-        TLObject tLObject = this.a;
-        if (!(tLObject instanceof TLRPC.TL_authorization)) {
-            if (this.b != null) {
-                AndroidUtilities.runOnUIThread(new z71(this, 0));
-                return;
-            }
-            return;
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                TL_account.connectedBots connectedbots = (TL_account.connectedBots) obj;
+                SessionsActivity sessionsActivity = this.b;
+                sessionsActivity.getClass();
+                if (connectedbots != null) {
+                    sessionsActivity.h = connectedbots.connected_bots;
+                    if (sessionsActivity.a != null) {
+                        sessionsActivity.m0();
+                        sessionsActivity.a.l();
+                        break;
+                    }
+                }
+                break;
+            default:
+                SessionsActivity.V(this.b, (Boolean) obj);
+                break;
         }
-        TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
-        boolean z4 = tL_authorization.password_pending;
-        SessionsActivity sessionsActivity = this.c;
-        if (z4) {
-            sessionsActivity.f.add(0, tL_authorization);
-            sessionsActivity.S = 4;
-            sessionsActivity.k0(false);
-        } else {
-            sessionsActivity.e.add(0, tL_authorization);
-        }
-        sessionsActivity.m0();
-        sessionsActivity.a.l();
-        sessionsActivity.s.m(0L, this.a, 11);
-    }
-
-    @Override // org.telegram.ui.u9
-    public final boolean e1(String str, m9 m9Var) {
-        this.a = null;
-        this.b = null;
-        AndroidUtilities.runOnUIThread(new if0(this, str, m9Var, 29), 750L);
-        return true;
-    }
-
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ void P0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ void onDismiss() {
     }
 }

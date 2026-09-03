@@ -16,10 +16,10 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.q70;
+import org.telegram.ui.cr0;
 import org.telegram.ui.py;
-import org.telegram.ui.xq0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class d4 {
     public static EditTextBoldCursor a(Context context, g6 g6Var, String str, String str2) {
@@ -79,7 +79,7 @@ public abstract class d4 {
                     }
                 }
             }, false);
-            q70Var.c(R.drawable.left_status_profile, LocaleController.getString(R.string.RichEditorUserProfile), new xq0(p2Var, q3Var, z4, 14), false);
+            q70Var.c(R.drawable.left_status_profile, LocaleController.getString(R.string.RichEditorUserProfile), new cr0(p2Var, q3Var, z4, 14), false);
             q70Var.Z();
             return q70Var;
         }
@@ -88,7 +88,7 @@ public abstract class d4 {
         } else if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy) {
             h(q3Var, z4);
         } else if (inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUserProfile) {
-            q3Var.f.o3(true);
+            q3Var.f.n3(true);
             k(p2Var, z4, new a4(q3Var, 2));
         }
         return null;
@@ -179,7 +179,7 @@ public abstract class d4 {
         alertDialog$Builder.n(f10);
         alertDialog$Builder.k(LocaleController.getString(R.string.OK), new o9.b(c3, t0Var, a2, o3Var, 6));
         if (c3) {
-            alertDialog$Builder.i(LocaleController.getString(R.string.RichEditorChangeUser), new sf.g(t0Var, 16));
+            alertDialog$Builder.i(LocaleController.getString(R.string.RichEditorChangeUser), new sf.h(t0Var, 16));
             String string3 = LocaleController.getString(R.string.Delete);
             y3 y3Var = new y3(o3Var, 2);
             d2Var.m0 = string3;
@@ -207,7 +207,7 @@ public abstract class d4 {
         AlertDialog$Builder alertDialog$Builder = z4 ? new AlertDialog$Builder(context, 0, g6Var) : new org.telegram.ui.ActionBar.g2(context, 0, g6Var);
         alertDialog$Builder.a.O = str;
         alertDialog$Builder.n(f10);
-        alertDialog$Builder.k(LocaleController.getString(R.string.OK), new qh.m1(a2, a10, y3Var, 7));
+        alertDialog$Builder.k(LocaleController.getString(R.string.OK), new qh.l1(a2, a10, y3Var, 7));
         if (o3Var.c()) {
             alertDialog$Builder.i(LocaleController.getString(R.string.Delete), new y3(o3Var, 0));
             alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
@@ -226,7 +226,7 @@ public abstract class d4 {
         TL_keyboard.InlineButtonType inlineButtonType = (e4Var == null || (textbutton = e4Var.a) == null) ? null : textbutton.type;
         boolean z10 = inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeCopy;
         String l10 = z10 ? ((TL_keyboard.TL_inlineButtonTypeCopy) inlineButtonType).copy_text : x5.l(q3Var.e);
-        q3Var.f.o3(false);
+        q3Var.f.n3(false);
         q3Var.a.showInputDialog(LocaleController.getString(z10 ? R.string.RichEditorEditCopyButton : R.string.RichEditorCreateCopyButton), LocaleController.getString(R.string.RichEditorButtonCopyText), l10, false, !z4, new a4(q3Var, 1));
     }
 
@@ -236,7 +236,7 @@ public abstract class d4 {
         TL_keyboard.InlineButtonType inlineButtonType = (e4Var == null || (textbutton = e4Var.a) == null) ? null : textbutton.type;
         boolean z10 = inlineButtonType instanceof TL_keyboard.TL_inlineButtonTypeUrl;
         String str = z10 ? ((TL_keyboard.TL_inlineButtonTypeUrl) inlineButtonType).url : "http://";
-        q3Var.f.o3(false);
+        q3Var.f.n3(false);
         q3Var.a.showInputDialog(LocaleController.getString(z10 ? R.string.RichEditorEditLinkButton : R.string.RichEditorCreateLinkButton), LocaleController.getString(R.string.RichEditorButtonURL), str, true, !z4, new a4(q3Var, 0));
     }
 
@@ -259,7 +259,7 @@ public abstract class d4 {
         bundle.putBoolean("checkCanWrite", false);
         bundle.putInt("dialogsType", 4);
         py pyVar = new py(bundle);
-        pyVar.z2 = new sf.g(c4Var, 17);
+        pyVar.z2 = new sf.h(c4Var, 17);
         if (!z4) {
             p2Var.presentFragment(pyVar);
             return;

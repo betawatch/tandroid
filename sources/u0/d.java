@@ -8,10 +8,10 @@ import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import java.util.WeakHashMap;
 import m.r1;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.tl0;
 import r0.j0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class d implements View.OnTouchListener {
     public static final int E = ViewConfiguration.getTapTimeout();
@@ -21,7 +21,7 @@ public final class d implements View.OnTouchListener {
     public final a a;
     public final AccelerateInterpolator b;
     public final r1 c;
-    public ul0 d;
+    public tl0 d;
     public final float[] e;
     public final float[] f;
     public final int h;
@@ -196,17 +196,17 @@ public final class d implements View.OnTouchListener {
             aVar.d = a10;
             if (!this.B && e()) {
                 if (this.d == null) {
-                    this.d = new ul0(this, 9);
+                    this.d = new tl0(this, 9);
                 }
                 this.B = true;
                 this.x = true;
                 if (this.w || (i10 = this.n) <= 0) {
                     this.d.run();
                 } else {
-                    ul0 ul0Var = this.d;
+                    tl0 tl0Var = this.d;
                     long j10 = i10;
                     WeakHashMap weakHashMap = j0.a;
-                    r1Var.postOnAnimationDelayed(ul0Var, j10);
+                    r1Var.postOnAnimationDelayed(tl0Var, j10);
                 }
                 this.w = true;
             }

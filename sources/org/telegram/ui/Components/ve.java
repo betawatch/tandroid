@@ -17,9 +17,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ve extends ap0 {
+public final class ve extends zo0 {
     public final /* synthetic */ ChatActivityEnterView H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -49,9 +49,9 @@ public final class ve extends ap0 {
         mutate.getPadding(rect);
         s2Var.setPadding(rect.left, rect.top, rect.right, rect.bottom);
         int width = (int) ((xnVar == null ? AndroidUtilities.displaySize.x : xnVar.U0.getWidth()) * 0.75f);
-        uo0 uo0Var = new uo0(context, width, AndroidUtilities.dp(450.0f));
-        this.o = uo0Var;
-        uo0Var.setOrientation(1);
+        to0 to0Var = new to0(context, width, AndroidUtilities.dp(450.0f));
+        this.o = to0Var;
+        to0Var.setOrientation(1);
         TextView textView = new TextView(context);
         this.p = textView;
         org.telegram.ui.b.l(org.telegram.ui.ActionBar.k6.m5, g6Var, textView, 1, 16.0f);
@@ -59,24 +59,24 @@ public final class ve extends ap0 {
         textView.setTypeface(AndroidUtilities.bold(), 1);
         int dp = AndroidUtilities.dp(18.0f);
         textView.setPadding(dp, AndroidUtilities.dp(12.0f), dp, AndroidUtilities.dp(12.0f));
-        uo0Var.addView(textView);
+        to0Var.addView(textView);
         FrameLayout frameLayout = new FrameLayout(context);
         final ArrayList<TLRPC.TL_sendAsPeer> arrayList = tL_channels_sendAsPeers.peers;
-        tl0 tl0Var = new tl0(context, null);
-        this.v = tl0Var;
+        sl0 sl0Var = new sl0(context, null);
+        this.v = sl0Var;
         f2.j0 j0Var = new f2.j0();
         this.w = j0Var;
-        tl0Var.setLayoutManager(j0Var);
-        tl0Var.setAdapter(new vo0(g6Var, arrayList, messagesController, width, peer));
-        tl0Var.j(new wo0(this));
-        tl0Var.setOnItemClickListener(new jl0() { // from class: org.telegram.ui.Components.to0
-            @Override // org.telegram.ui.Components.jl0
+        sl0Var.setLayoutManager(j0Var);
+        sl0Var.setAdapter(new uo0(g6Var, arrayList, messagesController, width, peer));
+        sl0Var.j(new vo0(this));
+        sl0Var.setOnItemClickListener(new il0() { // from class: org.telegram.ui.Components.so0
+            @Override // org.telegram.ui.Components.il0
             public final void f(int i10, View view) {
-                ap0.k(ve.this, arrayList, context, xnVar, z4, aVar, view, i10);
+                zo0.k(ve.this, arrayList, context, xnVar, z4, aVar, view, i10);
             }
         });
-        tl0Var.setOverScrollMode(2);
-        frameLayout.addView(tl0Var);
+        sl0Var.setOverScrollMode(2);
+        frameLayout.addView(sl0Var);
         View view = new View(context);
         this.u = view;
         Drawable drawable = context.getDrawable(R.drawable.header_shadow);
@@ -84,11 +84,11 @@ public final class ve extends ap0 {
         view.setBackground(drawable);
         view.setAlpha(0.0f);
         frameLayout.addView(view, k7.c6.c(4.0f, -1));
-        uo0Var.addView(frameLayout, k7.c6.c(-2.0f, -1));
-        s2Var.addView(uo0Var);
+        to0Var.addView(frameLayout, k7.c6.c(-2.0f, -1));
+        s2Var.addView(to0Var);
     }
 
-    @Override // org.telegram.ui.Components.ap0, org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
+    @Override // org.telegram.ui.Components.zo0, org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
     public final void dismiss() {
         ArrayList arrayList = this.z;
         ChatActivityEnterView chatActivityEnterView = this.H;

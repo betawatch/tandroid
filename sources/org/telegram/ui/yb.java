@@ -17,7 +17,7 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class yb extends cg.c {
     public int d = -1;
@@ -28,7 +28,7 @@ public final class yb extends cg.c {
         this.f = acVar;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return ((zb) this.f.x.get(m1Var.b())).b;
     }
@@ -66,23 +66,23 @@ public final class yb extends cg.c {
             return;
         }
         if (i13 == 0) {
-            ba1 ba1Var = (ba1) view;
-            ba1Var.a(Integer.toString(acVar.d.level), 0, null, LocaleController.getString(R.string.BoostsLevel2));
+            ha1 ha1Var = (ha1) view;
+            ha1Var.a(Integer.toString(acVar.d.level), 0, null, LocaleController.getString(R.string.BoostsLevel2));
             TL_stats.TL_statsPercentValue tL_statsPercentValue = acVar.d.premium_audience;
             if (tL_statsPercentValue != null) {
                 double d = tL_statsPercentValue.total;
                 if (d != 0.0d) {
-                    ba1Var.a("≈" + ((int) acVar.d.premium_audience.part), 1, String.format(Locale.US, "%.1f", Float.valueOf((((float) tL_statsPercentValue.part) / ((float) d)) * 100.0f)).concat("%"), LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.PremiumSubscribers : R.string.PremiumMembers));
-                    ba1Var.a(String.valueOf(acVar.d.boosts), 2, null, LocaleController.getString(R.string.BoostsExisting));
+                    ha1Var.a("≈" + ((int) acVar.d.premium_audience.part), 1, String.format(Locale.US, "%.1f", Float.valueOf((((float) tL_statsPercentValue.part) / ((float) d)) * 100.0f)).concat("%"), LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.PremiumSubscribers : R.string.PremiumMembers));
+                    ha1Var.a(String.valueOf(acVar.d.boosts), 2, null, LocaleController.getString(R.string.BoostsExisting));
                     TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = acVar.d;
-                    ba1Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus.next_level_boosts - tL_premium_boostsStatus.boosts)), 3, null, LocaleController.getString(R.string.BoostsToLevel));
+                    ha1Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus.next_level_boosts - tL_premium_boostsStatus.boosts)), 3, null, LocaleController.getString(R.string.BoostsToLevel));
                     return;
                 }
             }
-            ba1Var.a("≈0", 1, "0%", LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.PremiumSubscribers : R.string.PremiumMembers));
-            ba1Var.a(String.valueOf(acVar.d.boosts), 2, null, LocaleController.getString(R.string.BoostsExisting));
+            ha1Var.a("≈0", 1, "0%", LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.PremiumSubscribers : R.string.PremiumMembers));
+            ha1Var.a(String.valueOf(acVar.d.boosts), 2, null, LocaleController.getString(R.string.BoostsExisting));
             TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus2 = acVar.d;
-            ba1Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus2.next_level_boosts - tL_premium_boostsStatus2.boosts)), 3, null, LocaleController.getString(R.string.BoostsToLevel));
+            ha1Var.a(String.valueOf(Math.max(0, tL_premium_boostsStatus2.next_level_boosts - tL_premium_boostsStatus2.boosts)), 3, null, LocaleController.getString(R.string.BoostsToLevel));
             return;
         }
         if (i13 == 5) {
@@ -150,10 +150,10 @@ public final class yb extends cg.c {
         View view;
         ac acVar = this.f;
         org.telegram.ui.ActionBar.g6 g6Var = acVar.e;
-        ha1 ha1Var = acVar.c;
+        na1 na1Var = acVar.c;
         switch (i10) {
             case 0:
-                view = new ba1(acVar.getContext(), 2);
+                view = new ha1(acVar.getContext(), 2);
                 break;
             case 1:
                 View cVar = new yf.c(acVar.getContext(), null);
@@ -220,14 +220,14 @@ public final class yb extends cg.c {
                 view = cVar2;
                 break;
             case 13:
-                ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = new ScrollSlidingTextTabStrip(ha1Var.getParentActivity(), g6Var);
+                ScrollSlidingTextTabStrip scrollSlidingTextTabStrip = new ScrollSlidingTextTabStrip(na1Var.getParentActivity(), g6Var);
                 acVar.f = scrollSlidingTextTabStrip;
                 int i12 = org.telegram.ui.ActionBar.k6.Fh;
                 int i13 = org.telegram.ui.ActionBar.k6.Eh;
                 scrollSlidingTextTabStrip.I = i12;
                 scrollSlidingTextTabStrip.J = i13;
                 scrollSlidingTextTabStrip.e();
-                ag.l lVar = new ag.l(this, ha1Var.getParentActivity());
+                ag.l lVar = new ag.l(this, na1Var.getParentActivity());
                 acVar.f.setDelegate(new h(this, 11));
                 lVar.addView(acVar.f, k7.c6.c(48.0f, -2));
                 view = lVar;

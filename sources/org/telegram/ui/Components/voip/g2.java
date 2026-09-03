@@ -49,15 +49,15 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.a80;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.t9;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.d60;
-import org.telegram.ui.xy0;
+import org.telegram.ui.sz0;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract class g2 {
     public static long a;
@@ -216,37 +216,32 @@ public abstract class g2 {
 
     public static String e(String str, boolean z4) {
         File[] listFiles;
-        File f10 = f();
-        if (!BuildVars.DEBUG_VERSION && (listFiles = f10.listFiles()) != null) {
-            ArrayList arrayList = new ArrayList(Arrays.asList(listFiles));
-            while (arrayList.size() > 20) {
-                int i10 = 0;
-                File file = (File) arrayList.get(0);
-                int size = arrayList.size();
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    File file2 = (File) obj;
-                    if (file2.getName().endsWith(".log") && file2.lastModified() < file.lastModified()) {
-                        file = file2;
-                    }
-                }
-                file.delete();
-                arrayList.remove(file);
-            }
-        }
-        return z4 ? new File(f10, w.c.e(str, "_stats.log")).getAbsolutePath() : new File(f10, w.c.e(str, ".log")).getAbsolutePath();
-    }
-
-    public static File f() {
         File file = new File(ApplicationLoader.applicationContext.getCacheDir(), "voip_logs");
         if (!file.exists()) {
             file.mkdirs();
         }
-        return file;
+        if (!BuildVars.DEBUG_VERSION && (listFiles = file.listFiles()) != null) {
+            ArrayList arrayList = new ArrayList(Arrays.asList(listFiles));
+            while (arrayList.size() > 20) {
+                int i10 = 0;
+                File file2 = (File) arrayList.get(0);
+                int size = arrayList.size();
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    File file3 = (File) obj;
+                    if (file3.getName().endsWith(".log") && file3.lastModified() < file2.lastModified()) {
+                        file2 = file3;
+                    }
+                }
+                file2.delete();
+                arrayList.remove(file2);
+            }
+        }
+        return z4 ? new File(file, w.c.e(str, "_stats.log")).getAbsolutePath() : new File(file, w.c.e(str, ".log")).getAbsolutePath();
     }
 
-    public static void g(TLRPC.User user, TLRPC.Chat chat, String str, boolean z4, boolean z10, boolean z11, Boolean bool, Activity activity, org.telegram.ui.ActionBar.p2 p2Var, AccountInstance accountInstance) {
+    public static void f(TLRPC.User user, TLRPC.Chat chat, String str, boolean z4, boolean z10, boolean z11, Boolean bool, Activity activity, org.telegram.ui.ActionBar.p2 p2Var, AccountInstance accountInstance) {
         char c3;
         long j10;
         String str2;
@@ -340,7 +335,7 @@ public abstract class g2 {
         }
     }
 
-    public static void h(Activity activity, int i10, TLRPC.InputGroupCall inputGroupCall, boolean z4, TLRPC.GroupCall groupCall, HashSet hashSet) {
+    public static void g(Activity activity, int i10, TLRPC.InputGroupCall inputGroupCall, boolean z4, TLRPC.GroupCall groupCall, HashSet hashSet) {
         if (activity == null) {
             return;
         }
@@ -386,7 +381,7 @@ public abstract class g2 {
         }
     }
 
-    public static void i(Activity activity, Runnable runnable, int i10) {
+    public static void h(Activity activity, Runnable runnable, int i10) {
         boolean z4 = i10 == 102;
         if (!activity.shouldShowRequestPermissionRationale("android.permission.RECORD_AUDIO") || (z4 && !activity.shouldShowRequestPermissionRationale("android.permission.CAMERA"))) {
             AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(activity);
@@ -399,7 +394,7 @@ public abstract class g2 {
         }
     }
 
-    public static void j(Activity activity) {
+    public static void i(Activity activity) {
         final SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
         LinearLayout h = l.d.h(activity, 1);
         TextView textView = new TextView(activity);
@@ -531,14 +526,14 @@ public abstract class g2 {
         alertDialog$Builder.o();
     }
 
-    public static void k(Activity activity, TLRPC.TL_messageActionPhoneCall tL_messageActionPhoneCall) {
+    public static void j(Activity activity, TLRPC.TL_messageActionPhoneCall tL_messageActionPhoneCall) {
         Iterator<String> it = MessagesController.getNotificationsSettings(UserConfig.selectedAccount).getStringSet("calls_access_hashes", Collections.EMPTY_SET).iterator();
         while (it.hasNext()) {
             String[] split = it.next().split(" ");
             if (split.length >= 2) {
                 if (split[0].equals(tL_messageActionPhoneCall.call_id + "")) {
                     try {
-                        l(activity, null, tL_messageActionPhoneCall.video, tL_messageActionPhoneCall.call_id, Long.parseLong(split[1]), UserConfig.selectedAccount, true);
+                        k(activity, null, tL_messageActionPhoneCall.video, tL_messageActionPhoneCall.call_id, Long.parseLong(split[1]), UserConfig.selectedAccount, true);
                         return;
                     } catch (Exception unused) {
                         return;
@@ -548,7 +543,7 @@ public abstract class g2 {
         }
     }
 
-    public static void l(final Context context, xy0 xy0Var, boolean z4, final long j10, final long j11, final int i10, final boolean z10) {
+    public static void k(final Context context, sz0 sz0Var, boolean z4, final long j10, final long j11, final int i10, final boolean z10) {
         File file;
         String string;
         String str;
@@ -562,8 +557,12 @@ public abstract class g2 {
                 }
             }
         }
-        file = new File(f(), j10 + ".log");
-        final File file3 = file;
+        File file3 = new File(ApplicationLoader.applicationContext.getCacheDir(), "voip_logs");
+        if (!file3.exists()) {
+            file3.mkdirs();
+        }
+        file = new File(file3, j10 + ".log");
+        final File file4 = file;
         final int[] iArr = {0};
         int i11 = 1;
         LinearLayout f10 = y3.f(context, 1);
@@ -655,20 +654,20 @@ public abstract class g2 {
         f10.addView(editTextBoldCursor, c6.k(8.0f, 8.0f, 8.0f, 0.0f, -1, -2));
         final boolean[] zArr = {true};
         final org.telegram.ui.Cells.z1 z1Var2 = new org.telegram.ui.Cells.z1(context, 1);
-        sx0 sx0Var = new sx0(10, zArr, z1Var2);
+        rx0 rx0Var = new rx0(10, zArr, z1Var2);
         z1Var2.e(LocaleController.getString(R.string.CallReportIncludeLogs), null, true, false, false);
         z1Var2.setClipToPadding(false);
-        z1Var2.setOnClickListener(sx0Var);
+        z1Var2.setOnClickListener(rx0Var);
         f10.addView(z1Var2, c6.k(-8.0f, 0.0f, -8.0f, 0.0f, -1, -2));
         final TextView textView2 = new TextView(context);
         textView2.setTextSize(2, 14.0f);
         textView2.setTextColor(k6.w0(null, k6.r5, false));
         textView2.setPadding(org.telegram.ui.b.e(8.0f, R.string.CallReportLogsExplain, textView2), 0, AndroidUtilities.dp(8.0f), 0);
-        textView2.setOnClickListener(sx0Var);
+        textView2.setOnClickListener(rx0Var);
         f10.addView(textView2);
         z1Var2.setVisibility(8);
         textView2.setVisibility(8);
-        if (!file3.exists()) {
+        if (!file4.exists()) {
             zArr[0] = false;
         }
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context);
@@ -676,10 +675,10 @@ public abstract class g2 {
         alertDialog$Builder.n(f10);
         alertDialog$Builder.k(LocaleController.getString(R.string.Send), new f5.u(9));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-        alertDialog$Builder.a.setOnDismissListener(new d2(1, xy0Var));
+        alertDialog$Builder.a.setOnDismissListener(new d2(1, sz0Var));
         final org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-        if (BuildVars.LOGS_ENABLED && file3.exists()) {
-            org.telegram.ui.Components.o1 o1Var = new org.telegram.ui.Components.o1(28, context, file3);
+        if (BuildVars.LOGS_ENABLED && file4.exists()) {
+            org.telegram.ui.Components.o1 o1Var = new org.telegram.ui.Components.o1(28, context, file4);
             d2Var.o0 = "Send log";
             d2Var.p0 = o1Var;
         }
@@ -695,7 +694,7 @@ public abstract class g2 {
                 int rating = t9Var2.getRating();
                 LinearLayout linearLayout2 = linearLayout;
                 EditTextBoldCursor editTextBoldCursor2 = editTextBoldCursor;
-                File file4 = file3;
+                File file5 = file4;
                 org.telegram.ui.ActionBar.d2 d2Var2 = d2Var;
                 if (rating < 4) {
                     int[] iArr2 = iArr;
@@ -705,7 +704,7 @@ public abstract class g2 {
                         textView.setVisibility(8);
                         d2Var2.setTitle(LocaleController.getString(R.string.CallReportHint));
                         editTextBoldCursor2.setVisibility(0);
-                        if (file4.exists()) {
+                        if (file5.exists()) {
                             z1Var2.setVisibility(0);
                             textView2.setVisibility(0);
                         }
@@ -739,18 +738,18 @@ public abstract class g2 {
                 tL_inputPhoneCall.access_hash = j11;
                 tL_inputPhoneCall.id = j10;
                 setcallrating.user_initiative = z10;
-                ConnectionsManager.getInstance(i10).sendRequest(setcallrating, new li(i13, zArr2, file4, setcallrating, arrayList, context));
+                ConnectionsManager.getInstance(i10).sendRequest(setcallrating, new li(i13, zArr2, file5, setcallrating, arrayList, context));
                 d2Var2.dismiss();
             }
         });
     }
 
-    public static void m(TLRPC.Chat chat, String str, boolean z4, Boolean bool, Activity activity, org.telegram.ui.ActionBar.p2 p2Var, AccountInstance accountInstance) {
+    public static void l(TLRPC.Chat chat, String str, boolean z4, Boolean bool, Activity activity, org.telegram.ui.ActionBar.p2 p2Var, AccountInstance accountInstance) {
         if (activity == null) {
             return;
         }
         if (ConnectionsManager.getInstance(UserConfig.selectedAccount).getConnectionState() == 3) {
-            g(null, chat, str, false, false, z4, bool, activity, p2Var, accountInstance);
+            f(null, chat, str, false, false, z4, bool, activity, p2Var, accountInstance);
             return;
         }
         boolean z10 = Settings.System.getInt(activity.getContentResolver(), "airplane_mode_on", 0) != 0;
@@ -771,7 +770,7 @@ public abstract class g2 {
         }
     }
 
-    public static void n(TLRPC.User user, boolean z4, boolean z10, Activity activity, TLRPC.UserFull userFull, AccountInstance accountInstance) {
+    public static void m(TLRPC.User user, boolean z4, boolean z10, Activity activity, TLRPC.UserFull userFull, AccountInstance accountInstance) {
         if (accountInstance != null ? accountInstance.getMessagesController().isFrozen() : MessagesController.getInstance(UserConfig.selectedAccount).isFrozen()) {
             org.telegram.ui.c.b(accountInstance == null ? UserConfig.selectedAccount : accountInstance.getCurrentAccount());
             return;
@@ -801,7 +800,7 @@ public abstract class g2 {
             }
         }
         if (Build.VERSION.SDK_INT < 23) {
-            g(user, null, null, z4, z10, false, null, activity, null, accountInstance);
+            f(user, null, null, z4, z10, false, null, activity, null, accountInstance);
             return;
         }
         ArrayList arrayList = new ArrayList();
@@ -812,7 +811,7 @@ public abstract class g2 {
             arrayList.add("android.permission.CAMERA");
         }
         if (arrayList.isEmpty()) {
-            g(user, null, null, z4, z10, false, null, activity, null, accountInstance);
+            f(user, null, null, z4, z10, false, null, activity, null, accountInstance);
         } else {
             activity.requestPermissions((String[]) arrayList.toArray(new String[0]), z4 ? 102 : 101);
         }

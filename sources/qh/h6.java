@@ -1,27 +1,38 @@
 package qh;
 
-import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class h6 implements View.OnFocusChangeListener {
-    public final /* synthetic */ k6 a;
+public final class h6 extends f2.a1 {
+    public final /* synthetic */ i6 a;
 
-    public h6(k6 k6Var) {
-        this.a = k6Var;
+    public h6(i6 i6Var) {
+        this.a = i6Var;
     }
 
-    @Override // android.view.View.OnFocusChangeListener
-    public final void onFocusChange(View view, boolean z4) {
-        if (z4) {
-            k6 k6Var = this.a;
-            k6Var.f0 = true;
-            f2.j0 j0Var = (f2.j0) k6Var.d.getLayoutManager();
-            xh.o oVar = new xh.o(k6Var.getContext(), 2);
-            oVar.a = 1;
-            oVar.p = (org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(1.0f);
-            j0Var.w0(oVar);
+    @Override // f2.a1
+    public final void a(RecyclerView recyclerView, int i10) {
+        if (i10 == 0) {
+            i6 i6Var = this.a;
+            if (i6Var.f0) {
+                i6Var.f0 = false;
+            }
         }
+    }
+
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ViewGroup viewGroup;
+        i6 i6Var = this.a;
+        i6Var.d0();
+        i6Var.X();
+        if (!i6Var.d.H1 || i6Var.f0) {
+            return;
+        }
+        viewGroup = ((org.telegram.ui.ActionBar.h3) i6Var).containerView;
+        AndroidUtilities.hideKeyboard(viewGroup);
     }
 }

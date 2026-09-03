@@ -10,10 +10,10 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.qc;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -41,47 +41,47 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                 ArrayList arrayList2 = (ArrayList) obj;
                 n nVar2 = this.b;
                 m mVar = nVar2.r;
-                j51 j51Var = new j51(-4);
-                j51Var.d = 140;
-                j51Var.c = mVar;
-                j51Var.z = -1;
-                arrayList2.add(j51Var);
+                h51 h51Var = new h51(-4);
+                h51Var.d = 140;
+                h51Var.c = mVar;
+                h51Var.z = -1;
+                arrayList2.add(h51Var);
                 int i10 = 0;
                 if (ChatObject.canUserDoAdminAction(nVar2.E, 1)) {
-                    j51 c3 = j51.c(141, R.drawable.outline_profile_photo, LocaleController.getString(ChatObject.hasPhoto(nVar2.E) ? R.string.CommunitySettingsChangePhoto : R.string.CommunitySettingsSetPhoto));
+                    h51 c3 = h51.c(141, R.drawable.outline_profile_photo, LocaleController.getString(ChatObject.hasPhoto(nVar2.E) ? R.string.CommunitySettingsChangePhoto : R.string.CommunitySettingsSetPhoto));
                     c3.q = true;
                     arrayList2.add(c3);
-                    arrayList2.add(j51.D(2, AndroidUtilities.dp(14.0f)));
-                    arrayList2.add(j51.s(0, LocaleController.getString(R.string.CommunitySectionCommunityName)));
-                    arrayList2.add(j51.j(7, nVar2.n));
-                    arrayList2.add(j51.D(1, AndroidUtilities.dp(14.0f)));
+                    arrayList2.add(h51.D(2, AndroidUtilities.dp(14.0f)));
+                    arrayList2.add(h51.s(0, LocaleController.getString(R.string.CommunitySectionCommunityName)));
+                    arrayList2.add(h51.j(7, nVar2.n));
+                    arrayList2.add(h51.D(1, AndroidUtilities.dp(14.0f)));
                 }
                 if (ChatObject.canBlockUsers(nVar2.E)) {
-                    arrayList2.add(j51.s(3, LocaleController.getString(R.string.CommunitySectionWhoCanAddChats)));
-                    j51 x10 = j51.x(ImageReceiver.DEFAULT_CROSSFADE_DURATION, LocaleController.getString(R.string.CommunityWhoCanAddChatsAllMembers), LocaleController.getString(R.string.CommunityWhoCanAddChatsAllMembersInfo));
+                    arrayList2.add(h51.s(3, LocaleController.getString(R.string.CommunitySectionWhoCanAddChats)));
+                    h51 x10 = h51.x(ImageReceiver.DEFAULT_CROSSFADE_DURATION, LocaleController.getString(R.string.CommunityWhoCanAddChatsAllMembers), LocaleController.getString(R.string.CommunityWhoCanAddChatsAllMembersInfo));
                     x10.K(nVar2.h);
                     arrayList2.add(x10);
-                    j51 x11 = j51.x(151, LocaleController.getString(R.string.CommunityWhoCanAddChatsOnlyAdmins), LocaleController.getString(R.string.CommunityWhoCanAddChatsOnlyAdminsInfo));
+                    h51 x11 = h51.x(151, LocaleController.getString(R.string.CommunityWhoCanAddChatsOnlyAdmins), LocaleController.getString(R.string.CommunityWhoCanAddChatsOnlyAdminsInfo));
                     x11.K(!nVar2.h);
                     arrayList2.add(x11);
-                    arrayList2.add(j51.D(4, AndroidUtilities.dp(14.0f)));
+                    arrayList2.add(h51.D(4, AndroidUtilities.dp(14.0f)));
                 }
                 if (ChatObject.hasAdminRights(nVar2.E)) {
                     int i11 = R.drawable.msg_admins;
                     String string = LocaleController.getString(R.string.CommunityAdministrators);
                     TLRPC.ChatFull chatFull = nVar2.F;
-                    arrayList2.add(j51.d(142, i11, string, chatFull != null ? Integer.toString(chatFull.admins_count) : ""));
+                    arrayList2.add(h51.d(142, i11, string, chatFull != null ? Integer.toString(chatFull.admins_count) : ""));
                     int i12 = R.drawable.community_requests_outline_24;
                     String string2 = LocaleController.getString(R.string.CommunityPendingRequests);
                     TLRPC.ChatFull chatFull2 = nVar2.F;
-                    arrayList2.add(j51.d(143, i12, string2, chatFull2 != null ? Integer.toString(chatFull2.requests_pending) : ""));
+                    arrayList2.add(h51.d(143, i12, string2, chatFull2 != null ? Integer.toString(chatFull2.requests_pending) : ""));
                     int i13 = R.drawable.msg_user_remove;
                     String string3 = LocaleController.getString(R.string.CommunityRemovedUsers);
                     TLRPC.ChatFull chatFull3 = nVar2.F;
-                    arrayList2.add(j51.d(144, i13, string3, chatFull3 != null ? Integer.toString(chatFull3.kicked_count) : ""));
+                    arrayList2.add(h51.d(144, i13, string3, chatFull3 != null ? Integer.toString(chatFull3.kicked_count) : ""));
                 }
-                arrayList2.add(j51.D(5, AndroidUtilities.dp(14.0f)));
-                j51 c10 = j51.c(146, R.drawable.msg_groups_create, LocaleController.getString(R.string.CommunityMenuAddChat));
+                arrayList2.add(h51.D(5, AndroidUtilities.dp(14.0f)));
+                h51 c10 = h51.c(146, R.drawable.msg_groups_create, LocaleController.getString(R.string.CommunityMenuAddChat));
                 c10.q = true;
                 arrayList2.add(c10);
                 TLRPC.ChatFull chatFull4 = nVar2.F;
@@ -90,7 +90,7 @@ public final /* synthetic */ class j implements Utilities.Callback2 {
                     while (i10 < size) {
                         TL_communities.CommunityPeer communityPeer = arrayList.get(i10);
                         i10++;
-                        arrayList2.add(j51.v(nVar2.getMessagesController().getUserOrChat(DialogObject.getPeerDialogId(communityPeer.peer))));
+                        arrayList2.add(h51.v(nVar2.getMessagesController().getUserOrChat(DialogObject.getPeerDialogId(communityPeer.peer))));
                     }
                     break;
                 }

@@ -37,8 +37,8 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.bt;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.p80;
 import org.telegram.ui.Components.pq;
@@ -47,7 +47,7 @@ import org.telegram.ui.Components.u00;
 import org.telegram.ui.t10;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class i7 extends FrameLayout implements DownloadController.FileDownloadProgressListener {
     public MessageObject B;
@@ -56,7 +56,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
     public final int E;
     public final SpannableStringBuilder F;
     public CharSequence G;
-    public final ij0 H;
+    public final hj0 H;
     public final org.telegram.ui.ActionBar.g6 I;
     public u00 J;
     public long K;
@@ -69,7 +69,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
     public final TextView c;
     public final TextView d;
     public final org.telegram.ui.Components.t5 e;
-    public final lj0 f;
+    public final kj0 f;
     public final p80 h;
     public final np n;
     public final TextView r;
@@ -172,20 +172,20 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
             boolean z18 = LocaleController.isRTL;
             addView(textView2, k7.c6.d(-1, -2.0f, (z18 ? 5 : 3) | 48, z18 ? 8.0f : 72.0f, 5.0f, z18 ? 72.0f : 8.0f, 0.0f));
         }
-        ij0 ij0Var = new ij0(R.raw.download_arrow, "download_arrow", AndroidUtilities.dp(f10), AndroidUtilities.dp(f10), true, null);
-        this.H = ij0Var;
-        lj0 lj0Var = new lj0(context);
-        this.f = lj0Var;
-        lj0Var.setAnimation(ij0Var);
-        lj0Var.setVisibility(4);
+        hj0 hj0Var = new hj0(R.raw.download_arrow, AndroidUtilities.dp(f10), AndroidUtilities.dp(f10), true, null);
+        this.H = hj0Var;
+        kj0 kj0Var = new kj0(context);
+        this.f = kj0Var;
+        kj0Var.setAnimation(hj0Var);
+        kj0Var.setVisibility(4);
         int i13 = org.telegram.ui.ActionBar.k6.Ih;
-        lj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(i13, g6Var), PorterDuff.Mode.SRC_IN));
+        kj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(i13, g6Var), PorterDuff.Mode.SRC_IN));
         if (i10 == 1) {
             boolean z19 = LocaleController.isRTL;
-            addView(lj0Var, k7.c6.d(14, 14.0f, (z19 ? 5 : 3) | 48, z19 ? 8.0f : 70.0f, 37.0f, z19 ? 72.0f : 8.0f, 0.0f));
+            addView(kj0Var, k7.c6.d(14, 14.0f, (z19 ? 5 : 3) | 48, z19 ? 8.0f : 70.0f, 37.0f, z19 ? 72.0f : 8.0f, 0.0f));
         } else {
             boolean z20 = LocaleController.isRTL;
-            addView(lj0Var, k7.c6.d(14, 14.0f, (z20 ? 5 : 3) | 48, z20 ? 8.0f : 70.0f, 33.0f, z20 ? 72.0f : 8.0f, 0.0f));
+            addView(kj0Var, k7.c6.d(14, 14.0f, (z20 ? 5 : 3) | 48, z20 ? 8.0f : 70.0f, 33.0f, z20 ? 72.0f : 8.0f, 0.0f));
         }
         org.telegram.ui.Components.t5 t5Var = new org.telegram.ui.Components.t5(context);
         this.e = t5Var;
@@ -501,7 +501,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
         }
         MessageObject messageObject = this.B;
         int i10 = this.x;
-        lj0 lj0Var = this.f;
+        kj0 kj0Var = this.f;
         p80 p80Var = this.h;
         org.telegram.ui.Components.t5 t5Var = this.e;
         if (messageObject == null || messageObject.messageOwner.media == null) {
@@ -509,7 +509,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
             this.D = true;
             p80Var.setVisibility(4);
             p80Var.a(0.0f, false);
-            lj0Var.setVisibility(4);
+            kj0Var.setVisibility(4);
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) t5Var.getLayoutParams();
             if (layoutParams != null) {
                 layoutParams.leftMargin = AndroidUtilities.dp(LocaleController.isRTL ? 8.0f : 72.0f);
@@ -521,7 +521,7 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
         }
         this.D = false;
         if (messageObject.attachPathExists || messageObject.mediaExists || !this.v) {
-            lj0Var.setVisibility(4);
+            kj0Var.setVisibility(4);
             p80Var.setVisibility(4);
             FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) t5Var.getLayoutParams();
             if (layoutParams2 != null) {
@@ -537,16 +537,16 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
         String attachFileName = FileLoader.getAttachFileName(messageObject.getDocument());
         DownloadController.getInstance(i10).addLoadingFileObserver(attachFileName, this.B, this);
         this.C = FileLoader.getInstance(i10).isLoadingFile(attachFileName);
-        lj0Var.setVisibility(0);
+        kj0Var.setVisibility(0);
         int i11 = this.C ? 15 : 0;
-        ij0 ij0Var = this.H;
-        ij0Var.N(i11);
-        ij0Var.h = true;
+        hj0 hj0Var = this.H;
+        hj0Var.N(i11);
+        hj0Var.h = true;
         if (z4) {
-            lj0Var.d();
+            kj0Var.d();
         } else {
-            ij0Var.K(this.C ? 15 : 0);
-            lj0Var.invalidate();
+            hj0Var.K(this.C ? 15 : 0);
+            kj0Var.invalidate();
         }
         FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) t5Var.getLayoutParams();
         if (layoutParams3 != null) {
@@ -625,8 +625,8 @@ public final class i7 extends FrameLayout implements DownloadController.FileDown
                 }
                 org.telegram.ui.Components.t5 t5Var = this.e;
                 t5Var.layout(t5Var.getLeft(), t5Var.getTop() + measuredHeight, t5Var.getRight(), t5Var.getBottom() + measuredHeight);
-                lj0 lj0Var = this.f;
-                lj0Var.layout(lj0Var.getLeft(), lj0Var.getTop() + measuredHeight, lj0Var.getRight(), lj0Var.getBottom() + measuredHeight);
+                kj0 kj0Var = this.f;
+                kj0Var.layout(kj0Var.getLeft(), kj0Var.getTop() + measuredHeight, kj0Var.getRight(), kj0Var.getBottom() + measuredHeight);
                 p80 p80Var = this.h;
                 p80Var.layout(p80Var.getLeft(), (getMeasuredHeight() - p80Var.getMeasuredHeight()) - (this.w ? 1 : 0), p80Var.getRight(), getMeasuredHeight() - (this.w ? 1 : 0));
             }

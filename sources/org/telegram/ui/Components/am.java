@@ -6,27 +6,27 @@ import java.util.HashMap;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class am extends org.telegram.ui.au0 {
+public abstract class am extends org.telegram.ui.fu0 {
     public final /* synthetic */ ChatAttachAlertPhotoLayout a;
 
     public am(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout) {
         this.a = chatAttachAlertPhotoLayout;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final int H() {
         return ChatAttachAlertPhotoLayout.p1.size();
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean N() {
         mi miVar = this.a.b;
         return miVar != null && miVar.f0;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final int R(int i10) {
         boolean z4 = ChatAttachAlertPhotoLayout.n1;
         MediaController.PhotoEntry b02 = this.a.b0(i10);
@@ -36,12 +36,12 @@ public abstract class am extends org.telegram.ui.au0 {
         return ChatAttachAlertPhotoLayout.q1.indexOf(Integer.valueOf(b02.imageId));
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final ArrayList c() {
         return ChatAttachAlertPhotoLayout.q1;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final int k(int i10, VideoEditedInfo videoEditedInfo) {
         boolean z4;
         ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.a;
@@ -100,18 +100,18 @@ public abstract class am extends org.telegram.ui.au0 {
         return -1;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void m() {
         boolean z4 = ChatAttachAlertPhotoLayout.n1;
         this.a.v0();
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final HashMap v() {
         return ChatAttachAlertPhotoLayout.p1;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean x(int i10) {
         boolean z4 = ChatAttachAlertPhotoLayout.n1;
         MediaController.PhotoEntry b02 = this.a.b0(i10);

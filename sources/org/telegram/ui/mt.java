@@ -19,7 +19,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class mt implements Runnable {
     public final /* synthetic */ qt a;
@@ -156,7 +156,7 @@ public final class mt implements Runnable {
         ag.l lVar26;
         ag.l lVar27;
         int i27;
-        kb1 kb1Var;
+        qb1 qb1Var;
         View view;
         View view2;
         View view3;
@@ -175,7 +175,7 @@ public final class mt implements Runnable {
         ot otVar26 = qtVar.l;
         final int i28 = 0;
         if (otVar26 != null && (I = otVar26.I(qtVar.z)) != null) {
-            I.Q(aVar, sg.b.j(qtVar.c0), true);
+            I.Q(aVar, sg.b.k(qtVar.c0), true);
             I.t = false;
             I.Y();
             I.p = new zi(this, 16);
@@ -264,7 +264,7 @@ public final class mt implements Runnable {
             ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout3 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert4, i10, qtVar.z.getContext(), qtVar.c0);
             org.telegram.ui.ActionBar.g6 g6Var4 = null;
             qg.b c3 = aVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout3, null, true);
-            c3.n(sg.b.j(qtVar.c0));
+            c3.n(sg.b.k(qtVar.c0));
             c3.p(AndroidUtilities.dp(12.0f));
             c3.o(AndroidUtilities.dp(8.0f));
             c3.h.e = true;
@@ -305,23 +305,23 @@ public final class mt implements Runnable {
                 linearLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G8, qtVar.c0));
                 linearLayout.setOrientation(1);
                 if (qtVar.w == null) {
-                    kb1Var = null;
+                    qb1Var = null;
                 } else {
                     ArrayList arrayList4 = new ArrayList();
                     arrayList4.add(new TLRPC.TL_stickerSetNoCovered());
                     TLRPC.TL_messages_getMyStickers tL_messages_getMyStickers = new TLRPC.TL_messages_getMyStickers();
                     tL_messages_getMyStickers.limit = 100;
                     ConnectionsManager.getInstance(qtVar.r).sendRequest(tL_messages_getMyStickers, new ba(qtVar, arrayList4, tL_messages_getMyStickers, i29));
-                    kb1Var = new kb1(qtVar.w, i30, g6Var4);
-                    kb1Var.setLayoutManager(new f2.j0());
-                    kb1Var.i(new hg.e2(arrayList4, 4));
-                    kb1Var.setAdapter(new nt(qtVar, arrayList4));
+                    qb1Var = new qb1(qtVar.w, i30, g6Var4);
+                    qb1Var.setLayoutManager(new f2.j0());
+                    qb1Var.i(new hg.e2(arrayList4, 4));
+                    qb1Var.setAdapter(new nt(qtVar, arrayList4));
                 }
-                kb1Var.setOnItemClickListener(new j(this, 5));
+                qb1Var.setOnItemClickListener(new j(this, 5));
                 frameLayout.addView(g1Var);
                 linearLayout.addView(frameLayout);
                 linearLayout.addView(new org.telegram.ui.ActionBar.m1(qtVar.z.getContext(), qtVar.c0), k7.c6.n(-1, 8));
-                oh.b0 b0Var = new oh.b0(this, arrayList2, kb1Var, linearLayout, actionBarPopupWindow$ActionBarPopupWindowLayout3, 12);
+                oh.b0 b0Var = new oh.b0(this, arrayList2, qb1Var, linearLayout, actionBarPopupWindow$ActionBarPopupWindowLayout3, 12);
                 for (int i31 = 0; i31 < arrayList.size(); i31++) {
                     org.telegram.ui.ActionBar.g1 c10 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout3, ((Integer) arrayList3.get(i31)).intValue(), (CharSequence) arrayList.get(i31), false, qtVar.c0);
                     c10.setTag(Integer.valueOf(i31));
@@ -329,7 +329,7 @@ public final class mt implements Runnable {
                 }
                 actionBarPopupWindow$ActionBarPopupWindowLayout = actionBarPopupWindow$ActionBarPopupWindowLayout3;
                 actionBarPopupWindow$ActionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(1000.0f), TLObject.FLAG_31));
-                linearLayout.addView(kb1Var, new LinearLayout.LayoutParams(actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth() - AndroidUtilities.dp(16.0f), (int) (actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredHeight() * 1.5f)));
+                linearLayout.addView(qb1Var, new LinearLayout.LayoutParams(actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredWidth() - AndroidUtilities.dp(16.0f), (int) (actionBarPopupWindow$ActionBarPopupWindowLayout.getMeasuredHeight() * 1.5f)));
                 actionBarPopupWindow$ActionBarPopupWindowLayout.b(linearLayout);
                 frameLayout.setOnClickListener(new nf(actionBarPopupWindow$ActionBarPopupWindowLayout, 2));
                 i0.b bVar11 = qtVar.q;
@@ -629,14 +629,14 @@ public final class mt implements Runnable {
                         for (int i43 = 0; i43 < arrayList10.size(); i43++) {
                             iArr2[i43] = ((Integer) arrayList10.get(i43)).intValue();
                         }
-                        org.telegram.ui.Components.sx0 sx0Var = new org.telegram.ui.Components.sx0(13, this, arrayList9);
+                        org.telegram.ui.Components.rx0 rx0Var = new org.telegram.ui.Components.rx0(13, this, arrayList9);
                         for (int i44 = 0; i44 < arrayList8.size(); i44++) {
                             int intValue2 = ((Integer) arrayList10.get(i44)).intValue();
                             CharSequence charSequence2 = (CharSequence) arrayList8.get(i44);
                             g6Var = qtVar.c0;
                             org.telegram.ui.ActionBar.g1 c12 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout2, intValue2, charSequence2, false, g6Var);
                             c12.setTag(Integer.valueOf(i44));
-                            c12.setOnClickListener(sx0Var);
+                            c12.setOnClickListener(rx0Var);
                             if (z4 && i44 == arrayList8.size() - 1) {
                                 c12.c(qt.d(qtVar, org.telegram.ui.ActionBar.k6.q7), qt.d(qtVar, org.telegram.ui.ActionBar.k6.p7));
                             }
@@ -741,9 +741,9 @@ public final class mt implements Runnable {
                     i26 = qtVar.r;
                     if (!AccountInstance.getInstance(i26).getUserConfig().isPremium()) {
                         if (qtVar.O == null) {
-                            rg1 rg1Var = new rg1(qtVar.z.getContext(), qtVar.c0);
-                            qtVar.O = rg1Var;
-                            qtVar.z.addView(rg1Var, k7.c6.c(-1.0f, -1));
+                            wg1 wg1Var = new wg1(qtVar.z.getContext(), qtVar.c0);
+                            qtVar.O = wg1Var;
+                            qtVar.z.addView(wg1Var, k7.c6.c(-1.0f, -1));
                             qtVar.O.setOnClickListener(new et(qtVar, i34));
                             qtVar.O.a.r.setOnClickListener(new et(qtVar, i33));
                         }
@@ -941,7 +941,7 @@ public final class mt implements Runnable {
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout32 = new ActionBarPopupWindow$ActionBarPopupWindowLayout(R.drawable.popup_fixed_alert4, i10, qtVar.z.getContext(), qtVar.c0);
         org.telegram.ui.ActionBar.g6 g6Var42 = null;
         qg.b c32 = aVar.c(actionBarPopupWindow$ActionBarPopupWindowLayout32, null, true);
-        c32.n(sg.b.j(qtVar.c0));
+        c32.n(sg.b.k(qtVar.c0));
         c32.p(AndroidUtilities.dp(12.0f));
         c32.o(AndroidUtilities.dp(8.0f));
         c32.h.e = true;

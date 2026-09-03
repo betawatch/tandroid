@@ -1,37 +1,73 @@
 package qh;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Matrix;
+import android.view.View;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class h4 extends eg.c2 {
-    public final Path d3;
-    public final /* synthetic */ f9 e3;
+public final class h4 implements dg.y {
+    public boolean a;
+    public final /* synthetic */ dg.e1 b;
+    public final /* synthetic */ e9 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h4(f9 f9Var, Context context) {
-        super(context);
-        this.e3 = f9Var;
-        this.d3 = new Path();
+    public h4(e9 e9Var, dg.e1 e1Var) {
+        this.c = e9Var;
+        this.b = e1Var;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void draw(Canvas canvas) {
-        ViewGroup barView;
-        barView = this.e3.getBarView();
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(AndroidUtilities.lerp(barView.getLeft() - getLeft(), 0, r0.A1), AndroidUtilities.lerp(barView.getTop() - getTop(), 0, r0.A1), AndroidUtilities.lerp(barView.getRight() - getLeft(), getWidth(), r0.A1), AndroidUtilities.lerp(barView.getBottom() - getTop(), getHeight(), r0.A1));
-        Path path = this.d3;
-        path.rewind();
-        path.addRoundRect(rectF, AndroidUtilities.dp(32.0f), AndroidUtilities.dp(32.0f), Path.Direction.CW);
+    @Override // dg.y
+    public final void a() {
+        this.a = true;
+    }
+
+    @Override // dg.y
+    public final void b(Canvas canvas) {
+        r4 r4Var = this.c.L0;
+        Matrix matrix = r4Var.getMatrix();
         canvas.save();
-        canvas.clipPath(path);
-        super.draw(canvas);
-        canvas.restore();
+        canvas.translate(r4Var.getX(), r4Var.getY());
+        canvas.concat(matrix);
+        r4Var.getWidth();
+        throw null;
+    }
+
+    @Override // dg.y
+    public final boolean c() {
+        return this.a;
+    }
+
+    @Override // dg.y
+    public final void d() {
+        this.a = false;
+    }
+
+    @Override // dg.y
+    public final View e() {
+        return this.c;
+    }
+
+    @Override // dg.y
+    public final FrameLayout f() {
+        return this.c.S0;
+    }
+
+    @Override // dg.y
+    public final boolean g() {
+        return false;
+    }
+
+    @Override // dg.y
+    public final void h(int i10) {
+        e9 e9Var = this.c;
+        e9Var.I0(false);
+        dg.e1 e1Var = this.b;
+        e1Var.h(i10, true);
+        e1Var.g();
+        e9Var.setNewColor(i10);
+        g4 g4Var = e9Var.t1;
+        g4Var.setSelectedColorIndex(e1Var.d());
+        g4Var.getAdapter().l();
     }
 }

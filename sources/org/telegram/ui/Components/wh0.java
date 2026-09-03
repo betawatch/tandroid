@@ -13,7 +13,7 @@ import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class wh0 extends vp {
     public final ArrayList c = new ArrayList();
@@ -23,10 +23,10 @@ public final class wh0 extends vp {
     public p9 g;
     public final /* synthetic */ xh0 h;
 
-    public wh0(xh0 xh0Var, Context context, org.telegram.ui.vz0 vz0Var) {
+    public wh0(xh0 xh0Var, Context context, org.telegram.ui.a01 a01Var) {
         this.h = xh0Var;
         this.e = context;
-        this.g = vz0Var;
+        this.g = a01Var;
         Paint paint = new Paint(1);
         this.f = paint;
         paint.setColor(-16777216);
@@ -138,7 +138,7 @@ public final class wh0 extends vp {
                 th0Var.c.I = imageLocation != null;
                 z4 = arrayList5.get(i12) == null;
                 ImageLocation imageLocation2 = (ImageLocation) arrayList4.get(i12);
-                th0Var.c.o((u61) arrayList5.get(i12), imageLocation, null, (ImageLocation) arrayList3.get(i12), (ImageLocation) arrayList4.get(i12), (imageLocation2 == null || !(imageLocation2.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i12)).intValue(), "avatar_" + xh0Var.B0);
+                th0Var.c.o((t61) arrayList5.get(i12), imageLocation, null, (ImageLocation) arrayList3.get(i12), (ImageLocation) arrayList4.get(i12), (imageLocation2 == null || !(imageLocation2.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i12)).intValue(), "avatar_" + xh0Var.B0);
                 if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z4 : true) {
                 }
                 th0Var.c.getImageReceiver().setDelegate(new vh0(this));
@@ -228,9 +228,9 @@ public final class wh0 extends vp {
                         rh0Var4.a.setImage(imageLocation5, str, imageLocation6, null, null, null, new BitmapDrawable((Resources) null, bitmap), intValue, null, sb2, 1);
                         rh0Var4.d();
                     } else if (xh0Var.H0 == null) {
-                        th0Var.c.o((u61) arrayList5.get(i12), (ImageLocation) arrayList6.get(i12), str, (ImageLocation) arrayList3.get(i12), xh0Var.H0, null, ((Integer) arrayList2.get(i12)).intValue(), sb2);
+                        th0Var.c.o((t61) arrayList5.get(i12), (ImageLocation) arrayList6.get(i12), str, (ImageLocation) arrayList3.get(i12), xh0Var.H0, null, ((Integer) arrayList2.get(i12)).intValue(), sb2);
                     } else {
-                        th0Var.c.o((u61) arrayList5.get(i12), imageLocation3, null, (ImageLocation) arrayList3.get(i12), (ImageLocation) arrayList4.get(i12), (imageLocation4 == null || !(imageLocation4.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i12)).intValue(), sb2);
+                        th0Var.c.o((t61) arrayList5.get(i12), imageLocation3, null, (ImageLocation) arrayList3.get(i12), (ImageLocation) arrayList4.get(i12), (imageLocation4 == null || !(imageLocation4.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i12)).intValue(), sb2);
                     }
                     z4 = z10;
                     if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z4 : true) {

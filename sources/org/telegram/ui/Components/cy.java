@@ -22,11 +22,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class cy extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public final /* synthetic */ mz B;
-    public final lj0 a;
+    public final kj0 a;
     public final org.telegram.ui.ActionBar.l5 b;
     public final TextView c;
     public final FrameLayout d;
@@ -45,12 +45,12 @@ public final class cy extends FrameLayout implements NotificationCenter.Notifica
     public cy(mz mzVar, Context context) {
         super(context);
         this.B = mzVar;
-        lj0 lj0Var = new lj0(context);
-        this.a = lj0Var;
-        lj0Var.f(R.raw.unlock_icon, 24, 24, null);
+        kj0 kj0Var = new kj0(context);
+        this.a = kj0Var;
+        kj0Var.f(R.raw.unlock_icon, 24, 24, null);
         int i10 = org.telegram.ui.ActionBar.k6.Te;
-        lj0Var.setColorFilter(mzVar.A(i10));
-        addView(lj0Var, k7.c6.i(20.0f, 20.0f, 8388611, 10.0f, 15.0f, 0.0f, 0.0f));
+        kj0Var.setColorFilter(mzVar.A(i10));
+        addView(kj0Var, k7.c6.i(20.0f, 20.0f, 8388611, 10.0f, 15.0f, 0.0f, 0.0f));
         org.telegram.ui.ActionBar.l5 l5Var = new org.telegram.ui.ActionBar.l5(context);
         this.b = l5Var;
         l5Var.setTextSize(15);
@@ -146,10 +146,10 @@ public final class cy extends FrameLayout implements NotificationCenter.Notifica
         TextView textView2 = this.f;
         textView2.setEnabled(z13);
         org.telegram.ui.ActionBar.l5 l5Var = this.b;
-        lj0 lj0Var = this.a;
+        kj0 kj0Var = this.a;
         if (!z4) {
-            lj0Var.setAlpha(i10 == 1 ? 1.0f : 0.0f);
-            lj0Var.setTranslationX(i10 == 1 ? 0.0f : -AndroidUtilities.dp(16.0f));
+            kj0Var.setAlpha(i10 == 1 ? 1.0f : 0.0f);
+            kj0Var.setTranslationX(i10 == 1 ? 0.0f : -AndroidUtilities.dp(16.0f));
             l5Var.setTranslationX(i10 == 1 ? AndroidUtilities.dp(16.0f) : 0.0f);
             b1Var.setAlpha(i10 == 1 ? 1.0f : 0.0f);
             b1Var.setScaleX(i10 == 1 ? 1.0f : 0.6f);
@@ -177,11 +177,11 @@ public final class cy extends FrameLayout implements NotificationCenter.Notifica
         float[] fArr = new float[1];
         fArr[c3] = f10;
         Property property = FrameLayout.TRANSLATION_X;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(lj0Var, (Property<lj0, Float>) property, fArr);
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(kj0Var, (Property<kj0, Float>) property, fArr);
         float[] fArr2 = new float[1];
         fArr2[c3] = i10 == 1 ? 1.0f : 0.0f;
         Property property2 = FrameLayout.ALPHA;
-        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(lj0Var, (Property<lj0, Float>) property2, fArr2);
+        ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(kj0Var, (Property<kj0, Float>) property2, fArr2);
         float[] fArr3 = new float[1];
         fArr3[c3] = i10 == 1 ? AndroidUtilities.dp(16.0f) : 0.0f;
         ObjectAnimator ofFloat3 = ObjectAnimator.ofFloat(l5Var, (Property<org.telegram.ui.ActionBar.l5, Float>) property, fArr3);
@@ -241,7 +241,6 @@ public final class cy extends FrameLayout implements NotificationCenter.Notifica
         mz mzVar = this.B;
         int i12 = mzVar.Z0;
         if (i10 == NotificationCenter.groupStickersDidLoad) {
-            int i13 = 14;
             if (this.n != null && (stickerSetById2 = MediaDataController.getInstance(i12).getStickerSetById(this.n.id)) != null && stickerSetById2.set != null) {
                 org.telegram.ui.ActionBar.p2 p2Var = mzVar.V1;
                 if (p2Var == null) {
@@ -258,10 +257,10 @@ public final class cy extends FrameLayout implements NotificationCenter.Notifica
                 p2Var2 = new fg.x1(this, 8);
             }
             org.telegram.ui.ActionBar.p2 p2Var3 = p2Var2;
-            gm gmVar = new gm(i13, this, stickerSetById);
+            eo eoVar = new eo(13, this, stickerSetById);
             Pattern pattern = ov.S;
             if (p2Var3.getFragmentView() != null) {
-                MediaDataController.getInstance(p2Var3.getCurrentAccount()).toggleStickerSet(p2Var3.getFragmentView().getContext(), stickerSetById, 0, p2Var3, true, true, gmVar, false);
+                MediaDataController.getInstance(p2Var3.getCurrentAccount()).toggleStickerSet(p2Var3.getFragmentView().getContext(), stickerSetById, 0, p2Var3, true, true, eoVar, false);
             }
             this.r = null;
         }

@@ -6,9 +6,9 @@ import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.support.LongSparseIntArray;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class k50 extends org.telegram.ui.Components.tl0 {
+public final class k50 extends org.telegram.ui.Components.sl0 {
     public final LongSparseIntArray U2;
     public final /* synthetic */ d60 V2;
 
@@ -21,7 +21,7 @@ public final class k50 extends org.telegram.ui.Components.tl0 {
 
     /* JADX WARN: Removed duplicated region for block: B:30:0x0099  */
     /* JADX WARN: Removed duplicated region for block: B:36:0x00bb  */
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -114,7 +114,7 @@ public final class k50 extends org.telegram.ui.Components.tl0 {
         canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
         if (view == this.V2.U2) {
             return false;
@@ -122,7 +122,7 @@ public final class k50 extends org.telegram.ui.Components.tl0 {
         return super.drawChild(canvas, view, j10);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         int i14;
         super.onLayout(z4, i10, i11, i12, i13);
@@ -156,7 +156,7 @@ public final class k50 extends org.telegram.ui.Components.tl0 {
         k50Var.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.View
     public final void setVisibility(int i10) {
         if (getVisibility() != i10) {
             for (int i11 = 0; i11 < getChildCount(); i11++) {

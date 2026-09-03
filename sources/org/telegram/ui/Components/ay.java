@@ -9,7 +9,7 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ay implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -144,10 +144,10 @@ public final /* synthetic */ class ay implements View.OnClickListener {
                                 p2Var2 = new fg.x1(cyVar, 8);
                             }
                             org.telegram.ui.ActionBar.p2 p2Var3 = p2Var2;
-                            gm gmVar = new gm(14, cyVar, stickerSet7);
+                            eo eoVar = new eo(13, cyVar, stickerSet7);
                             Pattern pattern = ov.S;
                             if (p2Var3.getFragmentView() != null) {
-                                MediaDataController.getInstance(p2Var3.getCurrentAccount()).toggleStickerSet(p2Var3.getFragmentView().getContext(), stickerSet7, 0, p2Var3, true, true, gmVar, false);
+                                MediaDataController.getInstance(p2Var3.getCurrentAccount()).toggleStickerSet(p2Var3.getFragmentView().getContext(), stickerSet7, 0, p2Var3, true, true, eoVar, false);
                                 break;
                             }
                         } else {

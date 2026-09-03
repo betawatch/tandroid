@@ -15,10 +15,10 @@ import oh.u4;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
 import org.telegram.ui.Stories.ProfileStoriesView;
-import org.telegram.ui.gt0;
-import org.telegram.ui.vz0;
+import org.telegram.ui.a01;
+import org.telegram.ui.lt0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m1 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class m1 implements ValueAnimator.AnimatorUpdateLis
         Object obj = this.b;
         switch (i10) {
             case 0:
-                ((gt0) ((o1) obj)).H.b0.invalidate();
+                ((lt0) ((o1) obj)).H.b0.invalidate();
                 break;
             case 1:
                 m2 m2Var = (m2) obj;
@@ -218,11 +218,11 @@ public final /* synthetic */ class m1 implements ValueAnimator.AnimatorUpdateLis
                 break;
             case 28:
                 ProfileStoriesView profileStoriesView = (ProfileStoriesView) obj;
-                vz0 vz0Var = profileStoriesView.h;
+                a01 a01Var = profileStoriesView.h;
                 float floatValue10 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 profileStoriesView.D = floatValue10;
-                vz0Var.O = floatValue10;
-                vz0Var.invalidate();
+                a01Var.O = floatValue10;
+                a01Var.invalidate();
                 profileStoriesView.invalidate();
                 break;
             default:

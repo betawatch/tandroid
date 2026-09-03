@@ -4,9 +4,9 @@ import android.view.KeyEvent;
 import android.view.View;
 import org.telegram.messenger.voip.NativeInstance;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class n20 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.Components.ll0, r0.o, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.n1 {
+public final /* synthetic */ class n20 implements org.telegram.ui.ActionBar.s0, org.telegram.ui.Components.kl0, r0.o, NativeInstance.AudioLevelsCallback, org.telegram.ui.ActionBar.n1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ d60 b;
 
@@ -20,7 +20,7 @@ public final /* synthetic */ class n20 implements org.telegram.ui.ActionBar.s0, 
         return d60.A(this.b, m1Var);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         switch (this.a) {
             case 1:
@@ -40,9 +40,9 @@ public final /* synthetic */ class n20 implements org.telegram.ui.ActionBar.s0, 
                     }
                     if (view instanceof org.telegram.ui.Cells.e4) {
                         d60Var2.I1();
-                        org.telegram.ui.Components.lj0 lj0Var = ((org.telegram.ui.Cells.e4) view).f;
-                        if (lj0Var.isEnabled()) {
-                            lj0Var.callOnClick();
+                        org.telegram.ui.Components.kj0 kj0Var = ((org.telegram.ui.Cells.e4) view).f;
+                        if (kj0Var.isEnabled()) {
+                            kj0Var.callOnClick();
                             return true;
                         }
                     }

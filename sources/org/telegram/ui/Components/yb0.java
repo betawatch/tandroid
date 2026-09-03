@@ -14,7 +14,7 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class yb0 extends FrameLayout {
     public final ArrayList B;
@@ -51,7 +51,7 @@ public abstract class yb0 extends FrameLayout {
         wb0 wb0Var = new wb0(context, ub0Var);
         this.e = wb0Var;
         qg.b c3 = aVar.c(wb0Var, null, false);
-        c3.n(sg.b.j(ub0Var));
+        c3.n(sg.b.k(ub0Var));
         c3.h.e = true;
         c3.o(AndroidUtilities.dp(8.0f));
         c3.p(AndroidUtilities.dp(16.0f));

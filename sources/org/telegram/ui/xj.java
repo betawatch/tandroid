@@ -9,7 +9,7 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class xj extends f2.a1 {
     public boolean b;
@@ -48,9 +48,9 @@ public final class xj extends f2.a1 {
             xnVar.pa = false;
             return;
         }
-        qh.f3 f3Var = xnVar.v1;
-        if (f3Var != null && f3Var.S) {
-            f3Var.e(true);
+        qh.e3 e3Var = xnVar.v1;
+        if (e3Var != null && e3Var.S) {
+            e3Var.e(true);
         }
         org.telegram.ui.Components.k6 k6Var = xnVar.T2;
         if (k6Var != null && k6Var.getVisibility() == 0 && xnVar.x9()) {
@@ -197,10 +197,10 @@ public final class xj extends f2.a1 {
             eVar.f(i10, i11);
         }
         xnVar.i7(false);
-        qh.f3 f3Var = xnVar.u1;
-        if (f3Var != null) {
-            if (f3Var.S) {
-                f3Var.e(true);
+        qh.e3 e3Var = xnVar.u1;
+        if (e3Var != null) {
+            if (e3Var.S) {
+                e3Var.e(true);
             } else if (!xnVar.Sb) {
                 xnVar.Rb = System.currentTimeMillis();
                 AndroidUtilities.cancelRunOnUIThread(new ng(xnVar, 28));
@@ -211,16 +211,16 @@ public final class xj extends f2.a1 {
         if (vlVar != null && vlVar.S) {
             vlVar.e(true);
         }
-        qh.f3 f3Var2 = xnVar.w1;
-        if (f3Var2 == null || !f3Var2.S) {
+        qh.e3 e3Var2 = xnVar.w1;
+        if (e3Var2 == null || !e3Var2.S) {
             AndroidUtilities.cancelRunOnUIThread(new wj(xnVar, 0));
             AndroidUtilities.runOnUIThread(new wj(xnVar, 1), 2000L);
         } else {
-            f3Var2.e(true);
+            e3Var2.e(true);
         }
-        qh.f3 f3Var3 = xnVar.x1;
-        if (f3Var3 != null) {
-            f3Var3.e(true);
+        qh.e3 e3Var3 = xnVar.x1;
+        if (e3Var3 != null) {
+            e3Var3.e(true);
         }
         jk jkVar = xnVar.V;
         if (jkVar != null) {

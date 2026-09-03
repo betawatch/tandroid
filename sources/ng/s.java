@@ -45,15 +45,15 @@ import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Cells.s8;
 import org.telegram.ui.Cells.w7;
 import org.telegram.ui.Cells.x7;
-import org.telegram.ui.Components.fo0;
+import org.telegram.ui.Components.eo0;
 import org.telegram.ui.Components.l5;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.u5;
-import org.telegram.ui.q51;
+import org.telegram.ui.v51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class s extends p2 implements NotificationCenter.NotificationCenterDelegate {
     public final LinkedHashMap B;
@@ -86,7 +86,7 @@ public final class s extends p2 implements NotificationCenter.NotificationCenter
     public t0 v;
     public FrameLayout w;
     public ImageView x;
-    public fo0 y;
+    public eo0 y;
 
     public s(long j10, TLRPC.ChatFull chatFull) {
         super(null);
@@ -325,9 +325,9 @@ public final class s extends p2 implements NotificationCenter.NotificationCenter
                 }
                 this.n.append(spannableStringBuilder);
                 this.n.m();
-                q51 q51Var = this.b.m0;
-                if (q51Var != null) {
-                    q51Var.l();
+                v51 v51Var = this.b.m0;
+                if (v51Var != null) {
+                    v51Var.l();
                 }
                 Y(false);
             }
@@ -365,9 +365,9 @@ public final class s extends p2 implements NotificationCenter.NotificationCenter
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setActionBarMenuOnItemClick(new l1(this, 3));
         this.h = new s3(context);
-        fo0 fo0Var = new fo0(context, this.h, this.resourceProvider, true);
-        this.y = fo0Var;
-        fo0Var.setFillViewport(true);
+        eo0 eo0Var = new eo0(context, this.h, this.resourceProvider, true);
+        this.y = eo0Var;
+        eo0Var.setFillViewport(true);
         this.actionBar.setAdaptiveBackground(this.y);
         ag.l lVar = new ag.l(this, context);
         this.h.setOrientation(1);

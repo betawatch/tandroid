@@ -6,7 +6,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class e3 implements t4 {
     public final /* synthetic */ t a;
@@ -26,10 +26,10 @@ public final class e3 implements t4 {
             tVar.j = i10;
             tVar.k = i11;
         }
-        View z12 = this.c.z1(this.b);
-        if (z12 instanceof o4) {
-            z12.requestLayout();
-            z12.invalidate();
+        View y12 = this.c.y1(this.b);
+        if (y12 instanceof o4) {
+            y12.requestLayout();
+            y12.invalidate();
         }
     }
 
@@ -46,13 +46,13 @@ public final class e3 implements t4 {
             tVar.k = i11;
         }
         a aVar = this.b;
-        TL_iv.PageBlock N3 = r3.N3(aVar, tVar);
-        if (N3 instanceof TL_iv.pageBlockPhoto) {
-            ((TL_iv.pageBlockPhoto) N3).photo_id = photo.id;
+        TL_iv.PageBlock M3 = r3.M3(aVar, tVar);
+        if (M3 instanceof TL_iv.pageBlockPhoto) {
+            ((TL_iv.pageBlockPhoto) M3).photo_id = photo.id;
         }
         r3 r3Var = this.c;
         r3Var.W3.remove(tVar);
-        r3Var.n4(aVar);
+        r3Var.m4(aVar);
         r3Var.e3.onContentChanged();
     }
 
@@ -62,13 +62,13 @@ public final class e3 implements t4 {
         tVar.h = document;
         tVar.a = 2;
         a aVar = this.b;
-        TL_iv.PageBlock N3 = r3.N3(aVar, tVar);
-        if (N3 instanceof TL_iv.pageBlockVideo) {
-            ((TL_iv.pageBlockVideo) N3).video_id = document.id;
+        TL_iv.PageBlock M3 = r3.M3(aVar, tVar);
+        if (M3 instanceof TL_iv.pageBlockVideo) {
+            ((TL_iv.pageBlockVideo) M3).video_id = document.id;
         }
         r3 r3Var = this.c;
         r3Var.W3.remove(tVar);
-        r3Var.n4(aVar);
+        r3Var.m4(aVar);
         r3Var.e3.onContentChanged();
     }
 
@@ -77,10 +77,10 @@ public final class e3 implements t4 {
         this.a.f = f10;
         a aVar = this.b;
         r3 r3Var = this.c;
-        View z12 = r3Var.z1(aVar);
-        if (z12 instanceof o4) {
-            z12.requestLayout();
-            z12.invalidate();
+        View y12 = r3Var.y1(aVar);
+        if (y12 instanceof o4) {
+            y12.requestLayout();
+            y12.invalidate();
         }
         r3Var.e3.onContentChanged();
     }
@@ -91,7 +91,7 @@ public final class e3 implements t4 {
         tVar.a = 3;
         r3 r3Var = this.c;
         r3Var.W3.remove(tVar);
-        r3Var.q4(this.b, tVar);
+        r3Var.p4(this.b, tVar);
         r3Var.e3.onContentChanged();
     }
 

@@ -5,9 +5,9 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ss implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.zk0, org.telegram.ui.Components.ll0, r0.o {
+public final /* synthetic */ class ss implements org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.yk0, org.telegram.ui.Components.kl0, r0.o {
     public final /* synthetic */ ContactsActivity a;
 
     public /* synthetic */ ss(ContactsActivity contactsActivity) {
@@ -25,12 +25,12 @@ public final /* synthetic */ class ss implements org.telegram.ui.ActionBar.c2, o
         return r0.m1.b;
     }
 
-    @Override // org.telegram.ui.Components.zk0
+    @Override // org.telegram.ui.Components.yk0
     public void d() {
         this.a.g0();
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         ContactsActivity contactsActivity = this.a;
         f2.p0 adapter = contactsActivity.f.getAdapter();

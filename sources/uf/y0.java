@@ -16,15 +16,15 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Cells.r2;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.u00;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
-import qh.v9;
+import qh.u9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class y0 extends sl0 implements NotificationCenter.NotificationCenterDelegate {
+public final class y0 extends rl0 implements NotificationCenter.NotificationCenterDelegate {
     public final Context c;
     public final xn f;
     public int h;
@@ -37,7 +37,7 @@ public final class y0 extends sl0 implements NotificationCenter.NotificationCent
     public final HashSet d = new HashSet();
     public final ArrayList e = new ArrayList();
     public final int r = UserConfig.selectedAccount;
-    public final v9 B = new v9(this, 17);
+    public final u9 B = new u9(this, 17);
 
     public y0(Context context, xn xnVar, g6 g6Var, int i10, boolean z4) {
         this.s = g6Var;
@@ -47,7 +47,7 @@ public final class y0 extends sl0 implements NotificationCenter.NotificationCent
         this.w = z4;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         int i10 = m1Var.f;
         return i10 == 0 || i10 == 2;

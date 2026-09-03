@@ -9,14 +9,14 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class ha0 extends s61 {
+public abstract class ha0 extends r61 {
     public final int Q;
     public final ga0 R;
     public final u00 S;
-    public final ax0 T;
-    public final ax0 U;
+    public final zw0 T;
+    public final zw0 U;
     public float V;
     public boolean W;
 
@@ -40,7 +40,7 @@ public abstract class ha0 extends s61 {
         this.f = nVar;
         this.e = nVar;
         this.d.setAdapter(nVar);
-        this.d.p1();
+        this.d.o1();
         mh.d1 d1Var = this.d;
         ga0Var.p = d1Var;
         d1Var.setOnItemClickListener(new ag.h(ga0Var, 5));
@@ -54,16 +54,16 @@ public abstract class ha0 extends s61 {
         u00 b10 = ga0Var.b();
         this.S = b10;
         this.containerView.addView(b10, indexOfChild, k7.c6.c(-1.0f, -1));
-        ax0 a2 = ga0Var.a();
+        zw0 a2 = ga0Var.a();
         this.T = a2;
         this.containerView.addView(a2, indexOfChild, k7.c6.c(-1.0f, -1));
-        ax0 c3 = ga0Var.c();
+        zw0 c3 = ga0Var.c();
         this.U = c3;
         this.containerView.addView(c3, indexOfChild, k7.c6.c(-1.0f, -1));
         ga0Var.e();
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.r61
     public final void D(MotionEvent motionEvent, lg.f fVar) {
         org.telegram.ui.ActionBar.p2 p2Var;
         int action = motionEvent.getAction();
@@ -82,7 +82,7 @@ public abstract class ha0 extends s61 {
             if (p2Var instanceof org.telegram.ui.xn) {
                 boolean P9 = ((org.telegram.ui.xn) p2Var).P9();
                 this.W = true;
-                AndroidUtilities.runOnUIThread(new a90(3, this, fVar), P9 ? 200L : 0L);
+                AndroidUtilities.runOnUIThread(new b90(2, this, fVar), P9 ? 200L : 0L);
             } else {
                 this.W = true;
                 setFocusable(true);
@@ -95,12 +95,12 @@ public abstract class ha0 extends s61 {
         }
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.r61
     public final void F(String str) {
         this.R.j(str);
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.r61
     public final void H(int i10) {
         super.H(i10);
         this.S.setTranslationY(this.c.getMeasuredHeight() + i10);
@@ -109,7 +109,7 @@ public abstract class ha0 extends s61 {
         this.U.setTranslationY(f10);
     }
 
-    @Override // org.telegram.ui.Components.s61
+    @Override // org.telegram.ui.Components.r61
     public final void K() {
         mh.d1 d1Var = this.d;
         if (d1Var.getChildCount() > 0) {

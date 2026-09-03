@@ -7,29 +7,29 @@ import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.UserConfig;
 import org.telegram.ui.Components.ba;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.sl0;
-import qh.i5;
-import qh.o4;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.rl0;
+import qh.h5;
+import qh.n4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class u1 extends sl0 {
+public final class u1 extends rl0 {
     public final /* synthetic */ Context c;
     public final /* synthetic */ ba d;
-    public final /* synthetic */ i5 e;
+    public final /* synthetic */ h5 e;
     public final /* synthetic */ boolean f;
-    public final /* synthetic */ o4 h;
+    public final /* synthetic */ n4 h;
 
-    public u1(o4 o4Var, Context context, ba baVar, i5 i5Var, boolean z4) {
-        this.h = o4Var;
+    public u1(n4 n4Var, Context context, ba baVar, h5 h5Var, boolean z4) {
+        this.h = n4Var;
         this.c = context;
         this.d = baVar;
-        this.e = i5Var;
+        this.e = h5Var;
         this.f = z4;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return true;
     }
@@ -48,8 +48,8 @@ public final class u1 extends sl0 {
     public final void v(f2.m1 m1Var, int i10) {
         boolean z4;
         MessageObject.GroupedMessagePosition position;
-        o4 o4Var = this.h;
-        ArrayList arrayList = o4Var.p0;
+        n4 n4Var = this.h;
+        ArrayList arrayList = n4Var.p0;
         MessageObject messageObject = (MessageObject) arrayList.get((arrayList.size() - 1) - i10);
         View view = m1Var.a;
         if (!(view instanceof org.telegram.ui.Cells.t1)) {
@@ -60,13 +60,13 @@ public final class u1 extends sl0 {
             return;
         }
         org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
-        MessageObject.GroupedMessages groupedMessages = o4Var.q0;
+        MessageObject.GroupedMessages groupedMessages = n4Var.q0;
         if (groupedMessages == null || (position = groupedMessages.getPosition(messageObject)) == null) {
             z4 = false;
         } else {
             z4 = position.minY != 0;
         }
-        MessageObject.GroupedMessages groupedMessages2 = o4Var.q0;
+        MessageObject.GroupedMessages groupedMessages2 = n4Var.q0;
         t1Var.X3(messageObject, groupedMessages2, groupedMessages2 != null, z4, false, false);
     }
 
@@ -75,10 +75,10 @@ public final class u1 extends sl0 {
         a9.a aVar = this.h.A0;
         Context context = this.c;
         if (i10 == 1) {
-            return new fl0(new s1(this, context, aVar));
+            return new el0(new s1(this, context, aVar));
         }
         t1 t1Var = new t1(this, context, UserConfig.selectedAccount, aVar);
         t1Var.K7 = true;
-        return new fl0(t1Var);
+        return new el0(t1Var);
     }
 }

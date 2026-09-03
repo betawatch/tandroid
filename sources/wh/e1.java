@@ -21,12 +21,12 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.p51;
-import org.telegram.ui.Components.u01;
+import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.t01;
 import org.telegram.ui.Components.xt;
 import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class e1 extends xt {
     public boolean B;
@@ -115,7 +115,7 @@ public final class e1 extends xt {
     }
 
     @Override // org.telegram.ui.Components.xt
-    public final p51 createUrlSpan(String str) {
+    public final n51 createUrlSpan(String str) {
         return x5.k(str);
     }
 
@@ -253,15 +253,15 @@ public final class e1 extends xt {
                 this.C = null;
                 if (text instanceof Spanned) {
                     Spanned spanned = (Spanned) text;
-                    u01[] u01VarArr = (u01[]) spanned.getSpans(0, spanned.length(), u01.class);
-                    int length = u01VarArr.length;
+                    t01[] t01VarArr = (t01[]) spanned.getSpans(0, spanned.length(), t01.class);
+                    int length = t01VarArr.length;
                     int i11 = 0;
                     while (i11 < length) {
-                        u01 u01Var = u01VarArr[i11];
-                        int i12 = u01Var.b.a;
+                        t01 t01Var = t01VarArr[i11];
+                        int i12 = t01Var.b.a;
                         if ((65536 & i12) != 0) {
-                            int spanStart = spanned.getSpanStart(u01Var);
-                            int spanEnd = spanned.getSpanEnd(u01Var);
+                            int spanStart = spanned.getSpanStart(t01Var);
+                            int spanEnd = spanned.getSpanEnd(t01Var);
                             z80Var = z80Var;
                             if (spanStart >= 0 && spanEnd > spanStart) {
                                 if (z80Var == null) {
@@ -429,7 +429,7 @@ public final class e1 extends xt {
                             }
                         }
                         if (sVar != null) {
-                            q.U(getContext(), sVar.a, new org.telegram.ui.web.v1(21, this, sVar), this.e);
+                            q.U(getContext(), sVar.a, new org.telegram.ui.web.a2(20, this, sVar), this.e);
                             return true;
                         }
                     }

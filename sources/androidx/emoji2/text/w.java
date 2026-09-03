@@ -3,12 +3,15 @@ package androidx.emoji2.text;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.res.Resources;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Typeface;
 import android.media.MediaRoute2Info;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Build;
 import android.text.TextUtils;
+import android.util.Base64;
 import android.util.Log;
 import androidx.biometric.f0;
 import com.google.android.gms.tasks.Continuation;
@@ -42,11 +45,11 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.ui.Cells.f1;
 import org.telegram.ui.web.e0;
 import org.telegram.ui.yh;
-import q5.g0;
+import q5.c0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, Continuation, v2.e, q0, OnFailureListener {
+public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, Continuation, v2.e, q0, OnFailureListener, f3.f {
     public final /* synthetic */ int a;
 
     public /* synthetic */ w(int i10) {
@@ -75,18 +78,37 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, Continua
         }
     }
 
-    @Override // v2.e
+    @Override // v2.e, f3.f
     public Object apply(Object obj) {
-        ia.e eVar = (ia.e) obj;
-        eVar.getClass();
-        s5.m mVar = com.google.firebase.messaging.p.a;
-        mVar.getClass();
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        try {
-            mVar.g(eVar, byteArrayOutputStream);
-        } catch (IOException unused) {
+        switch (this.a) {
+            case 14:
+                ia.e eVar = (ia.e) obj;
+                eVar.getClass();
+                s5.m mVar = com.google.firebase.messaging.p.a;
+                mVar.getClass();
+                ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+                try {
+                    mVar.g(eVar, byteArrayOutputStream);
+                } catch (IOException unused) {
+                }
+                return byteArrayOutputStream.toByteArray();
+            default:
+                Cursor rawQuery = ((SQLiteDatabase) obj).rawQuery("SELECT distinct t._id, t.backend_name, t.priority, t.extras FROM transport_contexts AS t, events AS e WHERE e.context_id = t._id", new String[0]);
+                try {
+                    ArrayList arrayList = new ArrayList();
+                    while (rawQuery.moveToNext()) {
+                        s5.m a2 = y2.i.a();
+                        a2.n(rawQuery.getString(1));
+                        a2.d = i3.a.b(rawQuery.getInt(2));
+                        String string = rawQuery.getString(3);
+                        a2.c = string == null ? null : Base64.decode(string, 0);
+                        arrayList.add(a2.f());
+                    }
+                    return arrayList;
+                } finally {
+                    rawQuery.close();
+                }
         }
-        return byteArrayOutputStream.toByteArray();
     }
 
     @Override // c9.f
@@ -358,7 +380,7 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, Continua
                         onSuccessTask = Tasks.forResult(null);
                     }
                     onSuccessTask.continueWith(a12, new ab.a(6));
-                    sf.e eVar2 = pVar.l;
+                    sf.f fVar2 = pVar.l;
                     n9.b bVar2 = pVar.h;
                     Context context2 = pVar.a;
                     if (context2 != null && (resources = context2.getResources()) != null) {
@@ -408,16 +430,16 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, Continua
                         int i18 = 14;
                         pVar.e = new f7.b(i18, "crash_marker", bVar2);
                         pVar.d = new f7.b(i18, "initialization_marker", bVar2);
-                        r3 r3Var = new r3(str15, bVar2, eVar2);
-                        j9.e eVar3 = new j9.e(bVar2);
+                        r3 r3Var = new r3(str15, bVar2, fVar2);
+                        j9.e eVar2 = new j9.e(bVar2);
                         q9.a[] aVarArr = new q9.a[1];
                         aVarArr[0] = new z9.d(20);
-                        g0 g0Var = new g0(aVarArr);
+                        c0 c0Var = new c0(aVarArr);
                         ((c9.r) pVar.o.b).a(new f5.u(1));
                         i9.a aVar6 = aVar;
-                        a9.a k11 = a9.a.k(pVar.a, pVar.g, pVar.h, aVar6, eVar3, r3Var, g0Var, gVar3, pVar.c, pVar.m);
+                        a9.a k11 = a9.a.k(pVar.a, pVar.g, pVar.h, aVar6, eVar2, r3Var, c0Var, gVar3, pVar.c, pVar.m);
                         gVar = gVar3;
-                        pVar.f = new i9.n(pVar.a, pVar.l, pVar.g, pVar.b, pVar.h, pVar.e, aVar6, r3Var, eVar3, k11, pVar.n, pVar.j, pVar.m);
+                        pVar.f = new i9.n(pVar.a, pVar.l, pVar.g, pVar.b, pVar.h, pVar.e, aVar6, r3Var, eVar2, k11, pVar.n, pVar.j, pVar.m);
                         f7.b bVar3 = pVar.d;
                         n9.b bVar4 = (n9.b) bVar3.c;
                         String str16 = (String) bVar3.b;
@@ -425,7 +447,7 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, Continua
                         exists = new File(bVar4.b, str16).exists();
                         z10 = true;
                         z10 = true;
-                        Boolean.TRUE.equals((Boolean) i9.y.a(eVar2.H(new i9.o(pVar, z10 ? 1 : 0))));
+                        Boolean.TRUE.equals((Boolean) i9.y.a(fVar2.H(new i9.o(pVar, z10 ? 1 : 0))));
                         i9.n nVar = pVar.f;
                         Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
                         nVar.e.H(new h2.g(2, nVar, str15));
@@ -457,16 +479,16 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, Continua
                     int i182 = 14;
                     pVar.e = new f7.b(i182, "crash_marker", bVar2);
                     pVar.d = new f7.b(i182, "initialization_marker", bVar2);
-                    r3 r3Var2 = new r3(str152, bVar2, eVar2);
-                    j9.e eVar32 = new j9.e(bVar2);
+                    r3 r3Var2 = new r3(str152, bVar2, fVar2);
+                    j9.e eVar22 = new j9.e(bVar2);
                     q9.a[] aVarArr2 = new q9.a[1];
                     aVarArr2[0] = new z9.d(20);
-                    g0 g0Var2 = new g0(aVarArr2);
+                    c0 c0Var2 = new c0(aVarArr2);
                     ((c9.r) pVar.o.b).a(new f5.u(1));
                     i9.a aVar62 = aVar;
-                    a9.a k112 = a9.a.k(pVar.a, pVar.g, pVar.h, aVar62, eVar32, r3Var2, g0Var2, gVar3, pVar.c, pVar.m);
+                    a9.a k112 = a9.a.k(pVar.a, pVar.g, pVar.h, aVar62, eVar22, r3Var2, c0Var2, gVar3, pVar.c, pVar.m);
                     gVar = gVar3;
-                    pVar.f = new i9.n(pVar.a, pVar.l, pVar.g, pVar.b, pVar.h, pVar.e, aVar62, r3Var2, eVar32, k112, pVar.n, pVar.j, pVar.m);
+                    pVar.f = new i9.n(pVar.a, pVar.l, pVar.g, pVar.b, pVar.h, pVar.e, aVar62, r3Var2, eVar22, k112, pVar.n, pVar.j, pVar.m);
                     f7.b bVar32 = pVar.d;
                     n9.b bVar42 = (n9.b) bVar32.c;
                     String str162 = (String) bVar32.b;
@@ -474,7 +496,7 @@ public final /* synthetic */ class w implements g5.l, c9.f, ba.a, c9.e, Continua
                     exists = new File(bVar42.b, str162).exists();
                     z10 = true;
                     z10 = true;
-                    Boolean.TRUE.equals((Boolean) i9.y.a(eVar2.H(new i9.o(pVar, z10 ? 1 : 0))));
+                    Boolean.TRUE.equals((Boolean) i9.y.a(fVar2.H(new i9.o(pVar, z10 ? 1 : 0))));
                     i9.n nVar2 = pVar.f;
                     Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler2 = Thread.getDefaultUncaughtExceptionHandler();
                     nVar2.e.H(new h2.g(2, nVar2, str152));

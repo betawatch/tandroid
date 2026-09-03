@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class ov extends org.telegram.ui.ActionBar.h3 implements NotificationCenter.NotificationCenterDelegate {
     public static Pattern S;
@@ -54,7 +54,7 @@ public class ov extends org.telegram.ui.ActionBar.h3 implements NotificationCent
     public int R;
     public LongSparseArray b;
     public final org.telegram.ui.ActionBar.p2 c;
-    public final jn d;
+    public final in d;
     public final yu e;
     public final ev f;
     public final org.telegram.ui.k3 h;
@@ -92,7 +92,7 @@ public class ov extends org.telegram.ui.ActionBar.h3 implements NotificationCent
         ev evVar = new ev(this, context);
         this.f = evVar;
         this.containerView = evVar;
-        this.d = new jn(context, 8);
+        this.d = new in(context, 8);
         org.telegram.ui.k3 k3Var = new org.telegram.ui.k3(this, context, this.resourcesProvider);
         this.h = k3Var;
         this.J = new z5(0.0f, k3Var, 0L, 1250L, pr.i);
@@ -112,10 +112,10 @@ public class ov extends org.telegram.ui.ActionBar.h3 implements NotificationCent
         int i12 = 2;
         k3Var.i(new hg.e2(this, i12));
         k3Var.j(new fg.e2(this, 26));
-        vm vmVar = new vm(this, arrayList, p2Var, resourceProvider);
-        k3Var.setOnItemClickListener(vmVar);
-        k3Var.setOnItemLongClickListener((ll0) new o1(19, this, context));
-        k3Var.setOnTouchListener(new org.telegram.ui.ActionBar.i1(i12, this, vmVar));
+        um umVar = new um(this, arrayList, p2Var, resourceProvider);
+        k3Var.setOnItemClickListener(umVar);
+        k3Var.setOnItemLongClickListener((kl0) new o1(19, this, context));
+        k3Var.setOnTouchListener(new org.telegram.ui.ActionBar.i1(i12, this, umVar));
         wVar.k1(false);
         wVar.O = new av(this);
         this.B = new c2.y(k3Var, wVar);
@@ -250,7 +250,7 @@ public class ov extends org.telegram.ui.ActionBar.h3 implements NotificationCent
                                     if (z10 && view2 != null) {
                                         Context context = p2Var3.getFragmentView().getContext();
                                         TLObject tLObject4 = tL_messages_stickerSet2;
-                                        ic.g(p2Var3, new cx0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, p2Var3.getResourceProvider()), 1500).j();
+                                        ic.g(p2Var3, new bx0(context, tLObject4 == null ? stickerSet4 : tLObject4, 1, 2, null, p2Var3.getResourceProvider()), 1500).j();
                                     }
                                     if (tLObject3 instanceof TLRPC.TL_messages_stickerSetInstallResultArchive) {
                                         MediaDataController.getInstance(i12).processStickerSetInstallResultArchive(p2Var3, true, i11, (TLRPC.TL_messages_stickerSetInstallResultArchive) tLObject3);
@@ -379,8 +379,8 @@ public class ov extends org.telegram.ui.ActionBar.h3 implements NotificationCent
             return this.containerView.getPaddingTop();
         }
         View childAt = k3Var.getChildAt(0);
-        jn jnVar = this.d;
-        return childAt != jnVar ? this.containerView.getPaddingTop() : jnVar.getBottom() + ((int) k3Var.getY());
+        in inVar = this.d;
+        return childAt != inVar ? this.containerView.getPaddingTop() : inVar.getBottom() + ((int) k3Var.getY());
     }
 
     public final void Z() {
@@ -751,7 +751,7 @@ public class ov extends org.telegram.ui.ActionBar.h3 implements NotificationCent
                         org.telegram.ui.ActionBar.p2 p2Var = ovVar.c;
                         TLRPC.InputStickerSet inputStickerSet = (TLRPC.InputStickerSet) yuVar.a.get(i13);
                         org.telegram.ui.ActionBar.p2 p2Var2 = ovVar.c;
-                        new yx0(context, p2Var, inputStickerSet, null, p2Var2 instanceof org.telegram.ui.xn ? ((org.telegram.ui.xn) p2Var2).V : null, ovVar.resourcesProvider).show();
+                        new xx0(context, p2Var, inputStickerSet, null, p2Var2 instanceof org.telegram.ui.xn ? ((org.telegram.ui.xn) p2Var2).V : null, ovVar.resourcesProvider).show();
                     }
                 } else {
                     ov ovVar2 = yuVar.h;

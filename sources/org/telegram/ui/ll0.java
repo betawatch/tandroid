@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Bitmaps;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ll0 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -32,92 +32,92 @@ public final class ll0 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 1:
-                up0 up0Var = (up0) obj;
+                zp0 zp0Var = (zp0) obj;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        if (up0Var.c != null && !up0Var.f) {
-                            sp0 sp0Var = up0Var.d;
-                            float f10 = sp0Var.f - sp0Var.x;
-                            float f11 = sp0Var.v;
-                            float f12 = (sp0Var.h - sp0Var.y) / sp0Var.w;
-                            float f13 = sp0Var.d / f11;
-                            float f14 = sp0Var.e / f11;
-                            up0 up0Var2 = sp0Var.E;
-                            int width = (int) ((f10 / f11) * up0Var2.a.getWidth());
-                            int height = (int) (f12 * up0Var2.a.getHeight());
-                            int width2 = (int) (f13 * up0Var2.a.getWidth());
-                            int width3 = (int) (f14 * up0Var2.a.getWidth());
+                        if (zp0Var.c != null && !zp0Var.f) {
+                            xp0 xp0Var = zp0Var.d;
+                            float f10 = xp0Var.f - xp0Var.x;
+                            float f11 = xp0Var.v;
+                            float f12 = (xp0Var.h - xp0Var.y) / xp0Var.w;
+                            float f13 = xp0Var.d / f11;
+                            float f14 = xp0Var.e / f11;
+                            zp0 zp0Var2 = xp0Var.E;
+                            int width = (int) ((f10 / f11) * zp0Var2.a.getWidth());
+                            int height = (int) (f12 * zp0Var2.a.getHeight());
+                            int width2 = (int) (f13 * zp0Var2.a.getWidth());
+                            int width3 = (int) (f14 * zp0Var2.a.getWidth());
                             if (width < 0) {
                                 width = 0;
                             }
                             if (height < 0) {
                                 height = 0;
                             }
-                            if (width + width2 > up0Var2.a.getWidth()) {
-                                width2 = up0Var2.a.getWidth() - width;
+                            if (width + width2 > zp0Var2.a.getWidth()) {
+                                width2 = zp0Var2.a.getWidth() - width;
                             }
-                            if (height + width3 > up0Var2.a.getHeight()) {
-                                width3 = up0Var2.a.getHeight() - height;
+                            if (height + width3 > zp0Var2.a.getHeight()) {
+                                width3 = zp0Var2.a.getHeight() - height;
                             }
                             try {
-                                bitmap = Bitmaps.createBitmap(up0Var2.a, width, height, width2, width3);
+                                bitmap = Bitmaps.createBitmap(zp0Var2.a, width, height, width2, width3);
                             } catch (Throwable th2) {
                                 FileLog.e(th2);
                                 System.gc();
                                 try {
-                                    bitmap = Bitmaps.createBitmap(up0Var2.a, width, height, width2, width3);
+                                    bitmap = Bitmaps.createBitmap(zp0Var2.a, width, height, width2, width3);
                                 } catch (Throwable th3) {
                                     FileLog.e(th3);
                                     bitmap = null;
                                 }
                             }
-                            if (bitmap == up0Var.a) {
-                                up0Var.e = true;
+                            if (bitmap == zp0Var.a) {
+                                zp0Var.e = true;
                             }
-                            ((org.telegram.ui.Components.y40) up0Var.c).s(false, bitmap, null);
-                            up0Var.f = true;
+                            ((org.telegram.ui.Components.y40) zp0Var.c).s(false, bitmap, null);
+                            zp0Var.f = true;
                         }
-                        up0Var.finishFragment();
+                        zp0Var.finishFragment();
                         break;
                     }
                 } else {
-                    up0Var.finishFragment();
+                    zp0Var.finishFragment();
                     break;
                 }
                 break;
             case 2:
-                hq0 hq0Var = (hq0) obj;
+                mq0 mq0Var = (mq0) obj;
                 if (i10 != -1) {
                     if (i10 != 1) {
                         if (i10 == 2) {
-                            gq0 gq0Var = hq0Var.p0;
-                            if (gq0Var != null) {
-                                gq0Var.d();
+                            lq0 lq0Var = mq0Var.p0;
+                            if (lq0Var != null) {
+                                lq0Var.d();
                             }
-                            hq0Var.finishFragment();
+                            mq0Var.finishFragment();
                             break;
                         }
                     } else {
-                        boolean z4 = hq0Var.V;
-                        hq0Var.V = !z4;
+                        boolean z4 = mq0Var.V;
+                        mq0Var.V = !z4;
                         if (z4) {
-                            hq0Var.H.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(50.0f));
+                            mq0Var.H.setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(50.0f));
                         } else {
-                            hq0Var.H.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
+                            mq0Var.H.setPadding(0, 0, 0, AndroidUtilities.dp(48.0f));
                         }
-                        hq0Var.H.B0();
-                        hq0Var.J.h1(0, 0);
-                        hq0Var.I.l();
+                        mq0Var.H.B0();
+                        mq0Var.J.h1(0, 0);
+                        mq0Var.I.l();
                         break;
                     }
                 } else {
-                    hq0Var.finishFragment();
+                    mq0Var.finishFragment();
                     break;
                 }
                 break;
             case 3:
                 if (i10 == -1) {
-                    ((mq0) obj).finishFragment();
+                    ((rq0) obj).finishFragment();
                     break;
                 }
                 break;
@@ -142,14 +142,14 @@ public final class ll0 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 5:
-                aw0 aw0Var = (aw0) obj;
+                fw0 fw0Var = (fw0) obj;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        aw0Var.Y();
+                        fw0Var.Y();
                         break;
                     }
-                } else if (aw0Var.onBackPressed(true)) {
-                    aw0Var.finishFragment();
+                } else if (fw0Var.onBackPressed(true)) {
+                    fw0Var.finishFragment();
                     break;
                 }
                 break;
@@ -179,7 +179,7 @@ public final class ll0 extends org.telegram.ui.ActionBar.j {
                 break;
             case 9:
                 if (i10 == -1) {
-                    ((ox0) obj).finishFragment();
+                    ((tx0) obj).finishFragment();
                     break;
                 }
                 break;
@@ -191,19 +191,19 @@ public final class ll0 extends org.telegram.ui.ActionBar.j {
                 break;
             case 11:
                 if (i10 == -1) {
-                    ((q21) obj).finishFragment();
+                    ((w21) obj).finishFragment();
                     break;
                 }
                 break;
             case 12:
                 if (i10 == -1) {
-                    ((w21) obj).finishFragment();
+                    ((b31) obj).finishFragment();
                     break;
                 }
                 break;
             case 13:
                 if (i10 == -1) {
-                    ((p31) obj).finishFragment();
+                    ((t31) obj).finishFragment();
                     break;
                 }
                 break;
@@ -226,20 +226,20 @@ public final class ll0 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 17:
-                p81 p81Var = (p81) obj;
+                v81 v81Var = (v81) obj;
                 if (i10 != -1) {
                     if (i10 == 2) {
-                        p81Var.l0(new qg0(null));
+                        v81Var.l0(new qg0(null));
                         break;
                     }
                 } else {
-                    p81Var.finishFragment();
+                    v81Var.finishFragment();
                     break;
                 }
                 break;
             case 18:
                 if (i10 == -1) {
-                    ((ha1) obj).finishFragment();
+                    ((na1) obj).finishFragment();
                     break;
                 }
                 break;
@@ -254,26 +254,26 @@ public final class ll0 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             case 20:
-                jd1 jd1Var = (jd1) obj;
+                od1 od1Var = (od1) obj;
                 if (i10 != -1) {
                     if (i10 == 1) {
-                        jd1.Y(jd1Var);
+                        od1.Y(od1Var);
                         break;
                     }
                 } else {
-                    jd1Var.finishFragment();
+                    od1Var.finishFragment();
                     break;
                 }
                 break;
             case 21:
                 if (i10 == -1) {
-                    ((be1) obj).finishFragment();
+                    ((he1) obj).finishFragment();
                     break;
                 }
                 break;
             case 22:
                 if (i10 == -1) {
-                    ((sf1) obj).finishFragment();
+                    ((yf1) obj).finishFragment();
                     break;
                 }
                 break;

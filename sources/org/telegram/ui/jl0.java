@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jl0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -29,26 +29,26 @@ public final /* synthetic */ class jl0 implements Utilities.Callback2 {
                 passkeysActivity.addPasskeyRow = -1;
                 String string = LocaleController.getString(R.string.PasskeyTopInfo);
                 int i11 = R.raw.passkey;
-                org.telegram.ui.Components.j51 j51Var = new org.telegram.ui.Components.j51(2);
-                j51Var.l = string;
-                j51Var.k = i11;
-                arrayList.add(j51Var);
+                org.telegram.ui.Components.h51 h51Var = new org.telegram.ui.Components.h51(2);
+                h51Var.l = string;
+                h51Var.k = i11;
+                arrayList.add(h51Var);
                 for (int i12 = 0; i12 < arrayList2.size(); i12++) {
                     TL_account.Passkey passkey = (TL_account.Passkey) arrayList2.get(i12);
                     f60 f60Var = new f60(passkeysActivity, 15);
                     int i13 = ml0.a;
-                    org.telegram.ui.Components.j51 J = org.telegram.ui.Components.j51.J(ml0.class);
+                    org.telegram.ui.Components.h51 J = org.telegram.ui.Components.h51.J(ml0.class);
                     J.G = passkey;
                     J.D = f60Var;
                     arrayList.add(J);
                 }
                 if (arrayList2.size() + 1 <= passkeysActivity.getMessagesController().config.passkeysAccountPasskeysMax.get()) {
                     passkeysActivity.addPasskeyRow = arrayList.size();
-                    org.telegram.ui.Components.j51 c3 = org.telegram.ui.Components.j51.c(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd));
+                    org.telegram.ui.Components.h51 c3 = org.telegram.ui.Components.h51.c(-1, R.drawable.menu_passkey_add, LocaleController.getString(R.string.PasskeyAdd));
                     c3.q = true;
                     arrayList.add(c3);
                 }
-                arrayList.add(org.telegram.ui.Components.j51.B(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new gl0(passkeysActivity, 1)), true)));
+                arrayList.add(org.telegram.ui.Components.h51.B(AndroidUtilities.replaceArrows(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.PasskeyInfo), new gl0(passkeysActivity, 1)), true)));
                 break;
             default:
                 PasskeysActivity.U(passkeysActivity, (TL_account.Passkey) obj, (String) obj2);

@@ -56,25 +56,25 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.a9;
 import org.telegram.ui.Components.af0;
 import org.telegram.ui.Components.ec0;
+import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.f9;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.h71;
-import org.telegram.ui.Components.iq0;
-import org.telegram.ui.Components.k71;
-import org.telegram.ui.Components.ko0;
-import org.telegram.ui.Components.mq0;
+import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.hq0;
+import org.telegram.ui.Components.j71;
+import org.telegram.ui.Components.jo0;
+import org.telegram.ui.Components.lq0;
 import org.telegram.ui.Components.og0;
-import org.telegram.ui.Components.sk0;
+import org.telegram.ui.Components.rk0;
 import org.telegram.ui.Components.ze0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ThemeActivity;
-import org.telegram.ui.hb1;
-import org.telegram.ui.zr0;
+import org.telegram.ui.es0;
+import org.telegram.ui.nb1;
 import uf.j1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.common.api.internal.k0, v0, e2.d, q2, q1, com.google.android.gms.common.api.internal.s, l.x, e2, l.j, o0.a, o2.n, od.b, ko0, xd.d, zf.m, h71, j1 {
+public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.common.api.internal.k0, v0, e2.d, q2, q1, com.google.android.gms.common.api.internal.s, l.x, e2, l.j, o0.a, o2.n, od.b, jo0, xd.d, zf.m, g71, j1 {
     public final /* synthetic */ int a;
     public Object b;
 
@@ -186,7 +186,7 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
         af0Var.getClass();
         ze0 ze0Var = af0Var.a;
         if (ze0Var != null) {
-            ((zr0) ze0Var).a(z4);
+            ((es0) ze0Var).a(z4);
         }
     }
 
@@ -258,14 +258,14 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
 
     @Override // uf.j1
     public boolean R(int i10) {
-        return i10 == ((iq0) this.b).r;
+        return i10 == ((hq0) this.b).r;
     }
 
     @Override // zf.m
     public void S() {
         ze0 ze0Var = ((af0) this.b).a;
         if (ze0Var != null) {
-            PhotoViewer photoViewer = ((zr0) ze0Var).a;
+            PhotoViewer photoViewer = ((es0) ze0Var).a;
             if (photoViewer.Z1 == 1) {
                 photoViewer.E2 = true;
                 photoViewer.q3();
@@ -345,17 +345,17 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
         handler.postDelayed(iVar, 2000L);
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public void X(float f10, boolean z4) {
-        hb1 hb1Var = (hb1) ((org.telegram.ui.Cells.k0) this.b);
+        nb1 nb1Var = (nb1) ((org.telegram.ui.Cells.k0) this.b);
         int i10 = (int) (k6.q * 100.0f);
         int i11 = (int) (f10 * 100.0f);
         k6.q = f10;
         if (i10 != i11) {
-            ThemeActivity themeActivity = hb1Var.e.e;
-            fl0 fl0Var = (fl0) themeActivity.b.K(themeActivity.c0);
-            if (fl0Var != null) {
-                ((a9) fl0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", org.telegram.messenger.R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (k6.q * 100.0f))));
+            ThemeActivity themeActivity = nb1Var.e.e;
+            el0 el0Var = (el0) themeActivity.b.K(themeActivity.c0);
+            if (el0Var != null) {
+                ((a9) el0Var.a).setText(LocaleController.formatString("AutoNightBrightnessInfo", org.telegram.messenger.R.string.AutoNightBrightnessInfo, Integer.valueOf((int) (k6.q * 100.0f))));
             }
             k6.E(true);
         }
@@ -473,21 +473,21 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
 
     @Override // uf.j1
     public void g(int i10) {
-        iq0 iq0Var = (iq0) this.b;
-        mq0 mq0Var = iq0Var.H;
-        iq0Var.s = i10;
-        if (iq0Var.v != i10) {
-            iq0Var.d.clear();
+        hq0 hq0Var = (hq0) this.b;
+        lq0 lq0Var = hq0Var.H;
+        hq0Var.s = i10;
+        if (hq0Var.v != i10) {
+            hq0Var.d.clear();
         }
-        int i11 = iq0Var.G;
-        if (iq0Var.h() != 0 || iq0Var.e.e() || iq0Var.F) {
-            mq0Var.u0.b(i11);
+        int i11 = hq0Var.G;
+        if (hq0Var.h() != 0 || hq0Var.e.e() || hq0Var.F) {
+            lq0Var.u0.b(i11);
         } else {
-            mq0Var.N.e(false, true);
+            lq0Var.N.e(false, true);
         }
-        iq0Var.l();
-        int i12 = mq0.X0;
-        mq0Var.K0(true);
+        hq0Var.l();
+        int i12 = lq0.X0;
+        lq0Var.K0(true);
     }
 
     @Override // eg.q2
@@ -498,7 +498,7 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
         return currentBrush == null ? e1.e(i10).i : e1.e(i10).f("-1", currentBrush.d());
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public CharSequence getContentDescription() {
         return " ";
     }
@@ -531,7 +531,7 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
         return false;
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public /* synthetic */ int m0() {
         return 0;
     }
@@ -561,18 +561,18 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
         }
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public /* synthetic */ void onRenderedFirstFrame(k3.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public void onStateChanged(boolean z4, int i10) {
-        sk0 sk0Var = (sk0) this.b;
-        if (z4 && sk0Var.n.n() >= 0) {
-            sk0Var.w = true;
+        rk0 rk0Var = (rk0) this.b;
+        if (z4 && rk0Var.n.n() >= 0) {
+            rk0Var.w = true;
         }
-        og0 og0Var = sk0Var.f;
-        ec0 ec0Var = sk0Var.x;
+        og0 og0Var = rk0Var.f;
+        ec0 ec0Var = rk0Var.x;
         og0Var.a(z4, true);
         AndroidUtilities.cancelRunOnUIThread(ec0Var);
         if (z4) {
@@ -580,7 +580,7 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
         }
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
         return false;
     }
@@ -708,7 +708,7 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
     public void w() {
         ze0 ze0Var = ((af0) this.b).a;
         if (ze0Var != null) {
-            ((zr0) ze0Var).a.b0.invalidate();
+            ((es0) ze0Var).a.b0.invalidate();
         }
     }
 
@@ -790,7 +790,7 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
         this.b = aVar;
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public void onRenderedFirstFrame() {
     }
 
@@ -804,7 +804,7 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
         this.b = context.getContentResolver().acquireUnstableContentProviderClient(uri);
     }
 
-    @Override // org.telegram.ui.Components.ko0
+    @Override // org.telegram.ui.Components.jo0
     public void A() {
     }
 
@@ -828,15 +828,15 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
     public /* synthetic */ void i(boolean z4) {
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public /* synthetic */ void onSeekFinished(k3.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public /* synthetic */ void onSeekStarted(k3.a aVar) {
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 
@@ -844,15 +844,15 @@ public final class f0 implements androidx.lifecycle.a0, com.google.android.gms.c
     public void z(int i10) {
     }
 
-    @Override // org.telegram.ui.Components.h71
-    public void onError(k71 k71Var, Exception exc) {
+    @Override // org.telegram.ui.Components.g71
+    public void onError(j71 j71Var, Exception exc) {
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
     public void f(y5.a aVar, com.google.android.gms.common.api.e eVar, boolean z4) {
     }
 
-    @Override // org.telegram.ui.Components.h71
+    @Override // org.telegram.ui.Components.g71
     public void onVideoSizeChanged(int i10, int i11, int i12, float f10) {
     }
 }

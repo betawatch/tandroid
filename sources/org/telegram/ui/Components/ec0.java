@@ -11,7 +11,7 @@ import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ec0 implements Runnable {
     public final /* synthetic */ int a;
@@ -69,12 +69,12 @@ public final /* synthetic */ class ec0 implements Runnable {
                 qf0Var.d.L(qf0Var.e, false);
                 break;
             case 10:
-                org.telegram.ui.pt0 pt0Var = (org.telegram.ui.pt0) this.b;
-                if (pt0Var.x) {
-                    pt0Var.h("pollPosition();");
+                org.telegram.ui.ut0 ut0Var = (org.telegram.ui.ut0) this.b;
+                if (ut0Var.x) {
+                    ut0Var.h("pollPosition();");
                 }
-                if (pt0Var.D) {
-                    AndroidUtilities.runOnUIThread(pt0Var.I, 500L);
+                if (ut0Var.D) {
+                    AndroidUtilities.runOnUIThread(ut0Var.I, 500L);
                     break;
                 }
                 break;
@@ -105,61 +105,61 @@ public final /* synthetic */ class ec0 implements Runnable {
                 ((RLottieNative) this.b).d();
                 break;
             case 16:
-                rk0 rk0Var = (rk0) this.b;
-                rk0Var.u0 = null;
-                rk0Var.j();
-                qk0 qk0Var = rk0Var.d0;
-                if (qk0Var != null) {
-                    qk0Var.m();
+                qk0 qk0Var = (qk0) this.b;
+                qk0Var.u0 = null;
+                qk0Var.j();
+                pk0 pk0Var = qk0Var.d0;
+                if (pk0Var != null) {
+                    pk0Var.m();
                     break;
                 }
                 break;
             case 17:
-                ((ok0) this.b).E.a.setVisibility(4);
+                ((nk0) this.b).E.a.setVisibility(4);
                 break;
             case 18:
-                sk0 sk0Var = (sk0) this.b;
-                k71 k71Var = sk0Var.n;
-                if (k71Var != null) {
-                    boolean y10 = k71Var.y();
-                    float n10 = sk0Var.n.n() / sk0Var.n.p();
-                    float f10 = sk0Var.s;
+                rk0 rk0Var = (rk0) this.b;
+                j71 j71Var = rk0Var.n;
+                if (j71Var != null) {
+                    boolean y10 = j71Var.y();
+                    float n10 = rk0Var.n.n() / rk0Var.n.p();
+                    float f10 = rk0Var.s;
                     if (n10 < f10) {
-                        sk0Var.n.L((long) (f10 * r2.p()), false);
-                    } else if (n10 > sk0Var.v) {
-                        sk0Var.setPlaying(false);
+                        rk0Var.n.L((long) (f10 * r2.p()), false);
+                    } else if (n10 > rk0Var.v) {
+                        rk0Var.setPlaying(false);
                         y10 = false;
                     }
                     if (y10) {
-                        AndroidUtilities.runOnUIThread(sk0Var.x, 16L);
+                        AndroidUtilities.runOnUIThread(rk0Var.x, 16L);
                     }
                 }
-                sk0Var.invalidate();
+                rk0Var.invalidate();
                 break;
             case 19:
-                tl0 tl0Var = (tl0) this.b;
-                tl0Var.S1 = null;
-                tl0Var.R1 = null;
-                org.telegram.ui.Cells.z zVar = tl0Var.A1;
+                sl0 sl0Var = (sl0) this.b;
+                sl0Var.S1 = null;
+                sl0Var.R1 = null;
+                org.telegram.ui.Cells.z zVar = sl0Var.A1;
                 if (zVar != null) {
                     Drawable current = zVar.getCurrent();
                     if (current instanceof TransitionDrawable) {
                         ((TransitionDrawable) current).resetTransition();
                     }
                 }
-                org.telegram.ui.Cells.z zVar2 = tl0Var.A1;
+                org.telegram.ui.Cells.z zVar2 = sl0Var.A1;
                 if (zVar2 != null && zVar2.isStateful()) {
-                    tl0Var.A1.setState(StateSet.NOTHING);
+                    sl0Var.A1.setState(StateSet.NOTHING);
                     break;
                 }
                 break;
             case 20:
-                en0 en0Var = (en0) this.b;
+                dn0 dn0Var = (dn0) this.b;
                 ArrayList<MessageObject> arrayList = new ArrayList<>();
                 ArrayList<MessageObject> arrayList2 = new ArrayList<>();
                 ArrayList arrayList3 = new ArrayList();
                 ArrayList arrayList4 = new ArrayList();
-                int i10 = en0Var.d;
+                int i10 = dn0Var.d;
                 FileLoader.getInstance(i10).getCurrentLoadingFiles(arrayList);
                 FileLoader.getInstance(i10).getRecentLoadingFiles(arrayList2);
                 for (int i11 = 0; i11 < arrayList.size(); i11++) {
@@ -172,13 +172,13 @@ public final /* synthetic */ class ec0 implements Runnable {
                         arrayList4.add(arrayList2.get(i12));
                     }
                 }
-                AndroidUtilities.runOnUIThread(new jp(en0Var, arrayList3, arrayList4, 14));
+                AndroidUtilities.runOnUIThread(new jp(dn0Var, arrayList3, arrayList4, 14));
                 break;
             case 21:
-                ((gn0) this.b).invalidateSelf();
+                ((fn0) this.b).invalidateSelf();
                 break;
             case 22:
-                ((pn0) this.b).f.setVisibility(8);
+                ((on0) this.b).f.setVisibility(8);
                 break;
             case 23:
                 ((org.telegram.ui.yx) this.b).s();
@@ -187,45 +187,45 @@ public final /* synthetic */ class ec0 implements Runnable {
                 ((q70) this.b).s();
                 break;
             case 25:
-                ((lo0) this.b).getClass();
+                ((ko0) this.b).getClass();
                 break;
             case 26:
-                org.telegram.ui.Cells.t1 t1Var = ((no0) this.b).n;
+                org.telegram.ui.Cells.t1 t1Var = ((mo0) this.b).n;
                 if (t1Var != null) {
                     t1Var.invalidate();
                     break;
                 }
                 break;
             case 27:
-                po0 po0Var = (po0) this.b;
-                po0Var.q = false;
-                po0Var.b.run();
+                oo0 oo0Var = (oo0) this.b;
+                oo0Var.q = false;
+                oo0Var.b.run();
                 break;
             case 28:
-                ((mq0) ((eh.c) this.b).b).a1(1);
+                ((lq0) ((eh.c) this.b).b).a1(1);
                 break;
             default:
-                rq0 rq0Var = (rq0) this.b;
-                pq0[] pq0VarArr = rq0Var.a;
-                if (rq0Var.b != 1) {
-                    for (pq0 pq0Var : pq0VarArr) {
-                        org.telegram.ui.ActionBar.l5 l5Var = pq0Var.d;
+                qq0 qq0Var = (qq0) this.b;
+                oq0[] oq0VarArr = qq0Var.a;
+                if (qq0Var.b != 1) {
+                    for (oq0 oq0Var : oq0VarArr) {
+                        org.telegram.ui.ActionBar.l5 l5Var = oq0Var.d;
                         l5Var.setAlpha(1.0f);
                         l5Var.setScaleX(1.0f);
                         l5Var.setScaleY(1.0f);
-                        pq0Var.e.setAlpha(0.0f);
+                        oq0Var.e.setAlpha(0.0f);
                     }
-                    rq0Var.B = false;
-                    AndroidUtilities.runOnUIThread(rq0Var.D, 4000L);
+                    qq0Var.B = false;
+                    AndroidUtilities.runOnUIThread(qq0Var.D, 4000L);
                     break;
                 } else {
-                    rq0Var.B = !rq0Var.B;
-                    for (pq0 pq0Var2 : pq0VarArr) {
-                        org.telegram.ui.ActionBar.l5 l5Var2 = pq0Var2.d;
-                        org.telegram.ui.ActionBar.l5 l5Var3 = pq0Var2.e;
+                    qq0Var.B = !qq0Var.B;
+                    for (oq0 oq0Var2 : oq0VarArr) {
+                        org.telegram.ui.ActionBar.l5 l5Var2 = oq0Var2.d;
+                        org.telegram.ui.ActionBar.l5 l5Var3 = oq0Var2.e;
                         l5Var2.setPivotX(0.0f);
                         l5Var3.setPivotX(0.0f);
-                        if (rq0Var.B) {
+                        if (qq0Var.B) {
                             l5Var2.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
                             l5Var3.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(150L).start();
                         } else {
@@ -233,7 +233,7 @@ public final /* synthetic */ class ec0 implements Runnable {
                             l5Var3.animate().alpha(0.0f).scaleX(0.98f).scaleY(0.98f).setDuration(150L).start();
                         }
                     }
-                    AndroidUtilities.runOnUIThread(rq0Var.D, 4000L);
+                    AndroidUtilities.runOnUIThread(qq0Var.D, 4000L);
                     break;
                 }
         }

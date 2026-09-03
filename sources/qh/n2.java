@@ -1,16 +1,17 @@
 package qh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+import android.graphics.Rect;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class n2 extends f2.v {
-    public final /* synthetic */ a3 c;
-
-    public n2(a3 a3Var) {
-        this.c = a3Var;
-    }
-
-    @Override // f2.v
-    public final int i(int i10) {
-        return (i10 == 0 || i10 == 1 || i10 == this.c.f.h() - 1) ? 3 : 1;
+public final class n2 extends f2.v0 {
+    @Override // f2.v0
+    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.j1 j1Var) {
+        int dp = AndroidUtilities.dp(5.0f);
+        rect.right = dp;
+        rect.bottom = dp;
     }
 }

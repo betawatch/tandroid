@@ -30,9 +30,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.ba;
 import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.jv0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class c1 {
     public final Bitmap A;
@@ -52,7 +52,7 @@ public final class c1 {
     public r1 c;
     public r1 d;
     public o1 f;
-    public final kv0 g;
+    public final jv0 g;
     public RectF h;
     public m i;
     public f2 k;
@@ -75,13 +75,13 @@ public final class c1 {
     public boolean G = false;
     public final h1 e = new h1();
 
-    public c1(kv0 kv0Var, Bitmap bitmap, int i10, ba baVar) {
+    public c1(jv0 jv0Var, Bitmap bitmap, int i10, ba baVar) {
         this.F = baVar;
-        this.g = kv0Var;
+        this.g = jv0Var;
         this.A = bitmap;
         this.B = i10;
-        this.u = ByteBuffer.allocateDirect(((int) kv0Var.a) * ((int) kv0Var.b) * 4);
-        this.x = z6.b(kv0Var.a, kv0Var.b);
+        this.u = ByteBuffer.allocateDirect(((int) jv0Var.a) * ((int) jv0Var.b) * 4);
+        this.x = z6.b(jv0Var.a, jv0Var.b);
         if (this.m == null) {
             ByteBuffer allocateDirect = ByteBuffer.allocateDirect(32);
             this.m = allocateDirect;
@@ -89,12 +89,12 @@ public final class c1 {
         }
         this.m.putFloat(0.0f);
         this.m.putFloat(0.0f);
-        this.m.putFloat(kv0Var.a);
+        this.m.putFloat(jv0Var.a);
         this.m.putFloat(0.0f);
         this.m.putFloat(0.0f);
-        this.m.putFloat(kv0Var.b);
-        this.m.putFloat(kv0Var.a);
-        this.m.putFloat(kv0Var.b);
+        this.m.putFloat(jv0Var.b);
+        this.m.putFloat(jv0Var.a);
+        this.m.putFloat(jv0Var.b);
         this.m.rewind();
         if (this.n == null) {
             ByteBuffer allocateDirect2 = ByteBuffer.allocateDirect(32);
@@ -172,8 +172,8 @@ public final class c1 {
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, g(), 0);
         b7.a();
         if (GLES20.glCheckFramebufferStatus(36160) == 36053) {
-            kv0 kv0Var = this.g;
-            GLES20.glViewport(0, 0, (int) kv0Var.a, (int) kv0Var.b);
+            jv0 jv0Var = this.g;
+            GLES20.glViewport(0, 0, (int) jv0Var.a, (int) jv0Var.b);
             GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
             GLES20.glClear(16384);
         }
@@ -246,8 +246,8 @@ public final class c1 {
                 mVar2 = new d();
             }
             GLES20.glFramebufferTexture2D(36160, 36064, 3553, j10, 0);
-            kv0 kv0Var = this.g;
-            GLES20.glViewport(0, 0, (int) kv0Var.a, (int) kv0Var.b);
+            jv0 jv0Var = this.g;
+            GLES20.glViewport(0, 0, (int) jv0Var.a, (int) jv0Var.b);
             p1 p1Var = (p1) this.r.get(mVar2.i(1));
             if (p1Var == null) {
                 return null;
@@ -325,8 +325,8 @@ public final class c1 {
         this.s++;
         GLES20.glBindFramebuffer(36160, i());
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, j(), 0);
-        kv0 kv0Var = this.g;
-        GLES20.glViewport(0, 0, (int) kv0Var.a, (int) kv0Var.b);
+        jv0 jv0Var = this.g;
+        GLES20.glViewport(0, 0, (int) jv0Var.a, (int) jv0Var.b);
         p1 p1Var = (p1) this.r.get(mVar.i(1));
         if (p1Var == null) {
             return null;
@@ -348,7 +348,7 @@ public final class c1 {
         }
         if (mVar instanceof l) {
             GLES20.glUniform1i(p1Var.d(TeXSymbolParser.TYPE_ATTR), r1Var.a.o());
-            GLES20.glUniform2f(p1Var.d("resolution"), kv0Var.a, kv0Var.b);
+            GLES20.glUniform2f(p1Var.d("resolution"), jv0Var.a, jv0Var.b);
             GLES20.glUniform2f(p1Var.d("center"), r1Var.b, r1Var.c);
             GLES20.glUniform2f(p1Var.d("radius"), r1Var.d, r1Var.e);
             GLES20.glUniform1f(p1Var.d("thickness"), r1Var.f);
@@ -391,8 +391,8 @@ public final class c1 {
     }
 
     public final RectF f() {
-        kv0 kv0Var = this.g;
-        return new RectF(0.0f, 0.0f, kv0Var.a, kv0Var.b);
+        jv0 jv0Var = this.g;
+        return new RectF(0.0f, 0.0f, jv0Var.a, jv0Var.b);
     }
 
     public final int g() {
@@ -423,8 +423,8 @@ public final class c1 {
         GLES20.glTexParameteri(3553, 10240, 9728);
         GLES20.glTexImage2D(3553, 0, 6408, width, height, 0, 6408, 5121, null);
         GLES20.glFramebufferTexture2D(36160, 36064, 3553, i13, 0);
-        kv0 kv0Var = this.g;
-        GLES20.glViewport(0, 0, (int) kv0Var.a, (int) kv0Var.b);
+        jv0 jv0Var = this.g;
+        GLES20.glViewport(0, 0, (int) jv0Var.a, (int) jv0Var.b);
         Map map = this.r;
         Object obj = null;
         if (map != null) {
@@ -559,8 +559,8 @@ public final class c1 {
         b7.a();
         RectF rectF2 = null;
         if (GLES20.glCheckFramebufferStatus(36160) == 36053) {
-            kv0 kv0Var = this.g;
-            GLES20.glViewport(0, 0, (int) kv0Var.a, (int) kv0Var.b);
+            jv0 jv0Var = this.g;
+            GLES20.glViewport(0, 0, (int) jv0Var.a, (int) jv0Var.b);
             if (z4) {
                 GLES20.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
                 GLES20.glClear(16384);
@@ -943,8 +943,8 @@ public final class c1 {
         if (mVar instanceof l) {
             GLES20.glUniform1i(p1Var.d(TeXSymbolParser.TYPE_ATTR), ((l) mVar).o());
             int d = p1Var.d("resolution");
-            kv0 kv0Var = this.g;
-            GLES20.glUniform2f(d, kv0Var.a, kv0Var.b);
+            jv0 jv0Var = this.g;
+            GLES20.glUniform2f(d, jv0Var.a, jv0Var.b);
             GLES20.glUniform2f(p1Var.d("center"), r1Var.b, r1Var.c);
             GLES20.glUniform2f(p1Var.d("radius"), r1Var.d, r1Var.e);
             GLES20.glUniform1f(p1Var.d("thickness"), r1Var.f);

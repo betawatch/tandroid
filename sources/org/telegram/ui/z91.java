@@ -1,38 +1,40 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class z91 implements hq {
-    public final /* synthetic */ TLRPC.TL_chatChannelParticipant a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean[] c;
+public final class z91 {
+    public boolean a;
+    public String b;
+    public long c;
+    public xf.b d;
+    public xf.b e;
+    public String f;
+    public String g;
+    public boolean h;
+    public final int i;
+    public final String j;
+    public boolean k;
+    public boolean l;
+    public boolean m;
+    public boolean n;
+    public boolean o;
 
-    public z91(TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant, boolean z4, boolean[] zArr) {
-        this.a = tL_chatChannelParticipant;
-        this.b = z4;
-        this.c = zArr;
+    public z91(String str, int i10) {
+        this.j = str;
+        this.i = i10;
     }
 
-    @Override // org.telegram.ui.hq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = this.a;
-        if (i10 == 0) {
-            TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
-            channelParticipant.admin_rights = null;
-            channelParticipant.rank = "";
-        } else {
-            TLRPC.ChannelParticipant channelParticipant2 = tL_chatChannelParticipant.channelParticipant;
-            channelParticipant2.admin_rights = tL_chatAdminRights;
-            channelParticipant2.rank = str;
-            if (this.b) {
-                this.c[0] = true;
-            }
+    public final void a(int i10, int i11, int i12, Utilities.Callback0Return callback0Return) {
+        if (this.k) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.hq
-    public final void a(TLRPC.User user) {
+        this.k = true;
+        TL_stats.TL_loadAsyncGraph tL_loadAsyncGraph = new TL_stats.TL_loadAsyncGraph();
+        tL_loadAsyncGraph.token = this.f;
+        ConnectionsManager.getInstance(i10).bindRequestToGuid(ConnectionsManager.getInstance(i10).sendRequest(tL_loadAsyncGraph, new tb0(24, this, callback0Return), null, null, 0, i12, 1, true), i11);
     }
 }

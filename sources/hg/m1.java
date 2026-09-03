@@ -15,12 +15,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.z8;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ib1;
+import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class m1 extends fg.d2 {
     public final ArrayList N0;
@@ -38,9 +38,9 @@ public final class m1 extends fg.d2 {
         aVar.setOnClickListener(new androidx.mediarouter.app.c(this, 8));
         aVar.setCloseStyle(true);
         this.containerView.addView(aVar, c6.d(-1, 64.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i11 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f));
+        sl0Var.setPadding(i11, 0, i11, AndroidUtilities.dp(64.0f));
         Context context = getContext();
         int i12 = l1.f;
         FrameLayout frameLayout = new FrameLayout(context);
@@ -105,10 +105,10 @@ public final class m1 extends fg.d2 {
     }
 
     @Override // fg.d2
-    public final void W(ib1 ib1Var) {
+    public final void W(ob1 ob1Var) {
         View view = this.y0;
         ArrayList arrayList = this.N0;
-        ib1Var.addView(view, c6.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
+        ob1Var.addView(view, c6.k(0.0f, arrayList.size() == 1 ? 28.0f : 34.0f, 0.0f, arrayList.size() == 1 ? 9.0f : 14.0f, -1, arrayList.size() == 1 ? 94 : 83));
     }
 
     @Override // fg.d2

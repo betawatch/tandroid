@@ -2,7 +2,7 @@ package oh;
 
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
@@ -21,9 +21,9 @@ public final /* synthetic */ class d implements Runnable {
                 break;
             case 1:
                 p pVar = this.b;
-                qh.f3 f3Var = pVar.G;
-                if (f3Var != null) {
-                    f3Var.e(true);
+                qh.e3 e3Var = pVar.G;
+                if (e3Var != null) {
+                    e3Var.e(true);
                 }
                 pVar.b0.presentFragment(new PremiumPreviewFragment(0, "stories"));
                 break;

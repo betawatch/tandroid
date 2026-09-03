@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class g60 {
     public static void a(org.telegram.ui.ActionBar.d2 d2Var, af.f fVar, TLObject tLObject, final int i10, Context context, TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug, TLRPC.TL_error tL_error) {
@@ -106,7 +106,7 @@ public abstract class g60 {
         org.telegram.ui.Components.g90 a10 = k7.g6.a(context, 14.0f, i12, false, bVar);
         a10.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.GroupCallLinkText)));
         a10.setGravity(17);
-        a10.setMaxWidth(qh.f3.a(a10.getText(), a10.getPaint()));
+        a10.setMaxWidth(qh.e3.a(a10.getText(), a10.getPaint()));
         f11.addView(a10, k7.c6.t(-1, -2, 1, 2, 0, 2, 23));
         if (isEmpty) {
             f10 = 8.0f;
@@ -134,7 +134,7 @@ public abstract class g60 {
             } else {
                 a11.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("GroupCallLinkText2Many", arrayList.size() - 2, DialogObject.getShortName(i10, ((Long) list.get(0)).longValue()), DialogObject.getShortName(i10, ((Long) list.get(1)).longValue()))));
             }
-            a11.setMaxWidth(qh.f3.a(a11.getText(), a11.getPaint()));
+            a11.setMaxWidth(qh.e3.a(a11.getText(), a11.getPaint()));
             f11.addView(a11, k7.c6.t(-1, -2, 1, 2, 0, 2, 25));
         }
         LinearLayout linearLayout = new LinearLayout(context);

@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y80 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final /* synthetic */ class y80 implements Runnable {
                 break;
             case 3:
                 if (!launchActivity.n0.getFragmentStack().isEmpty()) {
-                    launchActivity.n0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.yx0(launchActivity, launchActivity.g0, launchActivity.e0, launchActivity.f0));
+                    launchActivity.n0.getFragmentStack().get(0).showDialog(new org.telegram.ui.Components.xx0(launchActivity, launchActivity.g0, launchActivity.e0, launchActivity.f0));
                     break;
                 }
                 break;
@@ -80,7 +80,7 @@ public final /* synthetic */ class y80 implements Runnable {
                 } else if (!arrayList.isEmpty()) {
                     p2Var = (org.telegram.ui.ActionBar.p2) l.d.i(1, arrayList);
                 }
-                if (!(p2Var instanceof ProxyListActivity) && !(p2Var instanceof z11)) {
+                if (!(p2Var instanceof ProxyListActivity) && !(p2Var instanceof d21)) {
                     launchActivity.p0(new ProxyListActivity());
                     break;
                 }
@@ -104,7 +104,7 @@ public final /* synthetic */ class y80 implements Runnable {
                     TLRPC.TL_theme tL_theme = launchActivity.Q0;
                     org.telegram.ui.ActionBar.j6 u10 = org.telegram.ui.ActionBar.k6.u(file, tL_theme.title, tL_theme, true);
                     if (u10 != null) {
-                        launchActivity.p0(new ed1(u10, true, 0, false, false));
+                        launchActivity.p0(new jd1(u10, true, 0, false, false));
                     }
                     launchActivity.h0();
                     break;

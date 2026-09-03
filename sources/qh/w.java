@@ -14,7 +14,7 @@ import org.telegram.ui.Components.lc0;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.sj0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w implements Runnable {
     public final /* synthetic */ int a;
@@ -77,13 +77,13 @@ public final /* synthetic */ class w implements Runnable {
                         frameLayout.addView(textView, k7.c6.d(-1, -2.0f, 23, 47.0f, 8.0f, 24.0f, 8.0f));
                         q70 F = q70.F(yVar.a, yVar.b, yVar);
                         if (yVar.g0.n.K) {
-                            m6 m6Var = new m6(yVar.getContext(), 0);
-                            m6Var.b = 0.0f;
-                            m6Var.c = 1.5f;
-                            m6Var.d(yVar.g0.n.P);
-                            m6Var.h = new org.telegram.ui.web.d1(yVar, 4);
-                            m6Var.O = AndroidUtilities.dp(220.0f);
-                            F.q(m6Var);
+                            k6 k6Var = new k6(yVar.getContext(), 0);
+                            k6Var.b = 0.0f;
+                            k6Var.c = 1.5f;
+                            k6Var.d(yVar.g0.n.P);
+                            k6Var.h = new org.telegram.ui.web.d1(yVar, 4);
+                            k6Var.O = AndroidUtilities.dp(220.0f);
+                            F.q(k6Var);
                             F.o();
                         }
                         F.T = 220;
@@ -129,8 +129,8 @@ public final /* synthetic */ class w implements Runnable {
                 if (mainPart == null) {
                     j10 = 0;
                 } else {
-                    s6 s6Var = mainPart.n;
-                    j10 = s6Var.X + ((long) (s6Var.V * s6Var.h0));
+                    r6 r6Var = mainPart.n;
+                    j10 = r6Var.X + ((long) (r6Var.V * r6Var.h0));
                 }
                 for (int i10 = 0; i10 < yVar3.h.size(); i10++) {
                     x xVar4 = (x) yVar3.h.get(i10);
@@ -139,13 +139,13 @@ public final /* synthetic */ class w implements Runnable {
                         long clamp2 = Utilities.clamp((position + j10) - xVar4.n.X, duration, 0L);
                         if (!yVar3.k0 || yVar3.n0) {
                             float f11 = clamp2;
-                            s6 s6Var2 = xVar4.n;
+                            r6 r6Var2 = xVar4.n;
                             float f12 = duration;
-                            if (f11 > s6Var2.V * f12 && f11 < s6Var2.W * f12) {
+                            if (f11 > r6Var2.V * f12 && f11 < r6Var2.W * f12) {
                                 z4 = true;
-                                s6 s6Var3 = xVar4.n;
+                                r6 r6Var3 = xVar4.n;
                                 float f13 = duration;
-                                clamp = Utilities.clamp(clamp2, (long) (s6Var3.W * f13), (long) (s6Var3.V * f13));
+                                clamp = Utilities.clamp(clamp2, (long) (r6Var3.W * f13), (long) (r6Var3.V * f13));
                                 if (xVar4.d.isPlaying() != z4) {
                                     if (z4) {
                                         xVar4.d.play();
@@ -155,9 +155,9 @@ public final /* synthetic */ class w implements Runnable {
                                 }
                                 fg.s2 s2Var5 = xVar4.d;
                                 if (!yVar3.s0) {
-                                    s6 s6Var4 = xVar4.n;
-                                    if (!s6Var4.Y && yVar3.k0) {
-                                        f10 = s6Var4.P;
+                                    r6 r6Var4 = xVar4.n;
+                                    if (!r6Var4.Y && yVar3.k0) {
+                                        f10 = r6Var4.P;
                                         s2Var5.setVolume(f10);
                                         if (Math.abs((xVar4.g >= 0 ? xVar4.g : xVar4.d.getCurrentPosition()) - clamp) <= 450 && xVar4.g < 0) {
                                             fg.s2 s2Var6 = xVar4.d;
@@ -176,9 +176,9 @@ public final /* synthetic */ class w implements Runnable {
                             }
                         }
                         z4 = false;
-                        s6 s6Var32 = xVar4.n;
+                        r6 r6Var32 = xVar4.n;
                         float f132 = duration;
-                        clamp = Utilities.clamp(clamp2, (long) (s6Var32.W * f132), (long) (s6Var32.V * f132));
+                        clamp = Utilities.clamp(clamp2, (long) (r6Var32.W * f132), (long) (r6Var32.V * f132));
                         if (xVar4.d.isPlaying() != z4) {
                         }
                         fg.s2 s2Var52 = xVar4.d;
@@ -190,13 +190,13 @@ public final /* synthetic */ class w implements Runnable {
                         }
                     }
                 }
-                ma maVar = yVar3.o0;
-                if (maVar != null) {
-                    maVar.setProgress(position);
+                la laVar = yVar3.o0;
+                if (laVar != null) {
+                    laVar.setProgress(position);
                 }
-                j5 j5Var = yVar3.p0;
-                if (j5Var != null) {
-                    j5Var.w(true);
+                i5 i5Var = yVar3.p0;
+                if (i5Var != null) {
+                    i5Var.w(true);
                     yVar3.p0.y(true);
                 }
                 if (yVar3.k0 && yVar3.n0) {
@@ -254,21 +254,21 @@ public final /* synthetic */ class w implements Runnable {
                     if (runnable3 != null) {
                         runnable3.run();
                     }
-                    ca caVar = ((p9) yVar5).v0;
-                    caVar.F0.a(false, true);
+                    ba baVar = ((o9) yVar5).v0;
+                    baVar.F0.a(false, true);
                     if (rVar.e.size() > 1) {
-                        v vVar = caVar.D0;
-                        caVar.w0 = rVar;
+                        v vVar = baVar.D0;
+                        baVar.w0 = rVar;
                         vVar.a(new lc0(rVar, false), true);
-                        caVar.D0.b(true, true);
+                        baVar.D0.b(true, true);
                     } else {
-                        caVar.D0.b(false, true);
+                        baVar.D0.b(false, true);
                     }
-                    caVar.m0(true);
-                    c9 c9Var = caVar.J0;
-                    if (c9Var != null) {
-                        c9Var.setMultipleOnClick(caVar.x0.j());
-                        caVar.J0.setMaxCount(Math.min(10, r.b() - caVar.x0.getFilledCount()));
+                    baVar.m0(true);
+                    b9 b9Var = baVar.J0;
+                    if (b9Var != null) {
+                        b9Var.setMultipleOnClick(baVar.x0.j());
+                        baVar.J0.setMaxCount(Math.min(10, r.b() - baVar.x0.getFilledCount()));
                         break;
                     }
                 }

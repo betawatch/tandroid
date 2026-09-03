@@ -15,10 +15,10 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.aa1;
-import org.telegram.ui.ea1;
+import org.telegram.ui.ga1;
+import org.telegram.ui.ka1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class a8 extends FrameLayout {
     public final y7 a;
@@ -31,7 +31,7 @@ public abstract class a8 extends FrameLayout {
     public final org.telegram.ui.Components.z8 n;
     public final oh.i7 r;
     public final org.telegram.ui.ActionBar.g6 s;
-    public ea1 v;
+    public ka1 v;
     public final TLRPC.ChatFull w;
     public boolean x;
 
@@ -146,7 +146,7 @@ public abstract class a8 extends FrameLayout {
         return this.a;
     }
 
-    public ea1 getPostInfo() {
+    public ka1 getPostInfo() {
         return this.v;
     }
 
@@ -160,16 +160,16 @@ public abstract class a8 extends FrameLayout {
         this.r.g();
     }
 
-    public void setData(aa1 aa1Var) {
-        TLRPC.User user = aa1Var.a;
+    public void setData(ga1 ga1Var) {
+        TLRPC.User user = ga1Var.a;
         org.telegram.ui.Components.z8 z8Var = this.n;
         z8Var.r(user);
-        TLRPC.User user2 = aa1Var.a;
+        TLRPC.User user2 = ga1Var.a;
         y7 y7Var = this.a;
         y7Var.e(user2, z8Var);
         y7Var.setRoundRadius(AndroidUtilities.dp(46.0f) >> 1);
-        this.b.k(aa1Var.a.first_name);
-        this.e.setText(aa1Var.b);
+        this.b.k(ga1Var.a.first_name);
+        this.e.setText(ga1Var.b);
         this.c.setVisibility(8);
         this.d.setVisibility(8);
         this.f.setVisibility(8);

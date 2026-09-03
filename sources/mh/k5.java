@@ -5,7 +5,7 @@ import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.ui.n50;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class k5 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -55,33 +55,33 @@ public final class k5 extends AnimatorListenerAdapter {
                 }
                 break;
             case 3:
-                qh.d2 d2Var = (qh.d2) obj;
-                d2Var.h = f10;
-                d2Var.i();
+                qh.c2 c2Var = (qh.c2) obj;
+                c2Var.h = f10;
+                c2Var.i();
                 if (runnable != null) {
                     runnable.run();
                     break;
                 }
                 break;
             default:
-                qh.ca caVar = (qh.ca) obj;
-                caVar.I = null;
-                caVar.F = f10;
-                caVar.k();
-                caVar.r.invalidate();
-                caVar.n.invalidate();
+                qh.ba baVar = (qh.ba) obj;
+                baVar.I = null;
+                baVar.F = f10;
+                baVar.k();
+                baVar.r.invalidate();
+                baVar.n.invalidate();
                 runnable.run();
-                caVar.M.unlock();
+                baVar.M.unlock();
                 NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
                 NotificationCenter.getGlobalInstance().runDelayedNotifications();
-                caVar.o();
-                Runnable runnable2 = caVar.N;
+                baVar.o();
+                Runnable runnable2 = baVar.N;
                 if (runnable2 != null) {
                     runnable2.run();
-                    caVar.N = null;
+                    baVar.N = null;
                 }
-                caVar.r.invalidate();
-                caVar.e0.invalidate();
+                baVar.r.invalidate();
+                baVar.e0.invalidate();
                 break;
         }
     }

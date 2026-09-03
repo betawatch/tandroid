@@ -56,14 +56,14 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.b11;
+import org.telegram.ui.Components.a11;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.z5;
-import org.telegram.ui.uq0;
-import qh.s6;
+import org.telegram.ui.zq0;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class o3 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int o0 = 0;
@@ -81,7 +81,7 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
     public float M;
     public float N;
     public float O;
-    public b11 P;
+    public a11 P;
     public int Q;
     public int R;
     public boolean S;
@@ -2743,14 +2743,14 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
         return this.F;
     }
 
-    public b11 getThanosEffect() {
-        if (!b11.c()) {
+    public a11 getThanosEffect() {
+        if (!a11.c()) {
             return null;
         }
         if (this.P == null) {
-            b11 b11Var = new b11(getContext(), new c3(this, 1));
-            this.P = b11Var;
-            addView(b11Var, c6.c(-1.0f, -1));
+            a11 a11Var = new a11(getContext(), new c3(this, 1));
+            this.P = a11Var;
+            addView(a11Var, c6.c(-1.0f, -1));
         }
         return this.P;
     }
@@ -2825,7 +2825,7 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
         }
     }
 
-    public final void m(Bitmap bitmap, int i10, int i11, int i12, uq0 uq0Var) {
+    public final void m(Bitmap bitmap, int i10, int i11, int i12, zq0 zq0Var) {
         ib.c cVar;
         int i13 = i11 <= 0 ? AndroidUtilities.displaySize.x : i11;
         int i14 = i12 <= 0 ? AndroidUtilities.displaySize.y : i12;
@@ -2837,7 +2837,7 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
         this.F = bitmap;
         this.G = i10;
         this.W = null;
-        h3 h3Var = new h3(this, i10, uq0Var, 0);
+        h3 h3Var = new h3(this, i10, zq0Var, 0);
         this.x = true;
         mb.d dVar = new mb.d();
         dVar.b = true;
@@ -2859,7 +2859,7 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
             return;
         }
         hb.a a10 = hb.a.a(bitmap, i10);
-        a2.g(a10).addOnSuccessListener(new a1.c(h3Var, 22)).addOnFailureListener(new j3(this, bitmap, i10, uq0Var, h3Var, 0));
+        a2.g(a10).addOnSuccessListener(new a1.c(h3Var, 22)).addOnFailureListener(new j3(this, bitmap, i10, zq0Var, h3Var, 0));
         if (this.W == null) {
             kb.b bVar = kb.b.b;
             b6.m.i(bVar, "options cannot be null");
@@ -3035,7 +3035,7 @@ public final class o3 extends FrameLayout implements NotificationCenter.Notifica
                         TLRPC.TL_message tL_message = new TLRPC.TL_message();
                         tL_message.id = 1;
                         m3 m3Var6 = o3Var.T;
-                        String absolutePath = s6.w(UserConfig.selectedAccount, "webm").getAbsolutePath();
+                        String absolutePath = r6.w(UserConfig.selectedAccount, "webm").getAbsolutePath();
                         tL_message.attachPath = absolutePath;
                         m3Var6.b = absolutePath;
                         o3Var.T.r = new MessageObject(UserConfig.selectedAccount, (TLRPC.Message) tL_message, (MessageObject) null, false, false);

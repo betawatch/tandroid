@@ -5,9 +5,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.ka;
-import org.telegram.ui.rw0;
+import org.telegram.ui.ww0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class j1 implements m2.f {
     public final /* synthetic */ ka a;
@@ -22,16 +22,16 @@ public final class j1 implements m2.f {
     public final void a(int i10) {
         n1 n1Var = this.b;
         ArrayList arrayList = n1Var.d;
-        if (((rw0) arrayList.get(i10)).a == 0) {
+        if (((ww0) arrayList.get(i10)).a == 0) {
             n1Var.K.setTitle(LocaleController.getString(R.string.DoubledLimits));
             n1Var.K.requestLayout();
-        } else if (((rw0) arrayList.get(i10)).a == 14) {
+        } else if (((ww0) arrayList.get(i10)).a == 14) {
             n1Var.K.setTitle(LocaleController.getString(R.string.UpgradedStories));
             n1Var.K.requestLayout();
-        } else if (((rw0) arrayList.get(i10)).a == 40) {
+        } else if (((ww0) arrayList.get(i10)).a == 40) {
             n1Var.K.setTitle(LocaleController.getString(R.string.FeaturePreviewGifts));
             n1Var.K.requestLayout();
-        } else if (((rw0) arrayList.get(i10)).a == 28) {
+        } else if (((ww0) arrayList.get(i10)).a == 28) {
             n1Var.K.setTitle(LocaleController.getString(R.string.TelegramBusiness));
             n1Var.K.requestLayout();
         }
@@ -85,9 +85,9 @@ public final class j1 implements m2.f {
             i12++;
         }
         int i14 = n1Var.D;
-        boolean z4 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((rw0) arrayList.get(n1Var.D)).a) == 0 || i11 == 14 || i11 == 28);
+        boolean z4 = i14 >= 0 && i14 < arrayList.size() && ((i11 = ((ww0) arrayList.get(n1Var.D)).a) == 0 || i11 == 14 || i11 == 28);
         int i15 = n1Var.E;
-        boolean z10 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((rw0) arrayList.get(n1Var.E)).a) == 0 || i10 == 14 || i10 == 28);
+        boolean z10 = i15 >= 0 && i15 < arrayList.size() && ((i10 = ((ww0) arrayList.get(n1Var.E)).a) == 0 || i10 == 14 || i10 == 28);
         if (z4 && z10) {
             n1Var.f = 1.0f;
             float f11 = n1Var.F;

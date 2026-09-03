@@ -14,9 +14,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class vx extends au0 {
+public final class vx extends fu0 {
     public final /* synthetic */ boolean[] a;
     public final /* synthetic */ py b;
 
@@ -25,7 +25,7 @@ public final class vx extends au0 {
         this.a = zArr;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final CharSequence C(int i10) {
         py pyVar = this.b;
         if (i10 < 0 || i10 >= pyVar.A2.size() || !((MediaController.PhotoEntry) pyVar.A2.get(i10)).isVideo) {
@@ -34,40 +34,40 @@ public final class vx extends au0 {
         return null;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void D() {
         int i10;
         py pyVar = this.b;
-        org.telegram.ui.Components.rq0 rq0Var = pyVar.D2;
-        if (rq0Var != null) {
+        org.telegram.ui.Components.qq0 qq0Var = pyVar.D2;
+        if (qq0Var != null) {
             i10 = ((org.telegram.ui.ActionBar.p2) pyVar).currentAccount;
-            rq0Var.i(i10, pyVar.A2);
+            qq0Var.i(i10, pyVar.A2);
         }
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
-    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
         py pyVar = this.b;
-        org.telegram.ui.Components.rq0 rq0Var = pyVar.D2;
-        org.telegram.ui.Components.p9 f10 = rq0Var != null ? rq0Var.f(i10) : null;
+        org.telegram.ui.Components.qq0 qq0Var = pyVar.D2;
+        org.telegram.ui.Components.p9 f10 = qq0Var != null ? qq0Var.f(i10) : null;
         if (f10 == null) {
             return null;
         }
         int[] iArr = new int[2];
         f10.getLocationInWindow(iArr);
-        lu0 lu0Var = new lu0();
-        lu0Var.b = iArr[0];
-        lu0Var.c = iArr[1];
-        lu0Var.d = pyVar.D2;
+        qu0 qu0Var = new qu0();
+        qu0Var.b = iArr[0];
+        qu0Var.c = iArr[1];
+        qu0Var.d = pyVar.D2;
         ImageReceiver imageReceiver = f10.getImageReceiver();
-        lu0Var.a = imageReceiver;
-        lu0Var.e = imageReceiver.getBitmapSafe();
-        lu0Var.k = f10.getScaleX();
-        lu0Var.h = new int[]{AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f)};
-        return lu0Var;
+        qu0Var.a = imageReceiver;
+        qu0Var.e = imageReceiver.getBitmapSafe();
+        qu0Var.k = f10.getScaleX();
+        qu0Var.h = new int[]{AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f)};
+        return qu0Var;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final long a() {
         py pyVar = this.b;
         if (pyVar.F2.isEmpty()) {
@@ -76,7 +76,7 @@ public final class vx extends au0 {
         return ((Long) pyVar.F2.get(0)).longValue();
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean b() {
         py pyVar = this.b;
         if (pyVar.F2.isEmpty()) {
@@ -96,7 +96,7 @@ public final class vx extends au0 {
         return true;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final CharSequence b0(int i10) {
         py pyVar = this.b;
         ArrayList arrayList = pyVar.A2;
@@ -124,7 +124,7 @@ public final class vx extends au0 {
         return i11 == 0 ? LocaleController.formatPluralString("ShareSendPhotos", size, new Object[0]) : i12 == 0 ? LocaleController.formatPluralString("ShareSendVideos", size, new Object[0]) : LocaleController.formatPluralString("ShareSendItems", size, new Object[0]);
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void e(CharSequence charSequence) {
         py pyVar = this.b;
         ax axVar = pyVar.y1;
@@ -143,7 +143,7 @@ public final class vx extends au0 {
         }
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean h() {
         TLRPC.User user;
         py pyVar = this.b;
@@ -165,17 +165,17 @@ public final class vx extends au0 {
         return true;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final ImageReceiver.BitmapHolder j(int i10) {
-        org.telegram.ui.Components.rq0 rq0Var = this.b.D2;
-        org.telegram.ui.Components.p9 f10 = rq0Var != null ? rq0Var.f(i10) : null;
+        org.telegram.ui.Components.qq0 qq0Var = this.b.D2;
+        org.telegram.ui.Components.p9 f10 = qq0Var != null ? qq0Var.f(i10) : null;
         if (f10 != null) {
             return f10.getImageReceiver().getBitmapSafe();
         }
         return null;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
         int i13;
         ArrayList arrayList;
@@ -190,10 +190,10 @@ public final class vx extends au0 {
             }
             axVar.setFieldText(charSequence);
         }
-        org.telegram.ui.Components.rq0 rq0Var = pyVar.D2;
-        if (rq0Var != null) {
+        org.telegram.ui.Components.qq0 qq0Var = pyVar.D2;
+        if (qq0Var != null) {
             i13 = ((org.telegram.ui.ActionBar.p2) pyVar).currentAccount;
-            rq0Var.i(i13, pyVar.A2);
+            qq0Var.i(i13, pyVar.A2);
         }
         if ((z4 && i11 == 0) || pyVar.z2 == null || arrayList2.isEmpty()) {
             PhotoViewer.t1().G0(true, false);
@@ -209,7 +209,7 @@ public final class vx extends au0 {
         pyVar.z2.v(pyVar, arrayList3, pyVar.y1.getFieldText(), false, z4, i11, i12, null);
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void s() {
         ax axVar;
         org.telegram.ui.Components.bd f12;
@@ -234,12 +234,12 @@ public final class vx extends au0 {
         }
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean x(int i10) {
         return this.a[i10];
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final int k(int i10, VideoEditedInfo videoEditedInfo) {
         return i10;
     }

@@ -22,19 +22,19 @@ import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.DataSettingsActivity;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.d7;
-import org.telegram.ui.ed1;
 import org.telegram.ui.fn0;
 import org.telegram.ui.iu;
+import org.telegram.ui.jd1;
 import org.telegram.ui.lo0;
-import org.telegram.ui.rw0;
+import org.telegram.ui.ww0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class d1 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -70,7 +70,7 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
             case 0:
                 n1 n1Var = (n1) this.c;
                 org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.d;
-                rw0 rw0Var = (rw0) this.e;
+                ww0 ww0Var = (ww0) this.e;
                 if (p2Var instanceof xn) {
                     xn xnVar = (xn) p2Var;
                     xnVar.A7(true);
@@ -95,8 +95,8 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                         }
                         f4 t6 = lastStoryViewer.t();
                         if (t6 != null) {
-                            rk0 rk0Var = t6.c2;
-                            if (rk0Var != null && rk0Var.getReactionsWindow() != null) {
+                            qk0 qk0Var = t6.c2;
+                            if (qk0Var != null && qk0Var.getReactionsWindow() != null) {
                                 t6.c2.getReactionsWindow().d();
                             }
                             x2 x2Var = t6.W2;
@@ -112,8 +112,8 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                     i12++;
                 }
                 if (this.b || n1Var.C) {
-                    PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(rw0Var.a));
-                    if (p2Var instanceof ed1) {
+                    PremiumPreviewFragment premiumPreviewFragment = new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(ww0Var.a));
+                    if (p2Var instanceof jd1) {
                         org.telegram.ui.ActionBar.n2 n2Var = new org.telegram.ui.ActionBar.n2();
                         n2Var.a = true;
                         p2Var.showAsSheet(premiumPreviewFragment, n2Var);
@@ -126,7 +126,7 @@ public final /* synthetic */ class d1 implements View.OnClickListener {
                         }
                     }
                 } else {
-                    PremiumPreviewFragment.k0(p2Var, n1Var.G, PremiumPreviewFragment.l0(rw0Var.a), null);
+                    PremiumPreviewFragment.k0(p2Var, n1Var.G, PremiumPreviewFragment.l0(ww0Var.a), null);
                 }
                 n1Var.dismiss();
                 break;

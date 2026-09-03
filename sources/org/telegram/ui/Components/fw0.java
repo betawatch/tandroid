@@ -1,71 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.animation.TimeAnimator;
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class fw0 extends TimeAnimator {
-    public int a;
-    public int b;
-    public ValueAnimator.AnimatorUpdateListener c;
-    public Float d;
-    public float[] e;
+public final class fw0 extends sa {
+    public rs U;
 
-    @Override // android.animation.ValueAnimator
-    public final void addUpdateListener(ValueAnimator.AnimatorUpdateListener animatorUpdateListener) {
-        this.c = animatorUpdateListener;
+    public fw0(Context context) {
+        super(context, null, true, false, false, 1, null);
+        fixNavigationBar();
+        this.B = true;
+        this.y = true;
+        J();
+        sl0 sl0Var = this.d;
+        int i10 = this.backgroundPaddingLeft;
+        sl0Var.setPadding(i10, 0, i10, 0);
+        this.d.j(new nb0(this, 6));
+        this.d.setOnItemClickListener(new k(this, 14));
     }
 
-    @Override // android.animation.ValueAnimator, android.animation.Animator
-    public final void end() {
-        this.c = null;
-        super.end();
+    public static void P(fw0 fw0Var, int i10) {
+        h51 G = fw0Var.U.G(i10 - 1);
+        Object obj = G != null ? G.G : null;
+        if (obj instanceof TLRPC.User) {
+            MessagesController.getInstance(fw0Var.currentAccount).openApp(fw0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
+        }
     }
 
-    @Override // android.animation.ValueAnimator
-    public final Object getAnimatedValue() {
-        return this.d;
+    @Override // org.telegram.ui.Components.sa
+    public final rl0 v(sl0 sl0Var) {
+        rs rsVar = new rs(sl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
+        this.U = rsVar;
+        rsVar.r = false;
+        return rsVar;
     }
 
-    @Override // android.animation.ValueAnimator
-    public final void setFloatValues(float[] fArr) {
-        super.setFloatValues(fArr);
-        this.e = fArr;
-    }
-
-    @Override // android.animation.TimeAnimator, android.animation.ValueAnimator, android.animation.Animator
-    public final void start() {
-        setTimeListener(new TimeAnimator.TimeListener() { // from class: org.telegram.ui.Components.ew0
-            @Override // android.animation.TimeAnimator.TimeListener
-            public final void onTimeUpdate(TimeAnimator timeAnimator, long j10, long j11) {
-                int i10;
-                fw0 fw0Var = fw0.this;
-                int i11 = fw0Var.a;
-                if (i11 <= 0 || (i10 = fw0Var.b) <= 0) {
-                    fw0Var.end();
-                    return;
-                }
-                int i12 = i11 - 1;
-                fw0Var.a = i12;
-                if (fw0Var.c != null) {
-                    float[] fArr = fw0Var.e;
-                    if (fArr == null || fArr.length != 2) {
-                        fw0Var.end();
-                        return;
-                    }
-                    float interpolation = fw0Var.getInterpolator().getInterpolation(1.0f - (i12 / i10));
-                    float[] fArr2 = fw0Var.e;
-                    float f10 = fArr2[0];
-                    fw0Var.d = Float.valueOf(((fArr2[1] - f10) * interpolation) + f10);
-                    fw0Var.c.onAnimationUpdate(fw0Var);
-                }
-            }
-        });
-        int duration = (int) (getDuration() / AndroidUtilities.screenRefreshTime);
-        this.a = duration;
-        this.b = duration;
-        super.start();
+    @Override // org.telegram.ui.Components.sa
+    public final CharSequence y() {
+        return LocaleController.getString(R.string.SearchAppsExamples);
     }
 }

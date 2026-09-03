@@ -16,25 +16,25 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.z6;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.Components.sl0;
-import org.telegram.ui.bw0;
-import org.telegram.ui.ib1;
-import org.telegram.ui.rw0;
+import org.telegram.ui.Components.in;
+import org.telegram.ui.Components.rl0;
+import org.telegram.ui.gw0;
+import org.telegram.ui.ob1;
+import org.telegram.ui.ww0;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class c2 extends sl0 {
+public final class c2 extends rl0 {
     public final /* synthetic */ d2 c;
 
     public c2(d2 d2Var) {
         this.c = d2Var;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return m1Var.f == 1;
     }
@@ -74,7 +74,7 @@ public final class c2 extends sl0 {
         d2 d2Var = this.c;
         int i11 = d2Var.g0;
         if (i10 >= i11 && i10 < d2Var.h0) {
-            ((bw0) view).a((rw0) d2Var.U.get(i10 - i11), i10 != d2Var.h0 - 1);
+            ((gw0) view).a((ww0) d2Var.U.get(i10 - i11), i10 != d2Var.h0 - 1);
         } else {
             if (i10 < d2Var.e0 || i10 >= d2Var.f0) {
                 return;
@@ -97,9 +97,9 @@ public final class c2 extends sl0 {
             return yh.o(Z, Z, -1, -2);
         }
         if (i10 == 0) {
-            ib1 ib1Var = new ib1(this, context, 1);
-            d2Var.p0 = ib1Var;
-            ib1Var.setOrientation(1);
+            ob1 ob1Var = new ob1(this, context, 1);
+            d2Var.p0 = ob1Var;
+            ob1Var.setOrientation(1);
             View view2 = d2Var.y0;
             if (view2 == null) {
                 d2Var.o0 = new i(context, 1, 0, 1);
@@ -112,12 +112,12 @@ public final class c2 extends sl0 {
                 aVar.w = i11;
                 aVar.x = k6.Lj;
                 aVar.b();
-                ib1Var.addView(d2Var.o0, c6.q(160, 160, 1));
+                ob1Var.addView(d2Var.o0, c6.q(160, 160, 1));
             } else {
                 if (view2.getParent() != null) {
                     ((ViewGroup) d2Var.y0.getParent()).removeView(d2Var.y0);
                 }
-                d2Var.W(ib1Var);
+                d2Var.W(ob1Var);
             }
             if (d2Var.K0 == null) {
                 FrameLayout frameLayout = new FrameLayout(context);
@@ -144,7 +144,7 @@ public final class c2 extends sl0 {
             if (d2Var.K0.getParent() != null) {
                 ((ViewGroup) d2Var.K0.getParent()).removeView(d2Var.K0);
             }
-            ib1Var.addView(d2Var.K0, c6.p(-2, -2, 0.0f, 1, 40, 0, 40, 0));
+            ob1Var.addView(d2Var.K0, c6.p(-2, -2, 0.0f, 1, 40, 0, 40, 0));
             if (d2Var.M0 == null) {
                 Context context2 = d2Var.getContext();
                 g6Var = ((h3) d2Var).resourcesProvider;
@@ -158,13 +158,13 @@ public final class c2 extends sl0 {
             if (d2Var.M0.getParent() != null) {
                 ((ViewGroup) d2Var.M0.getParent()).removeView(d2Var.M0);
             }
-            ib1Var.addView(d2Var.M0, c6.p(-1, -2, 0.0f, 0, 24, 9, 24, 20));
+            ob1Var.addView(d2Var.M0, c6.p(-1, -2, 0.0f, 0, 24, 9, 24, 20));
             d2Var.a0(false);
             d2Var.n0 = new h(context, 1);
             eg.s2 s2Var = new eg.s2(this, context, 5);
             s2Var.setClipChildren(false);
             s2Var.addView(d2Var.n0);
-            s2Var.addView(ib1Var);
+            s2Var.addView(ob1Var);
             i iVar = d2Var.o0;
             view = s2Var;
             if (iVar != null) {
@@ -174,7 +174,7 @@ public final class c2 extends sl0 {
         } else if (i10 == 2) {
             view = new z6(context, d2Var.getThemedColor(k6.a7), 0);
         } else if (i10 == 3) {
-            view = new jn(context, 2);
+            view = new in(context, 2);
         } else if (i10 == 4) {
             view = new a(context);
         } else if (i10 != 5) {
@@ -229,6 +229,6 @@ public final class c2 extends sl0 {
         }
         view.setLayoutParams(new f2.x0(-1, -2));
         d2Var.V(i10, view);
-        return new fl0(view);
+        return new el0(view);
     }
 }

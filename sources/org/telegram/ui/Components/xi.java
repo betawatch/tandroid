@@ -30,7 +30,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class xi extends ei implements NotificationCenter.NotificationCenterDelegate, xd.b {
     public String B;
@@ -218,7 +218,7 @@ public final class xi extends ei implements NotificationCenter.NotificationCente
                         } catch (Exception e6) {
                             FileLog.e(e6);
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(21, xiVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(20, xiVar, arrayList));
                         return;
                 }
             }
@@ -353,7 +353,7 @@ public final class xi extends ei implements NotificationCenter.NotificationCente
                         } catch (Exception e6) {
                             FileLog.e(e6);
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(21, xiVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(20, xiVar, arrayList));
                         return;
                 }
             }
@@ -488,7 +488,7 @@ public final class xi extends ei implements NotificationCenter.NotificationCente
                         } catch (Exception e6) {
                             FileLog.e(e6);
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(21, xiVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(20, xiVar, arrayList));
                         return;
                 }
             }
@@ -628,7 +628,7 @@ public final class xi extends ei implements NotificationCenter.NotificationCente
                         } catch (Exception e6) {
                             FileLog.e(e6);
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(21, xiVar, arrayList));
+                        AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(20, xiVar, arrayList));
                         return;
                 }
             }
@@ -650,7 +650,7 @@ public final class xi extends ei implements NotificationCenter.NotificationCente
         ls lsVar = new ls(context);
         this.x = lsVar;
         lsVar.setPadding(AndroidUtilities.dp(11.0f), AndroidUtilities.dp(21.0f), AndroidUtilities.dp(11.0f), AndroidUtilities.dp(21.0f));
-        lsVar.setOnAnimatedHeightChangedListener(new org.telegram.ui.mp(22, this, miVar));
+        lsVar.setOnAnimatedHeightChangedListener(new org.telegram.ui.mp(21, this, miVar));
         FrameLayout frameLayout2 = new FrameLayout(context);
         this.y = frameLayout2;
         lsVar.addView(frameLayout2);
@@ -664,7 +664,7 @@ public final class xi extends ei implements NotificationCenter.NotificationCente
         ti tiVar = new ti(this, context, miVar.G1, new d(this, 5), new qi(this), new qi(this), g6Var);
         this.v = tiVar;
         tiVar.V2.r = false;
-        tiVar.p1();
+        tiVar.o1();
         this.c = tiVar;
         this.d = tiVar;
         this.h = true;
@@ -755,16 +755,16 @@ public final class xi extends ei implements NotificationCenter.NotificationCente
         }
     }
 
-    public final void M(j51 j51Var, View view) {
-        if (j51Var != null && j51Var.d == this.P) {
+    public final void M(h51 h51Var, View view) {
+        if (h51Var != null && h51Var.d == this.P) {
             this.H.load();
             return;
         }
-        if (j51Var != null && j51Var.d == this.N) {
+        if (h51Var != null && h51Var.d == this.N) {
             N();
             return;
         }
-        if (j51Var != null && j51Var.d == this.O) {
+        if (h51Var != null && h51Var.d == this.O) {
             O();
             return;
         }
@@ -783,7 +783,7 @@ public final class xi extends ei implements NotificationCenter.NotificationCente
                 HashSet hashSet = this.G;
                 if (hashSet.contains(audioEntry)) {
                     hashSet.remove(audioEntry);
-                    j51Var.e = false;
+                    h51Var.e = false;
                     h7Var.e(false, true);
                     i10 = 2;
                 } else {
@@ -801,7 +801,7 @@ public final class xi extends ei implements NotificationCenter.NotificationCente
                             return;
                         }
                     }
-                    j51Var.e = true;
+                    h51Var.e = true;
                     hashSet.add(audioEntry);
                     h7Var.e(true, true);
                 }
@@ -1089,11 +1089,11 @@ public final class xi extends ei implements NotificationCenter.NotificationCente
         org.telegram.ui.ActionBar.g6 g6Var = this.a;
         ii iiVar = this.s;
         if (iiVar != null) {
-            iiVar.setupBlurredBackground(aVar.c(iiVar, sg.b.m(g6Var), false));
+            iiVar.setupBlurredBackground(aVar.c(iiVar, sg.b.n(g6Var), false));
         }
         ls lsVar = this.x;
         if (lsVar != null) {
-            qg.b c3 = aVar.c(lsVar, sg.b.m(g6Var), false);
+            qg.b c3 = aVar.c(lsVar, sg.b.n(g6Var), false);
             c3.p(AndroidUtilities.dp(24.0f));
             c3.o(AndroidUtilities.dp(7.0f));
             lsVar.setBlurredBackground(c3);

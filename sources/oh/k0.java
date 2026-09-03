@@ -9,15 +9,15 @@ import org.telegram.messenger.camera.CameraController;
 import org.telegram.messenger.camera.Size;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.aq0;
-import org.telegram.ui.Components.ql0;
+import org.telegram.ui.Components.pl0;
 import org.telegram.ui.Components.ug0;
 import org.telegram.ui.Components.vc;
-import org.telegram.ui.Components.wt0;
+import org.telegram.ui.Components.vt0;
+import org.telegram.ui.Components.zp0;
 import org.telegram.ui.Stories.ProfileStoriesView;
 import org.telegram.ui.qr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class k0 implements Comparator {
     public final /* synthetic */ int a;
@@ -185,7 +185,7 @@ public final /* synthetic */ class k0 implements Comparator {
                 }
                 return f12 < f13 ? 1 : 0;
             case 24:
-                return Float.compare(((ql0) obj).a, ((ql0) obj2).a);
+                return Float.compare(((pl0) obj).a, ((pl0) obj2).a);
             case 25:
                 Pair pair = (Pair) obj;
                 Pair pair2 = (Pair) obj2;
@@ -201,15 +201,15 @@ public final /* synthetic */ class k0 implements Comparator {
                 }
                 return ((Float) pair4.first).floatValue() > ((Float) pair3.first).floatValue() ? -1 : 0;
             case 27:
-                int i17 = ((aq0) obj).c;
-                int i18 = ((aq0) obj2).c;
+                int i17 = ((zp0) obj).c;
+                int i18 = ((zp0) obj2).c;
                 if (i17 < i18) {
                     return 1;
                 }
                 return i17 > i18 ? -1 : 0;
             case 28:
-                id2 = ((wt0) obj2).c;
-                id3 = ((wt0) obj).c;
+                id2 = ((vt0) obj2).c;
+                id3 = ((vt0) obj).c;
                 break;
             default:
                 Pair pair5 = (Pair) obj;

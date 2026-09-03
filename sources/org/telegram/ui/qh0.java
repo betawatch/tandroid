@@ -18,7 +18,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class qh0 extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public int B;
@@ -48,14 +48,14 @@ public final class qh0 extends org.telegram.ui.ActionBar.p2 implements Notificat
     public boolean Z;
     public ph0 a;
     public boolean a0;
-    public org.telegram.ui.Components.tl0 b;
+    public org.telegram.ui.Components.sl0 b;
     public boolean b0;
     public TLRPC.Chat c;
     public final int c0;
     public TLRPC.ChatFull d;
     public boolean d0;
     public TLRPC.TL_chatInviteExported e;
-    public org.telegram.ui.Components.al0 e0;
+    public org.telegram.ui.Components.zk0 e0;
     public final long f;
     public final ArrayList f0;
     public final ArrayList g0;
@@ -164,9 +164,9 @@ public final class qh0 extends org.telegram.ui.ActionBar.p2 implements Notificat
             if (tL_messages_exportedChatInvites.invites.size() <= 0 || !qh0Var.d0) {
                 z10 = true;
             } else {
-                org.telegram.ui.Components.al0 al0Var = qh0Var.e0;
-                if (al0Var != null && !qh0Var.isPaused) {
-                    al0Var.b(i13 + 1);
+                org.telegram.ui.Components.zk0 zk0Var = qh0Var.e0;
+                if (zk0Var != null && !qh0Var.isPaused) {
+                    zk0Var.b(i13 + 1);
                 }
                 z10 = false;
             }
@@ -219,7 +219,7 @@ public final class qh0 extends org.telegram.ui.ActionBar.p2 implements Notificat
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static /* synthetic */ void V(qh0 qh0Var, TLRPC.TL_error tL_error, TLObject tLObject) {
-        org.telegram.ui.Components.al0 al0Var;
+        org.telegram.ui.Components.zk0 zk0Var;
         ArrayList arrayList = qh0Var.j0;
         qh0Var.T = false;
         if (tL_error == null) {
@@ -238,8 +238,8 @@ public final class qh0 extends org.telegram.ui.ActionBar.p2 implements Notificat
         int i12 = qh0Var.U;
         qh0Var.b0 = true;
         qh0Var.Y = false;
-        if (arrayList.size() > 0 && (al0Var = qh0Var.e0) != null && !qh0Var.isPaused && qh0Var.d0) {
-            al0Var.b(i12 + 1);
+        if (arrayList.size() > 0 && (zk0Var = qh0Var.e0) != null && !qh0Var.isPaused && qh0Var.d0) {
+            zk0Var.b(i12 + 1);
         }
         if (qh0Var.Y) {
         }
@@ -291,25 +291,25 @@ public final class qh0 extends org.telegram.ui.ActionBar.p2 implements Notificat
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.InviteLinks));
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 24));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 24));
         l0 l0Var = new l0(this, context, 14);
         this.fragmentView = l0Var;
         int i10 = org.telegram.ui.ActionBar.k6.a7;
         l0Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
         this.fragmentView.setTag(Integer.valueOf(i10));
         FrameLayout frameLayout = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.b = tl0Var;
-        tl0Var.p1();
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.b = sl0Var;
+        sl0Var.o1();
         this.actionBar.setAdaptiveBackground(this.b);
         k kVar = new k(1, false, 10);
         this.b.setLayoutManager(kVar);
-        org.telegram.ui.Components.tl0 tl0Var2 = this.b;
+        org.telegram.ui.Components.sl0 sl0Var2 = this.b;
         ph0 ph0Var = new ph0(this, context);
         this.a = ph0Var;
-        tl0Var2.setAdapter(ph0Var);
+        sl0Var2.setAdapter(ph0Var);
         this.b.setOnScrollListener(new kh.l(7, this, kVar));
-        this.e0 = new org.telegram.ui.Components.al0(this.b, false);
+        this.e0 = new org.telegram.ui.Components.zk0(this.b, false);
         f2.l lVar = new f2.l();
         lVar.n(420L);
         lVar.o(org.telegram.ui.Components.pr.h);

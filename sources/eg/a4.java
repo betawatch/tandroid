@@ -5,27 +5,27 @@ import android.graphics.PointF;
 import android.view.ViewGroup;
 import k7.c6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.tk0;
-import qh.xa;
+import org.telegram.ui.Components.sk0;
+import qh.wa;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class a4 extends j {
     public final j1 n0;
     public boolean o0;
     public int p0;
     public int q0;
-    public final xa r0;
+    public final wa r0;
 
-    public a4(Context context, PointF pointF, int i10, xa xaVar, float f10, int i11) {
+    public a4(Context context, PointF pointF, int i10, wa waVar, float f10, int i11) {
         super(context, pointF);
         j1 j1Var = new j1(context, f10);
         this.n0 = j1Var;
         j1Var.setMaxWidth(i11);
         j1Var.e(0, this.p0);
-        this.r0 = xaVar;
-        String str = xaVar.c;
-        String a2 = xaVar.a();
+        this.r0 = waVar;
+        String str = waVar.c;
+        String a2 = waVar.a();
         j1Var.d(i10, str);
         j1Var.setText(a2);
         m();
@@ -50,16 +50,16 @@ public final class a4 extends j {
     }
 
     @Override // eg.j
-    public tk0 getSelectionBounds() {
+    public sk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new tk0();
+            return new sk0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
         float c3 = org.telegram.ui.b.c(dp, 2.0f, getPositionX(), scaleX);
-        return new tk0(c3, org.telegram.ui.b.c(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + c3) - c3, dp2 * scaleX);
+        return new sk0(c3, org.telegram.ui.b.c(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + c3) - c3, dp2 * scaleX);
     }
 
     @Override // eg.j

@@ -1,52 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class iv0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ tv0 b;
+public final class iv0 extends org.telegram.ui.Cells.c6 {
+    public final /* synthetic */ kv0 C;
 
-    public /* synthetic */ iv0(tv0 tv0Var, int i10) {
-        this.a = i10;
-        this.b = tv0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public iv0(kv0 kv0Var, Context context, int i10) {
+        super(context, i10, null, null);
+        this.C = kv0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                tv0 tv0Var = this.b;
-                AndroidUtilities.runOnUIThread(new iv0(tv0Var, 3));
-                org.telegram.ui.Cells.t1 t1Var = tv0Var.I;
-                if (t1Var != null) {
-                    t1Var.setVisibility(0);
-                    org.telegram.ui.Cells.t1 t1Var2 = tv0Var.I;
-                    t1Var2.I7 = null;
-                    t1Var2.invalidate();
-                }
-                um umVar = tv0Var.b0;
-                if (umVar != null) {
-                    AndroidUtilities.runOnUIThread(umVar);
-                    tv0Var.b0 = null;
-                    break;
-                }
-                break;
-            case 1:
-                this.b.c(false);
-                break;
-            case 2:
-                this.b.c(false);
-                break;
-            default:
-                super/*android.app.Dialog*/.dismiss();
-                break;
+    @Override // org.telegram.ui.Cells.c6
+    public final void g(eh.b bVar, ActionMode actionMode) {
+        if (bVar.isFocused() && bVar.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            xn.k8(menu, this.C.d.f.h, false, true, true, true);
         }
     }
 
-    public /* synthetic */ iv0(tv0 tv0Var, boolean z4) {
-        this.a = 0;
-        this.b = tv0Var;
+    @Override // org.telegram.ui.Cells.c6
+    public final void i(boolean z4) {
+        mv0.d0(this.C.d, this, z4);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void j(org.telegram.ui.Cells.c6 c6Var) {
+        mv0.e0(this.C.d, c6Var);
     }
 }

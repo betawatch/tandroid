@@ -89,17 +89,17 @@ import org.telegram.messenger.beta.R;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h5;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.xx0;
+import org.telegram.ui.Components.wx0;
 import org.telegram.ui.sb0;
 import p2.v;
-import q5.g0;
-import qh.o4;
+import q5.c0;
+import qh.n4;
 import s8.n0;
 import x5.j;
 import x5.l;
 import y2.h;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class a implements g6 {
     public Object a;
@@ -235,8 +235,8 @@ public final class a implements g6 {
         return false;
     }
 
-    public static a k(Context context, w wVar, n9.b bVar, i9.a aVar, e eVar, r3 r3Var, g0 g0Var, g gVar, f7.b bVar2, k kVar) {
-        i9.q qVar = new i9.q(context, wVar, aVar, g0Var, gVar);
+    public static a k(Context context, w wVar, n9.b bVar, i9.a aVar, e eVar, r3 r3Var, c0 c0Var, g gVar, f7.b bVar2, k kVar) {
+        i9.q qVar = new i9.q(context, wVar, aVar, c0Var, gVar);
         n9.a aVar2 = new n9.a(bVar, gVar, kVar);
         l9.a aVar3 = o9.a.b;
         y2.q.b(context);
@@ -346,7 +346,7 @@ public final class a implements g6 {
             l lVar = l.a;
             p2.g gVar = aVar.c;
             if (gVar.g() < 12000000) {
-                return gVar.h() != 0 ? aVar.a(bundle).continueWithTask(lVar, new g0(16, aVar, bundle)) : Tasks.forException(new IOException("MISSING_INSTANCEID_SERVICE"));
+                return gVar.h() != 0 ? aVar.a(bundle).continueWithTask(lVar, new c0(17, aVar, bundle)) : Tasks.forException(new IOException("MISSING_INSTANCEID_SERVICE"));
             }
             x5.k d = x5.k.d(aVar.b);
             synchronized (d) {
@@ -361,7 +361,7 @@ public final class a implements g6 {
 
     @Override // org.telegram.ui.ActionBar.g6
     public int B0(int i10) {
-        return ((o4) this.f).z0.get(i10, k6.w0(null, i10, false));
+        return ((n4) this.f).z0.get(i10, k6.w0(null, i10, false));
     }
 
     public void C(boolean z4) {
@@ -372,7 +372,7 @@ public final class a implements g6 {
             ((ValueAnimator) arrayList3.get(i10)).cancel();
             if (z4) {
                 ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new xx0(this, i10, 0));
+                ofFloat.addUpdateListener(new wx0(this, i10, 0));
                 ofFloat.setDuration(100L);
                 ofFloat.start();
             }
@@ -381,7 +381,7 @@ public final class a implements g6 {
             ((ValueAnimator) arrayList2.get(i11)).cancel();
             if (z4) {
                 ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new xx0(this, i11, 1));
+                ofFloat2.addUpdateListener(new wx0(this, i11, 1));
                 ofFloat2.setDuration(100L);
                 ofFloat2.start();
             }
@@ -390,7 +390,7 @@ public final class a implements g6 {
             ((ValueAnimator) arrayList.get(i12)).cancel();
             if (z4) {
                 ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new xx0(this, i12, 2));
+                ofFloat3.addUpdateListener(new wx0(this, i12, 2));
                 ofFloat3.setDuration(100L);
                 ofFloat3.start();
             }
@@ -463,7 +463,7 @@ public final class a implements g6 {
 
     @Override // org.telegram.ui.ActionBar.g6
     public boolean a() {
-        return ((o4) this.f).y0;
+        return ((n4) this.f).y0;
     }
 
     public void c(String str, String str2) {
@@ -517,58 +517,58 @@ public final class a implements g6 {
 
     @Override // org.telegram.ui.ActionBar.g6
     public Drawable getDrawable(String str) {
-        o4 o4Var = (o4) this.f;
-        a aVar = o4Var.A0;
+        n4 n4Var = (n4) this.f;
+        a aVar = n4Var.A0;
         if (str.equals("drawableMsgIn")) {
-            if (o4Var.B0 == null) {
-                o4Var.B0 = new h5(0, false, false, aVar);
+            if (n4Var.B0 == null) {
+                n4Var.B0 = new h5(0, false, false, aVar);
             }
-            return o4Var.B0;
+            return n4Var.B0;
         }
         if (str.equals("drawableMsgInSelected")) {
-            if (o4Var.C0 == null) {
-                o4Var.C0 = new h5(0, false, true, aVar);
+            if (n4Var.C0 == null) {
+                n4Var.C0 = new h5(0, false, true, aVar);
             }
-            return o4Var.C0;
+            return n4Var.C0;
         }
         if (str.equals("drawableMsgOut")) {
-            if (o4Var.D0 == null) {
-                o4Var.D0 = new h5(0, true, false, aVar);
+            if (n4Var.D0 == null) {
+                n4Var.D0 = new h5(0, true, false, aVar);
             }
-            return o4Var.D0;
+            return n4Var.D0;
         }
         if (str.equals("drawableMsgOutSelected")) {
-            if (o4Var.E0 == null) {
-                o4Var.E0 = new h5(0, true, true, aVar);
+            if (n4Var.E0 == null) {
+                n4Var.E0 = new h5(0, true, true, aVar);
             }
-            return o4Var.E0;
+            return n4Var.E0;
         }
         if (str.equals("drawableMsgInMedia")) {
-            if (o4Var.F0 == null) {
-                o4Var.F0 = new h5(1, false, false, aVar);
+            if (n4Var.F0 == null) {
+                n4Var.F0 = new h5(1, false, false, aVar);
             }
-            o4Var.F0.invalidateSelf();
-            return o4Var.F0;
+            n4Var.F0.invalidateSelf();
+            return n4Var.F0;
         }
         if (str.equals("drawableMsgInMediaSelected")) {
-            if (o4Var.G0 == null) {
-                o4Var.G0 = new h5(1, false, true, aVar);
+            if (n4Var.G0 == null) {
+                n4Var.G0 = new h5(1, false, true, aVar);
             }
-            return o4Var.G0;
+            return n4Var.G0;
         }
         if (str.equals("drawableMsgOutMedia")) {
-            if (o4Var.H0 == null) {
-                o4Var.H0 = new h5(1, true, false, aVar);
+            if (n4Var.H0 == null) {
+                n4Var.H0 = new h5(1, true, false, aVar);
             }
-            return o4Var.H0;
+            return n4Var.H0;
         }
         if (!str.equals("drawableMsgOutMediaSelected")) {
             return k6.O0(str);
         }
-        if (o4Var.I0 == null) {
-            o4Var.I0 = new h5(1, true, true, aVar);
+        if (n4Var.I0 == null) {
+            n4Var.I0 = new h5(1, true, true, aVar);
         }
-        return o4Var.I0;
+        return n4Var.I0;
     }
 
     public l0 h() {
@@ -700,22 +700,22 @@ public final class a implements g6 {
 
     public void t(Throwable th2, Thread thread, String str, String str2, long j10, boolean z4) {
         Iterator<Map.Entry<Thread, StackTraceElement[]>> it;
-        g0 g0Var;
+        c0 c0Var;
         boolean equals = str2.equals("crash");
         i9.q qVar = (i9.q) this.a;
         Context context = qVar.a;
         int i10 = context.getResources().getConfiguration().orientation;
-        g0 g0Var2 = qVar.d;
+        c0 c0Var2 = qVar.d;
         Stack stack = new Stack();
         for (Throwable th3 = th2; th3 != null; th3 = th3.getCause()) {
             stack.push(th3);
         }
-        sf.e eVar = null;
+        sf.f fVar = null;
         while (!stack.isEmpty()) {
             Throwable th4 = (Throwable) stack.pop();
-            eVar = new sf.e(th4.getLocalizedMessage(), th4.getClass().getName(), g0Var2.v0(th4.getStackTrace()), eVar, 12);
+            fVar = new sf.f(th4.getLocalizedMessage(), th4.getClass().getName(), c0Var2.v0(th4.getStackTrace()), fVar, 12);
         }
-        sf.e eVar2 = eVar;
+        sf.f fVar2 = fVar;
         a aVar = new a();
         aVar.b = str2;
         aVar.a = Long.valueOf(j10);
@@ -724,7 +724,7 @@ public final class a implements g6 {
         Boolean valueOf = i11 > 0 ? Boolean.valueOf(i11 != 100) : null;
         ArrayList a2 = f9.c.a(context);
         ArrayList arrayList = new ArrayList();
-        StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) eVar2.d;
+        StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) fVar2.d;
         String name = thread.getName();
         if (name == null) {
             throw new NullPointerException("Null name");
@@ -741,9 +741,9 @@ public final class a implements g6 {
                 Thread key = next.getKey();
                 if (key.equals(thread)) {
                     it = it2;
-                    g0Var = g0Var2;
+                    c0Var = c0Var2;
                 } else {
-                    StackTraceElement[] v02 = g0Var2.v0(next.getValue());
+                    StackTraceElement[] v02 = c0Var2.v0(next.getValue());
                     String name2 = key.getName();
                     if (name2 == null) {
                         throw new NullPointerException("Null name");
@@ -753,15 +753,15 @@ public final class a implements g6 {
                     if (d10 == null) {
                         throw new NullPointerException("Null frames");
                     }
-                    g0Var = g0Var2;
+                    c0Var = c0Var2;
                     arrayList.add(new r0(name2, 0, d10));
                 }
                 it2 = it;
-                g0Var2 = g0Var;
+                c0Var2 = c0Var;
             }
         }
         List unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
-        p0 c3 = i9.q.c(eVar2, 0);
+        p0 c3 = i9.q.c(fVar2, 0);
         q0 q0Var = new q0(0L, "0", "0");
         List a10 = qVar.a();
         if (a10 == null) {
@@ -771,9 +771,9 @@ public final class a implements g6 {
         aVar.d = qVar.b(i10);
         l0 h = aVar.h();
         n9.a aVar2 = (n9.a) this.b;
-        e eVar3 = (e) this.d;
+        e eVar = (e) this.d;
         r3 r3Var = (r3) this.e;
-        aVar2.d(d(b(h, eVar3, r3Var), r3Var), str, equals);
+        aVar2.d(d(b(h, eVar, r3Var), r3Var), str, equals);
     }
 
     public void u(String str, String... strArr) {

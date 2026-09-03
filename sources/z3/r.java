@@ -1,25 +1,45 @@
 package z3;
 
-import h5.w;
+import h5.d0;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class r {
-    public f a;
-    public long b;
-    public long c;
-    public int d;
-    public int e;
-    public boolean k;
-    public q m;
-    public boolean o;
-    public long p;
-    public boolean q;
-    public long[] f = new long[0];
-    public int[] g = new int[0];
-    public int[] h = new int[0];
-    public long[] i = new long[0];
-    public boolean[] j = new boolean[0];
-    public boolean[] l = new boolean[0];
-    public final w n = new w();
+    public final o a;
+    public final int b;
+    public final long[] c;
+    public final int[] d;
+    public final int e;
+    public final long[] f;
+    public final int[] g;
+    public final long h;
+
+    public r(o oVar, long[] jArr, int[] iArr, int i10, long[] jArr2, int[] iArr2, long j10) {
+        h5.a.f(iArr.length == jArr2.length);
+        h5.a.f(jArr.length == jArr2.length);
+        h5.a.f(iArr2.length == jArr2.length);
+        this.a = oVar;
+        this.c = jArr;
+        this.d = iArr;
+        this.e = i10;
+        this.f = jArr2;
+        this.g = iArr2;
+        this.h = j10;
+        this.b = jArr.length;
+        if (iArr2.length > 0) {
+            int length = iArr2.length - 1;
+            iArr2[length] = iArr2[length] | TLObject.FLAG_29;
+        }
+    }
+
+    public final int a(long j10) {
+        long[] jArr = this.f;
+        for (int b10 = d0.b(jArr, j10, true); b10 < jArr.length; b10++) {
+            if ((this.g[b10] & 1) != 0) {
+                return b10;
+            }
+        }
+        return -1;
+    }
 }

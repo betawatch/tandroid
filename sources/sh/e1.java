@@ -25,21 +25,21 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.y20;
 import org.webrtc.MediaStreamTrack;
-import qh.d4;
-import qh.j5;
+import qh.c4;
+import qh.i5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class e1 extends sa {
     public final int U;
     public final String V;
-    public x51 W;
+    public w51 W;
     public final b1 X;
     public boolean Y;
     public boolean Z;
@@ -200,7 +200,7 @@ public final class e1 extends sa {
                                         f10.addView(z0Var, c6.n(-1, -2));
                                         b1 b1Var = new b1(context, r92);
                                         this.X = b1Var;
-                                        b1Var.V(j5.e(r92, i11, j10, k6.I.q()));
+                                        b1Var.V(i5.e(r92, i11, j10, k6.I.q()));
                                         b1Var.addView(f10, c6.d(-1, -1.0f, 119, 4.0f, 8.0f, 4.0f, 8.0f));
                                         FrameLayout frameLayout = new FrameLayout(context);
                                         qh.d p10 = org.telegram.messenger.y3.p(24, context, g6Var, r12);
@@ -210,10 +210,10 @@ public final class e1 extends sa {
                                         ViewGroup viewGroup = this.containerView;
                                         int i12 = this.backgroundPaddingLeft;
                                         viewGroup.addView(frameLayout, c6.f(-2.0f, 87, i12, 0, i12, 0));
-                                        tl0 tl0Var = this.d;
+                                        sl0 sl0Var = this.d;
                                         int i13 = this.backgroundPaddingLeft;
-                                        tl0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(68.0f) + r12);
-                                        this.d.p1();
+                                        sl0Var.setPadding(i13, 0, i13, AndroidUtilities.dp(68.0f) + r12);
+                                        this.d.o1();
                                         int i14 = k6.a7;
                                         setBackgroundColor(getThemedColor(i14));
                                         fixNavigationBar(getThemedColor(i14));
@@ -364,7 +364,7 @@ public final class e1 extends sa {
         f102.addView(z0Var2, c6.n(-1, -2));
         b1 b1Var2 = new b1(context, r92);
         this.X = b1Var2;
-        b1Var2.V(j5.e(r92, i11, j10, k6.I.q()));
+        b1Var2.V(i5.e(r92, i11, j10, k6.I.q()));
         b1Var2.addView(f102, c6.d(-1, -1.0f, 119, 4.0f, 8.0f, 4.0f, 8.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         qh.d p102 = org.telegram.messenger.y3.p(24, context, g6Var, r12);
@@ -374,10 +374,10 @@ public final class e1 extends sa {
         ViewGroup viewGroup2 = this.containerView;
         int i122 = this.backgroundPaddingLeft;
         viewGroup2.addView(frameLayout2, c6.f(-2.0f, 87, i122, 0, i122, 0));
-        tl0 tl0Var2 = this.d;
+        sl0 sl0Var2 = this.d;
         int i132 = this.backgroundPaddingLeft;
-        tl0Var2.setPadding(i132, 0, i132, AndroidUtilities.dp(68.0f) + r12);
-        this.d.p1();
+        sl0Var2.setPadding(i132, 0, i132, AndroidUtilities.dp(68.0f) + r12);
+        this.d.o1();
         int i142 = k6.a7;
         setBackgroundColor(getThemedColor(i142));
         fixNavigationBar(getThemedColor(i142));
@@ -533,15 +533,15 @@ public final class e1 extends sa {
     @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog
     public final void onCreate(Bundle bundle) {
         super.onCreate(bundle);
-        tl0 tl0Var = this.d;
-        tl0Var.u0(Math.max((tl0Var.getAdapter() == null ? 0 : tl0Var.getAdapter().h()) - 1, 0));
+        sl0 sl0Var = this.d;
+        sl0Var.u0(Math.max((sl0Var.getAdapter() == null ? 0 : sl0Var.getAdapter().h()) - 1, 0));
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(tl0Var, getContext(), this.U, 0, true, new d4(this, 10), this.resourcesProvider);
-        this.W = x51Var;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(sl0Var, getContext(), this.U, 0, true, new c4(this, 10), this.resourcesProvider);
+        this.W = w51Var;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

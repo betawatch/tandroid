@@ -13,17 +13,17 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.iv0;
 import org.telegram.ui.Components.kg0;
 import org.telegram.ui.Components.lb;
 import org.telegram.ui.Components.sr;
 import org.telegram.ui.yh;
-import qh.v9;
+import qh.u9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class m3 extends FrameLayout {
-    public static final jv0 V = new jv0(new sg.a(6), new sg.a(7));
+    public static final iv0 V = new iv0(new sg.a(7), new sg.a(8));
     public Runnable B;
     public l3 C;
     public o1.j D;
@@ -65,7 +65,7 @@ public abstract class m3 extends FrameLayout {
         this.f = 0.0f;
         this.h = -1.0f;
         this.n = -2.14748365E9f;
-        this.F = new sg.a(8);
+        this.F = new sg.a(9);
         this.J = true;
         this.O = 0.0f;
         this.P = false;
@@ -92,8 +92,8 @@ public abstract class m3 extends FrameLayout {
     public final void c() {
         setTranslationY(Math.max(this.e, this.f + this.r));
         int i10 = 15;
-        AndroidUtilities.cancelRunOnUIThread(new v9(this, i10));
-        AndroidUtilities.runOnUIThread(new v9(this, i10));
+        AndroidUtilities.cancelRunOnUIThread(new u9(this, i10));
+        AndroidUtilities.runOnUIThread(new u9(this, i10));
         Runnable runnable = this.y;
         if (runnable != null) {
             runnable.run();

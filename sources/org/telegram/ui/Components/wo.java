@@ -7,7 +7,7 @@ import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class wo extends View {
     public final /* synthetic */ int a;
@@ -66,7 +66,7 @@ public final class wo extends View {
                 canvas.restore();
                 break;
             case 1:
-                org.telegram.ui.n21 n21Var = (org.telegram.ui.n21) this.w;
+                org.telegram.ui.t21 t21Var = (org.telegram.ui.t21) this.w;
                 super.onDraw(canvas);
                 boolean z10 = this.b;
                 Paint paint2 = this.r;
@@ -74,21 +74,21 @@ public final class wo extends View {
                 float f15 = this.e;
                 float f16 = this.d;
                 if (z10) {
-                    float f17 = n21Var.M;
+                    float f17 = t21Var.M;
                     if (f17 > 0.0f) {
                         this.c.drawCircle(f16, f15, f14 * f17, this.h);
                     }
                     canvas.drawBitmap(this.n, 0.0f, 0.0f, paint2);
                 } else {
-                    canvas.drawCircle(f16, f15, (1.0f - n21Var.M) * f14, paint2);
+                    canvas.drawCircle(f16, f15, (1.0f - t21Var.M) * f14, paint2);
                 }
                 canvas.save();
                 canvas.translate(this.s, this.v);
-                n21Var.C.draw(canvas);
+                t21Var.C.draw(canvas);
                 canvas.restore();
                 break;
             default:
-                qh.ca caVar = (qh.ca) this.w;
+                qh.ba baVar = (qh.ba) this.w;
                 super.onDraw(canvas);
                 boolean z11 = this.b;
                 Paint paint3 = this.r;
@@ -96,17 +96,17 @@ public final class wo extends View {
                 float f19 = this.e;
                 float f20 = this.d;
                 if (z11) {
-                    float f21 = caVar.A2;
+                    float f21 = baVar.A2;
                     if (f21 > 0.0f) {
                         this.c.drawCircle(f20, f19, f18 * f21, this.h);
                     }
                     canvas.drawBitmap(this.n, 0.0f, 0.0f, paint3);
                 } else {
-                    canvas.drawCircle(f20, f19, (1.0f - caVar.A2) * f18, paint3);
+                    canvas.drawCircle(f20, f19, (1.0f - baVar.A2) * f18, paint3);
                 }
                 canvas.save();
                 canvas.translate(this.s, this.v);
-                caVar.f1.draw(canvas);
+                baVar.f1.draw(canvas);
                 canvas.restore();
                 break;
         }

@@ -3,7 +3,7 @@ package wh;
 import java.util.ArrayList;
 import org.telegram.ui.Cells.m9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class f3 extends m9 {
     public final /* synthetic */ p3 K0;
@@ -21,7 +21,7 @@ public final class f3 extends m9 {
         if (s6 == null || s6.length() == 0) {
             return true;
         }
-        r3Var.b5(s6);
+        r3Var.a5(s6);
         return true;
     }
 
@@ -30,9 +30,9 @@ public final class f3 extends m9 {
         r3 r3Var = this.L0;
         CharSequence s6 = r3Var.k3.s();
         if (s6 != null && s6.length() > 0) {
-            r3Var.b5(s6);
+            r3Var.a5(s6);
         }
-        r3Var.E2();
+        r3Var.D2();
     }
 
     @Override // org.telegram.ui.Cells.m9, org.telegram.ui.Cells.z9
@@ -43,7 +43,7 @@ public final class f3 extends m9 {
 
     @Override // org.telegram.ui.Cells.z9
     public final void I() {
-        this.L0.c4();
+        this.L0.b4();
     }
 
     @Override // org.telegram.ui.Cells.z9
@@ -51,7 +51,7 @@ public final class f3 extends m9 {
         if (b0()) {
             return true;
         }
-        return this.L0.S4();
+        return this.L0.R4();
     }
 
     @Override // org.telegram.ui.Cells.z9

@@ -63,7 +63,7 @@ import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter.NotificationCenterDelegate {
     public static boolean n1;
@@ -80,7 +80,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
     public boolean D0;
     public final oz E;
     public boolean E0;
-    public final wl0 F;
+    public final vl0 F;
     public boolean F0;
     public int G;
     public boolean G0;
@@ -135,7 +135,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
     public float g1;
     public final ShutterButton h0;
     public float h1;
-    public final i91 i0;
+    public final h91 i0;
     public float i1;
     public AnimatorSet j0;
     public float j1;
@@ -338,9 +338,9 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
         qlVar.setLayoutManager(ziVar);
         qlVar.setOnItemClickListener(new com.google.firebase.messaging.i(this, z10, g6Var, 6));
         qlVar.setOnItemLongClickListener(new el(this, 3));
-        wl0 wl0Var = new wl0(new yl(this));
-        this.F = wl0Var;
-        qlVar.B.add(wl0Var);
+        vl0 vl0Var = new vl0(new yl(this));
+        this.F = vl0Var;
+        qlVar.B.add(vl0Var);
         this.c = qlVar;
         this.d = qlVar;
         this.f = true;
@@ -452,15 +452,15 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
                 }
             }
         });
-        i91 i91Var = new i91(context);
-        this.i0 = i91Var;
-        i91Var.setVisibility(8);
-        i91Var.setAlpha(0.0f);
-        container.addView(i91Var, k7.c6.d(-2, 50.0f, 51, 0.0f, 0.0f, 0.0f, 116.0f));
-        i91Var.setDelegate(new el(this, i14));
+        h91 h91Var = new h91(context);
+        this.i0 = h91Var;
+        h91Var.setVisibility(8);
+        h91Var.setAlpha(0.0f);
+        container.addView(h91Var, k7.c6.d(-2, 50.0f, 51, 0.0f, 0.0f, 0.0f, 116.0f));
+        h91Var.setDelegate(new el(this, i14));
         ShutterButton shutterButton = new ShutterButton(context);
         shutterButton.b = new DecelerateInterpolator();
-        shutterButton.w = new ul0(shutterButton, 2);
+        shutterButton.w = new tl0(shutterButton, 2);
         shutterButton.a = shutterButton.getResources().getDrawable(R.drawable.camera_btn);
         Paint paint2 = new Paint(1);
         shutterButton.c = paint2;
@@ -471,7 +471,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
         shutterButton.d = paint3;
         paint3.setStyle(style);
         paint3.setColor(-3324089);
-        shutterButton.f = fv0.a;
+        shutterButton.f = ev0.a;
         this.h0 = shutterButton;
         s2Var.addView(shutterButton, k7.c6.e(84, 84, 17));
         shutterButton.setDelegate(new ol(this, g6Var, container));
@@ -1352,7 +1352,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
             viewPropertyAnimator.cancel();
         }
         this.w.setVisibility(0);
-        boolean z4 = eiVar instanceof qm;
+        boolean z4 = eiVar instanceof pm;
         TextView textView = this.x;
         if (z4) {
             ViewPropertyAnimator interpolator = textView.animate().alpha(1.0f).setDuration(150L).setInterpolator(pr.j);
@@ -1365,7 +1365,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
         this.b.U0.setTitle("");
         this.C.h1(0, 0);
         if (z4) {
-            this.B.post(new org.telegram.ui.mp(28, this, eiVar));
+            this.B.post(new org.telegram.ui.mp(27, this, eiVar));
         }
         V();
         m0();
@@ -1451,7 +1451,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
             layoutParams.width = i10;
             layoutParams.height = dp;
             this.M.setLayoutParams(layoutParams);
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(29, this, layoutParams));
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.mp(28, this, layoutParams));
         }
     }
 
@@ -1745,7 +1745,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
         eg.s2 s2Var = this.g0;
         ql qlVar2 = this.B;
         ImageView[] imageViewArr = this.P;
-        i91 i91Var = this.i0;
+        h91 h91Var = this.i0;
         if (z4) {
             this.g1 = this.M.getTranslationY();
             this.a0 = true;
@@ -1756,7 +1756,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
             arrayList.add(ObjectAnimator.ofFloat(this, "cameraOpenProgress", 0.0f));
             Property property = View.ALPHA;
             arrayList.add(ObjectAnimator.ofFloat(s2Var, (Property<eg.s2, Float>) property, 0.0f));
-            arrayList.add(ObjectAnimator.ofFloat(i91Var, (Property<i91, Float>) property, 0.0f));
+            arrayList.add(ObjectAnimator.ofFloat(h91Var, (Property<h91, Float>) property, 0.0f));
             arrayList.add(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f));
             arrayList.add(ObjectAnimator.ofFloat(qlVar, (Property<ql, Float>) property, 0.0f));
             int i12 = 0;
@@ -1785,9 +1785,9 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
             setCameraOpenProgress(0.0f);
             s2Var.setAlpha(0.0f);
             s2Var.setVisibility(8);
-            i91Var.setAlpha(0.0f);
-            i91Var.setTag(null);
-            i91Var.setVisibility(8);
+            h91Var.setAlpha(0.0f);
+            h91Var.setTag(null);
+            h91Var.setVisibility(8);
             qlVar.setAlpha(0.0f);
             textView.setAlpha(0.0f);
             qlVar.setVisibility(8);
@@ -2173,10 +2173,10 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = qlVar.getChildAt(0);
-        fl0 fl0Var = (fl0) qlVar.G(childAt);
+        el0 el0Var = (el0) qlVar.G(childAt);
         int top = childAt.getTop() - this.m1;
         int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || fl0Var == null || fl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(7.0f) || el0Var == null || el0Var.b() != 0) {
             top = dp;
         }
         ozVar.setTranslationY(((((getMeasuredHeight() - top) - AndroidUtilities.dp(50.0f)) - ozVar.getMeasuredHeight()) / 2.0f) + top);
@@ -2277,9 +2277,9 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
         if (miVar.m1().v && isFocusable()) {
             miVar.m1().d();
         }
-        i91 i91Var = this.i0;
-        i91Var.setVisibility(0);
-        i91Var.setAlpha(0.0f);
+        h91 h91Var = this.i0;
+        h91Var.setVisibility(0);
+        h91Var.setAlpha(0.0f);
         eg.s2 s2Var = this.g0;
         s2Var.setVisibility(0);
         s2Var.setTag(null);
@@ -2499,11 +2499,11 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
         if (!this.a0) {
             if (this.V && motionEvent != null) {
                 boolean z4 = this.D0;
-                i91 i91Var = this.i0;
+                h91 h91Var = this.i0;
                 if ((!z4 && motionEvent.getActionMasked() == 0) || motionEvent.getActionMasked() == 5) {
                     Rect rect = this.B0;
-                    i91Var.getHitRect(rect);
-                    if (i91Var.getTag() == null || !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                    h91Var.getHitRect(rect);
+                    if (h91Var.getTag() == null || !rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
                         if (!this.p0 && !this.F0) {
                             if (motionEvent.getPointerCount() == 2) {
                                 this.x0 = (float) Math.hypot(motionEvent.getX(1) - motionEvent.getX(0), motionEvent.getY(1) - motionEvent.getY(0));
@@ -2539,7 +2539,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
                                     } else if (f10 > 1.0f) {
                                         this.y0 = 1.0f;
                                     }
-                                    i91Var.b(this.y0, false);
+                                    h91Var.b(this.y0, false);
                                     this.b.getSheetContainer().invalidate();
                                     this.M.setZoom(this.y0);
                                     t0(true);
@@ -2562,7 +2562,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
                             } else if (this.F0 && (bmVar = this.M) != null) {
                                 bmVar.setTranslationY(bmVar.getTranslationY() + f11);
                                 this.C0 = y10;
-                                i91Var.setTag(null);
+                                h91Var.setTag(null);
                                 Runnable runnable = this.k0;
                                 if (runnable != null) {
                                     AndroidUtilities.cancelRunOnUIThread(runnable);
@@ -2571,7 +2571,7 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
                                 if (s2Var.getTag() == null) {
                                     s2Var.setTag(1);
                                     AnimatorSet animatorSet = new AnimatorSet();
-                                    animatorSet.playTogether(ObjectAnimator.ofFloat(s2Var, (Property<eg.s2, Float>) property, 0.0f), ObjectAnimator.ofFloat(i91Var, (Property<i91, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(imageViewArr[0], (Property<ImageView, Float>) property, 0.0f), ObjectAnimator.ofFloat(imageViewArr[1], (Property<ImageView, Float>) property, 0.0f), ObjectAnimator.ofFloat(qlVar, (Property<ql, Float>) property, 0.0f));
+                                    animatorSet.playTogether(ObjectAnimator.ofFloat(s2Var, (Property<eg.s2, Float>) property, 0.0f), ObjectAnimator.ofFloat(h91Var, (Property<h91, Float>) property, 0.0f), ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 0.0f), ObjectAnimator.ofFloat(imageViewArr[0], (Property<ImageView, Float>) property, 0.0f), ObjectAnimator.ofFloat(imageViewArr[1], (Property<ImageView, Float>) property, 0.0f), ObjectAnimator.ofFloat(qlVar, (Property<ql, Float>) property, 0.0f));
                                     animatorSet.setDuration(220L);
                                     animatorSet.setInterpolator(pr.f);
                                     animatorSet.start();
@@ -2859,9 +2859,9 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
                 }
                 invalidate();
             }
-            i91 i91Var = this.i0;
-            if (i91Var != null) {
-                i91Var.b(0.0f, false);
+            h91 h91Var = this.i0;
+            if (h91Var != null) {
+                h91Var.b(0.0f, false);
                 this.y0 = 0.0f;
             }
             if (this.V) {
@@ -3084,9 +3084,9 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
         fm fmVar = this.D;
         ql qlVar = this.B;
         if (i10 == 3) {
-            qm qmVar = miVar.n0;
-            if (qmVar != null) {
-                qmVar.J();
+            pm pmVar = miVar.n0;
+            if (pmVar != null) {
+                pmVar.J();
             }
             Iterator it = hashMap.entrySet().iterator();
             while (true) {
@@ -3165,17 +3165,17 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
             if (miVar.v0 != this) {
                 fmVar.l();
             }
-            qm qmVar2 = miVar.n0;
-            if (qmVar2 != null) {
-                qmVar2.v.invalidate();
+            pm pmVar2 = miVar.n0;
+            if (pmVar2 != null) {
+                pmVar2.v.invalidate();
                 return;
             }
             return;
         }
         if (i10 == 2) {
-            qm qmVar3 = miVar.n0;
-            if (qmVar3 != null) {
-                qmVar3.J();
+            pm pmVar3 = miVar.n0;
+            if (pmVar3 != null) {
+                pmVar3.J();
             }
             Iterator it2 = hashMap.entrySet().iterator();
             while (true) {
@@ -3255,9 +3255,9 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
             if (miVar.v0 != this) {
                 fmVar.l();
             }
-            qm qmVar4 = miVar.n0;
-            if (qmVar4 != null) {
-                qmVar4.v.invalidate();
+            pm pmVar4 = miVar.n0;
+            if (pmVar4 != null) {
+                pmVar4.v.invalidate();
                 return;
             }
             return;
@@ -3323,8 +3323,8 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
     }
 
     public final void t0(boolean z4) {
-        i91 i91Var = this.i0;
-        if ((i91Var.getTag() != null && z4) || (i91Var.getTag() == null && !z4)) {
+        h91 h91Var = this.i0;
+        if ((h91Var.getTag() != null && z4) || (h91Var.getTag() == null && !z4)) {
             if (z4) {
                 Runnable runnable = this.k0;
                 if (runnable != null) {
@@ -3341,11 +3341,11 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
         if (animatorSet != null) {
             animatorSet.cancel();
         }
-        i91Var.setTag(z4 ? 1 : null);
+        h91Var.setTag(z4 ? 1 : null);
         AnimatorSet animatorSet2 = new AnimatorSet();
         this.j0 = animatorSet2;
         animatorSet2.setDuration(180L);
-        this.j0.playTogether(ObjectAnimator.ofFloat(i91Var, (Property<i91, Float>) View.ALPHA, z4 ? 1.0f : 0.0f));
+        this.j0.playTogether(ObjectAnimator.ofFloat(h91Var, (Property<h91, Float>) View.ALPHA, z4 ? 1.0f : 0.0f));
         this.j0.addListener(new sl(this, 0));
         this.j0.start();
         if (z4) {
@@ -3456,19 +3456,19 @@ public class ChatAttachAlertPhotoLayout extends ei implements NotificationCenter
             return;
         }
         boolean z4 = this.N0;
-        fv0 fv0Var = fv0.a;
-        fv0 fv0Var2 = fv0.b;
+        ev0 ev0Var = ev0.a;
+        ev0 ev0Var2 = ev0.b;
         if (z4) {
-            if (this.M != null && shutterButton.getState() == fv0Var2) {
-                shutterButton.a(fv0Var);
+            if (this.M != null && shutterButton.getState() == ev0Var2) {
+                shutterButton.a(ev0Var);
             }
             this.N0 = false;
             return;
         }
-        if (this.M != null && shutterButton.getState() == fv0Var2) {
+        if (this.M != null && shutterButton.getState() == ev0Var2) {
             l0();
             CameraController.getInstance().stopVideoRecording(this.M.getCameraSession(), false);
-            shutterButton.a(fv0Var);
+            shutterButton.a(ev0Var);
         }
         if (this.V) {
             a0(false);

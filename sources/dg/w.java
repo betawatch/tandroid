@@ -14,7 +14,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class w extends View {
     public final Paint a;
@@ -90,7 +90,7 @@ public final class w extends View {
         drawable.setBounds(i10, i11, (int) (a2 + dp + i12), (int) (a10 + dp + i12));
         drawable.draw(canvas);
         canvas.drawCircle(a2, a10, dp, paint);
-        eg.c2.x1(a2, a10, strokeWidth, i0.a.k(this.n.f, 255), canvas);
+        eg.c2.w1(a2, a10, strokeWidth, i0.a.k(this.n.f, 255), canvas);
     }
 
     @Override // android.view.View

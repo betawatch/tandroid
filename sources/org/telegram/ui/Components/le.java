@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class le extends FrameLayout {
     public final Paint a;
@@ -304,16 +304,16 @@ public final class le extends FrameLayout {
                                 ig igVar = chatActivityEnterView2.K1;
                                 if (igVar != null && MessagesController.getGlobalMainSettings().getInt("voicepausehint", 0) <= 3) {
                                     igVar.a();
-                                    qh.f3 f3Var = new qh.f3(igVar.getContext(), 2);
-                                    igVar.a = f3Var;
-                                    f3Var.m(1.0f, 0.0f);
-                                    igVar.a.q(true);
-                                    igVar.a.t(LocaleController.getString(R.string.VoicePauseHint));
+                                    qh.e3 e3Var = new qh.e3(igVar.getContext(), 2);
+                                    igVar.a = e3Var;
+                                    e3Var.l(1.0f, 0.0f);
+                                    igVar.a.p(true);
+                                    igVar.a.s(LocaleController.getString(R.string.VoicePauseHint));
                                     MessagesController.getGlobalMainSettings().edit().putInt("voicepausehint", MessagesController.getGlobalMainSettings().getInt("voicepausehint", 0) + 1).apply();
                                     igVar.addView(igVar.a, k7.c6.d(-1, -1.0f, 119, 0.0f, 0.0f, 54.0f, 58.0f));
-                                    qh.f3 f3Var2 = igVar.a;
-                                    f3Var2.i0 = new gg(igVar, f3Var2, 3);
-                                    f3Var2.v();
+                                    qh.e3 e3Var2 = igVar.a;
+                                    e3Var2.i0 = new gg(igVar, e3Var2, 3);
+                                    e3Var2.u();
                                 }
                             }
                         }

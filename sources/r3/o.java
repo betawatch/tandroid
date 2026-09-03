@@ -4,9 +4,9 @@ import h5.d0;
 import j3.m0;
 import j3.n0;
 import java.util.Collections;
-import q5.g0;
+import q5.c0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class o {
     public final int a;
@@ -19,7 +19,7 @@ public final class o {
     public final int h;
     public final int i;
     public final long j;
-    public final g0 k;
+    public final c0 k;
     public final e4.c l;
 
     public o(byte[] bArr, int i10) {
@@ -117,7 +117,7 @@ public final class o {
         return new n0(m0Var);
     }
 
-    public o(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j10, g0 g0Var, e4.c cVar) {
+    public o(int i10, int i11, int i12, int i13, int i14, int i15, int i16, long j10, c0 c0Var, e4.c cVar) {
         this.a = i10;
         this.b = i11;
         this.c = i12;
@@ -128,7 +128,7 @@ public final class o {
         this.h = i16;
         this.i = a(i16);
         this.j = j10;
-        this.k = g0Var;
+        this.k = c0Var;
         this.l = cVar;
     }
 }

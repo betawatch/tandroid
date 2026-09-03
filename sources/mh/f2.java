@@ -14,13 +14,13 @@ import org.telegram.messenger.support.LongSparseIntArray;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.dy;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.iw;
-import org.telegram.ui.Components.jm0;
 import org.telegram.ui.Components.kx;
 import org.telegram.ui.Components.ky;
 import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.mz;
-import org.telegram.ui.Components.p51;
+import org.telegram.ui.Components.n51;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.sc;
 import org.telegram.ui.jy;
@@ -30,10 +30,10 @@ import org.telegram.ui.pe;
 import org.telegram.ui.py;
 import org.telegram.ui.qe;
 import org.telegram.ui.sb;
-import org.telegram.ui.tt0;
 import org.telegram.ui.xn;
+import org.telegram.ui.yt0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f2 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -70,14 +70,14 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                 final TLRPC.User user = (TLRPC.User) obj;
                 final TLRPC.UserFull userFull = user != null ? xnVar.getMessagesController().getUserFull(user.id) : null;
                 q70 I = q70.I(xnVar, t1Var);
-                jm0 jm0Var = new jm0(xnVar.getParentActivity(), xnVar.ba);
-                I.p = new pe(jm0Var, 1);
+                im0 im0Var = new im0(xnVar.getParentActivity(), xnVar.ba);
+                I.p = new pe(im0Var, 1);
                 org.telegram.ui.a0 a0Var = new org.telegram.ui.a0(xnVar, user, str, 2);
                 q70 J = I.J();
-                J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new tt0(I, 25), false);
+                J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new yt0(I, 25), false);
                 J.k();
                 J.c(R.drawable.msg_addbot, LocaleController.getString(R.string.CreateNewContact), new org.telegram.ui.s1(xnVar, I, str), false);
-                J.c(R.drawable.menu_contact_existing, LocaleController.getString(R.string.AddToExistingContact), new tt0(a0Var, 26), false);
+                J.c(R.drawable.menu_contact_existing, LocaleController.getString(R.string.AddToExistingContact), new yt0(a0Var, 26), false);
                 if (tL_contact == null && (user == null || !xnVar.getContactsController().contactsDict.containsKey(Long.valueOf(user.id)))) {
                     I.c(R.drawable.msg_contact_add, LocaleController.getString(R.string.AddToContacts), new lh.y2(I, J, 2), false);
                     I.k();
@@ -105,12 +105,12 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                                             xnVar2.getClass();
                                             if (userFull2.video_calls_available) {
                                                 z4 = true;
-                                                org.telegram.ui.Components.voip.g2.n(user, false, z4, xnVar2.getParentActivity(), userFull2, xnVar2.getAccountInstance());
+                                                org.telegram.ui.Components.voip.g2.m(user, false, z4, xnVar2.getParentActivity(), userFull2, xnVar2.getAccountInstance());
                                                 break;
                                             }
                                         }
                                         z4 = false;
-                                        org.telegram.ui.Components.voip.g2.n(user, false, z4, xnVar2.getParentActivity(), userFull2, xnVar2.getAccountInstance());
+                                        org.telegram.ui.Components.voip.g2.m(user, false, z4, xnVar2.getParentActivity(), userFull2, xnVar2.getAccountInstance());
                                     default:
                                         xn xnVar3 = xnVar;
                                         TLRPC.UserFull userFull3 = userFull;
@@ -118,12 +118,12 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                                             xnVar3.getClass();
                                             if (userFull3.video_calls_available) {
                                                 z10 = true;
-                                                org.telegram.ui.Components.voip.g2.n(user, true, z10, xnVar3.getParentActivity(), userFull3, xnVar3.getAccountInstance());
+                                                org.telegram.ui.Components.voip.g2.m(user, true, z10, xnVar3.getParentActivity(), userFull3, xnVar3.getAccountInstance());
                                                 break;
                                             }
                                         }
                                         z10 = false;
-                                        org.telegram.ui.Components.voip.g2.n(user, true, z10, xnVar3.getParentActivity(), userFull3, xnVar3.getAccountInstance());
+                                        org.telegram.ui.Components.voip.g2.m(user, true, z10, xnVar3.getParentActivity(), userFull3, xnVar3.getAccountInstance());
                                 }
                             }
                         }, false);
@@ -141,12 +141,12 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                                             xnVar2.getClass();
                                             if (userFull2.video_calls_available) {
                                                 z4 = true;
-                                                org.telegram.ui.Components.voip.g2.n(user, false, z4, xnVar2.getParentActivity(), userFull2, xnVar2.getAccountInstance());
+                                                org.telegram.ui.Components.voip.g2.m(user, false, z4, xnVar2.getParentActivity(), userFull2, xnVar2.getAccountInstance());
                                                 break;
                                             }
                                         }
                                         z4 = false;
-                                        org.telegram.ui.Components.voip.g2.n(user, false, z4, xnVar2.getParentActivity(), userFull2, xnVar2.getAccountInstance());
+                                        org.telegram.ui.Components.voip.g2.m(user, false, z4, xnVar2.getParentActivity(), userFull2, xnVar2.getAccountInstance());
                                     default:
                                         xn xnVar3 = xnVar;
                                         TLRPC.UserFull userFull3 = userFull;
@@ -154,12 +154,12 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                                             xnVar3.getClass();
                                             if (userFull3.video_calls_available) {
                                                 z10 = true;
-                                                org.telegram.ui.Components.voip.g2.n(user, true, z10, xnVar3.getParentActivity(), userFull3, xnVar3.getAccountInstance());
+                                                org.telegram.ui.Components.voip.g2.m(user, true, z10, xnVar3.getParentActivity(), userFull3, xnVar3.getAccountInstance());
                                                 break;
                                             }
                                         }
                                         z10 = false;
-                                        org.telegram.ui.Components.voip.g2.n(user, true, z10, xnVar3.getParentActivity(), userFull3, xnVar3.getAccountInstance());
+                                        org.telegram.ui.Components.voip.g2.m(user, true, z10, xnVar3.getParentActivity(), userFull3, xnVar3.getAccountInstance());
                                 }
                             }
                         }, false);
@@ -167,11 +167,11 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                     I.c(R.drawable.msg_calls_regular, LocaleController.getString(R.string.VoiceCallViaCarrier), new qe(xnVar, str, 6), false);
                     I.c(R.drawable.msg_copy, LocaleController.getString(R.string.CopyNumber), new qe(xnVar, str, 7), false);
                     I.k();
-                    I.n(user, LocaleController.getString(R.string.ViewProfile), new org.telegram.ui.s1(xnVar, jm0Var, user, 16));
+                    I.n(user, LocaleController.getString(R.string.ViewProfile), new org.telegram.ui.s1(xnVar, im0Var, user, 16));
                 }
-                jm0Var.e(I);
-                if (characterStyle instanceof p51) {
-                    String url = ((p51) characterStyle).getURL();
+                im0Var.e(I);
+                if (characterStyle instanceof n51) {
+                    String url = ((n51) characterStyle).getURL();
                     if (url == null) {
                         url = "";
                     }
@@ -184,11 +184,11 @@ public final /* synthetic */ class f2 implements Utilities.Callback {
                     }
                     SpannableString spannableString = new SpannableString(trim);
                     spannableString.setSpan(characterStyle, 0, spannableString.length(), 33);
-                    jm0Var.f(t1Var, characterStyle, spannableString, false);
+                    im0Var.f(t1Var, characterStyle, spannableString, false);
                 } else {
-                    jm0Var.f(t1Var, characterStyle, null, false);
+                    im0Var.f(t1Var, characterStyle, null, false);
                 }
-                xnVar.showDialog(jm0Var);
+                xnVar.showDialog(im0Var);
                 break;
             case 3:
                 xn xnVar2 = (xn) this.b;

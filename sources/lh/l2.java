@@ -34,37 +34,36 @@ import org.telegram.tgnet.tl.TL_phone;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.a90;
+import org.telegram.ui.Components.b90;
 import org.telegram.ui.Components.g90;
 import org.telegram.ui.Components.j80;
-import org.telegram.ui.Components.ky0;
-import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.jy0;
+import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.b30;
-import org.telegram.ui.b90;
-import org.telegram.ui.bu0;
 import org.telegram.ui.g60;
 import org.telegram.ui.gf;
+import org.telegram.ui.gu0;
 import org.telegram.ui.l9;
 import org.telegram.ui.lo0;
-import org.telegram.ui.mf1;
 import org.telegram.ui.og0;
 import org.telegram.ui.p60;
 import org.telegram.ui.p80;
 import org.telegram.ui.py;
 import org.telegram.ui.sa0;
+import org.telegram.ui.sf1;
 import org.telegram.ui.sq;
-import org.telegram.ui.v10;
 import org.telegram.ui.w8;
 import org.telegram.ui.xf0;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
+import org.telegram.ui.z10;
 import org.telegram.ui.zg;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l2 implements Runnable {
     public final /* synthetic */ int a;
@@ -96,7 +95,7 @@ public final /* synthetic */ class l2 implements Runnable {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run() {
-        v10 v10Var;
+        z10 z10Var;
         lo0 lo0Var;
         qc a02;
         int i10;
@@ -117,7 +116,7 @@ public final /* synthetic */ class l2 implements Runnable {
                 yh.w(sb, MessagesController.getInstance(i13).linkPrefix, "/", (String) obj5, "/c/");
                 sb.append(((TL_stars.TL_starGiftCollection) obj4).collection_id);
                 String sb2 = sb.toString();
-                new t2((pr0) obj6, (Context) obj3, sb2, sb2, (g6) obj2, (org.telegram.ui.ActionBar.p2) obj).show();
+                new t2((or0) obj6, (Context) obj3, sb2, sb2, (g6) obj2, (org.telegram.ui.ActionBar.p2) obj).show();
                 break;
             case 1:
                 MediaController.lambda$broadcastNewPhotos$58(this.b, (ArrayList) obj6, (ArrayList) obj5, (Integer) obj4, (MediaController.AlbumEntry) obj3, (MediaController.AlbumEntry) obj2, (MediaController.AlbumEntry) obj);
@@ -229,7 +228,7 @@ public final /* synthetic */ class l2 implements Runnable {
                     if (!MediaDataController.getInstance(i13).isStickerPackInstalled(tL_messages_stickerSet.set.id)) {
                         MediaDataController.getInstance(i13).toggleStickerSet(null, tLObject4, 2, null, false, false);
                     }
-                    AndroidUtilities.runOnUIThread(new a90(22, tLObject4, document), 250L);
+                    AndroidUtilities.runOnUIThread(new b90(21, tLObject4, document), 250L);
                     break;
                 } else if (tL_error != null) {
                     if (FileRefController.isFileRefError(tL_error.text)) {
@@ -249,12 +248,12 @@ public final /* synthetic */ class l2 implements Runnable {
                 TLRPC.TL_error tL_error2 = (TLRPC.TL_error) obj4;
                 TLObject tLObject5 = (TLObject) obj3;
                 org.telegram.ui.ActionBar.d2 d2Var2 = (org.telegram.ui.ActionBar.d2) obj2;
-                v10 v10Var2 = (v10) obj;
+                z10 z10Var2 = (z10) obj;
                 String str2 = (String) obj5;
                 ArrayList arrayList3 = launchActivity.a0;
                 if (!launchActivity.isFinishing()) {
                     if (tL_error2 != null || launchActivity.n0 == null) {
-                        v10Var = v10Var2;
+                        z10Var = z10Var2;
                         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(launchActivity);
                         String string = LocaleController.getString(R.string.AppName);
                         org.telegram.ui.ActionBar.d2 d2Var3 = alertDialog$Builder.a;
@@ -293,17 +292,17 @@ public final /* synthetic */ class l2 implements Runnable {
                                 boolean[] zArr = new boolean[1];
                                 d2Var2.setOnCancelListener(new zg(i15, zArr));
                                 if (!chatInvite.chat.forum) {
-                                    MessagesController.getInstance(i13).ensureMessagesLoaded(-chatInvite.chat.id, 0, new sa0(launchActivity, v10Var2, zArr, bundle, chatInvite));
+                                    MessagesController.getInstance(i13).ensureMessagesLoaded(-chatInvite.chat.id, 0, new sa0(launchActivity, z10Var2, zArr, bundle, chatInvite));
                                     break;
                                 } else {
                                     Bundle bundle2 = new Bundle();
                                     bundle2.putLong("chat_id", chatInvite.chat.id);
-                                    launchActivity.p0(mf1.F0(launchActivity, bundle2));
+                                    launchActivity.p0(sf1.F0(launchActivity, bundle2));
                                 }
                             }
-                            v10Var = v10Var2;
+                            z10Var = z10Var2;
                         }
-                        v10Var = v10Var2;
+                        z10Var = z10Var2;
                         TL_stars.TL_starsSubscriptionPricing tL_starsSubscriptionPricing = chatInvite.subscription_pricing;
                         if (tL_starsSubscriptionPricing == null || chatInvite.can_refulfill_subscription) {
                             org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) l.d.i(1, arrayList3);
@@ -315,7 +314,7 @@ public final /* synthetic */ class l2 implements Runnable {
                         }
                     }
                     try {
-                        v10Var.run();
+                        z10Var.run();
                         break;
                     } catch (Exception e6) {
                         FileLog.e(e6);
@@ -328,7 +327,7 @@ public final /* synthetic */ class l2 implements Runnable {
                 TLRPC.TL_error tL_error3 = (TLRPC.TL_error) obj4;
                 TLObject tLObject6 = (TLObject) obj3;
                 TLRPC.TL_inputInvoiceSlug tL_inputInvoiceSlug = (TLRPC.TL_inputInvoiceSlug) obj2;
-                v10 v10Var3 = (v10) obj;
+                z10 z10Var3 = (z10) obj;
                 String str3 = (String) obj5;
                 ArrayList arrayList5 = launchActivity2.a0;
                 if (tL_error3 != null) {
@@ -344,7 +343,7 @@ public final /* synthetic */ class l2 implements Runnable {
                     if (tLObject6 instanceof TLRPC.TL_payments_paymentFormStars) {
                         u5 u5Var = launchActivity2.V0;
                         launchActivity2.V0 = null;
-                        t7.y(launchActivity2.L, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject6, new p80(v10Var3, 1), new b90(u5Var, i14));
+                        t7.y(launchActivity2.L, false).Y(null, tL_inputInvoiceSlug, (TLRPC.TL_payments_paymentFormStars) tLObject6, new p80(z10Var3, 1), new org.telegram.ui.b90(u5Var, i14));
                         break;
                     } else {
                         if (tLObject6 instanceof TLRPC.PaymentForm) {
@@ -365,7 +364,7 @@ public final /* synthetic */ class l2 implements Runnable {
                     }
                 }
                 try {
-                    v10Var3.run();
+                    z10Var3.run();
                     break;
                 } catch (Exception e10) {
                     FileLog.e(e10);
@@ -379,7 +378,7 @@ public final /* synthetic */ class l2 implements Runnable {
                 String str4 = (String) obj5;
                 Pattern pattern = LaunchActivity.y1;
                 if (((TLObject) obj4) instanceof TLRPC.TL_boolTrue) {
-                    MediaDataController.getInstance(i13).loadAttachMenuBots(false, true, new ky0(launchActivity3, pyVar, p2Var2, user, str4, 7));
+                    MediaDataController.getInstance(i13).loadAttachMenuBots(false, true, new jy0(launchActivity3, pyVar, p2Var2, user, str4, 7));
                     break;
                 }
                 break;
@@ -436,9 +435,9 @@ public final /* synthetic */ class l2 implements Runnable {
                 String str9 = (String) obj;
                 if (profileActivity.getParentActivity() != null) {
                     q70 H = q70.H(profileActivity, view);
-                    H.W(profileActivity.a.V0(view, false));
+                    H.W(profileActivity.a.U0(view, false));
                     H.w = false;
-                    H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new bu0(profileActivity, str8, i13, 3), false);
+                    H.c(R.drawable.msg_copy, LocaleController.getString(R.string.Copy), new gu0(profileActivity, str8, i13, 3), false);
                     H.l(R.drawable.msg_translate, LocaleController.getString(R.string.TranslateMessage), new b30(profileActivity, strArr, str9, str8, 29), zArr2[0]);
                     H.Z();
                     break;
@@ -578,14 +577,14 @@ public final /* synthetic */ class l2 implements Runnable {
         this.d = str;
     }
 
-    public /* synthetic */ l2(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, org.telegram.ui.ActionBar.d2 d2Var, v10 v10Var, String str) {
+    public /* synthetic */ l2(LaunchActivity launchActivity, TLRPC.TL_error tL_error, TLObject tLObject, int i10, org.telegram.ui.ActionBar.d2 d2Var, z10 z10Var, String str) {
         this.a = 9;
         this.c = launchActivity;
         this.e = tL_error;
         this.f = tLObject;
         this.b = i10;
         this.h = d2Var;
-        this.n = v10Var;
+        this.n = z10Var;
         this.d = str;
     }
 

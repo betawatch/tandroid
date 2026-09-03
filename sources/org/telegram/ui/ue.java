@@ -17,7 +17,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.TopicsController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ue implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -118,7 +118,7 @@ public final /* synthetic */ class ue implements View.OnClickListener {
                     org.telegram.ui.ActionBar.h3 o10 = org.telegram.messenger.y3.o(xnVar.U0.getContext(), null, false, false);
                     Activity parentActivity = xnVar.getParentActivity();
                     vn vnVar = xnVar.ba;
-                    final u81 u81Var = new u81(parentActivity);
+                    final a91 a91Var = new a91(parentActivity);
                     LinearLayout h = l.d.h(parentActivity, 1);
                     TextView textView = new TextView(parentActivity);
                     textView.setText(LocaleController.getString(R.string.SponsoredMessageInfo));
@@ -132,18 +132,18 @@ public final /* synthetic */ class ue implements View.OnClickListener {
                     g90Var.setTextColor(org.telegram.ui.ActionBar.k6.v0(i15, vnVar));
                     g90Var.setTextSize(1, 14.0f);
                     g90Var.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    g90Var.setOnLinkPressListener(new org.telegram.ui.Components.f90() { // from class: org.telegram.ui.s81
+                    g90Var.setOnLinkPressListener(new org.telegram.ui.Components.f90() { // from class: org.telegram.ui.y81
                         @Override // org.telegram.ui.Components.f90
                         public final void a(ClickableSpan clickableSpan) {
                             switch (i13) {
                                 case 0:
-                                    clickableSpan.onClick(u81Var);
+                                    clickableSpan.onClick(a91Var);
                                     break;
                                 case 1:
-                                    clickableSpan.onClick(u81Var);
+                                    clickableSpan.onClick(a91Var);
                                     break;
                                 default:
-                                    clickableSpan.onClick(u81Var);
+                                    clickableSpan.onClick(a91Var);
                                     break;
                             }
                         }
@@ -153,18 +153,18 @@ public final /* synthetic */ class ue implements View.OnClickListener {
                     g90Var2.setTextColor(org.telegram.ui.ActionBar.k6.v0(i15, vnVar));
                     g90Var2.setTextSize(1, 14.0f);
                     g90Var2.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    g90Var2.setOnLinkPressListener(new org.telegram.ui.Components.f90() { // from class: org.telegram.ui.s81
+                    g90Var2.setOnLinkPressListener(new org.telegram.ui.Components.f90() { // from class: org.telegram.ui.y81
                         @Override // org.telegram.ui.Components.f90
                         public final void a(ClickableSpan clickableSpan) {
                             switch (i14) {
                                 case 0:
-                                    clickableSpan.onClick(u81Var);
+                                    clickableSpan.onClick(a91Var);
                                     break;
                                 case 1:
-                                    clickableSpan.onClick(u81Var);
+                                    clickableSpan.onClick(a91Var);
                                     break;
                                 default:
-                                    clickableSpan.onClick(u81Var);
+                                    clickableSpan.onClick(a91Var);
                                     break;
                             }
                         }
@@ -174,18 +174,18 @@ public final /* synthetic */ class ue implements View.OnClickListener {
                     g90Var3.setTextColor(org.telegram.ui.ActionBar.k6.v0(i15, vnVar));
                     g90Var3.setTextSize(1, 14.0f);
                     g90Var3.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-                    g90Var3.setOnLinkPressListener(new org.telegram.ui.Components.f90() { // from class: org.telegram.ui.s81
+                    g90Var3.setOnLinkPressListener(new org.telegram.ui.Components.f90() { // from class: org.telegram.ui.y81
                         @Override // org.telegram.ui.Components.f90
                         public final void a(ClickableSpan clickableSpan) {
                             switch (i12) {
                                 case 0:
-                                    clickableSpan.onClick(u81Var);
+                                    clickableSpan.onClick(a91Var);
                                     break;
                                 case 1:
-                                    clickableSpan.onClick(u81Var);
+                                    clickableSpan.onClick(a91Var);
                                     break;
                                 default:
-                                    clickableSpan.onClick(u81Var);
+                                    clickableSpan.onClick(a91Var);
                                     break;
                             }
                         }
@@ -196,7 +196,7 @@ public final /* synthetic */ class ue implements View.OnClickListener {
                     paint.setColor(org.telegram.ui.ActionBar.k6.v0(i16, vnVar));
                     paint.setStrokeWidth(AndroidUtilities.dp(1.0f));
                     pk pkVar = new pk(parentActivity, paint);
-                    pkVar.setOnClickListener(new t81(parentActivity));
+                    pkVar.setOnClickListener(new z81(parentActivity));
                     pkVar.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
                     pkVar.setText(LocaleController.getString(R.string.SponsoredMessageAlertLearnMoreUrl));
                     pkVar.setTextColor(org.telegram.ui.ActionBar.k6.v0(i16, vnVar));
@@ -219,10 +219,10 @@ public final /* synthetic */ class ue implements View.OnClickListener {
                     h.addView(pkVar, k7.c6.t(-2, 34, 1, 22, 14, 22, 0));
                     g90Var4.setPadding(AndroidUtilities.dp(22.0f), 0, AndroidUtilities.dp(22.0f), 0);
                     h.addView(g90Var4, k7.c6.t(-1, -2, 0, 0, 14, 0, 0));
-                    ScrollView scrollView = new ScrollView(u81Var.getContext());
+                    ScrollView scrollView = new ScrollView(a91Var.getContext());
                     scrollView.addView(h);
-                    u81Var.addView(scrollView, k7.c6.d(-1, -2.0f, 0, 0.0f, 12.0f, 0.0f, 22.0f));
-                    o10.customView = u81Var;
+                    a91Var.addView(scrollView, k7.c6.d(-1, -2.0f, 0, 0.0f, 12.0f, 0.0f, 22.0f));
+                    o10.customView = a91Var;
                     o10.show();
                     break;
                 }

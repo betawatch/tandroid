@@ -1,23 +1,55 @@
 package org.telegram.ui;
 
-import android.view.MotionEvent;
-import android.view.View;
+import android.content.Intent;
+import android.os.Build;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gi1 implements View.OnTouchListener {
-    public final /* synthetic */ int a;
+public final class gi1 implements org.telegram.ui.Components.voip.d {
+    public final /* synthetic */ ii1 a;
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        switch (this.a) {
-            case 0:
-                int[][] iArr = WallpapersListActivity.h0;
-                break;
-            default:
-                int i10 = ph.l.U;
-                break;
+    public gi1(ii1 ii1Var) {
+        this.a = ii1Var;
+    }
+
+    public final void a() {
+        ii1 ii1Var = this.a;
+        if (ii1Var.m0 != 17) {
+            if (Build.VERSION.SDK_INT >= 23 && ii1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                ii1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    ii1Var.r(new sz0(this, 24));
+                    return;
+                }
+                return;
+            }
         }
-        return true;
+        Intent intent = new Intent(ii1Var.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", ii1Var.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", ii1Var.R0);
+        intent.putExtra("can_video_call", ii1Var.R0);
+        intent.putExtra("account", ii1Var.a);
+        try {
+            ii1Var.b.startService(intent);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
+    }
+
+    public final void b() {
+        ii1 ii1Var = this.a;
+        if (ii1Var.m0 == 17) {
+            ii1Var.r0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
+        } else {
+            ii1Var.r0.b();
+        }
     }
 }

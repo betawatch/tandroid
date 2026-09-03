@@ -37,7 +37,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.Switch;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class kq extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -1141,7 +1141,7 @@ public class kq extends org.telegram.ui.ActionBar.p2 implements NotificationCent
                 return;
             }
             if (kqVar.getParentActivity() == null || AccountInstance.getInstance(kqVar.currentAccount).getUserConfig().isPremium()) {
-                kqVar.presentFragment(new be1(1));
+                kqVar.presentFragment(new he1(1));
                 return;
             } else {
                 kqVar.showDialog(new fg.v0(5, kqVar.currentAccount, kqVar.getParentActivity(), kqVar, null));
@@ -1367,7 +1367,7 @@ public class kq extends org.telegram.ui.ActionBar.p2 implements NotificationCent
         this.b.setItemAnimator(lVar);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         frameLayout.addView(this.b, k7.c6.c(-1.0f, -1));
-        this.b.p1();
+        this.b.o1();
         this.actionBar.setAdaptiveBackground(this.b);
         this.b.setOnScrollListener(new l3(this, 6));
         this.b.setOnItemClickListener(new hg.v0(7, this, context));

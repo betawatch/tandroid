@@ -73,7 +73,7 @@ import org.telegram.ui.xn;
 import org.telegram.ui.y80;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class ActionBarLayout extends FrameLayout implements f5, ag.b {
     public static Drawable m1;
@@ -829,7 +829,7 @@ public class ActionBarLayout extends FrameLayout implements f5, ag.b {
             T(p2Var, z4);
             this.s0 = System.currentTimeMillis();
             this.T = true;
-            this.w0 = new org.telegram.messenger.voip.h(10, p2Var, p2Var2);
+            this.w0 = new org.telegram.messenger.voip.h(9, p2Var, p2Var2);
             ArrayList arrayList4 = new ArrayList();
             Property property = View.ALPHA;
             arrayList4.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) property, 0.0f, 1.0f));
@@ -2044,33 +2044,36 @@ public class ActionBarLayout extends FrameLayout implements f5, ag.b {
                     p2Var2.onTransitionAnimationEnd(true, true);
                     p2Var2.onBecomeFullyVisible();
                 }
-            } else if (!this.x0 || z10) {
-                b0(p2Var, false);
-                setVisibility(8);
-                View view2 = this.y0;
-                if (view2 != null) {
-                    view2.setVisibility(8);
-                }
             } else {
-                this.s0 = System.currentTimeMillis();
-                this.T = true;
-                this.v0 = new org.telegram.messenger.voip.h(9, this, p2Var);
-                ArrayList arrayList = new ArrayList();
-                Property property = View.ALPHA;
-                arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) property, 1.0f, 0.0f));
-                arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) View.SCALE_X, 1.0f, 0.9f));
-                arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) View.SCALE_Y, 1.0f, 0.9f));
-                View view3 = this.y0;
-                if (view3 != null) {
-                    arrayList.add(ObjectAnimator.ofFloat(view3, (Property<View, Float>) property, 1.0f, 0.0f));
+                int i11 = 8;
+                if (!this.x0 || z10) {
+                    b0(p2Var, false);
+                    setVisibility(8);
+                    View view2 = this.y0;
+                    if (view2 != null) {
+                        view2.setVisibility(8);
+                    }
+                } else {
+                    this.s0 = System.currentTimeMillis();
+                    this.T = true;
+                    this.v0 = new org.telegram.messenger.voip.h(i11, this, p2Var);
+                    ArrayList arrayList = new ArrayList();
+                    Property property = View.ALPHA;
+                    arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) property, 1.0f, 0.0f));
+                    arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) View.SCALE_X, 1.0f, 0.9f));
+                    arrayList.add(ObjectAnimator.ofFloat(this, (Property<ActionBarLayout, Float>) View.SCALE_Y, 1.0f, 0.9f));
+                    View view3 = this.y0;
+                    if (view3 != null) {
+                        arrayList.add(ObjectAnimator.ofFloat(view3, (Property<View, Float>) property, 1.0f, 0.0f));
+                    }
+                    AnimatorSet animatorSet2 = new AnimatorSet();
+                    this.H = animatorSet2;
+                    animatorSet2.playTogether(arrayList);
+                    this.H.setInterpolator(this.K);
+                    this.H.setDuration(200L);
+                    this.H.addListener(new q(this, 0));
+                    this.H.start();
                 }
-                AnimatorSet animatorSet2 = new AnimatorSet();
-                this.H = animatorSet2;
-                animatorSet2.playTogether(arrayList);
-                this.H.setInterpolator(this.K);
-                this.H.setDuration(200L);
-                this.H.addListener(new q(this, 0));
-                this.H.start();
             }
             p2Var.onFragmentClosed();
         }

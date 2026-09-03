@@ -31,15 +31,14 @@ import java.util.List;
 import oh.h4;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.web.e0;
-import q5.g0;
 import q5.l;
 import q5.q;
 import r5.d0;
 import s5.p;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class h {
     public static final u5.b v = new u5.b("MediaSessionManager", null);
@@ -54,7 +53,7 @@ public final class h {
     public final j i;
     public final f j;
     public final a7.e k;
-    public final ul0 l;
+    public final tl0 l;
     public final d0 m;
     public s5.h n;
     public CastDevice o;
@@ -115,7 +114,7 @@ public final class h {
             fVar2 = new f(context);
         }
         this.j = fVar2;
-        this.l = new ul0(this, 8);
+        this.l = new tl0(this, 8);
     }
 
     public final void a(s5.h hVar, CastDevice castDevice) {
@@ -169,7 +168,7 @@ public final class h {
         boolean z10;
         ke.b bVar;
         Uri uri;
-        g0 g0Var;
+        q5.c0 c0Var;
         q5.o c3;
         MediaInfo mediaInfo;
         s5.h hVar = this.n;
@@ -193,8 +192,8 @@ public final class h {
                 v.b("Update media notification.", new Object[0]);
                 CastDevice castDevice = this.o;
                 s5.h hVar2 = this.n;
-                c0 c0Var = this.p;
-                if (castDevice != null && hVar2 != null && c0Var != null && (d = hVar2.d()) != null && (lVar = d.d) != null) {
+                c0 c0Var2 = this.p;
+                if (castDevice != null && hVar2 != null && c0Var2 != null && (d = hVar2.d()) != null && (lVar = d.d) != null) {
                     List list = lVar.a;
                     q e6 = hVar2.e();
                     if (e6 != null) {
@@ -214,7 +213,7 @@ public final class h {
                         l.f(1, "com.google.android.gms.cast.metadata.TITLE");
                         String string = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
                         String str = castDevice.d;
-                        ke.b bVar2 = new ke.b(z11, i11, string, str, c0Var.a.b, z4, z10);
+                        ke.b bVar2 = new ke.b(z11, i11, string, str, c0Var2.a.b, z4, z10);
                         boolean z12 = z11;
                         boolean z13 = z4;
                         boolean z14 = z10;
@@ -223,12 +222,12 @@ public final class h {
                             fVar.k = bVar2;
                             fVar.b();
                         }
-                        g0 g0Var2 = new g0((list != null || list.isEmpty()) ? null : (a6.a) list.get(0));
-                        uri = (Uri) g0Var2.b;
-                        g0Var = fVar.l;
-                        if (g0Var != null || !u5.a.d(uri, (Uri) g0Var.b)) {
+                        q5.c0 c0Var3 = new q5.c0((list != null || list.isEmpty()) ? null : (a6.a) list.get(0));
+                        uri = (Uri) c0Var3.c;
+                        c0Var = fVar.l;
+                        if (c0Var != null || !u5.a.d(uri, (Uri) c0Var.c)) {
                             j jVar = fVar.i;
-                            jVar.e = new g0(fVar, g0Var2, false, 7);
+                            jVar.e = new q5.c0(fVar, c0Var3, false, 8);
                             jVar.B(uri);
                         }
                     }
@@ -240,7 +239,7 @@ public final class h {
                     l.f(1, "com.google.android.gms.cast.metadata.TITLE");
                     String string2 = lVar.b.getString("com.google.android.gms.cast.metadata.TITLE");
                     String str2 = castDevice.d;
-                    ke.b bVar22 = new ke.b(z11, i112, string2, str2, c0Var.a.b, z4, z10);
+                    ke.b bVar22 = new ke.b(z11, i112, string2, str2, c0Var2.a.b, z4, z10);
                     boolean z122 = z11;
                     boolean z132 = z4;
                     boolean z142 = z10;
@@ -249,13 +248,13 @@ public final class h {
                     }
                     fVar.k = bVar22;
                     fVar.b();
-                    g0 g0Var22 = new g0((list != null || list.isEmpty()) ? null : (a6.a) list.get(0));
-                    uri = (Uri) g0Var22.b;
-                    g0Var = fVar.l;
-                    if (g0Var != null) {
+                    q5.c0 c0Var32 = new q5.c0((list != null || list.isEmpty()) ? null : (a6.a) list.get(0));
+                    uri = (Uri) c0Var32.c;
+                    c0Var = fVar.l;
+                    if (c0Var != null) {
                     }
                     j jVar2 = fVar.i;
-                    jVar2.e = new g0(fVar, g0Var22, false, 7);
+                    jVar2.e = new q5.c0(fVar, c0Var32, false, 8);
                     jVar2.B(uri);
                 }
             }
@@ -522,9 +521,9 @@ public final class h {
     public final void g(boolean z4) {
         if (this.b.h) {
             a7.e eVar = this.k;
-            ul0 ul0Var = this.l;
-            if (ul0Var != null) {
-                eVar.removeCallbacks(ul0Var);
+            tl0 tl0Var = this.l;
+            if (tl0Var != null) {
+                eVar.removeCallbacks(tl0Var);
             }
             Context context = this.a;
             Intent intent = new Intent(context, (Class<?>) ReconnectionService.class);
@@ -533,7 +532,7 @@ public final class h {
                 context.startService(intent);
             } catch (IllegalStateException unused) {
                 if (z4) {
-                    eVar.postDelayed(ul0Var, 1000L);
+                    eVar.postDelayed(tl0Var, 1000L);
                 }
             }
         }

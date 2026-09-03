@@ -4,10 +4,10 @@ import android.os.Bundle;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m0 implements c2, Utilities.Callback5 {
     public final /* synthetic */ int a;
@@ -32,16 +32,16 @@ public final /* synthetic */ class m0 implements c2, Utilities.Callback5 {
 
     @Override // org.telegram.messenger.Utilities.Callback5
     public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        j51 j51Var = (j51) obj;
+        h51 h51Var = (h51) obj;
         ((Integer) obj3).getClass();
         ((Float) obj4).getClass();
         ((Float) obj5).getClass();
         n0 n0Var = this.b;
-        if (n0Var.d.h(j51Var)) {
+        if (n0Var.d.h(h51Var)) {
             return;
         }
-        int i10 = j51Var.d;
-        if (i10 == 2 || j51Var.a == 17) {
+        int i10 = h51Var.d;
+        if (i10 == 2 || h51Var.a == 17) {
             Bundle bundle = new Bundle();
             bundle.putLong("user_id", n0Var.getUserConfig().getClientUserId());
             bundle.putInt("chatMode", 5);

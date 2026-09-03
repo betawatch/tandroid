@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class u90 {
     public static final Pattern a = Pattern.compile("^\\[\\^([^\\]]+)\\]:[ \\t]*(.*)$");
@@ -556,8 +556,8 @@ public abstract class u90 {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:88:0x0257  */
-    /* JADX WARN: Removed duplicated region for block: B:94:0x0261  */
+    /* JADX WARN: Removed duplicated region for block: B:88:0x0258  */
+    /* JADX WARN: Removed duplicated region for block: B:94:0x0262  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -644,9 +644,9 @@ public abstract class u90 {
                 }
             }
         }
-        jVar.e = new q5.g0(2, arrayList2, arrayList3);
+        jVar.e = new q5.c0(3, arrayList2, arrayList3);
         ((ArrayList) jVar.a).add(new je.a(8));
-        sf.e eVar = new sf.e(jVar);
+        sf.f fVar = new sf.f(jVar);
         ArrayDeque arrayDeque = new ArrayDeque();
         boolean z4 = false;
         String str4 = null;
@@ -680,7 +680,7 @@ public abstract class u90 {
             }
         }
         q90 q90Var = new q90(arrayList, arrayDeque);
-        q90Var.v(eVar.C(stringBuffer2));
+        q90Var.v(fVar.C(stringBuffer2));
         q90Var.y();
         if (!linkedHashMap.isEmpty()) {
             TL_iv.pageBlockDetails pageblockdetails = new TL_iv.pageBlockDetails();
@@ -693,7 +693,7 @@ public abstract class u90 {
                 String str8 = (String) entry.getValue();
                 ArrayList arrayList4 = new ArrayList();
                 q90 q90Var2 = new q90(arrayList4, new ArrayDeque());
-                q90Var2.v(eVar.C(str8));
+                q90Var2.v(fVar.C(str8));
                 q90Var2.y();
                 TL_iv.RichText textconcat = new TL_iv.textConcat();
                 int size = arrayList4.size();

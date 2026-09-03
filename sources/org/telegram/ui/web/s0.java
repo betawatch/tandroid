@@ -20,27 +20,27 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.i50;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.o71;
-import org.telegram.ui.Components.or0;
+import org.telegram.ui.Components.n71;
+import org.telegram.ui.Components.nr0;
 import org.telegram.ui.Stories.recorder.FfmpegAudioWaveformLoader;
-import org.telegram.ui.li1;
 import org.telegram.ui.mo;
-import qh.a8;
+import org.telegram.ui.ri1;
+import qh.aa;
+import qh.b9;
 import qh.ba;
-import qh.c9;
-import qh.ca;
-import qh.f3;
+import qh.e3;
+import qh.e9;
 import qh.f9;
-import qh.g9;
-import qh.l4;
+import qh.k4;
+import qh.p5;
 import qh.q5;
-import qh.r5;
-import qh.u8;
-import qh.x2;
-import qh.y8;
-import qh.z2;
+import qh.t8;
+import qh.w2;
+import qh.x8;
+import qh.y2;
+import qh.z7;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s0 implements Runnable {
     public final /* synthetic */ int a;
@@ -62,7 +62,7 @@ public final /* synthetic */ class s0 implements Runnable {
                 break;
             case 1:
                 e1 e1Var = (e1) this.b;
-                Utilities.searchQueue.postRunnable(new o71(e1Var, new ArrayList(e1Var.h.e), e1Var.h.n, 7));
+                Utilities.searchQueue.postRunnable(new n71(e1Var, new ArrayList(e1Var.h.e), e1Var.h.n, 7));
                 break;
             case 2:
                 ((HttpGetFileTask) this.b).lambda$doInBackground$1();
@@ -71,7 +71,7 @@ public final /* synthetic */ class s0 implements Runnable {
                 ((org.telegram.ui.Cells.n1) this.b).invalidateSelf();
                 break;
             case 4:
-                y1 y1Var = (y1) this.b;
+                x1 x1Var = (x1) this.b;
                 File databasePath = ApplicationLoader.applicationContext.getDatabasePath("webview.db");
                 long length = (databasePath == null || !databasePath.exists()) ? 0L : databasePath.length();
                 File databasePath2 = ApplicationLoader.applicationContext.getDatabasePath("webviewCache.db");
@@ -80,14 +80,14 @@ public final /* synthetic */ class s0 implements Runnable {
                 }
                 File file = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
                 if (file.exists()) {
-                    length += y1.Z(file, Boolean.FALSE);
+                    length += x1.Z(file, Boolean.FALSE);
                 }
                 File file2 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "cache/WebView");
                 if (file2.exists()) {
-                    length += y1.Z(file2, null);
+                    length += x1.Z(file2, null);
                 }
                 File file3 = new File(ApplicationLoader.applicationContext.getApplicationInfo().dataDir, "app_webview");
-                AndroidUtilities.runOnUIThread(new mo(y1Var, length, file3.exists() ? y1.Z(file3, Boolean.TRUE) : 0L, 1));
+                AndroidUtilities.runOnUIThread(new mo(x1Var, length, file3.exists() ? x1.Z(file3, Boolean.TRUE) : 0L, 1));
                 break;
             case 5:
                 ((boolean[]) this.b)[0] = true;
@@ -97,9 +97,9 @@ public final /* synthetic */ class s0 implements Runnable {
                 break;
             case 7:
                 ph.l lVar = (ph.l) this.b;
-                or0 or0Var = lVar.T;
+                nr0 nr0Var = lVar.T;
                 d6 d6Var = lVar.a;
-                or0Var.a(d6Var == null ? "" : d6Var.E);
+                nr0Var.a(d6Var == null ? "" : d6Var.E);
                 break;
             case 8:
                 ((qh.g) this.b).c.T = false;
@@ -122,85 +122,85 @@ public final /* synthetic */ class s0 implements Runnable {
                 ((qh.o0) this.b).a(false);
                 break;
             case 13:
-                l4 l4Var = (l4) this.b;
+                k4 k4Var = (k4) this.b;
                 ic.e();
-                fg.n1 n1Var = new fg.n1((p2) new fg.x1(l4Var), 14, false);
+                fg.n1 n1Var = new fg.n1((p2) new fg.x1(k4Var), 14, false);
                 n1Var.setOnDismissListener(new eg.c0(7));
                 n1Var.show();
                 break;
             case 14:
-                ((qh.g1) this.b).G();
+                ((qh.f1) this.b).G();
                 break;
             case 15:
-                qh.n1 n1Var2 = (qh.n1) this.b;
-                ArrayList arrayList = n1Var2.v;
-                ArrayList arrayList2 = n1Var2.s;
-                qh.o1 o1Var = n1Var2.K;
-                qh.y1 y1Var2 = o1Var.s;
-                i10 = ((h3) y1Var2).currentAccount;
+                qh.m1 m1Var = (qh.m1) this.b;
+                ArrayList arrayList = m1Var.v;
+                ArrayList arrayList2 = m1Var.s;
+                qh.n1 n1Var2 = m1Var.K;
+                qh.x1 x1Var2 = n1Var2.s;
+                i10 = ((h3) x1Var2).currentAccount;
                 MediaDataController mediaDataController = MediaDataController.getInstance(i10);
-                String str = n1Var2.E;
+                String str = m1Var.E;
                 if (!"premium".equalsIgnoreCase(str)) {
-                    if (o1Var.a != 1 || !Emoji.fullyConsistsOfEmojis(n1Var2.E)) {
+                    if (n1Var2.a != 1 || !Emoji.fullyConsistsOfEmojis(m1Var.E)) {
                         String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-                        String[] strArr = n1Var2.G;
+                        String[] strArr = m1Var.G;
                         if (strArr == null || !Arrays.equals(currentKeyboardLanguage, strArr)) {
-                            i11 = ((h3) y1Var2).currentAccount;
+                            i11 = ((h3) x1Var2).currentAccount;
                             MediaDataController.getInstance(i11).fetchNewEmojiKeywords(currentKeyboardLanguage);
                         }
-                        n1Var2.G = currentKeyboardLanguage;
-                        mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, n1Var2.E, false, new qh.m1(n1Var2, str, mediaDataController, 0), null, false, false, false, true, 50, false);
+                        m1Var.G = currentKeyboardLanguage;
+                        mediaDataController.getEmojiSuggestions(currentKeyboardLanguage, m1Var.E, false, new qh.l1(m1Var, str, mediaDataController, 0), null, false, false, false, true, 50, false);
                         break;
                     } else {
                         TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
-                        tL_messages_getStickers.emoticon = n1Var2.E;
+                        tL_messages_getStickers.emoticon = m1Var.E;
                         tL_messages_getStickers.hash = 0L;
-                        i12 = ((h3) y1Var2).currentAccount;
-                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getStickers, new li1(1, n1Var2, str));
+                        i12 = ((h3) x1Var2).currentAccount;
+                        ConnectionsManager.getInstance(i12).sendRequest(tL_messages_getStickers, new ri1(1, m1Var, str));
                         break;
                     }
                 } else {
                     ArrayList<TLRPC.Document> recentStickers = mediaDataController.getRecentStickers(7);
-                    n1Var2.x = 0;
+                    m1Var.x = 0;
                     arrayList2.clear();
                     arrayList.clear();
-                    n1Var2.y.clear();
-                    n1Var2.n.clear();
-                    n1Var2.x++;
+                    m1Var.y.clear();
+                    m1Var.n.clear();
+                    m1Var.x++;
                     arrayList2.add(null);
                     arrayList.add(0L);
                     arrayList2.addAll(recentStickers);
-                    n1Var2.x = recentStickers.size() + n1Var2.x;
-                    n1Var2.F = n1Var2.E;
-                    n1Var2.l();
-                    qh.d1.w1(o1Var.b, 0, 0);
-                    o1Var.f.c(false);
-                    o1Var.e.n(false);
+                    m1Var.x = recentStickers.size() + m1Var.x;
+                    m1Var.F = m1Var.E;
+                    m1Var.l();
+                    qh.d1.v1(n1Var2.b, 0, 0);
+                    n1Var2.f.c(false);
+                    n1Var2.e.n(false);
                     break;
                 }
                 break;
             case 16:
-                qh.s1 s1Var = (qh.s1) ((eh.c) this.b).b;
-                if (!s1Var.h) {
-                    s1Var.n.setVisibility(8);
+                qh.r1 r1Var = (qh.r1) ((eh.c) this.b).b;
+                if (!r1Var.h) {
+                    r1Var.n.setVisibility(8);
                     break;
                 }
                 break;
             case 17:
-                qh.v1 v1Var = (qh.v1) ((i50) this.b).b;
-                ArrayList arrayList3 = v1Var.o;
+                qh.u1 u1Var = (qh.u1) ((i50) this.b).b;
+                ArrayList arrayList3 = u1Var.o;
                 if (!arrayList3.isEmpty()) {
-                    v1Var.l.d(0.0f, true);
-                    int i13 = v1Var.k + 1;
-                    v1Var.k = i13;
+                    u1Var.l.d(0.0f, true);
+                    int i13 = u1Var.k + 1;
+                    u1Var.k = i13;
                     if (i13 > arrayList3.size() - 1) {
-                        v1Var.k = 0;
+                        u1Var.k = 0;
                     }
-                    ng.h0 h0Var = v1Var.j;
-                    h0Var.e((ng.q0) arrayList3.get(v1Var.k));
-                    v1Var.j = v1Var.i;
-                    v1Var.i = h0Var;
-                    v1Var.p.invalidate();
+                    ng.h0 h0Var = u1Var.j;
+                    h0Var.e((ng.q0) arrayList3.get(u1Var.k));
+                    u1Var.j = u1Var.i;
+                    u1Var.i = h0Var;
+                    u1Var.p.invalidate();
                     break;
                 }
                 break;
@@ -208,26 +208,26 @@ public final /* synthetic */ class s0 implements Runnable {
                 ((FfmpegAudioWaveformLoader) this.b).lambda$destroy$2();
                 break;
             case 19:
-                ((x2) this.b).b(null);
+                ((w2) this.b).b(null);
                 break;
             case 20:
-                ((z2) this.b).E();
+                ((y2) this.b).E();
                 break;
             case 21:
-                u8 u8Var = (u8) this.b;
-                if (u8Var.F) {
-                    u8Var.F = false;
-                    u8Var.invalidate();
+                t8 t8Var = (t8) this.b;
+                if (t8Var.F) {
+                    t8Var.F = false;
+                    t8Var.invalidate();
                     break;
                 }
                 break;
             case 22:
-                r5 r5Var = ((q5) this.b).p;
-                r5Var.N = System.currentTimeMillis();
-                r5Var.O = 0L;
-                r5Var.o0 = true;
-                ((y8) r5Var.a).a.G0.a(0L, true);
-                r5Var.invalidate();
+                q5 q5Var = ((p5) this.b).p;
+                q5Var.N = System.currentTimeMillis();
+                q5Var.O = 0L;
+                q5Var.o0 = true;
+                ((x8) q5Var.a).a.G0.a(0L, true);
+                q5Var.invalidate();
                 break;
             case 23:
                 qh.n nVar = (qh.n) this.b;
@@ -244,30 +244,30 @@ public final /* synthetic */ class s0 implements Runnable {
                 }
                 break;
             case 25:
-                ((a8) ((lg.j) this.b).n).fullScroll(130);
+                ((z7) ((lg.j) this.b).n).fullScroll(130);
                 break;
             case 26:
-                ba baVar = (ba) this.b;
-                baVar.u0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
-                baVar.t0.J(AndroidUtilities.emptyMotionEvent());
+                aa aaVar = (aa) this.b;
+                aaVar.u0.onTouchEvent(AndroidUtilities.emptyMotionEvent());
+                aaVar.t0.J(AndroidUtilities.emptyMotionEvent());
                 break;
             case 27:
-                ca caVar = ((c9) this.b).h0;
-                caVar.v(true);
-                caVar.x0.setCameraThumb(caVar.A());
+                ba baVar = ((b9) this.b).h0;
+                baVar.v(true);
+                baVar.x0.setCameraThumb(baVar.A());
                 break;
             case 28:
-                ((f9) this.b).x2.m1.setVisibility(8);
+                ((e9) this.b).x2.m1.setVisibility(8);
                 break;
             default:
-                g9 g9Var = (g9) this.b;
-                ca caVar2 = g9Var.V;
-                if (!caVar2.N1 && !caVar2.M1 && caVar2.y0 != null && caVar2.c0 == 0 && caVar2.j1 != null) {
-                    String string = LocaleController.getString(g9Var.isFrontface() ? R.string.StoryCameraSavedDualBackHint : R.string.StoryCameraSavedDualFrontHint);
-                    f3 f3Var = caVar2.j1;
-                    f3Var.h = f3.a(string, f3Var.getTextPaint());
-                    caVar2.j1.t(string);
-                    caVar2.j1.v();
+                f9 f9Var = (f9) this.b;
+                ba baVar2 = f9Var.V;
+                if (!baVar2.N1 && !baVar2.M1 && baVar2.y0 != null && baVar2.c0 == 0 && baVar2.j1 != null) {
+                    String string = LocaleController.getString(f9Var.isFrontface() ? R.string.StoryCameraSavedDualBackHint : R.string.StoryCameraSavedDualFrontHint);
+                    e3 e3Var = baVar2.j1;
+                    e3Var.h = e3.a(string, e3Var.getTextPaint());
+                    baVar2.j1.s(string);
+                    baVar2.j1.u();
                     MessagesController.getGlobalMainSettings().edit().putInt("storysvddualhint", MessagesController.getGlobalMainSettings().getInt("storysvddualhint", 0) + 1).apply();
                     break;
                 }

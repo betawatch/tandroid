@@ -6,25 +6,16 @@ import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.util.Log;
-import android.widget.LinearLayout;
 import java.util.List;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.x4;
-import org.telegram.ui.ActionBar.z4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class n {
     public int a;
     public int b;
-    public final Context c;
+    public Object c;
     public Object d;
     public Object e;
-
-    public n(Context context) {
-        this.b = 0;
-        this.c = context;
-    }
 
     public static String c(w8.g gVar) {
         gVar.a();
@@ -73,7 +64,7 @@ public final class n {
 
     public PackageInfo d(String str) {
         try {
-            return this.c.getPackageManager().getPackageInfo(str, 0);
+            return ((Context) this.c).getPackageManager().getPackageInfo(str, 0);
         } catch (PackageManager.NameNotFoundException e6) {
             Log.w("FirebaseMessaging", "Failed to find package " + e6);
             return null;
@@ -85,7 +76,7 @@ public final class n {
         synchronized (this) {
             i10 = this.b;
             if (i10 == 0) {
-                PackageManager packageManager = this.c.getPackageManager();
+                PackageManager packageManager = ((Context) this.c).getPackageManager();
                 if (packageManager.checkPermission("com.google.android.c2dm.permission.SEND", "com.google.android.gms") == -1) {
                     Log.e("FirebaseMessaging", "Google Play services missing or without correct permission.");
                     i10 = 0;
@@ -121,21 +112,10 @@ public final class n {
     }
 
     public synchronized void f() {
-        PackageInfo d = d(this.c.getPackageName());
+        PackageInfo d = d(((Context) this.c).getPackageName());
         if (d != null) {
             this.d = Integer.toString(d.versionCode);
             this.e = d.versionName;
         }
-    }
-
-    public n(x4 x4Var, Context context, int i10) {
-        this.e = x4Var;
-        this.c = context;
-        this.a = i10;
-        int dp = AndroidUtilities.dp(18.0f);
-        this.b = dp;
-        LinearLayout b10 = z4.b(x4Var.Q, context, null, true, false, false);
-        b10.setPadding(dp, 0, dp, 0);
-        this.d = b10;
     }
 }

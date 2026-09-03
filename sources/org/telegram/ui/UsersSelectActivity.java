@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class UsersSelectActivity extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate, View.OnClickListener {
     public org.telegram.ui.Components.b5 B;
@@ -33,13 +33,13 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.p2 implements
     public int N;
     public int O;
     public org.telegram.ui.ActionBar.x1 a;
-    public gh1 b;
+    public mh1 b;
     public lg.f c;
-    public org.telegram.ui.Components.tl0 d;
+    public org.telegram.ui.Components.sl0 d;
     public org.telegram.ui.Components.u00 e;
     public org.telegram.ui.Components.x60 f;
-    public fh1 h;
-    public dh1 n;
+    public lh1 h;
+    public jh1 n;
     public org.telegram.ui.Components.a20 r;
     public FrameLayout.LayoutParams s;
     public boolean v;
@@ -277,9 +277,9 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.p2 implements
                 arrayList.add(Long.valueOf(hVar.j(i10)));
             }
         }
-        dh1 dh1Var = this.n;
-        if (dh1Var != null) {
-            dh1Var.a(this.G, arrayList);
+        jh1 jh1Var = this.n;
+        if (jh1Var != null) {
+            jh1Var.a(this.G, arrayList);
         }
         finishFragment();
     }
@@ -384,11 +384,11 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.p2 implements
         x1Var.setVerticalScrollBarEnabled(false);
         AndroidUtilities.setScrollViewEdgeEffectColor(this.a, org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d6, false));
         gVar.addView(this.a);
-        gh1 gh1Var = new gh1(this, context);
-        this.b = gh1Var;
-        this.a.addView(gh1Var, k7.c6.c(-2.0f, -1));
+        mh1 mh1Var = new mh1(this, context);
+        this.b = mh1Var;
+        this.a.addView(mh1Var, k7.c6.c(-2.0f, -1));
         final int i13 = 0;
-        this.b.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.bh1
+        this.b.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.hh1
             public final /* synthetic */ UsersSelectActivity b;
 
             {
@@ -431,7 +431,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.p2 implements
         this.c.setHintText(LocaleController.getString(R.string.SearchForPeopleAndGroups));
         this.c.setCustomSelectionActionModeCallback(new org.telegram.ui.ActionBar.j0(4));
         this.c.setOnKeyListener(new s60(1, this));
-        this.c.addTextChangedListener(new ch1(this));
+        this.c.addTextChangedListener(new ih1(this));
         org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(context, null);
         this.e = u00Var;
         u00Var.setViewType(10);
@@ -449,28 +449,28 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.p2 implements
         this.f.d.setText(LocaleController.getString(R.string.NoContacts));
         gVar.addView(this.f);
         f2.j0 j0Var = new f2.j0(1, false);
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.d = tl0Var;
-        tl0Var.setFastScrollEnabled(0);
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.d = sl0Var;
+        sl0Var.setFastScrollEnabled(0);
         this.d.setEmptyView(this.f);
-        org.telegram.ui.Components.tl0 tl0Var2 = this.d;
-        fh1 fh1Var = new fh1(this, context);
-        this.h = fh1Var;
-        tl0Var2.setAdapter(fh1Var);
+        org.telegram.ui.Components.sl0 sl0Var2 = this.d;
+        lh1 lh1Var = new lh1(this, context);
+        this.h = lh1Var;
+        sl0Var2.setAdapter(lh1Var);
         this.d.setLayoutManager(j0Var);
         this.d.setVerticalScrollBarEnabled(false);
         this.d.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         this.d.i(new oh.j(8));
         gVar.addView(this.d);
         this.d.setOnItemClickListener(new hg.v0(22, this, context));
-        this.d.setOnScrollListener(new zb1(this, 3));
+        this.d.setOnScrollListener(new ce1(this, 2));
         this.s = org.telegram.ui.Components.a20.b();
         org.telegram.ui.Components.a20 a20Var = new org.telegram.ui.Components.a20(context, this.resourceProvider, false);
         this.r = a20Var;
         a20Var.setImageResource(R.drawable.floating_check);
         gVar.addView(this.r, this.s);
         final int i16 = 1;
-        this.r.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.bh1
+        this.r.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.hh1
             public final /* synthetic */ UsersSelectActivity b;
 
             {
@@ -565,9 +565,9 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.p2 implements
             if (x60Var != null) {
                 x60Var.e(false, true);
             }
-            fh1 fh1Var = this.h;
-            if (fh1Var != null) {
-                fh1Var.l();
+            lh1 lh1Var = this.h;
+            if (lh1Var != null) {
+                lh1Var.l();
                 return;
             }
             return;
@@ -598,7 +598,7 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.p2 implements
     @Override // org.telegram.ui.ActionBar.p2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        ey0 ey0Var = new ey0(10, this);
+        jy0 jy0Var = new jy0(10, this);
         View view = this.fragmentView;
         int i10 = org.telegram.ui.ActionBar.k6.d6;
         arrayList.add(new org.telegram.ui.ActionBar.m6(view, 1, null, null, null, null, i10));
@@ -629,14 +629,14 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.p2 implements
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.d, 262148, new Class[]{org.telegram.ui.Cells.g4.class}, new String[]{"statusTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.n6));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.d, 262148, new Class[]{org.telegram.ui.Cells.g4.class}, new String[]{"statusTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.k6.y6));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.d, 0, new Class[]{org.telegram.ui.Cells.g4.class}, null, org.telegram.ui.ActionBar.k6.r0, null, org.telegram.ui.ActionBar.k6.J7));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, ey0Var, org.telegram.ui.ActionBar.k6.O7));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, ey0Var, org.telegram.ui.ActionBar.k6.P7));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, ey0Var, org.telegram.ui.ActionBar.k6.Q7));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, ey0Var, org.telegram.ui.ActionBar.k6.R7));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, ey0Var, org.telegram.ui.ActionBar.k6.S7));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, jy0Var, org.telegram.ui.ActionBar.k6.O7));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, jy0Var, org.telegram.ui.ActionBar.k6.P7));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, jy0Var, org.telegram.ui.ActionBar.k6.Q7));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, jy0Var, org.telegram.ui.ActionBar.k6.R7));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, jy0Var, org.telegram.ui.ActionBar.k6.S7));
         int i12 = org.telegram.ui.ActionBar.k6.T7;
-        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, ey0Var, i12));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, ey0Var, org.telegram.ui.ActionBar.k6.U7));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, jy0Var, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(null, 0, null, null, null, jy0Var, org.telegram.ui.ActionBar.k6.U7));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Components.p30.class}, null, null, null, org.telegram.ui.ActionBar.k6.ci));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Components.p30.class}, null, null, null, org.telegram.ui.ActionBar.k6.bi));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.b, 0, new Class[]{org.telegram.ui.Components.p30.class}, null, null, null, org.telegram.ui.ActionBar.k6.di));
@@ -717,9 +717,9 @@ public class UsersSelectActivity extends org.telegram.ui.ActionBar.p2 implements
 
     public void setContainerHeight(int i10) {
         this.y = i10;
-        gh1 gh1Var = this.b;
-        if (gh1Var != null) {
-            gh1Var.requestLayout();
+        mh1 mh1Var = this.b;
+        if (mh1Var != null) {
+            mh1Var.requestLayout();
         }
     }
 }

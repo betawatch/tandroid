@@ -7,11 +7,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.j90;
+import qh.w5;
 import qh.x5;
 import qh.y5;
-import qh.z5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f0 implements h5.d {
     public final /* synthetic */ int a;
@@ -53,7 +53,7 @@ public final /* synthetic */ class f0 implements h5.d {
                 }
                 break;
             case 1:
-                x5 x5Var = (x5) this.b;
+                w5 w5Var = (w5) this.b;
                 MessagesController messagesController = (MessagesController) this.c;
                 String str = (String) this.d;
                 Long l10 = (Long) obj;
@@ -61,15 +61,15 @@ public final /* synthetic */ class f0 implements h5.d {
                     TLObject userOrChat = messagesController.getUserOrChat(l10.longValue());
                     if (!(userOrChat instanceof TLRPC.User)) {
                         if (userOrChat instanceof TLRPC.Chat) {
-                            x5Var.run(new z5(str, (TLRPC.Chat) userOrChat));
+                            w5Var.run(new y5(str, (TLRPC.Chat) userOrChat));
                             break;
                         }
                     } else {
-                        x5Var.run(new y5(str, (TLRPC.User) userOrChat));
+                        w5Var.run(new x5(str, (TLRPC.User) userOrChat));
                         break;
                     }
                 } else {
-                    x5Var.run(null);
+                    w5Var.run(null);
                     break;
                 }
                 break;

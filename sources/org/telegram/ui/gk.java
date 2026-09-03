@@ -7,9 +7,9 @@ import java.util.WeakHashMap;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class gk extends org.telegram.ui.Components.e81 {
+public final class gk extends org.telegram.ui.Components.d81 {
     public final /* synthetic */ Context a;
     public final /* synthetic */ xn b;
 
@@ -18,7 +18,7 @@ public final class gk extends org.telegram.ui.Components.e81 {
         this.a = context;
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final void b(View view, int i10, int i11) {
         if (view instanceof zn) {
             ((zn) view).a.Jc(this.b.r3);
@@ -27,7 +27,7 @@ public final class gk extends org.telegram.ui.Components.e81 {
         r0.z.c(view);
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final View d(int i10) {
         Context context = this.a;
         xn xnVar = this.b;
@@ -48,17 +48,17 @@ public final class gk extends org.telegram.ui.Components.e81 {
         return fkVar;
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final int e() {
         return 3;
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final CharSequence g(int i10) {
         return i10 != 1 ? i10 != 2 ? LocaleController.getString(R.string.SearchThisChat) : LocaleController.getString(R.string.SearchPublicPosts) : LocaleController.getString(R.string.SearchMyMessages);
     }
 
-    @Override // org.telegram.ui.Components.e81
+    @Override // org.telegram.ui.Components.d81
     public final int h(int i10) {
         return i10;
     }

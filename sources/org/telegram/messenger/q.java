@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class q implements o1.f {
     public final /* synthetic */ int a = 0;
@@ -24,13 +24,13 @@ public final /* synthetic */ class q implements o1.f {
                 AndroidUtilities.lambda$shakeViewSpring$14(this.c, (View) this.d, this.b, hVar, z4, f10, f11);
                 break;
             default:
-                qh.d3 d3Var = (qh.d3) this.d;
-                qh.c3 c3Var = d3Var.b;
+                qh.c3 c3Var = (qh.c3) this.d;
+                qh.b3 b3Var = c3Var.b;
                 if (!z4) {
-                    c3Var.setTranslationY(this.b);
-                    c3Var.H = false;
-                    d3Var.d = null;
-                    d3Var.e = null;
+                    b3Var.setTranslationY(this.b);
+                    b3Var.H = false;
+                    c3Var.d = null;
+                    c3Var.e = null;
                     Runnable runnable = this.c;
                     if (runnable != null) {
                         runnable.run();
@@ -41,8 +41,8 @@ public final /* synthetic */ class q implements o1.f {
         }
     }
 
-    public /* synthetic */ q(qh.d3 d3Var, float f10, Runnable runnable) {
-        this.d = d3Var;
+    public /* synthetic */ q(qh.c3 c3Var, float f10, Runnable runnable) {
+        this.d = c3Var;
         this.b = f10;
         this.c = runnable;
     }

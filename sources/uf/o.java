@@ -7,10 +7,10 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.ay;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -92,8 +92,8 @@ public final /* synthetic */ class o implements Runnable {
                 ArrayList<Long> arrayList4 = zVar2.n0;
                 String str3 = this.c;
                 messagesStorage.localSearch(i15, str3, arrayList, arrayList2, arrayList3, arrayList4, -1);
-                AndroidUtilities.runOnUIThread(new d3((sl0) zVar2, this.d, (ArrayList) arrayList, (ArrayList) arrayList2, (ArrayList) arrayList3, 28));
-                g0.y1(str3, zVar2.v0);
+                AndroidUtilities.runOnUIThread(new d3((rl0) zVar2, this.d, (ArrayList) arrayList, (ArrayList) arrayList2, (ArrayList) arrayList3, 28));
+                g0.x1(str3, zVar2.v0);
                 zVar2.w0 = false;
                 if (str3.length() >= 3 && (LocaleController.getString(R.string.ArchiveSearchFilter).toLowerCase().startsWith(str3) || "archive".startsWith(this.e))) {
                     zVar2.w0 = true;
@@ -127,7 +127,7 @@ public final /* synthetic */ class o implements Runnable {
                         ArrayList arrayList6 = new ArrayList();
                         ArrayList arrayList7 = new ArrayList();
                         new ArrayList();
-                        AndroidUtilities.runOnUIThread(new d3((sl0) zVar3, zVar3.a0, arrayList5, arrayList6, arrayList7, 28));
+                        AndroidUtilities.runOnUIThread(new d3((rl0) zVar3, zVar3.a0, arrayList5, arrayList6, arrayList7, 28));
                     }
                 }
                 str = str4;

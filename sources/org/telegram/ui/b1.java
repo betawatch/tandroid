@@ -23,7 +23,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class b1 extends View implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.l9 {
     public int B;
@@ -40,7 +40,7 @@ public final class b1 extends View implements DownloadController.FileDownloadPro
     public d3 c;
     public d3 d;
     public final RadialProgress2 e;
-    public final org.telegram.ui.Components.ho0 f;
+    public final org.telegram.ui.Components.go0 f;
     public boolean h;
     public int n;
     public final int r;
@@ -59,9 +59,9 @@ public final class b1 extends View implements DownloadController.FileDownloadPro
         this.e = radialProgress2;
         radialProgress2.setCircleRadius(AndroidUtilities.dp(24.0f));
         this.G = DownloadController.getInstance(((l4) o70Var).U).generateObserverTag();
-        org.telegram.ui.Components.ho0 ho0Var = new org.telegram.ui.Components.ho0(this);
-        this.f = ho0Var;
-        ho0Var.h = new a1(this, 0);
+        org.telegram.ui.Components.go0 go0Var = new org.telegram.ui.Components.go0(this);
+        this.f = go0Var;
+        go0Var.h = new a1(this, 0);
     }
 
     private int getIconForCurrentState() {
@@ -120,9 +120,9 @@ public final class b1 extends View implements DownloadController.FileDownloadPro
         if (this.I == null || (messageObject = this.J) == null) {
             return;
         }
-        org.telegram.ui.Components.ho0 ho0Var = this.f;
-        if (!ho0Var.e) {
-            ho0Var.i(messageObject.audioProgress);
+        org.telegram.ui.Components.go0 go0Var = this.f;
+        if (!go0Var.e) {
+            go0Var.i(messageObject.audioProgress);
         }
         if (!MediaController.getInstance().isPlayingMessage(this.J)) {
             i10 = 0;
@@ -334,7 +334,7 @@ public final class b1 extends View implements DownloadController.FileDownloadPro
             }
             i12 = dp;
             TL_iv.pageBlockAudio pageblockaudio3 = this.H;
-            d3 p10 = l4.p(this.a, this, null, pageblockaudio3.caption.credit, dp2, this.r + this.s, pageblockaudio3, this.b.D ? org.telegram.ui.Components.lw0.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
+            d3 p10 = l4.p(this.a, this, null, pageblockaudio3.caption.credit, dp2, this.r + this.s, pageblockaudio3, this.b.D ? org.telegram.ui.Components.kw0.a() : Layout.Alignment.ALIGN_NORMAL, 0, this.b);
             this.d = p10;
             if (p10 != null) {
                 i12 += this.d.d.getHeight() + AndroidUtilities.dp(4.0f);
@@ -353,7 +353,7 @@ public final class b1 extends View implements DownloadController.FileDownloadPro
             } else {
                 SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(android.support.v4.media.a.z(musicAuthor, " - ", musicTitle));
                 if (!TextUtils.isEmpty(musicAuthor)) {
-                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.g51(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
+                    spannableStringBuilder.setSpan(new org.telegram.ui.Components.e51(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
                 }
                 CharSequence ellipsize = TextUtils.ellipsize(spannableStringBuilder, org.telegram.ui.ActionBar.k6.O2, dp5, TextUtils.TruncateAt.END);
                 d3 d3Var = new d3(this.a);

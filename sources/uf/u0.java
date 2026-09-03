@@ -57,24 +57,24 @@ import org.telegram.ui.Cells.b8;
 import org.telegram.ui.Cells.e2;
 import org.telegram.ui.Cells.h5;
 import org.telegram.ui.Components.bx;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.ma0;
-import org.telegram.ui.Components.o71;
+import org.telegram.ui.Components.n71;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.u5;
 import org.telegram.ui.Components.z8;
 import org.telegram.ui.du;
-import org.telegram.ui.li1;
+import org.telegram.ui.ri1;
 import org.telegram.ui.xn;
 import vf.o1;
 import vf.p1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class u0 extends sl0 implements NotificationCenter.NotificationCenterDelegate {
+public final class u0 extends rl0 implements NotificationCenter.NotificationCenterDelegate {
     public String A0;
     public p0 B;
     public int B0;
@@ -115,7 +115,7 @@ public final class u0 extends sl0 implements NotificationCenter.NotificationCent
     public TLRPC.Chat i0;
     public bx k0;
     public boolean l0;
-    public o71 m0;
+    public n71 m0;
     public long n;
     public String n0;
     public String o0;
@@ -184,7 +184,7 @@ public final class u0 extends sl0 implements NotificationCenter.NotificationCent
         return false;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return (this.t0 == null || this.e0) && this.x0 == null;
     }
@@ -519,7 +519,7 @@ public final class u0 extends sl0 implements NotificationCenter.NotificationCent
                     alertDialog$Builder.a.O = LocaleController.getString(R.string.ShareYouLocationTitle);
                     alertDialog$Builder.a.Q = LocaleController.getString(R.string.ShareYouLocationInline);
                     boolean[] zArr = new boolean[1];
-                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new qh.m1(this, zArr, user2, 4));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), new qh.l1(this, zArr, user2, 4));
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.web.m(6, this, zArr));
                     this.D0.showDialog(alertDialog$Builder.a, new hg.g(17, this, zArr));
                 }
@@ -791,9 +791,9 @@ public final class u0 extends sl0 implements NotificationCenter.NotificationCent
             xnVar2.i();
         }
         TLRPC.Chat chat5 = chat4;
-        o71 o71Var = this.m0;
-        if (o71Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(o71Var);
+        n71 n71Var = this.m0;
+        if (n71Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(n71Var);
             this.m0 = null;
         }
         if (this.g0 != 0) {
@@ -948,7 +948,7 @@ public final class u0 extends sl0 implements NotificationCenter.NotificationCent
                 TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
                 tL_messages_getStickers.emoticon = str2;
                 tL_messages_getStickers.hash = 0L;
-                this.B0 = ConnectionsManager.getInstance(this.f).sendRequest(tL_messages_getStickers, new li1(7, this, str12));
+                this.B0 = ConnectionsManager.getInstance(this.f).sendRequest(tL_messages_getStickers, new ri1(7, this, str12));
             }
             ArrayList arrayList7 = this.x0;
             if (arrayList7 == null || arrayList7.isEmpty()) {
@@ -1405,9 +1405,9 @@ public final class u0 extends sl0 implements NotificationCenter.NotificationCent
                                 return;
                             }
                             if (arrayList16.size() < 5) {
-                                o71 o71Var2 = new o71(this, arrayList16, hVar2, 29);
-                                this.m0 = o71Var2;
-                                AndroidUtilities.runOnUIThread(o71Var2, 1000L);
+                                n71 n71Var2 = new n71(this, arrayList16, hVar2, 29);
+                                this.m0 = n71Var2;
+                                AndroidUtilities.runOnUIThread(n71Var2, 1000L);
                             } else {
                                 Y(hVar2, arrayList16, true);
                             }
@@ -1535,9 +1535,9 @@ public final class u0 extends sl0 implements NotificationCenter.NotificationCent
             }
         }
         this.y = hVar;
-        o71 o71Var = this.m0;
-        if (o71Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(o71Var);
+        n71 n71Var = this.m0;
+        if (n71Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(n71Var);
             this.m0 = null;
         }
         this.O = null;
@@ -1956,12 +1956,12 @@ public final class u0 extends sl0 implements NotificationCenter.NotificationCent
                 e2Var.setDelegate(new j0(this));
                 view2 = e2Var;
             }
-            return new fl0(view2);
+            return new el0(view2);
         }
         h5 h5Var = new h5(context, g6Var);
         h5Var.setIsDarkTheme(false);
         view = h5Var;
         view2 = view;
-        return new fl0(view2);
+        return new el0(view2);
     }
 }

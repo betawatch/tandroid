@@ -13,15 +13,15 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class fe0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ie0 b;
+    public final /* synthetic */ he0 b;
 
-    public /* synthetic */ fe0(ie0 ie0Var, int i10) {
+    public /* synthetic */ fe0(he0 he0Var, int i10) {
         this.a = i10;
-        this.b = ie0Var;
+        this.b = he0Var;
     }
 
     @Override // org.telegram.tgnet.RequestDelegate
@@ -29,7 +29,7 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
         switch (this.a) {
             case 0:
                 final int i10 = 0;
-                final ie0 ie0Var = this.b;
+                final he0 he0Var = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ge0
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -37,19 +37,19 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                         int i12 = i10;
                         TLObject tLObject2 = tLObject;
                         TLRPC.TL_error tL_error2 = tL_error;
-                        ie0 ie0Var2 = ie0Var;
+                        he0 he0Var2 = he0Var;
                         int i13 = 0;
                         switch (i12) {
                             case 0:
-                                ie0Var2.getClass();
+                                he0Var2.getClass();
                                 if (tL_error2 == null) {
-                                    ie0Var2.n = (TL_account.Password) tLObject2;
-                                    ie0Var2.h(null);
+                                    he0Var2.n = (TL_account.Password) tLObject2;
+                                    he0Var2.h(null);
                                     break;
                                 }
                                 break;
                             case 1:
-                                og0 og0Var = ie0Var2.y;
+                                og0 og0Var = he0Var2.y;
                                 og0Var.k1(false, true);
                                 if (tL_error2 != null) {
                                     if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
@@ -69,18 +69,18 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                                         int indexOf = str.indexOf(42);
                                         int lastIndexOf = str.lastIndexOf(42);
                                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                                            org.telegram.ui.Components.t01 t01Var = new org.telegram.ui.Components.t01();
-                                            t01Var.a |= 256;
-                                            t01Var.b = indexOf;
+                                            org.telegram.ui.Components.s01 s01Var = new org.telegram.ui.Components.s01();
+                                            s01Var.a |= 256;
+                                            s01Var.b = indexOf;
                                             int i14 = lastIndexOf + 1;
-                                            t01Var.c = i14;
-                                            valueOf.setSpan(new org.telegram.ui.Components.u01(t01Var, 0), indexOf, i14, 0);
+                                            s01Var.c = i14;
+                                            valueOf.setSpan(new org.telegram.ui.Components.t01(s01Var, 0), indexOf, i14, 0);
                                         }
                                         SpannableStringBuilder formatSpannable = AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailSent), valueOf);
                                         org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
                                         d2Var.Q = formatSpannable;
                                         d2Var.O = LocaleController.getString("RestoreEmailSentTitle", R.string.RestoreEmailSentTitle);
-                                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new rs(25, ie0Var2, tL_auth_passwordRecovery));
+                                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new rs(25, he0Var2, tL_auth_passwordRecovery));
                                         Dialog showDialog = og0Var.showDialog(d2Var);
                                         if (showDialog != null) {
                                             showDialog.setCanceledOnTouchOutside(false);
@@ -91,12 +91,12 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                                 }
                                 break;
                             default:
-                                og0 og0Var2 = ie0Var2.y;
-                                ie0Var2.h = false;
+                                og0 og0Var2 = he0Var2.y;
+                                he0Var2.h = false;
                                 if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
                                     TL_account.getPassword getpassword = new TL_account.getPassword();
                                     i11 = ((org.telegram.ui.ActionBar.p2) og0Var2).currentAccount;
-                                    ConnectionsManager.getInstance(i11).sendRequest(getpassword, new fe0(ie0Var2, i13), 8);
+                                    ConnectionsManager.getInstance(i11).sendRequest(getpassword, new fe0(he0Var2, i13), 8);
                                     break;
                                 } else if (!(tLObject2 instanceof TLRPC.TL_auth_authorization)) {
                                     og0Var2.k1(false, true);
@@ -110,13 +110,13 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                                             break;
                                         }
                                     } else if (og0Var2.getParentActivity() != null) {
-                                        ie0Var2.a.setText("");
-                                        og0.U0(og0Var2, ie0Var2.x, true);
+                                        he0Var2.a.setText("");
+                                        og0.U0(og0Var2, he0Var2.x, true);
                                         break;
                                     }
                                 } else {
                                     og0Var2.v1(false, true);
-                                    ie0Var2.postDelayed(new v10(29, ie0Var2, tLObject2), 150L);
+                                    he0Var2.postDelayed(new z10(28, he0Var2, tLObject2), 150L);
                                     break;
                                 }
                                 break;
@@ -126,7 +126,7 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                 break;
             case 1:
                 final int i11 = 1;
-                final ie0 ie0Var2 = this.b;
+                final he0 he0Var2 = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ge0
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -134,19 +134,19 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                         int i12 = i11;
                         TLObject tLObject2 = tLObject;
                         TLRPC.TL_error tL_error2 = tL_error;
-                        ie0 ie0Var22 = ie0Var2;
+                        he0 he0Var22 = he0Var2;
                         int i13 = 0;
                         switch (i12) {
                             case 0:
-                                ie0Var22.getClass();
+                                he0Var22.getClass();
                                 if (tL_error2 == null) {
-                                    ie0Var22.n = (TL_account.Password) tLObject2;
-                                    ie0Var22.h(null);
+                                    he0Var22.n = (TL_account.Password) tLObject2;
+                                    he0Var22.h(null);
                                     break;
                                 }
                                 break;
                             case 1:
-                                og0 og0Var = ie0Var22.y;
+                                og0 og0Var = he0Var22.y;
                                 og0Var.k1(false, true);
                                 if (tL_error2 != null) {
                                     if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
@@ -166,18 +166,18 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                                         int indexOf = str.indexOf(42);
                                         int lastIndexOf = str.lastIndexOf(42);
                                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                                            org.telegram.ui.Components.t01 t01Var = new org.telegram.ui.Components.t01();
-                                            t01Var.a |= 256;
-                                            t01Var.b = indexOf;
+                                            org.telegram.ui.Components.s01 s01Var = new org.telegram.ui.Components.s01();
+                                            s01Var.a |= 256;
+                                            s01Var.b = indexOf;
                                             int i14 = lastIndexOf + 1;
-                                            t01Var.c = i14;
-                                            valueOf.setSpan(new org.telegram.ui.Components.u01(t01Var, 0), indexOf, i14, 0);
+                                            s01Var.c = i14;
+                                            valueOf.setSpan(new org.telegram.ui.Components.t01(s01Var, 0), indexOf, i14, 0);
                                         }
                                         SpannableStringBuilder formatSpannable = AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailSent), valueOf);
                                         org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
                                         d2Var.Q = formatSpannable;
                                         d2Var.O = LocaleController.getString("RestoreEmailSentTitle", R.string.RestoreEmailSentTitle);
-                                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new rs(25, ie0Var22, tL_auth_passwordRecovery));
+                                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new rs(25, he0Var22, tL_auth_passwordRecovery));
                                         Dialog showDialog = og0Var.showDialog(d2Var);
                                         if (showDialog != null) {
                                             showDialog.setCanceledOnTouchOutside(false);
@@ -188,12 +188,12 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                                 }
                                 break;
                             default:
-                                og0 og0Var2 = ie0Var22.y;
-                                ie0Var22.h = false;
+                                og0 og0Var2 = he0Var22.y;
+                                he0Var22.h = false;
                                 if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
                                     TL_account.getPassword getpassword = new TL_account.getPassword();
                                     i112 = ((org.telegram.ui.ActionBar.p2) og0Var2).currentAccount;
-                                    ConnectionsManager.getInstance(i112).sendRequest(getpassword, new fe0(ie0Var22, i13), 8);
+                                    ConnectionsManager.getInstance(i112).sendRequest(getpassword, new fe0(he0Var22, i13), 8);
                                     break;
                                 } else if (!(tLObject2 instanceof TLRPC.TL_auth_authorization)) {
                                     og0Var2.k1(false, true);
@@ -207,13 +207,13 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                                             break;
                                         }
                                     } else if (og0Var2.getParentActivity() != null) {
-                                        ie0Var22.a.setText("");
-                                        og0.U0(og0Var2, ie0Var22.x, true);
+                                        he0Var22.a.setText("");
+                                        og0.U0(og0Var2, he0Var22.x, true);
                                         break;
                                     }
                                 } else {
                                     og0Var2.v1(false, true);
-                                    ie0Var22.postDelayed(new v10(29, ie0Var22, tLObject2), 150L);
+                                    he0Var22.postDelayed(new z10(28, he0Var22, tLObject2), 150L);
                                     break;
                                 }
                                 break;
@@ -223,7 +223,7 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                 break;
             default:
                 final int i12 = 2;
-                final ie0 ie0Var3 = this.b;
+                final he0 he0Var3 = this.b;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ge0
                     @Override // java.lang.Runnable
                     public final void run() {
@@ -231,19 +231,19 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                         int i122 = i12;
                         TLObject tLObject2 = tLObject;
                         TLRPC.TL_error tL_error2 = tL_error;
-                        ie0 ie0Var22 = ie0Var3;
+                        he0 he0Var22 = he0Var3;
                         int i13 = 0;
                         switch (i122) {
                             case 0:
-                                ie0Var22.getClass();
+                                he0Var22.getClass();
                                 if (tL_error2 == null) {
-                                    ie0Var22.n = (TL_account.Password) tLObject2;
-                                    ie0Var22.h(null);
+                                    he0Var22.n = (TL_account.Password) tLObject2;
+                                    he0Var22.h(null);
                                     break;
                                 }
                                 break;
                             case 1:
-                                og0 og0Var = ie0Var22.y;
+                                og0 og0Var = he0Var22.y;
                                 og0Var.k1(false, true);
                                 if (tL_error2 != null) {
                                     if (!tL_error2.text.startsWith("FLOOD_WAIT")) {
@@ -263,18 +263,18 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                                         int indexOf = str.indexOf(42);
                                         int lastIndexOf = str.lastIndexOf(42);
                                         if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                                            org.telegram.ui.Components.t01 t01Var = new org.telegram.ui.Components.t01();
-                                            t01Var.a |= 256;
-                                            t01Var.b = indexOf;
+                                            org.telegram.ui.Components.s01 s01Var = new org.telegram.ui.Components.s01();
+                                            s01Var.a |= 256;
+                                            s01Var.b = indexOf;
                                             int i14 = lastIndexOf + 1;
-                                            t01Var.c = i14;
-                                            valueOf.setSpan(new org.telegram.ui.Components.u01(t01Var, 0), indexOf, i14, 0);
+                                            s01Var.c = i14;
+                                            valueOf.setSpan(new org.telegram.ui.Components.t01(s01Var, 0), indexOf, i14, 0);
                                         }
                                         SpannableStringBuilder formatSpannable = AndroidUtilities.formatSpannable(LocaleController.getString(R.string.RestoreEmailSent), valueOf);
                                         org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
                                         d2Var.Q = formatSpannable;
                                         d2Var.O = LocaleController.getString("RestoreEmailSentTitle", R.string.RestoreEmailSentTitle);
-                                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new rs(25, ie0Var22, tL_auth_passwordRecovery));
+                                        alertDialog$Builder.k(LocaleController.getString(R.string.Continue), new rs(25, he0Var22, tL_auth_passwordRecovery));
                                         Dialog showDialog = og0Var.showDialog(d2Var);
                                         if (showDialog != null) {
                                             showDialog.setCanceledOnTouchOutside(false);
@@ -285,12 +285,12 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                                 }
                                 break;
                             default:
-                                og0 og0Var2 = ie0Var22.y;
-                                ie0Var22.h = false;
+                                og0 og0Var2 = he0Var22.y;
+                                he0Var22.h = false;
                                 if (tL_error2 != null && "SRP_ID_INVALID".equals(tL_error2.text)) {
                                     TL_account.getPassword getpassword = new TL_account.getPassword();
                                     i112 = ((org.telegram.ui.ActionBar.p2) og0Var2).currentAccount;
-                                    ConnectionsManager.getInstance(i112).sendRequest(getpassword, new fe0(ie0Var22, i13), 8);
+                                    ConnectionsManager.getInstance(i112).sendRequest(getpassword, new fe0(he0Var22, i13), 8);
                                     break;
                                 } else if (!(tLObject2 instanceof TLRPC.TL_auth_authorization)) {
                                     og0Var2.k1(false, true);
@@ -304,13 +304,13 @@ public final /* synthetic */ class fe0 implements RequestDelegate {
                                             break;
                                         }
                                     } else if (og0Var2.getParentActivity() != null) {
-                                        ie0Var22.a.setText("");
-                                        og0.U0(og0Var2, ie0Var22.x, true);
+                                        he0Var22.a.setText("");
+                                        og0.U0(og0Var2, he0Var22.x, true);
                                         break;
                                     }
                                 } else {
                                     og0Var2.v1(false, true);
-                                    ie0Var22.postDelayed(new v10(29, ie0Var22, tLObject2), 150L);
+                                    he0Var22.postDelayed(new z10(28, he0Var22, tLObject2), 150L);
                                     break;
                                 }
                                 break;

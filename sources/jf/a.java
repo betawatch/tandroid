@@ -7,7 +7,6 @@ import android.os.IInterface;
 import android.os.Messenger;
 import android.os.RemoteException;
 import android.util.Log;
-import com.google.android.gms.internal.play_billing.f;
 import com.google.android.gms.internal.play_billing.g;
 import com.google.android.gms.internal.play_billing.i3;
 import com.google.android.gms.internal.play_billing.m3;
@@ -27,10 +26,11 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserConfig;
 import p2.x;
 import p2.y;
+import sf.f;
 import uc.c;
 import uc.h;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class a implements ServiceConnection {
     public final /* synthetic */ int a;
@@ -79,14 +79,14 @@ public final class a implements ServiceConnection {
                 break;
             case 1:
                 StringBuilder sb = new StringBuilder("Connected to SessionLifecycleService. Queue size ");
-                sf.e eVar = (sf.e) this.b;
-                LinkedBlockingDeque linkedBlockingDeque = (LinkedBlockingDeque) eVar.d;
+                f fVar = (f) this.b;
+                LinkedBlockingDeque linkedBlockingDeque = (LinkedBlockingDeque) fVar.d;
                 sb.append(linkedBlockingDeque.size());
                 Log.d("SessionLifecycleClient", sb.toString());
-                eVar.c = new Messenger(iBinder);
+                fVar.c = new Messenger(iBinder);
                 ArrayList arrayList = new ArrayList();
                 linkedBlockingDeque.drainTo(arrayList);
-                e0.q(e0.b((h) eVar.b), new k1.c(eVar, arrayList, cVar, 5));
+                e0.q(e0.b((h) fVar.b), new k1.c(fVar, arrayList, cVar, 5));
                 break;
             case 2:
                 o8.c cVar3 = (o8.c) this.b;
@@ -96,7 +96,7 @@ public final class a implements ServiceConnection {
             default:
                 u.g("BillingClientTesting", "Billing Override Service connected.");
                 x xVar = (x) this.b;
-                int i11 = f.b;
+                int i11 = com.google.android.gms.internal.play_billing.f.b;
                 if (iBinder != null) {
                     IInterface queryLocalInterface2 = iBinder.queryLocalInterface("com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService");
                     gVar = queryLocalInterface2 instanceof g ? (g) queryLocalInterface2 : new com.google.android.gms.internal.play_billing.e(iBinder, "com.google.android.apps.play.billingtestcompanion.aidl.IBillingOverrideService", 2);
@@ -129,9 +129,9 @@ public final class a implements ServiceConnection {
                 break;
             case 1:
                 Log.d("SessionLifecycleClient", "Disconnected from SessionLifecycleService");
-                sf.e eVar = (sf.e) this.b;
-                eVar.c = null;
-                eVar.getClass();
+                f fVar = (f) this.b;
+                fVar.c = null;
+                fVar.getClass();
                 break;
             case 2:
                 o8.c cVar = (o8.c) this.b;

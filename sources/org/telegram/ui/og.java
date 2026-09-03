@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.ImageView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class og implements View.OnKeyListener {
     public final /* synthetic */ int a;
@@ -42,10 +42,10 @@ public final /* synthetic */ class og implements View.OnKeyListener {
                 }
                 break;
             default:
-                ev0 ev0Var = (ev0) this.b;
+                jv0 jv0Var = (jv0) this.b;
                 EditTextBoldCursor editTextBoldCursor3 = (EditTextBoldCursor) view;
                 if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor3.length() == 0) {
-                    ImageView imageView = ev0Var.f;
+                    ImageView imageView = jv0Var.f;
                     if (imageView != null) {
                         imageView.callOnClick();
                         break;

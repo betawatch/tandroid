@@ -49,11 +49,11 @@ import org.telegram.ui.Components.bd0;
 import org.telegram.ui.Components.c8;
 import org.telegram.ui.Components.dd0;
 import org.telegram.ui.Components.mi;
+import org.telegram.ui.Components.pz0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.qz0;
 import org.telegram.ui.Components.rh;
-import org.telegram.ui.Components.sn;
-import org.telegram.ui.Components.tz0;
+import org.telegram.ui.Components.rn;
+import org.telegram.ui.Components.sz0;
 import org.telegram.ui.Components.wc0;
 import org.telegram.ui.Components.y4;
 import org.telegram.ui.Components.yc0;
@@ -61,26 +61,26 @@ import org.telegram.ui.Components.z4;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.c71;
 import org.telegram.ui.d60;
-import org.telegram.ui.gd1;
+import org.telegram.ui.h71;
 import org.telegram.ui.j40;
 import org.telegram.ui.jy;
 import org.telegram.ui.k40;
-import org.telegram.ui.ke1;
 import org.telegram.ui.l4;
-import org.telegram.ui.mf1;
+import org.telegram.ui.ld1;
 import org.telegram.ui.og0;
 import org.telegram.ui.ot;
 import org.telegram.ui.py;
-import org.telegram.ui.r61;
+import org.telegram.ui.qe1;
+import org.telegram.ui.sf1;
 import org.telegram.ui.uj0;
+import org.telegram.ui.w61;
 import org.telegram.ui.xn;
 import p2.h;
 import sh.k2;
 import v0.i;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class d implements OnFailureListener, BillingController.ProductDetailsResponseListenerLegacy, c2, y4, jy, wc0, MediaDataController.KeywordResultCallback, MessagesStorage.LongCallback, Utilities.Callback2Return {
     public final /* synthetic */ int a;
@@ -111,9 +111,9 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
                 xn.y0((xn) this.e, (TLRPC.TL_document) this.b, (String) this.c, this.d, z4, i10);
                 break;
             case 9:
-                sn snVar = (sn) this.e;
-                snVar.g0.b((TLRPC.TL_messageMediaPoll) this.b, snVar.L, snVar.i1, (ArrayList) this.c, z4, i10, ((Long) this.d).longValue());
-                snVar.b.dismiss(true);
+                rn rnVar = (rn) this.e;
+                rnVar.g0.b((TLRPC.TL_messageMediaPoll) this.b, rnVar.L, rnVar.i1, (ArrayList) this.c, z4, i10, ((Long) this.d).longValue());
+                rnVar.b.dismiss(true);
                 break;
             case 10:
                 ot otVar = (ot) this.e;
@@ -184,15 +184,15 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
                 notificationsCustomSettingsActivity.getNotificationsController().updateServerNotificationsSettings(notificationsCustomSettingsActivity.s);
                 break;
             default:
-                mf1 mf1Var = (mf1) obj4;
+                sf1 sf1Var = (sf1) obj4;
                 HashSet hashSet = (HashSet) obj3;
                 HashSet hashSet2 = new HashSet();
-                mf1Var.x0 = hashSet2;
+                sf1Var.x0 = hashSet2;
                 hashSet2.addAll(hashSet);
-                mf1Var.U0(true, false);
+                sf1Var.U0(true, false);
                 int i12 = 4;
-                qc.a0(mf1Var).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new ke1(mf1Var, i12), new gd1(mf1Var, (ArrayList) obj2, (Runnable) obj, i12)).j();
-                mf1Var.C0();
+                qc.a0(sf1Var).U(LocaleController.getPluralString("TopicsDeleted", hashSet.size()), false, new qe1(sf1Var, i12), new ld1(sf1Var, (ArrayList) obj2, (Runnable) obj, i12)).j();
+                sf1Var.C0();
                 d2Var.dismiss();
                 break;
         }
@@ -247,11 +247,11 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
 
     @Override // org.telegram.messenger.MessagesStorage.LongCallback
     public void run(long j10) {
-        c71.P((c71) this.e, (TLRPC.User) this.b, (TLRPC.InputCheckPasswordSRP) this.c, (TwoStepVerificationActivity) this.d, j10);
+        h71.P((h71) this.e, (TLRPC.User) this.b, (TLRPC.InputCheckPasswordSRP) this.c, (TwoStepVerificationActivity) this.d, j10);
     }
 
     @Override // org.telegram.ui.jy
-    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, mf1 mf1Var) {
+    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
         switch (this.a) {
             case 7:
                 c8.t((c8) this.e, (ArrayList) this.b, (TLRPC.TL_document) this.c, (MessageObject) this.d, pyVar, arrayList, charSequence, z10, i10);
@@ -336,7 +336,7 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
         Context context = (Context) this.e;
         int[] iArr = (int[]) this.b;
         g6 g6Var = (g6) this.c;
-        tz0 tz0Var = (tz0) this.d;
+        sz0 sz0Var = (sz0) this.d;
         Integer num = (Integer) obj;
         Float f10 = (Float) obj2;
         LinearLayout f11 = y3.f(context, 1);
@@ -368,18 +368,18 @@ public final /* synthetic */ class d implements OnFailureListener, BillingContro
         textView.setTextSize(1, 13.0f);
         textView.setGravity(17);
         f11.addView(textView, c6.k(0.0f, 3.0f, 0.0f, 0.0f, -1, -2));
-        return new qz0(tz0Var, f11, false);
+        return new pz0(sz0Var, f11, false);
     }
 
     @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
     public void run(ArrayList arrayList, String str) {
         switch (this.a) {
             case 16:
-                r61 r61Var = (r61) this.e;
+                w61 w61Var = (w61) this.e;
                 ArrayList arrayList2 = (ArrayList) this.b;
                 ArrayList arrayList3 = (ArrayList) this.c;
                 Runnable runnable = (Runnable) this.d;
-                TLRPC.messages_AvailableEffects availableEffects = MessagesController.getInstance(r61Var.S).getAvailableEffects();
+                TLRPC.messages_AvailableEffects availableEffects = MessagesController.getInstance(w61Var.S).getAvailableEffects();
                 HashSet hashSet = new HashSet();
                 if (availableEffects != null) {
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {

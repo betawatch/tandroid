@@ -1,15 +1,42 @@
 package qh;
 
-import android.app.Activity;
+import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class v8 extends e7 {
-    public final /* synthetic */ ca y;
+public final /* synthetic */ class v8 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ x8 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v8(ca caVar, Activity activity) {
-        super(activity);
-        this.y = caVar;
+    public /* synthetic */ v8(x8 x8Var, int i10) {
+        this.a = i10;
+        this.b = x8Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ba baVar = this.b.a;
+                m5 m5Var = baVar.z0;
+                if (m5Var != null) {
+                    m5Var.c(false);
+                }
+                if (baVar.N1 && baVar.O1 && baVar.y0 != null) {
+                    baVar.j0(false);
+                    CameraController.getInstance().stopVideoRecording(baVar.y0.getCameraSessionRecording(), false, false);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.a.K(1, true);
+                break;
+            case 2:
+                this.b.a.K(1, true);
+                break;
+            default:
+                this.b.a.K(1, true);
+                break;
+        }
     }
 }

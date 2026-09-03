@@ -23,7 +23,7 @@ import k7.a7;
 import org.telegram.messenger.MediaController;
 import s8.i0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class k extends q4.k {
     public static final AtomicInteger Y = new AtomicInteger();
@@ -193,7 +193,7 @@ public final class k extends q4.k {
         List list;
         boolean z10;
         int i11;
-        r3.k dVar;
+        r3.k eVar;
         long j13 = this.h;
         c0 c0Var = this.H;
         long open = mVar.open(pVar);
@@ -249,20 +249,20 @@ public final class k extends q4.k {
                     n0 n0Var = bVar4.b;
                     h5.a.i(!((kVar instanceof f0) || (kVar instanceof z3.i)));
                     if (kVar instanceof v) {
-                        dVar = new v(n0Var.c, c0Var2);
+                        eVar = new v(n0Var.c, c0Var2);
                     } else if (kVar instanceof b4.d) {
-                        dVar = new b4.d(0);
+                        eVar = new b4.d(0);
                     } else if (kVar instanceof b4.a) {
-                        dVar = new b4.a();
+                        eVar = new b4.a();
                     } else if (kVar instanceof b4.c) {
-                        dVar = new b4.c();
+                        eVar = new b4.c();
                     } else {
-                        if (!(kVar instanceof y3.d)) {
+                        if (!(kVar instanceof y3.e)) {
                             throw new IllegalStateException("Unexpected extractor type for recreation: ".concat(kVar.getClass().getSimpleName()));
                         }
-                        dVar = new y3.d(0);
+                        eVar = new y3.e(0);
                     }
-                    bVar2 = new b(dVar, n0Var, c0Var2);
+                    bVar2 = new b(eVar, n0Var, c0Var2);
                     j12 = j13;
                 } else {
                     Uri uri = pVar.a;
@@ -360,7 +360,7 @@ public final class k extends q4.k {
                             aVar = iVar;
                         } else {
                             i10 = i16;
-                            aVar = new y3.d(0, 0L);
+                            aVar = new y3.e(0, 0L);
                         }
                         aVar.getClass();
                         try {
@@ -388,7 +388,7 @@ public final class k extends q4.k {
                 }
                 this.P = bVar2;
                 r3.k kVar3 = bVar2.a;
-                if ((kVar3 instanceof b4.d) || (kVar3 instanceof b4.a) || (kVar3 instanceof b4.c) || (kVar3 instanceof y3.d)) {
+                if ((kVar3 instanceof b4.d) || (kVar3 instanceof b4.a) || (kVar3 instanceof b4.c) || (kVar3 instanceof y3.e)) {
                     r rVar = this.Q;
                     long b10 = j11 != j10 ? c0Var.b(j11) : j12;
                     if (rVar.i0 != b10) {

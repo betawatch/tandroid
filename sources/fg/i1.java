@@ -14,12 +14,12 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.g90;
-import org.telegram.ui.ed1;
-import org.telegram.ui.rw0;
+import org.telegram.ui.jd1;
 import org.telegram.ui.v70;
-import qh.f3;
+import org.telegram.ui.ww0;
+import qh.e3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class i1 extends m2.a {
     public final /* synthetic */ int c;
@@ -53,7 +53,7 @@ public final class i1 extends m2.a {
             case 1:
                 return ((v70) this.d).C.length;
             default:
-                return ((ed1) this.d).b != 0 ? 1 : 2;
+                return ((jd1) this.d).b != 0 ? 1 : 2;
         }
     }
 
@@ -79,10 +79,10 @@ public final class i1 extends m2.a {
                 m1 m1Var = new m1(n1Var, n1Var.getContext(), i10);
                 hVar.addView(m1Var);
                 m1Var.a = i10;
-                rw0 rw0Var = (rw0) n1Var.d.get(i10);
-                int i12 = rw0Var.a;
-                String str = rw0Var.d;
-                CharSequence charSequence = rw0Var.c;
+                ww0 ww0Var = (ww0) n1Var.d.get(i10);
+                int i12 = ww0Var.a;
+                String str = ww0Var.d;
+                CharSequence charSequence = ww0Var.c;
                 TextView textView = m1Var.b;
                 g90 g90Var = m1Var.c;
                 if (i12 == 0 || i12 == 14 || i12 == 28) {
@@ -139,9 +139,9 @@ public final class i1 extends m2.a {
                     g90Var.setText(AndroidUtilities.replaceTags(str));
                     m1Var.h = false;
                 }
-                g90Var.setMaxWidth(f3.a(g90Var.getText(), g90Var.getPaint()));
+                g90Var.setMaxWidth(e3.a(g90Var.getText(), g90Var.getPaint()));
                 m1Var.requestLayout();
-                boolean z4 = rw0Var.a == 40;
+                boolean z4 = ww0Var.a == 40;
                 if (z4 && m1Var.d == null) {
                     LinearLayout linearLayout = new LinearLayout(m1Var.getContext());
                     m1Var.d = linearLayout;
@@ -193,8 +193,8 @@ public final class i1 extends m2.a {
                 textView3.setText(AndroidUtilities.replaceTags(v70Var.D[i10]));
                 return lVar;
             default:
-                ed1 ed1Var = (ed1) this.d;
-                View view = i10 == 0 ? ed1Var.q0 : ed1Var.j0;
+                jd1 jd1Var = (jd1) this.d;
+                View view = i10 == 0 ? jd1Var.q0 : jd1Var.j0;
                 hVar.addView(view);
                 return view;
         }

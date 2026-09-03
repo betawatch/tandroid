@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class Switch extends View {
     public int B;
@@ -59,7 +59,7 @@ public class Switch extends View {
 
     public Switch(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.a = new xd.a(0, new sf.g(this, 21), pr.h, 380L, true);
+        this.a = new xd.a(0, new sf.h(this, 21), pr.h, 380L, true);
         this.v = 1.0f;
         this.w = org.telegram.ui.ActionBar.k6.r7;
         this.x = org.telegram.ui.ActionBar.k6.V6;
@@ -85,7 +85,7 @@ public class Switch extends View {
                 ObjectAnimator ofFloat = ObjectAnimator.ofFloat(this, "progress", z4 ? 1.0f : 0.0f);
                 this.d = ofFloat;
                 ofFloat.setDuration(200L);
-                this.d.addListener(new yy0(this, 0));
+                this.d.addListener(new xy0(this, 0));
                 this.d.start();
             } else {
                 ObjectAnimator objectAnimator = this.d;
@@ -102,7 +102,7 @@ public class Switch extends View {
                 ObjectAnimator ofFloat2 = ObjectAnimator.ofFloat(this, "iconProgress", i10 == 0 ? 1.0f : 0.0f);
                 this.e = ofFloat2;
                 ofFloat2.setDuration(200L);
-                this.e.addListener(new yy0(this, 1));
+                this.e.addListener(new xy0(this, 1));
                 this.e.start();
                 return;
             }
@@ -496,6 +496,6 @@ public class Switch extends View {
         return i10;
     }
 
-    public void setOnCheckedChangeListener(zy0 zy0Var) {
+    public void setOnCheckedChangeListener(yy0 yy0Var) {
     }
 }

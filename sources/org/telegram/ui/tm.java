@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class tm extends org.telegram.ui.Components.tl0 implements oh.a7 {
+public abstract class tm extends org.telegram.ui.Components.sl0 implements oh.a7 {
     public final /* synthetic */ xn U2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

@@ -21,7 +21,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class sj extends ei implements NotificationCenter.NotificationCenterDelegate, xd.b {
     public final lj B;
@@ -73,7 +73,7 @@ public final class sj extends ei implements NotificationCenter.NotificationCente
         this.d = d1Var;
         this.h = true;
         this.f = true;
-        d1Var.p1();
+        d1Var.o1();
         d1Var.setClipToPadding(false);
         getContext();
         gj gjVar = new gj(this, AndroidUtilities.dp(9.0f), d1Var, 0);
@@ -106,12 +106,12 @@ public final class sj extends ei implements NotificationCenter.NotificationCente
         }
         int i10 = 0;
         View childAt = d1Var.getChildAt(0);
-        fl0 fl0Var = (fl0) d1Var.G(childAt);
-        if (fl0Var == null) {
+        el0 el0Var = (el0) d1Var.G(childAt);
+        if (el0Var == null) {
             return -1000;
         }
         int paddingTop = d1Var.getPaddingTop();
-        if (fl0Var.b() == 0 && childAt.getTop() >= 0) {
+        if (el0Var.b() == 0 && childAt.getTop() >= 0) {
             i10 = childAt.getTop();
         }
         return paddingTop - i10;
@@ -372,11 +372,11 @@ public final class sj extends ei implements NotificationCenter.NotificationCente
             return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
         View childAt = d1Var.getChildAt(0);
-        fl0 fl0Var = (fl0) d1Var.G(childAt);
+        el0 el0Var = (el0) d1Var.G(childAt);
         int top = (childAt.getTop() - AndroidUtilities.statusBarHeight) - AndroidUtilities.dp(8.0f);
-        int i10 = (top <= 0 || fl0Var == null || fl0Var.b() != 0) ? 0 : top;
+        int i10 = (top <= 0 || el0Var == null || el0Var.b() != 0) ? 0 : top;
         xd.a aVar = this.n;
-        if (top < 0 || fl0Var == null || fl0Var.b() != 0) {
+        if (top < 0 || el0Var == null || el0Var.b() != 0) {
             aVar.a(true, true);
             top = i10;
         } else {
@@ -490,7 +490,7 @@ public final class sj extends ei implements NotificationCenter.NotificationCente
             i12 = (i11 / 5) * 2;
             miVar.setAllowNestedScroll(true);
         }
-        this.s.o1(0, i12 + AndroidUtilities.statusBarHeight, 0, this.e);
+        this.s.n1(0, i12 + AndroidUtilities.statusBarHeight, 0, this.e);
     }
 
     @Override // xd.b

@@ -1,11 +1,11 @@
 package org.telegram.ui.Cells;
 
 import android.view.View;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.xn;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.wn;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class l6 extends oh.i7 {
     public final /* synthetic */ int S = 0;
@@ -28,13 +28,13 @@ public final class l6 extends oh.i7 {
                 org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
                 if (R != null) {
                     R.getOrCreateStoryViewer().getClass();
-                    R.getOrCreateStoryViewer().D(vaVar.getContext(), j10, oh.c7.a((tl0) vaVar.getParent()));
+                    R.getOrCreateStoryViewer().D(vaVar.getContext(), j10, oh.c7.a((sl0) vaVar.getParent()));
                     break;
                 }
                 break;
             default:
-                xn xnVar = (xn) this.T;
-                xnVar.E.getOrCreateStoryViewer().D(xnVar.getContext(), j10, new org.telegram.ui.Components.t(this, 25));
+                wn wnVar = (wn) this.T;
+                wnVar.E.getOrCreateStoryViewer().D(wnVar.getContext(), j10, new org.telegram.ui.Components.t(this, 25));
                 break;
         }
     }
@@ -46,8 +46,8 @@ public final class l6 extends oh.i7 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l6(xn xnVar) {
+    public l6(wn wnVar) {
         super(null, true);
-        this.T = xnVar;
+        this.T = wnVar;
     }
 }

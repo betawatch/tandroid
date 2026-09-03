@@ -28,20 +28,20 @@ import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.d4;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.jl0;
 import org.telegram.ui.Components.lr;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.cg1;
 import org.telegram.ui.d60;
+import org.telegram.ui.ig1;
 import org.telegram.ui.py;
-import org.telegram.ui.qz0;
-import qh.x7;
+import org.telegram.ui.vz0;
+import qh.w7;
 import y2.i;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements g3.b, f3.f, ba.a, cg1, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, c2, kl0, MessagesController.IsInChatCheckedCallback {
+public final /* synthetic */ class f implements g3.b, f3.f, ba.a, ig1, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, c2, jl0, MessagesController.IsInChatCheckedCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ long b;
     public final /* synthetic */ Object c;
@@ -54,7 +54,7 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, cg1, ChatObjec
         this.d = obj2;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         return false;
     }
@@ -85,7 +85,7 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, cg1, ChatObjec
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         ProfileActivity.b0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f10, f11);
     }
@@ -138,7 +138,7 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, cg1, ChatObjec
         return null;
     }
 
-    @Override // org.telegram.ui.cg1
+    @Override // org.telegram.ui.ig1
     public void i(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
         ((p) this.c).h0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
@@ -154,21 +154,21 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, cg1, ChatObjec
                 d60Var.d.getMessagesController().addUserToChat(d60Var.i1(), (TLRPC.User) this.d, 0, null, (p2) d60Var.f0.O().getFragmentStack().get(d60Var.f0.O().getFragmentStack().size() - 1), new y1(d60Var, this.b, 20));
                 break;
             default:
-                x7 x7Var = (x7) this.c;
+                w7 w7Var = (w7) this.c;
                 ArrayList arrayList = (ArrayList) this.d;
-                x7Var.d.put(Long.valueOf(this.b), arrayList);
+                w7Var.d.put(Long.valueOf(this.b), arrayList);
                 int size = arrayList.size();
                 int i11 = 0;
                 while (i11 < size) {
                     Object obj = arrayList.get(i11);
                     i11++;
-                    x7Var.b.k(Boolean.TRUE, ((Long) obj).longValue());
+                    w7Var.b.k(Boolean.TRUE, ((Long) obj).longValue());
                 }
-                x7Var.i(true);
-                x7Var.e(true);
-                x7Var.f(true);
+                w7Var.i(true);
+                w7Var.e(true);
+                w7Var.f(true);
                 d2Var.dismiss();
-                x7Var.x.H = true;
+                w7Var.x.H = true;
                 break;
         }
     }
@@ -185,7 +185,7 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, cg1, ChatObjec
 
     @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
     public void run(boolean z4, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new mh.i((qz0) this.c, this.b, tL_chatAdminRights, str, z4, (py) this.d));
+        AndroidUtilities.runOnUIThread(new mh.i((vz0) this.c, this.b, tL_chatAdminRights, str, z4, (py) this.d));
     }
 
     public /* synthetic */ f(Object obj, Object obj2, long j10, int i10) {
@@ -195,7 +195,7 @@ public final /* synthetic */ class f implements g3.b, f3.f, ba.a, cg1, ChatObjec
         this.b = j10;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

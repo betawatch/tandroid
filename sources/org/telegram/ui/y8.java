@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class y8 extends f2.a1 {
     public boolean a;
@@ -26,7 +26,7 @@ public final class y8 extends f2.a1 {
         if (abs > 0) {
             int size = l9Var.d.V2.x.size();
             if (!l9Var.G && !l9Var.E && !arrayList.isEmpty() && abs + L0 >= size - 5) {
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(22, this, (h9) l.d.i(1, arrayList)));
+                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(21, this, (h9) l.d.i(1, arrayList)));
             }
         }
         View childAt = recyclerView.getChildAt(0);

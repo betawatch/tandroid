@@ -11,9 +11,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.fn0;
-import org.telegram.ui.sw0;
+import org.telegram.ui.xw0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a6 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -89,7 +89,7 @@ public final /* synthetic */ class a6 implements Runnable {
             default:
                 org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) obj6;
                 TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription = (TLRPC.TL_inputStorePaymentPremiumSubscription) obj5;
-                sw0 sw0Var = (sw0) obj4;
+                xw0 xw0Var = (xw0) obj4;
                 p2.e eVar = (p2.e) obj3;
                 TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
                 TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore = (TLRPC.TL_payments_canPurchaseStore) obj;
@@ -100,10 +100,10 @@ public final /* synthetic */ class a6 implements Runnable {
                 Activity parentActivity = p2Var != null ? p2Var.getParentActivity() : AndroidUtilities.getActivity();
                 BillingController billingController = BillingController.getInstance();
                 AccountInstance accountInstance = p2Var.getAccountInstance();
-                n7.qa qaVar = new n7.qa(23);
+                n7.qa qaVar = new n7.qa(24);
                 qaVar.i1(BillingController.PREMIUM_PRODUCT_DETAILS);
-                sw0Var.a();
-                String str3 = sw0Var.g.a;
+                xw0Var.a();
+                String str3 = xw0Var.g.a;
                 if (TextUtils.isEmpty(str3)) {
                     throw new IllegalArgumentException("offerToken can not be empty");
                 }
@@ -113,11 +113,11 @@ public final /* synthetic */ class a6 implements Runnable {
         }
     }
 
-    public /* synthetic */ a6(TLObject tLObject, org.telegram.ui.ActionBar.p2 p2Var, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, sw0 sw0Var, p2.e eVar, int i10, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
+    public /* synthetic */ a6(TLObject tLObject, org.telegram.ui.ActionBar.p2 p2Var, TLRPC.TL_inputStorePaymentPremiumSubscription tL_inputStorePaymentPremiumSubscription, xw0 xw0Var, p2.e eVar, int i10, TLRPC.TL_error tL_error, TLRPC.TL_payments_canPurchaseStore tL_payments_canPurchaseStore) {
         this.f = tLObject;
         this.d = p2Var;
         this.e = tL_inputStorePaymentPremiumSubscription;
-        this.b = sw0Var;
+        this.b = xw0Var;
         this.h = eVar;
         this.c = i10;
         this.n = tL_error;

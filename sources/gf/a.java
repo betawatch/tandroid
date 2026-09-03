@@ -32,26 +32,26 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.mg1;
+import org.telegram.ui.bh1;
 import org.telegram.ui.web.f2;
-import qh.b7;
-import qh.d6;
-import qh.g1;
-import qh.k6;
-import qh.p7;
-import qh.s6;
+import qh.a7;
+import qh.f1;
+import qh.i6;
+import qh.l6;
+import qh.o7;
+import qh.r6;
 import sh.n3;
 import uf.h1;
 import uf.z;
-import vf.d0;
 import vf.k;
+import vf.k0;
 import vf.n0;
 import vf.p1;
 import vf.x0;
 import wh.u4;
 import wh.w;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -67,23 +67,23 @@ public final /* synthetic */ class a implements RequestDelegate {
         final Comparator fVar;
         final Comparator fVar2;
         int i10 = this.a;
-        int i11 = 4;
-        int i12 = 29;
-        int i13 = 8;
-        int i14 = 12;
-        int i15 = 24;
-        int i16 = 5;
-        int i17 = 7;
-        int i18 = 2;
+        int i11 = 29;
+        int i12 = 28;
+        int i13 = 7;
+        int i14 = 8;
+        int i15 = 11;
+        int i16 = 13;
+        int i17 = 2;
+        int i18 = 4;
         final int i19 = 0;
         final int i20 = 1;
         Object obj = this.b;
         switch (i10) {
             case 0:
-                AndroidUtilities.runOnUIThread(new a1.e(i12, (e) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new a1.e(i11, (e) obj, tLObject));
                 break;
             case 1:
-                AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b((f) obj, tLObject, tL_error, i11));
+                AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b((f) obj, tLObject, tL_error, i18));
                 break;
             case 2:
                 c2 c2Var = (c2) obj;
@@ -111,7 +111,7 @@ public final /* synthetic */ class a implements RequestDelegate {
                     if (Build.VERSION.SDK_INT >= 24) {
                         Collator collator = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
                         Objects.requireNonNull(collator);
-                        fVar = new t(collator, i18);
+                        fVar = new t(collator, i17);
                     } else {
                         fVar = new e5.f(13);
                     }
@@ -132,7 +132,7 @@ public final /* synthetic */ class a implements RequestDelegate {
                             }
                         });
                     }
-                    AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b(c2Var, hashMap, arrayList, i16));
+                    AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b(c2Var, hashMap, arrayList, 5));
                     break;
                 }
                 break;
@@ -168,7 +168,7 @@ public final /* synthetic */ class a implements RequestDelegate {
                     if (Build.VERSION.SDK_INT >= 24) {
                         Collator collator2 = Collator.getInstance(LocaleController.getInstance().getCurrentLocale() != null ? LocaleController.getInstance().getCurrentLocale() : Locale.getDefault());
                         Objects.requireNonNull(collator2);
-                        fVar2 = new t(collator2, i18);
+                        fVar2 = new t(collator2, i17);
                     } else {
                         fVar2 = new e5.f(13);
                     }
@@ -189,12 +189,12 @@ public final /* synthetic */ class a implements RequestDelegate {
                             }
                         });
                     }
-                    AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b(h0Var, hashMap2, arrayList2, i13));
+                    AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b(h0Var, hashMap2, arrayList2, i14));
                     break;
                 }
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new c(11, (v2) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new c(i15, (v2) obj, tLObject));
                 break;
             case 5:
                 AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b((p) obj, tLObject, tL_error, 20));
@@ -203,13 +203,13 @@ public final /* synthetic */ class a implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new c(27, (x) obj, tLObject));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new c(28, (y) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new c(i12, (y) obj, tLObject));
                 break;
             case 8:
                 AndroidUtilities.runOnUIThread(new m2(10, tLObject, (h0) obj));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new m2(i14, (l7) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new m2(12, (l7) obj, tLObject));
                 break;
             case 10:
                 eb ebVar = (eb) obj;
@@ -221,67 +221,67 @@ public final /* synthetic */ class a implements RequestDelegate {
                     break;
                 }
             case 11:
-                AndroidUtilities.runOnUIThread(new t3((p7) obj, i11));
+                AndroidUtilities.runOnUIThread(new t3((o7) obj, i18));
                 break;
             case 12:
-                AndroidUtilities.runOnUIThread(new z1(i16, (f6) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new z1(5, (f6) obj, tLObject));
                 break;
             case 13:
-                AndroidUtilities.runOnUIThread(new z1(i17, (h6) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new z1(i13, (h6) obj, tLObject));
                 break;
             case 14:
-                AndroidUtilities.runOnUIThread(new mg1(14, (f2) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new bh1(i16, (f2) obj, tLObject));
                 break;
             case 15:
-                AndroidUtilities.runOnUIThread(new mg1(19, (g1) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new bh1(18, (f1) obj, tLObject));
                 break;
             case 16:
-                AndroidUtilities.runOnUIThread(new d6(i19, (k6) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new bh1(i11, (i6) obj, tLObject));
                 break;
             case 17:
-                AndroidUtilities.runOnUIThread(new d6(i20, (s6) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new l6(i19, (r6) obj, tLObject));
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new d6(i18, (b7) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new l6(i20, (a7) obj, tLObject));
                 break;
             case 19:
-                AndroidUtilities.runOnUIThread(new d6(18, (n3) obj, tL_error));
+                AndroidUtilities.runOnUIThread(new l6(17, (n3) obj, tL_error));
                 break;
             case 20:
                 uf.c cVar = (uf.c) obj;
                 if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new d6(23, cVar, tLObject));
+                    AndroidUtilities.runOnUIThread(new l6(22, cVar, tLObject));
                     break;
                 }
                 break;
             case 21:
                 z zVar = (z) obj;
                 zVar.getClass();
-                AndroidUtilities.runOnUIThread(new d6(i15, zVar, tLObject));
+                AndroidUtilities.runOnUIThread(new l6(23, zVar, tLObject));
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new h1((vf.c) obj, tL_error, tLObject, i18));
+                AndroidUtilities.runOnUIThread(new h1((vf.c) obj, tL_error, tLObject, i17));
                 break;
             case 23:
-                AndroidUtilities.runOnUIThread(new d6(i12, (vf.f) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new l6(i12, (vf.f) obj, tLObject));
                 break;
             case 24:
                 AndroidUtilities.runOnUIThread(new h1((k) obj, tL_error, tLObject, 3));
                 break;
             case 25:
-                AndroidUtilities.runOnUIThread(new h1((n0) obj, tL_error, tLObject, i17));
+                AndroidUtilities.runOnUIThread(new h1((n0) obj, tL_error, tLObject, i13));
                 break;
             case 26:
-                AndroidUtilities.runOnUIThread(new h1((x0) obj, tL_error, tLObject, i13));
+                AndroidUtilities.runOnUIThread(new h1((x0) obj, tL_error, tLObject, i14));
                 break;
             case 27:
-                AndroidUtilities.runOnUIThread(new d0(i16, (p1) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new k0(i18, (p1) obj, tLObject));
                 break;
             case 28:
-                AndroidUtilities.runOnUIThread(new d0(i17, (w) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new k0(6, (w) obj, tLObject));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new d0(i14, (u4) obj, tLObject));
+                AndroidUtilities.runOnUIThread(new k0(i15, (u4) obj, tLObject));
                 break;
         }
     }

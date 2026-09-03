@@ -37,19 +37,19 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.d9;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.mr;
-import org.telegram.ui.Components.o71;
+import org.telegram.ui.Components.n71;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.sx0;
+import org.telegram.ui.Components.q51;
+import org.telegram.ui.Components.rx0;
 import org.telegram.ui.Components.t20;
-import org.telegram.ui.Components.ul0;
+import org.telegram.ui.Components.tl0;
 import org.telegram.ui.d60;
 import org.telegram.ui.s30;
 import org.telegram.ui.w30;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract class l0 extends FrameLayout {
     public boolean A0;
@@ -96,7 +96,7 @@ public abstract class l0 extends FrameLayout {
     public long d;
     public boolean d0;
     public ChatObject.VideoParticipant e;
-    public final ul0 e0;
+    public final tl0 e0;
     public boolean f;
     public ChatObject.Call f0;
     public final d60 g0;
@@ -135,7 +135,7 @@ public abstract class l0 extends FrameLayout {
         this.L = 1.0f;
         this.S = true;
         final w30 w30Var = (w30) this;
-        this.e0 = new ul0(w30Var, 5);
+        this.e0 = new tl0(w30Var, 5);
         this.v0 = 1.0f;
         this.H0 = new UndoView[2];
         this.C = recyclerView;
@@ -247,7 +247,7 @@ public abstract class l0 extends FrameLayout {
         int dp4 = AndroidUtilities.dp(4.0f);
         imageView.setPadding(dp4, dp4, dp4, dp4);
         imageView.setBackground(k6.f0(i0.a.k(-1, 55), 1, -1));
-        imageView.setOnClickListener(new sx0(8, w30Var, d60Var));
+        imageView.setOnClickListener(new rx0(8, w30Var, d60Var));
         addView(imageView, c6.d(32, 32.0f, 53, 12.0f, 12.0f, 12.0f, 12.0f));
         g0 g0Var = new g0(w30Var, context, k6.b0(AndroidUtilities.dp(18.0f), i0.a.k(k6.w0(null, k6.tg, false), 204)));
         this.F = g0Var;
@@ -284,13 +284,13 @@ public abstract class l0 extends FrameLayout {
             if (d60Var.X1 != null) {
                 d60Var.w3.a(!r1.S, true);
             }
-            ul0 ul0Var = this.e0;
+            tl0 tl0Var = this.e0;
             if (!z4 || !this.b) {
                 this.d0 = false;
-                AndroidUtilities.cancelRunOnUIThread(ul0Var);
+                AndroidUtilities.cancelRunOnUIThread(tl0Var);
             } else if (!this.d0) {
                 this.d0 = true;
-                AndroidUtilities.runOnUIThread(ul0Var, 3000L);
+                AndroidUtilities.runOnUIThread(tl0Var, 3000L);
             }
             u uVar = this.y;
             if (uVar != null) {
@@ -653,11 +653,11 @@ public abstract class l0 extends FrameLayout {
 
     public final void e() {
         boolean z4 = this.d0;
-        ul0 ul0Var = this.e0;
+        tl0 tl0Var = this.e0;
         if (z4) {
-            AndroidUtilities.cancelRunOnUIThread(ul0Var);
+            AndroidUtilities.cancelRunOnUIThread(tl0Var);
         }
-        AndroidUtilities.runOnUIThread(ul0Var, 3000L);
+        AndroidUtilities.runOnUIThread(tl0Var, 3000L);
         this.d0 = true;
     }
 
@@ -876,12 +876,12 @@ public abstract class l0 extends FrameLayout {
                                     uVar2.setScaleY(0.5f);
                                     uVar2.B = true;
                                 }
-                                o71 o71Var = new o71(this, uVar, uVar2, i11);
+                                n71 n71Var = new n71(this, uVar, uVar2, i11);
                                 if (pVar.d.isFirstFrameRendered()) {
-                                    AndroidUtilities.runOnUIThread(o71Var, 250L);
-                                    uVar8.j0.add(o71Var);
+                                    AndroidUtilities.runOnUIThread(n71Var, 250L);
+                                    uVar8.j0.add(n71Var);
                                 } else {
-                                    o71Var.run();
+                                    n71Var.run();
                                 }
                                 d();
                                 this.y = uVar8;
@@ -920,7 +920,7 @@ public abstract class l0 extends FrameLayout {
                         ofFloat2.addListener(new j0(this, uVar82, uVar));
                         if (uVar2 != null) {
                         }
-                        o71 o71Var2 = new o71(this, uVar, uVar2, i11);
+                        n71 n71Var2 = new n71(this, uVar, uVar2, i11);
                         if (pVar.d.isFirstFrameRendered()) {
                         }
                         d();
@@ -986,12 +986,12 @@ public abstract class l0 extends FrameLayout {
                     uVar11.setScaleX(0.5f);
                     uVar11.setScaleY(0.5f);
                     uVar11.B = true;
-                    l41 l41Var = new l41(9, this, uVar11);
+                    q51 q51Var = new q51(8, this, uVar11);
                     if (uVar11.a.d.isFirstFrameRendered()) {
-                        l41Var.run();
+                        q51Var.run();
                     } else {
-                        AndroidUtilities.runOnUIThread(l41Var, 250L);
-                        uVar11.j0.add(l41Var);
+                        AndroidUtilities.runOnUIThread(q51Var, 250L);
+                        uVar11.j0.add(q51Var);
                     }
                     u uVar102 = new u(this, this.f0, d60Var);
                     uVar102.w = videoParticipant;
@@ -1425,9 +1425,9 @@ public abstract class l0 extends FrameLayout {
                                 spannableStringBuilder.append((CharSequence) ", ");
                             }
                             if (user != null) {
-                                spannableStringBuilder.append(UserObject.getFirstName(user), new g51(AndroidUtilities.bold()), 0);
+                                spannableStringBuilder.append(UserObject.getFirstName(user), new e51(AndroidUtilities.bold()), 0);
                             } else {
-                                spannableStringBuilder.append(chat.title, new g51(AndroidUtilities.bold()), 0);
+                                spannableStringBuilder.append(chat.title, new e51(AndroidUtilities.bold()), 0);
                             }
                         }
                     }

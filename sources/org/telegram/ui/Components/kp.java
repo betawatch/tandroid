@@ -18,9 +18,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class kp extends sl0 {
+public final class kp extends rl0 {
     public final org.telegram.ui.ActionBar.g6 c;
     public ArrayList d;
     public WeakReference e;
@@ -41,7 +41,7 @@ public final class kp extends sl0 {
         this.h = i10;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return false;
     }
@@ -54,9 +54,9 @@ public final class kp extends sl0 {
         if (i11 >= 0) {
             m(i11);
             WeakReference weakReference = this.e;
-            x11 x11Var = weakReference == null ? null : (x11) weakReference.get();
-            if (x11Var != null) {
-                x11Var.setSelected(false);
+            w11 w11Var = weakReference == null ? null : (w11) weakReference.get();
+            if (w11Var != null) {
+                w11Var.setSelected(false);
             }
         }
         this.f = i10;
@@ -78,7 +78,7 @@ public final class kp extends sl0 {
         int s6;
         int intValue;
         String[] split;
-        x11 x11Var = (x11) m1Var.a;
+        w11 w11Var = (w11) m1Var.a;
         org.telegram.ui.ActionBar.j6 j10 = ((lp) this.d.get(i10)).a.j(((lp) this.d.get(i10)).c);
         if (j10 != null && j10.b != null && !j10.Q && new File(j10.b).exists() && j10.b != null) {
             try {
@@ -247,15 +247,15 @@ public final class kp extends sl0 {
             }
         }
         lp lpVar = (lp) this.d.get(i10);
-        lp lpVar2 = x11Var.D;
-        boolean z10 = lpVar2 != null && tf.b.a(lpVar2.a.c, lpVar.a.c) && !org.telegram.ui.py.u4 && x11Var.S == lpVar.c;
-        x11Var.setFocusable(true);
-        x11Var.setEnabled(true);
-        x11Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i5, false));
-        x11Var.f(lpVar, this.r, z10);
-        x11Var.g(i10 == this.f, z10);
+        lp lpVar2 = w11Var.D;
+        boolean z10 = lpVar2 != null && tf.b.a(lpVar2.a.c, lpVar.a.c) && !org.telegram.ui.py.u4 && w11Var.S == lpVar.c;
+        w11Var.setFocusable(true);
+        w11Var.setEnabled(true);
+        w11Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i5, false));
+        w11Var.f(lpVar, this.r, z10);
+        w11Var.g(i10 == this.f, z10);
         if (i10 == this.f) {
-            this.e = new WeakReference(x11Var);
+            this.e = new WeakReference(w11Var);
         }
     }
 
@@ -263,7 +263,7 @@ public final class kp extends sl0 {
     public final f2.m1 x(ViewGroup viewGroup, int i10) {
         Context context = viewGroup.getContext();
         org.telegram.ui.ActionBar.g6 g6Var = this.c;
-        return new fl0(new x11(this.h, this.n, context, g6Var));
+        return new el0(new w11(this.h, this.n, context, g6Var));
     }
 
     public kp(int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {

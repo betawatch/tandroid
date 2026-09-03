@@ -5,23 +5,23 @@ import android.view.ViewGroup;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.m4;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.x51;
-import qh.d4;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.w51;
+import qh.c4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class e extends x51 {
+public final class e extends w51 {
     public final /* synthetic */ j K;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(j jVar, tl0 tl0Var, Activity activity, int i10, int i11, d4 d4Var, g6 g6Var) {
-        super(tl0Var, activity, i10, i11, true, d4Var, g6Var);
+    public e(j jVar, sl0 sl0Var, Activity activity, int i10, int i11, c4 c4Var, g6 g6Var) {
+        super(sl0Var, activity, i10, i11, true, c4Var, g6Var);
         this.K = jVar;
     }
 
-    @Override // org.telegram.ui.Components.x51, f2.p0
+    @Override // org.telegram.ui.Components.w51, f2.p0
     public final f2.m1 x(ViewGroup viewGroup, int i10) {
         g6 g6Var;
         if (i10 != 42) {
@@ -33,6 +33,6 @@ public final class e extends x51 {
         g6Var = ((org.telegram.ui.ActionBar.p2) jVar).resourceProvider;
         m4 m4Var = new m4(parentActivity, i11, 21, 0, false, g6Var);
         m4Var.setHeight(25);
-        return new fl0(m4Var);
+        return new el0(m4Var);
     }
 }

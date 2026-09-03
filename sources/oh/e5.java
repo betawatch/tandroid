@@ -27,13 +27,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.rz;
-import org.telegram.ui.Components.zl0;
+import org.telegram.ui.Components.yl0;
+import org.telegram.ui.Components.zk0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class e5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public d5 B;
@@ -41,7 +41,7 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
     public o6 D;
     public int E;
     public boolean F;
-    public final al0 G;
+    public final zk0 G;
     public final i9 H;
     public final p4 I;
     public final q4 J;
@@ -91,7 +91,7 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
         l4 l4Var = new l4(this, context, bVar);
         this.r = l4Var;
         l4Var.setClipToPadding(false);
-        this.G = new al0(l4Var, true);
+        this.G = new zk0(l4Var, true);
         rz rzVar = new rz(l4Var, 0);
         this.x = rzVar;
         l4Var.setLayoutManager(rzVar);
@@ -183,8 +183,8 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public final boolean d(TL_stories.StoryView storyView) {
-        qh.s6 s6Var;
-        qh.b8 b8Var;
+        qh.r6 r6Var;
+        qh.a8 a8Var;
         if (storyView == null) {
             return true;
         }
@@ -198,13 +198,13 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
             TL_stories.StoryItem storyItem = m5Var.a;
             if (storyItem != null) {
                 if (storyItem.parsedPrivacy == null) {
-                    storyItem.parsedPrivacy = new qh.b8(i10, storyItem.privacy);
+                    storyItem.parsedPrivacy = new qh.a8(i10, storyItem.privacy);
                 }
                 return this.y.a.parsedPrivacy.b(user);
             }
-            s6 s6Var2 = m5Var.b;
-            if (s6Var2 != null && (s6Var = s6Var2.c) != null && (b8Var = s6Var.E0) != null) {
-                return b8Var.b(user);
+            s6 s6Var = m5Var.b;
+            if (s6Var != null && (r6Var = s6Var.c) != null && (a8Var = r6Var.E0) != null) {
+                return a8Var.b(user);
             }
         }
         return true;
@@ -398,14 +398,14 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
             }
         }
         boolean z11 = q4Var.a;
-        zl0 zl0Var = u4Var.v;
+        yl0 yl0Var = u4Var.v;
         if (z11) {
             d5 d5Var = this.B;
             i10 = (d5Var == null || !d5Var.f) ? R.drawable.menu_views_reactions3 : R.drawable.menu_views_reposts3;
         } else {
             i10 = R.drawable.menu_views_recent3;
         }
-        zl0Var.a(i10, z4);
+        yl0Var.a(i10, z4);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:121:0x01e3  */

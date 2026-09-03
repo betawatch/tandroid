@@ -35,19 +35,19 @@ import org.telegram.ui.Components.ly;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.sn;
+import org.telegram.ui.Components.rn;
 import org.telegram.ui.Components.tf;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.Components.z4;
-import org.telegram.ui.Components.zu0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.bd;
 import org.telegram.ui.nd;
 import org.telegram.ui.py;
-import org.telegram.ui.r61;
 import org.telegram.ui.sq;
+import org.telegram.ui.w61;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -207,17 +207,17 @@ public final /* synthetic */ class c1 implements Utilities.Callback {
                 cl.P((cl) obj5, (xn) obj4, (TLRPC.TL_messageMediaVenue) obj3, (g6) obj2);
                 break;
             case 9:
-                sn snVar = (sn) obj5;
+                rn rnVar = (rn) obj5;
                 xn xnVar2 = (xn) obj4;
                 TLRPC.TL_messageMediaPoll tL_messageMediaPoll = (TLRPC.TL_messageMediaPoll) obj3;
                 ArrayList arrayList2 = (ArrayList) obj2;
                 Long l11 = (Long) obj;
                 if (xnVar2.c()) {
-                    z4.L(xnVar2.getParentActivity(), xnVar2.a(), new a1.d(snVar, tL_messageMediaPoll, arrayList2, l11, 9));
+                    z4.L(xnVar2.getParentActivity(), xnVar2.a(), new a1.d(rnVar, tL_messageMediaPoll, arrayList2, l11, 9));
                     break;
                 } else {
-                    snVar.g0.b(tL_messageMediaPoll, snVar.L, snVar.i1, arrayList2, true, 0, l11.longValue());
-                    snVar.b.dismiss(true);
+                    rnVar.g0.b(tL_messageMediaPoll, rnVar.L, rnVar.i1, arrayList2, true, 0, l11.longValue());
+                    rnVar.b.dismiss(true);
                     break;
                 }
             case 10:
@@ -241,19 +241,19 @@ public final /* synthetic */ class c1 implements Utilities.Callback {
                 }
                 break;
             case 11:
-                zu0.m((zu0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (q70) obj2, (m6) obj);
+                yu0.m((yu0) obj5, (HashSet) obj4, (TL_stories.StoryItem) obj3, (q70) obj2, (m6) obj);
                 break;
             case 12:
                 py pyVar = (py) obj5;
                 pyVar.Q4(pyVar.getMessagesController().getChat((Long) obj3), (Runnable) obj, new sq(pyVar, (nd) obj2, (org.telegram.ui.ActionBar.p2) obj4, i12));
                 break;
             case 13:
-                r61 r61Var = (r61) obj5;
+                w61 w61Var = (w61) obj5;
                 String[] strArr = (String[]) obj4;
                 String str3 = (String) obj3;
                 LinkedHashSet linkedHashSet = (LinkedHashSet) obj2;
                 Runnable runnable2 = (Runnable) obj;
-                int i16 = r61Var.S;
+                int i16 = w61Var.S;
                 if (ConnectionsManager.getInstance(i16).getConnectionState() != 3) {
                     runnable2.run();
                     break;
@@ -261,18 +261,18 @@ public final /* synthetic */ class c1 implements Utilities.Callback {
                     if (strArr != null && strArr.length != 0) {
                         str = strArr[0];
                     }
-                    MediaDataController.getInstance(i16).searchStickers(true, str, str3, new org.telegram.ui.a0(r61Var, linkedHashSet, runnable2, 9));
+                    MediaDataController.getInstance(i16).searchStickers(true, str, str3, new org.telegram.ui.a0(w61Var, linkedHashSet, runnable2, 9));
                     break;
                 }
                 break;
             case 14:
-                r61 r61Var2 = (r61) obj5;
+                w61 w61Var2 = (w61) obj5;
                 String str4 = (String) obj3;
                 ArrayList arrayList5 = (ArrayList) obj4;
                 HashMap hashMap = (HashMap) obj2;
                 Runnable runnable3 = (Runnable) obj;
-                int i17 = r61Var2.S;
-                if (r61Var2.T != 4) {
+                int i17 = w61Var2.S;
+                if (w61Var2.T != 4) {
                     runnable3.run();
                     break;
                 } else {
@@ -323,7 +323,7 @@ public final /* synthetic */ class c1 implements Utilities.Callback {
                         }
                     }
                     if (allStickers != null && !allStickers.isEmpty() && str4.length() > 1) {
-                        MediaDataController.getInstance(i17).getEmojiSuggestions(r61.X1, str4, false, new a1.d(allStickers, hashMap, arrayList5, runnable3, 17), false);
+                        MediaDataController.getInstance(i17).getEmojiSuggestions(w61.X1, str4, false, new a1.d(allStickers, hashMap, arrayList5, runnable3, 17), false);
                         break;
                     }
                 }

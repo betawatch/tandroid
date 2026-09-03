@@ -14,9 +14,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class zi0 extends org.telegram.ui.Components.sl0 {
+public final class zi0 extends org.telegram.ui.Components.rl0 {
     public final Context c;
     public final /* synthetic */ bj0 d;
 
@@ -33,7 +33,7 @@ public final class zi0 extends org.telegram.ui.Components.sl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         if (m1Var.f == 0) {
             return ((org.telegram.ui.Cells.b5) m1Var.a).getCurrentObject() instanceof TLObject;
@@ -108,30 +108,30 @@ public final class zi0 extends org.telegram.ui.Components.sl0 {
                 }
             }
             if (i15 == 4) {
-                r91 r91Var = (r91) view;
-                r91Var.e(bj0Var.r, false);
-                r91Var.setLayoutParams(new f2.x0(-1, -2));
+                x91 x91Var = (x91) view;
+                x91Var.e(bj0Var.r, false);
+                x91Var.setLayoutParams(new f2.x0(-1, -2));
                 return;
             }
             if (i15 != 5) {
                 if (i15 != 7) {
                     return;
                 }
-                r91 r91Var2 = (r91) view;
-                r91Var2.e(bj0Var.s, false);
-                r91Var2.setLayoutParams(new f2.x0(-1, -2));
+                x91 x91Var2 = (x91) view;
+                x91Var2.e(bj0Var.s, false);
+                x91Var2.setLayoutParams(new f2.x0(-1, -2));
                 return;
             }
             aj0 aj0Var = (aj0) view;
             TextView[] textViewArr = aj0Var.a;
             TextView[] textViewArr2 = aj0Var.b;
             bj0 bj0Var2 = aj0Var.c;
-            ea1 ea1Var = bj0Var2.b0;
+            ka1 ka1Var = bj0Var2.b0;
             MessageObject messageObject = bj0Var2.n;
-            if (ea1Var != null) {
-                i13 = ea1Var.d();
-                i12 = ea1Var.a();
-                i14 = ea1Var.c();
+            if (ka1Var != null) {
+                i13 = ka1Var.d();
+                i12 = ka1Var.a();
+                i14 = ka1Var.c();
             } else {
                 int i17 = messageObject.isStory() ? messageObject.storyItem.views.views_count : messageObject.messageOwner.views;
                 i12 = messageObject.isStory() ? messageObject.storyItem.views.forwards_count : messageObject.messageOwner.forwards;

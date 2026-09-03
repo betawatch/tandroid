@@ -45,9 +45,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0, org.telegram.ui.Components.yj0, org.telegram.ui.Components.y4, LanguageDetector.StringCallback, x4, org.telegram.ui.ActionBar.c2, MessagesStorage.LongCallback, org.telegram.ui.Components.kl0, MessagesController.NewMessageCallback, jy, cg1, org.telegram.ui.Components.voip.j3, OnSuccessListener {
+public final /* synthetic */ class d7 implements org.telegram.ui.Components.ll0, org.telegram.ui.Components.xj0, org.telegram.ui.Components.y4, LanguageDetector.StringCallback, x4, org.telegram.ui.ActionBar.c2, MessagesStorage.LongCallback, org.telegram.ui.Components.jl0, MessagesController.NewMessageCallback, jy, ig1, org.telegram.ui.Components.voip.j3, OnSuccessListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -104,13 +104,13 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.yj0
-    public void a(org.telegram.ui.Components.ak0 ak0Var, int i10) {
+    @Override // org.telegram.ui.Components.xj0
+    public void a(org.telegram.ui.Components.zj0 zj0Var, int i10) {
         int i11;
         View view = (View) this.b;
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = (ActionBarPopupWindow$ActionBarPopupWindowLayout) this.c;
@@ -118,7 +118,7 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
         if (view != null) {
             int measuredWidth = view.getMeasuredWidth();
             int measuredHeight = view.getMeasuredHeight();
-            view.measure(View.MeasureSpec.makeMeasureSpec(ak0Var.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
+            view.measure(View.MeasureSpec.makeMeasureSpec(zj0Var.getMeasuredWidth(), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(0, 0));
             i11 = view.getMeasuredHeight() + AndroidUtilities.dp(8.0f);
             view.measure(View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(measuredHeight, TLObject.FLAG_30));
         } else {
@@ -173,21 +173,21 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         d60.n((d60) this.b, (Activity) this.c, (ChatObject.Call) this.d, view, i10);
     }
 
     @Override // org.telegram.ui.Components.voip.j3
     public void d(org.telegram.ui.Components.voip.k3 k3Var) {
-        ci1 ci1Var = (ci1) this.b;
+        ii1 ii1Var = (ii1) this.b;
         VoIPService voIPService = (VoIPService) this.c;
         org.telegram.ui.Components.voip.l3 l3Var = (org.telegram.ui.Components.voip.l3) this.d;
         VoIPService sharedInstance = VoIPService.getSharedInstance();
         if (sharedInstance != null) {
-            AndroidUtilities.cancelRunOnUIThread(ci1Var.P0);
-            ci1Var.O0 = false;
-            if (ci1Var.t0.isTouchExplorationEnabled()) {
+            AndroidUtilities.cancelRunOnUIThread(ii1Var.P0);
+            ii1Var.O0 = false;
+            if (ii1Var.t0.isTouchExplorationEnabled()) {
                 k3Var.announceForAccessibility(voIPService.isFrontFaceCamera() ? LocaleController.getString(R.string.AccDescrVoipCamSwitchedToBack) : LocaleController.getString(R.string.AccDescrVoipCamSwitchedToFront));
             }
             l3Var.d(2, !voIPService.isFrontFaceCamera(), false);
@@ -195,9 +195,9 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
         }
     }
 
-    @Override // org.telegram.ui.cg1
+    @Override // org.telegram.ui.ig1
     public void i(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        ((c71) this.b).T((TLRPC.User) this.c, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
+        ((h71) this.b).T((TLRPC.User) this.c, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
     }
 
     @Override // org.telegram.ui.ActionBar.c2
@@ -253,10 +253,10 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
             case 19:
             case 20:
             default:
-                mb1 mb1Var = (mb1) obj3;
-                if (org.telegram.ui.ActionBar.k6.j0(((ob1) obj2).d, (org.telegram.ui.ActionBar.i6) obj, true)) {
+                sb1 sb1Var = (sb1) obj3;
+                if (org.telegram.ui.ActionBar.k6.j0(((ub1) obj2).d, (org.telegram.ui.ActionBar.i6) obj, true)) {
                     org.telegram.ui.ActionBar.k6.n1(false, false);
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, org.telegram.ui.ActionBar.k6.I, Boolean.valueOf(mb1Var.e.f == 1), null, -1);
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needSetDayNightTheme, org.telegram.ui.ActionBar.k6.I, Boolean.valueOf(sb1Var.e.f == 1), null, -1);
                     break;
                 }
                 break;
@@ -320,13 +320,13 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
                 notificationsSettingsActivity.presentFragment(new NotificationsCustomSettingsActivity(-1, (ArrayList) obj2, (ArrayList) obj, false));
                 break;
             case 21:
-                y71 y71Var = (y71) obj2;
+                e81 e81Var = (e81) obj2;
                 TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) obj;
                 TL_account.resetAuthorization resetauthorization = new TL_account.resetAuthorization();
                 resetauthorization.hash = tL_authorization.hash;
-                i11 = ((org.telegram.ui.ActionBar.p2) y71Var.a).currentAccount;
-                ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new tb0(20, y71Var, tL_authorization));
-                ((n71) obj3).d.dismiss();
+                i11 = ((org.telegram.ui.ActionBar.p2) e81Var.a).currentAccount;
+                ConnectionsManager.getInstance(i11).sendRequest(resetauthorization, new tb0(20, e81Var, tL_authorization));
+                ((s71) obj3).d.dismiss();
                 break;
         }
     }
@@ -365,10 +365,10 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
         }
         org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
         org.telegram.ui.ActionBar.g6 resourceProvider = U != null ? U.getResourceProvider() : null;
-        org.telegram.ui.ActionBar.h3 h3Var = ui1.c;
+        org.telegram.ui.ActionBar.h3 h3Var = aj1.c;
         if (h3Var != null) {
             h3Var.dismiss();
-            ui1.c = null;
+            aj1.c = null;
         }
         org.telegram.ui.ActionBar.h3 o10 = org.telegram.messenger.y3.o(context, resourceProvider, false, false);
         FrameLayout frameLayout = new FrameLayout(context);
@@ -397,7 +397,7 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
         int i12 = org.telegram.ui.ActionBar.k6.a7;
         o10.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(i12, resourceProvider));
         o10.fixNavigationBar(org.telegram.ui.ActionBar.k6.v0(i12, resourceProvider));
-        ui1.c = o10;
+        aj1.c = o10;
         o10.show();
         p10.setOnClickListener(new eg.k2(p10, i11, o10, 20));
     }
@@ -408,7 +408,7 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
     }
 
     @Override // org.telegram.ui.jy
-    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, mf1 mf1Var) {
+    public boolean v(py pyVar, ArrayList arrayList, CharSequence charSequence, boolean z4, boolean z10, int i10, int i11, sf1 sf1Var) {
         long j10;
         int i12;
         TLRPC.TL_chatAdminRights tL_chatAdminRights;
@@ -420,7 +420,7 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
             case 18:
                 ArrayList<MessageObject> arrayList2 = (ArrayList) obj2;
                 xn xnVar = (xn) obj;
-                PhotoViewer photoViewer = ((yr0) obj3).b;
+                PhotoViewer photoViewer = ((ds0) obj3).b;
                 if (arrayList.size() > 1 || ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId == UserConfig.getInstance(photoViewer.Q).getClientUserId() || charSequence != null) {
                     for (int i14 = 0; i14 < arrayList.size(); i14++) {
                         long j11 = ((MessagesStorage.TopicKey) arrayList.get(i14)).dialogId;
@@ -471,11 +471,11 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
                 }
                 break;
             default:
-                qz0 qz0Var = (qz0) obj3;
+                vz0 vz0Var = (vz0) obj3;
                 TLRPC.User user = (TLRPC.User) obj2;
                 py pyVar2 = (py) obj;
                 long j13 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
-                ProfileActivity profileActivity = qz0Var.b;
+                ProfileActivity profileActivity = vz0Var.b;
                 i12 = ((org.telegram.ui.ActionBar.p2) profileActivity).currentAccount;
                 TLRPC.Chat chat = MessagesController.getInstance(i12).getChat(Long.valueOf(-j13));
                 if (chat == null || (!chat.creator && ((tL_chatAdminRights = chat.admin_rights) == null || !tL_chatAdminRights.add_admins))) {
@@ -485,11 +485,11 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
                     d2Var.O = string;
                     d2Var.Q = AndroidUtilities.replaceTags(LocaleController.formatString("AddMembersAlertNamesText", R.string.AddMembersAlertNamesText, UserObject.getUserName(user), chat == null ? "" : chat.title));
                     alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-                    alertDialog$Builder.k(LocaleController.getString(R.string.AddBot), new d9.c(qz0Var, j13, pyVar, user));
+                    alertDialog$Builder.k(LocaleController.getString(R.string.AddBot), new d9.c(vz0Var, j13, pyVar, user));
                     profileActivity.showDialog(d2Var);
                     break;
                 } else {
-                    profileActivity.getMessagesController().checkIsInChat(false, chat, user, new e3.f(qz0Var, j13, pyVar2, 9));
+                    profileActivity.getMessagesController().checkIsInChat(false, chat, user, new e3.f(vz0Var, j13, pyVar2, 9));
                     break;
                 }
                 break;
@@ -497,13 +497,13 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
         return true;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean c(float f10, float f11, int i10, final View view) {
         final g7 g7Var = (g7) this.b;
-        org.telegram.ui.Components.tl0 tl0Var = (org.telegram.ui.Components.tl0) this.c;
+        org.telegram.ui.Components.sl0 sl0Var = (org.telegram.ui.Components.sl0) this.c;
         org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) this.d;
         u7 u7Var = g7Var.d;
-        h7 h7Var = (h7) tl0Var.getAdapter();
+        h7 h7Var = (h7) sl0Var.getAdapter();
         final o7 o7Var = (o7) h7Var.e.get(i10);
         if (!(view instanceof m7) && !(view instanceof org.telegram.ui.Cells.r7)) {
             k7 k7Var = u7Var.v;
@@ -514,7 +514,7 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
         }
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(u7Var.getContext(), null);
         if (view instanceof org.telegram.ui.Cells.r7) {
-            org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_view_file, LocaleController.getString(R.string.CacheOpenFile), false, null).setOnClickListener(new oh.b0(g7Var, o7Var, h7Var, tl0Var, view, 4));
+            org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_view_file, LocaleController.getString(R.string.CacheOpenFile), false, null).setOnClickListener(new oh.b0(g7Var, o7Var, h7Var, sl0Var, view, 4));
         } else if (((m7) view).b.getChildAt(0) instanceof org.telegram.ui.Cells.h7) {
             final int i11 = 0;
             org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_played, LocaleController.getString(R.string.PlayFile), false, null).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.e7
@@ -586,22 +586,22 @@ public final /* synthetic */ class d7 implements org.telegram.ui.Components.ml0,
         org.telegram.ui.Cells.h0 h0Var = (org.telegram.ui.Cells.h0) this.c;
         CharSequence charSequence = (CharSequence) this.d;
         String language = LocaleController.getInstance().getCurrentLocale().getLanguage();
-        if (str == null || ((str.equals(language) && !str.equals(TranslateController.UNKNOWN_LANGUAGE)) || p31.Y().contains(str))) {
+        if (str == null || ((str.equals(language) && !str.equals(TranslateController.UNKNOWN_LANGUAGE)) || t31.Y().contains(str))) {
             h0Var.setClickable(false);
         } else {
             h0Var.setOnClickListener(new oh.b0(xnVar, str, language, charSequence, h0Var, 6));
         }
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void h() {
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void p(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

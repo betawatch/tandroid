@@ -13,9 +13,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
-import qh.v9;
+import qh.u9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class g0 {
     public Long a;
@@ -30,7 +30,7 @@ public final class g0 {
     public long j;
     public boolean k;
     public boolean l;
-    public final Runnable m = new v9(this, 8);
+    public final Runnable m = new u9(this, 8);
     public final /* synthetic */ h0 n;
 
     public g0(h0 h0Var, String str, String str2) {

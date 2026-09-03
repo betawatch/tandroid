@@ -17,13 +17,13 @@ import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class dv extends LinearLayout {
-    public final kb1 a;
+    public final qb1 a;
     public f2.j0 b;
     public final org.telegram.ui.Components.kp c;
-    public final org.telegram.ui.Components.ij0 d;
+    public final org.telegram.ui.Components.hj0 d;
     public final org.telegram.ui.Cells.o8 e;
     public final org.telegram.ui.Cells.o8 f;
     public ValueAnimator h;
@@ -46,38 +46,38 @@ public final class dv extends LinearLayout {
         addView(frameLayout, k7.c6.c(-2.0f, -1));
         org.telegram.ui.Components.kp kpVar = new org.telegram.ui.Components.kp(p2Var.getCurrentAccount(), (i10 == 0 || i10 == -1) ? 0 : 1, null);
         this.c = kpVar;
-        kb1 kb1Var = new kb1(getContext(), 7, g6Var);
-        this.a = kb1Var;
-        kb1Var.setAdapter(kpVar);
-        kb1Var.setSelectorDrawableColor(0);
-        kb1Var.setClipChildren(false);
-        kb1Var.setClipToPadding(false);
-        kb1Var.setHasFixedSize(true);
-        kb1Var.setItemAnimator(null);
-        kb1Var.setNestedScrollingEnabled(false);
+        qb1 qb1Var = new qb1(getContext(), 7, g6Var);
+        this.a = qb1Var;
+        qb1Var.setAdapter(kpVar);
+        qb1Var.setSelectorDrawableColor(0);
+        qb1Var.setClipChildren(false);
+        qb1Var.setClipToPadding(false);
+        qb1Var.setHasFixedSize(true);
+        qb1Var.setItemAnimator(null);
+        qb1Var.setNestedScrollingEnabled(false);
         c();
-        kb1Var.setFocusable(false);
-        kb1Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
-        kb1Var.setOnItemClickListener(new hg.v0(15, this, p2Var));
+        qb1Var.setFocusable(false);
+        qb1Var.setPadding(AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f), 0);
+        qb1Var.setOnItemClickListener(new hg.v0(15, this, p2Var));
         org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(getContext(), null);
         u00Var.setViewType(14);
         u00Var.setVisibility(0);
         if (i10 == 0 || i10 == -1) {
             frameLayout.addView(u00Var, k7.c6.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
-            frameLayout.addView(kb1Var, k7.c6.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
+            frameLayout.addView(qb1Var, k7.c6.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
         } else {
             frameLayout.addView(u00Var, k7.c6.d(-1, 104.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
-            frameLayout.addView(kb1Var, k7.c6.d(-1, -2.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
+            frameLayout.addView(qb1Var, k7.c6.d(-1, -2.0f, 8388611, 0.0f, 8.0f, 0.0f, 8.0f));
         }
-        kb1Var.setEmptyView(u00Var);
-        kb1Var.V1 = true;
-        kb1Var.W1 = 0;
+        qb1Var.setEmptyView(u00Var);
+        qb1Var.V1 = true;
+        qb1Var.W1 = 0;
         if (i10 == 0) {
-            org.telegram.ui.Components.ij0 ij0Var = new org.telegram.ui.Components.ij0(R.raw.sun_outline, "" + R.raw.sun_outline, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
-            this.d = ij0Var;
-            ij0Var.h = true;
-            ij0Var.X = true;
-            ij0Var.m();
+            org.telegram.ui.Components.hj0 hj0Var = new org.telegram.ui.Components.hj0(R.raw.sun_outline, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), true, null);
+            this.d = hj0Var;
+            hj0Var.h = true;
+            hj0Var.X = true;
+            hj0Var.m();
             org.telegram.ui.Cells.o8 o8Var = new org.telegram.ui.Cells.o8(context);
             this.e = o8Var;
             o8Var.setBackground(org.telegram.ui.ActionBar.k6.f0(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.i6, false), 2, -1));
@@ -88,13 +88,13 @@ public final class dv extends LinearLayout {
             o8Var2.m(R.drawable.msg_colors, LocaleController.getString(R.string.SettingsBrowseThemes), false);
             addView(o8Var2, k7.c6.c(-2.0f, -1));
             o8Var.setOnClickListener(new cv(this, context, p2Var));
-            ij0Var.h = true;
+            hj0Var.h = true;
             o8Var2.setOnClickListener(new a(p2Var, 18));
             if (org.telegram.ui.ActionBar.k6.f1()) {
-                o8Var.n(LocaleController.getString(R.string.SettingsSwitchToNightMode), ij0Var, true);
+                o8Var.n(LocaleController.getString(R.string.SettingsSwitchToNightMode), hj0Var, true);
             } else {
-                ij0Var.K(ij0Var.e[0] - 1);
-                o8Var.n(LocaleController.getString(R.string.SettingsSwitchToDayMode), ij0Var, true);
+                hj0Var.K(hj0Var.e[0] - 1);
+                o8Var.n(LocaleController.getString(R.string.SettingsSwitchToDayMode), hj0Var, true);
             }
         }
         if (!MediaDataController.getInstance(p2Var.getCurrentAccount()).defaultEmojiThemes.isEmpty()) {
@@ -178,9 +178,9 @@ public final class dv extends LinearLayout {
     public final void a() {
         int i10 = this.s;
         if (i10 == 0 || i10 == -1) {
-            org.telegram.ui.Components.ij0 ij0Var = this.d;
-            if (ij0Var != null) {
-                ij0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q6, false), PorterDuff.Mode.SRC_IN));
+            org.telegram.ui.Components.hj0 hj0Var = this.d;
+            if (hj0Var != null) {
+                hj0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.q6, false), PorterDuff.Mode.SRC_IN));
             }
             org.telegram.ui.Cells.o8 o8Var = this.e;
             if (o8Var != null) {
@@ -233,7 +233,7 @@ public final class dv extends LinearLayout {
         boolean z4 = point.y > point.x;
         Boolean bool = this.w;
         if (bool == null || bool.booleanValue() != z4) {
-            kb1 kb1Var = this.a;
+            qb1 qb1Var = this.a;
             int i10 = this.s;
             if (i10 != 0 && i10 != -1) {
                 int i11 = z4 ? 3 : 9;
@@ -241,18 +241,18 @@ public final class dv extends LinearLayout {
                 if (j0Var instanceof f2.w) {
                     ((f2.w) j0Var).y1(i11);
                 } else {
-                    kb1Var.setHasFixedSize(false);
+                    qb1Var.setHasFixedSize(false);
                     getContext();
                     f2.w wVar = new f2.w(i11);
                     wVar.O = new f2.t(1);
                     this.b = wVar;
-                    kb1Var.setLayoutManager(wVar);
+                    qb1Var.setLayoutManager(wVar);
                 }
             } else if (this.b == null) {
                 getContext();
                 f2.j0 j0Var2 = new f2.j0(0, false);
                 this.b = j0Var2;
-                kb1Var.setLayoutManager(j0Var2);
+                qb1Var.setLayoutManager(j0Var2);
             }
             this.w = Boolean.valueOf(z4);
         }

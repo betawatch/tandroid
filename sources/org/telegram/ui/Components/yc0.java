@@ -24,7 +24,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class yc0 extends LinearLayout {
     public static final pr s0 = new pr(0.0f, 0.5f, 0.5f, 1.0f);
@@ -42,8 +42,8 @@ public class yc0 extends LinearLayout {
     public int M;
     public int N;
     public int O;
-    public final wm0 P;
-    public final wm0 Q;
+    public final vm0 P;
+    public final vm0 Q;
     public int R;
     public tc0 S;
     public float T;
@@ -170,25 +170,25 @@ public class yc0 extends LinearLayout {
 
     @Override // android.view.View
     public final void computeScroll() {
-        wm0 wm0Var = this.P;
-        if (wm0Var.q) {
-            wm0Var = this.Q;
-            if (wm0Var.q) {
+        vm0 vm0Var = this.P;
+        if (vm0Var.q) {
+            vm0Var = this.Q;
+            if (vm0Var.q) {
                 return;
             }
         }
-        wm0Var.b();
-        int i10 = wm0Var.k;
+        vm0Var.b();
+        int i10 = vm0Var.k;
         if (this.R == 0) {
-            this.R = wm0Var.c;
+            this.R = vm0Var.c;
         }
         scrollBy(0, i10 - this.R);
         this.R = i10;
-        if (!wm0Var.q) {
+        if (!vm0Var.q) {
             invalidate();
             return;
         }
-        if (wm0Var == this.P) {
+        if (vm0Var == this.P) {
             if (!c()) {
                 n();
             }
@@ -349,9 +349,9 @@ public class yc0 extends LinearLayout {
         return this.d0;
     }
 
-    public final boolean h(wm0 wm0Var) {
-        wm0Var.q = true;
-        int i10 = wm0Var.e - wm0Var.k;
+    public final boolean h(vm0 vm0Var) {
+        vm0Var.q = true;
+        int i10 = vm0Var.e - vm0Var.k;
         int i11 = this.N - ((this.O + i10) % this.M);
         if (i11 == 0) {
             return false;
@@ -590,17 +590,17 @@ public class yc0 extends LinearLayout {
             ((yc0) xc0Var2.d).postDelayed(xc0Var2, ViewConfiguration.getTapTimeout());
         }
         getParent().requestDisallowInterceptTouchEvent(true);
-        wm0 wm0Var = this.P;
-        if (!wm0Var.q) {
-            wm0Var.q = true;
+        vm0 vm0Var = this.P;
+        if (!vm0Var.q) {
+            vm0Var.q = true;
             this.Q.q = true;
             i(0);
             return true;
         }
-        wm0 wm0Var2 = this.Q;
-        if (!wm0Var2.q) {
-            wm0Var.q = true;
-            wm0Var2.q = true;
+        vm0 vm0Var2 = this.Q;
+        if (!vm0Var2.q) {
+            vm0Var.q = true;
+            vm0Var2.q = true;
             return true;
         }
         float f11 = this.T;
@@ -1019,8 +1019,8 @@ public class yc0 extends LinearLayout {
         paint2.setTypeface(this.d.getTypeface());
         paint2.setColor(this.d.getTextColors().getColorForState(LinearLayout.ENABLED_STATE_SET, -1));
         this.L = paint2;
-        this.P = new wm0(getContext(), null);
-        this.Q = new wm0(getContext(), new DecelerateInterpolator(2.5f));
+        this.P = new vm0(getContext(), null);
+        this.Q = new vm0(getContext(), new DecelerateInterpolator(2.5f));
         n();
         setImportantForAccessibility(1);
         setAccessibilityDelegate(new sc0(this));

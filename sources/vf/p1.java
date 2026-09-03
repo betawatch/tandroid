@@ -14,9 +14,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 import org.telegram.ui.dt;
-import qh.e8;
+import qh.d8;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class p1 {
     public static volatile p1[] g = new p1[4];
@@ -358,7 +358,7 @@ public final class p1 {
                                 p1Var3.a(c10.b);
                                 int i17 = c10.a;
                                 MessagesStorage messagesStorage2 = MessagesStorage.getInstance(i16);
-                                messagesStorage2.getStorageQueue().postRunnable(new e8(messagesStorage2, i17, 3));
+                                messagesStorage2.getStorageQueue().postRunnable(new d8(messagesStorage2, i17, 3));
                                 p1Var3.l();
                                 NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                                 break;
@@ -486,7 +486,7 @@ public final class p1 {
                                 p1Var3.a(c10.b);
                                 int i17 = c10.a;
                                 MessagesStorage messagesStorage2 = MessagesStorage.getInstance(i16);
-                                messagesStorage2.getStorageQueue().postRunnable(new e8(messagesStorage2, i17, 3));
+                                messagesStorage2.getStorageQueue().postRunnable(new d8(messagesStorage2, i17, 3));
                                 p1Var3.l();
                                 NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                                 break;
@@ -614,7 +614,7 @@ public final class p1 {
                                 p1Var3.a(c10.b);
                                 int i17 = c10.a;
                                 MessagesStorage messagesStorage2 = MessagesStorage.getInstance(i16);
-                                messagesStorage2.getStorageQueue().postRunnable(new e8(messagesStorage2, i17, 3));
+                                messagesStorage2.getStorageQueue().postRunnable(new d8(messagesStorage2, i17, 3));
                                 p1Var3.l();
                                 NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                                 break;
@@ -744,7 +744,7 @@ public final class p1 {
                             p1Var3.a(c10.b);
                             int i17 = c10.a;
                             MessagesStorage messagesStorage2 = MessagesStorage.getInstance(i16);
-                            messagesStorage2.getStorageQueue().postRunnable(new e8(messagesStorage2, i17, 3));
+                            messagesStorage2.getStorageQueue().postRunnable(new d8(messagesStorage2, i17, 3));
                             p1Var3.l();
                             NotificationCenter.getInstance(i16).lambda$postNotificationNameOnUIThread$1(NotificationCenter.quickRepliesUpdated, new Object[0]);
                             break;
@@ -799,6 +799,6 @@ public final class p1 {
 
     public final void l() {
         MessagesStorage messagesStorage = MessagesStorage.getInstance(this.a);
-        messagesStorage.getStorageQueue().postRunnable(new d0(4, this, messagesStorage));
+        messagesStorage.getStorageQueue().postRunnable(new k0(3, this, messagesStorage));
     }
 }

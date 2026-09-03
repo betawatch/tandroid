@@ -12,7 +12,7 @@ import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class n0 implements TextWatcher {
     public final /* synthetic */ int a;
@@ -411,53 +411,53 @@ public final class n0 implements TextWatcher {
                 }
                 break;
             case 14:
-                gq0 gq0Var = ((hq0) this.b).p0;
-                if (gq0Var != null) {
-                    gq0Var.c(editable);
+                lq0 lq0Var = ((mq0) this.b).p0;
+                if (lq0Var != null) {
+                    lq0Var.c(editable);
                     break;
                 }
                 break;
             case 15:
-                i51 i51Var = (i51) this.b;
-                eh.b bVar = i51Var.h;
+                n51 n51Var = (n51) this.b;
+                eh.b bVar = n51Var.h;
                 String obj11 = (bVar.getText() == null || AndroidUtilities.trim(bVar.getText(), null).length() == 0) ? null : bVar.getText().toString();
-                i51Var.y.v(obj11, true, true);
-                f61 f61Var = i51Var.n;
-                if (f61Var != null) {
-                    f61Var.F1(null);
-                    i51Var.n.G1(TextUtils.isEmpty(obj11), true);
+                n51Var.y.v(obj11, true, true);
+                k61 k61Var = n51Var.n;
+                if (k61Var != null) {
+                    k61Var.E1(null);
+                    n51Var.n.F1(TextUtils.isEmpty(obj11), true);
                 }
                 if (bVar != null) {
                     bVar.clearAnimation();
                     bVar.animate().translationX(0.0f).setInterpolator(org.telegram.ui.Components.pr.h).start();
                 }
-                i51Var.c(false);
+                n51Var.c(false);
                 break;
             case 16:
                 String trim = editable.toString().trim();
-                ie1 ie1Var = (ie1) this.b;
-                String str10 = ie1Var.n;
+                oe1 oe1Var = (oe1) this.b;
+                String str10 = oe1Var.n;
                 if (trim.length() > 0) {
-                    ie1Var.n = trim.substring(0, 1).toUpperCase();
+                    oe1Var.n = trim.substring(0, 1).toUpperCase();
                 } else {
-                    ie1Var.n = "";
+                    oe1Var.n = "";
                 }
-                if (!str10.equals(ie1Var.n)) {
+                if (!str10.equals(oe1Var.n)) {
                     org.telegram.ui.Components.o80 o80Var = new org.telegram.ui.Components.o80(1, null);
-                    o80Var.a(ie1Var.n);
-                    org.telegram.ui.Components.zl0 zl0Var = ie1Var.v;
-                    if (zl0Var != null) {
-                        zl0Var.b(o80Var, true);
+                    o80Var.a(oe1Var.n);
+                    org.telegram.ui.Components.yl0 yl0Var = oe1Var.v;
+                    if (yl0Var != null) {
+                        yl0Var.b(o80Var, true);
                         break;
                     }
                 }
                 break;
             default:
                 TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
-                vf1 vf1Var = twoStepVerificationActivity.S;
+                bg1 bg1Var = twoStepVerificationActivity.S;
                 if (twoStepVerificationActivity.R) {
-                    AndroidUtilities.cancelRunOnUIThread(vf1Var);
-                    vf1Var.run();
+                    AndroidUtilities.cancelRunOnUIThread(bg1Var);
+                    bg1Var.run();
                     break;
                 }
                 break;
@@ -495,11 +495,11 @@ public final class n0 implements TextWatcher {
                 }
                 break;
             case 8:
-                te0 te0Var = (te0) obj;
-                re0 re0Var = te0Var.x;
-                if (te0Var.w) {
-                    te0Var.removeCallbacks(re0Var);
-                    re0Var.run();
+                se0 se0Var = (se0) obj;
+                qe0 qe0Var = se0Var.x;
+                if (se0Var.w) {
+                    se0Var.removeCallbacks(qe0Var);
+                    qe0Var.run();
                     break;
                 }
                 break;

@@ -14,21 +14,21 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.l5;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.g5;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.jn;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.in;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final class n extends sl0 {
+public final class n extends rl0 {
     public final /* synthetic */ v c;
 
     public n(v vVar) {
         this.c = vVar;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(m1 m1Var) {
         return m1Var.f == 0;
     }
@@ -131,9 +131,9 @@ public final class n extends sl0 {
         if (i10 == 1) {
             view = new View(viewGroup.getContext());
         } else if (i10 == 2) {
-            jn jnVar = new jn(viewGroup.getContext(), 3);
-            jnVar.setTag(-33024);
-            view = jnVar;
+            in inVar = new in(viewGroup.getContext(), 3);
+            inVar.setTag(-33024);
+            view = inVar;
         } else if (i10 == 3) {
             view = new View(viewGroup.getContext());
         } else if (i10 != 4) {
@@ -152,6 +152,6 @@ public final class n extends sl0 {
             mVar.setTag(-33024);
             view = mVar;
         }
-        return new fl0(view);
+        return new el0(view);
     }
 }

@@ -14,9 +14,9 @@ import java.util.ArrayList;
 import java.util.WeakHashMap;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class f0 extends v0 {
     public int B;
@@ -145,9 +145,9 @@ public class f0 extends v0 {
         }
     }
 
-    public final void d(tl0 tl0Var) {
+    public final void d(sl0 sl0Var) {
         RecyclerView recyclerView = this.E;
-        if (recyclerView == tl0Var) {
+        if (recyclerView == sl0Var) {
             return;
         }
         y yVar = this.M;
@@ -187,9 +187,9 @@ public class f0 extends v0 {
                 this.K = null;
             }
         }
-        this.E = tl0Var;
-        if (tl0Var != null) {
-            tl0Var.getResources();
+        this.E = sl0Var;
+        if (sl0Var != null) {
+            sl0Var.getResources();
             this.f = AndroidUtilities.dp(120.0f);
             this.h = AndroidUtilities.dp(800.0f);
             this.D = ViewConfiguration.get(this.E.getContext()).getScaledTouchSlop();

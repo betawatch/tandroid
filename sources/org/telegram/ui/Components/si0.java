@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.TelegramQRCodeWriter;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class si0 extends org.telegram.ui.ActionBar.h3 {
     public final Bitmap b;
@@ -22,7 +22,7 @@ public class si0 extends org.telegram.ui.ActionBar.h3 {
     public final TextView d;
     public final TextView e;
     public final int f;
-    public final lj0 h;
+    public final kj0 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public si0(Context context, String str, String str2, String str3, boolean z4) {
@@ -51,13 +51,13 @@ public class si0 extends org.telegram.ui.ActionBar.h3 {
         }
         this.b = bitmap;
         geVar.setImageBitmap(bitmap);
-        lj0 lj0Var = new lj0(context);
-        this.h = lj0Var;
-        lj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
-        lj0Var.setBackgroundColor(-1);
+        kj0 kj0Var = new kj0(context);
+        this.h = kj0Var;
+        kj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        kj0Var.setBackgroundColor(-1);
         org.telegram.ui.zl0 zl0Var = new org.telegram.ui.zl0(this, context, geVar);
         zl0Var.addView(geVar, k7.c6.c(-1.0f, -1));
-        zl0Var.addView(lj0Var, k7.c6.e(60, 60, 17));
+        zl0Var.addView(kj0Var, k7.c6.e(60, 60, 17));
         linearLayout.addView(zl0Var, k7.c6.t(220, 220, 1, 30, 0, 30, 0));
         TextView textView = new TextView(context);
         this.c = textView;
@@ -91,10 +91,10 @@ public class si0 extends org.telegram.ui.ActionBar.h3 {
     }
 
     public final void m(int i10) {
-        lj0 lj0Var = this.h;
-        lj0Var.setAutoRepeat(true);
-        lj0Var.f(i10, 60, 60, null);
-        lj0Var.d();
+        kj0 kj0Var = this.h;
+        kj0Var.setAutoRepeat(true);
+        kj0Var.f(i10, 60, 60, null);
+        kj0Var.d();
     }
 
     public final void n() {

@@ -20,10 +20,10 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class lv extends org.telegram.ui.ActionBar.p2 {
-    public static final org.telegram.ui.Components.lr0 x = new org.telegram.ui.Components.lr0(2);
+    public static final org.telegram.ui.Components.kr0 x = new org.telegram.ui.Components.kr0(2);
     public py a;
     public ContactsActivity b;
     public org.telegram.ui.ActionBar.w0 c;
@@ -76,7 +76,7 @@ public final class lv extends org.telegram.ui.ActionBar.p2 {
         this.actionBar.setAllowOverlayTitle(false);
         this.actionBar.setAddToContainer(false);
         this.actionBar.setClipContent(true);
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 7));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 7));
         this.hasOwnBackground = true;
         org.telegram.ui.ActionBar.w0 a2 = this.actionBar.n().a(0, R.drawable.outline_header_search);
         a2.F();
@@ -124,10 +124,10 @@ public final class lv extends org.telegram.ui.ActionBar.p2 {
             kvVarArr[i10].c.setVisibility(8);
             int i11 = 0;
             while (i11 < 2) {
-                org.telegram.ui.Components.tl0 tl0Var = i11 == 0 ? kvVarArr[i10].d : kvVarArr[i10].e;
-                if (tl0Var != null) {
-                    tl0Var.setClipToPadding(false);
-                    tl0Var.setOnScrollListener(new kh.l(6, this, tl0Var.getOnScrollListener()));
+                org.telegram.ui.Components.sl0 sl0Var = i11 == 0 ? kvVarArr[i10].d : kvVarArr[i10].e;
+                if (sl0Var != null) {
+                    sl0Var.setClipToPadding(false);
+                    sl0Var.setOnScrollListener(new kh.l(6, this, sl0Var.getOnScrollListener()));
                 }
                 i11++;
             }
@@ -201,12 +201,12 @@ public final class lv extends org.telegram.ui.ActionBar.p2 {
         }
         int i11 = 0;
         while (i11 < 2) {
-            org.telegram.ui.Components.tl0 tl0Var = i11 == 0 ? kvVarArr[z4 ? 1 : 0].d : kvVarArr[z4 ? 1 : 0].e;
-            if (tl0Var != null) {
-                tl0Var.getAdapter();
-                tl0Var.setPinnedHeaderShadowDrawable(null);
+            org.telegram.ui.Components.sl0 sl0Var = i11 == 0 ? kvVarArr[z4 ? 1 : 0].d : kvVarArr[z4 ? 1 : 0].e;
+            if (sl0Var != null) {
+                sl0Var.getAdapter();
+                sl0Var.setPinnedHeaderShadowDrawable(null);
                 if (this.actionBar.getTranslationY() != 0.0f) {
-                    ((f2.j0) tl0Var.getLayoutManager()).h1(0, (int) this.actionBar.getTranslationY());
+                    ((f2.j0) sl0Var.getLayoutManager()).h1(0, (int) this.actionBar.getTranslationY());
                 }
             }
             i11++;

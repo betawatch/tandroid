@@ -11,7 +11,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.q70;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class l4 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -59,13 +59,13 @@ public final /* synthetic */ class l4 implements View.OnClickListener {
                                                     d2Var.d();
                                                 }
                                                 tVar2.n = !tVar2.n;
-                                                TL_iv.PageBlock N3 = r3.N3(aVar3, tVar2);
-                                                if (N3 instanceof TL_iv.pageBlockPhoto) {
-                                                    ((TL_iv.pageBlockPhoto) N3).spoiler = tVar2.n;
-                                                } else if (N3 instanceof TL_iv.pageBlockVideo) {
-                                                    ((TL_iv.pageBlockVideo) N3).spoiler = tVar2.n;
+                                                TL_iv.PageBlock M3 = r3.M3(aVar3, tVar2);
+                                                if (M3 instanceof TL_iv.pageBlockPhoto) {
+                                                    ((TL_iv.pageBlockPhoto) M3).spoiler = tVar2.n;
+                                                } else if (M3 instanceof TL_iv.pageBlockVideo) {
+                                                    ((TL_iv.pageBlockVideo) M3).spoiler = tVar2.n;
                                                 }
-                                                r3Var.n4(aVar3);
+                                                r3Var.m4(aVar3);
                                                 d2 d2Var2 = r3Var.G3;
                                                 if (d2Var2 != null) {
                                                     d2Var2.h();
@@ -79,7 +79,7 @@ public final /* synthetic */ class l4 implements View.OnClickListener {
                                         o4 o4Var3 = o4Var;
                                         k3 k3Var2 = o4Var3.K;
                                         if (k3Var2 != null && (aVar4 = o4Var3.a) != null) {
-                                            r3.N1(aVar4, tVar, k3Var2.a);
+                                            r3.M1(aVar4, tVar, k3Var2.a);
                                             break;
                                         }
                                         break;
@@ -106,13 +106,13 @@ public final /* synthetic */ class l4 implements View.OnClickListener {
                                                     d2Var.d();
                                                 }
                                                 tVar2.n = !tVar2.n;
-                                                TL_iv.PageBlock N3 = r3.N3(aVar3, tVar2);
-                                                if (N3 instanceof TL_iv.pageBlockPhoto) {
-                                                    ((TL_iv.pageBlockPhoto) N3).spoiler = tVar2.n;
-                                                } else if (N3 instanceof TL_iv.pageBlockVideo) {
-                                                    ((TL_iv.pageBlockVideo) N3).spoiler = tVar2.n;
+                                                TL_iv.PageBlock M3 = r3.M3(aVar3, tVar2);
+                                                if (M3 instanceof TL_iv.pageBlockPhoto) {
+                                                    ((TL_iv.pageBlockPhoto) M3).spoiler = tVar2.n;
+                                                } else if (M3 instanceof TL_iv.pageBlockVideo) {
+                                                    ((TL_iv.pageBlockVideo) M3).spoiler = tVar2.n;
                                                 }
-                                                r3Var.n4(aVar3);
+                                                r3Var.m4(aVar3);
                                                 d2 d2Var2 = r3Var.G3;
                                                 if (d2Var2 != null) {
                                                     d2Var2.h();
@@ -126,7 +126,7 @@ public final /* synthetic */ class l4 implements View.OnClickListener {
                                         o4 o4Var3 = o4Var;
                                         k3 k3Var2 = o4Var3.K;
                                         if (k3Var2 != null && (aVar4 = o4Var3.a) != null) {
-                                            r3.N1(aVar4, tVar, k3Var2.a);
+                                            r3.M1(aVar4, tVar, k3Var2.a);
                                             break;
                                         }
                                         break;
@@ -160,28 +160,28 @@ public final /* synthetic */ class l4 implements View.OnClickListener {
                 if (k3Var2 != null && (aVar2 = o4Var3.a) != null) {
                     r3 r3Var2 = k3Var2.a;
                     r3Var2.getClass();
-                    if (r3.B3(aVar2.b)) {
+                    if (r3.A3(aVar2.b)) {
                         d2 d2Var = r3Var2.G3;
                         if (d2Var != null) {
                             d2Var.d();
                         }
-                        ArrayList<TL_iv.PageBlock> g32 = r3.g3(aVar2.b);
+                        ArrayList<TL_iv.PageBlock> f32 = r3.f3(aVar2.b);
                         TL_iv.PageBlock pageBlock = aVar2.b;
                         TL_iv.PageCaption pageCaption = pageBlock.caption;
                         if (pageBlock instanceof TL_iv.pageBlockSlideshow) {
                             TL_iv.pageBlockCollage pageblockcollage = new TL_iv.pageBlockCollage();
-                            if (g32 == null) {
-                                g32 = new ArrayList<>();
+                            if (f32 == null) {
+                                f32 = new ArrayList<>();
                             }
-                            pageblockcollage.items = g32;
+                            pageblockcollage.items = f32;
                             pageblockcollage.caption = pageCaption;
                             pageblockslideshow = pageblockcollage;
                         } else {
                             TL_iv.pageBlockSlideshow pageblockslideshow2 = new TL_iv.pageBlockSlideshow();
-                            if (g32 == null) {
-                                g32 = new ArrayList<>();
+                            if (f32 == null) {
+                                f32 = new ArrayList<>();
                             }
-                            pageblockslideshow2.items = g32;
+                            pageblockslideshow2.items = f32;
                             pageblockslideshow2.caption = pageCaption;
                             pageblockslideshow = pageblockslideshow2;
                         }
@@ -190,9 +190,9 @@ public final /* synthetic */ class l4 implements View.OnClickListener {
                         if (d2Var2 != null) {
                             d2Var2.h();
                         }
-                        View z12 = r3Var2.z1(aVar2);
-                        if (z12 instanceof o4) {
-                            o4 o4Var4 = (o4) z12;
+                        View y12 = r3Var2.y1(aVar2);
+                        if (y12 instanceof o4) {
+                            o4 o4Var4 = (o4) y12;
                             ValueAnimator valueAnimator = o4Var4.f0;
                             if (valueAnimator != null) {
                                 valueAnimator.cancel();

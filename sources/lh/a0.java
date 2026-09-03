@@ -19,7 +19,7 @@ import org.telegram.ui.Components.sc;
 import org.telegram.ui.Components.tc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -41,13 +41,13 @@ public final /* synthetic */ class a0 implements Utilities.Callback2 {
         switch (this.a) {
             case 0:
                 f0 f0Var = (f0) this.b;
-                qh.f3[] f3VarArr = (qh.f3[]) this.c;
+                qh.e3[] e3VarArr = (qh.e3[]) this.c;
                 FrameLayout frameLayout = (FrameLayout) this.d;
                 View view = (View) obj;
                 CharSequence charSequence = (CharSequence) obj2;
-                qh.f3 f3Var = f3VarArr[0];
-                if (f3Var != null) {
-                    f3Var.e(true);
+                qh.e3 e3Var = e3VarArr[0];
+                if (e3Var != null) {
+                    e3Var.e(true);
                 }
                 CharSequence replaceTags = AndroidUtilities.replaceTags(charSequence);
                 float x10 = ((View) ((View) view.getParent()).getParent()).getX() + ((View) view.getParent()).getX() + view.getX();
@@ -64,19 +64,19 @@ public final /* synthetic */ class a0 implements Utilities.Callback2 {
                         }
                     }
                 }
-                qh.f3 f3Var2 = new qh.f3(f0Var.getContext(), 3);
-                f3VarArr[0] = f3Var2;
-                f3Var2.q(true);
-                f3Var2.l(11.0f, 8.0f, 11.0f, 7.0f);
-                f3Var2.r(10.0f);
-                f3Var2.t(replaceTags);
-                f3Var2.i0 = new w(f3Var2, 0);
-                f3Var2.setTranslationY((-AndroidUtilities.dp(100.0f)) + y10);
-                f3Var2.h = AndroidUtilities.dp(300.0f);
-                f3Var2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-                f3Var2.n(0.0f, x10 - AndroidUtilities.dp(4.0f));
-                frameLayout.addView(f3Var2, k7.c6.e(-1, 100, 55));
-                f3Var2.v();
+                qh.e3 e3Var2 = new qh.e3(f0Var.getContext(), 3);
+                e3VarArr[0] = e3Var2;
+                e3Var2.p(true);
+                e3Var2.k(11.0f, 8.0f, 11.0f, 7.0f);
+                e3Var2.q(10.0f);
+                e3Var2.s(replaceTags);
+                e3Var2.i0 = new w(e3Var2, 0);
+                e3Var2.setTranslationY((-AndroidUtilities.dp(100.0f)) + y10);
+                e3Var2.h = AndroidUtilities.dp(300.0f);
+                e3Var2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                e3Var2.m(0.0f, x10 - AndroidUtilities.dp(4.0f));
+                frameLayout.addView(e3Var2, k7.c6.e(-1, 100, 55));
+                e3Var2.u();
                 break;
             case 1:
                 q5 q5Var = (q5) this.b;
@@ -97,13 +97,13 @@ public final /* synthetic */ class a0 implements Utilities.Callback2 {
                 break;
             case 3:
                 mh.g5 g5Var = (mh.g5) this.b;
-                qh.f3[] f3VarArr2 = (qh.f3[]) this.c;
+                qh.e3[] e3VarArr2 = (qh.e3[]) this.c;
                 FrameLayout frameLayout2 = (FrameLayout) this.d;
                 View view2 = (View) obj;
                 CharSequence charSequence2 = (CharSequence) obj2;
-                qh.f3 f3Var3 = f3VarArr2[0];
-                if (f3Var3 != null) {
-                    f3Var3.e(true);
+                qh.e3 e3Var3 = e3VarArr2[0];
+                if (e3Var3 != null) {
+                    e3Var3.e(true);
                 }
                 CharSequence replaceTags2 = AndroidUtilities.replaceTags(charSequence2);
                 float x11 = ((View) ((View) view2.getParent()).getParent()).getX() + ((View) view2.getParent()).getX() + view2.getX();
@@ -120,19 +120,19 @@ public final /* synthetic */ class a0 implements Utilities.Callback2 {
                         }
                     }
                 }
-                qh.f3 f3Var4 = new qh.f3(g5Var.getContext(), 3);
-                f3VarArr2[0] = f3Var4;
-                f3Var4.q(true);
-                f3Var4.l(11.0f, 8.0f, 11.0f, 7.0f);
-                f3Var4.r(10.0f);
-                f3Var4.t(replaceTags2);
-                f3Var4.i0 = new w(f3Var4, 2);
-                f3Var4.setTranslationY((-AndroidUtilities.dp(100.0f)) + y11);
-                f3Var4.h = AndroidUtilities.dp(300.0f);
-                f3Var4.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
-                f3Var4.n(0.0f, x11 - AndroidUtilities.dp(4.0f));
-                frameLayout2.addView(f3Var4, k7.c6.e(-1, 100, 55));
-                f3Var4.v();
+                qh.e3 e3Var4 = new qh.e3(g5Var.getContext(), 3);
+                e3VarArr2[0] = e3Var4;
+                e3Var4.p(true);
+                e3Var4.k(11.0f, 8.0f, 11.0f, 7.0f);
+                e3Var4.q(10.0f);
+                e3Var4.s(replaceTags2);
+                e3Var4.i0 = new w(e3Var4, 2);
+                e3Var4.setTranslationY((-AndroidUtilities.dp(100.0f)) + y11);
+                e3Var4.h = AndroidUtilities.dp(300.0f);
+                e3Var4.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f));
+                e3Var4.m(0.0f, x11 - AndroidUtilities.dp(4.0f));
+                frameLayout2.addView(e3Var4, k7.c6.e(-1, 100, 55));
+                e3Var4.u();
                 break;
             case 4:
                 ((ConnectionsManager) this.b).lambda$sendRequestTypedAndProcessUpdates$5((Executor) this.c, (Utilities.Callback2) this.d, (TLRPC.Updates) obj, (TLRPC.TL_error) obj2);

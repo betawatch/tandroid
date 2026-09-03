@@ -35,11 +35,11 @@ import java.util.List;
 import l7.w0;
 import mh.m5;
 import org.telegram.messenger.NotificationsController;
-import org.telegram.ui.Components.cz0;
-import org.telegram.ui.Components.ez0;
+import org.telegram.ui.Components.bz0;
+import org.telegram.ui.Components.dz0;
 import r3.m;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class k implements b0 {
     public int a;
@@ -323,12 +323,12 @@ public final class k implements b0 {
             return;
         }
         iArr[i10] = 1;
-        for (cz0 cz0Var : ((cz0[][]) this.c)[i10]) {
-            f(cz0Var.a.b);
-            cz0[] cz0VarArr = (cz0[]) this.b;
+        for (bz0 bz0Var : ((bz0[][]) this.c)[i10]) {
+            f(bz0Var.a.b);
+            bz0[] bz0VarArr = (bz0[]) this.b;
             int i11 = this.a;
             this.a = i11 - 1;
-            cz0VarArr[i11] = cz0Var;
+            bz0VarArr[i11] = bz0Var;
         }
         iArr[i10] = 2;
     }
@@ -661,30 +661,30 @@ public final class k implements b0 {
         this.a = i10;
     }
 
-    public k(ez0 ez0Var, cz0[] cz0VarArr) {
-        this.e = ez0Var;
-        int length = cz0VarArr.length;
-        this.b = new cz0[length];
+    public k(dz0 dz0Var, bz0[] bz0VarArr) {
+        this.e = dz0Var;
+        int length = bz0VarArr.length;
+        this.b = new bz0[length];
         this.a = length - 1;
-        int e6 = ez0Var.e() + 1;
-        cz0[][] cz0VarArr2 = new cz0[e6][];
+        int e6 = dz0Var.e() + 1;
+        bz0[][] bz0VarArr2 = new bz0[e6][];
         int[] iArr = new int[e6];
-        for (cz0 cz0Var : cz0VarArr) {
-            int i10 = cz0Var.a.a;
+        for (bz0 bz0Var : bz0VarArr) {
+            int i10 = bz0Var.a.a;
             iArr[i10] = iArr[i10] + 1;
         }
         for (int i11 = 0; i11 < e6; i11++) {
-            cz0VarArr2[i11] = new cz0[iArr[i11]];
+            bz0VarArr2[i11] = new bz0[iArr[i11]];
         }
         Arrays.fill(iArr, 0);
-        for (cz0 cz0Var2 : cz0VarArr) {
-            int i12 = cz0Var2.a.a;
-            cz0[] cz0VarArr3 = cz0VarArr2[i12];
+        for (bz0 bz0Var2 : bz0VarArr) {
+            int i12 = bz0Var2.a.a;
+            bz0[] bz0VarArr3 = bz0VarArr2[i12];
             int i13 = iArr[i12];
             iArr[i12] = i13 + 1;
-            cz0VarArr3[i13] = cz0Var2;
+            bz0VarArr3[i13] = bz0Var2;
         }
-        this.c = cz0VarArr2;
-        this.d = new int[((ez0) this.e).e() + 1];
+        this.c = bz0VarArr2;
+        this.d = new int[((dz0) this.e).e() + 1];
     }
 }

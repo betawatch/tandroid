@@ -31,9 +31,9 @@ import org.telegram.ui.Components.u50;
 import org.telegram.ui.Components.v50;
 import org.telegram.ui.Components.y50;
 import org.telegram.ui.Components.z50;
-import qh.s6;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class u0 extends Handler {
     public final /* synthetic */ int a;
@@ -760,7 +760,7 @@ public final class u0 extends Handler {
                                 y50Var.E0.V = null;
                             }
                             z50 z50Var12 = y50Var.E0;
-                            z50Var12.V = s6.x(z50Var12.a, true);
+                            z50Var12.V = r6.x(z50Var12.a, true);
                             try {
                                 FileLog.d("InstantCamera handlePauseRecording drain encoders");
                                 y50Var.e(false);

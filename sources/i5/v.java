@@ -49,17 +49,17 @@ import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.i80;
-import org.telegram.ui.Components.km;
+import org.telegram.ui.Components.jm;
 import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.nm;
+import org.telegram.ui.Components.mm;
+import org.telegram.ui.Components.om;
 import org.telegram.ui.Components.pm;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.qm;
 import org.telegram.ui.Components.sf;
 import org.telegram.ui.Components.tg;
-import org.telegram.ui.Components.yw0;
+import org.telegram.ui.Components.xw0;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.Components.z4;
-import org.telegram.ui.Components.zu0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.bd0;
@@ -72,10 +72,11 @@ import org.telegram.ui.qr;
 import org.telegram.ui.sq;
 import org.telegram.ui.x90;
 import org.telegram.ui.xn;
+import qh.r6;
 import qh.s0;
 import qh.t0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class v implements Runnable {
     public final /* synthetic */ int a;
@@ -105,7 +106,7 @@ public final /* synthetic */ class v implements Runnable {
         boolean z11;
         boolean z12;
         int i11;
-        nm nmVar;
+        mm mmVar;
         int i12 = this.a;
         int i13 = 4;
         int i14 = 2;
@@ -283,57 +284,57 @@ public final /* synthetic */ class v implements Runnable {
                 t6 t6Var3 = s6Var.J;
                 t0 t0Var = t6Var3.w;
                 s6Var.d = true;
-                qh.s6 s6Var2 = s6Var.c;
-                if (s6Var2.w) {
-                    t0Var.c(s6Var2);
+                r6 r6Var = s6Var.c;
+                if (r6Var.w) {
+                    t0Var.c(r6Var);
                 }
-                s6Var2.w = false;
-                s6Var2.x = null;
-                if (!s6Var2.b0) {
+                r6Var.w = false;
+                r6Var.x = null;
+                if (!r6Var.b0) {
                     ArrayList arrayList6 = t0Var.b;
-                    if (!s6Var2.u && storyItem.media != null) {
+                    if (!r6Var.u && storyItem.media != null) {
                         ArrayList arrayList7 = new ArrayList();
                         int size = arrayList6.size();
                         int i24 = 0;
                         while (i24 < size) {
                             Object obj3 = arrayList6.get(i24);
                             i24++;
-                            qh.s6 s6Var3 = (qh.s6) obj3;
-                            if (s6Var3.g && s6Var3.f == storyItem.id) {
-                                arrayList7.add(s6Var3);
+                            r6 r6Var2 = (r6) obj3;
+                            if (r6Var2.g && r6Var2.f == storyItem.id) {
+                                arrayList7.add(r6Var2);
                             }
                         }
                         t0Var.b(arrayList7);
-                        t0Var.e(s6Var2);
-                        s6Var2.b = Utilities.random.nextLong();
-                        s0 s0Var = new s0(s6Var2);
-                        s6Var2.g = true;
+                        t0Var.e(r6Var);
+                        r6Var.b = Utilities.random.nextLong();
+                        s0 s0Var = new s0(r6Var);
+                        r6Var.g = true;
                         s0Var.G = true;
-                        s6Var2.e = j10;
+                        r6Var.e = j10;
                         s0Var.I = j10;
                         int i25 = storyItem.id;
-                        s6Var2.f = i25;
+                        r6Var.f = i25;
                         s0Var.H = i25;
                         long j13 = storyItem.expire_date * 1000;
-                        s6Var2.J = j13;
+                        r6Var.J = j13;
                         s0Var.L = j13;
                         TLRPC.MessageMedia messageMedia = storyItem.media;
                         TLRPC.Document document = messageMedia.document;
                         if (document != null) {
                             long j14 = document.id;
-                            s6Var2.H = j14;
+                            r6Var.H = j14;
                             s0Var.J = j14;
                         } else {
                             TLRPC.Photo photo = messageMedia.photo;
                             if (photo != null) {
                                 long j15 = photo.id;
-                                s6Var2.I = j15;
+                                r6Var.I = j15;
                                 s0Var.K = j15;
                             }
                         }
-                        arrayList6.remove(s6Var2);
+                        arrayList6.remove(r6Var);
                         z12 = false;
-                        arrayList6.add(0, s6Var2);
+                        arrayList6.add(0, r6Var);
                         t0Var.a(s0Var);
                         if (s6Var.b) {
                             t6Var3.R = z12;
@@ -420,33 +421,33 @@ public final /* synthetic */ class v implements Runnable {
                 z4.M(miVar.getContext(), j10, new tg(miVar, 14), (g6) obj);
                 break;
             case 21:
-                pm pmVar = (pm) obj2;
-                nm nmVar2 = (nm) obj;
-                qm qmVar = pmVar.M;
-                if (!qmVar.r.H1 && pmVar.y == j10 && (nmVar = pmVar.C) == nmVar2) {
-                    qmVar.G = nmVar;
-                    qmVar.J = nmVar.a.a;
-                    qmVar.H = false;
-                    pmVar.D = 0.0f;
-                    pmVar.invalidate();
-                    ValueAnimator valueAnimator = qmVar.I;
+                om omVar = (om) obj2;
+                mm mmVar2 = (mm) obj;
+                pm pmVar = omVar.M;
+                if (!pmVar.r.H1 && omVar.y == j10 && (mmVar = omVar.C) == mmVar2) {
+                    pmVar.G = mmVar;
+                    pmVar.J = mmVar.a.a;
+                    pmVar.H = false;
+                    omVar.D = 0.0f;
+                    omVar.invalidate();
+                    ValueAnimator valueAnimator = pmVar.I;
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
                     ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    qmVar.I = ofFloat;
-                    ofFloat.addUpdateListener(new km(pmVar, 0));
-                    qmVar.I.setDuration(200L);
-                    qmVar.I.start();
-                    nm nmVar3 = qmVar.G;
-                    RectF f10 = nmVar3.f(nmVar3.e());
-                    RectF d = qmVar.G.d();
-                    qmVar.D = (((qmVar.y - f10.left) / f10.width()) + 0.5f) / 2.0f;
-                    qmVar.C = (qmVar.B - f10.top) / f10.height();
-                    qmVar.E = d.width();
-                    qmVar.F = d.height();
+                    pmVar.I = ofFloat;
+                    ofFloat.addUpdateListener(new jm(omVar, 0));
+                    pmVar.I.setDuration(200L);
+                    pmVar.I.start();
+                    mm mmVar3 = pmVar.G;
+                    RectF f10 = mmVar3.f(mmVar3.e());
+                    RectF d = pmVar.G.d();
+                    pmVar.D = (((pmVar.y - f10.left) / f10.width()) + 0.5f) / 2.0f;
+                    pmVar.C = (pmVar.B - f10.top) / f10.height();
+                    pmVar.E = d.width();
+                    pmVar.F = d.height();
                     try {
-                        qmVar.performHapticFeedback(0, 2);
+                        pmVar.performHapticFeedback(0, 2);
                         break;
                     } catch (Exception unused) {
                         return;
@@ -457,10 +458,10 @@ public final /* synthetic */ class v implements Runnable {
                 i80.Xc((i80) obj2, j10, (TLRPC.Chat) obj);
                 break;
             case 23:
-                ((zu0) obj2).s1.presentFragment(xn.Q9(((MessageObject) obj).getId(), j10));
+                ((yu0) obj2).s1.presentFragment(xn.Q9(((MessageObject) obj).getId(), j10));
                 break;
             case 24:
-                yw0.x1((yw0) obj2, (TLRPC.TL_messages_emojiGroups) obj, j10);
+                xw0.w1((xw0) obj2, (TLRPC.TL_messages_emojiGroups) obj, j10);
                 break;
             case 25:
                 py pyVar2 = (py) obj2;

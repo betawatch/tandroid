@@ -35,8 +35,8 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.i61;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.q70;
@@ -46,14 +46,14 @@ import org.telegram.ui.Components.z4;
 import org.telegram.ui.Components.z8;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.cd;
-import org.telegram.ui.lu0;
-import org.telegram.ui.qd1;
 import org.telegram.ui.qr;
+import org.telegram.ui.qu0;
+import org.telegram.ui.vd1;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
-import qh.o9;
+import qh.n9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class n extends p2 implements x40, NotificationCenter.NotificationCenterDelegate, xd.b {
     public y40 B;
@@ -66,11 +66,11 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
     public final xd.a a;
     public long b;
     public t3 c;
-    public i61 d;
+    public h61 d;
     public String e;
     public boolean f;
     public boolean h;
-    public o9 n;
+    public n9 n;
     public m r;
     public fg.i0 s;
     public p9 v;
@@ -85,12 +85,12 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
         this.H = new l(this);
     }
 
-    public static boolean U(n nVar, j51 j51Var, View view) {
+    public static boolean U(n nVar, h51 h51Var, View view) {
         long j10;
         boolean canRemoveBotFromCommunity;
         boolean z4;
         boolean z10;
-        Object obj = j51Var.G;
+        Object obj = h51Var.G;
         if (!(obj instanceof TLRPC.Chat)) {
             if (obj instanceof TLRPC.User) {
                 TLRPC.User user = (TLRPC.User) obj;
@@ -116,17 +116,17 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
             q70 F = q70.F(nVar.c, null, view);
             F.l(R.drawable.msg_viewintopic, LocaleController.getString(z4 ? R.string.CommunityMenuViewBot : z10 ? R.string.CommunityMenuViewChannel : R.string.CommunityMenuViewGroup), new h(nVar, j11, 1), z12);
             F.m(z11, R.drawable.msg_cancel, LocaleController.getString(R.string.CommunityMenuRemoveFromCommunity), true, new ed(nVar, z4, z10, j11, 2));
-            F.W(nVar.d.V0(view, true));
+            F.W(nVar.d.U0(view, true));
             F.Z();
             return true;
         }
         return false;
     }
 
-    public static void V(n nVar, j51 j51Var) {
+    public static void V(n nVar, h51 h51Var) {
         TLRPC.Chat chat;
         TLRPC.ChatPhoto chatPhoto;
-        int i10 = j51Var.d;
+        int i10 = h51Var.d;
         if (i10 == 140) {
             if (nVar.B.h() || (chatPhoto = (chat = nVar.getMessagesController().getChat(Long.valueOf(nVar.b))).photo) == null || chatPhoto.photo_big == null) {
                 return;
@@ -192,7 +192,7 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
             o0.e(nVar.G, nVar, nVar.currentAccount, nVar.E);
             return;
         }
-        Object obj = j51Var.G;
+        Object obj = h51Var.G;
         if (obj instanceof TLRPC.Chat) {
             nVar.presentFragment(xn.R9(-((TLRPC.Chat) obj).id));
         } else if (obj instanceof TLRPC.User) {
@@ -246,11 +246,11 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
         if (this.h == z4) {
             return;
         }
-        i6 i6Var = (i6) this.d.y1(151);
+        i6 i6Var = (i6) this.d.x1(151);
         if (i6Var != null) {
             i6Var.a(!z4);
         }
-        i6 i6Var2 = (i6) this.d.y1(ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        i6 i6Var2 = (i6) this.d.x1(ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         if (i6Var2 != null) {
             i6Var2.a(z4);
         }
@@ -296,7 +296,7 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
             animatorSet2.playTogether(ObjectAnimator.ofFloat(radialProgressView2, (Property<RadialProgressView, Float>) property2, 0.0f), ObjectAnimator.ofFloat(this.s, (Property<fg.i0, Float>) property2, 0.0f));
         }
         this.w.setDuration(180L);
-        this.w.addListener(new qd1(15, this, z4));
+        this.w.addListener(new vd1(15, this, z4));
         this.w.start();
     }
 
@@ -311,7 +311,7 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
         this.actionBar.setActionBarMenuOnItemClick(new e(this, i10));
         tg.c cVar = new tg.c();
         cVar.a(getThemedColor(k6.d6));
-        this.actionBar.M(new og.a(cVar), sg.b.n(this.resourceProvider), false);
+        this.actionBar.M(new og.a(cVar), sg.b.o(this.resourceProvider), false);
         this.actionBar.M0 = true;
         t3 t3Var = new t3(this, context);
         this.c = t3Var;
@@ -324,9 +324,9 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
         String name = DialogObject.getName(this.E);
         this.e = name;
         g6 g6Var = this.resourceProvider;
-        o9 o9Var = new o9(context);
+        n9 n9Var = new n9(context);
         mh.m mVar2 = new mh.m(context, 5);
-        o9Var.b = mVar2;
+        n9Var.b = mVar2;
         mVar2.setTextColor(k6.v0(k6.G6, g6Var));
         mVar2.setLinkTextColor(k6.v0(k6.gc, g6Var));
         mVar2.setHintTextColor(k6.v0(k6.H6, g6Var));
@@ -337,8 +337,8 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
         mVar2.setInputType(mVar2.getInputType() | 16384);
         mVar2.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(10.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(11.0f));
         mVar2.setMinHeight(AndroidUtilities.dp(50.0f));
-        o9Var.addView(mVar2, c6.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 13.0f, 0.0f));
-        this.n = o9Var;
+        n9Var.addView(mVar2, c6.d(-1, -2.0f, (LocaleController.isRTL ? 5 : 3) | 16, 13.0f, 0.0f, 13.0f, 0.0f));
+        this.n = n9Var;
         mVar2.setText(name);
         ((mh.m) this.n.b).setSelection(name.length());
         ((mh.m) this.n.b).addTextChangedListener(new eh.c(this, 17));
@@ -364,12 +364,12 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
         this.x.setNoProgress(false);
         this.r.addView(this.x, c6.d(64, 64.0f, 81, 0.0f, 0.0f, 0.0f, 32.0f));
         a0(false, false);
-        i61 i61Var = new i61(this, new j(this, i10), new k(this), new k(this));
-        this.d = i61Var;
-        i61Var.setClipToPadding(false);
-        i61 i61Var2 = this.d;
-        i61Var2.V2.r = false;
-        i61Var2.p1();
+        h61 h61Var = new h61(this, new j(this, i10), new k(this), new k(this));
+        this.d = h61Var;
+        h61Var.setClipToPadding(false);
+        h61 h61Var2 = this.d;
+        h61Var2.V2.r = false;
+        h61Var2.o1();
         this.actionBar.setBackground(null);
         this.c.addView(this.d, c6.c(-1.0f, -1));
         this.c.addView(this.actionBar, c6.e(-1, -2, 48));
@@ -417,7 +417,7 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
     }
 
     @Override // org.telegram.ui.Components.x40
-    public final /* synthetic */ lu0 getCloseIntoObject() {
+    public final /* synthetic */ qu0 getCloseIntoObject() {
         return null;
     }
 
@@ -496,9 +496,9 @@ public final class n extends p2 implements x40, NotificationCenter.NotificationC
         if (y40Var != null && (str = y40Var.f) != null) {
             bundle.putString("path", str);
         }
-        o9 o9Var = this.n;
-        if (o9Var != null) {
-            String obj = ((mh.m) o9Var.b).getText().toString();
+        n9 n9Var = this.n;
+        if (n9Var != null) {
+            String obj = ((mh.m) n9Var.b).getText().toString();
             if (obj.isEmpty()) {
                 return;
             }

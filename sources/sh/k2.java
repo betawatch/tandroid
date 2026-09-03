@@ -31,7 +31,7 @@ import org.telegram.ui.lo0;
 import org.telegram.ui.py;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class k2 implements org.telegram.ui.web.f0 {
     public boolean a;
@@ -190,7 +190,7 @@ public final class k2 implements org.telegram.ui.web.f0 {
             AndroidUtilities.hideKeyboard(o2Var);
             org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2(p2Var.getContext(), 3, null);
             d2Var.q(150L);
-            t7.y(p2Var.D, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new mh.g3(d2Var, 1), new org.telegram.ui.web.v1(13, this, str));
+            t7.y(p2Var.D, false).Y(null, inputInvoice, (TLRPC.TL_payments_paymentFormStars) tLObject, new mh.g3(d2Var, 1), new org.telegram.ui.web.a2(12, this, str));
             return;
         }
         if (tLObject instanceof TLRPC.PaymentForm) {
@@ -205,7 +205,7 @@ public final class k2 implements org.telegram.ui.web.f0 {
             AndroidUtilities.hideKeyboard(o2Var);
             dd0 dd0Var = new dd0(this.b);
             dd0Var.show();
-            lo0Var.W0 = new qh.m1(this, dd0Var, str);
+            lo0Var.W0 = new qh.l1(this, dd0Var, str);
             lo0Var.V0 = this.c;
             dd0Var.c(lo0Var);
         }

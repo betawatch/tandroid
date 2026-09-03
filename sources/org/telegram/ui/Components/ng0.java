@@ -26,11 +26,11 @@ import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ng0 implements ef.a {
-    public static final jv0 k0 = new jv0(new k2(26), new k2(27));
-    public static final jv0 l0 = new jv0(new k2(28), new k2(29));
+    public static final iv0 k0 = new iv0(new k2(26), new k2(27));
+    public static final iv0 l0 = new iv0(new k2(28), new k2(29));
     public static final ng0 m0 = new ng0();
     public boolean B;
     public ValueAnimator C;
@@ -43,7 +43,7 @@ public final class ng0 implements ef.a {
     public o1.j K;
     public Float L;
     public boolean M;
-    public po0 O;
+    public oo0 O;
     public int P;
     public int Q;
     public ru R;
@@ -76,7 +76,7 @@ public final class ng0 implements ef.a {
     public View y;
     public float a = 1.4f;
     public float G = 1.0f;
-    public final a71 N = new a71(false);
+    public final z61 N = new z61(false);
     public final gg0 b0 = new gg0(this, 1);
     public float[] d0 = new float[2];
     public final gg0 e0 = new gg0(this, 2);
@@ -86,36 +86,36 @@ public final class ng0 implements ef.a {
         m0.k(z4, false);
     }
 
-    public static tk0 o(float f10, boolean z4) {
-        tk0 tk0Var = new tk0();
+    public static sk0 o(float f10, boolean z4) {
+        sk0 sk0Var = new sk0();
         float f11 = 1.0f / f10;
         ng0 ng0Var = m0;
         if (ng0Var.M && !z4) {
-            tk0Var.a = ng0Var.H;
-            tk0Var.b = ng0Var.I + AndroidUtilities.statusBarHeight;
-            tk0Var.c = ng0Var.E;
-            tk0Var.d = ng0Var.F;
-            return tk0Var;
+            sk0Var.a = ng0Var.H;
+            sk0Var.b = ng0Var.I + AndroidUtilities.statusBarHeight;
+            sk0Var.c = ng0Var.E;
+            sk0Var.d = ng0Var.F;
+            return sk0Var;
         }
         float f12 = ((SharedPreferences) ng0Var.n().b).getFloat("x", -1.0f);
         float f13 = ((SharedPreferences) ng0Var.n().b).getFloat("y", -1.0f);
         float f14 = ((SharedPreferences) ng0Var.n().b).getFloat("scale_factor", 1.0f);
-        tk0Var.c = s(f11) * f14;
-        tk0Var.d = ((int) (s(f11) * f11)) * f14;
+        sk0Var.c = s(f11) * f14;
+        sk0Var.d = ((int) (s(f11) * f11)) * f14;
         if (f12 != -1.0f) {
-            float f15 = tk0Var.c;
+            float f15 = sk0Var.c;
             float f16 = (f15 / 2.0f) + f12;
             float f17 = AndroidUtilities.displaySize.x;
-            tk0Var.a = f16 >= f17 / 2.0f ? (f17 - f15) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+            sk0Var.a = f16 >= f17 / 2.0f ? (f17 - f15) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
         } else {
-            tk0Var.a = (AndroidUtilities.displaySize.x - tk0Var.c) - AndroidUtilities.dp(16.0f);
+            sk0Var.a = (AndroidUtilities.displaySize.x - sk0Var.c) - AndroidUtilities.dp(16.0f);
         }
         if (f13 != -1.0f) {
-            tk0Var.b = k7.o.a(f13, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - AndroidUtilities.dp(16.0f)) - tk0Var.d) + AndroidUtilities.statusBarHeight;
-            return tk0Var;
+            sk0Var.b = k7.o.a(f13, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - AndroidUtilities.dp(16.0f)) - sk0Var.d) + AndroidUtilities.statusBarHeight;
+            return sk0Var;
         }
-        tk0Var.b = AndroidUtilities.dp(16.0f) + AndroidUtilities.statusBarHeight;
-        return tk0Var;
+        sk0Var.b = AndroidUtilities.dp(16.0f) + AndroidUtilities.statusBarHeight;
+        return sk0Var;
     }
 
     public static cf.f p() {
@@ -143,10 +143,10 @@ public final class ng0 implements ef.a {
 
     public static void v(boolean z4) {
         ng0 ng0Var = m0;
-        a71 a71Var = ng0Var.N;
-        a71Var.e(false);
-        a71Var.d(!z4);
-        a71Var.f(true);
+        z61 z61Var = ng0Var.N;
+        z61Var.e(false);
+        z61Var.d(!z4);
+        z61Var.f(true);
         oh.b3 b3Var = ng0Var.Y;
         if (b3Var != null) {
             b3Var.invalidate();
@@ -160,15 +160,15 @@ public final class ng0 implements ef.a {
     public static void w(PhotoViewer photoViewer) {
         ng0 ng0Var = m0;
         ng0Var.S = photoViewer;
-        k71 k71Var = photoViewer.C2;
+        j71 j71Var = photoViewer.C2;
         cf.f fVar = ng0Var.T;
         if (fVar != null) {
             fVar.c();
             ng0Var.T = null;
         }
-        if (k71Var != null && ff.d.a(photoViewer.y) == 1) {
+        if (j71Var != null && ff.d.a(photoViewer.y) == 1) {
             cf.e eVar = new cf.e(photoViewer.y, ng0Var);
-            eVar.c = "photo-viewer-pip-" + k71Var.a;
+            eVar.c = "photo-viewer-pip-" + j71Var.a;
             eVar.e = 1;
             eVar.d = AndroidUtilities.dp(10.0f);
             eVar.j = ng0Var.d;
@@ -177,7 +177,7 @@ public final class ng0 implements ef.a {
             int i11 = ng0Var.Q;
             eVar.h = i10;
             eVar.i = i11;
-            eVar.g = k71Var.d;
+            eVar.g = j71Var.d;
             eVar.f = true;
             ng0Var.T = eVar.a();
         }
@@ -298,7 +298,7 @@ public final class ng0 implements ef.a {
                 ng0Var.h = new mg0(ng0Var, context, i12);
                 mg0 mg0Var2 = ng0Var.h;
                 Objects.requireNonNull(mg0Var2);
-                ng0Var.O = new po0(new ec0(mg0Var2, 11), true);
+                ng0Var.O = new oo0(new ec0(mg0Var2, 11), true);
                 ng0Var.h.setWillNotDraw(false);
                 ng0Var.h.setAlpha(0.0f);
                 View view3 = new View(context);
@@ -467,12 +467,12 @@ public final class ng0 implements ef.a {
     }
 
     public final void i() {
-        org.telegram.ui.rs0 rs0Var;
+        org.telegram.ui.ws0 ws0Var;
         PhotoViewer photoViewer = this.S;
-        if (photoViewer == null || (rs0Var = photoViewer.Z3) == null) {
+        if (photoViewer == null || (ws0Var = photoViewer.Z3) == null) {
             return;
         }
-        rs0Var.cancelRewind();
+        ws0Var.cancelRewind();
     }
 
     public final void k(boolean z4, boolean z10) {
@@ -515,22 +515,22 @@ public final class ng0 implements ef.a {
         if (this.r != null) {
             return r0.getCurrentPosition();
         }
-        k71 k71Var = this.S.C2;
-        if (k71Var == null) {
+        j71 j71Var = this.S.C2;
+        if (j71Var == null) {
             return 0L;
         }
-        return k71Var.n();
+        return j71Var.n();
     }
 
     public final long m() {
         if (this.r != null) {
             return r0.getVideoDuration();
         }
-        k71 k71Var = this.S.C2;
-        if (k71Var == null) {
+        j71 j71Var = this.S.C2;
+        if (j71Var == null) {
             return 0L;
         }
-        return k71Var.p();
+        return j71Var.p();
     }
 
     public final ai n() {
@@ -547,9 +547,9 @@ public final class ng0 implements ef.a {
             Point point = AndroidUtilities.displaySize;
             this.a = (Math.min(point.x, point.y) - AndroidUtilities.dp(32.0f)) / t();
             float f10 = this.L.floatValue() < 1.0f ? 0.6f : 0.45f;
-            a71 a71Var = this.N;
-            a71Var.q = f10;
-            a71Var.a();
+            z61 z61Var = this.N;
+            z61Var.q = f10;
+            z61Var.a();
         }
         return this.L.floatValue();
     }
@@ -608,11 +608,11 @@ public final class ng0 implements ef.a {
         if (xf0Var != null) {
             y10 = xf0Var.D;
         } else {
-            k71 k71Var = photoViewer.C2;
-            if (k71Var == null) {
+            j71 j71Var = photoViewer.C2;
+            if (j71Var == null) {
                 return;
             } else {
-                y10 = k71Var.y();
+                y10 = j71Var.y();
             }
         }
         gg0 gg0Var = this.b0;

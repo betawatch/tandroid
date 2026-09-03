@@ -13,22 +13,22 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.Cells.t1;
-import org.telegram.ui.Components.jm0;
-import org.telegram.ui.Components.no0;
-import org.telegram.ui.Components.wv0;
+import org.telegram.ui.Components.im0;
+import org.telegram.ui.Components.mo0;
+import org.telegram.ui.Components.vv0;
 import org.telegram.ui.d60;
 import org.telegram.ui.og0;
-import org.telegram.ui.p41;
 import org.telegram.ui.po;
-import org.telegram.ui.r41;
-import org.telegram.ui.tv0;
-import org.telegram.ui.ud1;
+import org.telegram.ui.u41;
+import org.telegram.ui.w41;
 import org.telegram.ui.xn;
 import org.telegram.ui.y3;
+import org.telegram.ui.yv0;
 import org.telegram.ui.z30;
-import qh.ca;
+import org.telegram.ui.zd1;
+import qh.ba;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class g extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -47,7 +47,7 @@ public final class g extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator anim) {
         ViewGroup viewGroup;
         ViewGroup viewGroup2;
-        p41 p41Var;
+        u41 u41Var;
         switch (this.a) {
             case 0:
                 kotlin.jvm.internal.j.e(anim, "anim");
@@ -119,14 +119,14 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 6:
-                jm0 jm0Var = (jm0) this.d;
+                im0 im0Var = (im0) this.d;
                 float f11 = this.b ? 1.0f : 0.0f;
-                jm0Var.r = f11;
-                jm0Var.y.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f11));
-                jm0Var.y.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, jm0Var.r));
-                jm0Var.y.setAlpha(jm0Var.r);
-                jm0Var.s.invalidate();
-                jm0Var.v.invalidate();
+                im0Var.r = f11;
+                im0Var.y.setScaleX(AndroidUtilities.lerp(0.8f, 1.0f, f11));
+                im0Var.y.setScaleY(AndroidUtilities.lerp(0.8f, 1.0f, im0Var.r));
+                im0Var.y.setAlpha(im0Var.r);
+                im0Var.s.invalidate();
+                im0Var.v.invalidate();
                 Runnable runnable3 = (Runnable) this.c;
                 if (runnable3 != null) {
                     AndroidUtilities.runOnUIThread(runnable3);
@@ -192,21 +192,21 @@ public final class g extends AnimatorListenerAdapter {
                 d60Var.N.invalidate();
                 return;
             case 9:
-                wv0 wv0Var = (wv0) this.c;
+                vv0 vv0Var = (vv0) this.c;
                 og0 og0Var = (og0) this.d;
                 if (og0Var.G == 0 && this.b) {
                     og0Var.v1(true, true);
                 }
-                wv0Var.setVisibility(8);
-                wv0Var.g();
-                wv0Var.setX(0.0f);
+                vv0Var.setVisibility(8);
+                vv0Var.g();
+                vv0Var.setX(0.0f);
                 return;
             case 10:
-                tv0 tv0Var = (tv0) this.d;
-                tv0Var.y = this.b ? 1.0f : 0.0f;
-                tv0Var.c.invalidate();
-                tv0Var.d.invalidate();
-                tv0Var.e();
+                yv0 yv0Var = (yv0) this.d;
+                yv0Var.y = this.b ? 1.0f : 0.0f;
+                yv0Var.c.invalidate();
+                yv0Var.d.invalidate();
+                yv0Var.e();
                 Runnable runnable4 = (Runnable) this.c;
                 if (runnable4 != null) {
                     runnable4.run();
@@ -214,21 +214,21 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 11:
-                r41 r41Var = (r41) this.d;
-                r41Var.s = this.b ? 1.0f : 0.0f;
-                r41Var.b.invalidate();
-                r41Var.c.invalidate();
-                r41Var.e();
-                TextView textView = r41Var.y;
+                w41 w41Var = (w41) this.d;
+                w41Var.s = this.b ? 1.0f : 0.0f;
+                w41Var.b.invalidate();
+                w41Var.c.invalidate();
+                w41Var.e();
+                TextView textView = w41Var.y;
                 if (textView != null) {
-                    textView.setAlpha(r41Var.s);
+                    textView.setAlpha(w41Var.s);
                 }
-                if (r41Var.P) {
-                    r41Var.K.invalidate();
+                if (w41Var.P) {
+                    w41Var.K.invalidate();
                 }
-                if (!r41Var.P && (p41Var = r41Var.K) != null && p41Var.getSeekBarWaveform() != null) {
-                    no0 seekBarWaveform = r41Var.K.getSeekBarWaveform();
-                    seekBarWaveform.L = r41Var.s;
+                if (!w41Var.P && (u41Var = w41Var.K) != null && u41Var.getSeekBarWaveform() != null) {
+                    mo0 seekBarWaveform = w41Var.K.getSeekBarWaveform();
+                    seekBarWaveform.L = w41Var.s;
                     t1 t1Var2 = seekBarWaveform.n;
                     if (t1Var2 != null) {
                         t1Var2.invalidate();
@@ -241,11 +241,11 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             case 12:
-                ud1 ud1Var = (ud1) this.d;
-                ud1Var.x = this.b ? 1.0f : 0.0f;
-                ud1Var.b.invalidate();
-                ud1Var.c.invalidate();
-                ud1Var.e();
+                zd1 zd1Var = (zd1) this.d;
+                zd1Var.x = this.b ? 1.0f : 0.0f;
+                zd1Var.b.invalidate();
+                zd1Var.c.invalidate();
+                zd1Var.e();
                 Runnable runnable6 = (Runnable) this.c;
                 if (runnable6 != null) {
                     runnable6.run();
@@ -253,7 +253,7 @@ public final class g extends AnimatorListenerAdapter {
                 }
                 return;
             default:
-                ((ca) this.d).n0();
+                ((ba) this.d).n0();
                 if (this.b) {
                     return;
                 }

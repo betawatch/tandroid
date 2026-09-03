@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.TranslateController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class fb extends org.telegram.ui.ActionBar.i5 {
     public final /* synthetic */ int f;
@@ -25,7 +25,7 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
     public boolean b() {
         switch (this.f) {
             case 13:
-                ((mq0) this.h).finishFragment();
+                ((rq0) this.h).finishFragment();
                 return false;
             default:
                 return super.b();
@@ -209,29 +209,29 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
                 ga0Var.j(null);
                 break;
             case 15:
-                p31 p31Var = (p31) this.h;
-                p31Var.f = null;
-                if (p31Var.b != null) {
-                    p31Var.d.setVisibility(8);
-                    p31Var.b.setAdapter(p31Var.a);
+                t31 t31Var = (t31) this.h;
+                t31Var.f = null;
+                if (t31Var.b != null) {
+                    t31Var.d.setVisibility(8);
+                    t31Var.b.setAdapter(t31Var.a);
                     break;
                 }
                 break;
             case 16:
-                p81 p81Var = (p81) this.h;
-                p81Var.a.a(false, true);
-                p81Var.o0(false, true);
-                p81Var.c.V2.N(false);
+                v81 v81Var = (v81) this.h;
+                v81Var.a.a(false, true);
+                v81Var.o0(false, true);
+                v81Var.c.V2.N(false);
                 break;
             case 17:
-                mf1.b0((mf1) this.h, false);
+                sf1.b0((sf1) this.h, false);
                 break;
             case 18:
-                yg1 yg1Var = (yg1) this.h;
-                yg1Var.h = null;
-                org.telegram.ui.Components.b61 b61Var = yg1Var.a;
-                if (b61Var != null) {
-                    b61Var.V2.N(true);
+                eh1 eh1Var = (eh1) this.h;
+                eh1Var.h = null;
+                org.telegram.ui.Components.a61 a61Var = eh1Var.a;
+                if (a61Var != null) {
+                    a61Var.V2.N(true);
                     break;
                 }
                 break;
@@ -316,27 +316,27 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
                 ((rh0) this.h).a.y = true;
                 break;
             case 13:
-                mq0 mq0Var = (mq0) this.h;
-                mq0Var.a.getActionBar().x("");
-                mq0Var.b.getActionBar().x("");
-                mq0Var.c.getSearchField().requestFocus();
+                rq0 rq0Var = (rq0) this.h;
+                rq0Var.a.getActionBar().x("");
+                rq0Var.b.getActionBar().x("");
+                rq0Var.c.getSearchField().requestFocus();
                 break;
             case 16:
-                p81 p81Var = (p81) this.h;
-                p81Var.a.a(true, true);
-                p81Var.h.I("");
-                p81Var.o0(false, true);
-                p81Var.c.V2.N(false);
+                v81 v81Var = (v81) this.h;
+                v81Var.a.a(true, true);
+                v81Var.h.I("");
+                v81Var.o0(false, true);
+                v81Var.c.V2.N(false);
                 break;
             case 17:
-                mf1 mf1Var = (mf1) this.h;
-                mf1.b0(mf1Var, true);
-                if1 if1Var = mf1Var.o0;
-                if (!if1Var.V.equals("")) {
-                    if1Var.K(if1Var.e[0], if1Var.getCurrentPosition(), "", false);
+                sf1 sf1Var = (sf1) this.h;
+                sf1.b0(sf1Var, true);
+                of1 of1Var = sf1Var.o0;
+                if (!of1Var.V.equals("")) {
+                    of1Var.K(of1Var.e[0], of1Var.getCurrentPosition(), "", false);
                 }
-                mf1Var.o0.setAlpha(0.0f);
-                mf1Var.o0.k0.e(true, false);
+                sf1Var.o0.setAlpha(0.0f);
+                sf1Var.o0.k0.e(true, false);
                 break;
             case 19:
                 vf.r1 r1Var = (vf.r1) this.h;
@@ -370,24 +370,24 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
                 sbVar.V0(true);
                 break;
             case 13:
-                mq0 mq0Var = (mq0) this.h;
-                mq0Var.a.getActionBar().w();
-                mq0Var.b.getActionBar().w();
+                rq0 rq0Var = (rq0) this.h;
+                rq0Var.a.getActionBar().w();
+                rq0Var.b.getActionBar().w();
                 break;
         }
     }
 
     @Override // org.telegram.ui.ActionBar.i5
     public void q(EditText editText) {
-        org.telegram.ui.Components.tl0 tl0Var;
+        org.telegram.ui.Components.sl0 sl0Var;
         mh.d1 d1Var;
         switch (this.f) {
             case 1:
                 rp rpVar = (rp) this.h;
                 if (rpVar.e != null) {
                     String obj = editText.getText().toString();
-                    if (obj.length() != 0 && (tl0Var = rpVar.b) != null) {
-                        f2.p0 adapter = tl0Var.getAdapter();
+                    if (obj.length() != 0 && (sl0Var = rpVar.b) != null) {
+                        f2.p0 adapter = sl0Var.getAdapter();
                         qp qpVar = rpVar.e;
                         if (adapter != qpVar) {
                             rpVar.b.setAdapter(qpVar);
@@ -446,7 +446,7 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
                 org.telegram.ui.Components.cl clVar = (org.telegram.ui.Components.cl) this.h;
                 eg.s2 s2Var = clVar.K;
                 mh.d1 d1Var3 = clVar.M;
-                org.telegram.ui.Components.tl0 tl0Var2 = clVar.N;
+                org.telegram.ui.Components.sl0 sl0Var2 = clVar.N;
                 org.telegram.ui.Components.vk vkVar = clVar.O;
                 if (vkVar != null) {
                     String obj3 = editText.getText().toString();
@@ -456,10 +456,10 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
                         clVar.B.setShowSearchProgress(true);
                         d1Var3.setVisibility(8);
                         s2Var.setVisibility(8);
-                        if (tl0Var2.getAdapter() != vkVar) {
-                            tl0Var2.setAdapter(vkVar);
+                        if (sl0Var2.getAdapter() != vkVar) {
+                            sl0Var2.setAdapter(vkVar);
                         }
-                        tl0Var2.setVisibility(0);
+                        sl0Var2.setVisibility(0);
                         if (vkVar.s.size() == 0 && vkVar.r.size() == 0) {
                             z4 = true;
                         }
@@ -468,8 +468,8 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
                     } else {
                         d1Var3.setVisibility(0);
                         s2Var.setVisibility(0);
-                        tl0Var2.setAdapter(null);
-                        tl0Var2.setVisibility(8);
+                        sl0Var2.setAdapter(null);
+                        sl0Var2.setVisibility(8);
                         clVar.v.setVisibility(8);
                     }
                     vkVar.G(obj3, clVar.o0);
@@ -483,17 +483,17 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
                     contactsActivity.c.a(!obj4.isEmpty(), true);
                     contactsActivity.f0 = obj4;
                     if (obj4.isEmpty()) {
-                        org.telegram.ui.Components.tl0 tl0Var3 = contactsActivity.f;
-                        if (tl0Var3 != null) {
-                            tl0Var3.setAdapter(contactsActivity.d);
+                        org.telegram.ui.Components.sl0 sl0Var3 = contactsActivity.f;
+                        if (sl0Var3 != null) {
+                            sl0Var3.setAdapter(contactsActivity.d);
                             contactsActivity.f.setSectionsType(1);
                             break;
                         }
                     } else {
                         contactsActivity.B = true;
-                        org.telegram.ui.Components.tl0 tl0Var4 = contactsActivity.f;
-                        if (tl0Var4 != null) {
-                            tl0Var4.setAdapter(contactsActivity.r);
+                        org.telegram.ui.Components.sl0 sl0Var4 = contactsActivity.f;
+                        if (sl0Var4 != null) {
+                            sl0Var4.setAdapter(contactsActivity.r);
                             contactsActivity.f.setSectionsType(0);
                             contactsActivity.r.l();
                             contactsActivity.f.setFastScrollVisible(false);
@@ -553,9 +553,9 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
                 boolean z10 = !isEmpty;
                 if (z10 != n70Var.J) {
                     n70Var.J = z10;
-                    org.telegram.ui.Components.tl0 tl0Var5 = n70Var.d;
-                    if (tl0Var5 != null) {
-                        tl0Var5.setAdapter(!isEmpty ? n70Var.f : n70Var.e);
+                    org.telegram.ui.Components.sl0 sl0Var5 = n70Var.d;
+                    if (sl0Var5 != null) {
+                        sl0Var5.setAdapter(!isEmpty ? n70Var.f : n70Var.e);
                         break;
                     }
                 }
@@ -566,9 +566,9 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
                 languageSelectActivity.i0(obj7);
                 if (obj7.length() != 0) {
                     languageSelectActivity.getClass();
-                    org.telegram.ui.Components.tl0 tl0Var6 = languageSelectActivity.b;
-                    if (tl0Var6 != null) {
-                        tl0Var6.setAdapter(languageSelectActivity.c);
+                    org.telegram.ui.Components.sl0 sl0Var6 = languageSelectActivity.b;
+                    if (sl0Var6 != null) {
+                        sl0Var6.setAdapter(languageSelectActivity.c);
                         break;
                     }
                 } else {
@@ -620,65 +620,65 @@ public final class fb extends org.telegram.ui.ActionBar.i5 {
                 ((rh0) this.h).a.j(editText.getText().toString());
                 break;
             case 13:
-                mq0 mq0Var = (mq0) this.h;
-                mq0Var.a.getActionBar().setSearchFieldText(editText.getText().toString());
-                mq0Var.b.getActionBar().setSearchFieldText(editText.getText().toString());
+                rq0 rq0Var = (rq0) this.h;
+                rq0Var.a.getActionBar().setSearchFieldText(editText.getText().toString());
+                rq0Var.b.getActionBar().setSearchFieldText(editText.getText().toString());
                 break;
             case 14:
                 ((ProfileActivity) this.h).e.I(editText.getText().toString().toLowerCase());
                 break;
             case 15:
                 String obj9 = editText.getText().toString();
-                p31 p31Var = (p31) this.h;
+                t31 t31Var = (t31) this.h;
                 if (obj9 == null) {
-                    p31Var.f = null;
+                    t31Var.f = null;
                 } else {
                     String lowerCase = obj9.trim().toLowerCase();
-                    ArrayList arrayList = p31Var.f;
+                    ArrayList arrayList = t31Var.f;
                     if (arrayList == null) {
-                        p31Var.f = new ArrayList();
+                        t31Var.f = new ArrayList();
                     } else {
                         arrayList.clear();
                     }
-                    for (int i11 = 0; i11 < p31Var.h.size(); i11++) {
-                        TranslateController.Language language = (TranslateController.Language) p31Var.h.get(i11);
+                    for (int i11 = 0; i11 < t31Var.h.size(); i11++) {
+                        TranslateController.Language language = (TranslateController.Language) t31Var.h.get(i11);
                         if (language.q.startsWith(lowerCase)) {
-                            p31Var.f.add(0, language);
+                            t31Var.f.add(0, language);
                         } else if (language.q.contains(lowerCase)) {
-                            p31Var.f.add(language);
+                            t31Var.f.add(language);
                         }
                     }
-                    p31Var.c.l();
+                    t31Var.c.l();
                 }
                 if (obj9.length() != 0) {
-                    org.telegram.ui.Components.tl0 tl0Var7 = p31Var.b;
-                    if (tl0Var7 != null) {
-                        tl0Var7.setAdapter(p31Var.c);
+                    org.telegram.ui.Components.sl0 sl0Var7 = t31Var.b;
+                    if (sl0Var7 != null) {
+                        sl0Var7.setAdapter(t31Var.c);
                         break;
                     }
-                } else if (p31Var.b != null) {
-                    p31Var.d.setVisibility(8);
-                    p31Var.b.setAdapter(p31Var.a);
+                } else if (t31Var.b != null) {
+                    t31Var.d.setVisibility(8);
+                    t31Var.b.setAdapter(t31Var.a);
                     break;
                 }
                 break;
             case 16:
-                ((p81) this.h).h.I(editText.getText().toString());
+                ((v81) this.h).h.I(editText.getText().toString());
                 break;
             case 17:
                 String obj10 = editText.getText().toString();
-                if1 if1Var = ((mf1) this.h).o0;
-                if (!if1Var.V.equals(obj10)) {
-                    if1Var.K(if1Var.e[0], if1Var.getCurrentPosition(), obj10, false);
+                of1 of1Var = ((sf1) this.h).o0;
+                if (!of1Var.V.equals(obj10)) {
+                    of1Var.K(of1Var.e[0], of1Var.getCurrentPosition(), obj10, false);
                     break;
                 }
                 break;
             case 18:
-                yg1 yg1Var = (yg1) this.h;
-                yg1Var.h = editText.getText().toString();
-                org.telegram.ui.Components.b61 b61Var = yg1Var.a;
-                if (b61Var != null) {
-                    b61Var.V2.N(true);
+                eh1 eh1Var = (eh1) this.h;
+                eh1Var.h = editText.getText().toString();
+                org.telegram.ui.Components.a61 a61Var = eh1Var.a;
+                if (a61Var != null) {
+                    a61Var.V2.N(true);
                     break;
                 }
                 break;

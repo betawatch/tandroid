@@ -16,10 +16,10 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class qy extends sl0 {
-    public gm B;
+public final class qy extends rl0 {
+    public eo B;
     public boolean C;
     public int D;
     public int E;
@@ -48,7 +48,7 @@ public final class qy extends sl0 {
         this.e = z4 ? null : new sy(mzVar, context);
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return m1Var.f == 0;
     }
@@ -248,9 +248,9 @@ public final class qy extends sl0 {
         if (syVar != null) {
             syVar.a(false);
         }
-        gm gmVar = this.B;
-        if (gmVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(gmVar);
+        eo eoVar = this.B;
+        if (eoVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(eoVar);
         }
         if (!TextUtils.isEmpty(str)) {
             String lowerCase = str.toLowerCase();
@@ -258,9 +258,9 @@ public final class qy extends sl0 {
             if (TextUtils.isEmpty(lowerCase)) {
                 return;
             }
-            gm gmVar2 = new gm(17, this, str);
-            this.B = gmVar2;
-            AndroidUtilities.runOnUIThread(gmVar2, z4 ? 300L : 0L);
+            eo eoVar2 = new eo(16, this, str);
+            this.B = eoVar2;
+            AndroidUtilities.runOnUIThread(eoVar2, z4 ? 300L : 0L);
             return;
         }
         this.w = null;
@@ -351,7 +351,7 @@ public final class qy extends sl0 {
                     int i14 = 0;
                     for (int i15 = 0; i15 < size; i15++) {
                         TLRPC.Document document = (TLRPC.Document) mzVar.f1.get(i15);
-                        kv0 C1 = pz.C1(ryVar.F1(document, document.attributes));
+                        jv0 C1 = pz.C1(ryVar.F1(document, document.attributes));
                         int min = Math.min(i11, (int) Math.floor((((C1.a / C1.b) * dp) / measuredWidth) * i11));
                         if (i12 < min) {
                             this.E += i13;
@@ -420,6 +420,6 @@ public final class qy extends sl0 {
             e2Var.setCanPreviewGif(true);
             view = e2Var;
         }
-        return new fl0(view);
+        return new el0(view);
     }
 }

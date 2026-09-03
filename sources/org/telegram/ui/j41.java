@@ -1,29 +1,26 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+import android.view.View;
+import android.view.WindowInsets;
+
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class j41 extends org.telegram.ui.Components.k71 {
-    public final /* synthetic */ SecretMediaViewer j0;
+public final /* synthetic */ class j41 implements View.OnApplyWindowInsetsListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public j41(SecretMediaViewer secretMediaViewer) {
-        this.j0 = secretMediaViewer;
+    public /* synthetic */ j41(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.k71
-    public final void B() {
-        super.B();
-        this.j0.T.a(false, true);
-    }
-
-    @Override // org.telegram.ui.Components.k71
-    public final void C() {
-        super.C();
-        this.j0.T.a(true, true);
-    }
-
-    @Override // org.telegram.ui.Components.k71
-    public final void P(boolean z4) {
-        super.P(z4);
-        this.j0.T.a(z4, true);
+    @Override // android.view.View.OnApplyWindowInsetsListener
+    public final WindowInsets onApplyWindowInsets(View view, WindowInsets windowInsets) {
+        switch (this.a) {
+            case 0:
+                return SecretMediaViewer.a((SecretMediaViewer) this.b, windowInsets);
+            default:
+                return s61.b((l51) this.b, view, windowInsets);
+        }
     }
 }

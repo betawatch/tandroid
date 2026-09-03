@@ -9,19 +9,19 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Cells.n9;
 import org.telegram.ui.Cells.u9;
 import org.telegram.ui.Cells.y9;
-import org.telegram.ui.Components.no0;
+import org.telegram.ui.Components.mo0;
 import org.telegram.ui.Components.p8;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.w8;
 import org.telegram.ui.Components.xa0;
 import org.telegram.ui.Components.z50;
-import org.telegram.ui.p41;
-import org.telegram.ui.r41;
 import org.telegram.ui.ti0;
-import qh.z4;
+import org.telegram.ui.u41;
+import org.telegram.ui.w41;
+import qh.y4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class z0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class z0 implements ValueAnimator.AnimatorUpdateLis
     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         ViewGroup viewGroup;
-        p41 p41Var;
+        u41 u41Var;
         switch (this.a) {
             case 0:
                 a1 a1Var = (a1) this.c;
@@ -159,21 +159,21 @@ public final /* synthetic */ class z0 implements ValueAnimator.AnimatorUpdateLis
                 ti0Var.D.invalidate();
                 break;
             case 11:
-                r41 r41Var = (r41) this.c;
-                r41Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                r41Var.b.invalidate();
-                r41Var.c.invalidate();
-                if (r41Var.P) {
-                    r41Var.K.invalidate();
+                w41 w41Var = (w41) this.c;
+                w41Var.s = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                w41Var.b.invalidate();
+                w41Var.c.invalidate();
+                if (w41Var.P) {
+                    w41Var.K.invalidate();
                 }
-                r41Var.e();
-                TextView textView = r41Var.y;
+                w41Var.e();
+                TextView textView = w41Var.y;
                 if (textView != null) {
-                    textView.setAlpha(r41Var.s);
+                    textView.setAlpha(w41Var.s);
                 }
-                if (!r41Var.P && (p41Var = r41Var.K) != null && p41Var.getSeekBarWaveform() != null) {
-                    no0 seekBarWaveform = r41Var.K.getSeekBarWaveform();
-                    seekBarWaveform.L = (this.b ? pr.g : pr.i).getInterpolation(Utilities.clamp(r41Var.s * 1.25f, 1.0f, 0.0f));
+                if (!w41Var.P && (u41Var = w41Var.K) != null && u41Var.getSeekBarWaveform() != null) {
+                    mo0 seekBarWaveform = w41Var.K.getSeekBarWaveform();
+                    seekBarWaveform.L = (this.b ? pr.g : pr.i).getInterpolation(Utilities.clamp(w41Var.s * 1.25f, 1.0f, 0.0f));
                     org.telegram.ui.Cells.t1 t1Var2 = seekBarWaveform.n;
                     if (t1Var2 != null) {
                         t1Var2.invalidate();
@@ -182,13 +182,13 @@ public final /* synthetic */ class z0 implements ValueAnimator.AnimatorUpdateLis
                 }
                 break;
             default:
-                z4 z4Var = (z4) this.c;
+                y4 y4Var = (y4) this.c;
                 float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                z4Var.e = floatValue5;
+                y4Var.e = floatValue5;
                 if (!this.b) {
-                    z4Var.c.setAlpha(1.0f - floatValue5);
+                    y4Var.c.setAlpha(1.0f - floatValue5);
                 }
-                z4Var.b.invalidate();
+                y4Var.b.invalidate();
                 break;
         }
     }

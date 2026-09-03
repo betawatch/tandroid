@@ -7,9 +7,9 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.FrameLayout;
 import java.util.ArrayList;
-import org.telegram.ui.ra1;
+import org.telegram.ui.xa1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class v20 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a = 0;
@@ -19,8 +19,8 @@ public final class v20 extends AnimatorListenerAdapter {
     public final /* synthetic */ Object e;
     public final /* synthetic */ Object f;
 
-    public v20(ra1 ra1Var, li liVar, org.telegram.ui.Cells.t1 t1Var, org.telegram.ui.jk jkVar, org.telegram.ui.xn xnVar) {
-        this.f = ra1Var;
+    public v20(xa1 xa1Var, li liVar, org.telegram.ui.Cells.t1 t1Var, org.telegram.ui.jk jkVar, org.telegram.ui.xn xnVar) {
+        this.f = xa1Var;
         this.b = liVar;
         this.c = t1Var;
         this.d = jkVar;
@@ -47,10 +47,10 @@ public final class v20 extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                ra1 ra1Var = (ra1) this.f;
-                ra1Var.D.unlock();
+                xa1 xa1Var = (xa1) this.f;
+                xa1Var.D.unlock();
                 li liVar = (li) this.b;
-                ((ArrayList) liVar.c).remove(ra1Var);
+                ((ArrayList) liVar.c).remove(xa1Var);
                 liVar.a();
                 ((ViewGroup) liVar.d).invalidate();
                 org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) this.c;
@@ -62,7 +62,7 @@ public final class v20 extends AnimatorListenerAdapter {
                 org.telegram.ui.xn xnVar = (org.telegram.ui.xn) this.e;
                 ((oo[]) xnVar.X.b)[0].c.setAlpha(1.0f);
                 ((oo[]) xnVar.X.b)[0].d.setAlpha(1.0f);
-                u5.release((View) null, ra1Var.H);
+                u5.release((View) null, xa1Var.H);
                 break;
         }
     }

@@ -17,11 +17,11 @@ import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.k6;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.r31;
+import org.telegram.ui.Components.q31;
 import org.telegram.ui.Components.z8;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class e extends FrameLayout {
     public final int a;
@@ -100,7 +100,7 @@ public final class e extends FrameLayout {
         imageView.setImageResource(R.drawable.msg_mini_customize);
         imageView.setBackground(org.telegram.ui.ActionBar.k6.M(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.i6, g6Var), 0, 0));
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.de, g6Var), PorterDuff.Mode.MULTIPLY));
-        imageView.setOnClickListener(new r31(this, xnVar, g6Var, 5));
+        imageView.setOnClickListener(new q31(this, xnVar, g6Var, 5));
         addView(imageView, c6.d(32, 32.0f, 21, 8.0f, 0.0f, 6.0f, 0.0f));
     }
 

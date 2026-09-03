@@ -4,13 +4,13 @@ import f2.q;
 import j$.util.Objects;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.pl0;
+import org.telegram.ui.Components.ol0;
 import org.telegram.ui.Components.tx;
-import org.telegram.ui.r61;
+import org.telegram.ui.w61;
 import uf.i;
 import uf.k;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class a extends q {
     public final /* synthetic */ int b;
@@ -59,9 +59,9 @@ public final class a extends q {
             case 1:
                 return ((Integer) this.c.get(i10)).equals(((tx) this.d).n.get(i11));
             case 2:
-                return Objects.equals(this.c.get(i10), ((pl0) this.d).n.get(i11));
+                return Objects.equals(this.c.get(i10), ((ol0) this.d).n.get(i11));
             case 3:
-                return ((Long) this.c.get(i10)).equals(((r61) this.d).s0.get(i11));
+                return ((Long) this.c.get(i10)).equals(((w61) this.d).s0.get(i11));
             default:
                 i iVar = (i) ((k) this.d).K.get(i10);
                 i iVar2 = (i) this.c.get(i11);
@@ -81,9 +81,9 @@ public final class a extends q {
             case 1:
                 return ((tx) this.d).n.size();
             case 2:
-                return ((pl0) this.d).n.size();
+                return ((ol0) this.d).n.size();
             case 3:
-                return ((r61) this.d).s0.size();
+                return ((w61) this.d).s0.size();
             default:
                 return this.c.size();
         }

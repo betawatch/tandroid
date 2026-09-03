@@ -2,14 +2,14 @@ package oh;
 
 import android.content.Context;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.ax0;
 import org.telegram.ui.Components.jk;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.mf1;
+import org.telegram.ui.Components.zw0;
+import org.telegram.ui.sf1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class z4 extends ax0 {
+public final class z4 extends zw0 {
     public final /* synthetic */ int H = 0;
     public final /* synthetic */ Object I;
 
@@ -19,18 +19,18 @@ public final class z4 extends ax0 {
         this.I = jkVar;
     }
 
-    @Override // org.telegram.ui.Components.ax0
+    @Override // org.telegram.ui.Components.zw0
     public void e(boolean z4, boolean z10) {
         switch (this.H) {
             case 2:
-                mf1 mf1Var = (mf1) this.I;
+                sf1 sf1Var = (sf1) this.I;
                 super.e(z4, z10);
                 if (!z10) {
-                    mf1Var.n.a.animate().cancel();
-                    mf1Var.n.a.setAlpha(z4 ? 0.0f : 1.0f);
+                    sf1Var.n.a.animate().cancel();
+                    sf1Var.n.a.setAlpha(z4 ? 0.0f : 1.0f);
                     break;
                 } else {
-                    mf1Var.n.a.animate().alpha(z4 ? 0.0f : 1.0f).start();
+                    sf1Var.n.a.animate().alpha(z4 ? 0.0f : 1.0f).start();
                     break;
                 }
             default:
@@ -81,8 +81,8 @@ public final class z4 extends ax0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public z4(mf1 mf1Var, Context context, u00 u00Var) {
+    public z4(sf1 sf1Var, Context context, u00 u00Var) {
         super(context, u00Var, 0, null);
-        this.I = mf1Var;
+        this.I = sf1Var;
     }
 }

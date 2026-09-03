@@ -7,16 +7,16 @@ import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.bw0;
-import org.telegram.ui.jw0;
+import org.telegram.ui.gw0;
+import org.telegram.ui.ow0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class b2 extends bw0 {
+public final class b2 extends gw0 {
     public final /* synthetic */ int r = 0;
-    public final /* synthetic */ sl0 s;
+    public final /* synthetic */ rl0 s;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public b2(c2 c2Var, Context context, g6 g6Var) {
@@ -24,7 +24,7 @@ public final class b2 extends bw0 {
         this.s = c2Var;
     }
 
-    @Override // org.telegram.ui.bw0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.gw0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         g6 g6Var;
         boolean q10;
@@ -44,7 +44,7 @@ public final class b2 extends bw0 {
                 RectF rectF2 = AndroidUtilities.rectTmp;
                 ImageView imageView2 = this.c;
                 rectF2.set(imageView2.getLeft(), imageView2.getTop(), imageView2.getRight(), imageView2.getBottom());
-                PremiumPreviewFragment premiumPreviewFragment = ((jw0) this.s).c;
+                PremiumPreviewFragment premiumPreviewFragment = ((ow0) this.s).c;
                 premiumPreviewFragment.P.reset();
                 premiumPreviewFragment.P.postScale(1.0f, premiumPreviewFragment.K / 100.0f, 0.0f, 0.0f);
                 premiumPreviewFragment.P.postTranslate(0.0f, -this.f.e);
@@ -74,8 +74,8 @@ public final class b2 extends bw0 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b2(jw0 jw0Var, Context context) {
+    public b2(ow0 ow0Var, Context context) {
         super(context, null);
-        this.s = jw0Var;
+        this.s = ow0Var;
     }
 }

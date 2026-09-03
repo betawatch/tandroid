@@ -6,9 +6,9 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class p2 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -42,7 +42,7 @@ public final /* synthetic */ class p2 implements Utilities.Callback2 {
                 while (i11 < size) {
                     Object obj3 = arrayList.get(i11);
                     i11++;
-                    Object obj4 = ((j51) obj3).G;
+                    Object obj4 = ((h51) obj3).G;
                     if (obj4 instanceof a) {
                         arrayList3.add((a) obj4);
                     }
@@ -63,9 +63,9 @@ public final /* synthetic */ class p2 implements Utilities.Callback2 {
                             break;
                         } else {
                             int i16 = indexOf + 1;
-                            if (r3.x3(aVar) && !((TL_iv.pageBlockDetails) aVar.b).open) {
-                                int P3 = r3Var.P3(indexOf);
-                                i16 = P3 >= arrayList2.size() ? arrayList2.size() : P3 + 1;
+                            if (r3.w3(aVar) && !((TL_iv.pageBlockDetails) aVar.b).open) {
+                                int O3 = r3Var.O3(indexOf);
+                                i16 = O3 >= arrayList2.size() ? arrayList2.size() : O3 + 1;
                             }
                             arrayList4.add(new ArrayList(arrayList2.subList(indexOf, i16)));
                             i12 = Math.min(i12, indexOf);
@@ -109,14 +109,14 @@ public final /* synthetic */ class p2 implements Utilities.Callback2 {
                                             arrayList7.clear();
                                             arrayList7.addAll(arrayList8);
                                             z4 = true;
-                                            boolean x22 = r3Var.x2();
+                                            boolean w22 = r3Var.w2();
                                             i10 = 0;
                                             while (i10 < arrayList2.size()) {
                                                 a aVar3 = (a) arrayList2.get(i10);
-                                                if (!aVar3.i && !r3.x3(aVar3)) {
+                                                if (!aVar3.i && !r3.w3(aVar3)) {
                                                     a aVar4 = i10 > 0 ? (a) arrayList2.get(i10 - 1) : null;
                                                     int max = aVar4 != null ? Math.max(0, aVar4.c) : 0;
-                                                    if (r3.E3(aVar3.b)) {
+                                                    if (r3.D3(aVar3.b)) {
                                                         aVar3.c = max;
                                                         if (max > 0) {
                                                             aVar3.d = aVar4.d > 0 ? 1 : 0;
@@ -138,13 +138,13 @@ public final /* synthetic */ class p2 implements Utilities.Callback2 {
                                                 }
                                                 i10++;
                                             }
-                                            r3Var.s4();
-                                            r3Var.a2();
-                                            if (!z4 || x22) {
+                                            r3Var.r4();
+                                            r3Var.Z1();
+                                            if (!z4 || w22) {
                                                 r3Var.V2.N(true);
-                                                r3Var.x4();
+                                                r3Var.w4();
                                             } else {
-                                                r3Var.x4();
+                                                r3Var.w4();
                                             }
                                             d2Var = r3Var.G3;
                                             if (d2Var == null) {
@@ -155,16 +155,16 @@ public final /* synthetic */ class p2 implements Utilities.Callback2 {
                                     }
                                 }
                                 z4 = false;
-                                boolean x222 = r3Var.x2();
+                                boolean w222 = r3Var.w2();
                                 i10 = 0;
                                 while (i10 < arrayList2.size()) {
                                 }
-                                r3Var.s4();
-                                r3Var.a2();
+                                r3Var.r4();
+                                r3Var.Z1();
                                 if (z4) {
                                 }
                                 r3Var.V2.N(true);
-                                r3Var.x4();
+                                r3Var.w4();
                                 d2Var = r3Var.G3;
                                 if (d2Var == null) {
                                 }
@@ -175,14 +175,14 @@ public final /* synthetic */ class p2 implements Utilities.Callback2 {
                 }
                 break;
             default:
-                qh.d3 d3Var = (qh.d3) this.b;
+                qh.c3 c3Var = (qh.c3) this.b;
                 if (obj != null) {
-                    if (d3Var.e == null && (obj instanceof MediaController.PhotoEntry) && (callback = d3Var.f) != null) {
+                    if (c3Var.e == null && (obj instanceof MediaController.PhotoEntry) && (callback = c3Var.f) != null) {
                         callback.run((MediaController.PhotoEntry) obj);
                         break;
                     }
                 } else {
-                    d3Var.getClass();
+                    c3Var.getClass();
                     break;
                 }
                 break;

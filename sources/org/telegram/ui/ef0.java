@@ -20,9 +20,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ef0 extends org.telegram.ui.Components.wv0 {
+public final class ef0 extends org.telegram.ui.Components.vv0 {
     public final /* synthetic */ og0 B;
     public final org.telegram.ui.Components.cd0 a;
     public final EditTextBoldCursor b;
@@ -30,7 +30,7 @@ public final class ef0 extends org.telegram.ui.Components.wv0 {
     public final org.telegram.ui.Components.g90 d;
     public final TextView e;
     public final org.telegram.ui.Components.n90 f;
-    public final org.telegram.ui.Components.lj0 h;
+    public final org.telegram.ui.Components.kj0 h;
     public Bundle n;
     public boolean r;
     public String s;
@@ -53,11 +53,11 @@ public final class ef0 extends org.telegram.ui.Components.wv0 {
         this.B = og0Var;
         setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        this.h = lj0Var;
-        lj0Var.f(R.raw.tsv_setup_mail, 120, 120, null);
-        lj0Var.setAutoRepeat(false);
-        frameLayout.addView(lj0Var, k7.c6.e(120, 120, 1));
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
+        this.h = kj0Var;
+        kj0Var.f(R.raw.tsv_setup_mail, 120, 120, null);
+        kj0Var.setAutoRepeat(false);
+        frameLayout.addView(kj0Var, k7.c6.e(120, 120, 1));
         if (!AndroidUtilities.isSmallScreen()) {
             Point point = AndroidUtilities.displaySize;
             if (point.x <= point.y || AndroidUtilities.isTablet()) {
@@ -187,17 +187,17 @@ public final class ef0 extends org.telegram.ui.Components.wv0 {
         frameLayout22.setOnClickListener(new f60(this, 8));
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final boolean b() {
         return !this.B.e0;
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public String getHeaderName() {
         return LocaleController.getString("AddEmailTitle", R.string.AddEmailTitle);
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void h(String str) {
         int i10;
         int i11;
@@ -253,12 +253,12 @@ public final class ef0 extends org.telegram.ui.Components.wv0 {
         ConnectionsManager.getInstance(i10).sendRequest(sendverifyemailcode, new ba(this, bundle, sendverifyemailcode, 22), 10);
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void j() {
         AndroidUtilities.runOnUIThread(new cf0(this, 0), og0.q0);
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("emailsetup_params");
         this.n = bundle2;
@@ -271,7 +271,7 @@ public final class ef0 extends org.telegram.ui.Components.wv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void l(Bundle bundle) {
         String obj = this.b.getText().toString();
         if (obj != null && obj.length() != 0) {
@@ -283,7 +283,7 @@ public final class ef0 extends org.telegram.ui.Components.wv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void m(Bundle bundle, boolean z4) {
         if (bundle == null) {
             return;
@@ -302,7 +302,7 @@ public final class ef0 extends org.telegram.ui.Components.wv0 {
         editTextBoldCursor.requestFocus();
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void n() {
         int i10 = org.telegram.ui.ActionBar.k6.G6;
         this.c.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));

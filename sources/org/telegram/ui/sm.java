@@ -9,9 +9,9 @@ import org.telegram.messenger.RichMessageLayout;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class sm extends au0 {
+public final class sm extends fu0 {
     public final ArrayList a;
     public final int[] b = new int[2];
     public final /* synthetic */ xn c;
@@ -21,8 +21,8 @@ public final class sm extends au0 {
         this.a = arrayList;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
-    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
         ImageReceiver imageReceiver;
         org.telegram.ui.Cells.t1 t1Var;
         MessageObject messageObject2;
@@ -49,16 +49,16 @@ public final class sm extends au0 {
                         }
                     }
                     if (imageReceiver != null) {
-                        lu0 lu0Var = new lu0();
-                        lu0Var.b = iArr[0];
-                        lu0Var.c = iArr[1];
-                        lu0Var.d = xnVar.u0;
-                        lu0Var.a = imageReceiver;
-                        lu0Var.e = imageReceiver.getBitmapSafe();
-                        lu0Var.h = imageReceiver.getRoundRadius(true);
-                        lu0Var.j = (int) ((xnVar.p9 - xnVar.r9) - AndroidUtilities.dp(4.0f));
-                        lu0Var.i = (int) (xnVar.W8(org.telegram.ui.Components.t21.c) + xnVar.v.c() + AndroidUtilities.dp(9.0f) + xnVar.xa + xnVar.pc);
-                        return lu0Var;
+                        qu0 qu0Var = new qu0();
+                        qu0Var.b = iArr[0];
+                        qu0Var.c = iArr[1];
+                        qu0Var.d = xnVar.u0;
+                        qu0Var.a = imageReceiver;
+                        qu0Var.e = imageReceiver.getBitmapSafe();
+                        qu0Var.h = imageReceiver.getRoundRadius(true);
+                        qu0Var.j = (int) ((xnVar.p9 - xnVar.r9) - AndroidUtilities.dp(4.0f));
+                        qu0Var.i = (int) (xnVar.W8(org.telegram.ui.Components.s21.c) + xnVar.v.c() + AndroidUtilities.dp(9.0f) + xnVar.xa + xnVar.pc);
+                        return qu0Var;
                     }
                 }
             }

@@ -31,7 +31,7 @@ import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class u0 extends org.telegram.ui.ActionBar.h3 {
     public final int B;
@@ -86,7 +86,7 @@ public final class u0 extends org.telegram.ui.ActionBar.h3 {
         iVar.y = eVar2;
         iVar.B = viewGroup2;
         eVar2.d.add(iVar);
-        Drawable e6 = qh.j5.e(null, this.currentAccount, j10, org.telegram.ui.ActionBar.k6.I.q());
+        Drawable e6 = qh.i5.e(null, this.currentAccount, j10, org.telegram.ui.ActionBar.k6.I.q());
         this.y = e6;
         p0Var.V(e6);
         f6 f6Var = new f6(context, this.currentAccount, g6Var);

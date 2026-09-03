@@ -24,12 +24,11 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.ba;
-import org.telegram.ui.Components.tk0;
-import qh.i5;
-import qh.o4;
-import qh.s6;
+import org.telegram.ui.Components.sk0;
+import qh.n4;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class y1 extends j {
     public final a9.a A0;
@@ -55,7 +54,7 @@ public abstract class y1 extends j {
     public boolean y0;
     public final SparseIntArray z0;
 
-    public y1(Context context, PointF pointF, ArrayList arrayList, ba baVar, boolean z4, i5 i5Var) {
+    public y1(Context context, PointF pointF, ArrayList arrayList, ba baVar, boolean z4, qh.h5 h5Var) {
         super(context, pointF);
         p1 p1Var;
         TLRPC.Message message;
@@ -69,9 +68,9 @@ public abstract class y1 extends j {
         this.x0 = true;
         this.y0 = k6.I.q();
         this.z0 = new SparseIntArray();
-        o4 o4Var = (o4) this;
+        n4 n4Var = (n4) this;
         a9.a aVar = new a9.a();
-        aVar.f = o4Var;
+        aVar.f = n4Var;
         TextPaint textPaint = new TextPaint();
         aVar.a = textPaint;
         TextPaint textPaint2 = new TextPaint();
@@ -100,7 +99,7 @@ public abstract class y1 extends j {
                 tL_messageService = new TLRPC.TL_messageService();
             } else {
                 message = message2;
-                D = s6.D(messageObject);
+                D = r6.D(messageObject);
                 if (D != null && D.booleanValue() && (messageFwdHeader = message.fwd_from) != null && (peer = messageFwdHeader.from_id) != null) {
                     message.from_id = peer;
                     message.peer_id = peer;
@@ -180,7 +179,7 @@ public abstract class y1 extends j {
             tL_messageService.translatedText = message2.translatedText;
             tL_messageService.replyStory = message2.replyStory;
             message = tL_messageService;
-            D = s6.D(messageObject);
+            D = r6.D(messageObject);
             if (D != null) {
                 message.from_id = peer;
                 message.peer_id = peer;
@@ -201,28 +200,28 @@ public abstract class y1 extends j {
             groupedMessages.groupId = ((MessageObject) this.p0.get(0)).getGroupId();
             groupedMessages.calculate();
         }
-        q1 q1Var = new q1(o4Var, context);
+        q1 q1Var = new q1(n4Var, context);
         this.n0 = q1Var;
         addView(q1Var, c6.c(-1.0f, -1));
-        r1 r1Var = new r1(o4Var, context, this.A0);
+        r1 r1Var = new r1(n4Var, context, this.A0);
         this.o0 = r1Var;
-        r1Var.setAdapter(new u1(o4Var, context, baVar, i5Var, z4));
-        v1 v1Var = new v1(o4Var);
-        v1Var.O = new w1(o4Var);
+        r1Var.setAdapter(new u1(n4Var, context, baVar, h5Var, z4));
+        v1 v1Var = new v1(n4Var);
+        v1Var.O = new w1(n4Var);
         r1Var.setLayoutManager(v1Var);
         r1Var.i(new x1());
         q1Var.addView(r1Var, c6.c(-1.0f, -1));
-        if (i5Var != null && i5Var.g) {
-            dg.h0 h0Var = new dg.h0(o4Var, 2);
-            p1 p1Var2 = new p1(o4Var, 0);
-            i5Var.b = h0Var;
-            i5Var.c = p1Var2;
-            TextureView textureView = i5Var.a;
+        if (h5Var != null && h5Var.g) {
+            dg.h0 h0Var = new dg.h0(n4Var, 2);
+            p1 p1Var2 = new p1(n4Var, 0);
+            h5Var.b = h0Var;
+            h5Var.c = p1Var2;
+            TextureView textureView = h5Var.a;
             if (textureView != null) {
                 h0Var.run(textureView);
             }
-            if (i5Var.d && (p1Var = i5Var.c) != null) {
-                p1Var.run(Integer.valueOf(i5Var.e), Integer.valueOf(i5Var.f));
+            if (h5Var.d && (p1Var = h5Var.c) != null) {
+                p1Var.run(Integer.valueOf(h5Var.e), Integer.valueOf(h5Var.f));
             }
         }
         k();
@@ -253,13 +252,13 @@ public abstract class y1 extends j {
     }
 
     @Override // eg.j
-    public tk0 getSelectionBounds() {
+    public sk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new tk0();
+            return new sk0();
         }
         float scaleX = viewGroup.getScaleX();
-        return new tk0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), (getScale() * getMeasuredWidth() * scaleX) + AndroidUtilities.dp(71.0f), (getScale() * getMeasuredHeight() * scaleX) + AndroidUtilities.dp(71.0f));
+        return new sk0(((getPositionX() * scaleX) - (((getScale() * getMeasuredWidth()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), ((getPositionY() * scaleX) - (((getScale() * getMeasuredHeight()) / 2.0f) * scaleX)) - AndroidUtilities.dp(35.5f), (getScale() * getMeasuredWidth() * scaleX) + AndroidUtilities.dp(71.0f), (getScale() * getMeasuredHeight() * scaleX) + AndroidUtilities.dp(71.0f));
     }
 
     @Override // eg.j
@@ -384,12 +383,12 @@ public abstract class y1 extends j {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void setupTheme(s6 s6Var) {
+    public void setupTheme(r6 r6Var) {
         SparseIntArray Q0;
         int[] iArr;
         int i10;
         i6 k10;
-        if (s6Var == null) {
+        if (r6Var == null) {
             this.z0.clear();
             return;
         }
@@ -409,7 +408,7 @@ public abstract class y1 extends j {
             str2 = string2;
         } else if (j6Var.q() || string.equals("Dark Blue") || string.equals("Night")) {
             str2 = string2;
-            boolean z4 = s6Var.y0;
+            boolean z4 = r6Var.y0;
             this.y0 = z4;
             j6 N0 = !z4 ? k6.N0(str2) : k6.N0(str);
             String[] strArr = new String[1];
@@ -432,7 +431,7 @@ public abstract class y1 extends j {
             s();
         }
         str = string;
-        boolean z42 = s6Var.y0;
+        boolean z42 = r6Var.y0;
         this.y0 = z42;
         if (!z42) {
         }

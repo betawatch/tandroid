@@ -1,92 +1,89 @@
 package qh;
 
-import android.content.Context;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.jm;
-import org.telegram.ui.Components.qc;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.bh1;
+import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class l4 extends y1 {
-    public final /* synthetic */ int E;
-    public final /* synthetic */ b5 F;
+public final class l4 extends xn {
+    public final /* synthetic */ Utilities.Callback2 Nc;
+    public final /* synthetic */ a5 Oc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l4(b5 b5Var, Context context, q4 q4Var, int i10) {
-        super(context, q4Var, false, false);
-        this.F = b5Var;
-        this.E = i10;
+    public l4(a5 a5Var, Utilities.Callback2 callback2) {
+        super(null);
+        this.Oc = a5Var;
+        this.Nc = callback2;
     }
 
-    @Override // qh.y1
-    public final boolean l0(Integer num) {
-        w4 w4Var = this.F.O0;
-        if (num.intValue() == 3) {
-            int i10 = 0;
-            for (int i11 = 0; i11 < w4Var.getChildCount(); i11++) {
-                if (w4Var.getChildAt(i11) instanceof eg.y2) {
-                    i10++;
-                }
+    @Override // org.telegram.ui.xn, org.telegram.ui.Components.rg, org.telegram.ui.Components.s50
+    public final long a() {
+        return 0L;
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // org.telegram.ui.xn, org.telegram.ui.wc0
+    public final void d(TLRPC.MessageMedia messageMedia, int i10, boolean z4, int i11, long j10) {
+        TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint;
+        TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint2;
+        if (messageMedia instanceof TLRPC.TL_messageMediaGeo) {
+            tL_mediaAreaGeoPoint2 = new TL_stories.TL_mediaAreaGeoPoint();
+            tL_mediaAreaGeoPoint2.geo = messageMedia.geo;
+        } else {
+            if (!(messageMedia instanceof TLRPC.TL_messageMediaVenue)) {
+                return;
             }
-            if (i10 >= MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitDefault && !UserConfig.getInstance(this.currentAccount).isPremium()) {
-                String formatPluralString = LocaleController.formatPluralString("StoryPremiumWidgets2", MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium, new Object[0]);
-                try {
-                    this.container.performHapticFeedback(3);
-                } catch (Exception unused) {
+            TLRPC.TL_messageMediaVenue tL_messageMediaVenue = (TLRPC.TL_messageMediaVenue) messageMedia;
+            long j11 = tL_messageMediaVenue.query_id;
+            if (j11 == -1 || j11 == -2) {
+                TL_stories.TL_mediaAreaGeoPoint tL_mediaAreaGeoPoint3 = new TL_stories.TL_mediaAreaGeoPoint();
+                tL_mediaAreaGeoPoint3.geo = messageMedia.geo;
+                TL_stories.TL_geoPointAddress tL_geoPointAddress = tL_messageMediaVenue.geoAddress;
+                tL_mediaAreaGeoPoint3.address = tL_geoPointAddress;
+                if (tL_geoPointAddress != null) {
+                    tL_mediaAreaGeoPoint3.flags |= 1;
                 }
-                new qc(this.container, this.resourcesProvider).M(LocaleController.getString(R.string.IncreaseLimit), AndroidUtilities.replaceSingleTag(formatPluralString, org.telegram.ui.ActionBar.k6.gc, 0, new org.telegram.ui.web.s0(this, 13), this.resourcesProvider), R.raw.star_premium_2).k(true);
-                return false;
+                Utilities.globalQueue.postRunnable(new bh1(21, messageMedia, tL_mediaAreaGeoPoint3));
+                tL_mediaAreaGeoPoint = tL_mediaAreaGeoPoint3;
+            } else {
+                TL_stories.TL_inputMediaAreaVenue tL_inputMediaAreaVenue = new TL_stories.TL_inputMediaAreaVenue();
+                tL_inputMediaAreaVenue.query_id = tL_messageMediaVenue.query_id;
+                tL_inputMediaAreaVenue.result_id = tL_messageMediaVenue.result_id;
+                tL_mediaAreaGeoPoint = tL_inputMediaAreaVenue;
             }
-            if (i10 >= MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium) {
-                try {
-                    this.container.performHapticFeedback(3);
-                } catch (Exception unused2) {
-                }
-                new qc(this.container, this.resourcesProvider).M(LocaleController.getString("LimitReached", R.string.LimitReached), LocaleController.formatPluralString("StoryReactionsWidgetLimit2", MessagesController.getInstance(this.currentAccount).storiesSuggestedReactionsLimitPremium, new Object[0]), R.raw.chats_infotip).k(true);
-                return false;
-            }
+            tL_mediaAreaGeoPoint2 = tL_mediaAreaGeoPoint;
         }
-        return true;
+        this.Nc.run(messageMedia, tL_mediaAreaGeoPoint2);
     }
 
-    @Override // qh.y1
-    public final boolean m0(Integer num) {
-        b5 b5Var = this.F;
-        w4 w4Var = b5Var.O0;
-        boolean z4 = false;
-        if (b5Var.U1) {
-            if (num.intValue() != 2) {
-                return false;
-            }
-        } else if (num.intValue() == 5) {
-            int i10 = 0;
-            while (true) {
-                if (i10 >= w4Var.getChildCount()) {
-                    break;
-                }
-                if (w4Var.getChildAt(i10) instanceof eg.a4) {
-                    z4 = true;
-                    break;
-                }
-                i10++;
-            }
-            return !z4;
-        }
-        return true;
+    @Override // org.telegram.ui.ActionBar.p2, org.telegram.ui.Components.s50
+    public final Activity getParentActivity() {
+        return AndroidUtilities.findActivity(this.Oc.getContext());
     }
 
-    @Override // qh.y1
-    public final boolean n0(jm jmVar) {
-        return this.F.f0(jmVar);
+    @Override // org.telegram.ui.xn, org.telegram.ui.ActionBar.p2
+    public final org.telegram.ui.ActionBar.g6 getResourceProvider() {
+        return this.Oc.D1;
     }
 
-    @Override // org.telegram.ui.ActionBar.h3
-    public final void onDismissAnimationStart() {
-        super.onDismissAnimationStart();
-        this.F.R0(this.E);
+    @Override // org.telegram.ui.xn, org.telegram.ui.Components.rg
+    public final TLRPC.User i() {
+        return UserConfig.getInstance(this.currentAccount).getCurrentUser();
+    }
+
+    @Override // org.telegram.ui.xn, org.telegram.ui.ActionBar.p2
+    public final boolean isLightStatusBar() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.xn
+    public final boolean x9() {
+        return false;
     }
 }

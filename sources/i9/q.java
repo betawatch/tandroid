@@ -17,9 +17,9 @@ import java.util.Locale;
 import k9.o0;
 import k9.p0;
 import k9.u0;
-import q5.g0;
+import q5.c0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class q {
     public static final HashMap f;
@@ -27,7 +27,7 @@ public final class q {
     public final Context a;
     public final w b;
     public final a c;
-    public final g0 d;
+    public final c0 d;
     public final e3.g e;
 
     static {
@@ -40,28 +40,28 @@ public final class q {
         g = "Crashlytics Android SDK/18.6.0";
     }
 
-    public q(Context context, w wVar, a aVar, g0 g0Var, e3.g gVar) {
+    public q(Context context, w wVar, a aVar, c0 c0Var, e3.g gVar) {
         this.a = context;
         this.b = wVar;
         this.c = aVar;
-        this.d = g0Var;
+        this.d = c0Var;
         this.e = gVar;
     }
 
-    public static p0 c(sf.e eVar, int i10) {
+    public static p0 c(sf.f fVar, int i10) {
         int i11;
-        String str = (String) eVar.c;
-        String str2 = (String) eVar.b;
-        StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) eVar.d;
+        String str = (String) fVar.c;
+        String str2 = (String) fVar.b;
+        StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) fVar.d;
         int i12 = 0;
         if (stackTraceElementArr == null) {
             stackTraceElementArr = new StackTraceElement[0];
         }
-        sf.e eVar2 = (sf.e) eVar.e;
+        sf.f fVar2 = (sf.f) fVar.e;
         if (i10 >= 8) {
-            sf.e eVar3 = eVar2;
-            while (eVar3 != null) {
-                eVar3 = (sf.e) eVar3.e;
+            sf.f fVar3 = fVar2;
+            while (fVar3 != null) {
+                fVar3 = (sf.f) fVar3.e;
                 i12++;
             }
             i11 = i12;
@@ -73,8 +73,8 @@ public final class q {
             throw new NullPointerException("Null frames");
         }
         p0 p0Var = null;
-        if (eVar2 != null && i11 == 0) {
-            p0Var = c(eVar2, i10 + 1);
+        if (fVar2 != null && i11 == 0) {
+            p0Var = c(fVar2, i10 + 1);
         }
         return new p0(str, str2, d, p0Var, i11);
     }

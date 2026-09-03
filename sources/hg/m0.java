@@ -10,9 +10,10 @@ import org.telegram.ui.b5;
 import org.telegram.ui.e5;
 import org.telegram.ui.f5;
 import org.telegram.ui.z4;
-import qh.f9;
+import qh.a5;
+import qh.e9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m0 implements q0.a {
     public final /* synthetic */ int a;
@@ -76,7 +77,7 @@ public final /* synthetic */ class m0 implements q0.a {
                 }
                 break;
             default:
-                qh.b5.Z((f9) this.b, (dg.e1) this.c, (Integer) obj);
+                a5.Z((e9) this.b, (dg.e1) this.c, (Integer) obj);
                 break;
         }
     }

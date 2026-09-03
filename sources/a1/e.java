@@ -45,12 +45,12 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import v0.i;
 import v0.o;
 import w0.h;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -259,7 +259,7 @@ public final /* synthetic */ class e implements Runnable {
                 v0 v0Var = (v0) this.b;
                 TLObject tLObject = (TLObject) this.c;
                 ArrayList arrayList2 = v0Var.f0;
-                tl0 tl0Var = v0Var.d;
+                sl0 sl0Var = v0Var.d;
                 if (tLObject != null) {
                     arrayList2.clear();
                     arrayList2.addAll(((TLRPC.TL_messages_chats) tLObject).chats);
@@ -267,17 +267,17 @@ public final /* synthetic */ class e implements Runnable {
                     v0Var.G0.b(v0Var.k0 + 4);
                     int i12 = 0;
                     while (true) {
-                        if (i12 >= tl0Var.getChildCount()) {
+                        if (i12 >= sl0Var.getChildCount()) {
                             i10 = 0;
-                        } else if (tl0Var.getChildAt(i12) instanceof u0) {
-                            i10 = tl0Var.getChildAt(i12).getTop();
+                        } else if (sl0Var.getChildAt(i12) instanceof u0) {
+                            i10 = sl0Var.getChildAt(i12).getTop();
                         } else {
                             i12++;
                         }
                     }
                     v0Var.M1();
                     if (v0Var.i0 >= 0 && i10 != 0) {
-                        ((j0) tl0Var.getLayoutManager()).h1(v0Var.i0 + 1, i10);
+                        ((j0) sl0Var.getLayoutManager()).h1(v0Var.i0 + 1, i10);
                     }
                 }
                 int max = Math.max(arrayList2.size(), v0Var.J0.b);

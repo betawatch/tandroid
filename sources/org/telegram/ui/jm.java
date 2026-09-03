@@ -21,9 +21,9 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class jm extends org.telegram.ui.Components.yk0 {
+public final class jm extends org.telegram.ui.Components.xk0 {
     public int B;
     public int C;
     public int D;
@@ -68,7 +68,7 @@ public final class jm extends org.telegram.ui.Components.yk0 {
         C(true);
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return false;
     }
@@ -566,12 +566,12 @@ public final class jm extends org.telegram.ui.Components.yk0 {
         return i10 == this.F ? 8 : 4;
     }
 
-    @Override // org.telegram.ui.Components.yk0, f2.p0
+    @Override // org.telegram.ui.Components.xk0, f2.p0
     public final void l() {
         O(false);
     }
 
-    @Override // org.telegram.ui.Components.yk0, f2.p0
+    @Override // org.telegram.ui.Components.xk0, f2.p0
     public final void m(int i10) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item changed " + i10);
@@ -594,7 +594,7 @@ public final class jm extends org.telegram.ui.Components.yk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yk0, f2.p0
+    @Override // org.telegram.ui.Components.xk0, f2.p0
     public final void o(int i10) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item inserted " + i10);
@@ -640,7 +640,7 @@ public final class jm extends org.telegram.ui.Components.yk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yk0, f2.p0
+    @Override // org.telegram.ui.Components.xk0, f2.p0
     public final void q(int i10, int i11) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item range changed " + i10 + ":" + i11);
@@ -663,7 +663,7 @@ public final class jm extends org.telegram.ui.Components.yk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yk0, f2.p0
+    @Override // org.telegram.ui.Components.xk0, f2.p0
     public final void s(int i10, int i11) {
         int i12;
         int i13;
@@ -696,7 +696,7 @@ public final class jm extends org.telegram.ui.Components.yk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yk0, f2.p0
+    @Override // org.telegram.ui.Components.xk0, f2.p0
     public final void t(int i10, int i11) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item range removed" + i10 + ":" + i11);
@@ -719,7 +719,7 @@ public final class jm extends org.telegram.ui.Components.yk0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.yk0, f2.p0
+    @Override // org.telegram.ui.Components.xk0, f2.p0
     public final void u(int i10) {
         if (BuildVars.LOGS_ENABLED) {
             FileLog.d("notify item removed " + i10);

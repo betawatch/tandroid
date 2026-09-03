@@ -47,11 +47,11 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.ui.Components.fb;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.a41;
 import org.telegram.ui.dz;
 import org.telegram.ui.kl0;
-import org.telegram.ui.v31;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class p2 {
     protected k actionBar;
@@ -317,7 +317,7 @@ public abstract class p2 {
         } else if (!this.inPreviewMode || (o2Var = this.previewDelegate) == null) {
             finishFragment(true);
         } else {
-            ((v31) ((kl0) o2Var).b).a();
+            ((a41) ((kl0) o2Var).b).a();
         }
     }
 
@@ -893,9 +893,9 @@ public abstract class p2 {
                 lastStoryViewer.w0 = null;
             }
             if (lastStoryViewer.B0 == null) {
-                qh.k3 k3Var = lastStoryViewer.A0;
-                if (k3Var != null) {
-                    k3Var.d(0L, null);
+                qh.j3 j3Var = lastStoryViewer.A0;
+                if (j3Var != null) {
+                    j3Var.d(0L, null);
                 }
                 oh.e1 e1Var = lastStoryViewer.x0;
                 if (e1Var != null) {

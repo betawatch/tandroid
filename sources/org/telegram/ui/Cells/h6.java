@@ -35,7 +35,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pq;
@@ -45,7 +45,7 @@ import org.telegram.ui.Components.ve0;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.a10;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class h6 extends a0 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.b6 {
     public Utilities.Callback2 A0;
@@ -64,7 +64,7 @@ public final class h6 extends a0 implements NotificationCenter.NotificationCente
     public TLRPC.FileLocation H;
     public final RectF H0;
     public boolean I;
-    public l01 I0;
+    public k01 I0;
     public boolean J;
     public boolean J0;
     public final int K;
@@ -107,7 +107,7 @@ public final class h6 extends a0 implements NotificationCenter.NotificationCente
     public final oh.i7 r0;
     public final org.telegram.ui.Components.z8 s;
     public final RectF s0;
-    public l01 t0;
+    public k01 t0;
     public Paint u0;
     public CharSequence v;
     public final rc v0;
@@ -673,7 +673,7 @@ public final class h6 extends a0 implements NotificationCenter.NotificationCente
                 oqVar.spaceScaleX = 0.7f;
                 oqVar.translate(-AndroidUtilities.dp(2.0f), 0.0f);
                 append.setSpan(oqVar, append.length() - 1, append.length(), 33);
-                this.t0 = new l01(append, 12.0f, null);
+                this.t0 = new k01(append, 12.0f, null);
             }
             if (this.u0 == null) {
                 this.u0 = new Paint(1);
@@ -992,7 +992,7 @@ public final class h6 extends a0 implements NotificationCenter.NotificationCente
             return;
         }
         if (this.I0 == null) {
-            this.I0 = new l01(LocaleController.getString(R.string.BotOpen), 14.0f, AndroidUtilities.bold());
+            this.I0 = new k01(LocaleController.getString(R.string.BotOpen), 14.0f, AndroidUtilities.bold());
         }
         int dp = z4 ? AndroidUtilities.dp(30.0f) + ((int) this.I0.c) : 0;
         boolean z10 = LocaleController.isRTL;

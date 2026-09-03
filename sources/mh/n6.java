@@ -3,13 +3,13 @@ package mh;
 import java.util.Set;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.gn0;
+import org.telegram.ui.Components.fn0;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.wf0;
 import org.telegram.ui.b10;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class n6 implements Runnable {
     public final /* synthetic */ int a;
@@ -47,9 +47,9 @@ public final /* synthetic */ class n6 implements Runnable {
                 ((wf0) this.d).a.b.y3(this.c, this.b);
                 break;
             case 2:
-                gn0 gn0Var = (gn0) this.d;
-                gn0Var.o = null;
-                gn0Var.c(this.c, this.b, true);
+                fn0 fn0Var = (fn0) this.d;
+                fn0Var.o = null;
+                fn0Var.c(this.c, this.b, true);
                 break;
             default:
                 qc a02 = qc.a0((b10) this.d);
@@ -63,9 +63,9 @@ public final /* synthetic */ class n6 implements Runnable {
         }
     }
 
-    public /* synthetic */ n6(gn0 gn0Var, int i10, boolean z4) {
+    public /* synthetic */ n6(fn0 fn0Var, int i10, boolean z4) {
         this.a = 2;
-        this.d = gn0Var;
+        this.d = fn0Var;
         this.c = i10;
         this.b = z4;
     }

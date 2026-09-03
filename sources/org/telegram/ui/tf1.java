@@ -1,38 +1,24 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tf1 implements org.telegram.ui.ActionBar.c2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ TwoStepVerificationActivity b;
+    public final /* synthetic */ vf1 a;
 
-    public /* synthetic */ tf1(TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
-        this.a = i10;
-        this.b = twoStepVerificationActivity;
+    public /* synthetic */ tf1(vf1 vf1Var) {
+        this.a = vf1Var;
     }
 
     @Override // org.telegram.ui.ActionBar.c2
-    public final void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.finishFragment();
-                break;
-            case 1:
-                TL_account.declinePasswordReset declinepasswordreset = new TL_account.declinePasswordReset();
-                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
-                twoStepVerificationActivity.getConnectionsManager().sendRequest(declinepasswordreset, new uf1(twoStepVerificationActivity, 2));
-                break;
-            case 2:
-                this.b.k0();
-                break;
-            case 3:
-                this.b.u0();
-                break;
-            default:
-                this.b.u0();
-                break;
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        yf1 yf1Var = this.a.a;
+        Iterator it = yf1Var.e.iterator();
+        while (it.hasNext()) {
+            yf1.U(yf1Var, ((Integer) it.next()).intValue());
         }
+        yf1Var.e.clear();
+        yf1Var.V();
     }
 }

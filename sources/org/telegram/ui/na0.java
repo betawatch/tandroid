@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class na0 extends RelativeLayout {
     public i0.b a;
@@ -53,8 +53,8 @@ public final class na0 extends RelativeLayout {
         int measuredWidth2 = (measuredWidth - launchActivity.o0.getView().getMeasuredWidth()) / 2;
         int dp = AndroidUtilities.dp(8.0f) + this.a.b;
         launchActivity.o0.getView().layout(measuredWidth2, dp, launchActivity.o0.getView().getMeasuredWidth() + measuredWidth2, launchActivity.o0.getView().getMeasuredHeight() + dp);
-        org.telegram.ui.Components.a61 a61Var = launchActivity.s0;
-        a61Var.layout(0, 0, a61Var.getMeasuredWidth(), launchActivity.s0.getMeasuredHeight());
+        org.telegram.ui.Components.z51 z51Var = launchActivity.s0;
+        z51Var.layout(0, 0, z51Var.getMeasuredWidth(), launchActivity.s0.getMeasuredHeight());
         FrameLayout frameLayout = launchActivity.r0;
         frameLayout.layout(0, 0, frameLayout.getMeasuredWidth(), launchActivity.r0.getMeasuredHeight());
     }

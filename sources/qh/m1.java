@@ -1,304 +1,545 @@
 package qh;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.net.Uri;
-import android.text.TextUtils;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.ShapeDrawable;
 import android.util.SparseIntArray;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Locale;
+import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.EditTextBoldCursor;
-import org.telegram.ui.Components.dd0;
-import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.wk;
-import org.telegram.ui.ko0;
-import org.telegram.ui.yh;
+import org.telegram.ui.Components.el0;
+import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.xx;
+import org.telegram.ui.w61;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m1 implements MediaDataController.KeywordResultCallback, org.telegram.ui.ActionBar.c2, ko0, wk {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class m1 extends f2.p0 {
+    public final TLRPC.TL_inputStickerSetShortName B;
+    public TLRPC.TL_messages_stickerSet C;
+    public TLRPC.TL_messages_stickerSet D;
+    public String E;
+    public String F;
+    public String[] G;
+    public int H;
+    public final /* synthetic */ n1 K;
+    public int c;
+    public boolean w;
+    public final HashMap d = new HashMap();
+    public final HashMap e = new HashMap();
+    public final HashMap f = new HashMap();
+    public final ArrayList h = new ArrayList();
+    public final ArrayList n = new ArrayList();
+    public final ArrayList r = new ArrayList();
+    public final ArrayList s = new ArrayList();
+    public final ArrayList v = new ArrayList();
+    public int x = 0;
+    public final SparseIntArray y = new SparseIntArray();
+    public final HashSet I = new HashSet();
+    public final org.telegram.ui.web.s0 J = new org.telegram.ui.web.s0(this, 15);
 
-    public /* synthetic */ m1(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
-        this.d = obj3;
+    public m1(n1 n1Var) {
+        this.K = n1Var;
+        TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
+        this.B = tL_inputStickerSetShortName;
+        tL_inputStickerSetShortName.short_name = "StaticEmoji";
     }
 
-    @Override // org.telegram.ui.ko0
-    public void a(int i10) {
-        sh.k2 k2Var = (sh.k2) this.b;
-        dd0 dd0Var = (dd0) this.d;
-        String str = (String) this.c;
-        if (i10 != 3) {
-            dd0Var.dismiss();
+    /* JADX WARN: Removed duplicated region for block: B:106:0x0383 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0300  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void D(String str) {
+        int i10;
+        n1 n1Var;
+        TLRPC.TL_messages_stickerSet stickerSet;
+        n1 n1Var2;
+        ArrayList<TLRPC.StickerSetCovered> arrayList;
+        int i11;
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet;
+        int i12;
+        n1 n1Var3;
+        HashMap hashMap;
+        int i13;
+        ArrayList arrayList2;
+        int i14;
+        int i15;
+        n1 n1Var4 = this.K;
+        k1 k1Var = n1Var4.e;
+        x1 x1Var = n1Var4.s;
+        this.E = str;
+        org.telegram.ui.web.s0 s0Var = this.J;
+        int i16 = 1;
+        if (str != null) {
+            n1Var4.f.c(true);
+            k1Var.n(false);
+            AndroidUtilities.cancelRunOnUIThread(s0Var);
+            AndroidUtilities.runOnUIThread(s0Var, 100L);
+            return;
         }
-        k2Var.d.x.C(str, yh.B(i10).toLowerCase(Locale.ROOT), false);
-    }
-
-    @Override // org.telegram.ui.Components.wk
-    public void d(TLRPC.MessageMedia messageMedia, int i10, boolean z4, int i11, long j10) {
-        switch (this.a) {
-            case 5:
-                wh.q qVar = (wh.q) this.b;
-                wh.a aVar = (wh.a) this.c;
-                mi miVar = (mi) this.d;
-                wh.r3 r3Var = qVar.r;
-                if (messageMedia != null && messageMedia.geo != null) {
-                    wh.d2 d2Var = r3Var.G3;
-                    if (d2Var != null) {
-                        d2Var.d();
-                    }
-                    TL_iv.pageBlockMap pageblockmap = (TL_iv.pageBlockMap) aVar.b;
-                    pageblockmap.geo = messageMedia.geo;
-                    pageblockmap.zoom = 15;
-                    if (pageblockmap.w <= 0 || pageblockmap.h <= 0) {
-                        pageblockmap.w = 600;
-                        pageblockmap.h = 400;
-                    }
-                    wh.d2 d2Var2 = r3Var.G3;
-                    if (d2Var2 != null) {
-                        d2Var2.h();
-                    }
-                    qVar.V(true);
-                    miVar.dismiss(true);
-                    r3Var.post(new wh.g(qVar, aVar, 0));
-                    break;
-                }
-                break;
-            default:
-                wh.z1 z1Var = (wh.z1) this.b;
-                wh.a aVar2 = (wh.a) this.c;
-                mi miVar2 = (mi) this.d;
-                if (messageMedia != null && messageMedia.geo != null) {
-                    wh.d2 d2Var3 = z1Var.M.G3;
-                    if (d2Var3 != null) {
-                        d2Var3.d();
-                    }
-                    TL_iv.pageBlockMap pageblockmap2 = (TL_iv.pageBlockMap) aVar2.b;
-                    pageblockmap2.geo = messageMedia.geo;
-                    pageblockmap2.zoom = 15;
-                    if (pageblockmap2.w <= 0 || pageblockmap2.h <= 0) {
-                        pageblockmap2.w = 600;
-                        pageblockmap2.h = 400;
-                    }
-                    wh.d2 d2Var4 = z1Var.M.G3;
-                    if (d2Var4 != null) {
-                        d2Var4.h();
-                    }
-                    miVar2.dismiss(true);
-                    z1Var.M.post(new wh.j1(z1Var, aVar2, 9));
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        switch (this.a) {
-            case 1:
-                ((d8) this.b).g1((b8) this.c, (Runnable) this.d, true);
-                break;
-            case 2:
-                Activity activity = (Activity) this.b;
-                boolean[] zArr = (boolean[]) this.c;
-                org.telegram.ui.web.s sVar = (org.telegram.ui.web.s) this.d;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    activity.startActivity(intent);
-                } catch (Exception e6) {
-                    FileLog.e(e6);
-                }
-                zArr[0] = true;
-                Boolean bool = Boolean.FALSE;
-                sVar.run(bool, bool);
-                break;
-            case 3:
-            default:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.b;
-                EditTextBoldCursor editTextBoldCursor2 = (EditTextBoldCursor) this.c;
-                wh.y3 y3Var = (wh.y3) this.d;
-                String trim = editTextBoldCursor.getText().toString().trim();
-                String trim2 = editTextBoldCursor2.getText().toString().trim();
-                if (!TextUtils.isEmpty(trim) && !TextUtils.isEmpty(trim2)) {
-                    int i11 = y3Var.a;
-                    wh.o3 o3Var = y3Var.b;
-                    switch (i11) {
-                        case 1:
-                            TL_keyboard.TL_inlineButtonTypeUrl tL_inlineButtonTypeUrl = new TL_keyboard.TL_inlineButtonTypeUrl();
-                            tL_inlineButtonTypeUrl.url = trim2;
-                            o3Var.a(trim, tL_inlineButtonTypeUrl);
-                            break;
-                        default:
-                            TL_keyboard.TL_inlineButtonTypeCopy tL_inlineButtonTypeCopy = new TL_keyboard.TL_inlineButtonTypeCopy();
-                            tL_inlineButtonTypeCopy.copy_text = trim2;
-                            o3Var.a(trim, tL_inlineButtonTypeCopy);
-                            break;
-                    }
-                }
-                break;
-            case 4:
-                uf.u0 u0Var = (uf.u0) this.b;
-                boolean[] zArr2 = (boolean[]) this.c;
-                TLRPC.User user = (TLRPC.User) this.d;
-                u0Var.getClass();
-                zArr2[0] = true;
-                if (user != null) {
-                    MessagesController.getNotificationsSettings(u0Var.f).edit().putBoolean("inlinegeo_" + user.id, true).commit();
-                    u0Var.G();
-                    break;
-                }
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.MediaDataController.KeywordResultCallback
-    public void run(ArrayList arrayList, String str) {
-        ArrayList<TLRPC.Document> arrayList2;
-        ArrayList<TLRPC.Document> arrayList3;
-        ArrayList arrayList4;
-        ArrayList arrayList5 = arrayList;
-        n1 n1Var = (n1) this.b;
-        String str2 = (String) this.c;
-        MediaDataController mediaDataController = (MediaDataController) this.d;
-        ArrayList arrayList6 = n1Var.h;
-        SparseIntArray sparseIntArray = n1Var.y;
-        ArrayList arrayList7 = n1Var.n;
-        o1 o1Var = n1Var.K;
-        ArrayList arrayList8 = n1Var.v;
-        HashSet hashSet = n1Var.I;
-        ArrayList arrayList9 = n1Var.s;
-        if (TextUtils.equals(str2, n1Var.E)) {
-            ArrayList<Emoji.EmojiSpanRange> parseEmojis = Emoji.parseEmojis(n1Var.E);
-            for (int i10 = 0; i10 < parseEmojis.size(); i10++) {
-                try {
-                    MediaDataController.KeywordResult keywordResult = new MediaDataController.KeywordResult();
-                    keywordResult.emoji = parseEmojis.get(i10).code.toString();
-                    arrayList5.add(keywordResult);
-                } catch (Exception unused) {
-                }
+        k1Var.n(true);
+        AndroidUtilities.cancelRunOnUIThread(s0Var);
+        i10 = ((org.telegram.ui.ActionBar.h3) x1Var).currentAccount;
+        MediaDataController mediaDataController = MediaDataController.getInstance(i10);
+        this.x = 0;
+        ArrayList arrayList3 = this.s;
+        arrayList3.clear();
+        this.v.clear();
+        SparseIntArray sparseIntArray = this.y;
+        sparseIntArray.clear();
+        ArrayList arrayList4 = this.n;
+        arrayList4.clear();
+        ArrayList arrayList5 = this.h;
+        arrayList5.clear();
+        HashMap hashMap2 = this.f;
+        hashMap2.clear();
+        this.x++;
+        boolean z4 = false;
+        arrayList3.add(null);
+        ArrayList arrayList6 = this.r;
+        arrayList6.clear();
+        if (n1Var4.a == 1) {
+            if (x1Var.C != null && (x1Var.m0(0) || x1Var.m0(1) || x1Var.m0(2) || x1Var.m0(3) || x1Var.m0(4))) {
+                arrayList3.add(x1Var.d);
+                this.x++;
             }
-            n1Var.x = 0;
-            arrayList9.clear();
-            arrayList8.clear();
-            sparseIntArray.clear();
-            arrayList7.clear();
-            n1Var.x++;
-            arrayList9.add(null);
-            arrayList8.add(0L);
-            if (o1Var.a == 0) {
-                hashSet.clear();
-                for (int i11 = 0; i11 < arrayList5.size(); i11++) {
-                    MediaDataController.KeywordResult keywordResult2 = (MediaDataController.KeywordResult) arrayList5.get(i11);
-                    String str3 = keywordResult2.emoji;
-                    if (str3 != null && !str3.startsWith("animated_") && (arrayList4 = (ArrayList) n1Var.d.get(keywordResult2.emoji)) != null) {
-                        hashSet.addAll(arrayList4);
-                    }
+            ArrayList<TLRPC.Document> recentStickers = mediaDataController.getRecentStickers(2);
+            if (recentStickers != null && !recentStickers.isEmpty()) {
+                if (this.C == null) {
+                    this.C = new TLRPC.TL_messages_stickerSet();
                 }
-                arrayList8.addAll(hashSet);
-                for (int i12 = 0; i12 < hashSet.size(); i12++) {
-                    arrayList9.add(null);
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = this.C;
+                tL_messages_stickerSet2.documents = recentStickers;
+                tL_messages_stickerSet2.set = new TLRPC.TL_stickerSet();
+                this.C.set.title = LocaleController.getString(R.string.FavoriteStickers);
+                arrayList4.add(this.C);
+            }
+            ArrayList<TLRPC.Document> recentStickers2 = mediaDataController.getRecentStickers(0);
+            if (recentStickers2 != null && !recentStickers2.isEmpty()) {
+                if (this.D == null) {
+                    this.D = new TLRPC.TL_messages_stickerSet();
                 }
-                n1Var.x = hashSet.size() + n1Var.x;
-            } else {
-                HashMap<String, ArrayList<TLRPC.Document>> allStickers = mediaDataController.getAllStickers();
-                for (int i13 = 0; i13 < arrayList5.size(); i13++) {
-                    MediaDataController.KeywordResult keywordResult3 = (MediaDataController.KeywordResult) arrayList5.get(i13);
-                    String str4 = keywordResult3.emoji;
-                    if (str4 != null && !str4.startsWith("animated_") && (arrayList3 = allStickers.get(keywordResult3.emoji)) != null && !arrayList3.isEmpty()) {
-                        for (int i14 = 0; i14 < arrayList3.size(); i14++) {
-                            TLRPC.Document document = arrayList3.get(i14);
-                            if (document != null && !arrayList9.contains(document)) {
-                                arrayList9.add(document);
-                                n1Var.x++;
-                            }
-                        }
-                    }
+                this.D.documents = recentStickers2;
+                if (x1Var.B != null) {
+                    recentStickers2.add(0, x1Var.e);
                 }
-                ArrayList<TLRPC.StickerSetCovered> featuredStickerSets = mediaDataController.getFeaturedStickerSets();
-                int i15 = 0;
-                while (i15 < arrayList5.size()) {
-                    MediaDataController.KeywordResult keywordResult4 = (MediaDataController.KeywordResult) arrayList5.get(i15);
-                    String str5 = keywordResult4.emoji;
-                    if (str5 != null && !str5.startsWith("animated_")) {
-                        for (int i16 = 0; i16 < featuredStickerSets.size(); i16++) {
-                            TLRPC.StickerSetCovered stickerSetCovered = featuredStickerSets.get(i16);
-                            if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
-                                arrayList2 = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
-                            } else if (!stickerSetCovered.covers.isEmpty()) {
-                                arrayList2 = stickerSetCovered.covers;
-                            } else if (stickerSetCovered.cover != null) {
-                                ArrayList<TLRPC.Document> arrayList10 = new ArrayList<>();
-                                arrayList10.add(stickerSetCovered.cover);
-                                arrayList2 = arrayList10;
-                            }
-                            for (int i17 = 0; i17 < arrayList2.size(); i17++) {
-                                String findAnimatedEmojiEmoticon = MessageObject.findAnimatedEmojiEmoticon(arrayList2.get(i17), null);
-                                if (findAnimatedEmojiEmoticon != null && findAnimatedEmojiEmoticon.contains(keywordResult4.emoji)) {
-                                    arrayList9.add(arrayList2.get(i17));
-                                    n1Var.x++;
+                this.D.set = new TLRPC.TL_stickerSet();
+                this.D.set.title = LocaleController.getString(R.string.RecentStickers);
+                arrayList4.add(this.D);
+            }
+        }
+        arrayList4.addAll(mediaDataController.getStickerSets(n1Var4.a == 0 ? 5 : 0));
+        int i17 = 0;
+        while (i17 < arrayList4.size()) {
+            TLRPC.TL_messages_stickerSet tL_messages_stickerSet3 = (TLRPC.TL_messages_stickerSet) arrayList4.get(i17);
+            sparseIntArray.put(this.x, i17);
+            arrayList3.add(z4);
+            this.x += i16;
+            arrayList3.addAll(tL_messages_stickerSet3.documents);
+            this.x = tL_messages_stickerSet3.documents.size() + this.x;
+            String str2 = tL_messages_stickerSet3 == this.D ? "recent" : tL_messages_stickerSet3 == this.C ? "fav" : tL_messages_stickerSet3;
+            int i18 = 0;
+            while (i18 < tL_messages_stickerSet3.documents.size()) {
+                hashMap2.put(Long.valueOf(tL_messages_stickerSet3.documents.get(i18).id), str2);
+                i18++;
+                x1Var = x1Var;
+                k1Var = k1Var;
+            }
+            k1 k1Var2 = k1Var;
+            x1 x1Var2 = x1Var;
+            xx xxVar = new xx();
+            xxVar.c = tL_messages_stickerSet3.documents;
+            xxVar.b = tL_messages_stickerSet3.set;
+            xxVar.f = true;
+            xxVar.g = false;
+            xxVar.h = true;
+            xxVar.e = true;
+            if (tL_messages_stickerSet3 == this.C) {
+                xxVar.j = R.drawable.emoji_tabs_faves;
+            } else if (tL_messages_stickerSet3 == this.D) {
+                xxVar.j = R.drawable.msg_emoji_recent;
+            }
+            arrayList6.add(xxVar);
+            arrayList5.add(tL_messages_stickerSet3);
+            i17++;
+            x1Var = x1Var2;
+            k1Var = k1Var2;
+            i16 = 1;
+            z4 = false;
+        }
+        k1 k1Var3 = k1Var;
+        x1 x1Var3 = x1Var;
+        if (n1Var4.a == 0) {
+            ArrayList<TLRPC.StickerSetCovered> featuredEmojiSets = mediaDataController.getFeaturedEmojiSets();
+            if (featuredEmojiSets != null) {
+                int i19 = 0;
+                while (i19 < featuredEmojiSets.size()) {
+                    TLRPC.StickerSetCovered stickerSetCovered = featuredEmojiSets.get(i19);
+                    if (stickerSetCovered instanceof TLRPC.TL_stickerSetNoCovered) {
+                        i15 = ((org.telegram.ui.ActionBar.h3) x1Var3).currentAccount;
+                        tL_messages_stickerSet = MediaDataController.getInstance(i15).getStickerSet(MediaDataController.getInputStickerSet(stickerSetCovered.set), false);
+                        if (tL_messages_stickerSet != null) {
+                            n1Var2 = n1Var4;
+                            arrayList = featuredEmojiSets;
+                            i11 = i19;
+                            if (tL_messages_stickerSet.set == null) {
+                                int i20 = 0;
+                                while (true) {
+                                    if (i20 < arrayList6.size()) {
+                                        TLRPC.StickerSet stickerSet2 = ((xx) arrayList6.get(i20)).b;
+                                        if (stickerSet2 != null) {
+                                            i14 = i20;
+                                            if (stickerSet2.id == tL_messages_stickerSet.set.id) {
+                                                break;
+                                            }
+                                        } else {
+                                            i14 = i20;
+                                        }
+                                        i20 = i14 + 1;
+                                    } else {
+                                        arrayList4.add(tL_messages_stickerSet);
+                                        arrayList5.add(tL_messages_stickerSet);
+                                        sparseIntArray.put(this.x, i17);
+                                        i17++;
+                                        arrayList3.add(null);
+                                        this.x++;
+                                        arrayList3.addAll(tL_messages_stickerSet.documents);
+                                        this.x = tL_messages_stickerSet.documents.size() + this.x;
+                                        for (int i21 = 0; i21 < tL_messages_stickerSet.documents.size(); i21++) {
+                                            hashMap2.put(Long.valueOf(tL_messages_stickerSet.documents.get(i21).id), tL_messages_stickerSet);
+                                        }
+                                        xx xxVar2 = new xx();
+                                        xxVar2.c = tL_messages_stickerSet.documents;
+                                        xxVar2.b = tL_messages_stickerSet.set;
+                                        xxVar2.f = false;
+                                        xxVar2.g = true;
+                                        xxVar2.h = true;
+                                        xxVar2.e = true;
+                                        arrayList6.add(xxVar2);
+                                    }
                                 }
                             }
                         }
+                        n1Var2 = n1Var4;
+                        arrayList = featuredEmojiSets;
+                        i11 = i19;
+                    } else {
+                        if (stickerSetCovered instanceof TLRPC.TL_stickerSetFullCovered) {
+                            TLRPC.TL_messages_stickerSet tL_messages_stickerSet4 = new TLRPC.TL_messages_stickerSet();
+                            TLRPC.StickerSet stickerSet3 = stickerSetCovered.set;
+                            tL_messages_stickerSet4.set = stickerSet3;
+                            tL_messages_stickerSet4.documents = ((TLRPC.TL_stickerSetFullCovered) stickerSetCovered).documents;
+                            ArrayList<TLRPC.StickerSetCovered> arrayList7 = featuredEmojiSets;
+                            int i22 = i19;
+                            Long valueOf = Long.valueOf(stickerSet3.id);
+                            HashMap hashMap3 = this.e;
+                            ArrayList<TLRPC.TL_stickerPack> arrayList8 = (ArrayList) hashMap3.get(valueOf);
+                            tL_messages_stickerSet4.packs = arrayList8;
+                            if (arrayList8 == null) {
+                                HashMap hashMap4 = new HashMap();
+                                arrayList = arrayList7;
+                                int i23 = 0;
+                                while (i23 < tL_messages_stickerSet4.documents.size()) {
+                                    TLRPC.Document document = tL_messages_stickerSet4.documents.get(i23);
+                                    if (document == null) {
+                                        n1Var3 = n1Var4;
+                                        hashMap = hashMap4;
+                                        i12 = i23;
+                                    } else {
+                                        i12 = i23;
+                                        ArrayList<Emoji.EmojiSpanRange> parseEmojis = Emoji.parseEmojis(MessageObject.findAnimatedEmojiEmoticon(document, null));
+                                        n1Var3 = n1Var4;
+                                        if (parseEmojis != null) {
+                                            i13 = i22;
+                                            int i24 = 0;
+                                            while (i24 < parseEmojis.size()) {
+                                                String charSequence = parseEmojis.get(i24).code.toString();
+                                                ArrayList arrayList9 = (ArrayList) hashMap4.get(charSequence);
+                                                ArrayList<Emoji.EmojiSpanRange> arrayList10 = parseEmojis;
+                                                if (arrayList9 == null) {
+                                                    arrayList2 = new ArrayList();
+                                                    hashMap4.put(charSequence, arrayList2);
+                                                } else {
+                                                    arrayList2 = arrayList9;
+                                                }
+                                                HashMap hashMap5 = hashMap4;
+                                                i24 = android.support.v4.media.a.g(document.id, arrayList2, i24, 1);
+                                                hashMap4 = hashMap5;
+                                                parseEmojis = arrayList10;
+                                                document = document;
+                                            }
+                                            hashMap = hashMap4;
+                                            i23 = i12 + 1;
+                                            i22 = i13;
+                                            n1Var4 = n1Var3;
+                                            hashMap4 = hashMap;
+                                        } else {
+                                            hashMap = hashMap4;
+                                        }
+                                    }
+                                    i13 = i22;
+                                    i23 = i12 + 1;
+                                    i22 = i13;
+                                    n1Var4 = n1Var3;
+                                    hashMap4 = hashMap;
+                                }
+                                n1Var2 = n1Var4;
+                                i11 = i22;
+                                tL_messages_stickerSet4.packs = new ArrayList<>();
+                                for (Map.Entry entry : hashMap4.entrySet()) {
+                                    TLRPC.TL_stickerPack tL_stickerPack = new TLRPC.TL_stickerPack();
+                                    tL_stickerPack.emoticon = (String) entry.getKey();
+                                    tL_stickerPack.documents = (ArrayList) entry.getValue();
+                                    tL_messages_stickerSet4.packs.add(tL_stickerPack);
+                                }
+                                hashMap3.put(Long.valueOf(tL_messages_stickerSet4.set.id), tL_messages_stickerSet4.packs);
+                            } else {
+                                n1Var2 = n1Var4;
+                                arrayList = arrayList7;
+                                i11 = i22;
+                            }
+                            tL_messages_stickerSet = tL_messages_stickerSet4;
+                            if (tL_messages_stickerSet.set == null) {
+                            }
+                        }
+                        n1Var2 = n1Var4;
+                        arrayList = featuredEmojiSets;
+                        i11 = i19;
                     }
-                    i15++;
-                    arrayList5 = arrayList;
+                    i19 = i11 + 1;
+                    featuredEmojiSets = arrayList;
+                    n1Var4 = n1Var2;
                 }
             }
-            String translitSafe = AndroidUtilities.translitSafe((n1Var.E + "").toLowerCase());
-            for (int i18 = 0; i18 < arrayList6.size(); i18++) {
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList6.get(i18);
-                if (tL_messages_stickerSet != null && tL_messages_stickerSet.set != null) {
-                    String translitSafe2 = AndroidUtilities.translitSafe((tL_messages_stickerSet.set.title + "").toLowerCase());
-                    if (translitSafe2.startsWith(translitSafe) || org.telegram.messenger.y3.w(" ", translitSafe, translitSafe2)) {
-                        int size = arrayList7.size();
-                        arrayList7.add(tL_messages_stickerSet);
-                        sparseIntArray.put(n1Var.x, size);
-                        arrayList9.add(null);
-                        n1Var.x++;
-                        arrayList9.addAll(tL_messages_stickerSet.documents);
-                        n1Var.x = tL_messages_stickerSet.documents.size() + n1Var.x;
+            n1 n1Var5 = n1Var4;
+            boolean z10 = false;
+            for (int i25 = 0; i25 < arrayList5.size(); i25++) {
+                try {
+                    z10 = ((TLRPC.TL_messages_stickerSet) arrayList5.get(i25)).set.title.toLowerCase().contains("staticemoji");
+                } catch (Exception unused) {
+                }
+                if (z10) {
+                    break;
+                }
+            }
+            if (!z10 && (stickerSet = mediaDataController.getStickerSet((TLRPC.InputStickerSet) this.B, false)) != null) {
+                arrayList5.add(stickerSet);
+            }
+            n1Var = n1Var5;
+        } else {
+            n1Var = n1Var4;
+        }
+        n1Var.r = true;
+        if (this.c != arrayList5.size()) {
+            HashMap hashMap6 = this.d;
+            hashMap6.clear();
+            for (int i26 = 0; i26 < arrayList5.size(); i26++) {
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet5 = (TLRPC.TL_messages_stickerSet) arrayList5.get(i26);
+                if (tL_messages_stickerSet5 != null) {
+                    for (int i27 = 0; i27 < tL_messages_stickerSet5.packs.size(); i27++) {
+                        String str3 = tL_messages_stickerSet5.packs.get(i27).emoticon;
+                        ArrayList arrayList11 = (ArrayList) hashMap6.get(str3);
+                        if (arrayList11 == null) {
+                            arrayList11 = new ArrayList();
+                            hashMap6.put(str3, arrayList11);
+                        }
+                        arrayList11.addAll(tL_messages_stickerSet5.packs.get(i27).documents);
                     }
                 }
             }
-            boolean z4 = arrayList8.size() <= 1 && arrayList9.size() <= 1;
-            n1Var.w = z4;
-            if (z4) {
-                n1Var.x++;
+            this.c = arrayList5.size();
+        }
+        this.w = false;
+        k1Var3.p(arrayList6);
+        this.F = null;
+        l();
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        return this.x;
+    }
+
+    @Override // f2.p0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 0;
+        }
+        if (this.w && i10 == this.x - 1) {
+            return 3;
+        }
+        if (this.y.get(i10, -1) >= 0) {
+            return 1;
+        }
+        if (i10 < 0) {
+            return 2;
+        }
+        ArrayList arrayList = this.s;
+        return (i10 >= arrayList.size() || arrayList.get(i10) != this.K.s.d) ? 2 : 4;
+    }
+
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        TLRPC.StickerSet stickerSet;
+        n1 n1Var = this.K;
+        x1 x1Var = n1Var.s;
+        int i11 = m1Var.f;
+        View view = m1Var.a;
+        if (i11 == 0) {
+            view.setTag(34);
+            view.setLayoutParams(new f2.x0(-1, (int) x1Var.n));
+            return;
+        }
+        if (i11 == 1) {
+            int i12 = this.y.get(i10);
+            if (i12 >= 0) {
+                ArrayList arrayList = this.n;
+                if (i12 >= arrayList.size()) {
+                    return;
+                }
+                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) arrayList.get(i12);
+                String str = (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? "" : stickerSet.title;
+                org.telegram.ui.Cells.m8 m8Var = (org.telegram.ui.Cells.m8) view;
+                if (this.F == null) {
+                    m8Var.b(0, str);
+                    return;
+                }
+                int indexOf = str.toLowerCase().indexOf(this.F.toLowerCase());
+                if (indexOf < 0) {
+                    m8Var.b(0, str);
+                    return;
+                } else {
+                    m8Var.c(str, 0, null, indexOf, this.F.length());
+                    return;
+                }
             }
-            if (!z4) {
-                n1Var.H++;
+            return;
+        }
+        if (i11 != 2) {
+            if (i11 == 3) {
+                j1 j1Var = (j1) view;
+                int i13 = this.H;
+                if (j1Var.b != i13) {
+                    j1Var.b = i13;
+                    w61.D(UserConfig.selectedAccount, j1Var.a);
+                    return;
+                }
+                return;
             }
-            n1Var.F = n1Var.E;
-            n1Var.l();
-            d1.w1(o1Var.b, 0, 0);
-            o1Var.f.c(false);
-            o1Var.e.n(false);
+            return;
+        }
+        ArrayList arrayList2 = this.s;
+        TLRPC.Document document = i10 >= arrayList2.size() ? null : (TLRPC.Document) arrayList2.get(i10);
+        c1 c1Var = (c1) view;
+        if (document == x1Var.e) {
+            c1Var.setSticker(null);
+            int dp = AndroidUtilities.dp(28.0f);
+            int i14 = org.telegram.ui.ActionBar.k6.Me;
+            ShapeDrawable b02 = org.telegram.ui.ActionBar.k6.b0(dp, org.telegram.ui.ActionBar.k6.l1(0.12f, x1Var.getThemedColor(i14)));
+            Drawable mutate = n1Var.getResources().getDrawable(R.drawable.filled_add_sticker).mutate();
+            mutate.setColorFilter(new PorterDuffColorFilter(x1Var.getThemedColor(i14), PorterDuff.Mode.MULTIPLY));
+            pq pqVar = new pq(b02, mutate);
+            int dp2 = AndroidUtilities.dp(56.0f);
+            int dp3 = AndroidUtilities.dp(56.0f);
+            pqVar.h = dp2;
+            pqVar.n = dp3;
+            int dp4 = AndroidUtilities.dp(24.0f);
+            int dp5 = AndroidUtilities.dp(24.0f);
+            pqVar.e = dp4;
+            pqVar.f = dp5;
+            pqVar.r = true;
+            c1Var.setDrawable(pqVar);
+            return;
+        }
+        ArrayList arrayList3 = this.v;
+        long longValue = i10 >= arrayList3.size() ? 0L : ((Long) arrayList3.get(i10)).longValue();
+        if (document == null && longValue == 0) {
+            return;
+        }
+        int i15 = n1Var.a;
+        if (i15 != 0) {
+            c1Var.a(null, i15 == 1);
+            c1Var.setSticker(document);
+            return;
+        }
+        if (document != null) {
+            c1Var.setSticker(null);
+            c1Var.a(document, n1Var.a == 1);
+            return;
+        }
+        c1Var.setSticker(null);
+        boolean z4 = n1Var.a == 1;
+        if (c1Var.f == longValue) {
+            return;
+        }
+        org.telegram.ui.Components.l5 l5Var = c1Var.c;
+        if (l5Var != null) {
+            l5Var.o(c1Var);
+        }
+        if (longValue == 0) {
+            c1Var.a = false;
+            c1Var.f = 0L;
+            c1Var.c = null;
+            return;
+        }
+        c1Var.a = true;
+        c1Var.f = longValue;
+        org.telegram.ui.Components.l5 n10 = org.telegram.ui.Components.l5.n(c1Var.b, longValue, null, LiteMode.isEnabled(z4 ? 1 : LiteMode.FLAG_ANIMATED_EMOJI_KEYBOARD) ? 3 : 13);
+        c1Var.c = n10;
+        if (c1Var.s) {
+            n10.a(c1Var);
         }
     }
 
-    public /* synthetic */ m1(sh.k2 k2Var, dd0 dd0Var, String str) {
-        this.a = 3;
-        this.b = k2Var;
-        this.d = dd0Var;
-        this.c = str;
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.ActionBar.g6 g6Var;
+        View m8Var;
+        n1 n1Var = this.K;
+        x1 x1Var = n1Var.s;
+        if (i10 == 0) {
+            m8Var = new View(n1Var.getContext());
+        } else if (i10 == 1) {
+            Context context = n1Var.getContext();
+            g6Var = ((org.telegram.ui.ActionBar.h3) x1Var).resourcesProvider;
+            m8Var = new org.telegram.ui.Cells.m8(context, true, false, g6Var, false);
+        } else if (i10 == 3) {
+            Context context2 = n1Var.getContext();
+            boolean z4 = n1Var.a == 0;
+            j1 j1Var = new j1(context2);
+            j1Var.b = -1;
+            org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context2);
+            j1Var.a = p9Var;
+            j1Var.addView(p9Var, k7.c6.e(36, 36, 17));
+            TextView textView = new TextView(context2);
+            textView.setTextSize(1, 14.0f);
+            textView.setTextColor(-8553090);
+            textView.setText(LocaleController.getString(z4 ? R.string.NoEmojiFound : R.string.NoStickersFound));
+            j1Var.addView(textView, k7.c6.d(-2, -2.0f, 17, 0.0f, 34.0f, 0.0f, 0.0f));
+            m8Var = j1Var;
+        } else if (i10 == 4) {
+            v1 v1Var = new v1(x1Var, n1Var.getContext());
+            v1Var.e = new w0(x1Var, 2);
+            m8Var = v1Var;
+        } else {
+            m8Var = new c1(n1Var.getContext(), n1Var.b);
+        }
+        return new el0(m8Var);
     }
 }

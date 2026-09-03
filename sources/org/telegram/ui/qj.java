@@ -43,7 +43,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class qj extends tm {
     public int V2;
@@ -188,7 +188,7 @@ public final class qj extends tm {
         paint2.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
-    @Override // org.telegram.ui.Components.tl0
+    @Override // org.telegram.ui.Components.sl0
     public final boolean F0(View view) {
         return (view.getVisibility() == 4 || view.getVisibility() == 8) ? false : true;
     }
@@ -201,7 +201,7 @@ public final class qj extends tm {
         return super.createAccessibilityNodeInfo();
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         xn xnVar = this.v3;
         xnVar.r8 = null;
@@ -215,14 +215,14 @@ public final class qj extends tm {
             float measuredHeight = (-xnVar.K9) - (xnVar.R9 != 0.0f ? (xnVar.u0.getMeasuredHeight() - xnVar.K9) * xnVar.R9 : 0.0f);
             xnVar.va = measuredHeight;
             canvas.translate(0.0f, measuredHeight);
-            w1(canvas, null);
+            v1(canvas, null);
             super.dispatchDraw(canvas);
-            x1(canvas, null);
+            w1(canvas, null);
             canvas.restoreToCount(save);
         } else {
-            w1(canvas, null);
+            v1(canvas, null);
             super.dispatchDraw(canvas);
-            x1(canvas, null);
+            w1(canvas, null);
         }
         canvas.restore();
     }
@@ -328,7 +328,7 @@ public final class qj extends tm {
             if (linearGradient4 != null) {
                 linearGradient4.setLocalMatrix(matrix);
             }
-            int height = ((getHeight() - xnVar.xa) - ((int) (xnVar.W8(org.telegram.ui.Components.t21.c) + xnVar.v.c()))) - AndroidUtilities.dp(57.0f);
+            int height = ((getHeight() - xnVar.xa) - ((int) (xnVar.W8(org.telegram.ui.Components.s21.c) + xnVar.v.c()))) - AndroidUtilities.dp(57.0f);
             int i17 = ConnectionsManager.DEFAULT_DATACENTER_ID;
             for (int i18 = 0; i18 < getChildCount(); i18++) {
                 int top = getChildAt(i18).getTop();
@@ -340,12 +340,12 @@ public final class qj extends tm {
                 z11 = ((org.telegram.ui.ActionBar.p2) xnVar).fragmentBeginToShow;
                 xnVar.L6(z11);
             }
-            Paint X0 = X0("paintChatActionBackground");
-            if (paint3.getColor() != X0.getColor()) {
-                paint3.setColor(X0.getColor());
+            Paint W0 = W0("paintChatActionBackground");
+            if (paint3.getColor() != W0.getColor()) {
+                paint3.setColor(W0.getColor());
             }
-            if (paint3.getShader() != X0.getShader()) {
-                paint3.setShader(X0.getShader());
+            if (paint3.getShader() != W0.getShader()) {
+                paint3.setShader(W0.getShader());
                 colorMatrix.setSaturation(xn.Fc);
                 paint3.setColorFilter(new ColorMatrixColorFilter(colorMatrix));
             }
@@ -566,7 +566,7 @@ public final class qj extends tm {
     /* JADX WARN: Type inference failed for: r11v16 */
     /* JADX WARN: Type inference failed for: r11v18, types: [org.telegram.ui.Cells.o4] */
     /* JADX WARN: Type inference failed for: r11v41 */
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -609,7 +609,7 @@ public final class qj extends tm {
             t1Var = null;
             z4 = false;
         }
-        if ((!org.telegram.ui.Components.qv0.s0 && ((view.getY() > getMeasuredHeight() || view.getY() + view.getMeasuredHeight() < 0.0f) && !z4)) || view.getVisibility() == 4 || view.getVisibility() == 8) {
+        if ((!org.telegram.ui.Components.pv0.s0 && ((view.getY() > getMeasuredHeight() || view.getY() + view.getMeasuredHeight() < 0.0f) && !z4)) || view.getVisibility() == 4 || view.getVisibility() == 8) {
             z14 = true;
         }
         if (z15) {
@@ -1154,10 +1154,10 @@ public final class qj extends tm {
         return z11;
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final void h1(View view, float f10, float f11, boolean z4) {
+    @Override // org.telegram.ui.Components.sl0
+    public final void g1(View view, float f10, float f11, boolean z4) {
         MessageObject.GroupedMessages currentMessagesGroup;
-        super.h1(view, f10, f11, z4);
+        super.g1(view, f10, f11, z4);
         if (view instanceof org.telegram.ui.Cells.t1) {
             org.telegram.ui.Cells.t1 t1Var = (org.telegram.ui.Cells.t1) view;
             MessageObject messageObject = t1Var.getMessageObject();
@@ -1238,7 +1238,7 @@ public final class qj extends tm {
                 }
                 org.telegram.ui.Cells.t1 t1Var2 = xnVar.a9;
                 if (e2.c.s(t1Var2)) {
-                    z1(t1Var2, interpolation);
+                    y1(t1Var2, interpolation);
                 }
                 xn.V1(xnVar, interpolation);
                 MessageObject T1 = xn.T1(xnVar);
@@ -1253,18 +1253,18 @@ public final class qj extends tm {
                 invalidate();
             }
             if (xnVar.a9 != null && Thread.currentThread() == Looper.getMainLooper().getThread()) {
-                Paint X0 = X0("paintChatActionBackground");
+                Paint W0 = W0("paintChatActionBackground");
                 Paint paint6 = org.telegram.ui.ActionBar.k6.h2;
                 Paint paint7 = this.j3;
-                if (paint7.getColor() != X0.getColor()) {
-                    paint7.setColor(X0.getColor());
+                if (paint7.getColor() != W0.getColor()) {
+                    paint7.setColor(W0.getColor());
                 }
                 Paint paint8 = this.k3;
                 if (paint8.getColor() != paint6.getColor()) {
                     paint8.setColor(paint6.getColor());
                 }
-                if (paint7.getShader() != X0.getShader()) {
-                    paint7.setShader(X0.getShader());
+                if (paint7.getShader() != W0.getShader()) {
+                    paint7.setShader(W0.getShader());
                 }
                 if (paint8.getShader() != paint6.getShader()) {
                     paint8.setShader(paint6.getShader());
@@ -1409,11 +1409,11 @@ public final class qj extends tm {
                 path.rewind();
                 Path.Direction direction = Path.Direction.CW;
                 path.addRoundRect(rectF2, AndroidUtilities.dp(16.0f) * f32, AndroidUtilities.dp(16.0f) * f32, direction);
-                int alpha3 = X0.getAlpha();
+                int alpha3 = W0.getAlpha();
                 float f35 = 0.6f * f20 * f17;
-                X0.setAlpha((int) (alpha3 * f35));
-                canvas2.drawPath(path, X0);
-                X0.setAlpha(alpha3);
+                W0.setAlpha((int) (alpha3 * f35));
+                canvas2.drawPath(path, W0);
+                W0.setAlpha(alpha3);
                 if (xnVar.ba.o0()) {
                     int alpha4 = org.telegram.ui.ActionBar.k6.h2.getAlpha();
                     if (z10) {
@@ -1443,11 +1443,11 @@ public final class qj extends tm {
                 org.telegram.ui.ActionBar.k6.q(0.0f, getY() + rectF2.top, getMeasuredWidth(), AndroidUtilities.displaySize.y);
                 path.rewind();
                 path.addRoundRect(rectF2, AndroidUtilities.dp(16.0f) * f22, AndroidUtilities.dp(16.0f) * f22, direction);
-                int alpha5 = X0.getAlpha();
+                int alpha5 = W0.getAlpha();
                 float f36 = 0.4f * f20;
-                X0.setAlpha((int) (alpha5 * f36));
-                canvas2.drawPath(path, X0);
-                X0.setAlpha(alpha5);
+                W0.setAlpha((int) (alpha5 * f36));
+                canvas2.drawPath(path, W0);
+                W0.setAlpha(alpha5);
                 if (xnVar.ba.o0()) {
                     int alpha6 = org.telegram.ui.ActionBar.k6.h2.getAlpha();
                     if (z10) {
@@ -1559,7 +1559,7 @@ public final class qj extends tm {
                             upVar3.x = measureText;
                             int min = Math.min(measureText, upVar3.c - AndroidUtilities.dp(60.0f));
                             upVar3.x = min;
-                            upVar3.s = org.telegram.ui.Components.lw0.c(string, textPaint, min, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, min, 1, true);
+                            upVar3.s = org.telegram.ui.Components.kw0.c(string, textPaint, min, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, min, 1, true);
                             if (!upVar3.S) {
                                 string2 = LocaleController.getString(R.string.SwipeToGoNextRecommendedChannel);
                                 string3 = LocaleController.getString(R.string.ReleaseToGoNextRecommendedChannel);
@@ -1602,7 +1602,7 @@ public final class qj extends tm {
                     upVar3.x = measureText4;
                     int min2 = Math.min(measureText4, upVar3.c - AndroidUtilities.dp(60.0f));
                     upVar3.x = min2;
-                    upVar3.s = org.telegram.ui.Components.lw0.c(string, textPaint, min2, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, min2, 1, true);
+                    upVar3.s = org.telegram.ui.Components.kw0.c(string, textPaint, min2, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, min2, 1, true);
                     if (!upVar3.S) {
                     }
                     int measureText22 = (int) textPaint2.measureText(string2);
@@ -1622,7 +1622,7 @@ public final class qj extends tm {
                     }
                 }
                 float min3 = Math.min(1.0f, xnVar.K9 / AndroidUtilities.dp(110.0f));
-                canvas2.translate(xnVar.C9() ? AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(71.0f), xnVar.Q8()) : 0.0f, -(xnVar.W8(org.telegram.ui.Components.t21.c) + xnVar.P.getInputBubbleHeight() + xnVar.v.c() + AndroidUtilities.dp(10.0f)));
+                canvas2.translate(xnVar.C9() ? AndroidUtilities.lerp(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(71.0f), xnVar.Q8()) : 0.0f, -(xnVar.W8(org.telegram.ui.Components.s21.c) + xnVar.P.getInputBubbleHeight() + xnVar.v.c() + AndroidUtilities.dp(10.0f)));
                 xnVar.M9.a(canvas2, xnVar.u0, min3, 1.0f - xnVar.R9);
                 canvas2.restore();
                 if (xnVar.Q9 != null) {
@@ -1657,7 +1657,7 @@ public final class qj extends tm {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         ih.k kVar;
         org.telegram.ui.ActionBar.k kVar2;
@@ -1674,12 +1674,12 @@ public final class qj extends tm {
         boolean onInterceptTouchEvent = super.onInterceptTouchEvent(motionEvent);
         kVar2 = ((org.telegram.ui.ActionBar.p2) xnVar).actionBar;
         if (!kVar2.s() && !xnVar.A9()) {
-            y1(motionEvent);
+            x1(motionEvent);
         }
         return onInterceptTouchEvent;
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         super.onLayout(z4, i10, i11, i12, i13);
         int i14 = this.V2;
@@ -1711,7 +1711,7 @@ public final class qj extends tm {
         xnVar.D9();
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.k kVar;
         up upVar;
@@ -1984,7 +1984,7 @@ public final class qj extends tm {
             if (kVar.s() || xnVar.A9()) {
                 return onTouchEvent;
             }
-            y1(motionEvent);
+            x1(motionEvent);
             if (xnVar.c9 || onTouchEvent) {
                 return true;
             }
@@ -2004,11 +2004,11 @@ public final class qj extends tm {
     public final void requestDisallowInterceptTouchEvent(boolean z4) {
         super.requestDisallowInterceptTouchEvent(z4);
         if (this.v3.a9 != null) {
-            y1(null);
+            x1(null);
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.t3) {
             return;
@@ -2023,7 +2023,7 @@ public final class qj extends tm {
         super.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView
     public final void setItemAnimator(f2.u0 u0Var) {
         if (this.U1) {
             return;
@@ -2031,7 +2031,7 @@ public final class qj extends tm {
         super.setItemAnimator(u0Var);
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.View
     public final void setTranslationY(float f10) {
         if (f10 != getTranslationY()) {
             super.setTranslationY(f10);
@@ -2048,7 +2048,7 @@ public final class qj extends tm {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void w1(Canvas canvas, RectF rectF) {
+    public final void v1(Canvas canvas, RectF rectF) {
         int i10;
         int i11;
         float f10;
@@ -2121,9 +2121,9 @@ public final class qj extends tm {
                                     if (z10 || t1Var.d8) {
                                         i13 = i16;
                                         if (currentPosition == null) {
-                                            Paint X0 = qjVar.X0("paintChatMessageBackgroundSelected");
+                                            Paint W0 = qjVar.W0("paintChatMessageBackgroundSelected");
                                             vn vnVar = xnVar.ba;
-                                            if ((vnVar == null || !vnVar.D) && X0 != null) {
+                                            if ((vnVar == null || !vnVar.D) && W0 != null) {
                                                 if (xnVar.x9()) {
                                                     measuredHeight = xnVar.u0.getTop();
                                                 } else {
@@ -2139,10 +2139,10 @@ public final class qj extends tm {
                                                     org.telegram.ui.ActionBar.k6.q(t1Var.getX(), backgroundTranslationY, qjVar.getMeasuredWidth(), backgroundSizeY);
                                                 }
                                             } else {
-                                                X0 = org.telegram.ui.ActionBar.k6.a2;
-                                                X0.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Hc, g6Var));
+                                                W0 = org.telegram.ui.ActionBar.k6.a2;
+                                                W0.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Hc, g6Var));
                                             }
-                                            Paint paint = X0;
+                                            Paint paint = W0;
                                             canvas2.save();
                                             canvas2.translate(0.0f, t1Var.getTranslationY());
                                             int alpha = paint.getAlpha();
@@ -2193,13 +2193,13 @@ public final class qj extends tm {
                                         }
                                         int i19 = i14 + y10;
                                         canvas2.clipRect(0, y10, qjVar.getMeasuredWidth(), i19);
-                                        Paint X02 = qjVar.X0("paintChatMessageBackgroundSelected");
+                                        Paint W02 = qjVar.W0("paintChatMessageBackgroundSelected");
                                         vn vnVar3 = xnVar.ba;
-                                        if (vnVar3 == null || vnVar3.D || X02 == null) {
+                                        if (vnVar3 == null || vnVar3.D || W02 == null) {
                                             backgroundDrawable.b = null;
                                             backgroundDrawable.a.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Hc, g6Var));
                                         } else {
-                                            backgroundDrawable.b = X02;
+                                            backgroundDrawable.b = W02;
                                             if (xnVar.x9()) {
                                                 measuredHeight2 = xnVar.u0.getTop();
                                             } else {
@@ -2415,7 +2415,7 @@ public final class qj extends tm {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public final void x1(Canvas canvas, RectF rectF) {
+    public final void w1(Canvas canvas, RectF rectF) {
         float f10;
         ArrayList arrayList;
         ArrayList arrayList2 = this.W2;
@@ -2544,7 +2544,7 @@ public final class qj extends tm {
         }
     }
 
-    public final void y1(MotionEvent motionEvent) {
+    public final void x1(MotionEvent motionEvent) {
         TLRPC.Chat chat;
         MessageObject.GroupedMessages y82;
         MessageObject messageObject;
@@ -2618,7 +2618,7 @@ public final class qj extends tm {
                 }
                 org.telegram.ui.Cells.t1 t1Var = xnVar.a9;
                 if (e2.c.s(t1Var)) {
-                    z1(t1Var, f10);
+                    y1(t1Var, f10);
                 }
                 invalidate();
                 return;
@@ -2677,7 +2677,7 @@ public final class qj extends tm {
         }
     }
 
-    public final void z1(org.telegram.ui.Cells.t1 t1Var, float f10) {
+    public final void y1(org.telegram.ui.Cells.t1 t1Var, float f10) {
         MessageObject.GroupedMessages currentMessagesGroup = t1Var.getCurrentMessagesGroup();
         if (currentMessagesGroup == null) {
             return;

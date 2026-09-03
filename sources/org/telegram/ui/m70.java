@@ -12,13 +12,13 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class m70 extends org.telegram.ui.Components.sl0 {
+public final class m70 extends org.telegram.ui.Components.rl0 {
     public final Context c;
     public ArrayList d = new ArrayList();
     public ArrayList e = new ArrayList();
-    public v10 f;
+    public z10 f;
     public String h;
     public int n;
     public final /* synthetic */ n70 r;
@@ -42,9 +42,9 @@ public final class m70 extends org.telegram.ui.Components.sl0 {
             n70Var.getConnectionsManager().cancelRequest(m70Var.n, true);
             m70Var.n = 0;
         }
-        v10 v10Var = m70Var.f;
-        if (v10Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(v10Var);
+        z10 z10Var = m70Var.f;
+        if (z10Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(z10Var);
             m70Var.f = null;
         }
         m70Var.h = null;
@@ -65,12 +65,12 @@ public final class m70 extends org.telegram.ui.Components.sl0 {
         } else {
             n70Var.b.e(true, true);
         }
-        v10 v10Var2 = new v10(9, m70Var, str);
-        m70Var.f = v10Var2;
-        AndroidUtilities.runOnUIThread(v10Var2, 300L);
+        z10 z10Var2 = new z10(8, m70Var, str);
+        m70Var.f = z10Var2;
+        AndroidUtilities.runOnUIThread(z10Var2, 300L);
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return j(m1Var.b()) == 0;
     }
@@ -157,6 +157,6 @@ public final class m70 extends org.telegram.ui.Components.sl0 {
             k8Var = k8Var2;
         }
         k8Var.setLayoutParams(new f2.x0(-1, -2));
-        return new org.telegram.ui.Components.fl0(k8Var);
+        return new org.telegram.ui.Components.el0(k8Var);
     }
 }

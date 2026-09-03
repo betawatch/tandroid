@@ -5,9 +5,9 @@ import android.view.animation.DecelerateInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.Crop.CropAreaView;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.vh1;
+import org.telegram.ui.bi1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pv implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -38,14 +38,14 @@ public final /* synthetic */ class pv implements ValueAnimator.AnimatorUpdateLis
                 zvVar.b.invalidate();
                 break;
             case 1:
-                vh1 vh1Var = (vh1) obj;
-                vh1Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                bi1 bi1Var = (bi1) obj;
+                bi1Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 float dp = f11 + AndroidUtilities.dp(28.0f);
                 float dp2 = f10 + AndroidUtilities.dp(52.0f);
-                float f12 = vh1Var.y;
-                vh1Var.D = dp - (dp * f12);
-                vh1Var.E = dp2 - (f12 * dp2);
-                vh1Var.invalidate();
+                float f12 = bi1Var.y;
+                bi1Var.D = dp - (dp * f12);
+                bi1Var.E = dp2 - (f12 * dp2);
+                bi1Var.invalidate();
                 break;
             case 2:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
@@ -61,11 +61,11 @@ public final /* synthetic */ class pv implements ValueAnimator.AnimatorUpdateLis
                 photoViewer.z1.c.b(AndroidUtilities.lerp(f10, 0.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue()));
                 break;
             case 3:
-                qh.ca caVar = (qh.ca) obj;
-                caVar.getClass();
+                qh.ba baVar = (qh.ba) obj;
+                baVar.getClass();
                 float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                caVar.r.setTranslationY(f11 * floatValue3);
-                caVar.r.b(f10 * floatValue3);
+                baVar.r.setTranslationY(f11 * floatValue3);
+                baVar.r.b(f10 * floatValue3);
                 break;
             default:
                 xd.c cVar = (xd.c) obj;

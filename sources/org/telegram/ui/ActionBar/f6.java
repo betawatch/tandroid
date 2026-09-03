@@ -24,7 +24,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.o9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f6 implements NotificationCenter.NotificationCenterDelegate {
     public static f6 c;
@@ -55,7 +55,7 @@ public final class f6 implements NotificationCenter.NotificationCenterDelegate {
             f6 f6Var = new f6();
             f6Var.a = UserConfig.selectedAccount;
             if (arrayList2 != null) {
-                Utilities.globalQueue.postRunnable(new org.telegram.messenger.voip.h(11, f6Var, arrayList2));
+                Utilities.globalQueue.postRunnable(new org.telegram.messenger.voip.h(10, f6Var, arrayList2));
             }
             c = f6Var;
         }
@@ -160,7 +160,7 @@ public final class f6 implements NotificationCenter.NotificationCenterDelegate {
         if (i10 == NotificationCenter.fileLoaded) {
             e6 e6Var = (e6) hashMap.remove((String) objArr[0]);
             if (e6Var != null) {
-                Utilities.globalQueue.postRunnable(new org.telegram.messenger.voip.h(12, this, e6Var));
+                Utilities.globalQueue.postRunnable(new org.telegram.messenger.voip.h(11, this, e6Var));
                 return;
             }
             return;

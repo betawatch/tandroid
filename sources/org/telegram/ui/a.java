@@ -18,7 +18,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -130,10 +130,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((bh.a) obj).run();
                 break;
             case 10:
-                org.telegram.ui.Components.lj0 lj0Var = ((i9) obj).d;
-                if (!lj0Var.b()) {
-                    lj0Var.setProgress(0.0f);
-                    lj0Var.d();
+                org.telegram.ui.Components.kj0 kj0Var = ((i9) obj).d;
+                if (!kj0Var.b()) {
+                    kj0Var.setProgress(0.0f);
+                    kj0Var.d();
                     break;
                 }
                 break;
@@ -263,10 +263,10 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((n00) obj).a.dismiss();
                 break;
             case 24:
-                org.telegram.ui.Components.lj0 lj0Var2 = ((r00) obj).a;
-                if (!lj0Var2.b()) {
-                    lj0Var2.setProgress(0.0f);
-                    lj0Var2.d();
+                org.telegram.ui.Components.kj0 kj0Var2 = ((r00) obj).a;
+                if (!kj0Var2.b()) {
+                    kj0Var2.setProgress(0.0f);
+                    kj0Var2.d();
                     break;
                 }
                 break;
@@ -274,32 +274,32 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 ((u00) obj).c();
                 break;
             case 26:
-                w10 w10Var = (w10) obj;
-                org.telegram.ui.Components.k90 k90Var = w10Var.s;
-                if ((!w10Var.r || k90Var.b()) && w10Var.x != null) {
-                    w10Var.r = true;
+                v10 v10Var = (v10) obj;
+                org.telegram.ui.Components.k90 k90Var = v10Var.s;
+                if ((!v10Var.r || k90Var.b()) && v10Var.x != null) {
+                    v10Var.r = true;
                     k90Var.b = -1L;
                     k90Var.c = -1L;
-                    w10Var.n.invalidate();
-                    o00.S(w10Var.B, w10Var.x, new c10(w10Var, i12));
+                    v10Var.n.invalidate();
+                    o00.S(v10Var.B, v10Var.x, new c10(v10Var, i12));
                     break;
                 }
                 break;
             case 27:
-                org.telegram.ui.Components.lj0 lj0Var3 = ((x10) obj).a;
-                if (!lj0Var3.b()) {
-                    lj0Var3.setProgress(0.0f);
-                    lj0Var3.d();
+                org.telegram.ui.Components.kj0 kj0Var3 = ((w10) obj).a;
+                if (!kj0Var3.b()) {
+                    kj0Var3.setProgress(0.0f);
+                    kj0Var3.d();
                     break;
                 }
                 break;
             case 28:
                 final a20 a20Var = (a20) obj;
-                w10 w10Var2 = (w10) view.getParent();
-                final MessagesController.DialogFilter currentFilter = w10Var2.getCurrentFilter();
+                v10 v10Var2 = (v10) view.getParent();
+                final MessagesController.DialogFilter currentFilter = v10Var2.getCurrentFilter();
                 FiltersSetupActivity filtersSetupActivity = a20Var.e;
-                org.telegram.ui.Components.q70 H = org.telegram.ui.Components.q70.H(filtersSetupActivity, w10Var2);
-                H.c(R.drawable.msg_edit, LocaleController.getString(R.string.FilterEditItem), new Runnable() { // from class: org.telegram.ui.z10
+                org.telegram.ui.Components.q70 H = org.telegram.ui.Components.q70.H(filtersSetupActivity, v10Var2);
+                H.c(R.drawable.msg_edit, LocaleController.getString(R.string.FilterEditItem), new Runnable() { // from class: org.telegram.ui.y10
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i17;
@@ -342,7 +342,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                         }
                     }
                 }, false);
-                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), new Runnable() { // from class: org.telegram.ui.z10
+                H.c(R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), new Runnable() { // from class: org.telegram.ui.y10
                     @Override // java.lang.Runnable
                     public final void run() {
                         int i17;
@@ -388,7 +388,7 @@ public final /* synthetic */ class a implements View.OnClickListener {
                 if (LocaleController.isRTL) {
                     H.i = 3;
                 }
-                H.W(filtersSetupActivity.a.V0(w10Var2, false));
+                H.W(filtersSetupActivity.a.U0(v10Var2, false));
                 H.Z();
                 break;
             default:

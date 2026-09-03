@@ -39,23 +39,23 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.b7;
 import org.telegram.ui.d60;
-import org.telegram.ui.ha1;
 import org.telegram.ui.ii;
+import org.telegram.ui.na1;
 import org.telegram.ui.py;
 import org.telegram.ui.wb0;
 import org.telegram.ui.xn;
 import org.telegram.ui.y3;
-import qh.ca;
-import qh.d8;
-import qh.g8;
-import qh.ga;
-import qh.ma;
-import qh.n9;
-import qh.s9;
-import qh.x7;
-import qh.x9;
+import qh.ba;
+import qh.c8;
+import qh.f8;
+import qh.fa;
+import qh.la;
+import qh.m9;
+import qh.r9;
+import qh.w7;
+import qh.w9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y1 implements Runnable {
     public final /* synthetic */ int a;
@@ -97,7 +97,7 @@ public final /* synthetic */ class y1 implements Runnable {
                 qc.a0((ja) obj).M(LocaleController.getString(R.string.Gift2ConvertedTitle), LocaleController.formatPluralStringComma("Gift2Converted", (int) j10), R.raw.stars_topup).k(true);
                 break;
             case 3:
-                qc.a0((ha1) obj).M(LocaleController.getString(R.string.Gift2ConvertedTitle), LocaleController.formatPluralStringComma("Gift2ConvertedChannel", (int) j10), R.raw.stars_topup).k(true);
+                qc.a0((na1) obj).M(LocaleController.getString(R.string.Gift2ConvertedTitle), LocaleController.formatPluralStringComma("Gift2ConvertedChannel", (int) j10), R.raw.stars_topup).k(true);
                 break;
             case 4:
                 ((oh.p) obj).s.e0(j10, false);
@@ -109,11 +109,11 @@ public final /* synthetic */ class y1 implements Runnable {
                 AndroidUtilities.runOnUIThread((r3) obj, Math.max(0L, 500 - (System.currentTimeMillis() - j10)));
                 break;
             case 7:
-                org.telegram.ui.ActionBar.p2 d02 = ha1.d0(MessagesController.getInstance(((t6) obj).a).getChat(Long.valueOf(-j10)), true);
+                org.telegram.ui.ActionBar.p2 d02 = na1.d0(MessagesController.getInstance(((t6) obj).a).getChat(Long.valueOf(-j10)), true);
                 org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
                 if (R != null) {
-                    ca caVar = ca.C2;
-                    if (caVar != null && caVar.d) {
+                    ba baVar = ba.C2;
+                    if (baVar != null && baVar.d) {
                         org.telegram.ui.ActionBar.n2 n2Var = new org.telegram.ui.ActionBar.n2();
                         n2Var.a = true;
                         R.showAsSheet(d02, n2Var);
@@ -221,53 +221,53 @@ public final /* synthetic */ class y1 implements Runnable {
                 c0Var.presentFragment(xn.R9(j10));
                 break;
             case 25:
-                x7 x7Var = (x7) obj;
-                Context context = x7Var.getContext();
-                d8 d8Var = x7Var.T;
-                org.telegram.ui.ActionBar.p2 p2Var = d8Var.attachedFragment;
-                g6Var = ((h3) d8Var).resourcesProvider;
-                z4.S(context, p2Var, g6Var, new f3.e(x7Var, j10, 11));
+                w7 w7Var = (w7) obj;
+                Context context = w7Var.getContext();
+                c8 c8Var = w7Var.T;
+                org.telegram.ui.ActionBar.p2 p2Var = c8Var.attachedFragment;
+                g6Var = ((h3) c8Var).resourcesProvider;
+                z4.S(context, p2Var, g6Var, new f3.e(w7Var, j10, 11));
                 break;
             case 26:
-                ca caVar2 = (ca) obj;
-                x9 x9Var = caVar2.C;
-                if (x9Var != null) {
-                    x9Var.f(true);
-                    caVar2.C = null;
+                ba baVar2 = (ba) obj;
+                w9 w9Var = baVar2.C;
+                if (w9Var != null) {
+                    w9Var.f(true);
+                    baVar2.C = null;
                 }
-                s9 s9Var = caVar2.x;
-                x9 a2 = s9Var != null ? s9Var.a(j10) : null;
-                caVar2.C = a2;
+                r9 r9Var = baVar2.x;
+                w9 a2 = r9Var != null ? r9Var.a(j10) : null;
+                baVar2.C = a2;
                 if (a2 != null) {
-                    caVar2.G = a2.a;
-                    caVar2.r.c();
-                    n9 n9Var = caVar2.e0;
-                    int i14 = caVar2.G;
+                    baVar2.G = a2.a;
+                    baVar2.r.c();
+                    m9 m9Var = baVar2.e0;
+                    int i14 = baVar2.G;
                     if (i14 != 1 && i14 != 0) {
                         i12 = -14737633;
                     }
-                    n9Var.setBackgroundColor(i12);
-                    caVar2.E.set(caVar2.C.c);
-                    x9 x9Var2 = caVar2.C;
-                    caVar2.D = x9Var2.b;
-                    x9Var2.e();
+                    m9Var.setBackgroundColor(i12);
+                    baVar2.E.set(baVar2.C.c);
+                    w9 w9Var2 = baVar2.C;
+                    baVar2.D = w9Var2.b;
+                    w9Var2.e();
                     if (SharedConfig.getDevicePerformanceClass() > 1) {
                         LiteMode.isEnabled(LiteMode.FLAGS_CHAT);
                     }
                 }
-                caVar2.x = null;
-                Activity activity2 = caVar2.b;
+                baVar2.x = null;
+                Activity activity2 = baVar2.b;
                 if (!(activity2 instanceof LaunchActivity)) {
-                    caVar2.q(true);
+                    baVar2.q(true);
                     break;
                 } else {
-                    ((LaunchActivity) activity2).w0.post(new g8(caVar2, i11));
+                    ((LaunchActivity) activity2).w0.post(new f8(baVar2, i11));
                     break;
                 }
             case 27:
-                ga gaVar = ((ma) obj).a;
-                if (gaVar != null) {
-                    gaVar.B(j10, false);
+                fa faVar = ((la) obj).a;
+                if (faVar != null) {
+                    faVar.B(j10, false);
                     break;
                 }
                 break;

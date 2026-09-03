@@ -31,10 +31,10 @@ import org.telegram.ui.Components.eg;
 import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.u5;
 import org.telegram.ui.Components.wg;
+import org.telegram.ui.cv0;
 import org.telegram.ui.nn;
-import org.telegram.ui.xu0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class u implements androidx.car.app.messaging.model.b, d4.j, h3.a, x, v, of.a, eg, k1, t0, pf.a, q9.a, r3.m, ra.m, ki, c9.e {
     public static u b;
@@ -328,7 +328,7 @@ public final class u implements androidx.car.app.messaging.model.b, d4.j, h3.a, 
     }
 
     @Override // org.telegram.ui.Cells.k1
-    public /* synthetic */ xu0 g2() {
+    public /* synthetic */ cv0 g2() {
         return null;
     }
 

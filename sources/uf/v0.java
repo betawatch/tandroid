@@ -4,10 +4,10 @@ import oh.c7;
 import org.telegram.messenger.MessagesController;
 import org.telegram.ui.Cells.n2;
 import org.telegram.ui.Cells.r2;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class v0 implements n2 {
     public final /* synthetic */ y0 a;
@@ -27,7 +27,7 @@ public final class v0 implements n2 {
         xn xnVar = y0Var.f;
         if (MessagesController.getInstance(y0Var.r).getStoriesController().I(r2Var.getDialogId())) {
             xnVar.getOrCreateStoryViewer().getClass();
-            xnVar.getOrCreateStoryViewer().D(y0Var.c, r2Var.getDialogId(), c7.a((tl0) r2Var.getParent()));
+            xnVar.getOrCreateStoryViewer().D(y0Var.c, r2Var.getDialogId(), c7.a((sl0) r2Var.getParent()));
         }
     }
 

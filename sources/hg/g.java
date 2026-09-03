@@ -22,14 +22,14 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.cb;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.xk;
 import org.telegram.ui.Components.yc0;
 import org.telegram.ui.ExternalActionActivity;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ci1;
-import org.telegram.ui.g51;
+import org.telegram.ui.ii1;
+import org.telegram.ui.l51;
+import org.telegram.ui.no0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class g implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
@@ -141,23 +141,23 @@ public final /* synthetic */ class g implements DialogInterface.OnDismissListene
                 launchActivity.B0.remove(d2Var);
                 break;
             case 9:
-                xk xkVar = (xk) obj;
+                no0 no0Var = (no0) obj;
                 if (!((boolean[]) obj2)[0]) {
-                    xkVar.run(Boolean.FALSE);
+                    no0Var.run(Boolean.FALSE);
                     break;
                 }
                 break;
             case 10:
-                g51 g51Var = (g51) obj2;
+                l51 l51Var = (l51) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    g51Var.c(true);
+                    l51Var.c(true);
                 }
-                g51Var.w = null;
+                l51Var.w = null;
                 break;
             case 11:
-                ci1 ci1Var = (ci1) obj2;
+                ii1 ii1Var = (ii1) obj2;
                 if (!((boolean[]) obj)[0]) {
-                    ci1Var.r0.b();
+                    ii1Var.r0.b();
                     break;
                 }
                 break;

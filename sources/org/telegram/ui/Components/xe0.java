@@ -4,7 +4,7 @@ import android.graphics.drawable.Drawable;
 import android.widget.FrameLayout;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class xe0 implements zf.d {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public final class xe0 implements zf.d {
                 if (ze0Var == null) {
                     return false;
                 }
-                PhotoViewer photoViewer = ((org.telegram.ui.zr0) ze0Var).a;
+                PhotoViewer photoViewer = ((org.telegram.ui.es0) ze0Var).a;
                 Drawable[] drawableArr = PhotoViewer.Q8;
                 return photoViewer.N0();
             case 1:
@@ -79,7 +79,7 @@ public final class xe0 implements zf.d {
                 if (ze0Var == null) {
                     return false;
                 }
-                PhotoViewer photoViewer = ((org.telegram.ui.zr0) ze0Var).a;
+                PhotoViewer photoViewer = ((org.telegram.ui.es0) ze0Var).a;
                 Drawable[] drawableArr = PhotoViewer.Q8;
                 return photoViewer.O0(-90.0f, false, null);
             case 1:
@@ -123,7 +123,7 @@ public final class xe0 implements zf.d {
                 af0Var.getClass();
                 ze0 ze0Var = af0Var.a;
                 if (ze0Var != null) {
-                    ((org.telegram.ui.zr0) ze0Var).a(false);
+                    ((org.telegram.ui.es0) ze0Var).a(false);
                     break;
                 }
                 break;

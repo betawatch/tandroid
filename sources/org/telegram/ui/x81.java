@@ -1,38 +1,222 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.style.ReplacementSpan;
+import android.graphics.drawable.Drawable;
+import android.view.ContextThemeWrapper;
+import android.view.View;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class x81 extends ReplacementSpan {
-    public final org.telegram.ui.Components.l01 a = new org.telegram.ui.Components.l01(LocaleController.getString(R.string.StakeDiceTitleBeta), 12.0f, AndroidUtilities.bold());
-    public final Paint b = new Paint(1);
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 c;
+public final class x81 extends LinearLayout {
+    public final org.telegram.ui.ActionBar.g1[] a;
 
-    public x81(org.telegram.ui.ActionBar.g6 g6Var) {
-        this.c = g6Var;
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
-        float dp = ((i12 + i14) / 2.0f) + AndroidUtilities.dp(1.0f);
-        int v02 = org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.Oh, this.c);
-        Paint paint2 = this.b;
-        paint2.setColor(v02);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f10, dp - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f) + f10 + this.a.c, AndroidUtilities.dp(9.0f) + dp);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), paint2);
-        this.a.c(f10 + AndroidUtilities.dp(8.0f), dp, 1.0f, -1, canvas);
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        return (int) (AndroidUtilities.dp(16.0f) + this.a.c);
+    public x81(ContextThemeWrapper contextThemeWrapper, final br0 br0Var) {
+        super(contextThemeWrapper);
+        this.a = new org.telegram.ui.ActionBar.g1[]{r3, r3, r2, r2, r2};
+        setOrientation(1);
+        org.telegram.ui.ActionBar.g1 c3 = org.telegram.ui.ActionBar.w0.c(false, false, this, R.drawable.msg_speed_0_2, LocaleController.getString(R.string.SpeedVerySlow), false, null);
+        c3.c(-328966, -328966);
+        final int i10 = 0;
+        c3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.w81
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i11 = i10;
+                br0 br0Var2 = br0Var;
+                switch (i11) {
+                    case 0:
+                        PhotoViewer photoViewer = br0Var2.a;
+                        Drawable[] drawableArr = PhotoViewer.Q8;
+                        photoViewer.D0(true, true, 0.2f);
+                        break;
+                    case 1:
+                        PhotoViewer photoViewer2 = br0Var2.a;
+                        Drawable[] drawableArr2 = PhotoViewer.Q8;
+                        photoViewer2.D0(true, true, 0.5f);
+                        break;
+                    case 2:
+                        PhotoViewer photoViewer3 = br0Var2.a;
+                        Drawable[] drawableArr3 = PhotoViewer.Q8;
+                        photoViewer3.D0(true, true, 1.0f);
+                        break;
+                    case 3:
+                        PhotoViewer photoViewer4 = br0Var2.a;
+                        Drawable[] drawableArr4 = PhotoViewer.Q8;
+                        photoViewer4.D0(true, true, 1.5f);
+                        break;
+                    default:
+                        PhotoViewer photoViewer5 = br0Var2.a;
+                        Drawable[] drawableArr5 = PhotoViewer.Q8;
+                        photoViewer5.D0(true, true, 2.0f);
+                        break;
+                }
+            }
+        });
+        c3.setSelectorColor(268435455);
+        org.telegram.ui.ActionBar.g1 c10 = org.telegram.ui.ActionBar.w0.c(false, false, this, R.drawable.msg_speed_slow, LocaleController.getString(R.string.SpeedSlow), false, null);
+        c10.c(-328966, -328966);
+        final int i11 = 1;
+        c10.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.w81
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i112 = i11;
+                br0 br0Var2 = br0Var;
+                switch (i112) {
+                    case 0:
+                        PhotoViewer photoViewer = br0Var2.a;
+                        Drawable[] drawableArr = PhotoViewer.Q8;
+                        photoViewer.D0(true, true, 0.2f);
+                        break;
+                    case 1:
+                        PhotoViewer photoViewer2 = br0Var2.a;
+                        Drawable[] drawableArr2 = PhotoViewer.Q8;
+                        photoViewer2.D0(true, true, 0.5f);
+                        break;
+                    case 2:
+                        PhotoViewer photoViewer3 = br0Var2.a;
+                        Drawable[] drawableArr3 = PhotoViewer.Q8;
+                        photoViewer3.D0(true, true, 1.0f);
+                        break;
+                    case 3:
+                        PhotoViewer photoViewer4 = br0Var2.a;
+                        Drawable[] drawableArr4 = PhotoViewer.Q8;
+                        photoViewer4.D0(true, true, 1.5f);
+                        break;
+                    default:
+                        PhotoViewer photoViewer5 = br0Var2.a;
+                        Drawable[] drawableArr5 = PhotoViewer.Q8;
+                        photoViewer5.D0(true, true, 2.0f);
+                        break;
+                }
+            }
+        });
+        c10.setSelectorColor(268435455);
+        org.telegram.ui.ActionBar.g1 c11 = org.telegram.ui.ActionBar.w0.c(false, false, this, R.drawable.msg_speed_normal, LocaleController.getString(R.string.SpeedNormal), false, null);
+        c11.c(-328966, -328966);
+        final int i12 = 2;
+        c11.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.w81
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i112 = i12;
+                br0 br0Var2 = br0Var;
+                switch (i112) {
+                    case 0:
+                        PhotoViewer photoViewer = br0Var2.a;
+                        Drawable[] drawableArr = PhotoViewer.Q8;
+                        photoViewer.D0(true, true, 0.2f);
+                        break;
+                    case 1:
+                        PhotoViewer photoViewer2 = br0Var2.a;
+                        Drawable[] drawableArr2 = PhotoViewer.Q8;
+                        photoViewer2.D0(true, true, 0.5f);
+                        break;
+                    case 2:
+                        PhotoViewer photoViewer3 = br0Var2.a;
+                        Drawable[] drawableArr3 = PhotoViewer.Q8;
+                        photoViewer3.D0(true, true, 1.0f);
+                        break;
+                    case 3:
+                        PhotoViewer photoViewer4 = br0Var2.a;
+                        Drawable[] drawableArr4 = PhotoViewer.Q8;
+                        photoViewer4.D0(true, true, 1.5f);
+                        break;
+                    default:
+                        PhotoViewer photoViewer5 = br0Var2.a;
+                        Drawable[] drawableArr5 = PhotoViewer.Q8;
+                        photoViewer5.D0(true, true, 2.0f);
+                        break;
+                }
+            }
+        });
+        c11.setSelectorColor(268435455);
+        org.telegram.ui.ActionBar.g1 c12 = org.telegram.ui.ActionBar.w0.c(false, false, this, R.drawable.msg_speed_fast, LocaleController.getString(R.string.SpeedFast), false, null);
+        c12.c(-328966, -328966);
+        final int i13 = 3;
+        c12.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.w81
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i112 = i13;
+                br0 br0Var2 = br0Var;
+                switch (i112) {
+                    case 0:
+                        PhotoViewer photoViewer = br0Var2.a;
+                        Drawable[] drawableArr = PhotoViewer.Q8;
+                        photoViewer.D0(true, true, 0.2f);
+                        break;
+                    case 1:
+                        PhotoViewer photoViewer2 = br0Var2.a;
+                        Drawable[] drawableArr2 = PhotoViewer.Q8;
+                        photoViewer2.D0(true, true, 0.5f);
+                        break;
+                    case 2:
+                        PhotoViewer photoViewer3 = br0Var2.a;
+                        Drawable[] drawableArr3 = PhotoViewer.Q8;
+                        photoViewer3.D0(true, true, 1.0f);
+                        break;
+                    case 3:
+                        PhotoViewer photoViewer4 = br0Var2.a;
+                        Drawable[] drawableArr4 = PhotoViewer.Q8;
+                        photoViewer4.D0(true, true, 1.5f);
+                        break;
+                    default:
+                        PhotoViewer photoViewer5 = br0Var2.a;
+                        Drawable[] drawableArr5 = PhotoViewer.Q8;
+                        photoViewer5.D0(true, true, 2.0f);
+                        break;
+                }
+            }
+        });
+        c12.setSelectorColor(268435455);
+        org.telegram.ui.ActionBar.g1 c13 = org.telegram.ui.ActionBar.w0.c(false, false, this, R.drawable.msg_speed_superfast, LocaleController.getString(R.string.SpeedVeryFast), false, null);
+        c13.c(-328966, -328966);
+        final int i14 = 4;
+        c13.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.w81
+            @Override // android.view.View.OnClickListener
+            public final void onClick(View view) {
+                int i112 = i14;
+                br0 br0Var2 = br0Var;
+                switch (i112) {
+                    case 0:
+                        PhotoViewer photoViewer = br0Var2.a;
+                        Drawable[] drawableArr = PhotoViewer.Q8;
+                        photoViewer.D0(true, true, 0.2f);
+                        break;
+                    case 1:
+                        PhotoViewer photoViewer2 = br0Var2.a;
+                        Drawable[] drawableArr2 = PhotoViewer.Q8;
+                        photoViewer2.D0(true, true, 0.5f);
+                        break;
+                    case 2:
+                        PhotoViewer photoViewer3 = br0Var2.a;
+                        Drawable[] drawableArr3 = PhotoViewer.Q8;
+                        photoViewer3.D0(true, true, 1.0f);
+                        break;
+                    case 3:
+                        PhotoViewer photoViewer4 = br0Var2.a;
+                        Drawable[] drawableArr4 = PhotoViewer.Q8;
+                        photoViewer4.D0(true, true, 1.5f);
+                        break;
+                    default:
+                        PhotoViewer photoViewer5 = br0Var2.a;
+                        Drawable[] drawableArr5 = PhotoViewer.Q8;
+                        photoViewer5.D0(true, true, 2.0f);
+                        break;
+                }
+            }
+        });
+        c13.setSelectorColor(268435455);
+        View h51Var = new h51(contextThemeWrapper, 1);
+        h51Var.setMinimumWidth(AndroidUtilities.dp(196.0f));
+        h51Var.setBackgroundColor(-15198184);
+        addView(h51Var);
+        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) h51Var.getLayoutParams();
+        if (LocaleController.isRTL) {
+            layoutParams.gravity = 5;
+        }
+        layoutParams.width = -1;
+        layoutParams.height = AndroidUtilities.dp(8.0f);
+        h51Var.setLayoutParams(layoutParams);
     }
 }

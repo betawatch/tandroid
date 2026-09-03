@@ -4,9 +4,9 @@ import android.content.Context;
 import android.hardware.Sensor;
 import android.hardware.SensorManager;
 import org.telegram.messenger.AndroidUtilities;
-import qh.v9;
+import qh.u9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class u0 {
     public final SensorManager a;
@@ -21,10 +21,10 @@ public final class u0 {
     public long j;
     public org.telegram.ui.web.x0 k;
     public boolean l;
-    public v9 m;
-    public v9 o;
-    public v9 q;
-    public v9 s;
+    public u9 m;
+    public u9 o;
+    public u9 q;
+    public u9 s;
     public final r0 n = new r0(this, 0);
     public final r0 p = new r0(this, 1);
     public final s0 r = new s0(this);
@@ -52,18 +52,18 @@ public final class u0 {
             if (sensor != null) {
                 sensorManager.unregisterListener(this.n, sensor);
             }
-            v9 v9Var = this.m;
-            if (v9Var != null) {
-                AndroidUtilities.cancelRunOnUIThread(v9Var);
+            u9 u9Var = this.m;
+            if (u9Var != null) {
+                AndroidUtilities.cancelRunOnUIThread(u9Var);
                 this.m = null;
             }
             Sensor sensor2 = this.d;
             if (sensor2 != null) {
                 sensorManager.unregisterListener(this.p, sensor2);
             }
-            v9 v9Var2 = this.o;
-            if (v9Var2 != null) {
-                AndroidUtilities.cancelRunOnUIThread(v9Var2);
+            u9 u9Var2 = this.o;
+            if (u9Var2 != null) {
+                AndroidUtilities.cancelRunOnUIThread(u9Var2);
                 this.o = null;
             }
             Sensor sensor3 = this.g;
@@ -75,18 +75,18 @@ public final class u0 {
             if (sensor4 != null) {
                 sensorManager.unregisterListener(s0Var, sensor4);
             }
-            v9 v9Var3 = this.q;
-            if (v9Var3 != null) {
-                AndroidUtilities.cancelRunOnUIThread(v9Var3);
+            u9 u9Var3 = this.q;
+            if (u9Var3 != null) {
+                AndroidUtilities.cancelRunOnUIThread(u9Var3);
                 this.q = null;
             }
             Sensor sensor5 = this.i;
             if (sensor5 != null) {
                 sensorManager.unregisterListener(this.t, sensor5);
             }
-            v9 v9Var4 = this.s;
-            if (v9Var4 != null) {
-                AndroidUtilities.cancelRunOnUIThread(v9Var4);
+            u9 u9Var4 = this.s;
+            if (u9Var4 != null) {
+                AndroidUtilities.cancelRunOnUIThread(u9Var4);
                 this.s = null;
             }
         }
@@ -140,9 +140,9 @@ public final class u0 {
         s0 s0Var = this.r;
         if (z4) {
             if (this.i != null) {
-                v9 v9Var = this.s;
-                if (v9Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(v9Var);
+                u9 u9Var = this.s;
+                if (u9Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(u9Var);
                     this.s = null;
                 }
                 if (!this.l && (sensor = this.i) != null) {
@@ -167,9 +167,9 @@ public final class u0 {
             }
         } else {
             if (this.f != null || this.g != null) {
-                v9 v9Var2 = this.q;
-                if (v9Var2 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(v9Var2);
+                u9 u9Var2 = this.q;
+                if (u9Var2 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(u9Var2);
                     this.q = null;
                 }
                 if (!this.l) {
@@ -212,9 +212,9 @@ public final class u0 {
         if (!this.l) {
             sensorManager.unregisterListener(this.n, sensor);
         }
-        v9 v9Var = this.m;
-        if (v9Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(v9Var);
+        u9 u9Var = this.m;
+        if (u9Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(u9Var);
             this.m = null;
         }
         this.b = null;
@@ -233,9 +233,9 @@ public final class u0 {
         if (!this.l) {
             sensorManager.unregisterListener(this.p, sensor);
         }
-        v9 v9Var = this.o;
-        if (v9Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(v9Var);
+        u9 u9Var = this.o;
+        if (u9Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(u9Var);
             this.o = null;
         }
         this.d = null;
@@ -265,14 +265,14 @@ public final class u0 {
                 sensorManager.unregisterListener(this.t, sensor3);
             }
         }
-        v9 v9Var = this.q;
-        if (v9Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(v9Var);
+        u9 u9Var = this.q;
+        if (u9Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(u9Var);
             this.q = null;
         }
-        v9 v9Var2 = this.s;
-        if (v9Var2 != null) {
-            AndroidUtilities.cancelRunOnUIThread(v9Var2);
+        u9 u9Var2 = this.s;
+        if (u9Var2 != null) {
+            AndroidUtilities.cancelRunOnUIThread(u9Var2);
             this.s = null;
         }
         this.g = null;

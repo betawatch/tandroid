@@ -12,7 +12,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class du implements my {
     public final /* synthetic */ fu a;
@@ -57,9 +57,9 @@ public final class du implements my {
         if (fuVar.b()) {
             fuVar.x = i10 != 0;
             fuVar.y();
-            qv0 qv0Var = fuVar.f;
-            if (qv0Var != null) {
-                qv0Var.S();
+            pv0 pv0Var = fuVar.f;
+            if (pv0Var != null) {
+                pv0Var.S();
             }
         }
     }
@@ -102,7 +102,7 @@ public final class du implements my {
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(fuVar.getContext(), 0, fuVar.J);
         alertDialog$Builder.a.O = LocaleController.getString(R.string.ClearRecentEmojiTitle);
         alertDialog$Builder.a.Q = LocaleController.getString(R.string.ClearRecentEmojiText);
-        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new v81(this));
+        alertDialog$Builder.k(LocaleController.getString(R.string.ClearButton), new u81(this));
         alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
         org.telegram.ui.ActionBar.p2 p2Var = fuVar.h;
         if (p2Var != null) {
@@ -160,7 +160,7 @@ public final class du implements my {
     }
 
     @Override // org.telegram.ui.Components.my
-    public final /* synthetic */ void o(f51 f51Var) {
+    public final /* synthetic */ void o(d51 d51Var) {
     }
 
     @Override // org.telegram.ui.Components.my

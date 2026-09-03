@@ -7,22 +7,22 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class g10 extends au0 {
+public final class g10 extends fu0 {
     public final /* synthetic */ t10 a;
 
     public g10(t10 t10Var) {
         this.a = t10Var;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final CharSequence C(int i10) {
         return LocaleController.formatDateAudio(((MessageObject) this.a.f.get(i10)).messageOwner.date, false);
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
-    public final lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
         ImageReceiver photoImage;
         View pinnedHeader;
         if (messageObject != null) {
@@ -69,25 +69,25 @@ public final class g10 extends au0 {
                     photoImage = null;
                 }
                 if (photoImage != null) {
-                    lu0 lu0Var = new lu0();
-                    lu0Var.b = iArr[0];
-                    lu0Var.c = iArr[1];
-                    lu0Var.d = d1Var;
+                    qu0 qu0Var = new qu0();
+                    qu0Var.b = iArr[0];
+                    qu0Var.c = iArr[1];
+                    qu0Var.d = d1Var;
                     d1Var.getLocationInWindow(iArr);
-                    lu0Var.n = -iArr[1];
-                    lu0Var.a = photoImage;
-                    lu0Var.o = false;
-                    lu0Var.h = photoImage.getRoundRadius(true);
-                    lu0Var.e = lu0Var.a.getBitmapSafe();
-                    lu0Var.d.getLocationInWindow(iArr);
-                    lu0Var.j = 0;
+                    qu0Var.n = -iArr[1];
+                    qu0Var.a = photoImage;
+                    qu0Var.o = false;
+                    qu0Var.h = photoImage.getRoundRadius(true);
+                    qu0Var.e = qu0Var.a.getBitmapSafe();
+                    qu0Var.d.getLocationInWindow(iArr);
+                    qu0Var.j = 0;
                     if (PhotoViewer.M1(messageObject) && (pinnedHeader = d1Var.getPinnedHeader()) != null) {
-                        int dp = (childAt instanceof org.telegram.ui.Cells.i7 ? AndroidUtilities.dp(8.0f) : 0) - lu0Var.c;
+                        int dp = (childAt instanceof org.telegram.ui.Cells.i7 ? AndroidUtilities.dp(8.0f) : 0) - qu0Var.c;
                         if (dp > childAt.getHeight()) {
                             d1Var.scrollBy(0, -(pinnedHeader.getHeight() + dp));
-                            return lu0Var;
+                            return qu0Var;
                         }
-                        int height = lu0Var.c - d1Var.getHeight();
+                        int height = qu0Var.c - d1Var.getHeight();
                         if (childAt instanceof org.telegram.ui.Cells.i7) {
                             height -= AndroidUtilities.dp(8.0f);
                         }
@@ -95,14 +95,14 @@ public final class g10 extends au0 {
                             d1Var.scrollBy(0, childAt.getHeight() + height);
                         }
                     }
-                    return lu0Var;
+                    return qu0Var;
                 }
             }
         }
         return null;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final boolean Y() {
         t10 t10Var = this.a;
         if (t10Var.K) {
@@ -112,12 +112,12 @@ public final class g10 extends au0 {
         return true;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final CharSequence b0(int i10) {
         return t10.d((MessageObject) this.a.f.get(i10), true, 0, null);
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final int y() {
         return this.a.L;
     }

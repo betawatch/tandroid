@@ -11,7 +11,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class m0 extends org.telegram.ui.web.t1 {
     public final /* synthetic */ l4 y0;
@@ -129,7 +129,7 @@ public final class m0 extends org.telegram.ui.web.t1 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(this.U, z4 ? 1.0f : 0.0f);
             this.t0 = ofFloat;
             ofFloat.addUpdateListener(new oh.f5(this, 10));
-            this.t0.addListener(new qd1(3, this, z4));
+            this.t0.addListener(new vd1(3, this, z4));
             this.t0.setInterpolator(org.telegram.ui.Components.pr.h);
             this.t0.setDuration(360L);
             this.t0.start();

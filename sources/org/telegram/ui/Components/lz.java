@@ -10,7 +10,7 @@ import android.widget.HorizontalScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class lz extends f2.a1 {
     public final int a;
@@ -75,7 +75,7 @@ public class lz extends f2.a1 {
                 float dpf2 = AndroidUtilities.dpf2(i11 == 1 ? 36.0f : 48.0f);
                 float f10 = iArr[i11] / (-dpf2);
                 if (f10 <= 0.0f || f10 >= 1.0f) {
-                    tl0 x10 = mzVar.x(i11);
+                    sl0 x10 = mzVar.x(i11);
                     int dp = AndroidUtilities.dp(i11 == 1 ? 38.0f : 48.0f);
                     f2.m1 K = x10.K(0);
                     if (K != null) {

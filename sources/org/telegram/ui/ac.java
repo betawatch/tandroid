@@ -19,11 +19,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ac extends FrameLayout {
     public final yb B;
-    public final org.telegram.ui.Components.tl0 C;
+    public final org.telegram.ui.Components.sl0 C;
     public og.k D;
     public boolean E;
     public final LinearLayout F;
@@ -36,7 +36,7 @@ public final class ac extends FrameLayout {
     public int M;
     public final long a;
     public final int b;
-    public final ha1 c;
+    public final na1 c;
     public TL_stories.TL_premium_boostsStatus d;
     public final org.telegram.ui.ActionBar.g6 e;
     public ScrollSlidingTextTabStrip f;
@@ -49,8 +49,8 @@ public final class ac extends FrameLayout {
     public final ArrayList x;
     public int y;
 
-    public ac(ha1 ha1Var, long j10, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(ha1Var.getParentActivity());
+    public ac(na1 na1Var, long j10, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(na1Var.getParentActivity());
         int i10 = UserConfig.selectedAccount;
         this.b = i10;
         this.h = new ArrayList();
@@ -63,34 +63,34 @@ public final class ac extends FrameLayout {
         this.I = "";
         this.J = 5;
         this.K = 5;
-        this.c = ha1Var;
-        Activity parentActivity = ha1Var.getParentActivity();
+        this.c = na1Var;
+        Activity parentActivity = na1Var.getParentActivity();
         this.e = g6Var;
         this.a = j10;
         this.G = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(parentActivity, null);
-        this.C = tl0Var;
-        tl0Var.setSections(true);
-        tl0Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.a7, g6Var));
-        tl0Var.setLayoutManager(new f2.j0());
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(parentActivity, null);
+        this.C = sl0Var;
+        sl0Var.setSections(true);
+        sl0Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.a7, g6Var));
+        sl0Var.setLayoutManager(new f2.j0());
         f2.l lVar = new f2.l();
         lVar.m = false;
         lVar.C = false;
-        tl0Var.setItemAnimator(lVar);
-        tl0Var.setClipToPadding(false);
-        tl0Var.setOnItemClickListener(new tb(this, parentActivity, j10, g6Var, ha1Var));
-        addView(tl0Var);
+        sl0Var.setItemAnimator(lVar);
+        sl0Var.setClipToPadding(false);
+        sl0Var.setOnItemClickListener(new tb(this, parentActivity, j10, g6Var, na1Var));
+        addView(sl0Var);
         MessagesController.getInstance(i10).getBoostsController().getBoostsStats(j10, new vb(this, 0));
-        tl0Var.setAdapter(ybVar);
+        sl0Var.setAdapter(ybVar);
         d(false);
         Context context = getContext();
         LinearLayout linearLayout = new LinearLayout(context);
         this.F = linearLayout;
         linearLayout.setOrientation(1);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        lj0Var.setAutoRepeat(true);
-        lj0Var.f(R.raw.statistic_preload, 120, 120, null);
-        lj0Var.d();
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
+        kj0Var.setAutoRepeat(true);
+        kj0Var.f(R.raw.statistic_preload, 120, 120, null);
+        kj0Var.d();
         TextView g10 = org.telegram.messenger.y3.g(context, 1, 20.0f);
         g10.setTypeface(AndroidUtilities.bold());
         int i11 = org.telegram.ui.ActionBar.k6.Oi;
@@ -104,7 +104,7 @@ public final class ac extends FrameLayout {
         textView.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i12, false));
         textView.setTag(Integer.valueOf(i12));
         org.telegram.messenger.y3.r(R.string.LoadingStatsDescription, textView, 1);
-        this.F.addView(lj0Var, k7.c6.t(120, 120, 1, 0, 0, 0, 20));
+        this.F.addView(kj0Var, k7.c6.t(120, 120, 1, 0, 0, 0, 20));
         this.F.addView(g10, k7.c6.t(-2, -2, 1, 0, 0, 0, 10));
         this.F.addView(textView, k7.c6.q(-2, -2, 1));
         addView(this.F, k7.c6.d(240, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));

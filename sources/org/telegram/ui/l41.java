@@ -1,120 +1,66 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.MotionEvent;
+import android.animation.Animator;
+import android.animation.ObjectAnimator;
+import android.transition.Fade;
+import android.transition.TransitionValues;
 import android.view.View;
-import android.widget.FrameLayout;
-import java.util.Locale;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class l41 extends FrameLayout {
-    public float a;
-    public final boolean b;
-    public final boolean c;
-    public boolean d;
-    public int e;
-    public final kb.a f;
-    public final o1.j h;
-    public final u0 n;
-    public final /* synthetic */ SecretMediaViewer r;
+public final class l41 extends Fade {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ SecretMediaViewer d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l41(SecretMediaViewer secretMediaViewer, Activity activity) {
-        super(activity);
-        this.r = secretMediaViewer;
-        this.a = 1.0f;
-        this.b = true;
-        this.c = true;
-        kb.a aVar = new kb.a(0.0f);
-        this.f = aVar;
-        o1.j jVar = new o1.j(aVar);
-        jVar.u = yh.n(0.0f, 750.0f, 1.0f);
-        jVar.b(new md0(this, 5));
-        this.h = jVar;
-        this.n = new u0("progress", 6);
-        setWillNotDraw(false);
+    public l41(SecretMediaViewer secretMediaViewer, boolean z4, boolean z10, int i10) {
+        super(1);
+        this.a = i10;
+        switch (i10) {
+            case 1:
+                this.d = secretMediaViewer;
+                this.b = z4;
+                this.c = z10;
+                super(2);
+                break;
+            default:
+                this.d = secretMediaViewer;
+                this.b = z4;
+                this.c = z10;
+                break;
+        }
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.f.a = 0.0f;
-        this.e = 0;
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 0:
+                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+                if (this.b && !this.c && view == this.d.W) {
+                    onAppear.addListener(new ss0(this, 16));
+                    ((ObjectAnimator) onAppear).addUpdateListener(new n11(this, 4));
+                }
+                return onAppear;
+            default:
+                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
+        }
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        SecretMediaViewer secretMediaViewer = this.r;
-        secretMediaViewer.N.h(secretMediaViewer.y != null ? r3.n() / secretMediaViewer.y.p() : 0.0f, false);
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:4:0x002a, code lost:
-    
-        if (r12 == (-9223372036854775807L)) goto L6;
-     */
-    @Override // android.widget.FrameLayout, android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onMeasure(int i10, int i11) {
-        long j10;
-        this.d = true;
-        SecretMediaViewer secretMediaViewer = this.r;
-        ((FrameLayout.LayoutParams) secretMediaViewer.P.getLayoutParams()).rightMargin = AndroidUtilities.dp(12.0f);
-        this.d = false;
-        super.onMeasure(i10, i11);
-        j41 j41Var = secretMediaViewer.y;
-        if (j41Var != null) {
-            j10 = j41Var.p();
+    @Override // android.transition.Fade, android.transition.Visibility
+    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+        switch (this.a) {
+            case 1:
+                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                if (!this.b && this.c && view == this.d.W) {
+                    onDisappear.addListener(new ss0(this, 17));
+                    ((ObjectAnimator) onDisappear).addUpdateListener(new n11(this, 5));
+                }
+                return onDisappear;
+            default:
+                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
         }
-        j10 = 0;
-        int ceil = (int) Math.ceil(secretMediaViewer.P.getPaint().measureText(String.format(Locale.ROOT, "%1$s / %1$s", (j10 / 1000) / 60 > 60 ? String.format(Locale.ROOT, "%02d:%02d:%02d", Long.valueOf(r5 / 60), Long.valueOf(r5 % 60), Long.valueOf(r12 % 60)) : String.format(Locale.ROOT, "%02d:%02d", Long.valueOf(r5), Long.valueOf(r12 % 60)))));
-        o1.j jVar = this.h;
-        jVar.c();
-        int i12 = this.e;
-        kb.a aVar = this.f;
-        if (i12 != 0) {
-            float f10 = ceil;
-            if (aVar.a != f10) {
-                jVar.u.i = f10;
-                jVar.f();
-                this.e = ceil;
-            }
-        }
-        org.telegram.ui.Components.m71 m71Var = secretMediaViewer.N;
-        int B = org.telegram.messenger.y3.B(16.0f, getMeasuredWidth(), ceil);
-        int measuredHeight = getMeasuredHeight();
-        m71Var.h = B;
-        m71Var.i = measuredHeight;
-        View view = m71Var.v;
-        if (view != null) {
-            view.invalidate();
-        }
-        aVar.a = ceil;
-        this.e = ceil;
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (this.a < 1.0f) {
-            return false;
-        }
-        SecretMediaViewer secretMediaViewer = this.r;
-        if (secretMediaViewer.N.e(motionEvent.getX() - AndroidUtilities.dp(2.0f), motionEvent.getY(), motionEvent.getAction())) {
-            getParent().requestDisallowInterceptTouchEvent(true);
-            secretMediaViewer.O.invalidate();
-        }
-        return true;
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.d) {
-            return;
-        }
-        super.requestLayout();
     }
 }

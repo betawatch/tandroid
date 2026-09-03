@@ -8,12 +8,13 @@ import android.graphics.drawable.NinePatchDrawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract class r {
     public static final Rect a = new Rect();
 
     static {
+        new Rect();
         new RectF();
     }
 
@@ -73,12 +74,12 @@ public abstract class r {
         }
     }
 
-    public static void g(NinePatchDrawable ninePatchDrawable, int i10, int i11, int i12, int i13) {
+    public static void g(Drawable drawable, int i10, int i11, int i12, int i13) {
         Rect rect = a;
-        if (ninePatchDrawable.getPadding(rect)) {
-            ninePatchDrawable.setBounds(i10 - rect.left, i11 - rect.top, i12 + rect.right, i13 + rect.bottom);
+        if (drawable.getPadding(rect)) {
+            drawable.setBounds(i10 - rect.left, i11 - rect.top, i12 + rect.right, i13 + rect.bottom);
         } else {
-            ninePatchDrawable.setBounds(i10, i11, i12, i13);
+            drawable.setBounds(i10, i11, i12, i13);
         }
     }
 

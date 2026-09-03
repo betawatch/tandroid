@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class r4 extends ArrayAdapter {
     public final /* synthetic */ x4 a;
@@ -27,7 +27,7 @@ public final class r4 extends ArrayAdapter {
             int i11 = nVar.a;
             z4.e(view, menuItem, ((x4) nVar.e).Q.j != null);
         } else {
-            view = z4.b(((x4) nVar.e).Q, nVar.c, menuItem, true, false, false);
+            view = z4.b(((x4) nVar.e).Q, (Context) nVar.c, menuItem, true, false, false);
             int i12 = nVar.b;
             view.setPadding(i12, 0, i12, 0);
         }

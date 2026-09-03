@@ -8,9 +8,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class dn extends org.telegram.ui.Components.mq0 {
+public final class dn extends org.telegram.ui.Components.lq0 {
     public final /* synthetic */ MessageObject Y0;
     public final /* synthetic */ jn Z0;
 
@@ -22,7 +22,7 @@ public final class dn extends org.telegram.ui.Components.mq0 {
         this.X = z11;
     }
 
-    @Override // org.telegram.ui.Components.mq0
+    @Override // org.telegram.ui.Components.lq0
     public final void R0(a0.h hVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z4) {
         jn jnVar = this.Z0;
         xn xnVar = jnVar.a;
@@ -41,10 +41,10 @@ public final class dn extends org.telegram.ui.Components.mq0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.mq0
+    @Override // org.telegram.ui.Components.lq0
     public final void S0(final View view) {
         xn xnVar = this.Z0.a;
-        qh.u9 b10 = view instanceof org.telegram.ui.Cells.e7 ? qh.x9.b((org.telegram.ui.Cells.e7) view) : null;
+        qh.t9 b10 = view instanceof org.telegram.ui.Cells.e7 ? qh.w9.b((org.telegram.ui.Cells.e7) view) : null;
         ArrayList arrayList = new ArrayList();
         MessageObject messageObject = this.Y0;
         MessageObject.GroupedMessages groupedMessages = messageObject.getGroupId() != 0 ? (MessageObject.GroupedMessages) xnVar.u6.f(messageObject.getGroupId()) : null;
@@ -53,34 +53,34 @@ public final class dn extends org.telegram.ui.Components.mq0 {
         } else {
             arrayList.add(messageObject);
         }
-        final qh.ca E = qh.ca.E(xnVar.getParentActivity(), this.currentAccount);
+        final qh.ba E = qh.ba.E(xnVar.getParentActivity(), this.currentAccount);
         E.O = new Utilities.Callback4() { // from class: org.telegram.ui.ym
             @Override // org.telegram.messenger.Utilities.Callback4
             public final void run(Object obj, Object obj2, Object obj3, Object obj4) {
                 Runnable runnable = (Runnable) obj2;
                 Long l10 = (Long) obj4;
                 boolean booleanValue = ((Boolean) obj3).booleanValue();
-                qh.ca caVar = E;
-                qh.u9 u9Var = null;
+                qh.ba baVar = E;
+                qh.t9 t9Var = null;
                 if (booleanValue) {
                     dn dnVar = dn.this;
-                    AndroidUtilities.runOnUIThread(new fc(24, dnVar, l10));
+                    AndroidUtilities.runOnUIThread(new xc(23, dnVar, l10));
                     dnVar.dismiss();
-                    caVar.Y(null);
+                    baVar.Y(null);
                 } else {
                     View view2 = view;
                     if ((view2 instanceof org.telegram.ui.Cells.e7) && view2.isAttachedToWindow()) {
-                        u9Var = qh.x9.b((org.telegram.ui.Cells.e7) view2);
+                        t9Var = qh.w9.b((org.telegram.ui.Cells.e7) view2);
                     }
-                    caVar.Y(u9Var);
+                    baVar.Y(t9Var);
                 }
                 AndroidUtilities.runOnUIThread(runnable);
             }
         };
-        E.U(b10, qh.s6.y(arrayList));
+        E.U(b10, qh.r6.y(arrayList));
     }
 
-    @Override // org.telegram.ui.Components.mq0, org.telegram.ui.ActionBar.h3
+    @Override // org.telegram.ui.Components.lq0, org.telegram.ui.ActionBar.h3
     public final void dismissInternal() {
         int i10;
         xn xnVar = this.Z0.a;

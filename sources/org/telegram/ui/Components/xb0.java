@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class xb0 extends View {
     public final j6 a;
@@ -45,19 +45,19 @@ public final class xb0 extends View {
         this.h = max;
         j6Var.G = max;
         tb0 tb0Var = new tb0(0);
-        ij0 ij0Var = new ij0(i10, AndroidUtilities.dp(24.0f), l.d.j(i10, ""), AndroidUtilities.dp(24.0f));
-        tb0Var.c = ij0Var;
-        ij0Var.s0 = this;
-        ij0Var.H(true);
-        ij0Var.h = true;
-        ij0Var.I(0);
-        ij0 ij0Var2 = new ij0(i11, AndroidUtilities.dp(24.0f), l.d.j(i11, ""), AndroidUtilities.dp(24.0f));
-        tb0Var.d = ij0Var2;
-        ij0Var2.s0 = this;
-        ij0Var2.H(true);
-        ij0Var2.h = true;
-        ij0Var2.I(0);
-        tb0Var.e = ij0Var;
+        hj0 hj0Var = new hj0(i10, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+        tb0Var.c = hj0Var;
+        hj0Var.s0 = this;
+        hj0Var.H(true);
+        hj0Var.h = true;
+        hj0Var.I(0);
+        hj0 hj0Var2 = new hj0(i11, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f));
+        tb0Var.d = hj0Var2;
+        hj0Var2.s0 = this;
+        hj0Var2.H(true);
+        hj0Var2.h = true;
+        hj0Var2.I(0);
+        tb0Var.e = hj0Var;
         this.b = tb0Var;
         tb0Var.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.F8, g6Var), PorterDuff.Mode.SRC_IN));
     }
@@ -70,20 +70,20 @@ public final class xb0 extends View {
             j6 j6Var = this.a;
             j6Var.q(str, z11, true);
             tb0 tb0Var = this.b;
-            ij0 ij0Var = (ij0) tb0Var.d;
-            ij0 ij0Var2 = (ij0) tb0Var.c;
+            hj0 hj0Var = (hj0) tb0Var.d;
+            hj0 hj0Var2 = (hj0) tb0Var.c;
             tb0Var.b = z4;
             if (z10) {
-                tb0Var.e = z4 ? ij0Var2 : ij0Var;
-                ij0Var2.K(0);
-                ij0Var.K(0);
-                ((ij0) tb0Var.e).start();
+                tb0Var.e = z4 ? hj0Var2 : hj0Var;
+                hj0Var2.K(0);
+                hj0Var.K(0);
+                ((hj0) tb0Var.e).start();
             } else {
                 if (z4) {
-                    ij0Var = ij0Var2;
+                    hj0Var = hj0Var2;
                 }
-                tb0Var.e = ij0Var;
-                ij0Var.K(ij0Var.e[0] - 1);
+                tb0Var.e = hj0Var;
+                hj0Var.K(hj0Var.e[0] - 1);
             }
             this.c = false;
             setContentDescription(j6Var.g);

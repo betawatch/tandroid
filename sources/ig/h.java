@@ -27,19 +27,19 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.o8;
 import org.telegram.ui.Cells.t3;
 import org.telegram.ui.Cells.u3;
-import org.telegram.ui.Components.ax0;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.zw0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class h extends cg.c {
     public final g6 d;
     public final Context e;
-    public tl0 f;
+    public sl0 f;
     public ArrayList h;
     public boolean r;
     public u3 s;
@@ -57,7 +57,7 @@ public final class h extends cg.c {
         messagesStorage.getStorageQueue().postRunnable(new gf.c(8, messagesStorage, h0Var));
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(m1 m1Var) {
         int i10 = m1Var.f;
         return i10 == 3 || i10 == 6 || i10 == 9;
@@ -136,7 +136,7 @@ public final class h extends cg.c {
             }
             if (i12 == 5) {
                 try {
-                    ((ax0) view).b.getImageReceiver().startAnimation();
+                    ((zw0) view).b.getImageReceiver().startAnimation();
                     return;
                 } catch (Exception unused) {
                     return;
@@ -272,11 +272,11 @@ public final class h extends cg.c {
         } else {
             g6 g6Var = this.d;
             if (i10 == 5) {
-                ax0 ax0Var = new ax0(context, null, 1, g6Var);
-                ax0Var.d.setText(LocaleController.getString(R.string.NoResult));
-                ax0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
-                ax0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
-                nVar = ax0Var;
+                zw0 zw0Var = new zw0(context, null, 1, g6Var);
+                zw0Var.d.setText(LocaleController.getString(R.string.NoResult));
+                zw0Var.e.setText(LocaleController.getString(R.string.SearchEmptyViewFilteredSubtitle2));
+                zw0Var.a.setTranslationY(AndroidUtilities.dp(24.0f));
+                nVar = zw0Var;
             } else if (i10 == 7) {
                 nVar = new lg.e(context, g6Var);
             } else if (i10 == 6) {
@@ -292,7 +292,7 @@ public final class h extends cg.c {
                 nVar = i10 == 10 ? new FrameLayout(context) : new View(context);
             }
         }
-        return new fl0(nVar);
+        return new el0(nVar);
     }
 
     @Override // f2.p0

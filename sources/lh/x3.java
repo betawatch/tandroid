@@ -32,19 +32,19 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.ic;
+import org.telegram.ui.Components.k81;
 import org.telegram.ui.Components.l70;
-import org.telegram.ui.Components.l81;
 import org.telegram.ui.Components.nb;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.oq;
+import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.pr0;
 import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract class x3 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final HashMap Q = new HashMap();
@@ -70,7 +70,7 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
     public final j7 e;
     public final g6 f;
     public final q2 h;
-    public final l81 n;
+    public final k81 n;
     public final FrameLayout r;
     public final SpannableStringBuilder s;
     public final SpannableStringBuilder v;
@@ -89,9 +89,9 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
         int i11;
         String str;
         this.E = -1;
-        pr0 pr0Var = (pr0) this;
-        this.K = new k2(pr0Var, 2);
-        this.L = new xd.a(0, new o2(pr0Var), pr.h, 380L, true);
+        or0 or0Var = (or0) this;
+        this.K = new k2(or0Var, 2);
+        this.L = new xd.a(0, new o2(or0Var), pr.h, 380L, true);
         this.N = AndroidUtilities.displaySize.y;
         this.a = p2Var;
         this.b = i10;
@@ -124,12 +124,12 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
         }
         G.a();
         this.f = g6Var;
-        q2 q2Var = new q2(pr0Var, context, p2Var);
+        q2 q2Var = new q2(or0Var, context, p2Var);
         this.h = q2Var;
         q2Var.setAllowDisallowInterceptTouch(true);
-        q2Var.setAdapter(new r2(pr0Var, i10, g6Var));
+        q2Var.setAdapter(new r2(or0Var, i10, g6Var));
         addView(q2Var, k7.c6.e(-1, -1, 119));
-        l81 n11 = q2Var.n(10, true);
+        k81 n11 = q2Var.n(10, true);
         this.n = n11;
         int i13 = k6.Gh;
         int i14 = k6.G6;
@@ -145,8 +145,8 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
         n11.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
         n11.setClipToPadding(false);
         n11.r = 12;
-        n11.setPreTabClick(new o2(pr0Var));
-        n11.setOnTabLongClick(new eg.j3(pr0Var, i10, p2Var, context, g6Var, 1));
+        n11.setPreTabClick(new o2(or0Var));
+        n11.setOnTabLongClick(new eg.j3(or0Var, i10, p2Var, context, g6Var, 1));
         addView(n11, k7.c6.e(-1, 42, 48));
         tg.c cVar = new tg.c();
         int i18 = k6.d6;
@@ -187,7 +187,7 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
         linearLayout.addView(textView, k7.c6.t(-2, -2, 16, 9, 0, 0, 0));
         dVar.addView(linearLayout, k7.c6.d(-2, 38.0f, 17, 0.0f, 6.0f, 0.0f, 6.0f));
         k7.e6.b(linearLayout, 0.025f, 1.5f);
-        linearLayout.setOnClickListener(new eg.k2(pr0Var, p2Var, i10, i12));
+        linearLayout.setOnClickListener(new eg.k2(or0Var, p2Var, i10, i12));
         Boolean bool = G.h;
         if (bool != null) {
             npVar.a(bool.booleanValue(), false);
@@ -214,7 +214,7 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
                 dVar3.g(spannableStringBuilder, false, true);
                 dVar3.setStateListAnimator(null);
                 dVar.addView(dVar3, k7.c6.e(-2, -1, 17));
-                dVar.setOnClickListener(new p2(pr0Var, z4, i10, r10));
+                dVar.setOnClickListener(new p2(or0Var, z4, i10, r10));
                 dVar3.setVisibility(!d() ? 8 : 0);
                 linearLayout.setVisibility(d() ? 0 : 8);
                 this.x = 60;
@@ -242,7 +242,7 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
         dVar32.g(spannableStringBuilder3, false, true);
         dVar32.setStateListAnimator(null);
         dVar.addView(dVar32, k7.c6.e(-2, -1, 17));
-        dVar.setOnClickListener(new p2(pr0Var, z4, i10, r10));
+        dVar.setOnClickListener(new p2(or0Var, z4, i10, r10));
         dVar32.setVisibility(!d() ? 8 : 0);
         linearLayout.setVisibility(d() ? 0 : 8);
         this.x = 60;
@@ -374,7 +374,7 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
         return currentPage != null ? currentPage.e : this.d;
     }
 
-    public tl0 getCurrentListView() {
+    public sl0 getCurrentListView() {
         n3 currentPage = getCurrentPage();
         if (currentPage != null) {
             return currentPage.f;
@@ -451,9 +451,9 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
     }
 
     public float getTabsVisibility() {
-        l81 l81Var = this.n;
-        if (l81Var != null) {
-            return l81Var.getAlpha();
+        k81 k81Var = this.n;
+        if (k81Var != null) {
+            return k81Var.getAlpha();
         }
         return 0.0f;
     }
@@ -574,7 +574,7 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
         int dp = AndroidUtilities.dp(19.0f);
         int i10 = k6.Oh;
         g6 g6Var = this.f;
-        dVar.setBackground(k6.b0(dp, ((pr0) this).R.V0(k6.v0(i10, g6Var))));
+        dVar.setBackground(k6.b0(dp, ((or0) this).R.V0(k6.v0(i10, g6Var))));
         View[] viewPages = this.h.getViewPages();
         if (viewPages != null) {
             for (View view : viewPages) {
@@ -613,16 +613,16 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
 
     public final void o() {
         float f10;
-        l81 l81Var = this.n;
-        if (l81Var == null) {
+        k81 k81Var = this.n;
+        if (k81Var == null) {
             return;
         }
         float min = Math.min(this.H, getTabsHeight() - AndroidUtilities.dp(42.0f));
         float clamp01 = Utilities.clamp01(AndroidUtilities.ilerp(min - this.H, -AndroidUtilities.dp(42.0f), 0.0f));
         float lerp = AndroidUtilities.lerp(0.9f, 1.0f, clamp01);
-        l81Var.setTranslationY(min);
-        l81Var.setScaleX(lerp);
-        l81Var.setScaleY(lerp);
+        k81Var.setTranslationY(min);
+        k81Var.setScaleX(lerp);
+        k81Var.setScaleY(lerp);
         q2 q2Var = this.h;
         if (q2Var.getViewPages() != null) {
             f10 = 0.0f;
@@ -634,7 +634,7 @@ public abstract class x3 extends FrameLayout implements NotificationCenter.Notif
         } else {
             f10 = 0.0f;
         }
-        l81Var.setAlpha(k7.o.a(f10, 0.0f, 1.0f) * clamp01);
+        k81Var.setAlpha(k7.o.a(f10, 0.0f, 1.0f) * clamp01);
     }
 
     @Override // android.view.ViewGroup, android.view.View

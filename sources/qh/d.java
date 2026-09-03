@@ -24,15 +24,15 @@ import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.tp;
 import org.telegram.ui.be;
-import org.telegram.ui.mg1;
-import org.telegram.ui.qd1;
+import org.telegram.ui.bh1;
+import org.telegram.ui.vd1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public class d extends FrameLayout implements j90 {
     public boolean B;
     public int C;
-    public mg1 D;
+    public bh1 D;
     public float E;
     public ValueAnimator F;
     public boolean G;
@@ -485,7 +485,7 @@ public class d extends FrameLayout implements j90 {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, z4 ? 1.0f : 0.0f);
             this.L = ofFloat;
             ofFloat.addUpdateListener(new b(this, 2));
-            this.L.addListener(new qd1(6, this, z4));
+            this.L.addListener(new vd1(6, this, z4));
             this.L.setDuration(320L);
             this.L.setInterpolator(pr.h);
             this.L.start();

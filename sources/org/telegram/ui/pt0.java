@@ -1,86 +1,62 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.webkit.CookieManager;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.Components.RadialProgressView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.ViewGroup;
+import java.lang.reflect.Method;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class pt0 extends org.telegram.ui.Components.xf0 {
-    public final Rect J;
-    public final /* synthetic */ PhotoViewer K;
+public final class pt0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.mm0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public pt0(PhotoViewer photoViewer, PhotoViewer photoViewer2, Context context, org.telegram.ui.ActionBar.g1 g1Var) {
-        super(context);
-        this.K = photoViewer;
-        this.a = UserConfig.selectedAccount;
-        this.v = new ArrayList();
-        this.I = new org.telegram.ui.Components.ec0(this, 10);
-        this.b = photoViewer2;
-        this.r = g1Var;
-        org.telegram.ui.Components.lu luVar = new org.telegram.ui.Components.lu(this, context, context, 1);
-        this.f = luVar;
-        luVar.getSettings().setJavaScriptEnabled(true);
-        luVar.getSettings().setDomStorageEnabled(true);
-        luVar.getSettings().setMediaPlaybackRequiresUserGesture(false);
-        luVar.getSettings().setMixedContentMode(0);
-        CookieManager.getInstance().setAcceptThirdPartyCookies(luVar, true);
-        luVar.setWebViewClient(new org.telegram.ui.Components.tf0(this, 0));
-        addView(luVar, k7.c6.e(-1, -1, 51));
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.c = linearLayout;
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(17);
-        linearLayout.setVisibility(8);
-        addView(linearLayout, k7.c6.e(-2, -2, 17));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 16.0f);
-        yh.t(org.telegram.ui.ActionBar.k6.y6, null, false, textView, 17);
-        linearLayout.addView(textView, k7.c6.q(-2, -2, 1));
-        TextView textView2 = new TextView(context);
-        this.e = textView2;
-        textView2.setTextSize(1, 16.0f);
-        int i10 = org.telegram.ui.ActionBar.k6.n6;
-        textView2.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i10, false));
-        textView2.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(8.0f));
-        int i11 = org.telegram.ui.ActionBar.a6.a;
-        textView2.setBackground(org.telegram.ui.ActionBar.a6.d(new float[]{12.0f}, 0, org.telegram.ui.ActionBar.a6.b(org.telegram.ui.ActionBar.k6.w0(null, i10, false))));
-        textView2.setVisibility(8);
-        linearLayout.addView(textView2, k7.c6.t(-2, -2, 1, 0, 8, 0, 0));
-        fg.h0 h0Var = new fg.h0(this, context, 15);
-        this.h = h0Var;
-        h0Var.setBackgroundColor(-16777216);
-        h0Var.setVisibility(4);
-        addView(h0Var, k7.c6.c(-1.0f, -1));
-        RadialProgressView radialProgressView = new RadialProgressView(context, null);
-        this.n = radialProgressView;
-        radialProgressView.setVisibility(4);
-        addView(radialProgressView, k7.c6.e(-2, -2, 17));
-        this.J = new Rect();
+    public /* synthetic */ pt0(org.telegram.ui.Components.mm0 mm0Var, int i10) {
+        this.a = i10;
+        this.b = mm0Var;
     }
 
-    public final void j(Canvas canvas, int i10, int i11) {
-        Bitmap bitmap = this.K.z4.getBitmap();
-        if (bitmap != null) {
-            float min = Math.min(i10 / bitmap.getWidth(), i11 / bitmap.getHeight());
-            int width = (int) (bitmap.getWidth() * min);
-            int height = (int) (bitmap.getHeight() * min);
-            int i12 = (i11 - height) / 2;
-            int i13 = (i10 - width) / 2;
-            Rect rect = this.J;
-            rect.set(i13, i12, width + i13, height + i12);
-            canvas.drawBitmap(bitmap, (Rect) null, rect, (Paint) null);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                PhotoViewer photoViewer = (PhotoViewer) this.b.b;
+                photoViewer.N1.getNextView().setText((CharSequence) null);
+                nt0 nt0Var = photoViewer.Q1;
+                nt0Var.i0 = false;
+                if (nt0Var.j0 >= 0) {
+                    ((ViewGroup.MarginLayoutParams) nt0Var.l0.getLayoutParams()).topMargin = nt0Var.j0;
+                    nt0Var.j0 = -1;
+                    nt0Var.requestLayout();
+                    break;
+                }
+                break;
+            default:
+                ((PhotoViewer) this.b.b).N1.setTranslationY(0.0f);
+                break;
+        }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 0:
+                nt0 nt0Var = ((PhotoViewer) this.b.b).Q1;
+                Method method = nt0Var.c0;
+                if (method != null) {
+                    try {
+                        method.invoke(nt0Var, null);
+                        break;
+                    } catch (Exception e6) {
+                        FileLog.e(e6);
+                        return;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
     }
 }

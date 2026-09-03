@@ -23,7 +23,7 @@ import org.telegram.ui.ActionBar.b6;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class f0 extends z implements b6 {
     public d0 B;
@@ -73,7 +73,7 @@ public final class f0 extends z implements b6 {
                         d0 d0Var = f0Var.B;
                         if (d0Var != null && (aVar = f0Var.a) != null) {
                             r3 r3Var = ((j3) d0Var).a;
-                            r3Var.o3(false);
+                            r3Var.n3(false);
                             r3Var.e3.d(new o3(r3Var, aVar, -1), view);
                             break;
                         }
@@ -83,7 +83,7 @@ public final class f0 extends z implements b6 {
                         d0 d0Var2 = f0Var2.B;
                         if (d0Var2 != null && (aVar2 = f0Var2.a) != null) {
                             r3 r3Var2 = ((j3) d0Var2).a;
-                            r3Var2.o3(false);
+                            r3Var2.n3(false);
                             r3Var2.e3.d(new o3(r3Var2, aVar2, -1), view);
                             break;
                         }
@@ -118,7 +118,7 @@ public final class f0 extends z implements b6 {
                         d0 d0Var = f0Var.B;
                         if (d0Var != null && (aVar = f0Var.a) != null) {
                             r3 r3Var = ((j3) d0Var).a;
-                            r3Var.o3(false);
+                            r3Var.n3(false);
                             r3Var.e3.d(new o3(r3Var, aVar, -1), view);
                             break;
                         }
@@ -128,7 +128,7 @@ public final class f0 extends z implements b6 {
                         d0 d0Var2 = f0Var2.B;
                         if (d0Var2 != null && (aVar2 = f0Var2.a) != null) {
                             r3 r3Var2 = ((j3) d0Var2).a;
-                            r3Var2.o3(false);
+                            r3Var2.n3(false);
                             r3Var2.e3.d(new o3(r3Var2, aVar2, -1), view);
                             break;
                         }

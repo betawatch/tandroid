@@ -33,9 +33,9 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ib1;
+import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class w8 extends org.telegram.ui.ActionBar.p2 {
     public static final int[][] Z = {new int[]{-11302949, -11562789, -10430789, -11480359}, new int[]{-11229725, -12014137, -10234219, -10819908}, new int[]{-12927610, -11158198, -3355566, -5191850}, new int[]{-8164117, -5281560, -2200166, -2525971}, new int[]{-1287263, -1350281, -1337532, -885148}, new int[]{-1419145, -1936819, -742839, -1014448}, new int[]{-1017772, -1212871, -998847, -1003446}};
@@ -72,7 +72,7 @@ public final class w8 extends org.telegram.ui.ActionBar.p2 {
     public boolean f;
     public boolean h;
     public boolean n;
-    public ib1 r;
+    public ob1 r;
     public CharSequence s;
     public SpannableStringBuilder v;
     public boolean w;
@@ -142,7 +142,7 @@ public final class w8 extends org.telegram.ui.ActionBar.p2 {
         this.O = e6;
         e6.setBackground(org.telegram.ui.ActionBar.k6.f0(k10, 3, -1));
         this.E.setActionBarMenuOnItemClick(new n8(this, 1));
-        this.r = new ib1(this, getParentActivity(), 6);
+        this.r = new ob1(this, getParentActivity(), 6);
         o8 o8Var = new o8(this, context);
         o8Var.setFitsSystemWindows(true);
         o8Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
@@ -150,10 +150,10 @@ public final class w8 extends org.telegram.ui.ActionBar.p2 {
         this.r.setClipToPadding(false);
         this.r.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
         this.r.setOrientation(1);
-        ib1 ib1Var = this.r;
+        ob1 ob1Var = this.r;
         p8 p8Var = new p8(this, getParentActivity(), o8Var);
         this.a = p8Var;
-        ib1Var.addView(p8Var);
+        ob1Var.addView(p8Var);
         TextView textView = new TextView(getParentActivity());
         this.T = textView;
         textView.setText(LocaleController.getString(R.string.ChooseBackground));
@@ -658,7 +658,7 @@ public final class w8 extends org.telegram.ui.ActionBar.p2 {
         p8 p8Var2 = this.a;
         p8Var2.a = j10;
         p8Var2.c.setAnimatedEmojiDrawable(new l5(14, this.currentAccount, j10));
-        this.G.w1(s8Var);
+        this.G.v1(s8Var);
         this.b.setForUser(false);
     }
 
@@ -685,7 +685,7 @@ public final class w8 extends org.telegram.ui.ActionBar.p2 {
             }
             h0(false, 0L, document);
         }
-        this.G.w1(s8Var);
+        this.G.v1(s8Var);
         this.b.setForUser(true);
     }
 
@@ -703,7 +703,7 @@ public final class w8 extends org.telegram.ui.ActionBar.p2 {
             p8Var2.a = i10;
             p8Var2.c.setAnimatedEmojiDrawable(new l5(14, this.currentAccount, i10));
         }
-        this.G.w1(backgroundGradient);
+        this.G.v1(backgroundGradient);
         this.b.setForUser(false);
     }
 

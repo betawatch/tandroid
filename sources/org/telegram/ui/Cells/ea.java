@@ -19,7 +19,7 @@ import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.ao;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class ea extends LinearLayout {
     public org.telegram.ui.Components.n9 a;
@@ -164,7 +164,7 @@ public class ea extends LinearLayout {
                         drawable3.draw(canvas);
                         canvas.restore();
                     } else {
-                        qh.s6.j(canvas, drawable3, getWidth(), getHeight());
+                        qh.r6.j(canvas, drawable3, getWidth(), getHeight());
                     }
                     if (i10 == 0 && this.d != null && d >= 1.0f) {
                         org.telegram.ui.Components.n9 n9Var2 = this.b;

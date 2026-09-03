@@ -2,9 +2,9 @@ package r0;
 
 import android.view.View;
 import java.lang.ref.WeakReference;
-import qh.j2;
+import qh.i2;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class m0 {
     public final WeakReference a;
@@ -38,7 +38,7 @@ public final class m0 {
         View view = (View) this.a.get();
         if (view != null) {
             if (n0Var != null) {
-                view.animate().setListener(new j2(n0Var, view));
+                view.animate().setListener(new i2(n0Var, view));
             } else {
                 view.animate().setListener(null);
             }

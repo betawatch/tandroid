@@ -55,11 +55,11 @@ import org.telegram.ui.Cells.i6;
 import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Cells.z1;
 import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.Components.aw0;
 import org.telegram.ui.Components.f0;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.voip.g2;
 import org.telegram.ui.Components.x4;
+import org.telegram.ui.Components.zv0;
 import org.telegram.ui.TwoStepVerificationActivity;
 import org.telegram.ui.a0;
 import org.telegram.ui.b0;
@@ -69,7 +69,6 @@ import org.telegram.ui.e5;
 import org.telegram.ui.f5;
 import org.telegram.ui.g7;
 import org.telegram.ui.h9;
-import org.telegram.ui.ha1;
 import org.telegram.ui.hb0;
 import org.telegram.ui.k7;
 import org.telegram.ui.ke;
@@ -79,6 +78,7 @@ import org.telegram.ui.l9;
 import org.telegram.ui.lu;
 import org.telegram.ui.m0;
 import org.telegram.ui.n4;
+import org.telegram.ui.na1;
 import org.telegram.ui.o7;
 import org.telegram.ui.o70;
 import org.telegram.ui.p3;
@@ -95,7 +95,7 @@ import org.telegram.ui.z6;
 import uf.e0;
 import wh.y3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -226,10 +226,10 @@ public final /* synthetic */ class g implements View.OnClickListener {
                     p3 p3Var = l4Var.r0[0];
                     if (!p3Var.f()) {
                         if (y3Var2 != null) {
-                            aw0 aw0Var = new aw0(activity);
-                            aw0Var.a = 1;
-                            aw0Var.s = -AndroidUtilities.dp(32.0f);
-                            p3Var.d.w0(aw0Var);
+                            zv0 zv0Var = new zv0(activity);
+                            zv0Var.a = 1;
+                            zv0Var.s = -AndroidUtilities.dp(32.0f);
+                            p3Var.d.w0(zv0Var);
                             break;
                         } else {
                             p3Var.b.x0(0);
@@ -341,7 +341,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                     TLRPC.UserFull userFull = l9Var.getMessagesController().getUserFull(user.id);
                     l9Var.M = user;
                     boolean z4 = h9Var.e;
-                    g2.n(user, z4, z4 || (userFull != null && userFull.video_calls_available), l9Var.getParentActivity(), null, l9Var.getAccountInstance());
+                    g2.m(user, z4, z4 || (userFull != null && userFull.video_calls_available), l9Var.getParentActivity(), null, l9Var.getAccountInstance());
                     break;
                 } else {
                     boolean z10 = h9Var.e;
@@ -365,7 +365,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                 }
             case 13:
                 ke keVar = (ke) obj2;
-                ha1 ha1Var = (ha1) obj;
+                na1 na1Var = (na1) obj;
                 qh.d dVar = keVar.H0;
                 if (view.isEnabled() && !dVar.K) {
                     be beVar = keVar.N0;
@@ -375,7 +375,7 @@ public final /* synthetic */ class g implements View.OnClickListener {
                         twoStepVerificationActivity.W = 1;
                         twoStepVerificationActivity.Y = tdVar;
                         dVar.setLoading(true);
-                        twoStepVerificationActivity.s0(new ud(keVar, ha1Var, twoStepVerificationActivity, i11));
+                        twoStepVerificationActivity.s0(new ud(keVar, na1Var, twoStepVerificationActivity, i11));
                         break;
                     }
                 }

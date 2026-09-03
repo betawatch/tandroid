@@ -1,124 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.os.SystemClock;
-import java.util.ArrayList;
+import android.view.View;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class a21 {
-    public long a;
-    public boolean b;
-    public final ArrayList c;
-    public final ArrayList d;
-    public final int e;
-    public boolean f;
-    public float g;
-    public float h;
+public final class a21 extends TextView {
+    public View a;
+    public ViewPropertyAnimator b;
+    public boolean c;
+    public nq0 d;
 
-    public a21() {
-        this(40);
-    }
-
-    public final void a(float f10, float f11, Canvas canvas, Paint paint, RectF rectF) {
-        z11 z11Var;
-        ArrayList arrayList = this.c;
-        int size = arrayList.size();
+    public final void a() {
+        if (this.a == null) {
+            return;
+        }
+        View view = (View) getParent();
         int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            z11 z11Var2 = (z11) arrayList.get(i11);
-            paint.setAlpha((int) (z11Var2.f * 255.0f * f11));
-            canvas.drawPoint(z11Var2.a, z11Var2.b, paint);
+        int i11 = 0;
+        for (View view2 = this.a; view2 != view; view2 = (View) view2.getParent()) {
+            i11 += view2.getTop();
+            i10 += view2.getLeft();
         }
-        double d = (f10 - 90.0f) * 0.017453292519943295d;
-        double sin = Math.sin(d);
-        double d10 = -Math.cos(d);
-        double width = rectF.width() / 2.0f;
-        float centerX = (float) (((-d10) * width) + rectF.centerX());
-        float centerY = (float) ((width * sin) + rectF.centerY());
-        ArrayList arrayList2 = this.d;
-        int clamp = Utilities.clamp(arrayList2.size() / 12, 3, 1);
-        int i12 = 0;
-        while (i12 < clamp) {
-            if (arrayList2.isEmpty()) {
-                z11Var = new z11();
-            } else {
-                z11Var = (z11) arrayList2.get(i10);
-                arrayList2.remove(i10);
-            }
-            if (this.b && this.f) {
-                float f12 = (i12 + 1) / clamp;
-                z11Var.a = AndroidUtilities.lerp(this.g, centerX, f12);
-                z11Var.b = AndroidUtilities.lerp(this.h, centerY, f12);
-            } else {
-                z11Var.a = centerX;
-                z11Var.b = centerY;
-            }
-            double d11 = sin;
-            double nextInt = (Utilities.random.nextInt(140) - 70) * 0.017453292519943295d;
-            if (nextInt < 0.0d) {
-                nextInt += 6.283185307179586d;
-            }
-            z11Var.c = (float) ((Math.cos(nextInt) * d11) - (Math.sin(nextInt) * d10));
-            z11 z11Var3 = z11Var;
-            z11Var3.d = (float) l.d.a(nextInt, d10, Math.sin(nextInt) * d11);
-            z11Var3.f = 1.0f;
-            z11Var3.h = 0.0f;
-            if (this.b) {
-                z11Var3.g = Utilities.random.nextInt(200) + 600;
-                z11Var3.e = (Utilities.random.nextFloat() * 20.0f) + 30.0f;
-            } else {
-                z11Var3.g = Utilities.random.nextInt(100) + 400;
-                z11Var3.e = (Utilities.random.nextFloat() * 4.0f) + 20.0f;
-            }
-            arrayList.add(z11Var3);
-            i12++;
-            sin = d11;
-            i10 = 0;
-        }
-        this.f = true;
-        this.g = centerX;
-        this.h = centerY;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long min = Math.min(20L, elapsedRealtime - this.a);
-        int size2 = arrayList.size();
-        int i13 = 0;
-        while (i13 < size2) {
-            z11 z11Var4 = (z11) arrayList.get(i13);
-            float f13 = z11Var4.h;
-            float f14 = z11Var4.g;
-            if (f13 >= f14) {
-                if (arrayList2.size() < this.e) {
-                    arrayList2.add(z11Var4);
-                }
-                arrayList.remove(i13);
-                i13--;
-                size2--;
-            } else {
-                z11Var4.f = 1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation(f13 / f14);
-                float f15 = z11Var4.a;
-                float f16 = z11Var4.c;
-                float f17 = z11Var4.e;
-                float f18 = min;
-                z11Var4.a = android.support.v4.media.a.d(f16 * f17, f18, 200.0f, f15);
-                z11Var4.b = (((z11Var4.d * f17) * f18) / 200.0f) + z11Var4.b;
-                z11Var4.h += f18;
-            }
-            i13++;
-        }
-        this.a = elapsedRealtime;
+        int width = ((this.a.getWidth() / 2) + i10) - (getMeasuredWidth() / 2);
+        setTranslationX(width >= 0 ? getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.dp(16.0f) : width : 0);
+        setTranslationY(i11 - getMeasuredHeight());
     }
 
-    public a21(int i10) {
-        this.c = new ArrayList();
-        this.d = new ArrayList();
-        this.e = i10;
-        for (int i11 = 0; i11 < i10; i11++) {
-            this.d.add(new z11());
-        }
+    @Override // android.widget.TextView, android.view.View
+    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+        super.onLayout(z4, i10, i11, i12, i13);
+        a();
     }
 }

@@ -31,27 +31,27 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.ec;
 import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.k6;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class s extends sa implements GiftAuctionController.OnAuctionUpdateListener {
     public static final /* synthetic */ int x0 = 0;
     public final long U;
-    public final j51 V;
+    public final h51 V;
     public final mh.b W;
     public final o X;
     public final lf.p Y;
@@ -76,7 +76,7 @@ public final class s extends sa implements GiftAuctionController.OnAuctionUpdate
     public final xd.a r0;
     public final oq[] s0;
     public boolean t0;
-    public x51 u0;
+    public w51 u0;
     public boolean v0;
     public boolean w0;
 
@@ -109,7 +109,7 @@ public final class s extends sa implements GiftAuctionController.OnAuctionUpdate
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setClickable(true);
-        this.V = j51.j(-1, linearLayout);
+        this.V = h51.j(-1, linearLayout);
         n nVar = new n(this, context, g6Var);
         this.Z = nVar;
         nVar.L = true;
@@ -245,9 +245,9 @@ public final class s extends sa implements GiftAuctionController.OnAuctionUpdate
         d.leftMargin = i23 + i24;
         d.rightMargin += i24;
         this.containerView.addView(oVar, d);
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i25 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i25, 0, i25, AndroidUtilities.dp(64.0f));
+        sl0Var.setPadding(i25, 0, i25, AndroidUtilities.dp(64.0f));
         this.d.setOnItemClickListener(new a(1));
         long j11 = subscribeToGiftAuction.auctionUserState.bid_amount;
         if (j11 > 0) {
@@ -685,11 +685,11 @@ public final class s extends sa implements GiftAuctionController.OnAuctionUpdate
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(this.d, getContext(), this.currentAccount, 0, true, new eg.p1(this, 6), this.resourcesProvider);
-        this.u0 = x51Var;
-        x51Var.r = false;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new eg.p1(this, 6), this.resourcesProvider);
+        this.u0 = w51Var;
+        w51Var.r = false;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

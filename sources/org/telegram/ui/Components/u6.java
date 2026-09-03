@@ -4,9 +4,9 @@ import android.view.View;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u6 implements org.telegram.ui.ActionBar.s0, ll0 {
+public final /* synthetic */ class u6 implements org.telegram.ui.ActionBar.s0, kl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ c8 b;
 
@@ -15,7 +15,7 @@ public final /* synthetic */ class u6 implements org.telegram.ui.ActionBar.s0, l
         this.b = c8Var;
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         boolean z4 = view instanceof org.telegram.ui.Cells.x;
         c8 c8Var = this.b;

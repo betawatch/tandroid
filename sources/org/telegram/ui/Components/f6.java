@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.camera.Camera2Session;
 import org.telegram.messenger.camera.CameraSession;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class f6 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -98,10 +98,10 @@ public final /* synthetic */ class f6 implements ValueAnimator.AnimatorUpdateLis
                 mhVar2.invalidate();
                 break;
             case 11:
-                nm nmVar = (nm) this.b;
-                nmVar.getClass();
-                nmVar.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                nmVar.O.z.invalidate();
+                mm mmVar = (mm) this.b;
+                mmVar.getClass();
+                mmVar.l = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                mmVar.O.z.invalidate();
                 break;
             case 12:
                 ro roVar = (ro) this.b;

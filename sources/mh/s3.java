@@ -9,7 +9,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class s3 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -72,9 +72,9 @@ public final /* synthetic */ class s3 implements View.OnClickListener {
                             TextView textView = f4Var2.H;
                             f4Var2.e0 = true;
                             f4Var2.g0 = false;
-                            qh.f3 f3Var = f4Var2.Q;
-                            if (f3Var != null) {
-                                f3Var.e(true);
+                            qh.e3 e3Var = f4Var2.Q;
+                            if (e3Var != null) {
+                                e3Var.e(true);
                                 f4Var2.Q = null;
                             }
                             textView.setText("");

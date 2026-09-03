@@ -4,7 +4,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class om extends org.telegram.ui.ActionBar.r1 {
     public final /* synthetic */ pm x;
@@ -65,17 +65,17 @@ public final class om extends org.telegram.ui.ActionBar.r1 {
                 if (alVar != null) {
                     alVar.setTranslationY(xnVar.t9 + (xnVar.l1 != null ? r2.getCurrentHeight() : 0));
                 }
-                qh.f3 f3Var = xnVar.t1;
-                if (f3Var != null) {
-                    f3Var.setTranslationY(f10);
+                qh.e3 e3Var = xnVar.t1;
+                if (e3Var != null) {
+                    e3Var.setTranslationY(f10);
                 }
-                qh.f3 f3Var2 = xnVar.s1;
-                if (f3Var2 != null) {
-                    f3Var2.setTranslationY(f10);
+                qh.e3 e3Var2 = xnVar.s1;
+                if (e3Var2 != null) {
+                    e3Var2.setTranslationY(f10);
                 }
-                org.telegram.ui.Components.x21 x21Var = xnVar.O1;
-                if (x21Var != null) {
-                    x21Var.setTranslationY(f10);
+                org.telegram.ui.Components.w21 w21Var = xnVar.O1;
+                if (w21Var != null) {
+                    w21Var.setTranslationY(f10);
                 }
                 FrameLayout frameLayout = xnVar.N0;
                 if (frameLayout != null) {
@@ -164,9 +164,9 @@ public final class om extends org.telegram.ui.ActionBar.r1 {
         if (m40Var != null) {
             m40Var.b(false);
         }
-        qh.f3 f3Var = xnVar.x1;
-        if (f3Var != null) {
-            f3Var.e(true);
+        qh.e3 e3Var = xnVar.x1;
+        if (e3Var != null) {
+            e3Var.e(true);
         }
     }
 

@@ -15,8 +15,8 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.c8;
 import org.telegram.ui.Components.f40;
 import org.telegram.ui.Components.jt;
+import org.telegram.ui.Components.lq0;
 import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.mq0;
 import org.telegram.ui.Components.or;
 import org.telegram.ui.Components.qf0;
 import org.telegram.ui.Components.sa;
@@ -28,10 +28,10 @@ import org.telegram.ui.d6;
 import org.telegram.ui.dc;
 import org.telegram.ui.ep;
 import org.telegram.ui.j8;
+import org.telegram.ui.jc;
 import org.telegram.ui.kc;
 import org.telegram.ui.kq;
 import org.telegram.ui.l9;
-import org.telegram.ui.lc;
 import org.telegram.ui.pa;
 import org.telegram.ui.po;
 import org.telegram.ui.qr;
@@ -43,7 +43,7 @@ import org.telegram.ui.v9;
 import org.telegram.ui.y6;
 import org.telegram.ui.yp;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class l1 extends org.telegram.ui.ActionBar.j {
     public final /* synthetic */ int a;
@@ -247,13 +247,13 @@ public final class l1 extends org.telegram.ui.ActionBar.j {
                         float max = Math.max(createBitmap.getHeight(), createBitmap.getWidth()) + AndroidUtilities.navigationBarHeight;
                         Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                         paint2.setShader(new BitmapShader(createBitmap, tileMode, tileMode));
-                        kc kcVar = new kc(bdVar, bdVar.getParentActivity(), canvas, (bdVar.I.getMeasuredWidth() / 2.0f) + f10, (bdVar.I.getMeasuredHeight() / 2.0f) + f11, max, paint, createBitmap, paint2, f10, f11, 0);
-                        bdVar.j0 = kcVar;
-                        kcVar.setOnTouchListener(new org.telegram.ui.ActionBar.s2(1));
+                        jc jcVar = new jc(bdVar, bdVar.getParentActivity(), canvas, (bdVar.I.getMeasuredWidth() / 2.0f) + f10, (bdVar.I.getMeasuredHeight() / 2.0f) + f11, max, paint, createBitmap, paint2, f10, f11, 0);
+                        bdVar.j0 = jcVar;
+                        jcVar.setOnTouchListener(new org.telegram.ui.ActionBar.s2(1));
                         bdVar.k0 = 0.0f;
                         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
                         bdVar.l0 = ofFloat;
-                        ofFloat.addUpdateListener(new lc(bdVar, 0));
+                        ofFloat.addUpdateListener(new kc(bdVar, 0));
                         bdVar.l0.addListener(new s5(bdVar, 16));
                         bdVar.l0.setDuration(400L);
                         bdVar.l0.setInterpolator(jt.e);
@@ -377,7 +377,7 @@ public final class l1 extends org.telegram.ui.ActionBar.j {
                 }
                 break;
             default:
-                ((mq0) obj).onBackPressed();
+                ((lq0) obj).onBackPressed();
                 break;
         }
     }

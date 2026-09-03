@@ -26,11 +26,11 @@ import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.u60;
-import org.telegram.ui.d31;
-import org.telegram.ui.m31;
+import org.telegram.ui.i31;
+import org.telegram.ui.q31;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g0 implements Runnable {
     public final /* synthetic */ int a = 1;
@@ -124,10 +124,10 @@ public final /* synthetic */ class g0 implements Runnable {
                 byte[] bArr = (byte[]) this.h;
                 xn xnVar2 = (xn) this.e;
                 MessageObject messageObject = (MessageObject) this.n;
-                m31 m31Var = new m31(activity, g6Var, this.b, bArr);
-                m31Var.O((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject2);
-                m31Var.s = new d31(xnVar2, activity, g6Var, messageObject);
-                m31Var.show();
+                q31 q31Var = new q31(activity, g6Var, this.b, bArr);
+                q31Var.O((TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) tLObject2);
+                q31Var.s = new i31(xnVar2, activity, g6Var, messageObject);
+                q31Var.show();
                 break;
         }
     }

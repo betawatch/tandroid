@@ -26,7 +26,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z implements Runnable {
     public final /* synthetic */ int a;
@@ -262,7 +262,7 @@ public final /* synthetic */ class z implements Runnable {
                 WebView webView = (WebView) obj4;
                 b2 b2Var = (b2) obj3;
                 String str12 = (String) obj2;
-                z1 z1Var = (z1) obj;
+                y1 y1Var = (y1) obj;
                 if (!zArr[0]) {
                     zArr[0] = true;
                     if (!BuildVars.DEBUG_PRIVATE_VERSION) {
@@ -276,7 +276,7 @@ public final /* synthetic */ class z implements Runnable {
                     } catch (Exception e15) {
                         FileLog.e(e15);
                     }
-                    z1Var.run(file);
+                    y1Var.run(file);
                     break;
                 }
                 break;
@@ -302,12 +302,12 @@ public final /* synthetic */ class z implements Runnable {
         this.c = tLObject;
     }
 
-    public /* synthetic */ z(boolean[] zArr, WebView webView, b2 b2Var, String str, z1 z1Var) {
+    public /* synthetic */ z(boolean[] zArr, WebView webView, b2 b2Var, String str, y1 y1Var) {
         this.a = 4;
         this.b = zArr;
         this.d = webView;
         this.f = b2Var;
         this.e = str;
-        this.c = z1Var;
+        this.c = y1Var;
     }
 }

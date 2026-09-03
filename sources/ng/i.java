@@ -13,14 +13,14 @@ import oh.n5;
 import oh.v7;
 import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.j51;
-import qh.k6;
-import qh.m3;
+import org.telegram.ui.Components.h51;
+import qh.i6;
+import qh.l3;
+import qh.p3;
 import qh.q3;
-import qh.r3;
-import qh.u8;
+import qh.t8;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class i implements h5.d {
     public final /* synthetic */ int a;
@@ -94,21 +94,21 @@ public final /* synthetic */ class i implements h5.d {
                 }
                 break;
             case 4:
-                r3 r3Var = (r3) this.b;
+                q3 q3Var = (q3) this.b;
                 View view2 = (View) obj;
-                m3 m3Var = r3Var.b;
-                if (view2 instanceof q3) {
-                    m3Var.getClass();
+                l3 l3Var = q3Var.b;
+                if (view2 instanceof p3) {
+                    l3Var.getClass();
                     int R = RecyclerView.R(view2);
-                    j51 G = m3Var.V2.G(R);
+                    h51 G = l3Var.V2.G(R);
                     if (G != null) {
-                        q3 q3Var = (q3) view2;
-                        q3Var.setPosition(r3Var.b(R));
-                        q3Var.b(r3Var.f == G.d, true);
-                        boolean contains = r3Var.e.contains(Integer.valueOf(G.d));
-                        if (q3Var.f != contains) {
-                            q3Var.f = contains;
-                            q3Var.invalidate();
+                        p3 p3Var = (p3) view2;
+                        p3Var.setPosition(q3Var.b(R));
+                        p3Var.b(q3Var.f == G.d, true);
+                        boolean contains = q3Var.e.contains(Integer.valueOf(G.d));
+                        if (p3Var.f != contains) {
+                            p3Var.f = contains;
+                            p3Var.invalidate();
                         }
                         view2.setPressed(false);
                         break;
@@ -116,18 +116,18 @@ public final /* synthetic */ class i implements h5.d {
                 }
                 break;
             case 5:
-                m3 m3Var2 = (m3) this.b;
+                l3 l3Var2 = (l3) this.b;
                 View view3 = (View) obj;
-                if (view3 instanceof q3) {
-                    u8 u8Var = m3Var2.c3;
-                    u8Var.b.getClass();
-                    ((q3) view3).setPosition(u8Var.b(RecyclerView.R(view3)));
+                if (view3 instanceof p3) {
+                    t8 t8Var = l3Var2.c3;
+                    t8Var.b.getClass();
+                    ((p3) view3).setPosition(t8Var.b(RecyclerView.R(view3)));
                     view3.setPressed(false);
                     break;
                 }
                 break;
             default:
-                k6.T((k6) this.b, (Long) obj);
+                i6.T((i6) this.b, (Long) obj);
                 break;
         }
     }

@@ -5,7 +5,7 @@ import android.graphics.PorterDuffColorFilter;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ip implements org.telegram.ui.ActionBar.l6 {
     public boolean a = false;
@@ -37,9 +37,9 @@ public final class ip implements org.telegram.ui.ActionBar.l6 {
             }
             this.a = true;
         }
-        ij0 ij0Var = mpVar.C;
+        hj0 hj0Var = mpVar.C;
         int i12 = org.telegram.ui.ActionBar.k6.Oh;
-        ij0Var.setColorFilter(new PorterDuffColorFilter(mpVar.getThemedColor(i12), PorterDuff.Mode.MULTIPLY));
+        hj0Var.setColorFilter(new PorterDuffColorFilter(mpVar.getThemedColor(i12), PorterDuff.Mode.MULTIPLY));
         mpVar.setOverlayNavBarColor(mpVar.getThemedColor(org.telegram.ui.ActionBar.k6.a7));
         if (mpVar.M) {
             for (int i13 = 0; i13 < kpVar.h(); i13++) {

@@ -33,14 +33,14 @@ import org.telegram.messenger.y3;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
-import org.telegram.ui.Components.g51;
+import org.telegram.ui.Components.e51;
 import org.telegram.ui.Components.l5;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.z8;
 import org.telegram.ui.d40;
 import wh.v1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class c extends ViewGroup implements yd.a, NotificationCenter.NotificationCenterDelegate, xd.b {
     public static final Rect I = new Rect();
@@ -410,7 +410,7 @@ public final class c extends ViewGroup implements yd.a, NotificationCenter.Notif
         }
         this.r = null;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(name);
-        spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         spannableStringBuilder.setSpan(this.G, 0, spannableStringBuilder.length(), 33);
         q0 q0Var = groupCallMessage.visibleReaction;
         s sVar = this.v;

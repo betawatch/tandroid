@@ -10,10 +10,10 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.Components.id;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.bu0;
-import org.telegram.ui.xq0;
+import org.telegram.ui.cr0;
+import org.telegram.ui.gu0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class t {
     public static volatile t[] e = new t[4];
@@ -62,7 +62,7 @@ public final class t {
             int indexOf = arrayList.indexOf(c3);
             arrayList.remove(c3);
             NotificationCenter.getInstance(this.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.businessLinksUpdated, new Object[0]);
-            qc.a0(qVar).U(LocaleController.getString(R.string.BusinessLinkDeleted), true, new bu0(this, indexOf, c3, 18), new uf.h1(this, str, c3, 5)).j();
+            qc.a0(qVar).U(LocaleController.getString(R.string.BusinessLinkDeleted), true, new gu0(this, indexOf, c3, 18), new uf.h1(this, str, c3, 5)).j();
         }
     }
 
@@ -116,7 +116,7 @@ public final class t {
             int i10 = this.a;
             if (z4) {
                 MessagesStorage messagesStorage = MessagesStorage.getInstance(i10);
-                messagesStorage.getStorageQueue().postRunnable(new xq0(this, messagesStorage, z10, 10));
+                messagesStorage.getStorageQueue().postRunnable(new cr0(this, messagesStorage, z10, 10));
             } else {
                 ConnectionsManager.getInstance(i10).sendRequest(new TL_account.getBusinessChatLinks(), new s(this, 0));
             }

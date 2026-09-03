@@ -16,21 +16,21 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.messenger.camera.CameraController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class ShutterButton extends View {
     public Drawable a;
     public DecelerateInterpolator b;
     public Paint c;
     public Paint d;
-    public ev0 e;
-    public fv0 f;
+    public dv0 e;
+    public ev0 f;
     public boolean h;
     public float n;
     public long r;
     public long s;
     public boolean v;
-    public ul0 w;
+    public tl0 w;
 
     private void setHighlighted(boolean z4) {
         AnimatorSet animatorSet = new AnimatorSet();
@@ -47,23 +47,23 @@ public class ShutterButton extends View {
         animatorSet.start();
     }
 
-    public final void a(fv0 fv0Var) {
-        if (this.f != fv0Var) {
-            this.f = fv0Var;
+    public final void a(ev0 ev0Var) {
+        if (this.f != ev0Var) {
+            this.f = ev0Var;
             this.r = System.currentTimeMillis();
             this.s = 0L;
-            if (this.f != fv0.b) {
+            if (this.f != ev0.b) {
                 this.n = 0.0f;
             }
             invalidate();
         }
     }
 
-    public ev0 getDelegate() {
+    public dv0 getDelegate() {
         return this.e;
     }
 
-    public fv0 getState() {
+    public ev0 getState() {
         return this.f;
     }
 
@@ -88,7 +88,7 @@ public class ShutterButton extends View {
         float f10 = measuredWidth;
         float f11 = measuredHeight;
         canvas.drawCircle(f10, f11, AndroidUtilities.dp(26.0f), paint2);
-        if (this.f != fv0.b) {
+        if (this.f != ev0.b) {
             if (this.n != 0.0f) {
                 canvas.drawCircle(f10, f11, AndroidUtilities.dp(26.5f) * scaleX, paint);
                 return;
@@ -139,12 +139,12 @@ public class ShutterButton extends View {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ul0 ul0Var = this.w;
+        tl0 tl0Var = this.w;
         float x10 = motionEvent.getX();
         float y10 = motionEvent.getY();
         int action = motionEvent.getAction();
         if (action == 0) {
-            AndroidUtilities.runOnUIThread(ul0Var, 800L);
+            AndroidUtilities.runOnUIThread(tl0Var, 800L);
             this.h = true;
             this.v = true;
             setHighlighted(true);
@@ -152,7 +152,7 @@ public class ShutterButton extends View {
         }
         if (action == 1) {
             setHighlighted(false);
-            AndroidUtilities.cancelRunOnUIThread(ul0Var);
+            AndroidUtilities.cancelRunOnUIThread(tl0Var);
             if (this.v) {
                 ((ol) this.e).b();
             }
@@ -165,7 +165,7 @@ public class ShutterButton extends View {
             }
             ol olVar = (ol) this.e;
             ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = olVar.e;
-            i91 i91Var = chatAttachAlertPhotoLayout.i0;
+            h91 h91Var = chatAttachAlertPhotoLayout.i0;
             org.telegram.ui.ActionBar.f3 f3Var = olVar.d;
             boolean z4 = f3Var.getWidth() < f3Var.getHeight();
             float f10 = z4 ? x10 : y10;
@@ -174,12 +174,12 @@ public class ShutterButton extends View {
                 if (f11 < 0.0f) {
                     boolean z10 = ChatAttachAlertPhotoLayout.n1;
                     chatAttachAlertPhotoLayout.t0(true);
-                    i91Var.b((-f11) / AndroidUtilities.dp(200.0f), true);
+                    h91Var.b((-f11) / AndroidUtilities.dp(200.0f), true);
                     olVar.b = true;
                     return true;
                 }
                 if (olVar.b) {
-                    i91Var.b(0.0f, true);
+                    h91Var.b(0.0f, true);
                 }
                 if (x10 == 0.0f && y10 == 0.0f) {
                     olVar.b = false;
@@ -187,8 +187,8 @@ public class ShutterButton extends View {
                 if (!olVar.b) {
                     if (x10 == 0.0f) {
                     }
-                    AndroidUtilities.cancelRunOnUIThread(ul0Var);
-                    if (this.f == fv0.b) {
+                    AndroidUtilities.cancelRunOnUIThread(tl0Var);
+                    if (this.f == ev0.b) {
                         this.v = false;
                         setHighlighted(false);
                         ol olVar2 = (ol) this.e;
@@ -201,7 +201,7 @@ public class ShutterButton extends View {
                         boolean z11 = ChatAttachAlertPhotoLayout.n1;
                         chatAttachAlertPhotoLayout2.l0();
                         CameraController.getInstance().stopVideoRecording(chatAttachAlertPhotoLayout2.M.getCameraSession(), true);
-                        a(fv0.a);
+                        a(ev0.a);
                         return true;
                     }
                 }
@@ -214,8 +214,8 @@ public class ShutterButton extends View {
         return true;
     }
 
-    public void setDelegate(ev0 ev0Var) {
-        this.e = ev0Var;
+    public void setDelegate(dv0 dv0Var) {
+        this.e = dv0Var;
     }
 
     @Override // android.view.View

@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class e5 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int C = 0;
@@ -75,7 +75,7 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
         qg.b k10 = bVar.k();
         k10.n(null);
         iVar.d(actionBarPopupWindow$ActionBarPopupWindowLayout, this, new ng.w(i10, k10, actionBarPopupWindow$ActionBarPopupWindowLayout), false);
-        k10.n(sg.b.j(g6Var));
+        k10.n(sg.b.k(g6Var));
         k10.o(AndroidUtilities.dp(8.0f));
         k10.h.e = true;
         k10.p(AndroidUtilities.dp(12.0f));
@@ -304,7 +304,7 @@ public abstract class e5 extends FrameLayout implements NotificationCenter.Notif
     public final void onSizeChanged(int i10, int i11, int i12, int i13) {
         if (i10 != 0 && i11 != 0 && this.r) {
             this.v.setBackground(null);
-            AndroidUtilities.runOnUIThread(new tt0(this, 12));
+            AndroidUtilities.runOnUIThread(new yt0(this, 12));
         }
         ug.c.c(this.h, this);
         ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = this.d;

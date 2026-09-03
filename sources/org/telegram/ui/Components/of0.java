@@ -10,9 +10,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class of0 extends sl0 {
+public final class of0 extends rl0 {
     public final Context c;
     public final /* synthetic */ pf0 d;
 
@@ -21,7 +21,7 @@ public final class of0 extends sl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         return false;
     }
@@ -155,6 +155,6 @@ public final class of0 extends sl0 {
             u5Var2.setOnClickListener(new b80(this, 6));
             u5Var = u5Var2;
         }
-        return new fl0(u5Var);
+        return new el0(u5Var);
     }
 }

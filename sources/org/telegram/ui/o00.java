@@ -14,7 +14,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class o00 extends org.telegram.ui.Components.sa {
     public final MessagesController.DialogFilter U;
@@ -69,16 +69,16 @@ public final class o00 extends org.telegram.ui.Components.sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final void F(org.telegram.ui.Components.qv0 qv0Var) {
-        org.telegram.ui.Components.tl0 tl0Var = this.d;
-        tl0Var.setOverScrollMode(2);
-        tl0Var.setOnItemClickListener(new j(this, 10));
+    public final void F(org.telegram.ui.Components.pv0 pv0Var) {
+        org.telegram.ui.Components.sl0 sl0Var = this.d;
+        sl0Var.setOverScrollMode(2);
+        sl0Var.setOnItemClickListener(new j(this, 10));
         f2.l lVar = new f2.l();
         lVar.m = false;
         lVar.C = false;
         lVar.o(org.telegram.ui.Components.pr.h);
         lVar.n(350L);
-        tl0Var.setItemAnimator(lVar);
+        sl0Var.setItemAnimator(lVar);
     }
 
     public final void Q() {
@@ -162,7 +162,7 @@ public final class o00 extends org.telegram.ui.Components.sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final org.telegram.ui.Components.sl0 v(org.telegram.ui.Components.tl0 tl0Var) {
+    public final org.telegram.ui.Components.rl0 v(org.telegram.ui.Components.sl0 sl0Var) {
         m00 m00Var = new m00(this);
         this.X = m00Var;
         return m00Var;

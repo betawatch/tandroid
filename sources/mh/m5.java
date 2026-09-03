@@ -42,23 +42,23 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.jl0;
 import org.telegram.ui.Components.kl0;
-import org.telegram.ui.Components.l41;
-import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.or0;
+import org.telegram.ui.Components.nr0;
 import org.telegram.ui.Components.pq;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.zk0;
+import org.telegram.ui.Components.yk0;
 import org.telegram.ui.NotificationsCustomSettingsActivity;
 import org.telegram.ui.hx;
 import org.telegram.ui.ko0;
 import org.telegram.ui.py;
 import org.webrtc.GlGenericDrawer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, Utilities.Callback2Return, kl0, org.telegram.ui.ActionBar.c2, oh.b7, oh.c9, jh.o, r0.o, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.k1, zk0, dg.g2, CameraController.VideoTakeCallback {
+public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, kl0, Utilities.Callback2Return, jl0, org.telegram.ui.ActionBar.c2, oh.b7, oh.c9, jh.o, r0.o, Vector.TLDeserializer, GlGenericDrawer.TextureCallback, org.telegram.ui.Components.voip.k1, yk0, dg.g2, CameraController.VideoTakeCallback {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -87,7 +87,7 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
         return r0.m1.b;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         return false;
     }
@@ -142,7 +142,7 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         long j10;
         int i11;
@@ -228,7 +228,7 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
         d1Var.setItemAnimator(itemAnimator);
     }
 
-    @Override // org.telegram.ui.Components.zk0
+    @Override // org.telegram.ui.Components.yk0
     public void d() {
         ((qh.d1) this.b).invalidate();
     }
@@ -249,10 +249,10 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
 
     @Override // dg.g2
     public void e() {
-        qh.f9 f9Var = (qh.f9) this.b;
-        TextView textView = f9Var.l1;
-        boolean a2 = f9Var.A0.a();
-        ImageView imageView = f9Var.k1;
+        qh.e9 e9Var = (qh.e9) this.b;
+        TextView textView = e9Var.l1;
+        boolean a2 = e9Var.A0.a();
+        ImageView imageView = e9Var.k1;
         imageView.animate().cancel();
         imageView.animate().alpha(a2 ? 1.0f : 0.6f).translationY(0.0f).setDuration(150L).start();
         imageView.setClickable(a2);
@@ -280,7 +280,7 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
     /* JADX WARN: Removed duplicated region for block: B:92:0x0287  */
     /* JADX WARN: Removed duplicated region for block: B:95:0x02a1  */
     /* JADX WARN: Removed duplicated region for block: B:98:0x02b7  */
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -1712,58 +1712,58 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
                 }
                 return false;
             case 22:
-                or0 or0Var = ((ph.l) this.b).T;
-                if (or0Var.D.z1 || !(view instanceof org.telegram.ui.Cells.r7)) {
+                nr0 nr0Var = ((ph.l) this.b).T;
+                if (nr0Var.D.z1 || !(view instanceof org.telegram.ui.Cells.r7)) {
                     return false;
                 }
                 MessageObject messageObject = ((org.telegram.ui.Cells.r7) view).getMessageObject();
-                if (or0Var.c(messageObject)) {
-                    or0Var.g(messageObject);
+                if (nr0Var.c(messageObject)) {
+                    nr0Var.g(messageObject);
                 } else {
-                    or0Var.e(messageObject);
+                    nr0Var.e(messageObject);
                 }
                 return true;
             default:
-                qh.a3 a3Var = (qh.a3) this.b;
-                ArrayList arrayList = a3Var.V;
-                ArrayList arrayList2 = a3Var.e0;
-                if (i10 >= 2 && a3Var.T != null && (view instanceof qh.x2)) {
+                qh.z2 z2Var = (qh.z2) this.b;
+                ArrayList arrayList = z2Var.V;
+                ArrayList arrayList2 = z2Var.e0;
+                if (i10 >= 2 && z2Var.T != null && (view instanceof qh.w2)) {
                     int i37 = i10 - 2;
-                    if (!a3Var.W) {
-                        if (a3Var.a0) {
+                    if (!z2Var.W) {
+                        if (z2Var.a0) {
                             if (i37 < 0 || i37 >= arrayList.size()) {
                                 i37 -= arrayList.size();
                             }
                         }
                         if (i37 >= 0) {
-                            photoEntry = (MediaController.PhotoEntry) a3Var.c0.get(i37);
+                            photoEntry = (MediaController.PhotoEntry) z2Var.c0.get(i37);
                             if (arrayList2.isEmpty()) {
                                 if (!arrayList2.contains(photoEntry)) {
                                 }
-                                AndroidUtilities.updateVisibleRows(a3Var.d);
-                                a3Var.j();
+                                AndroidUtilities.updateVisibleRows(z2Var.d);
+                                z2Var.j();
                                 return true;
                             }
                         }
                     } else if (i37 != 0) {
                         i37 = i10 - 3;
-                        if (i37 >= 0 && i37 < a3Var.c0.size()) {
-                            photoEntry = (MediaController.PhotoEntry) a3Var.c0.get(i37);
-                            if (arrayList2.isEmpty() && !a3Var.N) {
+                        if (i37 >= 0 && i37 < z2Var.c0.size()) {
+                            photoEntry = (MediaController.PhotoEntry) z2Var.c0.get(i37);
+                            if (arrayList2.isEmpty() && !z2Var.N) {
                                 if (!arrayList2.contains(photoEntry)) {
                                     arrayList2.remove(photoEntry);
                                 } else {
-                                    if (arrayList2.size() + 1 > a3Var.O) {
-                                        int i38 = -a3Var.K;
-                                        a3Var.K = i38;
+                                    if (arrayList2.size() + 1 > z2Var.O) {
+                                        int i38 = -z2Var.K;
+                                        z2Var.K = i38;
                                         AndroidUtilities.shakeViewSpring(view, i38);
                                         BotWebViewVibrationEffect.APP_ERROR.vibrate();
                                         return true;
                                     }
                                     arrayList2.add(photoEntry);
                                 }
-                                AndroidUtilities.updateVisibleRows(a3Var.d);
-                                a3Var.j();
+                                AndroidUtilities.updateVisibleRows(z2Var.d);
+                                z2Var.j();
                                 return true;
                             }
                         }
@@ -1795,41 +1795,41 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
                 ((org.telegram.ui.web.z) this.b).run();
                 break;
             case 23:
-                qh.ca caVar = ((qh.r9) ((qh.p) this.b)).P1;
-                qh.q9 q9Var = caVar.U0;
+                qh.ba baVar = ((qh.q9) ((qh.p) this.b)).P1;
+                qh.p9 p9Var = baVar.U0;
+                if (p9Var != null) {
+                    p9Var.s(null, null, true);
+                }
+                qh.e9 e9Var = baVar.s1;
+                if (e9Var != null) {
+                    e9Var.q0();
+                }
+                qh.q9 q9Var = baVar.Z0;
                 if (q9Var != null) {
-                    q9Var.s(null, null, true);
+                    q9Var.setHasRoundVideo(false);
                 }
-                qh.f9 f9Var = caVar.s1;
-                if (f9Var != null) {
-                    f9Var.q0();
-                }
-                qh.r9 r9Var = caVar.Z0;
-                if (r9Var != null) {
-                    r9Var.setHasRoundVideo(false);
-                }
-                qh.s6 s6Var = caVar.H1;
-                if (s6Var != null) {
-                    File file = s6Var.o0;
+                qh.r6 r6Var = baVar.H1;
+                if (r6Var != null) {
+                    File file = r6Var.o0;
                     if (file != null) {
                         try {
                             file.delete();
                         } catch (Exception unused) {
                         }
-                        caVar.H1.o0 = null;
+                        baVar.H1.o0 = null;
                     }
-                    if (caVar.H1.p0 != null) {
+                    if (baVar.H1.p0 != null) {
                         try {
-                            new File(caVar.H1.p0).delete();
+                            new File(baVar.H1.p0).delete();
                         } catch (Exception unused2) {
                         }
-                        caVar.H1.p0 = null;
+                        baVar.H1.p0 = null;
                         break;
                     }
                 }
                 break;
             default:
-                ((qh.r4) this.b).a.m2.r();
+                ((qh.q4) this.b).a.m2.r();
                 break;
         }
     }
@@ -1854,36 +1854,36 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
 
     @Override // org.telegram.messenger.camera.CameraController.VideoTakeCallback
     public void onFinishVideoRecording(String str, long j10) {
-        qh.y8 y8Var = (qh.y8) this.b;
-        qh.ca caVar = y8Var.a;
-        qh.r5 r5Var = caVar.L0;
-        int i10 = caVar.c;
-        if (r5Var != null) {
-            r5Var.g(true);
+        qh.x8 x8Var = (qh.x8) this.b;
+        qh.ba baVar = x8Var.a;
+        qh.q5 q5Var = baVar.L0;
+        int i10 = baVar.c;
+        if (q5Var != null) {
+            q5Var.g(true);
         }
-        if (caVar.q0()) {
-            caVar.s.d();
+        if (baVar.q0()) {
+            baVar.s.d();
         }
-        if (caVar.D1 == null || caVar.y0 == null) {
+        if (baVar.D1 == null || baVar.y0 == null) {
             return;
         }
-        caVar.N1 = false;
-        caVar.O1 = false;
-        qh.n5 n5Var = caVar.z0;
-        if (n5Var != null) {
-            n5Var.c(false);
+        baVar.N1 = false;
+        baVar.O1 = false;
+        qh.m5 m5Var = baVar.z0;
+        if (m5Var != null) {
+            m5Var.c(false);
         }
         if (j10 <= 800) {
-            caVar.h(false, true);
-            caVar.d0(false);
-            caVar.G0.b(false, true);
-            qh.r5 r5Var2 = caVar.L0;
-            if (r5Var2 != null) {
-                r5Var2.g(true);
+            baVar.h(false, true);
+            baVar.d0(false);
+            baVar.G0.b(false, true);
+            qh.q5 q5Var2 = baVar.L0;
+            if (q5Var2 != null) {
+                q5Var2.g(true);
             }
             try {
-                caVar.D1.delete();
-                caVar.D1 = null;
+                baVar.D1.delete();
+                baVar.D1 = null;
             } catch (Exception e6) {
                 FileLog.e(e6);
             }
@@ -1898,50 +1898,50 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
             }
             return;
         }
-        caVar.i0(false, true);
-        qh.s6 o10 = qh.s6.o(caVar.D1, str, j10);
-        o10.J0 = caVar.s0;
-        o10.K0 = caVar.t0;
+        baVar.i0(false, true);
+        qh.r6 o10 = qh.r6.o(baVar.D1, str, j10);
+        o10.J0 = baVar.s0;
+        o10.K0 = baVar.t0;
         o10.B();
-        caVar.h(false, true);
-        caVar.d0(false);
-        caVar.G0.b(false, true);
-        qh.r5 r5Var3 = caVar.L0;
-        if (r5Var3 != null) {
-            r5Var3.g(true);
+        baVar.h(false, true);
+        baVar.d0(false);
+        baVar.G0.b(false, true);
+        qh.q5 q5Var3 = baVar.L0;
+        if (q5Var3 != null) {
+            q5Var3.g(true);
         }
-        if (!caVar.x0.j()) {
-            caVar.H1 = o10;
-            qh.f8.a(i10, o10);
-            caVar.I1 = false;
-            int videoWidth = caVar.y0.getVideoWidth();
-            int videoHeight = caVar.y0.getVideoHeight();
+        if (!baVar.x0.j()) {
+            baVar.H1 = o10;
+            qh.e8.a(i10, o10);
+            baVar.I1 = false;
+            int videoWidth = baVar.y0.getVideoWidth();
+            int videoHeight = baVar.y0.getVideoHeight();
             if (videoWidth > 0 && videoHeight > 0) {
-                qh.s6 s6Var = caVar.H1;
-                s6Var.k0 = videoWidth;
-                s6Var.l0 = videoHeight;
-                s6Var.A();
+                qh.r6 r6Var = baVar.H1;
+                r6Var.k0 = videoWidth;
+                r6Var.l0 = videoHeight;
+                r6Var.A();
             }
-            caVar.L(new qh.w8(y8Var, 3), 0L);
+            baVar.L(new qh.v8(x8Var, 3), 0L);
             return;
         }
-        caVar.D1 = null;
+        baVar.D1 = null;
         o10.P = 1.0f;
-        if (caVar.x0.l(o10)) {
-            qh.s6 a2 = qh.s6.a(caVar.x0.getLayout(), caVar.x0.getContent());
-            caVar.H1 = a2;
-            qh.f8.a(i10, a2);
-            caVar.I1 = false;
-            int videoWidth2 = caVar.y0.getVideoWidth();
-            int videoHeight2 = caVar.y0.getVideoHeight();
+        if (baVar.x0.l(o10)) {
+            qh.r6 a2 = qh.r6.a(baVar.x0.getLayout(), baVar.x0.getContent());
+            baVar.H1 = a2;
+            qh.e8.a(i10, a2);
+            baVar.I1 = false;
+            int videoWidth2 = baVar.y0.getVideoWidth();
+            int videoHeight2 = baVar.y0.getVideoHeight();
             if (videoWidth2 > 0 && videoHeight2 > 0) {
-                qh.s6 s6Var2 = caVar.H1;
-                s6Var2.k0 = videoWidth2;
-                s6Var2.l0 = videoHeight2;
-                s6Var2.A();
+                qh.r6 r6Var2 = baVar.H1;
+                r6Var2.k0 = videoWidth2;
+                r6Var2.l0 = videoHeight2;
+                r6Var2.A();
             }
         }
-        caVar.m0(true);
+        baVar.m0(true);
     }
 
     @Override // org.telegram.messenger.Utilities.Callback5
@@ -1952,45 +1952,45 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
                 break;
             case 4:
                 ga gaVar = (ga) this.b;
-                j51 j51Var = (j51) obj;
+                h51 h51Var = (h51) obj;
                 ((Integer) obj3).intValue();
                 ((Float) obj4).floatValue();
                 ((Float) obj5).floatValue();
                 gaVar.getClass();
-                if (j51Var.G instanceof TL_stars.StarsTransaction) {
-                    ja.h1(gaVar.getContext(), false, 0L, gaVar.c, (TL_stars.StarsTransaction) j51Var.G, gaVar.b);
+                if (h51Var.G instanceof TL_stars.StarsTransaction) {
+                    ja.h1(gaVar.getContext(), false, 0L, gaVar.c, (TL_stars.StarsTransaction) h51Var.G, gaVar.b);
                     break;
                 }
                 break;
             default:
-                qh.u8 u8Var = (qh.u8) this.b;
-                j51 j51Var2 = (j51) obj;
+                qh.t8 t8Var = (qh.t8) this.b;
+                h51 h51Var2 = (h51) obj;
                 ((Integer) obj3).getClass();
                 ((Float) obj4).getClass();
                 ((Float) obj5).getClass();
-                int i10 = j51Var2.d;
-                qh.s6 s6Var = (qh.s6) j51Var2.G;
-                u8Var.c(false, true);
-                qh.ca caVar = u8Var.L;
-                if (s6Var != caVar.H1 && !caVar.U1) {
-                    caVar.a1.setSelected(i10);
-                    caVar.U1 = true;
-                    qh.e8 e8Var = new qh.e8(caVar, i10, 1);
-                    qh.f9 f9Var = caVar.s1;
-                    qh.s6 s6Var2 = caVar.H1;
-                    if (f9Var != null && s6Var2 != null) {
-                        if (!f9Var.u0()) {
-                            e8Var.run();
+                int i10 = h51Var2.d;
+                qh.r6 r6Var = (qh.r6) h51Var2.G;
+                t8Var.c(false, true);
+                qh.ba baVar = t8Var.L;
+                if (r6Var != baVar.H1 && !baVar.U1) {
+                    baVar.a1.setSelected(i10);
+                    baVar.U1 = true;
+                    qh.d8 d8Var = new qh.d8(baVar, i10, 1);
+                    qh.e9 e9Var = baVar.s1;
+                    qh.r6 r6Var2 = baVar.H1;
+                    if (e9Var != null && r6Var2 != null) {
+                        if (!e9Var.u0()) {
+                            d8Var.run();
                             break;
                         } else {
-                            s6Var2.f();
-                            boolean u02 = f9Var.u0();
-                            boolean z4 = f9Var.L0.getPainting().E;
-                            Utilities.searchQueue.postRunnable(new qh.j8(caVar, f9Var, s6Var2.i0, s6Var2.j0, s6Var2, z4, u02, e8Var, 0));
+                            r6Var2.f();
+                            boolean u02 = e9Var.u0();
+                            boolean z4 = e9Var.L0.getPainting().E;
+                            Utilities.searchQueue.postRunnable(new qh.i8(baVar, e9Var, r6Var2.i0, r6Var2.j0, r6Var2, z4, u02, d8Var, 0));
                             break;
                         }
                     } else {
-                        e8Var.run();
+                        d8Var.run();
                         break;
                     }
                 }
@@ -2004,9 +2004,9 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
             case 7:
                 return oh.v0.a((oh.v0) this.b, (Long) obj2);
             default:
-                or0 or0Var = (or0) this.b;
+                nr0 nr0Var = (nr0) this.b;
                 if (((Integer) obj).intValue() == -1) {
-                    new ph.o(or0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new org.telegram.ui.web.d1(or0Var, 2)).show();
+                    new ph.o(nr0Var.a, LocaleController.getString(R.string.ProfileBotPreviewLanguageChoose), new org.telegram.ui.web.d1(nr0Var, 2)).show();
                     return Boolean.TRUE;
                 }
                 return Boolean.FALSE;
@@ -2020,10 +2020,10 @@ public final /* synthetic */ class m5 implements Utilities.Callback5, ko0, ll0, 
             return;
         }
         Utilities.stackBlurBitmap(bitmap, Math.max(7, Math.max(bitmap.getWidth(), bitmap.getHeight()) / 180));
-        AndroidUtilities.runOnUIThread(new l41(8, uVar, bitmap));
+        AndroidUtilities.runOnUIThread(new q51(7, uVar, bitmap));
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

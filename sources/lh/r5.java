@@ -31,9 +31,9 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.a20;
 import org.telegram.ui.Components.g90;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.j51;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.p9;
@@ -42,11 +42,11 @@ import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.s00;
 import org.telegram.ui.Components.u00;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xt;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class r5 extends org.telegram.ui.ActionBar.p2 implements xd.b {
     public LinearLayout B;
@@ -270,8 +270,8 @@ public class r5 extends org.telegram.ui.ActionBar.p2 implements xd.b {
         }
     }
 
-    public static void Y(r5 r5Var, j51 j51Var) {
-        Object obj = j51Var.G;
+    public static void Y(r5 r5Var, h51 h51Var) {
+        Object obj = h51Var.G;
         if (obj instanceof TL_stars.TL_starGiftUnique) {
             TL_stars.TL_starGiftUnique tL_starGiftUnique = (TL_stars.TL_starGiftUnique) obj;
             mh.g5 g5Var = new mh.g5(r5Var.getParentActivity(), r5Var.currentAccount, r5Var.b, r5Var.resourceProvider, null);
@@ -364,7 +364,7 @@ public class r5 extends org.telegram.ui.ActionBar.p2 implements xd.b {
         LinearLayout f10 = org.telegram.messenger.y3.f(context, 1);
         t4Var.addView(f10, k7.c6.e(-1, -2, 23));
         p9 p9Var = new p9(context);
-        p9Var.setImageDrawable(new ij0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), "utyan_empty", AndroidUtilities.dp(130.0f)));
+        p9Var.setImageDrawable(new hj0(R.raw.utyan_empty, AndroidUtilities.dp(130.0f), AndroidUtilities.dp(130.0f)));
         f10.addView(p9Var, k7.c6.q(130, 130, 17));
         TextView textView = new TextView(context);
         org.telegram.ui.b.l(k6.G6, g6Var, textView, 1, 17.0f);
@@ -437,7 +437,7 @@ public class r5 extends org.telegram.ui.ActionBar.p2 implements xd.b {
         frameLayout.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         View view2 = this.s;
         qg.b c3 = this.J.c(view2, null, false);
-        c3.n(sg.b.k(this.resourceProvider));
+        c3.n(sg.b.l(this.resourceProvider));
         c3.o(AndroidUtilities.dp(8.0f));
         c3.p(AndroidUtilities.dp(18.0f));
         view2.setBackground(c3);
@@ -548,7 +548,7 @@ public class r5 extends org.telegram.ui.ActionBar.p2 implements xd.b {
         frameLayout2.setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
         View view3 = this.r;
         qg.b c10 = this.J.c(view3, null, false);
-        c10.n(sg.b.k(this.resourceProvider));
+        c10.n(sg.b.l(this.resourceProvider));
         c10.o(AndroidUtilities.dp(8.0f));
         c10.p(AndroidUtilities.dp(22.0f));
         view3.setBackground(c10);
@@ -806,7 +806,7 @@ public class r5 extends org.telegram.ui.ActionBar.p2 implements xd.b {
     }
 
     public final void e0(boolean z4) {
-        x51 x51Var;
+        w51 w51Var;
         b5 b5Var = this.d;
         int i10 = b5Var.e;
         HashSet hashSet = b5Var.l;
@@ -820,8 +820,8 @@ public class r5 extends org.telegram.ui.ActionBar.p2 implements xd.b {
         }
         k4 k4Var = this.n;
         boolean z10 = false;
-        if (k4Var != null && (x51Var = k4Var.V2) != null) {
-            x51Var.N(true);
+        if (k4Var != null && (w51Var = k4Var.V2) != null) {
+            w51Var.N(true);
             if (z4) {
                 this.n.u0(0);
             }

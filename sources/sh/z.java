@@ -18,11 +18,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class z extends View {
     public boolean B;
@@ -31,7 +31,7 @@ public final class z extends View {
     public final Paint b;
     public final TextPaint c;
     public final w d;
-    public final ij0 e;
+    public final hj0 e;
     public boolean f;
     public float h;
     public String n;
@@ -51,15 +51,15 @@ public final class z extends View {
         this.c = textPaint;
         w wVar = new w(this);
         this.d = wVar;
-        ij0 ij0Var = new ij0(R.raw.bot_webview_sheet_to_cross, AndroidUtilities.dp(20.0f), String.valueOf(R.raw.bot_webview_sheet_to_cross) + hashCode(), AndroidUtilities.dp(20.0f));
-        this.e = ij0Var;
+        hj0 hj0Var = new hj0(R.raw.bot_webview_sheet_to_cross, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f));
+        this.e = hj0Var;
         this.n = LocaleController.getString(R.string.BotsMenuTitle);
         this.B = true;
         paint.setColor(k6.w0(null, k6.cf, false));
         int w02 = k6.w0(null, k6.ef, false);
         wVar.k = w02;
         wVar.j = w02;
-        ij0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
+        hj0Var.setColorFilter(new PorterDuffColorFilter(w02, PorterDuff.Mode.SRC_IN));
         textPaint.setColor(w02);
         wVar.n = true;
         wVar.h = false;
@@ -73,8 +73,8 @@ public final class z extends View {
         org.telegram.ui.Cells.z i02 = k6.i0(dp, dp, dp, dp, 0, w03, w03);
         this.y = i02;
         i02.setCallback(this);
-        ij0Var.setCallback(this);
-        ij0Var.s0 = this;
+        hj0Var.setCallback(this);
+        hj0Var.s0 = this;
         setContentDescription(LocaleController.getString("AccDescrBotMenu", R.string.AccDescrBotMenu));
     }
 
@@ -118,11 +118,11 @@ public final class z extends View {
                     if (this.w) {
                         canvas.save();
                         canvas.translate(AndroidUtilities.dp(9.5f), AndroidUtilities.dp(6.0f));
-                        ij0 ij0Var = this.e;
-                        ij0Var.setBounds(0, 0, ij0Var.b, ij0Var.c);
-                        ij0Var.draw(canvas);
+                        hj0 hj0Var = this.e;
+                        hj0Var.setBounds(0, 0, hj0Var.b, hj0Var.c);
+                        hj0Var.draw(canvas);
                         canvas.restore();
-                        if (ij0Var.i0) {
+                        if (hj0Var.i0) {
                             invalidate();
                         }
                     } else {
@@ -204,7 +204,7 @@ public final class z extends View {
             textPaint.setTextSize(dp);
             this.C = size;
             int i12 = (int) (AndroidUtilities.displaySize.x * 0.6f);
-            StaticLayout c3 = lw0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, i12, 1, true);
+            StaticLayout c3 = kw0.c(Emoji.replaceEmoji(this.n, textPaint.getFontMetricsInt(), false), textPaint, i12, Layout.Alignment.ALIGN_NORMAL, 0.0f, false, TextUtils.TruncateAt.END, i12, 1, true);
             this.r = c3;
             this.s = c3.getLineCount() > 0 ? this.r.getLineWidth(0) : 0.0f;
         }
@@ -230,11 +230,11 @@ public final class z extends View {
             return;
         }
         if (this.x != z4) {
-            ij0 ij0Var = this.e;
-            ij0Var.stop();
-            ij0Var.h = true;
-            ij0Var.N(z4 ? ij0Var.e[0] : 1);
-            ij0Var.start();
+            hj0 hj0Var = this.e;
+            hj0Var.stop();
+            hj0Var.h = true;
+            hj0Var.N(z4 ? hj0Var.e[0] : 1);
+            hj0Var.start();
             this.x = z4;
         }
     }

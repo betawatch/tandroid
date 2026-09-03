@@ -4,7 +4,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class yh extends m6 {
     public final /* synthetic */ int b;
@@ -35,9 +35,9 @@ public final class yh extends m6 {
                 miVar.a0 = f10;
                 ei eiVar = miVar.w0;
                 if (eiVar != null) {
-                    if ((eiVar instanceof qm) || (miVar.v0 instanceof qm)) {
+                    if ((eiVar instanceof pm) || (miVar.v0 instanceof pm)) {
                         int max = Math.max(eiVar.getWidth(), miVar.v0.getWidth());
-                        if (miVar.w0 instanceof qm) {
+                        if (miVar.w0 instanceof pm) {
                             miVar.v0.setTranslationX((-max) * f10);
                             miVar.w0.setTranslationX((1.0f - f10) * max);
                         } else {
@@ -48,14 +48,14 @@ public final class yh extends m6 {
                         eiVar.setAlpha(f10);
                         miVar.w0.s(f10);
                         ei eiVar2 = miVar.w0;
-                        sn snVar = miVar.j0;
-                        if (eiVar2 == snVar || miVar.v0 == snVar) {
-                            miVar.a2(eiVar2 == snVar ? 1 : 0);
+                        rn rnVar = miVar.j0;
+                        if (eiVar2 == rnVar || miVar.v0 == rnVar) {
+                            miVar.a2(eiVar2 == rnVar ? 1 : 0);
                         }
                         ei eiVar3 = miVar.w0;
-                        sn snVar2 = miVar.k0;
-                        if (eiVar3 == snVar2 || miVar.v0 == snVar2) {
-                            miVar.a2(eiVar3 == snVar2 ? 1 : 0);
+                        rn rnVar2 = miVar.k0;
+                        if (eiVar3 == rnVar2 || miVar.v0 == rnVar2) {
+                            miVar.a2(eiVar3 == rnVar2 ? 1 : 0);
                         }
                         miVar.w0.setTranslationY(AndroidUtilities.dp(78.0f) * f10);
                         miVar.v0.s(1.0f - Math.min(1.0f, f10 / 0.7f));

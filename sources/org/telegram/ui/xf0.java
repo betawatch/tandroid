@@ -31,9 +31,9 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class xf0 extends org.telegram.ui.Components.wv0 {
+public final class xf0 extends org.telegram.ui.Components.vv0 {
     public final ImageView a;
     public final qh.d b;
     public final mh.d0[] c;
@@ -256,7 +256,7 @@ public final class xf0 extends org.telegram.ui.Components.wv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void g() {
         int i10;
         if (this.s >= 0) {
@@ -268,7 +268,7 @@ public final class xf0 extends org.telegram.ui.Components.wv0 {
         this.b.setLoading(false);
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void m(Bundle bundle, boolean z4) {
         this.d = bundle;
         String countryName = LocaleController.getCountryName(bundle == null ? null : bundle.getString("country"));

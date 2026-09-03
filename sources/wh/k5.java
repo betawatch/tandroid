@@ -20,7 +20,7 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class k5 extends ViewGroup {
     public final RectF B;
@@ -110,7 +110,7 @@ public final class k5 extends ViewGroup {
                 Object obj = arrayList.get(i12);
                 i12++;
                 TL_iv.pageTableCell pagetablecell3 = (TL_iv.pageTableCell) obj;
-                if (((LinkedHashSet) ((sf.g) this.h).b).contains(pagetablecell3)) {
+                if (((LinkedHashSet) ((sf.h) this.h).b).contains(pagetablecell3)) {
                     int b10 = this.a.b(pagetablecell3);
                     int a2 = this.a.a(pagetablecell3);
                     if (b10 < i10 || (b10 == i10 && a2 < i11)) {
@@ -452,10 +452,10 @@ public final class k5 extends ViewGroup {
                 }
                 canvas2 = canvas;
                 int i43 = z5Var.b;
-                i(canvas2, this.e[0], this.f[0], 180.0f);
-                i(canvas2, this.e[i12], this.f[0], 270.0f);
-                i(canvas2, this.e[0], this.f[i43], 90.0f);
-                i(canvas2, this.e[i12], this.f[i43], 0.0f);
+                i(180.0f, this.e[0], this.f[0], canvas2);
+                i(270.0f, this.e[i12], this.f[0], canvas2);
+                i(90.0f, this.e[0], this.f[i43], canvas2);
+                i(0.0f, this.e[i12], this.f[i43], canvas2);
                 if (this.a != null) {
                     return;
                 }
@@ -685,7 +685,7 @@ public final class k5 extends ViewGroup {
         canvas.drawPath(path, this.x);
     }
 
-    public final void i(Canvas canvas, int i10, int i11, float f10) {
+    public final void i(float f10, int i10, int i11, Canvas canvas) {
         float f11 = f(i10, i11);
         if (f11 <= 0.0f) {
             return;
@@ -724,7 +724,7 @@ public final class k5 extends ViewGroup {
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                if (((LinkedHashSet) ((sf.g) this.h).b).contains((TL_iv.pageTableCell) obj)) {
+                if (((LinkedHashSet) ((sf.h) this.h).b).contains((TL_iv.pageTableCell) obj)) {
                     return true;
                 }
             }
@@ -1003,7 +1003,7 @@ public final class k5 extends ViewGroup {
         if (z5Var == null || (j5Var = this.h) == null || i10 < 0 || i10 >= z5Var.b || i11 < 0 || i11 >= z5Var.c) {
             return false;
         }
-        return ((LinkedHashSet) ((sf.g) j5Var).b).contains(z5Var.d[i10][i11]);
+        return ((LinkedHashSet) ((sf.h) j5Var).b).contains(z5Var.d[i10][i11]);
     }
 
     public final int q() {

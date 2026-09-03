@@ -36,15 +36,15 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.p80;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.q70;
+import org.telegram.ui.bh1;
 import org.telegram.ui.h20;
 import org.telegram.ui.l4;
-import org.telegram.ui.mg1;
 import org.telegram.ui.p3;
-import org.telegram.ui.qd1;
 import org.telegram.ui.sj0;
+import org.telegram.ui.vd1;
 import org.telegram.ui.y3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class t1 extends FrameLayout {
     public final TextPaint B;
@@ -253,9 +253,9 @@ public abstract class t1 extends FrameLayout {
                                     org.telegram.ui.ActionBar.g1 y10 = F.y();
                                     y10.setEnabled(instantViewLoader.b() != null);
                                     y10.setAlpha(y10.isEnabled() ? 1.0f : 0.5f);
-                                    mg1 mg1Var = new mg1(11, y10, instantViewLoader);
-                                    instantViewLoader.m.add(mg1Var);
-                                    F.p = new mg1(15, instantViewLoader, mg1Var);
+                                    bh1 bh1Var = new bh1(10, y10, instantViewLoader);
+                                    instantViewLoader.m.add(bh1Var);
+                                    F.p = new bh1(14, instantViewLoader, bh1Var);
                                 }
                                 F.c(R.drawable.msg_reset, LocaleController.getString(R.string.Refresh), (Runnable) yVar.run(5), false);
                                 F.c(R.drawable.msg_search, LocaleController.getString(R.string.Search), (Runnable) yVar.run(1), false);
@@ -450,9 +450,9 @@ public abstract class t1 extends FrameLayout {
                                     org.telegram.ui.ActionBar.g1 y10 = F.y();
                                     y10.setEnabled(instantViewLoader.b() != null);
                                     y10.setAlpha(y10.isEnabled() ? 1.0f : 0.5f);
-                                    mg1 mg1Var = new mg1(11, y10, instantViewLoader);
-                                    instantViewLoader.m.add(mg1Var);
-                                    F.p = new mg1(15, instantViewLoader, mg1Var);
+                                    bh1 bh1Var = new bh1(10, y10, instantViewLoader);
+                                    instantViewLoader.m.add(bh1Var);
+                                    F.p = new bh1(14, instantViewLoader, bh1Var);
                                 }
                                 F.c(R.drawable.msg_reset, LocaleController.getString(R.string.Refresh), (Runnable) yVar.run(5), false);
                                 F.c(R.drawable.msg_search, LocaleController.getString(R.string.Search), (Runnable) yVar.run(1), false);
@@ -808,7 +808,7 @@ public abstract class t1 extends FrameLayout {
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.R, z4 ? 1.0f : 0.0f);
         this.q0 = ofFloat;
         ofFloat.addUpdateListener(new f5(this, 9));
-        this.q0.addListener(new qd1(2, this, z4));
+        this.q0.addListener(new vd1(2, this, z4));
         this.q0.setInterpolator(pr.h);
         this.q0.setDuration(320L);
         this.q0.start();

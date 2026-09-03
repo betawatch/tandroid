@@ -11,9 +11,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class dp extends org.telegram.ui.Components.tl0 {
+public final class dp extends org.telegram.ui.Components.sl0 {
     public static final /* synthetic */ int Y2 = 0;
     public final bp U2;
     public boolean V2;
@@ -34,7 +34,7 @@ public final class dp extends org.telegram.ui.Components.tl0 {
         new f2.f0(new cp(this, 0)).d(this);
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         int R;
@@ -60,12 +60,12 @@ public final class dp extends org.telegram.ui.Components.tl0 {
         super.dispatchDraw(canvas2);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(9999999, TLObject.FLAG_31));
     }
 
-    public final void w1(TLRPC.TL_username tL_username, boolean z4, boolean z10) {
+    public final void v1(TLRPC.TL_username tL_username, boolean z4, boolean z10) {
         TLRPC.TL_username tL_username2;
         int min;
         ep epVar = this.X2;

@@ -33,13 +33,13 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.h3;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.Components.xk;
-import org.telegram.ui.ha1;
+import org.telegram.ui.na1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class m implements Runnable {
     public final /* synthetic */ int a;
@@ -73,12 +73,12 @@ public final /* synthetic */ class m implements Runnable {
                 return;
             case 4:
                 v0 v0Var = ((n0) this.b).c;
-                v0Var.n.presentFragment(ha1.d0(v0Var.s1(), true));
+                v0Var.n.presentFragment(na1.d0(v0Var.s1(), true));
                 return;
             case 5:
-                lj0 lj0Var = ((b1) this.b).y;
-                lj0Var.getAnimatedDrawable().L(0, true, false);
-                lj0Var.d();
+                kj0 kj0Var = ((b1) this.b).y;
+                kj0Var.getAnimatedDrawable().L(0, true, false);
+                kj0Var.d();
                 return;
             case 6:
                 ((j1) this.b).b.y();
@@ -89,7 +89,7 @@ public final /* synthetic */ class m implements Runnable {
                 j0 j0Var = i2Var.V2;
                 i2Var.i3 = size;
                 j0Var.h1(size, (i2Var.getMeasuredHeight() - i2Var.getChildAt(0).getMeasuredHeight()) >> 1);
-                i2Var.w1(null, false);
+                i2Var.v1(null, false);
                 return;
             case 8:
                 ((k2) this.b).invalidate();
@@ -193,9 +193,9 @@ public final /* synthetic */ class m implements Runnable {
                 ((m0) this.b).onBackPressed();
                 return;
             case 27:
-                x51 x51Var = ((g2) this.b).V;
-                if (x51Var != null) {
-                    x51Var.N(false);
+                w51 w51Var = ((g2) this.b).V;
+                if (w51Var != null) {
+                    w51Var.N(false);
                     return;
                 }
                 return;

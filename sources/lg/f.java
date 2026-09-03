@@ -14,21 +14,21 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.bd0;
 import org.telegram.ui.Components.c20;
 import org.telegram.ui.Components.d20;
-import org.telegram.ui.Components.fn0;
+import org.telegram.ui.Components.en0;
 import org.telegram.ui.Components.p30;
 import org.telegram.ui.UsersSelectActivity;
 import org.telegram.ui.b80;
 import org.telegram.ui.c10;
 import org.telegram.ui.d80;
 import org.telegram.ui.ep;
-import org.telegram.ui.qe0;
+import org.telegram.ui.pe0;
 import org.telegram.ui.ux;
 import org.telegram.ui.xo;
-import qh.a8;
-import qh.s1;
+import qh.r1;
+import qh.z7;
 import uf.e0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f extends EditTextBoldCursor {
     public final /* synthetic */ int b;
@@ -45,7 +45,7 @@ public final class f extends EditTextBoldCursor {
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.b) {
             case 5:
-                ((fn0) this.c).getClass();
+                ((en0) this.c).getClass();
                 break;
         }
         return super.dispatchTouchEvent(motionEvent);
@@ -63,7 +63,7 @@ public final class f extends EditTextBoldCursor {
             case 9:
                 super.onFocusChanged(z4, i10, rect);
                 if (!z4) {
-                    AndroidUtilities.hideKeyboard(((s1) this.c).d);
+                    AndroidUtilities.hideKeyboard(((r1) this.c).d);
                     break;
                 }
                 break;
@@ -167,7 +167,7 @@ public final class f extends EditTextBoldCursor {
         switch (this.b) {
             case 7:
                 if (i10 == 16908322 || i10 == 16908337) {
-                    ((qe0) this.c).y = true;
+                    ((pe0) this.c).y = true;
                     postDelayed(new c10(this, 21), 1000L);
                 }
                 break;
@@ -202,7 +202,7 @@ public final class f extends EditTextBoldCursor {
             case 5:
                 if (isEnabled()) {
                     if (motionEvent.getAction() == 1) {
-                        ((fn0) this.c).getClass();
+                        ((en0) this.c).getClass();
                     }
                     break;
                 }
@@ -220,7 +220,7 @@ public final class f extends EditTextBoldCursor {
                 }
                 break;
             case 9:
-                f fVar = ((s1) this.c).d;
+                f fVar = ((r1) this.c).d;
                 if (!fVar.isEnabled()) {
                     break;
                 } else {
@@ -231,14 +231,14 @@ public final class f extends EditTextBoldCursor {
                     break;
                 }
             case 10:
-                a8 a8Var = (a8) this.c;
-                p30 p30Var3 = a8Var.e;
+                z7 z7Var = (z7) this.c;
+                p30 p30Var3 = z7Var.e;
                 if (p30Var3 != null) {
                     p30Var3.a();
-                    a8Var.e = null;
+                    z7Var.e = null;
                 }
                 if (motionEvent.getAction() == 0 && !AndroidUtilities.showKeyboard(this)) {
-                    a8Var.fullScroll(130);
+                    z7Var.fullScroll(130);
                     clearFocus();
                     requestFocus();
                 }

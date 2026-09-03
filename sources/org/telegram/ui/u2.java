@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class u2 extends View implements org.telegram.ui.Cells.l9, g3 {
     public final o70 a;
@@ -130,7 +130,7 @@ public final class u2 extends View implements org.telegram.ui.Cells.l9, g3 {
             int dp = size - AndroidUtilities.dp(36);
             TL_iv.pageBlockSubtitle pageblocksubtitle2 = this.f;
             j4 j4Var = this.b;
-            d3 p10 = l4.p(o70Var2, this, null, richText, dp, 0, pageblocksubtitle2, (j4Var == null || !j4Var.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.lw0.a(), 0, this.b);
+            d3 p10 = l4.p(o70Var2, this, null, richText, dp, 0, pageblocksubtitle2, (j4Var == null || !j4Var.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
             this.c = p10;
             if (p10 != null) {
                 o70Var.getClass();

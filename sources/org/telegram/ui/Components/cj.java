@@ -4,9 +4,9 @@ import android.view.View;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class cj implements ll0, ij {
+public final /* synthetic */ class cj implements kl0, ij {
     public final /* synthetic */ sj a;
 
     public /* synthetic */ cj(sj sjVar) {
@@ -20,7 +20,7 @@ public final /* synthetic */ class cj implements ll0, ij {
         sjVar.G.a(user, z4, i10, j10);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         Object O;
         sj sjVar = this.a;

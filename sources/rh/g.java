@@ -34,36 +34,36 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.f5;
 import org.telegram.ui.ActionBar.k;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.k6;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.s00;
-import org.telegram.ui.Components.x51;
-import org.telegram.ui.ib1;
-import org.telegram.ui.iw0;
+import org.telegram.ui.Components.w51;
 import org.telegram.ui.l20;
 import org.telegram.ui.m20;
+import org.telegram.ui.nw0;
+import org.telegram.ui.ob1;
 import org.telegram.ui.yh;
-import qh.d4;
-import qh.o9;
+import qh.c4;
+import qh.n9;
 import sh.d3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class g extends m20 implements NotificationCenter.NotificationCenterDelegate {
     public FrameLayout M;
     public i N;
     public ia O;
-    public iw0 P;
+    public nw0 P;
     public final boolean Q = B0();
     public LinearLayout R;
     public SpannableStringBuilder S;
     public k6 T;
     public k6 U;
-    public o9 V;
+    public n9 V;
     public qh.d W;
-    public ib1 X;
+    public ob1 X;
     public qh.d Y;
     public qh.d Z;
     public boolean a0;
@@ -79,7 +79,7 @@ public final class g extends m20 implements NotificationCenter.NotificationCente
     }
 
     public static void x0(g gVar, int i10) {
-        j51 G;
+        h51 G;
         d dVar = gVar.c0;
         if (dVar == null || (G = dVar.G(i10)) == null) {
             return;
@@ -104,16 +104,16 @@ public final class g extends m20 implements NotificationCenter.NotificationCente
         }
     }
 
-    public final void C0(ArrayList arrayList, x51 x51Var) {
+    public final void C0(ArrayList arrayList, w51 w51Var) {
         if (getParentActivity() == null) {
             return;
         }
         t7 y10 = t7.y(this.currentAccount, true);
         h0 h0Var = (h0) super.r0(getParentActivity());
-        j51 j51Var = new j51(-2);
-        j51Var.c = h0Var;
-        arrayList.add(j51Var);
-        arrayList.add(j51.k(this.R));
+        h51 h51Var = new h51(-2);
+        h51Var.c = h0Var;
+        arrayList.add(h51Var);
+        arrayList.add(h51.k(this.R));
         boolean z4 = this.Q;
         if (z4) {
             yh.A(R.string.TopUpViaFragmentInfo, arrayList);
@@ -121,13 +121,13 @@ public final class g extends m20 implements NotificationCenter.NotificationCente
         boolean O = y10.O(0);
         this.a0 = O;
         if (!O) {
-            arrayList.add(j51.l(this.P));
+            arrayList.add(h51.l(this.P));
             return;
         }
         if (!z4) {
-            arrayList.add(j51.B(null));
+            arrayList.add(h51.B(null));
         }
-        arrayList.add(j51.p(this.O, AndroidUtilities.dp(24.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.navigationBarHeight, false));
+        arrayList.add(h51.p(this.O, AndroidUtilities.dp(24.0f) + k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.navigationBarHeight, false));
     }
 
     public final void D0() {
@@ -212,7 +212,7 @@ public final class g extends m20 implements NotificationCenter.NotificationCente
         this.D = false;
         this.B = AndroidUtilities.dp(238.0f);
         this.O = new ia(context, this.currentAccount, true, 0L, getClassGuid(), getResourceProvider());
-        this.P = new iw0(this, context, 7);
+        this.P = new nw0(this, context, 7);
         super.createView(context);
         f5 f5Var = this.parentLayout;
         if (f5Var != null && ((ActionBarLayout) f5Var).K0) {
@@ -265,9 +265,9 @@ public final class g extends m20 implements NotificationCenter.NotificationCente
         this.U.setTextColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.z6, this.resourceProvider));
         this.R.addView(this.U, c6.d(-1, 20.0f, 17, 24.0f, 0.0f, 24.0f, 8.0f));
         FrameLayout frameLayout2 = new FrameLayout(getParentActivity());
-        o9 o9Var = new o9(this, getParentActivity(), 1);
-        this.V = o9Var;
-        frameLayout2.addView(o9Var);
+        n9 n9Var = new n9(this, getParentActivity(), 1);
+        this.V = n9Var;
+        frameLayout2.addView(n9Var);
         boolean z4 = this.Q;
         if (z4) {
             qh.d dVar = new qh.d(getParentActivity(), this.resourceProvider, true);
@@ -301,9 +301,9 @@ public final class g extends m20 implements NotificationCenter.NotificationCente
             });
             this.V.addView(this.W, c6.e(-1, 48, 119));
         }
-        ib1 ib1Var = new ib1(this, getParentActivity(), 18);
-        this.X = ib1Var;
-        frameLayout2.addView(ib1Var);
+        ob1 ob1Var = new ob1(this, getParentActivity(), 18);
+        this.X = ob1Var;
+        frameLayout2.addView(ob1Var);
         qh.d dVar2 = new qh.d(getParentActivity(), this.resourceProvider, true);
         dVar2.setRoundRadius(24);
         this.Y = dVar2;
@@ -438,7 +438,7 @@ public final class g extends m20 implements NotificationCenter.NotificationCente
 
     @Override // org.telegram.ui.m20
     public final p0 n0() {
-        d dVar = new d(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new d4(this, 5), getResourceProvider());
+        d dVar = new d(this, this.c, getParentActivity(), this.currentAccount, this.classGuid, new c4(this, 5), getResourceProvider());
         this.c0 = dVar;
         dVar.r = false;
         return dVar;

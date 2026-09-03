@@ -1,22 +1,41 @@
 package qh;
 
-import android.content.Context;
-import android.view.accessibility.AccessibilityNodeInfo;
+import android.text.TextUtils;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.zw0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class r2 extends org.telegram.ui.ActionBar.w0 {
-    public final /* synthetic */ a3 s0;
+public final class r2 extends y2 {
+    public final /* synthetic */ z2 x;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r2(a3 a3Var, Context context, org.telegram.ui.ActionBar.z zVar, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, zVar, 0, 0, false, g6Var);
-        this.s0 = a3Var;
+    public r2(z2 z2Var) {
+        super(z2Var);
+        this.x = z2Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.w0, android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setText(this.s0.y.getText());
+    @Override // qh.y2
+    public final void F(boolean z4) {
+        z2 z2Var = this.x;
+        org.telegram.ui.ActionBar.w0 w0Var = z2Var.D;
+        if (w0Var != null) {
+            w0Var.setShowSearchProgress(z4);
+        }
+        z2Var.s.e(z4, true);
+    }
+
+    @Override // f2.p0
+    public final void l() {
+        zw0 zw0Var = this.x.s;
+        super.l();
+        if (TextUtils.isEmpty(this.f)) {
+            zw0Var.setStickerType(11);
+            zw0Var.d.setText(LocaleController.getString(R.string.SearchImagesType));
+        } else {
+            zw0Var.setStickerType(1);
+            zw0Var.d.setText(LocaleController.formatString(R.string.NoResultFoundFor, this.f));
+        }
     }
 }

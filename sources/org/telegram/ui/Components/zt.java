@@ -27,7 +27,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class zt extends EditText {
     private static final int SPOILER_TIMEOUT = 10000;
@@ -113,10 +113,10 @@ public abstract class zt extends EditText {
         boolean z4 = false;
         if (text instanceof Spannable) {
             Spannable spannable = (Spannable) text;
-            for (u01 u01Var : (u01[]) spannable.getSpans(0, spannable.length(), u01.class)) {
-                int spanStart = spannable.getSpanStart(u01Var);
-                int spanEnd = spannable.getSpanEnd(u01Var);
-                if (u01Var.c() && ((spanStart > (i10 = this.selStart) && spanEnd < this.selEnd) || ((i10 > spanStart && i10 < spanEnd) || ((i11 = this.selEnd) > spanStart && i11 < spanEnd)))) {
+            for (t01 t01Var : (t01[]) spannable.getSpans(0, spannable.length(), t01.class)) {
+                int spanStart = spannable.getSpanStart(t01Var);
+                int spanEnd = spannable.getSpanEnd(t01Var);
+                if (t01Var.c() && ((spanStart > (i10 = this.selStart) && spanEnd < this.selEnd) || ((i10 > spanStart && i10 < spanEnd) || ((i11 = this.selEnd) > spanStart && i11 < spanEnd)))) {
                     removeCallbacks(this.spoilerTimeout);
                     this.postedSpoilerTimeout = false;
                     z4 = true;
@@ -232,14 +232,14 @@ public abstract class zt extends EditText {
     public void invalidateEffects() {
         Editable text = getText();
         if (text != null) {
-            for (u01 u01Var : (u01[]) text.getSpans(0, text.length(), u01.class)) {
-                if (u01Var.c()) {
+            for (t01 t01Var : (t01[]) text.getSpans(0, text.length(), t01.class)) {
+                if (t01Var.c()) {
                     boolean z4 = this.isSpoilersRevealed;
-                    t01 t01Var = u01Var.b;
+                    s01 s01Var = t01Var.b;
                     if (z4) {
-                        t01Var.a |= 512;
+                        s01Var.a |= 512;
                     } else {
-                        t01Var.a &= -513;
+                        s01Var.a &= -513;
                     }
                 }
             }
@@ -516,13 +516,13 @@ public abstract class zt extends EditText {
         this.isSpoilersRevealed = z4;
         Editable text = getText();
         if (text != null) {
-            for (u01 u01Var : (u01[]) text.getSpans(0, text.length(), u01.class)) {
-                if (u01Var.c()) {
-                    t01 t01Var = u01Var.b;
+            for (t01 t01Var : (t01[]) text.getSpans(0, text.length(), t01.class)) {
+                if (t01Var.c()) {
+                    s01 s01Var = t01Var.b;
                     if (z4) {
-                        t01Var.a |= 512;
+                        s01Var.a |= 512;
                     } else {
-                        t01Var.a &= -513;
+                        s01Var.a &= -513;
                     }
                 }
             }

@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iw implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -58,36 +58,36 @@ public final /* synthetic */ class iw implements Runnable {
                 pyVar.getMessagesController().checkIfFolderEmpty(pyVar.S2);
                 break;
             default:
-                qh.ca caVar = (qh.ca) notificationCenterDelegate;
+                qh.ba baVar = (qh.ba) notificationCenterDelegate;
                 TL_stories.StoryItem storyItem = (TL_stories.StoryItem) tLObject2;
                 TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) tLObject;
                 boolean z10 = this.b;
                 long j11 = this.c;
                 if (!z10) {
-                    oh.e1.T = new oh.e1(caVar.b, caVar.c, storyItem, j11, storyItem.id, z10, inputGroupCall, true, this.d);
+                    oh.e1.T = new oh.e1(baVar.b, baVar.c, storyItem, j11, storyItem.id, z10, inputGroupCall, true, this.d);
                 }
-                qh.x9 x9Var = caVar.C;
-                if (x9Var != null) {
-                    x9Var.f(false);
+                qh.w9 w9Var = baVar.C;
+                if (w9Var != null) {
+                    w9Var.f(false);
                 }
-                caVar.C = null;
-                caVar.G = 0;
-                RectF rectF = caVar.E;
+                baVar.C = null;
+                baVar.G = 0;
+                RectF rectF = baVar.E;
                 Point point = AndroidUtilities.displaySize;
                 rectF.set(0.0f, 0.0f, point.x, point.y);
-                caVar.D = AndroidUtilities.dp(8.0f);
-                caVar.q(true);
+                baVar.D = AndroidUtilities.dp(8.0f);
+                baVar.q(true);
                 org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
                 storyItem.dialogId = j11;
                 storyItem.justUploaded = true;
-                U.getOrCreateStoryViewer().G(caVar.b, storyItem, null);
-                NotificationCenter.getInstance(caVar.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(inputGroupCall.id));
+                U.getOrCreateStoryViewer().G(baVar.b, storyItem, null);
+                NotificationCenter.getInstance(baVar.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(inputGroupCall.id));
                 break;
         }
     }
 
-    public /* synthetic */ iw(qh.ca caVar, boolean z4, TL_stories.StoryItem storyItem, long j10, TLRPC.InputGroupCall inputGroupCall, boolean z10) {
-        this.e = caVar;
+    public /* synthetic */ iw(qh.ba baVar, boolean z4, TL_stories.StoryItem storyItem, long j10, TLRPC.InputGroupCall inputGroupCall, boolean z10) {
+        this.e = baVar;
         this.b = z4;
         this.f = storyItem;
         this.c = j10;

@@ -35,12 +35,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.h90;
 import org.telegram.ui.Components.k90;
-import org.telegram.ui.Components.lw0;
-import org.telegram.ui.Components.n51;
+import org.telegram.ui.Components.kw0;
+import org.telegram.ui.Components.l51;
 import org.telegram.ui.Components.z80;
-import org.telegram.ui.d01;
+import org.telegram.ui.i01;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class j extends FrameLayout {
     public static final int U = AndroidUtilities.dp(76.0f);
@@ -149,9 +149,9 @@ public abstract class j extends FrameLayout {
         }
         StaticLayout.Builder hyphenationFrequency = StaticLayout.Builder.obtain(charSequence, 0, charSequence.length(), org.telegram.ui.ActionBar.k6.P1, Math.max(1, i10)).setBreakStrategy(0).setHyphenationFrequency(0);
         if (LocaleController.isRTL) {
-            alignment = lw0.a();
+            alignment = kw0.a();
         } else {
-            Layout.Alignment[] alignmentArr = lw0.a;
+            Layout.Alignment[] alignmentArr = kw0.a;
             alignment = alignmentArr.length >= 5 ? alignmentArr[3] : Layout.Alignment.ALIGN_NORMAL;
         }
         return hyphenationFrequency.setAlignment(alignment).build();
@@ -299,10 +299,10 @@ public abstract class j extends FrameLayout {
             hVar2 = new h(this, layout, clickableSpan, f10);
         }
         this.C = hVar2;
-        if (clickableSpan instanceof n51) {
-            String url = ((n51) clickableSpan).getURL();
+        if (clickableSpan instanceof l51) {
+            String url = ((l51) clickableSpan).getURL();
             if (url.startsWith("@") || url.startsWith("#") || url.startsWith("$") || url.startsWith("/")) {
-                ((d01) this).W.e.B4(url, this.C);
+                ((i01) this).W.e.B4(url, this.C);
                 return;
             }
             return;

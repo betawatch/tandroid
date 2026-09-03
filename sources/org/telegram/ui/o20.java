@@ -16,7 +16,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.messenger.voip.VoipAudioManager;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o20 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -169,20 +169,20 @@ public final /* synthetic */ class o20 implements View.OnClickListener {
                 break;
             case 10:
                 ArrayList arrayList = d60Var.V1;
-                org.telegram.ui.Components.ij0 ij0Var = d60Var.D2;
+                org.telegram.ui.Components.hj0 hj0Var = d60Var.D2;
                 d60Var.X1.e();
                 VoIPService sharedInstance2 = VoIPService.getSharedInstance();
                 if (sharedInstance2 != null && sharedInstance2.getVideoState(false) == 2) {
                     sharedInstance2.switchCamera();
                     if (d60Var.E2 == 18) {
                         d60Var.E2 = 39;
-                        ij0Var.N(39);
-                        ij0Var.start();
+                        hj0Var.N(39);
+                        hj0Var.start();
                     } else {
-                        ij0Var.L(0, false, false);
+                        hj0Var.L(0, false, false);
                         d60Var.E2 = 18;
-                        ij0Var.N(18);
-                        ij0Var.start();
+                        hj0Var.N(18);
+                        hj0Var.start();
                     }
                     for (int i16 = 0; i16 < arrayList.size(); i16++) {
                         org.telegram.ui.Components.voip.u uVar = (org.telegram.ui.Components.voip.u) arrayList.get(i16);
@@ -236,7 +236,7 @@ public final /* synthetic */ class o20 implements View.OnClickListener {
                 d60Var.v3 = Integer.valueOf(i11);
                 d60Var.N1(true, true);
                 d60Var.v3 = null;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.jm(d60Var, i11, 12));
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.im(d60Var, i11, 12));
                 break;
         }
     }

@@ -25,7 +25,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class h2 {
     public static final HashMap e = new HashMap();
@@ -126,9 +126,9 @@ public final class h2 {
         h2 h2Var = new h2();
         h2Var.a = x0Var.getUrl();
         Timer create = Timer.create("WebInstantView");
-        z1 z1Var = new z1(Timer.start(create, "getHTML"), zArr, create, h2Var, callback, 0);
+        y1 y1Var = new y1(Timer.start(create, "getHTML"), zArr, create, h2Var, callback, 0);
         System.currentTimeMillis();
-        x0Var.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "true"), new a2(h2Var, x0Var, new File(AndroidUtilities.getCacheDir(), "archive.mht"), z1Var, 0));
+        x0Var.evaluateJavascript(AndroidUtilities.readRes(R.raw.open_collapsed).replace("$OPEN$", "true"), new z1(h2Var, x0Var, new File(AndroidUtilities.getCacheDir(), "archive.mht"), y1Var, 0));
         return new s0(zArr, 5);
     }
 
@@ -184,7 +184,7 @@ public final class h2 {
                 ArrayList arrayList = (ArrayList) f.get(g2Var.b);
                 if (arrayList == null) {
                     f.put(g2Var.b, new ArrayList());
-                    new g1(new v1(1, h2Var, g2Var)).execute(g2Var.b);
+                    new g1(new a2(0, h2Var, g2Var)).execute(g2Var.b);
                     return;
                 }
                 for (int i10 = 0; i10 < arrayList.size(); i10++) {

@@ -28,9 +28,9 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.ie0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.br0;
+import org.telegram.ui.pr0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class q0 {
     public static final HashMap g = new HashMap();
@@ -211,7 +211,7 @@ public final class q0 {
                             boolean a2 = q0Var.a();
                             org.telegram.ui.web.s sVar2 = sVar;
                             if (!a2) {
-                                ie0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new org.telegram.ui.web.v1(10, q0Var, sVar2));
+                                ie0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new org.telegram.ui.web.a2(9, q0Var, sVar2));
                                 break;
                             } else {
                                 q0Var.d = true;
@@ -246,7 +246,7 @@ public final class q0 {
                 }
             });
         } else {
-            alertDialog$Builder.k(LocaleController.getString(R.string.BotLocationPermissionSettings), new qh.m1(f10, zArr, sVar, i13));
+            alertDialog$Builder.k(LocaleController.getString(R.string.BotLocationPermissionSettings), new qh.l1(f10, zArr, sVar, i13));
         }
         alertDialog$Builder.h(LocaleController.getString(R.string.BotLocationPermissionDecline), new org.telegram.ui.ActionBar.c2(this) { // from class: sh.n0
             public final /* synthetic */ q0 b;
@@ -265,7 +265,7 @@ public final class q0 {
                         boolean a2 = q0Var.a();
                         org.telegram.ui.web.s sVar2 = sVar;
                         if (!a2) {
-                            ie0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new org.telegram.ui.web.v1(10, q0Var, sVar2));
+                            ie0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new org.telegram.ui.web.a2(9, q0Var, sVar2));
                             break;
                         } else {
                             q0Var.d = true;
@@ -366,7 +366,7 @@ public final class q0 {
         edit.apply();
     }
 
-    public final void m(boolean z4, final br0 br0Var) {
+    public final void m(boolean z4, final pr0 pr0Var) {
         final int i10 = 1;
         this.d = true;
         if (!z4 || a()) {
@@ -375,8 +375,8 @@ public final class q0 {
             while (it.hasNext()) {
                 ((Runnable) it.next()).run();
             }
-            if (br0Var != null) {
-                br0Var.run();
+            if (pr0Var != null) {
+                pr0Var.run();
             }
         } else {
             Activity f10 = f();
@@ -410,7 +410,7 @@ public final class q0 {
                             case 0:
                                 q0 q0Var = this.b;
                                 if (!q0Var.a()) {
-                                    ie0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new org.telegram.ui.web.v1(11, q0Var, br0Var));
+                                    ie0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new org.telegram.ui.web.a2(10, q0Var, pr0Var));
                                     break;
                                 } else {
                                     q0Var.d = true;
@@ -431,7 +431,7 @@ public final class q0 {
                                 while (it3.hasNext()) {
                                     ((Runnable) it3.next()).run();
                                 }
-                                Runnable runnable = br0Var;
+                                Runnable runnable = pr0Var;
                                 if (runnable != null) {
                                     runnable.run();
                                     break;
@@ -454,7 +454,7 @@ public final class q0 {
                         case 0:
                             q0 q0Var = this.b;
                             if (!q0Var.a()) {
-                                ie0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new org.telegram.ui.web.v1(11, q0Var, br0Var));
+                                ie0.g(new String[]{"android.permission.ACCESS_COARSE_LOCATION", "android.permission.ACCESS_FINE_LOCATION"}, new org.telegram.ui.web.a2(10, q0Var, pr0Var));
                                 break;
                             } else {
                                 q0Var.d = true;
@@ -475,7 +475,7 @@ public final class q0 {
                             while (it3.hasNext()) {
                                 ((Runnable) it3.next()).run();
                             }
-                            Runnable runnable = br0Var;
+                            Runnable runnable = pr0Var;
                             if (runnable != null) {
                                 runnable.run();
                                 break;

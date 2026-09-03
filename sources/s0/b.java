@@ -6,7 +6,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class b implements c9.e, rg.c {
     public final /* synthetic */ int a;
@@ -26,14 +26,14 @@ public final /* synthetic */ class b implements c9.e, rg.c {
     public int g(g6 g6Var, boolean z4) {
         switch (this.a) {
             case 18:
-                return sg.b.l(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.d6, g6Var), k6.v0(k6.Sd, g6Var));
+                return sg.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.d6, g6Var), k6.v0(k6.Sd, g6Var));
             case 19:
                 if (!LiteMode.isEnabled(256)) {
                     return k6.w0(null, k6.G8, false);
                 }
                 return k6.l1(z4 ? 0.85f : 0.825f, k6.w0(null, k6.G8, false));
             case 20:
-                return sg.b.l(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.d6, g6Var), k6.v0(k6.Zk, g6Var));
+                return sg.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.d6, g6Var), k6.v0(k6.Zk, g6Var));
             case 21:
                 return k6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.Fi, g6Var));
             case 22:
@@ -43,15 +43,15 @@ public final /* synthetic */ class b implements c9.e, rg.c {
             case 24:
                 return k6.l1(0.075f, -16777216);
             case 25:
-                return k6.l1(z4 ? 0.85f : 0.825f, k6.w0(null, k6.G8, false));
+                return k6.l1(0.88f, k6.v0(k6.d6, g6Var));
             case 26:
-                return sg.b.l(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.d6, g6Var), k6.v0(k6.Yk, g6Var));
+                return k6.l1(z4 ? 0.85f : 0.825f, k6.w0(null, k6.G8, false));
             case 27:
-                return k6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.d6, g6Var));
+                return sg.b.m(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.d6, g6Var), k6.v0(k6.Yk, g6Var));
             case 28:
-                return k6.l1(0.78f, k6.v0(k6.h5, g6Var));
+                return k6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, k6.v0(k6.d6, g6Var));
             default:
-                return k6.l1(0.7f, k6.v0(k6.d6, g6Var));
+                return k6.l1(0.78f, k6.v0(k6.h5, g6Var));
         }
     }
 }

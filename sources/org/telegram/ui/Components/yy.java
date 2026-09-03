@@ -17,7 +17,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class yy extends FrameLayout implements xd.b {
     public xp B;
@@ -25,7 +25,7 @@ public abstract class yy extends FrameLayout implements xd.b {
     public final /* synthetic */ mz D;
     public final xd.a a;
     public final int b;
-    public final gn0 c;
+    public final fn0 c;
     public final iq d;
     public final View e;
     public final View f;
@@ -76,13 +76,13 @@ public abstract class yy extends FrameLayout implements xd.b {
         this.s = lVar;
         frameLayout.addView(lVar, k7.c6.d(-1, 40.0f, 51, 38.0f, 0.0f, 0.0f, 0.0f));
         ImageView imageView = new ImageView(context);
-        gn0 gn0Var = new gn0();
-        this.c = gn0Var;
-        gn0Var.c(0, false, false);
-        gn0Var.a(z4 ? mzVar.v(0.4f) : mzVar.A(org.telegram.ui.ActionBar.k6.Je));
+        fn0 fn0Var = new fn0();
+        this.c = fn0Var;
+        fn0Var.c(0, false, false);
+        fn0Var.a(z4 ? mzVar.v(0.4f) : mzVar.A(org.telegram.ui.ActionBar.k6.Je));
         ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
         imageView.setScaleType(scaleType);
-        imageView.setImageDrawable(gn0Var);
+        imageView.setImageDrawable(fn0Var);
         imageView.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.Components.vy
             public final /* synthetic */ yy b;
 
@@ -101,9 +101,9 @@ public abstract class yy extends FrameLayout implements xd.b {
                             iqVar.setText("");
                             yyVar.c(null, false);
                             if (xyVar != null) {
-                                xyVar.D1();
-                                xyVar.F1(null);
-                                xyVar.G1(true, true);
+                                xyVar.C1();
+                                xyVar.E1(null);
+                                xyVar.F1(true, true);
                             }
                             yyVar.f(false);
                             iqVar.clearAnimation();
@@ -119,9 +119,9 @@ public abstract class yy extends FrameLayout implements xd.b {
                         yyVar2.c(null, false);
                         xy xyVar2 = yyVar2.r;
                         if (xyVar2 != null) {
-                            xyVar2.D1();
-                            xyVar2.F1(null);
-                            xyVar2.G1(true, true);
+                            xyVar2.C1();
+                            xyVar2.E1(null);
+                            xyVar2.F1(true, true);
                         }
                         yyVar2.f(false);
                         iqVar2.clearAnimation();
@@ -184,9 +184,9 @@ public abstract class yy extends FrameLayout implements xd.b {
                             iqVar2.setText("");
                             yyVar.c(null, false);
                             if (xyVar != null) {
-                                xyVar.D1();
-                                xyVar.F1(null);
-                                xyVar.G1(true, true);
+                                xyVar.C1();
+                                xyVar.E1(null);
+                                xyVar.F1(true, true);
                             }
                             yyVar.f(false);
                             iqVar2.clearAnimation();
@@ -202,9 +202,9 @@ public abstract class yy extends FrameLayout implements xd.b {
                         yyVar2.c(null, false);
                         xy xyVar2 = yyVar2.r;
                         if (xyVar2 != null) {
-                            xyVar2.D1();
-                            xyVar2.F1(null);
-                            xyVar2.G1(true, true);
+                            xyVar2.C1();
+                            xyVar2.E1(null);
+                            xyVar2.F1(true, true);
                         }
                         yyVar2.f(false);
                         iqVar22.clearAnimation();
@@ -242,23 +242,23 @@ public abstract class yy extends FrameLayout implements xd.b {
                             yyVar.g(false);
                             break;
                         default:
-                            uw0 uw0Var = (uw0) obj;
+                            tw0 tw0Var = (tw0) obj;
                             yy yyVar2 = this.b;
                             mz mzVar2 = yyVar2.D;
                             xy xyVar2 = yyVar2.r;
-                            if (uw0Var != null) {
-                                if (xyVar2.getSelectedCategory() != uw0Var) {
-                                    yyVar2.c(uw0Var.a, false);
-                                    xyVar2.F1(uw0Var);
+                            if (tw0Var != null) {
+                                if (xyVar2.getSelectedCategory() != tw0Var) {
+                                    yyVar2.c(tw0Var.a, false);
+                                    xyVar2.E1(tw0Var);
                                     break;
                                 } else {
                                     yyVar2.c(null, false);
-                                    xyVar2.F1(null);
+                                    xyVar2.E1(null);
                                     break;
                                 }
                             } else {
                                 yyVar2.d(false);
-                                xyVar2.F1(null);
+                                xyVar2.E1(null);
                                 mzVar2.l0.d.setText("");
                                 mzVar2.f0.h1(0, 0);
                                 break;
@@ -286,23 +286,23 @@ public abstract class yy extends FrameLayout implements xd.b {
                             yyVar.g(false);
                             break;
                         default:
-                            uw0 uw0Var = (uw0) obj;
+                            tw0 tw0Var = (tw0) obj;
                             yy yyVar2 = this.b;
                             mz mzVar2 = yyVar2.D;
                             xy xyVar2 = yyVar2.r;
-                            if (uw0Var != null) {
-                                if (xyVar2.getSelectedCategory() != uw0Var) {
-                                    yyVar2.c(uw0Var.a, false);
-                                    xyVar2.F1(uw0Var);
+                            if (tw0Var != null) {
+                                if (xyVar2.getSelectedCategory() != tw0Var) {
+                                    yyVar2.c(tw0Var.a, false);
+                                    xyVar2.E1(tw0Var);
                                     break;
                                 } else {
                                     yyVar2.c(null, false);
-                                    xyVar2.F1(null);
+                                    xyVar2.E1(null);
                                     break;
                                 }
                             } else {
                                 yyVar2.d(false);
-                                xyVar2.F1(null);
+                                xyVar2.E1(null);
                                 mzVar2.l0.d.setText("");
                                 mzVar2.f0.h1(0, 0);
                                 break;

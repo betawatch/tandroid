@@ -35,19 +35,19 @@ import org.telegram.ui.ActionBar.e6;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.xk;
 import org.telegram.ui.af;
 import org.telegram.ui.am;
-import org.telegram.ui.fc;
 import org.telegram.ui.ih;
 import org.telegram.ui.j8;
 import org.telegram.ui.ke;
+import org.telegram.ui.xc;
 import org.telegram.ui.xn;
 import org.telegram.ui.zc;
-import qh.d8;
+import qh.c8;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b3 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -89,7 +89,7 @@ public final /* synthetic */ class b3 implements RequestDelegate {
                 }
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b((pr0) this.b, tL_error, (org.telegram.ui.ActionBar.p2) this.c, 15));
+                AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b((or0) this.b, tL_error, (org.telegram.ui.ActionBar.p2) this.c, 15));
                 break;
             case 4:
                 AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b((b5) this.b, tLObject, (TL_stars.getResaleStarGifts) this.c, 18));
@@ -122,11 +122,11 @@ public final /* synthetic */ class b3 implements RequestDelegate {
                 break;
             case 12:
                 oh.y3 y3Var = (oh.y3) this.b;
-                d8 d8Var = (d8) this.c;
+                c8 c8Var = (c8) this.c;
                 if (tLObject instanceof TLRPC.Updates) {
                     MessagesController.getInstance(y3Var.l.z2).processUpdates((TLRPC.Updates) tLObject, false);
                 }
-                AndroidUtilities.runOnUIThread(new oh.v3(d8Var, 0));
+                AndroidUtilities.runOnUIThread(new oh.v3(c8Var, 0));
                 break;
             case 13:
                 AndroidUtilities.runOnUIThread(new p6((d6) this.b, tLObject, (Runnable) this.c, 9));
@@ -252,10 +252,10 @@ public final /* synthetic */ class b3 implements RequestDelegate {
                 TLRPC.TL_messages_sendScheduledMessages tL_messages_sendScheduledMessages = (TLRPC.TL_messages_sendScheduledMessages) this.c;
                 if (tL_error == null) {
                     xnVar2.getMessagesController().processUpdates((TLRPC.Updates) tLObject, false);
-                    AndroidUtilities.runOnUIThread(new fc(15, xnVar2, tL_messages_sendScheduledMessages));
+                    AndroidUtilities.runOnUIThread(new xc(14, xnVar2, tL_messages_sendScheduledMessages));
                     break;
                 } else if (tL_error.text != null) {
-                    AndroidUtilities.runOnUIThread(new fc(16, xnVar2, tL_error));
+                    AndroidUtilities.runOnUIThread(new xc(15, xnVar2, tL_error));
                     break;
                 }
                 break;

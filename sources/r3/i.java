@@ -2,19 +2,18 @@ package r3;
 
 import b4.a0;
 import b4.f0;
-import h5.c0;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.ui.cl0;
-import q5.g0;
+import q5.c0;
 import s8.i0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class i {
     public static final int[] b = {5, 4, 12, 8, 3, 10, 9, 11, 6, 2, 0, 1, 7, 16, 15, 14};
-    public static final g0 c = new g0(new cl0(24));
-    public static final g0 d = new g0(new cl0(25));
+    public static final c0 c = new c0(new cl0(24));
+    public static final c0 d = new c0(new cl0(25));
     public i0 a;
 
     public final void a(int i10, ArrayList arrayList) {
@@ -47,11 +46,11 @@ public final class i {
                 arrayList.add(new x3.d(0));
                 break;
             case 7:
-                arrayList.add(new y3.d(1));
+                arrayList.add(new y3.e(1));
                 break;
             case 8:
                 arrayList.add(new z3.i(0, null, Collections.EMPTY_LIST, null));
-                arrayList.add(new z3.m(0));
+                arrayList.add(new z3.l(0));
                 break;
             case 9:
                 arrayList.add(new a4.e());
@@ -64,7 +63,7 @@ public final class i {
                     s8.t tVar = s8.v.b;
                     this.a = i0.e;
                 }
-                arrayList.add(new f0(1, new c0(0L), new b4.f(0, this.a)));
+                arrayList.add(new f0(1, new h5.c0(0L), new b4.f(0, this.a)));
                 break;
             case 12:
                 c4.d dVar = new c4.d();

@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class h5 implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -26,16 +26,16 @@ public final class h5 implements View.OnAttachStateChangeListener {
                 ((q70) this.b).b.onAttachedToWindow();
                 break;
             case 3:
-                org.telegram.ui.Components.j5 j5Var = ((ep0) this.b).i;
+                org.telegram.ui.Components.j5 j5Var = ((ip0) this.b).i;
                 if (j5Var != null) {
                     j5Var.a();
                     break;
                 }
                 break;
             default:
-                k81 k81Var = (k81) this.b;
-                k81Var.h.a();
-                k81Var.n.a();
+                q81 q81Var = (q81) this.b;
+                q81Var.h.a();
+                q81Var.n.a();
                 break;
         }
     }
@@ -53,16 +53,16 @@ public final class h5 implements View.OnAttachStateChangeListener {
                 ((q70) this.b).b.onDetachedFromWindow();
                 break;
             case 3:
-                org.telegram.ui.Components.j5 j5Var = ((ep0) this.b).i;
+                org.telegram.ui.Components.j5 j5Var = ((ip0) this.b).i;
                 if (j5Var != null) {
                     j5Var.b();
                     break;
                 }
                 break;
             default:
-                k81 k81Var = (k81) this.b;
-                k81Var.h.b();
-                k81Var.n.b();
+                q81 q81Var = (q81) this.b;
+                q81Var.h.b();
+                q81Var.n.b();
                 break;
         }
     }

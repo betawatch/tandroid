@@ -34,13 +34,13 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.BubbleActivity;
 import org.telegram.ui.Components.Crop.CropAreaView;
-import org.telegram.ui.Components.fx0;
-import org.telegram.ui.Components.y61;
-import org.telegram.ui.qd1;
+import org.telegram.ui.Components.ex0;
+import org.telegram.ui.Components.x61;
+import org.telegram.ui.vd1;
 import org.telegram.ui.web.e0;
-import qh.ua;
+import qh.ta;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class n extends FrameLayout implements a {
     public float B;
@@ -57,7 +57,7 @@ public class n extends FrameLayout implements a {
     public final CropAreaView a;
     public final ImageView b;
     public final Matrix c;
-    public y61 d;
+    public x61 d;
     public f e;
     public final RectF f;
     public final RectF h;
@@ -420,7 +420,7 @@ public class n extends FrameLayout implements a {
         float b10 = l.b(this.I) * ((rectF.centerY() - ((((imageView.getHeight() - this.y) + i10) + this.B) / 2.0f)) / cropAreaView.getCropHeight());
         ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
         ofFloat.addUpdateListener(new g(this, f11, fArr, a2, b10, 0));
-        ofFloat.addListener(new qd1(17, this, z4));
+        ofFloat.addListener(new vd1(17, this, z4));
         AccelerateDecelerateInterpolator accelerateDecelerateInterpolator = cropAreaView.R;
         AnimatorSet animatorSet = cropAreaView.h0;
         if (animatorSet != null) {
@@ -440,7 +440,7 @@ public class n extends FrameLayout implements a {
         ofFloat5.setInterpolator(accelerateDecelerateInterpolator);
         ofFloat.setInterpolator(accelerateDecelerateInterpolator);
         animatorSet2.playTogether(ofFloat2, ofFloat3, ofFloat4, ofFloat5, ofFloat);
-        animatorSet2.addListener(new fx0(23, cropAreaView, rectF));
+        animatorSet2.addListener(new ex0(23, cropAreaView, rectF));
         animatorSet2.start();
         this.h.set(rectF);
     }
@@ -554,9 +554,9 @@ public class n extends FrameLayout implements a {
     }
 
     public int getCurrentHeight() {
-        y61 y61Var = this.d;
-        if (y61Var != null) {
-            return y61Var.getVideoHeight();
+        x61 x61Var = this.d;
+        if (x61Var != null) {
+            return x61Var.getVideoHeight();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -567,9 +567,9 @@ public class n extends FrameLayout implements a {
     }
 
     public int getCurrentWidth() {
-        y61 y61Var = this.d;
-        if (y61Var != null) {
-            return y61Var.getVideoWidth();
+        x61 x61Var = this.d;
+        if (x61Var != null) {
+            return x61Var.getVideoWidth();
         }
         Bitmap bitmap = this.w;
         if (bitmap == null) {
@@ -783,7 +783,7 @@ public class n extends FrameLayout implements a {
         alertDialog$Builder.f(strArr, new t1(13, this, numArr));
         d2 d2Var = alertDialog$Builder.a;
         d2Var.setCanceledOnTouchOutside(true);
-        d2Var.setOnCancelListener(new ua(this, i10));
+        d2Var.setOnCancelListener(new ta(this, i10));
         d2Var.show();
     }
 

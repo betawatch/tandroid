@@ -17,8 +17,8 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.t41;
-import org.telegram.ui.li1;
+import org.telegram.ui.Components.r41;
+import org.telegram.ui.ri1;
 import vf.s1;
 import wh.a3;
 import wh.f3;
@@ -30,7 +30,7 @@ import wh.u5;
 import wh.v5;
 import wh.x5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h1 implements Runnable {
     public final /* synthetic */ int a;
@@ -64,12 +64,12 @@ public final /* synthetic */ class h1 implements Runnable {
                 String str = tL_messages_searchStickerSets.q;
                 m1 m1Var = l1Var.a;
                 String str2 = m1Var.O;
-                t41 t41Var = m1Var.e;
+                r41 r41Var = m1Var.e;
                 if (str.equals(str2)) {
                     l1Var.a();
-                    t41Var.b.h.getProgressDrawable().e = false;
+                    r41Var.b.h.getProgressDrawable().e = false;
                     m1Var.K = 0;
-                    t41Var.b(true);
+                    r41Var.b(true);
                     m1Var.B.addAll(tL_messages_foundStickerSets.sets);
                     m1Var.l();
                     break;
@@ -132,10 +132,10 @@ public final /* synthetic */ class h1 implements Runnable {
                 TL_account.TL_businessChatLink tL_businessChatLink2 = (TL_account.TL_businessChatLink) this.d;
                 TL_account.deleteBusinessChatLink deletebusinesschatlink = new TL_account.deleteBusinessChatLink();
                 deletebusinesschatlink.slug = str3;
-                ConnectionsManager.getInstance(tVar2.a).sendRequest(deletebusinesschatlink, new li1(9, tVar2, tL_businessChatLink2));
+                ConnectionsManager.getInstance(tVar2.a).sendRequest(deletebusinesschatlink, new ri1(9, tVar2, tL_businessChatLink2));
                 break;
             case 6:
-                vf.f0.P((vf.f0) this.b, (TL_account.TL_connectedBot) this.c, (TL_account.TL_businessBotRecipients) this.d);
+                vf.e0.P((vf.e0) this.b, (TL_account.TL_connectedBot) this.c, (TL_account.TL_businessBotRecipients) this.d);
                 break;
             case 7:
                 vf.n0 n0Var = (vf.n0) this.b;
@@ -179,7 +179,7 @@ public final /* synthetic */ class h1 implements Runnable {
                 if (r3Var.g4 == q70Var) {
                     r3Var.g4 = null;
                     if (r3Var.z3 && r3Var.f4 == i5Var && !i5Var.E.isEmpty()) {
-                        r3Var.M2();
+                        r3Var.L2();
                         break;
                     }
                 }
@@ -209,7 +209,7 @@ public final /* synthetic */ class h1 implements Runnable {
                 }
                 break;
             case 12:
-                ((r3) this.b).Z4((String) this.d, (wh.a) this.c);
+                ((r3) this.b).Y4((String) this.d, (wh.a) this.c);
                 break;
             case 13:
                 q5 q5Var = (q5) this.b;

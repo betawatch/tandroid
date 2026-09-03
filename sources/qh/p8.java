@@ -1,38 +1,43 @@
 package qh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class p8 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ca b;
-    public final /* synthetic */ boolean c;
+import android.animation.ValueAnimator;
 
-    public /* synthetic */ p8(ca caVar, boolean z4, int i10) {
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
+/* loaded from: classes4.dex */
+public final /* synthetic */ class p8 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ba b;
+
+    public /* synthetic */ p8(ba baVar, int i10) {
         this.a = i10;
-        this.b = caVar;
-        this.c = z4;
+        this.b = baVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                this.b.f(this.c);
+                this.b.J0.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                ca caVar = this.b;
-                if (!this.c) {
-                    caVar.G0.b(false, false);
-                    break;
-                } else {
-                    caVar.getClass();
-                    break;
-                }
+                this.b.o1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 2:
+                this.b.o1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 3:
+                this.b.p1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 4:
+                this.b.p1.setAppearProgress(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
             default:
-                ca caVar2 = this.b;
-                caVar2.O = null;
-                caVar2.e = false;
-                caVar2.q(this.c);
+                ba baVar = this.b;
+                baVar.getClass();
+                baVar.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                baVar.o();
+                baVar.r.invalidate();
+                baVar.n.invalidate();
                 break;
         }
     }

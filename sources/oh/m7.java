@@ -34,13 +34,13 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.q20;
 import org.telegram.ui.Components.rc;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class m7 {
     public static q20 b;
@@ -50,7 +50,7 @@ public abstract class m7 {
     public static RectF f;
     public static Paint g;
     public static Paint h;
-    public static l01 i;
+    public static k01 i;
     public static int j;
     public static BitmapDrawable m;
     public static final q20[] a = new q20[2];
@@ -716,7 +716,7 @@ public abstract class m7 {
     public static void k(Canvas canvas, RectF rectF, float f10, boolean z4, float f11) {
         Canvas canvas2;
         if (i == null) {
-            i = new l01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
+            i = new k01(LocaleController.getString(R.string.LiveStoryBadge), 9.66f, AndroidUtilities.bold());
         }
         if (g == null) {
             Paint paint = new Paint(1);
@@ -748,10 +748,10 @@ public abstract class m7 {
             f.set(rectF.centerX() - f12, rectF.bottom - f13, rectF.centerX() + f12, rectF.bottom + f14);
             RectF rectF3 = f;
             canvas.drawRoundRect(rectF3, rectF3.height() / 2.0f, f.height() / 2.0f, h);
-            l01 l01Var = i;
+            k01 k01Var = i;
             RectF rectF4 = f;
             canvas2 = canvas;
-            l01Var.c(rectF4.left + lerp, rectF4.centerY(), f10, -1, canvas2);
+            k01Var.c(rectF4.left + lerp, rectF4.centerY(), f10, -1, canvas2);
         } else {
             canvas2 = canvas;
         }

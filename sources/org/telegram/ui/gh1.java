@@ -1,214 +1,54 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Point;
-import android.text.TextUtils;
-import android.util.Property;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class gh1 extends ViewGroup {
-    public AnimatorSet a;
-    public boolean b;
-    public final ArrayList c;
-    public org.telegram.ui.Components.p30 d;
-    public org.telegram.ui.Components.p30 e;
-    public final /* synthetic */ UsersSelectActivity f;
+public final class gh1 extends LinearLayout {
+    public final org.telegram.ui.ActionBar.g6 a;
+    public final ImageView b;
+    public final LinearLayout c;
+    public final TextView d;
+    public final TextView e;
+    public final ImageView f;
+    public boolean h;
+    public boolean n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gh1(UsersSelectActivity usersSelectActivity, Context context) {
+    public gh1(Context context, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
-        this.f = usersSelectActivity;
-        this.c = new ArrayList();
+        setOrientation(0);
+        this.a = g6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        addView(imageView, k7.c6.t(40, 40, 19, 12, 0, 12, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.c = linearLayout;
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
+        addView(linearLayout, k7.c6.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView i10 = yh.i(linearLayout, textView, k7.c6.t(-1, -2, 7, 0, 0, 0, 0), context);
+        this.e = i10;
+        i10.setTextSize(1, 13.0f);
+        linearLayout.addView(i10, k7.c6.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.f = imageView2;
+        imageView2.setScaleType(scaleType);
+        addView(imageView2, k7.c6.t(40, 40, 21, 12, 0, 12, 0));
     }
 
-    public final void a(org.telegram.ui.Components.p30 p30Var, boolean z4) {
-        UsersSelectActivity usersSelectActivity = this.f;
-        usersSelectActivity.L.add(p30Var);
-        long uid = p30Var.getUid();
-        if (uid > -9223372036854775801L) {
-            usersSelectActivity.w++;
-        }
-        usersSelectActivity.K.k(p30Var, uid);
-        lg.f fVar = usersSelectActivity.c;
-        fVar.setHintVisible(false, TextUtils.isEmpty(fVar.getText()));
-        AnimatorSet animatorSet = this.a;
-        if (animatorSet != null && animatorSet.isRunning()) {
-            this.a.setupEndValues();
-            this.a.cancel();
-        }
-        this.b = false;
-        if (z4) {
-            AnimatorSet animatorSet2 = new AnimatorSet();
-            this.a = animatorSet2;
-            animatorSet2.addListener(new ns0(this, 25));
-            this.a.setDuration(150L);
-            this.d = p30Var;
-            ArrayList arrayList = this.c;
-            arrayList.clear();
-            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.p30, Float>) View.SCALE_X, 0.01f, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.p30, Float>) View.SCALE_Y, 0.01f, 1.0f));
-            arrayList.add(ObjectAnimator.ofFloat(this.d, (Property<org.telegram.ui.Components.p30, Float>) View.ALPHA, 0.0f, 1.0f));
-        }
-        addView(p30Var);
-    }
-
-    public final void b(org.telegram.ui.Components.p30 p30Var) {
-        UsersSelectActivity usersSelectActivity = this.f;
-        usersSelectActivity.v = true;
-        long uid = p30Var.getUid();
-        if (uid > -9223372036854775801L) {
-            usersSelectActivity.w--;
-        }
-        usersSelectActivity.K.l(uid);
-        usersSelectActivity.L.remove(p30Var);
-        p30Var.setOnClickListener(null);
-        AnimatorSet animatorSet = this.a;
-        if (animatorSet != null) {
-            animatorSet.setupEndValues();
-            this.a.cancel();
-        }
-        this.b = false;
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        this.a = animatorSet2;
-        animatorSet2.addListener(new org.telegram.ui.Components.fx0(13, this, p30Var));
-        this.a.setDuration(150L);
-        this.e = p30Var;
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.p30, Float>) View.SCALE_X, 1.0f, 0.01f));
-        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.p30, Float>) View.SCALE_Y, 1.0f, 0.01f));
-        arrayList.add(ObjectAnimator.ofFloat(this.e, (Property<org.telegram.ui.Components.p30, Float>) View.ALPHA, 1.0f, 0.0f));
-        requestLayout();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        int childCount = getChildCount();
-        for (int i14 = 0; i14 < childCount; i14++) {
-            View childAt = getChildAt(i14);
-            childAt.layout(0, 0, childAt.getMeasuredWidth(), childAt.getMeasuredHeight());
-        }
-    }
-
-    @Override // android.view.View
+    @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        Property property;
-        Property property2;
-        ArrayList arrayList;
-        int x10;
-        int i12;
-        int childCount = getChildCount();
-        int size = View.MeasureSpec.getSize(i10);
-        int dp = size - AndroidUtilities.dp(26.0f);
-        int dp2 = AndroidUtilities.dp(10.0f);
-        int dp3 = AndroidUtilities.dp(10.0f);
-        int i13 = 0;
-        int i14 = 0;
-        int i15 = 0;
-        while (true) {
-            property = View.TRANSLATION_Y;
-            property2 = View.TRANSLATION_X;
-            arrayList = this.c;
-            if (i13 >= childCount) {
-                break;
-            }
-            View childAt = getChildAt(i13);
-            if (childAt instanceof org.telegram.ui.Components.p30) {
-                childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-                if (childAt != this.e && childAt.getMeasuredWidth() + i14 > dp) {
-                    dp2 = org.telegram.messenger.y3.C(8.0f, childAt.getMeasuredHeight(), dp2);
-                    i14 = 0;
-                }
-                if (childAt.getMeasuredWidth() + i15 > dp) {
-                    dp3 = org.telegram.messenger.y3.C(8.0f, childAt.getMeasuredHeight(), dp3);
-                    i15 = 0;
-                }
-                int dp4 = AndroidUtilities.dp(13.0f) + i14;
-                if (!this.b) {
-                    org.telegram.ui.Components.p30 p30Var = this.e;
-                    if (childAt == p30Var) {
-                        childAt.setTranslationX(AndroidUtilities.dp(13.0f) + i15);
-                        childAt.setTranslationY(dp3);
-                    } else if (p30Var != null) {
-                        float f10 = dp4;
-                        if (childAt.getTranslationX() != f10) {
-                            i12 = 1;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property2, f10));
-                        } else {
-                            i12 = 1;
-                        }
-                        float f11 = dp2;
-                        if (childAt.getTranslationY() != f11) {
-                            float[] fArr = new float[i12];
-                            fArr[0] = f11;
-                            arrayList.add(ObjectAnimator.ofFloat(childAt, (Property<View, Float>) property, fArr));
-                        }
-                    } else {
-                        childAt.setTranslationX(dp4);
-                        childAt.setTranslationY(dp2);
-                    }
-                }
-                if (childAt != this.e) {
-                    i14 = org.telegram.messenger.y3.C(9.0f, childAt.getMeasuredWidth(), i14);
-                }
-                i15 = org.telegram.messenger.y3.C(9.0f, childAt.getMeasuredWidth(), i15);
-            }
-            i13++;
-        }
-        if (AndroidUtilities.isTablet()) {
-            x10 = AndroidUtilities.dp(372.0f) / 3;
-        } else {
-            Point point = AndroidUtilities.displaySize;
-            x10 = b.x(158.0f, Math.min(point.x, point.y), 3);
-        }
-        if (dp - i14 < x10) {
-            dp2 += AndroidUtilities.dp(40.0f);
-            i14 = 0;
-        }
-        if (dp - i15 < x10) {
-            dp3 += AndroidUtilities.dp(40.0f);
-        }
-        UsersSelectActivity usersSelectActivity = this.f;
-        usersSelectActivity.c.measure(View.MeasureSpec.makeMeasureSpec(dp - i14, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-        if (!this.b) {
-            int dp5 = AndroidUtilities.dp(42.0f) + dp3;
-            int dp6 = AndroidUtilities.dp(16.0f) + i14;
-            usersSelectActivity.N = dp2;
-            if (this.a != null) {
-                int dp7 = AndroidUtilities.dp(42.0f) + dp2;
-                if (usersSelectActivity.y != dp7) {
-                    arrayList.add(ObjectAnimator.ofInt(usersSelectActivity, "containerHeight", dp7));
-                }
-                float f12 = dp6;
-                if (usersSelectActivity.c.getTranslationX() != f12) {
-                    arrayList.add(ObjectAnimator.ofFloat(usersSelectActivity.c, (Property<lg.f, Float>) property2, f12));
-                }
-                float translationY = usersSelectActivity.c.getTranslationY();
-                float f13 = usersSelectActivity.N;
-                if (translationY != f13) {
-                    arrayList.add(ObjectAnimator.ofFloat(usersSelectActivity.c, (Property<lg.f, Float>) property, f13));
-                }
-                usersSelectActivity.c.setAllowDrawCursor(false);
-                this.a.playTogether(arrayList);
-                this.a.start();
-                this.b = true;
-            } else {
-                usersSelectActivity.y = dp5;
-                usersSelectActivity.c.setTranslationX(dp6);
-                usersSelectActivity.c.setTranslationY(usersSelectActivity.N);
-            }
-        } else if (this.a != null && !usersSelectActivity.v && this.e == null) {
-            lg.f fVar = usersSelectActivity.c;
-            fVar.bringPointIntoView(fVar.getSelectionStart());
-        }
-        setMeasuredDimension(size, usersSelectActivity.y);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

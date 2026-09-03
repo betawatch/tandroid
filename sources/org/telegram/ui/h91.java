@@ -1,62 +1,84 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class h91 extends org.telegram.ui.Components.e81 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ ha1 e;
+public final /* synthetic */ class h91 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ na1 b;
+    public final /* synthetic */ ArrayList c;
 
-    public h91(ha1 ha1Var, boolean z4, boolean z10, boolean z11, FrameLayout frameLayout) {
-        this.e = ha1Var;
-        this.a = z4;
-        this.b = z10;
-        this.c = z11;
-        this.d = frameLayout;
+    public /* synthetic */ h91(na1 na1Var, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.b = na1Var;
+        this.c = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.e81
-    public final View d(int i10) {
-        ha1 ha1Var = this.e;
-        if (ha1Var.i0) {
-            return ha1Var.g0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z4;
+        switch (this.a) {
+            case 0:
+                na1 na1Var = this.b;
+                ArrayList arrayList = na1Var.p0;
+                ArrayList arrayList2 = na1Var.o0;
+                int i10 = 0;
+                na1Var.t0 = false;
+                ArrayList arrayList3 = this.c;
+                if (!arrayList3.isEmpty()) {
+                    int size = arrayList3.size();
+                    for (int i11 = 0; i11 < size; i11++) {
+                        MessageObject messageObject = (MessageObject) arrayList3.get(i11);
+                        int i12 = na1Var.m0.get(messageObject.getId(), -1);
+                        if (i12 >= 0 && ((ka1) arrayList2.get(i12)).b() == messageObject.getId()) {
+                            ((ka1) arrayList2.get(i12)).b = messageObject;
+                        }
+                    }
+                    arrayList.clear();
+                    int size2 = arrayList2.size();
+                    while (true) {
+                        if (i10 < size2) {
+                            ka1 ka1Var = (ka1) arrayList2.get(i10);
+                            if (ka1Var.b == null) {
+                                na1Var.l0 = ka1Var.b();
+                            } else {
+                                arrayList.add(ka1Var);
+                                i10++;
+                            }
+                        }
+                    }
+                    na1Var.o0();
+                    na1Var.P.setItemAnimator(null);
+                    na1Var.v0.f();
+                    break;
+                }
+                break;
+            default:
+                na1 na1Var2 = this.b;
+                oh.l6 l6Var = na1Var2.w0;
+                l6Var.getClass();
+                ArrayList arrayList4 = this.c;
+                int size3 = arrayList4.size();
+                int i13 = 0;
+                while (true) {
+                    if (i13 < size3) {
+                        Object obj = arrayList4.get(i13);
+                        i13++;
+                        if (!l6Var.j.containsKey((Integer) obj)) {
+                            z4 = true;
+                        }
+                    } else {
+                        z4 = false;
+                    }
+                }
+                if (!l6Var.q(0, arrayList4, z4)) {
+                    na1Var2.j0();
+                    na1Var2.o0();
+                    break;
+                }
+                break;
         }
-        boolean z4 = this.a;
-        FrameLayout frameLayout = this.d;
-        if (z4) {
-            if (i10 == 0) {
-                return frameLayout;
-            }
-            i10--;
-        }
-        if (this.b) {
-            if (i10 == 0) {
-                return ha1Var.g0;
-            }
-            i10--;
-        }
-        return (this.c && i10 == 0) ? ha1Var.h0 : frameLayout;
-    }
-
-    @Override // org.telegram.ui.Components.e81
-    public final int e() {
-        if (this.e.i0) {
-            return 1;
-        }
-        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
-    }
-
-    @Override // org.telegram.ui.Components.e81
-    public final int h(int i10) {
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Components.e81
-    public final void b(View view, int i10, int i11) {
     }
 }

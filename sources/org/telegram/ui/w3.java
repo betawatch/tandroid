@@ -1,5 +1,6 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
 import android.view.View;
 import android.view.ViewPropertyAnimator;
 import java.util.ArrayList;
@@ -9,7 +10,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class w3 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -90,33 +91,28 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                 }
                 break;
             case 12:
-                Integer num2 = (Integer) obj;
-                ek ekVar = ((ip0) this.b).y;
-                if (ekVar != null) {
-                    ekVar.D(num2.intValue());
-                    break;
-                }
+                super/*android.widget.LinearLayout*/.draw((Canvas) obj);
                 break;
             case 13:
-                ((bp0) this.b).c.e();
+                ((fp0) this.b).c.e();
                 break;
             case 14:
                 ((ek) this.b).D(((Integer) obj).intValue());
                 break;
             case 15:
-                aw0 aw0Var = (aw0) this.b;
-                aw0Var.s = ((Integer) obj).intValue();
-                View y12 = aw0Var.d.y1(4);
-                if (y12 instanceof org.telegram.ui.Cells.a9) {
-                    org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) y12;
-                    if (a9Var.getFixedSize() <= 0 && aw0Var.s > 0) {
-                        a9Var.setText(aw0Var.W());
-                        aw0Var.V(true);
+                fw0 fw0Var = (fw0) this.b;
+                fw0Var.s = ((Integer) obj).intValue();
+                View x12 = fw0Var.d.x1(4);
+                if (x12 instanceof org.telegram.ui.Cells.a9) {
+                    org.telegram.ui.Cells.a9 a9Var = (org.telegram.ui.Cells.a9) x12;
+                    if (a9Var.getFixedSize() <= 0 && fw0Var.s > 0) {
+                        a9Var.setText(fw0Var.W());
+                        fw0Var.V(true);
                         break;
                     }
                 }
-                aw0Var.d.V2.N(true);
-                aw0Var.V(true);
+                fw0Var.d.V2.N(true);
+                fw0Var.V(true);
                 break;
             case 16:
                 PrivacySettingsActivity privacySettingsActivity = (PrivacySettingsActivity) this.b;
@@ -134,7 +130,7 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                 g90VarArr[1].animate().alpha(bool.booleanValue() ? 1.0f : 0.0f).scaleX(!bool.booleanValue() ? 0.8f : 1.0f).scaleY(bool.booleanValue() ? 1.0f : 0.8f).setInterpolator(prVar).setDuration(600L).start();
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new w01(2, (j21) this.b, (TLRPC.TL_exportedContactToken) obj));
+                AndroidUtilities.runOnUIThread(new h21(1, (o21) this.b, (TLRPC.TL_exportedContactToken) obj));
                 break;
             case 19:
                 StickersActivity.b0((StickersActivity) this.b, (View) obj);
@@ -143,17 +139,17 @@ public final /* synthetic */ class w3 implements Utilities.Callback {
                 ThemeActivity.U((ThemeActivity) this.b, (TL_account.contentSettings) obj);
                 break;
             case 21:
-                ed1 ed1Var = (ed1) this.b;
-                ed1Var.getClass();
-                ed1Var.k1 = ((Float) obj).floatValue();
-                ed1Var.u0.invalidate();
-                ed1Var.V0();
+                jd1 jd1Var = (jd1) this.b;
+                jd1Var.getClass();
+                jd1Var.k1 = ((Float) obj).floatValue();
+                jd1Var.u0.invalidate();
+                jd1Var.V0();
                 break;
             case 22:
                 ((ek) this.b).D(((Integer) obj).intValue());
                 break;
             default:
-                ((ci1) this.b).E(true);
+                ((ii1) this.b).E(true);
                 break;
         }
     }

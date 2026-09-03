@@ -10,9 +10,9 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.ActionBar.g6, tu0, km {
+public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.ActionBar.g6, yu0, km {
     public final /* synthetic */ xn a;
 
     public /* synthetic */ mj(xn xnVar) {
@@ -29,7 +29,7 @@ public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.A
         return org.telegram.ui.ActionBar.k6.S0(str);
     }
 
-    @Override // org.telegram.ui.tu0
+    @Override // org.telegram.ui.yu0
     public void G(MessageObject messageObject) {
         if (messageObject == null) {
             return;
@@ -49,8 +49,8 @@ public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.A
                                 sk skVar = this.a.ta;
                                 int width = m9.getWidth();
                                 int height = m9.getHeight();
-                                wu0 wu0Var = skVar.d;
-                                Bitmap bitmap = wu0Var == null ? null : wu0Var.b.getBitmap(width, height);
+                                bv0 bv0Var = skVar.d;
+                                Bitmap bitmap = bv0Var == null ? null : bv0Var.b.getBitmap(width, height);
                                 new Canvas(m9).drawBitmap(bitmap, 0.0f, 0.0f, (Paint) null);
                                 bitmap.recycle();
                             } catch (Throwable th2) {
@@ -85,7 +85,7 @@ public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.A
 
     @Override // org.telegram.ui.ActionBar.t0
     public void e() {
-        org.telegram.ui.Components.jm0.d(new we(this.a, 2));
+        org.telegram.ui.Components.im0.d(new we(this.a, 2));
     }
 
     @Override // org.telegram.ui.ActionBar.g6
@@ -98,7 +98,7 @@ public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.A
         return null;
     }
 
-    @Override // org.telegram.ui.tu0
+    @Override // org.telegram.ui.yu0
     public TextureView h0() {
         return this.a.t8;
     }
@@ -123,7 +123,7 @@ public final class mj implements org.telegram.ui.ActionBar.t0, org.telegram.ui.A
         return org.telegram.ui.ActionBar.k6.v3;
     }
 
-    @Override // org.telegram.ui.tu0
+    @Override // org.telegram.ui.yu0
     public void y0(MessageObject messageObject) {
         xn xnVar = this.a;
         xnVar.u0.I0(true);

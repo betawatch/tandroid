@@ -38,9 +38,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.c2, y4, org.telegram.ui.Cells.s5, ImageReceiver.ImageReceiverDelegate, ui, org.telegram.ui.ActionBar.o1, ll0, MessagesStorage.BooleanCallback, kl0, ml0 {
+public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.c2, y4, org.telegram.ui.Cells.s5, ImageReceiver.ImageReceiverDelegate, ui, org.telegram.ui.ActionBar.o1, kl0, MessagesStorage.BooleanCallback, jl0, ll0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ Object c;
@@ -84,26 +84,26 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.c2, y
                 clVar.b.dismiss(true);
                 break;
             default:
-                sn snVar = (sn) this.b;
+                rn rnVar = (rn) this.b;
                 View view = (View) this.c;
                 if (!z4) {
-                    snVar.getClass();
+                    rnVar.getClass();
                     break;
                 } else {
-                    snVar.S = i10;
-                    snVar.R = 0;
+                    rnVar.S = i10;
+                    rnVar.R = 0;
                     if (!(view instanceof org.telegram.ui.Cells.o8)) {
-                        snVar.r.m(snVar.F0);
+                        rnVar.r.m(rnVar.F0);
                         break;
                     } else {
-                        snVar.U((org.telegram.ui.Cells.o8) view, true);
+                        rnVar.U((org.telegram.ui.Cells.o8) view, true);
                         break;
                     }
                 }
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         return false;
     }
@@ -182,11 +182,11 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.c2, y
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
-        i61 i61Var = (i61) this.b;
+        h61 h61Var = (h61) this.b;
         Utilities.Callback5 callback5 = (Utilities.Callback5) this.c;
-        j51 G = i61Var.V2.G(i10);
+        h51 G = h61Var.V2.G(i10);
         if (G == null) {
             return;
         }
@@ -195,15 +195,15 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.c2, y
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
-        nm nmVar = (nm) this.b;
+        mm mmVar = (mm) this.b;
         MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) this.c;
-        nmVar.getClass();
-        if (z4 && !z10 && photoEntry != null && photoEntry.hasSpoiler && nmVar.d.getBitmap() == null) {
-            if (nmVar.d.getBitmap() != null && !nmVar.d.getBitmap().isRecycled()) {
-                nmVar.d.getBitmap().recycle();
-                nmVar.d.setImageBitmap((Bitmap) null);
+        mmVar.getClass();
+        if (z4 && !z10 && photoEntry != null && photoEntry.hasSpoiler && mmVar.d.getBitmap() == null) {
+            if (mmVar.d.getBitmap() != null && !mmVar.d.getBitmap().isRecycled()) {
+                mmVar.d.getBitmap().recycle();
+                mmVar.d.setImageBitmap((Bitmap) null);
             }
-            nmVar.d.setImageBitmap(Utilities.stackBlurBitmapMax(imageReceiver.getBitmap()));
+            mmVar.d.setImageBitmap(Utilities.stackBlurBitmapMax(imageReceiver.getBitmap()));
         }
     }
 
@@ -212,7 +212,7 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.c2, y
         org.telegram.messenger.j5.a(this, i10, str, drawable);
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         u5 u5Var;
         ov ovVar = (ov) this.b;
@@ -253,11 +253,11 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.c2, y
     @Override // org.telegram.ui.Components.ui
     public void i(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
         Utilities.Callback callback = (Utilities.Callback) this.b;
-        bn bnVar = (bn) this.c;
+        an anVar = (an) this.c;
         if (!arrayList.isEmpty()) {
             callback.run(new fh.h((MessageObject) arrayList.get(0)));
         }
-        bnVar.dismiss(true);
+        anVar.dismiss(true);
     }
 
     @Override // org.telegram.ui.ActionBar.c2
@@ -401,12 +401,12 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.c2, y
                 fa0Var.S.L(false);
                 break;
             case 22:
-                eo0 eo0Var = (eo0) this.b;
+                do0 do0Var = (do0) this.b;
                 ArrayList<MessageObject> arrayList4 = (ArrayList) this.c;
-                eo0Var.getClass();
+                do0Var.getClass();
                 d2Var.dismiss();
-                eo0Var.G0.getDownloadController().deleteRecentFiles(arrayList4);
-                eo0Var.Q(false);
+                do0Var.G0.getDownloadController().deleteRecentFiles(arrayList4);
+                do0Var.Q(false);
                 break;
             case 24:
                 Runnable runnable2 = (Runnable) this.b;
@@ -435,39 +435,39 @@ public final /* synthetic */ class o1 implements org.telegram.ui.ActionBar.c2, y
     /* JADX WARN: Multi-variable type inference failed */
     @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
     public void run(boolean z4) {
-        ct0 ct0Var = (ct0) this.b;
+        bt0 bt0Var = (bt0) this.b;
         TLRPC.User user = (TLRPC.User) this.c;
-        zu0 zu0Var = ct0Var.d;
-        zu0Var.s1.finishFragment();
-        org.telegram.ui.ActionBar.p2 p2Var = zu0Var.s1;
+        yu0 yu0Var = bt0Var.d;
+        yu0Var.s1.finishFragment();
+        org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
         if (p2Var instanceof NotificationCenter.NotificationCenterDelegate) {
             p2Var.getNotificationCenter().removeObserver((NotificationCenter.NotificationCenterDelegate) p2Var, NotificationCenter.closeChats);
         }
         p2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
-        p2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(zu0Var.g1), user, null, Boolean.valueOf(z4));
+        p2Var.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(yu0Var.g1), user, null, Boolean.valueOf(z4));
         p2Var.getMessagesController().setSavedViewAs(false);
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean c(float f10, float f11, int i10, View view) {
-        i61 i61Var = (i61) this.b;
+        h61 h61Var = (h61) this.b;
         Utilities.Callback5Return callback5Return = (Utilities.Callback5Return) this.c;
-        j51 G = i61Var.V2.G(i10);
+        h51 G = h61Var.V2.G(i10);
         if (G == null) {
             return false;
         }
         return ((Boolean) callback5Return.run(G, view, Integer.valueOf(i10), Float.valueOf(f10), Float.valueOf(f11))).booleanValue();
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void h() {
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void p(float f10) {
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

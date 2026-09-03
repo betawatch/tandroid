@@ -29,12 +29,12 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.xh0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class u extends Dialog {
     public final /* synthetic */ v B;
@@ -54,7 +54,7 @@ public final class u extends Dialog {
     public final t y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u(v vVar, Activity activity, tl0 tl0Var, g6 g6Var, boolean z4) {
+    public u(v vVar, Activity activity, sl0 sl0Var, g6 g6Var, boolean z4) {
         super(activity, R.style.TransparentDialog2);
         this.B = vVar;
         Drawable mutate = getContext().getResources().getDrawable(R.drawable.popup_fixed_alert2).mutate();
@@ -82,7 +82,7 @@ public final class u extends Dialog {
         tVar.addView(actionBarPopupWindow$ActionBarPopupWindowLayout);
         q qVar = new q(getContext());
         this.n = qVar;
-        xh0 xh0Var = new xh0(activity, p2Var.getActionBar(), tl0Var, qVar);
+        xh0 xh0Var = new xh0(activity, p2Var.getActionBar(), sl0Var, qVar);
         this.h = xh0Var;
         xh0Var.setCreateThumbFromParent(true);
         tVar.addView(xh0Var);

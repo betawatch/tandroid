@@ -3,7 +3,7 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.view.View;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x8 implements og.j {
     public final /* synthetic */ int a;
@@ -18,7 +18,7 @@ public final /* synthetic */ class x8 implements og.j {
     public final boolean a(Canvas canvas, View view, long j10) {
         switch (this.a) {
             case 0:
-                return ((org.telegram.ui.Components.i61) this.b).drawChild(canvas, view, j10);
+                return ((org.telegram.ui.Components.h61) this.b).drawChild(canvas, view, j10);
             case 1:
                 ProfileActivity profileActivity = (ProfileActivity) this.b;
                 if (view == profileActivity.L) {
@@ -26,7 +26,7 @@ public final /* synthetic */ class x8 implements og.j {
                 }
                 return profileActivity.a.drawChild(canvas, view, j10);
             default:
-                return ((kf1) this.b).drawChild(canvas, view, j10);
+                return ((qf1) this.b).drawChild(canvas, view, j10);
         }
     }
 }

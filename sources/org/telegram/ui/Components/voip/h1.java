@@ -32,20 +32,20 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.iv0;
 import org.telegram.ui.Components.jc;
 import org.telegram.ui.Components.jg0;
-import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.mh0;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.z8;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class h1 implements NotificationCenter.NotificationCenterDelegate, ef.a {
-    public static final jv0 Y = new jv0(new mh0(14), new mh0(15));
-    public static final jv0 Z = new jv0(new mh0(16), new mh0(17));
+    public static final iv0 Y = new iv0(new mh0(14), new mh0(15));
+    public static final iv0 Z = new iv0(new mh0(16), new mh0(17));
     public static final h1 a0;
     public AccountInstance B;
     public ScaleGestureDetector C;

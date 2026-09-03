@@ -25,13 +25,13 @@ import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.og;
+import org.telegram.ui.Components.oy0;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.py0;
 import org.telegram.ui.Components.qg;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public class c6 extends FrameLayout implements py0, xd.b {
+public class c6 extends FrameLayout implements oy0, xd.b {
     public Integer B;
     public final xd.a a;
     public final xd.a b;
@@ -215,7 +215,7 @@ public class c6 extends FrameLayout implements py0, xd.b {
         }
     }
 
-    @Override // org.telegram.ui.Components.py0
+    @Override // org.telegram.ui.Components.oy0
     public final void a(eh.c cVar) {
         this.d.addTextChangedListener(cVar);
     }
@@ -280,12 +280,12 @@ public class c6 extends FrameLayout implements py0, xd.b {
         return this.r;
     }
 
-    @Override // org.telegram.ui.Components.py0
+    @Override // org.telegram.ui.Components.oy0
     public EditTextBoldCursor getEditField() {
         return this.d;
     }
 
-    @Override // org.telegram.ui.Components.py0
+    @Override // org.telegram.ui.Components.oy0
     public Editable getEditText() {
         return this.d.getText();
     }
@@ -294,7 +294,7 @@ public class c6 extends FrameLayout implements py0, xd.b {
         return this.y;
     }
 
-    @Override // org.telegram.ui.Components.py0
+    @Override // org.telegram.ui.Components.oy0
     public CharSequence getFieldText() {
         eh.b bVar = this.d;
         if (bVar.length() > 0) {
@@ -303,7 +303,7 @@ public class c6 extends FrameLayout implements py0, xd.b {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.py0
+    @Override // org.telegram.ui.Components.oy0
     public org.telegram.ui.ActionBar.p2 getParentFragment() {
         return null;
     }
@@ -467,7 +467,7 @@ public class c6 extends FrameLayout implements py0, xd.b {
         this.b.a(z4, true);
     }
 
-    @Override // org.telegram.ui.Components.py0
+    @Override // org.telegram.ui.Components.oy0
     public void setFieldText(CharSequence charSequence) {
         this.d.setText(charSequence);
     }

@@ -26,12 +26,12 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.pz;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
 import org.telegram.ui.us;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class i1 extends org.telegram.ui.Components.sa {
     public static final /* synthetic */ int A0 = 0;
@@ -80,10 +80,10 @@ public final class i1 extends org.telegram.ui.Components.sa {
         arrayList2.add(rectF);
         this.U = i10;
         this.t0 = z4;
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         org.telegram.ui.ActionBar.f3 f3Var = this.container;
-        Objects.requireNonNull(tl0Var);
-        this.o0 = new og.k(tl0Var, f3Var, new us(tl0Var, 0));
+        Objects.requireNonNull(sl0Var);
+        this.o0 = new og.k(sl0Var, f3Var, new us(sl0Var, 0));
         ArrayList c3 = mf.d.c(arrayList, TL_stars.starGiftAttributeBackdrop.class);
         this.X = c3;
         com.google.android.gms.common.api.internal.r rVar = new com.google.android.gms.common.api.internal.r(c3);
@@ -435,10 +435,10 @@ public final class i1 extends org.telegram.ui.Components.sa {
     public final void U() {
         g1 g1Var;
         e1 e1Var;
-        tl0 tl0Var = this.d;
-        int childCount = tl0Var.getChildCount();
+        sl0 sl0Var = this.d;
+        int childCount = sl0Var.getChildCount();
         for (int i10 = 0; i10 < childCount; i10++) {
-            View childAt = tl0Var.getChildAt(i10);
+            View childAt = sl0Var.getChildAt(i10);
             if ((childAt instanceof g1) && (e1Var = (g1Var = (g1) childAt).v) != null) {
                 boolean R = R(e1Var);
                 g1Var.c.f(R, true);
@@ -489,7 +489,7 @@ public final class i1 extends org.telegram.ui.Components.sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
+    public final rl0 v(sl0 sl0Var) {
         c1 c1Var = new c1(this, this.d, getContext(), this.U, new eg.p1(this, 17), this.resourcesProvider);
         this.h0 = c1Var;
         c1Var.r = false;
@@ -497,7 +497,7 @@ public final class i1 extends org.telegram.ui.Components.sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final tl0 w(Context context) {
+    public final sl0 w(Context context) {
         return new d1(this, context, this.resourcesProvider, 0);
     }
 

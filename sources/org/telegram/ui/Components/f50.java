@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class f50 {
     public final int a;
@@ -28,7 +28,7 @@ public final class f50 {
 
     public f50(int i10, int i11) {
         int i12;
-        Canvas canvas;
+        RLottieNative rLottieNative;
         int i13;
         Bitmap bitmap;
         int i14;
@@ -56,40 +56,40 @@ public final class f50 {
                 int round2 = Math.round((i10 * 28) / 1536.0f);
                 int i18 = (round - round2) - round2;
                 Object obj2 = null;
-                RLottieNative b10 = RLottieNative.b(AndroidUtilities.readRes(R.raw.plane_logo_plain), "logo_plane", null, null, null);
+                RLottieNative b10 = RLottieNative.b(AndroidUtilities.readRes(R.raw.plane_logo_plain), null, null, null);
                 Bitmap createBitmap = Bitmap.createBitmap(round, round, Bitmap.Config.ARGB_8888);
                 Bitmap createBitmap2 = Bitmap.createBitmap(i18 * 8, i18 * 4, Bitmap.Config.ALPHA_8);
-                Canvas canvas2 = new Canvas(createBitmap2);
+                Canvas canvas = new Canvas(createBitmap2);
                 int i19 = 0;
                 while (i19 < 8) {
                     int i20 = 0;
                     while (i20 < i17) {
                         int i21 = (i20 * 8) + i19;
                         if (i21 >= 27) {
-                            canvas = canvas2;
-                            i13 = i18;
-                            i12 = i19;
                             obj = obj2;
-                            i14 = i20;
                             bitmap = createBitmap;
+                            i12 = i18;
+                            i13 = i19;
+                            rLottieNative = b10;
+                            i14 = i20;
                         } else {
                             int i22 = (i21 * 8) + 16;
-                            i12 = i19;
-                            canvas = canvas2;
-                            i13 = i18;
+                            i12 = i18;
+                            rLottieNative = b10;
+                            i13 = i19;
                             bitmap = createBitmap;
                             i14 = i20;
                             c(fArr, i22, i19 / 8.0f, i20 / 4.0f, (i19 + 1) / 8.0f, (i20 + 1) / 4.0f);
-                            b10.c(i21 * 2, bitmap, true);
+                            rLottieNative.c(i21 * 2, bitmap, true);
                             obj = null;
-                            canvas.drawBitmap(bitmap, (i13 * i12) - round2, (i13 * i14) - round2, (Paint) null);
+                            canvas.drawBitmap(bitmap, (i12 * i13) - round2, (i12 * i14) - round2, (Paint) null);
                         }
-                        i18 = i13;
+                        i18 = i12;
+                        b10 = rLottieNative;
                         i20 = i14 + 1;
-                        canvas2 = canvas;
-                        createBitmap = bitmap;
-                        i19 = i12;
                         obj2 = obj;
+                        createBitmap = bitmap;
+                        i19 = i13;
                         i17 = 4;
                     }
                     i19++;

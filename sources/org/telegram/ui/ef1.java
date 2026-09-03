@@ -1,12 +1,37 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ef1 {
-    public final int a;
-    public int b;
+public final /* synthetic */ class ef1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ff1 b;
 
-    public ef1(int i10) {
+    public /* synthetic */ ef1(ff1 ff1Var, int i10) {
         this.a = i10;
+        this.b = ff1Var;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ff1 ff1Var = this.b;
+                ff1Var.F = null;
+                if (ff1Var.G != -1) {
+                    ff1Var.H.getNotificationCenter().onAnimationFinish(ff1Var.G);
+                    ff1Var.G = -1;
+                    break;
+                }
+                break;
+            default:
+                ff1 ff1Var2 = this.b;
+                ff1Var2.F = null;
+                if (ff1Var2.G != -1) {
+                    ff1Var2.H.getNotificationCenter().onAnimationFinish(ff1Var2.G);
+                    ff1Var2.G = -1;
+                    break;
+                }
+                break;
+        }
     }
 }

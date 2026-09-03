@@ -1,33 +1,40 @@
 package org.telegram.ui;
 
-import android.widget.Toast;
-import java.util.List;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
+import android.content.Intent;
+import android.net.Uri;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class e21 implements ResultCallback {
-    public final /* synthetic */ o21 a;
+public final /* synthetic */ class e21 implements org.telegram.ui.ActionBar.c2, r0.o {
+    public final /* synthetic */ u21 a;
 
-    public e21(o21 o21Var) {
-        this.a = o21Var;
+    public /* synthetic */ e21(u21 u21Var) {
+        this.a = u21Var;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        List list = (List) obj;
-        this.a.c0(list);
-        o21.P = list;
+    @Override // r0.o
+    public r0.m1 M0(View view, r0.m1 m1Var) {
+        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
+        u21 u21Var = this.a;
+        u21Var.N = defaultWindowInsets;
+        u21Var.fragmentView.requestLayout();
+        return r0.m1.b;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.k.a(this, th2);
-    }
-
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.a.getParentActivity(), tL_error.text, 0).show();
+    @Override // org.telegram.ui.ActionBar.c2
+    public void j(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+        u21 u21Var = this.a;
+        u21Var.getClass();
+        try {
+            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+            u21Var.getParentActivity().startActivity(intent);
+        } catch (Exception e6) {
+            FileLog.e(e6);
+        }
     }
 }

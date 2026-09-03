@@ -22,23 +22,23 @@ import org.telegram.messenger.voip.VideoCapturerDevice;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.g91;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.lj0;
-import org.telegram.ui.Components.sx0;
-import org.telegram.ui.Components.z51;
+import org.telegram.ui.Components.f91;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.rx0;
+import org.telegram.ui.Components.y51;
 import org.telegram.ui.d60;
 import org.telegram.ui.q40;
 import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract class v0 extends FrameLayout implements VoIPService.StateListener {
     public boolean a;
     public final m2.h b;
     public final fg.s0 c;
     public final LinearLayout d;
-    public final lj0 e;
+    public final kj0 e;
     public final TextView[] f;
     public final t2 h;
     public int n;
@@ -79,7 +79,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         kVar.setBackgroundColor(0);
         kVar.C(k6.w0(null, k6.hg, false), false);
         kVar.setOccupyStatusBar(true);
-        kVar.setActionBarMenuOnItemClick(new z51(this, 1));
+        kVar.setActionBarMenuOnItemClick(new y51(this, 1));
         addView(kVar);
         fg.s0 s0Var = new fg.s0(this, getContext());
         this.c = s0Var;
@@ -137,17 +137,17 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
             sharedInstance.setLocalSink(this.h.d, false);
         }
         this.b.setCurrentItem(this.y ? 1 : 0);
-        lj0 lj0Var = new lj0(context);
-        this.e = lj0Var;
-        lj0Var.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
-        lj0Var.setBackground(k6.K(AndroidUtilities.dp(48.0f), i0.a.k(-16777216, 76)));
-        ij0 ij0Var = new ij0(R.raw.voice_mini, "" + R.raw.voice_mini, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
-        lj0Var.setAnimation(ij0Var);
-        lj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
+        kj0 kj0Var = new kj0(context);
+        this.e = kj0Var;
+        kj0Var.setPadding(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f));
+        kj0Var.setBackground(k6.K(AndroidUtilities.dp(48.0f), i0.a.k(-16777216, 76)));
+        hj0 hj0Var = new hj0(R.raw.voice_mini, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), true, null);
+        kj0Var.setAnimation(hj0Var);
+        kj0Var.setScaleType(ImageView.ScaleType.FIT_CENTER);
         this.v = true;
-        ij0Var.K(69);
-        lj0Var.setOnClickListener(new sx0(9, this, ij0Var));
-        addView(lj0Var, c6.d(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
+        hj0Var.K(69);
+        kj0Var.setOnClickListener(new rx0(9, this, hj0Var));
+        addView(kj0Var, c6.d(48, 48.0f, 83, 24.0f, 0.0f, 0.0f, 136.0f));
     }
 
     public static void a(v0 v0Var) {
@@ -190,7 +190,7 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
         } else if (sharedInstance != null) {
             sharedInstance.setVideoState(false, 0);
         }
-        animate().alpha(0.0f).translationX(AndroidUtilities.dp(32.0f)).setDuration(150L).setListener(new g91(this, 3));
+        animate().alpha(0.0f).translationX(AndroidUtilities.dp(32.0f)).setDuration(150L).setListener(new f91(this, 3));
         invalidate();
     }
 
@@ -336,9 +336,9 @@ public abstract class v0 extends FrameLayout implements VoIPService.StateListene
             marginLayoutParams.leftMargin = dp2;
             marginLayoutParams.rightMargin = dp2;
         }
-        lj0 lj0Var = this.e;
-        if (lj0Var != null) {
-            ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) lj0Var.getLayoutParams();
+        kj0 kj0Var = this.e;
+        if (kj0Var != null) {
+            ViewGroup.MarginLayoutParams marginLayoutParams2 = (ViewGroup.MarginLayoutParams) kj0Var.getLayoutParams();
             if (z4) {
                 int dp3 = AndroidUtilities.dp(88.0f);
                 marginLayoutParams2.leftMargin = dp3;

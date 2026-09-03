@@ -1,46 +1,60 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
+import android.graphics.Bitmap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MrzRecognizer;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class f21 implements u9 {
+public final /* synthetic */ class f21 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 b;
+    public final /* synthetic */ u21 b;
 
-    public f21(int i10, org.telegram.ui.ActionBar.p2 p2Var) {
+    public /* synthetic */ f21(u21 u21Var, int i10) {
         this.a = i10;
-        this.b = p2Var;
+        this.b = u21Var;
     }
 
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ String E0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.u9
-    public final void J(String str) {
-        String b10 = af.g.b(str);
-        if (TextUtils.isEmpty(b10)) {
-            AndroidUtilities.runOnUIThread(new sj0(2));
-            return;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                t21 t21Var = this.b.f;
+                if (t21Var != null) {
+                    t21Var.s.setClickable(true);
+                    break;
+                }
+                break;
+            case 1:
+                u21 u21Var = this.b;
+                u21Var.d0(0, u21Var.G, true);
+                org.telegram.ui.Components.hj0 animatedDrawable = u21Var.C.getAnimatedDrawable();
+                if (u21Var.F == null && animatedDrawable != null) {
+                    u21Var.F = Bitmap.createBitmap(animatedDrawable.b, animatedDrawable.c, Bitmap.Config.ARGB_8888);
+                    animatedDrawable.b();
+                    animatedDrawable.B0 = 33;
+                    animatedDrawable.a(u21Var.F);
+                    animatedDrawable.c();
+                    break;
+                }
+                break;
+            case 2:
+                int i10 = R.raw.default_pattern;
+                u21 u21Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new h21(0, u21Var2, SvgHelper.getBitmap(i10, u21Var2.w.getWidth(), u21Var2.w.getHeight(), -16777216)));
+                break;
+            case 3:
+                u21 u21Var3 = this.b;
+                n7.qa qaVar = u21Var3.a;
+                qaVar.b = u21Var3.G.b(((org.telegram.ui.ActionBar.p2) ((u21) qaVar.c)).currentAccount, u21Var3.H ? 1 : 0);
+                break;
+            case 4:
+                u21.X(this.b);
+                break;
+            default:
+                u21.V(this.b);
+                break;
         }
-        MessagesController.getInstance(this.a).getUserNameResolver().resolve(b10, new vb(this.b, 4));
-    }
-
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ boolean e1(String str, m9 m9Var) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ void P0(MrzRecognizer.Result result) {
-    }
-
-    @Override // org.telegram.ui.u9
-    public final /* synthetic */ void onDismiss() {
     }
 }

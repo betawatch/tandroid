@@ -18,7 +18,7 @@ import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.x9;
 import org.telegram.ui.Components.ai;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class a5 extends z implements b6, l9 {
     public final g6 n;
@@ -44,7 +44,7 @@ public final class a5 extends z implements b6, l9 {
         e1Var.setAccentHint(true);
         e1Var.setHint(LocaleController.getString(R.string.ArticleHintAuthor));
         e1Var.setListener(new ai(this, 22));
-        e1Var.setDelegate(new sf.g(this, 18));
+        e1Var.setDelegate(new sf.h(this, 18));
         addView(e1Var, c6.e(-1, -2, 51));
         e();
     }

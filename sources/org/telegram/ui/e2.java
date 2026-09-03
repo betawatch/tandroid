@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class e2 extends FrameLayout implements DownloadController.FileDownloadProgressListener, org.telegram.ui.Cells.l9 {
     public boolean B;
@@ -387,7 +387,7 @@ public final class e2 extends FrameLayout implements DownloadController.FileDown
                                 if (this.I instanceof org.telegram.ui.web.g2) {
                                     this.Q = true;
                                     imageReceiver.setStrippedLocation(null);
-                                    org.telegram.ui.web.h2.g((org.telegram.ui.web.g2) this.I, imageReceiver, new tt0(this, 9));
+                                    org.telegram.ui.web.h2.g((org.telegram.ui.web.g2) this.I, imageReceiver, new yt0(this, 9));
                                 } else {
                                     File pathToAttach = FileLoader.getInstance(l4Var.U).getPathToAttach(this.E, true);
                                     if (this.Q || pathToAttach.exists()) {
@@ -440,7 +440,7 @@ public final class e2 extends FrameLayout implements DownloadController.FileDown
                         int i29 = i16;
                         TL_iv.pageBlockPhoto pageblockphoto3 = this.K;
                         j4Var = j4Var2;
-                        d3 p10 = l4.p(this.a, this, null, pageblockphoto3.caption.credit, dp, this.v + this.w, pageblockphoto3, (j4Var2 == null || !j4Var2.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.lw0.a(), 0, this.b);
+                        d3 p10 = l4.p(this.a, this, null, pageblockphoto3.caption.credit, dp, this.v + this.w, pageblockphoto3, (j4Var2 == null || !j4Var2.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
                         this.d = p10;
                         i16 = p10 != null ? this.d.d.getHeight() + AndroidUtilities.dp(4.0f) + i29 : i29;
                     } else {

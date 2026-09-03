@@ -9,12 +9,12 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.ui.Components.gm;
+import org.telegram.ui.Components.eo;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.jd1;
+import org.telegram.ui.od1;
 import org.telegram.ui.xo;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class i extends ClickableSpan {
     public final /* synthetic */ int a;
@@ -74,7 +74,7 @@ public final class i extends ClickableSpan {
                 af.g.s(((xo) this.c).getContext(), "https://fragment.com/username/" + ((String) this.b));
                 break;
             case 6:
-                ((gm) this.c).run();
+                ((eo) this.c).run();
                 break;
             case 7:
                 AndroidUtilities.addToClipboard((CharSequence) this.b);
@@ -83,8 +83,8 @@ public final class i extends ClickableSpan {
             default:
                 try {
                     ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", (String) this.b));
-                    if (qc.a((jd1) this.c)) {
-                        qc.j((jd1) this.c).j();
+                    if (qc.a((od1) this.c)) {
+                        qc.j((od1) this.c).j();
                         break;
                     }
                 } catch (Exception e10) {

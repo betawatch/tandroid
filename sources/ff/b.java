@@ -15,14 +15,14 @@ import lh.z4;
 import mh.p4;
 import mh.r4;
 import oh.q1;
+import org.telegram.ui.Components.am0;
 import org.telegram.ui.Components.ba;
-import org.telegram.ui.Components.bm0;
+import org.telegram.ui.Components.ho0;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.io0;
 import org.telegram.ui.Components.j5;
 import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class b implements View.OnAttachStateChangeListener {
     public final /* synthetic */ int a;
@@ -101,12 +101,12 @@ public final class b implements View.OnAttachStateChangeListener {
                 ((rq) this.b).a();
                 break;
             case 12:
-                bm0 bm0Var = (bm0) this.b;
-                j5 j5Var = bm0Var.t;
+                am0 am0Var = (am0) this.b;
+                j5 j5Var = am0Var.t;
                 if (j5Var != null) {
                     j5Var.a();
                 }
-                j5 j5Var2 = bm0Var.u;
+                j5 j5Var2 = am0Var.u;
                 if (j5Var2 != null) {
                     j5Var2.a();
                     break;
@@ -199,19 +199,19 @@ public final class b implements View.OnAttachStateChangeListener {
                 ((rq) this.b).b();
                 break;
             case 12:
-                bm0 bm0Var = (bm0) this.b;
-                j5 j5Var = bm0Var.t;
+                am0 am0Var = (am0) this.b;
+                j5 j5Var = am0Var.t;
                 if (j5Var != null) {
                     j5Var.b();
                 }
-                j5 j5Var2 = bm0Var.u;
+                j5 j5Var2 = am0Var.u;
                 if (j5Var2 != null) {
                     j5Var2.a();
                     break;
                 }
                 break;
             case 13:
-                view.removeCallbacks((Runnable) ((io0) this.b).a.remove(view));
+                view.removeCallbacks((Runnable) ((ho0) this.b).a.remove(view));
                 view.removeOnAttachStateChangeListener(this);
                 break;
             default:

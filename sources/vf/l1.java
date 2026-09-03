@@ -27,12 +27,12 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.np;
 import org.telegram.ui.Components.z8;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class l1 extends FrameLayout {
     public final z8 a;
@@ -94,7 +94,7 @@ public final class l1 extends FrameLayout {
             str3 = "/".concat(str3);
         }
         spannableStringBuilder.append((CharSequence) "/").append((CharSequence) o1Var.b);
-        spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
+        spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, spannableStringBuilder.length(), 33);
         int i10 = k6.G6;
         g6 g6Var = this.f;
         spannableStringBuilder.setSpan(new ForegroundColorSpan(k6.v0(i10, g6Var)), 0, spannableStringBuilder.length(), 33);
@@ -123,7 +123,7 @@ public final class l1 extends FrameLayout {
             int i11 = org.telegram.ui.Components.a0.d;
             SpannableString spannableString = new SpannableString("+");
             org.telegram.ui.Components.a0 a0Var = new org.telegram.ui.Components.a0(a2);
-            int dp2 = (int) (((l01) a0Var.c).c + AndroidUtilities.dp(10.0f));
+            int dp2 = (int) (((k01) a0Var.c).c + AndroidUtilities.dp(10.0f));
             this.n[0] = dp2;
             spannableString.setSpan(a0Var, 0, spannableString.length(), 33);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(TextUtils.ellipsize(spannableStringBuilder, sVar.getPaint(), (dp * 1.5f) - r12[0], TextUtils.TruncateAt.END));

@@ -1,55 +1,37 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lw0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ Object d;
+public final class lw0 extends w61 {
+    public final /* synthetic */ eh.w a2;
+    public final /* synthetic */ n61[] b2;
+    public final /* synthetic */ PremiumPreviewFragment c2;
 
-    public /* synthetic */ lw0(Object obj, ViewGroup viewGroup, Object obj2, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = viewGroup;
-        this.d = obj2;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public lw0(PremiumPreviewFragment premiumPreviewFragment, PremiumPreviewFragment premiumPreviewFragment2, Activity activity, Integer num, int i10, org.telegram.ui.ActionBar.g6 g6Var, int i11, eh.w wVar, n61[] n61VarArr) {
+        super(premiumPreviewFragment2, activity, true, num, i10, true, g6Var, i11);
+        this.c2 = premiumPreviewFragment;
+        this.a2 = wVar;
+        this.b2 = n61VarArr;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                qw0 qw0Var = (qw0) this.b;
-                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
-                PremiumPreviewFragment premiumPreviewFragment = qw0Var.n;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = this.c;
-                view.setAlpha(floatValue);
-                view.setScaleX(floatValue);
-                view.setScaleY(floatValue);
-                float animatedFraction = valueAnimator2.getAnimatedFraction();
-                for (int i10 = 0; i10 < premiumPreviewFragment.R.getChildCount(); i10++) {
-                    View childAt = premiumPreviewFragment.R.getChildAt(i10);
-                    if (childAt != qw0Var.e) {
-                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == qw0Var.c ? 0.0f - (AndroidUtilities.dp(15.0f) * animatedFraction) : 0.0f + (AndroidUtilities.dp(8.0f) * animatedFraction)));
-                    }
-                }
-                break;
-            default:
-                ra1 ra1Var = (ra1) this.b;
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                org.telegram.ui.Components.li liVar = (org.telegram.ui.Components.li) this.d;
-                ra1Var.getClass();
-                ra1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                chatActivityEnterView.getEditField().setAlpha(ra1Var.a);
-                liVar.invalidate();
-                break;
+    @Override // org.telegram.ui.w61
+    public final float getScrimDrawableTranslationY() {
+        return 0.0f;
+    }
+
+    @Override // org.telegram.ui.w61
+    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        this.a2.run(l10, num);
+        n61 n61Var = this.b2[0];
+        if (n61Var != null) {
+            this.c2.p0 = null;
+            n61Var.dismiss();
         }
     }
 }

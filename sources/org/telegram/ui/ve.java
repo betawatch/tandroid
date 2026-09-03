@@ -3,18 +3,18 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ve implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ xn b;
-    public final /* synthetic */ org.telegram.ui.Components.jm0 c;
+    public final /* synthetic */ org.telegram.ui.Components.im0 c;
     public final /* synthetic */ String d;
 
-    public /* synthetic */ ve(xn xnVar, org.telegram.ui.Components.jm0 jm0Var, String str, int i10) {
+    public /* synthetic */ ve(xn xnVar, org.telegram.ui.Components.im0 im0Var, String str, int i10) {
         this.a = i10;
         this.b = xnVar;
-        this.c = jm0Var;
+        this.c = im0Var;
         this.d = str;
     }
 

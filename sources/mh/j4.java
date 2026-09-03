@@ -6,7 +6,7 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.p40;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class j4 extends FrameLayout {
     public final int[] a;
@@ -37,6 +37,6 @@ public final class j4 extends FrameLayout {
         float translationX2 = iArr[0] - childAt.getTranslationX();
         float translationY2 = iArr[1] - childAt.getTranslationY();
         k4Var.r.setTranslationY(((translationY2 - translationY) - r1.getMeasuredHeight()) - p40Var.getMeasuredHeight());
-        k4Var.r.n(0.0f, ((childAt.getMeasuredWidth() / 2.0f) + (translationX2 - translationX)) - AndroidUtilities.dp(12.0f));
+        k4Var.r.m(0.0f, ((childAt.getMeasuredWidth() / 2.0f) + (translationX2 - translationX)) - AndroidUtilities.dp(12.0f));
     }
 }

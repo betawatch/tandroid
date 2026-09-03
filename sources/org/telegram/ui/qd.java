@@ -6,7 +6,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class qd implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
@@ -46,17 +46,17 @@ public final /* synthetic */ class qd implements View.OnFocusChangeListener {
                 cd0Var.b(f11, f11, true);
                 break;
             case 4:
-                org.telegram.ui.Components.cd0 cd0Var2 = ((ie0) this.b).x;
+                org.telegram.ui.Components.cd0 cd0Var2 = ((he0) this.b).x;
                 float f12 = z4 ? 1.0f : 0.0f;
                 cd0Var2.b(f12, f12, true);
                 break;
             case 5:
-                org.telegram.ui.Components.cd0 cd0Var3 = ((qe0) this.b).b;
+                org.telegram.ui.Components.cd0 cd0Var3 = ((pe0) this.b).b;
                 float f13 = z4 ? 1.0f : 0.0f;
                 cd0Var3.b(f13, f13, true);
                 break;
             case 6:
-                og0 og0Var2 = ((te0) this.b).y;
+                og0 og0Var2 = ((se0) this.b).y;
                 if (z4) {
                     og0Var2.c.setEditText((EditText) view);
                     og0Var2.c.setDispatchBackWhenEmpty(true);
@@ -87,12 +87,12 @@ public final /* synthetic */ class qd implements View.OnFocusChangeListener {
                 cd0Var6.b(f16, f16, true);
                 break;
             case 11:
-                jd1 jd1Var = (jd1) this.b;
+                od1 od1Var = (od1) this.b;
                 if (!z4) {
-                    jd1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
+                    od1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp)));
                     break;
                 } else {
-                    jd1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
+                    od1Var.d.setText(AndroidUtilities.replaceTags(LocaleController.getString(R.string.ThemeCreateHelp2)));
                     break;
                 }
             default:

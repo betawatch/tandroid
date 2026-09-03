@@ -9,10 +9,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class qo extends LinearLayout {
-    public rk0 a;
+    public qk0 a;
     public ActionBarPopupWindow$ActionBarPopupWindowLayout b;
     public FrameLayout c;
     public int d;
@@ -48,11 +48,11 @@ public abstract class qo extends LinearLayout {
         int i12 = i10;
         int i13 = this.d;
         int makeMeasureSpec = i13 != 0 ? View.MeasureSpec.makeMeasureSpec(i13, TLObject.FLAG_31) : i11;
-        rk0 rk0Var = this.a;
-        if (rk0Var == null || this.b == null) {
+        qk0 qk0Var = this.a;
+        if (qk0Var == null || this.b == null) {
             super.onMeasure(i12, makeMeasureSpec);
         } else {
-            rk0Var.getLayoutParams().width = -2;
+            qk0Var.getLayoutParams().width = -2;
             ((LinearLayout.LayoutParams) this.a.getLayoutParams()).rightMargin = 0;
             this.e = 0.0f;
             super.onMeasure(i12, makeMeasureSpec);
@@ -66,38 +66,38 @@ public abstract class qo extends LinearLayout {
             if (this.a.q()) {
                 i12 = View.MeasureSpec.makeMeasureSpec(measuredWidth, TLObject.FLAG_30);
             }
-            rk0 rk0Var2 = this.a;
-            if (!rk0Var2.b1 && rk0Var2.N0 && rk0Var2.getMeasuredWidth() > 0) {
-                int min = Math.min(AndroidUtilities.dp(320.0f), rk0Var2.getMeasuredWidth() - AndroidUtilities.dp(16.0f));
-                StaticLayout staticLayout = new StaticLayout(rk0Var2.O0.getText(), rk0Var2.O0.getPaint(), min, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                rk0Var2.Q0 = staticLayout.getHeight();
-                rk0Var2.P0 = 0;
+            qk0 qk0Var2 = this.a;
+            if (!qk0Var2.b1 && qk0Var2.N0 && qk0Var2.getMeasuredWidth() > 0) {
+                int min = Math.min(AndroidUtilities.dp(320.0f), qk0Var2.getMeasuredWidth() - AndroidUtilities.dp(16.0f));
+                StaticLayout staticLayout = new StaticLayout(qk0Var2.O0.getText(), qk0Var2.O0.getPaint(), min, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                qk0Var2.Q0 = staticLayout.getHeight();
+                qk0Var2.P0 = 0;
                 for (int i14 = 0; i14 < staticLayout.getLineCount(); i14++) {
-                    rk0Var2.P0 = Math.max(rk0Var2.P0, (int) Math.ceil(staticLayout.getLineWidth(i14)));
+                    qk0Var2.P0 = Math.max(qk0Var2.P0, (int) Math.ceil(staticLayout.getLineWidth(i14)));
                 }
-                if (staticLayout.getLineCount() <= 1 || rk0Var2.O0.getText().toString().contains("\n")) {
-                    rk0Var2.O0.setWidth(AndroidUtilities.dp(16.0f) + min);
+                if (staticLayout.getLineCount() <= 1 || qk0Var2.O0.getText().toString().contains("\n")) {
+                    qk0Var2.O0.setWidth(AndroidUtilities.dp(16.0f) + min);
                 } else {
-                    int a2 = qh.f3.a(rk0Var2.O0.getText(), rk0Var2.O0.getPaint());
-                    StaticLayout staticLayout2 = new StaticLayout(rk0Var2.O0.getText(), rk0Var2.O0.getPaint(), a2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-                    rk0Var2.Q0 = staticLayout2.getHeight();
-                    rk0Var2.P0 = 0;
+                    int a2 = qh.e3.a(qk0Var2.O0.getText(), qk0Var2.O0.getPaint());
+                    StaticLayout staticLayout2 = new StaticLayout(qk0Var2.O0.getText(), qk0Var2.O0.getPaint(), a2, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+                    qk0Var2.Q0 = staticLayout2.getHeight();
+                    qk0Var2.P0 = 0;
                     for (int i15 = 0; i15 < staticLayout2.getLineCount(); i15++) {
-                        rk0Var2.P0 = Math.max(rk0Var2.P0, (int) Math.ceil(staticLayout2.getLineWidth(i15)));
+                        qk0Var2.P0 = Math.max(qk0Var2.P0, (int) Math.ceil(staticLayout2.getLineWidth(i15)));
                     }
-                    rk0Var2.O0.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
-                    rk0Var2.O0.setWidth(AndroidUtilities.dp(48.0f) + a2);
+                    qk0Var2.O0.setPadding(AndroidUtilities.dp(24.0f), 0, AndroidUtilities.dp(24.0f), 0);
+                    qk0Var2.O0.setWidth(AndroidUtilities.dp(48.0f) + a2);
                 }
-                int max = Math.max(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(7.0f) + rk0Var2.Q0);
-                int i16 = rk0Var2.J0;
+                int max = Math.max(AndroidUtilities.dp(20.0f), AndroidUtilities.dp(7.0f) + qk0Var2.Q0);
+                int i16 = qk0Var2.J0;
                 if (i16 == 1 || i16 == 2) {
                     max = AndroidUtilities.dp(20.0f);
                 } else {
-                    rk0Var2.getLayoutParams().height = AndroidUtilities.dp(22.0f) + AndroidUtilities.dp(52.0f) + max;
+                    qk0Var2.getLayoutParams().height = AndroidUtilities.dp(22.0f) + AndroidUtilities.dp(52.0f) + max;
                 }
-                ((FrameLayout.LayoutParams) rk0Var2.w0.getLayoutParams()).topMargin = max;
-                ((FrameLayout.LayoutParams) rk0Var2.b.getLayoutParams()).topMargin = max;
-                rk0Var2.b1 = true;
+                ((FrameLayout.LayoutParams) qk0Var2.w0.getLayoutParams()).topMargin = max;
+                ((FrameLayout.LayoutParams) qk0Var2.b.getLayoutParams()).topMargin = max;
+                qk0Var2.b1 = true;
             }
             int totalWidth = this.a.getTotalWidth();
             View childAt = (this.b.getSwipeBack() != null ? this.b.getSwipeBack() : this.b).getChildAt(0);
@@ -201,10 +201,10 @@ public abstract class qo extends LinearLayout {
         }
     }
 
-    public void setReactionsLayout(rk0 rk0Var) {
-        this.a = rk0Var;
-        if (rk0Var != null) {
-            rk0Var.setChatScrimView(this);
+    public void setReactionsLayout(qk0 qk0Var) {
+        this.a = qk0Var;
+        if (qk0Var != null) {
+            qk0Var.setChatScrimView(this);
         }
     }
 

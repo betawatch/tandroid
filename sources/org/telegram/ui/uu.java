@@ -17,9 +17,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.StatsController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class uu extends org.telegram.ui.Components.tl0 {
+public final class uu extends org.telegram.ui.Components.sl0 {
     public static final /* synthetic */ int m3 = 0;
     public boolean U2;
     public int V2;
@@ -58,7 +58,7 @@ public final class uu extends org.telegram.ui.Components.tl0 {
         su suVar = new su(this, 0);
         this.X2 = suVar;
         setAdapter(suVar);
-        p1();
+        o1();
         setOnItemClickListener(new j(this, 7));
         f2.l lVar = new f2.l();
         lVar.n(220L);
@@ -68,7 +68,162 @@ public final class uu extends org.telegram.ui.Components.tl0 {
         setItemAnimator(lVar);
     }
 
-    public final void A1(boolean z4) {
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
+    }
+
+    public final long v1(int i10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15 = this.V2;
+        yu yuVar = this.l3;
+        if (i15 == 1 || i15 == 2 || i15 == 3) {
+            i11 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+            return StatsController.getInstance(i11).getReceivedBytesCount(this.V2 - 1, i10);
+        }
+        i12 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+        long receivedBytesCount = StatsController.getInstance(i12).getReceivedBytesCount(0, i10);
+        i13 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+        long receivedBytesCount2 = StatsController.getInstance(i13).getReceivedBytesCount(1, i10) + receivedBytesCount;
+        i14 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+        return StatsController.getInstance(i14).getReceivedBytesCount(2, i10) + receivedBytesCount2;
+    }
+
+    public final long w1() {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14 = this.V2;
+        yu yuVar = this.l3;
+        if (i14 == 1 || i14 == 2 || i14 == 3) {
+            i10 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+            return StatsController.getInstance(i10).getResetStatsDate(this.V2 - 1);
+        }
+        i11 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+        long resetStatsDate = StatsController.getInstance(i11).getResetStatsDate(0);
+        i12 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+        long resetStatsDate2 = StatsController.getInstance(i12).getResetStatsDate(1);
+        i13 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+        long[] jArr = {resetStatsDate, resetStatsDate2, StatsController.getInstance(i13).getResetStatsDate(2)};
+        long j10 = Long.MAX_VALUE;
+        for (int i15 = 0; i15 < 3; i15++) {
+            long j11 = jArr[i15];
+            if (j10 > j11) {
+                j10 = j11;
+            }
+        }
+        return j10;
+    }
+
+    public final long x1(int i10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15 = this.V2;
+        yu yuVar = this.l3;
+        if (i15 == 1 || i15 == 2 || i15 == 3) {
+            i11 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+            return StatsController.getInstance(i11).getSentBytesCount(this.V2 - 1, i10);
+        }
+        i12 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+        long sentBytesCount = StatsController.getInstance(i12).getSentBytesCount(0, i10);
+        i13 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+        long sentBytesCount2 = StatsController.getInstance(i13).getSentBytesCount(1, i10) + sentBytesCount;
+        i14 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+        return StatsController.getInstance(i14).getSentBytesCount(2, i10) + sentBytesCount2;
+    }
+
+    public final void y1() {
+        int i10;
+        int i11;
+        int recivedItemsCount;
+        int i12;
+        boolean z4;
+        int sentItemsCount;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        int i18;
+        this.g3 = v1(6) + x1(6);
+        this.h3 = v1(6);
+        this.i3 = x1(6);
+        if (this.d3 == null) {
+            this.d3 = new tu[7];
+        }
+        if (this.e3 == null) {
+            this.e3 = new tu[7];
+        }
+        int i19 = 0;
+        while (true) {
+            int[] iArr = yu.n;
+            int length = iArr.length;
+            float[] fArr = this.a3;
+            if (i19 >= length) {
+                Arrays.sort(this.d3, new du(1));
+                AndroidUtilities.roundPercents(fArr, this.b3);
+                Arrays.fill(this.f3, true);
+                return;
+            }
+            int i20 = iArr[i19];
+            long v12 = v1(i20) + x1(i20);
+            tu[] tuVarArr = this.e3;
+            tu[] tuVarArr2 = this.d3;
+            long v13 = v1(iArr[i19]);
+            long x12 = x1(iArr[i19]);
+            int i21 = iArr[i19];
+            int i22 = this.V2;
+            yu yuVar = this.l3;
+            if (i22 == 1 || i22 == 2 || i22 == 3) {
+                i10 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+                i11 = 1;
+                recivedItemsCount = StatsController.getInstance(i10).getRecivedItemsCount(this.V2 - 1, i21);
+            } else {
+                i16 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+                int recivedItemsCount2 = StatsController.getInstance(i16).getRecivedItemsCount(0, i21);
+                i17 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+                int recivedItemsCount3 = StatsController.getInstance(i17).getRecivedItemsCount(1, i21) + recivedItemsCount2;
+                i18 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+                recivedItemsCount = StatsController.getInstance(i18).getRecivedItemsCount(2, i21) + recivedItemsCount3;
+                i11 = 1;
+            }
+            int i23 = iArr[i19];
+            int i24 = this.V2;
+            if (i24 == i11 || i24 == 2 || i24 == 3) {
+                i12 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+                z4 = true;
+                sentItemsCount = StatsController.getInstance(i12).getSentItemsCount(this.V2 - 1, i23);
+            } else {
+                i13 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+                int sentItemsCount2 = StatsController.getInstance(i13).getSentItemsCount(0, i23);
+                i14 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+                int sentItemsCount3 = StatsController.getInstance(i14).getSentItemsCount(1, i23) + sentItemsCount2;
+                i15 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
+                sentItemsCount = StatsController.getInstance(i15).getSentItemsCount(2, i23) + sentItemsCount3;
+                z4 = true;
+            }
+            tu tuVar = new tu();
+            tuVar.d = i19;
+            tuVar.c = v12;
+            tuVar.b = z4;
+            tuVar.e = v13;
+            tuVar.g = recivedItemsCount;
+            tuVar.f = x12;
+            tuVar.h = sentItemsCount;
+            tuVarArr2[i19] = tuVar;
+            tuVarArr[i19] = tuVar;
+            fArr[i19] = v12 / this.g3;
+            i19++;
+        }
+    }
+
+    public final void z1(boolean z4) {
         int i10;
         int i11;
         String string;
@@ -84,7 +239,7 @@ public final class uu extends org.telegram.ui.Components.tl0 {
         arrayList2.add(new pu(0, false));
         int i13 = 1;
         long j10 = 0;
-        String formatString = this.g3 > 0 ? LocaleController.formatString(R.string.YourNetworkUsageSince, LocaleController.getInstance().getFormatterStats().format(x1())) : LocaleController.formatString(R.string.NoNetworkUsageSince, LocaleController.getInstance().getFormatterStats().format(x1()));
+        String formatString = this.g3 > 0 ? LocaleController.formatString(R.string.YourNetworkUsageSince, LocaleController.getInstance().getFormatterStats().format(w1())) : LocaleController.formatString(R.string.NoNetworkUsageSince, LocaleController.getInstance().getFormatterStats().format(w1()));
         arrayList2.add(new pu(1, formatString));
         ArrayList arrayList3 = new ArrayList();
         int i14 = 0;
@@ -111,7 +266,7 @@ public final class uu extends org.telegram.ui.Components.tl0 {
                     format = String.format("%d%%", objArr2);
                 }
                 SpannableString spannableString3 = new SpannableString(format);
-                spannableString3.setSpan(new org.telegram.ui.Components.g51(AndroidUtilities.bold()), i12, spannableString3.length(), 33);
+                spannableString3.setSpan(new org.telegram.ui.Components.e51(AndroidUtilities.bold()), i12, spannableString3.length(), 33);
                 spannableString3.setSpan(new RelativeSizeSpan(0.8f), i12, spannableString3.length(), 33);
                 ou ouVar = new ou();
                 ouVar.a = 0.1d;
@@ -236,161 +391,6 @@ public final class uu extends org.telegram.ui.Components.tl0 {
             } else {
                 suVar.l();
             }
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), TLObject.FLAG_30));
-    }
-
-    public final long w1(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15 = this.V2;
-        yu yuVar = this.l3;
-        if (i15 == 1 || i15 == 2 || i15 == 3) {
-            i11 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-            return StatsController.getInstance(i11).getReceivedBytesCount(this.V2 - 1, i10);
-        }
-        i12 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-        long receivedBytesCount = StatsController.getInstance(i12).getReceivedBytesCount(0, i10);
-        i13 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-        long receivedBytesCount2 = StatsController.getInstance(i13).getReceivedBytesCount(1, i10) + receivedBytesCount;
-        i14 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-        return StatsController.getInstance(i14).getReceivedBytesCount(2, i10) + receivedBytesCount2;
-    }
-
-    public final long x1() {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        int i14 = this.V2;
-        yu yuVar = this.l3;
-        if (i14 == 1 || i14 == 2 || i14 == 3) {
-            i10 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-            return StatsController.getInstance(i10).getResetStatsDate(this.V2 - 1);
-        }
-        i11 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-        long resetStatsDate = StatsController.getInstance(i11).getResetStatsDate(0);
-        i12 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-        long resetStatsDate2 = StatsController.getInstance(i12).getResetStatsDate(1);
-        i13 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-        long[] jArr = {resetStatsDate, resetStatsDate2, StatsController.getInstance(i13).getResetStatsDate(2)};
-        long j10 = Long.MAX_VALUE;
-        for (int i15 = 0; i15 < 3; i15++) {
-            long j11 = jArr[i15];
-            if (j10 > j11) {
-                j10 = j11;
-            }
-        }
-        return j10;
-    }
-
-    public final long y1(int i10) {
-        int i11;
-        int i12;
-        int i13;
-        int i14;
-        int i15 = this.V2;
-        yu yuVar = this.l3;
-        if (i15 == 1 || i15 == 2 || i15 == 3) {
-            i11 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-            return StatsController.getInstance(i11).getSentBytesCount(this.V2 - 1, i10);
-        }
-        i12 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-        long sentBytesCount = StatsController.getInstance(i12).getSentBytesCount(0, i10);
-        i13 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-        long sentBytesCount2 = StatsController.getInstance(i13).getSentBytesCount(1, i10) + sentBytesCount;
-        i14 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-        return StatsController.getInstance(i14).getSentBytesCount(2, i10) + sentBytesCount2;
-    }
-
-    public final void z1() {
-        int i10;
-        int i11;
-        int recivedItemsCount;
-        int i12;
-        boolean z4;
-        int sentItemsCount;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        int i17;
-        int i18;
-        this.g3 = w1(6) + y1(6);
-        this.h3 = w1(6);
-        this.i3 = y1(6);
-        if (this.d3 == null) {
-            this.d3 = new tu[7];
-        }
-        if (this.e3 == null) {
-            this.e3 = new tu[7];
-        }
-        int i19 = 0;
-        while (true) {
-            int[] iArr = yu.n;
-            int length = iArr.length;
-            float[] fArr = this.a3;
-            if (i19 >= length) {
-                Arrays.sort(this.d3, new du(1));
-                AndroidUtilities.roundPercents(fArr, this.b3);
-                Arrays.fill(this.f3, true);
-                return;
-            }
-            int i20 = iArr[i19];
-            long w12 = w1(i20) + y1(i20);
-            tu[] tuVarArr = this.e3;
-            tu[] tuVarArr2 = this.d3;
-            long w13 = w1(iArr[i19]);
-            long y12 = y1(iArr[i19]);
-            int i21 = iArr[i19];
-            int i22 = this.V2;
-            yu yuVar = this.l3;
-            if (i22 == 1 || i22 == 2 || i22 == 3) {
-                i10 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-                i11 = 1;
-                recivedItemsCount = StatsController.getInstance(i10).getRecivedItemsCount(this.V2 - 1, i21);
-            } else {
-                i16 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-                int recivedItemsCount2 = StatsController.getInstance(i16).getRecivedItemsCount(0, i21);
-                i17 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-                int recivedItemsCount3 = StatsController.getInstance(i17).getRecivedItemsCount(1, i21) + recivedItemsCount2;
-                i18 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-                recivedItemsCount = StatsController.getInstance(i18).getRecivedItemsCount(2, i21) + recivedItemsCount3;
-                i11 = 1;
-            }
-            int i23 = iArr[i19];
-            int i24 = this.V2;
-            if (i24 == i11 || i24 == 2 || i24 == 3) {
-                i12 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-                z4 = true;
-                sentItemsCount = StatsController.getInstance(i12).getSentItemsCount(this.V2 - 1, i23);
-            } else {
-                i13 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-                int sentItemsCount2 = StatsController.getInstance(i13).getSentItemsCount(0, i23);
-                i14 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-                int sentItemsCount3 = StatsController.getInstance(i14).getSentItemsCount(1, i23) + sentItemsCount2;
-                i15 = ((org.telegram.ui.ActionBar.p2) yuVar).currentAccount;
-                sentItemsCount = StatsController.getInstance(i15).getSentItemsCount(2, i23) + sentItemsCount3;
-                z4 = true;
-            }
-            tu tuVar = new tu();
-            tuVar.d = i19;
-            tuVar.c = w12;
-            tuVar.b = z4;
-            tuVar.e = w13;
-            tuVar.g = recivedItemsCount;
-            tuVar.f = y12;
-            tuVar.h = sentItemsCount;
-            tuVarArr2[i19] = tuVar;
-            tuVarArr[i19] = tuVar;
-            fArr[i19] = w12 / this.g3;
-            i19++;
         }
     }
 }

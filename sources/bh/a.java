@@ -65,11 +65,11 @@ import org.telegram.ui.Cells.v0;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.bv;
-import org.telegram.ui.Components.l81;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.k81;
+import org.telegram.ui.Components.kj0;
+import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.pr0;
-import org.telegram.ui.Components.sn;
+import org.telegram.ui.Components.rn;
 import org.telegram.ui.Components.u5;
 import org.telegram.ui.Components.voip.g2;
 import org.telegram.ui.LaunchActivity;
@@ -82,7 +82,7 @@ import org.telegram.ui.l4;
 import org.telegram.ui.la0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements Runnable {
     public final /* synthetic */ int a;
@@ -151,10 +151,10 @@ public final /* synthetic */ class a implements Runnable {
                 ((q1) bVar.c).h.c(((Integer) pair.first).intValue(), (v) pair.second, this.b);
                 break;
             case 6:
-                pr0 pr0Var = (pr0) this.c;
+                or0 or0Var = (or0) this.c;
                 int i14 = this.b;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) this.d;
-                j7 j7Var = pr0Var.e;
+                j7 j7Var = or0Var.e;
                 if (i14 != -1) {
                     int i15 = tL_starGiftCollection.collection_id;
                     int i16 = j7Var.a;
@@ -167,13 +167,13 @@ public final /* synthetic */ class a implements Runnable {
                         deletestargiftcollection.collection_id = tL_starGiftCollection2.collection_id;
                         ConnectionsManager.getInstance(i16).sendRequest(deletestargiftcollection, null);
                     }
-                    pr0Var.f(true);
-                    l81 l81Var = pr0Var.n;
+                    or0Var.f(true);
+                    k81 k81Var = or0Var.n;
                     if (i14 < j7Var.d().size()) {
                         i14++;
                     }
-                    l81Var.d(-1, i14);
-                    pr0Var.n();
+                    k81Var.d(-1, i14);
+                    or0Var.n();
                     break;
                 }
                 break;
@@ -186,14 +186,14 @@ public final /* synthetic */ class a implements Runnable {
                 y3 y3Var = f4Var.h;
                 if (starGift == null) {
                     FrameLayout frameLayout = new FrameLayout(f4Var.getContext());
-                    lj0 lj0Var = new lj0(f4Var.getContext());
-                    lj0Var.f(R.raw.gift_broken, 32, 32, null);
-                    frameLayout.addView(lj0Var, c6.e(32, 32, 17));
-                    lj0Var.setScaleX(0.5f);
-                    lj0Var.setScaleY(0.5f);
-                    lj0Var.setAlpha(0.0f);
-                    lj0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
-                    f4Var.i0 = lj0Var;
+                    kj0 kj0Var = new kj0(f4Var.getContext());
+                    kj0Var.f(R.raw.gift_broken, 32, 32, null);
+                    frameLayout.addView(kj0Var, c6.e(32, 32, 17));
+                    kj0Var.setScaleX(0.5f);
+                    kj0Var.setScaleY(0.5f);
+                    kj0Var.setAlpha(0.0f);
+                    kj0Var.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).start();
+                    f4Var.i0 = kj0Var;
                     frameLayout.setBackground(new s4(AndroidUtilities.dp(12.0f), k6.l1(0.075f, -1)));
                     y3Var.a[i17].setVisibility(8);
                     frameLayout.setRotation(180.0f);
@@ -373,7 +373,7 @@ public final /* synthetic */ class a implements Runnable {
                 TLRPC.TL_inputGroupCallSlug tL_inputGroupCallSlug = new TLRPC.TL_inputGroupCallSlug();
                 Uri parse = Uri.parse(str3);
                 tL_inputGroupCallSlug.slug = parse.getPathSegments().get(parse.getPathSegments().size() - 1);
-                g2.h(LaunchActivity.D1, i31, tL_inputGroupCallSlug, false, null, null);
+                g2.g(LaunchActivity.D1, i31, tL_inputGroupCallSlug, false, null, null);
                 h3VarArr2[0].dismiss();
                 break;
             case 25:
@@ -400,16 +400,16 @@ public final /* synthetic */ class a implements Runnable {
                 jmVar.N.j(i33, messageObject.getId(), true, messageObject.getDialogId() == jmVar.N.I6 ? 1 : 0, true, 0);
                 break;
             case 28:
-                sn snVar = (sn) this.c;
+                rn rnVar = (rn) this.c;
                 int i34 = this.b;
                 View view = (View) this.d;
-                snVar.S = 0;
-                snVar.R = i34;
+                rnVar.S = 0;
+                rnVar.R = i34;
                 if (!(view instanceof o8)) {
-                    snVar.r.m(snVar.F0);
+                    rnVar.r.m(rnVar.F0);
                     break;
                 } else {
-                    snVar.U((o8) view, true);
+                    rnVar.U((o8) view, true);
                     break;
                 }
             default:

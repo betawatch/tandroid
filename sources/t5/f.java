@@ -25,10 +25,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import q5.g0;
+import q5.c0;
 import s5.p;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class f {
     public static final u5.b u = new u5.b("MediaNotificationProxy", null);
@@ -43,7 +43,7 @@ public final class f {
     public final j i;
     public final Resources j;
     public ke.b k;
-    public g0 l;
+    public c0 l;
     public k m;
     public k n;
     public k o;
@@ -240,8 +240,8 @@ public final class f {
         if (notificationManager == null || this.k == null) {
             return;
         }
-        g0 g0Var = this.l;
-        Bitmap bitmap = g0Var == null ? null : (Bitmap) g0Var.c;
+        c0 c0Var = this.l;
+        Bitmap bitmap = c0Var == null ? null : (Bitmap) c0Var.b;
         Context context = this.a;
         t tVar = new t(context, "cast_media_notification");
         tVar.j(bitmap);

@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class c {
     public static boolean a;
@@ -64,10 +64,10 @@ public abstract class c {
         f10.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
         f10.setClipChildren(false);
         f10.setClipToPadding(false);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        lj0Var.f(R.raw.media_forbidden, AndroidUtilities.dp(115.0f), AndroidUtilities.dp(115.0f), null);
-        lj0Var.d();
-        f10.addView(lj0Var, k7.c6.t(115, 115, 17, 0, 0, 0, 9));
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
+        kj0Var.f(R.raw.media_forbidden, AndroidUtilities.dp(115.0f), AndroidUtilities.dp(115.0f), null);
+        kj0Var.d();
+        f10.addView(kj0Var, k7.c6.t(115, 115, 17, 0, 0, 0, 9));
         TextView textView = new TextView(context);
         b.g(20.0f, 1, textView);
         textView.setTextColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.G6, g6Var));
@@ -80,7 +80,7 @@ public abstract class c {
         d0Var2.a(LocaleController.getString(R.string.AccountFrozen2Title), LocaleController.getString(R.string.AccountFrozen2Text), R.drawable.menu_privacy);
         f10.addView(d0Var2, k7.c6.t(-1, -2, 17, 0, 0, 0, 0));
         mh.d0 d0Var3 = new mh.d0(context, 1, g6Var);
-        d0Var3.a(LocaleController.getString(R.string.AccountFrozen3Title), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.AccountFrozen3Text, LocaleController.formatYearMonthDay(MessagesController.getInstance(i10).freezeUntilDate, true)), new tt0(aVar, 2)), R.drawable.menu_feature_hourglass);
+        d0Var3.a(LocaleController.getString(R.string.AccountFrozen3Title), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.AccountFrozen3Text, LocaleController.formatYearMonthDay(MessagesController.getInstance(i10).freezeUntilDate, true)), new yt0(aVar, 2)), R.drawable.menu_feature_hourglass);
         f10.addView(d0Var3, k7.c6.t(-1, -2, 17, 0, 0, 0, 0));
         qh.d dVar = new qh.d(context, g6Var, true);
         dVar.g(LocaleController.getString(R.string.AccountFrozenButtonAppeal), false, true);

@@ -6,17 +6,17 @@ import android.graphics.Matrix;
 import android.graphics.Paint;
 import android.view.View;
 import android.widget.FrameLayout;
-import org.telegram.ui.ht0;
+import org.telegram.ui.mt0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class g0 implements dg.y {
     public boolean a;
     public final /* synthetic */ Bitmap b;
-    public final /* synthetic */ ht0 c;
+    public final /* synthetic */ mt0 c;
 
-    public g0(ht0 ht0Var, Bitmap bitmap) {
-        this.c = ht0Var;
+    public g0(mt0 mt0Var, Bitmap bitmap) {
+        this.c = mt0Var;
         this.b = bitmap;
     }
 
@@ -66,13 +66,13 @@ public final class g0 implements dg.y {
 
     @Override // dg.y
     public final void h(int i10) {
-        ht0 ht0Var = this.c;
-        ht0Var.w0(false);
-        dg.e1 e1Var = ht0Var.S1;
+        mt0 mt0Var = this.c;
+        mt0Var.w0(false);
+        dg.e1 e1Var = mt0Var.S1;
         e1Var.h(i10, true);
         e1Var.g();
-        ht0Var.setNewColor(i10);
-        x0 x0Var = ht0Var.D1;
+        mt0Var.setNewColor(i10);
+        x0 x0Var = mt0Var.D1;
         x0Var.setSelectedColorIndex(e1Var.d());
         x0Var.getAdapter().l();
     }

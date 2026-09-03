@@ -21,7 +21,7 @@ import org.telegram.tgnet.TLObject;
 import s8.i0;
 import s8.v;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract class e {
     public static final byte[] a;
@@ -92,7 +92,7 @@ public abstract class e {
 
     public static Pair d(w wVar, int i10, int i11) {
         Integer num;
-        q qVar;
+        p pVar;
         Pair create;
         int i12;
         int i13;
@@ -132,7 +132,7 @@ public abstract class e {
                     while (true) {
                         if (i18 - i16 >= i17) {
                             num = num3;
-                            qVar = null;
+                            pVar = null;
                             break;
                         }
                         wVar.F(i18);
@@ -166,14 +166,14 @@ public abstract class e {
                                 bArr = bArr3;
                             }
                             num = num2;
-                            qVar = new q(z4, str, u11, bArr2, i13, i12, bArr);
+                            pVar = new p(z4, str, u11, bArr2, i13, i12, bArr);
                         } else {
                             i18 += g13;
                         }
                     }
-                    u6.a("tenc atom is mandatory", qVar != null);
+                    u6.a("tenc atom is mandatory", pVar != null);
                     int i19 = d0.a;
-                    create = Pair.create(num, qVar);
+                    create = Pair.create(num, pVar);
                 } else {
                     create = null;
                 }
@@ -198,7 +198,7 @@ public abstract class e {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static s e(p pVar, a aVar, r3.p pVar2) {
+    public static r e(o oVar, a aVar, r3.p pVar) {
         a1 a1Var;
         boolean z4;
         int i10;
@@ -229,7 +229,7 @@ public abstract class e {
         int[] iArr3;
         long j13;
         boolean z10;
-        p pVar3;
+        o oVar2;
         int[] iArr4;
         int[] iArr5;
         int[] iArr6;
@@ -239,7 +239,7 @@ public abstract class e {
         long j14;
         int i23;
         long j15;
-        p pVar4;
+        o oVar3;
         int i24;
         long[] jArr7;
         long[] jArr8;
@@ -249,7 +249,7 @@ public abstract class e {
         int i26;
         int i27;
         int i28;
-        n0 n0Var2 = pVar.f;
+        n0 n0Var2 = oVar.f;
         b j16 = aVar.j(1937011578);
         if (j16 != null) {
             p2.g gVar = new p2.g();
@@ -285,7 +285,7 @@ public abstract class e {
         }
         int b10 = a1Var.b();
         if (b10 == 0) {
-            return new s(pVar, new long[0], new int[0], 0, new long[0], new int[0], 0L);
+            return new r(oVar, new long[0], new int[0], 0, new long[0], new int[0], 0L);
         }
         b j18 = aVar.j(1937007471);
         if (j18 == null) {
@@ -323,11 +323,11 @@ public abstract class e {
             if (i11 > 0) {
                 i12 = wVar7.x() - 1;
                 a2 = a1Var.a();
-                j10 = pVar.c;
-                i13 = pVar.b;
+                j10 = oVar.c;
+                i13 = oVar.b;
                 wVar = wVar8;
-                long[] jArr9 = pVar.i;
-                jArr = pVar.h;
+                long[] jArr9 = oVar.i;
+                jArr = oVar.h;
                 a1 a1Var3 = a1Var;
                 String str = n0Var2.C;
                 long j23 = 0;
@@ -394,7 +394,7 @@ public abstract class e {
                         i37 = i47;
                     }
                     jArr3 = jArr;
-                    pVar3 = pVar;
+                    oVar2 = oVar;
                     n0Var = n0Var2;
                     i17 = i13;
                     j13 = j25 * i36;
@@ -514,16 +514,16 @@ public abstract class e {
                     }
                     z10 = true;
                     if (i11 != 0 && i18 == 0 && i21 == 0 && i16 == 0 && i15 == 0 && z10) {
-                        pVar3 = pVar;
+                        oVar2 = oVar;
                         iArr4 = iArr3;
                         iArr5 = iArr2;
                     } else {
                         StringBuilder sb = new StringBuilder("Inconsistent stbl box for track ");
-                        pVar3 = pVar;
+                        oVar2 = oVar;
                         iArr4 = iArr3;
                         boolean z12 = z10;
                         iArr5 = iArr2;
-                        l.d.w(sb, pVar3.a, ": remainingSynchronizationSamples ", i11, ", remainingSamplesAtTimestampDelta ");
+                        l.d.w(sb, oVar2.a, ": remainingSynchronizationSamples ", i11, ", remainingSamplesAtTimestampDelta ");
                         l.d.w(sb, i18, ", remainingSamplesInChunk ", i21, ", remainingTimestampDeltaChanges ");
                         sb.append(i16);
                         sb.append(", remainingSamplesAtTimestampOffset ");
@@ -536,10 +536,10 @@ public abstract class e {
                     i22 = i50;
                     iArr7 = iArr5;
                 }
-                long N = d0.N(j13, 1000000L, pVar3.c);
+                long N = d0.N(j13, 1000000L, oVar2.c);
                 if (jArr3 != null) {
                     d0.O(jArr5, j11);
-                    return new s(pVar3, jArr6, iArr6, i22, jArr5, iArr7, N);
+                    return new r(oVar2, jArr6, iArr6, i22, jArr5, iArr7, N);
                 }
                 long[] jArr16 = jArr6;
                 int i54 = b10;
@@ -557,7 +557,7 @@ public abstract class e {
                         jArr9.getClass();
                         long j31 = jArr9[0];
                         int[] iArr16 = iArr6;
-                        long N2 = d0.N(jArr18[0], pVar3.c, pVar3.d) + j31;
+                        long N2 = d0.N(jArr18[0], oVar2.c, oVar2.d) + j31;
                         int length = jArr17.length - 1;
                         int h = d0.h(4, 0, length);
                         int h9 = d0.h(jArr17.length - 4, 0, length);
@@ -566,13 +566,13 @@ public abstract class e {
                             long j33 = j29 - N2;
                             n0 n0Var3 = n0Var;
                             j15 = j29;
-                            long N3 = d0.N(j31 - j32, n0Var3.Q, pVar3.c);
-                            long N4 = d0.N(j33, n0Var3.Q, pVar3.c);
+                            long N3 = d0.N(j31 - j32, n0Var3.Q, oVar2.c);
+                            long N4 = d0.N(j33, n0Var3.Q, oVar2.c);
                             if (!(N3 == 0 && N4 == 0) && N3 <= 2147483647L && N4 <= 2147483647L) {
-                                pVar2.a = (int) N3;
-                                pVar2.b = (int) N4;
+                                pVar.a = (int) N3;
+                                pVar.b = (int) N4;
                                 d0.O(jArr17, j30);
-                                return new s(pVar3, jArr16, iArr16, i55, jArr17, iArr15, d0.N(jArr18[0], 1000000L, pVar3.d));
+                                return new r(oVar2, jArr16, iArr16, i55, jArr17, iArr15, d0.N(jArr18[0], 1000000L, oVar2.d));
                             }
                             iArr6 = iArr16;
                             iArr15 = iArr15;
@@ -582,10 +582,10 @@ public abstract class e {
                         }
                         i55 = i55;
                     }
-                    pVar4 = pVar3;
+                    oVar3 = oVar2;
                 } else {
                     j15 = j29;
-                    pVar4 = pVar3;
+                    oVar3 = oVar2;
                     i24 = i17;
                 }
                 int i56 = 1;
@@ -594,9 +594,9 @@ public abstract class e {
                         jArr9.getClass();
                         long j34 = jArr9[0];
                         for (int i57 = 0; i57 < jArr17.length; i57++) {
-                            jArr17[i57] = d0.N(jArr17[i57] - j34, 1000000L, pVar4.c);
+                            jArr17[i57] = d0.N(jArr17[i57] - j34, 1000000L, oVar3.c);
                         }
-                        return new s(pVar4, jArr16, iArr6, i55, jArr17, iArr15, d0.N(j15 - j34, 1000000L, pVar4.c));
+                        return new r(oVar3, jArr16, iArr6, i55, jArr17, iArr15, d0.N(j15 - j34, 1000000L, oVar3.c));
                     }
                     i56 = 1;
                 }
@@ -615,7 +615,7 @@ public abstract class e {
                     if (j35 != -1) {
                         iArr9 = iArr6;
                         i26 = i55;
-                        long N5 = d0.N(jArr18[i61], pVar4.c, pVar4.d);
+                        long N5 = d0.N(jArr18[i61], oVar3.c, oVar3.d);
                         i25 = i61;
                         int i62 = 1;
                         iArr17[i25] = d0.e(jArr17, j35, true);
@@ -676,8 +676,8 @@ public abstract class e {
                     while (i67 < i68) {
                         int i71 = i68;
                         int[] iArr22 = iArr8;
-                        long N6 = d0.N(j36, 1000000L, pVar4.d);
-                        long N7 = d0.N(jArr8[i67] - j37, 1000000L, pVar4.c);
+                        long N6 = d0.N(j36, 1000000L, oVar3.d);
+                        long N7 = d0.N(jArr8[i67] - j37, 1000000L, oVar3.c);
                         int i72 = i67;
                         long j38 = j23;
                         if (i24 != 1) {
@@ -691,7 +691,7 @@ public abstract class e {
                         j23 = j38;
                         i67 = i72 + 1;
                         iArr8 = iArr22;
-                        pVar4 = pVar;
+                        oVar3 = oVar;
                         i68 = i71;
                     }
                     iArr19 = iArr8;
@@ -701,10 +701,10 @@ public abstract class e {
                     jArr17 = jArr8;
                     jArr19 = jArr7;
                     jArr18 = jArr21;
-                    pVar4 = pVar;
+                    oVar3 = oVar;
                     z16 = z17;
                 }
-                return new s(pVar, jArr19, iArr20, i64, jArr20, iArr21, d0.N(j36, 1000000L, pVar.d));
+                return new r(oVar, jArr19, iArr20, i64, jArr20, iArr21, d0.N(j36, 1000000L, oVar.d));
             }
             wVar7 = null;
         } else {
@@ -712,11 +712,11 @@ public abstract class e {
         }
         i12 = -1;
         a2 = a1Var.a();
-        j10 = pVar.c;
-        i13 = pVar.b;
+        j10 = oVar.c;
+        i13 = oVar.b;
         wVar = wVar8;
-        long[] jArr92 = pVar.i;
-        jArr = pVar.h;
+        long[] jArr92 = oVar.i;
+        jArr = oVar.h;
         a1 a1Var32 = a1Var;
         String str2 = n0Var2.C;
         long j232 = 0;
@@ -759,11 +759,11 @@ public abstract class e {
         if (i11 != 0) {
         }
         StringBuilder sb2 = new StringBuilder("Inconsistent stbl box for track ");
-        pVar3 = pVar;
+        oVar2 = oVar;
         iArr4 = iArr3;
         boolean z122 = z10;
         iArr5 = iArr2;
-        l.d.w(sb2, pVar3.a, ": remainingSynchronizationSamples ", i11, ", remainingSamplesAtTimestampDelta ");
+        l.d.w(sb2, oVar2.a, ": remainingSynchronizationSamples ", i11, ", remainingSamplesAtTimestampDelta ");
         l.d.w(sb2, i18, ", remainingSamplesInChunk ", i21, ", remainingTimestampDeltaChanges ");
         sb2.append(i16);
         sb2.append(", remainingSamplesAtTimestampOffset ");
@@ -774,7 +774,7 @@ public abstract class e {
         jArr6 = jArr4;
         i22 = i502;
         iArr7 = iArr5;
-        long N8 = d0.N(j13, 1000000L, pVar3.c);
+        long N8 = d0.N(j13, 1000000L, oVar2.c);
         if (jArr3 != null) {
         }
     }
@@ -816,14 +816,14 @@ public abstract class e {
         long[] jArr;
         long[] jArr2;
         r8.e eVar2;
-        p pVar2;
+        o oVar;
         Pair create;
         ArrayList arrayList3;
         a aVar2;
         Pair pair;
         int i13;
         int i14;
-        q[] qVarArr;
+        p[] pVarArr;
         int i15;
         int i16;
         int i17;
@@ -886,7 +886,7 @@ public abstract class e {
         o3.g a2;
         long j16;
         i0 i0Var;
-        p pVar3;
+        o oVar2;
         ArrayList arrayList4;
         a aVar3 = aVar;
         o3.g gVar4 = gVar;
@@ -980,7 +980,7 @@ public abstract class e {
                             String str15 = (String) create2.second;
                             wVar4.F(12);
                             int g17 = wVar4.g();
-                            q[] qVarArr2 = new q[g17];
+                            p[] pVarArr2 = new p[g17];
                             long j22 = j11;
                             int i55 = 0;
                             n0 n0Var = null;
@@ -1003,7 +1003,7 @@ public abstract class e {
                                     pair = create2;
                                     i13 = i49;
                                     i14 = g17;
-                                    qVarArr = qVarArr2;
+                                    pVarArr = pVarArr2;
                                     i15 = i55;
                                     wVar4.F(i58 + 16);
                                     wVar4.G(16);
@@ -1017,8 +1017,8 @@ public abstract class e {
                                         Pair d = d(wVar4, i16, i17);
                                         if (d != null) {
                                             g19 = ((Integer) d.first).intValue();
-                                            gVar2 = gVar == null ? null : gVar.a(((q) d.second).b);
-                                            qVarArr[i15] = (q) d.second;
+                                            gVar2 = gVar == null ? null : gVar.a(((p) d.second).b);
+                                            pVarArr[i15] = (p) d.second;
                                         } else {
                                             gVar2 = gVar;
                                         }
@@ -1335,7 +1335,7 @@ public abstract class e {
                                     i13 = i49;
                                     if (g19 == 1836069985 || g19 == 1701733217 || g19 == 1633889587 || g19 == 1700998451 || g19 == 1633889588 || g19 == 1835823201 || g19 == 1685353315 || g19 == 1685353317 || g19 == 1685353320 || g19 == 1685353324 || g19 == 1685353336 || g19 == 1935764850 || g19 == 1935767394 || g19 == 1819304813 || g19 == 1936684916 || g19 == 1953984371 || g19 == 778924082 || g19 == 778924083 || g19 == 1835557169 || g19 == 1835560241 || g19 == 1634492771 || g19 == 1634492791 || g19 == 1970037111 || g19 == 1332770163 || g19 == 1716281667) {
                                         i14 = g17;
-                                        qVarArr = qVarArr2;
+                                        pVarArr = pVarArr2;
                                         int[] iArr3 = l3.a.f;
                                         int[] iArr4 = l3.a.d;
                                         wVar4.F(i58 + 16);
@@ -1399,9 +1399,9 @@ public abstract class e {
                                                     a2 = null;
                                                 } else {
                                                     i46 = intValue;
-                                                    a2 = gVar4.a(((q) d10.second).b);
+                                                    a2 = gVar4.a(((p) d10.second).b);
                                                 }
-                                                qVarArr[i55] = (q) d10.second;
+                                                pVarArr[i55] = (p) d10.second;
                                                 gVar3 = a2;
                                                 g19 = i46;
                                             } else {
@@ -1825,7 +1825,7 @@ public abstract class e {
                                                     i56 = 1;
                                                 }
                                                 m0 m0Var7 = new m0();
-                                                qVarArr = qVarArr2;
+                                                pVarArr = pVarArr2;
                                                 m0Var7.a = Integer.toString(i59);
                                                 m0Var7.o = str25;
                                                 m0Var7.c = str15;
@@ -1842,7 +1842,7 @@ public abstract class e {
                                             j16 = Long.MAX_VALUE;
                                             i0Var = null;
                                             m0 m0Var72 = new m0();
-                                            qVarArr = qVarArr2;
+                                            pVarArr = pVarArr2;
                                             m0Var72.a = Integer.toString(i59);
                                             m0Var72.o = str25;
                                             m0Var72.c = str15;
@@ -1878,7 +1878,7 @@ public abstract class e {
                                                 pair = create2;
                                                 str = str15;
                                                 i14 = g17;
-                                                qVarArr = qVarArr2;
+                                                pVarArr = pVarArr2;
                                             }
                                             i20 = i11;
                                             arrayList3 = arrayList6;
@@ -1886,7 +1886,7 @@ public abstract class e {
                                             pair = create2;
                                             str = str15;
                                             i14 = g17;
-                                            qVarArr = qVarArr2;
+                                            pVarArr = pVarArr2;
                                         }
                                         i15 = i55;
                                         i18 = i58;
@@ -1905,7 +1905,7 @@ public abstract class e {
                                 create2 = pair;
                                 aVar4 = aVar2;
                                 i49 = i13;
-                                qVarArr2 = qVarArr;
+                                pVarArr2 = pVarArr;
                                 gVar4 = gVar;
                             }
                             arrayList = arrayList5;
@@ -1915,7 +1915,7 @@ public abstract class e {
                             a aVar5 = aVar4;
                             Pair pair2 = create2;
                             int i100 = i49;
-                            q[] qVarArr3 = qVarArr2;
+                            p[] pVarArr3 = pVarArr2;
                             if (z4) {
                                 aVar4 = aVar5;
                             } else {
@@ -1949,9 +1949,9 @@ public abstract class e {
                                             eVar2 = eVar;
                                         } else {
                                             eVar2 = eVar;
-                                            pVar2 = new p(i99, i100, ((Long) pair2.first).longValue(), j14, j22, n0Var, i56, qVarArr3, i57, jArr, jArr2);
-                                            pVar3 = (p) eVar2.apply(pVar2);
-                                            if (pVar3 != null) {
+                                            oVar = new o(i99, i100, ((Long) pair2.first).longValue(), j14, j22, n0Var, i56, pVarArr3, i57, jArr, jArr2);
+                                            oVar2 = (o) eVar2.apply(oVar);
+                                            if (oVar2 != null) {
                                                 arrayList4 = arrayList2;
                                             } else {
                                                 a i103 = aVar4.i(1835297121);
@@ -1960,7 +1960,7 @@ public abstract class e {
                                                 i104.getClass();
                                                 a i105 = i104.i(1937007212);
                                                 i105.getClass();
-                                                s e6 = e(pVar3, i105, pVar);
+                                                r e6 = e(oVar2, i105, pVar);
                                                 arrayList4 = arrayList2;
                                                 arrayList4.add(e6);
                                             }
@@ -2029,9 +2029,9 @@ public abstract class e {
                     if (j15 == null) {
                     }
                 }
-                pVar2 = null;
-                pVar3 = (p) eVar2.apply(pVar2);
-                if (pVar3 != null) {
+                oVar = null;
+                oVar2 = (o) eVar2.apply(oVar);
+                if (oVar2 != null) {
                 }
             }
             i47 = i12 + 1;

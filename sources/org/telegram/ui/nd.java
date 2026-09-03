@@ -36,7 +36,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class nd extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.x40 {
     public String B;
@@ -44,7 +44,7 @@ public final class nd extends org.telegram.ui.ActionBar.p2 implements Notificati
     public org.telegram.ui.Cells.m4 D;
     public EditTextBoldCursor E;
     public boolean F;
-    public org.telegram.ui.Components.ij0 G;
+    public org.telegram.ui.Components.hj0 G;
     public LinearLayout H;
     public LinearLayout I;
     public LinearLayout J;
@@ -59,7 +59,7 @@ public final class nd extends org.telegram.ui.ActionBar.p2 implements Notificati
     public org.telegram.ui.Cells.m4 S;
     public int T;
     public String U;
-    public fc V;
+    public xc V;
     public boolean W;
     public boolean X;
     public boolean Y;
@@ -259,7 +259,7 @@ public final class nd extends org.telegram.ui.ActionBar.p2 implements Notificati
             boolean z10 = LocaleController.isRTL;
             frameLayout.addView(i0Var2, k7.c6.d(64, 64.0f, (z10 ? 5 : 3) | 48, z10 ? 0.0f : 16.0f, 12.0f, z10 ? 16.0f : 0.0f, 12.0f));
             ndVar.f.setOnClickListener(new fd(ndVar, i10));
-            ndVar.G = new org.telegram.ui.Components.ij0(R.raw.camera, "" + R.raw.camera, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
+            ndVar.G = new org.telegram.ui.Components.hj0(R.raw.camera, AndroidUtilities.dp(60.0f), AndroidUtilities.dp(60.0f), false, null);
             kd kdVar = new kd(ndVar, context, 0);
             ndVar.h = kdVar;
             kdVar.setScaleType(ImageView.ScaleType.CENTER);
@@ -544,9 +544,9 @@ public final class nd extends org.telegram.ui.ActionBar.p2 implements Notificati
         } else {
             this.R.setVisibility(0);
         }
-        fc fcVar = this.V;
-        if (fcVar != null) {
-            AndroidUtilities.cancelRunOnUIThread(fcVar);
+        xc xcVar = this.V;
+        if (xcVar != null) {
+            AndroidUtilities.cancelRunOnUIThread(xcVar);
             this.V = null;
             this.U = null;
             if (this.T != 0) {
@@ -605,9 +605,9 @@ public final class nd extends org.telegram.ui.ActionBar.p2 implements Notificati
         x1Var6.setTag(Integer.valueOf(i16));
         this.R.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, i16, false));
         this.U = str;
-        fc fcVar2 = new fc(3, this, str);
-        this.V = fcVar2;
-        AndroidUtilities.runOnUIThread(fcVar2, 300L);
+        xc xcVar2 = new xc(2, this, str);
+        this.V = xcVar2;
+        AndroidUtilities.runOnUIThread(xcVar2, 300L);
         return true;
     }
 
@@ -749,7 +749,7 @@ public final class nd extends org.telegram.ui.ActionBar.p2 implements Notificati
     }
 
     @Override // org.telegram.ui.Components.x40
-    public final /* synthetic */ lu0 getCloseIntoObject() {
+    public final /* synthetic */ qu0 getCloseIntoObject() {
         return null;
     }
 

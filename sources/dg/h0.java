@@ -47,9 +47,9 @@ import org.telegram.ui.Components.qb;
 import org.telegram.ui.Components.xt;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.web.BotWebViewContainer$WebViewProxy;
-import qh.o4;
+import qh.n4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class h0 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -96,11 +96,11 @@ public final /* synthetic */ class h0 implements Utilities.Callback {
                 iVar.h.run();
                 break;
             case 2:
-                o4 o4Var = (o4) this.b;
+                n4 n4Var = (n4) this.b;
                 TextureView textureView = (TextureView) obj;
-                o4Var.t0 = textureView;
+                n4Var.t0 = textureView;
                 if (textureView != null) {
-                    o4Var.n0.addView(textureView, 0);
+                    n4Var.n0.addView(textureView, 0);
                     break;
                 }
                 break;
@@ -316,7 +316,7 @@ public final /* synthetic */ class h0 implements Utilities.Callback {
                         DispatchQueue dispatchQueue = Utilities.globalQueue;
                         NativeInstance nativeInstance = e1Var.B;
                         Objects.requireNonNull(nativeInstance);
-                        dispatchQueue.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance, 4));
+                        dispatchQueue.postRunnable(new org.telegram.messenger.voip.s0(nativeInstance, 3));
                         e1Var.J.clear();
                         e1Var.B = null;
                     }

@@ -20,9 +20,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.q70;
-import org.telegram.ui.g11;
+import org.telegram.ui.k11;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class s0 implements Runnable {
     public final /* synthetic */ int a;
@@ -175,7 +175,7 @@ public final /* synthetic */ class s0 implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("dialog_id", this.b);
                 bundle.putLong("topic_id", this.c);
-                ((org.telegram.ui.ActionBar.p2) obj2).presentFragment(new g11(bundle, (g6) obj));
+                ((org.telegram.ui.ActionBar.p2) obj2).presentFragment(new k11(bundle, (g6) obj));
                 break;
         }
     }

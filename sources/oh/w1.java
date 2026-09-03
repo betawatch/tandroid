@@ -8,7 +8,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class w1 implements Runnable {
     public final /* synthetic */ int a;
@@ -31,17 +31,17 @@ public final /* synthetic */ class w1 implements Runnable {
                 if (!f4Var.G0.E0) {
                     f4Var.w3 = null;
                     if (f4Var.E0 == null) {
-                        qh.f3 f3Var = new qh.f3(f4Var.getContext(), 3);
-                        f3Var.m(1.0f, -22.0f);
-                        f4Var.E0 = f3Var;
-                        f3Var.h(i0.a.k(i0.a.d(0.13f, -16777216, -1), 240));
-                        qh.f3 f3Var2 = f4Var.E0;
-                        f3Var2.R = false;
-                        f3Var2.t(LocaleController.getString(R.string.ReactionLongTapHint));
+                        qh.e3 e3Var = new qh.e3(f4Var.getContext(), 3);
+                        e3Var.l(1.0f, -22.0f);
+                        f4Var.E0 = e3Var;
+                        e3Var.h(i0.a.k(i0.a.d(0.13f, -16777216, -1), 240));
+                        qh.e3 e3Var2 = f4Var.E0;
+                        e3Var2.R = false;
+                        e3Var2.s(LocaleController.getString(R.string.ReactionLongTapHint));
                         f4Var.E0.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
                         f4Var.Z0.addView(f4Var.E0, k7.c6.d(-1, -2.0f, 85, 0.0f, 0.0f, 0.0f, f4Var.u2 ? 0.0f : 56.0f));
                     }
-                    f4Var.E0.v();
+                    f4Var.E0.u();
                     SharedConfig.setStoriesReactionsLongPressHintUsed(true);
                     break;
                 }

@@ -27,14 +27,14 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class gs extends sa {
     public static final /* synthetic */ int D0 = 0;
     public boolean A0;
     public boolean B0;
     public float C0;
-    public x51 U;
+    public w51 U;
     public final TLRPC.Chat V;
     public final TLRPC.Chat W;
     public final boolean X;
@@ -155,9 +155,9 @@ public final class gs extends sa {
         fixNavigationBar();
         this.L = true;
         this.x0 = z4;
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i12 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i12, this.D, i12, AndroidUtilities.dp(63.0f));
+        sl0Var.setPadding(i12, this.D, i12, AndroidUtilities.dp(63.0f));
         this.d.setClipToPadding(false);
         this.d.setOnItemClickListener(new cs(this, 1));
         this.L = true;
@@ -167,7 +167,7 @@ public final class gs extends sa {
         esVar.o(pr.h);
         esVar.n(350L);
         this.d.setItemAnimator(esVar);
-        this.d.p1();
+        this.d.o1();
         qh.d dVar = new qh.d(getContext(), this.resourcesProvider, true);
         dVar.e();
         dVar.setText(LocaleController.getString(R.string.DeleteProceedBtn));
@@ -437,7 +437,7 @@ public final class gs extends sa {
         int i11 = fsVar.a;
         if (c3) {
             if (!fsVar.b()) {
-                j51 y10 = j51.y(i11, fsVar.b);
+                h51 y10 = h51.y(i11, fsVar.b);
                 y10.K(fsVar.i > 0);
                 arrayList.add(y10);
                 return;
@@ -448,14 +448,14 @@ public final class gs extends sa {
                 i12 = fsVar.e != null ? fsVar.h : i10;
             }
             String valueOf = String.valueOf(i12);
-            j51 j51Var = new j51(36);
-            j51Var.d = i11;
-            j51Var.l = str;
-            j51Var.o = valueOf;
-            j51Var.K(fsVar.i > 0);
-            j51Var.f = fsVar.f;
-            j51Var.D = new w2(13, this, fsVar);
-            arrayList.add(j51Var);
+            h51 h51Var = new h51(36);
+            h51Var.d = i11;
+            h51Var.l = str;
+            h51Var.o = valueOf;
+            h51Var.K(fsVar.i > 0);
+            h51Var.f = fsVar.f;
+            h51Var.D = new w2(13, this, fsVar);
+            arrayList.add(h51Var);
             if (fsVar.f) {
                 return;
             }
@@ -463,12 +463,12 @@ public final class gs extends sa {
                 boolean[] zArr = fsVar.e;
                 if (zArr == null || zArr[i13]) {
                     TLObject tLObject = (TLObject) fsVar.c.get(i13);
-                    j51 j51Var2 = new j51(37);
-                    j51Var2.d = (i11 << 24) | i13;
-                    j51Var2.G = tLObject;
-                    j51Var2.K(fsVar.d[i13]);
-                    j51Var2.i = 1;
-                    arrayList.add(j51Var2);
+                    h51 h51Var2 = new h51(37);
+                    h51Var2.d = (i11 << 24) | i13;
+                    h51Var2.G = tLObject;
+                    h51Var2.K(fsVar.d[i13]);
+                    h51Var2.i = 1;
+                    arrayList.add(h51Var2);
                 }
             }
         }
@@ -1015,9 +1015,9 @@ public final class gs extends sa {
     public final void onContainerLayout(int i10, int i11, int i12, int i13) {
         super.onContainerLayout(i10, i11, i12, i13);
         Rect rect = AndroidUtilities.rectTmp2;
-        tl0 tl0Var = this.d;
-        rect.set(0, 0, tl0Var.getMeasuredWidth(), tl0Var.getMeasuredHeight() - AndroidUtilities.dp(34.0f));
-        tl0Var.setClipBounds(rect);
+        sl0 sl0Var = this.d;
+        rect.set(0, 0, sl0Var.getMeasuredWidth(), sl0Var.getMeasuredHeight() - AndroidUtilities.dp(34.0f));
+        sl0Var.setClipBounds(rect);
     }
 
     @Override // org.telegram.ui.ActionBar.h3, android.app.Dialog
@@ -1032,11 +1032,11 @@ public final class gs extends sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(tl0Var, getContext(), this.currentAccount, this.n.getClassGuid(), true, new yr(this, 0), this.resourcesProvider);
-        this.U = x51Var;
-        x51Var.r = false;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(sl0Var, getContext(), this.currentAccount, this.n.getClassGuid(), true, new yr(this, 0), this.resourcesProvider);
+        this.U = w51Var;
+        w51Var.r = false;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

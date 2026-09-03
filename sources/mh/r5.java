@@ -33,7 +33,7 @@ import org.telegram.ui.Components.d10;
 import org.telegram.ui.Components.fa0;
 import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.gh0;
-import org.telegram.ui.Components.i61;
+import org.telegram.ui.Components.h61;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.ov;
@@ -41,7 +41,7 @@ import org.telegram.ui.Components.qb;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.u00;
 import org.telegram.ui.Components.xd0;
-import org.telegram.ui.Components.yx0;
+import org.telegram.ui.Components.xx0;
 import org.telegram.ui.FiltersSetupActivity;
 import org.telegram.ui.LanguageSelectActivity;
 import org.telegram.ui.LaunchActivity;
@@ -50,11 +50,11 @@ import org.telegram.ui.ap;
 import org.telegram.ui.b10;
 import org.telegram.ui.dp;
 import org.telegram.ui.fn0;
-import org.telegram.ui.hq0;
 import org.telegram.ui.i80;
 import org.telegram.ui.jn;
 import org.telegram.ui.lp;
 import org.telegram.ui.mp;
+import org.telegram.ui.mq0;
 import org.telegram.ui.np;
 import org.telegram.ui.pw;
 import org.telegram.ui.py;
@@ -63,7 +63,7 @@ import org.telegram.ui.rp;
 import org.telegram.ui.xn;
 import org.telegram.ui.zz;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class r5 implements Runnable {
     public final /* synthetic */ int a;
@@ -84,8 +84,8 @@ public final /* synthetic */ class r5 implements Runnable {
         int i10;
         int i11;
         int i12 = this.a;
-        int i13 = 4;
-        int i14 = 3;
+        int i13 = 2;
+        int i14 = 4;
         int i15 = 1;
         boolean z4 = this.b;
         Object obj = this.c;
@@ -189,9 +189,9 @@ public final /* synthetic */ class r5 implements Runnable {
                             xnVar.showDialog(ovVar);
                             break;
                         } else {
-                            yx0 yx0Var = new yx0(xnVar.getParentActivity(), xnVar, tL_inputStickerSetID, null, xnVar.V, xnVar.ba);
-                            yx0Var.setCalcMandatoryInsets(xnVar.x9());
-                            xnVar.showDialog(yx0Var);
+                            xx0 xx0Var = new xx0(xnVar.getParentActivity(), xnVar, tL_inputStickerSetID, null, xnVar.V, xnVar.ba);
+                            xx0Var.setCalcMandatoryInsets(xnVar.x9());
+                            xnVar.showDialog(xx0Var);
                             break;
                         }
                     }
@@ -205,7 +205,7 @@ public final /* synthetic */ class r5 implements Runnable {
                 org.telegram.ui.ActionBar.d2 d2Var2 = alertDialog$Builder.a;
                 d2Var2.O = string;
                 d2Var2.Q = LocaleController.getString(R.string.UsernameActivateErrorMessage);
-                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new com.google.firebase.messaging.i(apVar, (TLRPC.TL_username) obj, z4, i13));
+                alertDialog$Builder.k(LocaleController.getString(R.string.OK), new com.google.firebase.messaging.i(apVar, (TLRPC.TL_username) obj, z4, i14));
                 alertDialog$Builder.o();
                 break;
             case 11:
@@ -216,7 +216,7 @@ public final /* synthetic */ class r5 implements Runnable {
                 if (!z4 && chat.join_request) {
                     chat.join_request = false;
                     rpVar.M = true;
-                    rpVar.getMessagesController().toggleChatJoinRequest(chat.id, false, new lp(npVar, i15), new mp(i14, npVar, chat));
+                    rpVar.getMessagesController().toggleChatJoinRequest(chat.id, false, new lp(npVar, i15), new mp(i13, npVar, chat));
                     break;
                 }
                 break;
@@ -261,15 +261,15 @@ public final /* synthetic */ class r5 implements Runnable {
                 break;
             case 18:
                 gh0 gh0Var = (gh0) obj2;
-                i61 i61Var = gh0Var.c;
+                h61 h61Var = gh0Var.c;
                 ArrayList arrayList4 = (ArrayList) obj;
                 if (z4) {
                     arrayList4 = gh0Var.e;
                 }
                 if (!arrayList4.isEmpty()) {
-                    if (i61Var.canScrollVertically(1)) {
-                        for (int i17 = 0; i17 < i61Var.getChildCount(); i17++) {
-                            if (!(i61Var.getChildAt(i17) instanceof u00)) {
+                    if (h61Var.canScrollVertically(1)) {
+                        for (int i17 = 0; i17 < h61Var.getChildCount(); i17++) {
+                            if (!(h61Var.getChildAt(i17) instanceof u00)) {
                             }
                         }
                         break;
@@ -370,7 +370,7 @@ public final /* synthetic */ class r5 implements Runnable {
                 }
                 break;
             case 28:
-                hq0.U((hq0) obj2, (TLObject) obj, z4);
+                mq0.U((mq0) obj2, (TLObject) obj, z4);
                 break;
             default:
                 PhotoViewer photoViewer = (PhotoViewer) obj2;

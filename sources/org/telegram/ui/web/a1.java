@@ -82,7 +82,7 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Cells.a9;
 import org.telegram.ui.Cells.m4;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.o71;
+import org.telegram.ui.Components.n71;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.qc;
@@ -91,15 +91,15 @@ import org.telegram.ui.Components.z8;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.cl0;
-import org.telegram.ui.ns0;
 import org.telegram.ui.r9;
 import org.telegram.ui.sb0;
+import org.telegram.ui.ss0;
 import org.telegram.ui.v9;
 import sh.m3;
 import sh.w3;
 import sh.y3;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class a1 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static boolean J0 = true;
@@ -131,7 +131,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
     public boolean P;
     public boolean Q;
     public TLRPC.User R;
-    public o71 S;
+    public n71 S;
     public Activity T;
     public boolean U;
     public String V;
@@ -273,7 +273,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                 aVar.accept(Boolean.TRUE);
                 return;
             }
-            a1Var.S = new o71(a1Var, aVar, strArr, 3);
+            a1Var.S = new n71(a1Var, aVar, strArr, 3);
             Activity activity = a1Var.T;
             if (activity != null) {
                 activity.requestPermissions(strArr, 4000);
@@ -374,7 +374,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
         if (x0Var == null) {
             return;
         }
-        NotificationCenter.getInstance(i10).doOnIdle(new o71(x0Var, str, jSONObject, 2));
+        NotificationCenter.getInstance(i10).doOnIdle(new n71(x0Var, str, jSONObject, 2));
     }
 
     public static JSONObject x(Object obj, String str) {
@@ -1615,7 +1615,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                         if (str7 == null) {
                             if (MessagesController.getInstance(this.J).storiesEnabled()) {
                                 org.telegram.ui.ActionBar.d2 d2Var = new org.telegram.ui.ActionBar.d2(this.T);
-                                new HttpGetFileTask(new z1(this, d2Var, str5, str6, str8, 2), null).execute(str7);
+                                new HttpGetFileTask(new y1(this, d2Var, str5, str6, str8, 2), null).execute(str7);
                                 d2Var.q(250L);
                                 break;
                             } else {
@@ -2201,7 +2201,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
                         sh.p pVar3 = this.g0;
                         if (pVar3 != null) {
                             if (pVar3.e) {
-                                pVar3.l(str11, string8, new xk(29, this, string8));
+                                pVar3.l(str11, string8, new xk(28, this, string8));
                                 break;
                             } else {
                                 try {
@@ -2526,7 +2526,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
             AnimatorSet animatorSet = new AnimatorSet();
             Property property = View.ALPHA;
             animatorSet.playTogether(ObjectAnimator.ofFloat(this.a, (Property<x0, Float>) property, 1.0f), ObjectAnimator.ofFloat(a4Var, (Property<a4, Float>) property, 0.0f));
-            animatorSet.addListener(new ns0(this, 27));
+            animatorSet.addListener(new ss0(this, 27));
             animatorSet.start();
         }
         this.b = str;
@@ -2776,7 +2776,7 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        o71 o71Var;
+        n71 n71Var;
         Uri[] uriArr;
         if (i10 == NotificationCenter.didSetNewTheme) {
             x0 x0Var = this.a;
@@ -2803,10 +2803,10 @@ public abstract class a1 extends FrameLayout implements NotificationCenter.Notif
         if (i10 != NotificationCenter.onActivityResultReceived) {
             if (i10 == NotificationCenter.onRequestPermissionResultReceived) {
                 int intValue = ((Integer) objArr[0]).intValue();
-                if (intValue != 4000 || (o71Var = this.S) == null) {
+                if (intValue != 4000 || (n71Var = this.S) == null) {
                     return;
                 }
-                o71Var.run();
+                n71Var.run();
                 this.S = null;
                 return;
             }

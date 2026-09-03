@@ -17,9 +17,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class wx extends tl0 {
+public abstract class wx extends sl0 {
     public boolean U2;
     public final SparseArray V2;
     public final ArrayList W2;
@@ -48,7 +48,7 @@ public abstract class wx extends tl0 {
     /* JADX WARN: Removed duplicated region for block: B:49:0x016e  */
     /* JADX WARN: Removed duplicated region for block: B:72:0x0203 A[EDGE_INSN: B:72:0x0203->B:73:0x0203 BREAK  A[LOOP:2: B:47:0x0165->B:68:0x01f6], SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:76:0x020a  */
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -67,7 +67,7 @@ public abstract class wx extends tl0 {
         kx kxVar = mzVar.M;
         super.dispatchDraw(canvas);
         if (this.a3 != getChildCount()) {
-            x1();
+            w1();
             this.a3 = getChildCount();
         }
         int i13 = 0;
@@ -207,7 +207,7 @@ public abstract class wx extends tl0 {
         arrayList2.clear();
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         boolean z4 = motionEvent.getActionMasked() == 5 || motionEvent.getActionMasked() == 0;
         boolean z10 = motionEvent.getActionMasked() == 6 || motionEvent.getActionMasked() == 1;
@@ -284,13 +284,13 @@ public abstract class wx extends tl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        x1();
+        w1();
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         ArrayList arrayList;
         super.onDetachedFromWindow();
@@ -318,12 +318,12 @@ public abstract class wx extends tl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         return super.onInterceptTouchEvent(motionEvent) || org.telegram.ui.qt.q().r(motionEvent, this, this.c3.d2, this.m2);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         mz mzVar = this.c3;
         if (mzVar.a0 && mzVar.W) {
@@ -334,10 +334,10 @@ public abstract class wx extends tl0 {
         }
         super.onLayout(z4, i10, i11, i12, i13);
         mzVar.l(true);
-        x1();
+        w1();
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         this.U2 = true;
         int size = View.MeasureSpec.getSize(i10);
@@ -352,7 +352,7 @@ public abstract class wx extends tl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         mz mzVar = this.c3;
         int[] iArr = mzVar.A1;
@@ -427,7 +427,7 @@ public abstract class wx extends tl0 {
         return super.onTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.U2) {
             return;
@@ -435,7 +435,7 @@ public abstract class wx extends tl0 {
         super.requestLayout();
     }
 
-    public final void w1(View view) {
+    public final void v1(View view) {
         if (this.b3 != null) {
             int i10 = 0;
             while (i10 < this.b3.size()) {
@@ -457,7 +457,7 @@ public abstract class wx extends tl0 {
         }
     }
 
-    public final void x1() {
+    public final void w1() {
         mz mzVar = this.c3;
         int i10 = mzVar.c;
         kx kxVar = mzVar.M;

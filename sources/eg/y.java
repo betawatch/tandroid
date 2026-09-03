@@ -9,10 +9,10 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.mi;
-import org.telegram.ui.mg1;
-import qh.k6;
+import org.telegram.ui.bh1;
+import qh.i6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
@@ -48,10 +48,10 @@ public final /* synthetic */ class y implements Utilities.CallbackReturn {
                 j9 j9Var = (j9) this.b;
                 return j9Var.n[((Integer) obj).intValue() % j9Var.n.length];
             case 3:
-                return new mg1(12, (org.telegram.ui.m0) this.b, (Integer) obj);
+                return new bh1(11, (org.telegram.ui.m0) this.b, (Integer) obj);
             case 4:
                 MessageObject messageObject = (MessageObject) obj;
-                ((k6) this.b).o0 = messageObject;
+                ((i6) this.b).o0 = messageObject;
                 return Boolean.valueOf(MediaController.getInstance().setPlaylist(org.telegram.messenger.y3.m(messageObject), messageObject, 0L));
             default:
                 rh.c cVar = (rh.c) this.b;

@@ -1,36 +1,45 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.LinearLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.messenger.voip.VoIPServiceState;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ei1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Cells.t1 a;
-    public final /* synthetic */ org.telegram.ui.Components.li b;
-    public final /* synthetic */ fi1 c;
+public final class ei1 extends LinearLayout {
+    public final /* synthetic */ ii1 a;
 
-    public ei1(fi1 fi1Var, org.telegram.ui.Cells.t1 t1Var, org.telegram.ui.Components.li liVar) {
-        this.c = fi1Var;
-        this.a = t1Var;
-        this.b = liVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ei1(ii1 ii1Var, Activity activity) {
+        super(activity);
+        this.a = ii1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.a.setEnterTransitionInProgress(false);
-        org.telegram.ui.Components.li liVar = this.b;
-        ArrayList arrayList = (ArrayList) liVar.c;
-        fi1 fi1Var = this.c;
-        arrayList.remove(fi1Var);
-        liVar.a();
-        ((ViewGroup) liVar.d).invalidate();
-        ChatActivityEnterView.RecordCircle recordCircle = fi1Var.g;
-        if (recordCircle != null) {
-            recordCircle.K = false;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        VoIPServiceState sharedState = VoIPService.getSharedState();
+        CharSequence text = this.a.B.getText();
+        if (sharedState == null || TextUtils.isEmpty(text)) {
+            return;
         }
+        StringBuilder sb = new StringBuilder(text);
+        sb.append(", ");
+        if (sharedState.getPrivateCall() == null || !sharedState.getPrivateCall().video) {
+            sb.append(LocaleController.getString(R.string.VoipInCallBranding));
+        } else {
+            sb.append(LocaleController.getString(R.string.VoipInVideoCallBranding));
+        }
+        long callDuration = sharedState.getCallDuration();
+        if (callDuration > 0) {
+            sb.append(", ");
+            sb.append(LocaleController.formatDuration((int) (callDuration / 1000)));
+        }
+        accessibilityNodeInfo.setText(sb);
     }
 }

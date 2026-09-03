@@ -43,21 +43,21 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.g4;
-import org.telegram.ui.Components.al0;
 import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.p9;
+import org.telegram.ui.Components.pv0;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.s00;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.vq;
 import org.telegram.ui.Components.wq;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.Components.z8;
+import org.telegram.ui.Components.zk0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PremiumPreviewFragment;
 import org.telegram.ui.ProfileActivity;
@@ -66,9 +66,9 @@ import org.telegram.ui.po;
 import org.telegram.ui.py;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
-import qh.ca;
+import qh.ba;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class v0 extends sa implements NotificationCenter.NotificationCenterDelegate {
     public static final /* synthetic */ int S0 = 0;
@@ -78,7 +78,7 @@ public class v0 extends sa implements NotificationCenter.NotificationCenterDeleg
     public qh.d D0;
     public Runnable E0;
     public boolean F0;
-    public al0 G0;
+    public zk0 G0;
     public final org.telegram.ui.ActionBar.p2 H0;
     public h0 I0;
     public androidx.emoji2.text.p J0;
@@ -273,7 +273,7 @@ public class v0 extends sa implements NotificationCenter.NotificationCenterDeleg
 
     public static void R(v0 v0Var, ArrayList arrayList, int i10, TLRPC.TL_messages_inactiveChats tL_messages_inactiveChats) {
         int i11;
-        tl0 tl0Var = v0Var.d;
+        sl0 sl0Var = v0Var.d;
         ArrayList arrayList2 = v0Var.x0;
         arrayList2.clear();
         ArrayList arrayList3 = v0Var.w0;
@@ -286,12 +286,12 @@ public class v0 extends sa implements NotificationCenter.NotificationCenterDeleg
         v0Var.G0.b(v0Var.k0 + 4);
         int i13 = 0;
         while (true) {
-            if (i13 >= tl0Var.getChildCount()) {
+            if (i13 >= sl0Var.getChildCount()) {
                 i11 = 0;
                 break;
             } else {
-                if (tl0Var.getChildAt(i13) instanceof u0) {
-                    i11 = tl0Var.getChildAt(i13).getTop();
+                if (sl0Var.getChildAt(i13) instanceof u0) {
+                    i11 = sl0Var.getChildAt(i13).getTop();
                     break;
                 }
                 i13++;
@@ -299,7 +299,7 @@ public class v0 extends sa implements NotificationCenter.NotificationCenterDeleg
         }
         v0Var.M1();
         if (v0Var.i0 >= 0 && i11 != 0) {
-            ((f2.j0) tl0Var.getLayoutManager()).h1(v0Var.i0 + 1, i11);
+            ((f2.j0) sl0Var.getLayoutManager()).h1(v0Var.i0 + 1, i11);
         }
         if (v0Var.J0 == null) {
             v0Var.J0 = u1(v0Var.e0, v0Var.currentAccount);
@@ -913,9 +913,9 @@ public class v0 extends sa implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final void F(qv0 qv0Var) {
+    public final void F(pv0 pv0Var) {
         int i10;
-        Context context = qv0Var.getContext();
+        Context context = pv0Var.getContext();
         qh.d dVar = new qh.d(context, this.resourcesProvider, true);
         this.D0 = dVar;
         dVar.setFlickeringLoading(true);
@@ -928,21 +928,21 @@ public class v0 extends sa implements NotificationCenter.NotificationCenterDeleg
             h0 h0Var = new h0(this, context, 0);
             this.I0 = h0Var;
             h0Var.setBackgroundColor(k6.v0(k6.h5, this.resourcesProvider));
-            qv0Var.addView(this.I0, c6.d(-1, 72.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
+            pv0Var.addView(this.I0, c6.d(-1, 72.0f, 80, 0.0f, 0.0f, 0.0f, 0.0f));
         }
         g0 g0Var2 = this.B0;
         float f10 = (this.backgroundPaddingLeft / AndroidUtilities.density) + 16.0f;
-        qv0Var.addView(g0Var2, c6.d(-1, 48.0f, 80, f10, 0.0f, f10, 12.0f));
+        pv0Var.addView(g0Var2, c6.d(-1, 48.0f, 80, f10, 0.0f, f10, 12.0f));
         int dp = AndroidUtilities.dp(72.0f);
-        tl0 tl0Var = this.d;
-        tl0Var.setPadding(0, 0, 0, dp);
-        tl0Var.setClipToPadding(false);
-        tl0Var.setClipChildren(false);
-        tl0Var.setOnItemClickListener(new ag.h(this, 3));
-        tl0Var.setOnItemLongClickListener(new c0(this, 2));
+        sl0 sl0Var = this.d;
+        sl0Var.setPadding(0, 0, 0, dp);
+        sl0Var.setClipToPadding(false);
+        sl0Var.setClipChildren(false);
+        sl0Var.setOnItemClickListener(new ag.h(this, 3));
+        sl0Var.setOnItemLongClickListener(new c0(this, 2));
         this.B0.r.setOnClickListener(new dg.n(3, this, context));
         this.B0.e.setOnClickListener(new z(this, 3));
-        this.G0 = new al0(tl0Var, true);
+        this.G0 = new zk0(sl0Var, true);
     }
 
     public final void F1(TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus, boolean z4) {
@@ -1002,9 +1002,9 @@ public class v0 extends sa implements NotificationCenter.NotificationCenterDeleg
             if (h0Var != null && h0Var.getParent() != null) {
                 ((ViewGroup) this.I0.getParent()).removeView(this.I0);
             }
-            tl0 tl0Var = this.d;
-            if (tl0Var != null) {
-                tl0Var.setPadding(0, 0, 0, 0);
+            sl0 sl0Var = this.d;
+            if (sl0Var != null) {
+                sl0Var.setPadding(0, 0, 0, 0);
             }
         }
     }
@@ -1440,24 +1440,24 @@ public class v0 extends sa implements NotificationCenter.NotificationCenterDeleg
             return;
         }
         if (!booleanValue) {
-            ca caVar = ca.C2;
-            if (caVar == null || !caVar.d) {
+            ba baVar = ba.C2;
+            if (baVar == null || !baVar.d) {
                 dismiss();
                 hg.r.f(LaunchActivity.R(), chat, false);
                 return;
             }
             xn R9 = xn.R9(-chat.id);
             LaunchActivity.R().presentFragment(R9, false, false);
-            ca.x();
+            ba.x();
             dismiss();
             hg.r.f(R9, chat, false);
             return;
         }
-        ca caVar2 = ca.C2;
-        if (caVar2 != null && caVar2.d) {
+        ba baVar2 = ba.C2;
+        if (baVar2 != null && baVar2.d) {
             xn R92 = xn.R9(-chat.id);
             LaunchActivity.R().presentFragment(R92, false, false);
-            ca.x();
+            ba.x();
             dismiss();
             hg.r.f(R92, chat, true);
             return;
@@ -1688,7 +1688,7 @@ public class v0 extends sa implements NotificationCenter.NotificationCenterDeleg
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
+    public final rl0 v(sl0 sl0Var) {
         return new n0(this);
     }
 

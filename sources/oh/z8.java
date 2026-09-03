@@ -13,7 +13,7 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.FileStreamLoadOperation;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class z8 implements z3 {
     public final /* synthetic */ l6 a;
@@ -67,9 +67,9 @@ public final class z8 implements z3 {
         i9 i9Var = this.d;
         ArrayList arrayList = i9Var.J0;
         if (i9Var.E0 || i9Var.R < 0.9f) {
-            qh.k3 k3Var = i9Var.A0;
-            if (k3Var != null) {
-                k3Var.d(0L, null);
+            qh.j3 j3Var = i9Var.A0;
+            if (j3Var != null) {
+                j3Var.d(0L, null);
             }
             e1 e1Var = i9Var.x0;
             if (e1Var != null) {
@@ -90,9 +90,9 @@ public final class z8 implements z3 {
         boolean equals = TextUtils.equals(uri2 == null ? null : uri2.toString(), uri == null ? null : uri.toString());
         if (!equals || (h9Var = i9Var.w0) == null) {
             i9Var.C0 = uri;
-            qh.k3 k3Var2 = i9Var.A0;
-            if (k3Var2 != null) {
-                k3Var2.d(0L, null);
+            qh.j3 j3Var2 = i9Var.A0;
+            if (j3Var2 != null) {
+                j3Var2.d(0L, null);
             }
             e1 e1Var2 = i9Var.x0;
             if (e1Var2 != null) {
@@ -226,9 +226,9 @@ public final class z8 implements z3 {
 
     public final void i(boolean z4, boolean z10) {
         i9 i9Var = this.d;
-        qh.k3 k3Var = i9Var.A0;
-        if (k3Var != null) {
-            k3Var.setVisibility(z4 ? 0 : 8);
+        qh.j3 j3Var = i9Var.A0;
+        if (j3Var != null) {
+            j3Var.setVisibility(z4 ? 0 : 8);
         }
         SurfaceView surfaceView = i9Var.z0;
         if (surfaceView != null) {

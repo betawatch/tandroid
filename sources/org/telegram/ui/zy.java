@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class zy implements Runnable {
     public final /* synthetic */ int a;
@@ -93,79 +93,79 @@ public final class zy implements Runnable {
                 nVar.b(hVar3, com.google.android.gms.internal.play_billing.v.e);
                 return;
             case 5:
-                q5.e0 e0Var = ((q5.d0) this.b).b;
+                q5.f0 f0Var = ((q5.e0) this.b).b;
                 u5.d dVar = (u5.d) this.c;
-                u5.b bVar4 = q5.e0.G;
+                u5.b bVar4 = q5.f0.G;
                 q5.d dVar2 = dVar.d;
                 q5.x xVar = dVar.f;
-                q5.d dVar3 = e0Var.t;
-                r5.e0 e0Var2 = e0Var.D;
+                q5.d dVar3 = f0Var.t;
+                r5.e0 e0Var = f0Var.D;
                 if (!u5.a.d(dVar2, dVar3)) {
-                    e0Var.t = dVar2;
-                    e0Var2.c();
+                    f0Var.t = dVar2;
+                    e0Var.c();
                 }
                 double d = dVar.a;
-                if (Double.isNaN(d) || Math.abs(d - e0Var.v) <= 1.0E-7d) {
+                if (Double.isNaN(d) || Math.abs(d - f0Var.v) <= 1.0E-7d) {
                     z4 = false;
                 } else {
-                    e0Var.v = d;
+                    f0Var.v = d;
                     z4 = true;
                 }
                 boolean z17 = dVar.b;
-                if (z17 != e0Var.w) {
-                    e0Var.w = z17;
+                if (z17 != f0Var.w) {
+                    f0Var.w = z17;
                     z4 = true;
                 }
-                u5.b bVar5 = q5.e0.G;
-                bVar5.b("hasVolumeChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z4), Boolean.valueOf(e0Var.m));
-                if (e0Var2 != null && (z4 || e0Var.m)) {
-                    e0Var2.f();
+                u5.b bVar5 = q5.f0.G;
+                bVar5.b("hasVolumeChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z4), Boolean.valueOf(f0Var.m));
+                if (e0Var != null && (z4 || f0Var.m)) {
+                    e0Var.f();
                 }
                 Double.isNaN(dVar.h);
                 int i11 = dVar.c;
-                if (i11 != e0Var.x) {
-                    e0Var.x = i11;
+                if (i11 != f0Var.x) {
+                    f0Var.x = i11;
                     z10 = true;
                 } else {
                     z10 = false;
                 }
-                bVar5.b("hasActiveInputChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z10), Boolean.valueOf(e0Var.m));
-                if (e0Var2 != null && (z10 || e0Var.m)) {
-                    e0Var2.a();
+                bVar5.b("hasActiveInputChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z10), Boolean.valueOf(f0Var.m));
+                if (e0Var != null && (z10 || f0Var.m)) {
+                    e0Var.a();
                 }
                 int i12 = dVar.e;
-                if (i12 != e0Var.y) {
-                    e0Var.y = i12;
+                if (i12 != f0Var.y) {
+                    f0Var.y = i12;
                     z11 = true;
                 } else {
                     z11 = false;
                 }
-                bVar5.b("hasStandbyStateChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z11), Boolean.valueOf(e0Var.m));
-                if (e0Var2 != null && (z11 || e0Var.m)) {
-                    e0Var2.e();
+                bVar5.b("hasStandbyStateChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z11), Boolean.valueOf(f0Var.m));
+                if (e0Var != null && (z11 || f0Var.m)) {
+                    e0Var.e();
                 }
-                if (!u5.a.d(e0Var.z, xVar)) {
-                    e0Var.z = xVar;
+                if (!u5.a.d(f0Var.z, xVar)) {
+                    f0Var.z = xVar;
                 }
-                e0Var.m = false;
+                f0Var.m = false;
                 return;
             case 6:
-                q5.e0 e0Var3 = ((q5.d0) this.b).b;
+                q5.f0 f0Var2 = ((q5.e0) this.b).b;
                 u5.c cVar = (u5.c) this.c;
-                u5.b bVar6 = q5.e0.G;
+                u5.b bVar6 = q5.f0.G;
                 String str = cVar.a;
-                if (u5.a.d(str, e0Var3.u)) {
+                if (u5.a.d(str, f0Var2.u)) {
                     z12 = false;
                 } else {
-                    e0Var3.u = str;
+                    f0Var2.u = str;
                     z12 = true;
                 }
-                q5.e0.G.b("hasChanged=%b, mFirstApplicationStatusUpdate=%b", Boolean.valueOf(z12), Boolean.valueOf(e0Var3.n));
-                r5.e0 e0Var4 = e0Var3.D;
-                if (e0Var4 != null && (z12 || e0Var3.n)) {
-                    e0Var4.d();
+                q5.f0.G.b("hasChanged=%b, mFirstApplicationStatusUpdate=%b", Boolean.valueOf(z12), Boolean.valueOf(f0Var2.n));
+                r5.e0 e0Var2 = f0Var2.D;
+                if (e0Var2 != null && (z12 || f0Var2.n)) {
+                    e0Var2.d();
                 }
-                e0Var3.n = false;
+                f0Var2.n = false;
                 return;
             case 7:
                 qd.i iVar = (qd.i) this.c;
@@ -195,10 +195,10 @@ public final class zy implements Runnable {
                 q5.d dVar5 = dVar4.d;
                 q5.x xVar2 = dVar4.f;
                 q5.d dVar6 = wVar.R;
-                r5.e0 e0Var5 = wVar.T;
+                r5.e0 e0Var3 = wVar.T;
                 if (!u5.a.d(dVar5, dVar6)) {
                     wVar.R = dVar5;
-                    e0Var5.c();
+                    e0Var3.c();
                 }
                 double d10 = dVar4.a;
                 if (Double.isNaN(d10) || Math.abs(d10 - wVar.c0) <= 1.0E-7d) {
@@ -215,8 +215,8 @@ public final class zy implements Runnable {
                 Double.isNaN(dVar4.h);
                 u5.b bVar8 = u5.w.k0;
                 bVar8.b("hasVolumeChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z13), Boolean.valueOf(wVar.b0));
-                if (e0Var5 != null && (z13 || wVar.b0)) {
-                    e0Var5.f();
+                if (e0Var3 != null && (z13 || wVar.b0)) {
+                    e0Var3.f();
                 }
                 int i13 = dVar4.c;
                 if (i13 != wVar.e0) {
@@ -226,8 +226,8 @@ public final class zy implements Runnable {
                     z14 = false;
                 }
                 bVar8.b("hasActiveInputChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z14), Boolean.valueOf(wVar.b0));
-                if (e0Var5 != null && (z14 || wVar.b0)) {
-                    e0Var5.a();
+                if (e0Var3 != null && (z14 || wVar.b0)) {
+                    e0Var3.a();
                 }
                 int i14 = dVar4.e;
                 if (i14 != wVar.f0) {
@@ -237,8 +237,8 @@ public final class zy implements Runnable {
                     z15 = false;
                 }
                 bVar8.b("hasStandbyStateChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z15), Boolean.valueOf(wVar.b0));
-                if (e0Var5 != null && (z15 || wVar.b0)) {
-                    e0Var5.e();
+                if (e0Var3 != null && (z15 || wVar.b0)) {
+                    e0Var3.e();
                 }
                 if (!u5.a.d(wVar.d0, xVar2)) {
                     wVar.d0 = xVar2;
@@ -257,9 +257,9 @@ public final class zy implements Runnable {
                     z16 = true;
                 }
                 u5.w.k0.b("hasChanged=%b, mFirstApplicationStatusUpdate=%b", Boolean.valueOf(z16), Boolean.valueOf(wVar2.a0));
-                r5.e0 e0Var6 = wVar2.T;
-                if (e0Var6 != null && (z16 || wVar2.a0)) {
-                    e0Var6.d();
+                r5.e0 e0Var4 = wVar2.T;
+                if (e0Var4 != null && (z16 || wVar2.a0)) {
+                    e0Var4.d();
                 }
                 wVar2.a0 = false;
                 return;
@@ -304,7 +304,7 @@ public final class zy implements Runnable {
                         iVar2.a("Null service connection");
                     } else {
                         try {
-                            iVar2.c = new q5.g0(iBinder);
+                            iVar2.c = new q5.c0(iBinder);
                             iVar2.a = 2;
                             ((ScheduledExecutorService) iVar2.f.c).execute(new x5.g(iVar2, i10));
                         } catch (RemoteException e6) {

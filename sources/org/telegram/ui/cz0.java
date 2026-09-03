@@ -1,43 +1,38 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class cz0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ ProfileActivity a;
-
-    public cz0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+public final class cz0 extends a01 {
+    public cz0(Context context) {
+        super(context);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        org.telegram.ui.ActionBar.k kVar;
-        ProfileActivity profileActivity = this.a;
-        kVar = ((org.telegram.ui.ActionBar.p2) profileActivity).actionBar;
-        kVar.B(profileActivity.m2 ? 1090519039 : profileActivity.N5 != null ? 553648127 : org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.f8, profileActivity.w0), false);
-        yy0 yy0Var = profileActivity.b0;
-        ImageReceiver imageReceiver = yy0Var.R;
-        org.telegram.ui.Components.y5 animation = imageReceiver.getAnimation();
-        if (animation != null) {
-            animation.w(yy0Var);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        oh.z2 z2Var;
+        super.dispatchDraw(canvas);
+        org.telegram.ui.Components.l5 l5Var = this.e;
+        if (l5Var == null || (z2Var = l5Var.k) == null) {
+            return;
         }
-        imageReceiver.clearImage();
-        ImageReceiver.BitmapHolder bitmapHolder = yy0Var.T;
-        if (bitmapHolder != null) {
-            bitmapHolder.release();
-            yy0Var.T = null;
-        }
-        yy0Var.S = 0.0f;
-        yy0Var.invalidate();
-        profileActivity.E0 = false;
-        profileActivity.l5(false);
+        z2Var.startAnimation();
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (!getImageReceiver().hasNotThumb()) {
+            accessibilityNodeInfo.setVisibleToUser(false);
+            return;
+        }
+        accessibilityNodeInfo.setText(LocaleController.getString(R.string.AccDescrProfilePicture));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(R.string.Open)));
+        accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString(R.string.AccDescrOpenInPhotoViewer)));
     }
 }

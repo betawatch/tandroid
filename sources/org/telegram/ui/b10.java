@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_chatlists;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class b10 extends org.telegram.ui.ActionBar.p2 {
     public int B;
@@ -482,18 +482,18 @@ public final class b10 extends org.telegram.ui.ActionBar.p2 {
                 }
             }
         }
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 10));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 10));
         this.c = n10.e(1, LocaleController.getString(R.string.Save).toUpperCase());
-        org.telegram.ui.Components.a61 a61Var = new org.telegram.ui.Components.a61(context, null, 3);
-        this.fragmentView = a61Var;
-        a61Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
+        org.telegram.ui.Components.z51 z51Var = new org.telegram.ui.Components.z51(context, null, 3);
+        this.fragmentView = z51Var;
+        z51Var.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
         mh.d1 d1Var = new mh.d1(this, context, 25);
         this.a = d1Var;
-        d1Var.p1();
+        d1Var.o1();
         this.actionBar.setAdaptiveBackground(this.a);
         this.a.setLayoutManager(new f2.j0(1, false));
         this.a.setVerticalScrollBarEnabled(false);
-        a61Var.addView(this.a, k7.c6.c(-1.0f, -1));
+        z51Var.addView(this.a, k7.c6.c(-1.0f, -1));
         mh.d1 d1Var2 = this.a;
         y00 y00Var = new y00(this, context);
         this.b = y00Var;
@@ -848,7 +848,7 @@ public final class b10 extends org.telegram.ui.ActionBar.p2 {
 
     public final void s0(Runnable runnable, boolean z4) {
         CharSequence[] charSequenceArr = {this.w};
-        t0(this.r, this.y, charSequenceArr[0].toString(), getMediaDataController().getEntities(charSequenceArr, false), true ^ this.x, this.B, this.C, this.D, this.E, this.s, false, this.h, true, z4, this, new org.telegram.ui.Components.l41(26, this, runnable));
+        t0(this.r, this.y, charSequenceArr[0].toString(), getMediaDataController().getEntities(charSequenceArr, false), true ^ this.x, this.B, this.C, this.D, this.E, this.s, false, this.h, true, z4, this, new org.telegram.ui.Components.q51(25, this, runnable));
     }
 
     public final void u0(boolean z4) {

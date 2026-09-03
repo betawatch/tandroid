@@ -12,10 +12,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class r1 extends View {
     public final int a;
@@ -96,15 +96,15 @@ public final class r1 extends View {
             if (i11 >= size) {
                 break;
             }
-            ij0 ij0Var = (ij0) arrayList.get(i11);
-            if (ij0Var.Y >= ij0Var.e[0]) {
+            hj0 hj0Var = (hj0) arrayList.get(i11);
+            if (hj0Var.Y >= hj0Var.e[0]) {
                 arrayList.remove(i11);
                 i11--;
             } else {
                 float f11 = dp / 2.0f;
-                ij0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f11), (int) (rectF.centerY() - f11), (int) e2.c.A(AndroidUtilities.dp(15.0f), lerp, rectF.left, f11), (int) (rectF.centerY() + f11));
-                ij0Var.setAlpha((int) (r1Var.n * 255.0f));
-                ij0Var.draw(canvas2);
+                hj0Var.setBounds((int) (((AndroidUtilities.dp(15.0f) * lerp) + rectF.left) - f11), (int) (rectF.centerY() - f11), (int) e2.c.A(AndroidUtilities.dp(15.0f), lerp, rectF.left, f11), (int) (rectF.centerY() + f11));
+                hj0Var.setAlpha((int) (r1Var.n * 255.0f));
+                hj0Var.draw(canvas2);
             }
             i11++;
         }
@@ -131,9 +131,9 @@ public final class r1 extends View {
             Paint paint = q1Var.e;
             int i13 = (int) (lerp2 * 255.0f);
             paint.setAlpha(i13);
-            ij0 ij0Var2 = q1Var.d;
-            if (ij0Var2 != null) {
-                ij0Var2.setAlpha(i13);
+            hj0 hj0Var2 = q1Var.d;
+            if (hj0Var2 != null) {
+                hj0Var2.setAlpha(i13);
             }
             imageReceiver.setAlpha(lerp2);
             canvas2.save();
@@ -157,7 +157,7 @@ public final class r1 extends View {
             q1Var.g.c(AndroidUtilities.dp(18.0f), f16, lerp2, -1, canvas3);
             canvas2 = canvas3;
             canvas2.restore();
-            if (ij0Var2 != null) {
+            if (hj0Var2 != null) {
                 canvas2.save();
                 canvas2.translate(AndroidUtilities.dp(4.0f) * f14, 0.0f);
                 canvas2.rotate(f15);
@@ -166,8 +166,8 @@ public final class r1 extends View {
                 int dp5 = AndroidUtilities.dp(90.0f);
                 int i15 = (-dp5) / 2;
                 int i16 = dp5 / 2;
-                ij0Var2.setBounds(i15, AndroidUtilities.dp(8.0f) + i15, i16, AndroidUtilities.dp(8.0f) + i16);
-                ij0Var2.draw(canvas2);
+                hj0Var2.setBounds(i15, AndroidUtilities.dp(8.0f) + i15, i16, AndroidUtilities.dp(8.0f) + i16);
+                hj0Var2.draw(canvas2);
                 canvas2.restore();
             }
             if (d >= 1.0f || e6 >= 1.0f) {

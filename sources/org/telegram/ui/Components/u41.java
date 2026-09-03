@@ -1,45 +1,69 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.text.TextUtils;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class u41 extends fn0 {
-    public final /* synthetic */ f51 h;
+public final class u41 extends qz {
+    public final /* synthetic */ d51 Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u41(f51 f51Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
-        super(context, 14.0f, g6Var);
-        this.h = f51Var;
+    public u41(d51 d51Var, int i10, t41 t41Var) {
+        super(5, i10, t41Var);
+        this.Y = d51Var;
     }
 
-    @Override // org.telegram.ui.Components.fn0
-    public final void a(String str) {
-        uf.m1 m1Var = this.h.v;
-        uf.l1 l1Var = m1Var.P;
-        int i10 = m1Var.c;
-        if (m1Var.K != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(m1Var.K, true);
-            m1Var.K = 0;
+    @Override // org.telegram.ui.Components.qz
+    public final boolean D1() {
+        d51 d51Var = this.Y;
+        return d51Var.n.getAdapter() == d51Var.v;
+    }
+
+    @Override // f2.j0
+    public final boolean Y0() {
+        return LocaleController.isRTL;
+    }
+
+    @Override // f2.w, f2.j0, f2.w0
+    public final int o0(int i10, bf.f fVar, f2.j1 j1Var) {
+        int i11;
+        View m9;
+        d51 d51Var = this.Y;
+        if (d51Var.K) {
+            return super.o0(i10, fVar, j1Var);
         }
-        if (m1Var.L != 0) {
-            ConnectionsManager.getInstance(i10).cancelRequest(m1Var.L, true);
-            m1Var.L = 0;
+        int i12 = 0;
+        if (d51Var.I != null) {
+            return 0;
         }
-        if (TextUtils.isEmpty(str)) {
-            m1Var.O = null;
-            m1Var.C.clear();
-            m1Var.F.clear();
-            m1Var.B.clear();
-            m1Var.e.b(false);
-            m1Var.l();
-        } else {
-            m1Var.O = str.toLowerCase();
+        if (d51Var.J) {
+            while (true) {
+                i11 = 1;
+                if (i12 >= r()) {
+                    break;
+                }
+                t41 t41Var = d51Var.n;
+                View q10 = q(i12);
+                t41Var.getClass();
+                int R = RecyclerView.R(q10);
+                if (R < 1) {
+                    i11 = R;
+                    break;
+                }
+                i12++;
+            }
+            if (i11 == 0 && (m9 = d51Var.r.m(i11)) != null && m9.getTop() - i10 > AndroidUtilities.dp(58.0f)) {
+                i10 = m9.getTop() - AndroidUtilities.dp(58.0f);
+            }
         }
-        AndroidUtilities.cancelRunOnUIThread(l1Var);
-        AndroidUtilities.runOnUIThread(l1Var, 300L);
+        return super.o0(i10, fVar, j1Var);
+    }
+
+    @Override // f2.w, f2.j0, f2.w0
+    public final boolean y0() {
+        return false;
     }
 }

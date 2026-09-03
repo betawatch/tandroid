@@ -1,43 +1,74 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ny0 extends tl0 {
-    public boolean U2;
-    public boolean V2;
-    public final /* synthetic */ ry0 W2;
+public final class ny0 extends rl0 {
+    public final qy0 c;
+    public final /* synthetic */ qy0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ny0(ry0 ry0Var, Context context) {
-        super(context, null);
-        this.W2 = ry0Var;
+    public ny0(qy0 qy0Var, qy0 qy0Var2) {
+        this.d = qy0Var;
+        this.c = qy0Var2;
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public final void k0(int i10, int i11) {
-        boolean canScrollHorizontally = canScrollHorizontally(-1);
-        boolean canScrollHorizontally2 = canScrollHorizontally(1);
-        if (this.U2 == canScrollHorizontally && this.V2 == canScrollHorizontally2) {
-            return;
-        }
-        eg.s2 s2Var = this.W2.d;
-        if (s2Var != null) {
-            s2Var.invalidate();
-        }
-        this.U2 = canScrollHorizontally;
-        this.V2 = canScrollHorizontally2;
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.m1 m1Var) {
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ot previewDelegate;
-        org.telegram.ui.qt q10 = org.telegram.ui.qt.q();
-        ry0 ry0Var = this.W2;
-        ny0 ny0Var = ry0Var.e;
-        previewDelegate = ry0Var.getPreviewDelegate();
-        return super.onInterceptTouchEvent(motionEvent) || q10.r(motionEvent, ny0Var, previewDelegate, this.m2);
+    @Override // f2.p0
+    public final int h() {
+        ArrayList arrayList = this.c.w;
+        if (arrayList == null) {
+            return 0;
+        }
+        return arrayList.size();
+    }
+
+    @Override // f2.p0
+    public final long i(int i10) {
+        if (this.c.w == null) {
+            return 0L;
+        }
+        return ((MediaDataController.KeywordResult) r0.get(i10)).emoji.hashCode();
+    }
+
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        py0 py0Var = (py0) m1Var.a;
+        qy0 qy0Var = this.c;
+        ArrayList arrayList = qy0Var.w;
+        String str = arrayList == null ? null : ((MediaDataController.KeywordResult) arrayList.get(i10)).emoji;
+        int direction = qy0Var.getDirection();
+        py0Var.a = str;
+        if (str == null || !str.startsWith("animated_")) {
+            py0Var.setImageDrawable(Emoji.getEmojiBigDrawable(str));
+        } else {
+            try {
+                long parseLong = Long.parseLong(str.substring(9));
+                Drawable drawable = py0Var.b;
+                if (!(drawable instanceof l5) || ((l5) drawable).i() != parseLong) {
+                    py0Var.setImageDrawable(l5.n(UserConfig.selectedAccount, parseLong, null, py0Var.f.d()));
+                }
+            } catch (Exception unused) {
+                py0Var.setImageDrawable(null);
+            }
+        }
+        if (py0Var.d != direction) {
+            py0Var.d = direction;
+            py0Var.requestLayout();
+        }
+    }
+
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+        return new el0(new py0(this.d, this.c.getContext()));
     }
 }

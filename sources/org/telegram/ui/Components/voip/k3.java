@@ -12,9 +12,9 @@ import android.graphics.PorterDuffXfermode;
 import android.view.MotionEvent;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class k3 extends View {
     public final o1 B;
@@ -22,9 +22,9 @@ public final class k3 extends View {
     public float D;
     public float E;
     public float F;
-    public ij0 a;
-    public ij0 b;
-    public ij0 c;
+    public hj0 a;
+    public hj0 b;
+    public hj0 c;
     public final Paint d;
     public final Paint e;
     public final Paint f;
@@ -129,8 +129,8 @@ public final class k3 extends View {
             this.r = 0;
             this.w = 100;
             if (i10 == 3 || i10 == 1) {
-                ij0 ij0Var = this.b;
-                ij0Var.L(ij0Var.e[0] - 1, false, false);
+                hj0 hj0Var = this.b;
+                hj0Var.L(hj0Var.e[0] - 1, false, false);
             }
         } else {
             this.s = 0;
@@ -165,11 +165,11 @@ public final class k3 extends View {
         float f17 = -y10;
         aVar.z(f16, f17 - f14, (i11 * 1.12f) / ((Bitmap) aVar.c).getHeight(), o1Var.h);
         o1Var.c.x(f15, f17, o1Var.f - x10, o1Var.g - y10);
-        ij0 ij0Var = this.c;
+        hj0 hj0Var = this.c;
         Paint paint2 = this.e;
         Paint paint3 = this.d;
         int i12 = this.n;
-        if (ij0Var != null) {
+        if (hj0Var != null) {
             if (this.w > 20) {
                 Paint paint4 = this.f;
                 paint4.setAlpha((int) ((r1 * 35) / 100.0f));

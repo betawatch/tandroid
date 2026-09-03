@@ -16,27 +16,27 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class f9 extends org.telegram.ui.Components.i51 {
+public final class f9 extends org.telegram.ui.Components.g51 {
     public static final /* synthetic */ int a = 0;
 
     static {
-        org.telegram.ui.Components.i51.setup(new f9());
+        org.telegram.ui.Components.g51.setup(new f9());
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r12v10, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r12v12 */
     /* JADX WARN: Type inference failed for: r12v9 */
-    @Override // org.telegram.ui.Components.i51
-    public final void bindView(View view, org.telegram.ui.Components.j51 j51Var, boolean z4, org.telegram.ui.Components.x51 x51Var, org.telegram.ui.Components.i61 i61Var) {
+    @Override // org.telegram.ui.Components.g51
+    public final void bindView(View view, org.telegram.ui.Components.h51 h51Var, boolean z4, org.telegram.ui.Components.w51 w51Var, org.telegram.ui.Components.h61 h61Var) {
         SpannableString spannableString;
         boolean z10;
         ?? r12;
-        h9 h9Var = (h9) j51Var.G;
+        h9 h9Var = (h9) h51Var.G;
         g9 g9Var = (g9) view;
-        View.OnClickListener onClickListener = j51Var.D;
+        View.OnClickListener onClickListener = h51Var.D;
         int i10 = g9Var.a;
         org.telegram.ui.Components.d9 d9Var = g9Var.b;
         org.telegram.ui.Cells.h6 h6Var = g9Var.d;
@@ -114,7 +114,7 @@ public final class f9 extends org.telegram.ui.Components.i51 {
         }
         imageView.setTag(h9Var);
         imageView.setOnClickListener(onClickListener);
-        boolean z12 = j51Var.e;
+        boolean z12 = h51Var.e;
         org.telegram.ui.Components.np npVar = g9Var.e;
         if (npVar == null) {
             return;
@@ -122,8 +122,8 @@ public final class f9 extends org.telegram.ui.Components.i51 {
         npVar.a(z12, z10);
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final View createView(Context context, org.telegram.ui.Components.tl0 tl0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
+    @Override // org.telegram.ui.Components.g51
+    public final View createView(Context context, org.telegram.ui.Components.sl0 sl0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
         return new g9(context, i10);
     }
 }

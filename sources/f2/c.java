@@ -16,10 +16,10 @@ import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.mo;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.g11;
-import org.telegram.ui.sf1;
+import org.telegram.ui.k11;
+import org.telegram.ui.yf1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class c implements OnFailureListener, mo, r4.h, v4.f, r3.l, r3.m {
     public final /* synthetic */ int a;
@@ -215,12 +215,12 @@ public final class c implements OnFailureListener, mo, r4.h, v4.f, r3.l, r3.m {
     public void j() {
         Bundle bundle = new Bundle();
         bundle.putLong("dialog_id", this.b);
-        sf1 sf1Var = new sf1(bundle);
-        sf1Var.d = new ArrayList();
-        sf1Var.e = new HashSet();
+        yf1 yf1Var = new yf1(bundle);
+        yf1Var.d = new ArrayList();
+        yf1Var.e = new HashSet();
         ProfileActivity profileActivity = (ProfileActivity) this.c;
-        sf1Var.e = profileActivity.e5;
-        profileActivity.presentFragment(sf1Var);
+        yf1Var.e = profileActivity.e5;
+        profileActivity.presentFragment(yf1Var);
     }
 
     @Override // org.telegram.ui.Components.mo
@@ -264,7 +264,7 @@ public final class c implements OnFailureListener, mo, r4.h, v4.f, r3.l, r3.m {
             Bundle bundle = new Bundle();
             bundle.putLong("dialog_id", j10);
             bundle.putLong("topic_id", profileActivity.d1);
-            profileActivity.presentFragment(new g11(bundle, profileActivity.w0));
+            profileActivity.presentFragment(new k11(bundle, profileActivity.w0));
         }
     }
 

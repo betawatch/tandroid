@@ -27,7 +27,7 @@ import org.telegram.ui.Cells.l9;
 import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Cells.x9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class i5 extends z implements b6, l9 {
     public y2 B;
@@ -65,7 +65,7 @@ public final class i5 extends z implements b6, l9 {
         e1Var.setHint(LocaleController.getString(R.string.ArticleTableTitleHint));
         e1Var.setCenterEmptyHint(true);
         e1Var.setListener(new oh.h4(this, 28));
-        e1Var.setDelegate(new sf.g(this, 19));
+        e1Var.setDelegate(new sf.h(this, 19));
         addView(e1Var);
         org.telegram.ui.g2 g2Var = new org.telegram.ui.g2(this, context, 2);
         this.s = g2Var;
@@ -593,7 +593,7 @@ public final class i5 extends z implements b6, l9 {
         if (pagetablecell == null) {
             return;
         }
-        post(new vf.d0(14, this, pagetablecell));
+        post(new vf.k0(13, this, pagetablecell));
     }
 
     public final boolean r() {
@@ -660,12 +660,12 @@ public final class i5 extends z implements b6, l9 {
                 return;
             }
             if (this.E.isEmpty()) {
-                r3Var.M2();
+                r3Var.L2();
             } else {
                 if (r3Var.y3) {
                     return;
                 }
-                r3Var.F4(this);
+                r3Var.E4(this);
             }
         }
     }

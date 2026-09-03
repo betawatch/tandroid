@@ -15,7 +15,7 @@ import r3.v;
 import s8.i0;
 import z3.j;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class a implements k {
     public m b;
@@ -25,7 +25,7 @@ public final class a implements k {
     public k4.b g;
     public l h;
     public f2.c i;
-    public z3.m j;
+    public z3.l j;
     public final w a = new w(6);
     public long f = -1;
 
@@ -54,9 +54,9 @@ public final class a implements k {
             this.c = 0;
             this.j = null;
         } else if (this.c == 5) {
-            z3.m mVar = this.j;
-            mVar.getClass();
-            mVar.d(j10, j11);
+            z3.l lVar = this.j;
+            lVar.getClass();
+            lVar.d(j10, j11);
         }
     }
 
@@ -116,9 +116,9 @@ public final class a implements k {
                     this.h = lVar;
                     this.i = new f2.c(lVar, this.f);
                 }
-                z3.m mVar = this.j;
-                mVar.getClass();
-                int h = mVar.h(this.i, jbVar);
+                z3.l lVar2 = this.j;
+                lVar2.getClass();
+                int h = lVar2.h(this.i, jbVar);
                 if (h == 1) {
                     jbVar.a += this.f;
                 }
@@ -137,7 +137,7 @@ public final class a implements k {
             }
             hVar.f = 0;
             if (this.j == null) {
-                this.j = new z3.m(0);
+                this.j = new z3.l(0);
             }
             f2.c cVar2 = new f2.c(lVar, this.f);
             this.i = cVar2;
@@ -146,11 +146,11 @@ public final class a implements k {
                 a();
                 return 0;
             }
-            z3.m mVar2 = this.j;
+            z3.l lVar3 = this.j;
             long j13 = this.f;
-            m mVar3 = this.b;
-            mVar3.getClass();
-            mVar2.q = new f2.c(j13, mVar3, 12);
+            m mVar = this.b;
+            mVar.getClass();
+            lVar3.q = new f2.c(j13, mVar, 12);
             k4.b bVar2 = this.g;
             bVar2.getClass();
             b(bVar2);
@@ -254,9 +254,9 @@ public final class a implements k {
 
     @Override // r3.k
     public final void release() {
-        z3.m mVar = this.j;
-        if (mVar != null) {
-            mVar.getClass();
+        z3.l lVar = this.j;
+        if (lVar != null) {
+            lVar.getClass();
         }
     }
 }

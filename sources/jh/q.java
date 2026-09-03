@@ -21,15 +21,15 @@ import org.telegram.ui.Components.j6;
 import org.telegram.ui.Components.j80;
 import org.telegram.ui.b10;
 import org.telegram.ui.d60;
-import org.telegram.ui.dh1;
 import org.telegram.ui.h50;
+import org.telegram.ui.jh1;
 import org.telegram.ui.jk;
 import org.telegram.ui.xn;
 import vf.v;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q implements o, b7, c2, lf.o, MessagesController.ErrorDelegate, dh1 {
+public final /* synthetic */ class q implements o, b7, c2, lf.o, MessagesController.ErrorDelegate, jh1 {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -40,7 +40,7 @@ public final /* synthetic */ class q implements o, b7, c2, lf.o, MessagesControl
         this.b = z4;
     }
 
-    @Override // org.telegram.ui.dh1
+    @Override // org.telegram.ui.jh1
     public void a(int i10, ArrayList arrayList) {
         switch (this.a) {
             case 7:

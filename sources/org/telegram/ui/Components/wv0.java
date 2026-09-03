@@ -1,54 +1,41 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import android.widget.LinearLayout;
-
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class wv0 extends LinearLayout {
-    public boolean a() {
-        return this instanceof org.telegram.ui.zd0;
+public final /* synthetic */ class wv0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ yv0 b;
+
+    public /* synthetic */ wv0(yv0 yv0Var, int i10) {
+        this.a = i10;
+        this.b = yv0Var;
     }
 
-    public boolean b() {
-        return this instanceof org.telegram.ui.zd0;
-    }
-
-    public boolean c(boolean z4) {
-        return true;
-    }
-
-    public String getHeaderName() {
-        return "";
-    }
-
-    public void d() {
-    }
-
-    public void f() {
-    }
-
-    public void g() {
-    }
-
-    public void h(String str) {
-    }
-
-    public void i() {
-    }
-
-    public void j() {
-    }
-
-    public void k(Bundle bundle) {
-    }
-
-    public void l(Bundle bundle) {
-    }
-
-    public void n() {
-    }
-
-    public void m(Bundle bundle, boolean z4) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                yv0 yv0Var = this.b;
+                yv0Var.S0 = false;
+                if (!yv0Var.V0 && yv0Var.T0) {
+                    yv0Var.A(true);
+                    break;
+                }
+                break;
+            case 1:
+                this.b.S0 = false;
+                break;
+            case 2:
+                yv0 yv0Var2 = this.b;
+                yv0Var2.V0 = false;
+                if (!yv0Var2.S0 && yv0Var2.T0) {
+                    yv0Var2.A(true);
+                    break;
+                }
+                break;
+            default:
+                this.b.V0 = false;
+                break;
+        }
     }
 }

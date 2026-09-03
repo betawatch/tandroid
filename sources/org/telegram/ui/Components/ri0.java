@@ -15,9 +15,9 @@ import android.view.animation.LinearInterpolator;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.R;
-import org.telegram.ui.jf1;
+import org.telegram.ui.pf1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class ri0 {
     public ValueAnimator A;
@@ -28,7 +28,7 @@ public abstract class ri0 {
     public boolean F;
     public boolean G;
     public org.telegram.ui.Cells.r2 H;
-    public tl0 I;
+    public sl0 I;
     public float J;
     public float K;
     public float L;
@@ -190,7 +190,7 @@ public abstract class ri0 {
         if (!this.X || this.Y || (r2Var = this.H) == null || this.I == null) {
             return;
         }
-        boolean z11 = r2Var instanceof jf1;
+        boolean z11 = r2Var instanceof pf1;
         int dp = AndroidUtilities.dp(z11 ? 15.0f : 28.0f);
         int dp2 = AndroidUtilities.dp(8.0f);
         int dp3 = AndroidUtilities.dp(9.0f);
@@ -215,7 +215,7 @@ public abstract class ri0 {
             int ceil = (int) Math.ceil(f16);
             if (this.P < 0.8f) {
                 this.P = 0.8f;
-                ceil = qh.f3.a(this.N, textPaint);
+                ceil = qh.e3.a(this.N, textPaint);
             }
             int i19 = ceil;
             this.O = new StaticLayout(this.N, textPaint, i19, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
@@ -235,7 +235,7 @@ public abstract class ri0 {
             int ceil2 = (int) Math.ceil(f18);
             if (this.U < 0.8f) {
                 this.U = 0.8f;
-                ceil2 = qh.f3.a(this.S, textPaint);
+                ceil2 = qh.e3.a(this.S, textPaint);
             }
             int i22 = ceil2;
             this.T = new StaticLayout(this.S, textPaint, i22, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
@@ -515,10 +515,10 @@ public abstract class ri0 {
         canvas.scale(A, A, f24, f14);
         org.telegram.ui.ActionBar.k6.u1.Q(0.0f, true);
         if (!org.telegram.ui.ActionBar.k6.C1) {
-            ij0 ij0Var = org.telegram.ui.ActionBar.k6.u1;
-            ij0Var.X = true;
+            hj0 hj0Var = org.telegram.ui.ActionBar.k6.u1;
+            hj0Var.X = true;
             int i28 = this.d;
-            ij0Var.O(org.telegram.ui.ActionBar.k6.w0(null, i28, true), "Arrow1");
+            hj0Var.O(org.telegram.ui.ActionBar.k6.w0(null, i28, true), "Arrow1");
             org.telegram.ui.ActionBar.k6.u1.O(org.telegram.ui.ActionBar.k6.w0(null, i28, true), "Arrow2");
             org.telegram.ui.ActionBar.k6.u1.m();
             org.telegram.ui.ActionBar.k6.C1 = true;
@@ -536,9 +536,9 @@ public abstract class ri0 {
         int d = i0.a.d(1.0f - this.C, org.telegram.ui.ActionBar.k6.w0(null, this.d, true), org.telegram.ui.ActionBar.k6.w0(null, this.c, true));
         this.h.setColor(d);
         if (this.e && this.X && !this.Y) {
-            ij0 ij0Var = org.telegram.ui.ActionBar.k6.u1;
-            ij0Var.X = true;
-            ij0Var.O(d, "Arrow1");
+            hj0 hj0Var = org.telegram.ui.ActionBar.k6.u1;
+            hj0Var.X = true;
+            hj0Var.O(d, "Arrow1");
             org.telegram.ui.ActionBar.k6.u1.O(d, "Arrow2");
             org.telegram.ui.ActionBar.k6.u1.m();
             org.telegram.ui.ActionBar.k6.C1 = true;

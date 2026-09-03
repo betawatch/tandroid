@@ -29,7 +29,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class sb0 extends FrameLayout {
     public final xb0 B;
@@ -73,7 +73,7 @@ public final class sb0 extends FrameLayout {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r13v5, types: [android.view.View, org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout] */
     /* JADX WARN: Type inference failed for: r38v0, types: [android.view.View, android.view.ViewGroup, android.widget.FrameLayout, java.lang.Object, org.telegram.ui.Components.sb0] */
-    /* JADX WARN: Type inference failed for: r3v3, types: [android.view.View, android.view.ViewGroup, lh.j4, org.telegram.ui.Components.qv0] */
+    /* JADX WARN: Type inference failed for: r3v3, types: [android.view.View, android.view.ViewGroup, lh.j4, org.telegram.ui.Components.pv0] */
     /* JADX WARN: Type inference failed for: r3v6, types: [og.a] */
     /* JADX WARN: Type inference failed for: r8v19, types: [android.view.ViewGroup] */
     /*
@@ -151,7 +151,7 @@ public final class sb0 extends FrameLayout {
         this.s = actionBarPopupWindow$ActionBarPopupWindowLayout;
         actionBarPopupWindow$ActionBarPopupWindowLayout.getSwipeBack().setOnForegroundOpenFinished(new eb0(this, i12));
         qg.b c3 = yb0Var.D.c(actionBarPopupWindow$ActionBarPopupWindowLayout, null, false);
-        c3.n(sg.b.j(ub0Var));
+        c3.n(sg.b.k(ub0Var));
         c3.o(AndroidUtilities.dp(8.0f));
         c3.h.e = true;
         c3.p(AndroidUtilities.dp(12.0f));

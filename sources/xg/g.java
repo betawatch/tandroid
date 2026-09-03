@@ -11,11 +11,11 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.rm0;
+import org.telegram.ui.Components.qm0;
 import org.telegram.ui.Components.wq;
 import s5.m;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class g extends FrameLayout implements xd.b {
     public static final int[] s;
@@ -148,7 +148,7 @@ public final class g extends FrameLayout implements xd.b {
                 bVar.setVisibility(8);
                 bVar.setContentDescription(this.a[i10]);
                 bVar.setOnClickListener(new x0(this, i10, 27));
-                bVar.setOnLongClickListener(new rm0(this, i10, 1));
+                bVar.setOnLongClickListener(new qm0(this, i10, 1));
                 if (i10 == 6) {
                     wg.a aVar3 = bVar.b;
                     aVar3.h = -1.0f;

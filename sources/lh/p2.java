@@ -3,11 +3,11 @@ package lh;
 import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.BirthdayController;
-import org.telegram.ui.Components.pr0;
-import org.telegram.ui.Components.zu0;
-import qh.ca;
+import org.telegram.ui.Components.or0;
+import org.telegram.ui.Components.yu0;
+import qh.ba;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class p2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -26,9 +26,9 @@ public final /* synthetic */ class p2 implements View.OnClickListener {
     public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                pr0 pr0Var = (pr0) this.d;
-                if (pr0Var.e.h() && pr0Var.h.getCurrentPosition() != 0) {
-                    pr0Var.a();
+                or0 or0Var = (or0) this.d;
+                if (or0Var.e.h() && or0Var.h.getCurrentPosition() != 0) {
+                    or0Var.a();
                     break;
                 } else {
                     boolean z4 = this.b;
@@ -37,22 +37,22 @@ public final /* synthetic */ class p2 implements View.OnClickListener {
                         hg.v2.e0(2, BirthdayController.getInstance(i10).getState());
                         break;
                     } else {
-                        g2 g2Var = new g2(pr0Var.getContext(), i10, pr0Var.c, null, null);
-                        g2Var.V(BirthdayController.getInstance(i10).isToday(pr0Var.c));
+                        g2 g2Var = new g2(or0Var.getContext(), i10, or0Var.c, null, null);
+                        g2Var.V(BirthdayController.getInstance(i10).isToday(or0Var.c));
                         g2Var.show();
                         break;
                     }
                 }
                 break;
             default:
-                zu0 zu0Var = (zu0) this.d;
-                org.telegram.ui.ActionBar.p2 p2Var = zu0Var.s1;
+                yu0 yu0Var = (yu0) this.d;
+                org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
                 if (!this.b) {
                     p2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
-                    ca.E(p2Var.getParentActivity(), p2Var.getCurrentAccount()).R(null);
+                    ba.E(p2Var.getParentActivity(), p2Var.getCurrentAccount()).R(null);
                     break;
                 } else {
-                    zu0Var.O0(p2Var, zu0Var.g1, this.c);
+                    yu0Var.O0(p2Var, yu0Var.g1, this.c);
                     break;
                 }
         }

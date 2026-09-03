@@ -23,7 +23,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class ExternalActionActivity extends Activity implements org.telegram.ui.ActionBar.c5 {
     public static final ArrayList x = new ArrayList();
@@ -32,7 +32,7 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
     public org.telegram.ui.Components.xd0 b;
     public ActionBarLayout c;
     public ActionBarLayout d;
-    public org.telegram.ui.Components.qv0 e;
+    public org.telegram.ui.Components.pv0 e;
     public org.telegram.ui.ActionBar.z3 f;
     public Intent h;
     public boolean n;
@@ -319,9 +319,9 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
             layoutParams.width = -1;
             layoutParams.height = -1;
             relativeLayout.setLayoutParams(layoutParams);
-            org.telegram.ui.Components.a61 a61Var = new org.telegram.ui.Components.a61(this, f5Var, i10);
-            this.e = a61Var;
-            a61Var.setOccupyStatusBar(false);
+            org.telegram.ui.Components.z51 z51Var = new org.telegram.ui.Components.z51(this, f5Var, i10);
+            this.e = z51Var;
+            z51Var.setOccupyStatusBar(false);
             this.e.V(org.telegram.ui.ActionBar.k6.r0());
             relativeLayout.addView(this.e, k7.c6.w(-1, -1));
             relativeLayout.addView(this.c.getView(), k7.c6.w(-1, -1));
@@ -343,9 +343,9 @@ public class ExternalActionActivity extends Activity implements org.telegram.ui.
         } else {
             RelativeLayout relativeLayout2 = new RelativeLayout(this);
             this.f.addView(relativeLayout2, k7.c6.c(-1.0f, -1));
-            org.telegram.ui.Components.a61 a61Var2 = new org.telegram.ui.Components.a61(this, f5Var, i11);
-            this.e = a61Var2;
-            a61Var2.setOccupyStatusBar(false);
+            org.telegram.ui.Components.z51 z51Var2 = new org.telegram.ui.Components.z51(this, f5Var, i11);
+            this.e = z51Var2;
+            z51Var2.setOccupyStatusBar(false);
             this.e.V(org.telegram.ui.ActionBar.k6.r0());
             relativeLayout2.addView(this.e, k7.c6.w(-1, -1));
             relativeLayout2.addView(this.c.getView(), k7.c6.w(-1, -1));

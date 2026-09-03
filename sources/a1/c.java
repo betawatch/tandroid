@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import androidx.emoji2.text.w;
 import c2.y0;
 import c2.z0;
 import c5.j;
@@ -53,18 +54,17 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.ij0;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.ht0;
-import org.telegram.ui.oq0;
+import org.telegram.ui.mt0;
+import org.telegram.ui.tq0;
 import org.telegram.ui.yh;
-import qh.q6;
+import qh.p6;
 import y2.i;
-import z3.k;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, c9.e, Continuation, OnCompleteListener, x, q0, g3.b, g2, c2, q6, ImageReceiver.ImageReceiverDelegate, xd.b, ba.a {
+public final /* synthetic */ class c implements OnSuccessListener, c9.e, Continuation, OnCompleteListener, x, q0, g3.b, g2, c2, p6, ImageReceiver.ImageReceiverDelegate, xd.b, ba.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -93,14 +93,14 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, Continu
         return ((str.equals(n0Var.C) || str.equals(y.b(n0Var))) && nVar.c(n0Var, false)) ? 1 : 0;
     }
 
-    @Override // qh.q6
+    @Override // qh.p6
     public Bitmap c(BitmapFactory.Options options) {
         return BitmapFactory.decodeFile((String) this.b, options);
     }
 
     @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
     public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
-        ij0 lottieAnimation;
+        hj0 lottieAnimation;
         p3 p3Var = (p3) this.b;
         if (!z4 || z10 || (lottieAnimation = imageReceiver.getLottieAnimation()) == null) {
             return;
@@ -115,10 +115,10 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, Continu
 
     @Override // dg.g2
     public void e() {
-        ht0 ht0Var = (ht0) this.b;
-        TextView textView = ht0Var.v1;
-        boolean a2 = ht0Var.C0.a();
-        ImageView imageView = ht0Var.t1;
+        mt0 mt0Var = (mt0) this.b;
+        TextView textView = mt0Var.v1;
+        boolean a2 = mt0Var.C0.a();
+        ImageView imageView = mt0Var.t1;
         imageView.animate().cancel();
         imageView.animate().alpha(a2 ? 1.0f : 0.6f).translationY(0.0f).setDuration(150L).start();
         imageView.setClickable(a2);
@@ -145,13 +145,12 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, Continu
     public Object g() {
         SQLiteDatabase a2;
         int i10 = this.a;
-        int i11 = 1;
         Object obj = this.b;
         switch (i10) {
             case 13:
                 h hVar = (h) ((f3.c) obj);
                 hVar.getClass();
-                int i12 = b3.a.e;
+                int i11 = b3.a.e;
                 s sVar = new s();
                 sVar.b = null;
                 sVar.c = new ArrayList();
@@ -202,7 +201,7 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, Continu
                 }
             default:
                 s sVar2 = (s) obj;
-                Iterator it = ((Iterable) ((h) ((f3.d) sVar2.b)).c(new k(i11))).iterator();
+                Iterator it = ((Iterable) ((h) ((f3.d) sVar2.b)).c(new w(29))).iterator();
                 while (it.hasNext()) {
                     ((androidx.biometric.e) sVar2.c).A((i) it.next(), 1, false);
                 }
@@ -214,7 +213,7 @@ public final /* synthetic */ class c implements OnSuccessListener, c9.e, Continu
     public void j(d2 d2Var, int i10) {
         switch (this.a) {
             case 18:
-                ((oq0) this.b).run();
+                ((tq0) this.b).run();
                 break;
             case 19:
                 ((p0) this.b).a.c2.r();

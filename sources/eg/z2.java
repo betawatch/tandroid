@@ -16,18 +16,18 @@ import android.view.ViewGroup;
 import k7.c6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.kv0;
+import org.telegram.ui.Components.jv0;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.Components.tk0;
+import org.telegram.ui.Components.sk0;
 import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class z2 extends j {
     public final int n0;
     public boolean o0;
     public final z5 p0;
-    public final kv0 q0;
+    public final jv0 q0;
     public final TextureView r0;
     public final Bitmap s0;
     public final Rect t0;
@@ -38,7 +38,7 @@ public final class z2 extends j {
     public boolean y0;
     public final z5 z0;
 
-    public z2(Context context, PointF pointF, kv0 kv0Var, String str) {
+    public z2(Context context, PointF pointF, jv0 jv0Var, String str) {
         super(context, pointF);
         this.n0 = -1;
         this.o0 = false;
@@ -54,7 +54,7 @@ public final class z2 extends j {
         new Paint(1).setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         setRotation(0.0f);
         setScale(1.0f);
-        this.q0 = kv0Var;
+        this.q0 = jv0Var;
         Bitmap decodeFile = BitmapFactory.decodeFile(str);
         this.s0 = decodeFile;
         if (decodeFile != null) {
@@ -134,28 +134,28 @@ public final class z2 extends j {
         return this.n0;
     }
 
-    public kv0 getBaseSize() {
+    public jv0 getBaseSize() {
         return this.q0;
     }
 
     @Override // eg.j
-    public tk0 getSelectionBounds() {
+    public sk0 getSelectionBounds() {
         ViewGroup viewGroup = (ViewGroup) getParent();
         if (viewGroup == null) {
-            return new tk0();
+            return new sk0();
         }
         float scaleX = viewGroup.getScaleX();
         float dp = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredWidth());
         float dp2 = (AndroidUtilities.dp(64.0f) / scaleX) + (getScale() * getMeasuredHeight());
         float c3 = org.telegram.ui.b.c(dp, 2.0f, getPositionX(), scaleX);
-        return new tk0(c3, org.telegram.ui.b.c(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + c3) - c3, dp2 * scaleX);
+        return new sk0(c3, org.telegram.ui.b.c(dp2, 2.0f, getPositionY(), scaleX), ((dp * scaleX) + c3) - c3, dp2 * scaleX);
     }
 
     @Override // eg.j
     public final void k() {
-        kv0 kv0Var = this.q0;
-        float f10 = kv0Var.a / 2.0f;
-        float f11 = kv0Var.b / 2.0f;
+        jv0 jv0Var = this.q0;
+        float f10 = jv0Var.a / 2.0f;
+        float f11 = jv0Var.b / 2.0f;
         setX(getPositionX() - f10);
         setY(getPositionY() - f11);
         m();
@@ -173,9 +173,9 @@ public final class z2 extends j {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        kv0 kv0Var = this.q0;
-        int i12 = (int) kv0Var.a;
-        int i13 = (int) kv0Var.b;
+        jv0 jv0Var = this.q0;
+        int i12 = (int) jv0Var.a;
+        int i13 = (int) jv0Var.b;
         TextureView textureView = this.r0;
         if (textureView != null) {
             float f10 = this.v0;

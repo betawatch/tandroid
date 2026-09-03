@@ -2,15 +2,15 @@ package qh;
 
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ r9 b;
+    public final /* synthetic */ q9 b;
 
-    public /* synthetic */ m(r9 r9Var, int i10) {
+    public /* synthetic */ m(q9 q9Var, int i10) {
         this.a = i10;
-        this.b = r9Var;
+        this.b = q9Var;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
@@ -19,9 +19,9 @@ public final /* synthetic */ class m implements Utilities.Callback {
         switch (this.a) {
             case 0:
                 int intValue = num.intValue();
-                r9 r9Var = this.b;
-                r9Var.setPeriod(intValue);
-                Utilities.Callback callback = r9Var.y1;
+                q9 q9Var = this.b;
+                q9Var.setPeriod(intValue);
+                Utilities.Callback callback = q9Var.y1;
                 if (callback != null) {
                     callback.run(num);
                     break;

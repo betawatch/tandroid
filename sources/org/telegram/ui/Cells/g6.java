@@ -19,9 +19,9 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.dq;
 import org.telegram.ui.Components.k90;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.zz0;
+import org.telegram.ui.e01;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class g6 extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.g6 a;
@@ -60,7 +60,7 @@ public abstract class g6 extends FrameLayout implements org.telegram.ui.ActionBa
         r2 r2Var = new r2(null, context, true, UserConfig.selectedAccount, resourceProvider);
         this.d = r2Var;
         r2Var.setBackgroundColor(0);
-        r2Var.setDialogCellDelegate(new d6((zz0) this, p2Var, context));
+        r2Var.setDialogCellDelegate(new d6((e01) this, p2Var, context));
         r2Var.E = 15;
         r2Var.F = 83;
         addView(r2Var, k7.c6.e(-1, -2, 87));

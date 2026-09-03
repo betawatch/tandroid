@@ -32,7 +32,7 @@ import org.telegram.ui.Components.p70;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class y extends FrameLayout implements p70 {
     public static final /* synthetic */ int u0 = 0;
@@ -62,7 +62,7 @@ public abstract class y extends FrameLayout implements p70 {
     public float a0;
     public final oh.b b;
     public boolean b0;
-    public final m5 c;
+    public final l5 c;
     public boolean c0;
     public CameraView d;
     public x d0;
@@ -80,8 +80,8 @@ public abstract class y extends FrameLayout implements p70 {
     public boolean m0;
     public final ArrayList n;
     public boolean n0;
-    public ma o0;
-    public j5 p0;
+    public la o0;
+    public i5 p0;
     public boolean q0;
     public x r;
     public long r0;
@@ -95,7 +95,7 @@ public abstract class y extends FrameLayout implements p70 {
 
     public y(Context context, org.telegram.ui.Components.ba baVar, FrameLayout frameLayout, oh.b bVar) {
         super(context);
-        this.c = new m5(new w(this, 1));
+        this.c = new l5(new w(this, 1));
         this.f = new r(".");
         ArrayList arrayList = new ArrayList();
         this.h = arrayList;
@@ -284,8 +284,8 @@ public abstract class y extends FrameLayout implements p70 {
             float f12 = z5Var.c;
             r rVar = this.f;
             if (f12 == rVar.c && z5VarArr[0].c == rVar.d[0]) {
-                m5 m5Var = this.c;
-                if (!m5Var.b && m5Var.d.c <= 0.0f) {
+                l5 l5Var = this.c;
+                if (!l5Var.b && l5Var.d.c <= 0.0f) {
                     setCameraNeedsBlur(false);
                     i(canvas);
                     return;
@@ -765,17 +765,17 @@ public abstract class y extends FrameLayout implements p70 {
         return this.L;
     }
 
-    public ArrayList<s6> getContent() {
-        ArrayList<s6> arrayList = new ArrayList<>();
+    public ArrayList<r6> getContent() {
+        ArrayList<r6> arrayList = new ArrayList<>();
         ArrayList arrayList2 = this.h;
         int size = arrayList2.size();
         int i10 = 0;
         while (i10 < size) {
             Object obj = arrayList2.get(i10);
             i10++;
-            s6 s6Var = ((x) obj).n;
-            if (s6Var != null) {
-                arrayList.add(s6Var);
+            r6 r6Var = ((x) obj).n;
+            if (r6Var != null) {
+                arrayList.add(r6Var);
             }
         }
         return arrayList;
@@ -787,11 +787,11 @@ public abstract class y extends FrameLayout implements p70 {
 
     public long getDuration() {
         x mainPart;
-        s6 s6Var;
-        if (!this.k0 || (mainPart = getMainPart()) == null || (s6Var = mainPart.n) == null) {
+        r6 r6Var;
+        if (!this.k0 || (mainPart = getMainPart()) == null || (r6Var = mainPart.n) == null) {
             return 1L;
         }
-        return Math.max(Math.min((long) ((s6Var.W - s6Var.V) * s6Var.h0), 59500L), 1L);
+        return Math.max(Math.min((long) ((r6Var.W - r6Var.V) * r6Var.h0), 59500L), 1L);
     }
 
     public int getFilledCount() {
@@ -830,9 +830,9 @@ public abstract class y extends FrameLayout implements p70 {
             Object obj = arrayList.get(i10);
             i10++;
             x xVar2 = (x) obj;
-            s6 s6Var = xVar2.n;
-            if (s6Var != null && s6Var.K) {
-                long j11 = s6Var.h0;
+            r6 r6Var = xVar2.n;
+            if (r6Var != null && r6Var.K) {
+                long j11 = r6Var.h0;
                 fg.s2 s2Var = xVar2.d;
                 if (s2Var != null && s2Var.getDuration() > 0) {
                     j11 = xVar2.d.getDuration();
@@ -885,8 +885,8 @@ public abstract class y extends FrameLayout implements p70 {
         getPosition();
         x mainPart = getMainPart();
         if (mainPart != null) {
-            s6 s6Var = mainPart.n;
-            j10 = s6Var.X + ((long) (s6Var.V * s6Var.h0));
+            r6 r6Var = mainPart.n;
+            j10 = r6Var.X + ((long) (r6Var.V * r6Var.h0));
         }
         return getPosition() + j10;
     }
@@ -896,7 +896,7 @@ public abstract class y extends FrameLayout implements p70 {
     }
 
     public final void h(float f10, Canvas canvas, RectF rectF, View view) {
-        m5 m5Var;
+        l5 l5Var;
         Bitmap bitmap;
         if (view == null) {
             return;
@@ -920,28 +920,28 @@ public abstract class y extends FrameLayout implements p70 {
             canvas.drawColor(org.telegram.ui.ActionBar.k6.l1(view.getAlpha() * f10, -16777216));
         }
         canvas.restore();
-        if (view != this.d || (m5Var = this.c) == null) {
+        if (view != this.d || (l5Var = this.c) == null) {
             return;
         }
-        Paint paint = m5Var.i;
-        org.telegram.ui.Components.z5[] z5VarArr = m5Var.h;
-        org.telegram.ui.Components.z5[] z5VarArr2 = m5Var.g;
-        Path path = m5Var.j;
-        l5 l5Var = m5Var.c;
-        if (l5Var == null || l5Var.b.length <= 0) {
+        Paint paint = l5Var.i;
+        org.telegram.ui.Components.z5[] z5VarArr = l5Var.h;
+        org.telegram.ui.Components.z5[] z5VarArr2 = l5Var.g;
+        Path path = l5Var.j;
+        k5 k5Var = l5Var.c;
+        if (k5Var == null || k5Var.b.length <= 0) {
             return;
         }
-        float e6 = m5Var.d.e(m5Var.b);
-        float d = m5Var.e.d(m5Var.c.c, false);
+        float e6 = l5Var.d.e(l5Var.b);
+        float d = l5Var.e.d(l5Var.c.c, false);
         float width = (rectF.width() * d) + rectF.left;
-        float d10 = m5Var.f.d(m5Var.c.d, false);
+        float d10 = l5Var.f.d(l5Var.c.d, false);
         float height = (rectF.height() * d10) + rectF.top;
         float lerp = AndroidUtilities.lerp(0.5f, 1.1f, e6);
         canvas.save();
         canvas.scale(lerp, lerp, width, height);
         if (e6 > 0.0f) {
             path.rewind();
-            int min = Math.min(4, m5Var.c.b.length);
+            int min = Math.min(4, l5Var.c.b.length);
             int i10 = 0;
             while (i10 < min) {
                 int i11 = i10 - 1;
@@ -950,8 +950,8 @@ public abstract class y extends FrameLayout implements p70 {
                 }
                 int i12 = i10 + 1;
                 int i13 = i12 >= min ? 0 : i12;
-                l5 l5Var2 = m5Var.c;
-                PointF[] pointFArr = l5Var2.b;
+                k5 k5Var2 = l5Var.c;
+                PointF[] pointFArr = k5Var2.b;
                 PointF pointF = pointFArr[i11];
                 int i14 = min;
                 PointF pointF2 = pointFArr[i10];
@@ -959,12 +959,12 @@ public abstract class y extends FrameLayout implements p70 {
                 PointF pointF3 = pointFArr[i13];
                 org.telegram.ui.Components.z5[] z5VarArr4 = z5VarArr2;
                 float f11 = e6;
-                float width2 = (rectF.width() * (z5VarArr4[i11].d(pointF.x - l5Var2.c, false) + d)) + rectF.left;
-                float height2 = (rectF.height() * (z5VarArr3[i11].d(pointF.y - m5Var.c.d, false) + d10)) + rectF.top;
-                float width3 = (rectF.width() * (z5VarArr4[i10].d(pointF2.x - m5Var.c.c, false) + d)) + rectF.left;
-                float height3 = (rectF.height() * (z5VarArr3[i10].d(pointF2.y - m5Var.c.d, false) + d10)) + rectF.top;
-                float width4 = (rectF.width() * (z5VarArr4[i13].d(pointF3.x - m5Var.c.c, false) + d)) + rectF.left;
-                float height4 = ((rectF.height() * (z5VarArr3[i13].d(pointF3.y - m5Var.c.d, false) + d10)) + rectF.top) - height3;
+                float width2 = (rectF.width() * (z5VarArr4[i11].d(pointF.x - k5Var2.c, false) + d)) + rectF.left;
+                float height2 = (rectF.height() * (z5VarArr3[i11].d(pointF.y - l5Var.c.d, false) + d10)) + rectF.top;
+                float width3 = (rectF.width() * (z5VarArr4[i10].d(pointF2.x - l5Var.c.c, false) + d)) + rectF.left;
+                float height3 = (rectF.height() * (z5VarArr3[i10].d(pointF2.y - l5Var.c.d, false) + d10)) + rectF.top;
+                float width4 = (rectF.width() * (z5VarArr4[i13].d(pointF3.x - l5Var.c.c, false) + d)) + rectF.left;
+                float height4 = ((rectF.height() * (z5VarArr3[i13].d(pointF3.y - l5Var.c.d, false) + d10)) + rectF.top) - height3;
                 path.moveTo(((width2 - width3) * 0.18f) + width3, ((height2 - height3) * 0.18f) + height3);
                 path.lineTo(width3, height3);
                 path.lineTo(((width4 - width3) * 0.18f) + width3, (height4 * 0.18f) + height3);
@@ -1020,8 +1020,8 @@ public abstract class y extends FrameLayout implements p70 {
         rectF.set((f10 / i12) * i13, (f11 / i14) * i11, (f10 / i12) * (i13 + 1), (f11 / i14) * (i11 + 1));
     }
 
-    public final boolean l(s6 s6Var) {
-        if (s6Var.K) {
+    public final boolean l(r6 r6Var) {
+        if (r6Var.K) {
             ArrayList arrayList = this.h;
             int size = arrayList.size();
             int i10 = 0;
@@ -1031,16 +1031,16 @@ public abstract class y extends FrameLayout implements p70 {
                 }
                 Object obj = arrayList.get(i10);
                 i10++;
-                s6 s6Var2 = ((x) obj).n;
-                if (s6Var2 != null && s6Var2.K && s6Var2.P > 0.0f) {
-                    s6Var.P = 0.0f;
+                r6 r6Var2 = ((x) obj).n;
+                if (r6Var2 != null && r6Var2.K && r6Var2.P > 0.0f) {
+                    r6Var.P = 0.0f;
                     break;
                 }
             }
         }
         x xVar = this.r;
         if (xVar != null) {
-            xVar.a(s6Var);
+            xVar.a(r6Var);
         }
         q();
         requestLayout();
@@ -1063,19 +1063,19 @@ public abstract class y extends FrameLayout implements p70 {
         }
     }
 
-    public final void n(s6 s6Var) {
-        if (s6Var == null || s6Var.T == null) {
+    public final void n(r6 r6Var) {
+        if (r6Var == null || r6Var.T == null) {
             e();
             return;
         }
-        o(s6Var.S);
+        o(r6Var.S);
         int i10 = 0;
         while (true) {
             ArrayList arrayList = this.h;
             if (i10 >= arrayList.size()) {
                 return;
             }
-            ((x) arrayList.get(i10)).a((s6) s6Var.T.get(i10));
+            ((x) arrayList.get(i10)).a((r6) r6Var.T.get(i10));
             i10++;
         }
     }
@@ -1155,7 +1155,7 @@ public abstract class y extends FrameLayout implements p70 {
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
         x xVar;
-        s6 s6Var;
+        r6 r6Var;
         int i12;
         int i13;
         int size = View.MeasureSpec.getSize(i10);
@@ -1180,10 +1180,10 @@ public abstract class y extends FrameLayout implements p70 {
                         i15++;
                     }
                 }
-                if (xVar == null || (s6Var = xVar.n) == null || (i12 = s6Var.k0) <= 0 || (i13 = s6Var.l0) <= 0) {
+                if (xVar == null || (r6Var = xVar.n) == null || (i12 = r6Var.k0) <= 0 || (i13 = r6Var.l0) <= 0) {
                     childAt.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size2, TLObject.FLAG_30));
                 } else {
-                    if (s6Var.Q % 90 == 1) {
+                    if (r6Var.Q % 90 == 1) {
                         i13 = i12;
                         i12 = i13;
                     }
@@ -1354,15 +1354,15 @@ public abstract class y extends FrameLayout implements p70 {
         }
     }
 
-    public void setPreviewView(j5 j5Var) {
-        this.p0 = j5Var;
+    public void setPreviewView(i5 i5Var) {
+        this.p0 = i5Var;
     }
 
     public void setResetState(Runnable runnable) {
         this.j0 = runnable;
     }
 
-    public void setTimelineView(ma maVar) {
-        this.o0 = maVar;
+    public void setTimelineView(la laVar) {
+        this.o0 = laVar;
     }
 }

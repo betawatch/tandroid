@@ -42,14 +42,14 @@ import org.telegram.ui.Cells.w4;
 import org.telegram.ui.Cells.x4;
 import org.telegram.ui.Cells.z6;
 import org.telegram.ui.Components.RadialProgressView;
-import org.telegram.ui.Components.fl0;
+import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.pq;
 import org.telegram.ui.Components.z8;
 import org.telegram.ui.rc0;
 import org.telegram.ui.vc0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class h0 extends c implements LocationController.LocationFetchCallback {
     public final int H;
@@ -97,7 +97,7 @@ public class h0 extends c implements LocationController.LocationFetchCallback {
         this.Y = g6Var;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         int i10 = m1Var.f;
         if (i10 == 6) {
@@ -845,7 +845,7 @@ public class h0 extends c implements LocationController.LocationFetchCallback {
                 view2 = this.e0;
                 break;
         }
-        return new fl0(view2);
+        return new el0(view2);
     }
 
     public void K() {

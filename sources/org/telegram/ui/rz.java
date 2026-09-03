@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class rz extends FrameLayout {
     public final /* synthetic */ int a = 0;
@@ -56,8 +56,8 @@ public final class rz extends FrameLayout {
         switch (this.a) {
             case 1:
                 Path path = this.c;
-                qh.d8 d8Var = (qh.d8) this.e;
-                View[] viewPages = d8Var.b.getViewPages();
+                qh.c8 c8Var = (qh.c8) this.e;
+                View[] viewPages = c8Var.b.getViewPages();
                 float f12 = 0.0f;
                 this.b = 0.0f;
                 int i14 = 0;
@@ -66,16 +66,16 @@ public final class rz extends FrameLayout {
                     if (view == null) {
                         viewArr = viewPages;
                     } else {
-                        qh.x7 x7Var = (qh.x7) view;
-                        float clamp = Utilities.clamp(1.0f - Math.abs(x7Var.getTranslationX() / x7Var.getMeasuredWidth()), 1.0f, f12);
+                        qh.w7 w7Var = (qh.w7) view;
+                        float clamp = Utilities.clamp(1.0f - Math.abs(w7Var.getTranslationX() / w7Var.getMeasuredWidth()), 1.0f, f12);
                         float f13 = this.b;
-                        org.telegram.ui.Components.tl0 tl0Var = x7Var.f;
-                        FrameLayout frameLayout = x7Var.e;
-                        f2.j0 j0Var = x7Var.h;
-                        float f14 = (j0Var.t || x7Var.a == 0) ? AndroidUtilities.displaySize.y : 0.0f;
+                        org.telegram.ui.Components.sl0 sl0Var = w7Var.f;
+                        FrameLayout frameLayout = w7Var.e;
+                        f2.j0 j0Var = w7Var.h;
+                        float f14 = (j0Var.t || w7Var.a == 0) ? AndroidUtilities.displaySize.y : 0.0f;
                         int i15 = 0;
-                        while (i15 < tl0Var.getChildCount()) {
-                            View childAt = tl0Var.getChildAt(i15);
+                        while (i15 < sl0Var.getChildCount()) {
+                            View childAt = sl0Var.getChildAt(i15);
                             if (j0Var.t) {
                                 float y10 = childAt.getY() + frameLayout.getPaddingTop();
                                 float alpha = childAt.getAlpha();
@@ -83,7 +83,7 @@ public final class rz extends FrameLayout {
                                     f14 = AndroidUtilities.lerp(f14, y10, alpha);
                                 }
                             } else {
-                                if (x7Var.a != 0) {
+                                if (w7Var.a != 0) {
                                     if (childAt.getTag() instanceof Integer) {
                                         viewArr = viewPages;
                                         if (((Integer) childAt.getTag()).intValue() == 33) {
@@ -91,12 +91,12 @@ public final class rz extends FrameLayout {
                                             f10 = childAt.getTranslationY();
                                             f14 = f10 + f11;
                                             this.b = (f14 * clamp) + f13;
-                                            z4 = ((org.telegram.ui.ActionBar.h3) d8Var).keyboardVisible;
+                                            z4 = ((org.telegram.ui.ActionBar.h3) c8Var).keyboardVisible;
                                             if (z4) {
-                                                int i16 = x7Var.a;
+                                                int i16 = w7Var.a;
                                             }
-                                            if (x7Var.getVisibility() == 0) {
-                                                x7Var.j();
+                                            if (w7Var.getVisibility() == 0) {
+                                                w7Var.j();
                                             }
                                         }
                                     } else {
@@ -107,13 +107,13 @@ public final class rz extends FrameLayout {
                                         f10 = childAt.getY();
                                         f14 = f10 + f11;
                                         this.b = (f14 * clamp) + f13;
-                                        z4 = ((org.telegram.ui.ActionBar.h3) d8Var).keyboardVisible;
+                                        z4 = ((org.telegram.ui.ActionBar.h3) c8Var).keyboardVisible;
                                         if (z4) {
                                         }
-                                        if (x7Var.getVisibility() == 0) {
+                                        if (w7Var.getVisibility() == 0) {
                                         }
                                     }
-                                } else if (!(childAt instanceof qh.w7)) {
+                                } else if (!(childAt instanceof qh.v7)) {
                                     viewArr = viewPages;
                                     f14 = Math.min(childAt.getY() + frameLayout.getPaddingTop(), f14);
                                 }
@@ -126,10 +126,10 @@ public final class rz extends FrameLayout {
                         }
                         viewArr = viewPages;
                         this.b = (f14 * clamp) + f13;
-                        z4 = ((org.telegram.ui.ActionBar.h3) d8Var).keyboardVisible;
+                        z4 = ((org.telegram.ui.ActionBar.h3) c8Var).keyboardVisible;
                         if (z4) {
                         }
-                        if (x7Var.getVisibility() == 0) {
+                        if (w7Var.getVisibility() == 0) {
                         }
                     }
                     i14++;
@@ -139,13 +139,13 @@ public final class rz extends FrameLayout {
                 float d = ((org.telegram.ui.Components.z5) this.d).d(this.b <= ((float) AndroidUtilities.statusBarHeight) ? 1.0f : 0.0f, false);
                 this.b = Math.max(AndroidUtilities.statusBarHeight, this.b) - (AndroidUtilities.statusBarHeight * d);
                 RectF rectF = AndroidUtilities.rectTmp;
-                i10 = ((org.telegram.ui.ActionBar.h3) d8Var).backgroundPaddingLeft;
+                i10 = ((org.telegram.ui.ActionBar.h3) c8Var).backgroundPaddingLeft;
                 float f15 = this.b;
                 int width = getWidth();
-                i11 = ((org.telegram.ui.ActionBar.h3) d8Var).backgroundPaddingLeft;
+                i11 = ((org.telegram.ui.ActionBar.h3) c8Var).backgroundPaddingLeft;
                 rectF.set(i10, f15, width - i11, AndroidUtilities.dp(8.0f) + getHeight());
                 float lerp = AndroidUtilities.lerp(AndroidUtilities.dp(14.0f), 0, d);
-                canvas.drawRoundRect(rectF, lerp, lerp, d8Var.O);
+                canvas.drawRoundRect(rectF, lerp, lerp, c8Var.O);
                 canvas.save();
                 path.rewind();
                 path.addRoundRect(rectF, lerp, lerp, Path.Direction.CW);
@@ -197,7 +197,7 @@ public final class rz extends FrameLayout {
                 if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.b) {
                     return super.dispatchTouchEvent(motionEvent);
                 }
-                ((qh.d8) this.e).dismiss();
+                ((qh.c8) this.e).dismiss();
                 return true;
             case 2:
                 if (motionEvent.getAction() != 0 || motionEvent.getY() >= this.b) {
@@ -262,9 +262,9 @@ public final class rz extends FrameLayout {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rz(qh.d8 d8Var, Context context) {
+    public rz(qh.c8 c8Var, Context context) {
         super(context);
-        this.e = d8Var;
+        this.e = c8Var;
         this.d = new org.telegram.ui.Components.z5(this, 250L, org.telegram.ui.Components.pr.h);
         this.c = new Path();
     }

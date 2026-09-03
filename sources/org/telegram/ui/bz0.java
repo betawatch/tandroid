@@ -1,46 +1,47 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Stories.ProfileStoriesView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class bz0 extends ProfileStoriesView {
-    public final /* synthetic */ Context q0;
-    public final /* synthetic */ ProfileActivity r0;
+public final class bz0 implements hq {
+    public final /* synthetic */ TLRPC.Chat a;
+    public final /* synthetic */ kq b;
+    public final /* synthetic */ ProfileActivity c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bz0(ProfileActivity profileActivity, Context context, int i10, long j10, boolean z4, l0 l0Var, yy0 yy0Var, org.telegram.ui.ActionBar.g6 g6Var, Context context2) {
-        super(context, i10, j10, z4, l0Var, yy0Var, g6Var);
-        this.r0 = profileActivity;
-        this.q0 = context2;
+    public bz0(ProfileActivity profileActivity, TLRPC.Chat chat, kq kqVar) {
+        this.c = profileActivity;
+        this.a = chat;
+        this.b = kqVar;
     }
 
-    @Override // org.telegram.ui.Stories.ProfileStoriesView
-    public final void e(oh.h4 h4Var) {
-        TL_stories.PeerStories peerStories;
-        TL_stories.PeerStories peerStories2;
-        ProfileActivity profileActivity = this.r0;
-        long a2 = profileActivity.a();
-        oh.t6 storiesController = profileActivity.getMessagesController().getStoriesController();
-        boolean I = storiesController.I(a2);
-        Context context = this.q0;
-        if (I || storiesController.K(a2) || storiesController.N(a2)) {
-            profileActivity.getOrCreateStoryViewer().D(context, a2, h4Var);
+    @Override // org.telegram.ui.hq
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.c;
+        profileActivity.J.m(-profileActivity.c1, user, profileActivity.B2.megagroup ? 10 : 9);
+    }
+
+    @Override // org.telegram.ui.hq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.Chat chat;
+        ProfileActivity profileActivity = this.c;
+        profileActivity.removeSelfFromStack();
+        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.b1));
+        if (user == null || (chat = this.a) == null || profileActivity.b1 == 0) {
             return;
         }
-        TLRPC.UserFull userFull = profileActivity.s2;
-        if (userFull != null && (peerStories2 = userFull.stories) != null && !peerStories2.stories.isEmpty() && profileActivity.b1 != profileActivity.getUserConfig().clientUserId) {
-            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.s2.stories, h4Var);
+        kq kqVar = this.b;
+        if (!kqVar.N || kqVar.getParentLayout() == null) {
             return;
         }
-        TLRPC.ChatFull chatFull = profileActivity.r2;
-        if (chatFull == null || (peerStories = chatFull.stories) == null || peerStories.stories.isEmpty()) {
-            profileActivity.K3();
-        } else {
-            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.r2.stories, h4Var);
+        for (org.telegram.ui.ActionBar.p2 p2Var : kqVar.getParentLayout().getFragmentStack()) {
+            if (p2Var instanceof sb) {
+                sb sbVar = (sb) p2Var;
+                sbVar.W0();
+                AndroidUtilities.runOnUIThread(new if0(sbVar, user, chat, 25));
+                return;
+            }
         }
     }
 }

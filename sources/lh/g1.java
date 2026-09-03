@@ -51,13 +51,13 @@ import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ar;
 import org.telegram.ui.br;
-import org.telegram.ui.fs0;
-import org.telegram.ui.ju0;
 import org.telegram.ui.kq;
+import org.telegram.ui.ks0;
+import org.telegram.ui.ou0;
 import org.telegram.ui.qr;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class g1 implements Runnable {
     public final /* synthetic */ int a;
@@ -160,7 +160,7 @@ public final /* synthetic */ class g1 implements Runnable {
                     }
                     TextView textView = i14 == 0 ? l1Var : g2Var.j0;
                     textView.setText(spannableStringBuilder);
-                    textView.setMaxWidth(qh.f3.a(textView.getText(), textView.getPaint()));
+                    textView.setMaxWidth(qh.e3.a(textView.getText(), textView.getPaint()));
                     i14++;
                     i10 = 3;
                     i11 = 2;
@@ -423,13 +423,13 @@ public final /* synthetic */ class g1 implements Runnable {
                 photoEntry.coverPhoto = null;
                 photoEntry.coverPhotoParentObject = null;
                 photoViewer.n5.b.setLoading(false);
-                ju0 ju0Var = photoViewer.d;
-                if (ju0Var != null) {
-                    ju0Var.W(photoViewer.M4);
+                ou0 ou0Var = photoViewer.d;
+                if (ou0Var != null) {
+                    ou0Var.W(photoViewer.M4);
                 }
-                fs0 fs0Var = photoViewer.d1;
-                if (fs0Var != null) {
-                    fs0Var.setImage(bitmap);
+                ks0 ks0Var = photoViewer.d1;
+                if (ks0Var != null) {
+                    ks0Var.setImage(bitmap);
                 }
                 photoViewer.e3(0);
                 CheckBox checkBox = photoViewer.K0;

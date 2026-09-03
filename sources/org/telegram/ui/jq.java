@@ -13,9 +13,9 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class jq extends org.telegram.ui.Components.sl0 {
+public final class jq extends org.telegram.ui.Components.rl0 {
     public final Context c;
     public boolean d;
     public final /* synthetic */ kq e;
@@ -28,7 +28,7 @@ public final class jq extends org.telegram.ui.Components.sl0 {
         this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         TLRPC.Chat chat;
         int i10 = m1Var.f;
@@ -1564,7 +1564,7 @@ public final class jq extends org.telegram.ui.Components.sl0 {
                 }
                 break;
             case 11:
-                ((org.telegram.ui.Components.g01) view).a(kqVar.v, kqVar.P, i48 == 0, false, new w3(this, 2));
+                ((org.telegram.ui.Components.f01) view).a(kqVar.v, kqVar.P, i48 == 0, false, new w3(this, 2));
                 break;
         }
     }
@@ -1661,10 +1661,10 @@ public final class jq extends org.telegram.ui.Components.sl0 {
                 i11 = ((org.telegram.ui.ActionBar.p2) kqVar).currentAccount;
                 long j10 = -kqVar.s;
                 g6Var = ((org.telegram.ui.ActionBar.p2) kqVar).resourceProvider;
-                view2 = new org.telegram.ui.Components.g01(i11, j10, this.c, g6Var);
+                view2 = new org.telegram.ui.Components.f01(i11, j10, this.c, g6Var);
                 break;
         }
-        return new org.telegram.ui.Components.fl0(view2);
+        return new org.telegram.ui.Components.el0(view2);
     }
 
     @Override // f2.p0

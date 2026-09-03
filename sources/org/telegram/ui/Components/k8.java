@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class k8 extends org.telegram.ui.ActionBar.h3 {
     public final /* synthetic */ w8 b;
@@ -18,7 +18,7 @@ public final class k8 extends org.telegram.ui.ActionBar.h3 {
     public final void dismiss() {
         super.dismiss();
         w8 w8Var = this.b;
-        w8Var.G.w1(w8Var.V);
+        w8Var.G.v1(w8Var.V);
         w8Var.f = true;
         w8Var.fragmentView.invalidate();
         w8Var.e.animate().setListener(new org.telegram.ui.s5(this, 29)).alpha(0.0f).setDuration(200L).start();

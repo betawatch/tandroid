@@ -23,15 +23,15 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.pv0;
+import org.telegram.ui.Components.q31;
 import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.qv0;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class p extends k {
     public static final int[] N1 = {21600, 43200, 86400, 172800};
@@ -79,19 +79,19 @@ public abstract class p extends k {
     public final RectF r1;
     public final RectF s1;
     public final Path t1;
-    public l01 u1;
+    public k01 u1;
     public Path v1;
     public Paint w1;
-    public l01 x1;
+    public k01 x1;
     public Utilities.Callback y1;
     public Utilities.Callback z1;
 
-    public p(Context context, FrameLayout frameLayout, qv0 qv0Var, FrameLayout frameLayout2, oh.b bVar, org.telegram.ui.Components.ba baVar) {
-        super(context, frameLayout, qv0Var, frameLayout2, bVar, baVar);
+    public p(Context context, FrameLayout frameLayout, pv0 pv0Var, FrameLayout frameLayout2, oh.b bVar, org.telegram.ui.Components.ba baVar) {
+        super(context, frameLayout, pv0Var, frameLayout2, bVar, baVar);
         this.T0 = true;
         this.U0 = 0;
-        r9 r9Var = (r9) this;
-        this.X0 = new o(r9Var, r9Var);
+        q9 q9Var = (q9) this;
+        this.X0 = new o(q9Var, q9Var);
         org.telegram.ui.Components.j6 j6Var = new org.telegram.ui.Components.j6(false, true, true, false);
         this.Y0 = j6Var;
         pr prVar = pr.f;
@@ -117,7 +117,7 @@ public abstract class p extends k {
         u9Var2.b = AndroidUtilities.dp(55.0f);
         u9Var2.b();
         this.g1 = getContext().getResources().getDrawable(R.drawable.input_video_pressed).mutate();
-        this.i1 = new org.telegram.ui.Components.z5(new l(r9Var, 0), 200L, prVar, 0);
+        this.i1 = new org.telegram.ui.Components.z5(new l(q9Var, 0), 200L, prVar, 0);
         this.j1 = new Path();
         this.k1 = new Path();
         this.l1 = new Paint(1);
@@ -126,7 +126,7 @@ public abstract class p extends k {
         Paint paint3 = new Paint(1);
         this.o1 = paint3;
         paint3.setStyle(Paint.Style.STROKE);
-        l lVar = new l(r9Var, 0);
+        l lVar = new l(q9Var, 0);
         pr prVar2 = pr.h;
         this.p1 = new org.telegram.ui.Components.z5(lVar, 350L, prVar2);
         this.q1 = new RectF();
@@ -134,10 +134,10 @@ public abstract class p extends k {
         this.s1 = new RectF();
         this.t1 = new Path();
         this.D1 = new org.telegram.ui.Components.z5(this, 0L, 350L, prVar2);
-        this.E1 = new org.telegram.ui.Components.z5(new l(r9Var, 0), 420L, prVar2, 0);
+        this.E1 = new org.telegram.ui.Components.z5(new l(q9Var, 0), 420L, prVar2, 0);
         this.F1 = new org.telegram.ui.Components.z5(this, 0L, 350L, prVar2);
-        this.G1 = new org.telegram.ui.Components.z5(new l(r9Var, 0), 350L, prVar2, 0);
-        this.M1 = new l(r9Var, 1);
+        this.G1 = new org.telegram.ui.Components.z5(new l(q9Var, 0), 350L, prVar2, 0);
+        this.M1 = new l(q9Var, 1);
         ImageView imageView = new ImageView(context);
         this.P0 = imageView;
         imageView.setImageResource(R.drawable.input_video_story);
@@ -146,7 +146,7 @@ public abstract class p extends k {
         imageView.setScaleType(scaleType);
         imageView.setContentDescription(LocaleController.getString(R.string.AccDescrVideoMessage));
         addView(imageView, k7.c6.d(44, 44.0f, 85, 0.0f, 0.0f, 11.0f, 6.0f));
-        imageView.setOnClickListener(new org.telegram.ui.Components.voip.o(r9Var, 7));
+        imageView.setOnClickListener(new org.telegram.ui.Components.voip.o(q9Var, 7));
         ImageView imageView2 = new ImageView(context);
         this.Q0 = imageView2;
         j jVar = new j(5);
@@ -157,7 +157,7 @@ public abstract class p extends k {
         imageView2.setContentDescription(LocaleController.getString(R.string.StoryPeriodHint));
         A(86400, false);
         addView(imageView2, k7.c6.d(44, 44.0f, 85, 0.0f, 0.0f, 51.0f, 6.0f));
-        imageView2.setOnClickListener(new r31(r9Var, frameLayout, bVar, 2));
+        imageView2.setOnClickListener(new q31(q9Var, frameLayout, bVar, 2));
     }
 
     public final void A(int i10, boolean z4) {
@@ -285,10 +285,10 @@ public abstract class p extends k {
                         imageView.setVisibility(4);
                         this.Q0.setVisibility(4);
                         oVar.g = true;
-                        ij0 ij0Var = oVar.h;
-                        ij0Var.Q(0.0f, true);
+                        hj0 hj0Var = oVar.h;
+                        hj0Var.Q(0.0f, true);
                         if (oVar.f) {
-                            ij0Var.start();
+                            hj0Var.start();
                         }
                         n nVar2 = this.A1;
                         if (nVar2 != null) {
@@ -325,10 +325,10 @@ public abstract class p extends k {
         if (getParent() != null) {
             getParent().requestDisallowInterceptTouchEvent(true);
         }
-        r9 r9Var = (r9) this;
+        q9 q9Var = (q9) this;
         boolean isCameraAllowed = CameraView.isCameraAllowed();
-        ca caVar = r9Var.P1;
-        if (!isCameraAllowed ? false : ca.d(caVar)) {
+        ba baVar = q9Var.P1;
+        if (!isCameraAllowed ? false : ba.d(baVar)) {
             AndroidUtilities.cancelRunOnUIThread(lVar);
             this.B1 = motionEvent.getX();
             this.C1 = motionEvent.getY();
@@ -340,9 +340,9 @@ public abstract class p extends k {
             this.I1 = false;
             this.J1 = false;
             oVar.g = false;
-            ij0 ij0Var2 = oVar.h;
-            ij0Var2.stop();
-            ij0Var2.Q(0.0f, true);
+            hj0 hj0Var2 = oVar.h;
+            hj0Var2.stop();
+            hj0Var2.Q(0.0f, true);
             this.L1 = true;
             this.b1 = System.currentTimeMillis();
             this.H0 = true;
@@ -351,26 +351,26 @@ public abstract class p extends k {
             n();
             n nVar3 = new n(this, getContext());
             this.A1 = nVar3;
-            n nVar4 = caVar.n1;
+            n nVar4 = baVar.n1;
             if (nVar4 != null) {
                 nVar4.a(true);
             }
-            q9 q9Var = caVar.U0;
-            if (q9Var != null) {
-                q9Var.L = true;
-                q9Var.c();
-                q9 q9Var2 = caVar.U0;
-                q9Var2.m(0L);
-                ma maVar = q9Var2.C;
-                if (maVar != null) {
-                    maVar.setProgress(0L);
+            p9 p9Var = baVar.U0;
+            if (p9Var != null) {
+                p9Var.L = true;
+                p9Var.c();
+                p9 p9Var2 = baVar.U0;
+                p9Var2.m(0L);
+                la laVar = p9Var2.C;
+                if (laVar != null) {
+                    laVar.setProgress(0L);
                 }
             }
-            nVar3.n = new oh.z(1, r9Var, nVar3);
-            nVar3.r = new l(r9Var, 2);
-            n9 n9Var = caVar.e0;
-            caVar.n1 = nVar3;
-            n9Var.addView(nVar3, k7.c6.c(-1.0f, -1));
+            nVar3.n = new oh.z(1, q9Var, nVar3);
+            nVar3.r = new l(q9Var, 2);
+            m9 m9Var = baVar.e0;
+            baVar.n1 = nVar3;
+            m9Var.addView(nVar3, k7.c6.c(-1.0f, -1));
             return true;
         }
         return true;
@@ -451,7 +451,7 @@ public abstract class p extends k {
             }
             if (f10 > 0.0f) {
                 if (this.u1 == null) {
-                    this.u1 = new l01(LocaleController.getString(R.string.SlideToCancel2), 15.0f, null);
+                    this.u1 = new k01(LocaleController.getString(R.string.SlideToCancel2), 15.0f, null);
                 }
                 if (this.v1 == null) {
                     Path path = new Path();
@@ -483,7 +483,7 @@ public abstract class p extends k {
             }
             if (e10 > f14) {
                 if (this.x1 == null) {
-                    this.x1 = new l01(LocaleController.getString(R.string.CancelRound), f13, AndroidUtilities.bold());
+                    this.x1 = new k01(LocaleController.getString(R.string.CancelRound), f13, AndroidUtilities.bold());
                 }
                 this.x1.p = (int) ((rectF.width() - AndroidUtilities.dp(116.0f)) - j6Var.d());
                 float width = ((rectF.width() / 4.0f) * f15) + (rectF.centerX() - (this.x1.l() / 2.0f));
@@ -685,12 +685,12 @@ public abstract class p extends k {
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         o oVar = this.X0;
-        ij0 ij0Var = oVar.h;
+        hj0 hj0Var = oVar.h;
         oVar.f = true;
         if (oVar.g) {
-            ij0Var.start();
+            hj0Var.start();
         }
-        ij0Var.s0 = oVar.i;
+        hj0Var.s0 = oVar.i;
     }
 
     @Override // qh.k, android.view.ViewGroup, android.view.View
@@ -698,9 +698,9 @@ public abstract class p extends k {
         super.onDetachedFromWindow();
         o oVar = this.X0;
         oVar.f = false;
-        ij0 ij0Var = oVar.h;
-        ij0Var.stop();
-        ij0Var.s0 = null;
+        hj0 hj0Var = oVar.h;
+        hj0Var.stop();
+        hj0Var.s0 = null;
     }
 
     public void setAmplitude(double d) {

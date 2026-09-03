@@ -6,9 +6,9 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class n implements Utilities.Callback2 {
     public final /* synthetic */ int a;
@@ -41,7 +41,7 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                     int i12 = messagePeerVote.date;
                     t tVar = new t(uVar, peerDialogId, objArr == true ? 1 : 0);
                     int i13 = q.a;
-                    j51 J = j51.J(q.class);
+                    h51 J = h51.J(q.class);
                     J.G = userOrChat;
                     J.B = peerDialogId;
                     J.z = i12;
@@ -51,15 +51,15 @@ public final /* synthetic */ class n implements Utilities.Callback2 {
                 if (!uVar.h) {
                     if (!arrayList2.isEmpty()) {
                         int i14 = s.a;
-                        arrayList.add(j51.J(s.class));
+                        arrayList.add(h51.J(s.class));
                         break;
                     } else {
                         int i15 = r.a;
-                        arrayList.add(j51.J(r.class));
-                        arrayList.add(j51.J(r.class));
-                        arrayList.add(j51.J(r.class));
-                        arrayList.add(j51.J(r.class));
-                        arrayList.add(j51.J(r.class));
+                        arrayList.add(h51.J(r.class));
+                        arrayList.add(h51.J(r.class));
+                        arrayList.add(h51.J(r.class));
+                        arrayList.add(h51.J(r.class));
+                        arrayList.add(h51.J(r.class));
                         break;
                     }
                 }

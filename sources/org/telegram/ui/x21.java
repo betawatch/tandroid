@@ -1,109 +1,95 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class x21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xn b;
-    public final /* synthetic */ Activity c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g6 d;
-    public final /* synthetic */ MessageObject e;
+public final class x21 extends org.telegram.ui.Components.rl0 {
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ b31 d;
 
-    public /* synthetic */ x21(xn xnVar, Activity activity, org.telegram.ui.ActionBar.g6 g6Var, MessageObject messageObject, int i10) {
-        this.a = i10;
-        this.b = xnVar;
-        this.c = activity;
-        this.d = g6Var;
-        this.e = messageObject;
+    public x21(b31 b31Var, Context context) {
+        this.d = b31Var;
+        this.c = context;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                xn xnVar = this.b;
-                org.telegram.ui.Components.qc a02 = org.telegram.ui.Components.qc.a0(xnVar);
-                String string = LocaleController.getString(R.string.AdReported);
-                final int i10 = 1;
-                final Activity activity = this.c;
-                a02.c(AndroidUtilities.replaceSingleTag(string, -1, 2, new Runnable() { // from class: org.telegram.ui.y21
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i10) {
-                            case 0:
-                                af.g.s(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                af.g.s(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                af.g.s(activity, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, this.d)).j();
-                MessageObject messageObject = this.e;
-                xnVar.Fa(messageObject);
-                xnVar.Ha(messageObject);
-                break;
-            case 1:
-                xn xnVar2 = this.b;
-                org.telegram.ui.Components.qc a03 = org.telegram.ui.Components.qc.a0(xnVar2);
-                String string2 = LocaleController.getString(R.string.AdReported);
-                final int i11 = 0;
-                final Activity activity2 = this.c;
-                a03.c(AndroidUtilities.replaceSingleTag(string2, -1, 2, new Runnable() { // from class: org.telegram.ui.y21
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i11) {
-                            case 0:
-                                af.g.s(activity2, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                af.g.s(activity2, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                af.g.s(activity2, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, this.d)).j();
-                MessageObject messageObject2 = this.e;
-                xnVar2.Fa(messageObject2);
-                xnVar2.Ha(messageObject2);
-                break;
-            default:
-                xn xnVar3 = this.b;
-                org.telegram.ui.Components.qc a04 = org.telegram.ui.Components.qc.a0(xnVar3);
-                String string3 = LocaleController.getString(R.string.AdReported);
-                final int i12 = 2;
-                final Activity activity3 = this.c;
-                a04.c(AndroidUtilities.replaceSingleTag(string3, -1, 2, new Runnable() { // from class: org.telegram.ui.y21
-                    @Override // java.lang.Runnable
-                    public final void run() {
-                        switch (i12) {
-                            case 0:
-                                af.g.s(activity3, "https://promote.telegram.org/guidelines");
-                                break;
-                            case 1:
-                                af.g.s(activity3, "https://promote.telegram.org/guidelines");
-                                break;
-                            default:
-                                af.g.s(activity3, "https://promote.telegram.org/guidelines");
-                                break;
-                        }
-                    }
-                }, this.d)).j();
-                MessageObject messageObject3 = this.e;
-                xnVar3.Fa(messageObject3);
-                xnVar3.Ha(messageObject3);
-                break;
+    @Override // org.telegram.ui.Components.rl0
+    public final boolean D(f2.m1 m1Var) {
+        int i10 = m1Var.f;
+        return i10 == 3 || i10 == 2;
+    }
+
+    @Override // f2.p0
+    public final int h() {
+        b31 b31Var = this.d;
+        return b31Var.h + (b31Var.f < 0 ? b31Var.getMediaDataController().getReactionsList().size() : 0) + 1;
+    }
+
+    @Override // f2.p0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 0;
         }
+        b31 b31Var = this.d;
+        if (i10 == b31Var.d) {
+            return 2;
+        }
+        if (i10 == b31Var.f) {
+            return 3;
+        }
+        return i10 == h() - 1 ? 4 : 1;
+    }
+
+    @Override // f2.p0
+    public final void v(f2.m1 m1Var, int i10) {
+        int i11;
+        int i12;
+        if (j(i10) != 1) {
+            return;
+        }
+        org.telegram.ui.Cells.y yVar = (org.telegram.ui.Cells.y) m1Var.a;
+        b31 b31Var = this.d;
+        TLRPC.TL_availableReaction tL_availableReaction = b31Var.getMediaDataController().getReactionsList().get(i10 - b31Var.e);
+        String str = tL_availableReaction.reaction;
+        i11 = ((org.telegram.ui.ActionBar.p2) b31Var).currentAccount;
+        boolean contains = str.contains(MediaDataController.getInstance(i11).getDoubleTapReaction());
+        i12 = ((org.telegram.ui.ActionBar.p2) b31Var).currentAccount;
+        yVar.a(tL_availableReaction, contains, i12);
+    }
+
+    @Override // f2.p0
+    public final f2.m1 x(ViewGroup viewGroup, int i10) {
+        org.telegram.ui.ActionBar.f5 f5Var;
+        View view;
+        b31 b31Var = this.d;
+        Context context = this.c;
+        if (i10 == 0) {
+            f5Var = ((org.telegram.ui.ActionBar.p2) b31Var).parentLayout;
+            org.telegram.ui.Cells.ea eaVar = new org.telegram.ui.Cells.ea(context, f5Var, 2);
+            eaVar.setImportantForAccessibility(4);
+            eaVar.r = b31Var;
+            view = eaVar;
+        } else if (i10 == 2) {
+            org.telegram.ui.Cells.a9 a9Var = new org.telegram.ui.Cells.a9(context);
+            a9Var.setText(LocaleController.getString(R.string.DoubleTapPreviewRational));
+            view = a9Var;
+        } else if (i10 == 3) {
+            a31 a31Var = new a31(b31Var, context);
+            a31Var.a(false);
+            view = a31Var;
+        } else if (i10 != 4) {
+            view = new org.telegram.ui.Cells.y(context, true, true);
+        } else {
+            View inVar = new org.telegram.ui.Components.in(context, 20);
+            inVar.setTag(-33024);
+            view = inVar;
+        }
+        return new org.telegram.ui.Components.el0(view);
     }
 }

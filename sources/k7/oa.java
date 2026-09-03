@@ -1,8 +1,8 @@
 package k7;
 
-import org.telegram.ui.Components.az0;
+import org.telegram.ui.Components.zy0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class oa implements v2.e {
     public static oa b;
@@ -77,7 +77,7 @@ public final class oa implements v2.e {
         aVar.b(c6.class, v1.a);
         aVar.b(e6.class, x1.a);
         aVar.b(f6.class, y1.a);
-        aVar.b(az0.class, z1.a);
+        aVar.b(zy0.class, z1.a);
         aVar.b(g6.class, a2.a);
         aVar.b(h6.class, b2.a);
         aVar.b(h0.class, l1.a);
@@ -167,7 +167,7 @@ public final class oa implements v2.e {
         aVar.b(t.class, y0.a);
     }
 
-    @Override // v2.e
+    @Override // v2.e, f3.f
     public Object apply(Object obj) {
         switch (this.a) {
         }

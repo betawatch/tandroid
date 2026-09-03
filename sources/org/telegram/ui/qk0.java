@@ -30,7 +30,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.NumberTextView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class qk0 extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.Components.zj, NotificationCenter.NotificationCenterDelegate {
     public int B;
@@ -39,7 +39,7 @@ public final class qk0 extends org.telegram.ui.ActionBar.p2 implements org.teleg
     public ok0 E;
     public boolean F;
     public final SparseArray G;
-    public org.telegram.ui.Components.bo H;
+    public org.telegram.ui.Components.ao H;
     public long I;
     public int J;
     public ok0 K;
@@ -50,7 +50,7 @@ public final class qk0 extends org.telegram.ui.ActionBar.p2 implements org.teleg
     public final ArrayList b;
     public final ArrayList c;
     public NumberTextView d;
-    public org.telegram.ui.Components.tl0 e;
+    public org.telegram.ui.Components.sl0 e;
     public nk0 f;
     public final org.telegram.ui.ActionBar.g6 h;
     public int n;
@@ -259,9 +259,9 @@ public final class qk0 extends org.telegram.ui.ActionBar.p2 implements org.teleg
                 this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsSoundReactions));
             }
         } else {
-            org.telegram.ui.Components.bo boVar = new org.telegram.ui.Components.bo(context, null, false, this.h);
-            this.H = boVar;
-            boVar.setOccupyStatusBar(!AndroidUtilities.isTablet());
+            org.telegram.ui.Components.ao aoVar = new org.telegram.ui.Components.ao(context, null, false, this.h);
+            this.H = aoVar;
+            aoVar.setOccupyStatusBar(!AndroidUtilities.isTablet());
             this.actionBar.addView(this.H, 0, k7.c6.d(-2, -1.0f, 51, !this.inPreviewMode ? 56.0f : 0.0f, 0.0f, 40.0f, 0.0f));
             if (this.I >= 0) {
                 TLRPC.User user = getMessagesController().getUser(Long.valueOf(this.I));
@@ -293,9 +293,9 @@ public final class qk0 extends org.telegram.ui.ActionBar.p2 implements org.teleg
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.a7, this.h));
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.e = tl0Var;
-        tl0Var.p1();
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.e = sl0Var;
+        sl0Var.o1();
         this.actionBar.setAdaptiveBackground(this.e);
         frameLayout.addView(this.e, k7.c6.c(-1.0f, -1));
         nk0 nk0Var = new nk0(this);

@@ -14,7 +14,7 @@ import k7.a7;
 import s8.i0;
 import s8.t;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class i extends d7 {
     public static final q0 b = new q0(16);
@@ -183,13 +183,13 @@ public final class i extends d7 {
             return null;
         }
         if (gVar != null) {
-            boolean d = gVar.d(i19, u10, u11, u12, u13);
+            boolean a2 = gVar.a(i19, u10, u11, u12, u13);
             i19 = i19;
             r12 = u11;
             i12 = u10;
             i13 = u12;
             i14 = u13;
-            if (!d) {
+            if (!a2) {
                 wVar.F(i21);
                 return null;
             }

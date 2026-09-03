@@ -14,7 +14,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class hz extends LinearLayout {
     public final org.telegram.ui.ActionBar.g6 a;
@@ -38,7 +38,7 @@ public final class hz extends LinearLayout {
         addView(frameLayout, k7.c6.o(-1, 226, 1.0f, 119));
         org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
         this.c = p9Var;
-        p9Var.setImageDrawable(new org.telegram.ui.Components.ij0(R.raw.topics_tabs, AndroidUtilities.dp(160.0f), "topics_tabs", AndroidUtilities.dp(160.0f)));
+        p9Var.setImageDrawable(new org.telegram.ui.Components.hj0(R.raw.topics_tabs, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
         frameLayout.addView(p9Var, k7.c6.d(160, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
         FrameLayout frameLayout2 = new FrameLayout(context);
         int i10 = org.telegram.ui.ActionBar.k6.z6;
@@ -63,7 +63,7 @@ public final class hz extends LinearLayout {
         addView(frameLayout4, k7.c6.o(-1, 226, 1.0f, 119));
         org.telegram.ui.Components.p9 p9Var2 = new org.telegram.ui.Components.p9(context);
         this.f = p9Var2;
-        p9Var2.setImageDrawable(new org.telegram.ui.Components.ij0(R.raw.topics_list, AndroidUtilities.dp(160.0f), "topics_list", AndroidUtilities.dp(160.0f)));
+        p9Var2.setImageDrawable(new org.telegram.ui.Components.hj0(R.raw.topics_list, AndroidUtilities.dp(160.0f), AndroidUtilities.dp(160.0f)));
         frameLayout4.addView(p9Var2, k7.c6.d(160, 160.0f, 49, 0.0f, 12.33f, 0.0f, 0.0f));
         FrameLayout frameLayout5 = new FrameLayout(context);
         TextView b12 = k7.g6.b(context, 14.0f, i10, true, null);
@@ -127,7 +127,7 @@ public final class hz extends LinearLayout {
         if (z4) {
             p9Var = p9Var2;
         }
-        org.telegram.ui.Components.ij0 lottieAnimation = p9Var.getImageReceiver().getLottieAnimation();
+        org.telegram.ui.Components.hj0 lottieAnimation = p9Var.getImageReceiver().getLottieAnimation();
         if (lottieAnimation != null) {
             if (lottieAnimation.r() > (z4 ? 0.85f : 0.8f)) {
                 lottieAnimation.Q(0.0f, false);

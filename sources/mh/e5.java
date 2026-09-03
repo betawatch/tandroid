@@ -13,10 +13,10 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.Premium.LimitPreviewView;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.tz0;
+import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.sz0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class e5 extends org.telegram.ui.Components.ma {
     public final ArrayList X;
@@ -46,14 +46,14 @@ public final class e5 extends org.telegram.ui.Components.ma {
         b11.setText(LocaleController.getString(R.string.Gift2UpgradeCostsText));
         this.U.addView(b11, k7.c6.t(-1, -2, 17, 32, 10, 32, 10));
         int currentTime = ConnectionsManager.getInstance(this.currentAccount).getCurrentTime();
-        tz0 tz0Var = new tz0(context, g6Var);
+        sz0 sz0Var = new sz0(context, g6Var);
         int i12 = 0;
         boolean z4 = false;
         while (i12 < arrayList.size()) {
             if (currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i12)).date || ((i10 = i12 + 1) < arrayList.size() && currentTime <= ((TL_stars.StarGiftUpgradePrice) arrayList.get(i10)).date)) {
                 f10 = f12;
                 Date date = new Date(r13.date * 1000);
-                tz0Var.c(LocaleController.getInstance().getFormatterDay().format(date) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date), ja.X0(false, l.d.l((int) r13.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                sz0Var.c(LocaleController.getInstance().getFormatterDay().format(date) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date), ja.X0(false, l.d.l((int) r13.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
                 z4 = true;
             } else {
                 f10 = f12;
@@ -70,11 +70,11 @@ public final class e5 extends org.telegram.ui.Components.ma {
                 i13++;
                 TL_stars.StarGiftUpgradePrice starGiftUpgradePrice = (TL_stars.StarGiftUpgradePrice) obj;
                 Date date2 = new Date(starGiftUpgradePrice.date * 1000);
-                tz0Var.c(LocaleController.getInstance().getFormatterDay().format(date2) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date2), ja.X0(false, l.d.l((int) starGiftUpgradePrice.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
+                sz0Var.c(LocaleController.getInstance().getFormatterDay().format(date2) + ", " + LocaleController.getInstance().getFormatterDayMonth().format(date2), ja.X0(false, l.d.l((int) starGiftUpgradePrice.upgrade_stars, ',', new StringBuilder("⭐️ ")), 0.8f, null), null, null);
             }
         }
         float f14 = f13 + 14.0f;
-        this.U.addView(tz0Var, k7.c6.r(-1, -2, 7, f14, 16.0f, f14, 15.0f));
+        this.U.addView(sz0Var, k7.c6.r(-1, -2, 7, f14, 16.0f, f14, 15.0f));
         TextView b12 = k7.g6.b(context, 12.0f, org.telegram.ui.ActionBar.k6.y6, false, null);
         b12.setGravity(17);
         b12.setText(LocaleController.getString(R.string.Gift2UpgradeCostsFooter));
@@ -91,8 +91,8 @@ public final class e5 extends org.telegram.ui.Components.ma {
         float f16 = f15 + 16.0f;
         this.V.addView(dVar, k7.c6.d(-1, 48.0f, 119, f16, 16.0f, f16, 16.0f));
         this.containerView.addView(this.V, k7.c6.e(-1, -2, 87));
-        tl0 tl0Var = this.d;
-        tl0Var.setPadding(tl0Var.getPaddingLeft(), tl0Var.getPaddingTop(), tl0Var.getPaddingRight(), AndroidUtilities.dp(80.0f) + tl0Var.getPaddingBottom());
+        sl0 sl0Var = this.d;
+        sl0Var.setPadding(sl0Var.getPaddingLeft(), sl0Var.getPaddingTop(), sl0Var.getPaddingRight(), AndroidUtilities.dp(80.0f) + sl0Var.getPaddingBottom());
         this.W.g(g5.g2(LocaleController.getString(R.string.Understood)), false, true);
         this.W.setOnClickListener(new androidx.mediarouter.app.c(this, 21));
     }

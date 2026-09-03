@@ -1,61 +1,49 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class zg1 extends org.telegram.ui.Components.i51 {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class zg1 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ UserInfoActivity b;
 
-    static {
-        org.telegram.ui.Components.i51.setup(new zg1());
+    public /* synthetic */ zg1(UserInfoActivity userInfoActivity, int i10) {
+        this.a = i10;
+        this.b = userInfoActivity;
     }
 
-    @Override // org.telegram.ui.Components.i51
-    public final void bindView(View view, org.telegram.ui.Components.j51 j51Var, boolean z4, org.telegram.ui.Components.x51 x51Var, org.telegram.ui.Components.i61 i61Var) {
-        ah1 ah1Var = (ah1) view;
-        int i10 = j51Var.k;
-        CharSequence charSequence = j51Var.l;
-        CharSequence charSequence2 = j51Var.m;
-        boolean z10 = j51Var.q;
-        boolean z11 = j51Var.r;
-        int i11 = j51Var.z;
-        TextView textView = ah1Var.d;
-        TextView textView2 = ah1Var.e;
-        ImageView imageView = ah1Var.f;
-        ah1Var.h = z10;
-        ah1Var.n = z11;
-        ImageView imageView2 = ah1Var.b;
-        imageView2.setImageResource(i10);
-        if (i11 != 0) {
-            imageView.setVisibility(0);
-            imageView.setImageResource(i11);
-        } else {
-            imageView.setVisibility(8);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                UserInfoActivity userInfoActivity = this.b;
+                userInfoActivity.G = (TL_account.TL_birthday) obj;
+                org.telegram.ui.Components.a61 a61Var = userInfoActivity.x;
+                if (a61Var != null) {
+                    a61Var.V2.N(true);
+                }
+                userInfoActivity.b0(true);
+                break;
+            default:
+                TLRPC.Chat chat = (TLRPC.Chat) obj;
+                UserInfoActivity userInfoActivity2 = this.b;
+                if (userInfoActivity2.H != chat) {
+                    userInfoActivity2.H = chat;
+                    if (chat != null) {
+                        l.d.v(R.string.EditProfileChannelSet, org.telegram.ui.Components.qc.a0(userInfoActivity2), R.raw.contact_check, 36);
+                    }
+                    userInfoActivity2.b0(true);
+                    org.telegram.ui.Components.a61 a61Var2 = userInfoActivity2.x;
+                    if (a61Var2 != null) {
+                        a61Var2.V2.N(true);
+                        break;
+                    }
+                }
+                break;
         }
-        textView.setText(charSequence);
-        textView2.setText(charSequence2);
-        textView2.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
-        int dp = AndroidUtilities.dp(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
-        ah1Var.c.setPadding(0, dp, 0, dp);
-        org.telegram.ui.ActionBar.g6 g6Var = ah1Var.a;
-        int v02 = org.telegram.ui.ActionBar.k6.v0(ah1Var.n ? org.telegram.ui.ActionBar.k6.q7 : ah1Var.h ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.G6, g6Var);
-        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
-        imageView2.setColorFilter(new PorterDuffColorFilter(v02, mode));
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(ah1Var.n ? org.telegram.ui.ActionBar.k6.q7 : ah1Var.h ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.G6, g6Var), mode));
-        textView.setTextColor(org.telegram.ui.ActionBar.k6.v0(ah1Var.n ? org.telegram.ui.ActionBar.k6.p7 : ah1Var.h ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.G6, g6Var));
-        textView2.setTextColor(org.telegram.ui.ActionBar.k6.v0(ah1Var.n ? org.telegram.ui.ActionBar.k6.p7 : ah1Var.h ? org.telegram.ui.ActionBar.k6.n6 : org.telegram.ui.ActionBar.k6.y6, g6Var));
-    }
-
-    @Override // org.telegram.ui.Components.i51
-    public final View createView(Context context, org.telegram.ui.Components.tl0 tl0Var, int i10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
-        return new ah1(context, g6Var);
     }
 }

@@ -9,7 +9,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stats;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class vd implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -32,7 +32,7 @@ public final /* synthetic */ class vd implements RequestDelegate {
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new tt0(tL_error, 22));
+                    AndroidUtilities.runOnUIThread(new yt0(tL_error, 22));
                     break;
                 }
                 break;
@@ -47,17 +47,17 @@ public final /* synthetic */ class vd implements RequestDelegate {
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
                                     TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
-                                    t91 f02 = ha1.f0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
+                                    z91 f02 = na1.f0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
                                     ke keVar3 = keVar2;
                                     keVar3.l1 = f02;
                                     TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
                                     if (statsGraph != null) {
                                         statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
                                     }
-                                    keVar3.m1 = ha1.f0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
-                                    t91 t91Var = keVar3.l1;
-                                    if (t91Var != null) {
-                                        t91Var.n = true;
+                                    keVar3.m1 = na1.f0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
+                                    z91 z91Var = keVar3.l1;
+                                    if (z91Var != null) {
+                                        z91Var.n = true;
                                     }
                                     keVar3.g1 = tL_payments_starsRevenueStats.usd_rate;
                                     keVar3.g0(true, tL_payments_starsRevenueStats.status);
@@ -92,17 +92,17 @@ public final /* synthetic */ class vd implements RequestDelegate {
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 instanceof TLRPC.TL_payments_starsRevenueStats) {
                                     TLRPC.TL_payments_starsRevenueStats tL_payments_starsRevenueStats = (TLRPC.TL_payments_starsRevenueStats) tLObject2;
-                                    t91 f02 = ha1.f0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
+                                    z91 f02 = na1.f0(tL_payments_starsRevenueStats.top_hours_graph, LocaleController.getString(R.string.MonetizationGraphImpressions), 0, false);
                                     ke keVar32 = keVar3;
                                     keVar32.l1 = f02;
                                     TL_stats.StatsGraph statsGraph = tL_payments_starsRevenueStats.revenue_graph;
                                     if (statsGraph != null) {
                                         statsGraph.rate = (float) (1.0E7d / tL_payments_starsRevenueStats.usd_rate);
                                     }
-                                    keVar32.m1 = ha1.f0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
-                                    t91 t91Var = keVar32.l1;
-                                    if (t91Var != null) {
-                                        t91Var.n = true;
+                                    keVar32.m1 = na1.f0(statsGraph, LocaleController.getString(R.string.MonetizationGraphRevenue), 2, false);
+                                    z91 z91Var = keVar32.l1;
+                                    if (z91Var != null) {
+                                        z91Var.n = true;
                                     }
                                     keVar32.g1 = tL_payments_starsRevenueStats.usd_rate;
                                     keVar32.g0(true, tL_payments_starsRevenueStats.status);

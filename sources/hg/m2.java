@@ -27,16 +27,16 @@ import org.telegram.messenger.j5;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.c8;
 import org.telegram.ui.Components.f6;
-import org.telegram.ui.Components.gl0;
+import org.telegram.ui.Components.fl0;
 import org.telegram.ui.Components.io;
+import org.telegram.ui.Components.jl0;
 import org.telegram.ui.Components.kl0;
 import org.telegram.ui.Components.ll0;
-import org.telegram.ui.Components.ml0;
 import org.telegram.ui.Components.mo;
+import org.telegram.ui.Components.ok0;
 import org.telegram.ui.Components.pk0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qk0;
-import org.telegram.ui.Components.rk0;
 import org.telegram.ui.Components.s7;
 import org.telegram.ui.Components.t7;
 import org.telegram.ui.Components.uc0;
@@ -56,9 +56,9 @@ import org.telegram.ui.og0;
 import org.telegram.ui.wc0;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class m2 implements ml0, h5.j, MessagesStorage.BooleanCallback, uc0, ImageReceiver.ImageReceiverDelegate, y4, ll0, kl0, org.telegram.ui.ActionBar.c2, wc0, gl0 {
+public final /* synthetic */ class m2 implements ll0, h5.j, MessagesStorage.BooleanCallback, uc0, ImageReceiver.ImageReceiverDelegate, y4, kl0, jl0, org.telegram.ui.ActionBar.c2, wc0, fl0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ int b;
     public final /* synthetic */ Object c;
@@ -81,14 +81,14 @@ public final /* synthetic */ class m2 implements ml0, h5.j, MessagesStorage.Bool
         }
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         switch (this.a) {
         }
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         switch (this.a) {
             case 9:
@@ -159,18 +159,18 @@ public final /* synthetic */ class m2 implements ml0, h5.j, MessagesStorage.Bool
         return calendar.get(1) == i11 ? LocaleController.getInstance().getFormatterMonthOnly().format(calendar.getTimeInMillis()) : LocaleController.getInstance().getFormatterMonthYear().format(calendar.getTimeInMillis());
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
-        rk0 rk0Var = (rk0) this.c;
+        qk0 qk0Var = (qk0) this.c;
         if (this.b == 5) {
-            rk0Var.getClass();
+            qk0Var.getClass();
             return false;
         }
-        qk0 qk0Var = rk0Var.d0;
-        if (qk0Var == null || !(view instanceof pk0)) {
+        pk0 pk0Var = qk0Var.d0;
+        if (pk0Var == null || !(view instanceof ok0)) {
             return false;
         }
-        qk0Var.o(rk0Var, ((pk0) view).e, true, false);
+        pk0Var.o(qk0Var, ((ok0) view).e, true, false);
         return true;
     }
 
@@ -243,12 +243,12 @@ public final /* synthetic */ class m2 implements ml0, h5.j, MessagesStorage.Bool
         j5.b(this, imageReceiver);
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
         int i10 = this.a;
     }
 
-    @Override // org.telegram.ui.Components.gl0
+    @Override // org.telegram.ui.Components.fl0
     public int run() {
         f2.j0 j0Var = ((fc0) this.c).c;
         int dp = AndroidUtilities.dp(60.0f);
@@ -263,7 +263,7 @@ public final /* synthetic */ class m2 implements ml0, h5.j, MessagesStorage.Bool
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public boolean c(float f10, float f11, int i10, View view) {
         v2 v2Var = (v2) this.c;
         lg.a aVar = v2Var.a0;
@@ -340,11 +340,11 @@ public final /* synthetic */ class m2 implements ml0, h5.j, MessagesStorage.Bool
         this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void h() {
     }
 
-    @Override // org.telegram.ui.Components.ml0
+    @Override // org.telegram.ui.Components.ll0
     public /* synthetic */ void p(float f10) {
     }
 

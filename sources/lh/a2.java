@@ -12,13 +12,13 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.rq;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class a2 extends rq {
-    public l01 b;
+    public k01 b;
     public final Path c;
     public final Paint d;
     public final float e;
@@ -114,6 +114,6 @@ public final class a2 extends rq {
     }
 
     public final void e(int i10, CharSequence charSequence, boolean z4) {
-        this.b = new l01(charSequence, i10, z4 ? AndroidUtilities.bold() : null);
+        this.b = new k01(charSequence, i10, z4 ? AndroidUtilities.bold() : null);
     }
 }

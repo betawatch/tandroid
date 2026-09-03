@@ -1,23 +1,16 @@
 package qh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class m2 extends f2.w {
-    public final /* synthetic */ a3 Q;
+public final class m2 extends f2.v {
+    public final /* synthetic */ z2 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m2(a3 a3Var) {
-        super(3);
-        this.Q = a3Var;
+    public m2(z2 z2Var) {
+        this.c = z2Var;
     }
 
-    @Override // f2.w, f2.j0, f2.w0
-    public final void b0(bf.f fVar, f2.j1 j1Var) {
-        super.b0(fVar, j1Var);
-        a3 a3Var = this.Q;
-        if (a3Var.R) {
-            a3Var.R = false;
-            a3Var.a();
-        }
+    @Override // f2.v
+    public final int i(int i10) {
+        return (i10 == 0 || i10 == 1 || i10 == this.c.f.h() - 1) ? 3 : 1;
     }
 }

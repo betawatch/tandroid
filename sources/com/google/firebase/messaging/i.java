@@ -27,8 +27,8 @@ import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.p2;
 import org.telegram.ui.Components.ChatAttachAlertPhotoLayout;
-import org.telegram.ui.Components.j51;
-import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.Components.jl0;
 import org.telegram.ui.Components.voip.g2;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ap;
@@ -44,9 +44,9 @@ import org.telegram.ui.sb0;
 import org.telegram.ui.sl0;
 import s8.i0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements Continuation, f5.m, c2, kl0, at, androidx.car.app.utils.d {
+public final /* synthetic */ class i implements Continuation, f5.m, c2, jl0, at, androidx.car.app.utils.d {
     public final /* synthetic */ int a;
     public final /* synthetic */ boolean b;
     public final /* synthetic */ Object c;
@@ -59,7 +59,7 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, kl0, at,
         this.b = z4;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         return false;
     }
@@ -77,10 +77,10 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, kl0, at,
         int[] iArr = (int[]) this.d;
         Pattern pattern = LaunchActivity.y1;
         TLRPC.UserFull userFull = MessagesController.getInstance(launchActivity.L).getUserFull(user.id);
-        g2.n(user, this.b, userFull != null && userFull.video_calls_available, launchActivity, userFull, AccountInstance.getInstance(iArr[0]));
+        g2.m(user, this.b, userFull != null && userFull.video_calls_available, launchActivity, userFull, AccountInstance.getInstance(iArr[0]));
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         ChatAttachAlertPhotoLayout.J((ChatAttachAlertPhotoLayout) this.c, this.b, (g6) this.d, view, i10);
     }
@@ -155,7 +155,7 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, kl0, at,
                 TLRPC.TL_username tL_username = (TLRPC.TL_username) this.d;
                 boolean z11 = this.b;
                 dp dpVar = apVar.a;
-                dpVar.w1(tL_username, z11, true);
+                dpVar.v1(tL_username, z11, true);
                 dpVar.X2.V();
                 break;
             case 5:
@@ -163,13 +163,13 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, kl0, at,
                 TLRPC.User user = (TLRPC.User) this.d;
                 boolean z12 = this.b;
                 TLRPC.UserFull userFull = p2Var.getMessagesController().getUserFull(user.id);
-                g2.n(user, z12, userFull != null && userFull.video_calls_available, p2Var.getParentActivity(), userFull, p2Var.getAccountInstance());
+                g2.m(user, z12, userFull != null && userFull.video_calls_available, p2Var.getParentActivity(), userFull, p2Var.getAccountInstance());
                 break;
             case 6:
             case 8:
             default:
                 vf.v vVar = (vf.v) this.c;
-                (!this.b ? vVar.k : vVar.j).remove(Long.valueOf(((j51) this.d).x));
+                (!this.b ? vVar.k : vVar.j).remove(Long.valueOf(((h51) this.d).x));
                 vVar.e.run();
                 break;
             case 7:
@@ -247,7 +247,7 @@ public final /* synthetic */ class i implements Continuation, f5.m, c2, kl0, at,
         this.d = p2Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

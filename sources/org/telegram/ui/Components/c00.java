@@ -10,21 +10,21 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c00 implements kl0, ll0 {
+public final /* synthetic */ class c00 implements jl0, kl0 {
     public final /* synthetic */ l00 a;
 
     public /* synthetic */ c00(l00 l00Var) {
         this.a = l00Var;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ boolean Y0(View view) {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public void c(float f10, float f11, int i10, View view) {
         l00 l00Var = this.a;
         g00 g00Var = l00Var.G;
@@ -70,7 +70,7 @@ public final /* synthetic */ class c00 implements kl0, ll0 {
     /* JADX WARN: Removed duplicated region for block: B:90:0x01cb  */
     /* JADX WARN: Removed duplicated region for block: B:93:0x01e4  */
     /* JADX WARN: Removed duplicated region for block: B:97:0x01fd  */
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -177,15 +177,15 @@ public final /* synthetic */ class c00 implements kl0, ll0 {
                                     boolean z16 = z4;
                                     H.c(R.drawable.msg_edit, LocaleController.getString(z4 ? R.string.FilterEditAll : R.string.FilterEdit), new mh.r5(pwVar, z16, dialogFilter, 20), false);
                                     H.l(z11 ? R.drawable.msg_mute : R.drawable.msg_unmute, LocaleController.getString(z11 ? R.string.FilterMuteAll : R.string.FilterUnmuteAll), new mh.r5(pwVar, arrayList, z11, 21), dialogFilter == null && !arrayList.isEmpty());
-                                    H.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new l41(19, pwVar, arrayList), z15);
+                                    H.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new q51(18, pwVar, arrayList), z15);
                                     H.l(R.drawable.msg_share, org.telegram.ui.b10.x0((dialogFilter2 == null && dialogFilter2.isMyChatlist()) ? -1 : 0, LocaleController.getString(R.string.LinkActionShare), true), new org.telegram.ui.sq(pwVar, zArr, dialogFilter2, 3), z10);
-                                    H.m(!z16, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new l41(20, pwVar, dialogFilter));
+                                    H.m(!z16, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new q51(19, pwVar, dialogFilter));
                                     H.s = 96;
                                     H.i = 3;
                                     H.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
                                     H.Z();
                                     pyVar.I0 = H;
-                                    l00Var.C.d1(true);
+                                    l00Var.C.c1(true);
                                     return true;
                                 }
                                 dialogFilter2 = dialogFilter3;
@@ -211,15 +211,15 @@ public final /* synthetic */ class c00 implements kl0, ll0 {
                             if (dialogFilter == null) {
                             }
                             H2.l(z11 ? R.drawable.msg_mute : R.drawable.msg_unmute, LocaleController.getString(z11 ? R.string.FilterMuteAll : R.string.FilterUnmuteAll), new mh.r5(pwVar, arrayList, z11, 21), dialogFilter == null && !arrayList.isEmpty());
-                            H2.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new l41(19, pwVar, arrayList), z152);
+                            H2.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new q51(18, pwVar, arrayList), z152);
                             H2.l(R.drawable.msg_share, org.telegram.ui.b10.x0((dialogFilter2 == null && dialogFilter2.isMyChatlist()) ? -1 : 0, LocaleController.getString(R.string.LinkActionShare), true), new org.telegram.ui.sq(pwVar, zArr, dialogFilter2, 3), z10);
-                            H2.m(!z162, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new l41(20, pwVar, dialogFilter));
+                            H2.m(!z162, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new q51(19, pwVar, dialogFilter));
                             H2.s = 96;
                             H2.i = 3;
                             H2.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
                             H2.Z();
                             pyVar.I0 = H2;
-                            l00Var.C.d1(true);
+                            l00Var.C.c1(true);
                             return true;
                         }
                     }
@@ -248,15 +248,15 @@ public final /* synthetic */ class c00 implements kl0, ll0 {
                     if (dialogFilter == null) {
                     }
                     H22.l(z11 ? R.drawable.msg_mute : R.drawable.msg_unmute, LocaleController.getString(z11 ? R.string.FilterMuteAll : R.string.FilterUnmuteAll), new mh.r5(pwVar, arrayList, z11, 21), dialogFilter == null && !arrayList.isEmpty());
-                    H22.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new l41(19, pwVar, arrayList), z1522);
+                    H22.l(R.drawable.msg_markread, LocaleController.getString(R.string.MarkAllAsRead), new q51(18, pwVar, arrayList), z1522);
                     H22.l(R.drawable.msg_share, org.telegram.ui.b10.x0((dialogFilter2 == null && dialogFilter2.isMyChatlist()) ? -1 : 0, LocaleController.getString(R.string.LinkActionShare), true), new org.telegram.ui.sq(pwVar, zArr2, dialogFilter2, 3), z10);
-                    H22.m(!z1622, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new l41(20, pwVar, dialogFilter));
+                    H22.m(!z1622, R.drawable.msg_delete, LocaleController.getString(R.string.FilterDeleteItem), true, new q51(19, pwVar, dialogFilter));
                     H22.s = 96;
                     H22.i = 3;
                     H22.a0(AndroidUtilities.dp(-12.0f), AndroidUtilities.dp(-4.0f));
                     H22.Z();
                     pyVar.I0 = H22;
-                    l00Var.C.d1(true);
+                    l00Var.C.c1(true);
                     return true;
                 }
             }
@@ -264,7 +264,7 @@ public final /* synthetic */ class c00 implements kl0, ll0 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.kl0
+    @Override // org.telegram.ui.Components.jl0
     public /* synthetic */ void r0(View view, float f10, float f11) {
     }
 }

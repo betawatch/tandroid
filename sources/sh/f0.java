@@ -18,13 +18,13 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Components.db;
 import org.telegram.ui.Components.eb;
 import org.telegram.ui.Components.gc;
+import org.telegram.ui.Components.hj0;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.ij0;
 import org.telegram.ui.Components.z5;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class f0 extends eb {
     public final g6 a;
@@ -184,9 +184,9 @@ public final class f0 extends eb {
             e0Var.h = false;
             z5Var.getClass();
             z5Var.d(0.0f, true);
-            ij0 ij0Var = e0Var.l;
-            if (ij0Var != null) {
-                ij0Var.A(true);
+            hj0 hj0Var = e0Var.l;
+            if (hj0Var != null) {
+                hj0Var.A(true);
                 e0Var.l = null;
             }
             z5 z5Var2 = e0Var.i;
@@ -229,10 +229,10 @@ public final class f0 extends eb {
             setButton(2);
             if (!e0Var.h) {
                 e0Var.h = true;
-                ij0 ij0Var2 = new ij0(R.raw.contact_check, AndroidUtilities.dp(40.0f), "contact_check", AndroidUtilities.dp(40.0f));
-                e0Var.l = ij0Var2;
-                ij0Var2.s0 = e0Var.a;
-                ij0Var2.H(true);
+                hj0 hj0Var2 = new hj0(R.raw.contact_check, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(40.0f));
+                e0Var.l = hj0Var2;
+                hj0Var2.s0 = e0Var.a;
+                hj0Var2.H(true);
                 e0Var.l.start();
                 e0Var.g = 1.0f;
             }

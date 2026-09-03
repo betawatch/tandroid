@@ -8,9 +8,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.telegram.ui.Components.ai;
 import org.telegram.ui.Components.jb;
-import q5.g0;
+import q5.c0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class l extends we.a {
     public static final Logger r = Logger.getLogger(l.class.getName());
@@ -462,7 +462,7 @@ public final class l extends we.a {
         long j11;
         char c10;
         char c11;
-        g0 g0Var;
+        c0 c0Var;
         int i11;
         int i12;
         int read;
@@ -510,13 +510,13 @@ public final class l extends we.a {
                         i16 += read5;
                     } catch (EOFException unused) {
                         c11 = 1;
-                        g0Var = null;
-                        if (g0Var != null) {
+                        c0Var = null;
+                        if (c0Var != null) {
                         }
                     }
                 }
                 c10 = 3;
-                g0Var = new g0(kVar2, bArr, false, 18);
+                c0Var = new c0(kVar2, bArr, false, 19);
                 if (kVar2.g == 0 && kVar2.b == 1) {
                     j jVar = new j();
                     jVar.a = (short) -1;
@@ -559,11 +559,11 @@ public final class l extends we.a {
             i14 = read2;
             read2 = jbVar2.a(mVar) ? -1 : mVar.read();
         }
-        if (g0Var != null) {
+        if (c0Var != null) {
             throw new i("No audio frame");
         }
-        byte[] bArr2 = (byte[]) g0Var.b;
-        k kVar3 = (k) g0Var.c;
+        byte[] bArr2 = (byte[]) c0Var.c;
+        k kVar3 = (k) c0Var.b;
         int i19 = iArr[kVar3.e][kVar3.a];
         int i20 = i19 + 4;
         if (bArr2.length >= i19 + 16 && i20 >= 0 && bArr2.length >= i19 + 12 && (((b10 = bArr2[i20]) == 88 && bArr2[i19 + 5] == 105 && bArr2[i19 + 6] == 110 && bArr2[i19 + 7] == 103) || (b10 == 73 && bArr2[i19 + 5] == 110 && bArr2[i19 + 6] == 102 && bArr2[i19 + 7] == 111))) {
@@ -588,7 +588,7 @@ public final class l extends we.a {
         int i21 = 1;
         boolean z4 = false;
         while (true) {
-            k kVar4 = (k) g0Var.c;
+            k kVar4 = (k) c0Var.b;
             if (i21 == c12 && !z4 && j10 > j11) {
                 return kVar4.c(j10 - length);
             }
@@ -638,16 +638,16 @@ public final class l extends we.a {
                                 } catch (EOFException unused2) {
                                 }
                             }
-                            g0Var = new g0(kVar, bArr3, false, 18);
-                            if (g0Var == null) {
+                            c0Var = new c0(kVar, bArr3, false, 19);
+                            if (c0Var == null) {
                                 return (((length2 * 1000) * i21) * 8) / j15;
                             }
-                            int a10 = ((k) g0Var.c).a();
+                            int a10 = ((k) c0Var.b).a();
                             if (a10 != a2) {
                                 z4 = true;
                             }
                             j15 += a10;
-                            length2 += ((byte[]) g0Var.b).length;
+                            length2 += ((byte[]) c0Var.c).length;
                             i21++;
                             jbVar2 = jbVar;
                             c12 = i12;
@@ -660,12 +660,12 @@ public final class l extends we.a {
                     j12 = length;
                 }
                 mVar.reset();
-                g0Var = null;
-                if (g0Var == null) {
+                c0Var = null;
+                if (c0Var == null) {
                 }
             }
-            g0Var = null;
-            if (g0Var == null) {
+            c0Var = null;
+            if (c0Var == null) {
             }
         }
     }

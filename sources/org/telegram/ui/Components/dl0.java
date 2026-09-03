@@ -1,26 +1,44 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import android.view.ViewParent;
+
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class dl0 extends sl0 {
-    public boolean E(tl0 tl0Var) {
-        return true;
-    }
+public final class dl0 implements View.OnTouchListener {
+    public float a;
+    public float b;
+    public boolean c;
 
-    public abstract String F(int i10);
-
-    public abstract void G(tl0 tl0Var, float f10, int[] iArr);
-
-    public float H(tl0 tl0Var) {
-        return tl0Var.computeVerticalScrollOffset() / ((k() * tl0Var.getChildAt(0).getMeasuredHeight()) - tl0Var.getMeasuredHeight());
-    }
-
-    public void I() {
-    }
-
-    public void J(tl0 tl0Var) {
-    }
-
-    public void K() {
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        ViewParent parent = view.getParent();
+        if (parent != null) {
+            if (motionEvent.getAction() == 0) {
+                this.a = motionEvent.getX();
+                this.b = motionEvent.getY();
+                this.c = true;
+                parent.requestDisallowInterceptTouchEvent(true);
+            }
+            if (motionEvent.getAction() == 2) {
+                float x10 = this.a - motionEvent.getX();
+                float y10 = this.b - motionEvent.getY();
+                float scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
+                if (this.c) {
+                    if (Math.sqrt((y10 * y10) + (x10 * x10)) > scaledTouchSlop) {
+                        this.c = false;
+                        parent.requestDisallowInterceptTouchEvent(false);
+                        return false;
+                    }
+                }
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                this.c = false;
+                parent.requestDisallowInterceptTouchEvent(false);
+                return false;
+            }
+        }
+        return false;
     }
 }

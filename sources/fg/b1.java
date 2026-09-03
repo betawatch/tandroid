@@ -18,14 +18,14 @@ import org.telegram.messenger.y3;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.j90;
 import org.telegram.ui.Components.k6;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.tp;
 import org.telegram.ui.Components.vq;
 import org.telegram.ui.Components.wq;
 import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class b1 extends FrameLayout implements j90 {
     public boolean B;
@@ -52,7 +52,7 @@ public class b1 extends FrameLayout implements j90 {
     public final Path v;
     public final org.telegram.ui.Components.voip.h w;
     public boolean x;
-    public final lj0 y;
+    public final kj0 y;
 
     public b1(Context context, g6 g6Var, boolean z4) {
         this(AndroidUtilities.dp(8.0f), context, g6Var, z4);
@@ -202,7 +202,7 @@ public class b1 extends FrameLayout implements j90 {
         invalidate();
     }
 
-    public lj0 getIconView() {
+    public kj0 getIconView() {
         return this.y;
     }
 
@@ -232,13 +232,13 @@ public class b1 extends FrameLayout implements j90 {
     }
 
     public void setIcon(int i10) {
-        lj0 lj0Var = this.y;
-        lj0Var.f(i10, 24, 24, null);
+        kj0 kj0Var = this.y;
+        kj0Var.f(i10, 24, 24, null);
         org.telegram.ui.Components.voip.h hVar = this.w;
         hVar.g = 2.0f;
         hVar.p = new eh.m(this, 5);
         invalidate();
-        lj0Var.setVisibility(0);
+        kj0Var.setVisibility(0);
     }
 
     @Override // org.telegram.ui.Components.j90
@@ -284,17 +284,17 @@ public class b1 extends FrameLayout implements j90 {
         a1Var.setTextColor(-1);
         a1Var.setTextSize(AndroidUtilities.dp(14.0f));
         a1Var.setTypeface(AndroidUtilities.bold());
-        lj0 lj0Var = new lj0(context);
-        this.y = lj0Var;
-        lj0Var.setColorFilter(-1);
-        lj0Var.setVisibility(8);
+        kj0 kj0Var = new kj0(context);
+        this.y = kj0Var;
+        kj0Var.setColorFilter(-1);
+        kj0Var.setVisibility(8);
         eg.s2 s2Var = new eg.s2(this, context, 3);
         this.r = s2Var;
         s2Var.addView(f10, c6.e(-2, -2, 17));
         int k10 = i0.a.k(-1, 120);
         s2Var.setBackground(org.telegram.ui.ActionBar.k6.i0(i10, i10, i10, i10, 0, k10, k10));
         f10.addView(a1Var, c6.q(-2, -2, 16));
-        f10.addView(lj0Var, c6.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
+        f10.addView(kj0Var, c6.p(24, 24, 0.0f, 16, 4, 0, 0, 0));
         addView(s2Var);
         setOutlineProvider(lf.q0.b);
         setClipToOutline(true);

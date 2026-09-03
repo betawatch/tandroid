@@ -10,12 +10,12 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.ui.Components.g91;
+import org.telegram.ui.Components.f91;
 import org.telegram.ui.Components.pr;
-import org.telegram.ui.ci1;
+import org.telegram.ui.ii1;
 import org.webrtc.OrientationHelper;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public abstract class x2 extends FrameLayout {
     public Activity a;
@@ -50,25 +50,25 @@ public abstract class x2 extends FrameLayout {
             return;
         }
         this.f = true;
-        if (ci1.k1 != null) {
+        if (ii1.k1 != null) {
             if (VoIPService.getSharedInstance() != null) {
-                int measuredHeight = ci1.k1.r0.getMeasuredHeight();
-                if (ci1.k1.A0 && !VoIPService.getSharedInstance().isConverting()) {
-                    ci1 ci1Var = ci1.k1;
-                    n2.l(ci1Var.b, ci1Var.a, ci1Var.r0.getMeasuredWidth(), measuredHeight, 0);
-                    WindowInsets windowInsets = ci1.k1.o0;
+                int measuredHeight = ii1.k1.r0.getMeasuredHeight();
+                if (ii1.k1.A0 && !VoIPService.getSharedInstance().isConverting()) {
+                    ii1 ii1Var = ii1.k1;
+                    n2.l(ii1Var.b, ii1Var.a, ii1Var.r0.getMeasuredWidth(), measuredHeight, 0);
+                    WindowInsets windowInsets = ii1.k1.o0;
                     if (windowInsets != null) {
                         n2.T = windowInsets.getSystemWindowInsetTop();
-                        ci1.k1.o0.getSystemWindowInsetBottom();
+                        ii1.k1.o0.getSystemWindowInsetBottom();
                     }
                 }
             }
-            ci1.k1.Z.d.release();
-            ci1.k1.a0.d.release();
-            ci1.k1.Y.release();
-            ci1.k1.l();
+            ii1.k1.Z.d.release();
+            ii1.k1.a0.d.release();
+            ii1.k1.Y.release();
+            ii1.k1.l();
         }
-        ci1.k1 = null;
+        ii1.k1 = null;
         if (this.b) {
             try {
                 ((WindowManager) this.a.getSystemService("window")).removeView(this);
@@ -76,7 +76,7 @@ public abstract class x2 extends FrameLayout {
             }
         } else {
             this.c.lock();
-            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new g91(this, 9)).setDuration(j10).setInterpolator(pr.f).start();
+            animate().translationY(getMeasuredHeight()).alpha(0.0f).setListener(new f91(this, 9)).setDuration(j10).setInterpolator(pr.f).start();
         }
     }
 

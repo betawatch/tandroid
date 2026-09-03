@@ -16,7 +16,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class m30 implements View.OnClickListener {
     public final z5 a = new z5(this, 5);
@@ -35,7 +35,7 @@ public final class m30 implements View.OnClickListener {
         k30 k30Var = d60Var.x;
         ArrayList arrayList = d60Var.n0;
         org.telegram.ui.Components.voip.w2 w2Var = d60Var.w;
-        org.telegram.ui.Components.ij0 ij0Var = d60Var.H0;
+        org.telegram.ui.Components.hj0 hj0Var = d60Var.H0;
         AccountInstance accountInstance = d60Var.d;
         if (d60Var.X0 == null || d60Var.C1 == 3) {
             return;
@@ -215,10 +215,10 @@ public final class m30 implements View.OnClickListener {
                 }
             }
         }
-        ij0Var.N(i16);
-        ij0Var.P(i16 - 1, this.a);
-        k30Var.setAnimation(ij0Var);
-        ij0Var.K(i11);
+        hj0Var.N(i16);
+        hj0Var.P(i16 - 1, this.a);
+        k30Var.setAnimation(hj0Var);
+        hj0Var.K(i11);
         k30Var.d();
         if (d60Var.C1 == 2) {
             long peerId = MessageObject.getPeerId(((TLRPC.GroupCallParticipant) d60Var.X0.participants.f(MessageObject.getPeerId(d60Var.x0))).peer);

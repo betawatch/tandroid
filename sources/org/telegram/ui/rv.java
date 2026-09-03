@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rv implements DialogInterface.OnClickListener {
     public final /* synthetic */ int a;
@@ -37,7 +37,7 @@ public final /* synthetic */ class rv implements DialogInterface.OnClickListener
                                     org.telegram.ui.Cells.r2 Q3 = py.Q3(pyVar.b0[i11]);
                                     ly lyVar = pyVar.b0[i11].a;
                                     int i12 = ly.s3;
-                                    lyVar.z1(true, Q3);
+                                    lyVar.y1(true, Q3);
                                 }
                                 i11++;
                             }
@@ -86,7 +86,7 @@ public final /* synthetic */ class rv implements DialogInterface.OnClickListener
                     break;
                 }
             default:
-                p81.c0((p81) this.b, i10);
+                v81.c0((v81) this.b, i10);
                 break;
         }
     }

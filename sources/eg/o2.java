@@ -6,11 +6,11 @@ import android.graphics.Path;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class o2 extends tl0 implements NotificationCenter.NotificationCenterDelegate {
+public final class o2 extends sl0 implements NotificationCenter.NotificationCenterDelegate {
     public final Path U2;
     public q0.a V2;
 
@@ -24,8 +24,8 @@ public final class o2 extends tl0 implements NotificationCenter.NotificationCent
         setClipToPadding(false);
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final Integer W0(int i10) {
+    @Override // org.telegram.ui.Components.sl0
+    public final Integer V0(int i10) {
         return 285212671;
     }
 
@@ -51,19 +51,19 @@ public final class o2 extends tl0 implements NotificationCenter.NotificationCent
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.customTypefacesLoaded);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.customTypefacesLoaded);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         super.onMeasure(i10, org.telegram.ui.b.B(16.0f, AndroidUtilities.dp(48.0f) * Math.min(dg.s0.c().size(), 6), TLObject.FLAG_30));
     }

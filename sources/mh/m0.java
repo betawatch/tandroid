@@ -26,15 +26,15 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.cd0;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.oq;
 import org.telegram.ui.Components.p40;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
-import org.telegram.ui.Components.tz0;
-import org.telegram.ui.Components.x51;
+import org.telegram.ui.Components.sz0;
+import org.telegram.ui.Components.w51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class m0 extends org.telegram.ui.Components.sa {
     public static final int[] t0 = {21600, 43200, 86400, 129600, 172800, 259200};
@@ -61,8 +61,8 @@ public final class m0 extends org.telegram.ui.Components.sa {
     public final oq[] o0;
     public final oq[] p0;
     public boolean q0;
-    public x51 r0;
-    public final j51 s0;
+    public w51 r0;
+    public final h51 s0;
 
     public m0(final Context context, final int i10, final long j10, TL_stars.TL_starGiftUnique tL_starGiftUnique, final org.telegram.ui.ActionBar.g6 g6Var, s1 s1Var) {
         super(context, null, true, false, false, false, false, 2, g6Var);
@@ -222,11 +222,11 @@ public final class m0 extends org.telegram.ui.Components.sa {
         d.leftMargin = i15 + i16;
         d.rightMargin += i16;
         this.containerView.addView(dVar, d);
-        tl0 tl0Var = this.d;
+        sl0 sl0Var = this.d;
         int i17 = this.backgroundPaddingLeft;
-        tl0Var.setPadding(i17, 0, i17, AndroidUtilities.dp(64.0f));
+        sl0Var.setPadding(i17, 0, i17, AndroidUtilities.dp(64.0f));
         this.d.setOverScrollMode(2);
-        this.s0 = j51.k(linearLayout);
+        this.s0 = h51.k(linearLayout);
         this.r0.N(false);
     }
 
@@ -259,7 +259,7 @@ public final class m0 extends org.telegram.ui.Components.sa {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r14v4 */
-    /* JADX WARN: Type inference failed for: r14v5, types: [org.telegram.ui.Components.sc[], org.telegram.ui.Components.sz0[]] */
+    /* JADX WARN: Type inference failed for: r14v5, types: [org.telegram.ui.Components.rz0[], org.telegram.ui.Components.sc[]] */
     /* JADX WARN: Type inference failed for: r14v8 */
     public static void Q(final m0 m0Var, int i10, Context context, org.telegram.ui.ActionBar.g6 g6Var, long j10) {
         String str;
@@ -300,18 +300,18 @@ public final class m0 extends org.telegram.ui.Components.sa {
                     org.telegram.ui.b.l(i11, m0Var.resourcesProvider, textView2, 1, 16.0f);
                     textView2.setText(AndroidUtilities.replaceTags(m0Var.j0.a == bVar ? LocaleController.formatString(R.string.GiftOfferTransferInfoTextStars, d, DialogObject.getShortName(j12), str) : LocaleController.formatString(R.string.GiftOfferTransferInfoTextTON, d, DialogObject.getShortName(j12), str)));
                     linearLayout.addView(textView2, k7.c6.t(-1, -2, 48, 24, 4, 24, 4));
-                    tz0 tz0Var = new tz0(m0Var.getContext(), m0Var.resourcesProvider);
+                    sz0 sz0Var = new sz0(m0Var.getContext(), m0Var.resourcesProvider);
                     final long sendPaidMessagesStars = MessagesController.getInstance(m0Var.currentAccount).getSendPaidMessagesStars(j12);
                     final mf.a g10 = mf.a.g(sendPaidMessagesStars, bVar);
-                    tz0Var.c(LocaleController.getString(R.string.GiftOfferRowOffer), ja.X0(z4, LocaleController.formatString(R.string.GiftOfferAmount, d), 0.8f, null), null, null);
+                    sz0Var.c(LocaleController.getString(R.string.GiftOfferRowOffer), ja.X0(z4, LocaleController.formatString(R.string.GiftOfferAmount, d), 0.8f, null), null, null);
                     if (sendPaidMessagesStars > 0) {
                         r14 = 0;
-                        tz0Var.c(LocaleController.getString(R.string.GiftOfferRowFee), ja.X0(false, LocaleController.formatString(R.string.GiftOfferAmount, g10.d()), 0.8f, null), null, null);
+                        sz0Var.c(LocaleController.getString(R.string.GiftOfferRowFee), ja.X0(false, LocaleController.formatString(R.string.GiftOfferAmount, g10.d()), 0.8f, null), null, null);
                     } else {
                         r14 = 0;
                     }
-                    tz0Var.c(LocaleController.getString(R.string.GiftOfferRowDuration), LocaleController.formatPluralString("GiftOfferHours", m0Var.k0 / 3600, new Object[0]), r14, r14);
-                    linearLayout.addView(tz0Var, k7.c6.t(-1, -2, 48, 23, 16, 23, 4));
+                    sz0Var.c(LocaleController.getString(R.string.GiftOfferRowDuration), LocaleController.formatPluralString("GiftOfferHours", m0Var.k0 / 3600, new Object[0]), r14, r14);
+                    linearLayout.addView(sz0Var, k7.c6.t(-1, -2, 48, 23, 16, 23, 4));
                     final long nextRandomId = SendMessagesHelper.getInstance(m0Var.currentAccount).getNextRandomId();
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
                     if (sendPaidMessagesStars == 0) {
@@ -545,11 +545,11 @@ public final class m0 extends org.telegram.ui.Components.sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        x51 x51Var = new x51(this.d, getContext(), this.currentAccount, 0, true, new eg.p1(this, 16), this.resourcesProvider);
-        this.r0 = x51Var;
-        x51Var.r = false;
-        return x51Var;
+    public final rl0 v(sl0 sl0Var) {
+        w51 w51Var = new w51(this.d, getContext(), this.currentAccount, 0, true, new eg.p1(this, 16), this.resourcesProvider);
+        this.r0 = w51Var;
+        w51Var.r = false;
+        return w51Var;
     }
 
     @Override // org.telegram.ui.Components.sa

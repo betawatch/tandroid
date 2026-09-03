@@ -41,12 +41,12 @@ import org.telegram.ui.Cells.t1;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.d90;
 import org.telegram.ui.Components.h90;
-import org.telegram.ui.Components.ij0;
-import org.telegram.ui.Components.lw0;
+import org.telegram.ui.Components.hj0;
+import org.telegram.ui.Components.kw0;
 import org.telegram.ui.Components.z8;
 import org.telegram.ui.Components.z80;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class c {
     public TextPaint A;
@@ -71,7 +71,7 @@ public final class c {
     public z8[] b;
     public final t1 c;
     public ImageReceiver d;
-    public ij0 e;
+    public hj0 e;
     public CharSequence[] f;
     public TLRPC.User[] g;
     public float[] h;
@@ -447,7 +447,7 @@ public final class c {
             }
             this.d.setAllowStartLottieAnimation(false);
             if (this.e == null) {
-                this.e = new ij0(org.telegram.messenger.R.raw.giveaway_results, AndroidUtilities.dp(120.0f), "" + org.telegram.messenger.R.raw.giveaway_results, AndroidUtilities.dp(120.0f));
+                this.e = new hj0(org.telegram.messenger.R.raw.giveaway_results, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f));
             }
             this.d.setImageBitmap(this.e);
             TLRPC.TL_messageMediaGiveawayResults tL_messageMediaGiveawayResults = (TLRPC.TL_messageMediaGiveawayResults) messageObject.messageOwner.media;
@@ -502,9 +502,9 @@ public final class c {
             Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
             float dp3 = AndroidUtilities.dp(2.0f);
             TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-            this.s = lw0.c(spannableStringBuilder, textPaint2, dp2, alignment, dp3, false, truncateAt, dp2, 10, true);
-            this.t = lw0.c(this.R, this.y, dp2, alignment, AndroidUtilities.dp(2.0f), false, truncateAt, dp2, 10, true);
-            this.u = lw0.c(spannableStringBuilder2, this.y, dp2, alignment, AndroidUtilities.dp(3.0f), false, truncateAt, dp2, 10, true);
+            this.s = kw0.c(spannableStringBuilder, textPaint2, dp2, alignment, dp3, false, truncateAt, dp2, 10, true);
+            this.t = kw0.c(this.R, this.y, dp2, alignment, AndroidUtilities.dp(2.0f), false, truncateAt, dp2, 10, true);
+            this.u = kw0.c(spannableStringBuilder2, this.y, dp2, alignment, AndroidUtilities.dp(3.0f), false, truncateAt, dp2, 10, true);
             int max = Math.max(i10, dp2);
             this.r = max - dp2;
             float f10 = max;
@@ -561,7 +561,7 @@ public final class c {
                     this.k[i14] = true;
                     this.g[i14] = user3;
                     user = user2;
-                    this.f[i14] = TextUtils.ellipsize(Emoji.replaceEmoji(UserObject.getUserName(user3), this.x.getFontMetricsInt(), false), this.x, f10 * 0.8f, TextUtils.TruncateAt.END);
+                    this.f[i14] = TextUtils.ellipsize(Emoji.replaceEmoji(UserObject.getUserName(user3), this.x.getFontMetricsInt(), false), this.x, 0.8f * f10, TextUtils.TruncateAt.END);
                     float[] fArr = this.h;
                     TextPaint textPaint4 = this.x;
                     CharSequence charSequence = this.f[i14];

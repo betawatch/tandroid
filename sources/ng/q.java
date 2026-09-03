@@ -14,11 +14,11 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.Components.l5;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.u5;
-import org.telegram.ui.r61;
+import org.telegram.ui.w61;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class q extends r61 {
+public final class q extends w61 {
     public boolean a2;
     public final /* synthetic */ s b2;
 
@@ -30,7 +30,7 @@ public final class q extends r61 {
         setDrawBackground(false);
     }
 
-    @Override // org.telegram.ui.r61, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.w61, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         super.onLayout(z4, i10, i11, i12, i13);
         if (this.a2) {
@@ -39,7 +39,7 @@ public final class q extends r61 {
         }
     }
 
-    @Override // org.telegram.ui.r61
+    @Override // org.telegram.ui.w61
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         s sVar = this.b2;
         int i10 = sVar.G;

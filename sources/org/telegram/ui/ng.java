@@ -10,7 +10,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ng implements Runnable {
     public final /* synthetic */ int a;
@@ -23,7 +23,7 @@ public final /* synthetic */ class ng implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        qh.f3 f3Var;
+        qh.e3 e3Var;
         int i10 = this.a;
         xn xnVar = this.b;
         switch (i10) {
@@ -162,7 +162,7 @@ public final /* synthetic */ class ng implements Runnable {
             case 20:
                 xnVar.fc = 0;
                 xnVar.gc = false;
-                xnVar.u0.f1();
+                xnVar.u0.e1();
                 break;
             case 21:
                 xnVar.q9(5);
@@ -172,8 +172,8 @@ public final /* synthetic */ class ng implements Runnable {
                 break;
             case 23:
                 nk nkVar = xnVar.O2;
-                if ((nkVar == null || nkVar.getVisibility() != 0) && (f3Var = xnVar.t1) != null) {
-                    f3Var.v();
+                if ((nkVar == null || nkVar.getVisibility() != 0) && (e3Var = xnVar.t1) != null) {
+                    e3Var.u();
                     break;
                 }
                 break;
@@ -191,8 +191,8 @@ public final /* synthetic */ class ng implements Runnable {
                 e6.bottomMargin = xnVar.V.getMeasuredHeight();
                 xnVar.U0.addView(xnVar.v1, e6);
                 xnVar.v1.setTranslationY(-AndroidUtilities.navigationBarHeight);
-                xnVar.v1.n(0.0f, xnVar.V.getEmojiButton().getX() + AndroidUtilities.dp(22.0f));
-                xnVar.v1.v();
+                xnVar.v1.m(0.0f, xnVar.V.getEmojiButton().getX() + AndroidUtilities.dp(22.0f));
+                xnVar.v1.u();
                 break;
             case 28:
                 int i17 = xn.Ec;

@@ -4,89 +4,48 @@ import h5.d0;
 import r3.r;
 import r3.t;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final class h implements f {
-    public final long a;
-    public final int b;
+public final class h implements g {
+    public final long[] a;
+    public final long[] b;
     public final long c;
     public final long d;
-    public final long e;
-    public final long[] f;
 
-    public h(long j10, int i10, long j11, long j12, long[] jArr) {
-        this.a = j10;
-        this.b = i10;
-        this.c = j11;
-        this.f = jArr;
-        this.d = j12;
-        this.e = j12 != -1 ? j10 + j12 : -1L;
+    public h(long[] jArr, long[] jArr2, long j10, long j11) {
+        this.a = jArr;
+        this.b = jArr2;
+        this.c = j10;
+        this.d = j11;
     }
 
-    @Override // y3.f
+    @Override // y3.g
     public final long a(long j10) {
-        long j11 = j10 - this.a;
-        if (!c() || j11 <= this.b) {
-            return 0L;
-        }
-        long[] jArr = this.f;
-        h5.a.j(jArr);
-        double d = (j11 * 256.0d) / this.d;
-        int e6 = d0.e(jArr, (long) d, true);
-        long j12 = this.c;
-        long j13 = (e6 * j12) / 100;
-        long j14 = jArr[e6];
-        int i10 = e6 + 1;
-        long j15 = (j12 * i10) / 100;
-        return Math.round((j14 == (e6 == 99 ? 256L : jArr[i10]) ? 0.0d : (d - j14) / (r0 - j14)) * (j15 - j13)) + j13;
+        return this.a[d0.e(this.b, j10, true)];
     }
 
-    @Override // y3.f
+    @Override // y3.g
     public final long b() {
-        return this.e;
+        return this.d;
     }
 
     @Override // r3.s
     public final boolean c() {
-        return this.f != null;
+        return true;
     }
 
     @Override // r3.s
     public final r f(long j10) {
-        double d;
-        double d10;
-        boolean c3 = c();
-        int i10 = this.b;
-        long j11 = this.a;
-        if (!c3) {
-            t tVar = new t(0L, j11 + i10);
+        long[] jArr = this.a;
+        int e6 = d0.e(jArr, j10, true);
+        long j11 = jArr[e6];
+        long[] jArr2 = this.b;
+        t tVar = new t(j11, jArr2[e6]);
+        if (j11 >= j10 || e6 == jArr.length - 1) {
             return new r(tVar, tVar);
         }
-        long i11 = d0.i(j10, 0L, this.c);
-        double d11 = (i11 * 100.0d) / this.c;
-        double d12 = 0.0d;
-        if (d11 <= 0.0d) {
-            d = 256.0d;
-        } else if (d11 >= 100.0d) {
-            d = 256.0d;
-            d12 = 256.0d;
-        } else {
-            int i12 = (int) d11;
-            long[] jArr = this.f;
-            h5.a.j(jArr);
-            double d13 = jArr[i12];
-            if (i12 == 99) {
-                d = 256.0d;
-                d10 = 256.0d;
-            } else {
-                d = 256.0d;
-                d10 = jArr[i12 + 1];
-            }
-            d12 = ((d10 - d13) * (d11 - i12)) + d13;
-        }
-        long j12 = this.d;
-        t tVar2 = new t(i11, j11 + d0.i(Math.round((d12 / d) * j12), i10, j12 - 1));
-        return new r(tVar2, tVar2);
+        int i10 = e6 + 1;
+        return new r(tVar, new t(jArr[i10], jArr2[i10]));
     }
 
     @Override // r3.s

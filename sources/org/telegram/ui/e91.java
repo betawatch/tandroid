@@ -1,63 +1,98 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class e91 implements pg.a {
-    public final RectF a = new RectF();
-    public final /* synthetic */ lh.j4 b;
-    public final /* synthetic */ ha1 c;
+public final class e91 implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ EditTextBoldCursor c;
+    public final /* synthetic */ org.telegram.ui.Components.cd0 d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ TextView f;
 
-    public e91(ha1 ha1Var, lh.j4 j4Var) {
-        this.c = ha1Var;
-        this.b = j4Var;
+    public e91(int i10, EditTextBoldCursor editTextBoldCursor, org.telegram.ui.Components.cd0 cd0Var, int[] iArr, TextView textView) {
+        this.b = i10;
+        this.c = editTextBoldCursor;
+        this.d = cd0Var;
+        this.e = iArr;
+        this.f = textView;
     }
 
-    @Override // pg.a
-    public final void e(Canvas canvas, RectF rectF) {
-        og.k kVar;
-        View view;
-        ac acVar;
-        ha1 ha1Var = this.c;
-        ha1Var.fragmentView.getMeasuredWidth();
-        ha1Var.fragmentView.getMeasuredHeight();
-        canvas.drawColor(ha1Var.getThemedColor(org.telegram.ui.ActionBar.k6.d6));
-        for (int i10 = 0; i10 < 3; i10++) {
-            if (i10 == 0) {
-                kVar = ha1Var.Q;
-                view = ha1Var.P;
-            } else if (i10 != 1 || (acVar = ha1Var.g0) == null) {
-                ke keVar = ha1Var.h0;
-                if (keVar != null) {
-                    kVar = keVar.Y0;
-                    view = keVar;
-                } else {
-                    kVar = null;
-                    view = null;
+    /* JADX WARN: Removed duplicated region for block: B:16:0x00c9  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x00d9  */
+    @Override // android.text.TextWatcher
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void afterTextChanged(Editable editable) {
+        double d;
+        org.telegram.ui.Components.cd0 cd0Var = this.d;
+        int i10 = this.b;
+        EditTextBoldCursor editTextBoldCursor = this.c;
+        if (this.a) {
+            return;
+        }
+        try {
+            d = TextUtils.isEmpty(editable) ? 0.0d : Double.parseDouble(editable.toString());
+            try {
+                double d10 = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMax / 1.0E9d;
+                int[] iArr = this.e;
+                if (d > d10) {
+                    this.a = true;
+                    d = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMax / 1.0E9d;
+                    editTextBoldCursor.setText(Double.toString(d));
+                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                    int i11 = -iArr[0];
+                    iArr[0] = i11;
+                    AndroidUtilities.shakeViewSpring(cd0Var, i11);
+                } else if (d > 0.0d && d < MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d) {
+                    this.a = true;
+                    d = MessagesController.getInstance(i10).tonStakeddiceStakeAmountMin / 1.0E9d;
+                    editTextBoldCursor.setText(Double.toString(d));
+                    editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                    int i12 = -iArr[0];
+                    iArr[0] = i12;
+                    AndroidUtilities.shakeViewSpring(cd0Var, i12);
                 }
-            } else {
-                kVar = acVar.D;
-                view = acVar;
-            }
-            if (kVar != null && view != null) {
-                lh.j4 j4Var = this.b;
-                RectF rectF2 = this.a;
-                vg.i.c(view, j4Var, rectF2);
-                if (rectF2.right > 0.0f) {
-                    ha1Var.fragmentView.getMeasuredWidth();
+            } catch (Exception unused) {
+                this.a = true;
+                editTextBoldCursor.setText(d <= 0.0d ? "" : Double.toString(d));
+                editTextBoldCursor.setSelection(editTextBoldCursor.getText().length());
+                this.a = false;
+                cd0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+                TextView textView = this.f;
+                if (d != 0.0d) {
                 }
-                canvas.save();
-                kVar.e(canvas, rectF);
-                canvas.restore();
             }
+        } catch (Exception unused2) {
+            d = 0.0d;
+        }
+        this.a = false;
+        cd0Var.c(editTextBoldCursor.isFocused(), !TextUtils.isEmpty(editTextBoldCursor.getText()));
+        TextView textView2 = this.f;
+        if (d != 0.0d) {
+            textView2.animate().alpha(0.0f).start();
+            textView2.setText("");
+        } else {
+            textView2.animate().alpha(1.0f).start();
+            textView2.setText("≈" + BillingController.getInstance().formatCurrency((long) (MessagesController.getInstance(i10).config.tonUsdRate.get() * d * 100.0d), "USD", 2));
         }
     }
 
-    @Override // pg.a
-    public final void g(g.x xVar, RectF rectF) {
-        xVar.b = true;
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

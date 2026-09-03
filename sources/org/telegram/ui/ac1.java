@@ -1,20 +1,32 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import android.view.MotionEvent;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ac1 extends qh.m6 {
-    public ac1(Activity activity) {
-        super(activity, 3);
+public final /* synthetic */ class ac1 implements h5.d {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ jd1 b;
+
+    public /* synthetic */ ac1(jd1 jd1Var, int i10) {
+        this.a = i10;
+        this.b = jd1Var;
     }
 
-    @Override // qh.m6, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(true);
+    @Override // h5.d
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                jd1 jd1Var = this.b;
+                jd1Var.S1 = (TL_stories.TL_premium_boostsStatus) obj;
+                jd1Var.R1 = true;
+                jd1Var.h1(true);
+                jd1Var.Q1 = false;
+                break;
+            default:
+                jd1.X(this.b, (ChannelBoostsController.CanApplyBoost) obj);
+                break;
         }
-        return super.dispatchTouchEvent(motionEvent);
     }
 }

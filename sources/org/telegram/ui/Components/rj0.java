@@ -1,31 +1,27 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rj0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ak0 b;
-    public final /* synthetic */ TLObject c;
+public final class rj0 extends sl0 {
+    public final /* synthetic */ zj0 U2;
 
-    public /* synthetic */ rj0(ak0 ak0Var, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = ak0Var;
-        this.c = tLObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rj0(zj0 zj0Var, Context context, org.telegram.ui.ActionBar.g6 g6Var) {
+        super(context, g6Var);
+        this.U2 = zj0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ak0 ak0Var = this.b;
-                NotificationCenter.getInstance(ak0Var.b).doOnIdle(new rj0(ak0Var, this.c, 1));
-                break;
-            default:
-                ak0.a(this.b, this.c);
-                break;
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        zj0 zj0Var = this.U2;
+        xa0 xa0Var = zj0Var.G;
+        if (xa0Var != null) {
+            xa0Var.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), 0));
         }
+        super.onMeasure(i10, i11);
+        zj0Var.j();
     }
 }

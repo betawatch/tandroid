@@ -42,7 +42,7 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public int B;
@@ -65,7 +65,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
     public boolean S;
     public boolean T;
     public boolean U;
-    public org.telegram.ui.Components.tl0 a;
+    public org.telegram.ui.Components.sl0 a;
     private int accountsAllRow;
     public boolean b;
     private int badgeNumberMessagesRow;
@@ -758,7 +758,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                 if (notificationsSettingsActivity.getParentActivity() == null) {
                     return;
                 } else {
-                    notificationsSettingsActivity.showDialog(org.telegram.ui.Components.z4.Y(notificationsSettingsActivity.getParentActivity(), 0L, 0L, i10 == notificationsSettingsActivity.E ? "vibrate_calls" : null, new org.telegram.ui.Components.jm(notificationsSettingsActivity, i10, 17), null));
+                    notificationsSettingsActivity.showDialog(org.telegram.ui.Components.z4.Y(notificationsSettingsActivity.getParentActivity(), 0L, 0L, i10 == notificationsSettingsActivity.E ? "vibrate_calls" : null, new org.telegram.ui.Components.im(notificationsSettingsActivity, i10, 17), null));
                 }
             } else if (i10 == notificationsSettingsActivity.N) {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(notificationsSettingsActivity.getParentActivity());
@@ -888,7 +888,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
         int i10 = 1;
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsAndSounds));
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 28));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 28));
         org.telegram.ui.ActionBar.f5 f5Var = this.parentLayout;
         if (f5Var != null && ((ActionBarLayout) f5Var).K0) {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
@@ -896,19 +896,19 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.a = tl0Var;
-        tl0Var.p1();
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.a = sl0Var;
+        sl0Var.o1();
         this.actionBar.setAdaptiveBackground(this.a);
         this.a.setItemAnimator(null);
         this.a.setLayoutAnimation(null);
         this.a.setLayoutManager(new k(i10, false, 11));
         this.a.setVerticalScrollBarEnabled(false);
         frameLayout.addView(this.a, k7.c6.c(-1.0f, -1));
-        org.telegram.ui.Components.tl0 tl0Var2 = this.a;
+        org.telegram.ui.Components.sl0 sl0Var2 = this.a;
         kk0 kk0Var = new kk0(this, context);
         this.c = kk0Var;
-        tl0Var2.setAdapter(kk0Var);
+        sl0Var2.setAdapter(kk0Var);
         this.a.setOnItemClickListener(new jk0(this));
         return this.fragmentView;
     }

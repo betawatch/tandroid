@@ -15,11 +15,11 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class fc0 extends org.telegram.ui.ActionBar.p2 {
     public FrameLayout a;
-    public org.telegram.ui.Components.tl0 b;
+    public org.telegram.ui.Components.sl0 b;
     public f2.j0 c;
     public su d;
     public org.telegram.ui.Components.ic e;
@@ -55,7 +55,7 @@ public final class fc0 extends org.telegram.ui.ActionBar.p2 {
                 return;
             }
             if (((zb0) arrayList.get(i11)).e == i10) {
-                this.b.e1(new hg.m2(this, i11, 12), 700, true);
+                this.b.d1(new hg.m2(this, i11, 12), 700, true);
                 return;
             }
             i11++;
@@ -108,7 +108,7 @@ public final class fc0 extends org.telegram.ui.ActionBar.p2 {
                 arrayList2.add(zb0.b(262144, LocaleController.getString("LiteOptionsLiquidGlass")));
             }
             arrayList2.add(zb0.b(32768, LocaleController.getString("LiteOptionsScale")));
-            if (org.telegram.ui.Components.b11.c()) {
+            if (org.telegram.ui.Components.a11.c()) {
                 arrayList2.add(zb0.b(65536, LocaleController.getString("LiteOptionsThanos")));
             }
         }
@@ -174,7 +174,7 @@ public final class fc0 extends org.telegram.ui.ActionBar.p2 {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.PowerUsage));
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 21));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 21));
         org.telegram.ui.ActionBar.f5 f5Var = this.parentLayout;
         if (f5Var != null && ((ActionBarLayout) f5Var).K0) {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
@@ -182,18 +182,18 @@ public final class fc0 extends org.telegram.ui.ActionBar.p2 {
         FrameLayout frameLayout = new FrameLayout(context);
         this.a = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.a7, false));
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.b = tl0Var;
-        tl0Var.p1();
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.b = sl0Var;
+        sl0Var.o1();
         this.actionBar.setAdaptiveBackground(this.b);
-        org.telegram.ui.Components.tl0 tl0Var2 = this.b;
+        org.telegram.ui.Components.sl0 sl0Var2 = this.b;
         f2.j0 j0Var = new f2.j0();
         this.c = j0Var;
-        tl0Var2.setLayoutManager(j0Var);
-        org.telegram.ui.Components.tl0 tl0Var3 = this.b;
+        sl0Var2.setLayoutManager(j0Var);
+        org.telegram.ui.Components.sl0 sl0Var3 = this.b;
         su suVar = new su(this, 1);
         this.d = suVar;
-        tl0Var3.setAdapter(suVar);
+        sl0Var3.setAdapter(suVar);
         f2.l lVar = new f2.l();
         lVar.n(350L);
         lVar.o(org.telegram.ui.Components.pr.h);

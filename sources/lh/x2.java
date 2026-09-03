@@ -11,14 +11,14 @@ import org.telegram.messenger.MessagePreviewParams;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.db0;
-import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.sb0;
 import org.telegram.ui.Components.xb0;
 import org.telegram.ui.Components.yb0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x2 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -51,21 +51,21 @@ public final /* synthetic */ class x2 implements View.OnClickListener {
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj3;
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj2;
                 q70 q70Var = (q70) obj;
-                pr0 pr0Var = ((n3) frameLayout).a;
+                or0 or0Var = ((n3) frameLayout).a;
                 if (z4) {
-                    pr0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
-                    qc.a0(pr0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, mh.g5.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    or0Var.e.k(tL_starGiftCollection.collection_id, savedStarGift);
+                    qc.a0(or0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2RemovedFromCollection, mh.g5.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 } else {
-                    j7 j7Var = pr0Var.e;
+                    j7 j7Var = or0Var.e;
                     int i12 = tL_starGiftCollection.collection_id;
                     j7Var.getClass();
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(savedStarGift);
                     j7Var.a(i12, arrayList);
-                    qc.a0(pr0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, mh.g5.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
+                    qc.a0(or0Var.a).R(savedStarGift.gift.getDocument(), AndroidUtilities.replaceTags(LocaleController.formatString(R.string.Gift2AddedToCollection, mh.g5.D1(savedStarGift.gift), tL_starGiftCollection.title))).j();
                 }
                 q70Var.u();
-                pr0Var.n();
+                or0Var.n();
                 break;
             default:
                 sb0 sb0Var = (sb0) frameLayout;

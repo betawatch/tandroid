@@ -5,9 +5,9 @@ import android.graphics.Canvas;
 import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class rg0 extends tl0 {
+public final class rg0 extends sl0 {
     public final lf.b0 U2;
     public long V2;
     public final /* synthetic */ xg0 W2;
@@ -19,12 +19,12 @@ public final class rg0 extends tl0 {
         this.U2 = new lf.b0(8);
     }
 
-    @Override // org.telegram.ui.Components.tl0
+    @Override // org.telegram.ui.Components.sl0
     public final boolean E0(float f10) {
         return f10 >= ((float) (this.W2.B + AndroidUtilities.statusBarHeight));
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         float f10;
         xg0 xg0Var = this.W2;
@@ -47,7 +47,7 @@ public final class rg0 extends tl0 {
             }
             xg0Var.F.setTranslate(f10, 0.0f);
             xg0Var.E.setLocalMatrix(xg0Var.F);
-            f1();
+            e1();
             invalidate();
         }
         super.dispatchDraw(canvas);

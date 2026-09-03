@@ -20,7 +20,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class vv extends ViewGroup {
     public Boolean B;
@@ -33,7 +33,7 @@ public class vv extends ViewGroup {
     public boolean b;
     public final boolean c;
     public final p9 d;
-    public final ij0 e;
+    public final hj0 e;
     public final fg.r1 f;
     public final boolean h;
     public final boolean n;
@@ -53,12 +53,12 @@ public class vv extends ViewGroup {
         this.n = false;
         setBackground(org.telegram.ui.ActionBar.k6.M(zvVar.k(), 0, 0));
         if (Build.VERSION.SDK_INT >= 23) {
-            ij0 ij0Var = new ij0(i11, l.d.j(i11, ""), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), false, null);
-            this.e = ij0Var;
-            ij0Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
-            ij0Var.s0 = this;
-            ij0Var.H(true);
-            ij0Var.start();
+            hj0 hj0Var = new hj0(i11, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), false, null);
+            this.e = hj0Var;
+            hj0Var.setBounds(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f), AndroidUtilities.dp(27.0f), AndroidUtilities.dp(27.0f));
+            hj0Var.s0 = this;
+            hj0Var.H(true);
+            hj0Var.start();
         } else {
             p9 p9Var = new p9(context);
             this.d = p9Var;
@@ -81,9 +81,9 @@ public class vv extends ViewGroup {
             p9Var.setColorFilter(porterDuffColorFilter);
             p9Var.invalidate();
         }
-        ij0 ij0Var = this.e;
-        if (ij0Var != null) {
-            ij0Var.setColorFilter(porterDuffColorFilter);
+        hj0 hj0Var = this.e;
+        if (hj0Var != null) {
+            hj0Var.setColorFilter(porterDuffColorFilter);
             invalidate();
         }
     }
@@ -187,11 +187,11 @@ public class vv extends ViewGroup {
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        ij0 ij0Var = this.e;
-        if (ij0Var == null || !this.y) {
+        hj0 hj0Var = this.e;
+        if (hj0Var == null || !this.y) {
             return;
         }
-        ij0Var.draw(canvas);
+        hj0Var.draw(canvas);
     }
 
     @Override // android.view.ViewGroup

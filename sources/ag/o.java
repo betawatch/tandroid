@@ -27,11 +27,11 @@ import org.telegram.ui.ActionBar.f5;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.z;
 import org.telegram.ui.Components.pq;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class o extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public ArrayList B;
@@ -49,7 +49,7 @@ public final class o extends FrameLayout implements NotificationCenter.Notificat
     public int v;
     public LinearLayout w;
     public TextView x;
-    public tl0 y;
+    public sl0 y;
 
     public static float a(DisplayMetrics displayMetrics, float f10) {
         return k7.o.a(f10, AndroidUtilities.dp(16.0f), displayMetrics.widthPixels - AndroidUtilities.dp(72.0f));

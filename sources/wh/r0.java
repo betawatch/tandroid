@@ -20,13 +20,13 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.l9;
 import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Components.AnimatedArrowDrawable;
-import org.telegram.ui.iw0;
+import org.telegram.ui.nw0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class r0 extends FrameLayout implements b6, l9 {
     public final g6 a;
-    public final iw0 b;
+    public final nw0 b;
     public final AnimatedArrowDrawable c;
     public final e1 d;
     public final Paint e;
@@ -43,10 +43,10 @@ public final class r0 extends FrameLayout implements b6, l9 {
         AnimatedArrowDrawable animatedArrowDrawable = new AnimatedArrowDrawable(k6.v0(k6.Dk, g6Var));
         this.c = animatedArrowDrawable;
         animatedArrowDrawable.setCallback(new i.f(this, 10));
-        iw0 iw0Var = new iw0(this, context, 12);
-        this.b = iw0Var;
-        iw0Var.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 27));
-        addView(iw0Var, c6.e(53, -1, 51));
+        nw0 nw0Var = new nw0(this, context, 12);
+        this.b = nw0Var;
+        nw0Var.setOnClickListener(new org.telegram.ui.Components.voip.o(this, 27));
+        addView(nw0Var, c6.e(53, -1, 51));
         e1 e1Var = new e1(context, g6Var);
         this.d = e1Var;
         e1Var.setAllowNewlines(false);
@@ -54,7 +54,7 @@ public final class r0 extends FrameLayout implements b6, l9 {
         e1Var.setHint(LocaleController.getString(R.string.ArticleHintDetailsTitle));
         e1Var.setPadding(0, AndroidUtilities.dp(14.0f), 0, AndroidUtilities.dp(12.66f));
         e1Var.setListener(new o0(this));
-        e1Var.setDelegate(new sf.g(this, 13));
+        e1Var.setDelegate(new sf.h(this, 13));
         addView(e1Var, c6.d(-1, -2.0f, 51, 53.0f, 0.0f, 16.0f, 0.0f));
         e();
     }

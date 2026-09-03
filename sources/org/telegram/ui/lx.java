@@ -8,20 +8,20 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class lx extends r61 {
-    public final /* synthetic */ i61[] a2;
+public final class lx extends w61 {
+    public final /* synthetic */ n61[] a2;
     public final /* synthetic */ py b2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lx(py pyVar, py pyVar2, Activity activity, Integer num, org.telegram.ui.ActionBar.g6 g6Var, i61[] i61VarArr) {
+    public lx(py pyVar, py pyVar2, Activity activity, Integer num, org.telegram.ui.ActionBar.g6 g6Var, n61[] n61VarArr) {
         super(pyVar2, activity, true, num, 0, g6Var);
         this.b2 = pyVar;
-        this.a2 = i61VarArr;
+        this.a2 = n61VarArr;
     }
 
-    @Override // org.telegram.ui.r61
+    @Override // org.telegram.ui.w61
     public final boolean F(TL_stars.TL_starGiftUnique tL_starGiftUnique) {
         int i10;
         if (tL_starGiftUnique == null) {
@@ -32,7 +32,7 @@ public final class lx extends r61 {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.r61
+    @Override // org.telegram.ui.w61
     public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
         TLRPC.TL_emojiStatus tL_emojiStatus;
         TLRPC.EmojiStatus emojiStatus;
@@ -40,7 +40,7 @@ public final class lx extends r61 {
         int i11;
         int i12;
         org.telegram.ui.ActionBar.g6 g6Var;
-        i61[] i61VarArr = this.a2;
+        n61[] n61VarArr = this.a2;
         py pyVar = this.b2;
         if (l10 == null) {
             emojiStatus = new TLRPC.TL_emojiStatusEmpty();
@@ -59,10 +59,10 @@ public final class lx extends r61 {
                     g5Var.j2(n10, null);
                     g5Var.m2();
                     g5Var.show();
-                    i61 i61Var = i61VarArr[0];
-                    if (i61Var != null) {
+                    n61 n61Var = n61VarArr[0];
+                    if (n61Var != null) {
                         pyVar.J0 = null;
-                        i61Var.dismiss();
+                        n61Var.dismiss();
                         return;
                     }
                     return;
@@ -96,10 +96,10 @@ public final class lx extends r61 {
             q0Var.h = longValue;
             oVar.a(q0Var);
         }
-        i61 i61Var2 = i61VarArr[0];
-        if (i61Var2 != null) {
+        n61 n61Var2 = n61VarArr[0];
+        if (n61Var2 != null) {
             pyVar.J0 = null;
-            i61Var2.dismiss();
+            n61Var2.dismiss();
         }
     }
 }

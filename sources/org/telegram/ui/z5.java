@@ -16,7 +16,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.camera.CameraView;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class z5 implements Runnable {
     public final /* synthetic */ int a;
@@ -60,7 +60,7 @@ public final class z5 implements Runnable {
                 v9 v9Var = (v9) this.b;
                 CameraView cameraView = v9Var.c;
                 if (cameraView != null && !v9Var.J && cameraView.getCameraSession() != null) {
-                    v9Var.e.post(new tt0(this, 17));
+                    v9Var.e.post(new yt0(this, 17));
                     break;
                 }
                 break;
@@ -90,9 +90,9 @@ public final class z5 implements Runnable {
                     t10Var.f.clear();
                     t10Var.n.clear();
                     t10Var.r.clear();
-                    org.telegram.ui.Components.sl0 sl0Var = t10Var.d;
-                    if (sl0Var != null) {
-                        sl0Var.l();
+                    org.telegram.ui.Components.rl0 rl0Var = t10Var.d;
+                    if (rl0Var != null) {
+                        rl0Var.l();
                         break;
                     }
                 }
@@ -107,7 +107,7 @@ public final class z5 implements Runnable {
                     d60 d60Var2 = (d60) this.b;
                     w30 w30Var = d60Var2.X1;
                     if (w30Var != null && !w30Var.b && (I0 = d60.I0(d60Var2)) != null && I0.isAttachedToWindow() && (renderer = I0.getRenderer()) != null && (pVar = renderer.a) != null) {
-                        d60.E3.postRunnable(new v10(4, this, pVar));
+                        d60.E3.postRunnable(new z10(3, this, pVar));
                         break;
                     }
                 } catch (Exception e6) {
@@ -196,12 +196,12 @@ public final class z5 implements Runnable {
                 }
                 break;
             case 12:
-                hv0 hv0Var = (hv0) this.b;
-                z5 z5Var = hv0Var.v0;
-                org.telegram.ui.Cells.c6 c6Var = hv0Var.Y;
+                mv0 mv0Var = (mv0) this.b;
+                z5 z5Var = mv0Var.v0;
+                org.telegram.ui.Cells.c6 c6Var = mv0Var.Y;
                 if (c6Var != null) {
                     EditTextBoldCursor editField = c6Var.getEditField();
-                    if (!hv0Var.R && editField != null && hv0Var.Q && !hv0Var.V && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
+                    if (!mv0Var.R && editField != null && mv0Var.Q && !mv0Var.V && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
                         editField.requestFocus();
                         AndroidUtilities.showKeyboard(editField);
                         AndroidUtilities.cancelRunOnUIThread(z5Var);
@@ -211,21 +211,21 @@ public final class z5 implements Runnable {
                 }
                 break;
             case 13:
-                ((ha1) this.b).Y.animate().alpha(1.0f).setDuration(230L);
+                ((na1) this.b).Y.animate().alpha(1.0f).setDuration(230L);
                 break;
             case 14:
-                be1 be1Var = (be1) this.b;
-                be1Var.C.setVisibility(0);
-                be1Var.C.setAlpha(0.0f);
-                be1Var.C.animate().alpha(1.0f).start();
+                he1 he1Var = (he1) this.b;
+                he1Var.C.setVisibility(0);
+                he1Var.C.setAlpha(0.0f);
+                he1Var.C.animate().alpha(1.0f).start();
                 break;
             default:
-                yi1 yi1Var = (yi1) this.b;
-                MessageObject messageObject = yi1Var.n;
-                if (messageObject != null && yi1Var.getParentActivity() != null && yi1Var.s != null) {
-                    i10 = ((org.telegram.ui.ActionBar.p2) yi1Var).currentAccount;
+                ej1 ej1Var = (ej1) this.b;
+                MessageObject messageObject = ej1Var.n;
+                if (messageObject != null && ej1Var.getParentActivity() != null && ej1Var.s != null) {
+                    i10 = ((org.telegram.ui.ActionBar.p2) ej1Var).currentAccount;
                     MessagesController.getInstance(i10).sendTyping(messageObject.getDialogId(), 0L, 6, 0);
-                    AndroidUtilities.runOnUIThread(yi1Var.s, 25000L);
+                    AndroidUtilities.runOnUIThread(ej1Var.s, 25000L);
                     break;
                 }
                 break;

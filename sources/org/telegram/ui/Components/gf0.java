@@ -9,14 +9,14 @@ import android.view.View;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class gf0 extends View {
     public int a;
     public boolean b;
     public boolean c;
     public float d;
-    public tk0 e;
+    public sk0 e;
     public Paint f;
     public Paint h;
     public Paint n;
@@ -32,8 +32,8 @@ public final class gf0 extends View {
             if (this.a != 0) {
                 return;
             }
-            tk0 tk0Var = this.e;
-            this.a = (int) Math.floor(e2.c.x(x10, tk0Var.a, tk0Var.c / 5.0f, 1.0f));
+            sk0 sk0Var = this.e;
+            this.a = (int) Math.floor(e2.c.x(x10, sk0Var.a, sk0Var.c / 5.0f, 1.0f));
             return;
         }
         if (i10 != 2) {
@@ -79,18 +79,18 @@ public final class gf0 extends View {
         Path path = this.s;
         Paint paint = this.n;
         lf0 lf0Var = this.w;
-        tk0 tk0Var = this.e;
-        float f10 = tk0Var.c / 5.0f;
+        sk0 sk0Var = this.e;
+        float f10 = sk0Var.c / 5.0f;
         for (int i10 = 0; i10 < 4; i10++) {
-            float f11 = tk0Var.a;
+            float f11 = sk0Var.a;
             float f12 = i10 * f10;
             float f13 = f11 + f10 + f12;
-            float f14 = tk0Var.b;
-            canvas.drawLine(f13, f14, f12 + f11 + f10, f14 + tk0Var.d, this.f);
+            float f14 = sk0Var.b;
+            canvas.drawLine(f13, f14, f12 + f11 + f10, f14 + sk0Var.d, this.f);
         }
-        float f15 = tk0Var.a;
-        float f16 = tk0Var.b;
-        canvas.drawLine(f15, f16 + tk0Var.d, f15 + tk0Var.c, f16, this.h);
+        float f15 = sk0Var.a;
+        float f16 = sk0Var.b;
+        canvas.drawLine(f15, f16 + sk0Var.d, f15 + sk0Var.c, f16, this.h);
         int i11 = lf0Var.f;
         int i12 = 3;
         int i13 = 2;
@@ -112,7 +112,7 @@ public final class gf0 extends View {
         int i14 = 0;
         while (i14 < 5) {
             String format = i14 != 0 ? i14 != 1 ? i14 != i13 ? i14 != i12 ? i14 != 4 ? "" : String.format(Locale.US, "%.2f", Float.valueOf(mf0Var.e / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(mf0Var.d / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(mf0Var.c / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(mf0Var.b / 100.0f)) : String.format(Locale.US, "%.2f", Float.valueOf(mf0Var.a / 100.0f));
-            canvas.drawText(format, (i14 * f10) + e2.c.x(f10, textPaint.measureText(format), 2.0f, tk0Var.a), (tk0Var.b + tk0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
+            canvas.drawText(format, (i14 * f10) + e2.c.x(f10, textPaint.measureText(format), 2.0f, sk0Var.a), (sk0Var.b + sk0Var.d) - AndroidUtilities.dp(4.0f), textPaint);
             i14++;
             i12 = 3;
             i13 = 2;
@@ -123,10 +123,10 @@ public final class gf0 extends View {
         for (int i15 = 0; i15 < a2.length / 2; i15++) {
             if (i15 == 0) {
                 int i16 = i15 * 2;
-                path.moveTo((a2[i16] * tk0Var.c) + tk0Var.a, ((1.0f - a2[i16 + 1]) * tk0Var.d) + tk0Var.b);
+                path.moveTo((a2[i16] * sk0Var.c) + sk0Var.a, ((1.0f - a2[i16 + 1]) * sk0Var.d) + sk0Var.b);
             } else {
                 int i17 = i15 * 2;
-                path.lineTo((a2[i17] * tk0Var.c) + tk0Var.a, ((1.0f - a2[i17 + 1]) * tk0Var.d) + tk0Var.b);
+                path.lineTo((a2[i17] * sk0Var.c) + sk0Var.a, ((1.0f - a2[i17 + 1]) * sk0Var.d) + sk0Var.b);
             }
         }
         canvas.drawPath(path, paint);
@@ -167,11 +167,11 @@ public final class gf0 extends View {
                 float x10 = motionEvent.getX();
                 float y10 = motionEvent.getY();
                 this.d = y10;
-                tk0 tk0Var = this.e;
-                float f10 = tk0Var.a;
-                if (x10 >= f10 && x10 <= f10 + tk0Var.c) {
-                    float f11 = tk0Var.b;
-                    if (y10 >= f11 && y10 <= f11 + tk0Var.d) {
+                sk0 sk0Var = this.e;
+                float f10 = sk0Var.a;
+                if (x10 >= f10 && x10 <= f10 + sk0Var.c) {
+                    float f11 = sk0Var.b;
+                    if (y10 >= f11 && y10 <= f11 + sk0Var.d) {
                         this.b = true;
                     }
                 }

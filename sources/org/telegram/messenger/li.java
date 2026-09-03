@@ -11,15 +11,15 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.ui.Components.a90;
+import org.telegram.ui.Components.b90;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.bu0;
+import org.telegram.ui.e31;
+import org.telegram.ui.gu0;
 import org.telegram.ui.p60;
 import org.telegram.ui.py;
-import org.telegram.ui.sw0;
-import org.telegram.ui.z21;
+import org.telegram.ui.xw0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class li implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -80,44 +80,44 @@ public final /* synthetic */ class li implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new lh.l2((LaunchActivity) obj5, tLObject, this.b, (py) obj4, (org.telegram.ui.ActionBar.p2) obj3, (TLRPC.User) obj2, str));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new a6(tLObject, (org.telegram.ui.ActionBar.p2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (sw0) obj3, (p2.e) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj));
+                AndroidUtilities.runOnUIThread(new a6(tLObject, (org.telegram.ui.ActionBar.p2) obj5, (TLRPC.TL_inputStorePaymentPremiumSubscription) obj4, (xw0) obj3, (p2.e) obj2, this.b, tL_error, (TLRPC.TL_payments_canPurchaseStore) obj));
                 break;
             default:
                 Context context2 = (Context) obj5;
                 org.telegram.ui.ActionBar.g6 g6Var = (org.telegram.ui.ActionBar.g6) obj4;
                 byte[] bArr = (byte[]) obj3;
                 org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) obj2;
-                a90 a90Var = (a90) obj;
+                b90 b90Var = (b90) obj;
                 if (tLObject == null) {
                     if (tL_error != null && "AD_EXPIRED".equalsIgnoreCase(tL_error.text)) {
-                        AndroidUtilities.runOnUIThread(new z21(p2Var, context2, g6Var, a90Var, 1), 200L);
+                        AndroidUtilities.runOnUIThread(new e31(p2Var, context2, g6Var, b90Var, 1), 200L);
                         break;
                     }
                 } else if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultChooseOption)) {
                     if (!(tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultReported)) {
                         if (tLObject instanceof TLRPC.TL_channels_sponsoredMessageReportResultAdsHidden) {
-                            AndroidUtilities.runOnUIThread(new bu0(p2Var, i11, a90Var, 5), 200L);
+                            AndroidUtilities.runOnUIThread(new gu0(p2Var, i11, b90Var, 5), 200L);
                             break;
                         }
                     } else {
-                        AndroidUtilities.runOnUIThread(new z21(p2Var, context2, g6Var, a90Var, 0), 200L);
+                        AndroidUtilities.runOnUIThread(new e31(p2Var, context2, g6Var, b90Var, 0), 200L);
                         break;
                     }
                 } else {
-                    AndroidUtilities.runOnUIThread(new lh.e1(tLObject, (Object) context2, (Object) g6Var, (Object) bArr, (Object) p2Var, (Object) a90Var, 16));
+                    AndroidUtilities.runOnUIThread(new lh.e1(tLObject, (Object) context2, (Object) g6Var, (Object) bArr, (Object) p2Var, (Object) b90Var, 16));
                     break;
                 }
                 break;
         }
     }
 
-    public /* synthetic */ li(Context context, org.telegram.ui.ActionBar.g6 g6Var, byte[] bArr, org.telegram.ui.ActionBar.p2 p2Var, a90 a90Var, int i10) {
+    public /* synthetic */ li(Context context, org.telegram.ui.ActionBar.g6 g6Var, byte[] bArr, org.telegram.ui.ActionBar.p2 p2Var, b90 b90Var, int i10) {
         this.a = 6;
         this.d = context;
         this.e = g6Var;
         this.f = bArr;
         this.g = p2Var;
-        this.c = a90Var;
+        this.c = b90Var;
         this.b = i10;
     }
 

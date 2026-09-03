@@ -10,15 +10,16 @@ import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.df;
 import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.tl;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.c81;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public abstract class v extends FrameLayout {
     public ObjectAnimator a;
     public c5.e b;
-    public qh.e1 c;
+    public c81 c;
     public Paint d;
     public float e;
     public boolean f;
@@ -36,12 +37,12 @@ public abstract class v extends FrameLayout {
     }
 
     public final void b() {
-        qh.e1 e1Var = this.c;
+        c81 c81Var = this.c;
         qg.b bVar = this.r;
         if (bVar != null) {
             bVar.setBounds(0, ((int) this.h) - AndroidUtilities.dp(25.0f), getMeasuredWidth(), AndroidUtilities.dp(5.0f) + getMeasuredHeight());
-            e1Var.invalidateOutline();
-            e1Var.invalidate();
+            c81Var.invalidateOutline();
+            c81Var.invalidate();
         }
     }
 
@@ -51,10 +52,10 @@ public abstract class v extends FrameLayout {
         }
         this.f = true;
         a();
-        qh.e1 e1Var = this.c;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(e1Var, (Property<qh.e1, Float>) FrameLayout.TRANSLATION_Y, e1Var.getTranslationY(), (getMeasuredHeight() - this.h) + AndroidUtilities.dp(40.0f));
+        c81 c81Var = this.c;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(c81Var, (Property<c81, Float>) FrameLayout.TRANSLATION_Y, c81Var.getTranslationY(), (getMeasuredHeight() - this.h) + AndroidUtilities.dp(40.0f));
         this.a = ofFloat;
-        ofFloat.addListener(new qh.j2(this, 8));
+        ofFloat.addListener(new qh.i2(this, 8));
         this.a.setDuration(150L);
         this.a.setInterpolator(pr.f);
         this.a.start();
@@ -68,8 +69,8 @@ public abstract class v extends FrameLayout {
         if (this.f) {
             return;
         }
-        qh.e1 e1Var = this.c;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(e1Var, (Property<qh.e1, Float>) FrameLayout.TRANSLATION_Y, e1Var.getTranslationY(), 0.0f);
+        c81 c81Var = this.c;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(c81Var, (Property<c81, Float>) FrameLayout.TRANSLATION_Y, c81Var.getTranslationY(), 0.0f);
         this.a = ofFloat;
         if (z4) {
             ofFloat.setDuration(320L);
@@ -89,7 +90,7 @@ public abstract class v extends FrameLayout {
         return false;
     }
 
-    public tl0 getListView() {
+    public sl0 getListView() {
         return this.c;
     }
 
@@ -101,10 +102,10 @@ public abstract class v extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        qh.e1 e1Var = this.c;
+        c81 c81Var = this.c;
         super.onMeasure(i10, i11);
         if (this.n && !this.f) {
-            e1Var.setTranslationY(AndroidUtilities.dp(16.0f) + (e1Var.getMeasuredHeight() - e1Var.getPaddingTop()));
+            c81Var.setTranslationY(AndroidUtilities.dp(16.0f) + (c81Var.getMeasuredHeight() - c81Var.getPaddingTop()));
             d(true);
             this.n = false;
         }
@@ -123,34 +124,34 @@ public abstract class v extends FrameLayout {
 
     @Override // android.view.ViewGroup, android.view.ViewParent
     public final void onNestedPreScroll(View view, int i10, int i11, int[] iArr) {
-        qh.e1 e1Var = this.c;
+        c81 c81Var = this.c;
         if (this.f) {
             return;
         }
         a();
-        float translationY = e1Var.getTranslationY();
+        float translationY = c81Var.getTranslationY();
         if (translationY <= 0.0f || i11 <= 0) {
             return;
         }
         float f10 = translationY - i11;
         iArr[1] = i11;
-        e1Var.setTranslationY(f10 >= 0.0f ? f10 : 0.0f);
+        c81Var.setTranslationY(f10 >= 0.0f ? f10 : 0.0f);
         invalidate();
     }
 
     @Override // android.view.ViewGroup, android.view.ViewParent
     public final void onNestedScroll(View view, int i10, int i11, int i12, int i13) {
-        qh.e1 e1Var = this.c;
+        c81 c81Var = this.c;
         if (this.f) {
             return;
         }
         a();
         if (i13 != 0) {
-            float translationY = e1Var.getTranslationY() - i13;
+            float translationY = c81Var.getTranslationY() - i13;
             if (translationY < 0.0f) {
                 translationY = 0.0f;
             }
-            e1Var.setTranslationY(translationY);
+            c81Var.setTranslationY(translationY);
             invalidate();
         }
     }
@@ -187,10 +188,10 @@ public abstract class v extends FrameLayout {
         this.r = bVar;
         bVar.p(AndroidUtilities.dp(22.0f));
         this.r.o(AndroidUtilities.dp(5.0f));
-        qh.e1 e1Var = this.c;
+        c81 c81Var = this.c;
         if (bVar.i == null) {
             bVar.i = new tl(bVar, 6);
         }
-        e1Var.setOutlineProvider(bVar.i);
+        c81Var.setOutlineProvider(bVar.i);
     }
 }

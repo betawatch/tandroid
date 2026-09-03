@@ -5,9 +5,9 @@ import h5.d0;
 import r3.r;
 import r3.t;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final class c implements f {
+public final class c implements g {
     public final long[] a;
     public final long[] b;
     public final long c;
@@ -29,12 +29,12 @@ public final class c implements f {
         return Pair.create(Long.valueOf(j10), Long.valueOf(((long) ((jArr[i10] == j11 ? 0.0d : (j10 - j11) / (r6 - j11)) * (jArr2[i10] - j12))) + j12));
     }
 
-    @Override // y3.f
+    @Override // y3.g
     public final long a(long j10) {
         return d0.G(((Long) d(j10, this.a, this.b).second).longValue());
     }
 
-    @Override // y3.f
+    @Override // y3.g
     public final long b() {
         return -1L;
     }

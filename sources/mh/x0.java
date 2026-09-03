@@ -27,31 +27,31 @@ import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.mz;
 import org.telegram.ui.Components.n30;
 import org.telegram.ui.Components.o30;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.o61;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.zu0;
+import org.telegram.ui.Components.yu0;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.PopupNotificationActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.br0;
+import org.telegram.ui.aq0;
+import org.telegram.ui.bi1;
 import org.telegram.ui.em0;
 import org.telegram.ui.f80;
 import org.telegram.ui.fn0;
 import org.telegram.ui.h80;
-import org.telegram.ui.ha1;
-import org.telegram.ui.hq0;
-import org.telegram.ui.ih1;
-import org.telegram.ui.jp0;
-import org.telegram.ui.rp0;
-import org.telegram.ui.tz0;
-import org.telegram.ui.uz0;
+import org.telegram.ui.mq0;
+import org.telegram.ui.na1;
+import org.telegram.ui.oh1;
+import org.telegram.ui.op0;
+import org.telegram.ui.pr0;
 import org.telegram.ui.vg0;
-import org.telegram.ui.vh1;
-import org.telegram.ui.vp0;
 import org.telegram.ui.wg0;
+import org.telegram.ui.wp0;
 import org.telegram.ui.xn;
+import org.telegram.ui.yz0;
+import org.telegram.ui.zz0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class x0 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -146,20 +146,20 @@ public final /* synthetic */ class x0 implements View.OnClickListener {
                 scrollSlidingTextTabStrip.h(view, i15, scrollSlidingTextTabStrip.a.indexOfChild(view));
                 break;
             case 11:
-                p61 p61Var = (p61) obj;
-                int i17 = p61Var.b.i.q;
+                o61 o61Var = (o61) obj;
+                int i17 = o61Var.b.i.q;
                 if (i17 == 2) {
                     ApplicationLoader.applicationLoaderInstance.downloadUpdate();
-                    p61Var.updateAppUpdateViews(i15, true);
+                    o61Var.updateAppUpdateViews(i15, true);
                     break;
                 } else if (i17 == 3) {
                     ApplicationLoader.applicationLoaderInstance.cancelDownloadingUpdate();
-                    p61Var.updateAppUpdateViews(i15, true);
+                    o61Var.updateAppUpdateViews(i15, true);
                     break;
                 } else {
                     File downloadedUpdateFile = ApplicationLoader.applicationLoaderInstance.getDownloadedUpdateFile();
                     if (downloadedUpdateFile != null) {
-                        AndroidUtilities.openForView(downloadedUpdateFile, "Telegram.apk", "application/vnd.android.package-archive", p61Var.d, null, false);
+                        AndroidUtilities.openForView(downloadedUpdateFile, "Telegram.apk", "application/vnd.android.package-archive", o61Var.d, null, false);
                         break;
                     }
                 }
@@ -168,9 +168,9 @@ public final /* synthetic */ class x0 implements View.OnClickListener {
                 ((org.telegram.ui.Components.voip.v0) obj).b.x(i15, true);
                 break;
             case 13:
-                vh1 vh1Var = (vh1) obj;
-                if (vh1Var.R == null && view.getAlpha() != 0.0f) {
-                    vh1Var.c(i15, true);
+                bi1 bi1Var = (bi1) obj;
+                if (bi1Var.R == null && view.getAlpha() != 0.0f) {
+                    bi1Var.c(i15, true);
                     break;
                 }
                 break;
@@ -200,9 +200,9 @@ public final /* synthetic */ class x0 implements View.OnClickListener {
                 wg0 wg0Var = (wg0) obj;
                 ValueAnimator valueAnimator = wg0Var.c.N;
                 if (valueAnimator == null || !valueAnimator.isRunning()) {
-                    ih1 ih1Var = wg0Var.c;
-                    if (!ih1Var.E) {
-                        if (ih1Var.getCurrentPosition() == i15) {
+                    oh1 oh1Var = wg0Var.c;
+                    if (!oh1Var.E) {
+                        if (oh1Var.getCurrentPosition() == i15) {
                             Object X = wg0Var.X();
                             if (X instanceof vg0) {
                                 ((vg0) X).s();
@@ -260,31 +260,31 @@ public final /* synthetic */ class x0 implements View.OnClickListener {
                     break;
                 }
             case 18:
-                rp0 rp0Var = (rp0) obj;
-                org.telegram.ui.ActionBar.p1 p1Var = rp0Var.F;
+                wp0 wp0Var = (wp0) obj;
+                org.telegram.ui.ActionBar.p1 p1Var = wp0Var.F;
                 if (p1Var != null && p1Var.isShowing()) {
-                    rp0Var.F.d(true);
+                    wp0Var.F.d(true);
                 }
                 if (i15 == 0) {
-                    org.telegram.ui.Components.z4.L(rp0Var.getParentActivity(), rp0Var.C.a(), new jp0(rp0Var, i13));
+                    org.telegram.ui.Components.z4.L(wp0Var.getParentActivity(), wp0Var.C.a(), new op0(wp0Var, i13));
                     break;
                 } else {
-                    rp0Var.V(rp0Var.b, rp0Var.c, true, 0);
-                    rp0Var.finishFragment();
+                    wp0Var.V(wp0Var.b, wp0Var.c, true, 0);
+                    wp0Var.finishFragment();
                     break;
                 }
                 break;
             case 19:
-                hq0 hq0Var = (hq0) obj;
-                org.telegram.ui.ActionBar.p1 p1Var2 = hq0Var.j0;
+                mq0 mq0Var = (mq0) obj;
+                org.telegram.ui.ActionBar.p1 p1Var2 = mq0Var.j0;
                 if (p1Var2 != null && p1Var2.isShowing()) {
-                    hq0Var.j0.d(true);
+                    mq0Var.j0.d(true);
                 }
                 if (i15 == 0) {
-                    org.telegram.ui.Components.z4.L(hq0Var.getParentActivity(), hq0Var.R.a(), new vp0(hq0Var, i14));
+                    org.telegram.ui.Components.z4.L(mq0Var.getParentActivity(), mq0Var.R.a(), new aq0(mq0Var, i14));
                     break;
                 } else {
-                    hq0Var.e0(0, true);
+                    mq0Var.e0(0, true);
                     break;
                 }
                 break;
@@ -300,16 +300,16 @@ public final /* synthetic */ class x0 implements View.OnClickListener {
             case 21:
                 ProfileActivity profileActivity = (ProfileActivity) obj;
                 if (i15 == 0) {
-                    uz0 uz0Var = profileActivity.L;
-                    if (!uz0Var.z1) {
-                        if (zu0.w0(uz0Var.getClosestTab())) {
-                            uz0 uz0Var2 = profileActivity.L;
-                            profileActivity.L.O0(profileActivity, profileActivity.a(), uz0Var2.h1(uz0Var2.getClosestTab()));
+                    zz0 zz0Var = profileActivity.L;
+                    if (!zz0Var.z1) {
+                        if (yu0.w0(zz0Var.getClosestTab())) {
+                            zz0 zz0Var2 = profileActivity.L;
+                            profileActivity.L.O0(profileActivity, profileActivity.a(), zz0Var2.h1(zz0Var2.getClosestTab()));
                             break;
                         } else if (profileActivity.getMessagesController().storiesEnabled()) {
                             profileActivity.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
-                            qh.ca E = qh.ca.E(profileActivity.getParentActivity(), profileActivity.getCurrentAccount());
-                            E.x = new tz0(profileActivity);
+                            qh.ba E = qh.ba.E(profileActivity.getParentActivity(), profileActivity.getCurrentAccount());
+                            E.x = new yz0(profileActivity);
                             E.R(null);
                             break;
                         } else {
@@ -318,7 +318,7 @@ public final /* synthetic */ class x0 implements View.OnClickListener {
                         }
                     }
                 }
-                if (!zu0.w0(profileActivity.L.getClosestTab())) {
+                if (!yu0.w0(profileActivity.L.getClosestTab())) {
                     long clientUserId = profileActivity.getUserConfig().getClientUserId();
                     org.telegram.messenger.w8 w8Var = profileActivity.u5;
                     if (w8Var != null) {
@@ -357,13 +357,13 @@ public final /* synthetic */ class x0 implements View.OnClickListener {
                         boolean z12 = z11;
                         profileActivity.u5 = new org.telegram.messenger.w8(profileActivity, clientUserId, arrayList6, z12, 9);
                         lh.g1 g1Var = new lh.g1(profileActivity, zArr3, arrayList6, zArr2, clientUserId, 15);
-                        (z12 ? qc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), g1Var).j() : qc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, g1Var).j()).v = new br0(23, profileActivity, zArr3);
+                        (z12 ? qc.a0(profileActivity).K(R.raw.contact_check, LocaleController.formatPluralString("StorySavedTitle", i10, new Object[0]), LocaleController.getString(R.string.StorySavedSubtitle), LocaleController.getString(R.string.UndoNoCaps), g1Var).j() : qc.a0(profileActivity).I(R.raw.chats_archived, LocaleController.formatPluralString("StoryArchived", i10, new Object[0]), LocaleController.getString(R.string.UndoNoCaps), 5000, false, g1Var).j()).v = new pr0(22, profileActivity, zArr3);
                         break;
                     }
                 } else {
                     long a2 = profileActivity.a();
-                    uz0 uz0Var3 = profileActivity.L;
-                    int h12 = uz0Var3.h1(uz0Var3.getClosestTab());
+                    zz0 zz0Var3 = profileActivity.L;
+                    int h12 = zz0Var3.h1(zz0Var3.getClosestTab());
                     String w10 = profileActivity.getMessagesController().getStoriesController().w(h12, a2);
                     org.telegram.messenger.w8 w8Var2 = profileActivity.u5;
                     if (w8Var2 != null) {
@@ -391,28 +391,28 @@ public final /* synthetic */ class x0 implements View.OnClickListener {
                 }
                 break;
             case 22:
-                ha1 ha1Var = (ha1) obj;
-                ha1Var.f0.D(i15);
-                ha1Var.m0(i15, true);
+                na1 na1Var = (na1) obj;
+                na1Var.f0.D(i15);
+                na1Var.m0(i15, true);
                 break;
             case 23:
-                qh.u8 u8Var = (qh.u8) obj;
-                if (!u8Var.e.contains(Integer.valueOf(i15))) {
-                    u8Var.e.add(Integer.valueOf(i15));
-                } else if (u8Var.e.size() > 1) {
-                    u8Var.e.remove(Integer.valueOf(i15));
+                qh.t8 t8Var = (qh.t8) obj;
+                if (!t8Var.e.contains(Integer.valueOf(i15))) {
+                    t8Var.e.add(Integer.valueOf(i15));
+                } else if (t8Var.e.size() > 1) {
+                    t8Var.e.remove(Integer.valueOf(i15));
                 }
-                AndroidUtilities.forEachViews((RecyclerView) u8Var.b, (h5.d) new ng.i(u8Var, i12));
+                AndroidUtilities.forEachViews((RecyclerView) t8Var.b, (h5.d) new ng.i(t8Var, i12));
                 break;
             case 24:
-                qh.e5 e5Var = ((qh.c5) obj).b;
-                if (e5Var.r && (callback = e5Var.f) != null) {
+                qh.d5 d5Var = ((qh.b5) obj).b;
+                if (d5Var.r && (callback = d5Var.f) != null) {
                     callback.run(Integer.valueOf(i15));
                     break;
                 }
                 break;
             case 25:
-                ((wh.z1) obj).M.Y3(i15);
+                ((wh.z1) obj).M.X3(i15);
                 break;
             case 26:
                 View.OnClickListener onClickListener = ((xg.e) obj).b[i15];

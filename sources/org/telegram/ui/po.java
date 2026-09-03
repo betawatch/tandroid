@@ -49,7 +49,7 @@ import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.Components.x40, NotificationCenter.NotificationCenterDelegate {
     public TLRPC.User A0;
@@ -67,7 +67,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
     public boolean G0;
     public org.telegram.ui.Cells.o8 H;
     public TLRPC.ChatReactions H0;
-    public qo0 I;
+    public so0 I;
     public TL_stories.TL_premium_boostsStatus I0;
     public org.telegram.ui.Cells.o8 J;
     public boolean J0;
@@ -80,7 +80,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
     public org.telegram.ui.Cells.o8 N;
     public final no N0;
     public LinearLayout O;
-    public org.telegram.ui.Components.ij0 O0;
+    public org.telegram.ui.Components.hj0 O0;
     public LinearLayout P;
     public ValueAnimator P0;
     public org.telegram.ui.Cells.o8 Q;
@@ -128,7 +128,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
     public TLRPC.ChatFull v0;
     public eg.s3 w;
     public TLRPC.TL_chatAdminRights w0;
-    public org.telegram.ui.Components.fo0 x;
+    public org.telegram.ui.Components.eo0 x;
     public TLRPC.TL_chatBannedRights x0;
     public LinearLayout y;
     public TLRPC.TL_chatBannedRights y0;
@@ -224,7 +224,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
         v0Var.H1(j10);
         TLRPC.Chat chat = poVar.getMessagesController().getChat(Long.valueOf(-j10));
         if (chat != null) {
-            v0Var.N0 = new fc(25, poVar, chat);
+            v0Var.N0 = new xc(24, poVar, chat);
         }
         poVar.showDialog(v0Var);
     }
@@ -354,9 +354,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
         jdVar.setBackgroundColor(org.telegram.ui.ActionBar.k6.u0(org.telegram.ui.ActionBar.k6.a7));
         eg.s3 s3Var2 = new eg.s3(context);
         this.w = s3Var2;
-        org.telegram.ui.Components.fo0 fo0Var = new org.telegram.ui.Components.fo0(context, this.w, this.resourceProvider, false);
-        this.x = fo0Var;
-        fo0Var.setFillViewport(true);
+        org.telegram.ui.Components.eo0 eo0Var = new org.telegram.ui.Components.eo0(context, this.w, this.resourceProvider, false);
+        this.x = eo0Var;
+        eo0Var.setFillViewport(true);
         jdVar.addView(this.x, k7.c6.c(-1.0f, -1));
         this.actionBar.setAdaptiveBackground(this.x);
         this.x.addView(s3Var2, new FrameLayout.LayoutParams(-1, -2));
@@ -479,7 +479,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -576,9 +576,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -781,7 +781,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -878,9 +878,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -1092,7 +1092,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 po poVar9 = this.b;
-                                poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                 break;
                             case 7:
                                 po poVar10 = this.b;
@@ -1189,9 +1189,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 po poVar16 = this.b;
-                                aw0 aw0Var = new aw0(poVar16.t0);
-                                aw0Var.v = new io(poVar16, 4);
-                                poVar16.presentFragment(aw0Var);
+                                fw0 fw0Var = new fw0(poVar16.t0);
+                                fw0Var.v = new io(poVar16, 4);
+                                poVar16.presentFragment(fw0Var);
                                 break;
                             case 19:
                                 po.Z(this.b);
@@ -1366,7 +1366,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 po poVar9 = this.b;
-                                poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                 break;
                             case 7:
                                 po poVar10 = this.b;
@@ -1463,9 +1463,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 po poVar16 = this.b;
-                                aw0 aw0Var = new aw0(poVar16.t0);
-                                aw0Var.v = new io(poVar16, 4);
-                                poVar16.presentFragment(aw0Var);
+                                fw0 fw0Var = new fw0(poVar16.t0);
+                                fw0Var.v = new io(poVar16, 4);
+                                poVar16.presentFragment(fw0Var);
                                 break;
                             case 19:
                                 po.Z(this.b);
@@ -1640,7 +1640,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 po poVar9 = this.b;
-                                poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                 break;
                             case 7:
                                 po poVar10 = this.b;
@@ -1737,9 +1737,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 po poVar16 = this.b;
-                                aw0 aw0Var = new aw0(poVar16.t0);
-                                aw0Var.v = new io(poVar16, 4);
-                                poVar16.presentFragment(aw0Var);
+                                fw0 fw0Var = new fw0(poVar16.t0);
+                                fw0Var.v = new io(poVar16, 4);
+                                poVar16.presentFragment(fw0Var);
                                 break;
                             case 19:
                                 po.Z(this.b);
@@ -1915,7 +1915,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 po poVar9 = this.b;
-                                poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                 break;
                             case 7:
                                 po poVar10 = this.b;
@@ -2012,9 +2012,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 po poVar16 = this.b;
-                                aw0 aw0Var = new aw0(poVar16.t0);
-                                aw0Var.v = new io(poVar16, 4);
-                                poVar16.presentFragment(aw0Var);
+                                fw0 fw0Var = new fw0(poVar16.t0);
+                                fw0Var.v = new io(poVar16, 4);
+                                poVar16.presentFragment(fw0Var);
                                 break;
                             case 19:
                                 po.Z(this.b);
@@ -2099,9 +2099,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
             if (ChatObject.isChannelAndNotMegaGroup(this.u0) && ChatObject.canChangeChatInfo(this.u0)) {
                 z11 = true;
                 s3Var = s3Var2;
-                qo0 qo0Var = new qo0(this.currentAccount, -this.u0.id, context, getResourceProvider());
-                this.I = qo0Var;
-                qo0Var.setBackground(org.telegram.ui.ActionBar.k6.K0(true));
+                so0 so0Var = new so0(this.currentAccount, -this.u0.id, context, getResourceProvider());
+                this.I = so0Var;
+                so0Var.setBackground(org.telegram.ui.ActionBar.k6.K0(true));
                 this.C.addView(this.I, k7.c6.n(-1, -2));
                 final int i25 = 19;
                 this.I.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.bo
@@ -2191,7 +2191,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 po poVar9 = this.b;
-                                poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                 break;
                             case 7:
                                 po poVar10 = this.b;
@@ -2288,9 +2288,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 po poVar16 = this.b;
-                                aw0 aw0Var = new aw0(poVar16.t0);
-                                aw0Var.v = new io(poVar16, 4);
-                                poVar16.presentFragment(aw0Var);
+                                fw0 fw0Var = new fw0(poVar16.t0);
+                                fw0Var.v = new io(poVar16, 4);
+                                poVar16.presentFragment(fw0Var);
                                 break;
                             case 19:
                                 po.Z(this.b);
@@ -2454,9 +2454,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                         }
                     }
                 });
-                qo0 qo0Var2 = new qo0(poVar.currentAccount, -poVar.u0.id, context3, poVar.getResourceProvider());
-                poVar.I = qo0Var2;
-                qo0Var2.setBackground(org.telegram.ui.ActionBar.k6.K0(true));
+                so0 so0Var2 = new so0(poVar.currentAccount, -poVar.u0.id, context3, poVar.getResourceProvider());
+                poVar.I = so0Var2;
+                so0Var2.setBackground(org.telegram.ui.ActionBar.k6.K0(true));
                 poVar.C.addView(poVar.I, k7.c6.n(-1, -2));
                 poVar.I.setOnClickListener(new View.OnClickListener(poVar) { // from class: org.telegram.ui.bo
                     public final /* synthetic */ po b;
@@ -2545,7 +2545,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 6:
                                 po poVar9 = this.b;
-                                poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                 break;
                             case 7:
                                 po poVar10 = this.b;
@@ -2642,9 +2642,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                 break;
                             case 18:
                                 po poVar16 = this.b;
-                                aw0 aw0Var = new aw0(poVar16.t0);
-                                aw0Var.v = new io(poVar16, 4);
-                                poVar16.presentFragment(aw0Var);
+                                fw0 fw0Var = new fw0(poVar16.t0);
+                                fw0Var.v = new io(poVar16, 4);
+                                poVar16.presentFragment(fw0Var);
                                 break;
                             case 19:
                                 po.Z(this.b);
@@ -2871,7 +2871,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     po poVar9 = this.b;
-                                    poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                    poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                     break;
                                 case 7:
                                     po poVar10 = this.b;
@@ -2968,9 +2968,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     po poVar16 = this.b;
-                                    aw0 aw0Var = new aw0(poVar16.t0);
-                                    aw0Var.v = new io(poVar16, 4);
-                                    poVar16.presentFragment(aw0Var);
+                                    fw0 fw0Var = new fw0(poVar16.t0);
+                                    fw0Var.v = new io(poVar16, 4);
+                                    poVar16.presentFragment(fw0Var);
                                     break;
                                 case 19:
                                     po.Z(this.b);
@@ -3142,7 +3142,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     po poVar9 = this.b;
-                                    poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                    poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                     break;
                                 case 7:
                                     po poVar10 = this.b;
@@ -3239,9 +3239,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     po poVar16 = this.b;
-                                    aw0 aw0Var = new aw0(poVar16.t0);
-                                    aw0Var.v = new io(poVar16, 4);
-                                    poVar16.presentFragment(aw0Var);
+                                    fw0 fw0Var = new fw0(poVar16.t0);
+                                    fw0Var.v = new io(poVar16, 4);
+                                    poVar16.presentFragment(fw0Var);
                                     break;
                                 case 19:
                                     po.Z(this.b);
@@ -3413,7 +3413,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     po poVar9 = this.b;
-                                    poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                    poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                     break;
                                 case 7:
                                     po poVar10 = this.b;
@@ -3510,9 +3510,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     po poVar16 = this.b;
-                                    aw0 aw0Var = new aw0(poVar16.t0);
-                                    aw0Var.v = new io(poVar16, 4);
-                                    poVar16.presentFragment(aw0Var);
+                                    fw0 fw0Var = new fw0(poVar16.t0);
+                                    fw0Var.v = new io(poVar16, 4);
+                                    poVar16.presentFragment(fw0Var);
                                     break;
                                 case 19:
                                     po.Z(this.b);
@@ -3685,7 +3685,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         po poVar9 = this.b;
-                                        poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                        poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                         break;
                                     case 7:
                                         po poVar10 = this.b;
@@ -3782,9 +3782,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         po poVar16 = this.b;
-                                        aw0 aw0Var = new aw0(poVar16.t0);
-                                        aw0Var.v = new io(poVar16, 4);
-                                        poVar16.presentFragment(aw0Var);
+                                        fw0 fw0Var = new fw0(poVar16.t0);
+                                        fw0Var.v = new io(poVar16, 4);
+                                        poVar16.presentFragment(fw0Var);
                                         break;
                                     case 19:
                                         po.Z(this.b);
@@ -3958,7 +3958,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     po poVar9 = this.b;
-                                    poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                    poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                     break;
                                 case 7:
                                     po poVar10 = this.b;
@@ -4055,9 +4055,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     po poVar16 = this.b;
-                                    aw0 aw0Var = new aw0(poVar16.t0);
-                                    aw0Var.v = new io(poVar16, 4);
-                                    poVar16.presentFragment(aw0Var);
+                                    fw0 fw0Var = new fw0(poVar16.t0);
+                                    fw0Var.v = new io(poVar16, 4);
+                                    poVar16.presentFragment(fw0Var);
                                     break;
                                 case 19:
                                     po.Z(this.b);
@@ -4229,7 +4229,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     po poVar9 = this.b;
-                                    poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                    poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                     break;
                                 case 7:
                                     po poVar10 = this.b;
@@ -4326,9 +4326,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     po poVar16 = this.b;
-                                    aw0 aw0Var = new aw0(poVar16.t0);
-                                    aw0Var.v = new io(poVar16, 4);
-                                    poVar16.presentFragment(aw0Var);
+                                    fw0 fw0Var = new fw0(poVar16.t0);
+                                    fw0Var.v = new io(poVar16, 4);
+                                    poVar16.presentFragment(fw0Var);
                                     break;
                                 case 19:
                                     po.Z(this.b);
@@ -4501,7 +4501,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         po poVar9 = this.b;
-                                        poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                        poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                         break;
                                     case 7:
                                         po poVar10 = this.b;
@@ -4598,9 +4598,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         po poVar16 = this.b;
-                                        aw0 aw0Var = new aw0(poVar16.t0);
-                                        aw0Var.v = new io(poVar16, 4);
-                                        poVar16.presentFragment(aw0Var);
+                                        fw0 fw0Var = new fw0(poVar16.t0);
+                                        fw0Var.v = new io(poVar16, 4);
+                                        poVar16.presentFragment(fw0Var);
                                         break;
                                     case 19:
                                         po.Z(this.b);
@@ -4774,7 +4774,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 6:
                                     po poVar9 = this.b;
-                                    poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                    poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                     break;
                                 case 7:
                                     po poVar10 = this.b;
@@ -4871,9 +4871,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                     break;
                                 case 18:
                                     po poVar16 = this.b;
-                                    aw0 aw0Var = new aw0(poVar16.t0);
-                                    aw0Var.v = new io(poVar16, 4);
-                                    poVar16.presentFragment(aw0Var);
+                                    fw0 fw0Var = new fw0(poVar16.t0);
+                                    fw0Var.v = new io(poVar16, 4);
+                                    poVar16.presentFragment(fw0Var);
                                     break;
                                 case 19:
                                     po.Z(this.b);
@@ -5048,7 +5048,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         po poVar9 = this.b;
-                                        poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                        poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                         break;
                                     case 7:
                                         po poVar10 = this.b;
@@ -5145,9 +5145,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         po poVar16 = this.b;
-                                        aw0 aw0Var = new aw0(poVar16.t0);
-                                        aw0Var.v = new io(poVar16, 4);
-                                        poVar16.presentFragment(aw0Var);
+                                        fw0 fw0Var = new fw0(poVar16.t0);
+                                        fw0Var.v = new io(poVar16, 4);
+                                        poVar16.presentFragment(fw0Var);
                                         break;
                                     case 19:
                                         po.Z(this.b);
@@ -5322,7 +5322,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                         break;
                                     case 6:
                                         po poVar9 = this.b;
-                                        poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                                        poVar9.presentFragment(na1.d0(poVar9.u0, false));
                                         break;
                                     case 7:
                                         po poVar10 = this.b;
@@ -5419,9 +5419,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                                         break;
                                     case 18:
                                         po poVar16 = this.b;
-                                        aw0 aw0Var = new aw0(poVar16.t0);
-                                        aw0Var.v = new io(poVar16, 4);
-                                        poVar16.presentFragment(aw0Var);
+                                        fw0 fw0Var = new fw0(poVar16.t0);
+                                        fw0Var.v = new io(poVar16, 4);
+                                        poVar16.presentFragment(fw0Var);
                                         break;
                                     case 19:
                                         po.Z(this.b);
@@ -5642,7 +5642,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -5739,9 +5739,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -5913,7 +5913,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -6010,9 +6010,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -6184,7 +6184,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -6281,9 +6281,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -6457,7 +6457,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -6554,9 +6554,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -6728,7 +6728,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -6825,9 +6825,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -7002,7 +7002,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -7099,9 +7099,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -7277,7 +7277,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -7374,9 +7374,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -7591,7 +7591,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -7688,9 +7688,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -7865,7 +7865,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -7962,9 +7962,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -8154,7 +8154,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -8251,9 +8251,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -8427,7 +8427,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -8524,9 +8524,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -8700,7 +8700,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -8797,9 +8797,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -8994,7 +8994,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -9091,9 +9091,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -9538,7 +9538,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 6:
                             po poVar9 = this.b;
-                            poVar9.presentFragment(ha1.d0(poVar9.u0, false));
+                            poVar9.presentFragment(na1.d0(poVar9.u0, false));
                             break;
                         case 7:
                             po poVar10 = this.b;
@@ -9635,9 +9635,9 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                             break;
                         case 18:
                             po poVar16 = this.b;
-                            aw0 aw0Var = new aw0(poVar16.t0);
-                            aw0Var.v = new io(poVar16, 4);
-                            poVar16.presentFragment(aw0Var);
+                            fw0 fw0Var = new fw0(poVar16.t0);
+                            fw0Var.v = new io(poVar16, 4);
+                            poVar16.presentFragment(fw0Var);
                             break;
                         case 19:
                             po.Z(this.b);
@@ -10016,7 +10016,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
     }
 
     @Override // org.telegram.ui.Components.x40
-    public final /* synthetic */ lu0 getCloseIntoObject() {
+    public final /* synthetic */ qu0 getCloseIntoObject() {
         return null;
     }
 
@@ -10239,8 +10239,8 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                         Bundle bundle = new Bundle();
                         bundle.putLong("chat_id", this.t0);
                         org.telegram.ui.ActionBar.f5 parentLayout = getParentLayout();
-                        HashSet hashSet = mf1.k1;
-                        ((ActionBarLayout) parentLayout).c(i10, mf1.E0(getMessagesController(), getMessagesStorage(), bundle));
+                        HashSet hashSet = sf1.k1;
+                        ((ActionBarLayout) parentLayout).c(i10, sf1.E0(getMessagesController(), getMessagesStorage(), bundle));
                     }
                     i10++;
                 }
@@ -10286,7 +10286,7 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                         this.Y.m(R.drawable.msg_addphoto, LocaleController.getString("ChatSetPhotoOrVideo", R.string.ChatSetPhotoOrVideo), true);
                     }
                     if (this.O0 == null) {
-                        this.O0 = new org.telegram.ui.Components.ij0(R.raw.camera_outline, "" + R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
+                        this.O0 = new org.telegram.ui.Components.hj0(R.raw.camera_outline, AndroidUtilities.dp(50.0f), AndroidUtilities.dp(50.0f), false, null);
                     }
                     this.Y.e.setTranslationX(-AndroidUtilities.dp(8.0f));
                     this.Y.e.setAnimation(this.O0);
@@ -10441,45 +10441,45 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
     public final void o0() {
         org.telegram.ui.Cells.o8 o8Var;
         org.telegram.ui.Cells.o8 o8Var2;
-        ep0 ep0Var;
+        ip0 ip0Var;
         int v02;
         ArrayList<Integer> arrayList;
-        qo0 qo0Var = this.I;
-        if (qo0Var != null) {
+        so0 so0Var = this.I;
+        if (so0Var != null) {
             TLRPC.Chat chat = this.u0;
             org.telegram.ui.Cells.o8 o8Var3 = this.K;
             boolean z4 = (o8Var3 != null && o8Var3.getVisibility() == 0) || ((o8Var = this.N) != null && o8Var.getVisibility() == 0) || ((ChatObject.isMegagroup(this.u0) && ChatObject.hasAdminRights(this.u0)) || ((o8Var2 = this.J) != null && o8Var2.getVisibility() == 0));
-            Paint paint = qo0Var.n;
-            int i10 = qo0Var.a;
-            org.telegram.ui.ActionBar.g6 g6Var = qo0Var.d;
+            Paint paint = so0Var.n;
+            int i10 = so0Var.a;
+            org.telegram.ui.ActionBar.g6 g6Var = so0Var.d;
             if (chat == null) {
                 return;
             }
-            qo0Var.v = z4;
-            qo0Var.r = new org.telegram.ui.Components.l01(Emoji.replaceEmoji(chat.title, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), false), 13.0f, AndroidUtilities.bold());
-            ep0 ep0Var2 = qo0Var.w;
-            if (ep0Var2 != null) {
-                ep0Var2.e(null);
+            so0Var.v = z4;
+            so0Var.r = new org.telegram.ui.Components.k01(Emoji.replaceEmoji(chat.title, org.telegram.ui.ActionBar.k6.o2.getFontMetricsInt(), false), 13.0f, AndroidUtilities.bold());
+            ip0 ip0Var2 = so0Var.w;
+            if (ip0Var2 != null) {
+                ip0Var2.e(null);
             }
             TLRPC.EmojiStatus emojiStatus = chat.emoji_status;
             if (emojiStatus instanceof TLRPC.TL_emojiStatusCollectible) {
                 TLRPC.TL_emojiStatusCollectible tL_emojiStatusCollectible = (TLRPC.TL_emojiStatusCollectible) emojiStatus;
-                int i11 = ep0.j;
+                int i11 = ip0.j;
                 int i12 = tL_emojiStatusCollectible.center_color | (-16777216);
-                qo0Var.w = new ep0(tL_emojiStatusCollectible.document_id, i12, i12, i12);
+                so0Var.w = new ip0(tL_emojiStatusCollectible.document_id, i12, i12, i12);
             } else {
                 if (ChatObject.getProfileColorId(chat) >= 0) {
-                    ep0Var = ep0.c(i10, ChatObject.getProfileColorId(chat));
-                    ep0Var.a = AndroidUtilities.dp(11.0f);
-                    ep0Var.d();
+                    ip0Var = ip0.c(i10, ChatObject.getProfileColorId(chat));
+                    ip0Var.a = AndroidUtilities.dp(11.0f);
+                    ip0Var.d();
                 } else {
-                    ep0Var = null;
+                    ip0Var = null;
                 }
-                qo0Var.w = ep0Var;
+                so0Var.w = ip0Var;
             }
-            ep0 ep0Var3 = qo0Var.w;
-            if (ep0Var3 != null) {
-                ep0Var3.e(qo0Var);
+            ip0 ip0Var3 = so0Var.w;
+            if (ip0Var3 != null) {
+                ip0Var3.e(so0Var);
             }
             TLRPC.PeerColor peerColor = chat.color;
             if (peerColor instanceof TLRPC.TL_peerColorCollectible) {
@@ -10492,39 +10492,39 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                 int intValue = arrayList.get(0).intValue() | (-16777216);
                 int intValue2 = arrayList.size() >= 2 ? arrayList.get(1).intValue() | (-16777216) : intValue;
                 int intValue3 = arrayList.size() >= 3 ? arrayList.get(2).intValue() | (-16777216) : intValue;
-                qo0Var.r.o(i13);
+                so0Var.r.o(i13);
                 paint.setColor(org.telegram.ui.ActionBar.k6.l1(0.1f, i13));
-                ep0 ep0Var4 = new ep0(tL_peerColorCollectible.gift_emoji_id, intValue, intValue2, intValue3);
-                ep0Var4.a = AndroidUtilities.dp(11.0f);
-                ep0Var4.d();
-                qo0Var.x = ep0Var4;
-                ep0Var4.e(qo0Var);
+                ip0 ip0Var4 = new ip0(tL_peerColorCollectible.gift_emoji_id, intValue, intValue2, intValue3);
+                ip0Var4.a = AndroidUtilities.dp(11.0f);
+                ip0Var4.d();
+                so0Var.x = ip0Var4;
+                ip0Var4.e(so0Var);
                 return;
             }
             int colorId = ChatObject.getColorId(chat);
             if (colorId < 7) {
                 int i14 = org.telegram.ui.ActionBar.k6.r8[colorId];
-                qo0Var.s = i14;
+                so0Var.s = i14;
                 v02 = org.telegram.ui.ActionBar.k6.v0(i14, g6Var);
             } else {
                 MessagesController.PeerColors peerColors = MessagesController.getInstance(UserConfig.selectedAccount).peerColors;
                 MessagesController.PeerColor color = peerColors != null ? peerColors.getColor(colorId) : null;
                 if (color != null) {
-                    qo0Var.s = -1;
+                    so0Var.s = -1;
                     v02 = color.getColor1();
                 } else {
                     int i15 = org.telegram.ui.ActionBar.k6.r8[0];
-                    qo0Var.s = i15;
+                    so0Var.s = i15;
                     v02 = org.telegram.ui.ActionBar.k6.v0(i15, g6Var);
                 }
             }
-            qo0Var.r.o(v02);
+            so0Var.r.o(v02);
             paint.setColor(org.telegram.ui.ActionBar.k6.l1(0.1f, v02));
-            ep0 a10 = ep0.a(i10, colorId);
+            ip0 a10 = ip0.a(i10, colorId);
             a10.a = AndroidUtilities.dp(11.0f);
             a10.d();
-            qo0Var.x = a10;
-            a10.e(qo0Var);
+            so0Var.x = a10;
+            a10.e(so0Var);
         }
     }
 
@@ -11121,14 +11121,14 @@ public class po extends org.telegram.ui.ActionBar.p2 implements org.telegram.ui.
                     if (!this.E0) {
                         Bundle bundle = new Bundle();
                         bundle.putLong("chat_id", this.t0);
-                        ((ActionBarLayout) getParentLayout()).c(i10, new mf1(bundle));
+                        ((ActionBarLayout) getParentLayout()).c(i10, new sf1(bundle));
                         i10++;
                     }
                 }
-            } else if (this.E0 && (fragmentStack.get(i10) instanceof mf1)) {
-                mf1 mf1Var = (mf1) fragmentStack.get(i10);
-                if (mf1Var.g() != null && mf1Var.g().id == this.t0) {
-                    ((ActionBarLayout) getParentLayout()).a0(mf1Var, false);
+            } else if (this.E0 && (fragmentStack.get(i10) instanceof sf1)) {
+                sf1 sf1Var = (sf1) fragmentStack.get(i10);
+                if (sf1Var.g() != null && sf1Var.g().id == this.t0) {
+                    ((ActionBarLayout) getParentLayout()).a0(sf1Var, false);
                     i10--;
                 }
             } else if (this.E0 && (fragmentStack.get(i10) instanceof py) && (pyVar = (py) fragmentStack.get(i10)) != null && (kxVar = pyVar.C3) != null && kxVar.c()) {

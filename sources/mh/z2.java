@@ -5,11 +5,11 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.e31;
-import org.telegram.ui.m31;
+import org.telegram.ui.j31;
 import org.telegram.ui.py;
+import org.telegram.ui.q31;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class z2 implements Runnable {
     public final /* synthetic */ int a = 0;
@@ -50,10 +50,10 @@ public final /* synthetic */ class z2 implements Runnable {
                 qc qcVar = (qc) this.e;
                 org.telegram.messenger.video.d dVar = (org.telegram.messenger.video.d) this.r;
                 TLRPC.TL_channels_sponsoredMessageReportResultChooseOption tL_channels_sponsoredMessageReportResultChooseOption = (TLRPC.TL_channels_sponsoredMessageReportResultChooseOption) this.c;
-                m31 m31Var = new m31(context, h0Var, this.d, bArr);
-                m31Var.O(tL_channels_sponsoredMessageReportResultChooseOption);
-                m31Var.s = new e31(aVar, qcVar, context, h0Var, dVar);
-                m31Var.show();
+                q31 q31Var = new q31(context, h0Var, this.d, bArr);
+                q31Var.O(tL_channels_sponsoredMessageReportResultChooseOption);
+                q31Var.s = new j31(aVar, qcVar, context, h0Var, dVar);
+                q31Var.show();
                 break;
         }
     }

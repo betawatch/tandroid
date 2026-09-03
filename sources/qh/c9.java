@@ -1,60 +1,96 @@
 package qh;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class c9 extends a3 {
-    public final /* synthetic */ ca h0;
+public final class c9 implements fa {
+    public final /* synthetic */ c4 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c9(ca caVar, int i10, Context context, oh.b bVar, MediaController.AlbumEntry albumEntry, boolean z4, boolean z10, boolean z11) {
-        super(i10, context, bVar, albumEntry, z4, 1.39f, z10, z11);
-        this.h0 = caVar;
+    public c9(c4 c4Var) {
+        this.a = c4Var;
     }
 
-    @Override // qh.a3
-    public final void a() {
-        ca caVar = this.h0;
-        caVar.J0.setTranslationY(caVar.n.getMeasuredHeight() - caVar.J0.g());
-        p8 p8Var = caVar.n2;
-        if (p8Var != null) {
-            p8Var.run();
-            caVar.n2 = null;
-        }
+    @Override // qh.fa
+    public final void d0(float f10, boolean z4) {
+        this.a.run(Boolean.FALSE, Float.valueOf(f10));
     }
 
-    @Override // qh.a3
-    public final void c(boolean z4) {
-        if (this.h0.c0 == 0 && z4) {
-            AndroidUtilities.runOnUIThread(new org.telegram.ui.web.s0(this, 27));
-        }
+    @Override // qh.fa
+    public final /* synthetic */ void G() {
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() != 0 || motionEvent.getY() >= g()) {
-            return super.dispatchTouchEvent(motionEvent);
-        }
-        ca caVar = this.h0;
-        caVar.I0 = true;
-        caVar.f(false);
-        return true;
+    @Override // qh.fa
+    public final /* synthetic */ void w0() {
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        ca caVar = this.h0;
-        if (caVar.h2) {
-            float clamp = Utilities.clamp(1.0f - (f10 / (caVar.n.getMeasuredHeight() - caVar.J0.g())), 1.0f, 0.0f);
-            caVar.r.b(AndroidUtilities.dp(-32.0f) * clamp);
-            caVar.r.setAlpha(1.0f - (0.6f * clamp));
-            caVar.f0.setAlpha(1.0f - clamp);
-        }
+    @Override // qh.fa
+    public final /* synthetic */ void A(float f10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void H0(long j10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void J(float f10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void U(boolean z4) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void X(float f10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void f(int i10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void h0(long j10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void j0(boolean z4) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void r0(float f10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void t0(float f10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void u(float f10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void v0(float f10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void y0(float f10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void B(long j10, boolean z4) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void E0(int i10, long j10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void W(float f10, int i10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void m0(float f10, int i10) {
+    }
+
+    @Override // qh.fa
+    public final /* synthetic */ void u0(float f10, int i10) {
     }
 }

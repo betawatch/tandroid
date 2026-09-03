@@ -6,9 +6,9 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class na0 extends org.telegram.ui.au0 {
+public final class na0 extends org.telegram.ui.fu0 {
     public final /* synthetic */ ra0 a;
 
     public na0(ra0 ra0Var) {
@@ -17,11 +17,11 @@ public final class na0 extends org.telegram.ui.au0 {
 
     /* JADX WARN: Removed duplicated region for block: B:13:0x0066 A[LOOP:0: B:6:0x001e->B:13:0x0066, LOOP_END] */
     /* JADX WARN: Removed duplicated region for block: B:14:0x003d A[SYNTHETIC] */
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final org.telegram.ui.lu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+    public final org.telegram.ui.qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
         ImageReceiver imageReceiver;
         if (i10 >= 0) {
             ra0 ra0Var = this.a;
@@ -37,14 +37,14 @@ public final class na0 extends org.telegram.ui.au0 {
                             if (imageReceiver == null) {
                                 int[] iArr = new int[2];
                                 childAt.getLocationInWindow(iArr);
-                                org.telegram.ui.lu0 lu0Var = new org.telegram.ui.lu0();
-                                lu0Var.b = iArr[0];
-                                lu0Var.c = iArr[1];
-                                lu0Var.d = ra0Var.getListView();
-                                lu0Var.a = imageReceiver;
-                                lu0Var.e = imageReceiver.getBitmapSafe();
-                                lu0Var.h = imageReceiver.getRoundRadius(true);
-                                return lu0Var;
+                                org.telegram.ui.qu0 qu0Var = new org.telegram.ui.qu0();
+                                qu0Var.b = iArr[0];
+                                qu0Var.c = iArr[1];
+                                qu0Var.d = ra0Var.getListView();
+                                qu0Var.a = imageReceiver;
+                                qu0Var.e = imageReceiver.getBitmapSafe();
+                                qu0Var.h = imageReceiver.getRoundRadius(true);
+                                return qu0Var;
                             }
                         }
                     }
@@ -57,7 +57,7 @@ public final class na0 extends org.telegram.ui.au0 {
         return null;
     }
 
-    @Override // org.telegram.ui.au0, org.telegram.ui.ju0
+    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
     public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
         if (i10 >= 0) {
             ra0 ra0Var = this.a;

@@ -4,9 +4,9 @@ import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.gw0;
+import org.telegram.ui.Components.fw0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class d8 implements Runnable {
     public final /* synthetic */ int a;
@@ -25,14 +25,14 @@ public final /* synthetic */ class d8 implements Runnable {
         org.telegram.ui.ActionBar.p2 p2Var;
         switch (this.a) {
             case 0:
-                gw0 gw0Var = new gw0(this.c);
+                fw0 fw0Var = new fw0(this.c);
                 if (!AndroidUtilities.isTablet()) {
                     org.telegram.ui.ActionBar.h3[] h3VarArr = this.b;
                     if (!AndroidUtilities.hasDialogOnTop(h3VarArr[0].attachedFragment) && (h3Var = h3VarArr[0]) != null && (p2Var = h3Var.attachedFragment) != null) {
-                        gw0Var.makeAttached(p2Var);
+                        fw0Var.makeAttached(p2Var);
                     }
                 }
-                gw0Var.show();
+                fw0Var.show();
                 break;
             case 1:
                 this.b[0].dismiss();

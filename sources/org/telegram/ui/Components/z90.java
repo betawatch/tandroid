@@ -9,11 +9,11 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.PasscodeActivity;
-import org.telegram.ui.qg1;
+import org.telegram.ui.vg1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class z90 extends qv0 {
+public final class z90 extends pv0 {
     public final /* synthetic */ int t0;
     public final /* synthetic */ FrameLayout u0;
     public final /* synthetic */ org.telegram.ui.ActionBar.p2 v0;
@@ -26,7 +26,7 @@ public final class z90 extends qv0 {
         this.u0 = frameLayout;
     }
 
-    @Override // org.telegram.ui.Components.qv0
+    @Override // org.telegram.ui.Components.pv0
     public void L(Canvas canvas, ArrayList arrayList) {
         switch (this.t0) {
             case 0:
@@ -37,13 +37,13 @@ public final class z90 extends qv0 {
 
     @Override // android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        rt0[] rt0VarArr;
-        rt0 rt0Var;
+        qt0[] qt0VarArr;
+        qt0 qt0Var;
         switch (this.t0) {
             case 0:
                 fa0 fa0Var = (fa0) this.v0;
                 ca0 ca0Var = fa0Var.S;
-                if (ca0Var != null && (rt0Var = (rt0VarArr = ca0Var.h0)[0]) != null && rt0Var.h.getFastScroll() != null && rt0VarArr[0].h.getFastScroll().n) {
+                if (ca0Var != null && (qt0Var = (qt0VarArr = ca0Var.h0)[0]) != null && qt0Var.h.getFastScroll() != null && qt0VarArr[0].h.getFastScroll().n) {
                     return fa0Var.S.O(motionEvent);
                 }
                 ca0 ca0Var2 = fa0Var.S;
@@ -56,7 +56,7 @@ public final class z90 extends qv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.qv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.pv0, android.widget.FrameLayout, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         int measuredHeight;
         int measuredHeight2;
@@ -89,9 +89,9 @@ public final class z90 extends qv0 {
                 break;
             case 2:
                 org.telegram.ui.l0 l0Var = (org.telegram.ui.l0) this.u0;
-                qg1 qg1Var = (qg1) this.v0;
-                if (qg1Var.b0.getVisibility() == 8 || R() < AndroidUtilities.dp(20.0f)) {
-                    if (qg1Var.b0.getVisibility() != 8) {
+                vg1 vg1Var = (vg1) this.v0;
+                if (vg1Var.b0.getVisibility() == 8 || R() < AndroidUtilities.dp(20.0f)) {
+                    if (vg1Var.b0.getVisibility() != 8) {
                         int measuredWidth5 = getMeasuredWidth();
                         measuredHeight2 = getMeasuredHeight() - AndroidUtilities.dp(230.0f);
                         l0Var.layout(0, 0, measuredWidth5, measuredHeight2);
@@ -100,7 +100,7 @@ public final class z90 extends qv0 {
                         measuredHeight2 = getMeasuredHeight();
                         l0Var.layout(0, 0, measuredWidth6, measuredHeight2);
                     }
-                } else if (qg1Var.v0()) {
+                } else if (vg1Var.v0()) {
                     int measuredWidth7 = getMeasuredWidth();
                     measuredHeight2 = R() + (getMeasuredHeight() - AndroidUtilities.dp(230.0f));
                     l0Var.layout(0, 0, measuredWidth7, measuredHeight2);
@@ -109,7 +109,7 @@ public final class z90 extends qv0 {
                     measuredHeight2 = getMeasuredHeight();
                     l0Var.layout(0, 0, measuredWidth8, measuredHeight2);
                 }
-                qg1Var.b0.layout(0, measuredHeight2, getMeasuredWidth(), AndroidUtilities.dp(230.0f) + measuredHeight2);
+                vg1Var.b0.layout(0, measuredHeight2, getMeasuredWidth(), AndroidUtilities.dp(230.0f) + measuredHeight2);
                 break;
             default:
                 super.onLayout(z4, i10, i11, i12, i13);
@@ -160,12 +160,12 @@ public final class z90 extends qv0 {
                 int size3 = View.MeasureSpec.getSize(i10);
                 int size4 = View.MeasureSpec.getSize(i11);
                 setMeasuredDimension(size3, size4);
-                qg1 qg1Var = (qg1) this.v0;
-                if (qg1Var.b0.getVisibility() != 8 && R() < AndroidUtilities.dp(20.0f)) {
+                vg1 vg1Var = (vg1) this.v0;
+                if (vg1Var.b0.getVisibility() != 8 && R() < AndroidUtilities.dp(20.0f)) {
                     size4 -= AndroidUtilities.dp(230.0f);
                 }
                 ((org.telegram.ui.l0) this.u0).measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(size4, TLObject.FLAG_30));
-                qg1Var.b0.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLObject.FLAG_30));
+                vg1Var.b0.measure(View.MeasureSpec.makeMeasureSpec(size3, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(230.0f), TLObject.FLAG_30));
                 break;
         }
     }

@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Paint;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class df extends sh.v {
     public boolean s;
@@ -18,13 +18,13 @@ public final class df extends sh.v {
         this.d = paint;
         this.f = true;
         this.b = new c5.e();
-        qh.e1 e1Var = new qh.e1(this, context, 1);
-        this.c = e1Var;
-        e1Var.setOverScrollMode(2);
-        e1Var.setClipToPadding(false);
-        e1Var.setClipToOutline(true);
-        e1Var.j(new nb0(this, 14));
-        addView(e1Var);
+        org.telegram.ui.c81 c81Var = new org.telegram.ui.c81(this, context, 2);
+        this.c = c81Var;
+        c81Var.setOverScrollMode(2);
+        c81Var.setClipToPadding(false);
+        c81Var.setClipToOutline(true);
+        c81Var.j(new nb0(this, 14));
+        addView(c81Var);
         paint.setColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.Ii, false));
         qg.b bVar = this.r;
         if (bVar != null) {

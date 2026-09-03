@@ -1,66 +1,45 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class vy0 extends f2.a1 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final class vy0 extends f2.j0 {
+    public final /* synthetic */ ProfileActivity I;
 
-    public /* synthetic */ vy0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public vy0(ProfileActivity profileActivity) {
+        this.I = profileActivity;
     }
 
-    @Override // f2.a1
-    public final void a(RecyclerView recyclerView, int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
+    @Override // f2.j0, f2.w0
+    public final int o0(int i10, bf.f fVar, f2.j1 j1Var) {
+        ProfileActivity profileActivity = this.I;
+        View m9 = profileActivity.c.m(0);
+        if (m9 != null && !profileActivity.C0) {
+            int top = m9.getTop() - profileActivity.T3();
+            boolean z4 = profileActivity.l2;
+            if (z4 || top <= i10) {
+                if (z4) {
+                    if (i10 >= top) {
+                        profileActivity.l2 = false;
+                    } else if (profileActivity.a.getScrollState() == 1 && !profileActivity.m2) {
+                        i10 /= 2;
+                    }
                 }
-                break;
-            default:
-                ProfileActivity profileActivity = this.b;
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(profileActivity.getParentActivity().getCurrentFocus());
-                }
-                if (profileActivity.C0 && i10 != 2) {
-                    profileActivity.C0 = false;
-                }
-                org.telegram.ui.ActionBar.w0 w0Var = profileActivity.R0;
-                if (w0Var != null) {
-                    boolean z4 = i10 != 0;
-                    profileActivity.w1 = z4;
-                    w0Var.setEnabled((z4 || profileActivity.m2) ? false : true);
-                }
-                uz0 uz0Var = profileActivity.L;
-                boolean z10 = profileActivity.a.H1;
-                uz0Var.getClass();
-                break;
+            } else if (!profileActivity.k0.U0.isEmpty() && profileActivity.b0.getImageReceiver().hasNotThumb() && !AndroidUtilities.isAccessibilityScreenReaderEnabled() && ((!profileActivity.k2 && !AndroidUtilities.isTablet()) || profileActivity.F0)) {
+                profileActivity.l2 = profileActivity.G2 == null;
+            }
+            i10 = top;
         }
+        if (!profileActivity.L1 || profileActivity.a.L0) {
+            return super.o0(i10, fVar, j1Var);
+        }
+        return 0;
     }
 
-    @Override // f2.a1
-    public void b(RecyclerView recyclerView, int i10, int i11) {
-        switch (this.a) {
-            case 1:
-                ProfileActivity profileActivity = this.b;
-                org.telegram.ui.Components.m40 m40Var = profileActivity.U;
-                if (m40Var != null) {
-                    m40Var.b(true);
-                }
-                profileActivity.A3();
-                if (profileActivity.z1 != null && !profileActivity.A1 && profileActivity.c.N0() > profileActivity.s4 - 8) {
-                    profileActivity.R3(false);
-                }
-                uz0 uz0Var = profileActivity.L;
-                uz0Var.setPinnedToTop(uz0Var.getY() <= 0.0f);
-                profileActivity.U4();
-                break;
-        }
+    @Override // f2.j0, f2.w0
+    public final boolean y0() {
+        return this.I.n0 != null;
     }
 }

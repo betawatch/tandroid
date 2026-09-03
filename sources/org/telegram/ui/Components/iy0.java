@@ -1,86 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
 import android.animation.ValueAnimator;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.StaticLayout;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class iy0 extends FrameLayout {
-    public float B;
-    public float C;
-    public ValueAnimator D;
-    public ValueAnimator E;
-    public cb.m F;
-    public float G;
-    public boolean H;
-    public org.telegram.ui.Components.voip.h I;
-    public Paint a;
-    public Paint b;
-    public Paint c;
-    public Paint d;
+public final class iy0 {
+    public final EditTextBoldCursor a;
+    public StaticLayout b;
+    public StaticLayout c;
+    public StaticLayout d;
     public boolean e;
-    public fg.h0 f;
-    public TextView h;
-    public TextView n;
-    public TextView r;
-    public TextView s;
-    public TextView v;
-    public View w;
-    public int x;
-    public org.telegram.ui.Cells.aa y;
+    public boolean f;
+    public boolean g;
+    public float h;
+    public float i;
+    public ValueAnimator j;
 
-    @Override // android.view.View
-    public final void invalidate() {
-        TextView textView = this.s;
-        TextView textView2 = this.r;
-        TextView textView3 = this.n;
-        TextView textView4 = this.h;
-        super.invalidate();
-        this.f.invalidate();
-        int i10 = this.x;
-        int i11 = org.telegram.ui.ActionBar.k6.Vi;
-        if (i10 != org.telegram.ui.ActionBar.k6.w0(null, i11, false)) {
-            this.x = org.telegram.ui.ActionBar.k6.w0(null, i11, false);
-            textView4.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
-            textView4.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-            textView3.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(10.0f), this.x), (Drawable) null, (Drawable) null, (Drawable) null);
-            textView3.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-            textView2.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 64)), (Drawable) null, (Drawable) null, (Drawable) null);
-            textView2.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-            textView.setCompoundDrawablesWithIntrinsicBounds(org.telegram.ui.ActionBar.k6.K(AndroidUtilities.dp(10.0f), i0.a.k(this.x, 127)), (Drawable) null, (Drawable) null, (Drawable) null);
-            textView.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-        }
-        this.y.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
-        this.w.setBackgroundColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.d7, false));
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        cb.m mVar = this.F;
-        if (mVar != null) {
-            mVar.a = true;
-            AnimatorSet animatorSet = (AnimatorSet) mVar.c;
-            if (animatorSet.isRunning()) {
-                return;
-            }
-            animatorSet.start();
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        cb.m mVar = this.F;
-        if (mVar != null) {
-            mVar.a = false;
-            ((AnimatorSet) mVar.c).cancel();
-        }
+    public iy0(EditTextBoldCursor editTextBoldCursor) {
+        this.a = editTextBoldCursor;
     }
 }

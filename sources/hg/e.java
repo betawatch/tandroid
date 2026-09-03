@@ -20,15 +20,15 @@ import org.telegram.ui.Components.p9;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.t3;
 import org.telegram.ui.Components.v3;
+import org.telegram.ui.Components.xx0;
 import org.telegram.ui.Components.y4;
 import org.telegram.ui.Components.yc0;
-import org.telegram.ui.Components.yx0;
 import org.telegram.ui.Components.z4;
 import org.telegram.ui.Components.z8;
-import org.telegram.ui.g51;
+import org.telegram.ui.l51;
 import org.telegram.ui.vl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class e implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -99,9 +99,9 @@ public final /* synthetic */ class e implements View.OnClickListener {
                     calendar3.set(14, 0);
                 }
                 int timeInMillis = (int) (calendar3.getTimeInMillis() / 1000);
-                g51 g51Var = (g51) vl0Var.b;
+                l51 l51Var = (l51) vl0Var.b;
                 ((boolean[]) vl0Var.c)[0] = true;
-                g51Var.e(Integer.valueOf(timeInMillis));
+                l51Var.e(Integer.valueOf(timeInMillis));
                 c3Var3.a.dismissRunnable.run();
                 break;
             case 3:
@@ -124,7 +124,7 @@ public final /* synthetic */ class e implements View.OnClickListener {
                 c3Var4.a.dismissRunnable.run();
                 break;
             case 4:
-                yx0.x((yx0) this.c, (int[]) this.b, (EditTextBoldCursor) this.e, (TextView) this.f, (TextView) this.h, (AlertDialog$Builder) this.d);
+                xx0.x((xx0) this.c, (int[]) this.b, (EditTextBoldCursor) this.e, (TextView) this.f, (TextView) this.h, (AlertDialog$Builder) this.d);
                 break;
             default:
                 h3 h3Var = (h3) this.c;

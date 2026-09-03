@@ -17,22 +17,22 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.c2;
 import org.telegram.ui.ActionBar.d2;
 import org.telegram.ui.Cells.z1;
-import org.telegram.ui.Components.jm0;
+import org.telegram.ui.Components.im0;
 import org.telegram.ui.Components.x40;
 import org.telegram.ui.Components.y4;
 import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.d60;
-import org.telegram.ui.lu0;
 import org.telegram.ui.py;
-import org.telegram.ui.qz0;
+import org.telegram.ui.qu0;
+import org.telegram.ui.vz0;
 import org.telegram.ui.xn;
-import qh.j5;
-import qh.q6;
-import qh.s6;
+import qh.i5;
+import qh.p6;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements h, g3.b, x40, y4, c2, q6 {
+public final /* synthetic */ class c implements h, g3.b, x40, y4, c2, p6 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
     public final /* synthetic */ long c;
@@ -49,7 +49,7 @@ public final /* synthetic */ class c implements h, g3.b, x40, y4, c2, q6 {
 
     @Override // org.telegram.ui.Components.y4
     public void I(int i10, int i11, boolean z4) {
-        xn.s0((xn) this.b, (ArrayList) this.e, this.c, (jm0) this.d, z4, i10);
+        xn.s0((xn) this.b, (ArrayList) this.e, this.c, (im0) this.d, z4, i10);
     }
 
     @Override // org.telegram.ui.Components.x40
@@ -99,23 +99,23 @@ public final /* synthetic */ class c implements h, g3.b, x40, y4, c2, q6 {
         }
     }
 
-    @Override // qh.q6
+    @Override // qh.p6
     public Bitmap c(BitmapFactory.Options options) {
-        j5 j5Var = (j5) this.b;
-        s6 s6Var = (s6) this.e;
+        i5 i5Var = (i5) this.b;
+        r6 r6Var = (r6) this.e;
         long j10 = this.c;
         String str = (String) this.d;
-        if (!s6Var.K) {
+        if (!r6Var.K) {
             return BitmapFactory.decodeFile(str, options);
         }
-        String str2 = s6Var.N;
+        String str2 = r6Var.N;
         if (str2 != null) {
             return BitmapFactory.decodeFile(str2, options);
         }
         try {
-            return MediaStore.Video.Thumbnails.getThumbnail(j5Var.getContext().getContentResolver(), j10, 1, options);
+            return MediaStore.Video.Thumbnails.getThumbnail(i5Var.getContext().getContentResolver(), j10, 1, options);
         } catch (Throwable unused) {
-            j5Var.invalidate();
+            i5Var.invalidate();
             return null;
         }
     }
@@ -159,7 +159,7 @@ public final /* synthetic */ class c implements h, g3.b, x40, y4, c2, q6 {
     }
 
     @Override // org.telegram.ui.Components.x40
-    public /* synthetic */ lu0 getCloseIntoObject() {
+    public /* synthetic */ qu0 getCloseIntoObject() {
         return null;
     }
 
@@ -183,10 +183,10 @@ public final /* synthetic */ class c implements h, g3.b, x40, y4, c2, q6 {
                 d60.w1(call, z4, this.c, runnable);
                 break;
             default:
-                qz0 qz0Var = (qz0) this.b;
+                vz0 vz0Var = (vz0) this.b;
                 py pyVar = (py) this.e;
                 TLRPC.User user = (TLRPC.User) this.d;
-                ProfileActivity profileActivity = qz0Var.b;
+                ProfileActivity profileActivity = vz0Var.b;
                 profileActivity.K1 = true;
                 Bundle i11 = android.support.v4.media.a.i("scrollToTopOnResume", true);
                 long j10 = -this.c;
@@ -226,9 +226,9 @@ public final /* synthetic */ class c implements h, g3.b, x40, y4, c2, q6 {
         this.e = runnable;
     }
 
-    public /* synthetic */ c(qz0 qz0Var, long j10, py pyVar, TLRPC.User user) {
+    public /* synthetic */ c(vz0 vz0Var, long j10, py pyVar, TLRPC.User user) {
         this.a = 6;
-        this.b = qz0Var;
+        this.b = vz0Var;
         this.c = j10;
         this.e = pyVar;
         this.d = user;

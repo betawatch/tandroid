@@ -21,11 +21,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.no;
 import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.mf1;
 import org.telegram.ui.py;
+import org.telegram.ui.sf1;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class x implements Runnable {
     public final /* synthetic */ int a;
@@ -101,14 +101,14 @@ public final /* synthetic */ class x implements Runnable {
                 break;
             case 13:
                 py pyVar = (py) obj2;
-                mf1 mf1Var = (mf1) obj;
+                sf1 sf1Var = (sf1) obj;
                 if (pyVar.z2 == null) {
                     pyVar.finishFragment();
                     break;
                 } else {
                     ArrayList arrayList = new ArrayList();
                     arrayList.add(MessagesStorage.TopicKey.of(j11, j10));
-                    pyVar.z2.v(pyVar, arrayList, null, false, pyVar.G2, pyVar.H2, pyVar.I2, mf1Var);
+                    pyVar.z2.v(pyVar, arrayList, null, false, pyVar.G2, pyVar.H2, pyVar.I2, sf1Var);
                     if (pyVar.f2) {
                         pyVar.z2 = null;
                         break;

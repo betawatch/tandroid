@@ -24,7 +24,7 @@ import s2.w;
 import s2.x;
 import s2.y;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public class MP4Builder {
     private boolean splitMdat;
@@ -291,15 +291,15 @@ public class MP4Builder {
         y yVar = new y("tkhd");
         cc.d dVar = cc.d.j;
         yVar.w = dVar;
-        sf.e c3 = de.a.c(y.W, yVar, yVar, new Boolean(true));
+        sf.f c3 = de.a.c(y.W, yVar, yVar, new Boolean(true));
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c3);
         yVar.g(yVar.d() | 1);
-        sf.e c10 = de.a.c(y.X, yVar, yVar, new Boolean(true));
+        sf.f c10 = de.a.c(y.X, yVar, yVar, new Boolean(true));
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c10);
         yVar.g(yVar.d() | 2);
-        sf.e c11 = de.a.c(y.Y, yVar, yVar, new Boolean(true));
+        sf.f c11 = de.a.c(y.Y, yVar, yVar, new Boolean(true));
         com.googlecode.mp4parser.g.a().getClass();
         com.googlecode.mp4parser.g.b(c11);
         yVar.g(yVar.d() | 4);
@@ -539,7 +539,7 @@ public class MP4Builder {
     public void createSidx(Track track, s2.p pVar) {
     }
 
-    /* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+    /* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
     public static class InterleaveChunkMdat implements s2.b {
         private long contentSize;
         private long dataOffset;

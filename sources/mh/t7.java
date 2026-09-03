@@ -67,12 +67,12 @@ import org.telegram.ui.Components.ic;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.uz0;
 import org.telegram.ui.xa0;
 import org.telegram.ui.xn;
 import org.telegram.ui.yh;
+import org.telegram.ui.zz0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class t7 {
     public static volatile t7[][] S = (t7[][]) Array.newInstance((Class<?>) t7.class, 2, 4);
@@ -888,7 +888,7 @@ public final class t7 {
                         g11.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("StarsConfirmPurchaseText2", (int) j12, objArr5)));
                     }
                 }
-                g11.setMaxWidth(qh.f3.a(g11.getText(), g11.getPaint()));
+                g11.setMaxWidth(qh.e3.a(g11.getText(), g11.getPaint()));
                 g11.setGravity(17);
                 viewGroup.addView(g11, k7.c6.t(-2, -2, 1, 0, 6, 0, 18));
                 qh.d dVar = new qh.d(context2, I, true);
@@ -1008,7 +1008,7 @@ public final class t7 {
         j12 = j11;
         if (i10 <= 0) {
         }
-        g112.setMaxWidth(qh.f3.a(g112.getText(), g112.getPaint()));
+        g112.setMaxWidth(qh.e3.a(g112.getText(), g112.getPaint()));
         g112.setGravity(17);
         viewGroup.addView(g112, k7.c6.t(-2, -2, 1, 0, 6, 0, 18));
         qh.d dVar2 = new qh.d(context2, I, true);
@@ -2021,9 +2021,9 @@ public final class t7 {
                                             if (R instanceof ProfileActivity) {
                                                 ProfileActivity profileActivity = (ProfileActivity) R;
                                                 if (profileActivity.a() == j17) {
-                                                    uz0 uz0Var = profileActivity.L;
-                                                    if (uz0Var != null) {
-                                                        uz0Var.v1(true);
+                                                    zz0 zz0Var = profileActivity.L;
+                                                    if (zz0Var != null) {
+                                                        zz0Var.v1(true);
                                                         profileActivity.L.Y0(14);
                                                         r52 = 0;
                                                         profileActivity.G4(false);
@@ -2181,7 +2181,7 @@ public final class t7 {
                     i10 = i12;
                     i14.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscribeTextTest", (int) tL_starsSubscriptionPricing.amount, chatInvite.title, i15 == 300 ? "5 minutes" : "a minute")));
                 }
-                i14.setMaxWidth(qh.f3.a(i14.getText(), i14.getPaint()));
+                i14.setMaxWidth(qh.e3.a(i14.getText(), i14.getPaint()));
                 i14.setGravity(17);
                 f10.addView(i14, k7.c6.t(-2, -2, 1, 0, 6, 0, 22));
                 if (!TextUtils.isEmpty(chatInvite.about)) {

@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
     public static final /* synthetic */ int s3 = 0;
@@ -42,7 +42,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
     public float f3;
     public final Paint g3;
     public final RectF h3;
-    public org.telegram.ui.Components.tl0 i3;
+    public org.telegram.ui.Components.sl0 i3;
     public LongSparseArray j3;
     public Paint k3;
     public float l3;
@@ -65,17 +65,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         this.Y2 = AndroidUtilities.dp(200.0f);
     }
 
-    public final void A1() {
-        int i10 = SharedConfig.archiveHidden ? 2 : 0;
-        oy oyVar = this.d3;
-        oyVar.v = i10;
-        ww wwVar = oyVar.n;
-        if (wwVar != null) {
-            wwVar.X = i10 != 0;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.tl0
+    @Override // org.telegram.ui.Components.sl0
     public final boolean F0(View view) {
         return !(view instanceof org.telegram.ui.Cells.m4) || view.isClickable();
     }
@@ -100,7 +90,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
     /* JADX WARN: Removed duplicated region for block: B:198:0x06ce  */
     /* JADX WARN: Removed duplicated region for block: B:201:0x06d5  */
     /* JADX WARN: Removed duplicated region for block: B:246:0x02ce  */
-    @Override // org.telegram.ui.Components.aa, org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.aa, org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -134,15 +124,15 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         org.telegram.ui.ActionBar.g6 g6Var = this.m2;
         Paint paint3 = this.g3;
         if (f17 > 0.0f) {
-            canvas2.clipRect(0, 0, AndroidUtilities.lerp(getMeasuredWidth(), AndroidUtilities.dp(v31.getRightPaddingSize()), this.f3), getMeasuredHeight());
+            canvas2.clipRect(0, 0, AndroidUtilities.lerp(getMeasuredWidth(), AndroidUtilities.dp(a41.getRightPaddingSize()), this.f3), getMeasuredHeight());
             paint3.setColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.s9, g6Var));
             paint3.setAlpha((int) (paint3.getAlpha() * this.f3));
-            canvas2.drawRect(0.0f, 0.0f, AndroidUtilities.dp(v31.getRightPaddingSize()), getMeasuredHeight(), paint3);
+            canvas2.drawRect(0.0f, 0.0f, AndroidUtilities.dp(a41.getRightPaddingSize()), getMeasuredHeight(), paint3);
             paint = paint3;
             int alpha = org.telegram.ui.ActionBar.k6.k0.getAlpha();
             org.telegram.ui.ActionBar.k6.k0.setAlpha((int) (this.f3 * alpha));
             canvas2 = canvas;
-            canvas2.drawRect(AndroidUtilities.dp(v31.getRightPaddingSize()), 0.0f, AndroidUtilities.dp(v31.getRightPaddingSize()) - 1, getMeasuredHeight(), org.telegram.ui.ActionBar.k6.k0);
+            canvas2.drawRect(AndroidUtilities.dp(a41.getRightPaddingSize()), 0.0f, AndroidUtilities.dp(a41.getRightPaddingSize()) - 1, getMeasuredHeight(), org.telegram.ui.ActionBar.k6.k0);
             org.telegram.ui.ActionBar.k6.k0.setAlpha(alpha);
         } else {
             paint = paint3;
@@ -556,7 +546,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         this.p3.a(this);
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() != 0 || motionEvent.getY() >= getPaddingTop() + this.r3.K) {
             return super.dispatchTouchEvent(motionEvent);
@@ -564,7 +554,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.aa, org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.aa, org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean drawChild(Canvas canvas, View view, long j10) {
         if (getItemAnimator() != null && getItemAnimator().k() && (view instanceof org.telegram.ui.Cells.r2) && ((org.telegram.ui.Cells.r2) view).r) {
             return true;
@@ -593,7 +583,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         super.onDraw(canvas);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.k kVar;
         if (this.U1) {
@@ -610,7 +600,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         return super.onInterceptTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         super.onLayout(z4, i10, i11, i12, i13);
         this.e3 = getPaddingTop();
@@ -618,7 +608,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         this.d3.getClass();
     }
 
-    @Override // org.telegram.ui.Components.aa, org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.aa, org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final void onMeasure(int i10, int i11) {
         org.telegram.ui.ActionBar.k kVar;
         oy[] oyVarArr;
@@ -695,7 +685,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         animatorSet.isRunning();
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         f2.m1 m1Var;
         int i10;
@@ -728,7 +718,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
                             org.telegram.ui.Cells.r2 r2Var = (org.telegram.ui.Cells.r2) view;
                             long dialogId = r2Var.getDialogId();
                             if (DialogObject.isFolderDialogId(dialogId)) {
-                                z1(false, r2Var);
+                                y1(false, r2Var);
                             } else {
                                 TLRPC.Dialog dialog = (TLRPC.Dialog) pyVar.getMessagesController().dialogs_dict.f(dialogId);
                                 if (dialog != null) {
@@ -831,7 +821,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
                     ofFloat.setDuration(Math.max(100L, (long) org.telegram.messenger.y3.A(getViewOffset(), AndroidUtilities.dp(72.0f), 120.0f, 350.0f)));
                     ofFloat.setInterpolator(org.telegram.ui.Components.pr.h);
                     setScrollEnabled(false);
-                    ofFloat.addListener(new org.telegram.ui.Components.g91(this, 18));
+                    ofFloat.addListener(new org.telegram.ui.Components.f91(this, 18));
                     ofFloat.start();
                 }
             }
@@ -847,7 +837,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         view.setAlpha(1.0f);
     }
 
-    @Override // org.telegram.ui.Components.aa, org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    @Override // org.telegram.ui.Components.aa, org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
     public final void requestLayout() {
         if (this.c3) {
             return;
@@ -855,7 +845,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         super.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView
     public void setAdapter(f2.p0 p0Var) {
         super.setAdapter(p0Var);
         this.b3 = true;
@@ -885,13 +875,13 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         invalidate();
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final boolean u1() {
+    @Override // org.telegram.ui.Components.sl0
+    public final boolean t1() {
         return true;
     }
 
     @Override // org.telegram.ui.Components.aa
-    public final int w1() {
+    public final int v1() {
         return AndroidUtilities.dp(48.0f);
     }
 
@@ -902,10 +892,10 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void y1(ix ixVar, float f10, boolean z4) {
+    public final void x1(ix ixVar, float f10, boolean z4) {
         py pyVar;
-        org.telegram.ui.Components.tl0 tl0Var = ixVar == null ? this.i3 : this;
-        if (tl0Var == null) {
+        org.telegram.ui.Components.sl0 sl0Var = ixVar == null ? this.i3 : this;
+        if (sl0Var == null) {
             this.i3 = ixVar;
             return;
         }
@@ -915,12 +905,12 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
         int i11 = 0;
         while (true) {
-            int childCount = tl0Var.getChildCount();
+            int childCount = sl0Var.getChildCount();
             pyVar = this.r3;
             if (i11 >= childCount) {
                 break;
             }
-            View childAt = tl0Var.getChildAt(i11);
+            View childAt = sl0Var.getChildAt(i11);
             if (childAt instanceof org.telegram.ui.Cells.r2) {
                 org.telegram.ui.Cells.r2 r2Var3 = (org.telegram.ui.Cells.r2) childAt;
                 if (r2Var3.getDialogId() == pyVar.C3.getCurrentFragmetDialogId()) {
@@ -943,7 +933,7 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
             if (ixVar != null) {
                 ixVar.setPadding(getPaddingLeft(), this.V2, getPaddingLeft(), getPaddingBottom());
                 int F = ((uf.k) ixVar.getAdapter()).F(r2Var.getDialogId());
-                int top = (int) ((r2Var.getTop() - tl0Var.getPaddingTop()) + f10);
+                int top = (int) ((r2Var.getTop() - sl0Var.getPaddingTop()) + f10);
                 if (F >= 0) {
                     oy oyVar = this.d3;
                     if (oyVar.s == 0 && oyVar.v == 2 && pyVar.Z3()) {
@@ -975,13 +965,13 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
         }
     }
 
-    public final void z1(boolean z4, org.telegram.ui.Cells.r2 r2Var) {
+    public final void y1(boolean z4, org.telegram.ui.Cells.r2 r2Var) {
         SharedConfig.toggleArchiveHidden();
         py pyVar = this.r3;
         UndoView Y3 = pyVar.Y3();
         if (!SharedConfig.archiveHidden) {
             Y3.l(0L, 7, null, null);
-            A1();
+            z1();
             if (!z4 || r2Var == null) {
                 return;
             }
@@ -1001,9 +991,19 @@ public final class ly extends org.telegram.ui.Components.aa implements oh.a7 {
             if (z4) {
                 pyVar.a1 = true;
             } else {
-                A1();
+                z1();
             }
         }
         Y3.l(0L, 6, null, null);
+    }
+
+    public final void z1() {
+        int i10 = SharedConfig.archiveHidden ? 2 : 0;
+        oy oyVar = this.d3;
+        oyVar.v = i10;
+        ww wwVar = oyVar.n;
+        if (wwVar != null) {
+            wwVar.X = i10 != 0;
+        }
     }
 }

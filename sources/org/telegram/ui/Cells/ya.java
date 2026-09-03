@@ -22,10 +22,10 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.CheckBox;
 import org.telegram.ui.Components.fc0;
-import org.telegram.ui.pi1;
-import org.telegram.ui.qi1;
+import org.telegram.ui.vi1;
+import org.telegram.ui.wi1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ya extends FrameLayout {
     public final oh.a4 a;
@@ -124,23 +124,23 @@ public final class ya extends FrameLayout {
             a4Var.getImageReceiver().setAlpha(Math.abs(tL_wallPaper.settings.intensity) / 100.0f);
             return;
         }
-        if (!(obj instanceof pi1)) {
-            if (obj instanceof qi1) {
-                qi1 qi1Var = (qi1) obj;
-                File file = qi1Var.e;
+        if (!(obj instanceof vi1)) {
+            if (obj instanceof wi1) {
+                wi1 wi1Var = (wi1) obj;
+                File file = wi1Var.e;
                 if (file != null) {
                     a4Var2.f(file.getAbsolutePath(), "180_180", null);
                     return;
                 }
-                File file2 = qi1Var.d;
+                File file2 = wi1Var.d;
                 if (file2 != null) {
                     a4Var2.f(file2.getAbsolutePath(), "180_180", null);
                     return;
-                } else if ("t".equals(qi1Var.a)) {
+                } else if ("t".equals(wi1Var.a)) {
                     a4Var2.setImageDrawable(org.telegram.ui.ActionBar.k6.W0(a4Var2, true));
                     return;
                 } else {
-                    a4Var2.setImageResource(qi1Var.c);
+                    a4Var2.setImageResource(wi1Var.c);
                     return;
                 }
             }
@@ -162,15 +162,15 @@ public final class ya extends FrameLayout {
             a4Var2.k(ImageLocation.getForPhoto(closestPhotoSizeWithSize4, searchImage.photo), "180_180", ImageLocation.getForPhoto(closestPhotoSizeWithSize3, searchImage.photo), "100_100_b", closestPhotoSizeWithSize4 != null ? closestPhotoSizeWithSize4.size : 0, "jpg", searchImage, 1);
             return;
         }
-        pi1 pi1Var = (pi1) obj;
-        File file3 = pi1Var.i;
-        int i10 = pi1Var.d;
-        int i11 = pi1Var.c;
-        int i12 = pi1Var.b;
-        if (file3 == null && pi1Var.g == null && !"d".equals(pi1Var.a)) {
+        vi1 vi1Var = (vi1) obj;
+        File file3 = vi1Var.i;
+        int i10 = vi1Var.d;
+        int i11 = vi1Var.c;
+        int i12 = vi1Var.b;
+        if (file3 == null && vi1Var.g == null && !"d".equals(vi1Var.a)) {
             a4Var2.setImageBitmap(null);
-            if (pi1Var.k) {
-                a4Var2.setBackground(new fc0(true, pi1Var.b, pi1Var.c, pi1Var.d, pi1Var.e));
+            if (vi1Var.k) {
+                a4Var2.setBackground(new fc0(true, vi1Var.b, vi1Var.c, vi1Var.d, vi1Var.e));
                 return;
             } else if (i11 != 0) {
                 a4Var2.setBackground(new GradientDrawable(GradientDrawable.Orientation.BL_TR, new int[]{i12 | (-16777216), i11 | (-16777216)}));
@@ -181,35 +181,35 @@ public final class ya extends FrameLayout {
             }
         }
         if (i10 != 0) {
-            fc0 fc0Var2 = new fc0(true, pi1Var.b, pi1Var.c, pi1Var.d, pi1Var.e);
-            if (pi1Var.h >= 0.0f) {
-                a4Var2.setBackground(new fc0(true, pi1Var.b, pi1Var.c, pi1Var.d, pi1Var.e));
+            fc0 fc0Var2 = new fc0(true, vi1Var.b, vi1Var.c, vi1Var.d, vi1Var.e);
+            if (vi1Var.h >= 0.0f) {
+                a4Var2.setBackground(new fc0(true, vi1Var.b, vi1Var.c, vi1Var.d, vi1Var.e));
                 if (Build.VERSION.SDK_INT >= 29) {
                     a4Var2.getImageReceiver().setBlendMode(BlendMode.SOFT_LIGHT);
                 }
             } else {
                 a4Var2.getImageReceiver().setGradientBitmap(fc0Var2.k);
             }
-            patternColor = fc0.g(i12, i11, i10, pi1Var.e);
+            patternColor = fc0.g(i12, i11, i10, vi1Var.e);
         } else {
             patternColor = AndroidUtilities.getPatternColor(i12);
         }
         int i13 = patternColor;
-        if ("d".equals(pi1Var.a)) {
-            if (pi1Var.m == null) {
-                pi1Var.m = SvgHelper.getBitmap(R.raw.default_pattern, 100, 180, -16777216);
+        if ("d".equals(vi1Var.a)) {
+            if (vi1Var.m == null) {
+                vi1Var.m = SvgHelper.getBitmap(R.raw.default_pattern, 100, 180, -16777216);
             }
-            a4Var2.setImageBitmap(pi1Var.m);
-            a4Var2.getImageReceiver().setAlpha(Math.abs(pi1Var.h));
+            a4Var2.setImageBitmap(vi1Var.m);
+            a4Var2.getImageReceiver().setAlpha(Math.abs(vi1Var.h));
             return;
         }
         if (file3 != null) {
             a4Var2.f(file3.getAbsolutePath(), "180_180", null);
             return;
         }
-        TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(pi1Var.g.document.thumbs, 100);
-        a4Var2.k(ImageLocation.getForDocument(closestPhotoSizeWithSize5, pi1Var.g.document), "180_180", null, null, closestPhotoSizeWithSize5 != null ? closestPhotoSizeWithSize5.size : pi1Var.g.document.size, "jpg", pi1Var.g, 1);
-        a4Var2.getImageReceiver().setAlpha(Math.abs(pi1Var.h));
+        TLRPC.PhotoSize closestPhotoSizeWithSize5 = FileLoader.getClosestPhotoSizeWithSize(vi1Var.g.document.thumbs, 100);
+        a4Var2.k(ImageLocation.getForDocument(closestPhotoSizeWithSize5, vi1Var.g.document), "180_180", null, null, closestPhotoSizeWithSize5 != null ? closestPhotoSizeWithSize5.size : vi1Var.g.document.size, "jpg", vi1Var.g, 1);
+        a4Var2.getImageReceiver().setAlpha(Math.abs(vi1Var.h));
         if (Build.VERSION.SDK_INT < 29 || i10 == 0) {
             a4Var2.getImageReceiver().setColorFilter(new PorterDuffColorFilter(AndroidUtilities.getPatternColor(i13), PorterDuff.Mode.SRC_IN));
         }

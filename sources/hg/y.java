@@ -19,13 +19,13 @@ import org.telegram.ui.ActionBar.i6;
 import org.telegram.ui.ActionBar.j6;
 import org.telegram.ui.Components.d10;
 import org.telegram.ui.Components.jp;
-import org.telegram.ui.Components.ky0;
+import org.telegram.ui.Components.jy0;
+import org.telegram.ui.dy0;
 import org.telegram.ui.ih;
-import org.telegram.ui.t61;
-import org.telegram.ui.yx0;
-import qh.x7;
+import org.telegram.ui.y61;
+import qh.w7;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -110,10 +110,10 @@ public final /* synthetic */ class y implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new j0(this.c, this.d, tL_error, tLObject, this.b, 29));
                 break;
             case 18:
-                AndroidUtilities.runOnUIThread(new ky0(this.c, (Object) tLObject, this.d, this.b, (Object) tL_error, 0));
+                AndroidUtilities.runOnUIThread(new jy0(this.c, (Object) tLObject, this.d, this.b, (Object) tL_error, 0));
                 break;
             case 19:
-                AndroidUtilities.runOnUIThread(new yx0(this.c, tLObject, this.d, this.b, 12));
+                AndroidUtilities.runOnUIThread(new dy0(this.c, tLObject, this.d, this.b, 12));
                 break;
             case 20:
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.web.z((org.telegram.ui.web.a1) this.c, tL_error, (String) this.d, (TLRPC.TL_inputInvoiceSlug) this.b, tLObject));
@@ -122,22 +122,22 @@ public final /* synthetic */ class y implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new org.telegram.ui.web.z((org.telegram.ui.web.a1) this.c, tLObject, (String[]) this.d, tL_error, (org.telegram.ui.ActionBar.d2) this.b));
                 break;
             case 22:
-                AndroidUtilities.runOnUIThread(new t61((x7) this.c, (org.telegram.ui.ActionBar.d2) this.d, tLObject, (TL_phone.getGroupCallStreamRtmpUrl) this.b, tL_error));
+                AndroidUtilities.runOnUIThread(new y61((w7) this.c, (org.telegram.ui.ActionBar.d2) this.d, tLObject, (TL_phone.getGroupCallStreamRtmpUrl) this.b, tL_error));
                 break;
             case 23:
-                AndroidUtilities.runOnUIThread(new yx0((qh.d) this.c, tLObject, (h3) this.d, (sh.j1) this.b, false, 16));
+                AndroidUtilities.runOnUIThread(new dy0((qh.d) this.c, tLObject, (h3) this.d, (sh.j1) this.b, false, 16));
                 break;
             case 24:
-                AndroidUtilities.runOnUIThread(new yx0(tLObject, (boolean[]) this.c, (org.telegram.ui.web.s) this.d, (TLRPC.UserFull) this.b));
+                AndroidUtilities.runOnUIThread(new dy0(tLObject, (boolean[]) this.c, (org.telegram.ui.web.s) this.d, (TLRPC.UserFull) this.b));
                 break;
             case 25:
-                AndroidUtilities.runOnUIThread(new yx0((vf.t) this.c, tLObject, (TL_account.TL_businessChatLink) this.d, (Runnable) this.b, false, 24));
+                AndroidUtilities.runOnUIThread(new dy0((vf.t) this.c, tLObject, (TL_account.TL_businessChatLink) this.d, (Runnable) this.b, false, 24));
                 break;
             case 26:
-                AndroidUtilities.runOnUIThread(new uf.h1((vf.f0) this.c, (TL_account.TL_connectedBot) this.d, (TL_account.TL_businessBotRecipients) this.b, 6));
+                AndroidUtilities.runOnUIThread(new uf.h1((vf.e0) this.c, (TL_account.TL_connectedBot) this.d, (TL_account.TL_businessBotRecipients) this.b, 6));
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new t61((vf.p1) this.c, tLObject, (ArrayList) this.d, (TLRPC.TL_messages_sendQuickReplyMessages) this.b, tL_error));
+                AndroidUtilities.runOnUIThread(new y61((vf.p1) this.c, tLObject, (ArrayList) this.d, (TLRPC.TL_messages_sendQuickReplyMessages) this.b, tL_error));
                 break;
         }
     }

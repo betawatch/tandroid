@@ -1,40 +1,45 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class i31 extends tl0 {
-    public final /* synthetic */ w31 U2;
+public final class i31 extends f2.a1 {
+    public final /* synthetic */ v31 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i31(w31 w31Var, Context context) {
-        super(context, null);
-        this.U2 = w31Var;
+    public i31(v31 v31Var) {
+        this.a = v31Var;
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            float y10 = motionEvent.getY();
-            w31 w31Var = this.U2;
-            if (y10 < w31Var.A(true) - getTop()) {
-                w31Var.dismiss();
-                return true;
-            }
+    @Override // f2.a1
+    public final void a(RecyclerView recyclerView, int i10) {
+        v31 v31Var = this.a;
+        h31 h31Var = v31Var.E;
+        if (i10 == 0) {
+            v31Var.D = false;
         }
-        return super.dispatchTouchEvent(motionEvent);
+        if ((i10 == 0 || i10 == 2) && v31Var.A(false) > 0.0f && v31Var.A(false) < AndroidUtilities.dp(96.0f) && h31Var.canScrollVertically(1) && v31.u(v31Var)) {
+            v31Var.D = true;
+            h31Var.v0(0, (int) v31Var.A(false), null);
+        }
     }
 
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onRequestFocusInDescendants(int i10, Rect rect) {
-        return true;
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.ViewParent
-    public final void requestChildFocus(View view, View view2) {
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        ViewGroup viewGroup;
+        v31 v31Var = this.a;
+        viewGroup = ((org.telegram.ui.ActionBar.h3) v31Var).containerView;
+        viewGroup.invalidate();
+        boolean canScrollVertically = v31Var.E.canScrollVertically(1);
+        View view = v31Var.I;
+        Boolean bool = v31Var.N;
+        if (bool == null || bool.booleanValue() != canScrollVertically) {
+            v31Var.N = Boolean.valueOf(canScrollVertically);
+            view.animate().cancel();
+            org.telegram.ui.b.p(view.animate().alpha(canScrollVertically ? 1.0f : 0.0f), pr.h, 320L);
+        }
     }
 }

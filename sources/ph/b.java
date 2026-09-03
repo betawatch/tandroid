@@ -13,13 +13,13 @@ import org.telegram.ui.Components.ki;
 import org.telegram.ui.Components.mi;
 import org.telegram.ui.Components.wg;
 import org.telegram.ui.web.s0;
+import qh.aa;
 import qh.ba;
-import qh.ca;
-import qh.g8;
-import qh.n9;
-import qh.s6;
+import qh.f8;
+import qh.m9;
+import qh.r6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class b implements ki {
     public final /* synthetic */ mi a;
@@ -39,7 +39,7 @@ public final class b implements ki {
 
     @Override // org.telegram.ui.Components.ki
     public final void I1(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11) {
-        ba baVar;
+        aa aaVar;
         p pVar = this.c;
         long j12 = pVar.d;
         mi miVar = this.a;
@@ -54,12 +54,12 @@ public final class b implements ki {
         }
         Object next = selectedPhotos.values().iterator().next();
         if (next instanceof MediaController.PhotoEntry) {
-            s6 l10 = s6.l((MediaController.PhotoEntry) next);
+            r6 l10 = r6.l((MediaController.PhotoEntry) next);
             l10.J0 = j12;
             String str = this.b;
             l10.K0 = str;
             l10.A();
-            ca E = ca.E(pVar.a.getParentActivity(), pVar.b);
+            ba E = ba.E(pVar.a.getParentActivity(), pVar.b);
             RectF rectF = E.E;
             WindowManager.LayoutParams layoutParams = E.h;
             int i13 = E.c;
@@ -73,7 +73,7 @@ public final class b implements ki {
                     E.r0 = false;
                     E.e = false;
                     E.y2 = false;
-                    if (windowManager != null && (baVar = E.n) != null && baVar.getParent() == null) {
+                    if (windowManager != null && (aaVar = E.n) != null && aaVar.getParent() == null) {
                         AndroidUtilities.setPreferredMaxRefreshRate(windowManager, E.n, layoutParams);
                         windowManager.addView(E.n, layoutParams);
                         E.g0();
@@ -87,9 +87,9 @@ public final class b implements ki {
                     rectF.set(0.0f, AndroidUtilities.dp(100.0f), AndroidUtilities.displaySize.x, AndroidUtilities.dp(100.0f) + AndroidUtilities.displaySize.y);
                     E.D = AndroidUtilities.dp(8.0f);
                     E.r.c();
-                    n9 n9Var = E.e0;
+                    m9 m9Var = E.e0;
                     int i14 = E.G;
-                    n9Var.setBackgroundColor((i14 == 1 || i14 == 0) ? 0 : -14737633);
+                    m9Var.setBackgroundColor((i14 == 1 || i14 == 0) ? 0 : -14737633);
                     E.r.setTranslationX(0.0f);
                     E.r.setTranslationY(0.0f);
                     E.r.b(0.0f);
@@ -97,15 +97,15 @@ public final class b implements ki {
                     E.r.setScaleY(1.0f);
                     E.H = 0.0f;
                     AndroidUtilities.lockOrientation(E.b, 1);
-                    s6 s6Var = E.H1;
-                    if (s6Var != null) {
-                        E.Z0.setText(s6Var.C0);
+                    r6 r6Var = E.H1;
+                    if (r6Var != null) {
+                        E.Z0.setText(r6Var.C0);
                     }
                     E.K(1, false);
                     E.l0(-1, false, false);
                     E.Y0.b(false, false);
                     E.Y0.b(true, true);
-                    E.g(1.0f, true, new g8(E, 6));
+                    E.g(1.0f, true, new f8(E, 6));
                     E.e();
                 }
             }

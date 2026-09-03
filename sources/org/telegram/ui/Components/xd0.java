@@ -31,7 +31,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class xd0 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
     public static final int[] U = {R.id.passcode_btn_0, R.id.passcode_btn_1, R.id.passcode_btn_2, R.id.passcode_btn_3, R.id.passcode_btn_4, R.id.passcode_btn_5, R.id.passcode_btn_6, R.id.passcode_btn_7, R.id.passcode_btn_8, R.id.passcode_btn_9, R.id.passcode_btn_backspace, R.id.passcode_btn_fingerprint};
@@ -39,7 +39,7 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
     public final View C;
     public int D;
     public int E;
-    public final lj0 F;
+    public final kj0 F;
     public final Rect G;
     public wd0 H;
     public o1.j I;
@@ -50,7 +50,7 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
     public int N;
     public final m2.b O;
     public int P;
-    public qh.i3 Q;
+    public qh.h3 Q;
     public boolean R;
     public ValueAnimator S;
     public final int[] T;
@@ -90,11 +90,11 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
         this.v = lVar;
         lVar.setWillNotDraw(false);
         addView(lVar, k7.c6.c(-1.0f, -1));
-        lj0 lj0Var = new lj0(context);
-        this.F = lj0Var;
-        lj0Var.f(R.raw.passcode_lock, 58, 58, null);
-        lj0Var.setAutoRepeat(false);
-        addView(lj0Var, k7.c6.e(58, 58, 51));
+        kj0 kj0Var = new kj0(context);
+        this.F = kj0Var;
+        kj0Var.f(R.raw.passcode_lock, 58, 58, null);
+        kj0Var.setAutoRepeat(false);
+        addView(kj0Var, k7.c6.e(58, 58, 51));
         FrameLayout frameLayout = new FrameLayout(context);
         this.h = frameLayout;
         lVar.addView(frameLayout, k7.c6.c(-1.0f, -1));
@@ -1254,8 +1254,8 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
     }
 
     public final boolean g() {
-        qh.i3 i3Var = this.Q;
-        if (i3Var == null || !i3Var.c()) {
+        qh.h3 h3Var = this.Q;
+        if (h3Var == null || !h3Var.c()) {
             return true;
         }
         AndroidUtilities.hideKeyboard(this.r);
@@ -1277,7 +1277,7 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
         }
     }
 
-    public final void j(boolean z4, int i10, int i11, org.telegram.ui.v10 v10Var) {
+    public final void j(boolean z4, int i10, int i11, org.telegram.ui.z10 z10Var) {
         View currentFocus;
         boolean z10;
         int i12;
@@ -1393,19 +1393,19 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
         td0.a(td0Var, false);
         if (z4) {
             setAlpha(0.0f);
-            getViewTreeObserver().addOnGlobalLayoutListener(new rd0(this, i10, i11, v10Var));
+            getViewTreeObserver().addOnGlobalLayoutListener(new rd0(this, i10, i11, z10Var));
             requestLayout();
         } else {
             setAlpha(1.0f);
             this.M = 1.0f;
             f(1.0f);
-            lj0 lj0Var = this.F;
-            lj0Var.setScaleX(1.0f);
-            lj0Var.setScaleY(1.0f);
-            lj0Var.i();
-            lj0Var.getAnimatedDrawable().L(38, false, false);
-            if (v10Var != null) {
-                v10Var.run();
+            kj0 kj0Var = this.F;
+            kj0Var.setScaleX(1.0f);
+            kj0Var.setScaleY(1.0f);
+            kj0Var.i();
+            kj0Var.getAnimatedDrawable().L(38, false, false);
+            if (z10Var != null) {
+                z10Var.run();
             }
         }
         setOnTouchListener(new org.telegram.ui.ActionBar.s2(18));
@@ -1472,10 +1472,10 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
         if (wd0Var != null) {
             wd0Var.h(this);
         }
-        lj0 lj0Var = this.F;
-        lj0Var.getAnimatedDrawable().N(71);
-        lj0Var.getAnimatedDrawable().L(37, false, false);
-        lj0Var.d();
+        kj0 kj0Var = this.F;
+        kj0Var.getAnimatedDrawable().N(71);
+        kj0Var.getAnimatedDrawable().L(37, false, false);
+        kj0Var.d();
         AndroidUtilities.runOnUIThread(new kd0(this, 1));
     }
 
@@ -1500,7 +1500,7 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.didGenerateFingerprintKeyPair);
         NotificationCenter.getGlobalInstance().addObserver(this, NotificationCenter.passcodeDismissed);
         if (this.Q == null && (getParent() instanceof View)) {
-            this.Q = new qh.i3((View) getParent(), false, new v2(this, 8));
+            this.Q = new qh.h3((View) getParent(), false, new v2(this, 8));
         }
     }
 
@@ -1530,15 +1530,15 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
         int[] iArr = this.T;
         textView.getLocationInWindow(iArr);
         boolean isTablet = AndroidUtilities.isTablet();
-        lj0 lj0Var = this.F;
+        kj0 kj0Var = this.F;
         if (isTablet || getContext().getResources().getConfiguration().orientation != 2) {
             int dp = iArr[1] - AndroidUtilities.dp(100.0f);
             this.E = dp;
-            lj0Var.setTranslationY(dp);
+            kj0Var.setTranslationY(dp);
         } else {
             int dp2 = iArr[1] - AndroidUtilities.dp(100.0f);
             this.E = dp2;
-            lj0Var.setTranslationY(dp2);
+            kj0Var.setTranslationY(dp2);
         }
     }
 
@@ -1557,7 +1557,7 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
         if (view != null) {
             view.setVisibility(SharedConfig.passcodeType == 1 ? 0 : 8);
         }
-        lj0 lj0Var = this.F;
+        kj0 kj0Var = this.F;
         eh.d dVar = this.e;
         FrameLayout frameLayout = this.d;
         FrameLayout frameLayout2 = this.h;
@@ -1569,7 +1569,7 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
                 f10 = 2.0f;
                 f11 = size;
             }
-            lj0Var.setTranslationX((f11 / f10) - AndroidUtilities.dp(29.0f));
+            kj0Var.setTranslationX((f11 / f10) - AndroidUtilities.dp(29.0f));
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) frameLayout2.getLayoutParams();
             layoutParams.width = SharedConfig.passcodeType == 0 ? size / 2 : size;
             layoutParams.height = AndroidUtilities.dp(180.0f);
@@ -1588,7 +1588,7 @@ public class xd0 extends FrameLayout implements NotificationCenter.NotificationC
             layoutParams3.gravity = 17;
             dVar.setLayoutParams(layoutParams3);
         } else {
-            lj0Var.setTranslationX((size / 2.0f) - AndroidUtilities.dp(29.0f));
+            kj0Var.setTranslationX((size / 2.0f) - AndroidUtilities.dp(29.0f));
             int i15 = AndroidUtilities.statusBarHeight;
             if (AndroidUtilities.isTablet()) {
                 if (size > AndroidUtilities.dp(498.0f)) {

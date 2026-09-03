@@ -7,10 +7,10 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.Components.zh;
-import org.telegram.ui.vh1;
+import org.telegram.ui.bi1;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f5 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
@@ -58,11 +58,11 @@ public final /* synthetic */ class f5 implements ValueAnimator.AnimatorUpdateLis
                 q0Var.i = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 break;
             case 4:
-                vh1 vh1Var = (vh1) this.b;
-                vh1Var.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                bi1 bi1Var = (bi1) this.b;
+                bi1Var.B = ((Float) valueAnimator.getAnimatedValue()).floatValue();
                 int dp = (AndroidUtilities.displaySize.x - AndroidUtilities.dp(36.0f)) - AndroidUtilities.dp(52.0f);
-                org.telegram.ui.Components.voip.z0 z0Var = vh1Var.c;
-                z0Var.getLayoutParams().width = AndroidUtilities.dp(52.0f) + ((int) (dp * vh1Var.B));
+                org.telegram.ui.Components.voip.z0 z0Var = bi1Var.c;
+                z0Var.getLayoutParams().width = AndroidUtilities.dp(52.0f) + ((int) (dp * bi1Var.B));
                 z0Var.requestLayout();
                 break;
             case 5:
@@ -134,61 +134,61 @@ public final /* synthetic */ class f5 implements ValueAnimator.AnimatorUpdateLis
                 uVar.a.invalidate();
                 break;
             case 14:
-                qh.d2 d2Var = (qh.d2) this.b;
-                d2Var.getClass();
-                d2Var.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d2Var.i();
+                qh.c2 c2Var = (qh.c2) this.b;
+                c2Var.getClass();
+                c2Var.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c2Var.i();
                 break;
             case 15:
-                ((qh.d3) this.b).b.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((qh.c3) this.b).b.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 16:
-                qh.f3 f3Var = (qh.f3) this.b;
-                f3Var.getClass();
-                f3Var.l0 = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
-                f3Var.invalidate();
+                qh.e3 e3Var = (qh.e3) this.b;
+                e3Var.getClass();
+                e3Var.l0 = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                e3Var.invalidate();
                 break;
             case 17:
-                ((qh.r3) this.b).invalidate();
+                ((qh.q3) this.b).invalidate();
                 break;
             case 18:
-                qh.e5 e5Var = (qh.e5) this.b;
-                e5Var.getClass();
-                e5Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e5Var.e();
-                break;
-            case 19:
                 qh.d5 d5Var = (qh.d5) this.b;
                 d5Var.getClass();
-                d5Var.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                d5Var.invalidate();
+                d5Var.n = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                d5Var.e();
+                break;
+            case 19:
+                qh.c5 c5Var = (qh.c5) this.b;
+                c5Var.getClass();
+                c5Var.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                c5Var.invalidate();
                 break;
             case 20:
-                qh.w5 w5Var = (qh.w5) this.b;
+                qh.v5 v5Var = (qh.v5) this.b;
                 float floatValue4 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                w5Var.B = floatValue4;
-                qh.v5 v5Var = w5Var.a;
-                v5Var.setScaleX(1.0f - floatValue4);
-                v5Var.setScaleY(1.0f - w5Var.B);
-                w5Var.invalidate();
+                v5Var.B = floatValue4;
+                qh.u5 u5Var = v5Var.a;
+                u5Var.setScaleX(1.0f - floatValue4);
+                u5Var.setScaleY(1.0f - v5Var.B);
+                v5Var.invalidate();
                 break;
             case 21:
-                qh.e7 e7Var = (qh.e7) this.b;
+                qh.d7 d7Var = (qh.d7) this.b;
                 float floatValue5 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                e7Var.r = floatValue5;
-                Utilities.Callback callback = e7Var.x;
+                d7Var.r = floatValue5;
+                Utilities.Callback callback = d7Var.x;
                 if (callback != null) {
                     callback.run(Float.valueOf(Utilities.clamp(floatValue5, 1.0f, -1.0f)));
                 }
-                e7Var.a.invalidate();
+                d7Var.a.invalidate();
                 break;
             case 22:
-                ((qh.x7) this.b).x.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                ((qh.w7) this.b).x.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 23:
-                qh.a8 a8Var = (qh.a8) this.b;
-                a8Var.getClass();
-                a8Var.setContainerHeight(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                qh.z7 z7Var2 = (qh.z7) this.b;
+                z7Var2.getClass();
+                z7Var2.setContainerHeight(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 24:
                 ((View) ((g.a0) ((ja.c) this.b).a).d.getParent()).invalidate();

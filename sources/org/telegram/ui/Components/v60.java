@@ -6,9 +6,9 @@ import android.graphics.Paint;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class v60 extends q61 {
+public final class v60 extends p61 {
     public float f;
     public float h;
     public final Paint n;
@@ -23,7 +23,7 @@ public final class v60 extends q61 {
         this.n = new Paint();
     }
 
-    @Override // org.telegram.ui.Components.q61, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.p61, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10;
         e70 e70Var = this.v;
@@ -31,8 +31,8 @@ public final class v60 extends q61 {
         i10 = ((org.telegram.ui.ActionBar.h3) e70Var).backgroundPaddingTop;
         e70Var.S.setTranslationY(AndroidUtilities.dp(64.0f) + AndroidUtilities.dp(6.0f) + (i11 - i10));
         float f10 = e70Var.l0 + e70Var.r0;
-        ax0 ax0Var = e70Var.s;
-        if (ax0Var.getVisibility() != 0) {
+        zw0 zw0Var = e70Var.s;
+        if (zw0Var.getVisibility() != 0) {
             this.f = f10;
             this.h = f10;
         } else if (this.h != f10) {
@@ -53,7 +53,7 @@ public final class v60 extends q61 {
                 this.f = f12;
             }
         }
-        ax0Var.setTranslationY(e70Var.y + this.f);
+        zw0Var.setTranslationY(e70Var.y + this.f);
         super.dispatchDraw(canvas);
     }
 
@@ -80,7 +80,7 @@ public final class v60 extends q61 {
         super.onAttachedToWindow();
         n7.qa qaVar = this.s;
         if (qaVar != null) {
-            ((v61) qaVar.b).b = true;
+            ((u61) qaVar.b).b = true;
         }
     }
 

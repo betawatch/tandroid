@@ -15,9 +15,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class k3 extends org.telegram.ui.Components.tl0 {
+public final class k3 extends org.telegram.ui.Components.sl0 {
     public final /* synthetic */ int U2 = 1;
     public final Object V2;
     public final /* synthetic */ KeyEvent.Callback W2;
@@ -29,7 +29,7 @@ public final class k3 extends org.telegram.ui.Components.tl0 {
         this.V2 = new h20();
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
         int i10 = this.U2;
         KeyEvent.Callback callback = this.W2;
@@ -89,7 +89,7 @@ public final class k3 extends org.telegram.ui.Components.tl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, android.view.ViewGroup, android.view.View
     public boolean dispatchTouchEvent(MotionEvent motionEvent) {
         switch (this.U2) {
             case 2:
@@ -101,7 +101,7 @@ public final class k3 extends org.telegram.ui.Components.tl0 {
         return super.dispatchTouchEvent(motionEvent);
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public boolean drawChild(Canvas canvas, View view, long j10) {
         switch (this.U2) {
             case 1:
@@ -132,7 +132,7 @@ public final class k3 extends org.telegram.ui.Components.tl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onDetachedFromWindow() {
         ViewGroup viewGroup;
         switch (this.U2) {
@@ -148,7 +148,7 @@ public final class k3 extends org.telegram.ui.Components.tl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
     public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
         MotionEvent motionEvent2;
         org.telegram.ui.ActionBar.p1 p1Var;
@@ -179,11 +179,11 @@ public final class k3 extends org.telegram.ui.Components.tl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
     public void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
         switch (this.U2) {
             case 0:
-                w1(z4, i10, i11, i12, i13);
+                v1(z4, i10, i11, i12, i13);
                 ((p3) this.W2).F = -1.0f;
                 break;
             case 1:
@@ -196,7 +196,7 @@ public final class k3 extends org.telegram.ui.Components.tl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public void onMeasure(int i10, int i11) {
         switch (this.U2) {
             case 1:
@@ -210,7 +210,7 @@ public final class k3 extends org.telegram.ui.Components.tl0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    @Override // org.telegram.ui.Components.sl0, androidx.recyclerview.widget.RecyclerView, android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         org.telegram.ui.ActionBar.p1 p1Var;
         switch (this.U2) {
@@ -226,7 +226,7 @@ public final class k3 extends org.telegram.ui.Components.tl0 {
         return super.onTouchEvent(motionEvent);
     }
 
-    public void w1(boolean z4, int i10, int i11, int i12, int i13) {
+    public void v1(boolean z4, int i10, int i11, int i12, int i13) {
         super.onLayout(z4, i10, i11, i12, i13);
         int childCount = getChildCount();
         for (int i14 = 0; i14 < childCount; i14++) {

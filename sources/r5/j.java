@@ -9,10 +9,10 @@ import com.google.android.gms.cast.CastDevice;
 import java.util.HashSet;
 import java.util.Iterator;
 import l7.w0;
-import n7.qa;
 import org.telegram.ui.Cells.f1;
+import q5.f0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class j extends a7.c {
     public final /* synthetic */ int b = 0;
@@ -177,12 +177,12 @@ public final class j extends a7.c {
                     String readString2 = parcel.readString();
                     String readString3 = parcel.readString();
                     com.google.android.gms.internal.cast.s.b(parcel);
-                    q5.e0 e0Var = cVar4.i;
-                    if (e0Var != null && e0Var.F == 2) {
+                    f0 f0Var = cVar4.i;
+                    if (f0Var != null && f0Var.F == 2) {
                         com.google.android.gms.common.api.internal.v e11 = com.google.android.gms.common.api.internal.w.e();
-                        e11.c = new q5.b0(e0Var, readString2, readString3, i12);
+                        e11.c = new q5.b0(f0Var, readString2, readString3, i12);
                         e11.a = 8407;
-                        e0Var.e(1, e11.e()).addOnCompleteListener(new f1(this, 15));
+                        f0Var.e(1, e11.e()).addOnCompleteListener(new f1(this, 15));
                     }
                     parcel2.writeNoException();
                     break;
@@ -190,24 +190,24 @@ public final class j extends a7.c {
                     String readString4 = parcel.readString();
                     q5.i iVar = (q5.i) com.google.android.gms.internal.cast.s.a(parcel, q5.i.CREATOR);
                     com.google.android.gms.internal.cast.s.b(parcel);
-                    q5.e0 e0Var2 = cVar4.i;
-                    if (e0Var2 != null && e0Var2.F == 2) {
+                    f0 f0Var2 = cVar4.i;
+                    if (f0Var2 != null && f0Var2.F == 2) {
                         com.google.android.gms.common.api.internal.v e12 = com.google.android.gms.common.api.internal.w.e();
-                        e12.c = new w0(e0Var2, readString4, iVar);
+                        e12.c = new w0(f0Var2, readString4, iVar);
                         e12.a = 8406;
-                        e0Var2.e(1, e12.e()).addOnCompleteListener(new org.telegram.ui.web.e0(this, 7));
+                        f0Var2.e(1, e12.e()).addOnCompleteListener(new org.telegram.ui.web.e0(this, 7));
                     }
                     parcel2.writeNoException();
                     break;
                 } else if (i10 == 3) {
                     String readString5 = parcel.readString();
                     com.google.android.gms.internal.cast.s.b(parcel);
-                    q5.e0 e0Var3 = cVar4.i;
-                    if (e0Var3 != null && e0Var3.F == 2) {
+                    f0 f0Var3 = cVar4.i;
+                    if (f0Var3 != null && f0Var3.F == 2) {
                         com.google.android.gms.common.api.internal.v e13 = com.google.android.gms.common.api.internal.w.e();
-                        e13.c = new qa(29, e0Var3, readString5);
+                        e13.c = new q5.c0(i12, f0Var3, readString5);
                         e13.a = 8409;
-                        e0Var3.e(1, e13.e());
+                        f0Var3.e(1, e13.e());
                     }
                     parcel2.writeNoException();
                     break;

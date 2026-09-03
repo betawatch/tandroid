@@ -3,27 +3,27 @@ package eg;
 import android.view.View;
 import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
-import qh.o4;
+import qh.n4;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class v1 extends f2.x {
-    public final /* synthetic */ o4 S;
+    public final /* synthetic */ n4 S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v1(o4 o4Var) {
+    public v1(n4 n4Var) {
         super(true);
-        this.S = o4Var;
+        this.S = n4Var;
     }
 
     @Override // f2.x
     public final boolean B1(int i10) {
         MessageObject.GroupedMessagePosition position;
         byte b10;
-        o4 o4Var = this.S;
-        ArrayList arrayList = o4Var.p0;
+        n4 n4Var = this.S;
+        ArrayList arrayList = n4Var.p0;
         int size = (arrayList.size() - 1) - i10;
-        MessageObject.GroupedMessages groupedMessages = o4Var.q0;
+        MessageObject.GroupedMessages groupedMessages = n4Var.q0;
         if (groupedMessages != null && size >= 0 && size < arrayList.size() && (position = groupedMessages.getPosition((MessageObject) arrayList.get(size))) != null && position.minX != position.maxX && (b10 = position.minY) == position.maxY && b10 != 0) {
             int size2 = groupedMessages.posArray.size();
             for (int i11 = 0; i11 < size2; i11++) {

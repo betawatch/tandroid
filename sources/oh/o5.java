@@ -23,10 +23,10 @@ import org.telegram.ui.ProfileActivity;
 import org.telegram.ui.ak0;
 import org.telegram.ui.d60;
 import org.telegram.ui.e50;
-import org.telegram.ui.mf1;
 import org.telegram.ui.sb;
+import org.telegram.ui.sf1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class o5 implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -123,19 +123,19 @@ public final /* synthetic */ class o5 implements View.OnClickListener {
                     return;
                 }
             default:
-                mf1 mf1Var = (mf1) this.c;
+                sf1 sf1Var = (sf1) this.c;
                 TLRPC.TL_forumTopic tL_forumTopic = (TLRPC.TL_forumTopic) this.d;
                 ActionBarPopupWindow$ActionBarPopupWindowLayout[] actionBarPopupWindow$ActionBarPopupWindowLayoutArr = (ActionBarPopupWindow$ActionBarPopupWindowLayout[]) this.e;
-                MessagesController messagesController = mf1Var.getMessagesController();
-                long j10 = -mf1Var.a;
+                MessagesController messagesController = sf1Var.getMessagesController();
+                long j10 = -sf1Var.a;
                 if (!messagesController.isDialogMuted(j10, tL_forumTopic.id)) {
                     actionBarPopupWindow$ActionBarPopupWindowLayoutArr[0].getSwipeBack().e(this.b);
                     break;
                 } else {
-                    mf1Var.getNotificationsController().muteDialog(j10, tL_forumTopic.id, false);
-                    mf1Var.finishPreviewFragment();
-                    if (qc.a(mf1Var)) {
-                        qc.z(mf1Var, 4, 0, mf1Var.getResourceProvider()).j();
+                    sf1Var.getNotificationsController().muteDialog(j10, tL_forumTopic.id, false);
+                    sf1Var.finishPreviewFragment();
+                    if (qc.a(sf1Var)) {
+                        qc.z(sf1Var, 4, 0, sf1Var.getResourceProvider()).j();
                         break;
                     }
                 }

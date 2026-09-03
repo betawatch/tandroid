@@ -6,9 +6,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.tl.TL_stories;
-import qh.xa;
+import qh.wa;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class m9 extends j9 {
     public final l9 a;
@@ -19,15 +19,15 @@ public final class m9 extends j9 {
     public m9(n9 n9Var, TL_stories.TL_mediaAreaWeather tL_mediaAreaWeather) {
         this.d = n9Var;
         this.b = tL_mediaAreaWeather;
-        xa xaVar = new xa();
-        xaVar.c = tL_mediaAreaWeather.emoji;
-        xaVar.d = (float) tL_mediaAreaWeather.temperature_c;
+        wa waVar = new wa();
+        waVar.c = tL_mediaAreaWeather.emoji;
+        waVar.d = (float) tL_mediaAreaWeather.temperature_c;
         l9 l9Var = new l9(this, ApplicationLoader.applicationContext, AndroidUtilities.density);
         this.a = l9Var;
         l9Var.setMaxWidth(AndroidUtilities.displaySize.x);
         l9Var.setIsVideo(false);
-        l9Var.d(UserConfig.selectedAccount, xaVar.c);
-        l9Var.setText(xaVar.a());
+        l9Var.d(UserConfig.selectedAccount, waVar.c);
+        l9Var.setText(waVar.a());
         l9Var.e(3, tL_mediaAreaWeather.color);
         l9Var.f();
     }

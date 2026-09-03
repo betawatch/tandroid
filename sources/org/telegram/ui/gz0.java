@@ -1,29 +1,43 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.ImageReceiver;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class gz0 extends kq {
-    public final /* synthetic */ boolean[] a1;
-    public final /* synthetic */ TLRPC.User b1;
-    public final /* synthetic */ ProfileActivity c1;
+public final class gz0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ProfileActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gz0(ProfileActivity profileActivity, long j10, long j11, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, TLRPC.TL_chatBannedRights tL_chatBannedRights2, String str, int i10, boolean[] zArr, TLRPC.User user) {
-        super(j10, j11, tL_chatAdminRights, tL_chatBannedRights, tL_chatBannedRights2, str, i10, true, false, null);
-        this.c1 = profileActivity;
-        this.a1 = zArr;
-        this.b1 = user;
+    public gz0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void onTransitionAnimationEnd(boolean z4, boolean z10) {
-        if (!z4 && z10 && this.a1[0]) {
-            ProfileActivity profileActivity = this.c1;
-            if (org.telegram.ui.Components.qc.a(profileActivity)) {
-                org.telegram.ui.Components.qc.C(profileActivity, this.b1.first_name).j();
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.ActionBar.k kVar;
+        ProfileActivity profileActivity = this.a;
+        kVar = ((org.telegram.ui.ActionBar.p2) profileActivity).actionBar;
+        kVar.B(profileActivity.m2 ? 1090519039 : profileActivity.N5 != null ? 553648127 : org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.f8, profileActivity.w0), false);
+        cz0 cz0Var = profileActivity.b0;
+        ImageReceiver imageReceiver = cz0Var.R;
+        org.telegram.ui.Components.y5 animation = imageReceiver.getAnimation();
+        if (animation != null) {
+            animation.w(cz0Var);
         }
+        imageReceiver.clearImage();
+        ImageReceiver.BitmapHolder bitmapHolder = cz0Var.T;
+        if (bitmapHolder != null) {
+            bitmapHolder.release();
+            cz0Var.T = null;
+        }
+        cz0Var.S = 0.0f;
+        cz0Var.invalidate();
+        profileActivity.E0 = false;
+        profileActivity.l5(false);
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationStart(Animator animator) {
     }
 }

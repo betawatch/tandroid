@@ -6,11 +6,11 @@ import android.text.StaticLayout;
 import android.text.TextPaint;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class ia {
     public final int a;
-    public final ij0 b;
+    public final hj0 b;
     public final org.telegram.ui.Cells.z c;
     public final TextPaint d;
     public final StaticLayout e;
@@ -34,12 +34,12 @@ public final class ia {
         this.a = i10;
         this.j = i12;
         this.k = i13;
-        ij0 ij0Var = new ij0(i11, AndroidUtilities.dp(29.0f), l.d.j(i11, ""), AndroidUtilities.dp(29.0f));
-        this.b = ij0Var;
-        ij0Var.s0 = ea0Var;
-        ij0Var.H(true);
-        ij0Var.h = true;
-        ij0Var.I(0);
+        hj0 hj0Var = new hj0(i11, AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f));
+        this.b = hj0Var;
+        hj0Var.s0 = ea0Var;
+        hj0Var.H(true);
+        hj0Var.h = true;
+        hj0Var.I(0);
         textPaint.setTypeface(AndroidUtilities.bold());
         textPaint.setTextSize(AndroidUtilities.dp(12.0f));
         int i14 = org.telegram.ui.ActionBar.k6.G6;

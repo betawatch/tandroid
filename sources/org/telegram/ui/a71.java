@@ -1,32 +1,79 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.Shader;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.text.TextWatcher;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class a71 extends View {
-    public final Paint a;
-    public final LinearGradient b;
+public final class a71 implements TextWatcher {
+    public final sz0 a = new sz0(this, 16);
+    public final /* synthetic */ h71 b;
 
-    public a71(c71 c71Var, Context context) {
-        super(context);
-        this.a = new Paint(1);
-        float dp = AndroidUtilities.dp(68.0f);
-        int i10 = org.telegram.ui.ActionBar.k6.h5;
-        this.b = new LinearGradient(0.0f, 0.0f, 0.0f, dp, new int[]{org.telegram.ui.ActionBar.k6.l1(0.0f, c71Var.getThemedColor(i10)), c71Var.getThemedColor(i10)}, new float[]{0.0f, 0.2f}, Shader.TileMode.CLAMP);
+    public a71(h71 h71Var) {
+        this.b = h71Var;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        LinearGradient linearGradient = this.b;
-        Paint paint = this.a;
-        paint.setShader(linearGradient);
-        canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), paint);
+    public final void a() {
+        boolean z4;
+        boolean z10;
+        TLRPC.TL_channelParticipantsSearch tL_channelParticipantsSearch = new TLRPC.TL_channelParticipantsSearch();
+        h71 h71Var = this.b;
+        String obj = h71Var.Z.getText().toString();
+        tL_channelParticipantsSearch.q = obj;
+        g71 g71Var = h71Var.d0;
+        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = g71Var.c;
+        if (channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) {
+            z4 = !TextUtils.equals(channelParticipantsFilter.q, obj);
+            z10 = false;
+        } else {
+            z4 = true;
+            z10 = true;
+        }
+        g71Var.c = tL_channelParticipantsSearch;
+        if (z4) {
+            if (z10) {
+                g71Var.r = false;
+                if (g71Var.n >= 0) {
+                    ConnectionsManager.getInstance(g71Var.a).cancelRequest(g71Var.n, true);
+                    g71Var.n = -1;
+                }
+                g71Var.f = false;
+                g71Var.d.clear();
+                g71Var.h = false;
+            } else {
+                g71Var.r = true;
+                g71Var.h = false;
+            }
+            g71Var.b();
+        }
+        org.telegram.ui.Components.w51 w51Var = h71Var.f0;
+        if (w51Var != null) {
+            w51Var.N(true);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        int length = editable.length();
+        sz0 sz0Var = this.a;
+        if (length <= 0) {
+            AndroidUtilities.cancelRunOnUIThread(sz0Var);
+            a();
+        } else {
+            AndroidUtilities.cancelRunOnUIThread(sz0Var);
+            AndroidUtilities.runOnUIThread(sz0Var, 300L);
+        }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

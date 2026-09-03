@@ -11,9 +11,9 @@ import org.telegram.messenger.Emoji;
 import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class dw implements ll0, xd.b, om0, vg.g {
+public final /* synthetic */ class dw implements kl0, xd.b, nm0, vg.g {
     public final /* synthetic */ int a;
     public final /* synthetic */ mz b;
 
@@ -27,7 +27,7 @@ public final /* synthetic */ class dw implements ll0, xd.b, om0, vg.g {
         this.b.T();
     }
 
-    @Override // org.telegram.ui.Components.om0
+    @Override // org.telegram.ui.Components.nm0
     public void a(int i10) {
         int i11;
         xy xyVar;
@@ -81,7 +81,7 @@ public final /* synthetic */ class dw implements ll0, xd.b, om0, vg.g {
                     if (i10 != mzVar2.E1) {
                         if (uwVar != null && (xyVar = uwVar.r) != null && xyVar.getSelectedCategory() != null) {
                             uwVar.c(null, false);
-                            xyVar.F1(null);
+                            xyVar.E1(null);
                         }
                         if (i10 != mzVar2.C1) {
                             if (i10 != mzVar2.D1) {
@@ -130,7 +130,7 @@ public final /* synthetic */ class dw implements ll0, xd.b, om0, vg.g {
                             break;
                         }
                     } else {
-                        mzVar2.q1.o(new f51(mzVar2.getContext(), new ex(mzVar2), mzVar2.u1, mzVar2.v1, mzVar2.w1, null, mzVar2.W1));
+                        mzVar2.q1.o(new d51(mzVar2.getContext(), new ex(mzVar2), mzVar2.u1, mzVar2.v1, mzVar2.w1, null, mzVar2.W1));
                         break;
                     }
                 }
@@ -143,7 +143,7 @@ public final /* synthetic */ class dw implements ll0, xd.b, om0, vg.g {
         this.b.C();
     }
 
-    @Override // org.telegram.ui.Components.ll0
+    @Override // org.telegram.ui.Components.kl0
     public boolean f(int i10, View view) {
         String str;
         int i11;
@@ -162,7 +162,7 @@ public final /* synthetic */ class dw implements ll0, xd.b, om0, vg.g {
             if (T != null && T.b() <= mzVar.getRecentEmoji().size()) {
                 mzVar.q1.n();
             }
-            kxVar.w1(view);
+            kxVar.v1(view);
             return true;
         }
         if (uyVar.getSpan() != null || (str = (String) uyVar.getTag()) == null) {
@@ -253,8 +253,8 @@ public final /* synthetic */ class dw implements ll0, xd.b, om0, vg.g {
         tuVar.setFocusable(true);
         tuVar.showAsDropDown(view, i15, (((view.getMeasuredHeight() - i12) / 2) + ((-view.getMeasuredHeight()) - dp2)) - top);
         mzVar.h.requestDisallowInterceptTouchEvent(true);
-        kxVar.d1(true);
-        kxVar.w1(view);
+        kxVar.c1(true);
+        kxVar.v1(view);
         return true;
     }
 

@@ -17,13 +17,13 @@ import k7.c6;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
+import org.telegram.ui.Components.q31;
 import org.telegram.ui.Components.q70;
-import org.telegram.ui.Components.r31;
 import org.telegram.ui.LaunchActivity;
-import qh.v9;
+import qh.u9;
 import wh.v5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class r3 implements a3.b {
     public Object a;
@@ -106,7 +106,7 @@ public final class r3 implements a3.b {
             wh.k0 k0Var = new wh.k0(v5Var.getContext(), l0Var, g6Var);
             k0Var.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(12.0f), 0);
             k0Var.setBackground(k6.Y(k6.v0(k6.i6, g6Var), 0, 0));
-            k0Var.setOnClickListener(new r31(this, v5Var, l0Var, 8));
+            k0Var.setOnClickListener(new q31(this, v5Var, l0Var, 8));
             ((LinearLayout) this.d).addView(k0Var, c6.n(-1, 48));
         }
     }
@@ -163,7 +163,7 @@ public final class r3 implements a3.b {
         a10.X = AndroidUtilities.dp(240.0f);
         a10.i = 3;
         a10.a0(-AndroidUtilities.dp(12.0f), 0.0f);
-        a10.p = new v9(this, 29);
+        a10.p = new u9(this, 29);
         a10.d0 = true;
         if (a10.D()) {
             a10.C();
@@ -292,13 +292,13 @@ public final class r3 implements a3.b {
         this.b = g6Var;
     }
 
-    public r3(String str, n9.b bVar, sf.e eVar) {
+    public r3(String str, n9.b bVar, sf.f fVar) {
         this.d = new cb.m(this, false);
         this.e = new cb.m(this, true);
         this.f = new p2.v(6, (byte) 0);
         this.h = new AtomicMarkableReference(null, false);
         this.c = str;
         this.a = new j9.g(bVar);
-        this.b = eVar;
+        this.b = fVar;
     }
 }

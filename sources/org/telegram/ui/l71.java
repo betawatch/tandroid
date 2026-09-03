@@ -1,25 +1,23 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class l71 implements View.OnClickListener {
-    public final /* synthetic */ o71 a;
-    public final /* synthetic */ TLRPC.TL_authorization b;
-    public final /* synthetic */ p71 c;
+    public final /* synthetic */ u71 a;
 
-    public l71(p71 p71Var, o71 o71Var, TLRPC.TL_authorization tL_authorization) {
-        this.c = p71Var;
-        this.a = o71Var;
-        this.b = tL_authorization;
+    public l71(u71 u71Var) {
+        this.a = u71Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        this.a.d.c(!r0.h, true);
-        this.b.encrypted_requests_disabled = !r4.d.h;
-        p71.n(this.c);
+        org.telegram.ui.Components.kj0 kj0Var = this.a.d;
+        if (kj0Var.b() || kj0Var.getAnimatedDrawable() == null) {
+            return;
+        }
+        kj0Var.getAnimatedDrawable().K(40);
+        kj0Var.d();
     }
 }

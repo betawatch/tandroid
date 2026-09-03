@@ -1,43 +1,40 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.FileLog;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class e51 extends f2.w {
-    public final /* synthetic */ int Q;
-    public final /* synthetic */ r61 R;
+public final /* synthetic */ class e51 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ LinkedHashSet b;
+    public final /* synthetic */ Runnable c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e51(r61 r61Var, int i10) {
-        super(40);
-        this.Q = i10;
-        this.R = r61Var;
+    public /* synthetic */ e51(LinkedHashSet linkedHashSet, Runnable runnable, int i10) {
+        this.a = i10;
+        this.b = linkedHashSet;
+        this.c = runnable;
     }
 
-    @Override // f2.j0, f2.w0
-    public final void v0(RecyclerView recyclerView, f2.j1 j1Var, int i10) {
-        switch (this.Q) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
             case 0:
-                try {
-                    org.telegram.ui.Components.fx fxVar = new org.telegram.ui.Components.fx(this, recyclerView.getContext(), 2);
-                    fxVar.a = i10;
-                    w0(fxVar);
-                    break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                ArrayList arrayList = (ArrayList) obj;
+                if (arrayList != null) {
+                    this.b.addAll(arrayList);
                 }
+                this.c.run();
+                break;
             default:
-                try {
-                    org.telegram.ui.Components.fx fxVar2 = new org.telegram.ui.Components.fx(this, recyclerView.getContext(), 4);
-                    fxVar2.a = i10;
-                    w0(fxVar2);
-                    break;
-                } catch (Exception e10) {
-                    FileLog.e(e10);
-                    return;
+                TLRPC.TL_emojiList tL_emojiList = (TLRPC.TL_emojiList) obj;
+                if (tL_emojiList != null) {
+                    this.b.addAll(tL_emojiList.document_id);
                 }
+                this.c.run();
+                break;
         }
     }
 }

@@ -56,27 +56,27 @@ import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.b4;
 import org.telegram.ui.Components.ic;
-import org.telegram.ui.Components.jv0;
+import org.telegram.ui.Components.iv0;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.s20;
 import org.telegram.ui.Components.xd0;
 import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.eb1;
 import org.telegram.ui.ll0;
-import org.telegram.ui.qd1;
 import org.telegram.ui.sj0;
-import org.telegram.ui.tt0;
+import org.telegram.ui.vd1;
 import org.telegram.ui.xn;
-import org.telegram.ui.ya1;
-import qh.d4;
-import qh.r8;
-import qh.v9;
+import org.telegram.ui.yt0;
+import qh.c4;
+import qh.q8;
+import qh.u9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class p2 extends Dialog implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.ActionBar.u3 {
     public static final HashSet T0 = new HashSet();
-    public static final jv0 U0;
+    public static final iv0 U0;
     public static int V0;
     public org.telegram.ui.ActionBar.n3 A0;
     public final g6 B;
@@ -86,7 +86,7 @@ public final class p2 extends Dialog implements NotificationCenter.NotificationC
     public int D;
     public float D0;
     public long E;
-    public ya1 E0;
+    public eb1 E0;
     public long F;
     public Drawable F0;
     public long G;
@@ -164,9 +164,9 @@ public final class p2 extends Dialog implements NotificationCenter.NotificationC
     public boolean z0;
 
     static {
-        jv0 jv0Var = new jv0(new sg.a(2), new sg.a(3));
-        jv0Var.c = 100.0f;
-        U0 = jv0Var;
+        iv0 iv0Var = new iv0(new sg.a(3), new sg.a(4));
+        iv0Var.c = 100.0f;
+        U0 = iv0Var;
         V0 = 0;
     }
 
@@ -265,9 +265,9 @@ public final class p2 extends Dialog implements NotificationCenter.NotificationC
         org.telegram.ui.ActionBar.o3 P = launchActivity != null ? launchActivity.P() : null;
         this.r = P;
         if (P != null) {
-            v9 v9Var = new v9(o2Var, 13);
+            u9 u9Var = new u9(o2Var, 13);
             q1 q1Var = new q1(this, 2);
-            P.F.add(v9Var);
+            P.F.add(u9Var);
             P.G.add(q1Var);
             this.s = new c5.j(P);
         }
@@ -449,7 +449,7 @@ public final class p2 extends Dialog implements NotificationCenter.NotificationC
                 g1Var.setRightIcon(0);
                 g1Var.b.setPadding(0, 0, 0, 0);
             }
-            g1Var.setOnClickListener(new r8(2, this, g0Var2));
+            g1Var.setOnClickListener(new q8(2, this, g0Var2));
         }
         BotFullscreenButtons.OptionsIcon optionsIcon = this.X;
         int size = arrayList.size();
@@ -1029,7 +1029,7 @@ public final class p2 extends Dialog implements NotificationCenter.NotificationC
         hashMap.clear();
         if (!arrayList3.isEmpty()) {
             q70 J = G.J();
-            J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new tt0(G, 25), false);
+            J.c(R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), new yt0(G, 25), false);
             J.k();
             int size2 = arrayList3.size();
             int i11 = 0;
@@ -1347,7 +1347,7 @@ public final class p2 extends Dialog implements NotificationCenter.NotificationC
                 tL_messages_requestChatJoinWebView.theme_params = tL_dataJSON5;
                 tL_dataJSON5.data = p10.toString();
             }
-            ConnectionsManager.getInstance(this.D).sendRequestTyped(tL_messages_requestChatJoinWebView, new org.telegram.messenger.a(), new d4(this, 11), 66);
+            ConnectionsManager.getInstance(this.D).sendRequestTyped(tL_messages_requestChatJoinWebView, new org.telegram.messenger.a(), new c4(this, 11), 66);
             return;
         }
         TLRPC.TL_messages_requestMainWebView tL_messages_requestMainWebView = new TLRPC.TL_messages_requestMainWebView();
@@ -1623,7 +1623,7 @@ public final class p2 extends Dialog implements NotificationCenter.NotificationC
         }
         ValueAnimator ofFloat = ValueAnimator.ofFloat(this.K0, z4 ? 1.0f : 0.0f);
         this.L0 = ofFloat;
-        ofFloat.addListener(new qd1(14, this, z4));
+        ofFloat.addListener(new vd1(14, this, z4));
         this.L0.addUpdateListener(new p1(this, 0));
         this.L0.setInterpolator(pr.h);
         this.L0.setDuration(220L);

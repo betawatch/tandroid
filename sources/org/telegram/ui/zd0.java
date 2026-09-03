@@ -29,9 +29,9 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class zd0 extends org.telegram.ui.Components.wv0 {
+public final class zd0 extends org.telegram.ui.Components.vv0 {
     public boolean B;
     public GoogleSignInAccount C;
     public int D;
@@ -62,7 +62,7 @@ public final class zd0 extends org.telegram.ui.Components.wv0 {
     public final hg.q r;
     public final TextView s;
     public final org.telegram.ui.Components.n90 v;
-    public final org.telegram.ui.Components.lj0 w;
+    public final org.telegram.ui.Components.kj0 w;
     public boolean x;
     public Bundle y;
 
@@ -87,17 +87,17 @@ public final class zd0 extends org.telegram.ui.Components.wv0 {
         final int i11 = 1;
         setOrientation(1);
         FrameLayout frameLayout = new FrameLayout(context);
-        org.telegram.ui.Components.lj0 lj0Var = new org.telegram.ui.Components.lj0(context);
-        this.w = lj0Var;
+        org.telegram.ui.Components.kj0 kj0Var = new org.telegram.ui.Components.kj0(context);
+        this.w = kj0Var;
         int i12 = 3;
         if (!z4 || og0Var.C == 3) {
-            lj0Var.f(R.raw.email_check_inbox, 120, 120, null);
+            kj0Var.f(R.raw.email_check_inbox, 120, 120, null);
         } else {
-            lj0Var.f(R.raw.email_setup_heart, 120, 120, null);
+            kj0Var.f(R.raw.email_setup_heart, 120, 120, null);
         }
         final int i13 = 0;
-        lj0Var.setAutoRepeat(false);
-        frameLayout.addView(lj0Var, k7.c6.e(120, 120, 1));
+        kj0Var.setAutoRepeat(false);
+        frameLayout.addView(kj0Var, k7.c6.e(120, 120, 1));
         if (!AndroidUtilities.isSmallScreen()) {
             Point point = AndroidUtilities.displaySize;
             if (point.x <= point.y || AndroidUtilities.isTablet()) {
@@ -619,20 +619,20 @@ public final class zd0 extends org.telegram.ui.Components.wv0 {
         addView(frameLayout42, k7.c6.l(1.0f, -1, 0));
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void g() {
         if (this.E != 0) {
             AndroidUtilities.cancelRunOnUIThread(this.R);
         }
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public String getHeaderName() {
         return LocaleController.getString(R.string.VerificationCode);
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void h(String str) {
         TLRPC.TL_auth_signIn tL_auth_signIn;
         int i10;
@@ -712,7 +712,7 @@ public final class zd0 extends org.telegram.ui.Components.wv0 {
         ConnectionsManager.getInstance(i10).sendRequest(tL_auth_signIn, new pd0(this, code, 0), 10);
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void j() {
         if (this.x) {
             this.x = false;
@@ -721,7 +721,7 @@ public final class zd0 extends org.telegram.ui.Components.wv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void k(Bundle bundle) {
         Bundle bundle2 = bundle.getBundle("emailcode_params");
         this.y = bundle2;
@@ -734,7 +734,7 @@ public final class zd0 extends org.telegram.ui.Components.wv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void l(Bundle bundle) {
         String code = this.a.getCode();
         if (code != null && code.length() != 0) {
@@ -746,7 +746,7 @@ public final class zd0 extends org.telegram.ui.Components.wv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void m(Bundle bundle, boolean z4) {
         if (bundle == null) {
             return;
@@ -795,12 +795,12 @@ public final class zd0 extends org.telegram.ui.Components.wv0 {
             int indexOf = string.indexOf(42);
             int lastIndexOf = string.lastIndexOf(42);
             if (indexOf != lastIndexOf && indexOf != -1 && lastIndexOf != -1) {
-                org.telegram.ui.Components.t01 t01Var = new org.telegram.ui.Components.t01();
-                t01Var.a |= 256;
-                t01Var.b = indexOf;
+                org.telegram.ui.Components.s01 s01Var = new org.telegram.ui.Components.s01();
+                s01Var.a |= 256;
+                s01Var.b = indexOf;
                 int i13 = lastIndexOf + 1;
-                t01Var.c = i13;
-                spannableStringBuilder.setSpan(new org.telegram.ui.Components.u01(t01Var, 0), indexOf, i13, 0);
+                s01Var.c = i13;
+                spannableStringBuilder.setSpan(new org.telegram.ui.Components.t01(s01Var, 0), indexOf, i13, 0);
             }
             sVar.setText(AndroidUtilities.formatSpannable(LocaleController.getString(R.string.CheckYourEmailSubtitle), spannableStringBuilder));
         }
@@ -819,7 +819,7 @@ public final class zd0 extends org.telegram.ui.Components.wv0 {
         }
     }
 
-    @Override // org.telegram.ui.Components.wv0
+    @Override // org.telegram.ui.Components.vv0
     public final void n() {
         this.b.setTextColor(org.telegram.ui.ActionBar.k6.w0(null, org.telegram.ui.ActionBar.k6.G6, false));
         int i10 = org.telegram.ui.ActionBar.k6.D6;
@@ -843,10 +843,10 @@ public final class zd0 extends org.telegram.ui.Components.wv0 {
         while (true) {
             wd0 wd0Var = this.a;
             if (i10 >= wd0Var.f.length) {
-                wd0Var.postDelayed(new v10(28, this, runnable), (r2.length * 75) + 400);
+                wd0Var.postDelayed(new z10(27, this, runnable), (r2.length * 75) + 400);
                 return;
             } else {
-                wd0Var.postDelayed(new org.telegram.ui.Components.jm(this, i10, 16), i10 * 75);
+                wd0Var.postDelayed(new org.telegram.ui.Components.im(this, i10, 16), i10 * 75);
                 i10++;
             }
         }

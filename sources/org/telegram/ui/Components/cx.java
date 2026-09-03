@@ -22,7 +22,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class cx implements org.telegram.ui.ot {
     public final /* synthetic */ mz a;
@@ -226,7 +226,7 @@ public final class cx implements org.telegram.ui.ot {
             }
         }
         mz mzVar = this.a;
-        yx0.o0(mzVar.V1, MediaDataController.getInstance(mzVar.Z0).getStickerSet(inputStickerSet, true), document);
+        xx0.o0(mzVar.V1, MediaDataController.getInstance(mzVar.Z0).getStickerSet(inputStickerSet, true), document);
     }
 
     @Override // org.telegram.ui.ot
@@ -291,9 +291,9 @@ public final class cx implements org.telegram.ui.ot {
         TLRPC.User currentUser = UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser();
         Object tL_emojiStatusEmpty = currentUser == null ? new TLRPC.TL_emojiStatusEmpty() : currentUser.emoji_status;
         MessagesController.getInstance(mzVar.Z0).updateEmojiStatus(emojiStatus);
-        gm gmVar = new gm(12, this, tL_emojiStatusEmpty);
+        eo eoVar = new eo(11, this, tL_emojiStatusEmpty);
         if (document != null) {
-            (p2Var != null ? qc.a0(p2Var) : new qc(frameLayout, g6Var)).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), gmVar).j();
+            (p2Var != null ? qc.a0(p2Var) : new qc(frameLayout, g6Var)).q(document, LocaleController.getString(R.string.SetAsEmojiStatusInfo), LocaleController.getString(R.string.UndoNoCaps), eoVar).j();
             return;
         }
         ac acVar = new ac(mzVar.getContext(), g6Var);
@@ -305,7 +305,7 @@ public final class cx implements org.telegram.ui.ot {
         imageView.setScaleY(0.8f);
         imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.z9, g6Var), PorterDuff.Mode.MULTIPLY));
         gc gcVar = new gc(mzVar.getContext(), g6Var, true);
-        gcVar.a = gmVar;
+        gcVar.a = eoVar;
         acVar.setButton(gcVar);
         if (p2Var != null) {
             ic.g(p2Var, acVar, 1500).j();

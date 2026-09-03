@@ -9,8 +9,9 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.y3;
 import org.telegram.ui.Components.oz;
+import org.telegram.ui.c81;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class x implements TextWatcher {
     public final /* synthetic */ c0 a;
@@ -23,15 +24,15 @@ public final class x implements TextWatcher {
     public final void afterTextChanged(Editable editable) {
         int currentTop;
         c0 c0Var = this.a;
-        qh.e1 e1Var = c0Var.s;
+        c81 c81Var = c0Var.s;
         oz ozVar = c0Var.B;
         z zVar = c0Var.x;
         String obj = editable.toString();
         if (obj.isEmpty()) {
-            if (e1Var.getAdapter() != zVar) {
+            if (c81Var.getAdapter() != zVar) {
                 currentTop = c0Var.getCurrentTop();
                 ozVar.c();
-                e1Var.setAdapter(zVar);
+                c81Var.setAdapter(zVar);
                 zVar.l();
                 if (currentTop > 0) {
                     c0Var.v.h1(0, -currentTop);
@@ -43,7 +44,7 @@ public final class x implements TextWatcher {
         a0 a0Var = c0Var.y;
         if (a0Var != null) {
             c0 c0Var2 = a0Var.f;
-            qh.e1 e1Var2 = c0Var2.s;
+            c81 c81Var2 = c0Var2.s;
             ArrayList arrayList = a0Var.d;
             arrayList.clear();
             a0Var.e = obj;
@@ -61,10 +62,10 @@ public final class x implements TextWatcher {
                     }
                 }
             }
-            f2.p0 adapter = e1Var2.getAdapter();
+            f2.p0 adapter = c81Var2.getAdapter();
             a0 a0Var2 = c0Var2.y;
             if (adapter != a0Var2) {
-                e1Var2.setAdapter(a0Var2);
+                c81Var2.setAdapter(a0Var2);
             }
             a0Var.l();
         }

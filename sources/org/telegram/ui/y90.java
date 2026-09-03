@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class y90 implements ViewTreeObserver.OnGlobalLayoutListener {
     public final /* synthetic */ int a;
@@ -42,9 +42,9 @@ public final /* synthetic */ class y90 implements ViewTreeObserver.OnGlobalLayou
                 }
                 break;
             default:
-                ed1 ed1Var = (ed1) obj;
-                ed1Var.M = SystemClock.elapsedRealtime() + 1500;
-                ed1Var.h0.invalidate();
+                jd1 jd1Var = (jd1) obj;
+                jd1Var.M = SystemClock.elapsedRealtime() + 1500;
+                jd1Var.h0.invalidate();
                 break;
         }
     }

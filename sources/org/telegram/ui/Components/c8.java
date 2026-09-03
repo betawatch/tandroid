@@ -57,7 +57,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class c8 extends org.telegram.ui.ActionBar.h3 implements NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public static c8 Q0;
@@ -542,7 +542,7 @@ public final class c8 extends org.telegram.ui.ActionBar.h3 implements Notificati
         searchField.setHintTextColor(getThemedColor(org.telegram.ui.ActionBar.k6.Si));
         searchField.setCursorColor(getThemedColor(i23));
         if (z4) {
-            o7Var.p1();
+            o7Var.o1();
             setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.a7, g6Var));
             this.c.setAlpha(1.0f);
             f10 = 0.0f;
@@ -847,10 +847,10 @@ public final class c8 extends org.telegram.ui.ActionBar.h3 implements Notificati
         }
         boolean z4 = false;
         View childAt = o7Var.getChildAt(0);
-        fl0 fl0Var = (fl0) o7Var.G(childAt);
+        el0 el0Var = (el0) o7Var.G(childAt);
         int top = childAt instanceof org.telegram.ui.Cells.x ? childAt.getTop() : childAt.getBottom();
         int dp = AndroidUtilities.dp(7.0f);
-        if (top < AndroidUtilities.dp(7.0f) || fl0Var == null || fl0Var.b() != 0) {
+        if (top < AndroidUtilities.dp(7.0f) || el0Var == null || el0Var.b() != 0) {
             top = dp;
         }
         boolean z10 = top <= AndroidUtilities.dp(12.0f);
@@ -1198,7 +1198,7 @@ public final class c8 extends org.telegram.ui.ActionBar.h3 implements Notificati
             s7 s7Var = this.F;
             p9Var.setImageBitmap(s7Var.a[s7Var.b].getImageReceiver().getBitmap());
             this.j0 = true;
-            jm0.d(new v6(this, 1));
+            im0.d(new v6(this, 1));
             j7Var.setVisibility(0);
             j7Var.animate().alpha(1.0f).setDuration(180L).setListener(new q7(this, 0)).start();
             p9Var.animate().scaleX(1.0f).scaleY(1.0f).setDuration(180L).start();
@@ -1915,17 +1915,17 @@ public final class c8 extends org.telegram.ui.ActionBar.h3 implements Notificati
         arrayList.add(new org.telegram.ui.ActionBar.m6(w0Var3, 0, null, null, null, t6Var, i17));
         arrayList.add(new org.telegram.ui.ActionBar.m6(w0Var3, 0, null, null, null, t6Var, i18));
         l7 l7Var = this.H;
-        arrayList.add(new org.telegram.ui.ActionBar.m6(l7Var, (Class[]) null, new ij0[]{l7Var.getAnimatedDrawable()}, "Triangle 3", i15));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(l7Var, (Class[]) null, new ij0[]{l7Var.getAnimatedDrawable()}, "Triangle 4", i15));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(l7Var, (Class[]) null, new ij0[]{l7Var.getAnimatedDrawable()}, "Rectangle 4", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(l7Var, (Class[]) null, new hj0[]{l7Var.getAnimatedDrawable()}, "Triangle 3", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(l7Var, (Class[]) null, new hj0[]{l7Var.getAnimatedDrawable()}, "Triangle 4", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(l7Var, (Class[]) null, new hj0[]{l7Var.getAnimatedDrawable()}, "Rectangle 4", i15));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.H, 131080, null, null, null, null, i16));
         ImageView imageView = this.d0;
         arrayList.add(new org.telegram.ui.ActionBar.m6(imageView, 8, null, null, null, null, i15));
         arrayList.add(new org.telegram.ui.ActionBar.m6(imageView, 131080, null, null, null, null, i16));
         m7 m7Var = this.I;
-        arrayList.add(new org.telegram.ui.ActionBar.m6(m7Var, (Class[]) null, new ij0[]{m7Var.getAnimatedDrawable()}, "Triangle 3", i15));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(m7Var, (Class[]) null, new ij0[]{m7Var.getAnimatedDrawable()}, "Triangle 4", i15));
-        arrayList.add(new org.telegram.ui.ActionBar.m6(m7Var, (Class[]) null, new ij0[]{m7Var.getAnimatedDrawable()}, "Rectangle 4", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(m7Var, (Class[]) null, new hj0[]{m7Var.getAnimatedDrawable()}, "Triangle 3", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(m7Var, (Class[]) null, new hj0[]{m7Var.getAnimatedDrawable()}, "Triangle 4", i15));
+        arrayList.add(new org.telegram.ui.ActionBar.m6(m7Var, (Class[]) null, new hj0[]{m7Var.getAnimatedDrawable()}, "Rectangle 4", i15));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.I, 131080, null, null, null, null, i16));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.B, 1, null, null, null, null, org.telegram.ui.ActionBar.k6.Ri));
         arrayList.add(new org.telegram.ui.ActionBar.m6(this.e, 1, null, null, null, null, org.telegram.ui.ActionBar.k6.V5));
@@ -2012,7 +2012,7 @@ public final class c8 extends org.telegram.ui.ActionBar.h3 implements Notificati
         TLRPC.Document document = messageObject.getDocument();
         long j10 = document != null ? document.id : 0L;
         q70 J = q70Var.J();
-        J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new org.telegram.ui.tt0(q70Var, 25), false);
+        J.c(R.drawable.ic_ab_back, LocaleController.getString(R.string.Back), new org.telegram.ui.yt0(q70Var, 25), false);
         J.k();
         J.l(R.drawable.left_status_profile, LocaleController.getString(R.string.AudioSaveToMyProfile), new a7(this, messageObject, q70Var, 6), !savedMusicIds.ids.contains(Long.valueOf(j10)));
         J.c(R.drawable.msg_saved, LocaleController.getString(R.string.AudioSaveToSavedMessages), new a7(this, messageObject, q70Var, 7), false);
@@ -2089,11 +2089,11 @@ public final class c8 extends org.telegram.ui.ActionBar.h3 implements Notificati
                     return;
                 }
                 if (i10 == 8) {
-                    qh.k6 k6Var = new qh.k6(getContext(), true, null, new z6(this, 0), null);
-                    k6Var.e0 = true;
-                    k6Var.W = false;
-                    k6Var.n0.N(true);
-                    k6Var.show();
+                    qh.i6 i6Var = new qh.i6(getContext(), true, null, new z6(this, 0), null);
+                    i6Var.e0 = true;
+                    i6Var.W = false;
+                    i6Var.n0.N(true);
+                    i6Var.show();
                     return;
                 }
                 return;

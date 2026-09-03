@@ -6,7 +6,7 @@ import android.util.SparseArray;
 import android.view.View;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class tg0 implements og.g {
     public final /* synthetic */ wg0 a;
@@ -25,7 +25,7 @@ public final class tg0 implements og.g {
         SparseArray sparseArray = wg0Var.a;
         int size = sparseArray.size();
         for (int i10 = 0; i10 < size; i10++) {
-            org.telegram.ui.ActionBar.p2 p2Var = ((hh1) sparseArray.valueAt(i10)).a;
+            org.telegram.ui.ActionBar.p2 p2Var = ((nh1) sparseArray.valueAt(i10)).a;
             View view = p2Var.fragmentView;
             if (view != null && vg.i.c(view, wg0Var.b, rectF) && rectF.right > 0.0f && rectF.left < wg0Var.fragmentView.getMeasuredWidth() && (p2Var instanceof vg0) && ((vg0) p2Var).y() != null) {
                 xVar.c(rectF.left);
@@ -49,7 +49,7 @@ public final class tg0 implements og.g {
         int size = sparseArray.size();
         int i10 = 0;
         while (i10 < size) {
-            org.telegram.ui.ActionBar.p2 p2Var = ((hh1) sparseArray.valueAt(i10)).a;
+            org.telegram.ui.ActionBar.p2 p2Var = ((nh1) sparseArray.valueAt(i10)).a;
             View view = p2Var.fragmentView;
             if (view != null && vg.i.c(view, wg0Var.b, rectF) && rectF.right > 0.0f && rectF.left < wg0Var.fragmentView.getMeasuredWidth() && (p2Var instanceof vg0) && (y10 = ((vg0) p2Var).y()) != null) {
                 canvas.save();

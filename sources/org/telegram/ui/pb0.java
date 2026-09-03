@@ -7,7 +7,7 @@ import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class pb0 implements Runnable {
     public final /* synthetic */ int a;
@@ -20,22 +20,22 @@ public final /* synthetic */ class pb0 implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        i01 i01Var;
+        n01 n01Var;
         switch (this.a) {
             case 0:
                 ProfileActivity profileActivity = this.b;
-                uz0 uz0Var = profileActivity.L;
-                if (uz0Var != null) {
-                    uz0Var.Y0(14);
+                zz0 zz0Var = profileActivity.L;
+                if (zz0Var != null) {
+                    zz0Var.Y0(14);
                     profileActivity.G4(false);
                     break;
                 }
                 break;
             case 1:
                 ProfileActivity profileActivity2 = this.b;
-                uz0 uz0Var2 = profileActivity2.L;
-                if (uz0Var2 != null) {
-                    uz0Var2.Y0(14);
+                zz0 zz0Var2 = profileActivity2.L;
+                if (zz0Var2 != null) {
+                    zz0Var2.Y0(14);
                     profileActivity2.G4(false);
                     break;
                 }
@@ -107,9 +107,9 @@ public final /* synthetic */ class pb0 implements Runnable {
                 break;
             case 17:
                 ProfileActivity profileActivity11 = this.b;
-                uz0 uz0Var3 = profileActivity11.L;
-                if (uz0Var3 != null) {
-                    uz0Var3.v1(true);
+                zz0 zz0Var3 = profileActivity11.L;
+                if (zz0Var3 != null) {
+                    zz0Var3.v1(true);
                     profileActivity11.L.n1();
                     break;
                 }
@@ -120,8 +120,8 @@ public final /* synthetic */ class pb0 implements Runnable {
                 break;
             case 19:
                 ProfileActivity profileActivity13 = this.b;
-                if (!profileActivity13.a.b0() && (i01Var = profileActivity13.d) != null) {
-                    i01Var.l();
+                if (!profileActivity13.a.b0() && (n01Var = profileActivity13.d) != null) {
+                    n01Var.l();
                     break;
                 }
                 break;
@@ -137,7 +137,7 @@ public final /* synthetic */ class pb0 implements Runnable {
                 Bundle bundle = new Bundle();
                 bundle.putLong("chat_id", profileActivity14.c1);
                 bundle.putLong("user_id", profileActivity14.b1);
-                profileActivity14.presentFragment(new o21(bundle));
+                profileActivity14.presentFragment(new u21(bundle));
                 break;
             case 23:
                 ProfileActivity profileActivity15 = this.b;

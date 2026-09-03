@@ -19,7 +19,7 @@ import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.tl.TL_chatlists;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class u00 extends FrameLayout {
     public final org.telegram.ui.ActionBar.p2 a;
@@ -107,7 +107,7 @@ public abstract class u00 extends FrameLayout {
         if (p2Var instanceof b10) {
             mh.d1 d1Var = ((b10) p2Var).a;
             org.telegram.ui.Components.q70 H = org.telegram.ui.Components.q70.H(p2Var, this);
-            H.W(d1Var.V0(this, false));
+            H.W(d1Var.U0(this, false));
             H.c(R.drawable.msg_qrcode, LocaleController.getString(R.string.GetQRCode), new t00(this, 0), false);
             H.c(R.drawable.msg_delete, LocaleController.getString(R.string.DeleteLink), new t00(this, 1), true);
             if (LocaleController.isRTL) {

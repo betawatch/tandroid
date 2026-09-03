@@ -42,7 +42,7 @@ import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class if0 implements Runnable {
     public final /* synthetic */ int a;
@@ -372,7 +372,7 @@ public final /* synthetic */ class if0 implements Runnable {
                     }
                 }
             case 6:
-                AndroidUtilities.runOnUIThread(new he0(14, (org.telegram.ui.Components.xk) this.c, MessagesStorage.getInstance(((uj0) this.b).currentAccount).getUser(((TLRPC.TL_contact) this.d).user_id)));
+                AndroidUtilities.runOnUIThread(new ue0(13, (org.telegram.ui.Components.xk) this.c, MessagesStorage.getInstance(((uj0) this.b).currentAccount).getUser(((TLRPC.TL_contact) this.d).user_id)));
                 break;
             case 7:
                 uj0.m((uj0) this.b, (TLObject) this.c, (org.telegram.ui.Components.xk) this.d);
@@ -644,9 +644,9 @@ public final /* synthetic */ class if0 implements Runnable {
             case 16:
                 lo0 lo0Var = (lo0) this.b;
                 TLRPC.TL_payments_validatedRequestedInfo tL_payments_validatedRequestedInfo = (TLRPC.TL_payments_validatedRequestedInfo) this.d;
-                he0 he0Var = (he0) this.c;
+                ue0 ue0Var = (ue0) this.c;
                 lo0Var.B0 = tL_payments_validatedRequestedInfo;
-                he0Var.run();
+                ue0Var.run();
                 lo0Var.D0(false);
                 lo0Var.H0(true, false);
                 break;
@@ -666,17 +666,17 @@ public final /* synthetic */ class if0 implements Runnable {
             case 18:
                 PhotoViewer photoViewer2 = (PhotoViewer) this.b;
                 Bitmap bitmap = (Bitmap) this.d;
-                oq0 oq0Var = (oq0) this.c;
+                tq0 tq0Var = (tq0) this.c;
                 photoViewer2.z4.setImageBitmap(bitmap);
                 photoViewer2.q5.setUndoCutState(true);
                 photoViewer2.a3(true, true);
-                AndroidUtilities.cancelRunOnUIThread(oq0Var);
-                AndroidUtilities.runOnUIThread(oq0Var, 800L);
+                AndroidUtilities.cancelRunOnUIThread(tq0Var);
+                AndroidUtilities.runOnUIThread(tq0Var, 800L);
                 break;
             case 19:
                 PhotoViewer photoViewer3 = (PhotoViewer) this.b;
                 boolean[] zArr = (boolean[]) this.d;
-                lr0 lr0Var = (lr0) this.c;
+                qr0 qr0Var = (qr0) this.c;
                 Drawable[] drawableArr2 = PhotoViewer.Q8;
                 if (!zArr[0]) {
                     ImageView imageView = photoViewer3.u3;
@@ -688,66 +688,66 @@ public final /* synthetic */ class if0 implements Runnable {
                         surfaceView.setVisibility(4);
                     }
                     zArr[0] = true;
-                    lr0Var.run();
+                    qr0Var.run();
                     break;
                 }
                 break;
             case 20:
-                qt0 qt0Var = (qt0) this.b;
-                qt0 qt0Var2 = (qt0) this.d;
+                vt0 vt0Var = (vt0) this.b;
+                vt0 vt0Var2 = (vt0) this.d;
                 int[] iArr = (int[]) this.c;
-                PhotoViewer photoViewer4 = qt0Var.d;
-                if (photoViewer4.y != null && qt0Var2 == photoViewer4.t8) {
+                PhotoViewer photoViewer4 = vt0Var.d;
+                if (photoViewer4.y != null && vt0Var2 == photoViewer4.t8) {
                     photoViewer4.t8 = null;
                     photoViewer4.m8 = iArr[5];
                     photoViewer4.e8 = iArr[4];
                     photoViewer4.f8 = iArr[7];
                     float f10 = photoViewer4.c8 / 8;
-                    PhotoViewer photoViewer5 = qt0Var.d;
+                    PhotoViewer photoViewer5 = vt0Var.d;
                     photoViewer4.n8 = (long) ((f10 * photoViewer5.e8) / 1000.0f);
                     if (photoViewer5.g8) {
-                        PhotoViewer photoViewer6 = qt0Var.d;
+                        PhotoViewer photoViewer6 = vt0Var.d;
                         photoViewer6.X7 = iArr[8];
                         photoViewer6.D3();
-                        if (qt0Var.d.U7 > qt0Var.d.V7 - 1) {
-                            PhotoViewer photoViewer7 = qt0Var.d;
+                        if (vt0Var.d.U7 > vt0Var.d.V7 - 1) {
+                            PhotoViewer photoViewer7 = vt0Var.d;
                             photoViewer7.U7 = photoViewer7.V7 - 1;
                         }
-                        PhotoViewer photoViewer8 = qt0Var.d;
+                        PhotoViewer photoViewer8 = vt0Var.d;
                         if (!photoViewer8.G4) {
-                            org.telegram.ui.Components.w61 w61Var = photoViewer8.g1;
+                            org.telegram.ui.Components.v61 v61Var = photoViewer8.g1;
                             boolean z12 = photoViewer8.V7 > 1;
-                            PhotoViewer photoViewer9 = qt0Var.d;
-                            w61Var.a(Math.min(photoViewer9.a8, qt0Var.d.b8), z12, photoViewer9.r);
+                            PhotoViewer photoViewer9 = vt0Var.d;
+                            v61Var.a(Math.min(photoViewer9.a8, vt0Var.d.b8), z12, photoViewer9.r);
                         }
                         if (BuildVars.LOGS_ENABLED) {
                             StringBuilder sb = new StringBuilder("compressionsCount = ");
-                            sb.append(qt0Var.d.V7);
+                            sb.append(vt0Var.d.V7);
                             sb.append(" w = ");
-                            sb.append(qt0Var.d.Y7);
+                            sb.append(vt0Var.d.Y7);
                             sb.append(" h = ");
-                            sb.append(qt0Var.d.Z7);
+                            sb.append(vt0Var.d.Z7);
                             sb.append(" r = ");
-                            l.d.t(qt0Var.d.X7, sb);
+                            l.d.t(vt0Var.d.X7, sb);
                         }
-                        qt0Var.d.K7.invalidate();
+                        vt0Var.d.K7.invalidate();
                     } else {
-                        PhotoViewer photoViewer10 = qt0Var.d;
+                        PhotoViewer photoViewer10 = vt0Var.d;
                         if (!photoViewer10.G4) {
-                            photoViewer10.g1.a(Math.min(photoViewer10.a8, qt0Var.d.b8), false, photoViewer10.r);
+                            photoViewer10.g1.a(Math.min(photoViewer10.a8, vt0Var.d.b8), false, photoViewer10.r);
                         }
-                        qt0Var.d.V7 = 0;
+                        vt0Var.d.V7 = 0;
                     }
-                    qt0Var.d.B3();
-                    qt0Var.d.x3();
+                    vt0Var.d.B3();
+                    vt0Var.d.x3();
                     break;
                 }
                 break;
             case 21:
-                tv0 tv0Var = (tv0) this.b;
+                yv0 yv0Var = (yv0) this.b;
                 xn xnVar = (xn) this.d;
                 TLRPC.PollAnswer pollAnswer = (TLRPC.PollAnswer) this.c;
-                MessageObject messageObject = tv0Var.E;
+                MessageObject messageObject = yv0Var.E;
                 byte[] bArr5 = pollAnswer.option;
                 if (messageObject != null && (message = messageObject.messageOwner) != null && (message.media instanceof TLRPC.TL_messageMediaPoll)) {
                     messageObject.getDialogId();
@@ -760,7 +760,7 @@ public final /* synthetic */ class if0 implements Runnable {
                     nnVar.e();
                 }
                 xnVar.Cb(messageObject, nnVar);
-                tv0Var.c(false);
+                yv0Var.c(false);
                 break;
             case 22:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
@@ -812,12 +812,12 @@ public final /* synthetic */ class if0 implements Runnable {
                 break;
             case 24:
                 ProfileActivity profileActivity2 = (ProfileActivity) this.b;
-                org.telegram.ui.Components.bo boVar = (org.telegram.ui.Components.bo) this.d;
+                org.telegram.ui.Components.ao aoVar = (org.telegram.ui.Components.ao) this.d;
                 xn xnVar2 = (xn) this.c;
-                org.telegram.ui.Components.xn xnVar3 = boVar.e;
+                org.telegram.ui.Components.wn wnVar = aoVar.e;
                 ViewGroup viewGroup = (ViewGroup) xnVar2.fragmentView;
                 RectF rectF = vg.i.h;
-                vg.i.c(xnVar3, viewGroup, rectF);
+                vg.i.c(wnVar, viewGroup, rectF);
                 profileActivity2.L5 = rectF.left;
                 profileActivity2.N3();
                 break;
@@ -837,15 +837,15 @@ public final /* synthetic */ class if0 implements Runnable {
                 if (lVar != null) {
                     lVar.setLayerType(0, null);
                     secretMediaViewer.e.invalidate();
-                    k41 k41Var = secretMediaViewer.n;
+                    p41 p41Var = secretMediaViewer.n;
                     TLRPC.Message message2 = messageObject2.messageOwner;
                     long j10 = message2.destroyTimeMillis;
                     long j11 = message2.ttl;
-                    k41Var.e = false;
-                    k41Var.f = j10;
-                    k41Var.h = j11;
-                    k41Var.n.start();
-                    k41Var.invalidate();
+                    p41Var.e = false;
+                    p41Var.f = j10;
+                    p41Var.h = j11;
+                    p41Var.n.start();
+                    p41Var.invalidate();
                     if (secretMediaViewer.e1) {
                         secretMediaViewer.e(true, true);
                         break;
@@ -856,51 +856,51 @@ public final /* synthetic */ class if0 implements Runnable {
                 }
                 break;
             case 27:
-                x71 x71Var = (x71) this.b;
+                d81 d81Var = (d81) this.b;
                 TLRPC.TL_error tL_error7 = (TLRPC.TL_error) this.d;
                 TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) this.c;
-                SessionsActivity sessionsActivity = x71Var.c0;
+                SessionsActivity sessionsActivity = d81Var.c0;
                 if (tL_error7 == null) {
                     sessionsActivity.e.remove(tL_authorization);
                     sessionsActivity.f.remove(tL_authorization);
                     sessionsActivity.m0();
-                    b81 b81Var = sessionsActivity.a;
-                    if (b81Var != null) {
-                        b81Var.l();
+                    h81 h81Var = sessionsActivity.a;
+                    if (h81Var != null) {
+                        h81Var.l();
                     }
                     sessionsActivity.k0(true);
                     break;
                 }
                 break;
             case 28:
-                y71 y71Var = (y71) this.b;
+                e81 e81Var = (e81) this.b;
                 TLRPC.TL_error tL_error8 = (TLRPC.TL_error) this.d;
                 TLRPC.TL_authorization tL_authorization2 = (TLRPC.TL_authorization) this.c;
-                SessionsActivity sessionsActivity2 = y71Var.a;
+                SessionsActivity sessionsActivity2 = e81Var.a;
                 if (tL_error8 == null) {
                     sessionsActivity2.e.remove(tL_authorization2);
                     sessionsActivity2.f.remove(tL_authorization2);
                     sessionsActivity2.m0();
-                    b81 b81Var2 = sessionsActivity2.a;
-                    if (b81Var2 != null) {
-                        b81Var2.l();
+                    h81 h81Var2 = sessionsActivity2.a;
+                    if (h81Var2 != null) {
+                        h81Var2.l();
                         break;
                     }
                 }
                 break;
             default:
-                a81 a81Var = (a81) this.b;
+                g81 g81Var = (g81) this.b;
                 String str11 = (String) this.d;
                 m9 m9Var = (m9) this.c;
                 try {
                     byte[] decode = Base64.decode(str11.substring(17).replaceAll("\\/", "_").replaceAll("\\+", "-"), 8);
                     TLRPC.TL_auth_acceptLoginToken tL_auth_acceptLoginToken = new TLRPC.TL_auth_acceptLoginToken();
                     tL_auth_acceptLoginToken.token = decode;
-                    a81Var.c.getConnectionsManager().sendRequest(tL_auth_acceptLoginToken, new tb0(21, a81Var, m9Var));
+                    g81Var.c.getConnectionsManager().sendRequest(tL_auth_acceptLoginToken, new tb0(21, g81Var, m9Var));
                     break;
                 } catch (Exception e6) {
                     FileLog.e("Failed to pass qr code auth", e6);
-                    AndroidUtilities.runOnUIThread(new z71(a81Var, i23));
+                    AndroidUtilities.runOnUIThread(new f81(g81Var, i23));
                     m9Var.run();
                 }
         }

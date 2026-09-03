@@ -1,38 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class cs0 extends org.telegram.ui.xn {
-    public boolean Nc;
-    public final /* synthetic */ int Oc;
-    public final /* synthetic */ zu0 Pc;
+public final class cs0 extends f2.a1 {
+    public final /* synthetic */ tr0 a;
+    public final /* synthetic */ ur0 b;
+    public final /* synthetic */ yu0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cs0(zu0 zu0Var, Bundle bundle, int i10) {
-        super(bundle);
-        this.Pc = zu0Var;
-        this.Oc = i10;
-        this.Nc = true;
+    public cs0(yu0 yu0Var, tr0 tr0Var, ur0 ur0Var) {
+        this.c = yu0Var;
+        this.a = tr0Var;
+        this.b = ur0Var;
     }
 
-    @Override // org.telegram.ui.xn, org.telegram.ui.ActionBar.p2
-    public final void onTransitionAnimationStart(boolean z4, boolean z10) {
-        zu0 zu0Var = this.Pc;
-        ku0 ku0Var = zu0Var.P;
-        if (this.Nc) {
-            if (this.g0 != null) {
-                la("");
-                this.g0.H(ku0Var.w, false);
-            }
-            org.telegram.ui.vk vkVar = this.l1;
-            if (vkVar != null) {
-                vkVar.e(ku0Var.x, false);
-            }
-            zu0Var.s1.getMediaDataController().portSavedSearchResults(getClassGuid(), ku0Var.x, ku0Var.w, ku0Var.n, ku0Var.h, this.Oc, ku0Var.v, ku0Var.s);
-            this.Nc = false;
+    @Override // f2.a1
+    public final void a(RecyclerView recyclerView, int i10) {
+        this.c.Y0 = i10 != 0;
+    }
+
+    @Override // f2.a1
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        int i12;
+        int i13;
+        yu0 yu0Var = this.c;
+        nu0[] nu0VarArr = yu0Var.q1;
+        ur0 ur0Var = this.b;
+        tr0 tr0Var = this.a;
+        yu0Var.G(tr0Var, (sl0) recyclerView, ur0Var);
+        if (i11 != 0 && ((i13 = yu0Var.h0[0].C) == 0 || i13 == 5)) {
+            nu0VarArr[0].a.isEmpty();
         }
-        super.onTransitionAnimationStart(z4, z10);
+        if (i11 != 0 && ((i12 = tr0Var.C) == 0 || yu0.p0(i12))) {
+            yu0.q(tr0Var, nu0VarArr, true);
+        }
+        tr0Var.h.K0(true);
+        if (tr0Var.D != null) {
+            tr0Var.invalidate();
+        }
+        yu0Var.o0();
     }
 }

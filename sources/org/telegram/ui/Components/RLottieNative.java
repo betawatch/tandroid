@@ -5,7 +5,7 @@ import android.os.Trace;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class RLottieNative {
     public final int[] a;
@@ -76,7 +76,7 @@ public final class RLottieNative {
         return new RLottieNative(nCreate, iArr5);
     }
 
-    public static RLottieNative b(String str, String str2, int[] iArr, int[] iArr2, HashMap hashMap) {
+    public static RLottieNative b(String str, int[] iArr, int[] iArr2, HashMap hashMap) {
         int[] iArr3;
         if (str != null && !str.isEmpty()) {
             int[] iArr4 = new int[3];
@@ -84,15 +84,14 @@ public final class RLottieNative {
             if (hashMap == null) {
                 iArr3 = null;
             } else {
-                int[] iArr5 = new int[strArr.length];
+                iArr3 = new int[strArr.length];
                 for (int i10 = 0; i10 < strArr.length; i10++) {
-                    iArr5[i10] = ((Integer) hashMap.get(strArr[i10])).intValue();
+                    iArr3[i10] = ((Integer) hashMap.get(strArr[i10])).intValue();
                 }
-                iArr3 = iArr5;
             }
             Trace.beginSection("RLottieNative#createWithJson");
             try {
-                long nCreateWithJson = nCreateWithJson(str, str2, iArr4, iArr2, strArr, iArr3);
+                long nCreateWithJson = nCreateWithJson(str, iArr4, iArr2, strArr, iArr3);
                 Trace.endSection();
                 if (nCreateWithJson != 0) {
                     if (iArr != null && iArr.length == 3) {
@@ -110,7 +109,7 @@ public final class RLottieNative {
 
     private static native long nCreate(String str, String str2, int i10, int i11, int[] iArr, boolean z4, int[] iArr2, boolean z10, int i12, String[] strArr, int[] iArr3);
 
-    private static native long nCreateWithJson(String str, String str2, int[] iArr, int[] iArr2, String[] strArr, int[] iArr3);
+    private static native long nCreateWithJson(String str, int[] iArr, int[] iArr2, String[] strArr, int[] iArr3);
 
     private static native void nDestroy(long j10);
 

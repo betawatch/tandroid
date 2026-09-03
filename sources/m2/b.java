@@ -59,22 +59,22 @@ import org.telegram.ui.Cells.z9;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.FragmentContextView;
 import org.telegram.ui.Components.au;
+import org.telegram.ui.Components.bl0;
 import org.telegram.ui.Components.c8;
-import org.telegram.ui.Components.cl0;
+import org.telegram.ui.Components.eo;
 import org.telegram.ui.Components.fu;
 import org.telegram.ui.Components.g00;
-import org.telegram.ui.Components.gm;
 import org.telegram.ui.Components.h60;
 import org.telegram.ui.Components.ik;
 import org.telegram.ui.Components.l00;
 import org.telegram.ui.Components.m7;
 import org.telegram.ui.Components.mz;
+import org.telegram.ui.Components.om;
 import org.telegram.ui.Components.pm;
-import org.telegram.ui.Components.qm;
 import org.telegram.ui.Components.ri0;
-import org.telegram.ui.Components.sn;
+import org.telegram.ui.Components.rn;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.t60;
-import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.u60;
 import org.telegram.ui.Components.xc;
 import org.telegram.ui.Components.xd0;
@@ -85,7 +85,7 @@ import org.telegram.ui.pw;
 import org.telegram.ui.s5;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class b implements Runnable {
     public final /* synthetic */ int a;
@@ -261,12 +261,12 @@ public final class b implements Runnable {
                             n10 = i10 + q10;
                         }
                     }
-                    tl0 tl0Var = z9Var.E;
-                    if (tl0Var != null) {
+                    sl0 sl0Var = z9Var.E;
+                    if (sl0Var != null) {
                         if (!z9Var.O) {
                             n10 = -n10;
                         }
-                        tl0Var.scrollBy(0, n10);
+                        sl0Var.scrollBy(0, n10);
                     }
                     AndroidUtilities.runOnUIThread(this);
                     break;
@@ -360,33 +360,33 @@ public final class b implements Runnable {
                 }
                 break;
             case 16:
-                pm pmVar = (pm) obj;
-                qm qmVar = pmVar.M;
-                if (qmVar.G != null && !qmVar.H) {
-                    int computeVerticalScrollOffset = qmVar.r.computeVerticalScrollOffset();
-                    boolean z10 = qmVar.r.computeVerticalScrollExtent() + computeVerticalScrollOffset >= (pmVar.e() - pmVar.r) + pmVar.n;
-                    float max = Math.max(0.0f, (qmVar.B - Math.max(0, computeVerticalScrollOffset - qmVar.getListTopPadding())) - AndroidUtilities.dp(52.0f));
-                    float max2 = Math.max(0.0f, ((qmVar.r.getMeasuredHeight() - (qmVar.B - computeVerticalScrollOffset)) - qmVar.getListTopPadding()) - AndroidUtilities.dp(84.0f));
+                om omVar = (om) obj;
+                pm pmVar = omVar.M;
+                if (pmVar.G != null && !pmVar.H) {
+                    int computeVerticalScrollOffset = pmVar.r.computeVerticalScrollOffset();
+                    boolean z10 = pmVar.r.computeVerticalScrollExtent() + computeVerticalScrollOffset >= (omVar.e() - omVar.r) + omVar.n;
+                    float max = Math.max(0.0f, (pmVar.B - Math.max(0, computeVerticalScrollOffset - pmVar.getListTopPadding())) - AndroidUtilities.dp(52.0f));
+                    float max2 = Math.max(0.0f, ((pmVar.r.getMeasuredHeight() - (pmVar.B - computeVerticalScrollOffset)) - pmVar.getListTopPadding()) - AndroidUtilities.dp(84.0f));
                     float dp2 = AndroidUtilities.dp(32.0f);
-                    float dp3 = (max >= dp2 || computeVerticalScrollOffset <= qmVar.getListTopPadding()) ? max2 < dp2 ? AndroidUtilities.dp(6.0f) * (1.0f - (max2 / dp2)) : 0.0f : (-(1.0f - (max / dp2))) * AndroidUtilities.dp(6.0f);
+                    float dp3 = (max >= dp2 || computeVerticalScrollOffset <= pmVar.getListTopPadding()) ? max2 < dp2 ? AndroidUtilities.dp(6.0f) * (1.0f - (max2 / dp2)) : 0.0f : (-(1.0f - (max / dp2))) * AndroidUtilities.dp(6.0f);
                     int i19 = (int) dp3;
-                    if (Math.abs(i19) > 0 && qmVar.r.canScrollVertically(i19) && (dp3 <= 0.0f || !z10)) {
-                        qmVar.B += dp3;
-                        qmVar.r.scrollBy(0, i19);
-                        pmVar.invalidate();
+                    if (Math.abs(i19) > 0 && pmVar.r.canScrollVertically(i19) && (dp3 <= 0.0f || !z10)) {
+                        pmVar.B += dp3;
+                        pmVar.r.scrollBy(0, i19);
+                        omVar.invalidate();
                     }
-                    pmVar.I = true;
-                    pmVar.postDelayed(this, 15L);
+                    omVar.I = true;
+                    omVar.postDelayed(this, 15L);
                     break;
                 }
                 break;
             case 17:
-                sn snVar = (sn) obj;
-                b bVar = snVar.R0;
-                c6 c6Var = snVar.d1;
+                rn rnVar = (rn) obj;
+                b bVar = rnVar.R0;
+                c6 c6Var = rnVar.d1;
                 if (c6Var != null) {
                     EditTextBoldCursor editField = c6Var.getEditField();
-                    if (!snVar.E && editField != null && snVar.D && !snVar.b1 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
+                    if (!rnVar.E && editField != null && rnVar.D && !rnVar.b1 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow && AndroidUtilities.isTablet()) {
                         editField.requestFocus();
                         AndroidUtilities.showKeyboard(editField);
                         AndroidUtilities.cancelRunOnUIThread(bVar);
@@ -463,7 +463,7 @@ public final class b implements Runnable {
                 TextureView textureView = ((y50) obj).E0.i0;
                 if (textureView != null) {
                     try {
-                        AndroidUtilities.runOnUIThread(new gm(25, this, textureView.getBitmap(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f))));
+                        AndroidUtilities.runOnUIThread(new eo(24, this, textureView.getBitmap(AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f))));
                         break;
                     } catch (Exception e6) {
                         FileLog.e(e6);
@@ -513,31 +513,31 @@ public final class b implements Runnable {
                 ri0Var.z.start();
                 break;
             case 28:
-                tl0 tl0Var2 = (tl0) obj;
-                mi miVar = tl0Var2.e2;
-                int[] iArr = tl0Var2.j2;
+                sl0 sl0Var2 = (sl0) obj;
+                mi miVar = sl0Var2.e2;
+                int[] iArr = sl0Var2.j2;
                 xn xnVar = miVar.d;
                 iArr[0] = (int) xnVar.p9;
                 iArr[1] = xnVar.xa;
-                if (tl0Var2.g2) {
+                if (sl0Var2.g2) {
                     dp = -AndroidUtilities.dp(12.0f);
-                    tl0Var2.L0(0.0f, tl0Var2.j2[0]);
+                    sl0Var2.L0(0.0f, sl0Var2.j2[0]);
                 } else {
                     dp = AndroidUtilities.dp(12.0f);
-                    tl0Var2.L0(0.0f, tl0Var2.getMeasuredHeight() - tl0Var2.j2[1]);
+                    sl0Var2.L0(0.0f, sl0Var2.getMeasuredHeight() - sl0Var2.j2[1]);
                 }
-                tl0Var2.e2.d.u0.scrollBy(0, dp);
-                if (tl0Var2.f2) {
-                    AndroidUtilities.runOnUIThread(tl0Var2.A2);
+                sl0Var2.e2.d.u0.scrollBy(0, dp);
+                if (sl0Var2.f2) {
+                    AndroidUtilities.runOnUIThread(sl0Var2.A2);
                     break;
                 }
                 break;
             default:
-                cl0 cl0Var = (cl0) obj;
-                b bVar3 = cl0Var.f0;
-                if (!cl0Var.n) {
-                    cl0Var.R = false;
-                    cl0Var.invalidate();
+                bl0 bl0Var = (bl0) obj;
+                b bVar3 = bl0Var.f0;
+                if (!bl0Var.n) {
+                    bl0Var.R = false;
+                    bl0Var.invalidate();
                     break;
                 } else {
                     AndroidUtilities.cancelRunOnUIThread(bVar3);

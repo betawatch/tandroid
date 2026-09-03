@@ -4,48 +4,48 @@ import h5.d0;
 import h5.w;
 import r3.v;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class h {
     public final v a;
-    public s d;
+    public r d;
     public f e;
     public int f;
     public int g;
     public int h;
     public int i;
     public boolean l;
-    public final r b = new r();
+    public final q b = new q();
     public final w c = new w();
     public final w j = new w(1);
     public final w k = new w();
 
-    public h(v vVar, s sVar, f fVar) {
+    public h(v vVar, r rVar, f fVar) {
         this.a = vVar;
-        this.d = sVar;
+        this.d = rVar;
         this.e = fVar;
-        this.d = sVar;
+        this.d = rVar;
         this.e = fVar;
-        vVar.b(sVar.a.f);
+        vVar.b(rVar.a.f);
         d();
     }
 
-    public final q a() {
+    public final p a() {
         if (!this.l) {
             return null;
         }
-        r rVar = this.b;
-        f fVar = rVar.a;
+        q qVar = this.b;
+        f fVar = qVar.a;
         int i10 = d0.a;
         int i11 = fVar.a;
-        q qVar = rVar.m;
-        if (qVar == null) {
-            qVar = this.d.a.k[i11];
+        p pVar = qVar.m;
+        if (pVar == null) {
+            pVar = this.d.a.k[i11];
         }
-        if (qVar == null || !qVar.a) {
+        if (pVar == null || !pVar.a) {
             return null;
         }
-        return qVar;
+        return pVar;
     }
 
     public final boolean b() {
@@ -67,14 +67,14 @@ public final class h {
 
     public final int c(int i10, int i11) {
         w wVar;
-        q a2 = a();
+        p a2 = a();
         if (a2 == null) {
             return 0;
         }
         int i12 = a2.d;
-        r rVar = this.b;
+        q qVar = this.b;
         if (i12 != 0) {
-            wVar = rVar.n;
+            wVar = qVar.n;
         } else {
             byte[] bArr = a2.e;
             int i13 = d0.a;
@@ -84,7 +84,7 @@ public final class h {
             i12 = bArr.length;
             wVar = wVar2;
         }
-        boolean z4 = rVar.k && rVar.l[this.f];
+        boolean z4 = qVar.k && qVar.l[this.f];
         boolean z10 = z4 || i11 != 0;
         w wVar3 = this.j;
         wVar3.a[0] = (byte) ((z10 ? 128 : 0) | i12);
@@ -110,7 +110,7 @@ public final class h {
             vVar.a(8, wVar4);
             return i12 + 9;
         }
-        w wVar5 = rVar.n;
+        w wVar5 = qVar.n;
         int z11 = wVar5.z();
         wVar5.G(-2);
         int i14 = (z11 * 6) + 2;
@@ -129,13 +129,13 @@ public final class h {
     }
 
     public final void d() {
-        r rVar = this.b;
-        rVar.d = 0;
-        rVar.p = 0L;
-        rVar.q = false;
-        rVar.k = false;
-        rVar.o = false;
-        rVar.m = null;
+        q qVar = this.b;
+        qVar.d = 0;
+        qVar.p = 0L;
+        qVar.q = false;
+        qVar.k = false;
+        qVar.o = false;
+        qVar.m = null;
         this.f = 0;
         this.h = 0;
         this.g = 0;

@@ -30,10 +30,10 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.l9;
 import org.telegram.ui.Cells.m9;
 import org.telegram.ui.Components.RadialProgress2;
-import org.telegram.ui.Components.g51;
-import org.telegram.ui.Components.ho0;
+import org.telegram.ui.Components.e51;
+import org.telegram.ui.Components.go0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class y extends z implements b6, l9, j0, NotificationCenter.NotificationCenterDelegate, DownloadController.FileDownloadProgressListener {
     public int B;
@@ -58,7 +58,7 @@ public final class y extends z implements b6, l9, j0, NotificationCenter.Notific
     public final Paint s;
     public final TextPaint v;
     public final RadialProgress2 w;
-    public final ho0 x;
+    public final go0 x;
     public final int y;
 
     public y(Context context, int i10, g6 g6Var) {
@@ -79,9 +79,9 @@ public final class y extends z implements b6, l9, j0, NotificationCenter.Notific
         radialProgress2.setCircleRadius(AndroidUtilities.dp(24.0f));
         int i11 = this.B;
         radialProgress2.q(i11, dp, i11 + dp2, dp2 + dp);
-        ho0 ho0Var = new ho0(this);
-        this.x = ho0Var;
-        ho0Var.h = new org.telegram.ui.web.e0(this, 19);
+        go0 go0Var = new go0(this);
+        this.x = go0Var;
+        go0Var.h = new org.telegram.ui.web.e0(this, 19);
         setMinimumHeight(AndroidUtilities.dp(66.0f));
         i0 i0Var = new i0(context, g6Var, new org.telegram.ui.Cells.f1(this, 26));
         this.R = i0Var;
@@ -292,7 +292,7 @@ public final class y extends z implements b6, l9, j0, NotificationCenter.Notific
         } else {
             SpannableStringBuilder spannableStringBuilder = (TextUtils.isEmpty(musicTitle) || TextUtils.isEmpty(musicAuthor)) ? !TextUtils.isEmpty(musicTitle) ? new SpannableStringBuilder(musicTitle) : new SpannableStringBuilder(musicAuthor) : new SpannableStringBuilder(android.support.v4.media.a.z(musicAuthor, " - ", musicTitle));
             if (!TextUtils.isEmpty(musicAuthor)) {
-                spannableStringBuilder.setSpan(new g51(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
+                spannableStringBuilder.setSpan(new e51(AndroidUtilities.bold()), 0, musicAuthor.length(), 18);
             }
             float dp2 = AndroidUtilities.dp(16.0f);
             TextPaint textPaint = this.v;
@@ -355,9 +355,9 @@ public final class y extends z implements b6, l9, j0, NotificationCenter.Notific
         double d;
         MessageObject messageObject;
         if (!k() && (messageObject = this.M) != null) {
-            ho0 ho0Var = this.x;
-            if (!ho0Var.e) {
-                ho0Var.i(messageObject.audioProgress);
+            go0 go0Var = this.x;
+            if (!go0Var.e) {
+                go0Var.i(messageObject.audioProgress);
             }
         }
         int i10 = 0;
@@ -428,12 +428,12 @@ public final class y extends z implements b6, l9, j0, NotificationCenter.Notific
         int v04 = k6.v0(i11, g6Var);
         int v05 = k6.v0(i11, g6Var);
         int v06 = k6.v0(k6.wd, g6Var);
-        ho0 ho0Var = this.x;
-        ho0Var.h(v02, v03, v04, v05, v06);
+        go0 go0Var = this.x;
+        go0Var.h(v02, v03, v04, v05, v06);
         if (!k()) {
             canvas.save();
             canvas.translate(this.F, this.G);
-            ho0Var.b(canvas);
+            go0Var.b(canvas);
             canvas.restore();
         }
         int v07 = k6.v0(k6.nd, g6Var);

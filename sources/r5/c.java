@@ -11,8 +11,9 @@ import com.google.android.gms.internal.cast.n4;
 import com.google.android.gms.tasks.Task;
 import java.util.HashSet;
 import l7.w0;
+import q5.f0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class c extends f {
     public static final u5.b m = new u5.b("CastSession", null);
@@ -22,7 +23,7 @@ public final class c extends f {
     public final b f;
     public final com.google.android.gms.internal.cast.o g;
     public final t5.h h;
-    public q5.e0 i;
+    public f0 i;
     public s5.h j;
     public CastDevice k;
     public n4 l;
@@ -90,16 +91,16 @@ public final class c extends f {
                 hVar.i();
             }
         }
-        q5.e0 e0Var = cVar.i;
-        if (e0Var != null) {
+        f0 f0Var = cVar.i;
+        if (f0Var != null) {
             com.google.android.gms.common.api.internal.v e6 = com.google.android.gms.common.api.internal.w.e();
             e6.c = q5.z.b;
             e6.a = 8403;
-            e0Var.e(1, e6.e());
-            e0Var.h();
-            com.google.android.gms.common.api.internal.n nVar = y5.h.h(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
+            f0Var.e(1, e6.e());
+            f0Var.h();
+            com.google.android.gms.common.api.internal.n nVar = y5.h.h(f0Var.f, f0Var.k, "castDeviceControllerListenerKey").c;
             b6.m.i(nVar, "Key must not be null");
-            e0Var.c(nVar, 8415);
+            f0Var.c(nVar, 8415);
             cVar.i = null;
         }
         cVar.k = null;
@@ -185,16 +186,16 @@ public final class c extends f {
         CastDevice e6 = CastDevice.e(bundle);
         this.k = e6;
         if (e6 != null) {
-            q5.e0 e0Var = this.i;
-            if (e0Var != null) {
+            f0 f0Var = this.i;
+            if (f0Var != null) {
                 com.google.android.gms.common.api.internal.v e10 = com.google.android.gms.common.api.internal.w.e();
                 e10.c = q5.z.b;
                 e10.a = 8403;
-                e0Var.e(1, e10.e());
-                e0Var.h();
-                com.google.android.gms.common.api.internal.n nVar = y5.h.h(e0Var.f, e0Var.k, "castDeviceControllerListenerKey").c;
+                f0Var.e(1, e10.e());
+                f0Var.h();
+                com.google.android.gms.common.api.internal.n nVar = y5.h.h(f0Var.f, f0Var.k, "castDeviceControllerListenerKey").c;
                 b6.m.i(nVar, "Key must not be null");
-                e0Var.c(nVar, 8415);
+                f0Var.c(nVar, 8415);
                 this.i = null;
             }
             m.b("Acquiring a connection to Google Play Services for %s", this.k);
@@ -213,20 +214,20 @@ public final class c extends f {
             q5.e eVar = new q5.e(w0Var);
             Context context = this.c;
             int i10 = q5.g.a;
-            q5.e0 e0Var2 = new q5.e0(context, eVar);
-            e0Var2.E.add(new i(this));
-            this.i = e0Var2;
-            com.google.android.gms.common.api.internal.p h = y5.h.h(e0Var2.f, e0Var2.k, "castDeviceControllerListenerKey");
+            f0 f0Var2 = new f0(context, eVar);
+            f0Var2.E.add(new i(this));
+            this.i = f0Var2;
+            com.google.android.gms.common.api.internal.p h = y5.h.h(f0Var2.f, f0Var2.k, "castDeviceControllerListenerKey");
             com.google.android.gms.common.api.internal.r rVar = new com.google.android.gms.common.api.internal.r();
             rVar.b = true;
-            org.telegram.ui.web.e0 e0Var3 = new org.telegram.ui.web.e0(e0Var2, 4);
+            org.telegram.ui.web.e0 e0Var = new org.telegram.ui.web.e0(f0Var2, 4);
             q5.z zVar = q5.z.c;
             rVar.e = h;
-            rVar.c = e0Var3;
+            rVar.c = e0Var;
             rVar.d = zVar;
             rVar.f = new y5.c[]{q5.y.a};
             rVar.a = 8428;
-            e0Var2.b(rVar.a());
+            f0Var2.b(rVar.a());
             return;
         }
         b6.m.e("Must be called from the main thread.");

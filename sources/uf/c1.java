@@ -21,15 +21,15 @@ import org.telegram.ui.ActionBar.k6;
 import org.telegram.ui.Cells.h6;
 import org.telegram.ui.Cells.o8;
 import org.telegram.ui.Cells.u3;
+import org.telegram.ui.Components.el0;
 import org.telegram.ui.Components.f10;
-import org.telegram.ui.Components.fl0;
-import org.telegram.ui.Components.sl0;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.u00;
 import org.telegram.ui.wt;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public abstract class c1 extends sl0 {
+public abstract class c1 extends rl0 {
     public int B;
     public int C;
     public ArrayList D;
@@ -49,7 +49,7 @@ public abstract class c1 extends sl0 {
     public long x;
     public boolean y;
 
-    @Override // org.telegram.ui.Components.sl0
+    @Override // org.telegram.ui.Components.rl0
     public final boolean D(f2.m1 m1Var) {
         int i10 = m1Var.f;
         return i10 == 0 || i10 == 2 || i10 == 3;
@@ -299,6 +299,6 @@ public abstract class c1 extends sl0 {
             u00Var.setBackgroundColor(k6.w0(null, k6.d6, false));
             view = u00Var;
         }
-        return new fl0(view);
+        return new el0(view);
     }
 }

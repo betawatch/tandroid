@@ -2,14 +2,14 @@ package qh;
 
 import android.content.Context;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
-public final class l9 extends c0 {
-    public final /* synthetic */ ca B;
+public final class l9 extends f0 {
+    public final /* synthetic */ ba C;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l9(ca caVar, Context context, q9 q9Var) {
-        super(context, q9Var);
-        this.B = caVar;
+    public l9(ba baVar, Context context, p9 p9Var) {
+        super(context, p9Var);
+        this.C = baVar;
     }
 }

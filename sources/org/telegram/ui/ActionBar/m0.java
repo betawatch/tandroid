@@ -2,12 +2,12 @@ package org.telegram.ui.ActionBar;
 
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.fn0;
+import org.telegram.ui.Components.en0;
 import org.telegram.ui.Components.fq;
 import org.telegram.ui.Components.yy;
-import org.telegram.ui.i51;
+import org.telegram.ui.n51;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class m0 extends fq {
     public final /* synthetic */ int h;
@@ -26,9 +26,9 @@ public final class m0 extends fq {
             case 1:
                 return k6.v0(k6.Je, ((yy) this.i).D.W1);
             case 2:
-                return k6.v0(k6.Q5, ((fn0) this.i).f);
+                return k6.v0(k6.Q5, ((en0) this.i).f);
             case 3:
-                return k6.v0(k6.Je, ((i51) this.i).y.W0);
+                return k6.v0(k6.Je, ((n51) this.i).y.W0);
             default:
                 return k6.v0(k6.Je, (g6) this.i);
         }
@@ -51,10 +51,10 @@ public final class m0 extends fq {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m0(i51 i51Var) {
+    public m0(n51 n51Var) {
         super(1.25f);
         this.h = 3;
-        this.i = i51Var;
+        this.i = n51Var;
         this.f = AndroidUtilities.dp(7.0f);
     }
 }

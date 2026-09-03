@@ -12,7 +12,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.z5;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class r extends View {
     public final /* synthetic */ int a = 1;
@@ -54,7 +54,7 @@ public final class r extends View {
                 e0Var.e.rewind();
                 e0Var.e.addRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
                 canvas.clipPath(e0Var.e);
-                eg.c2.w1(canvas, rectF, AndroidUtilities.dp(6.0f));
+                eg.c2.v1(canvas, rectF, AndroidUtilities.dp(6.0f));
                 canvas.restore();
                 rectF.set(dp, f10, getWidth() - dp, f11);
                 canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), this.b);
@@ -63,7 +63,7 @@ public final class r extends View {
                 float strokeWidth = dp2 - (paint.getStrokeWidth() / 2.0f);
                 float max = Math.max(dp + strokeWidth, (((getWidth() - (2.0f * dp)) * this.d) + dp) - strokeWidth);
                 canvas.drawCircle(max, height, dp2, paint);
-                eg.c2.x1(max, height, strokeWidth, i0.a.k(e0Var.f, (int) (this.d * 255.0f)), canvas);
+                eg.c2.w1(max, height, strokeWidth, i0.a.k(e0Var.f, (int) (this.d * 255.0f)), canvas);
                 break;
             default:
                 super.onDraw(canvas);

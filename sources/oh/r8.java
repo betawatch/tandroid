@@ -6,9 +6,9 @@ import android.view.SurfaceView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.mj0;
+import org.telegram.ui.Components.lj0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class r8 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -22,7 +22,7 @@ public final class r8 extends AnimatorListenerAdapter {
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
         f4 t6;
-        mj0 mj0Var;
+        lj0 lj0Var;
         switch (this.a) {
             case 0:
                 super.onAnimationEnd(animator);
@@ -50,14 +50,14 @@ public final class r8 extends AnimatorListenerAdapter {
                     imageReceiver2.setAlpha(1.0f);
                     f9Var.c.setVisible(true, true);
                 }
-                if (f9Var.d != null && (t6 = i9Var.t()) != null && (mj0Var = t6.l1.d) != null) {
-                    mj0 mj0Var2 = f9Var.d;
-                    mj0Var2.getClass();
-                    mj0Var2.c = mj0Var.c;
-                    mj0Var2.f = mj0Var.f;
-                    mj0Var2.b = mj0Var.b;
-                    mj0Var2.a = System.currentTimeMillis();
-                    mj0Var2.c();
+                if (f9Var.d != null && (t6 = i9Var.t()) != null && (lj0Var = t6.l1.d) != null) {
+                    lj0 lj0Var2 = f9Var.d;
+                    lj0Var2.getClass();
+                    lj0Var2.c = lj0Var.c;
+                    lj0Var2.f = lj0Var.f;
+                    lj0Var2.b = lj0Var.b;
+                    lj0Var2.a = System.currentTimeMillis();
+                    lj0Var2.c();
                 }
                 e4 e4Var = i9Var.D0;
                 if (e4Var != null) {

@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class kg0 implements o1.f {
     public final /* synthetic */ int a;
@@ -27,12 +27,12 @@ public final /* synthetic */ class kg0 implements o1.f {
                 }
                 break;
             case 1:
-                qh.ca caVar = (qh.ca) this.c;
+                qh.ba baVar = (qh.ba) this.c;
                 if (!z4) {
-                    caVar.J0.setTranslationY(this.b);
-                    caVar.J0.H = false;
-                    caVar.l2 = null;
-                    caVar.m2 = null;
+                    baVar.J0.setTranslationY(this.b);
+                    baVar.J0.H = false;
+                    baVar.l2 = null;
+                    baVar.m2 = null;
                     break;
                 }
                 break;

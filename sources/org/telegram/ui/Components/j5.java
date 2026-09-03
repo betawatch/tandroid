@@ -12,7 +12,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class j5 extends Drawable implements r5 {
     public mh.wa B;
@@ -30,7 +30,7 @@ public class j5 extends Drawable implements r5 {
     public final z5 e;
     public final Drawable[] f;
     public View h;
-    public org.telegram.ui.r61 n;
+    public org.telegram.ui.w61 n;
     public final boolean r;
     public final int s;
     public int v;
@@ -298,9 +298,9 @@ public class j5 extends Drawable implements r5 {
                 this.h.invalidate();
             }
         }
-        org.telegram.ui.r61 r61Var = this.n;
-        if (r61Var != null) {
-            r61Var.invalidate();
+        org.telegram.ui.w61 w61Var = this.n;
+        if (w61Var != null) {
+            w61Var.invalidate();
         }
         invalidateSelf();
     }

@@ -15,7 +15,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c10 implements Runnable {
     public final /* synthetic */ int a;
@@ -49,10 +49,10 @@ public final /* synthetic */ class c10 implements Runnable {
                 ((FiltersSetupActivity) ((mh.d1) obj).V2).getMessagesController().lockFiltersInternal();
                 break;
             case 3:
-                w10 w10Var = (w10) obj;
-                w10Var.s.a();
-                w10Var.n.invalidate();
-                w10Var.B.Z(true);
+                v10 v10Var = (v10) obj;
+                v10Var.s.a();
+                v10Var.n.invalidate();
+                v10Var.B.Z(true);
                 break;
             case 4:
                 FiltersSetupActivity filtersSetupActivity = ((d20) obj).d;
@@ -201,7 +201,7 @@ public final /* synthetic */ class c10 implements Runnable {
                 break;
             case 17:
                 try {
-                    org.telegram.ui.Components.tl0 currentListView = ((zc0) obj).v0.H0.getCurrentListView();
+                    org.telegram.ui.Components.sl0 currentListView = ((zc0) obj).v0.H0.getCurrentListView();
                     if (currentListView != null && currentListView.getAdapter() != null) {
                         currentListView.getAdapter().l();
                         break;
@@ -221,38 +221,38 @@ public final /* synthetic */ class c10 implements Runnable {
                 }
                 break;
             case 19:
-                ie0 ie0Var = (ie0) obj;
-                org.telegram.ui.Components.lj0 lj0Var = ie0Var.e;
-                EditTextBoldCursor editTextBoldCursor2 = ie0Var.a;
+                he0 he0Var = (he0) obj;
+                org.telegram.ui.Components.kj0 kj0Var = he0Var.e;
+                EditTextBoldCursor editTextBoldCursor2 = he0Var.a;
                 if (editTextBoldCursor2 != null) {
                     editTextBoldCursor2.requestFocus();
                     editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-                    og0.T0(ie0Var.y, editTextBoldCursor2);
-                    lj0Var.getAnimatedDrawable().L(0, false, false);
-                    lj0Var.d();
+                    og0.T0(he0Var.y, editTextBoldCursor2);
+                    kj0Var.getAnimatedDrawable().L(0, false, false);
+                    kj0Var.d();
                     break;
                 }
                 break;
             case 20:
-                ((org.telegram.ui.Components.lj0) obj).d();
+                ((org.telegram.ui.Components.kj0) obj).d();
                 break;
             case 21:
-                ((qe0) ((lg.f) obj).c).getClass();
+                ((pe0) ((lg.f) obj).c).getClass();
                 break;
             case 22:
                 double currentTimeMillis2 = System.currentTimeMillis();
-                qe0 qe0Var = ((pe0) obj).a;
-                double d = qe0Var.N;
-                qf0 qf0Var = qe0Var.v;
-                qe0Var.N = currentTimeMillis2;
-                int i20 = (int) (qe0Var.M - (currentTimeMillis2 - d));
-                qe0Var.M = i20;
+                pe0 pe0Var = ((oe0) obj).a;
+                double d = pe0Var.N;
+                qf0 qf0Var = pe0Var.v;
+                pe0Var.N = currentTimeMillis2;
+                int i20 = (int) (pe0Var.M - (currentTimeMillis2 - d));
+                pe0Var.M = i20;
                 if (i20 >= 1000) {
                     int i21 = i20 / MediaDataController.MAX_STYLE_RUNS_COUNT;
                     int i22 = i21 / 60;
                     int i23 = i21 - (i22 * 60);
                     qf0Var.setTextSize(1, 13.0f);
-                    int i24 = qe0Var.B;
+                    int i24 = pe0Var.B;
                     if (i24 != 4 && i24 != 3 && i24 != 11) {
                         if (i24 == 2) {
                             qf0Var.setText(LocaleController.formatString(R.string.SmsAvailableIn2, Integer.valueOf(i22), Integer.valueOf(i23)));
@@ -263,11 +263,11 @@ public final /* synthetic */ class c10 implements Runnable {
                         break;
                     }
                 } else {
-                    qe0Var.r();
-                    int i25 = qe0Var.B;
+                    pe0Var.r();
+                    int i25 = pe0Var.B;
                     if (i25 == 3 || i25 == 4 || i25 == 2 || i25 == 11) {
                         qf0Var.setTextSize(1, 15.0f);
-                        int i26 = qe0Var.B;
+                        int i26 = pe0Var.B;
                         if (i26 == 4) {
                             qf0Var.setText(LocaleController.getString(R.string.RequestCallButton));
                         } else if (i26 == 15) {

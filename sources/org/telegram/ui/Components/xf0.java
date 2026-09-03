@@ -17,7 +17,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class xf0 extends FrameLayout {
     public float B;
@@ -43,9 +43,9 @@ public abstract class xf0 extends FrameLayout {
     public boolean x;
     public TLRPC.WebPage y;
 
-    public static void a(org.telegram.ui.pt0 pt0Var, String str) {
-        int videoDuration = pt0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        ArrayList arrayList = pt0Var.v;
+    public static void a(org.telegram.ui.ut0 ut0Var, String str) {
+        int videoDuration = ut0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
+        ArrayList arrayList = ut0Var.v;
         arrayList.clear();
         if (videoDuration <= 15) {
             return;

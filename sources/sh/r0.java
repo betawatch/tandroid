@@ -5,9 +5,9 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import qh.v9;
+import qh.u9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class r0 implements SensorEventListener {
     public final /* synthetic */ int a;
@@ -78,9 +78,9 @@ public final class r0 implements SensorEventListener {
         switch (this.a) {
             case 0:
                 u0 u0Var = this.d;
-                v9 v9Var = u0Var.m;
-                if (v9Var != null) {
-                    AndroidUtilities.cancelRunOnUIThread(v9Var);
+                u9 u9Var = u0Var.m;
+                if (u9Var != null) {
+                    AndroidUtilities.cancelRunOnUIThread(u9Var);
                     u0Var.m = null;
                 }
                 if (!u0Var.l && u0Var.k != null) {
@@ -91,18 +91,18 @@ public final class r0 implements SensorEventListener {
                         c();
                         break;
                     } else {
-                        v9 v9Var2 = new v9(this, 9);
-                        u0Var.m = v9Var2;
-                        AndroidUtilities.runOnUIThread(v9Var2, j10 - currentTimeMillis);
+                        u9 u9Var2 = new u9(this, 9);
+                        u0Var.m = u9Var2;
+                        AndroidUtilities.runOnUIThread(u9Var2, j10 - currentTimeMillis);
                         break;
                     }
                 }
                 break;
             default:
                 u0 u0Var2 = this.d;
-                v9 v9Var3 = u0Var2.o;
-                if (v9Var3 != null) {
-                    AndroidUtilities.cancelRunOnUIThread(v9Var3);
+                u9 u9Var3 = u0Var2.o;
+                if (u9Var3 != null) {
+                    AndroidUtilities.cancelRunOnUIThread(u9Var3);
                     u0Var2.o = null;
                 }
                 if (!u0Var2.l && u0Var2.k != null) {
@@ -118,9 +118,9 @@ public final class r0 implements SensorEventListener {
                         c();
                         break;
                     } else {
-                        v9 v9Var4 = new v9(this, 10);
-                        u0Var2.o = v9Var4;
-                        AndroidUtilities.runOnUIThread(v9Var4, j11 - currentTimeMillis2);
+                        u9 u9Var4 = new u9(this, 10);
+                        u0Var2.o = u9Var4;
+                        AndroidUtilities.runOnUIThread(u9Var4, j11 - currentTimeMillis2);
                         break;
                     }
                 }

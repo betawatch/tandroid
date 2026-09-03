@@ -8,7 +8,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class yu extends org.telegram.ui.ActionBar.p2 {
     public static final int[][] d = {new int[]{-14899731, -15431455}, new int[]{-11154873, -14175180}, new int[]{-11565578, -13276952}, new int[]{-1007845, -1996271}, new int[]{-765355, -2148011}, new int[]{-3903756, -6335009}, new int[]{-13451058, -14836538}};
@@ -16,8 +16,8 @@ public final class yu extends org.telegram.ui.ActionBar.p2 {
     public static final int[] f = {R.drawable.msg_filled_data_videos, R.drawable.msg_filled_data_files, R.drawable.msg_filled_data_photos, R.drawable.msg_filled_data_messages, R.drawable.msg_filled_data_music, R.drawable.msg_filled_data_voice, R.drawable.msg_filled_data_calls};
     public static final int[] h = {R.string.LocalVideoCache, R.string.LocalDocumentCache, R.string.LocalPhotoCache, R.string.MessagesSettings, R.string.LocalMusicCache, R.string.LocalAudioCache, R.string.CallsDataUsage};
     public static final int[] n = {2, 5, 4, 1, 7, 3, 0};
-    public org.telegram.ui.Components.m81 a;
-    public org.telegram.ui.Components.l81 b;
+    public org.telegram.ui.Components.l81 a;
+    public org.telegram.ui.Components.k81 b;
     public boolean c;
 
     public yu() {
@@ -37,13 +37,13 @@ public final class yu extends org.telegram.ui.ActionBar.p2 {
         this.actionBar.C(getThemedColor(i11), false);
         this.actionBar.B(getThemedColor(org.telegram.ui.ActionBar.k6.i6), false);
         this.actionBar.setCastShadows(false);
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.z51(this, 6));
+        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 6));
         l0 l0Var = new l0(this, context, 6);
         l0Var.setBackgroundColor(getThemedColor(org.telegram.ui.ActionBar.k6.a7));
-        org.telegram.ui.Components.m81 m81Var = new org.telegram.ui.Components.m81(context, null);
-        this.a = m81Var;
-        m81Var.setAdapter(new vu(this));
-        org.telegram.ui.Components.l81 n10 = this.a.n(8, true);
+        org.telegram.ui.Components.l81 l81Var = new org.telegram.ui.Components.l81(context, null);
+        this.a = l81Var;
+        l81Var.setAdapter(new vu(this));
+        org.telegram.ui.Components.k81 n10 = this.a.n(8, true);
         this.b = n10;
         n10.setBackgroundColor(getThemedColor(i10));
         l0Var.addView(this.b, k7.c6.e(-1, 48, 55));
@@ -85,7 +85,7 @@ public final class yu extends org.telegram.ui.ActionBar.p2 {
         View currentView = this.a.getCurrentView();
         if (currentView instanceof uu) {
             uu uuVar = (uu) currentView;
-            uuVar.e1(new qu(uuVar), 700, true);
+            uuVar.d1(new qu(uuVar), 700, true);
         }
     }
 }

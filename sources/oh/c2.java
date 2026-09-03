@@ -8,14 +8,14 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.Components.gy;
-import org.telegram.ui.Components.ku0;
-import org.telegram.ui.Components.lj0;
+import org.telegram.ui.Components.ju0;
+import org.telegram.ui.Components.kj0;
 import org.telegram.ui.hx;
 import org.telegram.ui.py;
-import qh.ca;
-import qh.x9;
+import qh.ba;
+import qh.w9;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class c2 implements Utilities.Callback4 {
     public final /* synthetic */ int a;
@@ -40,7 +40,7 @@ public final /* synthetic */ class c2 implements Utilities.Callback4 {
         switch (this.a) {
             case 0:
                 f4 f4Var = (f4) this.b;
-                ca caVar = (ca) this.c;
+                ba baVar = (ba) this.c;
                 Long l10 = (Long) obj;
                 Runnable runnable = (Runnable) obj2;
                 Boolean bool = (Boolean) obj3;
@@ -55,9 +55,9 @@ public final /* synthetic */ class c2 implements Utilities.Callback4 {
                         e4Var.f = false;
                         h9Var.setOnReadyListener(new f2(0, currentTimeMillis, runnable));
                         ((z8) f4Var.N1).g(false);
-                        lj0 lj0Var = f4Var.w0;
-                        if (lj0Var != null) {
-                            lj0Var.setAnimation(f4Var.u1.u);
+                        kj0 kj0Var = f4Var.w0;
+                        if (kj0Var != null) {
+                            kj0Var.setAnimation(f4Var.u1.u);
                         }
                         if (f4Var.O2 > 0 && l10.longValue() > f4Var.O2 - 1400) {
                             l10 = 0L;
@@ -102,11 +102,11 @@ public final /* synthetic */ class c2 implements Utilities.Callback4 {
                                 i9Var.v();
                                 f4Var.R3 = false;
                                 if (hxVar != null || !hxVar.k(l11.longValue())) {
-                                    caVar.Y(x9.c(r3));
+                                    baVar.Y(w9.c(r3));
                                     AndroidUtilities.runOnUIThread(runnable, 400L);
                                     break;
                                 } else {
-                                    hxVar.V.add(new hg.j0(r3, hxVar, l11, caVar, runnable, 13));
+                                    hxVar.V.add(new hg.j0(r3, hxVar, l11, baVar, runnable, 13));
                                     break;
                                 }
                             } else {
@@ -122,15 +122,15 @@ public final /* synthetic */ class c2 implements Utilities.Callback4 {
                     f4Var.R3 = false;
                     if (hxVar != null) {
                     }
-                    caVar.Y(x9.c(r3));
+                    baVar.Y(w9.c(r3));
                     AndroidUtilities.runOnUIThread(runnable, 400L);
                 }
                 break;
             default:
-                ku0 ku0Var = (ku0) this.b;
+                ju0 ju0Var = (ju0) this.b;
                 gy gyVar = (gy) this.c;
                 ArrayList arrayList2 = (ArrayList) obj;
-                int i11 = ku0Var.d;
+                int i11 = ju0Var.d;
                 MessagesController.getInstance(i11).putUsers((ArrayList) obj2, true);
                 MessagesController.getInstance(i11).putChats((ArrayList) obj3, true);
                 org.telegram.ui.Components.l5.h(i11).d((ArrayList) obj4);
@@ -139,10 +139,10 @@ public final /* synthetic */ class c2 implements Utilities.Callback4 {
                     if (messageObject.hasValidGroupId() && messageObject.messageOwner.reactions != null) {
                         messageObject.isPrimaryGroupMessage = true;
                     }
-                    messageObject.setQuery(ku0Var.w);
-                    ku0Var.n.add(messageObject);
+                    messageObject.setQuery(ju0Var.w);
+                    ju0Var.n.add(messageObject);
                 }
-                ku0Var.G(true);
+                ju0Var.G(true);
                 AndroidUtilities.runOnUIThread(gyVar, 540L);
                 break;
         }

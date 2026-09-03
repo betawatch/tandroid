@@ -6,11 +6,11 @@ import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ib1;
+import org.telegram.ui.ob1;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class xv extends vm0 {
+public final class xv extends um0 {
     public long h;
     public boolean n;
     public float r;
@@ -28,9 +28,9 @@ public final class xv extends vm0 {
         setHorizontalScrollBarEnabled(false);
         setVerticalScrollBarEnabled(false);
         setNestedScrollingEnabled(true);
-        ib1 ib1Var = new ib1(this, context, 7);
-        this.b = ib1Var;
-        ib1Var.setOrientation(0);
+        ob1 ob1Var = new ob1(this, context, 7);
+        this.b = ob1Var;
+        ob1Var.setOrientation(0);
         addView(this.b, new FrameLayout.LayoutParams(-2, -1));
         while (true) {
             int[] iArr = zv.b0;
@@ -69,7 +69,7 @@ public final class xv extends vm0 {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.lerp(AndroidUtilities.dp(30.0f), AndroidUtilities.dp(Math.min(5.7f, this.b.getChildCount()) * 32.0f), this.r), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(30.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.ui.Components.vm0, android.widget.HorizontalScrollView, android.view.View
+    @Override // org.telegram.ui.Components.um0, android.widget.HorizontalScrollView, android.view.View
     public final boolean onTouchEvent(MotionEvent motionEvent) {
         d(motionEvent);
         return super.onTouchEvent(motionEvent);

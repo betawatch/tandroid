@@ -19,7 +19,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ml implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -125,7 +125,7 @@ public final /* synthetic */ class ml implements Utilities.Callback {
                     photoViewer.q5.setCutOutState(true);
                     photoViewer.X2(false, true);
                 } else {
-                    b11 thanosEffect = photoViewer.m5.getThanosEffect();
+                    a11 thanosEffect = photoViewer.m5.getThanosEffect();
                     eg.o3 o3Var2 = photoViewer.m5;
                     o3Var2.I = true;
                     o3Var2.B = l3Var;
@@ -135,7 +135,7 @@ public final /* synthetic */ class ml implements Utilities.Callback {
                     Bitmap b10 = l3Var2 == null ? o3Var2.F : (!z11 || bitmap3 == null) ? l3Var2.b() : o3Var2.e(bitmap3);
                     MediaController.PhotoEntry photoEntry3 = (MediaController.PhotoEntry) photoViewer.d7.get(photoViewer.M4);
                     if (thanosEffect == null) {
-                        Utilities.themeQueue.postRunnable(new org.telegram.ui.ar0(photoViewer, b10, 0));
+                        Utilities.themeQueue.postRunnable(new org.telegram.ui.fr0(photoViewer, b10, 0));
                         photoViewer.m5.f();
                         photoViewer.b0.invalidate();
                         break;
@@ -204,7 +204,7 @@ public final /* synthetic */ class ml implements Utilities.Callback {
                             bitmap2 = bitmap;
                         }
                         if (bitmap2 == null) {
-                            Utilities.themeQueue.postRunnable(new org.telegram.ui.ar0(photoViewer, b10, 1));
+                            Utilities.themeQueue.postRunnable(new org.telegram.ui.fr0(photoViewer, b10, 1));
                             photoViewer.m5.f();
                             photoViewer.b0.invalidate();
                             break;
@@ -214,7 +214,7 @@ public final /* synthetic */ class ml implements Utilities.Callback {
                                 bitmap2 = PhotoViewer.I0(bitmap2, cropState, new int[]{photoViewer.z4.getOrientation(), photoViewer.z4.getInvert()}, true);
                             }
                             if (bitmap2 == null) {
-                                Utilities.themeQueue.postRunnable(new org.telegram.ui.ar0(photoViewer, b10, 2));
+                                Utilities.themeQueue.postRunnable(new org.telegram.ui.fr0(photoViewer, b10, 2));
                                 photoViewer.m5.f();
                                 photoViewer.b0.invalidate();
                                 break;
@@ -262,18 +262,18 @@ public final /* synthetic */ class ml implements Utilities.Callback {
                                 matrix3.postScale(f24, f24, f11 / f10, f12 / f10);
                                 matrix3.postTranslate(photoViewer.U5 + f14 + Math.max(0, (int) ((photoViewer.k1(photoViewer.r4) - f17) / f10)), photoViewer.V5 + f13 + Math.max(0, (int) ((photoViewer.i1() - f18) / f10)));
                                 photoViewer.m5.S = true;
-                                Utilities.themeQueue.postRunnable(new org.telegram.ui.ar0(photoViewer, b10, 3));
-                                org.telegram.ui.oq0 oq0Var = new org.telegram.ui.oq0(photoViewer, 13);
-                                org.telegram.ui.if0 if0Var = new org.telegram.ui.if0(photoViewer, b10, oq0Var, 18);
+                                Utilities.themeQueue.postRunnable(new org.telegram.ui.fr0(photoViewer, b10, 3));
+                                org.telegram.ui.tq0 tq0Var = new org.telegram.ui.tq0(photoViewer, 13);
+                                org.telegram.ui.if0 if0Var = new org.telegram.ui.if0(photoViewer, b10, tq0Var, 18);
                                 org.telegram.ui.sj0 sj0Var = new org.telegram.ui.sj0(1);
-                                z01 z01Var = thanosEffect.a;
-                                if (z01Var != null) {
-                                    z01Var.c(matrix3, bitmap2, if0Var, sj0Var);
+                                y01 y01Var = thanosEffect.a;
+                                if (y01Var != null) {
+                                    y01Var.c(matrix3, bitmap2, if0Var, sj0Var);
                                     Choreographer.getInstance().postFrameCallback(thanosEffect.b);
                                 } else {
-                                    thanosEffect.c.add(new a11(matrix3, bitmap2, if0Var, sj0Var));
+                                    thanosEffect.c.add(new z01(matrix3, bitmap2, if0Var, sj0Var));
                                 }
-                                AndroidUtilities.runOnUIThread(oq0Var, 1200L);
+                                AndroidUtilities.runOnUIThread(tq0Var, 1200L);
                             }
                         }
                     }
@@ -290,18 +290,18 @@ public final /* synthetic */ class ml implements Utilities.Callback {
                     runnable2.run();
                     break;
                 } else {
-                    yw0.v3.fetch(UserConfig.selectedAccount, str2, new org.telegram.ui.z41(linkedHashSet, runnable2, 1));
+                    xw0.v3.fetch(UserConfig.selectedAccount, str2, new org.telegram.ui.e51(linkedHashSet, runnable2, 1));
                     break;
                 }
             default:
                 boolean z13 = this.b;
                 org.telegram.ui.ActionBar.d2 d2Var = (org.telegram.ui.ActionBar.d2) this.c;
                 Utilities.Callback callback = (Utilities.Callback) this.d;
-                qh.xa xaVar = (qh.xa) obj;
+                qh.wa waVar = (qh.wa) obj;
                 if (z13) {
                     d2Var.c(350L);
                 }
-                callback.run(xaVar);
+                callback.run(waVar);
                 break;
         }
     }

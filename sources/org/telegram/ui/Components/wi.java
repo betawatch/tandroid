@@ -9,7 +9,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class wi extends FrameLayout implements org.telegram.ui.ActionBar.b6 {
     public final org.telegram.ui.ActionBar.g6 a;
@@ -25,7 +25,7 @@ public final class wi extends FrameLayout implements org.telegram.ui.ActionBar.b
         linearLayout.setOrientation(1);
         addView(linearLayout, k7.c6.q(-1, -2, 17));
         p9 p9Var = new p9(context);
-        p9Var.setImageDrawable(new ij0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), "utyan_empty", AndroidUtilities.dp(120.0f)));
+        p9Var.setImageDrawable(new hj0(R.raw.utyan_empty, AndroidUtilities.dp(120.0f), AndroidUtilities.dp(120.0f)));
         linearLayout.addView(p9Var, k7.c6.t(120, 120, 17, 0, 0, 0, 0));
         TextView textView = new TextView(context);
         this.b = textView;

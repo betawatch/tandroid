@@ -5,31 +5,31 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.m81;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.l81;
+import org.telegram.ui.Components.sl0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class ia extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
     public final int a;
-    public final m81 b;
+    public final l81 b;
     public final ha c;
 
     public ia(Context context, int i10, boolean z4, long j10, int i11, org.telegram.ui.ActionBar.g6 g6Var) {
         super(context);
         this.a = i10;
         setOrientation(1);
-        m81 m81Var = new m81(context, null);
-        this.b = m81Var;
+        l81 l81Var = new l81(context, null);
+        this.b = l81Var;
         ha haVar = new ha(context, i10, z4, j10, i11, g6Var);
         this.c = haVar;
-        m81Var.setAdapter(haVar);
-        View n10 = m81Var.n(3, true);
+        l81Var.setAdapter(haVar);
+        View n10 = l81Var.n(3, true);
         View view = new View(context);
         view.setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.d7, g6Var));
         addView(n10, k7.c6.n(-1, 48));
         addView(view, new LinearLayout.LayoutParams(k7.c6.z(-1.0f), k7.c6.z(1.0f / AndroidUtilities.density)));
-        addView(m81Var, k7.c6.n(-1, -1));
+        addView(l81Var, k7.c6.n(-1, -1));
         setBackgroundColor(org.telegram.ui.ActionBar.k6.v0(org.telegram.ui.ActionBar.k6.h5, g6Var));
     }
 
@@ -41,7 +41,7 @@ public final class ia extends LinearLayout implements NotificationCenter.Notific
         }
     }
 
-    public tl0 getCurrentListView() {
+    public sl0 getCurrentListView() {
         View currentView = this.b.getCurrentView();
         if (currentView instanceof ga) {
             return ((ga) currentView).a;

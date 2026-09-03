@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.p61;
+import org.telegram.ui.Components.o61;
 import org.telegram.ui.Components.vg0;
 import org.telegram.ui.Components.xg0;
 import org.telegram.ui.dc0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class w1 extends org.telegram.ui.Components.k6 {
     public final /* synthetic */ int s;
@@ -59,7 +59,7 @@ public final class w1 extends org.telegram.ui.Components.k6 {
                 canvas.translate(AndroidUtilities.dp(15.0f), 0.0f);
                 super.onDraw(canvas);
                 canvas.translate(((getMeasuredWidth() - d()) / 2.0f) - AndroidUtilities.dp(30.0f), AndroidUtilities.dp(11.0f));
-                ((p61) this.v).b.draw(canvas);
+                ((o61) this.v).b.draw(canvas);
                 canvas.restore();
                 break;
             case 3:
@@ -120,10 +120,10 @@ public final class w1 extends org.telegram.ui.Components.k6 {
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public w1(p61 p61Var, Context context) {
+    public w1(o61 o61Var, Context context) {
         super(context, true, true, true);
         this.s = 2;
-        this.v = p61Var;
+        this.v = o61Var;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

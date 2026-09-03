@@ -27,18 +27,18 @@ import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
 import org.telegram.messenger.Utilities;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.Components.uq;
 import org.telegram.ui.yh;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract class z9 {
     public final ActionMode.Callback A;
     public final Rect B;
     public y9 C;
     public k7.y5 D;
-    public tl0 E;
+    public sl0 E;
     public ViewGroup F;
     public Magnifier G;
     public float H;
@@ -381,8 +381,8 @@ public abstract class z9 {
     }
 
     public final void T(ViewGroup viewGroup) {
-        if (viewGroup instanceof tl0) {
-            this.E = (tl0) viewGroup;
+        if (viewGroup instanceof sl0) {
+            this.E = (sl0) viewGroup;
         }
         this.F = viewGroup;
     }

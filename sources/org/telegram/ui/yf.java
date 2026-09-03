@@ -6,7 +6,7 @@ import android.os.SystemClock;
 import android.view.View;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yf implements pg.a {
     public final /* synthetic */ int a;
@@ -55,11 +55,11 @@ public final /* synthetic */ class yf implements pg.a {
             default:
                 long uptimeMillis = SystemClock.uptimeMillis();
                 xn xnVar3 = this.b.G0;
-                if (xnVar3.u0.Z0()) {
+                if (xnVar3.u0.Y0()) {
                     xnVar3.u0.e(canvas, rectF);
                     break;
                 } else {
-                    xnVar3.u0.w1(canvas, rectF);
+                    xnVar3.u0.v1(canvas, rectF);
                     for (int i13 = 0; i13 < xnVar3.u0.getChildCount(); i13++) {
                         View childAt2 = xnVar3.u0.getChildAt(i13);
                         if (!xn.d2(xnVar3, childAt2, rectF)) {
@@ -92,7 +92,7 @@ public final /* synthetic */ class yf implements pg.a {
                             }
                         }
                     }
-                    xnVar3.u0.x1(canvas, rectF);
+                    xnVar3.u0.w1(canvas, rectF);
                     break;
                 }
         }

@@ -10,18 +10,18 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.ui.Components.UndoView;
 import org.telegram.ui.Components.cb;
-import org.telegram.ui.Components.l41;
+import org.telegram.ui.Components.q51;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
-import org.telegram.ui.Components.rk0;
+import org.telegram.ui.Components.qk0;
 import org.telegram.ui.Components.t00;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.q91;
-import org.telegram.ui.r91;
+import org.telegram.ui.w91;
+import org.telegram.ui.x91;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class g2 implements View.OnLongClickListener {
     public final /* synthetic */ int a;
@@ -46,22 +46,22 @@ public final /* synthetic */ class g2 implements View.OnLongClickListener {
                     f4Var.w3 = null;
                 }
                 SharedConfig.setStoriesReactionsLongPressHintUsed(true);
-                qh.f3 f3Var = f4Var.E0;
-                if (f3Var != null) {
-                    f3Var.e(true);
+                qh.e3 e3Var = f4Var.E0;
+                if (e3Var != null) {
+                    e3Var.e(true);
                 }
-                rk0 rk0Var = f4Var.o3;
-                if (rk0Var == null) {
+                qk0 qk0Var = f4Var.o3;
+                if (qk0Var == null) {
                     org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
-                    rk0 rk0Var2 = new rk0(2, f4Var.z2, f4Var.getContext(), R, new n2(4, f4Var.y0));
-                    f4Var.o3 = rk0Var2;
-                    rk0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
+                    qk0 qk0Var2 = new qk0(2, f4Var.z2, f4Var.getContext(), R, new n2(4, f4Var.y0));
+                    f4Var.o3 = qk0Var2;
+                    qk0Var2.setPadding(0, 0, 0, AndroidUtilities.dp(22.0f));
                     f4Var.addView(f4Var.o3, f4Var.getChildCount() - 1, k7.c6.d(-2, 74.0f, 53, 0.0f, 0.0f, 12.0f, 64.0f));
                     f4Var.o3.setVisibility(8);
                     f4Var.o3.setDelegate(new i3(f4Var));
                     f4Var.o3.p(null, null, true);
                 } else {
-                    f4Var.bringChildToFront(rk0Var);
+                    f4Var.bringChildToFront(qk0Var);
                     f4Var.o3.n();
                 }
                 f4Var.o3.setFragment(LaunchActivity.R());
@@ -91,7 +91,7 @@ public final /* synthetic */ class g2 implements View.OnLongClickListener {
                 return true;
             case 3:
                 q70 q70Var = (q70) this.b;
-                ((l41) this.c).run();
+                ((q51) this.c).run();
                 if (!q70Var.J) {
                     return true;
                 }
@@ -125,29 +125,29 @@ public final /* synthetic */ class g2 implements View.OnLongClickListener {
                 undoView.e(1, true);
                 return true;
             default:
-                q91 q91Var = (q91) this.b;
+                w91 w91Var = (w91) this.b;
                 yf.f fVar = (yf.f) this.c;
-                r91 r91Var = q91Var.d;
-                t00 t00Var = q91Var.a;
+                x91 x91Var = w91Var.d;
+                t00 t00Var = w91Var.a;
                 boolean z4 = false;
                 if (t00Var.c) {
-                    r91Var.f();
-                    ArrayList arrayList = r91Var.n;
-                    wf.g gVar = r91Var.c;
+                    x91Var.f();
+                    ArrayList arrayList = x91Var.n;
+                    wf.g gVar = x91Var.c;
                     int size = arrayList.size();
                     for (int i10 = 0; i10 < size; i10++) {
-                        ((q91) arrayList.get(i10)).a.setChecked(false);
-                        ((q91) arrayList.get(i10)).b.n = false;
-                        if (r91Var.r.c > 0 && i10 < gVar.d.size()) {
+                        ((w91) arrayList.get(i10)).a.setChecked(false);
+                        ((w91) arrayList.get(i10)).b.n = false;
+                        if (x91Var.r.c > 0 && i10 < gVar.d.size()) {
                             ((yf.f) gVar.d.get(i10)).n = false;
                         }
                     }
                     z4 = true;
                     t00Var.setChecked(true);
                     fVar.n = true;
-                    r91Var.b.z();
-                    if (r91Var.r.c > 0) {
-                        ((yf.f) gVar.d.get(q91Var.c)).n = true;
+                    x91Var.b.z();
+                    if (x91Var.r.c > 0) {
+                        ((yf.f) gVar.d.get(w91Var.c)).n = true;
                         gVar.z();
                     }
                 }

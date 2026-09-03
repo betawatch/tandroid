@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class di0 extends f2.p0 {
     public final /* synthetic */ Context c;
@@ -52,6 +52,6 @@ public final class di0 extends f2.p0 {
         ti0 ti0Var = this.e;
         si0 si0Var = new si0(ti0Var, this.c, ti0Var.c, this.d);
         si0Var.setDelegate(new db.a(16));
-        return new org.telegram.ui.Components.fl0(si0Var);
+        return new org.telegram.ui.Components.el0(si0Var);
     }
 }

@@ -1,31 +1,14 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.view.TextureView;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yu0 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hv0 b;
+public interface yu0 {
+    void G(MessageObject messageObject);
 
-    public /* synthetic */ yu0(hv0 hv0Var, int i10) {
-        this.a = i10;
-        this.b = hv0Var;
-    }
+    TextureView h0();
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                hv0 hv0Var = this.b;
-                hv0Var.getClass();
-                hv0Var.O.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                hv0 hv0Var2 = this.b;
-                hv0Var2.getClass();
-                hv0Var2.O.setTranslationY(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-        }
-    }
+    void y0(MessageObject messageObject);
 }

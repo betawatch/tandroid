@@ -62,7 +62,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.Components.EditTextBoldCursor;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public boolean A0;
@@ -95,8 +95,8 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
     public org.telegram.ui.Components.ni0 O;
     public l0 P;
     public pc0 Q;
-    public org.telegram.ui.Components.tl0 R;
-    public org.telegram.ui.Components.tl0 S;
+    public org.telegram.ui.Components.sl0 R;
+    public org.telegram.ui.Components.sl0 S;
     public uc0 T;
     public View U;
     public f2.j0 V;
@@ -141,7 +141,7 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
     public TLRPC.TL_channelLocation w0;
     public yc0 x;
     public TLRPC.TL_channelLocation x0;
-    public qh.f3 y;
+    public qh.e3 y;
     public MessageObject y0;
     public boolean z0;
 
@@ -333,9 +333,9 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
             float min = Math.min(measuredHeight - AndroidUtilities.dp(64 + ((i14 == 0 || i14 == 1) ? 30 : 10)), i12);
             this.d.setTranslationY(min);
             this.c.setTranslationY(min);
-            qh.f3 f3Var = this.y;
-            if (f3Var != null) {
-                f3Var.setTranslationY(min);
+            qh.e3 e3Var = this.y;
+            if (e3Var != null) {
+                e3Var.setTranslationY(min);
             }
             org.telegram.ui.Components.al alVar = this.e;
             if (alVar != null) {
@@ -651,9 +651,9 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                                 break;
                             case 4:
                                 if (bd0Var.getParentActivity() != null && bd0Var.t0 != null && bd0Var.d0() && bd0Var.F != null) {
-                                    qh.f3 f3Var = bd0Var.y;
-                                    if (f3Var != null) {
-                                        f3Var.e(true);
+                                    qh.e3 e3Var = bd0Var.y;
+                                    if (e3Var != null) {
+                                        e3Var.e(true);
                                     }
                                     int i18 = 3;
                                     MessagesController.getGlobalMainSettings().edit().putInt("proximityhint", 3).commit();
@@ -669,7 +669,7 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                                             bd0Var.L = null;
                                         }
                                         bd0Var.D = true;
-                                        bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i17), new v10(26, bd0Var, sharingLocationInfo));
+                                        bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i17), new z10(25, bd0Var, sharingLocationInfo));
                                         break;
                                     } else {
                                         IMapsProvider.ICircle iCircle2 = bd0Var.L;
@@ -865,9 +865,9 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                                 break;
                             case 4:
                                 if (bd0Var.getParentActivity() != null && bd0Var.t0 != null && bd0Var.d0() && bd0Var.F != null) {
-                                    qh.f3 f3Var = bd0Var.y;
-                                    if (f3Var != null) {
-                                        f3Var.e(true);
+                                    qh.e3 e3Var = bd0Var.y;
+                                    if (e3Var != null) {
+                                        e3Var.e(true);
                                     }
                                     int i18 = 3;
                                     MessagesController.getGlobalMainSettings().edit().putInt("proximityhint", 3).commit();
@@ -883,7 +883,7 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                                             bd0Var.L = null;
                                         }
                                         bd0Var.D = true;
-                                        bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i17), new v10(26, bd0Var, sharingLocationInfo));
+                                        bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i17), new z10(25, bd0Var, sharingLocationInfo));
                                         break;
                                     } else {
                                         IMapsProvider.ICircle iCircle2 = bd0Var.L;
@@ -1102,9 +1102,9 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                         break;
                     case 4:
                         if (bd0Var.getParentActivity() != null && bd0Var.t0 != null && bd0Var.d0() && bd0Var.F != null) {
-                            qh.f3 f3Var = bd0Var.y;
-                            if (f3Var != null) {
-                                f3Var.e(true);
+                            qh.e3 e3Var = bd0Var.y;
+                            if (e3Var != null) {
+                                e3Var.e(true);
                             }
                             int i182 = 3;
                             MessagesController.getGlobalMainSettings().edit().putInt("proximityhint", 3).commit();
@@ -1120,7 +1120,7 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                                     bd0Var.L = null;
                                 }
                                 bd0Var.D = true;
-                                bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i172), new v10(26, bd0Var, sharingLocationInfo));
+                                bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i172), new z10(25, bd0Var, sharingLocationInfo));
                                 break;
                             } else {
                                 IMapsProvider.ICircle iCircle2 = bd0Var.L;
@@ -1332,9 +1332,9 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                         break;
                     case 4:
                         if (bd0Var.getParentActivity() != null && bd0Var.t0 != null && bd0Var.d0() && bd0Var.F != null) {
-                            qh.f3 f3Var = bd0Var.y;
-                            if (f3Var != null) {
-                                f3Var.e(true);
+                            qh.e3 e3Var = bd0Var.y;
+                            if (e3Var != null) {
+                                e3Var.e(true);
                             }
                             int i182 = 3;
                             MessagesController.getGlobalMainSettings().edit().putInt("proximityhint", 3).commit();
@@ -1350,7 +1350,7 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                                     bd0Var.L = null;
                                 }
                                 bd0Var.D = true;
-                                bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i172), new v10(26, bd0Var, sharingLocationInfo));
+                                bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i172), new z10(25, bd0Var, sharingLocationInfo));
                                 break;
                             } else {
                                 IMapsProvider.ICircle iCircle2 = bd0Var.L;
@@ -1557,9 +1557,9 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                         break;
                     case 4:
                         if (bd0Var.getParentActivity() != null && bd0Var.t0 != null && bd0Var.d0() && bd0Var.F != null) {
-                            qh.f3 f3Var = bd0Var.y;
-                            if (f3Var != null) {
-                                f3Var.e(true);
+                            qh.e3 e3Var = bd0Var.y;
+                            if (e3Var != null) {
+                                e3Var.e(true);
                             }
                             int i182 = 3;
                             MessagesController.getGlobalMainSettings().edit().putInt("proximityhint", 3).commit();
@@ -1575,7 +1575,7 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                                     bd0Var.L = null;
                                 }
                                 bd0Var.D = true;
-                                bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i172), new v10(26, bd0Var, sharingLocationInfo));
+                                bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i172), new z10(25, bd0Var, sharingLocationInfo));
                                 break;
                             } else {
                                 IMapsProvider.ICircle iCircle2 = bd0Var.L;
@@ -1779,9 +1779,9 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                         break;
                     case 4:
                         if (bd0Var.getParentActivity() != null && bd0Var.t0 != null && bd0Var.d0() && bd0Var.F != null) {
-                            qh.f3 f3Var = bd0Var.y;
-                            if (f3Var != null) {
-                                f3Var.e(true);
+                            qh.e3 e3Var = bd0Var.y;
+                            if (e3Var != null) {
+                                e3Var.e(true);
                             }
                             int i182 = 3;
                             MessagesController.getGlobalMainSettings().edit().putInt("proximityhint", 3).commit();
@@ -1797,7 +1797,7 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                                     bd0Var.L = null;
                                 }
                                 bd0Var.D = true;
-                                bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i172), new v10(26, bd0Var, sharingLocationInfo));
+                                bd0Var.m0().k(0L, 25, 0, null, new kc0(bd0Var, i172), new z10(25, bd0Var, sharingLocationInfo));
                                 break;
                             } else {
                                 IMapsProvider.ICircle iCircle2 = bd0Var.L;
@@ -1971,12 +1971,12 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                 this.c.setImageResource(R.drawable.msg_location_alert2);
             }
         }
-        qh.f3 f3Var = new qh.f3(context, 1);
-        this.y = f3Var;
-        f3Var.setLayerType(2, null);
-        qh.f3 f3Var2 = this.y;
-        f3Var2.d = 4000L;
-        f3Var2.m(1.0f, -25.0f);
+        qh.e3 e3Var = new qh.e3(context, 1);
+        this.y = e3Var;
+        e3Var.setLayerType(2, null);
+        qh.e3 e3Var2 = this.y;
+        e3Var2.d = 4000L;
+        e3Var2.l(1.0f, -25.0f);
         this.y.setPadding(0, AndroidUtilities.dp(4.0f), 0, 0);
         this.P.addView(this.y, k7.c6.d(-1, -2.0f, 51, 8.0f, 106.0f, 8.0f, 0.0f));
         LinearLayout linearLayout = new LinearLayout(context);
@@ -2007,18 +2007,18 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
         this.r.setTextSize(1, 15.0f);
         this.r.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), 0);
         this.f.addView(this.r, k7.c6.t(-2, -2, 17, 0, 6, 0, 0));
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.R = tl0Var;
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.R = sl0Var;
         pc0 pc0Var2 = new pc0(this, context, this.D0, this.b0, getResourceProvider(), this.B, i14 == 8);
         this.Q = pc0Var2;
-        tl0Var.setAdapter(pc0Var2);
-        org.telegram.ui.Components.tl0 tl0Var2 = this.R;
+        sl0Var.setAdapter(pc0Var2);
+        org.telegram.ui.Components.sl0 sl0Var2 = this.R;
         f2.j0 j0Var = new f2.j0(1, false);
         this.V = j0Var;
-        tl0Var2.setLayoutManager(j0Var);
+        sl0Var2.setLayoutManager(j0Var);
         if (this.J0 != null) {
             this.I0 = new org.telegram.ui.Cells.u3(context, this.resourceProvider);
-            rc0 rc0Var = new rc0(this, context, new org.telegram.ui.Components.ru0(this), this, new qc0(this), getResourceProvider());
+            rc0 rc0Var = new rc0(this, context, new org.telegram.ui.Components.qu0(this), this, new qc0(this), getResourceProvider());
             this.H0 = rc0Var;
             rc0Var.setBackgroundColor(getThemedColor(i12));
             this.H0.addView(this.I0, k7.c6.e(-1, 32, 55));
@@ -2082,9 +2082,9 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                 this.P.addView(imageView4, k7.c6.e(28, 48, 49));
                 this.U = imageView4;
             }
-            org.telegram.ui.Components.tl0 tl0Var3 = new org.telegram.ui.Components.tl0(context, null);
-            this.S = tl0Var3;
-            tl0Var3.setVisibility(8);
+            org.telegram.ui.Components.sl0 sl0Var3 = new org.telegram.ui.Components.sl0(context, null);
+            this.S = sl0Var3;
+            sl0Var3.setVisibility(8);
             i11 = 0;
             this.S.setLayoutManager(new f2.j0(1, false));
             uc0 uc0Var2 = new uc0(this, context, getResourceProvider(), i10 == 8);
@@ -2549,7 +2549,7 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
                 if (this.c.getVisibility() != 8 && MessageObject.getFromChatId(message) != getUserConfig().getClientUserId()) {
                     this.c.setVisibility(0);
                     this.E = true;
-                    this.c.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(180L).setListener(new org.telegram.ui.Components.g91(this, 23)).start();
+                    this.c.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f).setDuration(180L).setListener(new org.telegram.ui.Components.f91(this, 23)).start();
                 }
             }
         }
@@ -2688,9 +2688,9 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
             layoutParams3.topMargin = currentActionBarHeight;
             layoutParams3.height = this.E0;
             this.P.setLayoutParams(layoutParams3);
-            org.telegram.ui.Components.tl0 tl0Var = this.S;
-            if (tl0Var != null) {
-                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) tl0Var.getLayoutParams();
+            org.telegram.ui.Components.sl0 sl0Var = this.S;
+            if (sl0Var != null) {
+                FrameLayout.LayoutParams layoutParams4 = (FrameLayout.LayoutParams) sl0Var.getLayoutParams();
                 layoutParams4.topMargin = currentActionBarHeight;
                 this.S.setLayoutParams(layoutParams4);
             }
@@ -2717,7 +2717,7 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
             int i11 = i10 == 3 ? 73 : (i10 == 1 || i10 == 2) ? 66 : 0;
             this.V.h1(0, -AndroidUtilities.dp(i11));
             A0(false);
-            this.R.post(new org.telegram.ui.Components.jm(this, i11, 15));
+            this.R.post(new org.telegram.ui.Components.im(this, i11, 15));
         }
     }
 
@@ -2768,11 +2768,11 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
         }
         globalMainSettings.edit().putInt("proximityhint", i10 + 1).commit();
         if (DialogObject.isUserDialog(this.b0)) {
-            this.y.t(LocaleController.formatString("ProximityTooltioUser", R.string.ProximityTooltioUser, UserObject.getFirstName(getMessagesController().getUser(Long.valueOf(this.b0)))));
+            this.y.s(LocaleController.formatString("ProximityTooltioUser", R.string.ProximityTooltioUser, UserObject.getFirstName(getMessagesController().getUser(Long.valueOf(this.b0)))));
         } else {
-            this.y.t(LocaleController.getString(R.string.ProximityTooltioGroup));
+            this.y.s(LocaleController.getString(R.string.ProximityTooltioGroup));
         }
-        this.y.v();
+        this.y.u();
     }
 
     @Override // org.telegram.ui.ActionBar.p2
@@ -2986,7 +2986,7 @@ public class bd0 extends org.telegram.ui.ActionBar.p2 implements NotificationCen
             return false;
         }
         GLSurfaceView glSurfaceView = this.H.getGlSurfaceView();
-        glSurfaceView.queueEvent(new v10(25, this, glSurfaceView));
+        glSurfaceView.queueEvent(new z10(24, this, glSurfaceView));
         return true;
     }
 

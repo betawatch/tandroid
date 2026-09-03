@@ -5,11 +5,11 @@ import android.graphics.RectF;
 import android.view.View;
 import android.view.ViewGroup;
 import j$.util.Objects;
-import org.telegram.ui.Components.tl0;
+import org.telegram.ui.Components.sl0;
 import org.telegram.ui.x8;
-import qh.k6;
+import qh.i6;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class n2 implements pg.a {
     public final /* synthetic */ int a;
@@ -39,9 +39,9 @@ public final /* synthetic */ class n2 implements pg.a {
                 }
                 break;
             default:
-                k6 k6Var = (k6) this.b;
-                tl0 tl0Var = k6Var.d;
-                ug.c.a(tl0Var, canvas, rectF, tl0Var, k6Var.getContainerView(), 255);
+                i6 i6Var = (i6) this.b;
+                sl0 sl0Var = i6Var.d;
+                ug.c.a(sl0Var, canvas, rectF, sl0Var, i6Var.getContainerView(), 255);
                 break;
         }
     }

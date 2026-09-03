@@ -24,7 +24,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public class xh0 extends wp implements NotificationCenter.NotificationCenterDelegate {
     public final wh0 A0;
@@ -41,7 +41,7 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
     public final float[] L0;
     public ImageLocation M0;
     public ImageLocation N0;
-    public u61 O0;
+    public t61 O0;
     public MessagesController.DialogPhotos P0;
     public final ArrayList Q0;
     public final ArrayList R0;
@@ -57,7 +57,7 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
     public boolean b1;
     public boolean c1;
     public boolean d1;
-    public org.telegram.ui.xu0 e1;
+    public org.telegram.ui.cv0 e1;
     public boolean f1;
     public int g1;
     public int h1;
@@ -73,9 +73,9 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
     public final org.telegram.ui.ActionBar.k w0;
     public boolean x0;
     public boolean y0;
-    public final tl0 z0;
+    public final sl0 z0;
 
-    public xh0(Context context, org.telegram.ui.ActionBar.k kVar, tl0 tl0Var, org.telegram.ui.t4 t4Var) {
+    public xh0(Context context, org.telegram.ui.ActionBar.k kVar, sl0 sl0Var, org.telegram.ui.t4 t4Var) {
         super(context);
         this.u0 = new PointF();
         this.x0 = true;
@@ -101,7 +101,7 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
         setOffscreenPageLimit(2);
         this.m1 = null;
         this.G0 = false;
-        this.z0 = tl0Var;
+        this.z0 = sl0Var;
         ConnectionsManager.generateClassGuid();
         this.w0 = kVar;
         this.v0 = ViewConfiguration.get(context).getScaledTouchSlop();
@@ -239,7 +239,7 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
         return (ImageLocation) arrayList.get(i10);
     }
 
-    public final boolean H(u61 u61Var, ImageLocation imageLocation, ImageLocation imageLocation2, boolean z4) {
+    public final boolean H(t61 t61Var, ImageLocation imageLocation, ImageLocation imageLocation2, boolean z4) {
         MessagesController.DialogPhotos dialogPhotos;
         MessagesController.DialogPhotos dialogPhotos2;
         if (imageLocation != null && imageLocation2 != null && this.Z0 == 0) {
@@ -264,12 +264,12 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
             if (arrayList.isEmpty()) {
                 this.M0 = imageLocation;
                 this.N0 = imageLocation2;
-                this.O0 = u61Var;
+                this.O0 = t61Var;
                 this.R0.add(null);
                 this.Q0.add(null);
                 arrayList.add(imageLocation);
                 this.V0.add(imageLocation2);
-                this.W0.add(u61Var);
+                this.W0.add(t61Var);
                 this.T0.add(null);
                 this.S0.add(null);
                 this.X0.add(-1);
@@ -681,7 +681,7 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
                                         TLRPC.VideoSize vectorMarkupVideoSize = FileLoader.getVectorMarkupVideoSize(photo2);
                                         if (vectorMarkupVideoSize != null) {
                                             user3 = user;
-                                            arrayList11.add(new u61(vectorMarkupVideoSize, user != null && user3.premium, 2));
+                                            arrayList11.add(new t61(vectorMarkupVideoSize, user != null && user3.premium, 2));
                                             obj = null;
                                             arrayList9.add(null);
                                             arrayList6.add(null);
@@ -713,7 +713,7 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
                                     TLRPC.VideoSize vectorMarkupVideoSize2 = FileLoader.getVectorMarkupVideoSize(photo2);
                                     if (vectorMarkupVideoSize2 != null) {
                                         user = user2;
-                                        arrayList11.add(new u61(vectorMarkupVideoSize2, user2 != null && user2.premium, 2));
+                                        arrayList11.add(new t61(vectorMarkupVideoSize2, user2 != null && user2.premium, 2));
                                         z11 = false;
                                         arrayList9.add(null);
                                         arrayList6.add(null);
@@ -860,8 +860,8 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
         int i10;
         wh0 wh0Var = this.A0;
         if (wh0Var != null) {
-            tl0 tl0Var = this.z0;
-            if (tl0Var.getScrollState() != 0 && !this.x0 && this.y0) {
+            sl0 sl0Var = this.z0;
+            if (sl0Var.getScrollState() != 0 && !this.x0 && this.y0) {
                 this.y0 = false;
                 MotionEvent obtain = MotionEvent.obtain(motionEvent);
                 obtain.setAction(3);
@@ -870,13 +870,13 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
                 return false;
             }
             int action = motionEvent.getAction();
-            org.telegram.ui.xu0 xu0Var = this.e1;
+            org.telegram.ui.cv0 cv0Var = this.e1;
             sh0 sh0Var = this.D0;
-            if (xu0Var != null && getCurrentItemView() != null) {
+            if (cv0Var != null && getCurrentItemView() != null) {
                 if (action != 0 && this.F0) {
-                    org.telegram.ui.xu0 xu0Var2 = this.e1;
-                    if (!xu0Var2.n) {
-                        xu0Var2.a(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0), this, getCurrentItemView().getImageReceiver(), null, 0);
+                    org.telegram.ui.cv0 cv0Var2 = this.e1;
+                    if (!cv0Var2.n) {
+                        cv0Var2.a(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0), this, getCurrentItemView().getImageReceiver(), null, 0);
                     }
                 }
                 if (this.e1.a(motionEvent, this, getCurrentItemView().getImageReceiver(), null, 0)) {
@@ -945,7 +945,7 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
                             this.x0 = false;
                             MotionEvent obtain3 = MotionEvent.obtain(motionEvent);
                             obtain3.setAction(3);
-                            tl0Var.onTouchEvent(obtain3);
+                            sl0Var.onTouchEvent(obtain3);
                             obtain3.recycle();
                         }
                     }
@@ -954,7 +954,7 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
                     }
                 }
             }
-            boolean onTouchEvent = this.x0 ? tl0Var.onTouchEvent(motionEvent) : false;
+            boolean onTouchEvent = this.x0 ? sl0Var.onTouchEvent(motionEvent) : false;
             if (this.y0) {
                 try {
                     onTouchEvent |= super.onTouchEvent(motionEvent);
@@ -1060,8 +1060,8 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
         }
     }
 
-    public void setPinchToZoomHelper(org.telegram.ui.xu0 xu0Var) {
-        this.e1 = xu0Var;
+    public void setPinchToZoomHelper(org.telegram.ui.cv0 cv0Var) {
+        this.e1 = cv0Var;
     }
 
     @Override // android.view.View
@@ -1076,7 +1076,7 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
     public void setCustomAvatarProgress(float f10) {
     }
 
-    public xh0(Context context, long j10, org.telegram.ui.ActionBar.k kVar, tl0 tl0Var, org.telegram.ui.vz0 vz0Var, sh0 sh0Var, oh0 oh0Var) {
+    public xh0(Context context, long j10, org.telegram.ui.ActionBar.k kVar, sl0 sl0Var, org.telegram.ui.a01 a01Var, sh0 sh0Var, oh0 oh0Var) {
         super(context);
         this.u0 = new PointF();
         this.x0 = true;
@@ -1109,14 +1109,14 @@ public class xh0 extends wp implements NotificationCenter.NotificationCenterDele
         setOffscreenPageLimit(2);
         this.G0 = true;
         this.B0 = j10;
-        this.z0 = tl0Var;
+        this.z0 = sl0Var;
         this.w0 = kVar;
-        wh0 wh0Var = new wh0(this, getContext(), vz0Var);
+        wh0 wh0Var = new wh0(this, getContext(), a01Var);
         this.A0 = wh0Var;
         setAdapter((vp) wh0Var);
         this.v0 = ViewConfiguration.get(context).getScaledTouchSlop();
         this.D0 = sh0Var;
-        b(new qh0((org.telegram.ui.zy0) this));
+        b(new qh0((org.telegram.ui.dz0) this));
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.dialogPhotosLoaded);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoaded);
         NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileLoadProgressChanged);

@@ -12,11 +12,11 @@ import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.Components.fc0;
 import org.telegram.ui.Components.xt;
-import org.telegram.ui.bu0;
+import org.telegram.ui.gu0;
 import org.telegram.ui.rn;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class k2 implements org.telegram.ui.ActionBar.c2, ResultCallback {
     public final /* synthetic */ int a = 0;
@@ -49,7 +49,7 @@ public final /* synthetic */ class k2 implements org.telegram.ui.ActionBar.c2, R
                 boolean z4 = this.b;
                 int i11 = this.c;
                 if (z4) {
-                    MessagesController.getInstance(a1Var.J).unblockPeer(a1Var.R.id, new bu0(a1Var, i11, x0Var, 9));
+                    MessagesController.getInstance(a1Var.J).unblockPeer(a1Var.R.id, new gu0(a1Var, i11, x0Var, 9));
                     break;
                 } else {
                     SendMessagesHelper.getInstance(a1Var.J).sendMessage(SendMessagesHelper.SendMessageParams.of(UserConfig.getInstance(a1Var.J).getCurrentUser(), a1Var.R.id, (MessageObject) null, (MessageObject) null, (TLRPC.ReplyMarkup) null, (HashMap<String, String>) null, true, 0, 0));

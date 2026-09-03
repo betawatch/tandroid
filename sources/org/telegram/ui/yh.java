@@ -13,11 +13,11 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public abstract /* synthetic */ class yh {
     public static void A(int i10, ArrayList arrayList) {
-        arrayList.add(org.telegram.ui.Components.j51.B(LocaleController.getString(i10)));
+        arrayList.add(org.telegram.ui.Components.h51.B(LocaleController.getString(i10)));
     }
 
     public static /* synthetic */ String B(int i10) {
@@ -137,9 +137,9 @@ public abstract /* synthetic */ class yh {
         return kVar;
     }
 
-    public static org.telegram.ui.Components.fl0 o(View view, View view2, int i10, int i11) {
+    public static org.telegram.ui.Components.el0 o(View view, View view2, int i10, int i11) {
         view.setLayoutParams(new f2.x0(i10, i11));
-        return new org.telegram.ui.Components.fl0(view2);
+        return new org.telegram.ui.Components.el0(view2);
     }
 
     public static void p(float f10, int i10, TextView textView) {
@@ -153,7 +153,7 @@ public abstract /* synthetic */ class yh {
     }
 
     public static void r(int i10, ArrayList arrayList) {
-        arrayList.add(org.telegram.ui.Components.j51.t(LocaleController.getString(i10)));
+        arrayList.add(org.telegram.ui.Components.h51.t(LocaleController.getString(i10)));
     }
 
     public static void s(int i10, Object[] objArr, org.telegram.ui.Components.qc qcVar, int i11, int i12) {
@@ -181,9 +181,9 @@ public abstract /* synthetic */ class yh {
         sb.append(str4);
     }
 
-    public static void x(sf.e eVar) {
+    public static void x(sf.f fVar) {
         com.googlecode.mp4parser.g.a().getClass();
-        com.googlecode.mp4parser.g.b(eVar);
+        com.googlecode.mp4parser.g.b(fVar);
     }
 
     public static void y(uf.k kVar, int i10, ArrayList arrayList) {

@@ -15,7 +15,7 @@ import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class rp extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
     public long B;
@@ -31,7 +31,7 @@ public final class rp extends org.telegram.ui.ActionBar.p2 implements Notificati
     public boolean L;
     public boolean M;
     public op a;
-    public org.telegram.ui.Components.tl0 b;
+    public org.telegram.ui.Components.sl0 b;
     public org.telegram.ui.ActionBar.w0 c;
     public org.telegram.ui.Components.oz d;
     public qp e;
@@ -252,15 +252,15 @@ public final class rp extends org.telegram.ui.ActionBar.p2 implements Notificati
         ozVar.b();
         this.d.setText(LocaleController.getString(R.string.NoResult));
         frameLayout2.addView(this.d, k7.c6.c(-1.0f, -1));
-        org.telegram.ui.Components.tl0 tl0Var = new org.telegram.ui.Components.tl0(context, null);
-        this.b = tl0Var;
-        tl0Var.p1();
+        org.telegram.ui.Components.sl0 sl0Var = new org.telegram.ui.Components.sl0(context, null);
+        this.b = sl0Var;
+        sl0Var.o1();
         this.b.setEmptyView(this.d);
         this.b.setLayoutManager(new f2.j0(1, false));
-        org.telegram.ui.Components.tl0 tl0Var2 = this.b;
+        org.telegram.ui.Components.sl0 sl0Var2 = this.b;
         op opVar = new op(this, context);
         this.a = opVar;
-        tl0Var2.setAdapter(opVar);
+        sl0Var2.setAdapter(opVar);
         this.b.setVerticalScrollbarPosition(LocaleController.isRTL ? 1 : 2);
         frameLayout2.addView(this.b, k7.c6.c(-1.0f, -1));
         this.actionBar.setAdaptiveBackground(this.b);

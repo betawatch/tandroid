@@ -8,17 +8,17 @@ import android.graphics.drawable.ShapeDrawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.pr0;
-import org.telegram.ui.Components.sr0;
+import org.telegram.ui.Components.or0;
+import org.telegram.ui.Components.rr0;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class s2 extends Drawable {
     public final /* synthetic */ int a;
     public final ShapeDrawable b;
     public final Rect c;
 
-    public s2(pr0 pr0Var) {
+    public s2(or0 or0Var) {
         this.a = 0;
         this.b = k6.c0(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), 0);
         this.c = new Rect();
@@ -72,12 +72,12 @@ public final class s2 extends Drawable {
         int i10 = this.a;
     }
 
-    public s2(sr0 sr0Var) {
+    public s2(rr0 rr0Var) {
         this.a = 1;
         int dp = AndroidUtilities.dp(16.0f);
         int dp2 = AndroidUtilities.dp(16.0f);
         int i10 = k6.d6;
-        g6 g6Var = sr0Var.c;
+        g6 g6Var = rr0Var.c;
         this.b = k6.c0(dp, dp2, k6.v(k6.v0(i10, g6Var), k6.l1(0.04f, k6.v0(k6.G6, g6Var))));
         this.c = new Rect();
     }

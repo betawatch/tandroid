@@ -45,10 +45,10 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.RadioButton;
 import org.telegram.ui.Components.cf;
 import org.telegram.ui.Components.ef;
+import org.telegram.ui.Components.lq0;
 import org.telegram.ui.Components.mi;
-import org.telegram.ui.Components.mq0;
 import org.telegram.ui.Components.oe;
-import org.telegram.ui.Components.pr0;
+import org.telegram.ui.Components.or0;
 import org.telegram.ui.Components.q70;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.LaunchActivity;
@@ -57,11 +57,11 @@ import org.telegram.ui.d7;
 import org.telegram.ui.jj;
 import org.telegram.ui.jk;
 import org.telegram.ui.jn;
-import org.telegram.ui.r31;
 import org.telegram.ui.um;
+import org.telegram.ui.w31;
 import org.telegram.ui.xn;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a1 implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -122,10 +122,10 @@ public final /* synthetic */ class a1 implements Utilities.Callback {
                 }
                 break;
             case 2:
-                pr0 pr0Var = (pr0) obj3;
+                or0 or0Var = (or0) obj3;
                 TL_stars.TL_starGiftCollection tL_starGiftCollection = (TL_stars.TL_starGiftCollection) obj2;
                 String str6 = (String) obj;
-                j7 j7Var = pr0Var.e;
+                j7 j7Var = or0Var.e;
                 int i17 = tL_starGiftCollection.collection_id;
                 j7Var.getClass();
                 TL_stars.updateStarGiftCollection updatestargiftcollection = new TL_stars.updateStarGiftCollection();
@@ -136,7 +136,7 @@ public final /* synthetic */ class a1 implements Utilities.Callback {
                 updatestargiftcollection.title = str6;
                 ConnectionsManager.getInstance(i18).sendRequest(updatestargiftcollection, null);
                 tL_starGiftCollection.title = str6;
-                pr0Var.f(true);
+                or0Var.f(true);
                 break;
             case 3:
                 e6 e6Var = (e6) obj3;
@@ -471,7 +471,7 @@ public final /* synthetic */ class a1 implements Utilities.Callback {
                                                     if (U != null) {
                                                         org.telegram.ui.ActionBar.n2 n2Var = new org.telegram.ui.ActionBar.n2();
                                                         n2Var.a = true;
-                                                        U.showAsSheet(new org.telegram.ui.web.y1(new org.telegram.ui.t(l4Var, i24)), n2Var);
+                                                        U.showAsSheet(new org.telegram.ui.web.x1(new org.telegram.ui.t(l4Var, i24)), n2Var);
                                                         break;
                                                     }
                                                 }
@@ -565,7 +565,7 @@ public final /* synthetic */ class a1 implements Utilities.Callback {
                                 str4 = l4Var.r0[0].getWebView().getUrl();
                             }
                             String s6 = org.telegram.ui.web.a1.s(str4);
-                            l4Var.a0(new mq0(l4Var.I, null, s6, false, s6, false, AndroidUtilities.computePerceivedBrightness(l4Var.e0.getBackgroundColor()) < 0.721f ? new oh.b() : null));
+                            l4Var.a0(new lq0(l4Var.I, null, s6, false, s6, false, AndroidUtilities.computePerceivedBrightness(l4Var.e0.getBackgroundColor()) < 0.721f ? new oh.b() : null));
                             break;
                         }
                     } else {
@@ -651,7 +651,7 @@ public final /* synthetic */ class a1 implements Utilities.Callback {
                     break;
                 }
             case 18:
-                xn.q1((xn) obj3, (r31[]) obj2, (q70) obj);
+                xn.q1((xn) obj3, (w31[]) obj2, (q70) obj);
                 break;
             case 19:
                 xn xnVar5 = (xn) obj3;

@@ -30,18 +30,18 @@ import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.Components.l01;
+import org.telegram.ui.Components.k01;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.rc;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes4.dex */
 public final class i5 {
     public float A;
     public float B;
-    public l01 C;
+    public k01 C;
     public final RectF D;
     public final Path E;
     public final Paint F;
@@ -70,9 +70,9 @@ public final class i5 {
     public TL_stars.starGiftAttributeModel m;
     public boolean p;
     public float q;
-    public l01 r;
+    public k01 r;
     public float s;
-    public l01 t;
+    public k01 t;
     public float u;
     public float v;
     public float x;
@@ -157,13 +157,13 @@ public final class i5 {
         }
         int i10 = l1;
         this.r.p = cVar.e - AndroidUtilities.dp(12.0f);
-        l01 l01Var = this.r;
-        l01Var.c(f11 - (l01Var.c / 2.0f), this.q, 1.0f, -1, canvas);
+        k01 k01Var = this.r;
+        k01Var.c(f11 - (k01Var.c / 2.0f), this.q, 1.0f, -1, canvas);
         this.t.p = cVar.e - AndroidUtilities.dp(12.0f);
-        l01 l01Var2 = this.t;
+        k01 k01Var2 = this.t;
         Canvas canvas2 = canvas;
         int i11 = i10;
-        l01Var2.c(f11 - (l01Var2.c / 2.0f), this.s, 1.0f, i11, canvas2);
+        k01Var2.c(f11 - (k01Var2.c / 2.0f), this.s, 1.0f, i11, canvas2);
         if (this.z) {
             lh.v0 v0Var = this.y;
             int i12 = v0Var.t;
@@ -180,9 +180,9 @@ public final class i5 {
             while (i16 < size) {
                 int i17 = i16 + 1;
                 h5 h5Var = (h5) arrayList.get(i16);
-                l01 l01Var3 = h5Var.b;
+                k01 k01Var3 = h5Var.b;
                 float f13 = f11 - (dp4 / 2.0f);
-                l01Var3.c((f13 + this.u) - l01Var3.c, h5Var.a, 1.0f, i11, canvas2);
+                k01Var3.c((f13 + this.u) - k01Var3.c, h5Var.a, 1.0f, i11, canvas2);
                 canvas2 = canvas;
                 h5Var.c.c(f13 + this.u + AndroidUtilities.dp(9.0f), h5Var.a, 1.0f, -1, canvas2);
                 i11 = i11;
@@ -431,24 +431,24 @@ public final class i5 {
         String shortName = DialogObject.getShortName(clientUserId);
         float dp2 = AndroidUtilities.dp(10.0f) + 0.0f + AndroidUtilities.dp(110.0f) + AndroidUtilities.dp(9.33f);
         if (this.p) {
-            this.r = new l01(tL_starGiftUnique.title, 14.0f, AndroidUtilities.bold());
+            this.r = new k01(tL_starGiftUnique.title, 14.0f, AndroidUtilities.bold());
         } else if (tL_messageActionStarGiftUnique.peer != null || UserObject.isService(messageObject.getDialogId())) {
-            this.r = new l01(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold());
+            this.r = new k01(LocaleController.getString(R.string.Gift2UniqueTitle2), 14.0f, AndroidUtilities.bold());
         } else if (messageObject.getDialogId() != UserConfig.getInstance(i10).getClientUserId()) {
-            this.r = new l01(LocaleController.formatString(R.string.Gift2UniqueTitle, shortName), 14.0f, AndroidUtilities.bold());
+            this.r = new k01(LocaleController.formatString(R.string.Gift2UniqueTitle, shortName), 14.0f, AndroidUtilities.bold());
         } else if (tL_starGiftUnique.crafted) {
-            this.r = new l01(LocaleController.getString(R.string.Gift2ActionCraftedTitle), 14.0f, AndroidUtilities.bold());
+            this.r = new k01(LocaleController.getString(R.string.Gift2ActionCraftedTitle), 14.0f, AndroidUtilities.bold());
         } else if (tL_messageActionStarGiftUnique.resale_amount != null) {
-            this.r = new l01(LocaleController.getString(R.string.Gift2ActionPurchasedTitle), 14.0f, AndroidUtilities.bold());
+            this.r = new k01(LocaleController.getString(R.string.Gift2ActionPurchasedTitle), 14.0f, AndroidUtilities.bold());
         } else {
-            this.r = new l01(LocaleController.getString(R.string.Gift2ActionUpgradedTitle), 14.0f, AndroidUtilities.bold());
+            this.r = new k01(LocaleController.getString(R.string.Gift2ActionUpgradedTitle), 14.0f, AndroidUtilities.bold());
         }
         this.q = (this.r.j() / 2.0f) + dp2;
         float j10 = this.r.j() + dp2 + AndroidUtilities.dp(3.0f);
         if (this.p) {
             f10 = 10.0f;
             f11 = 3.0f;
-            this.t = new l01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", tL_starGiftUnique.num), 12.0f, AndroidUtilities.bold());
+            this.t = new k01(LocaleController.formatPluralStringComma("Gift2CollectionNumber", tL_starGiftUnique.num), 12.0f, AndroidUtilities.bold());
             f12 = 2.0f;
         } else {
             f10 = 10.0f;
@@ -457,7 +457,7 @@ public final class i5 {
             sb.append(tL_starGiftUnique.title);
             sb.append(" #");
             f12 = 2.0f;
-            this.t = new l01(l.d.l(tL_starGiftUnique.num, ',', sb), 12.0f, null);
+            this.t = new k01(l.d.l(tL_starGiftUnique.num, ',', sb), 12.0f, null);
         }
         this.s = (this.t.j() / f12) + j10;
         float j11 = this.t.j() + j10 + AndroidUtilities.dp(this.p ? 14.0f : 11.0f);
@@ -502,12 +502,12 @@ public final class i5 {
                 h5 h5Var = new h5(j11, LocaleController.getString(R.string.Gift2AttributeModel), this.m.name);
                 arrayList.add(h5Var);
                 float f14 = f13 * 0.5f;
-                l01 l01Var = h5Var.b;
-                l01Var.p = f14;
-                this.u = Math.max(this.u, l01Var.c);
-                l01 l01Var2 = h5Var.c;
-                l01Var2.p = f14;
-                this.v = Math.max(this.v, l01Var2.c);
+                k01 k01Var = h5Var.b;
+                k01Var.p = f14;
+                this.u = Math.max(this.u, k01Var.c);
+                k01 k01Var2 = h5Var.c;
+                k01Var2.p = f14;
+                this.v = Math.max(this.v, k01Var2.c);
                 j11 += h5Var.a();
             }
             if (this.k != null) {
@@ -517,12 +517,12 @@ public final class i5 {
                 h5 h5Var2 = new h5(j11, LocaleController.getString(R.string.Gift2AttributeBackdrop), this.k.name);
                 arrayList.add(h5Var2);
                 float f15 = f13 * 0.5f;
-                l01 l01Var3 = h5Var2.b;
-                l01Var3.p = f15;
-                this.u = Math.max(this.u, l01Var3.c);
-                l01 l01Var4 = h5Var2.c;
-                l01Var4.p = f15;
-                this.v = Math.max(this.v, l01Var4.c);
+                k01 k01Var3 = h5Var2.b;
+                k01Var3.p = f15;
+                this.u = Math.max(this.u, k01Var3.c);
+                k01 k01Var4 = h5Var2.c;
+                k01Var4.p = f15;
+                this.v = Math.max(this.v, k01Var4.c);
                 j11 = h5Var2.a() + j11;
             }
             if (this.l != null) {
@@ -532,12 +532,12 @@ public final class i5 {
                 h5 h5Var3 = new h5(j11, LocaleController.getString(R.string.Gift2AttributeSymbol), this.l.name);
                 arrayList.add(h5Var3);
                 float f16 = f13 * 0.5f;
-                l01 l01Var5 = h5Var3.b;
-                l01Var5.p = f16;
-                this.u = Math.max(this.u, l01Var5.c);
-                l01 l01Var6 = h5Var3.c;
-                l01Var6.p = f16;
-                this.v = Math.max(this.v, l01Var6.c);
+                k01 k01Var5 = h5Var3.b;
+                k01Var5.p = f16;
+                this.u = Math.max(this.u, k01Var5.c);
+                k01 k01Var6 = h5Var3.c;
+                k01Var6.p = f16;
+                this.v = Math.max(this.v, k01Var6.c);
                 j11 += h5Var3.a();
             }
         }
@@ -546,7 +546,7 @@ public final class i5 {
             dp = AndroidUtilities.dp(f10);
         } else {
             this.A = dp4;
-            this.C = new l01(LocaleController.getString(R.string.Gift2UniqueView), 14.0f, AndroidUtilities.bold());
+            this.C = new k01(LocaleController.getString(R.string.Gift2UniqueView), 14.0f, AndroidUtilities.bold());
             float dp5 = AndroidUtilities.dp(30.0f);
             this.B = dp5;
             dp4 += dp5;
@@ -559,16 +559,16 @@ public final class i5 {
         Spanned spanned;
         float f10 = this.L;
         float dp = AndroidUtilities.dp(10.0f) + 0.0f + AndroidUtilities.dp(110.0f) + AndroidUtilities.dp(9.33f);
-        l01 l01Var = new l01(LocaleController.formatString(R.string.Gift2UniqueTitle, DialogObject.getShortName(j10)), 14.0f, AndroidUtilities.bold());
-        this.r = l01Var;
-        this.q = (l01Var.j() / 2.0f) + dp;
+        k01 k01Var = new k01(LocaleController.formatString(R.string.Gift2UniqueTitle, DialogObject.getShortName(j10)), 14.0f, AndroidUtilities.bold());
+        this.r = k01Var;
+        this.q = (k01Var.j() / 2.0f) + dp;
         float j11 = this.r.j() + dp + AndroidUtilities.dp(3.0f);
         StringBuilder sb = new StringBuilder();
         sb.append(tL_starGiftUnique.title);
         sb.append(" #");
-        l01 l01Var2 = new l01(l.d.l(tL_starGiftUnique.num, ',', sb), 12.0f, null);
-        this.t = l01Var2;
-        this.s = (l01Var2.j() / 2.0f) + j11;
+        k01 k01Var2 = new k01(l.d.l(tL_starGiftUnique.num, ',', sb), 12.0f, null);
+        this.t = k01Var2;
+        this.s = (k01Var2.j() / 2.0f) + j11;
         float j12 = this.t.j() + j11 + AndroidUtilities.dp(11.0f);
         this.w.clear();
         this.u = 0.0f;
@@ -603,7 +603,7 @@ public final class i5 {
         this.x = dp2;
         float dp3 = dp2 + v0Var.u + AndroidUtilities.dp(3.0f) + AndroidUtilities.dp(11.66f);
         this.A = dp3;
-        this.C = new l01(str, 14.0f, AndroidUtilities.bold());
+        this.C = new k01(str, 14.0f, AndroidUtilities.bold());
         float dp4 = AndroidUtilities.dp(30.0f);
         this.B = dp4;
         this.M = (int) (dp3 + dp4 + AndroidUtilities.dp(11.0f));

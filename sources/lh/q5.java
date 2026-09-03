@@ -26,16 +26,16 @@ import org.telegram.tgnet.tl.TL_stars;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.ActionBar.g6;
 import org.telegram.ui.ActionBar.k6;
-import org.telegram.ui.Components.j51;
+import org.telegram.ui.Components.h51;
 import org.telegram.ui.Components.pr;
 import org.telegram.ui.Components.q70;
+import org.telegram.ui.Components.rl0;
 import org.telegram.ui.Components.sa;
 import org.telegram.ui.Components.sl0;
-import org.telegram.ui.Components.tl0;
 import org.telegram.ui.Components.u00;
 import org.telegram.ui.Components.xt;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes.dex */
 public final class q5 extends sa {
     public static final /* synthetic */ int h0 = 0;
@@ -200,7 +200,7 @@ public final class q5 extends sa {
 
     public static void Q(q5 q5Var, p5 p5Var, int i10) {
         TL_stars.SavedStarGift savedStarGift;
-        j51 G = q5Var.f0.G(i10 - 1);
+        h51 G = q5Var.f0.G(i10 - 1);
         if (G == null) {
             return;
         }
@@ -360,7 +360,7 @@ public final class q5 extends sa {
                 return;
             }
             int currentTime = ConnectionsManager.getInstance(q5Var.currentAccount).getCurrentTime();
-            arrayList.add(j51.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
+            arrayList.add(h51.s(-1, LocaleController.getString(R.string.GiftCraftSelectYour)));
             ArrayList arrayList2 = l7Var.l;
             int size = arrayList2.size();
             int i10 = 0;
@@ -373,7 +373,7 @@ public final class q5 extends sa {
                 TL_stars.SavedStarGift savedStarGift = (TL_stars.SavedStarGift) obj;
                 if (!q5Var.d0.contains(Long.valueOf(savedStarGift.gift.id))) {
                     boolean z10 = savedStarGift.can_craft_at <= currentTime;
-                    j51 a2 = w1.a(0, savedStarGift.gift, false, true, false, false, true);
+                    h51 a2 = w1.a(0, savedStarGift.gift, false, true, false, false, true);
                     a2.g = z10;
                     arrayList.add(a2);
                     i11++;
@@ -384,23 +384,23 @@ public final class q5 extends sa {
                 int i13 = i11 % 3;
                 int i14 = 6 - i13;
                 for (int i15 = 0; i15 < i14; i15++) {
-                    j51 o10 = j51.o((i15 - i13) + 1, 35);
+                    h51 o10 = h51.o((i15 - i13) + 1, 35);
                     o10.u = 1;
                     arrayList.add(o10);
                 }
             } else if (z4) {
-                arrayList.add(j51.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
+                arrayList.add(h51.g(LocaleController.getString(R.string.GiftCraftSelectYourEmpty)));
             }
             if (b5Var.e > 0 || q5Var.g0) {
                 q5Var.g0 = true;
                 String string = LocaleController.getString(R.string.GiftCraftSelectResale);
-                j51 j51Var = new j51(42);
-                j51Var.d = -2;
-                j51Var.o = string;
-                arrayList.add(j51Var);
+                h51 h51Var = new h51(42);
+                h51Var.d = -2;
+                h51Var.o = string;
+                arrayList.add(h51Var);
                 HorizontalScrollView horizontalScrollView = q5Var.W;
                 if (horizontalScrollView != null) {
-                    arrayList.add(j51.j(-3, horizontalScrollView));
+                    arrayList.add(h51.j(-3, horizontalScrollView));
                 }
                 ArrayList arrayList3 = b5Var.d;
                 int size2 = arrayList3.size();
@@ -410,22 +410,22 @@ public final class q5 extends sa {
                     arrayList.add(w1.a(0, (TL_stars.TL_starGiftUnique) obj2, false, true, false, true, true));
                 }
                 if (b5Var.t || !b5Var.u) {
-                    j51 o11 = j51.o(10, 35);
+                    h51 o11 = h51.o(10, 35);
                     o11.u = 1;
                     arrayList.add(o11);
-                    j51 o12 = j51.o(11, 35);
+                    h51 o12 = h51.o(11, 35);
                     o12.u = 1;
                     arrayList.add(o12);
-                    j51 o13 = j51.o(12, 35);
+                    h51 o13 = h51.o(12, 35);
                     o13.u = 1;
                     arrayList.add(o13);
-                    j51 o14 = j51.o(13, 35);
+                    h51 o14 = h51.o(13, 35);
                     o14.u = 1;
                     arrayList.add(o14);
-                    j51 o15 = j51.o(14, 35);
+                    h51 o15 = h51.o(14, 35);
                     o15.u = 1;
                     arrayList.add(o15);
-                    j51 o16 = j51.o(15, 35);
+                    h51 o16 = h51.o(15, 35);
                     o16.u = 1;
                     arrayList.add(o16);
                 }
@@ -518,16 +518,16 @@ public final class q5 extends sa {
 
     public final void Z() {
         int R;
-        j51 G;
+        h51 G;
         int i10 = 0;
         boolean z4 = false;
         boolean z10 = false;
         while (true) {
-            tl0 tl0Var = this.d;
-            if (i10 >= tl0Var.getChildCount()) {
+            sl0 sl0Var = this.d;
+            if (i10 >= sl0Var.getChildCount()) {
                 break;
             }
-            View childAt = tl0Var.getChildAt(i10);
+            View childAt = sl0Var.getChildAt(i10);
             if ((childAt instanceof u00) && (R = RecyclerView.R(childAt) - 1) >= 0 && (G = this.f0.G(R)) != null) {
                 if (G.d < 10) {
                     z4 = true;
@@ -547,8 +547,8 @@ public final class q5 extends sa {
     }
 
     @Override // org.telegram.ui.Components.sa
-    public final sl0 v(tl0 tl0Var) {
-        o5 o5Var = new o5(this, tl0Var, getContext(), this.currentAccount, new eg.p1(this, 13), this.resourcesProvider);
+    public final rl0 v(sl0 sl0Var) {
+        o5 o5Var = new o5(this, sl0Var, getContext(), this.currentAccount, new eg.p1(this, 13), this.resourcesProvider);
         this.f0 = o5Var;
         return o5Var;
     }

@@ -1,30 +1,46 @@
 package org.telegram.ui;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import org.telegram.messenger.FileLog;
+import android.widget.EditText;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ti1 implements OnFailureListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ qh.d b;
+public final class ti1 extends org.telegram.ui.ActionBar.i5 {
+    public final /* synthetic */ WallpapersListActivity f;
 
-    public /* synthetic */ ti1(qh.d dVar, int i10) {
-        this.a = i10;
-        this.b = dVar;
+    public ti1(WallpapersListActivity wallpapersListActivity) {
+        this.f = wallpapersListActivity;
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
-        switch (this.a) {
-            case 0:
-                FileLog.e("wear-auth: /answer send failed: " + exc.getMessage());
-                this.b.setLoading(false);
-                break;
-            default:
-                FileLog.e("wear-auth: /token send failed: " + exc.getMessage());
-                this.b.setLoading(false);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.i5
+    public final void k() {
+        WallpapersListActivity wallpapersListActivity = this.f;
+        yi1 yi1Var = wallpapersListActivity.G;
+        yi1Var.n = null;
+        yi1Var.E(null, true);
+        wallpapersListActivity.I.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
+    }
+
+    @Override // org.telegram.ui.ActionBar.i5
+    public final void m() {
+        WallpapersListActivity wallpapersListActivity = this.f;
+        wallpapersListActivity.E.setAdapter(wallpapersListActivity.F);
+        wallpapersListActivity.E.invalidate();
+        wallpapersListActivity.G.E(null, true);
+        wallpapersListActivity.I.setSearchFieldCaption(null);
+        k();
+    }
+
+    @Override // org.telegram.ui.ActionBar.i5
+    public final void n() {
+        WallpapersListActivity wallpapersListActivity = this.f;
+        wallpapersListActivity.E.setAdapter(wallpapersListActivity.G);
+        wallpapersListActivity.E.invalidate();
+    }
+
+    @Override // org.telegram.ui.ActionBar.i5
+    public final void q(EditText editText) {
+        this.f.G.E(editText.getText().toString(), false);
     }
 }

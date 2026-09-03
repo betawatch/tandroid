@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
 public final class k80 extends f2.l {
     public final /* synthetic */ LanguageSelectActivity F;
@@ -16,12 +16,12 @@ public final class k80 extends f2.l {
         View view;
         LanguageSelectActivity languageSelectActivity = this.F;
         languageSelectActivity.b.invalidate();
-        org.telegram.ui.Components.tl0 tl0Var = languageSelectActivity.b;
-        int i10 = tl0Var.B1;
-        if (i10 == -1 || (view = tl0Var.C1) == null) {
+        org.telegram.ui.Components.sl0 sl0Var = languageSelectActivity.b;
+        int i10 = sl0Var.B1;
+        if (i10 == -1 || (view = sl0Var.C1) == null) {
             return;
         }
-        tl0Var.i1(i10, view);
-        tl0Var.invalidate();
+        sl0Var.h1(i10, view);
+        sl0Var.invalidate();
     }
 }

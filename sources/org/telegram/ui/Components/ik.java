@@ -24,9 +24,9 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-e9be2e8928caae39c37b14acc2083317da263a6f1414814df554d3ad0d46aba8 */
+/* compiled from: r8-map-id-4db10a2abc5925f8b2ffba760bede7208ad63f8c4c4a39ddbdd6a4937cbdd1b2 */
 /* loaded from: classes3.dex */
-public final class ik extends pl0 {
+public final class ik extends ol0 {
     public long B;
     public long C;
     public int D;
@@ -59,18 +59,18 @@ public final class ik extends pl0 {
         this.r = context;
     }
 
-    @Override // org.telegram.ui.Components.dl0
+    @Override // org.telegram.ui.Components.cl0
     public final String F(int i10) {
         return null;
     }
 
-    @Override // org.telegram.ui.Components.dl0
-    public final void G(tl0 tl0Var, float f10, int[] iArr) {
+    @Override // org.telegram.ui.Components.cl0
+    public final void G(sl0 sl0Var, float f10, int[] iArr) {
         iArr[0] = 0;
         iArr[1] = 0;
     }
 
-    @Override // org.telegram.ui.Components.pl0
+    @Override // org.telegram.ui.Components.ol0
     public final int M(int i10) {
         if (i10 == 0) {
             return this.s.size();
@@ -92,7 +92,7 @@ public final class ik extends pl0 {
         return size + i12;
     }
 
-    @Override // org.telegram.ui.Components.pl0
+    @Override // org.telegram.ui.Components.ol0
     public final Object O(int i10, int i11) {
         ArrayList arrayList;
         if (i10 == 0) {
@@ -113,7 +113,7 @@ public final class ik extends pl0 {
         return arrayList.get(i13);
     }
 
-    @Override // org.telegram.ui.Components.pl0
+    @Override // org.telegram.ui.Components.ol0
     public final int P(int i10, int i11) {
         if (i10 == 0) {
             return 1;
@@ -128,7 +128,7 @@ public final class ik extends pl0 {
         return 2;
     }
 
-    @Override // org.telegram.ui.Components.pl0
+    @Override // org.telegram.ui.Components.ol0
     public final int R() {
         ArrayList arrayList = this.M;
         if (arrayList.isEmpty()) {
@@ -137,7 +137,7 @@ public final class ik extends pl0 {
         return arrayList.size() + (!this.S ? 1 : 0) + 2;
     }
 
-    @Override // org.telegram.ui.Components.pl0
+    @Override // org.telegram.ui.Components.ol0
     public final View T(int i10, View view) {
         org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) view;
         if (u3Var == null) {
@@ -161,13 +161,13 @@ public final class ik extends pl0 {
         return view;
     }
 
-    @Override // org.telegram.ui.Components.pl0
+    @Override // org.telegram.ui.Components.ol0
     public final boolean V(int i10, int i11, f2.m1 m1Var) {
         int i12 = m1Var.f;
         return i12 == 1 || i12 == 4;
     }
 
-    @Override // org.telegram.ui.Components.pl0
+    @Override // org.telegram.ui.Components.ol0
     public final void W(int i10, int i11, f2.m1 m1Var) {
         int i12 = i11;
         int i13 = m1Var.f;
@@ -243,7 +243,7 @@ public final class ik extends pl0 {
             }
             l();
         } else {
-            org.telegram.ui.mp mpVar2 = new org.telegram.ui.mp(25, this, str);
+            org.telegram.ui.mp mpVar2 = new org.telegram.ui.mp(24, this, str);
             this.w = mpVar2;
             AndroidUtilities.runOnUIThread(mpVar2, 300L);
         }
@@ -423,7 +423,7 @@ public final class ik extends pl0 {
                 ikVar.G = str4;
                 ikVar.F = str2;
                 final ArrayList arrayList7 = new ArrayList();
-                uf.g0.y1(ikVar.G, arrayList7);
+                uf.g0.x1(ikVar.G, arrayList7);
                 ConnectionsManager connectionsManager = accountInstance2.getConnectionsManager();
                 final int i12 = i10;
                 final String str6 = str4;
@@ -499,10 +499,10 @@ public final class ik extends pl0 {
                 arrayList2 = null;
             }
             if (arrayList != null || arrayList2 != null) {
-                g0Var.A1(arrayList, arrayList2, false);
+                g0Var.z1(arrayList, arrayList2, false);
                 z10 = true;
                 if (!z10) {
-                    g0Var.A1(null, null, false);
+                    g0Var.z1(null, null, false);
                 }
                 g0Var.setEnabled(z10);
                 if (z10 || g0Var.getTag() == null) {
@@ -555,7 +555,7 @@ public final class ik extends pl0 {
         jkVar.F.start();
     }
 
-    @Override // org.telegram.ui.Components.pl0, f2.p0
+    @Override // org.telegram.ui.Components.ol0, f2.p0
     public final void l() {
         X(false);
         this.U.T();
