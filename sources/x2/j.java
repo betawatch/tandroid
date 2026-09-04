@@ -1,34 +1,28 @@
 package x2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.media.Spatializer;
+import e9.y0;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class j extends q {
-    public final h a;
+public final class j implements Spatializer.OnSpatializerStateChangedListener {
+    public final /* synthetic */ p a;
 
-    public j(h hVar) {
-        this.a = hVar;
+    public j(p pVar) {
+        this.a = pVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof q)) {
-            return false;
-        }
-        q qVar = (q) obj;
-        Object obj2 = p.a;
-        if (obj2.equals(obj2)) {
-            return this.a.equals(((j) qVar).a);
-        }
-        return false;
+    @Override // android.media.Spatializer.OnSpatializerStateChangedListener
+    public final void onSpatializerAvailableChanged(Spatializer spatializer, boolean z10) {
+        p pVar = this.a;
+        y0 y0Var = p.l;
+        pVar.f();
     }
 
-    public final int hashCode() {
-        return ((p.a.hashCode() ^ 1000003) * 1000003) ^ this.a.hashCode();
-    }
-
-    public final String toString() {
-        return "ClientInfo{clientType=" + p.a + ", androidClientInfo=" + this.a + "}";
+    @Override // android.media.Spatializer.OnSpatializerStateChangedListener
+    public final void onSpatializerEnabledChanged(Spatializer spatializer, boolean z10) {
+        p pVar = this.a;
+        y0 y0Var = p.l;
+        pVar.f();
     }
 }

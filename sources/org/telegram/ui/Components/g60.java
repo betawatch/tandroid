@@ -1,51 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.text.TextPaint;
+import android.text.style.ClickableSpan;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class g60 extends rl0 {
-    public int U2;
-    public final /* synthetic */ t60 V2;
+public final class g60 extends ClickableSpan {
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3[] a;
+    public final /* synthetic */ TLRPC.TL_chatInviteImporter b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g60(t60 t60Var, Context context) {
-        super(context, null);
-        this.V2 = t60Var;
+    public g60(org.telegram.ui.ActionBar.f3[] f3VarArr, TLRPC.TL_chatInviteImporter tL_chatInviteImporter) {
+        this.a = f3VarArr;
+        this.b = tL_chatInviteImporter;
     }
 
-    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        t60 t60Var = this.V2;
-        g60 g60Var = t60Var.S;
-        if (this.U2 != View.MeasureSpec.getSize(i11)) {
-            this.U2 = View.MeasureSpec.getSize(i11);
-            t60Var.X = true;
-            g60Var.setPadding(0, 0, 0, 0);
-            t60Var.X = false;
-            measure(i10, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
-            int measuredHeight = getMeasuredHeight();
-            int i12 = this.U2;
-            int i13 = (int) ((i12 / 5.0f) * 2.0f);
-            if (i13 < AndroidUtilities.dp(60.0f) + (i12 - measuredHeight)) {
-                i13 = this.U2 - measuredHeight;
-            }
-            t60Var.X = true;
-            g60Var.setPadding(0, i13, 0, 0);
-            t60Var.X = false;
-            measure(i10, View.MeasureSpec.makeMeasureSpec(i11, TLObject.FLAG_31));
+    @Override // android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.a[0].dismiss();
+        org.telegram.ui.ActionBar.n2 U = LaunchActivity.U();
+        if (U != null) {
+            U.presentFragment(ProfileActivity.m4(this.b.user_id));
         }
-        super.onMeasure(i10, i11);
     }
 
-    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.V2.X) {
-            return;
-        }
-        super.requestLayout();
+    @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
+    public final void updateDrawState(TextPaint textPaint) {
+        textPaint.setUnderlineText(false);
     }
 }

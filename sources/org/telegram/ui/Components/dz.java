@@ -8,9 +8,9 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class dz implements xy {
+public final class dz implements yy {
     public String a;
     public int b;
     public final ArrayList c = new ArrayList();
@@ -28,39 +28,39 @@ public final class dz implements xy {
         this.w = fzVar;
     }
 
-    public final void a(Runnable runnable, boolean z4) {
+    public final void a(Runnable runnable, boolean z10) {
         String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-        MediaDataController.getInstance(this.w.N.Z0).searchStickers(false, (currentKeyboardLanguage == null || currentKeyboardLanguage.length == 0) ? "" : currentKeyboardLanguage[0], this.a, new kl(this, z4, runnable, 1), z4);
+        MediaDataController.getInstance(this.w.Q.c1).searchStickers(false, (currentKeyboardLanguage == null || currentKeyboardLanguage.length == 0) ? "" : currentKeyboardLanguage[0], this.a, new di.hd(this, z10, runnable, 2), z10);
     }
 
-    @Override // org.telegram.ui.Components.xy
+    @Override // org.telegram.ui.Components.yy
     public final void d() {
-        sw swVar = this.w.N.D0;
-        if (swVar.C) {
+        ww wwVar = this.w.Q.G0;
+        if (wwVar.F) {
             return;
         }
-        swVar.e(true);
-        Utilities.raceCallbacks(new up(this, 16), new cz(this, 0));
+        wwVar.e(true);
+        Utilities.raceCallbacks(new wp(this, 16), new cz(this, 0));
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         fz fzVar = this.w;
-        kz kzVar = fzVar.N;
-        if (TextUtils.isEmpty(fzVar.K)) {
-            f2.o0 adapter = kzVar.A0.getAdapter();
-            bz bzVar = kzVar.v0;
+        kz kzVar = fzVar.Q;
+        if (TextUtils.isEmpty(fzVar.N)) {
+            s4.h0 adapter = kzVar.D0.getAdapter();
+            bz bzVar = kzVar.y0;
             if (adapter != bzVar) {
-                kzVar.A0.setAdapter(bzVar);
+                kzVar.D0.setAdapter(bzVar);
             }
             fzVar.l();
             return;
         }
         int i10 = 1;
-        int i11 = fzVar.J + 1;
-        fzVar.J = i11;
+        int i11 = fzVar.M + 1;
+        fzVar.M = i11;
         this.b = i11;
-        this.a = fzVar.K;
+        this.a = fzVar.N;
         fzVar.y = false;
         this.c.clear();
         this.d.clear();
@@ -70,11 +70,11 @@ public final class dz implements xy {
         this.r.clear();
         this.s.clear();
         this.v.clear();
-        kzVar.D0.e(true);
+        kzVar.G0.e(true);
         if ("premium".equalsIgnoreCase(this.a)) {
-            Utilities.raceCallbacks(new up(this, 16), new cz(this, i10));
+            Utilities.raceCallbacks(new wp(this, 16), new cz(this, i10));
         } else {
-            Utilities.raceCallbacks(new up(this, 16), new cz(this, 2), new cz(this, 3), new cz(this, 4), new cz(this, 5), new cz(this, 6), new cz(this, 7));
+            Utilities.raceCallbacks(new wp(this, 16), new cz(this, 2), new cz(this, 3), new cz(this, 4), new cz(this, 5), new cz(this, 6), new cz(this, 7));
         }
     }
 }

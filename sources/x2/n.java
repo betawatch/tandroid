@@ -1,41 +1,23 @@
 package x2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import b2.l1;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class n extends v {
-    public final u a;
-    public final t b;
+public abstract class n {
+    public final int a;
+    public final l1 b;
+    public final int c;
+    public final b2.s d;
 
-    public n(u uVar, t tVar) {
-        this.a = uVar;
-        this.b = tVar;
+    public n(int i10, l1 l1Var, int i11) {
+        this.a = i10;
+        this.b = l1Var;
+        this.c = i11;
+        this.d = l1Var.d[i11];
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof v) {
-            v vVar = (v) obj;
-            u uVar = this.a;
-            if (uVar != null ? uVar.equals(((n) vVar).a) : ((n) vVar).a == null) {
-                t tVar = this.b;
-                if (tVar != null ? tVar.equals(((n) vVar).b) : ((n) vVar).b == null) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
+    public abstract int a();
 
-    public final int hashCode() {
-        u uVar = this.a;
-        int hashCode = ((uVar == null ? 0 : uVar.hashCode()) ^ 1000003) * 1000003;
-        t tVar = this.b;
-        return (tVar != null ? tVar.hashCode() : 0) ^ hashCode;
-    }
-
-    public final String toString() {
-        return "NetworkConnectionInfo{networkType=" + this.a + ", mobileSubtype=" + this.b + "}";
-    }
+    public abstract boolean b(n nVar);
 }

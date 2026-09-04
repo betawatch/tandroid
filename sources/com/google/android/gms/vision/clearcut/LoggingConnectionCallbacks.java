@@ -3,9 +3,9 @@ package com.google.android.gms.vision.clearcut;
 import android.os.Bundle;
 import com.google.android.gms.common.api.k;
 import com.google.android.gms.common.api.l;
-import y5.a;
+import k6.a;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class LoggingConnectionCallbacks implements k, l {
     @Override // com.google.android.gms.common.api.k

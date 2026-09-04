@@ -1,39 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class qe extends ImageView {
-    public float a;
+public final class qe implements d5 {
+    public final /* synthetic */ int a;
     public final /* synthetic */ ChatActivityEnterView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qe(ChatActivityEnterView chatActivityEnterView, Context context) {
-        super(context);
+    public /* synthetic */ qe(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.a = i10;
         this.b = chatActivityEnterView;
     }
 
-    @Override // android.view.View
-    public final float getTranslationX() {
-        return this.a;
-    }
-
-    @Override // android.view.View
-    public final void setTranslationX(float f10) {
-        this.a = f10;
-        float dp = AndroidUtilities.dp(-44.0f) + this.a;
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        float f11 = dp + chatActivityEnterView.y + chatActivityEnterView.x;
-        se seVar = chatActivityEnterView.G1;
-        float dp2 = AndroidUtilities.dp((seVar == null || seVar.getVisibility() != 0) ? 0.0f : -44.0f);
-        se seVar2 = chatActivityEnterView.G1;
-        float alpha = (dp2 * (seVar2 == null ? 0.0f : seVar2.getAlpha())) + f11;
-        se seVar3 = chatActivityEnterView.t1;
-        float dp3 = AndroidUtilities.dp((seVar3 == null || seVar3.getVisibility() != 0) ? 0.0f : -44.0f);
-        se seVar4 = chatActivityEnterView.t1;
-        super.setTranslationX((dp3 * (seVar4 != null ? seVar4.getAlpha() : 0.0f)) + alpha);
+    @Override // org.telegram.ui.Components.d5
+    public final void J(int i10, int i11, boolean z10) {
+        switch (this.a) {
+            case 0:
+                this.b.T0(i10, z10, i11, true, 0L);
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                chatActivityEnterView.T0(i10, z10, i11, true, 0L);
+                nf nfVar = chatActivityEnterView.L0;
+                if (nfVar != null) {
+                    nfVar.i();
+                    chatActivityEnterView.L0 = null;
+                    break;
+                }
+                break;
+        }
     }
 }

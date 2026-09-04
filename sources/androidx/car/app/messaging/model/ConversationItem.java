@@ -4,14 +4,15 @@ import androidx.car.app.model.Action;
 import androidx.car.app.model.CarIcon;
 import androidx.car.app.model.CarText;
 import androidx.car.app.model.q;
-import androidx.car.app.utils.j;
-import e0.o0;
+import androidx.car.app.utils.i;
+import e0.p0;
 import j$.util.Objects;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import v7.u;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class ConversationItem implements q {
     private final List<Action> mActions;
@@ -20,7 +21,7 @@ public class ConversationItem implements q {
     private final String mId;
     private final boolean mIsGroupConversation;
     private final List<CarMessage> mMessages;
-    private final o0 mSelf;
+    private final p0 mSelf;
     private final CarText mTitle;
 
     public ConversationItem(f fVar) {
@@ -33,7 +34,7 @@ public class ConversationItem implements q {
         this.mSelf = validateSender(fVar.c);
         this.mIcon = fVar.d;
         this.mIsGroupConversation = fVar.e;
-        List<CarMessage> g10 = j.g(fVar.f);
+        List<CarMessage> g10 = i.g(fVar.f);
         Objects.requireNonNull(g10);
         List<CarMessage> list = g10;
         this.mMessages = list;
@@ -43,14 +44,14 @@ public class ConversationItem implements q {
         c cVar = fVar.g;
         Objects.requireNonNull(cVar);
         this.mConversationCallbackDelegate = cVar;
-        this.mActions = j.g(fVar.h);
+        this.mActions = i.g(fVar.h);
     }
 
-    public static o0 validateSender(o0 o0Var) {
-        Objects.requireNonNull(o0Var);
-        Objects.requireNonNull(o0Var.a);
-        Objects.requireNonNull(o0Var.d);
-        return o0Var;
+    public static p0 validateSender(p0 p0Var) {
+        Objects.requireNonNull(p0Var);
+        Objects.requireNonNull(p0Var.a);
+        Objects.requireNonNull(p0Var.d);
+        return p0Var;
     }
 
     public boolean equals(Object obj) {
@@ -61,7 +62,7 @@ public class ConversationItem implements q {
             return false;
         }
         ConversationItem conversationItem = (ConversationItem) obj;
-        return Objects.equals(this.mId, conversationItem.mId) && Objects.equals(this.mTitle, conversationItem.mTitle) && Objects.equals(this.mIcon, conversationItem.mIcon) && j7.q.a(getSelf(), conversationItem.getSelf()) && this.mIsGroupConversation == conversationItem.mIsGroupConversation && Objects.equals(this.mMessages, conversationItem.mMessages) && Objects.equals(this.mActions, conversationItem.mActions);
+        return Objects.equals(this.mId, conversationItem.mId) && Objects.equals(this.mTitle, conversationItem.mTitle) && Objects.equals(this.mIcon, conversationItem.mIcon) && u.a(getSelf(), conversationItem.getSelf()) && this.mIsGroupConversation == conversationItem.mIsGroupConversation && Objects.equals(this.mMessages, conversationItem.mMessages) && Objects.equals(this.mActions, conversationItem.mActions);
     }
 
     public List<Action> getActions() {
@@ -84,7 +85,7 @@ public class ConversationItem implements q {
         return this.mMessages;
     }
 
-    public o0 getSelf() {
+    public p0 getSelf() {
         return this.mSelf;
     }
 
@@ -93,7 +94,7 @@ public class ConversationItem implements q {
     }
 
     public int hashCode() {
-        return Objects.hash(Integer.valueOf(j7.q.b(getSelf())), this.mId, this.mTitle, this.mIcon, Boolean.valueOf(this.mIsGroupConversation), this.mMessages, this.mActions);
+        return Objects.hash(Integer.valueOf(u.b(getSelf())), this.mId, this.mTitle, this.mIcon, Boolean.valueOf(this.mIsGroupConversation), this.mMessages, this.mActions);
     }
 
     public boolean isGroupConversation() {
@@ -103,18 +104,18 @@ public class ConversationItem implements q {
     private ConversationItem() {
         this.mId = "";
         this.mTitle = new CarText.Builder("").build();
-        o0 o0Var = new o0();
-        o0Var.a = "";
-        o0Var.b = null;
-        o0Var.c = null;
-        o0Var.d = null;
-        o0Var.e = false;
-        o0Var.f = false;
-        this.mSelf = o0Var;
+        p0 p0Var = new p0();
+        p0Var.a = "";
+        p0Var.b = null;
+        p0Var.c = null;
+        p0Var.d = null;
+        p0Var.e = false;
+        p0Var.f = false;
+        this.mSelf = p0Var;
         this.mIcon = null;
         this.mIsGroupConversation = false;
         this.mMessages = new ArrayList();
-        this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(new db.a(1));
+        this.mConversationCallbackDelegate = new ConversationCallbackDelegateImpl(new qb.b(2));
         this.mActions = Collections.EMPTY_LIST;
     }
 }

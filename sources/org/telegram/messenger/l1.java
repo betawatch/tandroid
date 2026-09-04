@@ -1,47 +1,61 @@
 package org.telegram.messenger;
 
-import java.text.Collator;
-import java.util.Comparator;
-import org.telegram.messenger.ContactsController;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class l1 implements Comparator {
+public final /* synthetic */ class l1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Collator b;
+    public final /* synthetic */ ContactsController b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ HashMap d;
+    public final /* synthetic */ HashMap e;
 
-    public /* synthetic */ l1(Collator collator, int i10) {
-        this.a = i10;
-        this.b = collator;
+    public /* synthetic */ l1(ArrayList arrayList, HashMap hashMap, HashMap hashMap2, ContactsController contactsController) {
+        this.a = 1;
+        this.b = contactsController;
+        this.c = arrayList;
+        this.d = hashMap;
+        this.e = hashMap2;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$buildContactsSectionsArrays$44;
-        int lambda$mergePhonebookAndTelegramContacts$38;
-        int lambda$mergePhonebookAndTelegramContacts$39;
-        int lambda$processLoadedContacts$31;
-        int lambda$processLoadedContacts$32;
-        int lambda$updateUnregisteredContacts$42;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$buildContactsSectionsArrays$44 = ContactsController.lambda$buildContactsSectionsArrays$44(this.b, (String) obj, (String) obj2);
-                return lambda$buildContactsSectionsArrays$44;
+                ArrayList arrayList = this.c;
+                HashMap hashMap = this.e;
+                this.b.lambda$performSyncPhoneBook$15(this.d, arrayList, hashMap);
+                break;
             case 1:
-                lambda$mergePhonebookAndTelegramContacts$38 = ContactsController.lambda$mergePhonebookAndTelegramContacts$38(this.b, obj, obj2);
-                return lambda$mergePhonebookAndTelegramContacts$38;
+                HashMap hashMap2 = this.d;
+                HashMap hashMap3 = this.e;
+                this.b.lambda$mergePhonebookAndTelegramContacts$40(this.c, hashMap2, hashMap3);
+                break;
             case 2:
-                lambda$mergePhonebookAndTelegramContacts$39 = ContactsController.lambda$mergePhonebookAndTelegramContacts$39(this.b, (String) obj, (String) obj2);
-                return lambda$mergePhonebookAndTelegramContacts$39;
+                ArrayList arrayList2 = this.c;
+                HashMap hashMap4 = this.e;
+                this.b.lambda$performSyncPhoneBook$21(this.d, arrayList2, hashMap4);
+                break;
             case 3:
-                lambda$processLoadedContacts$31 = ContactsController.lambda$processLoadedContacts$31(this.b, (String) obj, (String) obj2);
-                return lambda$processLoadedContacts$31;
-            case 4:
-                lambda$processLoadedContacts$32 = ContactsController.lambda$processLoadedContacts$32(this.b, (String) obj, (String) obj2);
-                return lambda$processLoadedContacts$32;
+                ArrayList arrayList3 = this.c;
+                HashMap hashMap5 = this.e;
+                this.b.lambda$performSyncPhoneBook$17(this.d, arrayList3, hashMap5);
+                break;
             default:
-                lambda$updateUnregisteredContacts$42 = ContactsController.lambda$updateUnregisteredContacts$42(this.b, (ContactsController.Contact) obj, (ContactsController.Contact) obj2);
-                return lambda$updateUnregisteredContacts$42;
+                ArrayList arrayList4 = this.c;
+                HashMap hashMap6 = this.e;
+                this.b.lambda$performSyncPhoneBook$23(this.d, arrayList4, hashMap6);
+                break;
         }
+    }
+
+    public /* synthetic */ l1(ContactsController contactsController, HashMap hashMap, ArrayList arrayList, HashMap hashMap2, int i10) {
+        this.a = i10;
+        this.b = contactsController;
+        this.d = hashMap;
+        this.c = arrayList;
+        this.e = hashMap2;
     }
 }

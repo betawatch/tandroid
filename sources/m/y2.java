@@ -1,24 +1,24 @@
 package m;
 
-import android.os.Build;
-import java.lang.reflect.Method;
+import android.R;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class y2 {
-    public Method a;
-    public Method b;
-    public Method c;
+    public final TextView a;
+    public final TextView b;
+    public final ImageView c;
+    public final ImageView d;
+    public final ImageView e;
 
-    public y2(Method method, Method method2, Method method3) {
-        this.a = method;
-        this.b = method2;
-        this.c = method3;
-    }
-
-    public static void a() {
-        if (Build.VERSION.SDK_INT >= 29) {
-            throw new UnsupportedClassVersionError("This function can only be used for API Level < 29.");
-        }
+    public y2(View view) {
+        this.a = (TextView) view.findViewById(R.id.text1);
+        this.b = (TextView) view.findViewById(R.id.text2);
+        this.c = (ImageView) view.findViewById(R.id.icon1);
+        this.d = (ImageView) view.findViewById(R.id.icon2);
+        this.e = (ImageView) view.findViewById(org.telegram.messenger.beta.R.id.edit_query);
     }
 }

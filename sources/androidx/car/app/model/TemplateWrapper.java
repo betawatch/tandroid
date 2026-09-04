@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class TemplateWrapper {
     private int mCurrentTaskStep;
@@ -73,8 +73,8 @@ public final class TemplateWrapper {
         this.mId = str;
     }
 
-    public void setRefresh(boolean z4) {
-        this.mIsRefresh = z4;
+    public void setRefresh(boolean z10) {
+        this.mIsRefresh = z10;
     }
 
     public void setTemplate(x0 x0Var) {
@@ -86,10 +86,10 @@ public final class TemplateWrapper {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder("[template: ");
-        sb.append(this.mTemplate);
-        sb.append(", ID: ");
-        return android.support.v4.media.a.r(sb, this.mId, "]");
+        StringBuilder sb2 = new StringBuilder("[template: ");
+        sb2.append(this.mTemplate);
+        sb2.append(", ID: ");
+        return a4.a.s(sb2, this.mId, "]");
     }
 
     public static TemplateWrapper wrap(x0 x0Var, String str) {

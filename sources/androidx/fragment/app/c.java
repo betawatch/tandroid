@@ -4,10 +4,10 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class c implements Parcelable {
-    public static final Parcelable.Creator<c> CREATOR = new w.a(15);
+    public static final Parcelable.Creator<c> CREATOR = new w.a(11);
     public final ArrayList a;
     public final ArrayList b;
 

@@ -1,196 +1,340 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import j$.util.Objects;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class gk0 extends bg.c {
-    public final Context d;
-    public final /* synthetic */ NotificationsCustomSettingsActivity e;
+public final class gk0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public gk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity, Context context) {
-        this.e = notificationsCustomSettingsActivity;
-        this.d = context;
+    public /* synthetic */ gk0(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final boolean D(f2.l1 l1Var) {
-        int i10 = l1Var.f;
-        return (i10 == 0 || i10 == 4) ? false : true;
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        return this.e.F.size();
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        if (i10 < 0) {
-            return 5;
-        }
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.e;
-        if (i10 >= notificationsCustomSettingsActivity.F.size()) {
-            return 5;
-        }
-        return ((fk0) notificationsCustomSettingsActivity.F.get(i10)).a;
-    }
-
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        ArrayList arrayList = this.e.F;
-        if (i10 < 0 || i10 >= arrayList.size()) {
-            return;
-        }
-        fk0 fk0Var = (fk0) arrayList.get(i10);
-        int i11 = i10 + 1;
-        boolean z4 = i11 < arrayList.size() && ((fk0) arrayList.get(i11)).a != 4;
-        int i12 = l1Var.f;
-        View view = l1Var.a;
-        switch (i12) {
-            case 0:
-                ((org.telegram.ui.Cells.l4) view).setText(fk0Var.e);
-                break;
-            case 1:
-                ((org.telegram.ui.Cells.r8) view).f("" + ((Object) fk0Var.e), fk0Var.i, z4);
-                break;
-            case 2:
-                ((org.telegram.ui.Cells.ua) view).g(fk0Var.g, null, z4);
-                break;
-            case 3:
-                ((org.telegram.ui.Cells.t8) view).b(fk0Var.h, "" + ((Object) fk0Var.e), z4);
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
             case 4:
-                org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
-                if (fk0Var.e != null) {
-                    z8Var.setFixedSize(0);
-                    z8Var.setText(fk0Var.e);
-                    break;
-                } else {
-                    z8Var.setFixedSize(12);
-                    z8Var.setText(null);
-                    break;
-                }
-            case 5:
-                ((org.telegram.ui.Cells.z9) view).c(fk0Var.e, fk0Var.f, false, z4);
+                ((PhotoViewer) ((org.telegram.ui.Components.pk0) this.b).c).A2 = null;
                 break;
-            case 6:
-                org.telegram.ui.Cells.i5 i5Var = (org.telegram.ui.Cells.i5) view;
-                i5Var.setDrawLine(true);
-                i5Var.setChecked(fk0Var.i);
-                i5Var.b(fk0Var.e, fk0Var.f, fk0Var.d, fk0Var.i, 0, false, z4, true);
-                break;
-            case 7:
-                org.telegram.ui.Cells.n8 n8Var = (org.telegram.ui.Cells.n8) view;
-                if (fk0Var.d != 0) {
-                    n8Var.e(org.telegram.ui.ActionBar.j6.v6, org.telegram.ui.ActionBar.j6.u6);
-                    n8Var.m(fk0Var.d, "" + ((Object) fk0Var.e), z4);
-                    break;
-                } else {
-                    n8Var.e(-1, org.telegram.ui.ActionBar.j6.p7);
-                    n8Var.i("" + ((Object) fk0Var.e), z4);
-                    break;
-                }
-            case 8:
-                ek0 ek0Var = (ek0) view;
-                ek0Var.e(org.telegram.ui.ActionBar.j6.v6, org.telegram.ui.ActionBar.j6.u6);
-                CharSequence charSequence = fk0Var.e;
-                b.p(ek0Var.N.animate().rotation(fk0Var.d == 1 ? 0.0f : 180.0f), org.telegram.ui.Components.mr.h, 340L);
-                ek0Var.i(charSequence, z4);
+            default:
+                super.onAnimationCancel(animator);
                 break;
         }
     }
 
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        View l4Var;
-        org.telegram.ui.ActionBar.f6 f6Var;
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.e;
-        Context context = this.d;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        org.telegram.ui.ActionBar.k kVar;
+        int i10 = this.a;
+        Object obj = this.b;
         switch (i10) {
             case 0:
-                l4Var = new org.telegram.ui.Cells.l4(context);
+                hk0 hk0Var = (hk0) obj;
+                hk0Var.f = 1.0f;
+                hk0Var.invalidate();
                 break;
             case 1:
-                l4Var = new org.telegram.ui.Cells.r8(context);
+                NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = (NotificationsCustomSettingsActivity) obj;
+                if (animator.equals(notificationsCustomSettingsActivity.e)) {
+                    notificationsCustomSettingsActivity.e = null;
+                    break;
+                }
                 break;
             case 2:
-                l4Var = new org.telegram.ui.Cells.ua(context, 6, 0, false);
+                bq0 bq0Var = (bq0) obj;
+                mc mcVar = bq0Var.X;
+                if (mcVar != null) {
+                    if (mcVar.getParent() != null) {
+                        ((ViewGroup) bq0Var.X.getParent()).removeView(bq0Var.X);
+                    }
+                    bq0Var.X = null;
+                }
+                bq0Var.Z = null;
+                super.onAnimationEnd(animator);
                 break;
             case 3:
-                l4Var = new org.telegram.ui.Cells.t8(context, null);
+                dr0 dr0Var = (dr0) obj;
+                gr0 gr0Var = dr0Var.D0;
+                er0[] er0VarArr = gr0Var.n;
+                gr0Var.r = null;
+                if (gr0Var.w) {
+                    er0VarArr[1].setVisibility(8);
+                } else {
+                    er0 er0Var = er0VarArr[0];
+                    er0VarArr[0] = er0VarArr[1];
+                    er0VarArr[1] = er0Var;
+                    er0Var.setVisibility(8);
+                    gr0Var.e = gr0Var.n[0].e == gr0Var.h.getFirstTabId();
+                    gr0Var.h.j(1.0f, gr0Var.n[0].e);
+                }
+                gr0Var.s = false;
+                dr0Var.y0 = false;
+                dr0Var.x0 = false;
+                kVar = ((org.telegram.ui.ActionBar.n2) gr0Var).actionBar;
+                kVar.setEnabled(true);
+                gr0Var.h.setEnabled(true);
                 break;
             case 4:
-                l4Var = new org.telegram.ui.Cells.z8(context);
+                PhotoViewer photoViewer = (PhotoViewer) ((org.telegram.ui.Components.pk0) obj).c;
+                if (photoViewer.A2 != null) {
+                    rl0 rl0Var = new rl0(this, 17);
+                    photoViewer.I2 = rl0Var;
+                    AndroidUtilities.runOnUIThread(rl0Var, 860L);
+                    break;
+                }
                 break;
             case 5:
-                l4Var = new org.telegram.ui.Cells.z9(context);
+                vt0 vt0Var = (vt0) obj;
+                PhotoViewer photoViewer2 = vt0Var.b;
+                mg.q qVar = photoViewer2.C1.b;
+                qVar.q();
+                CropAreaView cropAreaView = qVar.a;
+                cropAreaView.setDimVisibility(true);
+                cropAreaView.f(true, true);
+                cropAreaView.invalidate();
+                photoViewer2.C1.b.J = true;
+                photoViewer2.p6 = null;
+                photoViewer2.u4 = vt0Var.a;
+                photoViewer2.f1().L.b(photoViewer2.u4 != 0);
+                di.j4 j4Var = photoViewer2.K1;
+                if (j4Var != null) {
+                    j4Var.b(photoViewer2.u4 != 3);
+                }
+                if (photoViewer2.u4 != 3) {
+                    photoViewer2.Z5 = 0.0f;
+                }
+                photoViewer2.o6 = -1;
+                photoViewer2.e6 = 1.0f;
+                photoViewer2.a6 = 1.0f;
+                photoViewer2.c6 = 0.0f;
+                photoViewer2.d6 = 0.0f;
+                photoViewer2.w3(1.0f);
+                photoViewer2.t2 = true;
+                photoViewer2.e0.invalidate();
                 break;
             case 6:
-                f6Var = ((org.telegram.ui.ActionBar.p2) notificationsCustomSettingsActivity).resourceProvider;
-                l4Var = new org.telegram.ui.Cells.i5(21, 64, this.d, f6Var, true);
+                wt0 wt0Var = (wt0) obj;
+                PhotoViewer photoViewer3 = wt0Var.b;
+                photoViewer3.I1.i0.setVisibility(0);
+                photoViewer3.p6 = null;
+                photoViewer3.u4 = wt0Var.a;
+                photoViewer3.f1().L.b(photoViewer3.u4 != 0);
+                di.j4 j4Var2 = photoViewer3.K1;
+                if (j4Var2 != null) {
+                    j4Var2.b(photoViewer3.u4 != 3);
+                }
+                if (photoViewer3.u4 != 3) {
+                    photoViewer3.Z5 = 0.0f;
+                }
+                photoViewer3.o6 = -1;
+                photoViewer3.e6 = 1.0f;
+                photoViewer3.a6 = 1.0f;
+                photoViewer3.c6 = 0.0f;
+                photoViewer3.d6 = 0.0f;
+                photoViewer3.w3(1.0f);
+                photoViewer3.t2 = true;
+                photoViewer3.e0.invalidate();
                 break;
             case 7:
-            default:
-                l4Var = new org.telegram.ui.Cells.n8(context);
+                ((PhotoViewer) ((au0) obj).q0).y3[0].setTag(null);
                 break;
             case 8:
-                ek0 ek0Var = new ek0(context);
-                ImageView imageView = new ImageView(context);
-                ek0Var.N = imageView;
-                imageView.setScaleType(ImageView.ScaleType.CENTER);
-                imageView.setColorFilter(new PorterDuffColorFilter(notificationsCustomSettingsActivity.getThemedColor(org.telegram.ui.ActionBar.j6.v6), PorterDuff.Mode.SRC_IN));
-                imageView.setImageResource(R.drawable.msg_expand);
-                ek0Var.addView(imageView, k7.b6.d(24, 24.0f, (LocaleController.isRTL ? 3 : 5) | 16, 17.0f, 0.0f, 17.0f, 0.0f));
-                l4Var = ek0Var;
+                ((bu0) obj).d.T1.k0 = 1.0f;
+                break;
+            case 9:
+                PhotoViewer photoViewer4 = ((bu0) obj).d;
+                photoViewer4.T1.setVisibility(4);
+                photoViewer4.T1.k0 = 1.0f;
+                break;
+            case 10:
+                AndroidUtilities.runOnUIThread(new rl0(this, 19));
+                break;
+            case 11:
+                st0 st0Var = (st0) obj;
+                if (animator.equals(st0Var.c.T7)) {
+                    st0Var.c.T7 = null;
+                    break;
+                }
+                break;
+            case 12:
+                zu0 zu0Var = (zu0) obj;
+                if (zu0Var.e == animator) {
+                    zu0Var.c[1].setVisibility(8);
+                    zu0Var.e = null;
+                    break;
+                }
+                break;
+            case 13:
+                ov0 ov0Var = (ov0) obj;
+                if (ov0Var.C != null) {
+                    ov0Var.C = null;
+                    ov0Var.b();
+                    break;
+                }
+                break;
+            case 14:
+                PopupNotificationActivity popupNotificationActivity = (PopupNotificationActivity) obj;
+                Runnable runnable = popupNotificationActivity.Y;
+                if (runnable != null) {
+                    runnable.run();
+                    popupNotificationActivity.Y = null;
+                    break;
+                }
+                break;
+            case 15:
+                PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) obj;
+                premiumPreviewFragment.d0.removeView(premiumPreviewFragment.r0);
+                premiumPreviewFragment.r0 = null;
+                super.onAnimationEnd(animator);
+                break;
+            case 16:
+                ((ProfileActivity) ((org.telegram.ui.Components.pk0) obj).c).D5 = null;
+                break;
+            case 17:
+                b11 b11Var = (b11) obj;
+                if (!b11Var.E) {
+                    b11Var.setVisibility(8);
+                    break;
+                }
+                break;
+            case 18:
+                y11 y11Var = (y11) obj;
+                if (animator.equals(y11Var.c)) {
+                    y11Var.c = null;
+                    break;
+                }
+                break;
+            case 19:
+                f31 f31Var = (f31) obj;
+                di.xb xbVar = f31Var.O;
+                if (xbVar != null) {
+                    if (xbVar.getParent() != null) {
+                        ((ViewGroup) f31Var.O.getParent()).removeView(f31Var.O);
+                    }
+                    f31Var.O = null;
+                }
+                f31Var.N = null;
+                super.onAnimationEnd(animator);
+                break;
+            case 20:
+                ((z41) obj).d.a0.k0 = 1.0f;
+                break;
+            case 21:
+                SecretMediaViewer secretMediaViewer = ((z41) obj).d;
+                secretMediaViewer.a0.setVisibility(4);
+                secretMediaViewer.a0.k0 = 1.0f;
+                break;
+            case 22:
+                j71 j71Var = ((z51) obj).e;
+                j71Var.S0.G = 0.0f;
+                j71Var.S0 = null;
+                j71Var.h0.invalidate();
+                break;
+            case 23:
+                ah.y0.a();
+                j71 j71Var2 = (j71) obj;
+                g61 g61Var = j71Var2.h0;
+                g61 g61Var2 = j71Var2.h0;
+                g61Var.setLayerType(0, null);
+                a61 a61Var = j71Var2.f0;
+                a61Var.setLayerType(0, null);
+                j71Var2.e0.setLayerType(0, null);
+                j71Var2.b0.setLayerType(0, null);
+                org.telegram.ui.Components.jn jnVar = j71Var2.n0;
+                if (jnVar != null) {
+                    jnVar.setLayerType(0, null);
+                }
+                View view = j71Var2.m0;
+                if (view != null) {
+                    view.setLayerType(0, null);
+                }
+                a61Var.b();
+                j71Var2.d0.m(false);
+                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.startAllHeavyOperations, 512);
+                j71Var2.W1.unlock();
+                NotificationCenter globalInstance = NotificationCenter.getGlobalInstance();
+                Objects.requireNonNull(globalInstance);
+                AndroidUtilities.runOnUIThread(new f01(globalInstance, 13));
+                j71Var2.h();
+                j71Var2.E(1.0f);
+                for (int i11 = 0; i11 < g61Var2.getChildCount(); i11++) {
+                    View childAt = g61Var2.getChildAt(i11);
+                    childAt.setScaleX(1.0f);
+                    childAt.setScaleY(1.0f);
+                }
+                for (int i12 = 0; i12 < j71Var2.d0.b.getChildCount(); i12++) {
+                    View childAt2 = j71Var2.d0.b.getChildAt(i12);
+                    childAt2.setScaleX(1.0f);
+                    childAt2.setScaleY(1.0f);
+                }
+                j71Var2.d0.b.invalidate();
+                j71Var2.k0.invalidate();
+                g61Var2.invalidate();
+                break;
+            case 24:
+                ((bb1) obj).b0.setVisibility(8);
+                break;
+            case 25:
+                wd1 wd1Var = ((kd1) obj).a;
+                if (!wd1Var.p1.a()) {
+                    wd1Var.R1.setVisibility(8);
+                    break;
+                }
+                break;
+            case 26:
+                super.onAnimationEnd(animator);
+                ((ye1) obj).a = null;
+                break;
+            case 27:
+                super.onAnimationEnd(animator);
+                ((cg1) obj).setScrollEnabled(true);
+                break;
+            case 28:
+                gh1 gh1Var = (gh1) obj;
+                if (animator.equals(gh1Var.e.K)) {
+                    gh1Var.e.K = null;
+                    break;
+                }
+                break;
+            default:
+                yh1 yh1Var = (yh1) obj;
+                yh1Var.d = null;
+                yh1Var.a = null;
+                yh1Var.b = false;
+                yh1Var.f.c.setAllowDrawCursor(true);
                 break;
         }
-        return new org.telegram.ui.Components.dl0(l4Var);
     }
 
-    @Override // f2.o0
-    public final void y(f2.l1 l1Var) {
-        boolean isGlobalNotificationsEnabled;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.e;
-        ArrayList arrayList3 = notificationsCustomSettingsActivity.F;
-        int i10 = notificationsCustomSettingsActivity.s;
-        if (i10 == 3 || ((arrayList2 = notificationsCustomSettingsActivity.w) != null && arrayList2.isEmpty())) {
-            if (i10 == 3) {
-                Boolean bool = notificationsCustomSettingsActivity.n;
-                isGlobalNotificationsEnabled = bool == null || bool.booleanValue() || !((arrayList = notificationsCustomSettingsActivity.w) == null || arrayList.isEmpty());
-            } else {
-                isGlobalNotificationsEnabled = notificationsCustomSettingsActivity.getNotificationsController().isGlobalNotificationsEnabled(i10);
-            }
-            int b10 = l1Var.b();
-            View view = l1Var.a;
-            fk0 fk0Var = (b10 < 0 || b10 >= arrayList3.size()) ? null : (fk0) arrayList3.get(b10);
-            if (fk0Var == null || fk0Var.c != 102) {
-                int i11 = l1Var.f;
-                if (i11 == 0) {
-                    ((org.telegram.ui.Cells.l4) view).a(null, isGlobalNotificationsEnabled);
-                    return;
-                }
-                if (i11 == 1) {
-                    ((org.telegram.ui.Cells.r8) view).e(null, isGlobalNotificationsEnabled);
-                } else if (i11 == 3) {
-                    ((org.telegram.ui.Cells.t8) view).a(null, isGlobalNotificationsEnabled);
-                } else {
-                    if (i11 != 5) {
-                        return;
-                    }
-                    ((org.telegram.ui.Cells.z9) view).a(null, isGlobalNotificationsEnabled);
-                }
-            }
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationStart(Animator animator) {
+        switch (this.a) {
+            case 5:
+                vt0 vt0Var = (vt0) this.b;
+                vt0Var.b.U0.setVisibility(0);
+                vt0Var.b.C1.setVisibility(0);
+                break;
+            case 6:
+                break;
+            case 17:
+                ((b11) this.b).setVisibility(0);
+                break;
+            default:
+                super.onAnimationStart(animator);
+                break;
         }
+    }
+
+    private final void a(Animator animator) {
     }
 }

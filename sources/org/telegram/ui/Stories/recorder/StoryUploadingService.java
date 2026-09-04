@@ -4,7 +4,7 @@ import android.R;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import e0.m0;
+import e0.n0;
 import e0.t;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
@@ -14,7 +14,7 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.NotificationsController;
 import org.telegram.messenger.UserConfig;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class StoryUploadingService extends Service implements NotificationCenter.NotificationCenterDelegate {
     public t a;
@@ -44,12 +44,12 @@ public class StoryUploadingService extends Service implements NotificationCenter
         this.c = floatValue;
         t tVar = this.a;
         int round = Math.round(floatValue * 100.0f);
-        boolean z4 = this.c <= 0.0f;
+        boolean z10 = this.c <= 0.0f;
         tVar.n = 100;
         tVar.o = round;
-        tVar.p = z4;
+        tVar.p = z10;
         try {
-            new m0(ApplicationLoader.applicationContext).d(33, this.a.b());
+            new n0(ApplicationLoader.applicationContext).d(33, this.a.b());
         } catch (Throwable th2) {
             FileLog.e(th2);
         }
@@ -67,7 +67,7 @@ public class StoryUploadingService extends Service implements NotificationCenter
             stopForeground(true);
         } catch (Exception unused) {
         }
-        new m0(ApplicationLoader.applicationContext).b(33);
+        new n0(ApplicationLoader.applicationContext).b(33);
         NotificationCenter.getGlobalInstance().removeObserver(this, NotificationCenter.uploadStoryEnd);
         NotificationCenter.getInstance(this.d).removeObserver(this, NotificationCenter.uploadStoryProgress);
         if (BuildVars.LOGS_ENABLED) {
@@ -121,7 +121,7 @@ public class StoryUploadingService extends Service implements NotificationCenter
         tVar3.p = false;
         startForeground(33, this.a.b());
         try {
-            new m0(ApplicationLoader.applicationContext).d(33, this.a.b());
+            new n0(ApplicationLoader.applicationContext).d(33, this.a.b());
             return 2;
         } catch (Throwable th2) {
             FileLog.e(th2);

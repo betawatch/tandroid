@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class TeXEnvironment {
     private static final int MAX_DEPTH = 64;
@@ -124,8 +124,8 @@ public class TeXEnvironment {
         this.color = color;
     }
 
-    public void setInterline(int i10, float f10) {
-        this.interline = f10;
+    public void setInterline(int i10, float f7) {
+        this.interline = f7;
         this.interlineUnit = i10;
     }
 
@@ -133,12 +133,12 @@ public class TeXEnvironment {
         this.lastFontId = i10;
     }
 
-    public void setScaleFactor(float f10) {
-        this.scaleFactor = f10;
+    public void setScaleFactor(float f7) {
+        this.scaleFactor = f7;
     }
 
-    public void setSmallCap(boolean z4) {
-        this.smallCap = z4;
+    public void setSmallCap(boolean z10) {
+        this.smallCap = z10;
     }
 
     public void setStyle(int i10) {
@@ -149,8 +149,8 @@ public class TeXEnvironment {
         this.textStyle = str;
     }
 
-    public void setTextwidth(int i10, float f10) {
-        this.textwidth = SpaceAtom.getFactor(i10, this) * f10;
+    public void setTextwidth(int i10, float f7) {
+        this.textwidth = SpaceAtom.getFactor(i10, this) * f7;
     }
 
     public TeXEnvironment subStyle() {
@@ -166,9 +166,9 @@ public class TeXEnvironment {
         return copy;
     }
 
-    public TeXEnvironment(int i10, TeXFont teXFont, int i11, float f10) {
+    public TeXEnvironment(int i10, TeXFont teXFont, int i11, float f7) {
         this(i10, teXFont, (Color) null, (Color) null);
-        this.textwidth = SpaceAtom.getFactor(i11, this) * f10;
+        this.textwidth = SpaceAtom.getFactor(i11, this) * f7;
     }
 
     private TeXEnvironment(int i10, TeXFont teXFont, Color color, Color color2) {
@@ -195,19 +195,19 @@ public class TeXEnvironment {
         throw new DepthLimitExceededException();
     }
 
-    private TeXEnvironment(int i10, float f10, TeXFont teXFont, Color color, Color color2, String str, boolean z4) {
-        this(i10, f10, teXFont, color, color2, str, z4, 0);
+    private TeXEnvironment(int i10, float f7, TeXFont teXFont, Color color, Color color2, String str, boolean z10) {
+        this(i10, f7, teXFont, color, color2, str, z10, 0);
     }
 
-    private TeXEnvironment(int i10, float f10, TeXFont teXFont, Color color, Color color2, String str, boolean z4, int i11) {
+    private TeXEnvironment(int i10, float f7, TeXFont teXFont, Color color, Color color2, String str, boolean z10, int i11) {
         this.lastFontId = -1;
         this.textwidth = Float.POSITIVE_INFINITY;
         this.isColored = false;
         this.style = i10;
-        this.scaleFactor = f10;
+        this.scaleFactor = f7;
         this.tf = teXFont;
         this.textStyle = str;
-        this.smallCap = z4;
+        this.smallCap = z10;
         this.depth = i11;
         this.background = color;
         this.color = color2;

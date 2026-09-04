@@ -1,90 +1,99 @@
 package com.google.android.gms.internal.cast;
 
-import android.content.Context;
-import android.net.ConnectivityManager;
-import android.net.LinkProperties;
-import android.net.Network;
-import android.net.NetworkRequest;
-import j$.util.DesugarCollections;
+import android.content.SharedPreferences;
+import android.text.TextUtils;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class x implements u {
-    public static final u5.b s = new u5.b("ConnectivityMonitor", null);
-    public final l4 a;
-    public final ConnectivityManager c;
-    public boolean f;
-    public final Context h;
-    public final Object n = new Object();
-    public final Set r = DesugarCollections.synchronizedSet(new HashSet());
-    public final Map d = DesugarCollections.synchronizedMap(new HashMap());
-    public final List e = DesugarCollections.synchronizedList(new ArrayList());
-    public final w b = new w(this);
+public final /* synthetic */ class x implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public x(Context context, l4 l4Var) {
-        this.a = l4Var;
-        this.h = context;
-        this.c = (ConnectivityManager) context.getSystemService("connectivity");
+    public /* synthetic */ x(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void a(Network network, LinkProperties linkProperties) {
-        synchronized (this.n) {
-            try {
-                if (this.d != null && this.e != null) {
-                    s.b("a new network is available", new Object[0]);
-                    if (this.d.containsKey(network)) {
-                        this.e.remove(network);
-                    }
-                    this.d.put(network, linkProperties);
-                    this.e.add(network);
-                    b();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                List list = ((z) this.b).e;
+                if (list != null) {
+                    list.isEmpty();
                 }
-            } finally {
-            }
-        }
-    }
-
-    public final void b() {
-        if (this.a == null) {
-            return;
-        }
-        synchronized (this.r) {
-            try {
-                Iterator it = this.r.iterator();
-                while (it.hasNext()) {
-                    if (it.next() != null) {
-                        throw new ClassCastException();
-                    }
-                    if (!((m4) this.a).a.isShutdown()) {
-                        ((m4) this.a).execute(new v(this, 0));
-                    }
+                throw null;
+            case 1:
+                c1 c1Var = (c1) this.b;
+                d1 d1Var = c1Var.g;
+                if (d1Var != null) {
+                    c1Var.a.a((u1) c1Var.c.b(d1Var).a(), 223);
                 }
-            } catch (Throwable th2) {
-                throw th2;
-            }
+                c1Var.e();
+                return;
+            default:
+                f2 f2Var = (f2) this.b;
+                HashSet hashSet = f2Var.f;
+                SharedPreferences sharedPreferences = f2Var.b;
+                HashSet hashSet2 = f2Var.g;
+                if (hashSet.isEmpty()) {
+                    return;
+                }
+                long j3 = true != hashSet2.equals(hashSet) ? 86400000L : 172800000L;
+                long currentTimeMillis = System.currentTimeMillis();
+                long j10 = f2Var.h;
+                if (j10 == 0 || currentTimeMillis - j10 >= j3) {
+                    f2.i.b("Upload the feature usage report.", new Object[0]);
+                    m1 l4 = n1.l();
+                    String str = f2.j;
+                    l4.c();
+                    n1.n((n1) l4.b, str);
+                    String str2 = f2Var.c;
+                    l4.c();
+                    n1.m((n1) l4.b, str2);
+                    n1 n1Var = (n1) l4.a();
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.addAll(hashSet);
+                    i1 l10 = j1.l();
+                    l10.c();
+                    j1.n((j1) l10.b, arrayList);
+                    l10.c();
+                    j1.m((j1) l10.b, n1Var);
+                    j1 j1Var = (j1) l10.a();
+                    t1 m10 = u1.m();
+                    m10.c();
+                    u1.s((u1) m10.b, j1Var);
+                    f2Var.a.a((u1) m10.a(), 243);
+                    SharedPreferences.Editor edit = sharedPreferences.edit();
+                    if (!hashSet2.equals(hashSet)) {
+                        hashSet2.clear();
+                        hashSet2.addAll(hashSet);
+                        Iterator it = hashSet2.iterator();
+                        while (it.hasNext()) {
+                            String num = Integer.toString(((f1) it.next()).a);
+                            String i10 = org.telegram.ui.Cells.p6.i("feature_usage_timestamp_reported_feature_", num);
+                            if (!sharedPreferences.contains(i10)) {
+                                i10 = org.telegram.ui.Cells.p6.i("feature_usage_timestamp_detected_feature_", num);
+                            }
+                            String i11 = org.telegram.ui.Cells.p6.i("feature_usage_timestamp_reported_feature_", num);
+                            if (!TextUtils.equals(i10, i11)) {
+                                long j11 = sharedPreferences.getLong(i10, 0L);
+                                edit.remove(i10);
+                                if (j11 != 0) {
+                                    edit.putLong(i11, j11);
+                                }
+                            }
+                        }
+                    }
+                    f2Var.h = currentTimeMillis;
+                    edit.putLong("feature_usage_last_report_time", currentTimeMillis).apply();
+                    return;
+                }
+                return;
         }
-    }
-
-    @Override // com.google.android.gms.internal.cast.u
-    public final void zza() {
-        ConnectivityManager connectivityManager;
-        LinkProperties linkProperties;
-        s.b("Start monitoring connectivity changes", new Object[0]);
-        if (this.f || (connectivityManager = this.c) == null || f0.f.b(this.h, "android.permission.ACCESS_NETWORK_STATE") != 0) {
-            return;
-        }
-        Network activeNetwork = connectivityManager.getActiveNetwork();
-        if (activeNetwork != null && (linkProperties = connectivityManager.getLinkProperties(activeNetwork)) != null) {
-            a(activeNetwork, linkProperties);
-        }
-        connectivityManager.registerNetworkCallback(new NetworkRequest.Builder().addTransportType(1).build(), this.b);
-        this.f = true;
     }
 }

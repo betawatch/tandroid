@@ -119,7 +119,7 @@ public abstract class h3 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final long estimateSize() {
-        long j10 = 0;
+        long j3 = 0;
         if (this.a == null) {
             return 0L;
         }
@@ -128,9 +128,9 @@ public abstract class h3 implements Spliterator {
             return spliterator.estimateSize();
         }
         for (int i10 = this.b; i10 < this.a.h(); i10++) {
-            j10 += this.a.a(i10).count();
+            j3 += this.a.a(i10).count();
         }
-        return j10;
+        return j3;
     }
 
     @Override // j$.util.Spliterator

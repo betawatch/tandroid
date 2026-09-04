@@ -7,40 +7,40 @@ import android.os.SystemClock;
 import android.text.TextPaint;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class c31 extends Drawable {
-    public final gj0 a;
+    public final xi0 a;
     public int b;
     public final TextPaint c;
 
     public c31(TextPaint textPaint) {
-        i.f fVar = new i.f(this, 9);
+        ah.g1 g1Var = new ah.g1(this, 6);
         this.c = textPaint;
         float textSize = textPaint.getTextSize() * 0.89f;
-        gj0 gj0Var = new gj0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
-        this.a = gj0Var;
-        gj0Var.setCallback(fVar);
-        gj0Var.I(1);
-        gj0Var.K((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
-        gj0Var.H(true);
-        gj0Var.start();
+        xi0 xi0Var = new xi0(R.raw.dots_loading, (int) textSize, (int) (textSize * 1.25f));
+        this.a = xi0Var;
+        xi0Var.setCallback(g1Var);
+        xi0Var.I(1);
+        xi0Var.K((int) ((SystemClock.elapsedRealtime() / 16.0f) % 60.0f));
+        xi0Var.H(true);
+        xi0Var.start();
     }
 
     @Override // android.graphics.drawable.Drawable
     public final void draw(Canvas canvas) {
         int color = this.c.getColor();
         int i10 = this.b;
-        gj0 gj0Var = this.a;
+        xi0 xi0Var = this.a;
         if (color != i10) {
-            gj0Var.X = true;
-            gj0Var.O(color, "Comp 1");
-            gj0Var.m();
-            gj0Var.H(true);
-            gj0Var.S(0L);
+            xi0Var.a0 = true;
+            xi0Var.O(color, "Comp 1");
+            xi0Var.m();
+            xi0Var.H(true);
+            xi0Var.S(0L);
             this.b = color;
         }
-        gj0Var.draw(canvas);
+        xi0Var.draw(canvas);
     }
 
     @Override // android.graphics.drawable.Drawable

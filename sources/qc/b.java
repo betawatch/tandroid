@@ -1,39 +1,38 @@
 package qc;
 
-import java.util.regex.Pattern;
-import ne.p;
-import ne.s;
+import java.nio.ByteBuffer;
+import java.nio.channels.ByteChannel;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends h {
-    public static final Pattern e = i.m;
+public final class b implements ByteChannel {
+    public ByteBuffer a;
 
-    @Override // qc.h
-    public final p b() {
-        this.d++;
-        if (c() == '\n') {
-            ne.g gVar = new ne.g(1);
-            this.d++;
-            return gVar;
-        }
-        if (this.d < this.c.length()) {
-            String str = this.c;
-            int i10 = this.d;
-            if (e.matcher(str.substring(i10, i10 + 1)).matches()) {
-                String str2 = this.c;
-                int i11 = this.d;
-                this.a.getClass();
-                s sVar = new s(str2.substring(i11, i11 + 1));
-                this.d++;
-                return sVar;
-            }
-        }
-        return f("\\");
+    @Override // java.nio.channels.Channel
+    public final boolean isOpen() {
+        return true;
     }
 
-    @Override // qc.h
-    public final char d() {
-        return '\\';
+    @Override // java.nio.channels.ReadableByteChannel
+    public final int read(ByteBuffer byteBuffer) {
+        int remaining = byteBuffer.remaining();
+        ByteBuffer byteBuffer2 = this.a;
+        if (byteBuffer2.remaining() <= 0) {
+            return -1;
+        }
+        byteBuffer.put((ByteBuffer) byteBuffer2.duplicate().limit(byteBuffer.remaining() + byteBuffer2.position()));
+        byteBuffer2.position(byteBuffer2.position() + remaining);
+        return remaining;
+    }
+
+    @Override // java.nio.channels.WritableByteChannel
+    public final int write(ByteBuffer byteBuffer) {
+        int remaining = byteBuffer.remaining();
+        this.a.put(byteBuffer);
+        return remaining;
+    }
+
+    @Override // java.nio.channels.Channel, java.io.Closeable, java.lang.AutoCloseable
+    public final void close() {
     }
 }

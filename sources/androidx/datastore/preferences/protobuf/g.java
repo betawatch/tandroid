@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class g implements Iterable, Serializable {
-    public static final g c = new g(a0.b);
+    public static final g c = new g(z.b);
     public static final f d;
     public int a = 0;
     public final byte[] b;
@@ -27,12 +27,12 @@ public class g implements Iterable, Serializable {
         int length = bArr.length;
         if (((i12 - i10) | i10 | i12 | (length - i12)) < 0) {
             if (i10 < 0) {
-                throw new IndexOutOfBoundsException(kf.k0.k(i10, "Beginning index: ", " < 0"));
+                throw new IndexOutOfBoundsException(i2.g.j(i10, "Beginning index: ", " < 0"));
             }
             if (i12 < i10) {
-                throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, i12, "Beginning index larger than ending index: ", ", "));
+                throw new IndexOutOfBoundsException(a4.a.l(i10, i12, "Beginning index larger than ending index: ", ", "));
             }
-            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i12, length, "End index: ", " >= "));
+            throw new IndexOutOfBoundsException(a4.a.l(i12, length, "End index: ", " >= "));
         }
         switch (d.a) {
             case 0:
@@ -70,9 +70,9 @@ public class g implements Iterable, Serializable {
             throw new IllegalArgumentException("Length too large: " + size + size());
         }
         if (size > gVar.size()) {
-            StringBuilder m9 = kf.k0.m(size, "Ran off end of other: 0, ", ", ");
-            m9.append(gVar.size());
-            throw new IllegalArgumentException(m9.toString());
+            StringBuilder l4 = i2.g.l(size, "Ran off end of other: 0, ", ", ");
+            l4.append(gVar.size());
+            throw new IllegalArgumentException(l4.toString());
         }
         byte[] bArr = gVar.b;
         int n10 = n() + size;

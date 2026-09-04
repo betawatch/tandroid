@@ -1,55 +1,29 @@
 package w7;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
+import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e extends a7.a {
-    public final a U0() {
-        a aVar;
-        Parcel L0 = L0(M0(), 4);
-        IBinder readStrongBinder = L0.readStrongBinder();
-        if (readStrongBinder == null) {
-            aVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate");
-            aVar = queryLocalInterface instanceof a ? (a) queryLocalInterface : new a(readStrongBinder, "com.google.android.gms.maps.internal.ICameraUpdateFactoryDelegate", 5);
-        }
-        L0.recycle();
-        return aVar;
+public final /* synthetic */ class e implements ia.d {
+    public static final /* synthetic */ e b = new e(0);
+    public static final /* synthetic */ e c = new e(1);
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ e(int i10) {
+        this.a = i10;
     }
 
-    public final g V0(l6.b bVar) {
-        g gVar;
-        Parcel M0 = M0();
-        g7.b.c(M0, bVar);
-        M0.writeInt(0);
-        Parcel L0 = L0(M0, 3);
-        IBinder readStrongBinder = L0.readStrongBinder();
-        if (readStrongBinder == null) {
-            gVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.internal.IMapViewDelegate");
-            gVar = queryLocalInterface instanceof g ? (g) queryLocalInterface : new g(readStrongBinder, "com.google.android.gms.maps.internal.IMapViewDelegate", 5);
+    @Override // ia.a
+    public final void a(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                Map.Entry entry = (Map.Entry) obj;
+                ia.e eVar = (ia.e) obj2;
+                eVar.a(f.g, entry.getKey());
+                eVar.a(f.h, entry.getValue());
+                return;
+            default:
+                throw new ia.b("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
         }
-        L0.recycle();
-        return gVar;
-    }
-
-    public final g7.e W0() {
-        g7.e cVar;
-        Parcel L0 = L0(M0(), 5);
-        IBinder readStrongBinder = L0.readStrongBinder();
-        int i10 = g7.d.b;
-        if (readStrongBinder == null) {
-            cVar = null;
-        } else {
-            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate");
-            cVar = queryLocalInterface instanceof g7.e ? (g7.e) queryLocalInterface : new g7.c(readStrongBinder, "com.google.android.gms.maps.model.internal.IBitmapDescriptorFactoryDelegate", 5);
-        }
-        L0.recycle();
-        return cVar;
     }
 }

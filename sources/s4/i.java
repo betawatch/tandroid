@@ -1,45 +1,19 @@
 package s4;
 
-import h5.d0;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class i {
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final String e;
+public class i {
+    public final c1 a;
+    public final int b;
+    public final int c;
+    public final int d;
+    public final int e;
 
-    public i(String str, String str2, String str3, String str4, String str5) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = str4;
-        this.e = str5;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof i)) {
-            return false;
-        }
-        i iVar = (i) obj;
-        return d0.a(this.a, iVar.a) && d0.a(this.b, iVar.b) && d0.a(this.c, iVar.c) && d0.a(this.d, iVar.d) && d0.a(this.e, iVar.e);
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
-        String str2 = this.b;
-        int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
-        String str3 = this.c;
-        int hashCode3 = (hashCode2 + (str3 != null ? str3.hashCode() : 0)) * 31;
-        String str4 = this.d;
-        int hashCode4 = (hashCode3 + (str4 != null ? str4.hashCode() : 0)) * 31;
-        String str5 = this.e;
-        return hashCode4 + (str5 != null ? str5.hashCode() : 0);
+    public i(c1 c1Var, int i10, int i11, int i12, int i13) {
+        this.a = c1Var;
+        this.b = i10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
     }
 }

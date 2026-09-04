@@ -1,16 +1,16 @@
 package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.RecaptchaAction;
-import dd.p;
-import k7.p7;
-import kotlin.jvm.internal.j;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzgc extends i implements p {
+final class zzgc extends j implements p {
     Object zza;
     double zzb;
     int zzc;
@@ -21,24 +21,24 @@ final class zzgc extends i implements p {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzgc(zzge zzgeVar, long j10, String str, RecaptchaAction recaptchaAction, c cVar) {
+    public zzgc(zzge zzgeVar, long j3, String str, RecaptchaAction recaptchaAction, c cVar) {
         super(2, cVar);
         this.zzd = zzgeVar;
-        this.zze = j10;
+        this.zze = j3;
         this.zzf = str;
         this.zzg = recaptchaAction;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzgc zzgcVar = new zzgc(this.zzd, this.zze, this.zzf, this.zzg, cVar);
         zzgcVar.zzh = obj;
         return zzgcVar;
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzgc) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzgc) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:19:0x011a  */
@@ -48,7 +48,7 @@ final class zzgc extends i implements p {
     /* JADX WARN: Removed duplicated region for block: B:38:0x00d2  */
     /* JADX WARN: Removed duplicated region for block: B:41:0x00e8  */
     /* JADX WARN: Removed duplicated region for block: B:42:? A[RETURN, SYNTHETIC] */
-    @Override // wc.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -76,12 +76,12 @@ final class zzgc extends i implements p {
         int i10 = this.zzc;
         try {
             if (i10 == 0) {
-                p7.b(obj);
+                t7.b(obj);
                 zzhkVar = (zzhk) this.zzh;
                 zzge zzgeVar = this.zzd;
                 zzdvVar = zzgeVar.zzb;
                 zzdsVar = zzdv.zzb;
-                if (!j.a(zzdvVar, zzdsVar)) {
+                if (!kotlin.jvm.internal.i.a(zzdvVar, zzdsVar)) {
                     throw new zzcg(zzce.zzb, zzcd.zzas, null, null, 12, null);
                 }
                 double d11 = this.zze;
@@ -103,13 +103,13 @@ final class zzgc extends i implements p {
                 d = this.zzb;
                 zzhkVar = (zzhk) this.zza;
                 zzhk zzhkVar4 = (zzhk) this.zzh;
-                p7.b(obj);
+                t7.b(obj);
                 zzhkVar2 = zzhkVar4;
                 zzl = obj;
             } else if (i10 == 2) {
                 d10 = this.zzb;
                 zzhk zzhkVar5 = (zzhk) this.zzh;
-                p7.b(obj);
+                t7.b(obj);
                 zzhkVar2 = zzhkVar5;
                 zza = obj;
                 zzxx zzxxVar = (zzxx) zza;
@@ -152,7 +152,7 @@ final class zzgc extends i implements p {
             } else if (i10 == 3) {
                 zzhk zzhkVar6 = (zzhk) this.zza;
                 zzhkVar3 = (zzhk) this.zzh;
-                p7.b(obj);
+                t7.b(obj);
                 zzhkVar2 = zzhkVar6;
                 zzm = obj;
                 this.zzh = zzhkVar3;
@@ -179,12 +179,12 @@ final class zzgc extends i implements p {
                 if (i10 != 4) {
                     if (i10 != 5) {
                         zzygVar2 = (zzyg) this.zzh;
-                        p7.b(obj);
+                        t7.b(obj);
                         return zzygVar2.zzj();
                     }
                     zzhk zzhkVar7 = (zzhk) this.zza;
                     zzyg zzygVar3 = (zzyg) this.zzh;
-                    p7.b(obj);
+                    t7.b(obj);
                     zzhkVar3 = zzhkVar7;
                     zzygVar = zzygVar3;
                     zzo = obj;
@@ -198,7 +198,7 @@ final class zzgc extends i implements p {
                     return zzygVar2.zzj();
                 }
                 zzhk zzhkVar8 = (zzhk) this.zzh;
-                p7.b(obj);
+                t7.b(obj);
                 zzhkVar3 = zzhkVar8;
                 zza2 = obj;
                 zzygVar = (zzyg) zza2;
@@ -240,10 +240,10 @@ final class zzgc extends i implements p {
             zzm = zzfpVar3.zzm(zzk2, (long) d10, this);
             if (zzm != aVar) {
             }
-        } catch (zzcg e) {
-            throw e;
-        } catch (Exception e6) {
-            throw new zzcg(zzce.zzb, zzcd.zzaC, e6.getMessage(), null, 8, null);
+        } catch (zzcg e7) {
+            throw e7;
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zzaC, e10.getMessage(), null, 8, null);
         }
     }
 }

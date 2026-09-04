@@ -1,26 +1,85 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import org.telegram.tgnet.TLRPC;
+import android.util.SparseArray;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class qi extends org.telegram.ui.Components.eo {
-    public final /* synthetic */ zn J;
+public final class qi {
+    public boolean a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ SparseArray c;
+    public final /* synthetic */ co d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qi(zn znVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(activity, i10, document, f6Var);
-        this.J = znVar;
+    public qi(co coVar, boolean z10, SparseArray sparseArray) {
+        this.d = coVar;
+        this.b = z10;
+        this.c = sparseArray;
     }
 
-    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        float y10 = getY();
-        zn znVar = this.J;
-        float y11 = znVar.O0.getY() + y10;
-        this.G = znVar.U0.getBackgroundSizeY();
-        this.F = y11;
+    public final boolean a(int i10) {
+        co coVar = this.d;
+        int i11 = i10 - coVar.A0.J;
+        if (i11 < 0 || i11 >= coVar.u6.size()) {
+            return false;
+        }
+        MessageObject messageObject = (MessageObject) coVar.u6.get(i11);
+        if (messageObject.contentType != 0) {
+            return false;
+        }
+        SparseArray sparseArray = this.c;
+        boolean z10 = this.b;
+        if (z10 || sparseArray.get(messageObject.getId(), null) != null) {
+            return z10 && sparseArray.get(messageObject.getId(), null) != null;
+        }
+        return true;
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:30:0x007c  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(int i10, boolean z10, float f7, float f10) {
+        s4.c1 K;
+        co coVar = this.d;
+        ArrayList arrayList = coVar.u6;
+        SparseArray[] sparseArrayArr = coVar.W5;
+        int i11 = i10 - coVar.A0.J;
+        if (this.b) {
+            z10 = !z10;
+        }
+        if (i11 < 0 || i11 >= arrayList.size()) {
+            return;
+        }
+        MessageObject messageObject = (MessageObject) arrayList.get(i11);
+        if (!z10 || (sparseArrayArr[0].indexOfKey(messageObject.getId()) < 0 && sparseArrayArr[1].indexOfKey(messageObject.getId()) < 0)) {
+            if ((z10 || sparseArrayArr[0].indexOfKey(messageObject.getId()) >= 0 || sparseArrayArr[1].indexOfKey(messageObject.getId()) >= 0) && messageObject.contentType == 0) {
+                if (z10) {
+                    if (sparseArrayArr[1].size() + sparseArrayArr[0].size() >= 100) {
+                        this.a = true;
+                        K = coVar.x0.K(i10);
+                        if (K != null) {
+                            View view = K.a;
+                            if (view instanceof org.telegram.ui.Cells.t1) {
+                                co.b2(coVar, view, false, f7, f10);
+                                return;
+                            }
+                        }
+                        coVar.x6(messageObject, false, true);
+                        coVar.dc();
+                        coVar.Wc(false);
+                    }
+                }
+                this.a = false;
+                K = coVar.x0.K(i10);
+                if (K != null) {
+                }
+                coVar.x6(messageObject, false, true);
+                coVar.dc();
+                coVar.Wc(false);
+            }
+        }
     }
 }

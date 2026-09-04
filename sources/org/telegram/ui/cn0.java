@@ -1,20 +1,102 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
+import android.text.Editable;
+import android.text.TextWatcher;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class cn0 extends View {
-    public Paint a;
-    public Paint b;
-    public float c;
+public final class cn0 implements TextWatcher {
+    public final /* synthetic */ pn0 a;
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        float measuredWidth = (int) (getMeasuredWidth() * this.c);
-        canvas.drawRect(0.0f, 0.0f, measuredWidth, getMeasuredHeight(), this.b);
-        canvas.drawRect(measuredWidth, 0.0f, getMeasuredWidth(), getMeasuredHeight(), this.a);
+    public cn0(pn0 pn0Var) {
+        this.a = pn0Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        String str;
+        boolean z10;
+        int indexOf;
+        pn0 pn0Var = this.a;
+        ArrayList arrayList = pn0Var.U0;
+        HashMap hashMap = pn0Var.W0;
+        if (pn0Var.Z0) {
+            return;
+        }
+        pn0Var.Z0 = true;
+        String d = gf.b.d(pn0Var.Y[1].getText().toString(), false);
+        pn0Var.Y[1].setText(d);
+        org.telegram.ui.Components.f40 f40Var = (org.telegram.ui.Components.f40) pn0Var.Y[2];
+        if (d.length() == 0) {
+            f40Var.setHintText((String) null);
+            f40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+            pn0Var.Y[0].setText(LocaleController.getString(R.string.ChooseCountry));
+        } else {
+            int i10 = 4;
+            if (d.length() > 4) {
+                while (true) {
+                    if (i10 < 1) {
+                        str = null;
+                        z10 = false;
+                        break;
+                    }
+                    String substring = d.substring(0, i10);
+                    if (((String) hashMap.get(substring)) != null) {
+                        String str2 = d.substring(i10) + pn0Var.Y[2].getText().toString();
+                        pn0Var.Y[1].setText(substring);
+                        str = str2;
+                        d = substring;
+                        z10 = true;
+                        break;
+                    }
+                    i10--;
+                }
+                if (!z10) {
+                    str = d.substring(1) + pn0Var.Y[2].getText().toString();
+                    EditTextBoldCursor editTextBoldCursor = pn0Var.Y[1];
+                    d = d.substring(0, 1);
+                    editTextBoldCursor.setText(d);
+                }
+            } else {
+                str = null;
+                z10 = false;
+            }
+            String str3 = (String) hashMap.get(d);
+            if (str3 == null || (indexOf = arrayList.indexOf(str3)) == -1) {
+                f40Var.setHintText((String) null);
+                f40Var.setHint(LocaleController.getString(R.string.PaymentShippingPhoneNumber));
+                pn0Var.Y[0].setText(LocaleController.getString(R.string.WrongCountry));
+            } else {
+                pn0Var.Y[0].setText((CharSequence) arrayList.get(indexOf));
+                String str4 = (String) pn0Var.X0.get(d);
+                if (str4 != null) {
+                    f40Var.setHintText(str4.replace('X', (char) 8211));
+                    f40Var.setHint((CharSequence) null);
+                }
+            }
+            if (!z10) {
+                EditTextBoldCursor editTextBoldCursor2 = pn0Var.Y[1];
+                editTextBoldCursor2.setSelection(editTextBoldCursor2.getText().length());
+            }
+            if (str != null) {
+                f40Var.requestFocus();
+                f40Var.setText(str);
+                f40Var.setSelection(f40Var.length());
+            }
+        }
+        pn0Var.Z0 = false;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

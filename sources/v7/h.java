@@ -1,11 +1,7 @@
 package v7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* JADX WARN: Method from annotation default annotation not found: zzb */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class h {
-    public final w7.c a;
-
-    public h(w7.c cVar) {
-        this.a = cVar;
-    }
+public @interface h {
 }

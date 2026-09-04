@@ -1,15 +1,16 @@
 package com.google.android.recaptcha.internal;
 
 import com.google.android.recaptcha.RecaptchaAction;
-import dd.p;
-import k7.p7;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzfq extends i implements p {
+final class zzfq extends j implements p {
     Object zza;
     double zzb;
     int zzc;
@@ -20,24 +21,24 @@ final class zzfq extends i implements p {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfq(zzgb zzgbVar, long j10, String str, RecaptchaAction recaptchaAction, c cVar) {
+    public zzfq(zzgb zzgbVar, long j3, String str, RecaptchaAction recaptchaAction, c cVar) {
         super(2, cVar);
         this.zzd = zzgbVar;
-        this.zze = j10;
+        this.zze = j3;
         this.zzf = str;
         this.zzg = recaptchaAction;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzfq zzfqVar = new zzfq(this.zzd, this.zze, this.zzf, this.zzg, cVar);
         zzfqVar.zzh = obj;
         return zzfqVar;
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfq) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzfq) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:14:0x013a  */
@@ -48,7 +49,7 @@ final class zzfq extends i implements p {
     /* JADX WARN: Removed duplicated region for block: B:38:0x00d9  */
     /* JADX WARN: Removed duplicated region for block: B:43:0x00c7  */
     /* JADX WARN: Removed duplicated region for block: B:48:0x0099  */
-    @Override // wc.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -73,14 +74,14 @@ final class zzfq extends i implements p {
         try {
             switch (this.zzc) {
                 case 0:
-                    p7.b(obj);
+                    t7.b(obj);
                     zzhkVar = (zzhk) this.zzh;
                     zzgb zzgbVar = this.zzd;
-                    long j10 = this.zze;
+                    long j3 = this.zze;
                     this.zzh = zzhkVar;
                     this.zza = zzhkVar;
                     this.zzc = 1;
-                    obj = new zzhg(new zzfu(zzgbVar, j10, null));
+                    obj = new zzhg(new zzfu(zzgbVar, j3, null));
                     if (obj != aVar) {
                         zzhkVar2 = zzhkVar;
                         this.zzh = zzhkVar2;
@@ -157,7 +158,7 @@ final class zzfq extends i implements p {
                 case 1:
                     zzhkVar = (zzhk) this.zza;
                     zzhkVar2 = (zzhk) this.zzh;
-                    p7.b(obj);
+                    t7.b(obj);
                     this.zzh = zzhkVar2;
                     this.zza = null;
                     this.zzc = 2;
@@ -167,7 +168,7 @@ final class zzfq extends i implements p {
                     return aVar;
                 case 2:
                     zzhkVar3 = (zzhk) this.zzh;
-                    p7.b(obj);
+                    t7.b(obj);
                     double longValue2 = ((Number) obj).longValue();
                     zzfpVar = this.zzd.zza;
                     String str2 = this.zzf;
@@ -185,7 +186,7 @@ final class zzfq extends i implements p {
                     d = this.zzb;
                     zzhkVar3 = (zzhk) this.zza;
                     zzhkVar4 = (zzhk) this.zzh;
-                    p7.b(obj);
+                    t7.b(obj);
                     this.zzh = zzhkVar4;
                     this.zza = null;
                     this.zzb = d;
@@ -197,7 +198,7 @@ final class zzfq extends i implements p {
                 case 4:
                     d = this.zzb;
                     zzhkVar5 = (zzhk) this.zzh;
-                    p7.b(obj);
+                    t7.b(obj);
                     zzxx zzxxVar2 = (zzxx) obj;
                     zzgb zzgbVar22 = this.zzd;
                     zzfpVar2 = zzgbVar22.zza;
@@ -217,7 +218,7 @@ final class zzfq extends i implements p {
                 case 5:
                     zzhkVar5 = (zzhk) this.zza;
                     zzhkVar6 = (zzhk) this.zzh;
-                    p7.b(obj);
+                    t7.b(obj);
                     this.zzh = zzhkVar6;
                     this.zza = null;
                     this.zzc = 6;
@@ -227,7 +228,7 @@ final class zzfq extends i implements p {
                     return aVar;
                 case 6:
                     zzhkVar7 = (zzhk) this.zzh;
-                    p7.b(obj);
+                    t7.b(obj);
                     zzyg zzygVar32 = (zzyg) obj;
                     zzfpVar4 = this.zzd.zza;
                     this.zzh = zzygVar32;
@@ -240,7 +241,7 @@ final class zzfq extends i implements p {
                 case 7:
                     zzhkVar7 = (zzhk) this.zza;
                     zzygVar = (zzyg) this.zzh;
-                    p7.b(obj);
+                    t7.b(obj);
                     this.zzh = zzygVar;
                     this.zza = null;
                     this.zzc = 8;
@@ -249,13 +250,13 @@ final class zzfq extends i implements p {
                     return aVar;
                 default:
                     zzygVar2 = (zzyg) this.zzh;
-                    p7.b(obj);
+                    t7.b(obj);
                     return zzygVar2.zzj();
             }
-        } catch (zzcg e) {
-            throw e;
-        } catch (Exception e6) {
-            throw new zzcg(zzce.zzb, zzcd.zzaB, e6.getMessage(), null, 8, null);
+        } catch (zzcg e7) {
+            throw e7;
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zzaB, e10.getMessage(), null, 8, null);
         }
     }
 }

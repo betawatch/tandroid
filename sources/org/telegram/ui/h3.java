@@ -1,100 +1,112 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.view.View;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class h3 extends FrameLayout {
-    public final LinearLayout a;
-    public boolean b;
-    public final org.telegram.ui.Components.p9 c;
-    public final TextView d;
-    public final TextView e;
-    public final TextView f;
-    public final ph.d h;
-    public ValueAnimator n;
-    public boolean r;
+public final /* synthetic */ class h3 implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public h3(Context context) {
-        super(context);
-        this.r = true;
-        setVisibility(8);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.a = linearLayout;
-        linearLayout.setPadding(AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(32.0f), AndroidUtilities.dp(24.0f));
-        linearLayout.setOrientation(1);
-        linearLayout.setGravity(3);
-        addView(linearLayout, k7.b6.e(-2, -2, 17));
-        org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
-        this.c = p9Var;
-        linearLayout.addView(p9Var, k7.b6.n(100, 100));
-        TextView textView = new TextView(context);
-        this.d = textView;
-        textView.setTextSize(1, 19.0f);
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextColor(-1);
-        TextView i10 = ai.i(linearLayout, textView, k7.b6.t(-2, -2, 3, 0, 4, 0, 2), context);
-        this.e = i10;
-        i10.setTextSize(1, 15.0f);
-        i10.setTextColor(-1);
-        i10.setSingleLine(false);
-        i10.setMaxLines(3);
-        TextView i11 = ai.i(linearLayout, i10, k7.b6.t(-2, -2, 3, 0, 0, 0, 1), context);
-        this.f = i11;
-        i11.setTextSize(1, 12.0f);
-        i11.setTextColor(-1);
-        i11.setAlpha(0.4f);
-        linearLayout.addView(i11, k7.b6.q(-2, -2, 3));
-        ph.d dVar = new ph.d(context, null, true);
-        this.h = dVar;
-        dVar.setMinWidth(AndroidUtilities.dp(140.0f));
-        dVar.g(LocaleController.getString(R.string.Refresh), false, true);
-        linearLayout.addView(dVar, k7.b6.t(-2, 40, 3, 0, 12, 0, 0));
+    public /* synthetic */ h3(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public final void a(String str, String str2) {
-        this.d.setText(LocaleController.getString(R.string.WebErrorTitle));
-        b.o(R.string.WebErrorInfoBot, new Object[]{str}, this.e);
-        this.f.setText(str2);
-    }
-
-    public final void b(boolean z4, boolean z10) {
-        if (this.r == z4) {
-            return;
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                m3 m3Var = (m3) this.b;
+                Float f7 = (Float) obj;
+                i4 i4Var = m3Var.K;
+                if (m3Var == i4Var.u0[0]) {
+                    if (i4Var.h0.d0.getCurrentProgress() > f7.floatValue()) {
+                        i4Var.h0.d0.a(0.0f, false);
+                    }
+                    i4Var.h0.d0.a(f7.floatValue(), true);
+                    break;
+                }
+                break;
+            case 1:
+                ((org.telegram.ui.Components.pj0) this.b).h((List) obj);
+                break;
+            case 2:
+                TLRPC.User user = (TLRPC.User) obj;
+                vr vrVar = ((mr) this.b).b;
+                pr w02 = vrVar.w0();
+                ArrayList arrayList = vrVar.F;
+                a0.i iVar = vrVar.M;
+                ArrayList arrayList2 = (iVar == null || iVar.m() == 0) ? arrayList : vrVar.H;
+                if (iVar == null || iVar.m() == 0) {
+                    iVar = vrVar.K;
+                }
+                if (iVar.f(user.id) == null) {
+                    if (ChatObject.isChannel(vrVar.r)) {
+                        TLRPC.TL_channelParticipant tL_channelParticipant = new TLRPC.TL_channelParticipant();
+                        tL_channelParticipant.inviter_id = vrVar.getUserConfig().getClientUserId();
+                        TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+                        tL_channelParticipant.peer = tL_peerUser;
+                        tL_peerUser.user_id = user.id;
+                        tL_channelParticipant.date = vrVar.getConnectionsManager().getCurrentTime();
+                        arrayList2.add(0, tL_channelParticipant);
+                        iVar.k(tL_channelParticipant, user.id);
+                    } else {
+                        TLRPC.TL_chatParticipant tL_chatParticipant = new TLRPC.TL_chatParticipant();
+                        tL_chatParticipant.user_id = user.id;
+                        tL_chatParticipant.inviter_id = vrVar.getUserConfig().getClientUserId();
+                        arrayList2.add(0, tL_chatParticipant);
+                        iVar.k(tL_chatParticipant, user.id);
+                    }
+                }
+                if (arrayList2 == arrayList) {
+                    Collections.sort(arrayList, new f6(6));
+                }
+                vrVar.A0(w02);
+                break;
+            case 3:
+                t3 t3Var = (t3) this.b;
+                int i10 = ((c5.h) obj).a;
+                AndroidUtilities.runOnUIThread(new r80(27, t3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
+                break;
+            case 4:
+                ri0 ri0Var = (ri0) this.b;
+                if (((c5.h) obj).a == 0) {
+                    AndroidUtilities.runOnUIThread(ri0Var);
+                    break;
+                }
+                break;
+            case 5:
+                ((ArrayList) this.b).add((TLRPC.User) obj);
+                break;
+            case 6:
+                ProfileActivity profileActivity = (ProfileActivity) this.b;
+                TLRPC.User user2 = (TLRPC.User) obj;
+                for (int i11 = 0; i11 < profileActivity.u2.participants.participants.size(); i11++) {
+                    if (profileActivity.u2.participants.participants.get(i11).user_id == user2.id) {
+                        profileActivity.u2.participants.participants.remove(i11);
+                        profileActivity.e5(true, false);
+                        break;
+                    }
+                }
+                break;
+            default:
+                View view = ((ProxyListActivity) this.b).b.T((View) obj).a;
+                if (view instanceof i21) {
+                    i21 i21Var = (i21) view;
+                    i21Var.setChecked(i21Var.d == SharedConfig.currentProxy);
+                    i21Var.b();
+                    break;
+                }
+                break;
         }
-        this.r = z4;
-        ValueAnimator valueAnimator = this.n;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        if (!z10) {
-            this.d.setTextColor(!z4 ? -16777216 : -1);
-            this.e.setTextColor(!z4 ? -16777216 : -1);
-            this.f.setTextColor(z4 ? -1 : -16777216);
-        } else {
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(z4 ? 0.0f : 1.0f, z4 ? 1.0f : 0.0f);
-            this.n = ofFloat;
-            ofFloat.addUpdateListener(new g3(this, 0));
-            this.n.start();
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        super.setVisibility(i10);
-        if (i10 != 0 || this.b) {
-            return;
-        }
-        this.b = true;
-        MediaDataController.getInstance(UserConfig.selectedAccount).setPlaceholderImage(this.c, AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, "🧐", "100_100");
     }
 }

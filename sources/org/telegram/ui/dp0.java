@@ -1,65 +1,53 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class dp0 extends x61 {
-    public final /* synthetic */ gp0 a2;
-    public final /* synthetic */ n61[] b2;
-    public final /* synthetic */ hp0 c2;
+public final /* synthetic */ class dp0 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TL_stars.TL_starGiftUnique b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public dp0(hp0 hp0Var, org.telegram.ui.ActionBar.p2 p2Var, Context context, Integer num, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11, int i12, gp0 gp0Var, n61[] n61VarArr) {
-        super(p2Var, context, true, num, i10, true, f6Var, i11, i12);
-        this.c2 = hp0Var;
-        this.a2 = gp0Var;
-        this.b2 = n61VarArr;
+    public /* synthetic */ dp0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, TL_stars.TL_starGiftUnique tL_starGiftUnique, long j3, Object obj2, int i10) {
+        this.a = i10;
+        this.d = notificationCenterDelegate;
+        this.e = obj;
+        this.b = tL_starGiftUnique;
+        this.c = j3;
+        this.f = obj2;
     }
 
-    @Override // org.telegram.ui.x61
-    public final float getScrimDrawableTranslationY() {
-        return 0.0f;
-    }
-
-    @Override // org.telegram.ui.x61
-    public final void p(View view, Long l10, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
-        hp0 hp0Var = this.c2;
-        if (tL_starGiftUnique != null) {
-            if (hp0Var.j0 == 0) {
-                TLRPC.PeerColor peerColor = tL_starGiftUnique.peer_color;
-                if (!(peerColor instanceof TLRPC.TL_peerColorCollectible)) {
-                    return;
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                bq0.U((bq0) this.d, (boolean[]) this.e, this.b, this.c, (zo0) this.f, (zh.a3) obj, (of.e) obj2);
+                break;
+            default:
+                zh.w3 w3Var = (zh.w3) this.d;
+                of.e eVar = (of.e) this.e;
+                yh.j0 j0Var = (yh.j0) this.f;
+                eVar.b();
+                if (((Boolean) obj).booleanValue()) {
+                    zh.j2 j2Var = w3Var.O0;
+                    if (j2Var != null) {
+                        j2Var.b(this.b, this.c, j0Var != null);
+                    }
+                    if (j0Var != null) {
+                        AndroidUtilities.runOnUIThread(new yh.d0(j0Var, 2));
+                        w3Var.skipDismissAnimation();
+                    }
+                    w3Var.dismiss();
+                    break;
                 }
-                hp0Var.s = (TLRPC.TL_peerColorCollectible) peerColor;
-                hp0Var.r = null;
-            } else {
-                hp0Var.s = null;
-                hp0Var.r = MessagesController.emojiStatusCollectibleFromGift(tL_starGiftUnique);
-            }
-            hp0Var.F = null;
-            hp0Var.h = -1;
-        } else {
-            hp0Var.n = l10 == null ? 0L : l10.longValue();
-            hp0Var.r = null;
-            hp0Var.s = null;
-            hp0Var.F = null;
-        }
-        gp0 gp0Var = this.a2;
-        if (gp0Var != null) {
-            gp0Var.b(true);
-        }
-        hp0Var.j(true);
-        hp0Var.i();
-        hp0Var.f(true);
-        n61 n61Var = this.b2[0];
-        if (n61Var != null) {
-            hp0Var.l0 = null;
-            n61Var.dismiss();
+                break;
         }
     }
 }

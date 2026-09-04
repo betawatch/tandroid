@@ -5,9 +5,9 @@ import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.text.style.ReplacementSpan;
 import java.nio.ByteBuffer;
-import k7.j6;
+import w7.k6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class v extends ReplacementSpan {
     public final o b;
@@ -15,19 +15,19 @@ public final class v extends ReplacementSpan {
     public float c = 1.0f;
 
     public v(o oVar) {
-        j6.a(oVar, "metadata cannot be null");
+        k6.a(oVar, "metadata cannot be null");
         this.b = oVar;
     }
 
     @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
         l.a().getClass();
         o oVar = this.b;
-        com.google.firebase.messaging.r rVar = oVar.b;
-        Typeface typeface = (Typeface) rVar.d;
+        com.google.firebase.messaging.s sVar = oVar.b;
+        Typeface typeface = (Typeface) sVar.e;
         Typeface typeface2 = paint.getTypeface();
         paint.setTypeface(typeface);
-        canvas.drawText((char[]) rVar.b, oVar.a * 2, 2, f10, i13, paint);
+        canvas.drawText((char[]) sVar.c, oVar.a * 2, 2, f7, i13, paint);
         paint.setTypeface(typeface2);
     }
 
@@ -43,13 +43,13 @@ public final class v extends ReplacementSpan {
         if (a2 != 0) {
             ((ByteBuffer) b10.d).getShort(a2 + b10.a);
         }
-        short s6 = (short) ((oVar.b().a(12) != 0 ? ((ByteBuffer) r5.d).getShort(r7 + r5.a) : (short) 0) * this.c);
+        short s10 = (short) ((oVar.b().a(12) != 0 ? ((ByteBuffer) r5.d).getShort(r7 + r5.a) : (short) 0) * this.c);
         if (fontMetricsInt != null) {
             fontMetricsInt.ascent = fontMetricsInt2.ascent;
             fontMetricsInt.descent = fontMetricsInt2.descent;
             fontMetricsInt.top = fontMetricsInt2.top;
             fontMetricsInt.bottom = fontMetricsInt2.bottom;
         }
-        return s6;
+        return s10;
     }
 }

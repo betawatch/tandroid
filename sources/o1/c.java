@@ -2,7 +2,7 @@ package o1;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class c extends i {
     public final /* synthetic */ int a;
@@ -30,31 +30,31 @@ public final class c extends i {
     }
 
     @Override // o1.i
-    public final void b(Object obj, float f10) {
+    public final void b(Object obj, float f7) {
         switch (this.a) {
             case 0:
-                ((View) obj).setAlpha(f10);
+                ((View) obj).setAlpha(f7);
                 break;
             case 1:
-                ((View) obj).setTranslationX(f10);
+                ((View) obj).setTranslationX(f7);
                 break;
             case 2:
-                ((View) obj).setTranslationY(f10);
+                ((View) obj).setTranslationY(f7);
                 break;
             case 3:
-                ((View) obj).setScaleX(f10);
+                ((View) obj).setScaleX(f7);
                 break;
             case 4:
-                ((View) obj).setScaleY(f10);
+                ((View) obj).setScaleY(f7);
                 break;
             case 5:
-                ((View) obj).setRotation(f10);
+                ((View) obj).setRotation(f7);
                 break;
             case 6:
-                ((View) obj).setRotationX(f10);
+                ((View) obj).setRotationX(f7);
                 break;
             default:
-                ((View) obj).setRotationY(f10);
+                ((View) obj).setRotationY(f7);
                 break;
         }
     }

@@ -1,37 +1,27 @@
 package j4;
 
-import j3.d1;
-import j3.n0;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class j implements e4.b {
-    public final String a;
+public final class j {
+    public static final byte[] e = {0, 0, 1};
+    public boolean a;
+    public int b;
+    public int c;
+    public byte[] d;
 
-    public j(String str) {
-        this.a = str;
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ n0 b() {
-        return null;
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ byte[] d() {
-        return null;
-    }
-
-    @Override // android.os.Parcelable
-    public int describeContents() {
-        return 0;
-    }
-
-    public String toString() {
-        return this.a;
-    }
-
-    @Override // e4.b
-    public /* synthetic */ void c(d1 d1Var) {
+    public final void a(int i10, int i11, byte[] bArr) {
+        if (this.a) {
+            int i12 = i11 - i10;
+            byte[] bArr2 = this.d;
+            int length = bArr2.length;
+            int i13 = this.b + i12;
+            if (length < i13) {
+                this.d = Arrays.copyOf(bArr2, i13 * 2);
+            }
+            System.arraycopy(bArr, i10, this.d, this.b, i12);
+            this.b += i12;
+        }
     }
 }

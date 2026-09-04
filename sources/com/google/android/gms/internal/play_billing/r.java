@@ -1,8 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
 import j$.util.List;
-import j7.g6;
-import j7.p6;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -10,8 +8,10 @@ import java.util.List;
 import java.util.ListIterator;
 import java.util.RandomAccess;
 import java.util.function.UnaryOperator;
+import v7.t5;
+import v7.w5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class r extends o implements List, RandomAccess, j$.util.List {
     public static final p b = new p(v.e, 0);
@@ -25,14 +25,14 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
         if (!(list instanceof o)) {
             Object[] array = list.toArray();
             int length = array.length;
-            p6.a(length, array);
+            w5.a(length, array);
             return t(length, array);
         }
-        r p10 = ((o) list).p();
-        if (!p10.q()) {
-            return p10;
+        r p5 = ((o) list).p();
+        if (!p5.q()) {
+            return p5;
         }
-        Object[] array2 = p10.toArray(o.a);
+        Object[] array2 = p5.toArray(o.a);
         return t(array2.length, array2);
     }
 
@@ -156,7 +156,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: s */
     public r subList(int i10, int i11) {
-        g6.c(i10, i11, size());
+        t5.c(i10, i11, size());
         int i12 = i11 - i10;
         return i12 == size() ? this : i12 == 0 ? v.e : new q(this, i10, i12);
     }
@@ -174,7 +174,7 @@ public abstract class r extends o implements List, RandomAccess, j$.util.List {
     @Override // java.util.List
     /* renamed from: v, reason: merged with bridge method [inline-methods] */
     public final p listIterator(int i10) {
-        g6.b(i10, size());
+        t5.b(i10, size());
         return isEmpty() ? b : new p(this, i10);
     }
 

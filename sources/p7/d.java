@@ -1,22 +1,7 @@
 package p7;
 
-import a8.f;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.q;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class d implements q {
-    public final Status a;
-    public final f b;
-
-    public d(Status status, f fVar) {
-        this.a = status;
-        this.b = fVar;
-    }
-
-    @Override // com.google.android.gms.common.api.q
-    public final Status i() {
-        return this.a;
-    }
+public abstract class d {
+    public static final com.google.android.gms.common.api.e a = new com.google.android.gms.common.api.e("AppDataSearch.LIGHTWEIGHT_API", new a8.d(12), new com.google.android.gms.common.api.d());
 }

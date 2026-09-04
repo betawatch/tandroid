@@ -1,41 +1,31 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class g51 extends f2.v {
-    public final /* synthetic */ int c;
-    public final /* synthetic */ x61 d;
+public final /* synthetic */ class g51 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k51 b;
 
-    public /* synthetic */ g51(x61 x61Var, int i10) {
-        this.c = i10;
-        this.d = x61Var;
+    public /* synthetic */ g51(k51 k51Var, int i10) {
+        this.a = i10;
+        this.b = k51Var;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        int i11;
-        ArrayList arrayList;
-        int i12;
-        switch (this.c) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
             case 0:
-                x61 x61Var = this.d;
-                return (x61Var.t0.indexOfKey(i10) >= 0 || x61Var.w0.indexOfKey(i10) >= 0 || i10 == x61Var.f || i10 == x61Var.y || i10 == x61Var.n || i10 == x61Var.h || i10 == x61Var.v || i10 == x61Var.a || i10 == x61Var.x) ? x61Var.o0.J : ((i10 < x61Var.B || i10 >= x61Var.C) && !x61Var.N) ? 5 : 8;
+                k51 k51Var = this.b;
+                if (k51Var.Y == null) {
+                    k51Var.dismiss();
+                    break;
+                }
+                break;
             default:
-                x61 x61Var2 = this.d;
-                g61 g61Var = x61Var2.n0;
-                int j10 = g61Var.j(i10);
-                if (j10 == 6) {
-                    return x61Var2.o0.J;
-                }
-                if (j10 != 5) {
-                    x61 x61Var3 = g61Var.s;
-                    if (x61Var3.T != 14 ? i10 <= (i11 = g61Var.c) || (i10 - i11) - 1 >= x61Var3.z1.size() : (arrayList = x61Var3.y1) == null || i10 < (i12 = g61Var.c) || i10 - i12 >= arrayList.size()) {
-                        return 5;
-                    }
-                }
-                return 8;
+                this.b.dismiss();
+                break;
         }
     }
 }

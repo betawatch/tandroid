@@ -1,26 +1,12 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class v4 extends FrameLayout {
-    public final /* synthetic */ org.telegram.ui.Cells.y1[] a;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v4(Context context, org.telegram.ui.Cells.y1[] y1VarArr) {
-        super(context);
-        this.a = y1VarArr;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        org.telegram.ui.Cells.y1[] y1VarArr = this.a;
-        if (y1VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), AndroidUtilities.dp(7.0f) + y1VarArr[0].getMeasuredHeight() + getMeasuredHeight());
-        }
+public final class v4 extends vc0 {
+    @Override // org.telegram.ui.Components.vc0
+    public final CharSequence d(int i10) {
+        return LocaleController.formatPluralString("Minutes", i10, new Object[0]);
     }
 }

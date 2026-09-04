@@ -1,9 +1,29 @@
 package hh;
 
-import android.graphics.Canvas;
+import android.graphics.Bitmap;
+import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public interface a {
-    void p(Canvas canvas, int i10);
+public final class a {
+    public WeakReference a;
+    public long b;
+    public boolean c = true;
+
+    public final boolean a(Bitmap bitmap) {
+        if (this.c) {
+            return true;
+        }
+        WeakReference weakReference = this.a;
+        if ((weakReference != null ? (Bitmap) weakReference.get() : null) != bitmap) {
+            return true;
+        }
+        return ((bitmap == null || bitmap.isRecycled()) ? 0L : (long) bitmap.getGenerationId()) != this.b;
+    }
+
+    public final void b(Bitmap bitmap) {
+        this.a = bitmap != null ? new WeakReference(bitmap) : null;
+        this.b = (bitmap == null || bitmap.isRecycled()) ? 0L : bitmap.getGenerationId();
+        this.c = false;
+    }
 }

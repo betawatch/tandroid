@@ -1,35 +1,39 @@
 package k6;
 
-import android.content.Context;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b {
-    public static final b b;
-    public bb.b a;
+public class b extends DialogFragment {
+    public Dialog a;
+    public DialogInterface.OnCancelListener b;
+    public AlertDialog c;
 
-    static {
-        b bVar = new b();
-        bVar.a = null;
-        b = bVar;
+    @Override // android.app.DialogFragment, android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
+        DialogInterface.OnCancelListener onCancelListener = this.b;
+        if (onCancelListener != null) {
+            onCancelListener.onCancel(dialogInterface);
+        }
     }
 
-    public static bb.b a(Context context) {
-        bb.b bVar;
-        b bVar2 = b;
-        synchronized (bVar2) {
-            try {
-                if (bVar2.a == null) {
-                    if (context.getApplicationContext() != null) {
-                        context = context.getApplicationContext();
-                    }
-                    bVar2.a = new bb.b(context, 21);
-                }
-                bVar = bVar2.a;
-            } catch (Throwable th2) {
-                throw th2;
-            }
+    @Override // android.app.DialogFragment
+    public final Dialog onCreateDialog(Bundle bundle) {
+        Dialog dialog = this.a;
+        if (dialog != null) {
+            return dialog;
         }
-        return bVar;
+        setShowsDialog(false);
+        if (this.c == null) {
+            Activity activity = getActivity();
+            n6.l.h(activity);
+            this.c = new AlertDialog.Builder(activity).create();
+        }
+        return this.c;
     }
 }

@@ -1,48 +1,56 @@
 package vh;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.li;
-import org.telegram.ui.Components.ti;
-import org.telegram.ui.Components.uk;
+import android.view.animation.DecelerateInterpolator;
+import android.view.animation.LinearInterpolator;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class f implements uk, ti {
-    public final /* synthetic */ q a;
-    public final /* synthetic */ li b;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public abstract class f {
+    public static final DecelerateInterpolator a = new DecelerateInterpolator();
+    public static final LinearInterpolator b;
+    public static final e c;
+    public static final e d;
+    public static final e e;
+    public static final e f;
+    public static final e g;
+    public static final e h;
+    public static final e i;
+    public static final e j;
+    public static final e k;
+    public static final e l;
+    public static final e m;
+    public static final e n;
+    public static final e o;
+    public static final e p;
+    public static final e q;
+    public static final e r;
+    public static final e s;
+    public static final e t;
 
-    public /* synthetic */ f(q qVar, li liVar) {
-        this.a = qVar;
-        this.b = liVar;
-    }
-
-    @Override // org.telegram.ui.Components.uk
-    public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z4, int i11, long j10) {
-        q qVar = this.a;
-        qVar.getClass();
-        li liVar = this.b;
-        if (messageMedia == null || messageMedia.geo == null) {
-            liVar.dismiss(true);
-            return;
-        }
-        TL_iv.pageBlockMap pageblockmap = new TL_iv.pageBlockMap();
-        pageblockmap.geo = messageMedia.geo;
-        pageblockmap.zoom = 15;
-        pageblockmap.w = 600;
-        pageblockmap.h = 400;
-        qVar.r.Q1(pageblockmap);
-        qVar.V(true);
-        liVar.dismiss(true);
-    }
-
-    @Override // org.telegram.ui.Components.ti
-    public void g(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
-        if (!arrayList.isEmpty()) {
-            this.a.r.a2((MessageObject) arrayList.get(0));
-        }
-        this.b.dismiss(true);
+    static {
+        LinearInterpolator linearInterpolator = new LinearInterpolator();
+        b = linearInterpolator;
+        c = h.i(new DecelerateInterpolator(), 0, 240, 240, false);
+        d = h.i(linearInterpolator, 0, 240, 240, false);
+        e = h.i(new DecelerateInterpolator(), 220, 240, 240, false);
+        f = h.i(new pr(0.7f, -0.6f, 0.4f, 1.0f), 0, 200, 560, false);
+        g = h.i(new pr(0.7f, -0.6f, 0.4f, 1.0f), 200, 400, 560, true);
+        h = h.i(new DecelerateInterpolator(), 0, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 560, false);
+        i = h.i(new DecelerateInterpolator(), 210, 425, 560, false);
+        pr prVar = pr.h;
+        j = h.i(prVar, 0, 320, 560, false);
+        k = h.i(prVar, 40, 320, 560, false);
+        l = h.i(new DecelerateInterpolator(), 0, MediaDataController.MAX_LINKS_COUNT, 560, false);
+        m = h.i(prVar, 0, 460, 560, false);
+        n = h.i(prVar, 0, 325, 560, false);
+        o = h.i(new DecelerateInterpolator(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, MediaDataController.MAX_LINKS_COUNT, 560, false);
+        p = h.i(new DecelerateInterpolator(), 200, 480, 560, false);
+        q = h.i(prVar, 60, 320, 560, false);
+        r = h.i(prVar, 90, 380, 560, false);
+        s = h.i(prVar, 110, 440, 560, false);
+        t = h.i(new DecelerateInterpolator(), 200, 460, 560, false);
     }
 }

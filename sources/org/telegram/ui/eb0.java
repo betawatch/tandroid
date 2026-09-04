@@ -1,66 +1,48 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class eb0 implements org.telegram.ui.Components.y4, org.telegram.ui.ActionBar.c2, org.telegram.ui.Components.tv0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pb0 b;
+public final class eb0 implements rf.c {
+    public final kb0 a;
+    public final /* synthetic */ LaunchActivity b;
 
-    public /* synthetic */ eb0(pb0 pb0Var, int i10) {
-        this.a = i10;
-        this.b = pb0Var;
+    public eb0(LaunchActivity launchActivity) {
+        this.b = launchActivity;
+        Pattern pattern = LaunchActivity.B1;
+        this.a = new kb0(launchActivity, false);
     }
 
-    @Override // org.telegram.ui.Components.y4
-    public void J(int i10, int i11, boolean z4) {
-        this.b.V(i10);
+    @Override // rf.c
+    public final void b() {
+        Pattern pattern = LaunchActivity.B1;
+        this.b.getWindow();
     }
 
-    @Override // org.telegram.ui.Components.tv0
-    public void g(int i10) {
-        switch (this.a) {
-            case 2:
-                pb0 pb0Var = this.b;
-                if (i10 >= pb0Var.M.size()) {
-                    pb0Var.w.setText("");
-                    break;
-                } else {
-                    pb0Var.w.setText(LocaleController.formatDateAudio(pb0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
-                    break;
-                }
-            default:
-                pb0 pb0Var2 = this.b;
-                pb0Var2.C.clearFocus();
-                pb0Var2.L = true;
-                ArrayList arrayList = pb0Var2.O;
-                if (i10 < arrayList.size()) {
-                    pb0Var2.C.setText(((Integer) arrayList.get(i10)).toString());
-                } else {
-                    pb0Var2.C.setText("");
-                }
-                pb0Var2.L = false;
-                break;
-        }
+    @Override // rf.c
+    public final void d() {
+        this.a.a(false);
     }
 
-    @Override // org.telegram.ui.Components.tv0
-    public /* synthetic */ void j() {
-        int i10 = this.a;
+    @Override // rf.c
+    public final void f() {
+        Pattern pattern = LaunchActivity.B1;
+        LaunchActivity launchActivity = this.b;
+        launchActivity.getClass();
+        this.a.a(true);
+        launchActivity.getWindow();
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        pb0 pb0Var = this.b;
-        pb0Var.Q.a(pb0Var.e);
-        pb0Var.finishFragment();
+    @Override // rf.c
+    public final /* synthetic */ void a() {
     }
 
-    private final /* synthetic */ void a() {
+    @Override // rf.c
+    public final /* synthetic */ void c() {
     }
 
-    private final /* synthetic */ void b() {
+    @Override // rf.c
+    public final /* synthetic */ void e() {
     }
 }

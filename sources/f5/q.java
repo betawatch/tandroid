@@ -1,18 +1,38 @@
 package f5;
 
-import o4.s0;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class q {
-    public final s0 a;
-    public final int[] b;
+    public final long a;
+    public final long b;
+    public final long c;
 
-    public q(int i10, s0 s0Var, int[] iArr) {
-        if (iArr.length == 0) {
-            h5.a.p("ETSDefinition", "Empty tracks are not allowed", new IllegalArgumentException());
+    public q(long j3, long j10, long j11) {
+        this.a = j3;
+        this.b = j10;
+        this.c = j11;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        this.a = s0Var;
-        this.b = iArr;
+        if (obj == null || q.class != obj.getClass()) {
+            return false;
+        }
+        q qVar = (q) obj;
+        return this.a == qVar.a && this.c == qVar.c && this.b == qVar.b;
+    }
+
+    public final int hashCode() {
+        long j3 = this.a;
+        long j10 = this.b;
+        int i10 = ((((int) (j3 ^ (j3 >>> 32))) * 31) + ((int) (j10 ^ (j10 >>> 32)))) * 31;
+        long j11 = this.c;
+        return i10 + ((int) (j11 ^ (j11 >>> 32)));
+    }
+
+    public final String toString() {
+        return "Entry{firstChunk=" + this.a + ", samplesPerChunk=" + this.b + ", sampleDescriptionIndex=" + this.c + '}';
     }
 }

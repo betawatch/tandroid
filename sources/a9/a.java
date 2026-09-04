@@ -1,1026 +1,278 @@
 package a9;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.content.pm.PackageInfo;
-import android.content.res.ColorStateList;
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Matrix;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
-import android.os.Build;
-import android.os.Bundle;
-import android.text.TextPaint;
-import android.text.TextUtils;
-import android.util.Base64;
-import android.util.Log;
-import b4.e0;
-import cb.m;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.android.gms.tasks.Tasks;
-import com.google.firebase.messaging.r;
-import e3.g;
-import h5.d0;
-import i9.k;
-import i9.y;
-import j$.util.DesugarCollections;
-import j3.m2;
-import j3.o2;
-import j7.g8;
-import j7.r7;
-import j9.b;
-import j9.c;
-import j9.d;
-import j9.e;
-import j9.n;
-import java.io.File;
-import java.io.IOException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Stack;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicMarkableReference;
-import k7.b7;
-import k9.a2;
-import k9.l0;
-import k9.m0;
-import k9.p0;
-import k9.q0;
-import k9.r0;
-import k9.s1;
-import k9.t0;
-import k9.t1;
-import k9.u0;
-import k9.u1;
-import k9.v0;
-import k9.v1;
-import k9.w1;
-import k9.x0;
-import k9.y0;
-import k9.z1;
-import m.d3;
-import m.m1;
-import m.n2;
-import m.q;
-import m.s3;
-import o4.v;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.beta.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.g5;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.wx0;
-import org.telegram.ui.tb0;
-import p2.w;
-import ph.o4;
-import q5.c0;
-import rf.f;
-import s8.n0;
-import vh.w2;
-import x5.j;
-import x5.l;
-import y2.h;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a implements f6 {
-    public Object a;
-    public Object b;
-    public Object c;
-    public Object d;
-    public Object e;
-    public Object f;
+public abstract class a implements IInterface {
+    public final /* synthetic */ int a;
+    public final IBinder b;
+    public final String c;
 
-    public a(int i10) {
-        switch (i10) {
-            case 8:
-                this.a = new int[]{R.drawable.abc_textfield_search_default_mtrl_alpha, R.drawable.abc_textfield_default_mtrl_alpha, R.drawable.abc_ab_share_pack_mtrl_alpha};
-                this.b = new int[]{R.drawable.abc_ic_commit_search_api_mtrl_alpha, R.drawable.abc_seekbar_tick_mark_material, R.drawable.abc_ic_menu_share_mtrl_alpha, R.drawable.abc_ic_menu_copy_mtrl_am_alpha, R.drawable.abc_ic_menu_cut_mtrl_alpha, R.drawable.abc_ic_menu_selectall_mtrl_alpha, R.drawable.abc_ic_menu_paste_mtrl_am_alpha};
-                this.c = new int[]{R.drawable.abc_textfield_activated_mtrl_alpha, R.drawable.abc_textfield_search_activated_mtrl_alpha, R.drawable.abc_cab_background_top_mtrl_alpha, R.drawable.abc_text_cursor_material, R.drawable.abc_text_select_handle_left_mtrl, R.drawable.abc_text_select_handle_middle_mtrl, R.drawable.abc_text_select_handle_right_mtrl};
-                this.d = new int[]{R.drawable.abc_popup_background_mtrl_mult, R.drawable.abc_cab_background_internal_bg, R.drawable.abc_menu_hardkey_panel_mtrl_mult};
-                this.e = new int[]{R.drawable.abc_tab_indicator_material, R.drawable.abc_textfield_search_material};
-                this.f = new int[]{R.drawable.abc_btn_check_material, R.drawable.abc_btn_radio_material, R.drawable.abc_btn_check_material_anim, R.drawable.abc_btn_radio_material_anim};
-                break;
-            case 9:
-                Paint paint = new Paint(1);
-                this.a = paint;
-                this.d = new RectF();
-                this.f = new Matrix();
-                Bitmap createBitmap = Bitmap.createBitmap(30, 40, Bitmap.Config.ARGB_8888);
-                this.c = createBitmap;
-                this.b = new Canvas(createBitmap);
-                Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-                BitmapShader bitmapShader = new BitmapShader(createBitmap, tileMode, tileMode);
-                this.e = bitmapShader;
-                paint.setShader(bitmapShader);
-                D();
-                break;
-            case 10:
-                this.a = new ArrayList();
-                this.b = new ArrayList();
-                this.c = new ArrayList();
-                this.d = new ArrayList();
-                this.e = new ArrayList();
-                this.f = new ArrayList();
-                break;
-            default:
-                this.a = new Bundle();
-                this.b = "AssistAction";
-                break;
-        }
+    public /* synthetic */ a(IBinder iBinder, String str, int i10) {
+        this.a = i10;
+        this.b = iBinder;
+        this.c = str;
     }
 
-    public static void A(Drawable drawable, int i10, PorterDuff.Mode mode) {
-        PorterDuffColorFilter h;
-        int[] iArr = m1.a;
-        Drawable mutate = drawable.mutate();
-        if (mode == null) {
-            mode = q.b;
-        }
-        PorterDuff.Mode mode2 = q.b;
-        synchronized (q.class) {
-            h = n2.h(i10, mode);
-        }
-        mutate.setColorFilter(h);
+    public Parcel G0() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
     }
 
-    public static l0 b(l0 l0Var, e eVar, s3 s3Var) {
-        a a2 = l0Var.a();
-        String d = ((c) eVar.b).d();
-        if (d != null) {
-            a2.e = new v0(d);
-        } else if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-            Log.v("FirebaseCrashlytics", "No log data to include with this event.", null);
-        }
-        List q10 = q(((d) ((AtomicMarkableReference) ((m) s3Var.d).b).getReference()).a());
-        List q11 = q(((d) ((AtomicMarkableReference) ((m) s3Var.e).b).getReference()).a());
-        if (!q10.isEmpty() || !q11.isEmpty()) {
-            m0 m0Var = (m0) l0Var.c;
-            s1 s1Var = m0Var.a;
-            Boolean bool = m0Var.d;
-            t1 t1Var = m0Var.e;
-            List list = m0Var.f;
-            int i10 = m0Var.g;
-            String str = s1Var == null ? " execution" : "";
-            if (!str.isEmpty()) {
-                throw new IllegalStateException("Missing required properties:".concat(str));
-            }
-            a2.c = new m0(s1Var, q10, q11, bool, t1Var, list, i10);
-        }
-        return a2.h();
-    }
-
-    public static a2 d(l0 l0Var, s3 s3Var) {
-        List h = ((w) s3Var.f).h();
-        ArrayList arrayList = new ArrayList();
-        for (int i10 = 0; i10 < h.size(); i10++) {
-            n nVar = (n) h.get(i10);
-            nVar.getClass();
-            r rVar = new r();
-            b bVar = (b) nVar;
-            String str = bVar.e;
-            if (str == null) {
-                throw new NullPointerException("Null variantId");
-            }
-            String str2 = bVar.b;
-            if (str2 == null) {
-                throw new NullPointerException("Null rolloutId");
-            }
-            rVar.b = new x0(str2, str);
-            String str3 = bVar.c;
-            if (str3 == null) {
-                throw new NullPointerException("Null parameterKey");
-            }
-            rVar.a = str3;
-            String str4 = bVar.d;
-            if (str4 == null) {
-                throw new NullPointerException("Null parameterValue");
-            }
-            rVar.c = str4;
-            rVar.d = Long.valueOf(bVar.f);
-            arrayList.add(rVar.c());
-        }
-        if (arrayList.isEmpty()) {
-            return l0Var;
-        }
-        a a2 = l0Var.a();
-        a2.f = new y0(arrayList);
-        return a2.h();
-    }
-
-    public static boolean f(int i10, int[] iArr) {
-        for (int i11 : iArr) {
-            if (i11 == i10) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public static a k(Context context, i9.w wVar, n9.b bVar, i9.a aVar, e eVar, s3 s3Var, c0 c0Var, g gVar, f7.b bVar2, k kVar) {
-        i9.q qVar = new i9.q(context, wVar, aVar, c0Var, gVar);
-        n9.a aVar2 = new n9.a(bVar, gVar, kVar);
-        l9.a aVar3 = o9.a.b;
-        y2.q.b(context);
-        o9.a aVar4 = new o9.a(new o9.c(y2.q.a().c(new w2.a(o9.a.c, o9.a.d)).a("FIREBASE_CRASHLYTICS_REPORT", new v2.c("json"), o9.a.e), gVar.d(), bVar2));
-        a aVar5 = new a();
-        aVar5.a = qVar;
-        aVar5.b = aVar2;
-        aVar5.c = aVar4;
-        aVar5.d = eVar;
-        aVar5.e = s3Var;
-        aVar5.f = wVar;
-        return aVar5;
-    }
-
-    public static ColorStateList m(Context context, int i10) {
-        int c3 = d3.c(context, R.attr.colorControlHighlight);
-        return new ColorStateList(new int[][]{d3.b, d3.d, d3.c, d3.f}, new int[]{d3.b(context, R.attr.colorButtonNormal), i0.a.h(c3, i10), i0.a.h(c3, i10), i10});
-    }
-
-    public static v o(j3.a2 a2Var, s8.v vVar, v vVar2, m2 m2Var) {
-        o2 z4 = a2Var.z();
-        int m9 = a2Var.m();
-        Object l10 = z4.p() ? null : z4.l(m9);
-        int b10 = (a2Var.f() || z4.p()) ? -1 : z4.f(m9, m2Var, false).b(d0.G(a2Var.C()) - m2Var.e);
-        for (int i10 = 0; i10 < vVar.size(); i10++) {
-            v vVar3 = (v) vVar.get(i10);
-            if (s(vVar3, l10, a2Var.f(), a2Var.w(), a2Var.o(), b10)) {
-                return vVar3;
-            }
-        }
-        if (vVar.isEmpty() && vVar2 != null && s(vVar2, l10, a2Var.f(), a2Var.w(), a2Var.o(), b10)) {
-            return vVar2;
-        }
-        return null;
-    }
-
-    public static LayerDrawable p(n2 n2Var, Context context, int i10) {
-        BitmapDrawable bitmapDrawable;
-        BitmapDrawable bitmapDrawable2;
-        BitmapDrawable bitmapDrawable3;
-        int dimensionPixelSize = context.getResources().getDimensionPixelSize(i10);
-        Drawable g10 = n2Var.g(context, R.drawable.abc_star_black_48dp);
-        Drawable g11 = n2Var.g(context, R.drawable.abc_star_half_black_48dp);
-        if ((g10 instanceof BitmapDrawable) && g10.getIntrinsicWidth() == dimensionPixelSize && g10.getIntrinsicHeight() == dimensionPixelSize) {
-            bitmapDrawable = (BitmapDrawable) g10;
-            bitmapDrawable2 = new BitmapDrawable(bitmapDrawable.getBitmap());
-        } else {
-            Bitmap createBitmap = Bitmap.createBitmap(dimensionPixelSize, dimensionPixelSize, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(createBitmap);
-            g10.setBounds(0, 0, dimensionPixelSize, dimensionPixelSize);
-            g10.draw(canvas);
-            bitmapDrawable = new BitmapDrawable(createBitmap);
-            bitmapDrawable2 = new BitmapDrawable(createBitmap);
-        }
-        bitmapDrawable2.setTileModeX(Shader.TileMode.REPEAT);
-        if ((g11 instanceof BitmapDrawable) && g11.getIntrinsicWidth() == dimensionPixelSize && g11.getIntrinsicHeight() == dimensionPixelSize) {
-            bitmapDrawable3 = (BitmapDrawable) g11;
-        } else {
-            Bitmap createBitmap2 = Bitmap.createBitmap(dimensionPixelSize, dimensionPixelSize, Bitmap.Config.ARGB_8888);
-            Canvas canvas2 = new Canvas(createBitmap2);
-            g11.setBounds(0, 0, dimensionPixelSize, dimensionPixelSize);
-            g11.draw(canvas2);
-            bitmapDrawable3 = new BitmapDrawable(createBitmap2);
-        }
-        LayerDrawable layerDrawable = new LayerDrawable(new Drawable[]{bitmapDrawable, bitmapDrawable3, bitmapDrawable2});
-        layerDrawable.setId(0, android.R.id.background);
-        layerDrawable.setId(1, android.R.id.secondaryProgress);
-        layerDrawable.setId(2, android.R.id.progress);
-        return layerDrawable;
-    }
-
-    public static List q(Map map) {
-        ArrayList arrayList = new ArrayList();
-        arrayList.ensureCapacity(map.size());
-        for (Map.Entry entry : map.entrySet()) {
-            String str = (String) entry.getKey();
-            if (str == null) {
-                throw new NullPointerException("Null key");
-            }
-            String str2 = (String) entry.getValue();
-            if (str2 == null) {
-                throw new NullPointerException("Null value");
-            }
-            arrayList.add(new k9.d0(str, str2));
-        }
-        Collections.sort(arrayList, new e5.e(15));
-        return DesugarCollections.unmodifiableList(arrayList);
-    }
-
-    public static boolean s(v vVar, Object obj, boolean z4, int i10, int i11, int i12) {
-        Object obj2 = vVar.a;
-        int i13 = vVar.b;
-        if (!obj2.equals(obj)) {
-            return false;
-        }
-        if (z4 && i13 == i10 && vVar.c == i11) {
-            return true;
-        }
-        return !z4 && i13 == -1 && vVar.e == i12;
-    }
-
-    public Task B(String str, String str2, Bundle bundle) {
-        int i10;
+    public void H0(Parcel parcel, int i10) {
         try {
-            y(str, str2, bundle);
-            x5.a aVar = (x5.a) this.c;
-            l lVar = l.a;
-            p2.g gVar = aVar.c;
-            if (gVar.g() < 12000000) {
-                return gVar.h() != 0 ? aVar.a(bundle).continueWithTask(lVar, new c0(17, aVar, bundle)) : Tasks.forException(new IOException("MISSING_INSTANCEID_SERVICE"));
-            }
-            x5.k d = x5.k.d(aVar.b);
-            synchronized (d) {
-                i10 = d.a;
-                d.a = i10 + 1;
-            }
-            return d.e(new j(i10, 1, bundle, 1)).continueWith(lVar, x5.b.a);
-        } catch (InterruptedException | ExecutionException e) {
-            return Tasks.forException(e);
+            this.b.transact(i10, parcel, null, 1);
+        } finally {
+            parcel.recycle();
         }
     }
 
-    public void C(boolean z4) {
-        ArrayList arrayList = (ArrayList) this.c;
-        ArrayList arrayList2 = (ArrayList) this.b;
-        ArrayList arrayList3 = (ArrayList) this.a;
-        for (int i10 = 0; i10 < arrayList3.size(); i10++) {
-            ((ValueAnimator) arrayList3.get(i10)).cancel();
-            if (z4) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ArrayList) this.d).get(i10)).floatValue(), 0.0f);
-                ofFloat.addUpdateListener(new wx0(this, i10, 0));
-                ofFloat.setDuration(100L);
-                ofFloat.start();
-            }
-        }
-        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-            ((ValueAnimator) arrayList2.get(i11)).cancel();
-            if (z4) {
-                ValueAnimator ofFloat2 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.e).get(i11)).floatValue(), 0.0f);
-                ofFloat2.addUpdateListener(new wx0(this, i11, 1));
-                ofFloat2.setDuration(100L);
-                ofFloat2.start();
-            }
-        }
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            ((ValueAnimator) arrayList.get(i12)).cancel();
-            if (z4) {
-                ValueAnimator ofFloat3 = ValueAnimator.ofFloat(((Float) ((ArrayList) this.f).get(i12)).floatValue(), 0.0f);
-                ofFloat3.addUpdateListener(new wx0(this, i12, 2));
-                ofFloat3.setDuration(100L);
-                ofFloat3.start();
-            }
-        }
-        arrayList.clear();
-        arrayList2.clear();
-        arrayList3.clear();
+    public Parcel I0() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
     }
 
-    public void D() {
-        Bitmap bitmap = (Bitmap) this.c;
-        RectF rectF = (RectF) this.d;
-        Matrix matrix = (Matrix) this.f;
-        BitmapShader bitmapShader = (BitmapShader) this.e;
-        if (bitmapShader == null) {
-            return;
-        }
-        float width = rectF.width() / bitmap.getWidth();
-        float height = rectF.height() / bitmap.getHeight();
-        matrix.reset();
-        matrix.postTranslate(rectF.left, rectF.top);
-        matrix.preScale(width, height);
-        bitmapShader.setLocalMatrix(matrix);
-    }
-
-    public void E(o2 o2Var) {
-        e0 e0Var = new e0(4, 23);
-        if (((s8.v) this.b).isEmpty()) {
-            e(e0Var, (v) this.e, o2Var);
-            if (!b7.a((v) this.f, (v) this.e)) {
-                e(e0Var, (v) this.f, o2Var);
-            }
-            if (!b7.a((v) this.d, (v) this.e) && !b7.a((v) this.d, (v) this.f)) {
-                e(e0Var, (v) this.d, o2Var);
-            }
-        } else {
-            for (int i10 = 0; i10 < ((s8.v) this.b).size(); i10++) {
-                e(e0Var, (v) ((s8.v) this.b).get(i10), o2Var);
-            }
-            if (!((s8.v) this.b).contains((v) this.d)) {
-                e(e0Var, (v) this.d, o2Var);
-            }
-        }
-        this.c = e0Var.d();
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public Paint G(String str) {
-        str.getClass();
-        switch (str) {
-            case "paintChatActionText2":
-                return (TextPaint) this.b;
-            case "paintChatBotButton":
-                return (TextPaint) this.c;
-            case "paintChatActionBackgroundDarken":
-                return (Paint) this.e;
-            case "paintChatActionBackgroundSelected":
-                return (Paint) this.d;
-            case "paintChatActionText":
-                return (TextPaint) this.a;
-            default:
-                return j6.S0(str);
+    public void J0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.b.transact(i10, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public boolean a() {
-        return ((o4) this.f).y0;
+    public Parcel K0() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
     }
 
-    public void c(String str, String str2) {
-        HashMap hashMap = (HashMap) this.f;
-        if (hashMap == null) {
-            throw new IllegalStateException("Property \"autoMetadata\" has not been set");
-        }
-        hashMap.put(str, str2);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public int d0(int i10) {
-        return x0(i10);
-    }
-
-    public void e(e0 e0Var, v vVar, o2 o2Var) {
-        if (vVar == null) {
-            return;
-        }
-        if (o2Var.b(vVar.a) != -1) {
-            e0Var.x(vVar, o2Var);
-            return;
-        }
-        o2 o2Var2 = (o2) ((n0) this.c).get(vVar);
-        if (o2Var2 != null) {
-            e0Var.x(vVar, o2Var2);
+    public void L0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.b.transact(i10, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public int f1(int i10) {
-        return x0(i10);
-    }
-
-    public b9.b g() {
-        b6.m.i((String) this.f, "setActionToken is required before calling build().");
-        new String((String) this.e);
-        u("actionToken", (String) this.f);
-        String str = (String) this.c;
-        if ((str == null ? null : new String(str)) == null) {
-            this.c = "AssistAction";
-            u("name", "AssistAction");
-        }
-        String str2 = (String) this.d;
-        if ((str2 != null ? new String(str2) : null) == null) {
-            String valueOf = String.valueOf((String) this.f);
-            String concat = valueOf.length() != 0 ? "https://developers.google.com/actions?invocation=".concat(valueOf) : new String("https://developers.google.com/actions?invocation=");
-            b6.m.h(concat);
-            this.d = concat;
-            u("url", concat);
-        }
-        b6.m.i((String) this.c, "setObject is required before calling build().");
-        b6.m.i((String) this.d, "setObject is required before calling build().");
-        return new b9.b((String) this.b, (String) this.c, (String) this.d, null, new b9.a(), (String) this.e, (Bundle) this.a);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public Drawable getDrawable(String str) {
-        o4 o4Var = (o4) this.f;
-        a aVar = o4Var.A0;
-        if (str.equals("drawableMsgIn")) {
-            if (o4Var.B0 == null) {
-                o4Var.B0 = new g5(0, false, false, aVar);
-            }
-            return o4Var.B0;
-        }
-        if (str.equals("drawableMsgInSelected")) {
-            if (o4Var.C0 == null) {
-                o4Var.C0 = new g5(0, false, true, aVar);
-            }
-            return o4Var.C0;
-        }
-        if (str.equals("drawableMsgOut")) {
-            if (o4Var.D0 == null) {
-                o4Var.D0 = new g5(0, true, false, aVar);
-            }
-            return o4Var.D0;
-        }
-        if (str.equals("drawableMsgOutSelected")) {
-            if (o4Var.E0 == null) {
-                o4Var.E0 = new g5(0, true, true, aVar);
-            }
-            return o4Var.E0;
-        }
-        if (str.equals("drawableMsgInMedia")) {
-            if (o4Var.F0 == null) {
-                o4Var.F0 = new g5(1, false, false, aVar);
-            }
-            o4Var.F0.invalidateSelf();
-            return o4Var.F0;
-        }
-        if (str.equals("drawableMsgInMediaSelected")) {
-            if (o4Var.G0 == null) {
-                o4Var.G0 = new g5(1, false, true, aVar);
-            }
-            return o4Var.G0;
-        }
-        if (str.equals("drawableMsgOutMedia")) {
-            if (o4Var.H0 == null) {
-                o4Var.H0 = new g5(1, true, false, aVar);
-            }
-            return o4Var.H0;
-        }
-        if (!str.equals("drawableMsgOutMediaSelected")) {
-            return j6.O0(str);
-        }
-        if (o4Var.I0 == null) {
-            o4Var.I0 = new g5(1, true, true, aVar);
-        }
-        return o4Var.I0;
-    }
-
-    public l0 h() {
-        String str = ((Long) this.a) == null ? " timestamp" : "";
-        if (((String) this.b) == null) {
-            str = str.concat(" type");
-        }
-        if (((u1) this.c) == null) {
-            str = w2.k(str, " app");
-        }
-        if (((v1) this.d) == null) {
-            str = w2.k(str, " device");
-        }
-        if (str.isEmpty()) {
-            return new l0(((Long) this.a).longValue(), (String) this.b, (u1) this.c, (v1) this.d, (w1) this.e, (z1) this.f);
-        }
-        throw new IllegalStateException("Missing required properties:".concat(str));
-    }
-
-    public u0 i() {
-        String str = ((Integer) this.b) == null ? " batteryVelocity" : "";
-        if (((Boolean) this.c) == null) {
-            str = str.concat(" proximityOn");
-        }
-        if (((Integer) this.d) == null) {
-            str = w2.k(str, " orientation");
-        }
-        if (((Long) this.e) == null) {
-            str = w2.k(str, " ramUsed");
-        }
-        if (((Long) this.f) == null) {
-            str = w2.k(str, " diskUsed");
-        }
-        if (str.isEmpty()) {
-            return new u0((Double) this.a, ((Integer) this.b).intValue(), ((Boolean) this.c).booleanValue(), ((Integer) this.d).intValue(), ((Long) this.e).longValue(), ((Long) this.f).longValue());
-        }
-        throw new IllegalStateException("Missing required properties:".concat(str));
-    }
-
-    public h j() {
-        String str = ((String) this.b) == null ? " transportName" : "";
-        if (((y2.l) this.c) == null) {
-            str = str.concat(" encodedPayload");
-        }
-        if (((Long) this.d) == null) {
-            str = w2.k(str, " eventMillis");
-        }
-        if (((Long) this.e) == null) {
-            str = w2.k(str, " uptimeMillis");
-        }
-        if (((HashMap) this.f) == null) {
-            str = w2.k(str, " autoMetadata");
-        }
-        if (str.isEmpty()) {
-            return new h((String) this.b, (Integer) this.a, (y2.l) this.c, ((Long) this.d).longValue(), ((Long) this.e).longValue(), (HashMap) this.f);
-        }
-        throw new IllegalStateException("Missing required properties:".concat(str));
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public void l(float f10, float f11, int i10, int i11) {
-        j6.q(f10, f11, i10, i11);
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public /* synthetic */ boolean m0() {
-        return false;
-    }
-
-    public Task n(Task task) {
-        return task.continueWith(new tb0(1), new a1.c(this, 6));
-    }
-
-    public ColorStateList r(Context context, int i10) {
-        if (i10 == R.drawable.abc_edit_text_material) {
-            return r7.a(context, R.color.abc_tint_edittext);
-        }
-        if (i10 == R.drawable.abc_switch_track_mtrl_alpha) {
-            return r7.a(context, R.color.abc_tint_switch_track);
-        }
-        if (i10 != R.drawable.abc_switch_thumb_material) {
-            if (i10 == R.drawable.abc_btn_default_mtrl_shape) {
-                return m(context, d3.c(context, R.attr.colorButtonNormal));
-            }
-            if (i10 == R.drawable.abc_btn_borderless_material) {
-                return m(context, 0);
-            }
-            if (i10 == R.drawable.abc_btn_colored_material) {
-                return m(context, d3.c(context, R.attr.colorAccent));
-            }
-            if (i10 == R.drawable.abc_spinner_mtrl_am_alpha || i10 == R.drawable.abc_spinner_textfield_background_material) {
-                return r7.a(context, R.color.abc_tint_spinner);
-            }
-            if (f(i10, (int[]) this.b)) {
-                return d3.d(context, R.attr.colorControlNormal);
-            }
-            if (f(i10, (int[]) this.e)) {
-                return r7.a(context, R.color.abc_tint_default);
-            }
-            if (f(i10, (int[]) this.f)) {
-                return r7.a(context, R.color.abc_tint_btn_checkable);
-            }
-            if (i10 == R.drawable.abc_seekbar_thumb_material) {
-                return r7.a(context, R.color.abc_tint_seek_thumb);
-            }
-            return null;
-        }
-        int[][] iArr = new int[3][];
-        int[] iArr2 = new int[3];
-        ColorStateList d = d3.d(context, R.attr.colorSwitchThumbNormal);
-        if (d == null || !d.isStateful()) {
-            iArr[0] = d3.b;
-            iArr2[0] = d3.b(context, R.attr.colorSwitchThumbNormal);
-            iArr[1] = d3.e;
-            iArr2[1] = d3.c(context, R.attr.colorControlActivated);
-            iArr[2] = d3.f;
-            iArr2[2] = d3.c(context, R.attr.colorSwitchThumbNormal);
-        } else {
-            int[] iArr3 = d3.b;
-            iArr[0] = iArr3;
-            iArr2[0] = d.getColorForState(iArr3, 0);
-            iArr[1] = d3.e;
-            iArr2[1] = d3.c(context, R.attr.colorControlActivated);
-            iArr[2] = d3.f;
-            iArr2[2] = d.getDefaultColor();
-        }
-        return new ColorStateList(iArr, iArr2);
-    }
-
-    public void t(Throwable th2, Thread thread, String str, String str2, long j10, boolean z4) {
-        Iterator<Map.Entry<Thread, StackTraceElement[]>> it;
-        c0 c0Var;
-        boolean equals = str2.equals("crash");
-        i9.q qVar = (i9.q) this.a;
-        Context context = qVar.a;
-        int i10 = context.getResources().getConfiguration().orientation;
-        c0 c0Var2 = qVar.d;
-        Stack stack = new Stack();
-        for (Throwable th3 = th2; th3 != null; th3 = th3.getCause()) {
-            stack.push(th3);
-        }
-        f fVar = null;
-        while (!stack.isEmpty()) {
-            Throwable th4 = (Throwable) stack.pop();
-            fVar = new f(th4.getLocalizedMessage(), th4.getClass().getName(), c0Var2.v(th4.getStackTrace()), fVar, 12);
-        }
-        f fVar2 = fVar;
-        a aVar = new a();
-        aVar.b = str2;
-        aVar.a = Long.valueOf(j10);
-        t1 b10 = f9.c.a.b(context);
-        int i11 = ((t0) b10).c;
-        Boolean valueOf = i11 > 0 ? Boolean.valueOf(i11 != 100) : null;
-        ArrayList a2 = f9.c.a(context);
-        ArrayList arrayList = new ArrayList();
-        StackTraceElement[] stackTraceElementArr = (StackTraceElement[]) fVar2.d;
-        String name = thread.getName();
-        if (name == null) {
-            throw new NullPointerException("Null name");
-        }
-        List d = i9.q.d(stackTraceElementArr, 4);
-        if (d == null) {
-            throw new NullPointerException("Null frames");
-        }
-        arrayList.add(new r0(name, 4, d));
-        if (z4) {
-            Iterator<Map.Entry<Thread, StackTraceElement[]>> it2 = Thread.getAllStackTraces().entrySet().iterator();
-            while (it2.hasNext()) {
-                Map.Entry<Thread, StackTraceElement[]> next = it2.next();
-                Thread key = next.getKey();
-                if (key.equals(thread)) {
-                    it = it2;
-                    c0Var = c0Var2;
-                } else {
-                    StackTraceElement[] v = c0Var2.v(next.getValue());
-                    String name2 = key.getName();
-                    if (name2 == null) {
-                        throw new NullPointerException("Null name");
-                    }
-                    it = it2;
-                    List d10 = i9.q.d(v, 0);
-                    if (d10 == null) {
-                        throw new NullPointerException("Null frames");
-                    }
-                    c0Var = c0Var2;
-                    arrayList.add(new r0(name2, 0, d10));
-                }
-                it2 = it;
-                c0Var2 = c0Var;
-            }
-        }
-        List unmodifiableList = DesugarCollections.unmodifiableList(arrayList);
-        p0 c3 = i9.q.c(fVar2, 0);
-        q0 q0Var = new q0(0L, "0", "0");
-        List a10 = qVar.a();
-        if (a10 == null) {
-            throw new NullPointerException("Null binaries");
-        }
-        aVar.c = new m0(new k9.n0(unmodifiableList, c3, null, q0Var, a10), null, null, valueOf, b10, a2, i10);
-        aVar.d = qVar.b(i10);
-        l0 h = aVar.h();
-        n9.a aVar2 = (n9.a) this.b;
-        e eVar = (e) this.d;
-        s3 s3Var = (s3) this.e;
-        aVar2.d(d(b(h, eVar, s3Var), s3Var), str, equals);
-    }
-
-    public void u(String str, String... strArr) {
-        Bundle bundle = (Bundle) this.a;
-        String[] strArr2 = (String[]) Arrays.copyOf(strArr, strArr.length);
-        if (strArr2.length <= 0) {
-            j7.d0.a("String array is empty and is ignored by put method.");
-            return;
-        }
-        int i10 = 0;
-        for (int i11 = 0; i11 < Math.min(strArr2.length, 100); i11++) {
-            String str2 = strArr2[i11];
-            strArr2[i10] = str2;
-            if (strArr2[i11] == null) {
-                StringBuilder sb = new StringBuilder(59);
-                sb.append("String at ");
-                sb.append(i11);
-                sb.append(" is null and is ignored by put method.");
-                j7.d0.a(sb.toString());
-            } else {
-                int i12 = 20000;
-                if (str2.length() > 20000) {
-                    StringBuilder sb2 = new StringBuilder(53);
-                    sb2.append("String at ");
-                    sb2.append(i11);
-                    sb2.append(" is too long, truncating string.");
-                    j7.d0.a(sb2.toString());
-                    String str3 = strArr2[i10];
-                    if (str3.length() > 20000) {
-                        if (Character.isHighSurrogate(str3.charAt(19999)) && Character.isLowSurrogate(str3.charAt(20000))) {
-                            i12 = 19999;
-                        }
-                        str3 = str3.substring(0, i12);
-                    }
-                    strArr2[i10] = str3;
-                }
-                i10++;
-            }
-        }
-        if (i10 > 0) {
-            Object[] objArr = (String[]) Arrays.copyOfRange(strArr2, 0, i10);
-            if (objArr.length >= 100) {
-                j7.d0.a("Input Array of elements is too big, cutting off.");
-                objArr = Arrays.copyOf(objArr, 100);
-            }
-            bundle.putStringArray(str, (String[]) objArr);
-        }
-    }
-
-    public Task v(Executor executor, String str) {
-        TaskCompletionSource taskCompletionSource;
-        String str2;
-        ArrayList b10 = ((n9.a) this.b).b();
-        ArrayList arrayList = new ArrayList();
-        int size = b10.size();
-        int i10 = 0;
-        while (i10 < size) {
-            int i11 = i10 + 1;
-            File file = (File) b10.get(i10);
+    public Parcel M0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
             try {
-                l9.a aVar = n9.a.g;
-                String e = n9.a.e(file);
-                aVar.getClass();
-                arrayList.add(new i9.b(l9.a.i(e), file.getName(), file));
-            } catch (IOException e6) {
-                Log.w("FirebaseCrashlytics", "Could not load report file " + file + "; deleting", e6);
-                file.delete();
+                this.b.transact(i10, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e7) {
+                obtain.recycle();
+                throw e7;
             }
-            i10 = i11;
+        } finally {
+            parcel.recycle();
         }
-        ArrayList arrayList2 = new ArrayList();
-        int size2 = arrayList.size();
-        int i12 = 0;
-        while (i12 < size2) {
-            int i13 = i12 + 1;
-            i9.b bVar = (i9.b) arrayList.get(i12);
-            if (str == null || str.equals(bVar.b)) {
-                o9.a aVar2 = (o9.a) this.c;
-                if (bVar.a.f == null) {
+    }
+
+    public Parcel N0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.b.transact(i10, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e7) {
+                obtain.recycle();
+                throw e7;
+            }
+        } finally {
+            parcel.recycle();
+        }
+    }
+
+    public Parcel O0() {
+        switch (this.a) {
+            case 1:
+                Parcel obtain = Parcel.obtain();
+                obtain.writeInterfaceToken(this.c);
+                return obtain;
+            case 7:
+                Parcel obtain2 = Parcel.obtain();
+                obtain2.writeInterfaceToken(this.c);
+                return obtain2;
+            case 8:
+                Parcel obtain3 = Parcel.obtain();
+                obtain3.writeInterfaceToken(this.c);
+                return obtain3;
+            case 9:
+                Parcel obtain4 = Parcel.obtain();
+                obtain4.writeInterfaceToken(this.c);
+                return obtain4;
+            default:
+                Parcel obtain5 = Parcel.obtain();
+                obtain5.writeInterfaceToken(this.c);
+                return obtain5;
+        }
+    }
+
+    public Parcel P0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            try {
+                this.b.transact(i10, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e7) {
+                obtain.recycle();
+                throw e7;
+            }
+        } finally {
+            parcel.recycle();
+        }
+    }
+
+    public Parcel Q0(Parcel parcel, int i10) {
+        switch (this.a) {
+            case 1:
+                Parcel obtain = Parcel.obtain();
+                try {
                     try {
-                        str2 = (String) y.a(((ca.c) ((i9.w) this.f).d).d());
-                    } catch (Exception e10) {
-                        Log.w("FirebaseCrashlytics", "Failed to retrieve Firebase Installation ID.", e10);
-                        str2 = null;
+                        this.b.transact(i10, parcel, obtain, 0);
+                        obtain.readException();
+                        return obtain;
+                    } catch (RuntimeException e7) {
+                        obtain.recycle();
+                        throw e7;
                     }
-                    g8 a2 = bVar.a.a();
-                    a2.d = str2;
-                    bVar = new i9.b(a2.a(), bVar.b, bVar.c);
+                } finally {
                 }
-                boolean z4 = str != null;
-                o9.c cVar = aVar2.a;
-                synchronized (cVar.f) {
+            case 10:
+                Parcel obtain2 = Parcel.obtain();
+                try {
                     try {
-                        taskCompletionSource = new TaskCompletionSource();
-                        if (z4) {
-                            ((AtomicInteger) cVar.i.b).getAndIncrement();
-                            if (cVar.f.size() < cVar.e) {
-                                f9.b bVar2 = f9.b.a;
-                                bVar2.b("Enqueueing report: " + bVar.b);
-                                bVar2.b("Queue size: " + cVar.f.size());
-                                cVar.g.execute(new com.google.android.gms.common.api.internal.s1(cVar, bVar, taskCompletionSource, 7));
-                                bVar2.b("Closing task for report: " + bVar.b);
-                                taskCompletionSource.trySetResult(bVar);
-                            } else {
-                                cVar.a();
-                                String str3 = "Dropping report due to queue being full: " + bVar.b;
-                                if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                                    Log.d("FirebaseCrashlytics", str3, null);
-                                }
-                                ((AtomicInteger) cVar.i.c).getAndIncrement();
-                                taskCompletionSource.trySetResult(bVar);
-                            }
-                        } else {
-                            cVar.b(bVar, taskCompletionSource);
-                        }
+                        this.b.transact(i10, parcel, obtain2, 0);
+                        obtain2.readException();
+                        return obtain2;
                     } finally {
                     }
+                } catch (RuntimeException e10) {
+                    obtain2.recycle();
+                    throw e10;
                 }
-                arrayList2.add(taskCompletionSource.getTask().continueWith(executor, new f0.d(this)));
-            }
-            i12 = i13;
+            default:
+                Parcel obtain3 = Parcel.obtain();
+                try {
+                    try {
+                        this.b.transact(i10, parcel, obtain3, 0);
+                        obtain3.readException();
+                        return obtain3;
+                    } catch (RuntimeException e11) {
+                        obtain3.recycle();
+                        throw e11;
+                    }
+                } finally {
+                }
         }
-        return Tasks.whenAll(arrayList2);
     }
 
-    public void w(float f10, float f11, float f12, float f13) {
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(f10, f11, f12, f13);
-        RectF rectF2 = (RectF) this.d;
-        if (rectF2.top == rectF.top && rectF2.bottom == rectF.bottom && rectF2.left == rectF.left && rectF2.right == rectF.right) {
-            return;
+    public void R0(Parcel parcel) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.b.transact(3, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
         }
-        rectF2.set(rectF);
-        D();
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public ColorFilter x() {
-        return j6.v3;
+    public void S0(Parcel parcel, int i10) {
+        Parcel obtain;
+        switch (this.a) {
+            case 1:
+                obtain = Parcel.obtain();
+                try {
+                    this.b.transact(i10, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 8:
+                obtain = Parcel.obtain();
+                try {
+                    this.b.transact(i10, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 9:
+                obtain = Parcel.obtain();
+                try {
+                    this.b.transact(i10, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            case 10:
+                obtain = Parcel.obtain();
+                try {
+                    this.b.transact(i10, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+            default:
+                obtain = Parcel.obtain();
+                try {
+                    this.b.transact(i10, parcel, obtain, 0);
+                    obtain.readException();
+                    return;
+                } finally {
+                }
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.f6
-    public int x0(int i10) {
-        return ((o4) this.f).z0.get(i10, j6.w0(null, i10, false));
+    public void T0(Parcel parcel, int i10) {
+        try {
+            this.b.transact(i10, parcel, null, 1);
+        } finally {
+            parcel.recycle();
+        }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x00f5 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:30:? A[ADDED_TO_REGION, RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public void y(String str, String str2, Bundle bundle) {
-        int i10;
-        String str3;
-        z9.f fVar;
-        int a2;
-        PackageInfo d;
-        bundle.putString("scope", str2);
-        bundle.putString("sender", str);
-        bundle.putString("subtype", str);
-        w8.g gVar = (w8.g) this.a;
-        gVar.a();
-        bundle.putString("gmp_app_id", gVar.c.b);
-        com.google.firebase.messaging.n nVar = (com.google.firebase.messaging.n) this.b;
-        synchronized (nVar) {
+    public Parcel U0() {
+        Parcel obtain = Parcel.obtain();
+        obtain.writeInterfaceToken(this.c);
+        return obtain;
+    }
+
+    public Parcel V0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
             try {
-                if (nVar.a == 0 && (d = nVar.d("com.google.android.gms")) != null) {
-                    nVar.a = d.versionCode;
-                }
-                i10 = nVar.a;
-            } finally {
+                this.b.transact(i10, parcel, obtain, 0);
+                obtain.readException();
+                return obtain;
+            } catch (RuntimeException e7) {
+                obtain.recycle();
+                throw e7;
             }
+        } finally {
+            parcel.recycle();
         }
-        bundle.putString("gmsv", Integer.toString(i10));
-        bundle.putString("osv", Integer.toString(Build.VERSION.SDK_INT));
-        bundle.putString("app_ver", ((com.google.firebase.messaging.n) this.b).a());
-        bundle.putString("app_ver_name", ((com.google.firebase.messaging.n) this.b).b());
-        w8.g gVar2 = (w8.g) this.a;
-        gVar2.a();
-        try {
-            str3 = Base64.encodeToString(MessageDigest.getInstance("SHA-1").digest(gVar2.b.getBytes()), 11);
-        } catch (NoSuchAlgorithmException unused) {
-            str3 = "[HASH-ERROR]";
-        }
-        bundle.putString("firebase-app-name-hash", str3);
-        try {
-            String str4 = ((ca.a) Tasks.await(((ca.c) ((ca.d) this.f)).e())).a;
-            if (TextUtils.isEmpty(str4)) {
-                Log.w("FirebaseMessaging", "FIS auth token is empty");
-            } else {
-                bundle.putString("Goog-Firebase-Installations-Auth", str4);
-            }
-        } catch (InterruptedException e) {
-            e = e;
-            Log.e("FirebaseMessaging", "Failed to get FIS auth token", e);
-            bundle.putString("appid", (String) Tasks.await(((ca.c) ((ca.d) this.f)).d()));
-            bundle.putString("cliv", "fcm-23.4.0");
-            fVar = (z9.f) ((ba.b) this.e).get();
-            ja.b bVar = (ja.b) ((ba.b) this.d).get();
-            if (fVar == null) {
-                return;
-            } else {
-                return;
-            }
-        } catch (ExecutionException e6) {
-            e = e6;
-            Log.e("FirebaseMessaging", "Failed to get FIS auth token", e);
-            bundle.putString("appid", (String) Tasks.await(((ca.c) ((ca.d) this.f)).d()));
-            bundle.putString("cliv", "fcm-23.4.0");
-            fVar = (z9.f) ((ba.b) this.e).get();
-            ja.b bVar2 = (ja.b) ((ba.b) this.d).get();
-            if (fVar == null) {
-            }
-        }
-        bundle.putString("appid", (String) Tasks.await(((ca.c) ((ca.d) this.f)).d()));
-        bundle.putString("cliv", "fcm-23.4.0");
-        fVar = (z9.f) ((ba.b) this.e).get();
-        ja.b bVar22 = (ja.b) ((ba.b) this.d).get();
-        if (fVar == null || bVar22 == null || (a2 = ((z9.c) fVar).a()) == 1) {
-            return;
-        }
-        bundle.putString("Firebase-Client-Log-Type", Integer.toString(m1.j.c(a2)));
-        bundle.putString("Firebase-Client", bVar22.a());
     }
 
-    public void z(float f10, float f11, float f12, float f13) {
-        Matrix matrix = (Matrix) this.f;
-        matrix.reset();
-        Bitmap bitmap = (Bitmap) this.c;
-        matrix.postRotate(f13, bitmap.getWidth() / 2.0f, bitmap.getHeight() / 2.0f);
-        matrix.postScale(f12, f12);
-        matrix.postTranslate(f10, f11);
-        ((BitmapShader) this.e).setLocalMatrix(matrix);
-    }
-
-    public a(int i10, int i11) {
-        Paint paint = new Paint(1);
-        this.a = paint;
-        this.d = new RectF();
-        this.f = new Matrix();
-        Bitmap createBitmap = Bitmap.createBitmap(Math.max(1, i10), Math.max(1, i11), Bitmap.Config.ARGB_8888);
-        this.c = createBitmap;
-        this.b = new Canvas(createBitmap);
-        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-        BitmapShader bitmapShader = new BitmapShader(createBitmap, tileMode, tileMode);
-        this.e = bitmapShader;
-        paint.setShader(bitmapShader);
-        D();
-    }
-
-    @Override // org.telegram.ui.ActionBar.f6
-    public /* synthetic */ void J0(int i10, int i11) {
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        switch (this.a) {
+        }
+        return this.b;
     }
 }

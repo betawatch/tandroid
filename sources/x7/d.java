@@ -1,33 +1,57 @@
 package x7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class d extends i {
-    public final /* synthetic */ int c;
-    public final float d;
+import java.util.Map;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(float f10, int i10) {
-        super(0, Float.valueOf(Math.max(f10, 0.0f)));
-        this.c = i10;
-        switch (i10) {
-            case 1:
-                super(2, Float.valueOf(Math.max(f10, 0.0f)));
-                this.d = Math.max(f10, 0.0f);
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public abstract class d implements Map.Entry {
+    public final /* synthetic */ int a;
+
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        switch (this.a) {
+            case 0:
+                if (obj instanceof Map.Entry) {
+                    Map.Entry entry = (Map.Entry) obj;
+                    if (!w7.l8.a(getKey(), entry.getKey()) || !w7.l8.a(getValue(), entry.getValue())) {
+                    }
+                }
                 break;
             default:
-                this.d = Math.max(f10, 0.0f);
+                if (obj instanceof Map.Entry) {
+                    Map.Entry entry2 = (Map.Entry) obj;
+                    if (!w7.i9.a(getKey(), entry2.getKey()) || !w7.i9.a(getValue(), entry2.getValue())) {
+                    }
+                }
                 break;
+        }
+        return false;
+    }
+
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        switch (this.a) {
+            case 0:
+                Object key = getKey();
+                Object value = getValue();
+                return (key == null ? 0 : key.hashCode()) ^ (value != null ? value.hashCode() : 0);
+            default:
+                Object key2 = getKey();
+                Object value2 = getValue();
+                return (key2 == null ? 0 : key2.hashCode()) ^ (value2 != null ? value2.hashCode() : 0);
         }
     }
 
-    @Override // x7.i
     public final String toString() {
-        switch (this.c) {
+        switch (this.a) {
             case 0:
-                return "[Dash: length=" + this.d + "]";
+                return getKey() + "=" + getValue();
             default:
-                return "[Gap: length=" + this.d + "]";
+                return a4.a.C(String.valueOf(getKey()), "=", String.valueOf(getValue()));
         }
+    }
+
+    public /* synthetic */ d(int i10, boolean z10) {
+        this.a = i10;
     }
 }

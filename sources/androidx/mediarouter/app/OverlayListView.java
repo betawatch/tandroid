@@ -7,10 +7,11 @@ import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.view.animation.Interpolator;
 import android.widget.ListView;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class OverlayListView extends ListView {
     public final ArrayList a;
@@ -22,48 +23,48 @@ public final class OverlayListView extends ListView {
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        boolean z4;
+        boolean z10;
         super.onDraw(canvas);
         ArrayList arrayList = this.a;
         if (arrayList.size() > 0) {
             Iterator it = arrayList.iterator();
             while (it.hasNext()) {
-                q0 q0Var = (q0) it.next();
-                BitmapDrawable bitmapDrawable = q0Var.a;
+                p0 p0Var = (p0) it.next();
+                BitmapDrawable bitmapDrawable = p0Var.a;
                 if (bitmapDrawable != null) {
                     bitmapDrawable.draw(canvas);
                 }
                 long drawingTime = getDrawingTime();
-                BitmapDrawable bitmapDrawable2 = q0Var.a;
-                Rect rect = q0Var.c;
-                if (q0Var.k) {
-                    z4 = false;
+                BitmapDrawable bitmapDrawable2 = p0Var.a;
+                Rect rect = p0Var.c;
+                if (p0Var.k) {
+                    z10 = false;
                 } else {
-                    float max = q0Var.j ? Math.max(0.0f, Math.min(1.0f, (drawingTime - q0Var.i) / q0Var.e)) : 0.0f;
-                    Interpolator interpolator = q0Var.d;
+                    float max = p0Var.j ? Math.max(0.0f, Math.min(1.0f, (drawingTime - p0Var.i) / p0Var.e)) : 0.0f;
+                    Interpolator interpolator = p0Var.d;
                     float interpolation = interpolator == null ? max : interpolator.getInterpolation(max);
-                    int i10 = (int) (q0Var.g * interpolation);
-                    Rect rect2 = q0Var.f;
+                    int i10 = (int) (p0Var.g * interpolation);
+                    Rect rect2 = p0Var.f;
                     rect.top = rect2.top + i10;
                     rect.bottom = rect2.bottom + i10;
-                    float w10 = e2.c.w(q0Var.h, 1.0f, interpolation, 1.0f);
-                    q0Var.b = w10;
+                    float z11 = e2.z(p0Var.h, 1.0f, interpolation, 1.0f);
+                    p0Var.b = z11;
                     if (bitmapDrawable2 != null) {
-                        bitmapDrawable2.setAlpha((int) (w10 * 255.0f));
+                        bitmapDrawable2.setAlpha((int) (z11 * 255.0f));
                         bitmapDrawable2.setBounds(rect);
                     }
-                    if (q0Var.j && max >= 1.0f) {
-                        q0Var.k = true;
-                        af.c cVar = q0Var.l;
-                        if (cVar != null) {
-                            v vVar = (v) cVar.c;
-                            vVar.W.remove((c2.b0) cVar.b);
-                            vVar.S.notifyDataSetChanged();
+                    if (p0Var.j && max >= 1.0f) {
+                        p0Var.k = true;
+                        n4.y yVar = p0Var.l;
+                        if (yVar != null) {
+                            u uVar = (u) yVar.c;
+                            uVar.Z.remove((p4.v) yVar.b);
+                            uVar.V.notifyDataSetChanged();
                         }
                     }
-                    z4 = !q0Var.k;
+                    z10 = !p0Var.k;
                 }
-                if (!z4) {
+                if (!z10) {
                     it.remove();
                 }
             }

@@ -1,45 +1,142 @@
 package org.telegram.ui.Cells;
 
+import android.graphics.Canvas;
 import android.view.View;
-import android.widget.TextView;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.view.animation.AccelerateInterpolator;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d8 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j8 b;
+public final class d8 extends FrameLayout {
+    public org.telegram.ui.Components.x9 a;
+    public TLRPC.Document b;
+    public Object c;
+    public long d;
+    public boolean e;
+    public float f;
+    public boolean h;
+    public sg.e1 n;
+    public boolean r;
+    public boolean s;
+    public org.telegram.ui.ActionBar.f6 v;
 
-    public /* synthetic */ d8(j8 j8Var, int i10) {
-        this.a = i10;
-        this.b = j8Var;
+    static {
+        new AccelerateInterpolator(0.5f);
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                this.b.getClass();
-                break;
-            default:
-                j8 j8Var = this.b;
-                TextView textView = j8Var.B;
-                TextView textView2 = j8Var.y;
-                eg.c1 c1Var = j8Var.C;
-                if (c1Var.getVisibility() != 0 || !c1Var.r.isEnabled()) {
-                    if (textView2.getVisibility() != 0 || !textView2.isEnabled()) {
-                        if (textView.getVisibility() == 0 && textView.isEnabled()) {
-                            textView.performClick();
-                            break;
-                        }
-                    } else {
-                        textView2.performClick();
-                        break;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        boolean z10;
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        org.telegram.ui.Components.x9 x9Var = this.a;
+        if (view == x9Var && (((z10 = this.e) && this.f != 0.8f) || (!z10 && this.f != 1.0f))) {
+            long currentTimeMillis = System.currentTimeMillis();
+            long j10 = currentTimeMillis - this.d;
+            this.d = currentTimeMillis;
+            if (this.e) {
+                float f7 = this.f;
+                if (f7 != 0.8f) {
+                    float f10 = f7 - (j10 / 400.0f);
+                    this.f = f10;
+                    if (f10 < 0.8f) {
+                        this.f = 0.8f;
                     }
-                } else {
-                    c1Var.performClick();
-                    break;
+                    x9Var.setScaleX(this.f);
+                    x9Var.setScaleY(this.f);
+                    x9Var.invalidate();
+                    invalidate();
                 }
-                break;
+            }
+            float f11 = (j10 / 400.0f) + this.f;
+            this.f = f11;
+            if (f11 > 1.0f) {
+                this.f = 1.0f;
+            }
+            x9Var.setScaleX(this.f);
+            x9Var.setScaleY(this.f);
+            x9Var.invalidate();
+            invalidate();
         }
+        return drawChild;
+    }
+
+    public Object getParentObject() {
+        return this.c;
+    }
+
+    public MessageObject.SendAnimationData getSendAnimationData() {
+        org.telegram.ui.Components.x9 x9Var = this.a;
+        ImageReceiver imageReceiver = x9Var.getImageReceiver();
+        if (!imageReceiver.hasNotThumb()) {
+            return null;
+        }
+        MessageObject.SendAnimationData sendAnimationData = new MessageObject.SendAnimationData();
+        x9Var.getLocationInWindow(new int[2]);
+        sendAnimationData.x = imageReceiver.getCenterX() + r3[0];
+        sendAnimationData.y = imageReceiver.getCenterY() + r3[1];
+        sendAnimationData.width = imageReceiver.getImageWidth();
+        sendAnimationData.height = imageReceiver.getImageHeight();
+        return sendAnimationData;
+    }
+
+    public TLRPC.Document getSticker() {
+        return this.b;
+    }
+
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        if (this.b == null) {
+            return;
+        }
+        String str = null;
+        for (int i10 = 0; i10 < this.b.attributes.size(); i10++) {
+            TLRPC.DocumentAttribute documentAttribute = this.b.attributes.get(i10);
+            if (documentAttribute instanceof TLRPC.TL_documentAttributeSticker) {
+                String str2 = documentAttribute.alt;
+                str = (str2 == null || str2.length() <= 0) ? null : documentAttribute.alt;
+            }
+        }
+        if (str != null) {
+            StringBuilder g10 = w.f.g(str, " ");
+            g10.append(LocaleController.getString(R.string.AttachSticker));
+            accessibilityNodeInfo.setText(g10.toString());
+        } else {
+            accessibilityNodeInfo.setText(LocaleController.getString(R.string.AttachSticker));
+        }
+        accessibilityNodeInfo.setEnabled(true);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(getPaddingRight() + getPaddingLeft() + AndroidUtilities.dp(76.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(78.0f), TLObject.FLAG_30));
+    }
+
+    public void setClearsInputField(boolean z10) {
+        this.h = z10;
+    }
+
+    @Override // android.view.View
+    public void setPressed(boolean z10) {
+        org.telegram.ui.Components.x9 x9Var = this.a;
+        if (x9Var.getImageReceiver().getPressed() != z10) {
+            x9Var.getImageReceiver().setPressed(z10 ? 1 : 0);
+            x9Var.invalidate();
+        }
+        super.setPressed(z10);
+    }
+
+    public void setScaled(boolean z10) {
+        this.e = z10;
+        this.d = System.currentTimeMillis();
+        invalidate();
     }
 }

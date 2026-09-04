@@ -13,16 +13,16 @@ public class u {
     public static final s b = new s();
     public static final u c = new u();
 
-    public String a(j$.time.chrono.k kVar, j$.time.temporal.o oVar, long j10, TextStyle textStyle, Locale locale) {
+    public String a(j$.time.chrono.k kVar, j$.time.temporal.o oVar, long j3, TextStyle textStyle, Locale locale) {
         if (kVar == j$.time.chrono.r.c || !(oVar instanceof j$.time.temporal.a)) {
-            return b(oVar, j10, textStyle, locale);
+            return b(oVar, j3, textStyle, locale);
         }
         return null;
     }
 
-    public String b(j$.time.temporal.o oVar, long j10, TextStyle textStyle, Locale locale) {
+    public String b(j$.time.temporal.o oVar, long j3, TextStyle textStyle, Locale locale) {
         Object obj;
-        long j11;
+        long j10;
         String substring;
         AbstractMap.SimpleImmutableEntry simpleImmutableEntry = new AbstractMap.SimpleImmutableEntry(oVar, locale);
         ConcurrentHashMap concurrentHashMap = a;
@@ -36,9 +36,9 @@ public class u {
                 String[] eras = dateFormatSymbols.getEras();
                 for (int i10 = 0; i10 < eras.length; i10++) {
                     if (!eras[i10].isEmpty()) {
-                        long j12 = i10;
-                        hashMap2.put(Long.valueOf(j12), eras[i10]);
-                        Long valueOf = Long.valueOf(j12);
+                        long j11 = i10;
+                        hashMap2.put(Long.valueOf(j11), eras[i10]);
+                        Long valueOf = Long.valueOf(j11);
                         String str = eras[i10];
                         hashMap3.put(valueOf, str.substring(0, Character.charCount(str.codePointAt(0))));
                     }
@@ -50,17 +50,17 @@ public class u {
                 }
                 obj = new t(hashMap);
             } else {
-                long j13 = 1;
+                long j12 = 1;
                 if (oVar == j$.time.temporal.a.MONTH_OF_YEAR) {
                     int length = DateFormatSymbols.getInstance(locale).getMonths().length;
                     LinkedHashMap linkedHashMap = new LinkedHashMap();
                     LinkedHashMap linkedHashMap2 = new LinkedHashMap();
                     LinkedHashMap linkedHashMap3 = new LinkedHashMap();
-                    for (long j14 = 1; j14 <= length; j14++) {
-                        String D = j$.com.android.tools.r8.a.D(j14, "LLLL", locale);
-                        linkedHashMap.put(Long.valueOf(j14), D);
-                        linkedHashMap2.put(Long.valueOf(j14), D.substring(0, Character.charCount(D.codePointAt(0))));
-                        linkedHashMap3.put(Long.valueOf(j14), j$.com.android.tools.r8.a.D(j14, "LLL", locale));
+                    for (long j13 = 1; j13 <= length; j13++) {
+                        String D = j$.com.android.tools.r8.a.D(j13, "LLLL", locale);
+                        linkedHashMap.put(Long.valueOf(j13), D);
+                        linkedHashMap2.put(Long.valueOf(j13), D.substring(0, Character.charCount(D.codePointAt(0))));
+                        linkedHashMap3.put(Long.valueOf(j13), j$.com.android.tools.r8.a.D(j13, "LLL", locale));
                     }
                     if (length > 0) {
                         hashMap.put(TextStyle.FULL_STANDALONE, linkedHashMap);
@@ -76,23 +76,23 @@ public class u {
                     LinkedHashMap linkedHashMap4 = new LinkedHashMap();
                     LinkedHashMap linkedHashMap5 = new LinkedHashMap();
                     LinkedHashMap linkedHashMap6 = new LinkedHashMap();
-                    boolean z4 = locale == Locale.SIMPLIFIED_CHINESE || locale == Locale.TRADITIONAL_CHINESE;
-                    long j15 = 1;
-                    while (j15 <= length2) {
-                        String C = j$.com.android.tools.r8.a.C(j15, "cccc", locale);
-                        linkedHashMap4.put(Long.valueOf(j15), C);
-                        Long valueOf2 = Long.valueOf(j15);
-                        if (!z4) {
-                            j11 = j13;
+                    boolean z10 = locale == Locale.SIMPLIFIED_CHINESE || locale == Locale.TRADITIONAL_CHINESE;
+                    long j14 = 1;
+                    while (j14 <= length2) {
+                        String C = j$.com.android.tools.r8.a.C(j14, "cccc", locale);
+                        linkedHashMap4.put(Long.valueOf(j14), C);
+                        Long valueOf2 = Long.valueOf(j14);
+                        if (!z10) {
+                            j10 = j12;
                             substring = C.substring(0, Character.charCount(C.codePointAt(0)));
                         } else {
-                            j11 = j13;
+                            j10 = j12;
                             substring = new StringBuilder().appendCodePoint(C.codePointBefore(C.length())).toString();
                         }
                         linkedHashMap5.put(valueOf2, substring);
-                        linkedHashMap6.put(Long.valueOf(j15), j$.com.android.tools.r8.a.C(j15, "ccc", locale));
-                        j15 += j11;
-                        j13 = j11;
+                        linkedHashMap6.put(Long.valueOf(j14), j$.com.android.tools.r8.a.C(j14, "ccc", locale));
+                        j14 += j10;
+                        j12 = j10;
                     }
                     if (length2 > 0) {
                         hashMap.put(TextStyle.FULL_STANDALONE, linkedHashMap4);
@@ -110,9 +110,9 @@ public class u {
                     String[] amPmStrings = dateFormatSymbols2.getAmPmStrings();
                     for (int i11 = 0; i11 < amPmStrings.length; i11++) {
                         if (!amPmStrings[i11].isEmpty()) {
-                            long j16 = i11;
-                            hashMap4.put(Long.valueOf(j16), amPmStrings[i11]);
-                            Long valueOf3 = Long.valueOf(j16);
+                            long j15 = i11;
+                            hashMap4.put(Long.valueOf(j15), amPmStrings[i11]);
+                            Long valueOf3 = Long.valueOf(j15);
                             String str2 = amPmStrings[i11];
                             hashMap5.put(valueOf3, str2.substring(0, Character.charCount(str2.codePointAt(0))));
                         }
@@ -131,7 +131,7 @@ public class u {
             obj2 = concurrentHashMap.get(simpleImmutableEntry);
         }
         if (obj2 instanceof t) {
-            return ((t) obj2).a(j10, textStyle);
+            return ((t) obj2).a(j3, textStyle);
         }
         return null;
     }

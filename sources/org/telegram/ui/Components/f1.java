@@ -1,28 +1,114 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.view.KeyEvent;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f1 implements tc0 {
+public final /* synthetic */ class f1 implements TextView.OnEditorActionListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int[] b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ f1(int i10, int[] iArr) {
+    public /* synthetic */ f1(Object obj, int i10) {
         this.a = i10;
-        this.b = iArr;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.Components.tc0
-    public final String e(int i10) {
+    @Override // android.widget.TextView.OnEditorActionListener
+    public final boolean onEditorAction(TextView textView, int i10, KeyEvent keyEvent) {
         switch (this.a) {
             case 0:
-                int i11 = this.b[i10];
-                return i11 == 0 ? LocaleController.getString(R.string.MuteNever) : i11 < 60 ? LocaleController.formatPluralString("Minutes", i11, new Object[0]) : i11 < 1440 ? LocaleController.formatPluralString("Hours", i11 / 60, new Object[0]) : i11 < 10080 ? LocaleController.formatPluralString("Days", i11 / 1440, new Object[0]) : i11 < 44640 ? LocaleController.formatPluralString("Weeks", i11 / 10080, new Object[0]) : i11 < 525600 ? LocaleController.formatPluralString("Months", i11 / 44640, new Object[0]) : LocaleController.formatPluralString("Years", i11 / 525600, new Object[0]);
+                org.telegram.ui.ActionBar.n5 n5Var = (org.telegram.ui.ActionBar.n5) this.b;
+                if (i10 == 6) {
+                    n5Var.run();
+                    break;
+                }
+                break;
+            case 1:
+                org.telegram.ui.Cells.g3 g3Var = ((org.telegram.ui.Cells.i3) this.b).b;
+                if (i10 == 5) {
+                    g3Var.requestFocus();
+                    g3Var.setSelection(g3Var.length());
+                    break;
+                }
+                break;
+            case 2:
+                wq wqVar = (wq) this.b;
+                if (i10 == 6) {
+                    wqVar.run();
+                    break;
+                }
+                break;
+            case 3:
+                sd0 sd0Var = (sd0) this.b;
+                if (i10 != 6) {
+                    sd0Var.getClass();
+                    break;
+                } else {
+                    sd0Var.k(false);
+                    break;
+                }
+            case 4:
+                q4 q4Var = (q4) this.b;
+                if (i10 == 6) {
+                    q4Var.b.a.callOnClick();
+                    break;
+                }
+                break;
+            case 5:
+                di.h2 h2Var = ((wm0) this.b).e;
+                if (keyEvent != null) {
+                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
+                        h2Var.hideActionMode();
+                        AndroidUtilities.hideKeyboard(h2Var);
+                        break;
+                    }
+                }
+                break;
+            case 6:
+                hq0 hq0Var = (hq0) this.b;
+                if (keyEvent != null) {
+                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
+                        AndroidUtilities.hideKeyboard(hq0Var.y0.r);
+                        break;
+                    }
+                }
+                break;
+            case 7:
+                AlertDialog$Builder alertDialog$Builder = (AlertDialog$Builder) this.b;
+                if (i10 == 5) {
+                    alertDialog$Builder.a.d(-1).callOnClick();
+                    break;
+                }
+                break;
+            case 8:
+                org.telegram.ui.ActionBar.b2 b2Var = (org.telegram.ui.ActionBar.b2) this.b;
+                if (i10 == 6) {
+                    b2Var.d(-1).callOnClick();
+                    break;
+                }
+                break;
+            case 9:
+                o11 o11Var = (o11) this.b;
+                if (keyEvent != null) {
+                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
+                        AndroidUtilities.hideKeyboard(o11Var.b);
+                        break;
+                    }
+                }
+                break;
             default:
-                int i12 = this.b[i10];
-                return i12 == 0 ? LocaleController.getString(R.string.AutoDeleteNever) : i12 < 10080 ? LocaleController.formatPluralString("Days", i12 / 1440, new Object[0]) : i12 < 44640 ? LocaleController.formatPluralString("Weeks", i12 / 10080, new Object[0]) : i12 < 525600 ? LocaleController.formatPluralString("Months", i12 / 44640, new Object[0]) : LocaleController.formatPluralString("Years", i12 / 525600, new Object[0]);
+                n61 n61Var = (n61) this.b;
+                if (keyEvent != null) {
+                    if ((keyEvent.getAction() == 1 && keyEvent.getKeyCode() == 84) || (keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 66)) {
+                        AndroidUtilities.hideKeyboard(n61Var.J);
+                        break;
+                    }
+                }
+                break;
         }
+        return false;
     }
 }

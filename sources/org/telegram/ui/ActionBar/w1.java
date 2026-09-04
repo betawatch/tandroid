@@ -1,49 +1,60 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.GradientDrawable;
+import android.content.Context;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class w1 extends Drawable {
-    public final int a;
-    public final /* synthetic */ GradientDrawable b;
-    public final /* synthetic */ d2 c;
+public final class w1 extends k5 {
+    public final /* synthetic */ int d;
 
-    public w1(d2 d2Var, GradientDrawable gradientDrawable) {
-        this.c = d2Var;
-        this.b = gradientDrawable;
-        this.a = AndroidUtilities.dp(52.0f) + d2Var.V;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ w1(Context context, int i10) {
+        super(context);
+        this.d = i10;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int width = this.c.h0.getWidth();
-        int i10 = this.a;
-        int i11 = (int) ((width - i10) / 2.0f);
-        int height = (int) ((r0.h0.getHeight() - i10) / 2.0f);
-        int width2 = (int) ((r0.h0.getWidth() + i10) / 2.0f);
-        int height2 = (int) ((r0.h0.getHeight() + i10) / 2.0f);
-        GradientDrawable gradientDrawable = this.b;
-        gradientDrawable.setBounds(i11, height, width2, height2);
-        gradientDrawable.draw(canvas);
+    @Override // android.widget.TextView, android.view.View
+    public final void setEnabled(boolean z10) {
+        switch (this.d) {
+            case 0:
+                super.setEnabled(z10);
+                setAlpha(z10 ? 1.0f : 0.5f);
+                break;
+            case 1:
+                super.setEnabled(z10);
+                setAlpha(z10 ? 1.0f : 0.5f);
+                break;
+            case 2:
+                super.setEnabled(z10);
+                setAlpha(z10 ? 1.0f : 0.5f);
+                break;
+            default:
+                super.setEnabled(z10);
+                setAlpha(z10 ? 1.0f : 0.5f);
+                break;
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return this.b.getOpacity();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.b.setAlpha(i10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.b.setColorFilter(colorFilter);
+    @Override // org.telegram.ui.ActionBar.k5, android.widget.TextView
+    public final void setTextColor(int i10) {
+        switch (this.d) {
+            case 0:
+                super.setTextColor(i10);
+                setBackground(j6.G0(AndroidUtilities.dp(20.0f), i10));
+                break;
+            case 1:
+                super.setTextColor(i10);
+                setBackground(j6.G0(AndroidUtilities.dp(20.0f), i10));
+                break;
+            case 2:
+                super.setTextColor(i10);
+                setBackground(j6.G0(AndroidUtilities.dp(20.0f), i10));
+                break;
+            default:
+                super.setTextColor(i10);
+                setBackgroundDrawable(j6.G0(AndroidUtilities.dp(20.0f), i10));
+                break;
+        }
     }
 }

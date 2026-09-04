@@ -1,31 +1,61 @@
 package k9;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class i implements u9.d {
-    public static final i a = new i();
-    public static final u9.c b = u9.c.c("arch");
-    public static final u9.c c = u9.c.c("model");
-    public static final u9.c d = u9.c.c("cores");
-    public static final u9.c e = u9.c.c("ram");
-    public static final u9.c f = u9.c.c("diskSpace");
-    public static final u9.c g = u9.c.c("simulator");
-    public static final u9.c h = u9.c.c("state");
-    public static final u9.c i = u9.c.c("manufacturer");
-    public static final u9.c j = u9.c.c("modelClass");
+import cc.k;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.internal.t;
+import java.util.concurrent.Executor;
+import q9.r;
+import zd.y0;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        u9.e eVar = (u9.e) obj2;
-        k0 k0Var = (k0) ((m1) obj);
-        eVar.a(b, k0Var.a);
-        eVar.e(c, k0Var.b);
-        eVar.a(d, k0Var.c);
-        eVar.b(e, k0Var.d);
-        eVar.b(f, k0Var.e);
-        eVar.d(g, k0Var.f);
-        eVar.a(h, k0Var.g);
-        eVar.e(i, k0Var.h);
-        eVar.e(j, k0Var.i);
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class i implements q9.d, t {
+    public static final i b = new i(0);
+    public static final i c = new i(1);
+    public static final i d = new i(2);
+    public static final i e = new i(3);
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ i(int i10) {
+        this.a = i10;
+    }
+
+    @Override // q9.d
+    public Object D(cf.c cVar) {
+        switch (this.a) {
+            case 0:
+                Object i10 = cVar.i(new r(m9.a.class, Executor.class));
+                kotlin.jvm.internal.i.d(i10, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) i10);
+            case 1:
+                Object i11 = cVar.i(new r(m9.c.class, Executor.class));
+                kotlin.jvm.internal.i.d(i11, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) i11);
+            case 2:
+                Object i12 = cVar.i(new r(m9.b.class, Executor.class));
+                kotlin.jvm.internal.i.d(i12, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) i12);
+            default:
+                Object i13 = cVar.i(new r(m9.d.class, Executor.class));
+                kotlin.jvm.internal.i.d(i13, "c.get(Qualified.qualifie…a, Executor::class.java))");
+                return new y0((Executor) i13);
+        }
+    }
+
+    @Override // com.google.android.gms.common.api.internal.t
+    public Exception a(Status status) {
+        int i10 = status.a;
+        int i11 = status.a;
+        String str = status.b;
+        if (i10 == 8) {
+            if (str == null) {
+                str = x8.j.a(i11);
+            }
+            return new k(str);
+        }
+        if (str == null) {
+            str = x8.j.a(i11);
+        }
+        return new c(str);
     }
 }

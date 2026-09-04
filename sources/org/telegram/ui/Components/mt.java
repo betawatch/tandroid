@@ -1,33 +1,19 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
+import android.widget.EdgeEffect;
+import androidx.recyclerview.widget.RecyclerView;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mt implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+public final class mt extends s4.l0 {
+    public final lt[] a = new lt[4];
+    public final ArrayList b = new ArrayList();
 
-    public /* synthetic */ mt(int i10, View view) {
-        this.a = i10;
-        this.b = view;
-    }
-
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.j4 j4Var = ((EditTextBoldCursor) this.b).floatingActionMode;
-                if (j4Var != null) {
-                    j4Var.e();
-                    break;
-                }
-                break;
-            default:
-                ((n70) this.b).invalidate();
-                break;
-        }
-        return true;
+    @Override // s4.l0
+    public final EdgeEffect a(RecyclerView recyclerView, int i10) {
+        lt ltVar = new lt(recyclerView, i10, new kt(this, 0));
+        this.a[i10] = ltVar;
+        return ltVar;
     }
 }

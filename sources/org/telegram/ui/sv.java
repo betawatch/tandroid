@@ -1,92 +1,33 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sv implements DialogInterface.OnClickListener {
+public final /* synthetic */ class sv implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate b;
+    public final /* synthetic */ uy b;
 
-    public /* synthetic */ sv(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10) {
+    public /* synthetic */ sv(uy uyVar, int i10) {
         this.a = i10;
-        this.b = notificationCenterDelegate;
+        this.b = uyVar;
     }
 
-    @Override // android.content.DialogInterface.OnClickListener
-    public final void onClick(DialogInterface dialogInterface, int i10) {
-        int i11 = 0;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                qy qyVar = (qy) this.b;
-                if (i10 != 0) {
-                    if (i10 == 1 && qyVar.b0 != null) {
-                        while (true) {
-                            py[] pyVarArr = qyVar.b0;
-                            if (i11 >= pyVarArr.length) {
-                                break;
-                            } else {
-                                py pyVar = pyVarArr[i11];
-                                if (pyVar.s == 0 && pyVar.getVisibility() == 0) {
-                                    org.telegram.ui.Cells.q2 Q3 = qy.Q3(qyVar.b0[i11]);
-                                    my myVar = qyVar.b0[i11].a;
-                                    int i12 = my.s3;
-                                    myVar.y1(true, Q3);
-                                }
-                                i11++;
-                            }
-                        }
-                    }
-                } else {
-                    qyVar.getMessagesStorage().readAllDialogs(1);
-                    break;
-                }
+                uy uyVar = this.b;
+                uyVar.getClass();
+                uyVar.z4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
             case 1:
-                og0 og0Var = (og0) this.b;
-                if (i10 != 0) {
-                    ProfileActivity.H4(og0Var.S.getParentActivity(), false);
-                    break;
-                } else {
-                    BuildVars.LOGS_ENABLED = !BuildVars.LOGS_ENABLED;
-                    ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit().putBoolean("logsEnabled", BuildVars.LOGS_ENABLED).commit();
-                    org.telegram.ui.Components.qc.a0(og0Var.S).Q(R.raw.chats_infotip, 36, BuildVars.LOGS_ENABLED ? "Logs enabled." : "Logs disabled.").j();
-                    if (BuildVars.LOGS_ENABLED) {
-                        kf.k0.x(new StringBuilder("app start time = "), ApplicationLoader.startTime);
-                        try {
-                            FileLog.d("buildVersion = " + ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode);
-                            break;
-                        } catch (Exception e) {
-                            FileLog.e(e);
-                            return;
-                        }
-                    }
-                }
+                this.b.D4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
-            case 2:
-                fn0 fn0Var = (fn0) this.b;
-                if (i10 != 0) {
-                    if (i10 != 1) {
-                        fn0Var.getClass();
-                        break;
-                    } else {
-                        fn0Var.w = "female";
-                        fn0Var.V[4].setText(LocaleController.getString(R.string.PassportFemale));
-                        break;
-                    }
-                } else {
-                    fn0Var.w = "male";
-                    fn0Var.V[4].setText(LocaleController.getString(R.string.PassportMale));
-                    break;
-                }
             default:
-                w81.c0((w81) this.b, i10);
+                uy uyVar2 = this.b;
+                uyVar2.getClass();
+                uyVar2.F4(((Float) valueAnimator.getAnimatedValue()).floatValue());
                 break;
         }
     }

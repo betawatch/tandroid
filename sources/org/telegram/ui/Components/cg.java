@@ -1,103 +1,72 @@
 package org.telegram.ui.Components;
 
-import java.io.File;
-import java.util.ArrayList;
-import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.MediaController;
+import android.text.TextUtils;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessageSuggestionParams;
-import org.telegram.messenger.SendMessageChatArguments;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_keyboard;
+import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class cg extends org.telegram.ui.fu0 {
-    public boolean a;
-    public final /* synthetic */ MediaController.PhotoEntry b;
-    public final /* synthetic */ File c;
-    public final /* synthetic */ dg d;
+public final class cg implements Runnable {
+    public final /* synthetic */ MessageObject a;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ TL_keyboard.KeyboardButtonProto c;
+    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ TLRPC.User e;
+    public final /* synthetic */ ChatActivityEnterView f;
 
-    public cg(dg dgVar, MediaController.PhotoEntry photoEntry, File file) {
-        this.d = dgVar;
-        this.b = photoEntry;
-        this.c = file;
+    public cg(ChatActivityEnterView chatActivityEnterView, MessageObject messageObject, long j3, TL_keyboard.KeyboardButtonProto keyboardButtonProto, MessageObject messageObject2, TLRPC.User user) {
+        this.f = chatActivityEnterView;
+        this.a = messageObject;
+        this.b = j3;
+        this.c = keyboardButtonProto;
+        this.d = messageObject2;
+        this.e = user;
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void G() {
-        if (this.a) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        ChatActivityEnterView chatActivityEnterView = this.f;
+        org.telegram.ui.co coVar = chatActivityEnterView.O2;
+        if (chatActivityEnterView.l1.R() > AndroidUtilities.dp(20.0f) || chatActivityEnterView.t0()) {
+            chatActivityEnterView.m0(false);
+            AndroidUtilities.hideKeyboard(chatActivityEnterView);
+            AndroidUtilities.runOnUIThread(this, 150L);
             return;
         }
-        try {
-            this.c.delete();
-        } catch (Throwable unused) {
-        }
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final boolean g() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
-        MessageObject threadMessage;
-        String str;
-        org.telegram.ui.zn znVar;
-        ChatActivityEnterView chatActivityEnterView = this.d.d;
-        org.telegram.ui.pn pnVar = chatActivityEnterView.R2;
-        if (pnVar != null && (znVar = chatActivityEnterView.L2) != null && pnVar.f) {
-            znVar.Rb();
+        if (coVar == null) {
             return;
         }
-        ArrayList arrayList = new ArrayList();
-        SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-        MediaController.PhotoEntry photoEntry = this.b;
-        if (photoEntry.isVideo || (str = photoEntry.imagePath) == null) {
-            String str2 = photoEntry.path;
-            if (str2 != null) {
-                sendingMediaInfo.path = str2;
+        int i10 = chatActivityEnterView.Q;
+        long j3 = this.a.messageOwner.dialog_id;
+        TL_keyboard.KeyboardButtonProto keyboardButtonProto = this.c;
+        String text = keyboardButtonProto.getText();
+        String url = keyboardButtonProto.getUrl();
+        boolean c10 = zf.c.c(keyboardButtonProto, TL_keyboard.TL_buttonTypeSimpleWebView.class);
+        MessageObject messageObject = this.d;
+        fi.f5 b10 = fi.f5.b(i10, j3, this.b, text, url, c10 ? 1 : 0, messageObject != null ? messageObject.messageOwner.id : 0, coVar == null ? 0L : coVar.N8(), null, false, null, null, 0, false, false);
+        LaunchActivity launchActivity = LaunchActivity.G1;
+        if (launchActivity != null && launchActivity.P() != null && LaunchActivity.G1.P().k(b10) != null) {
+            fi.c0 c0Var = chatActivityEnterView.l0;
+            if (c0Var != null) {
+                c0Var.setOpened(false);
+                return;
             }
+            return;
+        }
+        TLRPC.User user = this.e;
+        String restrictionReason = user == null ? null : MessagesController.getInstance(chatActivityEnterView.Q).getRestrictionReason(user.restriction_reason);
+        if (!TextUtils.isEmpty(restrictionReason)) {
+            MessagesController.getInstance(chatActivityEnterView.Q);
+            MessagesController.showCantOpenAlert(coVar, restrictionReason);
         } else {
-            sendingMediaInfo.path = str;
-        }
-        sendingMediaInfo.thumbPath = photoEntry.thumbPath;
-        sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
-        sendingMediaInfo.isVideo = photoEntry.isVideo;
-        sendingMediaInfo.discardLivePhoto = photoEntry.isUnalivePhoto();
-        sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
-        sendingMediaInfo.livePhotoTimestampUs = photoEntry.livePhotoTimestampUs;
-        CharSequence charSequence = photoEntry.caption;
-        sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-        sendingMediaInfo.entities = photoEntry.entities;
-        sendingMediaInfo.masks = photoEntry.stickers;
-        sendingMediaInfo.ttl = photoEntry.ttl;
-        sendingMediaInfo.videoEditedInfo = videoEditedInfo;
-        sendingMediaInfo.canDeleteAfter = true;
-        arrayList.add(sendingMediaInfo);
-        photoEntry.reset();
-        this.a = true;
-        boolean checkUpdateStickersOrder = SendMessagesHelper.checkUpdateStickersOrder(sendingMediaInfo.caption);
-        AccountInstance accountInstance = chatActivityEnterView.O;
-        MessageSuggestionParams messageSuggestionParams = null;
-        long j10 = chatActivityEnterView.M2;
-        MessageObject messageObject = chatActivityEnterView.P2;
-        threadMessage = chatActivityEnterView.getThreadMessage();
-        org.telegram.ui.pn pnVar2 = chatActivityEnterView.R2;
-        MessageObject messageObject2 = chatActivityEnterView.V1;
-        org.telegram.ui.zn znVar2 = chatActivityEnterView.L2;
-        int i13 = znVar2 == null ? 0 : znVar2.O3;
-        SendMessageChatArguments C8 = znVar2 != null ? znVar2.C8() : null;
-        long sendMonoForumPeerId = chatActivityEnterView.getSendMonoForumPeerId();
-        org.telegram.ui.zn znVar3 = chatActivityEnterView.L2;
-        if (znVar3 != null) {
-            messageSuggestionParams = znVar3.d5;
-        }
-        SendMessagesHelper.prepareSendingMedia(accountInstance, arrayList, j10, messageObject, threadMessage, null, pnVar2, false, false, messageObject2, z4, i11, i12, i13, checkUpdateStickersOrder, null, C8, 0L, false, 0L, sendMonoForumPeerId, messageSuggestionParams);
-        eg egVar = chatActivityEnterView.V2;
-        if (egVar != null) {
-            egVar.G(null, true, i11, i12, 0L);
+            fi.k3 k3Var = new fi.k3(chatActivityEnterView.getContext(), chatActivityEnterView.V3);
+            k3Var.k0 = chatActivityEnterView.N2;
+            k3Var.s(coVar, b10);
+            k3Var.show();
         }
     }
 }

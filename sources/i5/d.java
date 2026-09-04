@@ -1,58 +1,30 @@
 package i5;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class d {
-    public long a;
-    public long b;
-    public long c;
-    public long d;
-    public long e;
-    public long f;
-    public final boolean[] g = new boolean[15];
-    public int h;
+    public static final d a;
+    public static final d b;
+    public static final d c;
+    public static final /* synthetic */ d[] d;
 
-    public final boolean a() {
-        return this.d > 15 && this.h == 0;
+    static {
+        d dVar = new d("DEFAULT", 0);
+        a = dVar;
+        d dVar2 = new d("VERY_LOW", 1);
+        b = dVar2;
+        d dVar3 = new d("HIGHEST", 2);
+        c = dVar3;
+        d = new d[]{dVar, dVar2, dVar3};
     }
 
-    public final void b(long j10) {
-        long j11 = this.d;
-        if (j11 == 0) {
-            this.a = j10;
-        } else if (j11 == 1) {
-            long j12 = j10 - this.a;
-            this.b = j12;
-            this.f = j12;
-            this.e = 1L;
-        } else {
-            long j13 = j10 - this.c;
-            int i10 = (int) (j11 % 15);
-            long abs = Math.abs(j13 - this.b);
-            boolean[] zArr = this.g;
-            if (abs <= 1000000) {
-                this.e++;
-                this.f += j13;
-                if (zArr[i10]) {
-                    zArr[i10] = false;
-                    this.h--;
-                }
-            } else if (!zArr[i10]) {
-                zArr[i10] = true;
-                this.h++;
-            }
-        }
-        this.d++;
-        this.c = j10;
+    public static d valueOf(String str) {
+        return (d) Enum.valueOf(d.class, str);
     }
 
-    public final void c() {
-        this.d = 0L;
-        this.e = 0L;
-        this.f = 0L;
-        this.h = 0;
-        Arrays.fill(this.g, false);
+    public static d[] values() {
+        return (d[]) d.clone();
     }
 }

@@ -1,159 +1,94 @@
 package org.telegram.ui.Components;
 
-import android.os.Looper;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.TimeInterpolator;
+import android.os.SystemClock;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class h5 {
-    public HashMap a;
-    public HashMap b;
-    public HashSet c;
-    public fg d;
-    public final int e;
+    public final View a;
+    public final Runnable b;
+    public int c;
+    public int d;
+    public boolean e;
+    public final long f;
+    public final TimeInterpolator g;
+    public boolean h;
+    public long i;
+    public int j;
 
-    public h5(int i10) {
-        this.e = i10;
+    public h5(View view) {
+        this.f = 200L;
+        this.g = pr.f;
+        this.a = view;
+        this.e = true;
     }
 
-    public static boolean a() {
-        if (Thread.currentThread() == Looper.getMainLooper().getThread()) {
-            return true;
+    public final int a(int i10, boolean z10) {
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = this.f;
+        if (z10 || j3 <= 0 || this.e) {
+            this.d = i10;
+            this.c = i10;
+            this.h = false;
+            this.e = false;
+        } else if (this.d != i10) {
+            this.h = true;
+            this.d = i10;
+            this.j = this.c;
+            this.i = elapsedRealtime;
         }
-        if (!BuildVars.DEBUG_VERSION) {
-            return false;
-        }
-        FileLog.e("EmojiDocumentFetcher", new IllegalStateException("Wrong thread"));
-        return false;
-    }
-
-    public final void b(long j10, i5 i5Var) {
-        TLRPC.Document document;
-        if (j10 == 0) {
-            return;
-        }
-        synchronized (this) {
-            try {
-                HashMap hashMap = this.a;
-                if (hashMap != null && (document = (TLRPC.Document) hashMap.get(Long.valueOf(j10))) != null) {
-                    if (i5Var != null) {
-                        i5Var.a(document);
-                    }
-                    return;
+        if (this.h) {
+            float a2 = w7.p.a((elapsedRealtime - this.i) / j3, 0.0f, 1.0f);
+            if (elapsedRealtime - this.i >= 0) {
+                TimeInterpolator timeInterpolator = this.g;
+                if (timeInterpolator == null) {
+                    this.c = i0.a.d(a2, this.j, this.d);
+                } else {
+                    this.c = i0.a.d(timeInterpolator.getInterpolation(a2), this.j, this.d);
                 }
-                if (a()) {
-                    if (this.b == null) {
-                        this.b = new HashMap();
-                    }
-                    ArrayList arrayList = (ArrayList) this.b.get(Long.valueOf(j10));
-                    if (arrayList != null) {
-                        arrayList.add(i5Var);
-                        return;
-                    }
-                    ArrayList arrayList2 = new ArrayList(1);
-                    arrayList2.add(i5Var);
-                    this.b.put(Long.valueOf(j10), arrayList2);
-                    if (this.c == null) {
-                        this.c = new HashSet();
-                    }
-                    this.c.add(Long.valueOf(j10));
-                    if (this.d != null) {
-                        return;
-                    }
-                    fg fgVar = new fg(this, 5);
-                    this.d = fgVar;
-                    AndroidUtilities.runOnUIThread(fgVar);
-                }
-            } catch (Throwable th2) {
-                throw th2;
             }
-        }
-    }
-
-    public final TLRPC.InputStickerSet c(long j10) {
-        synchronized (this) {
-            try {
-                HashMap hashMap = this.a;
-                if (hashMap == null) {
-                    return null;
+            if (a2 >= 1.0f) {
+                this.h = false;
+            } else {
+                View view = this.a;
+                if (view != null) {
+                    view.invalidate();
                 }
-                TLRPC.Document document = (TLRPC.Document) hashMap.get(Long.valueOf(j10));
-                if (document == null) {
-                    return null;
-                }
-                return MessageObject.getInputStickerSet(document);
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    public final void d(ArrayList arrayList) {
-        ArrayList arrayList2;
-        if (a()) {
-            l5.x();
-            for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                if (arrayList.get(i10) instanceof TLRPC.Document) {
-                    TLRPC.Document document = (TLRPC.Document) arrayList.get(i10);
-                    e(document);
-                    HashMap hashMap = this.b;
-                    if (hashMap != null && (arrayList2 = (ArrayList) hashMap.remove(Long.valueOf(document.id))) != null) {
-                        for (int i11 = 0; i11 < arrayList2.size(); i11++) {
-                            i5 i5Var = (i5) arrayList2.get(i11);
-                            if (i5Var != null) {
-                                i5Var.a(document);
-                            }
-                        }
-                        arrayList2.clear();
-                    }
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
                 }
             }
         }
+        return this.c;
     }
 
-    public final void e(TLRPC.Document document) {
-        if (document == null) {
-            return;
-        }
-        synchronized (this) {
-            try {
-                if (this.a == null) {
-                    this.a = new HashMap();
-                }
-                this.a.put(Long.valueOf(document.id), document);
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    public h5(View view, long j3, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        pr prVar = pr.f;
+        this.a = view;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
     }
 
-    public final void f(ArrayList arrayList) {
-        if (arrayList == null) {
-            return;
-        }
-        synchronized (this) {
-            try {
-                if (this.a == null) {
-                    this.a = new HashMap();
-                }
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    TLRPC.Document document = (TLRPC.Document) obj;
-                    this.a.put(Long.valueOf(document.id), document);
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    public h5(View view, long j3, TimeInterpolator timeInterpolator, int i10) {
+        this.f = 200L;
+        pr prVar = pr.f;
+        this.a = view;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
+    }
+
+    public h5(Runnable runnable, long j3, TimeInterpolator timeInterpolator) {
+        this.f = 200L;
+        pr prVar = pr.f;
+        this.b = runnable;
+        this.f = j3;
+        this.g = timeInterpolator;
+        this.e = true;
     }
 }

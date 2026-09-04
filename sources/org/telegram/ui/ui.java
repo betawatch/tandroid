@@ -1,47 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
+import android.app.Activity;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ui implements Runnable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.pk0 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ mg.q0 n;
-    public final /* synthetic */ MessageObject r;
-    public final /* synthetic */ zn s;
+public final class ui extends org.telegram.ui.Cells.w0 {
+    public final /* synthetic */ co k2;
 
-    public ui(zn znVar, boolean z4, boolean z10, int i10, boolean z11, org.telegram.ui.Components.pk0 pk0Var, float f10, float f11, mg.q0 q0Var, MessageObject messageObject) {
-        this.s = znVar;
-        this.a = z4;
-        this.b = z10;
-        this.c = i10;
-        this.d = z11;
-        this.e = pk0Var;
-        this.f = f10;
-        this.h = f11;
-        this.n = q0Var;
-        this.r = messageObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ui(Activity activity, org.telegram.ui.ActionBar.f6 f6Var, co coVar) {
+        super(activity, f6Var, false);
+        this.k2 = coVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        if (!this.a) {
-            zn znVar = this.s;
-            if (znVar.Zb != null) {
-                znVar.Zb = null;
-                if (this.b) {
-                    znVar.h8(new ti(this, this.c, this.d, this.e, this.f, this.h, this.n, 0));
-                } else {
-                    znVar.h8(new hc(21, this, this.r));
-                }
-                znVar.A7(true);
-            }
-        }
+    @Override // org.telegram.ui.Cells.w0, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        float y3 = getY();
+        co coVar = this.k2;
+        W(coVar.R0.getY() + y3, coVar.X0.getBackgroundSizeY());
     }
 }

@@ -1,54 +1,66 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.widget.TextView;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.FileLog;
+import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class nb0 extends org.telegram.ui.Cells.h3 {
-    public boolean x;
-    public final /* synthetic */ pb0 y;
+public final /* synthetic */ class nb0 implements org.telegram.ui.Components.d5, org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.rv0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xb0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nb0(pb0 pb0Var, Context context, String str, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, str, false, false, -1, f6Var);
-        this.y = pb0Var;
+    public /* synthetic */ nb0(xb0 xb0Var, int i10) {
+        this.a = i10;
+        this.b = xb0Var;
     }
 
-    @Override // org.telegram.ui.Cells.h3
-    public final void b(Editable editable) {
-        int i10;
-        if (this.x) {
-            return;
+    @Override // org.telegram.ui.Components.d5
+    public void J(int i10, int i11, boolean z10) {
+        this.b.V(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        xb0 xb0Var = this.b;
+        xb0Var.T.a(xb0Var.e);
+        xb0Var.finishFragment();
+    }
+
+    @Override // org.telegram.ui.Components.rv0
+    public void i(int i10) {
+        switch (this.a) {
+            case 2:
+                xb0 xb0Var = this.b;
+                if (i10 >= xb0Var.P.size()) {
+                    xb0Var.w.setText("");
+                    break;
+                } else {
+                    xb0Var.w.setText(LocaleController.formatDateAudio(xb0Var.getConnectionsManager().getCurrentTime() + ((Integer) r1.get(i10)).intValue(), false));
+                    break;
+                }
+            default:
+                xb0 xb0Var2 = this.b;
+                xb0Var2.F.clearFocus();
+                xb0Var2.O = true;
+                ArrayList arrayList = xb0Var2.R;
+                if (i10 < arrayList.size()) {
+                    xb0Var2.F.setText(((Integer) arrayList.get(i10)).toString());
+                } else {
+                    xb0Var2.F.setText("");
+                }
+                xb0Var2.O = false;
+                break;
         }
-        boolean isEmpty = TextUtils.isEmpty(editable);
-        pb0 pb0Var = this.y;
-        if (isEmpty) {
-            pb0Var.s.setText("");
-            return;
-        }
-        try {
-            long parseLong = Long.parseLong(editable.toString());
-            if (parseLong > pb0Var.getMessagesController().starsSubscriptionAmountMax) {
-                this.x = true;
-                parseLong = pb0Var.getMessagesController().starsSubscriptionAmountMax;
-                setText(Long.toString(parseLong));
-                this.x = false;
-            }
-            TextView textView = pb0Var.s;
-            int i11 = pb0Var.getConnectionsManager().isTestBackend() ? R.string.RequireMonthlyFeePriceTest5Minutes : R.string.RequireMonthlyFeePrice;
-            BillingController billingController = BillingController.getInstance();
-            i10 = ((org.telegram.ui.ActionBar.p2) pb0Var).currentAccount;
-            textView.setText(LocaleController.formatString(i11, billingController.formatCurrency((long) ((parseLong / 1000.0d) * MessagesController.getInstance(i10).starsUsdWithdrawRate1000), "USD")));
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
+    }
+
+    @Override // org.telegram.ui.Components.rv0
+    public /* synthetic */ void l() {
+        int i10 = this.a;
+    }
+
+    private final /* synthetic */ void a() {
+    }
+
+    private final /* synthetic */ void b() {
     }
 }

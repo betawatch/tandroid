@@ -1,40 +1,139 @@
 package ig;
 
 import android.content.Context;
-import k7.b6;
-import org.telegram.messenger.LocaleController;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ActionBar.k5;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.e6;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.vi;
+import org.telegram.ui.l20;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class j extends d {
-    public final k5 r;
-    public Object s;
+public final class j extends FrameLayout {
+    public final /* synthetic */ int a = 0;
+    public int b;
+    public final Object c;
+    public final Object d;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
 
-    public j(Context context, f6 f6Var) {
-        super(context, f6Var);
-        this.c.setVisibility(8);
-        k5 k5Var = this.e;
-        int i10 = j6.B6;
-        k5Var.setTextColor(j6.v0(i10, f6Var));
-        k5 k5Var2 = new k5(context);
-        this.r = k5Var2;
-        k5Var2.setTextSize(16);
-        k5Var2.setTextColor(j6.v0(i10, f6Var));
-        k5Var2.setGravity(LocaleController.isRTL ? 3 : 5);
-        addView(k5Var2);
-        boolean z4 = LocaleController.isRTL;
-        k5Var2.setLayoutParams(b6.d(-1, -2.0f, (z4 ? 3 : 5) | 16, z4 ? 20.0f : 0.0f, 0.0f, z4 ? 0.0f : 20.0f, 0.0f));
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j(m mVar, Context context) {
+        super(context);
+        this.e = mVar;
+        this.b = -1;
+        this.c = new Rect();
+        this.d = new e6(this, 220L, pr.h);
     }
 
-    @Override // ig.d
-    public final boolean b() {
-        return true;
+    @Override // android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        switch (this.a) {
+            case 1:
+                l20 l20Var = (l20) this.d;
+                Path path = (Path) this.c;
+                vi viVar = (vi) this.e;
+                dh.d dVar = viVar.B0;
+                if (dVar != null) {
+                    dVar.setBounds(0, (int) viVar.V1, getMeasuredWidth(), getMeasuredHeight());
+                    viVar.B0.draw(canvas);
+                }
+                float dp = AndroidUtilities.dp(20.0f);
+                int dp2 = AndroidUtilities.dp(7.0f);
+                int dp3 = AndroidUtilities.dp(7.0f);
+                RectF rectF = AndroidUtilities.rectTmp;
+                float f7 = dp2;
+                rectF.set(getPaddingLeft(), f7, getWidth() - getPaddingRight(), getHeight() - dp3);
+                path.rewind();
+                path.addRoundRect(rectF, dp, dp, Path.Direction.CW);
+                canvas.save();
+                canvas.clipPath(path);
+                canvas.saveLayerAlpha(rectF, 255, 31);
+                super.dispatchDraw(canvas);
+                rectF.set(getPaddingLeft(), f7, getWidth() - getPaddingRight(), AndroidUtilities.dp(6.0f) + dp2);
+                l20Var.b(canvas, rectF, 1, 1.0f);
+                rectF.set(getPaddingLeft(), (getHeight() - dp3) - AndroidUtilities.dp(6.0f), getWidth() - getPaddingRight(), getHeight() - dp3);
+                l20Var.b(canvas, rectF, 3, 1.0f);
+                canvas.restore();
+                canvas.restore();
+                break;
+            default:
+                super.dispatchDraw(canvas);
+                break;
+        }
     }
 
-    public Object getGifCode() {
-        return this.s;
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        switch (this.a) {
+            case 0:
+                float width = getWidth() / 2.0f;
+                e6 e6Var = (e6) this.d;
+                m mVar = (m) this.e;
+                float d = e6Var.d(mVar.n.getWidth(), false);
+                Rect rect = (Rect) this.c;
+                float f7 = d / 2.0f;
+                rect.set((int) (width - (mVar.n.getScaleX() * f7)), (int) (((1.0f - mVar.n.getScaleY()) * mVar.n.getHeight()) + mVar.n.getY()), (int) ((mVar.n.getScaleX() * f7) + width), (int) (mVar.n.getY() + mVar.n.getHeight()));
+                mVar.r.setBounds(rect);
+                mVar.r.draw(canvas);
+                return super.drawChild(canvas, view, j3);
+            default:
+                return super.drawChild(canvas, view, j3);
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 1:
+                int i14 = this.b;
+                vi viVar = (vi) this.e;
+                int top = i14 - viVar.w.getTop();
+                super.onLayout(z10, i10, i11, i12, i13);
+                this.b = getHeight();
+                if (viVar.w.getVisibility() == 0 && getHeight() - viVar.w.getTop() != top) {
+                    viVar.w.setTranslationY(viVar.w.getTranslationY() + ((getHeight() - viVar.w.getTop()) - top));
+                    viVar.w.animate().translationY(0.0f).setDuration(320L).setInterpolator(pr.h).start();
+                    break;
+                }
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                m mVar = (m) this.e;
+                mVar.n.measure(i10, i11);
+                invalidate();
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(Math.max(this.b, AndroidUtilities.dp(36.0f) + mVar.n.getMeasuredHeight()), TLObject.FLAG_30));
+                if (this.b < 0) {
+                    this.b = getMeasuredHeight();
+                    break;
+                }
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public j(vi viVar, Context context) {
+        super(context);
+        this.e = viVar;
+        this.c = new Path();
+        this.d = new l20();
     }
 }

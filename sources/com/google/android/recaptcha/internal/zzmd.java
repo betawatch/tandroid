@@ -1,23 +1,23 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzmd {
-    public static void zza(boolean z4) {
-        if (!z4) {
+    public static void zza(boolean z10) {
+        if (!z10) {
             throw new IllegalArgumentException();
         }
     }
 
-    public static void zzb(boolean z4, Object obj) {
-        if (!z4) {
+    public static void zzb(boolean z10, Object obj) {
+        if (!z10) {
             throw new IllegalArgumentException((String) obj);
         }
     }
 
-    public static void zzc(boolean z4, String str, char c3) {
-        if (!z4) {
-            throw new IllegalArgumentException(zzmg.zza(str, Character.valueOf(c3)));
+    public static void zzc(boolean z10, String str, char c10) {
+        if (!z10) {
+            throw new IllegalArgumentException(zzmg.zza(str, Character.valueOf(c10)));
         }
     }
 
@@ -27,8 +27,8 @@ public final class zzmd {
         }
     }
 
-    public static void zze(boolean z4, Object obj) {
-        if (!z4) {
+    public static void zze(boolean z10, Object obj) {
+        if (!z10) {
             throw new IllegalStateException((String) obj);
         }
     }

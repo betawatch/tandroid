@@ -2,16 +2,16 @@ package com.google.android.play.core.integrity;
 
 import android.os.Build;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 final class ao extends IntegrityTokenRequest {
     private final String a;
     private final Long b;
     private final Object c = null;
 
-    public /* synthetic */ ao(String str, Long l10, Object obj, an anVar) {
+    public /* synthetic */ ao(String str, Long l4, Object obj, an anVar) {
         this.a = str;
-        this.b = l10;
+        this.b = l4;
     }
 
     private static boolean a() {
@@ -24,27 +24,27 @@ final class ao extends IntegrityTokenRequest {
     }
 
     public final boolean equals(Object obj) {
-        boolean z4;
-        Long l10;
+        boolean z10;
+        Long l4;
         if (obj == this) {
             return true;
         }
         if (obj instanceof IntegrityTokenRequest) {
             IntegrityTokenRequest integrityTokenRequest = (IntegrityTokenRequest) obj;
-            if (this.a.equals(integrityTokenRequest.nonce()) && ((l10 = this.b) != null ? l10.equals(integrityTokenRequest.cloudProjectNumber()) : integrityTokenRequest.cloudProjectNumber() == null)) {
-                z4 = true;
-                return ((obj instanceof ao) || !a()) ? z4 : z4;
+            if (this.a.equals(integrityTokenRequest.nonce()) && ((l4 = this.b) != null ? l4.equals(integrityTokenRequest.cloudProjectNumber()) : integrityTokenRequest.cloudProjectNumber() == null)) {
+                z10 = true;
+                return ((obj instanceof ao) || !a()) ? z10 : z10;
             }
         }
-        z4 = false;
+        z10 = false;
         if (obj instanceof ao) {
         }
     }
 
     public final int hashCode() {
         int hashCode = this.a.hashCode() ^ 1000003;
-        Long l10 = this.b;
-        int hashCode2 = (hashCode * 1000003) ^ (l10 == null ? 0 : l10.hashCode());
+        Long l4 = this.b;
+        int hashCode2 = (hashCode * 1000003) ^ (l4 == null ? 0 : l4.hashCode());
         return a() ? hashCode2 * 1000003 : hashCode2;
     }
 

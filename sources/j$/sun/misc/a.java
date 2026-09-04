@@ -16,8 +16,8 @@ public final class a {
         g10.setAccessible(true);
         try {
             b = new a((Unsafe) g10.get(null));
-        } catch (IllegalAccessException e) {
-            throw new AssertionError("Couldn't get the Unsafe", e);
+        } catch (IllegalAccessException e7) {
+            throw new AssertionError("Couldn't get the Unsafe", e7);
         }
     }
 
@@ -28,26 +28,26 @@ public final class a {
     public static Field g() {
         try {
             return Unsafe.class.getDeclaredField("theUnsafe");
-        } catch (NoSuchFieldException e) {
+        } catch (NoSuchFieldException e7) {
             for (Field field : Unsafe.class.getDeclaredFields()) {
                 if (Modifier.isStatic(field.getModifiers()) && Unsafe.class.isAssignableFrom(field.getType())) {
                     return field;
                 }
             }
-            throw new AssertionError("Couldn't find the Unsafe", e);
+            throw new AssertionError("Couldn't find the Unsafe", e7);
         }
     }
 
-    public final int e(q qVar, long j10) {
+    public final int e(q qVar, long j3) {
         while (true) {
-            int intVolatile = this.a.getIntVolatile(qVar, j10);
+            int intVolatile = this.a.getIntVolatile(qVar, j3);
             q qVar2 = qVar;
-            long j11 = j10;
-            if (this.a.compareAndSwapInt(qVar2, j11, intVolatile, intVolatile - 4)) {
+            long j10 = j3;
+            if (this.a.compareAndSwapInt(qVar2, j10, intVolatile, intVolatile - 4)) {
                 return intVolatile;
             }
             qVar = qVar2;
-            j10 = j11;
+            j3 = j10;
         }
     }
 
@@ -58,8 +58,8 @@ public final class a {
     public final long h(Class cls, String str) {
         try {
             return i(cls.getDeclaredField(str));
-        } catch (NoSuchFieldException e) {
-            throw new AssertionError("Cannot find field:", e);
+        } catch (NoSuchFieldException e7) {
+            throw new AssertionError("Cannot find field:", e7);
         }
     }
 
@@ -71,19 +71,19 @@ public final class a {
         return this.a.arrayIndexScale(cls);
     }
 
-    public final Object f(Object obj, long j10) {
-        return this.a.getObjectVolatile(obj, j10);
+    public final Object f(Object obj, long j3) {
+        return this.a.getObjectVolatile(obj, j3);
     }
 
-    public final void j(Object obj, long j10, l lVar) {
-        this.a.putObjectVolatile(obj, j10, lVar);
+    public final void j(Object obj, long j3, l lVar) {
+        this.a.putObjectVolatile(obj, j3, lVar);
     }
 
-    public final boolean c(Object obj, long j10, int i10, int i11) {
-        return this.a.compareAndSwapInt(obj, j10, i10, i11);
+    public final boolean c(Object obj, long j3, int i10, int i11) {
+        return this.a.compareAndSwapInt(obj, j3, i10, i11);
     }
 
-    public final boolean d(Object obj, long j10, long j11, long j12) {
-        return this.a.compareAndSwapLong(obj, j10, j11, j12);
+    public final boolean d(Object obj, long j3, long j10, long j11) {
+        return this.a.compareAndSwapLong(obj, j3, j10, j11);
     }
 }

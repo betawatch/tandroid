@@ -1,116 +1,36 @@
 package androidx.datastore.preferences.protobuf;
 
-import java.util.AbstractList;
-import java.util.Arrays;
-import java.util.RandomAccess;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a1 extends b implements RandomAccess {
-    public static final a1 d;
-    public Object[] b;
-    public int c;
+public final class a1 {
+    public final a a;
+    public final String b;
+    public final Object[] c;
+    public final int d;
 
-    static {
-        a1 a1Var = new a1(0, new Object[0]);
-        d = a1Var;
-        a1Var.a = false;
-    }
-
-    public a1(int i10, Object[] objArr) {
-        this.b = objArr;
-        this.c = i10;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.b, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean add(Object obj) {
-        i();
-        int i10 = this.c;
-        Object[] objArr = this.b;
-        if (i10 == objArr.length) {
-            this.b = Arrays.copyOf(objArr, ((i10 * 3) / 2) + 1);
-        }
-        Object[] objArr2 = this.b;
-        int i11 = this.c;
-        this.c = i11 + 1;
-        objArr2[i11] = obj;
-        ((AbstractList) this).modCount++;
-        return true;
-    }
-
-    @Override // androidx.datastore.preferences.protobuf.z
-    public final z e(int i10) {
-        if (i10 < this.c) {
-            throw new IllegalArgumentException();
-        }
-        return new a1(this.c, Arrays.copyOf(this.b, i10));
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object get(int i10) {
-        n(i10);
-        return this.b[i10];
-    }
-
-    public final void n(int i10) {
-        if (i10 < 0 || i10 >= this.c) {
-            StringBuilder m9 = kf.k0.m(i10, "Index:", ", Size:");
-            m9.append(this.c);
-            throw new IndexOutOfBoundsException(m9.toString());
-        }
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object remove(int i10) {
-        i();
-        n(i10);
-        Object[] objArr = this.b;
-        Object obj = objArr[i10];
-        if (i10 < this.c - 1) {
-            System.arraycopy(objArr, i10 + 1, objArr, i10, (r2 - i10) - 1);
-        }
-        this.c--;
-        ((AbstractList) this).modCount++;
-        return obj;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final Object set(int i10, Object obj) {
-        i();
-        n(i10);
-        Object[] objArr = this.b;
-        Object obj2 = objArr[i10];
-        objArr[i10] = obj;
-        ((AbstractList) this).modCount++;
-        return obj2;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final void add(int i10, Object obj) {
-        int i11;
-        i();
-        if (i10 >= 0 && i10 <= (i11 = this.c)) {
-            Object[] objArr = this.b;
-            if (i11 < objArr.length) {
-                System.arraycopy(objArr, i10, objArr, i10 + 1, i11 - i10);
-            } else {
-                Object[] objArr2 = new Object[((i11 * 3) / 2) + 1];
-                System.arraycopy(objArr, 0, objArr2, 0, i10);
-                System.arraycopy(this.b, i10, objArr2, i10 + 1, this.c - i10);
-                this.b = objArr2;
-            }
-            this.b[i10] = obj;
-            this.c++;
-            ((AbstractList) this).modCount++;
+    public a1(w wVar, String str, Object[] objArr) {
+        this.a = wVar;
+        this.b = str;
+        this.c = objArr;
+        char charAt = str.charAt(0);
+        if (charAt < 55296) {
+            this.d = charAt;
             return;
         }
-        StringBuilder m9 = kf.k0.m(i10, "Index:", ", Size:");
-        m9.append(this.c);
-        throw new IndexOutOfBoundsException(m9.toString());
+        int i10 = charAt & 8191;
+        int i11 = 13;
+        int i12 = 1;
+        while (true) {
+            int i13 = i12 + 1;
+            char charAt2 = str.charAt(i12);
+            if (charAt2 < 55296) {
+                this.d = i10 | (charAt2 << i11);
+                return;
+            } else {
+                i10 |= (charAt2 & 8191) << i11;
+                i11 += 13;
+                i12 = i13;
+            }
+        }
     }
 }

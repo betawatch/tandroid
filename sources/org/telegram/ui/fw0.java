@@ -1,210 +1,88 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.MotionEvent;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class fw0 extends org.telegram.ui.ActionBar.p2 {
-    public final long a;
-    public org.telegram.ui.Cells.w7 b;
-    public org.telegram.ui.Components.x80 c;
-    public org.telegram.ui.Components.g61 d;
-    public org.telegram.ui.Components.lr e;
-    public org.telegram.ui.ActionBar.w0 f;
-    public final boolean h;
-    public final long n;
-    public boolean r;
-    public long s;
-    public ko v;
-    public boolean w;
+public final class fw0 implements org.telegram.ui.Components.ek0 {
+    public final /* synthetic */ co a;
+    public final /* synthetic */ MessageObject b;
+    public final /* synthetic */ org.telegram.ui.Components.fk0 c;
+    public final /* synthetic */ lw0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fw0(long j10) {
-        super(null);
-        TLRPC.Chat chat = null;
-        this.w = true;
-        this.a = j10;
-        TLRPC.Chat chat2 = getMessagesController().getChat(Long.valueOf(j10));
-        if (chat2 != null && chat2.linked_monoforum_id != 0) {
-            chat = getMessagesController().getChat(Long.valueOf(chat2.linked_monoforum_id));
-        }
-        long j11 = chat != null ? chat.send_paid_messages_stars : 0L;
-        boolean z4 = chat2 != null && chat2.broadcast_messages_allowed;
-        this.h = z4;
-        long clamp = Utilities.clamp(z4 ? j11 : getMessagesController().config.starsPaidMessagesChannelAmountDefault.get(), getMessagesController().starsPaidMessageAmountMax, 0L);
-        this.n = clamp;
-        this.r = z4;
-        this.s = clamp;
+    public fw0(lw0 lw0Var, co coVar, MessageObject messageObject, org.telegram.ui.Components.fk0 fk0Var) {
+        this.d = lw0Var;
+        this.a = coVar;
+        this.b = messageObject;
+        this.c = fk0Var;
     }
 
-    public static /* synthetic */ void U(fw0 fw0Var, TLRPC.TL_error tL_error, TLObject tLObject, TL_stars.updatePaidMessagesPrice updatepaidmessagesprice) {
-        if (tL_error != null) {
-            fw0Var.e.a(0.0f);
-            org.telegram.ui.Components.qc.b0(tL_error);
-            return;
-        }
-        TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-        fw0Var.getMessagesController().putChats(updates.chats, false);
-        fw0Var.getMessagesController().processUpdates(updates, false);
-        if (fw0Var.isFinished || fw0Var.finishing) {
-            return;
-        }
-        ko koVar = fw0Var.v;
-        if (koVar != null) {
-            koVar.run(updatepaidmessagesprice.suggestions_allowed ? updatepaidmessagesprice.send_paid_messages_stars : -1L);
-        }
-        fw0Var.finishFragment();
-    }
-
-    public final void V(boolean z4) {
-        boolean X;
-        if (this.f == null || this.w == (X = X())) {
-            return;
-        }
-        this.w = X;
-        this.f.setEnabled(X);
-        if (z4) {
-            this.f.animate().alpha(X ? 1.0f : 0.0f).scaleX(X ? 1.0f : 0.0f).scaleY(X ? 1.0f : 0.0f).setDuration(180L).start();
-            return;
-        }
-        this.f.setAlpha(X ? 1.0f : 0.0f);
-        this.f.setScaleX(X ? 1.0f : 0.0f);
-        this.f.setScaleY(X ? 1.0f : 0.0f);
-    }
-
-    public final String W() {
-        return LocaleController.formatString(R.string.PostSuggestionsPriceInfo2, rh.j.G0(getMessagesController().starsPaidMessageCommissionPermille), String.valueOf(((int) (((this.s * (r0 / 1000.0f)) / 1000.0d) * getMessagesController().starsUsdWithdrawRate1000)) / 100.0d));
-    }
-
-    public final boolean X() {
-        return (this.s == this.n && this.r == this.h) ? false : true;
-    }
-
-    public final void Y() {
-        if (this.e.c > 0.0f) {
-            return;
-        }
-        if (!X()) {
-            finishFragment();
-            return;
-        }
-        this.e.a(1.0f);
-        TL_stars.updatePaidMessagesPrice updatepaidmessagesprice = new TL_stars.updatePaidMessagesPrice();
-        MessagesController messagesController = getMessagesController();
-        long j10 = this.a;
-        updatepaidmessagesprice.channel = messagesController.getInputChannel(j10);
-        boolean z4 = this.r;
-        updatepaidmessagesprice.send_paid_messages_stars = z4 ? this.s : 0L;
-        updatepaidmessagesprice.suggestions_allowed = z4;
-        getConnectionsManager().sendRequest(updatepaidmessagesprice, new ub0(12, this, updatepaidmessagesprice));
-        TLRPC.Chat chat = getMessagesController().getChat(Long.valueOf(j10));
-        if (chat != null) {
-            if (this.r) {
-                chat.flags2 |= 65536;
-                chat.broadcast_messages_allowed = true;
-            } else {
-                chat.flags2 &= -65537;
-                chat.broadcast_messages_allowed = false;
+    /* JADX WARN: Removed duplicated region for block: B:9:0x005f  */
+    @Override // org.telegram.ui.Components.ek0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void B(View view, ah.j1 j1Var, boolean z10, boolean z11) {
+        float f7;
+        ah.k1 k1Var;
+        ah.h1 l4;
+        float f10;
+        int i10;
+        float f11;
+        int id2 = this.b.getId();
+        co coVar = this.a;
+        org.telegram.ui.Cells.a0 q82 = coVar.q8(id2, true);
+        float f12 = 0.0f;
+        if (q82 instanceof org.telegram.ui.Cells.t1) {
+            ah.k1 k1Var2 = ((org.telegram.ui.Cells.t1) q82).N;
+            ah.h1 l10 = k1Var2.l(j1Var);
+            if (l10 == null) {
+                f11 = 0.0f;
+                f7 = f11;
+                coVar.ab(q82, this.b, this.c, view, f12, f7, j1Var, false, (j1Var == null && j1Var.a) ? true : z10, z11, false);
+                this.d.c(false);
             }
-            getMessagesController().putChat(chat, true);
-            TLRPC.Chat chat2 = getMessagesController().getChat(Long.valueOf(chat.linked_monoforum_id));
-            if (chat2 != null) {
-                if (this.r) {
-                    chat2.flags2 |= 16384;
-                    chat2.send_paid_messages_stars = this.s;
-                } else {
-                    chat2.flags2 &= -16385;
-                    chat2.send_paid_messages_stars = 0L;
-                }
-                getMessagesController().putChat(chat2, true);
-            }
+            f12 = k1Var2.c + l10.x + (l10.A / 2.0f);
+            f10 = k1Var2.d + l10.y;
+            i10 = l10.B;
+        } else if (!(q82 instanceof org.telegram.ui.Cells.w0) || (l4 = (k1Var = ((org.telegram.ui.Cells.w0) q82).C0).l(j1Var)) == null) {
+            f7 = 0.0f;
+            coVar.ab(q82, this.b, this.c, view, f12, f7, j1Var, false, (j1Var == null && j1Var.a) ? true : z10, z11, false);
+            this.d.c(false);
+        } else {
+            f12 = k1Var.c + l4.x + (l4.A / 2.0f);
+            f10 = k1Var.d + l4.y;
+            i10 = l4.B;
         }
-        ko koVar = this.v;
-        if (koVar != null) {
-            koVar.run(this.r ? this.s : -1L);
-        }
+        f11 = f10 + (i10 / 2.0f);
+        f7 = f11;
+        coVar.ab(q82, this.b, this.c, view, f12, f7, j1Var, false, (j1Var == null && j1Var.a) ? true : z10, z11, false);
+        this.d.c(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.PostSuggestions));
-        this.actionBar.setActionBarMenuOnItemClick(new ll0(this, 5));
-        Drawable mutate = context.getResources().getDrawable(R.drawable.ic_ab_done).mutate();
-        int i10 = org.telegram.ui.ActionBar.j6.v8;
-        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i10, false), PorterDuff.Mode.MULTIPLY));
-        this.e = new org.telegram.ui.Components.lr(mutate, new org.telegram.ui.Components.qp(org.telegram.ui.ActionBar.j6.w0(null, i10, false)));
-        this.f = this.actionBar.n().i(AndroidUtilities.dp(56.0f), LocaleController.getString(R.string.Done), this.e);
-        V(false);
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
-        org.telegram.ui.Cells.w7 w7Var = new org.telegram.ui.Cells.w7(context, this.resourceProvider);
-        this.b = w7Var;
-        int i11 = org.telegram.ui.ActionBar.j6.d6;
-        w7Var.setBackgroundColor(getThemedColor(i11));
-        org.telegram.ui.Components.x80 x80Var = new org.telegram.ui.Components.x80(context, this, null, true, true);
-        this.c = x80Var;
-        x80Var.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(16.0f), 0);
-        this.c.setBackgroundColor(getThemedColor(i11));
-        this.c.b(true);
-        this.c.d(0, null, false);
-        org.telegram.ui.Components.g61 g61Var = new org.telegram.ui.Components.g61(context, this.currentAccount, this.classGuid, false, new f5(this, 16), new ew0(this, 2), null, this.resourceProvider);
-        this.d = g61Var;
-        g61Var.o1();
-        frameLayout2.addView(this.d, k7.b6.e(-1, -1, 51));
-        this.actionBar.setAdaptiveBackground(this.d);
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p2
-    public final boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        return !X();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p2
-    public final boolean onBackPressed(boolean z4) {
-        if (!X()) {
-            return super.onBackPressed(z4);
-        }
-        if (!z4) {
-            return false;
-        }
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(getParentActivity());
-        alertDialog$Builder.a.O = LocaleController.getString(R.string.UnsavedChanges);
-        alertDialog$Builder.a.Q = LocaleController.getString(R.string.MessageSuggestionsUnsavedChanges);
-        alertDialog$Builder.k(LocaleController.getString(R.string.ApplyTheme), new ew0(this, 0));
-        alertDialog$Builder.h(LocaleController.getString(R.string.Discard), new ew0(this, 1));
-        showDialog(alertDialog$Builder.a);
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ boolean S() {
         return false;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final boolean onFragmentCreate() {
-        org.telegram.ui.Components.w51 w51Var;
-        super.onFragmentCreate();
-        org.telegram.ui.Components.g61 g61Var = this.d;
-        if (g61Var == null || (w51Var = g61Var.V2) == null) {
-            return true;
-        }
-        w51Var.N(false);
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ boolean n() {
         return true;
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ boolean t() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ void J() {
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ void I(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

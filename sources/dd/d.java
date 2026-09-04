@@ -1,6 +1,18 @@
 package dd;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface d extends sc.a {
+public class d extends k {
+    public String c;
+
+    @Override // dd.k
+    public final k f() {
+        this.c = null;
+        return this;
+    }
+
+    @Override // dd.k
+    public String toString() {
+        return this.c;
+    }
 }

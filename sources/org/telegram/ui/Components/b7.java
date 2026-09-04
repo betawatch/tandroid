@@ -1,47 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class b7 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ c8 b;
-    public final /* synthetic */ p70 c;
+import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.Utilities;
 
-    public /* synthetic */ b7(c8 c8Var, p70 p70Var, int i10) {
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class b7 implements Utilities.Callback2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k8 b;
+
+    public /* synthetic */ b7(k8 k8Var, int i10) {
         this.a = i10;
-        this.b = c8Var;
-        this.c = p70Var;
+        this.b = k8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                c8 c8Var = this.b;
-                c8Var.getClass();
-                this.c.u();
-                c8Var.t0(1);
-                break;
-            case 1:
-                c8 c8Var2 = this.b;
-                c8Var2.getClass();
-                this.c.u();
-                c8Var2.t0(2);
-                break;
-            case 2:
-                c8 c8Var3 = this.b;
-                c8Var3.getClass();
-                this.c.u();
-                c8Var3.t0(4);
-                break;
-            case 3:
-                c8 c8Var4 = this.b;
-                c8Var4.getClass();
-                this.c.u();
-                c8Var4.t0(7);
+                boolean z10 = !((Boolean) obj2).booleanValue();
+                k8 k8Var = this.b;
+                k8Var.Y = z10;
+                MediaController mediaController = MediaController.getInstance();
+                org.telegram.ui.ActionBar.b1 b1Var = k8Var.X;
+                float floatValue = ((Float) obj).floatValue();
+                b1Var.getClass();
+                mediaController.setPlaybackSpeed(true, (floatValue * 2.8f) + 0.2f);
                 break;
             default:
-                c8.q(this.b, this.c);
+                this.b.i0.setBackground(new BitmapDrawable((Bitmap) obj));
                 break;
         }
     }

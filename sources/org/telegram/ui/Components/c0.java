@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class c0 extends LinearLayout {
     public final RectF a;
@@ -31,12 +31,12 @@ public final class c0 extends LinearLayout {
 
     @Override // android.view.ViewGroup, android.view.View
     public final void dispatchDraw(Canvas canvas) {
-        z5 z5Var = this.f.h;
-        float d = z5Var == null ? 0.0f : z5Var.d(r0.f, false);
+        e6 e6Var = this.f.h;
+        float d = e6Var == null ? 0.0f : e6Var.d(r0.f, false);
         double d10 = d;
         int floor = (int) Math.floor(d10);
         int ceil = (int) Math.ceil(d10);
-        float f10 = d - floor;
+        float f7 = d - floor;
         RectF rectF = this.a;
         if (floor >= 0 && floor < getChildCount()) {
             View childAt = getChildAt(floor);
@@ -48,7 +48,7 @@ public final class c0 extends LinearLayout {
             rectF2.set(childAt2.getLeft(), childAt2.getTop(), childAt2.getRight(), childAt2.getBottom());
         }
         RectF rectF3 = this.c;
-        AndroidUtilities.lerp(rectF, rectF2, f10, rectF3);
+        AndroidUtilities.lerp(rectF, rectF2, f7, rectF3);
         int l1 = org.telegram.ui.ActionBar.j6.l1(0.1f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Oh, this.e));
         Paint paint = this.d;
         paint.setColor(l1);
@@ -64,32 +64,32 @@ public final class c0 extends LinearLayout {
 
     @Override // android.widget.LinearLayout, android.view.View
     public final void onMeasure(int i10, int i11) {
-        boolean z4 = getOrientation() == 0;
-        int size = z4 ? View.MeasureSpec.getSize(i10) : View.MeasureSpec.getSize(i11);
+        boolean z10 = getOrientation() == 0;
+        int size = z10 ? View.MeasureSpec.getSize(i10) : View.MeasureSpec.getSize(i11);
         int i12 = 0;
         int i13 = 0;
         for (int i14 = 0; i14 < getChildCount(); i14++) {
             View childAt = getChildAt(i14);
             childAt.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-            childAt.measure(z4 ? View.MeasureSpec.makeMeasureSpec(0, 0) : i10, !z4 ? View.MeasureSpec.makeMeasureSpec(0, 0) : i11);
-            int measuredWidth = z4 ? childAt.getMeasuredWidth() : childAt.getMeasuredHeight();
+            childAt.measure(z10 ? View.MeasureSpec.makeMeasureSpec(0, 0) : i10, !z10 ? View.MeasureSpec.makeMeasureSpec(0, 0) : i11);
+            int measuredWidth = z10 ? childAt.getMeasuredWidth() : childAt.getMeasuredHeight();
             i13 = Math.max(i13, measuredWidth);
             i12 += measuredWidth;
         }
-        boolean z10 = i12 <= size && ((float) i13) < ((float) size) / ((float) getChildCount());
+        boolean z11 = i12 <= size && ((float) i13) < ((float) size) / ((float) getChildCount());
         for (int i15 = 0; i15 < getChildCount(); i15++) {
             View childAt2 = getChildAt(i15);
             LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) childAt2.getLayoutParams();
             childAt2.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
-            if (z10) {
-                if (z4) {
+            if (z11) {
+                if (z10) {
                     layoutParams.width = 0;
                 } else {
                     layoutParams.height = 0;
                 }
                 layoutParams.weight = 1.0f;
             } else {
-                if (z4) {
+                if (z10) {
                     layoutParams.width = -2;
                 } else {
                     layoutParams.height = -2;

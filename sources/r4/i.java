@@ -1,74 +1,107 @@
 package r4;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import c0.l;
+import java.io.File;
+import java.io.IOException;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class i {
-    public final q4.d a;
-    public final s4.m b;
-    public final s4.b c;
-    public final h d;
-    public final long e;
-    public final long f;
+public abstract class i {
+    public static final l a = new l();
+    public static final Object b = new Object();
+    public static rb.a c = null;
 
-    public i(long j10, s4.m mVar, s4.b bVar, q4.d dVar, long j11, h hVar) {
-        this.e = j10;
-        this.b = mVar;
-        this.c = bVar;
-        this.f = j11;
-        this.a = dVar;
-        this.d = hVar;
+    public static long a(Context context) {
+        PackageManager packageManager = context.getApplicationContext().getPackageManager();
+        return Build.VERSION.SDK_INT >= 33 ? g.a(packageManager, context).lastUpdateTime : packageManager.getPackageInfo(context.getPackageName(), 0).lastUpdateTime;
     }
 
-    public final i a(long j10, s4.m mVar) {
-        long u02;
-        long u03;
-        h c3 = this.b.c();
-        h c10 = mVar.c();
-        if (c3 == null) {
-            return new i(j10, mVar, this.c, this.a, this.f, c3);
-        }
-        if (!c3.q1()) {
-            return new i(j10, mVar, this.c, this.a, this.f, c10);
-        }
-        long N1 = c3.N1(j10);
-        if (N1 == 0) {
-            return new i(j10, mVar, this.c, this.a, this.f, c10);
-        }
-        long x12 = c3.x1();
-        long a2 = c3.a(x12);
-        long j11 = N1 + x12;
-        long j12 = j11 - 1;
-        long p10 = c3.p(j12, j10) + c3.a(j12);
-        long x13 = c10.x1();
-        long a10 = c10.a(x13);
-        long j13 = this.f;
-        if (p10 == a10) {
-            u02 = j11 - x13;
-        } else {
-            if (p10 < a10) {
-                throw new o4.b();
+    public static rb.a b() {
+        rb.a aVar = new rb.a(21);
+        c = aVar;
+        a.k(aVar);
+        return c;
+    }
+
+    /* JADX WARN: Can't wrap try/catch for region: R(22:14|(1:81)(1:18)|19|(1:80)(1:23)|24|25|26|(2:65|66)(1:28)|29|(9:36|(1:40)|(1:60)(1:47)|48|(2:56|57)|52|53|54|55)|(1:64)|(1:40)|(1:42)|60|48|(1:50)|56|57|52|53|54|55) */
+    /* JADX WARN: Code restructure failed: missing block: B:62:0x00a1, code lost:
+    
+        r6 = 1;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void c(Context context, boolean z10) {
+        h a2;
+        h hVar;
+        int i10;
+        if (z10 || c == null) {
+            synchronized (b) {
+                if (!z10) {
+                    try {
+                        if (c != null) {
+                            return;
+                        }
+                    } catch (Throwable th2) {
+                        throw th2;
+                    }
+                }
+                int i11 = Build.VERSION.SDK_INT;
+                if (i11 >= 28 && i11 != 30) {
+                    File file = new File(new File("/data/misc/profiles/ref/", context.getPackageName()), "primary.prof");
+                    long length = file.length();
+                    int i12 = 0;
+                    boolean z11 = file.exists() && length > 0;
+                    File file2 = new File(new File("/data/misc/profiles/cur/0/", context.getPackageName()), "primary.prof");
+                    long length2 = file2.length();
+                    boolean z12 = file2.exists() && length2 > 0;
+                    try {
+                        long a10 = a(context);
+                        File file3 = new File(context.getFilesDir(), "profileInstalled");
+                        if (file3.exists()) {
+                            try {
+                                a2 = h.a(file3);
+                            } catch (IOException unused) {
+                                b();
+                                return;
+                            }
+                        } else {
+                            a2 = null;
+                        }
+                        if (a2 != null && a2.c == a10 && (i10 = a2.b) != 2) {
+                            i12 = i10;
+                            if (z10 && z12 && i12 != 1) {
+                                i12 = 2;
+                            }
+                            hVar = new h(a10, 1, (a2 == null && a2.b == 2 && i12 == 1 && length < a2.d) ? 3 : i12, length2);
+                            if (a2 != null || !a2.equals(hVar)) {
+                                hVar.b(file3);
+                            }
+                            b();
+                            return;
+                        }
+                        if (z12) {
+                            i12 = 2;
+                        }
+                        if (z10) {
+                            i12 = 2;
+                        }
+                        hVar = new h(a10, 1, (a2 == null && a2.b == 2 && i12 == 1 && length < a2.d) ? 3 : i12, length2);
+                        if (a2 != null) {
+                        }
+                        hVar.b(file3);
+                        b();
+                        return;
+                    } catch (PackageManager.NameNotFoundException unused2) {
+                        b();
+                        return;
+                    }
+                }
+                b();
             }
-            if (a10 < a2) {
-                u03 = j13 - (c10.u0(a2, j10) - x12);
-                return new i(j10, mVar, this.c, this.a, u03, c10);
-            }
-            u02 = c3.u0(a10, j10) - x13;
         }
-        u03 = u02 + j13;
-        return new i(j10, mVar, this.c, this.a, u03, c10);
-    }
-
-    public final long b(long j10) {
-        h hVar = this.d;
-        long j11 = this.e;
-        return (hVar.P1(j11, j10) + (hVar.G(j11, j10) + this.f)) - 1;
-    }
-
-    public final long c(long j10) {
-        return this.d.p(j10 - this.f, this.e) + d(j10);
-    }
-
-    public final long d(long j10) {
-        return this.d.a(j10 - this.f);
     }
 }

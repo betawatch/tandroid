@@ -1,72 +1,41 @@
 package qg;
 
-import j3.w;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class d implements a {
-    public final f6 a;
-    public c b;
-    public c c;
-    public c d;
-    public c e;
-    public float f;
-    public float h;
-    public float n;
-    public float r;
-
-    public d(f6 f6Var) {
-        this.a = f6Var;
-        float dpf2 = AndroidUtilities.dpf2(1.0f);
-        float dpf22 = AndroidUtilities.dpf2(0.33333334f);
-        this.n = dpf2;
-        this.r = dpf22;
-        float dpf23 = AndroidUtilities.dpf2(1.0f);
-        float dpf24 = AndroidUtilities.dpf2(0.6666667f);
-        this.f = dpf23;
-        this.h = dpf24;
+public final class d extends m {
+    @Override // qg.m
+    public final float a() {
+        return 1.0f;
     }
 
-    @Override // qg.a
-    public final int D() {
-        return a(this.d);
+    @Override // qg.m
+    public final float d() {
+        return 1.0f;
     }
 
-    public final int a(c cVar) {
-        if (cVar == null) {
-            return 0;
+    @Override // qg.m
+    public final int e() {
+        return R.raw.photo_eraser;
+    }
+
+    @Override // qg.m
+    public final float g() {
+        return 0.35f;
+    }
+
+    @Override // qg.m
+    public final String i(int i10) {
+        if (i10 == 0) {
+            return "blitWithMaskEraser";
         }
-        f6 f6Var = this.a;
-        return cVar.f(f6Var, ((f6Var instanceof nh.b) || f6Var != null) ? f6Var.a() : j6.I.q());
-    }
-
-    public final void b(int i10, int i11) {
-        this.b = new w(i11, i10, 2);
-    }
-
-    public final void c(int i10, int i11) {
-        this.d = new w(i11, i10, 2);
-    }
-
-    public final void d(int i10, int i11) {
-        this.c = new w(i11, i10, 2);
-    }
-
-    @Override // qg.a
-    public final int e0() {
-        return a(this.b);
-    }
-
-    @Override // qg.a
-    public final int m0() {
-        return a(this.e);
-    }
-
-    @Override // qg.a
-    public final int x() {
-        return a(this.c);
+        if (i10 == 1) {
+            return "compositeWithMaskEraser";
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return "brush";
     }
 }

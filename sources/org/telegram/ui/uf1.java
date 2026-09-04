@@ -1,28 +1,37 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class uf1 implements k11 {
-    public final /* synthetic */ TLRPC.TL_forumTopic a;
-    public final /* synthetic */ vf1 b;
+public final class uf1 extends FrameLayout {
+    public TextView a;
+    public float b;
+    public boolean c;
 
-    public uf1(vf1 vf1Var, TLRPC.TL_forumTopic tL_forumTopic) {
-        this.b = vf1Var;
-        this.a = tL_forumTopic;
-    }
-
-    @Override // org.telegram.ui.k11
-    public final void b0() {
-        yf1 yf1Var = this.b.a;
-        TLRPC.TL_forumTopic tL_forumTopic = this.a;
-        yf1.U(yf1Var, tL_forumTopic.id);
-        AndroidUtilities.runOnUIThread(new b11(25, this, tL_forumTopic), 300L);
-    }
-
-    @Override // org.telegram.ui.k11
-    public final void v(lk0 lk0Var) {
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.c) {
+            float f7 = this.b + 0.013333334f;
+            this.b = f7;
+            if (f7 > 1.0f) {
+                this.c = false;
+                this.b = 1.0f;
+            }
+        } else {
+            float f10 = this.b - 0.013333334f;
+            this.b = f10;
+            if (f10 < 0.0f) {
+                this.c = true;
+                this.b = 0.0f;
+            }
+        }
+        this.a.setTranslationX(org.telegram.ui.Components.pr.f.getInterpolation(this.b) * AndroidUtilities.dp(8.0f) * (LocaleController.isRTL ? -1 : 1));
+        invalidate();
     }
 }

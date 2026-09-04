@@ -24,9 +24,9 @@ public final class c0 {
             return false;
         }
         c0 c0Var = (c0) obj;
-        boolean z4 = c0Var.a;
-        boolean z10 = this.a;
-        return (z10 && z4) ? this.b == c0Var.b : z10 == z4;
+        boolean z10 = c0Var.a;
+        boolean z11 = this.a;
+        return (z11 && z10) ? this.b == c0Var.b : z11 == z10;
     }
 
     public final int hashCode() {

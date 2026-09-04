@@ -1,29 +1,13 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class gn implements MessagesController.MessagesLoadedCallback {
-    public final /* synthetic */ yi a;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ ln c;
-
-    public gn(ln lnVar, yi yiVar, zn znVar) {
-        this.c = lnVar;
-        this.a = yiVar;
-        this.b = znVar;
-    }
-
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onError() {
-        this.a.c(false);
-        this.c.a.presentFragment(this.b);
-    }
-
-    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
-    public final void onMessagesLoaded(boolean z4) {
-        this.a.c(false);
-        this.c.a.presentFragment(this.b);
+public final class gn extends MessageObject {
+    @Override // org.telegram.messenger.MessageObject
+    public final boolean canDeleteMessage(boolean z10, TLRPC.Chat chat) {
+        return false;
     }
 }

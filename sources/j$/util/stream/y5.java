@@ -10,15 +10,15 @@ public final class y5 extends u5 {
     /* JADX WARN: Type inference failed for: r0v5, types: [j$.util.stream.s6] */
     /* JADX WARN: Type inference failed for: r0v6, types: [j$.util.stream.s6] */
     @Override // j$.util.stream.c5, j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         ?? r02;
-        if (j10 >= 2147483639) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        if (j10 <= 0) {
+        if (j3 <= 0) {
             r02 = new s6();
         } else {
-            r02 = new m6((int) j10);
+            r02 = new m6((int) j3);
         }
         this.c = r02;
     }

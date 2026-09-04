@@ -1,235 +1,87 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationsController;
+import org.telegram.messenger.NotificationsSettingsFacade;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class v11 extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final ImageView c;
-    public SharedConfig.ProxyInfo d;
-    public Drawable e;
-    public final org.telegram.ui.Components.kp f;
-    public boolean h;
-    public boolean n;
-    public int r;
-    public final /* synthetic */ ProxyListActivity s;
+public final class v11 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ y11 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v11(ProxyListActivity proxyListActivity, Context context) {
-        super(context);
-        this.s = proxyListActivity;
-        TextView textView = new TextView(context);
-        this.a = textView;
-        b.q(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f, 1);
-        textView.setMaxLines(1);
-        textView.setSingleLine(true);
-        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
-        textView.setEllipsize(truncateAt);
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        boolean z4 = LocaleController.isRTL;
-        addView(textView, k7.b6.d(-2, -2.0f, (z4 ? 5 : 3) | 48, z4 ? 56 : 21, 10.0f, z4 ? 21 : 56, 0.0f));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextSize(1, 13.0f);
-        textView2.setGravity(LocaleController.isRTL ? 5 : 3);
-        textView2.setLines(1);
-        textView2.setMaxLines(1);
-        textView2.setSingleLine(true);
-        textView2.setCompoundDrawablePadding(AndroidUtilities.dp(6.0f));
-        textView2.setEllipsize(truncateAt);
-        textView2.setPadding(0, 0, 0, 0);
-        boolean z10 = LocaleController.isRTL;
-        addView(textView2, k7.b6.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 56 : 21, 35.0f, z10 ? 21 : 56, 0.0f));
-        ImageView imageView = new ImageView(context);
-        this.c = imageView;
-        imageView.setImageResource(R.drawable.msg_info);
-        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.A6, false), PorterDuff.Mode.MULTIPLY));
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setContentDescription(LocaleController.getString(R.string.Edit));
-        addView(imageView, k7.b6.d(48, 48.0f, (LocaleController.isRTL ? 3 : 5) | 48, 8.0f, 8.0f, 8.0f, 0.0f));
-        imageView.setOnClickListener(new g60(this, 26));
-        org.telegram.ui.Components.kp kpVar = new org.telegram.ui.Components.kp(context, 21, null);
-        this.f = kpVar;
-        kpVar.b(org.telegram.ui.ActionBar.j6.i7, org.telegram.ui.ActionBar.j6.g7, org.telegram.ui.ActionBar.j6.k7);
-        kpVar.setDrawBackgroundAsArc(14);
-        kpVar.setVisibility(8);
-        addView(kpVar, k7.b6.d(24, 24.0f, (LocaleController.isRTL ? 5 : 3) | 16, 16.0f, 0.0f, 8.0f, 0.0f));
-        setWillNotDraw(false);
+    public v11(y11 y11Var, String str) {
+        this.b = y11Var;
+        this.a = str;
     }
 
-    public final void a(boolean z4, boolean z10) {
-        if (this.n == z4 && z10) {
-            return;
-        }
-        this.n = z4;
-        float dp = LocaleController.isRTL ? -AndroidUtilities.dp(32.0f) : AndroidUtilities.dp(32.0f);
-        if (z10) {
-            ValueAnimator duration = ValueAnimator.ofFloat(z4 ? 0.0f : 1.0f, z4 ? 1.0f : 0.0f).setDuration(200L);
-            duration.setInterpolator(org.telegram.ui.Components.mr.f);
-            duration.addUpdateListener(new ig(this, dp, 4));
-            duration.addListener(new org.telegram.ui.Components.m00(28, this, z4));
-            duration.start();
-            return;
-        }
-        if (!z4) {
-            dp = 0.0f;
-        }
-        this.a.setTranslationX(dp);
-        this.b.setTranslationX(dp);
-        ImageView imageView = this.c;
-        imageView.setTranslationX(dp);
-        boolean z11 = LocaleController.isRTL;
-        int dp2 = AndroidUtilities.dp(32.0f);
-        if (!z11) {
-            dp2 = -dp2;
-        }
-        float f10 = dp2 + dp;
-        org.telegram.ui.Components.kp kpVar = this.f;
-        kpVar.setTranslationX(f10);
-        imageView.setVisibility(z4 ? 8 : 0);
-        imageView.setAlpha(1.0f);
-        imageView.setScaleX(1.0f);
-        imageView.setScaleY(1.0f);
-        kpVar.setVisibility(z4 ? 0 : 8);
-        kpVar.setAlpha(1.0f);
-        kpVar.setScaleX(1.0f);
-        kpVar.setScaleY(1.0f);
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00e0  */
-    /* JADX WARN: Removed duplicated region for block: B:15:? A[RETURN, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void b() {
-        int i10;
-        Drawable drawable;
-        SharedConfig.ProxyInfo proxyInfo = SharedConfig.currentProxy;
-        SharedConfig.ProxyInfo proxyInfo2 = this.d;
-        TextView textView = this.b;
-        if (proxyInfo == proxyInfo2) {
-            ProxyListActivity proxyListActivity = this.s;
-            if (proxyListActivity.d) {
-                int i11 = proxyListActivity.c;
-                if (i11 == 3 || i11 == 5) {
-                    i10 = org.telegram.ui.ActionBar.j6.s6;
-                    if (proxyInfo2.ping != 0) {
-                        StringBuilder sb = new StringBuilder();
-                        b.i(R.string.Connected, ", ", sb);
-                        sb.append(LocaleController.formatString("Ping", R.string.Ping, Long.valueOf(this.d.ping)));
-                        textView.setText(sb.toString());
-                    } else {
-                        textView.setText(LocaleController.getString(R.string.Connected));
-                    }
-                    SharedConfig.ProxyInfo proxyInfo3 = this.d;
-                    if (!proxyInfo3.checking && !proxyInfo3.available) {
-                        proxyInfo3.availableCheckTime = 0L;
-                    }
-                } else {
-                    i10 = org.telegram.ui.ActionBar.j6.z6;
-                    textView.setText(LocaleController.getString(R.string.Connecting));
-                }
-                this.r = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
-                textView.setTag(Integer.valueOf(i10));
-                textView.setTextColor(this.r);
-                drawable = this.e;
-                if (drawable == null) {
-                    drawable.setColorFilter(new PorterDuffColorFilter(this.r, PorterDuff.Mode.MULTIPLY));
-                    return;
-                }
-                return;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        y11 y11Var = this.b;
+        long j3 = y11Var.f;
+        long j10 = y11Var.e;
+        String str = this.a;
+        if (i10 == -1) {
+            if (!y11Var.h && y11Var.n) {
+                i17 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+                MessagesController.getNotificationsSettings(i17).edit().putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0).apply();
             }
-        }
-        if (proxyInfo2.checking) {
-            textView.setText(LocaleController.getString(R.string.Checking));
-            i10 = org.telegram.ui.ActionBar.j6.z6;
-        } else if (proxyInfo2.available) {
-            if (proxyInfo2.ping != 0) {
-                StringBuilder sb2 = new StringBuilder();
-                b.i(R.string.Available, ", ", sb2);
-                sb2.append(LocaleController.formatString("Ping", R.string.Ping, Long.valueOf(this.d.ping)));
-                textView.setText(sb2.toString());
+        } else if (i10 == 1) {
+            i11 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+            SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i11);
+            SharedPreferences.Editor edit = notificationsSettings.edit();
+            edit.putBoolean(NotificationsSettingsFacade.PROPERTY_CUSTOM + str, true);
+            i12 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+            TLRPC.Dialog dialog = (TLRPC.Dialog) MessagesController.getInstance(i12).dialogs_dict.f(j10);
+            if (y11Var.n) {
+                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 0);
+                if (j3 == 0) {
+                    i16 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+                    MessagesStorage.getInstance(i16).setDialogFlags(j10, 0L);
+                    if (dialog != null) {
+                        dialog.notify_settings = new TLRPC.TL_peerNotifySettings();
+                    }
+                }
             } else {
-                textView.setText(LocaleController.getString(R.string.Available));
+                edit.putInt(NotificationsSettingsFacade.PROPERTY_NOTIFY + str, 2);
+                if (j3 == 0) {
+                    i13 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+                    NotificationsController.getInstance(i13).removeNotificationsForDialog(j10);
+                    i14 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+                    MessagesStorage.getInstance(i14).setDialogFlags(j10, 1L);
+                    if (dialog != null) {
+                        TLRPC.TL_peerNotifySettings tL_peerNotifySettings = new TLRPC.TL_peerNotifySettings();
+                        dialog.notify_settings = tL_peerNotifySettings;
+                        tL_peerNotifySettings.mute_until = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    }
+                }
             }
-            i10 = org.telegram.ui.ActionBar.j6.w6;
-        } else {
-            textView.setText(LocaleController.getString(R.string.Unavailable));
-            i10 = org.telegram.ui.ActionBar.j6.p7;
+            edit.apply();
+            i15 = ((org.telegram.ui.ActionBar.n2) y11Var).currentAccount;
+            NotificationsController.getInstance(i15).updateServerNotificationsSettings(j10, j3);
+            if (y11Var.r != null) {
+                wk0 wk0Var = new wk0();
+                wk0Var.d = j10;
+                wk0Var.b = true;
+                int c10 = org.telegram.messenger.w1.c(NotificationsSettingsFacade.PROPERTY_NOTIFY, str, notificationsSettings, 0);
+                wk0Var.c = c10;
+                if (c10 != 0) {
+                    wk0Var.a = org.telegram.messenger.w1.c(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL, str, notificationsSettings, 0);
+                }
+                y11Var.r.v(wk0Var);
+            }
         }
-        this.r = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
-        textView.setTag(Integer.valueOf(i10));
-        textView.setTextColor(this.r);
-        drawable = this.e;
-        if (drawable == null) {
-        }
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        b();
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), b.B(64.0f, 1, TLObject.FLAG_30));
-    }
-
-    public void setChecked(boolean z4) {
-        TextView textView = this.b;
-        if (!z4) {
-            textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, (Drawable) null, (Drawable) null);
-            return;
-        }
-        if (this.e == null) {
-            this.e = getResources().getDrawable(R.drawable.proxy_check).mutate();
-        }
-        Drawable drawable = this.e;
-        if (drawable != null) {
-            drawable.setColorFilter(new PorterDuffColorFilter(this.r, PorterDuff.Mode.MULTIPLY));
-        }
-        if (LocaleController.isRTL) {
-            textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, (Drawable) null, this.e, (Drawable) null);
-        } else {
-            textView.setCompoundDrawablesWithIntrinsicBounds(this.e, (Drawable) null, (Drawable) null, (Drawable) null);
-        }
-    }
-
-    public void setProxy(SharedConfig.ProxyInfo proxyInfo) {
-        String str;
-        if (proxyInfo.settings.a == 3) {
-            str = android.support.v4.media.a.r(new StringBuilder(), proxyInfo.settings.b, " (WEB)");
-        } else {
-            str = proxyInfo.settings.b + ":" + proxyInfo.settings.c;
-        }
-        this.a.setText(str);
-        this.d = proxyInfo;
-    }
-
-    public void setValue(CharSequence charSequence) {
-        this.b.setText(charSequence);
+        y11Var.finishFragment();
     }
 }

@@ -42,14 +42,14 @@ public abstract class b implements Collection, Serializable {
 
     @Override // java.util.Collection
     public final Object[] toArray() {
-        long j10 = this.a.j();
-        if (j10 < 0) {
-            j10 = 0;
+        long j3 = this.a.j();
+        if (j3 < 0) {
+            j3 = 0;
         }
-        if (j10 > 2147483639) {
+        if (j3 > 2147483639) {
             throw new OutOfMemoryError("Required array size too large");
         }
-        int i10 = (int) j10;
+        int i10 = (int) j3;
         Object[] objArr = new Object[i10];
         Iterator it = iterator();
         int i11 = 0;
@@ -71,14 +71,14 @@ public abstract class b implements Collection, Serializable {
 
     @Override // java.util.Collection
     public final Object[] toArray(Object[] objArr) {
-        long j10 = this.a.j();
-        if (j10 < 0) {
-            j10 = 0;
+        long j3 = this.a.j();
+        if (j3 < 0) {
+            j3 = 0;
         }
-        if (j10 > 2147483639) {
+        if (j3 > 2147483639) {
             throw new OutOfMemoryError("Required array size too large");
         }
-        int i10 = (int) j10;
+        int i10 = (int) j3;
         Object[] objArr2 = objArr.length >= i10 ? objArr : (Object[]) Array.newInstance(objArr.getClass().getComponentType(), i10);
         int length = objArr2.length;
         Iterator it = iterator();
@@ -104,7 +104,7 @@ public abstract class b implements Collection, Serializable {
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("[");
+        StringBuilder sb2 = new StringBuilder("[");
         Iterator it = iterator();
         if (it.hasNext()) {
             while (true) {
@@ -112,15 +112,15 @@ public abstract class b implements Collection, Serializable {
                 if (next == this) {
                     next = "(this Collection)";
                 }
-                sb.append(next);
+                sb2.append(next);
                 if (!it.hasNext()) {
                     break;
                 }
-                sb.append(", ");
+                sb2.append(", ");
             }
         }
-        sb.append(']');
-        return sb.toString();
+        sb2.append(']');
+        return sb2.toString();
     }
 
     @Override // java.util.Collection
@@ -140,7 +140,7 @@ public abstract class b implements Collection, Serializable {
     public boolean removeAll(Collection collection) {
         collection.getClass();
         l[] lVarArr = this.a.a;
-        boolean z4 = false;
+        boolean z10 = false;
         if (lVarArr == null) {
             return false;
         }
@@ -149,29 +149,29 @@ public abstract class b implements Collection, Serializable {
             while (it.hasNext()) {
                 if (collection.contains(it.next())) {
                     it.remove();
-                    z4 = true;
+                    z10 = true;
                 }
             }
-            return z4;
+            return z10;
         }
         Iterator it2 = collection.iterator();
         while (it2.hasNext()) {
-            z4 |= remove(it2.next());
+            z10 |= remove(it2.next());
         }
-        return z4;
+        return z10;
     }
 
     @Override // java.util.Collection
     public final boolean retainAll(Collection collection) {
         collection.getClass();
         Iterator it = iterator();
-        boolean z4 = false;
+        boolean z10 = false;
         while (it.hasNext()) {
             if (!collection.contains(it.next())) {
                 it.remove();
-                z4 = true;
+                z10 = true;
             }
         }
-        return z4;
+        return z10;
     }
 }

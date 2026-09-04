@@ -1,0 +1,13 @@
+package n2;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class o {
+    public final byte[] a;
+    public final String b;
+
+    public o(String str, byte[] bArr) {
+        this.a = bArr;
+        this.b = str;
+    }
+}

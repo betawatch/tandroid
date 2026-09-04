@@ -7,23 +7,23 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import i2.g;
 import java.util.WeakHashMap;
-import kf.k0;
+import m.v1;
 import m.w1;
-import m.x1;
 import org.telegram.messenger.beta.R;
 import org.telegram.tgnet.TLObject;
-import r0.j0;
+import r0.i0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public class AlertDialogLayout extends x1 {
+public class AlertDialogLayout extends w1 {
     public AlertDialogLayout(Context context) {
         super(context, null, 0);
     }
 
     public static int i(View view) {
-        WeakHashMap weakHashMap = j0.a;
+        WeakHashMap weakHashMap = i0.a;
         int minimumHeight = view.getMinimumHeight();
         if (minimumHeight > 0) {
             return minimumHeight;
@@ -38,12 +38,12 @@ public class AlertDialogLayout extends x1 {
     }
 
     /* JADX WARN: Removed duplicated region for block: B:25:0x009f  */
-    @Override // m.x1, android.view.ViewGroup, android.view.View
+    @Override // m.w1, android.view.ViewGroup, android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        int d;
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int C;
         int i14;
         int i15;
         int paddingLeft = getPaddingLeft();
@@ -63,39 +63,39 @@ public class AlertDialogLayout extends x1 {
             if (childAt != null && childAt.getVisibility() != 8) {
                 int measuredWidth = childAt.getMeasuredWidth();
                 int measuredHeight2 = childAt.getMeasuredHeight();
-                w1 w1Var = (w1) childAt.getLayoutParams();
-                int i20 = ((LinearLayout.LayoutParams) w1Var).gravity;
+                v1 v1Var = (v1) childAt.getLayoutParams();
+                int i20 = ((LinearLayout.LayoutParams) v1Var).gravity;
                 if (i20 < 0) {
                     i20 = i18;
                 }
-                WeakHashMap weakHashMap = j0.a;
+                WeakHashMap weakHashMap = i0.a;
                 int absoluteGravity = Gravity.getAbsoluteGravity(i20, getLayoutDirection()) & 7;
                 if (absoluteGravity == 1) {
-                    d = k0.d(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) w1Var).leftMargin;
-                    i14 = ((LinearLayout.LayoutParams) w1Var).rightMargin;
+                    C = g.C(paddingRight2, measuredWidth, 2, paddingLeft) + ((LinearLayout.LayoutParams) v1Var).leftMargin;
+                    i14 = ((LinearLayout.LayoutParams) v1Var).rightMargin;
                 } else if (absoluteGravity != 5) {
-                    i15 = ((LinearLayout.LayoutParams) w1Var).leftMargin + paddingLeft;
+                    i15 = ((LinearLayout.LayoutParams) v1Var).leftMargin + paddingLeft;
                     if (h(i19)) {
                         paddingTop += intrinsicHeight;
                     }
-                    int i21 = paddingTop + ((LinearLayout.LayoutParams) w1Var).topMargin;
+                    int i21 = paddingTop + ((LinearLayout.LayoutParams) v1Var).topMargin;
                     childAt.layout(i15, i21, measuredWidth + i15, i21 + measuredHeight2);
-                    paddingTop = measuredHeight2 + ((LinearLayout.LayoutParams) w1Var).bottomMargin + i21;
+                    paddingTop = measuredHeight2 + ((LinearLayout.LayoutParams) v1Var).bottomMargin + i21;
                 } else {
-                    d = paddingRight - measuredWidth;
-                    i14 = ((LinearLayout.LayoutParams) w1Var).rightMargin;
+                    C = paddingRight - measuredWidth;
+                    i14 = ((LinearLayout.LayoutParams) v1Var).rightMargin;
                 }
-                i15 = d - i14;
+                i15 = C - i14;
                 if (h(i19)) {
                 }
-                int i212 = paddingTop + ((LinearLayout.LayoutParams) w1Var).topMargin;
+                int i212 = paddingTop + ((LinearLayout.LayoutParams) v1Var).topMargin;
                 childAt.layout(i15, i212, measuredWidth + i15, i212 + measuredHeight2);
-                paddingTop = measuredHeight2 + ((LinearLayout.LayoutParams) w1Var).bottomMargin + i212;
+                paddingTop = measuredHeight2 + ((LinearLayout.LayoutParams) v1Var).bottomMargin + i212;
             }
         }
     }
 
-    @Override // m.x1, android.view.View
+    @Override // m.w1, android.view.View
     public final void onMeasure(int i10, int i11) {
         int i12;
         int i13;
@@ -184,12 +184,12 @@ public class AlertDialogLayout extends x1 {
             while (i22 < childCount) {
                 View childAt3 = alertDialogLayout.getChildAt(i22);
                 if (childAt3.getVisibility() != 8) {
-                    w1 w1Var = (w1) childAt3.getLayoutParams();
-                    if (((LinearLayout.LayoutParams) w1Var).width == -1) {
-                        int i23 = ((LinearLayout.LayoutParams) w1Var).height;
-                        ((LinearLayout.LayoutParams) w1Var).height = childAt3.getMeasuredHeight();
+                    v1 v1Var = (v1) childAt3.getLayoutParams();
+                    if (((LinearLayout.LayoutParams) v1Var).width == -1) {
+                        int i23 = ((LinearLayout.LayoutParams) v1Var).height;
+                        ((LinearLayout.LayoutParams) v1Var).height = childAt3.getMeasuredHeight();
                         alertDialogLayout.measureChildWithMargins(childAt3, makeMeasureSpec, 0, i21, 0);
-                        ((LinearLayout.LayoutParams) w1Var).height = i23;
+                        ((LinearLayout.LayoutParams) v1Var).height = i23;
                     }
                 }
                 i22++;

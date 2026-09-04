@@ -31,7 +31,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class SharedConfig {
     private static final int[] LOW_SOC;
@@ -185,7 +185,7 @@ public class SharedConfig {
     public static boolean useSystemEmoji;
     public static boolean useThreeLinesLayout;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class BackgroundActivityPrefs {
         private static SharedPreferences prefs;
 
@@ -201,38 +201,38 @@ public class SharedConfig {
             prefs.edit().putInt("dismissed_count", getDismissedCount() + 1).apply();
         }
 
-        public static void setLastCheckedBackgroundActivity(long j10) {
-            prefs.edit().putLong("last_checked", j10).apply();
+        public static void setLastCheckedBackgroundActivity(long j3) {
+            prefs.edit().putLong("last_checked", j3).apply();
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PasscodeType {
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     @Retention(RetentionPolicy.SOURCE)
     public @interface PerformanceClass {
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ProxyInfo {
         public boolean available;
         public long availableCheckTime;
         public boolean checking;
         public long ping;
-        public rf.b settings;
+        public fg.b settings;
 
-        public ProxyInfo(rf.b bVar) {
+        public ProxyInfo(fg.b bVar) {
             this.settings = bVar;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static ProxyInfo fromSerializedData(int i10, InputSerializedData inputSerializedData) {
+            long j3;
             long j10;
-            long j11;
-            rf.a a2 = rf.b.a();
+            fg.a a2 = fg.b.a();
             String readString = inputSerializedData.readString(false);
             if (readString == null) {
                 readString = "";
@@ -252,21 +252,25 @@ public class SharedConfig {
             String readString4 = inputSerializedData.readString(false);
             a2.f = readString4 != null ? readString4 : "";
             if (i10 >= 2) {
+                j3 = inputSerializedData.readInt64(false);
                 j10 = inputSerializedData.readInt64(false);
-                j11 = inputSerializedData.readInt64(false);
             } else {
+                j3 = 0;
                 j10 = 0;
-                j11 = 0;
             }
             if (i10 >= 3) {
-                int d = rf.b.d(inputSerializedData.readInt32(false));
-                a2.a = d != 0 ? d : 1;
+                int d = fg.b.d(inputSerializedData.readInt32(false));
+                if (d == 0) {
+                    d = 1;
+                }
+                a2.a = d;
             } else {
                 a2.a = TextUtils.isEmpty(readString4) ? 1 : 2;
             }
-            ProxyInfo proxyInfo = new ProxyInfo(new rf.b(a2));
-            proxyInfo.availableCheckTime = j11;
-            proxyInfo.ping = j10;
+            ProxyInfo proxyInfo = new ProxyInfo(new fg.b(a2));
+            proxyInfo.availableCheckTime = j10;
+            proxyInfo.ping = j3;
+            proxyInfo.available = j3 > 0;
             return proxyInfo;
         }
 
@@ -279,11 +283,11 @@ public class SharedConfig {
             outputSerializedData.writeString(this.settings.f);
             outputSerializedData.writeInt64(this.ping);
             outputSerializedData.writeInt64(this.availableCheckTime);
-            int c3 = m1.j.c(this.settings.a);
+            int c10 = m1.j.c(this.settings.a);
             int i10 = 1;
-            if (c3 != 1) {
+            if (c10 != 1) {
                 i10 = 2;
-                if (c3 != 2) {
+                if (c10 != 2) {
                     i10 = 0;
                 }
             }
@@ -400,8 +404,8 @@ public class SharedConfig {
     public static int buildVersion() {
         try {
             return ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return 0;
         }
     }
@@ -421,7 +425,7 @@ public class SharedConfig {
                 return;
             }
             lastLogsCheckTime = currentTimeMillis;
-            Utilities.cacheClearQueue.postRunnable(new e6(currentTimeMillis, 5));
+            Utilities.cacheClearQueue.postRunnable(new fi.r2(currentTimeMillis, 6));
         }
     }
 
@@ -435,8 +439,8 @@ public class SharedConfig {
                 System.arraycopy(bytes, 0, bArr, 16, bytes.length);
                 System.arraycopy(passcodeSalt, 0, bArr, bytes.length + 16, 16);
                 return passcodeHash.equals(Utilities.bytesToHex(Utilities.computeSHA256(bArr, 0, length)));
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
                 return false;
             }
         }
@@ -454,22 +458,22 @@ public class SharedConfig {
                 passcodeHash = Utilities.bytesToHex(Utilities.computeSHA256(bArr2, 0, length2));
                 saveConfig();
                 return equals;
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
         }
         return equals;
     }
 
     public static void checkSaveToGalleryFiles() {
-        Utilities.globalQueue.postRunnable(new x1(21));
+        Utilities.globalQueue.postRunnable(new u1(21));
     }
 
     public static void checkSdCard(File file) {
         if (file == null || storageCacheDir == null || readOnlyStorageDirAlertShowed || !file.getPath().startsWith(storageCacheDir)) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new x1(20));
+        AndroidUtilities.runOnUIThread(new u1(20));
     }
 
     public static void clearConfig() {
@@ -506,7 +510,7 @@ public class SharedConfig {
         if (currentProxy == proxyInfo) {
             currentProxy = null;
             SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
-            boolean z4 = globalMainSettings.getBoolean("proxy_enabled", false);
+            boolean z10 = globalMainSettings.getBoolean("proxy_enabled", false);
             SharedPreferences.Editor edit = globalMainSettings.edit();
             edit.putString("proxy_ip", "");
             edit.putString("proxy_pass", "");
@@ -517,7 +521,7 @@ public class SharedConfig {
             edit.putBoolean("proxy_enabled", false);
             edit.putBoolean("proxy_enabled_calls", false);
             edit.apply();
-            if (z4) {
+            if (z10) {
                 ConnectionsManager.setProxySettings(false, null);
             }
         }
@@ -541,9 +545,9 @@ public class SharedConfig {
         return getDevicePerformanceClass() == 0;
     }
 
-    public static boolean enabledRaiseTo(boolean z4) {
+    public static boolean enabledRaiseTo(boolean z10) {
         if (raiseToListen) {
-            return !z4 || raiseToSpeak;
+            return !z10 || raiseToSpeak;
         }
         return false;
     }
@@ -744,8 +748,8 @@ public class SharedConfig {
         }
         try {
             buildVersion = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0).versionCode;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             buildVersion = buildVersion();
         }
         return pendingAppUpdateBuildVersion == buildVersion;
@@ -786,7 +790,7 @@ public class SharedConfig {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$checkLogsToDelete$3(int i10) {
         File logsDir;
-        long j10 = i10 - 864000;
+        long j3 = i10 - 864000;
         try {
             logsDir = AndroidUtilities.getLogsDir();
         } catch (Throwable th2) {
@@ -795,7 +799,7 @@ public class SharedConfig {
         if (logsDir == null) {
             return;
         }
-        Utilities.clearDir(logsDir.getAbsolutePath(), 0, j10, false);
+        Utilities.clearDir(logsDir.getAbsolutePath(), 0, j3, false);
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putInt("lastLogsCheckTime", lastLogsCheckTime);
         edit.apply();
@@ -832,35 +836,35 @@ public class SharedConfig {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static void lambda$checkSdCard$2() {
-        org.telegram.ui.ActionBar.p2 R;
+        org.telegram.ui.ActionBar.n2 R;
         if (readOnlyStorageDirAlertShowed || (R = LaunchActivity.R()) == null || R.getParentActivity() == null) {
             return;
         }
         storageCacheDir = null;
         saveConfig();
-        ImageLoader.getInstance().checkMediaPaths(new x1(19));
+        ImageLoader.getInstance().checkMediaPaths(new u1(19));
         readOnlyStorageDirAlertShowed = true;
         AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(R.getParentActivity());
-        alertDialog$Builder.a.O = LocaleController.getString(R.string.SdCardError);
-        alertDialog$Builder.a.P = LocaleController.getString(R.string.SdCardErrorDescription);
-        alertDialog$Builder.k(LocaleController.getString(R.string.DoNotUseSDCard), new bh());
-        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-        d2Var.setCanceledOnTouchOutside(false);
-        d2Var.show();
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.SdCardError);
+        alertDialog$Builder.a.S = LocaleController.getString(R.string.SdCardErrorDescription);
+        alertDialog$Builder.k(LocaleController.getString(R.string.DoNotUseSDCard), new zg());
+        org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+        b2Var.setCanceledOnTouchOutside(false);
+        b2Var.show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ int lambda$saveProxyList$4(ProxyInfo proxyInfo, ProxyInfo proxyInfo2) {
         ProxyInfo proxyInfo3 = currentProxy;
-        long j10 = proxyInfo3 == proxyInfo ? -200000L : 0L;
+        long j3 = proxyInfo3 == proxyInfo ? -200000L : 0L;
         if (!proxyInfo.available) {
+            j3 += 100000;
+        }
+        long j10 = proxyInfo3 == proxyInfo2 ? -200000L : 0L;
+        if (!proxyInfo2.available) {
             j10 += 100000;
         }
-        long j11 = proxyInfo3 == proxyInfo2 ? -200000L : 0L;
-        if (!proxyInfo2.available) {
-            j11 += 100000;
-        }
-        return Long.compare(proxyInfo.ping + j10, proxyInfo2.ping + j11);
+        return Long.compare(proxyInfo.ping + j3, proxyInfo2.ping + j10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:41:0x02ae A[Catch: all -> 0x00f3, TryCatch #1 {all -> 0x00f3, Exception -> 0x0164, blocks: (B:4:0x0003, B:6:0x0007, B:9:0x000d, B:11:0x00ec, B:12:0x00f6, B:14:0x00fe, B:16:0x0102, B:17:0x010f, B:19:0x011e, B:20:0x0129, B:22:0x0135, B:24:0x013d, B:26:0x014f, B:27:0x0166, B:57:0x016a, B:59:0x017c, B:61:0x0189, B:63:0x018f, B:64:0x0191, B:66:0x0195, B:68:0x019b, B:70:0x01a1, B:72:0x01a5, B:76:0x0183, B:29:0x01b5, B:31:0x0219, B:34:0x0225, B:36:0x024a, B:39:0x0255, B:41:0x02ae, B:42:0x02b0, B:45:0x047d, B:48:0x048b, B:49:0x04f3, B:53:0x0472, B:82:0x01b2, B:83:0x0125, B:84:0x04f5), top: B:3:0x0003 }] */
@@ -880,8 +884,8 @@ public class SharedConfig {
         String str2;
         synchronized (sync) {
             try {
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             } finally {
             }
             if (!configLoaded && ApplicationLoader.applicationContext != null) {
@@ -938,8 +942,8 @@ public class SharedConfig {
                         i10 = packageInfo.versionCode;
                         try {
                             str = packageInfo.versionName;
-                        } catch (Exception e6) {
-                            e = e6;
+                        } catch (Exception e10) {
+                            e = e10;
                             FileLog.e(e);
                             str = null;
                             if (i10 == 0) {
@@ -949,7 +953,7 @@ public class SharedConfig {
                             if (pendingAppUpdateBuildVersion == i10) {
                             }
                             pendingAppUpdate = null;
-                            AndroidUtilities.runOnUIThread(new x1(18));
+                            AndroidUtilities.runOnUIThread(new u1(18));
                             sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
                             SaveToGallerySettingsHelper.load(sharedPreferences);
                             mapPreviewType = sharedPreferences.getInt("mapPreviewType", 2);
@@ -961,9 +965,9 @@ public class SharedConfig {
                             adaptableColorInBrowser = sharedPreferences.getBoolean("adaptableBrowser", false);
                             onlyLocalInstantView = sharedPreferences.getBoolean("onlyLocalInstantView", BuildVars.DEBUG_PRIVATE_VERSION);
                             directShare = sharedPreferences.getBoolean("direct_share", true);
-                            boolean z4 = sharedPreferences.getBoolean("shuffleMusic", false);
-                            shuffleMusic = z4;
-                            playOrderReversed = z4 && sharedPreferences.getBoolean("playOrderReversed", false);
+                            boolean z10 = sharedPreferences.getBoolean("shuffleMusic", false);
+                            shuffleMusic = z10;
+                            playOrderReversed = z10 && sharedPreferences.getBoolean("playOrderReversed", false);
                             inappCamera = sharedPreferences.getBoolean("inappCamera", true);
                             hasCameraCache = sharedPreferences.contains("cameraCache");
                             roundCamera16to9 = true;
@@ -1048,8 +1052,8 @@ public class SharedConfig {
                             showNotificationsForAllAccounts = ApplicationLoader.applicationContext.getSharedPreferences("Notifications", 0).getBoolean("AllAccounts", true);
                             configLoaded = true;
                         }
-                    } catch (Exception e10) {
-                        e = e10;
+                    } catch (Exception e11) {
+                        e = e11;
                         i10 = 0;
                     }
                     if (i10 == 0) {
@@ -1060,7 +1064,7 @@ public class SharedConfig {
                     }
                     if (pendingAppUpdateBuildVersion == i10 || (str2 = pendingAppUpdate.version) == null || str.compareTo(str2) >= 0 || BuildVars.DEBUG_PRIVATE_VERSION) {
                         pendingAppUpdate = null;
-                        AndroidUtilities.runOnUIThread(new x1(18));
+                        AndroidUtilities.runOnUIThread(new u1(18));
                     }
                 }
                 sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
@@ -1074,9 +1078,9 @@ public class SharedConfig {
                 adaptableColorInBrowser = sharedPreferences.getBoolean("adaptableBrowser", false);
                 onlyLocalInstantView = sharedPreferences.getBoolean("onlyLocalInstantView", BuildVars.DEBUG_PRIVATE_VERSION);
                 directShare = sharedPreferences.getBoolean("direct_share", true);
-                boolean z42 = sharedPreferences.getBoolean("shuffleMusic", false);
-                shuffleMusic = z42;
-                playOrderReversed = z42 && sharedPreferences.getBoolean("playOrderReversed", false);
+                boolean z102 = sharedPreferences.getBoolean("shuffleMusic", false);
+                shuffleMusic = z102;
+                playOrderReversed = z102 && sharedPreferences.getBoolean("playOrderReversed", false);
                 inappCamera = sharedPreferences.getBoolean("inappCamera", true);
                 hasCameraCache = sharedPreferences.contains("cameraCache");
                 roundCamera16to9 = true;
@@ -1175,7 +1179,7 @@ public class SharedConfig {
             return;
         }
         SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0);
-        rf.b b10 = rf.b.b(sharedPreferences);
+        fg.b b10 = fg.b.b(sharedPreferences);
         proxyListLoaded = true;
         proxyList.clear();
         currentProxy = null;
@@ -1227,7 +1231,7 @@ public class SharedConfig {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public static int measureDevicePerformanceClass() {
-        long j10;
+        long j3;
         String str;
         int i10 = Build.VERSION.SDK_INT;
         int i11 = ConnectionsManager.CPU_COUNT;
@@ -1266,25 +1270,25 @@ public class SharedConfig {
         try {
             ActivityManager.MemoryInfo memoryInfo = new ActivityManager.MemoryInfo();
             ((ActivityManager) ApplicationLoader.applicationContext.getSystemService("activity")).getMemoryInfo(memoryInfo);
-            j10 = memoryInfo.totalMem;
+            j3 = memoryInfo.totalMem;
         } catch (Exception unused2) {
-            j10 = -1;
+            j3 = -1;
         }
-        if (i11 > 2 && memoryClass > 100 && ((i11 > 4 || ceil == -1 || ceil > 1250) && ((i11 > 4 || ceil > 1600 || memoryClass > 128 || i10 > 21) && ((i11 > 4 || ceil > 1300 || memoryClass > 128 || i10 > 24) && (j10 == -1 || j10 >= 2147483648L))))) {
+        if (i11 > 2 && memoryClass > 100 && ((i11 > 4 || ceil == -1 || ceil > 1250) && ((i11 > 4 || ceil > 1600 || memoryClass > 128 || i10 > 21) && ((i11 > 4 || ceil > 1300 || memoryClass > 128 || i10 > 24) && (j3 == -1 || j3 >= 2147483648L))))) {
             i12 = (i11 < 8 || memoryClass <= 160 || (ceil != -1 && ceil <= 2055) || (ceil == -1 && i11 == 8 && i10 <= 23)) ? 1 : 2;
         }
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder m9 = e2.c.m("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
-            kf.k0.w(m9, ceil, ", memoryClass = ", memoryClass, ", android version ");
-            m9.append(i10);
-            m9.append(", manufacture ");
-            m9.append(Build.MANUFACTURER);
-            m9.append(", screenRefreshRate=");
-            m9.append(AndroidUtilities.screenRefreshRate);
-            m9.append(", screenMaxRefreshRate=");
-            m9.append(AndroidUtilities.screenMaxRefreshRate);
-            m9.append(")");
-            FileLog.d(m9.toString());
+            StringBuilder k10 = com.google.android.gms.internal.vision.e2.k("device performance info selected_class = ", i12, " (cpu_count = ", i11, ", freq = ");
+            i2.g.v(k10, ceil, ", memoryClass = ", memoryClass, ", android version ");
+            k10.append(i10);
+            k10.append(", manufacture ");
+            k10.append(Build.MANUFACTURER);
+            k10.append(", screenRefreshRate=");
+            k10.append(AndroidUtilities.screenRefreshRate);
+            k10.append(", screenMaxRefreshRate=");
+            k10.append(AndroidUtilities.screenMaxRefreshRate);
+            k10.append(")");
+            FileLog.d(k10.toString());
         }
         return i12;
     }
@@ -1392,8 +1396,8 @@ public class SharedConfig {
                     edit2.putBoolean("floatingDebugActive", isFloatingDebugActive);
                     edit2.putBoolean("record_via_sco", recordViaSco);
                     edit2.apply();
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -1407,7 +1411,7 @@ public class SharedConfig {
 
     public static void saveProxyList() {
         ArrayList arrayList = new ArrayList(proxyList);
-        Collections.sort(arrayList, new ei(3));
+        Collections.sort(arrayList, new bi(3));
         SerializedData serializedData = new SerializedData();
         serializedData.writeInt32(-1);
         serializedData.writeByte(3);
@@ -1420,8 +1424,8 @@ public class SharedConfig {
         serializedData.cleanup();
     }
 
-    public static void setAnimationsEnabled(boolean z4) {
-        animationsEnabled = Boolean.valueOf(z4);
+    public static void setAnimationsEnabled(boolean z10) {
+        animationsEnabled = Boolean.valueOf(z10);
     }
 
     public static void setDistanceSystemType(int i10) {
@@ -1432,8 +1436,8 @@ public class SharedConfig {
         LocaleController.resetImperialSystemType();
     }
 
-    public static void setDontAskManageStorage(boolean z4) {
-        dontAskManageStorage = z4;
+    public static void setDontAskManageStorage(boolean z10) {
+        dontAskManageStorage = z10;
         ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0).edit().putBoolean("dontAskManageStorage", dontAskManageStorage).apply();
     }
 
@@ -1458,8 +1462,8 @@ public class SharedConfig {
         }
     }
 
-    public static void setMultipleReactionsPromoShowed(boolean z4) {
-        multipleReactionsPromoShowed = z4;
+    public static void setMultipleReactionsPromoShowed(boolean z10) {
+        multipleReactionsPromoShowed = z10;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("multipleReactionsPromoShowed", multipleReactionsPromoShowed);
         edit.apply();
@@ -1478,14 +1482,14 @@ public class SharedConfig {
         try {
             packageInfo = ApplicationLoader.applicationContext.getPackageManager().getPackageInfo(ApplicationLoader.applicationContext.getPackageName(), 0);
             i10 = packageInfo.versionCode;
-        } catch (Exception e) {
-            e = e;
+        } catch (Exception e7) {
+            e = e7;
             i10 = 0;
         }
         try {
             str = packageInfo.versionName;
-        } catch (Exception e6) {
-            e = e6;
+        } catch (Exception e10) {
+            e = e10;
             FileLog.e(e);
             str = null;
             if (i10 == 0) {
@@ -1513,11 +1517,11 @@ public class SharedConfig {
         return true;
     }
 
-    public static void setNoSoundHintShowed(boolean z4) {
-        if (noSoundHintShowed == z4) {
+    public static void setNoSoundHintShowed(boolean z10) {
+        if (noSoundHintShowed == z10) {
             return;
         }
-        noSoundHintShowed = z4;
+        noSoundHintShowed = z10;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("noSoundHintShowed", noSoundHintShowed);
         edit.apply();
@@ -1566,8 +1570,8 @@ public class SharedConfig {
         edit.apply();
     }
 
-    public static void setSearchMessagesAsListUsed(boolean z4) {
-        searchMessagesAsListUsed = z4;
+    public static void setSearchMessagesAsListUsed(boolean z10) {
+        searchMessagesAsListUsed = z10;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("searchMessagesAsListUsed", searchMessagesAsListUsed);
         edit.apply();
@@ -1580,8 +1584,8 @@ public class SharedConfig {
         edit.apply();
     }
 
-    public static void setStickersReorderingHintUsed(boolean z4) {
-        stickersReorderingHintUsed = z4;
+    public static void setStickersReorderingHintUsed(boolean z10) {
+        stickersReorderingHintUsed = z10;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("stickersReorderingHintUsed", stickersReorderingHintUsed);
         edit.apply();
@@ -1594,15 +1598,15 @@ public class SharedConfig {
         }
     }
 
-    public static void setStoriesIntroShown(boolean z4) {
-        storiesIntroShown = z4;
+    public static void setStoriesIntroShown(boolean z10) {
+        storiesIntroShown = z10;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("storiesIntroShown", storiesIntroShown);
         edit.apply();
     }
 
-    public static void setStoriesReactionsLongPressHintUsed(boolean z4) {
-        storyReactionsLongPressHint = z4;
+    public static void setStoriesReactionsLongPressHintUsed(boolean z10) {
+        storyReactionsLongPressHint = z10;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("storyReactionsLongPressHint", storyReactionsLongPressHint);
         edit.apply();
@@ -1615,8 +1619,8 @@ public class SharedConfig {
         edit.apply();
     }
 
-    public static void setUseThreeLinesLayout(boolean z4) {
-        useThreeLinesLayout = z4;
+    public static void setUseThreeLinesLayout(boolean z10) {
+        useThreeLinesLayout = z10;
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
         edit.putBoolean("useThreeLinesLayout", useThreeLinesLayout);
         edit.apply();
@@ -1853,17 +1857,17 @@ public class SharedConfig {
 
     public static void toggleUpdateStickersOrderOnSend() {
         SharedPreferences.Editor edit = MessagesController.getGlobalMainSettings().edit();
-        boolean z4 = !updateStickersOrderOnSend;
-        updateStickersOrderOnSend = z4;
-        edit.putBoolean("updateStickersOrderOnSend", z4);
+        boolean z10 = !updateStickersOrderOnSend;
+        updateStickersOrderOnSend = z10;
+        edit.putBoolean("updateStickersOrderOnSend", z10);
         edit.apply();
     }
 
     public static void toggleUseCamera2(int i10) {
         SharedPreferences.Editor edit = ApplicationLoader.applicationContext.getSharedPreferences("mainconfig", 0).edit();
-        boolean z4 = !isUsingCamera2(i10);
-        useCamera2Force = Boolean.valueOf(z4);
-        edit.putBoolean("useCamera2Force_2", z4).apply();
+        boolean z10 = !isUsingCamera2(i10);
+        useCamera2Force = Boolean.valueOf(z10);
+        edit.putBoolean("useCamera2Force_2", z10).apply();
     }
 
     public static void toggleUseNewBlur() {
@@ -1934,6 +1938,6 @@ public class SharedConfig {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ void lambda$checkSdCard$1(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    public static /* synthetic */ void lambda$checkSdCard$1(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
     }
 }

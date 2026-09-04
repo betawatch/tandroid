@@ -15,7 +15,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class cz implements Utilities.Callback {
     public final /* synthetic */ int a;
@@ -26,23 +26,22 @@ public final /* synthetic */ class cz implements Utilities.Callback {
         this.b = dzVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:85:0x01c1, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:85:0x01c3, code lost:
     
         if (r8.charAt(r11) <= 57343) goto L76;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:95:0x01db, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:95:0x01dd, code lost:
     
         if (r8.charAt(r11) != 9794) goto L78;
      */
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v12, types: [java.lang.CharSequence] */
-    /* JADX WARN: Type inference failed for: r8v8, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r8v11, types: [java.lang.CharSequence] */
+    /* JADX WARN: Type inference failed for: r8v7, types: [java.lang.CharSequence] */
     @Override // org.telegram.messenger.Utilities.Callback
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void run(Object obj) {
-        LongSparseArray longSparseArray;
         int indexOfIgnoreCase;
         int indexOfIgnoreCase2;
         int i10 = this.a;
@@ -55,9 +54,9 @@ public final /* synthetic */ class cz implements Utilities.Callback {
             case 1:
                 Runnable runnable = (Runnable) obj;
                 ArrayList arrayList = dzVar.s;
-                LongSparseArray longSparseArray2 = dzVar.v;
+                LongSparseArray longSparseArray = dzVar.v;
                 fz fzVar = dzVar.w;
-                HashMap<String, ArrayList<TLRPC.Document>> allStickers = MediaDataController.getInstance(fzVar.N.Z0).getAllStickers();
+                HashMap<String, ArrayList<TLRPC.Document>> allStickers = MediaDataController.getInstance(fzVar.Q.c1).getAllStickers();
                 HashSet hashSet = new HashSet();
                 ArrayList arrayList2 = new ArrayList();
                 for (ArrayList<TLRPC.Document> arrayList3 : allStickers.values()) {
@@ -70,11 +69,11 @@ public final /* synthetic */ class cz implements Utilities.Callback {
                         if (!hashSet.contains(Long.valueOf(document2.id)) && MessageObject.isPremiumSticker(document2)) {
                             hashSet.add(Long.valueOf(document2.id));
                             arrayList2.add(document2);
-                            longSparseArray2.put(document2.id, document2);
+                            longSparseArray.put(document2.id, document2);
                         }
                     }
                 }
-                ArrayList<TLRPC.StickerSetCovered> featuredStickerSets = MediaDataController.getInstance(fzVar.N.Z0).getFeaturedStickerSets();
+                ArrayList<TLRPC.StickerSetCovered> featuredStickerSets = MediaDataController.getInstance(fzVar.Q.c1).getFeaturedStickerSets();
                 int size2 = featuredStickerSets.size();
                 int i13 = 0;
                 while (i13 < size2) {
@@ -86,7 +85,7 @@ public final /* synthetic */ class cz implements Utilities.Callback {
                         hashSet.add(Long.valueOf(stickerSetCovered2.cover.id));
                         arrayList2.add(stickerSetCovered2.cover);
                         TLRPC.Document document4 = stickerSetCovered2.cover;
-                        longSparseArray2.put(document4.id, document4);
+                        longSparseArray.put(document4.id, document4);
                     }
                     ArrayList<TLRPC.Document> arrayList4 = stickerSetCovered2.covers;
                     if (arrayList4 != null) {
@@ -96,24 +95,22 @@ public final /* synthetic */ class cz implements Utilities.Callback {
                             TLRPC.Document document5 = arrayList4.get(i14);
                             i14++;
                             TLRPC.Document document6 = document5;
-                            LongSparseArray longSparseArray3 = longSparseArray2;
-                            if (hashSet.contains(Long.valueOf(document6.id)) || !MessageObject.isPremiumSticker(document6)) {
-                                longSparseArray = longSparseArray3;
-                            } else {
+                            ArrayList arrayList5 = arrayList;
+                            if (!hashSet.contains(Long.valueOf(document6.id)) && MessageObject.isPremiumSticker(document6)) {
                                 hashSet.add(Long.valueOf(document6.id));
                                 arrayList2.add(document6);
-                                longSparseArray = longSparseArray3;
                                 longSparseArray.put(document6.id, document6);
                             }
-                            longSparseArray2 = longSparseArray;
+                            arrayList = arrayList5;
                         }
                     }
-                    longSparseArray2 = longSparseArray2;
+                    arrayList = arrayList;
                 }
+                ArrayList arrayList6 = arrayList;
                 if (!arrayList2.isEmpty()) {
-                    arrayList.addAll(arrayList2);
-                    dzVar.f.put(arrayList, fzVar.K);
-                    dzVar.h.add(arrayList);
+                    arrayList6.addAll(arrayList2);
+                    dzVar.f.put(arrayList6, fzVar.N);
+                    dzVar.h.add(arrayList6);
                 }
                 runnable.run();
                 break;
@@ -121,14 +118,14 @@ public final /* synthetic */ class cz implements Utilities.Callback {
                 dzVar.a((Runnable) obj, false);
                 break;
             case 3:
-                MediaDataController.getInstance(dzVar.w.N.Z0).searchStickerSets(false, dzVar.a, new vk(5, dzVar, (Runnable) obj));
+                MediaDataController.getInstance(dzVar.w.Q.c1).searchStickerSets(false, dzVar.a, new org.telegram.ui.nf(18, dzVar, (Runnable) obj));
                 break;
             case 4:
                 Runnable runnable2 = (Runnable) obj;
                 fz fzVar2 = dzVar.w;
-                ArrayList arrayList5 = dzVar.s;
+                ArrayList arrayList7 = dzVar.s;
                 if (dzVar.a.length() <= 14) {
-                    HashMap<String, ArrayList<TLRPC.Document>> allStickers2 = MediaDataController.getInstance(fzVar2.N.Z0).getAllStickers();
+                    HashMap<String, ArrayList<TLRPC.Document>> allStickers2 = MediaDataController.getInstance(fzVar2.Q.c1).getAllStickers();
                     String str = dzVar.a;
                     int length = str.length();
                     int i15 = 0;
@@ -164,17 +161,17 @@ public final /* synthetic */ class cz implements Utilities.Callback {
                             str2 = str2;
                         }
                     }
-                    ArrayList<TLRPC.Document> arrayList6 = allStickers2 != null ? allStickers2.get(str2.toString()) : null;
-                    if (arrayList6 != null && !arrayList6.isEmpty()) {
-                        arrayList5.addAll(arrayList6);
-                        int size4 = arrayList6.size();
+                    ArrayList<TLRPC.Document> arrayList8 = allStickers2 != null ? allStickers2.get(str2.toString()) : null;
+                    if (arrayList8 != null && !arrayList8.isEmpty()) {
+                        arrayList7.addAll(arrayList8);
+                        int size4 = arrayList8.size();
                         while (i11 < size4) {
-                            TLRPC.Document document7 = arrayList6.get(i11);
+                            TLRPC.Document document7 = arrayList8.get(i11);
                             dzVar.v.put(document7.id, document7);
                             i11++;
                         }
-                        dzVar.f.put(arrayList5, fzVar2.K);
-                        dzVar.h.add(arrayList5);
+                        dzVar.f.put(arrayList7, fzVar2.N);
+                        dzVar.h.add(arrayList7);
                     }
                 }
                 runnable2.run();
@@ -182,16 +179,16 @@ public final /* synthetic */ class cz implements Utilities.Callback {
             case 5:
                 Runnable runnable3 = (Runnable) obj;
                 fz fzVar3 = dzVar.w;
-                kz kzVar = fzVar3.N;
-                int i18 = kzVar.Z0;
+                kz kzVar = fzVar3.Q;
+                int i18 = kzVar.c1;
                 HashMap<String, ArrayList<TLRPC.Document>> allStickers3 = MediaDataController.getInstance(i18).getAllStickers();
                 if (allStickers3 != null && !allStickers3.isEmpty() && dzVar.a.length() > 1) {
                     String[] currentKeyboardLanguage = AndroidUtilities.getCurrentKeyboardLanguage();
-                    if (!Arrays.equals(kzVar.T0, currentKeyboardLanguage)) {
+                    if (!Arrays.equals(kzVar.W0, currentKeyboardLanguage)) {
                         MediaDataController.getInstance(i18).fetchNewEmojiKeywords(currentKeyboardLanguage);
                     }
-                    kzVar.T0 = currentKeyboardLanguage;
-                    MediaDataController.getInstance(i18).getEmojiSuggestions(kzVar.T0, fzVar3.K, true, new androidx.car.app.utils.a(dzVar, allStickers3, runnable3, 24), false);
+                    kzVar.W0 = currentKeyboardLanguage;
+                    MediaDataController.getInstance(i18).getEmojiSuggestions(kzVar.W0, fzVar3.N, true, new androidx.car.app.utils.a(dzVar, allStickers3, runnable3, 29), false);
                     break;
                 } else {
                     runnable3.run();
@@ -201,25 +198,25 @@ public final /* synthetic */ class cz implements Utilities.Callback {
                 Runnable runnable4 = (Runnable) obj;
                 HashMap hashMap = dzVar.d;
                 HashMap hashMap2 = dzVar.e;
-                ArrayList arrayList7 = dzVar.c;
+                ArrayList arrayList9 = dzVar.c;
                 fz fzVar4 = dzVar.w;
-                ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(fzVar4.N.Z0).getStickerSets(0);
-                kz kzVar2 = fzVar4.N;
-                int i19 = kzVar2.Z0;
-                int i20 = kzVar2.Z0;
+                ArrayList<TLRPC.TL_messages_stickerSet> stickerSets = MediaDataController.getInstance(fzVar4.Q.c1).getStickerSets(0);
+                kz kzVar2 = fzVar4.Q;
+                int i19 = kzVar2.c1;
+                int i20 = kzVar2.c1;
                 MessagesController.getInstance(i19).filterPremiumStickers(stickerSets);
                 int size5 = stickerSets.size();
                 for (int i21 = 0; i21 < size5; i21++) {
                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSets.get(i21);
-                    int indexOfIgnoreCase3 = AndroidUtilities.indexOfIgnoreCase(tL_messages_stickerSet.set.title, fzVar4.K);
+                    int indexOfIgnoreCase3 = AndroidUtilities.indexOfIgnoreCase(tL_messages_stickerSet.set.title, fzVar4.N);
                     if (indexOfIgnoreCase3 < 0) {
                         String str3 = tL_messages_stickerSet.set.short_name;
-                        if (str3 != null && (indexOfIgnoreCase2 = AndroidUtilities.indexOfIgnoreCase(str3, fzVar4.K)) >= 0 && (indexOfIgnoreCase2 == 0 || tL_messages_stickerSet.set.short_name.charAt(indexOfIgnoreCase2 - 1) == ' ')) {
-                            arrayList7.add(tL_messages_stickerSet);
+                        if (str3 != null && (indexOfIgnoreCase2 = AndroidUtilities.indexOfIgnoreCase(str3, fzVar4.N)) >= 0 && (indexOfIgnoreCase2 == 0 || tL_messages_stickerSet.set.short_name.charAt(indexOfIgnoreCase2 - 1) == ' ')) {
+                            arrayList9.add(tL_messages_stickerSet);
                             hashMap.put(tL_messages_stickerSet, Boolean.TRUE);
                         }
                     } else if (indexOfIgnoreCase3 == 0 || tL_messages_stickerSet.set.title.charAt(indexOfIgnoreCase3 - 1) == ' ') {
-                        arrayList7.add(tL_messages_stickerSet);
+                        arrayList9.add(tL_messages_stickerSet);
                         hashMap2.put(tL_messages_stickerSet, Integer.valueOf(indexOfIgnoreCase3));
                     }
                 }
@@ -228,15 +225,15 @@ public final /* synthetic */ class cz implements Utilities.Callback {
                 int size6 = stickerSets2.size();
                 while (i11 < size6) {
                     TLRPC.TL_messages_stickerSet tL_messages_stickerSet2 = stickerSets2.get(i11);
-                    int indexOfIgnoreCase4 = AndroidUtilities.indexOfIgnoreCase(tL_messages_stickerSet2.set.title, fzVar4.K);
+                    int indexOfIgnoreCase4 = AndroidUtilities.indexOfIgnoreCase(tL_messages_stickerSet2.set.title, fzVar4.N);
                     if (indexOfIgnoreCase4 < 0) {
                         String str4 = tL_messages_stickerSet2.set.short_name;
-                        if (str4 != null && (indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(str4, fzVar4.K)) >= 0 && (indexOfIgnoreCase == 0 || tL_messages_stickerSet2.set.short_name.charAt(indexOfIgnoreCase - 1) == ' ')) {
-                            arrayList7.add(tL_messages_stickerSet2);
+                        if (str4 != null && (indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(str4, fzVar4.N)) >= 0 && (indexOfIgnoreCase == 0 || tL_messages_stickerSet2.set.short_name.charAt(indexOfIgnoreCase - 1) == ' ')) {
+                            arrayList9.add(tL_messages_stickerSet2);
                             hashMap.put(tL_messages_stickerSet2, Boolean.TRUE);
                         }
                     } else if (indexOfIgnoreCase4 == 0 || tL_messages_stickerSet2.set.title.charAt(indexOfIgnoreCase4 - 1) == ' ') {
-                        arrayList7.add(tL_messages_stickerSet2);
+                        arrayList9.add(tL_messages_stickerSet2);
                         hashMap2.put(tL_messages_stickerSet2, Integer.valueOf(indexOfIgnoreCase4));
                     }
                     i11++;
@@ -246,11 +243,11 @@ public final /* synthetic */ class cz implements Utilities.Callback {
             default:
                 Runnable runnable5 = (Runnable) obj;
                 fz fzVar5 = dzVar.w;
-                if (Emoji.fullyConsistsOfEmojis(fzVar5.K)) {
+                if (Emoji.fullyConsistsOfEmojis(fzVar5.N)) {
                     TLRPC.TL_messages_getStickers tL_messages_getStickers = new TLRPC.TL_messages_getStickers();
                     tL_messages_getStickers.emoticon = dzVar.a;
                     tL_messages_getStickers.hash = 0L;
-                    fzVar5.I = ConnectionsManager.getInstance(fzVar5.N.Z0).sendRequest(tL_messages_getStickers, new gg.y(dzVar, tL_messages_getStickers, runnable5, 14));
+                    fzVar5.L = ConnectionsManager.getInstance(fzVar5.Q.c1).sendRequest(tL_messages_getStickers, new bi.c5(dzVar, tL_messages_getStickers, runnable5, 9));
                     break;
                 } else {
                     runnable5.run();

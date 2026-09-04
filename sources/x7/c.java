@@ -1,52 +1,64 @@
 package x7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import com.google.android.gms.maps.model.LatLng;
-import j7.f5;
-import java.util.ArrayList;
-import u6.p;
+import java.util.List;
+import java.util.ListIterator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c extends c6.a {
-    public static final Parcelable.Creator<c> CREATOR = new p(14);
-    public LatLng a;
-    public double b;
-    public float c;
-    public int d;
-    public int e;
-    public float f;
-    public boolean h;
-    public boolean n;
-    public ArrayList r;
+public final class c extends e9.c implements ListIterator {
+    public final /* synthetic */ e9.l e;
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.k(parcel, 2, this.a, i10);
-        double d = this.b;
-        f5.s(parcel, 3, 8);
-        parcel.writeDouble(d);
-        float f10 = this.c;
-        f5.s(parcel, 4, 4);
-        parcel.writeFloat(f10);
-        int i11 = this.d;
-        f5.s(parcel, 5, 4);
-        parcel.writeInt(i11);
-        int i12 = this.e;
-        f5.s(parcel, 6, 4);
-        parcel.writeInt(i12);
-        float f11 = this.f;
-        f5.s(parcel, 7, 4);
-        parcel.writeFloat(f11);
-        boolean z4 = this.h;
-        f5.s(parcel, 8, 4);
-        parcel.writeInt(z4 ? 1 : 0);
-        boolean z10 = this.n;
-        f5.s(parcel, 9, 4);
-        parcel.writeInt(z10 ? 1 : 0);
-        f5.p(parcel, 10, this.r);
-        f5.r(parcel, q10);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(e9.l lVar) {
+        super(lVar, (byte) 0);
+        this.e = lVar;
+    }
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        e9.l lVar = this.e;
+        boolean isEmpty = lVar.isEmpty();
+        b();
+        ((ListIterator) this.b).add(obj);
+        ((f) lVar.h).d++;
+        if (isEmpty) {
+            lVar.p();
+        }
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        b();
+        return ((ListIterator) this.b).hasPrevious();
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        b();
+        return ((ListIterator) this.b).nextIndex();
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        b();
+        return ((ListIterator) this.b).previous();
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        b();
+        return ((ListIterator) this.b).previousIndex();
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        b();
+        ((ListIterator) this.b).set(obj);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(e9.l lVar, int i10) {
+        super(lVar, ((List) lVar.c).listIterator(i10), (byte) 0);
+        this.e = lVar;
     }
 }

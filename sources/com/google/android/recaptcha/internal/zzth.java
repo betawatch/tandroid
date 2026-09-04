@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import android.support.v4.media.a;
+import a4.a;
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     private static final long[] zza;
@@ -34,7 +34,7 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     }
 
     private final String zzj(int i10) {
-        return a.k(i10, this.zzd, "Index:", ", Size:");
+        return a.l(i10, this.zzd, "Index:", ", Size:");
     }
 
     private final void zzk(int i10) {
@@ -131,9 +131,9 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
     public final int hashCode() {
         int i10 = 1;
         for (int i11 = 0; i11 < this.zzd; i11++) {
-            long j10 = this.zzc[i11];
+            long j3 = this.zzc[i11];
             byte[] bArr = zzsv.zzb;
-            i10 = (i10 * 31) + ((int) (j10 ^ (j10 >>> 32)));
+            i10 = (i10 * 31) + ((int) (j3 ^ (j3 >>> 32)));
         }
         return i10;
     }
@@ -158,13 +158,13 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         zza();
         zzk(i10);
         long[] jArr = this.zzc;
-        long j10 = jArr[i10];
+        long j3 = jArr[i10];
         if (i10 < this.zzd - 1) {
             System.arraycopy(jArr, i10 + 1, jArr, i10, (r3 - i10) - 1);
         }
         this.zzd--;
         ((AbstractList) this).modCount++;
-        return Long.valueOf(j10);
+        return Long.valueOf(j3);
     }
 
     @Override // java.util.AbstractList
@@ -185,9 +185,9 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         zza();
         zzk(i10);
         long[] jArr = this.zzc;
-        long j10 = jArr[i10];
+        long j3 = jArr[i10];
         jArr[i10] = longValue;
-        return Long.valueOf(j10);
+        return Long.valueOf(j3);
     }
 
     @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -208,7 +208,7 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         return this.zzc[i10];
     }
 
-    public final void zzg(long j10) {
+    public final void zzg(long j3) {
         zza();
         int i10 = this.zzd;
         int length = this.zzc.length;
@@ -220,7 +220,7 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         long[] jArr2 = this.zzc;
         int i11 = this.zzd;
         this.zzd = i11 + 1;
-        jArr2[i11] = j10;
+        jArr2[i11] = j3;
     }
 
     public final void zzh(int i10) {
@@ -238,8 +238,8 @@ final class zzth extends zzpz implements RandomAccess, zzst, zzub {
         this.zzc = Arrays.copyOf(this.zzc, length);
     }
 
-    private zzth(long[] jArr, int i10, boolean z4) {
-        super(z4);
+    private zzth(long[] jArr, int i10, boolean z10) {
+        super(z10);
         this.zzc = jArr;
         this.zzd = i10;
     }

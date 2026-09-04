@@ -1,329 +1,399 @@
 package j4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import h5.d0;
-import j3.d1;
-import java.util.ArrayList;
-import kf.k0;
-import s8.i0;
-import s8.v;
+import b2.r0;
+import c3.h0;
+import i2.l0;
+import java.util.Arrays;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class n extends j {
-    public static final Parcelable.Creator<n> CREATOR = new f8.o(21);
-    public final String b;
-    public final v c;
+public final class n implements i {
+    public static final float[] l = {1.0f, 1.0f, 1.0909091f, 0.90909094f, 1.4545455f, 1.2121212f, 1.0f};
+    public final c0 a;
+    public final e2.v b;
+    public final boolean[] c = new boolean[4];
+    public final l d;
+    public final l0 e;
+    public m f;
+    public long g;
+    public String h;
+    public h0 i;
+    public boolean j;
+    public long k;
 
-    public n(String str, String str2, i0 i0Var) {
-        super(str);
-        h5.a.f(!i0Var.isEmpty());
-        this.b = str2;
-        v t6 = v.t(i0Var);
-        this.c = t6;
+    public n(c0 c0Var) {
+        this.a = c0Var;
+        l lVar = new l();
+        lVar.e = new byte[128];
+        this.d = lVar;
+        this.k = -9223372036854775807L;
+        this.e = new l0(178);
+        this.b = new e2.v();
     }
 
-    public static ArrayList a(String str) {
-        ArrayList arrayList = new ArrayList();
-        try {
-            if (str.length() >= 10) {
-                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
-                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(5, 7))));
-                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(8, 10))));
-                return arrayList;
+    /* JADX WARN: Removed duplicated region for block: B:44:0x025f  */
+    /* JADX WARN: Removed duplicated region for block: B:47:0x0261  */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x00ed  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0126  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x013d  */
+    @Override // j4.i
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b(e2.v vVar) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        float f7;
+        e2.d.h(this.f);
+        e2.d.h(this.i);
+        int i14 = vVar.b;
+        int i15 = vVar.c;
+        byte[] bArr = vVar.a;
+        this.g += vVar.a();
+        this.i.d(vVar.a(), vVar);
+        while (true) {
+            int b10 = f2.p.b(bArr, i14, i15, this.c);
+            l lVar = this.d;
+            l0 l0Var = this.e;
+            if (b10 == i15) {
+                if (!this.j) {
+                    lVar.a(i14, i15, bArr);
+                }
+                this.f.a(i14, i15, bArr);
+                if (l0Var != null) {
+                    l0Var.a(i14, i15, bArr);
+                    return;
+                }
+                return;
             }
-            if (str.length() >= 7) {
-                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
-                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(5, 7))));
-                return arrayList;
-            }
-            if (str.length() >= 4) {
-                arrayList.add(Integer.valueOf(Integer.parseInt(str.substring(0, 4))));
-            }
-            return arrayList;
-        } catch (NumberFormatException unused) {
-            return new ArrayList();
-        }
-    }
-
-    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
-    @Override // j4.j, e4.b
-    public final void c(d1 d1Var) {
-        char c3;
-        String str = this.a;
-        str.getClass();
-        switch (str.hashCode()) {
-            case 82815:
-                if (str.equals("TAL")) {
-                    c3 = 0;
-                    break;
+            int i16 = b10 + 3;
+            byte b11 = vVar.a[i16];
+            int i17 = b11 & 255;
+            int i18 = b10 - i14;
+            if (this.j) {
+                i10 = i15;
+                i11 = i16;
+            } else {
+                if (i18 > 0) {
+                    lVar.a(i14, b10, bArr);
                 }
-                c3 = 65535;
-                break;
-            case 82878:
-                if (str.equals("TCM")) {
-                    c3 = 1;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 82897:
-                if (str.equals("TDA")) {
-                    c3 = 2;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 83253:
-                if (str.equals("TP1")) {
-                    c3 = 3;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 83254:
-                if (str.equals("TP2")) {
-                    c3 = 4;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 83255:
-                if (str.equals("TP3")) {
-                    c3 = 5;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 83341:
-                if (str.equals("TRK")) {
-                    c3 = 6;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 83378:
-                if (str.equals("TT2")) {
-                    c3 = 7;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 83536:
-                if (str.equals("TXT")) {
-                    c3 = '\b';
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 83552:
-                if (str.equals("TYE")) {
-                    c3 = '\t';
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2567331:
-                if (str.equals("TALB")) {
-                    c3 = '\n';
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2569357:
-                if (str.equals("TCOM")) {
-                    c3 = 11;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2569891:
-                if (str.equals("TDAT")) {
-                    c3 = '\f';
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2570401:
-                if (str.equals("TDRC")) {
-                    c3 = '\r';
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2570410:
-                if (str.equals("TDRL")) {
-                    c3 = 14;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2571565:
-                if (str.equals("TEXT")) {
-                    c3 = 15;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2575251:
-                if (str.equals("TIT2")) {
-                    c3 = 16;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2581512:
-                if (str.equals("TPE1")) {
-                    c3 = 17;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2581513:
-                if (str.equals("TPE2")) {
-                    c3 = 18;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2581514:
-                if (str.equals("TPE3")) {
-                    c3 = 19;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2583398:
-                if (str.equals("TRCK")) {
-                    c3 = 20;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            case 2590194:
-                if (str.equals("TYER")) {
-                    c3 = 21;
-                    break;
-                }
-                c3 = 65535;
-                break;
-            default:
-                c3 = 65535;
-                break;
-        }
-        v vVar = this.c;
-        try {
-            switch (c3) {
-                case 0:
-                case '\n':
-                    d1Var.c = (CharSequence) vVar.get(0);
-                    break;
-                case 1:
-                case 11:
-                    d1Var.y = (CharSequence) vVar.get(0);
-                    break;
-                case 2:
-                case '\f':
-                    String str2 = (String) vVar.get(0);
-                    int parseInt = Integer.parseInt(str2.substring(2, 4));
-                    int parseInt2 = Integer.parseInt(str2.substring(0, 2));
-                    d1Var.s = Integer.valueOf(parseInt);
-                    d1Var.t = Integer.valueOf(parseInt2);
-                    break;
-                case 3:
-                case 17:
-                    d1Var.b = (CharSequence) vVar.get(0);
-                    break;
-                case 4:
-                case 18:
-                    d1Var.d = (CharSequence) vVar.get(0);
-                    break;
-                case 5:
-                case 19:
-                    d1Var.z = (CharSequence) vVar.get(0);
-                    break;
-                case 6:
-                case 20:
-                    String str3 = (String) vVar.get(0);
-                    int i10 = d0.a;
-                    String[] split = str3.split("/", -1);
-                    int parseInt3 = Integer.parseInt(split[0]);
-                    Integer valueOf = split.length > 1 ? Integer.valueOf(Integer.parseInt(split[1])) : null;
-                    d1Var.m = Integer.valueOf(parseInt3);
-                    d1Var.n = valueOf;
-                    break;
-                case 7:
-                case 16:
-                    d1Var.a = (CharSequence) vVar.get(0);
-                    break;
-                case '\b':
-                case 15:
-                    d1Var.x = (CharSequence) vVar.get(0);
-                    break;
-                case '\t':
-                case 21:
-                    d1Var.r = Integer.valueOf(Integer.parseInt((String) vVar.get(0)));
-                    break;
-                case '\r':
-                    ArrayList a2 = a((String) vVar.get(0));
-                    int size = a2.size();
-                    if (size != 1) {
-                        if (size != 2) {
-                            if (size == 3) {
-                                d1Var.t = (Integer) a2.get(2);
-                            }
+                int i19 = i18 < 0 ? -i18 : 0;
+                int i20 = lVar.b;
+                if (i20 != 0) {
+                    i10 = i15;
+                    if (i20 == 1) {
+                        i11 = i16;
+                        i13 = 0;
+                        if (i17 != 181) {
+                            e2.a.n("H263Reader", "Unexpected start code value");
+                            lVar.a = false;
+                            lVar.c = 0;
+                            lVar.b = 0;
+                        } else {
+                            lVar.b = 2;
                         }
-                        d1Var.s = (Integer) a2.get(1);
-                    }
-                    d1Var.r = (Integer) a2.get(0);
-                    break;
-                case 14:
-                    ArrayList a10 = a((String) vVar.get(0));
-                    int size2 = a10.size();
-                    if (size2 != 1) {
-                        if (size2 != 2) {
-                            if (size2 == 3) {
-                                d1Var.w = (Integer) a10.get(2);
+                    } else if (i20 != 2) {
+                        i11 = i16;
+                        if (i20 != 3) {
+                            if (i20 != 4) {
+                                throw new IllegalStateException();
                             }
+                            if (i17 == 179 || i17 == 181) {
+                                lVar.c -= i19;
+                                lVar.a = false;
+                                h0 h0Var = this.i;
+                                int i21 = lVar.d;
+                                String str = this.h;
+                                str.getClass();
+                                byte[] copyOf = Arrays.copyOf(lVar.e, lVar.c);
+                                a4.h hVar = new a4.h(copyOf, copyOf.length);
+                                hVar.u(i21);
+                                hVar.u(4);
+                                hVar.s();
+                                hVar.t(8);
+                                if (hVar.h()) {
+                                    hVar.t(4);
+                                    hVar.t(3);
+                                }
+                                int i22 = hVar.i(4);
+                                if (i22 == 15) {
+                                    int i23 = hVar.i(8);
+                                    int i24 = hVar.i(8);
+                                    if (i24 == 0) {
+                                        e2.a.n("H263Reader", "Invalid aspect ratio");
+                                        f7 = 1.0f;
+                                        if (hVar.h()) {
+                                            hVar.t(2);
+                                            hVar.t(1);
+                                            if (hVar.h()) {
+                                                hVar.t(15);
+                                                hVar.s();
+                                                hVar.t(15);
+                                                hVar.s();
+                                                hVar.t(15);
+                                                hVar.s();
+                                                hVar.t(3);
+                                                hVar.t(11);
+                                                hVar.s();
+                                                hVar.t(15);
+                                                hVar.s();
+                                            }
+                                        }
+                                        if (hVar.i(2) != 0) {
+                                            e2.a.n("H263Reader", "Unhandled video object layer shape");
+                                        }
+                                        hVar.s();
+                                        int i25 = hVar.i(16);
+                                        hVar.s();
+                                        if (hVar.h()) {
+                                            if (i25 == 0) {
+                                                e2.a.n("H263Reader", "Invalid vop_increment_time_resolution");
+                                            } else {
+                                                int i26 = 0;
+                                                for (int i27 = i25 - 1; i27 > 0; i27 >>= 1) {
+                                                    i26++;
+                                                }
+                                                hVar.t(i26);
+                                            }
+                                        }
+                                        hVar.s();
+                                        int i28 = hVar.i(13);
+                                        hVar.s();
+                                        int i29 = hVar.i(13);
+                                        hVar.s();
+                                        hVar.s();
+                                        b2.r rVar = new b2.r();
+                                        rVar.a = str;
+                                        rVar.p = r0.n("video/mp2t");
+                                        rVar.q = r0.n("video/mp4v-es");
+                                        rVar.x = i28;
+                                        rVar.y = i29;
+                                        rVar.D = f7;
+                                        rVar.t = Collections.singletonList(copyOf);
+                                        i2.g.u(rVar, h0Var);
+                                        this.j = true;
+                                    } else {
+                                        f7 = i23 / i24;
+                                        if (hVar.h()) {
+                                        }
+                                        if (hVar.i(2) != 0) {
+                                        }
+                                        hVar.s();
+                                        int i252 = hVar.i(16);
+                                        hVar.s();
+                                        if (hVar.h()) {
+                                        }
+                                        hVar.s();
+                                        int i282 = hVar.i(13);
+                                        hVar.s();
+                                        int i292 = hVar.i(13);
+                                        hVar.s();
+                                        hVar.s();
+                                        b2.r rVar2 = new b2.r();
+                                        rVar2.a = str;
+                                        rVar2.p = r0.n("video/mp2t");
+                                        rVar2.q = r0.n("video/mp4v-es");
+                                        rVar2.x = i282;
+                                        rVar2.y = i292;
+                                        rVar2.D = f7;
+                                        rVar2.t = Collections.singletonList(copyOf);
+                                        i2.g.u(rVar2, h0Var);
+                                        this.j = true;
+                                    }
+                                } else if (i22 < 7) {
+                                    f7 = l[i22];
+                                    if (hVar.h()) {
+                                    }
+                                    if (hVar.i(2) != 0) {
+                                    }
+                                    hVar.s();
+                                    int i2522 = hVar.i(16);
+                                    hVar.s();
+                                    if (hVar.h()) {
+                                    }
+                                    hVar.s();
+                                    int i2822 = hVar.i(13);
+                                    hVar.s();
+                                    int i2922 = hVar.i(13);
+                                    hVar.s();
+                                    hVar.s();
+                                    b2.r rVar22 = new b2.r();
+                                    rVar22.a = str;
+                                    rVar22.p = r0.n("video/mp2t");
+                                    rVar22.q = r0.n("video/mp4v-es");
+                                    rVar22.x = i2822;
+                                    rVar22.y = i2922;
+                                    rVar22.D = f7;
+                                    rVar22.t = Collections.singletonList(copyOf);
+                                    i2.g.u(rVar22, h0Var);
+                                    this.j = true;
+                                } else {
+                                    e2.a.n("H263Reader", "Invalid aspect ratio");
+                                    f7 = 1.0f;
+                                    if (hVar.h()) {
+                                    }
+                                    if (hVar.i(2) != 0) {
+                                    }
+                                    hVar.s();
+                                    int i25222 = hVar.i(16);
+                                    hVar.s();
+                                    if (hVar.h()) {
+                                    }
+                                    hVar.s();
+                                    int i28222 = hVar.i(13);
+                                    hVar.s();
+                                    int i29222 = hVar.i(13);
+                                    hVar.s();
+                                    hVar.s();
+                                    b2.r rVar222 = new b2.r();
+                                    rVar222.a = str;
+                                    rVar222.p = r0.n("video/mp2t");
+                                    rVar222.q = r0.n("video/mp4v-es");
+                                    rVar222.x = i28222;
+                                    rVar222.y = i29222;
+                                    rVar222.D = f7;
+                                    rVar222.t = Collections.singletonList(copyOf);
+                                    i2.g.u(rVar222, h0Var);
+                                    this.j = true;
+                                }
+                            } else {
+                                i13 = 0;
+                            }
+                        } else if ((b11 & 240) != 32) {
+                            e2.a.n("H263Reader", "Unexpected start code value");
+                            i13 = 0;
+                            lVar.a = false;
+                            lVar.c = 0;
+                            lVar.b = 0;
+                        } else {
+                            i13 = 0;
+                            lVar.d = lVar.c;
+                            lVar.b = 4;
                         }
-                        d1Var.v = (Integer) a10.get(1);
+                    } else {
+                        i11 = i16;
+                        i13 = 0;
+                        if (i17 > 31) {
+                            e2.a.n("H263Reader", "Unexpected start code value");
+                            lVar.a = false;
+                            lVar.c = 0;
+                            lVar.b = 0;
+                        } else {
+                            lVar.b = 3;
+                        }
                     }
-                    d1Var.u = (Integer) a10.get(0);
-                    break;
+                } else {
+                    i10 = i15;
+                    i11 = i16;
+                    i13 = 0;
+                    if (i17 == 176) {
+                        lVar.b = 1;
+                        lVar.a = true;
+                    }
+                }
+                lVar.a(i13, 3, l.f);
             }
-        } catch (NumberFormatException | StringIndexOutOfBoundsException unused) {
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && n.class == obj.getClass()) {
-            n nVar = (n) obj;
-            if (d0.a(this.a, nVar.a) && d0.a(this.b, nVar.b) && this.c.equals(nVar.c)) {
-                return true;
+            this.f.a(i14, b10, bArr);
+            if (l0Var != null) {
+                if (i18 > 0) {
+                    l0Var.a(i14, b10, bArr);
+                    i12 = 0;
+                } else {
+                    i12 = -i18;
+                }
+                if (l0Var.e(i12)) {
+                    int m10 = f2.p.m(l0Var.e, (byte[]) l0Var.f);
+                    String str2 = e2.d0.a;
+                    byte[] bArr2 = (byte[]) l0Var.f;
+                    e2.v vVar2 = this.b;
+                    vVar2.H(m10, bArr2);
+                    this.a.a(this.k, vVar2);
+                }
+                if (i17 == 178) {
+                    if (vVar.a[b10 + 2] == 1) {
+                        l0Var.h(i17);
+                    }
+                    int i30 = i10 - b10;
+                    this.f.b(i30, this.g - i30, this.j);
+                    m mVar = this.f;
+                    long j3 = this.k;
+                    mVar.e = i17;
+                    mVar.d = false;
+                    mVar.b = i17 != 182 || i17 == 179;
+                    mVar.c = i17 != 182;
+                    mVar.f = 0;
+                    mVar.h = j3;
+                    i15 = i10;
+                    i14 = i11;
+                }
             }
+            int i302 = i10 - b10;
+            this.f.b(i302, this.g - i302, this.j);
+            m mVar2 = this.f;
+            long j32 = this.k;
+            mVar2.e = i17;
+            mVar2.d = false;
+            mVar2.b = i17 != 182 || i17 == 179;
+            mVar2.c = i17 != 182;
+            mVar2.f = 0;
+            mVar2.h = j32;
+            i15 = i10;
+            i14 = i11;
         }
-        return false;
     }
 
-    public final int hashCode() {
-        int e = k0.e(527, 31, this.a);
-        String str = this.b;
-        return this.c.hashCode() + ((e + (str != null ? str.hashCode() : 0)) * 31);
+    @Override // j4.i
+    public final void d() {
+        f2.p.a(this.c);
+        l lVar = this.d;
+        lVar.a = false;
+        lVar.c = 0;
+        lVar.b = 0;
+        m mVar = this.f;
+        if (mVar != null) {
+            mVar.b = false;
+            mVar.c = false;
+            mVar.d = false;
+            mVar.e = -1;
+        }
+        l0 l0Var = this.e;
+        if (l0Var != null) {
+            l0Var.g();
+        }
+        this.g = 0L;
+        this.k = -9223372036854775807L;
     }
 
-    @Override // j4.j
-    public final String toString() {
-        return this.a + ": description=" + this.b + ": values=" + this.c;
+    @Override // j4.i
+    public final void e(c3.q qVar, f0 f0Var) {
+        f0Var.a();
+        f0Var.b();
+        this.h = f0Var.e;
+        f0Var.b();
+        h0 R1 = qVar.R1(f0Var.d, 2);
+        this.i = R1;
+        this.f = new m(R1);
+        this.a.b(qVar, f0Var);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeString(this.a);
-        parcel.writeString(this.b);
-        parcel.writeStringArray((String[]) this.c.toArray(new String[0]));
+    @Override // j4.i
+    public final void f(boolean z10) {
+        e2.d.h(this.f);
+        if (z10) {
+            this.f.b(0, this.g, this.j);
+            m mVar = this.f;
+            mVar.b = false;
+            mVar.c = false;
+            mVar.d = false;
+            mVar.e = -1;
+        }
+    }
+
+    @Override // j4.i
+    public final void g(int i10, long j3) {
+        this.k = j3;
     }
 }

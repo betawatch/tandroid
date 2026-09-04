@@ -4,38 +4,38 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
-import k7.q6;
+import w7.v6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class h extends Activity implements androidx.lifecycle.t, r0.k {
+public abstract class h extends Activity implements androidx.lifecycle.t, r0.j {
     public final androidx.lifecycle.v a = new androidx.lifecycle.v(this);
 
     @Override // android.app.Activity, android.view.Window.Callback
     public boolean dispatchKeyEvent(KeyEvent event) {
-        kotlin.jvm.internal.j.e(event, "event");
+        kotlin.jvm.internal.i.e(event, "event");
         View decorView = getWindow().getDecorView();
-        kotlin.jvm.internal.j.d(decorView, "window.decorView");
-        if (q6.a(decorView, event)) {
+        kotlin.jvm.internal.i.d(decorView, "window.decorView");
+        if (v6.a(decorView, event)) {
             return true;
         }
-        return q6.b(this, decorView, this, event);
+        return v6.b(this, decorView, this, event);
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
     public final boolean dispatchKeyShortcutEvent(KeyEvent event) {
-        kotlin.jvm.internal.j.e(event, "event");
+        kotlin.jvm.internal.i.e(event, "event");
         View decorView = getWindow().getDecorView();
-        kotlin.jvm.internal.j.d(decorView, "window.decorView");
-        if (q6.a(decorView, event)) {
+        kotlin.jvm.internal.i.d(decorView, "window.decorView");
+        if (v6.a(decorView, event)) {
             return true;
         }
         return super.dispatchKeyShortcutEvent(event);
     }
 
-    @Override // r0.k
+    @Override // r0.j
     public final boolean i(KeyEvent event) {
-        kotlin.jvm.internal.j.e(event, "event");
+        kotlin.jvm.internal.i.e(event, "event");
         return super.dispatchKeyEvent(event);
     }
 
@@ -48,7 +48,7 @@ public abstract class h extends Activity implements androidx.lifecycle.t, r0.k {
 
     @Override // android.app.Activity
     public void onSaveInstanceState(Bundle outState) {
-        kotlin.jvm.internal.j.e(outState, "outState");
+        kotlin.jvm.internal.i.e(outState, "outState");
         this.a.g();
         super.onSaveInstanceState(outState);
     }

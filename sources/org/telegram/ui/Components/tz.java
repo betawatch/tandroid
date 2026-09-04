@@ -1,6 +1,6 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class tz implements Runnable {
     public final /* synthetic */ int a;
@@ -9,12 +9,12 @@ public final /* synthetic */ class tz implements Runnable {
     public final /* synthetic */ boolean d;
     public final /* synthetic */ Object e;
 
-    public /* synthetic */ tz(Object obj, boolean z4, boolean z10, boolean z11, int i10) {
+    public /* synthetic */ tz(Object obj, boolean z10, boolean z11, boolean z12, int i10) {
         this.a = i10;
         this.e = obj;
-        this.b = z4;
-        this.c = z10;
-        this.d = z11;
+        this.b = z10;
+        this.c = z11;
+        this.d = z12;
     }
 
     @Override // java.lang.Runnable
@@ -23,22 +23,22 @@ public final /* synthetic */ class tz implements Runnable {
             case 0:
                 vz vzVar = (vz) this.e;
                 if (this.b) {
-                    a00 a00Var = vzVar.G;
-                    a00Var.a = true;
-                    a00Var.b = true;
+                    zz zzVar = vzVar.J;
+                    zzVar.a = true;
+                    zzVar.b = true;
                 }
                 if (this.c) {
                     vzVar.x = true;
                 }
                 long currentTimeMillis = System.currentTimeMillis();
-                if (this.d || Math.abs(vzVar.X - currentTimeMillis) > 30) {
-                    vzVar.X = currentTimeMillis;
-                    vzVar.a0.run();
+                if (this.d || Math.abs(vzVar.a0 - currentTimeMillis) > 30) {
+                    vzVar.a0 = currentTimeMillis;
+                    vzVar.d0.run();
                     break;
                 }
                 break;
             default:
-                ((org.telegram.ui.pg0) this.e).w1(this.b, this.c, this.d);
+                ((org.telegram.ui.wg0) this.e).w1(this.b, this.c, this.d);
                 break;
         }
     }

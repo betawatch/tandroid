@@ -1,68 +1,18 @@
 package androidx.car.app.utils;
 
-import android.os.RemoteException;
-import android.util.Log;
-import androidx.car.app.IOnDoneCallback;
-import androidx.lifecycle.o;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import android.os.Handler;
+import android.os.Looper;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class j {
-    public static IOnDoneCallback a() {
-        final androidx.car.app.j jVar = null;
-        return new IOnDoneCallback.Stub(jVar) { // from class: androidx.car.app.utils.RemoteUtils$1
-            final /* synthetic */ androidx.car.app.j val$callback;
+    public static final Handler a = new Handler(Looper.getMainLooper());
 
-            @Override // androidx.car.app.IOnDoneCallback
-            public void onFailure(w.b bVar) {
-                throw null;
-            }
-
-            @Override // androidx.car.app.IOnDoneCallback
-            public void onSuccess(w.b bVar) {
-                throw null;
-            }
-        };
-    }
-
-    public static void b(IOnDoneCallback iOnDoneCallback, String str, d dVar) {
-        k.a(new b(iOnDoneCallback, str, dVar));
-    }
-
-    public static void c(o oVar, IOnDoneCallback iOnDoneCallback, String str, d dVar) {
-        k.a(new c(oVar, iOnDoneCallback, str, dVar, 0));
-    }
-
-    public static void d(String str, e eVar) {
-        try {
-            e(str, eVar);
-        } catch (RemoteException e) {
-            Log.e("CarApp.Dispatch", "Host unresponsive when dispatching call " + str, e);
+    public static void a(Runnable runnable) {
+        if (Looper.getMainLooper() == Looper.myLooper()) {
+            runnable.run();
+        } else {
+            a.post(runnable);
         }
-    }
-
-    public static void e(String str, e eVar) {
-        try {
-            if (Log.isLoggable("CarApp", 3)) {
-                Log.d("CarApp", "Dispatching call " + str + " to host");
-            }
-            eVar.call();
-        } catch (SecurityException e) {
-            throw e;
-        } catch (RuntimeException e6) {
-            throw new a7.b(android.support.v4.media.a.o("Remote ", str, " call failed"), e6);
-        }
-    }
-
-    public static void f(IOnDoneCallback iOnDoneCallback, String str, Exception exc) {
-        d(str.concat(" onFailure"), new a(iOnDoneCallback, exc, str, 1));
-    }
-
-    public static List g(List list) {
-        return list == null ? Collections.EMPTY_LIST : DesugarCollections.unmodifiableList(new ArrayList(list));
     }
 }

@@ -1,64 +1,73 @@
 package jb;
 
-import b6.m;
-import java.util.Arrays;
-import l7.w0;
+import db.g;
+import db.j;
+import db.u;
+import db.v;
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.TimeZone;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public final String a;
-    public final float b;
-    public final int c;
-    public final String d;
+public final class a extends u {
+    public static final a b = new a();
+    public final SimpleDateFormat a;
 
-    public a(float f10, int i10, String str, String str2) {
-        int i11 = m7.b.a;
-        this.a = str == null ? "" : str;
-        this.b = f10;
-        this.c = i10;
-        this.d = str2;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    public class a implements v {
+        @Override // db.v
+        public final u create(g gVar, kb.a aVar) {
+            if (aVar.a == Date.class) {
+                return new a(0);
+            }
+            return null;
         }
-        if (!(obj instanceof a)) {
-            return false;
+    }
+
+    public /* synthetic */ a(int i10) {
+        this();
+    }
+
+    @Override // db.u
+    public final Object read(lb.a aVar) {
+        Date date;
+        if (aVar.x() == 9) {
+            aVar.t();
+            return null;
         }
-        a aVar = (a) obj;
-        return m.l(this.a, aVar.a) && Float.compare(this.b, aVar.b) == 0 && this.c == aVar.c && m.l(this.d, aVar.d);
+        String v = aVar.v();
+        synchronized (this) {
+            TimeZone timeZone = this.a.getTimeZone();
+            try {
+                try {
+                    date = new Date(this.a.parse(v).getTime());
+                } catch (ParseException e7) {
+                    throw new j("Failed parsing '" + v + "' as SQL Date; at path " + aVar.j(), e7);
+                }
+            } finally {
+                this.a.setTimeZone(timeZone);
+            }
+        }
+        return date;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, Float.valueOf(this.b), Integer.valueOf(this.c), this.d});
+    @Override // db.u
+    public final void write(lb.b bVar, Object obj) {
+        String format;
+        Date date = (Date) obj;
+        if (date == null) {
+            bVar.i();
+            return;
+        }
+        synchronized (this) {
+            format = this.a.format((java.util.Date) date);
+        }
+        bVar.r(format);
     }
 
-    public final String toString() {
-        w0 w0Var = new w0(a.class.getSimpleName());
-        w0 w0Var2 = new w0(4, false);
-        ((w0) w0Var.d).d = w0Var2;
-        w0Var.d = w0Var2;
-        w0Var2.c = this.a;
-        w0Var2.b = "text";
-        String valueOf = String.valueOf(this.b);
-        boolean z4 = false;
-        m7.a aVar = new m7.a(4, z4);
-        ((w0) w0Var.d).d = aVar;
-        w0Var.d = aVar;
-        aVar.c = valueOf;
-        aVar.b = "confidence";
-        String valueOf2 = String.valueOf(this.c);
-        m7.a aVar2 = new m7.a(4, z4);
-        ((w0) w0Var.d).d = aVar2;
-        aVar2.c = valueOf2;
-        aVar2.b = "index";
-        w0 w0Var3 = new w0(4, z4);
-        aVar2.d = w0Var3;
-        w0Var.d = w0Var3;
-        w0Var3.c = this.d;
-        w0Var3.b = "mid";
-        return w0Var.toString();
+    private a() {
+        this.a = new SimpleDateFormat("MMM d, yyyy");
     }
 }

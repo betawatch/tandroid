@@ -1,32 +1,33 @@
 package com.google.mlkit.vision.common.internal;
 
-import c9.a;
-import c9.b;
-import c9.m;
+import b2.i0;
 import com.google.firebase.components.ComponentRegistrar;
-import ib.c;
+import i2.g;
 import java.util.List;
-import k7.pa;
-import k7.ra;
-import k7.ta;
-import kf.k0;
+import q9.a;
+import q9.j;
+import w7.qa;
+import w7.sa;
+import w7.ua;
+import wb.b;
+import wb.c;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class VisionCommonRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        a b10 = b.b(c.class);
-        b10.a(new m(2, 0, ib.b.class));
-        b10.g = ib.a.c;
-        Object[] objArr = {b10.b()};
+        i0 a2 = a.a(c.class);
+        a2.a(new j(2, 0, b.class));
+        a2.f = wb.a.c;
+        Object[] objArr = {a2.b()};
         for (int i10 = 0; i10 < 1; i10++) {
-            pa paVar = ra.b;
+            qa qaVar = sa.b;
             if (objArr[i10] == null) {
-                throw new NullPointerException(k0.j(i10, "at index "));
+                throw new NullPointerException(g.i(i10, "at index "));
             }
         }
-        pa paVar2 = ra.b;
-        return new ta(1, objArr);
+        qa qaVar2 = sa.b;
+        return new ua(1, objArr);
     }
 }

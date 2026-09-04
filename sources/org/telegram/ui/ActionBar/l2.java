@@ -1,37 +1,11 @@
 package org.telegram.ui.ActionBar;
 
-import android.app.Dialog;
-import android.view.View;
-import org.telegram.ui.Components.qc;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public interface l2 {
-    boolean attachedToParent();
-
-    void dismiss();
-
-    void dismiss(boolean z4);
-
-    qc getBulletinFactory();
-
-    int getNavigationBarColor(int i10);
-
-    View getWindowView();
-
-    boolean isAttachedLightStatusBar();
-
-    boolean isFullyVisible();
-
-    boolean isShown();
-
-    boolean onAttachedBackPressed();
-
-    void setKeyboardHeightFromParent(int i10);
-
-    void setLastVisible(boolean z4);
-
-    void setOnDismissListener(Runnable runnable);
-
-    boolean showDialog(Dialog dialog);
+public final class l2 {
+    public boolean a;
+    public Runnable b;
+    public Runnable c;
+    public Runnable d;
+    public boolean e;
 }

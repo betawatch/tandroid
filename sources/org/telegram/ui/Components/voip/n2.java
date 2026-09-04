@@ -1,173 +1,155 @@
 package org.telegram.ui.Components.voip;
 
-import android.R;
-import android.app.Activity;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.view.MotionEvent;
+import android.animation.ValueAnimator;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.j90;
-import org.telegram.ui.Components.y80;
-import org.telegram.ui.pg0;
+import org.telegram.messenger.wl;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public class n2 extends TextView {
-    public final /* synthetic */ int a = 0;
-    public final Object b;
-    public final Object c;
-    public final /* synthetic */ Object d;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class n2 extends FrameLayout {
+    public TextView[] a;
+    public TextView b;
+    public FrameLayout c;
+    public r2 d;
+    public CharSequence e;
+    public boolean f;
+    public ValueAnimator h;
+    public boolean n;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(p2 p2Var, Activity activity, n1 n1Var) {
-        super(activity);
-        this.d = p2Var;
-        this.c = n1Var;
-        this.b = new RectF();
-        n1Var.a(this);
+    public final void a(View view, View view2, Runnable runnable) {
+        view.setVisibility(0);
+        view2.setVisibility(0);
+        view2.setTranslationY(AndroidUtilities.dp(15.0f));
+        view2.setAlpha(0.0f);
+        this.f = true;
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+        this.h = ofFloat;
+        ofFloat.addUpdateListener(new ah.m0(19, view2, view));
+        this.h.addListener(new hg.k0((FrameLayout) this, view, view2, (Object) runnable, 4));
+        this.h.setDuration(250L).setInterpolator(pr.f);
+        this.h.start();
     }
 
-    public boolean a() {
-        return false;
-    }
-
-    public boolean b() {
-        return true;
-    }
-
-    public void c() {
-        CharSequence text;
-        j90 j90Var = (j90) this.c;
-        Layout layout = getLayout();
-        if (layout == null || (text = layout.getText()) == null) {
+    /* JADX WARN: Multi-variable type inference failed */
+    public final void b(String str, boolean z10, boolean z11) {
+        View view = this.d;
+        TextView[] textViewArr = this.a;
+        if (z10) {
+            SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+            SpannableString spannableString = new SpannableString(".");
+            spannableString.setSpan(new ig.w1(textViewArr), 0, 1, 33);
+            spannableStringBuilder.append((CharSequence) spannableString);
+            str = spannableStringBuilder;
+        }
+        if (TextUtils.isEmpty(textViewArr[0].getText())) {
+            z11 = false;
+        }
+        if (!z11) {
+            ValueAnimator valueAnimator = this.h;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.f = false;
+            textViewArr[0].setText(str);
+            textViewArr[0].setVisibility(0);
+            textViewArr[1].setVisibility(8);
+            view.setVisibility(8);
             return;
         }
-        y80 y80Var = new y80(0);
-        float dp = AndroidUtilities.dp(3.0f);
-        float dp2 = AndroidUtilities.dp(6.0f);
-        y80Var.q = dp;
-        y80Var.r = dp2;
-        int length = text.length();
-        y80Var.d(layout, 0, 0.0f);
-        layout.getSelectionPath(0, length, y80Var);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(y80Var.s, y80Var.u, y80Var.t, y80Var.v);
-        ((org.telegram.ui.Cells.z) this.b).setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-        j90Var.x = y80Var;
-        j90Var.j(4.0f);
-        int themedColor = ((pg0) this.d).getThemedColor(j6.Ld);
-        j90Var.f(j6.l1(0.85f, themedColor), j6.l1(2.0f, themedColor), j6.l1(3.5f, themedColor), j6.l1(6.0f, themedColor));
-        j90Var.k();
-    }
-
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        float paddingTop;
-        switch (this.a) {
-            case 0:
-                RectF rectF = (RectF) this.b;
-                rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                float x10 = ((View) getParent()).getX() + getX();
-                p2 p2Var = (p2) this.d;
-                float x11 = ((View) p2Var.getParent()).getX() + p2Var.getX() + x10;
-                float y10 = ((View) p2Var.getParent()).getY() + p2Var.getY() + ((View) getParent()).getY() + getY();
-                n1 n1Var = (n1) this.c;
-                n1Var.d(x11, y10);
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), n1Var.b());
-                super.onDraw(canvas);
-                break;
-            default:
-                j90 j90Var = (j90) this.c;
-                canvas.save();
-                if ((getGravity() & 16) == 0 || getLayout() == null) {
-                    paddingTop = getPaddingTop();
-                } else {
-                    paddingTop = ((((getHeight() - getPaddingTop()) - getPaddingBottom()) - getLayout().getHeight()) / 2.0f) + getPaddingTop();
-                }
-                canvas.translate(getPaddingLeft(), paddingTop);
-                ((org.telegram.ui.Cells.z) this.b).draw(canvas);
-                canvas.restore();
-                super.onDraw(canvas);
-                if (a() || j90Var.c()) {
-                    canvas.save();
-                    canvas.translate(getPaddingLeft(), paddingTop);
-                    j90Var.draw(canvas);
-                    canvas.restore();
-                    invalidate();
-                    break;
-                }
-                break;
+        if (this.f) {
+            this.e = str;
+            return;
+        }
+        if (this.n) {
+            textViewArr[0].setText(str);
+            a(view, textViewArr[0], null);
+        } else {
+            if (textViewArr[0].getText().equals(str)) {
+                return;
+            }
+            textViewArr[1].setText(str);
+            a(textViewArr[0], textViewArr[1], new ig.t0(this, 26));
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        switch (this.a) {
-            case 1:
-                super.onLayout(z4, i10, i11, i12, i13);
-                c();
-                break;
-            default:
-                super.onLayout(z4, i10, i11, i12, i13);
-                break;
+    public final void c(boolean z10) {
+        FrameLayout frameLayout = this.c;
+        if (!z10) {
+            if (frameLayout.getVisibility() == 8) {
+                return;
+            }
+            frameLayout.animate().alpha(0.0f).scaleX(0.6f).scaleY(0.6f).setInterpolator(pr.f).setListener(new m2(this, 1)).setDuration(300L).start();
+        } else {
+            if (frameLayout.getVisibility() == 0) {
+                return;
+            }
+            frameLayout.setVisibility(0);
+            frameLayout.setAlpha(0.0f);
+            frameLayout.setScaleY(0.6f);
+            frameLayout.setScaleX(0.6f);
+            frameLayout.animate().setListener(null).cancel();
+            wl.q(frameLayout.animate().alpha(1.0f).scaleX(1.0f).scaleY(1.0f), pr.k, 300L);
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public boolean onTouchEvent(MotionEvent motionEvent) {
-        switch (this.a) {
-            case 1:
-                org.telegram.ui.Cells.z zVar = (org.telegram.ui.Cells.z) this.b;
-                if (b() && motionEvent.getAction() == 0) {
-                    zVar.setHotspot(motionEvent.getX(), motionEvent.getY());
-                    zVar.setState(new int[]{R.attr.state_enabled, R.attr.state_pressed});
-                } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 1) {
-                    zVar.setState(new int[0]);
-                }
-                break;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.widget.TextView
-    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-        switch (this.a) {
-            case 1:
-                super.setText(charSequence, bufferType);
-                c();
-                break;
-            default:
-                super.setText(charSequence, bufferType);
-                break;
+    public final void d(boolean z10, boolean z11) {
+        TextView textView = this.b;
+        if (!z11) {
+            textView.animate().setListener(null).cancel();
+            textView.setVisibility(z10 ? 0 : 8);
+        } else {
+            if (!z10) {
+                textView.animate().alpha(0.0f).setListener(new m2(this, 0)).setDuration(150L).start();
+                return;
+            }
+            if (textView.getVisibility() != 0) {
+                textView.setVisibility(0);
+                textView.setAlpha(0.0f);
+            }
+            textView.animate().setListener(null).cancel();
+            textView.animate().alpha(1.0f).setDuration(150L).start();
         }
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public boolean verifyDrawable(Drawable drawable) {
-        switch (this.a) {
-            case 1:
-                return drawable == ((org.telegram.ui.Cells.z) this.b) || super.verifyDrawable(drawable);
-            default:
-                return super.verifyDrawable(drawable);
+    public final void e(boolean z10) {
+        r2 r2Var = this.d;
+        TextView[] textViewArr = this.a;
+        if (TextUtils.isEmpty(textViewArr[0].getText())) {
+            z10 = false;
         }
+        if (this.n) {
+            return;
+        }
+        r2Var.a();
+        if (z10) {
+            if (this.f) {
+                this.e = "timer";
+                return;
+            } else {
+                this.n = true;
+                a(textViewArr[0], r2Var, null);
+                return;
+            }
+        }
+        ValueAnimator valueAnimator = this.h;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        this.n = true;
+        this.f = false;
+        textViewArr[0].setVisibility(8);
+        textViewArr[1].setVisibility(8);
+        r2Var.setVisibility(0);
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public n2(pg0 pg0Var, Context context) {
-        super(context);
-        this.d = pg0Var;
-        org.telegram.ui.Cells.z f02 = j6.f0(j6.l1(0.1f, j6.w0(null, j6.I6, false)), 7, -1);
-        this.b = f02;
-        j90 j90Var = new j90();
-        this.c = j90Var;
-        f02.setCallback(this);
-        j90Var.C = true;
-        j90Var.u = 0.8f;
+    public void setSignalBarCount(int i10) {
+        this.d.setSignalBarCount(i10);
     }
 }

@@ -1,27 +1,38 @@
 package x2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class f implements u9.d {
-    public static final f a = new f();
-    public static final u9.c b = u9.c.c("requestTimeMs");
-    public static final u9.c c = u9.c.c("requestUptimeMs");
-    public static final u9.c d = u9.c.c("clientInfo");
-    public static final u9.c e = u9.c.c("logSource");
-    public static final u9.c f = u9.c.c("logSourceName");
-    public static final u9.c g = u9.c.c("logEvent");
-    public static final u9.c h = u9.c.c("qosTier");
+import b2.l1;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        u9.e eVar = (u9.e) obj2;
-        l lVar = (l) ((s) obj);
-        eVar.b(b, lVar.a);
-        eVar.b(c, lVar.b);
-        eVar.e(d, lVar.c);
-        eVar.e(e, lVar.d);
-        eVar.e(f, lVar.e);
-        eVar.e(g, lVar.f);
-        eVar.e(h, w.a);
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class f extends n implements Comparable {
+    public final int e;
+    public final int f;
+
+    public f(int i10, l1 l1Var, int i11, i iVar, int i12) {
+        super(i10, l1Var, i11);
+        int i13;
+        this.e = i2.g.d(i12, iVar.t0) ? 1 : 0;
+        b2.s sVar = this.d;
+        int i14 = sVar.y;
+        int i15 = -1;
+        if (i14 != -1 && (i13 = sVar.z) != -1) {
+            i15 = i14 * i13;
+        }
+        this.f = i15;
+    }
+
+    @Override // x2.n
+    public final int a() {
+        return this.e;
+    }
+
+    @Override // x2.n
+    public final /* bridge */ /* synthetic */ boolean b(n nVar) {
+        return false;
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return Integer.compare(this.f, ((f) obj).f);
     }
 }

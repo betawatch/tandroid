@@ -1,16 +1,17 @@
 package com.google.android.recaptcha.internal;
 
 import android.webkit.WebView;
-import dd.p;
-import k7.p7;
-import ld.t;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
+import zd.t;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzli extends i implements p {
+final class zzli extends j implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzly zzc;
@@ -23,27 +24,27 @@ final class zzli extends i implements p {
         this.zzd = str;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         return new zzli(this.zzc, this.zzd, cVar);
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzli) create((zzgr) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzli) create((zzgr) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         String zza;
         a aVar = a.a;
         try {
             if (this.zzb != 0) {
                 String str = (String) this.zza;
-                p7.b(obj);
+                t7.b(obj);
                 zza = str;
             } else {
-                p7.b(obj);
+                t7.b(obj);
                 zzly zzlyVar = this.zzc;
                 zza = zzly.zzm(zzlyVar).zza();
                 this.zza = zza;
@@ -54,9 +55,9 @@ final class zzli extends i implements p {
                 }
             }
             ((WebView) obj).loadDataWithBaseURL(zza, this.zzd, "text/html", "utf-8", null);
-            return sc.i.a;
-        } catch (Exception e) {
-            zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e.getMessage(), null, 8, null);
+            return i.a;
+        } catch (Exception e7) {
+            zzcg zzcgVar = new zzcg(zzce.zzb, zzcd.zzU, e7.getMessage(), null, 8, null);
             ((t) this.zzc.zzz()).L(zzcgVar);
             throw zzcgVar;
         }

@@ -4,7 +4,7 @@ import java.lang.ref.WeakReference;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class j4 implements t0 {
     public final WeakReference a;
@@ -15,20 +15,20 @@ public final class j4 implements t0 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.t0
-    public final void a(Runnable runnable, Executor executor) {
-        this.b.a(runnable, executor);
+    public final void b(Runnable runnable, Executor executor) {
+        this.b.b(runnable, executor);
     }
 
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z4) {
+    public final boolean cancel(boolean z10) {
         h4 h4Var = (h4) this.a.get();
-        boolean cancel = this.b.cancel(z4);
+        boolean cancel = this.b.cancel(z10);
         if (!cancel || h4Var == null) {
             return cancel;
         }
         h4Var.a = null;
         h4Var.b = null;
-        h4Var.c.h(null);
+        h4Var.c.i(null);
         return true;
     }
 
@@ -52,7 +52,7 @@ public final class j4 implements t0 {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
-        return this.b.get(j10, timeUnit);
+    public final Object get(long j3, TimeUnit timeUnit) {
+        return this.b.get(j3, timeUnit);
     }
 }

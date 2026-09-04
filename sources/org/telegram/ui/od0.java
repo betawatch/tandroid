@@ -1,49 +1,92 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.FileLog;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class od0 implements Runnable {
+public final /* synthetic */ class od0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ bf0 b;
+    public final /* synthetic */ wg0 b;
+    public final /* synthetic */ TLRPC.auth_SentCode c;
+    public final /* synthetic */ Bundle d;
+    public final /* synthetic */ boolean e;
 
-    public /* synthetic */ od0(bf0 bf0Var, int i10) {
+    public /* synthetic */ od0(int i10, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, wg0 wg0Var, boolean z10) {
         this.a = i10;
-        this.b = bf0Var;
+        this.b = wg0Var;
+        this.c = auth_sentcode;
+        this.d = bundle;
+        this.e = z10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.I.n();
-                break;
-            case 1:
-                bf0 bf0Var = this.b;
-                bf0Var.J = null;
-                bf0Var.K = null;
-                bf0Var.p(true);
-                bf0Var.e.h(null, null, bf0Var.f, null);
-                md mdVar = bf0Var.n;
-                org.telegram.ui.Components.gj0 gj0Var = bf0Var.F;
-                mdVar.setAnimation(gj0Var);
-                gj0Var.K(0);
-                bf0Var.H = true;
-                break;
-            case 2:
-                this.b.H = true;
-                break;
-            default:
-                EditTextBoldCursor editTextBoldCursor = this.b.c;
-                if (editTextBoldCursor != null) {
-                    editTextBoldCursor.requestFocus();
-                    editTextBoldCursor.setSelection(editTextBoldCursor.length());
-                    AndroidUtilities.showKeyboard(editTextBoldCursor);
+                boolean z10 = tLObject instanceof TLRPC.TL_boolTrue;
+                final wg0 wg0Var = this.b;
+                final TLRPC.auth_SentCode auth_sentcode = this.c;
+                final Bundle bundle = this.d;
+                if (!z10) {
+                    FileLog.d("{PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
+                    wg0Var.s1(bundle, auth_sentcode, "PLAYINTEGRITY_REQUESTFIREBASESMS_FALSE");
+                    break;
+                } else {
+                    wg0Var.k1(false, true);
+                    wg0Var.o0 = false;
+                    auth_sentcode.type.verifiedFirebase = true;
+                    final int i10 = 1;
+                    final boolean z11 = this.e;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qd0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i10) {
+                                case 0:
+                                    wg0Var.g1(bundle, auth_sentcode, z11);
+                                    break;
+                                default:
+                                    wg0Var.g1(bundle, auth_sentcode, z11);
+                                    break;
+                            }
+                        }
+                    });
                     break;
                 }
-                break;
+            default:
+                boolean z12 = tLObject instanceof TLRPC.TL_boolTrue;
+                final wg0 wg0Var2 = this.b;
+                final TLRPC.auth_SentCode auth_sentcode2 = this.c;
+                final Bundle bundle2 = this.d;
+                if (!z12) {
+                    FileLog.d("{SAFETYNET_REQUESTFIREBASESMS_FALSE} Resend firebase sms because auth.requestFirebaseSms = false");
+                    wg0Var2.s1(bundle2, auth_sentcode2, "SAFETYNET_REQUESTFIREBASESMS_FALSE");
+                    break;
+                } else {
+                    wg0Var2.k1(false, true);
+                    wg0Var2.o0 = false;
+                    auth_sentcode2.type.verifiedFirebase = true;
+                    final int i11 = 0;
+                    final boolean z13 = this.e;
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.qd0
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            switch (i11) {
+                                case 0:
+                                    wg0Var2.g1(bundle2, auth_sentcode2, z13);
+                                    break;
+                                default:
+                                    wg0Var2.g1(bundle2, auth_sentcode2, z13);
+                                    break;
+                            }
+                        }
+                    });
+                    break;
+                }
         }
     }
 }

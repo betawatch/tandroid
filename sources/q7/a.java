@@ -1,13 +1,30 @@
 package q7;
 
-import java.io.Closeable;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a implements Closeable {
-    public static final a a = new a();
+public abstract class a {
+    public static final /* synthetic */ int a = 0;
 
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
+    static {
+        a.class.getClassLoader();
+    }
+
+    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
+        if (parcel.readInt() == 0) {
+            return null;
+        }
+        return (Parcelable) creator.createFromParcel(parcel);
+    }
+
+    public static void b(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
+        }
     }
 }

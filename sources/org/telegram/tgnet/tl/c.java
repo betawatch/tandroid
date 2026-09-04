@@ -12,7 +12,7 @@ import org.telegram.tgnet.tl.TL_communities;
 import org.telegram.tgnet.tl.TL_iv;
 import org.telegram.tgnet.tl.TL_keyboard;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class c implements Vector.TLDeserializer {
     public final /* synthetic */ int a;
@@ -22,70 +22,70 @@ public final /* synthetic */ class c implements Vector.TLDeserializer {
     }
 
     @Override // org.telegram.tgnet.Vector.TLDeserializer
-    public final TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
+    public final TLObject deserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
         TLObject access$400;
         switch (this.a) {
             case 0:
-                access$400 = TL_keyboard.access$400(inputSerializedData, i10, z4);
+                access$400 = TL_keyboard.access$400(inputSerializedData, i10, z10);
                 return access$400;
             case 1:
-                return TL_account.Passkey.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_account.Passkey.TLdeserialize(inputSerializedData, i10, z10);
             case 2:
-                return TL_account.TL_businessWeeklyOpen.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_account.TL_businessWeeklyOpen.TLdeserialize(inputSerializedData, i10, z10);
             case 3:
-                return TLRPC.EmojiStatus.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.EmojiStatus.TLdeserialize(inputSerializedData, i10, z10);
             case 4:
-                return TLRPC.Theme.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.Theme.TLdeserialize(inputSerializedData, i10, z10);
             case 5:
-                return TLRPC.WallPaper.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.WallPaper.TLdeserialize(inputSerializedData, i10, z10);
             case 6:
-                return TL_account.WebDomainException.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_account.WebDomainException.TLdeserialize(inputSerializedData, i10, z10);
             case 7:
-                return TLRPC.ChatTheme.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.ChatTheme.TLdeserialize(inputSerializedData, i10, z10);
             case 8:
-                return TLRPC.TL_secureValue.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.TL_secureValue.TLdeserialize(inputSerializedData, i10, z10);
             case 9:
-                return TLRPC.SecureValueError.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.SecureValueError.TLdeserialize(inputSerializedData, i10, z10);
             case 10:
-                return TLRPC.TL_authorization.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.TL_authorization.TLdeserialize(inputSerializedData, i10, z10);
             case 11:
-                return TL_account.TL_businessChatLink.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_account.TL_businessChatLink.TLdeserialize(inputSerializedData, i10, z10);
             case 12:
-                return TL_account.TL_connectedBot.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_account.TL_connectedBot.TLdeserialize(inputSerializedData, i10, z10);
             case 13:
-                return TL_account.TL_contactBirthday.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_account.TL_contactBirthday.TLdeserialize(inputSerializedData, i10, z10);
             case 14:
-                return TL_account.RequirementToContact.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_account.RequirementToContact.TLdeserialize(inputSerializedData, i10, z10);
             case 15:
-                return TLRPC.PrivacyRule.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.PrivacyRule.TLdeserialize(inputSerializedData, i10, z10);
             case 16:
-                return TLRPC.TL_webAuthorization.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.TL_webAuthorization.TLdeserialize(inputSerializedData, i10, z10);
             case 17:
-                return TL_aicompose.AiComposeTone.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_aicompose.AiComposeTone.TLdeserialize(inputSerializedData, i10, z10);
             case 18:
-                return TLRPC.BotCommand.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.BotCommand.TLdeserialize(inputSerializedData, i10, z10);
             case 19:
-                return TL_bots.botPreviewMedia.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_bots.botPreviewMedia.TLdeserialize(inputSerializedData, i10, z10);
             case 20:
-                return TL_chatlists.TL_exportedChatlistInvite.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_chatlists.TL_exportedChatlistInvite.TLdeserialize(inputSerializedData, i10, z10);
             case 21:
-                return TL_communities.CommunityPeerRequest.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_communities.CommunityPeerRequest.TLdeserialize(inputSerializedData, i10, z10);
             case 22:
-                return TL_iv.PageBlock.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_iv.PageBlock.TLdeserialize(inputSerializedData, i10, z10);
             case 23:
-                return TLRPC.InputPhoto.TLdeserialize(inputSerializedData, i10, z4);
+                return TLRPC.InputPhoto.TLdeserialize(inputSerializedData, i10, z10);
             case 24:
-                return TL_keyboard.PageButton.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_keyboard.PageButton.TLdeserialize(inputSerializedData, i10, z10);
             case 25:
-                return TL_iv.PageListItem.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_iv.PageListItem.TLdeserialize(inputSerializedData, i10, z10);
             case 26:
-                return TL_iv.RichText.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_iv.RichText.TLdeserialize(inputSerializedData, i10, z10);
             case 27:
-                return TL_iv.PageListOrderedItem.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_iv.PageListOrderedItem.TLdeserialize(inputSerializedData, i10, z10);
             case 28:
-                return TL_iv.pageRelatedArticle.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_iv.pageRelatedArticle.TLdeserialize(inputSerializedData, i10, z10);
             default:
-                return TL_iv.pageTableRow.TLdeserialize(inputSerializedData, i10, z4);
+                return TL_iv.pageTableRow.TLdeserialize(inputSerializedData, i10, z10);
         }
     }
 }

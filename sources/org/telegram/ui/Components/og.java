@@ -1,39 +1,101 @@
 package org.telegram.ui.Components;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stories;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class og {
-    public static final og a;
-    public static final og b;
-    public static final og c;
-    public static final og d;
-    public static final og e;
-    public static final og f;
-    public static final /* synthetic */ og[] h;
+public interface og {
+    void B0(int i10, int i11);
 
-    static {
-        og ogVar = new og("VOICE", 0);
-        a = ogVar;
-        og ogVar2 = new og("VIDEO", 1);
-        b = ogVar2;
-        og ogVar3 = new og("STICKER", 2);
-        c = ogVar3;
-        og ogVar4 = new og("KEYBOARD", 3);
-        d = ogVar4;
-        og ogVar5 = new og("SMILE", 4);
-        e = ogVar5;
-        og ogVar6 = new og("GIF", 5);
-        f = ogVar6;
-        h = new og[]{ogVar, ogVar2, ogVar3, ogVar4, ogVar5, ogVar6};
-    }
+    void C();
 
-    public static og valueOf(String str) {
-        return (og) Enum.valueOf(og.class, str);
-    }
+    void D0();
 
-    public static og[] values() {
-        return (og[]) h.clone();
-    }
+    void G(CharSequence charSequence, boolean z10, int i10, int i11, long j3);
+
+    void G0();
+
+    TLRPC.TL_channels_sendAsPeers H();
+
+    void J(float f7, int i10);
+
+    void P0();
+
+    void U();
+
+    void V0(int i10);
+
+    void V1();
+
+    void W(boolean z10);
+
+    int W0();
+
+    void X1(int i10);
+
+    TL_stories.StoryItem Y0();
+
+    boolean a1(long j3);
+
+    void a2();
+
+    void b2(boolean z10);
+
+    void c2(int i10, int i11, int i12, long j3, long j10, boolean z10);
+
+    boolean d1();
+
+    void f1(CharSequence charSequence, boolean z10, boolean z11);
+
+    void g2();
+
+    void h();
+
+    void h1();
+
+    boolean i1();
+
+    void k();
+
+    void k1();
+
+    boolean l();
+
+    void l0();
+
+    void l1();
+
+    void m1();
+
+    void n1(View view, CharSequence charSequence, boolean z10);
+
+    void n2();
+
+    org.telegram.ui.sn o0();
+
+    int p();
+
+    void p1(CharSequence charSequence);
+
+    TLRPC.Peer q();
+
+    boolean q1();
+
+    void r0();
+
+    void r2();
+
+    void t1();
+
+    void v();
+
+    void x(float f7);
+
+    void x1();
+
+    void z(boolean z10);
+
+    boolean z0();
 }

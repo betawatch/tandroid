@@ -1,102 +1,58 @@
 package sg;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Shader;
+import android.widget.FrameLayout;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.ll0;
+import w7.x5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class b implements a {
-    public final Paint a;
-    public final Matrix b;
-    public BitmapShader c;
-    public Bitmap d;
-    public final Matrix e;
-    public Bitmap f;
-    public int h;
-    public int n;
+public abstract class b extends FrameLayout implements m0 {
+    public final f6 a;
+    public final ll0 b;
+    public final s4.c0 c;
 
-    public b() {
-        Paint paint = new Paint(3);
-        this.a = paint;
-        this.b = new Matrix();
-        this.e = new Matrix();
-        paint.setFilterBitmap(true);
+    public b(Context context, f6 f6Var) {
+        super(context);
+        this.a = f6Var;
+        ll0 ll0Var = new ll0(context, f6Var);
+        this.b = ll0Var;
+        ll0Var.setNestedScrollingEnabled(true);
+        ll0Var.setAdapter(a());
+        s4.c0 c0Var = new s4.c0(1, false);
+        this.c = c0Var;
+        ll0Var.setLayoutManager(c0Var);
+        ll0Var.setClipToPadding(false);
+        addView(ll0Var, x5.c(-1.0f, -1));
     }
 
-    @Override // sg.a
-    public final void H(Canvas canvas, float f10, float f11, float f12, float f13) {
-        Bitmap bitmap = this.d;
-        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
-            return;
+    public abstract s4.h0 a();
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        Paint T0 = j6.T0("paintDivider", this.a);
+        if (T0 == null) {
+            T0 = j6.k0;
         }
-        Matrix matrix = this.e;
-        Matrix matrix2 = this.b;
-        matrix.set(matrix2);
-        matrix.postTranslate(f10, f11);
-        this.c.setLocalMatrix(matrix2);
-        canvas.drawRect(f10, f11, f12, f13, this.a);
+        canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, T0);
     }
 
-    public final void a(Bitmap bitmap) {
-        if (this.d == bitmap) {
-            return;
-        }
-        this.d = bitmap;
-        Paint paint = this.a;
-        paint.setShader(null);
-        this.c = null;
-        if (bitmap != null) {
-            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
-            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
-            this.c = bitmapShader;
-            paint.setShader(bitmapShader);
-            d();
+    @Override // sg.m0
+    public void setOffset(float f7) {
+        if (Math.abs(f7 / getMeasuredWidth()) == 1.0f) {
+            ll0 ll0Var = this.b;
+            if (ll0Var.K(0) == null || ll0Var.K(0).a.getTop() != ll0Var.getPaddingTop()) {
+                ll0Var.u0(0);
+            }
         }
     }
 
-    public final void c(int i10, int i11) {
-        if (this.h == i10 && this.n == i11) {
-            return;
-        }
-        this.h = i10;
-        this.n = i11;
-        d();
-    }
-
-    public final void d() {
-        Bitmap bitmap = this.d;
-        Matrix matrix = this.b;
-        if (bitmap == null) {
-            matrix.reset();
-            return;
-        }
-        int width = bitmap.getWidth();
-        int height = this.d.getHeight();
-        int i10 = this.h;
-        int i11 = this.n;
-        matrix.reset();
-        if (width <= 0 || height <= 0 || i10 <= 0 || i11 <= 0) {
-            return;
-        }
-        float f10 = i10;
-        float f11 = width;
-        float f12 = i11;
-        float f13 = height;
-        float max = Math.max(f10 / f11, f12 / f13);
-        matrix.setScale(max, max);
-        matrix.postTranslate((f10 - (f11 * max)) * 0.5f, ((f12 - (f13 * max)) * 0.5f) + 0);
-    }
-
-    @Override // sg.a
-    public final pg.b k() {
-        return new pg.d(this);
-    }
-
-    @Override // sg.a
-    public final /* synthetic */ void b() {
+    public void setTopOffset(int i10) {
+        this.b.setPadding(0, i10, 0, 0);
     }
 }

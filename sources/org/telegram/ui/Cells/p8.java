@@ -1,37 +1,26 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class p8 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ r8 c;
+public final class p8 extends FrameLayout {
+    public TextView a;
 
-    public /* synthetic */ p8(r8 r8Var, int i10, int i11) {
-        this.a = i11;
-        this.c = r8Var;
-        this.b = i10;
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                r8 r8Var = this.c;
-                r8Var.r = 0;
-                r8Var.setBackgroundColor(this.b);
-                r8Var.invalidate();
-                break;
-            default:
-                int i10 = this.b;
-                r8 r8Var2 = this.c;
-                r8Var2.setBackgroundColor(i10);
-                r8Var2.r = 0;
-                r8Var2.invalidate();
-                break;
-        }
+    public void setTextColor(int i10) {
+        this.a.setTextColor(i10);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
     }
 }

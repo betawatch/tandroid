@@ -1,33 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import android.view.View;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ef implements hl0 {
+public final class ef implements u71, d5 {
     public final /* synthetic */ ChatActivityEnterView a;
 
-    public ef(ChatActivityEnterView chatActivityEnterView) {
+    public /* synthetic */ ef(ChatActivityEnterView chatActivityEnterView) {
         this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.hl0
-    public final void d(int i10, View view) {
-        if (view instanceof rh.x) {
-            String command = ((rh.x) view).getCommand();
-            if (TextUtils.isEmpty(command)) {
-                return;
-            }
-            ChatActivityEnterView chatActivityEnterView = this.a;
-            if (chatActivityEnterView.c()) {
-                z4.M(chatActivityEnterView.K2, chatActivityEnterView.M2, new o1(9, this, command), chatActivityEnterView.S3);
-                return;
-            }
-            org.telegram.ui.zn znVar = chatActivityEnterView.L2;
-            if (znVar == null || !znVar.e7(view)) {
-                z4.a0(chatActivityEnterView.N, 1, chatActivityEnterView.M2, new kh.a1(27, this, command));
-            }
+    @Override // org.telegram.ui.Components.d5
+    public void J(int i10, int i11, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        boolean T0 = chatActivityEnterView.T0(i10, z10, i11, true, 0L);
+        nf nfVar = chatActivityEnterView.L0;
+        if (nfVar != null) {
+            nfVar.h(!T0);
+            chatActivityEnterView.L0 = null;
         }
     }
 }

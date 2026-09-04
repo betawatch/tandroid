@@ -1,7 +1,31 @@
 package a8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class c {
-    public static final com.google.android.gms.common.api.e a = new com.google.android.gms.common.api.e("SafetyNet.API", new j(0), new com.google.android.gms.common.api.d());
+public final class c implements IInterface {
+    public final IBinder a;
+
+    public c(IBinder iBinder) {
+        this.a = iBinder;
+    }
+
+    public final void G0(Parcel parcel, int i10) {
+        Parcel obtain = Parcel.obtain();
+        try {
+            this.a.transact(i10, parcel, obtain, 0);
+            obtain.readException();
+        } finally {
+            parcel.recycle();
+            obtain.recycle();
+        }
+    }
+
+    @Override // android.os.IInterface
+    public final IBinder asBinder() {
+        return this.a;
+    }
 }

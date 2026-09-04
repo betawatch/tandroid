@@ -1,15 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import dd.p;
-import k7.p7;
-import ld.c0;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
+import zd.c0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzaw extends i implements p {
+final class zzaw extends j implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzhk zzc;
@@ -22,21 +23,21 @@ final class zzaw extends i implements p {
         this.zzd = zzbaVar;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         return new zzaw(this.zzc, this.zzd, cVar);
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzaw) create((c0) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzaw) create((c0) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0035, code lost:
     
         if (r6 != r0) goto L15;
      */
-    @Override // wc.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -48,7 +49,7 @@ final class zzaw extends i implements p {
         int i10 = this.zzb;
         try {
             if (i10 == 0) {
-                p7.b(obj);
+                t7.b(obj);
                 zzhkVar = this.zzc;
                 zzba zzbaVar = this.zzd;
                 zzboVar = zzbaVar.zza;
@@ -58,7 +59,7 @@ final class zzaw extends i implements p {
                 obj = new zzhg(new zzbb(zzboVar, str, null));
             } else {
                 if (i10 != 1) {
-                    p7.b(obj);
+                    t7.b(obj);
                     zzba zzbaVar2 = this.zzd;
                     zzyu zzf = zzyx.zzf();
                     zzyv zzf2 = zzyw.zzf();
@@ -67,7 +68,7 @@ final class zzaw extends i implements p {
                     return zzas.zzb(zzbaVar2, (zzyx) zzf.zzk());
                 }
                 zzhkVar = (zzhk) this.zza;
-                p7.b(obj);
+                t7.b(obj);
             }
             this.zza = null;
             this.zzb = 2;
@@ -81,8 +82,8 @@ final class zzaw extends i implements p {
             zzf22.zzw((String) obj);
             zzf3.zzf((zzyw) zzf22.zzk());
             return zzas.zzb(zzbaVar22, (zzyx) zzf3.zzk());
-        } catch (Exception e) {
-            throw new zzcg(zzce.zzb, zzcd.zzaa, e.getMessage(), e);
+        } catch (Exception e7) {
+            throw new zzcg(zzce.zzb, zzcd.zzaa, e7.getMessage(), e7);
         }
     }
 }

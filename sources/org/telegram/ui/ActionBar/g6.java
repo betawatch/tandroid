@@ -8,17 +8,17 @@ import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class g6 extends Drawable {
     public float[] b;
     public Path a = new Path();
     public boolean c = true;
 
-    public g6(float f10, float f11) {
+    public g6(float f7, float f10) {
         this.b = new float[]{r4, r4, r4, r4, r4, r4, r4, r4};
-        float dp = AndroidUtilities.dp(f10);
-        float dp2 = AndroidUtilities.dp(f11);
+        float dp = AndroidUtilities.dp(f7);
+        float dp2 = AndroidUtilities.dp(f10);
     }
 
     @Override // android.graphics.drawable.Drawable

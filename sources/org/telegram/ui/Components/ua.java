@@ -1,51 +1,35 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ua implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ic b;
+public abstract class ua extends bb {
+    public final LinearLayout X;
+    public FrameLayout Y;
+    public di.d Z;
 
-    public /* synthetic */ ua(ic icVar, int i10) {
-        this.a = i10;
-        this.b = icVar;
+    public ua(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, null, false, false, f6Var);
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.X = linearLayout;
+        linearLayout.setOrientation(1);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.b();
-                break;
-            case 1:
-                ic icVar = this.b;
-                FrameLayout frameLayout = icVar.h;
-                nb nbVar = icVar.e;
-                fb fbVar = icVar.p;
-                if (fbVar != null && !nbVar.top) {
-                    fbVar.c(0.0f);
-                    icVar.p.d(icVar);
-                }
-                nbVar.transitionRunningExit = false;
-                nbVar.onExitTransitionEnd();
-                nbVar.onHide();
-                frameLayout.removeView(icVar.f);
-                frameLayout.removeOnLayoutChangeListener(icVar.c);
-                nbVar.onDetach();
-                Runnable runnable = icVar.v;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
-                }
-                break;
-            default:
-                ic icVar2 = this.b;
-                FrameLayout frameLayout2 = icVar2.h;
-                frameLayout2.removeView(icVar2.f);
-                frameLayout2.removeOnLayoutChangeListener(icVar2.c);
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.f3, android.app.Dialog
+    public final void setTitle(CharSequence charSequence) {
+        this.e.setTitle(charSequence);
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final kl0 v(ll0 ll0Var) {
+        return new hg.n0(this, 1);
+    }
+
+    @Override // org.telegram.ui.Components.bb
+    public final CharSequence y() {
+        return null;
     }
 }

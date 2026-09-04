@@ -2,23 +2,23 @@ package com.google.android.gms.wallet;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c6.a;
 import com.google.android.gms.common.internal.ReflectedParcelable;
 import com.google.android.gms.identity.intents.model.UserAddress;
-import j7.f5;
-import j8.d;
-import j8.k;
-import j8.q;
-import j8.r;
-import j8.t;
+import o6.a;
+import v8.d;
+import v8.k;
+import v8.q;
+import v8.r;
+import v8.t;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class FullWallet extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<FullWallet> CREATOR = new t(4);
+    public static final Parcelable.Creator<FullWallet> CREATOR = new r(9);
     public String a;
     public String b;
-    public r c;
+    public t c;
     public String d;
     public q e;
     public q f;
@@ -30,18 +30,18 @@ public final class FullWallet extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 2, this.a);
-        f5.l(parcel, 3, this.b);
-        f5.k(parcel, 4, this.c, i10);
-        f5.l(parcel, 5, this.d);
-        f5.k(parcel, 6, this.e, i10);
-        f5.k(parcel, 7, this.f, i10);
-        f5.m(parcel, 8, this.h);
-        f5.k(parcel, 9, this.n, i10);
-        f5.k(parcel, 10, this.r, i10);
-        f5.o(parcel, 11, this.s, i10);
-        f5.k(parcel, 12, this.v, i10);
-        f5.r(parcel, q10);
+        int q6 = e0.q(parcel, 20293);
+        e0.l(parcel, 2, this.a);
+        e0.l(parcel, 3, this.b);
+        e0.k(parcel, 4, this.c, i10);
+        e0.l(parcel, 5, this.d);
+        e0.k(parcel, 6, this.e, i10);
+        e0.k(parcel, 7, this.f, i10);
+        e0.m(parcel, 8, this.h);
+        e0.k(parcel, 9, this.n, i10);
+        e0.k(parcel, 10, this.r, i10);
+        e0.o(parcel, 11, this.s, i10);
+        e0.k(parcel, 12, this.v, i10);
+        e0.r(parcel, q6);
     }
 }

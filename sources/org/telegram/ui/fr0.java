@@ -1,62 +1,13 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fr0 implements Runnable {
+public final class fr0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
-    public final /* synthetic */ Bitmap c;
+    public final /* synthetic */ gr0 b;
 
-    public /* synthetic */ fr0(PhotoViewer photoViewer, Bitmap bitmap, int i10) {
+    public /* synthetic */ fr0(gr0 gr0Var, int i10) {
         this.a = i10;
-        this.b = photoViewer;
-        this.c = bitmap;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10 = this.a;
-        Bitmap bitmap = this.c;
-        PhotoViewer photoViewer = this.b;
-        switch (i10) {
-            case 0:
-                Drawable[] drawableArr = PhotoViewer.Q8;
-                photoViewer.n0(bitmap);
-                AndroidUtilities.runOnUIThread(new fr0(photoViewer, bitmap, 6));
-                break;
-            case 1:
-                Drawable[] drawableArr2 = PhotoViewer.Q8;
-                photoViewer.n0(bitmap);
-                AndroidUtilities.runOnUIThread(new fr0(photoViewer, bitmap, 5));
-                break;
-            case 2:
-                Drawable[] drawableArr3 = PhotoViewer.Q8;
-                photoViewer.n0(bitmap);
-                AndroidUtilities.runOnUIThread(new fr0(photoViewer, bitmap, 4));
-                break;
-            case 3:
-                Drawable[] drawableArr4 = PhotoViewer.Q8;
-                photoViewer.n0(bitmap);
-                break;
-            case 4:
-                photoViewer.z4.setImageBitmap(bitmap);
-                photoViewer.q5.setUndoCutState(true);
-                photoViewer.a3(true, true);
-                break;
-            case 5:
-                photoViewer.z4.setImageBitmap(bitmap);
-                photoViewer.q5.setUndoCutState(true);
-                photoViewer.a3(true, true);
-                break;
-            default:
-                photoViewer.z4.setImageBitmap(bitmap);
-                photoViewer.q5.setUndoCutState(true);
-                photoViewer.a3(true, true);
-                break;
-        }
+        this.b = gr0Var;
     }
 }

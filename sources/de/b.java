@@ -1,45 +1,27 @@
 package de;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import ce.p;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b {
-    public static final b e;
-    public boolean a;
-    public boolean b;
-    public boolean c;
-    public boolean d;
+public abstract class b {
+    public p[] a;
+    public int b;
+    public int c;
 
-    static {
-        b bVar = new b();
-        bVar.a = true;
-        bVar.b = true;
-        bVar.c = false;
-        bVar.d = false;
-        e = bVar;
-        bVar.a = true;
-        bVar.b = true;
-        bVar.c = false;
-        bVar.d = false;
-    }
-
-    public static String a(String str, Class cls, boolean z4) {
-        if (cls == null) {
-            return "ANONYMOUS";
+    public final void b(p pVar) {
+        synchronized (this) {
+            try {
+                int i10 = this.b - 1;
+                this.b = i10;
+                if (i10 == 0) {
+                    this.c = 0;
+                }
+                kotlin.jvm.internal.i.c(pVar, "null cannot be cast to non-null type kotlinx.coroutines.flow.internal.AbstractSharedFlowSlot<kotlin.Any>");
+                pVar.a.set(null);
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        if (cls.isArray()) {
-            Class<?> componentType = cls.getComponentType();
-            StringBuffer stringBuffer = new StringBuffer();
-            stringBuffer.append(a(componentType.getName(), componentType, z4));
-            stringBuffer.append("[]");
-            return stringBuffer.toString();
-        }
-        if (!z4) {
-            return str.replace('$', '.');
-        }
-        int lastIndexOf = str.lastIndexOf(46);
-        if (lastIndexOf != -1) {
-            str = str.substring(lastIndexOf + 1);
-        }
-        return str.replace('$', '.');
     }
 }

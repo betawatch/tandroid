@@ -12,7 +12,7 @@ public final class l8 extends c5 {
     }
 
     @Override // j$.util.stream.c5, j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.a.o(-1L);
     }
 

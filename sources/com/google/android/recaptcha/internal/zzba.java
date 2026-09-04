@@ -2,14 +2,13 @@ package com.google.android.recaptcha.internal;
 
 import android.app.Application;
 import com.google.android.play.core.integrity.StandardIntegrityException;
+import gd.c;
+import gd.g;
 import java.nio.charset.StandardCharsets;
-import k7.o7;
-import kotlin.jvm.internal.f;
-import sc.c;
-import sc.g;
-import y5.e;
+import kotlin.jvm.internal.e;
+import v7.s7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzba implements zzar {
     private final zzbo zza;
@@ -43,29 +42,29 @@ public final class zzba implements zzar {
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzc(String str, uc.c cVar) {
+    public final /* synthetic */ Object zzc(String str, id.c cVar) {
         return zzam.zza(this, str, cVar);
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final /* synthetic */ Object zzd(zzxp zzxpVar, uc.c cVar) {
+    public final /* synthetic */ Object zzd(zzxp zzxpVar, id.c cVar) {
         Object zzd;
         zzd = zzhj.zzd(36, zza(), new zzap(this, zzxpVar, null), cVar);
         return zzd;
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zze(String str, uc.c cVar) {
+    public final Object zze(String str, id.c cVar) {
         return new zzhg(new zzax(this, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzf(zzxp zzxpVar, uc.c cVar) {
+    public final Object zzf(zzxp zzxpVar, id.c cVar) {
         return new zzhg(new zzay(this, zzxpVar, null));
     }
 
     @Override // com.google.android.recaptcha.internal.zzar
-    public final Object zzg(Exception exc, uc.c cVar) {
+    public final Object zzg(Exception exc, id.c cVar) {
         int i10;
         Throwable cause = exc.getCause();
         if (cause != null) {
@@ -145,7 +144,7 @@ public final class zzba implements zzar {
         return this.zzc;
     }
 
-    public final void zzo(boolean z4) {
+    public final void zzo(boolean z10) {
         this.zzc = false;
     }
 
@@ -155,10 +154,10 @@ public final class zzba implements zzar {
         this.zzc = true;
         this.zzd = "";
         int i10 = zzby.zza;
-        this.zze = o7.a(zzaz.zza);
+        this.zze = s7.a(zzaz.zza);
     }
 
-    public zzba(zzbo zzboVar, zzda zzdaVar, int i10, f fVar) {
-        this(new zzbo(28800000L), new zzcz(e.b));
+    public zzba(zzbo zzboVar, zzda zzdaVar, int i10, e eVar) {
+        this(new zzbo(28800000L), new zzcz(k6.e.b));
     }
 }

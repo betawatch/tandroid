@@ -1,54 +1,68 @@
 package fg;
 
-import android.animation.ValueAnimator;
-import org.telegram.ui.Components.voip.k0;
-import org.telegram.ui.ii1;
+import ji.k5;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class c implements ValueAnimator.AnimatorUpdateListener {
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final /* synthetic */ class c implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ Object e;
+    public final /* synthetic */ f b;
+    public final /* synthetic */ e c;
 
-    public /* synthetic */ c(Object obj, float f10, float f11, float f12, int i10) {
+    public /* synthetic */ c(f fVar, e eVar, int i10) {
         this.a = i10;
-        this.e = obj;
-        this.b = f10;
-        this.c = f11;
-        this.d = f12;
+        this.b = fVar;
+        this.c = eVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                i iVar = (i) this.e;
-                iVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                a aVar = iVar.b;
-                aVar.d = this.b * floatValue;
-                aVar.e = this.c * floatValue;
-                aVar.g = floatValue * this.d;
+                f fVar = this.b;
+                e eVar = (e) fVar.b;
+                e eVar2 = this.c;
+                if (eVar == eVar2) {
+                    fVar.c = null;
+                    fVar.k(eVar2);
+                    break;
+                }
                 break;
             case 1:
-                k0 k0Var = (k0) this.e;
-                k0Var.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                k0Var.v0 = e2.c.w(1.0f, floatValue2, 1.0f, this.b * floatValue2);
-                k0Var.o0 = this.c * floatValue2;
-                k0Var.p0 = this.d * floatValue2;
-                k0Var.invalidate();
+                f fVar2 = this.b;
+                e eVar3 = (e) fVar2.b;
+                e eVar4 = this.c;
+                if (eVar3 == eVar4) {
+                    c cVar = (c) fVar2.c;
+                    if (cVar != null) {
+                        AndroidUtilities.cancelRunOnUIThread(cVar);
+                        fVar2.c = null;
+                    }
+                    int i10 = eVar4.d;
+                    if (i10 != 0) {
+                        c cVar2 = new c(fVar2, eVar4, 2);
+                        fVar2.d = cVar2;
+                        AndroidUtilities.runOnUIThread(cVar2, 20000L);
+                        k5 k5Var = eVar4.a;
+                        ((ConnectionsManager) k5Var.b).checkWebProxyInternal(eVar4.b, i10, new d(fVar2, eVar4));
+                        break;
+                    } else {
+                        fVar2.k(eVar4);
+                        break;
+                    }
+                }
                 break;
             default:
-                ii1 ii1Var = (ii1) this.e;
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                ii1Var.c1 = e2.c.w(1.0f, floatValue3, 1.0f, this.b * floatValue3);
-                ii1Var.V0 = this.c * floatValue3;
-                ii1Var.W0 = this.d * floatValue3;
-                ii1Var.s.invalidate();
+                f fVar3 = this.b;
+                e eVar5 = (e) fVar3.b;
+                e eVar6 = this.c;
+                if (eVar5 == eVar6) {
+                    fVar3.d = null;
+                    fVar3.k(eVar6);
+                    break;
+                }
                 break;
         }
     }

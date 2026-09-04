@@ -1,8 +1,8 @@
 package org.telegram.messenger.time;
 
-import android.support.v4.media.a;
+import a4.a;
 import androidx.car.app.navigation.model.Maneuver;
-import e2.c;
+import com.google.android.gms.internal.vision.e2;
 import j$.util.DesugarTimeZone;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.io.ObjectInputStream;
@@ -24,7 +24,7 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class FastDateParser implements DateParser, Serializable {
     private static final long serialVersionUID = 2;
@@ -80,7 +80,7 @@ public class FastDateParser implements DateParser, Serializable {
     private static final Strategy SECOND_STRATEGY = new NumberStrategy(13);
     private static final Strategy MILLISECOND_STRATEGY = new NumberStrategy(14);
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class CopyQuotedStrategy extends Strategy {
         private final String formatField;
 
@@ -90,8 +90,8 @@ public class FastDateParser implements DateParser, Serializable {
         }
 
         @Override // org.telegram.messenger.time.FastDateParser.Strategy
-        public boolean addRegex(FastDateParser fastDateParser, StringBuilder sb) {
-            FastDateParser.escapeRegex(sb, this.formatField, true);
+        public boolean addRegex(FastDateParser fastDateParser, StringBuilder sb2) {
+            FastDateParser.escapeRegex(sb2, this.formatField, true);
             return false;
         }
 
@@ -105,7 +105,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TextStrategy extends Strategy {
         private final int field;
         private final Map<String, Integer> keyValues;
@@ -117,13 +117,13 @@ public class FastDateParser implements DateParser, Serializable {
         }
 
         @Override // org.telegram.messenger.time.FastDateParser.Strategy
-        public boolean addRegex(FastDateParser fastDateParser, StringBuilder sb) {
-            sb.append('(');
+        public boolean addRegex(FastDateParser fastDateParser, StringBuilder sb2) {
+            sb2.append('(');
             Iterator<String> it = this.keyValues.keySet().iterator();
             while (it.hasNext()) {
-                FastDateParser.escapeRegex(sb, it.next(), false).append('|');
+                FastDateParser.escapeRegex(sb2, it.next(), false).append('|');
             }
-            sb.setCharAt(sb.length() - 1, ')');
+            sb2.setCharAt(sb2.length() - 1, ')');
             return true;
         }
 
@@ -134,19 +134,19 @@ public class FastDateParser implements DateParser, Serializable {
                 calendar.set(this.field, num.intValue());
                 return;
             }
-            StringBuilder sb = new StringBuilder(str);
-            sb.append(" not in (");
+            StringBuilder sb2 = new StringBuilder(str);
+            sb2.append(" not in (");
             Iterator<String> it = this.keyValues.keySet().iterator();
             while (it.hasNext()) {
-                sb.append(it.next());
-                sb.append(' ');
+                sb2.append(it.next());
+                sb2.append(' ');
             }
-            sb.setCharAt(sb.length() - 1, ')');
-            throw new IllegalArgumentException(sb.toString());
+            sb2.setCharAt(sb2.length() - 1, ')');
+            throw new IllegalArgumentException(sb2.toString());
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TimeZoneStrategy extends Strategy {
         private static final int ID = 0;
         private static final int LONG_DST = 3;
@@ -178,18 +178,18 @@ public class FastDateParser implements DateParser, Serializable {
                     }
                 }
             }
-            StringBuilder l10 = c.l("(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|");
+            StringBuilder u10 = a.u("(GMT[+\\-]\\d{0,1}\\d{2}|[+\\-]\\d{2}:?\\d{2}|");
             Iterator<String> it = this.tzNames.keySet().iterator();
             while (it.hasNext()) {
-                FastDateParser.escapeRegex(l10, it.next(), false).append('|');
+                FastDateParser.escapeRegex(u10, it.next(), false).append('|');
             }
-            l10.setCharAt(l10.length() - 1, ')');
-            this.validTimeZoneChars = l10.toString();
+            u10.setCharAt(u10.length() - 1, ')');
+            this.validTimeZoneChars = u10.toString();
         }
 
         @Override // org.telegram.messenger.time.FastDateParser.Strategy
-        public boolean addRegex(FastDateParser fastDateParser, StringBuilder sb) {
-            sb.append(this.validTimeZoneChars);
+        public boolean addRegex(FastDateParser fastDateParser, StringBuilder sb2) {
+            sb2.append(this.validTimeZoneChars);
             return true;
         }
 
@@ -221,34 +221,34 @@ public class FastDateParser implements DateParser, Serializable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static StringBuilder escapeRegex(StringBuilder sb, String str, boolean z4) {
-        sb.append("\\Q");
+    public static StringBuilder escapeRegex(StringBuilder sb2, String str, boolean z10) {
+        sb2.append("\\Q");
         int i10 = 0;
         while (i10 < str.length()) {
             char charAt = str.charAt(i10);
             if (charAt != '\'') {
                 if (charAt == '\\' && (i10 = i10 + 1) != str.length()) {
-                    sb.append(charAt);
+                    sb2.append(charAt);
                     charAt = str.charAt(i10);
                     if (charAt == 'E') {
-                        sb.append("E\\\\E\\");
+                        sb2.append("E\\\\E\\");
                         charAt = 'Q';
                     }
                 }
-            } else if (z4) {
+            } else if (z10) {
                 i10++;
                 if (i10 == str.length()) {
-                    return sb;
+                    return sb2;
                 }
                 charAt = str.charAt(i10);
             } else {
                 continue;
             }
-            sb.append(charAt);
+            sb2.append(charAt);
             i10++;
         }
-        sb.append("\\E");
-        return sb;
+        sb2.append("\\E");
+        return sb2;
     }
 
     private static ConcurrentMap<Locale, Strategy> getCache(int i10) {
@@ -267,16 +267,16 @@ public class FastDateParser implements DateParser, Serializable {
         return concurrentMap;
     }
 
-    private static String[] getDisplayNameArray(int i10, boolean z4, Locale locale) {
+    private static String[] getDisplayNameArray(int i10, boolean z10, Locale locale) {
         DateFormatSymbols dateFormatSymbols = new DateFormatSymbols(locale);
         if (i10 == 0) {
             return dateFormatSymbols.getEras();
         }
         if (i10 == 2) {
-            return z4 ? dateFormatSymbols.getMonths() : dateFormatSymbols.getShortMonths();
+            return z10 ? dateFormatSymbols.getMonths() : dateFormatSymbols.getShortMonths();
         }
         if (i10 == 7) {
-            return z4 ? dateFormatSymbols.getWeekdays() : dateFormatSymbols.getShortWeekdays();
+            return z10 ? dateFormatSymbols.getWeekdays() : dateFormatSymbols.getShortWeekdays();
         }
         if (i10 != 9) {
             return null;
@@ -314,7 +314,7 @@ public class FastDateParser implements DateParser, Serializable {
             switch (charAt) {
                 case Maneuver.TYPE_DESTINATION /* 39 */:
                     if (str.length() > 2) {
-                        return new CopyQuotedStrategy(c.j(str, 1, 1));
+                        return new CopyQuotedStrategy(e2.i(1, 1, str));
                     }
                     break;
                 case 'S':
@@ -365,7 +365,7 @@ public class FastDateParser implements DateParser, Serializable {
     }
 
     private void init(Calendar calendar) {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
         ArrayList arrayList = new ArrayList();
         Matcher matcher = formatPattern.matcher(this.pattern);
         if (!matcher.lookingAt()) {
@@ -381,7 +381,7 @@ public class FastDateParser implements DateParser, Serializable {
             }
             String group2 = matcher.group();
             this.nextStrategy = getStrategy(group2, calendar);
-            if (strategy.addRegex(this, sb)) {
+            if (strategy.addRegex(this, sb2)) {
                 arrayList.add(strategy);
             }
             this.currentFormatField = group2;
@@ -391,12 +391,12 @@ public class FastDateParser implements DateParser, Serializable {
         if (matcher.regionStart() != matcher.regionEnd()) {
             throw new IllegalArgumentException("Failed to parse \"" + this.pattern + "\" ; gave up at index " + matcher.regionStart());
         }
-        if (strategy.addRegex(this, sb)) {
+        if (strategy.addRegex(this, sb2)) {
             arrayList.add(strategy);
         }
         this.currentFormatField = null;
         this.strategies = (Strategy[]) arrayList.toArray(new Strategy[arrayList.size()]);
-        this.parsePattern = Pattern.compile(sb.toString());
+        this.parsePattern = Pattern.compile(sb2.toString());
     }
 
     private static void insertValuesInMap(Map<String, Integer> map, String[] strArr) {
@@ -463,9 +463,9 @@ public class FastDateParser implements DateParser, Serializable {
             return parse;
         }
         if (!this.locale.equals(JAPANESE_IMPERIAL)) {
-            StringBuilder t6 = a.t("Unparseable date: \"", str, "\" does not match ");
-            t6.append(this.parsePattern.pattern());
-            throw new ParseException(t6.toString(), 0);
+            StringBuilder v = a.v("Unparseable date: \"", str, "\" does not match ");
+            v.append(this.parsePattern.pattern());
+            throw new ParseException(v.toString(), 0);
         }
         throw new ParseException("(The " + this.locale + " locale does not support dates before 1868 AD)\nUnparseable date: \"" + str + "\" does not match " + this.parsePattern.pattern(), 0);
     }
@@ -533,7 +533,7 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class NumberStrategy extends Strategy {
         private final int field;
 
@@ -543,14 +543,14 @@ public class FastDateParser implements DateParser, Serializable {
         }
 
         @Override // org.telegram.messenger.time.FastDateParser.Strategy
-        public boolean addRegex(FastDateParser fastDateParser, StringBuilder sb) {
+        public boolean addRegex(FastDateParser fastDateParser, StringBuilder sb2) {
             if (!fastDateParser.isNextNumber()) {
-                sb.append("(\\p{Nd}++)");
+                sb2.append("(\\p{Nd}++)");
                 return true;
             }
-            sb.append("(\\p{Nd}{");
-            sb.append(fastDateParser.getFieldWidth());
-            sb.append("}+)");
+            sb2.append("(\\p{Nd}{");
+            sb2.append(fastDateParser.getFieldWidth());
+            sb2.append("}+)");
             return true;
         }
 
@@ -569,12 +569,12 @@ public class FastDateParser implements DateParser, Serializable {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static abstract class Strategy {
         private Strategy() {
         }
 
-        public abstract boolean addRegex(FastDateParser fastDateParser, StringBuilder sb);
+        public abstract boolean addRegex(FastDateParser fastDateParser, StringBuilder sb2);
 
         public boolean isNumber() {
             return false;

@@ -9,7 +9,7 @@ import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a0 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -20,13 +20,13 @@ public final /* synthetic */ class a0 implements RequestDelegate {
     public final /* synthetic */ int f;
     public final /* synthetic */ String g;
 
-    public /* synthetic */ a0(MessagesController messagesController, HashMap hashMap, String str, a0.h hVar, long j10, int i10) {
+    public /* synthetic */ a0(MessagesController messagesController, HashMap hashMap, String str, a0.i iVar, long j3, int i10) {
         this.a = 2;
         this.b = messagesController;
         this.d = hashMap;
         this.g = str;
-        this.e = hVar;
-        this.c = j10;
+        this.e = iVar;
+        this.c = j3;
         this.f = i10;
     }
 
@@ -40,15 +40,15 @@ public final /* synthetic */ class a0 implements RequestDelegate {
                 ((VoIPService) this.b).lambda$startConferenceGroupCall$43(this.c, (HashSet) this.d, (AtomicInteger) this.e, this.f, this.g, tLObject, tL_error);
                 break;
             default:
-                ((MessagesController) this.b).lambda$reloadWebPages$187((HashMap) this.d, this.g, (a0.h) this.e, this.c, this.f, tLObject, tL_error);
+                ((MessagesController) this.b).lambda$reloadWebPages$187((HashMap) this.d, this.g, (a0.i) this.e, this.c, this.f, tLObject, tL_error);
                 break;
         }
     }
 
-    public /* synthetic */ a0(VoIPService voIPService, long j10, HashSet hashSet, AtomicInteger atomicInteger, int i10, String str, int i11) {
+    public /* synthetic */ a0(VoIPService voIPService, long j3, HashSet hashSet, AtomicInteger atomicInteger, int i10, String str, int i11) {
         this.a = i11;
         this.b = voIPService;
-        this.c = j10;
+        this.c = j3;
         this.d = hashSet;
         this.e = atomicInteger;
         this.f = i10;

@@ -2,7 +2,7 @@ package com.google.android.play.core.integrity;
 
 import com.google.android.play.core.integrity.StandardIntegrityManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 final class c extends StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder {
     private long a;
@@ -18,19 +18,19 @@ final class c extends StandardIntegrityManager.PrepareIntegrityTokenRequest.Buil
         if (this.b == 3) {
             return new e(this.a, 0, null);
         }
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb2 = new StringBuilder();
         if ((this.b & 1) == 0) {
-            sb.append(" cloudProjectNumber");
+            sb2.append(" cloudProjectNumber");
         }
         if ((this.b & 2) == 0) {
-            sb.append(" webViewRequestMode");
+            sb2.append(" webViewRequestMode");
         }
-        throw new IllegalStateException("Missing required properties:".concat(sb.toString()));
+        throw new IllegalStateException("Missing required properties:".concat(sb2.toString()));
     }
 
     @Override // com.google.android.play.core.integrity.StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder
-    public final StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder setCloudProjectNumber(long j10) {
-        this.a = j10;
+    public final StandardIntegrityManager.PrepareIntegrityTokenRequest.Builder setCloudProjectNumber(long j3) {
+        this.a = j3;
         this.b = (byte) (this.b | 1);
         return this;
     }

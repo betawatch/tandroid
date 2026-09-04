@@ -1,98 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ty0 extends Drawable {
-    public boolean a;
-    public final z5 b;
-    public final Drawable c;
-    public final Drawable d;
-    public int e = 255;
+public final class ty0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Switch b;
 
-    public ty0(org.telegram.ui.Cells.s1 s1Var) {
-        this.b = new z5(s1Var, 420L, mr.h);
-        this.c = s1Var.getContext().getResources().getDrawable(R.drawable.summary_arrow);
-        this.d = s1Var.getContext().getResources().getDrawable(R.drawable.summary_stars);
+    public /* synthetic */ ty0(Switch r12, int i10) {
+        this.a = i10;
+        this.b = r12;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        Drawable drawable = this.d;
-        drawable.setBounds(bounds);
-        drawable.setAlpha(this.e);
-        drawable.draw(canvas);
-        float e = this.b.e(this.a);
-        float centerX = getBounds().centerX();
-        float centerY = getBounds().centerY();
-        float width = getBounds().width();
-        canvas.save();
-        if (e < 0.5f) {
-            float abs = Math.abs(e - 0.5f) + 0.5f;
-            canvas.scale(abs, abs, centerX, centerY);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.d = null;
+                break;
+            default:
+                this.b.e = null;
+                break;
         }
-        canvas.save();
-        if (e > 0.5f) {
-            float abs2 = Math.abs(e - 0.5f) + 0.5f;
-            float f10 = -abs2;
-            float f11 = width * 0.32f;
-            canvas.scale(f10, f10, getBounds().left + f11, getBounds().bottom - f11);
-            float f12 = 1.0f - abs2;
-            canvas.translate((-width) * f12 * 0.4f, f12 * width * 0.4f);
-        }
-        Rect bounds2 = getBounds();
-        Drawable drawable2 = this.c;
-        drawable2.setBounds(bounds2);
-        drawable2.setAlpha(this.e);
-        drawable2.draw(canvas);
-        canvas.restore();
-        canvas.save();
-        if (e > 0.5f) {
-            float f13 = -(Math.abs(e - 0.5f) + 0.5f);
-            float f14 = 0.32f * width;
-            canvas.scale(f13, f13, getBounds().right - f14, getBounds().top + f14);
-        }
-        canvas.rotate(180.0f, centerX, centerY);
-        if (e > 0.5f) {
-            float abs3 = 1.0f - (Math.abs(e - 0.5f) + 0.5f);
-            canvas.translate((-width) * abs3 * 0.4f, width * abs3 * 0.4f);
-        }
-        drawable2.setBounds(getBounds());
-        drawable2.setAlpha(this.e);
-        drawable2.draw(canvas);
-        canvas.restore();
-        canvas.restore();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return this.c.getIntrinsicHeight();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return this.c.getIntrinsicWidth();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.e = i10;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.setColorFilter(colorFilter);
-        this.d.setColorFilter(colorFilter);
     }
 }

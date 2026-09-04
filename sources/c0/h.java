@@ -1,6 +1,6 @@
 package c0;
 
-import j7.h0;
+import i9.w;
 import java.util.Locale;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutionException;
@@ -12,21 +12,22 @@ import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
 import java.util.concurrent.locks.LockSupport;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import vh.w2;
+import org.telegram.ui.Cells.p6;
+import v7.c5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class h implements v8.a {
+public abstract class h implements w {
     public static final boolean d = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
     public static final Logger e = Logger.getLogger(h.class.getName());
-    public static final h0 f;
+    public static final c5 f;
     public static final Object h;
     public volatile Object a;
     public volatile d b;
     public volatile g c;
 
     static {
-        h0 fVar;
+        c5 fVar;
         try {
             fVar = new e(AtomicReferenceFieldUpdater.newUpdater(g.class, Thread.class, "a"), AtomicReferenceFieldUpdater.newUpdater(g.class, g.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, g.class, "c"), AtomicReferenceFieldUpdater.newUpdater(h.class, d.class, "b"), AtomicReferenceFieldUpdater.newUpdater(h.class, Object.class, "a"));
             th = null;
@@ -84,8 +85,8 @@ public abstract class h implements v8.a {
     public static void f(Runnable runnable, Executor executor) {
         try {
             executor.execute(runnable);
-        } catch (RuntimeException e6) {
-            e.log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e6);
+        } catch (RuntimeException e7) {
+            e.log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e7);
         }
     }
 
@@ -107,46 +108,28 @@ public abstract class h implements v8.a {
 
     public static Object h(h hVar) {
         Object obj;
-        boolean z4 = false;
+        boolean z10 = false;
         while (true) {
             try {
                 obj = hVar.get();
                 break;
             } catch (InterruptedException unused) {
-                z4 = true;
+                z10 = true;
             } catch (Throwable th2) {
-                if (z4) {
+                if (z10) {
                     Thread.currentThread().interrupt();
                 }
                 throw th2;
             }
         }
-        if (z4) {
+        if (z10) {
             Thread.currentThread().interrupt();
         }
         return obj;
     }
 
-    public final void b(StringBuilder sb) {
-        try {
-            Object h9 = h(this);
-            sb.append("SUCCESS, result=[");
-            sb.append(h9 == this ? "this future" : String.valueOf(h9));
-            sb.append("]");
-        } catch (CancellationException unused) {
-            sb.append("CANCELLED");
-        } catch (RuntimeException e6) {
-            sb.append("UNKNOWN, cause=[");
-            sb.append(e6.getClass());
-            sb.append(" thrown from get()]");
-        } catch (ExecutionException e10) {
-            sb.append("FAILURE, cause=[");
-            sb.append(e10.getCause());
-            sb.append("]");
-        }
-    }
-
-    public final void c(Runnable runnable, Executor executor) {
+    @Override // i9.w
+    public final void a(Runnable runnable, Executor executor) {
         executor.getClass();
         d dVar = this.b;
         d dVar2 = d.d;
@@ -164,11 +147,30 @@ public abstract class h implements v8.a {
         f(runnable, executor);
     }
 
+    public final void c(StringBuilder sb2) {
+        try {
+            Object h10 = h(this);
+            sb2.append("SUCCESS, result=[");
+            sb2.append(h10 == this ? "this future" : String.valueOf(h10));
+            sb2.append("]");
+        } catch (CancellationException unused) {
+            sb2.append("CANCELLED");
+        } catch (RuntimeException e7) {
+            sb2.append("UNKNOWN, cause=[");
+            sb2.append(e7.getClass());
+            sb2.append(" thrown from get()]");
+        } catch (ExecutionException e10) {
+            sb2.append("FAILURE, cause=[");
+            sb2.append(e10.getCause());
+            sb2.append("]");
+        }
+    }
+
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z4) {
+    public final boolean cancel(boolean z10) {
         Object obj = this.a;
         if (obj == null) {
-            if (f.b(this, obj, d ? new a(new CancellationException("Future.cancel() was called."), z4) : z4 ? a.c : a.d)) {
+            if (f.b(this, obj, d ? new a(new CancellationException("Future.cancel() was called."), z10) : z10 ? a.c : a.d)) {
                 e(this);
                 return true;
             }
@@ -177,9 +179,9 @@ public abstract class h implements v8.a {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
+    public final Object get(long j3, TimeUnit timeUnit) {
         g gVar = g.c;
-        long nanos = timeUnit.toNanos(j10);
+        long nanos = timeUnit.toNanos(j3);
         if (Thread.interrupted()) {
             throw new InterruptedException();
         }
@@ -193,9 +195,9 @@ public abstract class h implements v8.a {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    h0 h0Var = f;
-                    h0Var.d(gVar3, gVar2);
-                    if (h0Var.c(this, gVar2, gVar3)) {
+                    c5 c5Var = f;
+                    c5Var.d(gVar3, gVar2);
+                    if (c5Var.c(this, gVar2, gVar3)) {
                         while (true) {
                             LockSupport.parkNanos(this, nanos);
                             if (Thread.interrupted()) {
@@ -235,31 +237,31 @@ public abstract class h implements v8.a {
         String obj4 = timeUnit.toString();
         Locale locale = Locale.ROOT;
         String lowerCase = obj4.toLowerCase(locale);
-        StringBuilder s6 = android.support.v4.media.a.s(j10, "Waited ", " ");
-        s6.append(timeUnit.toString().toLowerCase(locale));
-        String sb = s6.toString();
+        StringBuilder t10 = a4.a.t(j3, "Waited ", " ");
+        t10.append(timeUnit.toString().toLowerCase(locale));
+        String sb2 = t10.toString();
         if (nanos + 1000 < 0) {
-            String k10 = w2.k(sb, " (plus ");
-            long j11 = -nanos;
-            long convert = timeUnit.convert(j11, TimeUnit.NANOSECONDS);
-            long nanos2 = j11 - timeUnit.toNanos(convert);
-            boolean z4 = convert == 0 || nanos2 > 1000;
+            String t11 = p6.t(sb2, " (plus ");
+            long j10 = -nanos;
+            long convert = timeUnit.convert(j10, TimeUnit.NANOSECONDS);
+            long nanos2 = j10 - timeUnit.toNanos(convert);
+            boolean z10 = convert == 0 || nanos2 > 1000;
             if (convert > 0) {
-                String str = k10 + convert + " " + lowerCase;
-                if (z4) {
-                    str = w2.k(str, ",");
+                String str = t11 + convert + " " + lowerCase;
+                if (z10) {
+                    str = p6.t(str, ",");
                 }
-                k10 = w2.k(str, " ");
+                t11 = p6.t(str, " ");
             }
-            if (z4) {
-                k10 = k10 + nanos2 + " nanoseconds ";
+            if (z10) {
+                t11 = t11 + nanos2 + " nanoseconds ";
             }
-            sb = w2.k(k10, "delay)");
+            sb2 = p6.t(t11, "delay)");
         }
         if (isDone()) {
-            throw new TimeoutException(w2.k(sb, " but future completed as timeout expired"));
+            throw new TimeoutException(p6.t(sb2, " but future completed as timeout expired"));
         }
-        throw new TimeoutException(android.support.v4.media.a.z(sb, " for ", hVar));
+        throw new TimeoutException(a4.a.C(sb2, " for ", hVar));
     }
 
     /* JADX WARN: Multi-variable type inference failed */
@@ -327,31 +329,31 @@ public abstract class h implements v8.a {
 
     public final String toString() {
         String str;
-        StringBuilder sb = new StringBuilder();
-        sb.append(super.toString());
-        sb.append("[status=");
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(super.toString());
+        sb2.append("[status=");
         if (this.a instanceof a) {
-            sb.append("CANCELLED");
+            sb2.append("CANCELLED");
         } else if (isDone()) {
-            b(sb);
+            c(sb2);
         } else {
             try {
                 str = i();
-            } catch (RuntimeException e6) {
-                str = "Exception thrown from implementation: " + e6.getClass();
+            } catch (RuntimeException e7) {
+                str = "Exception thrown from implementation: " + e7.getClass();
             }
             if (str != null && !str.isEmpty()) {
-                sb.append("PENDING, info=[");
-                sb.append(str);
-                sb.append("]");
+                sb2.append("PENDING, info=[");
+                sb2.append(str);
+                sb2.append("]");
             } else if (isDone()) {
-                b(sb);
+                c(sb2);
             } else {
-                sb.append("PENDING");
+                sb2.append("PENDING");
             }
         }
-        sb.append("]");
-        return sb.toString();
+        sb2.append("]");
+        return sb2.toString();
     }
 
     public void d() {
@@ -370,9 +372,9 @@ public abstract class h implements v8.a {
             if (gVar2 != gVar) {
                 g gVar3 = new g();
                 do {
-                    h0 h0Var = f;
-                    h0Var.d(gVar3, gVar2);
-                    if (h0Var.c(this, gVar2, gVar3)) {
+                    c5 c5Var = f;
+                    c5Var.d(gVar3, gVar2);
+                    if (c5Var.c(this, gVar2, gVar3)) {
                         do {
                             LockSupport.park(this);
                             if (!Thread.interrupted()) {

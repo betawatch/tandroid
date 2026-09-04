@@ -1,42 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.ui.LanguageSelectActivity;
-import org.telegram.ui.LaunchActivity;
+import android.content.DialogInterface;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g1 implements org.telegram.ui.ActionBar.c2 {
+public final /* synthetic */ class g1 implements DialogInterface.OnShowListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ EditTextBoldCursor b;
 
-    public /* synthetic */ g1(LaunchActivity launchActivity, int i10) {
+    public /* synthetic */ g1(int i10, EditTextBoldCursor editTextBoldCursor) {
         this.a = i10;
-        this.b = launchActivity;
+        this.b = editTextBoldCursor;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                this.b.p0(new LanguageSelectActivity());
+                EditTextBoldCursor editTextBoldCursor = this.b;
+                editTextBoldCursor.requestFocus();
+                AndroidUtilities.showKeyboard(editTextBoldCursor);
                 break;
             case 1:
-                this.b.p0(new org.telegram.ui.d7());
+                EditTextBoldCursor editTextBoldCursor2 = this.b;
+                editTextBoldCursor2.requestFocus();
+                AndroidUtilities.showKeyboard(editTextBoldCursor2);
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new r1(0, this.b));
                 break;
             default:
-                LaunchActivity launchActivity = this.b;
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    launchActivity.startActivity(intent);
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
+                AndroidUtilities.runOnUIThread(new r1(6, this.b));
+                break;
         }
     }
 }

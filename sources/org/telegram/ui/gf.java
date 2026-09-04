@@ -1,42 +1,28 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.function.ToIntFunction;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gf implements ValueAnimator.AnimatorUpdateListener {
+public final /* synthetic */ class gf implements ToIntFunction {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ View c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ gf(zn znVar, org.telegram.ui.Cells.v0 v0Var, int i10) {
+    public /* synthetic */ gf(Object obj, int i10) {
         this.a = i10;
-        this.b = znVar;
-        this.c = v0Var;
+        this.b = obj;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.util.function.ToIntFunction
+    public final int applyAsInt(Object obj) {
         switch (this.a) {
             case 0:
-                zn znVar = this.b;
-                znVar.getClass();
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                znVar.x9 = AndroidUtilities.dp(30.0f) * floatValue;
-                znVar.o9();
-                this.c.setAlpha(floatValue);
-                break;
+                return ((Integer) ((HashMap) this.b).get((View) obj)).intValue();
             default:
-                zn znVar2 = this.b;
-                znVar2.getClass();
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                znVar2.x9 = AndroidUtilities.dp(30.0f) * floatValue2;
-                znVar2.o9();
-                znVar2.r9();
-                this.c.setAlpha(floatValue2);
-                break;
+                return ((Integer) ((ArrayList) this.b).get(((Integer) obj).intValue())).intValue();
         }
     }
 }

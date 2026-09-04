@@ -1,10 +1,10 @@
 package org.webrtc;
 
+import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
-import kf.k0;
 import org.webrtc.VideoFrame;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class JavaI420Buffer implements VideoFrame.I420Buffer {
     private final ByteBuffer dataU;
@@ -48,13 +48,13 @@ public class JavaI420Buffer implements VideoFrame.I420Buffer {
     }
 
     private static void checkCapacity(ByteBuffer byteBuffer, int i10, int i11, int i12) {
-        int e = e2.c.e(i11, 1, i12, i10);
-        if (byteBuffer.capacity() >= e) {
+        int w10 = e2.w(i11, 1, i12, i10);
+        if (byteBuffer.capacity() >= w10) {
             return;
         }
-        StringBuilder m9 = k0.m(e, "Buffer must be at least ", " bytes, but was ");
-        m9.append(byteBuffer.capacity());
-        throw new IllegalArgumentException(m9.toString());
+        StringBuilder l4 = i2.g.l(w10, "Buffer must be at least ", " bytes, but was ");
+        l4.append(byteBuffer.capacity());
+        throw new IllegalArgumentException(l4.toString());
     }
 
     public static VideoFrame.Buffer cropAndScaleI420(VideoFrame.I420Buffer i420Buffer, int i10, int i11, int i12, int i13, int i14, int i15) {

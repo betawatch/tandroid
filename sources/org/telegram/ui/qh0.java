@@ -1,338 +1,63 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.UserConfig;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class qh0 extends org.telegram.ui.Components.ql0 {
-    public final Context c;
-    public final /* synthetic */ rh0 d;
+public final class qh0 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
+    public final org.telegram.ui.Components.x9 a;
+    public final int b;
 
-    public qh0(rh0 rh0Var, Context context) {
-        this.d = rh0Var;
-        this.c = context;
+    public qh0(Context context) {
+        super(context);
+        this.b = UserConfig.selectedAccount;
+        setPadding(0, AndroidUtilities.dp(12.0f), 0, AndroidUtilities.dp(12.0f));
+        setOrientation(1);
+        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
+        this.a = x9Var;
+        addView(x9Var, w7.x5.t(104, 104, 49, 0, 2, 0, 0));
     }
 
-    @Override // f2.o0
-    public final void A(f2.l1 l1Var) {
-        View view = l1Var.a;
-        if (view instanceof org.telegram.ui.Cells.a5) {
-            ((org.telegram.ui.Cells.a5) view).a();
+    public final void a() {
+        int i10 = this.b;
+        TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
+        if (stickerSetByName == null) {
+            stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
         }
-    }
-
-    @Override // org.telegram.ui.Components.ql0
-    public final boolean D(f2.l1 l1Var) {
-        int b10 = l1Var.b();
-        rh0 rh0Var = this.d;
-        if (rh0Var.N == b10 || rh0Var.x == b10) {
-            return true;
-        }
-        if (b10 >= rh0Var.y && b10 < rh0Var.B) {
-            return true;
-        }
-        if ((b10 < rh0Var.E || b10 >= rh0Var.F) && b10 != rh0Var.K) {
-            return b10 >= rh0Var.R && b10 < rh0Var.S;
-        }
-        return true;
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        return this.d.U;
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        rh0 rh0Var = this.d;
-        if (i10 == rh0Var.r) {
-            return 0;
-        }
-        if (i10 == rh0Var.s || i10 == rh0Var.I || i10 == rh0Var.P || i10 == rh0Var.M) {
-            return 1;
-        }
-        if (i10 == rh0Var.v) {
-            return 2;
-        }
-        if (i10 == rh0Var.x) {
-            return 3;
-        }
-        if (i10 == rh0Var.w || i10 == rh0Var.G || i10 == rh0Var.J || i10 == rh0Var.O || i10 == rh0Var.Q) {
-            return 4;
-        }
-        if (i10 >= rh0Var.y && i10 < rh0Var.B) {
-            return 5;
-        }
-        if (i10 >= rh0Var.E && i10 < rh0Var.F) {
-            return 5;
-        }
-        if (i10 == rh0Var.C) {
-            return 6;
-        }
-        if (i10 == rh0Var.H) {
-            return 7;
-        }
-        if (i10 == rh0Var.K) {
-            return 8;
-        }
-        if (i10 == rh0Var.L) {
-            return 9;
-        }
-        if (i10 == rh0Var.N) {
-            return 10;
-        }
-        if (i10 < rh0Var.R || i10 >= rh0Var.S) {
-            return i10 == rh0Var.D ? 11 : 1;
-        }
-        return 10;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:52:0x00f4, code lost:
-    
-        if (r15 == (r0.B - 1)) goto L51;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x00f6, code lost:
-    
-        r7 = false;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:54:0x010a, code lost:
-    
-        r14 = (org.telegram.ui.oh0) r14;
-        r14.b(r1, r15 - r0.y);
-        r14.E = r7;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:57:0x0107, code lost:
-    
-        if (r15 == (r0.F - 1)) goto L51;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0097  */
-    @Override // f2.o0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void v(f2.l1 l1Var, int i10) {
-        TLRPC.TL_chatInviteExported tL_chatInviteExported;
-        int i11;
-        TLRPC.User user;
-        rh0 rh0Var = this.d;
-        ArrayList arrayList = rh0Var.f0;
-        long j10 = rh0Var.f;
-        long j11 = rh0Var.n;
-        int i12 = l1Var.f;
-        View view = l1Var.a;
-        boolean z4 = true;
-        if (i12 == 1) {
-            org.telegram.ui.Cells.l4 l4Var = (org.telegram.ui.Cells.l4) view;
-            if (i10 == rh0Var.s) {
-                if (rh0Var.l0 && j10 == rh0Var.getAccountInstance().getUserConfig().clientUserId) {
-                    l4Var.setText(LocaleController.getString(R.string.PublicLink));
-                    return;
-                } else if (j10 == rh0Var.getAccountInstance().getUserConfig().clientUserId) {
-                    l4Var.setText(LocaleController.getString(R.string.ChannelInviteLinkTitle));
-                    return;
-                } else {
-                    l4Var.setText(LocaleController.getString(R.string.PermanentLinkForThisAdmin));
-                    return;
-                }
-            }
-            if (i10 == rh0Var.I) {
-                l4Var.setText(LocaleController.getString(R.string.RevokedLinks));
-                return;
-            } else if (i10 == rh0Var.M) {
-                l4Var.setText(LocaleController.getString(R.string.LinksCreatedByThisAdmin));
-                return;
-            } else {
-                if (i10 == rh0Var.P) {
-                    l4Var.setText(LocaleController.getString(R.string.LinksCreatedByOtherAdmins));
-                    return;
-                }
-                return;
-            }
-        }
-        if (i12 == 2) {
-            org.telegram.ui.Components.x80 x80Var = (org.telegram.ui.Components.x80) view;
-            x80Var.setCanEdit(j10 == rh0Var.getAccountInstance().getUserConfig().clientUserId);
-            if (rh0Var.l0 && j10 == rh0Var.getAccountInstance().getUserConfig().clientUserId) {
-                if (rh0Var.d != null) {
-                    x80Var.setLink("https://t.me/" + ChatObject.getPublicUsername(rh0Var.c));
-                    x80Var.d(0, null, false);
-                    x80Var.b(true);
-                    return;
-                }
-                return;
-            }
-            x80Var.b(!rh0Var.m0);
-            TLRPC.TL_chatInviteExported tL_chatInviteExported2 = rh0Var.e;
-            if (tL_chatInviteExported2 != null) {
-                x80Var.setLink(tL_chatInviteExported2.link);
-                x80Var.c(tL_chatInviteExported2, j11);
-                return;
-            } else {
-                x80Var.setLink(null);
-                x80Var.d(0, null, false);
-                return;
-            }
-        }
-        if (i12 == 3) {
-            org.telegram.ui.Cells.e2 e2Var = (org.telegram.ui.Cells.e2) view;
-            Context context = this.c;
-            Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
-            Drawable drawable2 = context.getResources().getDrawable(R.drawable.poll_add_plus);
-            int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.N6, false);
-            PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
-            drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
-            drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k7, false), mode));
-            org.telegram.ui.Components.mq mqVar = new org.telegram.ui.Components.mq(drawable, drawable2);
-            String string = LocaleController.getString(R.string.CreateNewLink);
-            boolean z10 = !arrayList.isEmpty();
-            e2Var.a.l(string, false);
-            e2Var.b.setImageDrawable(mqVar);
-            e2Var.c = z10;
-            return;
-        }
-        if (i12 != 5) {
-            switch (i12) {
-                case 9:
-                    org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
-                    TLRPC.ChatFull chatFull = rh0Var.getMessagesController().getChatFull(j11);
-                    TLRPC.Chat chat = rh0Var.getMessagesController().getChat(Long.valueOf(j11));
-                    if (chatFull == null || !chatFull.paid_media_allowed || !ChatObject.isChannelAndNotMegaGroup(chat)) {
-                        z8Var.setText(LocaleController.getString(R.string.ChannelLinksInfo));
-                        break;
-                    } else {
-                        z8Var.setText(LocaleController.getString(R.string.ChannelLinksInfoPaid));
-                        break;
-                    }
-                    break;
-                case 10:
-                    org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) view;
-                    if (i10 != rh0Var.N) {
-                        TLRPC.TL_chatAdminWithInvites tL_chatAdminWithInvites = (TLRPC.TL_chatAdminWithInvites) rh0Var.j0.get(i10 - rh0Var.R);
-                        TLRPC.User user2 = (TLRPC.User) rh0Var.h0.get(Long.valueOf(tL_chatAdminWithInvites.admin_id));
-                        int i13 = tL_chatAdminWithInvites.invites_count;
-                        if (i10 != rh0Var.S - 1) {
-                            i11 = i13;
-                            user = user2;
-                            if (user == null) {
-                                a5Var.b(user, ContactsController.formatName(user.first_name, user.last_name), LocaleController.formatPluralString("InviteLinkCount", i11, new Object[0]), z4);
-                                break;
-                            }
-                        } else {
-                            i11 = i13;
-                            user = user2;
-                        }
-                    } else {
-                        user = rh0Var.getMessagesController().getUser(Long.valueOf(j10));
-                        i11 = rh0Var.c0;
-                    }
-                    z4 = false;
-                    if (user == null) {
-                    }
-                    break;
-                case 11:
-                    org.telegram.ui.Cells.z8 z8Var2 = (org.telegram.ui.Cells.z8) view;
-                    if (i10 == rh0Var.D) {
-                        TLRPC.ChatFull chatFull2 = rh0Var.getMessagesController().getChatFull(j11);
-                        TLRPC.Chat chat2 = rh0Var.getMessagesController().getChat(Long.valueOf(j11));
-                        if (chatFull2 == null || !chatFull2.paid_media_allowed || !ChatObject.isChannelAndNotMegaGroup(chat2)) {
-                            z8Var2.setText(LocaleController.getString(R.string.ChannelLinksInfo));
-                            break;
-                        } else {
-                            z8Var2.setText(LocaleController.getString(R.string.ChannelLinksInfoPaid));
-                            break;
-                        }
-                    }
-                    break;
-            }
-            return;
-        }
-        int i14 = rh0Var.y;
-        if (i10 < i14 || i10 >= rh0Var.B) {
-            tL_chatInviteExported = (TLRPC.TL_chatInviteExported) rh0Var.g0.get(i10 - rh0Var.E);
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSetByName;
+        if (tL_messages_stickerSet == null || tL_messages_stickerSet.documents.size() < 4) {
+            MediaDataController.getInstance(i10).loadStickersByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, false, tL_messages_stickerSet == null);
         } else {
-            tL_chatInviteExported = (TLRPC.TL_chatInviteExported) arrayList.get(i10 - i14);
+            TLRPC.Document document = tL_messages_stickerSet.documents.get(3);
+            this.a.i(ImageLocation.getForDocument(document), "104_104", "tgs", DocumentObject.getSvgThumb(document, org.telegram.ui.ActionBar.j6.a7, 1.0f), tL_messages_stickerSet);
         }
     }
 
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        org.telegram.ui.ActionBar.f6 f6Var;
-        org.telegram.ui.ActionBar.f6 f6Var2;
-        rh0 rh0Var = this.d;
-        Context context = this.c;
-        switch (i10) {
-            case 1:
-                view = new org.telegram.ui.Cells.l4(context, 23);
-                break;
-            case 2:
-                org.telegram.ui.Components.x80 x80Var = new org.telegram.ui.Components.x80(this.c, rh0Var, null, true, rh0Var.h);
-                x80Var.setPermanent(true);
-                x80Var.setDelegate(new ph0(this, x80Var));
-                view = x80Var;
-                break;
-            case 3:
-                f6Var = ((org.telegram.ui.ActionBar.p2) rh0Var).resourceProvider;
-                view = new org.telegram.ui.Cells.e2(context, 64, f6Var);
-                break;
-            case 4:
-                view = new org.telegram.ui.Cells.y6(context, (b) null);
-                break;
-            case 5:
-                view = new oh0(rh0Var, context);
-                break;
-            case 6:
-                org.telegram.ui.Components.u00 u00Var = new org.telegram.ui.Components.u00(context, null);
-                u00Var.setIsSingleCell(true);
-                u00Var.setViewType(9);
-                u00Var.w = false;
-                view = u00Var;
-                break;
-            case 7:
-                view = new org.telegram.ui.Cells.y6(context, (b) null);
-                break;
-            case 8:
-                org.telegram.ui.Cells.z9 z9Var = new org.telegram.ui.Cells.z9(context);
-                z9Var.b(LocaleController.getString(R.string.DeleteAllRevokedLinks), false);
-                z9Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.p7, false));
-                view = z9Var;
-                break;
-            case 9:
-                view = new org.telegram.ui.Cells.z8(context);
-                break;
-            case 10:
-                view = new org.telegram.ui.Cells.a5(8, 6, this.c, null, false);
-                break;
-            case 11:
-                f6Var2 = ((org.telegram.ui.ActionBar.p2) rh0Var).resourceProvider;
-                view = new org.telegram.ui.Cells.z8(context, f6Var2);
-                break;
-            default:
-                FrameLayout kh0Var = new kh0(context);
-                kh0Var.addView(new jh0(context), k7.b6.d(-2, -2.0f, 49, 0.0f, 10.0f, 0.0f, 0.0f));
-                TextView textView = new TextView(context);
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.g9, false));
-                textView.setTextSize(1, 14.0f);
-                textView.setGravity(17);
-                textView.setText(LocaleController.getString(rh0Var.h ? R.string.PrimaryLinkHelpChannel : R.string.PrimaryLinkHelp));
-                kh0Var.addView(textView, k7.b6.d(-1, -2.0f, 51, 52.0f, 143.0f, 52.0f, 18.0f));
-                kh0Var.setTag(-33024);
-                view = kh0Var;
-                break;
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.diceStickersDidLoad && AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME.equals((String) objArr[0])) {
+            a();
         }
-        return ai.n(view, view, -1, -2);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        a();
+        NotificationCenter.getInstance(this.b).addObserver(this, NotificationCenter.diceStickersDidLoad);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(this.b).removeObserver(this, NotificationCenter.diceStickersDidLoad);
     }
 }

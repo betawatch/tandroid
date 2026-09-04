@@ -1,112 +1,157 @@
 package fh;
 
-import android.R;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Rect;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
 import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import kf.r;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import eh.d;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.UserConfig;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.mr;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class a extends c implements xd.b {
-    public final xd.a d;
-    public final int[] e;
-    public final Drawable f;
-    public final TextPaint h;
-    public StaticLayout n;
-    public int r;
-    public int s;
+public final /* synthetic */ class a implements d, f6 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f6 b;
 
-    public a(Context context, f6 f6Var) {
-        super(f6Var);
-        this.d = new xd.a(0, this, mr.h, 320L, false);
-        this.e = new int[]{R.attr.state_enabled, R.attr.state_pressed};
-        this.f = context.getResources().getDrawable(org.telegram.messenger.R.drawable.outline_poll_add_24).mutate();
-        this.h = new TextPaint(j6.P2);
-        int v02 = j6.v0(j6.i6, f6Var);
-        if (this.b != v02) {
-            j6.B1(this.a, v02, false);
-            this.b = v02;
+    public /* synthetic */ a(int i10, f6 f6Var) {
+        this.a = i10;
+        this.b = f6Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public Paint G(String str) {
+        return j6.S0(str);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public int G0(int i10) {
+        if (i10 == j6.G8) {
+            return -14145495;
         }
-        b();
-        c();
+        if (i10 == j6.E8) {
+            return -1;
+        }
+        if (i10 == j6.h5) {
+            return -14737633;
+        }
+        if (i10 == j6.j5) {
+            return -592138;
+        }
+        if (i10 == j6.r5) {
+            return -8553091;
+        }
+        if (i10 == j6.He) {
+            return -16777216;
+        }
+        if (i10 == j6.Ke) {
+            return -1610612736;
+        }
+        if (i10 == j6.Ne || i10 == j6.Re || i10 == j6.Me) {
+            return -9539985;
+        }
+        if (i10 == j6.G6) {
+            return -1;
+        }
+        int i11 = j6.Mh;
+        if (i10 == i11) {
+            return -11754001;
+        }
+        if (i10 == j6.i6) {
+            return 536870911;
+        }
+        if (i10 == j6.Fh || i10 == j6.Eh || i10 == j6.Gh) {
+            return -1;
+        }
+        if (i10 == j6.Hh) {
+            return 352321535;
+        }
+        if (i10 == j6.Je || i10 == i11) {
+            return -7895161;
+        }
+        if (i10 == j6.Ie) {
+            return 780633991;
+        }
+        if (i10 == j6.a7) {
+            return -15921907;
+        }
+        if (i10 == j6.m7) {
+            return -12500671;
+        }
+        if (i10 == j6.l7) {
+            return -13133079;
+        }
+        if (i10 == j6.n7) {
+            return -1;
+        }
+        if (i10 == j6.d6) {
+            return -15198183;
+        }
+        if (i10 == j6.d7) {
+            return -16777216;
+        }
+        f6 f6Var = this.b;
+        return f6Var != null ? f6Var.G0(i10) : j6.w0(null, i10, false);
     }
 
-    @Override // xd.b
-    public final void L(int i10, float f10, float f11, xd.c cVar) {
-        b();
-        c();
-        invalidateSelf();
+    @Override // org.telegram.ui.ActionBar.f6
+    public boolean a() {
+        return j6.I.q();
     }
 
-    @Override // fh.c
-    public final void a(int i10) {
-        this.a.setAlpha(i10);
-        b();
-        c();
-    }
-
-    public final void b() {
-        this.f.setAlpha((int) ((1.0f - this.d.e) * this.c));
-    }
-
-    public final void c() {
-        this.h.setAlpha((int) ((1.0f - this.d.e) * this.c));
-    }
-
-    public final void d(boolean z4, boolean z10) {
-        this.d.a(z4, z10);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect bounds = getBounds();
-        this.a.draw(canvas);
-        r.b(canvas, this.f, 1.0f - this.d.e);
-        if (this.n != null) {
-            canvas.save();
-            canvas.translate(AndroidUtilities.dp(44.0f) + bounds.left, AndroidUtilities.dp(13.66f) + bounds.top);
-            this.n.draw(canvas);
-            canvas.restore();
+    @Override // eh.d
+    public int f(f6 f6Var, boolean z10) {
+        switch (this.a) {
+            case 0:
+                if (b.c(UserConfig.selectedAccount, this.b)) {
+                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.Sd, f6Var));
+                }
+                return i0.a.k(j6.v0(j6.Sd, f6Var), 255);
+            case 1:
+                if (b.c(UserConfig.selectedAccount, this.b)) {
+                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.ce, f6Var));
+                }
+                return i0.a.k(j6.v0(z10 ? j6.s8 : j6.ce, f6Var), 255);
+            default:
+                if (b.c(UserConfig.selectedAccount, this.b)) {
+                    return j6.l1(LiteMode.isEnabled(262144) ? 0.85f : 0.76f, j6.v0(j6.ce, f6Var));
+                }
+                return i0.a.k(j6.v0(z10 ? j6.s8 : j6.ce, f6Var), 255);
         }
     }
 
-    public final void e(int i10) {
-        if (this.s != i10) {
-            this.s = i10;
-            this.h.setColor(i10);
-            this.f.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
-            c();
-        }
+    @Override // org.telegram.ui.ActionBar.f6
+    public /* synthetic */ Drawable getDrawable(String str) {
+        return null;
     }
 
-    @Override // fh.c, android.graphics.drawable.Drawable
-    public final void onBoundsChange(Rect rect) {
-        super.onBoundsChange(rect);
-        float exactCenterY = rect.exactCenterY();
-        float dp = AndroidUtilities.dp(22.33f) + rect.left;
-        AndroidUtilities.dp(27.0f);
-        AndroidUtilities.dp(44.0f);
-        r.d(this.f, dp, exactCenterY, 17);
-        int width = rect.width() - AndroidUtilities.dp(56.0f);
-        if (this.n == null || this.r != width) {
-            this.r = width;
-            this.n = new StaticLayout(LocaleController.getString(org.telegram.messenger.R.string.PollAddAnOption), this.h, width, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        }
+    @Override // org.telegram.ui.ActionBar.f6
+    public int h0(int i10) {
+        return G0(i10);
     }
 
-    @Override // xd.b
-    public final /* synthetic */ void z(float f10, int i10) {
+    @Override // org.telegram.ui.ActionBar.f6
+    public int h1(int i10) {
+        return G0(i10);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public void l(float f7, float f10, int i10, int i11) {
+        j6.q(f7, f10, i10, i11);
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public /* synthetic */ boolean o0() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public ColorFilter x() {
+        return j6.v3;
+    }
+
+    @Override // org.telegram.ui.ActionBar.f6
+    public /* synthetic */ void O0(int i10, int i11) {
     }
 }

@@ -1,98 +1,58 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.TextView;
+import java.util.ArrayList;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class hg1 extends org.telegram.ui.Components.ql0 {
-    public final Context c;
-    public final /* synthetic */ TwoStepVerificationActivity d;
+public final class hg1 implements org.telegram.ui.Components.zk0 {
+    public final /* synthetic */ kg1 a;
 
-    public hg1(TwoStepVerificationActivity twoStepVerificationActivity, Context context) {
-        this.d = twoStepVerificationActivity;
-        this.c = context;
+    public hg1(kg1 kg1Var) {
+        this.a = kg1Var;
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final boolean D(f2.l1 l1Var) {
-        return l1Var.f == 0;
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
-        if (twoStepVerificationActivity.D || twoStepVerificationActivity.F == null) {
-            return 0;
+    @Override // org.telegram.ui.Components.zk0
+    public final void a(int i10, View view) {
+        kg1 kg1Var = this.a;
+        ArrayList arrayList = kg1Var.d;
+        if (((jg1) arrayList.get(i10)).a == 1) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("chat_id", -kg1Var.c);
+            bundle.putBoolean("for_select", true);
+            eg1 eg1Var = new eg1(bundle);
+            eg1Var.A0 = kg1Var.e;
+            eg1Var.v = new fg1(this);
+            kg1Var.presentFragment(eg1Var);
         }
-        return twoStepVerificationActivity.Q;
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
-        return (i10 == twoStepVerificationActivity.M || i10 == twoStepVerificationActivity.P) ? 1 : 0;
-    }
-
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        int i11;
-        int i12;
-        int i13 = l1Var.f;
-        View view = l1Var.a;
-        TwoStepVerificationActivity twoStepVerificationActivity = this.d;
-        if (i13 != 0) {
-            if (i13 != 1) {
-                return;
-            }
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
-            if (i10 == twoStepVerificationActivity.M) {
-                z8Var.setText(LocaleController.getString(R.string.SetAdditionalPasswordInfo));
-                return;
-            } else {
-                if (i10 == twoStepVerificationActivity.P) {
-                    z8Var.setText(LocaleController.getString(R.string.EnabledPasswordText));
-                    return;
-                }
-                return;
+        if (((jg1) arrayList.get(i10)).a == 2) {
+            TLRPC.TL_forumTopic tL_forumTopic = ((jg1) arrayList.get(i10)).c;
+            Bundle bundle2 = new Bundle();
+            bundle2.putLong("dialog_id", kg1Var.c);
+            bundle2.putLong("topic_id", tL_forumTopic.id);
+            bundle2.putBoolean("exception", false);
+            y11 y11Var = new y11(bundle2, null);
+            y11Var.r = new gg1(this, tL_forumTopic);
+            kg1Var.presentFragment(y11Var);
+        }
+        if (((jg1) arrayList.get(i10)).a == 4) {
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(kg1Var.getParentActivity());
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.NotificationsDeleteAllExceptionTitle);
+            alertDialog$Builder.a.T = LocaleController.getString(R.string.NotificationsDeleteAllExceptionAlert);
+            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new fg1(this));
+            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
+            org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+            kg1Var.showDialog(b2Var);
+            TextView textView = (TextView) b2Var.d(-1);
+            if (textView != null) {
+                textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
             }
         }
-        org.telegram.ui.Cells.z9 z9Var = (org.telegram.ui.Cells.z9) view;
-        int i14 = org.telegram.ui.ActionBar.j6.G6;
-        z9Var.setTag(Integer.valueOf(i14));
-        z9Var.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i14, false));
-        i11 = twoStepVerificationActivity.changePasswordRow;
-        if (i10 == i11) {
-            z9Var.b(LocaleController.getString(R.string.ChangePassword), true);
-            return;
-        }
-        if (i10 == twoStepVerificationActivity.L) {
-            z9Var.b(LocaleController.getString(R.string.SetAdditionalPassword), true);
-            return;
-        }
-        i12 = twoStepVerificationActivity.turnPasswordOffRow;
-        if (i10 == i12) {
-            z9Var.b(LocaleController.getString(R.string.TurnPasswordOff), true);
-        } else if (i10 == twoStepVerificationActivity.O) {
-            z9Var.b(LocaleController.getString(R.string.ChangeRecoveryEmail), false);
-        } else if (i10 == twoStepVerificationActivity.N) {
-            z9Var.b(LocaleController.getString(R.string.SetRecoveryEmail), false);
-        }
-    }
-
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        View z9Var;
-        Context context = this.c;
-        if (i10 != 0) {
-            z9Var = new org.telegram.ui.Cells.z8(context);
-        } else {
-            z9Var = new org.telegram.ui.Cells.z9(context);
-            z9Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-        }
-        return new org.telegram.ui.Components.dl0(z9Var);
     }
 }

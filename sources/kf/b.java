@@ -1,58 +1,80 @@
 package kf;
 
-import java.io.InputStream;
-import java.util.Iterator;
-import java.util.Map;
-import org.json.JSONObject;
-import org.telegram.messenger.ApplicationLoader;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.media.MediaMetadataRetriever;
+import i2.g;
+import java.io.File;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static void a(Map map) {
-        if (map.isEmpty()) {
+public final class b extends a {
+    public final MediaMetadataRetriever r;
+    public final boolean s;
+
+    public b(File file) {
+        long j3;
+        MediaMetadataRetriever mediaMetadataRetriever = new MediaMetadataRetriever();
+        this.r = mediaMetadataRetriever;
+        try {
+            mediaMetadataRetriever.setDataSource(file.getAbsolutePath());
+            this.a = "OTHER";
             try {
-                InputStream open = ApplicationLoader.applicationContext.getAssets().open("currencies.json");
-                JSONObject jSONObject = new JSONObject(new String(h5.d0.Q(open), r8.d.c));
-                Iterator<String> keys = jSONObject.keys();
-                while (keys.hasNext()) {
-                    String next = keys.next();
-                    map.put(next, Integer.valueOf(jSONObject.optJSONObject(next).optInt("exp")));
-                }
-                open.close();
-            } catch (Exception e) {
-                FileLog.e(e);
+                j3 = Long.parseLong(mediaMetadataRetriever.extractMetadata(9));
+            } catch (Exception unused) {
+                j3 = 0;
             }
+            this.b = j3;
+            this.c = c(7);
+            this.d = c(2);
+            this.e = c(13);
+            this.f = c(1);
+            this.g = b(8);
+            this.h = c(6);
+            this.j = b(0);
+            b(10);
+            this.k = b(14);
+            this.m = c(4);
+            byte[] embeddedPicture = this.r.getEmbeddedPicture();
+            if (embeddedPicture != null) {
+                this.o = BitmapFactory.decodeByteArray(embeddedPicture, 0, embeddedPicture.length);
+            }
+            if (this.o != null) {
+                float max = Math.max(r5.getWidth(), this.o.getHeight()) / 120.0f;
+                if (max > 0.0f) {
+                    this.p = Bitmap.createScaledBitmap(this.o, (int) (r0.getWidth() / max), (int) (this.o.getHeight() / max), true);
+                } else {
+                    this.p = this.o;
+                }
+            }
+        } catch (Exception e7) {
+            this.s = true;
+            FileLog.e(e7);
+        }
+        try {
+            MediaMetadataRetriever mediaMetadataRetriever2 = this.r;
+            if (mediaMetadataRetriever2 != null) {
+                g.t(mediaMetadataRetriever2);
+            }
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
     }
 
-    public static TLRPC.InputStorePaymentPurpose b(String str) {
-        FileLog.d("BillingUtilities.getPurpose " + str);
-        SerializedData serializedData = new SerializedData(Utilities.hexToBytes(str));
-        a a2 = a.a(serializedData, serializedData.readInt32(true));
-        serializedData.cleanup();
-        if (a2.c != null) {
-            FileLog.d("BillingUtilities.getPurpose: got purpose from received obfuscated profile id");
-            return a2.c;
+    public final short b(int i10) {
+        try {
+            return Short.parseShort(this.r.extractMetadata(i10));
+        } catch (Exception unused) {
+            return (short) 0;
         }
-        SerializedData serializedData2 = new SerializedData(8);
-        serializedData2.writeInt64(a2.b);
-        String bytesToHex = Utilities.bytesToHex(serializedData2.toByteArray());
-        serializedData2.cleanup();
-        FileLog.d("BillingUtilities.getPurpose: searching purpose under " + bytesToHex);
-        String string = ApplicationLoader.applicationContext.getSharedPreferences("purchases", 0).getString(bytesToHex, null);
-        if (string == null) {
-            FileLog.d("BillingUtilities.getPurpose: purpose under " + bytesToHex + " not found");
-            throw new RuntimeException(android.support.v4.media.a.o("no purpose under ", bytesToHex, " found :("));
+    }
+
+    public final String c(int i10) {
+        try {
+            return this.r.extractMetadata(i10);
+        } catch (Exception unused) {
+            return null;
         }
-        FileLog.d("BillingUtilities.getPurpose: got {" + string + "} under " + bytesToHex);
-        SerializedData serializedData3 = new SerializedData(Utilities.hexToBytes(string));
-        a a10 = a.a(serializedData3, serializedData3.readInt32(true));
-        serializedData3.cleanup();
-        return a10.c;
     }
 }

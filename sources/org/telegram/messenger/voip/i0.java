@@ -3,7 +3,7 @@ package org.telegram.messenger.voip;
 import org.telegram.messenger.voip.Instance;
 import org.telegram.messenger.voip.NativeInstance;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i0 implements NativeInstance.AudioLevelsCallback, Instance.OnStateUpdatedListener, Instance.OnSignalBarsUpdatedListener, Instance.OnSignalingDataListener, Instance.OnRemoteMediaStateUpdatedListener {
     public final /* synthetic */ VoIPService a;
@@ -28,8 +28,8 @@ public final /* synthetic */ class i0 implements NativeInstance.AudioLevelsCallb
     }
 
     @Override // org.telegram.messenger.voip.Instance.OnStateUpdatedListener
-    public void onStateUpdated(int i10, boolean z4) {
-        this.a.onConnectionStateChanged(i10, z4);
+    public void onStateUpdated(int i10, boolean z10) {
+        this.a.onConnectionStateChanged(i10, z10);
     }
 
     @Override // org.telegram.messenger.voip.NativeInstance.AudioLevelsCallback

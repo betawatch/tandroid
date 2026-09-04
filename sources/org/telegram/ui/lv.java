@@ -1,33 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class lv extends FrameLayout {
-    public org.telegram.ui.ActionBar.p2 a;
-    public FrameLayout b;
-    public org.telegram.ui.ActionBar.k c;
-    public org.telegram.ui.Components.rl0 d;
-    public lh.e1 e;
-    public int f;
-    public final /* synthetic */ mv h;
+public final /* synthetic */ class lv implements oy, dt {
+    public final /* synthetic */ ov a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lv(mv mvVar, Context context) {
-        super(context);
-        this.h = mvVar;
+    public /* synthetic */ lv(ov ovVar) {
+        this.a = ovVar;
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f10) {
-        lv lvVar;
-        super.setTranslationX(f10);
-        mv mvVar = this.h;
-        lv[] lvVarArr = mvVar.f;
-        if (mvVar.n && (lvVar = lvVarArr[0]) == this) {
-            mvVar.e.j(Math.abs(lvVar.getTranslationX()) / lvVarArr[0].getMeasuredWidth(), lvVarArr[1].f);
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean B() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.oy
+    public /* synthetic */ boolean K(uy uyVar) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.dt
+    public void b(TLRPC.User user) {
+        this.a.l0(user);
+    }
+
+    @Override // org.telegram.ui.oy
+    public boolean u(uy uyVar, ArrayList arrayList, CharSequence charSequence, boolean z10, boolean z11, int i10, int i11, eg1 eg1Var) {
+        if (arrayList.isEmpty()) {
+            return true;
         }
+        long j3 = ((MessagesStorage.TopicKey) arrayList.get(0)).dialogId;
+        if (!DialogObject.isUserDialog(j3)) {
+            return true;
+        }
+        ov ovVar = this.a;
+        ovVar.l0(ovVar.getMessagesController().getUser(Long.valueOf(j3)));
+        return true;
     }
 }

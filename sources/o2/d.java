@@ -1,6 +1,13 @@
 package o2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface d {
+public final class d extends LinkedHashMap {
+    @Override // java.util.LinkedHashMap
+    public final boolean removeEldestEntry(Map.Entry entry) {
+        return size() > 4;
+    }
 }

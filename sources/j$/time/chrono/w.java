@@ -23,9 +23,9 @@ public final class w extends d {
         if (localDate.N(d)) {
             throw new j$.time.b("JapaneseDate before Meiji 6 is not supported");
         }
-        x o10 = x.o(localDate);
-        this.b = o10;
-        this.c = (localDate.getYear() - o10.b.getYear()) + 1;
+        x o9 = x.o(localDate);
+        this.b = o9;
+        this.c = (localDate.getYear() - o9.b.getYear()) + 1;
         this.a = localDate;
     }
 
@@ -76,8 +76,8 @@ public final class w extends d {
             int year = this.b.b.getYear();
             return this.b.p() != null ? j$.time.temporal.s.e(1L, (r0.b.getYear() - year) + 1) : j$.time.temporal.s.e(1L, 999999999 - year);
         }
-        x p10 = this.b.p();
-        int L = (p10 == null || p10.b.getYear() != this.a.getYear()) ? this.a.O() ? 366 : 365 : p10.b.L() - 1;
+        x p5 = this.b.p();
+        int L = (p5 == null || p5.b.getYear() != this.a.getYear()) ? this.a.O() ? 366 : 365 : p5.b.L() - 1;
         if (this.c == 1) {
             L -= this.b.b.L() - 1;
         }
@@ -108,16 +108,16 @@ public final class w extends d {
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
     /* renamed from: N, reason: merged with bridge method [inline-methods] */
-    public final w c(long j10, j$.time.temporal.o oVar) {
+    public final w c(long j3, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-            if (y(aVar) == j10) {
+            if (y(aVar) == j3) {
                 return this;
             }
             int[] iArr = v.a;
             int i10 = iArr[aVar.ordinal()];
             if (i10 == 3 || i10 == 8 || i10 == 9) {
-                int a2 = u.c.s(aVar).a(j10, aVar);
+                int a2 = u.c.s(aVar).a(j3, aVar);
                 int i11 = iArr[aVar.ordinal()];
                 if (i11 == 3) {
                     return P(this.b, a2);
@@ -129,9 +129,9 @@ public final class w extends d {
                     return O(this.a.Y(a2));
                 }
             }
-            return O(this.a.c(j10, oVar));
+            return O(this.a.c(j3, oVar));
         }
-        return (w) super.c(j10, oVar);
+        return (w) super.c(j3, oVar);
     }
 
     @Override // j$.time.chrono.d
@@ -158,39 +158,39 @@ public final class w extends d {
     }
 
     @Override // j$.time.chrono.d
-    public final b L(long j10) {
-        return O(this.a.U(j10));
+    public final b L(long j3) {
+        return O(this.a.U(j3));
     }
 
     @Override // j$.time.chrono.d
-    public final b K(long j10) {
-        return O(this.a.T(j10));
+    public final b K(long j3) {
+        return O(this.a.T(j3));
     }
 
     @Override // j$.time.chrono.d
-    public final b J(long j10) {
-        return O(this.a.plusDays(j10));
+    public final b J(long j3) {
+        return O(this.a.plusDays(j3));
     }
 
     @Override // j$.time.chrono.d, j$.time.chrono.b, j$.time.temporal.Temporal
-    public final b d(long j10, j$.time.temporal.q qVar) {
-        return (w) super.d(j10, qVar);
+    public final b d(long j3, j$.time.temporal.q qVar) {
+        return (w) super.d(j3, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal d(long j10, j$.time.temporal.q qVar) {
-        return (w) super.d(j10, qVar);
+    public final Temporal d(long j3, j$.time.temporal.q qVar) {
+        return (w) super.d(j3, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.chrono.b
     /* renamed from: t */
-    public final b w(long j10, j$.time.temporal.q qVar) {
-        return (w) super.w(j10, qVar);
+    public final b w(long j3, j$.time.temporal.q qVar) {
+        return (w) super.w(j3, qVar);
     }
 
     @Override // j$.time.chrono.d, j$.time.temporal.Temporal
-    public final Temporal w(long j10, ChronoUnit chronoUnit) {
-        return (w) super.w(j10, chronoUnit);
+    public final Temporal w(long j3, ChronoUnit chronoUnit) {
+        return (w) super.w(j3, chronoUnit);
     }
 
     public final w O(LocalDate localDate) {

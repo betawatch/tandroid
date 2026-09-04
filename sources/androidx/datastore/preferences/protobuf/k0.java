@@ -1,27 +1,41 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class k0 implements r0 {
-    public r0[] a;
+import java.nio.charset.Charset;
 
-    @Override // androidx.datastore.preferences.protobuf.r0
-    public final b1 a(Class cls) {
-        for (r0 r0Var : this.a) {
-            if (r0Var.b(cls)) {
-                return r0Var.a(cls);
-            }
-        }
-        throw new UnsupportedOperationException("No factory is available for message type: ".concat(cls.getName()));
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class k0 {
+    public static final t b = new t(1);
+    public final Object a;
+
+    public k0(j jVar) {
+        z.a(jVar, "output");
+        this.a = jVar;
+        jVar.c = this;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.r0
-    public final boolean b(Class cls) {
-        for (r0 r0Var : this.a) {
-            if (r0Var.b(cls)) {
-                return true;
-            }
+    public void a(int i10, g gVar) {
+        ((j) this.a).G(i10, gVar);
+    }
+
+    public void b(int i10, Object obj, b1 b1Var) {
+        j jVar = (j) this.a;
+        jVar.R(i10, 3);
+        b1Var.b((a) obj, jVar.c);
+        jVar.R(i10, 4);
+    }
+
+    public k0() {
+        q0 q0Var;
+        try {
+            q0Var = (q0) Class.forName("androidx.datastore.preferences.protobuf.DescriptorMessageInfoFactory").getDeclaredMethod("getInstance", null).invoke(null, null);
+        } catch (Exception unused) {
+            q0Var = b;
         }
-        return false;
+        q0[] q0VarArr = {t.b, q0Var};
+        j0 j0Var = new j0();
+        j0Var.a = q0VarArr;
+        Charset charset = z.a;
+        this.a = j0Var;
     }
 }

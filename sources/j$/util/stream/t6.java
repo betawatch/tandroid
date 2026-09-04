@@ -23,7 +23,7 @@ public class t6 extends c implements Consumer, Iterable {
         return Spliterator.Wrapper.convert(spliterator());
     }
 
-    public final void i(long j10) {
+    public final void i(long j3) {
         long length;
         int i10 = this.c;
         if (i10 == 0) {
@@ -31,7 +31,7 @@ public class t6 extends c implements Consumer, Iterable {
         } else {
             length = this.d[i10] + this.f[i10].length;
         }
-        if (j10 > length) {
+        if (j3 > length) {
             if (this.f == null) {
                 Object[][] objArr = new Object[8][];
                 this.f = objArr;
@@ -39,7 +39,7 @@ public class t6 extends c implements Consumer, Iterable {
                 objArr[0] = this.e;
             }
             int i11 = i10 + 1;
-            while (j10 > length) {
+            while (j3 > length) {
                 Object[][] objArr2 = this.f;
                 if (i11 >= objArr2.length) {
                     int length2 = objArr2.length * 2;

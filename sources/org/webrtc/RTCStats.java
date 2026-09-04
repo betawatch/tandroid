@@ -2,7 +2,7 @@ package org.webrtc;
 
 import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class RTCStats {
     private final String id;
@@ -10,37 +10,37 @@ public class RTCStats {
     private final long timestampUs;
     private final String type;
 
-    public RTCStats(long j10, String str, String str2, Map<String, Object> map) {
-        this.timestampUs = j10;
+    public RTCStats(long j3, String str, String str2, Map<String, Object> map) {
+        this.timestampUs = j3;
         this.type = str;
         this.id = str2;
         this.members = map;
     }
 
-    private static void appendValue(StringBuilder sb, Object obj) {
+    private static void appendValue(StringBuilder sb2, Object obj) {
         if (!(obj instanceof Object[])) {
             if (!(obj instanceof String)) {
-                sb.append(obj);
+                sb2.append(obj);
                 return;
             }
-            sb.append('\"');
-            sb.append(obj);
-            sb.append('\"');
+            sb2.append('\"');
+            sb2.append(obj);
+            sb2.append('\"');
             return;
         }
         Object[] objArr = (Object[]) obj;
-        sb.append('[');
+        sb2.append('[');
         for (int i10 = 0; i10 < objArr.length; i10++) {
             if (i10 != 0) {
-                sb.append(", ");
+                sb2.append(", ");
             }
-            appendValue(sb, objArr[i10]);
+            appendValue(sb2, objArr[i10]);
         }
-        sb.append(']');
+        sb2.append(']');
     }
 
-    public static RTCStats create(long j10, String str, String str2, Map map) {
-        return new RTCStats(j10, str, str2, map);
+    public static RTCStats create(long j3, String str, String str2, Map map) {
+        return new RTCStats(j3, str, str2, map);
     }
 
     public String getId() {
@@ -60,19 +60,19 @@ public class RTCStats {
     }
 
     public String toString() {
-        StringBuilder l10 = e2.c.l("{ timestampUs: ");
-        l10.append(this.timestampUs);
-        l10.append(", type: ");
-        l10.append(this.type);
-        l10.append(", id: ");
-        l10.append(this.id);
+        StringBuilder u10 = a4.a.u("{ timestampUs: ");
+        u10.append(this.timestampUs);
+        u10.append(", type: ");
+        u10.append(this.type);
+        u10.append(", id: ");
+        u10.append(this.id);
         for (Map.Entry<String, Object> entry : this.members.entrySet()) {
-            l10.append(", ");
-            l10.append(entry.getKey());
-            l10.append(": ");
-            appendValue(l10, entry.getValue());
+            u10.append(", ");
+            u10.append(entry.getKey());
+            u10.append(": ");
+            appendValue(u10, entry.getValue());
         }
-        l10.append(" }");
-        return l10.toString();
+        u10.append(" }");
+        return u10.toString();
     }
 }

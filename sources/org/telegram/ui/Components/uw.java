@@ -1,58 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class uw extends FrameLayout {
-    public final Paint a;
-    public final /* synthetic */ kz b;
+public final class uw extends s4.s {
+    public final /* synthetic */ kz Q;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public uw(kz kzVar, Context context) {
-        super(context);
-        this.b = kzVar;
-        this.a = new Paint();
+    public uw(kz kzVar) {
+        super(5);
+        this.Q = kzVar;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        kz kzVar = this.b;
-        tw twVar = kzVar.y0;
-        float dp = AndroidUtilities.dp(50.0f) * kzVar.q1.p();
-        if (dp > getMeasuredHeight()) {
-            return;
+    @Override // s4.s, s4.c0, s4.o0
+    public final int o0(int i10, pf.e eVar, s4.z0 z0Var) {
+        int o02 = super.o0(i10, eVar, z0Var);
+        kz kzVar = this.Q;
+        if (o02 != 0 && kzVar.D0.getScrollState() == 1) {
+            kzVar.X1 = false;
+            kzVar.a0();
         }
-        canvas.save();
-        if (dp != 0.0f) {
-            canvas.clipRect(0.0f, dp, getMeasuredWidth(), getMeasuredHeight());
+        if (kzVar.T0 == null) {
+            hg.g1 g1Var = new hg.g1(kzVar, kzVar.c1, kzVar.t1.a(), kzVar.t1.f(), 1);
+            kzVar.T0 = g1Var;
+            g1Var.a();
         }
-        int A = kzVar.A(org.telegram.ui.ActionBar.j6.He);
-        Paint paint = this.a;
-        paint.setColor(A);
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), twVar.getExpandedOffset() + AndroidUtilities.dp(36.0f), paint);
-        super.dispatchDraw(canvas);
-        if (twVar.s != null) {
-            canvas.save();
-            float f10 = twVar.W - twVar.a0;
-            float f11 = twVar.v;
-            if (f11 > 0.0f) {
-                f10 = ((twVar.s.getX() - twVar.getScrollX()) * twVar.v) + ((1.0f - f11) * f10);
-            }
-            canvas.translate(f10, 0.0f);
-            twVar.s.draw(canvas);
-            canvas.restore();
-        }
-        canvas.restore();
+        kzVar.T0.b();
+        return o02;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        this.b.a0();
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        try {
+            ki.p pVar = new ki.p(recyclerView.getContext(), 2);
+            pVar.a = i10;
+            w0(pVar);
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
     }
 }

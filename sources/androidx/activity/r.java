@@ -1,11 +1,11 @@
 package androidx.activity;
 
 import android.window.OnBackInvokedCallback;
-import nh.i9;
+import bi.pb;
+import di.pc;
 import org.telegram.ui.LaunchActivity;
-import ph.da;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r implements OnBackInvokedCallback {
     public final /* synthetic */ int a;
@@ -20,29 +20,29 @@ public final /* synthetic */ class r implements OnBackInvokedCallback {
     public final void onBackInvoked() {
         switch (this.a) {
             case 0:
-                dd.a onBackInvoked = (dd.a) this.b;
-                kotlin.jvm.internal.j.e(onBackInvoked, "$onBackInvoked");
+                rd.a onBackInvoked = (rd.a) this.b;
+                kotlin.jvm.internal.i.e(onBackInvoked, "$onBackInvoked");
                 onBackInvoked.invoke();
                 break;
             case 1:
-                ((g.q) this.b).t();
-                break;
-            case 2:
-                ((Runnable) this.b).run();
-                break;
-            case 3:
-                i9 i9Var = (i9) this.b;
-                i9Var.getClass();
-                LaunchActivity launchActivity = LaunchActivity.D1;
+                pb pbVar = (pb) this.b;
+                pbVar.getClass();
+                LaunchActivity launchActivity = LaunchActivity.G1;
                 if (launchActivity == null) {
-                    i9Var.onAttachedBackPressed();
+                    pbVar.onAttachedBackPressed();
                     break;
                 } else {
                     launchActivity.onBackPressed();
                     break;
                 }
+            case 2:
+                ((pc) this.b).M();
+                break;
+            case 3:
+                ((g.s) this.b).t();
+                break;
             default:
-                ((da) this.b).M();
+                ((Runnable) this.b).run();
                 break;
         }
     }

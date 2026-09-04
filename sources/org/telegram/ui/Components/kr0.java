@@ -1,18 +1,30 @@
 package org.telegram.ui.Components;
 
-import android.view.animation.Interpolator;
+import android.content.Context;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kr0 implements Interpolator {
-    public final /* synthetic */ int a;
+public final class kr0 extends uu0 {
+    public final /* synthetic */ xu0 G;
 
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // android.animation.TimeInterpolator
-    public final float getInterpolation(float f10) {
-        switch (this.a) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kr0(xu0 xu0Var, Context context) {
+        super(xu0Var, context, 0, true);
+        this.G = xu0Var;
+    }
+
+    @Override // org.telegram.ui.Components.uu0, s4.h0
+    public final void l() {
+        super.l();
+        xu0 xu0Var = this.G;
+        qt0 W = xu0Var.W(9);
+        if (W != null && W.r.getVisibility() == 0) {
+            xu0Var.f0.l();
         }
-        float f11 = f10 - 1.0f;
-        return (f11 * f11 * f11 * f11 * f11) + 1.0f;
+        if (W != null) {
+            hs0 hs0Var = W.w;
+            bi.l8 l8Var = this.s;
+            hs0Var.e(l8Var != null && (l8Var.k() || (xu0Var.i0() && this.s.g() > 0)), true);
+        }
     }
 }

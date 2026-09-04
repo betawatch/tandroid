@@ -4,11 +4,11 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class kb extends wh.n {
+public final class kb extends ki.o {
     public int W;
-    public yt0 X;
+    public lu0 X;
     public final /* synthetic */ ub Y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -18,26 +18,26 @@ public final class kb extends wh.n {
         this.W = -1;
     }
 
-    @Override // wh.n, f2.l
+    @Override // ki.o, s4.j
     public final void N() {
         super.N();
-        yt0 yt0Var = this.X;
-        if (yt0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(yt0Var);
+        lu0 lu0Var = this.X;
+        if (lu0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(lu0Var);
         }
-        yt0 yt0Var2 = new yt0(this, 20);
-        this.X = yt0Var2;
-        AndroidUtilities.runOnUIThread(yt0Var2);
+        lu0 lu0Var2 = new lu0(this, 20);
+        this.X = lu0Var2;
+        AndroidUtilities.runOnUIThread(lu0Var2);
     }
 
-    @Override // wh.n
+    @Override // ki.o
     public final void W() {
         if (this.W == -1) {
-            this.W = this.Y.getNotificationCenter().setAnimationInProgress(this.W, ub.V0, false);
+            this.W = this.Y.getNotificationCenter().setAnimationInProgress(this.W, ub.Y0, false);
         }
-        yt0 yt0Var = this.X;
-        if (yt0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(yt0Var);
+        lu0 lu0Var = this.X;
+        if (lu0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(lu0Var);
             this.X = null;
         }
         if (BuildVars.LOGS_ENABLED) {

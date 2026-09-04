@@ -1,17 +1,8 @@
 package k9;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class c implements u9.d {
-    public static final c a = new c();
-    public static final u9.c b = u9.c.c("key");
-    public static final u9.c c = u9.c.c("value");
+import cc.k;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        u9.e eVar = (u9.e) obj2;
-        d0 d0Var = (d0) ((h1) obj);
-        eVar.e(b, d0Var.a);
-        eVar.e(c, d0Var.b);
-    }
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public class c extends k {
 }

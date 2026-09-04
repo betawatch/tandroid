@@ -5,11 +5,11 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class h {
     public int a;
-    public i b;
+    public a0.h b;
     public final FileInputStream c;
     public final byte[] d;
     public int e;
@@ -20,7 +20,7 @@ public final class h {
     public int j = ConnectionsManager.DEFAULT_DATACENTER_ID;
 
     public h(FileInputStream fileInputStream) {
-        Charset charset = a0.a;
+        Charset charset = z.a;
         this.c = fileInputStream;
         this.d = new byte[4096];
         this.e = 0;
@@ -55,13 +55,13 @@ public final class h {
             return;
         }
         if (i10 <= (ConnectionsManager.DEFAULT_DATACENTER_ID - this.i) - this.g) {
-            throw c0.f();
+            throw b0.f();
         }
-        throw new c0("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit.");
+        throw new b0("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit.");
     }
 
     public final boolean E(int i10) {
-        int z4;
+        int z10;
         int i11 = i10 & 7;
         int i12 = 0;
         if (i11 == 0) {
@@ -75,7 +75,7 @@ public final class h {
                         i12++;
                     }
                 }
-                throw c0.c();
+                throw b0.c();
             }
             while (i12 < 10) {
                 if (this.g == this.e) {
@@ -87,7 +87,7 @@ public final class h {
                     i12++;
                 }
             }
-            throw c0.c();
+            throw b0.c();
             return true;
         }
         if (i11 == 1) {
@@ -103,17 +103,17 @@ public final class h {
                 return false;
             }
             if (i11 != 5) {
-                throw c0.b();
+                throw b0.b();
             }
             F(4);
             return true;
         }
         do {
-            z4 = z();
-            if (z4 == 0) {
+            z10 = z();
+            if (z10 == 0) {
                 break;
             }
-        } while (E(z4));
+        } while (E(z10));
         a(((i10 >>> 3) << 3) | 4);
         return true;
     }
@@ -128,7 +128,7 @@ public final class h {
         }
         FileInputStream fileInputStream = this.c;
         if (i10 < 0) {
-            throw c0.d();
+            throw b0.d();
         }
         int i14 = this.i;
         int i15 = i14 + i12;
@@ -136,16 +136,16 @@ public final class h {
         int i17 = this.j;
         if (i16 > i17) {
             F((i17 - i14) - i12);
-            throw c0.f();
+            throw b0.f();
         }
         this.i = i15;
         this.e = 0;
         this.g = 0;
         while (i13 < i10) {
-            long j10 = i10 - i13;
+            long j3 = i10 - i13;
             try {
-                long skip = fileInputStream.skip(j10);
-                if (skip < 0 || skip > j10) {
+                long skip = fileInputStream.skip(j3);
+                if (skip < 0 || skip > j3) {
                     throw new IllegalStateException(fileInputStream.getClass() + "#skip returned invalid result: " + skip + "\nThe InputStream implementation is buggy.");
                 }
                 if (skip == 0) {
@@ -184,7 +184,7 @@ public final class h {
         int i12 = i11 + i10;
         int i13 = this.e;
         if (i12 <= i13) {
-            throw new IllegalStateException(kf.k0.k(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(i2.g.j(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i14 = this.i;
         if (i10 <= (ConnectionsManager.DEFAULT_DATACENTER_ID - i14) - i11 && i14 + i11 + i10 <= this.j) {
@@ -218,7 +218,7 @@ public final class h {
 
     public final void a(int i10) {
         if (this.h != i10) {
-            throw new c0("Protocol message end-group tag did not match expected tag.");
+            throw new b0("Protocol message end-group tag did not match expected tag.");
         }
     }
 
@@ -237,12 +237,12 @@ public final class h {
 
     public final int e(int i10) {
         if (i10 < 0) {
-            throw c0.d();
+            throw b0.d();
         }
         int i11 = this.i + this.g + i10;
         int i12 = this.j;
         if (i11 > i12) {
-            throw c0.f();
+            throw b0.f();
         }
         this.j = i11;
         C();
@@ -282,9 +282,9 @@ public final class h {
     }
 
     public final byte[] n(int i10) {
-        byte[] o10 = o(i10);
-        if (o10 != null) {
-            return o10;
+        byte[] o9 = o(i10);
+        if (o9 != null) {
+            return o9;
         }
         int i11 = this.g;
         int i12 = this.e;
@@ -292,13 +292,13 @@ public final class h {
         this.i += i12;
         this.g = 0;
         this.e = 0;
-        ArrayList p10 = p(i10 - i13);
+        ArrayList p5 = p(i10 - i13);
         byte[] bArr = new byte[i10];
         System.arraycopy(this.d, i11, bArr, 0, i13);
-        int size = p10.size();
+        int size = p5.size();
         int i14 = 0;
         while (i14 < size) {
-            Object obj = p10.get(i14);
+            Object obj = p5.get(i14);
             i14++;
             byte[] bArr2 = (byte[]) obj;
             System.arraycopy(bArr2, 0, bArr, i13, bArr2.length);
@@ -309,21 +309,21 @@ public final class h {
 
     public final byte[] o(int i10) {
         if (i10 == 0) {
-            return a0.b;
+            return z.b;
         }
         if (i10 < 0) {
-            throw c0.d();
+            throw b0.d();
         }
         int i11 = this.i;
         int i12 = this.g;
         int i13 = i11 + i12 + i10;
         if (i13 - ConnectionsManager.DEFAULT_DATACENTER_ID > 0) {
-            throw new c0("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit.");
+            throw new b0("Protocol message was too large.  May be malicious.  Use CodedInputStream.setSizeLimit() to increase the size limit.");
         }
         int i14 = this.j;
         if (i13 > i14) {
             F((i14 - i11) - i12);
-            throw c0.f();
+            throw b0.f();
         }
         int i15 = this.e - i12;
         int i16 = i10 - i15;
@@ -339,7 +339,7 @@ public final class h {
         while (i15 < i10) {
             int read = fileInputStream.read(bArr, i15, i10 - i15);
             if (read == -1) {
-                throw c0.f();
+                throw b0.f();
             }
             this.i += read;
             i15 += read;
@@ -356,7 +356,7 @@ public final class h {
             while (i11 < min) {
                 int read = this.c.read(bArr, i11, min - i11);
                 if (read == -1) {
-                    throw c0.f();
+                    throw b0.f();
                 }
                 this.i += read;
                 i11 += read;
@@ -454,10 +454,10 @@ public final class h {
     }
 
     public final long t() {
+        long j3;
         long j10;
         long j11;
         long j12;
-        long j13;
         int i10 = this.g;
         int i11 = this.e;
         if (i11 != i10) {
@@ -472,81 +472,81 @@ public final class h {
                 int i13 = i10 + 2;
                 int i14 = (bArr[i12] << 7) ^ b10;
                 if (i14 < 0) {
-                    j10 = i14 ^ (-128);
+                    j3 = i14 ^ (-128);
                 } else {
                     int i15 = i10 + 3;
                     int i16 = (bArr[i13] << 14) ^ i14;
                     if (i16 >= 0) {
-                        j10 = i16 ^ 16256;
+                        j3 = i16 ^ 16256;
                         i13 = i15;
                     } else {
                         int i17 = i10 + 4;
                         int i18 = i16 ^ (bArr[i15] << 21);
                         if (i18 < 0) {
-                            j13 = (-2080896) ^ i18;
+                            j12 = (-2080896) ^ i18;
                         } else {
-                            long j14 = i18;
+                            long j13 = i18;
                             i13 = i10 + 5;
-                            long j15 = j14 ^ (bArr[i17] << 28);
-                            if (j15 >= 0) {
-                                j12 = 266354560;
+                            long j14 = j13 ^ (bArr[i17] << 28);
+                            if (j14 >= 0) {
+                                j11 = 266354560;
                             } else {
                                 i17 = i10 + 6;
-                                long j16 = j15 ^ (bArr[i13] << 35);
-                                if (j16 < 0) {
-                                    j11 = -34093383808L;
+                                long j15 = j14 ^ (bArr[i13] << 35);
+                                if (j15 < 0) {
+                                    j10 = -34093383808L;
                                 } else {
                                     i13 = i10 + 7;
-                                    j15 = j16 ^ (bArr[i17] << 42);
-                                    if (j15 >= 0) {
-                                        j12 = 4363953127296L;
+                                    j14 = j15 ^ (bArr[i17] << 42);
+                                    if (j14 >= 0) {
+                                        j11 = 4363953127296L;
                                     } else {
                                         i17 = i10 + 8;
-                                        j16 = j15 ^ (bArr[i13] << 49);
-                                        if (j16 < 0) {
-                                            j11 = -558586000294016L;
+                                        j15 = j14 ^ (bArr[i13] << 49);
+                                        if (j15 < 0) {
+                                            j10 = -558586000294016L;
                                         } else {
                                             i13 = i10 + 9;
-                                            long j17 = (j16 ^ (bArr[i17] << 56)) ^ 71499008037633920L;
-                                            if (j17 < 0) {
+                                            long j16 = (j15 ^ (bArr[i17] << 56)) ^ 71499008037633920L;
+                                            if (j16 < 0) {
                                                 int i19 = i10 + 10;
                                                 if (bArr[i13] >= 0) {
                                                     i13 = i19;
                                                 }
                                             }
-                                            j10 = j17;
+                                            j3 = j16;
                                         }
                                     }
                                 }
-                                j13 = j11 ^ j16;
+                                j12 = j10 ^ j15;
                             }
-                            j10 = j12 ^ j15;
+                            j3 = j11 ^ j14;
                         }
                         i13 = i17;
-                        j10 = j13;
+                        j3 = j12;
                     }
                 }
                 this.g = i13;
-                return j10;
+                return j3;
             }
         }
         return u();
     }
 
     public final long u() {
-        long j10 = 0;
+        long j3 = 0;
         for (int i10 = 0; i10 < 64; i10 += 7) {
             if (this.g == this.e) {
                 D(1);
             }
             int i11 = this.g;
             this.g = i11 + 1;
-            j10 |= (r3 & Byte.MAX_VALUE) << i10;
+            j3 |= (r3 & Byte.MAX_VALUE) << i10;
             if ((this.d[i11] & 128) == 0) {
-                return j10;
+                return j3;
             }
         }
-        throw c0.c();
+        throw b0.c();
     }
 
     public final int v() {
@@ -558,13 +558,13 @@ public final class h {
     }
 
     public final int x() {
-        int s6 = s();
-        return (-(s6 & 1)) ^ (s6 >>> 1);
+        int s10 = s();
+        return (-(s10 & 1)) ^ (s10 >>> 1);
     }
 
     public final long y() {
-        long t6 = t();
-        return (-(t6 & 1)) ^ (t6 >>> 1);
+        long t10 = t();
+        return (-(t10 & 1)) ^ (t10 >>> 1);
     }
 
     public final int z() {
@@ -572,11 +572,11 @@ public final class h {
             this.h = 0;
             return 0;
         }
-        int s6 = s();
-        this.h = s6;
-        if ((s6 >>> 3) != 0) {
-            return s6;
+        int s10 = s();
+        this.h = s10;
+        if ((s10 >>> 3) != 0) {
+            return s10;
         }
-        throw new c0("Protocol message contained an invalid tag (zero).");
+        throw new b0("Protocol message contained an invalid tag (zero).");
     }
 }

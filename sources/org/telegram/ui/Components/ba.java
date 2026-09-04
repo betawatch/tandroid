@@ -1,141 +1,68 @@
 package org.telegram.ui.Components;
 
 import android.graphics.Bitmap;
-import android.graphics.RecordingCanvas;
-import android.graphics.RenderEffect;
-import android.graphics.RenderNode;
-import android.graphics.Shader;
-import android.os.Build;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
 import android.view.View;
-import java.util.ArrayList;
-import javax.microedition.khronos.egl.EGLContext;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ba {
-    public int a;
-    public final View b;
-    public final ArrayList c;
-    public final ArrayList d;
-    public final ArrayList e;
-    public final Object f;
-    public EGLContext g;
-    public final Object h;
-    public int i;
-    public ph.p9 j;
-    public Object k;
-    public Object l;
-    public ha m;
-    public final ga n;
-    public Bitmap o;
-    public int p;
+public final class ba extends View {
+    public Bitmap a;
+    public Bitmap b;
+    public Paint c;
+    public int d;
+    public int e;
+    public aa f;
 
-    public ba(View view) {
-        ArrayList arrayList = new ArrayList();
-        this.c = arrayList;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
-        this.f = new Object();
-        this.h = new Object();
-        this.n = new ga(0, new fg(this, 14));
-        this.p = 0;
-        this.b = view;
-        if (view.isAttachedToWindow()) {
-            arrayList.clear();
-            for (View view2 = view; view2 != null; view2 = (View) view2.getParent()) {
-                arrayList.add(0, view2);
-                if (!(view2.getParent() instanceof View)) {
-                    break;
-                }
-            }
-        }
-        view.addOnAttachStateChangeListener(new ef.b(this, 9));
+    public int getRating() {
+        return this.e;
     }
 
-    public final void a(EGLContext eGLContext) {
-        synchronized (this.f) {
-            try {
-                if (this.g == null) {
-                    this.g = eGLContext;
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    public final Bitmap b() {
-        Bitmap bitmap;
-        ha haVar = this.m;
-        if (haVar == null) {
-            return this.o;
-        }
-        synchronized (haVar.n) {
-            try {
-                bitmap = !haVar.q ? null : haVar.p;
-            } finally {
-            }
-        }
-        return bitmap == null ? this.o : bitmap;
-    }
-
-    public final boolean c() {
-        return this.l != null;
-    }
-
-    public final void d() {
-        ArrayList arrayList = this.d;
-        int size = arrayList.size();
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.c;
         int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            ((fa) obj).b.invalidate();
-        }
-        ArrayList arrayList2 = this.e;
-        int size2 = arrayList2.size();
-        while (i10 < size2) {
-            Object obj2 = arrayList2.get(i10);
+        while (i10 < this.d) {
+            paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, i10 < this.e ? org.telegram.ui.ActionBar.j6.m5 : org.telegram.ui.ActionBar.j6.t5, false));
+            canvas.drawBitmap(i10 < this.e ? this.a : this.b, AndroidUtilities.dp(48.0f) * i10, 0.0f, paint);
             i10++;
-            ((Runnable) obj2).run();
         }
     }
 
-    public final void e() {
-        ha haVar = this.m;
-        if (haVar != null) {
-            synchronized (haVar.n) {
-                haVar.q = false;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int i12 = this.d;
+        setMeasuredDimension(org.telegram.messenger.w1.D(16.0f, i12 - 1, AndroidUtilities.dp(32.0f) * i12), AndroidUtilities.dp(32.0f));
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i10;
+        float dp = AndroidUtilities.dp(-8.0f);
+        for (int i11 = 0; i11 < this.d; i11++) {
+            if (motionEvent.getX() > dp && motionEvent.getX() < AndroidUtilities.dp(48.0f) + dp && this.e != (i10 = i11 + 1)) {
+                this.e = i10;
+                aa aaVar = this.f;
+                if (aaVar != null) {
+                    View view = ((le.a) aaVar).a;
+                    view.setEnabled(i10 > 0);
+                    ((TextView) view).setText(LocaleController.getString(i10 < 4 ? R.string.Next : R.string.Send).toUpperCase());
+                }
+                invalidate();
+                return true;
             }
+            dp += AndroidUtilities.dp(48.0f);
         }
+        return true;
     }
 
-    public final void f(Bitmap bitmap, boolean z4) {
-        StringBuilder sb = new StringBuilder("");
-        int i10 = this.p;
-        this.p = i10 + 1;
-        sb.append(i10);
-        this.o = this.n.b(bitmap, sb.toString(), 0, 0, z4);
-    }
-
-    public final void g(ph.p9 p9Var, Object obj) {
-        this.j = p9Var;
-        this.k = obj;
-        this.i = -14737633;
-        if (obj == null || Build.VERSION.SDK_INT < 31) {
-            this.l = null;
-            return;
-        }
-        RenderNode renderNode = (RenderNode) obj;
-        RenderNode renderNode2 = new RenderNode("blurRenderNode");
-        renderNode2.setRenderEffect(RenderEffect.createBlurEffect(AndroidUtilities.dp(35.0f), AndroidUtilities.dp(35.0f), Shader.TileMode.CLAMP));
-        renderNode2.setPosition(0, 0, renderNode.getWidth(), renderNode.getHeight());
-        RecordingCanvas beginRecording = renderNode2.beginRecording();
-        beginRecording.drawColor(-14737633);
-        beginRecording.drawRenderNode(renderNode);
-        renderNode2.endRecording();
-        this.l = renderNode2;
+    public void setOnRatingChangeListener(aa aaVar) {
+        this.f = aaVar;
     }
 }

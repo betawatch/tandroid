@@ -1,25 +1,82 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.text.TextUtils;
+import android.view.KeyEvent;
+import android.view.View;
+import org.telegram.messenger.MessagesController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class rf extends rh.l0 {
-    public final /* synthetic */ ChatActivityEnterView y;
+public final class rf implements View.OnKeyListener {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rf(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.y = chatActivityEnterView;
+    public rf(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        super.setTranslationY(f10);
-        ChatActivityEnterView chatActivityEnterView = this.y;
-        if (chatActivityEnterView.S0 == null || chatActivityEnterView.k3 != 1) {
-            return;
+    /* JADX WARN: Code restructure failed: missing block: B:63:0x00d3, code lost:
+    
+        if (r8.getAction() != 0) goto L71;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:65:0x00d7, code lost:
+    
+        if (r6.Y1 != null) goto L71;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:66:0x00d9, code lost:
+    
+        r6.S0();
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:67:0x00dc, code lost:
+    
+        return true;
+     */
+    @Override // android.view.View.OnKeyListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        if (keyEvent != null) {
+            chatActivityEnterView.D0 = keyEvent.isShiftPressed();
+            chatActivityEnterView.C0 = keyEvent.isCtrlPressed();
         }
-        chatActivityEnterView.V2.x(f10);
+        if (i10 == 4 && !chatActivityEnterView.y2 && chatActivityEnterView.t0() && keyEvent.getAction() == 1) {
+            if (org.telegram.ui.st.g0 != null && org.telegram.ui.st.q().E) {
+                org.telegram.ui.st.q().o();
+                return true;
+            }
+            if (chatActivityEnterView.e2 != 1 || chatActivityEnterView.l2 == null) {
+                if (keyEvent.getAction() == 1) {
+                    if (chatActivityEnterView.e2 == 1 && chatActivityEnterView.l2 != null) {
+                        MessagesController.getMainSettings(chatActivityEnterView.Q).edit().putInt("hidekeyboard_" + chatActivityEnterView.P2, chatActivityEnterView.l2.getId()).commit();
+                    }
+                    if (chatActivityEnterView.Q1 != 0) {
+                        chatActivityEnterView.m1(0, true);
+                        eg egVar = chatActivityEnterView.U0;
+                        if (egVar != null) {
+                            egVar.t(true);
+                        }
+                        chatActivityEnterView.E0.requestFocus();
+                        return true;
+                    }
+                    if (chatActivityEnterView.y3) {
+                        chatActivityEnterView.n1(false, true, false, true);
+                        return true;
+                    }
+                    if (chatActivityEnterView.A3 == null) {
+                        if (chatActivityEnterView.l2 != null && chatActivityEnterView.e2 != 1 && TextUtils.isEmpty(chatActivityEnterView.E0.getTextToUse())) {
+                            chatActivityEnterView.t1(1, 1, true, true);
+                            return true;
+                        }
+                        chatActivityEnterView.t1(0, 0, true, false);
+                    }
+                }
+                return true;
+            }
+        } else if (i10 == 66 && !keyEvent.isShiftPressed()) {
+            if (chatActivityEnterView.A2) {
+            }
+        }
+        return false;
     }
 }

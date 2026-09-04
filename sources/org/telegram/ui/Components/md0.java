@@ -1,31 +1,42 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.FileLog;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class md0 extends com.google.android.gms.internal.play_billing.s1 {
-    public final /* synthetic */ wd0 a;
+public final class md0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ nd0 b;
 
-    public md0(wd0 wd0Var) {
-        this.a = wd0Var;
+    public /* synthetic */ md0(nd0 nd0Var, int i10) {
+        this.a = i10;
+        this.b = nd0Var;
     }
 
-    @Override // com.google.android.gms.internal.play_billing.s1
-    public final void a(int i10, CharSequence charSequence) {
-        FileLog.d("PasscodeView onAuthenticationError " + i10 + " \"" + ((Object) charSequence) + "\"");
-        this.a.m(true);
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.s1
-    public final void b() {
-        FileLog.d("PasscodeView onAuthenticationFailed");
-        this.a.m(true);
-    }
-
-    @Override // com.google.android.gms.internal.play_billing.s1
-    public final void c(androidx.biometric.u uVar) {
-        FileLog.d("PasscodeView onAuthenticationSucceeded");
-        this.a.k(true);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        EditTextBoldCursor editTextBoldCursor;
+        switch (this.a) {
+            case 0:
+                sd0 sd0Var = this.b.d;
+                sd0Var.P = 1.0f;
+                sd0Var.f(1.0f);
+                break;
+            default:
+                nd0 nd0Var = this.b;
+                Runnable runnable = nd0Var.c;
+                if (runnable != null) {
+                    runnable.run();
+                }
+                if (SharedConfig.passcodeType == 1 && nd0Var.d.x.getVisibility() != 0 && (editTextBoldCursor = nd0Var.d.r) != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(nd0Var.d.r);
+                    break;
+                }
+                break;
+        }
     }
 }

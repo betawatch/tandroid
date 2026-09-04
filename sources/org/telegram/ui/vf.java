@@ -1,40 +1,32 @@
 package org.telegram.ui;
 
+import android.text.style.URLSpan;
 import android.view.View;
-import java.util.ArrayList;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vf implements View.OnClickListener {
+public final /* synthetic */ class vf implements Utilities.CallbackReturn {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ vf(zn znVar, ArrayList arrayList, int i10) {
+    public /* synthetic */ vf(int i10, Object obj, Object obj2) {
         this.a = i10;
-        this.b = znVar;
-        this.c = arrayList;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    @Override // org.telegram.messenger.Utilities.CallbackReturn
+    public final Object run(Object obj) {
         switch (this.a) {
             case 0:
-                zn znVar = this.b;
-                ni niVar = new ni(znVar, znVar, znVar.getParentActivity(), znVar.ba, this.c);
-                niVar.setCalcMandatoryInsets(znVar.x9());
-                niVar.setDimBehind(false);
-                znVar.A7(false);
-                znVar.showDialog(niVar);
-                break;
+                co coVar = (co) this.b;
+                View view = (View) this.c;
+                coVar.U7((URLSpan) obj, false, coVar.d5, view instanceof org.telegram.ui.Cells.t1 ? (org.telegram.ui.Cells.t1) view : null);
+                return Boolean.TRUE;
             default:
-                zn znVar2 = this.b;
-                if (znVar2.getParentActivity() != null && znVar2.getParentActivity() != null) {
-                    new org.telegram.ui.Components.lv(znVar2, znVar2.getParentActivity(), znVar2.ba, this.c).show();
-                    znVar2.A7(true);
-                    break;
-                }
-                break;
+                return sh.c.d((View) obj, (String) this.b, (String) this.c, null, null);
         }
     }
 }

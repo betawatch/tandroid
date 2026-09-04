@@ -14,10 +14,10 @@ import android.graphics.drawable.InsetDrawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
 import android.util.Log;
-import j7.i8;
 import java.lang.reflect.Method;
+import v7.o8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class d extends Drawable implements Drawable.Callback, c, b {
     public static final PorterDuff.Mode h = PorterDuff.Mode.SRC_IN;
@@ -33,8 +33,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
         if (n == null) {
             try {
                 n = Drawable.class.getDeclaredMethod("isProjected", null);
-            } catch (Exception e) {
-                Log.w("WrappedDrawableApi21", "Failed to retrieve Drawable#isProjected() method", e);
+            } catch (Exception e7) {
+                Log.w("WrappedDrawableApi21", "Failed to retrieve Drawable#isProjected() method", e7);
             }
         }
     }
@@ -123,7 +123,7 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
 
     @Override // android.graphics.drawable.Drawable
     public final int getLayoutDirection() {
-        return i8.a(this.f);
+        return o8.a(this.f);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -222,8 +222,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
         }
         try {
             return ((Boolean) method.invoke(drawable, null)).booleanValue();
-        } catch (Exception e) {
-            Log.w("WrappedDrawableApi21", "Error calling Drawable#isProjected() method", e);
+        } catch (Exception e7) {
+            Log.w("WrappedDrawableApi21", "Error calling Drawable#isProjected() method", e7);
             return false;
         }
     }
@@ -268,7 +268,7 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
 
     @Override // android.graphics.drawable.Drawable
     public final boolean onLayoutDirectionChanged(int i10) {
-        return i8.b(i10, this.f);
+        return o8.b(i10, this.f);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -277,8 +277,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
     }
 
     @Override // android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
-        scheduleSelf(runnable, j10);
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        scheduleSelf(runnable, j3);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -287,8 +287,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setAutoMirrored(boolean z4) {
-        this.f.setAutoMirrored(z4);
+    public final void setAutoMirrored(boolean z10) {
+        this.f.setAutoMirrored(z10);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -302,18 +302,18 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setDither(boolean z4) {
-        this.f.setDither(z4);
+    public final void setDither(boolean z10) {
+        this.f.setDither(z10);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setFilterBitmap(boolean z4) {
-        this.f.setFilterBitmap(z4);
+    public final void setFilterBitmap(boolean z10) {
+        this.f.setFilterBitmap(z10);
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final void setHotspot(float f10, float f11) {
-        this.f.setHotspot(f10, f11);
+    public final void setHotspot(float f7, float f10) {
+        this.f.setHotspot(f7, f10);
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -358,8 +358,8 @@ public final class d extends Drawable implements Drawable.Callback, c, b {
     }
 
     @Override // android.graphics.drawable.Drawable
-    public final boolean setVisible(boolean z4, boolean z10) {
-        return super.setVisible(z4, z10) || this.f.setVisible(z4, z10);
+    public final boolean setVisible(boolean z10, boolean z11) {
+        return super.setVisible(z10, z11) || this.f.setVisible(z10, z11);
     }
 
     @Override // android.graphics.drawable.Drawable.Callback

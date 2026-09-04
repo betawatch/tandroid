@@ -1,10 +1,10 @@
 package ru.noties.jlatexmath.awt.geom;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class RoundRectangle2D {
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class Float {
         public float archeight;
         public float arcwidth;
@@ -13,13 +13,13 @@ public class RoundRectangle2D {
         public float x;
         public float y;
 
-        public Float(float f10, float f11, float f12, float f13, float f14, float f15) {
-            this.x = f10;
-            this.y = f11;
-            this.width = f12;
-            this.height = f13;
-            this.arcwidth = f14;
-            this.archeight = f15;
+        public Float(float f7, float f10, float f11, float f12, float f13, float f14) {
+            this.x = f7;
+            this.y = f10;
+            this.width = f11;
+            this.height = f12;
+            this.arcwidth = f13;
+            this.archeight = f14;
         }
 
         public String toString() {

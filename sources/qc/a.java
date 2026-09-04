@@ -1,37 +1,24 @@
 package qc;
 
-import java.util.regex.Pattern;
-import ne.p;
-import ne.s;
-import vh.w2;
+import android.util.Log;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a extends h {
-    public static final Pattern e = Pattern.compile("^<([a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*)>");
-    public static final Pattern f = Pattern.compile("^<[a-zA-Z][a-zA-Z0-9.+-]{1,31}:[^<>\u0000- ]*>");
+public final class a extends c {
+    public final /* synthetic */ int a;
+    public Object b;
 
-    @Override // qc.h
-    public final p b() {
-        String a2 = a(e);
-        if (a2 != null) {
-            String j10 = e2.c.j(a2, 1, 1);
-            ne.k kVar = new ne.k(1, w2.e("mailto:", j10), null);
-            kVar.b(new s(j10));
-            return kVar;
+    @Override // qc.c
+    public final void b(String str) {
+        switch (this.a) {
+            case 0:
+                Log.d("isoparser", String.valueOf((String) this.b) + ":" + str);
+                break;
+            default:
+                ((Logger) this.b).log(Level.FINE, str);
+                break;
         }
-        String a10 = a(f);
-        if (a10 == null) {
-            return null;
-        }
-        String j11 = e2.c.j(a10, 1, 1);
-        ne.k kVar2 = new ne.k(1, j11, null);
-        kVar2.b(new s(j11));
-        return kVar2;
-    }
-
-    @Override // qc.h
-    public final char d() {
-        return '<';
     }
 }

@@ -1,35 +1,24 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.graphics.Canvas;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class xs extends tf.c1 {
-    public final /* synthetic */ ContactsActivity H;
+public final /* synthetic */ class xs implements bh.k {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.Components.ll0 b;
 
-    public xs(ContactsActivity contactsActivity, Context context, a0.h hVar, boolean z4, boolean z10, boolean z11) {
-        this.H = contactsActivity;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
-        this.E = new ArrayList();
-        this.c = context;
-        this.h = hVar;
-        this.r = z4;
-        this.s = z10;
-        this.x = 0;
-        this.v = z11;
-        this.w = true;
-        tf.j1 j1Var = new tf.j1(true);
-        this.f = j1Var;
-        j1Var.a = new tf.a1(this);
+    public /* synthetic */ xs(org.telegram.ui.Components.ll0 ll0Var, int i10) {
+        this.a = i10;
+        this.b = ll0Var;
     }
 
-    @Override // tf.c1
-    public final void F() {
-        if (this.y || this.f.e() || h() != 0) {
-            return;
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // bh.k
+    public final boolean a(Canvas canvas, View view, long j3) {
+        switch (this.a) {
         }
-        this.H.e.e(false, true);
+        return this.b.drawChild(canvas, view, j3);
     }
 }

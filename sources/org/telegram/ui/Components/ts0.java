@@ -8,7 +8,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
@@ -28,26 +28,26 @@ public final class ts0 implements ViewTreeObserver.OnPreDrawListener {
         KeyEvent.Callback callback = this.c;
         switch (i10) {
             case 0:
-                yu0 yu0Var = (yu0) callback;
-                yu0Var.h0[i11].getViewTreeObserver().removeOnPreDrawListener(this);
-                yu0Var.U(i11);
+                xu0 xu0Var = (xu0) callback;
+                xu0Var.k0[i11].getViewTreeObserver().removeOnPreDrawListener(this);
+                xu0Var.U(i11);
                 break;
             default:
-                q61 q61Var = (q61) callback;
-                lh.e1 e1Var = q61Var.d;
-                e1Var.getViewTreeObserver().removeOnPreDrawListener(this);
-                int childCount = e1Var.getChildCount();
+                o61 o61Var = (o61) callback;
+                bi.o0 o0Var = o61Var.d;
+                o0Var.getViewTreeObserver().removeOnPreDrawListener(this);
+                int childCount = o0Var.getChildCount();
                 AnimatorSet animatorSet = new AnimatorSet();
                 for (int i12 = 0; i12 < childCount; i12++) {
-                    View childAt = e1Var.getChildAt(i12);
-                    e1Var.getClass();
+                    View childAt = o0Var.getChildAt(i12);
+                    o0Var.getClass();
                     int R = RecyclerView.R(childAt);
                     if (R >= i11) {
-                        if (R == 1 && e1Var.getAdapter() == q61Var.e && (childAt instanceof org.telegram.ui.Cells.t3)) {
-                            childAt = ((org.telegram.ui.Cells.t3) childAt).getTextView();
+                        if (R == 1 && o0Var.getAdapter() == o61Var.e && (childAt instanceof org.telegram.ui.Cells.u3)) {
+                            childAt = ((org.telegram.ui.Cells.u3) childAt).getTextView();
                         }
                         childAt.setAlpha(0.0f);
-                        int min = (int) ((Math.min(e1Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / e1Var.getMeasuredHeight()) * 100.0f);
+                        int min = (int) ((Math.min(o0Var.getMeasuredHeight(), Math.max(0, childAt.getTop())) / o0Var.getMeasuredHeight()) * 100.0f);
                         ObjectAnimator ofFloat = ObjectAnimator.ofFloat(childAt, (Property<View, Float>) View.ALPHA, 0.0f, 1.0f);
                         ofFloat.setStartDelay(min);
                         ofFloat.setDuration(200L);

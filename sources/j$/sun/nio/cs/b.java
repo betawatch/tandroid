@@ -11,8 +11,8 @@ public final class b extends CharsetEncoder {
     public final e a;
 
     @Override // java.nio.charset.CharsetEncoder
-    public final boolean canEncode(char c3) {
-        return c3 <= 255;
+    public final boolean canEncode(char c10) {
+        return c10 <= 255;
     }
 
     @Override // java.nio.charset.CharsetEncoder
@@ -50,11 +50,11 @@ public final class b extends CharsetEncoder {
         }
         while (i13 < i12) {
             int i16 = i10 + 1;
-            char c3 = cArr[i10];
-            if (c3 > 255) {
+            char c10 = cArr[i10];
+            if (c10 > 255) {
                 break;
             }
-            bArr[i11] = (byte) c3;
+            bArr[i11] = (byte) c10;
             i13++;
             i10 = i16;
             i11++;
@@ -75,15 +75,15 @@ public final class b extends CharsetEncoder {
                         coderResult = CoderResult.UNDERFLOW;
                         break;
                     }
-                    char c3 = charBuffer.get();
-                    if (c3 <= 255) {
+                    char c10 = charBuffer.get();
+                    if (c10 <= 255) {
                         if (!byteBuffer.hasRemaining()) {
                             coderResult = CoderResult.OVERFLOW;
                             break;
                         }
-                        byteBuffer.put((byte) c3);
+                        byteBuffer.put((byte) c10);
                         position++;
-                    } else if (this.a.a(c3, charBuffer) < 0) {
+                    } else if (this.a.a(c10, charBuffer) < 0) {
                         coderResult = this.a.a;
                     } else {
                         if (!this.a.b) {

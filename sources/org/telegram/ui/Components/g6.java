@@ -1,38 +1,196 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.text.StaticLayout;
+import android.content.Context;
+import android.graphics.RectF;
 import android.view.View;
+import android.widget.LinearLayout;
+import j$.util.Comparator$-CC;
+import j$.util.Comparator$-EL;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class g6 {
-    public final q5 a;
-    public final StaticLayout b;
-    public final float c;
-    public final int d;
-    public final float e;
-    public final float f;
-    public final /* synthetic */ j6 g;
+public abstract class g6 extends LinearLayout {
+    public static final Comparator r = Comparator$-EL.thenComparingInt(Comparator$-CC.comparingInt(new bi.o6(8)), new bi.o6(9));
+    public final HashMap a;
+    public final ArrayList b;
+    public final le.j c;
+    public boolean d;
+    public int e;
+    public int f;
+    public Runnable h;
+    public float n;
 
-    public g6(j6 j6Var, StaticLayout staticLayout, float f10, int i10) {
-        this.g = j6Var;
-        this.b = staticLayout;
-        this.d = i10;
-        this.c = f10;
-        float f11 = 0.0f;
-        this.e = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineLeft(0);
-        if (staticLayout != null && staticLayout.getLineCount() > 0) {
-            f11 = staticLayout.getLineWidth(0);
-        }
-        this.f = f11;
-        if (j6Var.getCallback() instanceof View) {
-            this.a = u5.update(j6Var.l, (View) j6Var.getCallback(), this.a, staticLayout);
+    public g6(Context context) {
+        super(context);
+        this.a = new HashMap();
+        this.b = new ArrayList();
+        this.c = new le.j(new t(this, 11), pr.h, 420L);
+    }
+
+    public final void a() {
+        this.f = 0;
+        this.e = 0;
+        int childCount = getChildCount();
+        for (int i10 = 0; i10 < childCount; i10++) {
+            View childAt = getChildAt(i10);
+            f6 f6Var = (f6) this.a.get(childAt);
+            if (childAt.getVisibility() == 0 && f6Var != null && f6Var.b) {
+                this.e = childAt.getMeasuredWidth() + this.e;
+                this.f = childAt.getMeasuredHeight() + this.f;
+            }
         }
     }
 
-    public final void a(Canvas canvas, float f10) {
-        this.b.draw(canvas);
-        u5.drawAnimatedEmojis(canvas, this.b, this.a, 0.0f, null, 0.0f, 0.0f, 0.0f, f10, this.g.U);
+    public final void b() {
+        ArrayList arrayList = this.c.b;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            le.g gVar = (le.g) obj;
+            View view = ((f6) gVar.a).a;
+            RectF b10 = gVar.b();
+            if (getOrientation() == 1) {
+                view.setTranslationY((getPaddingTop() + b10.top) - view.getTop());
+            } else {
+                view.setTranslationX((getPaddingLeft() + b10.left) - view.getLeft());
+            }
+            f(view, gVar.c());
+        }
+        float f7 = getMetadata().g.a;
+        if (this.n != f7) {
+            this.n = f7;
+            Runnable runnable = this.h;
+            if (runnable != null) {
+                runnable.run();
+            }
+        }
+    }
+
+    public final float c(float f7) {
+        return (f7 * getMetadata().c.a) + getMetadata().g.a;
+    }
+
+    public final boolean d(View view) {
+        f6 f6Var = (f6) this.a.get(view);
+        return f6Var != null && f6Var.b;
+    }
+
+    public abstract void e();
+
+    public void f(View view, float f7) {
+        float lerp = AndroidUtilities.lerp(0.95f, 1.0f, f7);
+        view.setAlpha(f7);
+        view.setScaleX(lerp);
+        view.setScaleY(lerp);
+    }
+
+    public final void g(View view) {
+    }
+
+    public float getAnimatedHeightWithPadding() {
+        return c(getPaddingBottom() + getPaddingTop());
+    }
+
+    public int getEntriesCount() {
+        return this.c.b.size();
+    }
+
+    public le.i getMetadata() {
+        return this.c.d;
+    }
+
+    public int getSumHeightOfAllVisibleChild() {
+        return this.f;
+    }
+
+    public int getSumWidthOfAllVisibleChild() {
+        return this.e;
+    }
+
+    public final void h(int i10, View view) {
+        f6 f6Var = (f6) this.a.get(view);
+        if (f6Var != null) {
+            f6Var.d = i10;
+        }
+    }
+
+    public final void i(View view, boolean z10, boolean z11) {
+        f6 f6Var;
+        if (view == null || (f6Var = (f6) this.a.get(view)) == null) {
+            return;
+        }
+        View view2 = f6Var.a;
+        if (f6Var.b != z10) {
+            f6Var.b = z10;
+            if (z10) {
+                view2.setVisibility(0);
+            }
+            if (!z10 && !f6Var.c) {
+                view2.setVisibility(8);
+            }
+            if (!z11) {
+                this.d = true;
+            }
+            requestLayout();
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        ArrayList arrayList = this.b;
+        arrayList.clear();
+        int childCount = getChildCount();
+        for (int i14 = 0; i14 < childCount; i14++) {
+            View childAt = getChildAt(i14);
+            f6 f6Var = (f6) this.a.get(childAt);
+            if (f6Var != null) {
+                f6Var.e = i14;
+                if (childAt.getVisibility() == 0 && f6Var.b) {
+                    arrayList.add(f6Var);
+                }
+            }
+        }
+        Collections.sort(arrayList, r);
+        this.c.r(arrayList, !this.d);
+        int size = arrayList.size();
+        int i15 = 0;
+        while (i15 < size) {
+            Object obj = arrayList.get(i15);
+            i15++;
+            ((f6) obj).c = true;
+        }
+        this.d = false;
+        b();
+    }
+
+    @Override // android.widget.LinearLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        a();
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        super.onViewAdded(view);
+        view.setVisibility(8);
+        this.a.put(view, new f6(view));
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewRemoved(View view) {
+        super.onViewRemoved(view);
+        this.a.remove(view);
+    }
+
+    public void setOnAnimatedHeightChangedListener(Runnable runnable) {
+        this.h = runnable;
     }
 }

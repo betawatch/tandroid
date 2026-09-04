@@ -1,71 +1,50 @@
 package k4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import j3.d1;
-import j3.n0;
-import j8.t;
+import b2.s0;
+import c3.p;
+import com.google.android.gms.internal.vision.e2;
+import e2.v;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e implements e4.b {
-    public static final Parcelable.Creator<e> CREATOR = new t(15);
-    public final float a;
-    public final int b;
+public abstract class e {
+    public static final byte[] a = {0, 0, 0, 0, 16, 0, Byte.MIN_VALUE, 0, 0, -86, 0, 56, -101, 113};
+    public static final byte[] b = {0, 0, 33, 7, -45, 17, -122, 68, -56, -63, -54, 0, 0, 0};
 
-    public e(float f10, int i10) {
-        this.a = f10;
-        this.b = i10;
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ n0 b() {
-        return null;
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ byte[] d() {
-        return null;
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
+    public static boolean a(p pVar) {
+        v vVar = new v(8);
+        int i10 = d.b(pVar, vVar).a;
+        if (i10 != 1380533830 && i10 != 1380333108) {
+            return false;
+        }
+        pVar.b(0, 4, vVar.a);
+        vVar.J(0);
+        int j3 = vVar.j();
+        if (j3 == 1463899717) {
             return true;
         }
-        if (obj != null && e.class == obj.getClass()) {
-            e eVar = (e) obj;
-            if (this.a == eVar.a && this.b == eVar.b) {
-                return true;
-            }
-        }
+        e2.a.e("WavHeaderReader", "Unsupported form type: " + j3);
         return false;
     }
 
-    public final int hashCode() {
-        return ((Float.valueOf(this.a).hashCode() + 527) * 31) + this.b;
-    }
-
-    public final String toString() {
-        return "smta: captureFrameRate=" + this.a + ", svcTemporalLayerCount=" + this.b;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeFloat(this.a);
-        parcel.writeInt(this.b);
-    }
-
-    public e(Parcel parcel) {
-        this.a = parcel.readFloat();
-        this.b = parcel.readInt();
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ void c(d1 d1Var) {
+    public static d b(int i10, p pVar, v vVar) {
+        d b10 = d.b(pVar, vVar);
+        while (true) {
+            int i11 = b10.a;
+            if (i11 == i10) {
+                return b10;
+            }
+            e2.n(i11, "Ignoring unknown WAV chunk: ", "WavHeaderReader");
+            long j3 = b10.b;
+            long j10 = 8 + j3;
+            if (j3 % 2 != 0) {
+                j10 = 9 + j3;
+            }
+            if (j10 > 2147483647L) {
+                throw s0.c("Chunk is too large (~2GB+) to skip; id: " + i11);
+            }
+            pVar.r((int) j10);
+            b10 = d.b(pVar, vVar);
+        }
     }
 }

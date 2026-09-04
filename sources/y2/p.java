@@ -1,40 +1,52 @@
 package y2;
 
-import java.util.HashMap;
+import android.net.Uri;
+import e2.d0;
+import g2.b0;
+import java.io.IOException;
+import u2.t;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class p {
-    public final i a;
-    public final String b;
-    public final v2.c c;
-    public final v2.e d;
-    public final q e;
+public final class p implements j {
+    public final long a = t.b.getAndIncrement();
+    public final g2.m b;
+    public final int c;
+    public final b0 d;
+    public final o e;
+    public volatile Object f;
 
-    public p(i iVar, String str, v2.c cVar, v2.e eVar, q qVar) {
-        this.a = iVar;
-        this.b = str;
-        this.c = cVar;
-        this.d = eVar;
-        this.e = qVar;
+    public p(g2.h hVar, g2.m mVar, int i10, o oVar) {
+        this.d = new b0(hVar);
+        this.b = mVar;
+        this.c = i10;
+        this.e = oVar;
     }
 
-    public final void a(v2.a aVar, v2.g gVar) {
-        v2.e eVar = this.d;
-        if (eVar == null) {
-            throw new NullPointerException("Null transformer");
+    @Override // y2.j
+    public final void a() {
+        this.d.b = 0L;
+        g2.k kVar = new g2.k(this.d, this.b);
+        try {
+            kVar.a.open(kVar.b);
+            kVar.d = true;
+            Uri uri = this.d.a.getUri();
+            uri.getClass();
+            this.f = this.e.f2(uri, kVar);
+            try {
+                kVar.close();
+            } catch (IOException unused) {
+            }
+        } finally {
+            String str = d0.a;
+            try {
+                kVar.close();
+            } catch (IOException unused2) {
+            }
         }
-        q qVar = this.e;
-        d3.b bVar = qVar.c;
-        i b10 = this.a.b(aVar.c);
-        a9.a aVar2 = new a9.a();
-        aVar2.f = new HashMap();
-        aVar2.d = Long.valueOf(qVar.a.l());
-        aVar2.e = Long.valueOf(qVar.b.l());
-        aVar2.b = this.b;
-        aVar2.c = new l(this.c, (byte[]) eVar.apply(aVar.b));
-        aVar2.a = aVar.a;
-        d3.a aVar3 = (d3.a) bVar;
-        aVar3.b.execute(new androidx.car.app.utils.c(aVar3, b10, gVar, aVar2.j(), 1));
+    }
+
+    @Override // y2.j
+    public final void W() {
     }
 }

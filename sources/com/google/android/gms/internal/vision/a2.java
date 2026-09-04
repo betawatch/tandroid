@@ -7,7 +7,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Set;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class a2 extends LinkedHashMap {
     public static final a2 b;
@@ -62,7 +62,7 @@ public final class a2 extends LinkedHashMap {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final boolean equals(Object obj) {
-        boolean z4;
+        boolean z10;
         if (obj instanceof Map) {
             Map map = (Map) obj;
             if (this != map) {
@@ -76,13 +76,13 @@ public final class a2 extends LinkedHashMap {
                         }
                     }
                 }
-                z4 = false;
-                if (!z4) {
+                z10 = false;
+                if (!z10) {
                     return true;
                 }
             }
-            z4 = true;
-            if (!z4) {
+            z10 = true;
+            if (!z10) {
             }
         }
         return false;

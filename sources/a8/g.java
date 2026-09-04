@@ -1,39 +1,46 @@
 package a8;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import j7.f5;
+import android.os.IBinder;
+import android.os.IInterface;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g extends c6.a {
-    public static final Parcelable.Creator<g> CREATOR = new w.a(4);
-    public final long a;
-    public final a[] b;
-    public final int c;
-    public final boolean d;
-
-    public g(long j10, a[] aVarArr, int i10, boolean z4) {
-        this.a = j10;
-        this.b = aVarArr;
-        this.d = z4;
-        if (z4) {
-            this.c = i10;
-        } else {
-            this.c = -1;
-        }
+public final class g extends n6.g {
+    @Override // n6.g
+    public final boolean C() {
+        return false;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.s(parcel, 2, 8);
-        parcel.writeLong(this.a);
-        f5.o(parcel, 3, this.b, i10);
-        f5.s(parcel, 4, 4);
-        parcel.writeInt(this.c);
-        f5.s(parcel, 5, 4);
-        parcel.writeInt(this.d ? 1 : 0);
-        f5.r(parcel, q10);
+    @Override // n6.g, com.google.android.gms.common.api.c
+    public final int l() {
+        return 17895000;
+    }
+
+    @Override // n6.g
+    public final /* bridge */ /* synthetic */ IInterface q(IBinder iBinder) {
+        i.e(iBinder, "iBinder");
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.recaptchabase.internal.IRecaptchaBaseService");
+        return queryLocalInterface instanceof c ? (c) queryLocalInterface : new c(iBinder);
+    }
+
+    @Override // n6.g
+    public final k6.c[] r() {
+        return l8.f.c;
+    }
+
+    @Override // n6.g
+    public final String v() {
+        return "com.google.android.gms.recaptchabase.internal.IRecaptchaBaseService";
+    }
+
+    @Override // n6.g
+    public final String w() {
+        return "com.google.android.gms.recaptchabase.service.START";
+    }
+
+    @Override // n6.g
+    public final boolean y() {
+        return true;
     }
 }

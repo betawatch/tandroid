@@ -1,27 +1,33 @@
 package k9;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class g implements u9.d {
-    public static final g a = new g();
-    public static final u9.c b = u9.c.c("identifier");
-    public static final u9.c c = u9.c.c("version");
-    public static final u9.c d = u9.c.c("displayVersion");
-    public static final u9.c e = u9.c.c("organization");
-    public static final u9.c f = u9.c.c("installationUuid");
-    public static final u9.c g = u9.c.c("developmentPlatform");
-    public static final u9.c h = u9.c.c("developmentPlatformVersion");
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicReference;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        u9.e eVar = (u9.e) obj2;
-        i0 i0Var = (i0) ((l1) obj);
-        eVar.e(b, i0Var.a);
-        eVar.e(c, i0Var.b);
-        eVar.e(d, i0Var.c);
-        eVar.e(e, null);
-        eVar.e(f, i0Var.d);
-        eVar.e(g, i0Var.e);
-        eVar.e(h, i0Var.f);
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class g extends BroadcastReceiver {
+    public static final AtomicReference b = new AtomicReference();
+    public final Context a;
+
+    public g(Context context) {
+        this.a = context;
+    }
+
+    @Override // android.content.BroadcastReceiver
+    public final void onReceive(Context context, Intent intent) {
+        synchronized (h.k) {
+            try {
+                Iterator it = ((a0.e) h.l.values()).iterator();
+                while (it.hasNext()) {
+                    ((h) it.next()).e();
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        this.a.unregisterReceiver(this);
     }
 }

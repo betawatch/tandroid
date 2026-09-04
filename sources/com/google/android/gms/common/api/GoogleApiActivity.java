@@ -9,8 +9,9 @@ import android.content.IntentSender;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import com.google.android.gms.internal.cast.c0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class GoogleApiActivity extends Activity implements DialogInterface.OnCancelListener {
     public static final /* synthetic */ int b = 0;
@@ -26,10 +27,10 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
             if (booleanExtra) {
                 com.google.android.gms.common.api.internal.h g10 = com.google.android.gms.common.api.internal.h.g(this);
                 if (i11 == -1) {
-                    a7.e eVar = g10.x;
-                    eVar.sendMessage(eVar.obtainMessage(3));
+                    c0 c0Var = g10.x;
+                    c0Var.sendMessage(c0Var.obtainMessage(3));
                 } else if (i11 == 0) {
-                    g10.h(new y5.a(13, null), getIntent().getIntExtra("failing_client_id", -1));
+                    g10.h(new k6.a(13, null), getIntent().getIntExtra("failing_client_id", -1));
                 }
             }
         } else if (i10 == 2) {
@@ -68,37 +69,37 @@ public class GoogleApiActivity extends Activity implements DialogInterface.OnCan
                 return;
             }
             if (pendingIntent == null) {
-                b6.m.h(num);
-                y5.d.d.e(this, num.intValue(), this);
+                n6.l.h(num);
+                k6.d.d.e(this, num.intValue(), this);
                 this.a = 1;
                 return;
             }
             try {
                 googleApiActivity = this;
-            } catch (ActivityNotFoundException e) {
-                e = e;
+            } catch (ActivityNotFoundException e7) {
+                e = e7;
                 googleApiActivity = this;
-            } catch (IntentSender.SendIntentException e6) {
-                e = e6;
+            } catch (IntentSender.SendIntentException e10) {
+                e = e10;
             }
             try {
                 googleApiActivity.startIntentSenderForResult(pendingIntent.getIntentSender(), 1, null, 0, 0, 0);
                 googleApiActivity.a = 1;
-            } catch (ActivityNotFoundException e10) {
-                e = e10;
+            } catch (ActivityNotFoundException e11) {
+                e = e11;
                 if (extras.getBoolean("notify_manager", true)) {
-                    com.google.android.gms.common.api.internal.h.g(this).h(new y5.a(22, null), getIntent().getIntExtra("failing_client_id", -1));
+                    com.google.android.gms.common.api.internal.h.g(this).h(new k6.a(22, null), getIntent().getIntExtra("failing_client_id", -1));
                 } else {
-                    String o10 = android.support.v4.media.a.o("Activity not found while launching ", pendingIntent.toString(), ".");
+                    String p5 = a4.a.p("Activity not found while launching ", pendingIntent.toString(), ".");
                     if (Build.FINGERPRINT.contains("generic")) {
-                        o10 = o10.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
+                        p5 = p5.concat(" This may occur when resolving Google Play services connection issues on emulators with Google APIs but not Google Play Store.");
                     }
-                    Log.e("GoogleApiActivity", o10, e);
+                    Log.e("GoogleApiActivity", p5, e);
                 }
                 googleApiActivity.a = 1;
                 finish();
-            } catch (IntentSender.SendIntentException e11) {
-                e = e11;
+            } catch (IntentSender.SendIntentException e12) {
+                e = e12;
                 Log.e("GoogleApiActivity", "Failed to launch pendingIntent", e);
                 finish();
             }

@@ -1,30 +1,49 @@
 package ie;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import ee.t;
+import zd.i2;
+import zd.l;
+import zd.m;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c {
-    public static final c a;
-    public static final c b;
-    public static final c c;
-    public static final /* synthetic */ c[] d;
+public final class c implements l, i2 {
+    public final m a;
+    public final /* synthetic */ d b;
 
-    static {
-        c cVar = new c("LEFT", 0);
-        a = cVar;
-        c cVar2 = new c("CENTER", 1);
-        b = cVar2;
-        c cVar3 = new c("RIGHT", 2);
-        c = cVar3;
-        d = new c[]{cVar, cVar2, cVar3};
+    public c(d dVar, m mVar) {
+        this.b = dVar;
+        this.a = mVar;
     }
 
-    public static c valueOf(String str) {
-        return (c) Enum.valueOf(c.class, str);
+    @Override // zd.i2
+    public final void a(t tVar, int i10) {
+        this.a.a(tVar, i10);
     }
 
-    public static c[] values() {
-        return (c[]) d.clone();
+    @Override // zd.l
+    public final d9.f b(rd.l lVar, Object obj) {
+        d dVar = this.b;
+        b bVar = new b(dVar, this, 1);
+        d9.f F = this.a.F(bVar, (gd.i) obj);
+        if (F != null) {
+            d.g.set(dVar, null);
+        }
+        return F;
+    }
+
+    @Override // zd.l
+    public final void e(Object obj) {
+        this.a.e(obj);
+    }
+
+    @Override // id.c
+    public final id.h getContext() {
+        return this.a.e;
+    }
+
+    @Override // id.c
+    public final void resumeWith(Object obj) {
+        this.a.resumeWith(obj);
     }
 }

@@ -1,18 +1,31 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final class ve1 extends f2.e0 {
-    public final /* synthetic */ sf1 P;
+import org.telegram.messenger.AndroidUtilities;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ve1(sf1 sf1Var, rf1 rf1Var) {
-        super(rf1Var);
-        this.P = sf1Var;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class ve1 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ af1 b;
+
+    public /* synthetic */ ve1(af1 af1Var, int i10) {
+        this.a = i10;
+        this.b = af1Var;
     }
 
-    @Override // f2.e0
-    public final boolean q() {
-        return this.P.x > 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                af1 af1Var = this.b;
+                af1Var.getClass();
+                new sg.a1((org.telegram.ui.ActionBar.n2) af1Var, 11, false).show();
+                break;
+            default:
+                af1 af1Var2 = this.b;
+                af1Var2.e.requestFocus();
+                AndroidUtilities.showKeyboard(af1Var2.e);
+                break;
+        }
     }
 }

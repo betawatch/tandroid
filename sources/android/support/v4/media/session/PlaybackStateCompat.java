@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class PlaybackStateCompat implements Parcelable {
     public static final Parcelable.Creator<PlaybackStateCompat> CREATOR = new b0(4);
@@ -26,17 +26,17 @@ public final class PlaybackStateCompat implements Parcelable {
     public final Bundle v;
     public PlaybackState w;
 
-    public PlaybackStateCompat(int i10, long j10, long j11, float f10, long j12, int i11, CharSequence charSequence, long j13, ArrayList arrayList, long j14, Bundle bundle) {
+    public PlaybackStateCompat(int i10, long j3, long j10, float f7, long j11, int i11, CharSequence charSequence, long j12, ArrayList arrayList, long j13, Bundle bundle) {
         this.a = i10;
-        this.b = j10;
-        this.c = j11;
-        this.d = f10;
-        this.e = j12;
+        this.b = j3;
+        this.c = j10;
+        this.d = f7;
+        this.e = j11;
         this.f = i11;
         this.h = charSequence;
-        this.n = j13;
+        this.n = j12;
         this.r = new ArrayList(arrayList);
-        this.s = j14;
+        this.s = j13;
         this.v = bundle;
     }
 
@@ -47,15 +47,15 @@ public final class PlaybackStateCompat implements Parcelable {
         if (playbackState == null) {
             return null;
         }
-        List<PlaybackState.CustomAction> j10 = d0.j(playbackState);
-        if (j10 != null) {
-            ArrayList arrayList2 = new ArrayList(j10.size());
-            for (PlaybackState.CustomAction customAction2 : j10) {
+        List<PlaybackState.CustomAction> j3 = d0.j(playbackState);
+        if (j3 != null) {
+            ArrayList arrayList2 = new ArrayList(j3.size());
+            for (PlaybackState.CustomAction customAction2 : j3) {
                 if (customAction2 != null) {
                     PlaybackState.CustomAction customAction3 = customAction2;
-                    Bundle l10 = d0.l(customAction3);
-                    c0.a(l10);
-                    customAction = new CustomAction(d0.f(customAction3), d0.o(customAction3), d0.m(customAction3), l10);
+                    Bundle l4 = d0.l(customAction3);
+                    c0.a(l4);
+                    customAction = new CustomAction(d0.f(customAction3), d0.o(customAction3), d0.m(customAction3), l4);
                     customAction.e = customAction3;
                 } else {
                     customAction = null;
@@ -81,26 +81,26 @@ public final class PlaybackStateCompat implements Parcelable {
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("PlaybackState {state=");
-        sb.append(this.a);
-        sb.append(", position=");
-        sb.append(this.b);
-        sb.append(", buffered position=");
-        sb.append(this.c);
-        sb.append(", speed=");
-        sb.append(this.d);
-        sb.append(", updated=");
-        sb.append(this.n);
-        sb.append(", actions=");
-        sb.append(this.e);
-        sb.append(", error code=");
-        sb.append(this.f);
-        sb.append(", error message=");
-        sb.append(this.h);
-        sb.append(", custom actions=");
-        sb.append(this.r);
-        sb.append(", active item id=");
-        return android.support.v4.media.a.q(sb, this.s, "}");
+        StringBuilder sb2 = new StringBuilder("PlaybackState {state=");
+        sb2.append(this.a);
+        sb2.append(", position=");
+        sb2.append(this.b);
+        sb2.append(", buffered position=");
+        sb2.append(this.c);
+        sb2.append(", speed=");
+        sb2.append(this.d);
+        sb2.append(", updated=");
+        sb2.append(this.n);
+        sb2.append(", actions=");
+        sb2.append(this.e);
+        sb2.append(", error code=");
+        sb2.append(this.f);
+        sb2.append(", error message=");
+        sb2.append(this.h);
+        sb2.append(", custom actions=");
+        sb2.append(this.r);
+        sb2.append(", active item id=");
+        return a4.a.r(sb2, this.s, "}");
     }
 
     @Override // android.os.Parcelable
@@ -118,7 +118,7 @@ public final class PlaybackStateCompat implements Parcelable {
         parcel.writeInt(this.f);
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static final class CustomAction implements Parcelable {
         public static final Parcelable.Creator<CustomAction> CREATOR = new g0();
         public final String a;

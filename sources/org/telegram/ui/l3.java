@@ -1,112 +1,147 @@
 package org.telegram.ui;
 
-import android.view.View;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BillingController;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l3 implements q0.a {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class l3 implements org.telegram.ui.web.i0 {
+    public final /* synthetic */ m3 a;
 
-    public /* synthetic */ l3(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public l3(m3 m3Var) {
+        this.a = m3Var;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
-            case 0:
-                r3 r3Var = (r3) this.b;
-                Float f10 = (Float) obj;
-                n4 n4Var = r3Var.H;
-                if (r3Var == n4Var.r0[0]) {
-                    if (n4Var.e0.a0.getCurrentProgress() > f10.floatValue()) {
-                        n4Var.e0.a0.a(0.0f, false);
-                    }
-                    n4Var.e0.a0.a(f10.floatValue(), true);
-                    break;
-                }
-                break;
-            case 1:
-                ((org.telegram.ui.Components.yj0) this.b).h((List) obj);
-                break;
-            case 2:
-                TLRPC.User user = (TLRPC.User) obj;
-                rr rrVar = ((ir) this.b).b;
-                lr w02 = rrVar.w0();
-                ArrayList arrayList = rrVar.C;
-                a0.h hVar = rrVar.J;
-                ArrayList arrayList2 = (hVar == null || hVar.m() == 0) ? arrayList : rrVar.E;
-                if (hVar == null || hVar.m() == 0) {
-                    hVar = rrVar.H;
-                }
-                if (hVar.f(user.id) == null) {
-                    if (ChatObject.isChannel(rrVar.r)) {
-                        TLRPC.TL_channelParticipant tL_channelParticipant = new TLRPC.TL_channelParticipant();
-                        tL_channelParticipant.inviter_id = rrVar.getUserConfig().getClientUserId();
-                        TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
-                        tL_channelParticipant.peer = tL_peerUser;
-                        tL_peerUser.user_id = user.id;
-                        tL_channelParticipant.date = rrVar.getConnectionsManager().getCurrentTime();
-                        arrayList2.add(0, tL_channelParticipant);
-                        hVar.k(tL_channelParticipant, user.id);
-                    } else {
-                        TLRPC.TL_chatParticipant tL_chatParticipant = new TLRPC.TL_chatParticipant();
-                        tL_chatParticipant.user_id = user.id;
-                        tL_chatParticipant.inviter_id = rrVar.getUserConfig().getClientUserId();
-                        arrayList2.add(0, tL_chatParticipant);
-                        hVar.k(tL_chatParticipant, user.id);
-                    }
-                }
-                if (arrayList2 == arrayList) {
-                    Collections.sort(arrayList, new nh.e4(15));
-                }
-                rrVar.A0(w02);
-                break;
-            case 3:
-                y3 y3Var = (y3) this.b;
-                int i10 = ((p2.h) obj).a;
-                AndroidUtilities.runOnUIThread(new ie0(8, y3Var, i10 == 0 ? null : BillingController.getResponseCodeString(i10)));
-                break;
-            case 4:
-                ji0 ji0Var = (ji0) this.b;
-                if (((p2.h) obj).a == 0) {
-                    AndroidUtilities.runOnUIThread(ji0Var);
-                    break;
-                }
-                break;
-            case 5:
-                ((ArrayList) this.b).add((TLRPC.User) obj);
-                break;
-            case 6:
-                ProfileActivity profileActivity = (ProfileActivity) this.b;
-                TLRPC.User user2 = (TLRPC.User) obj;
-                for (int i11 = 0; i11 < profileActivity.r2.participants.participants.size(); i11++) {
-                    if (profileActivity.r2.participants.participants.get(i11).user_id == user2.id) {
-                        profileActivity.r2.participants.participants.remove(i11);
-                        profileActivity.e5(true, false);
-                        break;
-                    }
-                }
-                break;
-            default:
-                View view = ((ProxyListActivity) this.b).b.T((View) obj).a;
-                if (view instanceof v11) {
-                    v11 v11Var = (v11) view;
-                    v11Var.setChecked(v11Var.d == SharedConfig.currentProxy);
-                    v11Var.b();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.web.i0
+    public final void b() {
+        v3 v3Var = this.a.K.K;
+        if (v3Var != null) {
+            v3Var.dismiss(true);
         }
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ String g(boolean z10, boolean z11) {
+        return "UNSUPPORTED";
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ boolean h() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void j() {
+        m3 m3Var = this.a;
+        i4 i4Var = m3Var.K;
+        v3 v3Var = i4Var.K;
+        if (v3Var == null) {
+            if (i4Var.u0[0] == m3Var) {
+                i4Var.G();
+            }
+        } else {
+            if (v3Var.h) {
+                return;
+            }
+            v3Var.h = true;
+            v3Var.release();
+            v3Var.K.s();
+        }
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void o(int i10, boolean z10) {
+        m3.a(this.a, z10, i10);
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void y() {
+        m3 m3Var = this.a;
+        i4 i4Var = m3Var.K;
+        if (i4Var.u0[0] == m3Var) {
+            i4Var.G();
+        }
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ fi.a1 z() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ void a() {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ void c() {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ void d(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ void e(String str) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ void f(ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void i(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void k(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void m(int i10) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ void p(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ void r(int i10) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void s() {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void t(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final /* synthetic */ void w(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void x(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void u(int i10, int i11, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void v(TLRPC.User user, String str, ArrayList arrayList) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void q(boolean z10, boolean z11, String str, long j3, int i10, int i11, boolean z12, boolean z13) {
+    }
+
+    @Override // org.telegram.ui.web.i0
+    public final void l(boolean z10, boolean z11, String str, long j3, int i10, int i11, boolean z12, boolean z13, String str2) {
     }
 }

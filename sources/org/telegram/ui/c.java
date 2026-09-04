@@ -1,101 +1,43 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Intent;
+import android.net.Uri;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class c {
-    public static boolean a;
+public final /* synthetic */ class c implements org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ h b;
 
-    public static boolean a(int i10, TLRPC.User user) {
-        String publicUsername;
-        if (user == null || (publicUsername = UserObject.getPublicUsername(user)) == null) {
-            return false;
-        }
-        try {
-            Matcher matcher = Pattern.compile("t\\.me/([a-zA-Z0-9]+)/?").matcher(MessagesController.getInstance(i10).freezeAppealUrl);
-            if (matcher.find()) {
-                if (publicUsername.equalsIgnoreCase(matcher.group(1))) {
-                    return true;
+    public /* synthetic */ c(h hVar, int i10) {
+        this.a = i10;
+        this.b = hVar;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                h hVar = this.b;
+                hVar.getClass();
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    hVar.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
                 }
-            }
-            return false;
-        } catch (Exception e) {
-            FileLog.e(e);
-            return false;
+            default:
+                h hVar2 = this.b;
+                hVar2.getClass();
+                wg0 wg0Var = new wg0();
+                wg0Var.F = 2;
+                hVar2.presentFragment(wg0Var, true);
+                break;
         }
-    }
-
-    public static void b(int i10) {
-        if (!a && UserConfig.selectedAccount == i10) {
-            Context context = LaunchActivity.D1;
-            if (context == null) {
-                context = ApplicationLoader.applicationContext;
-            }
-            if (context == null) {
-                return;
-            }
-            org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-            c(context, i10, U != null ? U.getResourceProvider() : null);
-        }
-    }
-
-    public static void c(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        if (a) {
-            return;
-        }
-        org.telegram.ui.ActionBar.g3 o10 = org.telegram.messenger.y3.o(context, f6Var, false, false);
-        int i11 = 1;
-        ah.a aVar = new ah.a(i10, context, r5, 19);
-        LinearLayout f10 = org.telegram.messenger.y3.f(context, 1);
-        f10.setPadding(AndroidUtilities.dp(16.0f), AndroidUtilities.dp(20.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(8.0f));
-        f10.setClipChildren(false);
-        f10.setClipToPadding(false);
-        org.telegram.ui.Components.jj0 jj0Var = new org.telegram.ui.Components.jj0(context);
-        jj0Var.f(R.raw.media_forbidden, AndroidUtilities.dp(115.0f), AndroidUtilities.dp(115.0f), null);
-        jj0Var.d();
-        f10.addView(jj0Var, k7.b6.t(115, 115, 17, 0, 0, 0, 9));
-        TextView textView = new TextView(context);
-        b.g(20.0f, 1, textView);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G6, f6Var));
-        org.telegram.messenger.y3.r(R.string.AccountFrozenTitle, textView, 17);
-        f10.addView(textView, k7.b6.t(-1, -2, 17, 0, 0, 0, 23));
-        lh.e0 e0Var = new lh.e0(context, 1, f6Var);
-        e0Var.a(LocaleController.getString(R.string.AccountFrozen1Title), LocaleController.getString(R.string.AccountFrozen1Text), R.drawable.msg_block2);
-        f10.addView(e0Var, k7.b6.t(-1, -2, 17, 0, 0, 0, 0));
-        lh.e0 e0Var2 = new lh.e0(context, 1, f6Var);
-        e0Var2.a(LocaleController.getString(R.string.AccountFrozen2Title), LocaleController.getString(R.string.AccountFrozen2Text), R.drawable.menu_privacy);
-        f10.addView(e0Var2, k7.b6.t(-1, -2, 17, 0, 0, 0, 0));
-        lh.e0 e0Var3 = new lh.e0(context, 1, f6Var);
-        e0Var3.a(LocaleController.getString(R.string.AccountFrozen3Title), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.AccountFrozen3Text, LocaleController.formatYearMonthDay(MessagesController.getInstance(i10).freezeUntilDate, true)), new yt0(aVar, 2)), R.drawable.menu_feature_hourglass);
-        f10.addView(e0Var3, k7.b6.t(-1, -2, 17, 0, 0, 0, 0));
-        ph.d dVar = new ph.d(context, f6Var, true);
-        dVar.g(LocaleController.getString(R.string.AccountFrozenButtonAppeal), false, true);
-        dVar.setOnClickListener(new a(aVar, 0));
-        f10.addView(dVar, k7.b6.t(-1, 48, 7, 0, 13, 0, 4));
-        ph.d dVar2 = new ph.d(context, f6Var, false);
-        dVar2.g(LocaleController.getString(R.string.AccountFrozenButtonUnderstood), false, true);
-        dVar2.setOnClickListener(new a(r5, i11));
-        f10.addView(dVar2, k7.b6.t(-1, 48, 7, 0, 0, 0, 0));
-        o10.customView = f10;
-        org.telegram.ui.ActionBar.g3[] g3VarArr = {o10};
-        o10.useBackgroundTopPadding = false;
-        o10.fixNavigationBar();
-        a = true;
-        g3VarArr[0].show();
-        g3VarArr[0].setOnDismissListener(new dg.e0(i11));
     }
 }

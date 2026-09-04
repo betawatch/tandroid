@@ -1,40 +1,20 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import org.telegram.messenger.Utilities;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class j9 implements n9 {
-    public final /* synthetic */ o9 a;
-    public final /* synthetic */ k7.y5[] b;
-    public final /* synthetic */ Runnable[] c;
-    public final /* synthetic */ a60[] d;
-
-    public /* synthetic */ j9(o9 o9Var, k7.y5[] y5VarArr, Runnable[] runnableArr, a60[] a60VarArr) {
-        this.a = o9Var;
-        this.b = y5VarArr;
-        this.c = runnableArr;
-        this.d = a60VarArr;
-    }
-
-    @Override // org.telegram.ui.Components.n9
-    public final void dispose() {
-        o9 o9Var = this.a;
-        k7.y5[] y5VarArr = this.b;
-        Runnable[] runnableArr = this.c;
-        a60[] a60VarArr = this.d;
-        y5VarArr[0] = null;
-        if (o9Var.e.contains(runnableArr)) {
-            Utilities.globalQueue.cancelRunnables(runnableArr);
-            o9Var.e.remove(runnableArr);
-        }
-        for (a60 a60Var : a60VarArr) {
-            Bitmap bitmap = (Bitmap) o9Var.b.remove(a60Var);
-            o9Var.c.remove(a60Var);
-            if (bitmap != null) {
-                bitmap.recycle();
-            }
-        }
-    }
+public final class j9 {
+    public i9 a;
+    public org.telegram.ui.Cells.b4 b;
+    public long c;
+    public long d;
+    public ImageReceiver e;
+    public TLRPC.GroupCallParticipant f;
+    public long g;
+    public TLObject h;
+    public int i;
+    public int j;
 }

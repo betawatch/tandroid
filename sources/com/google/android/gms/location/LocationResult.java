@@ -4,22 +4,22 @@ import android.location.Location;
 import android.os.Build;
 import android.os.Parcel;
 import android.os.Parcelable;
-import b6.m;
-import c6.a;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.f5;
+import g8.j;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import u6.p;
+import n6.l;
+import o6.a;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class LocationResult extends a implements ReflectedParcelable {
     public final List a;
     public static final List b = Collections.EMPTY_LIST;
-    public static final Parcelable.Creator<LocationResult> CREATOR = new p(9);
+    public static final Parcelable.Creator<LocationResult> CREATOR = new j(6);
 
     public LocationResult(List list) {
         this.a = list;
@@ -41,7 +41,7 @@ public final class LocationResult extends a implements ReflectedParcelable {
         Iterator it = list.iterator();
         for (Location location : list2) {
             Location location2 = (Location) it.next();
-            if (Double.compare(location.getLatitude(), location2.getLatitude()) != 0 || Double.compare(location.getLongitude(), location2.getLongitude()) != 0 || location.getTime() != location2.getTime() || location.getElapsedRealtimeNanos() != location2.getElapsedRealtimeNanos() || !m.l(location.getProvider(), location2.getProvider())) {
+            if (Double.compare(location.getLatitude(), location2.getLatitude()) != 0 || Double.compare(location.getLongitude(), location2.getLongitude()) != 0 || location.getTime() != location2.getTime() || location.getElapsedRealtimeNanos() != location2.getElapsedRealtimeNanos() || !l.l(location.getProvider(), location2.getProvider())) {
                 return false;
             }
         }
@@ -58,8 +58,8 @@ public final class LocationResult extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.p(parcel, 1, this.a);
-        f5.r(parcel, q10);
+        int q6 = e0.q(parcel, 20293);
+        e0.p(parcel, 1, this.a);
+        e0.r(parcel, q6);
     }
 }

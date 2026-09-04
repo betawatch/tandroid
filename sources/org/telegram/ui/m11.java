@@ -1,35 +1,98 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class m11 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q11 b;
-    public final /* synthetic */ int c;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ m11(q11 q11Var, int i10, int i11) {
-        this.a = i11;
-        this.b = q11Var;
-        this.c = i10;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class m11 extends Drawable implements org.telegram.ui.ActionBar.i5 {
+    public final org.telegram.ui.Components.p6 a;
+    public final Paint b;
+    public int c;
+    public float d;
+    public float e;
+    public final org.telegram.ui.Cells.l0 f;
+    public org.telegram.ui.Cells.w0 h;
+
+    public m11(String str) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.d = 1.0f;
+        this.e = 1.0f;
+        this.f = new org.telegram.ui.Cells.l0(this);
+        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(false, false, false, false);
+        this.a = p6Var;
+        p6Var.setCallback(new yr(1, this));
+        p6Var.q(str, true, true);
+        p6Var.t(AndroidUtilities.dp(11.0f));
+        p6Var.b = 17;
+        paint.setColor(520093696);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                q11 q11Var = this.b;
-                org.telegram.ui.Components.k81 k81Var = q11Var.n;
-                p11 p11Var = q11Var.s;
-                int i10 = this.c;
-                k81Var.d(i10, p11Var.i(i10));
-                break;
-            default:
-                q11 q11Var2 = this.b;
-                org.telegram.ui.Components.k81 k81Var2 = q11Var2.n;
-                p11 p11Var2 = q11Var2.s;
-                int i11 = this.c;
-                k81Var2.d(i11, p11Var2.i(i11));
-                break;
+    public final void a(int i10) {
+        Paint paint = this.b;
+        if (paint.getColor() != i10) {
+            paint.setColor(i10);
+            invalidateSelf();
         }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f7 = this.d * this.e;
+        if (f7 <= 0.0f) {
+            return;
+        }
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(getBounds());
+        canvas.save();
+        float a2 = this.f.a(0.1f);
+        canvas.scale(a2, a2, rectF.centerX(), rectF.centerY());
+        Paint paint = this.b;
+        int alpha = paint.getAlpha();
+        paint.setAlpha((int) (alpha * f7));
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(20.0f), AndroidUtilities.dp(20.0f), paint);
+        paint.setAlpha(alpha);
+        int i10 = this.c;
+        org.telegram.ui.Components.p6 p6Var = this.a;
+        p6Var.r(i10);
+        p6Var.w = (int) (f7 * 255.0f);
+        p6Var.setBounds((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
+        p6Var.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return (int) (this.d * 255.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(17.33f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return (int) (this.a.d + AndroidUtilities.dp(11.0f));
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10 / 255.0f;
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

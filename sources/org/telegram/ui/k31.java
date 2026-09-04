@@ -1,36 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import android.view.View;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class k31 implements m31 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 a;
-    public final /* synthetic */ Context b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
-    public final /* synthetic */ org.telegram.ui.Components.z80 d;
+public final class k31 extends j71 {
+    public final /* synthetic */ m31 d2;
+    public final /* synthetic */ a71[] e2;
+    public final /* synthetic */ n31 f2;
 
-    public k31(org.telegram.ui.ActionBar.p2 p2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, org.telegram.ui.Components.z80 z80Var) {
-        this.a = p2Var;
-        this.b = context;
-        this.c = f6Var;
-        this.d = z80Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public k31(n31 n31Var, n31 n31Var2, Activity activity, Integer num, m31 m31Var, a71[] a71VarArr) {
+        super(n31Var2, activity, false, num, 2, null);
+        this.f2 = n31Var;
+        this.d2 = m31Var;
+        this.e2 = a71VarArr;
     }
 
-    @Override // org.telegram.ui.m31
-    public final void a() {
-        AndroidUtilities.runOnUIThread(new e31(this.a, this.b, this.c, this.d, 2), 200L);
+    @Override // org.telegram.ui.j71
+    public final void p(View view, Long l4, TLRPC.Document document, TL_stars.TL_starGiftUnique tL_starGiftUnique, Integer num) {
+        int i10;
+        if (l4 == null) {
+            return;
+        }
+        n31 n31Var = this.f2;
+        i10 = ((org.telegram.ui.ActionBar.n2) n31Var).currentAccount;
+        MediaDataController.getInstance(i10).setDoubleTapReaction("animated_" + l4);
+        m31 m31Var = this.d2;
+        if (m31Var != null) {
+            m31Var.a(true);
+        }
+        a71 a71Var = this.e2[0];
+        if (a71Var != null) {
+            n31Var.n = null;
+            a71Var.dismiss();
+        }
     }
 
-    @Override // org.telegram.ui.m31
-    public final void b() {
-        AndroidUtilities.runOnUIThread(new b11(7, this.a, this.d), 200L);
-    }
-
-    @Override // org.telegram.ui.m31
-    public final void c() {
-        org.telegram.ui.ActionBar.p2 p2Var = this.a;
-        p2Var.showDialog(new eg.o1(p2Var, 3, true));
+    @Override // org.telegram.ui.j71
+    public final void r(s61 s61Var, ah.j1 j1Var) {
+        int i10;
+        n31 n31Var = this.f2;
+        i10 = ((org.telegram.ui.ActionBar.n2) n31Var).currentAccount;
+        MediaDataController.getInstance(i10).setDoubleTapReaction(j1Var.f);
+        m31 m31Var = this.d2;
+        if (m31Var != null) {
+            m31Var.a(true);
+        }
+        a71 a71Var = this.e2[0];
+        if (a71Var != null) {
+            n31Var.n = null;
+            a71Var.dismiss();
+        }
     }
 }

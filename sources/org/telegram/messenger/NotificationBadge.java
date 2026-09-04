@@ -20,7 +20,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class NotificationBadge {
     private static final List<Class<? extends Badger>> BADGERS;
@@ -28,7 +28,7 @@ public class NotificationBadge {
     private static ComponentName componentName;
     private static boolean initied;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class AdwHomeBadger implements Badger {
         public static final String CLASSNAME = "CNAME";
         public static final String COUNT = "COUNT";
@@ -57,7 +57,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ApexHomeBadger implements Badger {
         private static final String CLASS = "class";
         private static final String COUNT = "count";
@@ -86,7 +86,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class AsusHomeBadger implements Badger {
         private static final String INTENT_ACTION = "android.intent.action.BADGE_COUNT_UPDATE";
         private static final String INTENT_EXTRA_ACTIVITY_NAME = "badge_count_class_name";
@@ -116,14 +116,14 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface Badger {
         void executeBadge(int i10);
 
         List<String> getSupportLaunchers();
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class DefaultBadger implements Badger {
         private static final String INTENT_ACTION = "android.intent.action.BADGE_COUNT_UPDATE";
         private static final String INTENT_EXTRA_ACTIVITY_NAME = "badge_count_class_name";
@@ -153,14 +153,14 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class HuaweiHomeBadger implements Badger {
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ void lambda$executeBadge$0(Bundle bundle) {
             try {
                 ApplicationLoader.applicationContext.getContentResolver().call(Uri.parse("content://com.huawei.android.launcher.settings/badge/"), "change_badge", (String) null, bundle);
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
 
@@ -170,7 +170,7 @@ public class NotificationBadge {
             bundle.putString("package", ApplicationLoader.applicationContext.getPackageName());
             bundle.putString("class", NotificationBadge.componentName.getClassName());
             bundle.putInt("badgenumber", i10);
-            AndroidUtilities.runOnUIThread(new xg(bundle, 1));
+            AndroidUtilities.runOnUIThread(new vg(bundle, 1));
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
@@ -179,7 +179,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class NewHtcHomeBadger implements Badger {
         public static final String COUNT = "count";
         public static final String EXTRA_COMPONENT = "com.htc.launcher.extra.COMPONENT";
@@ -203,7 +203,7 @@ public class NotificationBadge {
             intent2.putExtra(PACKAGENAME, NotificationBadge.componentName.getPackageName());
             intent2.putExtra(COUNT, i10);
             if (NotificationBadge.canResolveBroadcast(intent) || NotificationBadge.canResolveBroadcast(intent2)) {
-                AndroidUtilities.runOnUIThread(new fc(29, intent, intent2));
+                AndroidUtilities.runOnUIThread(new dc(29, intent, intent2));
             }
         }
 
@@ -213,7 +213,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class NovaHomeBadger implements Badger {
         private static final String CONTENT_URI = "content://com.teslacoilsw.notifier/unread_count";
         private static final String COUNT = "count";
@@ -233,7 +233,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class OPPOHomeBader implements Badger {
         private static final String INTENT_ACTION = "com.oppo.unsettledevent";
         private static final String INTENT_EXTRA_BADGEUPGRADE_COUNT = "app_badge_count";
@@ -267,15 +267,15 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class SamsungHomeBadger implements Badger {
         private static final String[] CONTENT_PROJECTION = {"_id", "class"};
         private static final String CONTENT_URI = "content://com.sec.badge/apps?notify=true";
         private static DefaultBadger defaultBadger;
 
-        private ContentValues getContentValues(ComponentName componentName, int i10, boolean z4) {
+        private ContentValues getContentValues(ComponentName componentName, int i10, boolean z10) {
             ContentValues contentValues = new ContentValues();
-            if (z4) {
+            if (z10) {
                 contentValues.put("package", componentName.getPackageName());
                 contentValues.put("class", componentName.getClassName());
             }
@@ -299,14 +299,14 @@ public class NotificationBadge {
                 cursor = contentResolver.query(parse, CONTENT_PROJECTION, "package=?", new String[]{NotificationBadge.componentName.getPackageName()}, null);
                 if (cursor != null) {
                     String className = NotificationBadge.componentName.getClassName();
-                    boolean z4 = false;
+                    boolean z10 = false;
                     while (cursor.moveToNext()) {
                         contentResolver.update(parse, getContentValues(NotificationBadge.componentName, i10, false), "_id=?", new String[]{String.valueOf(cursor.getInt(0))});
                         if (className.equals(cursor.getString(cursor.getColumnIndex("class")))) {
-                            z4 = true;
+                            z10 = true;
                         }
                     }
-                    if (!z4) {
+                    if (!z10) {
                         contentResolver.insert(parse, getContentValues(NotificationBadge.componentName, i10, true));
                     }
                 }
@@ -323,7 +323,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class SonyHomeBadger implements Badger {
         private static final String INTENT_ACTION = "com.sonyericsson.home.action.UPDATE_BADGE";
         private static final String INTENT_EXTRA_ACTIVITY_NAME = "com.sonyericsson.home.intent.extra.badge.ACTIVITY_NAME";
@@ -397,7 +397,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class VivoHomeBadger implements Badger {
         @Override // org.telegram.messenger.NotificationBadge.Badger
         public void executeBadge(int i10) {
@@ -415,7 +415,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class XiaomiHomeBadger implements Badger {
         public static final String EXTRA_UPDATE_APP_COMPONENT_NAME = "android.intent.extra.update_application_component_name";
         public static final String EXTRA_UPDATE_APP_MSG_TEXT = "android.intent.extra.update_application_message_text";
@@ -449,7 +449,7 @@ public class NotificationBadge {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ZukHomeBadger implements Badger {
         private final Uri CONTENT_URI = Uri.parse("content://com.android.badge/badge");
 
@@ -457,14 +457,14 @@ public class NotificationBadge {
         public /* synthetic */ void lambda$executeBadge$0(Bundle bundle) {
             try {
                 ApplicationLoader.applicationContext.getContentResolver().call(this.CONTENT_URI, "setAppBadgeCount", (String) null, bundle);
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger
         public void executeBadge(int i10) {
-            AndroidUtilities.runOnUIThread(new yg(0, this, android.support.v4.media.a.h(i10, "app_badge_count")));
+            AndroidUtilities.runOnUIThread(new wg(0, this, org.telegram.ui.Cells.p6.e(i10, "app_badge_count")));
         }
 
         @Override // org.telegram.messenger.NotificationBadge.Badger

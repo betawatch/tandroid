@@ -1,29 +1,83 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.content.Context;
+import android.view.MotionEvent;
+import android.view.WindowManager;
+import org.telegram.messenger.FileLog;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class zb extends eb {
-    public float a;
-    public yb b;
-    public p9 c;
-    public k6 d;
-    public boolean e;
+public final class zb extends fk0 {
+    public final /* synthetic */ int l1 = 0;
+    public final /* synthetic */ Object m1;
 
-    @Override // org.telegram.ui.Components.nb
-    public CharSequence getAccessibilityText() {
-        return this.d.getText();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zb(org.telegram.ui.st stVar, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(4, i10, context, null, f6Var);
+        this.m1 = stVar;
     }
 
-    public void setProgress(float f10) {
-        if (this.e != (f10 < 1.0f)) {
-            this.e = f10 < 1.0f;
-            this.c.animate().scaleX(this.e ? 0.78f : 1.0f).scaleY(this.e ? 0.78f : 1.0f).setDuration(320L).setInterpolator(mr.h).start();
+    @Override // org.telegram.ui.Components.fk0, android.view.ViewGroup, android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        qc qcVar;
+        switch (this.l1) {
+            case 0:
+                bc bcVar = (bc) this.m1;
+                if (motionEvent.getAction() == 0) {
+                    qc qcVar2 = bcVar.n;
+                    if (qcVar2 != null) {
+                        qcVar2.i(false);
+                    }
+                } else if (motionEvent.getAction() == 1 && (qcVar = bcVar.n) != null) {
+                    qcVar.i(true);
+                }
+                break;
         }
-        this.a = f10;
-        this.b.invalidate();
+        return super.dispatchTouchEvent(motionEvent);
     }
 
-    public void setTextColor(int i10) {
-        this.d.setTextColor(i10);
+    @Override // org.telegram.ui.Components.fk0
+    public void j() {
+        switch (this.l1) {
+            case 1:
+                super.j();
+                org.telegram.ui.st stVar = (org.telegram.ui.st) this.m1;
+                if (getReactionsWindow() != null) {
+                    WindowManager.LayoutParams layoutParams = stVar.x;
+                    layoutParams.flags &= -131073;
+                    layoutParams.softInputMode = 16;
+                } else {
+                    stVar.x.flags |= 131072;
+                }
+                try {
+                    ((WindowManager) stVar.w.getSystemService("window")).updateViewLayout(stVar.y, stVar.x);
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
+                }
+            default:
+                super.j();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.fk0
+    public void m() {
+        switch (this.l1) {
+            case 0:
+                qc qcVar = qc.w;
+                if (qcVar != null) {
+                    qcVar.i(false);
+                }
+                ((bc) this.m1).d.getReactionsWindow().c.setOnClickListener(new g0(this, 5));
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zb(bc bcVar, org.telegram.ui.ActionBar.n2 n2Var, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(3, i10, context, n2Var, f6Var);
+        this.m1 = bcVar;
     }
 }

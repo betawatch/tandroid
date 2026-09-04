@@ -1,71 +1,79 @@
 package x3;
 
-import j3.r1;
-import o3.h;
-import r3.u;
-import r3.v;
-import r3.w;
+import b2.r;
+import b2.r0;
+import b2.s;
+import c3.u;
+import e2.v;
+import java.util.Arrays;
+import n7.z0;
+import u2.x0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c {
-    public int A;
-    public int B;
-    public int C;
-    public float D;
-    public float E;
-    public float F;
-    public float G;
-    public float H;
-    public float I;
-    public float J;
-    public float K;
-    public float L;
-    public float M;
-    public byte[] N;
-    public int O;
-    public int P;
-    public int Q;
-    public long R;
-    public long S;
-    public w T;
-    public boolean U;
-    public boolean V;
-    public String W;
-    public v X;
-    public int Y;
-    public String a;
-    public String b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public boolean h;
-    public byte[] i;
-    public u j;
-    public byte[] k;
-    public h l;
-    public int m;
-    public int n;
-    public int o;
-    public int p;
-    public int q;
-    public int r;
-    public float s;
-    public float t;
-    public float u;
-    public byte[] v;
-    public int w;
-    public boolean x;
-    public int y;
-    public int z;
+public final class c extends i {
+    public u n;
+    public x0 o;
 
-    public final byte[] a(String str) {
-        byte[] bArr = this.k;
-        if (bArr != null) {
-            return bArr;
+    @Override // x3.i
+    public final long b(v vVar) {
+        byte[] bArr = vVar.a;
+        if (bArr[0] != -1) {
+            return -1L;
         }
-        throw r1.a("Missing CodecPrivate for codec " + str, null);
+        int i10 = (bArr[2] & 255) >> 4;
+        if (i10 == 6 || i10 == 7) {
+            vVar.K(4);
+            vVar.E();
+        }
+        int t10 = c3.b.t(i10, vVar);
+        vVar.J(0);
+        return t10;
+    }
+
+    @Override // x3.i
+    public final boolean c(v vVar, long j3, z0 z0Var) {
+        byte[] bArr = vVar.a;
+        u uVar = this.n;
+        if (uVar == null) {
+            u uVar2 = new u(bArr, 17);
+            this.n = uVar2;
+            r a2 = uVar2.c(Arrays.copyOfRange(bArr, 9, vVar.c), null).a();
+            a2.p = r0.n("audio/ogg");
+            z0Var.b = new s(a2);
+            return true;
+        }
+        byte b10 = bArr[0];
+        if ((b10 & Byte.MAX_VALUE) != 3) {
+            if (b10 != -1) {
+                return true;
+            }
+            x0 x0Var = this.o;
+            if (x0Var != null) {
+                x0Var.a = j3;
+                z0Var.c = x0Var;
+            }
+            ((s) z0Var.b).getClass();
+            return false;
+        }
+        pf.b u10 = c3.b.u(vVar);
+        u uVar3 = new u(uVar.a, uVar.b, uVar.c, uVar.d, uVar.e, uVar.g, uVar.h, uVar.j, u10, uVar.l);
+        this.n = uVar3;
+        x0 x0Var2 = new x0();
+        x0Var2.c = uVar3;
+        x0Var2.d = u10;
+        x0Var2.a = -1L;
+        x0Var2.b = -1L;
+        this.o = x0Var2;
+        return true;
+    }
+
+    @Override // x3.i
+    public final void d(boolean z10) {
+        super.d(z10);
+        if (z10) {
+            this.n = null;
+            this.o = null;
+        }
     }
 }

@@ -1,67 +1,142 @@
 package org.telegram.ui;
 
-import android.app.Activity;
-import java.io.Serializable;
-import java.util.HashSet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import android.view.View;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yd implements RequestDelegate {
+public class yd extends LinearLayout {
+    public static float b = 1.0f;
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
 
-    public /* synthetic */ yd(Object obj, Object obj2, Object obj3, boolean z4, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ yd(Context context, int i10) {
+        super(context);
         this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = z4;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
         switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new j3.n1((me) this.c, tL_error, (TwoStepVerificationActivity) this.d, (Activity) this.e, this.b, tLObject, 7));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new gg.j(this.c, this.d, (Object) tLObject, this.e, this.b, 11));
-                break;
+            case 4:
+                if (!(getParent() instanceof org.telegram.ui.Components.zn0)) {
+                    return super.drawChild(canvas, view, j3);
+                }
+                org.telegram.ui.Components.zn0 zn0Var = (org.telegram.ui.Components.zn0) getParent();
+                canvas.save();
+                LinearLayout linearLayout = zn0Var.b;
+                Path path = zn0Var.n;
+                if (view != null && org.telegram.ui.Components.zn0.e(view)) {
+                    int indexOfChild = linearLayout.indexOfChild(view);
+                    int i10 = indexOfChild - 1;
+                    View childAt = i10 < 0 ? null : linearLayout.getChildAt(i10);
+                    int i11 = indexOfChild + 1;
+                    View childAt2 = i11 < linearLayout.getChildCount() ? linearLayout.getChildAt(i11) : null;
+                    boolean z10 = childAt != null && org.telegram.ui.Components.zn0.e(childAt);
+                    boolean z11 = childAt2 != null && org.telegram.ui.Components.zn0.e(childAt2);
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(view.getX(), Math.max(zn0Var.getScrollY() - AndroidUtilities.dp(16.0f), view.getY() + linearLayout.getY()), view.getX() + view.getWidth(), Math.min(AndroidUtilities.dp(16.0f) + zn0Var.getScrollY() + zn0Var.getHeight(), view.getY() + linearLayout.getY() + view.getHeight()));
+                    if (z10 && z11) {
+                        z10 = view.getY() >= rectF.top;
+                        boolean z12 = view.getY() + ((float) view.getHeight()) <= rectF.bottom;
+                        if (!z10 || !z12) {
+                            z11 = z12;
+                        }
+                    }
+                    if (!z10 && !z11) {
+                        path.rewind();
+                        float f7 = zn0Var.c;
+                        path.addRoundRect(rectF, f7, f7, Path.Direction.CW);
+                        canvas.clipPath(path);
+                    } else if (!z10) {
+                        path.rewind();
+                        path.addRoundRect(rectF, zn0Var.d, Path.Direction.CW);
+                        canvas.clipPath(path);
+                    } else if (!z11) {
+                        path.rewind();
+                        path.addRoundRect(rectF, zn0Var.e, Path.Direction.CW);
+                        canvas.clipPath(path);
+                    }
+                }
+                boolean drawChild = super.drawChild(canvas, view, j3);
+                canvas.restore();
+                return drawChild;
+            default:
+                return super.drawChild(canvas, view, j3);
+        }
+    }
+
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
             case 2:
-                AndroidUtilities.runOnUIThread(new j3.n1((cp) this.c, (TLRPC.TL_channels_toggleUsername) this.d, tLObject, (TLRPC.TL_username) this.e, this.b, tL_error, 9));
+                super.onLayout(z10, i10, i11, i12, i13);
+                setPivotX(getWidth());
                 break;
             case 3:
-                AndroidUtilities.runOnUIThread(new gg.j((org.telegram.ui.Components.ry) this.c, (String) this.d, this.b, (String) this.e, tLObject, 14));
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new j3.n1((cu) this.c, tLObject, (ph.d) this.d, this.b, (HashSet) this.e, tL_error, 11));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new gg.j(this.c, tLObject, this.b, (TLObject) this.d, (String) this.e, 20));
+                super.onLayout(z10, i10, i11, i12, i13);
+                if (getParent() instanceof org.telegram.ui.Components.zn0) {
+                    ((org.telegram.ui.Components.zn0) getParent()).invalidate();
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ yd(Object obj, Object obj2, boolean z4, Serializable serializable, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = z4;
-        this.e = serializable;
+    @Override // android.widget.LinearLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                break;
+            case 1:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                break;
+            case 2:
+            case 4:
+            case 5:
+            default:
+                super.onMeasure(i10, i11);
+                break;
+            case 3:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(220.0f), View.MeasureSpec.getSize(i10)), View.MeasureSpec.getMode(i10)), i11);
+                break;
+            case 6:
+                super.onMeasure(i10, i11);
+                setPivotY(0.0f);
+                setPivotX(0.0f);
+                break;
+            case 7:
+                super.onMeasure(i10, i11);
+                setPivotY(0.0f);
+                setPivotX(getMeasuredWidth());
+                break;
+            case 8:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(600.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), AndroidUtilities.dp(800.0f)), TLObject.FLAG_30));
+                break;
+            case 9:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                break;
+            case 10:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                break;
+        }
     }
 
-    public /* synthetic */ yd(ph.f1 f1Var, boolean z4, TLRPC.TL_messages_getInlineBotResults tL_messages_getInlineBotResults, String str) {
-        this.a = 5;
-        this.c = f1Var;
-        this.b = z4;
-        this.d = tL_messages_getInlineBotResults;
-        this.e = str;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yd(Context context) {
+        super(context);
+        this.a = 4;
+        setWillNotDraw(false);
     }
 }

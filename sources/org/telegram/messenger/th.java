@@ -1,41 +1,28 @@
 package org.telegram.messenger;
 
-import android.os.SystemClock;
-import org.telegram.messenger.SharedConfig;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class th implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SharedConfig.ProxyInfo b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ long d;
 
-    public /* synthetic */ th(SharedConfig.ProxyInfo proxyInfo, long j10, int i10) {
+    public /* synthetic */ th(int i10, long j3, String str, String str2) {
         this.a = i10;
-        this.b = proxyInfo;
-        this.c = j10;
+        this.b = str;
+        this.c = str2;
+        this.d = j3;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        long j10 = this.c;
-        SharedConfig.ProxyInfo proxyInfo = this.b;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                ProxyRotationController.lambda$new$0(proxyInfo, j10);
+                PushListenerController.lambda$processRemoteMessage$6(this.b, this.c, this.d);
                 break;
             default:
-                proxyInfo.availableCheckTime = SystemClock.elapsedRealtime();
-                proxyInfo.checking = false;
-                if (j10 == -1) {
-                    proxyInfo.available = false;
-                    proxyInfo.ping = 0L;
-                } else {
-                    proxyInfo.ping = j10;
-                    proxyInfo.available = true;
-                }
-                NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxyCheckDone, proxyInfo);
+                PushListenerController.lambda$processRemoteMessage$7(this.b, this.c, this.d);
                 break;
         }
     }

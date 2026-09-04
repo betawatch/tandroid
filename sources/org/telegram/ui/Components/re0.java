@@ -1,64 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class re0 extends FrameLayout {
-    public TextView a;
-    public TextView b;
-    public ImageView c;
-    public Switch d;
-    public boolean e;
+public final class re0 extends s6 {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ ue0 c;
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        Switch r02 = this.d;
-        if (r02 != null) {
-            r02.invalidate();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public re0(ue0 ue0Var, int i10) {
+        super("thumbAnimationProgress", 0);
+        this.b = i10;
+        switch (i10) {
+            case 1:
+                this.c = ue0Var;
+                super("thumbImageVisibleProgress", 0);
+                break;
+            default:
+                this.c = ue0Var;
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.e) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(70.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(70.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+    @Override // org.telegram.ui.Components.s6
+    public final void b(Object obj, float f7) {
+        switch (this.b) {
+            case 0:
+                this.c.r = f7;
+                ((ue0) obj).invalidate();
+                break;
+            default:
+                this.c.n = f7;
+                ((ue0) obj).invalidate();
+                break;
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        int dp = AndroidUtilities.dp(13.0f) + this.a.getMeasuredHeight();
-        TextView textView = this.b;
-        textView.layout(textView.getLeft(), dp, textView.getRight(), textView.getMeasuredHeight() + dp);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        TextView textView = this.a;
-        measureChildWithMargins(textView, i10, 0, i11, 0);
-        TextView textView2 = this.b;
-        measureChildWithMargins(textView2, i10, 0, i11, 0);
-        measureChildWithMargins(this.c, i10, 0, i11, 0);
-        Switch r72 = this.d;
-        if (r72 != null) {
-            measureChildWithMargins(r72, i10, 0, i11, 0);
-        }
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), org.telegram.messenger.y3.b(20.0f, textView2.getMeasuredHeight() + textView.getMeasuredHeight(), AndroidUtilities.dp(64.0f)) + (this.e ? 1 : 0));
-    }
-
-    public void setChecked(boolean z4) {
-        Switch r02 = this.d;
-        if (r02 != null) {
-            r02.c(z4, true);
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        switch (this.b) {
+            case 0:
+                return Float.valueOf(this.c.r);
+            default:
+                return Float.valueOf(this.c.n);
         }
     }
 }

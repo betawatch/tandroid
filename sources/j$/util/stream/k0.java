@@ -25,7 +25,7 @@ public final class k0 implements IntFunction, LongFunction {
     }
 
     @Override // java.util.function.LongFunction
-    public Object apply(long j10) {
-        return t3.Y(j10, this.a);
+    public Object apply(long j3) {
+        return t3.Y(j3, this.a);
     }
 }

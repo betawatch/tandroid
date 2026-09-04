@@ -1,51 +1,69 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.messenger.MediaController;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class il implements Comparator {
+public final /* synthetic */ class il implements c91, d5, bl0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ ChatAttachAlertPhotoLayout b;
 
-    public /* synthetic */ il(Object obj, int i10) {
+    public /* synthetic */ il(ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = chatAttachAlertPhotoLayout;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int indexOf;
-        int indexOf2;
-        int i10 = this.a;
-        Object obj3 = this.b;
-        switch (i10) {
-            case 0:
-                ArrayList arrayList = (ArrayList) obj3;
-                MediaController.AlbumEntry albumEntry = (MediaController.AlbumEntry) obj;
-                MediaController.AlbumEntry albumEntry2 = (MediaController.AlbumEntry) obj2;
-                boolean z4 = ChatAttachAlertPhotoLayout.n1;
-                int i11 = albumEntry.bucketId;
-                if (i11 != 0 || albumEntry2.bucketId == 0) {
-                    if ((i11 != 0 && albumEntry2.bucketId == 0) || (indexOf = arrayList.indexOf(albumEntry)) > (indexOf2 = arrayList.indexOf(albumEntry2))) {
-                        return 1;
-                    }
-                    if (indexOf >= indexOf2) {
-                        return 0;
-                    }
-                }
-                return -1;
+    @Override // org.telegram.ui.Components.d5
+    public void J(int i10, int i11, boolean z10) {
+        int i12 = this.a;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        switch (i12) {
+            case 1:
+                boolean z11 = ChatAttachAlertPhotoLayout.q1;
+                vi viVar = chatAttachAlertPhotoLayout.b;
+                viVar.Y0();
+                viVar.Z1.l0(7, false, z10, i10, 0, 0L, viVar.s1(), false, 0L);
+                break;
             default:
-                kz kzVar = ((tw) obj3).D0;
-                int indexOf3 = kzVar.a1.indexOf((TLRPC.TL_messages_stickerSet) obj);
-                int indexOf4 = kzVar.a1.indexOf((TLRPC.TL_messages_stickerSet) obj2);
-                if (indexOf3 < 0 || indexOf4 < 0) {
-                    return 0;
-                }
-                return indexOf3 - indexOf4;
+                boolean z12 = ChatAttachAlertPhotoLayout.q1;
+                vi viVar2 = chatAttachAlertPhotoLayout.b;
+                viVar2.Y0();
+                viVar2.Z1.l0(4, true, z10, i10, 0, 0L, viVar2.s1(), false, 0L);
+                break;
         }
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public boolean a(int i10, View view) {
+        boolean z10 = ChatAttachAlertPhotoLayout.q1;
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        vi viVar = chatAttachAlertPhotoLayout.b;
+        if (!viVar.T0) {
+            if (i10 == 0 && chatAttachAlertPhotoLayout.T0 == chatAttachAlertPhotoLayout.U0) {
+                ti tiVar = viVar.Z1;
+                if (tiVar != null) {
+                    tiVar.l0(0, false, true, 0, 0, 0L, viVar.s1(), false, 0L);
+                }
+                return true;
+            }
+            if (view instanceof org.telegram.ui.Cells.s5) {
+                nl0 nl0Var = chatAttachAlertPhotoLayout.I;
+                boolean z11 = !((org.telegram.ui.Cells.s5) view).a();
+                chatAttachAlertPhotoLayout.K = z11;
+                nl0Var.d(view, i10, z11);
+            }
+        }
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.c91
+    public void b(float f7) {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = this.b;
+        dm dmVar = chatAttachAlertPhotoLayout.P;
+        if (dmVar != null) {
+            chatAttachAlertPhotoLayout.B0 = f7;
+            dmVar.setZoom(f7);
+        }
+        chatAttachAlertPhotoLayout.t0(true);
     }
 }

@@ -1,124 +1,58 @@
 package af;
 
-import android.util.Log;
-import b6.m;
-import com.google.android.gms.cast.MediaError;
-import com.google.android.gms.cast.MediaInfo;
-import q5.k;
+import com.google.android.gms.internal.vision.e2;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.nio.charset.Charset;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends s5.g {
-    public final s5.h a;
-    public final r5.g b;
-    public final r5.c c;
-    public j d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
+public abstract class b {
+    public static final Map a;
+    public static final Pattern b;
 
-    public b(r5.c cVar, r5.g gVar, s5.h hVar) {
-        this.c = cVar;
-        this.b = gVar;
-        this.a = hVar;
-    }
-
-    @Override // s5.g
-    public final void a() {
-        Log.d("CAST_CLIENT", "onAdBreakStatusUpdated " + this.c.a());
-    }
-
-    @Override // s5.g
-    public final void b(MediaError mediaError) {
-        StringBuilder sb = new StringBuilder("onMediaError ");
-        sb.append(this.c.a());
-        sb.append(" ");
-        Integer num = mediaError.c;
-        sb.append(num);
-        sb.append(" ");
-        sb.append(mediaError.b);
-        Log.d("CAST_CLIENT", sb.toString());
-        this.e = num != null ? num.intValue() : -1;
-    }
-
-    @Override // s5.g
-    public final void c() {
-        Log.d("CAST_CLIENT", "onMetadataUpdated " + this.c.a());
-    }
-
-    @Override // s5.g
-    public final void d() {
-        Log.d("CAST_CLIENT", "onPreloadStatusUpdated " + this.c.a());
-    }
-
-    @Override // s5.g
-    public final void e() {
-        Log.d("CAST_CLIENT", "onQueueStatusUpdated " + this.c.a());
-    }
-
-    @Override // s5.g
-    public final void f() {
-        Log.d("CAST_CLIENT", "onSendingRemoteMediaRequest " + this.c.a());
-    }
-
-    @Override // s5.g
-    public final void g() {
-        Log.d("CAST_CLIENT", "onStatusUpdated " + this.c.a());
-        int b10 = this.a.b();
-        if (b10 != this.f) {
-            Log.d("CAST_CLIENT", "idleReason " + b10);
-            this.f = b10;
-            if (b10 == 2) {
-                this.b.b(true);
-                return;
-            }
-            if (b10 == 4) {
-                int i10 = this.e;
-                if (i10 == 104) {
-                    q(true);
-                } else if (i10 == 102) {
-                    q(false);
+    static {
+        HashMap hashMap = new HashMap();
+        try {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(b.class.getResourceAsStream("/org/commonmark/internal/util/entities.properties"), Charset.forName("UTF-8")));
+            while (true) {
+                try {
+                    String readLine = bufferedReader.readLine();
+                    if (readLine == null) {
+                        bufferedReader.close();
+                        hashMap.put("NewLine", "\n");
+                        a = hashMap;
+                        b = Pattern.compile("^&#[Xx]?");
+                        return;
+                    }
+                    if (readLine.length() != 0) {
+                        int indexOf = readLine.indexOf("=");
+                        hashMap.put(readLine.substring(0, indexOf), readLine.substring(indexOf + 1));
+                    }
+                } finally {
                 }
             }
+        } catch (IOException e7) {
+            throw new IllegalStateException("Failed reading data for HTML named character references", e7);
         }
     }
 
-    public final void p() {
-        this.e = -1;
-        if (this.d == null) {
-            this.d = null;
-            return;
+    public static String a(String str) {
+        Matcher matcher = b.matcher(str);
+        if (!matcher.find()) {
+            String str2 = (String) a.get(e2.i(1, 1, str));
+            return str2 != null ? str2 : str;
         }
-        String i10 = g.i();
-        i a2 = this.g < this.d.a.size() ? this.d.a(this.g) : g.l;
-        MediaInfo mediaInfo = new MediaInfo(g.j(i10, a2.d) + ("?index=" + this.g + "&attempt=" + this.h), 1, a2.a, a2.b, -1L, null, null, null, null, null, null, null, -1L, null, null, null, null);
-        Boolean bool = Boolean.TRUE;
-        if (Double.compare(1.0d, 2.0d) > 0 || Double.compare(1.0d, 0.5d) < 0) {
-            throw new IllegalArgumentException("playbackRate must be between PLAYBACK_RATE_MIN and PLAYBACK_RATE_MAX");
+        try {
+            int parseInt = Integer.parseInt(str.substring(matcher.end(), str.length() - 1), matcher.end() == 2 ? 10 : 16);
+            return parseInt == 0 ? "�" : new String(Character.toChars(parseInt));
+        } catch (IllegalArgumentException unused) {
+            return "�";
         }
-        k kVar = new k(mediaInfo, null, bool, -1L, 1.0d, null, null, null, null, null, null, 0L);
-        m.e("Must be called from the main thread.");
-        s5.h hVar = this.a;
-        if (hVar.w()) {
-            s5.h.x(new s5.j(hVar, kVar, 1));
-        } else {
-            s5.h.t();
-        }
-    }
-
-    public final void q(boolean z4) {
-        if (z4) {
-            this.g++;
-        } else {
-            int i10 = this.h + 1;
-            this.h = i10;
-            if (i10 > 3) {
-                this.h = 0;
-                this.g++;
-            }
-        }
-        Log.e("CAST_CLIENT", "next attempt " + this.e + " " + this.g + " " + this.h);
-        p();
     }
 }

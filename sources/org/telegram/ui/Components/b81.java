@@ -1,34 +1,51 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.view.View;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class b81 extends AnimatorListenerAdapter {
-    public boolean a;
-    public final /* synthetic */ View b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ l81 d;
+public final /* synthetic */ class b81 implements al0, bl0 {
+    public final /* synthetic */ h81 a;
 
-    public b81(l81 l81Var, View view, float f10) {
-        this.d = l81Var;
-        this.b = view;
-        this.c = f10;
+    public /* synthetic */ b81(h81 h81Var) {
+        this.a = h81Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
-        super.onAnimationCancel(animator);
-        this.a = true;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.a) {
-            return;
+    @Override // org.telegram.ui.Components.bl0
+    public boolean a(int i10, View view) {
+        Utilities.Callback2Return callback2Return = this.a.b;
+        if (callback2Return == null) {
+            return false;
         }
-        this.d.E(this.b, this.c);
+        return ((Boolean) callback2Return.run(Integer.valueOf(((f81) view).a.a), view)).booleanValue();
+    }
+
+    @Override // org.telegram.ui.Components.al0
+    public void d(float f7, float f10, int i10, View view) {
+        h81 h81Var = this.a;
+        g81 g81Var = h81Var.y;
+        if (g81Var != null) {
+            i81 i81Var = (i81) ((k2.g0) g81Var).b;
+            if (i81Var.x || i81Var.H) {
+                return;
+            }
+        }
+        f81 f81Var = (f81) view;
+        if (i10 != h81Var.F || g81Var == null) {
+            Utilities.Callback2Return callback2Return = h81Var.l0;
+            if (callback2Return == null || !((Boolean) callback2Return.run(Integer.valueOf(f81Var.a.a), Integer.valueOf(i10))).booleanValue()) {
+                h81Var.d(f81Var.a.a, i10);
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.al0
+    public /* synthetic */ boolean d1(View view) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.al0
+    public /* synthetic */ void q0(View view, float f7, float f10) {
     }
 }

@@ -1,91 +1,158 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
+import android.text.TextUtils;
+import android.util.LongSparseArray;
+import android.util.SparseArray;
 import java.util.ArrayList;
-import org.telegram.messenger.CacheByChatsController;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
+import java.util.Collections;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class d6 extends bg.c {
-    public final /* synthetic */ f6 d;
+public final /* synthetic */ class d6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z6 b;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ ArrayList d;
+    public final /* synthetic */ ArrayList e;
+    public final /* synthetic */ ai.c f;
 
-    public d6(f6 f6Var) {
-        this.d = f6Var;
+    public /* synthetic */ d6(z6 z6Var, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ai.c cVar, int i10) {
+        this.a = i10;
+        this.b = z6Var;
+        this.c = arrayList;
+        this.d = arrayList2;
+        this.e = arrayList3;
+        this.f = cVar;
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final boolean D(f2.l1 l1Var) {
-        int i10 = l1Var.f;
-        return i10 == 1 || i10 == 2 || i10 == 4;
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        return this.d.c.size();
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        return ((e6) this.d.c.get(i10)).a;
-    }
-
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        String str;
-        f6 f6Var = this.d;
-        ArrayList arrayList = f6Var.c;
-        if (((e6) arrayList.get(i10)).a == 2) {
-            org.telegram.ui.Cells.ua uaVar = (org.telegram.ui.Cells.ua) l1Var.a;
-            CacheByChatsController.KeepMediaException keepMediaException = ((e6) arrayList.get(i10)).c;
-            TLObject userOrChat = f6Var.getMessagesController().getUserOrChat(keepMediaException.dialogId);
-            if (userOrChat instanceof TLRPC.User) {
-                TLRPC.User user = (TLRPC.User) userOrChat;
-                str = user.self ? LocaleController.getString(R.string.SavedMessages) : ContactsController.formatName(user.first_name, user.last_name);
-            } else {
-                str = userOrChat instanceof TLRPC.Chat ? ((TLRPC.Chat) userOrChat).title : null;
-            }
-            boolean z4 = true;
-            uaVar.setSelfAsSavedMessages(true);
-            String keepMediaString = CacheByChatsController.getKeepMediaString(keepMediaException.keepMedia);
-            if (i10 != arrayList.size() - 1 && ((e6) arrayList.get(i10 + 1)).a != 2) {
-                z4 = false;
-            }
-            uaVar.d(userOrChat, str, keepMediaString, z4);
+    @Override // java.lang.Runnable
+    public final void run() {
+        boolean z10;
+        switch (this.a) {
+            case 0:
+                z6 z6Var = this.b;
+                ArrayList<Long> arrayList = this.c;
+                ArrayList arrayList2 = this.d;
+                ArrayList arrayList3 = this.e;
+                ai.c cVar = this.f;
+                ArrayList<TLRPC.User> arrayList4 = new ArrayList<>();
+                ArrayList<TLRPC.Chat> arrayList5 = new ArrayList<>();
+                if (!arrayList.isEmpty()) {
+                    try {
+                        z6Var.getMessagesStorage().getUsersInternal(arrayList, arrayList4);
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                    }
+                }
+                if (!arrayList2.isEmpty()) {
+                    try {
+                        z6Var.getMessagesStorage().getChatsInternal(TextUtils.join(",", arrayList2), arrayList5);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
+                    }
+                }
+                int i10 = 0;
+                while (i10 < arrayList3.size()) {
+                    if (((s6) arrayList3.get(i10)).c <= 0) {
+                        arrayList3.remove(i10);
+                        i10--;
+                    }
+                    i10++;
+                }
+                Collections.sort(arrayList3, new a4.e(29));
+                AndroidUtilities.runOnUIThread(new d6(z6Var, arrayList4, arrayList5, arrayList3, cVar, 1));
+                break;
+            default:
+                z6 z6Var2 = this.b;
+                ArrayList<TLRPC.User> arrayList6 = this.c;
+                ArrayList<TLRPC.Chat> arrayList7 = this.d;
+                ArrayList arrayList8 = this.e;
+                ai.c cVar2 = this.f;
+                z6Var2.getMessagesController().putUsers(arrayList6, true);
+                z6Var2.getMessagesController().putChats(arrayList7, true);
+                boolean z11 = false;
+                s6 s6Var = null;
+                int i11 = 0;
+                while (i11 < arrayList8.size()) {
+                    s6 s6Var2 = (s6) arrayList8.get(i11);
+                    if (z6Var2.getMessagesController().getUserOrChat(s6Var2.a) == null) {
+                        s6Var2.a = Long.MAX_VALUE;
+                        if (s6Var != null) {
+                            SparseArray sparseArray = s6Var.d;
+                            int i12 = 0;
+                            while (true) {
+                                SparseArray sparseArray2 = s6Var2.d;
+                                if (i12 < sparseArray2.size()) {
+                                    int keyAt = sparseArray2.keyAt(i12);
+                                    t6 t6Var = (t6) sparseArray2.valueAt(i12);
+                                    t6 t6Var2 = (t6) sparseArray.get(keyAt, z11);
+                                    if (t6Var2 == null) {
+                                        t6Var2 = new t6();
+                                        sparseArray.put(keyAt, t6Var2);
+                                    }
+                                    t6Var.getClass();
+                                    s6 s6Var3 = s6Var;
+                                    t6Var2.a += t6Var.a;
+                                    s6Var3.c += t6Var.a;
+                                    t6Var2.b.addAll(t6Var.b);
+                                    i12++;
+                                    s6Var = s6Var3;
+                                    z11 = false;
+                                } else {
+                                    s6Var.b += s6Var2.b;
+                                    arrayList8.remove(i11);
+                                    i11--;
+                                    z10 = true;
+                                }
+                            }
+                        } else {
+                            s6Var = s6Var2;
+                            z10 = false;
+                        }
+                        if (z10) {
+                            Collections.sort(arrayList8, new a4.e(29));
+                        }
+                    }
+                    i11++;
+                    z11 = false;
+                }
+                cVar2.b = arrayList8;
+                LongSparseArray longSparseArray = cVar2.c;
+                longSparseArray.clear();
+                int size = arrayList8.size();
+                int i13 = 0;
+                while (i13 < size) {
+                    Object obj = arrayList8.get(i13);
+                    i13++;
+                    s6 s6Var4 = (s6) obj;
+                    longSparseArray.put(s6Var4.a, s6Var4);
+                }
+                if (!z6.k0) {
+                    z6Var2.Y = cVar2;
+                    w6 w6Var = z6Var2.N;
+                    if (w6Var != null) {
+                        w6Var.setCacheModel(cVar2);
+                    }
+                    z6Var2.w0(true);
+                    z6Var2.v0();
+                    if (z6Var2.R != null && !z6Var2.L && System.currentTimeMillis() - z6Var2.U > 120) {
+                        k6 k6Var = z6Var2.R;
+                        long j3 = z6Var2.H;
+                        boolean z12 = j3 > 0;
+                        long j10 = z6Var2.I;
+                        float f7 = 0.0f;
+                        float f10 = j10 <= 0 ? 0.0f : j3 / j10;
+                        if (z6Var2.J > 0 && j10 > 0) {
+                            f7 = (j10 - r11) / j10;
+                        }
+                        k6Var.b(f10, f7, z12);
+                        break;
+                    }
+                }
+                break;
         }
-    }
-
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        View view2 = null;
-        if (i10 != 1) {
-            if (i10 == 2) {
-                View uaVar = new org.telegram.ui.Cells.ua(4, 0, viewGroup.getContext(), null, false, false);
-                uaVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-                view2 = uaVar;
-            } else if (i10 == 3) {
-                view = new org.telegram.ui.Cells.y6(viewGroup.getContext(), (b) null);
-            } else if (i10 == 4) {
-                org.telegram.ui.Cells.n8 n8Var = new org.telegram.ui.Cells.n8(viewGroup.getContext());
-                n8Var.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
-                n8Var.e(-1, org.telegram.ui.ActionBar.j6.p7);
-                n8Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-                view = n8Var;
-            }
-            return ai.n(view2, view2, -1, -2);
-        }
-        org.telegram.ui.Cells.n8 n8Var2 = new org.telegram.ui.Cells.n8(viewGroup.getContext());
-        n8Var2.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.NotificationsAddAnException), true);
-        n8Var2.e(org.telegram.ui.ActionBar.j6.v6, org.telegram.ui.ActionBar.j6.u6);
-        n8Var2.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-        view = n8Var2;
-        view2 = view;
-        return ai.n(view2, view2, -1, -2);
     }
 }

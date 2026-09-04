@@ -1,164 +1,74 @@
 package w2;
 
-import android.content.Context;
-import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
-import android.os.Build;
-import android.telephony.TelephonyManager;
-import android.util.SparseArray;
-import j7.i0;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.TimeZone;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.ui.Components.tp0;
-import vh.w2;
-import w9.d;
-import x2.c;
-import x2.f;
-import x2.g;
-import x2.h;
-import x2.i;
-import x2.j;
-import x2.k;
-import x2.l;
-import x2.n;
-import x2.o;
-import x2.q;
-import x2.r;
-import x2.s;
-import x2.t;
-import x2.u;
-import x2.v;
-import z2.e;
+import h2.g;
+import h2.h;
+import h2.j;
+import java.nio.ByteBuffer;
+import z3.f;
+import z3.i;
+import z3.m;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b implements e {
-    public final tp0 a;
-    public final ConnectivityManager b;
-    public final Context c;
-    public final URL d;
-    public final h3.a e;
-    public final h3.a f;
-    public final int g;
+public final class b extends j implements z3.e {
+    public final m o;
 
-    public b(Context context, h3.a aVar, h3.a aVar2) {
-        d dVar = new d();
-        c cVar = c.a;
-        dVar.b(o.class, cVar);
-        dVar.b(i.class, cVar);
-        f fVar = f.a;
-        dVar.b(s.class, fVar);
-        dVar.b(l.class, fVar);
-        x2.d dVar2 = x2.d.a;
-        dVar.b(q.class, dVar2);
-        dVar.b(j.class, dVar2);
-        x2.b bVar = x2.b.a;
-        dVar.b(x2.a.class, bVar);
-        dVar.b(h.class, bVar);
-        x2.e eVar = x2.e.a;
-        dVar.b(r.class, eVar);
-        dVar.b(k.class, eVar);
-        g gVar = g.a;
-        dVar.b(v.class, gVar);
-        dVar.b(n.class, gVar);
-        dVar.d = true;
-        this.a = new tp0(dVar, 23);
-        this.c = context;
-        this.b = (ConnectivityManager) context.getSystemService("connectivity");
-        this.d = b(a.c);
-        this.e = aVar2;
-        this.f = aVar;
-        this.g = 130000;
+    public b(String str, m mVar) {
+        super(new i[2], new z3.j[2]);
+        int i10 = this.g;
+        g[] gVarArr = this.e;
+        e2.d.g(i10 == gVarArr.length);
+        for (g gVar : gVarArr) {
+            gVar.l(1024);
+        }
+        this.o = mVar;
     }
 
-    public static URL b(String str) {
+    @Override // h2.j
+    public final g f() {
+        return new i();
+    }
+
+    @Override // h2.j
+    public final h g() {
+        return new z3.c(this);
+    }
+
+    @Override // h2.j
+    public final h2.e h(Throwable th2) {
+        return new f("Unexpected decode error", th2);
+    }
+
+    @Override // h2.j
+    public final h2.e i(g gVar, h hVar, boolean z10) {
+        i iVar = (i) gVar;
+        z3.j jVar = (z3.j) hVar;
         try {
-            return new URL(str);
-        } catch (MalformedURLException e) {
-            throw new IllegalArgumentException(w2.e("Invalid url: ", str), e);
+            ByteBuffer byteBuffer = iVar.e;
+            byteBuffer.getClass();
+            byte[] array = byteBuffer.array();
+            int limit = byteBuffer.limit();
+            m mVar = this.o;
+            if (z10) {
+                mVar.reset();
+            }
+            z3.d p5 = mVar.p(0, limit, array);
+            long j3 = iVar.h;
+            long j10 = iVar.v;
+            jVar.c = j3;
+            jVar.f = p5;
+            if (j10 != Long.MAX_VALUE) {
+                j3 = j10;
+            }
+            jVar.h = j3;
+            jVar.e = false;
+            return null;
+        } catch (f e7) {
+            return e7;
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x00ab, code lost:
-    
-        if (((x2.t) x2.t.a.get(r0)) != null) goto L21;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:16:0x00b3  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x010f  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final y2.h a(y2.h hVar) {
-        int type;
-        int subtype;
-        HashMap hashMap;
-        NetworkInfo activeNetworkInfo = this.b.getActiveNetworkInfo();
-        a9.a c3 = hVar.c();
-        int i10 = Build.VERSION.SDK_INT;
-        HashMap hashMap2 = (HashMap) c3.f;
-        if (hashMap2 == null) {
-            throw new IllegalStateException("Property \"autoMetadata\" has not been set");
-        }
-        hashMap2.put("sdk-version", String.valueOf(i10));
-        c3.c("model", Build.MODEL);
-        c3.c("hardware", Build.HARDWARE);
-        c3.c("device", Build.DEVICE);
-        c3.c("product", Build.PRODUCT);
-        c3.c("os-uild", Build.ID);
-        c3.c("manufacturer", Build.MANUFACTURER);
-        c3.c("fingerprint", Build.FINGERPRINT);
-        Calendar.getInstance();
-        long offset = TimeZone.getDefault().getOffset(Calendar.getInstance().getTimeInMillis()) / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        HashMap hashMap3 = (HashMap) c3.f;
-        if (hashMap3 == null) {
-            throw new IllegalStateException("Property \"autoMetadata\" has not been set");
-        }
-        hashMap3.put("tz-offset", String.valueOf(offset));
-        int i11 = -1;
-        if (activeNetworkInfo == null) {
-            SparseArray sparseArray = u.a;
-            type = -1;
-        } else {
-            type = activeNetworkInfo.getType();
-        }
-        HashMap hashMap4 = (HashMap) c3.f;
-        if (hashMap4 == null) {
-            throw new IllegalStateException("Property \"autoMetadata\" has not been set");
-        }
-        hashMap4.put("net-type", String.valueOf(type));
-        if (activeNetworkInfo != null) {
-            subtype = activeNetworkInfo.getSubtype();
-            if (subtype == -1) {
-                SparseArray sparseArray2 = t.a;
-                subtype = 100;
-            }
-            hashMap = (HashMap) c3.f;
-            if (hashMap != null) {
-                throw new IllegalStateException("Property \"autoMetadata\" has not been set");
-            }
-            hashMap.put("mobile-subtype", String.valueOf(subtype));
-            c3.c("country", Locale.getDefault().getCountry());
-            c3.c("locale", Locale.getDefault().getLanguage());
-            Context context = this.c;
-            c3.c("mcc_mnc", ((TelephonyManager) context.getSystemService("phone")).getSimOperator());
-            try {
-                i11 = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionCode;
-            } catch (PackageManager.NameNotFoundException e) {
-                i0.b("CctTransportBackend", "Unable to find version code for package", e);
-            }
-            c3.c("application_build", Integer.toString(i11));
-            return c3.j();
-        }
-        SparseArray sparseArray3 = t.a;
-        subtype = 0;
-        hashMap = (HashMap) c3.f;
-        if (hashMap != null) {
-        }
+    @Override // z3.e
+    public final void b(long j3) {
     }
 }

@@ -13,12 +13,12 @@ public abstract class x7 {
 
     public abstract Spliterator b(Spliterator spliterator);
 
-    public x7(Spliterator spliterator, long j10, long j11) {
+    public x7(Spliterator spliterator, long j3, long j10) {
         this.a = spliterator;
-        this.b = j11 < 0;
-        this.d = j11 >= 0 ? j11 : 0L;
+        this.b = j10 < 0;
+        this.d = j10 >= 0 ? j10 : 0L;
         this.c = 128;
-        this.e = new AtomicLong(j11 >= 0 ? j10 + j11 : j10);
+        this.e = new AtomicLong(j10 >= 0 ? j3 + j10 : j3);
     }
 
     public x7(Spliterator spliterator, x7 x7Var) {
@@ -29,30 +29,30 @@ public abstract class x7 {
         this.c = x7Var.c;
     }
 
-    public final long a(long j10) {
-        long j11;
-        boolean z4;
+    public final long a(long j3) {
+        long j10;
+        boolean z10;
         long min;
         do {
-            j11 = this.e.get();
-            z4 = this.b;
-            if (j11 != 0) {
-                min = Math.min(j11, j10);
+            j10 = this.e.get();
+            z10 = this.b;
+            if (j10 != 0) {
+                min = Math.min(j10, j3);
                 if (min <= 0) {
                     break;
                 }
             } else {
-                if (z4) {
-                    return j10;
+                if (z10) {
+                    return j3;
                 }
                 return 0L;
             }
-        } while (!this.e.compareAndSet(j11, j11 - min));
-        if (z4) {
-            return Math.max(j10 - min, 0L);
+        } while (!this.e.compareAndSet(j10, j10 - min));
+        if (z10) {
+            return Math.max(j3 - min, 0L);
         }
-        long j12 = this.d;
-        return j11 > j12 ? Math.max(min - (j11 - j12), 0L) : min;
+        long j11 = this.d;
+        return j10 > j11 ? Math.max(min - (j10 - j11), 0L) : min;
     }
 
     public final w7 c() {

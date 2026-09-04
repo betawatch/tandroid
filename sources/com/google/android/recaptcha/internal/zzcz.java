@@ -7,10 +7,10 @@ import android.os.Build;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.jvm.internal.j;
-import y5.e;
+import k6.e;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzcz implements zzda {
     private final e zza;
@@ -52,7 +52,7 @@ public final class zzcz implements zzda {
         }
         Iterator<T> it = installedPackages.iterator();
         while (it.hasNext()) {
-            if (j.a(((PackageInfo) it.next()).packageName, "com.android.vending")) {
+            if (i.a(((PackageInfo) it.next()).packageName, "com.android.vending")) {
                 return true;
             }
         }
@@ -61,8 +61,8 @@ public final class zzcz implements zzda {
 
     @Override // com.google.android.recaptcha.internal.zzda
     public final int zzd(Context context) {
-        int c3 = this.zza.c(context);
-        return (c3 == 1 || c3 == 3 || c3 == 9) ? 4 : 3;
+        int c10 = this.zza.c(context);
+        return (c10 == 1 || c10 == 3 || c10 == 9) ? 4 : 3;
     }
 
     public zzcz(e eVar) {

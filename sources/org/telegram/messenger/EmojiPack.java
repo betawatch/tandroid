@@ -11,7 +11,7 @@ import java.nio.ByteOrder;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class EmojiPack {
     private static final String ASSET_NAME = "emoji.pack";
@@ -27,7 +27,7 @@ public final class EmojiPack {
     private final SparseArray<ImageEntry> masks = new SparseArray<>();
     private byte[] decodeBuffer = new byte[1024];
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static final class EmojiEntry extends ImageEntry {
         final int maskId;
 
@@ -37,7 +37,7 @@ public final class EmojiPack {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ImageEntry {
         final int length;
         final int offset;
@@ -79,8 +79,8 @@ public final class EmojiPack {
         if (instance == null) {
             try {
                 instance = new EmojiPack();
-            } catch (IOException e) {
-                throw new RuntimeException("Unable to open emoji pack", e);
+            } catch (IOException e7) {
+                throw new RuntimeException("Unable to open emoji pack", e7);
             }
         }
         return instance;
@@ -90,7 +90,7 @@ public final class EmojiPack {
         ByteBuffer order = this.buffer.duplicate().order(ByteOrder.LITTLE_ENDIAN);
         int i10 = order.getInt();
         if (i10 < 0 || i10 % 12 != 0) {
-            throw new IOException(kf.k0.j(i10, "Invalid emoji metadata length: "));
+            throw new IOException(i2.g.i(i10, "Invalid emoji metadata length: "));
         }
         int i11 = i10 / 12;
         for (int i12 = 0; i12 < i11; i12++) {
@@ -98,19 +98,19 @@ public final class EmojiPack {
             int i14 = NO_MASK & order.getShort();
             int i15 = order.getInt();
             int i16 = order.getInt();
-            validateRange(i15, i16, kf.k0.j(i13, "emoji "));
+            validateRange(i15, i16, i2.g.i(i13, "emoji "));
             this.emojis.put(i13, new EmojiEntry(i15, i16, i14));
         }
         int i17 = order.getInt();
         if (i17 < 0 || i17 % 10 != 0) {
-            throw new IOException(kf.k0.j(i17, "Invalid mask metadata length: "));
+            throw new IOException(i2.g.i(i17, "Invalid mask metadata length: "));
         }
         int i18 = i17 / 10;
         for (int i19 = 0; i19 < i18; i19++) {
             int i20 = order.getShort() & NO_MASK;
             int i21 = order.getInt();
             int i22 = order.getInt();
-            validateRange(i21, i22, kf.k0.j(i20, "mask "));
+            validateRange(i21, i22, i2.g.i(i20, "mask "));
             this.masks.put(i20, new ImageEntry(i21, i22));
         }
     }
@@ -130,8 +130,8 @@ public final class EmojiPack {
         if (i10 < 0 || i11 < 0 || i11 >= 4096) {
             return null;
         }
-        long j10 = (i10 * 4096) + i11;
-        if (j10 <= 65535 && (emojiEntry = this.emojis.get((int) j10)) != null) {
+        long j3 = (i10 * 4096) + i11;
+        if (j3 <= 65535 && (emojiEntry = this.emojis.get((int) j3)) != null) {
             return decode(emojiEntry);
         }
         return null;
@@ -148,8 +148,8 @@ public final class EmojiPack {
     public int getMaskId(int i10, int i11) {
         EmojiEntry emojiEntry;
         if (i10 >= 0 && i11 >= 0 && i11 < 4096) {
-            long j10 = (i10 * 4096) + i11;
-            if (j10 <= 65535 && (emojiEntry = this.emojis.get((int) j10)) != null) {
+            long j3 = (i10 * 4096) + i11;
+            if (j3 <= 65535 && (emojiEntry = this.emojis.get((int) j3)) != null) {
                 return emojiEntry.maskId;
             }
         }

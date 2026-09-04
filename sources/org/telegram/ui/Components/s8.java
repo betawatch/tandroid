@@ -1,39 +1,91 @@
 package org.telegram.ui.Components;
 
-import j$.util.Objects;
+import android.os.Build;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class s8 {
-    public int a;
-    public boolean b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
+public final /* synthetic */ class s8 implements org.telegram.ui.ActionBar.a2, kq {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f9 b;
 
-    public final s8 a() {
-        s8 s8Var = new s8();
-        s8Var.c = this.c;
-        s8Var.d = this.d;
-        s8Var.e = this.e;
-        s8Var.f = this.f;
-        s8Var.b = this.b;
-        return s8Var;
+    public /* synthetic */ s8(f9 f9Var, int i10) {
+        this.a = i10;
+        this.b = f9Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // org.telegram.ui.Components.kq
+    public void B0(int i10, int i11, boolean z10) {
+        f9 f9Var = this.b;
+        if (i11 == 0) {
+            b9 b9Var = f9Var.Y;
+            int i12 = b9Var.c;
+            if (i12 != i10 && (i12 == 0 || i10 == 0)) {
+                b9 a2 = b9Var.a();
+                f9Var.Y = a2;
+                f9Var.a.b(a2, true);
+                f9Var.n0();
+            }
+            f9Var.Y.c = i10;
+        } else if (i11 == 1) {
+            b9 b9Var2 = f9Var.Y;
+            int i13 = b9Var2.d;
+            if (i13 != i10 && (i13 == 0 || i10 == 0)) {
+                b9 a10 = b9Var2.a();
+                f9Var.Y = a10;
+                f9Var.a.b(a10, true);
+                f9Var.n0();
+            }
+            f9Var.Y.d = i10;
+        } else if (i11 == 2) {
+            b9 b9Var3 = f9Var.Y;
+            int i14 = b9Var3.e;
+            if (i14 != i10 && (i14 == 0 || i10 == 0)) {
+                b9 a11 = b9Var3.a();
+                f9Var.Y = a11;
+                f9Var.a.b(a11, true);
+                f9Var.n0();
+            }
+            f9Var.Y.e = i10;
+        } else if (i11 == 3) {
+            b9 b9Var4 = f9Var.Y;
+            int i15 = b9Var4.f;
+            if (i15 != i10 && (i15 == 0 || i10 == 0)) {
+                b9 a12 = b9Var4.a();
+                f9Var.Y = a12;
+                f9Var.a.b(a12, true);
+                f9Var.n0();
+            }
+            f9Var.Y.f = i10;
         }
-        if (!(obj instanceof s8)) {
-            return false;
+        if (Build.VERSION.SDK_INT >= 23) {
+            NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needCheckSystemBarColors, new Object[0]);
         }
-        s8 s8Var = (s8) obj;
-        return this.c == s8Var.c && this.d == s8Var.d && this.e == s8Var.e && this.f == s8Var.f;
+        f9Var.a.invalidate();
     }
 
-    public final int hashCode() {
-        return Objects.hash(Integer.valueOf(this.a), Integer.valueOf(this.c), Integer.valueOf(this.d), Integer.valueOf(this.e), Integer.valueOf(this.f));
+    @Override // org.telegram.ui.Components.kq
+    public /* synthetic */ int M0(int i10) {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                this.b.finishFragment();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.kq
+    public /* synthetic */ void k(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.Components.kq
+    public /* synthetic */ void z() {
     }
 }

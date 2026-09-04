@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.view.Window;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class FlagSecureReason {
     private static HashMap<Window, Integer> currentSecureReasons;
@@ -12,7 +12,7 @@ public class FlagSecureReason {
     private boolean attached = false;
     private boolean value = false;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface FlagSecureCondition {
         boolean run();
     }
@@ -71,10 +71,10 @@ public class FlagSecureReason {
 
     public void invalidate() {
         FlagSecureCondition flagSecureCondition;
-        boolean z4 = this.attached && (flagSecureCondition = this.condition) != null && flagSecureCondition.run();
-        if (z4 != this.value) {
-            this.value = z4;
-            update(z4 ? 1 : -1);
+        boolean z10 = this.attached && (flagSecureCondition = this.condition) != null && flagSecureCondition.run();
+        if (z10 != this.value) {
+            this.value = z10;
+            update(z10 ? 1 : -1);
         }
     }
 }

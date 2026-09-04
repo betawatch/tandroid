@@ -1,90 +1,46 @@
 package hc;
 
-import java.net.InetAddress;
-import java.net.Socket;
-import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
-import java.util.HashSet;
-import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSocket;
-import javax.net.ssl.SSLSocketFactory;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Can't remove SSA var: r4v1 hc.c, still in use, count: 1, list:
+  (r4v1 hc.c) from 0x0031: FILLED_NEW_ARRAY (r1v1 hc.c), (r0v0 hc.c), (r5v1 hc.c), (r4v1 hc.c) A[WRAPPED] (LINE:50) elemType: hc.c
+	at jadx.core.utils.InsnRemover.removeSsaVar(InsnRemover.java:162)
+	at jadx.core.utils.InsnRemover.unbindResult(InsnRemover.java:127)
+	at jadx.core.utils.InsnRemover.lambda$unbindInsns$1(InsnRemover.java:99)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at jadx.core.utils.InsnRemover.unbindInsns(InsnRemover.java:98)
+	at jadx.core.utils.InsnRemover.removeAllAndUnbind(InsnRemover.java:252)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:180)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c extends SSLSocketFactory {
-    public final SSLSocketFactory a = HttpsURLConnection.getDefaultSSLSocketFactory();
-    public final boolean b;
-    public final boolean c;
+public final class c {
+    b(1),
+    c(0),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF4(3),
+    /* JADX INFO: Fake field, exist only in values array */
+    EF5(2);
 
-    public c() {
-        String[] strArr;
-        try {
-            strArr = SSLContext.getDefault().getSupportedSSLParameters().getProtocols();
-        } catch (NoSuchAlgorithmException unused) {
-            strArr = new String[0];
-        }
-        boolean z4 = false;
-        boolean z10 = false;
-        for (String str : strArr) {
-            if (str.equals("TLSv1.1")) {
-                z4 = true;
-            } else if (str.equals("TLSv1.2")) {
-                z10 = true;
-            }
-        }
-        this.b = z4;
-        this.c = z10;
+    public static final c[] d;
+    public final int a;
+
+    static {
+        c cVar = b;
+        c cVar2 = c;
+        d = new c[]{cVar2, cVar, r5, r4};
     }
 
-    public final Socket a(Socket socket) {
-        if (!(socket instanceof SSLSocket)) {
-            return socket;
-        }
-        SSLSocket sSLSocket = (SSLSocket) socket;
-        HashSet hashSet = new HashSet(Arrays.asList(sSLSocket.getEnabledProtocols()));
-        if (this.b) {
-            hashSet.add("TLSv1.1");
-        }
-        if (this.c) {
-            hashSet.add("TLSv1.2");
-        }
-        sSLSocket.setEnabledProtocols((String[]) hashSet.toArray(new String[0]));
-        return sSLSocket;
+    public c(int i10) {
+        this.a = i10;
     }
 
-    @Override // javax.net.ssl.SSLSocketFactory
-    public final Socket createSocket(Socket socket, String str, int i10, boolean z4) {
-        return a(this.a.createSocket(socket, str, i10, z4));
+    public static c valueOf(String str) {
+        return (c) Enum.valueOf(c.class, str);
     }
 
-    @Override // javax.net.ssl.SSLSocketFactory
-    public final String[] getDefaultCipherSuites() {
-        return this.a.getDefaultCipherSuites();
-    }
-
-    @Override // javax.net.ssl.SSLSocketFactory
-    public final String[] getSupportedCipherSuites() {
-        return this.a.getSupportedCipherSuites();
-    }
-
-    @Override // javax.net.SocketFactory
-    public final Socket createSocket(String str, int i10) {
-        return a(this.a.createSocket(str, i10));
-    }
-
-    @Override // javax.net.SocketFactory
-    public final Socket createSocket(String str, int i10, InetAddress inetAddress, int i11) {
-        return a(this.a.createSocket(str, i10, inetAddress, i11));
-    }
-
-    @Override // javax.net.SocketFactory
-    public final Socket createSocket(InetAddress inetAddress, int i10) {
-        return a(this.a.createSocket(inetAddress, i10));
-    }
-
-    @Override // javax.net.SocketFactory
-    public final Socket createSocket(InetAddress inetAddress, int i10, InetAddress inetAddress2, int i11) {
-        return a(this.a.createSocket(inetAddress, i10, inetAddress2, i11));
+    public static c[] values() {
+        return (c[]) e.clone();
     }
 }

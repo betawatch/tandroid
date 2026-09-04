@@ -1,88 +1,42 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.widget.Button;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class s3 extends org.telegram.ui.Components.k6 {
-    public final /* synthetic */ int s;
+public final class s3 extends View {
+    public final /* synthetic */ int a;
+    public final int b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s3(Context context, boolean z4, boolean z10, boolean z11, int i10) {
-        super(context, z4, z10, z11);
-        this.s = i10;
+    public /* synthetic */ s3(Context context, int i10, int i11) {
+        super(context);
+        this.a = i11;
+        this.b = i10;
     }
 
     @Override // android.view.View
-    public CharSequence getAccessibilityClassName() {
-        switch (this.s) {
+    public final void onMeasure(int i10, int i11) {
+        switch (this.a) {
             case 0:
-                return Button.class.getName();
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.b), TLObject.FLAG_30));
+                break;
             case 1:
-                return Button.class.getName();
-            default:
-                return super.getAccessibilityClassName();
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.s) {
-            case 4:
-                if (!mg.g0.b(this)) {
-                    super.invalidate();
-                    break;
-                }
+                super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(this.b), TLObject.FLAG_30));
                 break;
             default:
-                super.invalidate();
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.b, TLObject.FLAG_30));
                 break;
         }
     }
 
-    @Override // org.telegram.ui.Components.k6, android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.s) {
-            case 2:
-                canvas.save();
-                canvas.translate(AndroidUtilities.dp(17.0f), 0.0f);
-                super.onDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.k6, android.view.View
-    public void onMeasure(int i10, int i11) {
-        switch (this.s) {
-            case 3:
-                super.onMeasure(i10, i11);
-                setPivotX(getMeasuredWidth());
-                break;
-            default:
-                super.onMeasure(i10, i11);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void invalidate(int i10, int i11, int i12, int i13) {
-        switch (this.s) {
-            case 4:
-                if (!mg.g0.b(this)) {
-                    super.invalidate(i10, i11, i12, i13);
-                    break;
-                }
-                break;
-            default:
-                super.invalidate(i10, i11, i12, i13);
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public s3(Context context, int i10) {
+        super(context);
+        this.a = 0;
+        this.b = i10;
     }
 }

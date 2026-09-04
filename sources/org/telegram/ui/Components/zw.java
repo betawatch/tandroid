@@ -1,63 +1,63 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
+import android.animation.ObjectAnimator;
+import android.content.Context;
+import android.util.Property;
+import android.view.MotionEvent;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class zw {
-    public final int a;
-    public final long b;
-    public final long c;
-    public boolean e;
-    public final /* synthetic */ int g;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate h;
-    public boolean d = false;
-    public long f = -1;
+public final class zw extends z4.g {
+    public final /* synthetic */ kz w0;
 
-    public zw(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, long j10, long j11, int i11) {
-        this.g = i11;
-        this.h = notificationCenterDelegate;
-        this.a = i10;
-        this.b = j10;
-        this.c = j11;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public zw(kz kzVar, Context context) {
+        super(context);
+        this.w0 = kzVar;
     }
 
-    public final void a() {
-        boolean z4;
-        switch (this.g) {
-            case 0:
-                kz kzVar = (kz) this.h;
-                if (kzVar.q1 == null || kzVar.getVisibility() != 0 || !kzVar.H0) {
-                    z4 = false;
-                    break;
-                } else {
-                    z4 = true;
-                    break;
-                }
-            default:
-                z4 = ((tf.u0) this.h).N();
-                break;
+    @Override // z4.g, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.w0.f) {
+            return false;
         }
-        this.d = z4;
-        if (z4) {
+        if (getParent() != null) {
+            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
+        }
+        try {
+            return super.onInterceptTouchEvent(motionEvent);
+        } catch (IllegalArgumentException unused) {
+            return false;
+        }
+    }
+
+    @Override // z4.g
+    public final void x(int i10, boolean z10) {
+        kz kzVar = this.w0;
+        jw jwVar = kzVar.I;
+        kz.c(kzVar, i10 == 1);
+        if (i10 != getCurrentItem()) {
+            super.x(i10, z10);
             return;
         }
-        if (this.e) {
-            MessagesController.getInstance(this.a).sendTyping(this.b, this.c, 2, 0);
-        }
-        this.f = -1L;
-    }
-
-    public final void b() {
-        if (this.d) {
-            if (this.f == -1) {
-                this.f = System.currentTimeMillis();
-            } else if (System.currentTimeMillis() - this.f > 2000) {
-                this.e = true;
-                this.f = System.currentTimeMillis();
-                MessagesController.getInstance(this.a).sendTyping(this.b, this.c, 10, 0);
+        if (i10 != 0) {
+            if (i10 == 1) {
+                kzVar.h0.x0(0);
+                return;
+            } else {
+                kzVar.D0.x0(1);
+                return;
             }
+        }
+        kzVar.Q0[1] = 0;
+        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(jwVar, (Property<jw, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
+        ofFloat.setDuration(150L);
+        ofFloat.setInterpolator(pr.h);
+        ofFloat.start();
+        kzVar.I(1, 0);
+        if (jwVar != null) {
+            jwVar.j(0, true);
         }
     }
 }

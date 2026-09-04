@@ -1,22 +1,36 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class b1 {
-    public static final u5.b k = new u5.b("ApplicationAnalyticsSession", null);
-    public static long l = System.currentTimeMillis();
-    public final c a;
-    public String b;
-    public String c;
-    public long d = l;
-    public int e = 1;
-    public String f;
-    public int g;
-    public String h;
-    public boolean i;
-    public int j;
-
-    public b1(c cVar) {
-        this.a = cVar;
-    }
+    public static final b1 a = new b1();
+    public static final b1 b = new b1();
+    public static final b1 c = new b1();
+    public static final b1 d = new b1();
+    public static final b1 e = new b1();
+    public static final b1 f = new b1();
+    public static final b1 g = new b1();
+    public static final b1 h = new b1();
+    public static final b1 i = new b1();
+    public static final b1 j = new b1();
+    public static final b1 k = new b1();
+    public static final b1 l = new b1();
+    public static final b1 m = new b1();
+    public static final b1 n = new b1();
+    public static final b1 o = new b1();
+    public static final b1 p = new b1();
+    public static final b1 q = new b1();
+    public static final b1 r = new b1();
+    public static final b1 s = new b1();
+    public static final b1 t = new b1();
+    public static final b1 u = new b1();
+    public static final b1 v = new b1();
+    public static final b1 w = new b1();
+    public static final b1 x = new b1();
+    public static final b1 y = new b1();
+    public static final b1 z = new b1();
+    public static final b1 A = new b1();
+    public static final b1 B = new b1();
+    public static final b1 C = new b1();
+    public static final b1 D = new b1();
 }

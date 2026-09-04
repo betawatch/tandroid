@@ -1,42 +1,52 @@
 package uf;
 
-import org.telegram.messenger.MessagesController;
+import bi.v7;
+import java.io.File;
+import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ e b;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class d implements NotificationCenter.NotificationCenterDelegate {
+    public final int a;
+    public final String b;
+    public boolean c;
 
-    public /* synthetic */ d(e eVar, int i10) {
+    public d(String str, int i10) {
         this.a = i10;
-        this.b = eVar;
+        this.b = str;
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileUploaded);
+        NotificationCenter.getInstance(i10).addObserver(this, NotificationCenter.fileUploadFailed);
+        FileLoader.getInstance(i10).uploadFile(str, false, true, ConnectionsManager.FileTypeAudio);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    public final void a() {
         int i10 = this.a;
-        e eVar = this.b;
-        switch (i10) {
-            case 0:
-                eVar.a();
-                break;
-            case 1:
-                eVar.getClass();
-                TL_account.disablePeerConnectedBot disablepeerconnectedbot = new TL_account.disablePeerConnectedBot();
-                int i11 = eVar.a;
-                disablepeerconnectedbot.peer = MessagesController.getInstance(i11).getInputPeer(eVar.s);
-                ConnectionsManager.getInstance(i11).sendRequest(disablepeerconnectedbot, null);
-                MessagesController.getNotificationsSettings(i11).edit().remove("dialog_botid" + eVar.s).remove("dialog_boturl" + eVar.s).remove("dialog_botflags" + eVar.s).apply();
-                NotificationCenter.getInstance(i11).lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(eVar.s));
-                f.a(i11).f = false;
-                break;
-            default:
-                ze.d.s(eVar.getContext(), eVar.x);
-                break;
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.fileUploaded);
+        NotificationCenter.getInstance(i10).removeObserver(this, NotificationCenter.fileUploadFailed);
+    }
+
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.fileUploaded) {
+            String str = (String) objArr[0];
+            if (!this.c && str.equals(this.b)) {
+                TLRPC.InputFile inputFile = (TLRPC.InputFile) objArr[1];
+                TL_account.uploadRingtone uploadringtone = new TL_account.uploadRingtone();
+                uploadringtone.file = inputFile;
+                uploadringtone.file_name = inputFile.name;
+                String fileExtension = FileLoader.getFileExtension(new File(inputFile.name));
+                uploadringtone.mime_type = fileExtension;
+                if ("ogg".equals(fileExtension)) {
+                    uploadringtone.mime_type = "audio/ogg";
+                } else {
+                    uploadringtone.mime_type = "audio/mpeg";
+                }
+                ConnectionsManager.getInstance(this.a).sendRequest(uploadringtone, new v7(this, 20));
+            }
         }
     }
 }

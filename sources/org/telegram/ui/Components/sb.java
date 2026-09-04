@@ -1,68 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class sb implements ok0 {
-    public final /* synthetic */ tb a;
+public final /* synthetic */ class sb implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ub b;
+    public final /* synthetic */ q0.a c;
 
-    public sb(tb tbVar) {
-        this.a = tbVar;
+    public /* synthetic */ sb(q0.a aVar, ub ubVar, int i10) {
+        this.a = i10;
+        this.c = aVar;
+        this.b = ubVar;
     }
 
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ boolean i() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final void j(View view, mg.q0 q0Var, boolean z4, boolean z10) {
-        tb tbVar = this.a;
-        org.telegram.ui.ActionBar.p2 p2Var = tbVar.f;
-        if (tbVar.e == null) {
-            return;
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        switch (this.a) {
+            case 0:
+                ((gb) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                break;
+            default:
+                ((ml) this.c).accept(Float.valueOf(this.b.getTranslationY()));
+                break;
         }
-        boolean z11 = (p2Var instanceof org.telegram.ui.zn) && ((org.telegram.ui.zn) p2Var).a() == UserConfig.getInstance(p2Var.getCurrentAccount()).getClientUserId();
-        int i10 = 0;
-        for (int i11 = 0; i11 < tbVar.e.size(); i11++) {
-            int keyAt = tbVar.e.keyAt(i11);
-            TLRPC.Message message = new TLRPC.Message();
-            message.dialog_id = p2Var.getUserConfig().getClientUserId();
-            message.id = keyAt;
-            MessageObject messageObject = new MessageObject(p2Var.getCurrentAccount(), message, false, false);
-            ArrayList<mg.q0> arrayList = new ArrayList<>();
-            arrayList.add(q0Var);
-            p2Var.getSendMessagesHelper().sendReaction(messageObject, arrayList, q0Var, false, false, tbVar.f, null);
-            i10 = message.id;
-        }
-        tbVar.f();
-        ic.e();
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.uj(this, q0Var, !z11, p2Var.getCurrentAccount(), i10), 300L);
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ boolean k() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ boolean o() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ void m() {
-    }
-
-    @Override // org.telegram.ui.Components.ok0
-    public final /* synthetic */ void l(Canvas canvas, RectF rectF, float f10, float f11, float f12, int i10, boolean z4) {
     }
 }

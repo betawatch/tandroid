@@ -8,13 +8,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import java.util.concurrent.ExecutorService;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.tb0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class j {
     public static final Object c = new Object();
-    public static d0 d;
+    public static e0 d;
     public final Object a;
     public final Object b;
 
@@ -23,28 +22,28 @@ public final class j {
         this.a = executorService;
     }
 
-    public static Task a(Context context, Intent intent, boolean z4) {
-        d0 d0Var;
+    public static Task a(Context context, Intent intent, boolean z10) {
+        e0 e0Var;
         if (Log.isLoggable("FirebaseMessaging", 3)) {
             Log.d("FirebaseMessaging", "Binding to service");
         }
         synchronized (c) {
             try {
                 if (d == null) {
-                    d = new d0(context);
+                    d = new e0(context);
                 }
-                d0Var = d;
+                e0Var = d;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        if (!z4) {
-            return d0Var.b(intent).continueWith(new tb0(1), new af.a(17));
+        if (!z10) {
+            return e0Var.b(intent).continueWith(new a3.a(2), new androidx.emoji2.text.w(23));
         }
-        if (r.f().h(context)) {
-            a0.c(context, d0Var, intent);
+        if (s.b().d(context)) {
+            b0.c(context, e0Var, intent);
         } else {
-            d0Var.b(intent);
+            e0Var.b(intent);
         }
         return Tasks.forResult(-1);
     }
@@ -56,15 +55,15 @@ public final class j {
             intent.removeExtra("gcm.rawData64");
         }
         Context context = (Context) this.a;
-        tb0 tb0Var = (tb0) this.b;
-        boolean z4 = i6.b.d() && context.getApplicationInfo().targetSdkVersion >= 26;
-        boolean z10 = (intent.getFlags() & TLObject.FLAG_28) != 0;
-        return (!z4 || z10) ? Tasks.call(tb0Var, new h(0, context, intent)).continueWithTask(tb0Var, new i(context, intent, z10, 0)) : a(context, intent, z10);
+        a3.a aVar = (a3.a) this.b;
+        boolean z10 = u6.b.d() && context.getApplicationInfo().targetSdkVersion >= 26;
+        boolean z11 = (intent.getFlags() & TLObject.FLAG_28) != 0;
+        return (!z10 || z11) ? Tasks.call(aVar, new h(0, context, intent)).continueWithTask(aVar, new i(context, intent, z11, 0)) : a(context, intent, z11);
     }
 
     public j(Context context) {
         this.a = context;
-        this.b = new tb0(1);
+        this.b = new a3.a(2);
     }
 
     public j(e0.t tVar, String str) {

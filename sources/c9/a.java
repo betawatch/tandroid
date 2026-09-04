@@ -1,51 +1,25 @@
 package c9;
 
-import j7.j5;
-import java.util.HashSet;
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Build;
+import android.os.Bundle;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public Object a = null;
-    public int b;
-    public int c;
-    public Object d;
-    public Object e;
-    public Object f;
-    public Object g;
+public abstract class a extends Activity {
+    public abstract Class getServiceClass();
 
-    public a(Class cls, Class[] clsArr) {
-        HashSet hashSet = new HashSet();
-        this.d = hashSet;
-        this.e = new HashSet();
-        this.b = 0;
-        this.c = 0;
-        this.f = new HashSet();
-        hashSet.add(u.a(cls));
-        for (Class cls2 : clsArr) {
-            j5.a(cls2, "Null interface");
-            ((HashSet) this.d).add(u.a(cls2));
+    @Override // android.app.Activity
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Intent intent = new Intent(this, (Class<?>) getServiceClass());
+        intent.putExtra(c.EXTRA_INTENT, getIntent());
+        if (Build.VERSION.SDK_INT >= 26) {
+            startForegroundService(intent);
+        } else {
+            startService(intent);
         }
-    }
-
-    public void a(m mVar) {
-        if (((HashSet) this.d).contains(mVar.a)) {
-            throw new IllegalArgumentException("Components are not allowed to depend on interfaces they themselves provide.");
-        }
-        ((HashSet) this.e).add(mVar);
-    }
-
-    public b b() {
-        if (((f) this.g) != null) {
-            return new b((String) this.a, new HashSet((HashSet) this.d), new HashSet((HashSet) this.e), this.b, this.c, (f) this.g, (HashSet) this.f);
-        }
-        throw new IllegalStateException("Missing required property: factory.");
-    }
-
-    public void c(int i10) {
-        if (!(this.b == 0)) {
-            throw new IllegalStateException("Instantiation type has already been set.");
-        }
-        this.b = i10;
+        finish();
     }
 }

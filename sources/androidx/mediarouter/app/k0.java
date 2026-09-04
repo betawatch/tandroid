@@ -1,17 +1,13 @@
 package androidx.mediarouter.app;
 
-import android.view.View;
-import android.widget.TextView;
-import f2.l1;
-import org.telegram.messenger.beta.R;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class k0 extends l1 {
-    public final TextView v;
+public final class k0 {
+    public final Object a;
+    public final int b;
 
-    public k0(View view) {
-        super(view);
-        this.v = (TextView) view.findViewById(R.id.mr_cast_header_name);
+    public k0(Object obj, int i10) {
+        this.a = obj;
+        this.b = i10;
     }
 }

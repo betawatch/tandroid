@@ -1,149 +1,60 @@
 package org.telegram.ui;
 
-import android.os.StatFs;
-import android.text.TextUtils;
-import android.util.LongSparseArray;
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collections;
+import android.content.Context;
+import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h6 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d7 b;
+public final class h6 extends org.telegram.ui.Components.nc0 {
+    public final /* synthetic */ z6 D0;
 
-    public /* synthetic */ h6(d7 d7Var, int i10) {
-        this.a = i10;
-        this.b = d7Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public h6(z6 z6Var, Context context) {
+        super(context);
+        this.D0 = z6Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                d7 d7Var = this.b;
-                d7Var.resumeDelayedFragmentAnimation();
-                d7Var.I = false;
-                d7Var.w0(true);
-                d7Var.v0();
-                break;
-            case 1:
-                d7 d7Var2 = this.b;
-                d7Var2.getFileLoader().getFileDatabase().ensureDatabaseCreated();
-                mh.b bVar = new mh.b(false);
-                LongSparseArray longSparseArray = new LongSparseArray();
-                d7Var2.o0(FileLoader.checkDirectory(4), 6, longSparseArray, bVar);
-                d7Var2.o0(FileLoader.checkDirectory(0), 0, longSparseArray, bVar);
-                d7Var2.o0(FileLoader.checkDirectory(100), 0, longSparseArray, bVar);
-                d7Var2.o0(FileLoader.checkDirectory(2), 1, longSparseArray, bVar);
-                d7Var2.o0(FileLoader.checkDirectory(101), 1, longSparseArray, bVar);
-                d7Var2.o0(FileLoader.checkDirectory(1), 4, longSparseArray, bVar);
-                d7Var2.o0(FileLoader.checkDirectory(6), 6, longSparseArray, bVar);
-                d7Var2.o0(FileLoader.checkDirectory(3), 2, longSparseArray, bVar);
-                d7Var2.o0(FileLoader.checkDirectory(5), 2, longSparseArray, bVar);
-                ArrayList arrayList = new ArrayList();
-                ArrayList arrayList2 = new ArrayList();
-                ArrayList arrayList3 = new ArrayList();
-                for (int i10 = 0; i10 < longSparseArray.size(); i10++) {
-                    w6 w6Var = (w6) longSparseArray.valueAt(i10);
-                    arrayList.add(w6Var);
-                    if (d7Var2.getMessagesController().getUserOrChat(((w6) arrayList.get(i10)).a) == null) {
-                        long j10 = w6Var.a;
-                        if (j10 > 0) {
-                            arrayList2.add(Long.valueOf(j10));
-                        } else {
-                            arrayList3.add(Long.valueOf(j10));
-                        }
-                    }
+    /* JADX WARN: Removed duplicated region for block: B:11:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x003a  */
+    @Override // org.telegram.ui.Components.ov0, android.view.ViewGroup, android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void dispatchDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.d5 d5Var;
+        org.telegram.ui.ActionBar.d5 d5Var2;
+        super.dispatchDraw(canvas);
+        boolean Z = Z();
+        z6 z6Var = this.D0;
+        if (Z) {
+            float f7 = z6Var.j0;
+            if (f7 != 0.0f) {
+                z6Var.j0 = f7 - 0.16f;
+                invalidate();
+                z6Var.j0 = Utilities.clamp(z6Var.j0, 1.0f, 0.0f);
+                d5Var = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
+                if (d5Var == null) {
+                    d5Var2 = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
+                    ActionBarLayout actionBarLayout = (ActionBarLayout) d5Var2;
+                    actionBarLayout.p(canvas, (int) (z6Var.h0 * 255.0f * z6Var.j0), org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight);
+                    return;
                 }
-                Collections.sort(bVar.d, new e5.e(22));
-                Collections.sort(bVar.e, new e5.e(22));
-                Collections.sort(bVar.f, new e5.e(22));
-                Collections.sort(bVar.g, new e5.e(22));
-                Collections.sort(bVar.h, new e5.e(22));
-                d7Var2.getMessagesStorage().getStorageQueue().postRunnable(new i6(d7Var2, arrayList2, arrayList3, arrayList, bVar, 0));
-                break;
-            default:
-                d7 d7Var3 = this.b;
-                d7Var3.h = d7.q0(5, FileLoader.checkDirectory(4));
-                if (!d7.h0) {
-                    d7Var3.r = d7.q0(4, FileLoader.checkDirectory(4));
-                    if (!d7.h0) {
-                        long q02 = d7.q0(0, FileLoader.checkDirectory(0));
-                        d7Var3.y = q02;
-                        d7Var3.y = d7.q0(0, FileLoader.checkDirectory(100)) + q02;
-                        if (!d7.h0) {
-                            long q03 = d7.q0(0, FileLoader.checkDirectory(2));
-                            d7Var3.B = q03;
-                            d7Var3.B = d7.q0(0, FileLoader.checkDirectory(101)) + q03;
-                            if (!d7.h0) {
-                                long q04 = d7.q0(1, AndroidUtilities.getLogsDir());
-                                d7Var3.C = q04;
-                                if (!BuildVars.DEBUG_VERSION && q04 < 268435456) {
-                                    d7Var3.C = 0L;
-                                }
-                                if (!d7.h0) {
-                                    long q05 = d7.q0(1, FileLoader.checkDirectory(3));
-                                    d7Var3.s = q05;
-                                    d7Var3.s = d7.q0(1, FileLoader.checkDirectory(5)) + q05;
-                                    if (!d7.h0) {
-                                        long q06 = d7.q0(2, FileLoader.checkDirectory(3));
-                                        d7Var3.x = q06;
-                                        d7Var3.x = d7.q0(2, FileLoader.checkDirectory(5)) + q06;
-                                        if (!d7.h0) {
-                                            d7Var3.D = d7.q0(0, new File(FileLoader.checkDirectory(4), "acache"));
-                                            if (!d7.h0) {
-                                                d7Var3.n = d7.q0(3, FileLoader.checkDirectory(4));
-                                                if (!d7.h0) {
-                                                    d7Var3.D += d7Var3.n;
-                                                    d7Var3.v = d7.q0(0, FileLoader.checkDirectory(1));
-                                                    d7Var3.w = d7.q0(0, FileLoader.checkDirectory(6));
-                                                    if (!d7.h0) {
-                                                        long j11 = d7Var3.h + d7Var3.r + d7Var3.B + d7Var3.C + d7Var3.v + d7Var3.y + d7Var3.s + d7Var3.x + d7Var3.w + d7Var3.D;
-                                                        d7.j0 = Long.valueOf(j11);
-                                                        d7Var3.E = j11;
-                                                        d7.i0 = System.currentTimeMillis();
-                                                        ArrayList<File> rootDirs = AndroidUtilities.getRootDirs();
-                                                        File file = rootDirs.get(0);
-                                                        file.getAbsolutePath();
-                                                        if (!TextUtils.isEmpty(SharedConfig.storageCacheDir)) {
-                                                            int size = rootDirs.size();
-                                                            for (int i11 = 0; i11 < size; i11++) {
-                                                                File file2 = rootDirs.get(i11);
-                                                                if (file2.getAbsolutePath().startsWith(SharedConfig.storageCacheDir)) {
-                                                                    file = file2;
-                                                                }
-                                                            }
-                                                        }
-                                                        try {
-                                                            StatFs statFs = new StatFs(file.getPath());
-                                                            long blockSizeLong = statFs.getBlockSizeLong();
-                                                            long availableBlocksLong = statFs.getAvailableBlocksLong();
-                                                            d7Var3.F = statFs.getBlockCountLong() * blockSizeLong;
-                                                            d7Var3.G = availableBlocksLong * blockSizeLong;
-                                                        } catch (Exception e) {
-                                                            FileLog.e(e);
-                                                        }
-                                                        AndroidUtilities.runOnUIThread(new h6(d7Var3, 0));
-                                                        d7Var3.getFileLoader().getFileDatabase().getQueue().postRunnable(new h6(d7Var3, 1));
-                                                        break;
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-                break;
+                return;
+            }
+        }
+        if (!Z) {
+            float f10 = z6Var.j0;
+            if (f10 != 1.0f) {
+                z6Var.j0 = f10 + 0.16f;
+                invalidate();
+            }
+        }
+        z6Var.j0 = Utilities.clamp(z6Var.j0, 1.0f, 0.0f);
+        d5Var = ((org.telegram.ui.ActionBar.n2) z6Var).parentLayout;
+        if (d5Var == null) {
         }
     }
 }

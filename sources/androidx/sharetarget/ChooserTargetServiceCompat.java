@@ -8,16 +8,16 @@ import android.service.chooser.ChooserTarget;
 import android.service.chooser.ChooserTargetService;
 import android.util.Log;
 import androidx.core.graphics.drawable.IconCompat;
-import h2.a;
-import h2.b;
-import h2.c;
-import h2.d;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import u4.a;
+import u4.b;
+import u4.c;
+import u4.d;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class ChooserTargetServiceCompat extends ChooserTargetService {
     @Override // android.service.chooser.ChooserTargetService
@@ -90,7 +90,7 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
             ArrayList arrayList4 = new ArrayList();
             int i13 = ((a) arrayList3.get(0)).a.m;
             int size3 = arrayList3.size();
-            float f10 = 1.0f;
+            float f7 = 1.0f;
             int i14 = i13;
             int i15 = 0;
             while (i15 < size3) {
@@ -99,25 +99,25 @@ public class ChooserTargetServiceCompat extends ChooserTargetService {
                 g0.c cVar4 = aVar.a;
                 try {
                     iconCompat = shortcutInfoCompatSaverImpl.g(cVar4.b);
-                } catch (Exception e) {
-                    Log.e("ChooserServiceCompat", "Failed to retrieve shortcut icon: ", e);
+                } catch (Exception e7) {
+                    Log.e("ChooserServiceCompat", "Failed to retrieve shortcut icon: ", e7);
                     iconCompat = null;
                 }
                 Bundle bundle = new Bundle();
                 bundle.putString("android.intent.extra.shortcut.ID", cVar4.b);
                 int i17 = cVar4.m;
                 if (i14 != i17) {
-                    f10 -= 0.01f;
+                    f7 -= 0.01f;
                     i14 = i17;
                 }
-                float f11 = f10;
-                arrayList4.add(new ChooserTarget(cVar4.e, iconCompat != null ? iconCompat.m(null) : null, f11, aVar.b, bundle));
+                float f10 = f7;
+                arrayList4.add(new ChooserTarget(cVar4.e, iconCompat != null ? iconCompat.m(null) : null, f10, aVar.b, bundle));
                 i15 = i16;
-                f10 = f11;
+                f7 = f10;
             }
             return arrayList4;
-        } catch (Exception e6) {
-            Log.e("ChooserServiceCompat", "Failed to retrieve shortcuts: ", e6);
+        } catch (Exception e10) {
+            Log.e("ChooserServiceCompat", "Failed to retrieve shortcuts: ", e10);
             return Collections.EMPTY_LIST;
         }
     }

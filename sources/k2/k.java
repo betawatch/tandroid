@@ -1,13 +1,21 @@
 package k2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class k {
-    public boolean a() {
-        return false;
-    }
+public final class k {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final boolean d;
+    public final boolean e;
+    public final int f;
 
-    public boolean b(int[] iArr) {
-        return false;
+    public k(int i10, int i11, int i12, int i13, boolean z10, boolean z11) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = z10;
+        this.e = z11;
+        this.f = i13;
     }
 }

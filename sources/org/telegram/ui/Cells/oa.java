@@ -1,107 +1,110 @@
 package org.telegram.ui.Cells;
 
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import java.io.Serializable;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import java.io.File;
 import java.util.ArrayList;
-import java.util.regex.Pattern;
+import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UnconfirmedAuthController;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.lq;
-import org.telegram.ui.Components.qc;
-import org.telegram.ui.qy;
-import org.telegram.ui.zn;
+import org.telegram.ui.Components.RadioButton;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.Components.vk0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oa implements View.OnClickListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 d;
-    public final /* synthetic */ Serializable e;
+public final class oa extends kl0 {
+    public final Context c;
+    public final /* synthetic */ pa d;
 
-    public /* synthetic */ oa(zn znVar, TLRPC.User user, String str, boolean z4, int i10) {
-        this.d = znVar;
-        this.e = str;
-        this.b = z4;
-        this.c = i10;
+    public oa(pa paVar, Context context) {
+        this.d = paVar;
+        this.c = context;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        int i11 = this.c;
-        boolean z4 = this.b;
-        Serializable serializable = this.e;
-        org.telegram.ui.ActionBar.p2 p2Var = this.d;
-        int i12 = 0;
-        switch (i10) {
-            case 0:
-                qy qyVar = (qy) p2Var;
-                ArrayList<UnconfirmedAuthController.UnconfirmedAuth> arrayList = (ArrayList) serializable;
-                String string = LocaleController.getString(R.string.UnconfirmedAuthConfirmedMessage);
-                int i13 = org.telegram.ui.ActionBar.j6.Gi;
-                SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i13, 0, new g(qyVar, 10));
-                SpannableString spannableString = new SpannableString(">");
-                lq lqVar = new lq(R.drawable.attach_arrow_right, 0);
-                lqVar.setOverrideColor(org.telegram.ui.ActionBar.j6.w0(null, i13, false));
-                lqVar.setScale(0.7f, 0.7f);
-                lqVar.setWidth(AndroidUtilities.dp(12.0f));
-                spannableString.setSpan(lqVar, 0, spannableString.length(), 33);
-                AndroidUtilities.replaceCharSequence(">", replaceSingleTag, spannableString);
-                qc.a0(qyVar).M(LocaleController.getString(z4 ? R.string.UnconfirmedAuthConfirmedBot : R.string.UnconfirmedAuthConfirmed), replaceSingleTag, R.raw.contact_check).j();
-                MessagesController.getInstance(i11).getUnconfirmedAuthController().confirm(arrayList, new gg.h(3));
-                MessagesController.getInstance(i11).getUnconfirmedAuthController().cleanup();
-                break;
-            default:
-                zn znVar = (zn) p2Var;
-                String str = (String) serializable;
-                Pattern pattern = org.telegram.ui.Components.z4.a;
-                if (znVar.getParentActivity() != null) {
-                    org.telegram.ui.ActionBar.g3 g3Var = new org.telegram.ui.ActionBar.g3(znVar.getParentActivity(), null, false, false);
-                    g3Var.fixNavigationBar();
-                    g3Var.title = LocaleController.getString(z4 ? R.string.ChatWithAdminChannelTitle : R.string.ChatWithAdminGroupTitle);
-                    g3Var.bigTitle = true;
-                    LinearLayout linearLayout = new LinearLayout(znVar.getParentActivity());
-                    linearLayout.setOrientation(1);
-                    TextView textView = new TextView(znVar.getParentActivity());
-                    linearLayout.addView(textView, k7.b6.t(-1, -1, 0, 21, 0, 21, 8));
-                    textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-                    textView.setTextSize(1, 16.0f);
-                    textView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("ChatWithAdminMessage", R.string.ChatWithAdminMessage, str, LocaleController.formatDateAudio(i11, false))));
-                    TextView textView2 = new TextView(znVar.getParentActivity());
-                    textView2.setPadding(AndroidUtilities.dp(34.0f), 0, AndroidUtilities.dp(34.0f), 0);
-                    textView2.setGravity(17);
-                    textView2.setTextSize(1, 14.0f);
-                    textView2.setTypeface(AndroidUtilities.bold());
-                    textView2.setText(LocaleController.getString(R.string.IUnderstand));
-                    textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
-                    int dp = AndroidUtilities.dp(8.0f);
-                    int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false);
-                    int w03 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Qh, false);
-                    textView2.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, w02, w03, w03));
-                    linearLayout.addView(textView2, k7.b6.t(-1, 48, 0, 16, 12, 16, 8));
-                    g3Var.customView = linearLayout;
-                    g3Var.show();
-                    textView2.setOnClickListener(new org.telegram.ui.Components.a3(g3Var, i12));
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        return false;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        pa paVar = this.d;
+        int size = paVar.d3.size() + paVar.e3.size();
+        paVar.g3 = size;
+        return size;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11;
+        org.telegram.ui.ActionBar.i6 i6Var;
+        TLRPC.TL_theme tL_theme;
+        ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) c1Var.a;
+        pa paVar = this.d;
+        ArrayList arrayList = paVar.e3;
+        if (i10 < arrayList.size()) {
+            i11 = i10;
+        } else {
+            ArrayList arrayList2 = paVar.d3;
+            int size = i10 - arrayList.size();
+            arrayList = arrayList2;
+            i11 = size;
         }
+        org.telegram.ui.ActionBar.i6 i6Var2 = (org.telegram.ui.ActionBar.i6) arrayList.get(i11);
+        boolean z10 = i10 == h() - 1;
+        boolean z11 = i10 == 0;
+        HashMap hashMap = themesHorizontalListCell$InnerThemeView.a0.Z2;
+        themesHorizontalListCell$InnerThemeView.b = i6Var2;
+        themesHorizontalListCell$InnerThemeView.s = z11;
+        themesHorizontalListCell$InnerThemeView.r = z10;
+        themesHorizontalListCell$InnerThemeView.F = i6Var2.Y;
+        RadioButton radioButton = themesHorizontalListCell$InnerThemeView.a;
+        FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) radioButton.getLayoutParams();
+        layoutParams.leftMargin = AndroidUtilities.dp(themesHorizontalListCell$InnerThemeView.s ? 49.0f : 27.0f);
+        radioButton.setLayoutParams(layoutParams);
+        themesHorizontalListCell$InnerThemeView.v = 0.0f;
+        org.telegram.ui.ActionBar.i6 i6Var3 = themesHorizontalListCell$InnerThemeView.b;
+        if (i6Var3.b != null && !i6Var3.T) {
+            i6Var3.Q = org.telegram.ui.ActionBar.j6.C0(org.telegram.ui.ActionBar.j6.ra);
+            themesHorizontalListCell$InnerThemeView.b.R = org.telegram.ui.ActionBar.j6.C0(org.telegram.ui.ActionBar.j6.Aa);
+            boolean exists = new File(themesHorizontalListCell$InnerThemeView.b.b).exists();
+            if ((!exists || !themesHorizontalListCell$InnerThemeView.c() || !exists) && (tL_theme = (i6Var = themesHorizontalListCell$InnerThemeView.b).F) != null) {
+                if (tL_theme.document != null) {
+                    i6Var.U = false;
+                    themesHorizontalListCell$InnerThemeView.v = 1.0f;
+                    Drawable mutate = themesHorizontalListCell$InnerThemeView.getResources().getDrawable(R.drawable.msg_theme).mutate();
+                    themesHorizontalListCell$InnerThemeView.T = mutate;
+                    int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E6, false);
+                    themesHorizontalListCell$InnerThemeView.U = w02;
+                    org.telegram.ui.ActionBar.j6.w1(w02, mutate);
+                    if (!exists) {
+                        String attachFileName = FileLoader.getAttachFileName(themesHorizontalListCell$InnerThemeView.b.F.document);
+                        if (!hashMap.containsKey(attachFileName)) {
+                            hashMap.put(attachFileName, themesHorizontalListCell$InnerThemeView.b);
+                            FileLoader fileLoader = FileLoader.getInstance(themesHorizontalListCell$InnerThemeView.b.E);
+                            TLRPC.TL_theme tL_theme2 = themesHorizontalListCell$InnerThemeView.b.F;
+                            fileLoader.loadFile(tL_theme2.document, tL_theme2, 1, 1);
+                        }
+                    }
+                } else {
+                    Drawable mutate2 = themesHorizontalListCell$InnerThemeView.getResources().getDrawable(R.drawable.preview_custom).mutate();
+                    themesHorizontalListCell$InnerThemeView.T = mutate2;
+                    int w03 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.E6, false);
+                    themesHorizontalListCell$InnerThemeView.U = w03;
+                    org.telegram.ui.ActionBar.j6.w1(w03, mutate2);
+                }
+            }
+        }
+        themesHorizontalListCell$InnerThemeView.a();
     }
 
-    public /* synthetic */ oa(qy qyVar, boolean z4, int i10, ArrayList arrayList) {
-        this.d = qyVar;
-        this.b = z4;
-        this.c = i10;
-        this.e = arrayList;
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        return new vk0(new ThemesHorizontalListCell$InnerThemeView(this.d, this.c));
     }
 }

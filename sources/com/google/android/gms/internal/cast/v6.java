@@ -1,17 +1,9 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class v6 {
-    public final Integer a;
-    public final long b = System.currentTimeMillis();
-    public final Boolean c;
-    public long d;
-    public final int e;
-
-    public v6(b4.e0 e0Var) {
-        this.e = e0Var.b;
-        this.a = (Integer) e0Var.c;
-        this.c = (Boolean) e0Var.d;
+public final class v6 extends IllegalArgumentException {
+    public v6(int i10, int i11) {
+        super(a4.a.l(i10, i11, "Unpaired surrogate at index ", " of "));
     }
 }

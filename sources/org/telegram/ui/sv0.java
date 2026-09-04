@@ -1,74 +1,34 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class sv0 implements View.OnClickListener {
-    public final /* synthetic */ yh0 a;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ org.telegram.ui.Components.rl0 c;
-    public final /* synthetic */ LinearLayout d;
-    public final /* synthetic */ org.telegram.ui.Components.p70 e;
-    public final /* synthetic */ org.telegram.ui.Components.p70 f;
-    public final /* synthetic */ yv0 h;
+public final class sv0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zv0 b;
 
-    public sv0(yv0 yv0Var, yh0 yh0Var, zn znVar, org.telegram.ui.Components.rl0 rl0Var, LinearLayout linearLayout, org.telegram.ui.Components.p70 p70Var, org.telegram.ui.Components.p70 p70Var2) {
-        this.h = yv0Var;
-        this.a = yh0Var;
-        this.b = znVar;
-        this.c = rl0Var;
-        this.d = linearLayout;
-        this.e = p70Var;
-        this.f = p70Var2;
+    public /* synthetic */ sv0(zv0 zv0Var, int i10) {
+        this.a = i10;
+        this.b = zv0Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        yh0 yh0Var = this.a;
-        ArrayList arrayList = yh0Var.b;
-        ArrayList arrayList2 = yh0Var.c;
-        if (arrayList2.isEmpty()) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.R.setTranslationY(0.0f);
+                break;
+            case 1:
+                this.b.R.setTranslationY(0.0f);
+                break;
+            default:
+                zv0 zv0Var = this.b;
+                zv0Var.getClass();
+                zv0Var.R.setTranslationY(0.0f);
+                zv0Var.l0();
+                break;
         }
-        int size = arrayList2.size();
-        yv0 yv0Var = this.h;
-        zn znVar = this.b;
-        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
-            TLObject tLObject = (TLObject) arrayList2.get(0);
-            if (tLObject == null) {
-                return;
-            }
-            Bundle bundle = new Bundle();
-            if (tLObject instanceof TLRPC.User) {
-                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
-            } else if (tLObject instanceof TLRPC.Chat) {
-                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
-            }
-            znVar.presentFragment(new ProfileActivity(bundle, null));
-            yv0Var.c(false);
-            return;
-        }
-        if (SharedConfig.messageSeenHintCount > 0 && znVar.U0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
-            org.telegram.ui.Components.ic t6 = new org.telegram.ui.Components.qc(org.telegram.ui.Components.cb.a(yv0Var.getContext()), yv0Var.b).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
-            znVar.k1 = t6;
-            t6.j = 4000;
-            t6.j();
-            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
-        }
-        org.telegram.ui.Components.rl0 rl0Var = this.c;
-        rl0Var.requestLayout();
-        this.d.requestLayout();
-        rl0Var.getAdapter().l();
-        this.e.K(this.f);
     }
 }

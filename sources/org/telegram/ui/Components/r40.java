@@ -1,81 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
 import java.util.ArrayList;
-import java.util.HashMap;
 import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class r40 implements org.telegram.ui.lq0 {
-    public boolean a;
-    public final /* synthetic */ HashMap b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ x40 d;
+public final class r40 extends org.telegram.ui.su0 {
+    public final /* synthetic */ ArrayList a;
+    public final /* synthetic */ u40 b;
 
-    public r40(x40 x40Var, HashMap hashMap, ArrayList arrayList) {
-        this.d = x40Var;
-        this.b = hashMap;
-        this.c = arrayList;
+    public r40(u40 u40Var, ArrayList arrayList) {
+        this.b = u40Var;
+        this.a = arrayList;
     }
 
-    @Override // org.telegram.ui.lq0
-    public final boolean e() {
-        return this.d.b.e();
-    }
-
-    @Override // org.telegram.ui.lq0
-    public final void f(int i10, boolean z4, boolean z10) {
-        HashMap hashMap = this.b;
-        if (hashMap.isEmpty()) {
-            return;
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final org.telegram.ui.cv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        t40 t40Var = this.b.b;
+        if (t40Var == null) {
+            return null;
         }
-        x40 x40Var = this.d;
-        if (x40Var.b == null || this.a || z4) {
-            return;
-        }
-        this.a = true;
-        ArrayList arrayList = new ArrayList();
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList2 = this.c;
-            if (i11 >= arrayList2.size()) {
-                x40.b(x40Var, false, arrayList);
-                return;
-            }
-            Object obj = hashMap.get(arrayList2.get(i11));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            arrayList.add(sendingMediaInfo);
-            if (obj instanceof MediaController.SearchImage) {
-                MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
-                String str = searchImage.imagePath;
-                if (str != null) {
-                    sendingMediaInfo.path = str;
-                } else {
-                    sendingMediaInfo.searchImage = searchImage;
-                }
-                sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
-                sendingMediaInfo.thumbPath = searchImage.thumbPath;
-                CharSequence charSequence = searchImage.caption;
-                sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-                sendingMediaInfo.entities = searchImage.entities;
-                sendingMediaInfo.masks = searchImage.stickers;
-                sendingMediaInfo.ttl = searchImage.ttl;
-            }
-            i11++;
-        }
+        return t40Var.getCloseIntoObject();
     }
 
-    @Override // org.telegram.ui.lq0
-    public final void a() {
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final boolean S() {
+        return false;
     }
 
-    @Override // org.telegram.ui.lq0
-    public final void c(Editable editable) {
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        this.b.t((MediaController.PhotoEntry) this.a.get(0));
     }
 
-    @Override // org.telegram.ui.lq0
-    public final /* synthetic */ void d() {
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final boolean z() {
+        return false;
     }
 }

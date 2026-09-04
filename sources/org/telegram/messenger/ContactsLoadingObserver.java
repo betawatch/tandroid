@@ -4,7 +4,7 @@ import android.os.Handler;
 import android.os.Looper;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class ContactsLoadingObserver {
     private final Callback callback;
@@ -12,20 +12,20 @@ public final class ContactsLoadingObserver {
     private final int currentAccount;
     private final Handler handler;
     private final NotificationCenter notificationCenter;
-    private final NotificationCenter.NotificationCenterDelegate observer = new y1(this, 0);
+    private final NotificationCenter.NotificationCenterDelegate observer = new v1(this, 0);
     private final Runnable releaseRunnable;
     private boolean released;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface Callback {
-        void onResult(boolean z4);
+        void onResult(boolean z10);
     }
 
     private ContactsLoadingObserver(Callback callback) {
         this.callback = callback;
         int i10 = UserConfig.selectedAccount;
         this.currentAccount = i10;
-        this.releaseRunnable = new e1(this, 17);
+        this.releaseRunnable = new d1(this, 17);
         this.contactsController = ContactsController.getInstance(i10);
         this.notificationCenter = NotificationCenter.getInstance(i10);
         this.handler = new Handler(Looper.myLooper());
@@ -43,20 +43,20 @@ public final class ContactsLoadingObserver {
         onContactsLoadingStateUpdated(this.currentAccount, true);
     }
 
-    public static void observe(Callback callback, long j10) {
-        new ContactsLoadingObserver(callback).start(j10);
+    public static void observe(Callback callback, long j3) {
+        new ContactsLoadingObserver(callback).start(j3);
     }
 
-    private boolean onContactsLoadingStateUpdated(int i10, boolean z4) {
+    private boolean onContactsLoadingStateUpdated(int i10, boolean z10) {
         if (this.released) {
             return false;
         }
-        boolean z10 = this.contactsController.contactsLoaded;
-        if (!z10 && !z4) {
+        boolean z11 = this.contactsController.contactsLoaded;
+        if (!z11 && !z10) {
             return false;
         }
         release();
-        this.callback.onResult(z10);
+        this.callback.onResult(z11);
         return true;
     }
 
@@ -75,11 +75,11 @@ public final class ContactsLoadingObserver {
         this.released = true;
     }
 
-    public void start(long j10) {
+    public void start(long j3) {
         if (onContactsLoadingStateUpdated(this.currentAccount, false)) {
             return;
         }
         this.notificationCenter.addObserver(this.observer, NotificationCenter.contactsDidLoad);
-        this.handler.postDelayed(this.releaseRunnable, j10);
+        this.handler.postDelayed(this.releaseRunnable, j3);
     }
 }

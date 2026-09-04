@@ -1,34 +1,19 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class fv0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mv0 b;
+public final class fv0 {
+    public final int a;
+    public final ArrayList b;
+    public final av0 c;
+    public final /* synthetic */ PhotoViewer d;
 
-    public /* synthetic */ fv0(mv0 mv0Var, int i10) {
+    public fv0(PhotoViewer photoViewer, int i10, ArrayList arrayList, av0 av0Var) {
+        this.d = photoViewer;
+        this.b = arrayList;
         this.a = i10;
-        this.b = mv0Var;
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.b.O.setTranslationY(0.0f);
-                break;
-            case 1:
-                this.b.O.setTranslationY(0.0f);
-                break;
-            default:
-                mv0 mv0Var = this.b;
-                mv0Var.getClass();
-                mv0Var.O.setTranslationY(0.0f);
-                mv0Var.l0();
-                break;
-        }
+        this.c = av0Var;
     }
 }

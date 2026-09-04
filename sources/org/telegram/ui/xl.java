@@ -1,22 +1,34 @@
 package org.telegram.ui;
 
 import android.app.Activity;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class xl extends ph.f3 {
-    public final /* synthetic */ zn I0;
+public final class xl extends org.telegram.ui.Components.n20 {
+    public final /* synthetic */ co b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xl(zn znVar, Activity activity) {
-        super(activity, 3);
-        this.I0 = znVar;
+    public xl(co coVar, Activity activity, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(activity, n2Var);
+        this.b = coVar;
     }
 
-    @Override // android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        setTranslationY(((-getTop()) - AndroidUtilities.dp(120.0f)) + this.I0.z1);
+    @Override // org.telegram.ui.Components.n20
+    public final void m() {
+        co coVar = this.b;
+        coVar.Q7();
+        UndoView undoView = coVar.y3;
+        if (undoView == null) {
+            return;
+        }
+        undoView.j(75, 0L, null);
+        coVar.getMessagesController().removeSuggestion(coVar.T5, "CONVERT_GIGAGROUP");
+    }
+
+    @Override // org.telegram.ui.Components.n20
+    public final void n() {
+        co coVar = this.b;
+        coVar.getMessagesController().convertToGigaGroup(coVar.getParentActivity(), coVar.e, coVar, new z0(this, 19));
     }
 }

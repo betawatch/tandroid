@@ -56,7 +56,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
 
     LongStream k();
 
-    IntStream limit(long j10);
+    IntStream limit(long j3);
 
     IntStream map(IntUnaryOperator intUnaryOperator);
 
@@ -84,7 +84,7 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
     @Override // j$.util.stream.BaseStream
     IntStream sequential();
 
-    IntStream skip(long j10);
+    IntStream skip(long j3);
 
     IntStream sorted();
 
@@ -221,8 +221,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // java.util.stream.IntStream
-        public final /* synthetic */ java.util.stream.IntStream limit(long j10) {
-            return convert(IntStream.this.limit(j10));
+        public final /* synthetic */ java.util.stream.IntStream limit(long j3) {
+            return convert(IntStream.this.limit(j3));
         }
 
         @Override // java.util.stream.IntStream
@@ -304,8 +304,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // java.util.stream.IntStream
-        public final /* synthetic */ java.util.stream.IntStream skip(long j10) {
-            return convert(IntStream.this.skip(j10));
+        public final /* synthetic */ java.util.stream.IntStream skip(long j3) {
+            return convert(IntStream.this.skip(j3));
         }
 
         @Override // java.util.stream.IntStream
@@ -490,8 +490,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream limit(long j10) {
-            return convert(this.a.limit(j10));
+        public final /* synthetic */ IntStream limit(long j3) {
+            return convert(this.a.limit(j3));
         }
 
         @Override // j$.util.stream.IntStream
@@ -565,8 +565,8 @@ public interface IntStream extends BaseStream<Integer, IntStream> {
         }
 
         @Override // j$.util.stream.IntStream
-        public final /* synthetic */ IntStream skip(long j10) {
-            return convert(this.a.skip(j10));
+        public final /* synthetic */ IntStream skip(long j3) {
+            return convert(this.a.skip(j3));
         }
 
         @Override // j$.util.stream.IntStream

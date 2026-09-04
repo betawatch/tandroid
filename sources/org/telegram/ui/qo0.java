@@ -1,44 +1,87 @@
 package org.telegram.ui;
 
+import android.content.ActivityNotFoundException;
 import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.widget.ImageView;
+import android.content.Intent;
+import android.net.Uri;
+import android.webkit.RenderProcessGoneDetail;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class qo0 extends to0 {
-    public int D;
-    public final /* synthetic */ np0 E;
+public final class qo0 extends WebViewClient {
+    public final /* synthetic */ Context a;
+    public final /* synthetic */ xo0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qo0(np0 np0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.E = np0Var;
-        this.D = 0;
+    public qo0(xo0 xo0Var, Context context) {
+        this.b = xo0Var;
+        this.a = context;
     }
 
-    @Override // org.telegram.ui.to0
-    public final void a() {
-        np0 np0Var = this.E;
-        if (np0Var.getParentActivity() != null) {
-            AndroidUtilities.setLightStatusBar(np0Var.getParentActivity(), np0Var.isLightStatusBar());
-        }
-        int actionBarButtonColor = getActionBarButtonColor();
-        if (this.D != actionBarButtonColor) {
-            ImageView imageView = np0Var.G;
-            if (imageView != null) {
-                this.D = actionBarButtonColor;
-                imageView.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
+    @Override // android.webkit.WebViewClient
+    public final void onPageFinished(WebView webView, String str) {
+        super.onPageFinished(webView, str);
+        xo0 xo0Var = this.b;
+        xo0Var.z0 = false;
+        xo0Var.H0(true, false);
+        xo0Var.K0();
+    }
+
+    @Override // android.webkit.WebViewClient
+    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
+        xo0 xo0Var = this.b;
+        try {
+            if (!AndroidUtilities.isSafeToShow(xo0Var.getParentActivity())) {
+                return true;
             }
-            ImageView imageView2 = np0Var.H;
-            if (imageView2 != null) {
-                this.D = actionBarButtonColor;
-                imageView2.setColorFilter(new PorterDuffColorFilter(actionBarButtonColor, PorterDuff.Mode.SRC_IN));
-            }
+            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(xo0Var.getParentActivity(), 0, xo0Var.Y0);
+            alertDialog$Builder.a.R = LocaleController.getString(R.string.ChromeCrashTitle);
+            alertDialog$Builder.a.T = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new rl0(this, 9));
+            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+            alertDialog$Builder.o();
+            return true;
+        } catch (Exception e7) {
+            FileLog.e(e7);
+            return false;
         }
-        np0Var.G0();
-        np0Var.A0();
+    }
+
+    @Override // android.webkit.WebViewClient
+    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
+        Uri parse;
+        xo0 xo0Var = this.b;
+        xo0Var.y = !str.equals(xo0Var.x);
+        try {
+            parse = Uri.parse(str);
+        } catch (Exception unused) {
+        }
+        if ("t.me".equals(parse.getHost())) {
+            xo0Var.t0();
+            return true;
+        }
+        if (!xo0.h1.contains(parse.getScheme())) {
+            if (!xo0.g1.contains(parse.getScheme())) {
+                try {
+                    if (xo0Var.getParentActivity() != null) {
+                        xo0Var.getParentActivity().startActivityForResult(new Intent("android.intent.action.VIEW", parse), 210);
+                        return true;
+                    }
+                } catch (ActivityNotFoundException unused2) {
+                    AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this.a);
+                    alertDialog$Builder.a.R = xo0Var.p0;
+                    alertDialog$Builder.a.T = LocaleController.getString(R.string.PaymentAppNotFoundForDeeplink);
+                    alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
+                    alertDialog$Builder.o();
+                }
+            }
+            return super.shouldOverrideUrlLoading(webView, str);
+        }
+        return true;
     }
 }

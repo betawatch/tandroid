@@ -1,21 +1,52 @@
 package org.telegram.ui.Components;
 
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import android.animation.AnimatorSet;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class bf extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ ChatActivityEnterView o;
+public final class bf implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bf(ChatActivityEnterView chatActivityEnterView, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
-        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = chatActivityEnterView;
+    public /* synthetic */ bf(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.a = i10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        this.o.G0.invalidate();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = this.b;
+                bf bfVar = chatActivityEnterView.q3;
+                if ((!chatActivityEnterView.j0() || !chatActivityEnterView.v()) && !org.telegram.ui.ActionBar.n2.hasSheets(chatActivityEnterView.O2) && !chatActivityEnterView.X1 && chatActivityEnterView.E0 != null && chatActivityEnterView.j3 && !chatActivityEnterView.y2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
+                    og ogVar = chatActivityEnterView.Y2;
+                    if (ogVar != null) {
+                        ogVar.l1();
+                    }
+                    chatActivityEnterView.E0.requestFocus();
+                    AndroidUtilities.showKeyboard(chatActivityEnterView.E0);
+                    AndroidUtilities.cancelRunOnUIThread(bfVar);
+                    AndroidUtilities.runOnUIThread(bfVar, 100L);
+                    break;
+                }
+                break;
+            case 1:
+                og ogVar2 = this.b.Y2;
+                if (ogVar2 != null) {
+                    ogVar2.c2(0, 0, 0, 0L, 0L, true);
+                    break;
+                }
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView2 = this.b;
+                AnimatorSet animatorSet = chatActivityEnterView2.V0;
+                if (animatorSet != null && !animatorSet.isRunning()) {
+                    chatActivityEnterView2.V0.start();
+                    break;
+                }
+                break;
+        }
     }
 }

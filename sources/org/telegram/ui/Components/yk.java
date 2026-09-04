@@ -1,39 +1,28 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.widget.TextView;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class yk extends TextView {
-    public final /* synthetic */ int a;
-    public float b;
-    public float c;
+public final class yk extends s4.d0 {
+    public final /* synthetic */ ig.e0 r;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ yk(Context context, int i10) {
+    public yk(ig.e0 e0Var, Context context) {
         super(context);
-        this.a = i10;
+        this.r = e0Var;
     }
 
-    @Override // android.view.View
-    public final float getTranslationX() {
-        switch (this.a) {
-        }
-        return this.b;
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        int k10 = super.k(i10, view);
+        gl glVar = (gl) this.r.V;
+        return k10 - (glVar.P.getPaddingTop() - (glVar.A0 - glVar.z0));
     }
 
-    @Override // android.view.View
-    public final void setTranslationX(float f10) {
-        switch (this.a) {
-            case 0:
-                this.b = f10;
-                setTranslationY(this.c + f10);
-                break;
-            default:
-                this.b = f10;
-                setTranslationY(this.c + f10);
-                break;
-        }
+    @Override // s4.d0
+    public final int m(int i10) {
+        return super.m(i10) * 4;
     }
 }

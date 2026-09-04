@@ -1,12 +1,55 @@
 package androidx.emoji2.text;
 
-import android.text.PrecomputedText;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Context;
+import android.content.res.Configuration;
+import android.icu.text.DecimalFormatSymbols;
+import android.os.LocaleList;
+import android.os.UserManager;
+import j$.util.stream.IntStream;
+import java.util.Locale;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class x extends cb.b {
-    @Override // cb.b
-    public final boolean F2(CharSequence charSequence) {
-        return charSequence instanceof PrecomputedText;
+public abstract class x {
+    public static boolean a(NotificationManager notificationManager) {
+        return notificationManager.areNotificationsEnabled();
+    }
+
+    public static IntStream b(CharSequence charSequence) {
+        IntStream convert;
+        convert = IntStream.VivifiedWrapper.convert(charSequence.chars());
+        return convert;
+    }
+
+    public static IntStream c(CharSequence charSequence) {
+        IntStream convert;
+        convert = IntStream.VivifiedWrapper.convert(charSequence.codePoints());
+        return convert;
+    }
+
+    public static LocaleList d(Locale... localeArr) {
+        return new LocaleList(localeArr);
+    }
+
+    public static DecimalFormatSymbols e(Locale locale) {
+        return DecimalFormatSymbols.getInstance(locale);
+    }
+
+    public static LocaleList f(Configuration configuration) {
+        return configuration.getLocales();
+    }
+
+    public static boolean g(Context context) {
+        return ((UserManager) context.getSystemService(UserManager.class)).isUserUnlocked();
+    }
+
+    public static void h(Notification.Action.Builder builder, boolean z10) {
+        builder.setAllowGeneratedReplies(z10);
+    }
+
+    public static void i(Notification.Builder builder) {
+        builder.setRemoteInputHistory(null);
     }
 }

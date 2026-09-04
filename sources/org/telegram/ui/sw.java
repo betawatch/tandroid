@@ -1,33 +1,23 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class sw extends org.telegram.ui.Components.xs {
-    public final /* synthetic */ py E;
+public final class sw extends org.telegram.ui.Components.k00 {
+    public final /* synthetic */ uy B0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sw(my myVar, py pyVar) {
-        super(myVar);
-        this.E = pyVar;
+    public sw(uy uyVar, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.B0 = uyVar;
     }
 
-    @Override // f2.o1
-    public final void y() {
-        py pyVar = this.E;
-        if (pyVar.c.L0() == 0) {
-            View m9 = pyVar.c.m(0);
-            if (m9 != null) {
-                m9.invalidate();
-            }
-            if (pyVar.v == 2) {
-                pyVar.v = 1;
-            }
-            xw xwVar = pyVar.n;
-            if (xwVar != null) {
-                xwVar.b();
-            }
-        }
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        getParent().requestDisallowInterceptTouchEvent(true);
+        this.B0.m3 = false;
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

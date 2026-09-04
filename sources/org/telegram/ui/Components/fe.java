@@ -1,29 +1,71 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class fe extends View.AccessibilityDelegate {
-    public final /* synthetic */ int a;
+public final /* synthetic */ class fe implements Utilities.Callback {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ int e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ String g;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object i;
+    public final /* synthetic */ Object j;
 
-    @Override // android.view.View.AccessibilityDelegate
-    public final void onInitializeAccessibilityNodeInfo(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
+    public /* synthetic */ fe(hg hgVar, Object obj, MediaController.PhotoEntry photoEntry, boolean z10, int i10, int i11, boolean z11, String str, Object obj2) {
+        this.h = hgVar;
+        this.b = obj;
+        this.i = photoEntry;
+        this.c = z10;
+        this.d = i10;
+        this.e = i11;
+        this.f = z11;
+        this.g = str;
+        this.j = obj2;
+    }
+
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        Object obj2 = this.i;
+        Object obj3 = this.h;
+        switch (i10) {
             case 0:
-                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-                accessibilityNodeInfo.setClassName("android.widget.ImageButton");
-                accessibilityNodeInfo.setClickable(true);
-                accessibilityNodeInfo.setLongClickable(true);
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj3;
+                int i11 = ChatActivityEnterView.m5;
+                rd rdVar = new rd(chatActivityEnterView, (TLRPC.Document) obj2, this.g, (MessageObject.SendAnimationData) this.j, this.c, this.d, this.e, this.b, (Long) obj, this.f);
+                if (!chatActivityEnterView.r1(rdVar)) {
+                    rdVar.run();
+                    break;
+                }
                 break;
             default:
-                super.onInitializeAccessibilityNodeInfo(view, accessibilityNodeInfo);
-                if (view.isEnabled()) {
-                    accessibilityNodeInfo.addAction(16);
+                hg hgVar = (hg) obj3;
+                rd rdVar2 = new rd(hgVar, this.b, (MediaController.PhotoEntry) obj2, this.c, this.d, this.e, this.f, (Long) obj, this.g, this.j);
+                if (!hgVar.a.r1(rdVar2)) {
+                    rdVar2.run();
                     break;
                 }
                 break;
         }
+    }
+
+    public /* synthetic */ fe(ChatActivityEnterView chatActivityEnterView, TLRPC.Document document, String str, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10, int i11, Object obj, boolean z11) {
+        this.h = chatActivityEnterView;
+        this.i = document;
+        this.g = str;
+        this.j = sendAnimationData;
+        this.c = z10;
+        this.d = i10;
+        this.e = i11;
+        this.b = obj;
+        this.f = z11;
     }
 }

@@ -54,19 +54,19 @@ public abstract class i1 extends a implements LongStream {
     }
 
     @Override // j$.util.stream.a
-    public final e2 K0(a aVar, Spliterator spliterator, boolean z4, IntFunction intFunction) {
-        return t3.d0(aVar, spliterator, z4);
+    public final e2 K0(a aVar, Spliterator spliterator, boolean z10, IntFunction intFunction) {
+        return t3.d0(aVar, spliterator, z10);
     }
 
     @Override // j$.util.stream.a
-    public final Spliterator T0(a aVar, Supplier supplier, boolean z4) {
-        return new k7(aVar, supplier, z4);
+    public final Spliterator T0(a aVar, Supplier supplier, boolean z10) {
+        return new k7(aVar, supplier, z10);
     }
 
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
         LongConsumer m0Var;
-        boolean q10;
+        boolean q6;
         j$.util.a1 U0 = U0(spliterator);
         if (j5Var instanceof LongConsumer) {
             m0Var = (LongConsumer) j5Var;
@@ -79,17 +79,17 @@ public abstract class i1 extends a implements LongStream {
             m0Var = new j$.util.m0(j5Var, 1);
         }
         do {
-            q10 = j5Var.q();
-            if (q10) {
+            q6 = j5Var.q();
+            if (q6) {
                 break;
             }
         } while (U0.tryAdvance(m0Var));
-        return q10;
+        return q6;
     }
 
     @Override // j$.util.stream.t3
-    public final w1 A0(long j10, IntFunction intFunction) {
-        return t3.t0(j10);
+    public final w1 A0(long j3, IntFunction intFunction) {
+        return t3.t0(j3);
     }
 
     @Override // j$.util.stream.BaseStream
@@ -157,19 +157,19 @@ public abstract class i1 extends a implements LongStream {
     }
 
     @Override // j$.util.stream.LongStream
-    public final LongStream limit(long j10) {
-        if (j10 < 0) {
-            throw new IllegalArgumentException(Long.toString(j10));
+    public final LongStream limit(long j3) {
+        if (j3 < 0) {
+            throw new IllegalArgumentException(Long.toString(j3));
         }
-        return t3.z0(this, 0L, j10);
+        return t3.z0(this, 0L, j3);
     }
 
     @Override // j$.util.stream.LongStream
-    public final LongStream skip(long j10) {
-        if (j10 >= 0) {
-            return j10 == 0 ? this : t3.z0(this, j10, -1L);
+    public final LongStream skip(long j3) {
+        if (j3 >= 0) {
+            return j3 == 0 ? this : t3.z0(this, j3, -1L);
         }
-        throw new IllegalArgumentException(Long.toString(j10));
+        throw new IllegalArgumentException(Long.toString(j3));
     }
 
     @Override // j$.util.stream.LongStream
@@ -208,14 +208,14 @@ public abstract class i1 extends a implements LongStream {
 
     @Override // j$.util.stream.LongStream
     public final j$.util.b0 average() {
-        long j10 = ((long[]) collect(new a1(6), new a1(7), new a1(8)))[0];
-        return j10 > 0 ? new j$.util.b0(r0[1] / j10) : j$.util.b0.c;
+        long j3 = ((long[]) collect(new a1(6), new a1(7), new a1(8)))[0];
+        return j3 > 0 ? new j$.util.b0(r0[1] / j3) : j$.util.b0.c;
     }
 
     @Override // j$.util.stream.LongStream
-    public final long reduce(long j10, LongBinaryOperator longBinaryOperator) {
+    public final long reduce(long j3, LongBinaryOperator longBinaryOperator) {
         Objects.requireNonNull(longBinaryOperator);
-        return ((Long) I0(new u3(w6.LONG_VALUE, longBinaryOperator, j10))).longValue();
+        return ((Long) I0(new u3(w6.LONG_VALUE, longBinaryOperator, j3))).longValue();
     }
 
     @Override // j$.util.stream.LongStream

@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+import gd.g;
 import java.util.UUID;
-import k7.o7;
-import sc.g;
+import v7.s7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzgl {
     public static final /* synthetic */ int zza = 0;
@@ -16,12 +16,12 @@ public final class zzgl {
 
     public static final void zzb(zzwk zzwkVar, String str, zzwa zzwaVar) {
         int i10 = zzby.zza;
-        g a2 = o7.a(zzgi.zza);
-        g a10 = o7.a(zzgj.zza);
+        g a2 = s7.a(zzgi.zza);
+        g a10 = s7.a(zzgj.zza);
         if (zzwaVar != null) {
             zzwkVar.zzt(zzwaVar);
         }
-        for (zzca zzcaVar : ((zzcc) o7.a(zzgk.zza).a()).zza()) {
+        for (zzca zzcaVar : ((zzcc) s7.a(zzgk.zza).a()).zza()) {
             zzwkVar.zzq(0);
         }
         if (zzwkVar.zzz()) {

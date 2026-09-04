@@ -1,253 +1,235 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.app.Activity;
+import android.animation.ValueAnimator;
 import android.content.SharedPreferences;
-import android.graphics.Canvas;
-import android.util.Property;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class cg0 extends FrameLayout {
+public final class cg0 extends l20 {
     public float a;
     public float b;
-    public boolean c;
-    public boolean d;
-    public final /* synthetic */ PipRoundVideoView e;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ eg0 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public cg0(PipRoundVideoView pipRoundVideoView, Activity activity) {
-        super(activity);
-        this.e = pipRoundVideoView;
+    public cg0(eg0 eg0Var, int i10) {
+        this.d = eg0Var;
+        this.c = i10;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        org.telegram.ui.ActionBar.i5 i5Var = org.telegram.ui.ActionBar.j6.k3;
-        if (i5Var != null) {
-            i5Var.setAlpha((int) (getAlpha() * 255.0f));
-            org.telegram.ui.ActionBar.j6.k3.setBounds(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(125.0f), AndroidUtilities.dp(125.0f));
-            org.telegram.ui.ActionBar.j6.k3.draw(canvas);
-            org.telegram.ui.ActionBar.j6.S1.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ra, false));
-            org.telegram.ui.ActionBar.j6.S1.setAlpha((int) (getAlpha() * 255.0f));
-            canvas.drawCircle(AndroidUtilities.dp(63.0f), AndroidUtilities.dp(63.0f), AndroidUtilities.dp(59.5f), org.telegram.ui.ActionBar.j6.S1);
+    @Override // org.telegram.ui.Components.l20
+    public final boolean a() {
+        eg0 eg0Var = this.d;
+        PhotoViewer photoViewer = eg0Var.V;
+        if (photoViewer == null) {
+            return false;
         }
+        if ((photoViewer.F2 == null && eg0Var.r == null) || eg0Var.c0 || eg0Var.Y || eg0Var.w || eg0Var.s.isInProgress() || !eg0Var.f0) {
+            return false;
+        }
+        return eg0Var.l() != -9223372036854775807L && eg0Var.m() >= 15000;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0) {
-            this.a = motionEvent.getRawX();
-            this.b = motionEvent.getRawY();
-            this.d = true;
+    /* JADX WARN: Removed duplicated region for block: B:34:0x008a  */
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onDoubleTap(MotionEvent motionEvent) {
+        boolean z10;
+        eg0 eg0Var = this.d;
+        PhotoViewer photoViewer = eg0Var.V;
+        w61 w61Var = eg0Var.Q;
+        if (photoViewer != null && ((photoViewer.F2 != null || eg0Var.r != null) && !eg0Var.c0 && !eg0Var.Y && !eg0Var.w && !eg0Var.s.isInProgress() && eg0Var.f0)) {
+            eg0Var.V.getClass();
+            boolean z11 = motionEvent.getX() >= (((float) eg0Var.t()) * eg0Var.J) * 0.5f;
+            long l4 = eg0Var.l();
+            long m10 = eg0Var.m();
+            if (l4 != -9223372036854775807L && m10 >= 15000) {
+                long j3 = z11 ? l4 + 10000 : l4 - 10000;
+                if (l4 != j3) {
+                    if (j3 > m10) {
+                        j3 = m10;
+                    } else if (j3 < 0) {
+                        z10 = j3 >= -9000;
+                        j3 = 0;
+                        if (z10) {
+                            w61Var.e(true);
+                            w61Var.d(!z11);
+                            long j10 = w61Var.o + 10000;
+                            w61Var.o = j10;
+                            w61Var.p = LocaleController.formatPluralString("Seconds", (int) (j10 / 1000), new Object[0]);
+                            qf0 qf0Var = eg0Var.r;
+                            if (qf0Var != null) {
+                                qf0Var.i(j3);
+                            } else {
+                                g71 g71Var = eg0Var.V.F2;
+                                if (g71Var != null) {
+                                    g71Var.K(j3);
+                                }
+                            }
+                            w61Var.g(0L);
+                            eg0Var.Z = j3 / m10;
+                            bi.a4 a4Var = eg0Var.b0;
+                            if (a4Var != null) {
+                                a4Var.invalidate();
+                            }
+                            dg0 dg0Var = eg0Var.h;
+                            if (dg0Var != null) {
+                                dg0Var.invalidate();
+                            }
+                            if (!eg0Var.E) {
+                                eg0Var.E = true;
+                                eg0Var.y(true);
+                                if (!eg0Var.i0) {
+                                    eg0Var.i0 = true;
+                                    AndroidUtilities.runOnUIThread(eg0Var.j0, 2500L);
+                                }
+                            }
+                        }
+                        return true;
+                    }
+                    z10 = true;
+                    if (z10) {
+                    }
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        eg0 eg0Var = this.d;
+        if (eg0Var.E) {
+            for (int i10 = 1; i10 < eg0Var.e.getChildCount(); i10++) {
+                View childAt = eg0Var.e.getChildAt(i10);
+                if (childAt.dispatchTouchEvent(motionEvent)) {
+                    eg0Var.y = childAt;
+                    return true;
+                }
+            }
+        }
+        this.a = eg0Var.K;
+        this.b = eg0Var.L;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        eg0 eg0Var = this.d;
+        if (!eg0Var.w || eg0Var.x) {
+            return false;
+        }
+        o1.k kVar = eg0Var.M;
+        kVar.a = f7;
+        float f11 = eg0Var.K;
+        kVar.b = f11;
+        kVar.c = true;
+        kVar.u.i = (f7 / 7.0f) + ((eg0Var.H / 2.0f) + f11) >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r3 - r2) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
+        eg0Var.M.f();
+        o1.k kVar2 = eg0Var.N;
+        kVar2.a = f7;
+        kVar2.b = eg0Var.L;
+        kVar2.c = true;
+        kVar2.u.i = w7.p.a((f10 / 10.0f) + r9, AndroidUtilities.dp(16.0f), (AndroidUtilities.displaySize.y - eg0Var.I) - AndroidUtilities.dp(16.0f));
+        eg0Var.N.f();
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        eg0 eg0Var = this.d;
+        if (!eg0Var.w && eg0Var.F == null && !eg0Var.x) {
+            float abs = Math.abs(f7);
+            float f11 = this.c;
+            if (abs >= f11 || Math.abs(f10) >= f11) {
+                eg0Var.w = true;
+                eg0Var.M.c();
+                eg0Var.N.c();
+                eg0Var.f0 = false;
+                eg0Var.i();
+                AndroidUtilities.cancelRunOnUIThread(eg0Var.h0);
+            }
+        }
+        if (eg0Var.w) {
+            float f12 = eg0Var.K;
+            float rawX = (motionEvent2.getRawX() + this.a) - motionEvent.getRawX();
+            eg0Var.L = (motionEvent2.getRawY() + this.b) - motionEvent.getRawY();
+            int i10 = eg0Var.H;
+            if (rawX > (-i10) * 0.25f && rawX < AndroidUtilities.displaySize.x - (i10 * 0.75f)) {
+                boolean z10 = eg0Var.d0;
+                if (z10) {
+                    if (z10) {
+                        eg0Var.M.a(new di.va(this, rawX, 2));
+                        o1.k kVar = eg0Var.M;
+                        kVar.b = f12;
+                        kVar.c = true;
+                        kVar.u.i = rawX;
+                        kVar.f();
+                    }
+                    eg0Var.d0 = false;
+                    return true;
+                }
+                o1.k kVar2 = eg0Var.M;
+                if (kVar2.f) {
+                    kVar2.u.i = rawX;
+                } else {
+                    WindowManager.LayoutParams layoutParams = eg0Var.c;
+                    eg0Var.K = rawX;
+                    layoutParams.x = (int) rawX;
+                    ((SharedPreferences) eg0Var.n().b).edit().putFloat("x", rawX).apply();
+                }
+                eg0Var.c.y = (int) eg0Var.L;
+                ((SharedPreferences) eg0Var.n().b).edit().putFloat("y", eg0Var.L).apply();
+                AndroidUtilities.updateViewLayout(eg0Var.b, eg0Var.d, eg0Var.c);
+                return true;
+            }
+            if (!eg0Var.d0) {
+                o1.k kVar3 = eg0Var.M;
+                kVar3.b = f12;
+                kVar3.c = true;
+                kVar3.u.i = (i10 / 2.0f) + rawX >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? r9 - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f) - eg0Var.H;
+                eg0Var.M.f();
+            }
+            eg0Var.d0 = true;
         }
         return true;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:69:0x0210  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x027b  */
-    /* JADX WARN: Removed duplicated region for block: B:93:0x02b8 A[ORIG_RETURN, RETURN] */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float f10;
-        boolean z4;
-        ArrayList arrayList;
-        boolean z10;
-        char c3;
-        MessageObject playingMessageObject;
-        if (!this.d && !this.c) {
-            return false;
-        }
-        float rawX = motionEvent.getRawX();
-        float rawY = motionEvent.getRawY();
-        int action = motionEvent.getAction();
-        float f11 = 1.0f;
-        PipRoundVideoView pipRoundVideoView = this.e;
-        if (action == 2) {
-            float f12 = rawX - this.a;
-            float f13 = rawY - this.b;
-            if (this.d) {
-                if (Math.abs(f12) < AndroidUtilities.getPixelsInCM(0.3f, true) && Math.abs(f13) < AndroidUtilities.getPixelsInCM(0.3f, false)) {
-                    return true;
-                }
-                this.c = true;
-                this.d = false;
-                return true;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
+        eg0 eg0Var = this.d;
+        ValueAnimator valueAnimator = eg0Var.F;
+        zf0 zf0Var = eg0Var.j0;
+        if (valueAnimator == null) {
+            if (eg0Var.i0) {
+                AndroidUtilities.cancelRunOnUIThread(zf0Var);
+                eg0Var.i0 = false;
             }
-            if (!this.c) {
-                return true;
-            }
-            WindowManager.LayoutParams layoutParams = pipRoundVideoView.v;
-            int i10 = (int) (layoutParams.x + f12);
-            layoutParams.x = i10;
-            layoutParams.y = (int) (layoutParams.y + f13);
-            int i11 = pipRoundVideoView.h / 2;
-            int i12 = -i11;
-            if (i10 < i12) {
-                layoutParams.x = i12;
-            } else {
-                int i13 = (AndroidUtilities.displaySize.x - layoutParams.width) + i11;
-                if (i10 > i13) {
-                    layoutParams.x = i13;
-                }
-            }
-            int i14 = layoutParams.x;
-            if (i14 < 0) {
-                f11 = vh.w2.c(i14, i11, 0.5f, 1.0f);
-            } else {
-                if (i14 > AndroidUtilities.displaySize.x - layoutParams.width) {
-                    f11 = org.telegram.messenger.y3.A((i14 - r11) + r10, i11, 0.5f, 1.0f);
-                }
-            }
-            if (pipRoundVideoView.a.getAlpha() != f11) {
-                pipRoundVideoView.a.setAlpha(f11);
-            }
-            WindowManager.LayoutParams layoutParams2 = pipRoundVideoView.v;
-            int i15 = layoutParams2.y;
-            if (i15 < 0) {
-                layoutParams2.y = 0;
-            } else {
-                int i16 = AndroidUtilities.displaySize.y - layoutParams2.height;
-                if (i15 > i16) {
-                    layoutParams2.y = i16;
-                }
-            }
-            pipRoundVideoView.w.updateViewLayout(pipRoundVideoView.a, layoutParams2);
-            this.a = rawX;
-            this.b = rawY;
-            return true;
-        }
-        if (motionEvent.getAction() != 1) {
-            return true;
-        }
-        if (this.d && !this.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
-            if (MediaController.getInstance().isMessagePaused()) {
-                MediaController.getInstance().playMessage(playingMessageObject);
-            } else {
-                MediaController.getInstance().lambda$startAudioAgain$7(playingMessageObject);
+            boolean z10 = !eg0Var.E;
+            eg0Var.E = z10;
+            eg0Var.y(z10);
+            if (eg0Var.E && !eg0Var.i0) {
+                AndroidUtilities.runOnUIThread(zf0Var, 2500L);
+                eg0Var.i0 = true;
             }
         }
-        this.c = false;
-        this.d = false;
-        int b10 = PipRoundVideoView.b(true, 0, 0.0f, pipRoundVideoView.h);
-        int b11 = PipRoundVideoView.b(true, 1, 0.0f, pipRoundVideoView.h);
-        int b12 = PipRoundVideoView.b(false, 0, 0.0f, pipRoundVideoView.n);
-        int b13 = PipRoundVideoView.b(false, 1, 0.0f, pipRoundVideoView.n);
-        SharedPreferences.Editor edit = pipRoundVideoView.x.edit();
-        int dp = AndroidUtilities.dp(20.0f);
-        int abs = Math.abs(b10 - pipRoundVideoView.v.x);
-        Property property = View.ALPHA;
-        if (abs > dp) {
-            int i17 = pipRoundVideoView.v.x;
-            f10 = 1.0f;
-            if (i17 >= 0 || i17 <= (-pipRoundVideoView.h) / 4) {
-                if (Math.abs(b11 - i17) > dp) {
-                    int i18 = pipRoundVideoView.v.x;
-                    int i19 = AndroidUtilities.displaySize.x;
-                    c3 = 0;
-                    int i20 = pipRoundVideoView.h;
-                    if (i18 <= i19 - i20 || i18 >= i19 - ((i20 / 4) * 3)) {
-                        if (pipRoundVideoView.a.getAlpha() != 1.0f) {
-                            arrayList = new ArrayList();
-                            if (pipRoundVideoView.v.x < 0) {
-                                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", -pipRoundVideoView.h));
-                            } else {
-                                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", AndroidUtilities.displaySize.x));
-                            }
-                            z4 = true;
-                            if (!z4) {
-                                if (Math.abs(b12 - pipRoundVideoView.v.y) <= dp || pipRoundVideoView.v.y <= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
-                                    if (arrayList == null) {
-                                        arrayList = new ArrayList();
-                                    }
-                                    edit.putInt("sidey", 0);
-                                    arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "y", b12));
-                                } else if (Math.abs(b13 - pipRoundVideoView.v.y) <= dp) {
-                                    if (arrayList == null) {
-                                        arrayList = new ArrayList();
-                                    }
-                                    edit.putInt("sidey", 1);
-                                    arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "y", b13));
-                                } else {
-                                    edit.putFloat("py", (pipRoundVideoView.v.y - b12) / (b13 - b12));
-                                    edit.putInt("sidey", 2);
-                                }
-                                edit.commit();
-                            }
-                            if (arrayList != null) {
-                                return true;
-                            }
-                            if (pipRoundVideoView.y == null) {
-                                pipRoundVideoView.y = new DecelerateInterpolator();
-                            }
-                            AnimatorSet animatorSet = new AnimatorSet();
-                            animatorSet.setInterpolator(pipRoundVideoView.y);
-                            animatorSet.setDuration(150L);
-                            if (z4) {
-                                z10 = true;
-                                arrayList.add(ObjectAnimator.ofFloat(pipRoundVideoView.a, (Property<cg0, Float>) property, 0.0f));
-                                animatorSet.addListener(new eg0(pipRoundVideoView, 1));
-                            } else {
-                                z10 = true;
-                            }
-                            animatorSet.playTogether(arrayList);
-                            animatorSet.start();
-                            return z10;
-                        }
-                        edit.putFloat("px", (pipRoundVideoView.v.x - b10) / (b11 - b10));
-                        edit.putInt("sidex", 2);
-                        arrayList = null;
-                        z4 = false;
-                        if (!z4) {
-                        }
-                        if (arrayList != null) {
-                        }
-                    }
-                } else {
-                    c3 = 0;
-                }
-                arrayList = new ArrayList();
-                edit.putInt("sidex", 1);
-                if (pipRoundVideoView.a.getAlpha() != 1.0f) {
-                    cg0 cg0Var = pipRoundVideoView.a;
-                    float[] fArr = new float[1];
-                    fArr[c3] = 1.0f;
-                    arrayList.add(ObjectAnimator.ofFloat(cg0Var, (Property<cg0, Float>) property, fArr));
-                }
-                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", b11));
-                z4 = false;
-                if (!z4) {
-                }
-                if (arrayList != null) {
-                }
-            }
-        } else {
-            f10 = 1.0f;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        if (a()) {
+            return super.onSingleTapUp(motionEvent);
         }
-        ArrayList arrayList2 = new ArrayList();
-        edit.putInt("sidex", 0);
-        if (pipRoundVideoView.a.getAlpha() != f10) {
-            arrayList2.add(ObjectAnimator.ofFloat(pipRoundVideoView.a, (Property<cg0, Float>) property, f10));
-        }
-        arrayList2.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", b10));
-        arrayList = arrayList2;
-        z4 = false;
-        if (!z4) {
-        }
-        if (arrayList != null) {
-        }
+        onSingleTapConfirmed(motionEvent);
+        return true;
     }
 }

@@ -18,16 +18,16 @@ public final class p8 extends d {
         if (dVar != null) {
             if (this.j) {
                 p8 p8Var = (p8) dVar;
-                long j10 = p8Var.l;
-                this.l = j10;
-                if (j10 == p8Var.k) {
-                    this.l = j10 + ((p8) this.e).l;
+                long j3 = p8Var.l;
+                this.l = j3;
+                if (j3 == p8Var.k) {
+                    this.l = j3 + ((p8) this.e).l;
                 }
             }
             p8 p8Var2 = (p8) dVar;
-            long j11 = p8Var2.k;
+            long j10 = p8Var2.k;
             p8 p8Var3 = (p8) this.e;
-            this.k = j11 + p8Var3.k;
+            this.k = j10 + p8Var3.k;
             e2 e02 = p8Var2.k == 0 ? (e2) p8Var3.f : p8Var3.k == 0 ? (e2) p8Var2.f : t3.e0(this.h.M0(), (e2) ((p8) this.d).f, (e2) ((p8) this.e).f);
             if (b() && this.j) {
                 e02 = e02.e(this.l, e02.count(), this.i);
@@ -58,7 +58,7 @@ public final class p8 extends d {
 
     @Override // j$.util.stream.d
     public final Object a() {
-        long j10;
+        long j3;
         boolean b10 = b();
         if (!b10 && this.j) {
             v6 v6Var = v6.SIZED;
@@ -66,8 +66,8 @@ public final class p8 extends d {
             int i10 = aVar.j;
             int i11 = v6Var.e;
             if ((i10 & i11) == i11) {
-                j10 = aVar.k0(this.b);
-                w1 A0 = this.a.A0(j10, this.i);
+                j3 = aVar.k0(this.b);
+                w1 A0 = this.a.A0(j3, this.i);
                 o8 h = ((n8) this.h).h(A0, (this.j || b10) ? false : true);
                 this.a.F0(this.b, h);
                 e2 build = A0.build();
@@ -76,13 +76,13 @@ public final class p8 extends d {
                 return build;
             }
         }
-        j10 = -1;
-        w1 A02 = this.a.A0(j10, this.i);
-        o8 h9 = ((n8) this.h).h(A02, (this.j || b10) ? false : true);
-        this.a.F0(this.b, h9);
+        j3 = -1;
+        w1 A02 = this.a.A0(j3, this.i);
+        o8 h10 = ((n8) this.h).h(A02, (this.j || b10) ? false : true);
+        this.a.F0(this.b, h10);
         e2 build2 = A02.build();
         this.k = build2.count();
-        this.l = h9.s();
+        this.l = h10.s();
         return build2;
     }
 }

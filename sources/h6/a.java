@@ -1,99 +1,140 @@
 package h6;
 
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.ServiceConnection;
-import android.content.pm.PackageManager;
-import android.os.Build;
+import android.text.TextUtils;
 import android.util.Log;
-import b6.i0;
-import b6.m;
-import j$.util.concurrent.ConcurrentHashMap;
-import java.util.NoSuchElementException;
-import java.util.concurrent.Executor;
-import k6.b;
-import org.telegram.tgnet.TLObject;
+import g6.b;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Iterator;
+import java.util.List;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public static final Object b = new Object();
-    public static volatile a c;
-    public final ConcurrentHashMap a = new ConcurrentHashMap();
+public abstract class a {
+    public static final b a = new b("MetadataUtils", null);
+    public static final String[] b;
+    public static final String c;
 
-    public static a a() {
-        if (c == null) {
-            synchronized (b) {
-                try {
-                    if (c == null) {
-                        c = new a();
-                    }
-                } finally {
-                }
-            }
-        }
-        a aVar = c;
-        m.h(aVar);
-        return aVar;
+    static {
+        String[] strArr = {"Z", "+hh", "+hhmm", "+hh:mm"};
+        b = strArr;
+        c = "yyyyMMdd'T'HHmmss".concat(String.valueOf(strArr[0]));
     }
 
-    public final void b(Context context, ServiceConnection serviceConnection) {
-        if (!(serviceConnection instanceof i0)) {
-            ConcurrentHashMap concurrentHashMap = this.a;
-            if (concurrentHashMap.containsKey(serviceConnection)) {
-                try {
-                    try {
-                        context.unbindService((ServiceConnection) concurrentHashMap.get(serviceConnection));
-                    } catch (IllegalArgumentException | IllegalStateException | NoSuchElementException unused) {
-                    }
-                    return;
-                } finally {
-                    concurrentHashMap.remove(serviceConnection);
-                }
-            }
+    /* JADX WARN: Removed duplicated region for block: B:12:0x003b  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0043  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x00e9  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00fc  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Calendar a(String str) {
+        String substring;
+        String substring2;
+        String str2;
+        boolean isEmpty = TextUtils.isEmpty(str);
+        b bVar = a;
+        if (isEmpty) {
+            bVar.b("Input string is empty or null", new Object[0]);
+            return null;
         }
-        try {
-            context.unbindService(serviceConnection);
-        } catch (IllegalArgumentException | IllegalStateException | NoSuchElementException unused2) {
-        }
-    }
-
-    public final boolean c(Context context, String str, Intent intent, ServiceConnection serviceConnection, int i10, Executor executor) {
-        ComponentName component = intent.getComponent();
-        if (component != null) {
-            String packageName = component.getPackageName();
-            "com.google.android.gms".equals(packageName);
+        if (TextUtils.isEmpty(str)) {
+            bVar.b("Input string is empty or null", new Object[0]);
+        } else {
             try {
-                if ((((Context) b.a(context).b).getPackageManager().getApplicationInfo(packageName, 0).flags & TLObject.FLAG_21) != 0) {
-                    Log.w("ConnectionTracker", "Attempted to bind to a service in a STOPPED package.");
-                    return false;
+                substring = str.substring(0, 8);
+            } catch (IndexOutOfBoundsException e7) {
+                Log.e(bVar.a, bVar.d("Error extracting the date", new Object[0]), e7);
+            }
+            if (!TextUtils.isEmpty(substring)) {
+                bVar.b("Invalid date format", new Object[0]);
+                return null;
+            }
+            try {
+                if (TextUtils.isEmpty(str)) {
+                    bVar.b("string is empty or null", new Object[0]);
+                } else {
+                    int indexOf = str.indexOf(84);
+                    int i10 = indexOf + 1;
+                    if (indexOf == 8) {
+                        try {
+                            substring2 = str.substring(i10);
+                            if (substring2.length() != 6) {
+                                char charAt = substring2.charAt(6);
+                                String[] strArr = b;
+                                if (charAt == '+' || charAt == '-') {
+                                    int length = substring2.length();
+                                    if (length == strArr[1].length() + 6 || length == strArr[2].length() + 6 || length == strArr[3].length() + 6) {
+                                        substring2 = substring2.replaceAll("([\\+\\-]\\d\\d):(\\d\\d)", "$1$2");
+                                    }
+                                } else if (charAt == 'Z' && substring2.length() == strArr[0].length() + 6) {
+                                    substring2 = String.valueOf(substring2.substring(0, substring2.length() - 1)).concat("+0000");
+                                }
+                            }
+                        } catch (IndexOutOfBoundsException e10) {
+                            Log.e(bVar.a, bVar.d("Error extracting the time substring: %s", new Object[0]), e10);
+                        }
+                        if (TextUtils.isEmpty(substring2)) {
+                            substring = a4.a.C(substring, "T", substring2);
+                            str2 = substring2.length() == 6 ? "yyyyMMdd'T'HHmmss" : c;
+                        } else {
+                            str2 = "yyyyMMdd";
+                        }
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTime(new SimpleDateFormat(str2).parse(substring));
+                        return calendar;
+                    }
+                    bVar.b("T delimeter is not found", new Object[0]);
                 }
-            } catch (PackageManager.NameNotFoundException unused) {
+                calendar.setTime(new SimpleDateFormat(str2).parse(substring));
+                return calendar;
+            } catch (ParseException e11) {
+                Log.e(bVar.a, bVar.d("Error parsing string", new Object[0]), e11);
+                return null;
             }
-        }
-        if (serviceConnection instanceof i0) {
-            if (executor == null) {
-                executor = null;
+            substring2 = null;
+            if (TextUtils.isEmpty(substring2)) {
             }
-            return (Build.VERSION.SDK_INT < 29 || executor == null) ? context.bindService(intent, serviceConnection, i10) : context.bindService(intent, i10, executor, serviceConnection);
+            Calendar calendar2 = Calendar.getInstance();
         }
-        ConcurrentHashMap concurrentHashMap = this.a;
-        ServiceConnection serviceConnection2 = (ServiceConnection) concurrentHashMap.putIfAbsent(serviceConnection, serviceConnection);
-        if (serviceConnection2 != null && serviceConnection != serviceConnection2) {
-            Log.w("ConnectionTracker", String.format("Duplicate binding with the same ServiceConnection: %s, %s, %s.", serviceConnection, str, intent.getAction()));
+        substring = null;
+        if (!TextUtils.isEmpty(substring)) {
         }
-        if (executor == null) {
-            executor = null;
+    }
+
+    public static JSONArray b(List list) {
+        list.getClass();
+        JSONArray jSONArray = new JSONArray();
+        Iterator it = list.iterator();
+        while (it.hasNext()) {
+            m6.a aVar = (m6.a) it.next();
+            aVar.getClass();
+            JSONObject jSONObject = new JSONObject();
+            try {
+                jSONObject.put("url", aVar.b.toString());
+                jSONObject.put("width", aVar.c);
+                jSONObject.put("height", aVar.d);
+            } catch (JSONException unused) {
+            }
+            jSONArray.put(jSONObject);
         }
+        return jSONArray;
+    }
+
+    public static void c(List list, JSONArray jSONArray) {
         try {
-            boolean bindService = (Build.VERSION.SDK_INT < 29 || executor == null) ? context.bindService(intent, serviceConnection, i10) : context.bindService(intent, i10, executor, serviceConnection);
-            if (bindService) {
-                return bindService;
+            list.clear();
+            for (int i10 = 0; i10 < jSONArray.length(); i10++) {
+                try {
+                    list.add(new m6.a(jSONArray.getJSONObject(i10)));
+                } catch (IllegalArgumentException unused) {
+                }
             }
-            return false;
-        } finally {
-            concurrentHashMap.remove(serviceConnection, serviceConnection);
+        } catch (JSONException unused2) {
         }
     }
 }

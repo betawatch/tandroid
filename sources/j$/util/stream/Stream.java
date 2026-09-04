@@ -129,8 +129,8 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ Stream limit(long j10) {
-            return convert(this.a.limit(j10));
+        public final /* synthetic */ Stream limit(long j3) {
+            return convert(this.a.limit(j3));
         }
 
         @Override // j$.util.stream.Stream
@@ -209,8 +209,8 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // j$.util.stream.Stream
-        public final /* synthetic */ Stream skip(long j10) {
-            return convert(this.a.skip(j10));
+        public final /* synthetic */ Stream skip(long j3) {
+            return convert(this.a.skip(j3));
         }
 
         @Override // j$.util.stream.Stream
@@ -383,8 +383,8 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.Stream limit(long j10) {
-            return convert(Stream.this.limit(j10));
+        public final /* synthetic */ java.util.stream.Stream limit(long j3) {
+            return convert(Stream.this.limit(j3));
         }
 
         @Override // java.util.stream.Stream
@@ -458,8 +458,8 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
         }
 
         @Override // java.util.stream.Stream
-        public final /* synthetic */ java.util.stream.Stream skip(long j10) {
-            return convert(Stream.this.skip(j10));
+        public final /* synthetic */ java.util.stream.Stream skip(long j3) {
+            return convert(Stream.this.skip(j3));
         }
 
         @Override // java.util.stream.Stream
@@ -529,7 +529,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     void forEachOrdered(Consumer consumer);
 
-    Stream<T> limit(long j10);
+    Stream<T> limit(long j3);
 
     <R> Stream<R> map(Function<? super T, ? extends R> function);
 
@@ -555,7 +555,7 @@ public interface Stream<T> extends BaseStream<T, Stream<T>> {
 
     Object reduce(Object obj, BinaryOperator binaryOperator);
 
-    Stream skip(long j10);
+    Stream skip(long j3);
 
     Stream sorted();
 

@@ -1,99 +1,117 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.graphics.RectF;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.app.Activity;
+import android.os.Build;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class jg extends j1.b {
-    public final int[] o;
-    public final /* synthetic */ ChatActivityEnterView.RecordCircle p;
+public final class jg implements Runnable {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public jg(ChatActivityEnterView.RecordCircle recordCircle, ChatActivityEnterView.RecordCircle recordCircle2) {
-        super(recordCircle2);
-        this.p = recordCircle;
-        this.o = new int[2];
+    public jg(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // j1.b
-    public final int g(float f10, float f11) {
-        Rect rect;
-        ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
-        if (!chatActivityEnterView.o4 || chatActivityEnterView.J1 == null) {
-            return -1;
-        }
-        if (chatActivityEnterView.P3.contains((int) f10, (int) f11)) {
-            return 1;
-        }
-        if (chatActivityEnterView.O3.contains(f10, f11)) {
-            return 2;
-        }
-        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.g1;
-        if (slideTextView == null || (rect = slideTextView.G) == null) {
-            return -1;
-        }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(rect);
-        ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.g1;
-        int[] iArr = this.o;
-        slideTextView2.getLocationOnScreen(iArr);
-        rectF.offset(iArr[0], iArr[1]);
-        chatActivityEnterView.J1.getLocationOnScreen(iArr);
-        rectF.offset(-iArr[0], -iArr[1]);
-        return rectF.contains(f10, f11) ? 3 : -1;
-    }
-
-    @Override // j1.b
-    public final void h(ArrayList arrayList) {
-        if (ChatActivityEnterView.this.o4) {
-            arrayList.add(1);
-            arrayList.add(3);
-        }
-    }
-
-    @Override // j1.b
-    public final boolean k(int i10, int i11) {
-        return true;
-    }
-
-    @Override // j1.b
-    public final void l(int i10, s0.d dVar) {
-        Rect rect;
-        ChatActivityEnterView chatActivityEnterView = ChatActivityEnterView.this;
-        if (i10 == 1) {
-            dVar.h(chatActivityEnterView.P3);
-            dVar.o(LocaleController.getString("Send", R.string.Send));
+    @Override // java.lang.Runnable
+    public final void run() {
+        MessageObject threadMessage;
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        bf bfVar = chatActivityEnterView.G3;
+        Activity activity = chatActivityEnterView.N2;
+        og ogVar = chatActivityEnterView.Y2;
+        if (ogVar == null || activity == null) {
             return;
         }
-        if (i10 == 2) {
-            Rect rect2 = chatActivityEnterView.Q3;
-            RectF rectF = chatActivityEnterView.O3;
-            rect2.set((int) rectF.left, (int) rectF.top, (int) rectF.right, (int) rectF.bottom);
-            dVar.h(chatActivityEnterView.Q3);
-            dVar.o(LocaleController.getString(R.string.Stop));
+        ogVar.C();
+        chatActivityEnterView.I3 = true;
+        chatActivityEnterView.H3 = false;
+        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.j1;
+        if (slideTextView != null) {
+            slideTextView.setAlpha(1.0f);
+            chatActivityEnterView.j1.setTranslationY(0.0f);
+        }
+        chatActivityEnterView.b3 = null;
+        chatActivityEnterView.a3 = null;
+        if (!chatActivityEnterView.c1) {
+            if (Build.VERSION.SDK_INT >= 23 && activity.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                activity.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 3);
+                return;
+            }
+            chatActivityEnterView.Y2.V0(1);
+            chatActivityEnterView.C2 = -1.0f;
+            og ogVar2 = chatActivityEnterView.Y2;
+            TL_stories.StoryItem Y0 = ogVar2 != null ? ogVar2.Y0() : null;
+            MediaController mediaController = MediaController.getInstance();
+            int i10 = chatActivityEnterView.Q;
+            long j3 = chatActivityEnterView.P2;
+            MessageObject messageObject = chatActivityEnterView.S2;
+            threadMessage = chatActivityEnterView.getThreadMessage();
+            int i11 = chatActivityEnterView.F2;
+            org.telegram.ui.co coVar = chatActivityEnterView.O2;
+            mediaController.startRecording(i10, j3, messageObject, threadMessage, Y0, i11, true, coVar != null ? coVar.C8() : null, chatActivityEnterView.getSendMonoForumPeerId(), chatActivityEnterView.getSendMessageSuggestionParams());
+            chatActivityEnterView.E2 = true;
+            chatActivityEnterView.L1(0, true);
+            xg xgVar = chatActivityEnterView.Y0;
+            if (xgVar != null) {
+                xgVar.a(0L);
+            }
+            ug ugVar = chatActivityEnterView.k1;
+            if (ugVar != null) {
+                ugVar.h = false;
+            }
+            chatActivityEnterView.Z0.getParent().requestDisallowInterceptTouchEvent(true);
+            ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.M1;
+            if (recordCircle != null) {
+                recordCircle.H = 1.0f;
+                recordCircle.I = true;
+                return;
+            }
             return;
         }
-        if (i10 != 3 || chatActivityEnterView.J1 == null) {
+        if (Build.VERSION.SDK_INT >= 23) {
+            boolean z10 = activity.checkSelfPermission("android.permission.RECORD_AUDIO") == 0;
+            boolean z11 = activity.checkSelfPermission("android.permission.CAMERA") == 0;
+            if (!z10 || !z11) {
+                String[] strArr = new String[(z10 || z11) ? 1 : 2];
+                if (!z10 && !z11) {
+                    strArr[0] = "android.permission.RECORD_AUDIO";
+                    strArr[1] = "android.permission.CAMERA";
+                } else if (z10) {
+                    strArr[0] = "android.permission.CAMERA";
+                } else {
+                    strArr[0] = "android.permission.RECORD_AUDIO";
+                }
+                activity.requestPermissions(strArr, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+                return;
+            }
+        }
+        if (CameraController.getInstance().isCameraInitied()) {
+            bfVar.run();
+        } else {
+            CameraController.getInstance().initCamera(bfVar);
+        }
+        if (chatActivityEnterView.E2) {
             return;
         }
-        ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.g1;
-        if (slideTextView != null && (rect = slideTextView.G) != null) {
-            Rect rect3 = AndroidUtilities.rectTmp2;
-            rect3.set(rect);
-            ChatActivityEnterView.SlideTextView slideTextView2 = chatActivityEnterView.g1;
-            int[] iArr = this.o;
-            slideTextView2.getLocationOnScreen(iArr);
-            rect3.offset(iArr[0], iArr[1]);
-            chatActivityEnterView.J1.getLocationOnScreen(iArr);
-            rect3.offset(-iArr[0], -iArr[1]);
-            dVar.h(rect3);
+        chatActivityEnterView.E2 = true;
+        chatActivityEnterView.L1(0, true);
+        ChatActivityEnterView.RecordCircle recordCircle2 = chatActivityEnterView.M1;
+        if (recordCircle2 != null) {
+            recordCircle2.H = 0.5f;
+            recordCircle2.I = false;
         }
-        dVar.o(LocaleController.getString("Cancel", R.string.Cancel));
+        xg xgVar2 = chatActivityEnterView.Y0;
+        if (xgVar2 != null) {
+            xgVar2.a = false;
+            xgVar2.d = 0L;
+            xgVar2.e = 0L;
+            xgVar2.b = false;
+        }
     }
 }

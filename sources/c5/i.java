@@ -1,85 +1,50 @@
 package c5;
 
-import android.text.Layout;
+import android.content.ContentResolver;
+import android.net.Uri;
+import android.util.Log;
+import com.google.android.gms.internal.clearcut.e2;
+import java.util.HashMap;
+import org.telegram.ui.Cells.p6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class i {
+public final class i implements com.google.android.gms.internal.clearcut.g {
     public String a;
-    public int b;
-    public boolean c;
-    public int d;
-    public boolean e;
-    public float k;
-    public String l;
-    public Layout.Alignment o;
-    public Layout.Alignment p;
-    public b r;
-    public int f = -1;
-    public int g = -1;
-    public int h = -1;
-    public int i = -1;
-    public int j = -1;
-    public int m = -1;
-    public int n = -1;
-    public int q = -1;
-    public float s = Float.MAX_VALUE;
 
-    public final void a(i iVar) {
-        int i10;
-        Layout.Alignment alignment;
-        Layout.Alignment alignment2;
-        String str;
-        if (iVar != null) {
-            if (!this.c && iVar.c) {
-                this.b = iVar.b;
-                this.c = true;
-            }
-            if (this.h == -1) {
-                this.h = iVar.h;
-            }
-            if (this.i == -1) {
-                this.i = iVar.i;
-            }
-            if (this.a == null && (str = iVar.a) != null) {
-                this.a = str;
-            }
-            if (this.f == -1) {
-                this.f = iVar.f;
-            }
-            if (this.g == -1) {
-                this.g = iVar.g;
-            }
-            if (this.n == -1) {
-                this.n = iVar.n;
-            }
-            if (this.o == null && (alignment2 = iVar.o) != null) {
-                this.o = alignment2;
-            }
-            if (this.p == null && (alignment = iVar.p) != null) {
-                this.p = alignment;
-            }
-            if (this.q == -1) {
-                this.q = iVar.q;
-            }
-            if (this.j == -1) {
-                this.j = iVar.j;
-                this.k = iVar.k;
-            }
-            if (this.r == null) {
-                this.r = iVar.r;
-            }
-            if (this.s == Float.MAX_VALUE) {
-                this.s = iVar.s;
-            }
-            if (!this.e && iVar.e) {
-                this.d = iVar.d;
-                this.e = true;
-            }
-            if (this.m != -1 || (i10 = iVar.m) == -1) {
-                return;
-            }
-            this.m = i10;
+    @Override // com.google.android.gms.internal.clearcut.g
+    public Object zzp() {
+        Object obj;
+        boolean z10;
+        String str = this.a;
+        ContentResolver contentResolver = com.google.android.gms.internal.clearcut.d.g.getContentResolver();
+        Uri uri = e2.a;
+        synchronized (e2.class) {
+            e2.c(contentResolver);
+            obj = e2.k;
         }
+        HashMap hashMap = e2.g;
+        Boolean bool = Boolean.FALSE;
+        Boolean bool2 = (Boolean) e2.a(hashMap, str, bool);
+        if (bool2 != null) {
+            z10 = bool2.booleanValue();
+        } else {
+            String b10 = e2.b(contentResolver, str);
+            boolean z11 = false;
+            if (b10 != null && !b10.equals("")) {
+                if (e2.c.matcher(b10).matches()) {
+                    bool = Boolean.TRUE;
+                    z11 = true;
+                } else if (!e2.d.matcher(b10).matches()) {
+                    Log.w("Gservices", p6.j("attempt to read gservices key ", str, " (value \"", b10, "\") as boolean"));
+                }
+                e2.e(obj, hashMap, str, bool);
+                z10 = z11;
+            }
+            bool = bool2;
+            e2.e(obj, hashMap, str, bool);
+            z10 = z11;
+        }
+        return Boolean.valueOf(z10);
     }
 }

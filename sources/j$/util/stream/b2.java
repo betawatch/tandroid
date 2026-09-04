@@ -10,14 +10,14 @@ public final /* synthetic */ class b2 implements LongConsumer {
         this.a = i10;
     }
 
-    private final void accept$j$$util$stream$Node$OfLong$$ExternalSyntheticLambda0(long j10) {
+    private final void accept$j$$util$stream$Node$OfLong$$ExternalSyntheticLambda0(long j3) {
     }
 
-    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfLong$$ExternalSyntheticLambda0(long j10) {
+    private final void accept$j$$util$stream$StreamSpliterators$SliceSpliterator$OfLong$$ExternalSyntheticLambda0(long j3) {
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         int i10 = this.a;
     }
 

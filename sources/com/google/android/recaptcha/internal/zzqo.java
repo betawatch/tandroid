@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
+import i2.g;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
-import kf.k0;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 final class zzqo extends zzqq {
     private final InputStream zzf;
@@ -78,7 +78,7 @@ final class zzqo extends zzqq {
         int i12 = i11 + i10;
         int i13 = this.zzh;
         if (i12 <= i13) {
-            throw new IllegalStateException(k0.k(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
+            throw new IllegalStateException(g.j(i10, "refillBuffer() called when ", " bytes were already available in buffer"));
         }
         int i14 = this.zzl;
         if (i10 > (ConnectionsManager.DEFAULT_DATACENTER_ID - i14) - i11 || i14 + i11 + i10 > this.zzm) {
@@ -109,13 +109,13 @@ final class zzqo extends zzqq {
                 return true;
             }
             return zzO(i10);
-        } catch (zzsx e) {
-            e.zza();
-            throw e;
+        } catch (zzsx e7) {
+            e7.zza();
+            throw e7;
         }
     }
 
-    private final byte[] zzP(int i10, boolean z4) {
+    private final byte[] zzP(int i10, boolean z10) {
         byte[] zzQ = zzQ(i10);
         if (zzQ != null) {
             return zzQ;
@@ -159,9 +159,9 @@ final class zzqo extends zzqq {
                 if (i16 > this.zzf.available()) {
                     return null;
                 }
-            } catch (zzsx e) {
-                e.zza();
-                throw e;
+            } catch (zzsx e7) {
+                e7.zza();
+                throw e7;
             }
         }
         byte[] bArr = new byte[i10];
@@ -177,9 +177,9 @@ final class zzqo extends zzqq {
                 }
                 this.zzl += read;
                 i15 += read;
-            } catch (zzsx e6) {
-                e6.zza();
-                throw e6;
+            } catch (zzsx e10) {
+                e10.zza();
+                throw e10;
             }
         }
         return bArr;
@@ -214,10 +214,10 @@ final class zzqo extends zzqq {
         this.zzj = 0;
         while (i13 < i10) {
             try {
-                long j10 = i10 - i13;
+                long j3 = i10 - i13;
                 try {
-                    long skip = this.zzf.skip(j10);
-                    if (skip < 0 || skip > j10) {
+                    long skip = this.zzf.skip(j3);
+                    if (skip < 0 || skip > j3) {
                         throw new IllegalStateException(String.valueOf(this.zzf.getClass()) + "#skip returned invalid result: " + skip + "\nThe InputStream implementation is buggy.");
                     }
                     if (skip == 0) {
@@ -225,9 +225,9 @@ final class zzqo extends zzqq {
                     } else {
                         i13 += (int) skip;
                     }
-                } catch (zzsx e) {
-                    e.zza();
-                    throw e;
+                } catch (zzsx e7) {
+                    e7.zza();
+                    throw e7;
                 }
             } catch (Throwable th2) {
                 this.zzl += i13;
@@ -499,10 +499,10 @@ final class zzqo extends zzqq {
         }
         byte[] bArr = this.zzg;
         this.zzj = i10 + 8;
-        long j10 = bArr[i10];
-        long j11 = bArr[i10 + 2];
-        long j12 = bArr[i10 + 3];
-        return ((bArr[i10 + 6] & 255) << 48) | (j10 & 255) | ((bArr[i10 + 1] & 255) << 8) | ((j11 & 255) << 16) | ((j12 & 255) << 24) | ((bArr[i10 + 4] & 255) << 32) | ((bArr[i10 + 5] & 255) << 40) | ((bArr[i10 + 7] & 255) << 56);
+        long j3 = bArr[i10];
+        long j10 = bArr[i10 + 2];
+        long j11 = bArr[i10 + 3];
+        return ((bArr[i10 + 6] & 255) << 48) | (j3 & 255) | ((bArr[i10 + 1] & 255) << 8) | ((j10 & 255) << 16) | ((j11 & 255) << 24) | ((bArr[i10 + 4] & 255) << 32) | ((bArr[i10 + 5] & 255) << 40) | ((bArr[i10 + 7] & 255) << 56);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:40:0x00b7, code lost:
@@ -513,9 +513,9 @@ final class zzqo extends zzqq {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final long zzr() {
+        long j3;
         long j10;
         long j11;
-        long j12;
         int i10 = this.zzj;
         int i11 = this.zzh;
         if (i11 != i10) {
@@ -530,71 +530,71 @@ final class zzqo extends zzqq {
                 int i13 = i10 + 2;
                 int i14 = (bArr[i12] << 7) ^ b10;
                 if (i14 < 0) {
-                    j11 = i14 ^ (-128);
+                    j10 = i14 ^ (-128);
                 } else {
                     int i15 = i10 + 3;
                     int i16 = (bArr[i13] << 14) ^ i14;
                     if (i16 >= 0) {
-                        j11 = i16 ^ 16256;
+                        j10 = i16 ^ 16256;
                     } else {
                         int i17 = i10 + 4;
                         int i18 = i16 ^ (bArr[i15] << 21);
                         if (i18 < 0) {
-                            long j13 = (-2080896) ^ i18;
+                            long j12 = (-2080896) ^ i18;
                             i13 = i17;
-                            j11 = j13;
+                            j10 = j12;
                         } else {
                             i15 = i10 + 5;
-                            long j14 = (bArr[i17] << 28) ^ i18;
-                            if (j14 >= 0) {
-                                j11 = j14 ^ 266354560;
+                            long j13 = (bArr[i17] << 28) ^ i18;
+                            if (j13 >= 0) {
+                                j10 = j13 ^ 266354560;
                             } else {
                                 i13 = i10 + 6;
-                                long j15 = (bArr[i15] << 35) ^ j14;
-                                if (j15 < 0) {
-                                    j12 = -34093383808L;
+                                long j14 = (bArr[i15] << 35) ^ j13;
+                                if (j14 < 0) {
+                                    j11 = -34093383808L;
                                 } else {
                                     int i19 = i10 + 7;
-                                    long j16 = j15 ^ (bArr[i13] << 42);
-                                    if (j16 >= 0) {
-                                        j11 = 4363953127296L ^ j16;
+                                    long j15 = j14 ^ (bArr[i13] << 42);
+                                    if (j15 >= 0) {
+                                        j10 = 4363953127296L ^ j15;
                                     } else {
                                         i13 = i10 + 8;
-                                        j15 = j16 ^ (bArr[i19] << 49);
-                                        if (j15 < 0) {
-                                            j12 = -558586000294016L;
+                                        j14 = j15 ^ (bArr[i19] << 49);
+                                        if (j14 < 0) {
+                                            j11 = -558586000294016L;
                                         } else {
                                             i19 = i10 + 9;
-                                            j10 = (j15 ^ (bArr[i13] << 56)) ^ 71499008037633920L;
-                                            if (j10 < 0) {
+                                            j3 = (j14 ^ (bArr[i13] << 56)) ^ 71499008037633920L;
+                                            if (j3 < 0) {
                                                 i13 = i10 + 10;
                                             } else {
-                                                j11 = j10;
+                                                j10 = j3;
                                             }
                                         }
                                     }
                                     i13 = i19;
                                 }
-                                j10 = j15 ^ j12;
-                                j11 = j10;
+                                j3 = j14 ^ j11;
+                                j10 = j3;
                             }
                         }
                     }
                     i13 = i15;
                 }
                 this.zzj = i13;
-                return j11;
+                return j10;
             }
         }
         return zzs();
     }
 
     public final long zzs() {
-        long j10 = 0;
+        long j3 = 0;
         for (int i10 = 0; i10 < 64; i10 += 7) {
-            j10 |= (r3 & Byte.MAX_VALUE) << i10;
+            j3 |= (r3 & Byte.MAX_VALUE) << i10;
             if ((zza() & 128) == 0) {
-                return j10;
+                return j3;
             }
         }
         throw new zzsx("CodedInputStream encountered a malformed varint.");

@@ -1,71 +1,37 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
 import android.graphics.Canvas;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ce extends FrameLayout {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final /* synthetic */ class ce implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ce(ChatActivityEnterView chatActivityEnterView, Activity activity) {
-        super(activity);
-        this.a = chatActivityEnterView;
+    public /* synthetic */ ce(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.a = i10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(final Canvas canvas, final View view, final long j10) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        if (view != null && view == chatActivityEnterView.B0) {
-            return chatActivityEnterView.f0(canvas, new Utilities.Callback0Return() { // from class: org.telegram.ui.Components.be
-                @Override // org.telegram.messenger.Utilities.Callback0Return
-                public final Object run() {
-                    Boolean valueOf;
-                    valueOf = Boolean.valueOf(super/*android.widget.FrameLayout*/.drawChild(canvas, view, j10));
-                    return valueOf;
-                }
-            });
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (i10) {
+            case 0:
+                chatActivityEnterView.Q0((TL_iv.RichMessage) obj);
+                break;
+            case 1:
+                CharSequence charSequence = (CharSequence) obj;
+                chatActivityEnterView.E0.setText(charSequence);
+                chatActivityEnterView.E0.setSelection(charSequence.length(), charSequence.length());
+                break;
+            default:
+                int i11 = ChatActivityEnterView.m5;
+                chatActivityEnterView.e0((Canvas) obj, false);
+                break;
         }
-        if (chatActivityEnterView.v4 && view == chatActivityEnterView.b1) {
-            return true;
-        }
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        if (chatActivityEnterView.y0.isEmpty()) {
-            return;
-        }
-        for (int i14 = 0; i14 < getChildCount(); i14++) {
-            View childAt = getChildAt(i14);
-            Float f10 = (Float) chatActivityEnterView.y0.get(childAt);
-            if (f10 != null) {
-                childAt.setTranslationX(f10.floatValue() - childAt.getLeft());
-                childAt.animate().translationX(0.0f).setDuration(150L).setInterpolator(mr.f).start();
-            }
-        }
-        chatActivityEnterView.y0.clear();
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        int max = Math.max(AndroidUtilities.dp(44.0f), getMeasuredHeight());
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        xd.c cVar = chatActivityEnterView.b5;
-        if (cVar.e > 0.0f) {
-            cVar.a(max);
-        } else {
-            cVar.c(max);
-        }
-        chatActivityEnterView.N();
     }
 }

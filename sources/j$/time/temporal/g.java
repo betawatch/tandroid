@@ -48,16 +48,16 @@ public abstract class g implements o {
                 if (!j(lVar)) {
                     throw new r("Unsupported field: DayOfQuarter");
                 }
-                long y10 = lVar.y(g.QUARTER_OF_YEAR);
-                if (y10 == 1) {
-                    long y11 = lVar.y(a.YEAR);
+                long y3 = lVar.y(g.QUARTER_OF_YEAR);
+                if (y3 == 1) {
+                    long y10 = lVar.y(a.YEAR);
                     j$.time.chrono.r.c.getClass();
-                    return j$.time.chrono.r.k(y11) ? s.e(1L, 91L) : s.e(1L, 90L);
+                    return j$.time.chrono.r.k(y10) ? s.e(1L, 91L) : s.e(1L, 90L);
                 }
-                if (y10 == 2) {
+                if (y3 == 2) {
                     return s.e(1L, 91L);
                 }
-                if (y10 == 3 || y10 == 4) {
+                if (y3 == 3 || y3 == 4) {
                     return s.e(1L, 92L);
                 }
                 return l();
@@ -68,20 +68,20 @@ public abstract class g implements o {
                 if (!j(lVar)) {
                     throw new r("Unsupported field: DayOfQuarter");
                 }
-                int j10 = lVar.j(a.DAY_OF_YEAR);
-                int j11 = lVar.j(a.MONTH_OF_YEAR);
-                long y10 = lVar.y(a.YEAR);
-                int i10 = (j11 - 1) / 3;
+                int j3 = lVar.j(a.DAY_OF_YEAR);
+                int j10 = lVar.j(a.MONTH_OF_YEAR);
+                long y3 = lVar.y(a.YEAR);
+                int i10 = (j10 - 1) / 3;
                 j$.time.chrono.r.c.getClass();
-                return j10 - g.a[i10 + (j$.time.chrono.r.k(y10) ? 4 : 0)];
+                return j3 - g.a[i10 + (j$.time.chrono.r.k(y3) ? 4 : 0)];
             }
 
             @Override // j$.time.temporal.o
-            public final Temporal q(Temporal temporal, long j10) {
-                long m9 = m(temporal);
-                l().b(j10, this);
+            public final Temporal q(Temporal temporal, long j3) {
+                long m10 = m(temporal);
+                l().b(j3, this);
                 a aVar = a.DAY_OF_YEAR;
-                return temporal.c((j10 - m9) + temporal.y(aVar), aVar);
+                return temporal.c((j3 - m10) + temporal.y(aVar), aVar);
             }
 
             @Override // java.lang.Enum
@@ -122,11 +122,11 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final Temporal q(Temporal temporal, long j10) {
-                long m9 = m(temporal);
-                l().b(j10, this);
+            public final Temporal q(Temporal temporal, long j3) {
+                long m10 = m(temporal);
+                l().b(j3, this);
                 a aVar = a.MONTH_OF_YEAR;
-                return temporal.c(((j10 - m9) * 3) + temporal.y(aVar), aVar);
+                return temporal.c(((j3 - m10) * 3) + temporal.y(aVar), aVar);
             }
 
             @Override // java.lang.Enum
@@ -167,9 +167,9 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final Temporal q(Temporal temporal, long j10) {
-                l().b(j10, this);
-                return temporal.d(j$.com.android.tools.r8.a.U(j10, m(temporal)), ChronoUnit.WEEKS);
+            public final Temporal q(Temporal temporal, long j3) {
+                l().b(j3, this);
+                return temporal.d(j$.com.android.tools.r8.a.U(j3, m(temporal)), ChronoUnit.WEEKS);
             }
 
             @Override // java.lang.Enum
@@ -210,18 +210,18 @@ public abstract class g implements o {
             }
 
             @Override // j$.time.temporal.o
-            public final Temporal q(Temporal temporal, long j10) {
+            public final Temporal q(Temporal temporal, long j3) {
                 if (!j(temporal)) {
                     throw new r("Unsupported field: WeekBasedYear");
                 }
-                int a2 = a.YEAR.b.a(j10, g.WEEK_BASED_YEAR);
+                int a2 = a.YEAR.b.a(j3, g.WEEK_BASED_YEAR);
                 LocalDate I = LocalDate.I(temporal);
-                int j11 = I.j(a.DAY_OF_WEEK);
+                int j10 = I.j(a.DAY_OF_WEEK);
                 int w10 = g.w(I);
                 if (w10 == 53 && g.G(a2) == 52) {
                     w10 = 52;
                 }
-                return temporal.k(LocalDate.of(a2, 1, 4).plusDays(((w10 - 1) * 7) + (j11 - r6.j(r0))));
+                return temporal.k(LocalDate.of(a2, 1, 4).plusDays(((w10 - 1) * 7) + (j10 - r6.j(r0))));
             }
 
             @Override // java.lang.Enum

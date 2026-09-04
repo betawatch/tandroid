@@ -1,20 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.text.Layout;
-import android.view.View;
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class s5 {
-    public Layout a;
-    public final ArrayList b = new ArrayList();
+public final /* synthetic */ class s5 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ float e;
+    public final /* synthetic */ Object f;
 
-    public s5(View view, Layout layout) {
-        this.a = layout;
+    public /* synthetic */ s5(Object obj, float f7, float f10, float f11, float f12, int i10) {
+        this.a = i10;
+        this.f = obj;
+        this.b = f7;
+        this.c = f10;
+        this.d = f11;
+        this.e = f12;
     }
 
-    public final void a() {
-        this.b.size();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i10 = this.a;
+        float f7 = this.e;
+        float f10 = this.d;
+        float f11 = this.c;
+        float f12 = this.b;
+        Object obj = this.f;
+        switch (i10) {
+            case 0:
+                z5 z5Var = (z5) obj;
+                z5Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                z5Var.lastDrawnCy = AndroidUtilities.lerp(f12, f11, floatValue);
+                z5Var.lastDrawnCx = AndroidUtilities.lerp(f10, f7, floatValue);
+                break;
+            default:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) obj;
+                int i11 = ChatActivityEnterView.m5;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float z10 = com.google.android.gms.internal.vision.e2.z(f11, f12, floatValue2, f12);
+                xo0 xo0Var = chatActivityEnterView.p0;
+                if (xo0Var != null) {
+                    xo0Var.setAlpha(((f7 - f10) * floatValue2) + f10);
+                    chatActivityEnterView.p0.setTranslationX(z10);
+                }
+                chatActivityEnterView.Q0.setTranslationX(z10);
+                chatActivityEnterView.G = z10;
+                chatActivityEnterView.J1();
+                break;
+        }
     }
 }

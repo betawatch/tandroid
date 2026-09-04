@@ -1,19 +1,31 @@
 package org.telegram.messenger;
 
-import java.util.List;
-import org.telegram.messenger.TelegramMediaSession;
+import android.view.MotionEvent;
+import org.telegram.messenger.GoogleMapsProvider;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class j4 implements TelegramMediaSession.BrowseChildrenCallback {
-    public final /* synthetic */ Runnable a;
+public final /* synthetic */ class j4 implements IMapsProvider.ICallableMethod {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ GoogleMapsProvider.GoogleMapView.1 b;
 
-    public /* synthetic */ j4(Runnable runnable) {
-        this.a = runnable;
+    public /* synthetic */ j4(GoogleMapsProvider.GoogleMapView.1 r12, int i10) {
+        this.a = i10;
+        this.b = r12;
     }
 
-    @Override // org.telegram.messenger.TelegramMediaSession.BrowseChildrenCallback
-    public void onResult(List list) {
-        TelegramMediaSession.lambda$ensureLoaded$2(this.a, list);
+    @Override // org.telegram.messenger.IMapsProvider.ICallableMethod
+    public final Object call(Object obj) {
+        Boolean lambda$dispatchTouchEvent$0;
+        Boolean lambda$onInterceptTouchEvent$1;
+        switch (this.a) {
+            case 0:
+                lambda$dispatchTouchEvent$0 = this.b.lambda$dispatchTouchEvent$0((MotionEvent) obj);
+                return lambda$dispatchTouchEvent$0;
+            default:
+                lambda$onInterceptTouchEvent$1 = this.b.lambda$onInterceptTouchEvent$1((MotionEvent) obj);
+                return lambda$onInterceptTouchEvent$1;
+        }
     }
 }

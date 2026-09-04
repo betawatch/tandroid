@@ -6,23 +6,24 @@ import android.graphics.RenderNode;
 import android.graphics.Shader;
 import android.media.session.MediaSession;
 import android.os.Build;
+import android.os.Bundle;
 import android.text.style.LineHeightSpan;
 import android.view.View;
 import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract /* synthetic */ class y {
-    public static void a(g.x xVar, View view) {
+    public static void a(bh.a aVar, View view) {
         if (Build.VERSION.SDK_INT >= 29) {
-            xVar.a(view.getUniqueDrawingId());
+            aVar.a(view.getUniqueDrawingId());
         } else {
-            xVar.b = true;
+            aVar.a = true;
         }
     }
 
-    public static /* synthetic */ RadialGradient b(float f10, float f11, float f12, long[] jArr, float[] fArr) {
-        return new RadialGradient(f10, f11, f12, jArr, fArr, Shader.TileMode.CLAMP);
+    public static /* synthetic */ RadialGradient b(float f7, float f10, float f11, long[] jArr, float[] fArr) {
+        return new RadialGradient(f7, f10, f11, jArr, fArr, Shader.TileMode.CLAMP);
     }
 
     public static /* synthetic */ RenderNode c() {
@@ -37,25 +38,29 @@ public abstract /* synthetic */ class y {
         return new MediaSession(context, str, null);
     }
 
-    public static /* synthetic */ LineHeightSpan.Standard f(int i10) {
+    public static /* synthetic */ MediaSession f(Context context, String str, Bundle bundle) {
+        return new MediaSession(context, str, bundle);
+    }
+
+    public static /* synthetic */ LineHeightSpan.Standard g(int i10) {
         return new LineHeightSpan.Standard(i10);
     }
 
-    public static /* synthetic */ WindowInsets.Builder g() {
+    public static /* synthetic */ WindowInsets.Builder h() {
         return new WindowInsets.Builder();
     }
 
-    public static /* synthetic */ WindowInsets.Builder h(WindowInsets windowInsets) {
+    public static /* synthetic */ WindowInsets.Builder i(WindowInsets windowInsets) {
         return new WindowInsets.Builder(windowInsets);
     }
 
-    public static /* synthetic */ void i() {
+    public static /* synthetic */ void j() {
     }
 
-    public static /* synthetic */ RenderNode j() {
+    public static /* synthetic */ RenderNode k() {
         return new RenderNode("WebViewSwipeContainer");
     }
 
-    public static /* synthetic */ void k() {
+    public static /* synthetic */ void l() {
     }
 }

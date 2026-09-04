@@ -196,15 +196,15 @@ public final class DateTimeFormatter {
     }
 
     public final String a(j$.time.temporal.l lVar) {
-        StringBuilder sb = new StringBuilder(32);
+        StringBuilder sb2 = new StringBuilder(32);
         e eVar = this.a;
         Objects.requireNonNull(lVar, "temporal");
-        Objects.requireNonNull(sb, "appendable");
+        Objects.requireNonNull(sb2, "appendable");
         try {
-            eVar.j(new r(lVar, this), sb);
-            return sb.toString();
-        } catch (IOException e6) {
-            throw new j$.time.b(e6.getMessage(), e6);
+            eVar.j(new r(lVar, this), sb2);
+            return sb2.toString();
+        } catch (IOException e7) {
+            throw new j$.time.b(e7.getMessage(), e7);
         }
     }
 

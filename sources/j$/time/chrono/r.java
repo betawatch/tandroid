@@ -61,9 +61,9 @@ public final class r extends a implements Serializable {
         return ZonedDateTime.q(instant.a, instant.b, zoneId);
     }
 
-    public static boolean k(long j10) {
-        if ((3 & j10) == 0) {
-            return j10 % 100 != 0 || j10 % 400 == 0;
+    public static boolean k(long j3) {
+        if ((3 & j3) == 0) {
+            return j3 % 100 != 0 || j3 % 400 == 0;
         }
         return false;
     }

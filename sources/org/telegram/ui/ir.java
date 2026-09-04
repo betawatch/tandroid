@@ -1,30 +1,41 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.AnimationNotificationsLocker;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ir implements v60 {
-    public final /* synthetic */ a70 a;
-    public final /* synthetic */ rr b;
+public final class ir extends s4.j {
+    public final AnimationNotificationsLocker F = new AnimationNotificationsLocker();
+    public final /* synthetic */ vr G;
 
-    public ir(rr rrVar, a70 a70Var) {
-        this.b = rrVar;
-        this.a = a70Var;
+    public ir(vr vrVar) {
+        this.G = vrVar;
     }
 
-    @Override // org.telegram.ui.v60
-    public final void h(TLRPC.User user) {
-        this.b.t0(user.id, null, null, null, "", true, 0, false);
+    @Override // s4.j
+    public final void N() {
+        this.F.unlock();
     }
 
-    @Override // org.telegram.ui.v60
-    public final void i(int i10, ArrayList arrayList) {
-        if (this.a.getParentActivity() == null) {
-            return;
+    @Override // s4.j
+    public final void O() {
+        this.G.c.invalidate();
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.G.c.invalidate();
+    }
+
+    @Override // s4.j, s4.m0
+    public final void m() {
+        boolean isEmpty = this.p.isEmpty();
+        boolean isEmpty2 = this.r.isEmpty();
+        boolean isEmpty3 = this.s.isEmpty();
+        boolean isEmpty4 = this.q.isEmpty();
+        if (!isEmpty || !isEmpty2 || !isEmpty4 || !isEmpty3) {
+            this.F.lock();
         }
-        rr rrVar = this.b;
-        rrVar.getMessagesController().addUsersToChat(rrVar.r, rrVar, arrayList, i10, new l3(this, 2), new hr(0), null);
+        super.m();
     }
 }

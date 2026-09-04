@@ -1,111 +1,56 @@
 package j5;
 
-import e2.c;
-import f7.b;
-import h5.w;
-import j3.d0;
-import j3.e;
-import j3.n0;
-import java.nio.ByteBuffer;
-import n3.i;
-import org.telegram.tgnet.TLObject;
+import j$.util.DesugarCollections;
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.regex.Pattern;
+import l5.k;
+import v7.r8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a extends e {
-    public final i B;
-    public final w C;
-    public d0 D;
-    public long E;
+public final class a implements k {
+    public static final String c;
+    public static final Set d;
+    public static final a e;
+    public static final a f;
+    public final String a;
+    public final String b;
 
-    public a() {
-        super(6);
-        this.B = new i(1, 0);
-        this.C = new w();
+    static {
+        String a2 = r8.a("hts/frbslgiggolai.o/0clgbthfra=snpoo", "tp:/ieaeogn.ogepscmvc/o/ac?omtjo_rt3");
+        c = a2;
+        String a10 = r8.a("hts/frbslgigp.ogepscmv/ieo/eaybtho", "tp:/ieaeogn-agolai.o/1frlglgc/aclg");
+        String a11 = r8.a("AzSCki82AwsLzKd5O8zo", "IayckHiZRO1EFl1aGoK");
+        d = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList(new i5.c("proto"), new i5.c("json"))));
+        e = new a(a2, null);
+        f = new a(a10, a11);
     }
 
-    @Override // j3.e, j3.b2
-    public final void b(int i10, Object obj) {
-        if (i10 == 8) {
-            this.D = (d0) obj;
+    public a(String str, String str2) {
+        this.a = str;
+        this.b = str2;
+    }
+
+    public static a a(byte[] bArr) {
+        String str = new String(bArr, Charset.forName("UTF-8"));
+        if (!str.startsWith("1$")) {
+            throw new IllegalArgumentException("Version marker missing from extras");
         }
-    }
-
-    @Override // j3.e
-    public final String g() {
-        return "CameraMotionRenderer";
-    }
-
-    @Override // j3.e
-    public final boolean i() {
-        return h();
-    }
-
-    @Override // j3.e
-    public final boolean j() {
-        return true;
-    }
-
-    @Override // j3.e
-    public final void k() {
-        d0 d0Var = this.D;
-        if (d0Var != null) {
-            d0Var.d();
+        String[] split = str.substring(2).split(Pattern.quote("\\"), 2);
+        if (split.length != 2) {
+            throw new IllegalArgumentException("Extra is not a valid encoded LegacyFlgDestination");
         }
-    }
-
-    @Override // j3.e
-    public final void m(long j10, boolean z4) {
-        this.E = Long.MIN_VALUE;
-        d0 d0Var = this.D;
-        if (d0Var != null) {
-            d0Var.d();
+        String str2 = split[0];
+        if (str2.isEmpty()) {
+            throw new IllegalArgumentException("Missing endpoint in CCTDestination extras");
         }
-    }
-
-    @Override // j3.e
-    public final void t(long j10, long j11) {
-        float[] fArr;
-        while (!h() && this.E < 100000 + j10) {
-            i iVar = this.B;
-            iVar.b();
-            b bVar = this.c;
-            bVar.m();
-            if (s(bVar, iVar, 0) != -4 || iVar.d(4)) {
-                return;
-            }
-            this.E = iVar.f;
-            if (this.D != null && !iVar.d(TLObject.FLAG_31)) {
-                iVar.l();
-                ByteBuffer byteBuffer = iVar.d;
-                int i10 = h5.d0.a;
-                if (byteBuffer.remaining() != 16) {
-                    fArr = null;
-                } else {
-                    byte[] array = byteBuffer.array();
-                    int limit = byteBuffer.limit();
-                    w wVar = this.C;
-                    wVar.D(limit, array);
-                    wVar.F(byteBuffer.arrayOffset() + 4);
-                    float[] fArr2 = new float[3];
-                    for (int i11 = 0; i11 < 3; i11++) {
-                        fArr2[i11] = Float.intBitsToFloat(wVar.i());
-                    }
-                    fArr = fArr2;
-                }
-                if (fArr != null) {
-                    this.D.c();
-                }
-            }
+        String str3 = split[1];
+        if (str3.isEmpty()) {
+            str3 = null;
         }
-    }
-
-    @Override // j3.e
-    public final int x(n0 n0Var) {
-        return "application/x-camera-motion".equals(n0Var.C) ? c.b(4, 0, 0) : c.b(0, 0, 0);
-    }
-
-    @Override // j3.e
-    public final void r(n0[] n0VarArr, long j10, long j11) {
+        return new a(str2, str3);
     }
 }

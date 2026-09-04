@@ -1,54 +1,75 @@
 package org.telegram.messenger;
 
-import android.content.Context;
-import org.telegram.messenger.voip.VoIPGroupNotification;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class lb implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
     public final /* synthetic */ long c;
     public final /* synthetic */ long d;
     public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
+    public final /* synthetic */ ArrayList f;
 
-    public /* synthetic */ lb(MessagesController messagesController, long j10, int i10, int i11, long j11, TLRPC.TL_messages_affectedHistory tL_messages_affectedHistory, boolean z4, Runnable runnable) {
-        this.h = messagesController;
-        this.c = j10;
-        this.b = i10;
-        this.e = i11;
-        this.d = j11;
-        this.n = tL_messages_affectedHistory;
-        this.f = z4;
-        this.r = runnable;
+    public /* synthetic */ lb(MessagesController messagesController, long j3, int i10, long j10, ArrayList arrayList, int i11) {
+        this.a = i11;
+        this.b = messagesController;
+        this.c = j3;
+        this.e = i10;
+        this.d = j10;
+        this.f = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.h).lambda$deleteMessagesRange$464(this.c, this.b, this.e, this.d, (TLRPC.TL_messages_affectedHistory) this.n, this.f, (Runnable) this.r);
+                int i10 = this.e;
+                ArrayList arrayList = this.f;
+                this.b.lambda$checkUnreadReactionsInternal2$424(this.c, this.d, i10, arrayList);
+                break;
+            case 1:
+                int i11 = this.e;
+                ArrayList arrayList2 = this.f;
+                this.b.lambda$checkUnreadPollVotesInternal2$435(this.c, this.d, i11, arrayList2);
+                break;
+            case 2:
+                int i12 = this.e;
+                ArrayList arrayList3 = this.f;
+                this.b.lambda$checkUnreadReactionsInternal2$426(this.c, this.d, i12, arrayList3);
+                break;
+            case 3:
+                int i13 = this.e;
+                ArrayList arrayList4 = this.f;
+                this.b.lambda$checkUnreadPollVotesInternal2$433(this.c, this.d, i13, arrayList4);
+                break;
+            case 4:
+                int i14 = this.e;
+                ArrayList arrayList5 = this.f;
+                this.b.lambda$checkUnreadReactionsInternal2$428(this.c, this.d, i14, arrayList5);
+                break;
+            case 5:
+                long j3 = this.d;
+                ArrayList arrayList6 = this.f;
+                int i15 = this.e;
+                this.b.lambda$checkUnreadReactionsInternal2$422(this.c, i15, j3, arrayList6);
                 break;
             default:
-                VoIPGroupNotification.lambda$request$0((TLObject) this.h, this.b, this.c, this.d, this.e, this.f, (Context) this.n, (String) this.r);
+                long j10 = this.d;
+                ArrayList arrayList7 = this.f;
+                int i16 = this.e;
+                this.b.lambda$checkUnreadPollVotesInternal2$429(this.c, i16, j10, arrayList7);
                 break;
         }
     }
 
-    public /* synthetic */ lb(TLObject tLObject, int i10, long j10, long j11, int i11, boolean z4, Context context, String str) {
-        this.h = tLObject;
-        this.b = i10;
-        this.c = j10;
-        this.d = j11;
-        this.e = i11;
-        this.f = z4;
-        this.n = context;
-        this.r = str;
+    public /* synthetic */ lb(MessagesController messagesController, long j3, long j10, int i10, ArrayList arrayList, int i11) {
+        this.a = i11;
+        this.b = messagesController;
+        this.c = j3;
+        this.d = j10;
+        this.e = i10;
+        this.f = arrayList;
     }
 }

@@ -1,87 +1,34 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Paint;
-import android.graphics.drawable.Drawable;
-import android.os.SystemClock;
+import android.content.Context;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class a60 extends Drawable {
-    public long b;
-    public int d;
-    public final View e;
-    public final Paint a = new Paint(1);
-    public float c = 1.0f;
+public final class a60 extends org.telegram.ui.Cells.d4 {
+    public final /* synthetic */ d60 f0;
 
-    public a60(View view) {
-        this.e = view;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a60(d60 d60Var, Context context) {
+        super(context);
+        this.f0 = d60Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        int dp;
-        int centerX = getBounds().centerX();
-        int centerY = getBounds().centerY();
-        View view = this.e;
-        if (view instanceof org.telegram.ui.ActionBar.k5) {
-            dp = AndroidUtilities.dp(1.0f) + centerY;
-            centerX -= AndroidUtilities.dp(3.0f);
+    @Override // org.telegram.ui.Cells.d4
+    public final void d(org.telegram.ui.Cells.d4 d4Var) {
+        j60 j60Var = this.f0.M;
+        j60 j60Var2 = j60.D3;
+        j60Var.F1(d4Var);
+    }
+
+    @Override // org.telegram.ui.Cells.d4, android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        if (AndroidUtilities.isTablet()) {
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(420.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
         } else {
-            dp = AndroidUtilities.dp(2.0f) + centerY;
+            super.onMeasure(i10, i11);
         }
-        Paint paint = this.a;
-        paint.setColor(-1147527);
-        paint.setAlpha((int) (this.c * 255.0f));
-        canvas.drawCircle(centerX, dp, AndroidUtilities.dp(4.0f), paint);
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long j10 = elapsedRealtime - this.b;
-        if (j10 > 17) {
-            j10 = 17;
-        }
-        this.b = elapsedRealtime;
-        int i10 = this.d;
-        if (i10 == 0) {
-            float f10 = (j10 / 2000.0f) + this.c;
-            this.c = f10;
-            if (f10 >= 1.0f) {
-                this.c = 1.0f;
-                this.d = 1;
-            }
-        } else if (i10 == 1) {
-            float f11 = this.c - (j10 / 2000.0f);
-            this.c = f11;
-            if (f11 < 0.5f) {
-                this.c = 0.5f;
-                this.d = 0;
-            }
-        }
-        view.invalidate();
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicHeight() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getIntrinsicWidth() {
-        return AndroidUtilities.dp(24.0f);
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-    }
-
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,18 +1,32 @@
 package r0;
 
-import android.os.Build;
-import android.view.animation.Interpolator;
+import android.util.Log;
+import android.view.View;
+import java.lang.reflect.Field;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class w0 {
-    public v0 a;
+public abstract class w0 {
+    public static final Field a;
+    public static final Field b;
+    public static final Field c;
+    public static final boolean d;
 
-    public w0(int i10, long j10, Interpolator interpolator) {
-        if (Build.VERSION.SDK_INT >= 30) {
-            this.a = new u0(s0.b(i10, j10, interpolator));
-        } else {
-            this.a = new r0(i10, j10, interpolator);
+    static {
+        try {
+            Field declaredField = View.class.getDeclaredField("mAttachInfo");
+            a = declaredField;
+            declaredField.setAccessible(true);
+            Class<?> cls = Class.forName("android.view.View$AttachInfo");
+            Field declaredField2 = cls.getDeclaredField("mStableInsets");
+            b = declaredField2;
+            declaredField2.setAccessible(true);
+            Field declaredField3 = cls.getDeclaredField("mContentInsets");
+            c = declaredField3;
+            declaredField3.setAccessible(true);
+            d = true;
+        } catch (ReflectiveOperationException e7) {
+            Log.w("WindowInsetsCompat", "Failed to get visible insets from AttachInfo " + e7.getMessage(), e7);
         }
     }
 }

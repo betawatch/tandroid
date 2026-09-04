@@ -1,27 +1,19 @@
 package org.telegram.ui.ActionBar;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class a5 {
-    public static final a5 a;
-    public static final a5 b;
-    public static final /* synthetic */ a5[] c;
+public interface a5 {
+    void a(float f7);
 
-    static {
-        a5 a5Var = new a5("BACK", 0);
-        a = a5Var;
-        a5 a5Var2 = new a5("MENU", 1);
-        b = a5Var2;
-        c = new a5[]{a5Var, a5Var2};
-    }
+    void b(ActionBarLayout actionBarLayout, boolean z10);
 
-    public static a5 valueOf(String str) {
-        return (a5) Enum.valueOf(a5.class, str);
-    }
+    void e(int[] iArr);
 
-    public static a5[] values() {
-        return (a5[]) c.clone();
-    }
+    boolean h(n2 n2Var, ActionBarLayout actionBarLayout);
+
+    boolean j();
+
+    boolean k(ActionBarLayout actionBarLayout);
+
+    boolean l(ActionBarLayout actionBarLayout, b5 b5Var);
 }

@@ -1,63 +1,36 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class xn0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ lo0 a;
+public final /* synthetic */ class xn0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ xo0 b;
 
-    public xn0(lo0 lo0Var) {
-        this.a = lo0Var;
+    public /* synthetic */ xn0(xo0 xo0Var, int i10) {
+        this.a = i10;
+        this.b = xo0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        lo0 lo0Var = this.a;
-        if (i10 == -1) {
-            if (lo0Var.M0) {
-                return;
-            }
-            lo0Var.finishFragment();
-            return;
-        }
-        if (i10 != 1 || lo0Var.M0) {
-            return;
-        }
-        if (lo0Var.r0 != 3) {
-            AndroidUtilities.hideKeyboard(lo0Var.getParentActivity().getCurrentFocus());
-        }
-        int i11 = lo0Var.r0;
-        if (i11 == 0) {
-            lo0Var.D0(true);
-            lo0.m0(lo0Var);
-            return;
-        }
-        int i12 = 0;
-        if (i11 == 1) {
-            while (true) {
-                org.telegram.ui.Cells.i6[] i6VarArr = lo0Var.h;
-                if (i12 >= i6VarArr.length) {
-                    break;
-                }
-                if (i6VarArr[i12].b.f) {
-                    lo0Var.D0 = lo0Var.B0.shipping_options.get(i12);
-                    break;
-                }
-                i12++;
-            }
-            lo0Var.t0();
-            return;
-        }
-        if (i11 == 2) {
-            lo0.j0(lo0Var);
-        } else if (i11 == 3) {
-            lo0.k0(lo0Var);
-        } else {
-            if (i11 != 6) {
-                return;
-            }
-            lo0Var.A0(false);
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                AndroidUtilities.runOnUIThread(new ej0(13, this.b, tL_error));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new wn0(this.b, tL_error, tLObject, 0));
+                break;
+            case 2:
+                AndroidUtilities.runOnUIThread(new qn0(this.b, tLObject, 2));
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new qn0(this.b, tLObject, 0));
+                break;
         }
     }
 }

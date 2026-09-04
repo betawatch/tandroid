@@ -1,35 +1,21 @@
 package e5;
 
-import java.util.Set;
+import com.googlecode.mp4parser.e;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c {
-    public String a;
-    public String b;
-    public Set c;
-    public String d;
-    public String e;
-    public int f;
-    public boolean g;
-    public int h;
-    public boolean i;
-    public int j;
-    public int k;
-    public int l;
-    public int m;
-    public int n;
-    public float o;
-    public int p;
-    public boolean q;
+public abstract class c extends e {
+    static {
+        qc.c.a(c.class);
+    }
 
-    public static int a(int i10, int i11, String str, String str2) {
-        if (str.isEmpty() || i10 == -1) {
-            return i10;
+    public static byte[] d(String str) {
+        byte[] bArr = new byte[4];
+        if (str != null) {
+            for (int i10 = 0; i10 < Math.min(4, str.length()); i10++) {
+                bArr[i10] = (byte) str.charAt(i10);
+            }
         }
-        if (str.equals(str2)) {
-            return i10 + i11;
-        }
-        return -1;
+        return bArr;
     }
 }

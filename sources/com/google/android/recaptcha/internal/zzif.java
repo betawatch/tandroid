@@ -1,21 +1,21 @@
 package com.google.android.recaptcha.internal;
 
-import k7.o7;
-import k7.p7;
-import ld.e0;
+import gd.c;
+import gd.g;
+import jd.a;
 import org.telegram.tgnet.TLObject;
-import sc.c;
-import sc.g;
-import vc.a;
+import v7.s7;
+import v7.t7;
+import zd.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzif {
     private final c zza;
 
     public zzif() {
         int i10 = zzby.zza;
-        this.zza = o7.a(zzie.zza);
+        this.zza = s7.a(zzie.zza);
     }
 
     public static final /* synthetic */ zzhm zza(zzif zzifVar) {
@@ -27,7 +27,7 @@ public final class zzif {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, uc.c cVar) {
+    public static Object zzc(zzif zzifVar, zzcy zzcyVar, zzye zzyeVar, id.c cVar) {
         zzic zzicVar;
         int i10;
         if (cVar instanceof zzic) {
@@ -42,14 +42,14 @@ public final class zzif {
                     if (i10 != 1) {
                         throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                     }
-                    p7.b(obj);
+                    t7.b(obj);
                     return obj;
                 }
-                p7.b(obj);
+                t7.b(obj);
                 zzid zzidVar = new zzid(zzifVar, zzcyVar, zzyeVar, null);
                 zzicVar.zzc = 1;
-                Object f10 = e0.f(zzidVar, zzicVar);
-                return f10 == aVar ? aVar : f10;
+                Object f7 = e0.f(zzidVar, zzicVar);
+                return f7 == aVar ? aVar : f7;
             }
         }
         zzicVar = new zzic(zzifVar, cVar);
@@ -60,7 +60,7 @@ public final class zzif {
         }
     }
 
-    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, uc.c cVar) {
+    public final Object zzb(zzcy zzcyVar, zzye zzyeVar, id.c cVar) {
         return zzc(this, zzcyVar, zzyeVar, cVar);
     }
 }

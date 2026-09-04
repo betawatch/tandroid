@@ -17,7 +17,7 @@ public final class q3 extends t6 implements e2, w1 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j10) {
+    public final /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -28,8 +28,8 @@ public final class q3 extends t6 implements e2, w1 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.V(this, j10, j11, intFunction);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.V(this, j3, j10, intFunction);
     }
 
     @Override // j$.util.stream.j5
@@ -53,9 +53,9 @@ public final class q3 extends t6 implements e2, w1 {
 
     @Override // j$.util.stream.e2
     public final void f(Object[] objArr, int i10) {
-        long j10 = i10;
-        long count = count() + j10;
-        if (count > objArr.length || count < j10) {
+        long j3 = i10;
+        long count = count() + j3;
+        if (count > objArr.length || count < j3) {
             throw new IndexOutOfBoundsException("does not fit");
         }
         if (this.c == 0) {
@@ -85,8 +85,8 @@ public final class q3 extends t6 implements e2, w1 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         clear();
-        i(j10);
+        i(j3);
     }
 }

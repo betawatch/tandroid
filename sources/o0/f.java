@@ -1,52 +1,50 @@
 package o0;
 
+import android.content.Context;
+import j$.util.DesugarCollections;
+import j$.util.Objects;
 import java.util.ArrayList;
-import n7.qa;
-import org.telegram.messenger.d0;
-import p2.r;
+import java.util.List;
+import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f implements q0.a {
+public final class f implements Callable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ Context c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ f(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public /* synthetic */ f(String str, Context context, Object obj, int i10, int i11) {
+        this.a = i11;
+        this.b = str;
+        this.c = context;
+        this.e = obj;
+        this.d = i10;
     }
 
-    @Override // q0.a
-    public final void accept(Object obj) {
-        switch (this.a) {
+    @Override // java.util.concurrent.Callable
+    public final Object call() {
+        int i10 = this.a;
+        int i11 = this.d;
+        Object obj = this.e;
+        Context context = this.c;
+        String str = this.b;
+        switch (i10) {
             case 0:
-                g gVar = (g) obj;
-                if (gVar == null) {
-                    gVar = new g(-3);
-                }
-                ((qa) this.b).r0(gVar);
-                return;
-            case 1:
-                g gVar2 = (g) obj;
-                synchronized (h.c) {
-                    try {
-                        a0.k kVar = h.d;
-                        ArrayList arrayList = (ArrayList) kVar.get((String) this.b);
-                        if (arrayList == null) {
-                            return;
-                        }
-                        kVar.remove((String) this.b);
-                        for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                            ((q0.a) arrayList.get(i10)).accept(gVar2);
-                        }
-                        return;
-                    } finally {
-                    }
-                }
+                Object[] objArr = {(e) obj};
+                ArrayList arrayList = new ArrayList(1);
+                Object obj2 = objArr[0];
+                Objects.requireNonNull(obj2);
+                arrayList.add(obj2);
+                return h.b(str, context, DesugarCollections.unmodifiableList(arrayList), i11);
             default:
-                r rVar = new r(new ArrayList(), new ArrayList());
-                ((d0) this.b).a((p2.h) obj, rVar);
-                return;
+                try {
+                    return h.b(str, context, (List) obj, i11);
+                } catch (Throwable unused) {
+                    return new g(-3);
+                }
         }
     }
 }

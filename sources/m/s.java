@@ -21,15 +21,14 @@ import android.view.inputmethod.InputConnection;
 import android.view.textclassifier.TextClassifier;
 import android.widget.EditText;
 import android.widget.TextView;
-import k7.x7;
 import org.telegram.messenger.beta.R;
-import ph.z8;
+import w7.q7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class s extends EditText implements r0.p, u0.k {
-    public final m a;
-    public final x0 b;
+public final class s extends EditText implements r0.o, u0.k {
+    public final e2.c a;
+    public final w0 b;
     public final y c;
     public final u0.j d;
     public final y e;
@@ -38,15 +37,15 @@ public final class s extends EditText implements r0.p, u0.k {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public s(Context context, AttributeSet attributeSet) {
         super(context, attributeSet, R.attr.editTextStyle);
-        e3.a(context);
-        d3.a(this, getContext());
-        m mVar = new m(this);
-        this.a = mVar;
-        mVar.d(attributeSet, R.attr.editTextStyle);
-        x0 x0Var = new x0(this);
-        this.b = x0Var;
-        x0Var.f(attributeSet, R.attr.editTextStyle);
-        x0Var.b();
+        b3.a(context);
+        a3.a(this, getContext());
+        e2.c cVar = new e2.c(this);
+        this.a = cVar;
+        cVar.f(attributeSet, R.attr.editTextStyle);
+        w0 w0Var = new w0(this);
+        this.b = w0Var;
+        w0Var.f(attributeSet, R.attr.editTextStyle);
+        w0Var.b();
         y yVar = new y();
         yVar.b = this;
         this.c = yVar;
@@ -80,42 +79,42 @@ public final class s extends EditText implements r0.p, u0.k {
         return this.f;
     }
 
-    @Override // r0.p
-    public final r0.h a(r0.h hVar) {
+    @Override // r0.o
+    public final r0.g a(r0.g gVar) {
         this.d.getClass();
-        return u0.j.a(this, hVar);
+        return u0.j.a(this, gVar);
     }
 
     @Override // android.widget.TextView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        m mVar = this.a;
-        if (mVar != null) {
-            mVar.a();
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.b();
         }
-        x0 x0Var = this.b;
-        if (x0Var != null) {
-            x0Var.b();
+        w0 w0Var = this.b;
+        if (w0Var != null) {
+            w0Var.b();
         }
     }
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return x7.d(super.getCustomSelectionActionModeCallback());
+        return q7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        m mVar = this.a;
-        if (mVar != null) {
-            return mVar.b();
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            return cVar.d();
         }
         return null;
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        m mVar = this.a;
-        if (mVar != null) {
-            return mVar.c();
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            return cVar.e();
         }
         return null;
     }
@@ -135,19 +134,19 @@ public final class s extends EditText implements r0.p, u0.k {
             return super.getTextClassifier();
         }
         TextClassifier textClassifier = (TextClassifier) yVar.c;
-        return textClassifier == null ? r0.a((TextView) yVar.b) : textClassifier;
+        return textClassifier == null ? q0.a((TextView) yVar.b) : textClassifier;
     }
 
     @Override // android.widget.TextView, android.view.View
     public final InputConnection onCreateInputConnection(EditorInfo editorInfo) {
-        String[] e;
+        String[] e7;
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
         this.b.getClass();
-        x0.h(editorInfo, onCreateInputConnection, this);
-        k7.l.a(editorInfo, onCreateInputConnection, this);
-        if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e = r0.j0.e(this)) != null) {
-            t0.b.b(editorInfo, e);
-            onCreateInputConnection = t0.f.a(onCreateInputConnection, editorInfo, new z8(this, 5));
+        w0.h(editorInfo, onCreateInputConnection, this);
+        w7.n.a(editorInfo, onCreateInputConnection, this);
+        if (onCreateInputConnection != null && Build.VERSION.SDK_INT <= 30 && (e7 = r0.i0.e(this)) != null) {
+            t0.c.b(editorInfo, e7);
+            onCreateInputConnection = t0.g.a(onCreateInputConnection, editorInfo, new rg.p2(this, 2));
         }
         return this.e.c(onCreateInputConnection, editorInfo);
     }
@@ -156,8 +155,8 @@ public final class s extends EditText implements r0.p, u0.k {
     public final boolean onDragEvent(DragEvent dragEvent) {
         Activity activity;
         int i10 = Build.VERSION.SDK_INT;
-        boolean z4 = false;
-        if (i10 < 31 && i10 >= 24 && dragEvent.getLocalState() == null && r0.j0.e(this) != null) {
+        boolean z10 = false;
+        if (i10 < 31 && i10 >= 24 && dragEvent.getLocalState() == null && r0.i0.e(this) != null) {
             Context context = getContext();
             while (true) {
                 if (!(context instanceof ContextWrapper)) {
@@ -173,10 +172,10 @@ public final class s extends EditText implements r0.p, u0.k {
             if (activity == null) {
                 Log.i("ReceiveContent", "Can't handle drop: no activity: view=" + this);
             } else if (dragEvent.getAction() != 1 && dragEvent.getAction() == 3) {
-                z4 = b0.a(dragEvent, this, activity);
+                z10 = b0.a(dragEvent, this, activity);
             }
         }
-        if (z4) {
+        if (z10) {
             return true;
         }
         return super.onDragEvent(dragEvent);
@@ -184,24 +183,24 @@ public final class s extends EditText implements r0.p, u0.k {
 
     @Override // android.widget.EditText, android.widget.TextView
     public final boolean onTextContextMenuItem(int i10) {
-        r0.e eVar;
+        r0.d dVar;
         int i11 = Build.VERSION.SDK_INT;
-        if (i11 >= 31 || r0.j0.e(this) == null || !(i10 == 16908322 || i10 == 16908337)) {
+        if (i11 >= 31 || r0.i0.e(this) == null || !(i10 == 16908322 || i10 == 16908337)) {
             return super.onTextContextMenuItem(i10);
         }
         ClipboardManager clipboardManager = (ClipboardManager) getContext().getSystemService("clipboard");
         ClipData primaryClip = clipboardManager == null ? null : clipboardManager.getPrimaryClip();
         if (primaryClip != null && primaryClip.getItemCount() > 0) {
             if (i11 >= 31) {
-                eVar = new r0.d(primaryClip, 1);
+                dVar = new j2.j(primaryClip, 1);
             } else {
-                r0.f fVar = new r0.f();
-                fVar.b = primaryClip;
-                fVar.c = 1;
-                eVar = fVar;
+                r0.e eVar = new r0.e();
+                eVar.b = primaryClip;
+                eVar.c = 1;
+                dVar = eVar;
             }
-            eVar.c(i10 == 16908322 ? 0 : 1);
-            r0.j0.i(this, eVar.build());
+            dVar.c(i10 == 16908322 ? 0 : 1);
+            r0.i0.i(this, dVar.build());
         }
         return true;
     }
@@ -209,46 +208,46 @@ public final class s extends EditText implements r0.p, u0.k {
     @Override // android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        m mVar = this.a;
-        if (mVar != null) {
-            mVar.e();
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.g();
         }
     }
 
     @Override // android.view.View
     public void setBackgroundResource(int i10) {
         super.setBackgroundResource(i10);
-        m mVar = this.a;
-        if (mVar != null) {
-            mVar.f(i10);
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.h(i10);
         }
     }
 
     @Override // android.widget.TextView
     public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
-        x0 x0Var = this.b;
-        if (x0Var != null) {
-            x0Var.b();
+        w0 w0Var = this.b;
+        if (w0Var != null) {
+            w0Var.b();
         }
     }
 
     @Override // android.widget.TextView
     public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
-        x0 x0Var = this.b;
-        if (x0Var != null) {
-            x0Var.b();
+        w0 w0Var = this.b;
+        if (w0Var != null) {
+            w0Var.b();
         }
     }
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(x7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(q7.e(callback, this));
     }
 
-    public void setEmojiCompatEnabled(boolean z4) {
-        this.e.d(z4);
+    public void setEmojiCompatEnabled(boolean z10) {
+        this.e.d(z10);
     }
 
     @Override // android.widget.TextView
@@ -257,39 +256,39 @@ public final class s extends EditText implements r0.p, u0.k {
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        m mVar = this.a;
-        if (mVar != null) {
-            mVar.h(colorStateList);
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.l(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        m mVar = this.a;
-        if (mVar != null) {
-            mVar.i(mode);
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.m(mode);
         }
     }
 
     @Override // u0.k
     public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        x0 x0Var = this.b;
-        x0Var.l(colorStateList);
-        x0Var.b();
+        w0 w0Var = this.b;
+        w0Var.l(colorStateList);
+        w0Var.b();
     }
 
     @Override // u0.k
     public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        x0 x0Var = this.b;
-        x0Var.m(mode);
-        x0Var.b();
+        w0 w0Var = this.b;
+        w0Var.m(mode);
+        w0Var.b();
     }
 
     @Override // android.widget.TextView
     public final void setTextAppearance(Context context, int i10) {
         super.setTextAppearance(context, i10);
-        x0 x0Var = this.b;
-        if (x0Var != null) {
-            x0Var.g(context, i10);
+        w0 w0Var = this.b;
+        if (w0Var != null) {
+            w0Var.g(context, i10);
         }
     }
 

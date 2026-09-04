@@ -4,7 +4,7 @@ import android.graphics.Point;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class rz implements Runnable {
     public final /* synthetic */ int a;
@@ -27,9 +27,9 @@ public final /* synthetic */ class rz implements Runnable {
                 vz vzVar = this.b;
                 int i11 = this.c;
                 int i12 = this.d;
-                if (vzVar.T != i11 || vzVar.U != i12) {
-                    vzVar.T = i11;
-                    vzVar.U = i12;
+                if (vzVar.W != i11 || vzVar.X != i12) {
+                    vzVar.W = i11;
+                    vzVar.X = i12;
                     int devicePerformanceClass = SharedConfig.getDevicePerformanceClass();
                     int i13 = 1920;
                     if (devicePerformanceClass != 1) {
@@ -40,24 +40,24 @@ public final /* synthetic */ class rz implements Runnable {
                             i13 = Math.min(1920, Math.max(point.x, point.y));
                         }
                     }
-                    if (SharedConfig.getDevicePerformanceClass() == 0 && ((i10 = vzVar.T) > 1280 || vzVar.U > 1280)) {
-                        vzVar.T = i10 / 2;
-                        vzVar.U /= 2;
+                    if (SharedConfig.getDevicePerformanceClass() == 0 && ((i10 = vzVar.W) > 1280 || vzVar.X > 1280)) {
+                        vzVar.W = i10 / 2;
+                        vzVar.X /= 2;
                     }
-                    int i14 = vzVar.T;
-                    if (i14 > i13 || vzVar.U > i13) {
-                        int i15 = vzVar.U;
+                    int i14 = vzVar.W;
+                    if (i14 > i13 || vzVar.X > i13) {
+                        int i15 = vzVar.X;
                         if (i14 > i15) {
-                            vzVar.U = (int) (i15 / (i13 / i14));
-                            vzVar.T = i13;
+                            vzVar.X = (int) (i15 / (i13 / i14));
+                            vzVar.W = i13;
                         } else {
-                            vzVar.T = (int) (i14 / (i13 / i15));
-                            vzVar.U = i13;
+                            vzVar.W = (int) (i14 / (i13 / i15));
+                            vzVar.X = i13;
                         }
                     }
-                    vzVar.W = false;
+                    vzVar.Z = false;
                     vzVar.g();
-                    vzVar.a0.run();
+                    vzVar.d0.run();
                     break;
                 }
                 break;
@@ -72,9 +72,9 @@ public final /* synthetic */ class rz implements Runnable {
                 vz vzVar3 = this.b;
                 int i18 = this.c;
                 int i19 = this.d;
-                ha haVar = vzVar3.F;
-                haVar.l = i18;
-                haVar.m = i19;
+                pa paVar = vzVar3.I;
+                paVar.l = i18;
+                paVar.m = i19;
                 break;
         }
     }

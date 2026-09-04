@@ -1,24 +1,17 @@
 package wh;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final class m extends f2.k {
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public boolean j;
-    public boolean k;
-    public boolean l;
-    public boolean m;
-    public boolean n;
-    public float o;
-    public float p;
-    public float q;
-    public float r;
-    public int s;
-    public int t;
-    public int u;
-    public int v;
-    public boolean w;
+import android.view.View;
+import java.util.List;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class m {
+    public final l.d a;
+    public boolean b;
+    public int c;
+    public int d;
+
+    public m(View view, List list, l lVar) {
+        this.a = new l.d(view.getContext(), new k(this, view, list, lVar));
+    }
 }

@@ -6,18 +6,18 @@ import android.os.IInterface;
 import android.os.Parcel;
 import w.b;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public interface ICarHardwareResult extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$hardware$ICarHardwareResult".replace('$', '.');
 
-    void onCarHardwareResult(int i10, boolean z4, b bVar, IBinder iBinder);
+    void onCarHardwareResult(int i10, boolean z10, b bVar, IBinder iBinder);
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static abstract class Stub extends Binder implements ICarHardwareResult {
         static final int TRANSACTION_onCarHardwareResult = 2;
 
-        /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+        /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
         public static class Proxy implements ICarHardwareResult {
             private IBinder mRemote;
 
@@ -35,12 +35,12 @@ public interface ICarHardwareResult extends IInterface {
             }
 
             @Override // androidx.car.app.hardware.ICarHardwareResult
-            public void onCarHardwareResult(int i10, boolean z4, b bVar, IBinder iBinder) {
+            public void onCarHardwareResult(int i10, boolean z10, b bVar, IBinder iBinder) {
                 Parcel obtain = Parcel.obtain();
                 try {
                     obtain.writeInterfaceToken(ICarHardwareResult.DESCRIPTOR);
                     obtain.writeInt(i10);
-                    obtain.writeInt(z4 ? 1 : 0);
+                    obtain.writeInt(z10 ? 1 : 0);
                     if (bVar != null) {
                         obtain.writeInt(1);
                         bVar.writeToParcel(obtain, 0);
@@ -90,7 +90,7 @@ public interface ICarHardwareResult extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class Default implements ICarHardwareResult {
         @Override // android.os.IInterface
         public IBinder asBinder() {
@@ -98,7 +98,7 @@ public interface ICarHardwareResult extends IInterface {
         }
 
         @Override // androidx.car.app.hardware.ICarHardwareResult
-        public void onCarHardwareResult(int i10, boolean z4, b bVar, IBinder iBinder) {
+        public void onCarHardwareResult(int i10, boolean z10, b bVar, IBinder iBinder) {
         }
     }
 }

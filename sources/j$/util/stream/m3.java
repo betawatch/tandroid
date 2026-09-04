@@ -27,14 +27,14 @@ public final class m3 extends p3 implements h5 {
         this.h = iArr;
     }
 
-    public m3(m3 m3Var, Spliterator spliterator, long j10, long j11) {
-        super(m3Var, spliterator, j10, j11, m3Var.h.length);
+    public m3(m3 m3Var, Spliterator spliterator, long j3, long j10) {
+        super(m3Var, spliterator, j3, j10, m3Var.h.length);
         this.h = m3Var.h;
     }
 
     @Override // j$.util.stream.p3
-    public final p3 a(Spliterator spliterator, long j10, long j11) {
-        return new m3(this, spliterator, j10, j11);
+    public final p3 a(Spliterator spliterator, long j3, long j10) {
+        return new m3(this, spliterator, j3, j10);
     }
 
     @Override // j$.util.stream.p3, j$.util.stream.j5, j$.util.stream.h5, java.util.function.IntConsumer

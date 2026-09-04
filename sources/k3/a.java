@@ -1,51 +1,114 @@
 package k3;
 
-import j3.o2;
-import java.util.Arrays;
-import k7.b7;
-import o4.v;
+import b2.r;
+import b2.r0;
+import b2.s;
+import c3.d0;
+import c3.h0;
+import c3.o;
+import c3.p;
+import c3.q;
+import c3.t;
+import e9.a1;
+import e9.g0;
+import e9.i0;
+import i2.g;
+import java.util.List;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public final long a;
-    public final o2 b;
-    public final int c;
-    public final v d;
-    public final long e;
-    public final o2 f;
-    public final int g;
-    public final v h;
-    public final long i;
-    public final long j;
+public final class a implements o {
+    public final /* synthetic */ int a = 0;
+    public final Object b;
 
-    public a(long j10, o2 o2Var, int i10, v vVar, long j11, o2 o2Var2, int i11, v vVar2, long j12, long j13) {
-        this.a = j10;
-        this.b = o2Var;
-        this.c = i10;
-        this.d = vVar;
-        this.e = j11;
-        this.f = o2Var2;
-        this.g = i11;
-        this.h = vVar2;
-        this.i = j12;
-        this.j = j13;
+    public a(int i10) {
+        if ((i10 & 1) != 0) {
+            this.b = new d0(65496, 2, "image/jpeg");
+        } else {
+            this.b = new b();
+        }
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && a.class == obj.getClass()) {
-            a aVar = (a) obj;
-            if (this.a == aVar.a && this.c == aVar.c && this.e == aVar.e && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && b7.a(this.b, aVar.b) && b7.a(this.d, aVar.d) && b7.a(this.f, aVar.f) && b7.a(this.h, aVar.h)) {
+    @Override // c3.o
+    public final boolean b(p pVar) {
+        switch (this.a) {
+            case 0:
+                return ((o) this.b).b(pVar);
+            default:
                 return true;
-            }
         }
-        return false;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Long.valueOf(this.a), this.b, Integer.valueOf(this.c), this.d, Long.valueOf(this.e), this.f, Integer.valueOf(this.g), this.h, Long.valueOf(this.i), Long.valueOf(this.j)});
+    @Override // c3.o
+    public final o c() {
+        int i10 = this.a;
+        return this;
+    }
+
+    @Override // c3.o
+    public final void g(q qVar) {
+        switch (this.a) {
+            case 0:
+                ((o) this.b).g(qVar);
+                break;
+            default:
+                h0 R1 = qVar.R1(0, 3);
+                qVar.P1(new t(-9223372036854775807L));
+                qVar.Z0();
+                s sVar = (s) this.b;
+                r a2 = sVar.a();
+                a2.q = r0.n("text/x-unknown");
+                a2.j = sVar.r;
+                g.u(a2, R1);
+                break;
+        }
+    }
+
+    @Override // c3.o
+    public final void h(long j3, long j10) {
+        switch (this.a) {
+            case 0:
+                ((o) this.b).h(j3, j10);
+                break;
+        }
+    }
+
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // c3.o
+    public final List i() {
+        switch (this.a) {
+        }
+        g0 g0Var = i0.b;
+        return a1.e;
+    }
+
+    @Override // c3.o
+    public final int m(p pVar, c3.s sVar) {
+        switch (this.a) {
+            case 0:
+                return ((o) this.b).m(pVar, sVar);
+            default:
+                return pVar.skip(ConnectionsManager.DEFAULT_DATACENTER_ID) == -1 ? -1 : 0;
+        }
+    }
+
+    @Override // c3.o
+    public final void release() {
+        switch (this.a) {
+            case 0:
+                ((o) this.b).release();
+                break;
+        }
+    }
+
+    public a(s sVar) {
+        this.b = sVar;
+    }
+
+    private final void a() {
+    }
+
+    private final void d(long j3, long j10) {
     }
 }

@@ -15,7 +15,7 @@ public final class b3 extends o6 implements a2, u1 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j10) {
+    public final /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -41,8 +41,8 @@ public final class b3 extends o6 implements a2, u1 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.T(this, j10, j11);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.T(this, j3, j10);
     }
 
     @Override // j$.util.stream.j5
@@ -106,9 +106,9 @@ public final class b3 extends o6 implements a2, u1 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         clear();
-        l(j10);
+        l(j3);
     }
 
     @Override // j$.util.stream.s6, j$.util.stream.d2

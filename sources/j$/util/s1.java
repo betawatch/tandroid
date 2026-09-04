@@ -38,16 +38,16 @@ public final class s1 {
             return i10 == 0 ? "" : strArr[0];
         }
         char[] cArr = new char[this.f + length2];
-        int c3 = c(str, cArr, 0);
+        int c10 = c(str, cArr, 0);
         if (i10 > 0) {
-            int c10 = c(strArr[0], cArr, c3) + c3;
+            int c11 = c(strArr[0], cArr, c10) + c10;
             for (int i11 = 1; i11 < i10; i11++) {
-                int c11 = c(this.b, cArr, c10) + c10;
-                c10 = c(strArr[i11], cArr, c11) + c11;
+                int c12 = c(this.b, cArr, c11) + c11;
+                c11 = c(strArr[i11], cArr, c12) + c12;
             }
-            c3 = c10;
+            c10 = c11;
         }
-        c(str2, cArr, c3);
+        c(str2, cArr, c10);
         return new String(cArr);
     }
 
@@ -74,11 +74,11 @@ public final class s1 {
         String[] strArr;
         if (this.e > 1) {
             char[] cArr = new char[this.f];
-            int c3 = c(this.d[0], cArr, 0);
+            int c10 = c(this.d[0], cArr, 0);
             int i10 = 1;
             do {
-                int c10 = c(this.b, cArr, c3) + c3;
-                c3 = c(this.d[i10], cArr, c10) + c10;
+                int c11 = c(this.b, cArr, c10) + c10;
+                c10 = c(this.d[i10], cArr, c11) + c11;
                 strArr = this.d;
                 strArr[i10] = null;
                 i10++;

@@ -1,24 +1,16 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ix extends ux {
-    public final /* synthetic */ kz d3;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ix(kz kzVar, Context context) {
-        super(kzVar, context);
-        this.d3 = kzVar;
-    }
-
-    @Override // org.telegram.ui.Components.ux, org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.d3.f) {
-            return false;
+public final class ix extends org.telegram.ui.co {
+    @Override // org.telegram.ui.co, org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationEnd(boolean z10, boolean z11) {
+        org.telegram.ui.mk mkVar;
+        super.onTransitionAnimationEnd(z10, z11);
+        if (!z10 || (mkVar = this.Y) == null) {
+            return;
         }
-        return super.onInterceptTouchEvent(motionEvent);
+        mkVar.s1();
+        this.Y.postDelayed(new wp(this, 13), 100L);
     }
 }

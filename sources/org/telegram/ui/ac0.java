@@ -1,53 +1,54 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ac0 extends bg.b {
-    public final CharSequence c;
-    public final int d;
-    public final int e;
-    public final int f;
+public final /* synthetic */ class ac0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ fc0 b;
+    public final /* synthetic */ String c;
 
-    public ac0(int i10, int i11, CharSequence charSequence, int i12, int i13) {
-        super(i10, false);
-        this.c = charSequence;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
+    public /* synthetic */ ac0(fc0 fc0Var, String str, int i10) {
+        this.a = i10;
+        this.b = fc0Var;
+        this.c = str;
     }
 
-    public static ac0 b(int i10, String str) {
-        return new ac0(4, 0, str, i10, 0);
-    }
-
-    public static ac0 c(int i10, int i11, String str) {
-        return new ac0(3, i10, str, i11, 0);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                fc0 fc0Var = this.b;
+                fc0Var.getClass();
+                String str = this.c;
+                if ("disable".equalsIgnoreCase(str)) {
+                    fc0Var.o("turnPasswordOffRow");
+                }
+                if ("change".equalsIgnoreCase(str)) {
+                    fc0Var.o("changePasswordRow");
+                }
+                if ("change-email".equalsIgnoreCase(str)) {
+                    fc0Var.o("emailRow");
+                    break;
+                }
+                break;
+            default:
+                fc0 fc0Var2 = this.b;
+                fc0Var2.getClass();
+                String str2 = this.c;
+                if ("disable".equalsIgnoreCase(str2)) {
+                    fc0Var2.o("disablePasscodeRow");
+                }
+                if ("change".equalsIgnoreCase(str2)) {
+                    fc0Var2.o("changePasscodeRow");
+                }
+                if ("auto-lock".equalsIgnoreCase(str2)) {
+                    fc0Var2.o("autoLockRow");
+                }
+                if ("fingerprint".equalsIgnoreCase(str2)) {
+                    fc0Var2.o("fingerprintRow");
+                    break;
+                }
+                break;
         }
-        if (!(obj instanceof ac0)) {
-            return false;
-        }
-        ac0 ac0Var = (ac0) obj;
-        int i10 = ac0Var.a;
-        int i11 = this.a;
-        if (i10 != i11) {
-            return false;
-        }
-        if (i11 == 3 && ac0Var.d != this.d) {
-            return false;
-        }
-        if (i11 == 5 && ac0Var.f != this.f) {
-            return false;
-        }
-        if ((i11 == 3 || i11 == 4) && ac0Var.e != this.e) {
-            return false;
-        }
-        return !(i11 == 0 || i11 == 2 || i11 == 3 || i11 == 4 || i11 == 5) || TextUtils.equals(ac0Var.c, this.c);
     }
 }

@@ -1,20 +1,48 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final class k20 extends eg.q1 {
-    public final /* synthetic */ int r;
+import android.content.Context;
+import android.view.View;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ k20(int i10, int i11, int i12, int i13, org.telegram.ui.ActionBar.f6 f6Var, int i14) {
-        super(i10, i11, i12, i13, f6Var);
-        this.r = i14;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class k20 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ tg.a c;
+
+    public /* synthetic */ k20(Context context, tg.a aVar, int i10) {
+        this.a = i10;
+        this.b = context;
+        this.c = aVar;
     }
 
-    @Override // eg.q1
-    public final int c(int i10) {
-        switch (this.r) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                g gVar = new g(this, 18);
+                Context context = this.b;
+                org.telegram.ui.Components.v8 v8Var = new org.telegram.ui.Components.v8(context, false, gVar, 1);
+                tg.f fVar = this.c.c;
+                v8Var.e(fVar != null ? fVar.C : 0, 0);
+                v8Var.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(context, false);
+                f3Var.setCustomView(v8Var);
+                f3Var.setDimBehind(false);
+                f3Var.show();
+                break;
+            default:
+                g gVar2 = new g(this, 19);
+                Context context2 = this.b;
+                org.telegram.ui.Components.v8 v8Var2 = new org.telegram.ui.Components.v8(context2, false, gVar2, 2);
+                tg.f fVar2 = this.c.c;
+                v8Var2.e(fVar2 == null ? 0 : fVar2.B, 0);
+                v8Var2.f(-1, 1, 1, false);
+                org.telegram.ui.ActionBar.f3 f3Var2 = new org.telegram.ui.ActionBar.f3(context2, false);
+                f3Var2.setCustomView(v8Var2);
+                f3Var2.setDimBehind(false);
+                f3Var2.show();
+                break;
         }
-        return org.telegram.ui.ActionBar.j6.C0(i10);
     }
 }

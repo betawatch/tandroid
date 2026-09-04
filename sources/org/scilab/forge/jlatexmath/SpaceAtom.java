@@ -3,7 +3,7 @@ package org.scilab.forge.jlatexmath;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class SpaceAtom extends Atom {
     private static UnitConversion[] unitConversions;
@@ -17,7 +17,7 @@ public class SpaceAtom extends Atom {
     private int wUnit;
     private float width;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface UnitConversion {
         float getPixelConversion(TeXEnvironment teXEnvironment);
     }
@@ -176,25 +176,25 @@ public class SpaceAtom extends Atom {
         this.blankType = i10;
     }
 
-    public SpaceAtom(int i10, float f10, float f11, float f12) {
+    public SpaceAtom(int i10, float f7, float f10, float f11) {
         checkUnit(i10);
         this.wUnit = i10;
         this.hUnit = i10;
         this.dUnit = i10;
-        this.width = f10;
-        this.height = f11;
-        this.depth = f12;
+        this.width = f7;
+        this.height = f10;
+        this.depth = f11;
     }
 
-    public SpaceAtom(int i10, float f10, int i11, float f11, int i12, float f12) {
+    public SpaceAtom(int i10, float f7, int i11, float f10, int i12, float f11) {
         checkUnit(i10);
         checkUnit(i11);
         checkUnit(i12);
         this.wUnit = i10;
         this.hUnit = i11;
         this.dUnit = i12;
-        this.width = f10;
-        this.height = f11;
-        this.depth = f12;
+        this.width = f7;
+        this.height = f10;
+        this.depth = f11;
     }
 }

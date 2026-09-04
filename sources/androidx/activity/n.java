@@ -10,9 +10,9 @@ import android.view.Window;
 import android.window.OnBackInvokedDispatcher;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public class n extends Dialog implements androidx.lifecycle.t, g2.f {
+public class n extends Dialog implements androidx.lifecycle.t, t4.e {
     public androidx.lifecycle.v a;
     public final o b;
     public final x c;
@@ -20,7 +20,7 @@ public class n extends Dialog implements androidx.lifecycle.t, g2.f {
     public n(Context context, int i10) {
         super(context, i10);
         this.b = new o(this);
-        this.c = new x(new ag.d(this, 3));
+        this.c = new x(new a3.c(this, 7));
     }
 
     public static void a(n nVar) {
@@ -29,32 +29,32 @@ public class n extends Dialog implements androidx.lifecycle.t, g2.f {
 
     @Override // android.app.Dialog
     public void addContentView(View view, ViewGroup.LayoutParams layoutParams) {
-        kotlin.jvm.internal.j.e(view, "view");
+        kotlin.jvm.internal.i.e(view, "view");
         b();
         super.addContentView(view, layoutParams);
     }
 
     public final void b() {
         Window window = getWindow();
-        kotlin.jvm.internal.j.b(window);
+        kotlin.jvm.internal.i.b(window);
         View decorView = window.getDecorView();
-        kotlin.jvm.internal.j.d(decorView, "window!!.decorView");
+        kotlin.jvm.internal.i.d(decorView, "window!!.decorView");
         decorView.setTag(R.id.view_tree_lifecycle_owner, this);
         Window window2 = getWindow();
-        kotlin.jvm.internal.j.b(window2);
+        kotlin.jvm.internal.i.b(window2);
         View decorView2 = window2.getDecorView();
-        kotlin.jvm.internal.j.d(decorView2, "window!!.decorView");
+        kotlin.jvm.internal.i.d(decorView2, "window!!.decorView");
         decorView2.setTag(R.id.view_tree_on_back_pressed_dispatcher_owner, this);
         Window window3 = getWindow();
-        kotlin.jvm.internal.j.b(window3);
+        kotlin.jvm.internal.i.b(window3);
         View decorView3 = window3.getDecorView();
-        kotlin.jvm.internal.j.d(decorView3, "window!!.decorView");
+        kotlin.jvm.internal.i.d(decorView3, "window!!.decorView");
         decorView3.setTag(R.id.view_tree_saved_state_registry_owner, this);
     }
 
-    @Override // g2.f
-    public final g2.e g() {
-        return (g2.e) this.b.c;
+    @Override // t4.e
+    public final m.p g() {
+        return (m.p) this.b.d;
     }
 
     @Override // androidx.lifecycle.t
@@ -78,13 +78,13 @@ public class n extends Dialog implements androidx.lifecycle.t, g2.f {
         super.onCreate(bundle);
         if (Build.VERSION.SDK_INT >= 33) {
             OnBackInvokedDispatcher onBackInvokedDispatcher = getOnBackInvokedDispatcher();
-            kotlin.jvm.internal.j.d(onBackInvokedDispatcher, "onBackInvokedDispatcher");
+            kotlin.jvm.internal.i.d(onBackInvokedDispatcher, "onBackInvokedDispatcher");
             x xVar = this.c;
             xVar.getClass();
             xVar.e = onBackInvokedDispatcher;
             xVar.c(xVar.g);
         }
-        this.b.b(bundle);
+        this.b.c(bundle);
         androidx.lifecycle.v vVar = this.a;
         if (vVar == null) {
             vVar = new androidx.lifecycle.v(this);
@@ -96,8 +96,8 @@ public class n extends Dialog implements androidx.lifecycle.t, g2.f {
     @Override // android.app.Dialog
     public final Bundle onSaveInstanceState() {
         Bundle onSaveInstanceState = super.onSaveInstanceState();
-        kotlin.jvm.internal.j.d(onSaveInstanceState, "super.onSaveInstanceState()");
-        this.b.c(onSaveInstanceState);
+        kotlin.jvm.internal.i.d(onSaveInstanceState, "super.onSaveInstanceState()");
+        this.b.d(onSaveInstanceState);
         return onSaveInstanceState;
     }
 
@@ -132,14 +132,14 @@ public class n extends Dialog implements androidx.lifecycle.t, g2.f {
 
     @Override // android.app.Dialog
     public void setContentView(View view) {
-        kotlin.jvm.internal.j.e(view, "view");
+        kotlin.jvm.internal.i.e(view, "view");
         b();
         super.setContentView(view);
     }
 
     @Override // android.app.Dialog
     public void setContentView(View view, ViewGroup.LayoutParams layoutParams) {
-        kotlin.jvm.internal.j.e(view, "view");
+        kotlin.jvm.internal.i.e(view, "view");
         b();
         super.setContentView(view, layoutParams);
     }

@@ -1,98 +1,64 @@
 package x5;
 
-import android.content.Context;
-import android.os.Bundle;
-import android.os.Message;
-import android.os.Messenger;
-import android.os.RemoteException;
-import android.util.Log;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import org.telegram.ui.az;
-import q5.c0;
+import android.net.Uri;
+import android.os.Parcel;
+import android.os.Parcelable;
+import c7.u;
+import java.util.Arrays;
+import n6.l;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class g implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ i b;
+public final class g extends o6.a {
+    public static final Parcelable.Creator<g> CREATOR = new h(1);
+    public final String a;
+    public final String b;
+    public final String c;
+    public final String d;
+    public final Uri e;
+    public final String f;
+    public final String h;
+    public final String n;
+    public final u r;
 
-    public /* synthetic */ g(i iVar, int i10) {
-        this.a = i10;
-        this.b = iVar;
+    public g(String str, String str2, String str3, String str4, Uri uri, String str5, String str6, String str7, u uVar) {
+        l.h(str);
+        this.a = str;
+        this.b = str2;
+        this.c = str3;
+        this.d = str4;
+        this.e = uri;
+        this.f = str5;
+        this.h = str6;
+        this.n = str7;
+        this.r = uVar;
     }
 
-    private final void a() {
-        i iVar = this.b;
-        synchronized (iVar) {
-            if (iVar.a == 1) {
-                iVar.a("Timed out while binding");
-            }
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof g)) {
+            return false;
         }
+        g gVar = (g) obj;
+        return l.l(this.a, gVar.a) && l.l(this.b, gVar.b) && l.l(this.c, gVar.c) && l.l(this.d, gVar.d) && l.l(this.e, gVar.e) && l.l(this.f, gVar.f) && l.l(this.h, gVar.h) && l.l(this.n, gVar.n) && l.l(this.r, gVar.r);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                break;
-            case 1:
-                a();
-                return;
-            default:
-                this.b.a("Service disconnected");
-                return;
-        }
-        while (true) {
-            i iVar = this.b;
-            synchronized (iVar) {
-                try {
-                    if (iVar.a != 2) {
-                        return;
-                    }
-                    if (iVar.d.isEmpty()) {
-                        iVar.c();
-                        return;
-                    }
-                    j jVar = (j) iVar.d.poll();
-                    iVar.e.put(jVar.a, jVar);
-                    ((ScheduledExecutorService) iVar.f.c).schedule(new az(iVar, jVar, false, 13), 30L, TimeUnit.SECONDS);
-                    if (Log.isLoggable("MessengerIpcClient", 3)) {
-                        Log.d("MessengerIpcClient", "Sending ".concat(String.valueOf(jVar)));
-                    }
-                    k kVar = iVar.f;
-                    Messenger messenger = iVar.b;
-                    int i10 = jVar.c;
-                    Context context = (Context) kVar.b;
-                    Message obtain = Message.obtain();
-                    obtain.what = i10;
-                    obtain.arg1 = jVar.a;
-                    obtain.replyTo = messenger;
-                    Bundle bundle = new Bundle();
-                    bundle.putBoolean("oneWay", jVar.a());
-                    bundle.putString("pkg", context.getPackageName());
-                    bundle.putBundle("data", jVar.d);
-                    obtain.setData(bundle);
-                    try {
-                        c0 c0Var = iVar.c;
-                        Messenger messenger2 = (Messenger) c0Var.c;
-                        if (messenger2 != null) {
-                            messenger2.send(obtain);
-                        } else {
-                            f fVar = (f) c0Var.b;
-                            if (fVar == null) {
-                                throw new IllegalStateException("Both messengers are null");
-                            }
-                            Messenger messenger3 = fVar.a;
-                            messenger3.getClass();
-                            messenger3.send(obtain);
-                        }
-                    } catch (RemoteException e) {
-                        iVar.a(e.getMessage());
-                    }
-                } finally {
-                }
-            }
-        }
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.e, this.f, this.h, this.n, this.r});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = e0.q(parcel, 20293);
+        e0.l(parcel, 1, this.a);
+        e0.l(parcel, 2, this.b);
+        e0.l(parcel, 3, this.c);
+        e0.l(parcel, 4, this.d);
+        e0.k(parcel, 5, this.e, i10);
+        e0.l(parcel, 6, this.f);
+        e0.l(parcel, 7, this.h);
+        e0.l(parcel, 8, this.n);
+        e0.k(parcel, 9, this.r, i10);
+        e0.r(parcel, q6);
     }
 }

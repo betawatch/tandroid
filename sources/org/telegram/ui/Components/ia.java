@@ -1,54 +1,91 @@
 package org.telegram.ui.Components;
 
+import android.graphics.Canvas;
 import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
+import android.view.View;
+import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ia {
-    public final int a;
-    public final gj0 b;
-    public final org.telegram.ui.Cells.z c;
-    public final TextPaint d;
-    public final StaticLayout e;
-    public final float f;
-    public final float g;
-    public final RectF h;
-    public final z5 i;
-    public final int j;
-    public final int k;
-    public boolean l;
-    public int m;
-    public final /* synthetic */ da0 n;
+public abstract class ia extends ll0 {
+    public int X2;
+    public int Y2;
+    public int Z2;
+    public boolean a3;
+    public int b3;
+    public boolean c3;
 
-    public ia(da0 da0Var, int i10, int i11, int i12, int i13, String str) {
-        this.n = da0Var;
-        TextPaint textPaint = new TextPaint(1);
-        this.d = textPaint;
-        this.h = new RectF();
-        this.i = new z5(da0Var, 0L, 200L, mr.h);
-        this.m = -1;
-        this.a = i10;
-        this.j = i12;
-        this.k = i13;
-        gj0 gj0Var = new gj0(i11, AndroidUtilities.dp(29.0f), AndroidUtilities.dp(29.0f));
-        this.b = gj0Var;
-        gj0Var.s0 = da0Var;
-        gj0Var.H(true);
-        gj0Var.h = true;
-        gj0Var.I(0);
-        textPaint.setTypeface(AndroidUtilities.bold());
-        textPaint.setTextSize(AndroidUtilities.dp(12.0f));
-        int i14 = org.telegram.ui.ActionBar.j6.G6;
-        org.telegram.ui.ActionBar.f6 f6Var = da0Var.a;
-        textPaint.setColor(org.telegram.ui.ActionBar.j6.v0(i14, f6Var));
-        StaticLayout staticLayout = new StaticLayout(str, textPaint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
-        this.e = staticLayout;
-        this.f = staticLayout.getLineCount() > 0 ? staticLayout.getLineWidth(0) : 0.0f;
-        this.g = staticLayout.getLineCount() > 0 ? staticLayout.getLineLeft(0) : 0.0f;
-        this.c = org.telegram.ui.ActionBar.j6.f0(org.telegram.ui.ActionBar.j6.l1(0.1f, org.telegram.ui.ActionBar.j6.v0(i14, f6Var)), 7, AndroidUtilities.dp(16.0f));
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    public void dispatchDraw(Canvas canvas) {
+        if (this.X2 == 0 || Y0()) {
+            super.dispatchDraw(canvas);
+        } else {
+            canvas.clipRect(0, this.X2, getMeasuredWidth(), getMeasuredHeight() + this.b3);
+            super.dispatchDraw(canvas);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public boolean drawChild(Canvas canvas, View view, long j3) {
+        if (view.getY() + view.getMeasuredHeight() >= this.X2 || this.c3 || Y0()) {
+            return super.drawChild(canvas, view, j3);
+        }
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ll0, ch.a
+    public final void f(Canvas canvas, RectF rectF) {
+        this.c3 = true;
+        super.f(canvas, rectF);
+        this.c3 = false;
+    }
+
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        w1();
+    }
+
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        this.a3 = true;
+        w1();
+        super.setPadding(getPaddingLeft(), this.Y2 + this.X2, getPaddingRight(), getPaddingBottom());
+        this.a3 = false;
+        super.onMeasure(i10, i11);
+    }
+
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View, android.view.ViewParent
+    public void requestLayout() {
+        if (this.a3) {
+            return;
+        }
+        super.requestLayout();
+    }
+
+    @Override // android.view.View
+    public final void setPadding(int i10, int i11, int i12, int i13) {
+        this.Y2 = i11;
+        this.Z2 = i13;
+        super.setPadding(i10, i11 + this.X2, i12, i13);
+    }
+
+    public int v1() {
+        return AndroidUtilities.dp(203.0f);
+    }
+
+    public final void w1() {
+        if (getLayoutParams() == null) {
+            return;
+        }
+        if (!SharedConfig.chatBlurEnabled()) {
+            this.X2 = 0;
+            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = 0;
+        } else {
+            this.X2 = v1();
+            ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = -this.X2;
+        }
     }
 }

@@ -1,41 +1,18 @@
 package org.telegram.ui;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
-import android.text.style.ClickableSpan;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class kx0 extends ClickableSpan {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ lx0 b;
+public final class kx0 {
+    public final int a;
+    public final int b;
+    public final CharSequence c;
+    public final String d;
+    public int e;
 
-    public kx0(lx0 lx0Var, String str) {
-        this.b = lx0Var;
-        this.a = str;
-    }
-
-    @Override // android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        org.telegram.ui.Components.ic b10;
-        ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", this.a));
-        org.telegram.ui.Components.qc a02 = org.telegram.ui.Components.qc.a0(this.b.d);
-        String string = LocaleController.getString(R.string.LinkCopied);
-        org.telegram.ui.ActionBar.f6 resourceProvider = this.b.d.getResourceProvider();
-        a02.getClass();
-        if (AndroidUtilities.shouldShowClipboardToast()) {
-            org.telegram.ui.Components.qb qbVar = new org.telegram.ui.Components.qb(a02.W(), resourceProvider);
-            qbVar.c(R.raw.voip_invite, 36, 36, "Wibe", "Circle");
-            qbVar.b.setText(string);
-            b10 = a02.b(qbVar, 1500);
-        } else {
-            b10 = new org.telegram.ui.Components.gb();
-        }
-        b10.j();
+    public kx0(int i10, int i11, String str, String str2) {
+        this.a = i10;
+        this.b = i11;
+        this.c = str;
+        this.d = str2;
     }
 }

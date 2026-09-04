@@ -2,16 +2,16 @@ package androidx.emoji2.text;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class o {
     public static final ThreadLocal d = new ThreadLocal();
     public final int a;
-    public final com.google.firebase.messaging.r b;
+    public final com.google.firebase.messaging.s b;
     public volatile int c = 0;
 
-    public o(com.google.firebase.messaging.r rVar, int i10) {
-        this.b = rVar;
+    public o(com.google.firebase.messaging.s sVar, int i10) {
+        this.b = sVar;
         this.a = i10;
     }
 
@@ -33,7 +33,7 @@ public final class o {
             aVar = new p1.a();
             threadLocal.set(aVar);
         }
-        p1.b bVar = (p1.b) this.b.a;
+        p1.b bVar = (p1.b) this.b.b;
         int a2 = bVar.a(6);
         if (a2 != 0) {
             int i10 = a2 + bVar.a;
@@ -57,13 +57,13 @@ public final class o {
 
     public final String toString() {
         int i10;
-        StringBuilder sb = new StringBuilder();
-        sb.append(super.toString());
-        sb.append(", id:");
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(super.toString());
+        sb2.append(", id:");
         p1.a b10 = b();
         int a2 = b10.a(4);
-        sb.append(Integer.toHexString(a2 != 0 ? ((ByteBuffer) b10.d).getInt(a2 + b10.a) : 0));
-        sb.append(", codepoints:");
+        sb2.append(Integer.toHexString(a2 != 0 ? ((ByteBuffer) b10.d).getInt(a2 + b10.a) : 0));
+        sb2.append(", codepoints:");
         p1.a b11 = b();
         int a10 = b11.a(16);
         if (a10 != 0) {
@@ -73,9 +73,9 @@ public final class o {
             i10 = 0;
         }
         for (int i12 = 0; i12 < i10; i12++) {
-            sb.append(Integer.toHexString(a(i12)));
-            sb.append(" ");
+            sb2.append(Integer.toHexString(a(i12)));
+            sb2.append(" ");
         }
-        return sb.toString();
+        return sb2.toString();
     }
 }

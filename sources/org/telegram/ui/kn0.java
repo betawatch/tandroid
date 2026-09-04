@@ -1,53 +1,26 @@
 package org.telegram.ui;
 
+import java.util.TimerTask;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kn0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lo0 b;
+public final class kn0 extends TimerTask {
+    public final /* synthetic */ ln0 a;
 
-    public /* synthetic */ kn0(lo0 lo0Var, int i10) {
-        this.a = i10;
-        this.b = lo0Var;
+    public kn0(ln0 ln0Var) {
+        this.a = ln0Var;
     }
 
-    @Override // java.lang.Runnable
+    @Override // java.util.TimerTask, java.lang.Runnable
     public final void run() {
-        switch (this.a) {
-            case 0:
-                lo0 lo0Var = this.b;
-                lo0Var.f[0].requestFocus();
-                AndroidUtilities.showKeyboard(lo0Var.f[0]);
-                break;
-            case 1:
-                this.b.t0();
-                break;
-            case 2:
-                lo0 lo0Var2 = this.b;
-                lo0Var2.getMessagesController().newMessageCallback = null;
-                if (lo0Var2.c1 == 3 && !lo0Var2.isFinishing()) {
-                    lo0Var2.c1 = 4;
-                    ko0 ko0Var = lo0Var2.W0;
-                    if (ko0Var != null) {
-                        ko0Var.a(4);
-                    }
-                    lo0Var2.finishFragment();
-                    break;
-                } else if (lo0Var2.c1 == 1 && !lo0Var2.isFinishing()) {
-                    lo0Var2.finishFragment();
-                    break;
-                }
-                break;
-            default:
-                lo0 lo0Var3 = this.b;
-                if (lo0Var3.a0 != null) {
-                    lo0Var3.w0();
-                    lo0Var3.a0 = null;
-                    break;
-                }
-                break;
+        ln0 ln0Var = this.a;
+        if (ln0Var.v == null) {
+            return;
         }
+        double currentTimeMillis = System.currentTimeMillis();
+        ln0Var.y = (int) (ln0Var.y - (currentTimeMillis - ln0Var.F));
+        ln0Var.F = currentTimeMillis;
+        AndroidUtilities.runOnUIThread(new rl0(this, 6));
     }
 }

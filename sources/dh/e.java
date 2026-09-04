@@ -1,40 +1,197 @@
 package dh;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.view.View;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.mr;
+import android.graphics.Color;
+import android.graphics.Outline;
+import android.graphics.Paint;
+import android.graphics.RecordingCanvas;
+import android.graphics.Rect;
+import android.graphics.RenderNode;
+import android.os.Build;
+import bh.g;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class e extends View {
-    public final xd.a a;
-    public final Drawable b;
-    public final Drawable c;
+public final class e extends d {
+    public final gh.a E;
+    public final Outline F = new Outline();
+    public final Rect G = new Rect();
+    public final RenderNode H;
+    public final RenderNode I;
+    public final Paint J;
+    public final Paint K;
+    public final Paint L;
+    public boolean M;
+    public g N;
 
-    public e(Context context) {
-        super(context);
-        this.a = new xd.a(this, mr.h, 320L);
-        this.b = context.getResources().getDrawable(R.drawable.outline_poll_emoji_24).mutate();
-        this.c = context.getResources().getDrawable(R.drawable.input_keyboard).mutate();
+    public e(gh.a aVar) {
+        Paint paint = new Paint(1);
+        this.J = paint;
+        Paint paint2 = new Paint(1);
+        this.K = paint2;
+        Paint paint3 = new Paint(1);
+        this.L = paint3;
+        RenderNode renderNode = new RenderNode("BlurredNode");
+        this.H = renderNode;
+        this.I = new RenderNode("BlurredFill");
+        renderNode.setClipToOutline(true);
+        renderNode.setClipToBounds(true);
+        this.E = aVar;
+        paint.setColor(0);
+        Paint.Style style = Paint.Style.STROKE;
+        paint2.setStyle(style);
+        paint3.setStyle(style);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        float f10 = this.a.e;
-        kf.r.b(canvas, this.b, 1.0f - f10);
-        kf.r.b(canvas, this.c, f10);
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        c cVar = this.h;
+        if (cVar.m.isEmpty()) {
+            return;
+        }
+        boolean isHardwareAccelerated = canvas.isHardwareAccelerated();
+        gh.a aVar = this.E;
+        if (!isHardwareAccelerated) {
+            c(canvas, aVar);
+            return;
+        }
+        if (!this.H.hasDisplayList()) {
+            aVar.e();
+            w();
+        } else if (this.M) {
+            w();
+        }
+        this.M = false;
+        int l1 = j6.l1(this.H.getAlpha() * this.n, this.d);
+        if (Color.alpha(l1) != 0) {
+            float f7 = this.l;
+            float f10 = this.m;
+            Paint paint = this.J;
+            paint.setShadowLayer(f7, 0.0f, f10, l1);
+            cVar.c(canvas, paint, this.k);
+        }
+        canvas.save();
+        Rect rect = cVar.m;
+        canvas.translate(rect.left, rect.top);
+        canvas.drawRenderNode(this.H);
+        canvas.restore();
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        float f10 = i10 / 2.0f;
-        float f11 = i11 / 2.0f;
-        kf.r.d(this.b, f10, f11, 17);
-        kf.r.d(this.c, f10, f11, 17);
+    @Override // dh.d
+    public final gh.a i() {
+        return this.E;
+    }
+
+    @Override // dh.d
+    public final void j() {
+        b();
+        c cVar = this.h;
+        this.K.setStrokeWidth(cVar.i);
+        this.L.setStrokeWidth(cVar.j);
+        int width = cVar.m.width();
+        int height = cVar.m.height();
+        Rect rect = this.G;
+        rect.set(0, 0, width, height);
+        float[] fArr = cVar.b;
+        Outline outline = this.F;
+        d.h(outline, rect, fArr);
+        outline.setAlpha(1.0f);
+        if (cVar.m.isEmpty()) {
+            return;
+        }
+        this.I.setPosition(0, 0, cVar.m.width(), cVar.m.height());
+        this.H.setPosition(0, 0, cVar.m.width(), cVar.m.height());
+        this.H.setOutline(outline);
+        this.M = true;
+    }
+
+    @Override // dh.d
+    public final void k() {
+        b();
+        this.M = true;
+    }
+
+    @Override // dh.d
+    public final void l() {
+        this.E.e();
+    }
+
+    @Override // dh.d
+    public final d m() {
+        this.H.setClipToOutline(false);
+        return this;
+    }
+
+    @Override // dh.d, android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        int i11 = this.j;
+        this.j = i10;
+        this.H.setAlpha(i10 / 255.0f);
+        this.M = true;
+        if (i11 != 0 || i10 <= 0) {
+            return;
+        }
+        this.E.e();
+    }
+
+    @Override // dh.d
+    public final void u() {
+        super.u();
+        this.J.setShadowLayer(this.l, 0.0f, this.m, this.d);
+        this.K.setColor(this.f);
+        this.L.setColor(this.g);
+        this.M = true;
+    }
+
+    public final boolean v() {
+        return this.H.hasDisplayList();
+    }
+
+    public final void w() {
+        float f7 = this.a;
+        float f10 = this.b;
+        c cVar = this.h;
+        Rect rect = cVar.m;
+        Rect rect2 = cVar.m;
+        float f11 = rect.left + f7;
+        float f12 = rect.top + f10;
+        float f13 = rect.right + f7;
+        float f14 = rect.bottom + f10;
+        RecordingCanvas beginRecording = this.I.beginRecording();
+        beginRecording.save();
+        beginRecording.translate(-f11, -f12);
+        if (this.N != null && Build.VERSION.SDK_INT >= 33) {
+            int i10 = cVar.f;
+            if (i10 <= 0) {
+                i10 = AndroidUtilities.dp(11.0f);
+            }
+            int max = Math.max(Math.min(i10, Math.min(rect2.width(), rect2.height()) / 5), 1);
+            g gVar = this.N;
+            float width = rect2.width();
+            float height = rect2.height();
+            float[] fArr = cVar.c;
+            gVar.a(width, height, fArr[0], fArr[2], fArr[4], fArr[6], max, cVar.g, cVar.h, this.e);
+        }
+        this.E.v(beginRecording, f11, f12, f13, f14);
+        beginRecording.save();
+        this.I.endRecording();
+        RecordingCanvas beginRecording2 = this.H.beginRecording();
+        if (Color.alpha(this.e) == 255) {
+            beginRecording2.drawColor(this.e);
+        } else {
+            beginRecording2.drawRenderNode(this.I);
+            if (this.N == null && Color.alpha(this.e) != 0) {
+                beginRecording2.drawColor(this.e);
+            }
+        }
+        if (this.f != 0) {
+            d.e(beginRecording2, rect2.width(), rect2.height(), cVar.b, cVar.i, true, this.K);
+        }
+        if (this.g != 0) {
+            d.e(beginRecording2, rect2.width(), rect2.height(), cVar.b, cVar.j, false, this.L);
+        }
+        this.H.endRecording();
     }
 }

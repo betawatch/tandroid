@@ -5,10 +5,10 @@ import android.graphics.PorterDuff;
 import android.os.Parcel;
 import android.os.Parcelable;
 import java.nio.charset.Charset;
-import l2.b;
-import l2.c;
+import y4.b;
+import y4.c;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class IconCompatParcelizer {
     /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */

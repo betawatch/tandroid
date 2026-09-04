@@ -1,48 +1,30 @@
 package org.telegram.ui.Components.voip;
 
-import java.util.Random;
-import org.telegram.messenger.LiteMode;
-import org.telegram.ui.Components.u9;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class l3 extends u9 {
-    public final void g(float f10, float f11) {
-        if (!LiteMode.isEnabled(this.r)) {
-            return;
-        }
-        int i10 = 0;
-        while (true) {
-            float f12 = i10;
-            float f13 = this.n;
-            if (f12 >= f13) {
-                return;
-            }
-            float[] fArr = this.i;
-            float f14 = fArr[i10];
-            float[] fArr2 = this.j;
-            float f15 = fArr2[i10];
-            float f16 = (f15 * f10 * 8.2f * 1.0f) + (0.8f * f15) + f14;
-            fArr[i10] = f16;
-            if (f16 >= 1.0f) {
-                fArr[i10] = 0.0f;
-                float[] fArr3 = this.g;
-                this.e[i10] = fArr3[i10];
-                float[] fArr4 = this.h;
-                this.f[i10] = fArr4[i10];
-                if (f11 < 1.0f) {
-                    float f17 = 360.0f / f13;
-                    float f18 = this.b;
-                    float f19 = this.a;
-                    Random random = this.m;
-                    fArr3[i10] = (Math.abs((random.nextInt() % 100.0f) / 100.0f) * (f18 - f19) * f11) + f19;
-                    fArr4[i10] = ((((random.nextInt() * f11) % 100.0f) / 100.0f) * 0.05f * f17) + (f17 * f12);
-                    fArr2[i10] = (float) (((Math.abs(random.nextInt() % 100.0f) / 100.0f) * 0.003d) + 0.017d);
-                } else {
-                    c(fArr3, fArr4, i10);
-                }
-            }
-            i10++;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class l3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ m3 a;
+
+    public l3(m3 m3Var) {
+        this.a = m3Var;
+    }
+
+    @Override // android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator, boolean z10) {
+        m3 m3Var = this.a;
+        m3Var.e = m3Var.c;
+        m3Var.f = m3Var.d;
+        m3Var.c = AndroidUtilities.dp(12.0f) + Utilities.random.nextInt(AndroidUtilities.dp(16.0f));
+        m3Var.d = AndroidUtilities.dp(12.0f) + Utilities.random.nextInt(AndroidUtilities.dp(16.0f));
+        ValueAnimator valueAnimator = m3Var.b;
+        if (valueAnimator != null) {
+            valueAnimator.start();
         }
     }
 }

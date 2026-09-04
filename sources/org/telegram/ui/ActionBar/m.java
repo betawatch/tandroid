@@ -6,81 +6,81 @@ import android.text.TextUtils;
 import android.widget.FrameLayout;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.mr;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class m extends FrameLayout implements xd.i {
+public abstract class m extends FrameLayout implements le.k {
     public final f6 a;
-    public final cb.m b;
-    public final xd.j c;
+    public final com.google.firebase.messaging.m b;
+    public final le.l c;
 
-    public m(Context context, f6 f6Var, cb.m mVar) {
+    public m(Context context, f6 f6Var, com.google.firebase.messaging.m mVar) {
         super(context);
-        this.c = new xd.j(this, mr.h, 350L);
+        this.c = new le.l(this, pr.h, 350L);
         this.a = f6Var;
         this.b = mVar;
     }
 
-    public final void b(CharSequence charSequence) {
-        boolean z4;
+    public final void a(CharSequence charSequence) {
+        boolean z10;
         CharSequence charSequence2;
         boolean isEmpty = TextUtils.isEmpty(charSequence);
-        xd.j jVar = this.c;
+        le.l lVar = this.c;
         if (isEmpty) {
-            jVar.a.r(null, true);
+            lVar.a.r(null, true);
             return;
         }
         int indexOf = TextUtils.indexOf(charSequence, "...");
-        cb.m mVar = this.b;
+        com.google.firebase.messaging.m mVar = this.b;
         if (indexOf >= 0) {
             SpannableString valueOf = SpannableString.valueOf(charSequence);
             mVar.x(valueOf, indexOf);
-            z4 = true;
+            z10 = true;
             charSequence2 = valueOf;
         } else {
-            z4 = false;
+            z10 = false;
             charSequence2 = charSequence;
         }
-        l lVar = new l(this, getContext());
+        l lVar2 = new l(this, getContext());
         int i10 = j6.gl;
         f6 f6Var = this.a;
-        lVar.setTextColor(j6.v0(i10, f6Var));
-        lVar.setLinkTextColor(j6.v0(i10, f6Var));
-        lVar.setTextSize(1, 14.0f);
-        lVar.setAlpha(0.0f);
-        lVar.setText(charSequence2);
-        if (z4) {
-            mVar.c(lVar);
+        lVar2.setTextColor(j6.v0(i10, f6Var));
+        lVar2.setLinkTextColor(j6.v0(i10, f6Var));
+        lVar2.setTextSize(1, 14.0f);
+        lVar2.setAlpha(0.0f);
+        lVar2.setText(charSequence2);
+        if (z10) {
+            mVar.c(lVar2);
         }
-        addView(lVar, k7.b6.c(-2.0f, -2));
-        jVar.i(lVar, true);
+        addView(lVar2, w7.x5.c(-2.0f, -2));
+        lVar.i(lVar2, true);
     }
 
-    public final void c() {
+    public final void b() {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            xd.e eVar = (xd.e) it.next();
-            l lVar = (l) eVar.a;
+            le.g gVar = (le.g) it.next();
+            l lVar = (l) gVar.a;
             int i10 = j6.gl;
             f6 f6Var = this.a;
             lVar.setTextColor(j6.v0(i10, f6Var));
-            ((l) eVar.a).setLinkTextColor(j6.v0(i10, f6Var));
+            ((l) gVar.a).setLinkTextColor(j6.v0(i10, f6Var));
         }
     }
 
-    public void e(xd.j jVar) {
+    public void e(le.l lVar) {
         Iterator it = this.c.iterator();
         while (it.hasNext()) {
-            xd.e eVar = (xd.e) it.next();
-            float c3 = eVar.c();
-            Object obj = eVar.a;
-            float lerp = AndroidUtilities.lerp(0.85f, 1.0f, c3);
-            l lVar = (l) obj;
-            lVar.setAlpha(c3);
-            lVar.setScaleX(lerp);
-            lVar.setScaleY(lerp);
-            lVar.setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(!eVar.h ? 9.0f : -9.0f), 0, c3));
+            le.g gVar = (le.g) it.next();
+            float c10 = gVar.c();
+            Object obj = gVar.a;
+            float lerp = AndroidUtilities.lerp(0.85f, 1.0f, c10);
+            l lVar2 = (l) obj;
+            lVar2.setAlpha(c10);
+            lVar2.setScaleX(lerp);
+            lVar2.setScaleY(lerp);
+            lVar2.setTranslationY(AndroidUtilities.lerp(AndroidUtilities.dp(!gVar.h ? 9.0f : -9.0f), 0, c10));
         }
     }
 
@@ -88,7 +88,7 @@ public abstract class m extends FrameLayout implements xd.i {
         return this.c.a.d.c.a;
     }
 
-    @Override // xd.i
-    public final /* synthetic */ void a() {
+    @Override // le.k
+    public final /* synthetic */ void c() {
     }
 }

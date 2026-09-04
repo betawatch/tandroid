@@ -1,24 +1,15 @@
 package r4;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class j extends q4.b {
-    public final i d;
+public final class j {
+    public final int a;
+    public final byte[] b;
+    public final boolean c;
 
-    public j(i iVar, long j10, long j11) {
-        super(j10, j11);
-        this.d = iVar;
-    }
-
-    @Override // q4.l
-    public final long a1() {
-        a();
-        return this.d.c(this.c);
-    }
-
-    @Override // q4.l
-    public final long n0() {
-        a();
-        return this.d.d(this.c);
+    public j(int i10, boolean z10, byte[] bArr) {
+        this.a = i10;
+        this.b = bArr;
+        this.c = z10;
     }
 }

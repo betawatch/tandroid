@@ -1,59 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.ArrayList;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ly extends h51 {
-    public static final /* synthetic */ int a = 0;
+public interface ly {
+    boolean A();
 
-    static {
-        h51.setup(new ly());
-    }
+    long a();
 
-    public static i51 a(TLRPC.StickerSetCovered stickerSetCovered, ay ayVar, boolean z4) {
-        i51 J = i51.J(ly.class);
-        long j10 = stickerSetCovered.set.id;
-        long j11 = 1 + j10;
-        J.d = (int) (j11 ^ (j11 >>> 32));
-        J.B = j10;
-        J.G = stickerSetCovered;
-        J.H = ayVar;
-        J.e = z4;
-        return J;
-    }
+    boolean b();
 
-    @Override // org.telegram.ui.Components.h51
-    public final void bindView(View view, i51 i51Var, boolean z4, w51 w51Var, g61 g61Var) {
-        ah.f fVar = (ah.f) view;
-        Object obj = i51Var.G;
-        if (obj instanceof TLRPC.TL_messages_stickerSet) {
-            fVar.setPack((TLRPC.TL_messages_stickerSet) obj);
-        } else if (obj instanceof TLRPC.StickerSetCovered) {
-            TLRPC.Document document = ((ay) i51Var.H).e;
-            fVar.d.setText(((TLRPC.StickerSetCovered) obj).set.short_name);
-            fVar.c.d(document, null, null, null, false, false);
-        }
-        fVar.a(i51Var.e, false);
-    }
+    boolean c();
 
-    @Override // org.telegram.ui.Components.h51
-    public final boolean contentsEquals(i51 i51Var, i51 i51Var2) {
-        return i51Var.B == i51Var2.B && i51Var.e == i51Var2.e;
-    }
+    void d(TLRPC.StickerSet stickerSet, TLRPC.InputStickerSet inputStickerSet, boolean z10);
 
-    @Override // org.telegram.ui.Components.h51
-    public final View createView(Context context, rl0 rl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        ah.f fVar = new ah.f(context, f6Var);
-        fVar.setLayoutParams(new f2.w0(AndroidUtilities.dp(64.0f), -1));
-        return fVar;
-    }
+    void e(Object obj, Object obj2);
 
-    @Override // org.telegram.ui.Components.h51
-    public final boolean equals(i51 i51Var, i51 i51Var2) {
-        return i51Var.B == i51Var2.B;
-    }
+    int f();
+
+    boolean g();
+
+    void h(TLRPC.StickerSetCovered stickerSetCovered);
+
+    void i(int i10);
+
+    boolean j();
+
+    boolean k();
+
+    void l(String str);
+
+    void m(View view, TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z10, int i10);
+
+    void n();
+
+    void o(d51 d51Var);
+
+    float p();
+
+    void q();
+
+    void r(TLRPC.StickerSetCovered stickerSetCovered);
+
+    void s(int i10);
+
+    void t(ArrayList arrayList);
+
+    void u();
+
+    void v(View view, Object obj, String str, Object obj2, boolean z10, int i10, int i11);
+
+    void w();
+
+    void x(long j3, TLRPC.Document document, String str, boolean z10);
+
+    void y(long j3);
+
+    boolean z();
 }

@@ -1,127 +1,40 @@
 package k2;
 
-import android.content.res.ColorStateList;
-import android.graphics.Paint;
-import b4.e0;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class i extends l {
-    public e0 d;
-    public float e;
-    public e0 f;
-    public float g;
-    public float h;
-    public float i;
-    public float j;
-    public float k;
-    public Paint.Cap l;
-    public Paint.Join m;
-    public float n;
+public final /* synthetic */ class i implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
 
-    @Override // k2.k
-    public final boolean a() {
-        return this.f.l() || this.d.l();
+    public /* synthetic */ i(Object obj, int i10, long j3, long j10, int i11) {
+        this.a = i11;
+        this.e = obj;
+        this.b = i10;
+        this.c = j3;
+        this.d = j10;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:8:0x0027  */
-    @Override // k2.k
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean b(int[] iArr) {
-        boolean z4;
-        e0 e0Var;
-        e0 e0Var2 = this.f;
-        boolean z10 = true;
-        if (e0Var2.l()) {
-            ColorStateList colorStateList = (ColorStateList) e0Var2.d;
-            int colorForState = colorStateList.getColorForState(iArr, colorStateList.getDefaultColor());
-            if (colorForState != e0Var2.b) {
-                e0Var2.b = colorForState;
-                z4 = true;
-                e0Var = this.d;
-                if (e0Var.l()) {
-                    ColorStateList colorStateList2 = (ColorStateList) e0Var.d;
-                    int colorForState2 = colorStateList2.getColorForState(iArr, colorStateList2.getDefaultColor());
-                    if (colorForState2 != e0Var.b) {
-                        e0Var.b = colorForState2;
-                        return z4 | z10;
-                    }
-                }
-                z10 = false;
-                return z4 | z10;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Object obj = this.e;
+        switch (i10) {
+            case 0:
+                j jVar = (j) ((n4.y) obj).c;
+                String str = e2.d0.a;
+                j2.f fVar = ((i2.c0) jVar).a.s;
+                j2.a p5 = fVar.p();
+                fVar.q(p5, 1011, new j2.c(p5, this.b, this.c, this.d));
+                break;
+            default:
+                j2.f fVar2 = ((y2.b) obj).b;
+                com.google.firebase.messaging.n nVar = fVar2.d;
+                j2.a n10 = fVar2.n(((e9.i0) nVar.b).isEmpty() ? null : (u2.f0) e9.q.l((e9.i0) nVar.b));
+                fVar2.q(n10, 1006, new j2.d(n10, this.b, this.c, this.d));
+                break;
         }
-        z4 = false;
-        e0Var = this.d;
-        if (e0Var.l()) {
-        }
-        z10 = false;
-        return z4 | z10;
-    }
-
-    public float getFillAlpha() {
-        return this.h;
-    }
-
-    public int getFillColor() {
-        return this.f.b;
-    }
-
-    public float getStrokeAlpha() {
-        return this.g;
-    }
-
-    public int getStrokeColor() {
-        return this.d.b;
-    }
-
-    public float getStrokeWidth() {
-        return this.e;
-    }
-
-    public float getTrimPathEnd() {
-        return this.j;
-    }
-
-    public float getTrimPathOffset() {
-        return this.k;
-    }
-
-    public float getTrimPathStart() {
-        return this.i;
-    }
-
-    public void setFillAlpha(float f10) {
-        this.h = f10;
-    }
-
-    public void setFillColor(int i10) {
-        this.f.b = i10;
-    }
-
-    public void setStrokeAlpha(float f10) {
-        this.g = f10;
-    }
-
-    public void setStrokeColor(int i10) {
-        this.d.b = i10;
-    }
-
-    public void setStrokeWidth(float f10) {
-        this.e = f10;
-    }
-
-    public void setTrimPathEnd(float f10) {
-        this.j = f10;
-    }
-
-    public void setTrimPathOffset(float f10) {
-        this.k = f10;
-    }
-
-    public void setTrimPathStart(float f10) {
-        this.i = f10;
     }
 }

@@ -1,33 +1,43 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.view.View;
-import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class c81 {
-    public abstract void b(View view, int i10, int i11);
+public final class c81 extends s4.d0 {
+    public final /* synthetic */ hg.j0 r;
 
-    public boolean c(int i10) {
-        return false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c81(hg.j0 j0Var, Context context) {
+        super(context);
+        this.r = j0Var;
     }
 
-    public abstract View d(int i10);
-
-    public abstract int e();
-
-    public CharSequence g(int i10) {
-        return "";
-    }
-
-    public int h(int i10) {
-        return 0;
-    }
-
-    public void a(ArrayList arrayList) {
-    }
-
-    public int f(int i10) {
-        return i10;
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x0033, code lost:
+    
+        if ((org.telegram.messenger.AndroidUtilities.dp(21.0f) + r6.getRight()) > ((org.telegram.ui.Components.h81) r5.r.J).getMeasuredWidth()) goto L13;
+     */
+    @Override // s4.d0, s4.y0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(View view, s4.x0 x0Var) {
+        int j3 = j(o(), view);
+        if (j3 > 0 || (j3 == 0 && view.getLeft() - AndroidUtilities.dp(21.0f) < 0)) {
+            j3 += AndroidUtilities.dp(60.0f);
+        } else {
+            if (j3 >= 0) {
+                if (j3 == 0) {
+                }
+            }
+            j3 -= AndroidUtilities.dp(60.0f);
+        }
+        int k10 = k(p(), view);
+        int max = Math.max(180, m((int) Math.sqrt((k10 * k10) + (j3 * j3))));
+        if (max > 0) {
+            x0Var.b(-j3, -k10, max, this.j);
+        }
     }
 }

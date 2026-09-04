@@ -1,80 +1,40 @@
 package s7;
 
-import android.accounts.Account;
-import android.content.Context;
-import android.os.Bundle;
-import android.os.IBinder;
+import android.os.BadParcelableException;
 import android.os.IInterface;
-import android.os.Looper;
-import android.text.TextUtils;
-import com.google.android.gms.common.api.k;
-import com.google.android.gms.common.api.l;
-import j8.p;
-import m.s3;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends b6.g {
-    public final Context R;
-    public final int S;
-    public final String T;
-    public final int U;
-    public final boolean V;
+public abstract class b {
+    public static final /* synthetic */ int a = 0;
 
-    public b(Context context, Looper looper, s3 s3Var, k kVar, l lVar, int i10) {
-        super(context, looper, 4, s3Var, kVar, lVar, 0);
-        this.R = context;
-        this.S = i10;
-        this.T = null;
-        this.U = 1;
-        this.V = true;
+    static {
+        b.class.getClassLoader();
     }
 
-    @Override // b6.g
-    public final boolean C() {
-        return true;
-    }
-
-    public final Bundle G() {
-        String packageName = this.R.getPackageName();
-        Bundle bundle = new Bundle();
-        bundle.putInt("com.google.android.gms.wallet.EXTRA_ENVIRONMENT", this.S);
-        bundle.putBoolean("com.google.android.gms.wallet.EXTRA_USING_ANDROID_PAY_BRAND", this.V);
-        bundle.putString("androidPackageName", packageName);
-        String str = this.T;
-        if (!TextUtils.isEmpty(str)) {
-            bundle.putParcelable("com.google.android.gms.wallet.EXTRA_BUYER_ACCOUNT", new Account(str, "com.google"));
+    public static void a(Parcel parcel) {
+        int dataAvail = parcel.dataAvail();
+        if (dataAvail > 0) {
+            throw new BadParcelableException(i2.g.i(dataAvail, "Parcel data not fully consumed, unread size: "));
         }
-        bundle.putInt("com.google.android.gms.wallet.EXTRA_THEME", this.U);
-        return bundle;
     }
 
-    @Override // b6.g, com.google.android.gms.common.api.c
-    public final int k() {
-        return 12600000;
-    }
-
-    @Override // b6.g
-    public final /* synthetic */ IInterface q(IBinder iBinder) {
-        if (iBinder == null) {
-            return null;
+    public static void b(Parcel parcel, Parcelable parcelable) {
+        if (parcelable == null) {
+            parcel.writeInt(0);
+        } else {
+            parcel.writeInt(1);
+            parcelable.writeToParcel(parcel, 0);
         }
-        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.wallet.internal.IOwService");
-        return queryLocalInterface instanceof i ? (i) queryLocalInterface : new i(iBinder);
     }
 
-    @Override // b6.g
-    public final y5.c[] r() {
-        return p.c;
-    }
-
-    @Override // b6.g
-    public final String v() {
-        return "com.google.android.gms.wallet.internal.IOwService";
-    }
-
-    @Override // b6.g
-    public final String w() {
-        return "com.google.android.gms.wallet.service.BIND";
+    public static void c(Parcel parcel, IInterface iInterface) {
+        if (iInterface == null) {
+            parcel.writeStrongBinder(null);
+        } else {
+            parcel.writeStrongBinder(iInterface.asBinder());
+        }
     }
 }

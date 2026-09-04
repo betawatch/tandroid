@@ -1,27 +1,71 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class o6 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MediaController b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
 
-    public /* synthetic */ o6(MediaController mediaController, boolean z4, int i10) {
-        this.a = i10;
-        this.b = mediaController;
-        this.c = z4;
+    public /* synthetic */ o6(int i10, Object obj, int i11) {
+        this.a = i11;
+        this.b = i10;
+        this.c = obj;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$toggleRecordingPause$28(this.c);
+                ((MediaController.4) this.c).lambda$onCallStateChanged$0(this.b);
+                break;
+            case 1:
+                MessagesController.1.lambda$setLocal$2(this.b, (TLRPC.TL_help_appConfig) this.c);
+                break;
+            case 2:
+                MessagesController.4.lambda$setLocal$2(this.b, (TLRPC.messages_AvailableEffects) this.c);
+                break;
+            case 3:
+                MessagesController.5.lambda$setLocal$1(this.b, (TL_account.TL_webBrowserSettings) this.c);
+                break;
+            case 4:
+                AutoDeleteMediaTask.lambda$run$1(this.b, (File) this.c);
+                break;
+            case 5:
+                FileLoader.lambda$deleteFiles$16((ArrayList) this.c, this.b);
+                break;
+            case 6:
+                ((FilesMigrationService) this.c).lambda$updateProgress$1(this.b);
+                break;
+            case 7:
+                MediaController.lambda$saveFile$47((org.telegram.ui.ActionBar.b2) this.c, this.b);
+                break;
+            case 8:
+                PushListenerController.lambda$sendRegistrationToServer$1((String) this.c, this.b);
+                break;
+            case 9:
+                PushListenerController.lambda$processRemoteMessage$2(this.b, (TLRPC.TL_updates) this.c);
+                break;
+            case 10:
+                SendMessagesHelper.lambda$handleError$119(this.b, (AccountInstance) this.c);
                 break;
             default:
-                this.b.lambda$toggleRecordingPause$32(this.c);
+                Utilities.lambda$doCallbacks$0(this.b, (Utilities.Callback[]) this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ o6(Object obj, int i10, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
     }
 }

@@ -1,237 +1,146 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.view.ViewConfiguration;
-import android.view.animation.AnimationUtils;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.Interpolator;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class um0 {
-    public static final float A;
-    public static final float v = (float) (Math.log(0.75d) / Math.log(0.9d));
-    public static final float w = 0.4f;
-    public static final float x = 1.0f - 0.4f;
-    public static final float[] y = new float[101];
-    public static final float z;
-    public int a;
-    public int b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public int g;
-    public int h;
-    public int i;
-    public int j;
-    public int k;
-    public long l;
-    public int m;
-    public float n;
-    public float o;
-    public float p;
-    public final Interpolator r;
-    public float t;
-    public final float u;
-    public boolean q = true;
-    public final boolean s = true;
+public final class um0 extends kl0 {
+    public final /* synthetic */ vm0 c;
 
-    static {
-        float f10;
-        float f11;
-        float f12 = 0.0f;
-        for (int i10 = 0; i10 <= 100; i10++) {
-            float f13 = i10 / 100.0f;
-            float f14 = 1.0f;
-            while (true) {
-                float x10 = e2.c.x(f14, f12, 2.0f, f12);
-                float f15 = 1.0f - x10;
-                f10 = 3.0f * x10 * f15;
-                f11 = x10 * x10 * x10;
-                float y10 = e2.c.y(x10, x, f15 * w, f10) + f11;
-                if (Math.abs(y10 - f13) < 1.0E-5d) {
-                    break;
-                } else if (y10 > f13) {
-                    f14 = x10;
-                } else {
-                    f12 = x10;
-                }
-            }
-            y[i10] = f10 + f11;
+    public um0(vm0 vm0Var) {
+        this.c = vm0Var;
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        int i10 = c1Var.f;
+        return i10 == 1 || i10 == 2;
+    }
+
+    public final MessageObject E(int i10) {
+        vm0 vm0Var = this.c;
+        int i11 = vm0Var.v;
+        if (i10 >= i11 && i10 < vm0Var.w) {
+            return (MessageObject) vm0Var.e.get(i10 - i11);
         }
-        y[100] = 1.0f;
-        z = 8.0f;
-        A = 1.0f;
-        A = 1.0f / e(1.0f);
-    }
-
-    public um0(Context context, DecelerateInterpolator decelerateInterpolator) {
-        this.r = decelerateInterpolator;
-        this.u = context.getResources().getDisplayMetrics().density * 160.0f * 386.0878f * ViewConfiguration.getScrollFriction();
-    }
-
-    public static float e(float f10) {
-        float f11 = f10 * z;
-        return (f11 < 1.0f ? f11 - (1.0f - ((float) Math.exp(-f11))) : e2.c.w(1.0f, (float) Math.exp(1.0f - f11), 0.63212055f, 0.36787945f)) * A;
-    }
-
-    public final void a() {
-        this.j = this.d;
-        this.k = this.e;
-        this.q = true;
-    }
-
-    public final boolean b() {
-        if (this.q) {
-            return false;
+        int i12 = vm0Var.y;
+        if (i10 < i12 || i10 >= vm0Var.E) {
+            return null;
         }
-        int currentAnimationTimeMillis = (int) (AnimationUtils.currentAnimationTimeMillis() - this.l);
-        int i10 = this.m;
-        if (currentAnimationTimeMillis >= i10) {
-            this.j = this.d;
-            this.k = this.e;
-            this.q = true;
-            return true;
+        return (MessageObject) vm0Var.f.get(i10 - i12);
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.c.r;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        vm0 vm0Var = this.c;
+        if (i10 == vm0Var.s || i10 == vm0Var.x) {
+            return 0;
         }
-        int i11 = this.a;
+        MessageObject E = E(i10);
+        return (E != null && E.isMusic()) ? 2 : 1;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        boolean z10;
+        vm0 vm0Var = this.c;
+        org.telegram.ui.p10 p10Var = vm0Var.J;
+        int i11 = c1Var.f;
+        View view = c1Var.a;
         if (i11 == 0) {
-            float f10 = currentAnimationTimeMillis * this.n;
-            Interpolator interpolator = this.r;
-            float e = interpolator == null ? e(f10) : interpolator.getInterpolation(f10);
-            this.j = Math.round(this.o * e) + this.b;
-            this.k = Math.round(e * this.p) + this.c;
-            return true;
-        }
-        if (i11 == 1) {
-            float f11 = currentAnimationTimeMillis / i10;
-            int i12 = (int) (f11 * 100.0f);
-            float f12 = i12 / 100.0f;
-            int i13 = i12 + 1;
-            float[] fArr = y;
-            float f13 = fArr[i12];
-            float w10 = e2.c.w(fArr[i13], f13, (f11 - f12) / ((i13 / 100.0f) - f12), f13);
-            int round = Math.round((this.d - r1) * w10) + this.b;
-            this.j = round;
-            int min = Math.min(round, this.g);
-            this.j = min;
-            this.j = Math.max(min, this.f);
-            int round2 = Math.round(w10 * (this.e - r1)) + this.c;
-            this.k = round2;
-            int min2 = Math.min(round2, this.i);
-            this.k = min2;
-            int max = Math.max(min2, this.h);
-            this.k = max;
-            if (this.j == this.d && max == this.e) {
-                this.q = true;
-            }
-        }
-        return true;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:12:0x00af  */
-    /* JADX WARN: Removed duplicated region for block: B:14:0x00b7  */
-    /* JADX WARN: Removed duplicated region for block: B:18:0x00b2  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
-        int i18;
-        int i19;
-        if (!this.s || this.q) {
-            i18 = i12;
-        } else {
-            float currentAnimationTimeMillis = this.t - ((this.u * ((int) (AnimationUtils.currentAnimationTimeMillis() - this.l))) / 2000.0f);
-            float f10 = this.d - this.b;
-            float f11 = this.e - this.c;
-            float sqrt = (float) Math.sqrt((f11 * f11) + (f10 * f10));
-            float f12 = (f10 / sqrt) * currentAnimationTimeMillis;
-            float f13 = (f11 / sqrt) * currentAnimationTimeMillis;
-            i18 = i12;
-            float f14 = i18;
-            if (Math.signum(f14) == Math.signum(f12)) {
-                i19 = i13;
-                float f15 = i19;
-                if (Math.signum(f15) == Math.signum(f13)) {
-                    i18 = (int) (f14 + f12);
-                    i19 = (int) (f15 + f13);
+            org.telegram.ui.Cells.u3 u3Var = (org.telegram.ui.Cells.u3) view;
+            if (i10 != vm0Var.s) {
+                if (i10 == vm0Var.x) {
+                    u3Var.c(LocaleController.getString(R.string.RecentlyDownloaded), LocaleController.getString(R.string.Settings), new x70(this, 11));
+                    return;
                 }
-                this.a = 1;
-                this.q = false;
-                float sqrt2 = (float) Math.sqrt((i19 * i19) + (i18 * i18));
-                this.t = sqrt2;
-                double log = Math.log((w * sqrt2) / 800.0f);
-                double d = v;
-                double d10 = d - 1.0d;
-                this.m = (int) (Math.exp(log / d10) * 1000.0d);
-                this.l = AnimationUtils.currentAnimationTimeMillis();
-                this.b = i10;
-                this.c = i11;
-                float f16 = sqrt2 != 0.0f ? 1.0f : i18 / sqrt2;
-                float f17 = sqrt2 != 0.0f ? i19 / sqrt2 : 1.0f;
-                double exp = Math.exp((d / d10) * log);
-                this.f = i14;
-                this.g = i15;
-                this.h = i16;
-                this.i = i17;
-                float f18 = (int) (exp * 800.0f);
-                int round = Math.round(f16 * f18) + i10;
-                this.d = round;
-                int min = Math.min(round, this.g);
-                this.d = min;
-                this.d = Math.max(min, this.f);
-                int round2 = Math.round(f18 * f17) + i11;
-                this.e = round2;
-                int min2 = Math.min(round2, this.i);
-                this.e = min2;
-                this.e = Math.max(min2, this.h);
+                return;
+            }
+            String string = LocaleController.getString(R.string.Downloading);
+            if (!u3Var.getText().equals(string)) {
+                u3Var.c(string, LocaleController.getString(vm0Var.H ? R.string.PauseAll : R.string.ResumeAll), new tm0(this));
+                return;
+            }
+            String string2 = LocaleController.getString(vm0Var.H ? R.string.PauseAll : R.string.ResumeAll);
+            boolean z11 = vm0Var.H;
+            org.telegram.ui.Cells.t3 t3Var = u3Var.b;
+            t3Var.c(string2, true, z11);
+            t3Var.setVisibility(0);
+            return;
+        }
+        MessageObject E = E(i10);
+        if (E != null) {
+            boolean z12 = vm0Var.I.g() && i10 >= vm0Var.v && i10 < vm0Var.w;
+            if (i11 == 1) {
+                rm0 rm0Var = (rm0) view;
+                rm0Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                org.telegram.ui.Cells.j7 j7Var = rm0Var.a;
+                int id2 = j7Var.getMessage() == null ? 0 : j7Var.getMessage().getId();
+                j7Var.c(E, true);
+                int id3 = j7Var.getMessage().getId();
+                p10Var.a = j7Var.getMessage().getDialogId();
+                p10Var.b = id3;
+                j7Var.b(vm0Var.I.b(p10Var), id2 == E.getId());
+                z10 = id2 == E.getId();
+                if (j7Var.O == z12) {
+                    return;
+                }
+                j7Var.O = z12;
+                if (!z10) {
+                    j7Var.P = z12 ? 1.0f : 0.0f;
+                }
+                j7Var.invalidate();
+                return;
+            }
+            if (i11 == 2) {
+                org.telegram.ui.Cells.i7 i7Var = (org.telegram.ui.Cells.i7) view;
+                int id4 = i7Var.getMessage() == null ? 0 : i7Var.getMessage().getId();
+                i7Var.f(E, true);
+                int id5 = i7Var.getMessage().getId();
+                p10Var.a = i7Var.getMessage().getDialogId();
+                p10Var.b = id5;
+                i7Var.e(vm0Var.I.b(p10Var), id4 == E.getId());
+                z10 = id4 == E.getId();
+                if (i7Var.d0 == z12) {
+                    return;
+                }
+                i7Var.d0 = z12;
+                if (!z10) {
+                    i7Var.e0 = z12 ? 1.0f : 0.0f;
+                }
+                i7Var.invalidate();
             }
         }
-        i19 = i13;
-        this.a = 1;
-        this.q = false;
-        float sqrt22 = (float) Math.sqrt((i19 * i19) + (i18 * i18));
-        this.t = sqrt22;
-        double log2 = Math.log((w * sqrt22) / 800.0f);
-        double d11 = v;
-        double d102 = d11 - 1.0d;
-        this.m = (int) (Math.exp(log2 / d102) * 1000.0d);
-        this.l = AnimationUtils.currentAnimationTimeMillis();
-        this.b = i10;
-        this.c = i11;
-        if (sqrt22 != 0.0f) {
-        }
-        if (sqrt22 != 0.0f) {
-        }
-        double exp2 = Math.exp((d11 / d102) * log2);
-        this.f = i14;
-        this.g = i15;
-        this.h = i16;
-        this.i = i17;
-        float f182 = (int) (exp2 * 800.0f);
-        int round3 = Math.round(f16 * f182) + i10;
-        this.d = round3;
-        int min3 = Math.min(round3, this.g);
-        this.d = min3;
-        this.d = Math.max(min3, this.f);
-        int round22 = Math.round(f182 * f17) + i11;
-        this.e = round22;
-        int min22 = Math.min(round22, this.i);
-        this.e = min22;
-        this.e = Math.max(min22, this.h);
     }
 
-    public final void d(int i10, int i11) {
-        this.a = 0;
-        this.q = false;
-        this.m = i11;
-        this.l = AnimationUtils.currentAnimationTimeMillis();
-        this.b = 0;
-        this.c = 0;
-        this.d = 0;
-        this.e = i10;
-        this.o = 0;
-        this.p = i10;
-        this.n = 1.0f / this.m;
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        if (i10 == 0) {
+            frameLayout = new org.telegram.ui.Cells.u3(viewGroup.getContext(), null);
+        } else if (i10 == 1) {
+            Context context = viewGroup.getContext();
+            rm0 rm0Var = new rm0(context);
+            org.telegram.ui.Cells.j7 j7Var = new org.telegram.ui.Cells.j7(context, 2, null);
+            rm0Var.a = j7Var;
+            j7Var.r.setVisibility(8);
+            rm0Var.addView(j7Var);
+            frameLayout = rm0Var;
+        } else {
+            frameLayout = new sm0(viewGroup.getContext());
+        }
+        frameLayout.setLayoutParams(new s4.p0(-1, -2));
+        return new vk0(frameLayout);
     }
 }

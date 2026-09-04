@@ -1,38 +1,32 @@
 package org.telegram.messenger.voip;
 
-import android.content.DialogInterface;
-import android.view.KeyEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.ActionBar.g3;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class r0 implements DialogInterface.OnShowListener {
+public final /* synthetic */ class r0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ r0(KeyEvent.Callback callback, Object obj, int i10) {
+    public /* synthetic */ r0(Object obj, int i10) {
         this.a = i10;
-        this.b = callback;
-        this.c = obj;
+        this.b = obj;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                VoIPService.lambda$toggleSpeakerphoneOrShowRouteSheet$94((g3) this.b, (Integer) this.c, dialogInterface);
+                ((VoIPService.1) this.b).lambda$run$0();
+                break;
+            case 1:
+                ((VoIPService.9) this.b).lambda$run$0();
+                break;
+            case 2:
+                ((VoIPPendingCall) this.b).lambda$new$1();
                 break;
             default:
-                View view = (View) this.b;
-                uf.n nVar = (uf.n) this.c;
-                if (view != null) {
-                    view.clearFocus();
-                }
-                nVar.requestFocus();
-                AndroidUtilities.showKeyboard(nVar);
+                ((NativeInstance) this.b).stopGroup();
                 break;
         }
     }

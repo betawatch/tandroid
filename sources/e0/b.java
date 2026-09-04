@@ -13,197 +13,66 @@ import android.graphics.drawable.Drawable;
 import android.graphics.drawable.Icon;
 import android.graphics.drawable.LayerDrawable;
 import android.hardware.fingerprint.FingerprintManager;
+import android.media.AudioDeviceCallback;
+import android.media.AudioDeviceInfo;
+import android.media.AudioManager;
+import android.media.AudioTrack;
+import android.media.MediaDescription;
+import android.net.Uri;
 import android.os.Build;
 import android.os.CancellationSignal;
+import android.os.Handler;
 import android.text.TextPaint;
 import android.widget.CompoundButton;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import androidx.core.graphics.drawable.IconCompat;
+import di.g7;
 import java.io.InputStream;
+import java.math.RoundingMode;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
-import m.a1;
+import ji.u4;
+import m.z0;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class b {
-    public static void A(LayerDrawable layerDrawable, LayerDrawable layerDrawable2, int i10) {
-        layerDrawable2.setLayerGravity(i10, layerDrawable.getLayerGravity(i10));
-        layerDrawable2.setLayerWidth(i10, layerDrawable.getLayerWidth(i10));
-        layerDrawable2.setLayerHeight(i10, layerDrawable.getLayerHeight(i10));
-        layerDrawable2.setLayerInsetLeft(i10, layerDrawable.getLayerInsetLeft(i10));
-        layerDrawable2.setLayerInsetRight(i10, layerDrawable.getLayerInsetRight(i10));
-        layerDrawable2.setLayerInsetTop(i10, layerDrawable.getLayerInsetTop(i10));
-        layerDrawable2.setLayerInsetBottom(i10, layerDrawable.getLayerInsetBottom(i10));
-        layerDrawable2.setLayerInsetStart(i10, layerDrawable.getLayerInsetStart(i10));
-        layerDrawable2.setLayerInsetEnd(i10, layerDrawable.getLayerInsetEnd(i10));
-    }
-
-    public static af.d B(Object obj) {
-        FingerprintManager.CryptoObject cryptoObject = (FingerprintManager.CryptoObject) obj;
-        if (cryptoObject == null) {
-            return null;
-        }
-        if (cryptoObject.getCipher() != null) {
-            return new af.d(cryptoObject.getCipher());
-        }
-        if (cryptoObject.getSignature() != null) {
-            return new af.d(cryptoObject.getSignature());
-        }
-        if (cryptoObject.getMac() != null) {
-            return new af.d(cryptoObject.getMac());
-        }
-        return null;
-    }
-
-    public static FingerprintManager.CryptoObject C(af.d dVar) {
-        if (dVar == null) {
-            return null;
-        }
-        Mac mac = (Mac) dVar.d;
-        Signature signature = (Signature) dVar.b;
-        Cipher cipher = (Cipher) dVar.c;
-        if (cipher != null) {
-            return new FingerprintManager.CryptoObject(cipher);
-        }
-        if (signature != null) {
-            return new FingerprintManager.CryptoObject(signature);
-        }
-        if (mac != null) {
-            return new FingerprintManager.CryptoObject(mac);
-        }
-        return null;
-    }
-
-    public static void a(Object obj, Object obj2, CancellationSignal cancellationSignal, k0.a aVar) {
-        ((FingerprintManager) obj).authenticate((FingerprintManager.CryptoObject) obj2, cancellationSignal, 0, aVar, null);
-    }
-
-    public static Notification.Action.Builder b(Icon icon, CharSequence charSequence, PendingIntent pendingIntent) {
-        return new Notification.Action.Builder(icon, charSequence, pendingIntent);
-    }
-
-    public static int c(a1 a1Var) {
-        return a1Var.getBreakStrategy();
-    }
-
-    public static Drawable d(CompoundButton compoundButton) {
-        return compoundButton.getButtonDrawable();
-    }
-
-    public static FingerprintManager.CryptoObject e(Object obj) {
-        return ((FingerprintManager.AuthenticationResult) obj).getCryptoObject();
-    }
-
-    public static FingerprintManager f(Context context) {
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 == 23) {
-            return (FingerprintManager) context.getSystemService(FingerprintManager.class);
-        }
-        if (i10 <= 23 || !context.getPackageManager().hasSystemFeature("android.hardware.fingerprint")) {
-            return null;
-        }
-        return (FingerprintManager) context.getSystemService(FingerprintManager.class);
-    }
-
-    public static int g(a1 a1Var) {
-        return a1Var.getHyphenationFrequency();
-    }
-
-    public static int h(Drawable drawable) {
-        return drawable.getLayoutDirection();
-    }
-
-    public static Object i(Context context) {
-        return context.getSystemService(AppOpsManager.class);
-    }
-
-    public static boolean j(Context context) {
-        try {
-            FingerprintManager b10 = j3.q0.b(context.getSystemService("fingerprint"));
-            if (b10 == null) {
-                return false;
-            }
-            return b10.hasEnrolledFingerprints();
-        } catch (Exception e) {
-            FileLog.e(e);
-            return false;
-        }
-    }
-
-    public static boolean k(Object obj) {
-        return ((FingerprintManager) obj).hasEnrolledFingerprints();
-    }
-
-    public static boolean l(TextPaint textPaint, String str) {
-        return textPaint.hasGlyph(str);
-    }
-
-    public static boolean m(Context context) {
-        try {
-            FingerprintManager b10 = j3.q0.b(context.getSystemService("fingerprint"));
-            if (b10 == null) {
-                return false;
-            }
-            return b10.isHardwareDetected();
-        } catch (Exception e) {
-            FileLog.e(e);
-            return false;
-        }
-    }
-
-    public static boolean n(Object obj) {
-        return ((FingerprintManager) obj).isHardwareDetected();
-    }
-
-    public static int o(AppOpsManager appOpsManager, String str, String str2) {
-        return appOpsManager.noteProxyOpNoThrow(str, str2);
-    }
-
-    public static String p(String str) {
-        return AppOpsManager.permissionToOp(str);
-    }
-
-    public static void q(Activity activity, String[] strArr, int i10) {
-        activity.requestPermissions(strArr, i10);
-    }
-
-    public static void r(a1 a1Var, int i10) {
-        a1Var.setBreakStrategy(i10);
-    }
-
-    public static void s(TextView textView, ColorStateList colorStateList) {
-        textView.setCompoundDrawableTintList(colorStateList);
-    }
-
-    public static void t(TextView textView, PorterDuff.Mode mode) {
+    public static void A(TextView textView, PorterDuff.Mode mode) {
         textView.setCompoundDrawableTintMode(mode);
     }
 
-    public static void u(a1 a1Var, int i10) {
-        a1Var.setHyphenationFrequency(i10);
+    public static void B(z0 z0Var, int i10) {
+        z0Var.setHyphenationFrequency(i10);
     }
 
-    public static void v(Notification.Builder builder, Icon icon) {
+    public static void C(Notification.Builder builder, Icon icon) {
         builder.setLargeIcon(icon);
     }
 
-    public static boolean w(int i10, Drawable drawable) {
+    public static boolean D(int i10, Drawable drawable) {
         return drawable.setLayoutDirection(i10);
     }
 
-    public static void x(PopupWindow popupWindow, boolean z4) {
-        popupWindow.setOverlapAnchor(z4);
+    public static void E(MediaDescription.Builder builder, Uri uri) {
+        builder.setMediaUri(uri);
     }
 
-    public static void y(PopupWindow popupWindow, int i10) {
+    public static void F(PopupWindow popupWindow, boolean z10) {
+        popupWindow.setOverlapAnchor(z10);
+    }
+
+    public static void G(AudioTrack audioTrack, u4 u4Var) {
+        audioTrack.setPreferredDevice(u4Var == null ? null : (AudioDeviceInfo) u4Var.b);
+    }
+
+    public static void H(PopupWindow popupWindow, int i10) {
         popupWindow.setWindowLayoutType(i10);
     }
 
-    public static Icon z(IconCompat iconCompat, Context context) {
+    public static Icon I(IconCompat iconCompat, Context context) {
         Icon createWithBitmap;
         switch (iconCompat.a) {
             case -1:
@@ -228,7 +97,7 @@ public abstract class b {
                     createWithBitmap = Icon.createWithBitmap(IconCompat.b((Bitmap) iconCompat.b, false));
                     break;
                 } else {
-                    createWithBitmap = k6.a.b((Bitmap) iconCompat.b);
+                    createWithBitmap = c2.d.c((Bitmap) iconCompat.b);
                     break;
                 }
             case 6:
@@ -248,7 +117,7 @@ public abstract class b {
                         createWithBitmap = Icon.createWithBitmap(IconCompat.b(BitmapFactory.decodeStream(k10), false));
                         break;
                     } else {
-                        createWithBitmap = k6.a.b(BitmapFactory.decodeStream(k10));
+                        createWithBitmap = c2.d.c(BitmapFactory.decodeStream(k10));
                         break;
                     }
                 }
@@ -262,5 +131,256 @@ public abstract class b {
             createWithBitmap.setTintMode(mode);
         }
         return createWithBitmap;
+    }
+
+    public static void J(LayerDrawable layerDrawable, LayerDrawable layerDrawable2, int i10) {
+        layerDrawable2.setLayerGravity(i10, layerDrawable.getLayerGravity(i10));
+        layerDrawable2.setLayerWidth(i10, layerDrawable.getLayerWidth(i10));
+        layerDrawable2.setLayerHeight(i10, layerDrawable.getLayerHeight(i10));
+        layerDrawable2.setLayerInsetLeft(i10, layerDrawable.getLayerInsetLeft(i10));
+        layerDrawable2.setLayerInsetRight(i10, layerDrawable.getLayerInsetRight(i10));
+        layerDrawable2.setLayerInsetTop(i10, layerDrawable.getLayerInsetTop(i10));
+        layerDrawable2.setLayerInsetBottom(i10, layerDrawable.getLayerInsetBottom(i10));
+        layerDrawable2.setLayerInsetStart(i10, layerDrawable.getLayerInsetStart(i10));
+        layerDrawable2.setLayerInsetEnd(i10, layerDrawable.getLayerInsetEnd(i10));
+    }
+
+    public static void K(Context context, AudioDeviceCallback audioDeviceCallback) {
+        c2.d.e(context).unregisterAudioDeviceCallback(audioDeviceCallback);
+    }
+
+    public static aa.a L(Object obj) {
+        FingerprintManager.CryptoObject cryptoObject = (FingerprintManager.CryptoObject) obj;
+        if (cryptoObject == null) {
+            return null;
+        }
+        if (cryptoObject.getCipher() != null) {
+            return new aa.a(cryptoObject.getCipher());
+        }
+        if (cryptoObject.getSignature() != null) {
+            return new aa.a(cryptoObject.getSignature());
+        }
+        if (cryptoObject.getMac() != null) {
+            return new aa.a(cryptoObject.getMac());
+        }
+        return null;
+    }
+
+    public static FingerprintManager.CryptoObject M(aa.a aVar) {
+        if (aVar == null) {
+            return null;
+        }
+        Mac mac = (Mac) aVar.d;
+        Signature signature = (Signature) aVar.b;
+        Cipher cipher = (Cipher) aVar.c;
+        if (cipher != null) {
+            return new FingerprintManager.CryptoObject(cipher);
+        }
+        if (signature != null) {
+            return new FingerprintManager.CryptoObject(signature);
+        }
+        if (mac != null) {
+            return new FingerprintManager.CryptoObject(mac);
+        }
+        return null;
+    }
+
+    public static void a(Object obj, Object obj2, CancellationSignal cancellationSignal, k0.a aVar) {
+        ((FingerprintManager) obj).authenticate((FingerprintManager.CryptoObject) obj2, cancellationSignal, 0, aVar, null);
+    }
+
+    public static Notification.Action.Builder b(Icon icon, CharSequence charSequence, PendingIntent pendingIntent) {
+        return new Notification.Action.Builder(icon, charSequence, pendingIntent);
+    }
+
+    public static long c(AudioTrack audioTrack, k2.v vVar) {
+        if (vVar.c == 0) {
+            return e2.d0.W(vVar.e, audioTrack.getBufferSizeInFrames());
+        }
+        long bufferSizeInFrames = audioTrack.getBufferSizeInFrames();
+        int i10 = c3.b.i(vVar.g);
+        e2.d.g(i10 != -2147483647);
+        return e2.d0.Y(bufferSizeInFrames, 1000000L, i10, RoundingMode.DOWN);
+    }
+
+    public static int d(z0 z0Var) {
+        return z0Var.getBreakStrategy();
+    }
+
+    public static Drawable e(CompoundButton compoundButton) {
+        return compoundButton.getButtonDrawable();
+    }
+
+    public static FingerprintManager.CryptoObject f(Object obj) {
+        return ((FingerprintManager.AuthenticationResult) obj).getCryptoObject();
+    }
+
+    public static FingerprintManager g(Context context) {
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 == 23) {
+            return (FingerprintManager) context.getSystemService(FingerprintManager.class);
+        }
+        if (i10 <= 23 || !context.getPackageManager().hasSystemFeature("android.hardware.fingerprint")) {
+            return null;
+        }
+        return (FingerprintManager) context.getSystemService(FingerprintManager.class);
+    }
+
+    public static int h(z0 z0Var) {
+        return z0Var.getHyphenationFrequency();
+    }
+
+    public static int i(Drawable drawable) {
+        return drawable.getLayoutDirection();
+    }
+
+    public static Uri j(MediaDescription mediaDescription) {
+        return mediaDescription.getMediaUri();
+    }
+
+    public static Object k(Context context) {
+        return context.getSystemService(AppOpsManager.class);
+    }
+
+    public static boolean l(Context context) {
+        try {
+            FingerprintManager a2 = t0.a.a(context.getSystemService("fingerprint"));
+            if (a2 == null) {
+                return false;
+            }
+            return a2.hasEnrolledFingerprints();
+        } catch (Exception e7) {
+            FileLog.e(e7);
+            return false;
+        }
+    }
+
+    public static boolean m(Object obj) {
+        return ((FingerprintManager) obj).hasEnrolledFingerprints();
+    }
+
+    public static boolean n(TextPaint textPaint, String str) {
+        return textPaint.hasGlyph(str);
+    }
+
+    public static boolean o(AudioManager audioManager, u4 u4Var) {
+        AudioDeviceInfo[] audioDeviceInfoArr;
+        if (u4Var == null) {
+            audioManager.getClass();
+            audioDeviceInfoArr = audioManager.getDevices(2);
+        } else {
+            audioDeviceInfoArr = new AudioDeviceInfo[]{(AudioDeviceInfo) u4Var.b};
+        }
+        e9.l0 l0Var = new e9.l0(4);
+        Integer[] numArr = {8, 7};
+        e9.q.d(2, numArr);
+        l0Var.g(2);
+        System.arraycopy(numArr, 0, l0Var.c, l0Var.a, 2);
+        l0Var.a += 2;
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 31) {
+            Integer[] numArr2 = {26, 27};
+            e9.q.d(2, numArr2);
+            l0Var.g(2);
+            System.arraycopy(numArr2, 0, l0Var.c, l0Var.a, 2);
+            l0Var.a += 2;
+        }
+        if (i10 >= 33) {
+            l0Var.b(30);
+        }
+        e9.m0 i11 = l0Var.i();
+        for (AudioDeviceInfo audioDeviceInfo : audioDeviceInfoArr) {
+            if (i11.contains(Integer.valueOf(audioDeviceInfo.getType()))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean p(Context context) {
+        try {
+            FingerprintManager a2 = t0.a.a(context.getSystemService("fingerprint"));
+            if (a2 == null) {
+                return false;
+            }
+            return a2.isHardwareDetected();
+        } catch (Exception e7) {
+            FileLog.e(e7);
+            return false;
+        }
+    }
+
+    public static boolean q(Object obj) {
+        return ((FingerprintManager) obj).isHardwareDetected();
+    }
+
+    public static boolean r(Throwable th2) {
+        return j2.e.g(th2);
+    }
+
+    public static int s(AppOpsManager appOpsManager, String str, String str2) {
+        return appOpsManager.noteProxyOpNoThrow(str, str2);
+    }
+
+    public static String t(String str) {
+        return AppOpsManager.permissionToOp(str);
+    }
+
+    public static void u(Context context, k2.c cVar, Handler handler) {
+        c2.d.e(context).registerAudioDeviceCallback(cVar, handler);
+    }
+
+    public static void v(Activity activity, String[] strArr, int i10) {
+        activity.requestPermissions(strArr, i10);
+    }
+
+    public static void w(k2.p pVar, Object obj) {
+        u4 u4Var;
+        AudioDeviceInfo d = j2.e.d(obj);
+        k2.d0 d0Var = (k2.d0) pVar;
+        if (d == null) {
+            u4Var = null;
+        } else {
+            d0Var.getClass();
+            u4Var = new u4(d, 1);
+        }
+        d0Var.c0 = u4Var;
+        g7 g7Var = d0Var.z;
+        if (g7Var != null) {
+            g7Var.c(d);
+        }
+        AudioTrack audioTrack = d0Var.x;
+        if (audioTrack != null) {
+            G(audioTrack, d0Var.c0);
+        }
+    }
+
+    public static void x(k2.p pVar, Object obj) {
+        u4 u4Var;
+        AudioDeviceInfo d = j2.e.d(obj);
+        k2.d0 d0Var = (k2.d0) pVar;
+        if (d == null) {
+            u4Var = null;
+        } else {
+            d0Var.getClass();
+            u4Var = new u4(d, 1);
+        }
+        d0Var.c0 = u4Var;
+        g7 g7Var = d0Var.z;
+        if (g7Var != null) {
+            g7Var.c(d);
+        }
+        AudioTrack audioTrack = d0Var.x;
+        if (audioTrack != null) {
+            G(audioTrack, d0Var.c0);
+        }
+    }
+
+    public static void y(z0 z0Var, int i10) {
+        z0Var.setBreakStrategy(i10);
+    }
+
+    public static void z(TextView textView, ColorStateList colorStateList) {
+        textView.setCompoundDrawableTintList(colorStateList);
     }
 }

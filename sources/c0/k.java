@@ -1,11 +1,13 @@
 package c0;
 
+import i9.w;
 import java.lang.ref.WeakReference;
+import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class k implements v8.a {
+public final class k implements w {
     public final WeakReference a;
     public final j b = new j(this);
 
@@ -13,10 +15,15 @@ public final class k implements v8.a {
         this.a = new WeakReference(iVar);
     }
 
+    @Override // i9.w
+    public final void a(Runnable runnable, Executor executor) {
+        this.b.a(runnable, executor);
+    }
+
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z4) {
+    public final boolean cancel(boolean z10) {
         i iVar = (i) this.a.get();
-        boolean cancel = this.b.cancel(z4);
+        boolean cancel = this.b.cancel(z10);
         if (cancel && iVar != null) {
             iVar.a = null;
             iVar.b = null;
@@ -45,7 +52,7 @@ public final class k implements v8.a {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
-        return this.b.get(j10, timeUnit);
+    public final Object get(long j3, TimeUnit timeUnit) {
+        return this.b.get(j3, timeUnit);
     }
 }

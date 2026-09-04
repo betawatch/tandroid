@@ -1,94 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.view.TextureView;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Bitmaps;
-import org.telegram.messenger.FileLog;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class w81 implements Runnable {
+public final class w81 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ e91 b;
+    public final /* synthetic */ x81 b;
 
-    public /* synthetic */ w81(e91 e91Var, int i10) {
+    public /* synthetic */ w81(x81 x81Var, int i10) {
         this.a = i10;
-        this.b = e91Var;
+        this.b = x81Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                e91 e91Var = this.b;
-                a91 a91Var = e91Var.c0;
-                i71 i71Var = e91Var.a;
-                if (i71Var != null && i71Var.y()) {
-                    a91Var.c((int) (i71Var.n() / 1000));
-                    a91Var.w = (int) (i71Var.j() / 1000);
-                    a91Var.invalidate();
-                    AndroidUtilities.runOnUIThread(e91Var.f0, 1000L);
-                    break;
-                }
+                this.b.y = null;
                 break;
             default:
-                e91 e91Var2 = this.b;
-                a91 a91Var2 = e91Var2.c0;
-                ImageView imageView = e91Var2.e;
-                TextureView textureView = e91Var2.d;
-                e91Var2.T = false;
-                Bitmap bitmap = e91Var2.h;
-                if (bitmap != null) {
-                    bitmap.recycle();
-                    e91Var2.h = null;
-                }
-                e91Var2.P = true;
-                if (imageView != null) {
-                    try {
-                        Bitmap createBitmap = Bitmaps.createBitmap(textureView.getWidth(), textureView.getHeight(), Bitmap.Config.ARGB_8888);
-                        e91Var2.h = createBitmap;
-                        textureView.getBitmap(createBitmap);
-                    } catch (Throwable th2) {
-                        Bitmap bitmap2 = e91Var2.h;
-                        if (bitmap2 != null) {
-                            bitmap2.recycle();
-                            e91Var2.h = null;
-                        }
-                        FileLog.e(th2);
-                    }
-                    if (e91Var2.h != null) {
-                        imageView.setVisibility(0);
-                        imageView.setImageBitmap(e91Var2.h);
-                    } else {
-                        imageView.setImageDrawable(null);
-                    }
-                }
-                e91Var2.R = true;
-                e91Var2.n();
-                e91Var2.o();
-                e91Var2.k();
-                e91Var2.m();
-                ViewGroup viewGroup = (ViewGroup) a91Var2.getParent();
-                if (viewGroup != null) {
-                    viewGroup.removeView(a91Var2);
-                }
-                b91 b91Var = e91Var2.v;
-                a91 a91Var3 = e91Var2.c0;
-                boolean z4 = e91Var2.R;
-                int i10 = e91Var2.d0;
-                int i11 = e91Var2.e0;
-                e91Var2.c.getVideoRotation();
-                TextureView f10 = b91Var.f(a91Var3, z4, i10, i11, e91Var2.F);
-                e91Var2.n = f10;
-                f10.setVisibility(4);
-                ViewGroup viewGroup2 = (ViewGroup) textureView.getParent();
-                if (viewGroup2 != null) {
-                    viewGroup2.removeView(textureView);
-                }
-                a91Var2.d(false, false);
+                this.b.y = null;
                 break;
         }
     }

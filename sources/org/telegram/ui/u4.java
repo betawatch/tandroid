@@ -1,257 +1,228 @@
 package org.telegram.ui;
 
-import android.animation.TimeInterpolator;
+import android.animation.ValueAnimator;
 import android.content.Context;
-import android.transition.ChangeBounds;
-import android.transition.Fade;
-import android.transition.TransitionManager;
-import android.transition.TransitionSet;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.ColorMatrix;
+import android.graphics.ColorMatrixColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.view.View;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadialProgress2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class u4 extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
-    public t4 a;
-    public t4 b;
-    public t4 c;
-    public t4 d;
-    public t4 e;
-    public LinearLayout f;
-    public final ArrayList h;
-    public int n;
+public final class u4 extends FrameLayout {
+    public final /* synthetic */ int a = 0;
+    public int b;
+    public boolean c;
+    public Object d;
+    public final Object e;
+    public Object f;
+    public Object h;
 
-    public u4() {
-        super(null);
-        this.h = new ArrayList();
-        this.n = 0;
+    public u4(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.b = AndroidUtilities.dp(64.0f);
+        org.telegram.ui.Components.x9 x9Var = new org.telegram.ui.Components.x9(context);
+        this.d = x9Var;
+        x9Var.setAspectFit(true);
+        x9Var.setRoundRadius(AndroidUtilities.dp(12.0f));
+        addView(x9Var, w7.x5.c(-1.0f, -1));
+        RadialProgress2 radialProgress2 = new RadialProgress2(this, f6Var);
+        this.e = radialProgress2;
+        radialProgress2.E = 0.0f;
+        radialProgress2.setIcon(10, false, false);
+        radialProgress2.setColors(1107296256, 1107296256, -1, -1);
     }
 
-    public final int U() {
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.h;
-            if (i10 >= arrayList.size()) {
-                return this.n;
-            }
-            if (((t4) arrayList.get(i10)).b.f) {
-                return ((t4) arrayList.get(i10)).e;
-            }
-            i10++;
-        }
-    }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int i10 = this.a;
+        float f7 = 1.0f;
+        Object obj = this.e;
+        final int i11 = 0;
+        switch (i10) {
+            case 0:
+                RadialProgress2 radialProgress2 = (RadialProgress2) obj;
+                super.dispatchDraw(canvas);
+                if (this.c) {
+                    Drawable drawable = ((org.telegram.ui.Components.x9) this.d).getImageReceiver().getDrawable();
+                    final int i12 = 1;
+                    if ((drawable instanceof org.telegram.ui.Components.d6) && ((org.telegram.ui.Components.d6) drawable).d[4] > 0) {
+                        ValueAnimator valueAnimator = (ValueAnimator) this.h;
+                        if (valueAnimator != null) {
+                            valueAnimator.cancel();
+                            if ((radialProgress2.c ? radialProgress2.j : radialProgress2.i).w < 1.0f) {
+                                radialProgress2.o(1.0f, true);
+                            }
+                            ValueAnimator ofFloat = ValueAnimator.ofFloat(((Float) ((ValueAnimator) this.h).getAnimatedValue()).floatValue(), 0.0f);
+                            this.f = ofFloat;
+                            ofFloat.addListener(new s0(this, 3));
+                            ((ValueAnimator) this.f).addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.t4
+                                public final /* synthetic */ u4 b;
 
-    public final void V(int i10, boolean z4) {
-        TransitionSet transitionSet = new TransitionSet();
-        ChangeBounds changeBounds = new ChangeBounds();
-        changeBounds.setDuration(150L);
-        Fade fade = new Fade(1);
-        fade.setDuration(150L);
-        transitionSet.addTransition(new Fade(2).setDuration(150L)).addTransition(changeBounds).addTransition(fade);
-        transitionSet.setOrdering(0);
-        transitionSet.setInterpolator((TimeInterpolator) org.telegram.ui.Components.mr.f);
-        TransitionManager.beginDelayedTransition(this.f, transitionSet);
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = this.h;
-            if (i11 >= arrayList.size()) {
-                int i12 = 0;
-                while (i12 < arrayList.size()) {
-                    if (((t4) arrayList.get(i12)).d) {
-                        this.f.removeView((View) arrayList.get(i12));
-                        arrayList.remove(i12);
-                        i12--;
+                                {
+                                    this.b = this;
+                                }
+
+                                @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                                public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                                    switch (i11) {
+                                        case 0:
+                                            this.b.invalidate();
+                                            break;
+                                        default:
+                                            this.b.invalidate();
+                                            break;
+                                    }
+                                }
+                            });
+                            ((ValueAnimator) this.f).setDuration(250L);
+                            ((ValueAnimator) this.f).start();
+                        } else {
+                            this.c = false;
+                        }
+                    } else if (((ValueAnimator) this.h) == null) {
+                        ValueAnimator ofFloat2 = ValueAnimator.ofFloat(0.0f, 1.0f);
+                        this.h = ofFloat2;
+                        ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.t4
+                            public final /* synthetic */ u4 b;
+
+                            {
+                                this.b = this;
+                            }
+
+                            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+                            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
+                                switch (i12) {
+                                    case 0:
+                                        this.b.invalidate();
+                                        break;
+                                    default:
+                                        this.b.invalidate();
+                                        break;
+                                }
+                            }
+                        });
+                        ((ValueAnimator) this.h).setStartDelay(250L);
+                        ((ValueAnimator) this.h).setDuration(250L);
+                        ((ValueAnimator) this.h).start();
                     }
-                    i12++;
-                }
-                int size = arrayList.size();
-                int i13 = 0;
-                while (true) {
-                    if (i13 >= arrayList.size()) {
+                    ValueAnimator valueAnimator2 = (ValueAnimator) this.f;
+                    if (valueAnimator2 == null) {
+                        ValueAnimator valueAnimator3 = (ValueAnimator) this.h;
+                        if (valueAnimator3 != null) {
+                            radialProgress2.E = ((Float) valueAnimator3.getAnimatedValue()).floatValue();
+                            radialProgress2.draw(canvas);
+                            break;
+                        }
+                    } else {
+                        radialProgress2.E = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
+                        radialProgress2.draw(canvas);
                         break;
                     }
-                    if (i10 < ((t4) arrayList.get(i13)).e) {
-                        size = i13 + 1;
-                        break;
-                    }
-                    i13++;
                 }
-                t4 t4Var = new t4(getParentActivity(), null);
-                t4Var.d = true;
-                t4Var.e = i10;
-                t4Var.c(LocaleController.formatString("AutoDeleteAfterShort", R.string.AutoDeleteAfterShort, LocaleController.formatTTLString(i10 * 60)), false, true);
-                arrayList.add(size, t4Var);
-                this.f.addView(t4Var, size);
-                X();
-                W(t4Var, z4);
-                return;
-            }
-            if (((t4) arrayList.get(i11)).e == i10) {
-                W((View) arrayList.get(i11), z4);
-                return;
-            }
-            i11++;
-        }
-    }
-
-    public final void W(View view, boolean z4) {
-        int i10;
-        int i11 = 0;
-        while (true) {
-            ArrayList arrayList = this.h;
-            if (i11 >= arrayList.size()) {
                 break;
-            }
-            if (arrayList.get(i11) == view) {
-                ((t4) arrayList.get(i11)).a(true, this.fragmentBeginToShow);
-            } else {
-                ((t4) arrayList.get(i11)).a(false, this.fragmentBeginToShow);
-            }
-            i11++;
-        }
-        if (!z4 || (i10 = ((t4) view).e) <= 0) {
-            return;
-        }
-        org.telegram.ui.Components.qc.a0(this).Q(R.raw.fire_on, 36, AndroidUtilities.replaceTags(LocaleController.formatString("AutoDeleteGlobalTimerEnabled", R.string.AutoDeleteGlobalTimerEnabled, LocaleController.formatTTLString(i10 * 60)))).j();
-    }
-
-    public final void X() {
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.h;
-            if (i10 >= arrayList.size()) {
-                return;
-            }
-            ((t4) arrayList.get(i10)).setBackground(org.telegram.ui.ActionBar.j6.g0(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false), org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false)));
-            ((t4) arrayList.get(i10)).setOnClickListener(new a(this, 3));
-            i10++;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.p2
-    public final View createView(Context context) {
-        this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
-        this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString(R.string.AutoDeleteMessages));
-        this.actionBar.setActionBarMenuOnItemClick(new eg.m1(this, 7));
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        dg.u3 u3Var = new dg.u3(getParentActivity());
-        org.telegram.ui.Components.do0 do0Var = new org.telegram.ui.Components.do0(getParentActivity(), u3Var, this.resourceProvider, true);
-        u3Var.setOrientation(1);
-        do0Var.addView(u3Var);
-        frameLayout.addView(do0Var);
-        this.actionBar.setAdaptiveBackground(do0Var);
-        FrameLayout frameLayout2 = new FrameLayout(context);
-        org.telegram.ui.Components.ax0 ax0Var = new org.telegram.ui.Components.ax0(context, this.currentAccount);
-        ax0Var.setStickerNum(10);
-        frameLayout2.addView(ax0Var, k7.b6.e(130, 130, 17));
-        frameLayout2.setTag(-33024);
-        u3Var.addView(frameLayout2, k7.b6.n(-1, 170));
-        LinearLayout linearLayout = new LinearLayout(getParentActivity());
-        this.f = linearLayout;
-        linearLayout.setOrientation(1);
-        this.f.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-        u3Var.addView(this.f, k7.b6.n(-1, -2));
-        org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(getParentActivity());
-        l4Var.setText(LocaleController.getString(R.string.MessageLifetime));
-        this.f.addView(l4Var);
-        t4 t4Var = new t4(getParentActivity(), null);
-        this.a = t4Var;
-        t4Var.c(LocaleController.getString(R.string.ShortMessageLifetimeForever), false, true);
-        t4 t4Var2 = this.a;
-        t4Var2.e = 0;
-        this.f.addView(t4Var2);
-        t4 t4Var3 = new t4(getParentActivity(), null);
-        this.b = t4Var3;
-        t4Var3.c(LocaleController.getString(R.string.AutoDeleteAfter1Day), false, true);
-        t4 t4Var4 = this.b;
-        t4Var4.e = 1440;
-        this.f.addView(t4Var4);
-        t4 t4Var5 = new t4(getParentActivity(), null);
-        this.c = t4Var5;
-        t4Var5.c(LocaleController.getString(R.string.AutoDeleteAfter1Week), false, true);
-        t4 t4Var6 = this.c;
-        t4Var6.e = 10080;
-        this.f.addView(t4Var6);
-        t4 t4Var7 = new t4(getParentActivity(), null);
-        this.d = t4Var7;
-        t4Var7.c(LocaleController.getString(R.string.AutoDeleteAfter1Month), false, true);
-        t4 t4Var8 = this.d;
-        t4Var8.e = 44640;
-        this.f.addView(t4Var8);
-        t4 t4Var9 = new t4(getParentActivity(), null);
-        this.e = t4Var9;
-        t4Var9.c(LocaleController.getString(R.string.SetCustomTime), false, false);
-        this.e.b.setVisibility(8);
-        this.f.addView(this.e);
-        t4 t4Var10 = this.a;
-        ArrayList arrayList = this.h;
-        arrayList.add(t4Var10);
-        arrayList.add(this.b);
-        arrayList.add(this.c);
-        arrayList.add(this.d);
-        arrayList.add(this.e);
-        X();
-        org.telegram.ui.Cells.z8 z8Var = new org.telegram.ui.Cells.z8(context, 12, this.resourceProvider);
-        z8Var.setText(AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.GlobalAutoDeleteInfo), new r4(this)));
-        u3Var.addView(z8Var, k7.b6.n(-1, -2));
-        V(this.n, false);
-        return this.fragmentView;
-    }
-
-    @Override // org.telegram.ui.ActionBar.p2
-    public final boolean onFragmentCreate() {
-        int globalTTl = getUserConfig().getGlobalTTl();
-        this.n = globalTTl;
-        if (globalTTl < 0) {
-            this.n = 0;
-        }
-        getUserConfig().loadGlobalTTl();
-        getNotificationCenter().addObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
-        return super.onFragmentCreate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void onFragmentDestroy() {
-        super.onFragmentDestroy();
-        getNotificationCenter().removeObserver(this, NotificationCenter.didUpdateGlobalAutoDeleteTimer);
-    }
-
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void onPause() {
-        super.onPause();
-        int i10 = 0;
-        while (true) {
-            ArrayList arrayList = this.h;
-            if (i10 >= arrayList.size()) {
-                return;
-            }
-            if (((t4) arrayList.get(i10)).b.f) {
-                if (((t4) arrayList.get(i10)).e != this.n) {
-                    this.n = ((t4) arrayList.get(i10)).e;
-                    TLRPC.TL_messages_setDefaultHistoryTTL tL_messages_setDefaultHistoryTTL = new TLRPC.TL_messages_setDefaultHistoryTTL();
-                    tL_messages_setDefaultHistoryTTL.period = ((t4) arrayList.get(i10)).e * 60;
-                    getConnectionsManager().sendRequest(tL_messages_setDefaultHistoryTTL, new s4());
-                    getUserConfig().setGlobalTtl(this.n);
-                    NotificationCenter.getInstance(this.currentAccount).lambda$postNotificationNameOnUIThread$1(NotificationCenter.didUpdateGlobalAutoDeleteTimer, new Object[0]);
-                    return;
+            default:
+                Paint paint = (Paint) obj;
+                wd1 wd1Var = (wd1) this.h;
+                wc1 wc1Var = wd1Var.a;
+                if (this.c) {
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                    canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
+                    org.telegram.ui.ActionBar.j6.s(this, wd1Var.x0, wc1Var);
+                    Paint G = wc1Var.G("paintChatActionBackground");
+                    ColorFilter colorFilter = G.getColorFilter();
+                    G.setColorFilter((ColorMatrixColorFilter) this.f);
+                    ld1 ld1Var = wd1Var.x0;
+                    if (ld1Var != null && (ld1Var.getBackground() instanceof org.telegram.ui.Components.dc0) && wd1Var.l1 < 0.0f) {
+                        f7 = 0.33f;
+                    }
+                    int alpha = G.getAlpha();
+                    G.setAlpha((int) (alpha * f7));
+                    canvas.drawRect(rectF, G);
+                    G.setAlpha(alpha);
+                    G.setColorFilter(colorFilter);
+                    if (wd1Var.M1) {
+                        float f10 = wd1Var.n1;
+                        if (f10 > 0.0f) {
+                            canvas.drawColor(i0.a.k(-16777216, (int) (f10 * 255.0f * wd1Var.o1)));
+                        }
+                    }
+                    canvas.save();
+                    if (((LinearGradient) this.d) == null || this.b != getHeight()) {
+                        int height = getHeight();
+                        this.b = height;
+                        LinearGradient linearGradient = new LinearGradient(0.0f, 0.0f, 0.0f, height, new int[]{-1, 0}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP);
+                        this.d = linearGradient;
+                        paint.setShader(linearGradient);
+                    }
+                    canvas.drawRect(rectF, paint);
+                    canvas.restore();
+                    canvas.restore();
                 }
-                return;
-            }
-            i10++;
+                super.dispatchDraw(canvas);
+                break;
         }
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
+            case 0:
+                super.onLayout(z10, i10, i11, i12, i13);
+                int width = getWidth() / 2;
+                int height = getHeight() / 2;
+                RadialProgress2 radialProgress2 = (RadialProgress2) this.e;
+                int i14 = this.b;
+                radialProgress2.q(width - i14, height - i14, width + i14, height + i14);
+                break;
+            default:
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 1:
+                super.onMeasure(i10, i11);
+                for (int i12 = 0; i12 < getChildCount(); i12++) {
+                    View childAt = getChildAt(i12);
+                    if (childAt.getMeasuredWidth() > AndroidUtilities.dp(420.0f)) {
+                        childAt.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(420.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(childAt.getMeasuredHeight(), TLObject.FLAG_30));
+                    }
+                }
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
+        }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public u4(wd1 wd1Var, Context context, boolean z10) {
+        super(context);
+        this.h = wd1Var;
+        this.c = z10;
+        Paint paint = new Paint(3);
+        this.e = paint;
+        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
+        ColorMatrix colorMatrix = new ColorMatrix();
+        AndroidUtilities.adjustSaturationColorMatrix(colorMatrix, 0.4f);
+        AndroidUtilities.multiplyBrightnessColorMatrix(colorMatrix, 0.65f);
+        this.f = new ColorMatrixColorFilter(colorMatrix);
     }
 }

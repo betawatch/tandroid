@@ -1,28 +1,57 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import java.util.ArrayList;
+import android.view.View;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class df1 extends qf1 {
-    public final /* synthetic */ sf1 f3;
+public final /* synthetic */ class df1 implements xh.c, MessagesController.ErrorDelegate, r0.n, org.telegram.ui.Components.cl0 {
+    public final /* synthetic */ eg1 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public df1(sf1 sf1Var, Context context) {
-        super(sf1Var, context);
-        this.f3 = sf1Var;
+    public /* synthetic */ df1(eg1 eg1Var) {
+        this.a = eg1Var;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean R0() {
-        ArrayList arrayList = this.f3.b;
-        return (getAdapter() == null || this.U1 || (arrayList == null || arrayList.size() != 1 || arrayList.get(0) == null || ((jf1) arrayList.get(0)).c == null || ((jf1) arrayList.get(0)).c.id != 1 ? getAdapter().h() > 1 : getAdapter().h() > 2)) ? false : true;
+    @Override // r0.n
+    public r0.l1 T0(View view, r0.l1 l1Var) {
+        int i10 = l1Var.a.f(519).d;
+        eg1 eg1Var = this.a;
+        eg1Var.e1 = i10;
+        ag1 ag1Var = eg1Var.r0;
+        if (ag1Var != null) {
+            ag1Var.setPadding(0, 0, 0, i10);
+        }
+        uf1 uf1Var = eg1Var.n;
+        if (uf1Var != null) {
+            uf1Var.a.setTranslationY((-eg1Var.e1) - eg1Var.d1);
+        }
+        eg1Var.h.setTranslationY(((-eg1Var.X0) - eg1Var.e1) - eg1Var.d1);
+        eg1Var.B0();
+        return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.qf1, org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        this.f3.y0();
+    @Override // org.telegram.ui.Components.cl0
+    public boolean d(float f7, float f10, int i10, View view) {
+        return eg1.W(this.a, view, f7);
+    }
+
+    @Override // xh.c
+    public void f(boolean z10, boolean z11) {
+        eg1 eg1Var = this.a;
+        eg1Var.U0.i(eg1Var.R0.c(), z10, z11);
+    }
+
+    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
+    public boolean run(TLRPC.TL_error tL_error) {
+        return eg1.U(this.a, tL_error);
+    }
+
+    @Override // org.telegram.ui.Components.cl0
+    public /* synthetic */ void h() {
+    }
+
+    @Override // org.telegram.ui.Components.cl0
+    public /* synthetic */ void q(float f7) {
     }
 }

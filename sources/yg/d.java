@@ -1,57 +1,45 @@
 package yg;
 
-import f2.l1;
-import f2.o0;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.messenger.voip.GroupCallMessage;
-import org.telegram.messenger.voip.GroupCallMessagesController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import com.google.android.gms.internal.vision.e2;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import w7.x5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class d extends o0 implements GroupCallMessagesController.CallMessageListener {
-    public List c;
-    public boolean d;
-    public int e;
-    public TLRPC.InputGroupCall f;
+public final class d extends FrameLayout {
+    public final f6 a;
+    public final TextView b;
 
-    @Override // f2.o0
-    public final int h() {
-        List list = this.c;
-        if (list != null) {
-            return list.size();
-        }
-        return 0;
+    public d(Context context, f6 f6Var) {
+        super(context);
+        this.a = f6Var;
+        setBackgroundColor(j6.v0(j6.e7, f6Var));
+        TextView textView = new TextView(getContext());
+        this.b = textView;
+        e2.m(14.0f, 1, textView);
+        textView.setTextColor(j6.v0(j6.f7, f6Var));
+        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
+        addView(textView, x5.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
     }
 
-    @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
-    public final void onNewGroupCallMessage(long j10, GroupCallMessage groupCallMessage) {
-        if (this.c == null) {
-            this.c = new ArrayList();
-        }
-        this.c.add(0, groupCallMessage);
-        o(0);
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
     }
 
-    @Override // org.telegram.messenger.voip.GroupCallMessagesController.CallMessageListener
-    public final void onPopGroupCallMessage() {
-        List list = this.c;
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        int size = this.c.size() - 1;
-        this.c.remove(size);
-        u(size);
+    public void setLetter(CharSequence charSequence) {
+        this.b.setText(charSequence);
     }
 
-    @Override // f2.o0
-    public final void v(l1 l1Var, int i10) {
-        b bVar = (b) l1Var;
-        List list = this.c;
-        if (list == null || list.size() <= i10) {
-            return;
-        }
-        ((c) bVar.a).set((GroupCallMessage) this.c.get(i10));
+    public void setTextColor(int i10) {
+        this.b.setTextColor(j6.v0(i10, this.a));
     }
 }

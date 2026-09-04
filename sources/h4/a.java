@@ -1,117 +1,65 @@
 package h4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import f8.o;
-import h5.d0;
-import h5.w;
-import j3.d1;
-import j3.n0;
+import a4.h;
+import android.graphics.Rect;
 import java.util.Arrays;
-import kf.k0;
-import r8.d;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a implements e4.b {
-    public static final Parcelable.Creator<a> CREATOR = new o(4);
-    public final int a;
-    public final String b;
-    public final String c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int h;
-    public final byte[] n;
+public final class a {
+    public boolean b;
+    public boolean c;
+    public int[] d;
+    public int e;
+    public int f;
+    public Rect g;
+    public final int[] a = new int[4];
+    public int h = -1;
+    public int i = -1;
 
-    public a(int i10, String str, String str2, int i11, int i12, int i13, int i14, byte[] bArr) {
-        this.a = i10;
-        this.b = str;
-        this.c = str2;
-        this.d = i11;
-        this.e = i12;
-        this.f = i13;
-        this.h = i14;
-        this.n = bArr;
+    public static int a(int i10, int[] iArr) {
+        return (i10 < 0 || i10 >= iArr.length) ? iArr[0] : iArr[i10];
     }
 
-    public static a a(w wVar) {
-        int g10 = wVar.g();
-        String s6 = wVar.s(wVar.g(), d.a);
-        String s9 = wVar.s(wVar.g(), d.c);
-        int g11 = wVar.g();
-        int g12 = wVar.g();
-        int g13 = wVar.g();
-        int g14 = wVar.g();
-        int g15 = wVar.g();
-        byte[] bArr = new byte[g15];
-        wVar.e(0, g15, bArr);
-        return new a(g10, s6, s9, g11, g12, g13, g14, bArr);
+    public static int c(int i10, int i11) {
+        return (i10 & 16777215) | ((i11 * 17) << 24);
     }
 
-    @Override // e4.b
-    public final /* synthetic */ n0 b() {
-        return null;
-    }
-
-    @Override // e4.b
-    public final void c(d1 d1Var) {
-        d1Var.a(this.a, this.n);
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ byte[] d() {
-        return null;
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && a.class == obj.getClass()) {
-            a aVar = (a) obj;
-            if (this.a == aVar.a && this.b.equals(aVar.b) && this.c.equals(aVar.c) && this.d == aVar.d && this.e == aVar.e && this.f == aVar.f && this.h == aVar.h && Arrays.equals(this.n, aVar.n)) {
-                return true;
+    public final void b(h hVar, boolean z10, Rect rect, int[] iArr) {
+        int i10;
+        int i11;
+        int width = rect.width();
+        int height = rect.height();
+        int i12 = !z10 ? 1 : 0;
+        int i13 = i12 * width;
+        while (true) {
+            int i14 = 0;
+            do {
+                int i15 = 0;
+                for (int i16 = 1; i15 < i16 && i16 <= 64; i16 <<= 2) {
+                    if (hVar.b() < 4) {
+                        i11 = 0;
+                        i10 = -1;
+                        break;
+                    }
+                    i15 = (i15 << 4) | hVar.i(4);
+                }
+                i10 = i15 & 3;
+                i11 = i15 < 4 ? width : i15 >> 2;
+                int min = Math.min(i11, width - i14);
+                if (min > 0) {
+                    int i17 = i13 + min;
+                    Arrays.fill(iArr, i13, i17, this.a[i10]);
+                    i14 += min;
+                    i13 = i17;
+                }
+            } while (i14 < width);
+            i12 += 2;
+            if (i12 >= height) {
+                return;
             }
+            i13 = i12 * width;
+            hVar.c();
         }
-        return false;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(this.n) + ((((((((k0.e(k0.e((527 + this.a) * 31, 31, this.b), 31, this.c) + this.d) * 31) + this.e) * 31) + this.f) * 31) + this.h) * 31);
-    }
-
-    public final String toString() {
-        return "Picture: mimeType=" + this.b + ", description=" + this.c;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeInt(this.a);
-        parcel.writeString(this.b);
-        parcel.writeString(this.c);
-        parcel.writeInt(this.d);
-        parcel.writeInt(this.e);
-        parcel.writeInt(this.f);
-        parcel.writeInt(this.h);
-        parcel.writeByteArray(this.n);
-    }
-
-    public a(Parcel parcel) {
-        this.a = parcel.readInt();
-        String readString = parcel.readString();
-        int i10 = d0.a;
-        this.b = readString;
-        this.c = parcel.readString();
-        this.d = parcel.readInt();
-        this.e = parcel.readInt();
-        this.f = parcel.readInt();
-        this.h = parcel.readInt();
-        this.n = parcel.createByteArray();
     }
 }

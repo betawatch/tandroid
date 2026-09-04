@@ -1,49 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ak0 implements h5.d {
+public final class ak0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ pk0 b;
+    public final /* synthetic */ dk0 b;
 
-    public /* synthetic */ ak0(pk0 pk0Var, int i10) {
+    public /* synthetic */ ak0(dk0 dk0Var, int i10) {
         this.a = i10;
-        this.b = pk0Var;
+        this.b = dk0Var;
     }
 
-    @Override // h5.d
-    public final void accept(Object obj) {
-        View view = (View) obj;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                pk0 pk0Var = this.b;
-                ArrayList arrayList = pk0Var.d;
-                pk0Var.b.getClass();
-                int R = RecyclerView.R(view);
-                if (R >= 0 && R < arrayList.size() && (view instanceof nk0)) {
-                    ((nk0) view).f(((gk0) arrayList.get(R)).c, true);
-                    break;
+                if (this.b.a.getImageReceiver().getLottieAnimation() != null && !this.b.a.getImageReceiver().getLottieAnimation().l0 && !this.b.a.getImageReceiver().getLottieAnimation().w()) {
+                    this.b.a.getImageReceiver().getLottieAnimation().start();
                 }
+                this.b.E = false;
                 break;
             default:
-                if (view instanceof nk0) {
-                    nk0 nk0Var = (nk0) view;
-                    mk0 mk0Var = nk0Var.b;
-                    nk0Var.K = false;
-                    mk0Var.setAlpha(1.0f);
-                    if (!this.b.K0) {
-                        nk0Var.d();
-                        break;
-                    } else {
-                        mk0Var.setScaleX(nk0Var.F * (nk0Var.w ? 0.76f : 1.0f));
-                        mk0Var.setScaleY(nk0Var.F * (nk0Var.w ? 0.76f : 1.0f));
-                        break;
-                    }
+                dk0 dk0Var = this.b;
+                fk0 fk0Var = dk0Var.P;
+                try {
+                    dk0Var.performHapticFeedback(0);
+                } catch (Exception unused) {
                 }
+                fk0Var.m0 = fk0Var.T.indexOf(dk0Var.e);
+                fk0Var.l0 = dk0Var.e;
+                fk0Var.invalidate();
                 break;
         }
     }

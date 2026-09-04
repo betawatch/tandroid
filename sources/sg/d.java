@@ -1,158 +1,130 @@
 package sg;
 
-import android.graphics.Canvas;
-import android.graphics.RecordingCanvas;
-import android.graphics.RectF;
-import android.graphics.RenderEffect;
-import android.graphics.RenderNode;
-import android.graphics.Shader;
-import android.os.Build;
-import android.support.v4.media.session.y;
-import java.util.Iterator;
-import java.util.List;
-import ng.g;
-import ng.h;
+import android.content.Context;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import com.google.android.gms.internal.vision.e2;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.wl;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Cells.s3;
+import org.telegram.ui.Components.Premium.LimitPreviewView;
+import org.telegram.ui.Components.kl0;
+import org.telegram.ui.v51;
+import w7.x5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class d implements a {
-    public final a a;
-    public h c;
-    public ng.e d;
-    public int e;
-    public a f;
-    public boolean h;
-    public boolean n;
-    public RecordingCanvas r;
-    public Runnable v;
-    public final be.b s = new be.b(true);
-    public final RenderNode b = y.c();
+public final class d extends kl0 {
+    public final f6 c;
+    public final int d;
+    public final int e;
+    public final ArrayList f;
+    public final c1 h;
+    public int n;
+    public c r;
+    public final boolean s;
 
-    public d(a aVar) {
-        this.a = aVar;
+    public d(int i10, f6 f6Var) {
+        ArrayList arrayList = new ArrayList();
+        this.f = arrayList;
+        this.s = true;
+        this.c = f6Var;
+        c1 c1Var = new c1(j6.Lj, j6.Mj, j6.Nj, j6.Oj, f6Var);
+        this.h = c1Var;
+        c1Var.o = 0.0f;
+        c1Var.p = 0.0f;
+        c1Var.q = 1.0f;
+        MessagesController messagesController = MessagesController.getInstance(i10);
+        arrayList.add(new e(messagesController.channelsLimitDefault, messagesController.channelsLimitPremium, LocaleController.getString(R.string.GroupsAndChannelsLimitTitle), LocaleController.formatString(R.string.GroupsAndChannelsLimitSubtitle, Integer.valueOf(messagesController.channelsLimitPremium))));
+        arrayList.add(new e(messagesController.dialogFiltersPinnedLimitDefault, messagesController.dialogFiltersPinnedLimitPremium, LocaleController.getString(R.string.PinChatsLimitTitle), LocaleController.formatString(R.string.PinChatsLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersPinnedLimitPremium))));
+        arrayList.add(new e(messagesController.publicLinksLimitDefault, messagesController.publicLinksLimitPremium, LocaleController.getString(R.string.PublicLinksLimitTitle), LocaleController.formatString(R.string.PublicLinksLimitSubtitle, Integer.valueOf(messagesController.publicLinksLimitPremium))));
+        arrayList.add(new e(messagesController.savedGifsLimitDefault, messagesController.savedGifsLimitPremium, LocaleController.getString(R.string.SavedGifsLimitTitle), LocaleController.formatString(R.string.SavedGifsLimitSubtitle, Integer.valueOf(messagesController.savedGifsLimitPremium))));
+        arrayList.add(new e(messagesController.stickersFavedLimitDefault, messagesController.stickersFavedLimitPremium, LocaleController.getString(R.string.FavoriteStickersLimitTitle), LocaleController.formatString(R.string.FavoriteStickersLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
+        arrayList.add(new e(messagesController.aboutLengthLimitDefault, messagesController.aboutLengthLimitPremium, LocaleController.getString(R.string.BioLimitTitle), LocaleController.formatString(R.string.BioLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
+        arrayList.add(new e(messagesController.captionLengthLimitDefault, messagesController.captionLengthLimitPremium, LocaleController.getString(R.string.CaptionsLimitTitle), LocaleController.formatString(R.string.CaptionsLimitSubtitle, Integer.valueOf(messagesController.stickersFavedLimitPremium))));
+        arrayList.add(new e(messagesController.dialogFiltersLimitDefault, messagesController.dialogFiltersLimitPremium, LocaleController.getString(R.string.FoldersLimitTitle), LocaleController.formatString(R.string.FoldersLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersLimitPremium))));
+        arrayList.add(new e(messagesController.dialogFiltersChatsLimitDefault, messagesController.dialogFiltersChatsLimitPremium, LocaleController.getString(R.string.ChatPerFolderLimitTitle), LocaleController.formatString(R.string.ChatPerFolderLimitSubtitle, Integer.valueOf(messagesController.dialogFiltersChatsLimitPremium))));
+        arrayList.add(new e(3, 4, LocaleController.getString(R.string.ConnectedAccountsLimitTitle), LocaleController.formatString(R.string.ConnectedAccountsLimitSubtitle, 4)));
+        arrayList.add(new e(messagesController.recommendedChannelsLimitDefault, messagesController.recommendedChannelsLimitPremium, LocaleController.getString(R.string.SimilarChannelsLimitTitle), LocaleController.formatString(R.string.SimilarChannelsLimitSubtitle, Integer.valueOf(messagesController.recommendedChannelsLimitPremium))));
+        this.d = 1;
+        this.e = 1;
+        this.d = arrayList.size() + 1;
     }
 
-    @Override // sg.a
-    public final void H(Canvas canvas, float f10, float f11, float f12, float f13) {
-        ng.e eVar;
-        if (!canvas.isHardwareAccelerated()) {
-            a aVar = this.a;
-            if (aVar != null) {
-                aVar.H(canvas, f10, f11, f12, f13);
-                return;
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        return false;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10 == 0 ? 2 : 0;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        if (c1Var.f == 0) {
+            f fVar = (f) c1Var.a;
+            int i11 = i10 - this.e;
+            ArrayList arrayList = this.f;
+            fVar.a((e) arrayList.get(i11));
+            LimitPreviewView limitPreviewView = fVar.c;
+            limitPreviewView.F = ((e) arrayList.get(i11)).e;
+            limitPreviewView.c = this.n;
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Type inference failed for: r1v3, types: [android.view.ViewGroup, org.telegram.ui.v51] */
+    /* JADX WARN: Type inference failed for: r1v7, types: [sg.f] */
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        s3 s3Var;
+        Context context = viewGroup.getContext();
+        f6 f6Var = this.c;
+        if (i10 != 1) {
+            if (i10 != 2) {
+                ?? fVar = new f(context, f6Var);
+                fVar.c.setParentViewForGradien(this.r);
+                fVar.c.setStaticGradinet(this.h);
+                s3Var = fVar;
+            } else {
+                s3Var = new s3(context, 16);
             }
-            return;
-        }
-        if (this.n) {
-            throw new IllegalStateException();
-        }
-        a aVar2 = this.f;
-        if (aVar2 != null) {
-            aVar2.H(canvas, f10, f11, f12, f13);
-        }
-        canvas.save();
-        if (!this.h) {
-            canvas.clipRect(f10, f11, f12, f13);
-        }
-        if (Build.VERSION.SDK_INT < 31 || (eVar = this.d) == null) {
-            canvas.drawRenderNode(this.b);
+        } else if (this.s) {
+            ?? v51Var = new v51(context, 10);
+            LinearLayout f7 = wl.f(context, 0);
+            ImageView imageView = new ImageView(context);
+            imageView.setImageDrawable(d1.c(context.getDrawable(R.drawable.other_2x_large), d1.d().a));
+            f7.addView(imageView, x5.d(40, 28.0f, 16, 0.0f, 0.0f, 8.0f, 0.0f));
+            TextView textView = new TextView(context);
+            textView.setText(LocaleController.getString(R.string.DoubledLimits));
+            textView.setGravity(17);
+            textView.setTextSize(1, 20.0f);
+            textView.setTextColor(j6.v0(j6.G6, f6Var));
+            textView.setTypeface(AndroidUtilities.bold());
+            f7.addView(textView, x5.e(-2, -2, 16));
+            v51Var.addView(f7, x5.e(-2, -2, 17));
+            s3Var = v51Var;
         } else {
-            eVar.c(canvas, this.e);
+            s3Var = new s3(context, 64);
         }
-        canvas.restore();
-    }
-
-    public final RecordingCanvas a(int i10, int i11) {
-        if (this.n) {
-            throw new IllegalStateException();
-        }
-        this.n = true;
-        this.b.setPosition(0, 0, i10, i11);
-        RecordingCanvas beginRecording = this.b.beginRecording(i10, i11);
-        this.r = beginRecording;
-        return beginRecording;
-    }
-
-    @Override // sg.a
-    public final void b() {
-        Runnable runnable = this.v;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    public final void c() {
-        if (!this.n) {
-            throw new IllegalStateException();
-        }
-        this.b.endRecording();
-        this.n = false;
-        this.r = null;
-    }
-
-    public final int d(List list, int i10, int i11) {
-        RectF rectF;
-        Iterator it = this.s.iterator();
-        int i12 = 0;
-        while (it.hasNext()) {
-            pg.c cVar = (pg.c) it.next();
-            boolean v = cVar.v();
-            pg.a aVar = cVar.h;
-            if (v && cVar.j > 0 && !aVar.m.isEmpty()) {
-                if (i10 < list.size()) {
-                    rectF = (RectF) list.get(i10);
-                } else {
-                    rectF = new RectF();
-                    list.add(rectF);
-                }
-                rectF.set(aVar.m);
-                rectF.offset(cVar.a, cVar.b);
-                float f10 = -i11;
-                rectF.inset(f10, f10);
-                i10++;
-                i12++;
-            }
-        }
-        return i12;
-    }
-
-    public final void e() {
-        Iterator it = this.s.iterator();
-        while (it.hasNext()) {
-            ((pg.c) it.next()).M = true;
-        }
-    }
-
-    public final boolean f(int i10, int i11) {
-        return (this.b.hasDisplayList() && this.b.getWidth() == i10 && this.b.getHeight() == i11) ? false : true;
-    }
-
-    public final void g(float f10) {
-        this.b.setRenderEffect(f10 > 0.0f ? RenderEffect.createBlurEffect(f10, f10, Shader.TileMode.CLAMP) : null);
-    }
-
-    public final void h(float f10, RenderEffect renderEffect) {
-        this.b.setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(f10, f10, Shader.TileMode.CLAMP), renderEffect));
-    }
-
-    public final void i(int i10, int i11) {
-        this.b.setPosition(0, 0, i10, i11);
-    }
-
-    public final void j(g gVar) {
-        if (this.c == null) {
-            this.c = new h(this.b, gVar);
-        }
-    }
-
-    @Override // sg.a
-    public final pg.b k() {
-        pg.c cVar = new pg.c(this);
-        this.s.add(cVar);
-        return cVar;
-    }
-
-    public final void l() {
-        this.c.a();
+        return e2.l(s3Var, s3Var, -1, -2);
     }
 }

@@ -1,41 +1,20 @@
 package androidx.fragment.app;
 
-import android.util.Log;
-import java.io.Writer;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class s0 extends Writer {
-    public final StringBuilder b = new StringBuilder(128);
-    public final String a = "FragmentManager";
+public abstract class s0 {
+    public boolean a;
 
-    public final void a() {
-        StringBuilder sb = this.b;
-        if (sb.length() > 0) {
-            Log.d(this.a, sb.toString());
-            sb.delete(0, sb.length());
-        }
+    public abstract void a(ViewGroup viewGroup);
+
+    public void b(androidx.activity.b backEvent, ViewGroup container) {
+        kotlin.jvm.internal.i.e(backEvent, "backEvent");
+        kotlin.jvm.internal.i.e(container, "container");
     }
 
-    @Override // java.io.Writer, java.io.Closeable, java.lang.AutoCloseable
-    public final void close() {
-        a();
-    }
-
-    @Override // java.io.Writer, java.io.Flushable
-    public final void flush() {
-        a();
-    }
-
-    @Override // java.io.Writer
-    public final void write(char[] cArr, int i10, int i11) {
-        for (int i12 = 0; i12 < i11; i12++) {
-            char c3 = cArr[i10 + i12];
-            if (c3 == '\n') {
-                a();
-            } else {
-                this.b.append(c3);
-            }
-        }
+    public void c(ViewGroup container) {
+        kotlin.jvm.internal.i.e(container, "container");
     }
 }

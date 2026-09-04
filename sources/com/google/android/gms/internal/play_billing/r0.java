@@ -4,10 +4,10 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class r0 implements t0 {
-    public static final s0 b = new s0(r0.class);
+    public static final s0 b = new s0(r0.class, 0);
     public final Object a;
 
     public r0(Object obj) {
@@ -15,19 +15,19 @@ public final class r0 implements t0 {
     }
 
     @Override // com.google.android.gms.internal.play_billing.t0
-    public final void a(Runnable runnable, Executor executor) {
+    public final void b(Runnable runnable, Executor executor) {
         if (executor == null) {
             throw new NullPointerException("Executor was null.");
         }
         try {
             executor.execute(runnable);
-        } catch (Exception e) {
-            b.a().logp(Level.SEVERE, "com.google.common.util.concurrent.ImmediateFuture", "addListener", e2.c.k("RuntimeException while executing runnable ", runnable.toString(), " with executor ", String.valueOf(executor)), (Throwable) e);
+        } catch (Exception e7) {
+            b.b().logp(Level.SEVERE, "com.google.common.util.concurrent.ImmediateFuture", "addListener", com.google.android.gms.internal.vision.e2.j("RuntimeException while executing runnable ", runnable.toString(), " with executor ", String.valueOf(executor)), (Throwable) e7);
         }
     }
 
     @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z4) {
+    public final boolean cancel(boolean z10) {
         return false;
     }
 
@@ -51,7 +51,7 @@ public final class r0 implements t0 {
     }
 
     @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
+    public final Object get(long j3, TimeUnit timeUnit) {
         timeUnit.getClass();
         return this.a;
     }

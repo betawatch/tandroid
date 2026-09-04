@@ -1,42 +1,75 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.VideoEditedInfo;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class lh extends org.telegram.ui.fu0 {
-    public final /* synthetic */ MediaController.PhotoEntry a;
-    public final /* synthetic */ li b;
+public final /* synthetic */ class lh implements ch.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    public lh(li liVar, MediaController.PhotoEntry photoEntry) {
-        this.b = liVar;
-        this.a = photoEntry;
+    public /* synthetic */ lh(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, final boolean z4, final int i11, int i12, final boolean z10) {
-        li liVar = this.b;
-        liVar.p2 = true;
-        if (liVar.W1 == null) {
-            return;
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // ch.a
+    public final void e(bh.a aVar, RectF rectF) {
+        switch (this.a) {
         }
-        final MediaController.PhotoEntry photoEntry = this.a;
-        photoEntry.editedInfo = videoEditedInfo;
-        z4.a0(liVar.G1, liVar.j1() + 1, 0L, new Utilities.Callback() { // from class: org.telegram.ui.Components.kh
-            @Override // org.telegram.messenger.Utilities.Callback
-            public final void run(Object obj) {
-                ArrayList arrayList = ChatAttachAlertPhotoLayout.q1;
-                arrayList.clear();
-                HashMap hashMap = ChatAttachAlertPhotoLayout.p1;
-                hashMap.clear();
-                arrayList.add(0);
-                hashMap.put(0, photoEntry);
-                lh.this.b.W1.G1(7, true, z4, i11, 0, 0L, false, z10, ((Long) obj).longValue());
-            }
-        });
+        aVar.a = true;
+    }
+
+    @Override // ch.a
+    public final void f(Canvas canvas, RectF rectF) {
+        Canvas canvas2;
+        RectF rectF2;
+        ni niVar;
+        di.z7 z7Var;
+        switch (this.a) {
+            case 0:
+                vi viVar = (vi) this.b;
+                int i10 = 0;
+                while (i10 < 2) {
+                    ni niVar2 = i10 == 0 ? viVar.y0 : viVar.z0;
+                    if (niVar2 == null || niVar2.c == null || niVar2.getVisibility() != 0) {
+                        canvas2 = canvas;
+                        rectF2 = rectF;
+                    } else {
+                        canvas2 = canvas;
+                        rectF2 = rectF;
+                        hh.d.a(niVar2.c, canvas2, rectF2, niVar2.d, viVar.getContainerView(), (int) (((i10 == 0 && (niVar = viVar.z0) != null && niVar.getVisibility() == 0) ? (1.0f - viVar.z0.getAlpha()) * niVar2.getAlpha() : niVar2.getAlpha()) * 255.0f));
+                    }
+                    i10++;
+                    canvas = canvas2;
+                    rectF = rectF2;
+                }
+                break;
+            case 1:
+                ch.a[] aVarArr = (ch.a[]) this.b;
+                for (int i11 = 0; i11 < 3; i11++) {
+                    ch.a aVar = aVarArr[i11];
+                    if (aVar != null) {
+                        aVar.f(canvas, rectF);
+                    }
+                }
+                break;
+            default:
+                xu0 xu0Var = (xu0) this.b;
+                for (qt0 qt0Var : xu0Var.k0) {
+                    bh.l lVar = qt0Var.n;
+                    if (lVar != null) {
+                        lVar.f(canvas, rectF);
+                    }
+                }
+                nr0 nr0Var = xu0Var.V;
+                if (nr0Var != null && (z7Var = nr0Var.R) != null) {
+                    z7Var.f(canvas, rectF);
+                    break;
+                }
+                break;
+        }
     }
 }

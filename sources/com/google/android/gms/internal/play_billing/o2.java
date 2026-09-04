@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class o2 implements t2 {
     public final e1 a;
@@ -19,12 +19,12 @@ public final class o2 implements t2 {
 
     @Override // com.google.android.gms.internal.play_billing.t2
     public final boolean b(Object obj) {
-        throw android.support.v4.media.a.j(obj);
+        throw a4.a.j(obj);
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
     public final void c(Object obj, i2 i2Var) {
-        throw android.support.v4.media.a.j(obj);
+        throw a4.a.j(obj);
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
@@ -41,8 +41,8 @@ public final class o2 implements t2 {
             int b10 = m1.b(8);
             int b11 = m1.b(i13) + m1.b(16);
             int b12 = m1.b(24);
-            int o10 = l1Var.o();
-            i11 += b10 + b10 + b11 + m1.b(o10) + o10 + b12;
+            int o9 = l1Var.o();
+            i11 += b10 + b10 + b11 + m1.b(o9) + o9 + b12;
         }
         x2Var.d = i11;
         return i11;
@@ -54,7 +54,7 @@ public final class o2 implements t2 {
         if (v1Var.zzc == x2.f) {
             v1Var.zzc = x2.b();
         }
-        throw android.support.v4.media.a.j(obj);
+        throw a4.a.j(obj);
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2
@@ -76,7 +76,7 @@ public final class o2 implements t2 {
             x2Var.e = false;
         }
         t1 t1Var = p1.a;
-        throw android.support.v4.media.a.j(obj);
+        throw a4.a.j(obj);
     }
 
     @Override // com.google.android.gms.internal.play_billing.t2

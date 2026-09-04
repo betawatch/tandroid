@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.atomic.AtomicReference;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class v extends o {
     public final boolean a;
@@ -43,19 +43,19 @@ public final class v extends o {
         }
         u uVar = new u();
         HashMap hashMap = w.a;
-        boolean z4 = sVar instanceof r;
-        boolean z10 = sVar instanceof e;
-        if (z4 && z10) {
+        boolean z10 = sVar instanceof r;
+        boolean z11 = sVar instanceof e;
+        if (z10 && z11) {
             reflectiveGenericLifecycleObserver = new DefaultLifecycleObserverAdapter((e) sVar, (r) sVar);
-        } else if (z10) {
+        } else if (z11) {
             reflectiveGenericLifecycleObserver = new DefaultLifecycleObserverAdapter((e) sVar, null);
-        } else if (z4) {
+        } else if (z10) {
             reflectiveGenericLifecycleObserver = (r) sVar;
         } else {
             Class<?> cls = sVar.getClass();
             if (w.b(cls) == 2) {
                 Object obj2 = w.b.get(cls);
-                kotlin.jvm.internal.j.b(obj2);
+                kotlin.jvm.internal.i.b(obj2);
                 List list = (List) obj2;
                 if (list.size() == 1) {
                     w.a((Constructor) list.get(0), sVar);
@@ -95,17 +95,17 @@ public final class v extends o {
             obj = null;
         }
         if (((u) obj) == null && (tVar = (t) this.d.get()) != null) {
-            boolean z11 = this.e != 0 || this.f;
-            n c3 = c(sVar);
+            boolean z12 = this.e != 0 || this.f;
+            n c10 = c(sVar);
             this.e++;
-            while (uVar.a.compareTo(c3) < 0 && this.b.e.containsKey(sVar)) {
+            while (uVar.a.compareTo(c10) < 0 && this.b.e.containsKey(sVar)) {
                 n nVar3 = uVar.a;
                 ArrayList arrayList = this.h;
                 arrayList.add(nVar3);
                 k kVar = m.Companion;
                 n state = uVar.a;
                 kVar.getClass();
-                kotlin.jvm.internal.j.e(state, "state");
+                kotlin.jvm.internal.i.e(state, "state");
                 int ordinal = state.ordinal();
                 m mVar = ordinal != 1 ? ordinal != 2 ? ordinal != 3 ? null : m.ON_RESUME : m.ON_START : m.ON_CREATE;
                 if (mVar == null) {
@@ -113,9 +113,9 @@ public final class v extends o {
                 }
                 uVar.a(tVar, mVar);
                 arrayList.remove(arrayList.size() - 1);
-                c3 = c(sVar);
+                c10 = c(sVar);
             }
-            if (!z11) {
+            if (!z12) {
                 h();
             }
             this.e--;
@@ -124,7 +124,7 @@ public final class v extends o {
 
     @Override // androidx.lifecycle.o
     public final void b(s observer) {
-        kotlin.jvm.internal.j.e(observer, "observer");
+        kotlin.jvm.internal.i.e(observer, "observer");
         d("removeObserver");
         this.b.n(observer);
     }
@@ -135,9 +135,9 @@ public final class v extends o {
         o.c cVar = hashMap.containsKey(sVar) ? ((o.c) hashMap.get(sVar)).d : null;
         n nVar = (cVar == null || (uVar = (u) cVar.b) == null) ? null : uVar.a;
         ArrayList arrayList = this.h;
-        n nVar2 = arrayList.isEmpty() ? null : (n) kf.k0.i(1, arrayList);
+        n nVar2 = arrayList.isEmpty() ? null : (n) i2.g.h(1, arrayList);
         n state1 = this.c;
-        kotlin.jvm.internal.j.e(state1, "state1");
+        kotlin.jvm.internal.i.e(state1, "state1");
         if (nVar == null || nVar.compareTo(state1) >= 0) {
             nVar = state1;
         }
@@ -148,13 +148,13 @@ public final class v extends o {
         if (this.a) {
             n.a.a().a.getClass();
             if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-                throw new IllegalStateException(android.support.v4.media.a.o("Method ", str, " must be called on the main thread").toString());
+                throw new IllegalStateException(a4.a.p("Method ", str, " must be called on the main thread").toString());
             }
         }
     }
 
     public final void e(m event) {
-        kotlin.jvm.internal.j.e(event, "event");
+        kotlin.jvm.internal.i.e(event, "event");
         d("handleLifecycleEvent");
         f(event.a());
     }
@@ -207,10 +207,10 @@ public final class v extends o {
             o.a aVar = this.b;
             if (aVar.d != 0) {
                 o.c cVar = aVar.a;
-                kotlin.jvm.internal.j.b(cVar);
+                kotlin.jvm.internal.i.b(cVar);
                 n nVar = ((u) cVar.b).a;
                 o.c cVar2 = this.b.b;
-                kotlin.jvm.internal.j.b(cVar2);
+                kotlin.jvm.internal.i.b(cVar2);
                 n nVar2 = ((u) cVar2.b).a;
                 if (nVar == nVar2 && this.c == nVar2) {
                     break;
@@ -218,7 +218,7 @@ public final class v extends o {
                 this.g = false;
                 n nVar3 = this.c;
                 o.c cVar3 = this.b.a;
-                kotlin.jvm.internal.j.b(cVar3);
+                kotlin.jvm.internal.i.b(cVar3);
                 int compareTo = nVar3.compareTo(((u) cVar3.b).a);
                 ArrayList arrayList = this.h;
                 if (compareTo < 0) {
@@ -227,14 +227,14 @@ public final class v extends o {
                     aVar2.c.put(bVar, Boolean.FALSE);
                     while (bVar.hasNext() && !this.g) {
                         Map.Entry entry = (Map.Entry) bVar.next();
-                        kotlin.jvm.internal.j.d(entry, "next()");
+                        kotlin.jvm.internal.i.d(entry, "next()");
                         s sVar = (s) entry.getKey();
                         u uVar = (u) entry.getValue();
                         while (uVar.a.compareTo(this.c) > 0 && !this.g && this.b.e.containsKey(sVar)) {
                             k kVar = m.Companion;
                             n state = uVar.a;
                             kVar.getClass();
-                            kotlin.jvm.internal.j.e(state, "state");
+                            kotlin.jvm.internal.i.e(state, "state");
                             int ordinal = state.ordinal();
                             m mVar = ordinal != 2 ? ordinal != 3 ? ordinal != 4 ? null : m.ON_PAUSE : m.ON_STOP : m.ON_DESTROY;
                             if (mVar == null) {
@@ -261,7 +261,7 @@ public final class v extends o {
                             k kVar2 = m.Companion;
                             n state2 = uVar2.a;
                             kVar2.getClass();
-                            kotlin.jvm.internal.j.e(state2, "state");
+                            kotlin.jvm.internal.i.e(state2, "state");
                             int ordinal2 = state2.ordinal();
                             m mVar2 = ordinal2 != 1 ? ordinal2 != 2 ? ordinal2 != 3 ? null : m.ON_RESUME : m.ON_START : m.ON_CREATE;
                             if (mVar2 == null) {

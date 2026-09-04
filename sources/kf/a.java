@@ -1,38 +1,61 @@
 package kf;
 
-import org.telegram.tgnet.InputSerializedData;
-import org.telegram.tgnet.OutputSerializedData;
-import org.telegram.tgnet.SerializedData;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Bitmap;
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.RandomAccessFile;
+import mf.l;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a extends TLObject {
-    public int a;
+public abstract class a {
+    public String a;
     public long b;
-    public TLRPC.InputStorePaymentPurpose c;
+    public String c;
+    public String d;
+    public String e;
+    public String f;
+    public short g;
+    public String h;
+    public String i;
+    public short j;
+    public short k;
+    public String l;
+    public String m;
+    public String n;
+    public Bitmap o;
+    public Bitmap p;
+    public File q;
 
-    public static a a(SerializedData serializedData, int i10) {
-        return (a) TLObject.TLdeserialize(a.class, i10 != 495638674 ? null : new a(), serializedData, i10, true);
-    }
-
-    @Override // org.telegram.tgnet.TLObject
-    public final void readParams(InputSerializedData inputSerializedData, boolean z4) {
-        this.a = inputSerializedData.readInt32(z4);
-        this.b = inputSerializedData.readInt64(z4);
-        if ((this.a & 1) != 0) {
-            this.c = TLRPC.InputStorePaymentPurpose.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
-        }
-    }
-
-    @Override // org.telegram.tgnet.TLObject
-    public final void serializeToStream(OutputSerializedData outputSerializedData) {
-        outputSerializedData.writeInt32(495638674);
-        outputSerializedData.writeInt32(this.a);
-        outputSerializedData.writeInt64(this.b);
-        if ((this.a & 1) != 0) {
-            this.c.serializeToStream(outputSerializedData);
+    public static a a(File file) {
+        byte b10;
+        try {
+            byte[] bArr = new byte[12];
+            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
+            randomAccessFile.readFully(bArr, 0, 8);
+            randomAccessFile.close();
+            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
+            if (bArr[4] == 102 && bArr[5] == 116 && bArr[6] == 121 && bArr[7] == 112) {
+                return new lf.a(bufferedInputStream);
+            }
+            if (bArr[0] == 102 && bArr[1] == 76 && bArr[2] == 97 && bArr[3] == 99) {
+                b bVar = new b(file);
+                if (bVar.s) {
+                    return null;
+                }
+                return bVar;
+            }
+            if (!file.getAbsolutePath().endsWith("mp3") && (((b10 = bArr[0]) != 73 || bArr[1] != 68 || bArr[2] != 51) && (b10 != 84 || bArr[1] != 65 || bArr[2] != 71))) {
+                b bVar2 = new b(file);
+                if (bVar2.s) {
+                    return null;
+                }
+                return bVar2;
+            }
+            return new l(bufferedInputStream, file.length());
+        } catch (Exception unused) {
+            return null;
         }
     }
 }

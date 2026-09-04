@@ -1,45 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class p3 extends LinearLayout {
-    public boolean a;
-    public final /* synthetic */ m3 b;
-    public final /* synthetic */ o3 c;
+public final class p3 extends l51 {
+    public final /* synthetic */ AlertDialog$Builder e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p3(Context context, m3 m3Var, o3 o3Var) {
-        super(context);
-        this.b = m3Var;
-        this.c = o3Var;
-        this.a = false;
+    public p3(String str, AlertDialog$Builder alertDialog$Builder) {
+        super(str, (n01) null);
+        this.e = alertDialog$Builder;
     }
 
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        this.a = true;
-        Point point = AndroidUtilities.displaySize;
-        int i12 = point.x > point.y ? 3 : 5;
-        m3 m3Var = this.b;
-        m3Var.setItemCount(i12);
-        o3 o3Var = this.c;
-        o3Var.setItemCount(i12);
-        m3Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        o3Var.getLayoutParams().height = AndroidUtilities.dp(42.0f) * i12;
-        this.a = false;
-        super.onMeasure(i10, i11);
-    }
-
-    @Override // android.view.View, android.view.ViewParent
-    public final void requestLayout() {
-        if (this.a) {
-            return;
-        }
-        super.requestLayout();
+    @Override // org.telegram.ui.Components.l51, android.text.style.URLSpan, android.text.style.ClickableSpan
+    public final void onClick(View view) {
+        this.e.a.L0.run();
+        super.onClick(view);
     }
 }

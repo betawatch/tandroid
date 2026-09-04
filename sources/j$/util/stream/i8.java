@@ -12,15 +12,15 @@ public final class i8 extends e5 {
     }
 
     @Override // j$.util.stream.e5, j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.a.o(-1L);
     }
 
     @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         if (this.b) {
             LongPredicate longPredicate = null;
-            longPredicate.test(j10);
+            longPredicate.test(j3);
             throw null;
         }
     }

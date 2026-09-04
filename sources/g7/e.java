@@ -1,8 +1,31 @@
 package g7;
 
-import android.os.IInterface;
+import android.app.PendingIntent;
+import android.os.Parcel;
+import android.os.Parcelable;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface e extends IInterface {
+public final class e extends o6.a {
+    public static final Parcelable.Creator<e> CREATOR = new e6.i(16);
+    public final PendingIntent a;
+    public final g b;
+
+    public e(PendingIntent pendingIntent, g gVar) {
+        this.a = pendingIntent;
+        this.b = gVar;
+        if (pendingIntent == null && gVar == null) {
+            throw new IllegalArgumentException("pendingIntent or createCredentialResponse must be specified.");
+        }
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i10) {
+        kotlin.jvm.internal.i.e(dest, "dest");
+        int q6 = e0.q(dest, 20293);
+        e0.k(dest, 1, this.a, i10);
+        e0.k(dest, 2, this.b, i10);
+        e0.r(dest, q6);
+    }
 }

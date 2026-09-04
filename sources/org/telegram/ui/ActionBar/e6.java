@@ -21,27 +21,27 @@ import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SvgHelper;
 import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.ec0;
-import org.telegram.ui.Components.o9;
+import org.telegram.ui.Components.dc0;
+import org.telegram.ui.Components.w9;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class e6 implements NotificationCenter.NotificationCenterDelegate {
     public static e6 c;
     public int a;
     public HashMap b;
 
-    public static void a(boolean z4) {
+    public static void a(boolean z10) {
         ArrayList arrayList;
-        if (c == null || z4) {
+        if (c == null || z10) {
             ArrayList arrayList2 = null;
             int i10 = 0;
             while (i10 < 5) {
                 i6 i6Var = (i6) j6.H.get(i10 != 0 ? i10 != 1 ? i10 != 2 ? i10 != 3 ? "Night" : "Day" : "Arctic Blue" : "Dark Blue" : "Blue");
-                if (i6Var != null && (arrayList = i6Var.Y) != null && !arrayList.isEmpty()) {
-                    int size = i6Var.Y.size();
+                if (i6Var != null && (arrayList = i6Var.b0) != null && !arrayList.isEmpty()) {
+                    int size = i6Var.b0.size();
                     for (int i11 = 0; i11 < size; i11++) {
-                        h6 h6Var = (h6) i6Var.Y.get(i11);
+                        h6 h6Var = (h6) i6Var.b0.get(i11);
                         if (h6Var.a != j6.n && !TextUtils.isEmpty(h6Var.o)) {
                             if (arrayList2 == null) {
                                 arrayList2 = new ArrayList();
@@ -55,13 +55,13 @@ public final class e6 implements NotificationCenter.NotificationCenterDelegate {
             e6 e6Var = new e6();
             e6Var.a = UserConfig.selectedAccount;
             if (arrayList2 != null) {
-                Utilities.globalQueue.postRunnable(new org.telegram.messenger.voip.h(11, e6Var, arrayList2));
+                Utilities.globalQueue.postRunnable(new c6(0, e6Var, arrayList2));
             }
             c = e6Var;
         }
     }
 
-    public static Bitmap b(Bitmap bitmap, boolean z4, File file, h6 h6Var) {
+    public static Bitmap b(Bitmap bitmap, boolean z10, File file, h6 h6Var) {
         Bitmap bitmap2;
         int patternColor;
         int i10;
@@ -78,9 +78,9 @@ public final class e6 implements NotificationCenter.NotificationCenterDelegate {
             j6.G(Q0, i6Var);
             int i13 = h6Var.c;
             int i14 = (int) h6Var.j;
-            long j10 = h6Var.k;
-            int i15 = (int) j10;
-            if (i15 == 0 && j10 == 0) {
+            long j3 = h6Var.k;
+            int i15 = (int) j3;
+            if (i15 == 0 && j3 == 0) {
                 if (i14 != 0) {
                     i13 = i14;
                 }
@@ -91,25 +91,25 @@ public final class e6 implements NotificationCenter.NotificationCenterDelegate {
             } else {
                 i13 = 0;
             }
-            long j11 = h6Var.l;
-            int i17 = (int) j11;
-            if (i17 == 0 && j11 == 0 && (i12 = Q0.get(j6.Pd)) != 0) {
+            long j10 = h6Var.l;
+            int i17 = (int) j10;
+            if (i17 == 0 && j10 == 0 && (i12 = Q0.get(j6.Pd)) != 0) {
                 i17 = j6.B(i6Var, i13, i12);
             }
-            long j12 = h6Var.m;
-            int i18 = (int) j12;
-            if (i18 == 0 && j12 == 0 && (i11 = Q0.get(j6.Qd)) != 0) {
+            long j11 = h6Var.m;
+            int i18 = (int) j11;
+            if (i18 == 0 && j11 == 0 && (i11 = Q0.get(j6.Qd)) != 0) {
                 i18 = j6.B(i6Var, i13, i11);
             }
             if (i14 == 0 && (i10 = Q0.get(j6.Nd)) != 0) {
                 i14 = j6.B(i6Var, i13, i10);
             }
             if (i17 != 0) {
-                patternColor = ec0.g(i14, i15, i17, i18);
+                patternColor = dc0.g(i14, i15, i17, i18);
             } else if (i15 != 0) {
-                Drawable o9Var = new o9(o9.d(h6Var.n), new int[]{i14, i15});
+                Drawable w9Var = new w9(w9.d(h6Var.n), new int[]{i14, i15});
                 patternColor = AndroidUtilities.getPatternColor(AndroidUtilities.getAverageColor(i14, i15));
-                drawable = o9Var;
+                drawable = w9Var;
             } else {
                 drawable = new ColorDrawable(i14);
                 patternColor = AndroidUtilities.getPatternColor(i14);
@@ -118,7 +118,7 @@ public final class e6 implements NotificationCenter.NotificationCenterDelegate {
                 Point point = AndroidUtilities.displaySize;
                 int min = Math.min(point.x, point.y);
                 Point point2 = AndroidUtilities.displaySize;
-                bitmap2 = z4 ? SvgHelper.getBitmap(file, min, Math.max(point2.x, point2.y), false, SvgHelper.ScaleMode.ByWidth) : j6.i1(new FileInputStream(file), 0);
+                bitmap2 = z10 ? SvgHelper.getBitmap(file, min, Math.max(point2.x, point2.y), false, SvgHelper.ScaleMode.ByWidth) : j6.i1(new FileInputStream(file), 0);
             } else {
                 bitmap2 = bitmap;
             }
@@ -156,11 +156,11 @@ public final class e6 implements NotificationCenter.NotificationCenterDelegate {
         if (hashMap == null) {
             return;
         }
-        boolean z4 = false;
+        boolean z10 = false;
         if (i10 == NotificationCenter.fileLoaded) {
             d6 d6Var = (d6) hashMap.remove((String) objArr[0]);
             if (d6Var != null) {
-                Utilities.globalQueue.postRunnable(new org.telegram.messenger.voip.h(12, this, d6Var));
+                Utilities.globalQueue.postRunnable(new c6(1, this, d6Var));
                 return;
             }
             return;
@@ -168,6 +168,6 @@ public final class e6 implements NotificationCenter.NotificationCenterDelegate {
         if (i10 != NotificationCenter.fileLoadFailed || hashMap.remove((String) objArr[0]) == null) {
             return;
         }
-        AndroidUtilities.runOnUIThread(new lh.r5(this, (Object) null, z4, 6));
+        AndroidUtilities.runOnUIThread(new di.y0(this, (Object) null, z10, 10));
     }
 }

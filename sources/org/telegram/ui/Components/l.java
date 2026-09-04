@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.text.Editable;
 import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class l implements TextWatcher {
     public final /* synthetic */ f0 a;
@@ -16,8 +16,8 @@ public final class l implements TextWatcher {
     public final void afterTextChanged(Editable editable) {
         e0 e0Var;
         f0 f0Var = this.a;
-        e0 e0Var2 = f0Var.t0;
-        if ((e0Var2 != null ? e0Var2.getSelectedTab() : 0) == 1 && (e0Var = f0Var.u0) != null && (e0Var.getSelectedTone() instanceof b0)) {
+        e0 e0Var2 = f0Var.w0;
+        if ((e0Var2 != null ? e0Var2.getSelectedTab() : 0) == 1 && (e0Var = f0Var.x0) != null && (e0Var.getSelectedTone() instanceof a0)) {
             f0Var.c0();
             f0Var.q0();
             f0Var.p0(true);

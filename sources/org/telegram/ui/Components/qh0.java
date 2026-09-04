@@ -1,172 +1,269 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
+import android.graphics.BlendMode;
 import android.graphics.Canvas;
+import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
 import android.graphics.Path;
-import android.graphics.Rect;
+import android.graphics.RecordingCanvas;
 import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import java.util.ArrayList;
+import android.graphics.RenderEffect;
+import android.graphics.RenderNode;
+import android.graphics.Shader;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotchInfoUtils;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class qh0 extends p9 implements nv0 {
-    public final int D;
-    public RadialProgress2 E;
-    public ValueAnimator F;
-    public float G;
-    public long H;
-    public boolean I;
-    public final int J;
-    public final Paint K;
-    public Runnable L;
-    public final /* synthetic */ wh0 M;
+public final class qh0 implements rh0 {
+    public final float f;
+    public final Paint i;
+    public final RectF j;
+    public final /* synthetic */ sh0 k;
+    public final Paint a = new Paint(1);
+    public final RenderNode b = new RenderNode("render");
+    public final RenderNode c = new RenderNode("effectNotch");
+    public final RenderNode d = new RenderNode("effect");
+    public final RenderNode e = new RenderNode("blur");
+    public final RectF g = new RectF();
+    public final RectF h = new RectF();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public qh0(wh0 wh0Var, Context context, int i10, Paint paint) {
-        super(context);
-        this.M = wh0Var;
-        this.D = AndroidUtilities.dp(64.0f);
-        this.H = -1L;
-        this.J = i10;
-        this.K = paint;
-        setLayerNum(wh0Var.i1);
+    public qh0(sh0 sh0Var, float f7) {
+        this.k = sh0Var;
+        Paint paint = new Paint();
+        this.i = paint;
+        this.j = new RectF();
+        this.f = f7;
+        paint.setColor(-16777216);
+        paint.setBlendMode(BlendMode.SRC_IN);
     }
 
-    @Override // org.telegram.ui.Components.nv0
-    public final void g(Runnable runnable) {
-        this.L = runnable;
+    @Override // org.telegram.ui.Components.rh0
+    public final void a(float f7) {
+        RenderNode renderNode = this.d;
+        Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+        renderNode.setRenderEffect(RenderEffect.createBlurEffect(f7, f7, tileMode));
+        this.c.setRenderEffect(RenderEffect.createBlurEffect(f7, f7, tileMode));
+        this.a.setColorFilter(new ColorMatrixColorFilter(new float[]{1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 51.0f, -6375.0f}));
     }
 
-    @Override // android.view.View
-    public final void invalidate(int i10, int i11, int i12, int i13) {
-        super.invalidate(i10, i11, i12, i13);
-        Runnable runnable = this.L;
-        if (runnable != null) {
-            runnable.run();
+    @Override // org.telegram.ui.Components.rh0
+    public final void b(float f7) {
+        Shader.TileMode tileMode;
+        if (f7 == 0.0f) {
+            this.e.setRenderEffect(null);
+            return;
         }
+        RenderNode renderNode = this.e;
+        float f10 = this.k.d;
+        float f11 = this.f;
+        float f12 = (f7 * f10) / f11;
+        float f13 = (f7 * f10) / f11;
+        tileMode = Shader.TileMode.DECAL;
+        renderNode.setRenderEffect(RenderEffect.createBlurEffect(f12, f13, tileMode));
     }
 
-    @Override // org.telegram.ui.Components.p9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        Canvas canvas2;
-        wh0 wh0Var = this.M;
-        float[] fArr = wh0Var.L0;
-        Path path = wh0Var.J0;
-        ArrayList arrayList = wh0Var.Y0;
-        RectF rectF = wh0Var.K0;
-        org.telegram.ui.cv0 cv0Var = wh0Var.e1;
-        if (cv0Var == null || !cv0Var.n) {
-            if (this.E != null) {
-                int k10 = wh0Var.A0.k(this.J);
-                if (wh0Var.f1) {
-                    k10--;
+    @Override // org.telegram.ui.Components.rh0
+    public final void c(kv kvVar, Canvas canvas) {
+        float f7;
+        float f10;
+        float f11;
+        float f12;
+        float f13;
+        Paint paint;
+        sh0 sh0Var = this.k;
+        Paint paint2 = sh0Var.a;
+        Path path = sh0Var.b;
+        if (canvas.isHardwareAccelerated()) {
+            float width = sh0Var.getWidth();
+            float height = sh0Var.getHeight();
+            RectF rectF = this.g;
+            rectF.set(0.0f, 0.0f, width, height);
+            int childCount = sh0Var.getChildCount();
+            RectF rectF2 = this.j;
+            if (childCount > 0) {
+                View childAt = sh0Var.getChildAt(0);
+                float scaleX = childAt.getScaleX() * childAt.getWidth();
+                float scaleY = childAt.getScaleY() * childAt.getHeight();
+                float x10 = childAt.getX();
+                float y3 = childAt.getY();
+                rectF2.set(x10, y3, scaleX + x10, scaleY + y3);
+                NotchInfoUtils.NotchInfo notchInfo = sh0Var.n;
+                if (notchInfo != null) {
+                    rectF2.union(notchInfo.bounds);
                 }
-                Drawable drawable = getImageReceiver().getDrawable();
-                long j10 = 0;
-                int i10 = 4;
-                if (k10 >= arrayList.size() || arrayList.get(k10) == null ? drawable == null || (this.I && (!(drawable instanceof y5) || ((y5) drawable).d[4] <= 0)) : ((Float) arrayList.get(k10)).floatValue() < 1.0f) {
-                    if (this.H < 0) {
-                        this.H = System.currentTimeMillis();
-                    } else {
-                        long currentTimeMillis = System.currentTimeMillis() - this.H;
-                        long j11 = this.I ? 250L : 750L;
-                        if (currentTimeMillis <= 250 + j11 && currentTimeMillis > j11) {
-                            this.E.E = mr.f.getInterpolation((currentTimeMillis - j11) / 250.0f);
-                        }
-                    }
-                    if (wh0Var.d1) {
-                        invalidate();
-                    } else {
-                        postInvalidateOnAnimation();
-                    }
-                    invalidate();
-                } else if (this.F == null) {
-                    RadialProgress2 radialProgress2 = this.E;
-                    if ((radialProgress2.c ? radialProgress2.j : radialProgress2.i).w < 1.0f) {
-                        radialProgress2.o(1.0f, true);
-                        j10 = 100;
-                    }
-                    this.G = this.E.E;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    this.F = ofFloat;
-                    ofFloat.setStartDelay(j10);
-                    this.F.setDuration((long) (this.G * 250.0f));
-                    this.F.setInterpolator(mr.f);
-                    this.F.addUpdateListener(new j70(this, i10));
-                    this.F.addListener(new org.telegram.ui.Cells.a4(this, k10, 5));
-                    this.F.start();
-                }
-                int i11 = wh0Var.j1;
-                if (i11 == 0 && wh0Var.k1 == 0) {
-                    canvas.drawRect(0.0f, 0.0f, getWidth(), getHeight(), this.K);
-                    canvas2 = canvas;
-                } else {
-                    canvas2 = canvas;
-                    int i12 = wh0Var.k1;
-                    Paint paint = this.K;
-                    if (i11 == i12) {
-                        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                        float f10 = wh0Var.j1;
-                        canvas2.drawRoundRect(rectF, f10, f10, paint);
-                    } else {
-                        path.reset();
-                        rectF.set(0.0f, 0.0f, getWidth(), getHeight());
-                        for (int i13 = 0; i13 < 4; i13++) {
-                            fArr[i13] = wh0Var.j1;
-                            fArr[i13 + 4] = wh0Var.k1;
-                        }
-                        path.addRoundRect(rectF, fArr, Path.Direction.CW);
-                        canvas2.drawPath(path, paint);
-                    }
-                }
+                rectF2.inset(-AndroidUtilities.dp(20.0f), -AndroidUtilities.dp(20.0f));
+                rectF2.intersect(rectF);
+                rectF2.top = 0.0f;
             } else {
-                canvas2 = canvas;
+                rectF2.set(rectF);
             }
-            super.onDraw(canvas);
-            RadialProgress2 radialProgress22 = this.E;
-            if (radialProgress22 == null || radialProgress22.E <= 0.0f) {
-                return;
+            rectF2.bottom += AndroidUtilities.dp(32.0f);
+            int ceil = (int) Math.ceil(rectF2.width());
+            int ceil2 = (int) Math.ceil(rectF2.height());
+            float f14 = rectF2.left;
+            float f15 = rectF2.top;
+            this.b.setPosition(0, 0, ceil, ceil2);
+            this.e.setPosition(0, 0, ceil, ceil2);
+            this.d.setPosition(0, 0, ceil, ceil2);
+            this.c.setPosition(0, 0, ceil, ceil2);
+            float f16 = ceil;
+            float f17 = ceil2;
+            rectF2.set(0.0f, 0.0f, f16, f17);
+            RecordingCanvas beginRecording = this.b.beginRecording();
+            float f18 = -f14;
+            float f19 = -f15;
+            beginRecording.translate(f18, f19);
+            int ilerp = (int) ((1.0f - AndroidUtilities.ilerp(sh0Var.e, 0.5f, 1.0f)) * 255.0f);
+            int b10 = w7.p.b(ilerp, 0, 255);
+            sh0.a((sh0) kvVar.b, beginRecording);
+            this.b.endRecording();
+            float f20 = this.f;
+            float z10 = com.google.android.gms.internal.vision.e2.z(f20, 1.0f, 2.0f, com.google.android.gms.internal.vision.e2.x(sh0Var.f, 0.5f, f20, (f20 / 4.0f) + 1.0f));
+            RecordingCanvas beginRecording2 = this.e.beginRecording();
+            float f21 = 1.0f / z10;
+            beginRecording2.scale(f21, f21, 0.0f, 0.0f);
+            beginRecording2.drawRenderNode(this.b);
+            this.e.endRecording();
+            float f22 = f20 + 2.0f;
+            RecordingCanvas beginRecording3 = this.d.beginRecording();
+            float f23 = 1.0f / f22;
+            beginRecording3.scale(f23, f23, 0.0f, 0.0f);
+            Paint paint3 = this.i;
+            if (b10 < 255) {
+                beginRecording3.saveLayer(rectF2, null);
+                beginRecording3.drawRenderNode(this.b);
+                beginRecording3.drawRect(rectF2, paint3);
+                beginRecording3.restore();
             }
-            radialProgress22.draw(canvas2);
+            float lerp = AndroidUtilities.lerp(0.0f, AndroidUtilities.dp(7.0f) * f22, 0.0f, 0.5f, sh0Var.e);
+            if (sh0Var.getChildCount() > 0) {
+                View childAt2 = sh0Var.getChildAt(0);
+                float scaleX2 = (((childAt2.getScaleX() * childAt2.getWidth()) / 2.0f) + childAt2.getX()) - f14;
+                float scaleY2 = ((((childAt2.getScaleY() * childAt2.getHeight()) / 2.0f) + childAt2.getY()) + AndroidUtilities.dp(32.0f)) - f15;
+                float scaleX3 = childAt2.getScaleX() * (childAt2.getWidth() / 2.0f);
+                path.rewind();
+                f7 = lerp;
+                f10 = f14;
+                path.moveTo(scaleX2 - scaleX3, scaleY2 - (((float) Math.cos(0.7853981633974483d)) * scaleX3));
+                path.lineTo(scaleX2, (scaleY2 - scaleX3) - (0.25f * f7));
+                path.lineTo(scaleX2 + scaleX3, scaleY2 - (((float) Math.cos(0.7853981633974483d)) * scaleX3));
+                path.close();
+                beginRecording3.drawPath(path, paint2);
+            } else {
+                f7 = lerp;
+                f10 = f14;
+            }
+            if (b10 > 0) {
+                if (b10 != 255) {
+                    beginRecording3.saveLayerAlpha(rectF2, b10);
+                }
+                beginRecording3.drawRenderNode(this.b);
+                if (b10 != 255) {
+                    beginRecording3.restore();
+                }
+            }
+            this.d.endRecording();
+            RecordingCanvas beginRecording4 = this.c.beginRecording();
+            beginRecording4.scale(f23, f23, 0.0f, 0.0f);
+            if (sh0Var.n != null) {
+                beginRecording4.translate(f18, f19);
+                beginRecording4.translate(0.0f, AndroidUtilities.dp(32.0f));
+                NotchInfoUtils.NotchInfo notchInfo2 = sh0Var.n;
+                if (notchInfo2.isLikelyCircle) {
+                    float min = Math.min(notchInfo2.bounds.width(), sh0Var.n.bounds.height()) / 2.0f;
+                    RectF rectF3 = sh0Var.n.bounds;
+                    float width2 = rectF3.bottom - (rectF3.width() / 2.0f);
+                    beginRecording4.drawCircle(sh0Var.n.bounds.centerX(), width2, min, paint2);
+                    path.rewind();
+                    float f24 = f7 / 2.0f;
+                    path.moveTo(sh0Var.n.bounds.centerX() - f24, width2);
+                    path.lineTo(sh0Var.n.bounds.centerX(), min + width2 + f7);
+                    path.lineTo(sh0Var.n.bounds.centerX() + f24, width2);
+                    path.close();
+                    beginRecording4.drawPath(path, paint2);
+                } else if (notchInfo2.isAccurate) {
+                    beginRecording4.drawPath(notchInfo2.path, paint2);
+                } else {
+                    float max = Math.max(notchInfo2.bounds.width(), sh0Var.n.bounds.height()) / 2.0f;
+                    RectF rectF4 = sh0Var.n.bounds;
+                    RectF rectF5 = this.h;
+                    rectF5.set(rectF4);
+                    beginRecording4.drawRoundRect(rectF5, max, max, paint2);
+                    path.rewind();
+                    float f25 = f7 / 2.0f;
+                    path.moveTo(rectF5.centerX() - f25, rectF5.bottom);
+                    path.lineTo(rectF5.centerX(), rectF5.bottom + f7);
+                    path.lineTo(rectF5.centerX() + f25, rectF5.bottom);
+                    path.close();
+                    beginRecording4.drawPath(path, paint2);
+                }
+                f11 = f17;
+                f12 = f16;
+                f13 = z10;
+                paint = paint3;
+            } else {
+                f11 = f17;
+                f12 = f16;
+                f13 = z10;
+                paint = paint3;
+                beginRecording4.drawRect(0.0f, 0.0f, f12, AndroidUtilities.dp(32.0f), paint2);
+                path.rewind();
+                path.moveTo((f12 - f7) / 2.0f, AndroidUtilities.dp(32.0f));
+                path.lineTo(f12 / 2.0f, AndroidUtilities.dp(32.0f) + f7);
+                path.lineTo((f12 + f7) / 2.0f, AndroidUtilities.dp(32.0f));
+                path.close();
+                beginRecording4.drawPath(path, paint2);
+            }
+            this.c.endRecording();
+            canvas.save();
+            canvas.translate(f10, f15 - AndroidUtilities.dp(32.0f));
+            NotchInfoUtils.NotchInfo notchInfo3 = sh0Var.n;
+            if (notchInfo3 != null) {
+                canvas.clipRect(0.0f, notchInfo3.bounds.top, f12, f11);
+            }
+            Paint paint4 = this.a;
+            canvas.saveLayer(rectF2, paint4);
+            canvas.scale(f22, f22);
+            canvas.drawRenderNode(this.c);
+            canvas.drawRenderNode(this.d);
+            canvas.restore();
+            int b11 = w7.p.b((ilerp * 3) / 4, 0, 255);
+            if (b11 < 255) {
+                canvas.saveLayer(rectF2, null);
+                if (sh0Var.f != 0.0f) {
+                    canvas.saveLayer(rectF2, paint4);
+                    canvas.scale(f13, f13);
+                    canvas.drawRenderNode(this.e);
+                    canvas.restore();
+                } else {
+                    canvas.drawRenderNode(this.b);
+                }
+                canvas.drawRect(rectF2, paint);
+                canvas.restore();
+            }
+            if (b11 > 0) {
+                if (b11 != 255) {
+                    canvas.saveLayerAlpha(rectF2, b11);
+                }
+                if (sh0Var.f != 0.0f) {
+                    canvas.saveLayer(rectF2, paint4);
+                    canvas.scale(f13, f13);
+                    canvas.drawRenderNode(this.e);
+                    canvas.restore();
+                } else {
+                    canvas.drawRenderNode(this.b);
+                }
+                if (b11 != 255) {
+                    canvas.restore();
+                }
+            }
+            canvas.restore();
         }
     }
 
-    @Override // android.view.View
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        super.onSizeChanged(i10, i11, i12, i13);
-        if (this.E != null) {
-            int currentActionBarHeight = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight() + (this.M.w0.getOccupyStatusBar() ? AndroidUtilities.statusBarHeight : 0);
-            int dp2 = AndroidUtilities.dp2(80.0f);
-            RadialProgress2 radialProgress2 = this.E;
-            int i14 = this.D;
-            int i15 = (i11 - currentActionBarHeight) - dp2;
-            radialProgress2.q((i10 - i14) / 2, kf.k0.d(i15, i14, 2, currentActionBarHeight), (i10 + i14) / 2, ((i15 + i14) / 2) + currentActionBarHeight);
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate(Rect rect) {
-        super.invalidate(rect);
-        Runnable runnable = this.L;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        wh0 wh0Var = this.M;
-        if (wh0Var.d1) {
-            wh0Var.invalidate();
-        }
-        Runnable runnable = this.L;
-        if (runnable != null) {
-            runnable.run();
-        }
+    @Override // org.telegram.ui.Components.rh0
+    public final /* synthetic */ void d(int i10, int i11) {
     }
 }

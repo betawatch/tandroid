@@ -1,24 +1,49 @@
 package nf;
 
-import h7.u;
-import java.nio.ShortBuffer;
-import z9.d;
+import com.google.firebase.messaging.d;
+import java.io.InputStream;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface a {
-    public static final db.a j = new db.a(13);
-    public static final ab.a k = new ab.a(14);
-    public static final u l;
-    public static final d m;
+public final class a extends d {
+    public final long d;
 
-    static {
-        int i10 = 13;
-        l = new u(i10);
-        m = new d(i10);
+    public a(InputStream inputStream, long j3, long j10) {
+        super(inputStream, j3);
+        this.d = j3 + j10;
     }
 
-    int P1(int i10, int i11, int i12);
+    public final long e() {
+        return this.d - this.b;
+    }
 
-    void X0(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11);
+    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
+    public final int read() {
+        if (this.b == this.d) {
+            return -1;
+        }
+        return super.read();
+    }
+
+    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
+    public final long skip(long j3) {
+        long j10 = this.b;
+        long j11 = j10 + j3;
+        long j12 = this.d;
+        if (j11 > j12) {
+            j3 = (int) (j12 - j10);
+        }
+        return super.skip(j3);
+    }
+
+    @Override // com.google.firebase.messaging.d, java.io.FilterInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        long j3 = this.b;
+        long j10 = i11 + j3;
+        long j11 = this.d;
+        if (j10 <= j11 || (i11 = (int) (j11 - j3)) != 0) {
+            return super.read(bArr, i10, i11);
+        }
+        return -1;
+    }
 }

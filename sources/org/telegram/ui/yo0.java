@@ -1,60 +1,87 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.os.Build;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.Iterator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class yo0 extends org.telegram.ui.Components.rl0 {
-    public final /* synthetic */ int U2;
-    public final /* synthetic */ hp0 V2;
+public final /* synthetic */ class yo0 implements yf.b0, r0.n, org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bq0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public yo0(hp0 hp0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, f6Var);
-        this.V2 = hp0Var;
-        this.U2 = i10;
+    public /* synthetic */ yo0(bq0 bq0Var, int i10) {
+        this.a = i10;
+        this.b = bq0Var;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final Integer V0(int i10) {
-        hp0 hp0Var = this.V2;
-        if ((i10 < hp0Var.V || i10 >= hp0Var.W) && (i10 < hp0Var.a0 || i10 >= hp0Var.b0)) {
-            return super.V0(i10);
-        }
-        return 0;
+    @Override // r0.n
+    public r0.l1 T0(View view, r0.l1 l1Var) {
+        i0.c defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
+        bq0 bq0Var = this.b;
+        bq0Var.b0 = defaultWindowInsets;
+        mp0 mp0Var = bq0Var.h.b;
+        int i10 = defaultWindowInsets.a;
+        int paddingTop = mp0Var.getPaddingTop();
+        i0.c cVar = bq0Var.b0;
+        mp0Var.setPadding(i10, paddingTop, cVar.c, AndroidUtilities.dp(72.0f) + cVar.d);
+        mp0 mp0Var2 = bq0Var.n.b;
+        int i11 = bq0Var.b0.a;
+        int paddingTop2 = mp0Var2.getPaddingTop();
+        i0.c cVar2 = bq0Var.b0;
+        mp0Var2.setPadding(i11, paddingTop2, cVar2.c, AndroidUtilities.dp(72.0f) + cVar2.d);
+        FrameLayout frameLayout = bq0Var.P;
+        i0.c cVar3 = bq0Var.b0;
+        frameLayout.setPadding(cVar3.a, 0, cVar3.c, cVar3.d);
+        return r0.l1.b;
     }
 
-    @Override // org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        hp0 hp0Var = this.V2;
-        if (!hp0Var.D || hp0Var.B == null || hp0Var.C == null) {
+    @Override // yf.b0
+    public void a(int i10) {
+        bq0 bq0Var = this.b;
+        gh.d dVar = bq0Var.g0;
+        ArrayList arrayList = bq0Var.k0;
+        bh.f fVar = bq0Var.f0;
+        int i11 = Build.VERSION.SDK_INT;
+        if (i11 < 31 || fVar == null) {
             return;
         }
-        int save = canvas.save();
-        canvas.translate(hp0Var.B.getLeft() + hp0Var.C.getLeft(), hp0Var.C.getTop());
-        hp0Var.B.draw(canvas);
-        canvas.restoreToCount(save);
-    }
-
-    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
-        super.onLayout(z4, i10, i11, i12, i13);
-        hp0 hp0Var = this.V2;
-        np0 np0Var = hp0Var.m0;
-        hp0Var.h();
-        if (hp0Var.H != null) {
-            if (hp0Var.G == null || !hp0Var.c()) {
-                return;
+        ArrayList arrayList2 = bq0Var.j0;
+        int a2 = yf.f0.a((i11 < 29 || dVar == null) ? 0 : dVar.c(0, AndroidUtilities.dp(8.0f), arrayList2), arrayList2, arrayList);
+        int measuredWidth = bq0Var.d.getMeasuredWidth();
+        for (int i12 = 0; i12 < a2; i12++) {
+            RectF rectF = (RectF) arrayList.get(i12);
+            float f7 = measuredWidth;
+            rectF.left = w7.p.a(rectF.left, 0.0f, f7);
+            rectF.top = Math.max(0.0f, rectF.top);
+            rectF.right = w7.p.a(rectF.right, 0.0f, f7);
+            rectF.bottom = Math.min(bq0Var.d.getHeight(), rectF.bottom);
+        }
+        fVar.g(a2, arrayList);
+        if (fVar.e(bq0Var.i0, bq0Var.d.getWidth(), bq0Var.d.getHeight())) {
+            if (dVar != null) {
+                dVar.d();
             }
-            hp0Var.G.g(false);
-            return;
+            Iterator it = bq0Var.d0.iterator();
+            while (it.hasNext()) {
+                ((View) it.next()).invalidate();
+            }
         }
-        lh.l7 l7Var = this.U2 == 1 ? np0Var.c : np0Var.b;
-        if (l7Var == null || !hp0Var.c()) {
-            return;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 2:
+                this.b.finishFragment();
+                break;
+            default:
+                this.b.y0();
+                break;
         }
-        l7Var.a();
     }
 }

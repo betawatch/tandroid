@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import dd.p;
-import k7.p7;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzee extends i implements p {
+final class zzee extends j implements p {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ long zzc;
@@ -18,32 +19,32 @@ final class zzee extends i implements p {
     private /* synthetic */ Object zzg;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzee(zzeh zzehVar, long j10, zzdw zzdwVar, String str, zzhh zzhhVar, c cVar) {
+    public zzee(zzeh zzehVar, long j3, zzdw zzdwVar, String str, zzhh zzhhVar, c cVar) {
         super(2, cVar);
         this.zzb = zzehVar;
-        this.zzc = j10;
+        this.zzc = j3;
         this.zzd = zzdwVar;
         this.zze = str;
         this.zzf = zzhhVar;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzee zzeeVar = new zzee(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, cVar);
         zzeeVar.zzg = obj;
         return zzeeVar;
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzee) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzee) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:18:0x0034, code lost:
     
         if (r8 != r0) goto L17;
      */
-    @Override // wc.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -53,24 +54,24 @@ final class zzee extends i implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                p7.b(obj);
+                t7.b(obj);
                 zzhkVar = (zzhk) this.zzg;
                 zzeh zzehVar = this.zzb;
-                long j10 = this.zzc;
-                zzeh.zzf(zzehVar, j10);
+                long j3 = this.zzc;
+                zzeh.zzf(zzehVar, j3);
                 zzdw zzdwVar = this.zzd;
                 this.zzg = zzhkVar;
                 this.zza = 1;
-                obj = zzdwVar.zzb(j10, this);
+                obj = zzdwVar.zzb(j3, this);
             } else {
                 if (i10 != 1) {
-                    p7.b(obj);
+                    t7.b(obj);
                     zzeq zzeqVar = new zzeq(this.zzd, this.zze, this.zzf);
                     this.zzb.zzc = zzeqVar;
                     return zzeqVar;
                 }
                 zzhkVar = (zzhk) this.zzg;
-                p7.b(obj);
+                t7.b(obj);
             }
             this.zzg = null;
             this.zza = 2;
@@ -80,10 +81,10 @@ final class zzee extends i implements p {
             zzeq zzeqVar2 = new zzeq(this.zzd, this.zze, this.zzf);
             this.zzb.zzc = zzeqVar2;
             return zzeqVar2;
-        } catch (zzcg e) {
-            throw e;
-        } catch (Exception e6) {
-            throw new zzcg(zzce.zzb, zzcd.zza, e6.getMessage(), null, 8, null);
+        } catch (zzcg e7) {
+            throw e7;
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zza, e10.getMessage(), null, 8, null);
         }
     }
 }

@@ -1,205 +1,77 @@
 package com.google.android.gms.internal.cast;
 
-import java.nio.charset.Charset;
-import java.util.AbstractList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.RandomAccess;
-import org.telegram.tgnet.ConnectionsManager;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class r5 extends u4 implements RandomAccess, i5, c6 {
-    public static final r5 d = new r5(new long[0], 0, false);
-    public long[] b;
-    public int c;
+public final class r5 extends t5 {
+    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
 
-    public r5(long[] jArr, int i10, boolean z4) {
-        super(z4);
-        this.b = jArr;
-        this.c = i10;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final void add(int i10, Object obj) {
-        int i11;
-        long longValue = ((Long) obj).longValue();
-        i();
-        if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, this.c, "Index:", ", Size:"));
-        }
-        int i12 = i10 + 1;
-        long[] jArr = this.b;
-        if (i11 < jArr.length) {
-            System.arraycopy(jArr, i10, jArr, i12, i11 - i10);
+    @Override // com.google.android.gms.internal.cast.t5
+    public final void a(Object obj, long j3) {
+        Object unmodifiableList;
+        List list = (List) u6.h(obj, j3);
+        if (list instanceof q5) {
+            unmodifiableList = ((q5) list).zzd();
         } else {
-            long[] jArr2 = new long[((i11 * 3) / 2) + 1];
-            System.arraycopy(jArr, 0, jArr2, 0, i10);
-            System.arraycopy(this.b, i10, jArr2, i12, this.c - i10);
-            this.b = jArr2;
-        }
-        this.b[i10] = longValue;
-        this.c++;
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean addAll(Collection collection) {
-        i();
-        Charset charset = k5.a;
-        collection.getClass();
-        if (!(collection instanceof r5)) {
-            return super.addAll(collection);
-        }
-        r5 r5Var = (r5) collection;
-        int i10 = r5Var.c;
-        if (i10 == 0) {
-            return false;
-        }
-        int i11 = this.c;
-        if (ConnectionsManager.DEFAULT_DATACENTER_ID - i11 < i10) {
-            throw new OutOfMemoryError();
-        }
-        int i12 = i11 + i10;
-        long[] jArr = this.b;
-        if (i12 > jArr.length) {
-            this.b = Arrays.copyOf(jArr, i12);
-        }
-        System.arraycopy(r5Var.b, 0, this.b, this.c, r5Var.c);
-        this.c = i12;
-        ((AbstractList) this).modCount++;
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean contains(Object obj) {
-        return indexOf(obj) != -1;
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.Collection, java.util.List
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof r5)) {
-            return super.equals(obj);
-        }
-        r5 r5Var = (r5) obj;
-        if (this.c != r5Var.c) {
-            return false;
-        }
-        long[] jArr = r5Var.b;
-        for (int i10 = 0; i10 < this.c; i10++) {
-            if (this.b[i10] != jArr[i10]) {
-                return false;
+            if (c.isAssignableFrom(list.getClass())) {
+                return;
             }
-        }
-        return true;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* synthetic */ Object get(int i10) {
-        n(i10);
-        return Long.valueOf(this.b[i10]);
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.Collection, java.util.List
-    public final int hashCode() {
-        int i10 = 1;
-        for (int i11 = 0; i11 < this.c; i11++) {
-            long j10 = this.b[i11];
-            Charset charset = k5.a;
-            i10 = (i10 * 31) + ((int) (j10 ^ (j10 >>> 32)));
-        }
-        return i10;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final int indexOf(Object obj) {
-        if (!(obj instanceof Long)) {
-            return -1;
-        }
-        long longValue = ((Long) obj).longValue();
-        int i10 = this.c;
-        for (int i11 = 0; i11 < i10; i11++) {
-            if (this.b[i11] == longValue) {
-                return i11;
+            if ((list instanceof f6) && (list instanceof m5)) {
+                w4 w4Var = (w4) ((m5) list);
+                boolean z10 = w4Var.a;
+                if (z10 && z10) {
+                    w4Var.a = false;
+                    return;
+                }
+                return;
             }
+            unmodifiableList = DesugarCollections.unmodifiableList(list);
         }
-        return -1;
+        u6.l(obj, j3, unmodifiableList);
     }
 
-    public final void n(int i10) {
-        if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, this.c, "Index:", ", Size:"));
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // com.google.android.gms.internal.cast.t5
+    public final void b(Object obj, long j3, Object obj2) {
+        p5 p5Var;
+        List list = (List) u6.h(obj2, j3);
+        int size = list.size();
+        List list2 = (List) u6.h(obj, j3);
+        if (list2.isEmpty()) {
+            list2 = list2 instanceof q5 ? new p5(size) : ((list2 instanceof f6) && (list2 instanceof m5)) ? ((m5) list2).zzg(size) : new ArrayList(size);
+            u6.l(obj, j3, list2);
+        } else {
+            if (c.isAssignableFrom(list2.getClass())) {
+                ArrayList arrayList = new ArrayList(list2.size() + size);
+                arrayList.addAll(list2);
+                u6.l(obj, j3, arrayList);
+                p5Var = arrayList;
+            } else if (list2 instanceof p6) {
+                p5 p5Var2 = new p5(list2.size() + size);
+                p5Var2.addAll(p5Var2.b.size(), (p6) list2);
+                u6.l(obj, j3, p5Var2);
+                p5Var = p5Var2;
+            } else if ((list2 instanceof f6) && (list2 instanceof m5)) {
+                m5 m5Var = (m5) list2;
+                if (!((w4) m5Var).a) {
+                    list2 = m5Var.zzg(list2.size() + size);
+                    u6.l(obj, j3, list2);
+                }
+            }
+            list2 = p5Var;
         }
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object remove(int i10) {
-        i();
-        n(i10);
-        long[] jArr = this.b;
-        long j10 = jArr[i10];
-        if (i10 < this.c - 1) {
-            System.arraycopy(jArr, i10 + 1, jArr, i10, (r3 - i10) - 1);
+        int size2 = list2.size();
+        int size3 = list.size();
+        if (size2 > 0 && size3 > 0) {
+            list2.addAll(list);
         }
-        this.c--;
-        ((AbstractList) this).modCount++;
-        return Long.valueOf(j10);
-    }
-
-    @Override // java.util.AbstractList
-    public final void removeRange(int i10, int i11) {
-        i();
-        if (i11 < i10) {
-            throw new IndexOutOfBoundsException("toIndex < fromIndex");
+        if (size2 > 0) {
+            list = list2;
         }
-        long[] jArr = this.b;
-        System.arraycopy(jArr, i11, jArr, i10, this.c - i11);
-        this.c -= i11 - i10;
-        ((AbstractList) this).modCount++;
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public final /* bridge */ /* synthetic */ Object set(int i10, Object obj) {
-        long longValue = ((Long) obj).longValue();
-        i();
-        n(i10);
-        long[] jArr = this.b;
-        long j10 = jArr[i10];
-        jArr[i10] = longValue;
-        return Long.valueOf(j10);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.c;
-    }
-
-    @Override // com.google.android.gms.internal.cast.j5
-    public final /* bridge */ /* synthetic */ j5 zzg(int i10) {
-        if (i10 >= this.c) {
-            return new r5(Arrays.copyOf(this.b, i10), this.c, true);
-        }
-        throw new IllegalArgumentException();
-    }
-
-    @Override // com.google.android.gms.internal.cast.u4, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final /* bridge */ /* synthetic */ boolean add(Object obj) {
-        long longValue = ((Long) obj).longValue();
-        i();
-        int i10 = this.c;
-        long[] jArr = this.b;
-        if (i10 == jArr.length) {
-            long[] jArr2 = new long[((i10 * 3) / 2) + 1];
-            System.arraycopy(jArr, 0, jArr2, 0, i10);
-            this.b = jArr2;
-        }
-        long[] jArr3 = this.b;
-        int i11 = this.c;
-        this.c = i11 + 1;
-        jArr3[i11] = longValue;
-        return true;
+        u6.l(obj, j3, list);
     }
 }

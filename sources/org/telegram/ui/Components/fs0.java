@@ -3,28 +3,28 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Canvas;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class fs0 extends u00 {
-    public final /* synthetic */ tr0 R;
-    public final /* synthetic */ yu0 S;
+public final class fs0 extends t00 {
+    public final /* synthetic */ tr0 U;
+    public final /* synthetic */ xu0 V;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fs0(yu0 yu0Var, Context context, tr0 tr0Var) {
+    public fs0(xu0 xu0Var, Context context, tr0 tr0Var) {
         super(context, null);
-        this.S = yu0Var;
-        this.R = tr0Var;
+        this.V = xu0Var;
+        this.U = tr0Var;
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.t00
     public final int getColumnsCount() {
-        return this.S.j1[yu0.p0(this.R.C) ? 1 : 0];
+        return this.V.m1[xu0.p0(this.U.F) ? 1 : 0];
     }
 
-    @Override // org.telegram.ui.Components.u00
+    @Override // org.telegram.ui.Components.t00
     public final int getViewType() {
         setIsSingleCell(false);
-        int i10 = this.R.C;
+        int i10 = this.U.F;
         if (i10 == 0 || i10 == 5) {
             return 2;
         }
@@ -37,11 +37,11 @@ public final class fs0 extends u00 {
             }
             if (i10 != 7) {
                 if (i10 == 6) {
-                    if (this.S.F0.getTabsCount() == 1) {
+                    if (this.V.I0.getTabsCount() == 1) {
                         setIsSingleCell(true);
                         return 1;
                     }
-                } else if (yu0.p0(i10)) {
+                } else if (xu0.p0(i10)) {
                     return 27;
                 }
                 return 1;
@@ -50,11 +50,11 @@ public final class fs0 extends u00 {
         return 6;
     }
 
-    @Override // org.telegram.ui.Components.u00, android.view.View
+    @Override // org.telegram.ui.Components.t00, android.view.View
     public final void onDraw(Canvas canvas) {
-        yu0 yu0Var = this.S;
-        yu0Var.Q0.setColor(yu0Var.h0(org.telegram.ui.ActionBar.j6.d6));
-        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), yu0Var.Q0);
+        xu0 xu0Var = this.V;
+        xu0Var.T0.setColor(xu0Var.h0(org.telegram.ui.ActionBar.j6.d6));
+        canvas.drawRect(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight(), xu0Var.T0);
         super.onDraw(canvas);
     }
 }

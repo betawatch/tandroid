@@ -1,48 +1,94 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.TextUtils;
-import android.widget.TextView;
+import android.view.MotionEvent;
+import android.view.accessibility.AccessibilityNodeInfo;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class t7 extends w7 {
-    public final /* synthetic */ Context B;
-    public final /* synthetic */ c8 C;
-    public final /* synthetic */ int y;
+public final class t7 extends aj0 {
+    public float r;
+    public float s;
+    public boolean v;
+    public final org.telegram.ui.Cells.l7 w;
+    public final /* synthetic */ float x;
+    public final /* synthetic */ k8 y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ t7(c8 c8Var, Context context, Context context2, int i10) {
+    public t7(k8 k8Var, Context context, float f7) {
         super(context);
-        this.y = i10;
-        this.C = c8Var;
-        this.B = context2;
+        this.y = k8Var;
+        this.x = f7;
+        this.w = new org.telegram.ui.Cells.l7(this, 3);
     }
 
-    @Override // org.telegram.ui.Components.w7
-    public final TextView a() {
-        switch (this.y) {
-            case 0:
-                u90 u90Var = new u90(this.B);
-                u90Var.setTextColor(this.C.getThemedColor(org.telegram.ui.ActionBar.j6.Oi));
-                u90Var.setTextSize(1, 17.0f);
-                u90Var.setTypeface(AndroidUtilities.bold());
-                u90Var.setEllipsize(TextUtils.TruncateAt.END);
-                u90Var.setSingleLine(true);
-                return u90Var;
-            default:
-                u90 u90Var2 = new u90(this.B);
-                int i10 = org.telegram.ui.ActionBar.j6.Si;
-                c8 c8Var = this.C;
-                u90Var2.setTextColor(c8Var.getThemedColor(i10));
-                u90Var2.setTextSize(1, 13.0f);
-                u90Var2.setEllipsize(TextUtils.TruncateAt.END);
-                u90Var2.setSingleLine(true);
-                u90Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
-                u90Var2.setBackground(org.telegram.ui.ActionBar.j6.Y(c8Var.getThemedColor(org.telegram.ui.ActionBar.j6.i6), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f)));
-                u90Var2.setOnClickListener(new w2(3, this, u90Var2));
-                return u90Var2;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.addAction(16);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0029, code lost:
+    
+        if (r5 != 3) goto L20;
+     */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        k8 k8Var = this.y;
+        t7 t7Var = k8Var.L;
+        if (k8Var.T.v || k8Var.H0 == -1) {
+            return false;
         }
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        int action = motionEvent.getAction();
+        org.telegram.ui.Cells.l7 l7Var = this.w;
+        if (action == 0) {
+            this.v = false;
+            this.r = rawX;
+            this.s = rawY;
+            AndroidUtilities.runOnUIThread(l7Var, 300L);
+            if (getBackground() != null) {
+                getBackground().setHotspot(this.r, this.s);
+            }
+            setPressed(true);
+            return true;
+        }
+        if (action != 1) {
+            if (action == 2) {
+                float f7 = rawX - this.r;
+                float f10 = rawY - this.s;
+                float f11 = (f10 * f10) + (f7 * f7);
+                float f12 = this.x;
+                if (f11 > f12 * f12 && !this.v) {
+                    AndroidUtilities.cancelRunOnUIThread(l7Var);
+                    setPressed(false);
+                }
+            }
+            return true;
+        }
+        if (!this.v && motionEvent.getAction() == 1 && isPressed()) {
+            MediaController.getInstance().playNextMessage();
+            t7Var.setProgress(0.0f);
+            t7Var.d();
+        }
+        AndroidUtilities.cancelRunOnUIThread(l7Var);
+        if (k8Var.J0 > 0) {
+            MediaController.getInstance().setPlaybackSpeed(true, 1.0f);
+            if (MediaController.getInstance().isMessagePaused()) {
+                k8Var.L0 = 0L;
+                k8Var.N0.run();
+            }
+        }
+        k8Var.H0 = 0;
+        setPressed(false);
+        k8Var.J0 = 0;
+        k8Var.I0 = -1.0f;
+        return true;
     }
 }

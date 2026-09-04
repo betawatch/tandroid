@@ -1,45 +1,64 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class k7 extends j7 {
-    public final ArrayList f;
-    public final /* synthetic */ w7 h;
+public final class k7 extends FrameLayout {
+    public final org.telegram.ui.Components.mp a;
+    public final FrameLayout b;
+    public final TextView c;
+    public boolean d;
+    public int e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ g7 h;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k7(w7 w7Var, int i10) {
-        super(i10);
-        this.h = w7Var;
-        this.f = new ArrayList();
+    public k7(g7 g7Var, Context context, int i10) {
+        super(context);
+        this.f = i10;
+        this.h = g7Var;
+        org.telegram.ui.Components.mp mpVar = new org.telegram.ui.Components.mp(context, 21, null);
+        this.a = mpVar;
+        mpVar.setDrawBackgroundAsArc(14);
+        mpVar.b(org.telegram.ui.ActionBar.j6.i7, org.telegram.ui.ActionBar.j6.g7, org.telegram.ui.ActionBar.j6.k7);
+        View view = new View(getContext());
+        view.setOnClickListener(new a(this, 8));
+        FrameLayout frameLayout = new FrameLayout(context);
+        this.b = frameLayout;
+        TextView textView = new TextView(context);
+        this.c = textView;
+        textView.setTextSize(1, 16.0f);
+        textView.setGravity(5);
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.n6, false));
+        if (LocaleController.isRTL) {
+            addView(mpVar, w7.x5.d(24, 24.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
+            addView(view, w7.x5.d(40, 40.0f, 21, 0.0f, 0.0f, 0.0f, 0.0f));
+            addView(frameLayout, w7.x5.d(-1, -2.0f, 0, 90.0f, 0.0f, 40.0f, 0.0f));
+            addView(textView, w7.x5.d(69, -2.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+            return;
+        }
+        addView(mpVar, w7.x5.d(24, 24.0f, 19, 18.0f, 0.0f, 0.0f, 0.0f));
+        addView(view, w7.x5.d(40, 40.0f, 19, 0.0f, 0.0f, 0.0f, 0.0f));
+        addView(frameLayout, w7.x5.d(-1, -2.0f, 0, 48.0f, 0.0f, 90.0f, 0.0f));
+        addView(textView, w7.x5.d(69, -2.0f, 21, 0.0f, 0.0f, 21.0f, 0.0f));
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public boolean D(f2.l1 l1Var) {
-        return !(this instanceof s7);
-    }
-
-    @Override // org.telegram.ui.j7
-    public void F() {
-        ArrayList arrayList = this.f;
-        arrayList.clear();
-        ArrayList arrayList2 = this.e;
-        arrayList.addAll(arrayList2);
-        arrayList2.clear();
-        mh.b bVar = this.h.f;
-        if (bVar != null) {
-            int i10 = this.d;
-            ArrayList arrayList3 = i10 == 1 ? bVar.d : i10 == 2 ? bVar.e : i10 == 3 ? bVar.f : i10 == 5 ? bVar.g : i10 == 4 ? bVar.h : null;
-            if (arrayList3 != null) {
-                for (int i11 = 0; i11 < arrayList3.size(); i11++) {
-                    mh.a aVar = (mh.a) arrayList3.get(i11);
-                    q7 q7Var = new q7(2, true);
-                    q7Var.d = aVar;
-                    arrayList2.add(q7Var);
-                }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.d) {
+            if (LocaleController.isRTL) {
+                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(48.0f), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+            } else {
+                canvas.drawLine(getMeasuredWidth() - AndroidUtilities.dp(90.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
             }
         }
-        E(arrayList, arrayList2);
     }
 }

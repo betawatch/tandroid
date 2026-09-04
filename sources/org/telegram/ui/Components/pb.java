@@ -1,16 +1,10 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class pb extends qb implements ob {
-    public f90 d;
-
-    @Override // org.telegram.ui.Components.qb
-    public void setTextColor(int i10) {
-        super.setTextColor(i10);
-        f90 f90Var = this.d;
-        if (f90Var != null) {
-            f90Var.setTextColor(i10);
-        }
+public final class pb extends qc {
+    @Override // org.telegram.ui.Components.qc
+    public final qc j() {
+        return this;
     }
 }

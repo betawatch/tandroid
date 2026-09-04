@@ -1,5 +1,6 @@
 package com.google.firebase.messaging;
 
+import ah.i0;
 import android.app.Application;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -23,62 +24,62 @@ import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class FirebaseMessaging {
     public static final long k = TimeUnit.HOURS.toSeconds(8);
-    public static ja.c l;
-    public static v2.f m;
+    public static a6.i l;
+    public static i5.f m;
     public static ScheduledThreadPoolExecutor n;
-    public final w8.g a;
+    public final k9.h a;
     public final Context b;
-    public final a9.a c;
+    public final n c;
     public final j d;
-    public final cb.m e;
+    public final m e;
     public final ScheduledThreadPoolExecutor f;
     public final ExecutorService g;
     public final ThreadPoolExecutor h;
-    public final n i;
+    public final p i;
     public boolean j;
 
-    public FirebaseMessaging(w8.g gVar, ba.b bVar, ba.b bVar2, ca.d dVar, v2.f fVar, y9.b bVar3) {
-        gVar.a();
-        Context context = gVar.a;
-        final n nVar = new n();
+    public FirebaseMessaging(k9.h hVar, pa.b bVar, pa.b bVar2, qa.d dVar, i5.f fVar, ma.b bVar3) {
+        hVar.a();
+        Context context = hVar.a;
+        final p pVar = new p();
         final int i10 = 0;
-        nVar.b = 0;
-        nVar.c = context;
-        gVar.a();
-        x5.a aVar = new x5.a(gVar.a);
-        final a9.a aVar2 = new a9.a();
-        aVar2.a = gVar;
-        aVar2.b = nVar;
-        aVar2.c = aVar;
-        aVar2.d = bVar;
-        aVar2.e = bVar2;
-        aVar2.f = dVar;
-        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new i9.u("Firebase-Messaging-Task"));
+        pVar.b = 0;
+        pVar.c = context;
+        hVar.a();
+        j6.a aVar = new j6.a(hVar.a);
+        final n nVar = new n();
+        nVar.a = hVar;
+        nVar.b = pVar;
+        nVar.c = aVar;
+        nVar.d = bVar;
+        nVar.e = bVar2;
+        nVar.f = dVar;
+        ExecutorService newSingleThreadExecutor = Executors.newSingleThreadExecutor(new c5.w("Firebase-Messaging-Task"));
         final int i11 = 1;
-        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new i9.u("Firebase-Messaging-Init"));
-        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new i9.u("Firebase-Messaging-File-Io"));
+        ScheduledThreadPoolExecutor scheduledThreadPoolExecutor = new ScheduledThreadPoolExecutor(1, new c5.w("Firebase-Messaging-Init"));
+        ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.w("Firebase-Messaging-File-Io"));
         this.j = false;
         m = fVar;
-        this.a = gVar;
-        cb.m mVar = new cb.m();
+        this.a = hVar;
+        m mVar = new m();
         mVar.d = this;
         mVar.b = bVar3;
         this.e = mVar;
-        gVar.a();
-        final Context context2 = gVar.a;
+        hVar.a();
+        final Context context2 = hVar.a;
         this.b = context2;
         k kVar = new k();
-        this.i = nVar;
+        this.i = pVar;
         this.g = newSingleThreadExecutor;
-        this.c = aVar2;
+        this.c = nVar;
         this.d = new j(newSingleThreadExecutor);
         this.f = scheduledThreadPoolExecutor;
         this.h = threadPoolExecutor;
-        gVar.a();
+        hVar.a();
         if (context instanceof Application) {
             ((Application) context).registerActivityLifecycleCallbacks(kVar);
         } else {
@@ -98,7 +99,7 @@ public class FirebaseMessaging {
                 Code decompiled incorrectly, please refer to instructions dump.
             */
             public final void run() {
-                boolean z4;
+                boolean z10;
                 Context applicationContext;
                 PackageManager packageManager;
                 ApplicationInfo applicationInfo;
@@ -106,7 +107,7 @@ public class FirebaseMessaging {
                 switch (i10) {
                     case 0:
                         FirebaseMessaging firebaseMessaging = this.b;
-                        if (firebaseMessaging.e.o() && firebaseMessaging.g(firebaseMessaging.d())) {
+                        if (firebaseMessaging.e.n() && firebaseMessaging.g(firebaseMessaging.d())) {
                             synchronized (firebaseMessaging) {
                                 if (!firebaseMessaging.j) {
                                     firebaseMessaging.f(0L);
@@ -130,51 +131,51 @@ public class FirebaseMessaging {
                         } catch (PackageManager.NameNotFoundException unused) {
                         }
                         if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(applicationContext.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_messaging_notification_delegation_enabled")) {
-                            z4 = applicationInfo.metaData.getBoolean("firebase_messaging_notification_delegation_enabled");
+                            z10 = applicationInfo.metaData.getBoolean("firebase_messaging_notification_delegation_enabled");
                             if (Build.VERSION.SDK_INT >= 29) {
                                 Tasks.forResult(null);
                                 return;
                             }
                             TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                            p.a(context3, z4, taskCompletionSource);
+                            b2.c.a(context3, z10, taskCompletionSource);
                             taskCompletionSource.getTask();
                             return;
                         }
-                        z4 = true;
+                        z10 = true;
                         if (Build.VERSION.SDK_INT >= 29) {
                         }
                         break;
                 }
             }
         });
-        final ScheduledThreadPoolExecutor scheduledThreadPoolExecutor2 = new ScheduledThreadPoolExecutor(1, new i9.u("Firebase-Messaging-Topics-Io"));
-        int i12 = x.j;
-        Tasks.call(scheduledThreadPoolExecutor2, new Callable() { // from class: com.google.firebase.messaging.w
+        final ScheduledThreadPoolExecutor scheduledThreadPoolExecutor2 = new ScheduledThreadPoolExecutor(1, new c5.w("Firebase-Messaging-Topics-Io"));
+        int i12 = y.j;
+        Tasks.call(scheduledThreadPoolExecutor2, new Callable() { // from class: com.google.firebase.messaging.x
             @Override // java.util.concurrent.Callable
             public final Object call() {
-                v vVar;
+                w wVar;
                 Context context3 = context2;
                 ScheduledThreadPoolExecutor scheduledThreadPoolExecutor3 = scheduledThreadPoolExecutor2;
                 FirebaseMessaging firebaseMessaging = this;
+                p pVar2 = pVar;
                 n nVar2 = nVar;
-                a9.a aVar3 = aVar2;
-                synchronized (v.class) {
+                synchronized (w.class) {
                     try {
-                        WeakReference weakReference = v.d;
-                        vVar = weakReference != null ? (v) weakReference.get() : null;
-                        if (vVar == null) {
-                            v vVar2 = new v(context3.getSharedPreferences("com.google.android.gms.appid", 0), scheduledThreadPoolExecutor3);
-                            vVar2.b();
-                            v.d = new WeakReference(vVar2);
-                            vVar = vVar2;
+                        WeakReference weakReference = w.d;
+                        wVar = weakReference != null ? (w) weakReference.get() : null;
+                        if (wVar == null) {
+                            w wVar2 = new w(context3.getSharedPreferences("com.google.android.gms.appid", 0), scheduledThreadPoolExecutor3);
+                            wVar2.b();
+                            w.d = new WeakReference(wVar2);
+                            wVar = wVar2;
                         }
                     } catch (Throwable th2) {
                         throw th2;
                     }
                 }
-                return new x(firebaseMessaging, nVar2, vVar, aVar3, context3, scheduledThreadPoolExecutor3);
+                return new y(firebaseMessaging, pVar2, wVar, nVar2, context3, scheduledThreadPoolExecutor3);
             }
-        }).addOnSuccessListener(scheduledThreadPoolExecutor, new a1.c(this, 5));
+        }).addOnSuccessListener(scheduledThreadPoolExecutor, new a1.c(this, 14));
         scheduledThreadPoolExecutor.execute(new Runnable(this) { // from class: com.google.firebase.messaging.l
             public final /* synthetic */ FirebaseMessaging b;
 
@@ -189,7 +190,7 @@ public class FirebaseMessaging {
                 Code decompiled incorrectly, please refer to instructions dump.
             */
             public final void run() {
-                boolean z4;
+                boolean z10;
                 Context applicationContext;
                 PackageManager packageManager;
                 ApplicationInfo applicationInfo;
@@ -197,7 +198,7 @@ public class FirebaseMessaging {
                 switch (i11) {
                     case 0:
                         FirebaseMessaging firebaseMessaging = this.b;
-                        if (firebaseMessaging.e.o() && firebaseMessaging.g(firebaseMessaging.d())) {
+                        if (firebaseMessaging.e.n() && firebaseMessaging.g(firebaseMessaging.d())) {
                             synchronized (firebaseMessaging) {
                                 if (!firebaseMessaging.j) {
                                     firebaseMessaging.f(0L);
@@ -221,17 +222,17 @@ public class FirebaseMessaging {
                         } catch (PackageManager.NameNotFoundException unused) {
                         }
                         if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(applicationContext.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_messaging_notification_delegation_enabled")) {
-                            z4 = applicationInfo.metaData.getBoolean("firebase_messaging_notification_delegation_enabled");
+                            z10 = applicationInfo.metaData.getBoolean("firebase_messaging_notification_delegation_enabled");
                             if (Build.VERSION.SDK_INT >= 29) {
                                 Tasks.forResult(null);
                                 return;
                             }
                             TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-                            p.a(context3, z4, taskCompletionSource);
+                            b2.c.a(context3, z10, taskCompletionSource);
                             taskCompletionSource.getTask();
                             return;
                         }
-                        z4 = true;
+                        z10 = true;
                         if (Build.VERSION.SDK_INT >= 29) {
                         }
                         break;
@@ -240,96 +241,96 @@ public class FirebaseMessaging {
         });
     }
 
-    public static void b(Runnable runnable, long j10) {
+    public static void b(Runnable runnable, long j3) {
         synchronized (FirebaseMessaging.class) {
             try {
                 if (n == null) {
-                    n = new ScheduledThreadPoolExecutor(1, new i9.u("TAG"));
+                    n = new ScheduledThreadPoolExecutor(1, new c5.w("TAG"));
                 }
-                n.schedule(runnable, j10, TimeUnit.SECONDS);
+                n.schedule(runnable, j3, TimeUnit.SECONDS);
             } catch (Throwable th2) {
                 throw th2;
             }
         }
     }
 
-    public static synchronized ja.c c(Context context) {
-        ja.c cVar;
+    public static synchronized a6.i c(Context context) {
+        a6.i iVar;
         synchronized (FirebaseMessaging.class) {
             try {
                 if (l == null) {
-                    l = new ja.c(context);
+                    l = new a6.i(context, 12);
                 }
-                cVar = l;
+                iVar = l;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return cVar;
+        return iVar;
     }
 
-    public static synchronized FirebaseMessaging getInstance(w8.g gVar) {
+    public static synchronized FirebaseMessaging getInstance(k9.h hVar) {
         FirebaseMessaging firebaseMessaging;
         synchronized (FirebaseMessaging.class) {
-            firebaseMessaging = (FirebaseMessaging) gVar.b(FirebaseMessaging.class);
-            b6.m.i(firebaseMessaging, "Firebase Messaging component is not present");
+            firebaseMessaging = (FirebaseMessaging) hVar.b(FirebaseMessaging.class);
+            n6.l.i(firebaseMessaging, "Firebase Messaging component is not present");
         }
         return firebaseMessaging;
     }
 
     public final String a() {
         Task task;
-        s d = d();
+        t d = d();
         if (!g(d)) {
             return d.a;
         }
-        String c3 = n.c(this.a);
+        String c10 = p.c(this.a);
         j jVar = this.d;
         synchronized (jVar) {
-            task = (Task) ((a0.f) jVar.b).get(c3);
+            task = (Task) ((a0.f) jVar.b).get(c10);
             if (task == null) {
                 if (Log.isLoggable("FirebaseMessaging", 3)) {
-                    Log.d("FirebaseMessaging", "Making new request for: " + c3);
+                    Log.d("FirebaseMessaging", "Making new request for: " + c10);
                 }
-                a9.a aVar = this.c;
-                task = aVar.n(aVar.B(n.c((w8.g) aVar.a), "*", new Bundle())).onSuccessTask(this.h, new androidx.car.app.utils.a((Object) this, c3, (Object) d, 2)).continueWithTask((Executor) jVar.a, new c1.b(3, jVar, c3));
-                ((a0.f) jVar.b).put(c3, task);
+                n nVar = this.c;
+                task = nVar.o(nVar.D(p.c((k9.h) nVar.a), "*", new Bundle())).onSuccessTask(this.h, new androidx.car.app.utils.a((Object) this, c10, (Object) d, 4)).continueWithTask((Executor) jVar.a, new i0(8, jVar, c10));
+                ((a0.f) jVar.b).put(c10, task);
             } else if (Log.isLoggable("FirebaseMessaging", 3)) {
-                Log.d("FirebaseMessaging", "Joining ongoing request for: " + c3);
+                Log.d("FirebaseMessaging", "Joining ongoing request for: " + c10);
             }
         }
         try {
             return (String) Tasks.await(task);
-        } catch (InterruptedException | ExecutionException e) {
-            throw new IOException(e);
+        } catch (InterruptedException | ExecutionException e7) {
+            throw new IOException(e7);
         }
     }
 
-    public final s d() {
-        s b10;
-        ja.c c3 = c(this.b);
-        w8.g gVar = this.a;
-        gVar.a();
-        String d = "[DEFAULT]".equals(gVar.b) ? "" : gVar.d();
-        String c10 = n.c(this.a);
-        synchronized (c3) {
-            b10 = s.b(((SharedPreferences) c3.b).getString(d + "|T|" + c10 + "|*", null));
+    public final t d() {
+        t b10;
+        a6.i c10 = c(this.b);
+        k9.h hVar = this.a;
+        hVar.a();
+        String d = "[DEFAULT]".equals(hVar.b) ? "" : hVar.d();
+        String c11 = p.c(this.a);
+        synchronized (c10) {
+            b10 = t.b(((SharedPreferences) c10.b).getString(d + "|T|" + c11 + "|*", null));
         }
         return b10;
     }
 
-    public final synchronized void e(boolean z4) {
-        this.j = z4;
+    public final synchronized void e(boolean z10) {
+        this.j = z10;
     }
 
-    public final synchronized void f(long j10) {
-        b(new t(this, Math.min(Math.max(30L, 2 * j10), k)), j10);
+    public final synchronized void f(long j3) {
+        b(new u(this, Math.min(Math.max(30L, 2 * j3), k)), j3);
         this.j = true;
     }
 
-    public final boolean g(s sVar) {
-        if (sVar != null) {
-            return System.currentTimeMillis() > sVar.c + s.d || !this.i.a().equals(sVar.b);
+    public final boolean g(t tVar) {
+        if (tVar != null) {
+            return System.currentTimeMillis() > tVar.c + t.d || !this.i.a().equals(tVar.b);
         }
         return true;
     }

@@ -1,33 +1,6 @@
 package tc;
 
-import java.util.RandomAccess;
-import k7.q7;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends c implements RandomAccess {
-    public final c a;
-    public final int b;
-    public final int c;
-
-    public b(c cVar, int i10, int i11) {
-        this.a = cVar;
-        this.b = i10;
-        q7.a(i10, i11, cVar.i());
-        this.c = i11 - i10;
-    }
-
-    @Override // java.util.List
-    public final Object get(int i10) {
-        int i11 = this.c;
-        if (i10 < 0 || i10 >= i11) {
-            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, i11, "index: ", ", size: "));
-        }
-        return this.a.get(this.b + i10);
-    }
-
-    @Override // tc.c
-    public final int i() {
-        return this.c;
-    }
+public final class b extends g {
 }

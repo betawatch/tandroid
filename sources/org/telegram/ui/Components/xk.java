@@ -1,39 +1,28 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.view.View;
-import android.widget.FrameLayout;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.AndroidUtilities;
+import android.location.Location;
 import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class xk extends FrameLayout {
-    public final HashMap a;
-    public final /* synthetic */ al b;
+public final /* synthetic */ class xk implements q0.a {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ gl b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xk(al alVar, Context context) {
-        super(context);
-        this.b = alVar;
-        this.a = new HashMap();
+    public /* synthetic */ xk(gl glVar, int i10) {
+        this.a = i10;
+        this.b = glVar;
     }
 
-    public final void a() {
-        IMapsProvider.IMap iMap = this.b.E;
-        if (iMap == null) {
-            return;
-        }
-        IMapsProvider.IProjection projection = iMap.getProjection();
-        for (Map.Entry entry : this.a.entrySet()) {
-            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
-            View view = (View) entry.getValue();
-            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
-            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
-            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+    @Override // q0.a
+    public final void accept(Object obj) {
+        switch (this.a) {
+            case 0:
+                gl.K(this.b, (IMapsProvider.IMap) obj);
+                break;
+            default:
+                gl.R(this.b, (Location) obj);
+                break;
         }
     }
 }

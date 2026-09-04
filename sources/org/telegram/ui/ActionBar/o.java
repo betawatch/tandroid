@@ -5,7 +5,7 @@ import android.text.TextUtils;
 import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class o implements Runnable {
     public final /* synthetic */ int a;
@@ -33,22 +33,22 @@ public final /* synthetic */ class o implements Runnable {
             case 2:
                 if (actionBarLayout.a && actionBarLayout.getLastFragment() != null && actionBarLayout.s.getChildCount() == 0) {
                     if (BuildVars.DEBUG_VERSION) {
-                        FileLog.e(new RuntimeException(TextUtils.join(", ", actionBarLayout.f1)));
+                        FileLog.e(new RuntimeException(TextUtils.join(", ", actionBarLayout.i1)));
                     }
                     actionBarLayout.U(true, true);
                     break;
                 }
                 break;
             case 3:
-                Drawable drawable = ActionBarLayout.m1;
+                Drawable drawable = ActionBarLayout.p1;
                 actionBarLayout.F(false);
                 break;
             case 4:
-                Drawable drawable2 = ActionBarLayout.m1;
+                Drawable drawable2 = ActionBarLayout.p1;
                 actionBarLayout.F(false);
                 break;
             default:
-                actionBarLayout.y0.setVisibility(8);
+                actionBarLayout.B0.setVisibility(8);
                 break;
         }
     }

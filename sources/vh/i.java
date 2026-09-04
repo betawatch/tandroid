@@ -1,45 +1,103 @@
 package vh;
 
+import android.app.Activity;
+import android.content.res.Configuration;
+import android.graphics.Canvas;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.view.ViewTreeObserver;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Cells.t1;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class i implements ViewTreeObserver.OnGlobalFocusChangeListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class i extends View {
+    public final HashMap a;
+    public final ArrayList b;
+    public final ArrayList c;
+    public final int d;
 
-    public /* synthetic */ i(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public i(Activity activity) {
+        super(activity);
+        this.a = new HashMap();
+        this.b = new ArrayList();
+        this.c = new ArrayList();
+        this.d = UserConfig.selectedAccount;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalFocusChangeListener
-    public final void onGlobalFocusChanged(View view, View view2) {
-        switch (this.a) {
-            case 0:
-                ((q) this.b).Z();
-                break;
-            case 1:
-                ((y1) this.b).w0();
-                break;
-            case 2:
-                s3 s3Var = (s3) this.b;
-                s3Var.X2 = (view2 == null || s3Var.F(view2) == null) ? false : true;
-                if (view2 instanceof e1) {
-                    s3Var.I3 = (e1) view2;
-                    break;
-                }
-                break;
-            default:
-                j5 j5Var = (j5) this.b;
-                j5Var.x();
-                l5 l5Var = j5Var.v;
-                if (l5Var != null) {
-                    l5Var.invalidate();
-                    break;
-                }
-                break;
+    public static String b(t1 t1Var) {
+        MessageObject messageObject = t1Var.getMessageObject();
+        if (messageObject == null) {
+            return null;
+        }
+        return messageObject.getChatId() + "_" + messageObject.getId();
+    }
+
+    public final boolean a() {
+        Iterator it = this.a.entrySet().iterator();
+        while (it.hasNext()) {
+            if (!((h) ((Map.Entry) it.next()).getValue()).O) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        super.invalidateDrawable(drawable);
+        if (drawable instanceof h) {
+            invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public final void onConfigurationChanged(Configuration configuration) {
+        super.onConfigurationChanged(configuration);
+        HashMap hashMap = this.a;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            ((h) ((Map.Entry) it.next()).getValue()).d();
+        }
+        hashMap.clear();
+        this.b.clear();
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        HashMap hashMap = this.a;
+        Iterator it = hashMap.entrySet().iterator();
+        while (it.hasNext()) {
+            ((h) ((Map.Entry) it.next()).getValue()).draw(canvas);
+        }
+        ArrayList arrayList = this.b;
+        if (arrayList.isEmpty()) {
+            return;
+        }
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            h hVar = (h) hashMap.remove((String) obj);
+            if (hVar != null) {
+                hVar.d();
+            }
+        }
+        arrayList.clear();
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        Iterator it = this.a.entrySet().iterator();
+        while (it.hasNext()) {
+            ((h) ((Map.Entry) it.next()).getValue()).setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
         }
     }
 }

@@ -1,21 +1,63 @@
 package org.telegram.ui.Components;
 
-import android.view.MotionEvent;
+import android.graphics.Paint;
 import android.view.View;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class la extends View {
-    public int a;
+public final class la implements View.OnAttachStateChangeListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    @Override // android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        return false;
+    public /* synthetic */ la(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.c = obj;
+        this.b = obj2;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(this.a, TLObject.FLAG_30));
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewAttachedToWindow(View view) {
+        int i10 = this.a;
+        Object obj = this.b;
+        Object obj2 = this.c;
+        switch (i10) {
+            case 0:
+                ja jaVar = (ja) obj;
+                if (jaVar != null) {
+                    jaVar.d.add((na) obj2);
+                    break;
+                }
+                break;
+            default:
+                f01 f01Var = (f01) obj2;
+                f01Var.k = z5.update(f01Var.l, (View) obj, f01Var.k, f01Var.b);
+                break;
+        }
+    }
+
+    @Override // android.view.View.OnAttachStateChangeListener
+    public final void onViewDetachedFromWindow(View view) {
+        switch (this.a) {
+            case 0:
+                na naVar = (na) this.c;
+                ja jaVar = (ja) this.b;
+                if (jaVar != null) {
+                    ArrayList arrayList = jaVar.d;
+                    arrayList.remove(naVar);
+                    if (jaVar.e.isEmpty() && arrayList.isEmpty()) {
+                        jaVar.n.a();
+                    }
+                }
+                naVar.n = null;
+                Paint paint = naVar.h;
+                naVar.o = null;
+                paint.setShader(null);
+                break;
+            default:
+                z5.release((View) this.b, ((f01) this.c).k);
+                break;
+        }
     }
 }

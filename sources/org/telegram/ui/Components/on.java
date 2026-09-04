@@ -1,11 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
+import android.R;
+import android.content.Context;
+import android.view.ActionMode;
+import android.view.Menu;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public interface on {
-    void c(TLRPC.MessageMedia messageMedia, Editable editable, dh.i iVar, ArrayList arrayList, boolean z4, int i10, long j10);
+public final class on extends org.telegram.ui.Cells.c6 {
+    public final /* synthetic */ rn F;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public on(rn rnVar, Context context, int i10) {
+        super(context, i10, null, null);
+        this.F = rnVar;
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void g(org.telegram.ui.Cells.b6 b6Var, ActionMode actionMode) {
+        if (b6Var.isFocused() && b6Var.hasSelection()) {
+            Menu menu = actionMode.getMenu();
+            if (menu.findItem(R.id.copy) == null) {
+                return;
+            }
+            org.telegram.ui.co.k8(menu, ((org.telegram.ui.co) this.F.d.b.f0).h, false, true, true, true);
+        }
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void i(boolean z10) {
+        tn.M(this.F.d, this, z10);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void j(org.telegram.ui.Cells.c6 c6Var) {
+        tn.N(this.F.d, c6Var);
+    }
+
+    @Override // org.telegram.ui.Cells.c6
+    public final void k(org.telegram.ui.Cells.b6 b6Var) {
+        this.F.d.b.t1(b6Var, true);
+    }
 }

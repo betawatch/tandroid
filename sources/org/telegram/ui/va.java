@@ -3,7 +3,7 @@ package org.telegram.ui;
 import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class va implements MessagesStorage.IntCallback {
     public final /* synthetic */ int a;
@@ -16,7 +16,7 @@ public final /* synthetic */ class va implements MessagesStorage.IntCallback {
 
     @Override // org.telegram.messenger.MessagesStorage.IntCallback
     public final void run(int i10) {
-        iu0 iu0Var;
+        uu0 uu0Var;
         int i11 = this.a;
         Object obj = this.b;
         switch (i11) {
@@ -24,9 +24,9 @@ public final /* synthetic */ class va implements MessagesStorage.IntCallback {
                 ((ub) obj).V0(true);
                 break;
             case 1:
-                zn znVar = ((ln) obj).a;
-                if (i10 > 0 && znVar.getParentActivity() != null && znVar.fragmentView != null) {
-                    org.telegram.ui.Components.qc.a0(znVar).m(org.telegram.ui.Components.pc.F, i10, 0, 0, znVar.ba).j();
+                co coVar = ((on) obj).a;
+                if (i10 > 0 && coVar.getParentActivity() != null && coVar.fragmentView != null) {
+                    org.telegram.ui.Components.yc.a0(coVar).m(org.telegram.ui.Components.xc.I, i10, 0, 0, coVar.ea).j();
                     break;
                 }
                 break;
@@ -35,32 +35,32 @@ public final /* synthetic */ class va implements MessagesStorage.IntCallback {
                 break;
             case 3:
                 PhotoViewer photoViewer = (PhotoViewer) obj;
-                if (photoViewer.y != null && (iu0Var = photoViewer.b0) != null && i10 > 0) {
-                    org.telegram.ui.Components.qc.F(iu0Var, true).j();
+                if (photoViewer.y != null && (uu0Var = photoViewer.e0) != null && i10 > 0) {
+                    org.telegram.ui.Components.yc.F(uu0Var, true).j();
                     break;
                 }
                 break;
             case 4:
                 ProfileActivity profileActivity = (ProfileActivity) obj;
                 if (i10 != 1) {
-                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(profileActivity.b1));
+                    profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.peerSettingsDidLoad, Long.valueOf(profileActivity.e1));
                     break;
                 } else {
                     NotificationCenter notificationCenter = profileActivity.getNotificationCenter();
                     int i12 = NotificationCenter.closeChats;
                     notificationCenter.removeObserver(profileActivity, i12);
                     profileActivity.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(i12, new Object[0]);
-                    profileActivity.G1 = 0;
+                    profileActivity.J1 = 0;
                     profileActivity.finishFragment();
                     break;
                 }
             default:
-                sf1 sf1Var = ((we1) obj).a;
+                eg1 eg1Var = ((jf1) obj).a;
                 if (i10 != 0) {
-                    sf1Var.finishFragment();
+                    eg1Var.finishFragment();
                     break;
                 } else {
-                    sf1Var.O0(false);
+                    eg1Var.O0(false);
                     break;
                 }
         }

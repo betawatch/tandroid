@@ -1,32 +1,14 @@
 package n7;
 
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class i1 {
-    public final hb a;
-    public final Boolean b;
-    public final we c;
+public final class i1 implements h1 {
+    public static final e.a a;
 
-    public /* synthetic */ i1(l7.w0 w0Var) {
-        this.a = (hb) w0Var.b;
-        this.b = (Boolean) w0Var.c;
-        this.c = (we) w0Var.d;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof i1)) {
-            return false;
-        }
-        i1 i1Var = (i1) obj;
-        return b6.m.l(this.a, i1Var.a) && b6.m.l(this.b, i1Var.b) && b6.m.l(null, null) && b6.m.l(this.c, i1Var.c);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, null, this.c});
+    static {
+        int i10 = o.c;
+        Object[] objArr = y.r;
+        new b0("FIDO");
+        a = new e.a(Boolean.FALSE);
     }
 }

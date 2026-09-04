@@ -12,10 +12,10 @@ public interface b extends Temporal, j$.time.temporal.m, Comparable {
     k a();
 
     @Override // j$.time.temporal.Temporal
-    b c(long j10, j$.time.temporal.o oVar);
+    b c(long j3, j$.time.temporal.o oVar);
 
     @Override // j$.time.temporal.Temporal
-    b d(long j10, j$.time.temporal.q qVar);
+    b d(long j3, j$.time.temporal.q qVar);
 
     @Override // j$.time.temporal.l
     boolean e(j$.time.temporal.o oVar);
@@ -25,7 +25,7 @@ public interface b extends Temporal, j$.time.temporal.m, Comparable {
 
     int hashCode();
 
-    b t(long j10, j$.time.temporal.q qVar);
+    b t(long j3, j$.time.temporal.q qVar);
 
     String toString();
 

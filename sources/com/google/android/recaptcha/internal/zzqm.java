@@ -1,13 +1,13 @@
 package com.google.android.recaptcha.internal;
 
-import android.support.v4.media.a;
+import a4.a;
+import i2.g;
 import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Locale;
-import kf.k0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class zzqm implements Iterable, Serializable {
     public static final zzqm zzb = new zzqk(zzsv.zzb);
@@ -23,12 +23,12 @@ public abstract class zzqm implements Iterable, Serializable {
             return i13;
         }
         if (i10 < 0) {
-            throw new IndexOutOfBoundsException(k0.k(i10, "Beginning index: ", " < 0"));
+            throw new IndexOutOfBoundsException(g.j(i10, "Beginning index: ", " < 0"));
         }
         if (i11 < i10) {
-            throw new IndexOutOfBoundsException(a.k(i10, i11, "Beginning index larger than ending index: ", ", "));
+            throw new IndexOutOfBoundsException(a.l(i10, i11, "Beginning index larger than ending index: ", ", "));
         }
-        throw new IndexOutOfBoundsException(a.k(i11, i12, "End index: ", " >= "));
+        throw new IndexOutOfBoundsException(a.l(i11, i12, "End index: ", " >= "));
     }
 
     public static zzqm zzl(byte[] bArr, int i10, int i11) {
@@ -63,12 +63,12 @@ public abstract class zzqm implements Iterable, Serializable {
         String hexString = Integer.toHexString(System.identityHashCode(this));
         int zzd = zzd();
         String zza = zzd() <= 50 ? zzuq.zza(this) : zzuq.zza(zzg(0, 47)).concat("...");
-        StringBuilder sb = new StringBuilder("<ByteString@");
-        sb.append(hexString);
-        sb.append(" size=");
-        sb.append(zzd);
-        sb.append(" contents=\"");
-        return a.r(sb, zza, "\">");
+        StringBuilder sb2 = new StringBuilder("<ByteString@");
+        sb2.append(hexString);
+        sb2.append(" size=");
+        sb2.append(zzd);
+        sb2.append(" contents=\"");
+        return a.s(sb2, zza, "\">");
     }
 
     public abstract byte zza(int i10);

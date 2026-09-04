@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class r2 extends f1 implements RandomAccess {
     public static final Object[] d;
@@ -18,8 +18,8 @@ public final class r2 extends f1 implements RandomAccess {
         e = new r2(objArr, 0, false);
     }
 
-    public r2(Object[] objArr, int i10, boolean z4) {
-        super(z4);
+    public r2(Object[] objArr, int i10, boolean z10) {
+        super(z10);
         this.b = objArr;
         this.c = i10;
     }
@@ -29,7 +29,7 @@ public final class r2 extends f1 implements RandomAccess {
         int i11;
         i();
         if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a4.a.l(i10, this.c, "Index:", ", Size:"));
         }
         int i12 = i10 + 1;
         Object[] objArr = this.b;
@@ -55,7 +55,7 @@ public final class r2 extends f1 implements RandomAccess {
 
     public final void n(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a4.a.l(i10, this.c, "Index:", ", Size:"));
         }
     }
 

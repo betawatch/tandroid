@@ -3,7 +3,7 @@ package com.google.android.gms.internal.play_billing;
 import java.util.Arrays;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public enum j {
     b(-999),
@@ -41,13 +41,13 @@ public enum j {
 
     /* JADX WARN: Multi-variable type inference failed */
     static {
-        b4.e0 e0Var = new b4.e0((char) (0 == true ? 1 : 0), 4);
-        e0Var.c = new Object[8];
-        e0Var.b = 0;
+        a5.a aVar = new a5.a((char) (0 == true ? 1 : 0), 3);
+        aVar.c = new Object[8];
+        aVar.b = 0;
         for (j jVar : values()) {
             Integer valueOf = Integer.valueOf(jVar.a);
-            int i10 = e0Var.b + 1;
-            Object[] objArr = (Object[]) e0Var.c;
+            int i10 = aVar.b + 1;
+            Object[] objArr = (Object[]) aVar.c;
             int length = objArr.length;
             int i11 = i10 + i10;
             if (i11 > length) {
@@ -61,21 +61,21 @@ public enum j {
                         length = ConnectionsManager.DEFAULT_DATACENTER_ID;
                     }
                 }
-                e0Var.c = Arrays.copyOf(objArr, length);
+                aVar.c = Arrays.copyOf(objArr, length);
             }
-            Object[] objArr2 = (Object[]) e0Var.c;
-            int i12 = e0Var.b;
+            Object[] objArr2 = (Object[]) aVar.c;
+            int i12 = aVar.b;
             int i13 = i12 + i12;
             objArr2[i13] = valueOf;
             objArr2[i13 + 1] = jVar;
-            e0Var.b = i12 + 1;
+            aVar.b = i12 + 1;
         }
-        s sVar = (s) e0Var.d;
+        s sVar = (s) aVar.d;
         if (sVar != null) {
             throw sVar.a();
         }
-        a0 b10 = a0.b(e0Var.b, (Object[]) e0Var.c, e0Var);
-        s sVar2 = (s) e0Var.d;
+        a0 b10 = a0.b(aVar.b, (Object[]) aVar.c, aVar);
+        s sVar2 = (s) aVar.d;
         if (sVar2 != null) {
             throw sVar2.a();
         }

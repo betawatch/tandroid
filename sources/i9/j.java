@@ -1,29 +1,16 @@
 package i9;
 
-import android.util.Log;
-import java.io.IOException;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class j {
-    public static final i d = new i(0);
-    public static final e5.e e = new e5.e(14);
-    public final n9.b a;
-    public String b = null;
-    public String c = null;
-
-    public j(n9.b bVar) {
-        this.a = bVar;
-    }
-
-    public static void a(n9.b bVar, String str, String str2) {
-        if (str == null || str2 == null) {
-            return;
+public abstract /* synthetic */ class j {
+    public static /* synthetic */ boolean a(Unsafe unsafe, o oVar, long j3, c cVar, c cVar2) {
+        while (!unsafe.compareAndSwapObject(oVar, j3, cVar, cVar2)) {
+            if (unsafe.getObject(oVar, j3) != cVar) {
+                return false;
+            }
         }
-        try {
-            bVar.b(str, "aqs.".concat(str2)).createNewFile();
-        } catch (IOException e6) {
-            Log.w("FirebaseCrashlytics", "Failed to persist App Quality Sessions session id.", e6);
-        }
+        return true;
     }
 }

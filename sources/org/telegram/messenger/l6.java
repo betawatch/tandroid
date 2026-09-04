@@ -1,58 +1,27 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.tl.TL_stories;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class l6 implements Runnable {
-    public final /* synthetic */ int a = 1;
+    public final /* synthetic */ int a;
     public final /* synthetic */ MediaController b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
-    public final /* synthetic */ long f;
-    public final /* synthetic */ MessageSuggestionParams h;
-    public final /* synthetic */ MessageObject n;
-    public final /* synthetic */ MessageObject r;
-    public final /* synthetic */ TL_stories.StoryItem s;
-    public final /* synthetic */ Object v;
+    public final /* synthetic */ boolean c;
 
-    public /* synthetic */ l6(MediaController mediaController, int i10, int i11, long j10, long j11, MessageSuggestionParams messageSuggestionParams, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem, SendMessageChatArguments sendMessageChatArguments) {
+    public /* synthetic */ l6(MediaController mediaController, boolean z10, int i10) {
+        this.a = i10;
         this.b = mediaController;
-        this.c = i10;
-        this.d = i11;
-        this.e = j10;
-        this.f = j11;
-        this.h = messageSuggestionParams;
-        this.n = messageObject;
-        this.r = messageObject2;
-        this.s = storyItem;
-        this.v = sendMessageChatArguments;
+        this.c = z10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$prepareResumedRecording$25(this.c, (MediaDataController.DraftVoice) this.v, this.d, this.e, this.f, this.h, this.n, this.r, this.s);
+                this.b.lambda$toggleRecordingPause$28(this.c);
                 break;
             default:
-                this.b.lambda$startRecording$37(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, (SendMessageChatArguments) this.v);
+                this.b.lambda$toggleRecordingPause$32(this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ l6(MediaController mediaController, int i10, MediaDataController.DraftVoice draftVoice, int i11, long j10, long j11, MessageSuggestionParams messageSuggestionParams, MessageObject messageObject, MessageObject messageObject2, TL_stories.StoryItem storyItem) {
-        this.b = mediaController;
-        this.c = i10;
-        this.v = draftVoice;
-        this.d = i11;
-        this.e = j10;
-        this.f = j11;
-        this.h = messageSuggestionParams;
-        this.n = messageObject;
-        this.r = messageObject2;
-        this.s = storyItem;
     }
 }

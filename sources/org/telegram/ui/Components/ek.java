@@ -1,36 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ek extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.xq b;
+public final class ek extends s4.d0 {
+    public final /* synthetic */ ig.e0 r;
 
-    public ek(org.telegram.ui.xq xqVar) {
-        this.b = xqVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ek(ig.e0 e0Var, Context context) {
+        super(context);
+        this.r = e0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                ((gk) this.b.d).R.unlock();
-                break;
-            default:
-                org.telegram.ui.xq xqVar = this.b;
-                View view = xqVar.b;
-                view.setAlpha(1.0f);
-                f2.v0.x0(view);
-                ((gk) xqVar.d).U.r.removeView(view);
-                break;
-        }
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        return org.telegram.messenger.w1.z(56.0f, ((ok) this.r.V).r.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
     }
 
-    public ek(org.telegram.ui.xq xqVar, f2.v0 v0Var) {
-        this.b = xqVar;
+    @Override // s4.d0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

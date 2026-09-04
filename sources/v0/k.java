@@ -8,11 +8,11 @@ import android.credentials.GetCredentialResponse;
 import android.os.Bundle;
 import android.os.OutcomeReceiver;
 import android.util.Log;
-import k7.c8;
-import k7.d8;
-import k7.u8;
+import w7.b9;
+import w7.u7;
+import w7.v7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class k implements OutcomeReceiver {
     public final /* synthetic */ int a = 0;
@@ -27,21 +27,21 @@ public final class k implements OutcomeReceiver {
         switch (this.a) {
             case 0:
                 CreateCredentialException error = (CreateCredentialException) th2;
-                kotlin.jvm.internal.j.e(error, "error");
+                kotlin.jvm.internal.i.e(error, "error");
                 Log.i("CredManProvService", "CreateCredentialResponse error returned from framework");
-                o3.c cVar = (o3.c) this.b;
+                mg.n nVar = (mg.n) this.b;
                 String type = error.getType();
-                kotlin.jvm.internal.j.d(type, "getType(...)");
-                cVar.onError(u8.a(error.getMessage(), type));
+                kotlin.jvm.internal.i.d(type, "getType(...)");
+                nVar.onError(b9.a(error.getMessage(), type));
                 break;
             default:
                 GetCredentialException error2 = (GetCredentialException) th2;
-                kotlin.jvm.internal.j.e(error2, "error");
+                kotlin.jvm.internal.i.e(error2, "error");
                 Log.i("CredManProvService", "GetCredentialResponse error returned from framework");
                 i iVar = this.b;
                 String type2 = error2.getType();
-                kotlin.jvm.internal.j.d(type2, "getType(...)");
-                iVar.onError(u8.b(error2.getMessage(), type2));
+                kotlin.jvm.internal.i.d(type2, "getType(...)");
+                iVar.onError(b9.b(error2.getMessage(), type2));
                 break;
         }
     }
@@ -51,30 +51,30 @@ public final class k implements OutcomeReceiver {
         switch (this.a) {
             case 0:
                 CreateCredentialResponse response = (CreateCredentialResponse) obj;
-                kotlin.jvm.internal.j.e(response, "response");
+                kotlin.jvm.internal.i.e(response, "response");
                 Log.i("CredManProvService", "Create Result returned from framework: ");
-                o3.c cVar = (o3.c) this.b;
+                mg.n nVar = (mg.n) this.b;
                 Bundle data = response.getData();
-                kotlin.jvm.internal.j.d(data, "getData(...)");
-                cVar.onResult(c8.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
+                kotlin.jvm.internal.i.d(data, "getData(...)");
+                nVar.onResult(u7.a("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", data));
                 break;
             default:
                 GetCredentialResponse response2 = (GetCredentialResponse) obj;
-                kotlin.jvm.internal.j.e(response2, "response");
+                kotlin.jvm.internal.i.e(response2, "response");
                 Log.i("CredManProvService", "GetCredentialResponse returned from framework");
                 i iVar = this.b;
                 Credential credential = response2.getCredential();
-                kotlin.jvm.internal.j.d(credential, "getCredential(...)");
+                kotlin.jvm.internal.i.d(credential, "getCredential(...)");
                 String type = credential.getType();
-                kotlin.jvm.internal.j.d(type, "getType(...)");
+                kotlin.jvm.internal.i.d(type, "getType(...)");
                 Bundle data2 = credential.getData();
-                kotlin.jvm.internal.j.d(data2, "getData(...)");
-                iVar.onResult(new o(d8.a(type, data2)));
+                kotlin.jvm.internal.i.d(data2, "getData(...)");
+                iVar.onResult(new o(v7.a(type, data2)));
                 break;
         }
     }
 
-    public k(o3.c cVar, e eVar, l lVar) {
-        this.b = cVar;
+    public k(mg.n nVar, e eVar, l lVar) {
+        this.b = nVar;
     }
 }

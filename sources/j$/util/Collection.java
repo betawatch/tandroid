@@ -74,14 +74,14 @@ public interface Collection<E> {
         public static boolean $default$removeIf(java.util.Collection collection, Predicate predicate) {
             Objects.requireNonNull(predicate);
             Iterator<E> it = collection.iterator();
-            boolean z4 = false;
+            boolean z10 = false;
             while (it.hasNext()) {
                 if (predicate.test(it.next())) {
                     it.remove();
-                    z4 = true;
+                    z10 = true;
                 }
             }
-            return z4;
+            return z10;
         }
 
         public static Stream $default$stream(java.util.Collection collection) {

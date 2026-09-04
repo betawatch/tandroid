@@ -3,19 +3,18 @@ package u0;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.view.View;
-import r5.c0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class h extends View.BaseSavedState {
-    public static final Parcelable.Creator<h> CREATOR = new c0(11);
+    public static final Parcelable.Creator<h> CREATOR = new p7.j(23);
     public int a;
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("HorizontalScrollView.SavedState{");
-        sb.append(Integer.toHexString(System.identityHashCode(this)));
-        sb.append(" scrollPosition=");
-        return android.support.v4.media.a.m(this.a, "}", sb);
+        StringBuilder sb2 = new StringBuilder("HorizontalScrollView.SavedState{");
+        sb2.append(Integer.toHexString(System.identityHashCode(this)));
+        sb2.append(" scrollPosition=");
+        return a4.a.n(this.a, "}", sb2);
     }
 
     @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable

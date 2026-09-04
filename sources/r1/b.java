@@ -8,9 +8,8 @@ import java.io.EOFException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.ByteOrder;
-import kf.k0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class b extends InputStream implements DataInput {
     public static final ByteOrder e = ByteOrder.LITTLE_ENDIAN;
@@ -42,7 +41,7 @@ public class b extends InputStream implements DataInput {
                 }
                 skip = dataInputStream.read(this.d, 0, Math.min(8192, i12));
                 if (skip == -1) {
-                    throw new EOFException(k0.k(i10, "Reached EOF while skipping ", " bytes."));
+                    throw new EOFException(i2.g.j(i10, "Reached EOF while skipping ", " bytes."));
                 }
             }
             i11 += skip;
@@ -133,8 +132,8 @@ public class b extends InputStream implements DataInput {
 
     @Override // java.io.DataInput
     public final long readLong() {
+        long j3;
         long j10;
-        long j11;
         this.c += 8;
         DataInputStream dataInputStream = this.a;
         int read = dataInputStream.read();
@@ -150,16 +149,16 @@ public class b extends InputStream implements DataInput {
         }
         ByteOrder byteOrder = this.b;
         if (byteOrder == e) {
-            j10 = (read8 << 56) + (read7 << 48) + (read6 << 40) + (read5 << 32) + (read4 << 24) + (read3 << 16) + (read2 << 8);
-            j11 = read;
+            j3 = (read8 << 56) + (read7 << 48) + (read6 << 40) + (read5 << 32) + (read4 << 24) + (read3 << 16) + (read2 << 8);
+            j10 = read;
         } else {
             if (byteOrder != f) {
                 throw new IOException("Invalid byte order: " + this.b);
             }
-            j10 = (read << 56) + (read2 << 48) + (read3 << 40) + (read4 << 32) + (read5 << 24) + (read6 << 16) + (read7 << 8);
-            j11 = read8;
+            j3 = (read << 56) + (read2 << 48) + (read3 << 40) + (read4 << 32) + (read5 << 24) + (read6 << 16) + (read7 << 8);
+            j10 = read8;
         }
-        return j10 + j11;
+        return j3 + j10;
     }
 
     @Override // java.io.DataInput

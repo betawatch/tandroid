@@ -64,20 +64,20 @@ public final class u extends a implements Serializable {
                 }
             case 6:
                 x xVar2 = x.d;
-                long j10 = j$.time.temporal.a.DAY_OF_YEAR.b.c;
+                long j3 = j$.time.temporal.a.DAY_OF_YEAR.b.c;
                 for (x xVar3 : x.e) {
-                    j10 = Math.min(j10, ((xVar3.b.O() ? 366 : 365) - xVar3.b.L()) + 1);
+                    j3 = Math.min(j3, ((xVar3.b.O() ? 366 : 365) - xVar3.b.L()) + 1);
                     if (xVar3.p() != null) {
-                        j10 = Math.min(j10, xVar3.p().b.L() - 1);
+                        j3 = Math.min(j3, xVar3.p().b.L() - 1);
                     }
                 }
-                return j$.time.temporal.s.f(j10, j$.time.temporal.a.DAY_OF_YEAR.b.d);
+                return j$.time.temporal.s.f(j3, j$.time.temporal.a.DAY_OF_YEAR.b.d);
             case 7:
                 return j$.time.temporal.s.e(w.d.getYear(), 999999999L);
             case 8:
-                long j11 = x.d.a;
+                long j10 = x.d.a;
                 x[] xVarArr3 = x.e;
-                return j$.time.temporal.s.e(j11, xVarArr3[xVarArr3.length - 1].a);
+                return j$.time.temporal.s.e(j10, xVarArr3[xVarArr3.length - 1].a);
             default:
                 return aVar.b;
         }

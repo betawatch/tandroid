@@ -6,18 +6,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class e implements s2.f, Iterator, Closeable {
+public abstract class e implements f5.f, Iterator, Closeable {
     public static final d c = new d("eof ");
-    public s2.b a;
+    public f5.b a;
     public ArrayList b;
 
     static {
-        cc.c.a(e.class);
+        qc.c.a(e.class);
     }
 
-    public final void a(s2.b bVar) {
+    public final void a(f5.b bVar) {
         if (bVar != null) {
             this.b = new ArrayList(this.b);
             bVar.setParent(this);
@@ -26,11 +26,11 @@ public abstract class e implements s2.f, Iterator, Closeable {
     }
 
     public final long b() {
-        long j10 = 0;
+        long j3 = 0;
         for (int i10 = 0; i10 < this.b.size(); i10++) {
-            j10 += ((s2.b) this.b.get(i10)).getSize();
+            j3 += ((f5.b) this.b.get(i10)).getSize();
         }
-        return j10;
+        return j3;
     }
 
     public final void c(WritableByteChannel writableByteChannel) {
@@ -40,7 +40,7 @@ public abstract class e implements s2.f, Iterator, Closeable {
         while (i10 < size) {
             Object obj = arrayList.get(i10);
             i10++;
-            ((s2.b) obj).getBox(writableByteChannel);
+            ((f5.b) obj).getBox(writableByteChannel);
         }
     }
 
@@ -51,7 +51,7 @@ public abstract class e implements s2.f, Iterator, Closeable {
 
     @Override // java.util.Iterator
     public final boolean hasNext() {
-        s2.b bVar = this.a;
+        f5.b bVar = this.a;
         d dVar = c;
         if (bVar == dVar) {
             return false;
@@ -74,7 +74,7 @@ public abstract class e implements s2.f, Iterator, Closeable {
 
     @Override // java.util.Iterator
     public final Object next() {
-        s2.b bVar = this.a;
+        f5.b bVar = this.a;
         d dVar = c;
         if (bVar == null || bVar == dVar) {
             this.a = dVar;
@@ -90,16 +90,16 @@ public abstract class e implements s2.f, Iterator, Closeable {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append("[");
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(getClass().getSimpleName());
+        sb2.append("[");
         for (int i10 = 0; i10 < this.b.size(); i10++) {
             if (i10 > 0) {
-                sb.append(";");
+                sb2.append(";");
             }
-            sb.append(((s2.b) this.b.get(i10)).toString());
+            sb2.append(((f5.b) this.b.get(i10)).toString());
         }
-        sb.append("]");
-        return sb.toString();
+        sb2.append("]");
+        return sb2.toString();
     }
 }

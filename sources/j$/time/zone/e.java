@@ -24,12 +24,12 @@ public final class e implements Serializable {
     public final ZoneOffset h;
     public final ZoneOffset i;
 
-    public e(j jVar, int i10, DayOfWeek dayOfWeek, j$.time.h hVar, boolean z4, d dVar, ZoneOffset zoneOffset, ZoneOffset zoneOffset2, ZoneOffset zoneOffset3) {
+    public e(j jVar, int i10, DayOfWeek dayOfWeek, j$.time.h hVar, boolean z10, d dVar, ZoneOffset zoneOffset, ZoneOffset zoneOffset2, ZoneOffset zoneOffset3) {
         this.a = jVar;
         this.b = (byte) i10;
         this.c = dayOfWeek;
         this.d = hVar;
-        this.e = z4;
+        this.e = z10;
         this.f = dVar;
         this.g = zoneOffset;
         this.h = zoneOffset2;
@@ -93,8 +93,8 @@ public final class e implements Serializable {
             j$.time.temporal.a.SECOND_OF_DAY.w(readInt2);
             int i16 = (int) (readInt2 / 3600);
             dVar = dVar2;
-            long j10 = readInt2 - (i16 * 3600);
-            hVar = j$.time.h.H(i16, (int) (j10 / 60), (int) (j10 - (r8 * 60)), 0);
+            long j3 = readInt2 - (i16 * 3600);
+            hVar = j$.time.h.H(i16, (int) (j3 / 60), (int) (j3 - (r8 * 60)), 0);
         } else {
             dVar = dVar2;
             int i17 = i12 % 24;
@@ -105,7 +105,7 @@ public final class e implements Serializable {
         ZoneOffset O = ZoneOffset.O(i13 == 255 ? dataInput.readInt() : (i13 - 128) * RichMessageLayout.PART_MAX_HEIGHT_DP);
         ZoneOffset O2 = ZoneOffset.O(i14 == 3 ? dataInput.readInt() : (i14 * 1800) + O.getTotalSeconds());
         ZoneOffset O3 = ZoneOffset.O(i15 == 3 ? dataInput.readInt() : (i15 * 1800) + O.getTotalSeconds());
-        boolean z4 = i12 == 24;
+        boolean z10 = i12 == 24;
         Objects.requireNonNull(J, "month");
         Objects.requireNonNull(hVar, "time");
         Objects.requireNonNull(dVar, "timeDefnition");
@@ -115,13 +115,13 @@ public final class e implements Serializable {
         if (i10 < -28 || i10 > 31 || i10 == 0) {
             throw new IllegalArgumentException("Day of month indicator must be between -28 and 31 inclusive excluding zero");
         }
-        if (z4 && !hVar.equals(j$.time.h.g)) {
+        if (z10 && !hVar.equals(j$.time.h.g)) {
             throw new IllegalArgumentException("Time must be midnight when end of day flag is true");
         }
         if (hVar.d != 0) {
             throw new IllegalArgumentException("Time's nano-of-second must be zero");
         }
-        return new e(J, i10, G, hVar, z4, dVar, O, O2, O3);
+        return new e(J, i10, G, hVar, z10, dVar, O, O2, O3);
     }
 
     public final boolean equals(Object obj) {
@@ -144,44 +144,44 @@ public final class e implements Serializable {
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("TransitionRule[");
-        sb.append(this.i.b - this.h.b > 0 ? "Gap " : "Overlap ");
-        sb.append(this.h);
-        sb.append(" to ");
-        sb.append(this.i);
-        sb.append(", ");
+        StringBuilder sb2 = new StringBuilder("TransitionRule[");
+        sb2.append(this.i.b - this.h.b > 0 ? "Gap " : "Overlap ");
+        sb2.append(this.h);
+        sb2.append(" to ");
+        sb2.append(this.i);
+        sb2.append(", ");
         DayOfWeek dayOfWeek = this.c;
         if (dayOfWeek != null) {
             byte b10 = this.b;
             if (b10 == -1) {
-                sb.append(dayOfWeek.name());
-                sb.append(" on or before last day of ");
-                sb.append(this.a.name());
+                sb2.append(dayOfWeek.name());
+                sb2.append(" on or before last day of ");
+                sb2.append(this.a.name());
             } else if (b10 < 0) {
-                sb.append(dayOfWeek.name());
-                sb.append(" on or before last day minus ");
-                sb.append((-this.b) - 1);
-                sb.append(" of ");
-                sb.append(this.a.name());
+                sb2.append(dayOfWeek.name());
+                sb2.append(" on or before last day minus ");
+                sb2.append((-this.b) - 1);
+                sb2.append(" of ");
+                sb2.append(this.a.name());
             } else {
-                sb.append(dayOfWeek.name());
-                sb.append(" on or after ");
-                sb.append(this.a.name());
-                sb.append(' ');
-                sb.append((int) this.b);
+                sb2.append(dayOfWeek.name());
+                sb2.append(" on or after ");
+                sb2.append(this.a.name());
+                sb2.append(' ');
+                sb2.append((int) this.b);
             }
         } else {
-            sb.append(this.a.name());
-            sb.append(' ');
-            sb.append((int) this.b);
+            sb2.append(this.a.name());
+            sb2.append(' ');
+            sb2.append((int) this.b);
         }
-        sb.append(" at ");
-        sb.append(this.e ? "24:00" : this.d.toString());
-        sb.append(" ");
-        sb.append(this.f);
-        sb.append(", standard offset ");
-        sb.append(this.g);
-        sb.append(']');
-        return sb.toString();
+        sb2.append(" at ");
+        sb2.append(this.e ? "24:00" : this.d.toString());
+        sb2.append(" ");
+        sb2.append(this.f);
+        sb2.append(", standard offset ");
+        sb2.append(this.g);
+        sb2.append(']');
+        return sb2.toString();
     }
 }

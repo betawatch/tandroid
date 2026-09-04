@@ -2,10 +2,10 @@ package n0;
 
 import android.os.Build;
 import java.util.Locale;
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final /* synthetic */ int a = 0;
@@ -33,21 +33,21 @@ public abstract class a {
         }
         if (i10 >= 32) {
             String CODENAME = Build.VERSION.CODENAME;
-            j.d(CODENAME, "CODENAME");
+            i.d(CODENAME, "CODENAME");
             if (!"REL".equals(CODENAME)) {
                 Locale locale = Locale.ROOT;
                 String upperCase = CODENAME.toUpperCase(locale);
-                j.d(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
+                i.d(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
                 Integer num = upperCase.equals("BAKLAVA") ? r1 : null;
                 String upperCase2 = "Tiramisu".toUpperCase(locale);
-                j.d(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
+                i.d(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
                 r1 = upperCase2.equals("BAKLAVA") ? 0 : null;
                 if (num == null || r1 == null) {
                     if (num == null && r1 == null) {
                         String upperCase3 = CODENAME.toUpperCase(locale);
-                        j.d(upperCase3, "this as java.lang.String).toUpperCase(Locale.ROOT)");
+                        i.d(upperCase3, "this as java.lang.String).toUpperCase(Locale.ROOT)");
                         String upperCase4 = "Tiramisu".toUpperCase(locale);
-                        j.d(upperCase4, "this as java.lang.String).toUpperCase(Locale.ROOT)");
+                        i.d(upperCase4, "this as java.lang.String).toUpperCase(Locale.ROOT)");
                         if (upperCase3.compareTo(upperCase4) >= 0) {
                             return true;
                         }

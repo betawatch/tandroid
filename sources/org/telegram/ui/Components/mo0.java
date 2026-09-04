@@ -1,32 +1,31 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class mo0 extends j6 {
-    public final /* synthetic */ int W = 0;
-    public final /* synthetic */ Object X;
+public final /* synthetic */ class mo0 implements o1.g {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vo0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mo0(Runnable runnable) {
-        super(false, true, true, true);
-        this.X = runnable;
+    public /* synthetic */ mo0(vo0 vo0Var, int i10) {
+        this.a = i10;
+        this.b = vo0Var;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void invalidateSelf() {
-        switch (this.W) {
+    @Override // o1.g
+    public final void a(o1.h hVar, float f7, float f10) {
+        switch (this.a) {
             case 0:
-                ((Runnable) this.X).run();
+                this.b.o.setScaleX(1.0f / f7);
+                break;
+            case 1:
+                this.b.o.setScaleY(1.0f / f7);
+                break;
+            case 2:
+                this.b.o.setScaleX(1.0f / f7);
                 break;
             default:
-                ((org.telegram.ui.o21) this.X).invalidate();
+                this.b.o.setScaleY(1.0f / f7);
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mo0(org.telegram.ui.o21 o21Var) {
-        super(false, true, false, false);
-        this.X = o21Var;
     }
 }

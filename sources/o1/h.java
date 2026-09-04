@@ -4,7 +4,7 @@ import android.os.Looper;
 import android.util.AndroidRuntimeException;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class h {
     public static final c m = new c(1);
@@ -28,7 +28,7 @@ public abstract class h {
     public final ArrayList k;
     public final ArrayList l;
 
-    public h(kb.a aVar) {
+    public h(j jVar) {
         this.a = 0.0f;
         this.b = Float.MAX_VALUE;
         this.c = false;
@@ -39,7 +39,7 @@ public abstract class h {
         this.k = new ArrayList();
         this.l = new ArrayList();
         this.d = null;
-        this.e = new d(aVar, 0);
+        this.e = new d(jVar, 0);
         this.j = 1.0f;
     }
 
@@ -71,7 +71,7 @@ public abstract class h {
         }
     }
 
-    public final void d(boolean z4) {
+    public final void d(boolean z10) {
         ArrayList arrayList;
         int i10 = 0;
         this.f = false;
@@ -95,7 +95,7 @@ public abstract class h {
                 break;
             }
             if (arrayList.get(i10) != null) {
-                ((f) arrayList.get(i10)).a(this, z4, this.b, this.a);
+                ((f) arrayList.get(i10)).a(this, z10, this.b, this.a);
             }
             i10++;
         }
@@ -106,9 +106,9 @@ public abstract class h {
         }
     }
 
-    public final void e(float f10) {
+    public final void e(float f7) {
         ArrayList arrayList;
-        this.e.b(this.d, f10);
+        this.e.b(this.d, f7);
         int i10 = 0;
         while (true) {
             arrayList = this.l;

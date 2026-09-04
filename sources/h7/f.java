@@ -1,38 +1,61 @@
 package h7;
 
-import java.util.Iterator;
-import java.util.Set;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.tasks.TaskCompletionSource;
+import g7.l;
+import g7.q;
+import kotlin.jvm.internal.i;
+import v7.f5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class f extends a implements Set, j$.util.Set {
-    public transient d b;
+public final class f extends b8.b implements a {
+    public final /* synthetic */ int b;
+    public final /* synthetic */ TaskCompletionSource c;
 
-    @Override // java.util.Collection, java.util.Set
-    public final boolean equals(Object obj) {
-        if (obj == this || obj == this) {
-            return true;
-        }
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            try {
-                if (size() == set.size()) {
-                    return containsAll(set);
-                }
-            } catch (ClassCastException | NullPointerException unused) {
-            }
-        }
-        return false;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f(int i10, TaskCompletionSource taskCompletionSource) {
+        super(8);
+        this.b = i10;
+        this.c = taskCompletionSource;
+        attachInterface(this, "com.google.android.gms.identitycredentials.internal.IIdentityCredentialCallbacks");
     }
 
-    @Override // java.util.Collection, java.util.Set
-    public final int hashCode() {
-        Iterator it = iterator();
-        int i10 = 0;
-        while (it.hasNext()) {
-            Object next = it.next();
-            i10 += next != null ? next.hashCode() : 0;
+    @Override // h7.a
+    public void E0(Status status, l lVar) {
+        switch (this.b) {
+            case 1:
+                i.e(status, "status");
+                f5.a(status, lVar, this.c);
+                return;
+            default:
+                i.e(status, "status");
+                throw new UnsupportedOperationException();
         }
-        return i10;
+    }
+
+    @Override // h7.a
+    public void b0(Status status, g7.b bVar) {
+        i.e(status, "status");
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // h7.a
+    public void o0(Status status, g7.e eVar) {
+        switch (this.b) {
+            case 0:
+                i.e(status, "status");
+                f5.a(status, eVar, this.c);
+                return;
+            default:
+                i.e(status, "status");
+                throw new UnsupportedOperationException();
+        }
+    }
+
+    @Override // h7.a
+    public void r(Status status, q qVar) {
+        i.e(status, "status");
+        throw new UnsupportedOperationException();
     }
 }

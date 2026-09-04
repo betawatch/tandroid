@@ -1,24 +1,17 @@
 package p2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.net.Uri;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class h {
-    public int a;
-    public int b;
-    public String c;
+    public final Uri a;
+    public final long b;
+    public final int c;
 
-    public static g a() {
-        g gVar = new g();
-        gVar.b = 0;
-        gVar.c = "";
-        return gVar;
-    }
-
-    public final String toString() {
-        int i10 = this.a;
-        int i11 = com.google.android.gms.internal.play_billing.u.a;
-        com.google.android.gms.internal.play_billing.a0 a0Var = com.google.android.gms.internal.play_billing.j.c;
-        Integer valueOf = Integer.valueOf(i10);
-        return e2.c.k("Response Code: ", (!a0Var.containsKey(valueOf) ? com.google.android.gms.internal.play_billing.j.b : (com.google.android.gms.internal.play_billing.j) a0Var.get(valueOf)).toString(), ", Debug Message: ", this.c);
+    public h(Uri uri, long j3, int i10) {
+        this.a = uri;
+        this.b = j3;
+        this.c = i10;
     }
 }

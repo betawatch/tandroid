@@ -1,106 +1,104 @@
 package androidx.mediarouter.app;
 
-import android.graphics.Rect;
-import android.graphics.drawable.BitmapDrawable;
+import android.app.PendingIntent;
+import android.content.Context;
+import android.support.v4.media.session.PlaybackStateCompat;
+import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
-import android.view.animation.AlphaAnimation;
-import android.view.animation.AnimationSet;
-import android.view.animation.TranslateAnimation;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import android.view.accessibility.AccessibilityEvent;
+import android.view.accessibility.AccessibilityManager;
+import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class p implements ViewTreeObserver.OnGlobalLayoutListener {
-    public final /* synthetic */ Map a;
-    public final /* synthetic */ Map b;
-    public final /* synthetic */ v c;
+public final class p implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u b;
 
-    public p(v vVar, HashMap hashMap, HashMap hashMap2) {
-        this.c = vVar;
-        this.a = hashMap;
-        this.b = hashMap2;
+    public /* synthetic */ p(u uVar, int i10) {
+        this.a = i10;
+        this.b = uVar;
     }
 
-    @Override // android.view.ViewTreeObserver.OnGlobalLayoutListener
-    public final void onGlobalLayout() {
-        Map map;
-        Map map2;
-        q0 q0Var;
-        c2.b0 b0Var;
-        v vVar = this.c;
-        vVar.R.getViewTreeObserver().removeGlobalOnLayoutListener(this);
-        HashSet hashSet = vVar.U;
-        if (hashSet == null || vVar.V == null) {
-            return;
-        }
-        int size = hashSet.size() - vVar.V.size();
-        l lVar = new l(vVar, 1);
-        int firstVisiblePosition = vVar.R.getFirstVisiblePosition();
-        int i10 = 0;
-        boolean z4 = false;
-        while (true) {
-            int childCount = vVar.R.getChildCount();
-            map = this.a;
-            map2 = this.b;
-            if (i10 >= childCount) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        int i10;
+        PlaybackStateCompat playbackStateCompat;
+        PendingIntent sessionActivity;
+        int i11 = this.a;
+        int i12 = 0;
+        u uVar = this.b;
+        switch (i11) {
+            case 0:
+                Context context = uVar.s;
+                AccessibilityManager accessibilityManager = uVar.D0;
+                int id2 = view.getId();
+                if (id2 != 16908313 && id2 != 16908314) {
+                    if (id2 != R.id.mr_control_playback_ctrl) {
+                        if (id2 == R.id.mr_close) {
+                            uVar.dismiss();
+                            break;
+                        }
+                    } else {
+                        pf.b bVar = uVar.i0;
+                        if (bVar != null && (playbackStateCompat = uVar.k0) != null) {
+                            i10 = playbackStateCompat.a != 3 ? 0 : 1;
+                            if (i10 != 0 && (playbackStateCompat.e & 514) != 0) {
+                                bVar.Y().a.pause();
+                                i12 = R.string.mr_controller_pause;
+                            } else if (i10 != 0 && (playbackStateCompat.e & 1) != 0) {
+                                bVar.Y().a.stop();
+                                i12 = R.string.mr_controller_stop;
+                            } else if (i10 == 0 && (playbackStateCompat.e & 516) != 0) {
+                                bVar.Y().a.play();
+                                i12 = R.string.mr_controller_play;
+                            }
+                            if (accessibilityManager != null && accessibilityManager.isEnabled() && i12 != 0) {
+                                AccessibilityEvent obtain = AccessibilityEvent.obtain(16384);
+                                obtain.setPackageName(context.getPackageName());
+                                obtain.setClassName(p.class.getName());
+                                obtain.getText().add(context.getString(i12));
+                                accessibilityManager.sendAccessibilityEvent(obtain);
+                                break;
+                            }
+                        }
+                    }
+                } else {
+                    if (uVar.r.g()) {
+                        p4.x xVar = uVar.h;
+                        i10 = id2 == 16908313 ? 2 : 1;
+                        xVar.getClass();
+                        p4.x.j(i10);
+                    }
+                    uVar.dismiss();
+                    break;
+                }
                 break;
-            }
-            View childAt = vVar.R.getChildAt(i10);
-            c2.b0 b0Var2 = (c2.b0) vVar.S.getItem(firstVisiblePosition + i10);
-            Rect rect = (Rect) map.get(b0Var2);
-            int top = childAt.getTop();
-            int i11 = rect != null ? rect.top : (vVar.b0 * size) + top;
-            AnimationSet animationSet = new AnimationSet(true);
-            HashSet hashSet2 = vVar.U;
-            if (hashSet2 == null || !hashSet2.contains(b0Var2)) {
-                b0Var = b0Var2;
-            } else {
-                AlphaAnimation alphaAnimation = new AlphaAnimation(0.0f, 0.0f);
-                b0Var = b0Var2;
-                alphaAnimation.setDuration(vVar.v0);
-                animationSet.addAnimation(alphaAnimation);
-                i11 = top;
-            }
-            TranslateAnimation translateAnimation = new TranslateAnimation(0.0f, 0.0f, i11 - top, 0.0f);
-            translateAnimation.setDuration(vVar.u0);
-            animationSet.addAnimation(translateAnimation);
-            animationSet.setFillAfter(true);
-            animationSet.setFillEnabled(true);
-            animationSet.setInterpolator(vVar.x0);
-            if (!z4) {
-                animationSet.setAnimationListener(lVar);
-                z4 = true;
-            }
-            childAt.clearAnimation();
-            childAt.startAnimation(animationSet);
-            c2.b0 b0Var3 = b0Var;
-            map.remove(b0Var3);
-            map2.remove(b0Var3);
-            i10++;
-        }
-        for (Map.Entry entry : map2.entrySet()) {
-            c2.b0 b0Var4 = (c2.b0) entry.getKey();
-            BitmapDrawable bitmapDrawable = (BitmapDrawable) entry.getValue();
-            Rect rect2 = (Rect) map.get(b0Var4);
-            if (vVar.V.contains(b0Var4)) {
-                q0Var = new q0(bitmapDrawable, rect2);
-                q0Var.h = 0.0f;
-                q0Var.e = vVar.w0;
-                q0Var.d = vVar.x0;
-            } else {
-                int i12 = vVar.b0 * size;
-                q0 q0Var2 = new q0(bitmapDrawable, rect2);
-                q0Var2.g = i12;
-                q0Var2.e = vVar.u0;
-                q0Var2.d = vVar.x0;
-                q0Var2.l = new af.c(vVar, b0Var4, false, 8);
-                vVar.W.add(b0Var4);
-                q0Var = q0Var2;
-            }
-            vVar.R.a.add(q0Var);
+            case 1:
+                uVar.dismiss();
+                break;
+            case 2:
+                pf.b bVar2 = uVar.i0;
+                if (bVar2 != null && (sessionActivity = ((android.support.v4.media.session.h) bVar2.b).a.getSessionActivity()) != null) {
+                    try {
+                        sessionActivity.send();
+                        uVar.dismiss();
+                        break;
+                    } catch (PendingIntent.CanceledException unused) {
+                        Log.e("MediaRouteCtrlDialog", sessionActivity + " was not sent, it had been canceled.");
+                        return;
+                    }
+                }
+                break;
+            default:
+                boolean z10 = uVar.u0;
+                uVar.u0 = !z10;
+                if (!z10) {
+                    uVar.U.setVisibility(0);
+                }
+                uVar.A0 = uVar.u0 ? uVar.B0 : uVar.C0;
+                uVar.t(true);
+                break;
         }
     }
 }

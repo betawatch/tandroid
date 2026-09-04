@@ -1,15 +1,24 @@
 package org.telegram.ui;
 
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.RadialProgressView;
+import java.util.Iterator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class fg1 extends RadialProgressView {
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        ((ViewGroup.MarginLayoutParams) getLayoutParams()).topMargin = AndroidUtilities.statusBarHeight / 2;
+public final /* synthetic */ class fg1 implements org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ hg1 a;
+
+    public /* synthetic */ fg1(hg1 hg1Var) {
+        this.a = hg1Var;
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        kg1 kg1Var = this.a.a;
+        Iterator it = kg1Var.e.iterator();
+        while (it.hasNext()) {
+            kg1.U(kg1Var, ((Integer) it.next()).intValue());
+        }
+        kg1Var.e.clear();
+        kg1Var.V();
     }
 }

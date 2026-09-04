@@ -1,51 +1,25 @@
 package m2;
 
-import android.database.DataSetObservable;
-import android.database.DataSetObserver;
-import android.view.View;
+import j$.util.DesugarCollections;
+import java.util.ArrayList;
+import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class a {
-    public final DataSetObservable a = new DataSetObservable();
-    public DataSetObserver b;
+public final class a {
+    public final long a;
+    public final int b;
+    public final List c;
+    public final List d;
+    public final List e;
+    public final List f;
 
-    public abstract void a(h hVar, Object obj);
-
-    public abstract int b();
-
-    public int c(Object obj) {
-        return -1;
-    }
-
-    public CharSequence d(int i10) {
-        return null;
-    }
-
-    public abstract Object e(h hVar, int i10);
-
-    public abstract boolean f(View view, Object obj);
-
-    public void g() {
-        synchronized (this) {
-            try {
-                DataSetObserver dataSetObserver = this.b;
-                if (dataSetObserver != null) {
-                    dataSetObserver.onChanged();
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        this.a.notifyChanged();
-    }
-
-    public final void i(DataSetObserver dataSetObserver) {
-        synchronized (this) {
-            this.b = dataSetObserver;
-        }
-    }
-
-    public void h(int i10) {
+    public a(long j3, int i10, ArrayList arrayList, List list, List list2, List list3) {
+        this.a = j3;
+        this.b = i10;
+        this.c = DesugarCollections.unmodifiableList(arrayList);
+        this.d = DesugarCollections.unmodifiableList(list);
+        this.e = DesugarCollections.unmodifiableList(list2);
+        this.f = DesugarCollections.unmodifiableList(list3);
     }
 }

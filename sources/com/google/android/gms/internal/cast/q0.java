@@ -1,28 +1,60 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.util.Iterator;
+import java.util.Map;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class q0 extends g0 {
-    public final transient Object[] c;
-    public final transient int d;
-    public final transient int e;
+public final class q0 extends m0 {
+    public final transient l0 d;
+    public final transient Object[] e;
+    public final transient int f;
 
-    public q0(int i10, int i11, Object[] objArr) {
-        this.c = objArr;
-        this.d = i10;
-        this.e = i11;
+    public q0(l0 l0Var, Object[] objArr, int i10) {
+        this.d = l0Var;
+        this.e = objArr;
+        this.f = i10;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        j7.v5.a(i10, this.e);
-        Object obj = this.c[i10 + i10 + this.d];
-        obj.getClass();
-        return obj;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        if (obj instanceof Map.Entry) {
+            Map.Entry entry = (Map.Entry) obj;
+            Object key = entry.getKey();
+            Object value = entry.getValue();
+            if (value != null && value.equals(this.d.get(key))) {
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    @Override // com.google.android.gms.internal.cast.g0
+    public final int i(Object[] objArr) {
+        j0 j0Var = this.b;
+        if (j0Var == null) {
+            j0Var = s();
+            this.b = j0Var;
+        }
+        return j0Var.i(objArr);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        j0 j0Var = this.b;
+        if (j0Var == null) {
+            j0Var = s();
+            this.b = j0Var;
+        }
+        return j0Var.listIterator(0);
+    }
+
+    public final j0 s() {
+        return new p0(this);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
     public final int size() {
-        return this.e;
+        return this.f;
     }
 }

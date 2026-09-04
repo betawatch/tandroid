@@ -1,23 +1,23 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class c40 extends View {
-    public final /* synthetic */ e60 a;
+public final class c40 extends org.telegram.ui.Components.oh0 {
+    public final /* synthetic */ j60 s1;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c40(e60 e60Var, LaunchActivity launchActivity) {
-        super(launchActivity);
-        this.a = e60Var;
+    public c40(j60 j60Var, LaunchActivity launchActivity, f50 f50Var, p50 p50Var, b40 b40Var) {
+        super(launchActivity, f50Var, p50Var, b40Var);
+        this.s1 = j60Var;
     }
 
     @Override // android.view.View
-    public final void setAlpha(float f10) {
-        if (getAlpha() != f10) {
-            super.setAlpha(f10);
-            this.a.S0();
-        }
+    public final void invalidate() {
+        ViewGroup viewGroup;
+        super.invalidate();
+        viewGroup = ((org.telegram.ui.ActionBar.f3) this.s1).containerView;
+        viewGroup.invalidate();
     }
 }

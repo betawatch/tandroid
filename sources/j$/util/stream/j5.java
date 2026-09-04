@@ -8,11 +8,11 @@ public interface j5 extends Consumer {
 
     void accept(int i10);
 
-    void accept(long j10);
+    void accept(long j3);
 
     void end();
 
-    void o(long j10);
+    void o(long j3);
 
     boolean q();
 }

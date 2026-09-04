@@ -1,336 +1,537 @@
 package yf;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.RectF;
-import android.os.Build;
-import android.text.TextPaint;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import dg.f0;
-import k7.b6;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
+import b2.n1;
+import bi.o6;
+import j$.util.Comparator$-CC;
+import j$.util.concurrent.ConcurrentHashMap;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.RandomAccessFile;
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.DispatchQueuePoolBackground;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.messenger.qf;
+import org.telegram.ui.Components.xi0;
+import org.telegram.ui.q31;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final class e extends FrameLayout {
-    public final Paint a;
-    public final Paint b;
-    public final ImageView c;
-    public final ImageView d;
-    public final ImageView e;
-    public String f;
-    public final TextPaint h;
-    public float n;
-    public final RectF r;
-    public float s;
-    public d v;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class e {
+    public static int A;
+    public static a5.a B;
+    public static boolean v;
+    public static volatile boolean x;
+    public static ThreadPoolExecutor z;
+    public final BitmapDrawable a;
+    public final int b;
+    public final int c;
+    public final AtomicInteger d = new AtomicInteger(0);
+    public final ArrayList e;
+    public final boolean f;
+    public byte[] g;
+    public final Object h;
+    public int i;
+    public boolean j;
+    public volatile boolean k;
+    public final int l;
+    public final File m;
+    public int n;
+    public final AtomicBoolean o;
+    public final rg.b0 p;
+    public volatile boolean q;
+    public volatile boolean r;
+    public RandomAccessFile s;
+    public BitmapFactory.Options t;
+    public Bitmap u;
+    public static final ConcurrentHashMap w = new ConcurrentHashMap();
+    public static final int y = Utilities.clamp(Runtime.getRuntime().availableProcessors() - 2, 6, 1);
 
-    public e(Context context) {
-        super(context);
-        this.r = new RectF(0.0f, 0.0f, 0.0f, 0.0f);
-        Paint paint = new Paint();
-        this.a = paint;
-        Paint.Style style = Paint.Style.FILL;
-        paint.setStyle(style);
-        paint.setColor(-1);
-        paint.setAlpha(255);
-        paint.setAntiAlias(true);
-        Paint paint2 = new Paint();
-        this.b = paint2;
-        paint2.setStyle(style);
-        paint2.setColor(-11420173);
-        paint2.setAlpha(255);
-        paint2.setAntiAlias(true);
-        ImageView imageView = new ImageView(context);
-        this.e = imageView;
-        imageView.setImageResource(R.drawable.msg_photo_flip);
-        imageView.setBackgroundDrawable(j6.f0(1090519039, 1, -1));
-        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
-        imageView.setScaleType(scaleType);
-        final int i10 = 0;
-        imageView.setOnClickListener(new View.OnClickListener(this) { // from class: yf.c
-            public final /* synthetic */ e b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i10) {
-                    case 0:
-                        e eVar = this.b;
-                        d dVar = eVar.v;
-                        if (dVar != null) {
-                            eVar.setMirrored(dVar.a());
-                            break;
-                        }
-                        break;
-                    case 1:
-                        d dVar2 = this.b.v;
-                        if (dVar2 != null) {
-                            dVar2.b();
-                            break;
-                        }
-                        break;
-                    default:
-                        e eVar2 = this.b;
-                        d dVar3 = eVar2.v;
-                        if (dVar3 != null) {
-                            eVar2.setRotated(dVar3.d());
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        imageView.setOnLongClickListener(new f0(this, 6));
-        imageView.setContentDescription(LocaleController.getString(R.string.AccDescrMirror));
-        addView(imageView, b6.e(70, 64, 19));
-        ImageView imageView2 = new ImageView(context);
-        this.c = imageView2;
-        imageView2.setImageResource(R.drawable.msg_photo_cropfix);
-        imageView2.setBackgroundDrawable(j6.f0(1090519039, 1, -1));
-        imageView2.setScaleType(scaleType);
-        final int i11 = 1;
-        imageView2.setOnClickListener(new View.OnClickListener(this) { // from class: yf.c
-            public final /* synthetic */ e b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i11) {
-                    case 0:
-                        e eVar = this.b;
-                        d dVar = eVar.v;
-                        if (dVar != null) {
-                            eVar.setMirrored(dVar.a());
-                            break;
-                        }
-                        break;
-                    case 1:
-                        d dVar2 = this.b.v;
-                        if (dVar2 != null) {
-                            dVar2.b();
-                            break;
-                        }
-                        break;
-                    default:
-                        e eVar2 = this.b;
-                        d dVar3 = eVar2.v;
-                        if (dVar3 != null) {
-                            eVar2.setRotated(dVar3.d());
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        imageView2.setVisibility(8);
-        imageView2.setContentDescription(LocaleController.getString(R.string.AccDescrAspectRatio));
-        addView(imageView2, b6.e(70, 64, 19));
-        ImageView imageView3 = new ImageView(context);
-        this.d = imageView3;
-        imageView3.setImageResource(R.drawable.msg_photo_rotate);
-        imageView3.setBackgroundDrawable(j6.f0(1090519039, 1, -1));
-        imageView3.setScaleType(scaleType);
-        final int i12 = 2;
-        imageView3.setOnClickListener(new View.OnClickListener(this) { // from class: yf.c
-            public final /* synthetic */ e b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                switch (i12) {
-                    case 0:
-                        e eVar = this.b;
-                        d dVar = eVar.v;
-                        if (dVar != null) {
-                            eVar.setMirrored(dVar.a());
-                            break;
-                        }
-                        break;
-                    case 1:
-                        d dVar2 = this.b.v;
-                        if (dVar2 != null) {
-                            dVar2.b();
-                            break;
-                        }
-                        break;
-                    default:
-                        e eVar2 = this.b;
-                        d dVar3 = eVar2.v;
-                        if (dVar3 != null) {
-                            eVar2.setRotated(dVar3.d());
-                            break;
-                        }
-                        break;
-                }
-            }
-        });
-        imageView3.setContentDescription(LocaleController.getString(R.string.AccDescrRotate));
-        addView(imageView3, b6.e(70, 64, 21));
-        TextPaint textPaint = new TextPaint(1);
-        this.h = textPaint;
-        textPaint.setColor(-1);
-        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        setWillNotDraw(false);
-        b(0.0f);
-    }
-
-    public final void a(Canvas canvas, int i10, float f10, int i11, int i12, boolean z4, Paint paint) {
-        int dp = (int) ((i11 / 2.0f) - AndroidUtilities.dp(70.0f));
-        int cos = (i11 / 2) + ((int) (Math.cos(Math.toRadians(90.0f - ((i10 * 5) + f10))) * dp));
-        float abs = Math.abs(r8) / dp;
-        int min = Math.min(255, Math.max(0, (int) ((1.0f - (abs * abs)) * 255.0f)));
-        if (z4) {
-            paint = this.b;
+    /* JADX WARN: Multi-variable type inference failed */
+    public e(File file, c cVar, n1 n1Var, int i10, int i11, boolean z10, int i12) {
+        RandomAccessFile randomAccessFile;
+        ArrayList arrayList = new ArrayList();
+        this.e = arrayList;
+        this.h = new Object();
+        this.o = new AtomicBoolean(false);
+        this.p = new rg.b0(this, 9);
+        this.a = (BitmapDrawable) cVar;
+        this.b = i10;
+        this.c = i11;
+        this.l = n1Var.a;
+        String name = file.getName();
+        if (z == null) {
+            int i13 = y;
+            z = new ThreadPoolExecutor(i13, i13, 60L, TimeUnit.SECONDS, new LinkedBlockingQueue());
         }
-        Paint paint2 = paint;
-        paint2.setAlpha(min);
-        int i13 = z4 ? 4 : 2;
-        int dp2 = AndroidUtilities.dp(z4 ? 16.0f : 12.0f);
-        int i14 = i13 / 2;
-        canvas.drawRect(cos - i14, (i12 - dp2) / 2, cos + i14, (i12 + dp2) / 2, paint2);
-    }
-
-    public final void b(float f10) {
-        this.n = f10;
-        if (Math.abs(f10) < 0.099d) {
-            f10 = Math.abs(f10);
+        File file2 = new File(FileLoader.checkDirectory(4), "acache");
+        if (!v) {
+            file2.mkdir();
+            v = true;
         }
-        this.f = String.format("%.1fº", Float.valueOf(f10));
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public float getRotation() {
-        return this.n;
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int width = getWidth();
-        int height = getHeight();
-        float f10 = ((-this.n) * 2.0f) % 5.0f;
-        int floor = (int) Math.floor(r0 / 5.0f);
-        int i10 = 0;
-        while (true) {
-            Paint paint = this.b;
-            if (i10 >= 16) {
-                Canvas canvas2 = canvas;
-                paint.setAlpha(255);
-                float dp = (width - AndroidUtilities.dp(2.5f)) / 2;
-                RectF rectF = this.r;
-                rectF.left = dp;
-                rectF.top = org.telegram.ui.b.x(22.0f, height, 2);
-                rectF.right = (AndroidUtilities.dp(2.5f) + width) / 2;
-                rectF.bottom = (AndroidUtilities.dp(22.0f) + height) / 2;
-                canvas2.drawRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), paint);
-                String str = this.f;
-                TextPaint textPaint = this.h;
-                canvas2.drawText(this.f, (width - textPaint.measureText(str)) / 2.0f, AndroidUtilities.dp(14.0f), textPaint);
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(name);
+        sb2.append("_");
+        sb2.append(i10);
+        sb2.append("_");
+        sb2.append(i11);
+        sb2.append(z10 ? "_nolimit" : " ");
+        File file3 = new File(file2, a4.a.s(sb2, i12 != 0 ? i2.g.i(i12, "_fitz") : "", ".pcache2"));
+        this.m = file3;
+        this.f = i10 < AndroidUtilities.dp(60.0f) && i11 < AndroidUtilities.dp(60.0f);
+        if (SharedConfig.getDevicePerformanceClass() < 2) {
+            this.k = false;
+            this.q = false;
+            return;
+        }
+        this.k = file3.exists();
+        try {
+            if (!this.k) {
                 return;
             }
-            Paint paint2 = this.a;
-            Canvas canvas3 = canvas;
-            a(canvas3, i10, f10, width, height, i10 == floor || (i10 == 0 && floor == -1), (i10 < floor || (i10 == 0 && f10 < 0.0f)) ? paint : paint2);
-            int i11 = i10;
-            if (i11 != 0) {
-                int i12 = -i11;
-                a(canvas3, i12, f10, width, height, i12 == floor + 1, i12 > floor ? paint : paint2);
-            }
-            i10 = i11 + 1;
-            canvas = canvas3;
-        }
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(400.0f)), TLObject.FLAG_30), i11);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        int actionMasked = motionEvent.getActionMasked();
-        float x10 = motionEvent.getX();
-        if (actionMasked == 0) {
-            this.s = x10;
-            d dVar = this.v;
-            if (dVar != null) {
-                dVar.e();
-                return true;
-            }
-        } else {
-            if (actionMasked == 1 || actionMasked == 3) {
-                d dVar2 = this.v;
-                if (dVar2 != null) {
-                    dVar2.c();
-                }
-                AndroidUtilities.makeAccessibilityAnnouncement(String.format("%.1f°", Float.valueOf(this.n)));
-                return true;
-            }
-            if (actionMasked == 2) {
-                float max = Math.max(-45.0f, Math.min(45.0f, this.n + ((float) ((((this.s - x10) / AndroidUtilities.density) / 3.141592653589793d) / 1.649999976158142d))));
-                if (Build.VERSION.SDK_INT >= 27) {
-                    try {
-                        if ((Math.abs(max - 45.0f) < 0.001f && Math.abs(this.n - 45.0f) >= 0.001f) || (Math.abs(max - (-45.0f)) < 0.001f && Math.abs(this.n - (-45.0f)) >= 0.001f)) {
-                            performHapticFeedback(3, 1);
-                        } else if (Math.floor(this.n / 2.5f) != Math.floor(max / 2.5f)) {
-                            AndroidUtilities.vibrateCursor(this);
+            try {
+                randomAccessFile = new RandomAccessFile(file3, "r");
+                try {
+                    this.q = randomAccessFile.readBoolean();
+                    if (this.q && arrayList.isEmpty()) {
+                        randomAccessFile.seek(randomAccessFile.readInt());
+                        int readInt = randomAccessFile.readInt();
+                        d(randomAccessFile, readInt > 10000 ? 0 : readInt);
+                        if (arrayList.size() == 0) {
+                            this.q = false;
+                            this.k = false;
+                            file3.delete();
+                        } else {
+                            if (this.s != randomAccessFile) {
+                                a();
+                            }
+                            this.s = randomAccessFile;
                         }
-                    } catch (Exception unused) {
+                    }
+                    if (this.s != randomAccessFile) {
+                        randomAccessFile.close();
+                    }
+                } catch (Throwable th2) {
+                    th = th2;
+                    try {
+                        th.printStackTrace();
+                        this.m.delete();
+                        this.k = false;
+                        if (this.s == randomAccessFile || randomAccessFile == null) {
+                            return;
+                        }
+                        randomAccessFile.close();
+                    } finally {
                     }
                 }
-                if (Math.abs(max - this.n) > 0.001d) {
-                    if (Math.abs(max) < 0.05d) {
-                        max = 0.0f;
+            } catch (Throwable th3) {
+                th = th3;
+                randomAccessFile = null;
+            }
+        } catch (IOException e7) {
+            e7.printStackTrace();
+        }
+    }
+
+    public static void c() {
+        int i10 = A - 1;
+        A = i10;
+        if (i10 <= 0) {
+            A = 0;
+            xi0.T0.postRunnable(new q31(16));
+        }
+    }
+
+    public final void a() {
+        RandomAccessFile randomAccessFile = this.s;
+        if (randomAccessFile != null) {
+            try {
+                randomAccessFile.close();
+            } catch (IOException e7) {
+                e7.printStackTrace();
+            }
+        }
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:106:0x0070, code lost:
+    
+        if (r16.s != r0) goto L110;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x0185 A[Catch: all -> 0x0058, IOException -> 0x005b, FileNotFoundException -> 0x005e, TryCatch #12 {FileNotFoundException -> 0x005e, IOException -> 0x005b, blocks: (B:3:0x0002, B:95:0x004b, B:105:0x006e, B:114:0x007c, B:6:0x0083, B:8:0x0091, B:9:0x009b, B:10:0x00cb, B:77:0x00cf, B:12:0x00d7, B:14:0x00df, B:16:0x00e7, B:26:0x00f2, B:28:0x00f6, B:31:0x00fa, B:34:0x0102, B:36:0x00ff, B:40:0x0105, B:41:0x0127, B:43:0x012d, B:45:0x014a, B:18:0x0185, B:22:0x019f, B:51:0x01a6, B:53:0x01aa, B:54:0x01af, B:55:0x01b2, B:57:0x01b6, B:69:0x01ba, B:59:0x01c2, B:72:0x01bf, B:74:0x01cc, B:80:0x00d4), top: B:2:0x0002, outer: #9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x00f1 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x01aa A[Catch: all -> 0x0058, IOException -> 0x005b, FileNotFoundException -> 0x005e, TryCatch #12 {FileNotFoundException -> 0x005e, IOException -> 0x005b, blocks: (B:3:0x0002, B:95:0x004b, B:105:0x006e, B:114:0x007c, B:6:0x0083, B:8:0x0091, B:9:0x009b, B:10:0x00cb, B:77:0x00cf, B:12:0x00d7, B:14:0x00df, B:16:0x00e7, B:26:0x00f2, B:28:0x00f6, B:31:0x00fa, B:34:0x0102, B:36:0x00ff, B:40:0x0105, B:41:0x0127, B:43:0x012d, B:45:0x014a, B:18:0x0185, B:22:0x019f, B:51:0x01a6, B:53:0x01aa, B:54:0x01af, B:55:0x01b2, B:57:0x01b6, B:69:0x01ba, B:59:0x01c2, B:72:0x01bf, B:74:0x01cc, B:80:0x00d4), top: B:2:0x0002, outer: #9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x01b6 A[Catch: all -> 0x0058, IOException -> 0x005b, FileNotFoundException -> 0x005e, TRY_LEAVE, TryCatch #12 {FileNotFoundException -> 0x005e, IOException -> 0x005b, blocks: (B:3:0x0002, B:95:0x004b, B:105:0x006e, B:114:0x007c, B:6:0x0083, B:8:0x0091, B:9:0x009b, B:10:0x00cb, B:77:0x00cf, B:12:0x00d7, B:14:0x00df, B:16:0x00e7, B:26:0x00f2, B:28:0x00f6, B:31:0x00fa, B:34:0x0102, B:36:0x00ff, B:40:0x0105, B:41:0x0127, B:43:0x012d, B:45:0x014a, B:18:0x0185, B:22:0x019f, B:51:0x01a6, B:53:0x01aa, B:54:0x01af, B:55:0x01b2, B:57:0x01b6, B:69:0x01ba, B:59:0x01c2, B:72:0x01bf, B:74:0x01cc, B:80:0x00d4), top: B:2:0x0002, outer: #9 }] */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x00cf A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:8:0x0091 A[Catch: all -> 0x0058, IOException -> 0x005b, FileNotFoundException -> 0x005e, TryCatch #12 {FileNotFoundException -> 0x005e, IOException -> 0x005b, blocks: (B:3:0x0002, B:95:0x004b, B:105:0x006e, B:114:0x007c, B:6:0x0083, B:8:0x0091, B:9:0x009b, B:10:0x00cb, B:77:0x00cf, B:12:0x00d7, B:14:0x00df, B:16:0x00e7, B:26:0x00f2, B:28:0x00f6, B:31:0x00fa, B:34:0x0102, B:36:0x00ff, B:40:0x0105, B:41:0x0127, B:43:0x012d, B:45:0x014a, B:18:0x0185, B:22:0x019f, B:51:0x01a6, B:53:0x01aa, B:54:0x01af, B:55:0x01b2, B:57:0x01b6, B:69:0x01ba, B:59:0x01c2, B:72:0x01bf, B:74:0x01cc, B:80:0x00d4), top: B:2:0x0002, outer: #9 }] */
+    /* JADX WARN: Type inference failed for: r0v16, types: [android.graphics.drawable.BitmapDrawable, yf.c] */
+    /* JADX WARN: Type inference failed for: r0v23, types: [android.graphics.drawable.BitmapDrawable, yf.c] */
+    /* JADX WARN: Type inference failed for: r0v29, types: [android.graphics.drawable.BitmapDrawable, yf.c] */
+    /* JADX WARN: Type inference failed for: r0v3, types: [android.graphics.drawable.BitmapDrawable, yf.c] */
+    /* JADX WARN: Type inference failed for: r2v0, types: [android.graphics.drawable.BitmapDrawable, yf.c] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void b() {
+        int i10;
+        RandomAccessFile randomAccessFile;
+        Bitmap[] bitmapArr;
+        CountDownLatch[] countDownLatchArr;
+        int i11;
+        int i12;
+        CountDownLatch countDownLatch;
+        try {
+            try {
+            } finally {
+                this.a.c();
+            }
+        } catch (FileNotFoundException e7) {
+            e7.printStackTrace();
+        } catch (IOException e10) {
+            e10.printStackTrace();
+        }
+        if (this.m.exists()) {
+            try {
+                randomAccessFile = new RandomAccessFile(this.m, "r");
+            } catch (Throwable unused) {
+                randomAccessFile = null;
+            }
+            try {
+                this.q = randomAccessFile.readBoolean();
+            } catch (Throwable unused2) {
+                try {
+                    this.m.delete();
+                } catch (Throwable unused3) {
+                }
+                if (this.s != randomAccessFile && randomAccessFile != null) {
+                    try {
+                        randomAccessFile.close();
+                    } catch (Throwable unused4) {
                     }
-                    b(max);
-                    d dVar3 = this.v;
-                    if (dVar3 != null) {
-                        dVar3.f(this.n);
+                }
+                RandomAccessFile randomAccessFile2 = new RandomAccessFile(this.m, "rw");
+                if (B == null) {
+                }
+                B.a(this.c, this.b);
+                a5.a aVar = B;
+                bitmapArr = (Bitmap[]) aVar.d;
+                a0[] a0VarArr = (a0[]) aVar.c;
+                countDownLatchArr = new CountDownLatch[y];
+                ArrayList arrayList = new ArrayList();
+                randomAccessFile2.writeBoolean(false);
+                randomAccessFile2.writeInt(0);
+                AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+                this.a.b();
+                i11 = 0;
+                i12 = 0;
+                while (true) {
+                    countDownLatch = countDownLatchArr[i11];
+                    if (countDownLatch != null) {
                     }
-                    this.s = x10;
+                    if (!this.o.get()) {
+                        break;
+                    } else if (this.a.a(bitmapArr[i11]) == 1) {
+                    }
+                    this.d.set(i12);
+                }
+                if (BuildVars.DEBUG_VERSION) {
+                }
+                atomicBoolean.set(true);
+                while (i10 < y) {
+                }
+                randomAccessFile2.close();
+                this.a.c();
+            }
+            if (this.q) {
+                this.e.clear();
+                randomAccessFile.seek(randomAccessFile.readInt());
+                int readInt = randomAccessFile.readInt();
+                if (readInt > 10000) {
+                    readInt = 0;
+                }
+                if (readInt > 0) {
+                    d(randomAccessFile, readInt);
+                    randomAccessFile.seek(0L);
+                    if (this.s != randomAccessFile) {
+                        a();
+                    }
+                    this.s = randomAccessFile;
+                    this.k = true;
+                    if (this.s != randomAccessFile) {
+                        try {
+                            randomAccessFile.close();
+                        } catch (Throwable unused5) {
+                        }
+                    }
+                }
+                this.k = false;
+                this.q = false;
+            }
+            if (!this.q) {
+                this.m.delete();
+            }
+        }
+        RandomAccessFile randomAccessFile22 = new RandomAccessFile(this.m, "rw");
+        if (B == null) {
+            B = new a5.a(25, (byte) 0);
+        }
+        B.a(this.c, this.b);
+        a5.a aVar2 = B;
+        bitmapArr = (Bitmap[]) aVar2.d;
+        a0[] a0VarArr2 = (a0[]) aVar2.c;
+        countDownLatchArr = new CountDownLatch[y];
+        ArrayList arrayList2 = new ArrayList();
+        randomAccessFile22.writeBoolean(false);
+        randomAccessFile22.writeInt(0);
+        AtomicBoolean atomicBoolean2 = new AtomicBoolean(false);
+        this.a.b();
+        i11 = 0;
+        i12 = 0;
+        while (true) {
+            countDownLatch = countDownLatchArr[i11];
+            if (countDownLatch != null) {
+                try {
+                    countDownLatch.await();
+                } catch (InterruptedException e11) {
+                    e11.printStackTrace();
+                }
+            }
+            if (!this.o.get() || atomicBoolean2.get()) {
+                break;
+                break;
+            }
+            if (this.a.a(bitmapArr[i11]) == 1) {
+                for (int i13 = 0; i13 < y; i13++) {
+                    CountDownLatch countDownLatch2 = countDownLatchArr[i13];
+                    if (countDownLatch2 != null) {
+                        try {
+                            countDownLatch2.await();
+                        } catch (InterruptedException e12) {
+                            e12.printStackTrace();
+                        }
+                    }
+                }
+                int length = (int) randomAccessFile22.length();
+                Collections.sort(arrayList2, Comparator$-CC.comparingInt(new o6(13)));
+                a0VarArr2[0].b();
+                int size = arrayList2.size();
+                a0VarArr2[0].c(size);
+                for (int i14 = 0; i14 < arrayList2.size(); i14++) {
+                    a0VarArr2[0].c(((d) arrayList2.get(i14)).c);
+                    a0VarArr2[0].c(((d) arrayList2.get(i14)).b);
+                }
+                randomAccessFile22.write(a0VarArr2[0].a, 0, (size * 8) + 4);
+                a0VarArr2[0].b();
+                randomAccessFile22.seek(0L);
+                randomAccessFile22.writeBoolean(true);
+                randomAccessFile22.writeInt(length);
+                atomicBoolean2.set(true);
+                randomAccessFile22.close();
+                this.e.clear();
+                this.e.addAll(arrayList2);
+                a();
+                this.s = new RandomAccessFile(this.m, "r");
+                this.q = true;
+                this.k = true;
+            } else {
+                countDownLatchArr[i11] = new CountDownLatch(1);
+                z.execute(new qf(this, atomicBoolean2, bitmapArr, i11, a0VarArr2, i12, randomAccessFile22, arrayList2, countDownLatchArr));
+                i11++;
+                i12++;
+                if (i11 >= y) {
+                    i11 = 0;
+                }
+                this.d.set(i12);
+            }
+        }
+        if (BuildVars.DEBUG_VERSION) {
+            FileLog.d("cancelled cache generation");
+        }
+        atomicBoolean2.set(true);
+        for (i10 = 0; i10 < y; i10++) {
+            CountDownLatch countDownLatch3 = countDownLatchArr[i10];
+            if (countDownLatch3 != null) {
+                try {
+                    countDownLatch3.await();
+                } catch (InterruptedException e13) {
+                    e13.printStackTrace();
+                }
+            }
+            Bitmap bitmap = bitmapArr[i10];
+            if (bitmap != null) {
+                try {
+                    bitmap.recycle();
+                } catch (Exception unused6) {
                 }
             }
         }
-        return true;
+        randomAccessFile22.close();
+        this.a.c();
     }
 
-    public void setAspectLock(boolean z4) {
-        this.c.setColorFilter(z4 ? new PorterDuffColorFilter(-11420173, PorterDuff.Mode.MULTIPLY) : null);
+    public final void d(RandomAccessFile randomAccessFile, int i10) {
+        if (i10 == 0) {
+            return;
+        }
+        byte[] bArr = new byte[i10 * 8];
+        randomAccessFile.read(bArr);
+        ByteBuffer wrap = ByteBuffer.wrap(bArr);
+        for (int i11 = 0; i11 < i10; i11++) {
+            d dVar = new d(i11);
+            dVar.c = wrap.getInt();
+            dVar.b = wrap.getInt();
+            this.e.add(dVar);
+        }
     }
 
-    public void setListener(d dVar) {
-        this.v = dVar;
+    public final byte[] e(d dVar) {
+        boolean z10 = this.f && Thread.currentThread().getName().startsWith(DispatchQueuePoolBackground.THREAD_PREFIX);
+        byte[] bArr = z10 ? (byte[]) w.get(Thread.currentThread()) : this.g;
+        if (bArr != null && bArr.length >= dVar.b) {
+            return bArr;
+        }
+        byte[] bArr2 = new byte[(int) (dVar.b * 1.3f)];
+        if (!z10) {
+            this.g = bArr2;
+            return bArr2;
+        }
+        w.put(Thread.currentThread(), bArr2);
+        if (!x) {
+            x = true;
+            AndroidUtilities.runOnUIThread(this.p, 5000L);
+        }
+        return bArr2;
     }
 
-    public void setMirrored(boolean z4) {
-        this.e.setColorFilter(z4 ? new PorterDuffColorFilter(j6.w0(null, j6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
+    /* JADX WARN: Removed duplicated region for block: B:54:0x0123 A[ADDED_TO_REGION] */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x011b  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int f(Bitmap bitmap, int i10) {
+        RandomAccessFile randomAccessFile;
+        int i11;
+        if (!this.j) {
+            RandomAccessFile randomAccessFile2 = null;
+            try {
+                if (this.q || this.k) {
+                    if (!this.q || (randomAccessFile = this.s) == null) {
+                        randomAccessFile = new RandomAccessFile(this.m, "r");
+                        try {
+                            this.q = randomAccessFile.readBoolean();
+                            if (this.q && this.e.isEmpty()) {
+                                randomAccessFile.seek(randomAccessFile.readInt());
+                                d(randomAccessFile, randomAccessFile.readInt());
+                            }
+                            if (this.e.size() == 0) {
+                                this.q = false;
+                            }
+                            if (!this.q) {
+                                randomAccessFile.close();
+                                return -1;
+                            }
+                        } catch (FileNotFoundException unused) {
+                            if (this.j && randomAccessFile != null) {
+                                try {
+                                    randomAccessFile.close();
+                                } catch (IOException e7) {
+                                    e7.printStackTrace();
+                                }
+                            }
+                            return -1;
+                        } catch (Throwable th2) {
+                            th = th2;
+                            FileLog.e(th, false);
+                            i11 = this.n + 1;
+                            this.n = i11;
+                            if (i11 > 10) {
+                                this.j = true;
+                            }
+                            if (this.j) {
+                                randomAccessFile.close();
+                            }
+                            return -1;
+                        }
+                    }
+                    try {
+                        if (this.e.size() != 0) {
+                            d dVar = (d) this.e.get(Utilities.clamp(i10, this.e.size() - 1, 0));
+                            randomAccessFile.seek(dVar.c);
+                            byte[] e10 = e(dVar);
+                            randomAccessFile.readFully(e10, 0, dVar.b);
+                            if (this.r) {
+                                this.s = null;
+                                randomAccessFile.close();
+                            } else {
+                                if (this.s != randomAccessFile) {
+                                    a();
+                                }
+                                this.s = randomAccessFile;
+                            }
+                            if (this.t == null) {
+                                this.t = new BitmapFactory.Options();
+                            }
+                            boolean z10 = bitmap.getConfig() == Bitmap.Config.ALPHA_8;
+                            if (z10) {
+                                Bitmap bitmap2 = this.u;
+                                if (bitmap2 == null || bitmap2.getWidth() != bitmap.getWidth() || this.u.getHeight() != bitmap.getHeight()) {
+                                    this.u = Bitmap.createBitmap(bitmap.getWidth(), bitmap.getHeight(), Bitmap.Config.ARGB_8888);
+                                }
+                                this.t.inBitmap = this.u;
+                            } else {
+                                this.t.inBitmap = bitmap;
+                            }
+                            BitmapFactory.decodeByteArray(e10, 0, dVar.b, this.t);
+                            if (z10) {
+                                Utilities.extractAlpha(this.u, bitmap);
+                            }
+                            this.t.inBitmap = null;
+                            return 0;
+                        }
+                    } catch (FileNotFoundException unused2) {
+                        randomAccessFile2 = randomAccessFile;
+                        randomAccessFile = randomAccessFile2;
+                        if (this.j) {
+                        }
+                        return -1;
+                    } catch (Throwable th3) {
+                        th = th3;
+                        randomAccessFile2 = randomAccessFile;
+                        randomAccessFile = randomAccessFile2;
+                        FileLog.e(th, false);
+                        i11 = this.n + 1;
+                        this.n = i11;
+                        if (i11 > 10) {
+                        }
+                        if (this.j) {
+                        }
+                        return -1;
+                    }
+                }
+            } catch (FileNotFoundException unused3) {
+            } catch (Throwable th4) {
+                th = th4;
+            }
+        }
+        return -1;
     }
 
-    public void setRotated(boolean z4) {
-        this.d.setColorFilter(z4 ? new PorterDuffColorFilter(j6.w0(null, j6.zf, false), PorterDuff.Mode.MULTIPLY) : null);
-    }
-
-    public void setFreeform(boolean z4) {
+    public final boolean g() {
+        return (this.q && this.k) ? false : true;
     }
 }

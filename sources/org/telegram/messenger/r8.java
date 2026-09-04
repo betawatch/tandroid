@@ -1,49 +1,32 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.support.LongSparseIntArray;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r8 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ long c;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ boolean c;
     public final /* synthetic */ int d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ BaseController h;
-    public final /* synthetic */ Object n;
 
-    public /* synthetic */ r8(MediaDataController mediaDataController, boolean z4, ArrayList arrayList, int i10, long j10, int i11, Runnable runnable) {
-        this.h = mediaDataController;
-        this.f = z4;
-        this.b = arrayList;
+    public /* synthetic */ r8(MediaDataController mediaDataController, boolean z10, int i10, int i11) {
+        this.a = i11;
+        this.b = mediaDataController;
+        this.c = z10;
         this.d = i10;
-        this.c = j10;
-        this.e = i11;
-        this.n = runnable;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.h).lambda$processLoadedStickers$107(this.f, this.b, this.d, this.c, this.e, (Runnable) this.n);
+                this.b.lambda$loadRecents$49(this.c, this.d);
+                break;
+            case 1:
+                this.b.lambda$processLoadedFeaturedStickers$62(this.c, this.d);
                 break;
             default:
-                ((NotificationsController) this.h).lambda$processReadMessages$21((LongSparseIntArray) this.n, this.b, this.c, this.d, this.e, this.f);
+                this.b.lambda$loadFeaturedStickers$56(this.c, this.d);
                 break;
         }
-    }
-
-    public /* synthetic */ r8(NotificationsController notificationsController, LongSparseIntArray longSparseIntArray, ArrayList arrayList, long j10, int i10, int i11, boolean z4) {
-        this.h = notificationsController;
-        this.n = longSparseIntArray;
-        this.b = arrayList;
-        this.c = j10;
-        this.d = i10;
-        this.e = i11;
-        this.f = z4;
     }
 }

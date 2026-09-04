@@ -10,7 +10,7 @@ public interface e2 {
 
     long count();
 
-    e2 e(long j10, long j11, IntFunction intFunction);
+    e2 e(long j3, long j10, IntFunction intFunction);
 
     void f(Object[] objArr, int i10);
 

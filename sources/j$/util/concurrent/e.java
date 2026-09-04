@@ -85,14 +85,14 @@ public final class e extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.util.Set
     public final boolean addAll(java.util.Collection collection) {
         Iterator it = collection.iterator();
-        boolean z4 = false;
+        boolean z10 = false;
         while (it.hasNext()) {
             Map.Entry entry = (Map.Entry) it.next();
             if (this.a.f(entry.getKey(), entry.getValue(), false) == null) {
-                z4 = true;
+                z10 = true;
             }
         }
-        return z4;
+        return z10;
     }
 
     @Override // java.util.Collection, j$.util.Collection
@@ -100,7 +100,7 @@ public final class e extends b implements Set, j$.util.Set {
         ConcurrentHashMap concurrentHashMap = this.a;
         predicate.getClass();
         l[] lVarArr = concurrentHashMap.a;
-        boolean z4 = false;
+        boolean z10 = false;
         if (lVarArr != null) {
             p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
             while (true) {
@@ -111,11 +111,11 @@ public final class e extends b implements Set, j$.util.Set {
                 Object obj = a2.b;
                 Object obj2 = a2.c;
                 if (predicate.test(new AbstractMap.SimpleImmutableEntry(obj, obj2)) && concurrentHashMap.g(obj, null, obj2) != null) {
-                    z4 = true;
+                    z10 = true;
                 }
             }
         }
-        return z4;
+        return z10;
     }
 
     @Override // java.util.Collection, java.util.Set
@@ -150,10 +150,10 @@ public final class e extends b implements Set, j$.util.Set {
     @Override // java.util.Collection, java.lang.Iterable, java.util.Set, j$.util.Collection
     public final j$.util.Spliterator spliterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
-        long j10 = concurrentHashMap.j();
+        long j3 = concurrentHashMap.j();
         l[] lVarArr = concurrentHashMap.a;
         int length = lVarArr == null ? 0 : lVarArr.length;
-        return new f(lVarArr, length, 0, length, j10 >= 0 ? j10 : 0L, concurrentHashMap);
+        return new f(lVarArr, length, 0, length, j3 >= 0 ? j3 : 0L, concurrentHashMap);
     }
 
     @Override // java.lang.Iterable, j$.util.Collection

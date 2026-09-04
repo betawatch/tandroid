@@ -13,7 +13,7 @@ import android.view.KeyEvent;
 import android.view.ViewConfiguration;
 import java.lang.ref.WeakReference;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class s {
     q mCallbackHandler;
@@ -26,15 +26,15 @@ public abstract class s {
         if (this.mMediaPlayPausePendingOnHandler) {
             this.mMediaPlayPausePendingOnHandler = false;
             handler.removeMessages(1);
-            PlaybackStateCompat c3 = tVar.c();
-            long j10 = c3 == null ? 0L : c3.e;
-            boolean z4 = c3 != null && c3.a == 3;
-            boolean z10 = (516 & j10) != 0;
-            boolean z11 = (j10 & 514) != 0;
-            if (z4 && z11) {
+            PlaybackStateCompat d = tVar.d();
+            long j3 = d == null ? 0L : d.e;
+            boolean z10 = d != null && d.a == 3;
+            boolean z11 = (516 & j3) != 0;
+            boolean z12 = (j3 & 514) != 0;
+            if (z10 && z12) {
                 onPause();
             } else {
-                if (z4 || !z10) {
+                if (z10 || !z11) {
                     return;
                 }
                 onPlay();
@@ -72,8 +72,8 @@ public abstract class s {
                 }
                 qVar.removeMessages(1);
                 this.mMediaPlayPausePendingOnHandler = false;
-                PlaybackStateCompat c3 = tVar.c();
-                if (((c3 == null ? 0L : c3.e) & 32) != 0) {
+                PlaybackStateCompat d = tVar.d();
+                if (((d == null ? 0L : d.e) & 32) != 0) {
                     onSkipToNext();
                 }
                 return true;
@@ -141,13 +141,13 @@ public abstract class s {
     public void onRemoveQueueItemAt(int i10) {
     }
 
-    public void onSeekTo(long j10) {
+    public void onSeekTo(long j3) {
     }
 
-    public void onSetCaptioningEnabled(boolean z4) {
+    public void onSetCaptioningEnabled(boolean z10) {
     }
 
-    public void onSetPlaybackSpeed(float f10) {
+    public void onSetPlaybackSpeed(float f7) {
     }
 
     public void onSetRepeatMode(int i10) {
@@ -156,7 +156,7 @@ public abstract class s {
     public void onSetShuffleMode(int i10) {
     }
 
-    public void onSkipToQueueItem(long j10) {
+    public void onSkipToQueueItem(long j3) {
     }
 
     public void onCustomAction(String str, Bundle bundle) {

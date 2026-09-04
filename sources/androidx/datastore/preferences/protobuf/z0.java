@@ -1,58 +1,116 @@
 package androidx.datastore.preferences.protobuf;
 
-import j$.util.concurrent.ConcurrentHashMap;
+import java.util.AbstractList;
+import java.util.Arrays;
+import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class z0 {
-    public static final z0 c = new z0();
-    public final ConcurrentHashMap b = new ConcurrentHashMap();
-    public final l0 a = new l0();
+public final class z0 extends b implements RandomAccess {
+    public static final z0 d;
+    public Object[] b;
+    public int c;
 
-    public final c1 a(Class cls) {
-        c1 w10;
-        Class cls2;
-        a0.a(cls, "messageType");
-        ConcurrentHashMap concurrentHashMap = this.b;
-        c1 c1Var = (c1) concurrentHashMap.get(cls);
-        if (c1Var != null) {
-            return c1Var;
+    static {
+        z0 z0Var = new z0(0, new Object[0]);
+        d = z0Var;
+        z0Var.a = false;
+    }
+
+    public z0(int i10, Object[] objArr) {
+        this.b = objArr;
+        this.c = i10;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.b, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final boolean add(Object obj) {
+        i();
+        int i10 = this.c;
+        Object[] objArr = this.b;
+        if (i10 == objArr.length) {
+            this.b = Arrays.copyOf(objArr, ((i10 * 3) / 2) + 1);
         }
-        l0 l0Var = this.a;
-        l0Var.getClass();
-        Class cls3 = d1.a;
-        if (!x.class.isAssignableFrom(cls) && (cls2 = d1.a) != null && !cls2.isAssignableFrom(cls)) {
-            throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
+        Object[] objArr2 = this.b;
+        int i11 = this.c;
+        this.c = i11 + 1;
+        objArr2[i11] = obj;
+        ((AbstractList) this).modCount++;
+        return true;
+    }
+
+    @Override // androidx.datastore.preferences.protobuf.y
+    public final y d(int i10) {
+        if (i10 < this.c) {
+            throw new IllegalArgumentException();
         }
-        b1 a2 = ((k0) l0Var.a).a(cls);
-        int i10 = a2.d;
-        a aVar = a2.a;
-        if ((i10 & 2) == 2) {
-            if (x.class.isAssignableFrom(cls)) {
-                w10 = new u0(d1.d, p.a, aVar);
+        return new z0(this.c, Arrays.copyOf(this.b, i10));
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object get(int i10) {
+        n(i10);
+        return this.b[i10];
+    }
+
+    public final void n(int i10) {
+        if (i10 < 0 || i10 >= this.c) {
+            StringBuilder l4 = i2.g.l(i10, "Index:", ", Size:");
+            l4.append(this.c);
+            throw new IndexOutOfBoundsException(l4.toString());
+        }
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object remove(int i10) {
+        i();
+        n(i10);
+        Object[] objArr = this.b;
+        Object obj = objArr[i10];
+        if (i10 < this.c - 1) {
+            System.arraycopy(objArr, i10 + 1, objArr, i10, (r2 - i10) - 1);
+        }
+        this.c--;
+        ((AbstractList) this).modCount++;
+        return obj;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final Object set(int i10, Object obj) {
+        i();
+        n(i10);
+        Object[] objArr = this.b;
+        Object obj2 = objArr[i10];
+        objArr[i10] = obj;
+        ((AbstractList) this).modCount++;
+        return obj2;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.c;
+    }
+
+    @Override // java.util.AbstractList, java.util.List
+    public final void add(int i10, Object obj) {
+        int i11;
+        i();
+        if (i10 >= 0 && i10 <= (i11 = this.c)) {
+            Object[] objArr = this.b;
+            if (i11 < objArr.length) {
+                System.arraycopy(objArr, i10, objArr, i10 + 1, i11 - i10);
             } else {
-                k1 k1Var = d1.b;
-                o oVar = p.b;
-                if (oVar == null) {
-                    throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
-                }
-                w10 = new u0(k1Var, oVar, aVar);
+                Object[] objArr2 = new Object[((i11 * 3) / 2) + 1];
+                System.arraycopy(objArr, 0, objArr2, 0, i10);
+                System.arraycopy(this.b, i10, objArr2, i10 + 1, this.c - i10);
+                this.b = objArr2;
             }
-        } else if (x.class.isAssignableFrom(cls)) {
-            w10 = (a2.d & 1) == 1 ? t0.w(a2, w0.b, i0.b, d1.d, p.a, q0.b) : t0.w(a2, w0.b, i0.b, d1.d, null, q0.b);
-        } else if ((a2.d & 1) == 1) {
-            v0 v0Var = w0.a;
-            g0 g0Var = i0.a;
-            k1 k1Var2 = d1.b;
-            o oVar2 = p.b;
-            if (oVar2 == null) {
-                throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
-            }
-            w10 = t0.w(a2, v0Var, g0Var, k1Var2, oVar2, q0.a);
-        } else {
-            w10 = t0.w(a2, w0.a, i0.a, d1.c, null, q0.a);
+            this.b[i10] = obj;
+            this.c++;
+            ((AbstractList) this).modCount++;
+            return;
         }
-        c1 c1Var2 = (c1) concurrentHashMap.putIfAbsent(cls, w10);
-        return c1Var2 != null ? c1Var2 : w10;
+        StringBuilder l4 = i2.g.l(i10, "Index:", ", Size:");
+        l4.append(this.c);
+        throw new IndexOutOfBoundsException(l4.toString());
     }
 }

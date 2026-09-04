@@ -1,21 +1,34 @@
 package j6;
 
-import d9.j;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
+import android.os.Bundle;
+import android.util.Log;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.SuccessContinuation;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.io.IOException;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b implements ThreadFactory {
-    public final AtomicInteger b = new AtomicInteger();
-    public final ThreadFactory c = Executors.defaultThreadFactory();
-    public final String a = "GAC_Executor";
+public final /* synthetic */ class b implements Continuation, SuccessContinuation {
+    public static final /* synthetic */ b a = new b();
+    public static final /* synthetic */ b b = new b();
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        Thread newThread = this.c.newThread(new j(1, runnable));
-        newThread.setName(this.a + "[" + this.b.getAndIncrement() + "]");
-        return newThread;
+    @Override // com.google.android.gms.tasks.SuccessContinuation
+    public Task then(Object obj) {
+        Bundle bundle = (Bundle) obj;
+        int i10 = a.h;
+        return (bundle == null || !bundle.containsKey("google.messenger")) ? Tasks.forResult(bundle) : Tasks.forResult(null);
+    }
+
+    @Override // com.google.android.gms.tasks.Continuation
+    public Object then(Task task) {
+        if (task.isSuccessful()) {
+            return (Bundle) task.getResult();
+        }
+        if (Log.isLoggable("Rpc", 3)) {
+            Log.d("Rpc", "Error making request: ".concat(String.valueOf(task.getException())));
+        }
+        throw new IOException("SERVICE_NOT_AVAILABLE", task.getException());
     }
 }

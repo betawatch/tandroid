@@ -1,56 +1,64 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MrzRecognizer;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class s81 extends org.telegram.ui.Components.h51 {
-    static {
-        org.telegram.ui.Components.h51.setup(new s81());
+public final class s81 implements t9 {
+    public TLObject a = null;
+    public TLRPC.TL_error b = null;
+    public final /* synthetic */ SessionsActivity c;
+
+    public s81(SessionsActivity sessionsActivity) {
+        this.c = sessionsActivity;
     }
 
-    public static org.telegram.ui.Components.i51 a(int i10, int i11, int i12, int i13, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3) {
-        org.telegram.ui.Components.i51 J = org.telegram.ui.Components.i51.J(s81.class);
-        J.d = i10;
-        J.k = i13;
-        J.l = charSequence;
-        J.m = charSequence2;
-        J.n = charSequence3;
-        J.B = (i11 & 4294967295L) | (i12 << 32);
-        return J;
+    @Override // org.telegram.ui.t9
+    public final void K(String str) {
+        TLObject tLObject = this.a;
+        if (!(tLObject instanceof TLRPC.TL_authorization)) {
+            if (this.b != null) {
+                AndroidUtilities.runOnUIThread(new r81(this, 0));
+                return;
+            }
+            return;
+        }
+        TLRPC.TL_authorization tL_authorization = (TLRPC.TL_authorization) tLObject;
+        boolean z10 = tL_authorization.password_pending;
+        SessionsActivity sessionsActivity = this.c;
+        if (z10) {
+            sessionsActivity.f.add(0, tL_authorization);
+            sessionsActivity.V = 4;
+            sessionsActivity.k0(false);
+        } else {
+            sessionsActivity.e.add(0, tL_authorization);
+        }
+        sessionsActivity.m0();
+        sessionsActivity.a.l();
+        sessionsActivity.s.m(0L, this.a, 11);
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final void bindView(View view, org.telegram.ui.Components.i51 i51Var, boolean z4, org.telegram.ui.Components.w51 w51Var, org.telegram.ui.Components.g61 g61Var) {
-        long j10 = i51Var.B;
-        int i10 = (int) j10;
-        int i11 = (int) (j10 >>> 32);
-        t81 t81Var = (t81) view;
-        int i12 = i51Var.k;
-        CharSequence charSequence = i51Var.l;
-        CharSequence charSequence2 = i51Var.m;
-        CharSequence charSequence3 = i51Var.n;
-        TextView textView = t81Var.e;
-        TextView textView2 = t81Var.f;
-        t81Var.c.setVisibility(i12 != 0 ? 0 : 8);
-        textView.setTranslationX(i12 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
-        textView2.setTranslationX(i12 == 0 ? AndroidUtilities.dp(2.0f) : 0.0f);
-        t81Var.b.b(i10, i11);
-        t81Var.d.setImageResource(i12);
-        textView.setText(charSequence);
-        boolean isEmpty = TextUtils.isEmpty(charSequence2);
-        t81Var.n = !isEmpty;
-        textView2.setVisibility(isEmpty ? 8 : 0);
-        textView2.setText(charSequence2);
-        t81Var.setValue(charSequence3);
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ String K0() {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final View createView(Context context, org.telegram.ui.Components.rl0 rl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new t81(context, f6Var);
+    @Override // org.telegram.ui.t9
+    public final boolean f1(String str, l9 l9Var) {
+        this.a = null;
+        this.b = null;
+        AndroidUtilities.runOnUIThread(new pf0(this, str, l9Var, 29), 750L);
+        return true;
+    }
+
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ void W0(MrzRecognizer.Result result) {
+    }
+
+    @Override // org.telegram.ui.t9
+    public final /* synthetic */ void onDismiss() {
     }
 }

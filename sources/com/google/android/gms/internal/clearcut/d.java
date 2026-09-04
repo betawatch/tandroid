@@ -14,21 +14,21 @@ public abstract class d {
     public static final Object f = new Object();
     public static Context g;
     public static volatile Boolean h;
-    public final i a;
+    public final h a;
     public final String b;
     public final String c;
     public final Object d;
     public volatile b e = null;
 
-    public d(i iVar, String str, Object obj) {
-        iVar.getClass();
-        if (iVar.a == null) {
+    public d(h hVar, String str, Object obj) {
+        hVar.getClass();
+        if (hVar.a == null) {
             throw new IllegalArgumentException("Must pass a valid SharedPreferences file name or ContentProvider URI");
         }
-        this.a = iVar;
-        String valueOf = String.valueOf(iVar.b);
+        this.a = hVar;
+        String valueOf = String.valueOf(hVar.b);
         this.c = str.length() != 0 ? valueOf.concat(str) : new String(valueOf);
-        String valueOf2 = String.valueOf(iVar.c);
+        String valueOf2 = String.valueOf(hVar.c);
         this.b = str.length() != 0 ? valueOf2.concat(str) : new String(valueOf2);
         this.d = obj;
     }
@@ -52,13 +52,13 @@ public abstract class d {
         }
     }
 
-    public static Object c(h hVar) {
+    public static Object c(g gVar) {
         try {
-            return hVar.zzp();
+            return gVar.zzp();
         } catch (SecurityException unused) {
             long clearCallingIdentity = Binder.clearCallingIdentity();
             try {
-                return hVar.zzp();
+                return gVar.zzp();
             } finally {
                 Binder.restoreCallingIdentity(clearCallingIdentity);
             }
@@ -71,13 +71,13 @@ public abstract class d {
             if (context == null) {
                 return false;
             }
-            h = Boolean.valueOf(f0.f.a(context, "com.google.android.providers.gsf.permission.READ_GSERVICES", Binder.getCallingPid(), Binder.getCallingUid(), Binder.getCallingPid() == Process.myPid() ? context.getPackageName() : null) == 0);
+            h = Boolean.valueOf(f0.e.a(context, "com.google.android.providers.gsf.permission.READ_GSERVICES", Binder.getCallingPid(), Binder.getCallingUid(), Binder.getCallingPid() == Process.myPid() ? context.getPackageName() : null) == 0);
         }
         return h.booleanValue();
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:29:0x00cc A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00cd  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x00cd A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:30:0x00ce  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -89,7 +89,7 @@ public abstract class d {
         }
         this.a.getClass();
         Object obj = null;
-        if (e() ? ((Boolean) c(new e("gms:phenotype:phenotype_flag:debug_bypass_phenotype"))).booleanValue() : false) {
+        if (e() ? ((Boolean) c(new c5.i("gms:phenotype:phenotype_flag:debug_bypass_phenotype"))).booleanValue() : false) {
             String valueOf = String.valueOf(this.b);
             Log.w("PhenotypeFlag", valueOf.length() != 0 ? "Bypass reading Phenotype values for flag: ".concat(valueOf) : new String("Bypass reading Phenotype values for flag: "));
         } else if (this.a.a != null) {
@@ -109,7 +109,7 @@ public abstract class d {
                 }
                 this.e = bVar;
             }
-            String str = (String) c(new af.c(23, this, this.e));
+            String str = (String) c(new pf.b(this, this.e, false, 12));
             if (str != null) {
                 obj = d(str);
             }
@@ -121,11 +121,11 @@ public abstract class d {
         this.a.getClass();
         if (e()) {
             try {
-                b10 = f2.b(g.getContentResolver(), str2);
+                b10 = e2.b(g.getContentResolver(), str2);
             } catch (SecurityException unused) {
                 long clearCallingIdentity = Binder.clearCallingIdentity();
                 try {
-                    b10 = f2.b(g.getContentResolver(), str2);
+                    b10 = e2.b(g.getContentResolver(), str2);
                 } finally {
                     Binder.restoreCallingIdentity(clearCallingIdentity);
                 }

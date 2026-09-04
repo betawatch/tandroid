@@ -14,10 +14,10 @@ import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class t {
-    public f0.i A;
+    public f0.h A;
     public int B;
     public final boolean C;
     public r D;
@@ -81,14 +81,14 @@ public final class t {
     public final Notification b() {
         Notification build;
         Bundle bundle;
-        a4.k kVar = new a4.k(this);
-        t tVar = (t) kVar.d;
+        i0 i0Var = new i0(this);
+        t tVar = (t) i0Var.d;
         b0 b0Var = tVar.l;
         if (b0Var != null) {
-            b0Var.b(kVar);
+            b0Var.b(i0Var);
         }
-        Notification.Builder builder = (Notification.Builder) kVar.c;
-        int i10 = kVar.a;
+        Notification.Builder builder = (Notification.Builder) i0Var.c;
+        int i10 = i0Var.a;
         int i11 = Build.VERSION.SDK_INT;
         if (i11 >= 26) {
             build = builder.build();
@@ -96,21 +96,21 @@ public final class t {
             build = builder.build();
             if (i10 != 0) {
                 if (build.getGroup() != null && (build.flags & 512) != 0 && i10 == 2) {
-                    a4.k.d(build);
+                    i0.d(build);
                 }
                 if (build.getGroup() != null && (build.flags & 512) == 0 && i10 == 1) {
-                    a4.k.d(build);
+                    i0.d(build);
                 }
             }
         } else {
-            builder.setExtras((Bundle) kVar.e);
+            builder.setExtras((Bundle) i0Var.e);
             build = builder.build();
             if (i10 != 0) {
                 if (build.getGroup() != null && (build.flags & 512) != 0 && i10 == 2) {
-                    a4.k.d(build);
+                    i0.d(build);
                 }
                 if (build.getGroup() != null && (build.flags & 512) == 0 && i10 == 1) {
-                    a4.k.d(build);
+                    i0.d(build);
                 }
             }
         }
@@ -144,19 +144,19 @@ public final class t {
                     d = c0.d((a10 == null || a10.i() != 2) ? 0 : a10.g(), kVar.h, kVar.i);
                 }
                 Bundle bundle2 = kVar.a;
-                boolean z4 = kVar.d;
+                boolean z10 = kVar.d;
                 Bundle bundle3 = bundle2 != null ? new Bundle(kVar.a) : new Bundle();
-                bundle3.putBoolean("android.support.allowGeneratedReplies", z4);
+                bundle3.putBoolean("android.support.allowGeneratedReplies", z10);
                 if (i11 >= 24) {
-                    e0.a(d, z4);
+                    e0.a(d, z10);
                 }
                 if (i11 >= 31) {
                     f0.a(d, false);
                 }
                 c0.a(d, bundle3);
-                q0[] q0VarArr = kVar.c;
-                if (q0VarArr != null) {
-                    for (RemoteInput remoteInput : q0.a(q0VarArr)) {
+                r0[] r0VarArr = kVar.c;
+                if (r0VarArr != null) {
+                    for (RemoteInput remoteInput : r0.a(r0VarArr)) {
                         c0.b(d, remoteInput);
                     }
                 }
@@ -210,9 +210,9 @@ public final class t {
         this.e = d(charSequence);
     }
 
-    public final void h(int i10, boolean z4) {
+    public final void h(int i10, boolean z10) {
         Notification notification = this.E;
-        if (z4) {
+        if (z10) {
             notification.flags = i10 | notification.flags;
         } else {
             notification.flags = (~i10) & notification.flags;
@@ -224,9 +224,9 @@ public final class t {
     }
 
     public final void j(Bitmap bitmap) {
-        IconCompat c3;
+        IconCompat c10;
         if (bitmap == null) {
-            c3 = null;
+            c10 = null;
         } else {
             if (Build.VERSION.SDK_INT < 27) {
                 Resources resources = this.a.getResources();
@@ -237,9 +237,9 @@ public final class t {
                     bitmap = Bitmap.createScaledBitmap(bitmap, (int) Math.ceil(bitmap.getWidth() * min), (int) Math.ceil(bitmap.getHeight() * min), true);
                 }
             }
-            c3 = IconCompat.c(bitmap);
+            c10 = IconCompat.c(bitmap);
         }
-        this.h = c3;
+        this.h = c10;
     }
 
     public final void k() {

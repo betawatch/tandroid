@@ -1,59 +1,48 @@
 package j8;
 
-import android.app.Activity;
-import android.app.FragmentTransaction;
-import android.app.PendingIntent;
-import android.content.Intent;
-import android.os.Bundle;
-import android.os.SystemClock;
-import android.util.Log;
-import com.google.android.gms.tasks.Task;
-import java.util.concurrent.TimeUnit;
-import org.telegram.tgnet.TLObject;
+import android.os.Parcel;
+import android.os.RemoteException;
+import androidx.car.app.j;
+import n6.l;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final long a = TimeUnit.MINUTES.toMillis(10);
-    public static final long b = SystemClock.elapsedRealtime();
-    public static final /* synthetic */ int c = 0;
+public final class a {
+    public final s7.h a;
 
-    public static void a(Task task, Activity activity) {
-        u uVar = new u();
-        int incrementAndGet = u.f.incrementAndGet();
-        uVar.a = incrementAndGet;
-        u.e.put(incrementAndGet, uVar);
-        u.d.postDelayed(uVar, a);
-        task.addOnCompleteListener(uVar);
-        FragmentTransaction beginTransaction = activity.getFragmentManager().beginTransaction();
-        int i10 = uVar.a;
-        Bundle bundle = new Bundle();
-        bundle.putInt("resolveCallId", i10);
-        bundle.putInt("requestCode", 991);
-        bundle.putLong("initializationElapsedRealtime", b);
-        v vVar = new v();
-        vVar.setArguments(bundle);
-        int i11 = uVar.a;
-        StringBuilder sb = new StringBuilder(58);
-        sb.append("com.google.android.gms.wallet.AutoResolveHelper");
-        sb.append(i11);
-        beginTransaction.add(vVar, sb.toString()).commit();
+    public a(s7.h hVar) {
+        l.h(hVar);
+        this.a = hVar;
     }
 
-    public static void b(Activity activity, int i10, int i11, Intent intent) {
-        PendingIntent createPendingResult = activity.createPendingResult(i10, intent, TLObject.FLAG_30);
-        if (createPendingResult == null) {
-            if (Log.isLoggable("AutoResolveHelper", 5)) {
-                Log.w("AutoResolveHelper", "Null pending result returned when trying to deliver task result!");
-            }
-        } else {
-            try {
-                createPendingResult.send(i11);
-            } catch (PendingIntent.CanceledException e) {
-                if (Log.isLoggable("AutoResolveHelper", 6)) {
-                    Log.e("AutoResolveHelper", "Exception sending pending result", e);
-                }
-            }
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof a)) {
+            return false;
+        }
+        try {
+            s7.h hVar = this.a;
+            s7.h hVar2 = ((a) obj).a;
+            s7.f fVar = (s7.f) hVar;
+            Parcel O0 = fVar.O0();
+            s7.b.c(O0, hVar2);
+            Parcel N0 = fVar.N0(O0, 17);
+            boolean z10 = N0.readInt() != 0;
+            N0.recycle();
+            return z10;
+        } catch (RemoteException e7) {
+            throw new j(e7);
+        }
+    }
+
+    public final int hashCode() {
+        try {
+            s7.f fVar = (s7.f) this.a;
+            Parcel N0 = fVar.N0(fVar.O0(), 18);
+            int readInt = N0.readInt();
+            N0.recycle();
+            return readInt;
+        } catch (RemoteException e7) {
+            throw new j(e7);
         }
     }
 }

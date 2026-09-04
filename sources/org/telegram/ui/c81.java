@@ -1,39 +1,25 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c81 implements org.telegram.ui.ActionBar.c2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ SessionsActivity b;
+public final class c81 implements View.OnClickListener {
+    public final /* synthetic */ f81 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ g81 c;
 
-    public /* synthetic */ c81(SessionsActivity sessionsActivity, int i10) {
-        this.a = i10;
-        this.b = sessionsActivity;
+    public c81(g81 g81Var, f81 f81Var, TLRPC.TL_authorization tL_authorization) {
+        this.c = g81Var;
+        this.a = f81Var;
+        this.b = tL_authorization;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                SessionsActivity sessionsActivity = this.b;
-                sessionsActivity.getClass();
-                try {
-                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-                    sessionsActivity.getParentActivity().startActivity(intent);
-                    break;
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-            default:
-                SessionsActivity.W(this.b);
-                break;
-        }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        this.a.d.c(!r0.h, true);
+        this.b.encrypted_requests_disabled = !r4.d.h;
+        g81.n(this.c);
     }
 }

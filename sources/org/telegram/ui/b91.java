@@ -1,8 +1,24 @@
 package org.telegram.ui;
 
-import android.widget.FrameLayout;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class b91 extends FrameLayout {
+public final class b91 extends org.telegram.ui.Components.hq0 {
+    public final /* synthetic */ i91 b1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b91(i91 i91Var, Activity activity, String str) {
+        super(activity, null, str, false, null, false, null);
+        this.b1 = i91Var;
+    }
+
+    @Override // org.telegram.ui.Components.hq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new w81(this, iVar, i10), 250L);
+        }
+    }
 }

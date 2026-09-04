@@ -1,15 +1,45 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.View;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class ez extends org.telegram.ui.ActionBar.p2 {
-    @Override // org.telegram.ui.ActionBar.p2
-    public final View createView(Context context) {
-        org.telegram.ui.Components.qv0 qv0Var = new org.telegram.ui.Components.qv0(context, null);
-        this.fragmentView = qv0Var;
-        return qv0Var;
+public final class ez implements ImageReceiver.ImageReceiverDelegate {
+    public final /* synthetic */ fz a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ MessageObject c;
+    public final /* synthetic */ gz d;
+
+    public ez(gz gzVar, fz fzVar, boolean z10, MessageObject messageObject) {
+        this.d = gzVar;
+        this.a = fzVar;
+        this.b = z10;
+        this.c = messageObject;
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void didSetImage(ImageReceiver imageReceiver, boolean z10, boolean z11, boolean z12) {
+        fz fzVar = this.a;
+        if (fzVar.r.getLottieAnimation() != null) {
+            fzVar.r.getLottieAnimation().L(0, false, true);
+        }
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
+        org.telegram.messenger.h5.a(this, i10, str, drawable);
+    }
+
+    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
+    public final void onAnimationReady(ImageReceiver imageReceiver) {
+        MessageObject messageObject;
+        if (this.b && (messageObject = this.c) != null && messageObject.isAnimatedAnimatedEmoji() && imageReceiver.getLottieAnimation() != null && imageReceiver.getLottieAnimation().x == null) {
+            try {
+                this.d.G.performHapticFeedback(3, 1);
+            } catch (Exception unused) {
+            }
+        }
     }
 }

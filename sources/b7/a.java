@@ -1,11 +1,11 @@
 package b7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import a8.d;
+import com.google.android.gms.common.api.e;
+import com.google.android.gms.common.api.j;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public class a extends Exception {
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public a(String str) {
-        super(str);
-        b6.m.g(str, "Detail message must not be empty");
-    }
+public final class a extends j {
+    public static final e k = new e("Fido.FIDO2_API", new d(8), new com.google.android.gms.common.api.d());
 }

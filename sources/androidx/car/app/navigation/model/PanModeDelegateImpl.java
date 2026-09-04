@@ -6,12 +6,12 @@ import androidx.car.app.navigation.model.IPanModeListener;
 import androidx.car.app.navigation.model.PanModeDelegateImpl;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class PanModeDelegateImpl implements g {
     private final IPanModeListener mStub;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class PanModeListenerStub extends IPanModeListener.Stub {
         private final i mListener;
 
@@ -19,17 +19,17 @@ public class PanModeDelegateImpl implements g {
         }
 
         /* JADX INFO: Access modifiers changed from: private */
-        public /* synthetic */ Object lambda$onPanModeChanged$0(boolean z4) {
+        public /* synthetic */ Object lambda$onPanModeChanged$0(boolean z10) {
             throw null;
         }
 
         @Override // androidx.car.app.navigation.model.IPanModeListener
-        public void onPanModeChanged(final boolean z4, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.j.b(iOnDoneCallback, "onPanModeChanged", new androidx.car.app.utils.d() { // from class: androidx.car.app.navigation.model.h
-                @Override // androidx.car.app.utils.d
+        public void onPanModeChanged(final boolean z10, IOnDoneCallback iOnDoneCallback) {
+            androidx.car.app.utils.i.b(iOnDoneCallback, "onPanModeChanged", new androidx.car.app.utils.c() { // from class: androidx.car.app.navigation.model.h
+                @Override // androidx.car.app.utils.c
                 public final Object a() {
                     Object lambda$onPanModeChanged$0;
-                    lambda$onPanModeChanged$0 = PanModeDelegateImpl.PanModeListenerStub.this.lambda$onPanModeChanged$0(z4);
+                    lambda$onPanModeChanged$0 = PanModeDelegateImpl.PanModeListenerStub.this.lambda$onPanModeChanged$0(z10);
                     return lambda$onPanModeChanged$0;
                 }
             });
@@ -44,13 +44,13 @@ public class PanModeDelegateImpl implements g {
         return new PanModeDelegateImpl(iVar);
     }
 
-    public void sendPanModeChanged(boolean z4, androidx.car.app.j jVar) {
+    public void sendPanModeChanged(boolean z10, androidx.car.app.k kVar) {
         try {
             IPanModeListener iPanModeListener = this.mStub;
             Objects.requireNonNull(iPanModeListener);
-            iPanModeListener.onPanModeChanged(z4, androidx.car.app.utils.j.a());
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+            iPanModeListener.onPanModeChanged(z10, androidx.car.app.utils.i.a());
+        } catch (RemoteException e7) {
+            throw new RuntimeException(e7);
         }
     }
 

@@ -1,62 +1,61 @@
 package lh;
 
-import android.content.Context;
-import android.text.SpannableStringBuilder;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import ig.t0;
+import le.d;
+import le.e;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.Components.js;
-import org.telegram.ui.Components.os;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.voip.t2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class a implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 b;
-    public final /* synthetic */ Context c;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class a implements d {
+    public final e a;
+    public final e b;
+    public final le.b c;
+    public final le.b d;
+    public final t2 e;
+    public final t0 f;
+    public boolean h;
 
-    public /* synthetic */ a(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        this.c = context;
-        this.b = f6Var;
+    public a(t2 t2Var, t0 t0Var) {
+        pr prVar = pr.h;
+        this.a = new e(1, this, prVar, 350L);
+        this.b = new e(2, this, prVar, 350L);
+        this.c = new le.b(0, this, prVar, 350L, true);
+        this.d = new le.b(3, this, prVar, 350L, true);
+        this.h = true;
+        this.e = t2Var;
+        this.f = t0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                new aa(this.c, this.b).show();
-                break;
-            default:
-                org.telegram.ui.ActionBar.d2[] d2VarArr = new org.telegram.ui.ActionBar.d2[1];
-                String string = LocaleController.getString(R.string.AppsTabInfoText);
-                js jsVar = new js(d2VarArr, 0);
-                org.telegram.ui.ActionBar.f6 f6Var = this.b;
-                SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(AndroidUtilities.replaceLinks(string, f6Var, jsVar));
-                Matcher matcher = Pattern.compile("@([a-zA-Z0-9_-]+)").matcher(replaceTags);
-                while (true) {
-                    boolean find = matcher.find();
-                    Context context = this.c;
-                    if (!find) {
-                        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
-                        String string2 = LocaleController.getString(R.string.AppsTabInfoTitle);
-                        org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-                        d2Var.O = string2;
-                        d2Var.Q = replaceTags;
-                        alertDialog$Builder.k(LocaleController.getString(R.string.AppsTabInfoButton), null);
-                        d2VarArr[0] = alertDialog$Builder.o();
-                        break;
-                    } else {
-                        replaceTags.setSpan(new org.telegram.ui.r0(d2VarArr, context, matcher.group(1), 1), matcher.start(), matcher.end(), 33);
-                    }
-                }
+    @Override // le.d
+    public final void E(int i10, float f7, float f10, e eVar) {
+        t2 t2Var = this.e;
+        if (i10 == 1) {
+            t2Var.setTranslationX(this.a.e);
+        }
+        if (i10 == 2) {
+            t2Var.setTranslationY(this.b.e);
+        }
+        le.b bVar = this.d;
+        le.b bVar2 = this.c;
+        if (i10 == 0) {
+            t2Var.setAlpha(AndroidUtilities.lerp(0.5f, 1.0f, bVar.e) * bVar2.e);
+            t2Var.setScaleX(AndroidUtilities.lerp(0.3f, 1.0f, f7));
+            t2Var.setScaleY(AndroidUtilities.lerp(0.3f, 1.0f, f7));
+            t2Var.setVisibility(f7 > 0.0f ? 0 : 8);
+        }
+        if (i10 == 3) {
+            t2Var.setAlpha(AndroidUtilities.lerp(0.5f, 1.0f, bVar.e) * bVar2.e);
+        }
+        t0 t0Var = this.f;
+        if (t0Var != null) {
+            t0Var.run();
         }
     }
 
-    public /* synthetic */ a(os osVar, org.telegram.ui.ActionBar.f6 f6Var, Context context) {
-        this.b = f6Var;
-        this.c = context;
+    @Override // le.d
+    public final /* synthetic */ void z(float f7, int i10) {
     }
 }

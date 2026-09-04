@@ -1,44 +1,39 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class o2 extends e5 {
-    private static final h5 zzb = new e1();
-    private static final o2 zzd;
+public final class o2 extends h5 {
+    private static final o2 zzb;
+    private int zzd;
     private int zze;
-    private boolean zzg;
-    private boolean zzh;
-    private u3 zzi;
-    private boolean zzj;
-    private long zzl;
-    private long zzm;
-    private String zzf = "";
-    private g5 zzk = f5.d;
+    private int zzf;
+    private int zzg;
+    private m5 zzh = h6.d;
 
     static {
         o2 o2Var = new o2();
-        zzd = o2Var;
-        e5.e(o2.class, o2Var);
+        zzb = o2Var;
+        h5.e(o2.class, o2Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.e5
-    public final Object h(int i10, e5 e5Var) {
+    @Override // com.google.android.gms.internal.cast.h5
+    public final Object h(int i10, h5 h5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new f6(zzd, "\u0001\b\u0000\u0001\u0001\b\b\u0000\u0001\u0000\u0001ဈ\u0000\u0002ဇ\u0001\u0003ဉ\u0003\u0004ဇ\u0004\u0005ࠬ\u0006ဇ\u0002\u0007ဂ\u0005\bဂ\u0006", new Object[]{"zze", "zzf", "zzg", "zzi", "zzj", "zzk", z0.A, "zzh", "zzl", "zzm"});
+            return new i6(zzb, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0001\u0000\u0001င\u0000\u0002င\u0001\u0003င\u0002\u0004\u001b", new Object[]{"zzd", "zze", "zzf", "zzg", "zzh", n2.class});
         }
         if (i11 == 3) {
             return new o2();
         }
         if (i11 == 4) {
-            return new v0(zzd);
+            return new x0(zzb);
         }
         if (i11 != 5) {
             return null;
         }
-        return zzd;
+        return zzb;
     }
 }

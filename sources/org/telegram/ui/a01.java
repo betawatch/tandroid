@@ -1,336 +1,148 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public class a01 extends org.telegram.ui.Components.p9 implements org.telegram.ui.Components.nv0 {
-    public static final w0 d0 = new w0("crossfadeProgress", 3);
-    public boolean D;
-    public float E;
-    public float F;
-    public int G;
-    public int H;
-    public int I;
-    public boolean J;
-    public final Path K;
-    public final RectF L;
-    public final Paint M;
-    public boolean N;
-    public float O;
-    public float P;
-    public ImageReceiver Q;
-    public final ImageReceiver R;
-    public float S;
-    public ImageReceiver.BitmapHolder T;
-    public boolean U;
-    public float V;
-    public org.telegram.ui.Components.wh0 W;
-    public boolean a0;
-    public float b0;
-    public Runnable c0;
+public final class a01 extends su0 {
+    public final /* synthetic */ ProfileActivity a;
 
-    public a01(Context context) {
-        super(context);
-        this.G = 0;
-        this.H = 0;
-        this.I = 0;
-        this.K = new Path();
-        this.L = new RectF();
-        this.N = true;
-        this.O = 1.0f;
-        this.U = true;
-        this.b0 = 1.0f;
-        this.c0 = null;
-        setLayerType(2, null);
-        this.R = new ImageReceiver(this);
-        Paint paint = new Paint(1);
-        this.M = paint;
-        paint.setColor(-16777216);
+    public a01(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.Components.nv0
-    public final void g(Runnable runnable) {
-        this.c0 = runnable;
-    }
-
-    public float getForegroundAlpha() {
-        return this.S;
-    }
-
-    public org.telegram.ui.Components.rg getPrevFragment() {
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x0105  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x0127  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x013e  */
+    /* JADX WARN: Removed duplicated region for block: B:72:0x0140  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x012a  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x0108  */
+    /* JADX WARN: Type inference failed for: r1v7, types: [org.telegram.ui.Components.x9] */
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final cv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        TLRPC.Chat chat;
+        TLRPC.ChatPhoto chatPhoto;
+        TLRPC.FileLocation fileLocation2;
+        cv0 cv0Var;
+        int i11;
+        boolean z12;
+        long j3;
+        qz0 qz0Var;
+        qz0 qz0Var2;
+        org.telegram.ui.Components.nh0 nh0Var;
+        TLRPC.TL_fileLocationToBeDeprecated tL_fileLocationToBeDeprecated;
+        TLRPC.User user;
+        TLRPC.UserProfilePhoto userProfilePhoto;
+        if (fileLocation != null) {
+            ProfileActivity profileActivity = this.a;
+            if (profileActivity.Y.getScaleX() <= 0.96f || !z11) {
+                if (profileActivity.e1 == 0 ? profileActivity.f1 == 0 || (chat = profileActivity.getMessagesController().getChat(Long.valueOf(profileActivity.f1))) == null || (chatPhoto = chat.photo) == null || (fileLocation2 = chatPhoto.photo_big) == null : (user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.e1))) == null || (userProfilePhoto = user.photo) == null || (fileLocation2 = userProfilePhoto.photo_big) == null) {
+                    fileLocation2 = null;
+                }
+                boolean z13 = false;
+                boolean z14 = fileLocation2 != null && fileLocation2.local_id == fileLocation.local_id && fileLocation2.volume_id == fileLocation.volume_id && fileLocation2.dc_id == fileLocation.dc_id;
+                qz0 qz0Var3 = profileActivity.n0;
+                if (qz0Var3 != null) {
+                    int realCount = qz0Var3.getRealCount();
+                    i11 = 0;
+                    while (i11 < realCount) {
+                        ImageLocation G = profileActivity.n0.G(i11);
+                        if (G != null && (tL_fileLocationToBeDeprecated = G.location) != null && tL_fileLocationToBeDeprecated.local_id == fileLocation.local_id) {
+                            cv0Var = null;
+                            if (tL_fileLocationToBeDeprecated.volume_id == fileLocation.volume_id && G.dc_id == fileLocation.dc_id) {
+                                z14 = true;
+                                break;
+                            }
+                        }
+                        i11++;
+                    }
+                }
+                cv0Var = null;
+                i11 = -1;
+                if (!z14) {
+                    return cv0Var;
+                }
+                pz0 pz0Var = profileActivity.e0;
+                if (i11 >= 0 && (qz0Var = profileActivity.n0) != null && qz0Var.getVisibility() == 0) {
+                    if (i11 != profileActivity.n0.getRealPosition() && (nh0Var = (qz0Var2 = profileActivity.n0).D0) != null) {
+                        qz0Var2.x(nh0Var.j() + i11, false);
+                    }
+                    ?? currentItemView = profileActivity.n0.getCurrentItemView();
+                    if (currentItemView != 0) {
+                        pz0Var = currentItemView;
+                        z12 = true;
+                        int[] iArr = new int[2];
+                        pz0Var.getLocationInWindow(iArr);
+                        cv0 cv0Var2 = new cv0();
+                        cv0Var2.b = iArr[0];
+                        cv0Var2.c = iArr[1];
+                        cv0Var2.d = pz0Var;
+                        ImageReceiver imageReceiver = pz0Var.getImageReceiver();
+                        cv0Var2.a = imageReceiver;
+                        j3 = profileActivity.e1;
+                        if (j3 == 0) {
+                            cv0Var2.f = j3;
+                        } else {
+                            long j10 = profileActivity.f1;
+                            if (j10 != 0) {
+                                cv0Var2.f = -j10;
+                            }
+                        }
+                        cv0Var2.e = imageReceiver.getBitmapSafe();
+                        cv0Var2.g = -1L;
+                        cv0Var2.h = pz0Var.getImageReceiver().getRoundRadius(true);
+                        cv0Var2.k = !z12 ? 1.0f : profileActivity.Y.getScaleX();
+                        cv0Var2.p = profileActivity.e1 != profileActivity.getUserConfig().clientUserId;
+                        if (!z12 && profileActivity.Y.getScaleX() > 0.96f) {
+                            z13 = true;
+                        }
+                        cv0Var2.r = z13;
+                        cv0Var2.s = z12;
+                        return cv0Var2;
+                    }
+                }
+                z12 = false;
+                int[] iArr2 = new int[2];
+                pz0Var.getLocationInWindow(iArr2);
+                cv0 cv0Var22 = new cv0();
+                cv0Var22.b = iArr2[0];
+                cv0Var22.c = iArr2[1];
+                cv0Var22.d = pz0Var;
+                ImageReceiver imageReceiver2 = pz0Var.getImageReceiver();
+                cv0Var22.a = imageReceiver2;
+                j3 = profileActivity.e1;
+                if (j3 == 0) {
+                }
+                cv0Var22.e = imageReceiver2.getBitmapSafe();
+                cv0Var22.g = -1L;
+                cv0Var22.h = pz0Var.getImageReceiver().getRoundRadius(true);
+                cv0Var22.k = !z12 ? 1.0f : profileActivity.Y.getScaleX();
+                cv0Var22.p = profileActivity.e1 != profileActivity.getUserConfig().clientUserId;
+                if (!z12) {
+                    z13 = true;
+                }
+                cv0Var22.r = z13;
+                cv0Var22.s = z12;
+                return cv0Var22;
+            }
+        }
         return null;
     }
 
-    public int getRoundRadiusForExpand() {
-        return !this.J ? getRoundRadius()[0] : this.H;
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final void G() {
+        this.a.e0.getImageReceiver().setVisible(true, true);
     }
 
-    @Override // android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        org.telegram.ui.Components.wh0 wh0Var = this.W;
-        if (wh0Var != null) {
-            wh0Var.invalidate();
-        }
-        Runnable runnable = this.c0;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.p9, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.R.onAttachedToWindow();
-    }
-
-    @Override // org.telegram.ui.Components.p9, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        this.R.onDetachedFromWindow();
-        ImageReceiver.BitmapHolder bitmapHolder = this.T;
-        if (bitmapHolder != null) {
-            bitmapHolder.release();
-            this.T = null;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.p9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        org.telegram.ui.Components.nh0 nh0Var;
-        boolean z4;
-        float f10;
-        float f11;
-        char c3;
-        float f12;
-        float f13;
-        int measuredWidth = getMeasuredWidth();
-        int measuredHeight = getMeasuredHeight();
-        org.telegram.ui.Components.wh0 wh0Var = this.W;
-        boolean z10 = wh0Var != null && wh0Var.getVisibility() == 0 && this.J && this.E > 0.0f;
-        if (z10) {
-            org.telegram.ui.Components.nh0 blurDrawer = this.W.getBlurDrawer();
-            nh0Var = blurDrawer;
-            z10 = blurDrawer != null;
-        } else {
-            nh0Var = null;
-        }
-        float y10 = org.telegram.messenger.y3.y(1.0f, this.S, this.b0, (1.0f - this.V) * (this.a0 ? (int) AndroidUtilities.dpf2(3.5f) : 0.0f));
-        org.telegram.ui.Components.l5 l5Var = this.e;
-        ImageReceiver imageReceiver = l5Var != null ? l5Var.k : this.a;
-        int i10 = this.H;
-        if (i10 > 0) {
-            Path path = this.K;
-            path.rewind();
-            RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set(y10, y10, measuredWidth - y10, measuredHeight - y10);
-            float f14 = i10;
-            path.addRoundRect(rectF, f14, f14, Path.Direction.CW);
-            canvas.clipPath(path);
-        }
-        canvas.save();
-        float f15 = this.O;
-        float f16 = measuredWidth;
-        float f17 = measuredHeight;
-        canvas.scale(f15, f15, f16 / 2.0f, f17 / 2.0f);
-        if (z10) {
-            measuredHeight = this.D ? Math.min(measuredHeight, measuredWidth) : (int) (f17 - AndroidUtilities.lerp(0.0f, this.I / this.F, this.E));
-        }
-        ImageReceiver imageReceiver2 = this.Q;
-        if (imageReceiver2 != null) {
-            float f18 = this.P;
-            float f19 = (1.0f - f18) * 1.0f;
-            if (f18 > 0.0f) {
-                float imageX = imageReceiver2.getImageX();
-                float imageY = this.Q.getImageY();
-                float imageWidth = this.Q.getImageWidth();
-                f10 = 2.0f;
-                float imageHeight = this.Q.getImageHeight();
-                f11 = 0.0f;
-                float alpha = this.Q.getAlpha();
-                c3 = 0;
-                float f20 = y10 * 2.0f;
-                z4 = z10;
-                f13 = f19;
-                this.Q.setImageCoords(y10, y10, f16 - f20, measuredHeight - f20);
-                this.Q.setAlpha(f18);
-                this.Q.draw(canvas);
-                this.Q.setImageCoords(imageX, imageY, imageWidth, imageHeight);
-                this.Q.setAlpha(alpha);
-            } else {
-                z4 = z10;
-                f13 = f19;
-                f10 = 2.0f;
-                f11 = 0.0f;
-                c3 = 0;
-            }
-            f12 = f13;
-        } else {
-            z4 = z10;
-            f10 = 2.0f;
-            f11 = 0.0f;
-            c3 = 0;
-            f12 = 1.0f;
-        }
-        if (imageReceiver != null && f12 > f11 && (this.S < 1.0f || !this.U)) {
-            float f21 = y10 * f10;
-            imageReceiver.setImageCoords(y10, y10, f16 - f21, measuredHeight - f21);
-            float alpha2 = imageReceiver.getAlpha();
-            imageReceiver.setAlpha(alpha2 * f12);
-            if (this.N) {
-                int i11 = imageReceiver.getRoundRadius()[c3];
-                if (z4) {
-                    imageReceiver.setRoundRadius(0);
-                }
-                imageReceiver.draw(canvas);
-                if (z4) {
-                    imageReceiver.setRoundRadius(i11);
-                }
-            }
-            imageReceiver.setAlpha(alpha2);
-        }
-        if (this.S > f11 && this.U && f12 > f11) {
-            ImageReceiver imageReceiver3 = this.R;
-            if (imageReceiver3.getDrawable() != null) {
-                float f22 = y10 * f10;
-                imageReceiver3.setImageCoords(y10, y10, f16 - f22, measuredHeight - f22);
-                imageReceiver3.setAlpha(this.S * f12);
-                imageReceiver3.draw(canvas);
-            } else {
-                RectF rectF2 = this.L;
-                rectF2.set(0.0f, 0.0f, f16, measuredHeight);
-                int i12 = (int) (this.S * f12 * 255.0f);
-                Paint paint = this.M;
-                paint.setAlpha(i12);
-                float f23 = imageReceiver3.getRoundRadius()[0];
-                canvas.drawRoundRect(rectF2, f23, f23, paint);
-            }
-        }
-        if (z4) {
-            float f24 = measuredHeight;
-            canvas.translate(y10, y10 + f24);
-            float f25 = y10 * f10;
-            nh0Var.f(canvas, this, f16 - f25, f24 - f25, true, (this.D || nh0Var.a || this.W.getRealPosition() == 0) ? 1.0f - this.E : 1.0f, f12);
-        }
-        canvas.restore();
-    }
-
-    public void setAnimateFromImageReceiver(ImageReceiver imageReceiver) {
-        this.Q = imageReceiver;
-    }
-
-    public void setAvatarsViewPager(org.telegram.ui.Components.wh0 wh0Var) {
-        this.W = wh0Var;
-    }
-
-    public void setCrossfadeProgress(float f10) {
-        this.P = f10;
-        invalidate();
-    }
-
-    public void setForegroundAlpha(float f10) {
-        this.S = f10;
-        invalidate();
-    }
-
-    public void setForegroundImageDrawable(ImageReceiver.BitmapHolder bitmapHolder) {
-        if (bitmapHolder != null) {
-            this.R.setImageBitmap(bitmapHolder.drawable);
-        }
-        ImageReceiver.BitmapHolder bitmapHolder2 = this.T;
-        if (bitmapHolder2 != null) {
-            bitmapHolder2.release();
-            this.T = null;
-        }
-        this.T = bitmapHolder;
-    }
-
-    public void setHasStories(boolean z4) {
-        if (this.a0 == z4) {
-            return;
-        }
-        this.a0 = z4;
-        invalidate();
-    }
-
-    public void setProgressToExpand(float f10) {
-        if (this.V == f10) {
-            return;
-        }
-        this.V = f10;
-        invalidate();
-    }
-
-    public void setProgressToStoriesInsets(float f10) {
-        if (f10 == this.b0) {
-            return;
-        }
-        this.b0 = f10;
-        invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.p9
-    public void setRoundRadius(int i10) {
-        super.setRoundRadius(i10);
-        this.R.setRoundRadius(i10);
-    }
-
-    public void setRoundRadiusCollapse(int i10) {
-        int i11 = this.G;
-        this.G = i10;
-        if (i11 != i10) {
-            super.invalidate();
-        }
-    }
-
-    public void setRoundRadiusForExpand(int i10) {
-        if (!this.J) {
-            setRoundRadius(i10);
-        } else {
-            this.H = i10;
-            setRoundRadius(i10);
-        }
-    }
-
-    public final void t(int i10) {
-        this.I = i10;
-        this.J = true;
-    }
-
-    public final void u(ImageLocation imageLocation, String str, Drawable drawable) {
-        this.R.setImage(imageLocation, str, drawable, 0L, (String) null, (Object) null, 0);
-        ImageReceiver.BitmapHolder bitmapHolder = this.T;
-        if (bitmapHolder != null) {
-            bitmapHolder.release();
-            this.T = null;
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate(Rect rect) {
-        super.invalidate(rect);
-        Runnable runnable = this.c0;
-        if (runnable != null) {
-            runnable.run();
-        }
-    }
-
-    @Override // android.view.View
-    public final void invalidate(int i10, int i11, int i12, int i13) {
-        super.invalidate(i10, i11, i12, i13);
-        Runnable runnable = this.c0;
-        if (runnable != null) {
-            runnable.run();
-        }
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final void f(String str, String str2, boolean z10) {
+        this.a.q0.q(str, str2, z10);
     }
 }

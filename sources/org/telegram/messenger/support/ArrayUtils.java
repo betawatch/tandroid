@@ -3,7 +3,7 @@ package org.telegram.messenger.support;
 import java.lang.reflect.Array;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class ArrayUtils {
     private static Object[] EMPTY = new Object[0];
@@ -13,7 +13,7 @@ public class ArrayUtils {
     private ArrayUtils() {
     }
 
-    public static <T> T[] appendElement(Class<T> cls, T[] tArr, T t6) {
+    public static <T> T[] appendElement(Class<T> cls, T[] tArr, T t10) {
         T[] tArr2;
         int i10 = 0;
         if (tArr != null) {
@@ -24,7 +24,7 @@ public class ArrayUtils {
         } else {
             tArr2 = (T[]) ((Object[]) Array.newInstance((Class<?>) cls, 1));
         }
-        tArr2[i10] = t6;
+        tArr2[i10] = t10;
         return tArr2;
     }
 
@@ -44,13 +44,13 @@ public class ArrayUtils {
         return iArr2;
     }
 
-    public static <T> boolean contains(T[] tArr, T t6) {
-        for (T t9 : tArr) {
-            if (t9 == null) {
-                if (t6 == null) {
+    public static <T> boolean contains(T[] tArr, T t10) {
+        for (T t11 : tArr) {
+            if (t11 == null) {
+                if (t10 == null) {
                     return true;
                 }
-            } else if (t6 != null && t9.equals(t6)) {
+            } else if (t10 != null && t11.equals(t10)) {
                 return true;
             }
         }
@@ -135,11 +135,11 @@ public class ArrayUtils {
         return -1;
     }
 
-    public static <T> T[] removeElement(Class<T> cls, T[] tArr, T t6) {
+    public static <T> T[] removeElement(Class<T> cls, T[] tArr, T t10) {
         if (tArr != null) {
             int length = tArr.length;
             for (int i10 = 0; i10 < length; i10++) {
-                if (tArr[i10] == t6) {
+                if (tArr[i10] == t10) {
                     if (length == 1) {
                         return null;
                     }
@@ -175,11 +175,11 @@ public class ArrayUtils {
     }
 
     public static long total(long[] jArr) {
-        long j10 = 0;
-        for (long j11 : jArr) {
-            j10 += j11;
+        long j3 = 0;
+        for (long j10 : jArr) {
+            j3 += j10;
         }
-        return j10;
+        return j3;
     }
 
     public static boolean contains(int[] iArr, int i10) {

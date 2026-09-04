@@ -2,60 +2,146 @@ package org.telegram.ui.Cells;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.text.Editable;
 import android.text.TextUtils;
-import android.view.View;
 import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class i3 extends FrameLayout {
-    public final EditTextBoldCursor a;
-    public boolean b;
+public class i3 extends FrameLayout {
+    public boolean a;
+    public final g3 b;
+    public final int c;
+    public boolean d;
+    public int e;
+    public boolean f;
+    public boolean h;
+    public boolean n;
+    public final org.telegram.ui.Components.h5 r;
+    public int s;
+    public final org.telegram.ui.Components.p6 v;
+    public boolean w;
 
-    public i3(Context context) {
+    public i3(Context context, String str, boolean z10, boolean z11, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
-        this.a = editTextBoldCursor;
-        editTextBoldCursor.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false));
-        editTextBoldCursor.setHintTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
-        editTextBoldCursor.setTextSize(1, 16.0f);
-        editTextBoldCursor.setLines(1);
-        editTextBoldCursor.setMaxLines(1);
-        editTextBoldCursor.setSingleLine(true);
-        editTextBoldCursor.setEllipsize(TextUtils.TruncateAt.END);
-        editTextBoldCursor.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        editTextBoldCursor.setBackgroundDrawable(null);
-        editTextBoldCursor.setPadding(0, 0, 0, 0);
-        editTextBoldCursor.setInputType(editTextBoldCursor.getInputType() | 16384);
-        addView(editTextBoldCursor, k7.b6.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 21.0f, 0.0f, 21.0f, 0.0f));
+        this.e = -1;
+        this.r = new org.telegram.ui.Components.h5(this);
+        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(false, true, true, false);
+        this.v = p6Var;
+        p6Var.k(0.2f, 160L, pr.h);
+        p6Var.t(AndroidUtilities.dp(15.33f));
+        p6Var.b = 5;
+        this.c = i10;
+        g3 g3Var = new g3(this, context, f6Var, i10, f6Var, z11);
+        this.b = g3Var;
+        p6Var.setCallback(g3Var);
+        g3Var.setTextSize(1, 17.0f);
+        g3Var.setHintTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.H6, f6Var));
+        int i11 = org.telegram.ui.ActionBar.j6.G6;
+        g3Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        g3Var.setBackground(null);
+        if (z10) {
+            g3Var.setMaxLines(5);
+            g3Var.setSingleLine(false);
+        } else {
+            g3Var.setMaxLines(1);
+            g3Var.setSingleLine(true);
+        }
+        g3Var.setPadding(AndroidUtilities.dp(21.0f), AndroidUtilities.dp(15.0f), AndroidUtilities.dp((i10 > 0 ? 42 : 0) + 21), AndroidUtilities.dp(15.0f));
+        g3Var.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
+        g3Var.setInputType((z10 ? 131072 : 0) | 573441);
+        g3Var.setRawInputType((z10 ? 131072 : 0) | 573441);
+        g3Var.setHint(str);
+        g3Var.setCursorColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
+        g3Var.setCursorSize(AndroidUtilities.dp(19.0f));
+        g3Var.setCursorWidth(1.5f);
+        g3Var.addTextChangedListener(new h3(this, i10, z10));
+        g3Var.setOnFocusChangeListener(new m.r2(this, 2));
+        addView(g3Var, w7.x5.e(-1, -1, 48));
+        c();
     }
 
-    public String getText() {
-        return this.a.getText().toString();
+    public final void c() {
+        int i10;
+        if (this.b == null) {
+            return;
+        }
+        this.s = this.c - getText().length();
+        String str = "";
+        if ((!TextUtils.isEmpty(getText()) || this.d) && ((!this.f || (this.n && !this.h)) && ((i10 = this.e) == -1 || this.s <= i10))) {
+            str = "" + this.s;
+        }
+        this.v.q(str, true, true);
     }
 
-    public EditTextBoldCursor getTextView() {
-        return this.a;
+    public CharSequence getText() {
+        return this.b.getText();
+    }
+
+    public TLRPC.TL_textWithEntities getTextWithEntities() {
+        TLRPC.TL_textWithEntities tL_textWithEntities = new TLRPC.TL_textWithEntities();
+        CharSequence[] charSequenceArr = {getText()};
+        tL_textWithEntities.entities = MediaDataController.getInstance(UserConfig.selectedAccount).getEntities(charSequenceArr, true);
+        tL_textWithEntities.text = charSequenceArr[0].toString();
+        return tL_textWithEntities;
     }
 
     @Override // android.view.View
     public final void onDraw(Canvas canvas) {
-        if (this.b) {
-            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(20.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+        super.onDraw(canvas);
+        if (this.w) {
+            canvas.drawLine(LocaleController.isRTL ? 0.0f : AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.dp(22.0f) : 0), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
         }
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), AndroidUtilities.dp(50.0f) + (this.b ? 1 : 0));
-        this.a.measure(View.MeasureSpec.makeMeasureSpec(((getMeasuredWidth() - getPaddingLeft()) - getPaddingRight()) - AndroidUtilities.dp(42.0f), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(getMeasuredHeight(), TLObject.FLAG_30));
+    public void setDivider(boolean z10) {
+        this.w = z10;
+        setWillNotDraw(!z10);
     }
 
-    public void setTextColor(int i10) {
-        this.a.setTextColor(i10);
+    public void setShowLimitOnFocus(boolean z10) {
+        this.f = z10;
+    }
+
+    public void setShowLimitWhenEmpty(boolean z10) {
+        this.d = z10;
+        if (z10) {
+            c();
+        }
+    }
+
+    public void setShowLimitWhenNear(int i10) {
+        this.e = i10;
+        c();
+    }
+
+    public void setText(CharSequence charSequence) {
+        this.a = true;
+        g3 g3Var = this.b;
+        g3Var.setText(charSequence);
+        g3Var.setSelection(g3Var.getText().length());
+        this.a = false;
+    }
+
+    public void setText(TLRPC.TL_textWithEntities tL_textWithEntities) {
+        this.a = true;
+        CharSequence formatTextWithEntities = MessageObject.formatTextWithEntities(tL_textWithEntities, false);
+        g3 g3Var = this.b;
+        g3Var.setText(formatTextWithEntities);
+        g3Var.setSelection(g3Var.getText().length());
+        this.a = false;
+    }
+
+    public void a(boolean z10) {
+    }
+
+    public void b(Editable editable) {
     }
 }

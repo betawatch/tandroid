@@ -8,9 +8,9 @@ import android.text.Spanned;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import k7.j6;
+import w7.k6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class l {
     public static final Object i = new Object();
@@ -94,7 +94,7 @@ public final class l {
             this.c = 0;
             this.a.writeLock().unlock();
             f fVar = this.e;
-            l lVar = (l) fVar.c;
+            l lVar = (l) fVar.b;
             try {
                 lVar.f.a(new e(fVar));
             } catch (Throwable th2) {
@@ -143,7 +143,7 @@ public final class l {
     */
     public final CharSequence e(int i10, int i11, CharSequence charSequence) {
         p pVar;
-        y yVar;
+        z zVar;
         int codePointAt;
         int i12;
         int a2;
@@ -160,7 +160,7 @@ public final class l {
         if (!(i10 <= i11)) {
             throw new IllegalArgumentException("start should be <= than end");
         }
-        y yVar2 = null;
+        z zVar2 = null;
         if (charSequence == null) {
             return null;
         }
@@ -171,36 +171,36 @@ public final class l {
             throw new IllegalArgumentException("end should be < than charSequence length");
         }
         if (charSequence.length() != 0 && i10 != i11) {
-            af.c cVar = (af.c) this.e.a;
-            cVar.getClass();
-            boolean z4 = charSequence instanceof u;
-            if (z4) {
+            pf.b bVar = (pf.b) this.e.a;
+            bVar.getClass();
+            boolean z10 = charSequence instanceof u;
+            if (z10) {
                 ((u) charSequence).a();
             }
-            if (!z4) {
+            if (!z10) {
                 try {
                     if (!(charSequence instanceof Spannable)) {
                         if ((charSequence instanceof Spanned) && ((Spanned) charSequence).nextSpanTransition(i10 - 1, i11 + 1, v.class) <= i11) {
-                            yVar2 = new y(charSequence);
+                            zVar2 = new z(charSequence);
                         }
-                        if (yVar2 != null && (vVarArr = (v[]) yVar2.b.getSpans(i10, i11, v.class)) != null && vVarArr.length > 0) {
+                        if (zVar2 != null && (vVarArr = (v[]) zVar2.b.getSpans(i10, i11, v.class)) != null && vVarArr.length > 0) {
                             for (v vVar : vVarArr) {
-                                int spanStart = yVar2.b.getSpanStart(vVar);
-                                int spanEnd = yVar2.b.getSpanEnd(vVar);
+                                int spanStart = zVar2.b.getSpanStart(vVar);
+                                int spanEnd = zVar2.b.getSpanEnd(vVar);
                                 if (spanStart != i11) {
-                                    yVar2.removeSpan(vVar);
+                                    zVar2.removeSpan(vVar);
                                 }
                                 i10 = Math.min(spanStart, i10);
                                 i11 = Math.max(spanEnd, i11);
                             }
                         }
                         if (i10 != i11 && i10 < charSequence.length()) {
-                            s sVar = (s) ((com.google.firebase.messaging.r) cVar.b).c;
+                            s sVar = (s) ((com.google.firebase.messaging.s) bVar.b).d;
                             pVar = new p();
                             pVar.a = 1;
                             pVar.d = sVar;
                             pVar.e = sVar;
-                            yVar = yVar2;
+                            zVar = zVar2;
                             codePointAt = Character.codePointAt(charSequence, i10);
                             int i13 = 0;
                             loop1: while (true) {
@@ -219,25 +219,25 @@ public final class l {
                                             codePointAt = Character.codePointAt(charSequence, i10);
                                         }
                                     } else if (a2 == 3) {
-                                        if (!cVar.S(charSequence, i12, i10, ((s) pVar.f).b)) {
-                                            if (yVar == null) {
-                                                yVar = new y((Spannable) new SpannableString(charSequence));
+                                        if (!bVar.Z(charSequence, i12, i10, ((s) pVar.f).b)) {
+                                            if (zVar == null) {
+                                                zVar = new z((Spannable) new SpannableString(charSequence));
                                             }
-                                            yVar.setSpan(new v(((s) pVar.f).b), i12, i10, 33);
+                                            zVar.setSpan(new v(((s) pVar.f).b), i12, i10, 33);
                                             i13++;
                                         }
                                     }
                                 }
                             }
-                            if (pVar.a == 2 && ((s) pVar.e).b != null && ((pVar.c > 1 || pVar.e()) && i13 < Integer.MAX_VALUE && !cVar.S(charSequence, i12, i10, ((s) pVar.e).b))) {
-                                if (yVar == null) {
-                                    yVar = new y(charSequence);
+                            if (pVar.a == 2 && ((s) pVar.e).b != null && ((pVar.c > 1 || pVar.e()) && i13 < Integer.MAX_VALUE && !bVar.Z(charSequence, i12, i10, ((s) pVar.e).b))) {
+                                if (zVar == null) {
+                                    zVar = new z(charSequence);
                                 }
-                                yVar.setSpan(new v(((s) pVar.e).b), i12, i10, 33);
+                                zVar.setSpan(new v(((s) pVar.e).b), i12, i10, 33);
                             }
-                            if (yVar == null) {
-                                Spannable spannable = yVar.b;
-                                if (z4) {
+                            if (zVar == null) {
+                                Spannable spannable = zVar.b;
+                                if (z10) {
                                     ((u) charSequence).b();
                                 }
                                 return spannable;
@@ -245,24 +245,24 @@ public final class l {
                         }
                     }
                 } catch (Throwable th2) {
-                    if (z4) {
+                    if (z10) {
                         ((u) charSequence).b();
                     }
                     throw th2;
                 }
             }
-            yVar2 = new y((Spannable) charSequence);
-            if (yVar2 != null) {
+            zVar2 = new z((Spannable) charSequence);
+            if (zVar2 != null) {
                 while (r7 < r6) {
                 }
             }
             if (i10 != i11) {
-                s sVar2 = (s) ((com.google.firebase.messaging.r) cVar.b).c;
+                s sVar2 = (s) ((com.google.firebase.messaging.s) bVar.b).d;
                 pVar = new p();
                 pVar.a = 1;
                 pVar.d = sVar2;
                 pVar.e = sVar2;
-                yVar = yVar2;
+                zVar = zVar2;
                 codePointAt = Character.codePointAt(charSequence, i10);
                 int i132 = 0;
                 loop1: while (true) {
@@ -274,11 +274,11 @@ public final class l {
                     }
                 }
                 if (pVar.a == 2) {
-                    if (yVar == null) {
+                    if (zVar == null) {
                     }
-                    yVar.setSpan(new v(((s) pVar.e).b), i12, i10, 33);
+                    zVar.setSpan(new v(((s) pVar.e).b), i12, i10, 33);
                 }
-                if (yVar == null) {
+                if (zVar == null) {
                 }
             }
         }
@@ -286,7 +286,7 @@ public final class l {
     }
 
     public final void f(i iVar) {
-        j6.a(iVar, "initCallback cannot be null");
+        k6.a(iVar, "initCallback cannot be null");
         this.a.writeLock().lock();
         try {
             if (this.c != 1 && this.c != 2) {

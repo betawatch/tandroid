@@ -7,11 +7,11 @@ import org.telegram.messenger.SvgHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class DocumentObject {
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ThemeDocument extends TLRPC.TL_document {
         public org.telegram.ui.ActionBar.h6 accent;
         public org.telegram.ui.ActionBar.i6 baseTheme;
@@ -65,11 +65,11 @@ public class DocumentObject {
         return false;
     }
 
-    public static SvgHelper.SvgDrawable getCircleThumb(float f10, int i10, float f11) {
-        return getCircleThumb(f10, i10, null, f11);
+    public static SvgHelper.SvgDrawable getCircleThumb(float f7, int i10, float f10) {
+        return getCircleThumb(f7, i10, null, f10);
     }
 
-    public static SvgHelper.SvgDrawable getSvgRectThumb(int i10, float f10) {
+    public static SvgHelper.SvgDrawable getSvgRectThumb(int i10, float f7) {
         Path path = new Path();
         path.addRect(0.0f, 0.0f, 512.0f, 512.0f, Path.Direction.CW);
         path.close();
@@ -78,31 +78,31 @@ public class DocumentObject {
         svgDrawable.paints.put(path, new Paint(1));
         svgDrawable.width = 512;
         svgDrawable.height = 512;
-        svgDrawable.setupGradient(i10, f10, false);
+        svgDrawable.setupGradient(i10, f7, false);
         return svgDrawable;
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(ArrayList<TLRPC.PhotoSize> arrayList, int i10, float f10) {
-        return getSvgThumb(arrayList, i10, f10, false);
+    public static SvgHelper.SvgDrawable getSvgThumb(ArrayList<TLRPC.PhotoSize> arrayList, int i10, float f7) {
+        return getSvgThumb(arrayList, i10, f7, false);
     }
 
-    public static SvgHelper.SvgDrawable getCircleThumb(float f10, int i10, org.telegram.ui.ActionBar.f6 f6Var, float f11) {
+    public static SvgHelper.SvgDrawable getCircleThumb(float f7, int i10, org.telegram.ui.ActionBar.f6 f6Var, float f10) {
         try {
             SvgHelper.SvgDrawable svgDrawable = new SvgHelper.SvgDrawable();
-            SvgHelper.Circle circle = new SvgHelper.Circle(256.0f, 256.0f, f10 * 512.0f);
+            SvgHelper.Circle circle = new SvgHelper.Circle(256.0f, 256.0f, f7 * 512.0f);
             svgDrawable.commands.add(circle);
             svgDrawable.paints.put(circle, new Paint(1));
             svgDrawable.width = 512;
             svgDrawable.height = 512;
-            svgDrawable.setupGradient(i10, f11, false);
+            svgDrawable.setupGradient(i10, f10, false);
             return svgDrawable;
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
             return null;
         }
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(ArrayList<TLRPC.PhotoSize> arrayList, int i10, float f10, boolean z4) {
+    public static SvgHelper.SvgDrawable getSvgThumb(ArrayList<TLRPC.PhotoSize> arrayList, int i10, float f7, boolean z10) {
         int size = arrayList.size();
         int i11 = 512;
         TLRPC.TL_photoPathSize tL_photoPathSize = null;
@@ -111,7 +111,7 @@ public class DocumentObject {
             TLRPC.PhotoSize photoSize = arrayList.get(i13);
             if (photoSize instanceof TLRPC.TL_photoPathSize) {
                 tL_photoPathSize = (TLRPC.TL_photoPathSize) photoSize;
-            } else if ((photoSize instanceof TLRPC.TL_photoSize) && z4) {
+            } else if ((photoSize instanceof TLRPC.TL_photoSize) && z10) {
                 i11 = photoSize.w;
                 i12 = photoSize.h;
             }
@@ -121,16 +121,16 @@ public class DocumentObject {
         }
         SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(tL_photoPathSize.svgPath, i11, i12);
         if (drawableByPath != null) {
-            drawableByPath.setupGradient(i10, f10, false);
+            drawableByPath.setupGradient(i10, f7, false);
         }
         return drawableByPath;
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC.Document document, int i10, float f10) {
-        return getSvgThumb(document, i10, f10, 1.0f, null);
+    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC.Document document, int i10, float f7) {
+        return getSvgThumb(document, i10, f7, 1.0f, null);
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC.Document document, int i10, float f10, float f11, org.telegram.ui.ActionBar.f6 f6Var) {
+    public static SvgHelper.SvgDrawable getSvgThumb(TLRPC.Document document, int i10, float f7, float f10, org.telegram.ui.ActionBar.f6 f6Var) {
         int i11;
         int i12;
         if (document == null) {
@@ -156,9 +156,9 @@ public class DocumentObject {
                 i11 = 512;
                 i12 = 512;
                 if (i11 != 0 && i12 != 0) {
-                    SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(((TLRPC.TL_photoPathSize) photoSize).svgPath, (int) (i11 * f11), (int) (i12 * f11));
+                    SvgHelper.SvgDrawable drawableByPath = SvgHelper.getDrawableByPath(((TLRPC.TL_photoPathSize) photoSize).svgPath, (int) (i11 * f10), (int) (i12 * f10));
                     if (drawableByPath != null) {
-                        drawableByPath.setupGradient(i10, f6Var, f10, false);
+                        drawableByPath.setupGradient(i10, f6Var, f7, false);
                     }
                     return drawableByPath;
                 }
@@ -169,10 +169,10 @@ public class DocumentObject {
         return null;
     }
 
-    public static SvgHelper.SvgDrawable getSvgThumb(int i10, int i11, float f10) {
+    public static SvgHelper.SvgDrawable getSvgThumb(int i10, int i11, float f7) {
         SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(i10, -65536);
         if (drawable != null) {
-            drawable.setupGradient(i11, f10, false);
+            drawable.setupGradient(i11, f7, false);
         }
         return drawable;
     }

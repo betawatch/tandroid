@@ -1,40 +1,18 @@
 package sd;
 
-import k7.o8;
+import com.google.android.gms.common.api.internal.n1;
+import java.util.Random;
+import kotlin.jvm.internal.i;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b {
-    public static final b a;
-    public static final b b;
-    public static final b c;
-    public static final b d;
-    public static final b e;
-    public static final /* synthetic */ b[] f;
+public final class b extends a {
+    public final n1 b = new n1(2);
 
-    static {
-        b bVar = new b("CPU_ACQUIRED", 0);
-        a = bVar;
-        b bVar2 = new b("BLOCKING", 1);
-        b = bVar2;
-        b bVar3 = new b("PARKING", 2);
-        c = bVar3;
-        b bVar4 = new b("DORMANT", 3);
-        d = bVar4;
-        b bVar5 = new b("TERMINATED", 4);
-        e = bVar5;
-        b[] bVarArr = {bVar, bVar2, bVar3, bVar4, bVar5};
-        f = bVarArr;
-        o8.a(bVarArr);
-    }
-
-    public static b valueOf(String str) {
-        return (b) Enum.valueOf(b.class, str);
-    }
-
-    public static b[] values() {
-        return (b[]) f.clone();
+    @Override // sd.a
+    public final Random a() {
+        Object obj = this.b.get();
+        i.d(obj, "get(...)");
+        return (Random) obj;
     }
 }

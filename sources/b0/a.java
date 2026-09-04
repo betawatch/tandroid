@@ -1,8 +1,8 @@
 package b0;
 
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class a {
     public static final int[] a = new int[0];
@@ -10,7 +10,7 @@ public abstract class a {
     public static final Object[] c = new Object[0];
 
     public static final int a(int i10, int i11, int[] array) {
-        j.e(array, "array");
+        i.e(array, "array");
         int i12 = i10 - 1;
         int i13 = 0;
         while (i13 <= i12) {
@@ -28,17 +28,17 @@ public abstract class a {
         return ~i13;
     }
 
-    public static final int b(long[] array, int i10, long j10) {
-        j.e(array, "array");
+    public static final int b(long[] array, int i10, long j3) {
+        i.e(array, "array");
         int i11 = i10 - 1;
         int i12 = 0;
         while (i12 <= i11) {
             int i13 = (i12 + i11) >>> 1;
-            long j11 = array[i13];
-            if (j11 < j10) {
+            long j10 = array[i13];
+            if (j10 < j3) {
                 i12 = i13 + 1;
             } else {
-                if (j11 <= j10) {
+                if (j10 <= j3) {
                     return i13;
                 }
                 i11 = i13 - 1;

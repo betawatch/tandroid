@@ -5,7 +5,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class nt0 implements Runnable {
     public final /* synthetic */ int a;
@@ -32,12 +32,12 @@ public final /* synthetic */ class nt0 implements Runnable {
                 String str2 = this.c;
                 ArrayList arrayList = null;
                 ot0Var2.f = null;
-                if (!ChatObject.isChannel(ot0Var2.n) && ot0Var2.s.a1 != null) {
-                    arrayList = new ArrayList(ot0Var2.s.a1.participants.participants);
+                if (!ChatObject.isChannel(ot0Var2.n) && ot0Var2.s.d1 != null) {
+                    arrayList = new ArrayList(ot0Var2.s.d1.participants.participants);
                 }
                 ot0Var2.r = 2;
                 if (arrayList != null) {
-                    Utilities.searchQueue.postRunnable(new gp(ot0Var2, str2, arrayList, 20));
+                    Utilities.searchQueue.postRunnable(new er0(ot0Var2, str2, arrayList, 3));
                 } else {
                     ot0Var2.r = 1;
                 }

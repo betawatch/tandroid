@@ -1,62 +1,53 @@
 package oh;
 
 import android.content.Context;
-import android.view.View;
-import nh.d6;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.c81;
-import org.telegram.ui.Components.nr0;
-import org.telegram.ui.Components.v31;
+import android.os.Build;
+import le.e;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.pr;
+import yf.j0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final class b extends c81 {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ nr0 b;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class b extends di.d implements le.d {
+    public final le.b h0;
+    public final f6 i0;
 
-    public b(nr0 nr0Var, Context context) {
-        this.b = nr0Var;
-        this.a = context;
+    public b(Context context, f6 f6Var) {
+        super(context, f6Var, true);
+        this.h0 = new le.b(0, this, pr.h, 320L, true);
+        this.i0 = f6Var;
+        e();
+        setOutlineProvider(j0.b);
     }
 
-    @Override // org.telegram.ui.Components.c81
-    public final void b(View view, int i10, int i11) {
-        r rVar = (r) view;
-        nr0 nr0Var = this.b;
-        d6 d6Var = i10 == 0 ? nr0Var.e : (d6) nr0Var.f.get(i10 - 1);
-        d6Var.H(null);
-        rVar.setList(d6Var);
-        rVar.setVisibleHeight(nr0Var.v);
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final View d(int i10) {
-        return new r(this.b, this.a);
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final int e() {
-        return this.b.f.size() + 1;
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final int f(int i10) {
-        if (i10 == 0) {
-            return 0;
+    @Override // le.d
+    public final void E(int i10, float f7, float f10, e eVar) {
+        f6 f6Var = this.i0;
+        boolean a2 = f6Var != null ? f6Var.a() : j6.I.q();
+        float f11 = this.h0.e;
+        setElevation((1.0f - f11) * AndroidUtilities.dp(1.0f));
+        setColor(i0.a.d(f11, m(j6.d6), m(j6.Oh)));
+        setTextColor(i0.a.d(f11, m(j6.q7), m(j6.Sh)));
+        if (Build.VERSION.SDK_INT >= 28) {
+            if (a2) {
+                setOutlineAmbientShadowColor(553648127);
+                setOutlineSpotShadowColor(553648127);
+            } else {
+                setOutlineAmbientShadowColor(1610612736);
+                setOutlineSpotShadowColor(1610612736);
+            }
         }
-        return ((d6) this.b.f.get(i10 - 1)).E.hashCode();
     }
 
-    @Override // org.telegram.ui.Components.c81
-    public final CharSequence g(int i10) {
-        if (i10 == 0) {
-            return LocaleController.getString(R.string.ProfileBotLanguageGeneral);
-        }
-        String D = v31.D(((d6) this.b.f.get(i10 - 1)).E, null, null);
-        if (D == null) {
-            return null;
-        }
-        return D.substring(0, 1).toUpperCase() + D.substring(1);
+    public final int m(int i10) {
+        f6 f6Var = this.i0;
+        return f6Var != null ? f6Var.G0(i10) : j6.w0(null, i10, false);
+    }
+
+    @Override // le.d
+    public final /* synthetic */ void z(float f7, int i10) {
     }
 }

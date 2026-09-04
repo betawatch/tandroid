@@ -1,20 +1,20 @@
 package com.google.android.recaptcha.internal;
 
-import a7.b;
+import androidx.car.app.j;
+import hd.h;
+import hd.i;
+import hd.p;
+import hd.r;
+import id.c;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import kotlin.jvm.internal.f;
-import tc.h;
-import tc.i;
-import tc.p;
-import tc.r;
-import uc.c;
+import kotlin.jvm.internal.e;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzaj extends zzg {
     private final List zza;
@@ -65,7 +65,7 @@ public final class zzaj extends zzg {
             zzf.zzf(zzdn.zza(zzpp.zzh().zzi(zzd, 0, zzd.length), zzqmVar));
         } else {
             if (!(zzatVar instanceof zzak)) {
-                throw new b();
+                throw new j();
             }
             zzyt zza2 = ((zzak) zzatVar).zza();
             zzqm zzqmVar3 = this.zzb;
@@ -148,7 +148,7 @@ public final class zzaj extends zzg {
         return this.zzc;
     }
 
-    public /* synthetic */ zzaj(List list, int i10, f fVar) {
+    public /* synthetic */ zzaj(List list, int i10, e eVar) {
         this.zza = h.c(new zzav(), new zzad(), new zzx(), new zzz(), new zzba(null, null, 3, null));
         this.zzc = new LinkedHashMap();
     }

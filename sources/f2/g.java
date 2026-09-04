@@ -1,94 +1,52 @@
 package f2;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import android.view.ViewPropertyAnimator;
+import b2.m0;
+import b2.o0;
+import v7.y7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ l1 b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ ViewPropertyAnimator d;
-    public final /* synthetic */ l e;
+public final class g implements o0 {
+    public final long a;
+    public final long b;
+    public final long c;
 
-    public g(l lVar, l1 l1Var, ViewPropertyAnimator viewPropertyAnimator, View view) {
-        this.e = lVar;
-        this.b = l1Var;
-        this.d = viewPropertyAnimator;
-        this.c = view;
+    public g(long j3, long j10, long j11) {
+        this.a = j3;
+        this.b = j10;
+        this.c = j11;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public void onAnimationCancel(Animator animator) {
-        switch (this.a) {
-            case 1:
-                View view = this.c;
-                view.setAlpha(1.0f);
-                if (this.e.A(view) > 0.0f) {
-                    view.setScaleX(1.0f);
-                    view.setScaleY(1.0f);
-                    break;
-                }
-                break;
-            default:
-                super.onAnimationCancel(animator);
-                break;
+    @Override // b2.o0
+    public final /* synthetic */ b2.s a() {
+        return null;
+    }
+
+    @Override // b2.o0
+    public final /* synthetic */ byte[] c() {
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.d.setListener(null);
-                View view = this.c;
-                view.setAlpha(1.0f);
-                l lVar = this.e;
-                if (lVar.A(view) > 0.0f) {
-                    view.setScaleX(1.0f);
-                    view.setScaleY(1.0f);
-                }
-                view.setTranslationX(0.0f);
-                view.setTranslationY(0.0f);
-                lVar.Q();
-                l1 l1Var = this.b;
-                lVar.d(l1Var);
-                lVar.A.remove(l1Var);
-                lVar.G();
-                break;
-            default:
-                this.d.setListener(null);
-                l lVar2 = this.e;
-                lVar2.M();
-                l1 l1Var2 = this.b;
-                lVar2.u(l1Var2);
-                lVar2.y.remove(l1Var2);
-                lVar2.G();
-                break;
+        if (!(obj instanceof g)) {
+            return false;
         }
+        g gVar = (g) obj;
+        return this.a == gVar.a && this.b == gVar.b && this.c == gVar.c;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                break;
-            default:
-                this.e.getClass();
-                break;
-        }
+    public final int hashCode() {
+        return y7.b(this.c) + ((y7.b(this.b) + ((y7.b(this.a) + 527) * 31)) * 31);
     }
 
-    public g(l lVar, l1 l1Var, View view, ViewPropertyAnimator viewPropertyAnimator) {
-        this.e = lVar;
-        this.b = l1Var;
-        this.c = view;
-        this.d = viewPropertyAnimator;
+    public final String toString() {
+        return "Mp4Timestamp: creation time=" + this.a + ", modification time=" + this.b + ", timescale=" + this.c;
     }
 
-    private final void a(Animator animator) {
+    @Override // b2.o0
+    public final /* synthetic */ void b(m0 m0Var) {
     }
 }

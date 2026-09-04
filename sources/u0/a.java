@@ -1,6 +1,6 @@
 package u0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class a {
     public int a;
@@ -13,15 +13,15 @@ public final class a {
     public float h;
     public int i;
 
-    public final float a(long j10) {
-        if (j10 < this.e) {
+    public final float a(long j3) {
+        if (j3 < this.e) {
             return 0.0f;
         }
-        long j11 = this.g;
-        if (j11 < 0 || j10 < j11) {
-            return d.b((j10 - r0) / this.a, 0.0f, 1.0f) * 0.5f;
+        long j10 = this.g;
+        if (j10 < 0 || j3 < j10) {
+            return d.b((j3 - r0) / this.a, 0.0f, 1.0f) * 0.5f;
         }
-        float f10 = this.h;
-        return (d.b((j10 - j11) / this.i, 0.0f, 1.0f) * f10) + (1.0f - f10);
+        float f7 = this.h;
+        return (d.b((j3 - j10) / this.i, 0.0f, 1.0f) * f7) + (1.0f - f7);
     }
 }

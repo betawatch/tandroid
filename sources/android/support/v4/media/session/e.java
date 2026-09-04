@@ -2,26 +2,29 @@ package android.support.v4.media.session;
 
 import android.media.MediaMetadata;
 import android.media.session.MediaController;
+import android.media.session.MediaSession;
 import android.media.session.PlaybackState;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
+import android.support.v4.media.MediaDescriptionCompat;
 import android.support.v4.media.MediaMetadataCompat;
 import java.lang.ref.WeakReference;
+import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class e extends MediaController.Callback {
     public final WeakReference a;
 
-    public e(androidx.mediarouter.app.s sVar) {
-        this.a = new WeakReference(sVar);
+    public e(androidx.mediarouter.app.r rVar) {
+        this.a = new WeakReference(rVar);
     }
 
     @Override // android.media.session.MediaController.Callback
     public final void onAudioInfoChanged(MediaController.PlaybackInfo playbackInfo) {
-        if (((androidx.mediarouter.app.s) this.a.get()) != null) {
+        if (((androidx.mediarouter.app.r) this.a.get()) != null) {
             playbackInfo.getPlaybackType();
             playbackInfo.getAudioAttributes();
             if (Build.VERSION.SDK_INT >= 26) {
@@ -40,8 +43,8 @@ public final class e extends MediaController.Callback {
     @Override // android.media.session.MediaController.Callback
     public final void onMetadataChanged(MediaMetadata mediaMetadata) {
         MediaMetadataCompat mediaMetadataCompat;
-        androidx.mediarouter.app.s sVar = (androidx.mediarouter.app.s) this.a.get();
-        if (sVar != null) {
+        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
+        if (rVar != null) {
             a0.f fVar = MediaMetadataCompat.d;
             if (mediaMetadata != null) {
                 Parcel obtain = Parcel.obtain();
@@ -53,23 +56,34 @@ public final class e extends MediaController.Callback {
             } else {
                 mediaMetadataCompat = null;
             }
-            sVar.a(mediaMetadataCompat);
+            rVar.a(mediaMetadataCompat);
         }
     }
 
     @Override // android.media.session.MediaController.Callback
     public final void onPlaybackStateChanged(PlaybackState playbackState) {
-        androidx.mediarouter.app.s sVar = (androidx.mediarouter.app.s) this.a.get();
-        if (sVar == null || sVar.c != null) {
+        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
+        if (rVar == null || rVar.c != null) {
             return;
         }
-        sVar.b(PlaybackStateCompat.a(playbackState));
+        rVar.b(PlaybackStateCompat.a(playbackState));
     }
 
     @Override // android.media.session.MediaController.Callback
     public final void onQueueChanged(List list) {
-        if (((androidx.mediarouter.app.s) this.a.get()) != null) {
-            MediaSessionCompat$QueueItem.a(list);
+        MediaSessionCompat$QueueItem mediaSessionCompat$QueueItem;
+        if (((androidx.mediarouter.app.r) this.a.get()) == null || list == null) {
+            return;
+        }
+        ArrayList arrayList = new ArrayList(list.size());
+        for (Object obj : list) {
+            if (obj != null) {
+                MediaSession.QueueItem queueItem = (MediaSession.QueueItem) obj;
+                mediaSessionCompat$QueueItem = new MediaSessionCompat$QueueItem(queueItem, MediaDescriptionCompat.a(a0.b(queueItem)), a0.c(queueItem));
+            } else {
+                mediaSessionCompat$QueueItem = null;
+            }
+            arrayList.add(mediaSessionCompat$QueueItem);
         }
     }
 
@@ -79,9 +93,9 @@ public final class e extends MediaController.Callback {
 
     @Override // android.media.session.MediaController.Callback
     public final void onSessionDestroyed() {
-        androidx.mediarouter.app.s sVar = (androidx.mediarouter.app.s) this.a.get();
-        if (sVar != null) {
-            sVar.d();
+        androidx.mediarouter.app.r rVar = (androidx.mediarouter.app.r) this.a.get();
+        if (rVar != null) {
+            rVar.d();
         }
     }
 

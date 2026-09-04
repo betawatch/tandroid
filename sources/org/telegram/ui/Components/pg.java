@@ -1,59 +1,226 @@
 package org.telegram.ui.Components;
 
+import android.app.Dialog;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.util.SparseArray;
+import android.widget.EditText;
+import java.io.File;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.R;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'd' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class pg {
-    public static final pg d;
-    public static final pg e;
-    public static final /* synthetic */ pg[] f;
-    public final og a;
-    public final og b;
-    public final int c;
+public final /* synthetic */ class pg implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    static {
-        int i10 = R.raw.voice_and_video;
-        og ogVar = og.a;
-        og ogVar2 = og.b;
-        pg pgVar = new pg("VOICE_TO_VIDEO", 0, ogVar, ogVar2, i10);
-        d = pgVar;
-        int i11 = R.raw.sticker_to_keyboard;
-        og ogVar3 = og.c;
-        og ogVar4 = og.d;
-        pg pgVar2 = new pg("STICKER_TO_KEYBOARD", 1, ogVar3, ogVar4, i11);
-        int i12 = R.raw.smile_to_keyboard;
-        og ogVar5 = og.e;
-        pg pgVar3 = new pg("SMILE_TO_KEYBOARD", 2, ogVar5, ogVar4, i12);
-        pg pgVar4 = new pg("VIDEO_TO_VOICE", 3, ogVar2, ogVar, i10);
-        e = pgVar4;
-        pg pgVar5 = new pg("KEYBOARD_TO_STICKER", 4, ogVar4, ogVar3, R.raw.keyboard_to_sticker);
-        int i13 = R.raw.keyboard_to_gif;
-        og ogVar6 = og.f;
-        f = new pg[]{pgVar, pgVar2, pgVar3, pgVar4, pgVar5, new pg("KEYBOARD_TO_GIF", 5, ogVar4, ogVar6, i13), new pg("KEYBOARD_TO_SMILE", 6, ogVar4, ogVar5, R.raw.keyboard_to_smile), new pg("GIF_TO_KEYBOARD", 7, ogVar6, ogVar4, R.raw.gif_to_keyboard), new pg("GIF_TO_SMILE", 8, ogVar6, ogVar5, R.raw.gif_to_smile), new pg("SMILE_TO_GIF", 9, ogVar5, ogVar6, R.raw.smile_to_gif), new pg("SMILE_TO_STICKER", 10, ogVar5, ogVar3, R.raw.smile_to_sticker), new pg("STICKER_TO_SMILE", 11, ogVar3, ogVar5, R.raw.sticker_to_smile)};
+    public /* synthetic */ pg(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    public pg(String str, int i10, og ogVar, og ogVar2, int i11) {
-        this.a = ogVar;
-        this.b = ogVar2;
-        this.c = i11;
-    }
-
-    public static pg valueOf(String str) {
-        return (pg) Enum.valueOf(pg.class, str);
-    }
-
-    public static pg[] values() {
-        return (pg[]) f.clone();
+    @Override // java.lang.Runnable
+    public final void run() {
+        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout;
+        int i10 = this.a;
+        int i11 = 0;
+        Object obj = this.b;
+        switch (i10) {
+            case 0:
+                ChatActivityEnterView chatActivityEnterView = ((sg) obj).V;
+                if (!MediaController.getInstance().isRecordingPaused()) {
+                    MessagesController.getGlobalMainSettings().edit().putInt("voicepausehint", 3).apply();
+                }
+                if (chatActivityEnterView.r4) {
+                    chatActivityEnterView.I3 = true;
+                }
+                MediaController.getInstance().toggleRecordingPause(chatActivityEnterView.O);
+                chatActivityEnterView.Y2.V0(0);
+                ChatActivityEnterView.SlideTextView slideTextView = chatActivityEnterView.j1;
+                if (slideTextView != null) {
+                    slideTextView.setEnabled(false);
+                    break;
+                }
+                break;
+            case 1:
+                yc ycVar = (yc) obj;
+                new sg.a1(ycVar.W(), 42, ycVar.c).show();
+                break;
+            case 2:
+                AndroidUtilities.removeFromParent((di.f4) obj);
+                break;
+            case 3:
+                AndroidUtilities.showKeyboard((EditText) obj);
+                break;
+            case 4:
+                SparseArray sparseArray = q5.q;
+                ((q5) obj).v();
+                break;
+            case 5:
+                m5 m5Var = (m5) obj;
+                ArrayList arrayList = new ArrayList(m5Var.c);
+                m5Var.c.clear();
+                MessagesStorage.getInstance(m5Var.e).getStorageQueue().postRunnable(new j5(m5Var, arrayList, i11));
+                m5Var.d = null;
+                break;
+            case 6:
+                ((o5) obj).invalidate();
+                break;
+            case 7:
+                ((o1.k) obj).f();
+                break;
+            case 8:
+                q6 q6Var = (q6) obj;
+                CharSequence charSequence = q6Var.f;
+                if (charSequence != null) {
+                    q6Var.c(charSequence, q6Var.h, true);
+                    q6Var.f = null;
+                    q6Var.h = false;
+                    break;
+                }
+                break;
+            case 9:
+                ((j8) obj).n.n.setVisibility(8);
+                break;
+            case 10:
+                ((q8) obj).c.l1();
+                break;
+            case 11:
+                fa faVar = (fa) obj;
+                faVar.o = true;
+                faVar.d.invalidate();
+                break;
+            case 12:
+                ea eaVar = (ea) obj;
+                if (!eaVar.a) {
+                    fa faVar2 = eaVar.d;
+                    Bitmap[] bitmapArr = faVar2.g;
+                    Canvas[] canvasArr = faVar2.h;
+                    faVar2.g = faVar2.f;
+                    faVar2.h = faVar2.i;
+                    faVar2.f = bitmapArr;
+                    faVar2.i = canvasArr;
+                    faVar2.k = false;
+                    di.r6 r6Var = faVar2.d;
+                    if (r6Var != null) {
+                        r6Var.invalidate();
+                        break;
+                    }
+                }
+                break;
+            case 13:
+                ja jaVar = ((pa) obj).t;
+                if (jaVar != null) {
+                    jaVar.d();
+                    break;
+                }
+                break;
+            case 14:
+                ja jaVar2 = (ja) obj;
+                jaVar2.o = jaVar2.n.b;
+                jaVar2.d();
+                break;
+            case 15:
+                qc qcVar = ((jb) obj).b;
+                ub ubVar = qcVar.e;
+                ubVar.transitionRunningEnter = false;
+                ubVar.onEnterTransitionEnd();
+                if (qcVar.u) {
+                    qcVar.i(true);
+                    break;
+                }
+                break;
+            case 16:
+                jd jdVar = (jd) obj;
+                jdVar.getClass();
+                if (LiteMode.isEnabled(512)) {
+                    jdVar.invalidateSelf();
+                    break;
+                }
+                break;
+            case 17:
+                ld ldVar = (ld) obj;
+                if (ldVar.o1) {
+                    ldVar.o1 = false;
+                    ldVar.invalidate();
+                    break;
+                }
+                break;
+            case 18:
+                ((Dialog) obj).dismiss();
+                break;
+            case 19:
+                ChatActivityEnterView chatActivityEnterView2 = ((sf) obj).f;
+                int i12 = ChatActivityEnterView.m5;
+                chatActivityEnterView2.q1();
+                break;
+            case 20:
+                ((bh) obj).s = null;
+                break;
+            case 21:
+                ((li) obj).B0.A1.l();
+                break;
+            case 22:
+                ok okVar = (ok) ((androidx.mediarouter.app.g) obj).b;
+                try {
+                    File file = okVar.O;
+                    if (file == null) {
+                        okVar.O();
+                    } else {
+                        okVar.N(file);
+                    }
+                    okVar.V();
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
+                }
+            case 23:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = ((xl) obj).b;
+                boolean z10 = ChatAttachAlertPhotoLayout.q1;
+                chatAttachAlertPhotoLayout2.p0(-1, true);
+                break;
+            case 24:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout3 = ((ul) obj).c;
+                if (chatAttachAlertPhotoLayout3.P != null && !chatAttachAlertPhotoLayout3.b.isDismissed()) {
+                    chatAttachAlertPhotoLayout3.P.setSystemUiVisibility(1028);
+                    break;
+                }
+                break;
+            case 25:
+                qm qmVar = (qm) obj;
+                vi viVar = qmVar.b;
+                if (qmVar.Q && (chatAttachAlertPhotoLayout = viVar.j0) != null) {
+                    org.telegram.ui.ActionBar.f1 f1Var = chatAttachAlertPhotoLayout.c1;
+                    f1Var.setIcon(R.drawable.ic_ab_back);
+                    f1Var.setText(LocaleController.getString(R.string.Back));
+                    f1Var.setRightIcon(0);
+                    break;
+                }
+                break;
+            case 26:
+                tn tnVar = (tn) obj;
+                tnVar.k1 = -1;
+                tnVar.j1 = null;
+                break;
+            case 27:
+                ((no) obj).n();
+                break;
+            case 28:
+                ((po) obj).setVisibility(8);
+                break;
+            default:
+                ((op) obj).b.a();
+                break;
+        }
     }
 }

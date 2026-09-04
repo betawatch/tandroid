@@ -7,13 +7,13 @@ import android.os.RemoteCallbackList;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class v implements t {
     public final MediaSession a;
-    public final MediaSessionCompat$Token b;
-    public final Object c = new Object();
-    public boolean d = false;
+    public final u b;
+    public final MediaSessionCompat$Token c;
+    public final Object d = new Object();
     public final RemoteCallbackList e = new RemoteCallbackList();
     public PlaybackStateCompat f;
     public List g;
@@ -24,16 +24,18 @@ public class v implements t {
     public y1.a l;
 
     public v(Context context, String str) {
-        MediaSession e = e(context, str);
-        this.a = e;
-        this.b = new MediaSessionCompat$Token(e.getSessionToken(), new u(this));
-        e.setFlags(3);
+        MediaSession e7 = e(context, str);
+        this.a = e7;
+        u uVar = new u(this);
+        this.b = uVar;
+        this.c = new MediaSessionCompat$Token(e7.getSessionToken(), uVar);
+        e7.setFlags(3);
     }
 
     @Override // android.support.v4.media.session.t
     public final s a() {
         s sVar;
-        synchronized (this.c) {
+        synchronized (this.d) {
             sVar = this.k;
         }
         return sVar;
@@ -42,22 +44,22 @@ public class v implements t {
     @Override // android.support.v4.media.session.t
     public y1.a b() {
         y1.a aVar;
-        synchronized (this.c) {
+        synchronized (this.d) {
             aVar = this.l;
         }
         return aVar;
     }
 
     @Override // android.support.v4.media.session.t
-    public final PlaybackStateCompat c() {
-        return this.f;
+    public void c(y1.a aVar) {
+        synchronized (this.d) {
+            this.l = aVar;
+        }
     }
 
     @Override // android.support.v4.media.session.t
-    public void d(y1.a aVar) {
-        synchronized (this.c) {
-            this.l = aVar;
-        }
+    public final PlaybackStateCompat d() {
+        return this.f;
     }
 
     public MediaSession e(Context context, String str) {
@@ -65,7 +67,7 @@ public class v implements t {
     }
 
     public final void f(s sVar, Handler handler) {
-        synchronized (this.c) {
+        synchronized (this.d) {
             try {
                 this.k = sVar;
                 this.a.setCallback(sVar == null ? null : sVar.mCallbackFwk, handler);

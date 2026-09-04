@@ -1,123 +1,262 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.NotificationCenter;
+import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class an implements ji {
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ ym c;
+public final class an implements org.telegram.ui.qt {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ tn b;
 
-    public an(Utilities.Callback callback, org.telegram.ui.ActionBar.p2 p2Var, ym ymVar) {
-        this.a = p2Var;
-        this.b = callback;
-        this.c = ymVar;
+    public an(tn tnVar, int i10) {
+        this.b = tnVar;
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final void C0(wg wgVar) {
-        NotificationCenter.getInstance(this.a.getCurrentAccount()).doOnIdle(wgVar);
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean A() {
+        return false;
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final void G1(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11) {
-        ym ymVar = this.c;
-        ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = ymVar.g0;
-        Utilities.Callback callback = this.b;
-        if (i10 == 15) {
-            org.telegram.ui.ActionBar.p2 p2Var = this.a;
-            z4.g0(p2Var.getContext(), p2Var.getResourceProvider(), null, null, new zm(0, callback), null);
-        } else if (i10 == 7 || i10 == 8) {
-            HashMap<Object, Object> selectedPhotos = chatAttachAlertPhotoLayout.getSelectedPhotos();
-            ArrayList<Object> selectedPhotosOrder = chatAttachAlertPhotoLayout.getSelectedPhotosOrder();
-            if (selectedPhotosOrder.size() > 0) {
-                Object obj = selectedPhotos.get(selectedPhotosOrder.get(0));
-                SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-                if (obj instanceof MediaController.PhotoEntry) {
-                    MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj;
-                    String str = photoEntry.imagePath;
-                    if (str != null) {
-                        sendingMediaInfo.path = str;
-                    } else {
-                        sendingMediaInfo.path = photoEntry.path;
-                    }
-                    sendingMediaInfo.thumbPath = photoEntry.thumbPath;
-                    sendingMediaInfo.coverPath = photoEntry.coverPath;
-                    sendingMediaInfo.videoEditedInfo = photoEntry.editedInfo;
-                    sendingMediaInfo.isLivePhoto = photoEntry.isLivePhoto();
-                    sendingMediaInfo.livePhotoVideoOffset = photoEntry.livePhotoVideoOffset;
-                    sendingMediaInfo.discardLivePhoto = true;
-                    sendingMediaInfo.isVideo = photoEntry.isVideo;
-                    CharSequence charSequence = photoEntry.caption;
-                    sendingMediaInfo.caption = charSequence != null ? charSequence.toString() : null;
-                    sendingMediaInfo.entities = photoEntry.entities;
-                    sendingMediaInfo.masks = photoEntry.stickers;
-                    sendingMediaInfo.ttl = photoEntry.ttl;
-                    sendingMediaInfo.emojiMarkup = photoEntry.emojiMarkup;
-                    sendingMediaInfo.originalPhotoEntry = photoEntry;
-                } else if (obj instanceof MediaController.SearchImage) {
-                    MediaController.SearchImage searchImage = (MediaController.SearchImage) obj;
-                    String str2 = searchImage.imagePath;
-                    if (str2 != null) {
-                        sendingMediaInfo.path = str2;
-                    } else {
-                        sendingMediaInfo.searchImage = searchImage;
-                    }
-                    sendingMediaInfo.thumbPath = searchImage.thumbPath;
-                    sendingMediaInfo.coverPath = searchImage.coverPath;
-                    sendingMediaInfo.videoEditedInfo = searchImage.editedInfo;
-                    CharSequence charSequence2 = searchImage.caption;
-                    sendingMediaInfo.caption = charSequence2 != null ? charSequence2.toString() : null;
-                    sendingMediaInfo.entities = searchImage.entities;
-                    sendingMediaInfo.masks = searchImage.stickers;
-                    sendingMediaInfo.ttl = searchImage.ttl;
-                    TLRPC.BotInlineResult botInlineResult = searchImage.inlineResult;
-                    if (botInlineResult != null && searchImage.type == 1) {
-                        sendingMediaInfo.inlineResult = botInlineResult;
-                        sendingMediaInfo.params = searchImage.params;
-                    }
-                    searchImage.date = (int) (System.currentTimeMillis() / 1000);
-                }
-                callback.run(new eh.d(sendingMediaInfo));
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean C() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean D(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ String F(boolean z10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean I() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean J() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean N(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ Boolean P(TLRPC.Document document) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean Q() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean c() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ TLRPC.TL_messageMediaPoll d() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean e(TLRPC.Document document) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean f() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ TLRPC.PollAnswer g() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean h() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean j() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean k(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean o() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.qt
+    public final n70 t(ah.w wVar) {
+        n70 F = n70.F(wVar, null, new View(this.b.getContext()));
+        F.s = 0;
+        F.t = false;
+        int i10 = R.drawable.msg_replace;
+        String string = LocaleController.getString(R.string.ReplaceAttachedPollMedia);
+        final int i11 = 0;
+        final int i12 = this.a;
+        F.c(i10, string, new Runnable(this) { // from class: org.telegram.ui.Components.zm
+            public final /* synthetic */ an b;
+
+            {
+                this.b = this;
             }
-        }
-        ymVar.dismiss(true);
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i11) {
+                    case 0:
+                        this.b.b.b0(i12);
+                        break;
+                    default:
+                        this.b.b.e0(i12, null);
+                        break;
+                }
+            }
+        }, false);
+        final int i13 = 1;
+        F.c(R.drawable.msg_delete, LocaleController.getString(R.string.Delete), new Runnable(this) { // from class: org.telegram.ui.Components.zm
+            public final /* synthetic */ an b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // java.lang.Runnable
+            public final void run() {
+                switch (i13) {
+                    case 0:
+                        this.b.b.b0(i12);
+                        break;
+                    default:
+                        this.b.b.e0(i12, null);
+                        break;
+                }
+            }
+        }, true);
+        return F;
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ boolean X1() {
-        return false;
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ boolean x() {
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final boolean h0() {
-        return false;
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ MessageObject z() {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final void Q0() {
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void B(TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ void Z0(Object obj) {
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void E(TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final void o1(TLRPC.User user) {
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void H(TLRPC.Document document) {
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ void z0() {
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void K() {
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ void b2(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void L() {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void O(String str) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void i(SendMessagesHelper.ImportingSticker importingSticker) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void m(String str) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void n(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void p(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void q() {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void u(TLRPC.Document document) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void y(String str) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void M(TLRPC.InputStickerSet inputStickerSet, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void v(TLRPC.StickerSet stickerSet, String str) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void w(TLObject tLObject, Object obj) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void G(CharSequence charSequence, String str, org.telegram.ui.nf nfVar) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void r(int i10, int i11, Object obj, TLObject tLObject, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.qt
+    public final /* synthetic */ void l(TLRPC.Document document, String str, Object obj, boolean z10, int i10, int i11) {
     }
 }

@@ -1,22 +1,47 @@
 package h7;
 
-import org.telegram.ui.ai;
+import android.os.IBinder;
+import android.os.IInterface;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e {
-    public final Object a;
-    public final Object b;
-    public final Object c;
-
-    public e(Object obj, Object obj2, Object obj3) {
-        this.a = obj;
-        this.b = obj2;
-        this.c = obj3;
+public final class e extends n6.g {
+    @Override // n6.g
+    public final boolean C() {
+        return true;
     }
 
-    public final IllegalArgumentException a() {
-        Object obj = this.a;
-        return new IllegalArgumentException(android.support.v4.media.a.p(String.valueOf(obj), "=", String.valueOf(this.c), ai.l("Multiple entries with same key: ", String.valueOf(obj), "=", String.valueOf(this.b), " and ")));
+    @Override // n6.g, com.google.android.gms.common.api.c
+    public final int l() {
+        return 17895000;
+    }
+
+    @Override // n6.g
+    public final IInterface q(IBinder iBinder) {
+        i.e(iBinder, "iBinder");
+        int i10 = c.b;
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.identitycredentials.internal.IIdentityCredentialService");
+        return queryLocalInterface instanceof d ? (d) queryLocalInterface : new b(iBinder);
+    }
+
+    @Override // n6.g
+    public final k6.c[] r() {
+        return q7.b.c;
+    }
+
+    @Override // n6.g
+    public final String v() {
+        return "com.google.android.gms.identitycredentials.internal.IIdentityCredentialService";
+    }
+
+    @Override // n6.g
+    public final String w() {
+        return "com.google.android.gms.identitycredentials.service.START";
+    }
+
+    @Override // n6.g
+    public final boolean y() {
+        return true;
     }
 }

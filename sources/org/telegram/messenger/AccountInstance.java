@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import android.content.SharedPreferences;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class AccountInstance {
     private static volatile AccountInstance[] Instance = new AccountInstance[4];
@@ -35,8 +35,8 @@ public class AccountInstance {
         return accountInstance;
     }
 
-    public cg.f1 getColorPalette() {
-        return cg.f1.e(this.currentAccount);
+    public qg.s0 getColorPalette() {
+        return qg.s0.e(this.currentAccount);
     }
 
     public ConnectionsManager getConnectionsManager() {

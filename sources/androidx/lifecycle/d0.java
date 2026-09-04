@@ -6,12 +6,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class d0 extends g {
     final /* synthetic */ e0 this$0;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static final class a extends g {
         final /* synthetic */ e0 this$0;
 
@@ -21,13 +21,13 @@ public final class d0 extends g {
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public void onActivityPostResumed(Activity activity) {
-            kotlin.jvm.internal.j.e(activity, "activity");
+            kotlin.jvm.internal.i.e(activity, "activity");
             this.this$0.a();
         }
 
         @Override // android.app.Application.ActivityLifecycleCallbacks
         public void onActivityPostStarted(Activity activity) {
-            kotlin.jvm.internal.j.e(activity, "activity");
+            kotlin.jvm.internal.i.e(activity, "activity");
             e0 e0Var = this.this$0;
             int i10 = e0Var.a + 1;
             e0Var.a = i10;
@@ -44,37 +44,37 @@ public final class d0 extends g {
 
     @Override // androidx.lifecycle.g, android.app.Application.ActivityLifecycleCallbacks
     public void onActivityCreated(Activity activity, Bundle bundle) {
-        kotlin.jvm.internal.j.e(activity, "activity");
+        kotlin.jvm.internal.i.e(activity, "activity");
         if (Build.VERSION.SDK_INT < 29) {
             int i10 = h0.b;
             Fragment findFragmentByTag = activity.getFragmentManager().findFragmentByTag("androidx.lifecycle.LifecycleDispatcher.report_fragment_tag");
-            kotlin.jvm.internal.j.c(findFragmentByTag, "null cannot be cast to non-null type androidx.lifecycle.ReportFragment");
+            kotlin.jvm.internal.i.c(findFragmentByTag, "null cannot be cast to non-null type androidx.lifecycle.ReportFragment");
             ((h0) findFragmentByTag).a = this.this$0.n;
         }
     }
 
     @Override // androidx.lifecycle.g, android.app.Application.ActivityLifecycleCallbacks
     public void onActivityPaused(Activity activity) {
-        kotlin.jvm.internal.j.e(activity, "activity");
+        kotlin.jvm.internal.i.e(activity, "activity");
         e0 e0Var = this.this$0;
         int i10 = e0Var.b - 1;
         e0Var.b = i10;
         if (i10 == 0) {
             Handler handler = e0Var.e;
-            kotlin.jvm.internal.j.b(handler);
+            kotlin.jvm.internal.i.b(handler);
             handler.postDelayed(e0Var.h, 700L);
         }
     }
 
     @Override // android.app.Application.ActivityLifecycleCallbacks
     public void onActivityPreCreated(Activity activity, Bundle bundle) {
-        kotlin.jvm.internal.j.e(activity, "activity");
+        kotlin.jvm.internal.i.e(activity, "activity");
         c0.a(activity, new a(this.this$0));
     }
 
     @Override // androidx.lifecycle.g, android.app.Application.ActivityLifecycleCallbacks
     public void onActivityStopped(Activity activity) {
-        kotlin.jvm.internal.j.e(activity, "activity");
+        kotlin.jvm.internal.i.e(activity, "activity");
         e0 e0Var = this.this$0;
         int i10 = e0Var.a - 1;
         e0Var.a = i10;

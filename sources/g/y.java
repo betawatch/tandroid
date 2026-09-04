@@ -1,53 +1,40 @@
 package g;
 
-import android.view.View;
-import androidx.appcompat.widget.ActionBarOverlayLayout;
-import java.util.WeakHashMap;
-import r0.j0;
-import r0.o0;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class y extends o0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ a0 b;
+public final class y {
+    public static y d;
+    public long a;
+    public long b;
+    public int c;
 
-    public /* synthetic */ y(a0 a0Var, int i10) {
-        this.a = i10;
-        this.b = a0Var;
-    }
-
-    @Override // r0.n0
-    public final void c() {
-        View view;
-        int i10 = this.a;
-        a0 a0Var = this.b;
-        switch (i10) {
-            case 0:
-                if (a0Var.o && (view = a0Var.g) != null) {
-                    view.setTranslationY(0.0f);
-                    a0Var.d.setTranslationY(0.0f);
-                }
-                a0Var.d.setVisibility(8);
-                a0Var.d.setTransitioning(false);
-                a0Var.s = null;
-                f7.b bVar = a0Var.k;
-                if (bVar != null) {
-                    bVar.u(a0Var.j);
-                    a0Var.j = null;
-                    a0Var.k = null;
-                }
-                ActionBarOverlayLayout actionBarOverlayLayout = a0Var.c;
-                if (actionBarOverlayLayout != null) {
-                    WeakHashMap weakHashMap = j0.a;
-                    r0.z.c(actionBarOverlayLayout);
-                    break;
-                }
-                break;
-            default:
-                a0Var.s = null;
-                a0Var.d.requestLayout();
-                break;
+    public final void a(double d10, double d11, long j3) {
+        double d12 = (0.01720197f * ((j3 - 946728000000L) / 8.64E7f)) + 6.24006f;
+        double sin = (Math.sin(r3 * 3.0f) * 5.236000106378924E-6d) + (Math.sin(2.0f * r3) * 3.4906598739326E-4d) + (Math.sin(d12) * 0.03341960161924362d) + d12 + 1.796593063d + 3.141592653589793d;
+        double sin2 = (Math.sin(2.0d * sin) * (-0.0069d)) + (Math.sin(d12) * 0.0053d) + Math.round((r2 - 9.0E-4f) - r6) + 9.0E-4f + ((-d11) / 360.0d);
+        double asin = Math.asin(Math.sin(0.4092797040939331d) * Math.sin(sin));
+        double d13 = 0.01745329238474369d * d10;
+        double sin3 = (Math.sin(-0.10471975803375244d) - (Math.sin(asin) * Math.sin(d13))) / (Math.cos(asin) * Math.cos(d13));
+        if (sin3 >= 1.0d) {
+            this.c = 1;
+            this.a = -1L;
+            this.b = -1L;
+        } else {
+            if (sin3 <= -1.0d) {
+                this.c = 0;
+                this.a = -1L;
+                this.b = -1L;
+                return;
+            }
+            double acos = (float) (Math.acos(sin3) / 6.283185307179586d);
+            this.a = Math.round((sin2 + acos) * 8.64E7d) + 946728000000L;
+            long round = Math.round((sin2 - acos) * 8.64E7d) + 946728000000L;
+            this.b = round;
+            if (round >= j3 || this.a <= j3) {
+                this.c = 1;
+            } else {
+                this.c = 0;
+            }
         }
     }
 }

@@ -1,13 +1,20 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.List;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface n5 extends List {
-    Object a(int i10);
+public abstract class n5 {
+    public static final Charset a;
+    public static final byte[] b;
 
-    n5 zzd();
-
-    List zzh();
+    static {
+        Charset.forName("US-ASCII");
+        a = Charset.forName("UTF-8");
+        Charset.forName("ISO-8859-1");
+        byte[] bArr = new byte[0];
+        b = bArr;
+        ByteBuffer.wrap(bArr);
+    }
 }

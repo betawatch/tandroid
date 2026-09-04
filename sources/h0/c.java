@@ -9,13 +9,14 @@ import android.util.AttributeSet;
 import android.util.StateSet;
 import android.util.TypedValue;
 import android.util.Xml;
+import com.google.android.gms.internal.vision.e2;
 import java.lang.reflect.Array;
-import k7.n;
 import org.telegram.messenger.beta.R;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import w7.p;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class c {
     public static final ThreadLocal a = new ThreadLocal();
@@ -63,14 +64,14 @@ public abstract class c {
     public static ColorStateList b(Resources resources, XmlPullParser xmlPullParser, AttributeSet attributeSet, Resources.Theme theme) {
         int depth;
         int color;
-        float f10;
+        float f7;
         int attributeCount;
         int i10;
-        boolean z4;
+        boolean z10;
         int[] iArr;
         int i11;
         int d;
-        float f11;
+        float f10;
         int i12;
         TypedValue typedValue;
         ?? r02 = resources;
@@ -112,8 +113,8 @@ public abstract class c {
                         } catch (Exception unused) {
                             color = obtainAttributes.getColor(i13, -65281);
                         }
-                        f10 = !obtainAttributes.hasValue(r42) ? obtainAttributes.getFloat(r42, 1.0f) : obtainAttributes.hasValue(3) ? obtainAttributes.getFloat(3, 1.0f) : 1.0f;
-                        float f12 = (Build.VERSION.SDK_INT >= 31 || !obtainAttributes.hasValue(2)) ? obtainAttributes.getFloat(4, -1.0f) : obtainAttributes.getFloat(2, -1.0f);
+                        f7 = !obtainAttributes.hasValue(r42) ? obtainAttributes.getFloat(r42, 1.0f) : obtainAttributes.hasValue(3) ? obtainAttributes.getFloat(3, 1.0f) : 1.0f;
+                        float f11 = (Build.VERSION.SDK_INT >= 31 || !obtainAttributes.hasValue(2)) ? obtainAttributes.getFloat(4, -1.0f) : obtainAttributes.getFloat(2, -1.0f);
                         obtainAttributes.recycle();
                         attributeCount = attributeSet2.getAttributeCount();
                         int[] iArr5 = new int[attributeCount];
@@ -130,89 +131,89 @@ public abstract class c {
                             }
                         }
                         int[] trimStateSet = StateSet.trimStateSet(iArr5, i16);
-                        float f13 = 0.0f;
-                        z4 = f12 < 0.0f && f12 <= 100.0f;
-                        if (f10 == 1.0f || z4) {
-                            int b10 = n.b((int) ((Color.alpha(color) * f10) + 0.5f), 0, 255);
-                            if (z4) {
+                        float f12 = 0.0f;
+                        z10 = f11 < 0.0f && f11 <= 100.0f;
+                        if (f7 == 1.0f || z10) {
+                            int b10 = p.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
+                            if (z10) {
                                 iArr = trimStateSet;
                                 i11 = depth2;
                             } else {
                                 a a2 = a.a(color);
-                                float f14 = a2.a;
-                                float f15 = a2.b;
+                                float f13 = a2.a;
+                                float f14 = a2.b;
                                 l lVar = l.k;
-                                if (f15 < 1.0d || Math.round(f12) <= 0.0d || Math.round(f12) >= 100.0d) {
+                                if (f14 < 1.0d || Math.round(f11) <= 0.0d || Math.round(f11) >= 100.0d) {
                                     iArr = trimStateSet;
                                     i11 = depth2;
-                                    d = b.d(f12);
+                                    d = b.d(f11);
                                 } else {
-                                    float min = f14 < 0.0f ? 0.0f : Math.min(360.0f, f14);
-                                    float f16 = f15;
+                                    float min = f13 < 0.0f ? 0.0f : Math.min(360.0f, f13);
+                                    float f15 = f14;
                                     a aVar = null;
-                                    boolean z10 = true;
+                                    boolean z11 = true;
                                     while (true) {
-                                        if (Math.abs(f13 - f15) >= 0.4f) {
-                                            float f17 = 1000.0f;
+                                        if (Math.abs(f12 - f14) >= 0.4f) {
+                                            float f16 = 1000.0f;
                                             iArr = trimStateSet;
-                                            float f18 = 100.0f;
-                                            float f19 = 0.0f;
-                                            float f20 = 1000.0f;
+                                            float f17 = 100.0f;
+                                            float f18 = 0.0f;
+                                            float f19 = 1000.0f;
                                             a aVar2 = null;
                                             while (true) {
-                                                if (Math.abs(f19 - f18) <= 0.01f) {
+                                                if (Math.abs(f18 - f17) <= 0.01f) {
                                                     i11 = depth2;
                                                     break;
                                                 }
-                                                float x10 = e2.c.x(f18, f19, 2.0f, f19);
-                                                float f21 = f18;
-                                                int c3 = a.b(x10, f16, min).c(l.k);
-                                                float e = b.e(Color.red(c3));
-                                                float e6 = b.e(Color.green(c3));
-                                                float e10 = b.e(Color.blue(c3));
+                                                float A = e2.A(f17, f18, 2.0f, f18);
+                                                float f20 = f17;
+                                                int c10 = a.b(A, f15, min).c(l.k);
+                                                float e7 = b.e(Color.red(c10));
+                                                float e10 = b.e(Color.green(c10));
+                                                float e11 = b.e(Color.blue(c10));
                                                 float[] fArr = b.d[1];
-                                                float f22 = (e6 * fArr[1]) + (e * fArr[0]);
-                                                float f23 = fArr[2];
+                                                float f21 = (e10 * fArr[1]) + (e7 * fArr[0]);
+                                                float f22 = fArr[2];
                                                 i11 = depth2;
-                                                float v = e2.c.v(e10, f23, f22, 100.0f);
-                                                float cbrt = v <= 0.008856452f ? v * 903.2963f : (((float) Math.cbrt(v)) * 116.0f) - 16.0f;
-                                                float abs = Math.abs(f12 - cbrt);
+                                                float y3 = e2.y(e11, f22, f21, 100.0f);
+                                                float cbrt = y3 <= 0.008856452f ? y3 * 903.2963f : (((float) Math.cbrt(y3)) * 116.0f) - 16.0f;
+                                                float abs = Math.abs(f11 - cbrt);
                                                 if (abs < 0.2f) {
-                                                    a a10 = a.a(c3);
-                                                    f11 = cbrt;
+                                                    a a10 = a.a(c10);
+                                                    f10 = cbrt;
                                                     a b11 = a.b(a10.c, a10.b, min);
-                                                    float f24 = a10.d - b11.d;
-                                                    float f25 = a10.e - b11.e;
-                                                    float f26 = a10.f - b11.f;
-                                                    float pow = (float) (Math.pow(Math.sqrt((f26 * f26) + (f25 * f25) + (f24 * f24)), 0.63d) * 1.41d);
+                                                    float f23 = a10.d - b11.d;
+                                                    float f24 = a10.e - b11.e;
+                                                    float f25 = a10.f - b11.f;
+                                                    float pow = (float) (Math.pow(Math.sqrt((f25 * f25) + (f24 * f24) + (f23 * f23)), 0.63d) * 1.41d);
                                                     if (pow <= 1.0f) {
-                                                        f20 = pow;
-                                                        f17 = abs;
+                                                        f19 = pow;
+                                                        f16 = abs;
                                                         aVar2 = a10;
                                                     }
                                                 } else {
-                                                    f11 = cbrt;
+                                                    f10 = cbrt;
                                                 }
-                                                if (f17 == 0.0f && f20 == 0.0f) {
+                                                if (f16 == 0.0f && f19 == 0.0f) {
                                                     break;
                                                 }
-                                                if (f11 < f12) {
-                                                    f18 = f21;
-                                                    f19 = x10;
+                                                if (f10 < f11) {
+                                                    f17 = f20;
+                                                    f18 = A;
                                                 } else {
-                                                    f18 = x10;
+                                                    f17 = A;
                                                 }
                                                 depth2 = i11;
                                             }
                                             a aVar3 = aVar2;
-                                            if (!z10) {
+                                            if (!z11) {
                                                 if (aVar3 == null) {
-                                                    f15 = f16;
+                                                    f14 = f15;
                                                 } else {
                                                     aVar = aVar3;
-                                                    f13 = f16;
+                                                    f12 = f15;
                                                 }
-                                                f16 = e2.c.x(f15, f13, 2.0f, f13);
+                                                f15 = e2.A(f14, f12, 2.0f, f12);
                                                 trimStateSet = iArr;
                                                 depth2 = i11;
                                             } else {
@@ -220,15 +221,15 @@ public abstract class c {
                                                     d = aVar3.c(lVar);
                                                     break;
                                                 }
-                                                f16 = e2.c.x(f15, f13, 2.0f, f13);
+                                                f15 = e2.A(f14, f12, 2.0f, f12);
                                                 trimStateSet = iArr;
                                                 depth2 = i11;
-                                                z10 = false;
+                                                z11 = false;
                                             }
                                         } else {
                                             iArr = trimStateSet;
                                             i11 = depth2;
-                                            d = aVar == null ? b.d(f12) : aVar.c(lVar);
+                                            d = aVar == null ? b.d(f11) : aVar.c(lVar);
                                         }
                                     }
                                 }
@@ -274,13 +275,13 @@ public abstract class c {
                 while (i10 < attributeCount) {
                 }
                 int[] trimStateSet2 = StateSet.trimStateSet(iArr52, i162);
-                float f132 = 0.0f;
-                if (f12 < 0.0f) {
+                float f122 = 0.0f;
+                if (f11 < 0.0f) {
                 }
-                if (f10 == 1.0f) {
+                if (f7 == 1.0f) {
                 }
-                int b102 = n.b((int) ((Color.alpha(color) * f10) + 0.5f), 0, 255);
-                if (z4) {
+                int b102 = p.b((int) ((Color.alpha(color) * f7) + 0.5f), 0, 255);
+                if (z10) {
                 }
                 color = (16777215 & color) | (b102 << 24);
                 i12 = i14 + 1;

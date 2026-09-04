@@ -1,41 +1,32 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class pe1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sf1 b;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-    public /* synthetic */ pe1(sf1 sf1Var, int i10) {
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class pe1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ te1 b;
+
+    public /* synthetic */ pe1(te1 te1Var, int i10) {
         this.a = i10;
-        this.b = sf1Var;
+        this.b = te1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                sf1 sf1Var = this.b;
-                sf1Var.x0();
-                sf1Var.B0();
+                te1 te1Var = this.b;
+                te1Var.v = 0;
+                te1Var.n.setVisibility(8);
                 break;
             case 1:
-                this.b.x0();
-                break;
-            case 2:
-                this.b.O0(true);
-                break;
-            case 3:
-                this.b.finishPreviewFragment();
-                break;
-            case 4:
-                sf1 sf1Var2 = this.b;
-                sf1Var2.x0 = null;
-                sf1Var2.U0(true, false);
+                this.b.v = 0;
                 break;
             default:
-                sf1 sf1Var3 = this.b;
-                sf1Var3.K.postOnAnimation(new pe1(sf1Var3, 1));
+                this.b.F.setVisibility(8);
                 break;
         }
     }

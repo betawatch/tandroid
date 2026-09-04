@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class c implements Set {
     public final /* synthetic */ f a;
@@ -64,8 +64,8 @@ public final class c implements Set {
         f fVar = this.a;
         int i10 = 0;
         for (int i11 = fVar.c - 1; i11 >= 0; i11--) {
-            Object e = fVar.e(i11);
-            i10 += e == null ? 0 : e.hashCode();
+            Object e7 = fVar.e(i11);
+            i10 += e7 == null ? 0 : e7.hashCode();
         }
         return i10;
     }
@@ -83,11 +83,11 @@ public final class c implements Set {
     @Override // java.util.Set, java.util.Collection
     public final boolean remove(Object obj) {
         f fVar = this.a;
-        int c3 = fVar.c(obj);
-        if (c3 < 0) {
+        int c10 = fVar.c(obj);
+        if (c10 < 0) {
             return false;
         }
-        fVar.f(c3);
+        fVar.f(c10);
         return true;
     }
 

@@ -2,14 +2,14 @@ package com.google.android.gms.wearable.internal;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import b6.m;
-import c6.a;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.f5;
-import l8.f;
-import m8.c;
+import n6.l;
+import o6.a;
+import w7.e0;
+import x8.f;
+import y8.c;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class DataItemAssetParcelable extends a implements f, ReflectedParcelable {
     public static final Parcelable.Creator<DataItemAssetParcelable> CREATOR = new c(7);
@@ -21,44 +21,44 @@ public class DataItemAssetParcelable extends a implements f, ReflectedParcelable
         this.b = str2;
     }
 
-    @Override // l8.f
+    @Override // x8.f
     public final String a() {
         return this.b;
     }
 
-    @Override // l8.f
+    @Override // x8.f
     public final String getId() {
         return this.a;
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("DataItemAssetParcelable[@");
-        sb.append(Integer.toHexString(hashCode()));
+        StringBuilder sb2 = new StringBuilder("DataItemAssetParcelable[@");
+        sb2.append(Integer.toHexString(hashCode()));
         String str = this.a;
         if (str == null) {
-            sb.append(",noid");
+            sb2.append(",noid");
         } else {
-            sb.append(",");
-            sb.append(str);
+            sb2.append(",");
+            sb2.append(str);
         }
-        sb.append(", key=");
-        return android.support.v4.media.a.r(sb, this.b, "]");
+        sb2.append(", key=");
+        return a4.a.s(sb2, this.b, "]");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 2, this.a);
-        f5.l(parcel, 3, this.b);
-        f5.r(parcel, q10);
+        int q6 = e0.q(parcel, 20293);
+        e0.l(parcel, 2, this.a);
+        e0.l(parcel, 3, this.b);
+        e0.r(parcel, q6);
     }
 
     public DataItemAssetParcelable(f fVar) {
         String id2 = fVar.getId();
-        m.h(id2);
+        l.h(id2);
         this.a = id2;
         String a2 = fVar.a();
-        m.h(a2);
+        l.h(a2);
         this.b = a2;
     }
 }

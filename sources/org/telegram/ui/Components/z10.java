@@ -1,69 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLObject;
+import android.transition.Transition;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class z10 extends qg.b {
-    public final /* synthetic */ int n;
+public final class z10 implements Transition.TransitionListener {
+    public final /* synthetic */ b20 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z10(int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(i10, f6Var);
-        this.n = 0;
+    public z10(b20 b20Var) {
+        this.a = b20Var;
     }
 
-    @Override // qg.b, qg.a
-    public int D() {
-        switch (this.n) {
-            case 0:
-                if (a()) {
-                    return 301989887;
-                }
-                return TLObject.FLAG_29;
-            default:
-                return super.D();
-        }
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
+        this.a.E.unlock();
     }
 
-    @Override // qg.b
-    public boolean a() {
-        switch (this.n) {
-            case 1:
-                return true;
-            case 2:
-                return true;
-            default:
-                return super.a();
-        }
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
+        this.a.E.unlock();
     }
 
-    @Override // qg.b, qg.a
-    public int e0() {
-        switch (this.n) {
-            case 0:
-                if (a()) {
-                    return 83886079;
-                }
-                return TLObject.FLAG_29;
-            default:
-                return super.e0();
-        }
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
+        this.a.E.lock();
     }
 
-    @Override // qg.b, qg.a
-    public int x() {
-        switch (this.n) {
-            case 0:
-                return a() ? 117440511 : 285212672;
-            default:
-                return super.x();
-        }
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ z10(org.telegram.ui.ActionBar.f6 f6Var, int i10, float f10, int i11) {
-        super(f6Var, i10, f10);
-        this.n = i11;
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
     }
 }

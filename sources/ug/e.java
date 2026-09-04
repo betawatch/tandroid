@@ -1,34 +1,27 @@
 package ug;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import k7.b6;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class e extends FrameLayout {
-    public final wg.f a;
+public final /* synthetic */ class e implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ AtomicBoolean b;
 
-    public e(Context context) {
-        super(context);
-        wg.f fVar = new wg.f(context);
-        this.a = fVar;
-        addView(fVar, b6.g());
+    public /* synthetic */ e(AtomicBoolean atomicBoolean, int i10) {
+        this.a = i10;
+        this.b = atomicBoolean;
     }
 
-    public final void a(ng.a aVar, qg.d dVar) {
-        wg.f fVar = this.a;
-        fVar.b(aVar, dVar);
-        fVar.setIgnoreFastWay(true);
-        fVar.setFadeHeightTop(AndroidUtilities.dp(48.0f));
-        fVar.setFadeHeightBottom(AndroidUtilities.dp(48.0f));
-    }
-
-    @Override // android.view.ViewGroup
-    public final void onViewAdded(View view) {
-        super.onViewAdded(view);
-        bringChildToFront(this.a);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.set(true);
+                break;
+            default:
+                this.b.set(true);
+                break;
+        }
     }
 }

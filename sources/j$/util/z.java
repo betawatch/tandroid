@@ -24,11 +24,11 @@ public final class z implements LongConsumer, IntConsumer {
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         this.count++;
-        this.sum += j10;
-        this.min = Math.min(this.min, j10);
-        this.max = Math.max(this.max, j10);
+        this.sum += j3;
+        this.min = Math.min(this.min, j3);
+        this.max = Math.max(this.max, j3);
     }
 
     public final void a(z zVar) {
@@ -43,7 +43,7 @@ public final class z implements LongConsumer, IntConsumer {
         Long valueOf = Long.valueOf(this.count);
         Long valueOf2 = Long.valueOf(this.sum);
         Long valueOf3 = Long.valueOf(this.min);
-        long j10 = this.count;
-        return String.format("%s{count=%d, sum=%d, min=%d, average=%f, max=%d}", simpleName, valueOf, valueOf2, valueOf3, Double.valueOf(j10 > 0 ? this.sum / j10 : 0.0d), Long.valueOf(this.max));
+        long j3 = this.count;
+        return String.format("%s{count=%d, sum=%d, min=%d, average=%f, max=%d}", simpleName, valueOf, valueOf2, valueOf3, Double.valueOf(j3 > 0 ? this.sum / j3 : 0.0d), Long.valueOf(this.max));
     }
 }

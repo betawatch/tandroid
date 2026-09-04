@@ -1,32 +1,41 @@
 package ph;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
+import org.telegram.messenger.AndroidUtilities;
+import w7.x5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final class c extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ d b;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public abstract class c extends FrameLayout {
+    public final LinearLayout a;
+    public float b;
+    public final Rect c;
+    public final Rect d;
+    public final Paint e;
 
-    public /* synthetic */ c(d dVar, int i10) {
-        this.a = i10;
-        this.b = dVar;
+    public c(Context context) {
+        super(context);
+        this.c = new Rect();
+        this.d = new Rect();
+        this.e = new Paint(1);
+        setPadding(AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.a = linearLayout;
+        linearLayout.setOrientation(0);
+        addView(linearLayout, x5.c(-1.0f, -1));
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                d dVar = this.b;
-                dVar.G = false;
-                dVar.e.q(null, false, true);
-                break;
-            default:
-                d dVar2 = this.b;
-                dVar2.M = 1.0f;
-                dVar2.invalidate();
-                break;
-        }
+    public void setLensVisibility(float f7) {
+        this.b = f7;
+        int dp = AndroidUtilities.dp(f7 * 7.0f);
+        Rect rect = this.c;
+        Rect rect2 = this.d;
+        rect2.set(rect);
+        int i10 = -dp;
+        rect2.inset(i10, i10);
     }
 }

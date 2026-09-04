@@ -51,15 +51,15 @@ public final class a implements Externalizable {
         }
         ZoneRules zoneRules = (ZoneRules) obj;
         objectOutput.writeInt(zoneRules.a.length);
-        for (long j10 : zoneRules.a) {
-            c(j10, objectOutput);
+        for (long j3 : zoneRules.a) {
+            c(j3, objectOutput);
         }
         for (ZoneOffset zoneOffset : zoneRules.b) {
             d(zoneOffset, objectOutput);
         }
         objectOutput.writeInt(zoneRules.c.length);
-        for (long j11 : zoneRules.c) {
-            c(j11, objectOutput);
+        for (long j10 : zoneRules.c) {
+            c(j10, objectOutput);
         }
         for (ZoneOffset zoneOffset2 : zoneRules.e) {
             d(zoneOffset2, objectOutput);
@@ -144,16 +144,16 @@ public final class a implements Externalizable {
         return readByte == Byte.MAX_VALUE ? ZoneOffset.O(dataInput.readInt()) : ZoneOffset.O(readByte * 900);
     }
 
-    public static void c(long j10, DataOutput dataOutput) {
-        if (j10 >= -4575744000L && j10 < 10413792000L && j10 % 900 == 0) {
-            int i10 = (int) ((j10 + 4575744000L) / 900);
+    public static void c(long j3, DataOutput dataOutput) {
+        if (j3 >= -4575744000L && j3 < 10413792000L && j3 % 900 == 0) {
+            int i10 = (int) ((j3 + 4575744000L) / 900);
             dataOutput.writeByte((i10 >>> 16) & 255);
             dataOutput.writeByte((i10 >>> 8) & 255);
             dataOutput.writeByte(i10 & 255);
             return;
         }
         dataOutput.writeByte(255);
-        dataOutput.writeLong(j10);
+        dataOutput.writeLong(j3);
     }
 
     public static long a(DataInput dataInput) {

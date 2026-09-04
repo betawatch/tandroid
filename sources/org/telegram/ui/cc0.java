@@ -1,64 +1,83 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.accessibility.AccessibilityEvent;
-import android.view.accessibility.AccessibilityNodeInfo;
-import org.telegram.messenger.LiteMode;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.os.Bundle;
+import java.util.ArrayList;
+import java.util.HashSet;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class cc0 extends org.telegram.ui.Components.z50 {
-    public final /* synthetic */ ec0 d;
-
-    public cc0(ec0 ec0Var) {
-        this.d = ec0Var;
+public final class cc0 extends f70 {
+    public cc0(fc0 fc0Var, Bundle bundle) {
+        super(bundle);
     }
 
-    @Override // org.telegram.ui.Components.go0
-    public final void e(View view, AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.e(view, accessibilityNodeInfo);
-        accessibilityNodeInfo.setEnabled(true);
-    }
-
-    @Override // org.telegram.ui.Components.z50
-    public final int h() {
-        return 5;
-    }
-
-    @Override // org.telegram.ui.Components.z50
-    public final int i() {
-        return 100;
-    }
-
-    @Override // org.telegram.ui.Components.z50
-    public final int j() {
-        return LiteMode.getPowerSaverLevel();
-    }
-
-    @Override // org.telegram.ui.Components.z50
-    public final void k(int i10) {
-        ec0 ec0Var = this.d;
-        float f10 = i10 / 100.0f;
-        ec0Var.h.w.Y(f10, true);
-        ec0Var.h.setProgress(f10);
-    }
-
-    @Override // android.view.View.AccessibilityDelegate
-    public final void onPopulateAccessibilityEvent(View view, AccessibilityEvent accessibilityEvent) {
-        super.onPopulateAccessibilityEvent(view, accessibilityEvent);
-        StringBuilder sb = new StringBuilder(LocaleController.getString(R.string.LiteBatteryTitle));
-        sb.append(", ");
-        int powerSaverLevel = LiteMode.getPowerSaverLevel();
-        if (powerSaverLevel <= 0) {
-            sb.append(LocaleController.getString(R.string.LiteBatteryAlwaysDisabled));
-        } else if (powerSaverLevel >= 100) {
-            sb.append(LocaleController.getString(R.string.LiteBatteryAlwaysEnabled));
-        } else {
-            sb.append(LocaleController.formatString(R.string.AccDescrLiteBatteryWhenBelow, Integer.valueOf(Math.round(powerSaverLevel))));
+    public static void t0(cc0 cc0Var, TLObject tLObject, HashSet hashSet, TLRPC.TL_error tL_error) {
+        int i10 = 0;
+        if (!(tLObject instanceof TLRPC.Updates)) {
+            if (!(tLObject instanceof TL_phone.groupCall)) {
+                if (tL_error != null) {
+                    fc0.b().d0(tL_error, false);
+                    return;
+                }
+                return;
+            }
+            TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
+            MessagesController.getInstance(cc0Var.currentAccount).putUsers(groupcall.users, false);
+            MessagesController.getInstance(cc0Var.currentAccount).putChats(groupcall.chats, false);
+            if (LaunchActivity.G1 == null) {
+                return;
+            }
+            TLRPC.TL_inputGroupCall tL_inputGroupCall = new TLRPC.TL_inputGroupCall();
+            TLRPC.GroupCall groupCall = groupcall.call;
+            tL_inputGroupCall.id = groupCall.id;
+            tL_inputGroupCall.access_hash = groupCall.access_hash;
+            org.telegram.ui.Components.voip.d2.g(LaunchActivity.G1, cc0Var.currentAccount, tL_inputGroupCall, false, groupCall, hashSet);
+            return;
         }
-        accessibilityEvent.setContentDescription(sb);
-        this.d.setContentDescription(sb);
+        TLRPC.Updates updates = (TLRPC.Updates) tLObject;
+        MessagesController.getInstance(cc0Var.currentAccount).putUsers(updates.users, false);
+        MessagesController.getInstance(cc0Var.currentAccount).putChats(updates.chats, false);
+        ArrayList findUpdatesAndRemove = MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateGroupCall.class);
+        int size = findUpdatesAndRemove.size();
+        TLRPC.GroupCall groupCall2 = null;
+        while (i10 < size) {
+            Object obj = findUpdatesAndRemove.get(i10);
+            i10++;
+            groupCall2 = ((TL_update.TL_updateGroupCall) obj).call;
+        }
+        if (LaunchActivity.G1 == null || groupCall2 == null) {
+            return;
+        }
+        TLRPC.TL_inputGroupCall tL_inputGroupCall2 = new TLRPC.TL_inputGroupCall();
+        tL_inputGroupCall2.id = groupCall2.id;
+        tL_inputGroupCall2.access_hash = groupCall2.access_hash;
+        org.telegram.ui.Components.voip.d2.g(LaunchActivity.G1, cc0Var.currentAccount, tL_inputGroupCall2, false, groupCall2, hashSet);
+    }
+
+    @Override // org.telegram.ui.f70
+    public final void n0(HashSet hashSet) {
+        if (hashSet.size() == 1) {
+            TLRPC.User user = getMessagesController().getUser((Long) hashSet.iterator().next());
+            TLRPC.UserFull userFull = getMessagesController().getUserFull(user.id);
+            if (userFull == null) {
+                TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
+                tL_users_getFullUser.id = getMessagesController().getInputUser(user.id);
+                getConnectionsManager().sendRequest(tL_users_getFullUser, new ro(29, this, user));
+                return;
+            }
+            org.telegram.ui.Components.voip.d2.m(user, false, userFull.video_calls_available, getParentActivity(), userFull, getAccountInstance());
+        } else {
+            TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
+            createconferencecall.random_id = Utilities.random.nextInt();
+            ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new bc0(0, this, hashSet));
+        }
+        finishFragment();
     }
 }

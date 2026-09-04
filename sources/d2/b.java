@@ -1,198 +1,189 @@
 package d2;
 
-import a0.f;
-import android.graphics.Color;
-import android.util.SparseBooleanArray;
-import b7.r;
+import android.graphics.Bitmap;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.SpannedString;
+import android.text.TextUtils;
+import e2.d0;
+import j$.util.Objects;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Iterator;
-import java.util.List;
-import java.util.PriorityQueue;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class b {
-    public static final r f = new r(1);
-    public static final c g = new c();
-    public final Object a;
-    public final Object b;
-    public final Object c;
-    public final Cloneable d;
-    public final Object e;
+    public static final String A;
+    public static final String B;
+    public static final String C;
+    public static final String D;
+    public static final String E;
+    public static final String F;
+    public static final String G;
+    public static final String H;
+    public static final String I;
+    public static final String J;
+    public static final String K;
+    public static final String L;
+    public static final String s;
+    public static final String t;
+    public static final String u;
+    public static final String v;
+    public static final String w;
+    public static final String x;
+    public static final String y;
+    public static final String z;
+    public final CharSequence a;
+    public final Layout.Alignment b;
+    public final Layout.Alignment c;
+    public final Bitmap d;
+    public final float e;
+    public final int f;
+    public final int g;
+    public final float h;
+    public final int i;
+    public final float j;
+    public final float k;
+    public final boolean l;
+    public final int m;
+    public final int n;
+    public final float o;
+    public final int p;
+    public final float q;
+    public final int r;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public b(int[] iArr, int i10, c[] cVarArr) {
-        a aVar;
-        this.e = new float[3];
-        this.d = cVarArr;
-        int[] iArr2 = new int[32768];
-        this.b = iArr2;
-        for (int i11 = 0; i11 < iArr.length; i11++) {
-            int i12 = iArr[i11];
-            int b10 = b(Color.blue(i12), 8, 5) | (b(Color.red(i12), 8, 5) << 10) | (b(Color.green(i12), 8, 5) << 5);
-            iArr[i11] = b10;
-            iArr2[b10] = iArr2[b10] + 1;
-        }
-        int i13 = 0;
-        for (int i14 = 0; i14 < 32768; i14++) {
-            if (iArr2[i14] > 0) {
-                int rgb = Color.rgb(b((i14 >> 10) & 31, 5, 8), b((i14 >> 5) & 31, 5, 8), b(i14 & 31, 5, 8));
-                float[] fArr = (float[]) this.e;
-                ThreadLocal threadLocal = i0.a.a;
-                i0.a.b(fArr, Color.red(rgb), Color.green(rgb), Color.blue(rgb));
-                if (c(fArr)) {
-                    iArr2[i14] = 0;
-                }
-            }
-            if (iArr2[i14] > 0) {
-                i13++;
-            }
-        }
-        int[] iArr3 = new int[i13];
-        this.a = iArr3;
-        int i15 = 0;
-        for (int i16 = 0; i16 < 32768; i16++) {
-            if (iArr2[i16] > 0) {
-                iArr3[i15] = i16;
-                i15++;
-            }
-        }
-        if (i13 <= i10) {
-            this.c = new ArrayList();
-            for (int i17 = 0; i17 < i13; i17++) {
-                int i18 = iArr3[i17];
-                ((ArrayList) this.c).add(new d(Color.rgb(b((i18 >> 10) & 31, 5, 8), b((i18 >> 5) & 31, 5, 8), b(i18 & 31, 5, 8)), iArr2[i18]));
-            }
-            return;
-        }
-        PriorityQueue priorityQueue = new PriorityQueue(i10, f);
-        priorityQueue.offer(new a(this, 0, ((int[]) this.a).length - 1));
-        while (priorityQueue.size() < i10 && (aVar = (a) priorityQueue.poll()) != null) {
-            int i19 = aVar.b;
-            int i20 = aVar.a;
-            if ((i19 + 1) - i20 <= 1) {
-                break;
-            }
-            b bVar = aVar.j;
-            if ((i19 + 1) - i20 <= 1) {
-                throw new IllegalStateException("Can not split a box with only 1 color");
-            }
-            int i21 = aVar.e - aVar.d;
-            int i22 = aVar.g - aVar.f;
-            int i23 = aVar.i - aVar.h;
-            int i24 = (i21 < i22 || i21 < i23) ? (i22 < i21 || i22 < i23) ? -1 : -2 : -3;
-            int[] iArr4 = (int[]) bVar.a;
-            int[] iArr5 = (int[]) bVar.b;
-            a(i24, i20, i19, iArr4);
-            Arrays.sort(iArr4, i20, aVar.b + 1);
-            a(i24, i20, aVar.b, iArr4);
-            int i25 = aVar.c / 2;
-            int i26 = i20;
-            int i27 = 0;
-            while (true) {
-                int i28 = aVar.b;
-                if (i26 > i28) {
-                    break;
-                }
-                i27 += iArr5[iArr4[i26]];
-                if (i27 >= i25) {
-                    i20 = Math.min(i28 - 1, i26);
-                    break;
-                }
-                i26++;
-            }
-            a aVar2 = new a(bVar, i20 + 1, aVar.b);
-            aVar.b = i20;
-            aVar.a();
-            priorityQueue.offer(aVar2);
-            priorityQueue.offer(aVar);
-        }
-        ArrayList arrayList = new ArrayList(priorityQueue.size());
-        Iterator it = priorityQueue.iterator();
-        while (it.hasNext()) {
-            a aVar3 = (a) it.next();
-            b bVar2 = aVar3.j;
-            int[] iArr6 = (int[]) bVar2.a;
-            int[] iArr7 = (int[]) bVar2.b;
-            int i29 = 0;
-            int i30 = 0;
-            int i31 = 0;
-            int i32 = 0;
-            for (int i33 = aVar3.a; i33 <= aVar3.b; i33++) {
-                int i34 = iArr6[i33];
-                int i35 = iArr7[i34];
-                i30 += i35;
-                i29 = (((i34 >> 10) & 31) * i35) + i29;
-                i31 = (((i34 >> 5) & 31) * i35) + i31;
-                i32 += i35 * (i34 & 31);
-            }
-            float f10 = i30;
-            d dVar = new d(Color.rgb(b(Math.round(i29 / f10), 5, 8), b(Math.round(i31 / f10), 5, 8), b(Math.round(i32 / f10), 5, 8)), i30);
-            if (!c(dVar.b())) {
-                arrayList.add(dVar);
-            }
-        }
-        this.c = arrayList;
+    static {
+        new b("", null, null, null, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0);
+        String str = d0.a;
+        s = Integer.toString(0, 36);
+        t = Integer.toString(17, 36);
+        u = Integer.toString(1, 36);
+        v = Integer.toString(2, 36);
+        w = Integer.toString(3, 36);
+        x = Integer.toString(18, 36);
+        y = Integer.toString(4, 36);
+        z = Integer.toString(5, 36);
+        A = Integer.toString(6, 36);
+        B = Integer.toString(7, 36);
+        C = Integer.toString(8, 36);
+        D = Integer.toString(9, 36);
+        E = Integer.toString(10, 36);
+        F = Integer.toString(11, 36);
+        G = Integer.toString(12, 36);
+        H = Integer.toString(13, 36);
+        I = Integer.toString(14, 36);
+        J = Integer.toString(15, 36);
+        K = Integer.toString(16, 36);
+        L = Integer.toString(19, 36);
     }
 
-    public static void a(int i10, int i11, int i12, int[] iArr) {
-        if (i10 == -2) {
-            while (i11 <= i12) {
-                int i13 = iArr[i11];
-                iArr[i11] = (i13 & 31) | (((i13 >> 5) & 31) << 10) | (((i13 >> 10) & 31) << 5);
-                i11++;
-            }
-            return;
+    public b(CharSequence charSequence, Layout.Alignment alignment, Layout.Alignment alignment2, Bitmap bitmap, float f7, int i10, int i11, float f10, int i12, int i13, float f11, float f12, float f13, boolean z10, int i14, int i15, float f14, int i16) {
+        if (charSequence == null) {
+            bitmap.getClass();
+        } else {
+            e2.d.b(bitmap == null);
         }
-        if (i10 != -1) {
-            return;
+        if (charSequence instanceof Spanned) {
+            this.a = SpannedString.valueOf(charSequence);
+        } else if (charSequence != null) {
+            this.a = charSequence.toString();
+        } else {
+            this.a = null;
         }
-        while (i11 <= i12) {
-            int i14 = iArr[i11];
-            iArr[i11] = ((i14 >> 10) & 31) | ((i14 & 31) << 10) | (((i14 >> 5) & 31) << 5);
-            i11++;
-        }
+        this.b = alignment;
+        this.c = alignment2;
+        this.d = bitmap;
+        this.e = f7;
+        this.f = i10;
+        this.g = i11;
+        this.h = f10;
+        this.i = i12;
+        this.j = f12;
+        this.k = f13;
+        this.l = z10;
+        this.m = i14;
+        this.n = i13;
+        this.o = f11;
+        this.p = i15;
+        this.q = f14;
+        this.r = i16;
     }
 
-    public static int b(int i10, int i11, int i12) {
-        return (i12 > i11 ? i10 << (i12 - i11) : i10 >> (i11 - i12)) & ((1 << i12) - 1);
-    }
-
-    public boolean c(float[] fArr) {
-        c[] cVarArr = (c[]) this.d;
-        if (cVarArr != null && cVarArr.length > 0) {
-            for (c cVar : cVarArr) {
-                cVar.getClass();
-                float f10 = fArr[2];
-                if (f10 < 0.95f && f10 > 0.05f) {
-                    float f11 = fArr[0];
-                    if (f11 < 10.0f || f11 > 37.0f || fArr[1] > 0.82f) {
-                    }
+    public final Bundle a() {
+        Bundle bundle = new Bundle();
+        CharSequence charSequence = this.a;
+        if (charSequence != null) {
+            bundle.putCharSequence(s, charSequence);
+            if (charSequence instanceof Spanned) {
+                Spanned spanned = (Spanned) charSequence;
+                String str = d.a;
+                ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
+                for (f fVar : (f[]) spanned.getSpans(0, spanned.length(), f.class)) {
+                    fVar.getClass();
+                    Bundle bundle2 = new Bundle();
+                    bundle2.putString(f.c, fVar.a);
+                    bundle2.putInt(f.d, fVar.b);
+                    arrayList.add(d.a(spanned, fVar, 1, bundle2));
                 }
+                for (g gVar : (g[]) spanned.getSpans(0, spanned.length(), g.class)) {
+                    gVar.getClass();
+                    Bundle bundle3 = new Bundle();
+                    bundle3.putInt(g.d, gVar.a);
+                    bundle3.putInt(g.e, gVar.b);
+                    bundle3.putInt(g.f, gVar.c);
+                    arrayList.add(d.a(spanned, gVar, 2, bundle3));
+                }
+                for (e eVar : (e[]) spanned.getSpans(0, spanned.length(), e.class)) {
+                    arrayList.add(d.a(spanned, eVar, 3, null));
+                }
+                for (h hVar : (h[]) spanned.getSpans(0, spanned.length(), h.class)) {
+                    hVar.getClass();
+                    Bundle bundle4 = new Bundle();
+                    bundle4.putString(h.b, hVar.a);
+                    arrayList.add(d.a(spanned, hVar, 4, bundle4));
+                }
+                if (!arrayList.isEmpty()) {
+                    bundle.putParcelableArrayList(t, arrayList);
+                }
+            }
+        }
+        bundle.putSerializable(u, this.b);
+        bundle.putSerializable(v, this.c);
+        bundle.putFloat(y, this.e);
+        bundle.putInt(z, this.f);
+        bundle.putInt(A, this.g);
+        bundle.putFloat(B, this.h);
+        bundle.putInt(C, this.i);
+        bundle.putInt(D, this.n);
+        bundle.putFloat(E, this.o);
+        bundle.putFloat(F, this.j);
+        bundle.putFloat(G, this.k);
+        bundle.putBoolean(I, this.l);
+        bundle.putInt(H, this.m);
+        bundle.putInt(J, this.p);
+        bundle.putFloat(K, this.q);
+        bundle.putInt(L, this.r);
+        return bundle;
+    }
+
+    public final boolean equals(Object obj) {
+        Bitmap bitmap;
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && b.class == obj.getClass()) {
+            b bVar = (b) obj;
+            Bitmap bitmap2 = bVar.d;
+            if (TextUtils.equals(this.a, bVar.a) && this.b == bVar.b && this.c == bVar.c && ((bitmap = this.d) != null ? !(bitmap2 == null || !bitmap.sameAs(bitmap2)) : bitmap2 == null) && this.e == bVar.e && this.f == bVar.f && this.g == bVar.g && this.h == bVar.h && this.i == bVar.i && this.j == bVar.j && this.k == bVar.k && this.l == bVar.l && this.m == bVar.m && this.n == bVar.n && this.o == bVar.o && this.p == bVar.p && this.q == bVar.q && this.r == bVar.r) {
                 return true;
             }
         }
         return false;
     }
 
-    public b(ArrayList arrayList, List list) {
-        this.a = list;
-        this.b = arrayList;
-        this.d = new SparseBooleanArray();
-        this.c = new f(0);
-        int size = list.size();
-        int i10 = TLObject.FLAG_31;
-        d dVar = null;
-        for (int i11 = 0; i11 < size; i11++) {
-            d dVar2 = (d) list.get(i11);
-            int i12 = dVar2.e;
-            if (i12 > i10) {
-                dVar = dVar2;
-                i10 = i12;
-            }
-        }
-        this.e = dVar;
+    public final int hashCode() {
+        return Objects.hash(this.a, this.b, this.c, this.d, Float.valueOf(this.e), Integer.valueOf(this.f), Integer.valueOf(this.g), Float.valueOf(this.h), Integer.valueOf(this.i), Float.valueOf(this.j), Float.valueOf(this.k), Boolean.valueOf(this.l), Integer.valueOf(this.m), Integer.valueOf(this.n), Float.valueOf(this.o), Integer.valueOf(this.p), Float.valueOf(this.q), Integer.valueOf(this.r));
     }
 }

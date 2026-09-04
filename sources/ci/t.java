@@ -1,0 +1,345 @@
+package ci;
+
+import ah.h0;
+import ah.q0;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Rect;
+import android.text.TextUtils;
+import android.util.SparseArray;
+import android.view.View;
+import android.widget.FrameLayout;
+import bi.b8;
+import bi.oa;
+import bi.u5;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.f6;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.lr0;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.pt0;
+import org.telegram.ui.Components.u31;
+import org.telegram.ui.Components.xw0;
+import w7.x5;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes4.dex */
+public final class t extends FrameLayout {
+    public static final /* synthetic */ int a0 = 0;
+    public final n E;
+    public final di.d F;
+    public final s4.y G;
+    public boolean H;
+    public boolean I;
+    public final q J;
+    public boolean K;
+    public boolean L;
+    public boolean M;
+    public int N;
+    public int O;
+    public float P;
+    public float Q;
+    public boolean R;
+    public int S;
+    public int T;
+    public int U;
+    public final Rect V;
+    public final /* synthetic */ lr0 W;
+    public b8 a;
+    public boolean b;
+    public float c;
+    public int d;
+    public int e;
+    public final i f;
+    public final h h;
+    public final s4.j n;
+    public final pt0 r;
+    public final k s;
+    public final l v;
+    public final s w;
+    public final m x;
+    public final xw0 y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public t(lr0 lr0Var, Context context) {
+        super(context);
+        this.W = lr0Var;
+        this.d = Utilities.clamp(SharedConfig.storiesColumnsCount, 6, 2);
+        this.e = Utilities.clamp(SharedConfig.storiesColumnsCount, 6, 2);
+        this.H = false;
+        this.I = false;
+        this.V = new Rect();
+        h hVar = new h();
+        this.h = hVar;
+        hVar.O = new g(this, 1);
+        hVar.y1(this.d);
+        s4.j jVar = new s4.j();
+        this.n = jVar;
+        jVar.n(280L);
+        jVar.o(pr.h);
+        jVar.m = false;
+        i iVar = new i(this, context);
+        this.f = iVar;
+        iVar.setScrollingTouchSlop(1);
+        iVar.setPinnedSectionOffsetY(-AndroidUtilities.dp(2.0f));
+        iVar.setPadding(0, 0, 0, 0);
+        iVar.setItemAnimator(null);
+        iVar.setClipToPadding(false);
+        iVar.setSectionsType(2);
+        iVar.setLayoutManager(hVar);
+        addView(iVar, x5.c(-1.0f, -1));
+        iVar.i(new j(this, 0));
+        iVar.setOnItemClickListener(new bi.d(this, 1));
+        iVar.setOnItemLongClickListener(new a1.c(this, 13));
+        pt0 pt0Var = new pt0(context, null);
+        this.r = pt0Var;
+        k kVar = new k(this);
+        this.s = kVar;
+        pt0Var.setLayoutManager(kVar);
+        pt0Var.i(new j(this, 1));
+        kVar.y1(this.e);
+        pt0Var.setVisibility(8);
+        addView(pt0Var, x5.c(-1.0f, -1));
+        l lVar = new l(this, context);
+        this.v = lVar;
+        iVar.setAdapter(lVar);
+        s sVar = new s(this, getContext());
+        lVar.f = sVar;
+        this.w = sVar;
+        pt0Var.setAdapter(sVar);
+        m mVar = new m(this, context);
+        this.x = mVar;
+        mVar.w = false;
+        xw0 xw0Var = new xw0(context, mVar, 1, null);
+        this.y = xw0Var;
+        xw0Var.setVisibility(8);
+        xw0Var.setAnimateLayoutChange(true);
+        addView(xw0Var, x5.c(-1.0f, -1));
+        xw0Var.setOnTouchListener(new d(0));
+        xw0Var.e(true, false);
+        xw0Var.b.setVisibility(8);
+        xw0Var.d.setText(LocaleController.getString(R.string.ProfileBotPreviewEmptyTitle));
+        xw0Var.e.setText(LocaleController.formatPluralString("ProfileBotPreviewEmptyText", MessagesController.getInstance(lr0Var.b).botPreviewMediasMax, new Object[0]));
+        String string = LocaleController.getString(R.string.ProfileBotPreviewEmptyButton);
+        di.d dVar = xw0Var.f;
+        dVar.g(string, false, true);
+        dVar.setVisibility(0);
+        dVar.setOnClickListener(new e(this, 0));
+        n nVar = new n(this, context);
+        this.E = nVar;
+        int i10 = j6.y6;
+        f6 f6Var = lr0Var.c;
+        nVar.setTextColor(j6.v0(i10, f6Var));
+        nVar.setText(LocaleController.getString(R.string.ProfileBotOr));
+        nVar.setTextSize(1, 14.0f);
+        nVar.setTextAlignment(4);
+        nVar.setGravity(17);
+        nVar.setTypeface(AndroidUtilities.bold());
+        xw0Var.a.addView(nVar, x5.t(165, -2, 17, 0, 17, 0, 12));
+        di.d dVar2 = new di.d(context, f6Var, false);
+        this.F = dVar2;
+        dVar2.setMinWidth(AndroidUtilities.dp(200.0f));
+        xw0Var.a.addView(dVar2, x5.q(-2, 44, 17));
+        xw0Var.addView(mVar, 0, x5.c(-1.0f, -1));
+        iVar.setEmptyView(xw0Var);
+        iVar.Y1 = true;
+        iVar.Z1 = 0;
+        new SparseArray();
+        new HashMap();
+        s4.y yVar = new s4.y(new f(this, 0));
+        this.G = yVar;
+        yVar.d(iVar);
+        q qVar = new q(context, f6Var);
+        this.J = qVar;
+        addView(qVar, x5.e(-1, -2, 48));
+    }
+
+    public final void a() {
+        if (this.b) {
+            float f7 = this.c;
+            pt0 pt0Var = this.r;
+            i iVar = this.f;
+            if (f7 != 1.0f) {
+                if (f7 == 0.0f) {
+                    this.b = false;
+                    pt0Var.setVisibility(8);
+                    iVar.invalidate();
+                    return;
+                }
+                int i10 = 1;
+                boolean z10 = f7 > 0.2f;
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, z10 ? 1.0f : 0.0f);
+                ofFloat.addUpdateListener(new u5(this, i10));
+                ofFloat.addListener(new q0(6, this, z10));
+                ofFloat.setInterpolator(pr.f);
+                ofFloat.setDuration(200L);
+                ofFloat.start();
+                return;
+            }
+            this.b = false;
+            int i11 = this.e;
+            this.d = i11;
+            this.W.y = i11;
+            SharedConfig.setStoriesColumnsCount(i11);
+            l lVar = this.v;
+            int h = lVar.h();
+            pt0Var.setVisibility(8);
+            int i12 = this.d;
+            h hVar = this.h;
+            hVar.y1(i12);
+            iVar.a0();
+            iVar.invalidate();
+            if (lVar.h() == h) {
+                AndroidUtilities.updateVisibleRows(iVar);
+            } else {
+                lVar.l();
+            }
+            int i13 = this.S;
+            if (i13 >= 0) {
+                View m10 = this.s.m(i13);
+                if (m10 != null) {
+                    this.T = m10.getTop();
+                }
+                hVar.h1(this.S, (-iVar.getPaddingTop()) + this.T);
+            }
+        }
+    }
+
+    public final void b(boolean z10) {
+        if (this.b || this.W.G.C1) {
+            return;
+        }
+        int i10 = this.d + (!z10 ? 1 : -1);
+        if (i10 > 6) {
+            i10 = !z10 ? 9 : 6;
+        }
+        int clamp = Utilities.clamp(i10, 6, this.H ? 1 : 2);
+        this.e = clamp;
+        if (clamp == this.d || this.H) {
+            return;
+        }
+        pt0 pt0Var = this.r;
+        pt0Var.setVisibility(0);
+        pt0Var.setAdapter(this.w);
+        pt0Var.setPadding(pt0Var.getPaddingLeft(), 0, pt0Var.getPaddingRight(), this.J.getMeasuredHeight() + AndroidUtilities.dp(42.0f));
+        k kVar = this.s;
+        kVar.y1(clamp);
+        pt0Var.a0();
+        kVar.O = new g(this, 0);
+        AndroidUtilities.updateVisibleRows(this.f);
+        this.b = true;
+        this.c = 0.0f;
+        int i11 = this.S;
+        if (i11 >= 0) {
+            kVar.h1(i11, this.T - pt0Var.getPaddingTop());
+        }
+    }
+
+    public final void c() {
+        String string;
+        int i10 = this.W.b;
+        b8 b8Var = this.a;
+        int size = b8Var == null ? 0 : b8Var.i.size();
+        b8 b8Var2 = this.a;
+        int i11 = 1;
+        boolean z10 = b8Var2 == null || TextUtils.isEmpty(b8Var2.E);
+        int i12 = size > 0 ? 0 : 8;
+        q qVar = this.J;
+        qVar.setVisibility(i12);
+        String string2 = z10 ? LocaleController.getString(R.string.ProfileBotPreviewFooterGeneral) : LocaleController.formatString(R.string.ProfileBotPreviewFooterLanguage, u31.D(this.a.E, null, null));
+        String string3 = LocaleController.getString(R.string.ProfileBotAddPreview);
+        int i13 = 7;
+        oa oaVar = new oa(this, i13);
+        if (z10 || size <= 0) {
+            string = LocaleController.getString(z10 ? R.string.ProfileBotPreviewFooterCreateTranslation : R.string.ProfileBotPreviewFooterDeleteTranslation);
+        } else {
+            string = null;
+        }
+        ah.u uVar = (z10 || size <= 0) ? new ah.u(i11, this, z10) : null;
+        n nVar = qVar.c;
+        di.d dVar = qVar.d;
+        qVar.a.setText(string2);
+        p pVar = qVar.b;
+        pVar.g(string3, false, true);
+        pVar.setOnClickListener(new h0(oaVar, i13));
+        if (string == null) {
+            nVar.setVisibility(8);
+            dVar.setVisibility(8);
+        } else {
+            nVar.setVisibility(0);
+            dVar.setVisibility(0);
+            dVar.g(string, false, true);
+            dVar.setOnClickListener(new o(0, uVar));
+        }
+        n nVar2 = this.E;
+        di.d dVar2 = this.F;
+        xw0 xw0Var = this.y;
+        if (z10) {
+            xw0Var.d.setVisibility(0);
+            xw0Var.d.setText(LocaleController.getString(R.string.ProfileBotPreviewEmptyTitle));
+            xw0Var.e.setText(LocaleController.formatPluralString("ProfileBotPreviewEmptyText", MessagesController.getInstance(i10).botPreviewMediasMax, new Object[0]));
+            xw0Var.f.g(LocaleController.getString(R.string.ProfileBotPreviewEmptyButton), false, true);
+            nVar2.setVisibility(8);
+            dVar2.setVisibility(8);
+        } else {
+            xw0Var.d.setVisibility(8);
+            xw0Var.e.setText(LocaleController.formatString(R.string.ProfileBotPreviewFooterLanguage, u31.D(this.a.E, null, null)));
+            xw0Var.f.g(LocaleController.getString(R.string.ProfileBotPreviewEmptyButton), false, true);
+            nVar2.setVisibility(0);
+            dVar2.setVisibility(0);
+            dVar2.g(LocaleController.getString(R.string.ProfileBotPreviewFooterDeleteTranslation), false, true);
+            dVar2.setOnClickListener(new e(this, i11));
+        }
+        xw0Var.f.setVisibility(this.v.h() >= MessagesController.getInstance(i10).botPreviewMediasMax ? 8 : 0);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        if (view == this.r) {
+            return true;
+        }
+        return super.drawChild(canvas, view, j3);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        i iVar = this.f;
+        iVar.setPadding(iVar.getPaddingLeft(), iVar.Y2, iVar.getPaddingRight(), this.J.getMeasuredHeight() + AndroidUtilities.dp(42.0f));
+    }
+
+    public void setList(b8 b8Var) {
+        if (this.a != b8Var) {
+            this.H = false;
+            this.I = false;
+            this.d = this.W.y;
+        }
+        this.a = b8Var;
+        l lVar = this.v;
+        lVar.e = b8Var;
+        if (lVar != lVar.s.w) {
+            lVar.M();
+        }
+        lVar.l();
+        s sVar = this.w;
+        sVar.e = b8Var;
+        if (sVar != sVar.s.w) {
+            sVar.M();
+        }
+        sVar.l();
+        c();
+    }
+
+    public void setVisibleHeight(int i10) {
+        float f7 = (-(getMeasuredHeight() - Math.max(i10, AndroidUtilities.dp(280.0f)))) / 2.0f;
+        this.y.setTranslationY(f7);
+        this.x.setTranslationY(-f7);
+    }
+}

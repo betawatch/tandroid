@@ -1,45 +1,66 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.lang.reflect.Field;
+import sun.misc.Unsafe;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class q1 extends r1 {
-    @Override // androidx.datastore.preferences.protobuf.r1
-    public final boolean c(Object obj, long j10) {
-        return this.a.getBoolean(obj, j10);
+public abstract class q1 {
+    public final Unsafe a;
+
+    public q1(Unsafe unsafe) {
+        this.a = unsafe;
     }
 
-    @Override // androidx.datastore.preferences.protobuf.r1
-    public final byte d(Object obj, long j10) {
-        return this.a.getByte(obj, j10);
+    public final int a(Class cls) {
+        return this.a.arrayBaseOffset(cls);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.r1
-    public final double e(Object obj, long j10) {
-        return this.a.getDouble(obj, j10);
+    public final int b(Class cls) {
+        return this.a.arrayIndexScale(cls);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.r1
-    public final float f(Object obj, long j10) {
-        return this.a.getFloat(obj, j10);
+    public abstract boolean c(Object obj, long j3);
+
+    public abstract byte d(Object obj, long j3);
+
+    public abstract double e(Object obj, long j3);
+
+    public abstract float f(Object obj, long j3);
+
+    public final int g(Object obj, long j3) {
+        return this.a.getInt(obj, j3);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.r1
-    public final void k(Object obj, long j10, boolean z4) {
-        this.a.putBoolean(obj, j10, z4);
+    public final long h(Object obj, long j3) {
+        return this.a.getLong(obj, j3);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.r1
-    public final void l(Object obj, long j10, byte b10) {
-        this.a.putByte(obj, j10, b10);
+    public final Object i(Object obj, long j3) {
+        return this.a.getObject(obj, j3);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.r1
-    public final void m(Object obj, long j10, double d) {
-        this.a.putDouble(obj, j10, d);
+    public final long j(Field field) {
+        return this.a.objectFieldOffset(field);
     }
 
-    @Override // androidx.datastore.preferences.protobuf.r1
-    public final void n(Object obj, long j10, float f10) {
-        this.a.putFloat(obj, j10, f10);
+    public abstract void k(Object obj, long j3, boolean z10);
+
+    public abstract void l(Object obj, long j3, byte b10);
+
+    public abstract void m(Object obj, long j3, double d);
+
+    public abstract void n(Object obj, long j3, float f7);
+
+    public final void o(long j3, Object obj, int i10) {
+        this.a.putInt(obj, j3, i10);
+    }
+
+    public final void p(Object obj, long j3, long j10) {
+        this.a.putLong(obj, j3, j10);
+    }
+
+    public final void q(Object obj, long j3, Object obj2) {
+        this.a.putObject(obj, j3, obj2);
     }
 }

@@ -1,40 +1,32 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import org.telegram.ui.Components.FragmentContextView;
+import android.text.SpannableStringBuilder;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ax extends FragmentContextView {
-    public final /* synthetic */ int K0;
-    public final /* synthetic */ qy L0;
+public final class ax extends org.telegram.ui.Components.ii0 {
+    public final /* synthetic */ int f0 = 0;
+    public final /* synthetic */ Object g0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ax(qy qyVar, Context context, qy qyVar2, int i10) {
-        super(context, qyVar2, true);
-        this.K0 = i10;
-        switch (i10) {
-            case 1:
-                this.L0 = qyVar;
-                super(context, qyVar2, false);
-                break;
+    public ax(eg1 eg1Var, SpannableStringBuilder spannableStringBuilder, SpannableStringBuilder spannableStringBuilder2) {
+        super(spannableStringBuilder, spannableStringBuilder2);
+        this.g0 = eg1Var;
+    }
+
+    @Override // org.telegram.ui.Components.ii0
+    public final float d() {
+        switch (this.f0) {
+            case 0:
+                return ((ty) this.g0).a.getViewOffset();
             default:
-                this.L0 = qyVar;
-                break;
+                return ((eg1) this.g0).N.f3;
         }
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.K0) {
-            case 0:
-                qy qyVar = this.L0;
-                qyVar.G1.i(qyVar.D1, i10 == 0, true);
-                break;
-            default:
-                qy qyVar2 = this.L0;
-                qyVar2.G1.i(qyVar2.F1, i10 == 0, true);
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ax(String str, String str2, ty tyVar) {
+        super(str, str2);
+        this.g0 = tyVar;
     }
 }

@@ -4,7 +4,7 @@ import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class d {
     public static final d c = new d();
@@ -47,11 +47,11 @@ public final class d {
         if (methodArr == null) {
             try {
                 methodArr = cls.getDeclaredMethods();
-            } catch (NoClassDefFoundError e) {
-                throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e);
+            } catch (NoClassDefFoundError e7) {
+                throw new IllegalArgumentException("The observer class has some methods that use newer APIs which are not available in the current OS version. Lifecycles cannot access even other methods so you should make sure that your observer classes only access framework classes that are available in your min API level OR use lifecycle:compiler annotation processor.", e7);
             }
         }
-        boolean z4 = false;
+        boolean z10 = false;
         for (Method method : methodArr) {
             b0 b0Var = (b0) method.getAnnotation(b0.class);
             if (b0Var != null) {
@@ -78,12 +78,12 @@ public final class d {
                     throw new IllegalArgumentException("cannot have more than 2 params");
                 }
                 b(hashMap, new c(i10, method), value, cls);
-                z4 = true;
+                z10 = true;
             }
         }
         b bVar3 = new b(hashMap);
         hashMap2.put(cls, bVar3);
-        this.b.put(cls, Boolean.valueOf(z4));
+        this.b.put(cls, Boolean.valueOf(z10));
         return bVar3;
     }
 }

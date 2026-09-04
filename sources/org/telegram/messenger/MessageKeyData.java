@@ -2,20 +2,20 @@ package org.telegram.messenger;
 
 import org.telegram.tgnet.SerializedData;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class MessageKeyData {
     public byte[] aesIv;
     public byte[] aesKey;
 
-    public static MessageKeyData generateMessageKeyData(byte[] bArr, byte[] bArr2, boolean z4, int i10) {
+    public static MessageKeyData generateMessageKeyData(byte[] bArr, byte[] bArr2, boolean z10, int i10) {
         MessageKeyData messageKeyData = new MessageKeyData();
         if (bArr == null || bArr.length == 0) {
             messageKeyData.aesIv = null;
             messageKeyData.aesKey = null;
             return messageKeyData;
         }
-        int i11 = z4 ? 8 : 0;
+        int i11 = z10 ? 8 : 0;
         if (i10 != 1) {
             if (i10 != 2) {
                 return messageKeyData;

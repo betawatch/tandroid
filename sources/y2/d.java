@@ -1,19 +1,33 @@
 package y2;
 
-import vh.w2;
+import e2.d0;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class d implements u9.d {
-    public static final d a = new d();
-    public static final u9.c b = new u9.c("logSource", w2.h(w2.g(x9.d.class, new x9.a(1))));
-    public static final u9.c c = new u9.c("logEventDropped", w2.h(w2.g(x9.d.class, new x9.a(2))));
+public final class d {
+    public int c;
+    public int d;
+    public final boolean a = true;
+    public final int b = 65536;
+    public int e = 0;
+    public a[] f = new a[100];
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        b3.e eVar = (b3.e) obj;
-        u9.e eVar2 = (u9.e) obj2;
-        eVar2.e(b, eVar.a);
-        eVar2.e(c, eVar.b);
+    public final synchronized void a(int i10) {
+        boolean z10 = i10 < this.c;
+        this.c = i10;
+        if (z10) {
+            b();
+        }
+    }
+
+    public final synchronized void b() {
+        int max = Math.max(0, d0.f(this.c, this.b) - this.d);
+        int i10 = this.e;
+        if (max >= i10) {
+            return;
+        }
+        Arrays.fill(this.f, max, i10, (Object) null);
+        this.e = max;
     }
 }

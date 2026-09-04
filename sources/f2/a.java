@@ -1,57 +1,42 @@
 package f2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import e2.v;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public int a;
-    public int b;
-    public Object c;
-    public int d;
+public final class a implements fb.n {
+    public final String a;
 
-    public final boolean equals(Object obj) {
-        if (this != obj) {
-            if (obj == null || a.class != obj.getClass()) {
-                return false;
+    public /* synthetic */ a(String str) {
+        this.a = str;
+    }
+
+    public static a a(v vVar) {
+        String str;
+        vVar.K(2);
+        int x10 = vVar.x();
+        int i10 = x10 >> 1;
+        int x11 = ((vVar.x() >> 3) & 31) | ((x10 & 1) << 5);
+        if (i10 == 4 || i10 == 5 || i10 == 7 || i10 == 8) {
+            str = "dvhe";
+        } else if (i10 == 9) {
+            str = "dvav";
+        } else {
+            if (i10 != 10) {
+                return null;
             }
-            a aVar = (a) obj;
-            int i10 = this.a;
-            if (i10 != aVar.a) {
-                return false;
-            }
-            if (i10 != 8 || Math.abs(this.d - this.b) != 1 || this.d != aVar.b || this.b != aVar.d) {
-                if (this.d != aVar.d || this.b != aVar.b) {
-                    return false;
-                }
-                Object obj2 = this.c;
-                if (obj2 != null) {
-                    if (!obj2.equals(aVar.c)) {
-                        return false;
-                    }
-                } else if (aVar.c != null) {
-                    return false;
-                }
-            }
+            str = "dav1";
         }
-        return true;
+        StringBuilder u10 = a4.a.u(str);
+        u10.append(i10 < 10 ? ".0" : ".");
+        u10.append(i10);
+        u10.append(x11 < 10 ? ".0" : ".");
+        u10.append(x11);
+        return new a(u10.toString());
     }
 
-    public final int hashCode() {
-        return (((this.a * 31) + this.b) * 31) + this.d;
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(Integer.toHexString(System.identityHashCode(this)));
-        sb.append("[");
-        int i10 = this.a;
-        sb.append(i10 != 1 ? i10 != 2 ? i10 != 4 ? i10 != 8 ? "??" : "mv" : "up" : "rm" : "add");
-        sb.append(",s:");
-        sb.append(this.b);
-        sb.append("c:");
-        sb.append(this.d);
-        sb.append(",p:");
-        sb.append(this.c);
-        sb.append("]");
-        return sb.toString();
+    @Override // fb.n
+    public Object h2() {
+        throw new db.j(this.a);
     }
 }

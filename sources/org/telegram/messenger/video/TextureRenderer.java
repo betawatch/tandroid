@@ -23,16 +23,16 @@ import android.text.TextUtils;
 import android.util.Pair;
 import android.view.Surface;
 import android.view.View;
-import cg.t0;
-import dg.g1;
-import dg.l1;
+import com.google.android.gms.internal.vision.e2;
+import di.d7;
+import di.n8;
+import di.s;
 import java.io.File;
 import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
-import kf.k0;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.Bitmaps;
@@ -45,22 +45,24 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
-import org.telegram.messenger.y3;
+import org.telegram.messenger.w1;
+import org.telegram.messenger.wl;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RLottieNative;
-import org.telegram.ui.Components.a00;
-import org.telegram.ui.Components.ha;
-import org.telegram.ui.Components.l5;
-import org.telegram.ui.Components.mr;
-import org.telegram.ui.Components.u5;
-import org.telegram.ui.Components.v5;
-import org.telegram.ui.Components.wt;
+import org.telegram.ui.Components.a6;
+import org.telegram.ui.Components.bu;
+import org.telegram.ui.Components.d6;
+import org.telegram.ui.Components.pa;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.q5;
 import org.telegram.ui.Components.wz;
-import org.telegram.ui.Components.y5;
-import ph.k5;
-import ph.s6;
+import org.telegram.ui.Components.z5;
+import org.telegram.ui.Components.zz;
+import qg.j0;
+import rg.q0;
+import rg.u0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class TextureRenderer {
     private static final String FRAGMENT_EXTERNAL_MASK_SHADER = "#extension GL_OES_EGL_image_external : require\nprecision highp float;\nvarying vec2 vTextureCoord;\nvarying vec2 MTextureCoord;\nuniform samplerExternalOES sTexture;\nuniform sampler2D sMask;\nvoid main() {\n  gl_FragColor = texture2D(sTexture, vTextureCoord) * texture2D(sMask, MTextureCoord).a;\n}\n";
@@ -80,7 +82,7 @@ public class TextureRenderer {
     private String backgroundPath;
     private FloatBuffer bitmapVerticesBuffer;
     private boolean blendEnabled;
-    private ha blur;
+    private pa blur;
     private int blurBlurImageHandle;
     private int blurInputTexCoordHandle;
     private int blurMaskImageHandle;
@@ -93,8 +95,8 @@ public class TextureRenderer {
     private int[] collageTextures;
     private final MediaController.CropState cropState;
     private FloatBuffer croppedTextureBuffer;
-    private ArrayList<l5> emojiDrawables;
-    private a00 filterShaders;
+    private ArrayList<q5> emojiDrawables;
+    private zz filterShaders;
     private int gradientBottomColor;
     private int gradientBottomColorHandle;
     private FloatBuffer gradientTextureBuffer;
@@ -169,50 +171,50 @@ public class TextureRenderer {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public TextureRenderer(MediaController.SavedFilterState savedFilterState, String str, String str2, String str3, ArrayList<VideoEditedInfo.MediaEntity> arrayList, MediaController.CropState cropState, int i10, int i11, int i12, int i13, int i14, float f10, boolean z4, Integer num, Integer num2, s6 s6Var, MediaCodecVideoConvertor.ConvertVideoParams convertVideoParams) {
-        char c3;
+    public TextureRenderer(MediaController.SavedFilterState savedFilterState, String str, String str2, String str3, ArrayList<VideoEditedInfo.MediaEntity> arrayList, MediaController.CropState cropState, int i10, int i11, int i12, int i13, int i14, float f7, boolean z10, Integer num, Integer num2, n8 n8Var, MediaCodecVideoConvertor.ConvertVideoParams convertVideoParams) {
         char c10;
-        int i15;
-        float f11;
-        float f12;
-        int i16;
         char c11;
+        int i15;
+        float f10;
+        float f11;
+        int i16;
         char c12;
+        char c13;
         int i17;
         int i18;
         float[] fArr;
         int i19;
         int i20 = i10;
         int i21 = i11;
-        float f13 = f10;
+        float f12 = f7;
         this.NUM_FILTER_SHADER = -1;
         this.NUM_EXTERNAL_SHADER = -1;
         this.NUM_GRADIENT_SHADER = -1;
-        this.isPhoto = z4;
+        this.isPhoto = z10;
         this.collageParts = convertVideoParams.collageParts;
         float[] fArr2 = {0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f};
         if (BuildVars.LOGS_ENABLED) {
-            StringBuilder m9 = e2.c.m("start textureRenderer w = ", i20, " h = ", i21, " r = ");
-            m9.append(i14);
-            m9.append(" fps = ");
-            m9.append(f13);
-            FileLog.d(m9.toString());
+            StringBuilder k10 = e2.k("start textureRenderer w = ", i20, " h = ", i21, " r = ");
+            k10.append(i14);
+            k10.append(" fps = ");
+            k10.append(f12);
+            FileLog.d(k10.toString());
             if (cropState != null) {
                 FileLog.d("cropState px = " + cropState.cropPx + " py = " + cropState.cropPy + " cScale = " + cropState.cropScale + " cropRotate = " + cropState.cropRotate + " pw = " + cropState.cropPw + " ph = " + cropState.cropPh + " tw = " + cropState.transformWidth + " th = " + cropState.transformHeight + " tr = " + cropState.transformRotation + " mirror = " + cropState.mirrored);
             }
         }
-        FloatBuffer k10 = y3.k(ByteBuffer.allocateDirect(32));
-        this.textureBuffer = k10;
-        k10.put(fArr2).position(0);
-        FloatBuffer k11 = y3.k(ByteBuffer.allocateDirect(this.bitmapData.length * 4));
-        this.bitmapVerticesBuffer = k11;
-        k11.put(this.bitmapData).position(0);
+        FloatBuffer h = wl.h(ByteBuffer.allocateDirect(32));
+        this.textureBuffer = h;
+        h.put(fArr2).position(0);
+        FloatBuffer h10 = wl.h(ByteBuffer.allocateDirect(this.bitmapData.length * 4));
+        this.bitmapVerticesBuffer = h10;
+        h10.put(this.bitmapData).position(0);
         Matrix.setIdentityM(this.mSTMatrix, 0);
         Matrix.setIdentityM(this.mSTMatrixIdentity, 0);
         if (savedFilterState != null) {
-            a00 a00Var = new a00(true, s6Var);
-            this.filterShaders = a00Var;
-            a00Var.f1 = new wz(savedFilterState);
+            zz zzVar = new zz(true, n8Var);
+            this.filterShaders = zzVar;
+            zzVar.f1 = new wz(savedFilterState);
         }
         this.transformedWidth = i20;
         this.transformedHeight = i21;
@@ -225,27 +227,27 @@ public class TextureRenderer {
         this.backgroundPath = convertVideoParams.backgroundPath;
         this.blurPath = str3;
         this.mediaEntities = arrayList;
-        this.videoFps = f13 == 0.0f ? 30.0f : f13;
+        this.videoFps = f12 == 0.0f ? 30.0f : f12;
         this.cropState = cropState;
         this.NUM_EXTERNAL_SHADER = 0;
         Matrix.setIdentityM(this.mMVPMatrix, 0);
-        long j10 = convertVideoParams.wallpaperPeerId;
-        if (j10 != Long.MIN_VALUE) {
-            c3 = 6;
-            c10 = 7;
-            this.backgroundDrawable = k5.e(null, convertVideoParams.account, j10, convertVideoParams.isDark);
+        long j3 = convertVideoParams.wallpaperPeerId;
+        if (j3 != Long.MIN_VALUE) {
+            c10 = 6;
+            c11 = 7;
+            this.backgroundDrawable = d7.e(null, convertVideoParams.account, j3, convertVideoParams.isDark);
         } else {
-            c3 = 6;
-            c10 = 7;
+            c10 = 6;
+            c11 = 7;
             if (num2 != null && num != null) {
-                FloatBuffer k12 = y3.k(ByteBuffer.allocateDirect(32));
-                this.gradientVerticesBuffer = k12;
-                k12.put(new float[]{-1.0f, -1.0f, 1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f}).position(0);
-                boolean z10 = this.isPhoto;
-                float[] fArr3 = {0.0f, z10 ? 1.0f : 0.0f, 1.0f, z10 ? 1.0f : 0.0f, 0.0f, z10 ? 0.0f : 1.0f, 1.0f, z10 ? 0.0f : 1.0f};
-                FloatBuffer k13 = y3.k(ByteBuffer.allocateDirect(32));
-                this.gradientTextureBuffer = k13;
-                k13.put(fArr3).position(0);
+                FloatBuffer h11 = wl.h(ByteBuffer.allocateDirect(32));
+                this.gradientVerticesBuffer = h11;
+                h11.put(new float[]{-1.0f, -1.0f, 1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f}).position(0);
+                boolean z11 = this.isPhoto;
+                float[] fArr3 = {0.0f, z11 ? 1.0f : 0.0f, 1.0f, z11 ? 1.0f : 0.0f, 0.0f, z11 ? 0.0f : 1.0f, 1.0f, z11 ? 0.0f : 1.0f};
+                FloatBuffer h12 = wl.h(ByteBuffer.allocateDirect(32));
+                this.gradientTextureBuffer = h12;
+                h12.put(fArr3).position(0);
                 this.gradientTopColor = num.intValue();
                 this.gradientBottomColor = num2.intValue();
                 this.NUM_GRADIENT_SHADER = 1;
@@ -263,244 +265,244 @@ public class TextureRenderer {
                 this.maskTextureHandle = new int[i15];
                 if (cropState == null) {
                     android.graphics.Matrix matrix = cropState.useMatrix;
-                    f11 = 0.5f;
+                    f10 = 0.5f;
                     if (matrix == null) {
                         i16 = 32;
-                        c12 = 1;
+                        c13 = 1;
                         float[] fArr4 = new float[8];
                         fArr4[0] = 0.0f;
                         fArr4[1] = 0.0f;
-                        float f14 = i20;
-                        fArr4[2] = f14;
+                        float f13 = i20;
+                        fArr4[2] = f13;
                         fArr4[3] = 0.0f;
                         fArr4[4] = 0.0f;
-                        float f15 = i21;
-                        fArr4[5] = f15;
-                        fArr4[c3] = f14;
-                        fArr4[c10] = f15;
+                        float f14 = i21;
+                        fArr4[5] = f14;
+                        fArr4[c10] = f13;
+                        fArr4[c11] = f14;
                         i17 = cropState.transformRotation;
                         this.transformedWidth = (int) (this.transformedWidth * cropState.cropPw);
                         this.transformedHeight = (int) (this.transformedHeight * cropState.cropPh);
-                        float f16 = (float) ((-cropState.cropRotate) * 0.017453292519943295d);
+                        float f15 = (float) ((-cropState.cropRotate) * 0.017453292519943295d);
                         int i22 = 0;
                         while (i22 < 4) {
                             int i23 = i22 * 2;
-                            float f17 = fArr4[i23] - (i20 / 2);
+                            float f16 = fArr4[i23] - (i20 / 2);
                             int i24 = i23 + 1;
-                            float f18 = fArr4[i24] - (i21 / 2);
-                            double d = f17;
-                            double d10 = f16;
+                            float f17 = fArr4[i24] - (i21 / 2);
+                            double d = f16;
+                            double d10 = f15;
                             double cos = Math.cos(d10) * d;
-                            double d11 = f18;
-                            float sin = ((float) ((cos - (Math.sin(d10) * d11)) + (cropState.cropPx * f14))) * cropState.cropScale;
-                            float a2 = ((float) (k0.a(d10, d11, Math.sin(d10) * d) - (cropState.cropPy * f15))) * cropState.cropScale;
+                            double d11 = f17;
+                            float sin = ((float) ((cos - (Math.sin(d10) * d11)) + (cropState.cropPx * f13))) * cropState.cropScale;
+                            float e7 = ((float) (i2.g.e(d10, d11, Math.sin(d10) * d) - (cropState.cropPy * f14))) * cropState.cropScale;
                             fArr4[i23] = (sin / this.transformedWidth) * 2.0f;
-                            fArr4[i24] = (a2 / this.transformedHeight) * 2.0f;
+                            fArr4[i24] = (e7 / this.transformedHeight) * 2.0f;
                             i22++;
                             i20 = i10;
                             i21 = i11;
                         }
-                        f12 = 1.0f;
-                        FloatBuffer k14 = y3.k(ByteBuffer.allocateDirect(32));
-                        this.verticesBuffer = k14;
-                        c11 = 0;
-                        k14.put(fArr4).position(0);
+                        f11 = 1.0f;
+                        FloatBuffer h13 = wl.h(ByteBuffer.allocateDirect(32));
+                        this.verticesBuffer = h13;
+                        c12 = 0;
+                        h13.put(fArr4).position(0);
                         if (this.filterShaders == null) {
                             i18 = 4;
                             if (i17 == 90) {
                                 fArr = new float[8];
-                                fArr[c11] = f12;
-                                fArr[c12] = 0.0f;
-                                fArr[2] = f12;
-                                fArr[3] = f12;
+                                fArr[c12] = f11;
+                                fArr[c13] = 0.0f;
+                                fArr[2] = f11;
+                                fArr[3] = f11;
                                 fArr[4] = 0.0f;
                                 fArr[5] = 0.0f;
-                                fArr[c3] = 0.0f;
-                                fArr[c10] = f12;
+                                fArr[c10] = 0.0f;
+                                fArr[c11] = f11;
                             } else if (i17 == 180) {
                                 fArr = new float[8];
-                                fArr[c11] = f12;
-                                fArr[c12] = f12;
+                                fArr[c12] = f11;
+                                fArr[c13] = f11;
                                 fArr[2] = 0.0f;
-                                fArr[3] = f12;
-                                fArr[4] = f12;
+                                fArr[3] = f11;
+                                fArr[4] = f11;
                                 fArr[5] = 0.0f;
-                                fArr[c3] = 0.0f;
                                 fArr[c10] = 0.0f;
+                                fArr[c11] = 0.0f;
                             } else if (i17 == 270) {
                                 fArr = new float[8];
-                                fArr[c11] = 0.0f;
-                                fArr[c12] = f12;
+                                fArr[c12] = 0.0f;
+                                fArr[c13] = f11;
                                 fArr[2] = 0.0f;
                                 fArr[3] = 0.0f;
-                                fArr[4] = f12;
-                                fArr[5] = f12;
-                                fArr[c3] = f12;
-                                fArr[c10] = 0.0f;
+                                fArr[4] = f11;
+                                fArr[5] = f11;
+                                fArr[c10] = f11;
+                                fArr[c11] = 0.0f;
                             } else {
                                 fArr = new float[8];
-                                fArr[c11] = 0.0f;
                                 fArr[c12] = 0.0f;
-                                fArr[2] = f12;
+                                fArr[c13] = 0.0f;
+                                fArr[2] = f11;
                                 fArr[3] = 0.0f;
                                 fArr[4] = 0.0f;
-                                fArr[5] = f12;
-                                fArr[c3] = f12;
-                                fArr[c10] = f12;
+                                fArr[5] = f11;
+                                fArr[c10] = f11;
+                                fArr[c11] = f11;
                             }
                         } else if (i17 == 90) {
                             fArr = new float[8];
-                            fArr[c11] = f12;
-                            fArr[c12] = f12;
-                            fArr[2] = f12;
+                            fArr[c12] = f11;
+                            fArr[c13] = f11;
+                            fArr[2] = f11;
                             fArr[3] = 0.0f;
                             i18 = 4;
                             fArr[4] = 0.0f;
-                            fArr[5] = f12;
-                            fArr[c3] = 0.0f;
+                            fArr[5] = f11;
                             fArr[c10] = 0.0f;
+                            fArr[c11] = 0.0f;
                         } else {
                             i18 = 4;
                             if (i17 == 180) {
                                 fArr = new float[8];
-                                fArr[c11] = f12;
-                                fArr[c12] = 0.0f;
+                                fArr[c12] = f11;
+                                fArr[c13] = 0.0f;
                                 fArr[2] = 0.0f;
                                 fArr[3] = 0.0f;
-                                fArr[4] = f12;
-                                fArr[5] = f12;
-                                fArr[c3] = 0.0f;
-                                fArr[c10] = f12;
+                                fArr[4] = f11;
+                                fArr[5] = f11;
+                                fArr[c10] = 0.0f;
+                                fArr[c11] = f11;
                             } else if (i17 == 270) {
                                 fArr = new float[8];
-                                fArr[c11] = 0.0f;
                                 fArr[c12] = 0.0f;
+                                fArr[c13] = 0.0f;
                                 fArr[2] = 0.0f;
-                                fArr[3] = f12;
-                                fArr[4] = f12;
+                                fArr[3] = f11;
+                                fArr[4] = f11;
                                 fArr[5] = 0.0f;
-                                fArr[c3] = f12;
-                                fArr[c10] = f12;
+                                fArr[c10] = f11;
+                                fArr[c11] = f11;
                             } else {
                                 fArr = new float[8];
-                                fArr[c11] = 0.0f;
-                                fArr[c12] = f12;
-                                fArr[2] = f12;
-                                fArr[3] = f12;
+                                fArr[c12] = 0.0f;
+                                fArr[c13] = f11;
+                                fArr[2] = f11;
+                                fArr[3] = f11;
                                 fArr[4] = 0.0f;
                                 fArr[5] = 0.0f;
-                                fArr[c3] = f12;
-                                fArr[c10] = 0.0f;
+                                fArr[c10] = f11;
+                                fArr[c11] = 0.0f;
                             }
                         }
                         if (cropState != null && cropState.mirrored) {
                             i19 = 0;
                             while (i19 < i18) {
                                 int i25 = i19 * 2;
-                                if (fArr[i25] > f11) {
+                                if (fArr[i25] > f10) {
                                     fArr[i25] = 0.0f;
                                 } else {
-                                    fArr[i25] = f12;
+                                    fArr[i25] = f11;
                                 }
                                 i19++;
                                 i18 = 4;
                             }
                         }
-                        FloatBuffer k15 = y3.k(ByteBuffer.allocateDirect(fArr.length * 4));
-                        this.renderTextureBuffer = k15;
-                        k15.put(fArr).position(0);
-                        FloatBuffer k16 = y3.k(ByteBuffer.allocateDirect(i16));
-                        this.maskTextureBuffer = k16;
-                        k16.put(new float[]{0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f}).position(0);
+                        FloatBuffer h14 = wl.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                        this.renderTextureBuffer = h14;
+                        h14.put(fArr).position(0);
+                        FloatBuffer h15 = wl.h(ByteBuffer.allocateDirect(i16));
+                        this.maskTextureBuffer = h15;
+                        h15.put(new float[]{0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f}).position(0);
                     }
                     this.useMatrixForImagePath = true;
                     i16 = 32;
-                    float f19 = cropState.cropPw;
-                    float f20 = cropState.cropPh;
+                    float f18 = cropState.cropPw;
+                    float f19 = cropState.cropPh;
                     if ((cropState.orientation / 90) % 2 == 1) {
-                        f20 = f19;
-                        f19 = f20;
+                        f19 = f18;
+                        f18 = f19;
                     }
+                    float f20 = (1.0f - f18) / 2.0f;
                     float f21 = (1.0f - f19) / 2.0f;
-                    float f22 = (1.0f - f20) / 2.0f;
-                    c12 = 1;
+                    c13 = 1;
                     float[] fArr5 = new float[8];
-                    float f23 = i12;
-                    float f24 = f23 * f21;
-                    fArr5[0] = f24;
-                    float f25 = i13;
-                    float f26 = f25 * f22;
-                    fArr5[1] = f26;
-                    float f27 = (f21 + f19) * f23;
-                    fArr5[2] = f27;
-                    fArr5[3] = f26;
-                    fArr5[4] = f24;
-                    float f28 = (f22 + f20) * f25;
-                    fArr5[5] = f28;
-                    fArr5[c3] = f27;
-                    fArr5[c10] = f28;
+                    float f22 = i12;
+                    float f23 = f22 * f20;
+                    fArr5[0] = f23;
+                    float f24 = i13;
+                    float f25 = f24 * f21;
+                    fArr5[1] = f25;
+                    float f26 = (f20 + f18) * f22;
+                    fArr5[2] = f26;
+                    fArr5[3] = f25;
+                    fArr5[4] = f23;
+                    float f27 = (f21 + f19) * f24;
+                    fArr5[5] = f27;
+                    fArr5[c10] = f26;
+                    fArr5[c11] = f27;
                     matrix.mapPoints(fArr5);
                     for (int i26 = 0; i26 < 4; i26++) {
                         int i27 = i26 * 2;
                         fArr5[i27] = ((fArr5[i27] / i20) * 2.0f) - 1.0f;
                         int i28 = i27 + 1;
-                        fArr5[i28] = y3.A(fArr5[i28], i21, 2.0f, 1.0f);
+                        fArr5[i28] = wl.c(fArr5[i28], i21, 2.0f, 1.0f);
                     }
-                    FloatBuffer k17 = y3.k(ByteBuffer.allocateDirect(32));
-                    this.verticesBuffer = k17;
-                    k17.put(fArr5).position(0);
+                    FloatBuffer h16 = wl.h(ByteBuffer.allocateDirect(32));
+                    this.verticesBuffer = h16;
+                    h16.put(fArr5).position(0);
                     float[] fArr6 = new float[8];
-                    float f29 = f19 * f23;
-                    float f30 = f29 * (-0.5f);
-                    fArr6[0] = f30;
-                    float f31 = f20 * f25;
-                    float f32 = (-0.5f) * f31;
-                    fArr6[1] = f32;
-                    float f33 = f29 * 0.5f;
-                    fArr6[2] = f33;
-                    fArr6[3] = f32;
-                    fArr6[4] = f30;
-                    float f34 = f31 * 0.5f;
-                    fArr6[5] = f34;
-                    fArr6[c3] = f33;
-                    fArr6[c10] = f34;
-                    float f35 = (float) ((-cropState.cropRotate) * 0.017453292519943295d);
+                    float f28 = f18 * f22;
+                    float f29 = f28 * (-0.5f);
+                    fArr6[0] = f29;
+                    float f30 = f19 * f24;
+                    float f31 = (-0.5f) * f30;
+                    fArr6[1] = f31;
+                    float f32 = f28 * 0.5f;
+                    fArr6[2] = f32;
+                    fArr6[3] = f31;
+                    fArr6[4] = f29;
+                    float f33 = f30 * 0.5f;
+                    fArr6[5] = f33;
+                    fArr6[c10] = f32;
+                    fArr6[c11] = f33;
+                    float f34 = (float) ((-cropState.cropRotate) * 0.017453292519943295d);
                     int i29 = 0;
                     for (int i30 = 4; i29 < i30; i30 = 4) {
                         int i31 = i29 * 2;
-                        float f36 = fArr6[i31];
+                        float f35 = fArr6[i31];
                         int i32 = i31 + 1;
-                        float f37 = fArr6[i32];
-                        double d12 = f36 - (cropState.cropPx * f23);
-                        double d13 = f35;
-                        double d14 = f37 - (cropState.cropPy * f25);
-                        float cos2 = ((float) ((Math.cos(d13) * d12) - (Math.sin(d13) * d14))) / f23;
-                        float a10 = ((float) k0.a(d13, d14, Math.sin(d13) * d12)) / f25;
-                        float f38 = cropState.cropScale;
-                        fArr6[i31] = (cos2 / f38) + 0.5f;
-                        fArr6[i32] = (a10 / f38) + 0.5f;
+                        float f36 = fArr6[i32];
+                        double d12 = f35 - (cropState.cropPx * f22);
+                        double d13 = f34;
+                        double d14 = f36 - (cropState.cropPy * f24);
+                        float cos2 = ((float) ((Math.cos(d13) * d12) - (Math.sin(d13) * d14))) / f22;
+                        float e10 = ((float) i2.g.e(d13, d14, Math.sin(d13) * d12)) / f24;
+                        float f37 = cropState.cropScale;
+                        fArr6[i31] = (cos2 / f37) + 0.5f;
+                        fArr6[i32] = (e10 / f37) + 0.5f;
                         i29++;
                     }
                     if (this.filterShaders == null && !this.isPhoto && this.messageVideoMaskPath == null) {
                         fArr6[1] = 1.0f - fArr6[1];
                         fArr6[3] = 1.0f - fArr6[3];
                         fArr6[5] = 1.0f - fArr6[5];
-                        fArr6[c10] = 1.0f - fArr6[c10];
+                        fArr6[c11] = 1.0f - fArr6[c11];
                     }
-                    FloatBuffer k18 = y3.k(ByteBuffer.allocateDirect(32));
-                    this.croppedTextureBuffer = k18;
-                    c11 = 0;
-                    k18.put(fArr6).position(0);
-                    f12 = 1.0f;
+                    FloatBuffer h17 = wl.h(ByteBuffer.allocateDirect(32));
+                    this.croppedTextureBuffer = h17;
+                    c12 = 0;
+                    h17.put(fArr6).position(0);
+                    f11 = 1.0f;
                 } else {
-                    f11 = 0.5f;
-                    f12 = 1.0f;
+                    f10 = 0.5f;
+                    f11 = 1.0f;
                     i16 = 32;
-                    c11 = 0;
-                    c12 = 1;
-                    FloatBuffer k19 = y3.k(ByteBuffer.allocateDirect(32));
-                    this.verticesBuffer = k19;
-                    k19.put(new float[]{-1.0f, -1.0f, 1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f}).position(0);
+                    c12 = 0;
+                    c13 = 1;
+                    FloatBuffer h18 = wl.h(ByteBuffer.allocateDirect(32));
+                    this.verticesBuffer = h18;
+                    h18.put(new float[]{-1.0f, -1.0f, 1.0f, -1.0f, -1.0f, 1.0f, 1.0f, 1.0f}).position(0);
                 }
                 i17 = 0;
                 if (this.filterShaders == null) {
@@ -510,12 +512,12 @@ public class TextureRenderer {
                     while (i19 < i18) {
                     }
                 }
-                FloatBuffer k152 = y3.k(ByteBuffer.allocateDirect(fArr.length * 4));
-                this.renderTextureBuffer = k152;
-                k152.put(fArr).position(0);
-                FloatBuffer k162 = y3.k(ByteBuffer.allocateDirect(i16));
-                this.maskTextureBuffer = k162;
-                k162.put(new float[]{0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f}).position(0);
+                FloatBuffer h142 = wl.h(ByteBuffer.allocateDirect(fArr.length * 4));
+                this.renderTextureBuffer = h142;
+                h142.put(fArr).position(0);
+                FloatBuffer h152 = wl.h(ByteBuffer.allocateDirect(i16));
+                this.maskTextureBuffer = h152;
+                h152.put(new float[]{0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f}).position(0);
             }
         }
         i15 = 1;
@@ -535,12 +537,12 @@ public class TextureRenderer {
         }
         if (cropState != null) {
         }
-        FloatBuffer k1522 = y3.k(ByteBuffer.allocateDirect(fArr.length * 4));
-        this.renderTextureBuffer = k1522;
-        k1522.put(fArr).position(0);
-        FloatBuffer k1622 = y3.k(ByteBuffer.allocateDirect(i16));
-        this.maskTextureBuffer = k1622;
-        k1622.put(new float[]{0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f}).position(0);
+        FloatBuffer h1422 = wl.h(ByteBuffer.allocateDirect(fArr.length * 4));
+        this.renderTextureBuffer = h1422;
+        h1422.put(fArr).position(0);
+        FloatBuffer h1522 = wl.h(ByteBuffer.allocateDirect(i16));
+        this.maskTextureBuffer = h1522;
+        h1522.put(new float[]{0.0f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, 1.0f, 1.0f}).position(0);
     }
 
     private void applyRoundRadius(VideoEditedInfo.MediaEntity mediaEntity, Bitmap bitmap, int i10) {
@@ -580,18 +582,18 @@ public class TextureRenderer {
         }
     }
 
-    private int createProgram(String str, String str2, boolean z4) {
+    private int createProgram(String str, String str2, boolean z10) {
         int h;
         int glCreateProgram;
-        int h9;
+        int h10;
         int glCreateProgram2;
-        if (z4) {
-            int h10 = a00.h(35633, str);
-            if (h10 == 0 || (h9 = a00.h(35632, str2)) == 0 || (glCreateProgram2 = GLES20.glCreateProgram()) == 0) {
+        if (z10) {
+            int h11 = zz.h(35633, str);
+            if (h11 == 0 || (h10 = zz.h(35632, str2)) == 0 || (glCreateProgram2 = GLES20.glCreateProgram()) == 0) {
                 return 0;
             }
+            GLES20.glAttachShader(glCreateProgram2, h11);
             GLES20.glAttachShader(glCreateProgram2, h10);
-            GLES20.glAttachShader(glCreateProgram2, h9);
             GLES20.glLinkProgram(glCreateProgram2);
             int[] iArr = new int[1];
             GLES20.glGetProgramiv(glCreateProgram2, 35714, iArr, 0);
@@ -601,11 +603,11 @@ public class TextureRenderer {
             GLES20.glDeleteProgram(glCreateProgram2);
             return 0;
         }
-        int h11 = a00.h(35633, str);
-        if (h11 == 0 || (h = a00.h(35632, str2)) == 0 || (glCreateProgram = GLES20.glCreateProgram()) == 0) {
+        int h12 = zz.h(35633, str);
+        if (h12 == 0 || (h = zz.h(35632, str2)) == 0 || (glCreateProgram = GLES20.glCreateProgram()) == 0) {
             return 0;
         }
-        GLES20.glAttachShader(glCreateProgram, h11);
+        GLES20.glAttachShader(glCreateProgram, h12);
         GLES20.glAttachShader(glCreateProgram, h);
         GLES20.glLinkProgram(glCreateProgram);
         int[] iArr2 = new int[1];
@@ -621,9 +623,9 @@ public class TextureRenderer {
         if (part == null) {
             return;
         }
-        y5 y5Var = part.animatedFileDrawable;
-        if (y5Var != null) {
-            y5Var.u();
+        d6 d6Var = part.animatedFileDrawable;
+        if (d6Var != null) {
+            d6Var.u();
             part.animatedFileDrawable = null;
         }
         MediaCodecPlayer mediaCodecPlayer = part.player;
@@ -665,7 +667,7 @@ public class TextureRenderer {
         GLES20.glDrawArrays(5, 0, 4);
     }
 
-    private void drawCollagePart(int i10, VideoEditedInfo.Part part, long j10) {
+    private void drawCollagePart(int i10, VideoEditedInfo.Part part, long j3) {
         if (part.player == null || !part.isVideo) {
             GLES20.glUseProgram(this.simpleShaderProgram);
             GLES20.glActiveTexture(33986);
@@ -688,11 +690,11 @@ public class TextureRenderer {
         GLES20.glDrawArrays(5, 0, 4);
     }
 
-    private void drawEntity(VideoEditedInfo.MediaEntity mediaEntity, int i10, long j10) {
+    private void drawEntity(VideoEditedInfo.MediaEntity mediaEntity, int i10, long j3) {
         VideoEditedInfo.MediaEntity mediaEntity2;
         Bitmap bitmap;
+        long j10;
         long j11;
-        long j12;
         RLottieNative rLottieNative = mediaEntity.lottieNative;
         if (rLottieNative != null) {
             Bitmap bitmap2 = mediaEntity.bitmap;
@@ -703,9 +705,9 @@ public class TextureRenderer {
             applyRoundRadius(mediaEntity, mediaEntity.bitmap, (mediaEntity.subType & 8) != 0 ? i10 : 0);
             GLES20.glBindTexture(3553, this.stickerTexture[0]);
             GLUtils.texImage2D(3553, 0, mediaEntity.bitmap, 0);
-            float f10 = mediaEntity.currentFrame + mediaEntity.framesPerDraw;
-            mediaEntity.currentFrame = f10;
-            if (f10 >= mediaEntity.lottieNative.a[0]) {
+            float f7 = mediaEntity.currentFrame + mediaEntity.framesPerDraw;
+            mediaEntity.currentFrame = f7;
+            if (f7 >= mediaEntity.lottieNative.a[0]) {
                 mediaEntity.currentFrame = 0.0f;
             }
             drawTexture(false, this.stickerTexture[0], mediaEntity.x, mediaEntity.y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (2 & mediaEntity.subType) != 0);
@@ -716,12 +718,12 @@ public class TextureRenderer {
                 GLES20.glBindTexture(3553, this.stickerTexture[0]);
                 GLUtils.texImage2D(3553, 0, mediaEntity.bitmap, 0);
                 int i11 = this.stickerTexture[0];
-                float f11 = mediaEntity.x;
-                float f12 = mediaEntity.additionalWidth;
-                float f13 = f11 - (f12 / 2.0f);
-                float f14 = mediaEntity.y;
-                float f15 = mediaEntity.additionalHeight;
-                drawTexture(false, i11, f13, f14 - (f15 / 2.0f), mediaEntity.width + f12, f15 + mediaEntity.height, mediaEntity.rotation, mediaEntity.type == 2 && (mediaEntity.subType & 2) != 0);
+                float f10 = mediaEntity.x;
+                float f11 = mediaEntity.additionalWidth;
+                float f12 = f10 - (f11 / 2.0f);
+                float f13 = mediaEntity.y;
+                float f14 = mediaEntity.additionalHeight;
+                drawTexture(false, i11, f12, f13 - (f14 / 2.0f), mediaEntity.width + f11, f14 + mediaEntity.height, mediaEntity.rotation, mediaEntity.type == 2 && (mediaEntity.subType & 2) != 0);
             }
             ArrayList<VideoEditedInfo.EmojiEntity> arrayList = mediaEntity.entities;
             if (arrayList == null || arrayList.isEmpty()) {
@@ -730,39 +732,39 @@ public class TextureRenderer {
             for (int i12 = 0; i12 < mediaEntity.entities.size(); i12++) {
                 VideoEditedInfo.EmojiEntity emojiEntity = mediaEntity.entities.get(i12);
                 if (emojiEntity != null && (mediaEntity2 = emojiEntity.entity) != null) {
-                    drawEntity(mediaEntity2, mediaEntity.color, j10);
+                    drawEntity(mediaEntity2, mediaEntity.color, j3);
                 }
             }
             return;
         }
-        float f16 = mediaEntity.currentFrame;
-        int i13 = (int) f16;
-        float f17 = 1.0f;
+        float f15 = mediaEntity.currentFrame;
+        int i13 = (int) f15;
+        float f16 = 1.0f;
         if (mediaEntity.type == 5) {
             if (this.isPhoto) {
-                j11 = mediaEntity.roundDuration;
-                j12 = 0;
+                j10 = mediaEntity.roundDuration;
+                j11 = 0;
             } else {
-                long j13 = mediaEntity.roundOffset;
-                j11 = (mediaEntity.roundRight - mediaEntity.roundLeft) + j13;
-                j12 = j13;
+                long j12 = mediaEntity.roundOffset;
+                j10 = (mediaEntity.roundRight - mediaEntity.roundLeft) + j12;
+                j11 = j12;
             }
-            long j14 = j10 / 1000000;
-            if (j14 < j12) {
-                f17 = mr.h.getInterpolation(Utilities.clamp(1.0f - ((j12 - j14) / 400.0f), 1.0f, 0.0f));
-            } else if (j14 > j11) {
-                f17 = mr.h.getInterpolation(Utilities.clamp(1.0f - ((j14 - j11) / 400.0f), 1.0f, 0.0f));
+            long j13 = j3 / 1000000;
+            if (j13 < j11) {
+                f16 = pr.h.getInterpolation(Utilities.clamp(1.0f - ((j11 - j13) / 400.0f), 1.0f, 0.0f));
+            } else if (j13 > j10) {
+                f16 = pr.h.getInterpolation(Utilities.clamp(1.0f - ((j13 - j10) / 400.0f), 1.0f, 0.0f));
             }
-            if (f17 > 0.0f) {
-                long clamp = this.isPhoto ? Utilities.clamp(j14, mediaEntity.roundDuration, 0L) : Utilities.clamp((j14 - mediaEntity.roundOffset) + mediaEntity.roundLeft, mediaEntity.roundDuration, 0L);
+            if (f16 > 0.0f) {
+                long clamp = this.isPhoto ? Utilities.clamp(j13, mediaEntity.roundDuration, 0L) : Utilities.clamp((j13 - mediaEntity.roundOffset) + mediaEntity.roundLeft, mediaEntity.roundDuration, 0L);
                 while (!mediaEntity.looped) {
                     int[] iArr = mediaEntity.animatedFileDrawable.d;
                     if (iArr[3] >= Math.min(clamp, iArr[4])) {
                         break;
                     }
-                    y5 y5Var = mediaEntity.animatedFileDrawable;
-                    int i14 = y5Var.d[3];
-                    y5Var.r(false);
+                    d6 d6Var = mediaEntity.animatedFileDrawable;
+                    int i14 = d6Var.d[3];
+                    d6Var.r(false);
                     int i15 = mediaEntity.animatedFileDrawable.d[3];
                     if (i15 <= i14 && (i15 != 0 || i14 != 0)) {
                         mediaEntity.looped = true;
@@ -771,14 +773,14 @@ public class TextureRenderer {
                 }
             }
         } else {
-            float f18 = f16 + mediaEntity.framesPerDraw;
-            mediaEntity.currentFrame = f18;
-            for (int i16 = (int) f18; i13 != i16; i16--) {
+            float f17 = f15 + mediaEntity.framesPerDraw;
+            mediaEntity.currentFrame = f17;
+            for (int i16 = (int) f17; i13 != i16; i16--) {
                 mediaEntity.animatedFileDrawable.r(true);
             }
         }
-        v5 v5Var = mediaEntity.animatedFileDrawable.v;
-        Bitmap bitmap3 = v5Var != null ? v5Var.b : null;
+        a6 a6Var = mediaEntity.animatedFileDrawable.v;
+        Bitmap bitmap3 = a6Var != null ? a6Var.b : null;
         if (bitmap3 != null) {
             if (mediaEntity.type == 5) {
                 if (this.roundBitmap == null) {
@@ -794,7 +796,7 @@ public class TextureRenderer {
                         this.roundClipPath = new Path();
                     }
                     this.roundClipPath.rewind();
-                    this.roundClipPath.addCircle(this.roundBitmap.getWidth() / 2.0f, this.roundBitmap.getHeight() / 2.0f, (this.roundBitmap.getWidth() / 2.0f) * f17, Path.Direction.CW);
+                    this.roundClipPath.addCircle(this.roundBitmap.getWidth() / 2.0f, this.roundBitmap.getHeight() / 2.0f, (this.roundBitmap.getWidth() / 2.0f) * f16, Path.Direction.CW);
                     this.roundCanvas.clipPath(this.roundClipPath);
                     if (bitmap3.getWidth() >= bitmap3.getHeight()) {
                         this.roundSrc.set((bitmap3.getWidth() - bitmap3.getHeight()) / 2, 0, bitmap3.getWidth() - ((bitmap3.getWidth() - bitmap3.getHeight()) / 2), bitmap3.getHeight());
@@ -829,14 +831,14 @@ public class TextureRenderer {
         }
     }
 
-    private void drawTexture(boolean z4, int i10) {
-        drawTexture(z4, i10, -10000.0f, -10000.0f, -10000.0f, -10000.0f, 0.0f, false);
+    private void drawTexture(boolean z10, int i10) {
+        drawTexture(z10, i10, -10000.0f, -10000.0f, -10000.0f, -10000.0f, 0.0f, false);
     }
 
     private FloatBuffer floats(float[] fArr) {
-        FloatBuffer k10 = y3.k(ByteBuffer.allocateDirect(fArr.length * 4));
-        k10.put(fArr).position(0);
-        return k10;
+        FloatBuffer h = wl.h(ByteBuffer.allocateDirect(fArr.length * 4));
+        h.put(fArr).position(0);
+        return h;
     }
 
     private void initCollagePart(int i10, VideoEditedInfo.Part part) {
@@ -854,8 +856,8 @@ public class TextureRenderer {
             surfaceTexture.setDefaultBufferSize(part.width, part.height);
             try {
                 part.player = new MediaCodecPlayer(part.path, new Surface(part.surfaceTexture));
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
                 part.player = null;
             }
             MediaCodecPlayer mediaCodecPlayer = part.player;
@@ -873,16 +875,16 @@ public class TextureRenderer {
                 GLES20.glTexParameteri(3553, 10240, 9729);
                 GLES20.glTexParameteri(3553, 10242, 33071);
                 GLES20.glTexParameteri(3553, 10243, 33071);
-                y5 y5Var = new y5(new File(part.path), true, 0L, 0, null, null, null, 0L, UserConfig.selectedAccount, true, 512, 512, null, 0, true);
-                part.animatedFileDrawable = y5Var;
-                if (y5Var.x && y5Var.b0) {
+                d6 d6Var = new d6(new File(part.path), true, 0L, 0, null, null, null, 0L, UserConfig.selectedAccount, true, 512, 512, null, 0, true);
+                part.animatedFileDrawable = d6Var;
+                if (d6Var.x && d6Var.e0) {
                     throw new RuntimeException("Failed to decode with ffmpeg software codecs");
                 }
-                float f10 = y5Var.d[5];
-                part.framesPerDraw = f10 / this.videoFps;
-                part.msPerFrame = 1000.0f / f10;
+                float f7 = d6Var.d[5];
+                part.framesPerDraw = f7 / this.videoFps;
+                part.msPerFrame = 1000.0f / f7;
                 part.currentFrame = 1.0f;
-                Bitmap r10 = y5Var.r(false);
+                Bitmap r10 = d6Var.r(false);
                 if (r10 != null) {
                     GLUtils.texImage2D(3553, 0, r10, 0);
                 }
@@ -916,59 +918,59 @@ public class TextureRenderer {
             atomicInteger2.set(bitmap.getHeight());
         }
         float a2 = part.part.a(2.0f) - 1.0f;
-        float f11 = -(((2.0f / r7.a.c) * r7.c) - 1.0f);
+        float f10 = -(((2.0f / r7.a.c) * r7.c) - 1.0f);
         float b10 = part.part.b(2.0f) - 1.0f;
-        float f12 = -(((2.0f / r9.a.c) * r9.c) - 1.0f);
+        float f11 = -(((2.0f / r9.a.c) * r9.c) - 1.0f);
         float a10 = part.part.a(2.0f) - 1.0f;
-        float f13 = -(((2.0f / r11.a.c) * (r11.c + 1)) - 1.0f);
+        float f12 = -(((2.0f / r11.a.c) * (r11.c + 1)) - 1.0f);
         float b11 = part.part.b(2.0f) - 1.0f;
-        ph.q qVar = part.part;
-        int i11 = qVar.a.c;
-        int i12 = qVar.c;
-        float[] fArr = {a2, f11, b10, f12, a10, f13, b11, -(((2.0f / i11) * (i12 + 1)) - 1.0f)};
-        float f14 = this.transformedWidth / r15.d[i12];
-        float f15 = this.transformedHeight / i11;
+        s sVar = part.part;
+        int i11 = sVar.a.c;
+        int i12 = sVar.c;
+        float[] fArr = {a2, f10, b10, f11, a10, f12, b11, -(((2.0f / i11) * (i12 + 1)) - 1.0f)};
+        float f13 = this.transformedWidth / r15.d[i12];
+        float f14 = this.transformedHeight / i11;
         int i13 = atomicInteger.get();
         int i14 = atomicInteger2.get();
         int i15 = atomicInteger3.get();
-        float f16 = i13;
-        float f17 = i14;
-        float max = 1.0f / Math.max(f14 / f16, f15 / f17);
+        float f15 = i13;
+        float f16 = i14;
+        float max = 1.0f / Math.max(f13 / f15, f14 / f16);
+        float f17 = ((f13 * max) / f15) / 2.0f;
         float f18 = ((f14 * max) / f16) / 2.0f;
-        float f19 = ((f15 * max) / f17) / 2.0f;
         if ((i15 / 90) % 2 == 1) {
-            f19 = f18;
-            f18 = f19;
+            f18 = f17;
+            f17 = f18;
         }
+        float f19 = 0.5f - f17;
         float f20 = 0.5f - f18;
-        float f21 = 0.5f - f19;
+        float f21 = f17 + 0.5f;
         float f22 = f18 + 0.5f;
-        float f23 = f19 + 0.5f;
-        float[] fArr2 = {f20, f21, f22, f21, f20, f23, f22, f23};
+        float[] fArr2 = {f19, f20, f21, f20, f19, f22, f21, f22};
         while (i15 > 0) {
-            float f24 = fArr2[0];
-            float f25 = fArr2[1];
+            float f23 = fArr2[0];
+            float f24 = fArr2[1];
             fArr2[0] = fArr2[4];
             fArr2[1] = fArr2[5];
             fArr2[4] = fArr2[6];
             fArr2[5] = fArr2[7];
             fArr2[6] = fArr2[2];
             fArr2[7] = fArr2[3];
-            fArr2[2] = f24;
-            fArr2[3] = f25;
+            fArr2[2] = f23;
+            fArr2[3] = f24;
             i15 -= 90;
         }
         while (i15 < 0) {
-            float f26 = fArr2[0];
-            float f27 = fArr2[1];
+            float f25 = fArr2[0];
+            float f26 = fArr2[1];
             fArr2[0] = fArr2[2];
             fArr2[1] = fArr2[3];
             fArr2[2] = fArr2[6];
             fArr2[3] = fArr2[7];
             fArr2[6] = fArr2[4];
             fArr2[7] = fArr2[5];
-            fArr2[4] = f26;
-            fArr2[5] = f27;
+            fArr2[4] = f25;
+            fArr2[5] = f26;
             i15 += 90;
         }
         part.posBuffer = floats(fArr);
@@ -976,63 +978,63 @@ public class TextureRenderer {
     }
 
     private void initLinkEntity(VideoEditedInfo.MediaEntity mediaEntity) {
-        g1 g1Var = new g1(ApplicationLoader.applicationContext, mediaEntity.density);
-        g1Var.R = true;
-        g1Var.b(UserConfig.selectedAccount, mediaEntity.linkSettings, false);
-        if (g1Var.e()) {
-            g1Var.setPreviewType(mediaEntity.subType);
+        q0 q0Var = new q0(ApplicationLoader.applicationContext, mediaEntity.density);
+        q0Var.U = true;
+        q0Var.b(UserConfig.selectedAccount, mediaEntity.linkSettings, false);
+        if (q0Var.e()) {
+            q0Var.setPreviewType(mediaEntity.subType);
         } else {
-            g1Var.c(mediaEntity.subType, mediaEntity.color);
+            q0Var.c(mediaEntity.subType, mediaEntity.color);
         }
         int i10 = mediaEntity.viewWidth;
-        int i11 = g1Var.f;
-        g1Var.setMaxWidth(i10 + i11 + i11);
-        g1Var.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(mediaEntity.viewHeight, TLObject.FLAG_30));
-        g1Var.layout(0, 0, mediaEntity.viewWidth, mediaEntity.viewHeight);
-        float f10 = mediaEntity.width * this.transformedWidth;
+        int i11 = q0Var.f;
+        q0Var.setMaxWidth(i10 + i11 + i11);
+        q0Var.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(mediaEntity.viewHeight, TLObject.FLAG_30));
+        q0Var.layout(0, 0, mediaEntity.viewWidth, mediaEntity.viewHeight);
+        float f7 = mediaEntity.width * this.transformedWidth;
         int i12 = mediaEntity.viewWidth;
-        float f11 = f10 / i12;
-        mediaEntity.bitmap = Bitmap.createBitmap(((int) (i12 * f11)) + 16, ((int) (mediaEntity.viewHeight * f11)) + 16, Bitmap.Config.ARGB_8888);
+        float f10 = f7 / i12;
+        mediaEntity.bitmap = Bitmap.createBitmap(((int) (i12 * f10)) + 16, ((int) (mediaEntity.viewHeight * f10)) + 16, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(mediaEntity.bitmap);
-        float f12 = 8;
-        canvas.translate(f12, f12);
-        canvas.scale(f11, f11);
-        g1Var.draw(canvas);
-        float f13 = 16 * f11;
-        mediaEntity.additionalWidth = f13 / this.transformedWidth;
-        mediaEntity.additionalHeight = f13 / this.transformedHeight;
+        float f11 = 8;
+        canvas.translate(f11, f11);
+        canvas.scale(f10, f10);
+        q0Var.draw(canvas);
+        float f12 = 16 * f10;
+        mediaEntity.additionalWidth = f12 / this.transformedWidth;
+        mediaEntity.additionalHeight = f12 / this.transformedHeight;
     }
 
     private void initLocationEntity(VideoEditedInfo.MediaEntity mediaEntity) {
-        float f10;
+        float f7;
         byte b10 = mediaEntity.type;
-        l1 l1Var = new l1(ApplicationLoader.applicationContext, mediaEntity.density);
-        l1Var.setIsVideo(true);
-        l1Var.setText(mediaEntity.text);
-        l1Var.e(mediaEntity.subType, mediaEntity.color);
+        u0 u0Var = new u0(ApplicationLoader.applicationContext, mediaEntity.density);
+        u0Var.setIsVideo(true);
+        u0Var.setText(mediaEntity.text);
+        u0Var.e(mediaEntity.subType, mediaEntity.color);
         if (mediaEntity.weather != null && mediaEntity.entities.isEmpty()) {
-            l1Var.d(UserConfig.selectedAccount, mediaEntity.weather.c);
+            u0Var.d(UserConfig.selectedAccount, mediaEntity.weather.c);
         }
-        l1Var.setMaxWidth(mediaEntity.viewWidth);
+        u0Var.setMaxWidth(mediaEntity.viewWidth);
         if (mediaEntity.entities.size() == 1) {
-            l1Var.x = true;
-            l1Var.c = true;
-            l1Var.requestLayout();
+            u0Var.x = true;
+            u0Var.c = true;
+            u0Var.requestLayout();
         }
-        l1Var.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(mediaEntity.viewHeight, TLObject.FLAG_30));
-        l1Var.layout(0, 0, mediaEntity.viewWidth, mediaEntity.viewHeight);
-        float f11 = mediaEntity.width * this.transformedWidth;
-        float f12 = mediaEntity.viewWidth;
-        float f13 = f11 / f12;
-        mediaEntity.bitmap = Bitmap.createBitmap(((int) (f12 * f13)) + 16, ((int) (mediaEntity.viewHeight * f13)) + 16, Bitmap.Config.ARGB_8888);
+        u0Var.measure(View.MeasureSpec.makeMeasureSpec(mediaEntity.viewWidth, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(mediaEntity.viewHeight, TLObject.FLAG_30));
+        u0Var.layout(0, 0, mediaEntity.viewWidth, mediaEntity.viewHeight);
+        float f10 = mediaEntity.width * this.transformedWidth;
+        float f11 = mediaEntity.viewWidth;
+        float f12 = f10 / f11;
+        mediaEntity.bitmap = Bitmap.createBitmap(((int) (f11 * f12)) + 16, ((int) (mediaEntity.viewHeight * f12)) + 16, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(mediaEntity.bitmap);
-        float f14 = 8;
-        canvas.translate(f14, f14);
-        canvas.scale(f13, f13);
-        l1Var.draw(canvas);
-        float f15 = 16 * f13;
-        mediaEntity.additionalWidth = f15 / this.transformedWidth;
-        mediaEntity.additionalHeight = f15 / this.transformedHeight;
+        float f13 = 8;
+        canvas.translate(f13, f13);
+        canvas.scale(f12, f12);
+        u0Var.draw(canvas);
+        float f14 = 16 * f12;
+        mediaEntity.additionalWidth = f14 / this.transformedWidth;
+        mediaEntity.additionalHeight = f14 / this.transformedHeight;
         if (mediaEntity.entities.size() == 1) {
             VideoEditedInfo.EmojiEntity emojiEntity = mediaEntity.entities.get(0);
             VideoEditedInfo.MediaEntity mediaEntity2 = new VideoEditedInfo.MediaEntity();
@@ -1040,40 +1042,40 @@ public class TextureRenderer {
             mediaEntity2.text = emojiEntity.documentAbsolutePath;
             mediaEntity2.subType = emojiEntity.subType;
             RectF rectF = new RectF();
-            float f16 = l1Var.F;
-            float f17 = l1Var.d.left + 2.25f;
-            float f18 = l1Var.y;
-            float f19 = l1Var.G;
-            float f20 = l1Var.K;
-            float f21 = f18 * 21.33f;
-            rectF.set((f17 * f18) + f16, e2.c.x(f20, f21, 2.0f, f19), ((f17 + 21.33f) * f18) + f16, k0.b(f21, f20, 2.0f, f19));
+            float f15 = u0Var.I;
+            float f16 = u0Var.d.left + 2.25f;
+            float f17 = u0Var.y;
+            float f18 = u0Var.J;
+            float f19 = u0Var.N;
+            float f20 = f17 * 21.33f;
+            rectF.set((f16 * f17) + f15, e2.A(f19, f20, 2.0f, f18), ((f16 + 21.33f) * f17) + f15, w1.a(f20, f19, 2.0f, f18));
             float centerX = ((rectF.centerX() / mediaEntity.viewWidth) * mediaEntity.width) + mediaEntity.x;
-            float f22 = mediaEntity.y;
+            float f21 = mediaEntity.y;
             float centerY = rectF.centerY() / mediaEntity.viewHeight;
-            float f23 = mediaEntity.height;
-            float f24 = (centerY * f23) + f22;
+            float f22 = mediaEntity.height;
+            float f23 = (centerY * f22) + f21;
             if (mediaEntity.rotation != 0.0f) {
-                float f25 = (mediaEntity.width / 2.0f) + mediaEntity.x;
-                float f26 = (f23 / 2.0f) + mediaEntity.y;
-                float f27 = this.transformedWidth / this.transformedHeight;
-                double d = centerX - f25;
-                double d10 = (f24 - f26) / f27;
-                f10 = 2.0f;
-                float cos = ((float) ((Math.cos(-r2) * d) - (Math.sin(-mediaEntity.rotation) * d10))) + f25;
-                f24 = (((float) k0.a(-mediaEntity.rotation, d10, Math.sin(-mediaEntity.rotation) * d)) * f27) + f26;
+                float f24 = (mediaEntity.width / 2.0f) + mediaEntity.x;
+                float f25 = (f22 / 2.0f) + mediaEntity.y;
+                float f26 = this.transformedWidth / this.transformedHeight;
+                double d = centerX - f24;
+                double d10 = (f23 - f25) / f26;
+                f7 = 2.0f;
+                float cos = ((float) ((Math.cos(-r2) * d) - (Math.sin(-mediaEntity.rotation) * d10))) + f24;
+                f23 = (((float) i2.g.e(-mediaEntity.rotation, d10, Math.sin(-mediaEntity.rotation) * d)) * f26) + f25;
                 centerX = cos;
             } else {
-                f10 = 2.0f;
+                f7 = 2.0f;
             }
             emojiEntity.entity.width = (rectF.width() / mediaEntity.viewWidth) * mediaEntity.width;
             emojiEntity.entity.height = (rectF.height() / mediaEntity.viewHeight) * mediaEntity.height;
             VideoEditedInfo.MediaEntity mediaEntity3 = emojiEntity.entity;
-            float f28 = mediaEntity3.width * 1.2f;
-            mediaEntity3.width = f28;
-            float f29 = mediaEntity3.height * 1.2f;
-            mediaEntity3.height = f29;
-            mediaEntity3.x = centerX - (f28 / f10);
-            mediaEntity3.y = f24 - (f29 / f10);
+            float f27 = mediaEntity3.width * 1.2f;
+            mediaEntity3.width = f27;
+            float f28 = mediaEntity3.height * 1.2f;
+            mediaEntity3.height = f28;
+            mediaEntity3.x = centerX - (f27 / f7);
+            mediaEntity3.y = f23 - (f28 / f7);
             mediaEntity3.rotation = mediaEntity.rotation;
             initStickerEntity(mediaEntity3);
         }
@@ -1110,11 +1112,11 @@ public class TextureRenderer {
         }
         if ((b10 & 4) != 0) {
             mediaEntity.looped = false;
-            y5 y5Var = new y5(new File(mediaEntity.text), true, 0L, 0, null, null, null, 0L, UserConfig.selectedAccount, true, 512, 512, null, 0, true);
-            mediaEntity.animatedFileDrawable = y5Var;
-            mediaEntity.framesPerDraw = y5Var.d[5] / this.videoFps;
+            d6 d6Var = new d6(new File(mediaEntity.text), true, 0L, 0, null, null, null, 0L, UserConfig.selectedAccount, true, 512, 512, null, 0, true);
+            mediaEntity.animatedFileDrawable = d6Var;
+            mediaEntity.framesPerDraw = d6Var.d[5] / this.videoFps;
             mediaEntity.currentFrame = 1.0f;
-            y5Var.r(true);
+            d6Var.r(true);
             if (mediaEntity.type == 5) {
                 mediaEntity.firstSeek = true;
                 return;
@@ -1144,15 +1146,15 @@ public class TextureRenderer {
                 height = mediaEntity.bitmap.getWidth();
             }
             MediaController.CropState cropState3 = mediaEntity.crop;
-            float f10 = cropState3.cropPw;
-            float f11 = cropState3.cropPh;
-            float f12 = width;
-            float f13 = height;
-            canvas.clipRect(((-width) * f10) / 2.0f, ((-height) * f11) / 2.0f, (f10 * f12) / 2.0f, (f11 * f13) / 2.0f);
-            float f14 = mediaEntity.crop.cropScale;
-            canvas.scale(f14, f14);
+            float f7 = cropState3.cropPw;
+            float f10 = cropState3.cropPh;
+            float f11 = width;
+            float f12 = height;
+            canvas.clipRect(((-width) * f7) / 2.0f, ((-height) * f10) / 2.0f, (f7 * f11) / 2.0f, (f10 * f12) / 2.0f);
+            float f13 = mediaEntity.crop.cropScale;
+            canvas.scale(f13, f13);
             MediaController.CropState cropState4 = mediaEntity.crop;
-            canvas.translate(cropState4.cropPx * f12, cropState4.cropPy * f13);
+            canvas.translate(cropState4.cropPx * f11, cropState4.cropPy * f12);
             canvas.rotate(mediaEntity.crop.cropRotate + r10.transformRotation);
             if (mediaEntity.crop.mirrored) {
                 canvas.scale(-1.0f, 1.0f);
@@ -1167,17 +1169,17 @@ public class TextureRenderer {
             if (mediaEntity.bitmap != null) {
                 float width2 = r2.getWidth() / mediaEntity.bitmap.getHeight();
                 if (width2 > 1.0f) {
-                    float f15 = mediaEntity.height;
-                    float f16 = f15 / width2;
-                    mediaEntity.y = e2.c.x(f15, f16, 2.0f, mediaEntity.y);
-                    mediaEntity.height = f16;
+                    float f14 = mediaEntity.height;
+                    float f15 = f14 / width2;
+                    mediaEntity.y = e2.A(f14, f15, 2.0f, mediaEntity.y);
+                    mediaEntity.height = f15;
                     return;
                 }
                 if (width2 < 1.0f) {
-                    float f17 = mediaEntity.width;
-                    float f18 = width2 * f17;
-                    mediaEntity.x = e2.c.x(f17, f18, 2.0f, mediaEntity.x);
-                    mediaEntity.width = f18;
+                    float f16 = mediaEntity.width;
+                    float f17 = width2 * f16;
+                    mediaEntity.x = e2.A(f16, f17, 2.0f, mediaEntity.x);
+                    mediaEntity.width = f17;
                     return;
                 }
                 return;
@@ -1188,33 +1190,33 @@ public class TextureRenderer {
         Pair<Integer, Integer> imageOrientation = AndroidUtilities.getImageOrientation(mediaEntity.text);
         mediaEntity.rotation = (float) (mediaEntity.rotation - Math.toRadians(((Integer) imageOrientation.first).intValue()));
         if ((((Integer) imageOrientation.first).intValue() / 90) % 2 == 1) {
-            float f19 = mediaEntity.x;
-            float f20 = mediaEntity.width;
-            float f21 = (f20 / 2.0f) + f19;
-            float f22 = mediaEntity.y;
-            float f23 = mediaEntity.height;
-            float f24 = (f23 / 2.0f) + f22;
-            float f25 = this.transformedWidth;
-            float f26 = this.transformedHeight;
-            float f27 = (f20 * f25) / f26;
-            float f28 = (f23 * f26) / f25;
-            mediaEntity.width = f28;
-            mediaEntity.height = f27;
-            mediaEntity.x = f21 - (f28 / 2.0f);
-            mediaEntity.y = f24 - (f27 / 2.0f);
+            float f18 = mediaEntity.x;
+            float f19 = mediaEntity.width;
+            float f20 = (f19 / 2.0f) + f18;
+            float f21 = mediaEntity.y;
+            float f22 = mediaEntity.height;
+            float f23 = (f22 / 2.0f) + f21;
+            float f24 = this.transformedWidth;
+            float f25 = this.transformedHeight;
+            float f26 = (f19 * f24) / f25;
+            float f27 = (f22 * f25) / f24;
+            mediaEntity.width = f27;
+            mediaEntity.height = f26;
+            mediaEntity.x = f20 - (f27 / 2.0f);
+            mediaEntity.y = f23 - (f26 / 2.0f);
         }
         applyRoundRadius(mediaEntity, mediaEntity.bitmap, 0);
     }
 
     private void initTextEntity(final VideoEditedInfo.MediaEntity mediaEntity) {
         Typeface d;
-        final dg.b bVar = new dg.b(ApplicationLoader.applicationContext);
+        final rg.b bVar = new rg.b(ApplicationLoader.applicationContext);
         bVar.getPaint().setAntiAlias(true);
         bVar.drawAnimatedEmojiDrawables = false;
         bVar.setBackgroundColor(0);
         bVar.setPadding(AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f));
-        t0 t0Var = mediaEntity.textTypeface;
-        if (t0Var != null && (d = t0Var.d()) != null) {
+        j0 j0Var = mediaEntity.textTypeface;
+        if (j0Var != null && (d = j0Var.d()) != null) {
             bVar.setTypeface(d);
         }
         bVar.setTextSize(0, mediaEntity.fontSize);
@@ -1230,34 +1232,34 @@ public class TextureRenderer {
                 emojiEntity.entity = mediaEntity2;
                 mediaEntity2.text = emojiEntity.documentAbsolutePath;
                 mediaEntity2.subType = emojiEntity.subType;
-                u5 u5Var = new u5(0L, 1.0f, bVar.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.TextureRenderer.1
-                    @Override // org.telegram.ui.Components.u5, android.text.style.ReplacementSpan
-                    public void draw(Canvas canvas, CharSequence charSequence, int i12, int i13, float f10, int i14, int i15, int i16, Paint paint) {
-                        super.draw(canvas, charSequence, i12, i13, f10, i14, i15, i16, paint);
+                z5 z5Var = new z5(0L, 1.0f, bVar.getPaint().getFontMetricsInt()) { // from class: org.telegram.messenger.video.TextureRenderer.1
+                    @Override // org.telegram.ui.Components.z5, android.text.style.ReplacementSpan
+                    public void draw(Canvas canvas, CharSequence charSequence, int i12, int i13, float f7, int i14, int i15, int i16, Paint paint) {
+                        super.draw(canvas, charSequence, i12, i13, f7, i14, i15, i16, paint);
                         VideoEditedInfo.MediaEntity mediaEntity3 = mediaEntity;
-                        float paddingLeft = ((((this.measuredSize / 2.0f) + (bVar.getPaddingLeft() + f10)) / mediaEntity3.viewWidth) * mediaEntity3.width) + mediaEntity.x;
-                        float f11 = mediaEntity3.y;
+                        float paddingLeft = ((((this.measuredSize / 2.0f) + (bVar.getPaddingLeft() + f7)) / mediaEntity3.viewWidth) * mediaEntity3.width) + mediaEntity.x;
+                        float f10 = mediaEntity3.y;
                         VideoEditedInfo.MediaEntity mediaEntity4 = mediaEntity;
-                        float f12 = mediaEntity4.height;
-                        float paddingTop = (((((i16 - i14) / 2.0f) + (bVar.getPaddingTop() + i14)) / mediaEntity4.viewHeight) * f12) + f11;
+                        float f11 = mediaEntity4.height;
+                        float paddingTop = (((((i16 - i14) / 2.0f) + (bVar.getPaddingTop() + i14)) / mediaEntity4.viewHeight) * f11) + f10;
                         if (mediaEntity4.rotation != 0.0f) {
-                            float f13 = (mediaEntity4.width / 2.0f) + mediaEntity4.x;
-                            float f14 = (f12 / 2.0f) + mediaEntity4.y;
-                            float f15 = TextureRenderer.this.transformedWidth / TextureRenderer.this.transformedHeight;
-                            double d10 = paddingLeft - f13;
-                            double d11 = (paddingTop - f14) / f15;
-                            paddingLeft = ((float) ((Math.cos(-mediaEntity.rotation) * d10) - (Math.sin(-mediaEntity.rotation) * d11))) + f13;
-                            paddingTop = (((float) k0.a(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f15) + f14;
+                            float f12 = (mediaEntity4.width / 2.0f) + mediaEntity4.x;
+                            float f13 = (f11 / 2.0f) + mediaEntity4.y;
+                            float f14 = TextureRenderer.this.transformedWidth / TextureRenderer.this.transformedHeight;
+                            double d10 = paddingLeft - f12;
+                            double d11 = (paddingTop - f13) / f14;
+                            paddingLeft = ((float) ((Math.cos(-mediaEntity.rotation) * d10) - (Math.sin(-mediaEntity.rotation) * d11))) + f12;
+                            paddingTop = (((float) i2.g.e(-mediaEntity.rotation, d11, Math.sin(-mediaEntity.rotation) * d10)) * f14) + f13;
                         }
                         VideoEditedInfo.MediaEntity mediaEntity5 = emojiEntity.entity;
                         int i17 = this.measuredSize;
                         VideoEditedInfo.MediaEntity mediaEntity6 = mediaEntity;
-                        float f16 = (i17 / mediaEntity6.viewWidth) * mediaEntity6.width;
-                        mediaEntity5.width = f16;
-                        float f17 = (i17 / mediaEntity6.viewHeight) * mediaEntity6.height;
-                        mediaEntity5.height = f17;
-                        mediaEntity5.x = paddingLeft - (f16 / 2.0f);
-                        mediaEntity5.y = paddingTop - (f17 / 2.0f);
+                        float f15 = (i17 / mediaEntity6.viewWidth) * mediaEntity6.width;
+                        mediaEntity5.width = f15;
+                        float f16 = (i17 / mediaEntity6.viewHeight) * mediaEntity6.height;
+                        mediaEntity5.height = f16;
+                        mediaEntity5.x = paddingLeft - (f15 / 2.0f);
+                        mediaEntity5.y = paddingTop - (f16 / 2.0f);
                         mediaEntity5.rotation = mediaEntity6.rotation;
                         if (mediaEntity5.bitmap == null) {
                             TextureRenderer.this.initStickerEntity(mediaEntity5);
@@ -1265,7 +1267,7 @@ public class TextureRenderer {
                     }
                 };
                 int i12 = emojiEntity.offset;
-                spannableString.setSpan(u5Var, i12, emojiEntity.length + i12, 33);
+                spannableString.setSpan(z5Var, i12, emojiEntity.length + i12, 33);
             }
             i10 = i11;
         }
@@ -1313,65 +1315,65 @@ public class TextureRenderer {
         return this.collageParts != null;
     }
 
-    private void stepCollagePart(int i10, VideoEditedInfo.Part part, long j10) {
-        float f10;
+    private void stepCollagePart(int i10, VideoEditedInfo.Part part, long j3) {
+        float f7;
         Bitmap r10;
-        long j11;
-        long j12 = (j10 / 1000000) - part.offset;
-        float f11 = part.right;
-        long j13 = part.duration;
-        long clamp = Utilities.clamp(j12, (long) (f11 * j13), (long) (part.left * j13));
+        long j10;
+        long j11 = (j3 / 1000000) - part.offset;
+        float f10 = part.right;
+        long j12 = part.duration;
+        long clamp = Utilities.clamp(j11, (long) (f10 * j12), (long) (part.left * j12));
         MediaCodecPlayer mediaCodecPlayer = part.player;
         if (mediaCodecPlayer != null) {
             mediaCodecPlayer.ensure(clamp);
             part.surfaceTexture.updateTexImage();
             return;
         }
-        y5 y5Var = part.animatedFileDrawable;
-        if (y5Var != null) {
-            int i11 = y5Var.d[3];
-            boolean z4 = i11 <= 0;
-            if ((clamp < i11 || (z4 && clamp > 1000)) && y5Var.a0 != null) {
-                y5Var.a0.g(clamp, true);
+        d6 d6Var = part.animatedFileDrawable;
+        if (d6Var != null) {
+            int i11 = d6Var.d[3];
+            boolean z10 = i11 <= 0;
+            if ((clamp < i11 || (z10 && clamp > 1000)) && d6Var.d0 != null) {
+                d6Var.d0.g(clamp, true);
             }
             do {
-                y5 y5Var2 = part.animatedFileDrawable;
-                int i12 = y5Var2.d[3];
-                f10 = clamp;
-                if ((part.msPerFrame * 2.0f) + i12 >= f10) {
+                d6 d6Var2 = part.animatedFileDrawable;
+                int i12 = d6Var2.d[3];
+                f7 = clamp;
+                if ((part.msPerFrame * 2.0f) + i12 >= f7) {
                     break;
                 }
-                j11 = i12;
-                if (y5Var2.a0 != null) {
-                    y5Var2.a0.c(null, false, y5Var2.d0, y5Var2.e0, false);
+                j10 = i12;
+                if (d6Var2.d0 != null) {
+                    d6Var2.d0.c(null, false, d6Var2.g0, d6Var2.h0, false);
                 }
-            } while (part.animatedFileDrawable.d[3] != j11);
-            if ((z4 || f10 > part.animatedFileDrawable.d[3] - (part.msPerFrame / 2.0f)) && (r10 = part.animatedFileDrawable.r(false)) != null) {
+            } while (part.animatedFileDrawable.d[3] != j10);
+            if ((z10 || f7 > part.animatedFileDrawable.d[3] - (part.msPerFrame / 2.0f)) && (r10 = part.animatedFileDrawable.r(false)) != null) {
                 GLES20.glBindTexture(3553, this.collageTextures[i10]);
                 GLUtils.texImage2D(3553, 0, r10, 0);
             }
         }
     }
 
-    public void changeFragmentShader(String str, String str2, boolean z4) {
+    public void changeFragmentShader(String str, String str2, boolean z10) {
         int createProgram;
         int createProgram2;
-        String str3 = this.messageVideoMaskPath != null ? z4 ? VERTEX_SHADER_MASK_300 : VERTEX_SHADER_MASK : z4 ? VERTEX_SHADER_300 : VERTEX_SHADER;
+        String str3 = this.messageVideoMaskPath != null ? z10 ? VERTEX_SHADER_MASK_300 : VERTEX_SHADER_MASK : z10 ? VERTEX_SHADER_300 : VERTEX_SHADER;
         int i10 = this.NUM_EXTERNAL_SHADER;
-        if (i10 >= 0 && i10 < this.mProgram.length && (createProgram2 = createProgram(str3, str, z4)) != 0) {
+        if (i10 >= 0 && i10 < this.mProgram.length && (createProgram2 = createProgram(str3, str, z10)) != 0) {
             GLES20.glDeleteProgram(this.mProgram[this.NUM_EXTERNAL_SHADER]);
             this.mProgram[this.NUM_EXTERNAL_SHADER] = createProgram2;
             this.texSizeHandle = GLES20.glGetUniformLocation(createProgram2, "texSize");
         }
         int i11 = this.NUM_FILTER_SHADER;
-        if (i11 < 0 || i11 >= this.mProgram.length || (createProgram = createProgram(str3, str2, z4)) == 0) {
+        if (i11 < 0 || i11 >= this.mProgram.length || (createProgram = createProgram(str3, str2, z10)) == 0) {
             return;
         }
         GLES20.glDeleteProgram(this.mProgram[this.NUM_FILTER_SHADER]);
         this.mProgram[this.NUM_FILTER_SHADER] = createProgram;
     }
 
-    public void drawFrame(SurfaceTexture surfaceTexture, long j10) {
+    public void drawFrame(SurfaceTexture surfaceTexture, long j3) {
         int i10;
         int i11;
         float[] fArr;
@@ -1393,7 +1395,7 @@ public class TextureRenderer {
         } else {
             surfaceTexture.getTransformMatrix(this.mSTMatrix);
             if (BuildVars.LOGS_ENABLED && this.firstFrame) {
-                StringBuilder sb = new StringBuilder();
+                StringBuilder sb2 = new StringBuilder();
                 int i20 = 0;
                 while (true) {
                     float[] fArr2 = this.mSTMatrix;
@@ -1401,11 +1403,11 @@ public class TextureRenderer {
                     if (i20 >= fArr2.length) {
                         break;
                     }
-                    sb.append(fArr2[i20]);
-                    sb.append(", ");
+                    sb2.append(fArr2[i20]);
+                    sb2.append(", ");
                     i20++;
                 }
-                FileLog.d("stMatrix = " + ((Object) sb));
+                FileLog.d("stMatrix = " + ((Object) sb2));
                 this.firstFrame = false;
             } else {
                 i10 = 33985;
@@ -1414,10 +1416,10 @@ public class TextureRenderer {
                 GLES20.glDisable(3042);
                 this.blendEnabled = false;
             }
-            a00 a00Var = this.filterShaders;
-            if (a00Var != null) {
-                a00Var.P0 = this.mSTMatrix;
-                a00Var.W0 = false;
+            zz zzVar = this.filterShaders;
+            if (zzVar != null) {
+                zzVar.P0 = this.mSTMatrix;
+                zzVar.W0 = false;
                 GLES20.glViewport(0, 0, this.originalWidth, this.originalHeight);
                 this.filterShaders.f();
                 this.filterShaders.d();
@@ -1479,12 +1481,12 @@ public class TextureRenderer {
                 this.blendEnabled = true;
             }
             if (this.imagePath == null || (iArr = this.paintTexture) == null) {
-                a00 a00Var2 = this.filterShaders;
-                if (a00Var2 != null) {
-                    i17 = a00Var2.g(i14 ^ 1);
-                    a00 a00Var3 = this.filterShaders;
-                    int i26 = a00Var3.X0;
-                    i19 = a00Var3.Y0;
+                zz zzVar2 = this.filterShaders;
+                if (zzVar2 != null) {
+                    i17 = zzVar2.g(i14 ^ 1);
+                    zz zzVar3 = this.filterShaders;
+                    int i26 = zzVar3.X0;
+                    i19 = zzVar3.Y0;
                     i18 = i26;
                 } else {
                     i17 = -1;
@@ -1516,8 +1518,8 @@ public class TextureRenderer {
         }
         if (isCollage()) {
             for (int i27 = 0; i27 < this.collageParts.size(); i27++) {
-                stepCollagePart(i27, this.collageParts.get(i27), j10);
-                drawCollagePart(i27, this.collageParts.get(i27), j10);
+                stepCollagePart(i27, this.collageParts.get(i27), j3);
+                drawCollagePart(i27, this.collageParts.get(i27), j3);
             }
         }
         if (this.isPhoto || this.paintTexture != null || this.stickerTexture != null) {
@@ -1542,7 +1544,7 @@ public class TextureRenderer {
         if (this.stickerTexture != null) {
             int size = this.mediaEntities.size();
             for (int i30 = 0; i30 < size; i30++) {
-                drawEntity(this.mediaEntities.get(i30), this.mediaEntities.get(i30).color, j10);
+                drawEntity(this.mediaEntities.get(i30), this.mediaEntities.get(i30).color, j3);
             }
         }
         GLES20.glFinish();
@@ -1562,13 +1564,13 @@ public class TextureRenderer {
                 if (rLottieNative != null) {
                     rLottieNative.d();
                 }
-                y5 y5Var = mediaEntity.animatedFileDrawable;
-                if (y5Var != null) {
-                    y5Var.u();
+                d6 d6Var = mediaEntity.animatedFileDrawable;
+                if (d6Var != null) {
+                    d6Var.u();
                 }
                 View view = mediaEntity.view;
-                if (view instanceof wt) {
-                    ((wt) view).recycleEmojis();
+                if (view instanceof bu) {
+                    ((bu) view).recycleEmojis();
                 }
                 Bitmap bitmap = mediaEntity.bitmap;
                 if (bitmap != null) {
@@ -1591,7 +1593,7 @@ public class TextureRenderer {
         }
     }
 
-    public void setBreakStrategy(dg.b bVar) {
+    public void setBreakStrategy(rg.b bVar) {
         bVar.setBreakStrategy(0);
     }
 
@@ -1681,20 +1683,20 @@ public class TextureRenderer {
                 Bitmap decodeFile = BitmapFactory.decodeFile(this.messageVideoMaskPath);
                 GLUtils.texImage2D(3553, 0, decodeFile, 0);
                 decodeFile.recycle();
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
                 this.videoMaskTexture = -1;
             }
         }
         if (this.blurPath != null && (cropState = this.cropState) != null && cropState.useMatrix != null) {
-            ha haVar = new ha();
-            this.blur = haVar;
-            if (haVar.b(this.transformedWidth / this.transformedHeight, 0)) {
-                ha haVar2 = this.blur;
+            pa paVar = new pa();
+            this.blur = paVar;
+            if (paVar.b(this.transformedWidth / this.transformedHeight, 0)) {
+                pa paVar2 = this.blur;
                 int i17 = this.gradientTopColor;
                 int i18 = this.gradientBottomColor;
-                haVar2.l = i17;
-                haVar2.m = i18;
+                paVar2.l = i17;
+                paVar2.m = i18;
                 android.graphics.Matrix matrix = new android.graphics.Matrix();
                 matrix.postScale(this.originalWidth, this.originalHeight);
                 matrix.postConcat(this.cropState.useMatrix);
@@ -1721,15 +1723,15 @@ public class TextureRenderer {
                 this.blur = null;
             }
             if (this.blur != null) {
-                int h = a00.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
-                int h9 = a00.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D blurImage;uniform sampler2D maskImage;void main() {gl_FragColor = texture2D(blurImage, vTextureCoord) * texture2D(maskImage, vTextureCoord).a;}");
-                if (h == 0 || h9 == 0) {
+                int h = zz.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
+                int h10 = zz.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D blurImage;uniform sampler2D maskImage;void main() {gl_FragColor = texture2D(blurImage, vTextureCoord) * texture2D(maskImage, vTextureCoord).a;}");
+                if (h == 0 || h10 == 0) {
                     this.blur = null;
                 } else {
                     int glCreateProgram = GLES20.glCreateProgram();
                     this.blurShaderProgram = glCreateProgram;
                     GLES20.glAttachShader(glCreateProgram, h);
-                    GLES20.glAttachShader(this.blurShaderProgram, h9);
+                    GLES20.glAttachShader(this.blurShaderProgram, h10);
                     GLES20.glBindAttribLocation(this.blurShaderProgram, 0, "position");
                     GLES20.glBindAttribLocation(this.blurShaderProgram, 1, "inputTexCoord");
                     GLES20.glLinkProgram(this.blurShaderProgram);
@@ -1743,21 +1745,21 @@ public class TextureRenderer {
                         this.blurInputTexCoordHandle = GLES20.glGetAttribLocation(this.blurShaderProgram, "inputTexCoord");
                         this.blurBlurImageHandle = GLES20.glGetUniformLocation(this.blurShaderProgram, "blurImage");
                         this.blurMaskImageHandle = GLES20.glGetUniformLocation(this.blurShaderProgram, "maskImage");
-                        FloatBuffer k10 = y3.k(ByteBuffer.allocateDirect(32));
-                        this.blurVerticesBuffer = k10;
-                        k10.put(new float[]{-1.0f, 1.0f, 1.0f, 1.0f, -1.0f, -1.0f, 1.0f, -1.0f}).position(0);
+                        FloatBuffer h11 = wl.h(ByteBuffer.allocateDirect(32));
+                        this.blurVerticesBuffer = h11;
+                        h11.put(new float[]{-1.0f, 1.0f, 1.0f, 1.0f, -1.0f, -1.0f, 1.0f, -1.0f}).position(0);
                     }
                 }
             }
         }
         if (this.filterShaders != null || this.imagePath != null || this.paintPath != null || this.messagePath != null || this.mediaEntities != null || isCollage()) {
-            int h10 = a00.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
-            int h11 = a00.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}");
-            if (h10 != 0 && h11 != 0) {
+            int h12 = zz.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
+            int h13 = zz.h(35632, "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}");
+            if (h12 != 0 && h13 != 0) {
                 int glCreateProgram2 = GLES20.glCreateProgram();
                 this.simpleShaderProgram = glCreateProgram2;
-                GLES20.glAttachShader(glCreateProgram2, h10);
-                GLES20.glAttachShader(this.simpleShaderProgram, h11);
+                GLES20.glAttachShader(glCreateProgram2, h12);
+                GLES20.glAttachShader(this.simpleShaderProgram, h13);
                 GLES20.glBindAttribLocation(this.simpleShaderProgram, 0, "position");
                 GLES20.glBindAttribLocation(this.simpleShaderProgram, 1, "inputTexCoord");
                 GLES20.glLinkProgram(this.simpleShaderProgram);
@@ -1774,13 +1776,13 @@ public class TextureRenderer {
             }
         }
         if (isCollage()) {
-            int h12 = a00.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
-            int h13 = a00.h(35632, "#extension GL_OES_EGL_image_external : require\n" + "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}".replaceAll("sampler2D", "samplerExternalOES"));
-            if (h12 != 0 && h13 != 0) {
+            int h14 = zz.h(35633, "attribute vec4 position;attribute vec2 inputTexCoord;varying vec2 vTextureCoord;void main() {gl_Position = position;vTextureCoord = inputTexCoord;}");
+            int h15 = zz.h(35632, "#extension GL_OES_EGL_image_external : require\n" + "varying highp vec2 vTextureCoord;uniform sampler2D sTexture;void main() {gl_FragColor = texture2D(sTexture, vTextureCoord);}".replaceAll("sampler2D", "samplerExternalOES"));
+            if (h14 != 0 && h15 != 0) {
                 int glCreateProgram3 = GLES20.glCreateProgram();
                 this.simpleShaderProgramOES = glCreateProgram3;
-                GLES20.glAttachShader(glCreateProgram3, h12);
-                GLES20.glAttachShader(this.simpleShaderProgramOES, h13);
+                GLES20.glAttachShader(glCreateProgram3, h14);
+                GLES20.glAttachShader(this.simpleShaderProgramOES, h15);
                 GLES20.glBindAttribLocation(this.simpleShaderProgramOES, 0, "position");
                 GLES20.glBindAttribLocation(this.simpleShaderProgramOES, 1, "inputTexCoord");
                 GLES20.glLinkProgram(this.simpleShaderProgramOES);
@@ -1796,9 +1798,9 @@ public class TextureRenderer {
                 }
             }
         }
-        a00 a00Var = this.filterShaders;
-        if (a00Var != null) {
-            a00Var.a();
+        zz zzVar = this.filterShaders;
+        if (zzVar != null) {
+            zzVar.a();
             this.filterShaders.i(null, 0, this.mTextureID, this.originalWidth, this.originalHeight);
         }
         String str7 = this.imagePath;
@@ -1847,12 +1849,12 @@ public class TextureRenderer {
                                 max = Math.max(decodeFile3.getWidth() / this.transformedWidth, decodeFile3.getHeight() / this.transformedHeight);
                                 android.graphics.Matrix matrix3 = new android.graphics.Matrix();
                                 matrix3.postTranslate((-decodeFile3.getWidth()) / 2, (-decodeFile3.getHeight()) / 2);
-                                float f10 = -1.0f;
-                                float f11 = (i11 != 1 ? -1.0f : 1.0f) / max;
+                                float f7 = -1.0f;
+                                float f10 = (i11 != 1 ? -1.0f : 1.0f) / max;
                                 if (i11 == 2) {
-                                    f10 = 1.0f;
+                                    f7 = 1.0f;
                                 }
-                                matrix3.postScale(f11, f10 / max);
+                                matrix3.postScale(f10, f7 / max);
                                 matrix3.postRotate(i12);
                                 matrix3.postTranslate(createBitmap.getWidth() / 2, createBitmap.getHeight() / 2);
                                 canvas.drawBitmap(decodeFile3, matrix3, new Paint(2));
@@ -1861,11 +1863,11 @@ public class TextureRenderer {
                             max = Math.max(decodeFile3.getHeight() / this.transformedWidth, decodeFile3.getWidth() / this.transformedHeight);
                             android.graphics.Matrix matrix32 = new android.graphics.Matrix();
                             matrix32.postTranslate((-decodeFile3.getWidth()) / 2, (-decodeFile3.getHeight()) / 2);
-                            float f102 = -1.0f;
-                            float f112 = (i11 != 1 ? -1.0f : 1.0f) / max;
+                            float f72 = -1.0f;
+                            float f102 = (i11 != 1 ? -1.0f : 1.0f) / max;
                             if (i11 == 2) {
                             }
-                            matrix32.postScale(f112, f102 / max);
+                            matrix32.postScale(f102, f72 / max);
                             matrix32.postRotate(i12);
                             matrix32.postTranslate(createBitmap.getWidth() / 2, createBitmap.getHeight() / 2);
                             canvas.drawBitmap(decodeFile3, matrix32, new Paint(2));
@@ -1897,8 +1899,8 @@ public class TextureRenderer {
                 for (int i20 = 0; i20 < this.collageParts.size(); i20++) {
                     initCollagePart(i20, this.collageParts.get(i20));
                 }
-            } catch (Exception e6) {
-                FileLog.e(e6);
+            } catch (Exception e10) {
+                FileLog.e(e10);
             }
         }
         if (this.mediaEntities == null && this.backgroundDrawable == null) {
@@ -1934,17 +1936,17 @@ public class TextureRenderer {
         }
     }
 
-    private void drawTexture(boolean z4, int i10, float f10, float f11, float f12, float f13, float f14, boolean z10) {
-        drawTexture(z4, i10, f10, f11, f12, f13, f14, z10, false, -1);
+    private void drawTexture(boolean z10, int i10, float f7, float f10, float f11, float f12, float f13, boolean z11) {
+        drawTexture(z10, i10, f7, f10, f11, f12, f13, z11, false, -1);
     }
 
-    private void drawTexture(boolean z4, int i10, float f10, float f11, float f12, float f13, float f14, boolean z10, boolean z11, int i11) {
+    private void drawTexture(boolean z10, int i10, float f7, float f10, float f11, float f12, float f13, boolean z11, boolean z12, int i11) {
         if (!this.blendEnabled) {
             GLES20.glEnable(3042);
             GLES20.glBlendFunc(1, 771);
             this.blendEnabled = true;
         }
-        if (f10 <= -10000.0f) {
+        if (f7 <= -10000.0f) {
             float[] fArr = this.bitmapData;
             fArr[0] = -1.0f;
             fArr[1] = 1.0f;
@@ -1955,54 +1957,54 @@ public class TextureRenderer {
             fArr[6] = 1.0f;
             fArr[7] = -1.0f;
         } else {
-            float f15 = (f10 * 2.0f) - 1.0f;
-            float f16 = ((1.0f - f11) * 2.0f) - 1.0f;
+            float f14 = (f7 * 2.0f) - 1.0f;
+            float f15 = ((1.0f - f10) * 2.0f) - 1.0f;
             float[] fArr2 = this.bitmapData;
-            fArr2[0] = f15;
-            fArr2[1] = f16;
-            float f17 = (f12 * 2.0f) + f15;
-            fArr2[2] = f17;
-            fArr2[3] = f16;
-            fArr2[4] = f15;
-            float f18 = f16 - (f13 * 2.0f);
-            fArr2[5] = f18;
-            fArr2[6] = f17;
-            fArr2[7] = f18;
+            fArr2[0] = f14;
+            fArr2[1] = f15;
+            float f16 = (f11 * 2.0f) + f14;
+            fArr2[2] = f16;
+            fArr2[3] = f15;
+            fArr2[4] = f14;
+            float f17 = f15 - (f12 * 2.0f);
+            fArr2[5] = f17;
+            fArr2[6] = f16;
+            fArr2[7] = f17;
         }
         float[] fArr3 = this.bitmapData;
-        float f19 = fArr3[0];
-        float f20 = fArr3[2];
-        float f21 = (f19 + f20) / 2.0f;
-        if (z10) {
-            fArr3[2] = f19;
-            fArr3[0] = f20;
-            float f22 = fArr3[6];
+        float f18 = fArr3[0];
+        float f19 = fArr3[2];
+        float f20 = (f18 + f19) / 2.0f;
+        if (z11) {
+            fArr3[2] = f18;
+            fArr3[0] = f19;
+            float f21 = fArr3[6];
             fArr3[6] = fArr3[4];
-            fArr3[4] = f22;
+            fArr3[4] = f21;
         }
-        if (f14 != 0.0f) {
-            float f23 = this.transformedWidth / this.transformedHeight;
-            float f24 = (fArr3[5] + fArr3[1]) / 2.0f;
+        if (f13 != 0.0f) {
+            float f22 = this.transformedWidth / this.transformedHeight;
+            float f23 = (fArr3[5] + fArr3[1]) / 2.0f;
             int i12 = 0;
             for (int i13 = 4; i12 < i13; i13 = 4) {
                 float[] fArr4 = this.bitmapData;
                 int i14 = i12 * 2;
                 int i15 = i14 + 1;
-                double d = fArr4[i14] - f21;
-                double d10 = f14;
-                float f25 = f21;
-                double d11 = (fArr4[i15] - f24) / f23;
-                fArr4[i14] = ((float) ((Math.cos(d10) * d) - (Math.sin(d10) * d11))) + f25;
-                this.bitmapData[i15] = (((float) k0.a(d10, d11, Math.sin(d10) * d)) * f23) + f24;
+                double d = fArr4[i14] - f20;
+                double d10 = f13;
+                float f24 = f20;
+                double d11 = (fArr4[i15] - f23) / f22;
+                fArr4[i14] = ((float) ((Math.cos(d10) * d) - (Math.sin(d10) * d11))) + f24;
+                this.bitmapData[i15] = (((float) i2.g.e(d10, d11, Math.sin(d10) * d)) * f22) + f23;
                 i12++;
-                f21 = f25;
+                f20 = f24;
             }
         }
         this.bitmapVerticesBuffer.put(this.bitmapData).position(0);
-        GLES20.glVertexAttribPointer(this.simplePositionHandle, 2, 5126, false, 8, (Buffer) (z11 ? this.verticesBuffer : this.bitmapVerticesBuffer));
+        GLES20.glVertexAttribPointer(this.simplePositionHandle, 2, 5126, false, 8, (Buffer) (z12 ? this.verticesBuffer : this.bitmapVerticesBuffer));
         GLES20.glEnableVertexAttribArray(this.simpleInputTexCoordHandle);
-        GLES20.glVertexAttribPointer(this.simpleInputTexCoordHandle, 2, 5126, false, 8, (Buffer) (z11 ? this.croppedTextureBuffer : this.textureBuffer));
-        if (z4) {
+        GLES20.glVertexAttribPointer(this.simpleInputTexCoordHandle, 2, 5126, false, 8, (Buffer) (z12 ? this.croppedTextureBuffer : this.textureBuffer));
+        if (z10) {
             GLES20.glBindTexture(3553, i10);
         }
         GLES20.glDrawArrays(5, 0, 4);

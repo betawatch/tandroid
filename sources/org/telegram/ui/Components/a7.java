@@ -1,75 +1,81 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
+import android.view.View;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class a7 implements Runnable {
+public final /* synthetic */ class a7 implements org.telegram.ui.ActionBar.r0, bl0 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c8 b;
-    public final /* synthetic */ p70 c;
-    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ k8 b;
 
-    public /* synthetic */ a7(c8 c8Var, MessageObject messageObject, p70 p70Var, int i10) {
+    public /* synthetic */ a7(k8 k8Var, int i10) {
         this.a = i10;
-        this.b = c8Var;
-        this.d = messageObject;
-        this.c = p70Var;
+        this.b = k8Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.ui.Components.bl0
+    public boolean a(int i10, View view) {
+        boolean z10 = view instanceof org.telegram.ui.Cells.x;
+        k8 k8Var = this.b;
+        if (!z10) {
+            k8Var.getClass();
+            return false;
+        }
+        if (k8Var.s0()) {
+            return false;
+        }
+        org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) view;
+        k8Var.B0(xVar, xVar.getMessageObject());
+        return true;
+    }
+
+    @Override // org.telegram.ui.ActionBar.r0
+    public void m(int i10) {
         switch (this.a) {
             case 0:
-                c8 c8Var = this.b;
-                c8Var.getClass();
-                this.c.u();
-                c8Var.q0(this.d);
+                k8 k8Var = this.b;
+                k8Var.getClass();
+                if (i10 >= 0) {
+                    float[] fArr = k8.U0;
+                    if (i10 < 6) {
+                        MediaController.getInstance().setPlaybackSpeed(true, fArr[i10]);
+                        k8Var.F0(true);
+                        break;
+                    }
+                }
                 break;
             case 1:
-                c8 c8Var2 = this.b;
-                c8Var2.getClass();
-                this.c.u();
-                c8Var2.z0(this.d);
-                break;
-            case 2:
-                c8 c8Var3 = this.b;
-                MessageObject messageObject = this.d;
-                c8Var3.v0(messageObject, false, new a7(c8Var3, messageObject, this.c, 5), false);
-                break;
-            case 3:
-                c8 c8Var4 = this.b;
-                c8Var4.getClass();
-                this.c.u();
-                c8Var4.q0(this.d);
-                break;
-            case 4:
-                c8 c8Var5 = this.b;
-                c8Var5.getClass();
-                this.c.u();
-                c8Var5.z0(this.d);
-                break;
-            case 5:
-                c8.v(this.b, this.d, this.c);
-                break;
-            case 6:
-                c8 c8Var6 = this.b;
-                c8Var6.v0(this.d, true, new b7(c8Var6, this.c, 4), false);
-                break;
-            case 7:
-                c8.K(this.b, this.d, this.c);
+                k8 k8Var2 = this.b;
+                if (i10 == 1 || i10 == 2) {
+                    boolean z10 = SharedConfig.playOrderReversed;
+                    if ((z10 && i10 == 1) || (SharedConfig.shuffleMusic && i10 == 2)) {
+                        MediaController.getInstance().setPlaybackOrderType(0);
+                    } else {
+                        MediaController.getInstance().setPlaybackOrderType(i10);
+                    }
+                    k8Var2.s.l();
+                    if (z10 != SharedConfig.playOrderReversed) {
+                        k8Var2.n.B0();
+                        k8Var2.w0(false);
+                    }
+                } else if (i10 == 4) {
+                    if (SharedConfig.repeatMode == 1) {
+                        SharedConfig.setRepeatMode(0);
+                    } else {
+                        SharedConfig.setRepeatMode(1);
+                    }
+                } else if (SharedConfig.repeatMode == 2) {
+                    SharedConfig.setRepeatMode(0);
+                } else {
+                    SharedConfig.setRepeatMode(2);
+                }
+                k8Var2.H0();
                 break;
             default:
-                this.b.u0(this.d);
-                this.c.u();
+                this.b.t0(i10);
                 break;
         }
-    }
-
-    public /* synthetic */ a7(c8 c8Var, p70 p70Var, MessageObject messageObject, int i10) {
-        this.a = i10;
-        this.b = c8Var;
-        this.c = p70Var;
-        this.d = messageObject;
     }
 }

@@ -1,35 +1,52 @@
 package c2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class c implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ androidx.emoji2.text.p b;
-    public final /* synthetic */ int c;
+import android.media.AudioAttributes;
+import android.media.AudioFocusRequest;
+import android.media.AudioManager;
+import android.os.Build;
+import android.os.Handler;
+import j$.util.Objects;
 
-    public /* synthetic */ c(androidx.emoji2.text.p pVar, int i10, int i11) {
-        this.a = i11;
-        this.b = pVar;
-        this.c = i10;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class c {
+    public final int a;
+    public final AudioManager.OnAudioFocusChangeListener b;
+    public final Handler c;
+    public final b2.e d;
+    public final boolean e;
+    public final Object f;
+
+    public c(int i10, AudioManager.OnAudioFocusChangeListener onAudioFocusChangeListener, Handler handler, b2.e eVar, boolean z10) {
+        this.a = i10;
+        this.c = handler;
+        this.d = eVar;
+        this.e = z10;
+        int i11 = Build.VERSION.SDK_INT;
+        if (i11 < 26) {
+            this.b = new b(onAudioFocusChangeListener, handler);
+        } else {
+            this.b = onAudioFocusChangeListener;
+        }
+        if (i11 >= 26) {
+            this.f = new AudioFocusRequest.Builder(i10).setAudioAttributes((AudioAttributes) eVar.b().a).setWillPauseWhenDucked(z10).setOnAudioFocusChangeListener(onAudioFocusChangeListener, handler).build();
+        } else {
+            this.f = null;
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                b0 b0Var = ((e) ((af.d) this.b.f).d).d;
-                if (b0Var != null) {
-                    b0Var.j(this.c);
-                    break;
-                }
-                break;
-            default:
-                b0 b0Var2 = ((e) ((af.d) this.b.f).d).d;
-                if (b0Var2 != null) {
-                    b0Var2.k(this.c);
-                    break;
-                }
-                break;
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof c)) {
+            return false;
+        }
+        c cVar = (c) obj;
+        return this.a == cVar.a && this.e == cVar.e && Objects.equals(this.b, cVar.b) && Objects.equals(this.c, cVar.c) && Objects.equals(this.d, cVar.d);
+    }
+
+    public final int hashCode() {
+        return Objects.hash(Integer.valueOf(this.a), this.b, this.c, this.d, Boolean.valueOf(this.e));
     }
 }

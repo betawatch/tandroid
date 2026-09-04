@@ -1,45 +1,29 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.FragmentContextView;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class b9 extends FragmentContextView {
-    public final /* synthetic */ int K0;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate L0;
+public final class b9 extends AnimatorListenerAdapter {
+    public final /* synthetic */ AtomicBoolean a;
+    public final /* synthetic */ org.telegram.ui.Components.d90 b;
+    public final /* synthetic */ String c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b9(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, org.telegram.ui.ActionBar.p2 p2Var, FrameLayout frameLayout, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, p2Var, frameLayout, false, f6Var);
-        this.K0 = i10;
-        this.L0 = notificationCenterDelegate;
+    public b9(AtomicBoolean atomicBoolean, org.telegram.ui.Components.d90 d90Var, String str) {
+        this.a = atomicBoolean;
+        this.b = d90Var;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.K0) {
-            case 0:
-                n9 n9Var = (n9) this.L0;
-                n9Var.J.i(n9Var.K, i10 == 0, true);
-                break;
-            case 1:
-                org.telegram.ui.Components.wi wiVar = (org.telegram.ui.Components.wi) this.L0;
-                wiVar.x.i(wiVar.y, i10 == 0, true);
-                break;
-            default:
-                sf1 sf1Var = (sf1) this.L0;
-                sf1Var.R0.i(sf1Var.C0, i10 == 0, true);
-                break;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        AtomicBoolean atomicBoolean = this.a;
+        if (atomicBoolean.get()) {
+            return;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b9(sf1 sf1Var, Context context, sf1 sf1Var2) {
-        super(context, sf1Var2, null, false, null);
-        this.K0 = 2;
-        this.L0 = sf1Var;
+        atomicBoolean.set(true);
+        this.b.setText(this.c);
     }
 }

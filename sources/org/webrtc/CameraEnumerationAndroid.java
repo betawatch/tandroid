@@ -1,6 +1,7 @@
 package org.webrtc;
 
 import android.graphics.ImageFormat;
+import com.google.android.gms.internal.vision.e2;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -8,20 +9,20 @@ import java.util.Comparator;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class CameraEnumerationAndroid {
     static final ArrayList<Size> COMMON_RESOLUTIONS = new ArrayList<>(Arrays.asList(new Size(160, 120), new Size(240, 160), new Size(320, 240), new Size(400, 240), new Size(480, 320), new Size(640, 360), new Size(640, 480), new Size(768, 480), new Size(854, 480), new Size(800, 600), new Size(960, 540), new Size(960, 640), new Size(1024, 576), new Size(1024, 600), new Size(1280, 720), new Size(1280, 1024), new Size(1920, 1080), new Size(1920, 1440), new Size(2560, 1440), new Size(3840, 2160)));
     private static final String TAG = "CameraEnumerationAndroid";
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class CaptureFormat {
         public final FramerateRange framerate;
         public final int height;
         public final int imageFormat = 17;
         public final int width;
 
-        /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+        /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
         public static class FramerateRange {
             public int max;
             public int min;
@@ -88,17 +89,17 @@ public class CameraEnumerationAndroid {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static abstract class ClosestComparator<T> implements Comparator<T> {
         private ClosestComparator() {
         }
 
         @Override // java.util.Comparator
-        public int compare(T t6, T t9) {
-            return diff(t6) - diff(t9);
+        public int compare(T t10, T t11) {
+            return diff(t10) - diff(t11);
         }
 
-        public abstract int diff(T t6);
+        public abstract int diff(T t10);
     }
 
     public static CaptureFormat.FramerateRange getClosestSupportedFramerateRange(List<CaptureFormat.FramerateRange> list, final int i10) {
@@ -116,7 +117,7 @@ public class CameraEnumerationAndroid {
             }
 
             private int progressivePenalty(int i11, int i12, int i13, int i14) {
-                return i11 < i12 ? i11 * i13 : e2.c.e(i11, i12, i14, i13 * i12);
+                return i11 < i12 ? i11 * i13 : e2.w(i11, i12, i14, i13 * i12);
             }
 
             @Override // org.webrtc.CameraEnumerationAndroid.ClosestComparator

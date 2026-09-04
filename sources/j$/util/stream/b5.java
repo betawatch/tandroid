@@ -98,30 +98,30 @@ public abstract class b5 extends a implements Stream {
     }
 
     @Override // j$.util.stream.a
-    public final e2 K0(a aVar, Spliterator spliterator, boolean z4, IntFunction intFunction) {
-        return t3.a0(aVar, spliterator, z4, intFunction);
+    public final e2 K0(a aVar, Spliterator spliterator, boolean z10, IntFunction intFunction) {
+        return t3.a0(aVar, spliterator, z10, intFunction);
     }
 
     @Override // j$.util.stream.a
-    public final Spliterator T0(a aVar, Supplier supplier, boolean z4) {
-        return new z7(aVar, supplier, z4);
+    public final Spliterator T0(a aVar, Supplier supplier, boolean z10) {
+        return new z7(aVar, supplier, z10);
     }
 
     @Override // j$.util.stream.a
     public final boolean L0(Spliterator spliterator, j5 j5Var) {
-        boolean q10;
+        boolean q6;
         do {
-            q10 = j5Var.q();
-            if (q10) {
+            q6 = j5Var.q();
+            if (q6) {
                 break;
             }
         } while (spliterator.tryAdvance(j5Var));
-        return q10;
+        return q6;
     }
 
     @Override // j$.util.stream.t3
-    public final w1 A0(long j10, IntFunction intFunction) {
-        return t3.Y(j10, intFunction);
+    public final w1 A0(long j3, IntFunction intFunction) {
+        return t3.Y(j3, intFunction);
     }
 
     @Override // j$.util.stream.BaseStream
@@ -221,19 +221,19 @@ public abstract class b5 extends a implements Stream {
     }
 
     @Override // j$.util.stream.Stream
-    public final Stream limit(long j10) {
-        if (j10 < 0) {
-            throw new IllegalArgumentException(Long.toString(j10));
+    public final Stream limit(long j3) {
+        if (j3 < 0) {
+            throw new IllegalArgumentException(Long.toString(j3));
         }
-        return t3.C0(this, 0L, j10);
+        return t3.C0(this, 0L, j3);
     }
 
     @Override // j$.util.stream.Stream
-    public final Stream skip(long j10) {
-        if (j10 >= 0) {
-            return j10 == 0 ? this : t3.C0(this, j10, -1L);
+    public final Stream skip(long j3) {
+        if (j3 >= 0) {
+            return j3 == 0 ? this : t3.C0(this, j3, -1L);
         }
-        throw new IllegalArgumentException(Long.toString(j10));
+        throw new IllegalArgumentException(Long.toString(j3));
     }
 
     @Override // j$.util.stream.Stream

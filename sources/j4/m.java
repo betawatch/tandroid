@@ -1,57 +1,43 @@
 package j4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import h5.d0;
-import java.util.Arrays;
+import c3.h0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class m extends j {
-    public static final Parcelable.Creator<m> CREATOR = new f8.o(20);
-    public final String b;
-    public final byte[] c;
+public final class m {
+    public final h0 a;
+    public boolean b;
+    public boolean c;
+    public boolean d;
+    public int e;
+    public int f;
+    public long g;
+    public long h;
 
-    public m(String str, byte[] bArr) {
-        super("PRIV");
-        this.b = str;
-        this.c = bArr;
+    public m(h0 h0Var) {
+        this.a = h0Var;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && m.class == obj.getClass()) {
-            m mVar = (m) obj;
-            if (d0.a(this.b, mVar.b) && Arrays.equals(this.c, mVar.c)) {
-                return true;
+    public final void a(int i10, int i11, byte[] bArr) {
+        if (this.c) {
+            int i12 = this.f;
+            int i13 = (i10 + 1) - i12;
+            if (i13 >= i11) {
+                this.f = (i11 - i10) + i12;
+            } else {
+                this.d = ((bArr[i13] & 192) >> 6) == 0;
+                this.c = false;
             }
         }
-        return false;
     }
 
-    public final int hashCode() {
-        String str = this.b;
-        return Arrays.hashCode(this.c) + ((527 + (str != null ? str.hashCode() : 0)) * 31);
-    }
-
-    @Override // j4.j
-    public final String toString() {
-        return this.a + ": owner=" + this.b;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeString(this.b);
-        parcel.writeByteArray(this.c);
-    }
-
-    public m(Parcel parcel) {
-        super("PRIV");
-        String readString = parcel.readString();
-        int i10 = d0.a;
-        this.b = readString;
-        this.c = parcel.createByteArray();
+    public final void b(int i10, long j3, boolean z10) {
+        e2.d.g(this.h != -9223372036854775807L);
+        if (this.e == 182 && z10 && this.b) {
+            this.a.c(this.h, this.d ? 1 : 0, (int) (j3 - this.g), i10, null);
+        }
+        if (this.e != 179) {
+            this.g = j3;
+        }
     }
 }

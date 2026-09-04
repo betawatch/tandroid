@@ -1,133 +1,54 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.animation.LinearInterpolator;
+import android.content.Context;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sh1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ii1 b;
+public final class sh1 extends LinearLayout {
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final ImageView b;
+    public final LinearLayout c;
+    public final TextView d;
+    public final TextView e;
+    public final ImageView f;
+    public boolean h;
+    public boolean n;
 
-    public /* synthetic */ sh1(ii1 ii1Var, int i10) {
-        this.a = i10;
-        this.b = ii1Var;
+    public sh1(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        setOrientation(0);
+        this.a = f6Var;
+        ImageView imageView = new ImageView(context);
+        this.b = imageView;
+        ImageView.ScaleType scaleType = ImageView.ScaleType.CENTER;
+        imageView.setScaleType(scaleType);
+        addView(imageView, w7.x5.t(40, 40, 19, 12, 0, 12, 0));
+        LinearLayout linearLayout = new LinearLayout(context);
+        this.c = linearLayout;
+        linearLayout.setOrientation(1);
+        linearLayout.setPadding(0, AndroidUtilities.dp(10.0f), 0, AndroidUtilities.dp(10.0f));
+        addView(linearLayout, w7.x5.p(0, -2, 1.0f, 23, 0, 0, 32, 0));
+        TextView textView = new TextView(context);
+        this.d = textView;
+        textView.setTextSize(1, 16.0f);
+        TextView h = com.google.android.gms.internal.vision.e2.h(linearLayout, textView, w7.x5.t(-1, -2, 7, 0, 0, 0, 0), context);
+        this.e = h;
+        h.setTextSize(1, 13.0f);
+        linearLayout.addView(h, w7.x5.r(-1, -2, 7, 0.0f, 4.33f, 0.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        this.f = imageView2;
+        imageView2.setScaleType(scaleType);
+        addView(imageView2, w7.x5.t(40, 40, 21, 12, 0, 12, 0));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.r0.b();
-                break;
-            case 1:
-                this.b.r0.b();
-                break;
-            case 2:
-                this.b.r0.b();
-                break;
-            case 3:
-                this.b.r0.b();
-                break;
-            case 4:
-                org.telegram.ui.Components.voip.s1 s1Var = this.b.W;
-                s1Var.W = false;
-                s1Var.invalidate();
-                break;
-            case 5:
-                ii1 ii1Var = this.b;
-                ii1Var.n0 = ii1Var.m0;
-                ii1Var.H();
-                break;
-            case 6:
-                this.b.B();
-                break;
-            case 7:
-                int[] iArr = new int[2];
-                ii1 ii1Var2 = this.b;
-                ii1Var2.b0.getLocationOnScreen(iArr);
-                int i10 = iArr[0];
-                int i11 = iArr[1];
-                ii1Var2.e.getLocationOnScreen(iArr);
-                ii1Var2.e.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
-                ii1Var2.e.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                ii1Var2.h.getLocationOnScreen(iArr);
-                ii1Var2.h.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
-                ii1Var2.h.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                ii1Var2.f.getLocationOnScreen(iArr);
-                ii1Var2.f.setTranslationX(AndroidUtilities.dp(42.0f) + (i10 - iArr[0]));
-                ii1Var2.f.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                ii1Var2.n.getLocationOnScreen(iArr);
-                ii1Var2.n.setTranslationX((((ii1Var2.b0.getWidth() + i10) - iArr[0]) - AndroidUtilities.dp(49.0f)) - AndroidUtilities.dp(60.0f));
-                ii1Var2.n.setTranslationY(AndroidUtilities.dp(44.0f) + (i11 - iArr[1]));
-                ii1Var2.n.setAlpha(1.0f);
-                ii1Var2.e.setAlpha(1.0f);
-                ii1Var2.h.setAlpha(1.0f);
-                ii1Var2.f.setAlpha(1.0f);
-                long j10 = 200;
-                ii1Var2.n.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
-                ii1Var2.e.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
-                ii1Var2.h.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
-                ii1Var2.f.animate().setStartDelay(0L).translationY(0.0f).setInterpolator(new LinearInterpolator()).translationX(0.0f).setDuration(j10).start();
-                break;
-            case 8:
-                this.b.r0.b();
-                break;
-            case 9:
-                if (SharedConfig.callEncryptionHintDisplayedCount < 2) {
-                    SharedConfig.incrementCallEncryptionHintDisplayed(1);
-                    ii1 ii1Var3 = this.b;
-                    ii1Var3.L0.setTranslationY(ii1Var3.K.getY() + AndroidUtilities.dp(36.0f));
-                    ii1Var3.L0.u();
-                    break;
-                }
-                break;
-            case 10:
-                this.b.r0.b();
-                break;
-            case 11:
-                ii1 ii1Var4 = this.b;
-                ii1Var4.r0.setAlpha(1.0f);
-                ii1Var4.r0.invalidate();
-                ValueAnimator k10 = ii1Var4.k(true);
-                ii1Var4.E.setAlpha(0.0f);
-                ii1Var4.F.setAlpha(0.0f);
-                ii1Var4.K.setAlpha(0.0f);
-                ii1Var4.U.setAlpha(0.0f);
-                ii1Var4.g0.setAlpha(0.0f);
-                ii1Var4.e0.setAlpha(0.0f);
-                ii1Var4.f0.setAlpha(0.0f);
-                ii1Var4.H.setAlpha(0.0f);
-                ii1Var4.J0.setAlpha(0.0f);
-                ii1Var4.V.V = true;
-                AndroidUtilities.runOnUIThread(new sg1(3, ii1Var4, k10), 32L);
-                break;
-            case 12:
-                ii1 ii1Var5 = this.b;
-                ii1Var5.O0 = false;
-                org.telegram.ui.Components.voip.d3 d3Var = ii1Var5.K0;
-                boolean z4 = d3Var != null && d3Var.S;
-                if (ii1Var5.w0 && ii1Var5.u0 && !ii1Var5.z0 && !z4) {
-                    ii1Var5.H0 = System.currentTimeMillis();
-                    ii1Var5.A(false);
-                    ii1Var5.n0 = ii1Var5.m0;
-                    ii1Var5.H();
-                    break;
-                }
-                break;
-            default:
-                ii1 ii1Var6 = this.b;
-                if (ii1Var6.m0 == 3) {
-                    ii1Var6.y.b(true, false);
-                    org.telegram.ui.Components.voip.c3 c3Var = ii1Var6.v;
-                    if (!c3Var.O) {
-                        c3Var.O = true;
-                        break;
-                    }
-                }
-                break;
-        }
+    @Override // android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
     }
 }

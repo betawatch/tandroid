@@ -1,110 +1,37 @@
 package hg;
 
-import android.text.TextUtils;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stars;
+import android.location.Location;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class a extends bg.b {
-    public CharSequence c;
-    public TLRPC.InputPeer d;
-    public TLRPC.Chat e;
-    public Object f;
-    public boolean g;
-    public long h;
-    public int i;
-    public int j;
-    public List k;
-    public int l;
-    public TLObject m;
+public final /* synthetic */ class a implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ Location d;
 
-    public static a b(TLRPC.Chat chat, int i10, boolean z4) {
-        a aVar = new a(9, false);
-        aVar.e = chat;
-        aVar.d = null;
-        aVar.g = z4;
-        aVar.i = i10;
-        return aVar;
+    public /* synthetic */ a(c cVar, String str, Location location, int i10) {
+        this.a = i10;
+        this.b = cVar;
+        this.c = str;
+        this.d = location;
     }
 
-    public static a c(CharSequence charSequence, boolean z4) {
-        a aVar = new a(7, false);
-        aVar.c = charSequence;
-        aVar.g = z4;
-        return aVar;
-    }
-
-    public static a d(TL_stars.TL_starsGiveawayOption tL_starsGiveawayOption, int i10, long j10, boolean z4, boolean z10) {
-        a aVar = new a(17, z4);
-        aVar.i = i10;
-        aVar.h = j10;
-        aVar.m = tL_starsGiveawayOption;
-        aVar.g = z10;
-        return aVar;
-    }
-
-    public static a e(int i10, int i11, boolean z4, ArrayList arrayList) {
-        a aVar = new a(11, i11 == i10);
-        aVar.l = i10;
-        aVar.g = z4;
-        aVar.f = arrayList;
-        return aVar;
-    }
-
-    public static a f(String str) {
-        a aVar = new a(6, false);
-        aVar.c = str;
-        return aVar;
-    }
-
-    public static boolean g(List list, List list2) {
-        if (list == null && list2 == null) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                c cVar = this.b;
+                cVar.getClass();
+                AndroidUtilities.runOnUIThread(new a(cVar, this.c, this.d, 1));
+                break;
+            default:
+                c cVar2 = this.b;
+                cVar2.E = null;
+                cVar2.v = null;
+                cVar2.H(this.c, this.d, true);
+                break;
         }
-        if (list == null || list2 == null || list.size() != list2.size()) {
-            return false;
-        }
-        for (int i10 = 0; i10 < list.size(); i10++) {
-            if (((Integer) list.get(i10)).intValue() != ((Integer) list2.get(i10)).intValue()) {
-                return false;
-            }
-        }
-        return true;
-    }
-
-    @Override // bg.b
-    public final boolean a(bg.b bVar) {
-        a aVar;
-        int i10;
-        int i11;
-        if (this == bVar) {
-            return true;
-        }
-        if (a.class == bVar.getClass() && (i10 = (aVar = (a) bVar).a) == (i11 = this.a)) {
-            return i11 == 0 ? this.g == aVar.g : i10 == 17 ? this.i == aVar.i && this.h == aVar.h && this.m == aVar.m && this.g == aVar.g && this.b == aVar.b : i11 == 5 ? this.i == aVar.i && g(this.k, aVar.k) : i11 == 13 && this.i == aVar.i && TextUtils.equals(this.c, aVar.c);
-        }
-        return false;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || a.class != obj.getClass()) {
-            return false;
-        }
-        a aVar = (a) obj;
-        int i10 = this.a;
-        if (i10 != aVar.a) {
-            return false;
-        }
-        if (i10 == 0) {
-            return true;
-        }
-        return i10 == 17 ? this.i == aVar.i && this.m == aVar.m : i10 == 5 ? g(this.k, aVar.k) : i10 == 13 ? TextUtils.equals(this.c, aVar.c) : this.e == aVar.e && this.f == aVar.f && this.d == aVar.d && this.m == aVar.m && this.g == aVar.g && this.i == aVar.i && this.j == aVar.j && this.h == aVar.h && this.l == aVar.l && TextUtils.equals(this.c, aVar.c);
     }
 }

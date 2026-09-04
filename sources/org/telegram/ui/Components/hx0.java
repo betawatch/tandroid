@@ -1,23 +1,36 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessagesStorage;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hx0 implements org.telegram.ui.ActionBar.s0, MessagesStorage.StringCallback {
-    public final /* synthetic */ xx0 a;
+public final class hx0 extends hq0 {
+    public final /* synthetic */ ux0 b1;
 
-    public /* synthetic */ hx0(xx0 xx0Var) {
-        this.a = xx0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hx0(ux0 ux0Var, Context context, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, null, str, false, str2, false, f6Var);
+        this.b1 = ux0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.s0
-    public void m(int i10) {
-        xx0.C(this.a, i10);
+    @Override // org.telegram.ui.Components.hq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            AndroidUtilities.runOnUIThread(new org.telegram.ui.dm(this, iVar, i10, 21), 100L);
+        }
     }
 
-    @Override // org.telegram.messenger.MessagesStorage.StringCallback
-    public void run(String str) {
-        new z40(r1.getContext(), r1.l0, null, this.a.resourcesProvider).show();
+    @Override // org.telegram.ui.Components.hq0, org.telegram.ui.ActionBar.f3
+    public final void dismissInternal() {
+        super.dismissInternal();
+        org.telegram.ui.ActionBar.n2 n2Var = this.b1.L;
+        if (n2Var instanceof org.telegram.ui.co) {
+            AndroidUtilities.requestAdjustResize(n2Var.getParentActivity(), n2Var.getClassGuid());
+            if (((org.telegram.ui.co) n2Var).Y.getVisibility() == 0) {
+                n2Var.getFragmentView().requestLayout();
+            }
+        }
     }
 }

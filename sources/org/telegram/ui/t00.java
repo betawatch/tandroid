@@ -1,89 +1,95 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.content.Context;
+import android.view.ViewPropertyAnimator;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Emoji;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class t00 extends bg.b {
-    public View.OnClickListener c;
-    public CharSequence d;
-    public String e;
-    public boolean f;
-    public boolean g;
-    public long h;
-    public String i;
-    public int j;
-    public int k;
-    public boolean l;
-    public TL_chatlists.TL_exportedChatlistInvite m;
+public final class t00 extends org.telegram.ui.Cells.l4 {
+    public final TextView r;
+    public final s00 s;
+    public int v;
+    public final org.telegram.ui.Components.h5 w;
+    public boolean x;
+    public final /* synthetic */ f10 y;
 
-    public static t00 b(int i10, String str, boolean z4) {
-        t00 t00Var = new t00(4, false);
-        t00Var.k = i10;
-        t00Var.d = str;
-        t00Var.l = z4;
-        return t00Var;
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public t00(f10 f10Var, Context context) {
+        super(context, r2, 22, 15, false, r6);
+        org.telegram.ui.ActionBar.f6 f6Var;
+        this.y = f10Var;
+        int i10 = org.telegram.ui.ActionBar.j6.L6;
+        f6Var = ((org.telegram.ui.ActionBar.n2) f10Var).resourceProvider;
+        TextView textView = new TextView(getContext());
+        this.r = textView;
+        textView.setTextSize(1, 14.0f);
+        textView.setTextColor(f10Var.getThemedColor(org.telegram.ui.ActionBar.j6.z6));
+        org.telegram.messenger.wl.k(f10Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium, textView, 5);
+        int i11 = (LocaleController.isRTL ? 3 : 5) | 48;
+        float f7 = this.b;
+        addView(textView, w7.x5.d(-1, -1.0f, i11, f7, 16.66f, f7, this.c));
+        textView.setAlpha(0.0f);
+        s00 s00Var = new s00(this, getContext());
+        this.s = s00Var;
+        this.w = new org.telegram.ui.Components.h5(s00Var, 320L, org.telegram.ui.Components.pr.h, 0);
+        s00Var.setTextSize(AndroidUtilities.dp(10.0f));
+        s00Var.setTypeface(AndroidUtilities.bold());
+        s00Var.setGravity(5);
+        s00Var.setPadding(AndroidUtilities.dp(4.66f), 0, AndroidUtilities.dp(4.66f), 0);
+        int i12 = LocaleController.isRTL ? 3 : 5;
+        float f10 = this.b;
+        addView(s00Var, w7.x5.d(-1, -1.0f, i12 | 48, f10, 16.66f, f10, this.c));
     }
 
-    public static t00 c(int i10, String str, String str2, boolean z4) {
-        t00 t00Var = new t00(1, false);
-        t00Var.g = z4;
-        t00Var.d = str;
-        t00Var.i = str2;
-        t00Var.j = i10;
-        return t00Var;
-    }
-
-    public static t00 d(String str) {
-        t00 t00Var = new t00(TextUtils.isEmpty(str) ? 3 : 6, false);
-        t00Var.d = str;
-        return t00Var;
-    }
-
-    public final boolean equals(Object obj) {
-        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite;
-        TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite2;
-        if (this != obj) {
-            if (obj == null || t00.class != obj.getClass()) {
-                return false;
-            }
-            t00 t00Var = (t00) obj;
-            int i10 = this.a;
-            if (i10 != t00Var.a) {
-                return false;
-            }
-            if (i10 == 11) {
-                if (!TextUtils.equals(this.d, t00Var.d) || !TextUtils.equals(this.e, t00Var.e)) {
-                    return false;
-                }
-            } else {
-                if ((i10 == 0 || i10 == 1 || i10 == 3 || i10 == 4) && !TextUtils.equals(this.d, t00Var.d)) {
-                    return false;
-                }
-                int i11 = this.a;
-                if (i11 == 0) {
-                    if (this.f != t00Var.f) {
-                        return false;
-                    }
-                } else if (i11 == 1) {
-                    if (this.h != t00Var.h || !TextUtils.equals(this.i, t00Var.i) || this.j != t00Var.j) {
-                        return false;
-                    }
-                } else if (i11 == 7 && (tL_exportedChatlistInvite = this.m) != (tL_exportedChatlistInvite2 = t00Var.m)) {
-                    if (!TextUtils.equals(tL_exportedChatlistInvite.url, tL_exportedChatlistInvite2.url)) {
-                        return false;
-                    }
-                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite3 = this.m;
-                    boolean z4 = tL_exportedChatlistInvite3.revoked;
-                    TL_chatlists.TL_exportedChatlistInvite tL_exportedChatlistInvite4 = t00Var.m;
-                    if (z4 != tL_exportedChatlistInvite4.revoked || !TextUtils.equals(tL_exportedChatlistInvite3.title, tL_exportedChatlistInvite4.title) || this.m.peers.size() != t00Var.m.peers.size()) {
-                        return false;
-                    }
-                }
-            }
+    public final void d(int i10, boolean z10) {
+        f10 f10Var = this.y;
+        String string = LocaleController.getString(f10Var.getUserConfig().isPremium() ? R.string.FolderTagNoColor : R.string.FolderTagNoColorPremium);
+        TextView textView = this.r;
+        textView.setText(string);
+        int i11 = 0;
+        boolean z11 = i10 < 0;
+        if (!z11) {
+            int[] iArr = org.telegram.ui.ActionBar.j6.r8;
+            i11 = f10Var.getThemedColor(iArr[i10 % iArr.length]);
         }
-        return true;
+        this.v = i11;
+        s00 s00Var = this.s;
+        if (!z11) {
+            s00Var.setEmojiColor(i11);
+        }
+        if (!z10) {
+            this.w.a(this.v, true);
+        }
+        if (z11 != this.x) {
+            this.x = z11;
+            ViewPropertyAnimator duration = textView.animate().alpha(z11 ? 1.0f : 0.0f).setDuration(320L);
+            org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.h;
+            duration.setInterpolator(prVar).start();
+            s00Var.animate().alpha(z11 ? 0.0f : 1.0f).setDuration(320L).setInterpolator(prVar).start();
+        }
+    }
+
+    public final void e(CharSequence charSequence, boolean z10) {
+        if (charSequence == null) {
+            charSequence = "";
+        }
+        boolean z11 = false;
+        if (charSequence.length() > 12) {
+            charSequence = charSequence.subSequence(0, 12);
+        }
+        s00 s00Var = this.s;
+        CharSequence replaceEmoji = Emoji.replaceEmoji(charSequence, s00Var.getPaint().getFontMetricsInt(), false);
+        if (z10 && !LocaleController.isRTL) {
+            z11 = true;
+        }
+        s00Var.c(replaceEmoji, z11, true);
     }
 }

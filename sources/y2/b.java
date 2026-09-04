@@ -1,15 +1,16 @@
 package y2;
 
-import vh.w2;
+import android.os.Handler;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b implements u9.d {
-    public static final b a = new b();
-    public static final u9.c b = new u9.c("storageMetrics", w2.h(w2.g(x9.d.class, new x9.a(1))));
+public final class b {
+    public final Handler a;
+    public final j2.f b;
+    public boolean c;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        ((u9.e) obj2).e(b, ((b3.b) obj).a);
+    public b(Handler handler, j2.f fVar) {
+        this.a = handler;
+        this.b = fVar;
     }
 }

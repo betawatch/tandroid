@@ -1,58 +1,48 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import java.util.HashSet;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class g5 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ h5 b;
-    public final /* synthetic */ ArrayList c;
-    public final /* synthetic */ TLObject d;
+public final class g5 extends FrameLayout {
+    public boolean a;
+    public int b;
+    public q6 c;
+    public q6 d;
 
-    public /* synthetic */ g5(h5 h5Var, ArrayList arrayList, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = h5Var;
-        this.c = arrayList;
-        this.d = tLObject;
+    public q6 getSubtitleTextView() {
+        return this.d;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new g5(this.b, this.c, this.d, 1));
-                break;
-            default:
-                h5 h5Var = this.b;
-                int i10 = h5Var.e;
-                HashSet hashSet = new HashSet(this.c);
-                TLObject tLObject = this.d;
-                if (tLObject instanceof Vector) {
-                    ArrayList arrayList = ((Vector) tLObject).objects;
-                    MessagesStorage.getInstance(i10).getStorageQueue().postRunnable(new e5(h5Var, arrayList, 1));
-                    h5Var.d(arrayList);
-                    for (int i11 = 0; i11 < arrayList.size(); i11++) {
-                        if (arrayList.get(i11) instanceof TLRPC.Document) {
-                            hashSet.remove(Long.valueOf(((TLRPC.Document) arrayList.get(i11)).id));
-                        }
-                    }
-                    if (!hashSet.isEmpty()) {
-                        ArrayList<Long> arrayList2 = new ArrayList<>(hashSet);
-                        TLRPC.TL_messages_getCustomEmojiDocuments tL_messages_getCustomEmojiDocuments = new TLRPC.TL_messages_getCustomEmojiDocuments();
-                        tL_messages_getCustomEmojiDocuments.document_id = arrayList2;
-                        ConnectionsManager.getInstance(i10).sendRequest(tL_messages_getCustomEmojiDocuments, new org.telegram.ui.no(3, h5Var, arrayList2));
-                        break;
-                    }
-                }
-                break;
+    public q6 getTitle() {
+        return this.c;
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        q6 q6Var = this.d;
+        q6 q6Var2 = this.c;
+        int y3 = org.telegram.messenger.wl.y(42.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2) + (this.a ? AndroidUtilities.statusBarHeight : 0);
+        int i14 = this.b;
+        if (q6Var.getVisibility() != 8) {
+            q6Var2.layout(i14, (AndroidUtilities.dp(1.0f) + y3) - q6Var2.getPaddingTop(), q6Var2.getMeasuredWidth() + i14, q6Var2.getPaddingBottom() + ((AndroidUtilities.dp(1.3f) + (q6Var2.getTextHeight() + y3)) - q6Var2.getPaddingTop()));
+        } else {
+            q6Var2.layout(i14, (AndroidUtilities.dp(11.0f) + y3) - q6Var2.getPaddingTop(), q6Var2.getMeasuredWidth() + i14, q6Var2.getPaddingBottom() + ((AndroidUtilities.dp(11.0f) + (q6Var2.getTextHeight() + y3)) - q6Var2.getPaddingTop()));
         }
+        q6Var.layout(i14, AndroidUtilities.dp(20.0f) + y3, q6Var.getMeasuredWidth() + i14, AndroidUtilities.dp(24.0f) + q6Var.getTextHeight() + y3);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        q6 q6Var = this.c;
+        int paddingRight = q6Var.getPaddingRight() + size;
+        int dp = paddingRight - AndroidUtilities.dp(16.0f);
+        q6Var.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(q6Var.getPaddingRight() + AndroidUtilities.dp(32.0f), TLObject.FLAG_31));
+        this.d.measure(View.MeasureSpec.makeMeasureSpec(dp, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_31));
+        setMeasuredDimension(paddingRight, View.MeasureSpec.getSize(i11));
     }
 }

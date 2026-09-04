@@ -1,19 +1,54 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import org.telegram.ui.ui1;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class w extends AnimatorListenerAdapter {
-    public final /* synthetic */ t a;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class w implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ float d;
+    public final /* synthetic */ Object e;
 
-    public w(t tVar) {
-        this.a = tVar;
+    public /* synthetic */ w(Object obj, float f7, float f10, float f11, int i10) {
+        this.a = i10;
+        this.e = obj;
+        this.b = f7;
+        this.c = f10;
+        this.d = f11;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.a.B = false;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                l0 l0Var = (l0) this.e;
+                l0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                l0Var.y0 = com.google.android.gms.internal.vision.e2.z(1.0f, floatValue, 1.0f, this.b * floatValue);
+                l0Var.r0 = this.c * floatValue;
+                l0Var.s0 = this.d * floatValue;
+                l0Var.invalidate();
+                break;
+            case 1:
+                ui1 ui1Var = (ui1) this.e;
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                ui1Var.f1 = com.google.android.gms.internal.vision.e2.z(1.0f, floatValue2, 1.0f, this.b * floatValue2);
+                ui1Var.Y0 = this.c * floatValue2;
+                ui1Var.Z0 = this.d * floatValue2;
+                ui1Var.s.invalidate();
+                break;
+            default:
+                tg.e eVar = (tg.e) this.e;
+                eVar.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                tg.a aVar = eVar.b;
+                aVar.d = this.b * floatValue3;
+                aVar.e = this.c * floatValue3;
+                aVar.g = floatValue3 * this.d;
+                break;
+        }
     }
 }

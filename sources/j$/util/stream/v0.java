@@ -19,7 +19,7 @@ public final class v0 extends d5 {
     }
 
     @Override // j$.util.stream.d5, j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.a.o(-1L);
     }
 
@@ -28,9 +28,9 @@ public final class v0 extends d5 {
         IntStream intStream = (IntStream) ((k0) this.d.t).apply(i10);
         if (intStream != null) {
             try {
-                boolean z4 = this.b;
+                boolean z10 = this.b;
                 j$.util.i0 i0Var = this.c;
-                if (!z4) {
+                if (!z10) {
                     intStream.sequential().forEach(i0Var);
                 } else {
                     j$.util.x0 spliterator = intStream.sequential().spliterator();

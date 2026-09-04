@@ -5,11 +5,11 @@ import android.view.ViewGroup;
 import com.google.android.gms.common.api.internal.p0;
 import java.util.ArrayList;
 import java.util.List;
-import k7.j6;
 import org.telegram.ui.Cells.a0;
-import org.telegram.ui.Cells.k7;
+import org.telegram.ui.Cells.n7;
+import w7.k6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class j implements Runnable {
     public final /* synthetic */ int a;
@@ -45,6 +45,9 @@ public final class j implements Runnable {
                 ((p0) this.c).g(this.b);
                 break;
             case 2:
+                ((g6.v) this.c).W.b(this.b);
+                break;
+            case 3:
                 a0 a0Var = (a0) this.c;
                 if (a0Var.a && a0Var.getParent() != null && this.b == a0Var.c) {
                     a0Var.a = false;
@@ -60,26 +63,23 @@ public final class j implements Runnable {
                     }
                 }
                 break;
-            case 3:
-                k7 k7Var = (k7) this.c;
-                if (k7Var.a && k7Var.getParent() != null && this.b == k7Var.c) {
-                    k7Var.a = false;
+            default:
+                n7 n7Var = (n7) this.c;
+                if (n7Var.a && n7Var.getParent() != null && this.b == n7Var.c) {
+                    n7Var.a = false;
                     try {
-                        k7Var.performHapticFeedback(0);
+                        n7Var.performHapticFeedback(0);
                     } catch (Exception unused2) {
                     }
-                    int i11 = k7Var.h;
+                    int i11 = n7Var.h;
                     if (i11 >= 0) {
-                        k7Var.x.a(((CharSequence) k7Var.B.get(i11)).toString(), true);
+                        n7Var.x.a(((CharSequence) n7Var.E.get(i11)).toString(), true);
                     }
                     MotionEvent obtain2 = MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0);
-                    k7Var.onTouchEvent(obtain2);
+                    n7Var.onTouchEvent(obtain2);
                     obtain2.recycle();
                     break;
                 }
-                break;
-            default:
-                ((u5.w) this.c).T.b(this.b);
                 break;
         }
     }
@@ -92,7 +92,7 @@ public final class j implements Runnable {
 
     public j(List list, int i10, Throwable th2) {
         this.a = 0;
-        j6.a(list, "initCallbacks cannot be null");
+        k6.a(list, "initCallbacks cannot be null");
         this.c = new ArrayList(list);
         this.b = i10;
     }

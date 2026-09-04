@@ -1,38 +1,29 @@
 package org.telegram.ui;
 
-import j$.util.function.Function$-CC;
-import java.util.function.Function;
-import org.telegram.tgnet.TLRPC;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p8 implements Function {
+public final /* synthetic */ class p8 implements DialogInterface.OnCancelListener {
     public final /* synthetic */ int a;
+    public final /* synthetic */ k9 b;
+    public final /* synthetic */ int c;
 
-    public /* synthetic */ p8(int i10) {
-        this.a = i10;
+    public /* synthetic */ p8(k9 k9Var, int i10, int i11) {
+        this.a = i11;
+        this.b = k9Var;
+        this.c = i10;
     }
 
-    public /* synthetic */ Function andThen(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$andThen(this, function);
-    }
-
-    @Override // java.util.function.Function
-    public final Object apply(Object obj) {
+    @Override // android.content.DialogInterface.OnCancelListener
+    public final void onCancel(DialogInterface dialogInterface) {
         switch (this.a) {
-            case 3:
-                TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) obj;
-                if (channelParticipant != null) {
-                    break;
-                }
+            case 0:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
+                break;
+            default:
+                this.b.getConnectionsManager().cancelRequest(this.c, true);
                 break;
         }
-        return ((ut) obj).a;
-    }
-
-    public /* synthetic */ Function compose(Function function) {
-        int i10 = this.a;
-        return Function$-CC.$default$compose(this, function);
     }
 }

@@ -1,43 +1,20 @@
 package mf;
 
-import org.telegram.messenger.video.AudioConversions;
+import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends a {
-    public final long b;
-    public int c;
+public enum b {
+    c(Charset.forName("ISO-8859-1"), 1),
+    d(Charset.forName("UTF-16"), 2),
+    e(Charset.forName("UTF-16BE"), 2),
+    f(Charset.forName("UTF-8"), 1);
 
-    public b(long j10) {
-        this.b = j10;
-    }
+    public final Charset a;
+    public final int b;
 
-    @Override // mf.a
-    public final short a() {
-        if (!c()) {
-            throw new RuntimeException("Audio input has no remaining value.");
-        }
-        this.c--;
-        return (short) 0;
-    }
-
-    @Override // mf.a
-    public final int b() {
-        return -1;
-    }
-
-    @Override // mf.a
-    public final boolean c() {
-        return this.c > 0;
-    }
-
-    @Override // mf.a
-    public final void d() {
-        this.c = 0;
-    }
-
-    @Override // mf.a
-    public final void e(int i10, int i11) {
-        this.c = AudioConversions.usToShorts(this.b, i10, i11);
+    b(Charset charset, int i10) {
+        this.a = charset;
+        this.b = i10;
     }
 }

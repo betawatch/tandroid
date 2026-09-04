@@ -5,25 +5,25 @@ import android.content.Context;
 import android.os.Handler;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class ProcessLifecycleInitializer implements i2.b {
-    @Override // i2.b
+public final class ProcessLifecycleInitializer implements v4.b {
+    @Override // v4.b
     public final List a() {
-        return tc.o.a;
+        return hd.o.a;
     }
 
-    @Override // i2.b
+    @Override // v4.b
     public final Object b(Context context) {
-        kotlin.jvm.internal.j.e(context, "context");
-        i2.a c3 = i2.a.c(context);
-        kotlin.jvm.internal.j.d(c3, "getInstance(context)");
-        if (!c3.b.contains(ProcessLifecycleInitializer.class)) {
+        kotlin.jvm.internal.i.e(context, "context");
+        v4.a c10 = v4.a.c(context);
+        kotlin.jvm.internal.i.d(c10, "getInstance(context)");
+        if (!c10.b.contains(ProcessLifecycleInitializer.class)) {
             throw new IllegalStateException("ProcessLifecycleInitializer cannot be initialized lazily.\n               Please ensure that you have:\n               <meta-data\n                   android:name='androidx.lifecycle.ProcessLifecycleInitializer'\n                   android:value='androidx.startup' />\n               under InitializationProvider in your AndroidManifest.xml");
         }
         if (!q.a.getAndSet(true)) {
             Context applicationContext = context.getApplicationContext();
-            kotlin.jvm.internal.j.c(applicationContext, "null cannot be cast to non-null type android.app.Application");
+            kotlin.jvm.internal.i.c(applicationContext, "null cannot be cast to non-null type android.app.Application");
             ((Application) applicationContext).registerActivityLifecycleCallbacks(new p());
         }
         e0 e0Var = e0.r;
@@ -31,7 +31,7 @@ public final class ProcessLifecycleInitializer implements i2.b {
         e0Var.e = new Handler();
         e0Var.f.e(m.ON_CREATE);
         Context applicationContext2 = context.getApplicationContext();
-        kotlin.jvm.internal.j.c(applicationContext2, "null cannot be cast to non-null type android.app.Application");
+        kotlin.jvm.internal.i.c(applicationContext2, "null cannot be cast to non-null type android.app.Application");
         ((Application) applicationContext2).registerActivityLifecycleCallbacks(new d0(e0Var));
         return e0Var;
     }

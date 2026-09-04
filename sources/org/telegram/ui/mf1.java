@@ -1,20 +1,25 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.content.Context;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class mf1 extends f2.z0 {
-    public final /* synthetic */ int a;
+public final class mf1 extends org.telegram.ui.Components.b70 {
+    public final /* synthetic */ long A0;
+    public final /* synthetic */ of1 B0;
 
-    @Override // f2.z0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        int i12 = this.a;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mf1(of1 of1Var, Context context, int i10, a0.i iVar, long j3, org.telegram.ui.ActionBar.n2 n2Var, long j10) {
+        super(context, i10, iVar, j3, n2Var, null);
+        this.B0 = of1Var;
+        this.A0 = j10;
     }
 
-    private final void c(RecyclerView recyclerView, int i10, int i11) {
-    }
-
-    private final void d(RecyclerView recyclerView, int i10, int i11) {
+    @Override // org.telegram.ui.Components.b70
+    public final boolean X() {
+        TLRPC.Chat chat = this.B0.b.getMessagesController().getChat(Long.valueOf(this.A0));
+        return chat != null && ChatObject.canUserDoAdminAction(chat, 3);
     }
 }

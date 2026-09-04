@@ -10,7 +10,7 @@ import ru.noties.jlatexmath.awt.geom.Line2D;
 import ru.noties.jlatexmath.awt.geom.Rectangle2D;
 import ru.noties.jlatexmath.awt.geom.RoundRectangle2D;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class AndroidGraphics2D implements Graphics2D {
     private Canvas canvas;
@@ -32,9 +32,9 @@ public class AndroidGraphics2D implements Graphics2D {
     public void draw(Rectangle2D.Float r92) {
         this.paint.setStyle(Paint.Style.STROKE);
         Canvas canvas = this.canvas;
-        float f10 = r92.x;
-        float f11 = r92.y;
-        canvas.drawRect(f10, f11, f10 + r92.w, f11 + r92.h, this.paint);
+        float f7 = r92.x;
+        float f10 = r92.y;
+        canvas.drawRect(f7, f10, f7 + r92.w, f10 + r92.h, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
@@ -58,9 +58,9 @@ public class AndroidGraphics2D implements Graphics2D {
     public void fill(Rectangle2D.Float r92) {
         this.paint.setStyle(Paint.Style.FILL);
         Canvas canvas = this.canvas;
-        float f10 = r92.x;
-        float f11 = r92.y;
-        canvas.drawRect(f10, f11, f10 + r92.w, f11 + r92.h, this.paint);
+        float f7 = r92.x;
+        float f10 = r92.y;
+        canvas.drawRect(f7, f10, f7 + r92.w, f10 + r92.h, this.paint);
     }
 
     @Override // ru.noties.jlatexmath.awt.Graphics2D
@@ -174,9 +174,9 @@ public class AndroidGraphics2D implements Graphics2D {
     public void draw(RoundRectangle2D.Float r62) {
         this.paint.setStyle(Paint.Style.STROKE);
         RectF rectF = this.rectF;
-        float f10 = r62.x;
-        float f11 = r62.y;
-        rectF.set(f10, f11, r62.width + f10, r62.height + f11);
+        float f7 = r62.x;
+        float f10 = r62.y;
+        rectF.set(f7, f10, r62.width + f7, r62.height + f10);
         this.canvas.drawRoundRect(this.rectF, r62.arcwidth, r62.archeight, this.paint);
     }
 

@@ -1,35 +1,107 @@
 package k9;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class d implements u9.d {
-    public static final d a = new d();
-    public static final u9.c b = u9.c.c("sdkVersion");
-    public static final u9.c c = u9.c.c("gmpAppId");
-    public static final u9.c d = u9.c.c("platform");
-    public static final u9.c e = u9.c.c("installationUuid");
-    public static final u9.c f = u9.c.c("firebaseInstallationId");
-    public static final u9.c g = u9.c.c("appQualitySessionId");
-    public static final u9.c h = u9.c.c("buildVersion");
-    public static final u9.c i = u9.c.c("displayVersion");
-    public static final u9.c j = u9.c.c("session");
-    public static final u9.c k = u9.c.c("ndkPayload");
-    public static final u9.c l = u9.c.c("appExitInfo");
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.os.Bundle;
+import j$.util.DesugarCollections;
+import java.util.HashSet;
+import java.util.Set;
+import q9.r;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        u9.e eVar = (u9.e) obj2;
-        a0 a0Var = (a0) ((e2) obj);
-        eVar.e(b, a0Var.b);
-        eVar.e(c, a0Var.c);
-        eVar.a(d, a0Var.d);
-        eVar.e(e, a0Var.e);
-        eVar.e(f, a0Var.f);
-        eVar.e(g, a0Var.g);
-        eVar.e(h, a0Var.h);
-        eVar.e(i, a0Var.i);
-        eVar.e(j, a0Var.j);
-        eVar.e(k, a0Var.k);
-        eVar.e(l, a0Var.l);
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final /* synthetic */ class d implements pa.b {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
+
+    public /* synthetic */ d(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.c = obj;
+        this.b = obj2;
+    }
+
+    @Override // pa.b
+    public final Object get() {
+        ApplicationInfo applicationInfo;
+        Bundle bundle;
+        switch (this.a) {
+            case 0:
+                h hVar = (h) this.c;
+                Context context = (Context) this.b;
+                String d = hVar.d();
+                ua.a aVar = new ua.a();
+                int i10 = Build.VERSION.SDK_INT;
+                if (i10 >= 24) {
+                    context = i10 >= 24 ? f0.b.a(context) : null;
+                }
+                SharedPreferences sharedPreferences = context.getSharedPreferences("com.google.firebase.common.prefs:" + d, 0);
+                boolean z10 = true;
+                if (sharedPreferences.contains("firebase_data_collection_default_enabled")) {
+                    z10 = sharedPreferences.getBoolean("firebase_data_collection_default_enabled", true);
+                } else {
+                    try {
+                        PackageManager packageManager = context.getPackageManager();
+                        if (packageManager != null && (applicationInfo = packageManager.getApplicationInfo(context.getPackageName(), 128)) != null && (bundle = applicationInfo.metaData) != null && bundle.containsKey("firebase_data_collection_default_enabled")) {
+                            z10 = applicationInfo.metaData.getBoolean("firebase_data_collection_default_enabled");
+                        }
+                    } catch (PackageManager.NameNotFoundException unused) {
+                    }
+                }
+                aVar.a = z10;
+                return aVar;
+            case 1:
+                return new na.g((Context) this.b, (String) this.c);
+            default:
+                q9.g gVar = (q9.g) this.c;
+                q9.a aVar2 = (q9.a) this.b;
+                q9.d dVar = aVar2.f;
+                cf.c cVar = new cf.c();
+                HashSet hashSet = new HashSet();
+                HashSet hashSet2 = new HashSet();
+                HashSet hashSet3 = new HashSet();
+                HashSet hashSet4 = new HashSet();
+                HashSet hashSet5 = new HashSet();
+                Set<q9.j> set = aVar2.c;
+                Set set2 = aVar2.g;
+                for (q9.j jVar : set) {
+                    int i11 = jVar.c;
+                    int i12 = jVar.b;
+                    boolean z11 = i11 == 0;
+                    r rVar = jVar.a;
+                    if (z11) {
+                        if (i12 == 2) {
+                            hashSet4.add(rVar);
+                        } else {
+                            hashSet.add(rVar);
+                        }
+                    } else if (i11 == 2) {
+                        hashSet3.add(rVar);
+                    } else if (i12 == 2) {
+                        hashSet5.add(rVar);
+                    } else {
+                        hashSet2.add(rVar);
+                    }
+                }
+                if (!set2.isEmpty()) {
+                    hashSet.add(r.a(ma.a.class));
+                }
+                cVar.a = DesugarCollections.unmodifiableSet(hashSet);
+                cVar.b = DesugarCollections.unmodifiableSet(hashSet2);
+                cVar.c = DesugarCollections.unmodifiableSet(hashSet3);
+                cVar.d = DesugarCollections.unmodifiableSet(hashSet4);
+                DesugarCollections.unmodifiableSet(hashSet5);
+                cVar.e = gVar;
+                return dVar.D(cVar);
+        }
+    }
+
+    public /* synthetic */ d(Context context, String str) {
+        this.a = 1;
+        this.b = context;
+        this.c = str;
     }
 }

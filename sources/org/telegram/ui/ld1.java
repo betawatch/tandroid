@@ -1,164 +1,145 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import java.util.ArrayList;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Shader;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.ColorDrawable;
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.GradientDrawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ld1 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class ld1 extends org.telegram.ui.Components.x9 {
+    public Drawable G;
+    public final boolean H;
+    public float I;
+    public float J;
+    public final /* synthetic */ wd1 K;
 
-    public /* synthetic */ ld1(Object obj, Object obj2, Object obj3, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.d = obj2;
-        this.c = obj3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ld1(wd1 wd1Var, Activity activity) {
+        super(activity);
+        this.K = wd1Var;
+        this.H = true;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        TLRPC.Message message;
-        int i10;
-        int i11 = this.a;
-        pn pnVar = null;
-        boolean z4 = false;
-        Object obj = this.c;
-        Object obj2 = this.d;
-        Object obj3 = this.b;
-        switch (i11) {
-            case 0:
-                od1 od1Var = (od1) obj3;
-                String str = (String) obj2;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                od1Var.y = 0;
-                String str2 = od1Var.B;
-                if (str2 != null && str2.equals(str)) {
-                    if (tL_error == null || (!"THEME_SLUG_INVALID".equals(tL_error.text) && !"THEME_SLUG_OCCUPIED".equals(tL_error.text))) {
-                        od1Var.a0(org.telegram.ui.ActionBar.j6.w6, LocaleController.formatString("SetUrlAvailable", R.string.SetUrlAvailable, str));
-                        break;
-                    } else {
-                        od1Var.a0(org.telegram.ui.ActionBar.j6.p7, LocaleController.getString(R.string.SetUrlInUse));
-                        break;
-                    }
-                }
-                break;
-            case 1:
-                od1.W((od1) obj3, (TLRPC.TL_error) obj, (TL_account.updateTheme) obj2);
-                break;
-            case 2:
-                yd1 yd1Var = (yd1) obj3;
-                zn znVar = (zn) obj2;
-                MessageObject messageObject = yd1Var.D;
-                int i12 = ((TLRPC.TodoItem) obj).id;
-                if (messageObject != null && (message = messageObject.messageOwner) != null && (message.media instanceof TLRPC.TL_messageMediaToDo)) {
-                    messageObject.getDialogId();
-                    pnVar = new pn();
-                    pnVar.a = messageObject;
-                    pnVar.b = -1;
-                    pnVar.c = -1;
-                    pnVar.g = true;
-                    pnVar.d = i12;
-                    pnVar.e();
-                }
-                znVar.Cb(messageObject, pnVar);
-                yd1Var.c(false);
-                break;
-            case 3:
-                ge1 ge1Var = (ge1) obj3;
-                ArrayList arrayList = ge1Var.h;
-                arrayList.clear();
-                ArrayList arrayList2 = ge1Var.f;
-                arrayList2.clear();
-                arrayList.addAll((ArrayList) obj2);
-                arrayList2.addAll(((TLRPC.TL_messages_inactiveChats) obj).chats);
-                ge1Var.d.l();
-                if (ge1Var.a.getMeasuredHeight() > 0) {
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-                    ge1Var.y = ofFloat;
-                    ofFloat.addUpdateListener(new o11(ge1Var, 15));
-                    ge1Var.y.setDuration(100L);
-                    ge1Var.y.start();
+    @Override // android.view.View
+    public Drawable getBackground() {
+        return this.G;
+    }
+
+    @Override // org.telegram.ui.Components.x9, android.view.View
+    public final void onDraw(Canvas canvas) {
+        this.I = 0.0f;
+        this.J = 0.0f;
+        boolean z10 = this.H;
+        wd1 wd1Var = this.K;
+        if (z10) {
+            Drawable drawable = this.G;
+            if ((drawable instanceof ColorDrawable) || (drawable instanceof GradientDrawable) || (drawable instanceof org.telegram.ui.Components.dc0)) {
+                drawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+                this.G.draw(canvas);
+            } else if (drawable instanceof BitmapDrawable) {
+                if (((BitmapDrawable) drawable).getTileModeX() == Shader.TileMode.REPEAT) {
+                    canvas.save();
+                    float f7 = 2.0f / AndroidUtilities.density;
+                    canvas.scale(f7, f7);
+                    this.G.setBounds(0, 0, (int) Math.ceil(getMeasuredWidth() / f7), (int) Math.ceil(getMeasuredHeight() / f7));
+                    this.G.draw(canvas);
+                    canvas.restore();
                 } else {
-                    ge1Var.B = 1.0f;
+                    int measuredHeight = getMeasuredHeight();
+                    float max = Math.max(getMeasuredWidth() / this.G.getIntrinsicWidth(), measuredHeight / this.G.getIntrinsicHeight());
+                    int ceil = (int) Math.ceil(this.G.getIntrinsicWidth() * max * wd1Var.y1);
+                    int ceil2 = (int) Math.ceil(this.G.getIntrinsicHeight() * max * wd1Var.y1);
+                    int measuredWidth = (getMeasuredWidth() - ceil) / 2;
+                    int i10 = (measuredHeight - ceil2) / 2;
+                    this.J = i10;
+                    this.G.setBounds(measuredWidth, i10, ceil + measuredWidth, ceil2 + i10);
+                    this.G.draw(canvas);
                 }
-                AndroidUtilities.cancelRunOnUIThread(ge1Var.F);
-                if (ge1Var.C.getVisibility() == 0) {
-                    ge1Var.C.animate().alpha(0.0f).setListener(new ce1(ge1Var, 2)).start();
-                    break;
+            }
+        }
+        if (wd1Var.a2) {
+            if (!wd1Var.c.isFinished() && wd1Var.c.computeScrollOffset()) {
+                if (wd1Var.c.getStartX() < wd1Var.W1 && wd1Var.c.getStartX() > 0) {
+                    wd1Var.X1 = wd1Var.c.getCurrX();
                 }
-                break;
-            case 4:
-                sf1 sf1Var = (sf1) obj3;
-                sf1Var.s.deleteTopics(sf1Var.a, (ArrayList) obj2);
-                ((Runnable) obj).run();
-                break;
-            case 5:
-                of1 of1Var = (of1) obj3;
-                String str3 = (String) obj2;
-                TLObject tLObject = (TLObject) obj;
-                ArrayList arrayList3 = of1Var.a0;
-                if (str3.equals(of1Var.V)) {
-                    int i13 = of1Var.h0;
-                    of1Var.m0 = false;
-                    of1Var.i0 = false;
-                    if (tLObject instanceof TLRPC.messages_Messages) {
-                        TLRPC.messages_Messages messages_messages = (TLRPC.messages_Messages) tLObject;
-                        for (int i14 = 0; i14 < messages_messages.messages.size(); i14++) {
-                            TLRPC.Message message2 = messages_messages.messages.get(i14);
-                            i10 = ((org.telegram.ui.ActionBar.p2) of1Var.q0).currentAccount;
-                            MessageObject messageObject2 = new MessageObject(i10, message2, false, false);
-                            messageObject2.setQuery(str3);
-                            arrayList3.add(messageObject2);
-                        }
-                        of1Var.L();
-                        if (arrayList3.size() < messages_messages.count && !messages_messages.messages.isEmpty()) {
-                            z4 = true;
-                        }
-                        of1Var.j0 = z4;
-                    } else {
-                        of1Var.j0 = false;
-                    }
-                    if (of1Var.h0 == 0) {
-                        of1Var.k0.e(of1Var.i0, true);
-                    }
-                    of1Var.l0.b(i13);
-                    break;
-                }
-                break;
-            default:
-                lh1 lh1Var = (lh1) obj3;
-                ArrayList arrayList4 = (ArrayList) obj2;
-                ArrayList arrayList5 = (ArrayList) obj;
-                tf.j1 j1Var = lh1Var.f;
-                if (lh1Var.n) {
-                    lh1Var.h = null;
-                    lh1Var.d = arrayList4;
-                    lh1Var.e = arrayList5;
-                    j1Var.f(arrayList4, null);
-                    if (lh1Var.n && !j1Var.e()) {
-                        lh1Var.v.f.e(false, true);
-                    }
-                    lh1Var.l();
-                    break;
-                }
-                break;
+                wd1Var.V0();
+                invalidate();
+            }
+            canvas.save();
+            float f10 = -wd1Var.X1;
+            this.I = f10;
+            canvas.translate(f10, 0.0f);
+            super.onDraw(canvas);
+            canvas.restore();
+        } else {
+            super.onDraw(canvas);
+        }
+        if (wd1Var.M1) {
+            float f11 = wd1Var.n1;
+            if (f11 > 0.0f) {
+                canvas.drawColor(i0.a.k(-16777216, (int) (f11 * 255.0f * wd1Var.o1)));
+            }
         }
     }
 
-    public /* synthetic */ ld1(od1 od1Var, TLRPC.TL_error tL_error, TL_account.updateTheme updatetheme) {
-        this.a = 1;
-        this.b = od1Var;
-        this.c = tL_error;
-        this.d = updatetheme;
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        wd1 wd1Var = this.K;
+        org.telegram.ui.Components.l81 l81Var = wd1Var.v1;
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight = getMeasuredHeight();
+        l81Var.getClass();
+        float a2 = org.telegram.ui.Components.l81.a(measuredWidth, measuredHeight);
+        wd1Var.y1 = a2;
+        if (wd1Var.E1) {
+            setScaleX(a2);
+            setScaleY(wd1Var.y1);
+        }
+        if (wd1Var.b == 2) {
+            getMeasuredWidth();
+            getMeasuredHeight();
+        }
+        int measuredWidth2 = getMeasuredWidth() + (getMeasuredHeight() << 16);
+        if (wd1Var.b2 != measuredWidth2) {
+            wd1Var.a2 = false;
+            if (wd1Var.C1 != null) {
+                int measuredHeight2 = (int) ((getMeasuredHeight() / wd1Var.C1.getHeight()) * r1.getWidth());
+                if (measuredHeight2 - getMeasuredWidth() > 100) {
+                    wd1Var.a2 = true;
+                    wd1Var.Z1 = (int) ((wd1Var.C1.getHeight() / getMeasuredHeight()) * getMeasuredWidth());
+                    float measuredWidth3 = (measuredHeight2 - getMeasuredWidth()) / 2.0f;
+                    wd1Var.X1 = measuredWidth3;
+                    wd1Var.Y1 = measuredWidth3;
+                    wd1Var.W1 = measuredWidth3 * 2.0f;
+                    s(measuredHeight2, getMeasuredHeight());
+                    this.v = true;
+                    wd1Var.V0();
+                }
+            }
+            if (!wd1Var.a2) {
+                s(-1, -1);
+                this.v = false;
+            }
+        }
+        wd1Var.b2 = measuredWidth2;
+    }
+
+    @Override // android.view.View
+    public void setBackground(Drawable drawable) {
+        this.G = drawable;
+        if (drawable != null) {
+            drawable.setCallback(this);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.x9, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return this.G == drawable || super.verifyDrawable(drawable);
     }
 }

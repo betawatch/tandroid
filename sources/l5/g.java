@@ -1,65 +1,17 @@
 package l5;
 
-import android.net.Uri;
-import android.os.Parcel;
-import android.os.Parcelable;
-import b6.m;
-import j7.f5;
-import java.util.Arrays;
-import l4.j;
-import q6.u;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g extends c6.a {
-    public static final Parcelable.Creator<g> CREATOR = new j(7);
-    public final String a;
-    public final String b;
-    public final String c;
-    public final String d;
-    public final Uri e;
-    public final String f;
-    public final String h;
-    public final String n;
-    public final u r;
+public final class g implements ia.d {
+    public static final g a = new g();
+    public static final ia.c b = new ia.c("startMs", i2.g.n(i2.g.m(la.e.class, new la.a(1))));
+    public static final ia.c c = new ia.c("endMs", i2.g.n(i2.g.m(la.e.class, new la.a(2))));
 
-    public g(String str, String str2, String str3, String str4, Uri uri, String str5, String str6, String str7, u uVar) {
-        m.h(str);
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-        this.d = str4;
-        this.e = uri;
-        this.f = str5;
-        this.h = str6;
-        this.n = str7;
-        this.r = uVar;
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof g)) {
-            return false;
-        }
-        g gVar = (g) obj;
-        return m.l(this.a, gVar.a) && m.l(this.b, gVar.b) && m.l(this.c, gVar.c) && m.l(this.d, gVar.d) && m.l(this.e, gVar.e) && m.l(this.f, gVar.f) && m.l(this.h, gVar.h) && m.l(this.n, gVar.n) && m.l(this.r, gVar.r);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, this.b, this.c, this.d, this.e, this.f, this.h, this.n, this.r});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 1, this.a);
-        f5.l(parcel, 2, this.b);
-        f5.l(parcel, 3, this.c);
-        f5.l(parcel, 4, this.d);
-        f5.k(parcel, 5, this.e, i10);
-        f5.l(parcel, 6, this.f);
-        f5.l(parcel, 7, this.h);
-        f5.l(parcel, 8, this.n);
-        f5.k(parcel, 9, this.r, i10);
-        f5.r(parcel, q10);
+    @Override // ia.a
+    public final void a(Object obj, Object obj2) {
+        o5.g gVar = (o5.g) obj;
+        ia.e eVar = (ia.e) obj2;
+        eVar.f(b, gVar.a);
+        eVar.f(c, gVar.b);
     }
 }

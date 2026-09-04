@@ -1,117 +1,50 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class np0 extends FrameLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lq0 b;
+public final class np0 implements hg.g0 {
+    public final /* synthetic */ hq0 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ np0(lq0 lq0Var, Context context, int i10) {
-        super(context);
-        this.a = i10;
-        this.b = lq0Var;
+    public np0(hq0 hq0Var) {
+        this.a = hq0Var;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                lq0 lq0Var = this.b;
-                lq0Var.U0.setBounds(0, (int) lq0Var.r0, getMeasuredWidth(), getMeasuredHeight());
-                lq0Var.U0.draw(canvas);
-                canvas.save();
-                canvas.clipRect(0.0f, lq0Var.r0, getMeasuredWidth(), getMeasuredHeight());
-                super.dispatchDraw(canvas);
-                canvas.restore();
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
+    @Override // hg.g0
+    public final void b(a0.i iVar, ArrayList arrayList) {
+        int i10;
+        int i11;
+        int i12;
+        int i13 = 0;
+        while (i13 < arrayList.size()) {
+            TLObject tLObject = ((hg.h0) arrayList.get(i13)).a;
+            if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
+                arrayList.remove(i13);
+                i13--;
+            }
+            i13++;
         }
-    }
-
-    @Override // android.view.View
-    public void onDraw(Canvas canvas) {
-        switch (this.a) {
-            case 0:
-                lq0 lq0Var = this.b;
-                np0 np0Var = lq0Var.c;
-                float f10 = lq0Var.s0;
-                if (f10 != 0.0f && f10 != np0Var.getTop() + lq0Var.s0) {
-                    ValueAnimator valueAnimator = lq0Var.t0;
-                    if (valueAnimator != null) {
-                        valueAnimator.cancel();
-                    }
-                    float top = lq0Var.s0 - (np0Var.getTop() + lq0Var.r0);
-                    lq0Var.r0 = top;
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(top, 0.0f);
-                    lq0Var.t0 = ofFloat;
-                    ofFloat.addUpdateListener(new j70(this, 17));
-                    lq0Var.t0.setInterpolator(mr.f);
-                    lq0Var.t0.setDuration(200L);
-                    lq0Var.t0.start();
-                    lq0Var.s0 = 0.0f;
-                }
-                lq0Var.P[1].setTranslationY((-(np0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))) + lq0Var.r0 + lq0Var.q0 + ((1.0f - getAlpha()) * (np0Var.getMeasuredHeight() - AndroidUtilities.dp(48.0f))));
-                break;
-            default:
-                super.onDraw(canvas);
-                break;
+        hq0 hq0Var = this.a;
+        hq0Var.E0 = arrayList;
+        for (int i14 = 0; i14 < hq0Var.E0.size(); i14++) {
+            hg.h0 h0Var = (hg.h0) hq0Var.E0.get(i14);
+            TLObject tLObject2 = h0Var.a;
+            if (tLObject2 instanceof TLRPC.User) {
+                i12 = ((org.telegram.ui.ActionBar.f3) hq0Var).currentAccount;
+                MessagesController.getInstance(i12).putUser((TLRPC.User) h0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.Chat) {
+                i11 = ((org.telegram.ui.ActionBar.f3) hq0Var).currentAccount;
+                MessagesController.getInstance(i11).putChat((TLRPC.Chat) h0Var.a, true);
+            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
+                i10 = ((org.telegram.ui.ActionBar.f3) hq0Var).currentAccount;
+                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) h0Var.a, true);
+            }
         }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.a) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", this.b.R.m(), new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
-                break;
-            default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setAlpha(float f10) {
-        switch (this.a) {
-            case 0:
-                super.setAlpha(f10);
-                invalidate();
-                break;
-            default:
-                super.setAlpha(f10);
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
-            case 0:
-                super.setVisibility(i10);
-                if (i10 != 0) {
-                    this.b.P[1].setTranslationY(0.0f);
-                    break;
-                }
-                break;
-            default:
-                super.setVisibility(i10);
-                break;
-        }
+        hq0Var.M.l();
     }
 }

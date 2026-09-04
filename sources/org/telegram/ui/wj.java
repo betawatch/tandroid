@@ -1,25 +1,71 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class wj extends f2.v {
-    public final /* synthetic */ zn c;
+public final class wj extends ki.o {
+    public Runnable W;
+    public final /* synthetic */ co X;
 
-    public wj(zn znVar) {
-        this.c = znVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wj(co coVar, co coVar2, uj ujVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(coVar2, ujVar, f6Var);
+        this.X = coVar;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        int i11;
-        MessageObject messageObject;
-        MessageObject.GroupedMessages X8;
-        zn znVar = this.c;
-        lm lmVar = znVar.x0;
-        int i12 = lmVar.G;
-        return (i10 < i12 || i10 >= lmVar.H || (i11 = i10 - i12) < 0 || i11 >= lmVar.L().size() || (X8 = znVar.X8((messageObject = (MessageObject) znVar.x0.L().get(i11)))) == null) ? MediaDataController.MAX_STYLE_RUNS_COUNT : X8.getPosition(messageObject).spanSize;
+    @Override // s4.j
+    public final void F() {
+        co coVar = this.X;
+        if (coVar.H9 == -1) {
+            coVar.H9 = coVar.getNotificationCenter().setAnimationInProgress(coVar.H9, co.Nc, false);
+        }
+    }
+
+    @Override // ki.o, s4.j
+    public final void N() {
+        super.N();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.W = null;
+        }
+        vj vjVar = new vj(this, 1);
+        this.W = vjVar;
+        AndroidUtilities.runOnUIThread(vjVar);
+    }
+
+    @Override // ki.o
+    public final void W() {
+        co coVar = this.X;
+        coVar.H9 = coVar.getNotificationCenter().setAnimationInProgress(coVar.H9, co.Nc, false);
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+            this.W = null;
+        }
+        if (BuildVars.LOGS_ENABLED) {
+            FileLog.d("chatItemAnimator disable notifications");
+        }
+        org.telegram.ui.ActionBar.v2 v2Var = coVar.Y.getAdjustPanLayoutHelper().h;
+        AndroidUtilities.cancelRunOnUIThread(v2Var);
+        v2Var.run();
+        org.telegram.ui.Components.bf bfVar = coVar.Y.X3;
+        AndroidUtilities.cancelRunOnUIThread(bfVar);
+        bfVar.run();
+    }
+
+    @Override // ki.o, s4.j, s4.m0
+    public final void g() {
+        super.g();
+        Runnable runnable = this.W;
+        if (runnable != null) {
+            AndroidUtilities.cancelRunOnUIThread(runnable);
+        }
+        vj vjVar = new vj(this, 0);
+        this.W = vjVar;
+        AndroidUtilities.runOnUIThread(vjVar);
     }
 }

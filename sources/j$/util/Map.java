@@ -27,7 +27,7 @@ public interface Map<K, V> {
 
     V replace(K k10, V v);
 
-    boolean replace(K k10, V v, V v10);
+    boolean replace(K k10, V v, V v9);
 
     void replaceAll(BiFunction<? super K, ? super V, ? extends V> biFunction);
 
@@ -101,8 +101,8 @@ public interface Map<K, V> {
             for (Map.Entry<K, V> entry : map.entrySet()) {
                 try {
                     biConsumer.accept(entry.getKey(), entry.getValue());
-                } catch (IllegalStateException e) {
-                    throw new ConcurrentModificationException(e);
+                } catch (IllegalStateException e7) {
+                    throw new ConcurrentModificationException(e7);
                 }
             }
         }
@@ -114,11 +114,11 @@ public interface Map<K, V> {
                 try {
                     try {
                         entry.setValue(biFunction.apply(entry.getKey(), entry.getValue()));
-                    } catch (IllegalStateException e) {
-                        throw new ConcurrentModificationException(e);
+                    } catch (IllegalStateException e7) {
+                        throw new ConcurrentModificationException(e7);
                     }
-                } catch (IllegalStateException e6) {
-                    throw new ConcurrentModificationException(e6);
+                } catch (IllegalStateException e10) {
+                    throw new ConcurrentModificationException(e10);
                 }
             }
         }

@@ -1,74 +1,93 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import org.telegram.tgnet.ConnectionsManager;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hp implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ sp b;
-    public final /* synthetic */ org.telegram.ui.ActionBar.d2[] c;
-    public final /* synthetic */ int d;
+public final class hp extends org.telegram.ui.Components.k80 {
+    public final /* synthetic */ Context w;
+    public final /* synthetic */ lp x;
 
-    public /* synthetic */ hp(sp spVar, org.telegram.ui.ActionBar.d2[] d2VarArr, int i10, int i11) {
-        this.a = i11;
-        this.b = spVar;
-        this.c = d2VarArr;
-        this.d = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hp(lp lpVar, Context context, TLRPC.Chat chat, Context context2) {
+        super(context, chat);
+        this.x = lpVar;
+        this.w = context2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.ActionBar.d2[] d2VarArr = this.c;
-                org.telegram.ui.ActionBar.d2 d2Var = d2VarArr[0];
-                if (d2Var != null) {
-                    final int i10 = 1;
-                    final sp spVar = this.b;
-                    final int i11 = this.d;
-                    d2Var.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.ip
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i10) {
-                                case 0:
-                                    ConnectionsManager.getInstance(spVar.currentAccount).cancelRequest(i11, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(spVar.currentAccount).cancelRequest(i11, true);
-                                    break;
-                            }
-                        }
-                    });
-                    spVar.showDialog(d2VarArr[0]);
-                    break;
-                }
-                break;
-            default:
-                org.telegram.ui.ActionBar.d2[] d2VarArr2 = this.c;
-                org.telegram.ui.ActionBar.d2 d2Var2 = d2VarArr2[0];
-                if (d2Var2 != null) {
-                    final int i12 = 0;
-                    final sp spVar2 = this.b;
-                    final int i13 = this.d;
-                    d2Var2.setOnCancelListener(new DialogInterface.OnCancelListener() { // from class: org.telegram.ui.ip
-                        @Override // android.content.DialogInterface.OnCancelListener
-                        public final void onCancel(DialogInterface dialogInterface) {
-                            switch (i12) {
-                                case 0:
-                                    ConnectionsManager.getInstance(spVar2.currentAccount).cancelRequest(i13, true);
-                                    break;
-                                default:
-                                    ConnectionsManager.getInstance(spVar2.currentAccount).cancelRequest(i13, true);
-                                    break;
-                            }
-                        }
-                    });
-                    spVar2.showDialog(d2VarArr2[0]);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.k80
+    public final boolean a(final boolean z10, org.telegram.ui.Components.i80 i80Var) {
+        TLRPC.ChatFull chatFull;
+        int i10;
+        org.telegram.ui.ActionBar.f6 f6Var;
+        lp lpVar = this.x;
+        if (!lpVar.V || (chatFull = lpVar.Y) == null || (i10 = chatFull.invitesCount) == 0) {
+            return true;
         }
+        String str = lpVar.a0 ? z10 ? "ApproveNewMembersEnableForLinksChannel" : "ApproveNewMembersDisableForLinksChannel" : z10 ? "ApproveNewMembersEnableForLinks" : "ApproveNewMembersDisableForLinks";
+        Context context = this.w;
+        f6Var = ((org.telegram.ui.ActionBar.n2) lpVar).resourceProvider;
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, f6Var);
+        alertDialog$Builder.a.R = LocaleController.getString(R.string.ApproveNewMembersApplyToLinksTitle);
+        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(LocaleController.formatPluralString(str, i10, new Object[0]));
+        final int i11 = 0;
+        alertDialog$Builder.k(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksApply), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.gp
+            public final /* synthetic */ hp b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.ActionBar.a2
+            public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i12) {
+                switch (i11) {
+                    case 0:
+                        boolean z11 = z10;
+                        hp hpVar = this.b;
+                        hpVar.setJoinRequest(z11);
+                        hpVar.x.W = true;
+                        break;
+                    default:
+                        boolean z12 = z10;
+                        hp hpVar2 = this.b;
+                        hpVar2.setJoinRequest(z12);
+                        hpVar2.x.W = false;
+                        break;
+                }
+            }
+        });
+        final int i12 = 1;
+        alertDialog$Builder.h(LocaleController.getString(R.string.ApproveNewMembersApplyToLinksDontApply), new org.telegram.ui.ActionBar.a2(this) { // from class: org.telegram.ui.gp
+            public final /* synthetic */ hp b;
+
+            {
+                this.b = this;
+            }
+
+            @Override // org.telegram.ui.ActionBar.a2
+            public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i122) {
+                switch (i12) {
+                    case 0:
+                        boolean z11 = z10;
+                        hp hpVar = this.b;
+                        hpVar.setJoinRequest(z11);
+                        hpVar.x.W = true;
+                        break;
+                    default:
+                        boolean z12 = z10;
+                        hp hpVar2 = this.b;
+                        hpVar2.setJoinRequest(z12);
+                        hpVar2.x.W = false;
+                        break;
+                }
+            }
+        });
+        lpVar.showDialog(alertDialog$Builder.a);
+        return false;
     }
 }

@@ -14,14 +14,14 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class mz extends FrameLayout {
     public static final /* synthetic */ int h = 0;
     public final org.telegram.ui.ActionBar.f6 a;
     public final TextView b;
     public final View c;
-    public final jj0 d;
+    public final aj0 d;
     public boolean e;
     public int f;
 
@@ -29,7 +29,7 @@ public final class mz extends FrameLayout {
         super(context);
         this.a = f6Var;
         View radialProgressView = new RadialProgressView(context, null);
-        addView(radialProgressView, k7.b6.c(-2.0f, -2));
+        addView(radialProgressView, w7.x5.c(-2.0f, -2));
         this.c = radialProgressView;
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
@@ -37,32 +37,32 @@ public final class mz extends FrameLayout {
         linearLayout.setClipChildren(false);
         linearLayout.setClipToPadding(false);
         linearLayout.setOrientation(1);
-        jj0 jj0Var = new jj0(context);
-        this.d = jj0Var;
-        jj0Var.setScaleType(ImageView.ScaleType.FIT_XY);
-        jj0Var.setImportantForAccessibility(2);
-        jj0Var.setVisibility(8);
-        linearLayout.addView(jj0Var, k7.b6.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
+        aj0 aj0Var = new aj0(context);
+        this.d = aj0Var;
+        aj0Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        aj0Var.setImportantForAccessibility(2);
+        aj0Var.setVisibility(8);
+        linearLayout.addView(aj0Var, w7.x5.t(ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION, 17, 0, 0, 0, 20));
         TextView textView = new TextView(context);
         this.b = textView;
         textView.setTextSize(1, 20.0f);
         textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.c7, f6Var));
         textView.setGravity(1);
         textView.setText(LocaleController.getString(R.string.NoResult));
-        linearLayout.addView(textView, k7.b6.q(-2, -2, 17));
-        addView(linearLayout, k7.b6.c(-2.0f, -2));
+        linearLayout.addView(textView, w7.x5.q(-2, -2, 17));
+        addView(linearLayout, w7.x5.c(-2.0f, -2));
         AndroidUtilities.updateViewVisibilityAnimated(textView, false, 2.0f, false);
         AndroidUtilities.updateViewVisibilityAnimated(radialProgressView, false, 1.0f, false);
-        setOnTouchListener(new oh.d(18));
+        setOnTouchListener(new ci.d(18));
     }
 
     public final void a(int i10, int i11, int i12) {
         int i13 = i10 != 0 ? 0 : 8;
-        jj0 jj0Var = this.d;
-        jj0Var.setVisibility(i13);
+        aj0 aj0Var = this.d;
+        aj0Var.setVisibility(i13);
         if (i10 != 0) {
-            jj0Var.f(i10, i11, i12, null);
-            jj0Var.d();
+            aj0Var.f(i10, i11, i12, null);
+            aj0Var.d();
         }
     }
 
@@ -82,7 +82,7 @@ public final class mz extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         int measuredHeight;
         int paddingTop;
         this.e = true;
@@ -94,7 +94,7 @@ public final class mz extends FrameLayout {
             if (childAt.getVisibility() != 8) {
                 int measuredWidth = (i14 - childAt.getMeasuredWidth()) / 2;
                 View view = this.c;
-                if (childAt == view && (view instanceof u00)) {
+                if (childAt == view && (view instanceof t00)) {
                     measuredHeight = (i15 - childAt.getMeasuredHeight()) / 2;
                     paddingTop = getPaddingTop();
                 } else {
@@ -132,12 +132,12 @@ public final class mz extends FrameLayout {
         }
     }
 
-    public void setShowAtCenter(boolean z4) {
-        this.f = z4 ? 1 : 0;
+    public void setShowAtCenter(boolean z10) {
+        this.f = z10 ? 1 : 0;
     }
 
-    public void setShowAtTop(boolean z4) {
-        this.f = z4 ? 2 : 0;
+    public void setShowAtTop(boolean z10) {
+        this.f = z10 ? 2 : 0;
     }
 
     public void setText(String str) {

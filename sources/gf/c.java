@@ -1,45 +1,66 @@
 package gf;
 
-import android.os.IBinder;
-import android.os.Parcel;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c implements e {
-    public IBinder a;
+public final class c {
+    public int a;
+    public int b;
+    public int c;
+    public int d;
+    public String e;
 
-    public final boolean E0(b bVar) {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.customtabs.ICustomTabsService");
-            obtain.writeStrongBinder(bVar);
-            this.a.transact(3, obtain, obtain2, 0);
-            obtain2.readException();
-            return obtain2.readInt() != 0;
-        } finally {
-            obtain2.recycle();
-            obtain.recycle();
+    public final String a(String str, String str2, String str3) {
+        StringBuilder sb2 = new StringBuilder(20);
+        boolean z10 = false;
+        int i10 = 0;
+        boolean z11 = false;
+        boolean z12 = false;
+        for (int i11 = 0; i11 < this.e.length(); i11++) {
+            char charAt = this.e.charAt(i11);
+            if (charAt != '#') {
+                if (charAt != '(') {
+                    if (charAt == 'c') {
+                        if (str2 != null) {
+                            sb2.append(str2);
+                        }
+                        z10 = true;
+                    } else if (charAt == 'n') {
+                        if (str3 != null) {
+                            sb2.append(str3);
+                        }
+                        z11 = true;
+                    }
+                } else if (i10 < str.length()) {
+                    z12 = true;
+                }
+                if (charAt == ' ' && i11 > 0) {
+                    int i12 = i11 - 1;
+                    if (this.e.charAt(i12) == 'n') {
+                        if (str3 == null) {
+                        }
+                    }
+                    if (this.e.charAt(i12) == 'c' && str2 == null) {
+                    }
+                }
+                if (i10 < str.length() || (z12 && charAt == ')')) {
+                    sb2.append(this.e.substring(i11, i11 + 1));
+                    if (charAt == ')') {
+                        z12 = false;
+                    }
+                }
+            } else if (i10 < str.length()) {
+                int i13 = i10 + 1;
+                sb2.append(str.substring(i10, i13));
+                i10 = i13;
+            } else if (z12) {
+                sb2.append(" ");
+            }
         }
-    }
-
-    public final boolean F0() {
-        Parcel obtain = Parcel.obtain();
-        Parcel obtain2 = Parcel.obtain();
-        try {
-            obtain.writeInterfaceToken("android.support.customtabs.ICustomTabsService");
-            obtain.writeLong(0L);
-            this.a.transact(2, obtain, obtain2, 0);
-            obtain2.readException();
-            return obtain2.readInt() != 0;
-        } finally {
-            obtain2.recycle();
-            obtain.recycle();
+        if (str2 != null && !z10) {
+            sb2.insert(0, str2.concat(" "));
+        } else if (str3 != null && !z11) {
+            sb2.insert(0, str3);
         }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        return this.a;
+        return sb2.toString();
     }
 }

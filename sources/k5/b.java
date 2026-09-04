@@ -1,38 +1,37 @@
 package k5;
 
-import b6.m;
-import java.util.Arrays;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b implements com.google.android.gms.common.api.b {
-    public static final b c;
-    public final boolean a;
-    public final String b;
+public final class b implements ia.d {
+    public static final b a = new b();
+    public static final ia.c b = ia.c.c("sdkVersion");
+    public static final ia.c c = ia.c.c("model");
+    public static final ia.c d = ia.c.c("hardware");
+    public static final ia.c e = ia.c.c("device");
+    public static final ia.c f = ia.c.c("product");
+    public static final ia.c g = ia.c.c("osBuild");
+    public static final ia.c h = ia.c.c("manufacturer");
+    public static final ia.c i = ia.c.c("fingerprint");
+    public static final ia.c j = ia.c.c("locale");
+    public static final ia.c k = ia.c.c("country");
+    public static final ia.c l = ia.c.c("mccMnc");
+    public static final ia.c m = ia.c.c("applicationBuild");
 
-    static {
-        f7.b bVar = new f7.b((char) 0, 20);
-        bVar.b = Boolean.FALSE;
-        c = new b(bVar);
-    }
-
-    public b(f7.b bVar) {
-        this.a = ((Boolean) bVar.b).booleanValue();
-        this.b = (String) bVar.c;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        return m.l(null, null) && this.a == bVar.a && m.l(this.b, bVar.b);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{null, Boolean.valueOf(this.a), this.b});
+    @Override // ia.a
+    public final void a(Object obj, Object obj2) {
+        ia.e eVar = (ia.e) obj2;
+        h hVar = (h) ((a) obj);
+        eVar.a(b, hVar.a);
+        eVar.a(c, hVar.b);
+        eVar.a(d, hVar.c);
+        eVar.a(e, hVar.d);
+        eVar.a(f, hVar.e);
+        eVar.a(g, hVar.f);
+        eVar.a(h, hVar.g);
+        eVar.a(i, hVar.h);
+        eVar.a(j, hVar.i);
+        eVar.a(k, hVar.j);
+        eVar.a(l, hVar.k);
+        eVar.a(m, hVar.l);
     }
 }

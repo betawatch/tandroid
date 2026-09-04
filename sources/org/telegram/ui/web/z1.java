@@ -1,132 +1,70 @@
 package org.telegram.ui.web;
 
-import android.R;
-import android.app.Activity;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
-import android.view.ViewGroup;
-import android.webkit.JavascriptInterface;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import java.io.InputStream;
-import k7.b6;
-import org.json.JSONObject;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Timer;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.LaunchActivity;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.q5;
+import org.telegram.ui.sk;
+import w7.x5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
-public final /* synthetic */ class z1 implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Timer.Task b;
-    public final /* synthetic */ boolean[] c;
-    public final /* synthetic */ Timer d;
-    public final /* synthetic */ h2 e;
-    public final /* synthetic */ Utilities.Callback f;
+public final class z1 extends FrameLayout {
+    public final ImageView a;
+    public final TextView b;
+    public final sk c;
+    public q5 d;
+    public String e;
+    public boolean f;
 
-    public /* synthetic */ z1(Timer.Task task, boolean[] zArr, Timer timer, h2 h2Var, Utilities.Callback callback, int i10) {
-        this.a = i10;
-        this.b = task;
-        this.c = zArr;
-        this.d = timer;
-        this.e = h2Var;
-        this.f = callback;
+    public z1(Context context) {
+        super(context);
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        addView(imageView, x5.d(32, 32.0f, 19, 16.0f, 0.0f, 0.0f, 0.0f));
+        TextView textView = new TextView(context);
+        this.b = textView;
+        textView.setTextColor(j6.w0(null, j6.G6, false));
+        textView.setTextSize(1, 16.0f);
+        textView.setMaxLines(1);
+        TextUtils.TruncateAt truncateAt = TextUtils.TruncateAt.END;
+        textView.setEllipsize(truncateAt);
+        addView(textView, x5.d(-1, -2.0f, 55, 68.0f, 7.0f, 54.0f, 0.0f));
+        sk skVar = new sk(this, context, 6);
+        this.c = skVar;
+        skVar.setTextColor(j6.w0(null, j6.y6, false));
+        skVar.setTextSize(1, 13.0f);
+        skVar.setMaxLines(1);
+        skVar.setEllipsize(truncateAt);
+        skVar.setPivotX(0.0f);
+        addView(skVar, x5.d(-1, -2.0f, 55, 68.0f, 30.0f, 54.0f, 0.0f));
+        ImageView imageView2 = new ImageView(context);
+        imageView2.setScaleType(ImageView.ScaleType.CENTER);
+        imageView2.setImageResource(R.drawable.ic_ab_other);
+        imageView2.setColorFilter(new PorterDuffColorFilter(j6.w0(null, j6.A6, false), PorterDuff.Mode.SRC_IN));
+        addView(imageView2, x5.d(32, 32.0f, 21, 0.0f, 0.0f, 18.0f, 0.0f));
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        switch (this.a) {
-            case 0:
-                Timer.Task task = this.b;
-                boolean[] zArr = this.c;
-                Timer timer = this.d;
-                h2 h2Var = this.e;
-                Utilities.Callback callback = this.f;
-                InputStream inputStream = (InputStream) obj;
-                Timer.done(task);
-                if (!zArr[0]) {
-                    Timer.Task start = Timer.start(timer, "readHTML");
-                    String str = h2Var.a;
-                    final z1 z1Var = new z1(start, zArr, timer, h2Var, callback, 1);
-                    if (inputStream != null) {
-                        Context context = LaunchActivity.D1;
-                        if (context == null) {
-                            context = ApplicationLoader.applicationContext;
-                        }
-                        Activity findActivity = AndroidUtilities.findActivity(context);
-                        if (findActivity != null) {
-                            View rootView = findActivity.findViewById(R.id.content).getRootView();
-                            if (!(rootView instanceof ViewGroup)) {
-                                z1Var.run(null);
-                                break;
-                            } else {
-                                final b2 b2Var = new b2(context);
-                                ((ViewGroup) rootView).addView(b2Var);
-                                final WebView webView = new WebView(context);
-                                WebSettings settings = webView.getSettings();
-                                settings.setAllowContentAccess(false);
-                                settings.setDatabaseEnabled(false);
-                                settings.setAllowFileAccess(false);
-                                settings.setJavaScriptEnabled(true);
-                                settings.setSaveFormData(false);
-                                settings.setGeolocationEnabled(false);
-                                settings.setDomStorageEnabled(false);
-                                settings.setAllowFileAccessFromFileURLs(false);
-                                settings.setAllowUniversalAccessFromFileURLs(false);
-                                webView.setWebViewClient(new c2(h2Var, inputStream));
-                                webView.setWebChromeClient(new d2());
-                                b2Var.addView(webView, b6.c(-1.0f, -1));
-                                final boolean[] zArr2 = {false};
-                                webView.addJavascriptInterface(new Object() { // from class: org.telegram.ui.web.WebInstantView$4
-                                    @JavascriptInterface
-                                    public void done(String str2) {
-                                        AndroidUtilities.runOnUIThread(new b0(zArr2, webView, b2Var, str2, z1Var, 6));
-                                    }
-                                }, "Instant");
-                                webView.loadUrl(str);
-                                break;
-                            }
-                        } else {
-                            z1Var.run(null);
-                            break;
-                        }
-                    } else {
-                        z1Var.run(null);
-                        break;
-                    }
-                }
-                break;
-            default:
-                Timer.Task task2 = this.b;
-                boolean[] zArr3 = this.c;
-                Timer timer2 = this.d;
-                h2 h2Var2 = this.e;
-                Utilities.Callback callback2 = this.f;
-                JSONObject jSONObject = (JSONObject) obj;
-                Timer.done(task2);
-                if (!zArr3[0]) {
-                    Timer.Task start2 = Timer.start(timer2, "parseJSON");
-                    try {
-                        h2Var2.c = h2Var2.i(h2Var2.a, jSONObject);
-                    } catch (Exception e) {
-                        Timer.log(timer2, "error: " + e);
-                        FileLog.e(e);
-                    }
-                    Timer.done(start2);
-                    callback2.run(h2Var2);
-                    TLRPC.TL_webPage tL_webPage = h2Var2.c;
-                    if (tL_webPage != null) {
-                        h2.e.put(tL_webPage, h2Var2);
-                    }
-                    Timer.finish(timer2);
-                    break;
-                }
-                break;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.f) {
+            canvas.drawRect(AndroidUtilities.dp(64.0f), getHeight() - 1, getWidth(), getHeight(), j6.k0);
         }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(56.0f), TLObject.FLAG_30));
     }
 }

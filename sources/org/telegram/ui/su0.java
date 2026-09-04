@@ -1,119 +1,264 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.text.TextPaint;
-import android.view.MotionEvent;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class su0 extends View {
-    public final Paint a;
-    public final TextPaint b;
-    public int c;
-    public int d;
-    public int e;
-    public int f;
-    public final String h;
-    public final String n;
-    public int r;
-    public final /* synthetic */ PhotoViewer s;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public su0(Context context, PhotoViewer photoViewer) {
-        super(context);
-        this.s = photoViewer;
-        this.a = new Paint(1);
-        TextPaint textPaint = new TextPaint(1);
-        this.b = textPaint;
-        textPaint.setTextSize(AndroidUtilities.dp(14.0f));
-        textPaint.setColor(-3289651);
-        this.h = LocaleController.getString("AccDescrVideoCompressLow", R.string.AccDescrVideoCompressLow);
-        this.n = LocaleController.getString("AccDescrVideoCompressHigh", R.string.AccDescrVideoCompressHigh);
-        setImportantForAccessibility(1);
-        setFocusable(true);
-        setAccessibilityDelegate(new ru0(this));
+public class su0 implements av0 {
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean A() {
+        return false;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.s.V7 != 1) {
-            this.f = (((getMeasuredWidth() - (this.c * this.s.V7)) - (((this.s.V7 * 2) - 2) * this.d)) - (this.e * 2)) / (this.s.V7 - 1);
-        } else {
-            this.f = ((getMeasuredWidth() - (this.c * this.s.V7)) - (this.d * 2)) - (this.e * 2);
-        }
-        int dp = AndroidUtilities.dp(6.0f) + (getMeasuredHeight() / 2);
-        int i10 = 0;
-        while (i10 < this.s.V7) {
-            int i11 = this.e;
-            int i12 = (this.d * 2) + this.f;
-            int i13 = this.c;
-            int i14 = (i13 / 2) + ((i12 + i13) * i10) + i11;
-            if (i10 <= this.s.U7) {
-                this.a.setColor(-11292945);
-            } else {
-                this.a.setColor(1728053247);
-            }
-            canvas.drawCircle(i14, dp, i10 == this.s.U7 ? AndroidUtilities.dp(6.0f) : this.c / 2, this.a);
-            if (i10 != 0) {
-                canvas.drawRect((i10 == this.s.U7 + 1 ? AndroidUtilities.dpf2(2.0f) : 0.0f) + (((i14 - (this.c / 2)) - this.d) - this.f), dp - AndroidUtilities.dp(1.0f), (r2 + this.f) - (i10 == this.s.U7 ? AndroidUtilities.dpf2(2.0f) : 0.0f), AndroidUtilities.dp(2.0f) + dp, this.a);
-            }
-            i10++;
-        }
-        canvas.drawText(this.h, this.e, dp - AndroidUtilities.dp(16.0f), this.b);
-        canvas.drawText(this.n, (getMeasuredWidth() - this.e) - this.b.measureText(this.n), dp - AndroidUtilities.dp(16.0f), this.b);
+    @Override // org.telegram.ui.av0
+    public CharSequence C(int i10) {
+        return null;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        this.c = AndroidUtilities.dp(8.0f);
-        this.d = AndroidUtilities.dp(2.0f);
-        this.e = AndroidUtilities.dp(18.0f);
+    @Override // org.telegram.ui.av0
+    public cv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return null;
     }
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        float x10 = motionEvent.getX();
-        if (motionEvent.getAction() == 0) {
-            this.r = this.s.U7;
-            getParent().requestDisallowInterceptTouchEvent(true);
-        }
-        int i10 = 0;
-        if (motionEvent.getAction() == 0 || motionEvent.getAction() == 2) {
-            while (true) {
-                if (i10 >= this.s.V7) {
-                    break;
-                }
-                int i11 = this.e;
-                int i12 = this.f;
-                int i13 = this.d;
-                int i14 = this.c;
-                int i15 = (((i13 * 2) + i12 + i14) * i10) + i11;
-                int i16 = i14 / 2;
-                int i17 = i15 + i16;
-                int i18 = (i12 / 2) + i16 + i13;
-                if (x10 <= i17 - i18 || x10 >= i17 + i18) {
-                    i10++;
-                } else if (this.s.U7 != i10) {
-                    this.s.U7 = i10;
-                    this.s.R0();
-                    invalidate();
-                    return true;
-                }
-            }
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (this.s.U7 != this.r) {
-                this.s.p2(1);
-            }
-            this.s.I6 = false;
-            return true;
-        }
+    @Override // org.telegram.ui.av0
+    public int H() {
+        return 0;
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean J() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean K() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean M() {
         return true;
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean N() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean O() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean P() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public int Q(Object obj) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.av0
+    public int R(int i10) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean S() {
+        return !(this instanceof ul);
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean T() {
+        return !(this instanceof wl);
+    }
+
+    @Override // org.telegram.ui.av0
+    public MessageObject U() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean Y() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ long a() {
+        return 0L;
+    }
+
+    @Override // org.telegram.ui.av0
+    public String a0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean b() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public CharSequence b0(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.av0
+    public ArrayList c() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean g() {
+        return !(this instanceof ul);
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean h() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public ImageReceiver.BitmapHolder j(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.av0
+    public int k(int i10, VideoEditedInfo videoEditedInfo) {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean l() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean p() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean q() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean r() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean t() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean u() {
+        return !(this instanceof org.telegram.ui.Components.xl);
+    }
+
+    @Override // org.telegram.ui.av0
+    public HashMap v() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ boolean w() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean x(int i10) {
+        return false;
+    }
+
+    @Override // org.telegram.ui.av0
+    public int y() {
+        return -1;
+    }
+
+    @Override // org.telegram.ui.av0
+    public boolean z() {
+        return !(this instanceof org.telegram.ui.Components.wh);
+    }
+
+    @Override // org.telegram.ui.av0
+    public void B(int i10) {
+    }
+
+    @Override // org.telegram.ui.av0
+    public void D() {
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ void F(boolean z10) {
+    }
+
+    @Override // org.telegram.ui.av0
+    public void G() {
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ void I() {
+    }
+
+    @Override // org.telegram.ui.av0
+    public void L(VideoEditedInfo videoEditedInfo) {
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ void V() {
+    }
+
+    @Override // org.telegram.ui.av0
+    public void W(int i10) {
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ void X(int i10) {
+    }
+
+    @Override // org.telegram.ui.av0
+    public void Z(int i10) {
+    }
+
+    @Override // org.telegram.ui.av0
+    public void d() {
+    }
+
+    @Override // org.telegram.ui.av0
+    public void e(CharSequence charSequence) {
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ void i() {
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ void m() {
+    }
+
+    @Override // org.telegram.ui.av0
+    public void n() {
+    }
+
+    @Override // org.telegram.ui.av0
+    public /* synthetic */ void s() {
+    }
+
+    @Override // org.telegram.ui.av0
+    public void f(String str, String str2, boolean z10) {
+    }
+
+    @Override // org.telegram.ui.av0
+    public void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
     }
 }

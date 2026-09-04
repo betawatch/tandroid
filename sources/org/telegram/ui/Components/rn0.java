@@ -1,98 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.text.TextUtils;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class rn0 extends f2.z0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ org.telegram.ui.qy b;
-    public final /* synthetic */ org.telegram.ui.zx c;
+public final class rn0 extends hg.i0 {
+    public final /* synthetic */ org.telegram.ui.uy I0;
+    public final /* synthetic */ Context J0;
+    public final /* synthetic */ org.telegram.ui.ey K0;
 
-    public /* synthetic */ rn0(org.telegram.ui.zx zxVar, org.telegram.ui.qy qyVar, int i10) {
-        this.a = i10;
-        this.c = zxVar;
-        this.b = qyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rn0(org.telegram.ui.ey eyVar, Context context, org.telegram.ui.uy uyVar, int i10, int i11, s4.j jVar, boolean z10, org.telegram.ui.uy uyVar2, Context context2) {
+        super(context, uyVar, i10, i11, jVar, z10);
+        this.K0 = eyVar;
+        this.I0 = uyVar2;
+        this.J0 = context2;
     }
 
-    @Override // f2.z0
-    public final void a(RecyclerView recyclerView, int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            case 1:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            case 2:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
-            default:
-                if (i10 == 1) {
-                    AndroidUtilities.hideKeyboard(this.b.getParentActivity().getCurrentFocus());
-                    break;
-                }
-                break;
+    @Override // s4.h0
+    public final void l() {
+        bi.o0 o0Var;
+        int i10 = this.B0;
+        super.l();
+        org.telegram.ui.ey eyVar = this.K0;
+        if (!eyVar.I0 && (o0Var = eyVar.V) != null) {
+            o0Var.u0(0);
+            eyVar.I0 = true;
         }
-    }
-
-    @Override // f2.z0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        org.telegram.ui.cy cyVar;
-        int i12;
-        rl0 rl0Var;
-        switch (this.a) {
-            case 0:
-                org.telegram.ui.zx zxVar = this.c;
-                zxVar.l0.V();
-                zxVar.S(i10, i11);
-                break;
-            case 1:
-                org.telegram.ui.zx zxVar2 = this.c;
-                zxVar2.s0.W();
-                zxVar2.S(i10, i11);
-                break;
-            case 2:
-                org.telegram.ui.zx zxVar3 = this.c;
-                vn0 vn0Var = zxVar3.V;
-                f2.i0 i0Var = zxVar3.W;
-                int L0 = i0Var.L0();
-                int N0 = i0Var.N0();
-                int abs = Math.abs(i0Var.N0() - L0) + 1;
-                int h = recyclerView.getAdapter().h();
-                if (abs > 0 && (((vn0Var.R.a() != 0 && !vn0Var.U) || !vn0Var.T) && (N0 == h - 1 || ((cyVar = vn0Var.R) != null && cyVar.a() != 0 && (i12 = vn0Var.V) >= 0 && L0 <= i12 && N0 >= i12)))) {
-                    vn0Var.Q();
-                }
-                zxVar3.S(i10, i11);
-                break;
-            default:
-                org.telegram.ui.zx zxVar4 = this.c;
-                xn0 xn0Var = zxVar4.g0;
-                if (xn0Var.V && !xn0Var.T && !TextUtils.isEmpty(xn0Var.Y) && (rl0Var = xn0Var.d) != null) {
-                    int i13 = 0;
-                    while (true) {
-                        if (i13 < rl0Var.getChildCount()) {
-                            if (!(rl0Var.getChildAt(i13) instanceof u00)) {
-                                i13++;
-                            } else if (xn0Var.V && !xn0Var.T && !TextUtils.isEmpty(xn0Var.Y)) {
-                                xn0Var.V(true);
-                            }
-                        }
-                    }
-                }
-                zxVar4.S(i10, i11);
-                break;
+        if (h() != 0 || i10 == 0 || this.D0 > 0) {
+            return;
         }
+        eyVar.W.e(false, false);
     }
 }

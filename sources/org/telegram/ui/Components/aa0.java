@@ -1,48 +1,78 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.NotificationCenter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class aa0 implements jt0 {
-    public final /* synthetic */ ea0 a;
+public final class aa0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
 
-    public aa0(ea0 ea0Var) {
-        this.a = ea0Var;
+    public /* synthetic */ aa0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, boolean z10, int i11) {
+        this.a = i11;
+        this.d = notificationCenterDelegate;
+        this.b = i10;
+        this.c = z10;
     }
 
-    @Override // org.telegram.ui.Components.jt0
-    public final void R() {
-        this.a.a0();
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 1:
+                AnimatorSet[] animatorSetArr = ((ux0) this.d).I;
+                int i10 = this.b;
+                AnimatorSet animatorSet = animatorSetArr[i10];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    animatorSetArr[i10] = null;
+                    break;
+                }
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.Components.jt0
-    public final boolean T() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.jt0
-    public final rl0 f() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.jt0
-    public final TLRPC.Chat g() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.jt0
-    public final boolean h(TLRPC.ChatParticipant chatParticipant, boolean z4, boolean z10, View view) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.jt0
-    public final boolean q() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.jt0
-    public final void E() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                ca0 ca0Var = (ca0) this.d;
+                q6[] q6VarArr = ca0Var.x;
+                org.telegram.ui.ActionBar.j5[] j5VarArr = ca0Var.w;
+                float[] fArr = ca0Var.Z;
+                boolean z10 = this.c;
+                float f7 = z10 ? 1.0f : 0.0f;
+                int i10 = this.b;
+                fArr[i10] = f7;
+                j5VarArr[i10].setScaleX(z10 ? 1.0f : 1.111f);
+                j5VarArr[i10].setScaleY(z10 ? 1.0f : 1.111f);
+                j5VarArr[i10].setTranslationY(z10 ? 0.0f : AndroidUtilities.dp(8.0f));
+                q6VarArr[i10].setAlpha(z10 ? 1.0f : 0.0f);
+                if (!z10) {
+                    q6VarArr[i10].setVisibility(8);
+                    break;
+                }
+                break;
+            default:
+                ux0 ux0Var = (ux0) this.d;
+                AnimatorSet[] animatorSetArr = ux0Var.I;
+                int i11 = this.b;
+                AnimatorSet animatorSet = animatorSetArr[i11];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.c) {
+                        ux0Var.J[i11].setVisibility(4);
+                    }
+                    animatorSetArr[i11] = null;
+                    break;
+                }
+                break;
+        }
     }
 }

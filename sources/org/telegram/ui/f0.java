@@ -1,38 +1,40 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.net.Uri;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f0 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ f3 b;
-    public final /* synthetic */ View c;
+public final /* synthetic */ class f0 implements Utilities.Callback0Return {
+    public final /* synthetic */ i4 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ boolean[] c;
+    public final /* synthetic */ of.e d;
 
-    public /* synthetic */ f0(View view, f3 f3Var) {
-        this.c = view;
-        this.b = f3Var;
+    public /* synthetic */ f0(i4 i4Var, String str, boolean[] zArr, of.e eVar) {
+        this.a = i4Var;
+        this.b = str;
+        this.c = zArr;
+        this.d = eVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                f3 f3Var = this.b;
-                View view = this.c;
-                view.post(new f0(f3Var, view));
-                break;
-            default:
-                f3 f3Var2 = this.b;
-                f3Var2.F.clear();
-                f3Var2.H.set(null);
-                this.c.invalidate();
-                break;
+    @Override // org.telegram.messenger.Utilities.Callback0Return
+    public final Object run() {
+        String str = this.b;
+        if (!of.f.f(Uri.parse(str), false, this.c)) {
+            return Boolean.FALSE;
         }
-    }
-
-    public /* synthetic */ f0(f3 f3Var, View view) {
-        this.b = f3Var;
-        this.c = view;
+        i4 i4Var = this.a;
+        of.e eVar = this.d;
+        if (eVar != null) {
+            eVar.c = new org.telegram.ui.ActionBar.c6(4, i4Var, eVar);
+        } else {
+            v3 v3Var = i4Var.K;
+            if (v3Var != null) {
+                v3Var.dismiss(true);
+            }
+        }
+        of.f.r(i4Var.L, Uri.parse(str), true, true, false, eVar, null, true, true, false);
+        return Boolean.TRUE;
     }
 }

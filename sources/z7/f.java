@@ -1,17 +1,31 @@
 package z7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public abstract class f {
-    public static final y5.c a;
-    public static final y5.c b;
-    public static final y5.c[] c;
+import java.io.Serializable;
 
-    static {
-        y5.c cVar = new y5.c("EXECUTE", 1L);
-        a = cVar;
-        y5.c cVar2 = new y5.c("INIT", 1L);
-        b = cVar2;
-        c = new y5.c[]{cVar, cVar2};
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class f extends x7.d implements Serializable {
+    public final Object b;
+    public final e9.l c;
+
+    public f(Object obj, e9.l lVar) {
+        super(1, false);
+        this.b = obj;
+        this.c = lVar;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.c;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

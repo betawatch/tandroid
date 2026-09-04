@@ -9,8 +9,8 @@ public enum r1 {
     public final boolean a;
     public final boolean b;
 
-    r1(boolean z4, boolean z10) {
-        this.a = z4;
-        this.b = z10;
+    r1(boolean z10, boolean z11) {
+        this.a = z10;
+        this.b = z11;
     }
 }

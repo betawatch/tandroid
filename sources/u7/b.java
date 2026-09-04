@@ -1,92 +1,80 @@
 package u7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import f7.q;
-import j7.f5;
-import java.util.Arrays;
+import a9.o;
+import java.util.ListIterator;
+import java.util.NoSuchElementException;
+import w7.r7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends c6.a {
-    public static final Parcelable.Creator<b> CREATOR = new u6.p(6);
-    public final long a;
+public final class b extends o implements ListIterator {
     public final int b;
-    public final boolean c;
-    public final String d;
-    public final f7.k e;
+    public int c;
+    public final d d;
 
-    public b(long j10, int i10, boolean z4, String str, f7.k kVar) {
-        this.a = j10;
-        this.b = i10;
-        this.c = z4;
-        this.d = str;
-        this.e = kVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(d dVar, int i10) {
+        super(5);
+        int size = dVar.size();
+        if (i10 < 0 || i10 > size) {
+            throw new IndexOutOfBoundsException(r7.c(i10, size, "index"));
+        }
+        this.b = size;
+        this.c = i10;
+        this.d = dVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof b)) {
-            return false;
-        }
-        b bVar = (b) obj;
-        return this.a == bVar.a && this.b == bVar.b && this.c == bVar.c && b6.m.l(this.d, bVar.d) && b6.m.l(this.e, bVar.e);
+    public final Object a(int i10) {
+        return this.d.get(i10);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Long.valueOf(this.a), Integer.valueOf(this.b), Boolean.valueOf(this.c)});
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
     }
 
-    public final String toString() {
-        String str;
-        StringBuilder l10 = e2.c.l("LastLocationRequest[");
-        long j10 = this.a;
-        if (j10 != Long.MAX_VALUE) {
-            l10.append("maxAge=");
-            q.a(l10, j10);
-        }
-        int i10 = this.b;
-        if (i10 != 0) {
-            l10.append(", ");
-            if (i10 == 0) {
-                str = "GRANULARITY_PERMISSION_LEVEL";
-            } else if (i10 == 1) {
-                str = "GRANULARITY_COARSE";
-            } else {
-                if (i10 != 2) {
-                    throw new IllegalArgumentException();
-                }
-                str = "GRANULARITY_FINE";
-            }
-            l10.append(str);
-        }
-        if (this.c) {
-            l10.append(", bypass");
-        }
-        String str2 = this.d;
-        if (str2 != null) {
-            l10.append(", moduleId=");
-            l10.append(str2);
-        }
-        f7.k kVar = this.e;
-        if (kVar != null) {
-            l10.append(", impersonation=");
-            l10.append(kVar);
-        }
-        l10.append(']');
-        return l10.toString();
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final boolean hasNext() {
+        return this.c < this.b;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.s(parcel, 1, 8);
-        parcel.writeLong(this.a);
-        f5.s(parcel, 2, 4);
-        parcel.writeInt(this.b);
-        f5.s(parcel, 3, 4);
-        parcel.writeInt(this.c ? 1 : 0);
-        f5.l(parcel, 4, this.d);
-        f5.k(parcel, 5, this.e, i10);
-        f5.r(parcel, q10);
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.c > 0;
+    }
+
+    @Override // java.util.Iterator, java.util.ListIterator
+    public final Object next() {
+        if (!hasNext()) {
+            throw new NoSuchElementException();
+        }
+        int i10 = this.c;
+        this.c = i10 + 1;
+        return a(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.c;
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        if (!hasPrevious()) {
+            throw new NoSuchElementException();
+        }
+        int i10 = this.c - 1;
+        this.c = i10;
+        return a(i10);
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.c - 1;
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

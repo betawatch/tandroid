@@ -1,18 +1,29 @@
 package hg;
 
-import android.view.View;
-import kg.n;
+import org.telegram.ui.ty;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f implements h5.d {
-    public final /* synthetic */ boolean a;
+public final /* synthetic */ class f implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m b;
 
-    @Override // h5.d
-    public final void accept(Object obj) {
-        View view = (View) obj;
-        if (view instanceof n) {
-            ((n) view).g(this.a, true);
+    public /* synthetic */ f(m mVar, int i10) {
+        this.a = i10;
+        this.b = mVar;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                for (ty tyVar : this.b.R.e0) {
+                    ((s4.c0) tyVar.a.getLayoutManager()).u = false;
+                }
+                break;
+            default:
+                this.b.J();
+                break;
         }
     }
 }

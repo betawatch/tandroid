@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 final class zzqc {
     public static final /* synthetic */ int zza = 0;
@@ -219,24 +219,24 @@ final class zzqc {
     }
 
     public static int zzl(byte[] bArr, int i10, zzqb zzqbVar) {
-        long j10 = bArr[i10];
+        long j3 = bArr[i10];
         int i11 = i10 + 1;
-        if (j10 >= 0) {
-            zzqbVar.zzb = j10;
+        if (j3 >= 0) {
+            zzqbVar.zzb = j3;
             return i11;
         }
         int i12 = i10 + 2;
         byte b10 = bArr[i11];
-        long j11 = (j10 & 127) | ((b10 & Byte.MAX_VALUE) << 7);
+        long j10 = (j3 & 127) | ((b10 & Byte.MAX_VALUE) << 7);
         int i13 = 7;
         while (b10 < 0) {
             int i14 = i12 + 1;
             i13 += 7;
-            j11 |= (r10 & Byte.MAX_VALUE) << i13;
+            j10 |= (r10 & Byte.MAX_VALUE) << i13;
             b10 = bArr[i12];
             i12 = i14;
         }
-        zzqbVar.zzb = j11;
+        zzqbVar.zzb = j10;
         return i12;
     }
 

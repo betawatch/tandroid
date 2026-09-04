@@ -1,41 +1,17 @@
 package g7;
 
-import android.os.BadParcelableException;
-import android.os.IInterface;
 import android.os.Parcel;
 import android.os.Parcelable;
-import kf.k0;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final /* synthetic */ int a = 0;
+public final class b extends o6.a {
+    public static final Parcelable.Creator<b> CREATOR = new e6.i(13);
 
-    static {
-        b.class.getClassLoader();
-    }
-
-    public static void a(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(k0.j(dataAvail, "Parcel data not fully consumed, unread size: "));
-        }
-    }
-
-    public static void b(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
-        }
-    }
-
-    public static void c(Parcel parcel, IInterface iInterface) {
-        if (iInterface == null) {
-            parcel.writeStrongBinder(null);
-        } else {
-            parcel.writeStrongBinder(iInterface.asBinder());
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i10) {
+        kotlin.jvm.internal.i.e(dest, "dest");
+        e0.r(dest, e0.q(dest, 20293));
     }
 }

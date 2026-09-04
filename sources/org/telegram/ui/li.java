@@ -1,88 +1,71 @@
 package org.telegram.ui;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
+import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class li implements View.OnTouchListener {
-    public final /* synthetic */ int a;
-    public final int[] b;
-    public final /* synthetic */ Rect c;
-    public final /* synthetic */ Object d;
+public final class li implements View.OnClickListener {
+    public final /* synthetic */ gi0 a;
+    public final /* synthetic */ org.telegram.ui.Components.ll0 b;
+    public final /* synthetic */ LinearLayout c;
+    public final /* synthetic */ ActionBarPopupWindow$ActionBarPopupWindowLayout d;
+    public final /* synthetic */ int[] e;
+    public final /* synthetic */ co f;
 
-    public li(e60 e60Var, Rect rect) {
-        this.a = 1;
-        this.d = e60Var;
-        this.c = rect;
-        this.b = new int[2];
+    public li(co coVar, gi0 gi0Var, org.telegram.ui.Components.ll0 ll0Var, LinearLayout linearLayout, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout, int[] iArr) {
+        this.f = coVar;
+        this.a = gi0Var;
+        this.b = ll0Var;
+        this.c = linearLayout;
+        this.d = actionBarPopupWindow$ActionBarPopupWindowLayout;
+        this.e = iArr;
     }
 
-    @Override // android.view.View.OnTouchListener
-    public final boolean onTouch(View view, MotionEvent motionEvent) {
-        f50 f50Var;
-        switch (this.a) {
-            case 0:
-                zn znVar = (zn) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4) {
-                        znVar.A7(true);
-                        break;
-                    }
-                } else {
-                    org.telegram.ui.ActionBar.p1 p1Var = znVar.N8;
-                    if (p1Var != null && p1Var.isShowing()) {
-                        View contentView = znVar.N8.getContentView();
-                        int[] iArr = this.b;
-                        contentView.getLocationInWindow(iArr);
-                        int i10 = iArr[0];
-                        int i11 = iArr[1];
-                        int measuredWidth = contentView.getMeasuredWidth() + i10;
-                        int measuredHeight = contentView.getMeasuredHeight() + iArr[1];
-                        Rect rect = this.c;
-                        rect.set(i10, i11, measuredWidth, measuredHeight);
-                        if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            znVar.A7(true);
-                            break;
-                        }
-                    }
-                }
-                break;
-            default:
-                e60 e60Var = (e60) this.d;
-                if (motionEvent.getActionMasked() != 0) {
-                    if (motionEvent.getActionMasked() == 4 && (f50Var = e60Var.c3) != null && f50Var.isShowing()) {
-                        e60Var.c3.dismiss();
-                        break;
-                    }
-                } else {
-                    f50 f50Var2 = e60Var.c3;
-                    if (f50Var2 != null && f50Var2.isShowing()) {
-                        View contentView2 = e60Var.c3.getContentView();
-                        int[] iArr2 = this.b;
-                        contentView2.getLocationInWindow(iArr2);
-                        int i12 = iArr2[0];
-                        int i13 = iArr2[1];
-                        int measuredWidth2 = contentView2.getMeasuredWidth() + i12;
-                        int measuredHeight2 = contentView2.getMeasuredHeight() + iArr2[1];
-                        Rect rect2 = this.c;
-                        rect2.set(i12, i13, measuredWidth2, measuredHeight2);
-                        if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
-                            e60Var.c3.dismiss();
-                            break;
-                        }
-                    }
-                }
-                break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        gi0 gi0Var = this.a;
+        ArrayList arrayList = gi0Var.b;
+        ArrayList arrayList2 = gi0Var.c;
+        co coVar = this.f;
+        if (coVar.Q8 == null || arrayList2.isEmpty()) {
+            return;
         }
-        return false;
-    }
-
-    public li(zn znVar, Rect rect) {
-        this.a = 0;
-        this.d = znVar;
-        this.c = rect;
-        this.b = new int[2];
+        if (arrayList2.size() == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            coVar.presentFragment(new ProfileActivity(bundle, null));
+            coVar.A7(true);
+            return;
+        }
+        if (SharedConfig.messageSeenHintCount > 0 && coVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(coVar.getParentActivity()), coVar.ea).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            coVar.n1 = t10;
+            t10.j = 4000;
+            t10.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        }
+        org.telegram.ui.Components.ll0 ll0Var = this.b;
+        ll0Var.requestLayout();
+        this.c.requestLayout();
+        ll0Var.getAdapter().l();
+        this.d.getSwipeBack().e(this.e[0]);
     }
 }

@@ -1,16 +1,16 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class DelimiterFactory {
     private static final float MAX_LENGTH = 4096.0f;
 
-    public static Box create(String str, TeXEnvironment teXEnvironment, float f10) {
-        float f11;
-        if (Float.isInfinite(f10) || Float.isNaN(f10) || f10 < 0.0f) {
-            f10 = 0.0f;
+    public static Box create(String str, TeXEnvironment teXEnvironment, float f7) {
+        float f10;
+        if (Float.isInfinite(f7) || Float.isNaN(f7) || f7 < 0.0f) {
+            f7 = 0.0f;
         }
-        float min = Math.min(f10, MAX_LENGTH);
+        float min = Math.min(f7, MAX_LENGTH);
         TeXFont teXFont = teXEnvironment.getTeXFont();
         int style = teXEnvironment.getStyle();
         Char r42 = teXFont.getChar(str, style);
@@ -18,8 +18,8 @@ public class DelimiterFactory {
         float height = metrics.getHeight();
         float depth = metrics.getDepth();
         while (true) {
-            f11 = depth + height;
-            if (f11 >= min || !teXFont.hasNextLarger(r42)) {
+            f10 = depth + height;
+            if (f10 >= min || !teXFont.hasNextLarger(r42)) {
                 break;
             }
             r42 = teXFont.getNextLarger(r42, style);
@@ -27,7 +27,7 @@ public class DelimiterFactory {
             height = metrics2.getHeight();
             depth = metrics2.getDepth();
         }
-        if (f11 >= min) {
+        if (f10 >= min) {
             return new CharBox(r42);
         }
         if (!teXFont.isExtensionChar(r42)) {

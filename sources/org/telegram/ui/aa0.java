@@ -2,37 +2,38 @@ package org.telegram.ui;
 
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class aa0 implements RequestDelegate {
+public final /* synthetic */ class aa0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ LaunchActivity b;
+    public final /* synthetic */ co b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ TLRPC.Chat d;
 
-    public /* synthetic */ aa0(LaunchActivity launchActivity, int i10) {
+    public /* synthetic */ aa0(co coVar, long j3, TLRPC.Chat chat, int i10) {
         this.a = i10;
-        this.b = launchActivity;
+        this.b = coVar;
+        this.c = j3;
+        this.d = chat;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         int i10 = this.a;
-        LaunchActivity launchActivity = this.b;
+        TLRPC.Chat chat = this.d;
+        long j3 = this.c;
+        co coVar = this.b;
         switch (i10) {
             case 0:
-                Pattern pattern = LaunchActivity.y1;
-                if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new w10(17, launchActivity, (TL_account.Password) tLObject));
-                    break;
-                }
+                Pattern pattern = LaunchActivity.B1;
+                org.telegram.ui.Components.yc.a0(coVar).M(LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j3, chat.title)), R.raw.stars_send).k(true);
                 break;
             default:
-                Pattern pattern2 = LaunchActivity.y1;
-                AndroidUtilities.runOnUIThread(new w10(13, launchActivity, tLObject));
+                org.telegram.ui.Components.yc.a0(coVar).M(LocaleController.getString(R.string.StarsSubscriptionCompleted), AndroidUtilities.replaceTags(LocaleController.formatPluralString("StarsSubscriptionCompletedText", (int) j3, chat.title)), R.raw.stars_send).k(true);
                 break;
         }
     }

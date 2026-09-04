@@ -32,10 +32,10 @@ public abstract class d extends CountedCompleter {
         this.c = dVar.c;
     }
 
-    public static long e(long j10) {
-        long j11 = j10 / g;
-        if (j11 > 0) {
-            return j11;
+    public static long e(long j3) {
+        long j10 = j3 / g;
+        if (j10 > 0) {
+            return j10;
         }
         return 1L;
     }
@@ -65,28 +65,28 @@ public abstract class d extends CountedCompleter {
         Spliterator trySplit;
         Spliterator spliterator = this.b;
         long estimateSize = spliterator.estimateSize();
-        long j10 = this.c;
-        if (j10 == 0) {
-            j10 = e(estimateSize);
-            this.c = j10;
+        long j3 = this.c;
+        if (j3 == 0) {
+            j3 = e(estimateSize);
+            this.c = j3;
         }
-        boolean z4 = false;
+        boolean z10 = false;
         d dVar = this;
-        while (estimateSize > j10 && (trySplit = spliterator.trySplit()) != null) {
-            d c3 = dVar.c(trySplit);
-            dVar.d = c3;
-            d c10 = dVar.c(spliterator);
-            dVar.e = c10;
+        while (estimateSize > j3 && (trySplit = spliterator.trySplit()) != null) {
+            d c10 = dVar.c(trySplit);
+            dVar.d = c10;
+            d c11 = dVar.c(spliterator);
+            dVar.e = c11;
             dVar.setPendingCount(1);
-            if (z4) {
+            if (z10) {
                 spliterator = trySplit;
-                dVar = c3;
-                c3 = c10;
-            } else {
                 dVar = c10;
+                c10 = c11;
+            } else {
+                dVar = c11;
             }
-            z4 = !z4;
-            c3.fork();
+            z10 = !z10;
+            c10.fork();
             estimateSize = spliterator.estimateSize();
         }
         dVar.d(dVar.a());

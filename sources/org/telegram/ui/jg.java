@@ -1,48 +1,49 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.Utilities;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jg implements Utilities.Callback2 {
+public final /* synthetic */ class jg implements DialogInterface.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ co b;
 
-    public /* synthetic */ jg(zn znVar, String str, int i10) {
+    public /* synthetic */ jg(co coVar, int i10) {
         this.a = i10;
-        this.b = znVar;
-        this.c = str;
+        this.b = coVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
-        Boolean bool = (Boolean) obj;
-        Boolean bool2 = (Boolean) obj2;
+    @Override // android.content.DialogInterface.OnDismissListener
+    public final void onDismiss(DialogInterface dialogInterface) {
         switch (this.a) {
             case 0:
-                if (bool.booleanValue()) {
-                    boolean booleanValue = bool2.booleanValue();
-                    zn znVar = this.b;
-                    String str = this.c;
-                    if (booleanValue) {
-                        znVar.getMessagesController().addWebBrowserException(str, false);
-                    }
-                    znVar.getParentActivity();
-                    ze.d.n(str);
-                    break;
-                }
+                co.B0(this.b);
+                break;
+            case 1:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 2:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 3:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 4:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 5:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 6:
+                this.b.g8(false, true, 0.0f);
+                break;
+            case 7:
+                this.b.Gb = null;
                 break;
             default:
-                zn znVar2 = this.b;
-                znVar2.getClass();
-                if (bool.booleanValue()) {
-                    boolean booleanValue2 = bool2.booleanValue();
-                    String str2 = this.c;
-                    if (booleanValue2) {
-                        znVar2.getMessagesController().addWebBrowserException(str2, true);
-                    }
-                    ze.d.m(znVar2.getParentActivity(), str2, false, null);
+                hk hkVar = this.b.X1;
+                if (hkVar != null) {
+                    hkVar.c(false);
                     break;
                 }
                 break;

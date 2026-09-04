@@ -6,20 +6,20 @@ import java.util.Collection;
 import java.util.Iterator;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class w {
     public int a;
     public boolean b;
     public Object[] c;
 
-    public w(y5.c[] cVarArr, boolean z4, int i10) {
+    public w(k6.c[] cVarArr, boolean z10, int i10) {
         this.c = cVarArr;
-        boolean z10 = false;
-        if (cVarArr != null && z4) {
-            z10 = true;
+        boolean z11 = false;
+        if (cVarArr != null && z10) {
+            z11 = true;
         }
-        this.b = z10;
+        this.b = z11;
         this.a = i10;
     }
 
@@ -30,9 +30,12 @@ public abstract class w {
         return vVar;
     }
 
-    public static int g(int i10, int i11) {
+    public static int h(int i10, int i11) {
         if (i11 < 0) {
-            throw new AssertionError("cannot store more than MAX_VALUE elements");
+            throw new IllegalArgumentException("cannot store more than MAX_VALUE elements");
+        }
+        if (i11 <= i10) {
+            return i10;
         }
         int i12 = i10 + (i10 >> 1) + 1;
         if (i12 < i11) {
@@ -43,7 +46,7 @@ public abstract class w {
 
     public void b(Object obj) {
         obj.getClass();
-        h(this.a + 1);
+        g(1);
         Object[] objArr = this.c;
         int i10 = this.a;
         this.a = i10 + 1;
@@ -55,9 +58,9 @@ public abstract class w {
     public void d(Iterable iterable) {
         if (iterable instanceof Collection) {
             Collection collection = (Collection) iterable;
-            h(collection.size() + this.a);
-            if (collection instanceof s8.q) {
-                this.a = ((s8.q) collection).n(this.a, this.c);
+            g(collection.size());
+            if (collection instanceof e9.d0) {
+                this.a = ((e9.d0) collection).n(this.a, this.c);
                 return;
             }
         }
@@ -69,20 +72,18 @@ public abstract class w {
 
     public abstract void f(com.google.android.gms.common.api.c cVar, TaskCompletionSource taskCompletionSource);
 
-    public void h(int i10) {
+    public void g(int i10) {
         Object[] objArr = this.c;
-        if (objArr.length < i10) {
-            this.c = Arrays.copyOf(objArr, g(objArr.length, i10));
-            this.b = false;
-        } else if (this.b) {
-            this.c = (Object[]) objArr.clone();
+        int h = h(objArr.length, this.a + i10);
+        if (h > objArr.length || this.b) {
+            this.c = Arrays.copyOf(this.c, h);
             this.b = false;
         }
     }
 
-    public w() {
-        s8.l.c(4, "initialCapacity");
-        this.c = new Object[4];
+    public w(int i10) {
+        e9.q.e(i10, "initialCapacity");
+        this.c = new Object[i10];
         this.a = 0;
     }
 }

@@ -13,14 +13,14 @@ import android.view.InflateException;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.SubMenu;
-import j7.r7;
 import java.io.IOException;
-import l.n;
-import m.m1;
+import l.o;
+import m.l1;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
+import v7.u7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class h extends MenuInflater {
     public static final Class[] e;
@@ -70,10 +70,10 @@ public final class h extends MenuInflater {
                 }
             }
         }
-        boolean z4 = false;
         boolean z10 = false;
+        boolean z11 = false;
         String str = null;
-        while (!z4) {
+        while (!z10) {
             if (eventType == 1) {
                 throw new RuntimeException("Unexpected end of document");
             }
@@ -81,9 +81,9 @@ public final class h extends MenuInflater {
             if (eventType != i10) {
                 if (eventType == 3) {
                     String name2 = xmlPullParser.getName();
-                    if (z10 && name2.equals(str)) {
+                    if (z11 && name2.equals(str)) {
                         xmlPullParser2 = xmlPullParser;
-                        z10 = false;
+                        z11 = false;
                         str = null;
                     } else if (name2.equals("group")) {
                         gVar.b = 0;
@@ -94,8 +94,8 @@ public final class h extends MenuInflater {
                         gVar.g = true;
                     } else if (name2.equals("item")) {
                         if (!gVar.h) {
-                            n nVar = gVar.z;
-                            if (nVar == null || !nVar.a.hasSubMenu()) {
+                            o oVar = gVar.z;
+                            if (oVar == null || !oVar.a.hasSubMenu()) {
                                 gVar.h = true;
                                 gVar.b(menu2.add(gVar.b, gVar.i, gVar.j, gVar.k));
                             } else {
@@ -105,7 +105,7 @@ public final class h extends MenuInflater {
                         }
                     } else if (name2.equals("menu")) {
                         xmlPullParser2 = xmlPullParser;
-                        z4 = true;
+                        z10 = true;
                     }
                     eventType = xmlPullParser2.next();
                     i10 = 2;
@@ -114,7 +114,7 @@ public final class h extends MenuInflater {
                 eventType = xmlPullParser2.next();
                 i10 = 2;
             } else {
-                if (!z10) {
+                if (!z11) {
                     String name3 = xmlPullParser.getName();
                     boolean equals = name3.equals("group");
                     Context context = this.c;
@@ -154,11 +154,11 @@ public final class h extends MenuInflater {
                             gVar.w = obtainStyledAttributes2.getResourceId(13, 0);
                             gVar.x = obtainStyledAttributes2.getString(15);
                             String string3 = obtainStyledAttributes2.getString(14);
-                            boolean z11 = string3 != null;
-                            if (z11 && gVar.w == 0 && gVar.x == null) {
-                                gVar.z = (n) gVar.a(string3, f, this.b);
+                            boolean z12 = string3 != null;
+                            if (z12 && gVar.w == 0 && gVar.x == null) {
+                                gVar.z = (o) gVar.a(string3, f, this.b);
                             } else {
-                                if (z11) {
+                                if (z12) {
                                     Log.w("SupportMenuInflater", "Ignoring attribute 'actionProviderClass'. Action view already specified.");
                                 }
                                 gVar.z = null;
@@ -166,12 +166,12 @@ public final class h extends MenuInflater {
                             gVar.A = obtainStyledAttributes2.getText(17);
                             gVar.B = obtainStyledAttributes2.getText(22);
                             if (obtainStyledAttributes2.hasValue(19)) {
-                                gVar.D = m1.b(obtainStyledAttributes2.getInt(19, -1), gVar.D);
+                                gVar.D = l1.b(obtainStyledAttributes2.getInt(19, -1), gVar.D);
                             } else {
                                 gVar.D = null;
                             }
                             if (obtainStyledAttributes2.hasValue(18)) {
-                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = r7.a(context, resourceId)) == null) {
+                                if (!obtainStyledAttributes2.hasValue(18) || (resourceId = obtainStyledAttributes2.getResourceId(18, 0)) == 0 || (colorStateList = u7.a(context, resourceId)) == null) {
                                     colorStateList = obtainStyledAttributes2.getColorStateList(18);
                                 }
                                 gVar.C = colorStateList;
@@ -190,7 +190,7 @@ public final class h extends MenuInflater {
                         } else {
                             xmlPullParser2 = xmlPullParser;
                             str = name3;
-                            z10 = true;
+                            z11 = true;
                         }
                         eventType = xmlPullParser2.next();
                         i10 = 2;
@@ -205,7 +205,7 @@ public final class h extends MenuInflater {
 
     @Override // android.view.MenuInflater
     public final void inflate(int i10, Menu menu) {
-        if (!(menu instanceof l.k)) {
+        if (!(menu instanceof l.l)) {
             super.inflate(i10, menu);
             return;
         }
@@ -216,8 +216,8 @@ public final class h extends MenuInflater {
                     xmlResourceParser = this.c.getResources().getLayout(i10);
                     b(xmlResourceParser, Xml.asAttributeSet(xmlResourceParser), menu);
                     xmlResourceParser.close();
-                } catch (IOException e6) {
-                    throw new InflateException("Error inflating menu XML", e6);
+                } catch (IOException e7) {
+                    throw new InflateException("Error inflating menu XML", e7);
                 }
             } catch (XmlPullParserException e10) {
                 throw new InflateException("Error inflating menu XML", e10);

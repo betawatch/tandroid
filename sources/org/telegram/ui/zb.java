@@ -10,7 +10,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class zb implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -46,11 +46,11 @@ public final /* synthetic */ class zb implements RequestDelegate {
                                 }
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 != null) {
-                                    ccVar2.K = 20;
+                                    ccVar2.N = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject2;
-                                    boolean z4 = false;
+                                    boolean z10 = false;
                                     MessagesController.getInstance(ccVar2.b).putUsers(tL_premium_boostsList.users, false);
-                                    ccVar2.H = tL_premium_boostsList.next_offset;
+                                    ccVar2.K = tL_premium_boostsList.next_offset;
                                     arrayList.addAll(tL_premium_boostsList.boosts);
                                     int size = arrayList.size();
                                     int i11 = 0;
@@ -60,10 +60,10 @@ public final /* synthetic */ class zb implements RequestDelegate {
                                         if (i12 >= size) {
                                             ccVar2.s = Math.max(0, tL_premium_boostsList.count - i11);
                                             if (!TextUtils.isEmpty(tL_premium_boostsList.next_offset) && ccVar2.s > 0) {
-                                                z4 = true;
+                                                z10 = true;
                                             }
-                                            ccVar2.r = z4;
-                                            ccVar2.M = tL_premium_boostsList.count;
+                                            ccVar2.r = z10;
+                                            ccVar2.P = tL_premium_boostsList.count;
                                             Runnable runnable2 = runnable;
                                             if (runnable2 != null) {
                                                 runnable2.run();
@@ -90,11 +90,11 @@ public final /* synthetic */ class zb implements RequestDelegate {
                                 }
                                 TLObject tLObject3 = tLObject;
                                 if (tLObject3 != null) {
-                                    ccVar3.J = 20;
+                                    ccVar3.M = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList2 = (TL_stories.TL_premium_boostsList) tLObject3;
-                                    boolean z10 = false;
+                                    boolean z11 = false;
                                     MessagesController.getInstance(ccVar3.b).putUsers(tL_premium_boostsList2.users, false);
-                                    ccVar3.I = tL_premium_boostsList2.next_offset;
+                                    ccVar3.L = tL_premium_boostsList2.next_offset;
                                     arrayList2.addAll(tL_premium_boostsList2.boosts);
                                     int size2 = arrayList2.size();
                                     int i15 = 0;
@@ -104,10 +104,10 @@ public final /* synthetic */ class zb implements RequestDelegate {
                                         if (i16 >= size2) {
                                             ccVar3.w = Math.max(0, tL_premium_boostsList2.count - i15);
                                             if (!TextUtils.isEmpty(tL_premium_boostsList2.next_offset) && ccVar3.w > 0) {
-                                                z10 = true;
+                                                z11 = true;
                                             }
-                                            ccVar3.v = z10;
-                                            ccVar3.L = tL_premium_boostsList2.count;
+                                            ccVar3.v = z11;
+                                            ccVar3.O = tL_premium_boostsList2.count;
                                             Runnable runnable3 = runnable;
                                             if (runnable3 != null) {
                                                 runnable3.run();
@@ -147,11 +147,11 @@ public final /* synthetic */ class zb implements RequestDelegate {
                                 }
                                 TLObject tLObject2 = tLObject;
                                 if (tLObject2 != null) {
-                                    ccVar22.K = 20;
+                                    ccVar22.N = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList = (TL_stories.TL_premium_boostsList) tLObject2;
-                                    boolean z4 = false;
+                                    boolean z10 = false;
                                     MessagesController.getInstance(ccVar22.b).putUsers(tL_premium_boostsList.users, false);
-                                    ccVar22.H = tL_premium_boostsList.next_offset;
+                                    ccVar22.K = tL_premium_boostsList.next_offset;
                                     arrayList.addAll(tL_premium_boostsList.boosts);
                                     int size = arrayList.size();
                                     int i112 = 0;
@@ -161,10 +161,10 @@ public final /* synthetic */ class zb implements RequestDelegate {
                                         if (i12 >= size) {
                                             ccVar22.s = Math.max(0, tL_premium_boostsList.count - i112);
                                             if (!TextUtils.isEmpty(tL_premium_boostsList.next_offset) && ccVar22.s > 0) {
-                                                z4 = true;
+                                                z10 = true;
                                             }
-                                            ccVar22.r = z4;
-                                            ccVar22.M = tL_premium_boostsList.count;
+                                            ccVar22.r = z10;
+                                            ccVar22.P = tL_premium_boostsList.count;
                                             Runnable runnable22 = runnable2;
                                             if (runnable22 != null) {
                                                 runnable22.run();
@@ -191,11 +191,11 @@ public final /* synthetic */ class zb implements RequestDelegate {
                                 }
                                 TLObject tLObject3 = tLObject;
                                 if (tLObject3 != null) {
-                                    ccVar3.J = 20;
+                                    ccVar3.M = 20;
                                     TL_stories.TL_premium_boostsList tL_premium_boostsList2 = (TL_stories.TL_premium_boostsList) tLObject3;
-                                    boolean z10 = false;
+                                    boolean z11 = false;
                                     MessagesController.getInstance(ccVar3.b).putUsers(tL_premium_boostsList2.users, false);
-                                    ccVar3.I = tL_premium_boostsList2.next_offset;
+                                    ccVar3.L = tL_premium_boostsList2.next_offset;
                                     arrayList2.addAll(tL_premium_boostsList2.boosts);
                                     int size2 = arrayList2.size();
                                     int i15 = 0;
@@ -205,10 +205,10 @@ public final /* synthetic */ class zb implements RequestDelegate {
                                         if (i16 >= size2) {
                                             ccVar3.w = Math.max(0, tL_premium_boostsList2.count - i15);
                                             if (!TextUtils.isEmpty(tL_premium_boostsList2.next_offset) && ccVar3.w > 0) {
-                                                z10 = true;
+                                                z11 = true;
                                             }
-                                            ccVar3.v = z10;
-                                            ccVar3.L = tL_premium_boostsList2.count;
+                                            ccVar3.v = z11;
+                                            ccVar3.O = tL_premium_boostsList2.count;
                                             Runnable runnable3 = runnable2;
                                             if (runnable3 != null) {
                                                 runnable3.run();

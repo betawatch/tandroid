@@ -1,70 +1,53 @@
 package s5;
 
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.RemoteException;
-import j7.f5;
-import r5.c0;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a extends c6.a {
-    public final String a;
-    public final String b;
-    public final k c;
-    public final f d;
-    public final boolean e;
-    public final boolean f;
-    public static final u5.b h = new u5.b("CastMediaOptions", null);
-    public static final Parcelable.Creator<a> CREATOR = new c0(1);
+public final class a {
+    public static final a f = new a(200, 10485760, 604800000, 10000, 81920);
+    public final long a;
+    public final int b;
+    public final int c;
+    public final long d;
+    public final int e;
 
-    public a(String str, String str2, IBinder iBinder, f fVar, boolean z4, boolean z10) {
-        k kVar;
-        this.a = str;
-        this.b = str2;
-        if (iBinder == null) {
-            kVar = null;
-        } else {
-            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.cast.framework.media.IImagePicker");
-            kVar = queryLocalInterface instanceof k ? (k) queryLocalInterface : new k(iBinder, "com.google.android.gms.cast.framework.media.IImagePicker", 1);
-        }
-        this.c = kVar;
-        this.d = fVar;
-        this.e = z4;
-        this.f = z10;
+    public a(int i10, long j3, long j10, int i11, int i12) {
+        this.a = j3;
+        this.b = i10;
+        this.c = i11;
+        this.d = j10;
+        this.e = i12;
     }
 
-    public final void e() {
-        k kVar = this.c;
-        if (kVar != null) {
-            try {
-                Parcel O0 = kVar.O0(kVar.M0(), 2);
-                l6.a J0 = l6.b.J0(O0.readStrongBinder());
-                O0.recycle();
-                if (l6.b.K0(J0) == null) {
-                } else {
-                    throw new ClassCastException();
-                }
-            } catch (RemoteException e) {
-                h.a(e, "Unable to call %s on %s.", "getWrappedClientObject", k.class.getSimpleName());
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof a) {
+            a aVar = (a) obj;
+            if (this.a == aVar.a && this.b == aVar.b && this.c == aVar.c && this.d == aVar.d && this.e == aVar.e) {
+                return true;
             }
         }
+        return false;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 2, this.a);
-        f5.l(parcel, 3, this.b);
-        k kVar = this.c;
-        f5.f(parcel, 4, kVar == null ? null : kVar.b);
-        f5.k(parcel, 5, this.d, i10);
-        f5.s(parcel, 6, 4);
-        parcel.writeInt(this.e ? 1 : 0);
-        f5.s(parcel, 7, 4);
-        parcel.writeInt(this.f ? 1 : 0);
-        f5.r(parcel, q10);
+    public final int hashCode() {
+        long j3 = this.a;
+        int i10 = (((((((int) (j3 ^ (j3 >>> 32))) ^ 1000003) * 1000003) ^ this.b) * 1000003) ^ this.c) * 1000003;
+        long j10 = this.d;
+        return this.e ^ ((i10 ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003);
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("EventStoreConfig{maxStorageSizeInBytes=");
+        sb2.append(this.a);
+        sb2.append(", loadBatchSize=");
+        sb2.append(this.b);
+        sb2.append(", criticalSectionEnterTimeoutMs=");
+        sb2.append(this.c);
+        sb2.append(", eventCleanUpAge=");
+        sb2.append(this.d);
+        sb2.append(", maxBlobByteSizePerRow=");
+        return a4.a.n(this.e, "}", sb2);
     }
 }

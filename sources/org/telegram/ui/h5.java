@@ -1,60 +1,109 @@
 package org.telegram.ui;
 
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.ImageLoader;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.camera.CameraController;
+import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'f' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class h5 {
-    public static final h5 d;
-    public static final h5 e;
-    public static final h5 f;
-    public static final h5 h;
-    public static final h5 n;
-    public static final h5 r;
-    public static final /* synthetic */ h5[] s;
-    public final String a;
-    public final int b;
-    public final int c;
+public abstract class h5 extends androidx.fragment.app.u {
+    public int O = -1;
 
-    static {
-        h5 h5Var = new h5(0, R.string.OpenProfile, R.drawable.msg_openprofile, "OPEN_PROFILE", "OpenProfile");
-        d = h5Var;
-        h5 h5Var2 = new h5(1, R.string.OpenChannel2, R.drawable.msg_channel, "OPEN_CHANNEL", "OpenChannel2");
-        e = h5Var2;
-        int i10 = R.string.OpenGroup2;
-        int i11 = R.drawable.msg_discussion;
-        h5 h5Var3 = new h5(2, i10, i11, "OPEN_GROUP", "OpenGroup2");
-        f = h5Var3;
-        h5 h5Var4 = new h5(3, R.string.SendMessage, i11, "SEND_MESSAGE", "SendMessage");
-        h = h5Var4;
-        h5 h5Var5 = new h5(4, R.string.Mention, R.drawable.msg_mention, "MENTION", "Mention");
-        n = h5Var5;
-        h5 h5Var6 = new h5(5, R.string.AvatarPreviewSearchMessages, R.drawable.msg_search, "SEARCH_MESSAGES", "AvatarPreviewSearchMessages");
-        r = h5Var6;
-        s = new h5[]{h5Var, h5Var2, h5Var3, h5Var4, h5Var5, h5Var6};
+    public final boolean v(int i10, String[] strArr, int[] iArr) {
+        if (iArr == null) {
+            iArr = new int[0];
+        }
+        if (strArr == null) {
+            strArr = new String[0];
+        }
+        boolean z10 = iArr.length > 0 && iArr[0] == 0;
+        if (i10 == 104) {
+            if (!z10) {
+                x(R.raw.permission_request_camera, LocaleController.getString(R.string.VoipNeedCameraPermission));
+                return true;
+            }
+            j60 j60Var = j60.D3;
+            if (j60Var != null) {
+                j60Var.n.callOnClick();
+                return true;
+            }
+        } else {
+            if (i10 == 4 || i10 == 151) {
+                if (z10) {
+                    ImageLoader.getInstance().checkMediaPaths();
+                    return true;
+                }
+                x(R.raw.permission_request_folder, i10 == 151 ? LocaleController.getString(R.string.PermissionNoStorageAvatar) : LocaleController.getString(R.string.PermissionStorageWithHint));
+                return true;
+            }
+            if (i10 == 5) {
+                if (z10) {
+                    ContactsController.getInstance(this.O).forceImportContacts();
+                    return true;
+                }
+                x(R.raw.permission_request_contacts, LocaleController.getString(R.string.PermissionNoContactsSharing));
+                return false;
+            }
+            if (i10 == 3 || i10 == 150) {
+                int min = Math.min(strArr.length, iArr.length);
+                boolean z11 = true;
+                boolean z12 = true;
+                for (int i11 = 0; i11 < min; i11++) {
+                    if ("android.permission.RECORD_AUDIO".equals(strArr[i11])) {
+                        z11 = iArr[i11] == 0;
+                    } else if ("android.permission.CAMERA".equals(strArr[i11])) {
+                        z12 = iArr[i11] == 0;
+                    }
+                }
+                if (i10 == 150 && (!z11 || !z12)) {
+                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraMicVideo));
+                    return true;
+                }
+                if (!z11) {
+                    x(R.raw.permission_request_microphone, LocaleController.getString(R.string.PermissionNoAudioWithHint));
+                    return true;
+                }
+                if (!z12) {
+                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
+                    return true;
+                }
+                if (SharedConfig.inappCamera) {
+                    CameraController.getInstance().initCamera(null);
+                }
+                return false;
+            }
+            if (i10 != 18 && i10 != 19 && i10 != 20 && i10 != 22) {
+                if (i10 == 2) {
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z10 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, new Object[0]);
+                    return true;
+                }
+                if (i10 == 211) {
+                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z10 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, 1);
+                    return true;
+                }
+            } else if (!z10) {
+                x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
+            }
+        }
+        return true;
     }
 
-    public h5(int i10, int i11, int i12, String str, String str2) {
-        this.a = str2;
-        this.b = i11;
-        this.c = i12;
+    public final org.telegram.ui.ActionBar.b2 w(int i10, String str) {
+        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
+        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L5, false), null);
+        alertDialog$Builder.a.T = AndroidUtilities.replaceTags(str);
+        alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new z0(this, 4));
+        alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
+        return alertDialog$Builder.a;
     }
 
-    public static h5 valueOf(String str) {
-        return (h5) Enum.valueOf(h5.class, str);
-    }
-
-    public static h5[] values() {
-        return (h5[]) s.clone();
+    public final void x(int i10, String str) {
+        w(i10, str).show();
     }
 }

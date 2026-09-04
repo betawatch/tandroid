@@ -1,48 +1,50 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.graphics.RectF;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class xs0 extends org.telegram.ui.Components.v00 {
-    public final /* synthetic */ es0 e;
-    public final /* synthetic */ PhotoViewer f;
+public final class xs0 extends org.telegram.ui.Components.r71 {
+    public final org.telegram.ui.Components.na g0;
+    public final /* synthetic */ PhotoViewer h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public xs0(PhotoViewer photoViewer, es0 es0Var) {
-        super(false);
-        this.f = photoViewer;
-        this.e = es0Var;
+    public xs0(Context context, PhotoViewer photoViewer) {
+        super(context);
+        this.h0 = photoViewer;
+        new Path();
+        this.g0 = new org.telegram.ui.Components.na(photoViewer.b0, this, 0, false);
     }
 
-    @Override // org.telegram.ui.Components.go0
-    public final CharSequence d() {
-        StringBuilder sb = new StringBuilder();
-        PhotoViewer photoViewer = this.f;
-        int[] iArr = photoViewer.j3;
-        sb.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
-        sb.append(' ');
-        sb.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
-        String sb2 = sb.toString();
-        StringBuilder sb3 = new StringBuilder();
-        int[] iArr2 = photoViewer.k3;
-        sb3.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
-        sb3.append(' ');
-        sb3.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
-        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb2, sb3.toString());
+    @Override // org.telegram.ui.Components.r71
+    public final void b(Canvas canvas, RectF rectF) {
+        canvas.save();
+        canvas.clipRect(rectF);
+        float f7 = -getX();
+        PhotoViewer photoViewer = this.h0;
+        canvas.translate(f7 - photoViewer.Q7.getX(), (-getY()) - photoViewer.Q7.getY());
+        photoViewer.T0(canvas, this.g0, -14803426, 855638016, false, true, false);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.v00
-    public final float k() {
-        return this.f.n3.c();
+    @Override // android.view.View
+    public final void invalidate() {
+        int i10;
+        if (SharedConfig.photoViewerBlur && ((i10 = this.h0.n4) == 1 || i10 == 2 || i10 == 3)) {
+            return;
+        }
+        super.invalidate();
     }
 
-    @Override // org.telegram.ui.Components.v00
-    public final void l(float f10) {
-        this.e.b(f10);
-        PhotoViewer photoViewer = this.f;
-        photoViewer.n3.h(f10, false);
-        photoViewer.o3.invalidate();
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            super.setTranslationY(f7);
+            this.h0.e0.invalidate();
+        }
     }
 }

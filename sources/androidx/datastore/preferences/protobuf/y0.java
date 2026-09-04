@@ -1,6 +1,58 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import j$.util.concurrent.ConcurrentHashMap;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface y0 {
+public final class y0 {
+    public static final y0 c = new y0();
+    public final ConcurrentHashMap b = new ConcurrentHashMap();
+    public final k0 a = new k0();
+
+    public final b1 a(Class cls) {
+        b1 w10;
+        Class cls2;
+        z.a(cls, "messageType");
+        ConcurrentHashMap concurrentHashMap = this.b;
+        b1 b1Var = (b1) concurrentHashMap.get(cls);
+        if (b1Var != null) {
+            return b1Var;
+        }
+        k0 k0Var = this.a;
+        k0Var.getClass();
+        Class cls3 = c1.a;
+        if (!w.class.isAssignableFrom(cls) && (cls2 = c1.a) != null && !cls2.isAssignableFrom(cls)) {
+            throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
+        }
+        a1 a2 = ((j0) k0Var.a).a(cls);
+        int i10 = a2.d;
+        a aVar = a2.a;
+        if ((i10 & 2) == 2) {
+            if (w.class.isAssignableFrom(cls)) {
+                w10 = new t0(c1.d, o.a, aVar);
+            } else {
+                j1 j1Var = c1.b;
+                n nVar = o.b;
+                if (nVar == null) {
+                    throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
+                }
+                w10 = new t0(j1Var, nVar, aVar);
+            }
+        } else if (w.class.isAssignableFrom(cls)) {
+            w10 = (a2.d & 1) == 1 ? s0.w(a2, v0.b, h0.b, c1.d, o.a, p0.b) : s0.w(a2, v0.b, h0.b, c1.d, null, p0.b);
+        } else if ((a2.d & 1) == 1) {
+            u0 u0Var = v0.a;
+            f0 f0Var = h0.a;
+            j1 j1Var2 = c1.b;
+            n nVar2 = o.b;
+            if (nVar2 == null) {
+                throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
+            }
+            w10 = s0.w(a2, u0Var, f0Var, j1Var2, nVar2, p0.a);
+        } else {
+            w10 = s0.w(a2, v0.a, h0.a, c1.c, null, p0.a);
+        }
+        b1 b1Var2 = (b1) concurrentHashMap.putIfAbsent(cls, w10);
+        return b1Var2 != null ? b1Var2 : w10;
+    }
 }

@@ -1,89 +1,70 @@
 package org.telegram.ui.Components;
 
+import android.app.Dialog;
+import android.content.Context;
+import android.os.Build;
 import android.view.ViewGroup;
-import java.util.LinkedList;
+import android.view.Window;
+import android.view.WindowManager;
+import java.util.WeakHashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lb implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public final class lb extends Dialog {
+    public final kb a;
+    public final WindowManager.LayoutParams b;
 
-    public /* synthetic */ lb(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    public lb(Context context, di.c9 c9Var) {
+        super(context);
+        AndroidUtilities.enableEdgeToEdge(getWindow());
+        kb kbVar = new kb(this, context);
+        this.a = kbVar;
+        setContentView(kbVar, new ViewGroup.LayoutParams(-1, -1));
+        t tVar = new t(this, 15);
+        WeakHashMap weakHashMap = r0.i0.a;
+        r0.a0.j(kbVar, tVar);
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 30) {
+            kbVar.setSystemUiVisibility(1792);
+        } else {
+            kbVar.setSystemUiVisibility(1280);
+        }
+        qc.a(kbVar, new ah.n0(c9Var, 7));
+        try {
+            Window window = getWindow();
+            window.setWindowAnimations(R.style.DialogNoAnimation);
+            window.setBackgroundDrawable(null);
+            WindowManager.LayoutParams attributes = window.getAttributes();
+            this.b = attributes;
+            attributes.width = -1;
+            attributes.height = -1;
+            attributes.gravity = 51;
+            attributes.dimAmount = 0.0f;
+            attributes.format = -3;
+            attributes.flags = (((-3) & attributes.flags) | (-1946091240)) & (-1025);
+            boolean z10 = true;
+            if (i10 >= 28) {
+                attributes.layoutInDisplayCutoutMode = 1;
+            }
+            window.setAttributes(attributes);
+            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false)) <= 0.721f) {
+                z10 = false;
+            }
+            AndroidUtilities.setLightNavigationBar(this, z10);
+        } catch (Exception unused) {
+        }
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z4, float f10, float f11) {
-        ViewGroup viewGroup;
-        switch (this.a) {
-            case 0:
-                nb nbVar = (nb) this.b;
-                fg fgVar = (fg) this.c;
-                nbVar.setInOutOffset(0.0f);
-                if (!z4) {
-                    fgVar.run();
-                    break;
-                }
-                break;
-            case 1:
-                li.r((li) this.b, (lh.p6) this.c);
-                break;
-            case 2:
-                lh.k3 k3Var = (lh.k3) this.b;
-                wg wgVar = (wg) this.c;
-                li liVar = (li) k3Var.d;
-                liVar.w0.setTranslationY(0.0f);
-                liVar.w0.k(liVar.i2);
-                viewGroup = ((org.telegram.ui.ActionBar.g3) liVar).containerView;
-                viewGroup.invalidate();
-                wgVar.run();
-                liVar.a2(0);
-                break;
-            case 3:
-                wd0 wd0Var = (wd0) this.b;
-                ec0 ec0Var = (ec0) this.c;
-                LinkedList linkedList = wd0Var.J;
-                wd0Var.I = null;
-                ec0Var.D = null;
-                ec0Var.z();
-                if (!z4) {
-                    ec0Var.h = 1.0f;
-                    ec0Var.z();
-                    if (!linkedList.isEmpty()) {
-                        ((Runnable) linkedList.poll()).run();
-                        wd0Var.K.poll();
-                        break;
-                    }
-                }
-                break;
-            default:
-                rh.m3 m3Var = (rh.m3) this.b;
-                Runnable runnable = (Runnable) this.c;
-                if (hVar == m3Var.D) {
-                    m3Var.D = null;
-                    if (runnable != null) {
-                        runnable.run();
-                    }
-                    Runnable runnable2 = m3Var.B;
-                    if (runnable2 != null) {
-                        runnable2.run();
-                    }
-                    float f12 = m3Var.h;
-                    if (f12 != -1.0f) {
-                        boolean z10 = m3Var.s;
-                        m3Var.s = true;
-                        m3Var.setOffsetY(f12);
-                        m3Var.h = -1.0f;
-                        m3Var.s = z10;
-                    }
-                    m3Var.n = -2.14748365E9f;
-                    break;
-                }
-                break;
+    public static kb a(Context context) {
+        return new lb(context, null).a;
+    }
+
+    @Override // android.app.Dialog
+    public final void show() {
+        if (AndroidUtilities.isSafeToShow(getContext())) {
+            super.show();
         }
     }
 }

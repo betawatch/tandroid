@@ -7,17 +7,17 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLParseException;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
-import org.telegram.tgnet.q;
+import org.telegram.tgnet.r;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public class TL_keyboard {
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static abstract class ButtonType extends ButtonTypeProto {
-        public static ButtonType TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
-            return (ButtonType) TLObject.TLdeserialize(ButtonType.class, fromConstructor(i10), inputSerializedData, i10, z4);
+        public static ButtonType TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (ButtonType) TLObject.TLdeserialize(ButtonType.class, fromConstructor(i10), inputSerializedData, i10, z10);
         }
 
         private static ButtonType fromConstructor(int i10) {
@@ -42,14 +42,14 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static abstract class ButtonTypeProto extends TLObject {
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static abstract class InlineButtonType extends ButtonTypeProto {
-        public static InlineButtonType TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
-            return (InlineButtonType) TLObject.TLdeserialize(InlineButtonType.class, fromConstructor(i10), inputSerializedData, i10, z4);
+        public static InlineButtonType TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (InlineButtonType) TLObject.TLdeserialize(InlineButtonType.class, fromConstructor(i10), inputSerializedData, i10, z10);
         }
 
         private static InlineButtonType fromConstructor(int i10) {
@@ -84,19 +84,19 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static abstract class KeyboardButton extends TLObject implements KeyboardButtonProto {
         protected int flags;
         public KeyboardButtonStyle style;
         public String text;
         public ButtonType type;
 
-        public static KeyboardButton TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
+        public static KeyboardButton TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
             KeyboardInlineButton fromConstructor = KeyboardInlineButton.fromConstructor(i10);
             if (fromConstructor == null) {
-                return (KeyboardButton) TLObject.TLdeserialize(KeyboardButton.class, fromConstructor(i10), inputSerializedData, i10, z4);
+                return (KeyboardButton) TLObject.TLdeserialize(KeyboardButton.class, fromConstructor(i10), inputSerializedData, i10, z10);
             }
-            fromConstructor.readParams(inputSerializedData, z4);
+            fromConstructor.readParams(inputSerializedData, z10);
             TL_keyboardButton_layer223 tL_keyboardButton_layer223 = new TL_keyboardButton_layer223();
             tL_keyboardButton_layer223.text = fromConstructor.text;
             tL_keyboardButton_layer223.type = new TL_buttonTypeDefault();
@@ -153,7 +153,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface KeyboardButtonProto {
         @Deprecated
         byte[] getData();
@@ -166,18 +166,18 @@ public class TL_keyboard {
         String getUrl();
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class KeyboardButtonRow extends TLObject {
         public static final int constructor = 2002815875;
         public ArrayList<KeyboardButton> buttons = new ArrayList<>();
 
-        public static KeyboardButtonRow TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
-            return (KeyboardButtonRow) TLObject.TLdeserialize(KeyboardButtonRow.class, 2002815875 != i10 ? null : new KeyboardButtonRow(), inputSerializedData, i10, z4);
+        public static KeyboardButtonRow TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (KeyboardButtonRow) TLObject.TLdeserialize(KeyboardButtonRow.class, 2002815875 != i10 ? null : new KeyboardButtonRow(), inputSerializedData, i10, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.buttons = Vector.deserialize(inputSerializedData, new a(1), z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.buttons = Vector.deserialize(inputSerializedData, new a(1), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -187,7 +187,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class KeyboardButtonStyle extends TLObject {
         public static final int constructor = 1339896880;
         public boolean bg_danger;
@@ -196,19 +196,19 @@ public class TL_keyboard {
         public int flags;
         public long icon;
 
-        public static KeyboardButtonStyle TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
-            return (KeyboardButtonStyle) TLObject.TLdeserialize(KeyboardButtonStyle.class, i10 != 1339896880 ? null : new KeyboardButtonStyle(), inputSerializedData, i10, z4);
+        public static KeyboardButtonStyle TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (KeyboardButtonStyle) TLObject.TLdeserialize(KeyboardButtonStyle.class, i10 != 1339896880 ? null : new KeyboardButtonStyle(), inputSerializedData, i10, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.bg_primary = TLObject.hasFlag(readInt32, 1);
             this.bg_danger = TLObject.hasFlag(this.flags, 2);
             this.bg_success = TLObject.hasFlag(this.flags, 4);
             if (TLObject.hasFlag(this.flags, 8)) {
-                this.icon = inputSerializedData.readInt64(z4);
+                this.icon = inputSerializedData.readInt64(z10);
             }
         }
 
@@ -228,19 +228,19 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static abstract class KeyboardInlineButton extends TLObject implements KeyboardButtonProto {
         public int flags;
         public KeyboardButtonStyle style;
         public String text;
         public InlineButtonType type;
 
-        public static KeyboardInlineButton TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
+        public static KeyboardInlineButton TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
             KeyboardButton fromConstructor = KeyboardButton.fromConstructor(i10);
             if (fromConstructor == null) {
-                return (KeyboardInlineButton) TLObject.TLdeserialize(KeyboardInlineButton.class, fromConstructor(i10), inputSerializedData, i10, z4);
+                return (KeyboardInlineButton) TLObject.TLdeserialize(KeyboardInlineButton.class, fromConstructor(i10), inputSerializedData, i10, z10);
             }
-            fromConstructor.readParams(inputSerializedData, z4);
+            fromConstructor.readParams(inputSerializedData, z10);
             TL_keyboardInlineButton tL_keyboardInlineButton = new TL_keyboardInlineButton();
             tL_keyboardInlineButton.text = fromConstructor.text;
             tL_keyboardInlineButton.type = new TL_inlineButtonTypeDisabled();
@@ -319,12 +319,12 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static abstract class KeyboardInlineButtonRow extends TLObject {
         public ArrayList<KeyboardInlineButton> buttons = new ArrayList<>();
 
-        public static KeyboardInlineButtonRow TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
-            return (KeyboardInlineButtonRow) TLObject.TLdeserialize(KeyboardInlineButtonRow.class, fromConstructor(i10), inputSerializedData, i10, z4);
+        public static KeyboardInlineButtonRow TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (KeyboardInlineButtonRow) TLObject.TLdeserialize(KeyboardInlineButtonRow.class, fromConstructor(i10), inputSerializedData, i10, z10);
         }
 
         public static KeyboardInlineButtonRow fromConstructor(int i10) {
@@ -338,7 +338,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class PageButton extends TLObject implements KeyboardButtonProto {
         public static final int constructor = 1764381832;
         public int flags;
@@ -346,8 +346,8 @@ public class TL_keyboard {
         public TL_iv.RichText text;
         public InlineButtonType type;
 
-        public static PageButton TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
-            return (PageButton) TLObject.TLdeserialize(PageButton.class, i10 != 1764381832 ? null : new PageButton(), inputSerializedData, i10, z4);
+        public static PageButton TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (PageButton) TLObject.TLdeserialize(PageButton.class, i10 != 1764381832 ? null : new PageButton(), inputSerializedData, i10, z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.KeyboardButtonProto
@@ -370,12 +370,12 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.flags = inputSerializedData.readInt32(z4);
-            this.text = TL_iv.RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
-            this.type = InlineButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.flags = inputSerializedData.readInt32(z10);
+            this.text = TL_iv.RichText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.type = InlineButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.style = RichButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = RichButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
         }
 
@@ -398,7 +398,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class RichButtonStyle extends TLObject {
         public static final int constructor = 63312061;
         public boolean bg_danger;
@@ -407,13 +407,13 @@ public class TL_keyboard {
         public int flags;
         public boolean link;
 
-        public static RichButtonStyle TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z4) {
-            return (RichButtonStyle) TLObject.TLdeserialize(RichButtonStyle.class, i10 != 63312061 ? null : new RichButtonStyle(), inputSerializedData, i10, z4);
+        public static RichButtonStyle TLdeserialize(InputSerializedData inputSerializedData, int i10, boolean z10) {
+            return (RichButtonStyle) TLObject.TLdeserialize(RichButtonStyle.class, i10 != 63312061 ? null : new RichButtonStyle(), inputSerializedData, i10, z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.bg_primary = TLObject.hasFlag(readInt32, 1);
             this.bg_danger = TLObject.hasFlag(this.flags, 2);
@@ -436,7 +436,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_buttonTypeRequestPeer extends ButtonType {
         public static final int constructor = 1331208759;
         public int button_id;
@@ -445,11 +445,11 @@ public class TL_keyboard {
         public TLRPC.RequestPeerType peer_type;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.flags = inputSerializedData.readInt32(z4);
-            this.button_id = inputSerializedData.readInt32(z4);
-            this.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
-            this.max_quantity = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.flags = inputSerializedData.readInt32(z10);
+            this.button_id = inputSerializedData.readInt32(z10);
+            this.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.max_quantity = inputSerializedData.readInt32(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -462,18 +462,18 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_buttonTypeRequestPoll extends ButtonType {
         public static final int constructor = -1429209212;
         public int flags;
         public boolean quiz;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1)) {
-                this.quiz = inputSerializedData.readBool(z4);
+                this.quiz = inputSerializedData.readBool(z10);
             }
         }
 
@@ -487,14 +487,14 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_buttonTypeSimpleWebView extends ButtonType {
         public static final int constructor = -1072014982;
         public String url;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.url = inputSerializedData.readString(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.url = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -504,7 +504,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inlineButtonTypeCallback extends InlineButtonType {
         public static final int constructor = 693484600;
         public byte[] data;
@@ -512,11 +512,11 @@ public class TL_keyboard {
         public boolean requires_password;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.requires_password = TLObject.hasFlag(readInt32, 1);
-            this.data = inputSerializedData.readByteArray(z4);
+            this.data = inputSerializedData.readByteArray(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -529,14 +529,14 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inlineButtonTypeCopy extends InlineButtonType {
         public static final int constructor = -1273154958;
         public String copy_text;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.copy_text = inputSerializedData.readString(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.copy_text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -546,7 +546,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inlineButtonTypeSwitchInline extends InlineButtonType {
         public static final int constructor = -1820901387;
         public int flags;
@@ -555,13 +555,13 @@ public class TL_keyboard {
         public boolean same_peer;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.same_peer = TLObject.hasFlag(readInt32, 1);
-            this.query = inputSerializedData.readString(z4);
+            this.query = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.peer_types = Vector.deserialize(inputSerializedData, new q(17), z4);
+                this.peer_types = Vector.deserialize(inputSerializedData, new r(17), z10);
             }
         }
 
@@ -580,14 +580,14 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inlineButtonTypeUrl extends InlineButtonType {
         public static final int constructor = -324732716;
         public String url;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.url = inputSerializedData.readString(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.url = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -597,7 +597,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inlineButtonTypeUrlAuth extends InlineButtonType {
         public static final int constructor = -1076875870;
         public int button_id;
@@ -606,14 +606,14 @@ public class TL_keyboard {
         public String url;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1)) {
-                this.fwd_text = inputSerializedData.readString(z4);
+                this.fwd_text = inputSerializedData.readString(z10);
             }
-            this.url = inputSerializedData.readString(z4);
-            this.button_id = inputSerializedData.readInt32(z4);
+            this.url = inputSerializedData.readString(z10);
+            this.button_id = inputSerializedData.readInt32(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -630,14 +630,14 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inlineButtonTypeUserProfile extends InlineButtonType {
         public static final int constructor = 1067663311;
         public long user_id;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.user_id = inputSerializedData.readInt64(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.user_id = inputSerializedData.readInt64(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -647,14 +647,14 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inlineButtonTypeWebView extends InlineButtonType {
         public static final int constructor = 1003140532;
         public String url;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.url = inputSerializedData.readString(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.url = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -664,7 +664,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inputButtonTypeRequestPeer extends ButtonType {
         public static final int constructor = 1071802622;
         public int button_id;
@@ -679,15 +679,15 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.name_requested = TLObject.hasFlag(readInt32, 1);
             this.username_requested = TLObject.hasFlag(this.flags, 2);
             this.photo_requested = TLObject.hasFlag(this.flags, 4);
-            this.button_id = inputSerializedData.readInt32(z4);
-            this.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
-            this.max_quantity = inputSerializedData.readInt32(z4);
+            this.button_id = inputSerializedData.readInt32(z10);
+            this.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.max_quantity = inputSerializedData.readInt32(z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -706,7 +706,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inputInlineButtonTypeUrlAuth extends InlineButtonType {
         public static final int constructor = -1721647948;
         public TLRPC.InputUser bot;
@@ -719,16 +719,16 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.request_write_access = TLObject.hasFlag(readInt32, 1);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.fwd_text = inputSerializedData.readString(z4);
+                this.fwd_text = inputSerializedData.readString(z10);
             }
-            this.url = inputSerializedData.readString(z4);
+            this.url = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 4)) {
-                this.bot = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.bot = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
         }
 
@@ -752,7 +752,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inputInlineButtonTypeUserProfile extends InlineButtonType {
         public static final int constructor = 1408487002;
         public TLRPC.InputUser user_id;
@@ -761,8 +761,8 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.user_id = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.user_id = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -772,7 +772,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inputKeyboardButtonRequestPeer_layer221 extends TL_inputKeyboardButtonRequestPeer_layer228 {
         public static final int constructor = -916050683;
 
@@ -780,16 +780,16 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_inputKeyboardButtonRequestPeer_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.mType.name_requested = TLObject.hasFlag(readInt32, 1);
             this.mType.username_requested = TLObject.hasFlag(this.flags, 2);
             this.mType.photo_requested = TLObject.hasFlag(this.flags, 4);
-            this.text = inputSerializedData.readString(z4);
-            this.mType.button_id = inputSerializedData.readInt32(z4);
-            this.mType.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
-            this.mType.max_quantity = inputSerializedData.readInt32(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.button_id = inputSerializedData.readInt32(z10);
+            this.mType.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.mType.max_quantity = inputSerializedData.readInt32(z10);
             TL_inputButtonTypeRequestPeer tL_inputButtonTypeRequestPeer = this.mType;
             tL_inputButtonTypeRequestPeer.flags = TLObject.setFlag(tL_inputButtonTypeRequestPeer.flags, 1, tL_inputButtonTypeRequestPeer.name_requested);
             TL_inputButtonTypeRequestPeer tL_inputButtonTypeRequestPeer2 = this.mType;
@@ -815,7 +815,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inputKeyboardButtonRequestPeer_layer228 extends TL_keyboardButton {
         public static final int constructor = 45580630;
         public final TL_inputButtonTypeRequestPeer mType;
@@ -827,19 +827,19 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.mType.name_requested = TLObject.hasFlag(readInt32, 1);
             this.mType.username_requested = TLObject.hasFlag(this.flags, 2);
             this.mType.photo_requested = TLObject.hasFlag(this.flags, 4);
             if (TLObject.hasFlag(this.flags, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.mType.button_id = inputSerializedData.readInt32(z4);
-            this.mType.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
-            this.mType.max_quantity = inputSerializedData.readInt32(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.button_id = inputSerializedData.readInt32(z10);
+            this.mType.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.mType.max_quantity = inputSerializedData.readInt32(z10);
             TL_inputButtonTypeRequestPeer tL_inputButtonTypeRequestPeer = this.mType;
             tL_inputButtonTypeRequestPeer.flags = TLObject.setFlag(tL_inputButtonTypeRequestPeer.flags, 1, tL_inputButtonTypeRequestPeer.name_requested);
             TL_inputButtonTypeRequestPeer tL_inputButtonTypeRequestPeer2 = this.mType;
@@ -870,7 +870,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inputKeyboardButtonUrlAuth_layer223 extends TL_inputKeyboardButtonUrlAuth_layer228 {
         public static final int constructor = -802258988;
 
@@ -878,16 +878,16 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_inputKeyboardButtonUrlAuth_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.mType.request_write_access = TLObject.hasFlag(readInt32, 1);
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.mType.fwd_text = inputSerializedData.readString(z4);
+                this.mType.fwd_text = inputSerializedData.readString(z10);
             }
-            this.mType.url = inputSerializedData.readString(z4);
-            this.mType.bot = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+            this.mType.url = inputSerializedData.readString(z10);
+            this.mType.bot = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             TL_inputInlineButtonTypeUrlAuth tL_inputInlineButtonTypeUrlAuth = this.mType;
             tL_inputInlineButtonTypeUrlAuth.flags = TLObject.setFlag(tL_inputInlineButtonTypeUrlAuth.flags, 1, tL_inputInlineButtonTypeUrlAuth.request_write_access);
             TL_inputInlineButtonTypeUrlAuth tL_inputInlineButtonTypeUrlAuth2 = this.mType;
@@ -912,7 +912,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inputKeyboardButtonUrlAuth_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = 1744911986;
         public final TL_inputInlineButtonTypeUrlAuth mType;
@@ -924,19 +924,19 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             this.mType.request_write_access = TLObject.hasFlag(this.flags, 1);
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.mType.fwd_text = inputSerializedData.readString(z4);
+                this.mType.fwd_text = inputSerializedData.readString(z10);
             }
-            this.mType.url = inputSerializedData.readString(z4);
-            this.mType.bot = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+            this.mType.url = inputSerializedData.readString(z10);
+            this.mType.bot = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             TL_inputInlineButtonTypeUrlAuth tL_inputInlineButtonTypeUrlAuth = this.mType;
             tL_inputInlineButtonTypeUrlAuth.flags = TLObject.setFlag(tL_inputInlineButtonTypeUrlAuth.flags, 1, tL_inputInlineButtonTypeUrlAuth.request_write_access);
             TL_inputInlineButtonTypeUrlAuth tL_inputInlineButtonTypeUrlAuth2 = this.mType;
@@ -966,7 +966,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inputKeyboardButtonUserProfile_layer223 extends TL_inputKeyboardButtonUserProfile_layer228 {
         public static final int constructor = -376962181;
 
@@ -974,9 +974,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_inputKeyboardButtonUserProfile_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.text = inputSerializedData.readString(z4);
-            this.mType.user_id = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.text = inputSerializedData.readString(z10);
+            this.mType.user_id = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_inputKeyboardButtonUserProfile_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -987,7 +987,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inputKeyboardButtonUserProfile_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = 2103314375;
         public final TL_inputInlineButtonTypeUserProfile mType;
@@ -999,14 +999,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.mType.user_id = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.user_id = TLRPC.InputUser.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1023,7 +1023,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButton extends KeyboardButton {
         public static final int constructor = 795322159;
 
@@ -1038,14 +1038,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.type = ButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+            this.text = inputSerializedData.readString(z10);
+            this.type = ButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -1062,7 +1062,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonBuy_layer223 extends TL_keyboardButtonBuy_layer228 {
         public static final int constructor = -1344716869;
 
@@ -1071,9 +1071,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonBuy_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.type = new TL_inlineButtonTypeBuy();
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonBuy_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1083,7 +1083,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonBuy_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = 1067792645;
 
@@ -1091,14 +1091,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.type = new TL_inlineButtonTypeBuy();
-            int readInt32 = inputSerializedData.readInt32(z4);
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1114,7 +1114,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonCallback_layer117 extends TL_keyboardButtonCallback_layer228 {
         public static final int constructor = 1748655686;
 
@@ -1122,9 +1122,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonCallback_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.text = inputSerializedData.readString(z4);
-            this.mType.data = inputSerializedData.readByteArray(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.text = inputSerializedData.readString(z10);
+            this.mType.data = inputSerializedData.readByteArray(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonCallback_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1135,7 +1135,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonCallback_layer223 extends TL_keyboardButtonCallback_layer228 {
         public static final int constructor = 901503851;
 
@@ -1143,12 +1143,12 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonCallback_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.mType.requires_password = TLObject.hasFlag(readInt32, 1);
-            this.text = inputSerializedData.readString(z4);
-            this.mType.data = inputSerializedData.readByteArray(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.data = inputSerializedData.readByteArray(z10);
             TL_inlineButtonTypeCallback tL_inlineButtonTypeCallback = this.mType;
             tL_inlineButtonTypeCallback.flags = TLObject.setFlag(tL_inlineButtonTypeCallback.flags, 1, tL_inlineButtonTypeCallback.requires_password);
         }
@@ -1164,7 +1164,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonCallback_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -433338016;
         public final TL_inlineButtonTypeCallback mType;
@@ -1176,15 +1176,15 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.mType.requires_password = TLObject.hasFlag(readInt32, 1);
             if (TLObject.hasFlag(this.flags, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.mType.data = inputSerializedData.readByteArray(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.data = inputSerializedData.readByteArray(z10);
             TL_inlineButtonTypeCallback tL_inlineButtonTypeCallback = this.mType;
             tL_inlineButtonTypeCallback.flags = TLObject.setFlag(tL_inlineButtonTypeCallback.flags, 1, tL_inlineButtonTypeCallback.requires_password);
         }
@@ -1205,7 +1205,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonCopy_layer223 extends TL_keyboardButtonCopy_layer228 {
         public static final int constructor = 1976723854;
 
@@ -1213,9 +1213,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonCopy_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.text = inputSerializedData.readString(z4);
-            this.mType.copy_text = inputSerializedData.readString(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.text = inputSerializedData.readString(z10);
+            this.mType.copy_text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonCopy_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1226,7 +1226,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonCopy_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -1127960816;
         public final TL_inlineButtonTypeCopy mType;
@@ -1238,14 +1238,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.mType.copy_text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.copy_text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1262,7 +1262,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonGame_layer223 extends TL_keyboardButtonGame_layer228 {
         public static final int constructor = 1358175439;
 
@@ -1271,9 +1271,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonGame_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.type = new TL_inlineButtonTypeGame();
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonGame_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1283,7 +1283,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonGame_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -1983540999;
 
@@ -1291,14 +1291,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.type = new TL_inlineButtonTypeGame();
-            int readInt32 = inputSerializedData.readInt32(z4);
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1314,7 +1314,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonRequestGeoLocation_layer223 extends TL_keyboardButtonRequestGeoLocation_layer228 {
         public static final int constructor = -59151553;
 
@@ -1323,9 +1323,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonRequestGeoLocation_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.type = new TL_buttonTypeRequestGeoLocation();
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonRequestGeoLocation_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1335,7 +1335,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonRequestGeoLocation_layer228 extends TL_keyboardButton {
         public static final int constructor = -1438582451;
 
@@ -1343,14 +1343,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.type = new TL_buttonTypeRequestGeoLocation();
-            int readInt32 = inputSerializedData.readInt32(z4);
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1366,7 +1366,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonRequestPeer_layer168 extends TL_keyboardButtonRequestPeer_layer228 {
         public static final int constructor = 218842764;
 
@@ -1374,10 +1374,10 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonRequestPeer_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.text = inputSerializedData.readString(z4);
-            this.mType.button_id = inputSerializedData.readInt32(z4);
-            this.mType.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.text = inputSerializedData.readString(z10);
+            this.mType.button_id = inputSerializedData.readInt32(z10);
+            this.mType.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonRequestPeer_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1389,7 +1389,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonRequestPeer_layer223 extends TL_keyboardButtonRequestPeer_layer228 {
         public static final int constructor = 1406648280;
 
@@ -1397,11 +1397,11 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonRequestPeer_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.text = inputSerializedData.readString(z4);
-            this.mType.button_id = inputSerializedData.readInt32(z4);
-            this.mType.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
-            this.mType.max_quantity = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.text = inputSerializedData.readString(z10);
+            this.mType.button_id = inputSerializedData.readInt32(z10);
+            this.mType.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.mType.max_quantity = inputSerializedData.readInt32(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonRequestPeer_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1414,7 +1414,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonRequestPeer_layer228 extends TL_keyboardButton {
         public static final int constructor = 1527715317;
         public final TL_buttonTypeRequestPeer mType;
@@ -1426,16 +1426,16 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.mType.button_id = inputSerializedData.readInt32(z4);
-            this.mType.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
-            this.mType.max_quantity = inputSerializedData.readInt32(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.button_id = inputSerializedData.readInt32(z10);
+            this.mType.peer_type = TLRPC.RequestPeerType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
+            this.mType.max_quantity = inputSerializedData.readInt32(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1454,7 +1454,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonRequestPhone_layer223 extends TL_keyboardButtonRequestPhone_layer228 {
         public static final int constructor = -1318425559;
 
@@ -1463,9 +1463,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonRequestPhone_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.type = new TL_buttonTypeRequestPhone();
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonRequestPhone_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1475,7 +1475,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonRequestPhone_layer228 extends TL_keyboardButton {
         public static final int constructor = 1098841487;
 
@@ -1483,14 +1483,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             this.type = new TL_buttonTypeRequestPhone();
-            int readInt32 = inputSerializedData.readInt32(z4);
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1506,7 +1506,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonRequestPoll_layer223 extends TL_keyboardButtonRequestPoll_layer228 {
         public static final int constructor = -1144565411;
 
@@ -1514,14 +1514,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonRequestPoll_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.mType.flags = readInt32 & 1;
             if (TLObject.hasFlag(readInt32, 1)) {
-                this.mType.quiz = inputSerializedData.readBool(z4);
+                this.mType.quiz = inputSerializedData.readBool(z10);
             }
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonRequestPoll_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1535,7 +1535,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonRequestPoll_layer228 extends TL_keyboardButton {
         public static final int constructor = 2047989634;
         public final TL_buttonTypeRequestPoll mType;
@@ -1547,19 +1547,19 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             TL_buttonTypeRequestPoll tL_buttonTypeRequestPoll = this.mType;
             int i10 = this.flags;
             tL_buttonTypeRequestPoll.flags = i10 & 1;
             if (TLObject.hasFlag(i10, 1)) {
-                this.mType.quiz = inputSerializedData.readBool(z4);
+                this.mType.quiz = inputSerializedData.readBool(z10);
             }
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1578,7 +1578,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonSimpleWebView_layer223 extends TL_keyboardButtonSimpleWebView_layer228 {
         public static final int constructor = -1598009252;
 
@@ -1586,9 +1586,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonSimpleWebView_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.text = inputSerializedData.readString(z4);
-            this.mType.url = inputSerializedData.readString(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.text = inputSerializedData.readString(z10);
+            this.mType.url = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonSimpleWebView_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1599,7 +1599,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonSimpleWebView_layer228 extends TL_keyboardButton {
         public static final int constructor = -514047120;
         public final TL_buttonTypeSimpleWebView mType;
@@ -1611,14 +1611,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.mType.url = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.url = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
@@ -1635,7 +1635,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonSwitchInline_layer157 extends TL_keyboardButtonSwitchInline_layer228 {
         public static final int constructor = 90744648;
 
@@ -1643,12 +1643,12 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonSwitchInline_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.mType.same_peer = TLObject.hasFlag(readInt32, 1);
-            this.text = inputSerializedData.readString(z4);
-            this.mType.query = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.query = inputSerializedData.readString(z10);
             TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = this.mType;
             tL_inlineButtonTypeSwitchInline.flags = TLObject.setFlag(tL_inlineButtonTypeSwitchInline.flags, 1, tL_inlineButtonTypeSwitchInline.same_peer);
         }
@@ -1664,7 +1664,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonSwitchInline_layer223 extends TL_keyboardButtonSwitchInline_layer228 {
         public static final int constructor = -1816527947;
 
@@ -1672,14 +1672,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonSwitchInline_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             this.mType.same_peer = TLObject.hasFlag(readInt32, 1);
-            this.text = inputSerializedData.readString(z4);
-            this.mType.query = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.query = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.mType.peer_types = Vector.deserialize(inputSerializedData, new q(17), z4);
+                this.mType.peer_types = Vector.deserialize(inputSerializedData, new r(17), z10);
             }
             TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = this.mType;
             tL_inlineButtonTypeSwitchInline.flags = TLObject.setFlag(tL_inlineButtonTypeSwitchInline.flags, 1, tL_inlineButtonTypeSwitchInline.same_peer);
@@ -1702,7 +1702,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonSwitchInline_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -1726768644;
         public final TL_inlineButtonTypeSwitchInline mType;
@@ -1714,17 +1714,17 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             this.mType.same_peer = TLObject.hasFlag(this.flags, 1);
-            this.text = inputSerializedData.readString(z4);
-            this.mType.query = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.query = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 2)) {
-                this.mType.peer_types = Vector.deserialize(inputSerializedData, new q(17), z4);
+                this.mType.peer_types = Vector.deserialize(inputSerializedData, new r(17), z10);
             }
             TL_inlineButtonTypeSwitchInline tL_inlineButtonTypeSwitchInline = this.mType;
             tL_inlineButtonTypeSwitchInline.flags = TLObject.setFlag(tL_inlineButtonTypeSwitchInline.flags, 1, tL_inlineButtonTypeSwitchInline.same_peer);
@@ -1752,7 +1752,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonUrlAuth_layer223 extends TL_keyboardButtonUrlAuth_layer228 {
         public static final int constructor = 280464681;
 
@@ -1760,14 +1760,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonUrlAuth_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.flags = inputSerializedData.readInt32(z4);
-            this.text = inputSerializedData.readString(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.flags = inputSerializedData.readInt32(z10);
+            this.text = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.mType.fwd_text = inputSerializedData.readString(z4);
+                this.mType.fwd_text = inputSerializedData.readString(z10);
             }
-            this.mType.url = inputSerializedData.readString(z4);
-            this.mType.button_id = inputSerializedData.readInt32(z4);
+            this.mType.url = inputSerializedData.readString(z10);
+            this.mType.button_id = inputSerializedData.readInt32(z10);
             this.mType.flags = this.flags & 1;
         }
 
@@ -1784,7 +1784,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonUrlAuth_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -183499015;
         public final TL_inlineButtonTypeUrlAuth mType;
@@ -1796,18 +1796,18 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
             if (TLObject.hasFlag(this.flags, 1)) {
-                this.mType.fwd_text = inputSerializedData.readString(z4);
+                this.mType.fwd_text = inputSerializedData.readString(z10);
             }
-            this.mType.url = inputSerializedData.readString(z4);
-            this.mType.button_id = inputSerializedData.readInt32(z4);
+            this.mType.url = inputSerializedData.readString(z10);
+            this.mType.button_id = inputSerializedData.readInt32(z10);
             this.mType.flags = this.flags & 1;
         }
 
@@ -1831,7 +1831,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonUrl_layer223 extends TL_keyboardButtonUrl_layer228 {
         public static final int constructor = 629866245;
 
@@ -1839,9 +1839,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonUrl_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.text = inputSerializedData.readString(z4);
-            this.mType.url = inputSerializedData.readString(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.text = inputSerializedData.readString(z10);
+            this.mType.url = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonUrl_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1852,7 +1852,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonUrl_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -670292500;
         public final TL_inlineButtonTypeUrl mType;
@@ -1864,14 +1864,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.mType.url = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.url = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1888,7 +1888,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonUserProfile_layer223 extends TL_keyboardButtonUserProfile_layer228 {
         public static final int constructor = 814112961;
 
@@ -1896,9 +1896,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonUserProfile_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.text = inputSerializedData.readString(z4);
-            this.mType.user_id = inputSerializedData.readInt64(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.text = inputSerializedData.readString(z10);
+            this.mType.user_id = inputSerializedData.readInt64(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonUserProfile_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1909,7 +1909,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonUserProfile_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -1057137399;
         public final TL_inlineButtonTypeUserProfile mType;
@@ -1921,14 +1921,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.mType.user_id = inputSerializedData.readInt64(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.user_id = inputSerializedData.readInt64(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1945,7 +1945,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonWebView_layer223 extends TL_keyboardButtonWebView_layer228 {
         public static final int constructor = 326529584;
 
@@ -1953,9 +1953,9 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonWebView_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.text = inputSerializedData.readString(z4);
-            this.mType.url = inputSerializedData.readString(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.text = inputSerializedData.readString(z10);
+            this.mType.url = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButtonWebView_layer228, org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -1966,7 +1966,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButtonWebView_layer228 extends TL_keyboardInlineButton {
         public static final int constructor = -398020192;
         public final TL_inlineButtonTypeWebView mType;
@@ -1978,14 +1978,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.mType.url = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
+            this.mType.url = inputSerializedData.readString(z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -2002,7 +2002,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButton_layer223 extends TL_keyboardButton {
         public static final int constructor = -1560655744;
 
@@ -2010,8 +2010,8 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.text = inputSerializedData.readString(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.text = inputSerializedData.readString(z10);
             this.type = new TL_buttonTypeDefault();
         }
 
@@ -2022,7 +2022,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardButton_layer228 extends TL_keyboardButton {
         public static final int constructor = 2098662655;
 
@@ -2030,13 +2030,13 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
+            this.text = inputSerializedData.readString(z10);
             this.type = new TL_buttonTypeDefault();
         }
 
@@ -2053,7 +2053,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardInlineButton extends KeyboardInlineButton {
         public static final int constructor = 297902882;
 
@@ -2068,14 +2068,14 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.type = InlineButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+            this.text = inputSerializedData.readString(z10);
+            this.type = InlineButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2092,13 +2092,13 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardInlineButtonRow extends KeyboardInlineButtonRow {
         public static final int constructor = 423758582;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            this.buttons = Vector.deserialize(inputSerializedData, new a(2), z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            this.buttons = Vector.deserialize(inputSerializedData, new a(2), z10);
         }
 
         @Override // org.telegram.tgnet.TLObject
@@ -2108,7 +2108,7 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardInlineButtonRow_layer228 extends TL_keyboardInlineButtonRow {
         public static final int constructor = 2002815875;
 
@@ -2116,8 +2116,8 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButtonRow, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            ArrayList deserialize = Vector.deserialize(inputSerializedData, new c(0), z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            ArrayList deserialize = Vector.deserialize(inputSerializedData, new c(0), z10);
             this.buttons = new ArrayList<>(deserialize.size());
             int size = deserialize.size();
             int i10 = 0;
@@ -2138,19 +2138,19 @@ public class TL_keyboard {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_keyboardInlineButton_legacy extends TL_keyboardInlineButton {
         public static final int constructor = -1675883435;
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
-            int readInt32 = inputSerializedData.readInt32(z4);
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
+            int readInt32 = inputSerializedData.readInt32(z10);
             this.flags = readInt32;
             if (TLObject.hasFlag(readInt32, 1024)) {
-                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.style = KeyboardButtonStyle.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
-            this.text = inputSerializedData.readString(z4);
-            this.type = InlineButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+            this.text = inputSerializedData.readString(z10);
+            this.type = InlineButtonType.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
         }
 
         @Override // org.telegram.tgnet.tl.TL_keyboard.TL_keyboardInlineButton, org.telegram.tgnet.TLObject
@@ -2171,26 +2171,26 @@ public class TL_keyboard {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static TLObject TLdeserializeLegacy(InputSerializedData inputSerializedData, int i10, boolean z4) {
+    public static TLObject TLdeserializeLegacy(InputSerializedData inputSerializedData, int i10, boolean z10) {
         KeyboardButton fromConstructor = KeyboardButton.fromConstructor(i10);
         if (fromConstructor != null) {
-            fromConstructor.readParams(inputSerializedData, z4);
+            fromConstructor.readParams(inputSerializedData, z10);
             return fromConstructor;
         }
         KeyboardInlineButton fromConstructor2 = KeyboardInlineButton.fromConstructor(i10);
         if (fromConstructor2 != null) {
-            fromConstructor2.readParams(inputSerializedData, z4);
+            fromConstructor2.readParams(inputSerializedData, z10);
             return fromConstructor2;
         }
-        TLParseException.doThrowOrLog(inputSerializedData, KeyboardButtonProto.class.getName(), i10, z4);
+        TLParseException.doThrowOrLog(inputSerializedData, KeyboardButtonProto.class.getName(), i10, z10);
         return null;
     }
 
-    public static /* synthetic */ TLObject access$400(InputSerializedData inputSerializedData, int i10, boolean z4) {
-        return TLdeserializeLegacy(inputSerializedData, i10, z4);
+    public static /* synthetic */ TLObject access$400(InputSerializedData inputSerializedData, int i10, boolean z10) {
+        return TLdeserializeLegacy(inputSerializedData, i10, z10);
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_buttonTypeDefault extends ButtonType {
         public static final int constructor = -908226327;
 
@@ -2200,11 +2200,11 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_buttonTypeRequestGeoLocation extends ButtonType {
         public static final int constructor = -1678843584;
 
@@ -2214,11 +2214,11 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_buttonTypeRequestPhone extends ButtonType {
         public static final int constructor = -549636359;
 
@@ -2228,11 +2228,11 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inlineButtonTypeBuy extends InlineButtonType {
         public static final int constructor = 1220204453;
 
@@ -2242,11 +2242,11 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inlineButtonTypeDisabled extends InlineButtonType {
         public static final int constructor = -1539808867;
 
@@ -2256,11 +2256,11 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class TL_inlineButtonTypeGame extends InlineButtonType {
         public static final int constructor = 1557360797;
 
@@ -2270,7 +2270,7 @@ public class TL_keyboard {
         }
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
         }
     }
 }

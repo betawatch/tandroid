@@ -1,82 +1,78 @@
 package m;
 
-import android.graphics.Rect;
-import android.view.MotionEvent;
-import android.view.TouchDelegate;
+import android.R;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.TypedArray;
+import android.graphics.Color;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
-import android.view.ViewConfiguration;
+import v7.u7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a3 extends TouchDelegate {
-    public final View a;
-    public final Rect b;
-    public final Rect c;
-    public final Rect d;
-    public final int e;
-    public boolean f;
+public abstract class a3 {
+    public static final ThreadLocal a = new ThreadLocal();
+    public static final int[] b = {-16842910};
+    public static final int[] c = {R.attr.state_focused};
+    public static final int[] d = {R.attr.state_pressed};
+    public static final int[] e = {R.attr.state_checked};
+    public static final int[] f = new int[0];
+    public static final int[] g = new int[1];
 
-    public a3(Rect rect, Rect rect2, View view) {
-        super(rect, view);
-        int scaledTouchSlop = ViewConfiguration.get(view.getContext()).getScaledTouchSlop();
-        this.e = scaledTouchSlop;
-        Rect rect3 = new Rect();
-        this.b = rect3;
-        Rect rect4 = new Rect();
-        this.d = rect4;
-        Rect rect5 = new Rect();
-        this.c = rect5;
-        rect3.set(rect);
-        rect4.set(rect);
-        int i10 = -scaledTouchSlop;
-        rect4.inset(i10, i10);
-        rect5.set(rect2);
-        this.a = view;
+    public static void a(View view, Context context) {
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes(f.a.j);
+        try {
+            if (!obtainStyledAttributes.hasValue(117)) {
+                Log.e("ThemeUtils", "View " + view.getClass() + " is an AppCompat widget that can only be used with a Theme.AppCompat theme (or descendant).");
+            }
+        } finally {
+            obtainStyledAttributes.recycle();
+        }
     }
 
-    @Override // android.view.TouchDelegate
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        boolean z4;
-        boolean z10;
-        int x10 = (int) motionEvent.getX();
-        int y10 = (int) motionEvent.getY();
-        int action = motionEvent.getAction();
-        boolean z11 = true;
-        if (action != 0) {
-            if (action == 1 || action == 2) {
-                z10 = this.f;
-                if (z10 && !this.d.contains(x10, y10)) {
-                    z11 = z10;
-                    z4 = false;
-                }
-            } else {
-                if (action == 3) {
-                    z10 = this.f;
-                    this.f = false;
-                }
-                z4 = true;
-                z11 = false;
+    public static int b(Context context, int i10) {
+        ColorStateList d10 = d(context, i10);
+        if (d10 != null && d10.isStateful()) {
+            return d10.getColorForState(b, d10.getDefaultColor());
+        }
+        ThreadLocal threadLocal = a;
+        TypedValue typedValue = (TypedValue) threadLocal.get();
+        if (typedValue == null) {
+            typedValue = new TypedValue();
+            threadLocal.set(typedValue);
+        }
+        context.getTheme().resolveAttribute(R.attr.disabledAlpha, typedValue, true);
+        float f7 = typedValue.getFloat();
+        return i0.a.k(c(context, i10), Math.round(Color.alpha(r4) * f7));
+    }
+
+    public static int c(Context context, int i10) {
+        int[] iArr = g;
+        iArr[0] = i10;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
+        try {
+            return obtainStyledAttributes.getColor(0, 0);
+        } finally {
+            obtainStyledAttributes.recycle();
+        }
+    }
+
+    public static ColorStateList d(Context context, int i10) {
+        ColorStateList colorStateList;
+        int resourceId;
+        int[] iArr = g;
+        iArr[0] = i10;
+        TypedArray obtainStyledAttributes = context.obtainStyledAttributes((AttributeSet) null, iArr);
+        try {
+            if (!obtainStyledAttributes.hasValue(0) || (resourceId = obtainStyledAttributes.getResourceId(0, 0)) == 0 || (colorStateList = u7.a(context, resourceId)) == null) {
+                colorStateList = obtainStyledAttributes.getColorStateList(0);
             }
-            z11 = z10;
-            z4 = true;
-        } else {
-            if (this.b.contains(x10, y10)) {
-                this.f = true;
-                z4 = true;
-            }
-            z4 = true;
-            z11 = false;
+            return colorStateList;
+        } finally {
+            obtainStyledAttributes.recycle();
         }
-        if (!z11) {
-            return false;
-        }
-        Rect rect = this.c;
-        View view = this.a;
-        if (!z4 || rect.contains(x10, y10)) {
-            motionEvent.setLocation(x10 - rect.left, y10 - rect.top);
-        } else {
-            motionEvent.setLocation(view.getWidth() / 2, view.getHeight() / 2);
-        }
-        return view.dispatchTouchEvent(motionEvent);
     }
 }

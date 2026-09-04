@@ -13,8 +13,8 @@ public class i3 implements c2 {
     public int b;
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.U(this, j10, j11);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.U(this, j3, j10);
     }
 
     @Override // j$.util.stream.e2
@@ -62,11 +62,11 @@ public class i3 implements c2 {
         }
     }
 
-    public i3(long j10) {
-        if (j10 >= 2147483639) {
+    public i3(long j3) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.a = new long[(int) j10];
+        this.a = new long[(int) j3];
         this.b = 0;
     }
 

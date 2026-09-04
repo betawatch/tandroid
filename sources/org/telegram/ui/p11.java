@@ -1,144 +1,112 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
-import android.view.View;
+import j$.time.LocalDate;
+import j$.time.Period;
 import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.HashSet;
+import org.telegram.messenger.BirthdayController;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class p11 extends org.telegram.ui.Components.c81 {
-    public boolean a;
-    public final /* synthetic */ org.telegram.ui.Components.sr0 b;
+public final class p11 {
+    public final int a;
+    public boolean b;
+    public r11 c;
+    public final boolean[] g;
+    public boolean i;
+    public final ArrayList d = new ArrayList();
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public final ArrayList h = new ArrayList();
+    public final ArrayList j = new ArrayList();
 
-    public p11(org.telegram.ui.Components.sr0 sr0Var) {
-        this.b = sr0Var;
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final void a(ArrayList arrayList) {
-        org.telegram.ui.Components.sr0 sr0Var = this.b;
-        sz0 sz0Var = sr0Var.D;
-        org.telegram.ui.Components.k81 k81Var = sr0Var.n;
-        ArrayList arrayList2 = new ArrayList();
-        int size = arrayList.size();
-        int i10 = 0;
-        int i11 = 0;
-        while (i11 < size) {
-            Object obj = arrayList.get(i11);
-            i11++;
-            Integer num = (Integer) obj;
-            int intValue = num.intValue();
-            if (intValue != -1 && intValue != -2 && intValue != 0) {
-                arrayList2.add(num);
+    public p11(int i10, int i11) {
+        boolean[] zArr = new boolean[2];
+        this.g = zArr;
+        this.a = i11;
+        if (i11 <= 0) {
+            zArr[0] = true;
+        } else {
+            ArrayList arrayList = new ArrayList();
+            HashSet hashSet = new HashSet();
+            String i12 = i2.g.i(i11, "");
+            for (int i13 = 0; i13 < i12.length(); i13++) {
+                int charAt = i12.charAt(i13) - '0';
+                if (charAt >= 0 && charAt <= 9) {
+                    arrayList.add(Integer.valueOf(charAt));
+                    hashSet.add(Integer.valueOf(charAt));
+                }
             }
+            TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName = new TLRPC.TL_inputStickerSetShortName();
+            String[] strArr = s11.s;
+            tL_inputStickerSetShortName.short_name = "FestiveFontEmoji";
+            MediaDataController.getInstance(i10).getStickerSet(tL_inputStickerSetShortName, 0, false, new y(this, hashSet, arrayList, 7));
         }
-        int f10 = f(k81Var.getCurrentPosition());
-        nh.h6 h6Var = sr0Var.r;
-        h6Var.getClass();
-        HashMap hashMap = new HashMap();
-        ArrayList arrayList3 = h6Var.h;
-        int size2 = arrayList3.size();
-        int i12 = 0;
-        while (i12 < size2) {
-            Object obj2 = arrayList3.get(i12);
-            i12++;
-            nh.m6 m6Var = (nh.m6) obj2;
-            hashMap.put(Integer.valueOf(m6Var.a), m6Var);
-        }
-        ArrayList arrayList4 = new ArrayList();
-        int size3 = arrayList2.size();
-        while (i10 < size3) {
-            Object obj3 = arrayList2.get(i10);
-            i10++;
-            Integer num2 = (Integer) obj3;
-            num2.getClass();
-            nh.m6 m6Var2 = (nh.m6) hashMap.get(num2);
-            if (m6Var2 != null) {
-                arrayList4.add(m6Var2);
+        String str = s11.s[Utilities.random.nextInt(3)];
+        TLRPC.TL_inputStickerSetShortName tL_inputStickerSetShortName2 = new TLRPC.TL_inputStickerSetShortName();
+        tL_inputStickerSetShortName2.short_name = "EmojiAnimations";
+        MediaDataController.getInstance(i10).getStickerSet(tL_inputStickerSetShortName2, 0, false, new oj0(6, this, str));
+    }
+
+    public static p11 c(int i10, TLRPC.UserFull userFull, p11 p11Var) {
+        TL_account.TL_birthday tL_birthday;
+        if (!LiteMode.isEnabled(2) || !BirthdayController.isToday(userFull)) {
+            if (p11Var == null) {
+                return null;
             }
-        }
-        arrayList3.clear();
-        arrayList3.addAll(arrayList4);
-        if (f10 >= 0) {
-            int i13 = i(f10);
-            k81Var.e(0.0f, i13, i13);
-        }
-        AndroidUtilities.cancelRunOnUIThread(sz0Var);
-        AndroidUtilities.runOnUIThread(sz0Var, 1000L);
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final boolean c(int i10) {
-        if (i10 == 0) {
-            return false;
-        }
-        return (this.a && i10 == e() - 1) ? false : true;
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final View d(int i10) {
-        if (i10 == -1) {
+            p11Var.b(false);
             return null;
         }
-        return new View(this.b.getContext());
+        int years = (userFull == null || (tL_birthday = userFull.birthday) == null || (tL_birthday.flags & 1) == 0) ? 0 : Period.between(LocalDate.of(tL_birthday.year, tL_birthday.month, tL_birthday.day), LocalDate.now()).getYears();
+        if (p11Var != null) {
+            if (p11Var.a == years) {
+                return p11Var;
+            }
+            p11Var.b(false);
+        }
+        return new p11(i10, years);
     }
 
-    @Override // org.telegram.ui.Components.c81
-    public final int e() {
-        return this.b.r.h.size() + 1 + (this.a ? 1 : 0);
+    public final void a() {
+        if (this.b || this.f.size() < this.e.size()) {
+            return;
+        }
+        boolean[] zArr = this.g;
+        int i10 = 0;
+        if (zArr[0] && zArr[1]) {
+            this.b = true;
+            ArrayList arrayList = this.h;
+            int size = arrayList.size();
+            while (i10 < size) {
+                Object obj = arrayList.get(i10);
+                i10++;
+                ((Runnable) obj).run();
+            }
+            arrayList.clear();
+        }
     }
 
-    @Override // org.telegram.ui.Components.c81
-    public final int f(int i10) {
-        if (i10 == 0) {
-            return 0;
+    public final void b(boolean z10) {
+        if (!z10 && !this.j.isEmpty()) {
+            this.i = true;
+            return;
         }
-        if (this.a && i10 == e() - 1) {
-            return -1;
+        this.h.clear();
+        int i10 = 0;
+        while (true) {
+            ArrayList arrayList = this.e;
+            if (i10 >= arrayList.size()) {
+                arrayList.clear();
+                return;
+            } else {
+                ((r11) arrayList.get(i10)).onDetachedFromWindow();
+                i10++;
+            }
         }
-        return ((nh.m6) this.b.r.h.get(i10 - 1)).a;
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final CharSequence g(int i10) {
-        if (i10 == 0) {
-            return LocaleController.getString(R.string.StoriesAlbumNameAllStories);
-        }
-        if (!this.a || i10 != e() - 1) {
-            return ((nh.m6) this.b.r.h.get(i10 - 1)).b;
-        }
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("+ ");
-        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.StoriesAlbumAddAlbum));
-        org.telegram.ui.Components.lq lqVar = new org.telegram.ui.Components.lq(R.drawable.poll_add_plus, 0);
-        lqVar.spaceScaleX = 0.8f;
-        spannableStringBuilder.setSpan(lqVar, 0, 1, 33);
-        return spannableStringBuilder;
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final int h(int i10) {
-        if (this.a && i10 == e() - 1) {
-            return -1;
-        }
-        return i10;
-    }
-
-    public final int i(int i10) {
-        if (i10 == 0) {
-            return 0;
-        }
-        int c3 = this.b.r.c(i10);
-        if (c3 == -1) {
-            return -1;
-        }
-        return c3 + 1;
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final void b(View view, int i10, int i11) {
     }
 }

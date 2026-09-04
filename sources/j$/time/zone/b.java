@@ -28,9 +28,9 @@ public final class b implements Comparable, Serializable {
         this.d = zoneOffset2;
     }
 
-    public b(long j10, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
-        this.a = j10;
-        this.b = LocalDateTime.K(j10, 0, zoneOffset);
+    public b(long j3, ZoneOffset zoneOffset, ZoneOffset zoneOffset2) {
+        this.a = j3;
+        this.b = LocalDateTime.K(j3, 0, zoneOffset);
         this.c = zoneOffset;
         this.d = zoneOffset2;
     }
@@ -65,14 +65,14 @@ public final class b implements Comparable, Serializable {
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("Transition[");
-        sb.append(j() ? "Gap" : "Overlap");
-        sb.append(" at ");
-        sb.append(this.b);
-        sb.append(this.c);
-        sb.append(" to ");
-        sb.append(this.d);
-        sb.append(']');
-        return sb.toString();
+        StringBuilder sb2 = new StringBuilder("Transition[");
+        sb2.append(j() ? "Gap" : "Overlap");
+        sb2.append(" at ");
+        sb2.append(this.b);
+        sb2.append(this.c);
+        sb2.append(" to ");
+        sb2.append(this.d);
+        sb2.append(']');
+        return sb2.toString();
     }
 }

@@ -1,653 +1,76 @@
 package org.telegram.ui.Cells;
 
-import android.animation.Animator;
-import android.animation.ValueAnimator;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.util.SparseArray;
-import java.util.ArrayList;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.util.Property;
+import android.view.Menu;
+import android.view.View;
+import android.view.animation.DecelerateInterpolator;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
+import org.telegram.messenger.LanguageDetector;
+import org.telegram.ui.Components.ve0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class m9 extends y9 {
-    public boolean A0;
-    public final SparseArray u0 = new SparseArray();
-    public boolean v0;
-    public boolean w0;
-    public boolean x0;
-    public boolean y0;
-    public boolean z0;
+public final /* synthetic */ class m9 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback, ve0 {
+    public final /* synthetic */ Object a;
+    public final /* synthetic */ Object b;
 
-    @Override // org.telegram.ui.Cells.y9
-    public final boolean D() {
-        t9 t9Var;
-        RichMessageLayout richMessageLayout;
-        CharSequence s6;
-        String str;
-        if (!this.z0 || (t9Var = this.W) == null || ((s1) t9Var).getMessageObject() == null || (richMessageLayout = ((s1) this.W).getMessageObject().richLayout) == null || richMessageLayout.textBlocks.isEmpty() || (s6 = s()) == null || s6.length() == 0) {
-            return false;
-        }
-        try {
-            str = richMessageLayout.getSelectionHtml(this.u, this.v);
-        } catch (Exception e) {
-            FileLog.e(e);
-            str = null;
-        }
-        if (str == null || str.length() == 0) {
-            return false;
-        }
-        AndroidUtilities.addToClipboard(s6, str);
-        return true;
+    public /* synthetic */ m9(Object obj, Object obj2) {
+        this.a = obj;
+        this.b = obj2;
     }
 
-    @Override // org.telegram.ui.Cells.y9
-    public final void F(boolean z4) {
-        t9 t9Var = this.W;
-        if (t9Var == null || !((s1) t9Var).g3() || z4) {
-            return;
-        }
-        s1 s1Var = (s1) this.W;
-        int id2 = s1Var.getMessageObject().getId();
-        SparseArray sparseArray = this.u0;
-        Animator animator = (Animator) sparseArray.get(id2);
-        if (animator != null) {
-            animator.removeAllListeners();
-            animator.cancel();
-        }
-        s1Var.setSelectedBackgroundProgress(0.01f);
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.01f, 1.0f);
-        ofFloat.addUpdateListener(new ih.b(s1Var, id2, 2));
-        ofFloat.addListener(new i1(1, s1Var));
-        ofFloat.setDuration(300L);
-        ofFloat.start();
-        sparseArray.put(id2, ofFloat);
-    }
-
-    @Override // org.telegram.ui.Cells.y9
-    public final void M(t9 t9Var, t9 t9Var2) {
-        s1 s1Var = (s1) t9Var;
-        s1 s1Var2 = (s1) t9Var2;
-        boolean z4 = s1Var2 == null || !(s1Var2.getMessageObject() == null || s1Var2.getMessageObject().getId() == s1Var.getMessageObject().getId());
-        this.w = s1Var.getMessageObject().getId();
-        try {
-            int i10 = s1Var.getMessageObject().messageOwner.edit_date;
-        } catch (Exception unused) {
-        }
-        this.U = 0.0f;
-        this.v0 = this.w0;
-        this.x0 = this.y0;
-        this.z0 = this.A0;
-        int i11 = this.w;
-        SparseArray sparseArray = this.u0;
-        Animator animator = (Animator) sparseArray.get(i11);
-        if (animator != null) {
-            animator.removeAllListeners();
-            animator.cancel();
-        }
-        ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-        ofFloat.addUpdateListener(new dg.b1(4, this, z4));
-        ofFloat.setDuration(250L);
-        ofFloat.start();
-        sparseArray.put(this.w, ofFloat);
-        if (!z4) {
-            s1Var.setSelectedBackgroundProgress(0.0f);
-        }
-        SharedConfig.removeTextSelectionHint();
-    }
-
-    public final void X(MessageObject messageObject) {
-        try {
-            int i10 = messageObject.messageOwner.edit_date;
-        } catch (Exception unused) {
-        }
-        if (this.w == messageObject.getId()) {
-            f(true);
-        }
-    }
-
-    public final void Y(boolean z4, StaticLayout staticLayout, Canvas canvas) {
-        if (this.v0) {
-            Paint paint = this.p;
-            Paint paint2 = this.o;
-            if (z4) {
-                int i10 = org.telegram.ui.ActionBar.j6.Vb;
-                paint2.setColor(u(i10));
-                paint.setColor(u(i10));
-            } else {
-                int i11 = org.telegram.ui.ActionBar.j6.uf;
-                paint2.setColor(u(i11));
-                paint.setColor(u(i11));
-            }
-            i(canvas, staticLayout, this.u, this.v, true, true, 0.0f);
-        }
-    }
-
-    public final void Z(MessageObject messageObject, RichMessageLayout richMessageLayout, Canvas canvas) {
-        t9 t9Var;
-        Canvas canvas2;
-        if (!this.z0 || richMessageLayout == null || (t9Var = this.W) == null || ((s1) t9Var).getMessageObject() == null || ((s1) this.W).getMessageObject().getId() != messageObject.getId()) {
-            return;
-        }
-        boolean isOutOwner = messageObject.isOutOwner();
-        Paint paint = this.p;
-        Paint paint2 = this.o;
-        if (isOutOwner) {
-            int i10 = org.telegram.ui.ActionBar.j6.Vb;
-            paint2.setColor(u(i10));
-            paint.setColor(u(i10));
+    @Override // org.telegram.ui.Components.ve0
+    public void k(int i10, int i11) {
+        u5 u5Var = (u5) this.a;
+        ve0 ve0Var = (ve0) this.b;
+        androidx.activity.i iVar = u5Var.e;
+        TextView textView = u5Var.b;
+        ve0Var.k(i10, i11);
+        if (i11 > 0) {
+            textView.setText("+" + i11);
         } else {
-            int i11 = org.telegram.ui.ActionBar.j6.uf;
-            paint2.setColor(u(i11));
-            paint.setColor(u(i11));
+            textView.setText("" + i11);
         }
-        int i12 = 0;
-        while (i12 < richMessageLayout.textBlocks.size()) {
-            Layout layout = richMessageLayout.textBlocks.get(i12).getLayout();
-            if (layout != null && layout.getText() != null) {
-                int intValue = richMessageLayout.textBlockCharOffsets.get(i12).intValue();
-                int length = layout.getText().length();
-                int clamp = Utilities.clamp(this.u - intValue, length, 0);
-                int clamp2 = Utilities.clamp(this.v - intValue, length, 0);
-                if (clamp != clamp2) {
-                    boolean z4 = this.u >= intValue;
-                    boolean z10 = this.v <= intValue + length;
-                    canvas.save();
-                    canvas.translate(r1.getX(), r1.getY());
-                    canvas2 = canvas;
-                    i(canvas2, layout, clamp, clamp2, z4, z10, 0.0f);
-                    canvas2.restore();
-                    i12++;
-                    canvas = canvas2;
-                }
-            }
-            canvas2 = canvas;
-            i12++;
-            canvas = canvas2;
+        if (textView.getTag() != null) {
+            AndroidUtilities.cancelRunOnUIThread(iVar);
+            AndroidUtilities.runOnUIThread(iVar, 1000L);
+            return;
         }
+        AnimatorSet animatorSet = u5Var.d;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+        }
+        textView.setTag(1);
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        u5Var.d = animatorSet2;
+        Property property = View.ALPHA;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(u5Var.a, (Property<TextView, Float>) property, 0.0f));
+        u5Var.d.setDuration(250L);
+        u5Var.d.setInterpolator(new DecelerateInterpolator());
+        u5Var.d.addListener(new org.telegram.ui.s0(u5Var, 13));
+        u5Var.d.start();
     }
 
-    public final void a0(s1 s1Var, int i10, int i11) {
-        if (s1Var == null) {
-            return;
-        }
-        this.W = s1Var;
-        this.w = s1Var.getMessageObject().getId();
-        this.u = i10;
-        this.v = i11;
-        x();
-        k7.x5 x5Var = this.D;
-        if (x5Var != null) {
-            x5Var.a(true);
-        }
-        this.g = 0.0f;
-        this.f = 0.0f;
-        this.e = false;
-        x9 x9Var = this.C;
-        if (x9Var != null) {
-            x9Var.setVisibility(0);
-        }
-        V();
+    @Override // org.telegram.messenger.LanguageDetector.StringCallback
+    public void run(String str) {
+        n9 n9Var = (n9) this.a;
+        Menu menu = (Menu) this.b;
+        n9Var.a = str;
+        n9Var.a(menu);
     }
 
-    public final void b0(s1 s1Var) {
-        ArrayList<MessageObject.TextLayoutBlock> arrayList;
-        RichMessageLayout richMessageLayout;
-        this.X = s1Var;
-        MessageObject messageObject = s1Var.getMessageObject();
-        r1 r1Var = s1Var.Wc;
-        boolean z4 = this.w0;
-        Rect rect = this.B;
-        if (z4 && s1Var.getDescriptionlayout() != null) {
-            int i10 = this.c;
-            rect.set(i10, this.d, s1Var.getDescriptionlayout().getWidth() + i10, s1Var.getDescriptionlayout().getHeight() + this.d);
-            return;
-        }
-        if (this.y0 && s1Var.getFactCheckLayout() != null) {
-            int i11 = this.c;
-            rect.set(i11, this.d, s1Var.getFactCheckLayout().getWidth() + i11, s1Var.getFactCheckLayout().getHeight() + this.d);
-            return;
-        }
-        if (this.A0 && messageObject != null && (richMessageLayout = messageObject.richLayout) != null && !richMessageLayout.textBlocks.isEmpty()) {
-            RichMessageLayout richMessageLayout2 = messageObject.richLayout;
-            int i12 = this.c;
-            rect.set(i12, this.d, richMessageLayout2.getMinWidth() + i12, richMessageLayout2.getHeight() + this.d);
-        } else if (s1Var.P2() && s1Var.getCaptionLayout().textLayoutBlocks.size() > 0) {
-            MessageObject.TextLayoutBlock textLayoutBlock = (MessageObject.TextLayoutBlock) kf.k0.i(1, s1Var.getCaptionLayout().textLayoutBlocks);
-            int i13 = this.c;
-            rect.set(i13, this.d, textLayoutBlock.textLayout.getWidth() + i13, (int) (textLayoutBlock.textYOffset(s1Var.getCaptionLayout().textLayoutBlocks, r1Var) + this.d + textLayoutBlock.padTop + textLayoutBlock.textLayout.getHeight()));
-        } else {
-            if (messageObject == null || (arrayList = messageObject.textLayoutBlocks) == null || arrayList.size() <= 0) {
-                this.X = null;
-                return;
-            }
-            MessageObject.TextLayoutBlock textLayoutBlock2 = (MessageObject.TextLayoutBlock) kf.k0.i(1, messageObject.textLayoutBlocks);
-            int i14 = this.c;
-            rect.set(i14, this.d, textLayoutBlock2.textLayout.getWidth() + i14, (int) (textLayoutBlock2.textYOffset(messageObject.textLayoutBlocks, r1Var) + this.d + textLayoutBlock2.padTop + textLayoutBlock2.textLayout.getHeight()));
-        }
-    }
-
-    public final void c0(int i10, int i11) {
-        if (this.a == i10 && this.b == i11) {
-            return;
-        }
-        this.a = i10;
-        this.b = i11;
-        x();
-    }
-
-    @Override // org.telegram.ui.Cells.y9
-    public final void f(boolean z4) {
-        super.f(z4);
-        this.v0 = false;
-        this.x0 = false;
-        this.z0 = false;
-    }
-
-    @Override // org.telegram.ui.Cells.y9
-    public final void j(int i10, o9 o9Var, boolean z4) {
-        s1 s1Var = (s1) (z4 ? this.X : this.W);
-        if (s1Var == null) {
-            o9Var.b = null;
-            return;
-        }
-        MessageObject messageObject = s1Var.getMessageObject();
-        if (this.v0) {
-            o9Var.b = s1Var.getDescriptionlayout();
-            o9Var.c = 0.0f;
-            o9Var.d = 0.0f;
-            o9Var.a = 0;
-            return;
-        }
-        if (this.x0) {
-            o9Var.b = s1Var.getFactCheckLayout();
-            o9Var.c = 0.0f;
-            o9Var.d = 0.0f;
-            o9Var.a = 0;
-            return;
-        }
-        if (this.z0) {
-            RichMessageLayout richMessageLayout = messageObject != null ? messageObject.richLayout : null;
-            if (richMessageLayout == null || richMessageLayout.textBlocks.isEmpty()) {
-                o9Var.b = null;
-                return;
-            }
-            while (true) {
-                if (r4 >= richMessageLayout.textBlocks.size()) {
-                    r4 = -1;
-                    break;
-                }
-                int intValue = richMessageLayout.textBlockCharOffsets.get(r4).intValue();
-                int length = richMessageLayout.textBlocks.get(r4).getLayout().getText().length();
-                if (i10 >= intValue && i10 <= intValue + length) {
-                    break;
-                } else {
-                    r4++;
-                }
-            }
-            if (r4 < 0) {
-                r4 = richMessageLayout.textBlocks.size() - 1;
-            }
-            o9Var.b = richMessageLayout.textBlocks.get(r4).getLayout();
-            o9Var.c = r9.getY();
-            o9Var.d = r9.getX();
-            o9Var.a = richMessageLayout.textBlockCharOffsets.get(r4).intValue();
-            return;
-        }
-        if (s1Var.P2()) {
-            MessageObject.TextLayoutBlocks captionLayout = s1Var.getCaptionLayout();
-            if (captionLayout.textLayoutBlocks.size() == 1) {
-                o9Var.b = captionLayout.textLayoutBlocks.get(0).textLayout;
-                o9Var.c = r9.padTop;
-                MessageObject.TextLayoutBlock textLayoutBlock = captionLayout.textLayoutBlocks.get(0);
-                float f10 = -(textLayoutBlock.isRtl() ? ((int) Math.ceil(captionLayout.textXOffset)) - (textLayoutBlock.quote ? AndroidUtilities.dp(10.0f) : 0) : 0);
-                o9Var.d = f10;
-                if (textLayoutBlock.code && !textLayoutBlock.quote) {
-                    o9Var.d = f10 + AndroidUtilities.dp(8.0f);
-                }
-                o9Var.a = 0;
-                return;
-            }
-            for (int i11 = 0; i11 < captionLayout.textLayoutBlocks.size(); i11++) {
-                MessageObject.TextLayoutBlock textLayoutBlock2 = captionLayout.textLayoutBlocks.get(i11);
-                int i12 = i10 - textLayoutBlock2.charactersOffset;
-                if (i12 >= 0 && i12 <= textLayoutBlock2.textLayout.getText().length()) {
-                    o9Var.b = textLayoutBlock2.textLayout;
-                    o9Var.c = textLayoutBlock2.textYOffset(captionLayout.textLayoutBlocks) + textLayoutBlock2.padTop;
-                    float f11 = -(textLayoutBlock2.isRtl() ? ((int) Math.ceil(captionLayout.textXOffset)) - (textLayoutBlock2.quote ? AndroidUtilities.dp(10.0f) : 0) : 0);
-                    o9Var.d = f11;
-                    if (textLayoutBlock2.code && !textLayoutBlock2.quote) {
-                        o9Var.d = f11 + AndroidUtilities.dp(8.0f);
-                    }
-                    o9Var.a = textLayoutBlock2.charactersOffset;
-                    return;
-                }
-            }
-            o9Var.b = null;
-            return;
-        }
-        ArrayList<MessageObject.TextLayoutBlock> arrayList = messageObject.textLayoutBlocks;
-        if (arrayList == null) {
-            o9Var.b = null;
-            return;
-        }
-        if (arrayList.size() == 1) {
-            o9Var.b = messageObject.textLayoutBlocks.get(0).textLayout;
-            o9Var.c = r9.padTop;
-            MessageObject.TextLayoutBlock textLayoutBlock3 = messageObject.textLayoutBlocks.get(0);
-            float f12 = -(textLayoutBlock3.isRtl() ? ((int) Math.ceil(messageObject.textXOffset)) - (textLayoutBlock3.quote ? AndroidUtilities.dp(10.0f) : 0) : 0);
-            o9Var.d = f12;
-            if (textLayoutBlock3.code && !textLayoutBlock3.quote) {
-                o9Var.d = f12 + AndroidUtilities.dp(8.0f);
-            }
-            o9Var.a = 0;
-            return;
-        }
-        for (int i13 = 0; i13 < messageObject.textLayoutBlocks.size(); i13++) {
-            MessageObject.TextLayoutBlock textLayoutBlock4 = messageObject.textLayoutBlocks.get(i13);
-            int i14 = i10 - textLayoutBlock4.charactersOffset;
-            if (i14 >= 0 && i14 <= textLayoutBlock4.textLayout.getText().length()) {
-                o9Var.b = textLayoutBlock4.textLayout;
-                o9Var.c = textLayoutBlock4.textYOffset(messageObject.textLayoutBlocks) + textLayoutBlock4.padTop;
-                float f13 = -(textLayoutBlock4.isRtl() ? ((int) Math.ceil(messageObject.textXOffset)) - (textLayoutBlock4.quote ? AndroidUtilities.dp(10.0f) : 0) : 0);
-                o9Var.d = f13;
-                if (textLayoutBlock4.code && !textLayoutBlock4.quote) {
-                    o9Var.d = f13 + AndroidUtilities.dp(8.0f);
-                }
-                o9Var.a = textLayoutBlock4.charactersOffset;
-                return;
-            }
-        }
-        o9Var.b = null;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:17:0x00ca  */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0326  */
-    /* JADX WARN: Removed duplicated region for block: B:74:? A[RETURN, SYNTHETIC] */
-    @Override // org.telegram.ui.Cells.y9
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int l(int i10, int i11, int i12, int i13, t9 t9Var, boolean z4) {
-        StaticLayout staticLayout;
-        float textYOffset;
-        int i14;
-        float f10;
-        float f11;
-        StaticLayout staticLayout2;
-        int i15;
-        Layout layout;
-        s1 s1Var = (s1) t9Var;
-        if (s1Var == null) {
-            return 0;
-        }
-        int i16 = i10 - i12;
-        int i17 = i11 - i13;
-        boolean z10 = z4 ? this.w0 : this.v0;
-        boolean z11 = z4 ? this.y0 : this.x0;
-        boolean z12 = z4 ? this.A0 : this.z0;
-        if (z10) {
-            staticLayout2 = s1Var.getDescriptionlayout();
-        } else {
-            if (!z11) {
-                if (z12) {
-                    RichMessageLayout richMessageLayout = s1Var.getMessageObject() != null ? s1Var.getMessageObject().richLayout : null;
-                    if (richMessageLayout != null && !richMessageLayout.textBlocks.isEmpty()) {
-                        w9 w9Var = (w9) kf.k0.i(1, richMessageLayout.textBlocks);
-                        Layout layout2 = w9Var.getLayout();
-                        staticLayout = layout2 instanceof StaticLayout ? (StaticLayout) layout2 : null;
-                        f10 = w9Var.getY();
-                    }
-                    return -1;
-                }
-                if (s1Var.P2()) {
-                    MessageObject.TextLayoutBlock textLayoutBlock = s1Var.getCaptionLayout().textLayoutBlocks.get(s1Var.getCaptionLayout().textLayoutBlocks.size() - 1);
-                    staticLayout = textLayoutBlock.textLayout;
-                    textYOffset = textLayoutBlock.textYOffset(s1Var.getCaptionLayout().textLayoutBlocks);
-                    i14 = textLayoutBlock.padTop;
-                } else {
-                    MessageObject.TextLayoutBlock textLayoutBlock2 = s1Var.getMessageObject().textLayoutBlocks.get(s1Var.getMessageObject().textLayoutBlocks.size() - 1);
-                    staticLayout = textLayoutBlock2.textLayout;
-                    textYOffset = textLayoutBlock2.textYOffset(s1Var.getMessageObject().textLayoutBlocks);
-                    i14 = textLayoutBlock2.padTop;
-                }
-                f10 = i14 + textYOffset;
-                StaticLayout staticLayout3 = staticLayout;
-                f11 = f10;
-                staticLayout2 = staticLayout3;
-                if (staticLayout2 != null) {
-                    if (i17 < 0) {
-                        i17 = 1;
-                    }
-                    int lineBottom = (int) (f11 + staticLayout2.getLineBottom(staticLayout2.getLineCount() - 1));
-                    if (i17 > lineBottom) {
-                        i17 = lineBottom - 1;
-                    }
-                    r1 r1Var = s1Var.Wc;
-                    MessageObject messageObject = s1Var.getMessageObject();
-                    o9 o9Var = this.a0;
-                    if (!z4 ? this.v0 : this.w0) {
-                        o9Var.b = s1Var.getDescriptionlayout();
-                        o9Var.d = 0.0f;
-                        o9Var.c = 0.0f;
-                        o9Var.a = 0;
-                    } else {
-                        if (!z4 ? this.x0 : this.y0) {
-                            if (!z4 ? !this.z0 : !this.A0) {
-                                i15 = -1;
-                                if (!s1Var.P2()) {
-                                    int i18 = 0;
-                                    while (true) {
-                                        if (i18 >= messageObject.textLayoutBlocks.size()) {
-                                            break;
-                                        }
-                                        MessageObject.TextLayoutBlock textLayoutBlock3 = messageObject.textLayoutBlocks.get(i18);
-                                        float f12 = i17;
-                                        if (f12 < textLayoutBlock3.textYOffset(messageObject.textLayoutBlocks) || f12 > textLayoutBlock3.textYOffset(messageObject.textLayoutBlocks) + textLayoutBlock3.padTop + textLayoutBlock3.height(r1Var)) {
-                                            i18++;
-                                        } else {
-                                            o9Var.b = textLayoutBlock3.textLayout;
-                                            o9Var.c = textLayoutBlock3.textYOffset(messageObject.textLayoutBlocks) + textLayoutBlock3.padTop;
-                                            float f13 = -(textLayoutBlock3.isRtl() ? ((int) Math.ceil(messageObject.textXOffset)) - (textLayoutBlock3.quote ? AndroidUtilities.dp(10.0f) : textLayoutBlock3.code ? AndroidUtilities.dp(0.0f) : 0) : 0);
-                                            o9Var.d = f13;
-                                            if (textLayoutBlock3.code && !textLayoutBlock3.quote) {
-                                                o9Var.d = f13 + AndroidUtilities.dp(8.0f);
-                                            }
-                                            o9Var.a = textLayoutBlock3.charactersOffset;
-                                        }
-                                    }
-                                } else {
-                                    MessageObject.TextLayoutBlocks captionLayout = s1Var.getCaptionLayout();
-                                    int i19 = 0;
-                                    while (true) {
-                                        if (i19 >= captionLayout.textLayoutBlocks.size()) {
-                                            break;
-                                        }
-                                        MessageObject.TextLayoutBlock textLayoutBlock4 = captionLayout.textLayoutBlocks.get(i19);
-                                        float f14 = i17;
-                                        if (f14 < textLayoutBlock4.textYOffset(captionLayout.textLayoutBlocks) || f14 > textLayoutBlock4.textYOffset(captionLayout.textLayoutBlocks) + textLayoutBlock4.padTop + textLayoutBlock4.height(r1Var)) {
-                                            i19++;
-                                        } else {
-                                            o9Var.b = textLayoutBlock4.textLayout;
-                                            o9Var.c = textLayoutBlock4.textYOffset(captionLayout.textLayoutBlocks) + textLayoutBlock4.padTop;
-                                            float f15 = -(textLayoutBlock4.isRtl() ? ((int) Math.ceil(captionLayout.textXOffset)) - (textLayoutBlock4.quote ? AndroidUtilities.dp(10.0f) : 0) : 0);
-                                            o9Var.d = f15;
-                                            if (textLayoutBlock4.code && !textLayoutBlock4.quote) {
-                                                o9Var.d = f15 + AndroidUtilities.dp(8.0f);
-                                            }
-                                            o9Var.a = textLayoutBlock4.charactersOffset;
-                                        }
-                                    }
-                                }
-                            } else {
-                                RichMessageLayout richMessageLayout2 = messageObject != null ? messageObject.richLayout : null;
-                                if (richMessageLayout2 == null || richMessageLayout2.textBlocks.isEmpty()) {
-                                    i15 = -1;
-                                    o9Var.b = null;
-                                } else {
-                                    int i20 = TLObject.FLAG_31;
-                                    int i21 = -1;
-                                    int i22 = -1;
-                                    int i23 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                                    for (int i24 = 0; i24 < richMessageLayout2.textBlocks.size(); i24++) {
-                                        w9 w9Var2 = richMessageLayout2.textBlocks.get(i24);
-                                        int y10 = w9Var2.getY();
-                                        int height = w9Var2.getLayout().getHeight() + y10;
-                                        int x10 = w9Var2.getX();
-                                        int width = w9Var2.getLayout().getWidth() + x10;
-                                        boolean z13 = i17 >= y10 && i17 < height;
-                                        boolean z14 = i16 >= x10 && i16 < width;
-                                        w9Var2.getLayout().getText();
-                                        if (z13) {
-                                            if (x10 <= i16 && x10 > i20) {
-                                                i20 = x10;
-                                                i21 = i24;
-                                            }
-                                            int min = z14 ? 0 : Math.min(Math.abs(i16 - x10), Math.abs(i16 - width));
-                                            if (min < i23) {
-                                                i23 = min;
-                                                i22 = i24;
-                                            }
-                                        }
-                                    }
-                                    i15 = -1;
-                                    if (i21 < 0) {
-                                        i21 = i22;
-                                    }
-                                    if (i21 < 0) {
-                                        int i25 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                                        i21 = 0;
-                                        for (int i26 = 0; i26 < richMessageLayout2.textBlocks.size(); i26++) {
-                                            w9 w9Var3 = richMessageLayout2.textBlocks.get(i26);
-                                            int y11 = w9Var3.getY();
-                                            int min2 = Math.min(Math.abs(i17 - y11), Math.abs(i17 - (w9Var3.getLayout().getHeight() + y11)));
-                                            if (min2 < i25) {
-                                                i21 = i26;
-                                                i25 = min2;
-                                            }
-                                        }
-                                    }
-                                    o9Var.b = richMessageLayout2.textBlocks.get(i21).getLayout();
-                                    o9Var.c = r2.getY();
-                                    o9Var.d = r2.getX();
-                                    o9Var.a = richMessageLayout2.textBlockCharOffsets.get(i21).intValue();
-                                }
-                            }
-                            layout = o9Var.b;
-                            if (layout != null) {
-                                return i15;
-                            }
-                            int i27 = (int) (i16 - o9Var.d);
-                            int i28 = 0;
-                            while (true) {
-                                if (i28 >= layout.getLineCount()) {
-                                    i28 = -1;
-                                    break;
-                                }
-                                float f16 = i17;
-                                if (f16 > o9Var.c + layout.getLineTop(i28) && f16 < o9Var.c + layout.getLineBottom(i28)) {
-                                    break;
-                                }
-                                i28++;
-                            }
-                            if (i28 >= 0) {
-                                return layout.getOffsetForHorizontal(i28, i27) + o9Var.a;
-                            }
-                            return i15;
-                        }
-                        o9Var.b = s1Var.getFactCheckLayout();
-                        o9Var.d = 0.0f;
-                        o9Var.c = 0.0f;
-                        o9Var.a = 0;
-                    }
-                    i15 = -1;
-                    layout = o9Var.b;
-                    if (layout != null) {
-                    }
-                }
-                return -1;
-            }
-            staticLayout2 = s1Var.getFactCheckLayout();
-        }
-        f11 = 0.0f;
-        if (staticLayout2 != null) {
-        }
-        return -1;
-    }
-
-    @Override // org.telegram.ui.Cells.y9
-    public final int n() {
-        Layout layout;
-        t9 t9Var = this.W;
-        if (t9Var != null && ((s1) t9Var).getMessageObject() != null) {
-            MessageObject messageObject = ((s1) this.W).getMessageObject();
-            if (this.v0) {
-                layout = ((s1) this.W).getDescriptionlayout();
-            } else if (this.x0) {
-                layout = ((s1) this.W).getFactCheckLayout();
-            } else if (this.z0) {
-                RichMessageLayout richMessageLayout = messageObject != null ? messageObject.richLayout : null;
-                if (richMessageLayout != null && !richMessageLayout.textBlocks.isEmpty()) {
-                    layout = richMessageLayout.textBlocks.get(0).getLayout();
-                }
-                layout = null;
-            } else if (((s1) this.W).P2()) {
-                layout = ((s1) this.W).getCaptionLayout().textLayoutBlocks.get(0).textLayout;
-            } else {
-                ArrayList<MessageObject.TextLayoutBlock> arrayList = messageObject.textLayoutBlocks;
-                if (arrayList != null) {
-                    layout = arrayList.get(0).textLayout;
-                }
-                layout = null;
-            }
-            if (layout != null) {
-                return layout.getLineBottom(0) - layout.getLineTop(0);
-            }
-        }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Cells.y9
-    public final CharSequence t(t9 t9Var, boolean z4) {
-        s1 s1Var = (s1) t9Var;
-        if (s1Var == null || s1Var.getMessageObject() == null) {
-            return null;
-        }
-        if (!z4 ? !this.v0 : !this.w0) {
-            return s1Var.getDescriptionlayout().getText();
-        }
-        if (!z4 ? !this.x0 : !this.y0) {
-            return s1Var.getFactCheckLayout().getText();
-        }
-        if (!z4 ? this.z0 : this.A0) {
-            return s1Var.P2() ? s1Var.getCaptionLayout().text : s1Var.getMessageObject().messageText;
-        }
-        RichMessageLayout richMessageLayout = s1Var.getMessageObject().richLayout;
-        return richMessageLayout != null ? richMessageLayout.joinedText : "";
-    }
-
-    @Override // org.telegram.ui.Cells.y9
-    public void x() {
-        super.x();
-        t9 t9Var = this.W;
-        if (t9Var != null && ((s1) t9Var).getCurrentMessagesGroup() != null) {
-            this.F.invalidate();
-        }
-        t9 t9Var2 = this.W;
-        if (t9Var2 != null) {
-            if (this.x0 || this.y0) {
-                ((s1) t9Var2).a3();
-            }
-        }
+    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
+    public void run(Exception exc) {
+        n9 n9Var = (n9) this.a;
+        Menu menu = (Menu) this.b;
+        n9Var.getClass();
+        FileLog.e("mlkit: failed to detect language in selection");
+        FileLog.e(exc);
+        n9Var.a = null;
+        n9Var.a(menu);
     }
 }

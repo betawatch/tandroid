@@ -1,40 +1,48 @@
 package com.google.android.gms.internal.cast;
 
 import android.content.Context;
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e {
-    public final Context a;
-    public final String b;
-    public final r5.j c;
-    public final r5.b d;
-    public final p e;
+public abstract class e {
+    public static final g6.b a = new g6.b("CastDynamiteModule", null);
 
-    public e(Context context, r5.b bVar, p pVar) {
-        String G;
-        ArrayList arrayList = bVar.b;
-        String str = bVar.a;
-        if (DesugarCollections.unmodifiableList(arrayList).isEmpty()) {
-            G = q5.y.a(str);
+    public static d6.n a(Context context, d6.b bVar, r rVar, HashMap hashMap) {
+        d6.n lVar;
+        g b10 = b(context);
+        x6.b bVar2 = new x6.b(context.getApplicationContext());
+        Parcel O0 = b10.O0();
+        v.d(O0, bVar2);
+        v.c(O0, bVar);
+        v.d(O0, rVar);
+        O0.writeMap(hashMap);
+        Parcel Q0 = b10.Q0(O0, 1);
+        IBinder readStrongBinder = Q0.readStrongBinder();
+        int i10 = d6.m.b;
+        if (readStrongBinder == null) {
+            lVar = null;
         } else {
-            List unmodifiableList = DesugarCollections.unmodifiableList(bVar.b);
-            if (str == null) {
-                throw new IllegalArgumentException("applicationId cannot be null");
-            }
-            if (unmodifiableList == null) {
-                throw new IllegalArgumentException("namespaces cannot be null");
-            }
-            G = q5.c0.G(new q5.c0(str, unmodifiableList, false, 1));
+            IInterface queryLocalInterface = readStrongBinder.queryLocalInterface("com.google.android.gms.cast.framework.ICastContext");
+            lVar = queryLocalInterface instanceof d6.n ? (d6.n) queryLocalInterface : new d6.l(readStrongBinder, "com.google.android.gms.cast.framework.ICastContext", 1);
         }
-        this.c = new r5.j(this);
-        this.a = context.getApplicationContext();
-        b6.m.f(G);
-        this.b = G;
-        this.d = bVar;
-        this.e = pVar;
+        Q0.recycle();
+        return lVar;
+    }
+
+    public static g b(Context context) {
+        try {
+            IBinder b10 = y6.e.c(context, y6.e.b, "com.google.android.gms.cast.framework.dynamite").b("com.google.android.gms.cast.framework.internal.CastDynamiteModuleImpl");
+            if (b10 == null) {
+                return null;
+            }
+            IInterface queryLocalInterface = b10.queryLocalInterface("com.google.android.gms.cast.framework.internal.ICastDynamiteModule");
+            return queryLocalInterface instanceof g ? (g) queryLocalInterface : new g(b10, "com.google.android.gms.cast.framework.internal.ICastDynamiteModule", 1);
+        } catch (y6.b e7) {
+            throw new d6.d(e7);
+        }
     }
 }

@@ -3,7 +3,7 @@ package com.google.android.gms.internal.play_billing;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class u0 implements Runnable {
     public w0 a;
@@ -21,8 +21,8 @@ public final class u0 implements Runnable {
             Object obj = w0Var.a;
             if (obj == null) {
                 if (t0Var.isDone()) {
-                    if (l0.h.f(w0Var, null, w0.g(t0Var))) {
-                        w0.i(w0Var);
+                    if (l0.h.f(w0Var, null, w0.h(t0Var))) {
+                        w0.j(w0Var);
                         return;
                     }
                     return;
@@ -30,7 +30,7 @@ public final class u0 implements Runnable {
                 c0 c0Var = new c0(w0Var, t0Var);
                 if (l0.h.f(w0Var, null, c0Var)) {
                     try {
-                        t0Var.a(c0Var, p0.a);
+                        t0Var.b(c0Var, p0.a);
                         return;
                     } catch (Throwable th2) {
                         try {
@@ -62,13 +62,13 @@ public final class u0 implements Runnable {
                     }
                 } catch (Throwable th3) {
                     if (l0.h.f(w0Var, null, new e0(new v0(str)))) {
-                        w0.i(w0Var);
+                        w0.j(w0Var);
                     }
                     throw th3;
                 }
             }
             if (l0.h.f(w0Var, null, new e0(new v0(str + ": " + t0Var.toString())))) {
-                w0.i(w0Var);
+                w0.j(w0Var);
             }
         } finally {
             t0Var.cancel(true);

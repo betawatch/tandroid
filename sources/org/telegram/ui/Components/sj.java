@@ -1,61 +1,151 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.widget.FrameLayout;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class sj implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ FrameLayout d;
+public final class sj extends hl0 {
+    public final int r = UserConfig.selectedAccount;
+    public final Context s;
+    public final /* synthetic */ yj v;
 
-    public /* synthetic */ sj(FrameLayout frameLayout, int i10, float f10, int i11) {
-        this.a = i11;
-        this.d = frameLayout;
-        this.b = i10;
-        this.c = f10;
+    public sj(yj yjVar, Context context) {
+        this.v = yjVar;
+        this.s = context;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                hk hkVar = (hk) this.d;
-                vj vjVar = hkVar.r;
-                vj vjVar2 = hkVar.s;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                int i10 = this.b;
-                float f10 = this.c;
-                if (i10 != 1) {
-                    vjVar2.setTranslationX(f10 * floatValue);
-                    vjVar2.setAlpha(Math.max(0.0f, 1.0f - floatValue));
-                    vjVar2.invalidate();
-                    vjVar.setAlpha(floatValue);
-                    float f11 = (floatValue * 0.05f) + 0.95f;
-                    vjVar.setScaleX(f11);
-                    vjVar.setScaleY(f11);
-                    vjVar2.invalidate();
-                    break;
-                } else {
-                    vjVar.setTranslationX(f10 * floatValue);
-                    vjVar.setAlpha(1.0f - floatValue);
-                    vjVar.invalidate();
-                    vjVar2.setAlpha(floatValue);
-                    float f12 = (floatValue * 0.05f) + 0.95f;
-                    vjVar2.setScaleX(f12);
-                    vjVar2.setScaleY(f12);
-                    break;
-                }
-            default:
-                rb0 rb0Var = (rb0) this.d;
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                float f13 = 1.0f - floatValue2;
-                int i11 = (int) ((rb0Var.O * floatValue2) + (this.b * f13));
-                rb0Var.Q = i11;
-                rb0Var.e((rb0Var.P * floatValue2) + (this.c * f13), i11);
-                break;
+    @Override // org.telegram.ui.Components.tk0
+    public final String F(int i10) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.tk0
+    public final void G(ll0 ll0Var, float f7, int[] iArr) {
+        iArr[0] = 0;
+        iArr[1] = 0;
+    }
+
+    @Override // org.telegram.ui.Components.hl0
+    public final int M(int i10) {
+        if (i10 == 0 || i10 == R() - 1) {
+            return 1;
         }
+        int i11 = i10 - 1;
+        int i12 = this.r;
+        HashMap<String, ArrayList<Object>> hashMap = ContactsController.getInstance(i12).phoneBookSectionsDict;
+        ArrayList<String> arrayList = ContactsController.getInstance(i12).phoneBookSectionsArray;
+        if (i11 < arrayList.size()) {
+            return hashMap.get(arrayList.get(i11)).size();
+        }
+        return 0;
+    }
+
+    @Override // org.telegram.ui.Components.hl0
+    public final Object O(int i10, int i11) {
+        if (i10 == 0) {
+            return null;
+        }
+        int i12 = i10 - 1;
+        int i13 = this.r;
+        HashMap<String, ArrayList<Object>> hashMap = ContactsController.getInstance(i13).phoneBookSectionsDict;
+        ArrayList<String> arrayList = ContactsController.getInstance(i13).phoneBookSectionsArray;
+        if (i12 < arrayList.size()) {
+            ArrayList<Object> arrayList2 = hashMap.get(arrayList.get(i12));
+            if (i11 < arrayList2.size()) {
+                return arrayList2.get(i11);
+            }
+        }
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.hl0
+    public final int P(int i10, int i11) {
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10 == R() - 1 ? 2 : 0;
+    }
+
+    @Override // org.telegram.ui.Components.hl0
+    public final int R() {
+        return ContactsController.getInstance(this.r).phoneBookSectionsArray.size() + 2;
+    }
+
+    @Override // org.telegram.ui.Components.hl0
+    public final View T(int i10, View view) {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.hl0
+    public final boolean V(int i10, int i11, s4.c1 c1Var) {
+        if (i10 == 0 || i10 == R() - 1) {
+            return false;
+        }
+        int i12 = this.r;
+        return i11 < ContactsController.getInstance(i12).phoneBookSectionsDict.get(ContactsController.getInstance(i12).phoneBookSectionsArray.get(i10 + (-1))).size();
+    }
+
+    @Override // org.telegram.ui.Components.hl0
+    public final void W(int i10, int i11, s4.c1 c1Var) {
+        TLRPC.User user;
+        if (c1Var.f == 0) {
+            xj xjVar = (xj) c1Var.a;
+            Object O = O(i10, i11);
+            boolean z10 = true;
+            if (i10 == R() - 2 && i11 == M(i10) - 1) {
+                z10 = false;
+            }
+            if (O instanceof ContactsController.Contact) {
+                ContactsController.Contact contact = (ContactsController.Contact) O;
+                user = contact.user;
+                if (user == null) {
+                    xjVar.setCurrentId(contact.contact_id);
+                    xjVar.a(null, ContactsController.formatName(contact.first_name, contact.last_name), new qj(contact, 0), z10);
+                    user = null;
+                }
+            } else {
+                user = (TLRPC.User) O;
+            }
+            if (user != null) {
+                xjVar.a(user, null, new rj(0, user), z10);
+            }
+            boolean containsKey = this.v.w.containsKey(oj.a(O));
+            mp mpVar = xjVar.d;
+            if (mpVar.getVisibility() != 0) {
+                mpVar.setVisibility(0);
+            }
+            mpVar.a(containsKey, false);
+        }
+    }
+
+    @Override // org.telegram.ui.Components.hl0, s4.h0
+    public final void l() {
+        X(false);
+        this.v.N();
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View xjVar;
+        Context context = this.s;
+        if (i10 == 0) {
+            xjVar = new xj(context, this.v.a);
+        } else if (i10 != 1) {
+            xjVar = new View(context);
+            xjVar.setTag(-33024);
+        } else {
+            xjVar = new View(context);
+            xjVar.setLayoutParams(new s4.p0(-1, AndroidUtilities.dp(56.0f)));
+            xjVar.setTag(-33024);
+        }
+        return new vk0(xjVar);
     }
 }

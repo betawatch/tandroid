@@ -11,9 +11,9 @@ public final class d0 {
         this.b = 0L;
     }
 
-    public d0(long j10) {
+    public d0(long j3) {
         this.a = true;
-        this.b = j10;
+        this.b = j3;
     }
 
     public final boolean equals(Object obj) {
@@ -24,17 +24,17 @@ public final class d0 {
             return false;
         }
         d0 d0Var = (d0) obj;
-        boolean z4 = d0Var.a;
-        boolean z10 = this.a;
-        return (z10 && z4) ? this.b == d0Var.b : z10 == z4;
+        boolean z10 = d0Var.a;
+        boolean z11 = this.a;
+        return (z11 && z10) ? this.b == d0Var.b : z11 == z10;
     }
 
     public final int hashCode() {
         if (!this.a) {
             return 0;
         }
-        long j10 = this.b;
-        return (int) (j10 ^ (j10 >>> 32));
+        long j3 = this.b;
+        return (int) (j3 ^ (j3 >>> 32));
     }
 
     public final String toString() {

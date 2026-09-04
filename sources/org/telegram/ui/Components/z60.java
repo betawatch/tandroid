@@ -1,197 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.drawable.Drawable;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.text.style.ForegroundColorSpan;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class z60 extends ql0 {
-    public ArrayList c = new ArrayList();
-    public ArrayList d = new ArrayList();
-    public final tf.j1 e;
-    public int f;
-    public Runnable h;
-    public final /* synthetic */ d70 n;
+public final class z60 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ a70 b;
 
-    public z60(d70 d70Var) {
-        this.n = d70Var;
-        tf.j1 j1Var = new tf.j1(false);
-        this.e = j1Var;
-        j1Var.a = new ev(this, 7);
+    public /* synthetic */ z60(a70 a70Var, int i10) {
+        this.a = i10;
+        this.b = a70Var;
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final boolean D(f2.l1 l1Var) {
-        return l1Var.f == 1;
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        int size = this.c.size();
-        tf.j1 j1Var = this.e;
-        int size2 = j1Var.d.size();
-        int size3 = j1Var.e.size();
-        int i10 = size + size2;
-        if (size3 != 0) {
-            i10 += size3 + 1;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                a70 a70Var = this.b;
+                a70Var.e.d0 = null;
+                a70Var.requestLayout();
+                break;
+            default:
+                a70 a70Var2 = this.b;
+                a70Var2.e.d0 = null;
+                a70Var2.a = false;
+                break;
         }
-        int i11 = i10 + 2;
-        this.f = i11;
-        return i11;
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        if (i10 == 0) {
-            return 2;
-        }
-        if (i10 == this.f - 1) {
-            return 4;
-        }
-        return i10 + (-1) == this.e.d.size() + this.c.size() ? 0 : 1;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0099, code lost:
-    
-        if (r13.toString().startsWith("@" + r5) != false) goto L59;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:30:0x00f3  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x010a  */
-    /* JADX WARN: Removed duplicated region for block: B:36:0x011e  */
-    /* JADX WARN: Removed duplicated region for block: B:55:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:56:0x010f  */
-    /* JADX WARN: Removed duplicated region for block: B:60:0x00f8  */
-    @Override // f2.o0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void v(f2.l1 l1Var, int i10) {
-        CharSequence charSequence;
-        long j10;
-        int i11 = l1Var.f;
-        View view = l1Var.a;
-        if (i11 == 0) {
-            ((org.telegram.ui.Cells.e4) view).setText(LocaleController.getString(R.string.GlobalSearch));
-            return;
-        }
-        if (i11 != 1) {
-            if (i11 != 2) {
-                return;
-            }
-            view.requestLayout();
-            return;
-        }
-        org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
-        int size = this.c.size();
-        tf.j1 j1Var = this.e;
-        ArrayList arrayList = j1Var.e;
-        ArrayList arrayList2 = j1Var.d;
-        int size2 = arrayList.size();
-        int size3 = arrayList2.size();
-        int i12 = i10 - 1;
-        CharSequence charSequence2 = null;
-        TLObject tLObject = (i12 < 0 || i12 >= size) ? (i12 < size || i12 >= size3 + size) ? (i12 <= size + size3 || i12 > (size2 + size) + size3) ? null : (TLObject) j1Var.e.get(((i12 - size) - size3) - 1) : (TLObject) arrayList2.get(i12 - size) : (TLObject) this.c.get(i12);
-        if (tLObject != null) {
-            String publicUsername = tLObject instanceof TLRPC.User ? ((TLRPC.User) tLObject).username : ChatObject.getPublicUsername((TLRPC.Chat) tLObject);
-            if (i12 < size) {
-                charSequence = (CharSequence) this.d.get(i12);
-                if (charSequence != null && !TextUtils.isEmpty(publicUsername)) {
-                }
-                charSequence2 = charSequence;
-                charSequence = null;
-            } else if (i12 > size && !TextUtils.isEmpty(publicUsername)) {
-                String str = j1Var.c;
-                if (str.startsWith("@")) {
-                    str = str.substring(1);
-                }
-                try {
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-                    spannableStringBuilder.append((CharSequence) "@");
-                    spannableStringBuilder.append((CharSequence) publicUsername);
-                    int indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(publicUsername, str);
-                    if (indexOfIgnoreCase != -1) {
-                        int length = str.length();
-                        if (indexOfIgnoreCase == 0) {
-                            length++;
-                        } else {
-                            indexOfIgnoreCase++;
-                        }
-                        spannableStringBuilder.setSpan(new ForegroundColorSpan(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q6, false)), indexOfIgnoreCase, length + indexOfIgnoreCase, 33);
-                    }
-                    charSequence = spannableStringBuilder;
-                } catch (Exception unused) {
-                    charSequence = publicUsername;
-                }
-            }
-            Object object = f4Var.getObject();
-            long j11 = !(object instanceof TLRPC.User) ? ((TLRPC.User) object).id : object instanceof TLRPC.Chat ? -((TLRPC.Chat) object).id : 0L;
-            f4Var.d(tLObject, charSequence2, charSequence);
-            j10 = !(tLObject instanceof TLRPC.User) ? ((TLRPC.User) tLObject).id : tLObject instanceof TLRPC.Chat ? -((TLRPC.Chat) tLObject).id : 0L;
-            if (j10 == 0) {
-                d70 d70Var = this.n;
-                a0.h hVar = d70Var.Q;
-                if (hVar == null || hVar.h(j10) < 0) {
-                    f4Var.c(d70Var.c0.h(j10) >= 0, j11 == j10);
-                    f4Var.setCheckBoxEnabled(true);
-                    return;
-                } else {
-                    f4Var.c(true, j11 == j10);
-                    f4Var.setCheckBoxEnabled(false);
-                    return;
-                }
-            }
-            return;
-        }
-        charSequence = null;
-        Object object2 = f4Var.getObject();
-        if (!(object2 instanceof TLRPC.User)) {
-        }
-        f4Var.d(tLObject, charSequence2, charSequence);
-        if (!(tLObject instanceof TLRPC.User)) {
-        }
-        if (j10 == 0) {
-        }
-    }
-
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        View view;
-        Context context = viewGroup.getContext();
-        if (i10 == 1) {
-            view = new org.telegram.ui.Cells.f4(context, 1, 0, false);
-        } else if (i10 == 2) {
-            view = new eg.h0(this, context, 14);
-        } else if (i10 != 4) {
-            org.telegram.ui.Cells.e4 e4Var = new org.telegram.ui.Cells.e4(context);
-            e4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.e7, false));
-            Drawable drawable = e4Var.getResources().getDrawable(R.drawable.shadowdown);
-            e4Var.a = drawable;
-            drawable.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Zh, false), PorterDuff.Mode.MULTIPLY));
-            TextView textView = new TextView(e4Var.getContext());
-            e4Var.b = textView;
-            org.telegram.ui.ai.o(14.0f, 1, textView);
-            textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ai, false));
-            textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-            e4Var.addView(textView, k7.b6.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
-            view = e4Var;
-        } else {
-            view = new View(context);
-        }
-        return new dl0(view);
     }
 }

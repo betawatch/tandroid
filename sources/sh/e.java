@@ -1,181 +1,119 @@
 package sh;
 
-import android.os.Bundle;
-import android.text.TextUtils;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import uf.r1;
-import uf.v0;
-import uf.x0;
-import uf.z0;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.Components.sp;
+import yf.p;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final class e extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class e extends rh.e implements Drawable.Callback, le.d {
+    public final String b;
+    public final Drawable d;
+    public final sp f;
+    public rh.d h;
+    public TLRPC.WebPage n;
+    public final le.b r;
+    public final le.b s;
+    public final a5.a c = new a5.a((char) 0, 14);
+    public final Paint e = new Paint(1);
 
-    public /* synthetic */ e(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public e(String str) {
+        sp spVar = new sp(-1);
+        this.f = spVar;
+        pr prVar = pr.h;
+        this.r = new le.b(0, this, prVar, 320L, false);
+        this.s = new le.b(0, this, prVar, 320L, false);
+        this.b = str;
+        this.a.setRoundRadius(AndroidUtilities.dp(7.0f));
+        this.d = ApplicationLoader.applicationContext.getResources().getDrawable(R.drawable.media_link_24).mutate();
+        spVar.setCallback(this);
+        spVar.b(j6.w0(null, j6.o7, false));
+        spVar.a = AndroidUtilities.dp(15.0f);
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        switch (this.a) {
-            case 0:
-                if (i10 == -1) {
-                    ((g) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 1:
-                if (i10 == -1) {
-                    ((n) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 2:
-                if (i10 == -1) {
-                    ((q) this.b).finishFragment();
-                    break;
-                }
-                break;
-            case 3:
-                i0 i0Var = ((c0) this.b).h;
-                if (i10 != -1) {
-                    if (i10 == 3) {
-                        i0Var.c.a(true, true);
-                        i0Var.setAllowNestedScroll(false);
-                        i0Var.P = null;
-                        i0Var.D.V2.N(true);
-                        i0Var.B.r.getText().clear();
-                        i0Var.B.r.requestFocus();
-                        AndroidUtilities.showKeyboard(i0Var.B.r);
-                        break;
-                    }
-                } else if (!i0Var.K) {
-                    i0Var.v.d.V2.N(false);
-                    i0Var.d.D(0);
-                    break;
-                } else {
-                    i0Var.dismiss();
-                    break;
-                }
-                break;
-            case 4:
-                i0 i0Var2 = ((d0) this.b).r;
-                if (i10 != 2) {
-                    if (i10 == 3) {
-                        i0Var2.b.a(true, true);
-                        i0Var2.setAllowNestedScroll(false);
-                        TextUtils.isEmpty(i0Var2.O);
-                        i0Var2.O = null;
-                        i0Var2.C.h(0L, i0Var2.e, 0L, 0L, null, false, null, true);
-                        i0Var2.y.r.getText().clear();
-                        i0Var2.y.r.requestFocus();
-                        AndroidUtilities.showKeyboard(i0Var2.y.r);
-                        break;
-                    }
-                } else {
-                    Bundle bundle = new Bundle();
-                    bundle.putLong("community_id", i0Var2.e);
-                    i0Var2.s.presentFragment(new n(bundle));
-                    i0Var2.dismiss();
-                    break;
-                }
-                break;
-            case 5:
-                i0 i0Var3 = ((h0) this.b).h;
-                if (i10 == -1) {
-                    i0Var3.v.d.V2.N(false);
-                    i0Var3.d.D(0);
-                    break;
-                }
-                break;
-            case 6:
-                uf.c cVar = (uf.c) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        cVar.X();
-                        break;
-                    }
-                } else if (cVar.onBackPressed(true)) {
-                    cVar.finishFragment();
-                    break;
-                }
-                break;
-            case 7:
-                uf.k kVar = (uf.k) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        kVar.h0();
-                        break;
-                    }
-                } else if (kVar.onBackPressed(true)) {
-                    kVar.finishFragment();
-                    break;
-                }
-                break;
-            case 8:
-                uf.l0 l0Var = (uf.l0) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        l0Var.a0();
-                        break;
-                    }
-                } else if (l0Var.onBackPressed(true)) {
-                    l0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 9:
-                uf.n0 n0Var = (uf.n0) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        n0Var.X();
-                        break;
-                    }
-                } else if (n0Var.onBackPressed(true)) {
-                    n0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 10:
-                v0 v0Var = (v0) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        v0Var.W();
-                        break;
-                    }
-                } else if (v0Var.onBackPressed(true)) {
-                    v0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 11:
-                x0 x0Var = (x0) this.b;
-                if (i10 != -1) {
-                    if (i10 == 1) {
-                        x0Var.d0();
-                        break;
-                    }
-                } else if (x0Var.onBackPressed(true)) {
-                    x0Var.finishFragment();
-                    break;
-                }
-                break;
-            case 12:
-                if (i10 == -1) {
-                    ((z0) this.b).finishFragment();
-                    break;
-                }
-                break;
-            default:
-                if (i10 == -1) {
-                    ((r1) this.b).finishFragment();
-                    break;
-                }
-                break;
+    @Override // le.d
+    public final void E(int i10, float f7, float f10, le.e eVar) {
+        rh.d dVar = this.h;
+        if (dVar != null) {
+            dVar.invalidate();
         }
+    }
+
+    @Override // rh.e
+    public final void a(View view) {
+        super.a(view);
+        this.h = (rh.d) view;
+    }
+
+    @Override // rh.e
+    public final void b() {
+        super.b();
+        this.h = null;
+    }
+
+    @Override // rh.e
+    public final void c(Canvas canvas, int i10, int i11) {
+        float f7 = i10;
+        float f10 = i11;
+        ImageReceiver imageReceiver = this.a;
+        imageReceiver.setImageCoords(0.0f, 0.0f, f7, f10);
+        imageReceiver.draw(canvas);
+        sp spVar = this.f;
+        spVar.setBounds(0, 0, i10, i11);
+        int w02 = j6.w0(null, j6.a7, false);
+        le.b bVar = this.s;
+        int d = i0.a.d(bVar.e, w02, TLObject.FLAG_30);
+        Paint paint = this.e;
+        paint.setColor(d);
+        canvas.drawRoundRect(0.0f, 0.0f, f7, f10, AndroidUtilities.dp(7.0f), AndroidUtilities.dp(7.0f), paint);
+        int d10 = i0.a.d(bVar.e, j6.w0(null, j6.o7, false), -1);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        a5.a aVar = this.c;
+        aVar.getClass();
+        if (((PorterDuffColorFilter) aVar.c) == null || aVar.b != d10 || ((PorterDuff.Mode) aVar.d) != mode) {
+            aVar.c = new PorterDuffColorFilter(d10, mode);
+            aVar.b = d10;
+            aVar.d = mode;
+        }
+        PorterDuffColorFilter porterDuffColorFilter = (PorterDuffColorFilter) aVar.c;
+        Drawable drawable = this.d;
+        drawable.setColorFilter(porterDuffColorFilter);
+        p.e(this.d, f7 / 2.0f, f10 / 2.0f, AndroidUtilities.dp(24.0f), AndroidUtilities.dp(24.0f), 17);
+        le.b bVar2 = this.r;
+        p.b(canvas, drawable, 1.0f - bVar2.e);
+        p.b(canvas, spVar, bVar2.e);
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        rh.d dVar = this.h;
+        if (dVar != null) {
+            dVar.invalidate();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+    }
+
+    @Override // le.d
+    public final /* synthetic */ void z(float f7, int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
     }
 }

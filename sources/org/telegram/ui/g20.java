@@ -1,78 +1,41 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class g20 implements org.telegram.ui.Components.io0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fg.a b;
+public final class g20 extends FrameLayout {
+    public org.telegram.ui.ActionBar.j5 a;
+    public ImageView b;
 
-    public /* synthetic */ g20(fg.a aVar, int i10) {
-        this.a = i10;
-        this.b = aVar;
-    }
-
-    @Override // org.telegram.ui.Components.io0
-    public final void B() {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.io0
-    public final void Y(float f10, boolean z4) {
-        switch (this.a) {
-            case 0:
-                fg.j jVar = this.b.c;
-                if (jVar != null) {
-                    jVar.v = f10 * 2.0f;
-                    break;
-                }
-                break;
-            case 1:
-                fg.j jVar2 = this.b.c;
-                if (jVar2 != null) {
-                    jVar2.w = f10 * 2.0f;
-                    break;
-                }
-                break;
-            case 2:
-                fg.j jVar3 = this.b.c;
-                if (jVar3 != null) {
-                    jVar3.x = f10;
-                    break;
-                }
-                break;
-            default:
-                fg.j jVar4 = this.b.c;
-                if (jVar4 != null) {
-                    jVar4.A = f10 * 2.0f;
-                    break;
-                }
-                break;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        int dp;
+        ImageView imageView = this.b;
+        int i14 = i12 - i10;
+        org.telegram.ui.ActionBar.j5 j5Var = this.a;
+        int textHeight = ((i13 - i11) - j5Var.getTextHeight()) / 2;
+        if (LocaleController.isRTL) {
+            dp = (getMeasuredWidth() - j5Var.getMeasuredWidth()) - AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
+        } else {
+            dp = AndroidUtilities.dp(imageView.getVisibility() == 0 ? 64.0f : 23.0f);
         }
+        j5Var.layout(dp, textHeight, j5Var.getMeasuredWidth() + dp, j5Var.getMeasuredHeight() + textHeight);
+        int dp2 = !LocaleController.isRTL ? AndroidUtilities.dp(20.0f) : (i14 - imageView.getMeasuredWidth()) - AndroidUtilities.dp(20.0f);
+        imageView.layout(dp2, 0, imageView.getMeasuredWidth() + dp2, imageView.getMeasuredHeight());
     }
 
-    @Override // org.telegram.ui.Components.io0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.io0
-    public final /* synthetic */ int j0() {
-        switch (this.a) {
-        }
-        return 0;
-    }
-
-    private final void a() {
-    }
-
-    private final void b() {
-    }
-
-    private final void c() {
-    }
-
-    private final void d() {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        AndroidUtilities.dp(48.0f);
+        this.a.measure(org.telegram.messenger.wl.d(94.0f, size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(20.0f), TLObject.FLAG_30));
+        this.b.measure(View.MeasureSpec.makeMeasureSpec(size, TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
+        setMeasuredDimension(size, AndroidUtilities.dp(50.0f));
     }
 }

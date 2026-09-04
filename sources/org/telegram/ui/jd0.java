@@ -1,31 +1,44 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class jd0 implements org.telegram.ui.ActionBar.c2 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pg0 b;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-    public /* synthetic */ jd0(pg0 pg0Var, int i10) {
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class jd0 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ wg0 b;
+
+    public /* synthetic */ jd0(wg0 wg0Var, int i10) {
         this.a = i10;
-        this.b = pg0Var;
+        this.b = wg0Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                pg0 pg0Var = this.b;
-                pg0Var.b[pg0Var.a].d();
-                pg0Var.k1(true, true);
+                wg0 wg0Var = this.b;
+                wg0Var.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wg0Var.c.setAlpha(floatValue);
+                wg0Var.c.setTranslationY((1.0f - floatValue) * AndroidUtilities.dp(230.0f));
+                break;
+            case 1:
+                wg0 wg0Var2 = this.b;
+                wg0Var2.getClass();
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                wg0Var2.c.setAlpha(floatValue2);
+                wg0Var2.c.setTranslationY((1.0f - floatValue2) * AndroidUtilities.dp(230.0f));
                 break;
             default:
-                pg0 pg0Var2 = this.b;
-                pg0Var2.i0 = true;
-                if (pg0Var2.a != 0) {
-                    pg0Var2.u1(0, true, null, true);
-                    break;
-                }
+                wg0 wg0Var3 = this.b;
+                wg0Var3.getClass();
+                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                float f7 = (0.9f * floatValue3) + 0.1f;
+                wg0Var3.V.setScaleX(f7);
+                wg0Var3.V.setScaleY(f7);
+                wg0Var3.V.setAlpha(floatValue3);
                 break;
         }
     }

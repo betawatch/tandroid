@@ -1,126 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.view.GestureDetector;
+import android.content.Context;
 import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import android.widget.TextView;
+import org.telegram.messenger.Emoji;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class xb extends GestureDetector.SimpleOnGestureListener {
-    public final /* synthetic */ nb a;
-    public final /* synthetic */ za b;
+public final class xb extends d90 {
+    public final /* synthetic */ int L;
 
-    public xb(za zaVar, nb nbVar) {
-        this.b = zaVar;
-        this.a = nbVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ xb(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.L = i10;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onDown(MotionEvent motionEvent) {
-        za zaVar = this.b;
-        if (zaVar.s) {
-            return false;
+    @Override // org.telegram.ui.Components.d90
+    public int a() {
+        switch (this.L) {
+            case 4:
+                return 3;
+            default:
+                return super.a();
         }
-        nb nbVar = this.a;
-        zaVar.v = nb.access$1400(nbVar, true);
-        zaVar.w = nb.access$1400(nbVar, false);
-        return true;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        boolean z4 = false;
-        if (Math.abs(f10) <= 2000.0f) {
-            return false;
-        }
-        za zaVar = this.b;
-        if ((f10 < 0.0f && zaVar.v) || (f10 > 0.0f && zaVar.w)) {
-            z4 = true;
-        }
-        float signum = Math.signum(f10);
-        nb nbVar = this.a;
-        o1.j jVar = new o1.j(nbVar, o1.h.m, signum * nbVar.getWidth() * 2.0f);
-        if (!z4) {
-            final int i10 = 0;
-            jVar.a(new o1.f(this) { // from class: org.telegram.ui.Components.vb
-                public final /* synthetic */ xb b;
-
-                {
-                    this.b = this;
+    @Override // android.view.View
+    public boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        switch (this.L) {
+            case 3:
+                if (getAlpha() < 0.9f) {
+                    return false;
                 }
-
-                @Override // o1.f
-                public final void a(o1.h hVar, boolean z10, float f12, float f13) {
-                    switch (i10) {
-                        case 0:
-                            this.b.b.y.b();
-                            break;
-                        default:
-                            this.b.b.y.b();
-                            break;
-                    }
-                }
-            });
-            jVar.b(new f7(nbVar, 2));
+                return super.dispatchTouchEvent(motionEvent);
+            default:
+                return super.dispatchTouchEvent(motionEvent);
         }
-        jVar.u.a(1.0f);
-        jVar.u.b(100.0f);
-        jVar.a = f10;
-        jVar.f();
-        if (z4) {
-            o1.j jVar2 = new o1.j(nbVar, o1.h.t, 0.0f);
-            final int i11 = 1;
-            jVar2.a(new o1.f(this) { // from class: org.telegram.ui.Components.vb
-                public final /* synthetic */ xb b;
-
-                {
-                    this.b = this;
-                }
-
-                @Override // o1.f
-                public final void a(o1.h hVar, boolean z10, float f12, float f13) {
-                    switch (i11) {
-                        case 0:
-                            this.b.b.y.b();
-                            break;
-                        default:
-                            this.b.b.y.b();
-                            break;
-                    }
-                }
-            });
-            jVar2.b(new wb());
-            jVar.u.a(1.0f);
-            jVar.u.b(10.0f);
-            jVar.a = f10;
-            jVar2.f();
-        }
-        zaVar.s = true;
-        return true;
     }
 
-    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
-    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f10, float f11) {
-        za zaVar = this.b;
-        float f12 = zaVar.h + f10;
-        zaVar.h = f12;
-        float f13 = zaVar.n + f11;
-        zaVar.n = f13;
-        if (Utilities.dist(0.0f, 0.0f, f12, f13) > AndroidUtilities.touchSlop) {
-            zaVar.r = true;
+    @Override // org.telegram.ui.Components.d90, android.widget.TextView, android.view.View
+    public void onMeasure(int i10, int i11) {
+        switch (this.L) {
+            case 5:
+                super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), i11);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                break;
         }
-        if (!zaVar.d) {
-            return false;
+    }
+
+    @Override // org.telegram.ui.Components.d90, android.widget.TextView
+    public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        switch (this.L) {
+            case 0:
+                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                break;
+            case 1:
+                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                break;
+            case 2:
+                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
+                break;
+            default:
+                super.setText(charSequence, bufferType);
+                break;
         }
-        float f14 = zaVar.f - f10;
-        zaVar.f = f14;
-        nb nbVar = this.a;
-        nbVar.setTranslationX(f14);
-        float f15 = zaVar.f;
-        if (f15 == 0.0f || ((f15 < 0.0f && zaVar.v) || (f15 > 0.0f && zaVar.w))) {
-            nbVar.setAlpha(1.0f - (Math.abs(f15) / nbVar.getWidth()));
-        }
-        return true;
     }
 }

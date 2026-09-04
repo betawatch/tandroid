@@ -1,60 +1,31 @@
 package x7;
 
-import android.os.Parcel;
-import android.os.RemoteException;
-import b6.m;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g {
-    public final g7.a a;
+public final class g extends e9.t {
+    public final /* synthetic */ int f;
+    public final /* synthetic */ j h;
 
-    public g(g7.a aVar) {
-        m.h(aVar);
-        this.a = aVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ g(j jVar, int i10) {
+        super(jVar);
+        this.f = i10;
+        this.h = jVar;
     }
 
-    public final void a(a aVar) {
-        g7.a aVar2 = this.a;
-        try {
-            l6.a aVar3 = (l6.a) aVar.a;
-            g7.i iVar = (g7.i) aVar2;
-            Parcel M0 = iVar.M0();
-            g7.b.c(M0, aVar3);
-            iVar.Q0(M0, 18);
-        } catch (RemoteException e) {
-            throw new a7.b(e);
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof g)) {
-            return false;
-        }
-        try {
-            g7.a aVar = this.a;
-            g7.a aVar2 = ((g) obj).a;
-            g7.i iVar = (g7.i) aVar;
-            Parcel M0 = iVar.M0();
-            g7.b.c(M0, aVar2);
-            Parcel L0 = iVar.L0(M0, 16);
-            boolean z4 = L0.readInt() != 0;
-            L0.recycle();
-            return z4;
-        } catch (RemoteException e) {
-            throw new a7.b(e);
-        }
-    }
-
-    public final int hashCode() {
-        try {
-            g7.i iVar = (g7.i) this.a;
-            Parcel L0 = iVar.L0(iVar.M0(), 17);
-            int readInt = L0.readInt();
-            L0.recycle();
-            return readInt;
-        } catch (RemoteException e) {
-            throw new a7.b(e);
+    @Override // e9.t
+    public final Object b(int i10) {
+        switch (this.f) {
+            case 0:
+                Object[] objArr = this.h.c;
+                objArr.getClass();
+                return objArr[i10];
+            case 1:
+                return new i(this.h, i10);
+            default:
+                Object[] objArr2 = this.h.d;
+                objArr2.getClass();
+                return objArr2[i10];
         }
     }
 }

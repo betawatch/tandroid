@@ -1,69 +1,84 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ContextThemeWrapper;
-import org.telegram.ui.Components.RadialProgressView;
+import android.text.SpannableStringBuilder;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class nd extends RadialProgressView {
-    public final /* synthetic */ int H;
-    public final /* synthetic */ Object I;
+public final /* synthetic */ class nd implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ke b;
+    public final /* synthetic */ int c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ nd(org.telegram.ui.Components.w40 w40Var, Context context, int i10) {
-        super(context, null);
-        this.H = i10;
-        this.I = w40Var;
+    public /* synthetic */ nd(ke keVar, int i10, int i11) {
+        this.a = i11;
+        this.b = keVar;
+        this.c = i10;
     }
 
-    @Override // android.view.View
-    public void invalidate() {
-        switch (this.H) {
-            case 3:
-                super.invalidate();
-                iu0 iu0Var = ((PhotoViewer) this.I).b0;
-                if (iu0Var != null) {
-                    iu0Var.invalidate();
-                    break;
-                }
-                break;
-            default:
-                super.invalidate();
-                break;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.RadialProgressView, android.view.View
-    public final void setAlpha(float f10) {
-        switch (this.H) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        int i11 = this.c;
+        ke keVar = this.b;
+        switch (i10) {
             case 0:
-                super.setAlpha(f10);
-                ((pd) this.I).f.invalidate();
+                of.f.s(keVar.getContext(), LocaleController.getString(i11));
                 break;
             case 1:
-                super.setAlpha(f10);
-                ((g70) this.I).e.invalidate();
-                break;
-            case 2:
-                super.setAlpha(f10);
-                ((bf0) this.I).h.invalidate();
+                nd ndVar = keVar.i1;
+                gi.o oVar = keVar.Y0;
+                org.telegram.ui.Components.qc.e();
+                if (keVar.N0.amount < MessagesController.getInstance(i11).starsRevenueWithdrawalMin) {
+                    keVar.W0 = true;
+                    keVar.X0 = keVar.N0.amount;
+                } else {
+                    keVar.W0 = false;
+                    keVar.X0 = MessagesController.getInstance(i11).starsRevenueWithdrawalMin;
+                }
+                keVar.V0 = true;
+                oVar.setText(Long.toString(keVar.X0));
+                oVar.setSelection(oVar.getText().length());
+                keVar.V0 = false;
+                AndroidUtilities.cancelRunOnUIThread(ndVar);
+                ndVar.run();
                 break;
             default:
-                super.setAlpha(f10);
-                iu0 iu0Var = ((PhotoViewer) this.I).b0;
-                if (iu0Var != null) {
-                    iu0Var.invalidate();
+                nd ndVar2 = keVar.i1;
+                int currentTime = ConnectionsManager.getInstance(i11).getCurrentTime();
+                be beVar = keVar.Q0;
+                beVar.setEnabled(keVar.X0 > 0 || keVar.L0 > currentTime);
+                if (currentTime >= keVar.L0) {
+                    beVar.f(null, true);
+                    beVar.g(zh.v7.V0(false, keVar.W0 ? LocaleController.getString(R.string.MonetizationStarsWithdrawAll) : LocaleController.formatPluralStringSpaced("MonetizationStarsWithdraw", (int) keVar.X0), keVar.R0), true, true);
+                    break;
+                } else {
+                    beVar.g(LocaleController.getString(R.string.MonetizationStarsWithdrawUntil), true, true);
+                    if (keVar.h1 == null) {
+                        keVar.h1 = new SpannableStringBuilder("l");
+                        org.telegram.ui.Components.nq nqVar = new org.telegram.ui.Components.nq(R.drawable.mini_switch_lock, 0);
+                        nqVar.setTopOffset(1);
+                        keVar.h1.setSpan(nqVar, 0, 1, 33);
+                    }
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                    spannableStringBuilder.append((CharSequence) keVar.h1).append((CharSequence) zh.g.j0(keVar.L0 - currentTime));
+                    beVar.f(spannableStringBuilder, true);
+                    org.telegram.ui.Components.qc qcVar = keVar.Z0;
+                    if (qcVar != null) {
+                        org.telegram.ui.Components.ub ubVar = qcVar.e;
+                        if ((ubVar instanceof org.telegram.ui.Components.yb) && ubVar.isAttachedToWindow()) {
+                            org.telegram.messenger.wl.p(R.string.BotStarsWithdrawalToast, new Object[]{zh.g.j0(keVar.L0 - currentTime)}, ((org.telegram.ui.Components.yb) keVar.Z0.e).b);
+                        }
+                    }
+                    AndroidUtilities.cancelRunOnUIThread(ndVar2);
+                    AndroidUtilities.runOnUIThread(ndVar2, 1000L);
                     break;
                 }
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public nd(PhotoViewer photoViewer, ContextThemeWrapper contextThemeWrapper, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(contextThemeWrapper, f6Var);
-        this.H = 3;
-        this.I = photoViewer;
     }
 }

@@ -1,132 +1,81 @@
 package org.telegram.ui;
 
-import android.animation.AnimatorSet;
-import android.app.Activity;
-import android.window.BackEvent;
-import android.window.OnBackAnimationCallback;
+import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.messenger.BotWebViewVibrationEffect;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ab0 implements OnBackAnimationCallback {
-    public boolean b;
-    public boolean e;
-    public final /* synthetic */ LaunchActivity f;
-    public final AnimationNotificationsLocker a = new AnimationNotificationsLocker();
-    public boolean c = false;
-    public boolean d = false;
+public final class ab0 implements MessagesController.MessagesLoadedCallback {
+    public final /* synthetic */ r80 a;
+    public final /* synthetic */ String b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Integer e;
+    public final /* synthetic */ Bundle f;
+    public final /* synthetic */ LaunchActivity g;
 
-    public ab0(LaunchActivity launchActivity) {
-        this.f = launchActivity;
+    public ab0(LaunchActivity launchActivity, r80 r80Var, String str, org.telegram.ui.ActionBar.n2 n2Var, long j3, Integer num, Bundle bundle) {
+        this.g = launchActivity;
+        this.a = r80Var;
+        this.b = str;
+        this.c = n2Var;
+        this.d = j3;
+        this.e = num;
+        this.f = bundle;
     }
 
-    @Override // android.window.OnBackAnimationCallback
-    public final void onBackCancelled() {
-        ActionBarLayout actionBarLayout;
-        this.c = false;
-        this.d = false;
-        if (this.b) {
-            this.a.unlock();
-            this.b = false;
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onError() {
+        LaunchActivity launchActivity = this.g;
+        if (!launchActivity.isFinishing()) {
+            org.telegram.ui.Components.e5.u0((org.telegram.ui.ActionBar.n2) i2.g.h(1, launchActivity.d0), null, LocaleController.getString(R.string.JoinToGroupErrorNotExist), null);
         }
-        if (AndroidUtilities.isTablet() || (actionBarLayout = this.f.n0) == null || !actionBarLayout.Z0) {
-            return;
-        }
-        actionBarLayout.Z0 = false;
-        actionBarLayout.e(true);
-    }
-
-    @Override // android.window.OnBackInvokedCallback
-    public final void onBackInvoked() {
-        this.d = true;
-        if (this.b) {
-            this.a.unlock();
-            this.b = false;
-        }
-        if (AndroidUtilities.isTablet()) {
-            this.f.onBackPressed();
-            return;
-        }
-        if (this.f.c0(true)) {
-            LaunchActivity launchActivity = this.f;
-            ActionBarLayout actionBarLayout = launchActivity.n0;
-            if (actionBarLayout == null) {
-                launchActivity.onBackPressed();
-            } else if (!actionBarLayout.Z0) {
-                actionBarLayout.G();
-            } else {
-                actionBarLayout.Z0 = false;
-                actionBarLayout.e(false);
-            }
+        try {
+            this.a.run();
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:22:0x004f, code lost:
-    
-        if (r1.Q != false) goto L68;
-     */
-    @Override // android.window.OnBackAnimationCallback
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onBackProgressed(BackEvent backEvent) {
-        ActionBarLayout actionBarLayout;
-        ActionBarLayout actionBarLayout2;
-        org.telegram.ui.ActionBar.r rVar;
-        if (this.c && this.d) {
+    @Override // org.telegram.messenger.MessagesController.MessagesLoadedCallback
+    public final void onMessagesLoaded(boolean z10) {
+        try {
+            this.a.run();
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+        LaunchActivity launchActivity = this.g;
+        if (launchActivity.isFinishing()) {
             return;
         }
-        float progress = backEvent.getProgress();
-        if (!this.e && progress > 0.015f) {
-            this.e = true;
-            if (!AndroidUtilities.isTablet() && this.f.c0(false) && (actionBarLayout2 = this.f.n0) != null) {
-                float touchX = backEvent.getTouchX();
-                float touchY = backEvent.getTouchY();
-                Activity activity = actionBarLayout2.H0;
-                if (actionBarLayout2.Q) {
-                    AnimatorSet animatorSet = actionBarLayout2.e1;
-                    if (animatorSet != null) {
-                        animatorSet.end();
-                        actionBarLayout2.e1 = null;
+        String str = this.b;
+        long j3 = this.d;
+        org.telegram.ui.ActionBar.n2 n2Var = this.c;
+        if (str == null || !(n2Var instanceof co) || ((co) n2Var).a() != j3) {
+            if (n2Var instanceof co) {
+                co coVar = (co) n2Var;
+                if (coVar.a() == j3 && this.e == null) {
+                    AndroidUtilities.shakeViewSpring(coVar.x0, 5.0f);
+                    BotWebViewVibrationEffect.APP_ERROR.vibrate();
+                    mk mkVar = coVar.Y;
+                    for (int i10 = 0; i10 < mkVar.getChildCount(); i10++) {
+                        AndroidUtilities.shakeViewSpring(mkVar.getChildAt(i10), 5.0f);
                     }
-                }
-                if (!actionBarLayout2.a1 && !actionBarLayout2.Z0 && !actionBarLayout2.U && !actionBarLayout2.N && !actionBarLayout2.j() && actionBarLayout2.L0.size() > 1 && !actionBarLayout2.y() && ((rVar = actionBarLayout2.D) == null || !rVar.hasShownSheet())) {
-                    org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) ai.j(1, actionBarLayout2.L0);
-                    if (p2Var.onBackPressed(false) && !p2Var.hasShownSheet() && p2Var.canBeginSlide()) {
-                        actionBarLayout2.b1 = false;
-                        actionBarLayout2.a1 = true;
-                        actionBarLayout2.Z0 = true;
-                        actionBarLayout2.d1 = touchX < ((float) AndroidUtilities.displaySize.x) / 2.0f;
-                        actionBarLayout2.c1 = touchY;
-                        actionBarLayout2.O();
-                        if (activity != null && activity.getCurrentFocus() != null) {
-                            AndroidUtilities.hideKeyboard(activity.getCurrentFocus());
-                        }
-                        p2Var.onBeginSlide();
-                        if (!this.b) {
-                            this.a.lock();
-                            this.b = true;
-                        }
+                    org.telegram.ui.ActionBar.k actionBar = coVar.getActionBar();
+                    for (int i11 = 0; i11 < actionBar.getChildCount(); i11++) {
+                        AndroidUtilities.shakeViewSpring(actionBar.getChildAt(i11), 5.0f);
                     }
                 }
             }
+            n2Var = new co(this.f);
+            ((ActionBarLayout) launchActivity.O()).P(n2Var);
         }
-        float max = Math.max(0.0f, progress - 0.015f) / 0.985f;
-        if (AndroidUtilities.isTablet() || (actionBarLayout = this.f.n0) == null || !actionBarLayout.Z0) {
-            return;
-        }
-        float interpolation = org.telegram.ui.Components.mr.l.getInterpolation(max) * AndroidUtilities.dp(56.0f);
-        actionBarLayout.b1 = max > 0.0f;
-        actionBarLayout.s.setTranslationX(interpolation);
-        actionBarLayout.setInnerTranslationX(interpolation);
-    }
-
-    @Override // android.window.OnBackAnimationCallback
-    public final void onBackStarted(BackEvent backEvent) {
-        this.c = true;
-        this.d = false;
-        this.e = false;
+        AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.i21(this, this.b, this.d, n2Var, 4), 150L);
     }
 }

@@ -1,26 +1,26 @@
 package com.google.android.play.core.integrity;
 
+import a9.e0;
+import a9.i0;
 import android.os.Bundle;
 import com.google.android.gms.tasks.TaskCompletionSource;
-import o8.b0;
-import o8.f0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class ai extends b0 {
+final class ai extends e0 {
     final /* synthetic */ aj a;
-    private final f0 b;
+    private final i0 b;
     private final TaskCompletionSource c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public ai(aj ajVar, TaskCompletionSource taskCompletionSource) {
         super("com.google.android.play.core.integrity.protocol.IIntegrityServiceCallback");
         this.a = ajVar;
-        this.b = new f0("OnRequestIntegrityTokenCallback");
+        this.b = new i0("OnRequestIntegrityTokenCallback");
         this.c = taskCompletionSource;
     }
 
-    @Override // o8.c0
+    @Override // a9.f0
     public final void b(Bundle bundle) {
         k kVar;
         String str;
@@ -37,9 +37,9 @@ final class ai extends b0 {
             this.c.trySetException(new IntegrityServiceException(-100, null));
             return;
         }
-        long j10 = bundle.getLong("request.token.sid");
+        long j3 = bundle.getLong("request.token.sid");
         str = this.a.c;
-        ah ahVar = new ah(this, str, j10);
+        ah ahVar = new ah(this, str, j3);
         TaskCompletionSource taskCompletionSource = this.c;
         a aVar = new a();
         aVar.b(string);

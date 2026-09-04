@@ -1,6 +1,44 @@
 package g7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.os.Bundle;
+import android.os.Parcel;
+import android.os.Parcelable;
+import android.os.ResultReceiver;
+import w7.e0;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f extends a7.a implements h {
+public final class f extends o6.a {
+    public static final Parcelable.Creator<f> CREATOR = new e6.i(17);
+    public final String a;
+    public final Bundle b;
+    public final Bundle c;
+    public final String d;
+    public final String e;
+    public final ResultReceiver f;
+
+    public f(String type, Bundle credentialData, Bundle candidateQueryData, String str, String str2, ResultReceiver resultReceiver) {
+        kotlin.jvm.internal.i.e(type, "type");
+        kotlin.jvm.internal.i.e(credentialData, "credentialData");
+        kotlin.jvm.internal.i.e(candidateQueryData, "candidateQueryData");
+        this.a = type;
+        this.b = credentialData;
+        this.c = candidateQueryData;
+        this.d = str;
+        this.e = str2;
+        this.f = resultReceiver;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel dest, int i10) {
+        kotlin.jvm.internal.i.e(dest, "dest");
+        int q6 = e0.q(dest, 20293);
+        e0.l(dest, 1, this.a);
+        e0.b(dest, 2, this.b);
+        e0.b(dest, 3, this.c);
+        e0.l(dest, 4, this.d);
+        e0.l(dest, 5, this.e);
+        e0.k(dest, 6, this.f, i10);
+        e0.r(dest, q6);
+    }
 }

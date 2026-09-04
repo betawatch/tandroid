@@ -1,38 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.util.Property;
+import android.graphics.Canvas;
+import android.text.StaticLayout;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class m6 extends Property {
-    public final /* synthetic */ int a;
+public final class m6 {
+    public final v5 a;
+    public final StaticLayout b;
+    public final float c;
+    public final int d;
+    public final float e;
+    public final float f;
+    public final /* synthetic */ p6 g;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m6(String str, int i10) {
-        super(Float.class, str);
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                super(Integer.class, str);
-                break;
-            default:
-                break;
+    public m6(p6 p6Var, StaticLayout staticLayout, float f7, int i10) {
+        this.g = p6Var;
+        this.b = staticLayout;
+        this.d = i10;
+        this.c = f7;
+        float f10 = 0.0f;
+        this.e = (staticLayout == null || staticLayout.getLineCount() <= 0) ? 0.0f : staticLayout.getLineLeft(0);
+        if (staticLayout != null && staticLayout.getLineCount() > 0) {
+            f10 = staticLayout.getLineWidth(0);
+        }
+        this.f = f10;
+        if (p6Var.getCallback() instanceof View) {
+            this.a = z5.update(p6Var.l, (View) p6Var.getCallback(), this.a, staticLayout);
         }
     }
 
-    public abstract void a(int i10, Object obj);
-
-    public abstract void b(Object obj, float f10);
-
-    @Override // android.util.Property
-    public final void set(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                b(obj, ((Float) obj2).floatValue());
-                break;
-            default:
-                a(((Integer) obj2).intValue(), obj);
-                break;
-        }
+    public final void a(Canvas canvas, float f7) {
+        this.b.draw(canvas);
+        z5.drawAnimatedEmojis(canvas, this.b, this.a, 0.0f, null, 0.0f, 0.0f, 0.0f, f7, this.g.U);
     }
 }

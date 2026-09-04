@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import libcore.io.Memory;
 import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class c3 {
     public static final Unsafe a;
@@ -22,8 +22,8 @@ public abstract class c3 {
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x015f  */
     static {
-        char c3;
-        boolean z4;
+        char c10;
+        boolean z10;
         Field b10;
         b3 b3Var;
         Unsafe i10 = i();
@@ -31,80 +31,80 @@ public abstract class c3 {
         int i11 = g1.a;
         b = Memory.class;
         Class<?> cls = Long.TYPE;
-        boolean o10 = o(cls);
+        boolean o9 = o(cls);
         Class<?> cls2 = Integer.TYPE;
-        boolean o11 = o(cls2);
+        boolean o10 = o(cls2);
         b3 b3Var2 = null;
         if (i10 != null) {
-            if (o10) {
+            if (o9) {
                 b3Var2 = new a3(i10);
-            } else if (o11) {
+            } else if (o10) {
                 b3Var2 = new z2(i10);
             }
         }
         c = b3Var2;
-        boolean z10 = false;
+        boolean z11 = false;
         if (b3Var2 != null) {
             try {
                 Class<?> cls3 = b3Var2.a.getClass();
                 cls3.getMethod("objectFieldOffset", Field.class);
                 cls3.getMethod("getLong", Object.class, cls);
                 if (b() != null) {
-                    z10 = true;
+                    z11 = true;
                 }
             } catch (Throwable th2) {
-                c3 = 0;
+                c10 = 0;
                 Logger.getLogger(c3.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th2.toString()));
-                z10 = false;
+                z11 = false;
             }
         }
-        c3 = 0;
-        d = z10;
+        c10 = 0;
+        d = z11;
         b3 b3Var3 = c;
         if (b3Var3 != null) {
             try {
                 Class<?> cls4 = b3Var3.a.getClass();
                 Class<?>[] clsArr = new Class[1];
-                clsArr[c3] = Field.class;
+                clsArr[c10] = Field.class;
                 cls4.getMethod("objectFieldOffset", clsArr);
                 Class<?>[] clsArr2 = new Class[1];
-                clsArr2[c3] = Class.class;
+                clsArr2[c10] = Class.class;
                 cls4.getMethod("arrayBaseOffset", clsArr2);
                 Class<?>[] clsArr3 = new Class[1];
-                clsArr3[c3] = Class.class;
+                clsArr3[c10] = Class.class;
                 cls4.getMethod("arrayIndexScale", clsArr3);
                 Class<?>[] clsArr4 = new Class[2];
-                clsArr4[c3] = Object.class;
+                clsArr4[c10] = Object.class;
                 clsArr4[1] = cls;
                 cls4.getMethod("getInt", clsArr4);
                 Class<?>[] clsArr5 = new Class[3];
-                clsArr5[c3] = Object.class;
+                clsArr5[c10] = Object.class;
                 clsArr5[1] = cls;
                 clsArr5[2] = cls2;
                 cls4.getMethod("putInt", clsArr5);
                 Class<?>[] clsArr6 = new Class[2];
-                clsArr6[c3] = Object.class;
+                clsArr6[c10] = Object.class;
                 clsArr6[1] = cls;
                 cls4.getMethod("getLong", clsArr6);
                 Class<?>[] clsArr7 = new Class[3];
-                clsArr7[c3] = Object.class;
+                clsArr7[c10] = Object.class;
                 clsArr7[1] = cls;
                 clsArr7[2] = cls;
                 cls4.getMethod("putLong", clsArr7);
                 Class<?>[] clsArr8 = new Class[2];
-                clsArr8[c3] = Object.class;
+                clsArr8[c10] = Object.class;
                 clsArr8[1] = cls;
                 cls4.getMethod("getObject", clsArr8);
                 Class<?>[] clsArr9 = new Class[3];
-                clsArr9[c3] = Object.class;
+                clsArr9[c10] = Object.class;
                 clsArr9[1] = cls;
                 clsArr9[2] = Object.class;
                 cls4.getMethod("putObject", clsArr9);
-                z4 = true;
+                z10 = true;
             } catch (Throwable th3) {
                 Logger.getLogger(c3.class.getName()).logp(Level.WARNING, "com.google.protobuf.UnsafeUtil", "logMissingMethod", "platform method missing - proto runtime falling back to safer methods: ".concat(th3.toString()));
             }
-            e = z4;
+            e = z10;
             f = p(byte[].class);
             p(boolean[].class);
             a(boolean[].class);
@@ -124,8 +124,8 @@ public abstract class c3 {
             }
             g = ByteOrder.nativeOrder() == ByteOrder.BIG_ENDIAN;
         }
-        z4 = false;
-        e = z4;
+        z10 = false;
+        e = z10;
         f = p(byte[].class);
         p(boolean[].class);
         a(boolean[].class);
@@ -175,39 +175,39 @@ public abstract class c3 {
         return field2;
     }
 
-    public static void c(Object obj, long j10, byte b10) {
+    public static void c(Object obj, long j3, byte b10) {
         Unsafe unsafe = c.a;
-        long j11 = (-4) & j10;
-        int i10 = unsafe.getInt(obj, j11);
-        int i11 = ((~((int) j10)) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i11) | (i10 & (~(255 << i11))));
+        long j10 = (-4) & j3;
+        int i10 = unsafe.getInt(obj, j10);
+        int i11 = ((~((int) j3)) & 3) << 3;
+        unsafe.putInt(obj, j10, ((255 & b10) << i11) | (i10 & (~(255 << i11))));
     }
 
-    public static void d(Object obj, long j10, byte b10) {
+    public static void d(Object obj, long j3, byte b10) {
         Unsafe unsafe = c.a;
-        long j11 = (-4) & j10;
-        int i10 = (((int) j10) & 3) << 3;
-        unsafe.putInt(obj, j11, ((255 & b10) << i10) | (unsafe.getInt(obj, j11) & (~(255 << i10))));
+        long j10 = (-4) & j3;
+        int i10 = (((int) j3) & 3) << 3;
+        unsafe.putInt(obj, j10, ((255 & b10) << i10) | (unsafe.getInt(obj, j10) & (~(255 << i10))));
     }
 
-    public static int e(Object obj, long j10) {
-        return c.a.getInt(obj, j10);
+    public static int e(Object obj, long j3) {
+        return c.a.getInt(obj, j3);
     }
 
-    public static long f(Object obj, long j10) {
-        return c.a.getLong(obj, j10);
+    public static long f(Object obj, long j3) {
+        return c.a.getLong(obj, j3);
     }
 
     public static Object g(Class cls) {
         try {
             return a.allocateInstance(cls);
-        } catch (InstantiationException e6) {
-            throw new IllegalStateException(e6);
+        } catch (InstantiationException e7) {
+            throw new IllegalStateException(e7);
         }
     }
 
-    public static Object h(Object obj, long j10) {
-        return c.a.getObject(obj, j10);
+    public static Object h(Object obj, long j3) {
+        return c.a.getObject(obj, j3);
     }
 
     public static Unsafe i() {
@@ -218,24 +218,24 @@ public abstract class c3 {
         }
     }
 
-    public static void j(Object obj, long j10, int i10) {
-        c.a.putInt(obj, j10, i10);
+    public static void j(Object obj, long j3, int i10) {
+        c.a.putInt(obj, j3, i10);
     }
 
-    public static void k(Object obj, long j10, long j11) {
-        c.a.putLong(obj, j10, j11);
+    public static void k(Object obj, long j3, long j10) {
+        c.a.putLong(obj, j3, j10);
     }
 
-    public static void l(Object obj, long j10, Object obj2) {
-        c.a.putObject(obj, j10, obj2);
+    public static void l(Object obj, long j3, Object obj2) {
+        c.a.putObject(obj, j3, obj2);
     }
 
-    public static /* bridge */ /* synthetic */ boolean m(Object obj, long j10) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) (((~j10) & 3) << 3))) & 255)) != 0;
+    public static /* bridge */ /* synthetic */ boolean m(Object obj, long j3) {
+        return ((byte) ((c.a.getInt(obj, (-4) & j3) >>> ((int) (((~j3) & 3) << 3))) & 255)) != 0;
     }
 
-    public static /* bridge */ /* synthetic */ boolean n(Object obj, long j10) {
-        return ((byte) ((c.a.getInt(obj, (-4) & j10) >>> ((int) ((j10 & 3) << 3))) & 255)) != 0;
+    public static /* bridge */ /* synthetic */ boolean n(Object obj, long j3) {
+        return ((byte) ((c.a.getInt(obj, (-4) & j3) >>> ((int) ((j3 & 3) << 3))) & 255)) != 0;
     }
 
     /* JADX WARN: Multi-variable type inference failed */

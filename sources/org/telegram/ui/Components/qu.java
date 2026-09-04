@@ -1,100 +1,111 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewTreeObserver;
-import android.widget.PopupWindow;
-import java.lang.reflect.Field;
-import org.telegram.messenger.AndroidUtilities;
+import android.net.Uri;
+import java.util.HashMap;
+import java.util.Locale;
 import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class qu extends PopupWindow {
-    public static Field f;
-    public static final org.telegram.ui.ActionBar.h1 g = new org.telegram.ui.ActionBar.h1(1);
-    public ViewTreeObserver.OnScrollChangedListener a;
-    public ViewTreeObserver b;
-    public final pu c;
-    public boolean d;
-    public final int e;
+public final class qu extends org.telegram.ui.ActionBar.g5 {
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ tu h;
 
-    public qu(pu puVar) {
-        super(puVar);
-        this.e = AndroidUtilities.dp(AndroidUtilities.isTablet() ? 40.0f : 32.0f);
-        this.c = puVar;
-        setOutsideTouchable(true);
-        setClippingEnabled(true);
-        setInputMethodMode(2);
-        setSoftInputMode(0);
-        puVar.setFocusableInTouchMode(true);
-        puVar.setOnKeyListener(new in(this, 1));
+    public qu(tu tuVar, boolean z10) {
+        this.h = tuVar;
+        this.f = z10;
     }
 
-    public final void a(View view) {
-        if (this.a != null) {
-            ViewTreeObserver viewTreeObserver = view.getWindowToken() != null ? view.getViewTreeObserver() : null;
-            ViewTreeObserver viewTreeObserver2 = this.b;
-            if (viewTreeObserver != viewTreeObserver2) {
-                if (viewTreeObserver2 != null && viewTreeObserver2.isAlive()) {
-                    this.b.removeOnScrollChangedListener(this.a);
+    @Override // org.telegram.ui.ActionBar.g5, org.telegram.ui.ActionBar.z2
+    public final boolean g() {
+        tu tuVar = this.h;
+        b91 b91Var = tuVar.c;
+        boolean z10 = b91Var.T;
+        if (z10) {
+            if (z10) {
+                b91Var.T = false;
+                b91Var.m();
+                b91Var.l(false);
+            }
+            return false;
+        }
+        try {
+            tuVar.r.getWindow().clearFlags(128);
+            return true;
+        } catch (Exception e7) {
+            FileLog.e(e7);
+            return true;
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5, org.telegram.ui.ActionBar.z2
+    public final void onOpenAnimationEnd() {
+        String str;
+        int intValue;
+        tu tuVar = this.h;
+        int i10 = tuVar.Q;
+        RadialProgressView radialProgressView = tuVar.n;
+        nu nuVar = tuVar.b;
+        b91 b91Var = tuVar.c;
+        if (this.f && tuVar.c.g(tuVar.K, null, null, tuVar.I, true)) {
+            radialProgressView.setVisibility(4);
+            nuVar.setVisibility(4);
+            b91Var.setVisibility(0);
+            return;
+        }
+        radialProgressView.setVisibility(0);
+        nuVar.setVisibility(0);
+        tuVar.s.setVisibility(0);
+        tuVar.v.setVisibility(4);
+        nuVar.setKeepScreenOn(true);
+        b91Var.setVisibility(4);
+        b91Var.getControlsView().setVisibility(4);
+        b91Var.getTextureView().setVisibility(4);
+        if (b91Var.getTextureImageView() != null) {
+            b91Var.getTextureImageView().setVisibility(4);
+        }
+        tuVar.c.g(null, null, null, null, false);
+        HashMap hashMap = new HashMap();
+        hashMap.put("Referer", "messenger.telegram.org");
+        try {
+            String youtubeId = b91Var.getYoutubeId();
+            if (youtubeId == null) {
+                nuVar.loadUrl(tuVar.K, hashMap);
+                return;
+            }
+            tuVar.h.setVisibility(0);
+            tuVar.y = true;
+            nuVar.addJavascriptInterface(new su(tuVar), "YoutubeProxy");
+            String str2 = tuVar.I;
+            if (str2 != null) {
+                try {
+                    Uri parse = Uri.parse(str2);
+                    if (i10 > 0) {
+                        str = "" + i10;
+                    } else {
+                        str = null;
+                    }
+                    if (str == null && (str = parse.getQueryParameter("t")) == null) {
+                        str = parse.getQueryParameter("time_continue");
+                    }
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
-                this.b = viewTreeObserver;
-                if (viewTreeObserver != null) {
-                    viewTreeObserver.addOnScrollChangedListener(this.a);
+                if (str != null) {
+                    if (str.contains("m")) {
+                        String[] split = str.split("m");
+                        intValue = (Utilities.parseInt((CharSequence) split[0]).intValue() * 60) + Utilities.parseInt((CharSequence) split[1]).intValue();
+                    } else {
+                        intValue = Utilities.parseInt((CharSequence) str).intValue();
+                    }
+                    tuVar.b.loadDataWithBaseURL("https://messenger.telegram.org/", String.format(Locale.US, "<!DOCTYPE html><html><head><style>body { margin: 0; width:100%%; height:100%%;  background-color:#000; }html { width:100%%; height:100%%; background-color:#000; }.embed-container iframe,.embed-container object,   .embed-container embed {       position: absolute;       top: 0;       left: 0;       width: 100%% !important;       height: 100%% !important;   }   </style></head><body>   <div class=\"embed-container\">       <div id=\"player\"></div>   </div>   <script src=\"https://www.youtube.com/iframe_api\"></script>   <script>   var player;   var observer;   var videoEl;   var playing;   var posted = false;   YT.ready(function() {       player = new YT.Player(\"player\", {                              \"width\" : \"100%%\",                              \"events\" : {                              \"onReady\" : \"onReady\",                              \"onError\" : \"onError\",                              \"onStateChange\" : \"onStateChange\",                              },                              \"videoId\" : \"%1$s\",                              \"height\" : \"100%%\",                              \"playerVars\" : {                              \"start\" : %2$d,                              \"rel\" : 1,                              \"showinfo\" : 0,                              \"modestbranding\" : 0,                              \"iv_load_policy\" : 3,                              \"autohide\" : 1,                              \"autoplay\" : 1,                              \"cc_load_policy\" : 1,                              \"playsinline\" : 1,                              \"controls\" : 1                              }                            });        player.setSize(window.innerWidth, window.innerHeight);    });    function hideControls() {        playing = !videoEl.paused;       videoEl.controls = 0;       observer.observe(videoEl, {attributes: true});    }    function showControls() {        playing = !videoEl.paused;       observer.disconnect();       videoEl.controls = 1;    }    function onError(event) {       if (!posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onStateChange(event) {       if (event.data == YT.PlayerState.PLAYING && !posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onReady(event) {       player.playVideo();    }    window.onresize = function() {       player.setSize(window.innerWidth, window.innerHeight);       player.playVideo();    }    </script></body></html>", youtubeId, Integer.valueOf(intValue)), "text/html", "UTF-8", "https://youtube.com");
                 }
             }
+            intValue = 0;
+            tuVar.b.loadDataWithBaseURL("https://messenger.telegram.org/", String.format(Locale.US, "<!DOCTYPE html><html><head><style>body { margin: 0; width:100%%; height:100%%;  background-color:#000; }html { width:100%%; height:100%%; background-color:#000; }.embed-container iframe,.embed-container object,   .embed-container embed {       position: absolute;       top: 0;       left: 0;       width: 100%% !important;       height: 100%% !important;   }   </style></head><body>   <div class=\"embed-container\">       <div id=\"player\"></div>   </div>   <script src=\"https://www.youtube.com/iframe_api\"></script>   <script>   var player;   var observer;   var videoEl;   var playing;   var posted = false;   YT.ready(function() {       player = new YT.Player(\"player\", {                              \"width\" : \"100%%\",                              \"events\" : {                              \"onReady\" : \"onReady\",                              \"onError\" : \"onError\",                              \"onStateChange\" : \"onStateChange\",                              },                              \"videoId\" : \"%1$s\",                              \"height\" : \"100%%\",                              \"playerVars\" : {                              \"start\" : %2$d,                              \"rel\" : 1,                              \"showinfo\" : 0,                              \"modestbranding\" : 0,                              \"iv_load_policy\" : 3,                              \"autohide\" : 1,                              \"autoplay\" : 1,                              \"cc_load_policy\" : 1,                              \"playsinline\" : 1,                              \"controls\" : 1                              }                            });        player.setSize(window.innerWidth, window.innerHeight);    });    function hideControls() {        playing = !videoEl.paused;       videoEl.controls = 0;       observer.observe(videoEl, {attributes: true});    }    function showControls() {        playing = !videoEl.paused;       observer.disconnect();       videoEl.controls = 1;    }    function onError(event) {       if (!posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onStateChange(event) {       if (event.data == YT.PlayerState.PLAYING && !posted) {            if (window.YoutubeProxy !== undefined) {                   YoutubeProxy.postEvent(\"loaded\", null);             }            posted = true;       }    }    function onReady(event) {       player.playVideo();    }    window.onresize = function() {       player.setSize(window.innerWidth, window.innerHeight);       player.playVideo();    }    </script></body></html>", youtubeId, Integer.valueOf(intValue)), "text/html", "UTF-8", "https://youtube.com");
+        } catch (Exception e10) {
+            FileLog.e(e10);
         }
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void dismiss() {
-        ViewTreeObserver viewTreeObserver;
-        setFocusable(false);
-        try {
-            super.dismiss();
-        } catch (Exception unused) {
-        }
-        if (this.a == null || (viewTreeObserver = this.b) == null) {
-            return;
-        }
-        if (viewTreeObserver.isAlive()) {
-            this.b.removeOnScrollChangedListener(this.a);
-        }
-        this.b = null;
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAsDropDown(View view, int i10, int i11) {
-        try {
-            super.showAsDropDown(view, i10, i11);
-            a(view);
-        } catch (Exception e) {
-            FileLog.e(e);
-        }
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void showAtLocation(View view, int i10, int i11, int i12) {
-        ViewTreeObserver viewTreeObserver;
-        super.showAtLocation(view, i10, i11, i12);
-        if (this.a == null || (viewTreeObserver = this.b) == null) {
-            return;
-        }
-        if (viewTreeObserver.isAlive()) {
-            this.b.removeOnScrollChangedListener(this.a);
-        }
-        this.b = null;
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void update(View view, int i10, int i11, int i12, int i13) {
-        super.update(view, i10, i11, i12, i13);
-        a(view);
-    }
-
-    @Override // android.widget.PopupWindow
-    public final void update(View view, int i10, int i11) {
-        super.update(view, i10, i11);
-        a(view);
     }
 }

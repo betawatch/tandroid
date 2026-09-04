@@ -1,50 +1,85 @@
 package fg;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import b5.m;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final class g extends AnimatorListenerAdapter {
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final /* synthetic */ class g implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i b;
+    public final /* synthetic */ k b;
 
-    public /* synthetic */ g(i iVar, int i10) {
+    public /* synthetic */ g(k kVar, int i10) {
         this.a = i10;
-        this.b = iVar;
+        this.b = kVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    private final void a() {
+        k kVar = this.b;
+        kVar.e();
+        synchronized (kVar.a) {
+            try {
+                if (kVar.p) {
+                    return;
+                }
+                AndroidUtilities.runOnUIThread(new g(kVar, 1), 1000L);
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        b5.h hVar;
+        byte[] bArr;
         switch (this.a) {
             case 0:
-                super.onAnimationEnd(animator);
-                i iVar = this.b;
-                iVar.b.d = 0.0f;
-                iVar.Q = null;
-                iVar.h(iVar.F);
-                break;
+                k kVar = this.b;
+                b5.h hVar2 = kVar.n;
+                if (hVar2 != null) {
+                    try {
+                        if (!m.c.b()) {
+                            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+                        }
+                        hVar2.a.postMessage("{\"t\":\"close\"}");
+                    } catch (Exception unused) {
+                    }
+                }
+                kVar.e();
+                return;
             case 1:
-                super.onAnimationEnd(animator);
-                i iVar2 = this.b;
-                iVar2.b.d = 0.0f;
-                iVar2.Q = null;
-                iVar2.h(iVar2.F);
-                break;
+                k.a(this.b);
+                return;
             case 2:
-                super.onAnimationEnd(animator);
-                i iVar3 = this.b;
-                iVar3.b.d = 0.0f;
-                iVar3.Q = null;
-                iVar3.h(iVar3.F);
-                break;
+                k.b(this.b);
+                return;
+            case 3:
+                a();
+                return;
             default:
-                super.onAnimationEnd(animator);
-                i iVar4 = this.b;
-                iVar4.b.d = 0.0f;
-                iVar4.Q = null;
-                iVar4.h(iVar4.F);
-                break;
+                k kVar2 = this.b;
+                while (true) {
+                    synchronized (kVar2.a) {
+                        hVar = kVar2.n;
+                        if (!kVar2.p && hVar != null && !kVar2.l.isEmpty()) {
+                            bArr = (byte[]) kVar2.l.removeFirst();
+                            kVar2.r -= bArr.length;
+                        }
+                    }
+                    try {
+                        if (!m.a.b()) {
+                            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+                        }
+                        hVar.a.postMessageWithPayload(new se.a(new b5.j(bArr)));
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                        kVar2.f();
+                        return;
+                    }
+                }
+                return;
         }
     }
 }

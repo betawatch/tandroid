@@ -1,40 +1,45 @@
 package wh;
 
-import android.animation.ValueAnimator;
-import o4.h0;
-import org.telegram.ui.Cells.u0;
-import org.telegram.ui.Cells.v0;
-import ph.z8;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class d implements ValueAnimator.AnimatorUpdateListener {
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class d implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ g b;
 
-    public /* synthetic */ d(int i10, Object obj, Object obj2) {
+    public /* synthetic */ d(g gVar, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+        this.b = gVar;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                u0 u0Var = (u0) this.b;
-                v0 v0Var = (v0) this.c;
-                u0Var.c = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                v0Var.invalidate();
+                g gVar = this.b;
+                if (gVar.j.isEmpty()) {
+                    gVar.i = true;
+                    g.n = null;
+                    f fVar = gVar.f;
+                    if (fVar != null) {
+                        fVar.a = false;
+                        gVar.f = null;
+                    }
+                    gVar.d.removeView(gVar.e);
+                    if (gVar.d.getParent() instanceof ViewGroup) {
+                        ((ViewGroup) gVar.d.getParent()).removeView(gVar.d);
+                        break;
+                    }
+                }
                 break;
             default:
-                h0 h0Var = (h0) this.b;
-                z8 z8Var = (z8) this.c;
-                h0Var.getClass();
-                int intValue = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                h0Var.b = intValue;
-                z8Var.c(intValue);
+                ArrayList arrayList = this.b.j;
+                for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                    ((View) arrayList.get(i10)).invalidate();
+                }
                 break;
         }
     }

@@ -1,23 +1,23 @@
 package b1;
 
-import dd.l;
-import kotlin.jvm.internal.q;
-import sc.i;
+import gd.i;
+import kotlin.jvm.internal.p;
+import rd.l;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements dd.a {
+public final /* synthetic */ class c implements rd.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ l b;
-    public final /* synthetic */ q c;
+    public final /* synthetic */ p c;
 
-    public /* synthetic */ c(l lVar, q qVar, int i10) {
+    public /* synthetic */ c(l lVar, p pVar, int i10) {
         this.a = i10;
         this.b = lVar;
-        this.c = qVar;
+        this.c = pVar;
     }
 
-    @Override // dd.a
+    @Override // rd.a
     public final Object invoke() {
         switch (this.a) {
             case 0:

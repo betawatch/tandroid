@@ -22,10 +22,10 @@ import android.view.inputmethod.InputConnection;
 import android.widget.AbsSeekBar;
 import android.widget.EditText;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
-import k7.j6;
-import n7.qa;
+import ji.u4;
+import w7.k6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class y {
     public static final int[] d = {R.attr.indeterminateDrawable, R.attr.progressDrawable};
@@ -40,7 +40,7 @@ public class y {
         if (keyListener instanceof NumberKeyListener) {
             return keyListener;
         }
-        ((qa) ((o3.c) this.c).b).getClass();
+        ((o0.a) ((u4) this.c).b).getClass();
         if (keyListener instanceof q1.e) {
             return keyListener;
         }
@@ -54,36 +54,36 @@ public class y {
         switch (this.a) {
             case 0:
                 AbsSeekBar absSeekBar = (AbsSeekBar) this.b;
-                l7.w0 y10 = l7.w0.y(absSeekBar.getContext(), attributeSet, d, i10);
-                Drawable u10 = y10.u(0);
-                if (u10 != null) {
-                    if (u10 instanceof AnimationDrawable) {
-                        AnimationDrawable animationDrawable = (AnimationDrawable) u10;
+                aa.a y3 = aa.a.y(absSeekBar.getContext(), attributeSet, d, i10);
+                Drawable s10 = y3.s(0);
+                if (s10 != null) {
+                    if (s10 instanceof AnimationDrawable) {
+                        AnimationDrawable animationDrawable = (AnimationDrawable) s10;
                         int numberOfFrames = animationDrawable.getNumberOfFrames();
                         AnimationDrawable animationDrawable2 = new AnimationDrawable();
                         animationDrawable2.setOneShot(animationDrawable.isOneShot());
                         for (int i11 = 0; i11 < numberOfFrames; i11++) {
-                            Drawable e = e(animationDrawable.getFrame(i11), true);
-                            e.setLevel(10000);
-                            animationDrawable2.addFrame(e, animationDrawable.getDuration(i11));
+                            Drawable e7 = e(animationDrawable.getFrame(i11), true);
+                            e7.setLevel(10000);
+                            animationDrawable2.addFrame(e7, animationDrawable.getDuration(i11));
                         }
                         animationDrawable2.setLevel(10000);
-                        u10 = animationDrawable2;
+                        s10 = animationDrawable2;
                     }
-                    absSeekBar.setIndeterminateDrawable(u10);
+                    absSeekBar.setIndeterminateDrawable(s10);
                 }
-                Drawable u11 = y10.u(1);
-                if (u11 != null) {
-                    absSeekBar.setProgressDrawable(e(u11, false));
+                Drawable s11 = y3.s(1);
+                if (s11 != null) {
+                    absSeekBar.setProgressDrawable(e(s11, false));
                 }
-                y10.A();
+                y3.A();
                 return;
             default:
                 TypedArray obtainStyledAttributes = ((EditText) this.b).getContext().obtainStyledAttributes(attributeSet, f.a.i, i10, 0);
                 try {
-                    boolean z4 = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
+                    boolean z10 = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
                     obtainStyledAttributes.recycle();
-                    d(z4);
+                    d(z10);
                     return;
                 } catch (Throwable th2) {
                     obtainStyledAttributes.recycle();
@@ -93,28 +93,28 @@ public class y {
     }
 
     public q1.b c(InputConnection inputConnection, EditorInfo editorInfo) {
-        o3.c cVar = (o3.c) this.c;
+        u4 u4Var = (u4) this.c;
         if (inputConnection == null) {
-            cVar.getClass();
+            u4Var.getClass();
             inputConnection = null;
         } else {
-            qa qaVar = (qa) cVar.b;
-            qaVar.getClass();
+            o0.a aVar = (o0.a) u4Var.b;
+            aVar.getClass();
             if (!(inputConnection instanceof q1.b)) {
-                inputConnection = new q1.b((EditText) qaVar.b, inputConnection, editorInfo);
+                inputConnection = new q1.b((EditText) aVar.b, inputConnection, editorInfo);
             }
         }
         return (q1.b) inputConnection;
     }
 
-    public void d(boolean z4) {
-        q1.i iVar = (q1.i) ((qa) ((o3.c) this.c).b).c;
-        if (iVar.c != z4) {
+    public void d(boolean z10) {
+        q1.i iVar = (q1.i) ((o0.a) ((u4) this.c).b).c;
+        if (iVar.c != z10) {
             if (iVar.b != null) {
                 androidx.emoji2.text.l a2 = androidx.emoji2.text.l.a();
                 q1.h hVar = iVar.b;
                 a2.getClass();
-                j6.a(hVar, "initCallback cannot be null");
+                k6.a(hVar, "initCallback cannot be null");
                 ReentrantReadWriteLock reentrantReadWriteLock = a2.a;
                 reentrantReadWriteLock.writeLock().lock();
                 try {
@@ -123,20 +123,20 @@ public class y {
                     reentrantReadWriteLock.writeLock().unlock();
                 }
             }
-            iVar.c = z4;
-            if (z4) {
+            iVar.c = z10;
+            if (z10) {
                 q1.i.a(iVar.a, androidx.emoji2.text.l.a().b());
             }
         }
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    public Drawable e(Drawable drawable, boolean z4) {
+    public Drawable e(Drawable drawable, boolean z10) {
         if (drawable instanceof j0.c) {
             j0.d dVar = (j0.d) ((j0.c) drawable);
             Drawable drawable2 = dVar.f;
             if (drawable2 != null) {
-                dVar.h(e(drawable2, z4));
+                dVar.h(e(drawable2, z10));
                 return drawable;
             }
         } else {
@@ -152,7 +152,7 @@ public class y {
                 for (int i11 = 0; i11 < numberOfLayers; i11++) {
                     layerDrawable2.setId(i11, layerDrawable.getId(i11));
                     if (Build.VERSION.SDK_INT >= 23) {
-                        e0.b.A(layerDrawable, layerDrawable2, i11);
+                        e0.b.J(layerDrawable, layerDrawable2, i11);
                     }
                 }
                 return layerDrawable2;
@@ -166,7 +166,7 @@ public class y {
                 ShapeDrawable shapeDrawable = new ShapeDrawable(new RoundRectShape(new float[]{5.0f, 5.0f, 5.0f, 5.0f, 5.0f, 5.0f, 5.0f, 5.0f}, null, null));
                 shapeDrawable.getPaint().setShader(new BitmapShader(bitmap, Shader.TileMode.REPEAT, Shader.TileMode.CLAMP));
                 shapeDrawable.getPaint().setColorFilter(bitmapDrawable.getPaint().getColorFilter());
-                return z4 ? new ClipDrawable(shapeDrawable, 3, 1) : shapeDrawable;
+                return z10 ? new ClipDrawable(shapeDrawable, 3, 1) : shapeDrawable;
             }
         }
         return drawable;
@@ -178,6 +178,6 @@ public class y {
 
     public y(EditText editText) {
         this.b = editText;
-        this.c = new o3.c(editText);
+        this.c = new u4(editText);
     }
 }

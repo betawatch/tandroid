@@ -2,5 +2,5 @@ package java.util.function;
 
 /* loaded from: classes2.dex */
 public interface LongToIntFunction {
-    int applyAsInt(long j10);
+    int applyAsInt(long j3);
 }

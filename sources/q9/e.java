@@ -1,0 +1,13 @@
+package q9;
+
+import com.google.firebase.components.ComponentRegistrar;
+import java.util.List;
+import org.telegram.ui.sw0;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public interface e {
+    public static final sw0 A = new sw0(14);
+
+    List b(ComponentRegistrar componentRegistrar);
+}

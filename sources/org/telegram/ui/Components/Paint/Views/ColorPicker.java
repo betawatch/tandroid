@@ -7,11 +7,11 @@ import android.graphics.Shader;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.FrameLayout;
-import cg.f2;
-import dg.a;
 import org.telegram.messenger.AndroidUtilities;
+import qg.q1;
+import rg.a;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public class ColorPicker extends FrameLayout {
     public static final int[] d = {-1431751, -2409774, -13610525, -11942419, -8337308, -205211, -223667, -16777216, -1};
@@ -20,14 +20,14 @@ public class ColorPicker extends FrameLayout {
     public float b;
     public float c;
 
-    public static int a(float f10) {
+    public static int a(float f7) {
         float[] fArr;
         int i10;
         int[] iArr = d;
-        if (f10 <= 0.0f) {
+        if (f7 <= 0.0f) {
             return iArr[0];
         }
-        if (f10 >= 1.0f) {
+        if (f7 >= 1.0f) {
             return iArr[8];
         }
         int i11 = 1;
@@ -38,17 +38,17 @@ public class ColorPicker extends FrameLayout {
                 i10 = -1;
                 break;
             }
-            if (fArr[i11] >= f10) {
+            if (fArr[i11] >= f7) {
                 i10 = i11 - 1;
                 break;
             }
             i11++;
         }
-        float f11 = fArr[i10];
+        float f10 = fArr[i10];
         int i12 = iArr[i10];
-        float f12 = fArr[i11];
+        float f11 = fArr[i11];
         int i13 = iArr[i11];
-        float min = Math.min(Math.max((f10 - f11) / (f12 - f11), 0.0f), 1.0f);
+        float min = Math.min(Math.max((f7 - f10) / (f11 - f10), 0.0f), 1.0f);
         int red = Color.red(i12);
         int red2 = Color.red(i13);
         int green = Color.green(i12);
@@ -58,8 +58,8 @@ public class ColorPicker extends FrameLayout {
         return Color.argb(255, Math.min(255, (int) (((red2 - red) * min) + red)), Math.min(255, (int) (((green2 - green) * min) + green)), Math.min(255, (int) (((blue2 - blue) * min) + blue)));
     }
 
-    private void setDraggingFactor(float f10) {
-        this.c = f10;
+    private void setDraggingFactor(float f7) {
+        this.c = f7;
         invalidate();
     }
 
@@ -71,8 +71,8 @@ public class ColorPicker extends FrameLayout {
         return null;
     }
 
-    public f2 getSwatch() {
-        return new f2(this.a, this.b, a(this.a));
+    public q1 getSwatch() {
+        return new q1(this.a, this.b, a(this.a));
     }
 
     @Override // android.view.View
@@ -82,7 +82,7 @@ public class ColorPicker extends FrameLayout {
     }
 
     @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
         new LinearGradient(AndroidUtilities.dp(56.0f), 0.0f, (i12 - i10) - AndroidUtilities.dp(56.0f), 0.0f, d, e, Shader.TileMode.REPEAT);
         throw null;
     }
@@ -96,9 +96,9 @@ public class ColorPicker extends FrameLayout {
         throw null;
     }
 
-    public void setLocation(float f10) {
-        this.a = f10;
-        a(f10);
+    public void setLocation(float f7) {
+        this.a = f7;
+        a(f7);
         throw null;
     }
 
@@ -106,17 +106,17 @@ public class ColorPicker extends FrameLayout {
         throw null;
     }
 
-    public void setSwatch(f2 f2Var) {
-        setLocation(f2Var.b);
-        setWeight(f2Var.c);
+    public void setSwatch(q1 q1Var) {
+        setLocation(q1Var.b);
+        setWeight(q1Var.c);
     }
 
-    public void setUndoEnabled(boolean z4) {
+    public void setUndoEnabled(boolean z10) {
         throw null;
     }
 
-    public void setWeight(float f10) {
-        this.b = f10;
+    public void setWeight(float f7) {
+        this.b = f7;
         invalidate();
     }
 

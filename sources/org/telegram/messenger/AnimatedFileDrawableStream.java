@@ -3,7 +3,7 @@ package org.telegram.messenger;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     private volatile boolean canceled;
@@ -23,12 +23,12 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     private final Object sync = new Object();
     private boolean waitingForLoad;
 
-    public AnimatedFileDrawableStream(TLRPC.Document document, ImageLocation imageLocation, Object obj, int i10, boolean z4, int i11, int i12) {
+    public AnimatedFileDrawableStream(TLRPC.Document document, ImageLocation imageLocation, Object obj, int i10, boolean z10, int i11, int i12) {
         this.document = document;
         this.location = imageLocation;
         this.parentObject = obj;
         this.currentAccount = i10;
-        this.preview = z4;
+        this.preview = z10;
         this.loadingPriority = i11;
         this.loadOperation = FileLoader.getInstance(i10).loadStreamFile(this, this.document, this.location, this.parentObject, 0L, this.preview, i11, i12);
     }
@@ -90,8 +90,8 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
     }
 
     public int read(int i10, int i11) {
+        long j3;
         long j10;
-        long j11;
         synchronized (this.sync) {
             try {
                 if (this.canceled) {
@@ -106,25 +106,25 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                 if (i11 == 0) {
                     return 0;
                 }
-                long j12 = 0;
-                while (j12 == 0) {
+                long j11 = 0;
+                while (j11 == 0) {
                     try {
-                        j10 = i10;
-                        long[] downloadedLengthFromOffset = this.loadOperation.getDownloadedLengthFromOffset(j10, i11);
-                        j11 = downloadedLengthFromOffset[0];
+                        j3 = i10;
+                        long[] downloadedLengthFromOffset = this.loadOperation.getDownloadedLengthFromOffset(j3, i11);
+                        j10 = downloadedLengthFromOffset[0];
                         try {
                             if (!this.finishedLoadingFile && downloadedLengthFromOffset[1] != 0) {
                                 this.finishedLoadingFile = true;
                                 this.finishedFilePath = this.loadOperation.getCacheFileFinal().getAbsolutePath();
                             }
-                        } catch (Exception e) {
-                            e = e;
-                            j12 = j11;
+                        } catch (Exception e7) {
+                            e = e7;
+                            j11 = j10;
                         }
-                    } catch (Exception e6) {
-                        e = e6;
+                    } catch (Exception e10) {
+                        e = e10;
                     }
-                    if (j11 == 0) {
+                    if (j10 == 0) {
                         synchronized (this.sync) {
                             try {
                                 if (this.canceled) {
@@ -132,14 +132,14 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                                     return 0;
                                 }
                                 this.countDownLatch = new CountDownLatch(1);
-                                if (this.loadOperation.isPaused() || this.lastOffset != j10 || this.preview) {
-                                    FileLoadOperation loadStreamFile = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, this.location, this.parentObject, j10, this.preview, this.loadingPriority);
+                                if (this.loadOperation.isPaused() || this.lastOffset != j3 || this.preview) {
+                                    FileLoadOperation loadStreamFile = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, this.location, this.parentObject, j3, this.preview, this.loadingPriority);
                                     FileLoadOperation fileLoadOperation = this.loadOperation;
                                     if (fileLoadOperation != loadStreamFile) {
                                         fileLoadOperation.removeStreamListener(this);
                                         this.loadOperation = loadStreamFile;
                                     }
-                                    this.lastOffset = j10 + j11;
+                                    this.lastOffset = j3 + j10;
                                 }
                                 synchronized (this.sync) {
                                     try {
@@ -162,16 +162,16 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                                 }
                             } finally {
                             }
-                            e = e;
-                            j12 = j11;
+                            e = e7;
+                            j11 = j10;
                             FileLog.e((Throwable) e, false);
-                            return (int) j12;
+                            return (int) j11;
                         }
                     }
-                    j12 = j11;
+                    j11 = j10;
                 }
-                this.lastOffset = i10 + j12;
-                return (int) j12;
+                this.lastOffset = i10 + j11;
+                return (int) j11;
             } finally {
             }
         }
@@ -183,7 +183,7 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
         }
     }
 
-    public void cancel(boolean z4) {
+    public void cancel(boolean z10) {
         if (this.canceled) {
             return;
         }
@@ -193,7 +193,7 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                 if (countDownLatch != null) {
                     countDownLatch.countDown();
                     this.countDownLatch = null;
-                    if (z4 && !this.canceled && !this.preview) {
+                    if (z10 && !this.canceled && !this.preview) {
                         FileLoader.getInstance(this.currentAccount).removeLoadingVideo(this.document, false, true);
                     }
                 }
@@ -201,10 +201,10 @@ public class AnimatedFileDrawableStream implements FileLoadOperationStream {
                 if (obj instanceof MessageObject) {
                     MessageObject messageObject = (MessageObject) obj;
                     if (DownloadController.getInstance(messageObject.currentAccount).isDownloading(messageObject.getId())) {
-                        z4 = false;
+                        z10 = false;
                     }
                 }
-                if (z4) {
+                if (z10) {
                     cancelLoadingInternal();
                 }
                 this.canceled = true;

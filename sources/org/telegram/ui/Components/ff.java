@@ -1,174 +1,115 @@
 package org.telegram.ui.Components;
 
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
-import android.graphics.Canvas;
-import android.text.SpannableStringBuilder;
-import android.text.TextUtils;
-import android.view.MotionEvent;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.view.View;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Emoji;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AnimationNotificationsLocker;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ff extends dg {
-    public boolean e;
-    public float f;
-    public float h;
-    public boolean n;
-    public final /* synthetic */ ChatActivityEnterView r;
+public final class ff extends vo0 {
+    public final /* synthetic */ ChatActivityEnterView H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ff(ChatActivityEnterView chatActivityEnterView, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(chatActivityEnterView, context, f6Var);
-        this.r = chatActivityEnterView;
-        this.e = true;
+    public ff(ChatActivityEnterView chatActivityEnterView, final Context context, final org.telegram.ui.co coVar, MessagesController messagesController, final boolean z10, TLRPC.Peer peer, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, final androidx.car.app.utils.a aVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.H = chatActivityEnterView;
+        this.b = true;
+        this.c = ImageReceiver.DEFAULT_CROSSFADE_DURATION;
+        this.f = -1L;
+        this.j = new AnimationNotificationsLocker();
+        e();
+        this.z = new ArrayList();
+        this.G = new ArrayList();
+        this.r = peer;
+        this.s = tL_channels_sendAsPeers;
+        ah.y yVar = new ah.y(this, context, 19);
+        this.t = yVar;
+        yVar.setLayoutParams(w7.x5.c(-2.0f, -2));
+        setContentView(yVar);
+        setWidth(-2);
+        setHeight(-2);
+        setBackgroundDrawable(null);
+        Drawable mutate = context.getDrawable(R.drawable.popup_fixed_alert4).mutate();
+        mutate.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.G8, f6Var), PorterDuff.Mode.MULTIPLY));
+        yVar.setBackground(mutate);
+        Rect rect = new Rect();
+        mutate.getPadding(rect);
+        yVar.setPadding(rect.left, rect.top, rect.right, rect.bottom);
+        int width = (int) ((coVar == null ? AndroidUtilities.displaySize.x : coVar.X0.getWidth()) * 0.75f);
+        po0 po0Var = new po0(context, width, AndroidUtilities.dp(450.0f));
+        this.o = po0Var;
+        po0Var.setOrientation(1);
+        TextView textView = new TextView(context);
+        this.p = textView;
+        org.telegram.messenger.wl.n(org.telegram.ui.ActionBar.j6.m5, f6Var, textView, 1, 16.0f);
+        textView.setText(LocaleController.getString(R.string.SendMessageAsTitle));
+        textView.setTypeface(AndroidUtilities.bold(), 1);
+        int dp = AndroidUtilities.dp(18.0f);
+        textView.setPadding(dp, AndroidUtilities.dp(12.0f), dp, AndroidUtilities.dp(12.0f));
+        po0Var.addView(textView);
+        FrameLayout frameLayout = new FrameLayout(context);
+        final ArrayList<TLRPC.TL_sendAsPeer> arrayList = tL_channels_sendAsPeers.peers;
+        ll0 ll0Var = new ll0(context, null);
+        this.v = ll0Var;
+        s4.c0 c0Var = new s4.c0();
+        this.w = c0Var;
+        ll0Var.setLayoutManager(c0Var);
+        ll0Var.setAdapter(new qo0(f6Var, arrayList, messagesController, width, peer));
+        ll0Var.j(new ro0(this));
+        ll0Var.setOnItemClickListener(new zk0() { // from class: org.telegram.ui.Components.oo0
+            @Override // org.telegram.ui.Components.zk0
+            public final void a(int i10, View view) {
+                vo0.k(ff.this, arrayList, context, coVar, z10, aVar, view, i10);
+            }
+        });
+        ll0Var.setOverScrollMode(2);
+        frameLayout.addView(ll0Var);
+        View view = new View(context);
+        this.u = view;
+        Drawable drawable = context.getDrawable(R.drawable.header_shadow);
+        drawable.setAlpha(153);
+        view.setBackground(drawable);
+        view.setAlpha(0.0f);
+        frameLayout.addView(view, w7.x5.c(4.0f, -1));
+        po0Var.addView(frameLayout, w7.x5.c(-2.0f, -1));
+        yVar.addView(po0Var);
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.wt, android.widget.TextView, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        ChatActivityEnterView chatActivityEnterView = this.r;
-        View view = chatActivityEnterView.F4;
-        if (view != null) {
-            setWindowView(view);
+    @Override // org.telegram.ui.Components.vo0, org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public final void dismiss() {
+        ArrayList arrayList = this.z;
+        ChatActivityEnterView chatActivityEnterView = this.H;
+        if (chatActivityEnterView.q0 != this) {
+            super.dismiss();
             return;
         }
-        org.telegram.ui.zn znVar = chatActivityEnterView.L2;
-        if (znVar == null || znVar.getParentLayout() == null || !((ActionBarLayout) chatActivityEnterView.L2.getParentLayout()).b) {
-            setWindowView(chatActivityEnterView.K2.getWindow().getDecorView());
-        } else {
-            setWindowView(chatActivityEnterView.L2.getParentLayout().getWindow().getDecorView());
-        }
-    }
-
-    @Override // org.telegram.ui.Components.ut, org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.wt, android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        if (getLayout() == null || !this.e) {
+        chatActivityEnterView.q0 = null;
+        int i10 = 0;
+        if (!this.q) {
+            l(new o1.k[0]);
+            chatActivityEnterView.p0.a(true, true, 0.0f);
             return;
         }
-        this.e = false;
-        this.r.J(true);
-    }
-
-    @Override // org.telegram.ui.Components.dg, org.telegram.ui.Components.ut, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        ChatActivityEnterView chatActivityEnterView = this.r;
-        if (chatActivityEnterView.Q != chatActivityEnterView.B0.getLineCount()) {
-            boolean z4 = false;
-            chatActivityEnterView.p1((chatActivityEnterView.B0.getLineCount() <= 2 || chatActivityEnterView.B0.getText() == null || TextUtils.isEmpty(chatActivityEnterView.B0.getText().toString().trim())) ? false : true);
-            if (chatActivityEnterView.B0.getLineCount() > 2 && chatActivityEnterView.B0.getText() != null && !TextUtils.isEmpty(chatActivityEnterView.B0.getText().toString().trim())) {
-                z4 = true;
-            }
-            chatActivityEnterView.v1(z4);
+        int size = arrayList.size();
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((o1.k) obj).c();
         }
-    }
-
-    @Override // org.telegram.ui.Components.dg, org.telegram.ui.Components.ut, android.widget.EditText, android.widget.TextView
-    public final boolean onTextContextMenuItem(int i10) {
-        if (i10 == 16908322) {
-            ChatActivityEnterView chatActivityEnterView = this.r;
-            if (chatActivityEnterView.B0 != null) {
-                try {
-                    ClipboardManager clipboardManager = (ClipboardManager) chatActivityEnterView.getContext().getSystemService("clipboard");
-                    ClipData primaryClip = clipboardManager == null ? null : clipboardManager.getPrimaryClip();
-                    if (primaryClip != null && primaryClip.getItemCount() >= 1 && primaryClip.getDescription() != null && primaryClip.getDescription().hasMimeType("text/html")) {
-                        String htmlText = primaryClip.getItemAt(0).getHtmlText();
-                        if (!TextUtils.isEmpty(htmlText)) {
-                            HashMap hashMap = new HashMap();
-                            ArrayList z4 = vh.y3.z(htmlText, hashMap);
-                            if (!z4.isEmpty()) {
-                                if (!vh.x4.f(z4, hashMap)) {
-                                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(vh.x4.j(z4, false));
-                                    Emoji.replaceEmoji((CharSequence) spannableStringBuilder, chatActivityEnterView.B0.getPaint().getFontMetricsInt(), false, (int[]) null);
-                                    u5[] u5VarArr = (u5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), u5.class);
-                                    if (u5VarArr != null) {
-                                        for (u5 u5Var : u5VarArr) {
-                                            u5Var.applyFontMetrics(chatActivityEnterView.B0.getPaint().getFontMetricsInt(), l5.g());
-                                        }
-                                    }
-                                    int max = Math.max(0, chatActivityEnterView.B0.getSelectionStart());
-                                    int min = Math.min(chatActivityEnterView.B0.getText().length(), chatActivityEnterView.B0.getSelectionEnd());
-                                    zi0[] zi0VarArr = (zi0[]) chatActivityEnterView.B0.getText().getSpans(max, min, zi0.class);
-                                    if (zi0VarArr == null || zi0VarArr.length <= 0) {
-                                        aj0.a(spannableStringBuilder);
-                                    } else {
-                                        zi0[] zi0VarArr2 = (zi0[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), zi0.class);
-                                        for (int i11 = 0; i11 < zi0VarArr2.length; i11++) {
-                                            spannableStringBuilder.removeSpan(zi0VarArr2[i11]);
-                                            spannableStringBuilder.removeSpan(zi0VarArr2[i11].a);
-                                        }
-                                    }
-                                    ff ffVar = chatActivityEnterView.B0;
-                                    ffVar.setText(ffVar.getText().replace(max, min, spannableStringBuilder));
-                                    chatActivityEnterView.B0.setSelection(Math.min(max + spannableStringBuilder.length(), chatActivityEnterView.B0.getText().length()));
-                                    return true;
-                                }
-                                if (MessagesController.getInstance(chatActivityEnterView.N).richEditorAvailable()) {
-                                    int max2 = Math.max(0, chatActivityEnterView.B0.getSelectionStart());
-                                    int min2 = Math.min(chatActivityEnterView.B0.getText().length(), chatActivityEnterView.B0.getSelectionEnd());
-                                    chatActivityEnterView.K0(chatActivityEnterView.B0.getText().subSequence(0, Math.min(max2, min2)), htmlText, chatActivityEnterView.B0.getText().subSequence(Math.max(max2, min2), chatActivityEnterView.B0.getText().length()));
-                                    return true;
-                                }
-                            }
-                        }
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                }
-            }
-        }
-        return super.onTextContextMenuItem(i10);
-    }
-
-    @Override // org.telegram.ui.Components.dg, org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        ChatActivityEnterView chatActivityEnterView = this.r;
-        if (!chatActivityEnterView.v()) {
-            if (motionEvent.getAction() == 0 && chatActivityEnterView.V2 != null) {
-                int i10 = org.telegram.ui.ActionBar.j6.vf;
-                int i11 = ChatActivityEnterView.j5;
-                setHandlesColor(chatActivityEnterView.i0(i10));
-                chatActivityEnterView.V2.w1();
-            }
-            return super.onTouchEvent(motionEvent);
-        }
-        if (motionEvent.getAction() == 0) {
-            this.f = motionEvent.getX();
-            this.h = motionEvent.getY();
-            this.n = true;
-        } else if (this.n && motionEvent.getAction() == 2) {
-            if (Math.abs(motionEvent.getX() - this.f) > AndroidUtilities.touchSlop || Math.abs(motionEvent.getY() - this.h) > AndroidUtilities.touchSlop) {
-                this.n = false;
-            }
-        } else if (this.n) {
-            if (chatActivityEnterView.V2 != null) {
-                int i12 = org.telegram.ui.ActionBar.j6.vf;
-                int i13 = ChatActivityEnterView.j5;
-                setHandlesColor(chatActivityEnterView.i0(i12));
-                chatActivityEnterView.V2.w1();
-            }
-            ff ffVar = chatActivityEnterView.B0;
-            if (ffVar != null && !AndroidUtilities.showKeyboard(ffVar)) {
-                chatActivityEnterView.B0.clearFocus();
-                chatActivityEnterView.B0.requestFocus();
-            }
-        }
-        return this.n;
-    }
-
-    @Override // org.telegram.ui.Components.dg, org.telegram.ui.Components.wt
-    public final void setOffsetY(float f10) {
-        super.setOffsetY(f10);
-        this.r.u1.invalidate();
+        arrayList.clear();
+        super.dismiss();
     }
 }

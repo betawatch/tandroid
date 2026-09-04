@@ -1,25 +1,50 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class hq0 extends f2.v {
-    public final /* synthetic */ mq0 c;
+public final class hq0 implements ar0 {
+    public final /* synthetic */ HashMap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ kq0 c;
 
-    public hq0(mq0 mq0Var) {
-        this.c = mq0Var;
+    public hq0(kq0 kq0Var, HashMap hashMap, ArrayList arrayList) {
+        this.c = kq0Var;
+        this.a = hashMap;
+        this.b = arrayList;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        mq0 mq0Var = this.c;
-        if (mq0Var.I.j(i10) == 1 || mq0Var.V || (mq0Var.G == null && TextUtils.isEmpty(mq0Var.v))) {
-            return mq0Var.J.J;
+    @Override // org.telegram.ui.ar0
+    public final void b(Editable editable) {
+        kq0 kq0Var = this.c;
+        org.telegram.ui.Components.hu huVar = kq0Var.M;
+        kq0Var.a = editable;
+        huVar.setText(editable);
+    }
+
+    @Override // org.telegram.ui.ar0
+    public final /* synthetic */ boolean e() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.ar0
+    public final void h(int i10, boolean z10, boolean z11) {
+        kq0 kq0Var = this.c;
+        kq0Var.removeSelfFromStack();
+        if (z10) {
+            return;
         }
-        int i11 = mq0Var.O;
-        int i12 = mq0Var.d0;
-        return i11 + (i10 % i12 != i12 - 1 ? AndroidUtilities.dp(2.0f) : 0);
+        kq0Var.V(this.a, this.b, z11, i10);
+    }
+
+    @Override // org.telegram.ui.ar0
+    public final void a() {
+    }
+
+    @Override // org.telegram.ui.ar0
+    public final /* synthetic */ void g() {
     }
 }

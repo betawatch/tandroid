@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import android.support.v4.media.a;
+import a4.a;
 import java.util.AbstractList;
 import java.util.Arrays;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 final class zzud extends zzpz implements RandomAccess {
     private static final Object[] zza;
@@ -32,7 +32,7 @@ final class zzud extends zzpz implements RandomAccess {
     }
 
     private final String zzh(int i10) {
-        return a.k(i10, this.zzd, "Index:", ", Size:");
+        return a.l(i10, this.zzd, "Index:", ", Size:");
     }
 
     private final void zzi(int i10) {
@@ -123,8 +123,8 @@ final class zzud extends zzpz implements RandomAccess {
         this.zzc = Arrays.copyOf(this.zzc, length);
     }
 
-    private zzud(Object[] objArr, int i10, boolean z4) {
-        super(z4);
+    private zzud(Object[] objArr, int i10, boolean z10) {
+        super(z10);
         this.zzc = objArr;
         this.zzd = i10;
     }

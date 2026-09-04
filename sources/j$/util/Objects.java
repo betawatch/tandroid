@@ -30,14 +30,14 @@ public final class Objects {
         return String.valueOf(obj);
     }
 
-    public static <T> T requireNonNull(T t6) {
-        t6.getClass();
-        return t6;
+    public static <T> T requireNonNull(T t10) {
+        t10.getClass();
+        return t10;
     }
 
-    public static <T> T requireNonNull(T t6, String str) {
-        if (t6 != null) {
-            return t6;
+    public static <T> T requireNonNull(T t10, String str) {
+        if (t10 != null) {
+            return t10;
         }
         throw new NullPointerException(str);
     }

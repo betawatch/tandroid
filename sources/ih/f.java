@@ -1,46 +1,34 @@
 package ih;
 
+import android.content.Context;
 import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import w7.x5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j b;
+public final class f extends FrameLayout {
+    public final kh.f a;
 
-    public /* synthetic */ f(j jVar, int i10) {
-        this.a = i10;
-        this.b = jVar;
+    public f(Context context) {
+        super(context);
+        kh.f fVar = new kh.f(context);
+        this.a = fVar;
+        addView(fVar, x5.g());
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                j jVar = this.b;
-                if (jVar.j.isEmpty()) {
-                    jVar.i = true;
-                    j.n = null;
-                    i iVar = jVar.f;
-                    if (iVar != null) {
-                        iVar.a = false;
-                        jVar.f = null;
-                    }
-                    jVar.d.removeView(jVar.e);
-                    if (jVar.d.getParent() instanceof ViewGroup) {
-                        ((ViewGroup) jVar.d.getParent()).removeView(jVar.d);
-                        break;
-                    }
-                }
-                break;
-            default:
-                ArrayList arrayList = this.b.j;
-                for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                    ((View) arrayList.get(i10)).invalidate();
-                }
-                break;
-        }
+    public final void a(bh.b bVar, eh.e eVar) {
+        kh.f fVar = this.a;
+        fVar.b(bVar, eVar);
+        fVar.setIgnoreFastWay(true);
+        fVar.setFadeHeightTop(AndroidUtilities.dp(48.0f));
+        fVar.setFadeHeightBottom(AndroidUtilities.dp(48.0f));
+    }
+
+    @Override // android.view.ViewGroup
+    public final void onViewAdded(View view) {
+        super.onViewAdded(view);
+        bringChildToFront(this.a);
     }
 }

@@ -8,11 +8,11 @@ import android.text.style.URLSpan;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.g90;
-import org.telegram.ui.Components.m51;
-import org.telegram.ui.Components.qc;
+import org.telegram.ui.Components.e90;
+import org.telegram.ui.Components.l51;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class f implements Runnable {
     public final /* synthetic */ j a;
@@ -24,30 +24,30 @@ public final class f implements Runnable {
     @Override // java.lang.Runnable
     public final void run() {
         j jVar = this.a;
-        g90 g90Var = jVar.w;
-        if (g90Var != null) {
-            CharacterStyle characterStyle = g90Var.i;
-            final String url = characterStyle instanceof m51 ? ((m51) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
+        e90 e90Var = jVar.w;
+        if (e90Var != null) {
+            CharacterStyle characterStyle = e90Var.i;
+            final String url = characterStyle instanceof l51 ? ((l51) characterStyle).getURL() : characterStyle instanceof URLSpan ? ((URLSpan) characterStyle).getURL() : characterStyle.toString();
             try {
                 jVar.performHapticFeedback(0, 2);
             } catch (Exception unused) {
             }
             final StaticLayout staticLayout = jVar.y;
-            final float f10 = jVar.x;
+            final float f7 = jVar.x;
             if (jVar.getContext() != null) {
                 final ClickableSpan clickableSpan = (ClickableSpan) jVar.w.i;
-                org.telegram.ui.ActionBar.g3 g3Var = new org.telegram.ui.ActionBar.g3(jVar.getContext(), null, false, false);
-                g3Var.fixNavigationBar();
-                g3Var.title = url;
-                g3Var.bigTitle = false;
+                org.telegram.ui.ActionBar.f3 f3Var = new org.telegram.ui.ActionBar.f3(1, jVar.getContext(), (org.telegram.ui.ActionBar.f6) null, false);
+                f3Var.fixNavigationBar();
+                f3Var.title = url;
+                f3Var.bigTitle = false;
                 CharSequence[] charSequenceArr = {LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)};
                 DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Cells.d
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i10) {
                         j jVar2 = f.this.a;
-                        org.telegram.ui.ActionBar.p2 p2Var = jVar2.E;
+                        org.telegram.ui.ActionBar.n2 n2Var = jVar2.H;
                         if (i10 == 0) {
-                            jVar2.d(clickableSpan, staticLayout, f10);
+                            jVar2.d(clickableSpan, staticLayout, f7);
                             return;
                         }
                         if (i10 == 1) {
@@ -55,25 +55,25 @@ public final class f implements Runnable {
                             AndroidUtilities.addToClipboard(str);
                             if (AndroidUtilities.shouldShowClipboardToast()) {
                                 if (str.startsWith("@")) {
-                                    kf.k0.v(R.string.UsernameCopied, qc.a0(p2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.w1.o(R.string.UsernameCopied, yc.a0(n2Var), R.raw.copy, 36);
                                 } else if (str.startsWith("#") || str.startsWith("$")) {
-                                    kf.k0.v(R.string.HashtagCopied, qc.a0(p2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.w1.o(R.string.HashtagCopied, yc.a0(n2Var), R.raw.copy, 36);
                                 } else {
-                                    kf.k0.v(R.string.LinkCopied, qc.a0(p2Var), R.raw.copy, 36);
+                                    org.telegram.messenger.w1.o(R.string.LinkCopied, yc.a0(n2Var), R.raw.copy, 36);
                                 }
                             }
                         }
                     }
                 };
-                g3Var.items = charSequenceArr;
-                g3Var.onClickListener = onClickListener;
-                g3Var.setOnHideListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Cells.e
+                f3Var.items = charSequenceArr;
+                f3Var.onClickListener = onClickListener;
+                f3Var.setOnHideListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.Cells.e
                     @Override // android.content.DialogInterface.OnDismissListener
                     public final void onDismiss(DialogInterface dialogInterface) {
                         f.this.a.e();
                     }
                 });
-                g3Var.show();
+                f3Var.show();
             }
             jVar.w = null;
         }

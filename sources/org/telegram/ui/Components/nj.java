@@ -1,34 +1,27 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class nj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pj b;
+public final class nj extends s4.d0 {
+    public final /* synthetic */ ig.e0 r;
 
-    public /* synthetic */ nj(pj pjVar, int i10) {
-        this.a = i10;
-        this.b = pjVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public nj(ig.e0 e0Var, Context context) {
+        super(context);
+        this.r = e0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                pj pjVar = this.b;
-                if (pjVar.f != null) {
-                    pjVar.v = org.telegram.messenger.y3.j(new StringBuilder("+"), pjVar.f.phone, se.b.c());
-                    pjVar.s = pjVar.f;
-                    AndroidUtilities.runOnUIThread(new nj(pjVar, 1));
-                    break;
-                }
-                break;
-            default:
-                pj pjVar2 = this.b;
-                pjVar2.c.l(pjVar2.v, false);
-                break;
-        }
+    @Override // s4.d0
+    public final int k(int i10, View view) {
+        return org.telegram.messenger.w1.z(8.0f, ((yj) this.r.V).s.getPaddingTop() - AndroidUtilities.statusBarHeight, super.k(i10, view));
+    }
+
+    @Override // s4.d0
+    public final int m(int i10) {
+        return super.m(i10) * 2;
     }
 }

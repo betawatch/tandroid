@@ -1,24 +1,57 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.content.Context;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class db extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ ub o;
+public final class db extends org.telegram.ui.Components.ro {
+    public final /* synthetic */ int s;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 v;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public db(ub ubVar, cb cbVar) {
-        super(cbVar, -2, -2);
-        this.o = ubVar;
+    public db(int i10, Context context, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(context);
+        this.s = i10;
+        this.v = n2Var;
+        setOrientation(1);
     }
 
-    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
-    public final void dismiss() {
-        d(true);
-        ub ubVar = this.o;
-        if (ubVar.G0 != this) {
-            return;
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchKeyEvent(KeyEvent keyEvent) {
+        eb ebVar;
+        switch (this.s) {
+            case 0:
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (ebVar = ((ub) this.v).J0) != null) {
+                    ebVar.dismiss();
+                }
+                break;
+            default:
+                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0) {
+                    ((co) this.v).A7(true);
+                }
+                break;
         }
-        org.telegram.ui.Components.ic.e();
-        ubVar.G0 = null;
+        return super.dispatchKeyEvent(keyEvent);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        eb ebVar;
+        switch (this.s) {
+            case 0:
+                boolean dispatchTouchEvent = super.dispatchTouchEvent(motionEvent);
+                if (motionEvent.getAction() == 0 && !dispatchTouchEvent && (ebVar = ((ub) this.v).J0) != null) {
+                    ebVar.dismiss();
+                }
+                return dispatchTouchEvent;
+            default:
+                boolean dispatchTouchEvent2 = super.dispatchTouchEvent(motionEvent);
+                if (motionEvent.getAction() == 0 && !dispatchTouchEvent2) {
+                    ((co) this.v).A7(true);
+                }
+                return dispatchTouchEvent2;
+        }
     }
 }

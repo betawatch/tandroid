@@ -1,92 +1,86 @@
 package p9;
 
-import android.text.TextUtils;
-import android.util.Log;
-import com.google.android.gms.internal.clearcut.z0;
-import java.util.HashMap;
-import l7.w0;
-import org.json.JSONObject;
-import pa.j;
-import ra.m;
+import android.os.Parcel;
+import android.os.Parcelable;
+import p7.j;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a implements m {
-    public final String a;
+public final class a extends o6.a {
+    public static final Parcelable.Creator<a> CREATOR = new j(5);
+    public int a;
+    public final boolean b;
+    public final String c;
+    public final String d;
+    public final byte[] e;
+    public final boolean f;
 
-    public a(String str, cb.b bVar) {
-        if (str == null) {
-            throw new IllegalArgumentException("url must not be null.");
-        }
-        this.a = str;
+    public a() {
+        this.a = 0;
+        this.b = true;
+        this.c = null;
+        this.d = null;
+        this.e = null;
+        this.f = false;
     }
 
-    public static void a(w0 w0Var, d dVar) {
-        String str = dVar.a;
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("MetadataImpl { { eventStatus: '");
+        sb2.append(this.a);
+        sb2.append("' } { uploadable: '");
+        sb2.append(this.b);
+        sb2.append("' } ");
+        String str = this.c;
         if (str != null) {
-            w0Var.w("X-CRASHLYTICS-GOOGLE-APP-ID", str);
+            sb2.append("{ completionToken: '");
+            sb2.append(str);
+            sb2.append("' } ");
         }
-        w0Var.w("X-CRASHLYTICS-API-CLIENT-TYPE", "android");
-        w0Var.w("X-CRASHLYTICS-API-CLIENT-VERSION", "18.6.0");
-        w0Var.w("Accept", "application/json");
-        String str2 = dVar.b;
+        String str2 = this.d;
         if (str2 != null) {
-            w0Var.w("X-CRASHLYTICS-DEVICE-MODEL", str2);
+            sb2.append("{ accountName: '");
+            sb2.append(str2);
+            sb2.append("' } ");
         }
-        String str3 = dVar.c;
-        if (str3 != null) {
-            w0Var.w("X-CRASHLYTICS-OS-BUILD-VERSION", str3);
-        }
-        String str4 = dVar.d;
-        if (str4 != null) {
-            w0Var.w("X-CRASHLYTICS-OS-DISPLAY-VERSION", str4);
-        }
-        String str5 = dVar.e.b().a;
-        if (str5 != null) {
-            w0Var.w("X-CRASHLYTICS-INSTALLATION-ID", str5);
-        }
-    }
-
-    public static HashMap b(d dVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put("build_version", dVar.h);
-        hashMap.put("display_version", dVar.g);
-        hashMap.put("source", Integer.toString(dVar.i));
-        String str = dVar.f;
-        if (!TextUtils.isEmpty(str)) {
-            hashMap.put("instance", str);
-        }
-        return hashMap;
-    }
-
-    public JSONObject c(z0 z0Var) {
-        int i10 = z0Var.b;
-        f9.b bVar = f9.b.a;
-        bVar.c("Settings response code was: " + i10);
-        String str = this.a;
-        if (i10 != 200 && i10 != 201 && i10 != 202 && i10 != 203) {
-            String str2 = "Settings request failed; (status: " + i10 + ") from " + str;
-            if (bVar.a(6)) {
-                Log.e("FirebaseCrashlytics", str2, null);
+        byte[] bArr = this.e;
+        if (bArr != null) {
+            sb2.append("{ ssbContext: [ ");
+            for (byte b10 : bArr) {
+                sb2.append("0x");
+                sb2.append(Integer.toHexString(b10));
+                sb2.append(" ");
             }
-            return null;
+            sb2.append("] } ");
         }
-        String str3 = z0Var.c;
-        try {
-            return new JSONObject(str3);
-        } catch (Exception e) {
-            bVar.d("Failed to parse settings JSON from " + str, e);
-            bVar.d("Settings response " + str3, null);
-            return null;
-        }
+        sb2.append("{ contextOnly: '");
+        sb2.append(this.f);
+        sb2.append("' } }");
+        return sb2.toString();
     }
 
-    @Override // ra.m
-    public Object u2() {
-        throw new j(this.a);
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = e0.q(parcel, 20293);
+        int i11 = this.a;
+        e0.s(parcel, 1, 4);
+        parcel.writeInt(i11);
+        e0.s(parcel, 2, 4);
+        parcel.writeInt(this.b ? 1 : 0);
+        e0.l(parcel, 3, this.c);
+        e0.l(parcel, 4, this.d);
+        e0.c(parcel, 5, this.e);
+        e0.s(parcel, 6, 4);
+        parcel.writeInt(this.f ? 1 : 0);
+        e0.r(parcel, q6);
     }
 
-    public a(String str) {
-        this.a = str;
+    public a(int i10, boolean z10, String str, String str2, byte[] bArr, boolean z11) {
+        this.a = i10;
+        this.b = z10;
+        this.c = str;
+        this.d = str2;
+        this.e = bArr;
+        this.f = z11;
     }
 }

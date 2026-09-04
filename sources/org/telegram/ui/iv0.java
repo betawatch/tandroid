@@ -1,39 +1,66 @@
 package org.telegram.ui;
 
-import android.R;
 import android.content.Context;
-import android.view.ActionMode;
-import android.view.Menu;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class iv0 extends org.telegram.ui.Cells.b6 {
-    public final /* synthetic */ kv0 C;
+public final class iv0 extends org.telegram.ui.Components.ll0 {
+    public final Drawable X2;
+    public final Paint Y2;
+    public final RectF Z2;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iv0(kv0 kv0Var, Context context, int i10) {
-        super(context, i10, null, null);
-        this.C = kv0Var;
+    public iv0(Context context) {
+        super(context, null);
+        Paint paint = new Paint(1);
+        this.Y2 = paint;
+        this.Z2 = new RectF();
+        setWillNotDraw(false);
+        setClipToPadding(false);
+        setTranslationY(-AndroidUtilities.dp(10.0f));
+        hv0 hv0Var = new hv0(this);
+        setItemAnimator(hv0Var);
+        hv0Var.C = false;
+        hv0Var.m = false;
+        setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(6.0f));
+        paint.setColor(2130706432);
+        this.X2 = context.getResources().getDrawable(R.drawable.photo_tooltip2).mutate();
     }
 
-    @Override // org.telegram.ui.Cells.b6
-    public final void g(dh.b bVar, ActionMode actionMode) {
-        if (bVar.isFocused() && bVar.hasSelection()) {
-            Menu menu = actionMode.getMenu();
-            if (menu.findItem(R.id.copy) == null) {
+    @Override // androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        int childCount = getChildCount();
+        if (childCount > 0) {
+            int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(87.0f);
+            Drawable drawable = this.X2;
+            drawable.setBounds(measuredWidth, 0, drawable.getIntrinsicWidth() + measuredWidth, AndroidUtilities.dp(6.0f));
+            drawable.draw(canvas);
+            int i10 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+            int i11 = TLObject.FLAG_31;
+            for (int i12 = 0; i12 < childCount; i12++) {
+                View childAt = getChildAt(i12);
+                i10 = (int) Math.min(i10, Math.floor(childAt.getX()));
+                i11 = (int) Math.max(i11, Math.ceil(childAt.getX() + childAt.getMeasuredWidth()));
+            }
+            if (i10 == Integer.MAX_VALUE || i11 == Integer.MIN_VALUE) {
                 return;
             }
-            zn.k8(menu, this.C.d.f.h, false, true, true, true);
+            float dp = i10 - AndroidUtilities.dp(6.0f);
+            float dp2 = AndroidUtilities.dp(6.0f);
+            float dp3 = AndroidUtilities.dp(6.0f) + i11;
+            float dp4 = AndroidUtilities.dp(103.0f);
+            RectF rectF = this.Z2;
+            rectF.set(dp, dp2, dp3, dp4);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(8.0f), this.Y2);
         }
-    }
-
-    @Override // org.telegram.ui.Cells.b6
-    public final void i(boolean z4) {
-        mv0.d0(this.C.d, this, z4);
-    }
-
-    @Override // org.telegram.ui.Cells.b6
-    public final void j(org.telegram.ui.Cells.b6 b6Var) {
-        mv0.e0(this.C.d, b6Var);
     }
 }

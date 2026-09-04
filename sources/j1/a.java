@@ -5,30 +5,30 @@ import android.view.View;
 import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.WeakHashMap;
+import ji.u4;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.zz;
-import r0.j0;
-import s0.d;
+import r0.i0;
+import s0.c;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a extends zz {
+public final class a extends u4 {
     public final /* synthetic */ b c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public a(b bVar) {
-        super(13);
+        super(22);
         this.c = bVar;
     }
 
-    @Override // org.telegram.ui.Components.zz
-    public final boolean G(int i10, int i11, Bundle bundle) {
+    @Override // ji.u4
+    public final boolean N(int i10, int i11, Bundle bundle) {
         int i12;
         int i13;
         b bVar = this.c;
         View view = bVar.i;
         if (i10 == -1) {
-            WeakHashMap weakHashMap = j0.a;
+            WeakHashMap weakHashMap = i0.a;
             return view.performAccessibilityAction(i11, bundle);
         }
         if (i11 != 1) {
@@ -76,18 +76,18 @@ public final class a extends zz {
         return false;
     }
 
-    @Override // org.telegram.ui.Components.zz
-    public final d g(int i10) {
-        return new d(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
+    @Override // ji.u4
+    public final c o(int i10) {
+        return new c(AccessibilityNodeInfo.obtain(this.c.j(i10).a));
     }
 
-    @Override // org.telegram.ui.Components.zz
-    public final d i(int i10) {
+    @Override // ji.u4
+    public final c z(int i10) {
         b bVar = this.c;
         int i11 = i10 == 2 ? bVar.k : bVar.l;
         if (i11 == Integer.MIN_VALUE) {
             return null;
         }
-        return g(i11);
+        return o(i11);
     }
 }

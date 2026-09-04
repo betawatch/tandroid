@@ -1,109 +1,52 @@
 package org.telegram.ui;
 
+import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.ImageLoader;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.camera.CameraController;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class l5 extends androidx.fragment.app.v {
-    public int L = -1;
+public final /* synthetic */ class l5 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ v5 b;
 
-    public final boolean u(int i10, String[] strArr, int[] iArr) {
-        if (iArr == null) {
-            iArr = new int[0];
-        }
-        if (strArr == null) {
-            strArr = new String[0];
-        }
-        boolean z4 = iArr.length > 0 && iArr[0] == 0;
-        if (i10 == 104) {
-            if (!z4) {
-                x(R.raw.permission_request_camera, LocaleController.getString(R.string.VoipNeedCameraPermission));
-                return true;
-            }
-            e60 e60Var = e60.A3;
-            if (e60Var != null) {
-                e60Var.n.callOnClick();
-                return true;
-            }
-        } else {
-            if (i10 == 4 || i10 == 151) {
-                if (z4) {
-                    ImageLoader.getInstance().checkMediaPaths();
-                    return true;
-                }
-                x(R.raw.permission_request_folder, i10 == 151 ? LocaleController.getString(R.string.PermissionNoStorageAvatar) : LocaleController.getString(R.string.PermissionStorageWithHint));
-                return true;
-            }
-            if (i10 == 5) {
-                if (z4) {
-                    ContactsController.getInstance(this.L).forceImportContacts();
-                    return true;
-                }
-                x(R.raw.permission_request_contacts, LocaleController.getString(R.string.PermissionNoContactsSharing));
-                return false;
-            }
-            if (i10 == 3 || i10 == 150) {
-                int min = Math.min(strArr.length, iArr.length);
-                boolean z10 = true;
-                boolean z11 = true;
-                for (int i11 = 0; i11 < min; i11++) {
-                    if ("android.permission.RECORD_AUDIO".equals(strArr[i11])) {
-                        z10 = iArr[i11] == 0;
-                    } else if ("android.permission.CAMERA".equals(strArr[i11])) {
-                        z11 = iArr[i11] == 0;
-                    }
-                }
-                if (i10 == 150 && (!z10 || !z11)) {
-                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraMicVideo));
-                    return true;
-                }
-                if (!z10) {
-                    x(R.raw.permission_request_microphone, LocaleController.getString(R.string.PermissionNoAudioWithHint));
-                    return true;
-                }
-                if (!z11) {
-                    x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
-                    return true;
-                }
-                if (SharedConfig.inappCamera) {
-                    CameraController.getInstance().initCamera(null);
-                }
-                return false;
-            }
-            if (i10 != 18 && i10 != 19 && i10 != 20 && i10 != 22) {
-                if (i10 == 2) {
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z4 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, new Object[0]);
-                    return true;
-                }
-                if (i10 == 211) {
-                    NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(z4 ? NotificationCenter.locationPermissionGranted : NotificationCenter.locationPermissionDenied, 1);
-                    return true;
-                }
-            } else if (!z4) {
-                x(R.raw.permission_request_camera, LocaleController.getString(R.string.PermissionNoCameraWithHint));
-            }
-        }
-        return true;
+    public /* synthetic */ l5(v5 v5Var, int i10) {
+        this.a = i10;
+        this.b = v5Var;
     }
 
-    public final org.telegram.ui.ActionBar.d2 v(int i10, String str) {
-        AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(this);
-        alertDialog$Builder.m(i10, 72, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.L5, false), null);
-        alertDialog$Builder.a.Q = AndroidUtilities.replaceTags(str);
-        alertDialog$Builder.k(LocaleController.getString(R.string.PermissionOpenSettings), new c1(this, 4));
-        alertDialog$Builder.h(LocaleController.getString(R.string.ContactsPermissionAlertNotNow), null);
-        return alertDialog$Builder.a;
-    }
-
-    public final void x(int i10, String str) {
-        v(i10, str).show();
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                v5 v5Var = this.b;
+                v5Var.e0 = false;
+                v5Var.G0(true);
+                break;
+            case 1:
+                CountDownLatch countDownLatch = new CountDownLatch(2);
+                v5 v5Var2 = this.b;
+                v5Var2.C0(countDownLatch, null);
+                v5Var2.D0(countDownLatch, null);
+                try {
+                    countDownLatch.await();
+                } catch (InterruptedException unused) {
+                }
+                NotificationCenter.getInstance(v5Var2.Q).doOnIdle(new l5(v5Var2, 4));
+                break;
+            case 2:
+                v5 v5Var3 = this.b;
+                v5Var3.e0 = false;
+                v5Var3.G0(true);
+                break;
+            case 3:
+                v5 v5Var4 = this.b;
+                v5Var4.e0 = false;
+                v5Var4.G0(true);
+                break;
+            default:
+                AndroidUtilities.runOnUIThread(new l5(this.b, 0));
+                break;
+        }
     }
 }

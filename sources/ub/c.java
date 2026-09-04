@@ -1,16 +1,16 @@
 package ub;
 
-import ob.j;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c extends j {
-    public final float c;
-    public final int d;
+public final /* synthetic */ class c implements Comparator {
+    public static final /* synthetic */ c a = new c();
 
-    public c(float f10, float f11, float f12, int i10) {
-        super(f10, f11);
-        this.c = f12;
-        this.d = i10;
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        ((tb.a) obj2).getClass();
+        ((tb.a) obj).getClass();
+        return 0;
     }
 }

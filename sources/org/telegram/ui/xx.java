@@ -1,30 +1,78 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesStorage;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class xx implements org.telegram.ui.Components.y4 {
-    public final /* synthetic */ qy a;
+public final class xx extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ uy c;
 
-    public xx(qy qyVar) {
-        this.a = qyVar;
+    public /* synthetic */ xx(uy uyVar, float f7, int i10) {
+        this.a = i10;
+        this.c = uyVar;
+        this.b = f7;
     }
 
-    @Override // org.telegram.ui.Components.y4
-    public final void J(int i10, int i11, boolean z4) {
-        qy qyVar = this.a;
-        ArrayList arrayList = qyVar.F2;
-        qyVar.H2 = i10;
-        qyVar.I2 = i11;
-        if (qyVar.z2 == null || arrayList.isEmpty()) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                uy uyVar = this.c;
+                uyVar.u3 = null;
+                int i10 = 0;
+                uyVar.O = false;
+                uyVar.Q = true;
+                uyVar.R = true;
+                uyVar.fragmentView.invalidate();
+                uyVar.x3 = -(AndroidUtilities.dp((uyVar.K ? 81 : 0) + 48) - this.b);
+                uyVar.e0[0].setTranslationY(0.0f);
+                while (true) {
+                    ty[] tyVarArr = uyVar.e0;
+                    if (i10 >= tyVarArr.length) {
+                        uyVar.fragmentView.requestLayout();
+                        ky kyVar = uyVar.X;
+                        if (kyVar != null && uyVar.b.f) {
+                            kyVar.r.requestFocus();
+                            AndroidUtilities.showKeyboard(uyVar.X.r);
+                            break;
+                        }
+                    } else {
+                        ty tyVar = tyVarArr[i10];
+                        if (tyVar != null) {
+                            tyVar.a.requestLayout();
+                        }
+                        i10++;
+                    }
+                }
+                break;
+            default:
+                super.onAnimationEnd(animator);
+                uy uyVar2 = this.c;
+                uyVar2.u3 = null;
+                uyVar2.P = 0;
+                uyVar2.O = true;
+                uyVar2.x3 = AndroidUtilities.dp((uyVar2.K ? 81 : 0) + 48) - this.b;
+                uyVar2.e0[0].setTranslationY(0.0f);
+                int i11 = 0;
+                while (true) {
+                    ty[] tyVarArr2 = uyVar2.e0;
+                    if (i11 >= tyVarArr2.length) {
+                        uyVar2.E0.l(1.0f, false);
+                        uyVar2.fragmentView.requestLayout();
+                        break;
+                    } else {
+                        ty tyVar2 = tyVarArr2[i11];
+                        if (tyVar2 != null) {
+                            tyVar2.a.requestLayout();
+                        }
+                        i11++;
+                    }
+                }
         }
-        ArrayList arrayList2 = new ArrayList();
-        for (int i12 = 0; i12 < arrayList.size(); i12++) {
-            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i12)).longValue(), 0L));
-        }
-        qyVar.z2.w(qyVar, arrayList2, qyVar.y1.getFieldText(), false, z4, i10, i11, null);
     }
 }

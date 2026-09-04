@@ -1,45 +1,121 @@
 package u6;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.os.ResultReceiver;
-import j7.f5;
-import r5.c0;
+import android.content.Context;
+import android.os.Build;
+import android.os.Process;
+import android.os.WorkSource;
+import android.util.Log;
+import java.lang.reflect.Method;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f extends c6.a {
-    public static final Parcelable.Creator<f> CREATOR = new c0(20);
-    public final String a;
-    public final Bundle b;
-    public final Bundle c;
-    public final String d;
-    public final String e;
-    public final ResultReceiver f;
+public abstract class f {
+    public static final Method a;
+    public static final Method b;
+    public static final Method c;
+    public static final Method d;
+    public static Boolean e;
 
-    public f(String type, Bundle credentialData, Bundle candidateQueryData, String str, String str2, ResultReceiver resultReceiver) {
-        kotlin.jvm.internal.j.e(type, "type");
-        kotlin.jvm.internal.j.e(credentialData, "credentialData");
-        kotlin.jvm.internal.j.e(candidateQueryData, "candidateQueryData");
-        this.a = type;
-        this.b = credentialData;
-        this.c = candidateQueryData;
-        this.d = str;
-        this.e = str2;
-        this.f = resultReceiver;
+    static {
+        Method method;
+        Method method2;
+        Method method3;
+        Method method4;
+        Class<?> cls = Integer.TYPE;
+        Process.myUid();
+        try {
+            method = WorkSource.class.getMethod("add", cls);
+        } catch (Exception unused) {
+            method = null;
+        }
+        a = method;
+        try {
+            method2 = WorkSource.class.getMethod("add", cls, String.class);
+        } catch (Exception unused2) {
+            method2 = null;
+        }
+        b = method2;
+        try {
+            method3 = WorkSource.class.getMethod("size", null);
+        } catch (Exception unused3) {
+            method3 = null;
+        }
+        c = method3;
+        try {
+            WorkSource.class.getMethod("get", cls);
+        } catch (Exception unused4) {
+        }
+        try {
+            WorkSource.class.getMethod("getName", cls);
+        } catch (Exception unused5) {
+        }
+        if (Build.VERSION.SDK_INT >= 28) {
+            try {
+                WorkSource.class.getMethod("createWorkChain", null);
+            } catch (Exception e7) {
+                Log.w("WorkSourceUtil", "Missing WorkChain API createWorkChain", e7);
+            }
+        }
+        if (Build.VERSION.SDK_INT >= 28) {
+            try {
+                Class.forName("android.os.WorkSource$WorkChain").getMethod("addNode", cls, String.class);
+            } catch (Exception e10) {
+                Log.w("WorkSourceUtil", "Missing WorkChain class", e10);
+            }
+        }
+        if (Build.VERSION.SDK_INT >= 28) {
+            try {
+                method4 = WorkSource.class.getMethod("isEmpty", null);
+                try {
+                    method4.setAccessible(true);
+                } catch (Exception unused6) {
+                }
+            } catch (Exception unused7) {
+            }
+            d = method4;
+            e = null;
+        }
+        method4 = null;
+        d = method4;
+        e = null;
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel dest, int i10) {
-        kotlin.jvm.internal.j.e(dest, "dest");
-        int q10 = f5.q(dest, 20293);
-        f5.l(dest, 1, this.a);
-        f5.b(dest, 2, this.b);
-        f5.b(dest, 3, this.c);
-        f5.l(dest, 4, this.d);
-        f5.l(dest, 5, this.e);
-        f5.k(dest, 6, this.f, i10);
-        f5.r(dest, q10);
+    public static void a(WorkSource workSource, int i10, String str) {
+        Method method = b;
+        if (method != null) {
+            if (str == null) {
+                str = "";
+            }
+            try {
+                method.invoke(workSource, Integer.valueOf(i10), str);
+                return;
+            } catch (Exception e7) {
+                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e7);
+                return;
+            }
+        }
+        Method method2 = a;
+        if (method2 != null) {
+            try {
+                method2.invoke(workSource, Integer.valueOf(i10));
+            } catch (Exception e10) {
+                Log.wtf("WorkSourceUtil", "Unable to assign blame through WorkSource", e10);
+            }
+        }
+    }
+
+    public static synchronized boolean b(Context context) {
+        synchronized (f.class) {
+            Boolean bool = e;
+            if (bool != null) {
+                return bool.booleanValue();
+            }
+            if (context == null) {
+                return false;
+            }
+            boolean z10 = f0.e.b(context, "android.permission.UPDATE_DEVICE_STATS") == 0;
+            e = Boolean.valueOf(z10);
+            return z10;
+        }
     }
 }

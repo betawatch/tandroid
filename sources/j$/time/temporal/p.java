@@ -24,15 +24,15 @@ public abstract class p {
     }
 
     public static int a(l lVar, o oVar) {
-        s l10 = lVar.l(oVar);
-        if (l10.a < -2147483648L || l10.d > 2147483647L) {
+        s l4 = lVar.l(oVar);
+        if (l4.a < -2147483648L || l4.d > 2147483647L) {
             throw new r("Invalid field " + oVar + " for get() method, use getLong() instead");
         }
-        long y10 = lVar.y(oVar);
-        if (l10.d(y10)) {
-            return (int) y10;
+        long y3 = lVar.y(oVar);
+        if (l4.d(y3)) {
+            return (int) y3;
         }
-        throw new j$.time.b("Invalid value for " + oVar + " (valid values " + l10 + "): " + y10);
+        throw new j$.time.b("Invalid value for " + oVar + " (valid values " + l4 + "): " + y3);
     }
 
     public static Object c(l lVar, j$.time.format.a aVar) {
@@ -42,14 +42,14 @@ public abstract class p {
         return aVar.a(lVar);
     }
 
-    public static Temporal b(Temporal temporal, long j10, q qVar) {
-        long j11;
-        if (j10 == Long.MIN_VALUE) {
+    public static Temporal b(Temporal temporal, long j3, q qVar) {
+        long j10;
+        if (j3 == Long.MIN_VALUE) {
             temporal = temporal.d(Long.MAX_VALUE, qVar);
-            j11 = 1;
+            j10 = 1;
         } else {
-            j11 = -j10;
+            j10 = -j3;
         }
-        return temporal.d(j11, qVar);
+        return temporal.d(j10, qVar);
     }
 }

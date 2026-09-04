@@ -1,121 +1,129 @@
 package androidx.mediarouter.app;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.util.Log;
-import android.view.LayoutInflater;
+import android.os.Bundle;
+import android.os.SystemClock;
+import android.view.ContextThemeWrapper;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
-import f2.l1;
-import java.io.IOException;
+import android.widget.ImageButton;
+import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
+import java.util.Collections;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class d0 extends f2.o0 {
-    public final ArrayList c = new ArrayList();
-    public final LayoutInflater d;
-    public final Drawable e;
-    public final Drawable f;
-    public final Drawable h;
-    public final Drawable n;
-    public final /* synthetic */ e0 r;
+public final class d0 extends g.u {
+    public final long E;
+    public long F;
+    public final c G;
+    public final p4.x f;
+    public final d h;
+    public final Context n;
+    public p4.r r;
+    public ArrayList s;
+    public c0 v;
+    public RecyclerView w;
+    public boolean x;
+    public p4.v y;
 
-    public d0(e0 e0Var) {
-        this.r = e0Var;
-        Context context = e0Var.n;
-        this.d = LayoutInflater.from(context);
-        this.e = j7.z.d(context, R.attr.mediaRouteDefaultIconDrawable);
-        this.f = j7.z.d(context, R.attr.mediaRouteTvIconDrawable);
-        this.h = j7.z.d(context, R.attr.mediaRouteSpeakerIconDrawable);
-        this.n = j7.z.d(context, R.attr.mediaRouteSpeakerGroupIconDrawable);
-        D();
-    }
-
-    public final void D() {
-        ArrayList arrayList = this.c;
-        arrayList.clear();
-        e0 e0Var = this.r;
-        arrayList.add(new a0(e0Var.n.getString(R.string.mr_chooser_title)));
-        ArrayList arrayList2 = e0Var.s;
-        int size = arrayList2.size();
-        int i10 = 0;
-        while (i10 < size) {
-            Object obj = arrayList2.get(i10);
-            i10++;
-            arrayList.add(new a0((c2.b0) obj));
-        }
-        l();
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        return this.c.size();
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        return ((a0) this.c.get(i10)).b;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:24:0x0054, code lost:
-    
-        if (r2 != null) goto L25;
-     */
-    @Override // f2.o0
+    /* JADX WARN: Illegal instructions before constructor call */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void v(l1 l1Var, int i10) {
-        Drawable createFromStream;
-        int j10 = j(i10);
-        a0 a0Var = (a0) this.c.get(i10);
-        if (j10 == 1) {
-            ((z) l1Var).v.setText(a0Var.a.toString());
-            return;
-        }
-        if (j10 != 2) {
-            Log.w("RecyclerAdapter", "Cannot bind item to ViewHolder because of wrong view type");
-            return;
-        }
-        c0 c0Var = (c0) l1Var;
-        c2.b0 b0Var = (c2.b0) a0Var.a;
-        View view = c0Var.v;
-        view.setVisibility(0);
-        c0Var.x.setVisibility(4);
-        view.setOnClickListener(new b0(c0Var, b0Var));
-        c0Var.y.setText(b0Var.d);
-        ImageView imageView = c0Var.w;
-        d0 d0Var = c0Var.z;
-        Uri uri = b0Var.f;
-        if (uri != null) {
-            try {
-                createFromStream = Drawable.createFromStream(d0Var.r.n.getContentResolver().openInputStream(uri), null);
-            } catch (IOException e) {
-                Log.w("RecyclerAdapter", "Failed to load " + uri, e);
-            }
-        }
-        int i11 = b0Var.n;
-        createFromStream = i11 != 1 ? i11 != 2 ? b0Var.e() ? d0Var.n : d0Var.e : d0Var.h : d0Var.f;
-        imageView.setImageDrawable(createFromStream);
+    public d0(Context context) {
+        super(r3, r0 == 0 ? v7.d0.e(r3) : r0);
+        ContextThemeWrapper a2 = v7.d0.a(context, false);
+        int g10 = v7.d0.g(a2, R.attr.mediaRouteTheme);
+        this.r = p4.r.c;
+        this.G = new c(this, 1);
+        Context context2 = getContext();
+        this.f = p4.x.d(context2);
+        this.h = new d(this, 2);
+        this.n = context2;
+        this.E = context2.getResources().getInteger(R.integer.mr_update_routes_delay_ms);
     }
 
-    @Override // f2.o0
-    public final l1 x(ViewGroup viewGroup, int i10) {
-        LayoutInflater layoutInflater = this.d;
-        if (i10 != 1) {
-            if (i10 == 2) {
-                return new c0(this, layoutInflater.inflate(R.layout.mr_picker_route_item, viewGroup, false));
+    public final void e() {
+        if (this.y == null && this.x) {
+            this.f.getClass();
+            p4.x.b();
+            ArrayList arrayList = new ArrayList(p4.x.c().j);
+            int size = arrayList.size();
+            while (true) {
+                int i10 = size - 1;
+                if (size <= 0) {
+                    break;
+                }
+                p4.v vVar = (p4.v) arrayList.get(i10);
+                if (vVar.d() || !vVar.g || !vVar.h(this.r)) {
+                    arrayList.remove(i10);
+                }
+                size = i10;
             }
-            throw new IllegalStateException();
+            Collections.sort(arrayList, f.c);
+            long uptimeMillis = SystemClock.uptimeMillis() - this.F;
+            long j3 = this.E;
+            if (uptimeMillis < j3) {
+                c cVar = this.G;
+                cVar.removeMessages(1);
+                cVar.sendMessageAtTime(cVar.obtainMessage(1, arrayList), this.F + j3);
+            } else {
+                this.F = SystemClock.uptimeMillis();
+                this.s.clear();
+                this.s.addAll(arrayList);
+                this.v.D();
+            }
         }
-        View inflate = layoutInflater.inflate(R.layout.mr_picker_header_item, viewGroup, false);
-        z zVar = new z(inflate);
-        zVar.v = (TextView) inflate.findViewById(R.id.mr_picker_header_name);
-        return zVar;
+    }
+
+    public final void f(p4.r rVar) {
+        if (rVar == null) {
+            throw new IllegalArgumentException("selector must not be null");
+        }
+        if (this.r.equals(rVar)) {
+            return;
+        }
+        this.r = rVar;
+        if (this.x) {
+            p4.x xVar = this.f;
+            d dVar = this.h;
+            xVar.h(dVar);
+            xVar.a(rVar, dVar, 1);
+        }
+        e();
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.x = true;
+        this.f.a(this.r, this.h, 1);
+        e();
+    }
+
+    @Override // g.u, androidx.activity.n, android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        setContentView(R.layout.mr_picker_dialog);
+        View decorView = getWindow().getDecorView();
+        Context context = this.n;
+        decorView.setBackgroundColor(f0.e.c(context, v7.d0.h(context) ? R.color.mr_dynamic_dialog_background_light : R.color.mr_dynamic_dialog_background_dark));
+        this.s = new ArrayList();
+        ((ImageButton) findViewById(R.id.mr_picker_close_button)).setOnClickListener(new x(this, 0));
+        this.v = new c0(this);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.mr_picker_list);
+        this.w = recyclerView;
+        recyclerView.setAdapter(this.v);
+        this.w.setLayoutManager(new s4.c0());
+        getWindow().setLayout(!context.getResources().getBoolean(R.bool.is_tablet) ? -1 : v7.c0.a(context), context.getResources().getBoolean(R.bool.is_tablet) ? -2 : -1);
+    }
+
+    @Override // android.app.Dialog, android.view.Window.Callback
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.x = false;
+        this.f.h(this.h);
+        this.G.removeMessages(1);
     }
 }

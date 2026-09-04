@@ -16,9 +16,9 @@ import java.util.concurrent.CountDownLatch;
 import org.telegram.tgnet.TLRPC;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
+public class FileStreamLoadOperation implements g2.h, FileLoadOperationStream {
     public static final ConcurrentHashMap<Long, FileStreamLoadOperation> allStreams = new ConcurrentHashMap<>();
     private static final ConcurrentHashMap<Long, Integer> priorityMap = new ConcurrentHashMap<>();
     private long bytesRemaining;
@@ -27,12 +27,12 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
     private int currentAccount;
     File currentFile;
     private long currentOffset;
-    private g5.p dataSpec;
+    private g2.m dataSpec;
     private TLRPC.Document document;
     private RandomAccessFile file;
     protected boolean isNetwork;
     private int listenerCount;
-    private final ArrayList<g5.v0> listeners;
+    private final ArrayList<g2.c0> listeners;
     private FileLoadOperation loadOperation;
     private boolean opened;
     private Object parentObject;
@@ -67,31 +67,31 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
             return Uri.fromFile(pathToAttach);
         }
         try {
-            StringBuilder sb = new StringBuilder("?account=");
-            sb.append(i10);
-            sb.append("&id=");
-            sb.append(document.id);
-            sb.append("&hash=");
-            sb.append(document.access_hash);
-            sb.append("&dc=");
-            sb.append(document.dc_id);
-            sb.append("&size=");
-            sb.append(document.size);
-            sb.append("&mime=");
-            sb.append(URLEncoder.encode(document.mime_type, "UTF-8"));
-            sb.append("&rid=");
-            sb.append(FileLoader.getInstance(i10).getFileReference(obj));
-            sb.append("&name=");
-            sb.append(URLEncoder.encode(FileLoader.getDocumentFileName(document), "UTF-8"));
-            sb.append("&reference=");
+            StringBuilder sb2 = new StringBuilder("?account=");
+            sb2.append(i10);
+            sb2.append("&id=");
+            sb2.append(document.id);
+            sb2.append("&hash=");
+            sb2.append(document.access_hash);
+            sb2.append("&dc=");
+            sb2.append(document.dc_id);
+            sb2.append("&size=");
+            sb2.append(document.size);
+            sb2.append("&mime=");
+            sb2.append(URLEncoder.encode(document.mime_type, "UTF-8"));
+            sb2.append("&rid=");
+            sb2.append(FileLoader.getInstance(i10).getFileReference(obj));
+            sb2.append("&name=");
+            sb2.append(URLEncoder.encode(FileLoader.getDocumentFileName(document), "UTF-8"));
+            sb2.append("&reference=");
             byte[] bArr = document.file_reference;
             if (bArr == null) {
                 bArr = new byte[0];
             }
-            sb.append(Utilities.bytesToHex(bArr));
-            return Uri.parse("tg://" + attachFileName + sb.toString());
-        } catch (UnsupportedEncodingException e) {
-            FileLog.e(e);
+            sb2.append(Utilities.bytesToHex(bArr));
+            return Uri.parse("tg://" + attachFileName + sb2.toString());
+        } catch (UnsupportedEncodingException e7) {
+            FileLog.e(e7);
             return null;
         }
     }
@@ -102,39 +102,39 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
         }
     }
 
-    @Override // g5.m
-    public final void addTransferListener(g5.v0 v0Var) {
-        v0Var.getClass();
-        if (this.listeners.contains(v0Var)) {
+    @Override // g2.h
+    public final void addTransferListener(g2.c0 c0Var) {
+        c0Var.getClass();
+        if (this.listeners.contains(c0Var)) {
             return;
         }
-        this.listeners.add(v0Var);
+        this.listeners.add(c0Var);
         this.listenerCount++;
     }
 
     public final void bytesTransferred(int i10) {
-        g5.p pVar = this.dataSpec;
-        int i11 = h5.d0.a;
-        for (int i12 = 0; i12 < this.listenerCount; i12++) {
-            g5.v0 v0Var = this.listeners.get(i12);
-            boolean z4 = this.isNetwork;
-            g5.s sVar = (g5.s) v0Var;
-            synchronized (sVar) {
-                if (z4) {
-                    if (pVar != null) {
+        g2.m mVar = this.dataSpec;
+        String str = e2.d0.a;
+        for (int i11 = 0; i11 < this.listenerCount; i11++) {
+            g2.c0 c0Var = this.listeners.get(i11);
+            boolean z10 = this.isNetwork;
+            y2.f fVar = (y2.f) c0Var;
+            synchronized (fVar) {
+                if (z10) {
+                    if (mVar != null) {
                         try {
-                            if ((pVar.h & 8) == 8) {
+                            if ((mVar.h & 8) == 8) {
                             }
                         } finally {
                         }
                     }
-                    sVar.h += i10;
+                    fVar.i += i10;
                 }
             }
         }
     }
 
-    @Override // g5.m
+    @Override // g2.h
     public void close() {
         FileLog.e("FileStreamLoadOperation " + this.document.id + " close me=" + this);
         FileLoadOperation fileLoadOperation = this.loadOperation;
@@ -145,8 +145,8 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
         if (randomAccessFile != null) {
             try {
                 randomAccessFile.close();
-            } catch (Exception e) {
-                FileLog.e(e);
+            } catch (Exception e7) {
+                FileLog.e(e7);
             }
             this.file = null;
         }
@@ -163,12 +163,12 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
         }
     }
 
-    @Override // g5.m
+    @Override // g2.h
     public Map getResponseHeaders() {
         return Collections.EMPTY_MAP;
     }
 
-    @Override // g5.m
+    @Override // g2.h
     public Uri getUri() {
         return this.uri;
     }
@@ -182,12 +182,12 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
         }
     }
 
-    @Override // g5.m
-    public long open(g5.p pVar) {
-        Uri uri = pVar.a;
-        long j10 = pVar.e;
+    @Override // g2.h
+    public long open(g2.m mVar) {
+        Uri uri = mVar.a;
+        long j3 = mVar.e;
         this.uri = uri;
-        transferInitializing(pVar);
+        transferInitializing(mVar);
         int intValue = Utilities.parseInt((CharSequence) this.uri.getQueryParameter("account")).intValue();
         this.currentAccount = intValue;
         this.parentObject = FileLoader.getInstance(intValue).getParentObject(Utilities.parseInt((CharSequence) this.uri.getQueryParameter("rid")).intValue());
@@ -208,18 +208,18 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
             this.document.attributes.add(new TLRPC.TL_documentAttributeAudio());
         }
         allStreams.put(Long.valueOf(this.document.id), this);
-        this.currentOffset = j10;
-        this.requestedLength = pVar.f;
+        this.currentOffset = j3;
+        this.requestedLength = mVar.f;
         this.loadOperation = FileLoader.getInstance(this.currentAccount).loadStreamFile(this, this.document, null, this.parentObject, this.currentOffset, false, getCurrentPriority());
         this.bytesTransferred = 0L;
-        long j11 = this.document.size - j10;
-        this.bytesRemaining = j11;
-        long j12 = this.requestedLength;
-        if (j12 != -1) {
-            this.bytesRemaining = Math.min(j11, j12);
+        long j10 = this.document.size - j3;
+        this.bytesRemaining = j10;
+        long j11 = this.requestedLength;
+        if (j11 != -1) {
+            this.bytesRemaining = Math.min(j10, j11);
         }
         this.opened = true;
-        transferStarted(pVar);
+        transferStarted(mVar);
         FileLoadOperation fileLoadOperation = this.loadOperation;
         if (fileLoadOperation != null) {
             File currentFile = fileLoadOperation.getCurrentFile();
@@ -233,9 +233,9 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
                         this.isNetwork = false;
                         long length = this.currentFile.length() - this.currentOffset;
                         this.bytesRemaining = length;
-                        long j13 = this.requestedLength;
-                        if (j13 != -1) {
-                            this.bytesRemaining = Math.min(length, j13 - this.bytesTransferred);
+                        long j12 = this.requestedLength;
+                        if (j12 != -1) {
+                            this.bytesRemaining = Math.min(length, j12 - this.bytesTransferred);
                         }
                     }
                 } catch (Throwable unused) {
@@ -251,37 +251,37 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
     
         if (r12.opened == false) goto L21;
      */
-    @Override // g5.j
+    @Override // b2.k
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public int read(byte[] bArr, int i10, int i11) {
         Exception exc;
         InterruptedException interruptedException;
-        Exception e;
-        InterruptedException e6;
+        Exception e7;
+        InterruptedException e10;
         FileStreamLoadOperation fileStreamLoadOperation;
         RandomAccessFile randomAccessFile;
         if (i11 == 0) {
             return 0;
         }
-        long j10 = this.bytesRemaining;
-        if (j10 == 0) {
+        long j3 = this.bytesRemaining;
+        if (j3 == 0) {
             return -1;
         }
-        if (j10 < i11) {
-            i11 = (int) j10;
+        if (j3 < i11) {
+            i11 = (int) j3;
         }
         int i12 = 0;
         while (true) {
             if (i12 == 0) {
                 try {
-                } catch (InterruptedException e10) {
-                    interruptedException = e10;
+                } catch (InterruptedException e11) {
+                    interruptedException = e11;
                     FileLog.e(interruptedException);
                     return -3;
-                } catch (Exception e11) {
-                    exc = e11;
+                } catch (Exception e12) {
+                    exc = e12;
                     throw new IOException(exc);
                 }
             }
@@ -306,14 +306,14 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
                             countDownLatch.await();
                             fileStreamLoadOperation.countDownLatch = null;
                         }
-                    } catch (InterruptedException e12) {
-                        e6 = e12;
-                        interruptedException = e6;
+                    } catch (InterruptedException e13) {
+                        e10 = e13;
+                        interruptedException = e10;
                         FileLog.e(interruptedException);
                         return -3;
-                    } catch (Exception e13) {
-                        e = e13;
-                        exc = e;
+                    } catch (Exception e14) {
+                        e7 = e14;
+                        exc = e7;
                         throw new IOException(exc);
                     }
                 } else {
@@ -341,9 +341,9 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
                                 fileStreamLoadOperation.isNetwork = false;
                                 long length = fileStreamLoadOperation.currentFile.length() - fileStreamLoadOperation.currentOffset;
                                 fileStreamLoadOperation.bytesRemaining = length;
-                                long j11 = fileStreamLoadOperation.requestedLength;
-                                if (j11 != -1) {
-                                    fileStreamLoadOperation.bytesRemaining = Math.min(length, j11 - fileStreamLoadOperation.bytesTransferred);
+                                long j10 = fileStreamLoadOperation.requestedLength;
+                                if (j10 != -1) {
+                                    fileStreamLoadOperation.bytesRemaining = Math.min(length, j10 - fileStreamLoadOperation.bytesTransferred);
                                 }
                             }
                         } catch (Throwable unused2) {
@@ -359,14 +359,14 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
                         }
                     }
                 }
-            } catch (InterruptedException e14) {
-                e6 = e14;
-                interruptedException = e6;
+            } catch (InterruptedException e15) {
+                e10 = e15;
+                interruptedException = e10;
                 FileLog.e(interruptedException);
                 return -3;
-            } catch (Exception e15) {
-                e = e15;
-                exc = e;
+            } catch (Exception e16) {
+                e7 = e16;
+                exc = e7;
                 throw new IOException(exc);
             }
         }
@@ -375,42 +375,42 @@ public class FileStreamLoadOperation implements g5.m, FileLoadOperationStream {
         }
         int read = randomAccessFile.read(bArr, i10, i12);
         if (read > 0) {
-            long j12 = read;
-            this.currentOffset += j12;
-            this.bytesRemaining -= j12;
-            this.bytesTransferred += j12;
+            long j11 = read;
+            this.currentOffset += j11;
+            this.bytesRemaining -= j11;
+            this.bytesTransferred += j11;
             bytesTransferred(read);
         }
         return read;
     }
 
     public final void transferEnded() {
-        g5.p pVar = this.dataSpec;
-        int i10 = h5.d0.a;
-        for (int i11 = 0; i11 < this.listenerCount; i11++) {
-            ((g5.s) this.listeners.get(i11)).e(pVar, this.isNetwork);
+        g2.m mVar = this.dataSpec;
+        String str = e2.d0.a;
+        for (int i10 = 0; i10 < this.listenerCount; i10++) {
+            ((y2.f) this.listeners.get(i10)).e(mVar, this.isNetwork);
         }
         this.dataSpec = null;
     }
 
-    public final void transferInitializing(g5.p pVar) {
+    public final void transferInitializing(g2.m mVar) {
         for (int i10 = 0; i10 < this.listenerCount; i10++) {
             this.listeners.get(i10).getClass();
         }
     }
 
-    public final void transferStarted(g5.p pVar) {
-        this.dataSpec = pVar;
+    public final void transferStarted(g2.m mVar) {
+        this.dataSpec = mVar;
         for (int i10 = 0; i10 < this.listenerCount; i10++) {
-            ((g5.s) this.listeners.get(i10)).f(pVar, this.isNetwork);
+            ((y2.f) this.listeners.get(i10)).f(mVar, this.isNetwork);
         }
     }
 
     @Deprecated
-    public FileStreamLoadOperation(g5.v0 v0Var) {
+    public FileStreamLoadOperation(g2.c0 c0Var) {
         this();
-        if (v0Var != null) {
-            addTransferListener(v0Var);
+        if (c0Var != null) {
+            addTransferListener(c0Var);
         }
     }
 }

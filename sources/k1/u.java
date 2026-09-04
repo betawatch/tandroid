@@ -1,32 +1,25 @@
 package k1;
 
-import java.io.Serializable;
-import java.util.Iterator;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class u extends wc.c {
-    public d0 a;
-    public Object b;
-    public Serializable c;
-    public Object d;
-    public w e;
-    public Iterator f;
-    public /* synthetic */ Object h;
-    public final /* synthetic */ d0 n;
-    public int r;
+public final class u extends kd.c {
+    public a0 a;
+    public /* synthetic */ Object b;
+    public final /* synthetic */ a0 c;
+    public int d;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u(d0 d0Var, wc.c cVar) {
+    public u(a0 a0Var, kd.c cVar) {
         super(cVar);
-        this.n = d0Var;
+        this.c = a0Var;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final Object invokeSuspend(Object obj) {
-        this.h = obj;
-        this.r |= TLObject.FLAG_31;
-        return this.n.c(this);
+        this.b = obj;
+        this.d |= TLObject.FLAG_31;
+        return this.c.d(this);
     }
 }

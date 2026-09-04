@@ -1,17 +1,72 @@
 package r0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import w7.w6;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b1 extends a1 {
+public abstract class b1 {
+    public final l1 a;
+    public i0.c[] b;
+
     public b1() {
+        this(new l1());
     }
 
-    @Override // r0.a1, r0.c1
-    public void c(int i10, i0.b bVar) {
-        this.c.setInsets(l1.a(i10), bVar.d());
+    public final void a() {
+        i0.c[] cVarArr = this.b;
+        if (cVarArr != null) {
+            i0.c cVar = cVarArr[0];
+            i0.c cVar2 = cVarArr[1];
+            l1 l1Var = this.a;
+            if (cVar2 == null) {
+                cVar2 = l1Var.a.f(2);
+            }
+            if (cVar == null) {
+                cVar = l1Var.a.f(1);
+            }
+            g(i0.c.a(cVar, cVar2));
+            i0.c cVar3 = this.b[w6.a(16)];
+            if (cVar3 != null) {
+                f(cVar3);
+            }
+            i0.c cVar4 = this.b[w6.a(32)];
+            if (cVar4 != null) {
+                d(cVar4);
+            }
+            i0.c cVar5 = this.b[w6.a(64)];
+            if (cVar5 != null) {
+                h(cVar5);
+            }
+        }
     }
 
-    public b1(m1 m1Var) {
-        super(m1Var);
+    public abstract l1 b();
+
+    public void c(int i10, i0.c cVar) {
+        if (this.b == null) {
+            this.b = new i0.c[10];
+        }
+        for (int i11 = 1; i11 <= 512; i11 <<= 1) {
+            if ((i10 & i11) != 0) {
+                this.b[w6.a(i11)] = cVar;
+            }
+        }
+    }
+
+    public abstract void e(i0.c cVar);
+
+    public abstract void g(i0.c cVar);
+
+    public b1(l1 l1Var) {
+        this.a = l1Var;
+    }
+
+    public void d(i0.c cVar) {
+    }
+
+    public void f(i0.c cVar) {
+    }
+
+    public void h(i0.c cVar) {
     }
 }

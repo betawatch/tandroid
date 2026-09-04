@@ -1,124 +1,77 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.os.SystemClock;
-import java.util.ArrayList;
+import android.view.MotionEvent;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class z11 {
-    public long a;
-    public boolean b;
-    public final ArrayList c;
-    public final ArrayList d;
-    public final int e;
-    public boolean f;
-    public float g;
-    public float h;
+public abstract class z11 extends View {
+    public final a21 a;
+    public Utilities.Callback b;
+    public final org.telegram.ui.ActionBar.f6 c;
+    public int d;
 
-    public z11() {
-        this(40);
+    public z11(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.c = f6Var;
+        a21 a21Var = new a21(i10, this, f6Var, false);
+        this.a = a21Var;
+        a21Var.r = new jq0(this, 18);
     }
 
-    public final void a(float f10, float f11, Canvas canvas, Paint paint, RectF rectF) {
-        y11 y11Var;
-        ArrayList arrayList = this.c;
-        int size = arrayList.size();
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            y11 y11Var2 = (y11) arrayList.get(i11);
-            paint.setAlpha((int) (y11Var2.f * 255.0f * f11));
-            canvas.drawPoint(y11Var2.a, y11Var2.b, paint);
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        org.telegram.ui.ActionBar.f6 f6Var = this.c;
+        if (f6Var != null) {
+            f6Var.l(0.0f, 0.0f, getMeasuredWidth(), this.d);
+        } else {
+            org.telegram.ui.ActionBar.j6.q(0.0f, 0.0f, getMeasuredWidth(), this.d);
         }
-        double d = (f10 - 90.0f) * 0.017453292519943295d;
-        double sin = Math.sin(d);
-        double d10 = -Math.cos(d);
-        double width = rectF.width() / 2.0f;
-        float centerX = (float) (((-d10) * width) + rectF.centerX());
-        float centerY = (float) ((width * sin) + rectF.centerY());
-        ArrayList arrayList2 = this.d;
-        int clamp = Utilities.clamp(arrayList2.size() / 12, 3, 1);
-        int i12 = 0;
-        while (i12 < clamp) {
-            if (arrayList2.isEmpty()) {
-                y11Var = new y11();
-            } else {
-                y11Var = (y11) arrayList2.get(i10);
-                arrayList2.remove(i10);
-            }
-            if (this.b && this.f) {
-                float f12 = (i12 + 1) / clamp;
-                y11Var.a = AndroidUtilities.lerp(this.g, centerX, f12);
-                y11Var.b = AndroidUtilities.lerp(this.h, centerY, f12);
-            } else {
-                y11Var.a = centerX;
-                y11Var.b = centerY;
-            }
-            double d11 = sin;
-            double nextInt = (Utilities.random.nextInt(140) - 70) * 0.017453292519943295d;
-            if (nextInt < 0.0d) {
-                nextInt += 6.283185307179586d;
-            }
-            y11Var.c = (float) ((Math.cos(nextInt) * d11) - (Math.sin(nextInt) * d10));
-            y11 y11Var3 = y11Var;
-            y11Var3.d = (float) kf.k0.a(nextInt, d10, Math.sin(nextInt) * d11);
-            y11Var3.f = 1.0f;
-            y11Var3.h = 0.0f;
-            if (this.b) {
-                y11Var3.g = Utilities.random.nextInt(200) + 600;
-                y11Var3.e = (Utilities.random.nextFloat() * 20.0f) + 30.0f;
-            } else {
-                y11Var3.g = Utilities.random.nextInt(100) + 400;
-                y11Var3.e = (Utilities.random.nextFloat() * 4.0f) + 20.0f;
-            }
-            arrayList.add(y11Var3);
-            i12++;
-            sin = d11;
-            i10 = 0;
-        }
-        this.f = true;
-        this.g = centerX;
-        this.h = centerY;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        long min = Math.min(20L, elapsedRealtime - this.a);
-        int size2 = arrayList.size();
-        int i13 = 0;
-        while (i13 < size2) {
-            y11 y11Var4 = (y11) arrayList.get(i13);
-            float f13 = y11Var4.h;
-            float f14 = y11Var4.g;
-            if (f13 >= f14) {
-                if (arrayList2.size() < this.e) {
-                    arrayList2.add(y11Var4);
-                }
-                arrayList.remove(i13);
-                i13--;
-                size2--;
-            } else {
-                y11Var4.f = 1.0f - AndroidUtilities.decelerateInterpolator.getInterpolation(f13 / f14);
-                float f15 = y11Var4.a;
-                float f16 = y11Var4.c;
-                float f17 = y11Var4.e;
-                float f18 = min;
-                y11Var4.a = android.support.v4.media.a.d(f16 * f17, f18, 200.0f, f15);
-                y11Var4.b = (((y11Var4.d * f17) * f18) / 200.0f) + y11Var4.b;
-                y11Var4.h += f18;
-            }
-            i13++;
-        }
-        this.a = elapsedRealtime;
+        this.a.c(canvas, getWidth(), 0.0f, 0.0f, 0.75f, 1.0f, true);
     }
 
-    public z11(int i10) {
-        this.c = new ArrayList();
-        this.d = new ArrayList();
-        this.e = i10;
-        for (int i11 = 0; i11 < i10; i11++) {
-            this.d.add(new y11());
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.a();
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.a.b();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(33.0f), TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        return this.a.d(motionEvent, false) || super.onTouchEvent(motionEvent);
+    }
+
+    public void set(MessageObject messageObject) {
+        a21 a21Var = this.a;
+        a21Var.f(messageObject);
+        if (isAttachedToWindow()) {
+            a21Var.a();
         }
+    }
+
+    public void setBackgroundHeight(int i10) {
+        this.d = i10;
+    }
+
+    public void setOnTopicClickListener(Utilities.Callback<Long> callback) {
+        this.b = callback;
     }
 }

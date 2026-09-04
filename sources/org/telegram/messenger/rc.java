@@ -1,74 +1,48 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class rc implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
+    public final /* synthetic */ MessagesController b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ long d;
     public final /* synthetic */ long e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
-    public final /* synthetic */ Object n;
-    public final /* synthetic */ Object r;
 
-    public /* synthetic */ rc(MessagesController messagesController, ArrayList arrayList, long j10, TLRPC.updates_ChannelDifference updates_channeldifference, TLRPC.Chat chat, a0.h hVar, int i10, long j11) {
-        this.a = 1;
+    public /* synthetic */ rc(int i10, long j3, long j10, MessagesController messagesController) {
+        this.a = 2;
         this.b = messagesController;
-        this.f = arrayList;
-        this.c = j10;
-        this.h = updates_channeldifference;
-        this.n = chat;
-        this.r = hVar;
-        this.d = i10;
-        this.e = j11;
+        this.d = j3;
+        this.e = j10;
+        this.c = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.b).lambda$ensureMessagesLoaded$460((boolean[]) this.f, (MessagesStorage) this.h, this.c, (Runnable[]) this.n, this.e, this.d, (MessagesController.MessagesLoadedCallback) this.r);
+                long j3 = this.d;
+                long j10 = this.e;
+                this.b.lambda$sendTyping$173(this.c, j3, j10);
                 break;
             case 1:
-                ((MessagesController) this.b).lambda$getChannelDifference$347((ArrayList) this.f, this.c, (TLRPC.updates_ChannelDifference) this.h, (TLRPC.Chat) this.n, (a0.h) this.r, this.d, this.e);
-                break;
-            case 2:
-                ((WearReplyReceiver) this.b).lambda$onReceive$0((AccountInstance) this.f, (TLRPC.User) this.h, (CharSequence) this.n, this.c, this.e, this.d, (int[]) this.r);
+                long j11 = this.d;
+                long j12 = this.e;
+                this.b.lambda$sendTyping$171(this.c, j11, j12);
                 break;
             default:
-                ((WearReplyReceiver) this.b).lambda$onReceive$2((AccountInstance) this.f, (TLRPC.Chat) this.h, (CharSequence) this.n, this.c, this.e, this.d, (int[]) this.r);
+                long j13 = this.e;
+                int i10 = this.c;
+                this.b.lambda$checkDeletingTask$84(this.d, j13, i10);
                 break;
         }
     }
 
-    public /* synthetic */ rc(MessagesController messagesController, boolean[] zArr, MessagesStorage messagesStorage, long j10, Runnable[] runnableArr, long j11, int i10, MessagesController.MessagesLoadedCallback messagesLoadedCallback) {
-        this.a = 0;
-        this.b = messagesController;
-        this.f = zArr;
-        this.h = messagesStorage;
-        this.c = j10;
-        this.n = runnableArr;
-        this.e = j11;
-        this.d = i10;
-        this.r = messagesLoadedCallback;
-    }
-
-    public /* synthetic */ rc(WearReplyReceiver wearReplyReceiver, AccountInstance accountInstance, TLObject tLObject, CharSequence charSequence, long j10, long j11, int i10, int[] iArr, int i11) {
+    public /* synthetic */ rc(MessagesController messagesController, int i10, long j3, long j10, int i11) {
         this.a = i11;
-        this.b = wearReplyReceiver;
-        this.f = accountInstance;
-        this.h = tLObject;
-        this.n = charSequence;
-        this.c = j10;
-        this.e = j11;
-        this.d = i10;
-        this.r = iArr;
+        this.b = messagesController;
+        this.c = i10;
+        this.d = j3;
+        this.e = j10;
     }
 }

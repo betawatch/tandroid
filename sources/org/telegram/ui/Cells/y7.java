@@ -1,12 +1,23 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.Emoji;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class y7 extends org.telegram.ui.ActionBar.k5 {
-    @Override // org.telegram.ui.ActionBar.k5
-    public final boolean k(CharSequence charSequence) {
-        return l(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), false);
+public final class y7 {
+    public int a;
+    public int b;
+    public int[] c = null;
+    public int d = 1;
+    public Utilities.Callback2Return e;
+
+    public final int a() {
+        int[] iArr = this.c;
+        return iArr != null ? iArr[iArr.length - 1] : this.b;
+    }
+
+    public final int b() {
+        int[] iArr = this.c;
+        return iArr != null ? iArr[0] : this.a;
     }
 }

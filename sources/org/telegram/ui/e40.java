@@ -1,46 +1,31 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.voip.GroupCallMessage;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class e40 implements yg.a {
-    public final /* synthetic */ e60 a;
+public final class e40 implements z4.e {
+    public final /* synthetic */ j60 a;
 
-    public e40(e60 e60Var) {
-        this.a = e60Var;
+    public e40(j60 j60Var) {
+        this.a = j60Var;
     }
 
-    public final void a(GroupCallMessage groupCallMessage) {
-        org.telegram.ui.ActionBar.p2 R = LaunchActivity.R();
-        if (R == null) {
-            return;
-        }
-        boolean z4 = R instanceof ProfileActivity;
-        e60 e60Var = this.a;
-        if (z4 && ((ProfileActivity) R).a() == groupCallMessage.fromId) {
-            e60Var.dismiss();
-            return;
-        }
-        int P0 = e60Var.P0();
-        Bundle bundle = new Bundle();
-        long j10 = groupCallMessage.fromId;
-        if (j10 > 0) {
-            bundle.putLong("user_id", j10);
-        } else {
-            bundle.putLong("chat_id", -j10);
-        }
-        long j11 = groupCallMessage.fromId;
-        boolean z10 = true;
-        if (j11 == e60Var.d.getUserConfig().getClientUserId()) {
-            bundle.putBoolean("my_profile", true);
-        }
-        ProfileActivity profileActivity = new ProfileActivity(bundle, null);
-        if (P0 > 0 && P0 != Integer.MAX_VALUE) {
-            z10 = false;
-        }
-        R.presentFragment(profileActivity, false, z10);
-        e60Var.dismiss();
+    @Override // z4.e
+    public final void b(int i10) {
+        j60 j60Var = this.a;
+        j60Var.b.D0.k(i10);
+        b40 b40Var = j60Var.D2;
+        b40Var.J = b40Var.L;
+        b40Var.K = b40Var.M;
+        b40Var.N = 0.0f;
+        b40Var.O = 1;
+        b40Var.invalidate();
+    }
+
+    @Override // z4.e
+    public final void c(int i10) {
+    }
+
+    @Override // z4.e
+    public final void a(float f7, int i10, int i11) {
     }
 }

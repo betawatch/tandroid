@@ -1,444 +1,304 @@
 package c1;
 
-import android.content.Intent;
-import android.os.Build;
+import ah.i0;
+import android.content.Context;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.os.Handler;
-import android.os.Parcelable;
-import android.os.ResultReceiver;
+import android.os.Looper;
 import android.util.Log;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
-import j7.b0;
-import j7.g5;
-import j7.x8;
+import c7.j;
+import c7.k;
+import c7.r;
+import c7.u;
+import com.google.android.gms.common.api.internal.v;
+import com.google.android.gms.common.api.internal.w;
+import d1.f;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.concurrent.Executor;
-import k7.c8;
-import k7.d8;
-import k7.u8;
-import kotlin.jvm.internal.j;
-import kotlin.jvm.internal.q;
+import n7.s0;
 import org.json.JSONException;
-import q6.k;
-import q6.r;
-import q6.u;
+import org.json.JSONObject;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.ui.Cells.p6;
+import v0.i;
+import v0.m;
+import v0.n;
 import v0.o;
-import vh.w2;
-import w0.g;
+import v0.p;
+import v7.o6;
 import w0.h;
-import w0.i;
+import w7.g8;
+import x5.g;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e extends ResultReceiver {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ b1.d b;
+public final class e extends b1.d {
+    public final Context e;
+    public i f;
+    public Executor g;
+    public CancellationSignal h;
+    public final d i;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ e(b1.d dVar, Handler handler, int i10) {
-        super(handler);
-        this.a = i10;
-        this.b = dVar;
+    public e(Context context) {
+        kotlin.jvm.internal.i.e(context, "context");
+        this.e = context;
+        this.i = new d(this, new Handler(Looper.getMainLooper()), 0);
     }
 
-    @Override // android.os.ResultReceiver
-    public final void onReceiveResult(int i10, Bundle resultData) {
-        w0.d dVar;
-        Object parcelable;
-        String string;
-        Bundle bundle;
-        v0.c a2;
-        w0.d a10;
-        Object parcelable2;
-        String string2;
-        Bundle bundle2;
-        o oVar;
-        i b10;
-        int i11 = this.a;
-        b1.d dVar2 = this.b;
-        switch (i11) {
-            case 0:
-                j.e(resultData, "resultData");
-                final f fVar = (f) dVar2;
-                if (b1.d.b(resultData, new d(2, b1.d.a, b1.a.class, "getCredentialExceptionTypeToException", "getCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/GetCredentialException;", 0, 0), fVar.f(), fVar.e(), fVar.h)) {
-                    return;
+    /* JADX WARN: Multi-variable type inference failed */
+    /* JADX WARN: Removed duplicated region for block: B:81:0x0186 A[Catch: JSONException -> 0x012c, all -> 0x01aa, TryCatch #2 {JSONException -> 0x012c, blocks: (B:61:0x010f, B:63:0x0116, B:65:0x011d, B:66:0x012f, B:68:0x0133, B:69:0x0138, B:72:0x013e, B:73:0x0144, B:75:0x0148, B:78:0x0150, B:81:0x0186, B:82:0x0189, B:84:0x018d, B:87:0x0197, B:89:0x0158, B:98:0x017c, B:99:0x0183), top: B:60:0x010f, outer: #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x018d A[Catch: JSONException -> 0x012c, all -> 0x01aa, TryCatch #2 {JSONException -> 0x012c, blocks: (B:61:0x010f, B:63:0x0116, B:65:0x011d, B:66:0x012f, B:68:0x0133, B:69:0x0138, B:72:0x013e, B:73:0x0144, B:75:0x0148, B:78:0x0150, B:81:0x0186, B:82:0x0189, B:84:0x018d, B:87:0x0197, B:89:0x0158, B:98:0x017c, B:99:0x0183), top: B:60:0x010f, outer: #1 }] */
+    /* JADX WARN: Removed duplicated region for block: B:86:0x0195  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final o d(g gVar) {
+        m mVar;
+        k kVar;
+        c7.g gVar2;
+        String jSONObject;
+        u uVar = gVar.r;
+        String idToken = gVar.h;
+        String id2 = gVar.a;
+        String str = gVar.f;
+        if (str != null) {
+            kotlin.jvm.internal.i.d(id2, "getId(...)");
+            Bundle bundle = new Bundle();
+            bundle.putString("androidx.credentials.BUNDLE_KEY_ID", id2);
+            bundle.putString("androidx.credentials.BUNDLE_KEY_PASSWORD", str);
+            mVar = new m(str, 2, bundle);
+        } else {
+            boolean z10 = false;
+            JSONObject jSONObject2 = null;
+            if (idToken != null) {
+                kotlin.jvm.internal.i.d(id2, "getId(...)");
+                String str2 = gVar.b;
+                if (str2 == null) {
+                    str2 = null;
                 }
-                int i12 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent = (Intent) resultData.getParcelable("RESULT_DATA");
-                int i13 = b1.d.c;
-                if (i12 != i13) {
-                    Log.w("BeginSignIn", "Returned request code " + i13 + " which  does not match what was given " + i12);
-                    return;
+                String str3 = gVar.c;
+                if (str3 == null) {
+                    str3 = null;
                 }
-                if (b0.b(i10, new b1.e(1), new c(fVar, 0), fVar.h)) {
-                    return;
+                String str4 = gVar.d;
+                if (str4 == null) {
+                    str4 = null;
                 }
-                try {
-                    final o d = fVar.d(x8.a(fVar.e).f(intent));
-                    final int i14 = 1;
-                    b0.a(fVar.h, new dd.a() { // from class: b1.g
-                        @Override // dd.a
-                        public final Object invoke() {
-                            switch (i14) {
-                                case 0:
-                                    ((Executor) fVar).execute(new a1.b((v0.i) d, 7));
-                                    break;
-                                default:
-                                    c1.f fVar2 = (c1.f) fVar;
-                                    fVar2.f().execute(new a1.e(7, fVar2, (o) d));
-                                    break;
+                String str5 = gVar.n;
+                if (str5 == null) {
+                    str5 = null;
+                }
+                Uri uri = gVar.e;
+                Uri uri2 = uri != null ? uri : null;
+                kotlin.jvm.internal.i.e(id2, "id");
+                kotlin.jvm.internal.i.e(idToken, "idToken");
+                Bundle bundle2 = new Bundle();
+                bundle2.putString("com.google.android.libraries.identity.googleid.BUNDLE_KEY_ID", id2);
+                bundle2.putString("com.google.android.libraries.identity.googleid.BUNDLE_KEY_ID_TOKEN", idToken);
+                bundle2.putString("com.google.android.libraries.identity.googleid.BUNDLE_KEY_DISPLAY_NAME", str2);
+                bundle2.putString("com.google.android.libraries.identity.googleid.BUNDLE_KEY_FAMILY_NAME", str4);
+                bundle2.putString("com.google.android.libraries.identity.googleid.BUNDLE_KEY_GIVEN_NAME", str3);
+                bundle2.putString("com.google.android.libraries.identity.googleid.BUNDLE_KEY_PHONE_NUMBER", str5);
+                bundle2.putParcelable("com.google.android.libraries.identity.googleid.BUNDLE_KEY_PROFILE_PICTURE_URI", uri2);
+                mVar = new z8.a("com.google.android.libraries.identity.googleid.TYPE_GOOGLE_ID_TOKEN_CREDENTIAL", 0, bundle2);
+                if (id2.length() <= 0) {
+                    throw new IllegalArgumentException("id should not be empty");
+                }
+                if (idToken.length() <= 0) {
+                    throw new IllegalArgumentException("idToken should not be empty");
+                }
+            } else if (uVar != null) {
+                k kVar2 = uVar.f;
+                c7.i iVar = uVar.e;
+                j jVar = uVar.d;
+                LinkedHashMap linkedHashMap = f.a;
+                JSONObject jSONObject3 = new JSONObject();
+                if (jVar != 0) {
+                    kVar = jVar;
+                } else if (iVar != 0) {
+                    kVar = iVar;
+                } else {
+                    if (kVar2 == null) {
+                        throw new IllegalStateException("No response set.");
+                    }
+                    kVar = kVar2;
+                }
+                if (kVar instanceof k) {
+                    k kVar3 = kVar;
+                    r rVar = kVar3.a;
+                    kotlin.jvm.internal.i.d(rVar, "getErrorCode(...)");
+                    String str6 = kVar3.b;
+                    x0.a aVar = (x0.a) f.a.get(rVar);
+                    if (aVar == null) {
+                        throw new y0.b(new x0.a(26), p6.i("unknown fido gms exception - ", str6));
+                    }
+                    if (rVar == r.w && str6 != null && xd.j.b(str6, "Unable to get sync account")) {
+                        throw new w0.g("Passkey retrieval was cancelled by the user.");
+                    }
+                    throw new y0.b(aVar, str6);
+                }
+                if (kVar instanceof c7.i) {
+                    try {
+                        s0 s0Var = uVar.c;
+                        try {
+                            JSONObject jSONObject4 = new JSONObject();
+                            if (s0Var != null && s0Var.u().length > 0) {
+                                jSONObject4.put("rawId", u6.b.c(s0Var.u()));
                             }
-                            return sc.i.a;
-                        }
-                    });
-                    return;
-                } catch (com.google.android.gms.common.api.f e) {
-                    q qVar = new q();
-                    qVar.a = new h(e.getMessage(), 2);
-                    if (e.getStatusCode() == 16) {
-                        qVar.a = new g(e.getMessage());
-                    } else if (b1.d.b.contains(Integer.valueOf(e.getStatusCode()))) {
-                        qVar.a = new w0.j(e.getMessage());
-                    }
-                    CancellationSignal cancellationSignal = fVar.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (a1.g.a(cancellationSignal)) {
-                        return;
-                    }
-                    fVar.f().execute(new a1.e(5, fVar, qVar));
-                    return;
-                } catch (i e6) {
-                    CancellationSignal cancellationSignal2 = fVar.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (a1.g.a(cancellationSignal2)) {
-                        return;
-                    }
-                    fVar.f().execute(new a(fVar, e6, 1));
-                    return;
-                } catch (Throwable th2) {
-                    h hVar = new h(th2.getMessage(), 2);
-                    CancellationSignal cancellationSignal3 = fVar.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (a1.g.a(cancellationSignal3)) {
-                        return;
-                    }
-                    fVar.f().execute(new a1.e(6, fVar, hVar));
-                    return;
-                }
-            case 1:
-                j.e(resultData, "resultData");
-                d dVar3 = new d(2, b1.d.a, b1.a.class, "createCredentialExceptionTypeToException", "createCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/CreateCredentialException;", 0, 1);
-                d1.e eVar = (d1.e) dVar2;
-                Executor executor = eVar.g;
-                if (executor == null) {
-                    j.h("executor");
-                    throw null;
-                }
-                v0.i iVar = eVar.f;
-                if (iVar == null) {
-                    j.h("callback");
-                    throw null;
-                }
-                if (b1.d.b(resultData, dVar3, executor, iVar, eVar.h)) {
-                    return;
-                }
-                int i15 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                Intent intent2 = (Intent) resultData.getParcelable("RESULT_DATA");
-                int i16 = b1.d.c;
-                if (i15 != i16) {
-                    Log.w("CreatePublicKey", "Returned request code " + i16 + " does not match what was given " + i15);
-                    return;
-                }
-                if (b1.d.c(i10, new b1.e(2), new c(eVar, 1), eVar.h)) {
-                    return;
-                }
-                byte[] byteArrayExtra = intent2 != null ? intent2.getByteArrayExtra("FIDO2_CREDENTIAL_EXTRA") : null;
-                if (byteArrayExtra == null) {
-                    a1.g gVar = CredentialProviderPlayServicesImpl.Companion;
-                    CancellationSignal cancellationSignal4 = eVar.h;
-                    gVar.getClass();
-                    if (a1.g.a(cancellationSignal4)) {
-                        return;
-                    }
-                    Executor executor2 = eVar.g;
-                    if (executor2 != null) {
-                        executor2.execute(new d1.d(eVar, 1));
-                        return;
-                    } else {
-                        j.h("executor");
-                        throw null;
-                    }
-                }
-                u uVar = (u) g5.a(byteArrayExtra, u.CREATOR);
-                j.d(uVar, "deserializeFromBytes(...)");
-                LinkedHashMap linkedHashMap = d1.g.a;
-                Parcelable parcelable3 = uVar.d;
-                if (parcelable3 == null && (parcelable3 = uVar.e) == null && (parcelable3 = uVar.f) == null) {
-                    throw new IllegalStateException("No response set.");
-                }
-                if (parcelable3 instanceof k) {
-                    k kVar = (k) parcelable3;
-                    r rVar = kVar.a;
-                    j.d(rVar, "getErrorCode(...)");
-                    x0.a aVar = (x0.a) d1.g.a.get(rVar);
-                    String str = kVar.b;
-                    dVar = aVar == null ? new y0.a(new x0.a(26), w2.e("unknown fido gms exception - ", str)) : (rVar == r.w && str != null && jd.j.b(str, "Unable to get sync account")) ? new w0.b("Passkey registration was cancelled by the user.") : new y0.a(aVar, str);
-                } else {
-                    dVar = null;
-                }
-                if (dVar != null) {
-                    CancellationSignal cancellationSignal5 = eVar.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (a1.g.a(cancellationSignal5)) {
-                        return;
-                    }
-                    Executor executor3 = eVar.g;
-                    if (executor3 != null) {
-                        executor3.execute(new d1.a(eVar, dVar, 2));
-                        return;
-                    } else {
-                        j.h("executor");
-                        throw null;
-                    }
-                }
-                try {
-                    v0.f e10 = d1.e.e(uVar);
-                    CancellationSignal cancellationSignal6 = eVar.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (a1.g.a(cancellationSignal6)) {
-                        return;
-                    }
-                    Executor executor4 = eVar.g;
-                    if (executor4 != null) {
-                        executor4.execute(new a1.e(14, eVar, e10));
-                        return;
-                    } else {
-                        j.h("executor");
-                        throw null;
-                    }
-                } catch (JSONException e11) {
-                    CancellationSignal cancellationSignal7 = eVar.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (a1.g.a(cancellationSignal7)) {
-                        return;
-                    }
-                    Executor executor5 = eVar.g;
-                    if (executor5 != null) {
-                        executor5.execute(new d1.b(eVar, e11, 0));
-                        return;
-                    } else {
-                        j.h("executor");
-                        throw null;
-                    }
-                } catch (Throwable th3) {
-                    CancellationSignal cancellationSignal8 = eVar.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (a1.g.a(cancellationSignal8)) {
-                        return;
-                    }
-                    Executor executor6 = eVar.g;
-                    if (executor6 != null) {
-                        executor6.execute(new d1.c(eVar, th3, 0));
-                        return;
-                    } else {
-                        j.h("executor");
-                        throw null;
-                    }
-                }
-            case 2:
-                j.e(resultData, "resultData");
-                d dVar4 = new d(2, b1.d.a, b1.a.class, "createCredentialExceptionTypeToException", "createCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/CreateCredentialException;", 0, 2);
-                e1.d dVar5 = (e1.d) dVar2;
-                Executor executor7 = dVar5.g;
-                if (executor7 == null) {
-                    j.h("executor");
-                    throw null;
-                }
-                v0.i iVar2 = dVar5.f;
-                if (iVar2 == null) {
-                    j.h("callback");
-                    throw null;
-                }
-                if (b1.d.b(resultData, dVar4, executor7, iVar2, dVar5.h)) {
-                    return;
-                }
-                int i17 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                int i18 = Build.VERSION.SDK_INT;
-                if (i18 >= 34) {
-                    parcelable = g0.a.c(resultData);
-                } else {
-                    parcelable = resultData.getParcelable("RESULT_DATA");
-                    if (!Intent.class.isInstance(parcelable)) {
-                        parcelable = null;
-                    }
-                }
-                Intent intent3 = (Intent) parcelable;
-                int i19 = b1.d.c;
-                if (i17 != i19) {
-                    Log.w("CreatePublicKey", "Returned request code " + i19 + " does not match what was given " + i17);
-                    return;
-                }
-                if (b1.d.c(i10, new b1.e(3), new c(dVar5, 2), dVar5.h)) {
-                    return;
-                }
-                if (intent3 == null) {
-                    CancellationSignal cancellationSignal9 = dVar5.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (a1.g.a(cancellationSignal9)) {
-                        return;
-                    }
-                    Executor executor8 = dVar5.g;
-                    if (executor8 != null) {
-                        executor8.execute(new e1.a(dVar5, 1));
-                        return;
-                    } else {
-                        j.h("executor");
-                        throw null;
-                    }
-                }
-                if (i18 >= 34) {
-                    a2 = g1.a.b("androidx.credentials.TYPE_PUBLIC_KEY_CREDENTIAL", intent3);
-                } else {
-                    Bundle bundleExtra = intent3.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_RESPONSE");
-                    a2 = (bundleExtra == null || (string = bundleExtra.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_RESPONSE_TYPE")) == null || (bundle = bundleExtra.getBundle("androidx.credentials.provider.extra.CREATE_CREDENTIAL_REQUEST_DATA")) == null) ? null : c8.a(string, bundle);
-                }
-                if (a2 != null) {
-                    CancellationSignal cancellationSignal10 = dVar5.h;
-                    CredentialProviderPlayServicesImpl.Companion.getClass();
-                    if (a1.g.a(cancellationSignal10)) {
-                        return;
-                    }
-                    Executor executor9 = dVar5.g;
-                    if (executor9 != null) {
-                        executor9.execute(new a1.e(22, dVar5, a2));
-                        return;
-                    } else {
-                        j.h("executor");
-                        throw null;
-                    }
-                }
-                if (i18 >= 34) {
-                    a10 = g1.a.a(intent3);
-                } else {
-                    int i20 = w0.d.a;
-                    Bundle bundleExtra2 = intent3.getBundleExtra("android.service.credentials.extra.CREATE_CREDENTIAL_EXCEPTION");
-                    if (bundleExtra2 == null) {
-                        a10 = null;
-                    } else {
-                        String string3 = bundleExtra2.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_TYPE");
-                        if (string3 == null) {
-                            throw new IllegalArgumentException("Bundle was missing exception type.");
-                        }
-                        a10 = u8.a(bundleExtra2.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string3);
-                    }
-                }
-                CancellationSignal cancellationSignal11 = dVar5.h;
-                CredentialProviderPlayServicesImpl.Companion.getClass();
-                if (a1.g.a(cancellationSignal11)) {
-                    return;
-                }
-                Executor executor10 = dVar5.g;
-                if (executor10 != null) {
-                    executor10.execute(new e1.c(dVar5, a10, 1));
-                    return;
-                } else {
-                    j.h("executor");
-                    throw null;
-                }
-            default:
-                j.e(resultData, "resultData");
-                d dVar6 = new d(2, b1.d.a, b1.a.class, "getCredentialExceptionTypeToException", "getCredentialExceptionTypeToException$credentials_play_services_auth_release(Ljava/lang/String;Ljava/lang/String;)Landroidx/credentials/exceptions/GetCredentialException;", 0, 3);
-                f1.b bVar = (f1.b) dVar2;
-                Executor executor11 = bVar.g;
-                if (executor11 == null) {
-                    j.h("executor");
-                    throw null;
-                }
-                v0.i iVar3 = bVar.f;
-                if (iVar3 == null) {
-                    j.h("callback");
-                    throw null;
-                }
-                if (b1.d.b(resultData, dVar6, executor11, iVar3, bVar.h)) {
-                    return;
-                }
-                int i21 = resultData.getInt("ACTIVITY_REQUEST_CODE");
-                int i22 = Build.VERSION.SDK_INT;
-                if (i22 >= 34) {
-                    parcelable2 = g0.a.c(resultData);
-                } else {
-                    parcelable2 = resultData.getParcelable("RESULT_DATA");
-                    if (!Intent.class.isInstance(parcelable2)) {
-                        parcelable2 = null;
-                    }
-                }
-                Intent intent4 = (Intent) parcelable2;
-                final Executor executor12 = bVar.g;
-                if (executor12 == null) {
-                    j.h("executor");
-                    throw null;
-                }
-                final v0.i iVar4 = bVar.f;
-                if (iVar4 == null) {
-                    j.h("callback");
-                    throw null;
-                }
-                CancellationSignal cancellationSignal12 = bVar.h;
-                int i23 = b1.d.c;
-                if (i21 != i23) {
-                    Log.w("GetCredentialController", "Returned request code " + i23 + " which  does not match what was given " + i21);
-                    return;
-                }
-                final int i24 = 0;
-                if (b0.b(i10, new b1.e(i24), new b1.f(i24, executor12, iVar4), cancellationSignal12)) {
-                    return;
-                }
-                if (intent4 == null) {
-                    b0.a(cancellationSignal12, new dd.a() { // from class: b1.g
-                        @Override // dd.a
-                        public final Object invoke() {
-                            switch (i24) {
-                                case 0:
-                                    ((Executor) executor12).execute(new a1.b((v0.i) iVar4, 7));
-                                    break;
-                                default:
-                                    c1.f fVar2 = (c1.f) executor12;
-                                    fVar2.f().execute(new a1.e(7, fVar2, (o) iVar4));
-                                    break;
+                            String str7 = uVar.n;
+                            if (str7 != null) {
+                                jSONObject4.put("authenticatorAttachment", str7);
                             }
-                            return sc.i.a;
+                            String str8 = uVar.b;
+                            if (str8 != null && kVar2 == null) {
+                                jSONObject4.put(TeXSymbolParser.TYPE_ATTR, str8);
+                            }
+                            String str9 = uVar.a;
+                            if (str9 != null) {
+                                jSONObject4.put("id", str9);
+                            }
+                            String str10 = "response";
+                            if (iVar != 0) {
+                                jSONObject2 = iVar.b();
+                            } else if (jVar != 0) {
+                                jSONObject2 = jVar.b();
+                            } else {
+                                if (kVar2 != null) {
+                                    try {
+                                        jSONObject2 = new JSONObject();
+                                        jSONObject2.put("code", kVar2.a.a);
+                                        String str11 = kVar2.b;
+                                        if (str11 != null) {
+                                            jSONObject2.put("message", str11);
+                                        }
+                                        str10 = "error";
+                                    } catch (JSONException e7) {
+                                        throw new RuntimeException("Error encoding AuthenticatorErrorResponse to JSON object", e7);
+                                    }
+                                }
+                                if (jSONObject2 != null) {
+                                    jSONObject4.put(str10, jSONObject2);
+                                }
+                                gVar2 = uVar.h;
+                                if (gVar2 == null) {
+                                    jSONObject4.put("clientExtensionResults", gVar2.b());
+                                } else if (z10) {
+                                    jSONObject4.put("clientExtensionResults", new JSONObject());
+                                }
+                                jSONObject = jSONObject4.toString();
+                                kotlin.jvm.internal.i.d(jSONObject, "toJson(...)");
+                            }
+                            z10 = true;
+                            if (jSONObject2 != null) {
+                            }
+                            gVar2 = uVar.h;
+                            if (gVar2 == null) {
+                            }
+                            jSONObject = jSONObject4.toString();
+                            kotlin.jvm.internal.i.d(jSONObject, "toJson(...)");
+                        } catch (JSONException e10) {
+                            throw new RuntimeException("Error encoding PublicKeyCredential to JSON object", e10);
                         }
-                    });
-                    return;
-                }
-                if (i22 >= 34) {
-                    oVar = g1.a.d(intent4);
-                } else {
-                    Bundle bundleExtra3 = intent4.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_RESPONSE");
-                    oVar = (bundleExtra3 == null || (string2 = bundleExtra3.getString("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_TYPE")) == null || (bundle2 = bundleExtra3.getBundle("androidx.credentials.provider.extra.EXTRA_CREDENTIAL_DATA")) == null) ? null : new o(d8.a(string2, bundle2));
-                }
-                if (oVar != null) {
-                    b0.a(cancellationSignal12, new b1.b(executor12, iVar4, oVar, 1));
-                    return;
-                }
-                if (i22 >= 34) {
-                    b10 = g1.a.c(intent4);
-                } else {
-                    int i25 = i.a;
-                    Bundle bundleExtra4 = intent4.getBundleExtra("android.service.credentials.extra.GET_CREDENTIAL_EXCEPTION");
-                    if (bundleExtra4 == null) {
-                        b10 = null;
-                    } else {
-                        String string4 = bundleExtra4.getString("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_TYPE");
-                        if (string4 == null) {
-                            throw new IllegalArgumentException("Bundle was missing exception type.");
-                        }
-                        b10 = u8.b(bundleExtra4.getCharSequence("androidx.credentials.provider.extra.CREATE_CREDENTIAL_EXCEPTION_MESSAGE"), string4);
+                    } catch (Throwable th2) {
+                        throw new h("The PublicKeyCredential response json had an unexpected exception when parsing: " + th2.getMessage(), 2);
                     }
+                } else {
+                    Log.e("PublicKeyUtility", "AuthenticatorResponse expected assertion response but got: ".concat(kVar.getClass().getName()));
+                    jSONObject = jSONObject3.toString();
+                    kotlin.jvm.internal.i.d(jSONObject, "toString(...)");
                 }
-                b0.a(cancellationSignal12, new b1.b(executor12, iVar4, b10, 2));
+                Bundle bundle3 = new Bundle();
+                bundle3.putString("androidx.credentials.BUNDLE_KEY_AUTHENTICATION_RESPONSE_JSON", jSONObject);
+                mVar = new m(jSONObject, 3, bundle3);
+            } else {
+                Log.w("BeginSignIn", "Credential returned but no google Id or password or passkey found");
+                mVar = null;
+            }
+        }
+        if (mVar != null) {
+            return new o(mVar);
+        }
+        throw new h("When attempting to convert get response, null credential found", 2);
+    }
+
+    public final i e() {
+        i iVar = this.f;
+        if (iVar != null) {
+            return iVar;
+        }
+        kotlin.jvm.internal.i.h("callback");
+        throw null;
+    }
+
+    public final Executor f() {
+        Executor executor = this.g;
+        if (executor != null) {
+            return executor;
+        }
+        kotlin.jvm.internal.i.h("executor");
+        throw null;
+    }
+
+    public final void g(n request, CancellationSignal cancellationSignal, Executor executor, i callback) {
+        kotlin.jvm.internal.i.e(request, "request");
+        kotlin.jvm.internal.i.e(callback, "callback");
+        kotlin.jvm.internal.i.e(executor, "executor");
+        this.h = cancellationSignal;
+        this.f = callback;
+        this.g = executor;
+        CredentialProviderPlayServicesImpl.Companion.getClass();
+        if (a1.g.a(cancellationSignal)) {
+            return;
+        }
+        Context context = this.e;
+        kotlin.jvm.internal.i.e(context, "context");
+        x5.d dVar = new x5.d(false);
+        x5.a aVar = new x5.a(false, null, null, true, null, null, false);
+        x5.c cVar = new x5.c(false, null, null);
+        x5.b bVar = new x5.b(null, false);
+        PackageManager packageManager = context.getPackageManager();
+        kotlin.jvm.internal.i.d(packageManager, "getPackageManager(...)");
+        long j3 = packageManager.getPackageInfo("com.google.android.gms", 0).versionCode;
+        Iterator it = request.a.iterator();
+        x5.b bVar2 = bVar;
+        boolean z10 = false;
+        while (true) {
+            int i10 = 1;
+            if (!it.hasNext()) {
+                boolean z11 = j3 > 241217000 ? request.b : false;
+                i7.b a2 = g8.a(context);
+                new x5.a(false, null, null, true, null, null, false);
+                x5.e eVar = new x5.e(dVar, aVar, a2.k, false, 0, cVar, bVar2, z11);
+                v e7 = w.e();
+                e7.d = new k6.c[]{new k6.c("auth_api_credentials_begin_sign_in", 8L)};
+                e7.c = new xa.c(a2, eVar);
+                e7.b = false;
+                e7.a = 1553;
+                a2.e(0, e7.a()).addOnSuccessListener(new a1.c(new b1.f(i10, cancellationSignal, this), 11)).addOnFailureListener(new i0(5, this, cancellationSignal));
                 return;
+            }
+            p pVar = (p) it.next();
+            if ((pVar instanceof p) && !z10) {
+                if (j3 >= 231815000) {
+                    LinkedHashMap linkedHashMap = f.a;
+                    bVar2 = new x5.b(pVar.d, true);
+                } else {
+                    LinkedHashMap linkedHashMap2 = f.a;
+                    JSONObject jSONObject = new JSONObject(pVar.d);
+                    String optString = jSONObject.optString("rpId", "");
+                    kotlin.jvm.internal.i.b(optString);
+                    if (optString.length() == 0) {
+                        throw new JSONException("GetPublicKeyCredentialOption - rpId not specified in the request or is unexpectedly empty");
+                    }
+                    cVar = new x5.c(true, o6.a(jSONObject), optString);
+                }
+                z10 = true;
+            }
         }
     }
 }

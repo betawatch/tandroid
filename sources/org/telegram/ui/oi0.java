@@ -1,36 +1,50 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oi0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pi0 b;
+public final class oi0 extends gz {
+    public final int[] N;
+    public final /* synthetic */ cj0 O;
 
-    public /* synthetic */ oi0(pi0 pi0Var, int i10) {
-        this.a = i10;
-        this.b = pi0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public oi0(cj0 cj0Var, ni0 ni0Var, int i10) {
+        super(i10, ni0Var);
+        this.O = cj0Var;
+        this.N = new int[2];
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.W = null;
-                if (BuildVars.LOGS_ENABLED) {
-                    FileLog.d("chatItemAnimator enable notifications");
-                    break;
-                }
-                break;
-            default:
-                this.b.W = null;
-                if (BuildVars.LOGS_ENABLED) {
-                    FileLog.d("chatItemAnimator enable notifications");
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.gz
+    public final void h(fz fzVar) {
+        cj0 cj0Var = this.O;
+        vi0 vi0Var = cj0Var.K;
+        if (fzVar == null) {
+            return;
         }
+        if (cj0Var.l0 != null) {
+            fzVar.c = true;
+            float f7 = (gz.f() * AndroidUtilities.density) / 1.3f;
+            float f10 = f7 / 3.0f;
+            fzVar.d = f10;
+            fzVar.e = f10;
+            fzVar.a = Utilities.clamp(cj0Var.l0.right - (0.75f * f7), AndroidUtilities.displaySize.x - f7, 0.0f);
+            fzVar.b = cj0Var.l0.bottom - (f7 / 2.0f);
+            return;
+        }
+        org.telegram.ui.Cells.t1 t1Var = cj0Var.Q;
+        if (t1Var == null || !t1Var.isAttachedToWindow() || cj0Var.Q.getMessageObject() == null || cj0Var.Q.getMessageObject().getId() != cj0Var.R) {
+            return;
+        }
+        cj0Var.Q.getLocationOnScreen(this.N);
+        fzVar.c = true;
+        float f11 = (gz.f() * AndroidUtilities.density) / 1.3f;
+        float f12 = f11 / 3.0f;
+        fzVar.d = f12;
+        fzVar.e = f12;
+        float f13 = f11 / 2.0f;
+        fzVar.a = Utilities.clamp(((vi0Var.getScaleX() * cj0Var.Q.getTimeX()) + r8[0]) - f13, AndroidUtilities.displaySize.x - f11, 0.0f);
+        fzVar.b = ((vi0Var.getScaleY() * cj0Var.Q.getTimeY()) + r8[1]) - f13;
     }
 }

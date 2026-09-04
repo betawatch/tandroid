@@ -6,7 +6,7 @@ import j$.util.Objects;
 import u.a;
 import u.c;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class InputSignInMethod implements c {
     public static final int INPUT_TYPE_DEFAULT = 1;
@@ -73,10 +73,10 @@ public final class InputSignInMethod implements c {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder("[inputType:");
-        sb.append(this.mInputType);
-        sb.append(", keyboardType: ");
-        return android.support.v4.media.a.m(this.mKeyboardType, "]", sb);
+        StringBuilder sb2 = new StringBuilder("[inputType:");
+        sb2.append(this.mInputType);
+        sb2.append(", keyboardType: ");
+        return a4.a.n(this.mKeyboardType, "]", sb2);
     }
 
     private InputSignInMethod() {

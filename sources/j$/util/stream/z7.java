@@ -29,24 +29,24 @@ public final class z7 extends x6 {
             return a2;
         }
         t6 t6Var = (t6) this.h;
-        long j10 = this.g;
+        long j3 = this.g;
         if (t6Var.c != 0) {
-            if (j10 >= t6Var.count()) {
-                throw new IndexOutOfBoundsException(Long.toString(j10));
+            if (j3 >= t6Var.count()) {
+                throw new IndexOutOfBoundsException(Long.toString(j3));
             }
             for (int i10 = 0; i10 <= t6Var.c; i10++) {
-                long j11 = t6Var.d[i10];
+                long j10 = t6Var.d[i10];
                 Object[] objArr = t6Var.f[i10];
-                if (j10 < objArr.length + j11) {
-                    obj = objArr[(int) (j10 - j11)];
+                if (j3 < objArr.length + j10) {
+                    obj = objArr[(int) (j3 - j10)];
                 }
             }
-            throw new IndexOutOfBoundsException(Long.toString(j10));
+            throw new IndexOutOfBoundsException(Long.toString(j3));
         }
-        if (j10 < t6Var.b) {
-            obj = t6Var.e[(int) j10];
+        if (j3 < t6Var.b) {
+            obj = t6Var.e[(int) j3];
         } else {
-            throw new IndexOutOfBoundsException(Long.toString(j10));
+            throw new IndexOutOfBoundsException(Long.toString(j3));
         }
         consumer.x(obj);
         return a2;

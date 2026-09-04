@@ -3,7 +3,7 @@ package androidx.lifecycle;
 import android.os.Looper;
 import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class z {
     public static final Object k = new Object();
@@ -29,7 +29,7 @@ public class z {
     public static void a(String str) {
         n.a.a().a.getClass();
         if (Looper.getMainLooper().getThread() != Thread.currentThread()) {
-            throw new IllegalStateException(android.support.v4.media.a.o("Cannot invoke ", str, " on a background thread"));
+            throw new IllegalStateException(a4.a.p("Cannot invoke ", str, " on a background thread"));
         }
     }
 
@@ -45,7 +45,7 @@ public class z {
                 return;
             }
             yVar.c = i11;
-            yVar.a.G(this.e);
+            yVar.a.f0(this.e);
         }
     }
 
@@ -111,16 +111,16 @@ public class z {
         tVar.m().a(liveData$LifecycleBoundObserver);
     }
 
-    public final void e(o5.i iVar) {
+    public final void e(a4.m mVar) {
         Object obj;
         a("observeForever");
-        x xVar = new x(this, iVar);
+        x xVar = new x(this, mVar);
         o.f fVar = this.b;
-        o.c i10 = fVar.i(iVar);
+        o.c i10 = fVar.i(mVar);
         if (i10 != null) {
             obj = i10.b;
         } else {
-            o.c cVar = new o.c(iVar, xVar);
+            o.c cVar = new o.c(mVar, xVar);
             fVar.d++;
             o.c cVar2 = fVar.b;
             if (cVar2 == null) {
@@ -144,12 +144,12 @@ public class z {
     }
 
     public final void h(Object obj) {
-        boolean z4;
+        boolean z10;
         synchronized (this.a) {
-            z4 = this.f == k;
+            z10 = this.f == k;
             this.f = obj;
         }
-        if (z4) {
+        if (z10) {
             n.a.a().b(this.j);
         }
     }

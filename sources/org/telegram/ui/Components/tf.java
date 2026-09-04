@@ -1,35 +1,35 @@
 package org.telegram.ui.Components;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class tf extends org.telegram.ui.zn {
-    public boolean Nc;
-    public final /* synthetic */ TLRPC.User Oc;
-    public final /* synthetic */ TLRPC.User Pc;
-    public final /* synthetic */ long Qc;
+public final class tf extends AnimatorListenerAdapter {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public tf(Bundle bundle, TLRPC.User user, TLRPC.User user2, long j10) {
-        super(bundle);
-        this.Oc = user;
-        this.Pc = user2;
-        this.Qc = j10;
+    public tf(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.p2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        if (this.Nc) {
-            return;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        v71 v71Var = chatActivityEnterView.f1;
+        if (v71Var != null) {
+            v71Var.setVisibility(8);
         }
-        this.Nc = true;
-        qc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Oc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Pc)), new gg.y1(this, this.Qc, 16)), R.raw.contact_check).j();
+        gk0 gk0Var = chatActivityEnterView.h1;
+        if (gk0Var != null) {
+            gk0Var.setVisibility(8);
+        }
+        chatActivityEnterView.o4 = 0.0f;
+        chatActivityEnterView.x0();
+        chatActivityEnterView.p0();
+        ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.M1;
+        if (recordCircle != null) {
+            recordCircle.d();
+        }
     }
 }

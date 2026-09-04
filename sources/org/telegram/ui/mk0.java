@@ -1,92 +1,57 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Parcelable;
-import android.util.SparseArray;
-import android.widget.TextView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.widget.EditText;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class mk0 extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ Context a;
-    public final /* synthetic */ qk0 b;
+public final class mk0 extends org.telegram.ui.ActionBar.g5 {
+    public final /* synthetic */ NotificationsCustomSettingsActivity f;
 
-    public mk0(qk0 qk0Var, Context context) {
-        this.b = qk0Var;
-        this.a = context;
+    public mk0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
+        this.f = notificationsCustomSettingsActivity;
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        int i11;
-        int i12;
-        org.telegram.ui.ActionBar.k kVar;
-        qk0 qk0Var = this.b;
-        org.telegram.ui.ActionBar.f6 f6Var = qk0Var.h;
-        SparseArray sparseArray = qk0Var.G;
-        if (i10 == -1) {
-            kVar = ((org.telegram.ui.ActionBar.p2) qk0Var).actionBar;
-            if (kVar.s()) {
-                qk0.W(qk0Var);
-                return;
-            } else {
-                qk0Var.finishFragment();
-                return;
-            }
-        }
-        if (i10 == 1) {
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(qk0Var.getParentActivity(), 0, f6Var);
-            alertDialog$Builder.a.O = LocaleController.formatPluralString("DeleteTones", sparseArray.size(), new Object[0]);
-            alertDialog$Builder.a.Q = AndroidUtilities.replaceTags(LocaleController.formatPluralString("DeleteTonesMessage", sparseArray.size(), new Object[0]));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), new org.telegram.ui.Components.lh0(29));
-            alertDialog$Builder.k(LocaleController.getString(R.string.Delete), new hu(this, 28));
-            TextView textView = (TextView) alertDialog$Builder.o().d(-1);
-            if (textView != null) {
-                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.q7, f6Var));
-                return;
-            }
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void m() {
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
+        notificationsCustomSettingsActivity.d.F(null);
+        notificationsCustomSettingsActivity.f = false;
+        notificationsCustomSettingsActivity.getClass();
+        notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoExceptions", R.string.NoExceptions));
+        notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.b);
+        notificationsCustomSettingsActivity.b.l();
+        notificationsCustomSettingsActivity.a.setFastScrollVisible(true);
+        notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(false);
+        notificationsCustomSettingsActivity.c.setShowAtCenter(false);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void n() {
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
+        notificationsCustomSettingsActivity.f = true;
+        notificationsCustomSettingsActivity.c.setShowAtCenter(true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void q(EditText editText) {
+        NotificationsCustomSettingsActivity notificationsCustomSettingsActivity = this.f;
+        if (notificationsCustomSettingsActivity.d == null) {
             return;
         }
-        if (i10 == 2) {
-            int size = sparseArray.size();
-            Context context = this.a;
-            if (size == 1) {
-                Intent intent = new Intent(context, (Class<?>) LaunchActivity.class);
-                intent.setAction("android.intent.action.SEND");
-                ok0 ok0Var = (ok0) sparseArray.valueAt(0);
-                i12 = ((org.telegram.ui.ActionBar.p2) qk0Var).currentAccount;
-                Uri a2 = ok0Var.a(i12);
-                if (a2 != null) {
-                    intent.putExtra("android.intent.extra.STREAM", a2);
-                    context.startActivity(intent);
-                }
-            } else {
-                Intent intent2 = new Intent(context, (Class<?>) LaunchActivity.class);
-                intent2.setAction("android.intent.action.SEND_MULTIPLE");
-                ArrayList<? extends Parcelable> arrayList = new ArrayList<>();
-                for (int i13 = 0; i13 < sparseArray.size(); i13++) {
-                    ok0 ok0Var2 = (ok0) sparseArray.valueAt(i13);
-                    i11 = ((org.telegram.ui.ActionBar.p2) qk0Var).currentAccount;
-                    Uri a10 = ok0Var2.a(i11);
-                    if (a10 != null) {
-                        arrayList.add(a10);
-                    }
-                }
-                if (!arrayList.isEmpty()) {
-                    intent2.putParcelableArrayListExtra("android.intent.extra.STREAM", arrayList);
-                    context.startActivity(intent2);
-                }
+        String obj = editText.getText().toString();
+        if (obj.length() != 0) {
+            notificationsCustomSettingsActivity.getClass();
+            if (notificationsCustomSettingsActivity.a != null) {
+                notificationsCustomSettingsActivity.c.setText(LocaleController.getString("NoResult", R.string.NoResult));
+                notificationsCustomSettingsActivity.c.b();
+                notificationsCustomSettingsActivity.a.setAdapter(notificationsCustomSettingsActivity.d);
+                notificationsCustomSettingsActivity.d.l();
+                notificationsCustomSettingsActivity.a.setFastScrollVisible(false);
+                notificationsCustomSettingsActivity.a.setVerticalScrollBarEnabled(true);
             }
-            qk0.W(qk0Var);
-            qk0Var.c0();
-            qk0Var.f.l();
         }
+        notificationsCustomSettingsActivity.d.F(obj);
     }
 }

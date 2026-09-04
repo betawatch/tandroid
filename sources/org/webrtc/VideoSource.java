@@ -2,7 +2,7 @@ package org.webrtc;
 
 import org.webrtc.VideoProcessor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class VideoSource extends MediaSource {
     private final CapturerObserver capturerObserver;
@@ -11,7 +11,7 @@ public class VideoSource extends MediaSource {
     private VideoProcessor videoProcessor;
     private final Object videoProcessorLock;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class AspectRatio {
         public static final AspectRatio UNDEFINED = new AspectRatio(0, 0);
         public final int height;
@@ -23,18 +23,18 @@ public class VideoSource extends MediaSource {
         }
     }
 
-    public VideoSource(long j10) {
-        super(j10);
+    public VideoSource(long j3) {
+        super(j3);
         this.videoProcessorLock = new Object();
         this.capturerObserver = new CapturerObserver() { // from class: org.webrtc.VideoSource.1
             @Override // org.webrtc.CapturerObserver
-            public void onCapturerStarted(boolean z4) {
-                VideoSource.this.nativeAndroidVideoTrackSource.setState(z4);
+            public void onCapturerStarted(boolean z10) {
+                VideoSource.this.nativeAndroidVideoTrackSource.setState(z10);
                 synchronized (VideoSource.this.videoProcessorLock) {
                     try {
-                        VideoSource.this.isCapturerRunning = z4;
+                        VideoSource.this.isCapturerRunning = z10;
                         if (VideoSource.this.videoProcessor != null) {
-                            VideoSource.this.videoProcessor.onCapturerStarted(z4);
+                            VideoSource.this.videoProcessor.onCapturerStarted(z10);
                         }
                     } catch (Throwable th2) {
                         throw th2;
@@ -77,7 +77,7 @@ public class VideoSource extends MediaSource {
                 }
             }
         };
-        this.nativeAndroidVideoTrackSource = new NativeAndroidVideoTrackSource(j10);
+        this.nativeAndroidVideoTrackSource = new NativeAndroidVideoTrackSource(j3);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -110,8 +110,8 @@ public class VideoSource extends MediaSource {
         return getNativeMediaSource();
     }
 
-    public void setIsScreencast(boolean z4) {
-        this.nativeAndroidVideoTrackSource.setIsScreencast(z4);
+    public void setIsScreencast(boolean z10) {
+        this.nativeAndroidVideoTrackSource.setIsScreencast(z10);
     }
 
     public void setVideoProcessor(VideoProcessor videoProcessor) {

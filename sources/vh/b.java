@@ -1,155 +1,120 @@
 package vh;
 
-import android.view.View;
-import android.widget.LinearLayout;
-import java.util.ArrayList;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.p70;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.Utilities;
+import w7.p;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class b implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s3 b;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class b extends Drawable {
+    public final a b;
+    public Bitmap c;
+    public Canvas d;
+    public int e;
+    public float f;
+    public int g;
+    public int h;
+    public final Paint a = new Paint(2);
+    public int i = 255;
 
-    public /* synthetic */ b(s3 s3Var, int i10) {
-        this.a = i10;
-        this.b = s3Var;
+    public b(a aVar) {
+        this.b = aVar;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:102:0x017c, code lost:
-    
-        if (r3 <= (r4.getHeight() + r4.getTop())) goto L87;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:86:0x014a, code lost:
-    
-        if (vh.w5.m(r5, r5.getLeft(), r5.getTop(), r1, r3) != false) goto L87;
-     */
-    @Override // java.lang.Runnable
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.B2();
-                break;
-            case 1:
-                this.b.s3();
-                break;
-            case 2:
-                s3 s3Var = this.b;
-                if (s3Var.u3 != null && !s3Var.k3.y()) {
-                    if (s3Var.S4(s3Var.u3, s3Var.s3, s3Var.t3)) {
-                        s3Var.x3 = true;
-                        break;
-                    } else {
-                        int left = (int) ((s3Var.s3 - s3Var.u3.getLeft()) - s3Var.getLeft());
-                        int top = (int) ((s3Var.t3 - s3Var.u3.getTop()) - s3Var.getTop());
-                        View view = s3Var.u3;
-                        if (view instanceof f0) {
-                            f0 f0Var = (f0) view;
-                            f0Var.getLocationOnScreen(new int[2]);
-                            float f10 = r8[0] + left;
-                            float f11 = r8[1] + top;
-                            if (!f0.h(f0Var.w, f10, f11) && !f0.h(f0Var.x, f10, f11)) {
-                                ArrayList arrayList = f0Var.y;
-                                int size = arrayList.size();
-                                int i10 = 0;
-                                while (i10 < size) {
-                                    Object obj = arrayList.get(i10);
-                                    i10++;
-                                    if (f0.h((c0) obj, f10, f11)) {
-                                    }
-                                }
-                            }
-                            s3Var.x3 = true;
-                            break;
-                        }
-                        View view2 = s3Var.u3;
-                        if (view2 instanceof j5) {
-                            j5 j5Var = (j5) view2;
-                            if (s3Var.i3(j5Var, left, top)) {
-                                try {
-                                    j5Var.performHapticFeedback(0);
-                                } catch (Exception unused) {
-                                }
-                                s3Var.x3 = true;
-                                break;
-                            } else {
-                                TL_iv.pageTableCell m9 = j5Var.m(left, top);
-                                if (m9 != null) {
-                                    p70 p70Var = s3Var.g4;
-                                    if (p70Var != null) {
-                                        s3Var.g4 = null;
-                                        p70Var.u();
-                                    }
-                                    s3Var.f2(j5Var);
-                                    s3Var.B0();
-                                    s3Var.requestDisallowInterceptTouchEvent(true);
-                                    s3Var.y3 = true;
-                                    s3Var.A3 = m9;
-                                    s3Var.B3 = m9;
-                                    j5Var.w(m9, m9);
-                                    try {
-                                        j5Var.performHapticFeedback(0);
-                                    } catch (Exception unused2) {
-                                    }
-                                    s3Var.x3 = true;
-                                    break;
-                                } else {
-                                    s3Var.I4(s3Var.u3);
-                                    break;
-                                }
-                            }
-                        } else if (view2 instanceof w5) {
-                            w5 w5Var = (w5) view2;
-                            e1 e1Var = w5Var.h;
-                            e1 e1Var2 = w5Var.f;
-                            LinearLayout linearLayout = w5Var.b;
-                            if (!w5.m(e1Var2, e1Var2.getLeft() + linearLayout.getLeft(), e1Var2.getTop() + linearLayout.getTop(), left, top)) {
-                                if (e1Var.getVisibility() == 0) {
-                                    break;
-                                }
-                                s3Var.I4(s3Var.u3);
-                                break;
-                            }
-                            s3Var.x3 = true;
-                            break;
-                        } else {
-                            if (view2 instanceof r0) {
-                                e1 e1Var3 = ((r0) view2).d;
-                                if (e1Var3.length() == 0 && left >= e1Var3.getLeft()) {
-                                    if (left <= e1Var3.getWidth() + e1Var3.getLeft() && top >= e1Var3.getTop()) {
-                                        break;
-                                    }
-                                }
-                            }
-                            s3Var.I4(s3Var.u3);
-                        }
-                    }
-                }
-                break;
-            case 3:
-                s3 s3Var2 = this.b;
-                g3 g3Var = s3Var2.k3;
-                if (g3Var != null && g3Var.y()) {
-                    for (int i11 = 0; i11 < s3Var2.getChildCount(); i11++) {
-                        View childAt = s3Var2.getChildAt(i11);
-                        if ((childAt instanceof w5) || (childAt instanceof j5) || (childAt instanceof j0) || (childAt instanceof r0)) {
-                            childAt.invalidate();
-                        }
-                    }
-                    g3Var.x();
-                    break;
-                }
-                break;
-            case 4:
-                this.b.n3(true);
-                break;
-            default:
-                this.b.Z2();
-                break;
+    public final void a(int i10, int i11, float f7, int i12) {
+        int i13 = i12 * 2;
+        int i14 = (int) ((i10 + i13) / f7);
+        int i15 = (int) ((i11 + i13) / f7);
+        Bitmap bitmap = this.c;
+        if (bitmap != null && bitmap.getWidth() == i14 && this.c.getHeight() == i15) {
+            this.c.eraseColor(0);
+        } else {
+            Bitmap bitmap2 = this.c;
+            if (bitmap2 != null) {
+                bitmap2.recycle();
+            }
+            this.c = Bitmap.createBitmap(i14, i15, Bitmap.Config.ARGB_8888);
+            this.d = new Canvas(this.c);
         }
+        this.f = f7;
+        this.e = i12;
+        this.d.save();
+        float f10 = i12 / f7;
+        this.d.translate(f10, f10);
+        float f11 = 1.0f / f7;
+        this.d.scale(f11, f11);
+        this.b.r(this.d, 255);
+        Utilities.stackBlurBitmap(this.c, (int) f10);
+        this.d.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        int i10 = this.i;
+        a aVar = this.b;
+        if (i10 == 255) {
+            canvas.save();
+            canvas.translate(this.g, this.h);
+            aVar.r(canvas, 255);
+            canvas.restore();
+            return;
+        }
+        if (i10 == 0) {
+            return;
+        }
+        double d = i10 / 255.0d;
+        double d10 = d / ((1.0d - d) * 6.0d);
+        double d11 = 1.0d + d10;
+        double sqrt = ((-d11) + Math.sqrt((d11 * d11) - (((-d10) * 4.0d) * (-d)))) / ((-2.0d) * d10);
+        int b10 = p.b((int) (d10 * sqrt * 255.0d), 0, 255);
+        int b11 = p.b((int) (sqrt * 255.0d), 0, 255);
+        if (b11 > 0 && this.c != null) {
+            Paint paint = this.a;
+            paint.setAlpha(b11);
+            canvas.save();
+            int i11 = this.g;
+            int i12 = this.e;
+            canvas.translate(i11 - i12, this.h - i12);
+            float f7 = this.f;
+            canvas.scale(f7, f7);
+            canvas.drawBitmap(this.c, 0.0f, 0.0f, paint);
+            canvas.restore();
+        }
+        if (b10 > 0) {
+            canvas.save();
+            canvas.translate(this.g, this.h);
+            aVar.r(canvas, b10);
+            canvas.restore();
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getAlpha() {
+        return this.i;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.i = i10;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setBounds(int i10, int i11, int i12, int i13) {
+        this.g = i10;
+        this.h = i11;
+        super.setBounds(i10, i11, i12, i13);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

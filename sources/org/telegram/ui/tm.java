@@ -1,177 +1,178 @@
 package org.telegram.ui;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.RichMessageLayout;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class tm implements ku0 {
-    public final TL_iv.RichMessage a;
-    public final ArrayList b;
-    public final MessageObject c;
+public final class tm extends org.telegram.ui.ActionBar.p1 {
+    public final /* synthetic */ um x;
 
-    public tm(TL_iv.RichMessage richMessage, ArrayList arrayList, MessageObject messageObject) {
-        this.a = richMessage;
-        this.b = arrayList;
-        this.c = messageObject;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public tm(um umVar, um umVar2) {
+        super(umVar2);
+        this.x = umVar;
     }
 
-    @Override // org.telegram.ui.ku0
-    public final boolean a(int i10) {
-        if (i10 < 0) {
+    @Override // org.telegram.ui.ActionBar.p1
+    public final boolean b() {
+        boolean z10;
+        boolean z11;
+        boolean z12;
+        co coVar = this.x.J0;
+        org.telegram.ui.ActionBar.d5 parentLayout = coVar.getParentLayout();
+        if (coVar.Oa) {
             return false;
         }
-        ArrayList arrayList = this.b;
-        if (i10 >= arrayList.size()) {
+        z10 = ((org.telegram.ui.ActionBar.n2) coVar).inPreviewMode;
+        if (z10) {
             return false;
         }
-        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i10);
-        if (!(pageBlock instanceof TL_iv.pageBlockVideo)) {
+        z11 = ((org.telegram.ui.ActionBar.n2) coVar).inBubbleMode;
+        if (z11 || AndroidUtilities.isInMultiwindow || parentLayout == null || coVar.pa > 0 || System.currentTimeMillis() - coVar.E9 < 250) {
             return false;
         }
-        TLRPC.Document b10 = k4.b(this.a, ((TL_iv.pageBlockVideo) pageBlock).video_id);
-        if (b10 != null) {
-            return MessageObject.isVideoDocument(b10);
+        if ((coVar == parentLayout.getLastFragment() && ((ActionBarLayout) parentLayout).B()) || ((ActionBarLayout) parentLayout).n) {
+            return false;
         }
-        return false;
+        z12 = ((org.telegram.ui.ActionBar.n2) coVar).isPaused;
+        if (z12 || !coVar.N5) {
+            return false;
+        }
+        bi.t3 t3Var = coVar.J1;
+        if (t3Var != null && t3Var.isShowing()) {
+            return false;
+        }
+        mk mkVar = coVar.Y;
+        return mkVar == null || mkVar.getTrendingStickersAlert() == null || !coVar.Y.getTrendingStickersAlert().isShowing();
     }
 
-    @Override // org.telegram.ui.ku0
-    public final File b(int i10) {
-        TLRPC.Document b10;
-        TLRPC.PhotoSize closestPhotoSizeWithSize;
-        if (i10 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.b;
-        if (i10 >= arrayList.size()) {
-            return null;
-        }
-        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i10);
-        boolean z4 = pageBlock instanceof TL_iv.pageBlockPhoto;
-        TL_iv.RichMessage richMessage = this.a;
-        if (!z4) {
-            if (!(pageBlock instanceof TL_iv.pageBlockVideo) || (b10 = k4.b(richMessage, ((TL_iv.pageBlockVideo) pageBlock).video_id)) == null) {
-                return null;
-            }
-            return k4.c(b10);
-        }
-        TLRPC.Photo f10 = k4.f(richMessage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
-        if (f10 == null || (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(f10.sizes, AndroidUtilities.getPhotoSize())) == null) {
-            return null;
-        }
-        return k4.c(closestPhotoSizeWithSize);
-    }
-
-    @Override // org.telegram.ui.ku0
-    public final String c(int i10) {
-        TLObject d = d(i10);
-        if (d instanceof TLRPC.Photo) {
-            d = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) d).sizes, AndroidUtilities.getPhotoSize());
-        }
-        return FileLoader.getAttachFileName(d);
-    }
-
-    @Override // org.telegram.ui.ku0
-    public final TLObject d(int i10) {
-        if (i10 < 0) {
-            return null;
-        }
-        ArrayList arrayList = this.b;
-        if (i10 >= arrayList.size()) {
-            return null;
-        }
-        TL_iv.PageBlock pageBlock = (TL_iv.PageBlock) arrayList.get(i10);
-        boolean z4 = pageBlock instanceof TL_iv.pageBlockPhoto;
-        TL_iv.RichMessage richMessage = this.a;
-        if (z4) {
-            return k4.f(richMessage, ((TL_iv.pageBlockPhoto) pageBlock).photo_id);
-        }
-        if (pageBlock instanceof TL_iv.pageBlockVideo) {
-            return k4.b(richMessage, ((TL_iv.pageBlockVideo) pageBlock).video_id);
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.ku0
-    public final boolean e(int i10) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.ku0
-    public final TLRPC.PhotoSize f(TLObject tLObject, int[] iArr) {
-        if (tLObject instanceof TLRPC.Photo) {
-            TLRPC.PhotoSize closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(((TLRPC.Photo) tLObject).sizes, AndroidUtilities.getPhotoSize());
-            if (closestPhotoSizeWithSize == null) {
-                iArr[0] = -1;
-                return null;
-            }
-            int i10 = closestPhotoSizeWithSize.size;
-            iArr[0] = i10;
-            if (i10 == 0) {
-                iArr[0] = -1;
-            }
-            return closestPhotoSizeWithSize;
-        }
-        if (tLObject instanceof TLRPC.Document) {
-            TLRPC.Document document = (TLRPC.Document) tLObject;
-            TLRPC.PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 320, false, null, true);
-            if (closestPhotoSizeWithSize2 == null) {
-                closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90);
-            }
-            if (closestPhotoSizeWithSize2 != null) {
-                int i11 = closestPhotoSizeWithSize2.size;
-                iArr[0] = i11;
-                if (i11 == 0) {
-                    iArr[0] = -1;
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void e(float f7, float f10, boolean z10) {
+        org.telegram.ui.ActionBar.k kVar;
+        ij ijVar;
+        um umVar = this.x;
+        co coVar = umVar.J0;
+        if (coVar.getParentLayout() == null || !((ActionBarLayout) coVar.getParentLayout()).n) {
+            coVar.w9 = f7;
+            coVar.x9 = f10;
+            bi.t3 t3Var = coVar.J1;
+            if (t3Var == null || !t3Var.isShowing()) {
+                kVar = ((org.telegram.ui.ActionBar.n2) coVar).actionBar;
+                kVar.setTranslationY(f7);
+                dl dlVar = coVar.bb;
+                if (dlVar != null) {
+                    dlVar.setTranslationY(coVar.w9 + (coVar.o1 != null ? r2.getCurrentHeight() : 0));
                 }
-                return closestPhotoSizeWithSize2;
+                di.f4 f4Var = coVar.w1;
+                if (f4Var != null) {
+                    f4Var.setTranslationY(f7);
+                }
+                di.f4 f4Var2 = coVar.v1;
+                if (f4Var2 != null) {
+                    f4Var2.setTranslationY(f7);
+                }
+                FrameLayout frameLayout = coVar.Q0;
+                if (frameLayout != null) {
+                    frameLayout.setTranslationY(f7 / 2.0f);
+                }
+                float f11 = f7 / 2.0f;
+                coVar.P.setTranslationY(f11);
+                int i10 = (int) f7;
+                coVar.X0.setBackgroundTranslation(i10);
+                gl glVar = coVar.b3;
+                if (glVar != null) {
+                    glVar.t0 = f11;
+                    glVar.s();
+                }
+                di.r6 r6Var = coVar.y2;
+                if (r6Var != null) {
+                    org.telegram.ui.Components.fa faVar = (org.telegram.ui.Components.fa) r6Var.b;
+                    faVar.u = f7;
+                    faVar.d.invalidate();
+                }
+                coVar.setFragmentPanTranslationOffset(i10);
+                coVar.o9();
+                coVar.r9();
+            } else {
+                umVar.setNonNoveTranslation(f7);
             }
+            coVar.x0.invalidate();
+            org.telegram.ui.Components.qc qcVar = org.telegram.ui.Components.qc.w;
+            if (qcVar != null && coVar.Zb != null) {
+                qcVar.l();
+            }
+            if (AndroidUtilities.isTablet() && (coVar.getParentActivity() instanceof LaunchActivity)) {
+                org.telegram.ui.ActionBar.n2 lastFragment = ((LaunchActivity) coVar.getParentActivity()).O().getLastFragment();
+                if (lastFragment instanceof uy) {
+                    uy uyVar = (uy) lastFragment;
+                    uyVar.v1 = f7;
+                    uyVar.X4();
+                }
+            }
+            org.telegram.ui.Components.i40 i40Var = coVar.s2;
+            if (i40Var != null && i40Var.getVisibility() == 0) {
+                coVar.s2.f(coVar.Y.getAudioVideoButtonContainer(), false);
+            }
+            hk hkVar = coVar.X1;
+            if (hkVar == null || (ijVar = hkVar.A0) == null) {
+                return;
+            }
+            ijVar.setExtraTranslationY(AndroidUtilities.dp(72.0f) + f7);
         }
-        return null;
     }
 
-    @Override // org.telegram.ui.ku0
-    public final Object g() {
-        MessageObject messageObject = this.c;
-        return messageObject != null ? messageObject : this.a;
-    }
-
-    @Override // org.telegram.ui.ku0
-    public final TL_iv.PageBlock get(int i10) {
-        return (TL_iv.PageBlock) this.b.get(i10);
-    }
-
-    @Override // org.telegram.ui.ku0
-    public final List getAll() {
-        return this.b;
-    }
-
-    @Override // org.telegram.ui.ku0
-    public final void h(TL_iv.PageBlock pageBlock) {
-        RichMessageLayout richMessageLayout;
-        MessageObject messageObject = this.c;
-        if (messageObject == null || (richMessageLayout = messageObject.richLayout) == null) {
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void f() {
+        org.telegram.ui.Components.ie ieVar;
+        co coVar = this.x.J0;
+        mk mkVar = coVar.Y;
+        if (mkVar != null && (ieVar = mkVar.u0) != null) {
+            ieVar.run();
+            mkVar.u0 = null;
+        }
+        org.telegram.ui.Components.i40 i40Var = coVar.s2;
+        if (i40Var == null || i40Var.getVisibility() != 0) {
             return;
         }
-        richMessageLayout.setSlideshowPage(pageBlock);
+        coVar.s2.f(coVar.Y.getAudioVideoButtonContainer(), false);
     }
 
-    @Override // org.telegram.ui.ku0
-    public final CharSequence i(int i10) {
-        return null;
+    @Override // org.telegram.ui.ActionBar.p1
+    public final void g(int i10, boolean z10) {
+        org.telegram.ui.Components.sd sdVar;
+        co coVar = this.x.J0;
+        coVar.D4 = true;
+        mk mkVar = coVar.Y;
+        if (mkVar != null) {
+            if (z10 && (sdVar = mkVar.V) != null) {
+                AndroidUtilities.cancelRunOnUIThread(sdVar);
+                mkVar.V.run();
+            }
+            org.telegram.ui.Components.uc ucVar = mkVar.W;
+            if (ucVar != null) {
+                AndroidUtilities.cancelRunOnUIThread(ucVar);
+                mkVar.W.run();
+            }
+        }
+        org.telegram.ui.Components.i40 i40Var = coVar.f2;
+        if (i40Var != null) {
+            i40Var.b(false);
+        }
+        di.f4 f4Var = coVar.A1;
+        if (f4Var != null) {
+            f4Var.e(true);
+        }
     }
 
-    @Override // org.telegram.ui.ku0
-    public final int j() {
-        return this.b.size();
+    @Override // org.telegram.ui.ActionBar.p1
+    public final int i() {
+        um umVar = this.x;
+        co coVar = umVar.J0;
+        if (umVar.getKeyboardHeight() > AndroidUtilities.dp(20.0f) || !coVar.Y.t0()) {
+            return 0;
+        }
+        return coVar.Y.getEmojiPadding();
     }
 }

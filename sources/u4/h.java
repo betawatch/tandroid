@@ -1,19 +1,15 @@
 package u4;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class h {
-    public final long a;
-    public final boolean b;
-    public final long c;
-    public final long d;
-    public final boolean e;
+    public final String a;
+    public final String b;
+    public final g0.c c;
 
-    public h(long j10, boolean z4, long j11, long j12, boolean z10) {
-        this.a = j10;
-        this.b = z4;
-        this.c = j11;
-        this.d = j12;
-        this.e = z10;
+    public h(g0.c cVar, String str, String str2) {
+        this.c = cVar;
+        this.a = str;
+        this.b = str2;
     }
 }

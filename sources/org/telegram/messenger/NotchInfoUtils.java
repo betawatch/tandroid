@@ -7,7 +7,7 @@ import android.graphics.RectF;
 import android.os.Build;
 import android.util.DisplayMetrics;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class NotchInfoUtils {
     private static final String BOTTOM_MARKER = "@bottom";
@@ -15,7 +15,7 @@ public class NotchInfoUtils {
     private static final String LEFT_MARKER = "@left";
     private static final String RIGHT_MARKER = "@right";
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static final class NotchInfo {
         public RectF bounds;
         public int gravity;
@@ -26,7 +26,7 @@ public class NotchInfoUtils {
     }
 
     public static NotchInfo getInfo(Context context) {
-        float f10;
+        float f7;
         int i10;
         if (Build.VERSION.SDK_INT < 28) {
             return null;
@@ -41,35 +41,35 @@ public class NotchInfoUtils {
             String trim = string.trim();
             DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
             int i11 = displayMetrics.widthPixels;
-            float f11 = displayMetrics.density;
+            float f10 = displayMetrics.density;
             if (trim.endsWith(RIGHT_MARKER)) {
-                f10 = i11;
+                f7 = i11;
                 trim = trim.substring(0, trim.length() - 6).trim();
                 i10 = 5;
             } else if (trim.endsWith(LEFT_MARKER)) {
                 trim = trim.substring(0, trim.length() - 5).trim();
-                f10 = 0.0f;
+                f7 = 0.0f;
                 i10 = 3;
             } else {
-                f10 = i11 / 2.0f;
+                f7 = i11 / 2.0f;
                 i10 = 17;
             }
             boolean endsWith = trim.endsWith(DP_MARKER);
             if (endsWith) {
-                trim = e2.c.j(trim, 3, 0);
+                trim = com.google.android.gms.internal.vision.e2.i(3, 0, trim);
             }
             if (trim.contains(BOTTOM_MARKER)) {
                 trim = trim.split(BOTTOM_MARKER, 2)[0].trim();
             }
             try {
-                i0.d[] c3 = j7.z7.c(trim);
+                i0.e[] c10 = v7.g8.c(trim);
                 Path path = new Path();
-                i0.d.b(c3, path);
+                i0.e.b(c10, path);
                 Matrix matrix = new Matrix();
                 if (endsWith) {
-                    matrix.postScale(f11, f11);
+                    matrix.postScale(f10, f10);
                 }
-                matrix.postTranslate(f10, 0.0f);
+                matrix.postTranslate(f7, 0.0f);
                 path.transform(matrix);
                 notchInfo.path = path;
                 RectF rectF = new RectF();

@@ -1,31 +1,91 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.ImageView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class cf extends org.telegram.ui.ui0 {
-    public final /* synthetic */ int x0;
-    public final /* synthetic */ Object y0;
+public final class cf extends ImageView {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ cf(Object obj, Context context, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
-        super(context, f6Var);
-        this.x0 = i10;
-        this.y0 = obj;
+    public /* synthetic */ cf(ChatActivityEnterView chatActivityEnterView, Context context, int i10) {
+        super(context);
+        this.a = i10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.ui0
-    public final void m(long j10) {
-        switch (this.x0) {
+    @Override // android.view.View
+    public void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        switch (this.a) {
             case 0:
-                ((ChatActivityEnterView) this.y0).setEffectId(j10);
+                super.onLayout(z10, i10, i11, i12, i13);
+                post(new ie(this.b, 5));
                 break;
             default:
-                li liVar = (li) this.y0;
-                vh vhVar = liVar.F0;
-                liVar.K0 = j10;
-                vhVar.setEffect(j10);
+                super.onLayout(z10, i10, i11, i12, i13);
+                break;
+        }
+    }
+
+    @Override // android.view.View
+    public boolean onTouchEvent(MotionEvent motionEvent) {
+        switch (this.a) {
+            case 2:
+                if (getAlpha() <= 0.0f) {
+                    return false;
+                }
+                return super.onTouchEvent(motionEvent);
+            default:
+                return super.onTouchEvent(motionEvent);
+        }
+    }
+
+    @Override // android.view.View
+    public final void setAlpha(float f7) {
+        switch (this.a) {
+            case 0:
+                super.setAlpha(f7);
+                af afVar = this.b.I1;
+                if (afVar != null) {
+                    afVar.setTranslationX(afVar.a);
+                    break;
+                }
+                break;
+            case 1:
+                super.setAlpha(f7);
+                af afVar2 = this.b.I1;
+                if (afVar2 != null) {
+                    afVar2.setTranslationX(afVar2.a);
+                    break;
+                }
+                break;
+            default:
+                super.setAlpha(f7);
+                ve veVar = this.b.Z0;
+                if (veVar != null) {
+                    veVar.invalidate();
+                    break;
+                }
+                break;
+        }
+    }
+
+    @Override // android.widget.ImageView, android.view.View
+    public void setVisibility(int i10) {
+        switch (this.a) {
+            case 2:
+                super.setVisibility(i10);
+                ve veVar = this.b.Z0;
+                if (veVar != null) {
+                    veVar.invalidate();
+                    break;
+                }
+                break;
+            default:
+                super.setVisibility(i10);
                 break;
         }
     }

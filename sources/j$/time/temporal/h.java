@@ -19,13 +19,13 @@ public enum h implements q {
     }
 
     @Override // j$.time.temporal.q
-    public final Temporal j(Temporal temporal, long j10) {
+    public final Temporal j(Temporal temporal, long j3) {
         int i10 = b.a[ordinal()];
         if (i10 == 1) {
-            return temporal.c(j$.com.android.tools.r8.a.O(temporal.j(r0), j10), i.c);
+            return temporal.c(j$.com.android.tools.r8.a.O(temporal.j(r0), j3), i.c);
         }
         if (i10 == 2) {
-            return temporal.d(j10 / 4, ChronoUnit.YEARS).d((j10 % 4) * 3, ChronoUnit.MONTHS);
+            return temporal.d(j3 / 4, ChronoUnit.YEARS).d((j3 % 4) * 3, ChronoUnit.MONTHS);
         }
         throw new IllegalStateException("Unreachable");
     }

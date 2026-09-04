@@ -19,24 +19,24 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 import org.telegram.ui.Components.ScrollSlidingTextTabStrip;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class cc extends FrameLayout {
-    public final ac B;
-    public final org.telegram.ui.Components.rl0 C;
-    public ng.k D;
-    public boolean E;
-    public final LinearLayout F;
-    public final TLRPC.Chat G;
-    public String H;
-    public String I;
-    public int J;
-    public int K;
-    public int L;
+    public final ac E;
+    public final org.telegram.ui.Components.ll0 F;
+    public bh.l G;
+    public boolean H;
+    public final LinearLayout I;
+    public final TLRPC.Chat J;
+    public String K;
+    public String L;
     public int M;
+    public int N;
+    public int O;
+    public int P;
     public final long a;
     public final int b;
-    public final oa1 c;
+    public final bb1 c;
     public TL_stories.TL_premium_boostsStatus d;
     public final org.telegram.ui.ActionBar.f6 e;
     public ScrollSlidingTextTabStrip f;
@@ -49,8 +49,8 @@ public final class cc extends FrameLayout {
     public final ArrayList x;
     public int y;
 
-    public cc(oa1 oa1Var, long j10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(oa1Var.getParentActivity());
+    public cc(bb1 bb1Var, long j3, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(bb1Var.getParentActivity());
         int i10 = UserConfig.selectedAccount;
         this.b = i10;
         this.h = new ArrayList();
@@ -58,40 +58,40 @@ public final class cc extends FrameLayout {
         this.x = new ArrayList();
         this.y = 0;
         ac acVar = new ac(this);
-        this.B = acVar;
-        this.H = "";
-        this.I = "";
-        this.J = 5;
-        this.K = 5;
-        this.c = oa1Var;
-        Activity parentActivity = oa1Var.getParentActivity();
+        this.E = acVar;
+        this.K = "";
+        this.L = "";
+        this.M = 5;
+        this.N = 5;
+        this.c = bb1Var;
+        Activity parentActivity = bb1Var.getParentActivity();
         this.e = f6Var;
-        this.a = j10;
-        this.G = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
-        org.telegram.ui.Components.rl0 rl0Var = new org.telegram.ui.Components.rl0(parentActivity, null);
-        this.C = rl0Var;
-        rl0Var.setSections(true);
-        rl0Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.a7, f6Var));
-        rl0Var.setLayoutManager(new f2.i0());
-        f2.l lVar = new f2.l();
-        lVar.m = false;
-        lVar.C = false;
-        rl0Var.setItemAnimator(lVar);
-        rl0Var.setClipToPadding(false);
-        rl0Var.setOnItemClickListener(new vb(this, parentActivity, j10, f6Var, oa1Var));
-        addView(rl0Var);
-        MessagesController.getInstance(i10).getBoostsController().getBoostsStats(j10, new xb(this, 0));
-        rl0Var.setAdapter(acVar);
+        this.a = j3;
+        this.J = MessagesController.getInstance(i10).getChat(Long.valueOf(-j3));
+        org.telegram.ui.Components.ll0 ll0Var = new org.telegram.ui.Components.ll0(parentActivity, null);
+        this.F = ll0Var;
+        ll0Var.setSections(true);
+        ll0Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.a7, f6Var));
+        ll0Var.setLayoutManager(new s4.c0());
+        s4.j jVar = new s4.j();
+        jVar.m = false;
+        jVar.C = false;
+        ll0Var.setItemAnimator(jVar);
+        ll0Var.setClipToPadding(false);
+        ll0Var.setOnItemClickListener(new vb(this, parentActivity, j3, f6Var, bb1Var));
+        addView(ll0Var);
+        MessagesController.getInstance(i10).getBoostsController().getBoostsStats(j3, new xb(this, 0));
+        ll0Var.setAdapter(acVar);
         d(false);
         Context context = getContext();
         LinearLayout linearLayout = new LinearLayout(context);
-        this.F = linearLayout;
+        this.I = linearLayout;
         linearLayout.setOrientation(1);
-        org.telegram.ui.Components.jj0 jj0Var = new org.telegram.ui.Components.jj0(context);
-        jj0Var.setAutoRepeat(true);
-        jj0Var.f(R.raw.statistic_preload, 120, 120, null);
-        jj0Var.d();
-        TextView g10 = org.telegram.messenger.y3.g(context, 1, 20.0f);
+        org.telegram.ui.Components.aj0 aj0Var = new org.telegram.ui.Components.aj0(context);
+        aj0Var.setAutoRepeat(true);
+        aj0Var.f(R.raw.statistic_preload, 120, 120, null);
+        aj0Var.d();
+        TextView g10 = org.telegram.messenger.w1.g(context, 1, 20.0f);
         g10.setTypeface(AndroidUtilities.bold());
         int i11 = org.telegram.ui.ActionBar.j6.Oi;
         g10.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
@@ -103,20 +103,20 @@ public final class cc extends FrameLayout {
         int i12 = org.telegram.ui.ActionBar.j6.Pi;
         textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i12, false));
         textView.setTag(Integer.valueOf(i12));
-        org.telegram.messenger.y3.r(R.string.LoadingStatsDescription, textView, 1);
-        this.F.addView(jj0Var, k7.b6.t(120, 120, 1, 0, 0, 0, 20));
-        this.F.addView(g10, k7.b6.t(-2, -2, 1, 0, 0, 0, 10));
-        this.F.addView(textView, k7.b6.q(-2, -2, 1));
-        addView(this.F, k7.b6.d(240, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
-        this.F.setAlpha(0.0f);
-        this.F.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
-        lh.t7.y(i10, false).v();
+        org.telegram.messenger.wl.k(R.string.LoadingStatsDescription, textView, 1);
+        this.I.addView(aj0Var, w7.x5.t(120, 120, 1, 0, 0, 0, 20));
+        this.I.addView(g10, w7.x5.t(-2, -2, 1, 0, 0, 0, 10));
+        this.I.addView(textView, w7.x5.q(-2, -2, 1));
+        addView(this.I, w7.x5.d(240, -2.0f, 17, 0.0f, 0.0f, 0.0f, 30.0f));
+        this.I.setAlpha(0.0f);
+        this.I.animate().alpha(1.0f).setDuration(200L).setStartDelay(500L).start();
+        zh.s5.y(i10, false).v();
     }
 
     public final void a(CountDownLatch countDownLatch, yb ybVar) {
         TL_stories.TL_premium_getBoostsList tL_premium_getBoostsList = new TL_stories.TL_premium_getBoostsList();
-        tL_premium_getBoostsList.limit = this.K;
-        tL_premium_getBoostsList.offset = this.H;
+        tL_premium_getBoostsList.limit = this.N;
+        tL_premium_getBoostsList.offset = this.K;
         int i10 = this.b;
         tL_premium_getBoostsList.peer = MessagesController.getInstance(i10).getInputPeer(this.a);
         ConnectionsManager.getInstance(i10).sendRequest(tL_premium_getBoostsList, new zb(this, countDownLatch, ybVar, 1), 2);
@@ -124,19 +124,19 @@ public final class cc extends FrameLayout {
 
     public final void b(CountDownLatch countDownLatch, yb ybVar) {
         TL_stories.TL_premium_getBoostsList tL_premium_getBoostsList = new TL_stories.TL_premium_getBoostsList();
-        tL_premium_getBoostsList.limit = this.J;
+        tL_premium_getBoostsList.limit = this.M;
         tL_premium_getBoostsList.gifts = true;
-        tL_premium_getBoostsList.offset = this.I;
+        tL_premium_getBoostsList.offset = this.L;
         int i10 = this.b;
         tL_premium_getBoostsList.peer = MessagesController.getInstance(i10).getInputPeer(this.a);
         ConnectionsManager.getInstance(i10).sendRequest(tL_premium_getBoostsList, new zb(this, countDownLatch, ybVar, 0), 2);
     }
 
     public final void c(Boolean bool) {
-        if (this.E) {
+        if (this.H) {
             return;
         }
-        this.E = true;
+        this.H = true;
         if (bool == null) {
             Utilities.globalQueue.postRunnable(new yb(this, 0));
         } else if (bool.booleanValue()) {
@@ -146,7 +146,7 @@ public final class cc extends FrameLayout {
         }
     }
 
-    public final void d(boolean z4) {
+    public final void d(boolean z10) {
         ArrayList arrayList = this.x;
         ArrayList arrayList2 = new ArrayList(arrayList);
         arrayList.clear();
@@ -160,10 +160,10 @@ public final class cc extends FrameLayout {
                 int i10 = 0;
                 while (i10 < this.d.prepaid_giveaways.size()) {
                     TL_stories.PrepaidGiveaway prepaidGiveaway = this.d.prepaid_giveaways.get(i10);
-                    boolean z10 = i10 == this.d.prepaid_giveaways.size() - 1;
+                    boolean z11 = i10 == this.d.prepaid_giveaways.size() - 1;
                     bc bcVar = new bc(11, true);
                     bcVar.e = prepaidGiveaway;
-                    bcVar.f = z10;
+                    bcVar.f = z11;
                     arrayList.add(bcVar);
                     i10++;
                 }
@@ -171,7 +171,7 @@ public final class cc extends FrameLayout {
             }
             arrayList.add(new bc(13, LocaleController.getString(R.string.Boosters)));
             int i11 = this.y;
-            TLRPC.Chat chat = this.G;
+            TLRPC.Chat chat = this.J;
             if (i11 == 0) {
                 ArrayList arrayList3 = this.h;
                 if (arrayList3.isEmpty()) {
@@ -217,8 +217,8 @@ public final class cc extends FrameLayout {
                 arrayList.add(new bc(6, LocaleController.getString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingGetMoreBoosts2 : R.string.BoostingGetMoreBoostsGroup)));
             }
         }
-        ac acVar = this.B;
-        if (z4) {
+        ac acVar = this.E;
+        if (z10) {
             acVar.E(arrayList2, arrayList);
         } else {
             acVar.l();

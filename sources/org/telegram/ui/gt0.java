@@ -1,55 +1,33 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.animation.ValueAnimator;
+import android.graphics.Outline;
+import android.view.View;
+import android.view.ViewOutlineProvider;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class gt0 extends AnimatorListenerAdapter {
+public final class gt0 extends ViewOutlineProvider {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ht0 b;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ Object c;
 
-    public gt0(ht0 ht0Var, int i10) {
-        this.b = ht0Var;
+    public /* synthetic */ gt0(Object obj, float f7, int i10) {
         this.a = i10;
+        this.c = obj;
+        this.b = f7;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        if (this.b.b.g8) {
-            PhotoViewer photoViewer = this.b.b;
-            if (photoViewer.o1) {
-                photoViewer.B3();
-            }
-        }
-        if (this.a == 3) {
-            PhotoViewer photoViewer2 = this.b.b;
-            photoViewer2.G2(photoViewer2.M4, false, true, true);
-        }
-    }
-
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        PhotoViewer photoViewer = this.b.b;
-        photoViewer.M0.setVisibility(0);
-        if (photoViewer.E3()) {
-            photoViewer.k0.setVisibility(0);
-        } else {
-            photoViewer.P0.setVisibility(0);
-        }
-        photoViewer.C.setVisibility(0);
-        if (photoViewer.f2) {
-            du0 du0Var = photoViewer.N1;
-            du0Var.setVisibility(du0Var.getTag() != null ? 0 : 4);
-        }
-        if (photoViewer.a2 || photoViewer.b2) {
-            return;
-        }
-        int i10 = photoViewer.Z1;
-        if ((i10 == 0 || i10 == 4 || ((i10 == 2 || i10 == 5) && photoViewer.d7.size() > 1)) && !photoViewer.c4) {
-            photoViewer.K0.setVisibility(0);
-            photoViewer.L0.setVisibility(0);
-            photoViewer.s3();
+    @Override // android.view.ViewOutlineProvider
+    public final void getOutline(View view, Outline outline) {
+        switch (this.a) {
+            case 0:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * ((Float) ((ValueAnimator) this.c).getAnimatedValue()).floatValue() * AndroidUtilities.dp(10.0f));
+                break;
+            default:
+                outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight(), (1.0f / this.b) * (1.0f - ((PhotoViewer) this.c).W) * AndroidUtilities.dp(10.0f));
+                break;
         }
     }
 }

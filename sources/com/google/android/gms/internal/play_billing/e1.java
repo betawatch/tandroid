@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class e1 {
     protected int zza;
@@ -10,21 +10,21 @@ public abstract class e1 {
     public final byte[] a() {
         try {
             v1 v1Var = (v1) this;
-            int e = v1Var.e();
-            byte[] bArr = new byte[e];
-            m1 m1Var = new m1(bArr, e);
+            int e7 = v1Var.e();
+            byte[] bArr = new byte[e7];
+            m1 m1Var = new m1(bArr, e7);
             t2 a2 = q2.c.a(v1Var.getClass());
             i2 i2Var = m1Var.a;
             if (i2Var == null) {
                 i2Var = new i2(m1Var);
             }
             a2.c(v1Var, i2Var);
-            if (e - m1Var.d == 0) {
+            if (e7 - m1Var.d == 0) {
                 return bArr;
             }
             throw new IllegalStateException("Did not write as much data as expected.");
-        } catch (IOException e6) {
-            throw new RuntimeException(android.support.v4.media.a.o("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e6);
+        } catch (IOException e10) {
+            throw new RuntimeException(a4.a.p("Serializing ", getClass().getName(), " to a byte array threw an IOException (should never happen)."), e10);
         }
     }
 

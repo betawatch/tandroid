@@ -2,7 +2,7 @@ package org.telegram.ui.Components;
 
 import org.telegram.messenger.LanguageDetector;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class a implements LanguageDetector.StringCallback {
     public final /* synthetic */ int a;
@@ -18,13 +18,13 @@ public final /* synthetic */ class a implements LanguageDetector.StringCallback 
         switch (this.a) {
             case 0:
                 f0 f0Var = this.b;
-                f0Var.o0 = str;
-                f0Var.L0.N(true);
+                f0Var.r0 = str;
+                f0Var.O0.N(true);
                 break;
             default:
                 f0 f0Var2 = this.b;
-                f0Var2.o0 = str;
-                f0Var2.L0.N(true);
+                f0Var2.r0 = str;
+                f0Var2.O0.N(true);
                 break;
         }
     }

@@ -4,21 +4,23 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ta0 extends u5 {
-    public final /* synthetic */ wa0 a;
+public final class ta0 extends z5 {
+    public final /* synthetic */ ua0 a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ta0(wa0 wa0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
+    public ta0(ua0 ua0Var, TLRPC.Document document, Paint.FontMetricsInt fontMetricsInt) {
         super(document, fontMetricsInt);
-        this.a = wa0Var;
+        this.a = ua0Var;
     }
 
-    @Override // org.telegram.ui.Components.u5, android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
-        int i15 = i14 + i12;
-        int i16 = this.measuredSize;
-        this.a.c.set((int) f10, (i15 - i16) / 2, (int) (f10 + i16), (i15 + i16) / 2);
+    @Override // org.telegram.ui.Components.z5, android.text.style.ReplacementSpan
+    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f7, int i12, int i13, int i14, Paint paint) {
+        ua0 ua0Var = this.a;
+        int i15 = ua0Var.y;
+        int i16 = i14 + i12;
+        int i17 = this.measuredSize;
+        ua0Var.c.set((int) f7, i2.g.C(i16, i17, 2, i15), (int) (f7 + i17), ((i16 + i17) / 2) + i15);
     }
 }

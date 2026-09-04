@@ -20,9 +20,9 @@ public final class t {
             for (Map.Entry entry2 : ((Map) entry.getValue()).entrySet()) {
                 String str = (String) entry2.getValue();
                 String str2 = (String) entry2.getValue();
-                Long l10 = (Long) entry2.getKey();
+                Long l4 = (Long) entry2.getKey();
                 ConcurrentHashMap concurrentHashMap = u.a;
-                hashMap2.put(str, new AbstractMap.SimpleImmutableEntry(str2, l10));
+                hashMap2.put(str, new AbstractMap.SimpleImmutableEntry(str2, l4));
             }
             ArrayList arrayList2 = new ArrayList(hashMap2.values());
             Collections.sort(arrayList2, u.b);
@@ -33,10 +33,10 @@ public final class t {
         Collections.sort(arrayList, u.b);
     }
 
-    public final String a(long j10, TextStyle textStyle) {
+    public final String a(long j3, TextStyle textStyle) {
         Map map = (Map) this.a.get(textStyle);
         if (map != null) {
-            return (String) map.get(Long.valueOf(j10));
+            return (String) map.get(Long.valueOf(j3));
         }
         return null;
     }

@@ -1,21 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class j01 extends org.telegram.ui.Cells.i5 {
-    public final /* synthetic */ n01 v;
+public final /* synthetic */ class j01 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k01 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public j01(n01 n01Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(18, 70, context, f6Var, false);
-        this.v = n01Var;
+    public /* synthetic */ j01(k01 k01Var, int i10) {
+        this.a = i10;
+        this.b = k01Var;
     }
 
-    @Override // org.telegram.ui.Cells.i5
-    public final int a(int i10) {
-        this.v.e.getClass();
-        return i10;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ProfileActivity profileActivity = this.b.D0;
+                wz0 wz0Var = profileActivity.B5;
+                if (wz0Var != null) {
+                    wz0Var.dismiss();
+                    profileActivity.B5 = null;
+                    break;
+                }
+                break;
+            default:
+                try {
+                    org.telegram.ui.Components.ll0 currentListView = this.b.x0.O.getCurrentListView();
+                    if (currentListView != null && currentListView.getAdapter() != null) {
+                        currentListView.getAdapter().l();
+                        break;
+                    }
+                } catch (Throwable unused) {
+                    return;
+                }
+                break;
+        }
     }
 }

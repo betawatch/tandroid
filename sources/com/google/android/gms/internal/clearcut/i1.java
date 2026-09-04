@@ -1,39 +1,47 @@
 package com.google.android.gms.internal.clearcut;
 
+import java.lang.reflect.Field;
+import sun.misc.Unsafe;
+
 /* loaded from: classes.dex */
-public final class i1 extends j1 {
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final void c(Object obj, long j10, double d) {
-        this.a.putDouble(obj, j10, d);
+public abstract class i1 {
+    public final Unsafe a;
+
+    public i1(Unsafe unsafe) {
+        this.a = unsafe;
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final void d(Object obj, long j10, float f10) {
-        this.a.putFloat(obj, j10, f10);
+    public final long a(Field field) {
+        return this.a.objectFieldOffset(field);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final void f(Object obj, long j10, boolean z4) {
-        this.a.putBoolean(obj, j10, z4);
+    public final void b(long j3, Object obj, int i10) {
+        this.a.putInt(obj, j3, i10);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final boolean i(Object obj, long j10) {
-        return this.a.getBoolean(obj, j10);
+    public abstract void c(Object obj, long j3, double d);
+
+    public abstract void d(Object obj, long j3, float f7);
+
+    public final void e(Object obj, long j3, long j10) {
+        this.a.putLong(obj, j3, j10);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final float j(Object obj, long j10) {
-        return this.a.getFloat(obj, j10);
+    public abstract void f(Object obj, long j3, boolean z10);
+
+    public final int g(Object obj, long j3) {
+        return this.a.getInt(obj, j3);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final double k(Object obj, long j10) {
-        return this.a.getDouble(obj, j10);
+    public final long h(Object obj, long j3) {
+        return this.a.getLong(obj, j3);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.j1
-    public final byte l(Object obj, long j10) {
-        return this.a.getByte(obj, j10);
-    }
+    public abstract boolean i(Object obj, long j3);
+
+    public abstract float j(Object obj, long j3);
+
+    public abstract double k(Object obj, long j3);
+
+    public abstract byte l(Object obj, long j3);
 }

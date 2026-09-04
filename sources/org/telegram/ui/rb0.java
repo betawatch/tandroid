@@ -1,32 +1,70 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.ConnectionsManager;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rb0 implements Runnable {
+public final class rb0 implements TextWatcher {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yb0 b;
+    public final /* synthetic */ xb0 b;
 
-    public /* synthetic */ rb0(yb0 yb0Var, int i10) {
+    public /* synthetic */ rb0(xb0 xb0Var, int i10) {
         this.a = i10;
-        this.b = yb0Var;
+        this.b = xb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
         switch (this.a) {
             case 0:
-                yb0 yb0Var = this.b;
-                if (yb0Var.h >= 0) {
-                    ConnectionsManager.getInstance(yb0Var.b).cancelRequest(yb0Var.h, true);
-                    yb0Var.h = -1;
-                    break;
-                }
+                Emoji.replaceEmoji(editable, this.b.K.getPaint().getFontMetricsInt(), false);
                 break;
             default:
-                this.b.a();
+                xb0 xb0Var = this.b;
+                if (!xb0Var.O) {
+                    if (editable.toString().equals("0")) {
+                        xb0Var.F.setText("");
+                        break;
+                    } else {
+                        try {
+                            int parseInt = Integer.parseInt(editable.toString());
+                            if (parseInt <= 100000) {
+                                xb0Var.W(parseInt);
+                                break;
+                            } else {
+                                xb0Var.X();
+                                break;
+                            }
+                        } catch (NumberFormatException unused) {
+                            xb0Var.X();
+                        }
+                    }
+                }
                 break;
         }
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        int i13 = this.a;
+    }
+
+    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
+    }
+
+    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
     }
 }

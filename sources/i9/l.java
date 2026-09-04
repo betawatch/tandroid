@@ -1,69 +1,25 @@
 package i9;
 
-import android.util.Log;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import com.google.android.gms.tasks.Tasks;
-import java.io.File;
-import java.io.IOException;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executor;
-import java.util.concurrent.atomic.AtomicReference;
+import java.lang.reflect.Field;
+import java.security.PrivilegedExceptionAction;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class l implements Callable {
-    public final /* synthetic */ long a;
-    public final /* synthetic */ Throwable b;
-    public final /* synthetic */ Thread c;
-    public final /* synthetic */ e3.g d;
-    public final /* synthetic */ n e;
-
-    public l(n nVar, long j10, Throwable th2, Thread thread, e3.g gVar) {
-        this.e = nVar;
-        this.a = j10;
-        this.b = th2;
-        this.c = thread;
-        this.d = gVar;
+public final class l implements PrivilegedExceptionAction {
+    public static Unsafe a() {
+        for (Field field : Unsafe.class.getDeclaredFields()) {
+            field.setAccessible(true);
+            Object obj = field.get(null);
+            if (Unsafe.class.isInstance(obj)) {
+                return (Unsafe) Unsafe.class.cast(obj);
+            }
+        }
+        throw new NoSuchFieldError("the Unsafe");
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        n9.b bVar;
-        String str;
-        long j10 = this.a;
-        long j11 = j10 / 1000;
-        n nVar = this.e;
-        String e = nVar.e();
-        if (e == null) {
-            Log.e("FirebaseCrashlytics", "Tried to write a fatal exception while no session was open.", null);
-            return Tasks.forResult(null);
-        }
-        nVar.c.o();
-        a9.a aVar = nVar.m;
-        aVar.getClass();
-        String concat = "Persisting fatal event for session ".concat(e);
-        if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-            Log.v("FirebaseCrashlytics", concat, null);
-        }
-        aVar.t(this.b, this.c, e, "crash", j11, true);
-        try {
-            bVar = nVar.g;
-            str = ".ae" + j10;
-            bVar.getClass();
-        } catch (IOException e6) {
-            Log.w("FirebaseCrashlytics", "Could not create app exception marker file.", e6);
-        }
-        if (!new File(bVar.b, str).createNewFile()) {
-            throw new IOException("Create new file failed.");
-        }
-        e3.g gVar = this.d;
-        nVar.c(false, gVar);
-        new f(nVar.f);
-        n.a(nVar, f.b, Boolean.FALSE);
-        if (!nVar.b.a()) {
-            return Tasks.forResult(null);
-        }
-        Executor executor = (Executor) nVar.e.b;
-        return ((TaskCompletionSource) ((AtomicReference) gVar.i).get()).getTask().onSuccessTask(executor, new f7.b(this, executor, e));
+    @Override // java.security.PrivilegedExceptionAction
+    public final /* bridge */ /* synthetic */ Object run() {
+        return a();
     }
 }

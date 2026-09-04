@@ -1,45 +1,41 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class a9 extends f2.z0 {
-    public boolean a;
-    public final /* synthetic */ n9 b;
+public final class a9 extends TextView {
+    public final Paint a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 b;
 
-    public a9(n9 n9Var) {
-        this.b = n9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a9(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.b = f6Var;
+        this.a = new Paint(1);
     }
 
-    @Override // f2.z0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ng.e eVar;
-        n9 n9Var = this.b;
-        ArrayList arrayList = n9Var.D;
-        int L0 = n9Var.c.L0();
-        int abs = L0 == -1 ? 0 : Math.abs(n9Var.c.N0() - L0) + 1;
-        if (abs > 0) {
-            int size = n9Var.d.V2.x.size();
-            if (!n9Var.G && !n9Var.E && !arrayList.isEmpty() && abs + L0 >= size - 5) {
-                AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.h(22, this, (j9) kf.k0.i(1, arrayList)));
-            }
+    @Override // android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        int l1 = org.telegram.ui.ActionBar.j6.l1(0.8f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, this.b));
+        Paint paint = this.a;
+        paint.setColor(l1);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(1.0f);
+        float height = getHeight() / 2.0f;
+        Layout layout = getLayout();
+        int i10 = 0;
+        for (int i11 = 0; i11 < layout.getLineCount(); i11++) {
+            i10 = Math.max(i10, (int) layout.getLineWidth(i11));
         }
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (i11 != 0 && this.a) {
-            n9Var.f.e(i11 < 0, true);
-        }
-        this.a = true;
-        n9Var.r.b(L0 != 0 || top < n9Var.d.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT < 31 || (eVar = n9Var.V) == null) {
-            return;
-        }
-        eVar.f(i10, i11);
-        n9Var.f0();
+        float f7 = i10 / 2.0f;
+        canvas.drawLine(0.0f, height, ((getWidth() / 2.0f) - f7) - AndroidUtilities.dp(8.0f), height, paint);
+        canvas.drawLine((getWidth() / 2.0f) + f7 + AndroidUtilities.dp(8.0f), height, getWidth(), height, paint);
+        super.dispatchDraw(canvas);
     }
 }

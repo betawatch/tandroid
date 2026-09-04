@@ -1,147 +1,31 @@
 package b4;
 
-import j3.m0;
-import j3.n0;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class f {
     public final int a;
-    public final List b;
+    public final boolean b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
+    public final int g;
+    public final int h;
+    public final int i;
+    public final SparseArray j;
 
-    public f(int i10, List list) {
+    public f(int i10, boolean z10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, SparseArray sparseArray) {
         this.a = i10;
-        this.b = list;
-    }
-
-    public i0 a(int i10, af.d dVar) {
-        String str = (String) dVar.b;
-        if (i10 != 2) {
-            if (i10 == 3 || i10 == 4) {
-                return new w(new u(str));
-            }
-            if (i10 == 21) {
-                return new w(new h());
-            }
-            if (i10 == 27) {
-                if (c(4)) {
-                    return null;
-                }
-                return new w(new q(new d0(0, b(dVar)), c(1), c(8)));
-            }
-            if (i10 == 36) {
-                return new w(new s(new d0(0, b(dVar))));
-            }
-            if (i10 == 89) {
-                return new w(new h((List) dVar.c));
-            }
-            if (i10 != 138) {
-                if (i10 == 172) {
-                    return new w(new b(str, 1));
-                }
-                if (i10 == 257) {
-                    return new c0(new af.d("application/vnd.dvb.ait", 4));
-                }
-                if (i10 == 134) {
-                    if (c(16)) {
-                        return null;
-                    }
-                    return new c0(new af.d("application/x-scte35", 4));
-                }
-                if (i10 != 135) {
-                    switch (i10) {
-                        case 15:
-                            if (c(2)) {
-                                return null;
-                            }
-                            return new w(new e(str, false));
-                        case 16:
-                            return new w(new n(new d0(1, b(dVar))));
-                        case 17:
-                            if (c(2)) {
-                                return null;
-                            }
-                            return new w(new t(str));
-                        default:
-                            switch (i10) {
-                                case 128:
-                                    break;
-                                case 129:
-                                    break;
-                                case 130:
-                                    if (!c(64)) {
-                                        return null;
-                                    }
-                                    break;
-                                default:
-                                    return null;
-                            }
-                    }
-                }
-                return new w(new b(str, 0));
-            }
-            return new w(new g(str));
-        }
-        return new w(new k(new d0(1, b(dVar))));
-    }
-
-    public List b(af.d dVar) {
-        String str;
-        int i10;
-        boolean c3 = c(32);
-        List list = this.b;
-        if (c3) {
-            return list;
-        }
-        h5.w wVar = new h5.w((byte[]) dVar.d);
-        while (wVar.a() > 0) {
-            int u10 = wVar.u();
-            int u11 = wVar.b + wVar.u();
-            if (u10 == 134) {
-                ArrayList arrayList = new ArrayList();
-                int u12 = wVar.u() & 31;
-                for (int i11 = 0; i11 < u12; i11++) {
-                    String s6 = wVar.s(3, r8.d.c);
-                    int u13 = wVar.u();
-                    boolean z4 = (u13 & 128) != 0;
-                    if (z4) {
-                        i10 = u13 & 63;
-                        str = "application/cea-708";
-                    } else {
-                        str = "application/cea-608";
-                        i10 = 1;
-                    }
-                    byte u14 = (byte) wVar.u();
-                    wVar.G(1);
-                    List singletonList = z4 ? Collections.singletonList((u14 & 64) != 0 ? new byte[]{1} : new byte[]{0}) : null;
-                    m0 m0Var = new m0();
-                    m0Var.o = str;
-                    m0Var.c = s6;
-                    m0Var.G = i10;
-                    m0Var.q = singletonList;
-                    arrayList.add(new n0(m0Var));
-                }
-                list = arrayList;
-            }
-            wVar.F(u11);
-        }
-        return list;
-    }
-
-    public boolean c(int i10) {
-        return (i10 & this.a) != 0;
-    }
-
-    public f() {
-        this.a = 1;
-        this.b = Collections.singletonList(null);
-    }
-
-    public f(ArrayList arrayList) {
-        this.a = 0;
-        this.b = arrayList;
+        this.b = z10;
+        this.c = i11;
+        this.d = i12;
+        this.e = i13;
+        this.f = i14;
+        this.g = i15;
+        this.h = i16;
+        this.i = i17;
+        this.j = sparseArray;
     }
 }

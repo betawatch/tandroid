@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class PlaceMarker {
     private static final int MAX_LABEL_LENGTH = 3;
@@ -50,7 +50,7 @@ public final class PlaceMarker {
 
     public String toString() {
         String shortString;
-        StringBuilder sb = new StringBuilder("[");
+        StringBuilder sb2 = new StringBuilder("[");
         CarIcon carIcon = this.mIcon;
         if (carIcon != null) {
             shortString = carIcon.toString();
@@ -58,7 +58,7 @@ public final class PlaceMarker {
             CarText carText = this.mLabel;
             shortString = carText != null ? CarText.toShortString(carText) : super.toString();
         }
-        return android.support.v4.media.a.r(sb, shortString, "]");
+        return a4.a.s(sb2, shortString, "]");
     }
 
     private PlaceMarker() {

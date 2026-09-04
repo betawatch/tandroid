@@ -3,7 +3,7 @@ package org.telegram.ui.ActionBar;
 import android.view.KeyEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class x implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -20,27 +20,27 @@ public final /* synthetic */ class x implements View.OnClickListener {
             case 0:
                 z zVar = (z) this.b;
                 k kVar = zVar.b;
-                w0 w0Var = (w0) view;
-                if (!w0Var.q()) {
-                    if (!w0Var.D) {
+                v0 v0Var = (v0) view;
+                if (!v0Var.q()) {
+                    if (!v0Var.G) {
                         zVar.o(((Integer) view.getTag()).intValue());
                         break;
                     } else {
-                        kVar.v(w0Var.L(true));
+                        kVar.v(v0Var.L(true));
                         break;
                     }
-                } else if (kVar.r0.a()) {
-                    w0Var.M(null, null);
+                } else if (kVar.u0.a()) {
+                    v0Var.M(null, null);
                     break;
                 }
                 break;
             case 1:
-                ((h2) this.b).dismiss();
+                ((f2) this.b).dismiss();
                 break;
             default:
-                g3 g3Var = (g3) this.b;
-                g3Var.getClass();
-                g3Var.dismissWithButtonClick(((Integer) view.getTag()).intValue());
+                f3 f3Var = (f3) this.b;
+                f3Var.getClass();
+                f3Var.dismissWithButtonClick(((Integer) view.getTag()).intValue());
                 break;
         }
     }

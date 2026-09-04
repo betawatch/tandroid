@@ -1,19 +1,28 @@
 package y2;
 
-import vh.w2;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g implements u9.d {
-    public static final g a = new g();
-    public static final u9.c b = new u9.c("startMs", w2.h(w2.g(x9.d.class, new x9.a(1))));
-    public static final u9.c c = new u9.c("endMs", w2.h(w2.g(x9.d.class, new x9.a(2))));
+public final class g {
+    public final int a;
+    public final int b;
+    public final int c;
+    public final int d;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        b3.g gVar = (b3.g) obj;
-        u9.e eVar = (u9.e) obj2;
-        eVar.b(b, gVar.a);
-        eVar.b(c, gVar.b);
+    public g(int i10, int i11, int i12, int i13) {
+        this.a = i10;
+        this.b = i11;
+        this.c = i12;
+        this.d = i13;
+    }
+
+    public final boolean a(int i10) {
+        if (i10 == 1) {
+            if (this.a - this.b <= 1) {
+                return false;
+            }
+        } else if (this.c - this.d <= 1) {
+            return false;
+        }
+        return true;
     }
 }

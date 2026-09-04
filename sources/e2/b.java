@@ -1,28 +1,37 @@
 package e2;
 
-import java.util.TreeMap;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b {
-    public final String a;
-    public final String b;
-    public final long c;
-    public long d = 0;
-    public int e;
-    public final int f;
-    public final int g;
-    public int[] h;
-    public final TreeMap i;
+public final /* synthetic */ class b implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
+    public final /* synthetic */ Object c;
 
-    public b(String str, String str2, long j10, int i10, int i11, int i12, int[] iArr, TreeMap treeMap) {
-        this.a = str;
-        this.b = str2;
-        this.c = j10;
-        this.e = i10;
-        this.f = i11;
-        this.g = i12;
-        this.h = iArr;
-        this.i = treeMap;
+    public /* synthetic */ b(c cVar, Object obj, int i10) {
+        this.a = i10;
+        this.b = cVar;
+        this.c = obj;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                c cVar = this.b;
+                if (cVar.a == 0) {
+                    cVar.n(this.c);
+                    break;
+                }
+                break;
+            default:
+                c cVar2 = this.b;
+                int i10 = cVar2.a - 1;
+                cVar2.a = i10;
+                if (i10 == 0) {
+                    cVar2.n(this.c);
+                    break;
+                }
+                break;
+        }
     }
 }

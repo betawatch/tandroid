@@ -1,30 +1,31 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.CacheByChatsController;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class e6 extends bg.b {
-    public final CacheByChatsController.KeepMediaException c;
+public final /* synthetic */ class e6 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ z6 b;
+    public final /* synthetic */ m6 c;
+    public final /* synthetic */ n6 d;
 
-    public e6(int i10, CacheByChatsController.KeepMediaException keepMediaException) {
-        super(i10, false);
-        this.c = keepMediaException;
+    public /* synthetic */ e6(z6 z6Var, m6 m6Var, n6 n6Var, int i10) {
+        this.a = i10;
+        this.b = z6Var;
+        this.c = m6Var;
+        this.d = n6Var;
     }
 
-    public final boolean equals(Object obj) {
-        CacheByChatsController.KeepMediaException keepMediaException;
-        if (this == obj) {
-            return true;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                Utilities.globalQueue.postRunnable(new e6(this.b, this.c, this.d, 1));
+                break;
+            default:
+                z6.W(this.b, this.c, this.d);
+                break;
         }
-        if (obj == null || e6.class != obj.getClass()) {
-            return false;
-        }
-        e6 e6Var = (e6) obj;
-        if (this.a != e6Var.a) {
-            return false;
-        }
-        CacheByChatsController.KeepMediaException keepMediaException2 = this.c;
-        return keepMediaException2 == null || (keepMediaException = e6Var.c) == null || keepMediaException2.dialogId == keepMediaException.dialogId;
     }
 }

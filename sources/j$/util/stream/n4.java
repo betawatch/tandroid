@@ -47,8 +47,8 @@ public final class n4 implements o4, i5 {
     }
 
     @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l10) {
-        t3.H(this, l10);
+    public final /* synthetic */ void x(Long l4) {
+        t3.H(this, l4);
     }
 
     public n4(LongBinaryOperator longBinaryOperator) {
@@ -65,18 +65,18 @@ public final class n4 implements o4, i5 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.a = true;
         this.b = 0L;
     }
 
     @Override // j$.util.stream.j5
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         if (this.a) {
             this.a = false;
-            this.b = j10;
+            this.b = j3;
         } else {
-            this.b = this.c.applyAsLong(this.b, j10);
+            this.b = this.c.applyAsLong(this.b, j3);
         }
     }
 

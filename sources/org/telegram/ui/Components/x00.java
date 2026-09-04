@@ -1,204 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_chatlists;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class x00 extends ql0 {
-    public final /* synthetic */ d10 c;
+public final /* synthetic */ class x00 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ y00 b;
 
-    public x00(d10 d10Var) {
-        this.c = d10Var;
+    public /* synthetic */ x00(y00 y00Var, int i10) {
+        this.a = i10;
+        this.b = y00Var;
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final boolean D(f2.l1 l1Var) {
-        if (l1Var.f != 2) {
-            return false;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                y00 y00Var = this.b;
+                y00Var.getClass();
+                y00Var.x = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y00Var.invalidate();
+                break;
+            case 1:
+                y00 y00Var2 = this.b;
+                y00Var2.getClass();
+                y00Var2.s = Math.max(1.0f, ((Float) valueAnimator.getAnimatedValue()).floatValue());
+                y00Var2.invalidate();
+                break;
+            default:
+                y00 y00Var3 = this.b;
+                y00Var3.getClass();
+                y00Var3.h = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                y00Var3.invalidate();
+                break;
         }
-        int b10 = l1Var.b();
-        d10 d10Var = this.c;
-        return b10 >= d10Var.o0 && l1Var.b() <= d10Var.p0;
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        return this.c.l0;
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        d10 d10Var = this.c;
-        d10Var.getClass();
-        if (i10 == 0) {
-            return 0;
-        }
-        if (i10 == d10Var.m0 || i10 == d10Var.q0 || i10 == d10Var.u0) {
-            return 1;
-        }
-        return (i10 == d10Var.n0 || i10 == d10Var.r0) ? 3 : 2;
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:19:0x009d  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00f0  */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x00fc  */
-    /* JADX WARN: Removed duplicated region for block: B:39:0x00f3  */
-    @Override // f2.o0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void v(f2.l1 l1Var, int i10) {
-        ArrayList arrayList;
-        TLRPC.Peer peer;
-        long j10;
-        String str;
-        String str2;
-        CheckBoxBase checkBoxBase;
-        float f10;
-        TLRPC.Chat chat;
-        d10 d10Var = this.c;
-        ArrayList arrayList2 = d10Var.d0;
-        org.telegram.ui.ActionBar.p2 p2Var = d10Var.n;
-        int i11 = l1Var.f;
-        View view = l1Var.a;
-        TLRPC.User user = null;
-        if (i11 != 2) {
-            if (i11 == 3) {
-                a10 a10Var = (a10) view;
-                if (i10 == d10Var.r0) {
-                    a10Var.b(LocaleController.getString(R.string.FolderLinkHeaderAlready), false);
-                    a10Var.a("", null);
-                    return;
-                } else {
-                    d10Var.v0 = a10Var;
-                    d10Var.V();
-                    return;
-                }
-            }
-            if (i11 != 1) {
-                if (i11 == 0) {
-                    d10Var.k0 = (c10) view;
-                    d10Var.U(false);
-                    return;
-                }
-                return;
-            }
-            org.telegram.ui.Cells.z8 z8Var = (org.telegram.ui.Cells.z8) view;
-            z8Var.setForeground(org.telegram.ui.ActionBar.j6.V0(d10Var.getContext(), R.drawable.greydivider, org.telegram.ui.ActionBar.j6.b7));
-            if (i10 == d10Var.u0 || i10 == d10Var.m0 || arrayList2 == null || arrayList2.isEmpty()) {
-                z8Var.setFixedSize(12);
-                z8Var.setText("");
-                return;
-            }
-            z8Var.setFixedSize(0);
-            if (d10Var.Y) {
-                z8Var.setText(LocaleController.getString(R.string.FolderLinkHintRemove));
-                return;
-            } else {
-                z8Var.setText(LocaleController.getString(R.string.FolderLinkHint));
-                return;
-            }
-        }
-        org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
-        int i12 = d10Var.o0;
-        if (i10 < i12 || i10 > d10Var.p0) {
-            int i13 = d10Var.s0;
-            if (i10 >= i13 && i10 <= d10Var.t0 && (arrayList = d10Var.g0) != null) {
-                peer = (TLRPC.Peer) arrayList.get(i10 - i13);
-            }
-            peer = null;
-        } else {
-            if (arrayList2 != null) {
-                peer = (TLRPC.Peer) arrayList2.get(i10 - i12);
-            }
-            peer = null;
-        }
-        if (peer != null) {
-            if (peer instanceof TLRPC.TL_peerUser) {
-                j10 = peer.user_id;
-                user = p2Var.getMessagesController().getUser(Long.valueOf(peer.user_id));
-                str = UserObject.getUserName(user);
-                str2 = (user == null || !user.bot) ? LocaleController.getString(R.string.FilterInviteUser) : LocaleController.getString(R.string.FilterInviteBot);
-            } else {
-                if (peer instanceof TLRPC.TL_peerChat) {
-                    j10 = -peer.chat_id;
-                    chat = p2Var.getMessagesController().getChat(Long.valueOf(peer.chat_id));
-                } else if (peer instanceof TLRPC.TL_peerChannel) {
-                    j10 = -peer.channel_id;
-                    chat = p2Var.getMessagesController().getChat(Long.valueOf(peer.channel_id));
-                }
-                str2 = null;
-                user = chat;
-                str = null;
-            }
-            if (user instanceof TLRPC.Chat) {
-                TLRPC.Chat chat2 = (TLRPC.Chat) user;
-                String str3 = chat2.title;
-                str2 = chat2.participants_count != 0 ? ChatObject.isChannelAndNotMegaGroup(chat2) ? LocaleController.formatPluralStringComma("Subscribers", chat2.participants_count) : LocaleController.formatPluralStringComma("Members", chat2.participants_count) : ChatObject.isChannelAndNotMegaGroup(chat2) ? LocaleController.getString(R.string.ChannelPublic) : LocaleController.getString(R.string.MegaPublic);
-                str = str3;
-            }
-            f4Var.setTag(Long.valueOf(j10));
-            checkBoxBase = f4Var.getCheckBox().getCheckBoxBase();
-            f10 = !d10Var.e0.contains(Long.valueOf(j10)) ? 0.5f : 1.0f;
-            if (checkBoxBase.h != f10) {
-                checkBoxBase.h = f10;
-                checkBoxBase.b();
-            }
-            f4Var.c(d10Var.f0.contains(Long.valueOf(j10)), false);
-            f4Var.d(user, str, str2);
-        }
-        j10 = 0;
-        str = null;
-        str2 = null;
-        if (user instanceof TLRPC.Chat) {
-        }
-        f4Var.setTag(Long.valueOf(j10));
-        checkBoxBase = f4Var.getCheckBox().getCheckBoxBase();
-        if (!d10Var.e0.contains(Long.valueOf(j10))) {
-        }
-        if (checkBoxBase.h != f10) {
-        }
-        f4Var.c(d10Var.f0.contains(Long.valueOf(j10)), false);
-        f4Var.d(user, str, str2);
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r8v3, types: [android.view.View, org.telegram.ui.Components.a10] */
-    /* JADX WARN: Type inference failed for: r8v7, types: [android.view.View, org.telegram.ui.Cells.z8] */
-    /* JADX WARN: Type inference failed for: r9v4, types: [android.view.View, org.telegram.ui.Cells.f4] */
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        c10 c10Var;
-        c10 c10Var2;
-        d10 d10Var = this.c;
-        if (i10 == 0) {
-            c10Var = new c10(d10Var, d10Var.getContext(), (d10Var.W instanceof TL_chatlists.TL_chatlists_chatlistInviteAlready) || d10Var.X != null, d10Var.c0, d10Var.a0, d10Var.b0);
-            d10Var.k0 = c10Var;
-        } else {
-            c10Var = null;
-            if (i10 == 1) {
-                ?? z8Var = new org.telegram.ui.Cells.z8(d10Var.getContext());
-                z8Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-                c10Var2 = z8Var;
-            } else if (i10 == 2) {
-                ?? f4Var = new org.telegram.ui.Cells.f4(d10Var.getContext(), 1, 0, false);
-                f4Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-                c10Var = f4Var;
-            } else if (i10 == 3) {
-                ?? a10Var = new a10(d10Var.getContext());
-                a10Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
-                c10Var2 = a10Var;
-            }
-            c10Var = c10Var2;
-        }
-        return new dl0(c10Var);
     }
 }

@@ -6,7 +6,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class DispatchQueueMainThreadSync extends Thread {
     private static int indexPointer;
@@ -88,14 +88,14 @@ public class DispatchQueueMainThreadSync extends Thread {
 
     public void recycle() {
         checkThread();
-        postRunnable(new e1(this, 18));
+        postRunnable(new d1(this, 18));
         this.isRecycled = true;
     }
 
     @Override // java.lang.Thread, java.lang.Runnable
     public void run() {
         Looper.prepare();
-        this.handler = new Handler(Looper.myLooper(), new z1(this, 1));
+        this.handler = new Handler(Looper.myLooper(), new x1(this, 1));
         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.DispatchQueueMainThreadSync.1
             @Override // java.lang.Runnable
             public void run() {
@@ -123,19 +123,19 @@ public class DispatchQueueMainThreadSync extends Thread {
         }
     }
 
-    public DispatchQueueMainThreadSync(String str, boolean z4) {
+    public DispatchQueueMainThreadSync(String str, boolean z10) {
         this.handler = null;
         int i10 = indexPointer;
         indexPointer = i10 + 1;
         this.index = i10;
         this.postponedTasks = new ArrayList<>();
         setName(str);
-        if (z4) {
+        if (z10) {
             start();
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public class PostponedTask {
         long delay;
         Message message;
@@ -155,25 +155,25 @@ public class DispatchQueueMainThreadSync extends Thread {
             }
         }
 
-        public PostponedTask(Runnable runnable, long j10) {
+        public PostponedTask(Runnable runnable, long j3) {
             this.runnable = runnable;
-            this.delay = j10;
+            this.delay = j3;
         }
     }
 
-    public boolean postRunnable(Runnable runnable, long j10) {
+    public boolean postRunnable(Runnable runnable, long j3) {
         checkThread();
         if (this.isRecycled) {
             return false;
         }
         if (!this.isRunning) {
-            this.postponedTasks.add(new PostponedTask(runnable, j10));
+            this.postponedTasks.add(new PostponedTask(runnable, j3));
             return true;
         }
-        if (j10 <= 0) {
+        if (j3 <= 0) {
             return this.handler.post(runnable);
         }
-        return this.handler.postDelayed(runnable, j10);
+        return this.handler.postDelayed(runnable, j3);
     }
 
     public void handleMessage(Message message) {

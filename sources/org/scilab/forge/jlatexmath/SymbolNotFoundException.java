@@ -1,13 +1,13 @@
 package org.scilab.forge.jlatexmath;
 
-import android.support.v4.media.a;
+import a4.a;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class SymbolNotFoundException extends JMathTeXException {
     private static final long serialVersionUID = -3005021333407670912L;
 
     public SymbolNotFoundException(String str) {
-        super(a.o("There's no symbol with the name '", str, "' defined in 'TeXSymbols.xml'!"));
+        super(a.p("There's no symbol with the name '", str, "' defined in 'TeXSymbols.xml'!"));
     }
 }

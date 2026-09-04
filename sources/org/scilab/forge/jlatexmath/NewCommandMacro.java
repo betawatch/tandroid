@@ -1,10 +1,10 @@
 package org.scilab.forge.jlatexmath;
 
-import android.support.v4.media.a;
+import a4.a;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class NewCommandMacro {
     protected static HashMap<String, String> macrocode = new HashMap<>();
@@ -17,7 +17,7 @@ public class NewCommandMacro {
 
     public static void addReNewCommand(String str, String str2, int i10) {
         if (macrocode.get(str) == null) {
-            throw new ParseException(a.o("Command ", str, " is not defined ! Use newcommand instead ..."));
+            throw new ParseException(a.p("Command ", str, " is not defined ! Use newcommand instead ..."));
         }
         macrocode.put(str, str2);
         MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i10));
@@ -65,6 +65,6 @@ public class NewCommandMacro {
             MacroInfo.Commands.put(str, new MacroInfo("org.scilab.forge.jlatexmath.NewCommandMacro", "executeMacro", i10, 1.0f));
             return;
         }
-        throw new ParseException(a.o("Command ", str, " already exists ! Use renewcommand instead ..."));
+        throw new ParseException(a.p("Command ", str, " already exists ! Use renewcommand instead ..."));
     }
 }

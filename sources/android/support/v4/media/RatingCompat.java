@@ -3,21 +3,16 @@ package android.support.v4.media;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class RatingCompat implements Parcelable {
-    public static final Parcelable.Creator<RatingCompat> CREATOR = new w.a(11);
+    public static final Parcelable.Creator<RatingCompat> CREATOR = new w.a(7);
     public final int a;
     public final float b;
-    public Object c;
 
-    public RatingCompat(int i10, float f10) {
+    public RatingCompat(int i10, float f7) {
         this.a = i10;
-        this.b = f10;
-    }
-
-    public final boolean a() {
-        return this.b >= 0.0f;
+        this.b = f7;
     }
 
     @Override // android.os.Parcelable
@@ -26,12 +21,12 @@ public final class RatingCompat implements Parcelable {
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("Rating:style=");
-        sb.append(this.a);
-        sb.append(" rating=");
-        float f10 = this.b;
-        sb.append(f10 < 0.0f ? "unrated" : String.valueOf(f10));
-        return sb.toString();
+        StringBuilder sb2 = new StringBuilder("Rating:style=");
+        sb2.append(this.a);
+        sb2.append(" rating=");
+        float f7 = this.b;
+        sb2.append(f7 < 0.0f ? "unrated" : String.valueOf(f7));
+        return sb2.toString();
     }
 
     @Override // android.os.Parcelable

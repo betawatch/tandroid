@@ -3,9 +3,9 @@ package v0;
 import android.os.Bundle;
 import org.json.JSONObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public class m extends cb.e {
+public class m extends b2.g {
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public m(String str, int i10, Bundle data) {
         super(str, data);
@@ -27,7 +27,7 @@ public class m extends cb.e {
                 }
                 throw new IllegalArgumentException("authenticationResponseJson must not be empty, and must be a valid JSON");
             default:
-                kotlin.jvm.internal.j.e(data, "data");
+                kotlin.jvm.internal.i.e(data, "data");
                 if (str.length() <= 0) {
                     throw new IllegalArgumentException("type should not be empty");
                 }

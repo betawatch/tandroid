@@ -1,60 +1,29 @@
 package vh;
 
-import org.telegram.messenger.UserConfig;
-import org.telegram.ui.ui0;
+import android.view.animation.Interpolator;
+import w7.p;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final /* synthetic */ class e implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class e implements Interpolator {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ float b;
+    public final /* synthetic */ float c;
+    public final /* synthetic */ Interpolator d;
 
-    public /* synthetic */ e(q qVar, int i10) {
-        this.a = i10;
-        this.b = qVar;
+    public /* synthetic */ e(boolean z10, float f7, float f10, Interpolator interpolator) {
+        this.a = z10;
+        this.b = f7;
+        this.c = f10;
+        this.d = interpolator;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                q qVar = this.b;
-                qVar.H(2147483646, true, 0, false, 0L);
-                ui0 ui0Var = qVar.L;
-                if (ui0Var != null) {
-                    ui0Var.h(false);
-                    qVar.L = null;
-                    break;
-                }
-                break;
-            case 1:
-                q qVar2 = this.b;
-                qVar2.H(0, false, 0, false, 0L);
-                ui0 ui0Var2 = qVar2.L;
-                if (ui0Var2 != null) {
-                    ui0Var2.h(true);
-                    qVar2.L = null;
-                    break;
-                }
-                break;
-            case 2:
-                q qVar3 = this.b;
-                if (!UserConfig.getInstance(qVar3.n).isPremium()) {
-                    new eg.o1(qVar3.b.c0, qVar3.getContext(), qVar3.n, 43, true).show();
-                    break;
-                }
-                break;
-            case 3:
-                q qVar4 = this.b;
-                w3 w3Var = qVar4.s;
-                if (w3Var != null) {
-                    w3Var.setSendEnabled(qVar4.r.L3());
-                    break;
-                }
-                break;
-            default:
-                this.b.a0();
-                break;
-        }
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f7) {
+        boolean z10 = this.a;
+        float f10 = this.b;
+        float f11 = this.c;
+        Interpolator interpolator = this.d;
+        return z10 ? 1.0f - interpolator.getInterpolation(1.0f - p.a((f7 - f10) / (f11 - f10), 0.0f, 1.0f)) : interpolator.getInterpolation(p.a((f7 - f10) / (f11 - f10), 0.0f, 1.0f));
     }
 }

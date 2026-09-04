@@ -76,8 +76,8 @@ public final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal w(long j10, ChronoUnit chronoUnit) {
-        return G(this.a.a(), j$.time.temporal.p.b(this, j10, chronoUnit));
+    public final Temporal w(long j3, ChronoUnit chronoUnit) {
+        return G(this.a.a(), j$.time.temporal.p.b(this, j3, chronoUnit));
     }
 
     @Override // j$.time.chrono.ChronoLocalDateTime
@@ -135,55 +135,55 @@ public final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: J, reason: merged with bridge method [inline-methods] */
-    public final f c(long j10, j$.time.temporal.o oVar) {
+    public final f c(long j3, j$.time.temporal.o oVar) {
         if (oVar instanceof j$.time.temporal.a) {
             if (((j$.time.temporal.a) oVar).y()) {
-                return K(this.a, this.b.c(j10, oVar));
+                return K(this.a, this.b.c(j3, oVar));
             }
-            return K(this.a.c(j10, oVar), this.b);
+            return K(this.a.c(j3, oVar), this.b);
         }
-        return G(this.a.a(), oVar.q(this, j10));
+        return G(this.a.a(), oVar.q(this, j3));
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final f d(long j10, j$.time.temporal.q qVar) {
+    public final f d(long j3, j$.time.temporal.q qVar) {
         if (!(qVar instanceof ChronoUnit)) {
-            return G(this.a.a(), qVar.j(this, j10));
+            return G(this.a.a(), qVar.j(this, j3));
         }
         switch (e.a[((ChronoUnit) qVar).ordinal()]) {
             case 1:
-                return I(this.a, 0L, 0L, 0L, j10);
+                return I(this.a, 0L, 0L, 0L, j3);
             case 2:
-                f K = K(this.a.d(j10 / 86400000000L, (j$.time.temporal.q) ChronoUnit.DAYS), this.b);
-                return K.I(K.a, 0L, 0L, 0L, (j10 % 86400000000L) * 1000);
+                f K = K(this.a.d(j3 / 86400000000L, (j$.time.temporal.q) ChronoUnit.DAYS), this.b);
+                return K.I(K.a, 0L, 0L, 0L, (j3 % 86400000000L) * 1000);
             case 3:
-                f K2 = K(this.a.d(j10 / 86400000, (j$.time.temporal.q) ChronoUnit.DAYS), this.b);
-                return K2.I(K2.a, 0L, 0L, 0L, (j10 % 86400000) * 1000000);
+                f K2 = K(this.a.d(j3 / 86400000, (j$.time.temporal.q) ChronoUnit.DAYS), this.b);
+                return K2.I(K2.a, 0L, 0L, 0L, (j3 % 86400000) * 1000000);
             case 4:
-                return I(this.a, 0L, 0L, j10, 0L);
+                return I(this.a, 0L, 0L, j3, 0L);
             case 5:
-                return I(this.a, 0L, j10, 0L, 0L);
+                return I(this.a, 0L, j3, 0L, 0L);
             case 6:
-                return I(this.a, j10, 0L, 0L, 0L);
+                return I(this.a, j3, 0L, 0L, 0L);
             case 7:
-                f K3 = K(this.a.d(j10 / 256, (j$.time.temporal.q) ChronoUnit.DAYS), this.b);
-                return K3.I(K3.a, (j10 % 256) * 12, 0L, 0L, 0L);
+                f K3 = K(this.a.d(j3 / 256, (j$.time.temporal.q) ChronoUnit.DAYS), this.b);
+                return K3.I(K3.a, (j3 % 256) * 12, 0L, 0L, 0L);
             default:
-                return K(this.a.d(j10, qVar), this.b);
+                return K(this.a.d(j3, qVar), this.b);
         }
     }
 
-    public final f I(b bVar, long j10, long j11, long j12, long j13) {
-        if ((j10 | j11 | j12 | j13) == 0) {
+    public final f I(b bVar, long j3, long j10, long j11, long j12) {
+        if ((j3 | j10 | j11 | j12) == 0) {
             return K(bVar, this.b);
         }
-        long j14 = j10 / 24;
-        long j15 = ((j10 % 24) * 3600000000000L) + ((j11 % 1440) * 60000000000L) + ((j12 % 86400) * 1000000000) + (j13 % 86400000000000L);
+        long j13 = j3 / 24;
+        long j14 = ((j3 % 24) * 3600000000000L) + ((j10 % 1440) * 60000000000L) + ((j11 % 86400) * 1000000000) + (j12 % 86400000000000L);
         long R = this.b.R();
-        long j16 = j15 + R;
-        long S = j$.com.android.tools.r8.a.S(j16, 86400000000000L) + j14 + (j11 / 1440) + (j12 / 86400) + (j13 / 86400000000000L);
-        long R2 = j$.com.android.tools.r8.a.R(j16, 86400000000000L);
+        long j15 = j14 + R;
+        long S = j$.com.android.tools.r8.a.S(j15, 86400000000000L) + j13 + (j10 / 1440) + (j11 / 86400) + (j12 / 86400000000000L);
+        long R2 = j$.com.android.tools.r8.a.R(j15, 86400000000000L);
         return K(bVar.d(S, (j$.time.temporal.q) ChronoUnit.DAYS), R2 == R ? this.b : j$.time.h.K(R2));
     }
 
@@ -203,38 +203,38 @@ public final class f implements ChronoLocalDateTime, Temporal, j$.time.temporal.
         ChronoUnit chronoUnit = (ChronoUnit) qVar;
         ChronoUnit chronoUnit2 = ChronoUnit.DAYS;
         if (chronoUnit.compareTo(chronoUnit2) >= 0) {
-            b f10 = B.f();
+            b f7 = B.f();
             if (B.b().compareTo(this.b) < 0) {
-                f10 = f10.w(1L, chronoUnit2);
+                f7 = f7.w(1L, chronoUnit2);
             }
-            return this.a.g(f10, qVar);
+            return this.a.g(f7, qVar);
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.EPOCH_DAY;
-        long y10 = B.y(aVar) - this.a.y(aVar);
+        long y3 = B.y(aVar) - this.a.y(aVar);
         switch (e.a[chronoUnit.ordinal()]) {
             case 1:
-                y10 = j$.com.android.tools.r8.a.T(y10, 86400000000000L);
+                y3 = j$.com.android.tools.r8.a.T(y3, 86400000000000L);
                 break;
             case 2:
-                y10 = j$.com.android.tools.r8.a.T(y10, 86400000000L);
+                y3 = j$.com.android.tools.r8.a.T(y3, 86400000000L);
                 break;
             case 3:
-                y10 = j$.com.android.tools.r8.a.T(y10, 86400000L);
+                y3 = j$.com.android.tools.r8.a.T(y3, 86400000L);
                 break;
             case 4:
-                y10 = j$.com.android.tools.r8.a.T(y10, 86400);
+                y3 = j$.com.android.tools.r8.a.T(y3, 86400);
                 break;
             case 5:
-                y10 = j$.com.android.tools.r8.a.T(y10, 1440);
+                y3 = j$.com.android.tools.r8.a.T(y3, 1440);
                 break;
             case 6:
-                y10 = j$.com.android.tools.r8.a.T(y10, 24);
+                y3 = j$.com.android.tools.r8.a.T(y3, 24);
                 break;
             case 7:
-                y10 = j$.com.android.tools.r8.a.T(y10, 2);
+                y3 = j$.com.android.tools.r8.a.T(y3, 2);
                 break;
         }
-        return j$.com.android.tools.r8.a.O(y10, this.b.g(B.b(), qVar));
+        return j$.com.android.tools.r8.a.O(y3, this.b.g(B.b(), qVar));
     }
 
     @Override // j$.time.temporal.m

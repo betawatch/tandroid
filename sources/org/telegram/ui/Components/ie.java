@@ -1,36 +1,52 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ie implements y4, jl0 {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final /* synthetic */ class ie implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ ie(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    public /* synthetic */ ie(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.a = i10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.y4
-    public void J(int i10, int i11, boolean z4) {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        boolean T0 = chatActivityEnterView.T0(i10, z4, i11, true, 0L);
-        cf cfVar = chatActivityEnterView.I0;
-        if (cfVar != null) {
-            cfVar.h(!T0);
-            chatActivityEnterView.I0 = null;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (i10) {
+            case 0:
+                og ogVar = chatActivityEnterView.Y2;
+                if (ogVar != null) {
+                    ogVar.k1();
+                    break;
+                }
+                break;
+            case 1:
+                qf qfVar = chatActivityEnterView.E0;
+                if (qfVar != null) {
+                    qfVar.setText("");
+                    break;
+                }
+                break;
+            case 2:
+                qf qfVar2 = chatActivityEnterView.E0;
+                if (qfVar2 != null) {
+                    qfVar2.setText("");
+                }
+                chatActivityEnterView.K(true);
+                break;
+            case 3:
+                chatActivityEnterView.p0.callOnClick();
+                break;
+            case 4:
+                chatActivityEnterView.p0.callOnClick();
+                break;
+            default:
+                int i11 = ChatActivityEnterView.m5;
+                chatActivityEnterView.C();
+                break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.jl0
-    public boolean d(int i10, View view) {
-        if (!(view instanceof rh.x)) {
-            return false;
-        }
-        String str = ((rh.x) view).getCommand() + " ";
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.setFieldText(str);
-        chatActivityEnterView.j0.c();
-        return true;
     }
 }

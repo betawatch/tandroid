@@ -1,22 +1,16 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class sc1 extends jd1 {
-    public final /* synthetic */ zn h2;
-    public final /* synthetic */ boolean i2;
+public final class sc1 extends s4.j {
+    public final /* synthetic */ wd1 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sc1(Object obj, zn znVar, boolean z4) {
-        super(obj, null, true);
-        this.h2 = znVar;
-        this.i2 = z4;
+    public sc1(wd1 wd1Var) {
+        this.F = wd1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void onFragmentClosed() {
-        super.onFragmentClosed();
-        xn xnVar = this.h2.ba;
-        xnVar.i(xnVar.f, xnVar.h, false, Boolean.valueOf(this.i2), false);
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.u0.e1();
     }
 }

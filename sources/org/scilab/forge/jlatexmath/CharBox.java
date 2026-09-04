@@ -4,7 +4,7 @@ import ru.noties.jlatexmath.awt.Font;
 import ru.noties.jlatexmath.awt.Graphics2D;
 import ru.noties.jlatexmath.awt.geom.AffineTransform;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class CharBox extends Box {
     private final char[] arr = new char[1];
@@ -27,15 +27,15 @@ public class CharBox extends Box {
     }
 
     @Override // org.scilab.forge.jlatexmath.Box
-    public void draw(Graphics2D graphics2D, float f10, float f11) {
-        drawDebug(graphics2D, f10, f11);
+    public void draw(Graphics2D graphics2D, float f7, float f10) {
+        drawDebug(graphics2D, f7, f10);
         AffineTransform transform = graphics2D.getTransform();
-        graphics2D.translate(f10, f11);
+        graphics2D.translate(f7, f10);
         Font font = FontInfo.getFont(this.cf.fontId);
         if (Math.abs(this.size - TeXFormula.FONT_SCALE_FACTOR) > 1.0E-7f) {
-            float f12 = this.size;
-            float f13 = TeXFormula.FONT_SCALE_FACTOR;
-            graphics2D.scale(f12 / f13, f12 / f13);
+            float f11 = this.size;
+            float f12 = TeXFormula.FONT_SCALE_FACTOR;
+            graphics2D.scale(f11 / f12, f11 / f12);
         }
         if (graphics2D.getFont() != font) {
             graphics2D.setFont(font);

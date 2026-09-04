@@ -1,138 +1,109 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import android.widget.FrameLayout;
-import org.telegram.ui.PhotoViewer;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.MotionEvent;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class we0 implements yf.d {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ FrameLayout b;
+public final class we0 extends View {
+    public Paint a;
+    public Paint b;
+    public int c;
+    public int d;
+    public float e;
+    public boolean f;
+    public int h;
+    public int n;
+    public ve0 r;
 
-    public /* synthetic */ we0(int i10, FrameLayout frameLayout) {
-        this.a = i10;
-        this.b = frameLayout;
+    public final void a(int i10, boolean z10) {
+        ve0 ve0Var;
+        int i11 = this.h;
+        if (i10 < i11) {
+            i10 = i11;
+        } else {
+            int i12 = this.n;
+            if (i10 > i12) {
+                i10 = i12;
+            }
+        }
+        this.e = (i10 - i11) / (this.n - i11);
+        invalidate();
+        if (!z10 || (ve0Var = this.r) == null) {
+            return;
+        }
+        ve0Var.k(((Integer) getTag()).intValue(), getProgress());
     }
 
-    @Override // yf.d
-    public final boolean a() {
-        int i10 = this.a;
-        FrameLayout frameLayout = this.b;
-        switch (i10) {
-            case 0:
-                ye0 ye0Var = ((ze0) frameLayout).a;
-                if (ye0Var == null) {
-                    return false;
+    public int getProgress() {
+        return (int) ((this.e * (this.n - r0)) + this.h);
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.b;
+        int measuredHeight = getMeasuredHeight();
+        int i10 = this.c;
+        int i11 = (measuredHeight - i10) / 2;
+        int measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
+        float f7 = i10 / 2;
+        canvas.drawRect(f7, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() - r9, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), this.a);
+        if (this.h == 0) {
+            canvas.drawRect(f7, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), measuredWidth, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        } else if (this.e > 0.5f) {
+            canvas.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.dp(1.0f), (getMeasuredHeight() - i10) / 2, getMeasuredWidth() / 2, (getMeasuredHeight() + i10) / 2, paint);
+            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), measuredWidth, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        } else {
+            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() - i10) / 2, AndroidUtilities.dp(1.0f) + (getMeasuredWidth() / 2), (getMeasuredHeight() + i10) / 2, paint);
+            canvas.drawRect(measuredWidth, (getMeasuredHeight() / 2) - AndroidUtilities.dp(1.0f), getMeasuredWidth() / 2, AndroidUtilities.dp(1.0f) + (getMeasuredHeight() / 2), paint);
+        }
+        canvas.drawCircle(measuredWidth + r9, r9 + i11, f7, paint);
+    }
+
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        int i10 = this.c;
+        if (motionEvent != null) {
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            float measuredWidth = (int) ((getMeasuredWidth() - i10) * this.e);
+            if (motionEvent.getAction() == 0) {
+                float measuredHeight = (getMeasuredHeight() - i10) / 2;
+                if (measuredWidth - measuredHeight <= x10 && x10 <= i10 + measuredWidth + measuredHeight && y3 >= 0.0f && y3 <= getMeasuredHeight()) {
+                    this.f = true;
+                    this.d = (int) (x10 - measuredWidth);
+                    getParent().requestDisallowInterceptTouchEvent(true);
+                    invalidate();
+                    return true;
                 }
-                PhotoViewer photoViewer = ((org.telegram.ui.es0) ye0Var).a;
-                Drawable[] drawableArr = PhotoViewer.Q8;
-                return photoViewer.N0();
-            case 1:
-                ph.c0 c0Var = (ph.c0) frameLayout;
-                c0Var.d.invalidate();
-                return c0Var.f.j();
-            default:
-                ph.f0 f0Var = (ph.f0) frameLayout;
-                f0Var.e.invalidate();
-                return f0Var.h.j();
-        }
-    }
-
-    @Override // yf.d
-    public final void b() {
-        switch (this.a) {
-            case 0:
-                ((ze0) this.b).b.o();
-                break;
-            case 1:
-                ((ph.c0) this.b).f.o();
-                break;
-            default:
-                ((ph.f0) this.b).h.o();
-                break;
-        }
-    }
-
-    @Override // yf.d
-    public final void c() {
-        switch (this.a) {
-            case 0:
-                ((ze0) this.b).b.a.g(1, true);
-                break;
-            case 1:
-                ((ph.c0) this.b).f.a.g(1, true);
-                break;
-            default:
-                ((ph.f0) this.b).h.a.g(1, true);
-                break;
-        }
-    }
-
-    @Override // yf.d
-    public final boolean d() {
-        int i10 = this.a;
-        FrameLayout frameLayout = this.b;
-        switch (i10) {
-            case 0:
-                ye0 ye0Var = ((ze0) frameLayout).a;
-                if (ye0Var == null) {
-                    return false;
+            } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
+                if (this.f) {
+                    this.f = false;
+                    invalidate();
+                    return true;
                 }
-                PhotoViewer photoViewer = ((org.telegram.ui.es0) ye0Var).a;
-                Drawable[] drawableArr = PhotoViewer.Q8;
-                return photoViewer.O0(-90.0f, false, null);
-            case 1:
-                ph.c0 c0Var = (ph.c0) frameLayout;
-                ph.a0 a0Var = c0Var.f;
-                boolean m9 = a0Var.m(-90.0f);
-                a0Var.i();
-                c0Var.d.invalidate();
-                return m9;
-            default:
-                ph.f0 f0Var = (ph.f0) frameLayout;
-                ph.a0 a0Var2 = f0Var.h;
-                boolean m10 = a0Var2.m(-90.0f);
-                a0Var2.i();
-                f0Var.e.invalidate();
-                return m10;
-        }
-    }
-
-    @Override // yf.d
-    public final void e() {
-        switch (this.a) {
-            case 0:
-                ((ze0) this.b).b.k();
-                break;
-            case 1:
-                ((ph.c0) this.b).f.k();
-                break;
-            default:
-                ((ph.f0) this.b).h.k();
-                break;
-        }
-    }
-
-    @Override // yf.d
-    public final void f(float f10) {
-        switch (this.a) {
-            case 0:
-                ze0 ze0Var = (ze0) this.b;
-                ze0Var.b.setRotation(f10);
-                ze0Var.getClass();
-                ye0 ye0Var = ze0Var.a;
-                if (ye0Var != null) {
-                    ((org.telegram.ui.es0) ye0Var).a(false);
-                    break;
+            } else if (motionEvent.getAction() == 2 && this.f) {
+                float f7 = (int) (x10 - this.d);
+                this.e = (f7 >= 0.0f ? f7 > ((float) (getMeasuredWidth() - i10)) ? getMeasuredWidth() - i10 : f7 : 0.0f) / (getMeasuredWidth() - i10);
+                ve0 ve0Var = this.r;
+                if (ve0Var != null) {
+                    ve0Var.k(((Integer) getTag()).intValue(), getProgress());
                 }
-                break;
-            case 1:
-                ((ph.c0) this.b).f.setRotation(f10);
-                break;
-            default:
-                ((ph.f0) this.b).h.setRotation(f10);
-                break;
+                invalidate();
+                return true;
+            }
         }
+        return false;
+    }
+
+    public void setDelegate(ve0 ve0Var) {
+        this.r = ve0Var;
+    }
+
+    public void setProgress(int i10) {
+        a(i10, true);
     }
 }

@@ -4,10 +4,10 @@ import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class a implements Parcelable {
-    public static final Parcelable.Creator<a> CREATOR = new w.a(12);
+    public static final Parcelable.Creator<a> CREATOR = new w.a(8);
     public final int a;
     public final Intent b;
 
@@ -22,13 +22,13 @@ public final class a implements Parcelable {
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("ActivityResult{resultCode=");
+        StringBuilder sb2 = new StringBuilder("ActivityResult{resultCode=");
         int i10 = this.a;
-        sb.append(i10 != -1 ? i10 != 0 ? String.valueOf(i10) : "RESULT_CANCELED" : "RESULT_OK");
-        sb.append(", data=");
-        sb.append(this.b);
-        sb.append('}');
-        return sb.toString();
+        sb2.append(i10 != -1 ? i10 != 0 ? String.valueOf(i10) : "RESULT_CANCELED" : "RESULT_OK");
+        sb2.append(", data=");
+        sb2.append(this.b);
+        sb2.append('}');
+        return sb2.toString();
     }
 
     @Override // android.os.Parcelable

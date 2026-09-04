@@ -1,118 +1,92 @@
 package org.telegram.ui;
 
+import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.voip.VoIPService;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class g50 extends f2.q {
-    public final /* synthetic */ e60 b;
+public final /* synthetic */ class g50 implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.u70 {
+    public final /* synthetic */ m50 a;
 
-    public g50(e60 e60Var) {
-        this.b = e60Var;
+    public /* synthetic */ g50(m50 m50Var) {
+        this.a = m50Var;
     }
 
-    @Override // f2.q
-    public final boolean a(int i10, int i11) {
-        return true;
+    @Override // org.telegram.ui.Components.u70
+    public void a(TLRPC.InputPeer inputPeer, boolean z10, boolean z11, boolean z12) {
+        j60 j60Var = this.a.b;
+        ChatObject.Call call = j60Var.a1;
+        AccountInstance accountInstance = j60Var.d;
+        if (call == null) {
+            return;
+        }
+        boolean z13 = inputPeer instanceof TLRPC.TL_inputPeerUser;
+        TLObject user = z13 ? accountInstance.getMessagesController().getUser(Long.valueOf(inputPeer.user_id)) : inputPeer instanceof TLRPC.TL_inputPeerChat ? accountInstance.getMessagesController().getChat(Long.valueOf(inputPeer.chat_id)) : accountInstance.getMessagesController().getChat(Long.valueOf(inputPeer.channel_id));
+        if (!j60Var.a1.isScheduled()) {
+            if (VoIPService.getSharedInstance() == null || !z10) {
+                return;
+            }
+            VoIPService.getSharedInstance().setGroupCallPeer(inputPeer);
+            j60Var.B0 = user;
+            return;
+        }
+        j60Var.k1().k(0L, 37, user, j60Var.Z0, null, null);
+        if (inputPeer instanceof TLRPC.TL_inputPeerChannel) {
+            TLRPC.TL_peerChannel tL_peerChannel = new TLRPC.TL_peerChannel();
+            j60Var.A0 = tL_peerChannel;
+            tL_peerChannel.channel_id = inputPeer.channel_id;
+        } else if (z13) {
+            TLRPC.TL_peerUser tL_peerUser = new TLRPC.TL_peerUser();
+            j60Var.A0 = tL_peerUser;
+            tL_peerUser.user_id = inputPeer.user_id;
+        } else if (inputPeer instanceof TLRPC.TL_inputPeerChat) {
+            TLRPC.TL_peerChat tL_peerChat = new TLRPC.TL_peerChat();
+            j60Var.A0 = tL_peerChat;
+            tL_peerChat.chat_id = inputPeer.chat_id;
+        }
+        j60Var.Y0 = inputPeer;
+        TLRPC.ChatFull chatFull = accountInstance.getMessagesController().getChatFull(j60Var.i1());
+        if (chatFull != null) {
+            chatFull.groupcall_default_join_as = j60Var.A0;
+            if (chatFull instanceof TLRPC.TL_chatFull) {
+                chatFull.flags |= 32768;
+            } else {
+                chatFull.flags |= 67108864;
+            }
+        }
+        TL_phone.saveDefaultGroupCallJoinAs savedefaultgroupcalljoinas = new TL_phone.saveDefaultGroupCallJoinAs();
+        savedefaultgroupcalljoinas.peer = MessagesController.getInputPeer(j60Var.Z0);
+        savedefaultgroupcalljoinas.join_as = inputPeer;
+        accountInstance.getConnectionsManager().sendRequest(savedefaultgroupcalljoinas, new bi.c7(8));
+        j60Var.I1();
     }
 
-    @Override // f2.q
-    public final boolean b(int i10, int i11) {
-        int i12;
-        int i13;
-        int i14;
-        int i15;
-        int i16;
-        e60 e60Var = this.b;
-        y50 y50Var = e60Var.M;
-        int i17 = y50Var.w;
-        if (i17 >= 0) {
-            int i18 = e60Var.e3;
-            if (i10 == i18 && i11 == i17) {
-                return true;
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        m50 m50Var = this.a;
+        j60 j60Var = m50Var.b;
+        ChatObject.Call call = j60Var.a1;
+        AccountInstance accountInstance = j60Var.d;
+        if (call.isScheduled()) {
+            TLRPC.ChatFull chatFull = accountInstance.getMessagesController().getChatFull(j60Var.i1());
+            if (chatFull != null) {
+                chatFull.flags &= -2097153;
+                chatFull.call = null;
+                accountInstance.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.groupCallUpdated, Long.valueOf(j60Var.i1()), Long.valueOf(j60Var.a1.call.id), Boolean.FALSE);
             }
-            if ((i10 == i18 && i11 != i17) || (i10 != i18 && i11 == i17)) {
-                return false;
-            }
+            TL_phone.discardGroupCall discardgroupcall = new TL_phone.discardGroupCall();
+            discardgroupcall.call = j60Var.a1.getInputGroupCall();
+            accountInstance.getConnectionsManager().sendRequest(discardgroupcall, new m(m50Var, 8));
+        } else if (VoIPService.getSharedInstance() != null) {
+            VoIPService.getSharedInstance().hangUp(1);
         }
-        int i19 = y50Var.x;
-        if (i19 >= 0) {
-            int i20 = e60Var.r3;
-            if (i10 == i20 && i11 == i19) {
-                return true;
-            }
-            if ((i10 == i20 && i11 != i19) || (i10 != i20 && i11 == i19)) {
-                return false;
-            }
-        }
-        int i21 = y50Var.y;
-        if (i21 >= 0) {
-            int i22 = e60Var.s3;
-            if (i10 == i22 && i11 == i21) {
-                return true;
-            }
-            if ((i10 == i22 && i11 != i21) || (i10 != i22 && i11 == i21)) {
-                return false;
-            }
-        }
-        int i23 = y50Var.H;
-        if (i23 >= 0) {
-            int i24 = e60Var.d3;
-            if (i10 == i24 && i11 == i23) {
-                return true;
-            }
-            if ((i10 == i24 && i11 != i23) || (i10 != i24 && i11 == i23)) {
-                return false;
-            }
-        }
-        int i25 = y50Var.G;
-        if (i25 >= 0) {
-            int i26 = e60Var.q3;
-            if (i10 == i26 && i11 == i25) {
-                return true;
-            }
-            if ((i10 == i26 && i11 != i25) || (i10 != i26 && i11 == i25)) {
-                return false;
-            }
-        }
-        int i27 = y50Var.F;
-        if (i27 >= 0 && i27 == i11 && i10 == e60Var.p3) {
-            return true;
-        }
-        int i28 = e60Var.F0;
-        if (i10 == i28 - 1 && i11 == y50Var.C - 1) {
-            return true;
-        }
-        if (i10 != i28 - 1 && i11 != y50Var.C - 1) {
-            if (i11 >= y50Var.D && i11 < y50Var.E && i10 >= (i16 = e60Var.n3) && i10 < e60Var.o3) {
-                return ((ChatObject.VideoParticipant) e60Var.B0.get(i10 - i16)).equals((ChatObject.VideoParticipant) e60Var.n0.get(i11 - e60Var.M.D));
-            }
-            if (i11 >= y50Var.d && i11 < y50Var.e && i10 >= (i15 = e60Var.f3) && i10 < e60Var.g3) {
-                TLRPC.GroupCallParticipant groupCallParticipant = (TLRPC.GroupCallParticipant) e60Var.A0.get(i10 - i15);
-                return MessageObject.getPeerId(groupCallParticipant.peer) == MessageObject.getPeerId(e60Var.X0.visibleParticipants.get(i11 - e60Var.M.d).peer) && (i10 == i11 || groupCallParticipant.lastActiveDate == ((long) groupCallParticipant.active_date));
-            }
-            if (i11 >= y50Var.f && i11 < y50Var.h && i10 >= (i14 = e60Var.h3) && i10 < e60Var.i3) {
-                return ((Long) e60Var.C0.get(i10 - i14)).equals(e60Var.X0.invitedUsers.get(i11 - e60Var.M.f));
-            }
-            if (i11 >= y50Var.n && i11 < y50Var.r && i10 >= (i13 = e60Var.j3) && i10 < e60Var.k3) {
-                return ((Long) e60Var.D0.get(i10 - i13)).equals(e60Var.X0.shadyJoinParticipants.get(i11 - e60Var.M.n));
-            }
-            if (i11 >= y50Var.s && i11 < y50Var.v && i10 >= (i12 = e60Var.l3) && i10 < e60Var.m3) {
-                return ((Long) e60Var.E0.get(i10 - i12)).equals(e60Var.X0.shadyLeftParticipants.get(i11 - e60Var.M.s));
-            }
-        }
-        return false;
-    }
-
-    @Override // f2.q
-    public final int d() {
-        return this.b.M.C;
-    }
-
-    @Override // f2.q
-    public final int e() {
-        return this.b.F0;
+        j60Var.dismiss();
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didStartedCall, new Object[0]);
     }
 }

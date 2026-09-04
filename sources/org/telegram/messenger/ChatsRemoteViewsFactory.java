@@ -16,9 +16,9 @@ import android.widget.RemoteViews;
 import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.f10;
+import org.telegram.ui.Components.e10;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -28,8 +28,8 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private Context mContext;
     private Paint roundPaint;
     private ArrayList<Long> dids = new ArrayList<>();
-    private a0.h dialogs = new a0.h();
-    private a0.h messageObjects = new a0.h();
+    private a0.i dialogs = new a0.i();
+    private a0.i messageObjects = new a0.i();
 
     public ChatsRemoteViewsFactory(Context context, Intent intent) {
         this.mContext = context;
@@ -40,9 +40,9 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         if (i10 >= 0) {
             this.accountInstance = AccountInstance.getInstance(i10);
         }
-        StringBuilder sb = new StringBuilder("deleted");
-        sb.append(this.appWidgetId);
-        this.deleted = sharedPreferences.getBoolean(sb.toString(), false) || this.accountInstance == null;
+        StringBuilder sb2 = new StringBuilder("deleted");
+        sb2.append(this.appWidgetId);
+        this.deleted = sharedPreferences.getBoolean(sb2.toString(), false) || this.accountInstance == null;
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
@@ -85,7 +85,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         String str2;
         TLRPC.FileLocation fileLocation2;
         TLRPC.ChatPhoto chatPhoto;
-        char c3;
+        char c10;
         Bitmap decodeFile;
         MessageObject messageObject;
         TLRPC.Dialog dialog;
@@ -98,7 +98,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         SpannableStringBuilder spannableStringBuilder;
         CharSequence charSequence2;
         CharSequence charSequence3;
-        org.telegram.ui.Components.z8 z8Var;
+        org.telegram.ui.Components.i9 i9Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         TLRPC.FileLocation fileLocation3;
         if (this.deleted) {
@@ -118,10 +118,10 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             remoteViews2.setOnClickFillInIntent(R.id.widget_edititem, intent);
             return remoteViews2;
         }
-        Long l10 = this.dids.get(i10);
+        Long l4 = this.dids.get(i10);
         CharSequence charSequence4 = "";
-        if (DialogObject.isUserDialog(l10.longValue())) {
-            user = this.accountInstance.getMessagesController().getUser(l10);
+        if (DialogObject.isUserDialog(l4.longValue())) {
+            user = this.accountInstance.getMessagesController().getUser(l4);
             if (user != null) {
                 String string = UserObject.isUserSelf(user) ? LocaleController.getString(R.string.SavedMessages) : UserObject.isReplyUser(user) ? LocaleController.getString(R.string.RepliesTitle) : UserObject.isDeleted(user) ? LocaleController.getString(R.string.HiddenName) : ContactsController.formatName(user.first_name, user.last_name);
                 if (UserObject.isReplyUser(user) || UserObject.isUserSelf(user) || (userProfilePhoto = user.photo) == null || (fileLocation3 = userProfilePhoto.photo_small) == null || fileLocation3.volume_id == 0 || fileLocation3.local_id == 0) {
@@ -139,10 +139,10 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                 fileLocation = null;
             }
         } else {
-            TLRPC.Chat chat3 = this.accountInstance.getMessagesController().getChat(Long.valueOf(-l10.longValue()));
+            TLRPC.Chat chat3 = this.accountInstance.getMessagesController().getChat(Long.valueOf(-l4.longValue()));
             if (chat3 != null) {
                 if (ChatObject.isMonoForum(chat3)) {
-                    str2 = ag.f.i(chat3, this.accountInstance.getCurrentAccount(), false);
+                    str2 = og.d.i(chat3, this.accountInstance.getCurrentAccount(), false);
                     TLRPC.Chat chat4 = this.accountInstance.getMessagesController().getChat(Long.valueOf(chat3.linked_monoforum_id));
                     if (chat4 == null || (chatPhoto = chat4.photo) == null || (fileLocation2 = chatPhoto.photo_small) == null || fileLocation2.volume_id == 0 || fileLocation2.local_id == 0) {
                         fileLocation2 = null;
@@ -175,17 +175,17 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                 decodeFile = BitmapFactory.decodeFile(FileLoader.getInstance(UserConfig.selectedAccount).getPathToAttach(fileLocation, true).toString());
             } catch (Throwable th2) {
                 th = th2;
-                c3 = 1;
+                c10 = 1;
                 FileLog.e(th);
-                messageObject = (MessageObject) this.messageObjects.f(l10.longValue());
-                dialog = (TLRPC.Dialog) this.dialogs.f(l10.longValue());
+                messageObject = (MessageObject) this.messageObjects.f(l4.longValue());
+                dialog = (TLRPC.Dialog) this.dialogs.f(l4.longValue());
                 if (messageObject != null) {
                 }
                 if (dialog != null) {
                 }
                 remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 8);
                 Bundle bundle2 = new Bundle();
-                if (DialogObject.isUserDialog(l10.longValue())) {
+                if (DialogObject.isUserDialog(l4.longValue())) {
                 }
                 bundle2.putInt("currentAccount", this.accountInstance.getCurrentAccount());
                 Intent intent2 = new Intent();
@@ -203,19 +203,19 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         Canvas canvas = new Canvas(createBitmap);
         if (decodeFile == null) {
             if (user != null) {
-                z8Var = new org.telegram.ui.Components.z8(0, user);
+                i9Var = new org.telegram.ui.Components.i9(0, user);
                 if (UserObject.isReplyUser(user)) {
-                    z8Var.g(12);
+                    i9Var.g(12);
                 } else if (UserObject.isUserSelf(user)) {
-                    z8Var.g(1);
+                    i9Var.g(1);
                 }
             } else {
-                z8Var = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.f6) null);
-                z8Var.k(this.accountInstance.getCurrentAccount(), chat);
+                i9Var = new org.telegram.ui.Components.i9((org.telegram.ui.ActionBar.f6) null);
+                i9Var.k(this.accountInstance.getCurrentAccount(), chat);
             }
-            z8Var.setBounds(0, 0, dp, dp);
-            z8Var.draw(canvas);
-            c3 = 1;
+            i9Var.setBounds(0, 0, dp, dp);
+            i9Var.draw(canvas);
+            c10 = 1;
         } else {
             Shader.TileMode tileMode = Shader.TileMode.CLAMP;
             BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);
@@ -227,7 +227,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             canvas.save();
             canvas.scale(width, width);
             this.roundPaint.setShader(bitmapShader);
-            c3 = 1;
+            c10 = 1;
             try {
                 this.bitmapRect.set(0.0f, 0.0f, decodeFile.getWidth(), decodeFile.getHeight());
                 canvas.drawRoundRect(this.bitmapRect, decodeFile.getWidth(), decodeFile.getHeight(), this.roundPaint);
@@ -235,15 +235,15 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             } catch (Throwable th3) {
                 th = th3;
                 FileLog.e(th);
-                messageObject = (MessageObject) this.messageObjects.f(l10.longValue());
-                dialog = (TLRPC.Dialog) this.dialogs.f(l10.longValue());
+                messageObject = (MessageObject) this.messageObjects.f(l4.longValue());
+                dialog = (TLRPC.Dialog) this.dialogs.f(l4.longValue());
                 if (messageObject != null) {
                 }
                 if (dialog != null) {
                 }
                 remoteViews3.setViewVisibility(R.id.shortcut_widget_item_badge, 8);
                 Bundle bundle22 = new Bundle();
-                if (DialogObject.isUserDialog(l10.longValue())) {
+                if (DialogObject.isUserDialog(l4.longValue())) {
                 }
                 bundle22.putInt("currentAccount", this.accountInstance.getCurrentAccount());
                 Intent intent22 = new Intent();
@@ -255,8 +255,8 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         }
         canvas.setBitmap(null);
         remoteViews3.setImageViewBitmap(R.id.shortcut_widget_item_avatar, createBitmap);
-        messageObject = (MessageObject) this.messageObjects.f(l10.longValue());
-        dialog = (TLRPC.Dialog) this.dialogs.f(l10.longValue());
+        messageObject = (MessageObject) this.messageObjects.f(l4.longValue());
+        dialog = (TLRPC.Dialog) this.dialogs.f(l4.longValue());
         if (messageObject != null) {
             long fromChatId = messageObject.getFromChatId();
             if (DialogObject.isUserDialog(fromChatId)) {
@@ -298,16 +298,16 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                         } else if (messageObject.isPhoto()) {
                             str3 = "🖼 ";
                         }
-                        StringBuilder l11 = e2.c.l(str3);
-                        l11.append((Object) messageObject.caption);
-                        charSequence2 = l11.toString();
+                        StringBuilder u10 = a4.a.u(str3);
+                        u10.append((Object) messageObject.caption);
+                        charSequence2 = u10.toString();
                     } else {
                         if (messageMedia instanceof TLRPC.TL_messageMediaPoll) {
                             charSequence = "📊 " + ((TLRPC.TL_messageMediaPoll) messageMedia).poll.question.text;
                         } else if (messageMedia instanceof TLRPC.TL_messageMediaGame) {
                             charSequence = "🎮 " + messageObject.messageOwner.media.game.title;
                         } else if (messageObject.type == 14) {
-                            charSequence = e2.c.k("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
+                            charSequence = com.google.android.gms.internal.vision.e2.j("🎧 ", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle());
                         } else {
                             charSequence = messageObject.messageText;
                             AndroidUtilities.highlightText(charSequence, messageObject.highlightedWords, (org.telegram.ui.ActionBar.f6) null);
@@ -340,12 +340,12 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             } else if (messageObject.isPhoto()) {
                                 str3 = "🖼 ";
                             }
-                            StringBuilder l12 = e2.c.l(str3);
-                            l12.append(charSequence7.replace('\n', ' '));
-                            String sb = l12.toString();
+                            StringBuilder u11 = a4.a.u(str3);
+                            u11.append(charSequence7.replace('\n', ' '));
+                            String sb2 = u11.toString();
                             Object[] objArr = new Object[2];
-                            objArr[0] = sb;
-                            objArr[c3] = string2;
+                            objArr[0] = sb2;
+                            objArr[c10] = string2;
                             valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr));
                         } else if (messageObject.messageOwner.media == null || messageObject.isMediaEmpty()) {
                             String str4 = messageObject.messageOwner.message;
@@ -355,7 +355,7 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                                 }
                                 Object[] objArr2 = new Object[2];
                                 objArr2[0] = str4.replace('\n', ' ').trim();
-                                objArr2[c3] = string2;
+                                objArr2[c10] = string2;
                                 valueOf = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr2));
                             } else {
                                 valueOf = SpannableStringBuilder.valueOf("");
@@ -364,23 +364,23 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
                             color = this.mContext.getResources().getColor(R.color.widget_action_text);
                             TLRPC.MessageMedia messageMedia2 = messageObject.messageOwner.media;
                             Object[] objArr3 = new Object[2];
-                            objArr3[0] = (messageMedia2 instanceof TLRPC.TL_messageMediaPoll ? android.support.v4.media.a.o("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069") : messageMedia2 instanceof TLRPC.TL_messageMediaGame ? android.support.v4.media.a.o("🎮 \u2068", messageMedia2.game.title, "\u2069") : messageObject.type == 14 ? org.telegram.ui.ai.k("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString()).replace('\n', ' ');
-                            objArr3[c3] = string2;
+                            objArr3[0] = (messageMedia2 instanceof TLRPC.TL_messageMediaPoll ? a4.a.p("📊 \u2068", ((TLRPC.TL_messageMediaPoll) messageMedia2).poll.question.text, "\u2069") : messageMedia2 instanceof TLRPC.TL_messageMediaGame ? a4.a.p("🎮 \u2068", messageMedia2.game.title, "\u2069") : messageObject.type == 14 ? org.telegram.ui.Cells.p6.j("🎧 \u2068", messageObject.getMusicAuthor(), " - ", messageObject.getMusicTitle(), "\u2069") : messageObject.messageText.toString()).replace('\n', ' ');
+                            objArr3[c10] = string2;
                             SpannableStringBuilder valueOf2 = SpannableStringBuilder.valueOf(String.format("%2$s: \u2068%1$s\u2069", objArr3));
                             try {
-                                valueOf2.setSpan(new f10(org.telegram.ui.ActionBar.j6.o9, null), string2.length() + 2, valueOf2.length(), 33);
+                                valueOf2.setSpan(new e10(org.telegram.ui.ActionBar.j6.o9, null), string2.length() + 2, valueOf2.length(), 33);
                                 spannableStringBuilder = valueOf2;
-                            } catch (Exception e) {
-                                FileLog.e(e);
+                            } catch (Exception e7) {
+                                FileLog.e(e7);
                                 spannableStringBuilder = valueOf2;
                             }
-                            spannableStringBuilder.setSpan(new f10(org.telegram.ui.ActionBar.j6.k9, null), 0, string2.length() + 1, 33);
+                            spannableStringBuilder.setSpan(new e10(org.telegram.ui.ActionBar.j6.k9, null), 0, string2.length() + 1, 33);
                             charSequence2 = spannableStringBuilder;
                         }
-                        spannableStringBuilder.setSpan(new f10(org.telegram.ui.ActionBar.j6.k9, null), 0, string2.length() + 1, 33);
+                        spannableStringBuilder.setSpan(new e10(org.telegram.ui.ActionBar.j6.k9, null), 0, string2.length() + 1, 33);
                         charSequence2 = spannableStringBuilder;
-                    } catch (Exception e6) {
-                        FileLog.e(e6);
+                    } catch (Exception e10) {
+                        FileLog.e(e10);
                         charSequence2 = spannableStringBuilder;
                     }
                     spannableStringBuilder = valueOf;
@@ -411,10 +411,10 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
             }
         }
         Bundle bundle222 = new Bundle();
-        if (DialogObject.isUserDialog(l10.longValue())) {
-            bundle222.putLong("userId", l10.longValue());
+        if (DialogObject.isUserDialog(l4.longValue())) {
+            bundle222.putLong("userId", l4.longValue());
         } else {
-            bundle222.putLong("chatId", -l10.longValue());
+            bundle222.putLong("chatId", -l4.longValue());
         }
         bundle222.putInt("currentAccount", this.accountInstance.getCurrentAccount());
         Intent intent222 = new Intent();
@@ -449,14 +449,14 @@ class ChatsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
         }
         ArrayList<TLRPC.User> arrayList = new ArrayList<>();
         ArrayList<TLRPC.Chat> arrayList2 = new ArrayList<>();
-        a0.h hVar = new a0.h();
-        this.accountInstance.getMessagesStorage().getWidgetDialogs(this.appWidgetId, 0, this.dids, this.dialogs, hVar, arrayList, arrayList2);
+        a0.i iVar = new a0.i();
+        this.accountInstance.getMessagesStorage().getWidgetDialogs(this.appWidgetId, 0, this.dids, this.dialogs, iVar, arrayList, arrayList2);
         this.accountInstance.getMessagesController().putUsers(arrayList, true);
         this.accountInstance.getMessagesController().putChats(arrayList2, true);
         this.messageObjects.b();
-        int m9 = hVar.m();
-        for (int i10 = 0; i10 < m9; i10++) {
-            this.messageObjects.k(new MessageObject(this.accountInstance.getCurrentAccount(), (TLRPC.Message) hVar.n(i10), (a0.h) null, (a0.h) null, false, true), hVar.j(i10));
+        int m10 = iVar.m();
+        for (int i10 = 0; i10 < m10; i10++) {
+            this.messageObjects.k(new MessageObject(this.accountInstance.getCurrentAccount(), (TLRPC.Message) iVar.n(i10), (a0.i) null, (a0.i) null, false, true), iVar.j(i10));
         }
     }
 

@@ -2,7 +2,7 @@ package org.scilab.forge.jlatexmath;
 
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class FencedAtom extends Atom {
     private static final int DELIMITER_FACTOR = 901;
@@ -16,9 +16,9 @@ public class FencedAtom extends Atom {
         this(atom, symbolAtom, null, symbolAtom2);
     }
 
-    private static void center(Box box, float f10) {
+    private static void center(Box box, float f7) {
         float height = box.getHeight();
-        box.setShift((-(((box.getDepth() + height) / 2.0f) - height)) - f10);
+        box.setShift((-(((box.getDepth() + height) / 2.0f) - height)) - f7);
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

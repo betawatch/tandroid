@@ -1,39 +1,87 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oo implements Runnable {
+public final /* synthetic */ class oo implements org.telegram.ui.ActionBar.a2, MessagesStorage.LongCallback, dd0, MessagesStorage.BooleanCallback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ org.telegram.ui.ActionBar.p2 d;
+    public final /* synthetic */ xo b;
 
-    public /* synthetic */ oo(org.telegram.ui.ActionBar.p2 p2Var, long j10, long j11, int i10) {
+    public /* synthetic */ oo(xo xoVar, int i10) {
         this.a = i10;
-        this.d = p2Var;
-        this.b = j10;
-        this.c = j11;
+        this.b = xoVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        org.telegram.ui.Components.w51 w51Var;
+    @Override // org.telegram.ui.dd0
+    public void b(TLRPC.MessageMedia messageMedia, int i10, boolean z10, int i11, long j3) {
+        TLRPC.TL_channelLocation tL_channelLocation = new TLRPC.TL_channelLocation();
+        tL_channelLocation.address = messageMedia.address;
+        tL_channelLocation.geo_point = messageMedia.geo;
+        xo xoVar = this.b;
+        TLRPC.ChatFull chatFull = xoVar.y0;
+        chatFull.location = tL_channelLocation;
+        chatFull.flags |= 32768;
+        xoVar.p0(false, true);
+        xoVar.getMessagesController().loadFullChat(xoVar.w0, 0, true);
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
-                MessagesController.getInstance(r0.currentAccount).unlinkCommunity(this.b, this.c, new f5((ro) this.d, 4));
+                this.b.j0();
+                break;
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+                this.b.j0();
                 break;
             default:
-                org.telegram.ui.web.y1 y1Var = (org.telegram.ui.web.y1) this.d;
-                y1Var.f = this.b;
-                y1Var.h = this.c;
-                org.telegram.ui.Components.a61 a61Var = y1Var.a;
-                if (a61Var != null && (w51Var = a61Var.V2) != null && a61Var.D) {
-                    w51Var.N(true);
+                this.b.finishFragment();
+                break;
+        }
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
+    public void run(boolean z10) {
+        xo xoVar = this.b;
+        xoVar.getClass();
+        if (AndroidUtilities.isTablet()) {
+            xoVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, Long.valueOf(-xoVar.w0));
+        } else {
+            xoVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.closeChats, new Object[0]);
+        }
+        xoVar.finishFragment();
+        xoVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.needDeleteDialog, Long.valueOf(-xoVar.x0.id), null, xoVar.x0, Boolean.valueOf(z10));
+    }
+
+    @Override // org.telegram.messenger.MessagesStorage.LongCallback
+    public void run(long j3) {
+        switch (this.a) {
+            case 4:
+                this.b.t0(Long.valueOf(j3));
+                break;
+            default:
+                xo xoVar = this.b;
+                if (j3 == 0) {
+                    xoVar.N0 = false;
+                    break;
+                } else {
+                    xoVar.w0 = j3;
+                    xoVar.x0 = xoVar.getMessagesController().getChat(Long.valueOf(j3));
+                    xoVar.N0 = false;
+                    TLRPC.ChatFull chatFull = xoVar.y0;
+                    if (chatFull != null) {
+                        chatFull.hidden_prehistory = true;
+                    }
+                    xoVar.j0();
                     break;
                 }
-                break;
         }
     }
 }

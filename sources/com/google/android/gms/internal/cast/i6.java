@@ -1,31 +1,44 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class i6 {
-    public static final i6 e = new i6(new int[0], new Object[0], false);
-    public final int[] a;
-    public final Object[] b;
-    public int c = -1;
-    public boolean d;
+    public final v4 a;
+    public final String b;
+    public final Object[] c;
+    public final int d;
 
-    public i6(int[] iArr, Object[] objArr, boolean z4) {
-        this.a = iArr;
-        this.b = objArr;
-        this.d = z4;
+    public i6(v4 v4Var, String str, Object[] objArr) {
+        this.a = v4Var;
+        this.b = str;
+        this.c = objArr;
+        char charAt = str.charAt(0);
+        if (charAt < 55296) {
+            this.d = charAt;
+            return;
+        }
+        int i10 = charAt & 8191;
+        int i11 = 1;
+        int i12 = 13;
+        while (true) {
+            int i13 = i11 + 1;
+            char charAt2 = str.charAt(i11);
+            if (charAt2 < 55296) {
+                this.d = i10 | (charAt2 << i12);
+                return;
+            } else {
+                i10 |= (charAt2 & 8191) << i12;
+                i12 += 13;
+                i11 = i13;
+            }
+        }
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public final int a() {
+        int i10 = this.d;
+        if ((i10 & 1) != 0) {
+            return 1;
         }
-        if (obj == null || !(obj instanceof i6)) {
-            return false;
-        }
-        return true;
-    }
-
-    public final int hashCode() {
-        return 506991;
+        return (i10 & 4) == 4 ? 3 : 2;
     }
 }

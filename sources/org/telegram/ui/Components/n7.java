@@ -1,51 +1,44 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.PhotoViewer;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class n7 extends cd {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+public final /* synthetic */ class n7 implements zk0 {
+    public final /* synthetic */ int a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ n7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
-        super(context);
-        this.b = i10;
-        this.c = notificationCenterDelegate;
+    public /* synthetic */ n7(int i10) {
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.cd
-    public final void c(boolean z4) {
-        switch (this.b) {
+    @Override // org.telegram.ui.Components.zk0
+    public final void a(int i10, View view) {
+        switch (this.a) {
             case 0:
-                c8 c8Var = (c8) this.c;
-                c8Var.D0();
-                org.telegram.ui.vr vrVar = c8Var.L;
-                if (vrVar != null) {
-                    vrVar.a(d1.f.u());
+                if (view instanceof org.telegram.ui.Cells.x) {
+                    ((org.telegram.ui.Cells.x) view).a();
                     break;
                 }
+                break;
+            case 1:
+                boolean z10 = ChatAttachAlertPhotoLayout.q1;
+                if (view instanceof org.telegram.ui.Cells.s5) {
+                    org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
+                    s5Var.w.c(s5Var);
+                    break;
+                }
+                break;
+            case 2:
+                break;
+            case 3:
+                int i11 = yh.c.a0;
                 break;
             default:
-                PhotoViewer photoViewer = (PhotoViewer) this.c;
-                org.telegram.ui.ActionBar.g1 g1Var = photoViewer.C0;
-                if (g1Var != null) {
-                    g1Var.d(z4);
-                    photoViewer.C0.setSelectorColor(z4 ? 259241196 : 268435455);
-                }
-                i71 i71Var = photoViewer.C2;
-                if (i71Var != null) {
-                    i71Var.O(d1.f.u() || photoViewer.r);
-                }
-                org.telegram.ui.vr vrVar2 = photoViewer.t0;
-                if (vrVar2 != null) {
-                    vrVar2.a(d1.f.u());
-                    break;
-                }
+                int i12 = yh.m.A0;
                 break;
         }
+    }
+
+    private final void b(int i10, View view) {
     }
 }

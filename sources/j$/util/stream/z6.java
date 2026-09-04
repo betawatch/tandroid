@@ -15,9 +15,9 @@ public final class z6 extends b7 implements IntConsumer {
     }
 
     @Override // j$.util.stream.b7
-    public final void a(Object obj, long j10) {
+    public final void a(Object obj, long j3) {
         IntConsumer intConsumer = (IntConsumer) obj;
-        for (int i10 = 0; i10 < j10; i10++) {
+        for (int i10 = 0; i10 < j3; i10++) {
             intConsumer.accept(this.c[i10]);
         }
     }

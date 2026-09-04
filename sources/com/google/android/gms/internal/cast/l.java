@@ -1,11 +1,14 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.util.LinkedHashSet;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class l {
-    public final /* synthetic */ m a;
+    public final LinkedHashSet a = new LinkedHashSet();
+    public final p4.r b;
 
-    public l(m mVar) {
-        this.a = mVar;
+    public l(p4.r rVar) {
+        this.b = rVar;
     }
 }

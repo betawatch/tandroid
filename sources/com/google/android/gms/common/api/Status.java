@@ -8,16 +8,17 @@ import android.os.Bundle;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.f5;
 import java.util.Arrays;
+import n4.y;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class Status extends c6.a implements q, ReflectedParcelable {
+public final class Status extends o6.a implements q, ReflectedParcelable {
     public final int a;
     public final String b;
     public final PendingIntent c;
-    public final y5.a d;
+    public final k6.a d;
     public static final Status e = new Status(0, null, null, null);
     public static final Status f = new Status(14, null, null, null);
     public static final Status h = new Status(8, null, null, null);
@@ -25,15 +26,24 @@ public final class Status extends c6.a implements q, ReflectedParcelable {
     public static final Status r = new Status(16, null, null, null);
     public static final Parcelable.Creator<Status> CREATOR = new t(3);
 
-    public Status(int i10, String str, PendingIntent pendingIntent, y5.a aVar) {
+    public Status(int i10, String str, PendingIntent pendingIntent, k6.a aVar) {
         this.a = i10;
         this.b = str;
         this.c = pendingIntent;
         this.d = aVar;
     }
 
-    public final boolean e() {
+    public final boolean b() {
         return this.a <= 0;
+    }
+
+    public final void c(Activity activity, int i10) {
+        PendingIntent pendingIntent = this.c;
+        if (pendingIntent != null) {
+            Bundle bundle = Build.VERSION.SDK_INT >= 34 ? ActivityOptions.makeBasic().setPendingIntentBackgroundActivityStartMode(1).toBundle() : null;
+            n6.l.h(pendingIntent);
+            activity.startIntentSenderForResult(pendingIntent.getIntentSender(), i10, null, 0, 0, 0, bundle);
+        }
     }
 
     public final boolean equals(Object obj) {
@@ -41,16 +51,7 @@ public final class Status extends c6.a implements q, ReflectedParcelable {
             return false;
         }
         Status status = (Status) obj;
-        return this.a == status.a && b6.m.l(this.b, status.b) && b6.m.l(this.c, status.c) && b6.m.l(this.d, status.d);
-    }
-
-    public final void f(Activity activity, int i10) {
-        PendingIntent pendingIntent = this.c;
-        if (pendingIntent != null) {
-            Bundle bundle = Build.VERSION.SDK_INT >= 34 ? ActivityOptions.makeBasic().setPendingIntentBackgroundActivityStartMode(1).toBundle() : null;
-            b6.m.h(pendingIntent);
-            activity.startIntentSenderForResult(pendingIntent.getIntentSender(), i10, null, 0, 0, 0, bundle);
-        }
+        return this.a == status.a && n6.l.l(this.b, status.b) && n6.l.l(this.c, status.c) && n6.l.l(this.d, status.d);
     }
 
     public final int hashCode() {
@@ -58,25 +59,25 @@ public final class Status extends c6.a implements q, ReflectedParcelable {
     }
 
     public final String toString() {
-        af.c cVar = new af.c(this);
+        y yVar = new y(this);
         String str = this.b;
         if (str == null) {
-            str = l8.j.a(this.a);
+            str = x8.j.a(this.a);
         }
-        cVar.s(str, "statusCode");
-        cVar.s(this.c, "resolution");
-        return cVar.toString();
+        yVar.y(str, "statusCode");
+        yVar.y(this.c, "resolution");
+        return yVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.s(parcel, 1, 4);
+        int q6 = e0.q(parcel, 20293);
+        e0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        f5.l(parcel, 2, this.b);
-        f5.k(parcel, 3, this.c, i10);
-        f5.k(parcel, 4, this.d, i10);
-        f5.r(parcel, q10);
+        e0.l(parcel, 2, this.b);
+        e0.k(parcel, 3, this.c, i10);
+        e0.k(parcel, 4, this.d, i10);
+        e0.r(parcel, q6);
     }
 
     @Override // com.google.android.gms.common.api.q

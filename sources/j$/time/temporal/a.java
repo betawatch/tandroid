@@ -55,8 +55,8 @@ public enum a implements o {
         return this.b;
     }
 
-    public final void w(long j10) {
-        this.b.b(j10, this);
+    public final void w(long j3) {
+        this.b.b(j3, this);
     }
 
     @Override // j$.time.temporal.o
@@ -84,8 +84,8 @@ public enum a implements o {
     }
 
     @Override // j$.time.temporal.o
-    public final Temporal q(Temporal temporal, long j10) {
-        return temporal.c(j10, this);
+    public final Temporal q(Temporal temporal, long j3) {
+        return temporal.c(j3, this);
     }
 
     @Override // java.lang.Enum

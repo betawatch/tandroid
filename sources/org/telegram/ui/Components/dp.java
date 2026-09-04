@@ -1,40 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.widget.Toast;
-import java.util.List;
-import org.telegram.messenger.ChatThemeController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.ResultCallback;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.nd1;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class dp implements ResultCallback {
-    public final /* synthetic */ ChatThemeController a;
-    public final /* synthetic */ jp b;
+public final class dp implements nd1 {
+    public final /* synthetic */ lp a;
 
-    public dp(jp jpVar, ChatThemeController chatThemeController) {
-        this.b = jpVar;
-        this.a = chatThemeController;
+    public dp(lp lpVar) {
+        this.a = lpVar;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onComplete(Object obj) {
-        int i10;
-        List<org.telegram.ui.ActionBar.e4> emojiThemes = this.a.getEmojiThemes(7);
-        jp jpVar = this.b;
-        i10 = ((org.telegram.ui.ActionBar.g3) jpVar).currentAccount;
-        NotificationCenter.getInstance(i10).doOnIdle(new em(2, this, emojiThemes));
-        jpVar.Y = false;
+    @Override // org.telegram.ui.nd1
+    public final boolean Z0() {
+        return true;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final /* synthetic */ void onError(Throwable th2) {
-        org.telegram.tgnet.k.a(this, th2);
+    @Override // org.telegram.ui.nd1
+    public final boolean a() {
+        return this.a.N;
     }
 
-    @Override // org.telegram.tgnet.ResultCallback
-    public final void onError(TLRPC.TL_error tL_error) {
-        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
+    @Override // org.telegram.ui.nd1
+    public final void p1(boolean z10) {
+        lp lpVar = this.a;
+        org.telegram.ui.co coVar = lpVar.v;
+        lpVar.N = !lpVar.N;
+        if (lpVar.M != null) {
+            lpVar.P = true;
+            coVar.e7 = true;
+            TLRPC.WallPaper wallPaper = lpVar.v() ? null : lpVar.n.h;
+            org.telegram.ui.ActionBar.d4 d4Var = lpVar.M.a;
+            if (d4Var.a) {
+                lpVar.n.i(null, wallPaper, z10, Boolean.valueOf(lpVar.N), false);
+            } else {
+                lpVar.n.i(d4Var, wallPaper, z10, Boolean.valueOf(lpVar.N), false);
+            }
+            coVar.e7 = false;
+        }
     }
 }

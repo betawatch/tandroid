@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+import hd.f;
+import hd.m;
+import hd.o;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
-import kotlin.jvm.internal.j;
-import tc.f;
-import tc.m;
-import tc.o;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzku {
     private List zza = o.a;
@@ -18,7 +18,7 @@ public final class zzku {
         ArrayList arrayList;
         List list = this.zza;
         List g10 = f.g(jArr);
-        j.e(list, "<this>");
+        i.e(list, "<this>");
         if (g10 instanceof Collection) {
             List list2 = g10;
             arrayList = new ArrayList(list2.size() + list.size());

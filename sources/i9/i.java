@@ -1,24 +1,16 @@
 package i9;
 
-import java.io.File;
-import java.io.FilenameFilter;
+import sun.misc.Unsafe;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class i implements FilenameFilter {
-    public final /* synthetic */ int a;
-
-    @Override // java.io.FilenameFilter
-    public final boolean accept(File file, String str) {
-        switch (this.a) {
-            case 0:
-                return str.startsWith("aqs.");
-            case 1:
-                return str.startsWith(".ae");
-            case 2:
-                return str.startsWith("event");
-            default:
-                return str.startsWith("event") && !str.endsWith("_");
+public abstract /* synthetic */ class i {
+    public static /* synthetic */ boolean a(Unsafe unsafe, o oVar, long j3, n nVar, n nVar2) {
+        while (!unsafe.compareAndSwapObject(oVar, j3, nVar, nVar2)) {
+            if (unsafe.getObject(oVar, j3) != nVar) {
+                return false;
+            }
         }
+        return true;
     }
 }

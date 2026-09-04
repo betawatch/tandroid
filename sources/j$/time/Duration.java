@@ -23,25 +23,25 @@ public final class Duration implements Comparable<Duration>, Serializable {
         BigInteger.valueOf(1000000000L);
     }
 
-    public static Duration k(long j10) {
-        long j11 = j10 / 1000000000;
-        int i10 = (int) (j10 % 1000000000);
+    public static Duration k(long j3) {
+        long j10 = j3 / 1000000000;
+        int i10 = (int) (j3 % 1000000000);
         if (i10 < 0) {
             i10 = (int) (i10 + 1000000000);
-            j11--;
+            j10--;
         }
-        return j(j11, i10);
+        return j(j10, i10);
     }
 
-    public static Duration j(long j10, int i10) {
-        if ((i10 | j10) == 0) {
+    public static Duration j(long j3, int i10) {
+        if ((i10 | j3) == 0) {
             return c;
         }
-        return new Duration(j10, i10);
+        return new Duration(j3, i10);
     }
 
-    public Duration(long j10, int i10) {
-        this.a = j10;
+    public Duration(long j3, int i10) {
+        this.a = j3;
         this.b = i10;
     }
 
@@ -63,55 +63,55 @@ public final class Duration implements Comparable<Duration>, Serializable {
     }
 
     public final int hashCode() {
-        long j10 = this.a;
-        return (this.b * 51) + ((int) (j10 ^ (j10 >>> 32)));
+        long j3 = this.a;
+        return (this.b * 51) + ((int) (j3 ^ (j3 >>> 32)));
     }
 
     public final String toString() {
         if (this == c) {
             return "PT0S";
         }
-        long j10 = this.a;
-        if (j10 < 0 && this.b > 0) {
-            j10++;
+        long j3 = this.a;
+        if (j3 < 0 && this.b > 0) {
+            j3++;
         }
-        long j11 = j10 / 3600;
-        int i10 = (int) ((j10 % 3600) / 60);
-        int i11 = (int) (j10 % 60);
-        StringBuilder sb = new StringBuilder(24);
-        sb.append("PT");
-        if (j11 != 0) {
-            sb.append(j11);
-            sb.append('H');
+        long j10 = j3 / 3600;
+        int i10 = (int) ((j3 % 3600) / 60);
+        int i11 = (int) (j3 % 60);
+        StringBuilder sb2 = new StringBuilder(24);
+        sb2.append("PT");
+        if (j10 != 0) {
+            sb2.append(j10);
+            sb2.append('H');
         }
         if (i10 != 0) {
-            sb.append(i10);
-            sb.append('M');
+            sb2.append(i10);
+            sb2.append('M');
         }
-        if (i11 == 0 && this.b == 0 && sb.length() > 2) {
-            return sb.toString();
+        if (i11 == 0 && this.b == 0 && sb2.length() > 2) {
+            return sb2.toString();
         }
         if (this.a >= 0 || this.b <= 0) {
-            sb.append(i11);
+            sb2.append(i11);
         } else if (i11 == 0) {
-            sb.append("-0");
+            sb2.append("-0");
         } else {
-            sb.append(i11);
+            sb2.append(i11);
         }
         if (this.b > 0) {
-            int length = sb.length();
+            int length = sb2.length();
             if (this.a < 0) {
-                sb.append(2000000000 - this.b);
+                sb2.append(2000000000 - this.b);
             } else {
-                sb.append(this.b + 1000000000);
+                sb2.append(this.b + 1000000000);
             }
-            while (sb.charAt(sb.length() - 1) == '0') {
-                sb.setLength(sb.length() - 1);
+            while (sb2.charAt(sb2.length() - 1) == '0') {
+                sb2.setLength(sb2.length() - 1);
             }
-            sb.setCharAt(length, '.');
+            sb2.setCharAt(length, '.');
         }
-        sb.append('S');
-        return sb.toString();
+        sb2.append('S');
+        return sb2.toString();
     }
 
     private Object writeReplace() {

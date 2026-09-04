@@ -1,44 +1,22 @@
 package z2;
 
-import m1.j;
-import org.telegram.messenger.BuildConfig;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ExecutorService;
+import org.telegram.ui.web.n;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public final int a;
-    public final long b;
+public final class a implements Executor {
+    public final /* synthetic */ Executor a;
+    public final /* synthetic */ n b;
 
-    public a(int i10, long j10) {
-        if (i10 == 0) {
-            throw new NullPointerException("Null status");
-        }
-        this.a = i10;
-        this.b = j10;
+    public a(ExecutorService executorService, n nVar) {
+        this.a = executorService;
+        this.b = nVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof a)) {
-            return false;
-        }
-        a aVar = (a) obj;
-        return j.b(this.a, aVar.a) && this.b == aVar.b;
-    }
-
-    public final int hashCode() {
-        int c3 = (j.c(this.a) ^ 1000003) * 1000003;
-        long j10 = this.b;
-        return c3 ^ ((int) (j10 ^ (j10 >>> 32)));
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("BackendResponse{status=");
-        int i10 = this.a;
-        sb.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? BuildConfig.BETA_URL : "INVALID_PAYLOAD" : "FATAL_ERROR" : "TRANSIENT_ERROR" : "OK");
-        sb.append(", nextRequestWaitMillis=");
-        return android.support.v4.media.a.q(sb, this.b, "}");
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.execute(runnable);
     }
 }

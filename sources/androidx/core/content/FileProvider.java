@@ -13,17 +13,17 @@ import android.os.Environment;
 import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.webkit.MimeTypeMap;
-import e2.c;
-import f0.g;
+import com.google.android.gms.internal.vision.e2;
+import f0.f;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Cells.p6;
 import org.xmlpull.v1.XmlPullParserException;
-import vh.w2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class FileProvider extends ContentProvider {
     public static final String[] e = {"_display_name", "_size"};
@@ -32,29 +32,29 @@ public class FileProvider extends ContentProvider {
     public final Object a;
     public final int b;
     public String c;
-    public g d;
+    public f d;
 
     public FileProvider() {
         this(0);
     }
 
     public static String a(String str) {
-        return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : c.j(str, 1, 0);
+        return (str.length() <= 0 || str.charAt(str.length() - 1) != '/') ? str : e2.i(1, 0, str);
     }
 
-    public static g c(Context context, String str, int i10) {
-        g gVar;
+    public static f c(Context context, String str, int i10) {
+        f fVar;
         HashMap hashMap = h;
         synchronized (hashMap) {
             try {
-                gVar = (g) hashMap.get(str);
-                if (gVar == null) {
+                fVar = (f) hashMap.get(str);
+                if (fVar == null) {
                     try {
                         try {
-                            gVar = e(context, str, i10);
-                            hashMap.put(str, gVar);
-                        } catch (IOException e6) {
-                            throw new IllegalArgumentException("Failed to parse android.support.FILE_PROVIDER_PATHS meta-data", e6);
+                            fVar = e(context, str, i10);
+                            hashMap.put(str, fVar);
+                        } catch (IOException e7) {
+                            throw new IllegalArgumentException("Failed to parse android.support.FILE_PROVIDER_PATHS meta-data", e7);
                         }
                     } catch (XmlPullParserException e10) {
                         throw new IllegalArgumentException("Failed to parse android.support.FILE_PROVIDER_PATHS meta-data", e10);
@@ -64,35 +64,35 @@ public class FileProvider extends ContentProvider {
                 throw th2;
             }
         }
-        return gVar;
+        return fVar;
     }
 
     public static Uri d(Context context, String str, File file) {
-        g c3 = c(context, str, 0);
+        f c10 = c(context, str, 0);
         try {
             String canonicalPath = file.getCanonicalPath();
             Map.Entry entry = null;
-            for (Map.Entry entry2 : c3.b.entrySet()) {
+            for (Map.Entry entry2 : c10.b.entrySet()) {
                 String path = ((File) entry2.getValue()).getPath();
                 if (a(canonicalPath).startsWith(a(path) + '/') && (entry == null || path.length() > ((File) entry.getValue()).getPath().length())) {
                     entry = entry2;
                 }
             }
             if (entry == null) {
-                throw new IllegalArgumentException(w2.e("Failed to find configured root that contains ", canonicalPath));
+                throw new IllegalArgumentException(p6.i("Failed to find configured root that contains ", canonicalPath));
             }
             String path2 = ((File) entry.getValue()).getPath();
-            return new Uri.Builder().scheme("content").authority(c3.a).encodedPath(Uri.encode((String) entry.getKey()) + '/' + Uri.encode(path2.endsWith("/") ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), "/")).build();
+            return new Uri.Builder().scheme("content").authority(c10.a).encodedPath(Uri.encode((String) entry.getKey()) + '/' + Uri.encode(path2.endsWith("/") ? canonicalPath.substring(path2.length()) : canonicalPath.substring(path2.length() + 1), "/")).build();
         } catch (IOException unused) {
             throw new IllegalArgumentException("Failed to resolve canonical path for " + file);
         }
     }
 
-    public static g e(Context context, String str, int i10) {
-        g gVar = new g(str);
+    public static f e(Context context, String str, int i10) {
+        f fVar = new f(str);
         ProviderInfo resolveContentProvider = context.getPackageManager().resolveContentProvider(str, 128);
         if (resolveContentProvider == null) {
-            throw new IllegalArgumentException(w2.e("Couldn't find meta-data for provider with authority ", str));
+            throw new IllegalArgumentException(p6.i("Couldn't find meta-data for provider with authority ", str));
         }
         if (resolveContentProvider.metaData == null && i10 != 0) {
             Bundle bundle = new Bundle(1);
@@ -106,7 +106,7 @@ public class FileProvider extends ContentProvider {
         while (true) {
             int next = loadXmlMetaData.next();
             if (next == 1) {
-                return gVar;
+                return fVar;
             }
             if (next == 2) {
                 String name = loadXmlMetaData.getName();
@@ -148,9 +148,9 @@ public class FileProvider extends ContentProvider {
                         throw new IllegalArgumentException("Name must not be empty");
                     }
                     try {
-                        gVar.b.put(attributeValue, file.getCanonicalFile());
-                    } catch (IOException e6) {
-                        throw new IllegalArgumentException("Failed to resolve canonical path for " + file, e6);
+                        fVar.b.put(attributeValue, file.getCanonicalFile());
+                    } catch (IOException e7) {
+                        throw new IllegalArgumentException("Failed to resolve canonical path for " + file, e7);
                     }
                 }
             }
@@ -180,8 +180,8 @@ public class FileProvider extends ContentProvider {
         }
     }
 
-    public final g b() {
-        g gVar;
+    public final f b() {
+        f fVar;
         synchronized (this.a) {
             try {
                 if (this.c == null) {
@@ -190,12 +190,12 @@ public class FileProvider extends ContentProvider {
                 if (this.d == null) {
                     this.d = c(getContext(), this.c, this.b);
                 }
-                gVar = this.d;
+                fVar = this.d;
             } catch (Throwable th2) {
                 throw th2;
             }
         }
-        return gVar;
+        return fVar;
     }
 
     @Override // android.content.ContentProvider
@@ -243,7 +243,7 @@ public class FileProvider extends ContentProvider {
             i10 = 939524096;
         } else {
             if (!"rwt".equals(str)) {
-                throw new IllegalArgumentException(w2.e("Invalid mode: ", str));
+                throw new IllegalArgumentException(p6.i("Invalid mode: ", str));
             }
             i10 = 1006632960;
         }

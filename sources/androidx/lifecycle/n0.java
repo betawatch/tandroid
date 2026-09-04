@@ -5,19 +5,19 @@ import android.os.Bundle;
 import java.lang.reflect.Constructor;
 import java.util.LinkedHashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class n0 implements s0 {
     public final Application a;
     public final r0 b;
     public final Bundle c;
     public final o d;
-    public final g2.e e;
+    public final m.p e;
 
-    public n0(Application application, g2.f fVar, Bundle bundle) {
+    public n0(Application application, t4.e eVar, Bundle bundle) {
         r0 r0Var;
-        this.e = fVar.g();
-        this.d = fVar.m();
+        this.e = eVar.g();
+        this.d = eVar.m();
         this.c = bundle;
         this.a = application;
         if (application != null) {
@@ -25,15 +25,44 @@ public final class n0 implements s0 {
                 r0.e = new r0(application);
             }
             r0Var = r0.e;
-            kotlin.jvm.internal.j.b(r0Var);
+            kotlin.jvm.internal.i.b(r0Var);
         } else {
             r0Var = new r0(null);
         }
         this.b = r0Var;
     }
 
+    @Override // androidx.lifecycle.s0
+    public final p0 U(Class cls, v1.b bVar) {
+        q0 q0Var = q0.b;
+        LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
+        String str = (String) linkedHashMap.get(q0Var);
+        if (str == null) {
+            throw new IllegalStateException("VIEW_MODEL_KEY must always be provided by ViewModelProvider");
+        }
+        if (linkedHashMap.get(j0.a) == null || linkedHashMap.get(j0.b) == null) {
+            if (this.d != null) {
+                return b(cls, str);
+            }
+            throw new IllegalStateException("SAVED_STATE_REGISTRY_OWNER_KEY andVIEW_MODEL_STORE_OWNER_KEY must be provided in the creation extras tosuccessfully create a ViewModel.");
+        }
+        Application application = (Application) linkedHashMap.get(q0.a);
+        boolean isAssignableFrom = a.class.isAssignableFrom(cls);
+        Constructor a2 = (!isAssignableFrom || application == null) ? o0.a(o0.b, cls) : o0.a(o0.a, cls);
+        return a2 == null ? this.b.U(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a2, j0.c(bVar)) : o0.b(cls, a2, application, j0.c(bVar));
+    }
+
+    @Override // androidx.lifecycle.s0
+    public final p0 a(Class cls) {
+        String canonicalName = cls.getCanonicalName();
+        if (canonicalName != null) {
+            return b(cls, canonicalName);
+        }
+        throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
-    public final p0 a(Class cls, String str) {
+    public final p0 b(Class cls, String str) {
         Object obj;
         Application application;
         o oVar = this.d;
@@ -44,28 +73,28 @@ public final class n0 implements s0 {
         Constructor a2 = (!isAssignableFrom || this.a == null) ? o0.a(o0.b, cls) : o0.a(o0.a, cls);
         if (a2 == null) {
             if (this.a != null) {
-                return this.b.b(cls);
+                return this.b.a(cls);
             }
             if (q0.c == null) {
                 q0.c = new q0();
             }
             q0 q0Var = q0.c;
-            kotlin.jvm.internal.j.b(q0Var);
-            return q0Var.b(cls);
+            kotlin.jvm.internal.i.b(q0Var);
+            return q0Var.a(cls);
         }
-        g2.e eVar = this.e;
-        kotlin.jvm.internal.j.b(eVar);
+        m.p pVar = this.e;
+        kotlin.jvm.internal.i.b(pVar);
         Bundle bundle = this.c;
-        Bundle c3 = eVar.c(str);
+        Bundle c10 = pVar.c(str);
         Class[] clsArr = i0.f;
-        i0 b10 = j0.b(c3, bundle);
+        i0 b10 = j0.b(c10, bundle);
         SavedStateHandleController savedStateHandleController = new SavedStateHandleController(str, b10);
-        savedStateHandleController.c(oVar, eVar);
+        savedStateHandleController.c(oVar, pVar);
         n nVar = ((v) oVar).c;
         if (nVar == n.b || nVar.compareTo(n.d) >= 0) {
-            eVar.g();
+            pVar.g();
         } else {
-            oVar.a(new LegacySavedStateHandleController$tryToAddRecreator$1(oVar, eVar));
+            oVar.a(new LegacySavedStateHandleController$tryToAddRecreator$1(oVar, pVar));
         }
         p0 b11 = (!isAssignableFrom || (application = this.a) == null) ? o0.b(cls, a2, b10) : o0.b(cls, a2, application, b10);
         synchronized (b11.a) {
@@ -85,34 +114,5 @@ public final class n0 implements s0 {
             p0.a(savedStateHandleController);
         }
         return b11;
-    }
-
-    @Override // androidx.lifecycle.s0
-    public final p0 b(Class cls) {
-        String canonicalName = cls.getCanonicalName();
-        if (canonicalName != null) {
-            return a(cls, canonicalName);
-        }
-        throw new IllegalArgumentException("Local and anonymous classes can not be ViewModels");
-    }
-
-    @Override // androidx.lifecycle.s0
-    public final p0 p(Class cls, v1.b bVar) {
-        q0 q0Var = q0.b;
-        LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
-        String str = (String) linkedHashMap.get(q0Var);
-        if (str == null) {
-            throw new IllegalStateException("VIEW_MODEL_KEY must always be provided by ViewModelProvider");
-        }
-        if (linkedHashMap.get(j0.a) == null || linkedHashMap.get(j0.b) == null) {
-            if (this.d != null) {
-                return a(cls, str);
-            }
-            throw new IllegalStateException("SAVED_STATE_REGISTRY_OWNER_KEY andVIEW_MODEL_STORE_OWNER_KEY must be provided in the creation extras tosuccessfully create a ViewModel.");
-        }
-        Application application = (Application) linkedHashMap.get(q0.a);
-        boolean isAssignableFrom = a.class.isAssignableFrom(cls);
-        Constructor a2 = (!isAssignableFrom || application == null) ? o0.a(o0.b, cls) : o0.a(o0.a, cls);
-        return a2 == null ? this.b.p(cls, bVar) : (!isAssignableFrom || application == null) ? o0.b(cls, a2, j0.c(bVar)) : o0.b(cls, a2, application, j0.c(bVar));
     }
 }

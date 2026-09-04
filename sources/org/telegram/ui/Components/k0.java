@@ -11,9 +11,9 @@ import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k0 implements org.telegram.ui.ActionBar.c2 {
+public final /* synthetic */ class k0 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
     public final /* synthetic */ Context b;
 
@@ -22,16 +22,16 @@ public final /* synthetic */ class k0 implements org.telegram.ui.ActionBar.c2 {
         this.b = context;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public final void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
+    @Override // org.telegram.ui.ActionBar.a2
+    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
         switch (this.a) {
             case 0:
                 Context context = this.b;
                 try {
                     context.startActivity(new Intent("android.settings.MANAGE_UNKNOWN_APP_SOURCES", Uri.parse("package:" + context.getPackageName())));
                     break;
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                     return;
                 }
             case 1:
@@ -41,12 +41,12 @@ public final /* synthetic */ class k0 implements org.telegram.ui.ActionBar.c2 {
                     intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
                     context2.startActivity(intent);
                     break;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
+                } catch (Exception e10) {
+                    FileLog.e(e10);
                     return;
                 }
             case 2:
-                ze.d.s(this.b, BuildVars.PLAYSTORE_APP_URL);
+                of.f.s(this.b, BuildVars.PLAYSTORE_APP_URL);
                 break;
             default:
                 Context context3 = this.b;
@@ -62,8 +62,8 @@ public final /* synthetic */ class k0 implements org.telegram.ui.ActionBar.c2 {
                             }
                         }
                         break;
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
+                    } catch (Exception e11) {
+                        FileLog.e(e11);
                         return;
                     }
                 }

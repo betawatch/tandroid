@@ -1,61 +1,37 @@
 package org.telegram.ui.web;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.yc;
+import org.telegram.ui.co;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
-public interface g0 {
-    void a();
+public final class g0 extends co {
+    public boolean Qc;
+    public final /* synthetic */ TLRPC.User Rc;
+    public final /* synthetic */ long Sc;
+    public final /* synthetic */ d1 Tc;
 
-    void b();
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public g0(d1 d1Var, Bundle bundle, TLRPC.User user, long j3) {
+        super(bundle);
+        this.Tc = d1Var;
+        this.Rc = user;
+        this.Sc = j3;
+    }
 
-    void c();
-
-    void d(TLRPC.Document document);
-
-    void e(String str);
-
-    void f(ArrayList arrayList);
-
-    String g(boolean z4, boolean z10);
-
-    boolean h();
-
-    void i(boolean z4);
-
-    void j();
-
-    void k(boolean z4);
-
-    void l(boolean z4, boolean z10, String str, long j10, int i10, int i11, boolean z11, boolean z12, String str2);
-
-    void m(int i10);
-
-    void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject);
-
-    void o(int i10, boolean z4);
-
-    void p(boolean z4);
-
-    void q(boolean z4, boolean z10, String str, long j10, int i10, int i11, boolean z11, boolean z12);
-
-    void r(int i10);
-
-    void s();
-
-    void t(boolean z4);
-
-    void u(int i10, int i11, boolean z4);
-
-    void v(TLRPC.User user, String str, ArrayList arrayList);
-
-    void w(boolean z4);
-
-    void x(boolean z4);
-
-    void y();
-
-    rh.u0 z();
+    @Override // org.telegram.ui.co, org.telegram.ui.ActionBar.n2
+    public final void onBecomeFullyVisible() {
+        super.onBecomeFullyVisible();
+        if (this.Qc) {
+            return;
+        }
+        this.Qc = true;
+        yc.a0(this).M(LocaleController.formatString(R.string.CreateManagedBotCreatedTitle, UserObject.getUserName(this.Rc)), AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.CreateManagedBotCreatedText, UserObject.getUserName(this.Tc.U)), new bi.g(this, this.Sc, 28)), R.raw.contact_check).j();
+    }
 }

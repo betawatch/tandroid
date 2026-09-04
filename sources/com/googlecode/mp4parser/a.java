@@ -1,20 +1,20 @@
 package com.googlecode.mp4parser;
 
-import j7.k5;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.WritableByteChannel;
+import w7.p6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class a implements s2.b {
+public abstract class a implements f5.b {
     static final /* synthetic */ boolean $assertionsDisabled = false;
-    private static cc.c LOG = cc.c.a(a.class);
+    private static qc.c LOG = qc.c.a(a.class);
     private ByteBuffer content;
     long contentStartPosition;
     f dataSource;
     long offset;
-    private s2.f parent;
+    private f5.f parent;
     protected String type;
     private byte[] userType;
     long memMapSize = -1;
@@ -31,10 +31,10 @@ public abstract class a implements s2.b {
     public final void a(ByteBuffer byteBuffer) {
         if (b()) {
             byteBuffer.putInt((int) getSize());
-            byteBuffer.put(r2.c.d(getType()));
+            byteBuffer.put(e5.c.d(getType()));
         } else {
             byteBuffer.putInt((int) 1);
-            byteBuffer.put(r2.c.d(getType()));
+            byteBuffer.put(e5.c.d(getType()));
             byteBuffer.putLong(getSize());
         }
         if ("uuid".equals(getType())) {
@@ -61,8 +61,8 @@ public abstract class a implements s2.b {
                 try {
                     LOG.b("mem mapping " + getType());
                     throw null;
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
+                } catch (IOException e7) {
+                    throw new RuntimeException(e7);
                 }
             }
         } catch (Throwable th2) {
@@ -70,7 +70,7 @@ public abstract class a implements s2.b {
         }
     }
 
-    @Override // s2.b
+    @Override // f5.b
     public void getBox(WritableByteChannel writableByteChannel) {
         if (!this.isRead) {
             ByteBuffer allocate = ByteBuffer.allocate((b() ? 8 : 16) + ("uuid".equals(getType()) ? 16 : 0));
@@ -85,7 +85,7 @@ public abstract class a implements s2.b {
             writableByteChannel.write((ByteBuffer) this.content.position(0));
             return;
         }
-        ByteBuffer allocate3 = ByteBuffer.allocate(k5.a(getSize()));
+        ByteBuffer allocate3 = ByteBuffer.allocate(p6.a(getSize()));
         a(allocate3);
         getContent(allocate3);
         ByteBuffer byteBuffer = this.deadBytes;
@@ -106,30 +106,30 @@ public abstract class a implements s2.b {
         return this.offset;
     }
 
-    @Override // s2.b
-    public s2.f getParent() {
+    @Override // f5.b
+    public f5.f getParent() {
         return this.parent;
     }
 
     public String getPath() {
-        return cc.e.a(this, "");
+        return qc.e.a(this, "");
     }
 
-    @Override // s2.b
+    @Override // f5.b
     public long getSize() {
-        long j10;
+        long j3;
         if (!this.isRead) {
-            j10 = this.memMapSize;
+            j3 = this.memMapSize;
         } else if (this.isParsed) {
-            j10 = getContentSize();
+            j3 = getContentSize();
         } else {
             ByteBuffer byteBuffer = this.content;
-            j10 = byteBuffer != null ? byteBuffer.limit() : 0;
+            j3 = byteBuffer != null ? byteBuffer.limit() : 0;
         }
-        return j10 + (j10 >= 4294967288L ? 8 : 0) + 8 + ("uuid".equals(getType()) ? 16 : 0) + (this.deadBytes != null ? r0.limit() : 0);
+        return j3 + (j3 >= 4294967288L ? 8 : 0) + 8 + ("uuid".equals(getType()) ? 16 : 0) + (this.deadBytes != null ? r0.limit() : 0);
     }
 
-    @Override // s2.b
+    @Override // f5.b
     public String getType() {
         return this.type;
     }
@@ -142,11 +142,11 @@ public abstract class a implements s2.b {
         return this.isParsed;
     }
 
-    public void parse(f fVar, ByteBuffer byteBuffer, long j10, r2.a aVar) {
+    public void parse(f fVar, ByteBuffer byteBuffer, long j3, e5.a aVar) {
         long position = fVar.position();
         this.contentStartPosition = position;
         this.offset = position - byteBuffer.remaining();
-        this.memMapSize = j10;
+        this.memMapSize = j3;
         fVar.position();
         fVar.position();
         this.isRead = false;
@@ -176,8 +176,8 @@ public abstract class a implements s2.b {
         this.deadBytes = byteBuffer;
     }
 
-    @Override // s2.b
-    public void setParent(s2.f fVar) {
+    @Override // f5.b
+    public void setParent(f5.f fVar) {
         this.parent = fVar;
     }
 }

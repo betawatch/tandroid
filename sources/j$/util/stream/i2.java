@@ -12,8 +12,8 @@ public final class i2 implements e2 {
     public final Collection a;
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.V(this, j10, j11, intFunction);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.V(this, j3, j10, intFunction);
     }
 
     @Override // j$.util.stream.e2

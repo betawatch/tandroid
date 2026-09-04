@@ -1,37 +1,37 @@
 package com.google.android.recaptcha.internal;
 
-import dd.p;
-import k7.p7;
-import kotlin.jvm.internal.j;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzfu extends i implements p {
+final class zzfu extends j implements p {
     int zza;
     final /* synthetic */ zzgb zzb;
     final /* synthetic */ long zzc;
     private /* synthetic */ Object zzd;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfu(zzgb zzgbVar, long j10, c cVar) {
+    public zzfu(zzgb zzgbVar, long j3, c cVar) {
         super(2, cVar);
         this.zzb = zzgbVar;
-        this.zzc = j10;
+        this.zzc = j3;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzfu zzfuVar = new zzfu(this.zzb, this.zzc, cVar);
         zzfuVar.zzd = obj;
         return zzfuVar;
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzfu) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:23:0x0040, code lost:
@@ -44,7 +44,7 @@ final class zzfu extends i implements p {
      */
     /* JADX WARN: Removed duplicated region for block: B:10:0x0064  */
     /* JADX WARN: Removed duplicated region for block: B:13:0x006a A[Catch: Exception -> 0x0011, TRY_ENTER, TryCatch #0 {Exception -> 0x0011, blocks: (B:6:0x000d, B:7:0x0055, B:13:0x006a, B:14:0x0078, B:17:0x0042), top: B:2:0x0007 }] */
-    @Override // wc.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -58,26 +58,26 @@ final class zzfu extends i implements p {
         int i10 = this.zza;
         try {
             if (i10 == 0) {
-                p7.b(obj);
+                t7.b(obj);
                 zzhkVar = (zzhk) this.zzd;
                 zzgb zzgbVar = this.zzb;
-                long j10 = this.zzc;
+                long j3 = this.zzc;
                 this.zzd = zzhkVar;
                 this.zza = 1;
-                obj = zzgbVar.zzq(j10, this);
+                obj = zzgbVar.zzq(j3, this);
             } else if (i10 == 1) {
                 zzhkVar = (zzhk) this.zzd;
-                p7.b(obj);
+                t7.b(obj);
             } else {
                 if (i10 != 2) {
-                    p7.b(obj);
+                    t7.b(obj);
                     longValue = this.zzc - ((Number) obj).longValue();
                     if (longValue < 500) {
                         return new Long(longValue);
                     }
                     throw new zzcg(zzce.zzc, zzcd.zzas, null, null, 12, null);
                 }
-                p7.b(obj);
+                t7.b(obj);
                 zzgb zzgbVar2 = this.zzb;
                 zzft zzftVar = new zzft(this.zzc, zzgbVar2, null);
                 this.zza = 3;
@@ -91,18 +91,18 @@ final class zzfu extends i implements p {
             }
             this.zzd = null;
             this.zza = 2;
-        } catch (Exception e) {
-            zzcg zzcgVar2 = e instanceof zzcg ? (zzcg) e : null;
+        } catch (Exception e7) {
+            zzcg zzcgVar2 = e7 instanceof zzcg ? (zzcg) e7 : null;
             if (zzcgVar2 == null) {
-                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e.getMessage(), null, 8, null);
+                zzcgVar2 = new zzcg(zzce.zzc, zzcd.zzas, e7.getMessage(), null, 8, null);
             }
             zzgb zzgbVar3 = this.zzb;
             zzdv zze = zzgbVar3.zze();
             zzdrVar = zzdv.zzd;
-            if (!j.a(zze, zzdrVar)) {
+            if (!kotlin.jvm.internal.i.a(zze, zzdrVar)) {
                 zzdv zze2 = zzgbVar3.zze();
                 zzdtVar = zzdv.zzc;
-                if (!j.a(zze2, zzdtVar)) {
+                if (!kotlin.jvm.internal.i.a(zze2, zzdtVar)) {
                     throw zzcgVar2;
                 }
             }

@@ -1,59 +1,27 @@
 package org.telegram.ui.web;
 
+import android.util.Base64InputStream;
 import java.io.BufferedInputStream;
+import java.io.File;
 import java.io.FilterInputStream;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
-public final class m1 extends FilterInputStream {
-    public m1(BufferedInputStream bufferedInputStream) {
-        super(bufferedInputStream);
-    }
+public final class m1 {
+    public final HashMap a = new HashMap();
+    public File b;
+    public long c;
+    public long d;
 
-    public static int a(int i10) {
-        if (i10 >= 48 && i10 <= 57) {
-            return i10 - 48;
+    public final FilterInputStream a() {
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(new l1(this.b, this.c, this.d));
+        HashMap hashMap = this.a;
+        n1 n1Var = (n1) hashMap.get("content-transfer-encoding");
+        if ("base64".equals(n1Var == null ? null : n1Var.a)) {
+            return new Base64InputStream(bufferedInputStream, 0);
         }
-        if (i10 >= 65 && i10 <= 70) {
-            return i10 - 55;
-        }
-        if (i10 < 97 || i10 > 102) {
-            return 0;
-        }
-        return i10 - 87;
-    }
-
-    @Override // java.io.FilterInputStream, java.io.InputStream
-    public final int read() {
-        int read = ((FilterInputStream) this).in.read();
-        if (read != 61) {
-            return read;
-        }
-        int read2 = ((FilterInputStream) this).in.read();
-        int read3 = ((FilterInputStream) this).in.read();
-        if (read2 == -1 || read3 == -1) {
-            return -1;
-        }
-        return (read2 == 13 && read3 == 10) ? read() : (read2 == 10 || read3 == 10) ? read3 : (a(read2) << 4) | a(read3);
-    }
-
-    @Override // java.io.FilterInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        int i12 = 0;
-        int i13 = 0;
-        while (true) {
-            if (i12 >= i11) {
-                break;
-            }
-            int read = read();
-            if (read != -1) {
-                bArr[i10 + i12] = (byte) read;
-                i13++;
-                i12++;
-            } else if (i13 == 0) {
-                return -1;
-            }
-        }
-        return i13;
+        n1 n1Var2 = (n1) hashMap.get("content-transfer-encoding");
+        return "quoted-printable".equalsIgnoreCase(n1Var2 != null ? n1Var2.a : null) ? new o1(bufferedInputStream) : bufferedInputStream;
     }
 }

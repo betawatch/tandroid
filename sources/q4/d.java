@@ -1,110 +1,95 @@
 package q4;
 
-import android.util.SparseArray;
-import j3.n0;
-import n7.qa;
-import org.telegram.ui.Components.jb;
-import r3.s;
-import r3.v;
+import android.graphics.Color;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class d implements r3.m {
-    public static final jb s = new jb();
-    public final r3.k a;
+public final class d {
+    public final int a;
     public final int b;
-    public final n0 c;
-    public final SparseArray d = new SparseArray();
-    public boolean e;
-    public qa f;
-    public long h;
-    public s n;
-    public n0[] r;
+    public final int c;
+    public final int d;
+    public final int e;
+    public boolean f;
+    public int g;
+    public int h;
+    public float[] i;
 
-    public d(r3.k kVar, int i10, n0 n0Var) {
-        this.a = kVar;
-        this.b = i10;
-        this.c = n0Var;
+    public d(int i10, int i11) {
+        this.a = Color.red(i10);
+        this.b = Color.green(i10);
+        this.c = Color.blue(i10);
+        this.d = i10;
+        this.e = i11;
     }
 
-    public final void a(qa qaVar, long j10, long j11) {
-        this.f = qaVar;
-        this.h = j11;
-        boolean z4 = this.e;
-        r3.k kVar = this.a;
-        if (!z4) {
-            kVar.e(this);
-            if (j10 != -9223372036854775807L) {
-                kVar.d(0L, j10);
-            }
-            this.e = true;
+    public final void a() {
+        if (this.f) {
             return;
         }
-        if (j10 == -9223372036854775807L) {
-            j10 = 0;
+        int i10 = this.d;
+        int g10 = i0.a.g(4.5f, -1, i10);
+        int g11 = i0.a.g(3.0f, -1, i10);
+        if (g10 != -1 && g11 != -1) {
+            this.h = i0.a.k(-1, g10);
+            this.g = i0.a.k(-1, g11);
+            this.f = true;
+            return;
         }
-        kVar.d(0L, j10);
-        int i10 = 0;
-        while (true) {
-            SparseArray sparseArray = this.d;
-            if (i10 >= sparseArray.size()) {
-                return;
-            }
-            c cVar = (c) sparseArray.valueAt(i10);
-            if (qaVar == null) {
-                cVar.e = cVar.c;
-            } else {
-                cVar.f = j11;
-                v M0 = qaVar.M0(cVar.a);
-                cVar.e = M0;
-                n0 n0Var = cVar.d;
-                if (n0Var != null) {
-                    M0.b(n0Var);
-                }
-            }
-            i10++;
+        int g12 = i0.a.g(4.5f, -16777216, i10);
+        int g13 = i0.a.g(3.0f, -16777216, i10);
+        if (g12 == -1 || g13 == -1) {
+            this.h = g10 != -1 ? i0.a.k(-1, g10) : i0.a.k(-16777216, g12);
+            this.g = g11 != -1 ? i0.a.k(-1, g11) : i0.a.k(-16777216, g13);
+            this.f = true;
+        } else {
+            this.h = i0.a.k(-16777216, g12);
+            this.g = i0.a.k(-16777216, g13);
+            this.f = true;
         }
     }
 
-    @Override // r3.m
-    public final v d2(int i10, int i11) {
-        SparseArray sparseArray = this.d;
-        c cVar = (c) sparseArray.get(i10);
-        if (cVar == null) {
-            h5.a.i(this.r == null);
-            cVar = new c(i10, i11, i11 == this.b ? this.c : null);
-            qa qaVar = this.f;
-            long j10 = this.h;
-            if (qaVar == null) {
-                cVar.e = cVar.c;
-            } else {
-                cVar.f = j10;
-                v M0 = qaVar.M0(i11);
-                cVar.e = M0;
-                n0 n0Var = cVar.d;
-                if (n0Var != null) {
-                    M0.b(n0Var);
-                }
+    public final float[] b() {
+        if (this.i == null) {
+            this.i = new float[3];
+        }
+        i0.a.b(this.i, this.a, this.b, this.c);
+        return this.i;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && d.class == obj.getClass()) {
+            d dVar = (d) obj;
+            if (this.e == dVar.e && this.d == dVar.d) {
+                return true;
             }
-            sparseArray.put(i10, cVar);
         }
-        return cVar;
+        return false;
     }
 
-    @Override // r3.m
-    public final void h2(s sVar) {
-        this.n = sVar;
+    public final int hashCode() {
+        return (this.d * 31) + this.e;
     }
 
-    @Override // r3.m
-    public final void j1() {
-        SparseArray sparseArray = this.d;
-        n0[] n0VarArr = new n0[sparseArray.size()];
-        for (int i10 = 0; i10 < sparseArray.size(); i10++) {
-            n0 n0Var = ((c) sparseArray.valueAt(i10)).d;
-            h5.a.j(n0Var);
-            n0VarArr[i10] = n0Var;
-        }
-        this.r = n0VarArr;
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder(d.class.getSimpleName());
+        sb2.append(" [RGB: #");
+        sb2.append(Integer.toHexString(this.d));
+        sb2.append("] [HSL: ");
+        sb2.append(Arrays.toString(b()));
+        sb2.append("] [Population: ");
+        sb2.append(this.e);
+        sb2.append("] [Title Text: #");
+        a();
+        sb2.append(Integer.toHexString(this.g));
+        sb2.append("] [Body Text: #");
+        a();
+        sb2.append(Integer.toHexString(this.h));
+        sb2.append(']');
+        return sb2.toString();
     }
 }

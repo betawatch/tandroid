@@ -1,1254 +1,414 @@
 package p2;
 
-import android.app.Activity;
-import android.app.PendingIntent;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.content.pm.ServiceInfo;
-import android.os.Build;
-import android.os.Bundle;
-import android.os.DeadObjectException;
-import android.os.Handler;
-import android.os.Looper;
-import android.text.TextUtils;
-import com.android.billingclient.api.ProxyBillingActivity;
-import com.google.android.gms.common.api.internal.s1;
-import com.google.android.gms.internal.play_billing.a1;
-import com.google.android.gms.internal.play_billing.b1;
-import com.google.android.gms.internal.play_billing.c4;
-import com.google.android.gms.internal.play_billing.d4;
-import com.google.android.gms.internal.play_billing.f3;
-import com.google.android.gms.internal.play_billing.g3;
-import com.google.android.gms.internal.play_billing.h3;
-import com.google.android.gms.internal.play_billing.i3;
-import com.google.android.gms.internal.play_billing.m3;
-import com.google.android.gms.internal.play_billing.o3;
-import com.google.android.gms.internal.play_billing.p3;
-import j$.util.Objects;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
+import android.net.Uri;
+import android.os.SystemClock;
+import b2.s0;
+import c5.b0;
+import com.google.android.gms.internal.cast.b5;
+import e2.d0;
+import e9.i0;
+import g2.x;
+import java.io.IOException;
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CancellationException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
-import n7.qa;
-import org.telegram.messenger.BillingController;
-import org.telegram.ui.az;
+import java.util.Map;
+import java.util.concurrent.CopyOnWriteArrayList;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.ui.web.g1;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public class b extends a {
-    public final Long A;
-    public final com.google.android.gms.internal.play_billing.h B;
-    public final String c;
-    public final String d;
-    public volatile f f;
-    public final Context g;
-    public final qa h;
-    public volatile com.google.android.gms.internal.play_billing.c i;
-    public volatile u j;
-    public boolean k;
-    public boolean m;
-    public boolean n;
-    public boolean o;
-    public boolean p;
-    public boolean q;
+public final class b implements y2.h {
+    public final Uri a;
+    public final y2.m b = new y2.m("DefaultHlsPlaylistTracker:MediaPlaylist");
+    public final g2.h c;
+    public l d;
+    public long e;
+    public long f;
+    public long h;
+    public long n;
     public boolean r;
-    public boolean s;
-    public boolean t;
-    public boolean u;
+    public IOException s;
     public boolean v;
-    public boolean w;
-    public final z9.d x;
-    public final boolean y;
-    public ExecutorService z;
-    public final Object a = new Object();
-    public volatile int b = 0;
-    public final Handler e = new Handler(Looper.getMainLooper());
-    public int l = 0;
+    public final /* synthetic */ c w;
 
-    public b(z9.d dVar, Context context, p pVar, androidx.emoji2.text.f fVar) {
-        long nextLong = new Random().nextLong();
-        this.A = Long.valueOf(nextLong);
-        this.B = com.google.android.gms.internal.play_billing.i.a;
-        this.c = "8.0.0";
-        String w10 = w();
-        this.d = w10;
-        this.g = context.getApplicationContext();
-        o3 x10 = p3.x();
-        x10.c();
-        p3.v((p3) x10.b);
-        if (w10 != null) {
-            x10.c();
-            p3.w((p3) x10.b, w10);
-        }
-        String packageName = this.g.getPackageName();
-        x10.c();
-        p3.t((p3) x10.b, packageName);
-        x10.c();
-        p3.q((p3) x10.b, nextLong);
-        x10.c();
-        p3.u((p3) x10.b);
-        int i10 = Build.VERSION.SDK_INT;
-        x10.c();
-        p3.n((p3) x10.b, i10);
-        x10.d();
-        try {
-            int i11 = this.g.getPackageManager().getPackageInfo(this.g.getPackageName(), 0).versionCode;
-            x10.c();
-            p3.o((p3) x10.b, i11);
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Error getting app version code.", th2);
-        }
-        this.h = new qa(this.g, (p3) x10.a());
-        if (pVar == null) {
-            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Billing client should have a valid listener but the provided is null.");
-        }
-        this.f = new f(this.g, pVar, this.h);
-        this.x = dVar;
-        this.y = false;
-        this.g.getPackageName();
+    public b(c cVar, Uri uri) {
+        this.w = cVar;
+        this.a = uri;
+        this.c = ((g2.g) cVar.a.b).createDataSource();
     }
 
-    public static Future f(Callable callable, long j10, Runnable runnable, Handler handler, ExecutorService executorService) {
-        try {
-            Future submit = executorService.submit(callable);
-            handler.postDelayed(new az(submit, runnable, false, 2), (long) (j10 * 0.95d));
-            return submit;
-        } catch (Exception e) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Async task throws exception!", e);
-            return null;
+    public static boolean a(b bVar, long j3) {
+        bVar.n = SystemClock.elapsedRealtime() + j3;
+        Uri uri = bVar.a;
+        c cVar = bVar.w;
+        if (!uri.equals(cVar.v)) {
+            return false;
         }
+        List list = cVar.s.e;
+        int size = list.size();
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        for (int i10 = 0; i10 < size; i10++) {
+            b bVar2 = (b) cVar.d.get(((n) list.get(i10)).a);
+            bVar2.getClass();
+            if (elapsedRealtime > bVar2.n) {
+                Uri uri2 = bVar2.a;
+                cVar.v = uri2;
+                bVar2.e(cVar.b(uri2));
+                return false;
+            }
+        }
+        return true;
     }
 
-    public static void p(b bVar, int i10) {
-        if (i10 != 0) {
-            bVar.k(0);
-            return;
-        }
-        synchronized (bVar.a) {
-            try {
-                if (bVar.b == 3) {
-                    return;
-                }
-                bVar.k(2);
-                f fVar = bVar.f != null ? bVar.f : null;
-                if (fVar != null) {
-                    boolean z4 = bVar.u;
-                    c0 c0Var = (c0) fVar.e;
-                    IntentFilter intentFilter = new IntentFilter("com.android.vending.billing.PURCHASES_UPDATED");
-                    IntentFilter intentFilter2 = new IntentFilter("com.android.vending.billing.LOCAL_BROADCAST_PURCHASES_UPDATED");
-                    intentFilter2.addAction("com.android.vending.billing.ALTERNATIVE_BILLING");
-                    fVar.a = z4;
-                    c0 c0Var2 = (c0) fVar.f;
-                    Context context = (Context) fVar.b;
-                    c0Var2.a(context, intentFilter2);
-                    if (fVar.a) {
-                        c0Var.b(context, intentFilter);
-                    } else {
-                        c0Var.a(context, intentFilter);
+    public final Uri b() {
+        l lVar = this.d;
+        Uri uri = this.a;
+        if (lVar != null) {
+            k kVar = lVar.v;
+            if (kVar.a != -9223372036854775807L || kVar.e) {
+                Uri.Builder buildUpon = uri.buildUpon();
+                l lVar2 = this.d;
+                if (lVar2.v.e) {
+                    buildUpon.appendQueryParameter("_HLS_msn", String.valueOf(lVar2.k + lVar2.r.size()));
+                    l lVar3 = this.d;
+                    if (lVar3.n != -9223372036854775807L) {
+                        i0 i0Var = lVar3.s;
+                        int size = i0Var.size();
+                        if (!i0Var.isEmpty() && ((g) e9.q.l(i0Var)).x) {
+                            size--;
+                        }
+                        buildUpon.appendQueryParameter("_HLS_part", String.valueOf(size));
                     }
                 }
-            } catch (Throwable th2) {
-                throw th2;
+                k kVar2 = this.d.v;
+                if (kVar2.a != -9223372036854775807L) {
+                    buildUpon.appendQueryParameter("_HLS_skip", kVar2.b ? "v2" : "YES");
+                }
+                return buildUpon.build();
             }
         }
+        return uri;
     }
 
-    public static /* bridge */ /* synthetic */ boolean q(b bVar) {
-        boolean z4;
-        synchronized (bVar.a) {
-            z4 = true;
-            if (bVar.b != 1) {
-                z4 = false;
-            }
-        }
-        return z4;
+    public final void c(boolean z10) {
+        e(z10 ? b() : this.a);
     }
 
-    public static String w() {
-        try {
-            return (String) Class.forName("com.android.billingclient.ktx.BuildConfig").getField("VERSION_NAME").get(null);
-        } catch (Exception unused) {
-            return null;
-        }
+    public final void d(Uri uri) {
+        c cVar = this.w;
+        y2.o i02 = cVar.b.i0(cVar.s, this.d);
+        Map map = Collections.EMPTY_MAP;
+        e2.d.i(uri, "The uri must be set.");
+        y2.p pVar = new y2.p(this.c, new g2.m(uri, 1, null, map, 0L, -1L, null, 1), 4, i02);
+        this.b.f(pVar, this, cVar.c.L3(pVar.c));
     }
 
-    public final void A(int i10, int i11, h hVar, String str) {
-        try {
-            int i12 = z.a;
-            h(z.b(i10, i11, hVar, str, m3.b));
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
-        }
-    }
-
-    public final void B(int i10, h hVar, long j10, boolean z4) {
-        try {
-            int i11 = z.a;
-            try {
-                this.h.V0(z.b(i10, 2, hVar, null, m3.b), this.l, j10, z4);
-            } catch (Throwable th2) {
-                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
-            }
-        } catch (Throwable th3) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th3);
-        }
-    }
-
-    public final void C(int i10, h hVar, String str, long j10, boolean z4) {
-        try {
-            int i11 = z.a;
-            try {
-                this.h.V0(z.b(i10, 2, hVar, str, m3.b), this.l, j10, z4);
-            } catch (Throwable th2) {
-                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
-            }
-        } catch (Throwable th3) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th3);
-        }
-    }
-
-    public final void D(h hVar) {
-        if (Thread.interrupted()) {
+    public final void e(Uri uri) {
+        this.n = 0L;
+        if (this.r) {
             return;
         }
-        this.e.post(new az(this, hVar, false, 1));
-    }
-
-    @Override // p2.a
-    public void a(com.google.android.gms.internal.clearcut.e eVar, i iVar) {
-        if (f(new t(this, iVar, eVar, 0), 30000L, new s1(this, iVar, eVar, false, 9), r(), e()) == null) {
-            h u10 = u();
-            y(25, 4, u10);
-            iVar.a(u10, eVar.a);
+        y2.m mVar = this.b;
+        if (mVar.d() || mVar.c()) {
+            return;
+        }
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        long j3 = this.h;
+        if (elapsedRealtime >= j3) {
+            d(uri);
+        } else {
+            this.r = true;
+            this.w.n.postDelayed(new g1(6, this, uri), j3 - elapsedRealtime);
         }
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:152:0x0727  */
-    /* JADX WARN: Removed duplicated region for block: B:174:0x0732 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:273:0x017c  */
-    /* JADX WARN: Removed duplicated region for block: B:64:0x016f  */
-    /* JADX WARN: Removed duplicated region for block: B:67:0x02e9  */
-    /* JADX WARN: Removed duplicated region for block: B:69:0x02f7  */
-    /* JADX WARN: Type inference failed for: r4v26, types: [java.lang.Object] */
-    /* JADX WARN: Type inference failed for: r4v59, types: [java.lang.String] */
-    @Override // p2.a
+    /* JADX WARN: Removed duplicated region for block: B:16:0x01b9  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0252  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x027e  */
+    /* JADX WARN: Removed duplicated region for block: B:41:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0259  */
+    /* JADX WARN: Removed duplicated region for block: B:48:0x01ee  */
+    /* JADX WARN: Removed duplicated region for block: B:67:0x00d0  */
+    /* JADX WARN: Removed duplicated region for block: B:73:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:75:0x0125  */
+    /* JADX WARN: Removed duplicated region for block: B:9:0x0057  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public h b(Activity activity, final f fVar) {
-        String str;
-        String str2;
-        long j10;
-        String str3;
-        h hVar;
-        j jVar;
-        h hVar2;
-        HashSet hashSet;
-        long j11;
-        String str4;
-        Future f10;
-        long j12;
-        long j13;
-        long j14;
-        long j15;
-        Object obj;
-        int b10;
-        int i10;
-        long j16;
-        int i11;
-        boolean z4;
-        String str5;
-        String str6;
+    public final void f(l lVar, u2.t tVar) {
         boolean z10;
-        String str7;
+        CopyOnWriteArrayList copyOnWriteArrayList;
+        long j3;
+        long j10;
+        long j11;
+        int i10;
+        i0 i0Var;
+        l lVar2;
+        b5 b5Var;
+        long j12;
+        b5 b5Var2;
         boolean z11;
-        long nextLong = new Random().nextLong();
-        if (this.f == null || ((p) this.f.c) == null) {
-            h hVar3 = b0.o;
-            z(12, hVar3, nextLong);
-            return hVar3;
-        }
-        try {
-            com.google.android.gms.internal.play_billing.u.g("BillingClient", "Already connected or not opted into auto reconnection.");
-            h hVar4 = b0.g;
-            TimeUnit.MILLISECONDS.getClass();
-            int i12 = hVar4.a;
-            if (i12 == 0) {
-                com.google.android.gms.internal.play_billing.u.g("BillingClient", "Reconnection succeeded with result: " + i12);
-            } else {
-                com.google.android.gms.internal.play_billing.u.h("BillingClient", "Reconnection failed with result: " + i12);
-            }
-        } catch (Exception e) {
-            if (e instanceof InterruptedException) {
-                Thread.currentThread().interrupt();
-            }
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Error during reconnection attempt: ", e);
-        }
-        if (!o()) {
-            h hVar5 = b0.h;
-            z(2, hVar5, nextLong);
-            D(hVar5);
-            return hVar5;
-        }
-        synchronized (this.a) {
-            try {
-                if (this.j != null) {
-                    this.j.getClass();
-                }
-            } finally {
-            }
-        }
-        ArrayList arrayList = new ArrayList();
-        arrayList.addAll((ArrayList) fVar.f);
-        com.google.android.gms.internal.play_billing.r rVar = (com.google.android.gms.internal.play_billing.r) fVar.e;
-        Iterator it = arrayList.iterator();
-        if ((it.hasNext() ? it.next() : null) != null) {
-            throw new ClassCastException();
-        }
-        com.google.android.gms.internal.play_billing.p pVar = (com.google.android.gms.internal.play_billing.p) rVar.iterator();
-        d dVar = (d) (pVar.hasNext() ? pVar.next() : null);
-        n nVar = dVar.a;
-        String str8 = nVar.c;
-        String str9 = nVar.d;
-        if (str9.equals("subs") && !this.k) {
-            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Current client doesn't support subscriptions.");
-            h hVar6 = b0.j;
-            B(9, hVar6, nextLong, false);
-            D(hVar6);
-            return hVar6;
-        }
-        if (((String) fVar.b) == null && ((String) fVar.c) == null) {
-            e eVar = (e) fVar.d;
-            eVar.getClass();
-            if (eVar.b == 0 && !fVar.a) {
-                com.google.android.gms.internal.play_billing.r rVar2 = (com.google.android.gms.internal.play_billing.r) fVar.e;
-                if (rVar2 != null) {
-                    int size = rVar2.size();
-                    for (int i13 = 0; i13 < size; i13++) {
+        k kVar;
+        int size;
+        int size2;
+        int size3;
+        l lVar3 = this.d;
+        long elapsedRealtime = SystemClock.elapsedRealtime();
+        this.e = elapsedRealtime;
+        c cVar = this.w;
+        CopyOnWriteArrayList copyOnWriteArrayList2 = cVar.e;
+        if (lVar3 != null) {
+            long j13 = lVar.k;
+            long j14 = lVar3.k;
+            if (j13 <= j14 && (j13 < j14 || ((size = lVar.r.size() - lVar3.r.size()) == 0 ? !((size2 = lVar.s.size()) > (size3 = lVar3.s.size()) || (size2 == size3 && lVar.o && !lVar3.o)) : size <= 0))) {
+                z10 = false;
+                i0 i0Var2 = lVar.r;
+                long j15 = lVar.k;
+                long j16 = 0;
+                if (z10) {
+                    if (!lVar.o) {
+                        copyOnWriteArrayList = copyOnWriteArrayList2;
+                        lVar2 = lVar3;
+                        j12 = j15;
+                    } else if (lVar3.o) {
+                        lVar2 = lVar3;
+                        copyOnWriteArrayList = copyOnWriteArrayList2;
+                        j12 = j15;
+                        b5Var = null;
+                    } else {
+                        copyOnWriteArrayList = copyOnWriteArrayList2;
+                        j12 = j15;
+                        lVar2 = new l(lVar3.d, lVar3.a, lVar3.b, lVar3.e, lVar3.g, lVar3.h, lVar3.i, lVar3.j, lVar3.k, lVar3.l, lVar3.m, lVar3.n, lVar3.c, true, lVar3.p, lVar3.q, lVar3.r, lVar3.s, lVar3.v, lVar3.t, lVar3.w);
                     }
-                }
-                if (arrayList.size() <= 1 && !this.q) {
-                    com.google.android.gms.internal.play_billing.u.h("BillingClient", "Current client doesn't support multi-item purchases.");
-                    h hVar7 = b0.k;
-                    B(19, hVar7, nextLong, false);
-                    D(hVar7);
-                    return hVar7;
-                }
-                if (rVar.isEmpty() && !this.r) {
-                    com.google.android.gms.internal.play_billing.u.h("BillingClient", "Current client doesn't support purchases with ProductDetails.");
-                    h hVar8 = b0.m;
-                    B(20, hVar8, nextLong, false);
-                    D(hVar8);
-                    return hVar8;
-                }
-                if (((com.google.android.gms.internal.play_billing.r) fVar.e).isEmpty()) {
-                    d dVar2 = (d) ((com.google.android.gms.internal.play_billing.r) fVar.e).get(0);
-                    int i14 = 1;
-                    str = null;
-                    while (true) {
-                        if (i14 < ((com.google.android.gms.internal.play_billing.r) fVar.e).size()) {
-                            d dVar3 = (d) ((com.google.android.gms.internal.play_billing.r) fVar.e).get(i14);
-                            str2 = str8;
-                            if (!dVar3.a.d.equals(dVar2.a.d) && !dVar3.a.d.equals("play_pass_subs")) {
-                                j10 = nextLong;
-                                hVar2 = b0.a(5, "All products should have same ProductType.");
-                                str3 = str9;
-                                break;
-                            }
-                            i14++;
-                            str8 = str2;
-                        } else {
-                            str2 = str8;
-                            n nVar2 = dVar2.a;
-                            String optString = nVar2.b.optString("packageName");
-                            HashMap hashMap = new HashMap();
-                            HashSet hashSet2 = new HashSet();
-                            j10 = nextLong;
-                            com.google.android.gms.internal.play_billing.r rVar3 = (com.google.android.gms.internal.play_billing.r) fVar.e;
-                            int size2 = rVar3.size();
-                            str3 = str9;
-                            int i15 = 0;
-                            while (true) {
-                                if (i15 < size2) {
-                                    com.google.android.gms.internal.play_billing.r rVar4 = rVar3;
-                                    d dVar4 = (d) rVar3.get(i15);
-                                    int i16 = size2;
-                                    n nVar3 = dVar4.a;
-                                    int i17 = i15;
-                                    ArrayList arrayList2 = nVar3.h;
-                                    String str10 = nVar3.c;
-                                    if (arrayList2 != null) {
-                                        hashSet = hashSet2;
-                                        if (dVar4.b == null) {
-                                            hVar = b0.a(5, "offerToken is required for constructing ProductDetailsParams for subscriptions. Missing value for product id: " + str10);
-                                            break;
+                    b5Var = null;
+                } else {
+                    copyOnWriteArrayList = copyOnWriteArrayList2;
+                    if (lVar.p) {
+                        j3 = lVar.h;
+                    } else {
+                        l lVar4 = cVar.w;
+                        j3 = lVar4 != null ? lVar4.h : 0L;
+                        if (lVar3 != null) {
+                            long j17 = lVar3.h;
+                            long j18 = lVar3.k;
+                            i0 i0Var3 = lVar3.r;
+                            j10 = j3;
+                            int size4 = i0Var3.size();
+                            int i11 = (int) (j15 - j18);
+                            i iVar = i11 < i0Var3.size() ? (i) i0Var3.get(i11) : null;
+                            if (iVar != null) {
+                                j11 = iVar.e;
+                            } else {
+                                if (size4 == j15 - j18) {
+                                    j11 = lVar3.u;
+                                }
+                                if (lVar.i) {
+                                    l lVar5 = cVar.w;
+                                    int i12 = lVar5 != null ? lVar5.j : 0;
+                                    if (lVar3 != null) {
+                                        int i13 = (int) (j15 - lVar3.k);
+                                        i0 i0Var4 = lVar3.r;
+                                        i iVar2 = i13 < i0Var4.size() ? (i) i0Var4.get(i13) : null;
+                                        if (iVar2 != null) {
+                                            i12 = (lVar3.j + iVar2.d) - ((i) i0Var2.get(0)).d;
+                                            i10 = i12;
+                                            i0Var = i0Var2;
                                         }
-                                    } else {
-                                        hashSet = hashSet2;
                                     }
-                                    if (hashMap.containsKey(str10)) {
-                                        hVar = b0.a(5, "ProductId can not be duplicated. Invalid product id: " + nVar3.c + ".");
-                                        break;
-                                    }
-                                    hashMap.put(nVar3.c, dVar4);
-                                    if (!nVar2.d.equals("play_pass_subs") && !nVar3.d.equals("play_pass_subs") && !optString.equals(nVar3.b.optString("packageName"))) {
-                                        hVar = b0.a(5, "All products must have the same package name.");
-                                        break;
-                                    }
-                                    i15 = i17 + 1;
-                                    size2 = i16;
-                                    rVar3 = rVar4;
-                                    hashSet2 = hashSet;
+                                    i10 = i12;
+                                    i0Var = i0Var2;
                                 } else {
-                                    Iterator it2 = hashSet2.iterator();
-                                    while (true) {
-                                        if (it2.hasNext()) {
-                                            String str11 = (String) it2.next();
-                                            if (hashMap.containsKey(str11)) {
-                                                hVar = b0.a(5, "OldProductId must not be one of the products to be purchased. Invalid old product id: " + str11 + ".");
-                                                break;
-                                            }
-                                        } else {
-                                            ArrayList arrayList3 = nVar2.i;
-                                            String str12 = dVar2.b;
-                                            if (str12 != null && arrayList3 != null) {
-                                                int size3 = arrayList3.size();
-                                                int i18 = 0;
-                                                while (true) {
-                                                    if (i18 >= size3) {
-                                                        jVar = null;
-                                                        break;
-                                                    }
-                                                    Object obj2 = arrayList3.get(i18);
-                                                    i18++;
-                                                    jVar = (j) obj2;
-                                                    if (str12.equals(jVar.d)) {
-                                                        break;
-                                                    }
-                                                }
-                                                if (jVar != null && jVar.g != null) {
-                                                    hVar = b0.a(5, "Both autoPayDetails and autoPayBalanceThreshold is required for constructing ProductDetailsParams for autopay.");
-                                                }
-                                            }
-                                            hVar = b0.g;
-                                        }
-                                    }
+                                    i10 = lVar.j;
+                                    i0Var = i0Var2;
                                 }
+                                b5Var = null;
+                                j12 = j15;
+                                lVar2 = new l(lVar.d, lVar.a, lVar.b, lVar.e, lVar.g, j10, true, i10, lVar.k, lVar.l, lVar.m, lVar.n, lVar.c, lVar.o, lVar.p, lVar.q, i0Var, lVar.s, lVar.v, lVar.t, lVar.w);
                             }
-                            hVar2 = hVar;
+                            j3 = j17 + j11;
                         }
                     }
-                } else {
-                    str2 = str8;
-                    j10 = nextLong;
-                    hVar2 = b0.g;
-                    str3 = str9;
-                    str = null;
+                    j10 = j3;
+                    if (lVar.i) {
+                    }
+                    b5Var = null;
+                    j12 = j15;
+                    lVar2 = new l(lVar.d, lVar.a, lVar.b, lVar.e, lVar.g, j10, true, i10, lVar.k, lVar.l, lVar.m, lVar.n, lVar.c, lVar.o, lVar.p, lVar.q, i0Var, lVar.s, lVar.v, lVar.t, lVar.w);
                 }
-                if (hVar2 == b0.g) {
-                    B(108, hVar2, j10, false);
-                    D(hVar2);
-                    return hVar2;
-                }
-                long j17 = j10;
-                if (this.m) {
-                    boolean z12 = this.n;
-                    this.x.getClass();
-                    this.x.getClass();
-                    boolean z13 = this.y;
-                    String str13 = this.c;
-                    String str14 = this.d;
-                    long longValue = this.A.longValue();
-                    this.g.getPackageName();
-                    int i19 = com.google.android.gms.internal.play_billing.u.a;
-                    final Bundle bundle = new Bundle();
-                    com.google.android.gms.internal.play_billing.u.b(bundle, str13, str14, longValue);
-                    bundle.putLong("billingClientTransactionId", j17);
-                    int i20 = ((e) fVar.d).b;
-                    if (i20 != 0) {
-                        bundle.putInt("prorationMode", i20);
-                    }
-                    if (!TextUtils.isEmpty((String) fVar.b)) {
-                        bundle.putString("accountId", (String) fVar.b);
-                    }
-                    if (!TextUtils.isEmpty((String) fVar.c)) {
-                        bundle.putString("obfuscatedProfileId", (String) fVar.c);
-                    }
-                    if (!TextUtils.isEmpty(str)) {
-                        bundle.putStringArrayList("skusToReplace", new ArrayList<>(Arrays.asList(str)));
-                    }
-                    if (!TextUtils.isEmpty(((e) fVar.d).a)) {
-                        bundle.putString("oldSkuPurchaseToken", ((e) fVar.d).a);
-                    }
-                    if (TextUtils.isEmpty(str)) {
-                        str6 = str;
-                    } else {
-                        str6 = str;
-                        bundle.putString("oldSkuPurchaseId", str6);
-                    }
-                    ((e) fVar.d).getClass();
-                    if (!TextUtils.isEmpty(str6)) {
-                        ((e) fVar.d).getClass();
-                        bundle.putString("originalExternalTransactionId", str6);
-                    }
-                    if (!TextUtils.isEmpty(str6)) {
-                        bundle.putString("paymentsPurchaseParams", str6);
-                    }
-                    if (z12) {
-                        z10 = true;
-                        bundle.putBoolean("enablePendingPurchases", true);
-                    } else {
-                        z10 = true;
-                    }
-                    if (z13) {
-                        bundle.putBoolean("enableAlternativeBilling", z10);
-                    }
-                    ArrayList arrayList4 = new ArrayList();
-                    com.google.android.gms.internal.play_billing.p listIterator = ((com.google.android.gms.internal.play_billing.r) fVar.e).listIterator(0);
-                    while (listIterator.hasNext()) {
-                    }
-                    if (!arrayList4.isEmpty()) {
-                        a1 n10 = b1.n();
-                        n10.c();
-                        b1.o((b1) n10.b, arrayList4);
-                        bundle.putByteArray("subscriptionProductReplacementParamsList", ((b1) n10.a()).a());
-                    }
-                    if (arrayList.isEmpty()) {
-                        ArrayList<String> arrayList5 = new ArrayList<>(rVar.size() - 1);
-                        ArrayList<String> arrayList6 = new ArrayList<>(rVar.size() - 1);
-                        ArrayList<String> arrayList7 = new ArrayList<>();
-                        ArrayList<String> arrayList8 = new ArrayList<>();
-                        ArrayList<String> arrayList9 = new ArrayList<>();
-                        ArrayList<Integer> arrayList10 = new ArrayList<>();
-                        int i21 = 0;
-                        while (i21 < rVar.size()) {
-                            d dVar5 = (d) rVar.get(i21);
-                            n nVar4 = dVar5.a;
-                            long j18 = j17;
-                            if (!nVar4.f.isEmpty()) {
-                                arrayList7.add(nVar4.f);
-                            }
-                            arrayList8.add(dVar5.b);
-                            String str15 = nVar4.g;
-                            ArrayList arrayList11 = nVar4.i;
-                            if (arrayList11 != null && !arrayList11.isEmpty()) {
-                                ArrayList arrayList12 = nVar4.i;
-                                int size4 = arrayList12.size();
-                                int i22 = 0;
-                                while (i22 < size4) {
-                                    Object obj3 = arrayList12.get(i22);
-                                    i22++;
-                                    ArrayList arrayList13 = arrayList12;
-                                    j jVar2 = (j) obj3;
-                                    String str16 = str15;
-                                    if (!TextUtils.isEmpty(jVar2.f)) {
-                                        str7 = jVar2.f;
-                                        break;
-                                    }
-                                    str15 = str16;
-                                    arrayList12 = arrayList13;
-                                }
-                            }
-                            str7 = str15;
-                            if (!TextUtils.isEmpty(str7)) {
-                                arrayList9.add(str7);
-                            }
-                            if (i21 > 0) {
-                                arrayList5.add(((d) rVar.get(i21)).a.c);
-                                arrayList6.add(((d) rVar.get(i21)).a.d);
-                            }
-                            i21++;
-                            j17 = j18;
+                this.d = lVar2;
+                Uri uri = this.a;
+                if (lVar2 == lVar3) {
+                    this.s = b5Var;
+                    this.f = elapsedRealtime;
+                    if (uri.equals(cVar.v)) {
+                        if (cVar.w == null) {
+                            cVar.x = !lVar2.o;
+                            cVar.y = lVar2.h;
                         }
-                        j11 = j17;
-                        bundle.putStringArrayList("SKU_OFFER_ID_TOKEN_LIST", arrayList8);
-                        if (!arrayList10.isEmpty()) {
-                            bundle.putIntegerArrayList("autoPayBalanceThresholdList", arrayList10);
-                        }
-                        if (!arrayList7.isEmpty()) {
-                            bundle.putStringArrayList("skuDetailsTokens", arrayList7);
-                        }
-                        if (!arrayList9.isEmpty()) {
-                            bundle.putStringArrayList("SKU_SERIALIZED_DOCID_LIST", arrayList9);
-                        }
-                        if (!arrayList5.isEmpty()) {
-                            bundle.putStringArrayList("additionalSkus", arrayList5);
-                            bundle.putStringArrayList("additionalSkuTypes", arrayList6);
-                        }
-                    } else {
-                        ArrayList<String> arrayList14 = new ArrayList<>();
-                        new ArrayList();
-                        new ArrayList();
-                        new ArrayList();
-                        new ArrayList();
-                        Iterator it3 = arrayList.iterator();
-                        if (it3.hasNext()) {
-                            it3.next().getClass();
-                            throw new ClassCastException();
-                        }
-                        if (!arrayList14.isEmpty()) {
-                            bundle.putStringArrayList("skuDetailsTokens", arrayList14);
-                        }
-                        if (arrayList.size() > 1) {
-                            ArrayList<String> arrayList15 = new ArrayList<>(arrayList.size() - 1);
-                            ArrayList<String> arrayList16 = new ArrayList<>(arrayList.size() - 1);
-                            if (1 < arrayList.size()) {
-                                arrayList.get(1).getClass();
-                                throw new ClassCastException();
-                            }
-                            bundle.putStringArrayList("additionalSkus", arrayList15);
-                            bundle.putStringArrayList("additionalSkuTypes", arrayList16);
-                        }
-                        j11 = j17;
+                        cVar.w = lVar2;
+                        cVar.r.v(lVar2);
                     }
-                    if (bundle.containsKey("SKU_OFFER_ID_TOKEN_LIST") && !this.o) {
-                        h hVar9 = b0.l;
-                        B(21, hVar9, j11, false);
-                        D(hVar9);
-                        return hVar9;
+                    Iterator it = copyOnWriteArrayList.iterator();
+                    while (it.hasNext()) {
+                        ((t) it.next()).a();
                     }
-                    if (TextUtils.isEmpty(dVar.a.b.optString("packageName"))) {
-                        z11 = false;
-                    } else {
-                        bundle.putString("skuPackageName", dVar.a.b.optString("packageName"));
+                } else if (!lVar2.o) {
+                    long size5 = j12 + lVar.r.size();
+                    l lVar6 = this.d;
+                    if (size5 < lVar6.k) {
+                        b5Var2 = new b5();
                         z11 = true;
+                    } else {
+                        b5Var2 = ((double) (elapsedRealtime - this.f)) > ((double) d0.e0(lVar6.m)) * 3.5d ? new b5() : b5Var;
+                        z11 = false;
                     }
-                    str4 = null;
-                    if (!TextUtils.isEmpty(null)) {
-                        bundle.putString("accountName", null);
-                    }
-                    Intent intent = activity.getIntent();
-                    if (intent == null) {
-                        com.google.android.gms.internal.play_billing.u.h("BillingClient", "Activity's intent is null.");
-                    } else if (!TextUtils.isEmpty(intent.getStringExtra("PROXY_PACKAGE"))) {
-                        String stringExtra = intent.getStringExtra("PROXY_PACKAGE");
-                        bundle.putString("proxyPackage", stringExtra);
-                        try {
-                            bundle.putString("proxyPackageVersion", this.g.getPackageManager().getPackageInfo(stringExtra, 0).versionName);
-                        } catch (PackageManager.NameNotFoundException unused) {
-                            bundle.putString("proxyPackageVersion", "package not found");
+                    if (b5Var2 != null) {
+                        this.s = b5Var2;
+                        b0 b0Var = new b0(b5Var2, 1, 11);
+                        Iterator it2 = copyOnWriteArrayList.iterator();
+                        while (it2.hasNext()) {
+                            ((t) it2.next()).b(uri, b0Var, z11);
                         }
                     }
-                    final int i23 = (!this.r || rVar.isEmpty()) ? (this.p && z11) ? 15 : this.n ? 9 : 6 : 17;
-                    final String str17 = str2;
-                    final ?? r42 = str3;
-                    f10 = f(new Callable(i23, str17, r42, fVar, bundle) { // from class: p2.d0
-                        public final /* synthetic */ int b;
-                        public final /* synthetic */ String c;
-                        public final /* synthetic */ String d;
-                        public final /* synthetic */ Bundle e;
-
-                        {
-                            this.e = bundle;
-                        }
-
-                        @Override // java.util.concurrent.Callable
-                        public final Object call() {
-                            Bundle c3;
-                            com.google.android.gms.internal.play_billing.c cVar;
-                            b bVar = b.this;
-                            int i24 = this.b;
-                            String str18 = this.c;
-                            String str19 = this.d;
-                            Bundle bundle2 = this.e;
-                            try {
-                                synchronized (bVar.a) {
-                                    cVar = bVar.i;
-                                }
-                                if (cVar == null) {
-                                    return com.google.android.gms.internal.play_billing.u.c(107, b0.h);
-                                }
-                                return ((com.google.android.gms.internal.play_billing.a) cVar).X0(i24, bVar.g.getPackageName(), str18, str19, bundle2);
-                            } catch (DeadObjectException e6) {
-                                h hVar10 = b0.h;
-                                String a2 = z.a(e6);
-                                c3 = com.google.android.gms.internal.play_billing.u.c(5, hVar10);
-                                if (a2 != null) {
-                                    c3.putString("ADDITIONAL_LOG_DETAILS", a2);
-                                }
-                                return c3;
-                            } catch (Exception e10) {
-                                h hVar11 = b0.f;
-                                String a10 = z.a(e10);
-                                c3 = com.google.android.gms.internal.play_billing.u.c(5, hVar11);
-                                if (a10 != null) {
-                                    c3.putString("ADDITIONAL_LOG_DETAILS", a10);
-                                }
-                                return c3;
-                            }
-                        }
-                    }, 5000L, null, this.e, e());
-                    j12 = r42;
-                } else {
-                    j11 = j17;
-                    str4 = str;
-                    ?? r43 = str3;
-                    f10 = f(new t(this, str2, r43, 3), 5000L, null, this.e, e());
-                    j12 = r43;
                 }
-                try {
-                    if (f10 == null) {
-                        try {
-                            h hVar10 = b0.b;
-                            B(25, hVar10, j11, false);
-                            D(hVar10);
-                            return hVar10;
-                        } catch (CancellationException e6) {
-                            e = e6;
-                            j15 = j11;
-                            j13 = j15;
-                            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Time out while launching billing flow. Try to reconnect", e);
-                            h hVar11 = b0.i;
-                            C(4, hVar11, z.a(e), j13, false);
-                            D(hVar11);
-                            return hVar11;
-                        } catch (TimeoutException e10) {
-                            e = e10;
-                            j15 = j11;
-                            j13 = j15;
-                            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Time out while launching billing flow. Try to reconnect", e);
-                            h hVar112 = b0.i;
-                            C(4, hVar112, z.a(e), j13, false);
-                            D(hVar112);
-                            return hVar112;
-                        } catch (Exception e11) {
-                            e = e11;
-                            j14 = j11;
-                            long j19 = j14;
-                            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while launching billing flow. Try to reconnect", e);
-                            h hVar12 = b0.h;
-                            C(5, hVar12, z.a(e), j19, false);
-                            D(hVar12);
-                            return hVar12;
+                l lVar7 = this.d;
+                kVar = lVar7.v;
+                long j19 = lVar7.m;
+                if (!kVar.e) {
+                    if (lVar7 == lVar3) {
+                        long j20 = lVar7.n;
+                        if (j20 != -9223372036854775807L) {
+                            j16 = j20 / 2;
+                        } else {
+                            j19 /= 2;
                         }
                     }
-                    long j20 = j11;
-                    Bundle bundle2 = (Bundle) f10.get(5000L, TimeUnit.MILLISECONDS);
-                    int a2 = com.google.android.gms.internal.play_billing.u.a("BillingClient", bundle2);
-                    String f11 = com.google.android.gms.internal.play_billing.u.f("BillingClient", bundle2);
-                    if (a2 == 0) {
-                        Intent intent2 = new Intent(activity, (Class<?>) ProxyBillingActivity.class);
-                        intent2.putExtra("BUY_INTENT", (PendingIntent) bundle2.getParcelable("BUY_INTENT"));
-                        intent2.putExtra("billingClientTransactionId", j20);
-                        intent2.putExtra("wasServiceAutoReconnected", false);
-                        activity.startActivity(intent2);
-                        return b0.g;
+                    this.h = (d0.e0(j16) + elapsedRealtime) - tVar.a;
+                    if (this.d.o) {
+                        return;
                     }
-                    com.google.android.gms.internal.play_billing.u.h("BillingClient", "Unable to buy item, Error response code: " + a2);
-                    h a10 = b0.a(a2, f11);
-                    try {
-                        if (bundle2 != null) {
-                            try {
-                                obj = bundle2.get("LOG_REASON");
-                            } catch (Throwable th2) {
-                                com.google.android.gms.internal.play_billing.u.h("BillingClient", "Failed to get log reason from bundle: ".concat(String.valueOf(th2.getMessage())));
-                            }
-                            if (obj != null) {
-                                if (obj instanceof Integer) {
-                                    b10 = android.support.v4.media.a.b(((Integer) obj).intValue());
-                                    i10 = 1;
-                                    if (b10 == i10) {
-                                        b10 = 23;
-                                    }
-                                    if (bundle2 != null) {
-                                        try {
-                                            String string = bundle2.getString("ADDITIONAL_LOG_DETAILS");
-                                            j16 = j20;
-                                            i11 = b10;
-                                            z4 = false;
-                                            str5 = string;
-                                        } catch (Throwable th3) {
-                                            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Failed to get additional log details from bundle: ".concat(String.valueOf(th3.getMessage())));
-                                        }
-                                        C(i11, a10, str5, j16, z4);
-                                        D(a10);
-                                        return a10;
-                                    }
-                                    j16 = j20;
-                                    i11 = b10;
-                                    str5 = str4;
-                                    z4 = false;
-                                    C(i11, a10, str5, j16, z4);
-                                    D(a10);
-                                    return a10;
-                                }
-                                com.google.android.gms.internal.play_billing.u.h("BillingClient", "Unexpected type for bundle log reason: " + obj.getClass().getName());
-                            }
-                        }
-                        C(i11, a10, str5, j16, z4);
-                        D(a10);
-                        return a10;
-                    } catch (CancellationException e12) {
-                        e = e12;
-                        j15 = j16;
-                        j13 = j15;
-                        com.google.android.gms.internal.play_billing.u.i("BillingClient", "Time out while launching billing flow. Try to reconnect", e);
-                        h hVar1122 = b0.i;
-                        C(4, hVar1122, z.a(e), j13, false);
-                        D(hVar1122);
-                        return hVar1122;
-                    } catch (TimeoutException e13) {
-                        e = e13;
-                        j15 = j16;
-                        j13 = j15;
-                        com.google.android.gms.internal.play_billing.u.i("BillingClient", "Time out while launching billing flow. Try to reconnect", e);
-                        h hVar11222 = b0.i;
-                        C(4, hVar11222, z.a(e), j13, false);
-                        D(hVar11222);
-                        return hVar11222;
-                    } catch (Exception e14) {
-                        e = e14;
-                        j14 = j16;
-                        long j192 = j14;
-                        com.google.android.gms.internal.play_billing.u.i("BillingClient", "Exception while launching billing flow. Try to reconnect", e);
-                        h hVar122 = b0.h;
-                        C(5, hVar122, z.a(e), j192, false);
-                        D(hVar122);
-                        return hVar122;
+                    if (uri.equals(cVar.v) || this.v) {
+                        e(b());
+                        return;
                     }
-                    i10 = 1;
-                    b10 = 1;
-                    if (b10 == i10) {
-                    }
-                    if (bundle2 != null) {
-                    }
-                    j16 = j20;
-                    i11 = b10;
-                    str5 = str4;
-                    z4 = false;
-                    j13 = j15;
-                } catch (CancellationException e15) {
-                    e = e15;
-                } catch (TimeoutException e16) {
-                    e = e16;
-                    j13 = j12;
-                } catch (Exception e17) {
-                    e = e17;
-                }
-                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Time out while launching billing flow. Try to reconnect", e);
-                h hVar112222 = b0.i;
-                C(4, hVar112222, z.a(e), j13, false);
-                D(hVar112222);
-                return hVar112222;
-            }
-        }
-        if (!this.m) {
-            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Current client doesn't support extra params for buy intent.");
-            h hVar13 = b0.e;
-            B(18, hVar13, nextLong, false);
-            D(hVar13);
-            return hVar13;
-        }
-        if (arrayList.size() <= 1) {
-        }
-        if (rVar.isEmpty()) {
-        }
-        if (((com.google.android.gms.internal.play_billing.r) fVar.e).isEmpty()) {
-        }
-        if (hVar2 == b0.g) {
-        }
-    }
-
-    @Override // p2.a
-    public void c(o3.c cVar, org.telegram.messenger.d0 d0Var) {
-        if (f(new t(this, d0Var, cVar, 1), 30000L, new az(this, d0Var, false, 3), r(), e()) == null) {
-            h u10 = u();
-            y(25, 7, u10);
-            com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
-            com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-            d0Var.a(u10, new r(vVar, vVar));
-        }
-    }
-
-    @Override // p2.a
-    public void d(BillingController billingController) {
-        l(billingController);
-    }
-
-    public final synchronized ExecutorService e() {
-        try {
-            if (this.z == null) {
-                this.z = Executors.newFixedThreadPool(com.google.android.gms.internal.play_billing.u.a, new i9.u(this));
-            }
-        } catch (Throwable th2) {
-            throw th2;
-        }
-        return this.z;
-    }
-
-    public final void g(i iVar, String str, h hVar, int i10, String str2, Exception exc) {
-        com.google.android.gms.internal.play_billing.u.i("BillingClient", str2, exc);
-        A(i10, 4, hVar, z.a(exc));
-        iVar.a(hVar, str);
-    }
-
-    public final void h(g3 g3Var) {
-        try {
-            qa qaVar = this.h;
-            int i10 = this.l;
-            qaVar.getClass();
-            try {
-                o3 o3Var = (o3) ((p3) qaVar.b).g();
-                o3Var.c();
-                p3.p((p3) o3Var.b, i10);
-                qaVar.b = (p3) o3Var.a();
-                qaVar.O0(g3Var);
-            } catch (Throwable th2) {
-                com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-            }
-        } catch (Throwable th3) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th3);
-        }
-    }
-
-    public final void i(i3 i3Var) {
-        try {
-            qa qaVar = this.h;
-            int i10 = this.l;
-            qaVar.getClass();
-            try {
-                o3 o3Var = (o3) ((p3) qaVar.b).g();
-                o3Var.c();
-                p3.p((p3) o3Var.b, i10);
-                p3 p3Var = (p3) o3Var.a();
-                qaVar.b = p3Var;
-                try {
-                    qaVar.l1(i3Var, p3Var);
-                } catch (Throwable th2) {
-                    com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
-                }
-            } catch (Throwable th3) {
-                com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th3);
-            }
-        } catch (Throwable th4) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th4);
-        }
-    }
-
-    public final void j(int i10, h hVar) {
-        try {
-            int i11 = z.a;
-            f3 f3Var = (f3) z.b(i10, 6, hVar, null, m3.b).g();
-            c4 r10 = d4.r();
-            r10.d(false);
-            r10.e();
-            f3Var.e(r10);
-            h((g3) f3Var.a());
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
-        }
-    }
-
-    public final void k(int i10) {
-        synchronized (this.a) {
-            try {
-                if (this.b == 3) {
                     return;
                 }
-                int i11 = this.b;
-                com.google.android.gms.internal.play_billing.u.g("BillingClient", "Setting clientState from " + (i11 != 0 ? i11 != 1 ? i11 != 2 ? "CLOSED" : "CONNECTED" : "CONNECTING" : "DISCONNECTED") + " to " + (i10 != 0 ? i10 != 1 ? i10 != 2 ? "CLOSED" : "CONNECTED" : "CONNECTING" : "DISCONNECTED"));
-                this.b = i10;
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-    }
-
-    public final void l(c cVar) {
-        int i10;
-        h hVar;
-        synchronized (this.a) {
-            try {
-                if (o()) {
-                    hVar = t();
-                } else if (this.b == 1) {
-                    com.google.android.gms.internal.play_billing.u.h("BillingClient", "Client is already in the process of connecting to billing service.");
-                    hVar = b0.c;
-                    j(37, hVar);
-                } else if (this.b == 3) {
-                    com.google.android.gms.internal.play_billing.u.h("BillingClient", "Client was already closed and can't be reused. Please create another instance.");
-                    hVar = b0.h;
-                    j(38, hVar);
-                } else {
-                    k(1);
-                    m();
-                    com.google.android.gms.internal.play_billing.u.g("BillingClient", "Starting in-app billing setup.");
-                    this.j = new u(this, cVar);
-                    com.google.android.gms.internal.play_billing.m mVar = this.j.b;
-                    mVar.c = 0L;
-                    mVar.b = false;
-                    mVar.a();
-                    Intent intent = new Intent("com.android.vending.billing.InAppBillingService.BIND");
-                    intent.setPackage("com.android.vending");
-                    List<ResolveInfo> queryIntentServices = this.g.getPackageManager().queryIntentServices(intent, 0);
-                    if (queryIntentServices == null || queryIntentServices.isEmpty()) {
-                        i10 = 41;
-                    } else {
-                        ServiceInfo serviceInfo = queryIntentServices.get(0).serviceInfo;
-                        i10 = 40;
-                        if (serviceInfo != null) {
-                            String str = serviceInfo.packageName;
-                            String str2 = serviceInfo.name;
-                            if (!Objects.equals(str, "com.android.vending") || str2 == null) {
-                                com.google.android.gms.internal.play_billing.u.h("BillingClient", "The device doesn't have valid Play Store.");
-                            } else {
-                                ComponentName componentName = new ComponentName(str, str2);
-                                Intent intent2 = new Intent(intent);
-                                intent2.setComponent(componentName);
-                                intent2.putExtra("playBillingLibraryVersion", this.c);
-                                synchronized (this.a) {
-                                    try {
-                                        if (this.b == 2) {
-                                            hVar = t();
-                                        } else if (this.b != 1) {
-                                            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Client state no longer CONNECTING, returning service disconnected.");
-                                            hVar = b0.h;
-                                            j(105, hVar);
-                                        } else {
-                                            u uVar = this.j;
-                                            if (this.g.bindService(intent2, uVar, 1)) {
-                                                com.google.android.gms.internal.play_billing.u.g("BillingClient", "Service was bonded successfully.");
-                                                hVar = null;
-                                            } else {
-                                                com.google.android.gms.internal.play_billing.u.h("BillingClient", "Connection to Billing service is blocked.");
-                                                i10 = 39;
-                                            }
-                                        }
-                                    } finally {
-                                    }
-                                }
-                            }
-                        } else {
-                            com.google.android.gms.internal.play_billing.u.h("BillingClient", "The device doesn't have valid Play Store.");
-                        }
-                    }
-                    k(0);
-                    com.google.android.gms.internal.play_billing.u.g("BillingClient", "Billing service unavailable on device.");
-                    hVar = b0.a;
-                    j(i10, hVar);
+                if (lVar7 == lVar3) {
+                    j19 /= 2;
                 }
-            } finally {
-            }
-        }
-        if (hVar != null) {
-            cVar.onBillingSetupFinished(hVar);
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    public final void m() {
-        synchronized (this.a) {
-            if (this.j != null) {
-                try {
-                    this.g.unbindService(this.j);
-                } catch (Throwable th2) {
-                    try {
-                        com.google.android.gms.internal.play_billing.u.i("BillingClient", "There was an exception while unbinding service!", th2);
-                        this.i = null;
-                        this.j = null;
-                    } finally {
-                        this.i = null;
-                        this.j = null;
-                    }
+                j16 = j19;
+                this.h = (d0.e0(j16) + elapsedRealtime) - tVar.a;
+                if (this.d.o) {
                 }
             }
+        } else {
+            lVar.getClass();
+        }
+        z10 = true;
+        i0 i0Var22 = lVar.r;
+        long j152 = lVar.k;
+        long j162 = 0;
+        if (z10) {
+        }
+        this.d = lVar2;
+        Uri uri2 = this.a;
+        if (lVar2 == lVar3) {
+        }
+        l lVar72 = this.d;
+        kVar = lVar72.v;
+        long j192 = lVar72.m;
+        if (!kVar.e) {
+        }
+        j162 = j192;
+        this.h = (d0.e0(j162) + elapsedRealtime) - tVar.a;
+        if (this.d.o) {
         }
     }
 
-    public final boolean n() {
-        com.google.android.gms.internal.play_billing.h hVar = this.B;
-        if (hVar == null) {
-            throw new NullPointerException("ticker");
-        }
-        long a2 = hVar.a();
-        long j10 = 30000;
-        long j11 = 30000;
-        int i10 = 1;
-        while (i10 <= 3) {
-            try {
-            } catch (Exception e) {
-                if (e instanceof InterruptedException) {
-                    Thread.currentThread().interrupt();
-                }
-                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Error during reconnection attempt: ", e);
-            }
-            if (Math.max(0L, j11) <= 0) {
-                com.google.android.gms.internal.play_billing.u.h("BillingClient", "No time remaining for reconnection attempt.");
-                return o();
-            }
-            com.google.android.gms.internal.play_billing.u.g("BillingClient", "Already connected or not opted into auto reconnection.");
-            h hVar2 = b0.g;
-            TimeUnit.MILLISECONDS.getClass();
-            int i11 = hVar2.a;
-            if (i11 == 0) {
-                com.google.android.gms.internal.play_billing.u.g("BillingClient", "Reconnection succeeded with result: " + i11);
-                return o();
-            }
-            com.google.android.gms.internal.play_billing.u.h("BillingClient", "Reconnection failed with result: " + i11);
-            TimeUnit timeUnit = TimeUnit.MILLISECONDS;
-            long a10 = (hVar.a() - a2) + 0;
-            TimeUnit timeUnit2 = TimeUnit.NANOSECONDS;
-            j11 = j10 - timeUnit.convert(a10, timeUnit2);
-            long j12 = j10;
-            long pow = ((long) Math.pow(2.0d, i10 - 1)) * 1000;
-            if (j11 < pow) {
-                com.google.android.gms.internal.play_billing.u.h("BillingClient", "Reconnection failed due to timeout limit reached.");
-                return o();
-            }
-            if (i10 < 3 && pow > 0) {
-                try {
-                    Thread.sleep(pow);
-                    j11 = j12 - timeUnit.convert((hVar.a() - a2) + 0, timeUnit2);
-                } catch (InterruptedException e6) {
-                    Thread.currentThread().interrupt();
-                    com.google.android.gms.internal.play_billing.u.i("BillingClient", "Error sleeping during reconnection attempt: ", e6);
-                }
-            }
-            i10++;
-            j10 = j12;
-        }
-        com.google.android.gms.internal.play_billing.u.h("BillingClient", "Max retries reached.");
-        return o();
-    }
-
-    public final boolean o() {
-        boolean z4;
-        synchronized (this.a) {
-            try {
-                z4 = false;
-                if (this.b == 2 && this.i != null && this.j != null) {
-                    z4 = true;
-                }
-            } finally {
+    @Override // y2.h
+    public final k4.d g(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+        y2.p pVar = (y2.p) jVar;
+        long j11 = pVar.a;
+        int i11 = pVar.c;
+        Uri uri = pVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        boolean z10 = uri.getQueryParameter("_HLS_msn") != null;
+        boolean z11 = iOException instanceof q;
+        k4.d dVar = y2.m.e;
+        c cVar = this.w;
+        if (z10 || z11) {
+            int i12 = iOException instanceof x ? ((x) iOException).d : ConnectionsManager.DEFAULT_DATACENTER_ID;
+            if (z11 || i12 == 400 || i12 == 503) {
+                this.h = SystemClock.elapsedRealtime();
+                c(false);
+                a5.a aVar = cVar.f;
+                String str = d0.a;
+                aVar.q(tVar, i11, iOException, true);
+                return dVar;
             }
         }
-        return z4;
-    }
-
-    public final Handler r() {
-        return Looper.myLooper() == null ? this.e : new Handler(Looper.myLooper());
-    }
-
-    public final x5.k s(h hVar, int i10, String str, Exception exc) {
-        com.google.android.gms.internal.play_billing.u.i("BillingClient", str, exc);
-        A(i10, 7, hVar, z.a(exc));
-        return new x5.k(hVar.a, hVar.c, new ArrayList(), new ArrayList());
-    }
-
-    public final h t() {
-        com.google.android.gms.internal.play_billing.u.g("BillingClient", "Service connection is valid. No need to re-initialize.");
-        h3 s6 = i3.s();
-        s6.c();
-        i3.r((i3) s6.b, 6);
-        c4 r10 = d4.r();
-        r10.c();
-        d4.q((d4) r10.b);
-        r10.d(false);
-        r10.e();
-        s6.c();
-        i3.q((i3) s6.b, (d4) r10.a());
-        i((i3) s6.a());
-        return b0.g;
-    }
-
-    public final h u() {
-        int[] iArr = {0, 3};
-        synchronized (this.a) {
-            for (int i10 = 0; i10 < 2; i10++) {
-                if (this.b == iArr[i10]) {
-                    return b0.h;
-                }
-            }
-            return b0.f;
+        b0 b0Var = new b0(iOException, i10, 11);
+        Iterator it = cVar.e.iterator();
+        boolean z12 = false;
+        while (it.hasNext()) {
+            z12 |= !((t) it.next()).b(this.a, b0Var, false);
         }
+        rb.a aVar2 = cVar.c;
+        if (z12) {
+            aVar2.getClass();
+            long M3 = rb.a.M3(b0Var);
+            dVar = M3 != -9223372036854775807L ? new k4.d(0, M3, false) : y2.m.f;
+        }
+        boolean a2 = dVar.a();
+        cVar.f.q(tVar, i11, iOException, !a2);
+        if (!a2) {
+            aVar2.getClass();
+        }
+        return dVar;
     }
 
-    public final void v() {
-        if (TextUtils.isEmpty(null)) {
-            this.g.getPackageName();
+    @Override // y2.h
+    public final void h(y2.j jVar, long j3, long j10, int i10) {
+        u2.t tVar;
+        y2.p pVar = (y2.p) jVar;
+        if (i10 == 0) {
+            long j11 = pVar.a;
+            tVar = new u2.t(pVar.b);
+        } else {
+            long j12 = pVar.a;
+            Uri uri = pVar.d.c;
+            tVar = new u2.t(j10);
         }
+        this.w.f.r(tVar, pVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L, i10);
     }
 
-    public final qa x(h hVar, int i10, String str, Exception exc) {
-        A(i10, 9, hVar, z.a(exc));
-        com.google.android.gms.internal.play_billing.u.i("BillingClient", str, exc);
-        return new qa(26, hVar, null);
+    @Override // y2.h
+    public final void i(y2.j jVar, long j3, long j10) {
+        y2.p pVar = (y2.p) jVar;
+        p pVar2 = (p) pVar.f;
+        Uri uri = pVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        if (pVar2 instanceof l) {
+            f((l) pVar2, tVar);
+            this.w.f.o(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        } else {
+            s0 b10 = s0.b("Loaded playlist has unexpected type.", null);
+            this.s = b10;
+            this.w.f.q(tVar, 4, b10, true);
+        }
+        this.w.c.getClass();
     }
 
-    public final void y(int i10, int i11, h hVar) {
-        try {
-            int i12 = z.a;
-            h(z.b(i10, i11, hVar, null, m3.b));
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
-        }
-    }
-
-    public final void z(int i10, h hVar, long j10) {
-        try {
-            int i11 = z.a;
-            try {
-                this.h.Q0(z.b(i10, 2, hVar, null, m3.b), this.l, j10);
-            } catch (Throwable th2) {
-                com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th2);
-            }
-        } catch (Throwable th3) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Unable to log.", th3);
-        }
-    }
-
-    public b(z9.d dVar, Context context, androidx.emoji2.text.f fVar) {
-        long nextLong = new Random().nextLong();
-        this.A = Long.valueOf(nextLong);
-        this.B = com.google.android.gms.internal.play_billing.i.a;
-        this.c = "8.0.0";
-        String w10 = w();
-        this.d = w10;
-        this.g = context.getApplicationContext();
-        o3 x10 = p3.x();
-        x10.c();
-        p3.v((p3) x10.b);
-        if (w10 != null) {
-            x10.c();
-            p3.w((p3) x10.b, w10);
-        }
-        String packageName = this.g.getPackageName();
-        x10.c();
-        p3.t((p3) x10.b, packageName);
-        x10.c();
-        p3.q((p3) x10.b, nextLong);
-        x10.c();
-        p3.u((p3) x10.b);
-        int i10 = Build.VERSION.SDK_INT;
-        x10.c();
-        p3.n((p3) x10.b, i10);
-        x10.d();
-        try {
-            int i11 = this.g.getPackageManager().getPackageInfo(this.g.getPackageName(), 0).versionCode;
-            x10.c();
-            p3.o((p3) x10.b, i11);
-        } catch (Throwable th2) {
-            com.google.android.gms.internal.play_billing.u.i("BillingClient", "Error getting app version code.", th2);
-        }
-        this.h = new qa(this.g, (p3) x10.a());
-        com.google.android.gms.internal.play_billing.u.h("BillingClient", "Billing client should have a valid listener but the provided is null.");
-        this.f = new f(this.g, null, this.h);
-        this.x = dVar;
-        this.g.getPackageName();
+    @Override // y2.h
+    public final void w(y2.j jVar, long j3, long j10, boolean z10) {
+        y2.p pVar = (y2.p) jVar;
+        long j11 = pVar.a;
+        Uri uri = pVar.d.c;
+        u2.t tVar = new u2.t(j10);
+        c cVar = this.w;
+        cVar.c.getClass();
+        cVar.f.n(tVar, 4, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
     }
 }

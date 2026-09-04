@@ -1,33 +1,54 @@
 package org.telegram.ui;
 
+import android.view.View;
+import org.telegram.messenger.MediaController;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class wq implements iq {
-    public final /* synthetic */ TLObject a;
-    public final /* synthetic */ rr b;
+public final /* synthetic */ class wq implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.d5 {
+    public final /* synthetic */ String a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
 
-    public wq(rr rrVar, TLObject tLObject) {
-        this.b = rrVar;
-        this.a = tLObject;
+    public /* synthetic */ wq(vr vrVar, TLRPC.User user, TLObject tLObject, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str, boolean z10) {
+        this.c = vrVar;
+        this.d = user;
+        this.e = tLObject;
+        this.f = tL_chatAdminRights;
+        this.h = tL_chatBannedRights;
+        this.a = str;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.iq
-    public final void a(TLRPC.User user) {
-        rr.c0(this.b, user);
+    @Override // org.telegram.ui.Components.d5
+    public void J(int i10, int i11, boolean z10) {
+        ((org.telegram.ui.Components.hg) this.c).B((View) this.d, this.e, this.a, this.f, z10, i10, i11, (MediaController.PhotoEntry) this.h, this.b);
     }
 
-    @Override // org.telegram.ui.iq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLObject tLObject = this.a;
-        if (tLObject instanceof TLRPC.ChannelParticipant) {
-            TLRPC.ChannelParticipant channelParticipant = (TLRPC.ChannelParticipant) tLObject;
-            channelParticipant.admin_rights = tL_chatAdminRights;
-            channelParticipant.banned_rights = tL_chatBannedRights;
-            channelParticipant.rank = str;
-            rr.W(this.b, channelParticipant, tL_chatAdminRights, tL_chatBannedRights);
-        }
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        vr vrVar = (vr) this.c;
+        TLRPC.User user = (TLRPC.User) this.d;
+        TLObject tLObject = (TLObject) this.e;
+        TLRPC.TL_chatAdminRights tL_chatAdminRights = (TLRPC.TL_chatAdminRights) this.f;
+        TLRPC.TL_chatBannedRights tL_chatBannedRights = (TLRPC.TL_chatBannedRights) this.h;
+        vrVar.getClass();
+        vrVar.t0(user.id, tLObject, tL_chatAdminRights, tL_chatBannedRights, this.a, this.b, vrVar.e1 == 1 ? 0 : 1, false);
+    }
+
+    public /* synthetic */ wq(org.telegram.ui.Components.hg hgVar, View view, Object obj, String str, Object obj2, MediaController.PhotoEntry photoEntry, boolean z10) {
+        this.c = hgVar;
+        this.d = view;
+        this.e = obj;
+        this.a = str;
+        this.f = obj2;
+        this.h = photoEntry;
+        this.b = z10;
     }
 }

@@ -1,53 +1,62 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
+import android.graphics.Canvas;
+import android.os.SystemClock;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class jg0 implements o1.f {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+public final class jg0 extends ll0 {
+    public final yf.z X2;
+    public long Y2;
+    public final /* synthetic */ pg0 Z2;
 
-    public /* synthetic */ jg0(Object obj, float f10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = f10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jg0(pg0 pg0Var, Context context) {
+        super(context, null);
+        this.Z2 = pg0Var;
+        this.X2 = new yf.z(8);
     }
 
-    @Override // o1.f
-    public final void a(o1.h hVar, boolean z4, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                kg0 kg0Var = (kg0) this.c;
-                if (!z4) {
-                    mg0 mg0Var = kg0Var.d;
-                    mg0Var.J.u.i = (mg0Var.E / 2.0f) + this.b >= ((float) AndroidUtilities.displaySize.x) / 2.0f ? (r0 - r3) - AndroidUtilities.dp(16.0f) : AndroidUtilities.dp(16.0f);
-                    break;
-                }
-                break;
-            case 1:
-                ph.da daVar = (ph.da) this.c;
-                if (!z4) {
-                    daVar.J0.setTranslationY(this.b);
-                    daVar.J0.H = false;
-                    daVar.l2 = null;
-                    daVar.m2 = null;
-                    break;
-                }
-                break;
-            default:
-                rh.m3 m3Var = (rh.m3) this.c;
-                m3Var.v = null;
-                float f12 = this.b;
-                if (!z4) {
-                    m3Var.f = f12;
-                    m3Var.c();
+    @Override // org.telegram.ui.Components.ll0
+    public final boolean E0(float f7) {
+        return f7 >= ((float) (this.Z2.E + AndroidUtilities.statusBarHeight));
+    }
+
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        float f7;
+        pg0 pg0Var = this.Z2;
+        if (pg0Var.L) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            long abs = Math.abs(this.Y2 - elapsedRealtime);
+            if (abs > 17) {
+                abs = 16;
+            }
+            this.Y2 = elapsedRealtime;
+            pg0Var.J += (abs * pg0Var.K) / 1800.0f;
+            while (true) {
+                f7 = pg0Var.J;
+                float f10 = pg0Var.K * 2.0f;
+                if (f7 < f10) {
                     break;
                 } else {
-                    m3Var.h = f12;
-                    break;
+                    pg0Var.J = f7 - f10;
                 }
+            }
+            pg0Var.I.setTranslate(f7, 0.0f);
+            pg0Var.H.setLocalMatrix(pg0Var.I);
+            e1();
+            invalidate();
         }
+        super.dispatchDraw(canvas);
+        int measuredHeight = getMeasuredHeight() - AndroidUtilities.navigationBarHeight;
+        int measuredWidth = getMeasuredWidth();
+        int measuredHeight2 = getMeasuredHeight();
+        yf.z zVar = this.X2;
+        zVar.setBounds(0, measuredHeight, measuredWidth, measuredHeight2);
+        zVar.b(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i5, this.p2));
+        zVar.draw(canvas);
     }
 }

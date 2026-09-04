@@ -1,51 +1,27 @@
 package x5;
 
-import android.os.IBinder;
-import android.os.Messenger;
+import android.app.PendingIntent;
 import android.os.Parcel;
 import android.os.Parcelable;
+import n6.l;
+import v8.r;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f implements Parcelable {
-    public static final Parcelable.Creator<f> CREATOR = new d();
-    public final Messenger a;
+public final class f extends o6.a {
+    public static final Parcelable.Creator<f> CREATOR = new r(26);
+    public final PendingIntent a;
 
-    public f(IBinder iBinder) {
-        this.a = new Messenger(iBinder);
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == null) {
-            return false;
-        }
-        try {
-            Messenger messenger = this.a;
-            messenger.getClass();
-            IBinder binder = messenger.getBinder();
-            Messenger messenger2 = ((f) obj).a;
-            messenger2.getClass();
-            return binder.equals(messenger2.getBinder());
-        } catch (ClassCastException unused) {
-            return false;
-        }
-    }
-
-    public final int hashCode() {
-        Messenger messenger = this.a;
-        messenger.getClass();
-        return messenger.getBinder().hashCode();
+    public f(PendingIntent pendingIntent) {
+        l.h(pendingIntent);
+        this.a = pendingIntent;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        Messenger messenger = this.a;
-        messenger.getClass();
-        parcel.writeStrongBinder(messenger.getBinder());
+        int q6 = e0.q(parcel, 20293);
+        e0.k(parcel, 1, this.a, i10);
+        e0.r(parcel, q6);
     }
 }

@@ -15,8 +15,8 @@ public final class s4 extends u4 implements i5 {
     }
 
     @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l10) {
-        t3.H(this, l10);
+    public final /* synthetic */ void x(Long l4) {
+        t3.H(this, l4);
     }
 
     @Override // j$.util.stream.p4, java.util.function.Supplier
@@ -30,7 +30,7 @@ public final class s4 extends u4 implements i5 {
     }
 
     @Override // j$.util.stream.u4, j$.util.stream.j5
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         this.b++;
     }
 }

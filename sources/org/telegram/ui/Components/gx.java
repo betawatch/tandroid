@@ -1,16 +1,36 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class gx extends org.telegram.ui.zn {
-    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.p2
-    public final void onTransitionAnimationEnd(boolean z4, boolean z10) {
-        org.telegram.ui.lk lkVar;
-        super.onTransitionAnimationEnd(z4, z10);
-        if (!z4 || (lkVar = this.V) == null) {
-            return;
+public final class gx extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ kz c;
+
+    public /* synthetic */ gx(kz kzVar, boolean z10, int i10) {
+        this.a = i10;
+        this.c = kzVar;
+        this.b = z10;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                if (!this.b) {
+                    this.c.x.setVisibility(4);
+                    break;
+                }
+                break;
+            default:
+                if (!this.b) {
+                    this.c.y.setVisibility(4);
+                    break;
+                }
+                break;
         }
-        lkVar.s1();
-        this.V.postDelayed(new up(this, 13), 100L);
     }
 }

@@ -1,26 +1,9 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.view.View;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class bl0 extends ql0 {
-    public boolean E(rl0 rl0Var) {
-        return true;
-    }
-
-    public abstract String F(int i10);
-
-    public abstract void G(rl0 rl0Var, float f10, int[] iArr);
-
-    public float H(rl0 rl0Var) {
-        return rl0Var.computeVerticalScrollOffset() / ((k() * rl0Var.getChildAt(0).getMeasuredHeight()) - rl0Var.getMeasuredHeight());
-    }
-
-    public void I() {
-    }
-
-    public void J(rl0 rl0Var) {
-    }
-
-    public void K() {
-    }
+public interface bl0 {
+    boolean a(int i10, View view);
 }

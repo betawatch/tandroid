@@ -2,29 +2,51 @@ package j8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import com.google.android.gms.identity.intents.model.UserAddress;
-import j7.f5;
+import com.google.android.gms.maps.model.LatLng;
+import g8.j;
+import java.util.ArrayList;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends c6.a {
-    public static final Parcelable.Creator<b> CREATOR = new t(2);
-    public String a;
-    public String b;
-    public String c;
+public final class b extends o6.a {
+    public static final Parcelable.Creator<b> CREATOR = new j(11);
+    public LatLng a;
+    public double b;
+    public float c;
     public int d;
-    public UserAddress e;
+    public int e;
+    public float f;
+    public boolean h;
+    public boolean n;
+    public ArrayList r;
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 1, this.a);
-        f5.l(parcel, 2, this.b);
-        f5.l(parcel, 3, this.c);
+        int q6 = e0.q(parcel, 20293);
+        e0.k(parcel, 2, this.a, i10);
+        double d = this.b;
+        e0.s(parcel, 3, 8);
+        parcel.writeDouble(d);
+        float f7 = this.c;
+        e0.s(parcel, 4, 4);
+        parcel.writeFloat(f7);
         int i11 = this.d;
-        f5.s(parcel, 4, 4);
+        e0.s(parcel, 5, 4);
         parcel.writeInt(i11);
-        f5.k(parcel, 5, this.e, i10);
-        f5.r(parcel, q10);
+        int i12 = this.e;
+        e0.s(parcel, 6, 4);
+        parcel.writeInt(i12);
+        float f10 = this.f;
+        e0.s(parcel, 7, 4);
+        parcel.writeFloat(f10);
+        boolean z10 = this.h;
+        e0.s(parcel, 8, 4);
+        parcel.writeInt(z10 ? 1 : 0);
+        boolean z11 = this.n;
+        e0.s(parcel, 9, 4);
+        parcel.writeInt(z11 ? 1 : 0);
+        e0.p(parcel, 10, this.r);
+        e0.r(parcel, q6);
     }
 }

@@ -1,16 +1,20 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class l40 extends org.telegram.ui.Components.xc0 {
+public final class l40 extends FrameLayout {
     public l40(LaunchActivity launchActivity) {
-        super(launchActivity, null);
+        super(launchActivity);
     }
 
-    @Override // org.telegram.ui.Components.xc0
-    public final CharSequence d(int i10) {
-        return LocaleController.formatPluralString("Minutes", i10, new Object[0]);
+    @Override // android.view.ViewGroup, android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (getAlpha() <= 0.95f) {
+            return false;
+        }
+        return super.dispatchTouchEvent(motionEvent);
     }
 }

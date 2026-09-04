@@ -15,13 +15,13 @@ public final /* synthetic */ class m0 implements LongConsumer {
     }
 
     @Override // java.util.function.LongConsumer
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         switch (this.a) {
             case 0:
-                this.b.accept(Long.valueOf(j10));
+                this.b.accept(Long.valueOf(j3));
                 break;
             default:
-                ((j5) this.b).accept(j10);
+                ((j5) this.b).accept(j3);
                 break;
         }
     }

@@ -1,28 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import org.telegram.messenger.Utilities;
+import android.view.View;
+import android.view.ViewTreeObserver;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pt implements Utilities.Callback {
-    public final /* synthetic */ ut a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+public final /* synthetic */ class pt implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ View b;
 
-    public /* synthetic */ pt(ut utVar, int i10, int i11) {
-        this.a = utVar;
-        this.b = i10;
-        this.c = i11;
+    public /* synthetic */ pt(int i10, View view) {
+        this.a = i10;
+        this.b = view;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        CharSequence charSequence = (CharSequence) obj;
-        ut utVar = this.a;
-        Editable text = utVar.getText();
-        int i10 = this.b;
-        text.replace(i10, this.c, charSequence);
-        utVar.setSelection(i10, charSequence.length() + i10);
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        switch (this.a) {
+            case 0:
+                org.telegram.ui.ActionBar.i4 i4Var = ((EditTextBoldCursor) this.b).floatingActionMode;
+                if (i4Var != null) {
+                    i4Var.e();
+                    break;
+                }
+                break;
+            default:
+                ((l70) this.b).invalidate();
+                break;
+        }
+        return true;
     }
 }

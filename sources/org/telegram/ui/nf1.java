@@ -1,94 +1,50 @@
 package org.telegram.ui;
 
-import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.app.Activity;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class nf1 extends org.telegram.ui.Components.c81 {
-    public final ArrayList a;
-    public final /* synthetic */ of1 b;
+public final class nf1 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ eg1 c;
 
-    public nf1(of1 of1Var) {
-        this.b = of1Var;
-        ArrayList arrayList = new ArrayList();
-        this.a = arrayList;
-        arrayList.add(new kf1(0));
-        kf1 kf1Var = new kf1(2);
-        kf1Var.b = 0;
-        arrayList.add(kf1Var);
-        kf1 kf1Var2 = new kf1(2);
-        kf1Var2.b = 1;
-        arrayList.add(kf1Var2);
-        kf1 kf1Var3 = new kf1(2);
-        kf1Var3.b = 2;
-        arrayList.add(kf1Var3);
-        kf1 kf1Var4 = new kf1(2);
-        kf1Var4.b = 3;
-        arrayList.add(kf1Var4);
-        kf1 kf1Var5 = new kf1(2);
-        kf1Var5.b = 4;
-        arrayList.add(kf1Var5);
+    public /* synthetic */ nf1(eg1 eg1Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = eg1Var;
+        this.b = z10;
     }
 
-    @Override // org.telegram.ui.Components.c81
-    public final void b(View view, int i10, int i11) {
-        of1 of1Var = this.b;
-        of1Var.K(view, i10, of1Var.V, true);
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final View d(int i10) {
-        int i11;
-        of1 of1Var = this.b;
-        sf1 sf1Var = of1Var.q0;
-        if (i10 == 1) {
-            return of1Var.Q;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        int i10;
+        switch (this.a) {
+            case 0:
+                super.onAnimationEnd(animator);
+                boolean z10 = this.b;
+                float f7 = z10 ? 1.0f : 0.0f;
+                eg1 eg1Var = this.c;
+                eg1Var.S0(f7);
+                if (!z10) {
+                    Activity parentActivity = eg1Var.getParentActivity();
+                    i10 = ((org.telegram.ui.ActionBar.n2) eg1Var).classGuid;
+                    AndroidUtilities.setAdjustResizeToNothing(parentActivity, i10);
+                    eg1Var.r0.setVisibility(8);
+                    eg1Var.Q0(true);
+                    break;
+                } else {
+                    eg1Var.q0.setVisibility(8);
+                    break;
+                }
+            default:
+                if (!this.b) {
+                    this.c.o0.setVisibility(8);
+                    break;
+                }
+                break;
         }
-        if (i10 == 2) {
-            i11 = ((org.telegram.ui.ActionBar.p2) sf1Var).currentAccount;
-            org.telegram.ui.Components.cn0 cn0Var = new org.telegram.ui.Components.cn0(i11, sf1Var);
-            cn0Var.b.j(new mf1(0));
-            cn0Var.setUiCallback(of1Var);
-            return cn0Var;
-        }
-        u10 u10Var = new u10(sf1Var);
-        u10Var.setChatPreviewDelegate(of1Var.o0);
-        u10Var.setUiCallback(of1Var);
-        u10Var.b.j(new mf1(1));
-        return u10Var;
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final int e() {
-        return this.a.size();
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final CharSequence g(int i10) {
-        ArrayList arrayList = this.a;
-        if (((kf1) arrayList.get(i10)).a == 0) {
-            return LocaleController.getString(R.string.SearchMessages);
-        }
-        if (((kf1) arrayList.get(i10)).a == 1) {
-            return LocaleController.getString(R.string.DownloadsTabs);
-        }
-        tf.e0 e0Var = tf.g0.Z2[((kf1) arrayList.get(i10)).b];
-        String str = e0Var.c;
-        return str != null ? str : LocaleController.getString(e0Var.b);
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final int h(int i10) {
-        ArrayList arrayList = this.a;
-        if (((kf1) arrayList.get(i10)).a == 0) {
-            return 1;
-        }
-        if (((kf1) arrayList.get(i10)).a == 1) {
-            return 2;
-        }
-        return ((kf1) arrayList.get(i10)).a + i10;
     }
 }

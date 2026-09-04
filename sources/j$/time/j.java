@@ -102,9 +102,9 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
         return oVar.m(this);
     }
 
-    public final int H(boolean z4) {
+    public final int H(boolean z10) {
         int i10 = i.a[ordinal()];
-        return i10 != 1 ? (i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) ? 30 : 31 : z4 ? 29 : 28;
+        return i10 != 1 ? (i10 == 2 || i10 == 3 || i10 == 4 || i10 == 5) ? 30 : 31 : z10 ? 29 : 28;
     }
 
     public final int I() {
@@ -115,32 +115,32 @@ public final class j implements j$.time.temporal.l, j$.time.temporal.m {
         return 29;
     }
 
-    public final int G(boolean z4) {
+    public final int G(boolean z10) {
         switch (i.a[ordinal()]) {
             case 1:
                 return 32;
             case 2:
-                return (z4 ? 1 : 0) + 91;
+                return (z10 ? 1 : 0) + 91;
             case 3:
-                return (z4 ? 1 : 0) + 152;
+                return (z10 ? 1 : 0) + 152;
             case 4:
-                return (z4 ? 1 : 0) + 244;
+                return (z10 ? 1 : 0) + 244;
             case 5:
-                return (z4 ? 1 : 0) + 305;
+                return (z10 ? 1 : 0) + 305;
             case 6:
                 return 1;
             case 7:
-                return (z4 ? 1 : 0) + 60;
+                return (z10 ? 1 : 0) + 60;
             case 8:
-                return (z4 ? 1 : 0) + 121;
+                return (z10 ? 1 : 0) + 121;
             case 9:
-                return (z4 ? 1 : 0) + 182;
+                return (z10 ? 1 : 0) + 182;
             case 10:
-                return (z4 ? 1 : 0) + 213;
+                return (z10 ? 1 : 0) + 213;
             case 11:
-                return (z4 ? 1 : 0) + 274;
+                return (z10 ? 1 : 0) + 274;
             default:
-                return (z4 ? 1 : 0) + 335;
+                return (z10 ? 1 : 0) + 335;
         }
     }
 

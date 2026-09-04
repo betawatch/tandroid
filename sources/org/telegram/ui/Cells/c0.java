@@ -13,16 +13,16 @@ import android.text.Layout;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.f01;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class c0 extends Drawable {
     public final RectF a = new RectF();
     public final int b;
     public final org.telegram.ui.ActionBar.f6 c;
-    public final k01 d;
-    public final k01 e;
+    public final f01 d;
+    public final f01 e;
     public final Drawable f;
     public final Drawable g;
     public int h;
@@ -34,14 +34,14 @@ public final class c0 extends Drawable {
         this.j = paint;
         this.b = i10;
         this.c = f6Var;
-        k01 k01Var = new k01(LocaleController.getString(R.string.BotForumAskForStartNewChatTitle), 14.0f, AndroidUtilities.bold());
-        this.d = k01Var;
+        f01 f01Var = new f01(LocaleController.getString(R.string.BotForumAskForStartNewChatTitle), 14.0f, AndroidUtilities.bold());
+        this.d = f01Var;
         Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
-        k01Var.a();
-        k01 k01Var2 = new k01("", 13.0f, null);
-        this.e = k01Var2;
-        k01Var2.n(4);
-        k01Var2.a();
+        f01Var.a();
+        f01 f01Var2 = new f01("", 13.0f, null);
+        this.e = f01Var2;
+        f01Var2.n(4);
+        f01Var2.a();
         Drawable mutate = context.getResources().getDrawable(R.drawable.filled_topic_new_24).mutate();
         this.f = mutate;
         PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
@@ -62,7 +62,7 @@ public final class c0 extends Drawable {
         float dp2 = AndroidUtilities.dp(16.0f);
         RectF rectF = this.a;
         canvas.drawRoundRect(rectF, dp, dp2, T0);
-        if (f6Var != null ? f6Var.m0() : org.telegram.ui.ActionBar.j6.a1()) {
+        if (f6Var != null ? f6Var.o0() : org.telegram.ui.ActionBar.j6.a1()) {
             canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), org.telegram.ui.ActionBar.j6.T0("paintChatActionBackgroundDarken", f6Var));
         }
         canvas.save();
@@ -78,14 +78,14 @@ public final class c0 extends Drawable {
         canvas.translate(0.0f, AndroidUtilities.dp(70.0f));
         canvas.translate(0.0f, AndroidUtilities.dp(14.0f));
         float centerX2 = rectF.centerX();
-        k01 k01Var = this.d;
-        this.d.c(centerX2 - (k01Var.l() / 2.0f), k01Var.j() / 2.0f, 1.0f, -1, canvas);
-        canvas.translate(0.0f, k01Var.j());
+        f01 f01Var = this.d;
+        this.d.c(centerX2 - (f01Var.l() / 2.0f), f01Var.j() / 2.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, f01Var.j());
         canvas.translate(0.0f, AndroidUtilities.dp(4.0f));
         float centerX3 = rectF.centerX();
-        k01 k01Var2 = this.e;
-        this.e.c(centerX3 - (k01Var2.l() / 2.0f), 0.0f, 1.0f, -1, canvas);
-        canvas.translate(0.0f, k01Var2.j());
+        f01 f01Var2 = this.e;
+        this.e.c(centerX3 - (f01Var2.l() / 2.0f), 0.0f, 1.0f, -1, canvas);
+        canvas.translate(0.0f, f01Var2.j());
         canvas.translate(0.0f, AndroidUtilities.dp(2.0f));
         int centerX4 = (int) (rectF.centerX() - AndroidUtilities.dp(10.0f));
         int centerX5 = (int) (rectF.centerX() + AndroidUtilities.dp(10.0f));

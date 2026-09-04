@@ -1,38 +1,51 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c61 implements ValueAnimator.AnimatorUpdateListener {
+public final class c61 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ f61 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ j71 c;
 
-    public /* synthetic */ c61(f61 f61Var, int i10) {
+    public /* synthetic */ c61(j71 j71Var, boolean z10, int i10) {
         this.a = i10;
-        this.b = f61Var;
+        this.c = j71Var;
+        this.b = z10;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ArrayList arrayList;
+        ArrayList arrayList2;
         switch (this.a) {
             case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f61 f61Var = this.b;
-                f61Var.K = floatValue;
-                f61Var.S.e0.invalidate();
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f61 f61Var2 = this.b;
-                f61Var2.K = floatValue2;
-                f61Var2.S.e0.invalidate();
+                j71 j71Var = this.c;
+                w51 w51Var = j71Var.i0;
+                boolean z10 = this.b;
+                w51Var.setVisibility(z10 ? 0 : 8);
+                j71Var.h0.setVisibility(z10 ? 8 : 0);
+                j71Var.E1 = null;
+                if (!z10 && (arrayList2 = j71Var.A1) != null) {
+                    arrayList2.clear();
+                    ArrayList arrayList3 = j71Var.D1;
+                    if (arrayList3 != null) {
+                        arrayList3.clear();
+                    }
+                    j71Var.q0.E(false);
+                }
+                if (!z10 && (arrayList = j71Var.B1) != null) {
+                    arrayList.clear();
+                    break;
+                }
                 break;
             default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                f61 f61Var3 = this.b;
-                f61Var3.K = floatValue3;
-                f61Var3.S.e0.invalidate();
+                j71 j71Var2 = this.c;
+                j71Var2.j0.setVisibility((this.b && j71Var2.i0.getVisibility() == 0) ? 0 : 8);
+                j71Var2.H1 = null;
                 break;
         }
     }

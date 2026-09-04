@@ -1,150 +1,166 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.graphics.drawable.Drawable;
-import android.text.TextUtils;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.graphics.SurfaceTexture;
+import android.view.TextureView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class u61 extends View {
-    public final j6 a;
-    public final j6 b;
-    public final Paint c;
-    public final Paint d;
-    public final Paint e;
-    public boolean f;
-    public final z5 h;
-    public final int[] n;
+public final class u61 extends TextureView implements TextureView.SurfaceTextureListener {
+    public g71 a;
+    public vz b;
+    public final hk0 c;
+    public int d;
+    public int e;
+    public di.n8 f;
+    public t61 h;
+    public int n;
+    public int r;
+    public ja s;
 
-    public u61(Context context) {
+    public u61(Context context, g71 g71Var) {
         super(context);
-        Paint paint = new Paint(1);
-        this.c = paint;
-        Paint paint2 = new Paint(1);
-        this.d = paint2;
-        Paint paint3 = new Paint(1);
-        this.e = paint3;
-        mr mrVar = mr.h;
-        this.h = new z5(this, 0L, 300L, mrVar);
-        this.n = new int[]{144, 240, 360, 480, 720, 1080, 1440, 2160};
-        j6 j6Var = new j6(true, false, false, false);
-        this.a = j6Var;
-        j6Var.k(0.4f, 360L, mrVar);
-        j6Var.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        j6Var.r(-1);
-        j6Var.t(AndroidUtilities.dpf2(10.6f));
-        j6Var.setCallback(this);
-        j6Var.b = 17;
-        j6 j6Var2 = new j6(true, false, false, false);
-        this.b = j6Var2;
-        j6Var2.k(0.2f, 360L, mrVar);
-        j6Var2.u(AndroidUtilities.getTypeface("fonts/num.otf"));
-        j6Var2.r(-1);
-        j6Var2.t(AndroidUtilities.dpf2(8.6f));
-        j6Var2.setCallback(this);
-        j6Var2.b = 5;
-        PorterDuff.Mode mode = PorterDuff.Mode.CLEAR;
-        j6Var2.a.setXfermode(new PorterDuffXfermode(mode));
-        j6Var2.G = AndroidUtilities.displaySize.x;
-        paint.setColor(-1);
-        paint.setStyle(Paint.Style.STROKE);
-        paint2.setColor(-1);
-        paint3.setXfermode(new PorterDuffXfermode(mode));
+        this.c = new hk0();
+        this.a = g71Var;
+        setSurfaceTextureListener(this);
     }
 
-    public final void a(int i10, boolean z4, boolean z10) {
-        this.f = !z4 || z10;
-        j6 j6Var = this.a;
-        j6 j6Var2 = this.b;
-        if (z10) {
-            j6Var.q("GIF", true, true);
-            j6Var2.q("", true, true);
-        } else {
-            j6Var.q(i10 >= 720 ? "HD" : "SD", true, true);
-            int[] iArr = this.n;
-            int length = iArr.length - 1;
-            while (true) {
-                if (length < 0) {
-                    length = -1;
-                    break;
-                } else if (i10 >= iArr[length]) {
-                    break;
-                } else {
-                    length--;
+    public final void a(float f7, float f10, float f11, float f12) {
+        hk0 hk0Var = this.c;
+        hk0Var.a = f7;
+        hk0Var.b = f10;
+        hk0Var.c = f11;
+        hk0Var.d = f12;
+    }
+
+    public Bitmap getUiBlurBitmap() {
+        pa paVar;
+        vz vzVar = this.b;
+        if (vzVar == null || (paVar = vzVar.I) == null) {
+            return null;
+        }
+        synchronized (paVar.n) {
+            try {
+                if (paVar.q) {
+                    return paVar.p;
                 }
-            }
-            if (length < 0) {
-                j6Var2.q("", true, true);
-            } else if (length == 6) {
-                j6Var2.q("2K", TextUtils.isEmpty(j6Var2.g), true);
-            } else if (length == 7) {
-                j6Var2.q("4K", TextUtils.isEmpty(j6Var2.g), true);
-            } else {
-                j6Var2.q("" + iArr[length], TextUtils.isEmpty(j6Var2.g), true);
+                return null;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
-        setClickable(!this.f);
-        invalidate();
     }
 
-    @Override // android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        float e = (1.0f - (this.h.e(this.f) * 0.35f)) * 255.0f;
-        int i10 = (int) e;
-        Paint paint = this.c;
-        paint.setAlpha(i10);
-        paint.setStrokeWidth(AndroidUtilities.dpf2(1.33f));
-        float dpf2 = AndroidUtilities.dpf2(21.33f);
-        float dpf22 = AndroidUtilities.dpf2(6.0f);
-        j6 j6Var = this.a;
-        float max = Math.max(dpf2, j6Var.d() + dpf22);
-        float dpf23 = AndroidUtilities.dpf2(17.33f);
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set((getWidth() - max) / 2.0f, (getHeight() - dpf23) / 2.0f, (getWidth() + max) / 2.0f, (getHeight() + dpf23) / 2.0f);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(4.0f), AndroidUtilities.dpf2(4.0f), paint);
-        Rect rect = AndroidUtilities.rectTmp2;
-        rect.set(0, (int) ((getHeight() - dpf23) / 2.0f), getWidth(), (int) ((getHeight() + dpf23) / 2.0f));
-        j6Var.setBounds(rect);
-        j6Var.w = i10;
-        j6Var.draw(canvas);
-        j6 j6Var2 = this.b;
-        rect.set((int) ((AndroidUtilities.dpf2(16.0f) + (getWidth() / 2.0f)) - (j6Var2.d() + (AndroidUtilities.dpf2(2.0f) * j6Var2.g()))), (int) ((getHeight() / 2.0f) - AndroidUtilities.dpf2(14.0f)), (int) (AndroidUtilities.dpf2(16.0f) + (getWidth() / 2.0f)), (int) (((getHeight() / 2.0f) - AndroidUtilities.dpf2(14.0f)) + AndroidUtilities.dpf2(8.33f)));
-        rectF.set(rect);
-        rectF.inset(-AndroidUtilities.dpf2(1.33f), -AndroidUtilities.dpf2(1.33f));
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(1.66f), AndroidUtilities.dpf2(1.66f), this.e);
-        canvas.saveLayerAlpha(0.0f, 0.0f, getWidth(), getHeight(), 255, 31);
-        rectF.set(rect);
-        int g10 = (int) (j6Var2.g() * e);
-        Paint paint2 = this.d;
-        paint2.setAlpha(g10);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dpf2(1.66f), AndroidUtilities.dpf2(1.66f), paint2);
-        rect.offset((int) (-AndroidUtilities.dpf2(1.33f)), 0);
-        canvas.save();
-        j6Var2.setBounds(rect);
-        j6Var2.draw(canvas);
-        canvas.restore();
-        canvas.restore();
-        canvas.restore();
+    public int getVideoHeight() {
+        return this.e;
     }
 
-    public void setPhotoState(boolean z4) {
-        this.f = false;
-        this.a.q(z4 ? "HD" : "SD", true, true);
-        this.b.q("", false, true);
+    public int getVideoWidth() {
+        return this.d;
     }
 
-    @Override // android.view.View
-    public final boolean verifyDrawable(Drawable drawable) {
-        return this.a == drawable || this.b == drawable || super.verifyDrawable(drawable);
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
+        int i12;
+        if (this.b != null || surfaceTexture == null || this.a == null) {
+            return;
+        }
+        vz vzVar = new vz(surfaceTexture, new kv(this, 28), this.f, this.s, i10, i11);
+        this.b = vzVar;
+        vzVar.i(this.n, this.r);
+        vz vzVar2 = this.b;
+        ja jaVar = this.s;
+        pa paVar = vzVar2.I;
+        if (paVar != null) {
+            ja jaVar2 = paVar.t;
+            if (jaVar2 != null && jaVar2.m != null) {
+                jaVar2.m = null;
+            }
+            paVar.t = jaVar;
+            if (jaVar != null && jaVar.m != paVar) {
+                jaVar.m = paVar;
+                jaVar.d();
+            }
+        }
+        int i13 = this.d;
+        if (i13 != 0 && (i12 = this.e) != 0) {
+            vz vzVar3 = this.b;
+            vzVar3.getClass();
+            vzVar3.postRunnable(new rz(vzVar3, i13, i12, 0));
+        }
+        this.b.e(true, true, false);
+        t61 t61Var = this.h;
+        if (t61Var != null) {
+            t61Var.c(this.b);
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final boolean onSurfaceTextureDestroyed(SurfaceTexture surfaceTexture) {
+        vz vzVar = this.b;
+        if (vzVar == null) {
+            return true;
+        }
+        vzVar.postRunnable(new sz(vzVar, 0));
+        this.b = null;
+        return true;
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureSizeChanged(SurfaceTexture surfaceTexture, int i10, int i11) {
+        vz vzVar = this.b;
+        if (vzVar != null) {
+            vzVar.postRunnable(new rz(vzVar, i10, i11, 1));
+            this.b.e(false, true, false);
+            this.b.postRunnable(new jq0(this, 29));
+        }
+    }
+
+    public void setDelegate(t61 t61Var) {
+        this.h = t61Var;
+        vz vzVar = this.b;
+        if (vzVar != null) {
+            if (t61Var == null) {
+                vzVar.f(null);
+            } else {
+                t61Var.c(vzVar);
+            }
+        }
+    }
+
+    public void setHDRInfo(di.n8 n8Var) {
+        this.f = n8Var;
+        vz vzVar = this.b;
+        if (vzVar != null) {
+            vzVar.postRunnable(new zu(8, vzVar, n8Var));
+        }
+    }
+
+    @Override // android.view.TextureView
+    public void setTransform(Matrix matrix) {
+        super.setTransform(matrix);
+        vz vzVar = this.b;
+        if (vzVar != null) {
+            int width = getWidth();
+            int height = getHeight();
+            pa paVar = vzVar.I;
+            if (paVar == null) {
+                return;
+            }
+            Matrix matrix2 = paVar.v;
+            matrix.invert(matrix2);
+            float f7 = width;
+            float f10 = height;
+            matrix2.preScale(f7, f10);
+            matrix2.postScale(1.0f / f7, 1.0f / f10);
+            paVar.c(matrix2);
+            vzVar.e(false, false, false);
+        }
+    }
+
+    @Override // android.view.TextureView.SurfaceTextureListener
+    public final void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
     }
 }

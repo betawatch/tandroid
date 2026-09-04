@@ -1,50 +1,77 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
+import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class qp0 implements tf.x {
-    public final /* synthetic */ lq0 a;
+public final class qp0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ hq0 c;
 
-    public qp0(lq0 lq0Var) {
-        this.a = lq0Var;
+    public /* synthetic */ qp0(hq0 hq0Var, boolean z10, int i10) {
+        this.a = i10;
+        this.c = hq0Var;
+        this.b = z10;
     }
 
-    @Override // tf.x
-    public final void a(a0.h hVar, ArrayList arrayList) {
-        int i10;
-        int i11;
-        int i12;
-        int i13 = 0;
-        while (i13 < arrayList.size()) {
-            TLObject tLObject = ((tf.y) arrayList.get(i13)).a;
-            if ((tLObject instanceof TLRPC.Chat) && !ChatObject.canWriteToChat((TLRPC.Chat) tLObject)) {
-                arrayList.remove(i13);
-                i13--;
-            }
-            i13++;
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 0:
+                AnimatorSet[] animatorSetArr = this.c.T;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    animatorSetArr[0] = null;
+                    break;
+                }
+                break;
+            default:
+                hq0 hq0Var = this.c;
+                if (animator.equals(hq0Var.y)) {
+                    hq0Var.y = null;
+                    break;
+                }
+                break;
         }
-        lq0 lq0Var = this.a;
-        lq0Var.B0 = arrayList;
-        for (int i14 = 0; i14 < lq0Var.B0.size(); i14++) {
-            tf.y yVar = (tf.y) lq0Var.B0.get(i14);
-            TLObject tLObject2 = yVar.a;
-            if (tLObject2 instanceof TLRPC.User) {
-                i12 = ((org.telegram.ui.ActionBar.g3) lq0Var).currentAccount;
-                MessagesController.getInstance(i12).putUser((TLRPC.User) yVar.a, true);
-            } else if (tLObject2 instanceof TLRPC.Chat) {
-                i11 = ((org.telegram.ui.ActionBar.g3) lq0Var).currentAccount;
-                MessagesController.getInstance(i11).putChat((TLRPC.Chat) yVar.a, true);
-            } else if (tLObject2 instanceof TLRPC.EncryptedChat) {
-                i10 = ((org.telegram.ui.ActionBar.g3) lq0Var).currentAccount;
-                MessagesController.getInstance(i10).putEncryptedChat((TLRPC.EncryptedChat) yVar.a, true);
-            }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                hq0 hq0Var = this.c;
+                AnimatorSet[] animatorSetArr = hq0Var.T;
+                AnimatorSet animatorSet = animatorSetArr[0];
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    if (!this.b) {
+                        hq0Var.S[0].setVisibility(4);
+                    }
+                    animatorSetArr[0] = null;
+                    break;
+                }
+                break;
+            default:
+                hq0 hq0Var2 = this.c;
+                FrameLayout frameLayout = hq0Var2.h;
+                if (animator.equals(hq0Var2.y)) {
+                    if (!this.b) {
+                        hq0Var2.c.setVisibility(4);
+                        FrameLayout frameLayout2 = hq0Var2.c0;
+                        if (frameLayout2 != null && frameLayout == null) {
+                            frameLayout2.setVisibility(4);
+                        }
+                        hq0Var2.f.setVisibility(4);
+                    } else if (frameLayout != null) {
+                        frameLayout.setVisibility(4);
+                    }
+                    hq0Var2.y = null;
+                    break;
+                }
+                break;
         }
-        lq0Var.J.l();
     }
 }

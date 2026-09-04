@@ -1,41 +1,43 @@
 package j7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.os.IBinder;
+import android.os.IInterface;
+import n6.g;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e implements i {
-    public final int a;
-
-    public e(int i10) {
-        this.a = i10;
+public final class e extends g {
+    @Override // n6.g
+    public final boolean C() {
+        return true;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final Class annotationType() {
-        return i.class;
+    @Override // n6.g, com.google.android.gms.common.api.c
+    public final int l() {
+        return 12451000;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // n6.g
+    public final /* synthetic */ IInterface q(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
         }
-        if (!(obj instanceof i)) {
-            return false;
-        }
-        if (this.a != ((e) ((i) obj)).a) {
-            return false;
-        }
-        Object obj2 = h.a;
-        return obj2.equals(obj2);
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.phone.internal.ISmsRetrieverApiService");
+        return queryLocalInterface instanceof d ? (d) queryLocalInterface : new d(iBinder);
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final int hashCode() {
-        return (this.a ^ 14552422) + (h.a.hashCode() ^ 2041407134);
+    @Override // n6.g
+    public final k6.c[] r() {
+        return b.b;
     }
 
-    @Override // java.lang.annotation.Annotation
-    public final String toString() {
-        return "@com.google.firebase.encoders.proto.Protobuf(tag=" + this.a + "intEncoding=" + h.a + ')';
+    @Override // n6.g
+    public final String v() {
+        return "com.google.android.gms.auth.api.phone.internal.ISmsRetrieverApiService";
+    }
+
+    @Override // n6.g
+    public final String w() {
+        return "com.google.android.gms.auth.api.phone.service.SmsRetrieverApiService.START";
     }
 }

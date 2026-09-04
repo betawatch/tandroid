@@ -4,12 +4,12 @@ import android.app.Application;
 import com.google.android.gms.tasks.Task;
 import com.google.android.recaptcha.internal.zzdz;
 import com.google.android.recaptcha.internal.zzeq;
-import k7.p7;
+import id.c;
+import jd.a;
 import org.telegram.tgnet.TLObject;
-import uc.c;
-import vc.a;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class Recaptcha {
     public static final Recaptcha INSTANCE = new Recaptcha();
@@ -21,11 +21,11 @@ public final class Recaptcha {
         return zzdz.zze(application, str);
     }
 
-    public static /* synthetic */ Object getClient-BWLJW6A$default(Recaptcha recaptcha, Application application, String str, long j10, c cVar, int i10, Object obj) {
+    public static /* synthetic */ Object getClient-BWLJW6A$default(Recaptcha recaptcha, Application application, String str, long j3, c cVar, int i10, Object obj) {
         if ((i10 & 4) != 0) {
-            j10 = 10000;
+            j3 = 10000;
         }
-        return recaptcha.getClient-BWLJW6A(application, str, j10, cVar);
+        return recaptcha.getClient-BWLJW6A(application, str, j3, cVar);
     }
 
     public static final Task<RecaptchaTasksClient> getTasksClient(Application application, String str) {
@@ -41,7 +41,7 @@ public final class Recaptcha {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object getClient-BWLJW6A(Application application, String str, long j10, c cVar) {
+    public final Object getClient-BWLJW6A(Application application, String str, long j3, c cVar) {
         Recaptcha$getClient$1 recaptcha$getClient$1;
         int i10;
         try {
@@ -54,9 +54,9 @@ public final class Recaptcha {
                     a aVar = a.a;
                     i10 = recaptcha$getClient$1.zzc;
                     if (i10 != 0) {
-                        p7.b(obj);
+                        t7.b(obj);
                         recaptcha$getClient$1.zzc = 1;
-                        obj = zzdz.zzb(application, str, j10, recaptcha$getClient$1);
+                        obj = zzdz.zzb(application, str, j3, recaptcha$getClient$1);
                         if (obj == aVar) {
                             return aVar;
                         }
@@ -64,7 +64,7 @@ public final class Recaptcha {
                         if (i10 != 1) {
                             throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                         }
-                        p7.b(obj);
+                        t7.b(obj);
                     }
                     return (zzeq) obj;
                 }
@@ -73,7 +73,7 @@ public final class Recaptcha {
             }
             return (zzeq) obj;
         } catch (Throwable th2) {
-            return p7.a(th2);
+            return t7.a(th2);
         }
         recaptcha$getClient$1 = new Recaptcha$getClient$1(this, cVar);
         Object obj2 = recaptcha$getClient$1.zza;
@@ -81,7 +81,7 @@ public final class Recaptcha {
         i10 = recaptcha$getClient$1.zzc;
     }
 
-    public static final Task<RecaptchaTasksClient> getTasksClient(Application application, String str, long j10) {
-        return zzdz.zzc(application, str, j10);
+    public static final Task<RecaptchaTasksClient> getTasksClient(Application application, String str, long j3) {
+        return zzdz.zzc(application, str, j3);
     }
 }

@@ -1,11 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.view.View;
+import org.telegram.messenger.MessageObject;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public interface mm {
-    void O0(int i10);
+public final class mm extends org.telegram.ui.Components.s6 {
+    public final /* synthetic */ nm b;
 
-    void X(boolean z4, boolean z10);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public mm(nm nmVar) {
+        super("alpha", 0);
+        this.b = nmVar;
+    }
 
-    void o0(String str);
+    @Override // org.telegram.ui.Components.s6
+    public final void b(Object obj, float f7) {
+        ((MessageObject.SendAnimationData) obj).timeAlpha = f7;
+        View view = this.b.b.Q.fragmentView;
+        if (view != null) {
+            view.invalidate();
+        }
+    }
+
+    @Override // android.util.Property
+    public final Object get(Object obj) {
+        return Float.valueOf(((MessageObject.SendAnimationData) obj).timeAlpha);
+    }
 }

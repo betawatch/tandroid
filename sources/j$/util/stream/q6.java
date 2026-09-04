@@ -51,12 +51,12 @@ public class q6 extends s6 implements LongConsumer {
     }
 
     @Override // java.util.function.LongConsumer
-    public void accept(long j10) {
+    public void accept(long j3) {
         n();
         long[] jArr = (long[]) this.e;
         int i10 = this.b;
         this.b = i10 + 1;
-        jArr[i10] = j10;
+        jArr[i10] = j3;
     }
 
     @Override // java.lang.Iterable

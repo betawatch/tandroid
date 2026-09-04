@@ -1,121 +1,24 @@
 package p6;
 
-import android.app.PendingIntent;
-import android.os.BadParcelableException;
-import android.os.Binder;
-import android.os.IBinder;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
-import b7.l;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.TaskCompletionSource;
-import j7.r5;
-import kf.k0;
-import x6.c;
+import a8.d;
+import com.google.android.gms.common.api.e;
+import com.google.android.gms.common.api.internal.v;
+import com.google.android.gms.common.api.internal.w;
+import com.google.android.gms.common.api.j;
+import com.google.android.gms.tasks.Task;
+import k2.g0;
+import n6.o;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends Binder implements IInterface {
-    public final /* synthetic */ int a;
-    public final Object b;
+public final class b extends j {
+    public static final e k = new e("ClientTelemetry.API", new d(11), new com.google.android.gms.common.api.d());
 
-    public b(int i10, TaskCompletionSource taskCompletionSource) {
-        this.a = i10;
-        switch (i10) {
-            case 1:
-                this.b = taskCompletionSource;
-                attachInterface(this, "com.google.android.gms.auth.api.phone.internal.ISmsRetrieverResultCallback");
-                break;
-            default:
-                this.b = taskCompletionSource;
-                attachInterface(this, "com.google.android.gms.fido.fido2.internal.regular.IFido2AppCallbacks");
-                break;
-        }
-    }
-
-    @Override // android.os.IInterface
-    public final IBinder asBinder() {
-        int i10 = this.a;
-        return this;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:20:0x0058, code lost:
-    
-        if (super.onTransact(r7, r8, r9, r10) != false) goto L22;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:36:0x0098, code lost:
-    
-        if (super.onTransact(r7, r8, r9, r10) != false) goto L38;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:5:0x0013, code lost:
-    
-        if (super.onTransact(r7, r8, r9, r10) != false) goto L7;
-     */
-    @Override // android.os.Binder
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTransact(int i10, Parcel parcel, Parcel parcel2, int i11) {
-        switch (this.a) {
-            case 0:
-                if (i10 > 16777215) {
-                    break;
-                } else {
-                    parcel.enforceInterface(getInterfaceDescriptor());
-                }
-                if (i10 != 1) {
-                    return false;
-                }
-                Parcelable.Creator<Status> creator = Status.CREATOR;
-                int i12 = l.a;
-                Status createFromParcel = parcel.readInt() == 0 ? null : creator.createFromParcel(parcel);
-                PendingIntent pendingIntent = (PendingIntent) (parcel.readInt() != 0 ? (Parcelable) PendingIntent.CREATOR.createFromParcel(parcel) : null);
-                int dataAvail = parcel.dataAvail();
-                if (dataAvail > 0) {
-                    throw new BadParcelableException(k0.j(dataAvail, "Parcel data not fully consumed, unread size: "));
-                }
-                r5.a(createFromParcel, pendingIntent, (TaskCompletionSource) this.b);
-                return true;
-            case 1:
-                if (i10 > 16777215) {
-                    break;
-                } else {
-                    parcel.enforceInterface(getInterfaceDescriptor());
-                }
-                if (i10 != 1) {
-                    return false;
-                }
-                Parcelable.Creator<Status> creator2 = Status.CREATOR;
-                int i13 = c.a;
-                Status createFromParcel2 = parcel.readInt() == 0 ? null : creator2.createFromParcel(parcel);
-                int dataAvail2 = parcel.dataAvail();
-                if (dataAvail2 > 0) {
-                    throw new BadParcelableException(k0.j(dataAvail2, "Parcel data not fully consumed, unread size: "));
-                }
-                r5.a(createFromParcel2, null, (TaskCompletionSource) this.b);
-                return true;
-            default:
-                if (i10 > 16777215) {
-                    break;
-                } else {
-                    parcel.enforceInterface(getInterfaceDescriptor());
-                }
-                if (i10 == 1) {
-                    ((b9.c) this.b).a((Status) d7.c.a(parcel, Status.CREATOR));
-                } else if (i10 == 2) {
-                } else {
-                    if (i10 != 4) {
-                        return false;
-                    }
-                }
-                return true;
-        }
-    }
-
-    public b(b9.c cVar) {
-        this.a = 2;
-        attachInterface(this, "com.google.android.gms.appdatasearch.internal.ILightweightAppDataSearchCallbacks");
-        this.b = cVar;
+    public final Task f(o oVar) {
+        v e7 = w.e();
+        e7.d = new k6.c[]{k7.b.a};
+        e7.b = false;
+        e7.c = new g0(oVar, 15);
+        return e(2, e7.a());
     }
 }

@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class p0 extends q0 {
     public final int e;
@@ -20,17 +20,17 @@ public final class p0 extends q0 {
             return this.b[this.e + i10];
         }
         if (i10 < 0) {
-            StringBuilder sb = new StringBuilder(22);
-            sb.append("Index < 0: ");
-            sb.append(i10);
-            throw new ArrayIndexOutOfBoundsException(sb.toString());
+            StringBuilder sb2 = new StringBuilder(22);
+            sb2.append("Index < 0: ");
+            sb2.append(i10);
+            throw new ArrayIndexOutOfBoundsException(sb2.toString());
         }
-        StringBuilder sb2 = new StringBuilder(40);
-        sb2.append("Index > length: ");
-        sb2.append(i10);
-        sb2.append(", ");
-        sb2.append(i11);
-        throw new ArrayIndexOutOfBoundsException(sb2.toString());
+        StringBuilder sb3 = new StringBuilder(40);
+        sb3.append("Index > length: ");
+        sb3.append(i10);
+        sb3.append(", ");
+        sb3.append(i11);
+        throw new ArrayIndexOutOfBoundsException(sb3.toString());
     }
 
     @Override // com.google.android.gms.internal.vision.q0

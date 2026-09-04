@@ -7,21 +7,21 @@ import android.view.ViewConfiguration;
 import android.view.animation.AccelerateInterpolator;
 import android.view.animation.AnimationUtils;
 import java.util.WeakHashMap;
-import m.s1;
-import org.telegram.ui.Components.sl0;
-import r0.j0;
+import m.r1;
+import r0.i0;
+import rg.b0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class d implements View.OnTouchListener {
-    public static final int E = ViewConfiguration.getTapTimeout();
-    public boolean B;
-    public boolean C;
-    public final s1 D;
+    public static final int H = ViewConfiguration.getTapTimeout();
+    public boolean E;
+    public boolean F;
+    public final r1 G;
     public final a a;
     public final AccelerateInterpolator b;
-    public final s1 c;
-    public sl0 d;
+    public final r1 c;
+    public b0 d;
     public final float[] e;
     public final float[] f;
     public final int h;
@@ -33,7 +33,7 @@ public final class d implements View.OnTouchListener {
     public boolean x;
     public boolean y;
 
-    public d(s1 s1Var) {
+    public d(r1 r1Var) {
         a aVar = new a();
         aVar.e = Long.MIN_VALUE;
         aVar.g = -1L;
@@ -50,14 +50,14 @@ public final class d implements View.OnTouchListener {
         this.s = fArr4;
         float[] fArr5 = {Float.MAX_VALUE, Float.MAX_VALUE};
         this.v = fArr5;
-        this.c = s1Var;
-        float f10 = Resources.getSystem().getDisplayMetrics().density;
-        float f11 = ((int) ((1575.0f * f10) + 0.5f)) / 1000.0f;
-        fArr5[0] = f11;
-        fArr5[1] = f11;
-        float f12 = ((int) ((f10 * 315.0f) + 0.5f)) / 1000.0f;
-        fArr4[0] = f12;
-        fArr4[1] = f12;
+        this.c = r1Var;
+        float f7 = Resources.getSystem().getDisplayMetrics().density;
+        float f10 = ((int) ((1575.0f * f7) + 0.5f)) / 1000.0f;
+        fArr5[0] = f10;
+        fArr5[1] = f10;
+        float f11 = ((int) ((f7 * 315.0f) + 0.5f)) / 1000.0f;
+        fArr4[0] = f11;
+        fArr4[1] = f11;
         this.h = 1;
         fArr2[0] = Float.MAX_VALUE;
         fArr2[1] = Float.MAX_VALUE;
@@ -65,14 +65,14 @@ public final class d implements View.OnTouchListener {
         fArr[1] = 0.2f;
         fArr3[0] = 0.001f;
         fArr3[1] = 0.001f;
-        this.n = E;
+        this.n = H;
         aVar.a = 500;
         aVar.b = 500;
-        this.D = s1Var;
+        this.G = r1Var;
     }
 
-    public static float b(float f10, float f11, float f12) {
-        return f10 > f12 ? f12 : f10 < f11 ? f11 : f10;
+    public static float b(float f7, float f10, float f11) {
+        return f7 > f11 ? f11 : f7 < f10 ? f10 : f7;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:7:0x003c A[RETURN] */
@@ -80,47 +80,47 @@ public final class d implements View.OnTouchListener {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final float a(float f10, float f11, float f12, int i10) {
-        float f13;
+    public final float a(float f7, float f10, float f11, int i10) {
+        float f12;
         float interpolation;
-        float b10 = b(this.e[i10] * f11, 0.0f, this.f[i10]);
-        float c3 = c(f11 - f10, b10) - c(f10, b10);
+        float b10 = b(this.e[i10] * f10, 0.0f, this.f[i10]);
+        float c10 = c(f10 - f7, b10) - c(f7, b10);
         AccelerateInterpolator accelerateInterpolator = this.b;
-        if (c3 < 0.0f) {
-            interpolation = -accelerateInterpolator.getInterpolation(-c3);
+        if (c10 < 0.0f) {
+            interpolation = -accelerateInterpolator.getInterpolation(-c10);
         } else {
-            if (c3 <= 0.0f) {
-                f13 = 0.0f;
-                if (f13 != 0.0f) {
+            if (c10 <= 0.0f) {
+                f12 = 0.0f;
+                if (f12 != 0.0f) {
                     return 0.0f;
                 }
-                float f14 = this.r[i10];
-                float f15 = this.s[i10];
-                float f16 = this.v[i10];
-                float f17 = f14 * f12;
-                return f13 > 0.0f ? b(f13 * f17, f15, f16) : -b((-f13) * f17, f15, f16);
+                float f13 = this.r[i10];
+                float f14 = this.s[i10];
+                float f15 = this.v[i10];
+                float f16 = f13 * f11;
+                return f12 > 0.0f ? b(f12 * f16, f14, f15) : -b((-f12) * f16, f14, f15);
             }
-            interpolation = accelerateInterpolator.getInterpolation(c3);
+            interpolation = accelerateInterpolator.getInterpolation(c10);
         }
-        f13 = b(interpolation, -1.0f, 1.0f);
-        if (f13 != 0.0f) {
+        f12 = b(interpolation, -1.0f, 1.0f);
+        if (f12 != 0.0f) {
         }
     }
 
-    public final float c(float f10, float f11) {
-        if (f11 != 0.0f) {
+    public final float c(float f7, float f10) {
+        if (f10 != 0.0f) {
             int i10 = this.h;
             if (i10 == 0 || i10 == 1) {
-                if (f10 < f11) {
-                    if (f10 >= 0.0f) {
-                        return 1.0f - (f10 / f11);
+                if (f7 < f10) {
+                    if (f7 >= 0.0f) {
+                        return 1.0f - (f7 / f10);
                     }
-                    if (this.B && i10 == 1) {
+                    if (this.E && i10 == 1) {
                         return 1.0f;
                     }
                 }
-            } else if (i10 == 2 && f10 < 0.0f) {
-                return f10 / (-f11);
+            } else if (i10 == 2 && f7 < 0.0f) {
+                return f7 / (-f10);
             }
         }
         return 0.0f;
@@ -129,7 +129,7 @@ public final class d implements View.OnTouchListener {
     public final void d() {
         int i10 = 0;
         if (this.x) {
-            this.B = false;
+            this.E = false;
             return;
         }
         long currentAnimationTimeMillis = AnimationUtils.currentAnimationTimeMillis();
@@ -147,26 +147,26 @@ public final class d implements View.OnTouchListener {
     }
 
     public final boolean e() {
-        s1 s1Var;
+        r1 r1Var;
         int count;
         a aVar = this.a;
-        float f10 = aVar.d;
-        int abs = (int) (f10 / Math.abs(f10));
+        float f7 = aVar.d;
+        int abs = (int) (f7 / Math.abs(f7));
         Math.abs(aVar.c);
-        if (abs != 0 && (count = (s1Var = this.D).getCount()) != 0) {
-            int childCount = s1Var.getChildCount();
-            int firstVisiblePosition = s1Var.getFirstVisiblePosition();
+        if (abs != 0 && (count = (r1Var = this.G).getCount()) != 0) {
+            int childCount = r1Var.getChildCount();
+            int firstVisiblePosition = r1Var.getFirstVisiblePosition();
             int i10 = firstVisiblePosition + childCount;
-            if (abs <= 0 ? !(abs >= 0 || (firstVisiblePosition <= 0 && s1Var.getChildAt(0).getTop() >= 0)) : !(i10 >= count && s1Var.getChildAt(childCount - 1).getBottom() <= s1Var.getHeight())) {
+            if (abs <= 0 ? !(abs >= 0 || (firstVisiblePosition <= 0 && r1Var.getChildAt(0).getTop() >= 0)) : !(i10 >= count && r1Var.getChildAt(childCount - 1).getBottom() <= r1Var.getHeight())) {
                 return true;
             }
         }
         return false;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x0014, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0014, code lost:
     
-        if (r0 != 3) goto L30;
+        if (r0 != 3) goto L29;
      */
     @Override // android.view.View.OnTouchListener
     /*
@@ -174,8 +174,9 @@ public final class d implements View.OnTouchListener {
     */
     public final boolean onTouch(View view, MotionEvent motionEvent) {
         int i10;
-        if (this.C) {
+        if (this.F) {
             int actionMasked = motionEvent.getActionMasked();
+            int i11 = 3;
             if (actionMasked != 0) {
                 if (actionMasked != 1) {
                     if (actionMasked != 2) {
@@ -188,25 +189,25 @@ public final class d implements View.OnTouchListener {
             this.w = false;
             float x10 = motionEvent.getX();
             float width = view.getWidth();
-            s1 s1Var = this.c;
-            float a2 = a(x10, width, s1Var.getWidth(), 0);
-            float a10 = a(motionEvent.getY(), view.getHeight(), s1Var.getHeight(), 1);
+            r1 r1Var = this.c;
+            float a2 = a(x10, width, r1Var.getWidth(), 0);
+            float a10 = a(motionEvent.getY(), view.getHeight(), r1Var.getHeight(), 1);
             a aVar = this.a;
             aVar.c = a2;
             aVar.d = a10;
-            if (!this.B && e()) {
+            if (!this.E && e()) {
                 if (this.d == null) {
-                    this.d = new sl0(this, 9);
+                    this.d = new b0(this, i11);
                 }
-                this.B = true;
+                this.E = true;
                 this.x = true;
                 if (this.w || (i10 = this.n) <= 0) {
                     this.d.run();
                 } else {
-                    sl0 sl0Var = this.d;
-                    long j10 = i10;
-                    WeakHashMap weakHashMap = j0.a;
-                    s1Var.postOnAnimationDelayed(sl0Var, j10);
+                    b0 b0Var = this.d;
+                    long j3 = i10;
+                    WeakHashMap weakHashMap = i0.a;
+                    r1Var.postOnAnimationDelayed(b0Var, j3);
                 }
                 this.w = true;
             }

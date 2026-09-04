@@ -1,46 +1,56 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
 import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class c3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ String b;
     public final /* synthetic */ boolean c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ boolean d;
     public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
+    public final /* synthetic */ Object r;
+    public final /* synthetic */ Object s;
 
-    public /* synthetic */ c3(FileLoader.1 r22, boolean z4, String str, boolean z10) {
-        this.a = 0;
-        this.d = r22;
-        this.b = z4;
-        this.e = str;
+    public /* synthetic */ c3(FileLoader.1 r22, boolean z10, String str, boolean z11, TLRPC.InputFile inputFile, TLRPC.InputEncryptedFile inputEncryptedFile, byte[] bArr, byte[] bArr2, FileUploadOperation fileUploadOperation) {
+        this.e = r22;
         this.c = z10;
+        this.b = str;
+        this.d = z11;
+        this.f = inputFile;
+        this.h = inputEncryptedFile;
+        this.n = bArr;
+        this.r = bArr2;
+        this.s = fileUploadOperation;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((FileLoader.1) this.d).lambda$didFailedUploadingFile$1(this.b, (String) this.e, this.c);
-                break;
-            case 1:
-                ((MessagesStorage) this.d).lambda$saveDialogFilter$74((MessagesController.DialogFilter) this.e, this.b, this.c);
+                ((FileLoader.1) this.e).lambda$didFinishUploadingFile$0(this.c, this.b, this.d, (TLRPC.InputFile) this.f, (TLRPC.InputEncryptedFile) this.h, (byte[]) this.n, (byte[]) this.r, (FileUploadOperation) this.s);
                 break;
             default:
-                ((MessagesStorage) this.d).lambda$updateUsers$215((ArrayList) this.e, this.b, this.c);
+                ((MessagesController) this.e).lambda$openApp$498((org.telegram.ui.ActionBar.n2) this.f, (of.e) this.h, (boolean[]) this.n, (TLRPC.User) this.r, this.b, this.c, this.d, (TL_bots.BotInfo[]) this.s);
                 break;
         }
     }
 
-    public /* synthetic */ c3(MessagesStorage messagesStorage, Object obj, boolean z4, boolean z10, int i10) {
-        this.a = i10;
-        this.d = messagesStorage;
-        this.e = obj;
-        this.b = z4;
+    public /* synthetic */ c3(MessagesController messagesController, org.telegram.ui.ActionBar.n2 n2Var, of.e eVar, boolean[] zArr, TLRPC.User user, String str, boolean z10, boolean z11, TL_bots.BotInfo[] botInfoArr) {
+        this.e = messagesController;
+        this.f = n2Var;
+        this.h = eVar;
+        this.n = zArr;
+        this.r = user;
+        this.b = str;
         this.c = z10;
+        this.d = z11;
+        this.s = botInfoArr;
     }
 }

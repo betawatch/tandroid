@@ -1,33 +1,29 @@
 package gd;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.io.Serializable;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e extends d {
-    public static final e d = new e(1, 0, 1);
+public final class e implements Serializable {
+    public final Throwable a;
+
+    public e(Throwable exception) {
+        kotlin.jvm.internal.i.e(exception, "exception");
+        this.a = exception;
+    }
 
     public final boolean equals(Object obj) {
-        if (!(obj instanceof e)) {
-            return false;
+        if (obj instanceof e) {
+            return kotlin.jvm.internal.i.a(this.a, ((e) obj).a);
         }
-        if (isEmpty() && ((e) obj).isEmpty()) {
-            return true;
-        }
-        e eVar = (e) obj;
-        return this.a == eVar.a && this.b == eVar.b;
+        return false;
     }
 
     public final int hashCode() {
-        if (isEmpty()) {
-            return -1;
-        }
-        return (this.a * 31) + this.b;
-    }
-
-    public final boolean isEmpty() {
-        return this.a > this.b;
+        return this.a.hashCode();
     }
 
     public final String toString() {
-        return this.a + ".." + this.b;
+        return "Failure(" + this.a + ')';
     }
 }

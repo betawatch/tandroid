@@ -1,382 +1,138 @@
 package androidx.mediarouter.app;
 
-import android.media.MediaCodec;
-import android.os.Bundle;
-import android.os.Handler;
-import android.os.Looper;
-import android.os.Message;
-import android.os.SystemClock;
-import android.util.Log;
-import android.util.Pair;
-import android.util.SparseArray;
-import c2.w0;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
-import java.util.concurrent.atomic.AtomicReference;
-import n7.qa;
-import org.telegram.ui.Components.j20;
-import org.telegram.ui.Components.k20;
-import org.telegram.ui.Components.l20;
-import org.telegram.ui.Components.m20;
-import org.telegram.ui.Components.n20;
-import org.telegram.ui.PhotoViewer;
+import android.widget.SeekBar;
+import j$.util.DesugarCollections;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class d extends Handler {
+public final class d extends p4.s {
     public final /* synthetic */ int a;
-    public final Object b;
+    public final /* synthetic */ g.u b;
 
-    public /* synthetic */ d(Object obj, int i10) {
+    public /* synthetic */ d(g.u uVar, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = uVar;
     }
 
-    private final void a(Message message) {
-        Set set;
-        Pair pair = (Pair) message.obj;
-        Object obj = pair.first;
-        Object obj2 = pair.second;
-        int i10 = message.what;
-        if (i10 == 0) {
-            o3.b bVar = (o3.b) this.b;
-            qa qaVar = bVar.c;
-            if (obj == bVar.x) {
-                if (bVar.o == 2 || bVar.j()) {
-                    bVar.x = null;
-                    if (obj2 instanceof Exception) {
-                        qaVar.n0((Exception) obj2, false);
-                        return;
-                    }
-                    try {
-                        bVar.b.Y((byte[]) obj2);
-                        qaVar.c = null;
-                        HashSet hashSet = (HashSet) qaVar.b;
-                        s8.v t6 = s8.v.t(hashSet);
-                        hashSet.clear();
-                        s8.t listIterator = t6.listIterator(0);
-                        while (listIterator.hasNext()) {
-                            o3.b bVar2 = (o3.b) listIterator.next();
-                            if (bVar2.m()) {
-                                bVar2.i(true);
-                            }
-                        }
-                        return;
-                    } catch (Exception e) {
-                        qaVar.n0(e, true);
-                        return;
-                    }
-                }
-                return;
-            }
-            return;
-        }
-        if (i10 != 1) {
-            return;
-        }
-        o3.b bVar3 = (o3.b) this.b;
-        if (obj == bVar3.w && bVar3.j()) {
-            bVar3.w = null;
-            if (obj2 instanceof Exception) {
-                bVar3.l((Exception) obj2, false);
-                return;
-            }
-            try {
-                byte[] X = bVar3.b.X(bVar3.u, (byte[]) obj2);
-                if (bVar3.v != null && X != null && X.length != 0) {
-                    bVar3.v = X;
-                }
-                bVar3.o = 4;
-                new nh.e(3);
-                h5.e eVar = bVar3.h;
-                synchronized (eVar.a) {
-                    set = eVar.c;
-                }
-                Iterator it = set.iterator();
-                while (it.hasNext()) {
-                    ((o3.m) it.next()).a();
-                }
-            } catch (Exception e6) {
-                bVar3.l(e6, true);
-            }
-        }
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Type inference failed for: r2v0, types: [uc.c] */
-    /* JADX WARN: Type inference failed for: r2v18 */
-    @Override // android.os.Handler
-    public final void handleMessage(Message msg) {
-        String str;
-        r2 = null;
-        r2 = null;
-        d4.d dVar = null;
-        int i10 = 1;
+    @Override // p4.s
+    public void d(p4.v vVar) {
         switch (this.a) {
             case 0:
-                i iVar = (i) this.b;
-                d dVar2 = iVar.J;
-                int i11 = msg.what;
-                if (i11 == 1) {
-                    iVar.e((List) msg.obj);
-                    return;
-                }
-                if (i11 == 2) {
-                    if (iVar.r.isEmpty()) {
-                        iVar.i(2);
-                        dVar2.removeMessages(2);
-                        dVar2.removeMessages(3);
-                        dVar2.sendMessageDelayed(dVar2.obtainMessage(3), 15000L);
-                        return;
-                    }
-                    return;
-                }
-                if (i11 == 3 && iVar.r.isEmpty()) {
-                    iVar.i(3);
-                    dVar2.removeMessages(2);
-                    dVar2.removeMessages(3);
-                    dVar2.removeMessages(1);
-                    iVar.f.h(iVar.h);
-                    return;
-                }
-                return;
-            case 1:
-                if (msg.what != 1) {
-                    return;
-                }
-                e0 e0Var = (e0) this.b;
-                List list = (List) msg.obj;
-                e0Var.C = SystemClock.uptimeMillis();
-                e0Var.s.clear();
-                e0Var.s.addAll(list);
-                e0Var.v.D();
-                return;
+                ((h) this.b).f();
+                break;
             case 2:
-                p0 p0Var = (p0) this.b;
-                int i12 = msg.what;
-                if (i12 == 1) {
-                    p0Var.n();
-                    return;
-                } else {
-                    if (i12 == 2 && p0Var.J != null) {
-                        p0Var.J = null;
-                        p0Var.o();
-                        return;
-                    }
-                    return;
-                }
+                ((d0) this.b).e();
+                break;
             case 3:
-                int i13 = msg.what;
-                int i14 = msg.arg1;
-                Object obj = msg.obj;
-                Bundle peekData = msg.peekData();
-                SparseArray sparseArray = ((c2.h) this.b).j;
-                w0 w0Var = (w0) sparseArray.get(i14);
-                if (w0Var == null) {
-                    Log.w("MR2Provider", "Pending callback not found for control request.");
-                    return;
-                }
-                sparseArray.remove(i14);
-                if (i13 == 3) {
-                    w0Var.b((Bundle) obj);
-                    return;
-                } else {
-                    if (i13 != 4) {
-                        return;
-                    }
-                    w0.a(peekData != null ? peekData.getString("error") : 0, (Bundle) obj);
-                    return;
-                }
-            case 4:
-                c2.t tVar = (c2.t) this.b;
-                int i15 = msg.what;
-                if (i15 != 1) {
-                    if (i15 != 2) {
-                        return;
-                    }
-                    tVar.b = false;
-                    tVar.f((c2.o) tVar.h);
-                    return;
-                }
-                tVar.c = false;
-                ja.c cVar = (ja.c) tVar.f;
-                if (cVar != null) {
-                    c2.u uVar = (c2.u) tVar.n;
-                    c2.e eVar = (c2.e) cVar.b;
-                    c2.a0 d = eVar.d(tVar);
-                    if (d != null) {
-                        eVar.m(d, uVar);
-                        return;
-                    }
-                    return;
-                }
-                return;
-            case 5:
-                d4.e eVar2 = (d4.e) this.b;
-                eVar2.getClass();
-                int i16 = msg.what;
-                if (i16 == 0) {
-                    d4.d dVar3 = (d4.d) msg.obj;
-                    try {
-                        eVar2.a.queueInputBuffer(dVar3.a, 0, dVar3.b, dVar3.d, dVar3.e);
-                    } catch (RuntimeException e) {
-                        AtomicReference atomicReference = eVar2.d;
-                        while (!atomicReference.compareAndSet(null, e) && atomicReference.get() == null) {
-                        }
-                    }
-                    dVar = dVar3;
-                } else if (i16 == 1) {
-                    d4.d dVar4 = (d4.d) msg.obj;
-                    int i17 = dVar4.a;
-                    MediaCodec.CryptoInfo cryptoInfo = dVar4.c;
-                    long j10 = dVar4.d;
-                    int i18 = dVar4.e;
-                    try {
-                        synchronized (d4.e.h) {
-                            eVar2.a.queueSecureInputBuffer(i17, 0, cryptoInfo, j10, i18);
-                        }
-                    } catch (RuntimeException e6) {
-                        AtomicReference atomicReference2 = eVar2.d;
-                        while (!atomicReference2.compareAndSet(null, e6) && atomicReference2.get() == null) {
-                        }
-                    }
-                    dVar = dVar4;
-                } else if (i16 != 2) {
-                    AtomicReference atomicReference3 = eVar2.d;
-                    IllegalStateException illegalStateException = new IllegalStateException(String.valueOf(msg.what));
-                    while (!atomicReference3.compareAndSet(null, illegalStateException) && atomicReference3.get() == null) {
-                    }
-                } else {
-                    eVar2.e.c();
-                }
-                if (dVar != null) {
-                    d4.e.d(dVar);
-                    return;
-                }
-                return;
-            case 6:
-                kotlin.jvm.internal.j.e(msg, "msg");
-                if (msg.what != 3) {
-                    Log.w("SessionLifecycleClient", "Received unexpected event from the SessionLifecycleService: " + msg);
-                    super.handleMessage(msg);
-                    return;
-                }
-                Bundle data = msg.getData();
-                if (data == null || (str = data.getString("SessionUpdateExtra")) == null) {
-                    str = "";
-                }
-                Log.d("SessionLifecycleClient", "Session update received: ".concat(str));
-                ld.e0.q(ld.e0.b((uc.h) this.b), new la.u(str, r2, i10));
-                return;
-            case 7:
-                a(msg);
-                return;
-            case 8:
-                byte[] bArr = (byte[]) msg.obj;
-                if (bArr == null) {
-                    return;
-                }
-                ArrayList arrayList = ((o3.f) this.b).w;
-                int size = arrayList.size();
-                int i19 = 0;
-                while (i19 < size) {
-                    Object obj2 = arrayList.get(i19);
-                    i19++;
-                    o3.b bVar = (o3.b) obj2;
-                    bVar.o();
-                    if (Arrays.equals(bVar.u, bArr)) {
-                        if (msg.what == 2 && bVar.o == 4) {
-                            int i20 = h5.d0.a;
-                            bVar.i(false);
-                            return;
-                        }
-                        return;
-                    }
-                }
-                return;
-            case 9:
-                l20 l20Var = (l20) this.b;
-                k20 k20Var = l20Var.g;
-                int i21 = msg.what;
-                if (i21 == 1) {
-                    k20Var.getClass();
-                    return;
-                }
-                if (i21 == 2) {
-                    l20Var.f.removeMessages(3);
-                    l20Var.j = false;
-                    l20Var.k = true;
-                    k20Var.onLongPress(l20Var.n);
-                    return;
-                }
-                if (i21 != 3) {
-                    throw new RuntimeException("Unknown message " + msg);
-                }
-                j20 j20Var = l20Var.h;
-                if (j20Var != null) {
-                    if (l20Var.i) {
-                        l20Var.j = true;
-                        return;
-                    } else {
-                        ((PhotoViewer) j20Var).Z1(l20Var.n);
-                        return;
-                    }
-                }
-                return;
-            default:
-                m20 m20Var = (m20) this.b;
-                n20 n20Var = m20Var.f;
-                int i22 = msg.what;
-                if (i22 == 1) {
-                    n20Var.onShowPress(m20Var.m);
-                    return;
-                }
-                if (i22 == 2) {
-                    m20Var.e.removeMessages(3);
-                    m20Var.i = false;
-                    m20Var.j = true;
-                    n20Var.onLongPress(m20Var.m);
-                    return;
-                }
-                if (i22 != 3) {
-                    throw new RuntimeException("Unknown message " + msg);
-                }
-                n20 n20Var2 = m20Var.g;
-                if (n20Var2 != null) {
-                    if (m20Var.h) {
-                        m20Var.i = true;
-                        return;
-                    } else {
-                        n20Var2.onSingleTapConfirmed(m20Var.m);
-                        return;
-                    }
-                }
-                return;
+                ((o0) this.b).n();
+                break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d(Object obj, Looper looper, int i10) {
-        super(looper);
-        this.a = i10;
-        this.b = obj;
+    @Override // p4.s
+    public final void e(p4.v vVar) {
+        mg.n b10;
+        p4.o oVar;
+        switch (this.a) {
+            case 0:
+                ((h) this.b).f();
+                break;
+            case 1:
+                ((u) this.b).q(true);
+                break;
+            case 2:
+                ((d0) this.b).e();
+                break;
+            default:
+                o0 o0Var = (o0) this.b;
+                if (vVar == o0Var.r && p4.v.a() != null) {
+                    p4.u uVar = vVar.a;
+                    uVar.getClass();
+                    p4.x.b();
+                    for (p4.v vVar2 : DesugarCollections.unmodifiableList(uVar.b)) {
+                        if (!DesugarCollections.unmodifiableList(o0Var.r.v).contains(vVar2) && (b10 = o0Var.r.b(vVar2)) != null && (oVar = (p4.o) b10.b) != null && oVar.d && !o0Var.v.contains(vVar2)) {
+                            o0Var.o();
+                            o0Var.l();
+                            break;
+                        }
+                    }
+                }
+                o0Var.n();
+                break;
+        }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(uc.h hVar) {
-        super(Looper.getMainLooper());
-        this.a = 6;
-        this.b = hVar;
+    @Override // p4.s
+    public void f(p4.v vVar) {
+        switch (this.a) {
+            case 0:
+                ((h) this.b).f();
+                break;
+            case 2:
+                ((d0) this.b).e();
+                break;
+            case 3:
+                ((o0) this.b).n();
+                break;
+        }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d(c2.h hVar) {
-        super(Looper.getMainLooper());
-        this.a = 3;
-        this.b = hVar;
+    @Override // p4.s
+    public void g(p4.v vVar) {
+        switch (this.a) {
+            case 0:
+                ((h) this.b).dismiss();
+                break;
+            case 2:
+                ((d0) this.b).dismiss();
+                break;
+            case 3:
+                o0 o0Var = (o0) this.b;
+                o0Var.r = vVar;
+                o0Var.o();
+                o0Var.l();
+                break;
+        }
+    }
+
+    @Override // p4.s
+    public void i() {
+        switch (this.a) {
+            case 1:
+                ((u) this.b).q(false);
+                break;
+            case 3:
+                ((o0) this.b).n();
+                break;
+        }
+    }
+
+    @Override // p4.s
+    public void k(p4.v vVar) {
+        g0 g0Var;
+        int i10 = this.a;
+        g.u uVar = this.b;
+        switch (i10) {
+            case 1:
+                u uVar2 = (u) uVar;
+                SeekBar seekBar = (SeekBar) uVar2.h0.get(vVar);
+                int i11 = vVar.p;
+                int i12 = u.F0;
+                if (seekBar != null && uVar2.c0 != vVar) {
+                    seekBar.setProgress(i11);
+                    break;
+                }
+                break;
+            case 3:
+                int i13 = o0.j0;
+                o0 o0Var = (o0) uVar;
+                if (o0Var.M != vVar && (g0Var = (g0) o0Var.L.get(vVar.c)) != null) {
+                    int i14 = g0Var.v.p;
+                    g0Var.u(i14 == 0);
+                    g0Var.x.setProgress(i14);
+                    break;
+                }
+                break;
+        }
     }
 }

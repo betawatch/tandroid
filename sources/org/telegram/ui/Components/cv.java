@@ -1,65 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class cv extends View {
-    public ImageReceiver.BackgroundThreadDrawHolder[] a;
-    public nh.y2 b;
-    public u5 c;
-    public ValueAnimator d;
-    public float e;
+public final class cv extends rv {
+    public final /* synthetic */ rv W;
 
-    public TLRPC.Document getDocument() {
-        u5 u5Var = this.c;
-        if (u5Var == null) {
-            return null;
-        }
-        TLRPC.Document document = u5Var.document;
-        if (document != null) {
-            return document;
-        }
-        return l5.f(UserConfig.selectedAccount, u5Var.getDocumentId());
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public cv(rv rvVar, org.telegram.ui.ActionBar.n2 n2Var, Context context, org.telegram.ui.ActionBar.f6 f6Var, ArrayList arrayList) {
+        super(n2Var, context, f6Var, arrayList);
+        this.W = rvVar;
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setPadding(AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f));
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30));
-    }
-
-    @Override // android.view.View
-    public void setPressed(boolean z4) {
-        ValueAnimator valueAnimator;
-        if (isPressed() != z4) {
-            super.setPressed(z4);
-            invalidate();
-            if (z4 && (valueAnimator = this.d) != null) {
-                valueAnimator.removeAllListeners();
-                this.d.cancel();
-            }
-            if (z4) {
-                return;
-            }
-            float f10 = this.e;
-            if (f10 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
-                this.d = ofFloat;
-                int i10 = 17;
-                ofFloat.addUpdateListener(new f6(this, i10));
-                this.d.addListener(new a9(this, i10));
-                this.d.setInterpolator(new OvershootInterpolator(5.0f));
-                this.d.setDuration(350L);
-                this.d.start();
-            }
-        }
+    @Override // org.telegram.ui.Components.rv
+    public final void Y() {
+        this.W.dismiss();
     }
 }

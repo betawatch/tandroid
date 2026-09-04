@@ -18,7 +18,7 @@ public abstract class p0 implements b8, c8 {
         throw null;
     }
 
-    public /* synthetic */ void accept(long j10) {
+    public /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -32,7 +32,7 @@ public abstract class p0 implements b8, c8 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j10) {
+    public final /* synthetic */ void o(long j3) {
     }
 
     @Override // j$.util.stream.j5
@@ -40,8 +40,8 @@ public abstract class p0 implements b8, c8 {
         return false;
     }
 
-    public p0(boolean z4) {
-        this.a = z4;
+    public p0(boolean z10) {
+        this.a = z10;
     }
 
     @Override // j$.util.stream.b8

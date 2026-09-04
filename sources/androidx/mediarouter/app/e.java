@@ -1,138 +1,109 @@
 package androidx.mediarouter.app;
 
-import android.widget.SeekBar;
-import j$.util.DesugarCollections;
+import android.content.Context;
+import android.content.res.TypedArray;
+import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.text.TextUtils;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import java.io.IOException;
+import java.util.ArrayList;
+import org.telegram.messenger.beta.R;
+import v7.u7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e extends c2.x {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ g.s b;
+public final class e extends ArrayAdapter implements AdapterView.OnItemClickListener {
+    public final LayoutInflater a;
+    public final Drawable b;
+    public final Drawable c;
+    public final Drawable d;
+    public final Drawable e;
 
-    public /* synthetic */ e(g.s sVar, int i10) {
-        this.a = i10;
-        this.b = sVar;
+    public e(Context context, ArrayList arrayList) {
+        super(context, 0, arrayList);
+        this.a = LayoutInflater.from(context);
+        TypedArray obtainStyledAttributes = getContext().obtainStyledAttributes(new int[]{R.attr.mediaRouteDefaultIconDrawable, R.attr.mediaRouteTvIconDrawable, R.attr.mediaRouteSpeakerIconDrawable, R.attr.mediaRouteSpeakerGroupIconDrawable});
+        this.b = u7.b(context, obtainStyledAttributes.getResourceId(0, 0));
+        this.c = u7.b(context, obtainStyledAttributes.getResourceId(1, 0));
+        this.d = u7.b(context, obtainStyledAttributes.getResourceId(2, 0));
+        this.e = u7.b(context, obtainStyledAttributes.getResourceId(3, 0));
+        obtainStyledAttributes.recycle();
     }
 
-    @Override // c2.x
-    public void d(c2.b0 b0Var) {
-        switch (this.a) {
-            case 0:
-                ((i) this.b).f();
-                break;
-            case 2:
-                ((e0) this.b).e();
-                break;
-            case 3:
-                ((p0) this.b).n();
-                break;
+    @Override // android.widget.BaseAdapter, android.widget.ListAdapter
+    public final boolean areAllItemsEnabled() {
+        return false;
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:25:0x0079, code lost:
+    
+        if (r0 != null) goto L31;
+     */
+    @Override // android.widget.ArrayAdapter, android.widget.Adapter
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final View getView(int i10, View view, ViewGroup viewGroup) {
+        Drawable createFromStream;
+        if (view == null) {
+            view = this.a.inflate(R.layout.mr_chooser_list_item, viewGroup, false);
         }
-    }
-
-    @Override // c2.x
-    public final void e(c2.b0 b0Var) {
-        bb.b b10;
-        c2.q qVar;
-        switch (this.a) {
-            case 0:
-                ((i) this.b).f();
-                break;
-            case 1:
-                ((v) this.b).q(true);
-                break;
-            case 2:
-                ((e0) this.b).e();
-                break;
-            default:
-                p0 p0Var = (p0) this.b;
-                if (b0Var == p0Var.r && c2.b0.a() != null) {
-                    c2.a0 a0Var = b0Var.a;
-                    a0Var.getClass();
-                    c2.d0.b();
-                    for (c2.b0 b0Var2 : DesugarCollections.unmodifiableList(a0Var.b)) {
-                        if (!DesugarCollections.unmodifiableList(p0Var.r.v).contains(b0Var2) && (b10 = p0Var.r.b(b0Var2)) != null && (qVar = (c2.q) b10.b) != null && qVar.d && !p0Var.v.contains(b0Var2)) {
-                            p0Var.o();
-                            p0Var.l();
-                            break;
-                        }
-                    }
+        p4.v vVar = (p4.v) getItem(i10);
+        TextView textView = (TextView) view.findViewById(R.id.mr_chooser_route_name);
+        TextView textView2 = (TextView) view.findViewById(R.id.mr_chooser_route_desc);
+        textView.setText(vVar.d);
+        String str = vVar.e;
+        int i11 = vVar.i;
+        if ((i11 == 2 || i11 == 1) && !TextUtils.isEmpty(str)) {
+            textView.setGravity(80);
+            textView2.setVisibility(0);
+            textView2.setText(str);
+        } else {
+            textView.setGravity(16);
+            textView2.setVisibility(8);
+            textView2.setText("");
+        }
+        view.setEnabled(vVar.g);
+        ImageView imageView = (ImageView) view.findViewById(R.id.mr_chooser_route_icon);
+        if (imageView != null) {
+            Uri uri = vVar.f;
+            if (uri != null) {
+                try {
+                    createFromStream = Drawable.createFromStream(getContext().getContentResolver().openInputStream(uri), null);
+                } catch (IOException e7) {
+                    Log.w("MediaRouteChooserDialog", "Failed to load " + uri, e7);
                 }
-                p0Var.n();
-                break;
+            }
+            int i12 = vVar.n;
+            createFromStream = i12 != 1 ? i12 != 2 ? vVar.e() ? this.e : this.b : this.d : this.c;
+            imageView.setImageDrawable(createFromStream);
         }
+        return view;
     }
 
-    @Override // c2.x
-    public void f(c2.b0 b0Var) {
-        switch (this.a) {
-            case 0:
-                ((i) this.b).f();
-                break;
-            case 2:
-                ((e0) this.b).e();
-                break;
-            case 3:
-                ((p0) this.b).n();
-                break;
-        }
+    @Override // android.widget.BaseAdapter, android.widget.ListAdapter
+    public final boolean isEnabled(int i10) {
+        return ((p4.v) getItem(i10)).g;
     }
 
-    @Override // c2.x
-    public void g(c2.b0 b0Var) {
-        switch (this.a) {
-            case 0:
-                ((i) this.b).dismiss();
-                break;
-            case 2:
-                ((e0) this.b).dismiss();
-                break;
-            case 3:
-                p0 p0Var = (p0) this.b;
-                p0Var.r = b0Var;
-                p0Var.o();
-                p0Var.l();
-                break;
+    @Override // android.widget.AdapterView.OnItemClickListener
+    public final void onItemClick(AdapterView adapterView, View view, int i10, long j3) {
+        p4.v vVar = (p4.v) getItem(i10);
+        ImageView imageView = (ImageView) view.findViewById(R.id.mr_chooser_route_icon);
+        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_chooser_route_progress_bar);
+        if (imageView != null && progressBar != null) {
+            imageView.setVisibility(8);
+            progressBar.setVisibility(0);
         }
-    }
-
-    @Override // c2.x
-    public void i() {
-        switch (this.a) {
-            case 1:
-                ((v) this.b).q(false);
-                break;
-            case 3:
-                ((p0) this.b).n();
-                break;
-        }
-    }
-
-    @Override // c2.x
-    public void k(c2.b0 b0Var) {
-        h0 h0Var;
-        int i10 = this.a;
-        g.s sVar = this.b;
-        switch (i10) {
-            case 1:
-                v vVar = (v) sVar;
-                SeekBar seekBar = (SeekBar) vVar.e0.get(b0Var);
-                int i11 = b0Var.p;
-                int i12 = v.C0;
-                if (seekBar != null && vVar.Z != b0Var) {
-                    seekBar.setProgress(i11);
-                    break;
-                }
-                break;
-            case 3:
-                int i13 = p0.g0;
-                p0 p0Var = (p0) sVar;
-                if (p0Var.J != b0Var && (h0Var = (h0) p0Var.I.get(b0Var.c)) != null) {
-                    int i14 = h0Var.v.p;
-                    h0Var.u(i14 == 0);
-                    h0Var.x.setProgress(i14);
-                    break;
-                }
-                break;
-        }
+        vVar.l();
     }
 }

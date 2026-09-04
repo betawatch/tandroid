@@ -1,108 +1,61 @@
 package gg;
 
-import android.animation.ValueAnimator;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.Rect;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.animation.OvershootInterpolator;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.j6;
-import org.telegram.ui.Components.mr;
+import android.text.TextUtils;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class b extends View {
-    public final j6 a;
-    public float b;
-    public ValueAnimator c;
-    public int d;
-    public final Paint e;
+public final class b {
+    public final String a;
+    public final String b;
 
-    public b(Context context) {
-        super(context);
-        this.b = 1.0f;
-        j6 j6Var = new j6(false, false, true, false);
-        this.a = j6Var;
-        j6Var.k(0.3f, 250L, mr.h);
-        j6Var.setCallback(this);
-        j6Var.t(AndroidUtilities.dp(11.5f));
-        j6Var.u(AndroidUtilities.bold());
-        j6Var.r(-1);
-        j6Var.q("", true, true);
-        j6Var.b = 17;
-        Paint paint = new Paint(1);
-        this.e = paint;
-        paint.setColor(-6915073);
-        setVisibility(8);
+    public b(String str, String str2) {
+        this.a = str;
+        this.b = str2;
     }
 
-    public final void a(int i10, boolean z4) {
-        if (!p0.i()) {
-            i10 = 0;
+    public static boolean a(b bVar, b bVar2) {
+        if (bVar == bVar2) {
+            return true;
         }
-        if (i10 > 0) {
-            setVisibility(0);
+        if (bVar == null || bVar2 == null) {
+            return false;
         }
-        j6 j6Var = this.a;
-        if (z4) {
-            j6Var.b();
+        return bVar.equals(bVar2);
+    }
+
+    public static b c(TLRPC.ChatTheme chatTheme) {
+        if (chatTheme instanceof TLRPC.TL_chatTheme) {
+            return new b(((TLRPC.TL_chatTheme) chatTheme).emoticon, null);
         }
-        if (z4 && i10 != this.d && i10 > 0) {
-            ValueAnimator valueAnimator = this.c;
-            if (valueAnimator != null) {
-                valueAnimator.cancel();
-                this.c = null;
+        if (chatTheme instanceof TLRPC.TL_chatThemeUniqueGift) {
+            return new b(null, ((TLRPC.TL_chatThemeUniqueGift) chatTheme).gift.slug);
+        }
+        return null;
+    }
+
+    public static b d(String str) {
+        return new b(str, null);
+    }
+
+    public final boolean b() {
+        return TextUtils.isEmpty(this.a) && TextUtils.isEmpty(this.b);
+    }
+
+    public final boolean equals(Object obj) {
+        if (obj instanceof b) {
+            b bVar = (b) obj;
+            if (TextUtils.equals(this.a, bVar.a) && TextUtils.equals(this.b, bVar.b)) {
+                return true;
             }
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.c = ofFloat;
-            ofFloat.addUpdateListener(new dg.o1(this, 9));
-            this.c.addListener(new cg.l0(this, 6));
-            this.c.setInterpolator(new OvershootInterpolator(2.0f));
-            this.c.setDuration(200L);
-            this.c.start();
         }
-        this.d = i10;
-        int length = j6Var.g.length();
-        j6Var.q("x" + i10, z4, true);
-        int length2 = j6Var.g.length();
-        invalidate();
-        if (length != length2) {
-            requestLayout();
-        }
+        return false;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        canvas.save();
-        canvas.translate(AndroidUtilities.dp(3.0f), AndroidUtilities.dp(3.0f));
-        Rect rect = AndroidUtilities.rectTmp2;
-        int dp = AndroidUtilities.dp(8.0f);
-        j6 j6Var = this.a;
-        rect.set(0, 0, dp + ((int) j6Var.d()), AndroidUtilities.dp(20.0f));
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(rect);
-        if (this.b != 1.0f) {
-            canvas.save();
-            float f10 = this.b;
-            canvas.scale(f10, f10, rect.centerX(), rect.centerY());
-        }
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(10.0f), AndroidUtilities.dp(10.0f), this.e);
-        rect.set(0, 0, (int) rectF.width(), AndroidUtilities.dp(19.0f));
-        j6Var.setBounds(rect);
-        j6Var.draw(canvas);
-        if (this.b != 1.0f) {
-            canvas.restore();
-        }
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec((int) (this.a.e() + AndroidUtilities.dp(15.0f)), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(26.0f), TLObject.FLAG_30));
+    public final int hashCode() {
+        String str = this.a;
+        int hashCode = str != null ? str.hashCode() : 0;
+        String str2 = this.b;
+        return (str2 != null ? str2.hashCode() : 0) ^ hashCode;
     }
 }

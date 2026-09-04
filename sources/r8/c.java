@@ -1,16 +1,31 @@
 package r8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import w7.e0;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c extends a {
-    public static final c a = new c();
+public final class c extends o6.a {
+    public static final Parcelable.Creator<c> CREATOR = new p7.j(13);
+    public String a;
+    public String b;
+    public String c;
+    public String d;
+    public String e;
+    public b f;
+    public b h;
 
-    @Override // r8.a
-    public final boolean a(char c3) {
-        return false;
-    }
-
-    public final String toString() {
-        return "CharMatcher.none()";
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = e0.q(parcel, 20293);
+        e0.l(parcel, 2, this.a);
+        e0.l(parcel, 3, this.b);
+        e0.l(parcel, 4, this.c);
+        e0.l(parcel, 5, this.d);
+        e0.l(parcel, 6, this.e);
+        e0.k(parcel, 7, this.f, i10);
+        e0.k(parcel, 8, this.h, i10);
+        e0.r(parcel, q6);
     }
 }

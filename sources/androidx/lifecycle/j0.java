@@ -5,19 +5,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
-import org.telegram.ui.Components.tp0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class j0 {
     public static final q0 a = new q0();
     public static final q0 b = new q0();
     public static final q0 c = new q0();
 
-    public static final void a(p0 p0Var, g2.e registry, o lifecycle) {
+    public static final void a(p0 p0Var, m.p registry, o lifecycle) {
         Object obj;
-        kotlin.jvm.internal.j.e(registry, "registry");
-        kotlin.jvm.internal.j.e(lifecycle, "lifecycle");
+        kotlin.jvm.internal.i.e(registry, "registry");
+        kotlin.jvm.internal.i.e(lifecycle, "lifecycle");
         HashMap hashMap = p0Var.a;
         if (hashMap == null) {
             obj = null;
@@ -46,7 +45,7 @@ public abstract class j0 {
             }
             HashMap hashMap = new HashMap();
             for (String key : bundle2.keySet()) {
-                kotlin.jvm.internal.j.d(key, "key");
+                kotlin.jvm.internal.i.d(key, "key");
                 hashMap.put(key, bundle2.get(key));
             }
             return new i0(hashMap);
@@ -60,7 +59,7 @@ public abstract class j0 {
         int size = parcelableArrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
             Object obj = parcelableArrayList.get(i10);
-            kotlin.jvm.internal.j.c(obj, "null cannot be cast to non-null type kotlin.String");
+            kotlin.jvm.internal.i.c(obj, "null cannot be cast to non-null type kotlin.String");
             linkedHashMap.put((String) obj, parcelableArrayList2.get(i10));
         }
         return new i0(linkedHashMap);
@@ -68,8 +67,8 @@ public abstract class j0 {
 
     public static final i0 c(v1.b bVar) {
         LinkedHashMap linkedHashMap = (LinkedHashMap) bVar.a;
-        g2.f fVar = (g2.f) linkedHashMap.get(a);
-        if (fVar == null) {
+        t4.e eVar = (t4.e) linkedHashMap.get(a);
+        if (eVar == null) {
             throw new IllegalArgumentException("CreationExtras must have a value by `SAVED_STATE_REGISTRY_OWNER_KEY`");
         }
         u0 u0Var = (u0) linkedHashMap.get(b);
@@ -81,7 +80,7 @@ public abstract class j0 {
         if (str == null) {
             throw new IllegalArgumentException("CreationExtras must have a value by `VIEW_MODEL_KEY`");
         }
-        g2.d d = fVar.g().d();
+        t4.d d = eVar.g().d();
         l0 l0Var = d instanceof l0 ? (l0) d : null;
         if (l0Var == null) {
             throw new IllegalStateException("enableSavedStateHandles() wasn't called prior to createSavedStateHandle() call");
@@ -108,24 +107,24 @@ public abstract class j0 {
         return b10;
     }
 
-    public static final void d(g2.f fVar) {
-        n nVar = ((v) fVar.m()).c;
+    public static final void d(t4.e eVar) {
+        n nVar = ((v) eVar.m()).c;
         if (nVar != n.b && nVar != n.c) {
             throw new IllegalArgumentException("Failed requirement.");
         }
-        if (fVar.g().d() == null) {
-            l0 l0Var = new l0(fVar.g(), (u0) fVar);
-            fVar.g().f("androidx.lifecycle.internal.SavedStateHandlesProvider", l0Var);
-            fVar.m().a(new SavedStateHandleAttacher(l0Var));
+        if (eVar.g().d() == null) {
+            l0 l0Var = new l0(eVar.g(), (u0) eVar);
+            eVar.g().f("androidx.lifecycle.internal.SavedStateHandlesProvider", l0Var);
+            eVar.m().a(new SavedStateHandleAttacher(l0Var));
         }
     }
 
     public static final m0 e(u0 u0Var) {
         ArrayList arrayList = new ArrayList();
-        Class a2 = kotlin.jvm.internal.r.a(m0.class).a();
-        kotlin.jvm.internal.j.c(a2, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
+        Class a2 = kotlin.jvm.internal.q.a(m0.class).a();
+        kotlin.jvm.internal.i.c(a2, "null cannot be cast to non-null type java.lang.Class<T of kotlin.jvm.JvmClassMappingKt.<get-java>>");
         arrayList.add(new v1.c(a2));
         v1.c[] cVarArr = (v1.c[]) arrayList.toArray(new v1.c[0]);
-        return (m0) new af.d(u0Var.f(), new tp0((v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).n(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
+        return (m0) new aa.a(u0Var.f(), new l.d((v1.c[]) Arrays.copyOf(cVarArr, cVarArr.length)), u0Var instanceof i ? ((i) u0Var).d() : v1.a.b).o(m0.class, "androidx.lifecycle.internal.SavedStateHandlesVM");
     }
 }

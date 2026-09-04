@@ -1,9 +1,9 @@
 package com.google.android.recaptcha.internal;
 
-import android.support.v4.media.a;
+import com.google.android.gms.internal.vision.e2;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzuw {
     private static final zzuw zza = new zzuw(0, new int[0], new Object[0], false);
@@ -13,12 +13,12 @@ public final class zzuw {
     private int zze;
     private boolean zzf;
 
-    private zzuw(int i10, int[] iArr, Object[] objArr, boolean z4) {
+    private zzuw(int i10, int[] iArr, Object[] objArr, boolean z10) {
         this.zze = -1;
         this.zzb = i10;
         this.zzc = iArr;
         this.zzd = objArr;
-        this.zzf = z4;
+        this.zzf = z10;
     }
 
     public static zzuw zzc() {
@@ -165,7 +165,7 @@ public final class zzuw {
             int zzA2 = zzqv.zzA(i13) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zzd = zzqmVar.zzd();
-            i11 += zzA + zzA + zzA2 + a.C(zzd, zzd, zzA3);
+            i11 += zzA + zzA + zzA2 + e2.c(zzd, zzd, zzA3);
         }
         this.zze = i11;
         return i11;
@@ -196,9 +196,9 @@ public final class zzuw {
         }
     }
 
-    public final void zzi(StringBuilder sb, int i10) {
+    public final void zzi(StringBuilder sb2, int i10) {
         for (int i11 = 0; i11 < this.zzb; i11++) {
-            zztu.zzb(sb, i10, String.valueOf(this.zzc[i11] >>> 3), this.zzd[i11]);
+            zztu.zzb(sb2, i10, String.valueOf(this.zzc[i11] >>> 3), this.zzd[i11]);
         }
     }
 

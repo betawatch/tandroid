@@ -1,11 +1,16 @@
 package m;
 
-import android.view.MenuItem;
+import android.transition.Transition;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface f2 {
-    void d(l.k kVar, MenuItem menuItem);
+public abstract class f2 {
+    public static void a(PopupWindow popupWindow, Transition transition) {
+        popupWindow.setEnterTransition(transition);
+    }
 
-    void n(l.k kVar, l.m mVar);
+    public static void b(PopupWindow popupWindow, Transition transition) {
+        popupWindow.setExitTransition(transition);
+    }
 }

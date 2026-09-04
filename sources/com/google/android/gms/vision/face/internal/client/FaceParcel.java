@@ -2,15 +2,15 @@ package com.google.android.gms.vision.face.internal.client;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import c6.a;
-import f8.o;
-import j7.f5;
+import o6.a;
+import p7.j;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class FaceParcel extends a {
-    public static final Parcelable.Creator<FaceParcel> CREATOR = new o(9);
-    public final float B;
+    public static final Parcelable.Creator<FaceParcel> CREATOR = new j(25);
+    public final float E;
     public final int a;
     public final int b;
     public final float c;
@@ -24,61 +24,61 @@ public class FaceParcel extends a {
     public final float v;
     public final float w;
     public final float x;
-    public final i8.a[] y;
+    public final u8.a[] y;
 
-    public FaceParcel(int i10, int i11, float f10, float f11, float f12, float f13, float f14, float f15, float f16, LandmarkParcel[] landmarkParcelArr, float f17, float f18, float f19, i8.a[] aVarArr, float f20) {
+    public FaceParcel(int i10, int i11, float f7, float f10, float f11, float f12, float f13, float f14, float f15, LandmarkParcel[] landmarkParcelArr, float f16, float f17, float f18, u8.a[] aVarArr, float f19) {
         this.a = i10;
         this.b = i11;
-        this.c = f10;
-        this.d = f11;
-        this.e = f12;
-        this.f = f13;
-        this.h = f14;
-        this.n = f15;
-        this.r = f16;
+        this.c = f7;
+        this.d = f10;
+        this.e = f11;
+        this.f = f12;
+        this.h = f13;
+        this.n = f14;
+        this.r = f15;
         this.s = landmarkParcelArr;
-        this.v = f17;
-        this.w = f18;
-        this.x = f19;
+        this.v = f16;
+        this.w = f17;
+        this.x = f18;
         this.y = aVarArr;
-        this.B = f20;
+        this.E = f19;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.s(parcel, 1, 4);
+        int q6 = e0.q(parcel, 20293);
+        e0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        f5.s(parcel, 2, 4);
+        e0.s(parcel, 2, 4);
         parcel.writeInt(this.b);
-        f5.s(parcel, 3, 4);
+        e0.s(parcel, 3, 4);
         parcel.writeFloat(this.c);
-        f5.s(parcel, 4, 4);
+        e0.s(parcel, 4, 4);
         parcel.writeFloat(this.d);
-        f5.s(parcel, 5, 4);
+        e0.s(parcel, 5, 4);
         parcel.writeFloat(this.e);
-        f5.s(parcel, 6, 4);
+        e0.s(parcel, 6, 4);
         parcel.writeFloat(this.f);
-        f5.s(parcel, 7, 4);
+        e0.s(parcel, 7, 4);
         parcel.writeFloat(this.h);
-        f5.s(parcel, 8, 4);
+        e0.s(parcel, 8, 4);
         parcel.writeFloat(this.n);
-        f5.o(parcel, 9, this.s, i10);
-        f5.s(parcel, 10, 4);
+        e0.o(parcel, 9, this.s, i10);
+        e0.s(parcel, 10, 4);
         parcel.writeFloat(this.v);
-        f5.s(parcel, 11, 4);
+        e0.s(parcel, 11, 4);
         parcel.writeFloat(this.w);
-        f5.s(parcel, 12, 4);
+        e0.s(parcel, 12, 4);
         parcel.writeFloat(this.x);
-        f5.o(parcel, 13, this.y, i10);
-        f5.s(parcel, 14, 4);
+        e0.o(parcel, 13, this.y, i10);
+        e0.s(parcel, 14, 4);
         parcel.writeFloat(this.r);
-        f5.s(parcel, 15, 4);
-        parcel.writeFloat(this.B);
-        f5.r(parcel, q10);
+        e0.s(parcel, 15, 4);
+        parcel.writeFloat(this.E);
+        e0.r(parcel, q6);
     }
 
-    public FaceParcel(int i10, int i11, float f10, float f11, float f12, float f13, float f14, float f15, LandmarkParcel[] landmarkParcelArr, float f16, float f17, float f18) {
-        this(i10, i11, f10, f11, f12, f13, f14, f15, 0.0f, landmarkParcelArr, f16, f17, f18, new i8.a[0], -1.0f);
+    public FaceParcel(int i10, int i11, float f7, float f10, float f11, float f12, float f13, float f14, LandmarkParcel[] landmarkParcelArr, float f15, float f16, float f17) {
+        this(i10, i11, f7, f10, f11, f12, f13, f14, 0.0f, landmarkParcelArr, f15, f16, f17, new u8.a[0], -1.0f);
     }
 }

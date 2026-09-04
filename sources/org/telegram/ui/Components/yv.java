@@ -1,44 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.view.View;
-import android.view.ViewGroup;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class yv implements ng.j {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+public final class yv extends xv {
+    public final /* synthetic */ zv K;
 
-    public /* synthetic */ yv(ViewGroup viewGroup, int i10) {
-        this.a = i10;
-        this.b = viewGroup;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public yv(zv zvVar, Context context, int i10, int i11) {
+        super(zvVar.s, context, i10, i11);
+        this.K = zvVar;
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // ng.j
-    public final boolean a(Canvas canvas, View view, long j10) {
-        switch (this.a) {
-            case 0:
-                return ((ix) this.b).drawChild(canvas, view, j10);
-            case 1:
-                return ((rl0) this.b).drawChild(canvas, view, j10);
-            case 2:
-                pw pwVar = ((kz) this.b).A0;
-                if (view instanceof bg.d) {
-                    canvas.save();
-                    canvas.translate(view.getX(), view.getY());
-                    org.telegram.ui.Cells.c8 c8Var = (org.telegram.ui.Cells.c8) ((bg.d) view);
-                    if (c8Var.I) {
-                        c8Var.b(canvas, pwVar);
-                    }
-                    canvas.restore();
-                }
-                return pwVar.drawChild(canvas, view, j10);
-            case 3:
-                return ((lp0) this.b).drawChild(canvas, view, j10);
-            default:
-                return ((pt0) this.b).drawChild(canvas, view, j10);
-        }
+    @Override // android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        this.K.d(motionEvent);
+        return super.onTouchEvent(motionEvent);
     }
 }

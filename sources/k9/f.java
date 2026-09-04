@@ -1,17 +1,40 @@
 package k9;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class f implements u9.d {
-    public static final f a = new f();
-    public static final u9.c b = u9.c.c("filename");
-    public static final u9.c c = u9.c.c("contents");
+import android.util.Log;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.concurrent.atomic.AtomicReference;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        u9.e eVar = (u9.e) obj2;
-        f0 f0Var = (f0) ((i1) obj);
-        eVar.e(b, f0Var.a);
-        eVar.e(c, f0Var.b);
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class f implements com.google.android.gms.common.api.internal.c {
+    public static final AtomicReference a = new AtomicReference();
+
+    @Override // com.google.android.gms.common.api.internal.c
+    public final void a(boolean z10) {
+        synchronized (h.k) {
+            try {
+                ArrayList arrayList = new ArrayList(h.l.values());
+                int size = arrayList.size();
+                int i10 = 0;
+                while (i10 < size) {
+                    Object obj = arrayList.get(i10);
+                    i10++;
+                    h hVar = (h) obj;
+                    if (hVar.e.get()) {
+                        Log.d("FirebaseApp", "Notifying background state change listeners.");
+                        Iterator it = hVar.i.iterator();
+                        while (it.hasNext()) {
+                            h hVar2 = ((e) it.next()).a;
+                            if (!z10) {
+                                ((na.c) hVar2.h.get()).c();
+                            }
+                        }
+                    }
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 }

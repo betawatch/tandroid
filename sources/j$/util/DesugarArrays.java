@@ -33,7 +33,7 @@ public final /* synthetic */ class DesugarArrays {
     }
 
     public static LongStream stream(long[] jArr) {
-        r1 c3 = c(jArr, 0, jArr.length);
-        return new j$.util.stream.f1(c3, v6.l(c3), false);
+        r1 c10 = c(jArr, 0, jArr.length);
+        return new j$.util.stream.f1(c10, v6.l(c10), false);
     }
 }

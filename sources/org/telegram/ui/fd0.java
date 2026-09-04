@@ -1,45 +1,39 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.play.core.integrity.IntegrityTokenResponse;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Point;
+import android.view.View;
+import android.widget.FrameLayout;
+import java.util.HashMap;
+import java.util.Map;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class fd0 implements OnSuccessListener {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ pg0 b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ TLRPC.auth_SentCode d;
-    public final /* synthetic */ Bundle e;
-    public final /* synthetic */ boolean f;
+public final class fd0 extends FrameLayout {
+    public final HashMap a;
+    public final /* synthetic */ id0 b;
 
-    public /* synthetic */ fd0(pg0 pg0Var, Bundle bundle, TLRPC.auth_SentCode auth_sentcode, String str, boolean z4) {
-        this.b = pg0Var;
-        this.e = bundle;
-        this.d = auth_sentcode;
-        this.c = str;
-        this.f = z4;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public fd0(id0 id0Var, Context context) {
+        super(context);
+        this.b = id0Var;
+        this.a = new HashMap();
     }
 
-    @Override // com.google.android.gms.tasks.OnSuccessListener
-    public final void onSuccess(Object obj) {
-        switch (this.a) {
-            case 0:
-                pg0.X(this.b, this.e, this.d, this.c, this.f, (IntegrityTokenResponse) obj);
-                break;
-            default:
-                pg0.V(this.b, this.c, this.d, this.e, this.f, (a8.d) obj);
-                break;
+    public final void a() {
+        IMapsProvider.IMap iMap = this.b.I;
+        if (iMap == null) {
+            return;
         }
-    }
-
-    public /* synthetic */ fd0(pg0 pg0Var, String str, TLRPC.auth_SentCode auth_sentcode, Bundle bundle, boolean z4) {
-        this.b = pg0Var;
-        this.c = str;
-        this.d = auth_sentcode;
-        this.e = bundle;
-        this.f = z4;
+        IMapsProvider.IProjection projection = iMap.getProjection();
+        for (Map.Entry entry : this.a.entrySet()) {
+            IMapsProvider.IMarker iMarker = (IMapsProvider.IMarker) entry.getKey();
+            View view = (View) entry.getValue();
+            Point screenLocation = projection.toScreenLocation(iMarker.getPosition());
+            view.setTranslationX(screenLocation.x - (view.getMeasuredWidth() / 2));
+            view.setTranslationY(AndroidUtilities.dp(22.0f) + (screenLocation.y - view.getMeasuredHeight()));
+        }
     }
 }

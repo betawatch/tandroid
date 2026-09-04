@@ -1,12 +1,12 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class SegmentTree {
     private long[] array;
     private Node[] heap;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class Node {
         int from;
         long max;
@@ -35,10 +35,10 @@ public class SegmentTree {
         node.from = i11;
         node.to = (i11 + i12) - 1;
         if (i12 == 1) {
-            long j10 = this.array[i11];
-            node.sum = j10;
-            node.max = j10;
-            node.min = j10;
+            long j3 = this.array[i11];
+            node.sum = j3;
+            node.max = j3;
+            node.min = j3;
             return;
         }
         int i13 = i10 * 2;
@@ -49,9 +49,9 @@ public class SegmentTree {
         Node[] nodeArr = this.heap;
         Node node2 = nodeArr[i10];
         Node node3 = nodeArr[i13];
-        long j11 = node3.sum;
+        long j10 = node3.sum;
         Node node4 = nodeArr[i15];
-        node2.sum = j11 + node4.sum;
+        node2.sum = j10 + node4.sum;
         node2.max = Math.max(node3.max, node4.max);
         Node[] nodeArr2 = this.heap;
         nodeArr2[i10].min = Math.min(nodeArr2[i13].min, nodeArr2[i15].min);
@@ -60,10 +60,10 @@ public class SegmentTree {
     private void change(Node node, int i10) {
         node.pendingVal = Integer.valueOf(i10);
         node.sum = node.size() * i10;
-        long j10 = i10;
-        node.max = j10;
-        node.min = j10;
-        this.array[node.from] = j10;
+        long j3 = i10;
+        node.max = j3;
+        node.min = j3;
+        this.array[node.from] = j3;
     }
 
     private boolean contains(int i10, int i11, int i12, int i13) {
@@ -100,15 +100,15 @@ public class SegmentTree {
         if (i11 > jArr.length - 1) {
             i11 = jArr.length - 1;
         }
-        long j10 = Long.MIN_VALUE;
+        long j3 = Long.MIN_VALUE;
         while (i10 <= i11) {
-            long j11 = this.array[i10];
-            if (j11 > j10) {
-                j10 = j11;
+            long j10 = this.array[i10];
+            if (j10 > j3) {
+                j3 = j10;
             }
             i10++;
         }
-        return j10;
+        return j3;
     }
 
     public long rMinQ(int i10, int i11) {
@@ -122,15 +122,15 @@ public class SegmentTree {
         if (i11 > jArr.length - 1) {
             i11 = jArr.length - 1;
         }
-        long j10 = Long.MAX_VALUE;
+        long j3 = Long.MAX_VALUE;
         while (i10 <= i11) {
-            long j11 = this.array[i10];
-            if (j11 < j10) {
-                j10 = j11;
+            long j10 = this.array[i10];
+            if (j10 < j3) {
+                j3 = j10;
             }
             i10++;
         }
-        return j10;
+        return j3;
     }
 
     private long rMaxQ(int i10, int i11, int i12) {

@@ -1,10 +1,10 @@
 package androidx.datastore.preferences.protobuf;
 
-import com.google.android.gms.internal.cast.x4;
+import com.google.android.gms.internal.cast.z4;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class e implements Iterator {
     public final /* synthetic */ int a = 0;
@@ -12,9 +12,9 @@ public final class e implements Iterator {
     public final int c;
     public final /* synthetic */ Object d;
 
-    public e(b7.w0 w0Var) {
-        this.d = w0Var;
-        this.c = w0Var.p();
+    public e(z4 z4Var) {
+        this.d = z4Var;
+        this.c = z4Var.o();
     }
 
     @Override // java.util.Iterator
@@ -64,37 +64,37 @@ public final class e implements Iterator {
                     throw new NoSuchElementException();
                 }
                 this.b = i11 + 1;
-                return Byte.valueOf(((b7.w0) this.d).n(i11));
+                return Byte.valueOf(((z4) this.d).n(i11));
             case 2:
-                int i12 = this.b;
-                if (i12 >= this.c) {
+                try {
+                    com.google.android.gms.internal.clearcut.n nVar = (com.google.android.gms.internal.clearcut.n) this.d;
+                    int i12 = this.b;
+                    this.b = i12 + 1;
+                    return Byte.valueOf(nVar.o(i12));
+                } catch (IndexOutOfBoundsException e7) {
+                    throw new NoSuchElementException(e7.getMessage());
+                }
+            case 3:
+                int i13 = this.b;
+                if (i13 >= this.c) {
                     throw new NoSuchElementException();
                 }
-                this.b = i12 + 1;
-                return Byte.valueOf(((x4) this.d).n(i12));
-            case 3:
-                try {
-                    com.google.android.gms.internal.clearcut.o oVar = (com.google.android.gms.internal.clearcut.o) this.d;
-                    int i13 = this.b;
-                    this.b = i13 + 1;
-                    return Byte.valueOf(oVar.o(i13));
-                } catch (IndexOutOfBoundsException e) {
-                    throw new NoSuchElementException(e.getMessage());
-                }
+                this.b = i13 + 1;
+                return Byte.valueOf(((com.google.android.gms.internal.play_billing.l1) this.d).n(i13));
             case 4:
                 int i14 = this.b;
                 if (i14 >= this.c) {
                     throw new NoSuchElementException();
                 }
                 this.b = i14 + 1;
-                return Byte.valueOf(((com.google.android.gms.internal.play_billing.l1) this.d).n(i14));
+                return Byte.valueOf(((com.google.android.gms.internal.vision.q0) this.d).p(i14));
             default:
                 int i15 = this.b;
                 if (i15 >= this.c) {
                     throw new NoSuchElementException();
                 }
                 this.b = i15 + 1;
-                return Byte.valueOf(((com.google.android.gms.internal.vision.q0) this.d).p(i15));
+                return Byte.valueOf(((n7.s0) this.d).n(i15));
         }
     }
 
@@ -116,14 +116,9 @@ public final class e implements Iterator {
         }
     }
 
-    public e(x4 x4Var) {
-        this.d = x4Var;
-        this.c = x4Var.o();
-    }
-
-    public e(com.google.android.gms.internal.clearcut.o oVar) {
-        this.d = oVar;
-        this.c = oVar.size();
+    public e(com.google.android.gms.internal.clearcut.n nVar) {
+        this.d = nVar;
+        this.c = nVar.size();
     }
 
     public e(com.google.android.gms.internal.play_billing.l1 l1Var) {
@@ -134,6 +129,11 @@ public final class e implements Iterator {
     public e(com.google.android.gms.internal.vision.q0 q0Var) {
         this.d = q0Var;
         this.c = q0Var.n();
+    }
+
+    public e(n7.s0 s0Var) {
+        this.d = s0Var;
+        this.c = s0Var.p();
     }
 
     public e(g gVar) {

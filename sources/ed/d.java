@@ -1,12 +1,54 @@
 package ed;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public abstract class d {
-    public static final a a;
+import bf.p;
+import bf.s;
 
-    static {
-        Integer num = ad.a.a;
-        a = (num == null || num.intValue() >= 34) ? new fd.a() : new b();
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class d extends h {
+    public final /* synthetic */ int e;
+
+    @Override // ed.h
+    public final p b() {
+        switch (this.e) {
+            case 0:
+                int i10 = this.d + 1;
+                this.d = i10;
+                if (c() != '[') {
+                    return null;
+                }
+                this.d++;
+                s f7 = f("![");
+                i iVar = this.a;
+                f6.f fVar = iVar.i;
+                f6.f fVar2 = new f6.f(f7, i10, fVar, iVar.h, true);
+                if (fVar != null) {
+                    fVar.d = true;
+                }
+                iVar.i = fVar2;
+                return f7;
+            default:
+                int i11 = this.d;
+                this.d = i11 + 1;
+                s f10 = f("[");
+                i iVar2 = this.a;
+                f6.f fVar3 = iVar2.i;
+                f6.f fVar4 = new f6.f(f10, i11, fVar3, iVar2.h, false);
+                if (fVar3 != null) {
+                    fVar3.d = true;
+                }
+                iVar2.i = fVar4;
+                return f10;
+        }
+    }
+
+    @Override // ed.h
+    public final char d() {
+        switch (this.e) {
+            case 0:
+                return '!';
+            default:
+                return '[';
+        }
     }
 }

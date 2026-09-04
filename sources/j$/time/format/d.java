@@ -4,21 +4,21 @@ package j$.time.format;
 public final class d implements f {
     public final char a;
 
-    public d(char c3) {
-        this.a = c3;
+    public d(char c10) {
+        this.a = c10;
     }
 
     @Override // j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb) {
-        sb.append(this.a);
+    public final boolean j(r rVar, StringBuilder sb2) {
+        sb2.append(this.a);
         return true;
     }
 
     public final String toString() {
-        char c3 = this.a;
-        if (c3 == '\'') {
+        char c10 = this.a;
+        if (c10 == '\'') {
             return "''";
         }
-        return "'" + c3 + "'";
+        return "'" + c10 + "'";
     }
 }

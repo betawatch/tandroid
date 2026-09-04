@@ -4,22 +4,22 @@ import android.graphics.Point;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class t5 extends k7.y5 {
+public final class t5 extends w7.i0 {
     public final /* synthetic */ boolean a;
     public final /* synthetic */ View b;
 
-    public t5(View view, boolean z4) {
-        this.a = z4;
+    public t5(View view, boolean z10) {
+        this.a = z10;
         this.b = view;
     }
 
-    @Override // k7.y5
+    @Override // w7.i0
     public final void b(int i10, int i11) {
-        boolean z4 = this.a;
+        boolean z10 = this.a;
         View view = this.b;
-        if (z4) {
+        if (z10) {
             view.invalidate();
             return;
         }

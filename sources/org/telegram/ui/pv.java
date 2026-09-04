@@ -1,38 +1,58 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
+import android.app.Activity;
+import android.content.Context;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pv implements DialogInterface.OnDismissListener {
+public final /* synthetic */ class pv implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qy b;
+    public final /* synthetic */ Context b;
 
-    public /* synthetic */ pv(qy qyVar, int i10) {
+    public /* synthetic */ pv(Context context, int i10) {
         this.a = i10;
-        this.b = qyVar;
+        this.b = context;
     }
 
-    @Override // android.content.DialogInterface.OnDismissListener
-    public final void onDismiss(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                qy.i0(this.b);
+                org.telegram.ui.ActionBar.j6.J(this.b, false);
                 break;
             case 1:
-                qy qyVar = this.b;
-                if (qyVar.P3 != null) {
-                    qyVar.getMessagesController().removeSuggestion(0L, qyVar.P3);
-                    qyVar.P3 = null;
-                    qyVar.L4();
+                Activity findActivity = AndroidUtilities.findActivity(this.b);
+                if (findActivity == null) {
+                    findActivity = LaunchActivity.G1;
+                }
+                if (findActivity != null && !findActivity.isFinishing()) {
+                    findActivity.moveTaskToBack(true);
                     break;
                 }
                 break;
             case 2:
-                this.b.b4(true);
+                of.f.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 3:
+                of.f.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 4:
+                of.f.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 5:
+                of.f.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 6:
+                of.f.s(this.b, "https://promote.telegram.org/guidelines");
+                break;
+            case 7:
+                of.f.s(this.b, "https://promote.telegram.org/guidelines");
                 break;
             default:
-                this.b.b4(true);
+                of.f.s(this.b, LocaleController.getString(R.string.WebAppDisclaimerUrl));
                 break;
         }
     }

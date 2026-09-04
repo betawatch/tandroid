@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-import android.support.v4.media.a;
+import a4.a;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 import ru.noties.jlatexmath.JLatexMathAndroid;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class GlueSettingsParser {
     private static final String RESOURCE_NAME = "GlueSettings.xml";
@@ -29,14 +29,14 @@ public class GlueSettingsParser {
             newInstance.setIgnoringComments(true);
             this.root = newInstance.newDocumentBuilder().parse(JLatexMathAndroid.getResourceAsStream(RESOURCE_NAME)).getDocumentElement();
             parseGlueTypes();
-        } catch (Exception e) {
-            throw new XMLResourceParseException(RESOURCE_NAME, e);
+        } catch (Exception e7) {
+            throw new XMLResourceParseException(RESOURCE_NAME, e7);
         }
     }
 
     private static void checkMapping(Object obj, String str, String str2, String str3) {
         if (obj == null) {
-            throw new XMLResourceParseException(RESOURCE_NAME, str, str2, a.o("has an unknown value '", str3, "'!"));
+            throw new XMLResourceParseException(RESOURCE_NAME, str, str2, a.p("has an unknown value '", str3, "'!"));
         }
     }
 
@@ -49,7 +49,7 @@ public class GlueSettingsParser {
                 str2 = element.getAttribute(strArr[i10]);
                 fArr[i10] = (float) (!str2.equals("") ? Double.parseDouble(str2) : 0.0d);
             } catch (NumberFormatException unused) {
-                throw new XMLResourceParseException(RESOURCE_NAME, "GlueType", strArr[i10], a.o("has an invalid real value '", str2, "'!"));
+                throw new XMLResourceParseException(RESOURCE_NAME, "GlueType", strArr[i10], a.p("has an invalid real value '", str2, "'!"));
             }
         }
         return new Glue(fArr[0], fArr[1], fArr[2], str);

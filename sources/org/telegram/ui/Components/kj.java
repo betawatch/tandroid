@@ -1,44 +1,45 @@
 package org.telegram.ui.Components;
 
+import android.view.View;
 import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class kj implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ mj b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ int d;
+public final /* synthetic */ class kj implements bl0, pj {
+    public final /* synthetic */ yj a;
 
-    public /* synthetic */ kj(mj mjVar, String str, int i10, int i11) {
-        this.a = i11;
-        this.b = mjVar;
-        this.c = str;
-        this.d = i10;
+    public /* synthetic */ kj(yj yjVar) {
+        this.a = yjVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                mj mjVar = this.b;
-                String str = this.c;
-                int i10 = this.d;
-                mjVar.getClass();
-                AndroidUtilities.runOnUIThread(new kj(mjVar, str, i10, 1));
-                break;
-            default:
-                mj mjVar2 = this.b;
-                String str2 = this.c;
-                int i11 = this.d;
-                mjVar2.getClass();
-                int i12 = UserConfig.selectedAccount;
-                Utilities.searchQueue.postRunnable(new lj(mjVar2, str2, new ArrayList(ContactsController.getInstance(i12).contactsBook.values()), new ArrayList(ContactsController.getInstance(i12).contacts), i12, i11));
-                break;
+    @Override // org.telegram.ui.Components.bl0
+    public boolean a(int i10, View view) {
+        Object O;
+        yj yjVar = this.a;
+        s4.h0 adapter = yjVar.s.getAdapter();
+        uj ujVar = yjVar.F;
+        if (adapter == ujVar) {
+            O = ujVar.E(i10);
+        } else {
+            sj sjVar = yjVar.E;
+            O = sjVar.O(sjVar.S(i10), sjVar.Q(i10));
         }
+        if (O == null) {
+            return false;
+        }
+        yjVar.L((xj) view, O);
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.pj
+    public void b(TLRPC.User user, boolean z10, int i10, long j3) {
+        yj yjVar = this.a;
+        yjVar.b.dismiss(true);
+        yjVar.J.b(user, z10, i10, j3);
+    }
+
+    @Override // org.telegram.ui.Components.pj
+    public /* synthetic */ void c(ArrayList arrayList, String str, boolean z10, int i10, long j3, boolean z11) {
     }
 }

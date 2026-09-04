@@ -1,32 +1,25 @@
 package kotlin.jvm.internal;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class l implements d {
-    public final Class a;
-
-    public l(Class jClass) {
-        j.e(jClass, "jClass");
-        this.a = jClass;
+public final class l extends m implements vd.f {
+    public l(Class cls) {
+        super(b.NO_RECEIVER, cls, "dataStore", "getDataStore(Landroid/content/Context;)Landroidx/datastore/core/DataStore;", 0);
     }
 
-    @Override // kotlin.jvm.internal.d
-    public final Class a() {
-        return this.a;
+    public final void b() {
+        ((l) ((vd.f) getReflected())).b();
     }
 
-    public final boolean equals(Object obj) {
-        if (obj instanceof l) {
-            return j.a(this.a, ((l) obj).a);
-        }
-        return false;
+    @Override // kotlin.jvm.internal.b
+    public final vd.b computeReflected() {
+        q.a.getClass();
+        return this;
     }
 
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        return this.a + " (Kotlin reflection is not available)";
+    @Override // rd.p
+    public final Object invoke(Object obj, Object obj2) {
+        b();
+        throw null;
     }
 }

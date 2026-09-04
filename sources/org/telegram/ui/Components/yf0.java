@@ -1,58 +1,38 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class yf0 extends FrameLayout {
-    public final TextView a;
-    public final TextView b;
-    public final TextView c;
-    public final boolean d;
+public final class yf0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PipRoundVideoView b;
 
-    public yf0(Context context) {
-        super(context);
-        this.d = true;
-        setBackgroundColor(-15066598);
-        TextView textView = new TextView(context);
-        this.a = textView;
-        textView.setTextSize(1, 14.0f);
-        textView.setTextColor(-1);
-        textView.setGravity(17);
-        textView.setBackground(org.telegram.ui.ActionBar.j6.f0(-12763843, 0, -1));
-        textView.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        textView.setText(LocaleController.getString(R.string.Cancel).toUpperCase());
-        textView.setTypeface(AndroidUtilities.bold());
-        addView(textView, k7.b6.e(-2, -1, 51));
-        TextView textView2 = new TextView(context);
-        this.b = textView2;
-        textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(-1);
-        textView2.setGravity(17);
-        textView2.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.f0(-12763843, 0, -1));
-        textView2.setPadding(AndroidUtilities.dp(20.0f), 0, AndroidUtilities.dp(20.0f), 0);
-        textView2.setText(LocaleController.getString(R.string.Send).toUpperCase());
-        textView2.setTypeface(AndroidUtilities.bold());
-        addView(textView2, k7.b6.e(-2, -1, 53));
-        TextView textView3 = new TextView(context);
-        this.c = textView3;
-        textView3.setTypeface(AndroidUtilities.bold());
-        textView3.setTextSize(1, 13.0f);
-        textView3.setTextColor(-1);
-        textView3.setGravity(17);
-        textView3.setBackgroundResource(R.drawable.photobadge);
-        textView3.setMinWidth(AndroidUtilities.dp(23.0f));
-        textView3.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), AndroidUtilities.dp(1.0f));
-        addView(textView3, k7.b6.d(-2, 23.0f, 53, 0.0f, 0.0f, 7.0f, 0.0f));
+    public /* synthetic */ yf0(PipRoundVideoView pipRoundVideoView, int i10) {
+        this.a = i10;
+        this.b = pipRoundVideoView;
     }
 
-    public final void a() {
-        this.c.setVisibility(8);
-        this.b.setTextColor(this.d ? -1 : -15095832);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                PipRoundVideoView pipRoundVideoView = this.b;
+                if (animator.equals(pipRoundVideoView.r)) {
+                    pipRoundVideoView.r = null;
+                    break;
+                }
+                break;
+            default:
+                PipRoundVideoView pipRoundVideoView2 = this.b;
+                pipRoundVideoView2.a(false);
+                Runnable runnable = pipRoundVideoView2.s;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
+        }
     }
 }

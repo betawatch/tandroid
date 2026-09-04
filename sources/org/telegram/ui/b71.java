@@ -1,79 +1,55 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import android.view.View;
+import java.util.List;
+import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class b71 implements TextWatcher {
-    public final sz0 a = new sz0(this, 16);
-    public final /* synthetic */ i71 b;
+public final /* synthetic */ class b71 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f71 b;
+    public final /* synthetic */ Integer c;
 
-    public b71(i71 i71Var) {
-        this.b = i71Var;
+    public /* synthetic */ b71(f71 f71Var, Integer num, int i10) {
+        this.a = i10;
+        this.b = f71Var;
+        this.c = num;
     }
 
-    public final void a() {
-        boolean z4;
-        boolean z10;
-        TLRPC.TL_channelParticipantsSearch tL_channelParticipantsSearch = new TLRPC.TL_channelParticipantsSearch();
-        i71 i71Var = this.b;
-        String obj = i71Var.Z.getText().toString();
-        tL_channelParticipantsSearch.q = obj;
-        h71 h71Var = i71Var.d0;
-        TLRPC.ChannelParticipantsFilter channelParticipantsFilter = h71Var.c;
-        if (channelParticipantsFilter instanceof TLRPC.TL_channelParticipantsSearch) {
-            z4 = !TextUtils.equals(channelParticipantsFilter.q, obj);
-            z10 = false;
-        } else {
-            z4 = true;
-            z10 = true;
-        }
-        h71Var.c = tL_channelParticipantsSearch;
-        if (z4) {
-            if (z10) {
-                h71Var.r = false;
-                if (h71Var.n >= 0) {
-                    ConnectionsManager.getInstance(h71Var.a).cancelRequest(h71Var.n, true);
-                    h71Var.n = -1;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        f71 f71Var = this.b;
+        switch (i10) {
+            case 0:
+                f71.a(f71Var, this.c);
+                break;
+            default:
+                f71Var.getClass();
+                Integer num = this.c;
+                if (num != null) {
+                    try {
+                        f71Var.P.performHapticFeedback(0, 1);
+                    } catch (Exception unused) {
+                    }
+                    y51 y51Var = (y51) f71Var;
+                    z51 z51Var = y51Var.S;
+                    j71 j71Var = z51Var.e;
+                    List list = j71.Z1;
+                    j71Var.l();
+                    TLRPC.TL_emojiStatus tL_emojiStatus = new TLRPC.TL_emojiStatus();
+                    View view = y51Var.Q;
+                    long j3 = ((s61) view).e.documentId;
+                    tL_emojiStatus.document_id = j3;
+                    z51Var.e.p(view, Long.valueOf(j3), ((s61) y51Var.Q).e.document, y51Var.R, num);
+                    if (y51Var.R == null) {
+                        MediaDataController.getInstance(z51Var.e.V).pushRecentEmojiStatus(tL_emojiStatus);
+                        break;
+                    }
                 }
-                h71Var.f = false;
-                h71Var.d.clear();
-                h71Var.h = false;
-            } else {
-                h71Var.r = true;
-                h71Var.h = false;
-            }
-            h71Var.b();
+                break;
         }
-        org.telegram.ui.Components.w51 w51Var = i71Var.f0;
-        if (w51Var != null) {
-            w51Var.N(true);
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        int length = editable.length();
-        sz0 sz0Var = this.a;
-        if (length <= 0) {
-            AndroidUtilities.cancelRunOnUIThread(sz0Var);
-            a();
-        } else {
-            AndroidUtilities.cancelRunOnUIThread(sz0Var);
-            AndroidUtilities.runOnUIThread(sz0Var, 300L);
-        }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

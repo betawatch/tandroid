@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+import i2.g;
 import java.math.RoundingMode;
 import java.util.Arrays;
-import kf.k0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 final class zzpk {
     final int zza;
@@ -26,14 +26,14 @@ final class zzpk {
         byte[] bArr = new byte[128];
         Arrays.fill(bArr, (byte) -1);
         for (int i10 = 0; i10 < cArr.length; i10++) {
-            char c3 = cArr[i10];
-            boolean z4 = true;
-            zzmd.zzc(c3 < 128, "Non-ASCII character: %s", c3);
-            if (bArr[c3] != -1) {
-                z4 = false;
+            char c10 = cArr[i10];
+            boolean z10 = true;
+            zzmd.zzc(c10 < 128, "Non-ASCII character: %s", c10);
+            if (bArr[c10] != -1) {
+                z10 = false;
             }
-            zzmd.zzc(z4, "Duplicate character: %s", c3);
-            bArr[c3] = (byte) i10;
+            zzmd.zzc(z10, "Duplicate character: %s", c10);
+            bArr[c10] = (byte) i10;
         }
     }
 
@@ -53,29 +53,29 @@ final class zzpk {
         return this.zzf[i10];
     }
 
-    public final int zzb(char c3) {
-        if (c3 > 127) {
-            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c3))));
+    public final int zzb(char c10) {
+        if (c10 > 127) {
+            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c10))));
         }
-        byte b10 = this.zzg[c3];
+        byte b10 = this.zzg[c10];
         if (b10 != -1) {
             return b10;
         }
-        if (c3 <= ' ' || c3 == 127) {
-            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c3))));
+        if (c10 <= ' ' || c10 == 127) {
+            throw new zzpn("Unrecognized character: 0x".concat(String.valueOf(Integer.toHexString(c10))));
         }
-        throw new zzpn("Unrecognized character: " + c3);
+        throw new zzpn("Unrecognized character: " + c10);
     }
 
     public final boolean zzc(int i10) {
         return this.zzh[i10 % this.zzc];
     }
 
-    public final boolean zzd(char c3) {
+    public final boolean zzd(char c10) {
         return this.zzg[61] != -1;
     }
 
-    private zzpk(String str, char[] cArr, byte[] bArr, boolean z4) {
+    private zzpk(String str, char[] cArr, byte[] bArr, boolean z10) {
         this.zze = str;
         cArr.getClass();
         this.zzf = cArr;
@@ -95,8 +95,8 @@ final class zzpk {
             }
             this.zzh = zArr;
             this.zzi = false;
-        } catch (ArithmeticException e) {
-            throw new IllegalArgumentException(k0.j(cArr.length, "Illegal alphabet length "), e);
+        } catch (ArithmeticException e7) {
+            throw new IllegalArgumentException(g.i(cArr.length, "Illegal alphabet length "), e7);
         }
     }
 }

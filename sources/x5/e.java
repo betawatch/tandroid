@@ -1,20 +1,64 @@
 package x5;
 
-import android.os.Build;
-import android.util.Log;
+import android.os.Parcel;
+import android.os.Parcelable;
+import java.util.Arrays;
+import n6.l;
+import v8.r;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e extends ClassLoader {
-    @Override // java.lang.ClassLoader
-    public final Class loadClass(String str, boolean z4) {
-        if (str != "com.google.android.gms.iid.MessengerCompat" && (str == null || !str.equals("com.google.android.gms.iid.MessengerCompat"))) {
-            return super.loadClass(str, z4);
+public final class e extends o6.a {
+    public static final Parcelable.Creator<e> CREATOR = new r(25);
+    public final d a;
+    public final a b;
+    public final String c;
+    public final boolean d;
+    public final int e;
+    public final c f;
+    public final b h;
+    public final boolean n;
+
+    public e(d dVar, a aVar, String str, boolean z10, int i10, c cVar, b bVar, boolean z11) {
+        l.h(dVar);
+        this.a = dVar;
+        l.h(aVar);
+        this.b = aVar;
+        this.c = str;
+        this.d = z10;
+        this.e = i10;
+        this.f = cVar == null ? new c(false, null, null) : cVar;
+        this.h = bVar == null ? new b(null, false) : bVar;
+        this.n = z11;
+    }
+
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof e)) {
+            return false;
         }
-        if (!Log.isLoggable("CloudMessengerCompat", 3) && (Build.VERSION.SDK_INT != 23 || !Log.isLoggable("CloudMessengerCompat", 3))) {
-            return f.class;
-        }
-        Log.d("CloudMessengerCompat", "Using renamed FirebaseIidMessengerCompat class");
-        return f.class;
+        e eVar = (e) obj;
+        return l.l(this.a, eVar.a) && l.l(this.b, eVar.b) && l.l(this.f, eVar.f) && l.l(this.h, eVar.h) && l.l(this.c, eVar.c) && this.d == eVar.d && this.e == eVar.e && this.n == eVar.n;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a, this.b, this.f, this.h, this.c, Boolean.valueOf(this.d), Integer.valueOf(this.e), Boolean.valueOf(this.n)});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = e0.q(parcel, 20293);
+        e0.k(parcel, 1, this.a, i10);
+        e0.k(parcel, 2, this.b, i10);
+        e0.l(parcel, 3, this.c);
+        e0.s(parcel, 4, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        e0.s(parcel, 5, 4);
+        parcel.writeInt(this.e);
+        e0.k(parcel, 6, this.f, i10);
+        e0.k(parcel, 7, this.h, i10);
+        e0.s(parcel, 8, 4);
+        parcel.writeInt(this.n ? 1 : 0);
+        e0.r(parcel, q6);
     }
 }

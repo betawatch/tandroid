@@ -1,18 +1,13 @@
 package c2;
 
-import android.media.MediaRouter2;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g extends MediaRouter2.ControllerCallback {
-    public final /* synthetic */ l a;
-
-    public g(l lVar) {
-        this.a = lVar;
+public final class g extends Exception {
+    public g(f fVar) {
+        this("Unhandled input format:", fVar);
     }
 
-    @Override // android.media.MediaRouter2.ControllerCallback
-    public final void onControllerUpdated(MediaRouter2.RoutingController routingController) {
-        this.a.r(routingController);
+    public g(String str, f fVar) {
+        super(str + " " + fVar);
     }
 }

@@ -1,104 +1,144 @@
 package org.telegram.ui.Cells;
 
-import android.text.TextUtils;
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
+import android.graphics.Paint;
+import android.util.Property;
+import android.view.View;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.Components.io0;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.wl;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.mp;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class u7 implements io0 {
-    public final /* synthetic */ w7 a;
+public final class u7 extends FrameLayout {
+    public q7[] a;
+    public MessageObject[] b;
+    public int[] c;
+    public r7 d;
+    public int e;
+    public boolean f;
+    public boolean h;
+    public Paint n;
+    public int r;
+    public int s;
 
-    public u7(w7 w7Var) {
-        this.a = w7Var;
+    public static int a(int i10) {
+        if (AndroidUtilities.isTablet()) {
+            return (AndroidUtilities.dp(490.0f) - (AndroidUtilities.dp(2.0f) * (i10 - 1))) / i10;
+        }
+        return (AndroidUtilities.displaySize.x - (AndroidUtilities.dp(2.0f) * (i10 - 1))) / i10;
     }
 
-    @Override // org.telegram.ui.Components.io0
-    public final void Y(float f10, boolean z4) {
-        int round;
-        w7 w7Var = this.a;
-        v7 v7Var = w7Var.r;
-        if (v7Var == null || w7Var.n == null) {
+    public final void b(int i10, boolean z10) {
+        q7 q7Var = this.a[i10];
+        FrameLayout frameLayout = q7Var.f;
+        mp mpVar = q7Var.e;
+        if (mpVar.getVisibility() != 0) {
+            mpVar.setVisibility(0);
+        }
+        mpVar.a(z10, true);
+        AnimatorSet animatorSet = q7Var.h;
+        if (animatorSet != null) {
+            animatorSet.cancel();
+            q7Var.h = null;
+        }
+        AnimatorSet animatorSet2 = new AnimatorSet();
+        q7Var.h = animatorSet2;
+        animatorSet2.playTogether(ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.SCALE_X, z10 ? 0.81f : 1.0f), ObjectAnimator.ofFloat(frameLayout, (Property<FrameLayout, Float>) View.SCALE_Y, z10 ? 0.81f : 1.0f));
+        q7Var.h.setDuration(200L);
+        q7Var.h.addListener(new org.telegram.ui.s0(q7Var, 14));
+        q7Var.h.start();
+    }
+
+    public final void c(int i10, int i11, MessageObject messageObject) {
+        q7[] q7VarArr = this.a;
+        MessageObject[] messageObjectArr = this.b;
+        messageObjectArr[i10] = messageObject;
+        this.c[i10] = i11;
+        if (messageObject != null) {
+            q7VarArr[i10].setVisibility(0);
+            q7VarArr[i10].setMessageObject(messageObject);
+        } else {
+            q7VarArr[i10].clearAnimation();
+            q7VarArr[i10].setVisibility(4);
+            messageObjectArr[i10] = null;
+        }
+    }
+
+    public r7 getDelegate() {
+        return this.d;
+    }
+
+    @Override // android.view.View
+    public final void invalidate() {
+        for (int i10 = 0; i10 < 6; i10++) {
+            this.a[i10].invalidate();
+        }
+        super.invalidate();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        View[] viewArr = this.a;
+        int A = this.r == 1 ? wl.A(2.0f, this.e - 1, View.MeasureSpec.getSize(i10)) / this.e : a(this.e);
+        this.h = true;
+        for (int i12 = 0; i12 < this.e; i12++) {
+            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) viewArr[i12].getLayoutParams();
+            layoutParams.topMargin = this.f ? 0 : AndroidUtilities.dp(2.0f);
+            layoutParams.leftMargin = (AndroidUtilities.dp(2.0f) + A) * i12;
+            if (i12 != this.e - 1) {
+                layoutParams.width = A;
+            } else if (AndroidUtilities.isTablet()) {
+                layoutParams.width = AndroidUtilities.dp(490.0f) - ((AndroidUtilities.dp(2.0f) + A) * (this.e - 1));
+            } else {
+                layoutParams.width = AndroidUtilities.displaySize.x - ((AndroidUtilities.dp(2.0f) + A) * (this.e - 1));
+            }
+            layoutParams.height = A;
+            layoutParams.gravity = 51;
+            viewArr[i12].setLayoutParams(layoutParams);
+        }
+        this.h = false;
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec((this.f ? 0 : AndroidUtilities.dp(2.0f)) + A, TLObject.FLAG_30));
+    }
+
+    @Override // android.view.View, android.view.ViewParent
+    public final void requestLayout() {
+        if (this.h) {
             return;
         }
-        if (v7Var.c != null) {
-            double length = f10 * (r1.length - 1);
-            int clamp = Utilities.clamp((int) Math.floor(length), w7Var.r.c.length - 1, 0);
-            int clamp2 = Utilities.clamp((int) Math.ceil(length), w7Var.r.c.length - 1, 0);
-            int[] iArr = w7Var.r.c;
-            round = Math.round(AndroidUtilities.lerp(iArr[clamp], iArr[clamp2], Math.round(((float) (length - Math.floor(length))) * w7Var.r.d) / w7Var.r.d));
-        } else {
-            round = Math.round(((w7Var.r.a() - w7Var.r.b()) * f10) + v7Var.b());
-        }
-        int i10 = w7Var.h;
-        if (i10 != Integer.MIN_VALUE) {
-            round = Math.max(round, i10);
-        }
-        int i11 = w7Var.f;
-        if (i11 != round) {
-            if (w7Var.c(i11) != w7Var.c(round)) {
-                AndroidUtilities.vibrateCursor(w7Var.e);
-            }
-            w7Var.f = round;
-            w7Var.e(round, true);
-            Utilities.Callback callback = w7Var.n;
-            if (callback != null) {
-                callback.run(Integer.valueOf(w7Var.f));
-            }
-        }
+        super.requestLayout();
     }
 
-    @Override // org.telegram.ui.Components.io0
-    public final CharSequence getContentDescription() {
-        Utilities.Callback2Return callback2Return;
-        w7 w7Var = this.a;
-        try {
-            StringBuilder sb = new StringBuilder();
-            if (!TextUtils.isEmpty(w7Var.s)) {
-                sb.append(w7Var.s);
-            }
-            v7 v7Var = w7Var.r;
-            if (v7Var != null && (callback2Return = v7Var.e) != null) {
-                CharSequence charSequence = (CharSequence) callback2Return.run(0, Integer.valueOf(w7Var.f));
-                if (!TextUtils.isEmpty(charSequence)) {
-                    if (sb.length() > 0) {
-                        sb.append(", ");
-                    }
-                    sb.append(charSequence);
-                }
-                CharSequence charSequence2 = (CharSequence) w7Var.r.e.run(-1, Integer.valueOf(w7Var.r.b()));
-                CharSequence charSequence3 = (CharSequence) w7Var.r.e.run(1, Integer.valueOf(w7Var.r.a()));
-                if (!TextUtils.isEmpty(charSequence2) && !TextUtils.isEmpty(charSequence3)) {
-                    if (sb.length() > 0) {
-                        sb.append(", ");
-                    }
-                    sb.append(charSequence2);
-                    sb.append(" – ");
-                    sb.append(charSequence3);
-                }
-            }
-            if (sb.length() > 0) {
-                return sb.toString();
-            }
-            return null;
-        } catch (Throwable th2) {
-            FileLog.e(th2);
-            return w7Var.s;
-        }
+    public void setDelegate(r7 r7Var) {
+        this.d = r7Var;
     }
 
-    @Override // org.telegram.ui.Components.io0
-    public final int j0() {
-        v7 v7Var = this.a.r;
-        if (v7Var == null) {
-            return 0;
-        }
-        return v7Var.c != null ? (r1.length - 1) * v7Var.d : v7Var.a() - v7Var.b();
+    public void setIsFirst(boolean z10) {
+        this.f = z10;
     }
 
-    @Override // org.telegram.ui.Components.io0
-    public final /* synthetic */ void B() {
+    public void setItemsCount(int i10) {
+        q7[] q7VarArr = this.a;
+        int i11 = 0;
+        while (i11 < q7VarArr.length) {
+            q7VarArr[i11].clearAnimation();
+            q7VarArr[i11].setVisibility(i11 < i10 ? 0 : 4);
+            i11++;
+        }
+        this.e = i10;
     }
 }

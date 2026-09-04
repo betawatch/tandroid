@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class zzqv extends zzqe {
     public static final /* synthetic */ int zzb = 0;
@@ -19,8 +19,8 @@ public abstract class zzqv extends zzqe {
         return (352 - (Integer.numberOfLeadingZeros(i10) * 9)) >>> 6;
     }
 
-    public static int zzB(long j10) {
-        return (640 - (Long.numberOfLeadingZeros(j10) * 9)) >>> 6;
+    public static int zzB(long j3) {
+        return (640 - (Long.numberOfLeadingZeros(j3) * 9)) >>> 6;
     }
 
     @Deprecated
@@ -62,8 +62,8 @@ public abstract class zzqv extends zzqe {
             int length = bytes.length;
             zzt(length);
             zzl(bytes, 0, length);
-        } catch (IndexOutOfBoundsException e) {
-            throw new zzqt(e);
+        } catch (IndexOutOfBoundsException e7) {
+            throw new zzqt(e7);
         }
     }
 
@@ -71,7 +71,7 @@ public abstract class zzqv extends zzqe {
 
     public abstract void zzb(byte b10);
 
-    public abstract void zzd(int i10, boolean z4);
+    public abstract void zzd(int i10, boolean z10);
 
     public abstract void zze(int i10, zzqm zzqmVar);
 
@@ -79,9 +79,9 @@ public abstract class zzqv extends zzqe {
 
     public abstract void zzg(int i10);
 
-    public abstract void zzh(int i10, long j10);
+    public abstract void zzh(int i10, long j3);
 
-    public abstract void zzi(long j10);
+    public abstract void zzi(long j3);
 
     public abstract void zzj(int i10, int i11);
 
@@ -103,9 +103,9 @@ public abstract class zzqv extends zzqe {
 
     public abstract void zzt(int i10);
 
-    public abstract void zzu(int i10, long j10);
+    public abstract void zzu(int i10, long j3);
 
-    public abstract void zzv(long j10);
+    public abstract void zzv(long j3);
 
     public /* synthetic */ zzqv(zzqu zzquVar) {
     }

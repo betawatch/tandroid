@@ -3,38 +3,38 @@ package com.google.android.gms.cast;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
-import c6.a;
+import c6.b;
+import c6.l;
+import c6.s;
+import c6.t;
+import c6.v;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import com.google.android.gms.internal.cast.g0;
-import com.google.android.gms.internal.cast.l0;
-import i6.c;
+import com.google.android.gms.internal.cast.j0;
+import com.google.android.gms.internal.cast.o0;
 import j$.util.DesugarCollections;
-import j7.f5;
-import j7.z5;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 import java.util.regex.Pattern;
+import o6.a;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import q5.b;
-import q5.l;
-import q5.s;
-import q5.t;
-import q5.v;
+import u6.c;
+import v7.n5;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class MediaInfo extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<MediaInfo> CREATOR;
-    public final String B;
-    public final String C;
-    public final String D;
-    public final JSONObject E;
+    public final String E;
+    public final String F;
+    public final String G;
+    public final JSONObject H;
     public final String a;
     public final int b;
     public final String c;
@@ -51,48 +51,48 @@ public class MediaInfo extends a implements ReflectedParcelable {
     public final String y;
 
     static {
-        Pattern pattern = u5.a.a;
+        Pattern pattern = g6.a.a;
         CREATOR = new v(7);
     }
 
-    public MediaInfo(String str, int i10, String str2, l lVar, long j10, ArrayList arrayList, s sVar, String str3, ArrayList arrayList2, ArrayList arrayList3, String str4, t tVar, long j11, String str5, String str6, String str7, String str8) {
+    public MediaInfo(String str, int i10, String str2, l lVar, long j3, ArrayList arrayList, s sVar, String str3, ArrayList arrayList2, ArrayList arrayList3, String str4, t tVar, long j10, String str5, String str6, String str7, String str8) {
         this.a = str;
         this.b = i10;
         this.c = str2;
         this.d = lVar;
-        this.e = j10;
+        this.e = j3;
         this.f = arrayList;
         this.h = sVar;
         this.n = str3;
         if (str3 != null) {
             try {
-                this.E = new JSONObject(this.n);
+                this.H = new JSONObject(this.n);
             } catch (JSONException unused) {
-                this.E = null;
+                this.H = null;
                 this.n = null;
             }
         } else {
-            this.E = null;
+            this.H = null;
         }
         this.r = arrayList2;
         this.s = arrayList3;
         this.v = str4;
         this.w = tVar;
-        this.x = j11;
+        this.x = j10;
         this.y = str5;
-        this.B = str6;
-        this.C = str7;
-        this.D = str8;
+        this.E = str6;
+        this.F = str7;
+        this.G = str8;
         if (this.a == null && str6 == null && str4 == null) {
             throw new IllegalArgumentException("Either contentID or contentUrl or entity should be set");
         }
     }
 
-    public final JSONObject e() {
+    public final JSONObject b() {
         JSONObject jSONObject = new JSONObject();
         try {
             jSONObject.put("contentId", this.a);
-            jSONObject.putOpt("contentUrl", this.B);
+            jSONObject.putOpt("contentUrl", this.E);
             int i10 = this.b;
             jSONObject.put("streamType", i10 != 1 ? i10 != 2 ? "NONE" : "LIVE" : "BUFFERED");
             String str = this.c;
@@ -101,29 +101,29 @@ public class MediaInfo extends a implements ReflectedParcelable {
             }
             l lVar = this.d;
             if (lVar != null) {
-                jSONObject.put("metadata", lVar.g());
+                jSONObject.put("metadata", lVar.d());
             }
-            long j10 = this.e;
-            if (j10 <= -1) {
+            long j3 = this.e;
+            if (j3 <= -1) {
                 jSONObject.put("duration", JSONObject.NULL);
             } else {
-                Pattern pattern = u5.a.a;
-                jSONObject.put("duration", j10 / 1000.0d);
+                Pattern pattern = g6.a.a;
+                jSONObject.put("duration", j3 / 1000.0d);
             }
             List list = this.f;
             if (list != null) {
                 JSONArray jSONArray = new JSONArray();
                 Iterator it = list.iterator();
                 while (it.hasNext()) {
-                    jSONArray.put(((MediaTrack) it.next()).e());
+                    jSONArray.put(((MediaTrack) it.next()).b());
                 }
                 jSONObject.put("tracks", jSONArray);
             }
             s sVar = this.h;
             if (sVar != null) {
-                jSONObject.put("textTrackStyle", sVar.e());
+                jSONObject.put("textTrackStyle", sVar.b());
             }
-            JSONObject jSONObject2 = this.E;
+            JSONObject jSONObject2 = this.H;
             if (jSONObject2 != null) {
                 jSONObject.put("customData", jSONObject2);
             }
@@ -135,7 +135,7 @@ public class MediaInfo extends a implements ReflectedParcelable {
                 JSONArray jSONArray2 = new JSONArray();
                 Iterator it2 = this.r.iterator();
                 while (it2.hasNext()) {
-                    jSONArray2.put(((b) it2.next()).e());
+                    jSONArray2.put(((b) it2.next()).b());
                 }
                 jSONObject.put("breaks", jSONArray2);
             }
@@ -143,48 +143,31 @@ public class MediaInfo extends a implements ReflectedParcelable {
                 JSONArray jSONArray3 = new JSONArray();
                 Iterator it3 = this.s.iterator();
                 while (it3.hasNext()) {
-                    jSONArray3.put(((q5.a) it3.next()).e());
+                    jSONArray3.put(((c6.a) it3.next()).b());
                 }
                 jSONObject.put("breakClips", jSONArray3);
             }
             t tVar = this.w;
             if (tVar != null) {
-                jSONObject.put("vmapAdsRequest", tVar.e());
+                jSONObject.put("vmapAdsRequest", tVar.b());
             }
-            long j11 = this.x;
-            if (j11 != -1) {
-                Pattern pattern2 = u5.a.a;
-                jSONObject.put("startAbsoluteTime", j11 / 1000.0d);
+            long j10 = this.x;
+            if (j10 != -1) {
+                Pattern pattern2 = g6.a.a;
+                jSONObject.put("startAbsoluteTime", j10 / 1000.0d);
             }
             jSONObject.putOpt("atvEntity", this.y);
-            String str3 = this.C;
+            String str3 = this.F;
             if (str3 != null) {
                 jSONObject.put("hlsSegmentFormat", str3);
             }
-            String str4 = this.D;
+            String str4 = this.G;
             if (str4 != null) {
                 jSONObject.put("hlsVideoSegmentFormat", str4);
             }
         } catch (JSONException unused) {
         }
         return jSONObject;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof MediaInfo)) {
-            return false;
-        }
-        MediaInfo mediaInfo = (MediaInfo) obj;
-        JSONObject jSONObject = this.E;
-        boolean z4 = jSONObject == null;
-        JSONObject jSONObject2 = mediaInfo.E;
-        if (z4 != (jSONObject2 == null)) {
-            return false;
-        }
-        return (jSONObject == null || jSONObject2 == null || c.a(jSONObject, jSONObject2)) && u5.a.d(this.a, mediaInfo.a) && this.b == mediaInfo.b && u5.a.d(this.c, mediaInfo.c) && u5.a.d(this.d, mediaInfo.d) && this.e == mediaInfo.e && u5.a.d(this.f, mediaInfo.f) && u5.a.d(this.h, mediaInfo.h) && u5.a.d(this.r, mediaInfo.r) && u5.a.d(this.s, mediaInfo.s) && u5.a.d(this.v, mediaInfo.v) && u5.a.d(this.w, mediaInfo.w) && this.x == mediaInfo.x && u5.a.d(this.y, mediaInfo.y) && u5.a.d(this.B, mediaInfo.B) && u5.a.d(this.C, mediaInfo.C) && u5.a.d(this.D, mediaInfo.D);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:11:0x00bb A[LOOP:0: B:4:0x0025->B:11:0x00bb, LOOP_END] */
@@ -194,11 +177,11 @@ public class MediaInfo extends a implements ReflectedParcelable {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(JSONObject jSONObject) {
-        long j10;
-        q5.a aVar;
+    public final void c(JSONObject jSONObject) {
+        long j3;
+        c6.a aVar;
         b bVar;
-        long j11 = 1000;
+        long j10 = 1000;
         int i10 = 0;
         if (jSONObject.has("breaks")) {
             JSONArray jSONArray = jSONObject.getJSONArray("breaks");
@@ -206,28 +189,28 @@ public class MediaInfo extends a implements ReflectedParcelable {
             int i11 = 0;
             while (true) {
                 if (i11 >= jSONArray.length()) {
-                    j10 = j11;
+                    j3 = j10;
                     break;
                 }
                 JSONObject jSONObject2 = jSONArray.getJSONObject(i11);
                 if (jSONObject2 != null && jSONObject2.has("id") && jSONObject2.has("position")) {
                     try {
                         String string = jSONObject2.getString("id");
-                        long j12 = jSONObject2.getLong("position");
-                        Pattern pattern = u5.a.a;
-                        long j13 = j12 * j11;
+                        long j11 = jSONObject2.getLong("position");
+                        Pattern pattern = g6.a.a;
+                        long j12 = j11 * j10;
                         boolean optBoolean = jSONObject2.optBoolean("isWatched");
-                        long optLong = jSONObject2.optLong("duration") * j11;
+                        long optLong = jSONObject2.optLong("duration") * j10;
                         JSONArray optJSONArray = jSONObject2.optJSONArray("breakClipIds");
                         String[] strArr = new String[0];
                         if (optJSONArray != null) {
                             strArr = new String[optJSONArray.length()];
-                            j10 = j11;
+                            j3 = j10;
                             for (int i12 = 0; i12 < optJSONArray.length(); i12++) {
                                 try {
                                     strArr[i12] = optJSONArray.getString(i12);
-                                } catch (JSONException e) {
-                                    e = e;
+                                } catch (JSONException e7) {
+                                    e = e7;
                                     String message = e.getMessage();
                                     Locale locale = Locale.ROOT;
                                     Log.d("AdBreakInfo", "Error while creating an AdBreakInfo from JSON: " + message);
@@ -237,12 +220,12 @@ public class MediaInfo extends a implements ReflectedParcelable {
                                 }
                             }
                         } else {
-                            j10 = j11;
+                            j3 = j10;
                         }
-                        bVar = new b(j13, string, optLong, optBoolean, strArr, jSONObject2.optBoolean("isEmbedded"), jSONObject2.optBoolean("expanded"));
-                    } catch (JSONException e6) {
-                        e = e6;
-                        j10 = j11;
+                        bVar = new b(j12, string, optLong, optBoolean, strArr, jSONObject2.optBoolean("isEmbedded"), jSONObject2.optBoolean("expanded"));
+                    } catch (JSONException e10) {
+                        e = e10;
+                        j3 = j10;
                     }
                     if (bVar == null) {
                         arrayList.clear();
@@ -250,10 +233,10 @@ public class MediaInfo extends a implements ReflectedParcelable {
                     } else {
                         arrayList.add(bVar);
                         i11++;
-                        j11 = j10;
+                        j10 = j3;
                     }
                 } else {
-                    j10 = j11;
+                    j3 = j10;
                 }
                 bVar = null;
                 if (bVar == null) {
@@ -261,7 +244,7 @@ public class MediaInfo extends a implements ReflectedParcelable {
             }
             this.r = new ArrayList(arrayList);
         } else {
-            j10 = 1000;
+            j3 = 1000;
         }
         if (jSONObject.has("breakClips")) {
             JSONArray jSONArray2 = jSONObject.getJSONArray("breakClips");
@@ -274,24 +257,24 @@ public class MediaInfo extends a implements ReflectedParcelable {
                 if (jSONObject3 != null && jSONObject3.has("id")) {
                     try {
                         String string2 = jSONObject3.getString("id");
-                        long optLong2 = jSONObject3.optLong("duration") * j10;
-                        String a2 = u5.a.a("clickThroughUrl", jSONObject3);
-                        String a10 = u5.a.a("contentUrl", jSONObject3);
-                        String a11 = u5.a.a("mimeType", jSONObject3);
+                        long optLong2 = jSONObject3.optLong("duration") * j3;
+                        String a2 = g6.a.a("clickThroughUrl", jSONObject3);
+                        String a10 = g6.a.a("contentUrl", jSONObject3);
+                        String a11 = g6.a.a("mimeType", jSONObject3);
                         if (a11 == null) {
-                            a11 = u5.a.a("contentType", jSONObject3);
+                            a11 = g6.a.a("contentType", jSONObject3);
                         }
                         String str = a11;
-                        String a12 = u5.a.a("title", jSONObject3);
+                        String a12 = g6.a.a("title", jSONObject3);
                         JSONObject optJSONObject = jSONObject3.optJSONObject("customData");
-                        String a13 = u5.a.a("contentId", jSONObject3);
-                        String a14 = u5.a.a("posterUrl", jSONObject3);
-                        long intValue = jSONObject3.has("whenSkippable") ? ((Integer) jSONObject3.get("whenSkippable")).intValue() * j10 : -1L;
-                        String a15 = u5.a.a("hlsSegmentFormat", jSONObject3);
+                        String a13 = g6.a.a("contentId", jSONObject3);
+                        String a14 = g6.a.a("posterUrl", jSONObject3);
+                        long intValue = jSONObject3.has("whenSkippable") ? ((Integer) jSONObject3.get("whenSkippable")).intValue() * j3 : -1L;
+                        String a15 = g6.a.a("hlsSegmentFormat", jSONObject3);
                         JSONObject optJSONObject2 = jSONObject3.optJSONObject("vastAdsRequest");
-                        aVar = new q5.a(string2, a12, optLong2, a10, str, a2, (optJSONObject == null || optJSONObject.length() == 0) ? null : optJSONObject.toString(), a13, a14, intValue, a15, optJSONObject2 == null ? null : new t(u5.a.a("adTagUrl", optJSONObject2), u5.a.a("adsResponse", optJSONObject2)));
-                    } catch (JSONException e10) {
-                        String message2 = e10.getMessage();
+                        aVar = new c6.a(string2, a12, optLong2, a10, str, a2, (optJSONObject == null || optJSONObject.length() == 0) ? null : optJSONObject.toString(), a13, a14, intValue, a15, optJSONObject2 == null ? null : new t(g6.a.a("adTagUrl", optJSONObject2), g6.a.a("adsResponse", optJSONObject2)));
+                    } catch (JSONException e11) {
+                        String message2 = e11.getMessage();
                         Locale locale2 = Locale.ROOT;
                         Log.d("AdBreakClipInfo", "Error while creating an AdBreakClipInfo from JSON: " + message2);
                     }
@@ -311,42 +294,59 @@ public class MediaInfo extends a implements ReflectedParcelable {
         }
     }
 
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof MediaInfo)) {
+            return false;
+        }
+        MediaInfo mediaInfo = (MediaInfo) obj;
+        JSONObject jSONObject = this.H;
+        boolean z10 = jSONObject == null;
+        JSONObject jSONObject2 = mediaInfo.H;
+        if (z10 != (jSONObject2 == null)) {
+            return false;
+        }
+        return (jSONObject == null || jSONObject2 == null || c.a(jSONObject, jSONObject2)) && g6.a.d(this.a, mediaInfo.a) && this.b == mediaInfo.b && g6.a.d(this.c, mediaInfo.c) && g6.a.d(this.d, mediaInfo.d) && this.e == mediaInfo.e && g6.a.d(this.f, mediaInfo.f) && g6.a.d(this.h, mediaInfo.h) && g6.a.d(this.r, mediaInfo.r) && g6.a.d(this.s, mediaInfo.s) && g6.a.d(this.v, mediaInfo.v) && g6.a.d(this.w, mediaInfo.w) && this.x == mediaInfo.x && g6.a.d(this.y, mediaInfo.y) && g6.a.d(this.E, mediaInfo.E) && g6.a.d(this.F, mediaInfo.F) && g6.a.d(this.G, mediaInfo.G);
+    }
+
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a, Integer.valueOf(this.b), this.c, this.d, Long.valueOf(this.e), String.valueOf(this.E), this.f, this.h, this.r, this.s, this.v, this.w, Long.valueOf(this.x), this.y, this.C, this.D});
+        return Arrays.hashCode(new Object[]{this.a, Integer.valueOf(this.b), this.c, this.d, Long.valueOf(this.e), String.valueOf(this.H), this.f, this.h, this.r, this.s, this.v, this.w, Long.valueOf(this.x), this.y, this.F, this.G});
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        JSONObject jSONObject = this.E;
+        JSONObject jSONObject = this.H;
         this.n = jSONObject == null ? null : jSONObject.toString();
-        int q10 = f5.q(parcel, 20293);
+        int q6 = e0.q(parcel, 20293);
         String str = this.a;
         if (str == null) {
             str = "";
         }
-        f5.l(parcel, 2, str);
-        f5.s(parcel, 3, 4);
+        e0.l(parcel, 2, str);
+        e0.s(parcel, 3, 4);
         parcel.writeInt(this.b);
-        f5.l(parcel, 4, this.c);
-        f5.k(parcel, 5, this.d, i10);
-        f5.s(parcel, 6, 8);
+        e0.l(parcel, 4, this.c);
+        e0.k(parcel, 5, this.d, i10);
+        e0.s(parcel, 6, 8);
         parcel.writeLong(this.e);
-        f5.p(parcel, 7, this.f);
-        f5.k(parcel, 8, this.h, i10);
-        f5.l(parcel, 9, this.n);
+        e0.p(parcel, 7, this.f);
+        e0.k(parcel, 8, this.h, i10);
+        e0.l(parcel, 9, this.n);
         List list = this.r;
-        f5.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
+        e0.p(parcel, 10, list == null ? null : DesugarCollections.unmodifiableList(list));
         List list2 = this.s;
-        f5.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
-        f5.l(parcel, 12, this.v);
-        f5.k(parcel, 13, this.w, i10);
-        f5.s(parcel, 14, 8);
+        e0.p(parcel, 11, list2 != null ? DesugarCollections.unmodifiableList(list2) : null);
+        e0.l(parcel, 12, this.v);
+        e0.k(parcel, 13, this.w, i10);
+        e0.s(parcel, 14, 8);
         parcel.writeLong(this.x);
-        f5.l(parcel, 15, this.y);
-        f5.l(parcel, 16, this.B);
-        f5.l(parcel, 17, this.C);
-        f5.l(parcel, 18, this.D);
-        f5.r(parcel, q10);
+        e0.l(parcel, 15, this.y);
+        e0.l(parcel, 16, this.E);
+        e0.l(parcel, 17, this.F);
+        e0.l(parcel, 18, this.G);
+        e0.r(parcel, q6);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:105:0x02a5  */
@@ -361,7 +361,7 @@ public class MediaInfo extends a implements ReflectedParcelable {
         int i10;
         int i11;
         int i12;
-        l0 l0Var;
+        o0 o0Var;
         String optString = jSONObject.optString("streamType", "NONE");
         if ("NONE".equals(optString)) {
             this.b = 0;
@@ -372,12 +372,12 @@ public class MediaInfo extends a implements ReflectedParcelable {
         } else {
             this.b = -1;
         }
-        this.c = u5.a.a("contentType", jSONObject);
+        this.c = g6.a.a("contentType", jSONObject);
         if (jSONObject.has("metadata")) {
             JSONObject jSONObject2 = jSONObject.getJSONObject("metadata");
             l lVar = new l(jSONObject2.getInt("metadataType"));
             this.d = lVar;
-            lVar.h(jSONObject2);
+            lVar.e(jSONObject2);
         }
         this.e = -1L;
         if (this.b != 2 && jSONObject.has("duration") && !jSONObject.isNull("duration")) {
@@ -394,7 +394,7 @@ public class MediaInfo extends a implements ReflectedParcelable {
             int i14 = 0;
             while (i14 < jSONArray.length()) {
                 JSONObject jSONObject3 = jSONArray.getJSONObject(i14);
-                long j10 = jSONObject3.getLong("trackId");
+                long j3 = jSONObject3.getLong("trackId");
                 String optString2 = jSONObject3.optString(TeXSymbolParser.TYPE_ATTR);
                 if ("TEXT".equals(optString2)) {
                     i11 = 1;
@@ -403,10 +403,10 @@ public class MediaInfo extends a implements ReflectedParcelable {
                 } else {
                     i11 = "VIDEO".equals(optString2) ? 3 : 0;
                 }
-                String a2 = u5.a.a("trackContentId", jSONObject3);
-                String a10 = u5.a.a("trackContentType", jSONObject3);
-                String a11 = u5.a.a("name", jSONObject3);
-                String a12 = u5.a.a("language", jSONObject3);
+                String a2 = g6.a.a("trackContentId", jSONObject3);
+                String a10 = g6.a.a("trackContentType", jSONObject3);
+                String a11 = g6.a.a("name", jSONObject3);
+                String a12 = g6.a.a("language", jSONObject3);
                 if (jSONObject3.has("subtype")) {
                     String string = jSONObject3.getString("subtype");
                     if ("SUBTITLES".equals(string)) {
@@ -434,17 +434,17 @@ public class MediaInfo extends a implements ReflectedParcelable {
                         int i17 = i16 + 1;
                         int length = objArr.length;
                         if (length < i17) {
-                            objArr = Arrays.copyOf(objArr, z5.a(length, i17));
+                            objArr = Arrays.copyOf(objArr, n5.a(length, i17));
                         }
                         objArr[i16] = optString3;
                         i15++;
                         i16 = i17;
                     }
-                    l0Var = g0.r(i16, objArr);
+                    o0Var = j0.r(i16, objArr);
                 } else {
-                    l0Var = null;
+                    o0Var = null;
                 }
-                arrayList.add(new MediaTrack(j10, i11, a2, a10, a11, a12, i12, l0Var, jSONObject3.optJSONObject("customData")));
+                arrayList.add(new MediaTrack(j3, i11, a2, a10, a11, a12, i12, o0Var, jSONObject3.optJSONObject("customData")));
                 i14++;
                 i13 = 4;
             }
@@ -457,8 +457,8 @@ public class MediaInfo extends a implements ReflectedParcelable {
             JSONObject jSONObject4 = jSONObject.getJSONObject("textTrackStyle");
             s sVar = new s(1.0f, 0, 0, -1, 0, -1, 0, 0, null, -1, -1, null);
             sVar.a = (float) jSONObject4.optDouble("fontScale", 1.0d);
-            sVar.b = s.f(jSONObject4.optString("foregroundColor"));
-            sVar.c = s.f(jSONObject4.optString("backgroundColor"));
+            sVar.b = s.c(jSONObject4.optString("foregroundColor"));
+            sVar.c = s.c(jSONObject4.optString("backgroundColor"));
             if (jSONObject4.has("edgeType")) {
                 String string2 = jSONObject4.getString("edgeType");
                 if ("NONE".equals(string2)) {
@@ -473,7 +473,7 @@ public class MediaInfo extends a implements ReflectedParcelable {
                     sVar.d = 4;
                 }
             }
-            sVar.e = s.f(jSONObject4.optString("edgeColor"));
+            sVar.e = s.c(jSONObject4.optString("edgeColor"));
             if (jSONObject4.has("windowType")) {
                 String string3 = jSONObject4.getString("windowType");
                 if ("NONE".equals(string3)) {
@@ -483,11 +483,11 @@ public class MediaInfo extends a implements ReflectedParcelable {
                 } else if ("ROUNDED_CORNERS".equals(string3)) {
                     i10 = 2;
                     sVar.f = 2;
-                    sVar.h = s.f(jSONObject4.optString("windowColor"));
+                    sVar.h = s.c(jSONObject4.optString("windowColor"));
                     if (sVar.f == i10) {
                         sVar.n = jSONObject4.optInt("windowRoundedCornerRadius", 0);
                     }
-                    sVar.r = u5.a.a("fontFamily", jSONObject4);
+                    sVar.r = g6.a.a("fontFamily", jSONObject4);
                     if (jSONObject4.has("fontGenericFamily")) {
                         String string4 = jSONObject4.getString("fontGenericFamily");
                         if ("SANS_SERIF".equals(string4)) {
@@ -523,10 +523,10 @@ public class MediaInfo extends a implements ReflectedParcelable {
                 }
             }
             i10 = 2;
-            sVar.h = s.f(jSONObject4.optString("windowColor"));
+            sVar.h = s.c(jSONObject4.optString("windowColor"));
             if (sVar.f == i10) {
             }
-            sVar.r = u5.a.a("fontFamily", jSONObject4);
+            sVar.r = g6.a.a("fontFamily", jSONObject4);
             if (jSONObject4.has("fontGenericFamily")) {
             }
             if (jSONObject4.has("fontStyle")) {
@@ -536,12 +536,12 @@ public class MediaInfo extends a implements ReflectedParcelable {
         } else {
             this.h = null;
         }
-        f(jSONObject);
-        this.E = jSONObject.optJSONObject("customData");
-        this.v = u5.a.a("entity", jSONObject);
-        this.y = u5.a.a("atvEntity", jSONObject);
+        c(jSONObject);
+        this.H = jSONObject.optJSONObject("customData");
+        this.v = g6.a.a("entity", jSONObject);
+        this.y = g6.a.a("atvEntity", jSONObject);
         JSONObject optJSONObject = jSONObject.optJSONObject("vmapAdsRequest");
-        this.w = optJSONObject != null ? new t(u5.a.a("adTagUrl", optJSONObject), u5.a.a("adsResponse", optJSONObject)) : null;
+        this.w = optJSONObject != null ? new t(g6.a.a("adTagUrl", optJSONObject), g6.a.a("adsResponse", optJSONObject)) : null;
         if (jSONObject.has("startAbsoluteTime") && !jSONObject.isNull("startAbsoluteTime")) {
             double optDouble2 = jSONObject.optDouble("startAbsoluteTime");
             if (!Double.isNaN(optDouble2) && !Double.isInfinite(optDouble2) && optDouble2 >= d) {
@@ -549,9 +549,9 @@ public class MediaInfo extends a implements ReflectedParcelable {
             }
         }
         if (jSONObject.has("contentUrl")) {
-            this.B = jSONObject.optString("contentUrl");
+            this.E = jSONObject.optString("contentUrl");
         }
-        this.C = u5.a.a("hlsSegmentFormat", jSONObject);
-        this.D = u5.a.a("hlsVideoSegmentFormat", jSONObject);
+        this.F = g6.a.a("hlsSegmentFormat", jSONObject);
+        this.G = g6.a.a("hlsVideoSegmentFormat", jSONObject);
     }
 }

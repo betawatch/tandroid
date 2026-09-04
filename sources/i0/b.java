@@ -1,64 +1,162 @@
 package i0;
 
-import android.graphics.Insets;
-import com.google.firebase.messaging.p;
+import android.graphics.Bitmap;
+import b2.q;
+import b2.z0;
+import e2.m;
+import e2.n;
+import e2.x;
+import i2.o;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b {
-    public static final b e = new b(0, 0, 0, 0);
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
+public final /* synthetic */ class b implements d9.e, m, a2, hh.b, n {
+    public final /* synthetic */ int a;
 
-    public b(int i10, int i11, int i12, int i13) {
+    public /* synthetic */ b(int i10) {
         this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
     }
 
-    public static b a(b bVar, b bVar2) {
-        return b(Math.max(bVar.a, bVar2.a), Math.max(bVar.b, bVar2.b), Math.max(bVar.c, bVar2.c), Math.max(bVar.d, bVar2.d));
-    }
-
-    public static b b(int i10, int i11, int i12, int i13) {
-        return (i10 == 0 && i11 == 0 && i12 == 0 && i13 == 0) ? e : new b(i10, i11, i12, i13);
-    }
-
-    public static b c(Insets insets) {
-        int i10;
-        int i11;
-        int i12;
-        int i13;
-        i10 = insets.left;
-        i11 = insets.top;
-        i12 = insets.right;
-        i13 = insets.bottom;
-        return b(i10, i11, i12, i13);
-    }
-
-    public final Insets d() {
-        return p.d(this.a, this.b, this.c, this.d);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // hh.b
+    public Object a(Bitmap bitmap) {
+        switch (this.a) {
+            case 9:
+                if (bitmap == null || bitmap.isRecycled()) {
+                    return null;
+                }
+                Bitmap stackBlurBitmapWithScaleFactor = Utilities.stackBlurBitmapWithScaleFactor(bitmap, Math.max(bitmap.getWidth() / 90.0f, bitmap.getHeight() / 120.0f));
+                stackBlurBitmapWithScaleFactor.setHasAlpha(false);
+                return stackBlurBitmapWithScaleFactor;
+            case 10:
+                int i10 = 0;
+                if (bitmap != null && !bitmap.isRecycled()) {
+                    int height = bitmap.getHeight();
+                    i10 = Utilities.averageBitmapColor(bitmap, 0, (height * 9) / 10, bitmap.getWidth(), height);
+                }
+                return Integer.valueOf(i10);
+            default:
+                int i11 = 0;
+                if (bitmap != null && !bitmap.isRecycled()) {
+                    i11 = Utilities.averageBitmapColor(bitmap, 0, 0, bitmap.getWidth(), bitmap.getHeight() / 10);
+                }
+                return Integer.valueOf(i11);
         }
-        if (obj == null || b.class != obj.getClass()) {
-            return false;
+    }
+
+    @Override // d9.e, i5.e
+    public Object apply(Object obj) {
+        return new j2.f((x) obj);
+    }
+
+    @Override // e2.n
+    public void c(Object obj, q qVar) {
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(b2 b2Var, int i10) {
+        switch (this.a) {
+            case 7:
+                b2Var.dismiss();
+                break;
+            default:
+                b2Var.dismiss();
+                break;
         }
-        b bVar = (b) obj;
-        return this.d == bVar.d && this.a == bVar.a && this.c == bVar.c && this.b == bVar.b;
     }
 
-    public final int hashCode() {
-        return (((((this.a * 31) + this.b) * 31) + this.c) * 31) + this.d;
+    @Override // e2.m
+    public void invoke(Object obj) {
+        switch (this.a) {
+            case 5:
+                ((z0) obj).onPlayerError(new o(2, new androidx.car.app.j("Player release timed out."), 1003));
+                break;
+            case 6:
+                ((z0) obj).onRenderedFirstFrame();
+                break;
+            case 7:
+            case 8:
+            case 9:
+            case 10:
+            case 11:
+            case 25:
+            default:
+                ((j2.b) obj).getClass();
+                break;
+            case 12:
+                ((j2.b) obj).getClass();
+                break;
+            case 13:
+                ((j2.b) obj).getClass();
+                break;
+            case 14:
+                ((j2.b) obj).getClass();
+                break;
+            case 15:
+                ((j2.b) obj).getClass();
+                break;
+            case 16:
+                ((j2.b) obj).getClass();
+                break;
+            case 17:
+                ((j2.b) obj).getClass();
+                break;
+            case 18:
+                ((j2.b) obj).getClass();
+                break;
+            case 19:
+                ((j2.b) obj).getClass();
+                break;
+            case 20:
+                ((j2.b) obj).getClass();
+                break;
+            case 21:
+                ((j2.b) obj).getClass();
+                break;
+            case 22:
+                ((j2.b) obj).getClass();
+                break;
+            case 23:
+                ((j2.b) obj).getClass();
+                break;
+            case 24:
+                ((j2.b) obj).getClass();
+                break;
+            case 26:
+                ((j2.b) obj).getClass();
+                break;
+            case 27:
+                ((j2.b) obj).getClass();
+                break;
+            case 28:
+                ((j2.b) obj).getClass();
+                break;
+        }
     }
 
-    public final String toString() {
-        return "Insets{left=" + this.a + ", top=" + this.b + ", right=" + this.c + ", bottom=" + this.d + '}';
+    public /* synthetic */ b(j2.a aVar, int i10, int i11) {
+        this.a = i11;
+    }
+
+    public /* synthetic */ b(j2.a aVar, int i10, int i11, boolean z10) {
+        this.a = 24;
+    }
+
+    public /* synthetic */ b(j2.a aVar, Object obj, int i10) {
+        this.a = i10;
+    }
+
+    public /* synthetic */ b(j2.a aVar, String str, long j3, long j10) {
+        this.a = 18;
+    }
+
+    public /* synthetic */ b(j2.a aVar, boolean z10) {
+        this.a = 17;
+    }
+
+    public /* synthetic */ b(j2.a aVar, boolean z10, int i10, int i11) {
+        this.a = i11;
     }
 }

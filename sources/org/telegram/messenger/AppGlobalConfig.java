@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.concurrent.TimeUnit;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class AppGlobalConfig {
     public final ConfigInt aicomposeToneExamplesNum;
@@ -75,11 +75,11 @@ public class AppGlobalConfig {
     public final ConfigLong tonSuggestedPostAmountMin = ofLong("ton_suggested_post_amount_min", 10000000);
     public final ConfigLong tonSuggestedPostAmountMax = ofLong("ton_suggested_post_amount_max", 10000000000000L);
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ConfigBoolean {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+        /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
         public static class Internal implements ConfigInternal {
             private final boolean defaultValue;
             private final String name;
@@ -87,12 +87,12 @@ public class AppGlobalConfig {
 
             @Override // org.telegram.messenger.AppGlobalConfig.ConfigInternal
             public boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue) {
-                boolean z4;
-                if (!(jSONValue instanceof TLRPC.TL_jsonBool) || (z4 = ((TLRPC.TL_jsonBool) jSONValue).value) == this.value) {
+                boolean z10;
+                if (!(jSONValue instanceof TLRPC.TL_jsonBool) || (z10 = ((TLRPC.TL_jsonBool) jSONValue).value) == this.value) {
                     return false;
                 }
-                this.value = z4;
-                editor.putBoolean(this.name, z4);
+                this.value = z10;
+                editor.putBoolean(this.name, z10);
                 return true;
             }
 
@@ -101,9 +101,9 @@ public class AppGlobalConfig {
                 this.value = sharedPreferences.getBoolean(this.name, this.defaultValue);
             }
 
-            private Internal(String str, boolean z4) {
+            private Internal(String str, boolean z10) {
                 this.name = str;
-                this.defaultValue = z4;
+                this.defaultValue = z10;
             }
         }
 
@@ -111,16 +111,16 @@ public class AppGlobalConfig {
             return this.handler.value;
         }
 
-        private ConfigBoolean(String str, boolean z4) {
-            this.handler = new Internal(str, z4);
+        private ConfigBoolean(String str, boolean z10) {
+            this.handler = new Internal(str, z10);
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ConfigDouble {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+        /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
         public static class Internal implements ConfigInternal {
             private final double defaultValue;
             private final String name;
@@ -160,11 +160,11 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ConfigInt {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+        /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
         public static class Internal implements ConfigInternal {
             private final int defaultValue;
             private final String name;
@@ -205,18 +205,18 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface ConfigInternal {
         boolean apply(SharedPreferences.Editor editor, TLRPC.JSONValue jSONValue);
 
         void load(SharedPreferences sharedPreferences);
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ConfigLong {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+        /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
         public static class Internal implements ConfigInternal {
             private final long defaultValue;
             private final String name;
@@ -231,9 +231,9 @@ public class AppGlobalConfig {
                 if (d == this.value) {
                     return false;
                 }
-                long j10 = (long) d;
-                this.value = j10;
-                editor.putLong(this.name, j10);
+                long j3 = (long) d;
+                this.value = j3;
+                editor.putLong(this.name, j3);
                 return true;
             }
 
@@ -242,9 +242,9 @@ public class AppGlobalConfig {
                 this.value = sharedPreferences.getLong(this.name, this.defaultValue);
             }
 
-            private Internal(String str, long j10) {
+            private Internal(String str, long j3) {
                 this.name = str;
-                this.defaultValue = j10;
+                this.defaultValue = j3;
             }
         }
 
@@ -252,16 +252,16 @@ public class AppGlobalConfig {
             return this.handler.value;
         }
 
-        private ConfigLong(String str, long j10) {
-            this.handler = new Internal(str, j10);
+        private ConfigLong(String str, long j3) {
+            this.handler = new Internal(str, j3);
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ConfigString {
         private final Internal handler;
 
-        /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+        /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
         public static class Internal implements ConfigInternal {
             private final String defaultValue;
             private final String name;
@@ -306,7 +306,7 @@ public class AppGlobalConfig {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ConfigTime {
         private final ConfigLong.Internal handler;
         private final TimeUnit timeUnit;
@@ -315,8 +315,8 @@ public class AppGlobalConfig {
             return timeUnit.convert(this.handler.value, this.timeUnit);
         }
 
-        private ConfigTime(String str, TimeUnit timeUnit, long j10) {
-            this.handler = new ConfigLong.Internal(str, j10);
+        private ConfigTime(String str, TimeUnit timeUnit, long j3) {
+            this.handler = new ConfigLong.Internal(str, j3);
             this.timeUnit = timeUnit;
         }
     }
@@ -385,8 +385,8 @@ public class AppGlobalConfig {
         return MessagesController.getInstance(i10).config;
     }
 
-    private ConfigBoolean ofBoolean(String str, boolean z4) {
-        ConfigBoolean configBoolean = new ConfigBoolean(str, z4);
+    private ConfigBoolean ofBoolean(String str, boolean z10) {
+        ConfigBoolean configBoolean = new ConfigBoolean(str, z10);
         this.map.put(str, configBoolean.handler);
         return configBoolean;
     }
@@ -403,8 +403,8 @@ public class AppGlobalConfig {
         return configInt;
     }
 
-    private ConfigLong ofLong(String str, long j10) {
-        ConfigLong configLong = new ConfigLong(str, j10);
+    private ConfigLong ofLong(String str, long j3) {
+        ConfigLong configLong = new ConfigLong(str, j3);
         this.map.put(str, configLong.handler);
         return configLong;
     }
@@ -415,23 +415,23 @@ public class AppGlobalConfig {
         return configString;
     }
 
-    private ConfigTime ofTime(String str, long j10, TimeUnit timeUnit) {
-        ConfigTime configTime = new ConfigTime(str, timeUnit, j10);
+    private ConfigTime ofTime(String str, long j3, TimeUnit timeUnit) {
+        ConfigTime configTime = new ConfigTime(str, timeUnit, j3);
         this.map.put(str, configTime.handler);
         return configTime;
     }
 
     public boolean apply(SharedPreferences.Editor editor, TLRPC.TL_jsonObject tL_jsonObject) {
         int size = tL_jsonObject.value.size();
-        boolean z4 = false;
+        boolean z10 = false;
         for (int i10 = 0; i10 < size; i10++) {
             TLRPC.TL_jsonObjectValue tL_jsonObjectValue = tL_jsonObject.value.get(i10);
             ConfigInternal configInternal = this.map.get(tL_jsonObjectValue.key);
             if (configInternal != null) {
-                z4 |= configInternal.apply(editor, tL_jsonObjectValue.value);
+                z10 |= configInternal.apply(editor, tL_jsonObjectValue.value);
             }
         }
-        return z4;
+        return z10;
     }
 
     public void load(SharedPreferences sharedPreferences) {
@@ -439,8 +439,8 @@ public class AppGlobalConfig {
         while (it.hasNext()) {
             try {
                 it.next().load(sharedPreferences);
-            } catch (ClassCastException e) {
-                FileLog.e(e);
+            } catch (ClassCastException e7) {
+                FileLog.e(e7);
             }
         }
     }

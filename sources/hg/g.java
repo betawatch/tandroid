@@ -1,133 +1,101 @@
 package hg;
 
-import android.text.TextUtils;
-import android.view.View;
-import cg.n;
-import gg.i2;
-import org.telegram.messenger.DialogObject;
+import j$.util.Objects;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.mq;
+import org.telegram.ui.Components.hl0;
+import org.telegram.ui.Components.tx;
+import org.telegram.ui.j71;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class g extends bg.b {
-    public TLRPC.User c;
-    public TLRPC.InputPeer d;
-    public TLRPC.Chat e;
-    public TLRPC.TL_help_country f;
-    public CharSequence g;
-    public String h;
-    public int i;
-    public int j;
-    public boolean k;
-    public int l;
-    public n m;
-    public n n;
-    public i2 o;
-    public i2 p;
-    public View q;
-    public mq r;
+public final class g extends s4.o {
+    public final /* synthetic */ int b;
+    public ArrayList c;
+    public Object d;
 
-    public g(int i10, boolean z4) {
-        super(i10, z4);
-        this.l = -1;
+    public /* synthetic */ g() {
+        this.b = 4;
     }
 
-    public static g b(CharSequence charSequence) {
-        g gVar = new g(8, false);
-        gVar.g = charSequence;
-        return gVar;
-    }
-
-    public static g c(TLRPC.User user, boolean z4) {
-        g gVar = new g(3, true);
-        gVar.c = user;
-        gVar.d = null;
-        gVar.e = null;
-        gVar.k = z4;
-        return gVar;
-    }
-
-    @Override // bg.b
-    public final boolean a(bg.b bVar) {
-        if (this != bVar) {
-            if (g.class == bVar.getClass()) {
-                g gVar = (g) bVar;
-                if (this.k == gVar.k) {
-                    if (this.a == 8) {
-                        if (TextUtils.equals(this.h, gVar.h)) {
-                            if ((this.m == null) == (gVar.m == null)) {
-                            }
-                        }
-                    }
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        switch (this.b) {
+            case 0:
+                return ((k) ((m) this.d).N.get(i10)).a == ((k) this.c.get(i11)).a;
+            case 1:
+                return true;
+            case 2:
+                return b(i10, i11);
+            case 3:
+                return true;
+            default:
+                pg.a aVar = (pg.a) this.c.get(i10);
+                pg.a aVar2 = (pg.a) ((ArrayList) this.d).get(i11);
+                if (aVar.a != aVar2.a) {
+                    return false;
                 }
-            }
-            return false;
+                return aVar.a(aVar2);
         }
-        return true;
     }
 
-    public final boolean equals(Object obj) {
-        long peerDialogId;
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || g.class != obj.getClass()) {
-            return false;
-        }
-        g gVar = (g) obj;
-        int i10 = this.a;
-        if (i10 != gVar.a) {
-            return false;
-        }
-        if (i10 == -1 && this.l != gVar.l) {
-            return false;
-        }
-        if (i10 == 3) {
-            TLRPC.User user = this.c;
-            long j10 = 0;
-            if (user != null) {
-                peerDialogId = user.id;
-            } else {
-                TLRPC.Chat chat = this.e;
-                if (chat != null) {
-                    peerDialogId = -chat.id;
-                } else {
-                    TLRPC.InputPeer inputPeer = this.d;
-                    peerDialogId = inputPeer != null ? DialogObject.getPeerDialogId(inputPeer) : 0L;
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        TLRPC.TL_contact tL_contact;
+        TLRPC.TL_contact tL_contact2;
+        TLRPC.RecentMeUrl recentMeUrl;
+        String str;
+        switch (this.b) {
+            case 0:
+                k kVar = (k) ((m) this.d).N.get(i10);
+                k kVar2 = (k) this.c.get(i11);
+                TLRPC.Dialog dialog = kVar.c;
+                int i12 = kVar.a;
+                int i13 = kVar2.a;
+                TLRPC.Dialog dialog2 = kVar2.c;
+                return i12 == i13 && (i12 != 0 ? i12 != 14 ? i12 != 4 ? i12 != 6 ? i12 != 5 ? i12 != 10 : kVar.j == kVar2.j : !((tL_contact = kVar.e) == null || (tL_contact2 = kVar2.e) == null || tL_contact.user_id != tL_contact2.user_id) : !((recentMeUrl = kVar.d) == null || kVar2.d == null || (str = recentMeUrl.url) == null || !str.equals(str)) : dialog != null && dialog2 != null && dialog.id == dialog2.id && dialog.isFolder == dialog2.isFolder : dialog != null && dialog2 != null && dialog.id == dialog2.id && kVar.h == kVar2.h && kVar.f == kVar2.f && kVar.g == kVar2.g);
+            case 1:
+                return ((Integer) this.c.get(i10)).equals(((tx) this.d).n.get(i11));
+            case 2:
+                return Objects.equals(this.c.get(i10), ((hl0) this.d).n.get(i11));
+            case 3:
+                return ((Long) this.c.get(i10)).equals(((j71) this.d).v0.get(i11));
+            default:
+                pg.a aVar = (pg.a) this.c.get(i10);
+                pg.a aVar2 = (pg.a) ((ArrayList) this.d).get(i11);
+                if (aVar.a != aVar2.a) {
+                    return false;
                 }
-            }
-            TLRPC.User user2 = gVar.c;
-            if (user2 != null) {
-                j10 = user2.id;
-            } else {
-                TLRPC.Chat chat2 = gVar.e;
-                if (chat2 != null) {
-                    j10 = -chat2.id;
-                } else {
-                    TLRPC.InputPeer inputPeer2 = gVar.d;
-                    if (inputPeer2 != null) {
-                        j10 = DialogObject.getPeerDialogId(inputPeer2);
-                    }
-                }
-            }
-            if (peerDialogId != j10) {
-                return false;
-            }
+                return aVar.equals(aVar2);
         }
-        int i11 = this.a;
-        if (i11 == 6 && this.f != gVar.f) {
-            return false;
+    }
+
+    @Override // s4.o
+    public final int d() {
+        switch (this.b) {
+            case 0:
+                return this.c.size();
+            case 1:
+                return ((tx) this.d).n.size();
+            case 2:
+                return ((hl0) this.d).n.size();
+            case 3:
+                return ((j71) this.d).v0.size();
+            default:
+                return ((ArrayList) this.d).size();
         }
-        if (i11 == 7 && !TextUtils.equals(this.g, gVar.g)) {
-            return false;
+    }
+
+    @Override // s4.o
+    public final int e() {
+        switch (this.b) {
         }
-        if (this.a == 8 && !TextUtils.equals(this.g, gVar.g)) {
-            return false;
-        }
-        if (this.a != 9 || (TextUtils.equals(this.g, gVar.g) && this.i == gVar.i && this.j == gVar.j)) {
-            return this.a != 10 || this.q == gVar.q;
-        }
-        return false;
+        return this.c.size();
+    }
+
+    public /* synthetic */ g(Object obj, ArrayList arrayList, int i10) {
+        this.b = i10;
+        this.d = obj;
+        this.c = arrayList;
     }
 }

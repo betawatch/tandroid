@@ -1,47 +1,36 @@
 package me;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import z9.d;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final Pattern a = Pattern.compile("[\\\\&]");
-    public static final Pattern b = Pattern.compile("\\\\[!\"#$%&'()*+,./:;<=>?@\\[\\\\\\]^_`{|}~-]|&(?:#x[a-f0-9]{1,6}|#[0-9]{1,7}|[a-z][a-z0-9]{1,31});", 2);
-    public static final Pattern c;
-    public static final d d;
+public interface a {
+    boolean forceEnableVibration();
 
-    static {
-        Pattern.compile("(%[a-fA-F0-9]{0,2}|[^:/?#@!$&'()*+,;=a-zA-Z0-9\\-._~])");
-        c = Pattern.compile("[ \t\r\n]+");
-        d = new d(12);
-    }
+    long getLongPressDuration();
 
-    public static String a(String str) {
-        if (!a.matcher(str).find()) {
-            return str;
-        }
-        Matcher matcher = b.matcher(str);
-        if (!matcher.find()) {
-            return str;
-        }
-        StringBuilder sb = new StringBuilder(str.length() + 16);
-        int i10 = 0;
-        do {
-            sb.append((CharSequence) str, i10, matcher.start());
-            String group = matcher.group();
-            d.getClass();
-            if (group.charAt(0) == '\\') {
-                sb.append((CharSequence) group, 1, group.length());
-            } else {
-                sb.append(b.a(group));
-            }
-            i10 = matcher.end();
-        } while (matcher.find());
-        if (i10 != str.length()) {
-            sb.append((CharSequence) str, i10, str.length());
-        }
-        return sb.toString();
-    }
+    boolean ignoreHapticFeedbackSettings(float f7, float f10);
+
+    boolean needCancelTouchBySlopMove();
+
+    boolean needClickAt(View view, float f7, float f10);
+
+    boolean needLongPress(float f7, float f10);
+
+    void onClickAt(View view, float f7, float f10);
+
+    void onClickTouchDown(View view, float f7, float f10);
+
+    void onClickTouchMove(View view, float f7, float f10);
+
+    void onClickTouchUp(View view, float f7, float f10);
+
+    void onLongPressCancelled(View view, float f7, float f10);
+
+    void onLongPressFinish(View view, float f7, float f10);
+
+    void onLongPressMove(View view, MotionEvent motionEvent, float f7, float f10, float f11, float f12);
+
+    boolean onLongPressRequestedAt(View view, float f7, float f10);
 }

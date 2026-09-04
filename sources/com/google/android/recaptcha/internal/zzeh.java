@@ -1,18 +1,17 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
-import f0.f;
-import k7.o7;
-import k7.p7;
-import kotlin.jvm.internal.j;
+import gd.c;
+import gd.g;
+import ie.a;
+import ie.d;
+import ie.e;
+import kotlin.jvm.internal.i;
 import org.telegram.tgnet.TLObject;
-import sc.c;
-import sc.g;
-import ud.a;
-import ud.d;
-import ud.e;
+import v7.s7;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzeh {
     private final Application zza;
@@ -23,26 +22,26 @@ public final class zzeh {
     public zzeh(Application application) {
         this.zza = application;
         int i10 = zzby.zza;
-        this.zzd = o7.a(zzef.zza);
+        this.zzd = s7.a(zzef.zza);
         zzdp.zza(application);
     }
 
-    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j10, zzdw zzdwVar, zzdq zzdqVar, uc.c cVar, int i10, Object obj) {
+    public static /* synthetic */ Object zzd(zzeh zzehVar, String str, long j3, zzdw zzdwVar, zzdq zzdqVar, id.c cVar, int i10, Object obj) {
         if ((i10 & 8) != 0) {
             zzdqVar = zzdq.zza;
         }
         zzdq zzdqVar2 = zzdqVar;
         if ((i10 & 2) != 0) {
-            j10 = 10000;
+            j3 = 10000;
         }
-        return zzehVar.zzc(str, j10, null, zzdqVar2, cVar);
+        return zzehVar.zzc(str, j3, null, zzdqVar2, cVar);
     }
 
-    public static final /* synthetic */ void zzf(zzeh zzehVar, long j10) {
-        if (j10 < 5000) {
+    public static final /* synthetic */ void zzf(zzeh zzehVar, long j3) {
+        if (j3 < 5000) {
             throw new zzcg(zzce.zzj, zzcd.zzI, null, null, 12, null);
         }
-        if (f.b(zzehVar.zza, "android.permission.INTERNET") != 0) {
+        if (f0.e.b(zzehVar.zza, "android.permission.INTERNET") != 0) {
             throw new zzcg(zzce.zzc, zzcd.zzao, null, null, 12, null);
         }
     }
@@ -59,14 +58,14 @@ public final class zzeh {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object zzc(String str, long j10, zzdw zzdwVar, zzdq zzdqVar, uc.c cVar) {
+    public final Object zzc(String str, long j3, zzdw zzdwVar, zzdq zzdqVar, id.c cVar) {
         zzea zzeaVar;
         Object obj;
-        vc.a aVar;
+        jd.a aVar;
         int i10;
         String str2;
         zzdq zzdqVar2;
-        long j11;
+        long j10;
         Object obj2;
         Object obj3;
         try {
@@ -77,10 +76,10 @@ public final class zzeh {
                     zzeaVar.zzg = i11 - TLObject.FLAG_31;
                     zzea zzeaVar2 = zzeaVar;
                     obj = zzeaVar2.zze;
-                    aVar = vc.a.a;
+                    aVar = jd.a.a;
                     i10 = zzeaVar2.zzg;
                     if (i10 != 0) {
-                        p7.b(obj);
+                        t7.b(obj);
                         a aVar2 = this.zzb;
                         str2 = str;
                         zzeaVar2.zza = str2;
@@ -88,8 +87,8 @@ public final class zzeh {
                         zzdqVar2 = zzdqVar;
                         zzeaVar2.zzh = zzdqVar2;
                         zzeaVar2.zzc = aVar2;
-                        j11 = j10;
-                        zzeaVar2.zzd = j11;
+                        j10 = j3;
+                        zzeaVar2.zzd = j10;
                         zzeaVar2.zzg = 1;
                         d dVar = (d) aVar2;
                         if (dVar.d(zzeaVar2) != aVar) {
@@ -103,7 +102,7 @@ public final class zzeh {
                         }
                         obj3 = (a) zzeaVar2.zza;
                         try {
-                            p7.b(obj);
+                            t7.b(obj);
                             zzeq zzeqVar = (zzeq) obj;
                             ((d) obj3).e(null);
                             return zzeqVar;
@@ -113,17 +112,17 @@ public final class zzeh {
                             throw th;
                         }
                     }
-                    long j12 = zzeaVar2.zzd;
+                    long j11 = zzeaVar2.zzd;
                     Object obj4 = (a) zzeaVar2.zzc;
                     zzdq zzdqVar3 = zzeaVar2.zzh;
                     String str3 = (String) zzeaVar2.zza;
-                    p7.b(obj);
+                    t7.b(obj);
                     obj2 = obj4;
                     zzdqVar2 = zzdqVar3;
                     str2 = str3;
-                    j11 = j12;
-                    int i12 = !j.a(zzdqVar2, zzdq.zza) ? 3 : j.a(zzdqVar2, zzdq.zzb) ? 4 : 2;
-                    zzed zzedVar = new zzed(this, str2, null, zzdqVar2, j11, null);
+                    j10 = j11;
+                    int i12 = !i.a(zzdqVar2, zzdq.zza) ? 3 : i.a(zzdqVar2, zzdq.zzb) ? 4 : 2;
+                    zzed zzedVar = new zzed(this, str2, null, zzdqVar2, j10, null);
                     zzeaVar2.zza = obj2;
                     zzeaVar2.zzb = null;
                     zzeaVar2.zzh = null;
@@ -139,9 +138,9 @@ public final class zzeh {
                     return aVar;
                 }
             }
-            if (!j.a(zzdqVar2, zzdq.zza)) {
+            if (!i.a(zzdqVar2, zzdq.zza)) {
             }
-            zzed zzedVar2 = new zzed(this, str2, null, zzdqVar2, j11, null);
+            zzed zzedVar2 = new zzed(this, str2, null, zzdqVar2, j10, null);
             zzeaVar2.zza = obj2;
             zzeaVar2.zzb = null;
             zzeaVar2.zzh = null;
@@ -160,7 +159,7 @@ public final class zzeh {
         zzeaVar = new zzea(this, cVar);
         zzea zzeaVar22 = zzeaVar;
         obj = zzeaVar22.zze;
-        aVar = vc.a.a;
+        aVar = jd.a.a;
         i10 = zzeaVar22.zzg;
         if (i10 != 0) {
         }

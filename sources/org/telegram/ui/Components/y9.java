@@ -2,95 +2,127 @@ package org.telegram.ui.Components;
 
 import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.ColorFilter;
+import android.graphics.PorterDuff;
 import android.graphics.Rect;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.SharedConfig;
+import android.graphics.drawable.Drawable;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class y9 extends FrameLayout {
-    public final qv0 a;
-    public Paint b;
-    public int c;
-    public final boolean d;
-    public final boolean e;
-    public final Rect f;
+public final class y9 extends Drawable implements Drawable.Callback {
+    public static int[] s;
+    public final Context a;
+    public final p6 b;
+    public Drawable c;
+    public Drawable d;
+    public int e;
+    public int f;
+    public int h;
+    public int n;
+    public int r;
 
-    public y9(Context context, qv0 qv0Var) {
-        super(context);
-        this.c = 0;
-        this.d = true;
-        this.e = true;
-        this.f = new Rect();
-        this.a = qv0Var;
+    public y9(Context context) {
+        this.a = context;
+        p6 p6Var = new p6(false, false, false, false);
+        this.b = p6Var;
+        p6Var.u(AndroidUtilities.getTypeface("fonts/rcondensedbold.ttf"));
+        p6Var.k(0.2f, 160L, pr.h);
+        p6Var.t(AndroidUtilities.dp(10.0f));
+        p6Var.b = 17;
+        p6Var.setCallback(this);
+        p6Var.N = true;
+        if (s != null) {
+            return;
+        }
+        s = new int[]{R.drawable.profile_level1_inner, R.drawable.profile_level1_outer, R.drawable.profile_level2_inner, R.drawable.profile_level2_outer, R.drawable.profile_level3_inner, R.drawable.profile_level3_outer, R.drawable.profile_level4_inner, R.drawable.profile_level4_outer, R.drawable.profile_level5_inner, R.drawable.profile_level5_outer, R.drawable.profile_level6_inner, R.drawable.profile_level6_outer, R.drawable.profile_level7_inner, R.drawable.profile_level7_outer, R.drawable.profile_level8_inner, R.drawable.profile_level8_outer, R.drawable.profile_level9_inner, R.drawable.profile_level9_outer, R.drawable.profile_level10_inner, R.drawable.profile_level10_outer, R.drawable.profile_level20_inner, R.drawable.profile_level20_outer, R.drawable.profile_level30_inner, R.drawable.profile_level30_outer, R.drawable.profile_level40_inner, R.drawable.profile_level40_outer, R.drawable.profile_level50_inner, R.drawable.profile_level50_outer, R.drawable.profile_level60_inner, R.drawable.profile_level60_outer, R.drawable.profile_level70_inner, R.drawable.profile_level70_outer, R.drawable.profile_level80_inner, R.drawable.profile_level80_outer, R.drawable.profile_level90_inner, R.drawable.profile_level90_outer, R.drawable.profile_level_minus_inner, R.drawable.profile_level_minus_outer};
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        Canvas canvas2;
-        if (SharedConfig.chatBlurEnabled() && this.a != null && this.e && this.c != 0) {
-            if (this.b == null) {
-                this.b = new Paint();
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        Drawable drawable = this.d;
+        if (drawable == null || this.c == null) {
+            return;
+        }
+        drawable.draw(canvas);
+        this.c.draw(canvas);
+        canvas.save();
+        canvas.translate(getBounds().exactCenterX(), getBounds().exactCenterY());
+        this.b.draw(canvas);
+        canvas.restore();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(24.0f);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return 0;
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        invalidateSelf();
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void onBoundsChange(Rect rect) {
+        Drawable drawable = this.c;
+        if (drawable != null) {
+            drawable.setBounds(getBounds());
+        }
+        Drawable drawable2 = this.d;
+        if (drawable2 != null) {
+            drawable2.setBounds(getBounds());
+        }
+    }
+
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j3) {
+        scheduleSelf(runnable, j3);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        int k10 = i0.a.k(this.e, i10);
+        if (this.e != k10) {
+            this.e = k10;
+            Drawable drawable = this.c;
+            if (drawable != null) {
+                drawable.setColorFilter(k10, PorterDuff.Mode.MULTIPLY);
+                invalidateSelf();
             }
-            this.b.setColor(this.c);
-            this.f.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
-            float f10 = 0.0f;
-            View view = this;
-            while (true) {
-                qv0 qv0Var = this.a;
-                if (view == qv0Var) {
-                    canvas2 = canvas;
-                    qv0Var.J(canvas2, f10, this.f, this.b, this.d);
-                    break;
-                }
-                f10 += view.getY();
-                Object parent = view.getParent();
-                if (!(parent instanceof View)) {
-                    super.dispatchDraw(canvas);
-                    return;
-                }
-                view = (View) parent;
+        }
+        int k11 = i0.a.k(this.f, i10);
+        if (this.f != k11) {
+            this.f = k11;
+            if (this.c != null) {
+                this.d.setColorFilter(k11, PorterDuff.Mode.MULTIPLY);
+                invalidateSelf();
             }
-        } else {
-            canvas2 = canvas;
         }
-        super.dispatchDraw(canvas2);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void onAttachedToWindow() {
-        qv0 qv0Var;
-        if (SharedConfig.chatBlurEnabled() && (qv0Var = this.a) != null) {
-            qv0Var.Q.add(this);
-        }
-        super.onAttachedToWindow();
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void onDetachedFromWindow() {
-        qv0 qv0Var = this.a;
-        if (qv0Var != null) {
-            qv0Var.Q.remove(this);
-        }
-        super.onDetachedFromWindow();
-    }
-
-    @Override // android.view.View
-    public void setBackgroundColor(int i10) {
-        if (!SharedConfig.chatBlurEnabled() || this.a == null) {
-            super.setBackgroundColor(i10);
-        } else {
-            this.c = i10;
+        int k12 = i0.a.k(this.h, i10);
+        if (this.h != k12) {
+            this.h = k12;
+            this.b.s(k12, false);
+            invalidateSelf();
         }
     }
 
-    @Override // android.view.View
-    public void setTranslationY(float f10) {
-        if (SharedConfig.chatBlurEnabled() && f10 != getTranslationY()) {
-            invalidate();
-        }
-        super.setTranslationY(f10);
+    @Override // android.graphics.drawable.Drawable.Callback
+    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
+        unscheduleSelf(runnable);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

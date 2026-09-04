@@ -1,12 +1,30 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.text.Editable;
+import android.text.TextWatcher;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class zx0 extends AlertDialog$Builder {
-    public ArrayList c;
-    public int d;
-    public org.telegram.ui.ActionBar.p2 e;
+public final class zx0 implements TextWatcher {
+    public final /* synthetic */ NumberTextView a;
+    public final /* synthetic */ yx0 b;
+
+    public zx0(NumberTextView numberTextView, yx0 yx0Var) {
+        this.a = numberTextView;
+        this.b = yx0Var;
+    }
+
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        this.a.a(50 - Character.codePointCount(editable, 0, editable.length()), true);
+        this.b.setErrorText(null);
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
 }

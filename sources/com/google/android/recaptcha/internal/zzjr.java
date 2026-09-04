@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzjr implements zzjt {
     public static final zzjr zza = new zzjr();
@@ -47,8 +47,8 @@ public final class zzjr implements zzjt {
                 array = arrayList.toArray(new Integer[0]);
             }
             zzizVar.zzc().zze(i10, array);
-        } catch (ArithmeticException e) {
-            throw new zzdm(4, 6, e);
+        } catch (ArithmeticException e7) {
+            throw new zzdm(4, 6, e7);
         }
     }
 }

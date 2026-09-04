@@ -1,44 +1,28 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.Iterator;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class t0 extends j0 {
-    public final transient Object d;
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e;
 
-    public t0(Object obj) {
-        this.d = obj;
+    public t0(int i10, int i11, Object[] objArr) {
+        this.c = objArr;
+        this.d = i10;
+        this.e = i11;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.equals(obj);
+    @Override // java.util.List
+    public final Object get(int i10) {
+        v7.j5.a(i10, this.e);
+        Object obj = this.c[i10 + i10 + this.d];
+        obj.getClass();
+        return obj;
     }
 
-    @Override // com.google.android.gms.internal.cast.j0, java.util.Collection, java.util.Set
-    public final int hashCode() {
-        return this.d.hashCode();
-    }
-
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int i(Object[] objArr) {
-        objArr[0] = this.d;
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return new k0(this.d);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return 1;
-    }
-
-    @Override // java.util.AbstractCollection
-    public final String toString() {
-        return android.support.v4.media.a.o("[", this.d.toString(), "]");
+        return this.e;
     }
 }

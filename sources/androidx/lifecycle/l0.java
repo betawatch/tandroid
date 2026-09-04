@@ -2,23 +2,23 @@ package androidx.lifecycle;
 
 import android.os.Bundle;
 import java.util.Map;
-import k7.o7;
+import v7.s7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class l0 implements g2.d {
-    public final g2.e a;
+public final class l0 implements t4.d {
+    public final m.p a;
     public boolean b;
     public Bundle c;
-    public final sc.g d;
+    public final gd.g d;
 
-    public l0(g2.e savedStateRegistry, u0 u0Var) {
-        kotlin.jvm.internal.j.e(savedStateRegistry, "savedStateRegistry");
+    public l0(m.p savedStateRegistry, u0 u0Var) {
+        kotlin.jvm.internal.i.e(savedStateRegistry, "savedStateRegistry");
         this.a = savedStateRegistry;
-        this.d = o7.a(new k0(u0Var, 0));
+        this.d = s7.a(new k0(u0Var, 0));
     }
 
-    @Override // g2.d
+    @Override // t4.d
     public final Bundle a() {
         Bundle bundle = new Bundle();
         Bundle bundle2 = this.c;
@@ -28,7 +28,7 @@ public final class l0 implements g2.d {
         for (Map.Entry entry : ((m0) this.d.a()).d.entrySet()) {
             String str = (String) entry.getKey();
             Bundle a2 = ((i0) entry.getValue()).e.a();
-            if (!kotlin.jvm.internal.j.a(a2, Bundle.EMPTY)) {
+            if (!kotlin.jvm.internal.i.a(a2, Bundle.EMPTY)) {
                 bundle.putBundle(str, a2);
             }
         }
@@ -40,14 +40,14 @@ public final class l0 implements g2.d {
         if (this.b) {
             return;
         }
-        Bundle c3 = this.a.c("androidx.lifecycle.internal.SavedStateHandlesProvider");
+        Bundle c10 = this.a.c("androidx.lifecycle.internal.SavedStateHandlesProvider");
         Bundle bundle = new Bundle();
         Bundle bundle2 = this.c;
         if (bundle2 != null) {
             bundle.putAll(bundle2);
         }
-        if (c3 != null) {
-            bundle.putAll(c3);
+        if (c10 != null) {
+            bundle.putAll(c10);
         }
         this.c = bundle;
         this.b = true;

@@ -1,11 +1,11 @@
 package com.google.android.gms.internal.play_billing;
 
-import j7.v6;
 import java.io.Serializable;
 import java.util.Iterator;
 import java.util.Locale;
+import v7.e6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class l1 implements Iterable, Serializable {
     public static final l1 c = new l1(a2.b);
@@ -27,12 +27,12 @@ public class l1 implements Iterable, Serializable {
             return i13;
         }
         if (i10 < 0) {
-            throw new IndexOutOfBoundsException(kf.k0.k(i10, "Beginning index: ", " < 0"));
+            throw new IndexOutOfBoundsException(i2.g.j(i10, "Beginning index: ", " < 0"));
         }
         if (i11 < i10) {
-            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, i11, "Beginning index larger than ending index: ", ", "));
+            throw new IndexOutOfBoundsException(a4.a.l(i10, i11, "Beginning index larger than ending index: ", ", "));
         }
-        throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i11, i12, "End index: ", " >= "));
+        throw new IndexOutOfBoundsException(a4.a.l(i11, i12, "End index: ", " >= "));
     }
 
     public static l1 q(int i10, int i11, byte[] bArr) {
@@ -57,17 +57,17 @@ public class l1 implements Iterable, Serializable {
             int i10 = this.a;
             int i11 = l1Var.a;
             if (i10 == 0 || i11 == 0 || i10 == i11) {
-                int o10 = o();
-                if (o10 > l1Var.o()) {
-                    throw new IllegalArgumentException("Length too large: " + o10 + o());
+                int o9 = o();
+                if (o9 > l1Var.o()) {
+                    throw new IllegalArgumentException("Length too large: " + o9 + o());
                 }
-                if (o10 > l1Var.o()) {
-                    throw new IllegalArgumentException(android.support.v4.media.a.k(o10, l1Var.o(), "Ran off end of other: 0, ", ", "));
+                if (o9 > l1Var.o()) {
+                    throw new IllegalArgumentException(a4.a.l(o9, l1Var.o(), "Ran off end of other: 0, ", ", "));
                 }
                 byte[] bArr = l1Var.b;
                 int i12 = 0;
                 int i13 = 0;
-                while (i12 < o10) {
+                while (i12 < o9) {
                     if (this.b[i12] == bArr[i13]) {
                         i12++;
                         i13++;
@@ -84,9 +84,9 @@ public class l1 implements Iterable, Serializable {
         if (i10 != 0) {
             return i10;
         }
-        int o10 = o();
-        int i11 = o10;
-        for (int i12 = 0; i12 < o10; i12++) {
+        int o9 = o();
+        int i11 = o9;
+        for (int i12 = 0; i12 < o9; i12++) {
             i11 = (i11 * 31) + this.b[i12];
         }
         if (i11 == 0) {
@@ -117,18 +117,18 @@ public class l1 implements Iterable, Serializable {
         String concat;
         Locale locale = Locale.ROOT;
         String hexString = Integer.toHexString(System.identityHashCode(this));
-        int o10 = o();
+        int o9 = o();
         if (o() <= 50) {
-            concat = v6.a(this);
+            concat = e6.a(this);
         } else {
-            int p10 = p(0, 47, o());
-            concat = v6.a(p10 == 0 ? c : new k1(this.b, p10)).concat("...");
+            int p5 = p(0, 47, o());
+            concat = e6.a(p5 == 0 ? c : new k1(this.b, p5)).concat("...");
         }
-        StringBuilder sb = new StringBuilder("<ByteString@");
-        sb.append(hexString);
-        sb.append(" size=");
-        sb.append(o10);
-        sb.append(" contents=\"");
-        return android.support.v4.media.a.r(sb, concat, "\">");
+        StringBuilder sb2 = new StringBuilder("<ByteString@");
+        sb2.append(hexString);
+        sb2.append(" size=");
+        sb2.append(o9);
+        sb2.append(" contents=\"");
+        return a4.a.s(sb2, concat, "\">");
     }
 }

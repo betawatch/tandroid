@@ -1,25 +1,32 @@
 package kotlin.jvm.internal;
 
-import java.io.Serializable;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class k implements g, Serializable {
-    public final int a;
+public final class k implements c {
+    public final Class a;
 
-    public k(int i10) {
-        this.a = i10;
+    public k(Class jClass) {
+        i.e(jClass, "jClass");
+        this.a = jClass;
     }
 
-    @Override // kotlin.jvm.internal.g
-    public final int getArity() {
+    @Override // kotlin.jvm.internal.c
+    public final Class a() {
         return this.a;
     }
 
+    public final boolean equals(Object obj) {
+        if (obj instanceof k) {
+            return i.a(this.a, ((k) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode();
+    }
+
     public final String toString() {
-        r.a.getClass();
-        String a2 = s.a(this);
-        j.d(a2, "renderLambdaToString(...)");
-        return a2;
+        return this.a + " (Kotlin reflection is not available)";
     }
 }

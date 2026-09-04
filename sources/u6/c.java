@@ -1,26 +1,58 @@
 package u6;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import j7.f5;
-import r5.c0;
+import java.util.Iterator;
+import java.util.regex.Pattern;
+import n6.l;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c extends c6.a {
-    public static final Parcelable.Creator<c> CREATOR = new c0(17);
-    public final boolean a;
-
-    public c(boolean z4) {
-        this.a = z4;
+public abstract class c {
+    static {
+        Pattern.compile("\\\\.");
+        Pattern.compile("[\\\\\"/\b\f\n\r\t]");
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel dest, int i10) {
-        kotlin.jvm.internal.j.e(dest, "dest");
-        int q10 = f5.q(dest, 20293);
-        f5.s(dest, 1, 4);
-        dest.writeInt(this.a ? 1 : 0);
-        f5.r(dest, q10);
+    public static boolean a(Object obj, Object obj2) {
+        int i10;
+        if (obj == null && obj2 == null) {
+            return true;
+        }
+        if (obj != null && obj2 != null) {
+            try {
+                if ((obj instanceof JSONObject) && (obj2 instanceof JSONObject)) {
+                    JSONObject jSONObject = (JSONObject) obj;
+                    JSONObject jSONObject2 = (JSONObject) obj2;
+                    if (jSONObject.length() == jSONObject2.length()) {
+                        Iterator<String> keys = jSONObject.keys();
+                        while (keys.hasNext()) {
+                            String next = keys.next();
+                            if (jSONObject2.has(next)) {
+                                l.h(next);
+                                if (a(jSONObject.get(next), jSONObject2.get(next))) {
+                                }
+                            }
+                        }
+                        return true;
+                    }
+                } else {
+                    if (!(obj instanceof JSONArray) || !(obj2 instanceof JSONArray)) {
+                        return obj.equals(obj2);
+                    }
+                    JSONArray jSONArray = (JSONArray) obj;
+                    JSONArray jSONArray2 = (JSONArray) obj2;
+                    if (jSONArray.length() == jSONArray2.length()) {
+                        while (i10 < jSONArray.length()) {
+                            i10 = a(jSONArray.get(i10), jSONArray2.get(i10)) ? i10 + 1 : 0;
+                        }
+                        return true;
+                    }
+                }
+            } catch (JSONException unused) {
+            }
+        }
+        return false;
     }
 }

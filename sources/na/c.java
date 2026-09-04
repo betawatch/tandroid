@@ -1,34 +1,56 @@
 package na;
 
-import android.util.Log;
-import dd.p;
-import k7.p7;
+import android.content.Context;
+import android.os.Build;
+import androidx.emoji2.text.x;
+import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.Tasks;
+import java.util.Set;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c extends wc.i implements p {
-    public /* synthetic */ Object a;
+public final class c implements e, f {
+    public final k9.d a;
+    public final Context b;
+    public final pa.b c;
+    public final Set d;
+    public final Executor e;
 
-    @Override // wc.a
-    public final uc.c create(Object obj, uc.c cVar) {
-        c cVar2 = new c(2, cVar);
-        cVar2.a = obj;
-        return cVar2;
+    public c(Context context, String str, Set set, pa.b bVar, Executor executor) {
+        this.a = new k9.d(context, str);
+        this.d = set;
+        this.e = executor;
+        this.c = bVar;
+        this.b = context;
     }
 
-    @Override // dd.p
-    public final Object invoke(Object obj, Object obj2) {
-        c cVar = (c) create((String) obj, (uc.c) obj2);
-        sc.i iVar = sc.i.a;
-        cVar.invokeSuspend(iVar);
-        return iVar;
+    public final synchronized int a() {
+        long currentTimeMillis = System.currentTimeMillis();
+        g gVar = (g) this.a.get();
+        if (!gVar.i(currentTimeMillis)) {
+            return 1;
+        }
+        gVar.g();
+        return 3;
     }
 
-    @Override // wc.a
-    public final Object invokeSuspend(Object obj) {
-        vc.a aVar = vc.a.a;
-        p7.b(obj);
-        Log.e("SessionConfigFetcher", "Error failing to fetch the remote configs: " + ((String) this.a));
-        return sc.i.a;
+    public final Task b() {
+        if (Build.VERSION.SDK_INT >= 24 ? x.g(this.b) : true) {
+            return Tasks.call(this.e, new b(this, 0));
+        }
+        return Tasks.forResult("");
+    }
+
+    public final void c() {
+        if (this.d.size() <= 0) {
+            Tasks.forResult(null);
+            return;
+        }
+        if (Build.VERSION.SDK_INT >= 24 ? x.g(this.b) : true) {
+            Tasks.call(this.e, new b(this, 1));
+        } else {
+            Tasks.forResult(null);
+        }
     }
 }

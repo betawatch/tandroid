@@ -1,6 +1,110 @@
 package n7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import com.google.android.gms.internal.cast.b5;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class u0 {
+public final class u0 extends d1 {
+    public final m a;
+    public final int b;
+
+    public u0(x xVar) {
+        xVar.getClass();
+        this.a = xVar;
+        int i10 = 0;
+        int i11 = 0;
+        while (true) {
+            m mVar = this.a;
+            if (i10 >= mVar.size()) {
+                break;
+            }
+            int a2 = ((d1) mVar.get(i10)).a();
+            if (i11 < a2) {
+                i11 = a2;
+            }
+            i10++;
+        }
+        int i12 = i11 + 1;
+        this.b = i12;
+        if (i12 > 8) {
+            throw new b5("Exceeded cutoff limit for max depth of cbor value");
+        }
+    }
+
+    @Override // n7.d1
+    public final int a() {
+        return this.b;
+    }
+
+    @Override // java.lang.Comparable
+    public final /* bridge */ /* synthetic */ int compareTo(Object obj) {
+        d1 d1Var = (d1) obj;
+        int zza = d1Var.zza();
+        int c10 = d1.c(Byte.MIN_VALUE);
+        if (c10 != zza) {
+            return c10 - d1Var.zza();
+        }
+        m mVar = ((u0) d1Var).a;
+        m mVar2 = this.a;
+        if (mVar2.size() != mVar.size()) {
+            return mVar2.size() - mVar.size();
+        }
+        for (int i10 = 0; i10 < mVar2.size(); i10++) {
+            int compareTo = ((d1) mVar2.get(i10)).compareTo((d1) mVar.get(i10));
+            if (compareTo != 0) {
+                return compareTo;
+            }
+        }
+        return 0;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && u0.class == obj.getClass()) {
+            return this.a.equals(((u0) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{Integer.valueOf(d1.c(Byte.MIN_VALUE)), this.a});
+    }
+
+    public final String toString() {
+        m mVar = this.a;
+        if (mVar.isEmpty()) {
+            return "[]";
+        }
+        ArrayList arrayList = new ArrayList();
+        int size = mVar.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            arrayList.add(((d1) mVar.get(i10)).toString().replace("\n", "\n  "));
+        }
+        StringBuilder sb2 = new StringBuilder("[\n  ");
+        Iterator it = arrayList.iterator();
+        try {
+            if (it.hasNext()) {
+                sb2.append(ob.a.D3(it.next()));
+                while (it.hasNext()) {
+                    sb2.append((CharSequence) ",\n  ");
+                    sb2.append(ob.a.D3(it.next()));
+                }
+            }
+            sb2.append("\n]");
+            return sb2.toString();
+        } catch (IOException e7) {
+            throw new AssertionError(e7);
+        }
+    }
+
+    @Override // n7.d1
+    public final int zza() {
+        return d1.c(Byte.MIN_VALUE);
+    }
 }

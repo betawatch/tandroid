@@ -4,7 +4,7 @@ import android.os.SystemClock;
 import android.util.SparseIntArray;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class DispatchQueuePoolBackground {
     public static final String THREAD_PREFIX = "DispatchQueuePoolThreadSafety_";
@@ -82,12 +82,12 @@ public class DispatchQueuePoolBackground {
                 this.totalTasksCount++;
                 this.busyQueues.add(remove);
                 this.busyQueuesMap.put(remove.index, this.busyQueuesMap.get(remove.index, 0) + 1);
-                if (mg.g0.b) {
+                if (ah.y0.b) {
                     remove.setPriority(1);
                 } else if (remove.getPriority() != 10) {
                     remove.setPriority(10);
                 }
-                remove.postRunnable(new g0(this, runnable, remove, 17));
+                remove.postRunnable(new f0(this, runnable, remove, 17));
             }
         }
     }
@@ -123,7 +123,7 @@ public class DispatchQueuePoolBackground {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$execute$1(Runnable runnable, DispatchQueue dispatchQueue) {
         runnable.run();
-        Utilities.globalQueue.postRunnable(new e3(28, this, dispatchQueue));
+        Utilities.globalQueue.postRunnable(new d3(28, this, dispatchQueue));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -142,7 +142,7 @@ public class DispatchQueuePoolBackground {
         execute(runnable, false);
     }
 
-    public static void execute(Runnable runnable, boolean z4) {
+    public static void execute(Runnable runnable, boolean z10) {
         if (Thread.currentThread() != ApplicationLoader.applicationHandler.getLooper().getThread()) {
             if (BuildVars.DEBUG_VERSION) {
                 FileLog.e(new RuntimeException("wrong thread"));
@@ -153,16 +153,16 @@ public class DispatchQueuePoolBackground {
         if (updateTaskCollection == null) {
             ArrayList<ArrayList<Runnable>> arrayList = freeCollections;
             if (!arrayList.isEmpty()) {
-                updateTaskCollection = (ArrayList) e2.c.g(1, arrayList);
+                updateTaskCollection = (ArrayList) i2.g.z(1, arrayList);
             } else {
                 updateTaskCollection = new ArrayList<>(100);
             }
-            if (!z4) {
+            if (!z10) {
                 AndroidUtilities.runOnUIThread(finishCollectUpdateRunnable);
             }
         }
         updateTaskCollection.add(runnable);
-        if (z4) {
+        if (z10) {
             Runnable runnable2 = finishCollectUpdateRunnable;
             AndroidUtilities.cancelRunOnUIThread(runnable2);
             runnable2.run();

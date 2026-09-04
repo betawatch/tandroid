@@ -2,7 +2,7 @@ package org.telegram.messenger;
 
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class FileLoaderPriorityQueue {
     public static final int PRIORITY_VALUE_LOW = 0;
@@ -17,7 +17,7 @@ public class FileLoaderPriorityQueue {
     public ArrayList<FileLoadOperation> allOperations = new ArrayList<>();
     public ArrayList<FileLoadOperation> tmpListOperations = new ArrayList<>();
     boolean checkOperationsScheduled = false;
-    Runnable checkOperationsRunnable = new e1(this, 20);
+    Runnable checkOperationsRunnable = new d1(this, 20);
 
     public FileLoaderPriorityQueue(int i10, String str, int i11, DispatchQueue dispatchQueue) {
         this.currentAccount = i10;
@@ -30,23 +30,23 @@ public class FileLoaderPriorityQueue {
         int i10 = this.type == 1 ? MessagesController.getInstance(this.currentAccount).largeQueueMaxActiveOperations : MessagesController.getInstance(this.currentAccount).smallQueueMaxActiveOperations;
         this.tmpListOperations.clear();
         int i11 = 0;
-        boolean z4 = false;
+        boolean z10 = false;
         int i12 = 0;
         while (i11 < this.allOperations.size()) {
             FileLoadOperation fileLoadOperation = i11 > 0 ? this.allOperations.get(i11 - 1) : null;
             FileLoadOperation fileLoadOperation2 = this.allOperations.get(i11);
-            if (i11 > 0 && !z4) {
+            if (i11 > 0 && !z10) {
                 if (this.type == 1 && fileLoadOperation != null && fileLoadOperation.isStory && fileLoadOperation.getPriority() >= 1048576 && fileLoadOperation2.getPriority() <= 0) {
-                    z4 = true;
+                    z10 = true;
                 }
                 if (i12 > 0 && fileLoadOperation2.getPriority() == 0) {
-                    z4 = true;
+                    z10 = true;
                 }
             }
             if (fileLoadOperation2.preFinished) {
                 i10++;
             } else {
-                if (!z4 && i11 < i10) {
+                if (!z10 && i11 < i10) {
                     this.tmpListOperations.add(fileLoadOperation2);
                 } else if (fileLoadOperation2.wasStarted()) {
                     fileLoadOperation2.pause();
@@ -121,8 +121,8 @@ public class FileLoaderPriorityQueue {
         return this.allOperations.remove(fileLoadOperation);
     }
 
-    public void checkLoadingOperations(boolean z4) {
-        if (z4) {
+    public void checkLoadingOperations(boolean z10) {
+        if (z10) {
             this.workerQueue.cancelRunnable(this.checkOperationsRunnable);
             this.checkOperationsRunnable.run();
         } else {

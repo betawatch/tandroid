@@ -1,11 +1,54 @@
 package r0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public abstract class l0 {
-    public static final /* synthetic */ int a = 0;
+import android.view.View;
+import java.lang.ref.WeakReference;
+import org.telegram.ui.oj1;
 
-    static {
-        m1.b.g();
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class l0 {
+    public final WeakReference a;
+
+    public l0(View view) {
+        this.a = new WeakReference(view);
+    }
+
+    public final void a(float f7) {
+        View view = (View) this.a.get();
+        if (view != null) {
+            view.animate().alpha(f7);
+        }
+    }
+
+    public final void b() {
+        View view = (View) this.a.get();
+        if (view != null) {
+            view.animate().cancel();
+        }
+    }
+
+    public final void c(long j3) {
+        View view = (View) this.a.get();
+        if (view != null) {
+            view.animate().setDuration(j3);
+        }
+    }
+
+    public final void d(m0 m0Var) {
+        View view = (View) this.a.get();
+        if (view != null) {
+            if (m0Var != null) {
+                view.animate().setListener(new oj1(m0Var, view));
+            } else {
+                view.animate().setListener(null);
+            }
+        }
+    }
+
+    public final void e(float f7) {
+        View view = (View) this.a.get();
+        if (view != null) {
+            view.animate().translationY(f7);
+        }
     }
 }

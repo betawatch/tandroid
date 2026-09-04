@@ -1,90 +1,109 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.app.Activity;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class p31 extends FrameLayout {
-    public int a;
-    public TLRPC.TL_channels_sponsoredMessageReportResultChooseOption b;
-    public TLRPC.TL_reportResultChooseOption c;
-    public TLRPC.TL_reportResultAddComment d;
-    public final FrameLayout e;
-    public final org.telegram.ui.Components.g61 f;
-    public final dg.s1 h;
-    public o31 n;
-    public FrameLayout r;
-    public ph.d s;
-    public final /* synthetic */ q31 v;
+public final /* synthetic */ class p31 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ co b;
+    public final /* synthetic */ Activity c;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 d;
+    public final /* synthetic */ MessageObject e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public p31(q31 q31Var, Context context) {
-        super(context);
-        org.telegram.ui.ActionBar.f6 f6Var;
-        org.telegram.ui.ActionBar.f6 f6Var2;
-        org.telegram.ui.ActionBar.f6 f6Var3;
-        int i10;
-        org.telegram.ui.ActionBar.f6 f6Var4;
-        this.v = q31Var;
-        FrameLayout frameLayout = new FrameLayout(context);
-        this.e = frameLayout;
-        frameLayout.setPadding(0, AndroidUtilities.statusBarHeight, 0, 0);
-        frameLayout.setClipToPadding(true);
-        addView(frameLayout, k7.b6.e(-1, -1, 119));
-        f6Var = ((org.telegram.ui.ActionBar.g3) q31Var).resourcesProvider;
-        dg.s1 s1Var = new dg.s1(context, f6Var);
-        TextView textView = (TextView) s1Var.c;
-        this.h = s1Var;
-        s1Var.e = new n31(this, 0);
-        if (q31Var.d) {
-            textView.setText(LocaleController.getString(R.string.ReportAd));
-        } else if (q31Var.e) {
-            textView.setText(LocaleController.getString(R.string.ReportStory));
-        } else {
-            textView.setText(LocaleController.getString(R.string.Report2));
-        }
-        org.telegram.ui.ActionBar.i2 i2Var = (org.telegram.ui.ActionBar.i2) s1Var.d;
-        int i11 = org.telegram.ui.ActionBar.j6.G6;
-        f6Var2 = ((org.telegram.ui.ActionBar.g3) q31Var).resourcesProvider;
-        i2Var.a(org.telegram.ui.ActionBar.j6.v0(i11, f6Var2));
-        int i12 = org.telegram.ui.ActionBar.j6.h5;
-        f6Var3 = ((org.telegram.ui.ActionBar.g3) q31Var).resourcesProvider;
-        s1Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i12, f6Var3));
-        addView(s1Var, k7.b6.e(-1, -2, 55));
-        i10 = ((org.telegram.ui.ActionBar.g3) q31Var).currentAccount;
-        f5 f5Var = new f5(this, 19);
-        kl0 kl0Var = new kl0(this, 15);
-        f6Var4 = ((org.telegram.ui.ActionBar.g3) q31Var).resourcesProvider;
-        org.telegram.ui.Components.g61 g61Var = new org.telegram.ui.Components.g61(context, i10, 0, true, f5Var, kl0Var, null, f6Var4);
-        this.f = g61Var;
-        g61Var.setClipToPadding(false);
-        g61Var.U2.k1(true);
-        g61Var.setOnScrollListener(new n3(this, 26));
-        frameLayout.addView(g61Var, k7.b6.c(-1.0f, -1));
-    }
-
-    public final void a(int i10) {
+    public /* synthetic */ p31(co coVar, Activity activity, org.telegram.ui.ActionBar.f6 f6Var, MessageObject messageObject, int i10) {
         this.a = i10;
-        this.h.b(i10 != 0);
-        org.telegram.ui.Components.g61 g61Var = this.f;
-        if (g61Var != null) {
-            g61Var.V2.N(true);
-        }
+        this.b = coVar;
+        this.c = activity;
+        this.d = f6Var;
+        this.e = messageObject;
     }
 
-    public final void b(TLRPC.TL_reportResultAddComment tL_reportResultAddComment) {
-        this.b = null;
-        this.c = null;
-        this.d = tL_reportResultAddComment;
-        this.f.V2.N(false);
-        if (this.n != null) {
-            AndroidUtilities.runOnUIThread(new n31(this, 1), 120L);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                co coVar = this.b;
+                org.telegram.ui.Components.yc a02 = org.telegram.ui.Components.yc.a0(coVar);
+                String string = LocaleController.getString(R.string.AdReported);
+                final int i10 = 1;
+                final Activity activity = this.c;
+                a02.c(AndroidUtilities.replaceSingleTag(string, -1, 2, new Runnable() { // from class: org.telegram.ui.r31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                of.f.s(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                of.f.s(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                of.f.s(activity, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, this.d)).j();
+                MessageObject messageObject = this.e;
+                coVar.Fa(messageObject);
+                coVar.Ha(messageObject);
+                break;
+            case 1:
+                co coVar2 = this.b;
+                org.telegram.ui.Components.yc a03 = org.telegram.ui.Components.yc.a0(coVar2);
+                String string2 = LocaleController.getString(R.string.AdReported);
+                final int i11 = 0;
+                final Activity activity2 = this.c;
+                a03.c(AndroidUtilities.replaceSingleTag(string2, -1, 2, new Runnable() { // from class: org.telegram.ui.r31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                of.f.s(activity2, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                of.f.s(activity2, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                of.f.s(activity2, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, this.d)).j();
+                MessageObject messageObject2 = this.e;
+                coVar2.Fa(messageObject2);
+                coVar2.Ha(messageObject2);
+                break;
+            default:
+                co coVar3 = this.b;
+                org.telegram.ui.Components.yc a04 = org.telegram.ui.Components.yc.a0(coVar3);
+                String string3 = LocaleController.getString(R.string.AdReported);
+                final int i12 = 2;
+                final Activity activity3 = this.c;
+                a04.c(AndroidUtilities.replaceSingleTag(string3, -1, 2, new Runnable() { // from class: org.telegram.ui.r31
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                of.f.s(activity3, "https://promote.telegram.org/guidelines");
+                                break;
+                            case 1:
+                                of.f.s(activity3, "https://promote.telegram.org/guidelines");
+                                break;
+                            default:
+                                of.f.s(activity3, "https://promote.telegram.org/guidelines");
+                                break;
+                        }
+                    }
+                }, this.d)).j();
+                MessageObject messageObject3 = this.e;
+                coVar3.Fa(messageObject3);
+                coVar3.Ha(messageObject3);
+                break;
         }
     }
 }

@@ -4,20 +4,19 @@ import android.app.Application;
 import com.google.android.gms.common.api.internal.v;
 import com.google.android.gms.common.api.internal.w;
 import com.google.android.gms.tasks.Task;
-import dd.p;
-import k7.p7;
-import kotlin.jvm.internal.j;
-import ld.h0;
-import o7.e;
-import sc.f;
-import uc.c;
-import vc.a;
-import wc.i;
-import z7.b;
+import gd.f;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import l8.b;
+import rd.p;
+import v7.t7;
+import zd.h0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzr extends i implements p {
+final class zzr extends j implements p {
     int zza;
     final /* synthetic */ zzu zzb;
     final /* synthetic */ String zzc;
@@ -29,19 +28,19 @@ final class zzr extends i implements p {
         this.zzc = str;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         return new zzr(this.zzb, this.zzc, cVar);
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzr) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzr) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:12:0x00b1  */
     /* JADX WARN: Removed duplicated region for block: B:9:0x008c  */
-    @Override // wc.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -54,7 +53,7 @@ final class zzr extends i implements p {
         try {
             try {
                 if (i10 == 0) {
-                    p7.b(obj);
+                    t7.b(obj);
                     h0Var = this.zzb.zzc;
                     if (h0Var == null) {
                         h0Var = null;
@@ -66,7 +65,7 @@ final class zzr extends i implements p {
                     }
                 } else {
                     if (i10 != 1) {
-                        p7.b(obj);
+                        t7.b(obj);
                         str2 = ((b) obj).a;
                         if (str2 != null) {
                             throw new IllegalStateException("Required value was null.");
@@ -79,23 +78,23 @@ final class zzr extends i implements p {
                         zzf.zzf((zzxj) zzf2.zzk());
                         return new f((zzxx) zzf.zzk());
                     }
-                    p7.b(obj);
+                    t7.b(obj);
                 }
-                z7.a aVar2 = new z7.a();
+                l8.a aVar2 = new l8.a();
                 zzu zzuVar = this.zzb;
                 str = zzuVar.zzb;
                 aVar2.a = str != null ? str : null;
                 aVar2.b = this.zzc;
                 Application context = zzu.zzl(zzuVar);
-                j.e(context, "context");
-                e eVar = new e(context, e.k, com.google.android.gms.common.api.b.i, com.google.android.gms.common.api.i.c);
-                v e = w.e();
-                e.d = new y5.c[]{z7.f.a};
-                e.c = new o3.c(aVar2, 1);
-                e.a = 34002;
-                Task e6 = eVar.e(0, e.e());
-                j.d(e6, "doRead(...)");
-                h0 zza = zzdf.zza(e6);
+                kotlin.jvm.internal.i.e(context, "context");
+                a8.f fVar = new a8.f(context, a8.f.k, com.google.android.gms.common.api.b.t, com.google.android.gms.common.api.i.c);
+                v e7 = w.e();
+                e7.d = new k6.c[]{l8.f.a};
+                e7.c = new xa.c(aVar2, 1);
+                e7.a = 34002;
+                Task e10 = fVar.e(0, e7.a());
+                kotlin.jvm.internal.i.d(e10, "doRead(...)");
+                h0 zza = zzdf.zza(e10);
                 this.zza = 2;
                 obj = zza.await(this);
                 if (obj == aVar) {
@@ -105,10 +104,10 @@ final class zzr extends i implements p {
                 if (str2 != null) {
                 }
             } catch (Exception unused) {
-                return new f(p7.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
+                return new f(t7.a(new zzcg(zzce.zzb, zzcd.zzau, null, null, 12, null)));
             }
         } catch (Exception unused2) {
-            return new f(p7.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
+            return new f(t7.a(new zzcg(zzce.zzb, zzcd.zzat, null, null, 12, null)));
         }
     }
 }

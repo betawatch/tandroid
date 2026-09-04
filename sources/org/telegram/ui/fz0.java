@@ -1,46 +1,76 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.view.TextureView;
+import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
-import org.telegram.ui.Stories.ProfileStoriesView;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class fz0 extends ProfileStoriesView {
-    public final /* synthetic */ Context q0;
-    public final /* synthetic */ ProfileActivity r0;
+public final class fz0 implements org.telegram.ui.ActionBar.s0, kv0, org.telegram.ui.Components.p8 {
+    public final /* synthetic */ ProfileActivity a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public fz0(ProfileActivity profileActivity, Context context, int i10, long j10, boolean z4, n0 n0Var, cz0 cz0Var, org.telegram.ui.ActionBar.f6 f6Var, Context context2) {
-        super(context, i10, j10, z4, n0Var, cz0Var, f6Var);
-        this.r0 = profileActivity;
-        this.q0 = context2;
+    public /* synthetic */ fz0(ProfileActivity profileActivity) {
+        this.a = profileActivity;
     }
 
-    @Override // org.telegram.ui.Stories.ProfileStoriesView
-    public final void e(bb.b bVar) {
-        TL_stories.PeerStories peerStories;
-        TL_stories.PeerStories peerStories2;
-        ProfileActivity profileActivity = this.r0;
+    @Override // org.telegram.ui.kv0
+    public void E0(MessageObject messageObject) {
+        ProfileActivity profileActivity = this.a;
+        profileActivity.a.I0(true);
+        m01 m01Var = profileActivity.O;
+        if (m01Var != null && m01Var.getCurrentListView() != null) {
+            profileActivity.O.getCurrentListView().I0(true);
+        }
+        profileActivity.d1.setBackgroundColor(i0.a.d(0.1f, profileActivity.P3(profileActivity.V4.f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.a7, profileActivity.z0)));
+    }
+
+    @Override // org.telegram.ui.kv0
+    public void H(MessageObject messageObject) {
+        org.telegram.ui.Components.fh0 fh0Var = this.a.m0;
+        if (fh0Var == null || !fh0Var.a) {
+            return;
+        }
+        fh0Var.O.d(0.0f, true);
+        fh0Var.invalidate();
+    }
+
+    @Override // org.telegram.ui.Components.p8
+    public void Y0(int i10, int i11) {
+        ProfileActivity profileActivity = this.a;
         long a2 = profileActivity.a();
-        nh.t6 storiesController = profileActivity.getMessagesController().getStoriesController();
-        boolean I = storiesController.I(a2);
-        Context context = this.q0;
-        if (I || storiesController.K(a2) || storiesController.N(a2)) {
-            profileActivity.getOrCreateStoryViewer().D(context, a2, bVar);
+        profileActivity.getMessagesController().setDialogHistoryTTL(a2, i10);
+        if (profileActivity.v2 == null && profileActivity.u2 == null) {
             return;
         }
-        TLRPC.UserFull userFull = profileActivity.s2;
-        if (userFull != null && (peerStories2 = userFull.stories) != null && !peerStories2.stories.isEmpty() && profileActivity.b1 != profileActivity.getUserConfig().clientUserId) {
-            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.s2.stories, bVar);
-            return;
-        }
-        TLRPC.ChatFull chatFull = profileActivity.r2;
-        if (chatFull == null || (peerStories = chatFull.stories) == null || peerStories.stories.isEmpty()) {
-            profileActivity.K3();
-        } else {
-            profileActivity.getOrCreateStoryViewer().E(context, profileActivity.r2.stories, bVar);
-        }
+        UndoView undoView = profileActivity.M;
+        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(a2));
+        TLRPC.UserFull userFull = profileActivity.v2;
+        undoView.k(a2, i11, user, Integer.valueOf(userFull != null ? userFull.ttl_period : profileActivity.u2.ttl_period), null, null);
+    }
+
+    @Override // org.telegram.ui.Components.p8
+    public void dismiss() {
+        this.a.T0.M(null, null);
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public void e() {
+        org.telegram.ui.Components.am0.d(new b5(this.a, 18));
+    }
+
+    @Override // org.telegram.ui.kv0
+    public /* synthetic */ TextureView i0() {
+        return null;
+    }
+
+    @Override // org.telegram.ui.Components.p8
+    public void l1() {
+        this.a.presentFragment(new q4());
+        dismiss();
+    }
+
+    @Override // org.telegram.ui.ActionBar.s0
+    public void d() {
     }
 }

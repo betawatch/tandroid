@@ -2,7 +2,6 @@ package com.google.mlkit.nl.languageid.bundled.internal;
 
 import android.content.Context;
 import android.content.res.AssetFileDescriptor;
-import b6.m;
 import com.google.mlkit.nl.languageid.IdentifiedLanguage;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,9 +9,10 @@ import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import ya.a;
+import mb.a;
+import n6.l;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class ThickLanguageIdentifier {
     public static boolean c;
@@ -23,14 +23,14 @@ public class ThickLanguageIdentifier {
         this.a = context;
     }
 
-    private native void nativeDestroy(long j10);
+    private native void nativeDestroy(long j3);
 
-    private native IdentifiedLanguage[] nativeIdentifyPossibleLanguages(long j10, byte[] bArr, float f10);
+    private native IdentifiedLanguage[] nativeIdentifyPossibleLanguages(long j3, byte[] bArr, float f7);
 
-    private native long nativeInitFromBuffer(MappedByteBuffer mappedByteBuffer, long j10);
+    private native long nativeInitFromBuffer(MappedByteBuffer mappedByteBuffer, long j3);
 
     public final ArrayList a(String str) {
-        m.k(this.b != 0);
+        l.k(this.b != 0);
         IdentifiedLanguage[] nativeIdentifyPossibleLanguages = nativeIdentifyPossibleLanguages(this.b, str.getBytes(StandardCharsets.UTF_8), 0.5f);
         ArrayList arrayList = new ArrayList();
         for (IdentifiedLanguage identifiedLanguage : nativeIdentifyPossibleLanguages) {
@@ -40,14 +40,14 @@ public class ThickLanguageIdentifier {
     }
 
     public final void b() {
-        m.k(this.b == 0);
+        l.k(this.b == 0);
         synchronized (ThickLanguageIdentifier.class) {
             if (!c) {
                 try {
                     System.loadLibrary("language_id_l2c_jni");
                     c = true;
-                } catch (UnsatisfiedLinkError e) {
-                    throw new a("Couldn't load language identification library.", e);
+                } catch (UnsatisfiedLinkError e7) {
+                    throw new a("Couldn't load language identification library.", e7);
                 }
             }
         }
@@ -67,17 +67,17 @@ public class ThickLanguageIdentifier {
                 }
             } finally {
             }
-        } catch (IOException e6) {
-            throw new a("Couldn't open language identification model file", e6);
+        } catch (IOException e10) {
+            throw new a("Couldn't open language identification model file", e10);
         }
     }
 
     public final void c() {
-        long j10 = this.b;
-        if (j10 == 0) {
+        long j3 = this.b;
+        if (j3 == 0) {
             return;
         }
-        nativeDestroy(j10);
+        nativeDestroy(j3);
         this.b = 0L;
     }
 }

@@ -9,8 +9,8 @@ public final class l implements f {
     }
 
     @Override // j$.time.format.f
-    public final boolean j(r rVar, StringBuilder sb) {
-        sb.append(this.a);
+    public final boolean j(r rVar, StringBuilder sb2) {
+        sb2.append(this.a);
         return true;
     }
 

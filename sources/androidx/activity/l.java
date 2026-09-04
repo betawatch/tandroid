@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewTreeObserver;
 import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class l implements Executor, ViewTreeObserver.OnDrawListener, Runnable {
     public Runnable b;
@@ -31,7 +31,7 @@ public final class l implements Executor, ViewTreeObserver.OnDrawListener, Runna
         this.b = runnable;
         View decorView = this.d.getWindow().getDecorView();
         if (!this.c) {
-            decorView.postOnAnimation(new ag.d(this, 2));
+            decorView.postOnAnimation(new a3.c(this, 6));
         } else if (Looper.myLooper() == Looper.getMainLooper()) {
             decorView.invalidate();
         } else {
@@ -41,7 +41,7 @@ public final class l implements Executor, ViewTreeObserver.OnDrawListener, Runna
 
     @Override // android.view.ViewTreeObserver.OnDrawListener
     public final void onDraw() {
-        boolean z4;
+        boolean z10;
         Runnable runnable = this.b;
         if (runnable == null) {
             if (SystemClock.uptimeMillis() > this.a) {
@@ -54,10 +54,10 @@ public final class l implements Executor, ViewTreeObserver.OnDrawListener, Runna
         runnable.run();
         this.b = null;
         o oVar = this.d.s;
-        synchronized (oVar.b) {
-            z4 = oVar.a;
+        synchronized (oVar.c) {
+            z10 = oVar.b;
         }
-        if (z4) {
+        if (z10) {
             this.c = false;
             this.d.getWindow().getDecorView().post(this);
         }

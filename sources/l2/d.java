@@ -1,6 +1,61 @@
 package l2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.net.Uri;
+import java.io.IOException;
+import u2.t;
+import y2.p;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface d {
+public final class d implements y2.h {
+    public final /* synthetic */ g a;
+
+    public void a() {
+        long j3;
+        g gVar = this.a;
+        synchronized (z2.c.b) {
+            try {
+                j3 = z2.c.c ? z2.c.d : -9223372036854775807L;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        gVar.L = j3;
+        gVar.y(true);
+    }
+
+    @Override // y2.h
+    public k4.d g(y2.j jVar, long j3, long j10, IOException iOException, int i10) {
+        p pVar = (p) jVar;
+        g gVar = this.a;
+        a5.a aVar = gVar.q;
+        long j11 = pVar.a;
+        Uri uri = pVar.d.c;
+        aVar.q(new t(j10), pVar.c, iOException, true);
+        gVar.m.getClass();
+        gVar.x(iOException);
+        return y2.m.e;
+    }
+
+    @Override // y2.h
+    public void i(y2.j jVar, long j3, long j10) {
+        p pVar = (p) jVar;
+        g gVar = this.a;
+        long j11 = pVar.a;
+        Uri uri = pVar.d.c;
+        t tVar = new t(j10);
+        gVar.m.getClass();
+        gVar.q.o(tVar, pVar.c, -1, null, 0, null, -9223372036854775807L, -9223372036854775807L);
+        gVar.L = ((Long) pVar.f).longValue() - j3;
+        gVar.y(true);
+    }
+
+    @Override // y2.h
+    public void w(y2.j jVar, long j3, long j10, boolean z10) {
+        this.a.w((p) jVar, j10);
+    }
+
+    @Override // y2.h
+    public /* synthetic */ void h(y2.j jVar, long j3, long j10, int i10) {
+    }
 }

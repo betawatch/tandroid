@@ -13,7 +13,7 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class g0 extends Drawable {
     public final Drawable a;
@@ -39,27 +39,27 @@ public final class g0 extends Drawable {
         paint2.setStrokeCap(Paint.Cap.ROUND);
     }
 
-    public final void a(Canvas canvas, float f10, float f11, float f12, float f13) {
+    public final void a(Canvas canvas, float f7, float f10, float f11, float f12) {
         Drawable drawable = this.a;
         int intrinsicWidth = drawable.getIntrinsicWidth();
         int intrinsicHeight = drawable.getIntrinsicHeight();
         if (intrinsicWidth <= 0 || intrinsicHeight <= 0) {
             return;
         }
-        drawable.setAlpha(Math.round(this.e * f13));
+        drawable.setAlpha(Math.round(this.e * f12));
         drawable.setBounds(0, 0, intrinsicWidth, intrinsicHeight);
         canvas.save();
-        canvas.translate(f10, f11);
-        canvas.scale(f12 / intrinsicWidth, f12 / intrinsicHeight);
+        canvas.translate(f7, f10);
+        canvas.scale(f11 / intrinsicWidth, f11 / intrinsicHeight);
         canvas.translate((-intrinsicWidth) / 2.0f, (-intrinsicHeight) / 2.0f);
         drawable.draw(canvas);
         canvas.restore();
     }
 
-    public final void b(Canvas canvas, Rect rect, float f10, float f11, float f12, float f13, float f14, float f15) {
-        float f16 = rect.left;
-        float f17 = rect.top;
-        canvas.drawLine((f12 * f10) + f16, (f13 * f11) + f17, (f14 * f10) + f16, (f15 * f11) + f17, this.c);
+    public final void b(Canvas canvas, Rect rect, float f7, float f10, float f11, float f12, float f13, float f14) {
+        float f15 = rect.left;
+        float f16 = rect.top;
+        canvas.drawLine((f11 * f7) + f15, (f12 * f10) + f16, (f13 * f7) + f15, (f14 * f10) + f16, this.c);
     }
 
     @Override // android.graphics.drawable.Drawable

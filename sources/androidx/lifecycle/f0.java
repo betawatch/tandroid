@@ -4,17 +4,18 @@ import android.app.Activity;
 import android.app.FragmentManager;
 import android.os.Build;
 import androidx.lifecycle.h0;
+import com.google.android.gms.internal.vision.e2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class f0 {
     /* JADX WARN: Multi-variable type inference failed */
     public static void a(Activity activity, m event) {
-        kotlin.jvm.internal.j.e(event, "event");
+        kotlin.jvm.internal.i.e(event, "event");
         if (activity instanceof t) {
-            o m9 = ((t) activity).m();
-            if (e2.c.s(m9)) {
-                ((v) m9).e(event);
+            o m10 = ((t) activity).m();
+            if (e2.u(m10)) {
+                ((v) m10).e(event);
             }
         }
     }

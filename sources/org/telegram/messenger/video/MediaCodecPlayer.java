@@ -7,7 +7,7 @@ import android.media.MediaFormat;
 import android.view.Surface;
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class MediaCodecPlayer {
     private final MediaCodec codec;
@@ -58,19 +58,19 @@ public class MediaCodecPlayer {
         createDecoderByType.start();
     }
 
-    public boolean ensure(long j10) {
+    public boolean ensure(long j3) {
         ByteBuffer inputBuffer;
         if (this.done) {
             return false;
         }
-        boolean z4 = this.first;
+        boolean z10 = this.first;
         this.first = false;
-        long j11 = j10 * 1000;
-        if (!z4 && j11 <= this.lastPositionUs) {
+        long j10 = j3 * 1000;
+        if (!z10 && j10 <= this.lastPositionUs) {
             return false;
         }
-        if (this.extractor.getSampleTime() > j11 || (z4 && j11 > 1000000)) {
-            this.extractor.seekTo(j11, 0);
+        if (this.extractor.getSampleTime() > j10 || (z10 && j10 > 1000000)) {
+            this.extractor.seekTo(j10, 0);
         }
         while (true) {
             int dequeueInputBuffer = this.codec.dequeueInputBuffer(10000L);
@@ -87,9 +87,9 @@ public class MediaCodecPlayer {
             MediaCodec.BufferInfo bufferInfo = new MediaCodec.BufferInfo();
             int dequeueOutputBuffer = this.codec.dequeueOutputBuffer(bufferInfo, 10000L);
             if (dequeueOutputBuffer >= 0) {
-                long j12 = bufferInfo.presentationTimeUs;
-                if (j12 >= j11 - 16000) {
-                    this.lastPositionUs = j12;
+                long j11 = bufferInfo.presentationTimeUs;
+                if (j11 >= j10 - 16000) {
+                    this.lastPositionUs = j11;
                     this.codec.releaseOutputBuffer(dequeueOutputBuffer, true);
                     return true;
                 }

@@ -1,34 +1,33 @@
 package androidx.mediarouter.app;
 
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
+import android.util.TypedValue;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.ProgressBar;
+import android.widget.ImageButton;
 import android.widget.TextView;
-import f2.l1;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class i0 extends l1 {
-    public c2.b0 A;
-    public final /* synthetic */ n0 B;
-    public final View v;
-    public final ImageView w;
-    public final ProgressBar x;
-    public final TextView y;
-    public final float z;
+public final class i0 extends g0 {
+    public final int A;
+    public final /* synthetic */ m0 B;
+    public final TextView z;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i0(n0 n0Var, View view) {
-        super(view);
-        this.B = n0Var;
-        this.v = view;
-        this.w = (ImageView) view.findViewById(R.id.mr_cast_group_icon);
-        ProgressBar progressBar = (ProgressBar) view.findViewById(R.id.mr_cast_group_progress_bar);
-        this.x = progressBar;
-        this.y = (TextView) view.findViewById(R.id.mr_cast_group_name);
-        p0 p0Var = n0Var.w;
-        this.z = j7.z.c(p0Var.y);
-        j7.z.i(p0Var.y, progressBar);
+    /* JADX WARN: Illegal instructions before constructor call */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public i0(m0 m0Var, View view) {
+        super(r4, view, (ImageButton) view.findViewById(R.id.mr_cast_mute_button), (MediaRouteVolumeSlider) view.findViewById(R.id.mr_cast_volume_slider));
+        this.B = m0Var;
+        o0 o0Var = m0Var.w;
+        this.z = (TextView) view.findViewById(R.id.mr_group_volume_route_name);
+        Resources resources = o0Var.y.getResources();
+        DisplayMetrics displayMetrics = resources.getDisplayMetrics();
+        TypedValue typedValue = new TypedValue();
+        resources.getValue(R.dimen.mr_dynamic_volume_group_list_item_height, typedValue, true);
+        this.A = (int) typedValue.getDimension(displayMetrics);
     }
 }

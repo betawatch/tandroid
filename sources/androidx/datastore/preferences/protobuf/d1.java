@@ -1,759 +1,220 @@
 package androidx.datastore.preferences.protobuf;
 
-import java.util.Arrays;
+import java.util.AbstractMap;
+import java.util.AbstractSet;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
-import java.util.logging.Logger;
+import java.util.Map;
+import java.util.Set;
+import java.util.SortedMap;
+import java.util.TreeMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class d1 {
-    public static final Class a;
-    public static final k1 b;
-    public static final k1 c;
-    public static final k1 d;
+public final class d1 extends AbstractMap {
+    public static final /* synthetic */ int h = 0;
+    public final int a;
+    public List b = Collections.EMPTY_LIST;
+    public Map c;
+    public boolean d;
+    public volatile a0.a e;
+    public Map f;
 
-    static {
-        Class<?> cls;
-        try {
-            cls = Class.forName("androidx.datastore.preferences.protobuf.GeneratedMessageV3");
-        } catch (Throwable unused) {
-            cls = null;
-        }
-        a = cls;
-        b = v(false);
-        c = v(true);
-        d = new k1();
+    public d1(int i10) {
+        this.a = i10;
+        Map map = Collections.EMPTY_MAP;
+        this.c = map;
+        this.f = map;
     }
 
-    public static void A(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                double doubleValue = ((Double) list.get(i11)).doubleValue();
-                kVar.getClass();
-                kVar.K(i10, Double.doubleToRawLongBits(doubleValue));
-                i11++;
+    public final int a(Comparable comparable) {
+        int i10;
+        int size = this.b.size();
+        int i11 = size - 1;
+        if (i11 >= 0) {
+            int compareTo = comparable.compareTo(((g1) this.b.get(i11)).a);
+            if (compareTo > 0) {
+                i10 = size + 1;
+                return -i10;
             }
-            return;
+            if (compareTo == 0) {
+                return i11;
+            }
         }
-        kVar.R(i10, 2);
         int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Double) list.get(i13)).getClass();
-            Logger logger = k.h;
-            i12 += 8;
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.L(Double.doubleToRawLongBits(((Double) list.get(i11)).doubleValue()));
-            i11++;
-        }
-    }
-
-    public static void B(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                kVar.M(i10, ((Integer) list.get(i11)).intValue());
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            i12 += k.w(((Integer) list.get(i13)).intValue());
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.N(((Integer) list.get(i11)).intValue());
-            i11++;
-        }
-    }
-
-    public static void C(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                kVar.I(i10, ((Integer) list.get(i11)).intValue());
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Integer) list.get(i13)).getClass();
-            Logger logger = k.h;
-            i12 += 4;
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.J(((Integer) list.get(i11)).intValue());
-            i11++;
-        }
-    }
-
-    public static void D(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                kVar.K(i10, ((Long) list.get(i11)).longValue());
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Long) list.get(i13)).getClass();
-            Logger logger = k.h;
-            i12 += 8;
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.L(((Long) list.get(i11)).longValue());
-            i11++;
-        }
-    }
-
-    public static void E(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                float floatValue = ((Float) list.get(i11)).floatValue();
-                kVar.getClass();
-                kVar.I(i10, Float.floatToRawIntBits(floatValue));
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Float) list.get(i13)).getClass();
-            Logger logger = k.h;
-            i12 += 4;
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.J(Float.floatToRawIntBits(((Float) list.get(i11)).floatValue()));
-            i11++;
-        }
-    }
-
-    public static void F(int i10, List list, l0 l0Var, c1 c1Var) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        l0Var.getClass();
-        for (int i11 = 0; i11 < list.size(); i11++) {
-            l0Var.b(i10, list.get(i11), c1Var);
-        }
-    }
-
-    public static void G(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                kVar.M(i10, ((Integer) list.get(i11)).intValue());
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            i12 += k.w(((Integer) list.get(i13)).intValue());
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.N(((Integer) list.get(i11)).intValue());
-            i11++;
-        }
-    }
-
-    public static void H(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                kVar.U(i10, ((Long) list.get(i11)).longValue());
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            i12 += k.A(((Long) list.get(i13)).longValue());
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.V(((Long) list.get(i11)).longValue());
-            i11++;
-        }
-    }
-
-    public static void I(int i10, List list, l0 l0Var, c1 c1Var) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        l0Var.getClass();
-        for (int i11 = 0; i11 < list.size(); i11++) {
-            ((k) l0Var.a).O(i10, (a) list.get(i11), c1Var);
-        }
-    }
-
-    public static void J(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                kVar.I(i10, ((Integer) list.get(i11)).intValue());
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Integer) list.get(i13)).getClass();
-            Logger logger = k.h;
-            i12 += 4;
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.J(((Integer) list.get(i11)).intValue());
-            i11++;
-        }
-    }
-
-    public static void K(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                kVar.K(i10, ((Long) list.get(i11)).longValue());
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Long) list.get(i13)).getClass();
-            Logger logger = k.h;
-            i12 += 8;
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.L(((Long) list.get(i11)).longValue());
-            i11++;
-        }
-    }
-
-    public static void L(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                int intValue = ((Integer) list.get(i11)).intValue();
-                kVar.S(i10, (intValue >> 31) ^ (intValue << 1));
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            int intValue2 = ((Integer) list.get(i13)).intValue();
-            i12 += k.z((intValue2 >> 31) ^ (intValue2 << 1));
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            int intValue3 = ((Integer) list.get(i11)).intValue();
-            kVar.T((intValue3 >> 31) ^ (intValue3 << 1));
-            i11++;
-        }
-    }
-
-    public static void M(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                long longValue = ((Long) list.get(i11)).longValue();
-                kVar.U(i10, (longValue >> 63) ^ (longValue << 1));
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            long longValue2 = ((Long) list.get(i13)).longValue();
-            i12 += k.A((longValue2 >> 63) ^ (longValue2 << 1));
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            long longValue3 = ((Long) list.get(i11)).longValue();
-            kVar.V((longValue3 >> 63) ^ (longValue3 << 1));
-            i11++;
-        }
-    }
-
-    public static void N(int i10, List list, l0 l0Var) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!(list instanceof f0)) {
-            while (i11 < list.size()) {
-                kVar.P(i10, (String) list.get(i11));
-                i11++;
-            }
-            return;
-        }
-        f0 f0Var = (f0) list;
-        while (i11 < list.size()) {
-            Object l10 = f0Var.l(i11);
-            if (l10 instanceof String) {
-                kVar.P(i10, (String) l10);
+        while (i12 <= i11) {
+            int i13 = (i12 + i11) / 2;
+            int compareTo2 = comparable.compareTo(((g1) this.b.get(i13)).a);
+            if (compareTo2 < 0) {
+                i11 = i13 - 1;
             } else {
-                kVar.G(i10, (g) l10);
-            }
-            i11++;
-        }
-    }
-
-    public static void O(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                kVar.S(i10, ((Integer) list.get(i11)).intValue());
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            i12 += k.z(((Integer) list.get(i13)).intValue());
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.T(((Integer) list.get(i11)).intValue());
-            i11++;
-        }
-    }
-
-    public static void P(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
-        }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                kVar.U(i10, ((Long) list.get(i11)).longValue());
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            i12 += k.A(((Long) list.get(i13)).longValue());
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.V(((Long) list.get(i11)).longValue());
-            i11++;
-        }
-    }
-
-    public static int a(int i10, List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        int y10 = k.y(i10) * size;
-        for (int i11 = 0; i11 < list.size(); i11++) {
-            y10 += k.s((g) list.get(i11));
-        }
-        return y10;
-    }
-
-    public static int b(int i10, List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return (k.y(i10) * size) + c(list);
-    }
-
-    public static int c(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        if (list instanceof y) {
-            if (size <= 0) {
-                return 0;
-            }
-            throw null;
-        }
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 += k.w(((Integer) list.get(i11)).intValue());
-        }
-        return i10;
-    }
-
-    public static int d(int i10, List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return k.t(i10) * size;
-    }
-
-    public static int e(List list) {
-        return list.size() * 4;
-    }
-
-    public static int f(int i10, List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return k.u(i10) * size;
-    }
-
-    public static int g(List list) {
-        return list.size() * 8;
-    }
-
-    public static int h(int i10, List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return (k.y(i10) * size) + i(list);
-    }
-
-    public static int i(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        if (list instanceof y) {
-            if (size <= 0) {
-                return 0;
-            }
-            throw null;
-        }
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 += k.w(((Integer) list.get(i11)).intValue());
-        }
-        return i10;
-    }
-
-    public static int j(int i10, List list) {
-        if (list.size() == 0) {
-            return 0;
-        }
-        return (k.y(i10) * list.size()) + k(list);
-    }
-
-    public static int k(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        if (list instanceof j0) {
-            if (size <= 0) {
-                return 0;
-            }
-            throw null;
-        }
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 += k.A(((Long) list.get(i11)).longValue());
-        }
-        return i10;
-    }
-
-    public static int l(int i10, List list, c1 c1Var) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        int y10 = k.y(i10) * size;
-        for (int i11 = 0; i11 < size; i11++) {
-            int b10 = ((a) list.get(i11)).b(c1Var);
-            y10 += k.z(b10) + b10;
-        }
-        return y10;
-    }
-
-    public static int m(int i10, List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return (k.y(i10) * size) + n(list);
-    }
-
-    public static int n(List list) {
-        int size = list.size();
-        if (size != 0) {
-            if (!(list instanceof y)) {
-                int i10 = 0;
-                for (int i11 = 0; i11 < size; i11++) {
-                    int intValue = ((Integer) list.get(i11)).intValue();
-                    i10 += k.z((intValue >> 31) ^ (intValue << 1));
+                if (compareTo2 <= 0) {
+                    return i13;
                 }
-                return i10;
-            }
-            if (size > 0) {
-                throw null;
+                i12 = i13 + 1;
             }
         }
-        return 0;
+        i10 = i12 + 1;
+        return -i10;
     }
 
-    public static int o(int i10, List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
+    public final void b() {
+        if (this.d) {
+            throw new UnsupportedOperationException();
         }
-        return (k.y(i10) * size) + p(list);
     }
 
-    public static int p(List list) {
-        int size = list.size();
-        if (size != 0) {
-            if (!(list instanceof j0)) {
-                int i10 = 0;
-                for (int i11 = 0; i11 < size; i11++) {
-                    long longValue = ((Long) list.get(i11)).longValue();
-                    i10 += k.A((longValue >> 63) ^ (longValue << 1));
+    public final Map.Entry c(int i10) {
+        return (Map.Entry) this.b.get(i10);
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final void clear() {
+        b();
+        if (!this.b.isEmpty()) {
+            this.b.clear();
+        }
+        if (this.c.isEmpty()) {
+            return;
+        }
+        this.c.clear();
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final boolean containsKey(Object obj) {
+        Comparable comparable = (Comparable) obj;
+        return a(comparable) >= 0 || this.c.containsKey(comparable);
+    }
+
+    public final Iterable d() {
+        return this.c.isEmpty() ? r0.b : this.c.entrySet();
+    }
+
+    public final SortedMap e() {
+        b();
+        if (this.c.isEmpty() && !(this.c instanceof TreeMap)) {
+            TreeMap treeMap = new TreeMap();
+            this.c = treeMap;
+            this.f = treeMap.descendingMap();
+        }
+        return (SortedMap) this.c;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Set entrySet() {
+        if (this.e == null) {
+            this.e = new a0.a(1, this);
+        }
+        return this.e;
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof d1)) {
+            return super.equals(obj);
+        }
+        d1 d1Var = (d1) obj;
+        int size = size();
+        if (size == d1Var.size()) {
+            int size2 = this.b.size();
+            if (size2 != d1Var.b.size()) {
+                return ((AbstractSet) entrySet()).equals(d1Var.entrySet());
+            }
+            for (int i10 = 0; i10 < size2; i10++) {
+                if (c(i10).equals(d1Var.c(i10))) {
                 }
-                return i10;
             }
-            if (size > 0) {
-                throw null;
+            if (size2 != size) {
+                return this.c.equals(d1Var.c);
             }
+            return true;
         }
-        return 0;
+        return false;
     }
 
-    public static int q(int i10, List list) {
-        int size = list.size();
-        int i11 = 0;
-        if (size == 0) {
-            return 0;
+    public final Object f(Comparable comparable, Object obj) {
+        b();
+        int a2 = a(comparable);
+        if (a2 >= 0) {
+            return ((g1) this.b.get(a2)).setValue(obj);
         }
-        int y10 = k.y(i10) * size;
-        if (!(list instanceof f0)) {
-            while (i11 < size) {
-                Object obj = list.get(i11);
-                if (obj instanceof g) {
-                    int size2 = ((g) obj).size();
-                    y10 = k.z(size2) + size2 + y10;
-                } else {
-                    y10 = k.x((String) obj) + y10;
-                }
-                i11++;
-            }
-            return y10;
+        b();
+        boolean isEmpty = this.b.isEmpty();
+        int i10 = this.a;
+        if (isEmpty && !(this.b instanceof ArrayList)) {
+            this.b = new ArrayList(i10);
         }
-        f0 f0Var = (f0) list;
-        while (i11 < size) {
-            Object l10 = f0Var.l(i11);
-            if (l10 instanceof g) {
-                int size3 = ((g) l10).size();
-                y10 = k.z(size3) + size3 + y10;
-            } else {
-                y10 = k.x((String) l10) + y10;
-            }
-            i11++;
+        int i11 = -(a2 + 1);
+        if (i11 >= i10) {
+            return e().put(comparable, obj);
         }
-        return y10;
-    }
-
-    public static int r(int i10, List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
+        if (this.b.size() == i10) {
+            g1 g1Var = (g1) this.b.remove(i10 - 1);
+            e().put(g1Var.a, g1Var.b);
         }
-        return (k.y(i10) * size) + s(list);
-    }
-
-    public static int s(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        if (list instanceof y) {
-            if (size <= 0) {
-                return 0;
-            }
-            throw null;
-        }
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 += k.z(((Integer) list.get(i11)).intValue());
-        }
-        return i10;
-    }
-
-    public static int t(int i10, List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        return (k.y(i10) * size) + u(list);
-    }
-
-    public static int u(List list) {
-        int size = list.size();
-        if (size == 0) {
-            return 0;
-        }
-        if (list instanceof j0) {
-            if (size <= 0) {
-                return 0;
-            }
-            throw null;
-        }
-        int i10 = 0;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 += k.A(((Long) list.get(i11)).longValue());
-        }
-        return i10;
-    }
-
-    public static k1 v(boolean z4) {
-        Class<?> cls;
-        try {
-            cls = Class.forName("androidx.datastore.preferences.protobuf.UnknownFieldSetSchema");
-        } catch (Throwable unused) {
-            cls = null;
-        }
-        if (cls != null) {
-            try {
-                return (k1) cls.getConstructor(Boolean.TYPE).newInstance(Boolean.valueOf(z4));
-            } catch (Throwable unused2) {
-            }
-        }
+        this.b.add(i11, new g1(this, comparable, obj));
         return null;
     }
 
-    public static void w(k1 k1Var, Object obj, Object obj2) {
-        k1Var.getClass();
-        x xVar = (x) obj;
-        j1 j1Var = xVar.unknownFields;
-        j1 j1Var2 = ((x) obj2).unknownFields;
-        if (!j1Var2.equals(j1.f)) {
-            int i10 = j1Var.a + j1Var2.a;
-            int[] copyOf = Arrays.copyOf(j1Var.b, i10);
-            System.arraycopy(j1Var2.b, 0, copyOf, j1Var.a, j1Var2.a);
-            Object[] copyOf2 = Arrays.copyOf(j1Var.c, i10);
-            System.arraycopy(j1Var2.c, 0, copyOf2, j1Var.a, j1Var2.a);
-            j1Var = new j1(i10, copyOf, copyOf2, true);
+    public final Object g(int i10) {
+        b();
+        Object obj = ((g1) this.b.remove(i10)).b;
+        if (!this.c.isEmpty()) {
+            Iterator it = e().entrySet().iterator();
+            List list = this.b;
+            Map.Entry entry = (Map.Entry) it.next();
+            list.add(new g1(this, (Comparable) entry.getKey(), entry.getValue()));
+            it.remove();
         }
-        xVar.unknownFields = j1Var;
+        return obj;
     }
 
-    public static boolean x(Object obj, Object obj2) {
-        if (obj != obj2) {
-            return obj != null && obj.equals(obj2);
-        }
-        return true;
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Object get(Object obj) {
+        Comparable comparable = (Comparable) obj;
+        int a2 = a(comparable);
+        return a2 >= 0 ? ((g1) this.b.get(a2)).b : this.c.get(comparable);
     }
 
-    public static void y(int i10, List list, l0 l0Var, boolean z4) {
-        if (list == null || list.isEmpty()) {
-            return;
+    @Override // java.util.AbstractMap, java.util.Map
+    public final int hashCode() {
+        int size = this.b.size();
+        int i10 = 0;
+        for (int i11 = 0; i11 < size; i11++) {
+            i10 += ((g1) this.b.get(i11)).hashCode();
         }
-        k kVar = (k) l0Var.a;
-        int i11 = 0;
-        if (!z4) {
-            while (i11 < list.size()) {
-                kVar.F(i10, ((Boolean) list.get(i11)).booleanValue());
-                i11++;
-            }
-            return;
-        }
-        kVar.R(i10, 2);
-        int i12 = 0;
-        for (int i13 = 0; i13 < list.size(); i13++) {
-            ((Boolean) list.get(i13)).getClass();
-            Logger logger = k.h;
-            i12++;
-        }
-        kVar.T(i12);
-        while (i11 < list.size()) {
-            kVar.D(((Boolean) list.get(i11)).booleanValue() ? (byte) 1 : (byte) 0);
-            i11++;
-        }
+        return this.c.size() > 0 ? this.c.hashCode() + i10 : i10;
     }
 
-    public static void z(int i10, List list, l0 l0Var) {
-        if (list == null || list.isEmpty()) {
-            return;
+    @Override // java.util.AbstractMap, java.util.Map
+    public final /* synthetic */ Object put(Object obj, Object obj2) {
+        if (obj == null) {
+            return f(null, obj2);
         }
-        l0Var.getClass();
-        for (int i11 = 0; i11 < list.size(); i11++) {
-            ((k) l0Var.a).G(i10, (g) list.get(i11));
+        throw new ClassCastException();
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final Object remove(Object obj) {
+        b();
+        Comparable comparable = (Comparable) obj;
+        int a2 = a(comparable);
+        if (a2 >= 0) {
+            return g(a2);
         }
+        if (this.c.isEmpty()) {
+            return null;
+        }
+        return this.c.remove(comparable);
+    }
+
+    @Override // java.util.AbstractMap, java.util.Map
+    public final int size() {
+        return this.c.size() + this.b.size();
     }
 }

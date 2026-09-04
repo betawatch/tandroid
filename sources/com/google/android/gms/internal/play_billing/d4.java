@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class d4 extends v1 {
     private static final d4 zzb;
@@ -17,9 +17,9 @@ public final class d4 extends v1 {
         v1.k(d4.class, d4Var);
     }
 
-    public static /* synthetic */ void n(d4 d4Var, boolean z4) {
+    public static /* synthetic */ void n(d4 d4Var, boolean z10) {
         d4Var.zzd |= 8;
-        d4Var.zzh = z4;
+        d4Var.zzh = z10;
     }
 
     public static /* synthetic */ void o(d4 d4Var) {
@@ -27,9 +27,9 @@ public final class d4 extends v1 {
         d4Var.zzi = 0;
     }
 
-    public static /* synthetic */ void p(d4 d4Var, long j10) {
+    public static /* synthetic */ void p(d4 d4Var, long j3) {
         d4Var.zzd |= 4;
-        d4Var.zzg = j10;
+        d4Var.zzg = j3;
     }
 
     public static /* synthetic */ void q(d4 d4Var) {

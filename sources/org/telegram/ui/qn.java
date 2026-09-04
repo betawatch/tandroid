@@ -1,52 +1,100 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
+import java.util.ArrayList;
+import java.util.Collections;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qn implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rn b;
+public final class qn extends View {
+    public final ArrayList a;
+    public final ArrayList b;
+    public final /* synthetic */ co c;
 
-    public /* synthetic */ qn(rn rnVar, int i10) {
-        this.a = i10;
-        this.b = rnVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public qn(co coVar, Context context) {
+        super(context);
+        this.c = coVar;
+        this.a = new ArrayList();
+        this.b = new ArrayList();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rn rnVar = this.b;
-                rnVar.f = floatValue;
-                View view = rnVar.h.fragmentView;
-                if (view != null) {
-                    view.invalidate();
-                    break;
-                }
-                break;
-            case 1:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rn rnVar2 = this.b;
-                rnVar2.f = floatValue2;
-                View view2 = rnVar2.h.fragmentView;
-                if (view2 != null) {
-                    view2.invalidate();
-                    break;
-                }
-                break;
-            default:
-                float floatValue3 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                rn rnVar3 = this.b;
-                rnVar3.f = floatValue3;
-                View view3 = rnVar3.h.fragmentView;
-                if (view3 != null) {
-                    view3.invalidate();
-                    break;
-                }
-                break;
+    public final void a() {
+        ArrayList arrayList = this.a;
+        arrayList.clear();
+        co coVar = this.c;
+        arrayList.add(coVar.K1);
+        arrayList.add(coVar.x0);
+        arrayList.add(coVar.X);
+        arrayList.add(coVar.K3);
+        arrayList.add(coVar.I1);
+        arrayList.add(coVar.X2);
+        arrayList.add(coVar.Y);
+        arrayList.add(coVar.j1);
+        arrayList.add(coVar.S);
+        arrayList.add(coVar.R1);
+        arrayList.removeAll(Collections.singleton(null));
+    }
+
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        co coVar = this.c;
+        coVar.rc = true;
+        ArrayList arrayList = this.b;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((View) obj).setVisibility(0);
+        }
+        arrayList.clear();
+        coVar.rc = false;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        a();
+        co coVar = this.c;
+        coVar.rc = true;
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            View view = (View) obj;
+            if (view.getVisibility() == 0) {
+                view.setVisibility(8);
+                this.b.add(view);
+            }
+        }
+        coVar.rc = false;
+    }
+
+    @Override // android.view.View
+    public void setTranslationX(float f7) {
+        super.setTranslationX(f7);
+        a();
+        ArrayList arrayList = this.a;
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            View view = (View) obj;
+            if (view != null) {
+                view.setTranslationX(f7);
+            }
         }
     }
 }

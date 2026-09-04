@@ -1,45 +1,45 @@
 package com.google.android.gms.internal.vision;
 
-import sun.misc.Unsafe;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class w2 {
-    public final Unsafe a;
-
-    public w2(Unsafe unsafe) {
-        this.a = unsafe;
+public final class w2 extends x2 {
+    @Override // com.google.android.gms.internal.vision.x2
+    public final byte a(Object obj, long j3) {
+        return this.a.getByte(obj, j3);
     }
 
-    public abstract byte a(Object obj, long j10);
-
-    public final void b(long j10, Object obj, int i10) {
-        this.a.putInt(obj, j10, i10);
+    @Override // com.google.android.gms.internal.vision.x2
+    public final void c(Object obj, long j3, byte b10) {
+        this.a.putByte(obj, j3, b10);
     }
 
-    public abstract void c(Object obj, long j10, byte b10);
-
-    public abstract void d(Object obj, long j10, double d);
-
-    public abstract void e(Object obj, long j10, float f10);
-
-    public final void f(Object obj, long j10, long j11) {
-        this.a.putLong(obj, j10, j11);
+    @Override // com.google.android.gms.internal.vision.x2
+    public final void d(Object obj, long j3, double d) {
+        this.a.putDouble(obj, j3, d);
     }
 
-    public abstract void g(Object obj, long j10, boolean z4);
-
-    public abstract boolean h(Object obj, long j10);
-
-    public abstract float i(Object obj, long j10);
-
-    public abstract double j(Object obj, long j10);
-
-    public final int k(Object obj, long j10) {
-        return this.a.getInt(obj, j10);
+    @Override // com.google.android.gms.internal.vision.x2
+    public final void e(Object obj, long j3, float f7) {
+        this.a.putFloat(obj, j3, f7);
     }
 
-    public final long l(Object obj, long j10) {
-        return this.a.getLong(obj, j10);
+    @Override // com.google.android.gms.internal.vision.x2
+    public final void g(Object obj, long j3, boolean z10) {
+        this.a.putBoolean(obj, j3, z10);
+    }
+
+    @Override // com.google.android.gms.internal.vision.x2
+    public final boolean h(Object obj, long j3) {
+        return this.a.getBoolean(obj, j3);
+    }
+
+    @Override // com.google.android.gms.internal.vision.x2
+    public final float i(Object obj, long j3) {
+        return this.a.getFloat(obj, j3);
+    }
+
+    @Override // com.google.android.gms.internal.vision.x2
+    public final double j(Object obj, long j3) {
+        return this.a.getDouble(obj, j3);
     }
 }

@@ -1,338 +1,285 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.content.res.Resources;
-import android.graphics.Bitmap;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.drawable.BitmapDrawable;
+import android.graphics.Path;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.RectF;
+import android.graphics.RenderNode;
 import android.graphics.drawable.Drawable;
-import android.util.SparseArray;
+import android.os.Build;
+import android.text.TextUtils;
+import android.view.MotionEvent;
 import android.view.View;
-import java.util.ArrayList;
-import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class vh0 extends sp {
-    public final ArrayList c = new ArrayList();
-    public final ArrayList d = new ArrayList();
-    public final Context e;
+public final class vh0 extends View {
+    public int E;
+    public float F;
+    public int G;
+    public boolean H;
+    public RenderNode I;
+    public float J;
+    public float K;
+    public float L;
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final PorterDuffColorFilter b;
+    public final PorterDuffColorFilter c;
+    public f01 d;
+    public f01 e;
     public final Paint f;
-    public p9 g;
-    public final /* synthetic */ wh0 h;
+    public final Paint h;
+    public final Path n;
+    public final Drawable r;
+    public final RectF s;
+    public final Paint v;
+    public final Paint w;
+    public final Path x;
+    public final zc y;
 
-    public vh0(wh0 wh0Var, Context context, org.telegram.ui.a01 a01Var) {
-        this.h = wh0Var;
-        this.e = context;
-        this.g = a01Var;
-        Paint paint = new Paint(1);
-        this.f = paint;
-        paint.setColor(-16777216);
+    public vh0(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        this.b = new PorterDuffColorFilter(-1, mode);
+        this.c = new PorterDuffColorFilter(-16777216, mode);
+        this.f = new Paint();
+        Paint paint = new Paint();
+        this.h = paint;
+        Path path = new Path();
+        this.n = path;
+        this.s = new RectF();
+        this.v = new Paint(1);
+        this.w = new Paint(1);
+        this.x = new Path();
+        this.y = new zc(this);
+        this.E = -1;
+        this.a = f6Var;
+        this.r = context.getResources().getDrawable(R.drawable.files_music).mutate();
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStrokeJoin(Paint.Join.ROUND);
+        path.moveTo(0.0f, -AndroidUtilities.dpf2(3.33f));
+        path.lineTo(AndroidUtilities.dpf2(3.16f), 0.0f);
+        path.lineTo(0.0f, AndroidUtilities.dpf2(3.33f));
+        setColor(null);
+        c("Author", " - Title");
     }
 
-    @Override // m2.a
-    public final void a(m2.h hVar, Object obj) {
-        sh0 sh0Var = (sh0) obj;
-        View view = sh0Var.b;
-        if (view != null) {
-            hVar.removeView(view);
+    public final void a() {
+        boolean z10 = this.F < 0.8f && AndroidUtilities.computePerceivedBrightness(this.G) > 0.85f;
+        this.E = z10 ? -16777216 : -1;
+        this.r.setColorFilter(z10 ? this.c : this.b);
+        this.f.setColor(this.E);
+        this.h.setColor(org.telegram.ui.ActionBar.j6.l1(0.85f, this.E));
+        invalidate();
+    }
+
+    public final void b() {
+        if (this.I != null) {
+            this.I = null;
+            invalidate();
         }
-        if (sh0Var.a) {
+    }
+
+    public final void c(String str, String str2) {
+        this.d = new f01(str, 11.0f, AndroidUtilities.bold());
+        this.e = new f01(str2, 11.0f, null);
+        setContentDescription(LocaleController.getString(R.string.AccDescrProfileMusic) + " " + ((Object) str) + " — " + ((Object) str2));
+    }
+
+    @Override // android.view.View
+    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
+        if (Utilities.clamp01(this.L / AndroidUtilities.dp(21.0f)) <= 0.0f) {
+            return false;
+        }
+        int action = motionEvent.getAction();
+        RectF rectF = this.s;
+        zc zcVar = this.y;
+        if (action == 0) {
+            zcVar.c(rectF.contains(motionEvent.getX(), motionEvent.getY()));
+        } else if (motionEvent.getAction() == 2 && zcVar.h) {
+            if (!rectF.contains(motionEvent.getX(), motionEvent.getY())) {
+                zcVar.c(false);
+            }
+        } else if (motionEvent.getAction() == 3) {
+            zcVar.c(false);
+        } else if (motionEvent.getAction() == 1) {
+            if (zcVar.h) {
+                performClick();
+            }
+            zcVar.c(false);
+        }
+        return zcVar.h;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d == null || this.e == null) {
             return;
         }
-        qh0 qh0Var = sh0Var.c;
-        if (qh0Var.getImageReceiver().hasStaticThumb()) {
-            Drawable drawable = qh0Var.getImageReceiver().getDrawable();
-            if (drawable instanceof y5) {
-                ((y5) drawable).w(qh0Var);
-            }
+        float clamp01 = Utilities.clamp01(this.L / AndroidUtilities.dp(21.0f));
+        float a2 = this.y.a(0.02f);
+        if (clamp01 <= 0.0f) {
+            return;
         }
-        qh0Var.setRoundRadius(0);
-        hVar.removeView(qh0Var);
-        qh0Var.getImageReceiver().cancelLoadImage();
-    }
-
-    @Override // m2.a
-    public final int b() {
-        return this.c.size();
-    }
-
-    @Override // m2.a
-    public final int c(Object obj) {
-        int indexOf = this.c.indexOf((sh0) obj);
-        if (indexOf == -1) {
-            return -2;
+        int width = getWidth() - (AndroidUtilities.dp(12.0f) * 2);
+        this.d.p = (width - AndroidUtilities.dp(35.0f)) / 2.0f;
+        this.e.p = (width - this.d.l()) - AndroidUtilities.dp(35.0f);
+        float l4 = this.e.l() + this.d.l() + AndroidUtilities.dp(16.6f) + AndroidUtilities.dp(8.0f);
+        float dp = AndroidUtilities.dp(16.0f) + l4;
+        canvas.save();
+        canvas.scale(a2, a2, getWidth() / 2.0f, getHeight() / 2.0f);
+        RectF rectF = this.s;
+        rectF.set((getWidth() - dp) / 2.0f, AndroidUtilities.dp(10.0f), (getWidth() + dp) / 2.0f, (AndroidUtilities.dp(17.0f) * clamp01) + AndroidUtilities.dp(10.0f));
+        boolean z10 = this.H;
+        Paint paint = this.w;
+        Paint paint2 = this.v;
+        if (z10 && SharedConfig.shadowsInSections) {
+            paint2.setShadowLayer(AndroidUtilities.dpf2(2.0f), 0.0f, AndroidUtilities.dpf2(0.33f), org.telegram.ui.ActionBar.j6.l1(clamp01, 167772160));
+            paint.setShadowLayer(AndroidUtilities.dpf2(0.33f), 0.0f, 0.0f, org.telegram.ui.ActionBar.j6.l1(clamp01, 201326592));
+            paint.setColor(0);
+        } else {
+            paint2.setShadowLayer(0.0f, 0.0f, 0.0f, 0);
         }
-        return indexOf;
+        int alpha = paint2.getAlpha();
+        paint2.setAlpha((int) (alpha * clamp01));
+        if (this.H && SharedConfig.shadowsInSections) {
+            canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint);
+        }
+        canvas.drawRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, paint2);
+        paint2.setAlpha(alpha);
+        Path path = this.x;
+        path.rewind();
+        path.addRoundRect(rectF, rectF.height() / 2.0f, rectF.height() / 2.0f, Path.Direction.CW);
+        canvas.save();
+        canvas.clipPath(path);
+        if (this.I != null && Build.VERSION.SDK_INT >= 29 && canvas.isHardwareAccelerated()) {
+            canvas.save();
+            canvas.translate(0.0f, this.K);
+            float f7 = this.J;
+            canvas.scale(f7, f7);
+            canvas.drawRenderNode(this.I);
+            canvas.restore();
+        }
+        canvas.translate((getWidth() - l4) / 2.0f, 0.0f);
+        float height = getHeight() / 2.0f;
+        AndroidUtilities.dp(6.0f);
+        AndroidUtilities.dp(2.0f);
+        int dp2 = AndroidUtilities.dp(13.0f);
+        int i10 = (int) height;
+        int i11 = dp2 / 2;
+        int i12 = i10 - i11;
+        int i13 = i10 + i11;
+        Drawable drawable = this.r;
+        drawable.setBounds(0, i12, dp2, i13);
+        drawable.draw(canvas);
+        canvas.translate(AndroidUtilities.dp(16.6f), 0.0f);
+        this.d.c(0.0f, height, clamp01, this.E, canvas);
+        canvas.translate(this.d.l(), 0.0f);
+        this.e.c(0.0f, height, clamp01 * 0.85f, this.E, canvas);
+        canvas.translate(this.e.l(), 0.0f);
+        float dpf2 = AndroidUtilities.dpf2(1.16f);
+        Paint paint3 = this.h;
+        paint3.setStrokeWidth(dpf2);
+        canvas.translate(AndroidUtilities.dpf2(4.8f), height);
+        canvas.drawPath(this.n, paint3);
+        canvas.restore();
+        canvas.restore();
     }
 
-    @Override // m2.a
-    public final CharSequence d(int i10) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(k(i10) + 1);
-        sb.append("/");
-        MessagesController.DialogPhotos dialogPhotos = this.h.P0;
-        sb.append(dialogPhotos == null ? 0 : dialogPhotos.getCount());
-        return sb.toString();
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(37.0f), TLObject.FLAG_30));
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:39:0x0259  */
-    /* JADX WARN: Removed duplicated region for block: B:45:0x026a  */
-    /* JADX WARN: Removed duplicated region for block: B:84:0x016f  */
-    /* JADX WARN: Removed duplicated region for block: B:85:0x01a1  */
-    @Override // m2.a
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object e(m2.h hVar, int i10) {
-        int i11;
-        SparseArray sparseArray;
-        boolean z4;
-        boolean z10;
+    public void setColor(MessagesController.PeerColor peerColor) {
+        int bgColor1;
+        int bgColor2;
+        org.telegram.ui.ActionBar.f6 f6Var = this.a;
+        if (peerColor == null) {
+            bgColor1 = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s8, f6Var);
+            bgColor2 = bgColor1;
+        } else {
+            bgColor1 = peerColor.getBgColor1(org.telegram.ui.ActionBar.j6.I.q());
+            bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.j6.I.q());
+        }
+        if (peerColor == null) {
+            this.G = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d6, f6Var);
+            this.H = true;
+        } else {
+            this.G = org.telegram.ui.ActionBar.j6.b(0.04f, -0.09f, i0.a.d(0.15f, bgColor1, bgColor2));
+            this.H = false;
+        }
+        this.v.setColor(this.G);
+        a();
+    }
+
+    public void setMusicDocument(TLRPC.Document document) {
         String str;
-        Bitmap bitmap;
-        sh0 sh0Var = (sh0) this.c.get(i10);
-        int k10 = k(i10);
-        wh0 wh0Var = this.h;
-        boolean z11 = wh0Var.f1;
-        SparseArray sparseArray2 = wh0Var.a1;
-        ArrayList arrayList = wh0Var.Y0;
-        ArrayList arrayList2 = wh0Var.X0;
-        ArrayList arrayList3 = wh0Var.U0;
-        ArrayList arrayList4 = wh0Var.V0;
-        ArrayList arrayList5 = wh0Var.W0;
-        ArrayList arrayList6 = wh0Var.T0;
-        Context context = this.e;
-        if (z11 && k10 == 0) {
-            sh0Var.a = true;
-            if (sh0Var.b == null) {
-                sh0Var.b = new th0(context);
-            }
-            if (sh0Var.b.getParent() == null) {
-                hVar.addView(sh0Var.b);
-            }
-            return sh0Var;
-        }
-        sh0Var.a = false;
-        th0 th0Var = sh0Var.b;
-        if (th0Var != null && th0Var.getParent() != null) {
-            hVar.removeView(sh0Var.b);
-        }
-        if (sh0Var.c == null) {
-            qh0 qh0Var = new qh0(wh0Var, context, i10, this.f);
-            sh0Var.c = qh0Var;
-            this.d.set(i10, qh0Var);
-        }
-        if (sh0Var.c.getParent() == null) {
-            hVar.addView(sh0Var.c);
-        }
-        sh0Var.c.getImageReceiver().setAllowDecodeSingleFrame(true);
-        int i12 = wh0Var.f1 ? k10 - 1 : k10;
-        if (i12 != 0) {
-            i11 = k10;
-            sparseArray = sparseArray2;
-            if (i12 >= 0 && i12 < arrayList6.size()) {
-                ImageLocation imageLocation = (ImageLocation) arrayList6.get(i12);
-                sh0Var.c.I = imageLocation != null;
-                z4 = arrayList5.get(i12) == null;
-                ImageLocation imageLocation2 = (ImageLocation) arrayList4.get(i12);
-                sh0Var.c.o((s61) arrayList5.get(i12), imageLocation, null, (ImageLocation) arrayList3.get(i12), (ImageLocation) arrayList4.get(i12), (imageLocation2 == null || !(imageLocation2.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i12)).intValue(), "avatar_" + wh0Var.B0);
-                if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z4 : true) {
-                }
-                sh0Var.c.getImageReceiver().setDelegate(new uh0(this));
-                sh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
-                qh0 qh0Var2 = sh0Var.c;
-                int i13 = wh0Var.j1;
-                int i14 = wh0Var.k1;
-                qh0Var2.r(i13, i13, i14, i14);
-                sh0Var.c.setTag(Integer.valueOf(i11));
-                return sh0Var;
-            }
-            z4 = false;
-            if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z4 : true) {
-            }
-            sh0Var.c.getImageReceiver().setDelegate(new uh0(this));
-            sh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
-            qh0 qh0Var22 = sh0Var.c;
-            int i132 = wh0Var.j1;
-            int i142 = wh0Var.k1;
-            qh0Var22.r(i132, i132, i142, i142);
-            sh0Var.c.setTag(Integer.valueOf(i11));
-            return sh0Var;
-        }
-        p9 p9Var = this.g;
-        Drawable drawable = p9Var == null ? null : p9Var.getImageReceiver().getDrawable();
-        if (drawable instanceof y5) {
-            y5 y5Var = (y5) drawable;
-            if (y5Var.s()) {
-                sh0Var.c.setImageDrawable(drawable);
-                y5Var.f(sh0Var.c);
-                y5Var.O = true;
-                i11 = k10;
-                sparseArray = sparseArray2;
-                z4 = false;
-                if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z4 : true) {
-                    SparseArray sparseArray3 = sparseArray;
-                    sh0Var.c.E = (RadialProgress2) sparseArray3.get(i12);
-                    qh0 qh0Var3 = sh0Var.c;
-                    if (qh0Var3.E == null) {
-                        qh0Var3.E = new RadialProgress2(qh0Var3, null);
-                        RadialProgress2 radialProgress2 = sh0Var.c.E;
-                        radialProgress2.E = 0.0f;
-                        radialProgress2.setIcon(10, false, false);
-                        sh0Var.c.E.setColors(1107296256, 1107296256, -1, -1);
-                        sparseArray3.append(i12, sh0Var.c.E);
-                    }
-                    if (wh0Var.d1) {
-                        wh0Var.invalidate();
-                    } else {
-                        wh0Var.postInvalidateOnAnimation();
-                    }
-                }
-                sh0Var.c.getImageReceiver().setDelegate(new uh0(this));
-                sh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
-                qh0 qh0Var222 = sh0Var.c;
-                int i1322 = wh0Var.j1;
-                int i1422 = wh0Var.k1;
-                qh0Var222.r(i1322, i1322, i1422, i1422);
-                sh0Var.c.setTag(Integer.valueOf(i11));
-                return sh0Var;
-            }
-        }
-        if (i12 >= 0 && i12 < arrayList6.size()) {
-            ImageLocation imageLocation3 = (ImageLocation) arrayList6.get(i12);
-            sh0Var.c.I = imageLocation3 != null;
-            boolean z12 = arrayList5.get(i12) == null;
-            if (!wh0Var.G0 || imageLocation3 == null) {
-                z10 = z12;
-            } else {
-                z10 = z12;
-                if (imageLocation3.imageType == 2) {
-                    str = "avatar";
-                    ImageLocation imageLocation4 = (ImageLocation) arrayList4.get(i12);
-                    p9 p9Var2 = this.g;
-                    i11 = k10;
-                    bitmap = (p9Var2 == null && wh0Var.b1) ? p9Var2.getImageReceiver().getBitmap() : null;
-                    StringBuilder sb = new StringBuilder("avatar_");
-                    sparseArray = sparseArray2;
-                    sb.append(wh0Var.B0);
-                    String sb2 = sb.toString();
-                    if (bitmap == null && arrayList5.get(i12) == null) {
-                        qh0 qh0Var4 = sh0Var.c;
-                        ImageLocation imageLocation5 = (ImageLocation) arrayList6.get(i12);
-                        ImageLocation imageLocation6 = (ImageLocation) arrayList3.get(i12);
-                        int intValue = ((Integer) arrayList2.get(i12)).intValue();
-                        qh0Var4.getClass();
-                        qh0Var4.a.setImage(imageLocation5, str, imageLocation6, null, null, null, new BitmapDrawable((Resources) null, bitmap), intValue, null, sb2, 1);
-                        qh0Var4.d();
-                    } else if (wh0Var.H0 == null) {
-                        sh0Var.c.o((s61) arrayList5.get(i12), (ImageLocation) arrayList6.get(i12), str, (ImageLocation) arrayList3.get(i12), wh0Var.H0, null, ((Integer) arrayList2.get(i12)).intValue(), sb2);
-                    } else {
-                        sh0Var.c.o((s61) arrayList5.get(i12), imageLocation3, null, (ImageLocation) arrayList3.get(i12), (ImageLocation) arrayList4.get(i12), (imageLocation4 == null || !(imageLocation4.photoSize instanceof TLRPC.TL_photoStrippedSize)) ? null : "b", ((Integer) arrayList2.get(i12)).intValue(), sb2);
-                    }
-                    z4 = z10;
-                    if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z4 : true) {
-                    }
-                    sh0Var.c.getImageReceiver().setDelegate(new uh0(this));
-                    sh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
-                    qh0 qh0Var2222 = sh0Var.c;
-                    int i13222 = wh0Var.j1;
-                    int i14222 = wh0Var.k1;
-                    qh0Var2222.r(i13222, i13222, i14222, i14222);
-                    sh0Var.c.setTag(Integer.valueOf(i11));
-                    return sh0Var;
-                }
-            }
-            str = null;
-            ImageLocation imageLocation42 = (ImageLocation) arrayList4.get(i12);
-            p9 p9Var22 = this.g;
-            i11 = k10;
-            if (p9Var22 == null) {
-            }
-            StringBuilder sb3 = new StringBuilder("avatar_");
-            sparseArray = sparseArray2;
-            sb3.append(wh0Var.B0);
-            String sb22 = sb3.toString();
-            if (bitmap == null) {
-            }
-            if (wh0Var.H0 == null) {
-            }
-            z4 = z10;
-            if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z4 : true) {
-            }
-            sh0Var.c.getImageReceiver().setDelegate(new uh0(this));
-            sh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
-            qh0 qh0Var22222 = sh0Var.c;
-            int i132222 = wh0Var.j1;
-            int i142222 = wh0Var.k1;
-            qh0Var22222.r(i132222, i132222, i142222, i142222);
-            sh0Var.c.setTag(Integer.valueOf(i11));
-            return sh0Var;
-        }
-        i11 = k10;
-        sparseArray = sparseArray2;
-        z4 = false;
-        if ((i12 >= 0 || i12 >= arrayList.size() || arrayList.get(i12) == null) ? z4 : true) {
-        }
-        sh0Var.c.getImageReceiver().setDelegate(new uh0(this));
-        sh0Var.c.getImageReceiver().setCrossfadeAlpha((byte) 2);
-        qh0 qh0Var222222 = sh0Var.c;
-        int i1322222 = wh0Var.j1;
-        int i1422222 = wh0Var.k1;
-        qh0Var222222.r(i1322222, i1322222, i1422222, i1422222);
-        sh0Var.c.setTag(Integer.valueOf(i11));
-        return sh0Var;
-    }
-
-    @Override // m2.a
-    public final boolean f(View view, Object obj) {
-        sh0 sh0Var = (sh0) obj;
-        return sh0Var.a ? view == sh0Var.b : view == sh0Var.c;
-    }
-
-    @Override // m2.a
-    public final void g() {
-        ArrayList arrayList;
         int i10 = 0;
-        while (true) {
-            arrayList = this.d;
-            if (i10 >= arrayList.size()) {
-                break;
+        String str2 = null;
+        if (document != null) {
+            for (int i11 = 0; i11 < document.attributes.size(); i11++) {
+                TLRPC.DocumentAttribute documentAttribute = document.attributes.get(i11);
+                if ((documentAttribute instanceof TLRPC.TL_documentAttributeAudio) && !documentAttribute.voice) {
+                    str = documentAttribute.performer;
+                    break;
+                }
             }
-            if (arrayList.get(i10) != null) {
-                ((p9) arrayList.get(i10)).getImageReceiver().cancelLoadImage();
+        }
+        str = null;
+        if (document != null) {
+            while (true) {
+                if (i10 < document.attributes.size()) {
+                    TLRPC.DocumentAttribute documentAttribute2 = document.attributes.get(i10);
+                    if (documentAttribute2 instanceof TLRPC.TL_documentAttributeAudio) {
+                        str2 = documentAttribute2.title;
+                        if (str2 == null || str2.length() == 0) {
+                            str2 = FileLoader.getDocumentFileName(document);
+                        }
+                    } else {
+                        i10++;
+                    }
+                } else {
+                    String documentFileName = FileLoader.getDocumentFileName(document);
+                    if (!TextUtils.isEmpty(documentFileName)) {
+                        str2 = documentFileName;
+                    }
+                }
             }
-            i10++;
         }
-        ArrayList arrayList2 = this.c;
-        arrayList2.clear();
-        arrayList.clear();
-        wh0 wh0Var = this.h;
-        int size = wh0Var.U0.size();
-        if (wh0Var.f1) {
-            size++;
+        if (TextUtils.isEmpty(str)) {
+            if (TextUtils.isEmpty(str2)) {
+                str = LocaleController.getString(R.string.AudioUnknownArtist);
+                str2 = org.telegram.messenger.w1.h(R.string.AudioUnknownTitle, new StringBuilder(" - "));
+            } else {
+                str = "";
+            }
+        } else if (TextUtils.isEmpty(str2)) {
+            str2 = "";
+        } else {
+            str2 = " - " + ((Object) str2);
         }
-        MessagesController.DialogPhotos dialogPhotos = wh0Var.P0;
-        int j10 = (j() * 2) + Math.max(dialogPhotos == null ? 0 : dialogPhotos.getCount(), size);
-        for (int i11 = 0; i11 < j10; i11++) {
-            arrayList2.add(new sh0());
-            arrayList.add(null);
-        }
-        super.g();
+        c(str, str2);
     }
 
-    @Override // org.telegram.ui.Components.sp
-    public final int j() {
-        wh0 wh0Var = this.h;
-        int size = wh0Var.U0.size();
-        if (wh0Var.f1) {
-            size++;
+    public void setParentExpanded(float f7) {
+        if (this.F != f7) {
+            this.F = f7;
+            a();
+            invalidate();
         }
-        if (size >= 2) {
-            return wh0Var.getOffscreenPageLimit();
-        }
-        return 0;
     }
 }

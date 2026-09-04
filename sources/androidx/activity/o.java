@@ -1,107 +1,116 @@
 package androidx.activity;
 
-import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
 import androidx.lifecycle.m;
 import androidx.lifecycle.t;
 import androidx.savedstate.Recreator;
+import b2.x0;
+import bi.e4;
 import com.google.android.gms.tasks.TaskCompletionSource;
+import e2.d0;
+import java.util.ArrayList;
 import java.util.Map;
-import kotlin.jvm.internal.j;
+import ji.b5;
+import kotlin.jvm.internal.i;
+import m.p;
+import m4.a0;
+import m4.k0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class o implements com.google.android.gms.common.api.internal.s {
-    public boolean a;
-    public Object b;
-    public Object c = new g2.e();
+public final class o implements i9.r, com.google.android.gms.common.api.internal.s {
+    public final /* synthetic */ int a;
+    public boolean b;
+    public Object c;
+    public Object d;
 
-    public o(g2.f fVar) {
-        this.b = fVar;
-    }
-
-    public void a() {
-        g2.f fVar = (g2.f) this.b;
-        androidx.lifecycle.o m9 = fVar.m();
-        if (((androidx.lifecycle.v) m9).c != androidx.lifecycle.n.b) {
-            throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
-        }
-        m9.a(new Recreator(fVar));
-        final g2.e eVar = (g2.e) this.c;
-        eVar.getClass();
-        if (eVar.a) {
-            throw new IllegalStateException("SavedStateRegistry was already attached.");
-        }
-        m9.a(new androidx.lifecycle.r() { // from class: g2.b
-            @Override // androidx.lifecycle.r
-            public final void d(t tVar, m mVar) {
-                e this$0 = e.this;
-                j.e(this$0, "this$0");
-                if (mVar == m.ON_START) {
-                    this$0.c = true;
-                } else if (mVar == m.ON_STOP) {
-                    this$0.c = false;
-                }
-            }
-        });
-        eVar.a = true;
-        this.a = true;
+    public /* synthetic */ o() {
+        this.a = 5;
     }
 
     @Override // com.google.android.gms.common.api.internal.s
     public void accept(Object obj, Object obj2) {
         com.google.android.gms.common.api.internal.n nVar;
-        boolean z4;
-        f7.l lVar = (f7.l) obj;
+        boolean z10;
+        r7.k kVar = (r7.k) obj;
         TaskCompletionSource taskCompletionSource = (TaskCompletionSource) obj2;
         synchronized (this) {
-            nVar = ((com.google.android.gms.common.api.internal.p) this.b).c;
-            z4 = this.a;
-            com.google.android.gms.common.api.internal.p pVar = (com.google.android.gms.common.api.internal.p) this.b;
+            nVar = ((com.google.android.gms.common.api.internal.p) this.c).c;
+            z10 = this.b;
+            com.google.android.gms.common.api.internal.p pVar = (com.google.android.gms.common.api.internal.p) this.c;
             pVar.b = null;
             pVar.c = null;
         }
         if (nVar == null) {
             taskCompletionSource.setResult(Boolean.FALSE);
         } else {
-            f7.a.a.a(lVar, nVar, z4, taskCompletionSource);
+            r7.a.a.a(kVar, nVar, z10, taskCompletionSource);
         }
     }
 
-    public void b(Bundle bundle) {
-        if (!this.a) {
-            a();
+    public void b() {
+        t4.e eVar = (t4.e) this.c;
+        androidx.lifecycle.o m10 = eVar.m();
+        if (((androidx.lifecycle.v) m10).c != androidx.lifecycle.n.b) {
+            throw new IllegalStateException("Restarter must be created only during owner's initialization stage");
         }
-        androidx.lifecycle.v vVar = (androidx.lifecycle.v) ((g2.f) this.b).m();
-        if (vVar.c.compareTo(androidx.lifecycle.n.d) >= 0) {
-            throw new IllegalStateException(("performRestore cannot be called when owner is " + vVar.c).toString());
+        m10.a(new Recreator(eVar));
+        final m.p pVar = (m.p) this.d;
+        pVar.getClass();
+        if (pVar.c) {
+            throw new IllegalStateException("SavedStateRegistry was already attached.");
         }
-        g2.e eVar = (g2.e) this.c;
-        if (!eVar.a) {
-            throw new IllegalStateException("You must call performAttach() before calling performRestore(Bundle).");
-        }
-        if (eVar.b) {
-            throw new IllegalStateException("SavedStateRegistry was already restored.");
-        }
-        eVar.e = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
-        eVar.b = true;
+        m10.a(new androidx.lifecycle.r() { // from class: t4.b
+            @Override // androidx.lifecycle.r
+            public final void d(t tVar, m mVar) {
+                p this$0 = p.this;
+                i.e(this$0, "this$0");
+                if (mVar == m.ON_START) {
+                    this$0.e = true;
+                } else if (mVar == m.ON_STOP) {
+                    this$0.e = false;
+                }
+            }
+        });
+        pVar.c = true;
+        this.b = true;
     }
 
     public void c(Bundle bundle) {
-        g2.e eVar = (g2.e) this.c;
-        eVar.getClass();
+        if (!this.b) {
+            b();
+        }
+        androidx.lifecycle.v vVar = (androidx.lifecycle.v) ((t4.e) this.c).m();
+        if (vVar.c.compareTo(androidx.lifecycle.n.d) >= 0) {
+            throw new IllegalStateException(("performRestore cannot be called when owner is " + vVar.c).toString());
+        }
+        m.p pVar = (m.p) this.d;
+        if (!pVar.c) {
+            throw new IllegalStateException("You must call performAttach() before calling performRestore(Bundle).");
+        }
+        if (pVar.d) {
+            throw new IllegalStateException("SavedStateRegistry was already restored.");
+        }
+        pVar.a = bundle != null ? bundle.getBundle("androidx.lifecycle.BundlableSavedStateRegistry.key") : null;
+        pVar.d = true;
+    }
+
+    public void d(Bundle bundle) {
+        m.p pVar = (m.p) this.d;
+        pVar.getClass();
         Bundle bundle2 = new Bundle();
-        Bundle bundle3 = (Bundle) eVar.e;
+        Bundle bundle3 = (Bundle) pVar.a;
         if (bundle3 != null) {
             bundle2.putAll(bundle3);
         }
-        o.f fVar = (o.f) eVar.d;
+        o.f fVar = (o.f) pVar.f;
         fVar.getClass();
         o.d dVar = new o.d(fVar);
         fVar.c.put(dVar, Boolean.FALSE);
         while (dVar.hasNext()) {
             Map.Entry entry = (Map.Entry) dVar.next();
-            bundle2.putBundle((String) entry.getKey(), ((g2.d) entry.getValue()).a());
+            bundle2.putBundle((String) entry.getKey(), ((t4.d) entry.getValue()).a());
         }
         if (bundle2.isEmpty()) {
             return;
@@ -109,16 +118,92 @@ public final class o implements com.google.android.gms.common.api.internal.s {
         bundle.putBundle("androidx.lifecycle.BundlableSavedStateRegistry.key", bundle2);
     }
 
-    public void d() {
-        j3.b bVar = (j3.b) this.c;
-        Context context = (Context) this.b;
-        if (this.a) {
-            context.unregisterReceiver(bVar);
-            this.a = false;
+    public synchronized com.google.android.gms.common.api.internal.p e() {
+        return (com.google.android.gms.common.api.internal.p) this.c;
+    }
+
+    @Override // i9.r
+    public void h(Throwable th2) {
+        switch (this.a) {
+            case 2:
+                a0 a0Var = (a0) this.d;
+                if (th2 instanceof UnsupportedOperationException) {
+                    e2.a.o("MediaSessionImpl", "UnsupportedOperationException: Make sure to implement MediaSession.Callback.onPlaybackResumption() if you add a media button receiver to your manifest or if you implement the recent media item contract with your MediaLibraryService.", th2);
+                } else {
+                    e2.a.f("MediaSessionImpl", "Failure calling MediaSession.Callback.onPlaybackResumption(): " + th2.getMessage(), th2);
+                }
+                d0.H(a0Var.t);
+                if (this.b) {
+                    a0Var.p((m4.r) this.c);
+                    break;
+                }
+                break;
         }
     }
 
-    public synchronized com.google.android.gms.common.api.internal.p e() {
-        return (com.google.android.gms.common.api.internal.p) this.b;
+    @Override // i9.r
+    public void onSuccess(Object obj) {
+        switch (this.a) {
+            case 2:
+                a0 a0Var = (a0) this.d;
+                m4.r rVar = (m4.r) this.c;
+                boolean z10 = this.b;
+                w7.t.b(a0Var.t, (m4.s) obj);
+                d0.H(a0Var.t);
+                if (z10) {
+                    a0Var.p(rVar);
+                    break;
+                }
+                break;
+            default:
+                m4.s sVar = (m4.s) obj;
+                a0 a0Var2 = ((k0) this.d).g;
+                Handler handler = a0Var2.l;
+                m4.r rVar2 = (m4.r) this.c;
+                d0.U(handler, new b5(a0Var2, rVar2, new e4(this, sVar, this.b, rVar2, 7)));
+                break;
+        }
+    }
+
+    public /* synthetic */ o(Object obj, Object obj2, boolean z10, int i10) {
+        this.a = i10;
+        this.d = obj;
+        this.c = obj2;
+        this.b = z10;
+    }
+
+    public o(r7.c cVar, com.google.android.gms.common.api.internal.p pVar) {
+        this.a = 6;
+        this.d = cVar;
+        this.b = true;
+        this.c = pVar;
+    }
+
+    public o(t4.e eVar) {
+        this.a = 7;
+        this.c = eVar;
+        this.d = new m.p();
+    }
+
+    public o(l lVar, d dVar) {
+        this.a = 0;
+        this.c = new Object();
+        this.d = new ArrayList();
+    }
+
+    public o(jh.a aVar, le.b bVar) {
+        this.a = 1;
+        this.c = aVar;
+        this.d = bVar;
+    }
+
+    public o(a0 a0Var, m4.r rVar, boolean z10, x0 x0Var) {
+        this.a = 2;
+        this.d = a0Var;
+        this.c = rVar;
+        this.b = z10;
+    }
+
+    private final void a(Throwable th2) {
     }
 }

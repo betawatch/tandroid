@@ -1,19 +1,19 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.Context;
-import gd.b;
-import gd.c;
+import hd.g;
+import hd.i;
 import java.io.File;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
-import jd.j;
-import tc.g;
-import tc.i;
+import ud.b;
+import ud.c;
+import xd.j;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzcq implements zzbt {
     private final Context zza;
@@ -63,11 +63,11 @@ public final class zzcq implements zzbt {
         Iterator it = cVar.iterator();
         while (true) {
             b bVar = (b) it;
-            boolean z4 = bVar.d;
-            if (!z4) {
-                ArrayList o10 = g.o(arrayList);
-                Collections.shuffle(o10);
-                String h = g.h(o10.subList(0, 8), "", null, null, null, 62);
+            boolean z10 = bVar.d;
+            if (!z10) {
+                ArrayList o9 = g.o(arrayList);
+                Collections.shuffle(o9);
+                String h = g.h(o9.subList(0, 8), "", null, null, null, 62);
                 Context context = this.zza;
                 String str3 = this.zzb;
                 File file = new File(context.getCacheDir(), str3.concat(String.valueOf(h)));
@@ -79,7 +79,7 @@ public final class zzcq implements zzbt {
             if (i10 != bVar.c) {
                 bVar.e = bVar.b + i10;
             } else {
-                if (!z4) {
+                if (!z10) {
                     throw new NoSuchElementException();
                 }
                 bVar.d = false;
@@ -102,7 +102,7 @@ public final class zzcq implements zzbt {
                         break;
                     }
                     File file2 = listFiles[i10];
-                    if (kotlin.jvm.internal.j.a(file2.getName(), this.zzb + str)) {
+                    if (kotlin.jvm.internal.i.a(file2.getName(), this.zzb + str)) {
                         file = file2;
                         break;
                     }

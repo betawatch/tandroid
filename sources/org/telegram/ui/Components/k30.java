@@ -1,88 +1,64 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.LinearGradient;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.graphics.Shader;
-import android.widget.TextView;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class k30 extends TextView {
-    public final Paint[] a;
-    public final /* synthetic */ n30 b;
+public final class k30 extends z4.a {
+    public final /* synthetic */ l30 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k30(n30 n30Var, Context context) {
-        super(context);
-        this.b = n30Var;
-        this.a = new Paint[n30Var.e.length];
-        int i10 = 0;
-        while (true) {
-            Paint[] paintArr = this.a;
-            if (i10 >= paintArr.length) {
-                return;
-            }
-            paintArr[i10] = new Paint(1);
-            i10++;
-        }
+    public k30(l30 l30Var) {
+        this.c = l30Var;
     }
 
-    @Override // android.widget.TextView, android.view.View
-    public final void onDraw(Canvas canvas) {
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(0.0f, 0.0f, getMeasuredWidth(), getMeasuredHeight());
-        n30 n30Var = this.b;
-        int i10 = n30Var.h;
-        Paint[] paintArr = this.a;
-        paintArr[i10].setAlpha(255);
-        canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[n30Var.h]);
-        float f10 = n30Var.f;
-        if (f10 > 0.0f) {
-            int i11 = n30Var.h;
-            if (i11 + 1 < paintArr.length) {
-                paintArr[i11 + 1].setAlpha((int) (f10 * 255.0f));
-                canvas.drawRoundRect(rectF, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(6.0f), paintArr[n30Var.h + 1]);
-            }
-        }
-        super.onDraw(canvas);
+    @Override // z4.a
+    public final void a(z4.g gVar, Object obj) {
+        gVar.removeView((View) obj);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x002c  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
-        int i14;
-        int i15;
-        super.onSizeChanged(i10, i11, i12, i13);
-        int i16 = 0;
-        while (true) {
-            Paint[] paintArr = this.a;
-            if (i16 >= paintArr.length) {
-                return;
-            }
-            int i17 = -9015575;
-            if (i16 == 0) {
-                i17 = -11033346;
-                i14 = -9015575;
-            } else if (i16 == 1) {
-                i17 = -8919716;
-                i14 = -11089922;
-            } else {
-                i14 = -1026983;
-                i15 = -1792170;
-                paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
-                i16++;
-            }
-            i15 = 0;
-            paintArr[i16].setShader(i15 == 0 ? new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14, i15}, (float[]) null, Shader.TileMode.CLAMP) : new LinearGradient(0.0f, 0.0f, getMeasuredWidth(), 0.0f, new int[]{i17, i14}, (float[]) null, Shader.TileMode.CLAMP));
-            i16++;
+    @Override // z4.a
+    public final int b() {
+        return this.c.e.length;
+    }
+
+    @Override // z4.a
+    public final Object e(z4.g gVar, int i10) {
+        j30 j30Var = new j30(this, this.c.getContext(), i10, 0);
+        j30Var.setOnClickListener(new di.o4(this, i10, 10));
+        j30Var.setFocusable(true);
+        j30Var.setTag(Integer.valueOf(i10));
+        j30Var.setPadding(AndroidUtilities.dp(18.0f), 0, AndroidUtilities.dp(18.0f), 0);
+        j30Var.setScaleType(ImageView.ScaleType.FIT_XY);
+        j30Var.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.dp(200.0f), -1));
+        if (i10 == 0) {
+            j30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordAudio));
+        } else if (i10 == 1) {
+            j30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordPortrait));
+        } else {
+            j30Var.setContentDescription(LocaleController.getString(R.string.VoipRecordLandscape));
         }
+        SvgHelper.SvgDrawable drawable = SvgHelper.getDrawable(AndroidUtilities.readRes(i10 == 0 ? R.raw.record_audio : i10 == 1 ? R.raw.record_video_p : R.raw.record_video_l));
+        drawable.setAspectFill(false);
+        j30Var.setImageDrawable(drawable);
+        if (j30Var.getParent() != null) {
+            ((ViewGroup) j30Var.getParent()).removeView(j30Var);
+        }
+        gVar.addView(j30Var, 0);
+        return j30Var;
+    }
+
+    @Override // z4.a
+    public final boolean f(View view, Object obj) {
+        return view.equals(obj);
+    }
+
+    @Override // z4.a
+    public final void h(int i10) {
     }
 }

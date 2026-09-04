@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzyw extends zzsn implements zztt {
     private static final zzyw zzb;
@@ -17,9 +17,9 @@ public final class zzyw extends zzsn implements zztt {
     private zzyw() {
     }
 
-    public static /* synthetic */ void zzM(zzyw zzywVar, float f10) {
+    public static /* synthetic */ void zzM(zzyw zzywVar, float f7) {
         zzywVar.zze = 9;
-        zzywVar.zzf = Float.valueOf(f10);
+        zzywVar.zzf = Float.valueOf(f7);
     }
 
     public static /* synthetic */ void zzN(zzyw zzywVar, int i10) {
@@ -32,9 +32,9 @@ public final class zzyw extends zzsn implements zztt {
         zzywVar.zzf = Integer.valueOf(i10);
     }
 
-    public static /* synthetic */ void zzP(zzyw zzywVar, long j10) {
+    public static /* synthetic */ void zzP(zzyw zzywVar, long j3) {
         zzywVar.zze = 7;
-        zzywVar.zzf = Long.valueOf(j10);
+        zzywVar.zzf = Long.valueOf(j3);
     }
 
     public static /* synthetic */ void zzQ(zzyw zzywVar, String str) {
@@ -47,9 +47,9 @@ public final class zzyw extends zzsn implements zztt {
         return (zzyv) zzb.zzq();
     }
 
-    public static /* synthetic */ void zzi(zzyw zzywVar, boolean z4) {
+    public static /* synthetic */ void zzi(zzyw zzywVar, boolean z10) {
         zzywVar.zze = 1;
-        zzywVar.zzf = Boolean.valueOf(z4);
+        zzywVar.zzf = Boolean.valueOf(z10);
     }
 
     public static /* synthetic */ void zzj(zzyw zzywVar, zzqm zzqmVar) {

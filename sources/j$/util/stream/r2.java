@@ -19,7 +19,7 @@ public final class r2 extends q2 implements t1 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j10) {
+    public final /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -60,10 +60,10 @@ public final class r2 extends q2 implements t1 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         double[] dArr = this.a;
-        if (j10 != dArr.length) {
-            throw new IllegalStateException(String.format("Begin size %d is not equal to fixed size %d", Long.valueOf(j10), Integer.valueOf(dArr.length)));
+        if (j3 != dArr.length) {
+            throw new IllegalStateException(String.format("Begin size %d is not equal to fixed size %d", Long.valueOf(j3), Integer.valueOf(dArr.length)));
         }
         this.b = 0;
     }

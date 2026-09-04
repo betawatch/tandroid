@@ -45,24 +45,24 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
                     temporal = LocalDate.I(temporal);
                 }
                 G = G(temporal.j(j$.time.temporal.a.YEAR));
-            } catch (b e) {
-                throw new b("Unable to obtain Year from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e);
+            } catch (b e7) {
+                throw new b("Unable to obtain Year from TemporalAccessor: " + temporal + " of type " + temporal.getClass().getName(), e7);
             }
         }
         if (qVar instanceof ChronoUnit) {
-            long j10 = G.a - this.a;
+            long j3 = G.a - this.a;
             int i10 = q.b[((ChronoUnit) qVar).ordinal()];
             if (i10 == 1) {
-                return j10;
+                return j3;
             }
             if (i10 == 2) {
-                return j10 / 10;
+                return j3 / 10;
             }
             if (i10 == 3) {
-                return j10 / 100;
+                return j3 / 100;
             }
             if (i10 == 4) {
-                return j10 / 1000;
+                return j3 / 1000;
             }
             if (i10 == 5) {
                 j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
@@ -125,65 +125,65 @@ public final class r implements Temporal, j$.time.temporal.m, Comparable, Serial
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: J, reason: merged with bridge method [inline-methods] */
-    public final r c(long j10, j$.time.temporal.o oVar) {
+    public final r c(long j3, j$.time.temporal.o oVar) {
         if (!(oVar instanceof j$.time.temporal.a)) {
-            return (r) oVar.q(this, j10);
+            return (r) oVar.q(this, j3);
         }
         j$.time.temporal.a aVar = (j$.time.temporal.a) oVar;
-        aVar.w(j10);
+        aVar.w(j3);
         int i10 = q.a[aVar.ordinal()];
         if (i10 == 1) {
             if (this.a < 1) {
-                j10 = 1 - j10;
+                j3 = 1 - j3;
             }
-            return G((int) j10);
+            return G((int) j3);
         }
         if (i10 == 2) {
-            return G((int) j10);
+            return G((int) j3);
         }
         if (i10 == 3) {
-            return y(j$.time.temporal.a.ERA) == j10 ? this : G(1 - this.a);
+            return y(j$.time.temporal.a.ERA) == j3 ? this : G(1 - this.a);
         }
         throw new j$.time.temporal.r(c.a("Unsupported field: ", oVar));
     }
 
     @Override // j$.time.temporal.Temporal
     /* renamed from: H, reason: merged with bridge method [inline-methods] */
-    public final r d(long j10, j$.time.temporal.q qVar) {
+    public final r d(long j3, j$.time.temporal.q qVar) {
         if (!(qVar instanceof ChronoUnit)) {
-            return (r) qVar.j(this, j10);
+            return (r) qVar.j(this, j3);
         }
         int i10 = q.b[((ChronoUnit) qVar).ordinal()];
         if (i10 == 1) {
-            return I(j10);
+            return I(j3);
         }
         if (i10 == 2) {
-            return I(j$.com.android.tools.r8.a.T(j10, 10));
+            return I(j$.com.android.tools.r8.a.T(j3, 10));
         }
         if (i10 == 3) {
-            return I(j$.com.android.tools.r8.a.T(j10, 100));
+            return I(j$.com.android.tools.r8.a.T(j3, 100));
         }
         if (i10 == 4) {
-            return I(j$.com.android.tools.r8.a.T(j10, MediaDataController.MAX_STYLE_RUNS_COUNT));
+            return I(j$.com.android.tools.r8.a.T(j3, MediaDataController.MAX_STYLE_RUNS_COUNT));
         }
         if (i10 == 5) {
             j$.time.temporal.a aVar = j$.time.temporal.a.ERA;
-            return c(j$.com.android.tools.r8.a.O(y(aVar), j10), aVar);
+            return c(j$.com.android.tools.r8.a.O(y(aVar), j3), aVar);
         }
         throw new j$.time.temporal.r("Unsupported unit: " + qVar);
     }
 
-    public final r I(long j10) {
-        if (j10 == 0) {
+    public final r I(long j3) {
+        if (j3 == 0) {
             return this;
         }
         j$.time.temporal.a aVar = j$.time.temporal.a.YEAR;
-        return G(aVar.b.a(this.a + j10, aVar));
+        return G(aVar.b.a(this.a + j3, aVar));
     }
 
     @Override // j$.time.temporal.Temporal
-    public final Temporal w(long j10, ChronoUnit chronoUnit) {
-        return j10 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j10, chronoUnit);
+    public final Temporal w(long j3, ChronoUnit chronoUnit) {
+        return j3 == Long.MIN_VALUE ? d(Long.MAX_VALUE, chronoUnit).d(1L, chronoUnit) : d(-j3, chronoUnit);
     }
 
     @Override // j$.time.temporal.l

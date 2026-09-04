@@ -1,60 +1,52 @@
 package org.telegram.ui.ActionBar;
 
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.cq;
-import org.telegram.ui.Components.dn0;
-import org.telegram.ui.Components.wy;
-import org.telegram.ui.n51;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class m0 extends cq {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object i;
+public final class m0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ v0 c;
 
-    public /* synthetic */ m0(int i10, FrameLayout frameLayout) {
-        this.h = i10;
-        this.i = frameLayout;
+    public /* synthetic */ m0(v0 v0Var, ArrayList arrayList, int i10) {
+        this.a = i10;
+        this.c = v0Var;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.Components.cq
-    public final int a() {
-        switch (this.h) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
             case 0:
-                return ((w0) this.i).c.b.o0;
-            case 1:
-                return j6.v0(j6.Je, ((wy) this.i).D.W1);
-            case 2:
-                return j6.v0(j6.Q5, ((dn0) this.i).f);
-            case 3:
-                return j6.v0(j6.Je, ((n51) this.i).y.W0);
+                v0 v0Var = this.c;
+                v0Var.F.setAlpha(0.0f);
+                int i10 = 0;
+                while (true) {
+                    ArrayList arrayList = this.b;
+                    if (i10 >= arrayList.size()) {
+                        v0Var.F.setVisibility(8);
+                        break;
+                    } else {
+                        ((View) arrayList.get(i10)).setAlpha(1.0f);
+                        i10++;
+                    }
+                }
             default:
-                return j6.v0(j6.Je, (f6) this.i);
+                this.c.F.setAlpha(1.0f);
+                int i11 = 0;
+                while (true) {
+                    ArrayList arrayList2 = this.b;
+                    if (i11 >= arrayList2.size()) {
+                        break;
+                    } else {
+                        ((View) arrayList2.get(i11)).setAlpha(0.0f);
+                        i11++;
+                    }
+                }
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m0(wy wyVar) {
-        super(1.25f);
-        this.h = 1;
-        this.i = wyVar;
-        this.f = AndroidUtilities.dp(7.0f);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m0(f6 f6Var) {
-        super(1.25f);
-        this.h = 4;
-        this.i = f6Var;
-        this.f = AndroidUtilities.dp(7.0f);
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public m0(n51 n51Var) {
-        super(1.25f);
-        this.h = 3;
-        this.i = n51Var;
-        this.f = AndroidUtilities.dp(7.0f);
     }
 }

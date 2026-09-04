@@ -1,34 +1,28 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class nh implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ Utilities.Callback2 b;
+    public final /* synthetic */ Exception c;
 
-    public /* synthetic */ nh(int i10, int i11, int i12) {
-        this.a = i12;
-        this.b = i10;
-        this.c = i11;
+    public /* synthetic */ nh(Utilities.Callback2 callback2, Exception exc, int i10) {
+        this.a = i10;
+        this.b = callback2;
+        this.c = exc;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                PasskeysController.lambda$login$11(this.b, this.c);
-                break;
-            case 1:
-                ConnectionsManager.lambda$onRequestNewServerIpAndPort$18(this.b, this.c);
-                break;
-            case 2:
-                ConnectionsManager.lambda$onConnectionStateChanged$15(this.b, this.c);
+                PasskeysController.lambda$create$3(this.b, this.c);
                 break;
             default:
-                ConnectionsManager.getInstance(this.b).cancelRequest(this.c, true);
+                PasskeysController.lambda$create$8(this.b, this.c);
                 break;
         }
     }

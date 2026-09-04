@@ -1,29 +1,24 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class p9 implements o1.g {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x9 b;
+public final class p9 extends u9 {
+    public final /* synthetic */ q9 f0;
 
-    public /* synthetic */ p9(x9 x9Var, int i10) {
-        this.a = i10;
-        this.b = x9Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public p9(q9 q9Var, int i10) {
+        super(i10);
+        this.f0 = q9Var;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                x9 x9Var = this.b;
-                x9Var.y = f10 / 500.0f;
-                x9Var.fragmentView.invalidate();
-                break;
-            default:
-                x9 x9Var2 = this.b;
-                x9Var2.X = x9Var2.J ? f10 / 500.0f : 1.0f - (f10 / 500.0f);
-                x9Var2.fragmentView.invalidate();
-                break;
-        }
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void finishFragment() {
+        setFinishing(true);
+        this.f0.dismiss();
+    }
+
+    @Override // org.telegram.ui.ActionBar.n2
+    public final void removeSelfFromStack() {
+        this.f0.dismiss();
     }
 }

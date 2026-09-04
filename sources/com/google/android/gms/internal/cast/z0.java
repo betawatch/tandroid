@@ -1,36 +1,41 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class z0 {
-    public static final z0 a = new z0();
-    public static final z0 b = new z0();
-    public static final z0 c = new z0();
-    public static final z0 d = new z0();
-    public static final z0 e = new z0();
-    public static final z0 f = new z0();
-    public static final z0 g = new z0();
-    public static final z0 h = new z0();
-    public static final z0 i = new z0();
-    public static final z0 j = new z0();
-    public static final z0 k = new z0();
-    public static final z0 l = new z0();
-    public static final z0 m = new z0();
-    public static final z0 n = new z0();
-    public static final z0 o = new z0();
-    public static final z0 p = new z0();
-    public static final z0 q = new z0();
-    public static final z0 r = new z0();
-    public static final z0 s = new z0();
-    public static final z0 t = new z0();
-    public static final z0 u = new z0();
-    public static final z0 v = new z0();
-    public static final z0 w = new z0();
-    public static final z0 x = new z0();
-    public static final z0 y = new z0();
-    public static final z0 z = new z0();
-    public static final z0 A = new z0();
-    public static final z0 B = new z0();
-    public static final z0 C = new z0();
-    public static final z0 D = new z0();
+public final class z0 extends h5 {
+    private static final z0 zzb;
+    private int zzd;
+    private int zze;
+    private int zzf;
+    private int zzg;
+    private int zzh;
+    private y0 zzi;
+    private int zzj;
+
+    static {
+        z0 z0Var = new z0();
+        zzb = z0Var;
+        h5.e(z0.class, z0Var);
+    }
+
+    @Override // com.google.android.gms.internal.cast.h5
+    public final Object h(int i10, h5 h5Var) {
+        int i11 = i10 - 1;
+        if (i11 == 0) {
+            return (byte) 1;
+        }
+        if (i11 == 2) {
+            return new i6(zzb, "\u0001\u0006\u0000\u0001\u0001\u0006\u0006\u0000\u0000\u0000\u0001င\u0000\u0002᠌\u0001\u0003င\u0002\u0004င\u0003\u0005ဉ\u0004\u0006᠌\u0005", new Object[]{"zzd", "zze", "zzf", b0.s, "zzg", "zzh", "zzi", "zzj", b0.r});
+        }
+        if (i11 == 3) {
+            return new z0();
+        }
+        if (i11 == 4) {
+            return new x0(zzb);
+        }
+        if (i11 != 5) {
+            return null;
+        }
+        return zzb;
+    }
 }

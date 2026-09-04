@@ -4,32 +4,32 @@ import android.content.Intent;
 import android.os.Bundle;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public class ChatsWidgetConfigActivity extends ExternalActionActivity {
-    public static final /* synthetic */ int C = 0;
-    public int B = 0;
+    public static final /* synthetic */ int F = 0;
+    public int E = 0;
 
     @Override // org.telegram.ui.ExternalActionActivity
-    public final void d(Intent intent, boolean z4, boolean z10, boolean z11, int i10, int i11) {
-        if (c(intent, z4, z10, z11, i10, i11)) {
+    public final void d(Intent intent, boolean z10, boolean z11, boolean z12, int i10, int i11) {
+        if (c(intent, z10, z11, z12, i10, i11)) {
             Bundle extras = intent.getExtras();
             if (extras != null) {
-                this.B = extras.getInt("appWidgetId", 0);
+                this.E = extras.getInt("appWidgetId", 0);
             }
-            if (this.B == 0) {
+            if (this.E == 0) {
                 finish();
                 return;
             }
-            org.telegram.messenger.y3.e(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
-            zy zyVar = new zy(0, this.B);
-            zyVar.y = new c1(this, 25);
+            org.telegram.messenger.w1.e(10, "onlySelect", "dialogsType", true).putBoolean("allowSwitchAccount", true);
+            dz dzVar = new dz(0, this.E);
+            dzVar.y = new z0(this, 25);
             if (AndroidUtilities.isTablet()) {
                 if (this.d.getFragmentStack().isEmpty()) {
-                    this.d.c(-1, zyVar);
+                    this.d.c(-1, dzVar);
                 }
             } else if (this.c.getFragmentStack().isEmpty()) {
-                this.c.c(-1, zyVar);
+                this.c.c(-1, dzVar);
             }
             if (!AndroidUtilities.isTablet()) {
                 this.e.setVisibility(8);

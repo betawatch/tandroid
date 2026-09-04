@@ -113,21 +113,21 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         this(i10, 0.75f, 1);
     }
 
-    public ConcurrentHashMap(int i10, float f10, int i11) {
-        if (f10 <= 0.0f || i10 < 0 || i11 <= 0) {
+    public ConcurrentHashMap(int i10, float f7, int i11) {
+        if (f7 <= 0.0f || i10 < 0 || i11 <= 0) {
             throw new IllegalArgumentException();
         }
-        long j10 = (long) (((i10 < i11 ? i11 : i10) / f10) + 1.0d);
-        this.sizeCtl = j10 >= 1073741824 ? TLObject.FLAG_30 : l((int) j10);
+        long j3 = (long) (((i10 < i11 ? i11 : i10) / f7) + 1.0d);
+        this.sizeCtl = j3 >= 1073741824 ? TLObject.FLAG_30 : l((int) j3);
     }
 
     @Override // java.util.AbstractMap, java.util.Map
     public int size() {
-        long j10 = j();
-        if (j10 < 0) {
+        long j3 = j();
+        if (j3 < 0) {
             return 0;
         }
-        return j10 > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : (int) j10;
+        return j3 > 2147483647L ? ConnectionsManager.DEFAULT_DATACENTER_ID : (int) j3;
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -223,7 +223,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object f(Object obj, Object obj2, boolean z4) {
+    public final Object f(Object obj, Object obj2, boolean z10) {
         Object obj3;
         Object obj4;
         Object obj5;
@@ -252,7 +252,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                         if (i13 == -1) {
                             lVarArr = d(lVarArr, k10);
                         } else {
-                            if (z4 && i13 == i10 && (((obj5 = k10.b) == obj || (obj5 != null && obj.equals(obj5))) && (obj6 = k10.c) != null)) {
+                            if (z10 && i13 == i10 && (((obj5 = k10.b) == obj || (obj5 != null && obj.equals(obj5))) && (obj6 = k10.c) != null)) {
                                 return obj6;
                             }
                             synchronized (k10) {
@@ -274,15 +274,15 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                                 lVar = lVar2;
                                             }
                                             obj3 = lVar.c;
-                                            if (!z4) {
+                                            if (!z10) {
                                                 lVar.c = obj2;
                                             }
                                         } else if (k10 instanceof q) {
-                                            r e = ((q) k10).e(i10, obj, obj2);
-                                            if (e != null) {
-                                                Object obj7 = e.c;
-                                                if (!z4) {
-                                                    e.c = obj2;
+                                            r e7 = ((q) k10).e(i10, obj, obj2);
+                                            if (e7 != null) {
+                                                Object obj7 = e7.c;
+                                                if (!z10) {
+                                                    e7.c = obj2;
                                                 }
                                                 obj3 = obj7;
                                             } else {
@@ -331,7 +331,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         int length;
         int i10;
         l k10;
-        boolean z4;
+        boolean z10;
         Object obj4;
         r b10;
         Object obj5;
@@ -348,7 +348,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 synchronized (k10) {
                     try {
                         if (k(lVarArr, i10) == k10) {
-                            z4 = true;
+                            z10 = true;
                             if (i12 >= 0) {
                                 l lVar = null;
                                 l lVar2 = k10;
@@ -392,13 +392,13 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                 throw new IllegalStateException("Recursive update");
                             }
                         }
-                        z4 = false;
+                        z10 = false;
                         obj4 = null;
                     } catch (Throwable th2) {
                         throw th2;
                     }
                 }
-                if (z4) {
+                if (z10) {
                     if (obj4 != null) {
                         if (obj2 == null) {
                             a(-1L, -1);
@@ -416,7 +416,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         l k10;
         l lVar;
         l[] lVarArr = this.a;
-        long j10 = 0;
+        long j3 = 0;
         loop0: while (true) {
             int i10 = 0;
             while (lVarArr != null && i10 < lVarArr.length) {
@@ -437,7 +437,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                     lVar = k10 instanceof q ? ((q) k10).f : null;
                                 }
                                 while (lVar != null) {
-                                    j10--;
+                                    j3--;
                                     lVar = lVar.d;
                                 }
                                 h(lVarArr, i10, null);
@@ -450,8 +450,8 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
             }
             lVarArr = d(lVarArr, k10);
         }
-        if (j10 != 0) {
-            a(j10, -1);
+        if (j3 != 0) {
+            a(j3, -1);
         }
     }
 
@@ -510,7 +510,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         l[] lVarArr = this.a;
         int length = lVarArr == null ? 0 : lVarArr.length;
         p pVar = new p(lVarArr, length, 0, length);
-        StringBuilder sb = new StringBuilder("{");
+        StringBuilder sb2 = new StringBuilder("{");
         l a2 = pVar.a();
         if (a2 != null) {
             while (true) {
@@ -519,21 +519,21 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 if (obj == this) {
                     obj = "(this Map)";
                 }
-                sb.append(obj);
-                sb.append('=');
+                sb2.append(obj);
+                sb2.append('=');
                 if (obj2 == this) {
                     obj2 = "(this Map)";
                 }
-                sb.append(obj2);
+                sb2.append(obj2);
                 a2 = pVar.a();
                 if (a2 == null) {
                     break;
                 }
-                sb.append(", ");
+                sb2.append(", ");
             }
         }
-        sb.append('}');
-        return sb.toString();
+        sb2.append('}');
+        return sb2.toString();
     }
 
     @Override // java.util.AbstractMap, java.util.Map
@@ -606,59 +606,59 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     }
 
     private void readObject(ObjectInputStream objectInputStream) {
+        long j3;
         long j10;
-        long j11;
         Object obj;
         this.sizeCtl = -1;
         objectInputStream.defaultReadObject();
+        long j11 = 0;
         long j12 = 0;
-        long j13 = 0;
         l lVar = null;
         while (true) {
             Object readObject = objectInputStream.readObject();
             Object readObject2 = objectInputStream.readObject();
-            j10 = 1;
+            j3 = 1;
             if (readObject == null || readObject2 == null) {
                 break;
             }
-            j13++;
+            j12++;
             lVar = new l(i(readObject.hashCode()), readObject, readObject2, lVar);
         }
-        if (j13 == 0) {
+        if (j12 == 0) {
             this.sizeCtl = 0;
             return;
         }
-        long j14 = (long) ((j13 / 0.75f) + 1.0d);
-        int l10 = j14 >= 1073741824 ? TLObject.FLAG_30 : l((int) j14);
-        l[] lVarArr = new l[l10];
-        int i10 = l10 - 1;
+        long j13 = (long) ((j12 / 0.75f) + 1.0d);
+        int l4 = j13 >= 1073741824 ? TLObject.FLAG_30 : l((int) j13);
+        l[] lVarArr = new l[l4];
+        int i10 = l4 - 1;
         while (lVar != null) {
             l lVar2 = lVar.d;
             int i11 = lVar.a;
             int i12 = i11 & i10;
             l k10 = k(lVarArr, i12);
-            boolean z4 = true;
+            boolean z10 = true;
             if (k10 == null) {
-                j11 = j10;
+                j10 = j3;
             } else {
                 Object obj2 = lVar.b;
                 if (k10.a < 0) {
                     if (((q) k10).e(i11, obj2, lVar.c) == null) {
-                        j12 += j10;
+                        j11 += j3;
                     }
-                    j11 = j10;
+                    j10 = j3;
                 } else {
-                    j11 = j10;
+                    j10 = j3;
                     int i13 = 0;
                     for (l lVar3 = k10; lVar3 != null; lVar3 = lVar3.d) {
                         if (lVar3.a == i11 && ((obj = lVar3.b) == obj2 || (obj != null && obj2.equals(obj)))) {
-                            z4 = false;
+                            z10 = false;
                             break;
                         }
                         i13++;
                     }
-                    if (z4 && i13 >= 8) {
-                        j12 += j11;
+                    if (z10 && i13 >= 8) {
+                        j11 += j10;
                         lVar.d = k10;
                         l lVar4 = lVar;
                         r rVar = null;
@@ -677,19 +677,19 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                         h(lVarArr, i12, new q(rVar));
                     }
                 }
-                z4 = false;
+                z10 = false;
             }
-            if (z4) {
-                j12 += j11;
+            if (z10) {
+                j11 += j10;
                 lVar.d = k10;
                 h(lVarArr, i12, lVar);
             }
             lVar = lVar2;
-            j10 = j11;
+            j3 = j10;
         }
         this.a = lVarArr;
-        this.sizeCtl = l10 - (l10 >>> 2);
-        this.baseCount = j12;
+        this.sizeCtl = l4 - (l4 >>> 2);
+        this.baseCount = j11;
     }
 
     @Override // java.util.Map, java.util.concurrent.ConcurrentMap, j$.util.Map
@@ -808,7 +808,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                 if (length != 0) {
                     int i12 = (length - 1) & i10;
                     l k10 = k(lVarArr, i12);
-                    boolean z4 = true;
+                    boolean z10 = true;
                     if (k10 == null) {
                         m mVar = new m();
                         synchronized (mVar) {
@@ -876,13 +876,13 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                                     i11 = 2;
                                                 }
                                             }
-                                            z4 = false;
+                                            z10 = false;
                                             i11 = 2;
                                         } else if (k10 instanceof m) {
                                             throw new IllegalStateException("Recursive update");
                                         }
                                     }
-                                    z4 = false;
+                                    z10 = false;
                                 } finally {
                                 }
                             }
@@ -890,7 +890,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                 if (i11 >= 8) {
                                     n(lVarArr, i12);
                                 }
-                                if (!z4) {
+                                if (!z10) {
                                     return obj5;
                                 }
                             }
@@ -1330,15 +1330,15 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void a(long j10, int i10) {
-        boolean z4;
+    public final void a(long j3, int i10) {
         boolean z10;
-        int length;
         boolean z11;
+        int length;
+        boolean z12;
         int length2;
         int length3;
         c cVar;
-        long j11;
+        long j10;
         l[] lVarArr;
         int length4;
         l[] lVarArr2;
@@ -1346,28 +1346,28 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         c[] cVarArr = concurrentHashMap.c;
         if (cVarArr == null) {
             j$.sun.misc.a aVar = h;
-            long j12 = k;
-            long j13 = concurrentHashMap.baseCount;
-            j11 = j13 + j10;
+            long j11 = k;
+            long j12 = concurrentHashMap.baseCount;
+            j10 = j12 + j3;
         }
         if (cVarArr == null || (length3 = cVarArr.length - 1) < 0 || (cVar = cVarArr[length3 & ((ThreadLocalRandom) ThreadLocalRandom.f.get()).b]) == null) {
-            z4 = true;
+            z10 = true;
         } else {
             j$.sun.misc.a aVar2 = h;
-            long j14 = m;
-            long j15 = cVar.value;
-            z4 = aVar2.d(cVar, j14, j15, j15 + j10);
-            if (z4) {
+            long j13 = m;
+            long j14 = cVar.value;
+            z10 = aVar2.d(cVar, j13, j14, j14 + j3);
+            if (z10) {
                 if (i10 <= 1) {
                     return;
                 }
-                j11 = concurrentHashMap.j();
+                j10 = concurrentHashMap.j();
                 if (i10 < 0) {
                     return;
                 }
                 while (true) {
                     int i11 = concurrentHashMap.sizeCtl;
-                    if (j11 < i11 || (lVarArr = concurrentHashMap.a) == null || (length4 = lVarArr.length) >= 1073741824) {
+                    if (j10 < i11 || (lVarArr = concurrentHashMap.a) == null || (length4 = lVarArr.length) >= 1073741824) {
                         return;
                     }
                     int numberOfLeadingZeros = Integer.numberOfLeadingZeros(length4) | 32768;
@@ -1381,7 +1381,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                     } else if (h.c(concurrentHashMap, i, i11, (numberOfLeadingZeros << 16) + 2)) {
                         concurrentHashMap.m(lVarArr, null);
                     }
-                    j11 = concurrentHashMap.j();
+                    j10 = concurrentHashMap.j();
                 }
             }
         }
@@ -1390,27 +1390,27 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         if (i12 == 0) {
             ThreadLocalRandom.d();
             i12 = ((ThreadLocalRandom) vVar.get()).b;
-            z4 = true;
+            z10 = true;
         }
-        boolean z12 = z4;
+        boolean z13 = z10;
         int i13 = i12;
         while (true) {
-            boolean z13 = false;
+            boolean z14 = false;
             while (true) {
                 c[] cVarArr2 = concurrentHashMap.c;
                 if (cVarArr2 != null && (length = cVarArr2.length) > 0) {
                     c cVar2 = cVarArr2[(length - 1) & i13];
                     if (cVar2 != null) {
-                        if (z12) {
+                        if (z13) {
                             j$.sun.misc.a aVar3 = h;
-                            long j16 = m;
-                            long j17 = cVar2.value;
-                            if (aVar3.d(cVar2, j16, j17, j17 + j10)) {
+                            long j15 = m;
+                            long j16 = cVar2.value;
+                            if (aVar3.d(cVar2, j15, j16, j16 + j3)) {
                                 return;
                             }
                             if (concurrentHashMap.c == cVarArr2 && length < g) {
-                                if (!z13) {
-                                    z13 = true;
+                                if (!z14) {
+                                    z14 = true;
                                 } else if (concurrentHashMap.cellsBusy == 0 && aVar3.c(concurrentHashMap, l, 0, 1)) {
                                     try {
                                         break;
@@ -1419,7 +1419,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                 }
                             }
                         } else {
-                            z12 = true;
+                            z13 = true;
                         }
                         int i14 = (i13 << 13) ^ i13;
                         int i15 = i14 ^ (i14 >>> 17);
@@ -1427,7 +1427,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                         ((ThreadLocalRandom) ThreadLocalRandom.f.get()).b = i16;
                         i13 = i16;
                     } else if (concurrentHashMap.cellsBusy == 0) {
-                        c cVar3 = new c(j10);
+                        c cVar3 = new c(j3);
                         if (concurrentHashMap.cellsBusy == 0 && h.c(concurrentHashMap, l, 0, 1)) {
                             try {
                                 c[] cVarArr3 = concurrentHashMap.c;
@@ -1435,20 +1435,20 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                     int i17 = (length2 - 1) & i13;
                                     if (cVarArr3[i17] == null) {
                                         cVarArr3[i17] = cVar3;
-                                        z11 = true;
-                                        if (!z11) {
+                                        z12 = true;
+                                        if (!z12) {
                                             return;
                                         }
                                     }
                                 }
-                                z11 = false;
-                                if (!z11) {
+                                z12 = false;
+                                if (!z12) {
                                 }
                             } finally {
                             }
                         }
                     }
-                    z13 = false;
+                    z14 = false;
                     int i142 = (i13 << 13) ^ i13;
                     int i152 = i142 ^ (i142 >>> 17);
                     int i162 = i152 ^ (i152 << 5);
@@ -1458,22 +1458,22 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                     try {
                         if (concurrentHashMap.c == cVarArr2) {
                             c[] cVarArr4 = new c[2];
-                            cVarArr4[i13 & 1] = new c(j10);
+                            cVarArr4[i13 & 1] = new c(j3);
                             concurrentHashMap.c = cVarArr4;
-                            z10 = true;
+                            z11 = true;
                         } else {
-                            z10 = false;
+                            z11 = false;
                         }
-                        if (z10) {
+                        if (z11) {
                             return;
                         }
                     } finally {
                     }
                 } else {
                     j$.sun.misc.a aVar4 = h;
-                    long j18 = k;
-                    long j19 = concurrentHashMap.baseCount;
-                    if (aVar4.d(concurrentHashMap, j18, j19, j19 + j10)) {
+                    long j17 = k;
+                    long j18 = concurrentHashMap.baseCount;
+                    if (aVar4.d(concurrentHashMap, j17, j18, j18 + j3)) {
                         return;
                     }
                 }
@@ -1500,13 +1500,13 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     public final void o(int i10) {
         int length;
-        int l10 = i10 >= 536870912 ? TLObject.FLAG_30 : l(i10 + (i10 >>> 1) + 1);
+        int l4 = i10 >= 536870912 ? TLObject.FLAG_30 : l(i10 + (i10 >>> 1) + 1);
         while (true) {
             int i11 = this.sizeCtl;
             if (i11 >= 0) {
                 l[] lVarArr = this.a;
                 if (lVarArr != null && (length = lVarArr.length) != 0) {
-                    if (l10 <= i11 || length >= 1073741824) {
+                    if (l4 <= i11 || length >= 1073741824) {
                         break;
                     } else if (lVarArr == this.a) {
                         if (h.c(this, i, i11, ((Integer.numberOfLeadingZeros(length) | 32768) << 16) + 2)) {
@@ -1514,7 +1514,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                         }
                     }
                 } else {
-                    int i12 = i11 > l10 ? i11 : l10;
+                    int i12 = i11 > l4 ? i11 : l4;
                     if (h.c(this, i, i11, -1)) {
                         try {
                             if (this.a == lVarArr) {
@@ -1574,12 +1574,12 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
         g gVar = new g(lVarArr3);
         int i20 = 0;
         int i21 = 0;
-        boolean z4 = true;
-        boolean z10 = false;
+        boolean z10 = true;
+        boolean z11 = false;
         while (true) {
-            if (z4) {
+            if (z10) {
                 int i22 = i20 - 1;
-                if (i22 >= i21 || z10) {
+                if (i22 >= i21 || z11) {
                     i21 = i21;
                     i20 = i22;
                 } else {
@@ -1589,7 +1589,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                     } else {
                         j$.sun.misc.a aVar = h;
                         int i24 = i21;
-                        long j10 = j;
+                        long j3 = j;
                         if (i23 > i19) {
                             i11 = i24;
                             i12 = i23 - i19;
@@ -1599,9 +1599,9 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                             i11 = i24;
                             i12 = 0;
                         }
-                        boolean c3 = aVar.c(concurrentHashMap, j10, i23, i12);
+                        boolean c10 = aVar.c(concurrentHashMap, j3, i23, i12);
                         i21 = i12;
-                        if (c3) {
+                        if (c10) {
                             i20 = i23 - 1;
                         } else {
                             i21 = i11;
@@ -1609,14 +1609,14 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                         }
                     }
                 }
-                z4 = false;
+                z10 = false;
             } else {
                 int i25 = i21;
                 r rVar2 = null;
                 if (i20 < 0 || i20 >= length || (i15 = i20 + length) >= length2) {
                     i13 = length;
                     i14 = i19;
-                    if (z10) {
+                    if (z11) {
                         concurrentHashMap.b = null;
                         concurrentHashMap.a = lVarArr3;
                         concurrentHashMap.sizeCtl = (i13 << 1) - (i13 >>> 1);
@@ -1624,22 +1624,22 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                     }
                     int i26 = i20;
                     j$.sun.misc.a aVar2 = h;
-                    long j11 = i;
+                    long j10 = i;
                     int i27 = concurrentHashMap.sizeCtl;
-                    if (!aVar2.c(concurrentHashMap, j11, i27, i27 - 1)) {
+                    if (!aVar2.c(concurrentHashMap, j10, i27, i27 - 1)) {
                         i20 = i26;
                     } else {
                         if (i27 - 2 != ((Integer.numberOfLeadingZeros(i13) | 32768) << 16)) {
                             return;
                         }
                         i20 = i13;
-                        z4 = true;
                         z10 = true;
+                        z11 = true;
                     }
                 } else {
                     ?? k10 = k(lVarArr, i20);
                     if (k10 == 0) {
-                        z4 = b(lVarArr, i20, gVar);
+                        z10 = b(lVarArr, i20, gVar);
                         i13 = length;
                         i14 = i19;
                     } else {
@@ -1647,7 +1647,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                         if (i28 == -1) {
                             i13 = length;
                             i14 = i19;
-                            z4 = true;
+                            z10 = true;
                         } else {
                             synchronized (k10) {
                                 try {
@@ -1743,7 +1743,7 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
                                                 h(lVarArr, i20, gVar);
                                             }
                                         }
-                                        z4 = true;
+                                        z10 = true;
                                     } else {
                                         i13 = length;
                                         i14 = i19;
@@ -1764,15 +1764,15 @@ public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements Concur
 
     public final long j() {
         c[] cVarArr = this.c;
-        long j10 = this.baseCount;
+        long j3 = this.baseCount;
         if (cVarArr != null) {
             for (c cVar : cVarArr) {
                 if (cVar != null) {
-                    j10 += cVar.value;
+                    j3 += cVar.value;
                 }
             }
         }
-        return j10;
+        return j3;
     }
 
     public final void n(l[] lVarArr, int i10) {

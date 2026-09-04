@@ -1,19 +1,19 @@
 package n1;
 
-import dd.l;
 import java.util.Map;
+import kotlin.jvm.internal.i;
 import kotlin.jvm.internal.j;
-import kotlin.jvm.internal.k;
+import rd.l;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a extends k implements l {
+public final class a extends j implements l {
     public static final a b = new a(1);
 
-    @Override // dd.l
+    @Override // rd.l
     public final Object invoke(Object obj) {
         Map.Entry entry = (Map.Entry) obj;
-        j.e(entry, "entry");
+        i.e(entry, "entry");
         return "  " + ((d) entry.getKey()).a + " = " + entry.getValue();
     }
 }

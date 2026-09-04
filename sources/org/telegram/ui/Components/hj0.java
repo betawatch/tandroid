@@ -1,22 +1,27 @@
 package org.telegram.ui.Components;
 
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.ImageReceiver;
+import android.content.Context;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class hj0 extends ImageReceiver {
-    public final /* synthetic */ jj0 a;
+public final class hj0 extends ll0 {
+    public final /* synthetic */ pj0 X2;
 
-    public hj0(jj0 jj0Var) {
-        this.a = jj0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public hj0(pj0 pj0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        this.X2 = pj0Var;
     }
 
-    @Override // org.telegram.messenger.ImageReceiver
-    public final boolean setImageBitmapByKey(Drawable drawable, String str, int i10, boolean z4, int i11) {
-        if (drawable != null) {
-            this.a.c();
+    @Override // org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        pj0 pj0Var = this.X2;
+        ua0 ua0Var = pj0Var.J;
+        if (ua0Var != null) {
+            ua0Var.measure(i10, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i11), 0));
         }
-        return super.setImageBitmapByKey(drawable, str, i10, z4, i11);
+        super.onMeasure(i10, i11);
+        pj0Var.j();
     }
 }

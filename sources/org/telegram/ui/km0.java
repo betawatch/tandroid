@@ -1,90 +1,59 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.TLRPC;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class km0 implements org.telegram.ui.Components.ji {
-    public final /* synthetic */ fn0 a;
+public final class km0 implements TextWatcher {
+    public boolean a;
+    public final /* synthetic */ EditTextBoldCursor b;
+    public final /* synthetic */ String c;
+    public final /* synthetic */ pn0 d;
 
-    public km0(fn0 fn0Var) {
-        this.a = fn0Var;
+    public km0(pn0 pn0Var, EditTextBoldCursor editTextBoldCursor, String str) {
+        this.d = pn0Var;
+        this.b = editTextBoldCursor;
+        this.c = str;
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final void C0(org.telegram.ui.Components.wg wgVar) {
-        wgVar.run();
-    }
-
-    @Override // org.telegram.ui.Components.ji
-    public final void G1(int i10, boolean z4, boolean z10, int i11, int i12, long j10, boolean z11, boolean z12, long j11) {
-        org.telegram.ui.Components.li liVar;
-        fn0 fn0Var = this.a;
-        if (fn0Var.getParentActivity() == null || (liVar = fn0Var.O0) == null) {
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        if (this.a) {
             return;
         }
-        if (i10 != 8 && i10 != 7) {
-            liVar.dismissWithButtonClick(i10);
-            fn0Var.F1(i10);
-            return;
-        }
-        if (i10 != 8) {
-            liVar.dismiss(true);
-        }
-        HashMap<Object, Object> selectedPhotos = fn0Var.O0.g0.getSelectedPhotos();
-        ArrayList<Object> selectedPhotosOrder = fn0Var.O0.g0.getSelectedPhotosOrder();
-        if (selectedPhotos.isEmpty()) {
-            return;
-        }
-        ArrayList arrayList = new ArrayList();
-        for (int i13 = 0; i13 < selectedPhotosOrder.size(); i13++) {
-            MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) selectedPhotos.get(selectedPhotosOrder.get(i13));
-            SendMessagesHelper.SendingMediaInfo sendingMediaInfo = new SendMessagesHelper.SendingMediaInfo();
-            String str = photoEntry.imagePath;
-            if (str != null) {
-                sendingMediaInfo.path = str;
-            } else {
-                sendingMediaInfo.path = photoEntry.path;
+        boolean z10 = true;
+        this.a = true;
+        int i10 = 0;
+        while (true) {
+            if (i10 >= editable.length()) {
+                z10 = false;
+                break;
             }
-            arrayList.add(sendingMediaInfo);
-            photoEntry.reset();
+            char charAt = editable.charAt(i10);
+            if ((charAt < 'a' || charAt > 'z') && ((charAt < 'A' || charAt > 'Z') && !((charAt >= '0' && charAt <= '9') || charAt == '-' || charAt == ' '))) {
+                break;
+            } else {
+                i10++;
+            }
         }
-        fn0Var.G1(arrayList);
+        this.a = false;
+        EditTextBoldCursor editTextBoldCursor = this.b;
+        if (z10) {
+            editTextBoldCursor.setErrorText(LocaleController.getString(R.string.PassportUseLatinOnly));
+        } else {
+            pn0.J0(this.d, editTextBoldCursor, this.c, editable, false);
+        }
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final void Q0() {
-        AndroidUtilities.hideKeyboard(this.a.fragmentView.findFocus());
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ boolean X1() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ boolean h0() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ void Z0(Object obj) {
-    }
-
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ void o1(TLRPC.User user) {
-    }
-
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ void z0() {
-    }
-
-    @Override // org.telegram.ui.Components.ji
-    public final /* synthetic */ void b2(ArrayList arrayList, CharSequence charSequence, boolean z4, int i10, int i11, long j10, boolean z10, long j11) {
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

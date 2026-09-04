@@ -21,7 +21,7 @@ public abstract class i0 implements c8 {
     }
 
     @Override // j$.util.stream.j5
-    public /* synthetic */ void accept(long j10) {
+    public /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -35,7 +35,7 @@ public abstract class i0 implements c8 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j10) {
+    public final /* synthetic */ void o(long j3) {
     }
 
     @Override // java.util.function.Consumer

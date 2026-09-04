@@ -3,80 +3,43 @@ package org.telegram.ui;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class ng1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ wg1 b;
+    public final /* synthetic */ TwoStepVerificationActivity b;
 
-    public /* synthetic */ ng1(wg1 wg1Var, int i10) {
+    public /* synthetic */ ng1(TwoStepVerificationActivity twoStepVerificationActivity, int i10) {
         this.a = i10;
-        this.b = wg1Var;
+        this.b = twoStepVerificationActivity;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
+        EditTextBoldCursor editTextBoldCursor;
         switch (this.a) {
             case 0:
-                wg1 wg1Var = this.b;
-                EditTextBoldCursor editTextBoldCursor = wg1Var.n;
-                if (editTextBoldCursor != null && editTextBoldCursor.getVisibility() == 0) {
-                    wg1Var.n.requestFocus();
-                    AndroidUtilities.showKeyboard(wg1Var.n);
+                TwoStepVerificationActivity twoStepVerificationActivity = this.b;
+                if (!twoStepVerificationActivity.isFinishing() && !twoStepVerificationActivity.H && (editTextBoldCursor = twoStepVerificationActivity.s) != null) {
+                    editTextBoldCursor.requestFocus();
+                    AndroidUtilities.showKeyboard(twoStepVerificationActivity.s);
                     break;
                 }
                 break;
             case 1:
-                wg1 wg1Var2 = this.b;
-                xd0 xd0Var = wg1Var2.w;
-                if (xd0Var != null && xd0Var.getVisibility() == 0) {
-                    wg1Var2.w.f[0].requestFocus();
-                    break;
-                }
+                TwoStepVerificationActivity twoStepVerificationActivity2 = this.b;
+                twoStepVerificationActivity2.U = false;
+                twoStepVerificationActivity2.v.a(0.0f);
                 break;
             case 2:
-                int i10 = 0;
-                while (true) {
-                    ds[] dsVarArr = this.b.w.f;
-                    if (i10 >= dsVarArr.length) {
-                        break;
-                    } else {
-                        dsVarArr[i10].i(0.0f);
-                        i10++;
-                    }
-                }
-            case 3:
-                wg1 wg1Var3 = this.b;
-                EditTextBoldCursor editTextBoldCursor2 = wg1Var3.n;
-                if (editTextBoldCursor2 != null) {
-                    if (editTextBoldCursor2.length() != 0) {
-                        wg1Var3.c0[2].N(49);
-                        wg1Var3.c0[2].Q(0.0f, false);
-                        wg1Var3.a.d();
-                        break;
-                    } else {
-                        wg1Var3.F0(true);
-                        break;
-                    }
-                }
-                break;
-            case 4:
-                wg1 wg1Var4 = this.b;
-                if (wg1Var4.d0 != null) {
-                    wg1Var4.F0(false);
-                    break;
-                }
-                break;
-            case 5:
-                wg1.f0(this.b);
-                break;
-            case 6:
-                AndroidUtilities.runOnUIThread(new ng1(this.b, 7), 150L);
+                this.b.y0();
                 break;
             default:
-                for (ds dsVar : this.b.w.f) {
-                    dsVar.i(0.0f);
-                }
+                TwoStepVerificationActivity twoStepVerificationActivity3 = this.b;
+                ng1 ng1Var = twoStepVerificationActivity3.V;
+                AndroidUtilities.cancelRunOnUIThread(ng1Var);
+                AndroidUtilities.runOnUIThread(ng1Var, 1500L);
+                twoStepVerificationActivity3.U = true;
                 break;
         }
     }

@@ -1,180 +1,145 @@
 package org.telegram.ui;
 
-import android.graphics.Canvas;
-import android.graphics.PointF;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.graphics.RectF;
+import java.io.File;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class f11 extends View {
-    public static final String[] s = {"🎉", "🎆", "🎈"};
-    public final ProfileActivity a;
-    public c11 b;
-    public c11 c;
-    public final PointF d;
-    public boolean e;
-    public boolean f;
-    public float h;
-    public long n;
-    public boolean r;
+public final /* synthetic */ class f11 implements Comparator {
+    public final /* synthetic */ int a;
 
-    public f11(ProfileActivity profileActivity, c11 c11Var) {
-        super(profileActivity.getParentActivity());
-        this.d = new PointF();
-        this.h = 1.0f;
-        this.r = false;
-        this.a = profileActivity;
-        this.b = c11Var;
+    public /* synthetic */ f11(int i10) {
+        this.a = i10;
     }
 
-    public final boolean a() {
-        c11 c11Var = this.b;
-        if (!c11Var.b || this.h < 1.0f) {
-            return false;
-        }
-        if (c11Var.c.getLottieAnimation() != null) {
-            this.b.c.getLottieAnimation().L(0, false, false);
-            this.b.c.getLottieAnimation().F(true);
-        }
-        this.r = true;
-        this.h = 0.0f;
-        invalidate();
-        return true;
-    }
-
-    public final void b(c11 c11Var) {
-        if (this.b == c11Var || c11Var == null) {
-            return;
-        }
-        ArrayList arrayList = c11Var.e;
-        if (this.r) {
-            this.c = c11Var;
-            return;
-        }
-        if (this.f) {
-            for (int i10 = 0; i10 < this.b.e.size(); i10++) {
-                ((e11) this.b.e.get(i10)).setParentView(null);
-            }
-            this.f = false;
-        }
-        c11 c11Var2 = this.b;
-        ArrayList arrayList2 = c11Var2.j;
-        arrayList2.remove(this);
-        if (arrayList2.isEmpty() && c11Var2.i) {
-            c11Var2.b(true);
-            c11Var2.i = false;
-        }
-        this.b = c11Var;
-        if (this.f) {
-            return;
-        }
-        for (int i11 = 0; i11 < arrayList.size(); i11++) {
-            ((e11) arrayList.get(i11)).setParentView(this);
-        }
-        this.f = true;
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.b.j.add(this);
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        if (this.f) {
-            for (int i10 = 0; i10 < this.b.e.size(); i10++) {
-                ((e11) this.b.e.get(i10)).setParentView(null);
-            }
-            this.f = false;
-        }
-        c11 c11Var = this.b;
-        ArrayList arrayList = c11Var.j;
-        arrayList.remove(this);
-        if (arrayList.isEmpty() && c11Var.i) {
-            c11Var.b(true);
-            c11Var.i = false;
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.b.b) {
-            if (!this.f) {
-                for (int i10 = 0; i10 < this.b.e.size(); i10++) {
-                    ((e11) this.b.e.get(i10)).setParentView(this);
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0068 A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x0066 A[RETURN, SYNTHETIC] */
+    @Override // java.util.Comparator
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int compare(Object obj, Object obj2) {
+        int i10;
+        int i11;
+        switch (this.a) {
+            case 0:
+                int i12 = obj instanceof k11 ? ((k11) obj).g : obj instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj).num : 0;
+                int i13 = obj2 instanceof k11 ? ((k11) obj2).g : obj2 instanceof MessagesController.FaqSearchResult ? ((MessagesController.FaqSearchResult) obj2).num : 0;
+                if (i12 < i13) {
+                    return -1;
                 }
-                this.f = true;
-                if (!this.e) {
-                    this.e = true;
-                    post(new sz0(this, 3));
+                return i12 > i13 ? 1 : 0;
+            case 1:
+                long j3 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
+                long j10 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
+                if (j3 > j10) {
+                    return 1;
                 }
-            }
-            if (this.r) {
-                long currentTimeMillis = System.currentTimeMillis();
-                this.h = Utilities.clamp(this.h + (Utilities.clamp(currentTimeMillis - this.n, 20L, 0L) / 4200.0f), 1.0f, 0.0f);
-                this.n = currentTimeMillis;
-                ProfileActivity profileActivity = this.a;
-                ty0 ty0Var = profileActivity.a;
-                int i11 = profileActivity.R2;
-                PointF pointF = this.d;
-                float f10 = 2.0f;
-                if (i11 >= 0) {
-                    int i12 = 0;
-                    while (true) {
-                        if (i12 >= ty0Var.getChildCount()) {
-                            break;
-                        }
-                        View childAt = ty0Var.getChildAt(i12);
-                        if (i11 == RecyclerView.R(childAt) && (childAt instanceof org.telegram.ui.Cells.x8)) {
-                            ih.s sVar = ((org.telegram.ui.Cells.x8) childAt).a;
-                            pointF.set(sVar.getX() + childAt.getX() + ty0Var.getX() + AndroidUtilities.dp(12.0f), (sVar.getMeasuredHeight() / 2.0f) + sVar.getY() + childAt.getY() + ty0Var.getY());
-                            break;
-                        }
-                        i12++;
-                    }
+                return j3 < j10 ? -1 : 0;
+            case 2:
+                return Integer.compare(((org.telegram.ui.ActionBar.i6) obj).V, ((org.telegram.ui.ActionBar.i6) obj2).V);
+            case 3:
+                long j11 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
+                long j12 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
+                if (j11 > j12) {
+                    return 1;
                 }
-                float f11 = dz.f();
-                this.b.c.setImageCoords((getWidth() - AndroidUtilities.dp(f11)) / 2.0f, Math.max(0.0f, pointF.y - (AndroidUtilities.dp(f11) * 0.5f)), AndroidUtilities.dp(f11), AndroidUtilities.dp(f11));
-                canvas.save();
-                canvas.scale(-1.0f, 1.0f, getWidth() / 2.0f, 0.0f);
-                this.b.c.draw(canvas);
-                this.b.c.setAlpha(1.0f - ((this.h - 0.9f) / 0.1f));
-                canvas.restore();
-                int dp = AndroidUtilities.dp(110.0f);
-                int size = this.b.d.size() - 1;
-                while (size >= 0) {
-                    e11 e11Var = (e11) this.b.d.get(size);
-                    float f12 = size;
-                    float cascade = AndroidUtilities.cascade(this.h, f12, this.b.d.size(), 1.8f);
-                    float f13 = dp;
-                    float f14 = 0.88f * f13;
-                    float d = e2.c.d(f14, this.b.d.size() - 1, getWidth(), f10);
-                    float f15 = pointF.x;
-                    float f16 = pointF.y;
-                    float f17 = ((d - f15) * cascade) + (f14 * f12) + f15;
-                    float pow = f16 - ((f16 + f13) * ((float) Math.pow(this.h, 2.0d)));
-                    float interpolation = org.telegram.ui.Components.mr.h.getInterpolation(Utilities.clamp(cascade / 0.4f, 1.0f, 0.0f));
-                    float f18 = (f13 / 2.0f) * interpolation;
-                    float f19 = f13 * interpolation;
-                    e11Var.setImageCoords(f17 - f18, pow - f18, f19, f19);
-                    e11Var.draw(canvas);
-                    size--;
-                    f10 = 2.0f;
+                return j11 < j12 ? -1 : 0;
+            case 4:
+                long j13 = UserConfig.getInstance(((Integer) obj).intValue()).loginTime;
+                long j14 = UserConfig.getInstance(((Integer) obj2).intValue()).loginTime;
+                if (j13 > j14) {
+                    return 1;
                 }
-                if (this.h < 1.0f) {
-                    invalidate();
-                    return;
+                return j13 < j14 ? -1 : 0;
+            case 5:
+                return (int) (((org.telegram.ui.web.k) obj2).c - ((org.telegram.ui.web.k) obj).c);
+            case 6:
+                return (int) (((org.telegram.ui.web.k) obj2).c - ((org.telegram.ui.web.k) obj).c);
+            case 7:
+                return ((p2.d) obj).a.compareTo(((p2.d) obj2).a);
+            case 8:
+                return (int) ((((sg.r1) obj).a * 100.0f) - (((sg.r1) obj2).a * 100.0f));
+            case 9:
+                return ((String) obj).compareTo((String) obj2);
+            case 10:
+                return Long.compare(((File) obj2).lastModified(), ((File) obj).lastModified());
+            case 11:
+                return ((y9.d0) ((y9.h1) obj)).a.compareTo(((y9.d0) ((y9.h1) obj2)).a);
+            case 12:
+                i10 = ((b2.s) obj2).j;
+                i11 = ((b2.s) obj).j;
+                break;
+            case 13:
+                Integer num = (Integer) obj;
+                Integer num2 = (Integer) obj2;
+                if (num.intValue() == -1) {
+                    return num2.intValue() == -1 ? 0 : -1;
                 }
-                this.r = false;
-                b(this.c);
-                this.c = null;
-            }
+                if (num2.intValue() == -1) {
+                    return 1;
+                }
+                return num.intValue() - num2.intValue();
+            case 14:
+                return Integer.compare(((x2.f) ((List) obj).get(0)).f, ((x2.f) ((List) obj2).get(0)).f);
+            case 15:
+                List list = (List) obj;
+                List list2 = (List) obj2;
+                int i14 = 19;
+                return e9.x.f(x2.o.c((x2.o) Collections.max(list, new f11(18)), (x2.o) Collections.max(list2, new f11(18)))).a(list.size(), list2.size()).b((x2.o) Collections.max(list, new f11(i14)), (x2.o) Collections.max(list2, new f11(i14)), new f11(i14)).e();
+            case 16:
+                return ((x2.e) Collections.max((List) obj)).compareTo((x2.e) Collections.max((List) obj2));
+            case 17:
+                return ((x2.l) ((List) obj).get(0)).compareTo((x2.l) ((List) obj2).get(0));
+            case 18:
+                return x2.o.c((x2.o) obj, (x2.o) obj2);
+            case 19:
+                x2.o oVar = (x2.o) obj;
+                x2.o oVar2 = (x2.o) obj2;
+                boolean z10 = oVar.e;
+                int i15 = oVar.s;
+                e9.y0 a2 = (z10 && oVar.n) ? x2.p.l : x2.p.l.a();
+                boolean z11 = oVar.f.B;
+                e9.z zVar = e9.z.a;
+                if (z11) {
+                    zVar = zVar.b(Integer.valueOf(i15), Integer.valueOf(oVar2.s), x2.p.l.a());
+                }
+                return zVar.b(Integer.valueOf(oVar.v), Integer.valueOf(oVar2.v), a2).b(Integer.valueOf(i15), Integer.valueOf(oVar2.s), a2).e();
+            case 20:
+                return ((y2.q) obj).a - ((y2.q) obj2).a;
+            case 21:
+                return Float.compare(((y2.q) obj).c, ((y2.q) obj2).c);
+            case 22:
+                RectF rectF = (RectF) obj;
+                RectF rectF2 = (RectF) obj2;
+                if (Math.abs(rectF.top - rectF2.top) > 1.0E-4f) {
+                    return rectF.top < rectF2.top ? -1 : 1;
+                }
+                if (Math.abs(rectF.left - rectF2.left) <= 1.0E-4f) {
+                    return 0;
+                }
+                if (rectF.left < rectF2.left) {
+                }
+            case 23:
+                return Long.compare(((TLRPC.PollAnswer) obj).shuffle_hash ^ Long.MIN_VALUE, ((TLRPC.PollAnswer) obj2).shuffle_hash ^ Long.MIN_VALUE);
+            case 24:
+                i10 = ((TL_stars.SavedStarGift) obj2).date;
+                i11 = ((TL_stars.SavedStarGift) obj).date;
+                break;
+            case 25:
+                i10 = ((TL_stars.SavedStarGift) obj2).date;
+                i11 = ((TL_stars.SavedStarGift) obj).date;
+                break;
+            default:
+                return (int) (((zh.i8) obj2).d - ((zh.i8) obj).d);
         }
+        return i10 - i11;
     }
 }

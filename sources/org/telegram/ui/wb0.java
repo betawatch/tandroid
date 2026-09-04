@@ -1,18 +1,14 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class wb0 extends u21 {
-    public wb0(Bundle bundle) {
-        super(bundle);
-    }
+public interface wb0 {
+    void a(TLRPC.TL_chatInviteExported tL_chatInviteExported);
 
-    @Override // org.telegram.ui.ActionBar.p2
-    public final void onBecomeFullyVisible() {
-        super.onBecomeFullyVisible();
-        AndroidUtilities.runOnUIThread(new d10(this, 16));
-    }
+    void b(TLRPC.TL_chatInviteExported tL_chatInviteExported, TLObject tLObject);
+
+    void c(TLObject tLObject);
 }

@@ -1,51 +1,65 @@
 package i7;
 
-import j7.d8;
+import android.content.Context;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Looper;
+import com.google.android.gms.common.api.k;
+import com.google.android.gms.common.api.l;
+import m.p3;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c extends d {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ d e;
+public final class c extends n6.g {
+    public final Bundle U;
 
-    public c(d dVar, int i10, int i11) {
-        this.e = dVar;
-        this.c = i10;
-        this.d = i11;
+    public c(Context context, Looper looper, k kVar, l lVar, p3 p3Var) {
+        super(context, looper, 212, p3Var, kVar, lVar, 0);
+        this.U = new Bundle();
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        d8.a(i10, this.d);
-        return this.e.get(i10 + this.c);
+    @Override // n6.g
+    public final boolean C() {
+        return true;
     }
 
-    @Override // i7.a
-    public final int n() {
-        return this.e.o() + this.c + this.d;
+    @Override // n6.g, com.google.android.gms.common.api.c
+    public final int l() {
+        return 17895000;
     }
 
-    @Override // i7.a
-    public final int o() {
-        return this.e.o() + this.c;
+    @Override // n6.g
+    public final IInterface q(IBinder iBinder) {
+        if (iBinder == null) {
+            return null;
+        }
+        IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.gms.auth.api.identity.internal.ISignInService");
+        return queryLocalInterface instanceof i ? (i) queryLocalInterface : new i(iBinder, "com.google.android.gms.auth.api.identity.internal.ISignInService", 5);
     }
 
-    @Override // i7.a
-    public final Object[] p() {
-        return this.e.p();
+    @Override // n6.g
+    public final k6.c[] r() {
+        return d.b;
     }
 
-    @Override // i7.d, java.util.List
-    /* renamed from: q, reason: merged with bridge method [inline-methods] */
-    public final d subList(int i10, int i11) {
-        d8.b(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
+    @Override // n6.g
+    public final Bundle t() {
+        return this.U;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    @Override // n6.g
+    public final String v() {
+        return "com.google.android.gms.auth.api.identity.internal.ISignInService";
+    }
+
+    @Override // n6.g
+    public final String w() {
+        return "com.google.android.gms.auth.api.identity.service.signin.START";
+    }
+
+    @Override // n6.g
+    public final boolean y() {
+        return true;
     }
 }

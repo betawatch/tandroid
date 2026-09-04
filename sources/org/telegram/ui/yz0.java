@@ -1,54 +1,109 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class yz0 implements ph.u9 {
-    public final /* synthetic */ ProfileActivity a;
+public final class yz0 implements nq {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ TLRPC.ChatParticipant b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ boolean[] d;
+    public final /* synthetic */ ProfileActivity e;
 
-    public yz0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public yz0(ProfileActivity profileActivity, int i10, TLRPC.ChatParticipant chatParticipant, boolean z10, boolean[] zArr) {
+        this.e = profileActivity;
+        this.a = i10;
+        this.b = chatParticipant;
+        this.c = z10;
+        this.d = zArr;
     }
 
-    @Override // ph.u9
-    public final ph.y9 a(long j10) {
-        ProfileActivity profileActivity = this.a;
-        if (j10 != profileActivity.a()) {
-            return null;
-        }
-        profileActivity.b0.setRoundRadiusForExpand((int) AndroidUtilities.lerp(profileActivity.c4(), 0.0f, profileActivity.h2));
-        cz0 cz0Var = profileActivity.b0;
-        boolean isForum = ChatObject.isForum(profileActivity.B2);
-        if (cz0Var == null || cz0Var.getRootView() == null) {
-            return null;
-        }
-        float scaleX = ((View) cz0Var.getParent()).getScaleX();
-        float imageWidth = cz0Var.getImageReceiver().getImageWidth() * scaleX;
-        float f10 = isForum ? 0.32f * imageWidth : imageWidth;
-        ph.w9 w9Var = new ph.w9(cz0Var, 0);
-        float[] fArr = new float[2];
-        cz0Var.getRootView().getLocationOnScreen(new int[2]);
-        AndroidUtilities.getViewPositionInParent(cz0Var, (ViewGroup) cz0Var.getRootView(), fArr);
-        float imageX = (cz0Var.getImageReceiver().getImageX() * scaleX) + r4[0] + fArr[0];
-        float imageY = (cz0Var.getImageReceiver().getImageY() * scaleX) + r4[1] + fArr[1];
-        w9Var.c.set(imageX, imageY, imageX + imageWidth, imageWidth + imageY);
-        w9Var.e = cz0Var.getImageReceiver();
-        w9Var.b = f10;
-        return w9Var;
+    @Override // org.telegram.ui.nq
+    public final void a(TLRPC.User user) {
+        ProfileActivity profileActivity = this.e;
+        profileActivity.M.m(-profileActivity.f1, user, profileActivity.E2.megagroup ? 10 : 9);
     }
 
-    @Override // ph.u9
-    public final void b(long j10, gg.y1 y1Var) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.b0.setHasStories(profileActivity.j4());
-        if (j10 == profileActivity.a() && profileActivity.l2 && profileActivity.h2 > 0.0f) {
-            profileActivity.c.h1(0, profileActivity.T3() - profileActivity.a.getPaddingTop());
-            profileActivity.a.post(new qb0(profileActivity, 14));
+    @Override // org.telegram.ui.nq
+    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
+        TLRPC.ChatFull chatFull;
+        boolean z10;
+        int i11 = 0;
+        TLRPC.ChatParticipant chatParticipant = this.b;
+        ProfileActivity profileActivity = this.e;
+        int i12 = this.a;
+        if (i12 == 0) {
+            if (chatParticipant instanceof TLRPC.TL_chatChannelParticipant) {
+                TLRPC.TL_chatChannelParticipant tL_chatChannelParticipant = (TLRPC.TL_chatChannelParticipant) chatParticipant;
+                if (i10 == 1) {
+                    TLRPC.TL_channelParticipantAdmin tL_channelParticipantAdmin = new TLRPC.TL_channelParticipantAdmin();
+                    tL_chatChannelParticipant.channelParticipant = tL_channelParticipantAdmin;
+                    tL_channelParticipantAdmin.flags |= 4;
+                } else {
+                    tL_chatChannelParticipant.channelParticipant = new TLRPC.TL_channelParticipant();
+                }
+                tL_chatChannelParticipant.channelParticipant.inviter_id = profileActivity.getUserConfig().getClientUserId();
+                tL_chatChannelParticipant.channelParticipant.peer = new TLRPC.TL_peerUser();
+                TLRPC.ChannelParticipant channelParticipant = tL_chatChannelParticipant.channelParticipant;
+                channelParticipant.peer.user_id = chatParticipant.user_id;
+                channelParticipant.date = chatParticipant.date;
+                channelParticipant.banned_rights = tL_chatBannedRights;
+                channelParticipant.admin_rights = tL_chatAdminRights;
+                channelParticipant.rank = str;
+            } else if (chatParticipant != null) {
+                TLRPC.ChatParticipant tL_chatParticipantAdmin = i10 == 1 ? new TLRPC.TL_chatParticipantAdmin() : new TLRPC.TL_chatParticipant();
+                tL_chatParticipantAdmin.user_id = chatParticipant.user_id;
+                tL_chatParticipantAdmin.date = chatParticipant.date;
+                tL_chatParticipantAdmin.inviter_id = chatParticipant.inviter_id;
+                int indexOf = profileActivity.u2.participants.participants.indexOf(chatParticipant);
+                if (indexOf >= 0) {
+                    profileActivity.u2.participants.participants.set(indexOf, tL_chatParticipantAdmin);
+                }
+            }
+            if (i10 != 1 || this.c) {
+                return;
+            }
+            this.d[0] = true;
+            return;
         }
-        AndroidUtilities.runOnUIThread(y1Var, 30L);
+        if (i12 == 1 && i10 == 0 && profileActivity.E2.megagroup && (chatFull = profileActivity.u2) != null && chatFull.participants != null) {
+            int i13 = 0;
+            while (true) {
+                if (i13 >= profileActivity.u2.participants.participants.size()) {
+                    z10 = false;
+                    break;
+                } else {
+                    if (MessageObject.getPeerId(((TLRPC.TL_chatChannelParticipant) profileActivity.u2.participants.participants.get(i13)).channelParticipant.peer) == chatParticipant.user_id) {
+                        TLRPC.ChatFull chatFull2 = profileActivity.u2;
+                        chatFull2.participants_count--;
+                        chatFull2.participants.participants.remove(i13);
+                        z10 = true;
+                        break;
+                    }
+                    i13++;
+                }
+            }
+            TLRPC.ChatFull chatFull3 = profileActivity.u2;
+            if (chatFull3 != null && chatFull3.participants != null) {
+                while (true) {
+                    if (i11 >= profileActivity.u2.participants.participants.size()) {
+                        break;
+                    }
+                    if (profileActivity.u2.participants.participants.get(i11).user_id == chatParticipant.user_id) {
+                        profileActivity.u2.participants.participants.remove(i11);
+                        z10 = true;
+                        break;
+                    }
+                    i11++;
+                }
+            }
+            if (z10) {
+                profileActivity.h5(true);
+                profileActivity.j5();
+                profileActivity.d.l();
+            }
+        }
     }
 }

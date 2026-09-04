@@ -1,32 +1,34 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class m7 implements Comparator {
+public final /* synthetic */ class m7 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ int[] e;
 
-    public /* synthetic */ m7(ArrayList arrayList, int i10) {
+    public /* synthetic */ m7(MediaDataController mediaDataController, long j3, long j10, int[] iArr, int i10) {
         this.a = i10;
-        this.b = arrayList;
+        this.b = mediaDataController;
+        this.c = j3;
+        this.d = j10;
+        this.e = iArr;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        int lambda$getEmojiSuggestions$220;
-        int lambda$reorderStickers$54;
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                lambda$getEmojiSuggestions$220 = MediaDataController.lambda$getEmojiSuggestions$220(this.b, (MediaDataController.KeywordResult) obj, (MediaDataController.KeywordResult) obj2);
-                return lambda$getEmojiSuggestions$220;
+                this.b.lambda$getMediaCounts$128(this.c, this.d, this.e);
+                break;
+            case 1:
+                this.b.lambda$getMediaCounts$127(this.c, this.d, this.e);
+                break;
             default:
-                lambda$reorderStickers$54 = MediaDataController.lambda$reorderStickers$54(this.b, (TLRPC.TL_messages_stickerSet) obj, (TLRPC.TL_messages_stickerSet) obj2);
-                return lambda$reorderStickers$54;
+                this.b.lambda$getMediaCounts$130(this.c, this.d, this.e);
+                break;
         }
     }
 }

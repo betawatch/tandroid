@@ -1,12 +1,84 @@
 package org.telegram.ui;
 
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class fj0 extends kg.d {
-    @Override // kg.d
-    public final int getHeaderHeight() {
-        return getResources().getConfiguration().orientation == 2 ? AndroidUtilities.dp(48.0f) : AndroidUtilities.dp(54.0f);
+public final /* synthetic */ class fj0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ lj0 b;
+
+    public /* synthetic */ fj0(lj0 lj0Var, int i10) {
+        this.a = i10;
+        this.b = lj0Var;
+    }
+
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(final TLObject tLObject, final TLRPC.TL_error tL_error) {
+        switch (this.a) {
+            case 0:
+                final int i10 = 0;
+                final lj0 lj0Var = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.dj0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i10) {
+                            case 0:
+                                lj0.U(lj0Var, tL_error, tLObject);
+                                break;
+                            case 1:
+                                lj0.W(lj0Var, tL_error, tLObject);
+                                break;
+                            default:
+                                lj0.V(lj0Var, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            case 1:
+                final int i11 = 1;
+                final lj0 lj0Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.dj0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i11) {
+                            case 0:
+                                lj0.U(lj0Var2, tL_error, tLObject);
+                                break;
+                            case 1:
+                                lj0.W(lj0Var2, tL_error, tLObject);
+                                break;
+                            default:
+                                lj0.V(lj0Var2, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+            default:
+                final int i12 = 2;
+                final lj0 lj0Var3 = this.b;
+                AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.dj0
+                    @Override // java.lang.Runnable
+                    public final void run() {
+                        switch (i12) {
+                            case 0:
+                                lj0.U(lj0Var3, tL_error, tLObject);
+                                break;
+                            case 1:
+                                lj0.W(lj0Var3, tL_error, tLObject);
+                                break;
+                            default:
+                                lj0.V(lj0Var3, tL_error, tLObject);
+                                break;
+                        }
+                    }
+                });
+                break;
+        }
     }
 }

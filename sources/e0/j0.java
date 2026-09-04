@@ -1,16 +1,49 @@
 package e0;
 
-import android.content.ComponentName;
-import android.os.IBinder;
+import android.app.Notification;
+import android.os.Parcel;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class j0 {
-    public final ComponentName a;
-    public final IBinder b;
+    public final String a;
+    public final int b;
+    public final Notification c;
 
-    public j0(ComponentName componentName, IBinder iBinder) {
-        this.a = componentName;
-        this.b = iBinder;
+    public j0(String str, int i10, Notification notification) {
+        this.a = str;
+        this.b = i10;
+        this.c = notification;
+    }
+
+    public final void a(b.c cVar) {
+        String str = this.a;
+        int i10 = this.b;
+        b.a aVar = (b.a) cVar;
+        aVar.getClass();
+        Parcel obtain = Parcel.obtain();
+        try {
+            obtain.writeInterfaceToken(b.c.g);
+            obtain.writeString(str);
+            obtain.writeInt(i10);
+            obtain.writeString(null);
+            Notification notification = this.c;
+            if (notification != null) {
+                obtain.writeInt(1);
+                notification.writeToParcel(obtain, 0);
+            } else {
+                obtain.writeInt(0);
+            }
+            aVar.a.transact(1, obtain, null, 1);
+        } finally {
+            obtain.recycle();
+        }
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("NotifyTask[packageName:");
+        sb2.append(this.a);
+        sb2.append(", id:");
+        return a4.a.n(this.b, ", tag:null]", sb2);
     }
 }

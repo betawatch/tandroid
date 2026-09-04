@@ -1,27 +1,28 @@
 package org.telegram.messenger;
 
-import com.google.android.gms.tasks.OnFailureListener;
-import org.telegram.messenger.CaptchaController;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class s0 implements OnFailureListener {
+public final /* synthetic */ class s0 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ CaptchaController.Request b;
+    public final /* synthetic */ ChatMessagesMetadataController b;
 
-    public /* synthetic */ s0(CaptchaController.Request request, int i10) {
+    public /* synthetic */ s0(ChatMessagesMetadataController chatMessagesMetadataController, int i10) {
         this.a = i10;
-        this.b = request;
+        this.b = chatMessagesMetadataController;
     }
 
-    @Override // com.google.android.gms.tasks.OnFailureListener
-    public final void onFailure(Exception exc) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                CaptchaController.lambda$request$3(this.b, exc);
+                this.b.lambda$loadExtendedMediaForMessages$4(tLObject, tL_error);
                 break;
             default:
-                CaptchaController.lambda$request$1(this.b, exc);
+                this.b.lambda$loadReactionsForMessages$3(tLObject, tL_error);
                 break;
         }
     }

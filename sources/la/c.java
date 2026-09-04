@@ -1,27 +1,7 @@
 package la;
 
-import android.os.Build;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c implements u9.d {
-    public static final c a = new c();
-    public static final u9.c b = u9.c.c("packageName");
-    public static final u9.c c = u9.c.c("versionName");
-    public static final u9.c d = u9.c.c("appBuildVersion");
-    public static final u9.c e = u9.c.c("deviceManufacturer");
-    public static final u9.c f = u9.c.c("currentProcessDetails");
-    public static final u9.c g = u9.c.c("appProcessDetails");
-
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        a aVar = (a) obj;
-        u9.e eVar = (u9.e) obj2;
-        eVar.e(b, aVar.a);
-        eVar.e(c, aVar.b);
-        eVar.e(d, aVar.c);
-        eVar.e(e, Build.MANUFACTURER);
-        eVar.e(f, aVar.d);
-        eVar.e(g, aVar.e);
-    }
+public interface c {
+    int a();
 }

@@ -1,12 +1,12 @@
 package a0;
 
-import androidx.datastore.preferences.protobuf.e1;
-import androidx.datastore.preferences.protobuf.i1;
+import androidx.datastore.preferences.protobuf.d1;
+import androidx.datastore.preferences.protobuf.h1;
 import java.util.AbstractSet;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class a extends AbstractSet {
     public final /* synthetic */ int a;
@@ -25,7 +25,7 @@ public class a extends AbstractSet {
                 if (contains(entry)) {
                     return false;
                 }
-                ((e1) this.b).f((Comparable) entry.getKey(), entry.getValue());
+                ((d1) this.b).f((Comparable) entry.getKey(), entry.getValue());
                 return true;
             default:
                 return super.add(obj);
@@ -36,7 +36,7 @@ public class a extends AbstractSet {
     public void clear() {
         switch (this.a) {
             case 1:
-                ((e1) this.b).clear();
+                ((d1) this.b).clear();
                 break;
             default:
                 super.clear();
@@ -49,7 +49,7 @@ public class a extends AbstractSet {
         switch (this.a) {
             case 1:
                 Map.Entry entry = (Map.Entry) obj;
-                Object obj2 = ((e1) this.b).get(entry.getKey());
+                Object obj2 = ((d1) this.b).get(entry.getKey());
                 Object value = entry.getValue();
                 return obj2 == value || (obj2 != null && obj2.equals(value));
             default:
@@ -63,7 +63,7 @@ public class a extends AbstractSet {
             case 0:
                 return new d((f) this.b);
             default:
-                return new i1((e1) this.b);
+                return new h1((d1) this.b);
         }
     }
 
@@ -75,7 +75,7 @@ public class a extends AbstractSet {
                 if (!contains(entry)) {
                     return false;
                 }
-                ((e1) this.b).remove(entry.getKey());
+                ((d1) this.b).remove(entry.getKey());
                 return true;
             default:
                 return super.remove(obj);
@@ -88,7 +88,7 @@ public class a extends AbstractSet {
             case 0:
                 return ((f) this.b).c;
             default:
-                return ((e1) this.b).size();
+                return ((d1) this.b).size();
         }
     }
 }

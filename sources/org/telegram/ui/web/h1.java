@@ -1,61 +1,74 @@
 package org.telegram.ui.web;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
-import java.io.BufferedInputStream;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.ui.Components.vk;
+import android.text.TextUtils;
+import android.widget.EditText;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.ActionBar.g5;
+import org.telegram.ui.Components.x51;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
-public final class h1 extends AsyncTask {
-    public final HashMap a = new HashMap();
-    public final vk b;
-    public Exception c;
+public final class h1 extends g5 {
+    public final b f = new b(this, 4);
+    public final /* synthetic */ i1 h;
 
-    public h1(vk vkVar) {
-        this.b = vkVar;
+    public h1(i1 i1Var) {
+        this.h = i1Var;
     }
 
-    @Override // android.os.AsyncTask
-    public final Object doInBackground(Object[] objArr) {
-        try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(((String[]) objArr)[0]).openConnection();
-            for (Map.Entry entry : this.a.entrySet()) {
-                if (entry.getKey() != null && entry.getValue() != null) {
-                    httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
-                }
+    public static boolean t(String str, String str2) {
+        if (str == null || str2 == null) {
+            return false;
+        }
+        String lowerCase = str.toLowerCase();
+        String lowerCase2 = str2.toLowerCase();
+        if (lowerCase.startsWith(lowerCase2) || org.telegram.messenger.w1.w(" ", lowerCase2, lowerCase) || org.telegram.messenger.w1.w(".", lowerCase2, lowerCase)) {
+            return true;
+        }
+        String translitSafe = AndroidUtilities.translitSafe(lowerCase);
+        String translitSafe2 = AndroidUtilities.translitSafe(lowerCase2);
+        return translitSafe.startsWith(translitSafe2) || org.telegram.messenger.w1.w(" ", translitSafe2, translitSafe) || org.telegram.messenger.w1.w(".", translitSafe2, translitSafe);
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void m() {
+        i1 i1Var = this.h;
+        i1Var.n = null;
+        i1Var.h = false;
+        AndroidUtilities.cancelRunOnUIThread(this.f);
+        x51 x51Var = i1Var.a;
+        if (x51Var != null) {
+            x51Var.Y2.N(true);
+            i1Var.a.X2.h1(0, 0);
+        }
+        i1Var.w.d.setText(LocaleController.getString(TextUtils.isEmpty(i1Var.n) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
+    }
+
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void q(EditText editText) {
+        i1 i1Var = this.h;
+        boolean z10 = !TextUtils.isEmpty(i1Var.n);
+        String obj = editText.getText().toString();
+        if (!TextUtils.equals(i1Var.n, obj)) {
+            i1Var.n = obj;
+            i1Var.h = true;
+            b bVar = this.f;
+            AndroidUtilities.cancelRunOnUIThread(bVar);
+            AndroidUtilities.runOnUIThread(bVar, 500L);
+            i1Var.w.d.setText(LocaleController.getString(TextUtils.isEmpty(obj) ? R.string.WebNoHistory : R.string.WebNoSearchedHistory));
+        }
+        x51 x51Var = i1Var.a;
+        if (x51Var != null) {
+            x51Var.Y2.N(true);
+            if (z10 != (!TextUtils.isEmpty(obj))) {
+                i1Var.a.X2.h1(0, 0);
             }
-            httpURLConnection.setRequestMethod("GET");
-            httpURLConnection.setDoInput(true);
-            int responseCode = httpURLConnection.getResponseCode();
-            if (responseCode >= 200 && responseCode < 300) {
-                return (httpURLConnection.getContentType() == null || !httpURLConnection.getContentType().contains("svg")) ? BitmapFactory.decodeStream(new BufferedInputStream(httpURLConnection.getInputStream())) : SvgHelper.getBitmap((InputStream) new BufferedInputStream(httpURLConnection.getInputStream()), 64, 64, false);
-            }
-            httpURLConnection.disconnect();
-            return null;
-        } catch (Exception e) {
-            this.c = e;
-            return null;
         }
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        Bitmap bitmap = (Bitmap) obj;
-        vk vkVar = this.b;
-        if (vkVar != null) {
-            if (this.c == null) {
-                vkVar.run(bitmap);
-            } else {
-                vkVar.run(null);
-            }
-        }
+    @Override // org.telegram.ui.ActionBar.g5
+    public final void n() {
     }
 }

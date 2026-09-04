@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import dd.p;
-import k7.p7;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzec extends i implements p {
+final class zzec extends j implements p {
     int zza;
     final /* synthetic */ zzeh zzb;
     final /* synthetic */ String zzc;
@@ -19,36 +20,36 @@ final class zzec extends i implements p {
     private /* synthetic */ Object zzh;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzec(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j10, zzhh zzhhVar, c cVar) {
+    public zzec(zzeh zzehVar, String str, zzdw zzdwVar, zzdq zzdqVar, long j3, zzhh zzhhVar, c cVar) {
         super(2, cVar);
         this.zzb = zzehVar;
         this.zzc = str;
         this.zzd = zzdwVar;
         this.zze = zzdqVar;
-        this.zzf = j10;
+        this.zzf = j3;
         this.zzg = zzhhVar;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzec zzecVar = new zzec(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, cVar);
         zzecVar.zzh = obj;
         return zzecVar;
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzec) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzec) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
         try {
             if (this.zza != 0) {
-                p7.b(obj);
+                t7.b(obj);
             } else {
-                p7.b(obj);
+                t7.b(obj);
                 zzhk zzhkVar = (zzhk) this.zzh;
                 zzeb zzebVar = new zzeb(this.zzb, this.zzc, this.zzd, this.zze, this.zzf, this.zzg, null);
                 this.zza = 1;
@@ -58,10 +59,10 @@ final class zzec extends i implements p {
                 }
             }
             return (zzeq) obj;
-        } catch (zzcg e) {
-            throw e.zzc();
-        } catch (Exception e6) {
-            throw new zzcg(zzce.zzb, zzcd.zza, e6.getMessage(), null, 8, null).zzc();
+        } catch (zzcg e7) {
+            throw e7.zzc();
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zza, e10.getMessage(), null, 8, null).zzc();
         }
     }
 }

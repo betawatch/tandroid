@@ -1,71 +1,24 @@
 package org.telegram.ui;
 
+import android.view.MotionEvent;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
+import java.util.HashSet;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ff1 extends f2.l {
-    public Runnable F;
-    public int G;
-    public final /* synthetic */ sf1 H;
+public final /* synthetic */ class ff1 implements View.OnTouchListener {
+    public final /* synthetic */ int a;
 
-    public ff1(sf1 sf1Var) {
-        this.H = sf1Var;
-    }
-
-    @Override // f2.l
-    public final void F() {
-        if (this.G == -1) {
-            this.G = this.H.getNotificationCenter().setAnimationInProgress(this.G, null, false);
-            Runnable runnable = this.F;
-            if (runnable != null) {
-                AndroidUtilities.cancelRunOnUIThread(runnable);
-                this.F = null;
-            }
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        switch (this.a) {
+            case 0:
+                HashSet hashSet = eg1.n1;
+                break;
+            default:
+                int[][] iArr = WallpapersListActivity.k0;
+                break;
         }
-    }
-
-    @Override // f2.l
-    public final void N() {
-        Runnable runnable = this.F;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-            this.F = null;
-        }
-        ef1 ef1Var = new ef1(this, 0);
-        this.F = ef1Var;
-        AndroidUtilities.runOnUIThread(ef1Var);
-    }
-
-    @Override // f2.l, f2.t0
-    public final void g() {
-        super.g();
-        Runnable runnable = this.F;
-        if (runnable != null) {
-            AndroidUtilities.cancelRunOnUIThread(runnable);
-        }
-        ef1 ef1Var = new ef1(this, 1);
-        this.F = ef1Var;
-        AndroidUtilities.runOnUIThread(ef1Var);
-    }
-
-    @Override // f2.l
-    public final void z(f2.l1 l1Var) {
-        sf1 sf1Var = this.H;
-        View view = sf1Var.Y0;
-        if (view == l1Var.a) {
-            view.setTranslationX(0.0f);
-            ve1 ve1Var = sf1Var.L;
-            if (ve1Var != null) {
-                ve1Var.C.clear();
-            }
-            View view2 = sf1Var.Y0;
-            if (view2 instanceof pf1) {
-                pf1 pf1Var = (pf1) view2;
-                pf1Var.setTopicIcon(pf1Var.V4);
-            }
-            sf1Var.Y0 = null;
-        }
+        return true;
     }
 }

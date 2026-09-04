@@ -1,53 +1,50 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.text.SpannableStringBuilder;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class pq extends LinearLayout {
-    public final p9 a;
+public final class pq extends Drawable {
+    public final Drawable a;
+    public final Paint b;
+    public final float c;
 
-    public pq(Context context) {
-        super(context);
-        setOrientation(1);
-        p9 p9Var = new p9(context);
-        this.a = p9Var;
-        p9Var.setImageDrawable(new l90(p9Var, "m418 282.6c13.4-21.1 20.2-44.9 20.2-70.8 0-88.3-79.8-175.3-178.9-175.3-100.1 0-178.9 88-178.9 175.3 0 46.6 16.9 73.1 29.1 86.1-19.3 23.4-30.9 52.3-34.6 86.1-2.5 22.7 3.2 41.4 17.4 57.3 14.3 16 51.7 35 148.1 35 41.2 0 119.9-5.3 156.7-18.3 49.5-17.4 59.2-41.1 59.2-76.2 0-41.5-12.9-74.8-38.3-99.2z", AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
-        if (!AndroidUtilities.isTablet()) {
-            addView(p9Var, k7.b6.q(110, 110, 49));
-        }
-        TextView g10 = org.telegram.messenger.y3.g(context, 1, 20.0f);
-        org.telegram.ui.ai.s(org.telegram.ui.ActionBar.j6.G6, null, false, g10, 1);
-        g10.setText(LocaleController.getString(R.string.NoContactsYet3));
-        g10.setTypeface(AndroidUtilities.bold());
-        addView(g10, k7.b6.t(-2, -2, 49, 0, 15, 0, 7));
-        TextView textView = new TextView(context);
-        textView.setTextSize(1, 14.0f);
-        org.telegram.ui.ai.s(org.telegram.ui.ActionBar.j6.c7, null, false, textView, 1);
-        textView.setText(LocaleController.getString(R.string.NoContactsYet3Sub));
-        textView.setMaxWidth(AndroidUtilities.dp(260.0f));
-        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
-        addView(textView, k7.b6.t(-2, -2, 49, 0, 0, 0, 19));
-        ph.d dVar = new ph.d(context, null, true);
-        dVar.setUseWrapContent(true);
-        dVar.e();
-        dVar.setPadding(AndroidUtilities.dp(28.0f), 0, AndroidUtilities.dp(28.0f), 0);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
-        spannableStringBuilder.setSpan(new lq(R.drawable.filled_new_contact_24, 0), 0, 1, 33);
-        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.NewContact));
-        dVar.g(spannableStringBuilder, false, true);
-        addView(dVar, k7.b6.q(-2, 44, 49));
+    public pq(Context context, float f7) {
+        Paint paint = new Paint(1);
+        this.b = paint;
+        this.a = context.getResources().getDrawable(R.drawable.msg_filled_menu_groups);
+        paint.setColor(org.telegram.ui.ActionBar.j6.l1(0.1552f, -16777216));
+        this.c = f7;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        this.a.setImageDrawable(new gj0(R.raw.utyan_empty, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        float f7 = getBounds().left;
+        float f10 = getBounds().top;
+        float f11 = getBounds().right;
+        float f12 = getBounds().bottom;
+        float f13 = this.c;
+        canvas.drawRoundRect(f7, f10, f11, f12, f13, f13, this.b);
+        yf.p.e(this.a, getBounds().exactCenterX(), getBounds().exactCenterY(), AndroidUtilities.dp(36.0f), AndroidUtilities.dp(36.0f), 17);
+        this.a.draw(canvas);
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -3;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

@@ -1,23 +1,9 @@
 package l;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public interface x {
-    boolean b(m mVar);
+    void d(l lVar, boolean z10);
 
-    void c(k kVar, boolean z4);
-
-    boolean d();
-
-    void e();
-
-    void h(w wVar);
-
-    void i(Context context, k kVar);
-
-    boolean j(d0 d0Var);
-
-    boolean k(m mVar);
+    boolean q(l lVar);
 }

@@ -1,21 +1,80 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import j$.util.concurrent.ConcurrentHashMap;
+import java.nio.charset.Charset;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface g6 {
-    void a(Object obj);
+public final class g6 {
+    public static final g6 c = new g6();
+    public final ConcurrentHashMap b = new ConcurrentHashMap();
+    public final w5 a = new w5();
 
-    int b(e5 e5Var);
-
-    boolean c(e5 e5Var, e5 e5Var2);
-
-    void d(Object obj, Object obj2);
-
-    void e(Object obj, t5 t5Var);
-
-    boolean f(Object obj);
-
-    int g(t4 t4Var);
-
-    e5 zzc();
+    public final j6 a(Class cls) {
+        j6 j3;
+        Class cls2;
+        Charset charset = n5.a;
+        if (cls == null) {
+            throw new NullPointerException("messageType");
+        }
+        ConcurrentHashMap concurrentHashMap = this.b;
+        j6 j6Var = (j6) concurrentHashMap.get(cls);
+        if (j6Var != null) {
+            return j6Var;
+        }
+        w5 w5Var = this.a;
+        w5Var.getClass();
+        Class cls3 = k6.a;
+        if (!h5.class.isAssignableFrom(cls) && (cls2 = k6.a) != null && !cls2.isAssignableFrom(cls)) {
+            throw new IllegalArgumentException("Message classes must extend GeneratedMessage or GeneratedMessageLite");
+        }
+        i6 zzb = ((v5) w5Var.a).zzb(cls);
+        int i10 = zzb.d;
+        v4 v4Var = zzb.a;
+        if ((i10 & 2) == 2) {
+            if (h5.class.isAssignableFrom(cls)) {
+                j3 = new c6(k6.c, d5.a, v4Var);
+            } else {
+                m6 m6Var = k6.b;
+                c5 c5Var = d5.b;
+                if (c5Var == null) {
+                    throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
+                }
+                j3 = new c6(m6Var, c5Var, v4Var);
+            }
+        } else if (h5.class.isAssignableFrom(cls)) {
+            if (zzb.a() - 1 != 1) {
+                int i11 = e6.a;
+                s5 s5Var = t5.b;
+                m6 m6Var2 = k6.c;
+                c5 c5Var2 = d5.a;
+                int i12 = y5.a;
+                j3 = b6.j(zzb, s5Var, m6Var2, c5Var2);
+            } else {
+                int i13 = e6.a;
+                s5 s5Var2 = t5.b;
+                m6 m6Var3 = k6.c;
+                int i14 = y5.a;
+                j3 = b6.j(zzb, s5Var2, m6Var3, null);
+            }
+        } else if (zzb.a() - 1 != 1) {
+            int i15 = e6.a;
+            r5 r5Var = t5.a;
+            m6 m6Var4 = k6.b;
+            c5 c5Var3 = d5.b;
+            if (c5Var3 == null) {
+                throw new IllegalStateException("Protobuf runtime is not correctly loaded.");
+            }
+            int i16 = y5.a;
+            j3 = b6.j(zzb, r5Var, m6Var4, c5Var3);
+        } else {
+            int i17 = e6.a;
+            r5 r5Var2 = t5.a;
+            m6 m6Var5 = k6.b;
+            int i18 = y5.a;
+            j3 = b6.j(zzb, r5Var2, m6Var5, null);
+        }
+        j6 j6Var2 = (j6) concurrentHashMap.putIfAbsent(cls, j3);
+        return j6Var2 == null ? j3 : j6Var2;
+    }
 }

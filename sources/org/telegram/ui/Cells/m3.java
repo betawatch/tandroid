@@ -1,33 +1,31 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.g61;
-import org.telegram.ui.Components.h51;
-import org.telegram.ui.Components.i51;
-import org.telegram.ui.Components.rl0;
-import org.telegram.ui.Components.w51;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class m3 extends h51 {
-    public static final /* synthetic */ int a = 0;
+public final class m3 extends AnimatorListenerAdapter {
+    public final /* synthetic */ o3 a;
 
-    static {
-        h51.setup(new m3());
+    public m3(o3 o3Var) {
+        this.a = o3Var;
     }
 
-    @Override // org.telegram.ui.Components.h51
-    public final void bindView(View view, i51 i51Var, boolean z4, w51 w51Var, g61 g61Var) {
-        n3 n3Var = (n3) view;
-        n3Var.a((TLRPC.StickerSetCovered) i51Var.G, z4, i51Var.t, false);
-        n3Var.e.a(i51Var.t, false);
-        n3Var.setAddOnClickListener(i51Var.D);
-    }
-
-    @Override // org.telegram.ui.Components.h51
-    public final View createView(Context context, rl0 rl0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
-        return new n3(context, f6Var);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        o3 o3Var = this.a;
+        if (o3Var.v) {
+            o3Var.e.setVisibility(4);
+            o3Var.f.setVisibility(4);
+            o3Var.h.setVisibility(0);
+        } else {
+            if (o3Var.s) {
+                o3Var.e.setVisibility(4);
+            } else {
+                o3Var.f.setVisibility(4);
+            }
+            o3Var.h.setVisibility(8);
+        }
     }
 }

@@ -9,7 +9,7 @@ import java.util.ServiceConfigurationError;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class z0 {
     public static final Logger a = Logger.getLogger(r0.class.getName());
@@ -29,17 +29,17 @@ public abstract class z0 {
         try {
             try {
                 try {
-                    android.support.v4.media.a.v(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
+                    a4.a.y(Class.forName(str, true, classLoader).getConstructor(null).newInstance(null));
                     throw null;
-                } catch (IllegalAccessException e) {
-                    throw new IllegalStateException(e);
-                } catch (InvocationTargetException e6) {
-                    throw new IllegalStateException(e6);
+                } catch (IllegalAccessException e7) {
+                    throw new IllegalStateException(e7);
+                } catch (InvocationTargetException e10) {
+                    throw new IllegalStateException(e10);
                 }
-            } catch (InstantiationException e10) {
-                throw new IllegalStateException(e10);
-            } catch (NoSuchMethodException e11) {
+            } catch (InstantiationException e11) {
                 throw new IllegalStateException(e11);
+            } catch (NoSuchMethodException e12) {
+                throw new IllegalStateException(e12);
             }
         } catch (ClassNotFoundException unused) {
             try {
@@ -51,10 +51,10 @@ public abstract class z0 {
                             throw null;
                         }
                         throw new ClassCastException();
-                    } catch (ServiceConfigurationError e12) {
+                    } catch (ServiceConfigurationError e13) {
                         Level level = Level.SEVERE;
                         String simpleName = u0.class.getSimpleName();
-                        a.logp(level, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", simpleName.length() != 0 ? "Unable to load ".concat(simpleName) : new String("Unable to load "), (Throwable) e12);
+                        a.logp(level, "com.google.protobuf.GeneratedExtensionRegistryLoader", "load", simpleName.length() != 0 ? "Unable to load ".concat(simpleName) : new String("Unable to load "), (Throwable) e13);
                     }
                 }
                 if (arrayList.size() == 1) {
@@ -65,12 +65,12 @@ public abstract class z0 {
                 }
                 try {
                     return (u0) u0.class.getMethod("combine", Collection.class).invoke(null, arrayList);
-                } catch (IllegalAccessException e13) {
-                    throw new IllegalStateException(e13);
-                } catch (NoSuchMethodException e14) {
+                } catch (IllegalAccessException e14) {
                     throw new IllegalStateException(e14);
-                } catch (InvocationTargetException e15) {
+                } catch (NoSuchMethodException e15) {
                     throw new IllegalStateException(e15);
+                } catch (InvocationTargetException e16) {
+                    throw new IllegalStateException(e16);
                 }
             } catch (Throwable th2) {
                 throw new ServiceConfigurationError(th2.getMessage(), th2);

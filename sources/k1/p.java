@@ -1,126 +1,109 @@
 package k1;
 
-import k7.p7;
+import org.telegram.tgnet.TLObject;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class p extends wc.i implements dd.p {
-    public final /* synthetic */ int a;
-    public int b;
-    public /* synthetic */ Object c;
-    public final /* synthetic */ d0 d;
+public final class p implements ce.c {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ ce.c b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ p(d0 d0Var, uc.c cVar, int i10) {
-        super(2, cVar);
-        this.a = i10;
-        this.d = d0Var;
+    public p(ce.c cVar, za.y yVar) {
+        this.b = cVar;
     }
 
-    @Override // wc.a
-    public final uc.c create(Object obj, uc.c cVar) {
-        switch (this.a) {
-            case 0:
-                p pVar = new p(this.d, cVar, 0);
-                pVar.c = obj;
-                return pVar;
-            default:
-                p pVar2 = new p(this.d, cVar, 1);
-                pVar2.c = obj;
-                return pVar2;
-        }
-    }
-
-    @Override // dd.p
-    public final Object invoke(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                return ((p) create((m) obj, (uc.c) obj2)).invokeSuspend(sc.i.a);
-            default:
-                return ((p) create((od.c) obj, (uc.c) obj2)).invokeSuspend(sc.i.a);
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:34:0x009c, code lost:
-    
-        if (r8 == r0) goto L43;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:40:0x00ab, code lost:
-    
-        if (r8 == r0) goto L43;
-     */
-    @Override // wc.a
+    /* JADX WARN: Removed duplicated region for block: B:10:0x002c  */
+    /* JADX WARN: Removed duplicated region for block: B:16:0x0038  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x0074  */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x0080  */
+    @Override // ce.c
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final Object invokeSuspend(Object obj) {
-        Object obj2;
-        switch (this.a) {
+    public final Object a(Object obj, kd.c cVar) {
+        o oVar;
+        int i10;
+        za.x xVar;
+        int i11;
+        int i12 = this.a;
+        gd.i iVar = gd.i.a;
+        ce.c cVar2 = this.b;
+        switch (i12) {
             case 0:
-                vc.a aVar = vc.a.a;
-                int i10 = this.b;
-                sc.i iVar = sc.i.a;
-                if (i10 == 0) {
-                    p7.b(obj);
-                    m mVar = (m) this.c;
-                    boolean z4 = mVar instanceof k;
-                    d0 d0Var = this.d;
-                    if (z4) {
-                        k kVar = (k) mVar;
-                        this.b = 1;
-                        e0 e0Var = (e0) d0Var.f.b();
-                        if (!(e0Var instanceof b)) {
-                            if (e0Var instanceof i) {
-                                if (e0Var == kVar.a) {
-                                    obj2 = d0Var.e(this);
-                                    break;
-                                }
-                            } else if (kotlin.jvm.internal.j.a(e0Var, f0.a)) {
-                                obj2 = d0Var.e(this);
-                                break;
-                            } else if (e0Var instanceof h) {
-                                throw new IllegalStateException("Can't read in final state.");
+                if (cVar instanceof o) {
+                    oVar = (o) cVar;
+                    int i13 = oVar.b;
+                    if ((i13 & TLObject.FLAG_31) != 0) {
+                        oVar.b = i13 - TLObject.FLAG_31;
+                        Object obj2 = oVar.a;
+                        jd.a aVar = jd.a.a;
+                        i10 = oVar.b;
+                        if (i10 == 0) {
+                            if (i10 != 1) {
+                                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
                             }
+                            t7.b(obj2);
+                            return iVar;
                         }
-                        obj2 = iVar;
-                        if (obj2 == aVar) {
-                            return aVar;
+                        t7.b(obj2);
+                        b0 b0Var = (b0) obj;
+                        if (b0Var instanceof h) {
+                            throw ((h) b0Var).a;
                         }
-                    } else if (mVar instanceof l) {
-                        this.b = 2;
-                        if (d0.a(d0Var, (l) mVar, this) == aVar) {
-                            return aVar;
+                        if (b0Var instanceof g) {
+                            throw ((g) b0Var).a;
                         }
+                        if (b0Var instanceof b) {
+                            Object obj3 = ((b) b0Var).a;
+                            oVar.b = 1;
+                            return cVar2.a(obj3, oVar) == aVar ? aVar : iVar;
+                        }
+                        if (b0Var instanceof c0) {
+                            throw new IllegalStateException("This is a bug in DataStore. Please file a bug at: https://issuetracker.google.com/issues/new?component=907884&template=1466542");
+                        }
+                        throw new androidx.car.app.j();
                     }
-                } else {
-                    if (i10 != 1 && i10 != 2) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
-                    }
-                    p7.b(obj);
                 }
-                return iVar;
+                oVar = new o(this, cVar);
+                Object obj22 = oVar.a;
+                jd.a aVar2 = jd.a.a;
+                i10 = oVar.b;
+                if (i10 == 0) {
+                }
             default:
-                d0 d0Var2 = this.d;
-                od.m mVar2 = d0Var2.f;
-                vc.a aVar2 = vc.a.a;
-                int i11 = this.b;
-                if (i11 != 0) {
-                    if (i11 != 1) {
-                        throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                if (cVar instanceof za.x) {
+                    xVar = (za.x) cVar;
+                    int i14 = xVar.b;
+                    if ((i14 & TLObject.FLAG_31) != 0) {
+                        xVar.b = i14 - TLObject.FLAG_31;
+                        Object obj4 = xVar.a;
+                        jd.a aVar3 = jd.a.a;
+                        i11 = xVar.b;
+                        if (i11 == 0) {
+                            if (i11 != 1) {
+                                throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+                            }
+                            t7.b(obj4);
+                            return iVar;
+                        }
+                        t7.b(obj4);
+                        za.u uVar = za.y.e;
+                        za.m mVar = new za.m((String) ((n1.b) obj).a(za.v.a));
+                        xVar.b = 1;
+                        return cVar2.a(mVar, xVar) == aVar3 ? aVar3 : iVar;
                     }
-                    p7.b(obj);
-                    return sc.i.a;
                 }
-                p7.b(obj);
-                od.c cVar = (od.c) this.c;
-                e0 e0Var2 = (e0) mVar2.b();
-                if (!(e0Var2 instanceof b)) {
-                    d0Var2.n.k(new k(e0Var2));
+                xVar = new za.x(this, cVar);
+                Object obj42 = xVar.a;
+                jd.a aVar32 = jd.a.a;
+                i11 = xVar.b;
+                if (i11 == 0) {
                 }
-                q qVar = new q(e0Var2, null, 0);
-                this.b = 1;
-                mVar2.z(new od.i(new kotlin.jvm.internal.o(), new s(cVar), qVar), this);
-                return aVar2;
         }
+    }
+
+    public p(ce.c cVar) {
+        this.b = cVar;
     }
 }

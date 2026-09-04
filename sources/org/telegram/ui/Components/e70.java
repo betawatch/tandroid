@@ -1,34 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e70 implements org.telegram.ui.ActionBar.n1 {
+public final /* synthetic */ class e70 implements View.OnLayoutChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ p70 b;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ e70(p70 p70Var, int i10) {
+    public /* synthetic */ e70(Object obj, int i10) {
         this.a = i10;
-        this.b = p70Var;
+        this.b = obj;
     }
 
-    @Override // org.telegram.ui.ActionBar.n1
-    public final void n(KeyEvent keyEvent) {
-        p70 p70Var;
-        k70 k70Var;
-        p70 p70Var2;
-        k70 k70Var2;
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
         switch (this.a) {
             case 0:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (k70Var = (p70Var = this.b).m) != null && k70Var.isShowing()) {
-                    p70Var.u();
+                n70 n70Var = (n70) this.b;
+                if (n70Var.D()) {
+                    n70Var.O();
                     break;
                 }
                 break;
             default:
-                if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (k70Var2 = (p70Var2 = this.b).m) != null && k70Var2.isShowing()) {
-                    p70Var2.u();
+                cx0 cx0Var = (cx0) this.b;
+                bi.c4 c4Var = cx0Var.h;
+                if (c4Var != null && c4Var.getLayout() != null) {
+                    cx0Var.F = c4Var.getLayout().getLineWidth(0);
                     break;
                 }
                 break;

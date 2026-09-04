@@ -2,25 +2,25 @@ package org.telegram.ui;
 
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class mt extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ nt o;
+public final class mt extends org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ ot o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mt(nt ntVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    public mt(ot otVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = ntVar;
+        this.o = otVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
     public final void dismiss() {
         d(true);
-        rt rtVar = this.o.a;
-        rtVar.k = null;
-        rtVar.K = false;
-        if (rtVar.R) {
-            rtVar.n();
+        st stVar = this.o.a;
+        stVar.k = null;
+        stVar.K = false;
+        if (stVar.R) {
+            stVar.n();
         }
     }
 }

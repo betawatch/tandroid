@@ -6,7 +6,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.Vector;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class SQLiteCursor {
     public static final int FIELD_TYPE_BYTEARRAY = 4;
@@ -41,23 +41,23 @@ public class SQLiteCursor {
         }
     }
 
-    public native byte[] columnByteArrayValue(long j10, int i10);
+    public native byte[] columnByteArrayValue(long j3, int i10);
 
-    public native long columnByteBufferValue(long j10, int i10);
+    public native long columnByteBufferValue(long j3, int i10);
 
-    public native int columnCount(long j10);
+    public native int columnCount(long j3);
 
-    public native double columnDoubleValue(long j10, int i10);
+    public native double columnDoubleValue(long j3, int i10);
 
-    public native int columnIntValue(long j10, int i10);
+    public native int columnIntValue(long j3, int i10);
 
-    public native int columnIsNull(long j10, int i10);
+    public native int columnIsNull(long j3, int i10);
 
-    public native long columnLongValue(long j10, int i10);
+    public native long columnLongValue(long j3, int i10);
 
-    public native String columnStringValue(long j10, int i10);
+    public native String columnStringValue(long j3, int i10);
 
-    public native int columnType(long j10, int i10);
+    public native int columnType(long j3, int i10);
 
     public void dispose() {
         this.preparedStatement.dispose();
@@ -116,8 +116,8 @@ public class SQLiteCursor {
                     }
                     Thread.sleep(500L);
                     step = this.preparedStatement.step();
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
                 if (step == 0) {
                     break;
@@ -128,9 +128,9 @@ public class SQLiteCursor {
                 throw new SQLiteException("sqlite busy");
             }
         }
-        boolean z4 = step == 0;
-        this.inRow = z4;
-        return z4;
+        boolean z10 = step == 0;
+        this.inRow = z10;
+        return z10;
     }
 
     public String stringValue(int i10) {
@@ -138,13 +138,13 @@ public class SQLiteCursor {
         return columnStringValue(this.preparedStatement.getStatementHandle(), i10);
     }
 
-    public <T extends TLObject> T tlObjectValue(int i10, Vector.TLDeserializer<T> tLDeserializer, boolean z4) {
+    public <T extends TLObject> T tlObjectValue(int i10, Vector.TLDeserializer<T> tLDeserializer, boolean z10) {
         NativeByteBuffer byteBufferValue = byteBufferValue(i10);
         if (byteBufferValue == null) {
             return null;
         }
         try {
-            return tLDeserializer.deserialize(byteBufferValue, byteBufferValue.readInt32(z4), z4);
+            return tLDeserializer.deserialize(byteBufferValue, byteBufferValue.readInt32(z10), z10);
         } finally {
             byteBufferValue.reuse();
         }

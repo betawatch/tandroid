@@ -8,7 +8,7 @@ import org.telegram.tgnet.TLObject;
 /* loaded from: classes.dex */
 public final class y0 {
     public Object A;
-    public final z0 a;
+    public final aa.b a;
     public final Object[] b;
     public final Class c;
     public final int d;
@@ -37,11 +37,11 @@ public final class y0 {
 
     public y0(Class cls, String str, Object[] objArr) {
         this.c = cls;
-        z0 z0Var = new z0(str);
-        this.a = z0Var;
+        aa.b bVar = new aa.b(str);
+        this.a = bVar;
         this.b = objArr;
-        this.d = z0Var.a();
-        int a2 = z0Var.a();
+        this.d = bVar.a();
+        int a2 = bVar.a();
         this.e = a2;
         if (a2 == 0) {
             this.f = 0;
@@ -54,16 +54,16 @@ public final class y0 {
             this.m = null;
             return;
         }
-        int a10 = z0Var.a();
+        int a10 = bVar.a();
         this.f = a10;
-        int a11 = z0Var.a();
-        this.g = z0Var.a();
-        this.h = z0Var.a();
-        this.k = z0Var.a();
-        this.j = z0Var.a();
-        this.i = z0Var.a();
-        this.l = z0Var.a();
-        int a12 = z0Var.a();
+        int a11 = bVar.a();
+        this.g = bVar.a();
+        this.h = bVar.a();
+        this.k = bVar.a();
+        this.j = bVar.a();
+        this.i = bVar.a();
+        this.l = bVar.a();
+        int a12 = bVar.a();
         this.m = a12 != 0 ? new int[a12] : null;
         this.n = (a10 << 1) + a11;
     }
@@ -80,22 +80,22 @@ public final class y0 {
             }
             String name = cls.getName();
             String arrays = Arrays.toString(declaredFields);
-            StringBuilder sb = new StringBuilder(String.valueOf(arrays).length() + name.length() + String.valueOf(str).length() + 40);
-            sb.append("Field ");
-            sb.append(str);
-            sb.append(" for ");
-            sb.append(name);
-            throw new RuntimeException(android.support.v4.media.a.r(sb, " not found. Known fields are ", arrays));
+            StringBuilder sb2 = new StringBuilder(String.valueOf(arrays).length() + name.length() + String.valueOf(str).length() + 40);
+            sb2.append("Field ");
+            sb2.append(str);
+            sb2.append(" for ");
+            sb2.append(name);
+            throw new RuntimeException(a4.a.s(sb2, " not found. Known fields are ", arrays));
         }
     }
 
     public final boolean a() {
-        z0 z0Var = this.a;
-        if (z0Var.b >= z0Var.c.length()) {
+        aa.b bVar = this.a;
+        if (bVar.c >= bVar.b.length()) {
             return false;
         }
-        this.s = z0Var.a();
-        int a2 = z0Var.a();
+        this.s = bVar.a();
+        int a2 = bVar.a();
         this.t = a2;
         int i10 = a2 & 255;
         this.u = i10;
@@ -106,18 +106,18 @@ public final class y0 {
         if (i11 > this.q) {
             this.q = i11;
         }
-        u uVar = u.s;
-        int i12 = uVar.a;
-        if (i10 != i12 && i10 >= u.e.a) {
-            int i13 = u.r.a;
+        t tVar = t.s;
+        int i12 = tVar.a;
+        if (i10 != i12 && i10 >= t.e.a) {
+            int i13 = t.r.a;
         }
         int i14 = this.r + 1;
         this.r = i14;
         int i15 = this.p;
-        Class cls = b1.a;
+        Class cls = a1.a;
         if (i11 >= 40) {
-            long j10 = i14;
-            int i16 = (((i11 - i15) + 10) > (((j10 + 3) * 3) + (2 * j10) + 3) ? 1 : (((i11 - i15) + 10) == (((j10 + 3) * 3) + (2 * j10) + 3) ? 0 : -1));
+            long j3 = i14;
+            int i16 = (((i11 - i15) + 10) > (((j3 + 3) * 3) + (2 * j3) + 3) ? 1 : (((i11 - i15) + 10) == (((j3 + 3) * 3) + (2 * j3) + 3) ? 0 : -1));
         }
         if ((a2 & 1024) != 0) {
             int i17 = this.o;
@@ -129,37 +129,37 @@ public final class y0 {
         this.A = null;
         int i18 = this.d;
         if (i10 > i12) {
-            this.v = z0Var.a();
+            this.v = bVar.a();
             int i19 = this.u;
-            if (i19 == u.b.a + 51 || i19 == u.d.a + 51) {
+            if (i19 == t.b.a + 51 || i19 == t.d.a + 51) {
                 this.y = c();
                 return true;
             }
-            if (i19 == u.c.a + 51 && (i18 & 1) == 1) {
+            if (i19 == t.c.a + 51 && (i18 & 1) == 1) {
                 this.z = c();
             }
             return true;
         }
         this.x = b(this.c, (String) c());
-        if ((i18 & 1) == 1 && this.u <= u.d.a) {
-            this.w = z0Var.a();
+        if ((i18 & 1) == 1 && this.u <= t.d.a) {
+            this.w = bVar.a();
         }
         int i20 = this.u;
-        if (i20 == u.b.a || i20 == u.d.a) {
+        if (i20 == t.b.a || i20 == t.d.a) {
             this.y = this.x.getType();
             return true;
         }
-        if (i20 == u.f.a || i20 == u.r.a) {
+        if (i20 == t.f.a || i20 == t.r.a) {
             this.y = c();
             return true;
         }
-        if (i20 == u.c.a || i20 == u.h.a || i20 == u.n.a) {
+        if (i20 == t.c.a || i20 == t.h.a || i20 == t.n.a) {
             if ((i18 & 1) == 1) {
                 this.z = c();
             }
             return true;
         }
-        if (i20 == uVar.a) {
+        if (i20 == tVar.a) {
             this.A = c();
             if ((this.t & 2048) != 0) {
                 this.z = c();

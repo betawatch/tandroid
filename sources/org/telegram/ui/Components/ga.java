@@ -1,83 +1,96 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.content.Context;
+import android.graphics.Canvas;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.text.TextUtils;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.Utilities;
+import android.graphics.Rect;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ga {
-    public String a;
-    public Bitmap b;
-    public final Paint c;
-    public final int d;
-    public final Runnable e;
-    public org.telegram.messenger.b8 f;
+public abstract class ga extends FrameLayout {
+    public final ov0 a;
+    public Paint b;
+    public int c;
+    public final boolean d;
+    public final boolean e;
+    public final Rect f;
 
-    public ga(int i10, Runnable runnable) {
-        Paint paint = new Paint(1);
-        this.c = paint;
-        this.d = i10;
-        this.e = runnable;
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
+    public ga(Context context, ov0 ov0Var) {
+        super(context);
+        this.c = 0;
+        this.d = true;
+        this.e = true;
+        this.f = new Rect();
+        this.a = ov0Var;
     }
 
-    public final void a() {
-        this.a = null;
-        if (this.f != null) {
-            Utilities.globalQueue.cancelRunnable(this.f);
-        }
-        Bitmap bitmap = this.b;
-        if (bitmap != null && !bitmap.isRecycled()) {
-            this.b.recycle();
-        }
-        this.b = null;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0019, code lost:
-    
-        if (r8.f != null) goto L5;
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Bitmap b(Bitmap bitmap, String str, int i10, int i11, boolean z4) {
-        if (bitmap != null && !bitmap.isRecycled()) {
-            if (TextUtils.equals(this.a, str)) {
-                Bitmap bitmap2 = this.b;
-                if (bitmap2 != null) {
-                    return bitmap2;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (SharedConfig.chatBlurEnabled() && this.a != null && this.e && this.c != 0) {
+            if (this.b == null) {
+                this.b = new Paint();
+            }
+            this.b.setColor(this.c);
+            this.f.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            float f7 = 0.0f;
+            View view = this;
+            while (true) {
+                ov0 ov0Var = this.a;
+                if (view == ov0Var) {
+                    canvas2 = canvas;
+                    ov0Var.J(canvas2, f7, this.f, this.b, this.d);
+                    break;
                 }
+                f7 += view.getY();
+                Object parent = view.getParent();
+                if (!(parent instanceof View)) {
+                    super.dispatchDraw(canvas);
+                    return;
+                }
+                view = (View) parent;
             }
-            if (this.f != null) {
-                Utilities.globalQueue.cancelRunnable(this.f);
-            }
-            this.a = str;
-            DispatchQueue dispatchQueue = Utilities.globalQueue;
-            org.telegram.messenger.b8 b8Var = new org.telegram.messenger.b8(this, bitmap, i10, i11, str, z4);
-            this.f = b8Var;
-            dispatchQueue.postRunnable(b8Var);
-            return this.b;
+        } else {
+            canvas2 = canvas;
         }
-        return null;
+        super.dispatchDraw(canvas2);
     }
 
-    public final Bitmap c(ImageReceiver.BitmapHolder bitmapHolder) {
-        if (bitmapHolder == null) {
-            return null;
+    @Override // android.view.ViewGroup, android.view.View
+    public void onAttachedToWindow() {
+        ov0 ov0Var;
+        if (SharedConfig.chatBlurEnabled() && (ov0Var = this.a) != null) {
+            ov0Var.T.add(this);
         }
-        return b(bitmapHolder.bitmap, bitmapHolder.getKey(), bitmapHolder.orientation, 0, false);
+        super.onAttachedToWindow();
     }
 
-    public final Bitmap d(ImageReceiver imageReceiver) {
-        if (imageReceiver == null) {
-            return null;
+    @Override // android.view.ViewGroup, android.view.View
+    public void onDetachedFromWindow() {
+        ov0 ov0Var = this.a;
+        if (ov0Var != null) {
+            ov0Var.T.remove(this);
         }
-        return b(imageReceiver.getBitmap(), imageReceiver.getImageKey(), imageReceiver.getOrientation(), imageReceiver.getInvert(), false);
+        super.onDetachedFromWindow();
+    }
+
+    @Override // android.view.View
+    public void setBackgroundColor(int i10) {
+        if (!SharedConfig.chatBlurEnabled() || this.a == null) {
+            super.setBackgroundColor(i10);
+        } else {
+            this.c = i10;
+        }
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        if (SharedConfig.chatBlurEnabled() && f7 != getTranslationY()) {
+            invalidate();
+        }
+        super.setTranslationY(f7);
     }
 }

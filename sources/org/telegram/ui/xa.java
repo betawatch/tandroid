@@ -2,7 +2,7 @@ package org.telegram.ui;
 
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xa implements Runnable {
     public final /* synthetic */ int a;
@@ -18,15 +18,15 @@ public final /* synthetic */ class xa implements Runnable {
         switch (this.a) {
             case 0:
                 ub ubVar = this.b;
-                ubVar.H0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
-                ubVar.I0 = -1;
+                ubVar.K0 = ConnectionsManager.DEFAULT_DATACENTER_ID;
+                ubVar.L0 = -1;
                 ubVar.e1();
-                ubVar.J0 = null;
+                ubVar.M0 = null;
                 break;
             case 1:
                 ub ubVar2 = this.b;
                 ubVar2.X0(false);
-                ubVar2.F.l();
+                ubVar2.I.l();
                 break;
             case 2:
                 this.b.W0();

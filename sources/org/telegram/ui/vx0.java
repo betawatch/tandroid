@@ -1,109 +1,101 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import android.view.View;
-import java.util.HashSet;
-import org.telegram.ui.ActionBar.ActionBarLayout;
+import android.util.SparseIntArray;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vx0 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ProfileActivity b;
+public final class vx0 extends s4.o {
+    public int b;
+    public final SparseIntArray c = new SparseIntArray();
+    public final SparseIntArray d = new SparseIntArray();
+    public final /* synthetic */ PrivacyControlActivity e;
 
-    public /* synthetic */ vx0(ProfileActivity profileActivity, int i10) {
-        this.a = i10;
-        this.b = profileActivity;
+    public vx0(PrivacyControlActivity privacyControlActivity) {
+        this.e = privacyControlActivity;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        int i10 = this.a;
-        ProfileActivity profileActivity = this.b;
-        switch (i10) {
-            case 0:
-                ProfileActivity.i0(profileActivity);
-                break;
-            case 1:
-                if (profileActivity.v.getTag() == null) {
-                    profileActivity.u4();
-                    break;
-                }
-                break;
-            case 2:
-                profileActivity.finishPreviewFragment();
-                break;
-            case 3:
-                profileActivity.R4();
-                break;
-            case 4:
-                ProfileActivity.g0(profileActivity);
-                break;
-            case 5:
-                ProfileActivity.a0(profileActivity);
-                break;
-            case 6:
-                profileActivity.getClass();
-                Bundle bundle = new Bundle();
-                bundle.putLong("chat_id", profileActivity.c1);
-                bundle.putLong("user_id", profileActivity.b1);
-                profileActivity.presentFragment(new u21(bundle));
-                break;
-            case 7:
-                ProfileActivity.h0(profileActivity);
-                break;
-            case 8:
-                profileActivity.Q4();
-                break;
-            case 9:
-                profileActivity.Q4();
-                break;
-            case 10:
-                if (profileActivity.getParentLayout() != null && profileActivity.getParentLayout().getFragmentStack() != null) {
-                    int i11 = 0;
-                    while (i11 < profileActivity.getParentLayout().getFragmentStack().size()) {
-                        org.telegram.ui.ActionBar.p2 p2Var = (org.telegram.ui.ActionBar.p2) profileActivity.getParentLayout().getFragmentStack().get(i11);
-                        if (p2Var instanceof qy) {
-                            qy qyVar = (qy) p2Var;
-                            lx lxVar = qyVar.C3;
-                            if (lxVar != null) {
-                                org.telegram.ui.ActionBar.p2 fragment = lxVar.getFragment();
-                                if ((fragment instanceof sf1) && (-((sf1) fragment).a) == profileActivity.a()) {
-                                    qyVar.C3.a();
-                                }
-                            }
-                        } else if (p2Var instanceof zn) {
-                            if (((zn) p2Var).a() == profileActivity.a()) {
-                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(p2Var, false);
-                                i11--;
-                            }
-                        } else if (p2Var instanceof sf1) {
-                            if ((-((sf1) p2Var).a) == profileActivity.a()) {
-                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(p2Var, false);
-                                i11--;
-                            }
-                        } else if ((p2Var instanceof ProfileActivity) && p2Var != profileActivity) {
-                            ProfileActivity profileActivity2 = (ProfileActivity) p2Var;
-                            if (profileActivity2.a() == profileActivity.a() && profileActivity2.n1) {
-                                ((ActionBarLayout) profileActivity.getParentLayout()).a0(p2Var, false);
-                                i11--;
-                            }
-                        }
-                        i11++;
-                    }
-                }
-                profileActivity.G1 = 0;
-                Bundle bundle2 = new Bundle();
-                bundle2.putLong("chat_id", profileActivity.c1);
-                HashSet hashSet = sf1.k1;
-                profileActivity.presentFragment(sf1.E0(profileActivity.getMessagesController(), profileActivity.getMessagesStorage(), bundle2));
-                break;
-            case 11:
-                profileActivity.t4(view);
-                break;
-            default:
-                profileActivity.t4(view);
-                break;
+    public static void g(int i10, int i11, SparseIntArray sparseIntArray) {
+        if (i11 >= 0) {
+            sparseIntArray.put(i11, i10);
         }
+    }
+
+    @Override // s4.o
+    public final boolean a(int i10, int i11) {
+        return b(i10, i11);
+    }
+
+    @Override // s4.o
+    public final boolean b(int i10, int i11) {
+        int i12 = this.c.get(i10, -1);
+        return i12 == this.d.get(i11, -1) && i12 >= 0;
+    }
+
+    @Override // s4.o
+    public final int d() {
+        return this.e.r0;
+    }
+
+    @Override // s4.o
+    public final int e() {
+        return this.b;
+    }
+
+    public final void f(SparseIntArray sparseIntArray) {
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int i14;
+        int i15;
+        int i16;
+        int i17;
+        sparseIntArray.clear();
+        PrivacyControlActivity privacyControlActivity = this.e;
+        g(1, privacyControlActivity.M, sparseIntArray);
+        g(2, privacyControlActivity.N, sparseIntArray);
+        i10 = privacyControlActivity.everybodyRow;
+        g(3, i10, sparseIntArray);
+        g(4, privacyControlActivity.O, sparseIntArray);
+        i11 = privacyControlActivity.nobodyRow;
+        g(5, i11, sparseIntArray);
+        g(6, privacyControlActivity.g0, sparseIntArray);
+        g(7, privacyControlActivity.P, sparseIntArray);
+        g(8, privacyControlActivity.R, sparseIntArray);
+        g(9, privacyControlActivity.S, sparseIntArray);
+        g(10, privacyControlActivity.T, sparseIntArray);
+        g(11, privacyControlActivity.U, sparseIntArray);
+        g(12, privacyControlActivity.V, sparseIntArray);
+        g(13, privacyControlActivity.W, sparseIntArray);
+        g(14, privacyControlActivity.X, sparseIntArray);
+        g(15, privacyControlActivity.Y, sparseIntArray);
+        i12 = privacyControlActivity.photoForRestRow;
+        g(16, i12, sparseIntArray);
+        i13 = privacyControlActivity.currentPhotoForRestRow;
+        g(17, i13, sparseIntArray);
+        g(18, privacyControlActivity.Z, sparseIntArray);
+        g(19, privacyControlActivity.a0, sparseIntArray);
+        g(20, privacyControlActivity.b0, sparseIntArray);
+        g(21, privacyControlActivity.c0, sparseIntArray);
+        i14 = privacyControlActivity.readRow;
+        g(22, i14, sparseIntArray);
+        g(23, privacyControlActivity.d0, sparseIntArray);
+        g(24, privacyControlActivity.e0, sparseIntArray);
+        g(25, privacyControlActivity.f0, sparseIntArray);
+        g(26, privacyControlActivity.h0, sparseIntArray);
+        i15 = privacyControlActivity.priceRow;
+        g(27, i15, sparseIntArray);
+        g(28, privacyControlActivity.j0, sparseIntArray);
+        i16 = privacyControlActivity.showGiftIconRow;
+        g(29, i16, sparseIntArray);
+        g(30, privacyControlActivity.k0, sparseIntArray);
+        i17 = privacyControlActivity.giftTypesHeaderRow;
+        g(31, i17, sparseIntArray);
+        g(32, privacyControlActivity.m0, sparseIntArray);
+        g(33, privacyControlActivity.l0, sparseIntArray);
+        g(34, privacyControlActivity.n0, sparseIntArray);
+        g(35, privacyControlActivity.o0, sparseIntArray);
+        g(36, privacyControlActivity.p0, sparseIntArray);
+        g(37, privacyControlActivity.q0, sparseIntArray);
     }
 }

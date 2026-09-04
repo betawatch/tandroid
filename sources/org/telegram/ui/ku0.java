@@ -1,35 +1,13 @@
 package org.telegram.ui;
 
-import java.io.File;
-import java.util.List;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_iv;
+import android.view.animation.DecelerateInterpolator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public interface ku0 {
-    boolean a(int i10);
-
-    File b(int i10);
-
-    String c(int i10);
-
-    TLObject d(int i10);
-
-    boolean e(int i10);
-
-    TLRPC.PhotoSize f(TLObject tLObject, int[] iArr);
-
-    Object g();
-
-    TL_iv.PageBlock get(int i10);
-
-    List getAll();
-
-    void h(TL_iv.PageBlock pageBlock);
-
-    CharSequence i(int i10);
-
-    int j();
+public final class ku0 {
+    public static final ku0 e = new ku0();
+    public DecelerateInterpolator b;
+    public int a = 200;
+    public boolean c = true;
+    public boolean d = true;
 }

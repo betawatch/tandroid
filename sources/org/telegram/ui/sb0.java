@@ -1,54 +1,27 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class sb0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ yb0 b;
-    public final /* synthetic */ String c;
+import android.content.Context;
+import android.graphics.Canvas;
 
-    public /* synthetic */ sb0(yb0 yb0Var, String str, int i10) {
-        this.a = i10;
-        this.b = yb0Var;
-        this.c = str;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class sb0 extends yd {
+    public final /* synthetic */ xb0 c;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public sb0(xb0 xb0Var, Context context) {
+        super(context);
+        this.c = xb0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                yb0 yb0Var = this.b;
-                yb0Var.getClass();
-                String str = this.c;
-                if ("disable".equalsIgnoreCase(str)) {
-                    yb0Var.o("turnPasswordOffRow");
-                }
-                if ("change".equalsIgnoreCase(str)) {
-                    yb0Var.o("changePasswordRow");
-                }
-                if ("change-email".equalsIgnoreCase(str)) {
-                    yb0Var.o("emailRow");
-                    break;
-                }
-                break;
-            default:
-                yb0 yb0Var2 = this.b;
-                yb0Var2.getClass();
-                String str2 = this.c;
-                if ("disable".equalsIgnoreCase(str2)) {
-                    yb0Var2.o("disablePasscodeRow");
-                }
-                if ("change".equalsIgnoreCase(str2)) {
-                    yb0Var2.o("changePasscodeRow");
-                }
-                if ("auto-lock".equalsIgnoreCase(str2)) {
-                    yb0Var2.o("autoLockRow");
-                }
-                if ("fingerprint".equalsIgnoreCase(str2)) {
-                    yb0Var2.o("fingerprintRow");
-                    break;
-                }
-                break;
-        }
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        this.c.getClass();
+    }
+
+    @Override // org.telegram.ui.yd, android.widget.LinearLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
     }
 }

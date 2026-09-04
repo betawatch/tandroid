@@ -9,7 +9,7 @@ import android.graphics.drawable.LayerDrawable;
 import android.util.AttributeSet;
 import android.util.Log;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class MediaRouteVolumeSlider extends m.c0 {
     public final float b;
@@ -37,12 +37,12 @@ public class MediaRouteVolumeSlider extends m.c0 {
         }
     }
 
-    public final void b(boolean z4) {
-        if (this.c == z4) {
+    public final void b(boolean z10) {
+        if (this.c == z10) {
             return;
         }
-        this.c = z4;
-        super.setThumb(z4 ? null : this.d);
+        this.c = z10;
+        super.setThumb(z10 ? null : this.d);
     }
 
     @Override // m.c0, android.widget.AbsSeekBar, android.widget.ProgressBar, android.view.View
@@ -80,6 +80,6 @@ public class MediaRouteVolumeSlider extends m.c0 {
 
     public MediaRouteVolumeSlider(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet, i10);
-        this.b = j7.z.c(context);
+        this.b = v7.d0.c(context);
     }
 }

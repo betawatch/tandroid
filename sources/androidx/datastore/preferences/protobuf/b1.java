@@ -1,36 +1,23 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b1 {
-    public final a a;
-    public final String b;
-    public final Object[] c;
-    public final int d;
+public interface b1 {
+    Object a();
 
-    public b1(x xVar, String str, Object[] objArr) {
-        this.a = xVar;
-        this.b = str;
-        this.c = objArr;
-        char charAt = str.charAt(0);
-        if (charAt < 55296) {
-            this.d = charAt;
-            return;
-        }
-        int i10 = charAt & 8191;
-        int i11 = 13;
-        int i12 = 1;
-        while (true) {
-            int i13 = i12 + 1;
-            char charAt2 = str.charAt(i12);
-            if (charAt2 < 55296) {
-                this.d = i10 | (charAt2 << i11);
-                return;
-            } else {
-                i10 |= (charAt2 & 8191) << i11;
-                i11 += 13;
-                i12 = i13;
-            }
-        }
-    }
+    void b(Object obj, k0 k0Var);
+
+    void c(Object obj, a0.h hVar, m mVar);
+
+    void d(Object obj);
+
+    int e(a aVar);
+
+    boolean f(Object obj);
+
+    void g(w wVar, w wVar2);
+
+    int h(w wVar);
+
+    boolean i(w wVar, w wVar2);
 }

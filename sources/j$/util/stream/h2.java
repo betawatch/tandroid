@@ -12,8 +12,8 @@ public class h2 implements e2 {
     public int b;
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.V(this, j10, j11, intFunction);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.V(this, j3, j10, intFunction);
     }
 
     @Override // j$.util.stream.e2
@@ -26,11 +26,11 @@ public class h2 implements e2 {
         throw new IndexOutOfBoundsException();
     }
 
-    public h2(long j10, IntFunction intFunction) {
-        if (j10 >= 2147483639) {
+    public h2(long j3, IntFunction intFunction) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.a = (Object[]) intFunction.apply((int) j10);
+        this.a = (Object[]) intFunction.apply((int) j3);
         this.b = 0;
     }
 

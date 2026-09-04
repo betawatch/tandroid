@@ -1,6 +1,63 @@
 package dd;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface m extends sc.a {
+public enum m extends b2 {
+    public m() {
+        super("TagName", 9);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0035, code lost:
+    
+        r0 = dd.a.c(r2, r14.h, r0, r3 - r0);
+     */
+    @Override // dd.b2
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void d(l lVar, a aVar) {
+        char c10;
+        aVar.b();
+        int i10 = aVar.e;
+        int i11 = aVar.c;
+        char[] cArr = aVar.a;
+        while (true) {
+            int i12 = aVar.e;
+            if (i12 >= i11 || (c10 = cArr[i12]) == '\t' || c10 == '\n' || c10 == '\r' || c10 == '\f' || c10 == ' ' || c10 == '/' || c10 == '>' || c10 == 0) {
+                break;
+            } else {
+                aVar.e = i12 + 1;
+            }
+        }
+        String str = "";
+        lVar.i.n(str);
+        char d = aVar.d();
+        if (d == 0) {
+            lVar.i.n(b2.I0);
+            return;
+        }
+        if (d != ' ') {
+            if (d == '/') {
+                lVar.c = b2.e0;
+                return;
+            }
+            w wVar = b2.a;
+            if (d == '>') {
+                lVar.k();
+                lVar.c = wVar;
+                return;
+            }
+            if (d == 65535) {
+                lVar.l(this);
+                lVar.c = wVar;
+                return;
+            } else if (d != '\t' && d != '\n' && d != '\f' && d != '\r') {
+                j jVar = lVar.i;
+                jVar.getClass();
+                jVar.n(String.valueOf(d));
+                return;
+            }
+        }
+        lVar.c = b2.W;
+    }
 }

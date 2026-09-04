@@ -1,50 +1,9 @@
 package s8;
 
-import j$.util.Objects;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a implements Iterator {
-    public final Iterator a;
-    public Object b = null;
-    public Collection c = null;
-    public Iterator d = c0.a;
-    public final /* synthetic */ e0 e;
-
-    public a(e0 e0Var) {
-        this.e = e0Var;
-        this.a = e0Var.d.entrySet().iterator();
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return this.a.hasNext() || this.d.hasNext();
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (!this.d.hasNext()) {
-            Map.Entry entry = (Map.Entry) this.a.next();
-            this.b = entry.getKey();
-            Collection collection = (Collection) entry.getValue();
-            this.c = collection;
-            this.d = collection.iterator();
-        }
-        return this.d.next();
-    }
-
-    @Override // java.util.Iterator
-    public final void remove() {
-        this.d.remove();
-        Collection collection = this.c;
-        Objects.requireNonNull(collection);
-        if (collection.isEmpty()) {
-            this.a.remove();
-        }
-        e0 e0Var = this.e;
-        e0Var.e--;
-    }
+public final class a {
+    public final Object b = new Object();
+    public long c = Long.MIN_VALUE;
+    public final long a = Math.round(30000.0d);
 }

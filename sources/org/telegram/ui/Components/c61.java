@@ -1,20 +1,45 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class c61 extends f2.i0 {
-    public final /* synthetic */ g61 I;
+public final class c61 extends s4.j {
+    public final /* synthetic */ d61 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public c61(g61 g61Var, int i10) {
-        super(i10, false);
-        this.I = g61Var;
+    public c61(d61 d61Var) {
+        this.F = d61Var;
     }
 
-    @Override // f2.i0
-    public final int W0(f2.i1 i1Var) {
-        return this.I.X2 ? AndroidUtilities.displaySize.y : super.W0(i1Var);
+    @Override // s4.j
+    public final void M() {
+        d61 d61Var = this.F;
+        if (d61Var.a1()) {
+            d61Var.invalidate();
+        }
+        d61Var.B1();
+    }
+
+    @Override // s4.j
+    public final void O() {
+        d61 d61Var = this.F;
+        if (d61Var.a1()) {
+            d61Var.invalidate();
+        }
+        d61Var.B1();
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        d61 d61Var = this.F;
+        d61Var.invalidate();
+        d61Var.B1();
+    }
+
+    @Override // s4.j
+    public final void Q() {
+        d61 d61Var = this.F;
+        if (d61Var.a1()) {
+            d61Var.invalidate();
+        }
+        d61Var.B1();
     }
 }

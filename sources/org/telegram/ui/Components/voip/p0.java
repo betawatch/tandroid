@@ -1,127 +1,43 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
+import android.app.Activity;
 import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.graphics.RectF;
 import android.view.View;
-import org.telegram.ui.Components.mr;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class p0 {
-    public float a;
-    public float b;
-    public float c;
-    public boolean e;
-    public final l3 f;
-    public final l3 g;
-    public ValueAnimator j;
-    public int k;
-    public float d = 0.0f;
-    public boolean h = false;
-    public float i = 1.0f;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class p0 extends TextView {
+    public final RectF a;
+    public final o1 b;
 
-    public p0(int i10, int i11, int i12, int i13) {
-        l3 l3Var = new l3(i13 - 1);
-        this.f = l3Var;
-        l3 l3Var2 = new l3(i13);
-        this.g = l3Var2;
-        l3Var.a = i10;
-        l3Var.b = i11;
-        l3Var2.a = i10 - i12;
-        l3Var2.b = i11 - i12;
-        l3Var.b();
-        l3Var2.b();
-        l3Var.d.setColor(-1);
-        l3Var.d.setAlpha(20);
-        l3Var2.d.setColor(-1);
-        l3Var2.d.setAlpha(36);
+    public p0(Activity activity, o1 o1Var) {
+        super(activity);
+        this.a = new RectF();
+        this.b = o1Var;
+        o1Var.a(this);
+        setText(LocaleController.getString(R.string.VoipHideEmoji));
+        setContentDescription(LocaleController.getString(R.string.VoipHideEmoji));
+        setTextColor(-1);
+        setTypeface(AndroidUtilities.bold());
+        setPadding(AndroidUtilities.dp(14.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(14.0f), AndroidUtilities.dp(4.0f));
     }
 
-    public final void a(Canvas canvas, float f10, float f11, View view) {
-        float f12 = (this.a * 0.4f) + 0.8f;
-        if (this.e || this.d != 0.0f) {
-            canvas.save();
-            float interpolation = mr.f.getInterpolation(this.d) * f12;
-            canvas.scale(interpolation, interpolation, f10, f11);
-            float f13 = this.a;
-            float f14 = this.i;
-            l3 l3Var = this.f;
-            l3Var.g(f13, f14);
-            Paint paint = l3Var.d;
-            l3Var.a(f10, f11, canvas, paint);
-            float f15 = this.a;
-            float f16 = this.i;
-            l3 l3Var2 = this.g;
-            l3Var2.g(f15, f16);
-            l3Var2.a(f10, f11, canvas, paint);
-            canvas.restore();
-        }
-        if (this.h && this.k == 0) {
-            return;
-        }
-        int i10 = this.k;
-        if (i10 != 0) {
-            this.k = i10 - 1;
-        }
-        if (this.d != 0.0f) {
-            view.invalidate();
-        }
-    }
-
-    public final void b(double d) {
-        float f10 = ((float) d) / 80.0f;
-        float f11 = 0.0f;
-        if (!this.e) {
-            f10 = 0.0f;
-        }
-        if (f10 > 1.0f) {
-            f11 = 1.0f;
-        } else if (f10 >= 0.0f) {
-            f11 = f10;
-        }
-        this.b = f11;
-        this.c = (f11 - this.a) / 200.0f;
-    }
-
-    public final void c() {
-        float f10 = this.b;
-        float f11 = this.a;
-        if (f10 != f11) {
-            float f12 = this.c;
-            float f13 = (16.0f * f12) + f11;
-            this.a = f13;
-            if (f12 > 0.0f) {
-                if (f13 > f10) {
-                    this.a = f10;
-                }
-            } else if (f13 < f10) {
-                this.a = f10;
-            }
-        }
-        boolean z4 = this.e;
-        if (z4) {
-            float f14 = this.d;
-            if (f14 != 1.0f) {
-                float f15 = f14 + 0.045714285f;
-                this.d = f15;
-                if (f15 > 1.0f) {
-                    this.d = 1.0f;
-                    return;
-                }
-                return;
-            }
-        }
-        if (z4) {
-            return;
-        }
-        float f16 = this.d;
-        if (f16 != 0.0f) {
-            float f17 = f16 - 0.045714285f;
-            this.d = f17;
-            if (f17 < 0.0f) {
-                this.d = 0.0f;
-            }
-        }
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        float width = getWidth();
+        float height = getHeight();
+        RectF rectF = this.a;
+        rectF.set(0.0f, 0.0f, width, height);
+        float x10 = ((View) getParent()).getX() + getX();
+        float y3 = ((View) getParent()).getY() + getY();
+        o1 o1Var = this.b;
+        o1Var.d(x10, y3);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), o1Var.b());
+        super.onDraw(canvas);
     }
 }

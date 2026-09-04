@@ -1,49 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.net.Uri;
-import java.util.Map;
-import org.telegram.messenger.secretmedia.ExtendedDefaultDataSource;
+import android.graphics.SurfaceTexture;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class d71 implements g5.m {
-    public final g5.m a;
-    public final long b;
+public interface d71 {
+    void onError(g71 g71Var, Exception exc);
 
-    public d71(ExtendedDefaultDataSource extendedDefaultDataSource, long j10) {
-        this.a = extendedDefaultDataSource;
-        this.b = j10;
-    }
+    void onRenderedFirstFrame();
 
-    @Override // g5.m
-    public final void addTransferListener(g5.v0 v0Var) {
-        this.a.addTransferListener(v0Var);
-    }
+    void onRenderedFirstFrame(j2.a aVar);
 
-    @Override // g5.m
-    public final void close() {
-        this.a.close();
-    }
+    void onSeekFinished(j2.a aVar);
 
-    @Override // g5.m
-    public final Map getResponseHeaders() {
-        return this.a.getResponseHeaders();
-    }
+    void onSeekStarted(j2.a aVar);
 
-    @Override // g5.m
-    public final Uri getUri() {
-        return this.a.getUri();
-    }
+    void onStateChanged(boolean z10, int i10);
 
-    @Override // g5.m
-    public final long open(g5.p pVar) {
-        c4.c a2 = pVar.a();
-        a2.b = pVar.e + this.b;
-        return this.a.open(a2.d());
-    }
+    boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture);
 
-    @Override // g5.j
-    public final int read(byte[] bArr, int i10, int i11) {
-        return this.a.read(bArr, i10, i11);
-    }
+    void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture);
+
+    void onVideoSizeChanged(int i10, int i11, int i12, float f7);
 }

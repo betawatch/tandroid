@@ -1,9 +1,9 @@
 package androidx.media;
 
+import i2.g;
 import java.util.Arrays;
-import kf.k0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class AudioAttributesImplBase implements AudioAttributesImpl {
     public int a = 0;
@@ -84,13 +84,13 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
 
     public final String toString() {
         String str;
-        StringBuilder sb = new StringBuilder("AudioAttributesCompat:");
+        StringBuilder sb2 = new StringBuilder("AudioAttributesCompat:");
         if (this.d != -1) {
-            sb.append(" stream=");
-            sb.append(this.d);
-            sb.append(" derived");
+            sb2.append(" stream=");
+            sb2.append(this.d);
+            sb2.append(" derived");
         }
-        sb.append(" usage=");
+        sb2.append(" usage=");
         int i10 = this.a;
         int i11 = AudioAttributesCompat.b;
         switch (i10) {
@@ -141,17 +141,17 @@ public class AudioAttributesImplBase implements AudioAttributesImpl {
                 break;
             case 15:
             default:
-                str = k0.j(i10, "unknown usage ");
+                str = g.i(i10, "unknown usage ");
                 break;
             case 16:
                 str = "USAGE_ASSISTANT";
                 break;
         }
-        sb.append(str);
-        sb.append(" content=");
-        sb.append(this.b);
-        sb.append(" flags=0x");
-        sb.append(Integer.toHexString(this.c).toUpperCase());
-        return sb.toString();
+        sb2.append(str);
+        sb2.append(" content=");
+        sb2.append(this.b);
+        sb2.append(" flags=0x");
+        sb2.append(Integer.toHexString(this.c).toUpperCase());
+        return sb2.toString();
     }
 }

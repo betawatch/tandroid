@@ -1,55 +1,106 @@
 package org.telegram.ui;
 
 import android.animation.ValueAnimator;
-import java.util.HashSet;
+import android.app.Dialog;
+import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.BuildVars;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class s50 extends f2.l {
-    public float F;
-    public ValueAnimator G;
-    public final HashSet H = new HashSet();
-    public final HashSet I = new HashSet();
-    public float J;
-    public float K;
-    public final /* synthetic */ e60 L;
+public final class s50 extends Dialog {
+    public final bi.a4 a;
+    public final t50 b;
+    public Bitmap c;
+    public Paint d;
+    public BitmapShader e;
+    public final Matrix f;
+    public float h;
+    public ValueAnimator n;
+    public boolean r;
 
-    public s50(e60 e60Var) {
-        this.L = e60Var;
+    public s50(Context context, t50 t50Var) {
+        super(context, R.style.TransparentDialog);
+        this.f = new Matrix();
+        this.b = t50Var;
+        t50Var.setVisibility(4);
+        AndroidUtilities.makeGlobalBlurBitmap(new nf(27, this, t50Var), 14.0f);
+        bi.a4 a4Var = new bi.a4(this, context, t50Var);
+        this.a = a4Var;
+        a4Var.setOnClickListener(new a(this, 29));
     }
 
-    @Override // f2.l, f2.t0
-    public final void g() {
-        super.g();
-        this.I.clear();
-        this.H.clear();
-        this.K = Float.MAX_VALUE;
-        this.L.N.invalidate();
-    }
-
-    @Override // f2.l, f2.t0
-    public final void m() {
-        boolean isEmpty = this.p.isEmpty();
-        boolean isEmpty2 = this.r.isEmpty();
-        boolean isEmpty3 = this.q.isEmpty();
-        ValueAnimator valueAnimator = this.G;
+    public final void b(float f7, r50 r50Var) {
+        ValueAnimator valueAnimator = this.n;
         if (valueAnimator != null) {
             valueAnimator.cancel();
-            this.G = null;
+            this.n = null;
         }
-        if (!isEmpty || !isEmpty2 || !isEmpty3) {
-            this.F = 0.0f;
-            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
-            this.G = ofFloat;
-            ofFloat.addUpdateListener(new g3(this, 17));
-            this.G.addListener(new org.telegram.ui.Components.f91(this, 21));
-            this.G.setDuration(350L);
-            this.G.setInterpolator(org.telegram.ui.Components.mr.f);
-            this.G.start();
-            e60 e60Var = this.L;
-            e60Var.N.invalidate();
-            e60Var.X1.invalidate();
+        ValueAnimator ofFloat = ValueAnimator.ofFloat(this.h, f7);
+        this.n = ofFloat;
+        ofFloat.addUpdateListener(new c3(this, 16));
+        this.n.addListener(new bi.h2(this, f7, r50Var, 3));
+        this.n.setDuration(420L);
+        this.n.setInterpolator(org.telegram.ui.Components.pr.h);
+        this.n.start();
+    }
+
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        if (this.r) {
+            return;
         }
-        super.m();
+        this.r = true;
+        b(0.0f, new r50(this, 0));
+        try {
+            WindowManager.LayoutParams attributes = getWindow().getAttributes();
+            attributes.flags |= 16;
+            getWindow().setAttributes(attributes);
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
+    }
+
+    @Override // android.app.Dialog
+    public final void onCreate(Bundle bundle) {
+        super.onCreate(bundle);
+        Window window = getWindow();
+        window.setWindowAnimations(R.style.DialogNoAnimation);
+        setContentView(this.a, new ViewGroup.LayoutParams(-1, -1));
+        WindowManager.LayoutParams attributes = window.getAttributes();
+        attributes.width = -1;
+        attributes.height = -1;
+        attributes.gravity = 119;
+        attributes.dimAmount = 0.0f;
+        int i10 = attributes.flags & (-3);
+        attributes.softInputMode = 48;
+        attributes.flags = (-2013069056) | i10;
+        if (!BuildVars.DEBUG_PRIVATE_VERSION) {
+            attributes.flags = i10 | (-2013060864);
+            AndroidUtilities.logFlagSecure();
+        }
+        attributes.flags |= 1152;
+        if (Build.VERSION.SDK_INT >= 28) {
+            attributes.layoutInDisplayCutoutMode = 1;
+        }
+        window.setAttributes(attributes);
+    }
+
+    @Override // android.app.Dialog
+    public final void show() {
+        super.show();
+        b(1.0f, null);
+        AndroidUtilities.runOnUIThread(new r50(this, 1), 16L);
     }
 }

@@ -1,20 +1,152 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class o81 extends x01 {
-    public final /* synthetic */ w81 D;
+public final class o81 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public o81(w81 w81Var, w81 w81Var2, Context context) {
-        super(context, w81Var2);
-        this.D = w81Var;
+    public /* synthetic */ o81(Object obj, int i10) {
+        this.a = i10;
+        this.b = obj;
     }
 
-    @Override // f2.o0
-    public final void l() {
-        this.D.c.V2.N(true);
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        org.telegram.ui.ActionBar.k kVar;
+        org.telegram.ui.ActionBar.k kVar2;
+        switch (this.a) {
+            case 0:
+                if (i10 == -1) {
+                    ((SessionsActivity) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 1:
+                i91 i91Var = (i91) this.b;
+                if (i10 != -1) {
+                    if (i10 == 2) {
+                        i91Var.l0(new yg0(null));
+                        break;
+                    }
+                } else {
+                    i91Var.finishFragment();
+                    break;
+                }
+                break;
+            case 2:
+                if (i10 == -1) {
+                    ((bb1) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 3:
+                StickersActivity stickersActivity = (StickersActivity) this.b;
+                if (i10 != -1) {
+                    StickersActivity.d0(stickersActivity, i10);
+                    break;
+                } else if (stickersActivity.onBackPressed(true)) {
+                    stickersActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 4:
+                be1 be1Var = (be1) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        be1.Y(be1Var);
+                        break;
+                    }
+                } else {
+                    be1Var.finishFragment();
+                    break;
+                }
+                break;
+            case 5:
+                if (i10 == -1) {
+                    ((te1) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 6:
+                if (i10 == -1) {
+                    ((kg1) this.b).finishFragment();
+                    break;
+                }
+                break;
+            case 7:
+                if (i10 == -1) {
+                    TwoStepVerificationActivity twoStepVerificationActivity = (TwoStepVerificationActivity) this.b;
+                    if (twoStepVerificationActivity.X < 0) {
+                        twoStepVerificationActivity.finishFragment();
+                        break;
+                    } else {
+                        twoStepVerificationActivity.x0();
+                        break;
+                    }
+                }
+                break;
+            case 8:
+                UserInfoActivity userInfoActivity = (UserInfoActivity) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        userInfoActivity.c0(true);
+                        break;
+                    }
+                } else if (userInfoActivity.onBackPressed(true)) {
+                    userInfoActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 9:
+                UsersSelectActivity usersSelectActivity = (UsersSelectActivity) this.b;
+                if (i10 != -1) {
+                    if (i10 == 1) {
+                        usersSelectActivity.X();
+                        break;
+                    }
+                } else {
+                    usersSelectActivity.finishFragment();
+                    break;
+                }
+                break;
+            case 10:
+                org.telegram.ui.web.i1 i1Var = (org.telegram.ui.web.i1) this.b;
+                if (i10 == -1) {
+                    kVar = ((org.telegram.ui.ActionBar.n2) i1Var).actionBar;
+                    if (!kVar.s()) {
+                        i1Var.finishFragment();
+                        break;
+                    } else {
+                        kVar2 = ((org.telegram.ui.ActionBar.n2) i1Var).actionBar;
+                        kVar2.r();
+                        i1Var.s.clear();
+                        AndroidUtilities.forEachViews((RecyclerView) i1Var.a, (e2.h) new org.telegram.ui.web.n(1));
+                        break;
+                    }
+                }
+                break;
+            case 11:
+                if (i10 == -1) {
+                    ((sg.a1) this.b).dismiss();
+                    break;
+                }
+                break;
+            case 12:
+                if (i10 == -1) {
+                    ((yh.g4) this.b).finishFragment();
+                    break;
+                }
+                break;
+            default:
+                if (i10 == -1) {
+                    ((zh.g) this.b).finishFragment();
+                    break;
+                }
+                break;
+        }
     }
 }

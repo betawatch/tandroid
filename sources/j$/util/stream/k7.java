@@ -48,19 +48,19 @@ public final class k7 extends x6 implements j$.util.a1 {
 
     @Override // j$.util.d1
     public final boolean tryAdvance(LongConsumer longConsumer) {
-        long j10;
+        long j3;
         Objects.requireNonNull(longConsumer);
         boolean a2 = a();
         if (a2) {
             q6 q6Var = (q6) this.h;
-            long j11 = this.g;
-            int k10 = q6Var.k(j11);
+            long j10 = this.g;
+            int k10 = q6Var.k(j10);
             if (q6Var.c == 0 && k10 == 0) {
-                j10 = ((long[]) q6Var.e)[(int) j11];
+                j3 = ((long[]) q6Var.e)[(int) j10];
             } else {
-                j10 = ((long[][]) q6Var.f)[k10][(int) (j11 - q6Var.d[k10])];
+                j3 = ((long[][]) q6Var.f)[k10][(int) (j10 - q6Var.d[k10])];
             }
-            longConsumer.accept(j10);
+            longConsumer.accept(j3);
         }
         return a2;
     }

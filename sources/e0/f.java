@@ -5,7 +5,7 @@ import android.app.Application;
 import android.os.Bundle;
 import android.util.Log;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class f implements Application.ActivityLifecycleCallbacks {
     public Object a;
@@ -37,7 +37,7 @@ public final class f implements Application.ActivityLifecycleCallbacks {
         try {
             Object obj2 = g.c.get(activity);
             if (obj2 == obj && activity.hashCode() == this.c) {
-                g.g.postAtFrontOfQueue(new androidx.biometric.j(g.b.get(activity), obj2, false, 9));
+                g.g.postAtFrontOfQueue(new i9.s(12, g.b.get(activity), obj2));
                 this.f = true;
                 this.a = null;
             }

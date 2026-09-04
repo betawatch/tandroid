@@ -1,43 +1,63 @@
 package org.telegram.ui;
 
-import android.view.ContextThemeWrapper;
-import android.view.View;
-import android.widget.LinearLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class tr {
-    public final ActionBarPopupWindow$ActionBarPopupWindowLayout a;
-    public final LinearLayout b;
-    public final br0 c;
+public final /* synthetic */ class tr implements org.telegram.ui.Cells.z4, hg.a2 {
+    public final /* synthetic */ ur a;
 
-    public tr(ContextThemeWrapper contextThemeWrapper, org.telegram.ui.Components.bh0 bh0Var, br0 br0Var) {
-        this.c = br0Var;
-        ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout = new ActionBarPopupWindow$ActionBarPopupWindowLayout(0, 0, contextThemeWrapper, null);
-        this.a = actionBarPopupWindow$ActionBarPopupWindowLayout;
-        actionBarPopupWindow$ActionBarPopupWindowLayout.setFitItems(true);
-        org.telegram.ui.ActionBar.g1 c3 = org.telegram.ui.ActionBar.w0.c(false, false, actionBarPopupWindow$ActionBarPopupWindowLayout, R.drawable.msg_arrow_back, LocaleController.getString(R.string.Back), false, null);
-        c3.setOnClickListener(new sr(bh0Var, 0));
-        c3.c(-328966, -328966);
-        c3.setSelectorColor(268435455);
-        View dVar = new dh.d(contextThemeWrapper, 11);
-        dVar.setMinimumWidth(AndroidUtilities.dp(196.0f));
-        dVar.setBackgroundColor(-15198184);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(dVar);
-        LinearLayout.LayoutParams layoutParams = (LinearLayout.LayoutParams) dVar.getLayoutParams();
-        if (LocaleController.isRTL) {
-            layoutParams.gravity = 5;
+    public /* synthetic */ tr(ur urVar) {
+        this.a = urVar;
+    }
+
+    @Override // hg.a2
+    public /* synthetic */ a0.i G() {
+        return null;
+    }
+
+    @Override // hg.a2
+    public /* synthetic */ boolean Q(int i10) {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Cells.z4
+    public boolean d(org.telegram.ui.Cells.a5 a5Var, boolean z10) {
+        int intValue = ((Integer) a5Var.getTag()).intValue();
+        ur urVar = this.a;
+        TLObject E = urVar.E(intValue);
+        if (!(E instanceof TLRPC.ChannelParticipant)) {
+            return false;
         }
-        layoutParams.width = -1;
-        layoutParams.height = AndroidUtilities.dp(8.0f);
-        dVar.setLayoutParams(layoutParams);
-        LinearLayout linearLayout = new LinearLayout(contextThemeWrapper);
-        this.b = linearLayout;
-        linearLayout.setOrientation(1);
-        actionBarPopupWindow$ActionBarPopupWindowLayout.addView(linearLayout);
+        return urVar.y.h0((TLRPC.ChannelParticipant) E, !z10, a5Var);
+    }
+
+    @Override // hg.a2
+    public void f(int i10) {
+        ur urVar = this.a;
+        vr vrVar = urVar.y;
+        if (urVar.h.e()) {
+            return;
+        }
+        int i11 = urVar.r;
+        urVar.l();
+        if (urVar.r > i11) {
+            vrVar.y0(i11);
+        }
+        if (urVar.s || urVar.r != 0 || i10 == 0) {
+            return;
+        }
+        vrVar.b.e(false, true);
+    }
+
+    @Override // hg.a2
+    public /* synthetic */ a0.i w() {
+        return null;
+    }
+
+    @Override // hg.a2
+    public /* synthetic */ void Y(ArrayList arrayList) {
     }
 }

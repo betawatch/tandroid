@@ -8,7 +8,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.RadialProgressView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class v4 extends FrameLayout {
     public RadialProgressView a;
@@ -20,9 +20,9 @@ public final class v4 extends FrameLayout {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.dp(56.0f) * 2.5f), TLObject.FLAG_30));
     }
 
-    public void setLoading(boolean z4) {
-        this.a.setVisibility(z4 ? 0 : 4);
-        this.b.setVisibility(z4 ? 4 : 0);
-        this.c.setVisibility(z4 ? 4 : 0);
+    public void setLoading(boolean z10) {
+        this.a.setVisibility(z10 ? 0 : 4);
+        this.b.setVisibility(z10 ? 4 : 0);
+        this.c.setVisibility(z10 ? 4 : 0);
     }
 }

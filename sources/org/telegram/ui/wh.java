@@ -1,45 +1,39 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class wh implements Runnable {
-    public final /* synthetic */ int a = 1;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ MessageObject d;
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ co b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLRPC.TL_attachMenuBot d;
+    public final /* synthetic */ TLRPC.User e;
 
-    public /* synthetic */ wh(zn znVar, int i10, MessageObject messageObject) {
-        this.b = znVar;
-        this.c = i10;
-        this.d = messageObject;
+    public /* synthetic */ wh(co coVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.TL_error tL_error, TLRPC.User user) {
+        this.b = coVar;
+        this.d = tL_attachMenuBot;
+        this.c = tL_error;
+        this.e = user;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.k4 = null;
-                this.d.messageOwner.replies.read_max_id = this.c;
+                co.w1(this.b, this.d, this.c, this.e);
                 break;
             default:
-                zn znVar = this.b;
-                org.telegram.ui.Components.qc.a0(znVar).c(LocaleController.getString(R.string.AdHidden)).j();
-                MessagesController.getInstance(this.c).disableAds(false);
-                MessageObject messageObject = this.d;
-                znVar.Fa(messageObject);
-                znVar.Ha(messageObject);
+                co.W(this.b, this.d, this.c, this.e);
                 break;
         }
     }
 
-    public /* synthetic */ wh(zn znVar, MessageObject messageObject, int i10) {
-        this.b = znVar;
-        this.d = messageObject;
-        this.c = i10;
+    public /* synthetic */ wh(co coVar, TLRPC.TL_error tL_error, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user) {
+        this.b = coVar;
+        this.c = tL_error;
+        this.d = tL_attachMenuBot;
+        this.e = user;
     }
 }

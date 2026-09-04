@@ -1,6 +1,6 @@
 package c0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class b extends Throwable {
     public final /* synthetic */ int a;
@@ -31,6 +31,10 @@ public final class b extends Throwable {
         return this;
     }
 
+    private final synchronized Throwable f() {
+        return this;
+    }
+
     @Override // java.lang.Throwable
     public final synchronized Throwable fillInStackTrace() {
         switch (this.a) {
@@ -46,8 +50,11 @@ public final class b extends Throwable {
             case 3:
                 d();
                 break;
-            default:
+            case 4:
                 e();
+                break;
+            default:
+                f();
                 break;
         }
         return this;

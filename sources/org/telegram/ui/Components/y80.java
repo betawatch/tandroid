@@ -1,157 +1,80 @@
 package org.telegram.ui.Components;
 
-import android.graphics.CornerPathEffect;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.Path;
-import android.os.Build;
-import android.text.Layout;
+import android.graphics.RectF;
+import android.view.MotionEvent;
+import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class y80 extends rq {
-    public static CornerPathEffect w;
-    public static int x;
-    public Layout h;
-    public int i;
-    public float j;
-    public float k;
-    public float l;
-    public final boolean m;
-    public boolean n;
-    public int o;
-    public int p;
-    public float q;
-    public float r;
-    public float s;
-    public float t;
-    public float u;
-    public float v;
+public class y80 extends org.telegram.ui.ActionBar.j5 {
+    public final a90 M0;
+    public final Paint N0;
+    public e90 O0;
 
-    public y80() {
-        this.j = -1.0f;
-        this.n = true;
-        this.s = Float.MAX_VALUE;
-        this.u = Float.MAX_VALUE;
-        this.c = false;
+    public y80(Context context) {
+        super(context);
+        this.M0 = new a90(this);
+        this.N0 = new Paint(1);
     }
 
-    public static CornerPathEffect c() {
-        if (w == null || x != AndroidUtilities.dp(5.0f)) {
-            int dp = AndroidUtilities.dp(5.0f);
-            x = dp;
-            w = new CornerPathEffect(dp);
-        }
-        return w;
+    private int getLinkColor() {
+        return i0.a.k(getTextColor(), (int) (Color.alpha(getTextColor()) * 0.1175f));
     }
 
-    @Override // org.telegram.ui.Components.rq, android.graphics.Path
-    public final void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
-        Layout layout = this.h;
-        if (layout == null) {
-            f(f10, f11, f12, f13, direction);
-            return;
+    @Override // org.telegram.ui.ActionBar.j5, android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (isClickable()) {
+            RectF rectF = AndroidUtilities.rectTmp;
+            rectF.set(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight());
+            int linkColor = getLinkColor();
+            Paint paint = this.N0;
+            paint.setColor(linkColor);
+            canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), paint);
         }
-        try {
-            float f14 = this.l;
-            float f15 = f11 + f14;
-            float f16 = f13 + f14;
-            float f17 = this.j;
-            if (f17 == -1.0f) {
-                this.j = f15;
-            } else if (f17 != f15) {
-                this.j = f15;
-                this.i++;
+        super.onDraw(canvas);
+        if (isClickable() && this.M0.f(canvas)) {
+            invalidate();
+        }
+    }
+
+    @Override // org.telegram.ui.ActionBar.j5, android.view.View
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        if (!isClickable()) {
+            return super.onTouchEvent(motionEvent);
+        }
+        a90 a90Var = this.M0;
+        if (a90Var != null) {
+            if (motionEvent.getAction() == 0) {
+                e90 e90Var = new e90(null, null, motionEvent.getX(), motionEvent.getY(), 0);
+                e90Var.d(getLinkColor());
+                this.O0 = e90Var;
+                a90Var.a(e90Var, null);
+                x80 b10 = this.O0.b();
+                b10.e(null, 0, 0.0f, 0.0f);
+                b10.addRect(0.0f, 0.0f, getPaddingRight() + getTextWidth() + getPaddingLeft(), getHeight(), Path.Direction.CW);
+                AndroidUtilities.runOnUIThread(new zu(19, this, e90Var), ViewConfiguration.getLongPressTimeout());
+                return true;
             }
-            float lineRight = layout.getLineRight(this.i);
-            float lineLeft = this.h.getLineLeft(this.i);
-            if (f10 < lineRight) {
-                if (f10 > lineLeft || f12 > lineLeft) {
-                    if (f12 > lineRight) {
-                        f12 = lineRight;
-                    }
-                    if (f10 < lineLeft) {
-                        f10 = lineLeft;
-                    }
-                    float f18 = this.k;
-                    float f19 = f10 + f18;
-                    float f20 = f12 + f18;
-                    if (Build.VERSION.SDK_INT < 28) {
-                        f16 -= f16 != ((float) this.h.getHeight()) ? this.h.getSpacingAdd() : 0.0f;
-                    } else if (f16 - f15 > this.p) {
-                        f16 = this.l + (f16 != ((float) this.h.getHeight()) ? this.h.getLineBottom(this.i) - this.h.getSpacingAdd() : 0.0f);
-                    }
-                    int i10 = this.o;
-                    if (i10 < 0) {
-                        f16 += i10;
-                    } else if (i10 > 0) {
-                        f15 += i10;
-                    }
-                    float f21 = f15;
-                    float f22 = f16;
-                    if (this.m) {
-                        f(f19 - (AndroidUtilities.dp(5.0f) / 2.0f), f21, f20 + (AndroidUtilities.dp(5.0f) / 2.0f), f22, direction);
-                    } else {
-                        f(f19, f21, f20, f22, direction);
-                    }
+            if (motionEvent.getAction() == 1) {
+                a90Var.d(true);
+                if (this.O0 != null) {
+                    performClick();
                 }
+                this.O0 = null;
+                return true;
             }
-        } catch (Exception unused) {
+            if (motionEvent.getAction() == 3) {
+                a90Var.d(true);
+                this.O0 = null;
+                return true;
+            }
         }
-    }
-
-    public final void d(Layout layout, int i10, float f10) {
-        e(layout, i10, 0.0f, f10);
-    }
-
-    public final void e(Layout layout, int i10, float f10, float f11) {
-        int lineCount;
-        if (layout == null) {
-            this.h = null;
-            this.i = 0;
-            this.j = -1.0f;
-            this.k = f10;
-            this.l = f11;
-            return;
-        }
-        this.h = layout;
-        this.i = layout.getLineForOffset(i10);
-        this.j = -1.0f;
-        this.k = f10;
-        this.l = f11;
-        if (Build.VERSION.SDK_INT < 28 || (lineCount = layout.getLineCount()) <= 0) {
-            return;
-        }
-        int i11 = lineCount - 1;
-        this.p = layout.getLineBottom(i11) - layout.getLineTop(i11);
-    }
-
-    public final void f(float f10, float f11, float f12, float f13, Path.Direction direction) {
-        float f14 = this.r;
-        float f15 = f10 - f14;
-        float f16 = this.q;
-        float f17 = f11 - f16;
-        float f18 = f12 + f14;
-        float f19 = f13 + f16;
-        this.s = Math.min(this.s, Math.min(f15, f18));
-        this.u = Math.min(this.u, Math.min(f17, f19));
-        this.t = Math.max(this.t, Math.max(f15, f18));
-        this.v = Math.max(this.v, Math.max(f17, f19));
-        super.addRect(f15, f17, f18, f19, direction);
-    }
-
-    @Override // org.telegram.ui.Components.rq, android.graphics.Path
-    public final void reset() {
-        if (this.n) {
-            super.reset();
-        }
-    }
-
-    public y80(int i10) {
-        this.j = -1.0f;
-        this.n = true;
-        this.s = Float.MAX_VALUE;
-        this.u = Float.MAX_VALUE;
-        this.m = true;
-        this.c = false;
+        return this.O0 != null || super.onTouchEvent(motionEvent);
     }
 }

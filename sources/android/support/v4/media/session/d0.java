@@ -4,7 +4,7 @@ import android.media.session.PlaybackState;
 import android.os.Bundle;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class d0 {
     public static void a(PlaybackState.Builder builder, PlaybackState.CustomAction customAction) {
@@ -79,16 +79,16 @@ public abstract class d0 {
         return playbackState.getState();
     }
 
-    public static void s(PlaybackState.Builder builder, long j10) {
-        builder.setActions(j10);
+    public static void s(PlaybackState.Builder builder, long j3) {
+        builder.setActions(j3);
     }
 
-    public static void t(PlaybackState.Builder builder, long j10) {
-        builder.setActiveQueueItemId(j10);
+    public static void t(PlaybackState.Builder builder, long j3) {
+        builder.setActiveQueueItemId(j3);
     }
 
-    public static void u(PlaybackState.Builder builder, long j10) {
-        builder.setBufferedPosition(j10);
+    public static void u(PlaybackState.Builder builder, long j3) {
+        builder.setBufferedPosition(j3);
     }
 
     public static void v(PlaybackState.Builder builder, CharSequence charSequence) {
@@ -99,7 +99,7 @@ public abstract class d0 {
         builder.setExtras(bundle);
     }
 
-    public static void x(PlaybackState.Builder builder, int i10, long j10, float f10, long j11) {
-        builder.setState(i10, j10, f10, j11);
+    public static void x(PlaybackState.Builder builder, int i10, long j3, float f7, long j10) {
+        builder.setState(i10, j3, f7, j10);
     }
 }

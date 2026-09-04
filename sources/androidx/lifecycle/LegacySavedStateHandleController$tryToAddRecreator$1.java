@@ -1,14 +1,14 @@
 package androidx.lifecycle;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class LegacySavedStateHandleController$tryToAddRecreator$1 implements r {
     public final /* synthetic */ o a;
-    public final /* synthetic */ g2.e b;
+    public final /* synthetic */ m.p b;
 
-    public LegacySavedStateHandleController$tryToAddRecreator$1(o oVar, g2.e eVar) {
+    public LegacySavedStateHandleController$tryToAddRecreator$1(o oVar, m.p pVar) {
         this.a = oVar;
-        this.b = eVar;
+        this.b = pVar;
     }
 
     @Override // androidx.lifecycle.r

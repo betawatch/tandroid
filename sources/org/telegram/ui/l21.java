@@ -1,85 +1,72 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.SharedPreferences;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class l21 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ o21 b;
+public final class l21 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ q21 a;
 
-    public /* synthetic */ l21(o21 o21Var, int i10) {
-        this.a = i10;
-        this.b = o21Var;
+    public l21(q21 q21Var) {
+        this.a = q21Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                o21 o21Var = this.b;
-                AndroidUtilities.cancelRunOnUIThread(o21Var.K);
-                boolean z4 = o21Var.r;
-                if (z4) {
-                    if (z4 && o21Var.C == null) {
-                        org.telegram.ui.Components.gj0 gj0Var = new org.telegram.ui.Components.gj0(R.raw.qr_matrix, AndroidUtilities.dp(200.0f), AndroidUtilities.dp(200.0f));
-                        o21Var.C = gj0Var;
-                        gj0Var.s0 = o21Var;
-                        gj0Var.getPaint().setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
-                        o21Var.C.I(1);
-                        o21Var.C.start();
-                    }
-                    if (o21Var.G == 0 || System.currentTimeMillis() / 1000 >= o21Var.G) {
-                        if (o21Var.G != 0) {
-                            o21Var.F = null;
-                            Utilities.themeQueue.postRunnable(new m21(o21Var, o21Var.getWidth(), o21Var.getHeight(), 2));
-                            o21Var.s.q("", true, true);
-                        }
-                        MessagesController.getInstance(UserConfig.selectedAccount).requestContactToken(o21Var.G == 0 ? 750L : 1750L, new y3(o21Var, 18));
-                    }
-                    int i10 = o21Var.G;
-                    if (i10 > 0 && o21Var.F != null) {
-                        long max = Math.max(0L, (i10 - (System.currentTimeMillis() / 1000)) - 1);
-                        int i11 = (int) (max % 60);
-                        int min = Math.min(99, (int) (max / 60));
-                        org.telegram.ui.Components.mo0 mo0Var = o21Var.s;
-                        StringBuilder sb = new StringBuilder();
-                        sb.append(min < 10 ? "0" : "");
-                        sb.append(min);
-                        sb.append(":");
-                        sb.append(i11 < 10 ? "0" : "");
-                        sb.append(i11);
-                        mo0Var.q(sb.toString(), true, false);
-                    }
-                    if (o21Var.isAttachedToWindow()) {
-                        AndroidUtilities.runOnUIThread(o21Var.K, 1000L);
-                        break;
-                    }
-                }
-                break;
-            default:
-                o21 o21Var2 = this.b;
-                o21Var2.P = false;
-                Bitmap bitmap = o21Var2.h;
-                if (bitmap != null) {
-                    o21Var2.h = null;
-                    o21Var2.x.d(0.0f, true);
-                    Bitmap bitmap2 = o21Var2.n;
-                    if (bitmap2 != null) {
-                        bitmap2.recycle();
-                    }
-                    o21Var2.n = bitmap;
-                    o21Var2.invalidate();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        q21 q21Var = this.a;
+        boolean z10 = q21Var.I;
+        SharedConfig.ProxyInfo proxyInfo = q21Var.J;
+        if (i10 == -1) {
+            q21Var.finishFragment();
+            return;
         }
+        boolean z11 = true;
+        if (i10 != 1 || q21Var.getParentActivity() == null) {
+            return;
+        }
+        fg.a a2 = fg.b.a();
+        int i11 = q21Var.v;
+        a2.a = i11 != 0 ? i11 : 1;
+        String i12 = i11 == 3 ? fg.k.i(q21Var.a[0].getText().toString()) : q21Var.a[0].getText().toString();
+        if (i12 == null) {
+            i12 = "";
+        }
+        a2.b = i12;
+        a2.c = q21Var.v == 3 ? 443 : Utilities.parseInt((CharSequence) q21Var.a[1].getText().toString()).intValue();
+        String obj = q21Var.v == 1 ? q21Var.a[2].getText().toString() : "";
+        if (obj == null) {
+            obj = "";
+        }
+        a2.d = obj;
+        String obj2 = q21Var.v == 1 ? q21Var.a[3].getText().toString() : "";
+        if (obj2 == null) {
+            obj2 = "";
+        }
+        a2.e = obj2;
+        String obj3 = q21Var.v != 1 ? q21Var.a[4].getText().toString() : "";
+        a2.f = obj3 != null ? obj3 : "";
+        proxyInfo.settings = new fg.b(a2);
+        SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+        SharedPreferences.Editor edit = globalMainSettings.edit();
+        if (z10) {
+            SharedConfig.addProxy(proxyInfo);
+            SharedConfig.currentProxy = proxyInfo;
+            edit.putBoolean("proxy_enabled", true);
+        } else {
+            z11 = globalMainSettings.getBoolean("proxy_enabled", false);
+            SharedConfig.saveProxyList();
+        }
+        if (z10 || SharedConfig.currentProxy == proxyInfo) {
+            proxyInfo.settings.f(edit);
+            ConnectionsManager.setProxySettings(z11, proxyInfo.settings);
+        }
+        edit.commit();
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.proxySettingsChanged, new Object[0]);
+        q21Var.finishFragment();
     }
 }

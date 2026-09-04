@@ -1,27 +1,13 @@
 package cg;
 
-import org.telegram.messenger.R;
+import java.nio.ShortBuffer;
+import t7.u;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final class a extends m {
-    @Override // cg.m
-    public final int c() {
-        return -30208;
-    }
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public interface a {
+    public static final u p = new u(6);
+    public static final ob.a q = new ob.a(7);
 
-    @Override // cg.m
-    public final float d() {
-        return 0.25f;
-    }
-
-    @Override // cg.m
-    public final int e() {
-        return R.raw.photo_arrow;
-    }
-
-    @Override // cg.m
-    public final float j() {
-        return 0.25f;
-    }
+    void z(ShortBuffer shortBuffer, int i10, ShortBuffer shortBuffer2, int i11, int i12);
 }

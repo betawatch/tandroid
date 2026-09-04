@@ -1,13 +1,13 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public interface TeXFont {
     public static final int NO_FONT = -1;
 
     TeXFont copy();
 
-    TeXFont deriveFont(float f10);
+    TeXFont deriveFont(float f7);
 
     float getAxisHeight(int i10);
 
@@ -23,13 +23,13 @@ public interface TeXFont {
 
     boolean getBold();
 
-    Char getChar(char c3, String str, int i10);
+    Char getChar(char c10, String str, int i10);
 
     Char getChar(String str, int i10);
 
     Char getChar(CharFont charFont, int i10);
 
-    Char getDefaultChar(char c3, int i10);
+    Char getDefaultChar(char c10, int i10);
 
     float getDefaultRuleThickness(int i10);
 
@@ -95,15 +95,15 @@ public interface TeXFont {
 
     boolean isExtensionChar(Char r12);
 
-    TeXFont scaleFont(float f10);
+    TeXFont scaleFont(float f7);
 
-    void setBold(boolean z4);
+    void setBold(boolean z10);
 
-    void setIt(boolean z4);
+    void setIt(boolean z10);
 
-    void setRoman(boolean z4);
+    void setRoman(boolean z10);
 
-    void setSs(boolean z4);
+    void setSs(boolean z10);
 
-    void setTt(boolean z4);
+    void setTt(boolean z10);
 }

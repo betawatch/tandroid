@@ -1,58 +1,36 @@
 package org.telegram.ui.Components;
 
-import com.google.android.gms.common.api.internal.BasePendingResult;
-import java.util.ArrayDeque;
-import java.util.TimerTask;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class h50 extends TimerTask {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class h50 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ boolean[] a;
+    public final /* synthetic */ d50 b;
+    public final /* synthetic */ w50 c;
 
-    public /* synthetic */ h50(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public h50(w50 w50Var, boolean[] zArr, d50 d50Var) {
+        this.c = w50Var;
+        this.a = zArr;
+        this.b = d50Var;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
-    public final void run() {
-        BasePendingResult basePendingResult;
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new up(this, 24));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.d10(this, 23));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.gl0(this, 5));
-                break;
-            case 3:
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.web.q0(this, 16));
-                break;
-            default:
-                s5.c cVar = (s5.c) this.b;
-                ArrayDeque arrayDeque = cVar.h;
-                if (!arrayDeque.isEmpty() && cVar.k == null && cVar.b != 0) {
-                    s5.h hVar = cVar.c;
-                    int[] e = u5.a.e(arrayDeque);
-                    hVar.getClass();
-                    b6.m.e("Must be called from the main thread.");
-                    if (hVar.w()) {
-                        s5.j jVar = new s5.j(hVar, e);
-                        s5.h.x(jVar);
-                        basePendingResult = jVar;
-                    } else {
-                        basePendingResult = s5.h.t();
-                    }
-                    cVar.k = basePendingResult;
-                    basePendingResult.i(new s5.q(cVar, 1));
-                    arrayDeque.clear();
-                    break;
-                }
-                break;
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+        if (floatValue > 0.5f) {
+            boolean[] zArr = this.a;
+            if (!zArr[0]) {
+                zArr[0] = true;
+                this.b.run();
+            }
         }
+        if (floatValue >= 0.5f) {
+            floatValue -= 1.0f;
+        }
+        float f7 = floatValue * 180.0f;
+        w50 w50Var = this.c;
+        w50Var.b.setRotationY(f7);
+        w50Var.m0.setRotationY(f7);
     }
 }

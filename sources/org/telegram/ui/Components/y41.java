@@ -1,29 +1,46 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.MessageObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class y41 implements ux0 {
-    public final /* synthetic */ e51 a;
+public final class y41 implements sx0 {
+    public final /* synthetic */ TLRPC.InputStickerSet a;
+    public final /* synthetic */ d51 b;
 
-    public y41(e51 e51Var) {
-        this.a = e51Var;
+    public y41(d51 d51Var, TLRPC.InputStickerSet inputStickerSet) {
+        this.b = d51Var;
+        this.a = inputStickerSet;
     }
 
-    @Override // org.telegram.ui.Components.ux0
-    public final boolean b() {
-        return this.a.b.a();
-    }
-
-    @Override // org.telegram.ui.Components.ux0
-    public final boolean c() {
-        return this.a.b.c();
-    }
-
-    @Override // org.telegram.ui.Components.ux0
-    public final void d(TLRPC.Document document, String str, Object obj, MessageObject.SendAnimationData sendAnimationData, boolean z4, boolean z10, int i10, int i11) {
-        this.a.b.f(document, obj, z10, i10);
+    @Override // org.telegram.ui.Components.sx0
+    public final void a() {
+        d51 d51Var = this.b;
+        s4.h0 adapter = d51Var.n.getAdapter();
+        c51 c51Var = d51Var.s;
+        TLRPC.InputStickerSet inputStickerSet = this.a;
+        int i10 = 0;
+        if (adapter == c51Var) {
+            while (i10 < c51Var.e.size()) {
+                TLRPC.StickerSetCovered stickerSetCovered = (TLRPC.StickerSetCovered) c51Var.e.get(i10);
+                if (stickerSetCovered.set.id == inputStickerSet.id) {
+                    c51Var.F(stickerSetCovered, null);
+                    return;
+                }
+                i10++;
+            }
+            return;
+        }
+        hg.f2 f2Var = d51Var.v;
+        ArrayList arrayList = f2Var.E;
+        while (i10 < arrayList.size()) {
+            TLRPC.StickerSetCovered stickerSetCovered2 = (TLRPC.StickerSetCovered) arrayList.get(i10);
+            if (stickerSetCovered2.set.id == inputStickerSet.id) {
+                f2Var.F(stickerSetCovered2, null);
+                return;
+            }
+            i10++;
+        }
     }
 }

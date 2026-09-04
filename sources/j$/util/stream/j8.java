@@ -9,14 +9,14 @@ public final class j8 extends e5 implements o8 {
         return 0L;
     }
 
-    public j8(d6 d6Var, j5 j5Var, boolean z4) {
+    public j8(d6 d6Var, j5 j5Var, boolean z10) {
         super(j5Var);
     }
 
     @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         LongPredicate longPredicate = null;
-        longPredicate.test(j10);
+        longPredicate.test(j3);
         throw null;
     }
 }

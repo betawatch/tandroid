@@ -1,48 +1,17 @@
 package mg;
 
-import android.content.Context;
-import android.view.MotionEvent;
-import android.widget.ImageView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class e extends ImageView {
-    public long a;
-    public final /* synthetic */ f b;
+public interface e {
+    boolean a();
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e(f fVar, Context context) {
-        super(context);
-        this.b = fVar;
-        this.a = 0L;
-    }
+    void b();
 
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        Utilities.Callback callback;
-        int action = motionEvent.getAction();
-        f fVar = this.b;
-        if (action == 0) {
-            if (System.currentTimeMillis() < this.a + 350) {
-                return false;
-            }
-            this.a = System.currentTimeMillis();
-            fVar.b = true;
-            fVar.c = false;
-            AndroidUtilities.runOnUIThread(new ah.b(fVar, 350, 9), 350);
-        } else if (motionEvent.getAction() == 3 || motionEvent.getAction() == 1) {
-            fVar.b = false;
-            if (!fVar.c && (callback = fVar.d) != null) {
-                callback.run(Boolean.FALSE);
-                try {
-                    fVar.a.performHapticFeedback(3);
-                } catch (Exception unused) {
-                }
-            }
-        }
-        super.onTouchEvent(motionEvent);
-        return true;
-    }
+    void c();
+
+    boolean d();
+
+    void e();
+
+    void f(float f7);
 }

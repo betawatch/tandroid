@@ -1,36 +1,24 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tl0 implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fn0 b;
+public final class tl0 extends FrameLayout {
+    public final org.telegram.ui.Components.aj0 a;
 
-    public /* synthetic */ tl0(fn0 fn0Var, int i10) {
-        this.a = i10;
-        this.b = fn0Var;
-    }
-
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new jf0(this.b, tL_error, tLObject, 10));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new ie0(21, this.b, tL_error));
-                break;
-            case 2:
-                AndroidUtilities.runOnUIThread(new pl0(this.b, 5));
-                break;
-            default:
-                AndroidUtilities.runOnUIThread(new ie0(20, this.b, tLObject));
-                break;
-        }
+    public tl0(Context context) {
+        super(context);
+        org.telegram.ui.Components.aj0 aj0Var = new org.telegram.ui.Components.aj0(context);
+        this.a = aj0Var;
+        aj0Var.setOnClickListener(new l60(this, 14));
+        int dp = AndroidUtilities.dp(120.0f);
+        FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(dp, dp);
+        layoutParams.gravity = 1;
+        addView(aj0Var, layoutParams);
+        setPadding(0, AndroidUtilities.dp(32.0f), 0, 0);
+        setLayoutParams(new s4.p0(-1, -2));
     }
 }

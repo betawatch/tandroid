@@ -24,17 +24,17 @@ public abstract class o2 extends g2 implements d2 {
 
     @Override // j$.util.stream.d2
     public final Object b() {
-        long j10 = this.c;
-        if (j10 >= 2147483639) {
+        long j3 = this.c;
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        Object newArray = newArray((int) j10);
+        Object newArray = newArray((int) j3);
         c(0, newArray);
         return newArray;
     }
 
     public final String toString() {
-        long j10 = this.c;
-        return j10 < 32 ? String.format("%s[%s.%s]", getClass().getName(), this.a, this.b) : String.format("%s[size=%d]", getClass().getName(), Long.valueOf(j10));
+        long j3 = this.c;
+        return j3 < 32 ? String.format("%s[%s.%s]", getClass().getName(), this.a, this.b) : String.format("%s[size=%d]", getClass().getName(), Long.valueOf(j3));
     }
 }

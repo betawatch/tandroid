@@ -1,14 +1,14 @@
 package com.google.android.recaptcha.internal;
 
 import android.app.Application;
+import gd.c;
+import gd.g;
 import java.util.Locale;
 import java.util.MissingResourceException;
-import k7.o7;
-import kotlin.jvm.internal.j;
-import sc.c;
-import sc.g;
+import kotlin.jvm.internal.i;
+import v7.s7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzgh {
     private zzvu zza;
@@ -16,7 +16,7 @@ public final class zzgh {
 
     public zzgh() {
         int i10 = zzby.zza;
-        this.zzb = o7.a(zzgg.zza);
+        this.zzb = s7.a(zzgg.zza);
     }
 
     private final Application zzb() {
@@ -26,7 +26,7 @@ public final class zzgh {
     private static final String zzc() {
         try {
             String iSO3Country = Locale.getDefault().getISO3Country();
-            j.b(iSO3Country);
+            i.b(iSO3Country);
             return iSO3Country;
         } catch (MissingResourceException unused) {
             return "";
@@ -36,7 +36,7 @@ public final class zzgh {
     private static final String zzd() {
         try {
             String iSO3Language = Locale.getDefault().getISO3Language();
-            j.b(iSO3Language);
+            i.b(iSO3Language);
             return iSO3Language;
         } catch (MissingResourceException unused) {
             return "";
@@ -55,7 +55,7 @@ public final class zzgh {
             r10 = this;
             int r0 = com.google.android.recaptcha.internal.zzby.zza
             com.google.android.recaptcha.internal.zzgf r0 = com.google.android.recaptcha.internal.zzgf.zza
-            sc.g r0 = k7.o7.a(r0)
+            gd.g r0 = v7.s7.a(r0)
             java.lang.Object r0 = r0.a()
             com.google.android.recaptcha.internal.zzch r0 = (com.google.android.recaptcha.internal.zzch) r0
             android.app.Application r0 = r10.zzb()

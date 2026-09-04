@@ -14,10 +14,10 @@ public final /* synthetic */ class h7 implements h5 {
         this.b = intConsumer;
     }
 
-    private final /* synthetic */ void a(long j10) {
+    private final /* synthetic */ void a(long j3) {
     }
 
-    private final /* synthetic */ void b(long j10) {
+    private final /* synthetic */ void b(long j3) {
     }
 
     private final /* synthetic */ void c() {
@@ -51,7 +51,7 @@ public final /* synthetic */ class h7 implements h5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j10) {
+    public final /* synthetic */ void accept(long j3) {
         switch (this.a) {
             case 0:
                 t3.K();
@@ -93,7 +93,7 @@ public final /* synthetic */ class h7 implements h5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j10) {
+    public final /* synthetic */ void o(long j3) {
         int i10 = this.a;
     }
 

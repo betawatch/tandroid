@@ -7,7 +7,7 @@ import java.util.Locale;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzvl {
     public static final /* synthetic */ int zza = 0;
@@ -39,22 +39,22 @@ public final class zzvl {
         return zzutVar;
     }
 
-    public static zzut zzb(long j10) {
-        long j11 = j10 / 1000;
-        if (!zze(j11)) {
-            throw new IllegalArgumentException(zzmg.zza("Timestamp is not valid. Input seconds is too large. Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. ", Long.valueOf(j11)));
+    public static zzut zzb(long j3) {
+        long j10 = j3 / 1000;
+        if (!zze(j10)) {
+            throw new IllegalArgumentException(zzmg.zza("Timestamp is not valid. Input seconds is too large. Seconds (%s) must be in range [-62,135,596,800, +253,402,300,799]. ", Long.valueOf(j10)));
         }
-        int i10 = (int) ((j10 % 1000) * 1000000);
+        int i10 = (int) ((j3 % 1000) * 1000000);
         if (i10 <= -1000000000 || i10 >= 1000000000) {
-            j11 = zzps.zza(j11, i10 / 1000000000);
+            j10 = zzps.zza(j10, i10 / 1000000000);
             i10 %= 1000000000;
         }
         if (i10 < 0) {
             i10 += 1000000000;
-            j11 = zzps.zzb(j11, 1L);
+            j10 = zzps.zzb(j10, 1L);
         }
         zzur zzi = zzut.zzi();
-        zzi.zzf(j11);
+        zzi.zzf(j10);
         zzi.zze(i10);
         zzut zzutVar = (zzut) zzi.zzk();
         zza(zzutVar);
@@ -65,14 +65,14 @@ public final class zzvl {
         zza(zzutVar);
         long zzg = zzutVar.zzg();
         int zzf = zzutVar.zzf();
-        StringBuilder sb = new StringBuilder();
-        sb.append(((SimpleDateFormat) zzb.get()).format(new Date(zzg * 1000)));
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(((SimpleDateFormat) zzb.get()).format(new Date(zzg * 1000)));
         if (zzf != 0) {
-            sb.append(".");
-            sb.append(zzf % MediaController.VIDEO_BITRATE_480 == 0 ? String.format(Locale.ENGLISH, "%1$03d", Integer.valueOf(zzf / MediaController.VIDEO_BITRATE_480)) : zzf % MediaDataController.MAX_STYLE_RUNS_COUNT == 0 ? String.format(Locale.ENGLISH, "%1$06d", Integer.valueOf(zzf / MediaDataController.MAX_STYLE_RUNS_COUNT)) : String.format(Locale.ENGLISH, "%1$09d", Integer.valueOf(zzf)));
+            sb2.append(".");
+            sb2.append(zzf % MediaController.VIDEO_BITRATE_480 == 0 ? String.format(Locale.ENGLISH, "%1$03d", Integer.valueOf(zzf / MediaController.VIDEO_BITRATE_480)) : zzf % MediaDataController.MAX_STYLE_RUNS_COUNT == 0 ? String.format(Locale.ENGLISH, "%1$06d", Integer.valueOf(zzf / MediaDataController.MAX_STYLE_RUNS_COUNT)) : String.format(Locale.ENGLISH, "%1$09d", Integer.valueOf(zzf)));
         }
-        sb.append("Z");
-        return sb.toString();
+        sb2.append("Z");
+        return sb2.toString();
     }
 
     private static Method zzd(String str) {
@@ -83,7 +83,7 @@ public final class zzvl {
         }
     }
 
-    private static boolean zze(long j10) {
-        return j10 >= -62135596800L && j10 <= 253402300799L;
+    private static boolean zze(long j3) {
+        return j3 >= -62135596800L && j3 <= 253402300799L;
     }
 }

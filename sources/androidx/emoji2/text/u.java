@@ -4,9 +4,9 @@ import android.text.Editable;
 import android.text.SpannableStringBuilder;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import k7.j6;
+import w7.k6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class u extends SpannableStringBuilder {
     public final Class a;
@@ -15,7 +15,7 @@ public final class u extends SpannableStringBuilder {
     public u(CharSequence charSequence, Class cls) {
         super(charSequence);
         this.b = new ArrayList();
-        j6.a(cls, "watcherClass cannot be null");
+        k6.a(cls, "watcherClass cannot be null");
         this.a = cls;
     }
 
@@ -92,27 +92,27 @@ public final class u extends SpannableStringBuilder {
 
     @Override // android.text.SpannableStringBuilder, android.text.Spanned
     public final int getSpanEnd(Object obj) {
-        t c3;
-        if (d(obj) && (c3 = c(obj)) != null) {
-            obj = c3;
+        t c10;
+        if (d(obj) && (c10 = c(obj)) != null) {
+            obj = c10;
         }
         return super.getSpanEnd(obj);
     }
 
     @Override // android.text.SpannableStringBuilder, android.text.Spanned
     public final int getSpanFlags(Object obj) {
-        t c3;
-        if (d(obj) && (c3 = c(obj)) != null) {
-            obj = c3;
+        t c10;
+        if (d(obj) && (c10 = c(obj)) != null) {
+            obj = c10;
         }
         return super.getSpanFlags(obj);
     }
 
     @Override // android.text.SpannableStringBuilder, android.text.Spanned
     public final int getSpanStart(Object obj) {
-        t c3;
-        if (d(obj) && (c3 = c(obj)) != null) {
-            obj = c3;
+        t c10;
+        if (d(obj) && (c10 = c(obj)) != null) {
+            obj = c10;
         }
         return super.getSpanStart(obj);
     }
@@ -227,8 +227,8 @@ public final class u extends SpannableStringBuilder {
     }
 
     @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final Editable append(char c3) {
-        super.append(c3);
+    public final Editable append(char c10) {
+        super.append(c10);
         return this;
     }
 
@@ -241,19 +241,19 @@ public final class u extends SpannableStringBuilder {
     public u(Class cls, u uVar, int i10, int i11) {
         super(uVar, i10, i11);
         this.b = new ArrayList();
-        j6.a(cls, "watcherClass cannot be null");
+        k6.a(cls, "watcherClass cannot be null");
         this.a = cls;
     }
 
     @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final SpannableStringBuilder append(char c3) {
-        super.append(c3);
+    public final SpannableStringBuilder append(char c10) {
+        super.append(c10);
         return this;
     }
 
     @Override // android.text.SpannableStringBuilder, android.text.Editable, java.lang.Appendable
-    public final Appendable append(char c3) {
-        super.append(c3);
+    public final Appendable append(char c10) {
+        super.append(c10);
         return this;
     }
 

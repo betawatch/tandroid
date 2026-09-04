@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.CancellationSignal;
 import androidx.credentials.playservices.CredentialProviderPlayServicesImpl;
 import androidx.credentials.playservices.controllers.identityauth.HiddenActivity;
-import dd.l;
+import bi.oa;
 import java.util.concurrent.Executor;
-import kotlin.jvm.internal.j;
+import rd.l;
 import v0.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f implements l {
     public final /* synthetic */ int a;
@@ -24,62 +24,62 @@ public final /* synthetic */ class f implements l {
         this.c = obj2;
     }
 
-    @Override // dd.l
+    @Override // rd.l
     public final Object invoke(Object obj) {
         switch (this.a) {
             case 0:
                 Executor executor = (Executor) this.b;
                 i iVar = (i) this.c;
-                w0.i e = (w0.i) obj;
-                j.e(e, "e");
-                executor.execute(new h(iVar, e, 1));
-                return sc.i.a;
+                w0.i e7 = (w0.i) obj;
+                kotlin.jvm.internal.i.e(e7, "e");
+                executor.execute(new h(iVar, e7, 1));
+                return gd.i.a;
             case 1:
                 CancellationSignal cancellationSignal = (CancellationSignal) this.b;
-                c1.f fVar = (c1.f) this.c;
-                Context context = fVar.e;
-                l5.f fVar2 = (l5.f) obj;
+                c1.e eVar = (c1.e) this.c;
+                Context context = eVar.e;
+                x5.f fVar = (x5.f) obj;
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 if (!a1.g.a(cancellationSignal)) {
                     Intent intent = new Intent(context, (Class<?>) HiddenActivity.class);
-                    d.a(fVar.i, intent, "BEGIN_SIGN_IN");
-                    intent.putExtra("EXTRA_FLOW_PENDING_INTENT", fVar2.a);
+                    d.a(eVar.i, intent, "BEGIN_SIGN_IN");
+                    intent.putExtra("EXTRA_FLOW_PENDING_INTENT", fVar.a);
                     try {
                         context.startActivity(intent);
                     } catch (Exception unused) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
                         if (!a1.g.a(cancellationSignal)) {
-                            fVar.f().execute(new ag.d(fVar, 8));
+                            eVar.f().execute(new oa(eVar, 5));
                         }
                     }
                 }
-                return sc.i.a;
+                return gd.i.a;
             default:
                 CancellationSignal cancellationSignal2 = (CancellationSignal) this.b;
-                d1.e eVar = (d1.e) this.c;
-                Context context2 = eVar.e;
+                d1.e eVar2 = (d1.e) this.c;
+                Context context2 = eVar2.e;
                 PendingIntent result = (PendingIntent) obj;
-                j.e(result, "result");
+                kotlin.jvm.internal.i.e(result, "result");
                 CredentialProviderPlayServicesImpl.Companion.getClass();
                 if (!a1.g.a(cancellationSignal2)) {
                     Intent intent2 = new Intent(context2, (Class<?>) HiddenActivity.class);
-                    d.a(eVar.i, intent2, "CREATE_PUBLIC_KEY_CREDENTIAL");
+                    d.a(eVar2.i, intent2, "CREATE_PUBLIC_KEY_CREDENTIAL");
                     intent2.putExtra("EXTRA_FLOW_PENDING_INTENT", result);
                     try {
                         context2.startActivity(intent2);
                     } catch (Exception unused2) {
                         CredentialProviderPlayServicesImpl.Companion.getClass();
                         if (!a1.g.a(cancellationSignal2)) {
-                            Executor executor2 = eVar.g;
+                            Executor executor2 = eVar2.g;
                             if (executor2 == null) {
-                                j.h("executor");
+                                kotlin.jvm.internal.i.h("executor");
                                 throw null;
                             }
-                            executor2.execute(new d1.d(eVar, 0));
+                            executor2.execute(new d1.d(eVar2, 0));
                         }
                     }
                 }
-                return sc.i.a;
+                return gd.i.a;
         }
     }
 }

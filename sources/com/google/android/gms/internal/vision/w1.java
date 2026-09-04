@@ -1,12 +1,12 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class w1 extends s1 {
     @Override // com.google.android.gms.internal.vision.s1
-    public final void a(Object obj, long j10, Object obj2) {
-        o1 o1Var = (o1) x2.l(obj, j10);
-        o1 o1Var2 = (o1) x2.l(obj2, j10);
+    public final void a(Object obj, long j3, Object obj2) {
+        o1 o1Var = (o1) y2.l(obj, j3);
+        o1 o1Var2 = (o1) y2.l(obj2, j3);
         int size = o1Var.size();
         int size2 = o1Var2.size();
         if (size > 0 && size2 > 0) {
@@ -18,11 +18,11 @@ public final class w1 extends s1 {
         if (size > 0) {
             o1Var2 = o1Var;
         }
-        x2.d(obj, j10, o1Var2);
+        y2.d(obj, j3, o1Var2);
     }
 
     @Override // com.google.android.gms.internal.vision.s1
-    public final void b(Object obj, long j10) {
-        ((o1) x2.l(obj, j10)).zzb();
+    public final void b(Object obj, long j3) {
+        ((o1) y2.l(obj, j3)).zzb();
     }
 }

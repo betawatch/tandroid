@@ -1,11 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.ui.PhotoViewer;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class tf0 implements Runnable {
+public final /* synthetic */ class tf0 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
     public final /* synthetic */ vf0 b;
 
@@ -14,28 +13,20 @@ public final /* synthetic */ class tf0 implements Runnable {
         this.b = vf0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                org.telegram.ui.ut0 ut0Var = this.b.a;
-                RadialProgressView radialProgressView = ut0Var.n;
-                View view = ut0Var.r;
-                radialProgressView.setVisibility(4);
-                if (ut0Var.C) {
-                    ut0Var.C = false;
-                    ut0Var.setPlaybackSpeed(ut0Var.B);
-                }
-                view.setEnabled(true);
-                view.setAlpha(1.0f);
-                PhotoViewer photoViewer = ut0Var.b;
-                if (photoViewer != null) {
-                    photoViewer.z0();
-                    break;
-                }
+                vf0 vf0Var = this.b;
+                vf0Var.getClass();
+                vf0Var.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vf0Var.invalidate();
                 break;
             default:
-                this.b.a.h.setVisibility(4);
+                vf0 vf0Var2 = this.b;
+                vf0Var2.getClass();
+                vf0Var2.y = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                vf0Var2.invalidate();
                 break;
         }
     }

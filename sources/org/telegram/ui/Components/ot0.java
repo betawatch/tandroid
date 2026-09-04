@@ -16,50 +16,50 @@ import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ot0 extends ql0 {
+public final class ot0 extends kl0 {
     public final Context c;
-    public final tf.j1 e;
+    public final hg.b2 e;
     public nt0 f;
     public final TLRPC.Chat n;
-    public final /* synthetic */ yu0 s;
+    public final /* synthetic */ xu0 s;
     public ArrayList d = new ArrayList();
     public int h = 0;
     public int r = 0;
 
-    public ot0(yu0 yu0Var, Context context) {
-        this.s = yu0Var;
+    public ot0(xu0 xu0Var, Context context) {
+        this.s = xu0Var;
         this.c = context;
-        tf.j1 j1Var = new tf.j1(true);
-        this.e = j1Var;
-        j1Var.a = new mt0(this);
-        this.n = yu0Var.A1.g();
+        hg.b2 b2Var = new hg.b2(true);
+        this.e = b2Var;
+        b2Var.a = new mt0(this);
+        this.n = xu0Var.D1.g();
     }
 
-    @Override // f2.o0
-    public final void A(f2.l1 l1Var) {
-        View view = l1Var.a;
+    @Override // s4.h0
+    public final void A(s4.c1 c1Var) {
+        View view = c1Var.a;
         if (view instanceof org.telegram.ui.Cells.a5) {
             ((org.telegram.ui.Cells.a5) view).a();
         }
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final boolean D(f2.l1 l1Var) {
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
         return true;
     }
 
     public final TLObject E(int i10) {
-        tf.j1 j1Var = this.e;
-        int size = j1Var.g.size();
+        hg.b2 b2Var = this.e;
+        int size = b2Var.g.size();
         if (i10 < 0 || i10 >= size) {
             return null;
         }
-        return (TLObject) j1Var.g.get(i10);
+        return (TLObject) b2Var.g.get(i10);
     }
 
-    public final void F(String str, boolean z4) {
+    public final void F(String str, boolean z10) {
         if (this.f != null) {
             Utilities.searchQueue.cancelRunnable(this.f);
             this.f = null;
@@ -70,12 +70,12 @@ public final class ot0 extends ql0 {
         l();
         int i10 = 0;
         while (true) {
-            qt0[] qt0VarArr = this.s.h0;
+            qt0[] qt0VarArr = this.s.k0;
             if (i10 >= qt0VarArr.length) {
                 break;
             }
-            if (qt0VarArr[i10].C == 7 && !TextUtils.isEmpty(str)) {
-                this.s.h0[i10].w.e(true, z4);
+            if (qt0VarArr[i10].F == 7 && !TextUtils.isEmpty(str)) {
+                this.s.k0[i10].w.e(true, z10);
             }
             i10++;
         }
@@ -88,61 +88,61 @@ public final class ot0 extends ql0 {
         dispatchQueue.postRunnable(nt0Var, 300L);
     }
 
-    @Override // f2.o0
+    @Override // s4.h0
     public final int h() {
         return this.h;
     }
 
-    @Override // f2.o0
+    @Override // s4.h0
     public final int j(int i10) {
         return 22;
     }
 
-    @Override // f2.o0
+    @Override // s4.h0
     public final void l() {
         int size = this.e.g.size();
         this.h = size;
         if (size > 0) {
-            yu0 yu0Var = this.s;
-            if (yu0Var.S0) {
-                qt0 qt0Var = yu0Var.h0[0];
-                if (qt0Var.C == 7 && qt0Var.h.getAdapter() != this) {
-                    yu0Var.m1(false);
+            xu0 xu0Var = this.s;
+            if (xu0Var.V0) {
+                qt0 qt0Var = xu0Var.k0[0];
+                if (qt0Var.F == 7 && qt0Var.h.getAdapter() != this) {
+                    xu0Var.m1(false);
                 }
             }
         }
         super.l();
     }
 
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
         TLRPC.User user;
         SpannableStringBuilder spannableStringBuilder;
-        yu0 yu0Var = this.s;
-        org.telegram.ui.ActionBar.p2 p2Var = yu0Var.s1;
+        xu0 xu0Var = this.s;
+        org.telegram.ui.ActionBar.n2 n2Var = xu0Var.v1;
         TLObject E = E(i10);
         if (E instanceof TLRPC.ChannelParticipant) {
-            user = p2Var.getMessagesController().getUser(Long.valueOf(MessageObject.getPeerId(((TLRPC.ChannelParticipant) E).peer)));
+            user = n2Var.getMessagesController().getUser(Long.valueOf(MessageObject.getPeerId(((TLRPC.ChannelParticipant) E).peer)));
         } else if (!(E instanceof TLRPC.ChatParticipant)) {
             return;
         } else {
-            user = p2Var.getMessagesController().getUser(Long.valueOf(((TLRPC.ChatParticipant) E).user_id));
+            user = n2Var.getMessagesController().getUser(Long.valueOf(((TLRPC.ChatParticipant) E).user_id));
         }
         UserObject.getPublicUsername(user);
-        tf.j1 j1Var = this.e;
-        j1Var.g.size();
-        String str = j1Var.n;
+        hg.b2 b2Var = this.e;
+        b2Var.g.size();
+        String str = b2Var.n;
         if (str != null) {
             String userName = UserObject.getUserName(user);
             spannableStringBuilder = new SpannableStringBuilder(userName);
             int indexOfIgnoreCase = AndroidUtilities.indexOfIgnoreCase(userName, str);
             if (indexOfIgnoreCase != -1) {
-                spannableStringBuilder.setSpan(new ForegroundColorSpan(yu0Var.h0(org.telegram.ui.ActionBar.j6.q6)), indexOfIgnoreCase, str.length() + indexOfIgnoreCase, 33);
+                spannableStringBuilder.setSpan(new ForegroundColorSpan(xu0Var.h0(org.telegram.ui.ActionBar.j6.q6)), indexOfIgnoreCase, str.length() + indexOfIgnoreCase, 33);
             }
         } else {
             spannableStringBuilder = null;
         }
-        View view = l1Var.a;
+        View view = c1Var.a;
         if (view instanceof org.telegram.ui.Cells.a5) {
             org.telegram.ui.Cells.a5 a5Var = (org.telegram.ui.Cells.a5) view;
             a5Var.setTag(Integer.valueOf(i10));
@@ -150,12 +150,12 @@ public final class ot0 extends ql0 {
         }
     }
 
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        yu0 yu0Var = this.s;
-        org.telegram.ui.Cells.a5 a5Var = new org.telegram.ui.Cells.a5(9, 5, this.c, yu0Var.C1, true);
-        a5Var.setBackgroundColor(yu0Var.h0(org.telegram.ui.ActionBar.j6.d6));
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        xu0 xu0Var = this.s;
+        org.telegram.ui.Cells.a5 a5Var = new org.telegram.ui.Cells.a5(9, 5, this.c, xu0Var.F1, true);
+        a5Var.setBackgroundColor(xu0Var.h0(org.telegram.ui.ActionBar.j6.d6));
         a5Var.setDelegate(new mt0(this));
-        return new dl0(a5Var);
+        return new vk0(a5Var);
     }
 }

@@ -5,37 +5,37 @@ import android.graphics.Point;
 import android.view.View;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class RendererCommon {
     private static float BALANCED_VISIBLE_FRACTION = 0.5625f;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface GlDrawer {
-        void drawOes(int i10, int i11, int i12, int i13, int i14, float[] fArr, int i15, int i16, int i17, int i18, int i19, int i20, boolean z4);
+        void drawOes(int i10, int i11, int i12, int i13, int i14, float[] fArr, int i15, int i16, int i17, int i18, int i19, int i20, boolean z10);
 
-        void drawRgb(int i10, int i11, int i12, int i13, int i14, float[] fArr, int i15, int i16, int i17, int i18, int i19, int i20, boolean z4);
+        void drawRgb(int i10, int i11, int i12, int i13, int i14, float[] fArr, int i15, int i16, int i17, int i18, int i19, int i20, boolean z10);
 
-        void drawYuv(int[] iArr, int i10, int i11, int i12, int i13, float[] fArr, int i14, int i15, int i16, int i17, int i18, int i19, boolean z4);
+        void drawYuv(int[] iArr, int i10, int i11, int i12, int i13, float[] fArr, int i14, int i15, int i16, int i17, int i18, int i19, boolean z10);
 
         void release();
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface RendererEvents {
         void onFirstFrameRendered();
 
         void onFrameResolutionChanged(int i10, int i11, int i12);
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public enum ScalingType {
         SCALE_ASPECT_FIT,
         SCALE_ASPECT_FILL,
         SCALE_ASPECT_BALANCED
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class VideoLayoutMeasure {
         private float visibleFractionMatchOrientation;
         private float visibleFractionMismatchOrientation;
@@ -53,16 +53,16 @@ public class RendererCommon {
         /*
             Code decompiled incorrectly, please refer to instructions dump.
         */
-        public Point measure(boolean z4, int i10, int i11, int i12, int i13) {
+        public Point measure(boolean z10, int i10, int i11, int i12, int i13) {
             int defaultSize = View.getDefaultSize(ConnectionsManager.DEFAULT_DATACENTER_ID, i10);
             int defaultSize2 = View.getDefaultSize(ConnectionsManager.DEFAULT_DATACENTER_ID, i11);
             if (i12 == 0 || i13 == 0 || defaultSize == 0 || defaultSize2 == 0) {
                 return new Point(defaultSize, defaultSize2);
             }
-            float f10 = i12 / i13;
-            float f11 = defaultSize / defaultSize2;
-            Point displaySize = RendererCommon.getDisplaySize(((f10 > 1.0f ? 1 : (f10 == 1.0f ? 0 : -1)) > 0) == ((f11 > 1.0f ? 1 : (f11 == 1.0f ? 0 : -1)) > 0) ? this.visibleFractionMatchOrientation : this.visibleFractionMismatchOrientation, f10, defaultSize, defaultSize2);
-            if (!z4) {
+            float f7 = i12 / i13;
+            float f10 = defaultSize / defaultSize2;
+            Point displaySize = RendererCommon.getDisplaySize(((f7 > 1.0f ? 1 : (f7 == 1.0f ? 0 : -1)) > 0) == ((f10 > 1.0f ? 1 : (f10 == 1.0f ? 0 : -1)) > 0) ? this.visibleFractionMatchOrientation : this.visibleFractionMismatchOrientation, f7, defaultSize, defaultSize2);
+            if (!z10) {
                 if (View.MeasureSpec.getMode(i10) == 1073741824) {
                     displaySize.x = defaultSize;
                 }
@@ -77,9 +77,9 @@ public class RendererCommon {
             setScalingType(scalingType, scalingType);
         }
 
-        public void setVisibleFraction(float f10, float f11) {
-            this.visibleFractionMatchOrientation = f10;
-            this.visibleFractionMismatchOrientation = f11;
+        public void setVisibleFraction(float f7, float f10) {
+            this.visibleFractionMatchOrientation = f7;
+            this.visibleFractionMismatchOrientation = f10;
         }
 
         public void setScalingType(ScalingType scalingType, ScalingType scalingType2) {
@@ -89,12 +89,12 @@ public class RendererCommon {
     }
 
     private static void adjustOrigin(float[] fArr) {
-        float f10 = fArr[12] - ((fArr[0] + fArr[4]) * 0.5f);
-        fArr[12] = f10;
-        float f11 = fArr[13] - ((fArr[1] + fArr[5]) * 0.5f);
-        fArr[13] = f11;
-        fArr[12] = f10 + 0.5f;
-        fArr[13] = f11 + 0.5f;
+        float f7 = fArr[12] - ((fArr[0] + fArr[4]) * 0.5f);
+        fArr[12] = f7;
+        float f10 = fArr[13] - ((fArr[1] + fArr[5]) * 0.5f);
+        fArr[13] = f10;
+        fArr[12] = f7 + 0.5f;
+        fArr[13] = f10 + 0.5f;
     }
 
     public static float[] convertMatrixFromAndroidGraphicsMatrix(Matrix matrix) {
@@ -125,31 +125,31 @@ public class RendererCommon {
         throw new IllegalArgumentException();
     }
 
-    public static Point getDisplaySize(ScalingType scalingType, float f10, int i10, int i11) {
-        return getDisplaySize(convertScalingTypeToVisibleFraction(scalingType), f10, i10, i11);
+    public static Point getDisplaySize(ScalingType scalingType, float f7, int i10, int i11) {
+        return getDisplaySize(convertScalingTypeToVisibleFraction(scalingType), f7, i10, i11);
     }
 
-    public static float[] getLayoutMatrix(boolean z4, float f10, float f11) {
+    public static float[] getLayoutMatrix(boolean z10, float f7, float f10) {
+        float f11;
         float f12;
-        float f13;
-        if (f11 > f10) {
-            f13 = f10 / f11;
-            f12 = 1.0f;
+        if (f10 > f7) {
+            f12 = f7 / f10;
+            f11 = 1.0f;
         } else {
-            f12 = f11 / f10;
-            f13 = 1.0f;
+            f11 = f10 / f7;
+            f12 = 1.0f;
         }
-        if (z4) {
-            f12 *= -1.0f;
+        if (z10) {
+            f11 *= -1.0f;
         }
         float[] fArr = new float[16];
         android.opengl.Matrix.setIdentityM(fArr, 0);
-        android.opengl.Matrix.scaleM(fArr, 0, f12, f13, 1.0f);
+        android.opengl.Matrix.scaleM(fArr, 0, f11, f12, 1.0f);
         adjustOrigin(fArr);
         return fArr;
     }
 
-    public static Point getDisplaySize(float f10, float f11, int i10, int i11) {
-        return (f10 == 0.0f || f11 == 0.0f) ? new Point(i10, i11) : new Point(Math.min(i10, Math.round((i11 / f10) * f11)), Math.min(i11, Math.round((i10 / f10) / f11)));
+    public static Point getDisplaySize(float f7, float f10, int i10, int i11) {
+        return (f7 == 0.0f || f10 == 0.0f) ? new Point(i10, i11) : new Point(Math.min(i10, Math.round((i11 / f7) * f10)), Math.min(i11, Math.round((i10 / f7) / f10)));
     }
 }

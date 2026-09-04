@@ -1,38 +1,31 @@
 package k2;
 
-import android.animation.TypeEvaluator;
-import j7.z7;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e implements TypeEvaluator {
-    public i0.d[] a;
+public final class e {
+    public static final e d = new ac.d().a();
+    public final boolean a;
+    public final boolean b;
+    public final boolean c;
 
-    @Override // android.animation.TypeEvaluator
-    public final Object evaluate(float f10, Object obj, Object obj2) {
-        i0.d[] dVarArr = (i0.d[]) obj;
-        i0.d[] dVarArr2 = (i0.d[]) obj2;
-        if (!z7.a(dVarArr, dVarArr2)) {
-            throw new IllegalArgumentException("Can't interpolate between two incompatible pathData");
+    public e(ac.d dVar) {
+        this.a = dVar.a;
+        this.b = dVar.b;
+        this.c = dVar.c;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
-        if (!z7.a(this.a, dVarArr)) {
-            this.a = z7.e(dVarArr);
+        if (obj == null || e.class != obj.getClass()) {
+            return false;
         }
-        for (int i10 = 0; i10 < dVarArr.length; i10++) {
-            i0.d dVar = this.a[i10];
-            i0.d dVar2 = dVarArr[i10];
-            i0.d dVar3 = dVarArr2[i10];
-            dVar.getClass();
-            dVar.a = dVar2.a;
-            int i11 = 0;
-            while (true) {
-                float[] fArr = dVar2.b;
-                if (i11 < fArr.length) {
-                    dVar.b[i11] = (dVar3.b[i11] * f10) + ((1.0f - f10) * fArr[i11]);
-                    i11++;
-                }
-            }
-        }
-        return this.a;
+        e eVar = (e) obj;
+        return this.a == eVar.a && this.b == eVar.b && this.c == eVar.c;
+    }
+
+    public final int hashCode() {
+        return ((this.a ? 1 : 0) << 2) + ((this.b ? 1 : 0) << 1) + (this.c ? 1 : 0);
     }
 }

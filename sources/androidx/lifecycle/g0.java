@@ -3,11 +3,11 @@ package androidx.lifecycle;
 import android.app.Activity;
 import androidx.lifecycle.h0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class g0 {
     public static void a(Activity activity) {
-        kotlin.jvm.internal.j.e(activity, "activity");
+        kotlin.jvm.internal.i.e(activity, "activity");
         activity.registerActivityLifecycleCallbacks(new h0.a());
     }
 }

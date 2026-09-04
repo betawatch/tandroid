@@ -1,17 +1,35 @@
 package org.telegram.ui.Cells;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.view.animation.Interpolator;
+import org.telegram.messenger.wl;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class l2 {
-    public String a;
-    public String b;
-    public int c;
-    public int d;
-    public boolean e;
-    public boolean f;
-    public int g;
-    public int h;
-    public boolean i;
-    public boolean j;
-    public int k = -1;
+public final class l2 implements Interpolator {
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ l2(int i10) {
+        this.a = i10;
+    }
+
+    @Override // android.animation.TimeInterpolator
+    public final float getInterpolation(float f7) {
+        switch (this.a) {
+            case 0:
+                if (f7 < 0.33f) {
+                    return (f7 / 0.33f) * 0.1f;
+                }
+                float f10 = f7 - 0.33f;
+                return f10 < 0.33f ? wl.c(f10, 0.34f, 0.15f, 0.1f) : (((f10 - 0.34f) / 0.33f) * 0.05f) - 0.05f;
+            case 1:
+                return f7 * f7 * f7 * f7 * f7;
+            case 2:
+            case 3:
+            case 4:
+                float f11 = f7 - 1.0f;
+                return (f11 * f11 * f11 * f11 * f11) + 1.0f;
+            default:
+                return (float) Math.pow(f7, 2.0d);
+        }
+    }
 }

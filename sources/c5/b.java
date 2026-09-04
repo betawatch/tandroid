@@ -1,19 +1,16 @@
 package c5;
 
-import java.util.regex.Pattern;
-import s8.z;
+import android.app.Activity;
+import org.telegram.messenger.BillingController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b {
-    public static final Pattern b = Pattern.compile("\\s+");
-    public static final z c = z.t(2, "auto", "none");
-    public static final z d = z.t(3, "dot", "sesame", "circle");
-    public static final z e = z.t(2, "filled", "open");
-    public static final z f = z.t(3, "after", "before", "outside");
-    public final int a;
+public abstract class b {
+    public abstract void a(i iVar, j jVar);
 
-    public b(int i10, int i11, int i12) {
-        this.a = i10;
-    }
+    public abstract h b(Activity activity, g gVar);
+
+    public abstract void c(xa.c cVar, org.telegram.messenger.c0 c0Var);
+
+    public abstract void d(BillingController billingController);
 }

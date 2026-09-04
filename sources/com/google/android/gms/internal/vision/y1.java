@@ -2,7 +2,7 @@ package com.google.android.gms.internal.vision;
 
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class y1 {
     public static final g1 b = new g1(1);
@@ -29,23 +29,23 @@ public final class y1 {
         r0Var.L(q0Var.b, q0Var.r(), q0Var.n());
     }
 
-    public void b(int i10, Object obj, n2 n2Var) {
+    public void b(int i10, Object obj, o2 o2Var) {
         r0 r0Var = (r0) this.a;
         l0 l0Var = (l0) obj;
         r0Var.D(i10, 2);
-        int c3 = l0Var.c();
-        if (c3 == -1) {
-            c3 = n2Var.zzb(l0Var);
-            l0Var.b(c3);
+        int c10 = l0Var.c();
+        if (c10 == -1) {
+            c10 = o2Var.zzb(l0Var);
+            l0Var.b(c10);
         }
-        r0Var.H(c3);
-        n2Var.c(l0Var, r0Var.b);
+        r0Var.H(c10);
+        o2Var.c(l0Var, r0Var.b);
     }
 
-    public void c(int i10, Object obj, n2 n2Var) {
+    public void c(int i10, Object obj, o2 o2Var) {
         r0 r0Var = (r0) this.a;
         r0Var.D(i10, 3);
-        n2Var.c((l0) obj, r0Var.b);
+        o2Var.c((l0) obj, r0Var.b);
         r0Var.D(i10, 4);
     }
 

@@ -1,71 +1,42 @@
 package org.telegram.ui;
 
-import android.content.Context;
+import android.os.Bundle;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class rf0 extends org.telegram.ui.Components.voip.n2 {
-    public final /* synthetic */ int e;
-    public final /* synthetic */ org.telegram.ui.Components.vv0 f;
+public final /* synthetic */ class rf0 implements RequestDelegate {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zf0 b;
+    public final /* synthetic */ Bundle c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rf0(tf0 tf0Var, Context context, int i10) {
-        super(tf0Var.p0, context);
-        this.e = i10;
-        switch (i10) {
-            case 1:
-                this.f = tf0Var;
-                super(tf0Var.p0, context);
-                break;
-            default:
-                this.f = tf0Var;
-                break;
-        }
+    public /* synthetic */ rf0(zf0 zf0Var, Bundle bundle, int i10) {
+        this.a = i10;
+        this.b = zf0Var;
+        this.c = bundle;
     }
 
-    @Override // org.telegram.ui.Components.voip.n2
-    public final boolean a() {
-        switch (this.e) {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+        switch (this.a) {
             case 0:
-                return ((tf0) this.f).f0;
-            case 1:
-                return ((tf0) this.f).f0;
-            default:
-                return ((re0) this.f).J;
-        }
-    }
-
-    @Override // org.telegram.ui.Components.voip.n2
-    public final boolean b() {
-        rf0 rf0Var;
-        switch (this.e) {
-            case 0:
-                if (getVisibility() == 0) {
-                    tf0 tf0Var = (tf0) this.f;
-                    if (tf0Var.S <= 0 || tf0Var.O == null) {
+                zf0 zf0Var = this.b;
+                if (tLObject == null) {
+                    if (tL_error != null && tL_error.text != null) {
+                        AndroidUtilities.runOnUIThread(new r80(24, zf0Var, tL_error));
+                        break;
                     }
-                }
-                break;
-            case 1:
-                tf0 tf0Var2 = (tf0) this.f;
-                if (!isClickable() || getVisibility() != 0 || tf0Var2.a0 || (((rf0Var = tf0Var2.v) != null && rf0Var.getVisibility() != 8) || tf0Var2.f0)) {
+                } else {
+                    AndroidUtilities.runOnUIThread(new pf0(zf0Var, this.c, tLObject, 1));
+                    break;
                 }
                 break;
             default:
-                if (getVisibility() == 0) {
-                    re0 re0Var = (re0) this.f;
-                    if (re0Var.M <= 0 || re0Var.K == null) {
-                    }
-                }
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.Components.in0(this.b, tL_error, this.c, tLObject, 20));
                 break;
         }
-        return false;
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public rf0(re0 re0Var, Context context) {
-        super(re0Var.U, context);
-        this.e = 2;
-        this.f = re0Var;
     }
 }

@@ -3,7 +3,7 @@ package com.google.android.recaptcha.internal;
 import java.lang.reflect.Array;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzjd implements zzjt {
     public static final zzjd zza = new zzjd();
@@ -34,11 +34,11 @@ public final class zzjd implements zzjt {
         int intValue = num.intValue();
         try {
             zzizVar.zzc().zze(i10, zza2 instanceof String ? String.valueOf(((String) zza2).charAt(intValue)) : zza2 instanceof List ? ((List) zza2).get(intValue) : Array.get(zza2, intValue));
-        } catch (Exception e) {
-            if (!(e instanceof ArrayIndexOutOfBoundsException)) {
-                throw new zzdm(4, 23, e);
+        } catch (Exception e7) {
+            if (!(e7 instanceof ArrayIndexOutOfBoundsException)) {
+                throw new zzdm(4, 23, e7);
             }
-            throw new zzdm(4, 22, e);
+            throw new zzdm(4, 22, e7);
         }
     }
 }

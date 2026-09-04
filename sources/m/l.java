@@ -13,34 +13,34 @@ import android.view.ActionMode;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.widget.AutoCompleteTextView;
-import j7.r7;
-import k7.x7;
+import v7.u7;
+import w7.q7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class l extends AutoCompleteTextView implements u0.k {
     public static final int[] d = {R.attr.popupBackground};
-    public final m a;
-    public final x0 b;
+    public final e2.c a;
+    public final w0 b;
     public final y c;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public l(Context context, AttributeSet attributeSet, int i10) {
         super(context, attributeSet, i10);
-        e3.a(context);
-        d3.a(this, getContext());
-        l7.w0 y10 = l7.w0.y(getContext(), attributeSet, d, i10);
-        if (((TypedArray) y10.c).hasValue(0)) {
-            setDropDownBackgroundDrawable(y10.t(0));
+        b3.a(context);
+        a3.a(this, getContext());
+        aa.a y3 = aa.a.y(getContext(), attributeSet, d, i10);
+        if (((TypedArray) y3.c).hasValue(0)) {
+            setDropDownBackgroundDrawable(y3.r(0));
         }
-        y10.A();
-        m mVar = new m(this);
-        this.a = mVar;
-        mVar.d(attributeSet, i10);
-        x0 x0Var = new x0(this);
-        this.b = x0Var;
-        x0Var.f(attributeSet, i10);
-        x0Var.b();
+        y3.A();
+        e2.c cVar = new e2.c(this);
+        this.a = cVar;
+        cVar.f(attributeSet, i10);
+        w0 w0Var = new w0(this);
+        this.b = w0Var;
+        w0Var.f(attributeSet, i10);
+        w0Var.b();
         y yVar = new y(this);
         this.c = yVar;
         yVar.b(attributeSet, i10);
@@ -66,33 +66,33 @@ public class l extends AutoCompleteTextView implements u0.k {
     @Override // android.widget.TextView, android.view.View
     public final void drawableStateChanged() {
         super.drawableStateChanged();
-        m mVar = this.a;
-        if (mVar != null) {
-            mVar.a();
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.b();
         }
-        x0 x0Var = this.b;
-        if (x0Var != null) {
-            x0Var.b();
+        w0 w0Var = this.b;
+        if (w0Var != null) {
+            w0Var.b();
         }
     }
 
     @Override // android.widget.TextView
     public ActionMode.Callback getCustomSelectionActionModeCallback() {
-        return x7.d(super.getCustomSelectionActionModeCallback());
+        return q7.d(super.getCustomSelectionActionModeCallback());
     }
 
     public ColorStateList getSupportBackgroundTintList() {
-        m mVar = this.a;
-        if (mVar != null) {
-            return mVar.b();
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            return cVar.d();
         }
         return null;
     }
 
     public PorterDuff.Mode getSupportBackgroundTintMode() {
-        m mVar = this.a;
-        if (mVar != null) {
-            return mVar.c();
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            return cVar.e();
         }
         return null;
     }
@@ -108,58 +108,58 @@ public class l extends AutoCompleteTextView implements u0.k {
     @Override // android.widget.TextView, android.view.View
     public InputConnection onCreateInputConnection(EditorInfo editorInfo) {
         InputConnection onCreateInputConnection = super.onCreateInputConnection(editorInfo);
-        k7.l.a(editorInfo, onCreateInputConnection, this);
+        w7.n.a(editorInfo, onCreateInputConnection, this);
         return this.c.c(onCreateInputConnection, editorInfo);
     }
 
     @Override // android.view.View
     public void setBackgroundDrawable(Drawable drawable) {
         super.setBackgroundDrawable(drawable);
-        m mVar = this.a;
-        if (mVar != null) {
-            mVar.e();
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.g();
         }
     }
 
     @Override // android.view.View
     public void setBackgroundResource(int i10) {
         super.setBackgroundResource(i10);
-        m mVar = this.a;
-        if (mVar != null) {
-            mVar.f(i10);
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.h(i10);
         }
     }
 
     @Override // android.widget.TextView
     public final void setCompoundDrawables(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         super.setCompoundDrawables(drawable, drawable2, drawable3, drawable4);
-        x0 x0Var = this.b;
-        if (x0Var != null) {
-            x0Var.b();
+        w0 w0Var = this.b;
+        if (w0Var != null) {
+            w0Var.b();
         }
     }
 
     @Override // android.widget.TextView
     public final void setCompoundDrawablesRelative(Drawable drawable, Drawable drawable2, Drawable drawable3, Drawable drawable4) {
         super.setCompoundDrawablesRelative(drawable, drawable2, drawable3, drawable4);
-        x0 x0Var = this.b;
-        if (x0Var != null) {
-            x0Var.b();
+        w0 w0Var = this.b;
+        if (w0Var != null) {
+            w0Var.b();
         }
     }
 
     @Override // android.widget.TextView
     public void setCustomSelectionActionModeCallback(ActionMode.Callback callback) {
-        super.setCustomSelectionActionModeCallback(x7.e(callback, this));
+        super.setCustomSelectionActionModeCallback(q7.e(callback, this));
     }
 
     @Override // android.widget.AutoCompleteTextView
     public void setDropDownBackgroundResource(int i10) {
-        setDropDownBackgroundDrawable(r7.b(getContext(), i10));
+        setDropDownBackgroundDrawable(u7.b(getContext(), i10));
     }
 
-    public void setEmojiCompatEnabled(boolean z4) {
-        this.c.d(z4);
+    public void setEmojiCompatEnabled(boolean z10) {
+        this.c.d(z10);
     }
 
     @Override // android.widget.TextView
@@ -168,39 +168,39 @@ public class l extends AutoCompleteTextView implements u0.k {
     }
 
     public void setSupportBackgroundTintList(ColorStateList colorStateList) {
-        m mVar = this.a;
-        if (mVar != null) {
-            mVar.h(colorStateList);
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.l(colorStateList);
         }
     }
 
     public void setSupportBackgroundTintMode(PorterDuff.Mode mode) {
-        m mVar = this.a;
-        if (mVar != null) {
-            mVar.i(mode);
+        e2.c cVar = this.a;
+        if (cVar != null) {
+            cVar.m(mode);
         }
     }
 
     @Override // u0.k
     public void setSupportCompoundDrawablesTintList(ColorStateList colorStateList) {
-        x0 x0Var = this.b;
-        x0Var.l(colorStateList);
-        x0Var.b();
+        w0 w0Var = this.b;
+        w0Var.l(colorStateList);
+        w0Var.b();
     }
 
     @Override // u0.k
     public void setSupportCompoundDrawablesTintMode(PorterDuff.Mode mode) {
-        x0 x0Var = this.b;
-        x0Var.m(mode);
-        x0Var.b();
+        w0 w0Var = this.b;
+        w0Var.m(mode);
+        w0Var.b();
     }
 
     @Override // android.widget.TextView
     public final void setTextAppearance(Context context, int i10) {
         super.setTextAppearance(context, i10);
-        x0 x0Var = this.b;
-        if (x0Var != null) {
-            x0Var.g(context, i10);
+        w0 w0Var = this.b;
+        if (w0Var != null) {
+            w0Var.g(context, i10);
         }
     }
 }

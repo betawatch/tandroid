@@ -1,22 +1,21 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.util.FloatProperty;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class hs0 extends org.telegram.ui.Cells.v9 {
-    public final /* synthetic */ int v0 = 0;
-
-    public /* synthetic */ hs0(nh.z7 z7Var, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(z7Var, f6Var);
+public final class hs0 extends FloatProperty {
+    public hs0() {
+        super("progress");
     }
 
-    @Override // org.telegram.ui.Cells.y9
-    public final int p() {
-        switch (this.v0) {
-        }
-        return 0;
+    @Override // android.util.Property
+    public final Float get(Object obj) {
+        return Float.valueOf(((jv0) obj).a);
     }
 
-    public hs0(nh.b bVar) {
-        super(null, bVar);
+    @Override // android.util.FloatProperty
+    public final void setValue(Object obj, float f7) {
+        ((jv0) obj).b(f7);
     }
 }

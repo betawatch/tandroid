@@ -9,11 +9,11 @@ import android.view.DragEvent;
 import android.view.View;
 import android.widget.TextView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class b0 {
     public static boolean a(DragEvent dragEvent, TextView textView, Activity activity) {
-        r0.e eVar;
+        r0.d dVar;
         activity.requestDragAndDropPermissions(dragEvent);
         int offsetForPosition = textView.getOffsetForPosition(dragEvent.getX(), dragEvent.getY());
         textView.beginBatchEdit();
@@ -21,14 +21,14 @@ public abstract class b0 {
             Selection.setSelection((Spannable) textView.getText(), offsetForPosition);
             ClipData clipData = dragEvent.getClipData();
             if (Build.VERSION.SDK_INT >= 31) {
-                eVar = new r0.d(clipData, 3);
+                dVar = new j2.j(clipData, 3);
             } else {
-                r0.f fVar = new r0.f();
-                fVar.b = clipData;
-                fVar.c = 3;
-                eVar = fVar;
+                r0.e eVar = new r0.e();
+                eVar.b = clipData;
+                eVar.c = 3;
+                dVar = eVar;
             }
-            r0.j0.i(textView, eVar.build());
+            r0.i0.i(textView, dVar.build());
             textView.endBatchEdit();
             return true;
         } catch (Throwable th2) {
@@ -38,18 +38,18 @@ public abstract class b0 {
     }
 
     public static boolean b(DragEvent dragEvent, View view, Activity activity) {
-        r0.e eVar;
+        r0.d dVar;
         activity.requestDragAndDropPermissions(dragEvent);
         ClipData clipData = dragEvent.getClipData();
         if (Build.VERSION.SDK_INT >= 31) {
-            eVar = new r0.d(clipData, 3);
+            dVar = new j2.j(clipData, 3);
         } else {
-            r0.f fVar = new r0.f();
-            fVar.b = clipData;
-            fVar.c = 3;
-            eVar = fVar;
+            r0.e eVar = new r0.e();
+            eVar.b = clipData;
+            eVar.c = 3;
+            dVar = eVar;
         }
-        r0.j0.i(view, eVar.build());
+        r0.i0.i(view, dVar.build());
         return true;
     }
 }

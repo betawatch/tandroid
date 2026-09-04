@@ -1,205 +1,100 @@
 package org.telegram.ui.Components;
 
-import android.R;
-import android.content.res.ColorStateList;
-import android.graphics.Canvas;
-import android.graphics.CornerPathEffect;
-import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.util.StateSet;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* JADX WARN: Enum visitor error
+jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'e' uses external variables
+	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
+	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
+	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
+	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
+	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
+ */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class xc {
-    public static final int[] p = {R.attr.state_enabled, R.attr.state_pressed};
-    public rq a;
-    public final ArrayList b = new ArrayList();
-    public int c;
-    public boolean d;
-    public final org.telegram.ui.Cells.z e;
-    public final View f;
-    public final Paint g;
-    public Runnable h;
-    public boolean i;
-    public Runnable j;
-    public final m2.b k;
-    public boolean l;
-    public final CornerPathEffect m;
-    public boolean n;
-    public final Paint o;
+    public static final xc E;
+    public static final xc F;
+    public static final xc G;
+    public static final xc H;
+    public static final xc I;
+    public static final /* synthetic */ xc[] J;
+    public static final xc e;
+    public static final xc f;
+    public static final xc h;
+    public static final xc n;
+    public static final xc r;
+    public static final xc s;
+    public static final xc v;
+    public static final xc w;
+    public static final xc x;
+    public static final xc y;
+    public final String a;
+    public final int b;
+    public final boolean c;
+    public final wc d;
 
-    public xc(View view) {
-        Paint paint = new Paint(1);
-        this.g = paint;
-        this.k = new m2.b(this, 14);
-        float dp = AndroidUtilities.dp(12.0f);
-        this.f = view;
-        CornerPathEffect cornerPathEffect = new CornerPathEffect(dp);
-        this.m = cornerPathEffect;
-        paint.setPathEffect(cornerPathEffect);
-        Paint paint2 = new Paint(1);
-        this.o = paint2;
-        paint2.setFilterBitmap(true);
-        paint2.setPathEffect(new CornerPathEffect(AndroidUtilities.dp(12.0f)));
-        paint2.setColor(-1);
-        Paint paint3 = new Paint(1);
-        paint3.setFilterBitmap(true);
-        paint3.setColor(-1);
-        org.telegram.ui.Cells.z zVar = new org.telegram.ui.Cells.z(new ColorStateList(new int[][]{StateSet.WILD_CARD}, new int[]{org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false) & 436207615}), null, new df.f(this, paint3));
-        this.e = zVar;
-        zVar.setCallback(view);
+    static {
+        int i10 = R.string.PhotoSavedHint;
+        wc wcVar = wc.e;
+        xc xcVar = new xc("PHOTO", 0, "PhotoSavedHint", i10, wcVar);
+        e = xcVar;
+        xc xcVar2 = new xc("PHOTOS", 1, "PhotosSavedHint", wcVar);
+        f = xcVar2;
+        xc xcVar3 = new xc("VIDEO", 2, "VideoSavedHint", R.string.VideoSavedHint, wcVar);
+        h = xcVar3;
+        xc xcVar4 = new xc("VIDEOS", 3, "VideosSavedHint", wcVar);
+        n = xcVar4;
+        xc xcVar5 = new xc("LIVEPHOTO", 4, "LivePhotoSavedHint", R.string.LivePhotoSavedHint, wcVar);
+        r = xcVar5;
+        xc xcVar6 = new xc("LIVEPHOTOS", 5, "LivePhotosSavedHint", wcVar);
+        s = xcVar6;
+        xc xcVar7 = new xc("MEDIA", 6, "MediaSavedHint", wcVar);
+        v = xcVar7;
+        int i11 = R.string.PhotoSavedToDownloadsHintLinked;
+        wc wcVar2 = wc.d;
+        xc xcVar8 = new xc("PHOTO_TO_DOWNLOADS", 7, "PhotoSavedToDownloadsHintLinked", i11, wcVar2);
+        w = xcVar8;
+        xc xcVar9 = new xc("VIDEO_TO_DOWNLOADS", 8, "VideoSavedToDownloadsHintLinked", R.string.VideoSavedToDownloadsHintLinked, wcVar2);
+        x = xcVar9;
+        xc xcVar10 = new xc("GIF", 9, "GifSavedHint", R.string.GifSavedHint, wc.h);
+        y = xcVar10;
+        xc xcVar11 = new xc("GIF_TO_DOWNLOADS", 10, "GifSavedToDownloadsHintLinked", R.string.GifSavedToDownloadsHintLinked, wcVar2);
+        E = xcVar11;
+        int i12 = R.string.AudioSavedHint;
+        wc wcVar3 = wc.f;
+        xc xcVar12 = new xc("AUDIO", 11, "AudioSavedHint", i12, wcVar3);
+        F = xcVar12;
+        xc xcVar13 = new xc("AUDIOS", 12, "AudiosSavedHint", wcVar3);
+        G = xcVar13;
+        xc xcVar14 = new xc("UNKNOWN", 13, "FileSavedHintLinked", R.string.FileSavedHintLinked, wcVar2);
+        H = xcVar14;
+        xc xcVar15 = new xc("UNKNOWNS", 14, "FilesSavedHintLinked", wcVar2);
+        I = xcVar15;
+        J = new xc[]{xcVar, xcVar2, xcVar3, xcVar4, xcVar5, xcVar6, xcVar7, xcVar8, xcVar9, xcVar10, xcVar11, xcVar12, xcVar13, xcVar14, xcVar15};
     }
 
-    public final void a(RectF rectF) {
-        int i10 = this.c + 1;
-        this.c = i10;
-        ArrayList arrayList = this.b;
-        if (i10 > arrayList.size()) {
-            arrayList.add(new RectF());
-        }
-        ((RectF) arrayList.get(this.c - 1)).set(rectF);
+    public xc(String str, int i10, String str2, int i11, wc wcVar) {
+        this.a = str2;
+        this.b = i11;
+        this.d = wcVar;
+        this.c = false;
     }
 
-    public final boolean b(MotionEvent motionEvent) {
-        Runnable runnable;
-        int x10 = (int) motionEvent.getX();
-        int y10 = (int) motionEvent.getY();
-        int action = motionEvent.getAction();
-        View view = this.f;
-        m2.b bVar = this.k;
-        org.telegram.ui.Cells.z zVar = this.e;
-        if (action == 0) {
-            for (int i10 = 0; i10 < this.c; i10++) {
-                float f10 = x10;
-                float f11 = y10;
-                if (((RectF) this.b.get(i10)).contains(f10, f11)) {
-                    this.d = true;
-                    if (zVar != null) {
-                        zVar.setHotspot(f10, f11);
-                        zVar.setState(p);
-                    }
-                    AndroidUtilities.cancelRunOnUIThread(bVar);
-                    if (this.l) {
-                        AndroidUtilities.runOnUIThread(bVar, ViewConfiguration.getLongPressTimeout());
-                    }
-                    view.invalidate();
-                    return true;
-                }
-            }
-        } else if (motionEvent.getAction() == 1 || motionEvent.getAction() == 3) {
-            if (this.d) {
-                if (motionEvent.getAction() == 1 && (runnable = this.h) != null) {
-                    runnable.run();
-                }
-                view.playSoundEffect(0);
-                if (zVar != null) {
-                    zVar.setState(StateSet.NOTHING);
-                }
-                this.d = false;
-                view.invalidate();
-            }
-            AndroidUtilities.cancelRunOnUIThread(bVar);
-        } else if (motionEvent.getAction() == 2 && this.d && zVar != null) {
-            zVar.setHotspot(x10, y10);
-        }
-        return this.d;
+    public static xc valueOf(String str) {
+        return (xc) Enum.valueOf(xc.class, str);
     }
 
-    public final void c(Canvas canvas, Paint paint) {
-        int i10 = this.c;
-        CornerPathEffect cornerPathEffect = this.m;
-        org.telegram.ui.Cells.z zVar = this.e;
-        int i11 = 0;
-        ArrayList arrayList = this.b;
-        if (i10 <= 1) {
-            if (i10 == 1) {
-                if (zVar != null) {
-                    zVar.setBounds((int) ((RectF) arrayList.get(0)).left, (int) ((RectF) arrayList.get(0)).top, (int) ((RectF) arrayList.get(0)).right, (int) ((RectF) arrayList.get(0)).bottom);
-                }
-                if (!this.n) {
-                    paint.setPathEffect(cornerPathEffect);
-                    canvas.drawRoundRect((RectF) arrayList.get(0), 0.0f, 0.0f, paint);
-                    return;
-                } else {
-                    paint.setPathEffect(null);
-                    float min = Math.min(((RectF) arrayList.get(0)).width(), ((RectF) arrayList.get(0)).height()) / 2.0f;
-                    canvas.drawRoundRect((RectF) arrayList.get(0), min, min, paint);
-                    return;
-                }
-            }
-            return;
-        }
-        if (!this.i) {
-            rq rqVar = this.a;
-            if (rqVar == null) {
-                this.a = new rq(0);
-            } else {
-                rqVar.rewind();
-            }
-            int i12 = 0;
-            int i13 = 0;
-            int i14 = 0;
-            int i15 = 0;
-            while (true) {
-                int i16 = this.c;
-                if (i11 >= i16) {
-                    break;
-                }
-                int i17 = i11 + 1;
-                if (i17 < i16) {
-                    float f10 = ((RectF) arrayList.get(i11)).right;
-                    float f11 = ((RectF) arrayList.get(i17)).right;
-                    if (Math.abs(f10 - f11) < AndroidUtilities.dp(4.0f)) {
-                        RectF rectF = (RectF) arrayList.get(i17);
-                        RectF rectF2 = (RectF) arrayList.get(i11);
-                        float max = Math.max(f10, f11);
-                        rectF2.right = max;
-                        rectF.right = max;
-                    }
-                }
-                if (i11 == 0 || ((RectF) arrayList.get(i11)).bottom > i12) {
-                    i12 = (int) ((RectF) arrayList.get(i11)).bottom;
-                }
-                if (i11 == 0 || ((RectF) arrayList.get(i11)).right > i13) {
-                    i13 = (int) ((RectF) arrayList.get(i11)).right;
-                }
-                if (i11 == 0 || ((RectF) arrayList.get(i11)).left < i14) {
-                    i14 = (int) ((RectF) arrayList.get(i11)).left;
-                }
-                if (i11 == 0 || ((RectF) arrayList.get(i11)).top < i15) {
-                    i15 = (int) ((RectF) arrayList.get(i11)).top;
-                }
-                this.a.addRect((RectF) arrayList.get(i11), Path.Direction.CCW);
-                if (zVar != null) {
-                    zVar.setBounds(i14, i15, i13, i12);
-                }
-                i11 = i17;
-            }
-            this.a.a();
-            this.i = true;
-        }
-        paint.setPathEffect(cornerPathEffect);
-        rq rqVar2 = this.a;
-        if (rqVar2 != null) {
-            canvas.drawPath(rqVar2, paint);
-        }
+    public static xc[] values() {
+        return (xc[]) J.clone();
     }
 
-    public final void d(int i10) {
-        this.g.setColor(i10);
-        org.telegram.ui.Cells.z zVar = this.e;
-        if (zVar != null) {
-            org.telegram.ui.ActionBar.j6.B1(zVar, i10, true);
-        }
-    }
-
-    public final void e(org.telegram.ui.Cells.g2 g2Var) {
-        this.h = g2Var;
+    public xc(String str, int i10, String str2, wc wcVar) {
+        this.a = str2;
+        this.d = wcVar;
+        this.b = 0;
+        this.c = true;
     }
 }

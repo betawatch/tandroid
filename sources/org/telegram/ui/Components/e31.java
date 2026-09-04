@@ -8,7 +8,7 @@ import android.graphics.drawable.Drawable;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class e31 extends View {
     public float a;
@@ -35,11 +35,11 @@ public final class e31 extends View {
     }
 
     @Override // android.view.View
-    public final void drawableHotspotChanged(float f10, float f11) {
-        super.drawableHotspotChanged(f10, f11);
+    public final void drawableHotspotChanged(float f7, float f10) {
+        super.drawableHotspotChanged(f7, f10);
         Drawable drawable = this.d;
         if (drawable != null) {
-            drawable.setHotspot(f10, f11);
+            drawable.setHotspot(f7, f10);
         }
     }
 
@@ -78,15 +78,15 @@ public final class e31 extends View {
         if (i10 == 0) {
             float max = (Math.max(0.4f, this.a) - 0.4f) / 0.6f;
             if (max != 0.0f) {
-                float z4 = (org.telegram.ui.b.z(21.0f, 2, getWidth()) * max) + AndroidUtilities.dp(21.0f);
+                float A = (org.telegram.messenger.wl.A(21.0f, 2, getWidth()) * max) + AndroidUtilities.dp(21.0f);
                 float height2 = getHeight() / 2.0f;
-                canvas.drawLine(AndroidUtilities.dp(21.0f), height2, z4, height2, paint);
+                canvas.drawLine(AndroidUtilities.dp(21.0f), height2, A, height2, paint);
                 double dp2 = AndroidUtilities.dp(9.0f) * max;
-                float cos = (float) (z4 - (Math.cos(0.7853981633974483d) * dp2));
+                float cos = (float) (A - (Math.cos(0.7853981633974483d) * dp2));
                 float sin = (float) (Math.sin(0.7853981633974483d) * dp2);
                 canvas2 = canvas;
-                canvas2.drawLine(z4, height2, cos, height2 - sin, paint);
-                canvas2.drawLine(z4, height2, cos, height2 + sin, paint);
+                canvas2.drawLine(A, height2, cos, height2 - sin, paint);
+                canvas2.drawLine(A, height2, cos, height2 + sin, paint);
             } else {
                 canvas2 = canvas;
             }
@@ -128,12 +128,12 @@ public final class e31 extends View {
         invalidate();
     }
 
-    public void setDrawBackground(boolean z4) {
-        this.e = z4;
+    public void setDrawBackground(boolean z10) {
+        this.e = z10;
     }
 
-    public void setProgress(float f10) {
-        this.a = f10;
+    public void setProgress(float f7) {
+        this.a = f7;
         invalidate();
     }
 

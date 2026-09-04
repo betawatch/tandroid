@@ -8,8 +8,8 @@ import android.graphics.drawable.Drawable;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
 public final class g extends Drawable {
     public float a;
     public final SvgHelper.SvgDrawable b;
@@ -33,11 +33,11 @@ public final class g extends Drawable {
         if (svgDrawable != null) {
             svgDrawable.setPaint(hVar.a);
             int i11 = hVar.f;
-            float f10 = (((i10 * 2) + i11) * hVar.g) - i10;
+            float f7 = (((i10 * 2) + i11) * hVar.g) - i10;
             float scale = svgDrawable.getScale(getBounds().width(), getBounds().height());
             matrix.reset();
             matrix.setScale(1.0f / scale, 0.0f, i10 / 2.0f, 0.0f);
-            matrix.setTranslate((f10 - svgDrawable.getBounds().left) - (i10 / scale), 0.0f);
+            matrix.setTranslate((f7 - svgDrawable.getBounds().left) - (i10 / scale), 0.0f);
             hVar.b.setLocalMatrix(matrix);
             int i12 = ((int) (i11 * 0.5f)) / 2;
             svgDrawable.setBounds(getBounds().centerX() - i12, getBounds().centerY() - i12, getBounds().centerX() + i12, getBounds().centerY() + i12);

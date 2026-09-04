@@ -41,7 +41,7 @@ public final class l extends f5 {
     }
 
     @Override // j$.util.stream.f5, j$.util.stream.j5
-    public void o(long j10) {
+    public void o(long j3) {
         switch (this.b) {
             case 0:
                 this.c = new HashSet();
@@ -49,7 +49,7 @@ public final class l extends f5 {
                 break;
             case 1:
             default:
-                super.o(j10);
+                super.o(j3);
                 break;
             case 2:
                 this.a.o(-1L);

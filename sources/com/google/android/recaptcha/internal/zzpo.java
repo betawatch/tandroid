@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
+import i2.g;
 import j$.util.Objects;
 import java.math.RoundingMode;
-import kf.k0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 class zzpo extends zzpp {
     public static final /* synthetic */ int zzc = 0;
@@ -35,20 +35,20 @@ class zzpo extends zzpp {
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("BaseEncoding.");
+        StringBuilder sb2 = new StringBuilder("BaseEncoding.");
         zzpk zzpkVar = this.zza;
-        sb.append(zzpkVar);
+        sb2.append(zzpkVar);
         if (8 % zzpkVar.zzb != 0) {
             Character ch2 = this.zzb;
             if (ch2 == null) {
-                sb.append(".omitPadding()");
+                sb2.append(".omitPadding()");
             } else {
-                sb.append(".withPadChar('");
-                sb.append(ch2);
-                sb.append("')");
+                sb2.append(".withPadChar('");
+                sb2.append(ch2);
+                sb2.append("')");
             }
         }
-        return sb.toString();
+        return sb2.toString();
     }
 
     @Override // com.google.android.recaptcha.internal.zzpp
@@ -58,12 +58,12 @@ class zzpo extends zzpp {
         int length = zze.length();
         zzpk zzpkVar = this.zza;
         if (!zzpkVar.zzc(length)) {
-            throw new zzpn(k0.j(zze.length(), "Invalid input length "));
+            throw new zzpn(g.i(zze.length(), "Invalid input length "));
         }
         int i11 = 0;
         int i12 = 0;
         while (i11 < zze.length()) {
-            long j10 = 0;
+            long j3 = 0;
             int i13 = 0;
             int i14 = 0;
             while (true) {
@@ -71,9 +71,9 @@ class zzpo extends zzpp {
                 if (i13 >= i10) {
                     break;
                 }
-                j10 <<= zzpkVar.zzb;
+                j3 <<= zzpkVar.zzb;
                 if (i11 + i13 < zze.length()) {
-                    j10 |= zzpkVar.zzb(zze.charAt(i14 + i11));
+                    j3 |= zzpkVar.zzb(zze.charAt(i14 + i11));
                     i14++;
                 }
                 i13++;
@@ -82,7 +82,7 @@ class zzpo extends zzpp {
             int i16 = i14 * zzpkVar.zzb;
             int i17 = (i15 - 1) * 8;
             while (i17 >= (i15 * 8) - i16) {
-                bArr[i12] = (byte) ((j10 >>> i17) & 255);
+                bArr[i12] = (byte) ((j3 >>> i17) & 255);
                 i17 -= 8;
                 i12++;
             }
@@ -135,14 +135,14 @@ class zzpo extends zzpp {
         int i12 = zzpkVar.zzd;
         int i13 = 0;
         zzmd.zza(i11 <= i12);
-        long j10 = 0;
+        long j3 = 0;
         for (int i14 = 0; i14 < i11; i14++) {
-            j10 = (j10 | (bArr[i10 + i14] & 255)) << 8;
+            j3 = (j3 | (bArr[i10 + i14] & 255)) << 8;
         }
         int i15 = (i11 + 1) * 8;
         int i16 = zzpkVar.zzb;
         while (i13 < i11 * 8) {
-            appendable.append(zzpkVar.zza(zzpkVar.zza & ((int) (j10 >>> ((i15 - i16) - i13)))));
+            appendable.append(zzpkVar.zza(zzpkVar.zza & ((int) (j3 >>> ((i15 - i16) - i13)))));
             i13 += i16;
         }
         if (this.zzb != null) {

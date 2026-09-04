@@ -3,7 +3,7 @@ package org.telegram.ui.Components;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class uf0 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -18,10 +18,28 @@ public final class uf0 extends AnimatorListenerAdapter {
     public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                this.b.a.n.setVisibility(8);
+                vf0 vf0Var = this.b;
+                vf0Var.h = false;
+                vf0Var.a = vf0Var.c;
+                vf0Var.invalidate();
+                int i10 = vf0Var.J;
+                if (i10 >= 0) {
+                    vf0Var.b(i10);
+                    vf0Var.J = -1;
+                    break;
+                }
                 break;
             default:
-                this.b.a.h.setVisibility(8);
+                vf0 vf0Var2 = this.b;
+                vf0Var2.n = false;
+                vf0Var2.h = false;
+                vf0Var2.invalidate();
+                int i11 = vf0Var2.J;
+                if (i11 >= 0) {
+                    vf0Var2.b(i11);
+                    vf0Var2.J = -1;
+                }
+                vf0Var2.a();
                 break;
         }
     }

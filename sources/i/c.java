@@ -2,18 +2,18 @@ package i;
 
 import android.animation.ObjectAnimator;
 import android.graphics.drawable.AnimationDrawable;
-import j7.y7;
+import v7.f8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c extends y7 {
+public final class c extends f8 {
     public final ObjectAnimator a;
     public final boolean b;
 
-    public c(AnimationDrawable animationDrawable, boolean z4, boolean z10) {
+    public c(AnimationDrawable animationDrawable, boolean z10, boolean z11) {
         int numberOfFrames = animationDrawable.getNumberOfFrames();
-        int i10 = z4 ? numberOfFrames - 1 : 0;
-        int i11 = z4 ? 0 : numberOfFrames - 1;
+        int i10 = z10 ? numberOfFrames - 1 : 0;
+        int i11 = z10 ? 0 : numberOfFrames - 1;
         d dVar = new d();
         int numberOfFrames2 = animationDrawable.getNumberOfFrames();
         dVar.b = numberOfFrames2;
@@ -24,7 +24,7 @@ public final class c extends y7 {
         int[] iArr2 = dVar.a;
         int i12 = 0;
         for (int i13 = 0; i13 < numberOfFrames2; i13++) {
-            int duration = animationDrawable.getDuration(z4 ? (numberOfFrames2 - i13) - 1 : i13);
+            int duration = animationDrawable.getDuration(z10 ? (numberOfFrames2 - i13) - 1 : i13);
             iArr2[i13] = duration;
             i12 += duration;
         }
@@ -33,26 +33,26 @@ public final class c extends y7 {
         j.a.a(ofInt, true);
         ofInt.setDuration(dVar.c);
         ofInt.setInterpolator(dVar);
-        this.b = z10;
+        this.b = z11;
         this.a = ofInt;
     }
 
-    @Override // j7.y7
+    @Override // v7.f8
     public final boolean a() {
         return this.b;
     }
 
-    @Override // j7.y7
+    @Override // v7.f8
     public final void b() {
         this.a.reverse();
     }
 
-    @Override // j7.y7
+    @Override // v7.f8
     public final void c() {
         this.a.start();
     }
 
-    @Override // j7.y7
+    @Override // v7.f8
     public final void d() {
         this.a.cancel();
     }

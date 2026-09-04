@@ -1,155 +1,100 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.drawable.Drawable;
-import android.text.Layout;
-import android.text.SpannableStringBuilder;
-import android.view.MotionEvent;
+import android.view.KeyEvent;
 import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import java.util.ArrayList;
+import android.webkit.WebChromeClient;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_iv;
-import org.telegram.ui.Components.AnimatedArrowDrawable;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class p1 extends View implements Drawable.Callback, org.telegram.ui.Cells.k9 {
-    public final p70 a;
-    public final l4 b;
-    public f3 c;
-    public int d;
-    public int e;
-    public final AnimatedArrowDrawable f;
-    public TL_iv.pageBlockDetails h;
+public final class p1 extends WebChromeClient {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ KeyEvent.Callback b;
 
-    public p1(Context context, p70 p70Var, l4 l4Var) {
-        super(context);
-        this.a = p70Var;
-        this.b = l4Var;
-        this.f = new AnimatedArrowDrawable(p70Var.a(), true);
+    public /* synthetic */ p1(KeyEvent.Callback callback, int i10) {
+        this.a = i10;
+        this.b = callback;
     }
 
-    @Override // org.telegram.ui.Cells.k9
-    public final void fillTextLayoutBlocks(ArrayList arrayList) {
-        f3 f3Var = this.c;
-        if (f3Var != null) {
-            arrayList.add(f3Var);
+    @Override // android.webkit.WebChromeClient
+    public final void onHideCustomView() {
+        switch (this.a) {
+            case 0:
+                super.onHideCustomView();
+                t1 t1Var = (t1) this.b;
+                i4 i4Var = t1Var.x;
+                if (i4Var.O != null) {
+                    i4Var.P.setVisibility(4);
+                    i4 i4Var2 = t1Var.x;
+                    i4Var2.P.removeView(i4Var2.O);
+                    WebChromeClient.CustomViewCallback customViewCallback = t1Var.x.S;
+                    if (customViewCallback != null && !customViewCallback.getClass().getName().contains(".chromium.")) {
+                        t1Var.x.S.onCustomViewHidden();
+                    }
+                    t1Var.x.O = null;
+                    break;
+                }
+                break;
+            default:
+                super.onHideCustomView();
+                org.telegram.ui.Components.tu tuVar = (org.telegram.ui.Components.tu) this.b;
+                if (tuVar.d != null) {
+                    tuVar.getSheetContainer().setVisibility(0);
+                    tuVar.e.setVisibility(4);
+                    tuVar.e.removeView(tuVar.d);
+                    WebChromeClient.CustomViewCallback customViewCallback2 = tuVar.f;
+                    if (customViewCallback2 != null && !customViewCallback2.getClass().getName().contains(".chromium.")) {
+                        tuVar.f.onCustomViewHidden();
+                    }
+                    tuVar.d = null;
+                    break;
+                }
+                break;
         }
     }
 
-    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
-    public final void invalidateDrawable(Drawable drawable) {
-        invalidate();
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        f3 f3Var = this.c;
-        if (f3Var != null) {
-            f3Var.attach(this);
+    @Override // android.webkit.WebChromeClient
+    public final void onShowCustomView(View view, int i10, WebChromeClient.CustomViewCallback customViewCallback) {
+        switch (this.a) {
+            case 0:
+                onShowCustomView(view, customViewCallback);
+                break;
+            default:
+                onShowCustomView(view, customViewCallback);
+                break;
         }
     }
 
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        f3 f3Var = this.c;
-        if (f3Var != null) {
-            f3Var.detach(this);
+    @Override // android.webkit.WebChromeClient
+    public final void onShowCustomView(View view, WebChromeClient.CustomViewCallback customViewCallback) {
+        switch (this.a) {
+            case 0:
+                i4 i4Var = ((t1) this.b).x;
+                if (i4Var.O != null) {
+                    customViewCallback.onCustomViewHidden();
+                    break;
+                } else {
+                    i4Var.O = view;
+                    i4Var.S = customViewCallback;
+                    AndroidUtilities.runOnUIThread(new lu0(this, 7), 100L);
+                    break;
+                }
+            default:
+                org.telegram.ui.Components.tu tuVar = (org.telegram.ui.Components.tu) this.b;
+                FrameLayout frameLayout = tuVar.e;
+                if (tuVar.d == null && !org.telegram.ui.Components.eg0.p0.P) {
+                    tuVar.I();
+                    tuVar.d = view;
+                    tuVar.getSheetContainer().setVisibility(4);
+                    frameLayout.setVisibility(0);
+                    frameLayout.addView(view, w7.x5.c(-1.0f, -1));
+                    tuVar.f = customViewCallback;
+                    break;
+                } else {
+                    customViewCallback.onCustomViewHidden();
+                    break;
+                }
         }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.h == null) {
-            return;
-        }
-        canvas.save();
-        p70 p70Var = this.a;
-        p70Var.getClass();
-        canvas.translate(AndroidUtilities.dp(18), ((getMeasuredHeight() - AndroidUtilities.dp(13.0f)) - 1) / 2);
-        this.f.draw(canvas);
-        canvas.restore();
-        if (this.c != null) {
-            canvas.save();
-            canvas.translate(this.d, this.e);
-            n4.v(p70Var, canvas, this, 0);
-            this.c.draw(canvas, this);
-            canvas.restore();
-        }
-        float measuredHeight = getMeasuredHeight() - 1;
-        canvas.drawLine(0.0f, measuredHeight, getMeasuredWidth(), measuredHeight, n4.o1);
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        CharSequence j10;
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setClassName("android.widget.TextView");
-        accessibilityNodeInfo.setEnabled(true);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        f3 f3Var = this.c;
-        if (f3Var != null && (j10 = n4.j(this.a, this.b, f3Var)) != null) {
-            spannableStringBuilder.append(j10).append((CharSequence) ", ");
-        }
-        spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.AccDescrIVDetails)).append((CharSequence) ", ");
-        TL_iv.pageBlockDetails pageblockdetails = this.h;
-        spannableStringBuilder.append((CharSequence) LocaleController.getString((pageblockdetails == null || !pageblockdetails.open) ? R.string.AccDescrIVCollapsed : R.string.AccDescrIVExpanded));
-        accessibilityNodeInfo.setText(spannableStringBuilder);
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int size = View.MeasureSpec.getSize(i10);
-        int dp = AndroidUtilities.dp(39.0f);
-        this.d = AndroidUtilities.dp(50.0f);
-        this.e = AndroidUtilities.dp(11.0f) + 1;
-        TL_iv.pageBlockDetails pageblockdetails = this.h;
-        if (pageblockdetails != null) {
-            TL_iv.RichText richText = pageblockdetails.title;
-            p70 p70Var = this.a;
-            p70Var.getClass();
-            int dp2 = size - AndroidUtilities.dp(54);
-            TL_iv.pageBlockDetails pageblockdetails2 = this.h;
-            l4 l4Var = this.b;
-            f3 p10 = n4.p(p70Var, this, null, richText, dp2, 0, pageblockdetails2, (l4Var == null || !l4Var.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
-            this.c = p10;
-            if (p10 != null) {
-                dp = Math.max(dp, this.c.d.getHeight() + AndroidUtilities.dp(21.0f));
-                int dp3 = ((AndroidUtilities.dp(21.0f) + this.c.d.getHeight()) - this.c.d.getHeight()) / 2;
-                this.e = dp3;
-                f3 f3Var = this.c;
-                f3Var.s = this.d;
-                f3Var.v = dp3;
-            }
-        }
-        setMeasuredDimension(size, dp + 1);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return n4.l(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
-    }
-
-    public void setBlock(TL_iv.pageBlockDetails pageblockdetails) {
-        this.h = pageblockdetails;
-        float f10 = pageblockdetails.open ? 0.0f : 1.0f;
-        AnimatedArrowDrawable animatedArrowDrawable = this.f;
-        animatedArrowDrawable.setAnimationProgress(f10);
-        animatedArrowDrawable.setCallback(this);
-        requestLayout();
-    }
-
-    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
-    public final void unscheduleDrawable(Drawable drawable, Runnable runnable) {
-    }
-
-    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
-    public final void scheduleDrawable(Drawable drawable, Runnable runnable, long j10) {
     }
 }

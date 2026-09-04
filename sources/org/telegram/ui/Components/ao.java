@@ -1,38 +1,25 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ao implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ eo b;
-    public final /* synthetic */ TLRPC.Document c;
+public final class ao extends org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ co o;
 
-    public /* synthetic */ ao(eo eoVar, TLRPC.Document document, int i10) {
-        this.a = i10;
-        this.b = eoVar;
-        this.c = document;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ao(co coVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+        super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
+        this.o = coVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                co coVar = this.b.d;
-                if (coVar != null) {
-                    coVar.b(this.c);
-                    break;
-                }
-                break;
-            default:
-                co coVar2 = this.b.d;
-                if (coVar2 != null) {
-                    coVar2.b(this.c);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
+    public final void dismiss() {
+        d(true);
+        org.telegram.ui.co coVar = this.o.G;
+        if (coVar != null) {
+            coVar.getClass();
+            coVar.g8(false, true, 0.0f);
         }
     }
 }

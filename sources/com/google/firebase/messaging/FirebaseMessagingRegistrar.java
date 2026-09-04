@@ -1,37 +1,38 @@
 package com.google.firebase.messaging;
 
+import b2.i0;
 import com.google.firebase.components.ComponentRegistrar;
-import j7.m8;
 import java.util.Arrays;
 import java.util.List;
+import w7.o8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class FirebaseMessagingRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-fcm";
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(c9.c cVar) {
-        w8.g gVar = (w8.g) cVar.a(w8.g.class);
-        if (cVar.a(aa.a.class) == null) {
-            return new FirebaseMessaging(gVar, cVar.c(ja.b.class), cVar.c(z9.f.class), (ca.d) cVar.a(ca.d.class), (v2.f) cVar.a(v2.f.class), (y9.b) cVar.a(y9.b.class));
+    public static /* synthetic */ FirebaseMessaging lambda$getComponents$0(q9.b bVar) {
+        k9.h hVar = (k9.h) bVar.a(k9.h.class);
+        if (bVar.a(oa.a.class) == null) {
+            return new FirebaseMessaging(hVar, bVar.c(xa.b.class), bVar.c(na.f.class), (qa.d) bVar.a(qa.d.class), (i5.f) bVar.a(i5.f.class), (ma.b) bVar.a(ma.b.class));
         }
         throw new ClassCastException();
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<c9.b> getComponents() {
-        c9.a b10 = c9.b.b(FirebaseMessaging.class);
-        b10.a = LIBRARY_NAME;
-        b10.a(c9.m.b(w8.g.class));
-        b10.a(new c9.m(0, 0, aa.a.class));
-        b10.a(new c9.m(0, 1, ja.b.class));
-        b10.a(new c9.m(0, 1, z9.f.class));
-        b10.a(new c9.m(0, 0, v2.f.class));
-        b10.a(c9.m.b(ca.d.class));
-        b10.a(c9.m.b(y9.b.class));
-        b10.g = new af.a(19);
-        b10.c(1);
-        return Arrays.asList(b10.b(), m8.a(LIBRARY_NAME, "23.4.0"));
+    public List<q9.a> getComponents() {
+        i0 a2 = q9.a.a(FirebaseMessaging.class);
+        a2.d = LIBRARY_NAME;
+        a2.a(q9.j.a(k9.h.class));
+        a2.a(new q9.j(0, 0, oa.a.class));
+        a2.a(new q9.j(0, 1, xa.b.class));
+        a2.a(new q9.j(0, 1, na.f.class));
+        a2.a(new q9.j(0, 0, i5.f.class));
+        a2.a(q9.j.a(qa.d.class));
+        a2.a(q9.j.a(ma.b.class));
+        a2.f = new androidx.emoji2.text.w(25);
+        a2.c(1);
+        return Arrays.asList(a2.b(), o8.a(LIBRARY_NAME, "23.4.0"));
     }
 }

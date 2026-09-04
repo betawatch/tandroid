@@ -1,23 +1,48 @@
 package f5;
 
-import o4.t0;
+import com.google.android.gms.internal.vision.e2;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class s {
-    public final int a;
-    public final int[] b;
-    public final t0[] c;
-    public final int[] d;
-    public final int[][][] e;
-    public final t0 f;
+public final class s extends a {
+    public static final /* synthetic */ mg.n f;
+    public static final /* synthetic */ mg.n h;
+    public float e;
 
-    public s(int[] iArr, t0[] t0VarArr, int[] iArr2, int[][][] iArr3, t0 t0Var) {
-        this.b = iArr;
-        this.c = t0VarArr;
-        this.e = iArr3;
-        this.d = iArr2;
-        this.f = t0Var;
-        this.a = iArr.length;
+    static {
+        re.a aVar = new re.a(s.class, "SoundMediaHeaderBox.java");
+        f = aVar.e(aVar.d("getBalance", "com.coremedia.iso.boxes.SoundMediaHeaderBox", "", "", "float"));
+        h = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.SoundMediaHeaderBox", "", "", "java.lang.String"));
+    }
+
+    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        this.e = e5.b.g(byteBuffer);
+        e5.b.h(byteBuffer);
+    }
+
+    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        e5.b.o(byteBuffer, this.e);
+        e5.b.p(0, byteBuffer);
+    }
+
+    @Override // com.googlecode.mp4parser.a
+    public final long getContentSize() {
+        return 8L;
+    }
+
+    public final String toString() {
+        com.google.firebase.messaging.s b10 = re.a.b(h, this, this);
+        com.googlecode.mp4parser.g.a().getClass();
+        com.googlecode.mp4parser.g.b(b10);
+        StringBuilder sb2 = new StringBuilder("SoundMediaHeaderBox[balance=");
+        e2.q(re.a.b(f, this, this));
+        sb2.append(this.e);
+        sb2.append("]");
+        return sb2.toString();
     }
 }

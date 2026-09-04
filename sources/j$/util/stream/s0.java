@@ -20,13 +20,13 @@ public final class s0 extends d5 {
     }
 
     @Override // j$.util.stream.d5, j$.util.stream.j5
-    public void o(long j10) {
+    public void o(long j3) {
         switch (this.b) {
             case 5:
                 this.a.o(-1L);
                 break;
             default:
-                super.o(j10);
+                super.o(j3);
                 break;
         }
     }

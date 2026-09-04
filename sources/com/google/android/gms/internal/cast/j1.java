@@ -1,49 +1,73 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class j1 extends e5 {
-    private static final j1 zzb;
-    private int zzd;
+public final class j1 extends h5 {
+    private static final k5 zzb = new g1();
+    private static final j1 zzd;
     private int zze;
-    private boolean zzf;
-    private int zzg;
-    private boolean zzh;
-    private j5 zzi;
-    private j5 zzj;
-    private String zzk;
+    private n1 zzf;
+    private z2 zzg;
+    private m5 zzh = h6.d;
+    private j5 zzi = i5.d;
 
     static {
         j1 j1Var = new j1();
-        zzb = j1Var;
-        e5.e(j1.class, j1Var);
+        zzd = j1Var;
+        h5.e(j1.class, j1Var);
     }
 
-    public j1() {
-        e6 e6Var = e6.d;
-        this.zzi = e6Var;
-        this.zzj = e6Var;
-        this.zzk = "";
+    public static i1 l() {
+        return (i1) zzd.j();
     }
 
-    @Override // com.google.android.gms.internal.cast.e5
-    public final Object h(int i10, e5 e5Var) {
+    public static /* synthetic */ void m(j1 j1Var, n1 n1Var) {
+        j1Var.zzf = n1Var;
+        j1Var.zze |= 1;
+    }
+
+    public static void n(j1 j1Var, ArrayList arrayList) {
+        List list = j1Var.zzi;
+        if (!((w4) list).a) {
+            int size = list.size();
+            int i10 = size == 0 ? 10 : size + size;
+            i5 i5Var = (i5) list;
+            if (i10 < i5Var.c) {
+                throw new IllegalArgumentException();
+            }
+            j1Var.zzi = new i5(Arrays.copyOf(i5Var.b, i10), i5Var.c, true);
+        }
+        int size2 = arrayList.size();
+        int i11 = 0;
+        while (i11 < size2) {
+            Object obj = arrayList.get(i11);
+            i11++;
+            ((i5) j1Var.zzi).zzh(((f1) obj).a);
+        }
+    }
+
+    @Override // com.google.android.gms.internal.cast.h5
+    public final Object h(int i10, h5 h5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new f6(zzb, "\u0001\u0007\u0000\u0001\u0001\t\u0007\u0000\u0002\u0000\u0001᠌\u0000\u0002ဇ\u0001\u0003᠌\u0002\u0004ဇ\u0003\u0007\u001b\b\u001b\tဈ\u0004", new Object[]{"zzd", "zze", z.v, "zzf", "zzg", z.L, "zzh", "zzi", e3.class, "zzj", e3.class, "zzk"});
+            return new i6(zzd, "\u0001\u0004\u0000\u0001\u0001\u0004\u0004\u0000\u0002\u0000\u0001ဉ\u0000\u0002ဉ\u0001\u0003\u001b\u0004ࠞ", new Object[]{"zze", "zzf", "zzg", "zzh", x2.class, "zzi", b1.C});
         }
         if (i11 == 3) {
             return new j1();
         }
         if (i11 == 4) {
-            return new v0(zzb);
+            return new i1(zzd);
         }
         if (i11 != 5) {
             return null;
         }
-        return zzb;
+        return zzd;
     }
 }

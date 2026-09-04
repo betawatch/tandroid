@@ -20,7 +20,7 @@ public final class k extends f5 {
     }
 
     @Override // j$.util.stream.f5, j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         switch (this.b) {
             case 0:
                 this.c = false;
@@ -62,9 +62,9 @@ public final class k extends f5 {
                 Stream stream = (Stream) ((j$.time.t) ((q) this.d).t).apply((j$.time.t) obj);
                 if (stream != null) {
                     try {
-                        boolean z4 = this.c;
+                        boolean z10 = this.c;
                         j5 j5Var2 = this.a;
-                        if (!z4) {
+                        if (!z10) {
                             ((Stream) stream.sequential()).forEach(j5Var2);
                         } else {
                             Spliterator spliterator = ((Stream) stream.sequential()).spliterator();

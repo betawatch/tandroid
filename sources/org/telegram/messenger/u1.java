@@ -1,63 +1,89 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import org.telegram.messenger.SendMessagesHelper;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.ContactsController;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u1 implements RequestDelegate {
+public final /* synthetic */ class u1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
 
-    public /* synthetic */ u1(int i10, Object obj, Object obj2) {
+    public /* synthetic */ u1(int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = obj2;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((ContactsController) this.b).lambda$reloadContactsStatuses$59((SharedPreferences.Editor) this.c, tLObject, tL_error);
+                ContactsController.MyContentObserver.lambda$new$0();
                 break;
             case 1:
-                ((ContactsController) this.b).lambda$deleteAllContacts$9((Runnable) this.c, tLObject, tL_error);
+                MediaController.GalleryObserverExternal.lambda$onChange$0();
                 break;
             case 2:
-                ((ContactsController) this.b).lambda$addContact$52((TLRPC.User) this.c, tLObject, tL_error);
+                AppStartReceiver.lambda$onReceive$0();
                 break;
             case 3:
-                ((MediaDataController) this.b).lambda$removeRecentGif$24((TLRPC.TL_messages_saveGif) this.c, tLObject, tL_error);
+                FileLog.dumpANR();
                 break;
             case 4:
-                ((MediaDataController) this.b).lambda$saveToRingtones$204((TLRPC.Document) this.c, tLObject, tL_error);
+                ApplicationLoader.startPushService();
                 break;
             case 5:
-                ((MediaDataController) this.b).lambda$loadAttachMenuBots$4((Runnable) this.c, tLObject, tL_error);
+                ApplicationLoader.lambda$initPushServices$0();
                 break;
             case 6:
-                ((MessagesController) this.b).lambda$requestIsUserContactBlocked$495((ArrayList) this.c, tLObject, tL_error);
+                BotGuardHelper.lambda$openGuardBotWebApp$1();
                 break;
             case 7:
-                ((MessagesController) this.b).lambda$changeChatTitle$317((Runnable) this.c, tLObject, tL_error);
+                CodeHighlighting.lambda$prepare$2();
                 break;
             case 8:
-                ((SavedMessagesController) this.b).lambda$loadDialogs$3((ArrayList) this.c, tLObject, tL_error);
+                Emoji.lambda$static$0();
                 break;
             case 9:
-                ((SendMessagesHelper) this.b).lambda$sendReaction$35((Runnable) this.c, tLObject, tL_error);
+                KeepAliveJob.finishJobInternal();
                 break;
             case 10:
-                ((SendMessagesHelper) this.b).lambda$performSendDelayedMessage$50((SendMessagesHelper.DelayedMessage) this.c, tLObject, tL_error);
+                KeepAliveJob.lambda$startJob$0();
+                break;
+            case 11:
+                LocaleController.lambda$applyLanguage$9();
+                break;
+            case 12:
+                LocationController.lambda$setLastKnownLocation$10();
+                break;
+            case 13:
+                LocationSharingService.lambda$onCreate$0();
+                break;
+            case 14:
+                MediaDataController.lambda$cleanup$1();
+                break;
+            case 15:
+                org.telegram.ui.ActionBar.j6.E(false);
+                break;
+            case 16:
+                NotificationCenter.lambda$listen$3();
+                break;
+            case 17:
+                NotificationsController.lambda$dismissNotification$37();
+                break;
+            case 18:
+                SharedConfig.saveConfig();
+                break;
+            case 19:
+                SharedConfig.lambda$checkSdCard$0();
+                break;
+            case 20:
+                SharedConfig.lambda$checkSdCard$2();
+                break;
+            case 21:
+                SharedConfig.lambda$checkSaveToGalleryFiles$5();
                 break;
             default:
-                ((UserNameResolver) this.b).lambda$resolve$1((String) this.c, tLObject, tL_error);
+                SvgHelper.SvgDrawable.shiftRunnable = null;
                 break;
         }
     }

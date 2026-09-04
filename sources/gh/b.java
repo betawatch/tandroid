@@ -1,42 +1,103 @@
 package gh;
 
-import android.view.View;
-import android.view.WindowInsets;
-import e3.h;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.e20;
-import r0.m1;
-import r0.o;
+import android.graphics.Bitmap;
+import android.graphics.BitmapShader;
+import android.graphics.Canvas;
+import android.graphics.Matrix;
+import android.graphics.Paint;
+import android.graphics.Shader;
+import dh.f;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b implements e20, o {
-    public final /* synthetic */ f a;
+public final class b implements a {
+    public final Paint a;
+    public final Matrix b;
+    public BitmapShader c;
+    public Bitmap d;
+    public final Matrix e;
+    public Bitmap f;
+    public int h;
+    public int n;
 
-    public /* synthetic */ b(f fVar) {
-        this.a = fVar;
+    public b() {
+        Paint paint = new Paint(3);
+        this.a = paint;
+        this.b = new Matrix();
+        this.e = new Matrix();
+        paint.setFilterBitmap(true);
     }
 
-    @Override // r0.o
-    public m1 M0(View view, m1 m1Var) {
-        WindowInsets g10 = m1Var.g();
-        f fVar = this.a;
-        fVar.processLegacyContainerInsets(g10);
-        fVar.V.a(m1Var.a.f(8).d > 0, true);
-        return m1.b;
+    public final void a(Bitmap bitmap) {
+        if (this.d == bitmap) {
+            return;
+        }
+        this.d = bitmap;
+        Paint paint = this.a;
+        paint.setShader(null);
+        this.c = null;
+        if (bitmap != null) {
+            Shader.TileMode tileMode = Shader.TileMode.CLAMP;
+            BitmapShader bitmapShader = new BitmapShader(bitmap, tileMode, tileMode);
+            this.c = bitmapShader;
+            paint.setShader(bitmapShader);
+            c();
+        }
     }
 
-    @Override // org.telegram.ui.Components.e20
-    public void a(int i10) {
-        int min = Math.min(i10, AndroidUtilities.dp(144.0f));
-        if (i10 > 0) {
-            min -= AndroidUtilities.dp(8.0f);
+    public final void b(int i10, int i11) {
+        if (this.h == i10 && this.n == i11) {
+            return;
         }
-        f fVar = this.a;
-        if (fVar.i0 != min) {
-            fVar.i0 = min;
-            fVar.U.a(min);
-            fVar.e0.postOnAnimation(new h(fVar, 15));
+        this.h = i10;
+        this.n = i11;
+        c();
+    }
+
+    public final void c() {
+        Bitmap bitmap = this.d;
+        Matrix matrix = this.b;
+        if (bitmap == null) {
+            matrix.reset();
+            return;
         }
+        int width = bitmap.getWidth();
+        int height = this.d.getHeight();
+        int i10 = this.h;
+        int i11 = this.n;
+        matrix.reset();
+        if (width <= 0 || height <= 0 || i10 <= 0 || i11 <= 0) {
+            return;
+        }
+        float f7 = i10;
+        float f10 = width;
+        float f11 = i11;
+        float f12 = height;
+        float max = Math.max(f7 / f10, f11 / f12);
+        matrix.setScale(max, max);
+        matrix.postTranslate((f7 - (f10 * max)) * 0.5f, ((f11 - (f12 * max)) * 0.5f) + 0);
+    }
+
+    @Override // gh.a
+    public final dh.d k() {
+        return new f(this);
+    }
+
+    @Override // gh.a
+    public final void v(Canvas canvas, float f7, float f10, float f11, float f12) {
+        Bitmap bitmap = this.d;
+        if (bitmap == null || bitmap.isRecycled() || this.c == null) {
+            return;
+        }
+        Matrix matrix = this.e;
+        Matrix matrix2 = this.b;
+        matrix.set(matrix2);
+        matrix.postTranslate(f7, f10);
+        this.c.setLocalMatrix(matrix2);
+        canvas.drawRect(f7, f10, f11, f12, this.a);
+    }
+
+    @Override // gh.a
+    public final /* synthetic */ void e() {
     }
 }

@@ -1,32 +1,21 @@
 package m;
 
-import androidx.appcompat.widget.Toolbar;
+import android.view.ViewGroup;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class h3 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Toolbar b;
+public final class h3 extends ViewGroup.MarginLayoutParams {
+    public int a;
+    public int b;
 
-    public /* synthetic */ h3(Toolbar toolbar, int i10) {
-        this.a = i10;
-        this.b = toolbar;
+    public h3(h3 h3Var) {
+        super((ViewGroup.MarginLayoutParams) h3Var);
+        this.a = 0;
+        this.a = h3Var.a;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                j3 j3Var = this.b.b0;
-                l.m mVar = j3Var == null ? null : j3Var.b;
-                if (mVar != null) {
-                    mVar.collapseActionView();
-                    break;
-                }
-                break;
-            default:
-                this.b.m();
-                break;
-        }
+    public h3(ViewGroup.LayoutParams layoutParams) {
+        super(layoutParams);
+        this.a = 0;
     }
 }

@@ -1,58 +1,58 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import android.graphics.Rect;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class h1 extends f2.u0 {
-    public final /* synthetic */ n1 a;
+public final class h1 extends s4.h0 {
+    public final /* synthetic */ k1 c;
 
-    public h1(n1 n1Var) {
-        this.a = n1Var;
+    public h1(k1 k1Var) {
+        this.c = k1Var;
     }
 
-    @Override // f2.u0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.i1 i1Var) {
-        int i10 = 0;
-        rect.bottom = 0;
-        boolean z4 = view instanceof g2;
-        n1 n1Var = this.a;
-        MessageObject.GroupedMessagePosition groupedMessagePosition = z4 ? (MessageObject.GroupedMessagePosition) n1Var.v.b.get(((g2) view).K) : view instanceof b3 ? (MessageObject.GroupedMessagePosition) n1Var.v.b.get(((b3) view).I) : null;
-        if (groupedMessagePosition == null || groupedMessagePosition.siblingHeights == null) {
-            return;
+    @Override // s4.h0
+    public final int h() {
+        TL_iv.pageBlockCollage pageblockcollage = this.c.s;
+        if (pageblockcollage == null) {
+            return 0;
         }
-        Point point = AndroidUtilities.displaySize;
-        float max = Math.max(point.x, point.y) * 0.5f;
-        int i11 = 0;
-        int i12 = 0;
-        while (true) {
-            if (i11 >= groupedMessagePosition.siblingHeights.length) {
-                break;
-            }
-            i12 += (int) Math.ceil(r3[i11] * max);
-            i11++;
+        return pageblockcollage.items.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        ArrayList<TL_iv.PageBlock> arrayList = this.c.s.items;
+        return arrayList.get((arrayList.size() - i10) - 1) instanceof TL_iv.pageBlockPhoto ? 0 : 1;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        k1 k1Var = this.c;
+        j1 j1Var = k1Var.v;
+        ArrayList<TL_iv.PageBlock> arrayList = k1Var.s.items;
+        TL_iv.PageBlock pageBlock = arrayList.get((arrayList.size() - i10) - 1);
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        if (i11 == 0) {
+            d2 d2Var = (d2) view;
+            d2Var.R = (MessageObject.GroupedMessagePosition) j1Var.b.get(pageBlock);
+            d2Var.a((TL_iv.pageBlockPhoto) pageBlock, k1Var.w.E.cached_page, false, true);
+        } else {
+            x2 x2Var = (x2) view;
+            x2Var.T = (MessageObject.GroupedMessagePosition) j1Var.b.get(pageBlock);
+            TL_iv.pageBlockVideo pageblockvideo = (TL_iv.pageBlockVideo) pageBlock;
+            x2Var.b(pageblockvideo, (y2) k1Var.x.y.f(pageblockvideo.video_id), false, true);
         }
-        int dp2 = (AndroidUtilities.dp2(11.0f) * (groupedMessagePosition.maxY - groupedMessagePosition.minY)) + i12;
-        int size = n1Var.v.a.size();
-        while (true) {
-            if (i10 < size) {
-                MessageObject.GroupedMessagePosition groupedMessagePosition2 = (MessageObject.GroupedMessagePosition) n1Var.v.a.get(i10);
-                byte b10 = groupedMessagePosition2.minY;
-                byte b11 = groupedMessagePosition.minY;
-                if (b10 == b11 && ((groupedMessagePosition2.minX != groupedMessagePosition.minX || groupedMessagePosition2.maxX != groupedMessagePosition.maxX || b10 != b11 || groupedMessagePosition2.maxY != groupedMessagePosition.maxY) && b10 == b11)) {
-                    dp2 = org.telegram.messenger.y3.z(4.0f, (int) Math.ceil(max * groupedMessagePosition2.ph), dp2);
-                    break;
-                }
-                i10++;
-            } else {
-                break;
-            }
-        }
-        rect.bottom = -dp2;
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        k1 k1Var = this.c;
+        return new org.telegram.ui.Components.vk0(i10 != 0 ? new x2(k1Var.getContext(), k1Var.x, k1Var.w, 2) : new d2(k1Var.getContext(), k1Var.x, k1Var.w, 2));
     }
 }

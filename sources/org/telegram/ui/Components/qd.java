@@ -1,44 +1,73 @@
 package org.telegram.ui.Components;
 
-import android.view.KeyEvent;
+import android.animation.ValueAnimator;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qd implements rh.i0, org.telegram.ui.ActionBar.c2, st, org.telegram.ui.ActionBar.n1 {
-    public final /* synthetic */ ChatActivityEnterView a;
+public final /* synthetic */ class qd implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ qd(ChatActivityEnterView chatActivityEnterView) {
-        this.a = chatActivityEnterView;
+    public /* synthetic */ qd(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.a = i10;
+        this.b = chatActivityEnterView;
     }
 
-    @Override // org.telegram.ui.Components.st
-    public void J() {
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.B0.invalidateEffects();
-        eg egVar = chatActivityEnterView.V2;
-        if (egVar != null) {
-            egVar.A1(chatActivityEnterView.B0.getTextToUse());
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        int i11 = ChatActivityEnterView.j5;
-        ChatActivityEnterView chatActivityEnterView = this.a;
-        chatActivityEnterView.O();
-        ff ffVar = chatActivityEnterView.B0;
-        if (ffVar != null) {
-            ffVar.setText("");
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.n1
-    public void n(KeyEvent keyEvent) {
-        ChatActivityEnterView chatActivityEnterView;
-        bf bfVar;
-        int i10 = ChatActivityEnterView.j5;
-        if (keyEvent.getKeyCode() == 4 && keyEvent.getRepeatCount() == 0 && (bfVar = (chatActivityEnterView = this.a).K0) != null && bfVar.isShowing()) {
-            chatActivityEnterView.K0.dismiss();
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        int i10 = this.a;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        switch (i10) {
+            case 0:
+                af afVar = chatActivityEnterView.I1;
+                if (afVar != null) {
+                    afVar.setTranslationX(afVar.a);
+                    break;
+                }
+                break;
+            case 1:
+                af afVar2 = chatActivityEnterView.I1;
+                if (afVar2 != null) {
+                    afVar2.setTranslationX(afVar2.a);
+                    break;
+                }
+                break;
+            case 2:
+                chatActivityEnterView.l1.invalidate();
+                break;
+            case 3:
+                chatActivityEnterView.l1.invalidate();
+                break;
+            case 4:
+                int i11 = ChatActivityEnterView.m5;
+                chatActivityEnterView.w0 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                eg egVar = chatActivityEnterView.U0;
+                if (egVar != null) {
+                    egVar.a0();
+                    break;
+                }
+                break;
+            case 5:
+                chatActivityEnterView.I1.setTranslationX(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                break;
+            case 6:
+                int i12 = ChatActivityEnterView.m5;
+                chatActivityEnterView.M1.setTransformToSeekbar(((Float) valueAnimator.getAnimatedValue()).floatValue());
+                if (!chatActivityEnterView.c1) {
+                    chatActivityEnterView.h1.setAlpha(chatActivityEnterView.M1.getTransformToSeekbarProgressStep3());
+                    chatActivityEnterView.h1.invalidate();
+                }
+                chatActivityEnterView.x0();
+                break;
+            default:
+                int i13 = ChatActivityEnterView.m5;
+                chatActivityEnterView.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                chatActivityEnterView.v1.setScaleX(AndroidUtilities.lerp(0.6f, 1.0f, floatValue));
+                chatActivityEnterView.v1.setScaleY(AndroidUtilities.lerp(0.6f, 1.0f, floatValue));
+                chatActivityEnterView.v1.setAlpha(floatValue);
+                break;
         }
     }
 }

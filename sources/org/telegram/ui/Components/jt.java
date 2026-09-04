@@ -1,19 +1,11 @@
 package org.telegram.ui.Components;
 
-import android.widget.EdgeEffect;
-import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class jt extends f2.s0 {
-    public final ht[] a = new ht[4];
-    public final ArrayList b = new ArrayList();
-
-    @Override // f2.s0
-    public final EdgeEffect a(RecyclerView recyclerView, int i10) {
-        ht htVar = new ht(recyclerView, i10, new gt(this, 0));
-        this.a[i10] = htVar;
-        return htVar;
-    }
+public abstract class jt {
+    public static final pr a = new pr(0.39d, 0.575d, 0.565d, 1.0d);
+    public static final pr b = new pr(0.445d, 0.05d, 0.55d, 0.95d);
+    public static final pr c = new pr(0.55d, 0.085d, 0.68d, 0.53d);
+    public static final pr d = new pr(0.25d, 0.46d, 0.45d, 0.94d);
+    public static final pr e = new pr(0.455d, 0.03d, 0.515d, 0.955d);
 }

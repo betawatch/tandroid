@@ -1,1125 +1,1272 @@
 package e2;
 
-import android.content.Context;
-import android.content.pm.ApplicationInfo;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
-import android.os.Build;
-import android.util.Log;
-import c2.a1;
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.BitSet;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.TreeMap;
-import java.util.concurrent.Executor;
-import java.util.zip.DataFormatException;
-import java.util.zip.Deflater;
-import java.util.zip.DeflaterOutputStream;
-import java.util.zip.Inflater;
-import kf.k0;
+import android.util.Pair;
+import androidx.car.app.navigation.model.Maneuver;
+import b2.r0;
+import com.google.android.gms.internal.vision.e2;
+import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class e {
-    public static final ab.a a = new ab.a(5);
-    public static final byte[] b = {112, 114, 111, 0};
-    public static final byte[] c = {112, 114, 109, 0};
-    public static final byte[] d = {48, 49, 53, 0};
-    public static final byte[] e = {48, 49, 48, 0};
-    public static final byte[] f = {48, 48, 57, 0};
-    public static final byte[] g = {48, 48, 53, 0};
-    public static final byte[] h = {48, 48, 49, 0};
-    public static final byte[] i = {48, 48, 49, 0};
-    public static final byte[] j = {48, 48, 50, 0};
+    public static final byte[] a = {0, 0, 0, 1};
+    public static final String[] b = {"", "A", "B", "C"};
+    public static final Pattern c = Pattern.compile("^\\D?(\\d+)$");
 
-    public static byte[] a(byte[] bArr) {
-        Deflater deflater = new Deflater(1);
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
-        try {
-            DeflaterOutputStream deflaterOutputStream = new DeflaterOutputStream(byteArrayOutputStream, deflater);
-            try {
-                deflaterOutputStream.write(bArr);
-                deflaterOutputStream.close();
-                deflater.end();
-                return byteArrayOutputStream.toByteArray();
-            } finally {
-            }
-        } catch (Throwable th2) {
-            deflater.end();
-            throw th2;
+    public static String a(int i10, int i11, int i12, int i13, boolean z10, int[] iArr) {
+        Object[] objArr = {b[i10], Integer.valueOf(i11), Integer.valueOf(i12), Character.valueOf(z10 ? 'H' : 'L'), Integer.valueOf(i13)};
+        String str = d0.a;
+        StringBuilder sb2 = new StringBuilder(String.format(Locale.US, "hvc1.%s%d.%X.%c%d", objArr));
+        int length = iArr.length;
+        while (length > 0 && iArr[length - 1] == 0) {
+            length--;
         }
+        for (int i14 = 0; i14 < length; i14++) {
+            sb2.append(String.format(".%02X", Integer.valueOf(iArr[i14])));
+        }
+        return sb2.toString();
     }
 
-    public static byte[] b(b[] bVarArr, byte[] bArr) {
-        int i10 = 0;
-        for (b bVar : bVarArr) {
-            i10 += ((((bVar.g * 2) + 7) & (-8)) / 8) + (bVar.e * 2) + d(bVar.a, bVar.b, bArr).getBytes(StandardCharsets.UTF_8).length + 16 + bVar.f;
-        }
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream(i10);
-        if (Arrays.equals(bArr, f)) {
-            for (b bVar2 : bVarArr) {
-                p(byteArrayOutputStream, bVar2, d(bVar2.a, bVar2.b, bArr));
-                r(byteArrayOutputStream, bVar2);
-                int[] iArr = bVar2.h;
-                int length = iArr.length;
-                int i11 = 0;
-                int i12 = 0;
-                while (i11 < length) {
-                    int i13 = iArr[i11];
-                    u(byteArrayOutputStream, i13 - i12);
-                    i11++;
-                    i12 = i13;
-                }
-                q(byteArrayOutputStream, bVar2);
-            }
-        } else {
-            for (b bVar3 : bVarArr) {
-                p(byteArrayOutputStream, bVar3, d(bVar3.a, bVar3.b, bArr));
-            }
-            for (b bVar4 : bVarArr) {
-                r(byteArrayOutputStream, bVar4);
-                int[] iArr2 = bVar4.h;
-                int length2 = iArr2.length;
-                int i14 = 0;
-                int i15 = 0;
-                while (i14 < length2) {
-                    int i16 = iArr2[i14];
-                    u(byteArrayOutputStream, i16 - i15);
-                    i14++;
-                    i15 = i16;
-                }
-                q(byteArrayOutputStream, bVar4);
-            }
-        }
-        if (byteArrayOutputStream.size() == i10) {
-            return byteArrayOutputStream.toByteArray();
-        }
-        throw new IllegalStateException("The bytes saved do not match expectation. actual=" + byteArrayOutputStream.size() + " expected=" + i10);
-    }
-
-    public static boolean c(File file) {
-        if (!file.isDirectory()) {
-            file.delete();
-            return true;
-        }
-        File[] listFiles = file.listFiles();
-        if (listFiles == null) {
-            return false;
-        }
-        boolean z4 = true;
-        for (File file2 : listFiles) {
-            z4 = c(file2) && z4;
-        }
-        return z4;
-    }
-
-    public static String d(String str, String str2, byte[] bArr) {
-        byte[] bArr2 = h;
-        boolean equals = Arrays.equals(bArr, bArr2);
-        byte[] bArr3 = g;
-        String str3 = (equals || Arrays.equals(bArr, bArr3)) ? ":" : "!";
-        if (str.length() <= 0) {
-            if ("!".equals(str3)) {
-                return str2.replace(":", "!");
-            }
-            if (":".equals(str3)) {
-                return str2.replace("!", ":");
-            }
-        } else {
-            if (str2.equals("classes.dex")) {
-                return str;
-            }
-            if (str2.contains("!") || str2.contains(":")) {
-                if ("!".equals(str3)) {
-                    return str2.replace(":", "!");
-                }
-                if (":".equals(str3)) {
-                    return str2.replace("!", ":");
-                }
-            } else if (!str2.endsWith(".apk")) {
-                return android.support.v4.media.a.r(c.l(str), (Arrays.equals(bArr, bArr2) || Arrays.equals(bArr, bArr3)) ? ":" : "!", str2);
-            }
-        }
-        return str2;
-    }
-
-    public static void e(PackageInfo packageInfo, File file) {
-        try {
-            DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(new File(file, "profileinstaller_profileWrittenFor_lastUpdateTime.dat")));
-            try {
-                dataOutputStream.writeLong(packageInfo.lastUpdateTime);
-                dataOutputStream.close();
-            } finally {
-            }
-        } catch (IOException unused) {
-        }
-    }
-
-    public static byte[] f(int i10, InputStream inputStream) {
-        byte[] bArr = new byte[i10];
-        int i11 = 0;
-        while (i11 < i10) {
-            int read = inputStream.read(bArr, i11, i10 - i11);
-            if (read < 0) {
-                throw new IllegalStateException(k0.j(i10, "Not enough bytes to read: "));
-            }
-            i11 += read;
-        }
-        return bArr;
-    }
-
-    public static int[] g(ByteArrayInputStream byteArrayInputStream, int i10) {
-        int[] iArr = new int[i10];
-        int i11 = 0;
-        for (int i12 = 0; i12 < i10; i12++) {
-            i11 += (int) m(2, byteArrayInputStream);
-            iArr[i12] = i11;
-        }
-        return iArr;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x005d, code lost:
-    
-        if (r0.finished() == false) goto L27;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0062, code lost:
-    
-        return r1;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:31:0x006a, code lost:
-    
-        throw new java.lang.IllegalStateException("Inflater did not finish");
-     */
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x015f  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x0165  */
+    /* JADX WARN: Removed duplicated region for block: B:26:0x0236  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x023c  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static byte[] h(FileInputStream fileInputStream, int i10, int i11) {
-        Inflater inflater = new Inflater();
-        try {
-            byte[] bArr = new byte[i11];
-            byte[] bArr2 = new byte[2048];
-            int i12 = 0;
-            int i13 = 0;
-            while (!inflater.finished() && !inflater.needsDictionary() && i12 < i10) {
-                int read = fileInputStream.read(bArr2);
-                if (read < 0) {
-                    throw new IllegalStateException("Invalid zip data. Stream ended after $totalBytesRead bytes. Expected " + i10 + " bytes");
-                }
-                inflater.setInput(bArr2, 0, read);
-                try {
-                    i13 += inflater.inflate(bArr, i13, i11 - i13);
-                    i12 += read;
-                } catch (DataFormatException e6) {
-                    throw new IllegalStateException(e6.getMessage());
-                }
-            }
-            throw new IllegalStateException("Didn't read enough bytes during decompression. expected=" + i10 + " actual=" + i12);
-        } finally {
-            inflater.end();
-        }
-    }
-
-    public static b[] i(FileInputStream fileInputStream, byte[] bArr, byte[] bArr2, b[] bVarArr) {
-        byte[] bArr3 = i;
-        if (!Arrays.equals(bArr, bArr3)) {
-            if (!Arrays.equals(bArr, j)) {
-                throw new IllegalStateException("Unsupported meta version");
-            }
-            int m9 = (int) m(2, fileInputStream);
-            byte[] h9 = h(fileInputStream, (int) m(4, fileInputStream), (int) m(4, fileInputStream));
-            if (fileInputStream.read() > 0) {
-                throw new IllegalStateException("Content found after the end of file");
-            }
-            ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(h9);
-            try {
-                b[] k10 = k(byteArrayInputStream, bArr2, m9, bVarArr);
-                byteArrayInputStream.close();
-                return k10;
-            } catch (Throwable th2) {
-                try {
-                    byteArrayInputStream.close();
-                } catch (Throwable th3) {
-                    th2.addSuppressed(th3);
-                }
-                throw th2;
-            }
-        }
-        if (Arrays.equals(d, bArr2)) {
-            throw new IllegalStateException("Requires new Baseline Profile Metadata. Please rebuild the APK with Android Gradle Plugin 7.2 Canary 7 or higher");
-        }
-        if (!Arrays.equals(bArr, bArr3)) {
-            throw new IllegalStateException("Unsupported meta version");
-        }
-        int m10 = (int) m(1, fileInputStream);
-        byte[] h10 = h(fileInputStream, (int) m(4, fileInputStream), (int) m(4, fileInputStream));
-        if (fileInputStream.read() > 0) {
-            throw new IllegalStateException("Content found after the end of file");
-        }
-        ByteArrayInputStream byteArrayInputStream2 = new ByteArrayInputStream(h10);
-        try {
-            b[] j10 = j(byteArrayInputStream2, m10, bVarArr);
-            byteArrayInputStream2.close();
-            return j10;
-        } catch (Throwable th4) {
-            try {
-                byteArrayInputStream2.close();
-            } catch (Throwable th5) {
-                th4.addSuppressed(th5);
-            }
-            throw th4;
-        }
-    }
-
-    public static b[] j(ByteArrayInputStream byteArrayInputStream, int i10, b[] bVarArr) {
-        if (byteArrayInputStream.available() == 0) {
-            return new b[0];
-        }
-        if (i10 != bVarArr.length) {
-            throw new IllegalStateException("Mismatched number of dex files found in metadata");
-        }
-        String[] strArr = new String[i10];
-        int[] iArr = new int[i10];
-        for (int i11 = 0; i11 < i10; i11++) {
-            int m9 = (int) m(2, byteArrayInputStream);
-            iArr[i11] = (int) m(2, byteArrayInputStream);
-            strArr[i11] = new String(f(m9, byteArrayInputStream), StandardCharsets.UTF_8);
-        }
-        for (int i12 = 0; i12 < i10; i12++) {
-            b bVar = bVarArr[i12];
-            if (!bVar.b.equals(strArr[i12])) {
-                throw new IllegalStateException("Order of dexfiles in metadata did not match baseline");
-            }
-            int i13 = iArr[i12];
-            bVar.e = i13;
-            bVar.h = g(byteArrayInputStream, i13);
-        }
-        return bVarArr;
-    }
-
-    public static b[] k(ByteArrayInputStream byteArrayInputStream, byte[] bArr, int i10, b[] bVarArr) {
-        if (byteArrayInputStream.available() == 0) {
-            return new b[0];
-        }
-        if (i10 != bVarArr.length) {
-            throw new IllegalStateException("Mismatched number of dex files found in metadata");
-        }
-        for (int i11 = 0; i11 < i10; i11++) {
-            m(2, byteArrayInputStream);
-            String str = new String(f((int) m(2, byteArrayInputStream), byteArrayInputStream), StandardCharsets.UTF_8);
-            long m9 = m(4, byteArrayInputStream);
-            int m10 = (int) m(2, byteArrayInputStream);
-            b bVar = null;
-            if (bVarArr.length > 0) {
-                int indexOf = str.indexOf("!");
-                if (indexOf < 0) {
-                    indexOf = str.indexOf(":");
-                }
-                String substring = indexOf > 0 ? str.substring(indexOf + 1) : str;
-                int i12 = 0;
-                while (true) {
-                    if (i12 >= bVarArr.length) {
-                        break;
-                    }
-                    if (bVarArr[i12].b.equals(substring)) {
-                        bVar = bVarArr[i12];
-                        break;
-                    }
-                    i12++;
-                }
-            }
-            if (bVar == null) {
-                throw new IllegalStateException("Missing profile key: ".concat(str));
-            }
-            bVar.d = m9;
-            int[] g10 = g(byteArrayInputStream, m10);
-            if (Arrays.equals(bArr, h)) {
-                bVar.e = m10;
-                bVar.h = g10;
-            }
-        }
-        return bVarArr;
-    }
-
-    public static b[] l(FileInputStream fileInputStream, byte[] bArr, String str) {
-        if (!Arrays.equals(bArr, e)) {
-            throw new IllegalStateException("Unsupported version");
-        }
-        int m9 = (int) m(1, fileInputStream);
-        byte[] h9 = h(fileInputStream, (int) m(4, fileInputStream), (int) m(4, fileInputStream));
-        if (fileInputStream.read() > 0) {
-            throw new IllegalStateException("Content found after the end of file");
-        }
-        ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(h9);
-        try {
-            b[] n10 = n(byteArrayInputStream, str, m9);
-            byteArrayInputStream.close();
-            return n10;
-        } catch (Throwable th2) {
-            try {
-                byteArrayInputStream.close();
-            } catch (Throwable th3) {
-                th2.addSuppressed(th3);
-            }
-            throw th2;
-        }
-    }
-
-    public static long m(int i10, InputStream inputStream) {
-        byte[] f10 = f(i10, inputStream);
-        long j10 = 0;
-        for (int i11 = 0; i11 < i10; i11++) {
-            j10 += (f10[i11] & 255) << (i11 * 8);
-        }
-        return j10;
-    }
-
-    public static b[] n(ByteArrayInputStream byteArrayInputStream, String str, int i10) {
-        if (byteArrayInputStream.available() == 0) {
-            return new b[0];
-        }
-        b[] bVarArr = new b[i10];
-        for (int i11 = 0; i11 < i10; i11++) {
-            int m9 = (int) m(2, byteArrayInputStream);
-            int m10 = (int) m(2, byteArrayInputStream);
-            bVarArr[i11] = new b(str, new String(f(m9, byteArrayInputStream), StandardCharsets.UTF_8), m(4, byteArrayInputStream), m10, (int) m(4, byteArrayInputStream), (int) m(4, byteArrayInputStream), new int[m10], new TreeMap());
-        }
-        int i12 = 0;
-        while (i12 < i10) {
-            b bVar = bVarArr[i12];
-            int available = byteArrayInputStream.available();
-            int i13 = bVar.f;
-            int i14 = bVar.g;
-            TreeMap treeMap = bVar.i;
-            int i15 = available - i13;
-            int i16 = 0;
-            while (byteArrayInputStream.available() > i15) {
-                i16 += (int) m(2, byteArrayInputStream);
-                treeMap.put(Integer.valueOf(i16), 1);
-                int m11 = (int) m(2, byteArrayInputStream);
-                while (m11 > 0) {
-                    m(2, byteArrayInputStream);
-                    int m12 = (int) m(1, byteArrayInputStream);
-                    if (m12 != 6 && m12 != 7) {
-                        while (m12 > 0) {
-                            m(1, byteArrayInputStream);
-                            int i17 = i12;
-                            for (int m13 = (int) m(1, byteArrayInputStream); m13 > 0; m13--) {
-                                m(2, byteArrayInputStream);
-                            }
-                            m12--;
-                            i12 = i17;
-                        }
-                    }
-                    m11--;
-                    i12 = i12;
-                }
-            }
-            int i18 = i12;
-            if (byteArrayInputStream.available() != i15) {
-                throw new IllegalStateException("Read too much data during profile line parse");
-            }
-            bVar.h = g(byteArrayInputStream, bVar.e);
-            BitSet valueOf = BitSet.valueOf(f((((i14 * 2) + 7) & (-8)) / 8, byteArrayInputStream));
-            for (int i19 = 0; i19 < i14; i19++) {
-                int i20 = valueOf.get(i19) ? 2 : 0;
-                if (valueOf.get(i19 + i14)) {
-                    i20 |= 4;
-                }
-                if (i20 != 0) {
-                    Integer num = (Integer) treeMap.get(Integer.valueOf(i19));
-                    if (num == null) {
-                        num = 0;
-                    }
-                    treeMap.put(Integer.valueOf(i19), Integer.valueOf(i20 | num.intValue()));
-                }
-            }
-            i12 = i18 + 1;
-        }
-        return bVarArr;
-    }
-
-    /* JADX WARN: Finally extract failed */
-    public static boolean o(ByteArrayOutputStream byteArrayOutputStream, byte[] bArr, b[] bVarArr) {
-        long j10;
-        ArrayList arrayList;
-        int length;
-        byte[] bArr2 = d;
-        if (!Arrays.equals(bArr, bArr2)) {
-            byte[] bArr3 = e;
-            if (Arrays.equals(bArr, bArr3)) {
-                byte[] b10 = b(bVarArr, bArr3);
-                t(byteArrayOutputStream, bVarArr.length, 1);
-                t(byteArrayOutputStream, b10.length, 4);
-                byte[] a2 = a(b10);
-                t(byteArrayOutputStream, a2.length, 4);
-                byteArrayOutputStream.write(a2);
-                return true;
-            }
-            byte[] bArr4 = g;
-            if (Arrays.equals(bArr, bArr4)) {
-                t(byteArrayOutputStream, bVarArr.length, 1);
-                for (b bVar : bVarArr) {
-                    int size = bVar.i.size() * 4;
-                    String d10 = d(bVar.a, bVar.b, bArr4);
-                    Charset charset = StandardCharsets.UTF_8;
-                    u(byteArrayOutputStream, d10.getBytes(charset).length);
-                    u(byteArrayOutputStream, bVar.h.length);
-                    t(byteArrayOutputStream, size, 4);
-                    t(byteArrayOutputStream, bVar.c, 4);
-                    byteArrayOutputStream.write(d10.getBytes(charset));
-                    Iterator it = bVar.i.keySet().iterator();
-                    while (it.hasNext()) {
-                        u(byteArrayOutputStream, ((Integer) it.next()).intValue());
-                        u(byteArrayOutputStream, 0);
-                    }
-                    for (int i10 : bVar.h) {
-                        u(byteArrayOutputStream, i10);
-                    }
-                }
-                return true;
-            }
-            byte[] bArr5 = f;
-            if (Arrays.equals(bArr, bArr5)) {
-                byte[] b11 = b(bVarArr, bArr5);
-                t(byteArrayOutputStream, bVarArr.length, 1);
-                t(byteArrayOutputStream, b11.length, 4);
-                byte[] a10 = a(b11);
-                t(byteArrayOutputStream, a10.length, 4);
-                byteArrayOutputStream.write(a10);
-                return true;
-            }
-            byte[] bArr6 = h;
-            if (!Arrays.equals(bArr, bArr6)) {
-                return false;
-            }
-            u(byteArrayOutputStream, bVarArr.length);
-            for (b bVar2 : bVarArr) {
-                String str = bVar2.a;
-                TreeMap treeMap = bVar2.i;
-                String d11 = d(str, bVar2.b, bArr6);
-                Charset charset2 = StandardCharsets.UTF_8;
-                u(byteArrayOutputStream, d11.getBytes(charset2).length);
-                u(byteArrayOutputStream, treeMap.size());
-                u(byteArrayOutputStream, bVar2.h.length);
-                t(byteArrayOutputStream, bVar2.c, 4);
-                byteArrayOutputStream.write(d11.getBytes(charset2));
-                Iterator it2 = treeMap.keySet().iterator();
-                while (it2.hasNext()) {
-                    u(byteArrayOutputStream, ((Integer) it2.next()).intValue());
-                }
-                for (int i11 : bVar2.h) {
-                    u(byteArrayOutputStream, i11);
-                }
-            }
-            return true;
-        }
-        ArrayList arrayList2 = new ArrayList(3);
-        ArrayList arrayList3 = new ArrayList(3);
-        ByteArrayOutputStream byteArrayOutputStream2 = new ByteArrayOutputStream();
-        try {
-            u(byteArrayOutputStream2, bVarArr.length);
-            int i12 = 2;
-            for (b bVar3 : bVarArr) {
-                t(byteArrayOutputStream2, bVar3.c, 4);
-                t(byteArrayOutputStream2, bVar3.d, 4);
-                t(byteArrayOutputStream2, bVar3.g, 4);
-                String d12 = d(bVar3.a, bVar3.b, bArr2);
-                Charset charset3 = StandardCharsets.UTF_8;
-                int length2 = d12.getBytes(charset3).length;
-                u(byteArrayOutputStream2, length2);
-                i12 = i12 + 14 + length2;
-                byteArrayOutputStream2.write(d12.getBytes(charset3));
-            }
-            byte[] byteArray = byteArrayOutputStream2.toByteArray();
-            if (i12 != byteArray.length) {
-                throw new IllegalStateException("Expected size " + i12 + ", does not match actual size " + byteArray.length);
-            }
-            l lVar = new l(1, false, byteArray);
-            byteArrayOutputStream2.close();
-            arrayList2.add(lVar);
-            ByteArrayOutputStream byteArrayOutputStream3 = new ByteArrayOutputStream();
-            int i13 = 0;
-            for (int i14 = 0; i14 < bVarArr.length; i14++) {
-                try {
-                    b bVar4 = bVarArr[i14];
-                    u(byteArrayOutputStream3, i14);
-                    u(byteArrayOutputStream3, bVar4.e);
-                    i13 = i13 + 4 + (bVar4.e * 2);
-                    int[] iArr = bVar4.h;
-                    int length3 = iArr.length;
-                    int i15 = 0;
-                    int i16 = 0;
-                    while (i15 < length3) {
-                        int i17 = iArr[i15];
-                        u(byteArrayOutputStream3, i17 - i16);
-                        i15++;
-                        i16 = i17;
-                    }
-                } catch (Throwable th2) {
-                }
-            }
-            byte[] byteArray2 = byteArrayOutputStream3.toByteArray();
-            if (i13 != byteArray2.length) {
-                throw new IllegalStateException("Expected size " + i13 + ", does not match actual size " + byteArray2.length);
-            }
-            l lVar2 = new l(3, true, byteArray2);
-            byteArrayOutputStream3.close();
-            arrayList2.add(lVar2);
-            byteArrayOutputStream3 = new ByteArrayOutputStream();
-            int i18 = 0;
-            int i19 = 0;
-            while (i18 < bVarArr.length) {
-                try {
-                    b bVar5 = bVarArr[i18];
-                    Iterator it3 = bVar5.i.entrySet().iterator();
-                    int i20 = 0;
-                    while (it3.hasNext()) {
-                        i20 |= ((Integer) ((Map.Entry) it3.next()).getValue()).intValue();
-                    }
-                    ByteArrayOutputStream byteArrayOutputStream4 = new ByteArrayOutputStream();
-                    try {
-                        q(byteArrayOutputStream4, bVar5);
-                        byte[] byteArray3 = byteArrayOutputStream4.toByteArray();
-                        byteArrayOutputStream4.close();
-                        byteArrayOutputStream4 = new ByteArrayOutputStream();
-                        try {
-                            r(byteArrayOutputStream4, bVar5);
-                            byte[] byteArray4 = byteArrayOutputStream4.toByteArray();
-                            byteArrayOutputStream4.close();
-                            u(byteArrayOutputStream3, i18);
-                            int length4 = byteArray3.length + 2 + byteArray4.length;
-                            int i21 = i19 + 6;
-                            ArrayList arrayList4 = arrayList3;
-                            t(byteArrayOutputStream3, length4, 4);
-                            u(byteArrayOutputStream3, i20);
-                            byteArrayOutputStream3.write(byteArray3);
-                            byteArrayOutputStream3.write(byteArray4);
-                            i19 = i21 + length4;
-                            i18++;
-                            arrayList3 = arrayList4;
-                        } finally {
-                        }
-                    } finally {
-                    }
-                } finally {
-                    try {
-                        byteArrayOutputStream3.close();
-                        throw th2;
-                    } catch (Throwable th3) {
-                        th2.addSuppressed(th3);
-                    }
-                }
-            }
-            ArrayList arrayList5 = arrayList3;
-            byte[] byteArray5 = byteArrayOutputStream3.toByteArray();
-            if (i19 != byteArray5.length) {
-                throw new IllegalStateException("Expected size " + i19 + ", does not match actual size " + byteArray5.length);
-            }
-            l lVar3 = new l(4, true, byteArray5);
-            byteArrayOutputStream3.close();
-            arrayList2.add(lVar3);
-            long j11 = 4;
-            long size2 = j11 + j11 + 4 + (arrayList2.size() * 16);
-            t(byteArrayOutputStream, arrayList2.size(), 4);
-            int i22 = 0;
-            while (i22 < arrayList2.size()) {
-                l lVar4 = (l) arrayList2.get(i22);
-                int i23 = lVar4.a;
-                byte[] bArr7 = lVar4.b;
-                if (i23 == 1) {
-                    j10 = 0;
-                } else if (i23 == 2) {
-                    j10 = 1;
-                } else if (i23 == 3) {
-                    j10 = 2;
-                } else if (i23 == 4) {
-                    j10 = 3;
-                } else {
-                    if (i23 != 5) {
-                        throw null;
-                    }
-                    j10 = 4;
-                }
-                t(byteArrayOutputStream, j10, 4);
-                t(byteArrayOutputStream, size2, 4);
-                if (lVar4.c) {
-                    long length5 = bArr7.length;
-                    byte[] a11 = a(bArr7);
-                    arrayList = arrayList5;
-                    arrayList.add(a11);
-                    t(byteArrayOutputStream, a11.length, 4);
-                    t(byteArrayOutputStream, length5, 4);
-                    length = a11.length;
-                } else {
-                    arrayList = arrayList5;
-                    arrayList.add(bArr7);
-                    t(byteArrayOutputStream, bArr7.length, 4);
-                    t(byteArrayOutputStream, 0L, 4);
-                    length = bArr7.length;
-                }
-                size2 += length;
-                i22++;
-                arrayList5 = arrayList;
-            }
-            ArrayList arrayList6 = arrayList5;
-            for (int i24 = 0; i24 < arrayList6.size(); i24++) {
-                byteArrayOutputStream.write((byte[]) arrayList6.get(i24));
-            }
-            return true;
-        } catch (Throwable th4) {
-            try {
-                byteArrayOutputStream2.close();
-                throw th4;
-            } catch (Throwable th5) {
-                th4.addSuppressed(th5);
-                throw th4;
-            }
-        }
-    }
-
-    public static void p(ByteArrayOutputStream byteArrayOutputStream, b bVar, String str) {
-        Charset charset = StandardCharsets.UTF_8;
-        u(byteArrayOutputStream, str.getBytes(charset).length);
-        u(byteArrayOutputStream, bVar.e);
-        t(byteArrayOutputStream, bVar.f, 4);
-        t(byteArrayOutputStream, bVar.c, 4);
-        t(byteArrayOutputStream, bVar.g, 4);
-        byteArrayOutputStream.write(str.getBytes(charset));
-    }
-
-    public static void q(ByteArrayOutputStream byteArrayOutputStream, b bVar) {
-        byte[] bArr = new byte[(((bVar.g * 2) + 7) & (-8)) / 8];
-        for (Map.Entry entry : bVar.i.entrySet()) {
-            int intValue = ((Integer) entry.getKey()).intValue();
-            int intValue2 = ((Integer) entry.getValue()).intValue();
-            if ((intValue2 & 2) != 0) {
-                int i10 = intValue / 8;
-                bArr[i10] = (byte) (bArr[i10] | (1 << (intValue % 8)));
-            }
-            if ((intValue2 & 4) != 0) {
-                int i11 = intValue + bVar.g;
-                int i12 = i11 / 8;
-                bArr[i12] = (byte) ((1 << (i11 % 8)) | bArr[i12]);
-            }
-        }
-        byteArrayOutputStream.write(bArr);
-    }
-
-    public static void r(ByteArrayOutputStream byteArrayOutputStream, b bVar) {
-        int i10 = 0;
-        for (Map.Entry entry : bVar.i.entrySet()) {
-            int intValue = ((Integer) entry.getKey()).intValue();
-            if ((((Integer) entry.getValue()).intValue() & 1) != 0) {
-                u(byteArrayOutputStream, intValue - i10);
-                u(byteArrayOutputStream, 0);
-                i10 = intValue;
-            }
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:103:0x01cd A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:106:0x0214  */
-    /* JADX WARN: Removed duplicated region for block: B:108:0x01d4 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0075  */
-    /* JADX WARN: Removed duplicated region for block: B:134:0x0220  */
-    /* JADX WARN: Removed duplicated region for block: B:136:0x0290  */
-    /* JADX WARN: Removed duplicated region for block: B:138:0x0224  */
-    /* JADX WARN: Removed duplicated region for block: B:202:0x0102 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x02a7 A[ADDED_TO_REGION] */
-    /* JADX WARN: Removed duplicated region for block: B:61:0x0151  */
-    /* JADX WARN: Removed duplicated region for block: B:72:0x01a3  */
-    /* JADX WARN: Removed duplicated region for block: B:76:0x01bb  */
-    /* JADX WARN: Removed duplicated region for block: B:77:0x016f A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static void s(Context context, Executor executor, d dVar, boolean z4) {
-        FileInputStream fileInputStream;
-        byte[] bArr;
-        b[] bVarArr;
-        b[] bVarArr2;
-        b[] bVarArr3;
-        byte[] bArr2;
-        boolean z10;
-        FileOutputStream fileOutputStream;
-        boolean z11;
-        ByteArrayOutputStream byteArrayOutputStream;
+    public static Pair b(b2.s sVar) {
+        char c10;
         int i10;
-        a1 a1Var;
-        FileInputStream b10;
-        boolean z12;
-        Context applicationContext = context.getApplicationContext();
-        String packageName = applicationContext.getPackageName();
-        ApplicationInfo applicationInfo = applicationContext.getApplicationInfo();
-        AssetManager assets = applicationContext.getAssets();
-        String name = new File(applicationInfo.sourceDir).getName();
-        try {
-            PackageInfo packageInfo = context.getPackageManager().getPackageInfo(packageName, 0);
-            File filesDir = context.getFilesDir();
-            if (!z4) {
-                File file = new File(filesDir, "profileinstaller_profileWrittenFor_lastUpdateTime.dat");
-                if (file.exists()) {
-                    try {
-                        DataInputStream dataInputStream = new DataInputStream(new FileInputStream(file));
-                        try {
-                            long readLong = dataInputStream.readLong();
-                            dataInputStream.close();
-                            z12 = readLong == packageInfo.lastUpdateTime;
-                            if (z12) {
-                                dVar.r0(2, null);
-                            }
-                        } finally {
-                        }
-                    } catch (IOException unused) {
+        int i11;
+        int i12;
+        int i13;
+        int parseInt;
+        int parseInt2;
+        int i14;
+        int i15;
+        int i16;
+        char c11;
+        int i17;
+        Integer num;
+        char c12;
+        Integer num2;
+        char c13;
+        Integer num3 = 1;
+        String str = sVar.k;
+        String str2 = sVar.k;
+        if (str == null) {
+            return null;
+        }
+        String[] split = str.split("\\.");
+        if (!"video/dolby-vision".equals(sVar.r)) {
+            String str3 = split[0];
+            str3.getClass();
+            switch (str3.hashCode()) {
+                case 2986313:
+                    if (str3.equals("ac-4")) {
+                        c10 = 0;
+                        break;
                     }
-                    if (z12) {
-                        Log.d("ProfileInstaller", "Skipping profile installation for " + context.getPackageName());
-                        k.c(context, false);
-                        return;
+                    c10 = 65535;
+                    break;
+                case 3004662:
+                    if (str3.equals("av01")) {
+                        c10 = 1;
+                        break;
                     }
-                }
-                z12 = false;
-                if (z12) {
-                }
+                    c10 = 65535;
+                    break;
+                case 3006243:
+                    if (str3.equals("avc1")) {
+                        c10 = 2;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3006244:
+                    if (str3.equals("avc2")) {
+                        c10 = 3;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3199032:
+                    if (str3.equals("hev1")) {
+                        c10 = 4;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3214780:
+                    if (str3.equals("hvc1")) {
+                        c10 = 5;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3224753:
+                    if (str3.equals("iamf")) {
+                        c10 = 6;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3356560:
+                    if (str3.equals("mp4a")) {
+                        c10 = 7;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3475740:
+                    if (str3.equals("s263")) {
+                        c10 = '\b';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 3624515:
+                    if (str3.equals("vp09")) {
+                        c10 = '\t';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                default:
+                    c10 = 65535;
+                    break;
             }
-            Log.d("ProfileInstaller", "Installing profile for " + context.getPackageName());
-            int i11 = Build.VERSION.SDK_INT;
-            File file2 = new File(new File("/data/misc/profiles/cur/0", packageName), "primary.prof");
-            a1 a1Var2 = new a1(assets, executor, dVar, name, file2);
-            byte[] bArr3 = (byte[]) a1Var2.d;
-            if (bArr3 == null) {
-                a1Var2.c(3, Integer.valueOf(i11));
-            } else {
-                if (!file2.exists()) {
-                    try {
-                        file2.createNewFile();
-                    } catch (IOException unused2) {
-                        a1Var2.c(4, null);
-                    }
-                } else if (!file2.canWrite()) {
-                    a1Var2.c(4, null);
-                }
-                a1Var2.a = true;
-                try {
-                    try {
-                        fileInputStream = a1Var2.b(assets, "dexopt/baseline.prof");
-                    } catch (FileNotFoundException e6) {
-                        dVar.r0(6, e6);
-                        fileInputStream = null;
-                        bArr = b;
-                        if (fileInputStream != null) {
-                        }
-                        bVarArr2 = (b[]) a1Var2.g;
-                        if (bVarArr2 != null) {
-                        }
-                        d dVar2 = (d) a1Var2.c;
-                        bVarArr3 = (b[]) a1Var2.g;
-                        byte[] bArr4 = (byte[]) a1Var2.d;
-                        if (bVarArr3 != null) {
-                        }
-                        bArr2 = (byte[]) a1Var2.h;
-                        if (bArr2 == null) {
-                        }
-                        if (z10) {
-                        }
-                        z11 = z10;
-                        k.c(context, !z11 && z4);
-                    } catch (IOException e10) {
-                        dVar.r0(7, e10);
-                        fileInputStream = null;
-                        bArr = b;
-                        if (fileInputStream != null) {
-                        }
-                        bVarArr2 = (b[]) a1Var2.g;
-                        if (bVarArr2 != null) {
-                        }
-                        d dVar22 = (d) a1Var2.c;
-                        bVarArr3 = (b[]) a1Var2.g;
-                        byte[] bArr42 = (byte[]) a1Var2.d;
-                        if (bVarArr3 != null) {
-                        }
-                        bArr2 = (byte[]) a1Var2.h;
-                        if (bArr2 == null) {
-                        }
-                        if (z10) {
-                        }
-                        z11 = z10;
-                        k.c(context, !z11 && z4);
-                    }
-                    if (fileInputStream != null) {
-                        try {
-                            try {
-                            } catch (IllegalStateException e11) {
-                                dVar.r0(8, e11);
-                                try {
-                                    fileInputStream.close();
-                                } catch (IOException e12) {
-                                    dVar.r0(7, e12);
-                                }
-                                bVarArr = null;
-                                a1Var2.g = bVarArr;
-                                bVarArr2 = (b[]) a1Var2.g;
-                                if (bVarArr2 != null) {
-                                    if (i10 != 24) {
-                                        switch (i10) {
-                                        }
-                                    }
-                                    try {
-                                        b10 = a1Var2.b(assets, "dexopt/baseline.profm");
-                                        if (b10 == null) {
-                                        }
-                                    } catch (FileNotFoundException e13) {
-                                        dVar.r0(9, e13);
-                                    } catch (IOException e14) {
-                                        dVar.r0(7, e14);
-                                    } catch (IllegalStateException e15) {
-                                        a1Var2.g = null;
-                                        dVar.r0(8, e15);
-                                    }
-                                }
-                                d dVar222 = (d) a1Var2.c;
-                                bVarArr3 = (b[]) a1Var2.g;
-                                byte[] bArr422 = (byte[]) a1Var2.d;
-                                if (bVarArr3 != null) {
-                                    if (a1Var2.a) {
-                                    }
-                                }
-                                bArr2 = (byte[]) a1Var2.h;
-                                if (bArr2 == null) {
-                                }
-                                if (z10) {
-                                }
-                                z11 = z10;
-                                k.c(context, !z11 && z4);
-                            }
-                        } catch (IOException e16) {
-                            dVar.r0(7, e16);
-                            fileInputStream.close();
-                            bVarArr = null;
-                            a1Var2.g = bVarArr;
-                            bVarArr2 = (b[]) a1Var2.g;
-                            if (bVarArr2 != null) {
-                            }
-                            d dVar2222 = (d) a1Var2.c;
-                            bVarArr3 = (b[]) a1Var2.g;
-                            byte[] bArr4222 = (byte[]) a1Var2.d;
-                            if (bVarArr3 != null) {
-                            }
-                            bArr2 = (byte[]) a1Var2.h;
-                            if (bArr2 == null) {
-                            }
-                            if (z10) {
-                            }
-                            z11 = z10;
-                            k.c(context, !z11 && z4);
-                        }
-                        if (!Arrays.equals(bArr, f(4, fileInputStream))) {
-                            throw new IllegalStateException("Invalid magic");
-                        }
-                        bVarArr = l(fileInputStream, f(4, fileInputStream), (String) a1Var2.f);
-                        try {
-                            fileInputStream.close();
-                        } catch (IOException e17) {
-                            dVar.r0(7, e17);
-                        }
-                        a1Var2.g = bVarArr;
-                    }
-                    bVarArr2 = (b[]) a1Var2.g;
-                    if (bVarArr2 != null && (i10 = Build.VERSION.SDK_INT) >= 24 && i10 <= 34) {
-                        if (i10 != 24 && i10 != 25) {
-                            switch (i10) {
-                            }
-                        }
-                        b10 = a1Var2.b(assets, "dexopt/baseline.profm");
-                        if (b10 == null) {
-                            try {
-                                if (!Arrays.equals(c, f(4, b10))) {
-                                    throw new IllegalStateException("Invalid magic");
-                                }
-                                a1Var2.g = i(b10, f(4, b10), bArr3, bVarArr2);
-                                b10.close();
-                                a1Var = a1Var2;
-                                if (a1Var != null) {
-                                    a1Var2 = a1Var;
-                                }
-                            } finally {
-                            }
-                        } else {
-                            if (b10 != null) {
-                                b10.close();
-                            }
-                            a1Var = null;
-                            if (a1Var != null) {
-                            }
-                        }
-                    }
-                    d dVar22222 = (d) a1Var2.c;
-                    bVarArr3 = (b[]) a1Var2.g;
-                    byte[] bArr42222 = (byte[]) a1Var2.d;
-                    if (bVarArr3 != null && bArr42222 != null) {
-                        if (a1Var2.a) {
-                            throw new IllegalStateException("This device doesn't support aot. Did you call deviceSupportsAotProfile()?");
-                        }
-                        try {
-                            byteArrayOutputStream = new ByteArrayOutputStream();
-                            try {
-                                byteArrayOutputStream.write(bArr);
-                                byteArrayOutputStream.write(bArr42222);
-                            } finally {
-                            }
-                        } catch (IOException e18) {
-                            dVar22222.r0(7, e18);
-                        } catch (IllegalStateException e19) {
-                            dVar22222.r0(8, e19);
-                        }
-                        if (o(byteArrayOutputStream, bArr42222, bVarArr3)) {
-                            a1Var2.h = byteArrayOutputStream.toByteArray();
-                            byteArrayOutputStream.close();
-                            a1Var2.g = null;
-                        } else {
-                            dVar22222.r0(5, null);
-                            a1Var2.g = null;
-                            byteArrayOutputStream.close();
-                        }
-                    }
-                    bArr2 = (byte[]) a1Var2.h;
-                    if (bArr2 == null) {
-                        z10 = false;
+            int i18 = 8192;
+            switch (c10) {
+                case 0:
+                    if (split.length != 4) {
+                        e2.s("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
                     } else {
                         try {
-                            if (!a1Var2.a) {
-                                throw new IllegalStateException("This device doesn't support aot. Did you call deviceSupportsAotProfile()?");
-                            }
-                            try {
-                                try {
-                                    ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(bArr2);
-                                    try {
-                                        fileOutputStream = new FileOutputStream((File) a1Var2.e);
-                                    } catch (Throwable th2) {
-                                        th = th2;
+                            int parseInt3 = Integer.parseInt(split[1]);
+                            int parseInt4 = Integer.parseInt(split[2]);
+                            int parseInt5 = Integer.parseInt(split[3]);
+                            if (parseInt3 == 0) {
+                                if (parseInt4 == 0) {
+                                    i10 = 257;
+                                }
+                                i10 = -1;
+                            } else if (parseInt3 != 1) {
+                                if (parseInt3 == 2) {
+                                    if (parseInt4 == 1) {
+                                        i10 = 1026;
+                                    } else if (parseInt4 == 2) {
+                                        i10 = 1028;
                                     }
-                                    try {
-                                        try {
-                                            byte[] bArr5 = new byte[512];
-                                            while (true) {
-                                                int read = byteArrayInputStream.read(bArr5);
-                                                if (read > 0) {
-                                                    fileOutputStream.write(bArr5, 0, read);
-                                                } else {
-                                                    try {
-                                                        a1Var2.c(1, null);
-                                                        fileOutputStream.close();
-                                                        byteArrayInputStream.close();
-                                                        a1Var2.h = null;
-                                                        a1Var2.g = null;
-                                                        z10 = true;
-                                                    } catch (Throwable th3) {
-                                                        th = th3;
-                                                        Throwable th4 = th;
-                                                        try {
-                                                            fileOutputStream.close();
-                                                            throw th4;
-                                                        } catch (Throwable th5) {
-                                                            th4.addSuppressed(th5);
-                                                            throw th4;
+                                }
+                                i10 = -1;
+                            } else if (parseInt4 == 0) {
+                                i10 = 513;
+                            } else {
+                                if (parseInt4 == 1) {
+                                    i10 = 514;
+                                }
+                                i10 = -1;
+                            }
+                            if (i10 != -1) {
+                                int i19 = parseInt5 != 0 ? parseInt5 != 1 ? parseInt5 != 2 ? parseInt5 != 3 ? parseInt5 != 4 ? -1 : 16 : 8 : 4 : 2 : 1;
+                                if (i19 != -1) {
+                                    break;
+                                } else {
+                                    e2.n(parseInt5, "Unknown AC-4 level: ", "CodecSpecificDataUtil");
+                                    break;
+                                }
+                            } else {
+                                a.n("CodecSpecificDataUtil", "Unknown AC-4 profile: " + parseInt3 + "." + parseInt4);
+                                break;
+                            }
+                        } catch (NumberFormatException unused) {
+                            e2.s("Ignoring malformed AC-4 codec string: ", str2, "CodecSpecificDataUtil");
+                            return null;
+                        }
+                    }
+                case 1:
+                    b2.j jVar = sVar.H;
+                    if (split.length < 4) {
+                        e2.s("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            int parseInt6 = Integer.parseInt(split[1]);
+                            int parseInt7 = Integer.parseInt(split[2].substring(0, 2));
+                            int parseInt8 = Integer.parseInt(split[3]);
+                            if (parseInt6 == 0) {
+                                if (parseInt8 != 8 && parseInt8 != 10) {
+                                    e2.n(parseInt8, "Unknown AV1 bit depth: ", "CodecSpecificDataUtil");
+                                    break;
+                                } else {
+                                    int i20 = parseInt8 == 8 ? 1 : (jVar == null || !(jVar.d != null || (i11 = jVar.c) == 7 || i11 == 6)) ? 2 : 4096;
+                                    switch (parseInt7) {
+                                        case 0:
+                                            i12 = -1;
+                                            i13 = 1;
+                                            break;
+                                        case 1:
+                                            i12 = -1;
+                                            i13 = 2;
+                                            break;
+                                        case 2:
+                                            i12 = -1;
+                                            i13 = 4;
+                                            break;
+                                        case 3:
+                                            i12 = -1;
+                                            i13 = 8;
+                                            break;
+                                        case 4:
+                                            i12 = -1;
+                                            i13 = 16;
+                                            break;
+                                        case 5:
+                                            i12 = -1;
+                                            i13 = 32;
+                                            break;
+                                        case 6:
+                                            i12 = -1;
+                                            i13 = 64;
+                                            break;
+                                        case 7:
+                                            i12 = -1;
+                                            i13 = 128;
+                                            break;
+                                        case 8:
+                                            i12 = -1;
+                                            i13 = 256;
+                                            break;
+                                        case 9:
+                                            i12 = -1;
+                                            i13 = 512;
+                                            break;
+                                        case 10:
+                                            i12 = -1;
+                                            i13 = 1024;
+                                            break;
+                                        case 11:
+                                            i12 = -1;
+                                            i13 = 2048;
+                                            break;
+                                        case 12:
+                                            i12 = -1;
+                                            i13 = 4096;
+                                            break;
+                                        case 13:
+                                            i12 = -1;
+                                            i13 = 8192;
+                                            break;
+                                        case 14:
+                                            i13 = 16384;
+                                            i12 = -1;
+                                            break;
+                                        case 15:
+                                            i13 = 32768;
+                                            i12 = -1;
+                                            break;
+                                        case 16:
+                                            i13 = 65536;
+                                            i12 = -1;
+                                            break;
+                                        case 17:
+                                            i13 = 131072;
+                                            i12 = -1;
+                                            break;
+                                        case 18:
+                                            i13 = 262144;
+                                            i12 = -1;
+                                            break;
+                                        case 19:
+                                            i13 = TLObject.FLAG_19;
+                                            i12 = -1;
+                                            break;
+                                        case 20:
+                                            i13 = 1048576;
+                                            i12 = -1;
+                                            break;
+                                        case 21:
+                                            i13 = TLObject.FLAG_21;
+                                            i12 = -1;
+                                            break;
+                                        case 22:
+                                            i13 = TLObject.FLAG_22;
+                                            i12 = -1;
+                                            break;
+                                        case 23:
+                                            i13 = TLObject.FLAG_23;
+                                            i12 = -1;
+                                            break;
+                                        default:
+                                            i12 = -1;
+                                            i13 = -1;
+                                            break;
+                                    }
+                                    if (i13 != i12) {
+                                        break;
+                                    } else {
+                                        e2.n(parseInt7, "Unknown AV1 level: ", "CodecSpecificDataUtil");
+                                        break;
+                                    }
+                                }
+                            } else {
+                                e2.n(parseInt6, "Unknown AV1 profile: ", "CodecSpecificDataUtil");
+                                break;
+                            }
+                        } catch (NumberFormatException unused2) {
+                            e2.s("Ignoring malformed AV1 codec string: ", str2, "CodecSpecificDataUtil");
+                            return null;
+                        }
+                    }
+                    break;
+                case 2:
+                case 3:
+                    if (split.length < 2) {
+                        e2.s("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            if (split[1].length() != 6) {
+                                if (split.length < 3) {
+                                    a.n("CodecSpecificDataUtil", "Ignoring malformed AVC codec string: " + str2);
+                                    break;
+                                } else {
+                                    parseInt = Integer.parseInt(split[1]);
+                                    parseInt2 = Integer.parseInt(split[2]);
+                                }
+                            } else {
+                                parseInt = Integer.parseInt(split[1].substring(0, 2), 16);
+                                parseInt2 = Integer.parseInt(split[1].substring(4), 16);
+                            }
+                            if (parseInt == 66) {
+                                i14 = -1;
+                                i15 = 1;
+                            } else if (parseInt == 77) {
+                                i14 = -1;
+                                i15 = 2;
+                            } else if (parseInt == 88) {
+                                i14 = -1;
+                                i15 = 4;
+                            } else if (parseInt == 100) {
+                                i14 = -1;
+                                i15 = 8;
+                            } else if (parseInt == 110) {
+                                i14 = -1;
+                                i15 = 16;
+                            } else if (parseInt == 122) {
+                                i14 = -1;
+                                i15 = 32;
+                            } else if (parseInt != 244) {
+                                i14 = -1;
+                                i15 = -1;
+                            } else {
+                                i14 = -1;
+                                i15 = 64;
+                            }
+                            if (i15 != i14) {
+                                switch (parseInt2) {
+                                    case 10:
+                                        i16 = 1;
+                                        break;
+                                    case 11:
+                                        i16 = 4;
+                                        break;
+                                    case 12:
+                                        i16 = 8;
+                                        break;
+                                    case 13:
+                                        i16 = 16;
+                                        break;
+                                    default:
+                                        switch (parseInt2) {
+                                            case 20:
+                                                i16 = 32;
+                                                break;
+                                            case 21:
+                                                i16 = 64;
+                                                break;
+                                            case 22:
+                                                i16 = 128;
+                                                break;
+                                            default:
+                                                switch (parseInt2) {
+                                                    case MessageObject.TYPE_GIFT_STARS /* 30 */:
+                                                        i16 = 256;
+                                                        break;
+                                                    case MessageObject.TYPE_GIFT_THEME_UPDATE /* 31 */:
+                                                        i16 = 512;
+                                                        break;
+                                                    case 32:
+                                                        i16 = 1024;
+                                                        break;
+                                                    default:
+                                                        switch (parseInt2) {
+                                                            case Maneuver.TYPE_DESTINATION_STRAIGHT /* 40 */:
+                                                                i16 = 2048;
+                                                                break;
+                                                            case Maneuver.TYPE_DESTINATION_LEFT /* 41 */:
+                                                                i16 = 4096;
+                                                                break;
+                                                            case Maneuver.TYPE_DESTINATION_RIGHT /* 42 */:
+                                                                i16 = 8192;
+                                                                break;
+                                                            default:
+                                                                switch (parseInt2) {
+                                                                    case Maneuver.TYPE_FERRY_TRAIN_RIGHT /* 50 */:
+                                                                        i16 = 16384;
+                                                                        break;
+                                                                    case 51:
+                                                                        i16 = 32768;
+                                                                        break;
+                                                                    case 52:
+                                                                        i16 = 65536;
+                                                                        break;
+                                                                    default:
+                                                                        i16 = -1;
+                                                                        break;
+                                                                }
+                                                        }
+                                                }
+                                        }
+                                }
+                                if (i16 != -1) {
+                                    break;
+                                } else {
+                                    e2.n(parseInt2, "Unknown AVC level: ", "CodecSpecificDataUtil");
+                                    break;
+                                }
+                            } else {
+                                e2.n(parseInt, "Unknown AVC profile: ", "CodecSpecificDataUtil");
+                                break;
+                            }
+                        } catch (NumberFormatException unused3) {
+                            e2.s("Ignoring malformed AVC codec string: ", str2, "CodecSpecificDataUtil");
+                            return null;
+                        }
+                    }
+                case 6:
+                    if (split.length < 4) {
+                        e2.s("Ignoring malformed IAMF codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            int parseInt9 = 1 << (Integer.parseInt(split[1]) + 16);
+                            String str4 = split[3];
+                            str4.getClass();
+                            switch (str4.hashCode()) {
+                                case 2464863:
+                                    if (str4.equals("Opus")) {
+                                        c11 = 0;
+                                        break;
+                                    }
+                                    c11 = 65535;
+                                    break;
+                                case 3114792:
+                                    if (str4.equals("fLaC")) {
+                                        c11 = 1;
+                                        break;
+                                    }
+                                    c11 = 65535;
+                                    break;
+                                case 3238865:
+                                    if (str4.equals("ipcm")) {
+                                        c11 = 2;
+                                        break;
+                                    }
+                                    c11 = 65535;
+                                    break;
+                                case 3356560:
+                                    if (str4.equals("mp4a")) {
+                                        c11 = 3;
+                                        break;
+                                    }
+                                    c11 = 65535;
+                                    break;
+                                default:
+                                    c11 = 65535;
+                                    break;
+                            }
+                            switch (c11) {
+                                case 0:
+                                    i17 = 1;
+                                    break;
+                                case 1:
+                                    i17 = 4;
+                                    break;
+                                case 2:
+                                    i17 = 8;
+                                    break;
+                                case 3:
+                                    i17 = 2;
+                                    break;
+                                default:
+                                    a.n("CodecSpecificDataUtil", "Ignoring unknown codec identifier for IAMF auxiliary profile: " + split[3]);
+                                    break;
+                            }
+                            break;
+                        } catch (NumberFormatException e7) {
+                            a.o("CodecSpecificDataUtil", "Ignoring malformed primary profile in IAMF codec string: " + split[1], e7);
+                            return null;
+                        }
+                    }
+                case 7:
+                    if (split.length == 3) {
+                        try {
+                            if (MediaController.AUDIO_MIME_TYPE.equals(r0.e(Integer.parseInt(split[1], 16)))) {
+                                int parseInt10 = Integer.parseInt(split[2]);
+                                int i21 = 17;
+                                if (parseInt10 != 17) {
+                                    i21 = 20;
+                                    if (parseInt10 != 20) {
+                                        i21 = 23;
+                                        if (parseInt10 != 23) {
+                                            i21 = 29;
+                                            if (parseInt10 != 29) {
+                                                i21 = 39;
+                                                if (parseInt10 != 39) {
+                                                    i21 = 42;
+                                                    if (parseInt10 != 42) {
+                                                        switch (parseInt10) {
+                                                            case 1:
+                                                                i21 = 1;
+                                                                break;
+                                                            case 2:
+                                                                i21 = 2;
+                                                                break;
+                                                            case 3:
+                                                                i21 = 3;
+                                                                break;
+                                                            case 4:
+                                                                i21 = 4;
+                                                                break;
+                                                            case 5:
+                                                                i21 = 5;
+                                                                break;
+                                                            case 6:
+                                                                i21 = 6;
+                                                                break;
+                                                            default:
+                                                                i21 = -1;
+                                                                break;
                                                         }
                                                     }
                                                 }
                                             }
-                                        } catch (Throwable th6) {
-                                            th = th6;
-                                        }
-                                    } catch (Throwable th7) {
-                                        th = th7;
-                                        Throwable th8 = th;
-                                        try {
-                                            byteArrayInputStream.close();
-                                            throw th8;
-                                        } catch (Throwable th9) {
-                                            th8.addSuppressed(th9);
-                                            throw th8;
                                         }
                                     }
-                                } catch (FileNotFoundException e20) {
-                                    e = e20;
-                                    a1Var2.c(6, e);
-                                    z10 = false;
-                                    if (z10) {
-                                    }
-                                    z11 = z10;
-                                    k.c(context, !z11 && z4);
-                                } catch (IOException e21) {
-                                    e = e21;
-                                    a1Var2.c(7, e);
-                                    z10 = false;
-                                    if (z10) {
-                                    }
-                                    z11 = z10;
-                                    k.c(context, !z11 && z4);
                                 }
-                            } catch (FileNotFoundException e22) {
-                                e = e22;
-                                a1Var2.c(6, e);
-                                z10 = false;
-                                if (z10) {
+                                if (i21 != -1) {
+                                    break;
                                 }
-                                z11 = z10;
-                                k.c(context, !z11 && z4);
-                            } catch (IOException e23) {
-                                e = e23;
-                                a1Var2.c(7, e);
-                                z10 = false;
-                                if (z10) {
-                                }
-                                z11 = z10;
-                                k.c(context, !z11 && z4);
                             }
-                        } finally {
-                            a1Var2.h = null;
-                            a1Var2.g = null;
+                        } catch (NumberFormatException unused4) {
+                            e2.s("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
+                            break;
+                        }
+                    } else {
+                        e2.s("Ignoring malformed MP4A codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    }
+                    break;
+                case '\b':
+                    Pair pair = new Pair(num3, num3);
+                    if (split.length < 3) {
+                        e2.s("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            break;
+                        } catch (NumberFormatException unused5) {
+                            e2.s("Ignoring malformed H263 codec string: ", str2, "CodecSpecificDataUtil");
+                            return pair;
                         }
                     }
-                    if (z10) {
-                        e(packageInfo, filesDir);
+                case '\t':
+                    if (split.length < 3) {
+                        e2.s("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
+                        break;
+                    } else {
+                        try {
+                            int parseInt11 = Integer.parseInt(split[1]);
+                            int parseInt12 = Integer.parseInt(split[2]);
+                            int i22 = parseInt11 != 0 ? parseInt11 != 1 ? parseInt11 != 2 ? parseInt11 != 3 ? -1 : 8 : 4 : 2 : 1;
+                            if (i22 != -1) {
+                                if (parseInt12 == 10) {
+                                    i18 = 1;
+                                } else if (parseInt12 == 11) {
+                                    i18 = 2;
+                                } else if (parseInt12 == 20) {
+                                    i18 = 4;
+                                } else if (parseInt12 == 21) {
+                                    i18 = 8;
+                                } else if (parseInt12 == 30) {
+                                    i18 = 16;
+                                } else if (parseInt12 == 31) {
+                                    i18 = 32;
+                                } else if (parseInt12 == 40) {
+                                    i18 = 64;
+                                } else if (parseInt12 == 41) {
+                                    i18 = 128;
+                                } else if (parseInt12 == 50) {
+                                    i18 = 256;
+                                } else if (parseInt12 != 51) {
+                                    switch (parseInt12) {
+                                        case 60:
+                                            i18 = 2048;
+                                            break;
+                                        case 61:
+                                            i18 = 4096;
+                                            break;
+                                        case 62:
+                                            break;
+                                        default:
+                                            i18 = -1;
+                                            break;
+                                    }
+                                } else {
+                                    i18 = 512;
+                                }
+                                if (i18 != -1) {
+                                    break;
+                                } else {
+                                    e2.n(parseInt12, "Unknown VP9 level: ", "CodecSpecificDataUtil");
+                                    break;
+                                }
+                            } else {
+                                e2.n(parseInt11, "Unknown VP9 profile: ", "CodecSpecificDataUtil");
+                                break;
+                            }
+                        } catch (NumberFormatException unused6) {
+                            e2.s("Ignoring malformed VP9 codec string: ", str2, "CodecSpecificDataUtil");
+                            return null;
+                        }
                     }
-                    z11 = z10;
-                    k.c(context, !z11 && z4);
-                } finally {
-                }
-                bArr = b;
             }
-            z11 = false;
-            k.c(context, !z11 && z4);
-        } catch (PackageManager.NameNotFoundException e24) {
-            dVar.r0(7, e24);
-            k.c(context, false);
+            return null;
         }
+        if (split.length < 3) {
+            e2.s("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
+            return null;
+        }
+        Matcher matcher = c.matcher(split[1]);
+        if (!matcher.matches()) {
+            e2.s("Ignoring malformed Dolby Vision codec string: ", str2, "CodecSpecificDataUtil");
+            return null;
+        }
+        String group = matcher.group(1);
+        if (group == null) {
+            num = 16;
+        } else {
+            switch (group.hashCode()) {
+                case 1536:
+                    num = 16;
+                    if (group.equals("00")) {
+                        c12 = 0;
+                        break;
+                    }
+                    c12 = 65535;
+                    break;
+                case 1537:
+                    if (group.equals("01")) {
+                        num = 16;
+                        c12 = 1;
+                        break;
+                    }
+                    num = 16;
+                    c12 = 65535;
+                    break;
+                case 1538:
+                    if (group.equals("02")) {
+                        num = 16;
+                        c12 = 2;
+                        break;
+                    }
+                    num = 16;
+                    c12 = 65535;
+                    break;
+                case 1539:
+                    if (group.equals("03")) {
+                        num = 16;
+                        c12 = 3;
+                        break;
+                    }
+                    num = 16;
+                    c12 = 65535;
+                    break;
+                case 1540:
+                    if (group.equals("04")) {
+                        num = 16;
+                        c12 = 4;
+                        break;
+                    }
+                    num = 16;
+                    c12 = 65535;
+                    break;
+                case 1541:
+                    if (group.equals("05")) {
+                        num = 16;
+                        c12 = 5;
+                        break;
+                    }
+                    num = 16;
+                    c12 = 65535;
+                    break;
+                case 1542:
+                    if (group.equals("06")) {
+                        num = 16;
+                        c12 = 6;
+                        break;
+                    }
+                    num = 16;
+                    c12 = 65535;
+                    break;
+                case 1543:
+                    if (group.equals("07")) {
+                        num = 16;
+                        c12 = 7;
+                        break;
+                    }
+                    num = 16;
+                    c12 = 65535;
+                    break;
+                case 1544:
+                    if (group.equals("08")) {
+                        num = 16;
+                        c12 = '\b';
+                        break;
+                    }
+                    num = 16;
+                    c12 = 65535;
+                    break;
+                case 1545:
+                    if (group.equals("09")) {
+                        num = 16;
+                        c12 = '\t';
+                        break;
+                    }
+                    num = 16;
+                    c12 = 65535;
+                    break;
+                case 1567:
+                    if (group.equals("10")) {
+                        num = 16;
+                        c12 = '\n';
+                        break;
+                    }
+                    num = 16;
+                    c12 = 65535;
+                    break;
+                default:
+                    num = 16;
+                    c12 = 65535;
+                    break;
+            }
+            switch (c12) {
+                case 0:
+                    num2 = num3;
+                    break;
+                case 1:
+                    num2 = 2;
+                    break;
+                case 2:
+                    num2 = 4;
+                    break;
+                case 3:
+                    num2 = 8;
+                    break;
+                case 4:
+                    num2 = num;
+                    break;
+                case 5:
+                    num2 = 32;
+                    break;
+                case 6:
+                    num2 = 64;
+                    break;
+                case 7:
+                    num2 = 128;
+                    break;
+                case '\b':
+                    num2 = 256;
+                    break;
+                case '\t':
+                    num2 = 512;
+                    break;
+                case '\n':
+                    num2 = 1024;
+                    break;
+            }
+            if (num2 != null) {
+                e2.s("Unknown Dolby Vision profile string: ", group, "CodecSpecificDataUtil");
+                return null;
+            }
+            String str5 = split[2];
+            if (str5 != null) {
+                switch (str5.hashCode()) {
+                    case 1537:
+                        if (str5.equals("01")) {
+                            c13 = 0;
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1538:
+                        if (str5.equals("02")) {
+                            c13 = 1;
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1539:
+                        if (str5.equals("03")) {
+                            c13 = 2;
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1540:
+                        if (str5.equals("04")) {
+                            c13 = 3;
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1541:
+                        if (str5.equals("05")) {
+                            c13 = 4;
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1542:
+                        if (str5.equals("06")) {
+                            c13 = 5;
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1543:
+                        if (str5.equals("07")) {
+                            c13 = 6;
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1544:
+                        if (str5.equals("08")) {
+                            c13 = 7;
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1545:
+                        if (str5.equals("09")) {
+                            c13 = '\b';
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1567:
+                        if (str5.equals("10")) {
+                            c13 = '\t';
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1568:
+                        if (str5.equals("11")) {
+                            c13 = '\n';
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1569:
+                        if (str5.equals("12")) {
+                            c13 = 11;
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    case 1570:
+                        if (str5.equals("13")) {
+                            c13 = '\f';
+                            break;
+                        }
+                        c13 = 65535;
+                        break;
+                    default:
+                        c13 = 65535;
+                        break;
+                }
+                switch (c13) {
+                    case 1:
+                        num3 = 2;
+                        break;
+                    case 2:
+                        num3 = 4;
+                        break;
+                    case 3:
+                        num3 = 8;
+                        break;
+                    case 4:
+                        num3 = num;
+                        break;
+                    case 5:
+                        num3 = 32;
+                        break;
+                    case 6:
+                        num3 = 64;
+                        break;
+                    case 7:
+                        num3 = 128;
+                        break;
+                    case '\b':
+                        num3 = 256;
+                        break;
+                    case '\t':
+                        num3 = 512;
+                        break;
+                    case '\n':
+                        num3 = 1024;
+                        break;
+                    case 11:
+                        num3 = 2048;
+                        break;
+                    case '\f':
+                        num3 = 4096;
+                        break;
+                }
+                if (num3 == null) {
+                    return new Pair(num2, num3);
+                }
+                e2.s("Unknown Dolby Vision level string: ", str5, "CodecSpecificDataUtil");
+                return null;
+            }
+            num3 = null;
+            if (num3 == null) {
+            }
+        }
+        num2 = null;
+        if (num2 != null) {
+        }
+        return null;
     }
 
-    public static void t(ByteArrayOutputStream byteArrayOutputStream, long j10, int i10) {
-        byte[] bArr = new byte[i10];
-        for (int i11 = 0; i11 < i10; i11++) {
-            bArr[i11] = (byte) ((j10 >> (i11 * 8)) & 255);
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    /* JADX WARN: Code restructure failed: missing block: B:109:0x0169, code lost:
+    
+        if (r12.equals("L60") == false) goto L28;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x026f  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0275  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Pair c(String str, String[] strArr, b2.j jVar) {
+        int i10;
+        Integer num;
+        if (strArr.length < 4) {
+            e2.s("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
+            return null;
         }
-        byteArrayOutputStream.write(bArr);
-    }
-
-    public static void u(ByteArrayOutputStream byteArrayOutputStream, int i10) {
-        t(byteArrayOutputStream, i10, 2);
+        Matcher matcher = c.matcher(strArr[1]);
+        if (!matcher.matches()) {
+            e2.s("Ignoring malformed HEVC codec string: ", str, "CodecSpecificDataUtil");
+            return null;
+        }
+        String group = matcher.group(1);
+        char c10 = 6;
+        if ("1".equals(group)) {
+            i10 = 1;
+        } else if ("2".equals(group)) {
+            i10 = (jVar == null || jVar.c != 6) ? 2 : 4096;
+        } else {
+            if (!"6".equals(group)) {
+                e2.s("Unknown HEVC profile string: ", group, "CodecSpecificDataUtil");
+                return null;
+            }
+            i10 = 6;
+        }
+        String str2 = strArr[3];
+        if (str2 != null) {
+            switch (str2.hashCode()) {
+                case 70821:
+                    if (str2.equals("H30")) {
+                        c10 = 0;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 70914:
+                    if (str2.equals("H60")) {
+                        c10 = 1;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 70917:
+                    if (str2.equals("H63")) {
+                        c10 = 2;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 71007:
+                    if (str2.equals("H90")) {
+                        c10 = 3;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 71010:
+                    if (str2.equals("H93")) {
+                        c10 = 4;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 74665:
+                    if (str2.equals("L30")) {
+                        c10 = 5;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 74758:
+                    break;
+                case 74761:
+                    if (str2.equals("L63")) {
+                        c10 = 7;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 74851:
+                    if (str2.equals("L90")) {
+                        c10 = '\b';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 74854:
+                    if (str2.equals("L93")) {
+                        c10 = '\t';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193639:
+                    if (str2.equals("H120")) {
+                        c10 = '\n';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193642:
+                    if (str2.equals("H123")) {
+                        c10 = 11;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193732:
+                    if (str2.equals("H150")) {
+                        c10 = '\f';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193735:
+                    if (str2.equals("H153")) {
+                        c10 = '\r';
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193738:
+                    if (str2.equals("H156")) {
+                        c10 = 14;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193825:
+                    if (str2.equals("H180")) {
+                        c10 = 15;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193828:
+                    if (str2.equals("H183")) {
+                        c10 = 16;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2193831:
+                    if (str2.equals("H186")) {
+                        c10 = 17;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312803:
+                    if (str2.equals("L120")) {
+                        c10 = 18;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312806:
+                    if (str2.equals("L123")) {
+                        c10 = 19;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312896:
+                    if (str2.equals("L150")) {
+                        c10 = 20;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312899:
+                    if (str2.equals("L153")) {
+                        c10 = 21;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312902:
+                    if (str2.equals("L156")) {
+                        c10 = 22;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312989:
+                    if (str2.equals("L180")) {
+                        c10 = 23;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312992:
+                    if (str2.equals("L183")) {
+                        c10 = 24;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                case 2312995:
+                    if (str2.equals("L186")) {
+                        c10 = 25;
+                        break;
+                    }
+                    c10 = 65535;
+                    break;
+                default:
+                    c10 = 65535;
+                    break;
+            }
+            switch (c10) {
+                case 0:
+                    num = 2;
+                    break;
+                case 1:
+                    num = 8;
+                    break;
+                case 2:
+                    num = 32;
+                    break;
+                case 3:
+                    num = 128;
+                    break;
+                case 4:
+                    num = 512;
+                    break;
+                case 5:
+                    num = 1;
+                    break;
+                case 6:
+                    num = 4;
+                    break;
+                case 7:
+                    num = 16;
+                    break;
+                case '\b':
+                    num = 64;
+                    break;
+                case '\t':
+                    num = 256;
+                    break;
+                case '\n':
+                    num = 2048;
+                    break;
+                case 11:
+                    num = 8192;
+                    break;
+                case '\f':
+                    num = 32768;
+                    break;
+                case '\r':
+                    num = 131072;
+                    break;
+                case 14:
+                    num = Integer.valueOf(TLObject.FLAG_19);
+                    break;
+                case 15:
+                    num = Integer.valueOf(TLObject.FLAG_21);
+                    break;
+                case 16:
+                    num = Integer.valueOf(TLObject.FLAG_23);
+                    break;
+                case 17:
+                    num = 33554432;
+                    break;
+                case 18:
+                    num = 1024;
+                    break;
+                case 19:
+                    num = 4096;
+                    break;
+                case 20:
+                    num = 16384;
+                    break;
+                case 21:
+                    num = 65536;
+                    break;
+                case 22:
+                    num = 262144;
+                    break;
+                case 23:
+                    num = 1048576;
+                    break;
+                case 24:
+                    num = Integer.valueOf(TLObject.FLAG_22);
+                    break;
+                case 25:
+                    num = 16777216;
+                    break;
+            }
+            if (num == null) {
+                return new Pair(Integer.valueOf(i10), num);
+            }
+            e2.s("Unknown HEVC level string: ", str2, "CodecSpecificDataUtil");
+            return null;
+        }
+        num = null;
+        if (num == null) {
+        }
     }
 }

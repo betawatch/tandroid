@@ -1,58 +1,62 @@
 package org.telegram.ui;
 
-import android.view.KeyEvent;
-import android.view.View;
-import android.widget.ImageView;
-import org.telegram.ui.Components.EditTextBoldCursor;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qg implements View.OnKeyListener {
+public final /* synthetic */ class qg implements q0.a {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final /* synthetic */ co b;
 
-    public /* synthetic */ qg(Object obj, int i10) {
+    public /* synthetic */ qg(co coVar, int i10) {
         this.a = i10;
-        this.b = obj;
+        this.b = coVar;
     }
 
-    @Override // android.view.View.OnKeyListener
-    public final boolean onKey(View view, int i10, KeyEvent keyEvent) {
+    @Override // q0.a
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                zn znVar = (zn) this.b;
-                znVar.getClass();
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) view;
-                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor.length() == 0) {
-                    znVar.ta();
+                Integer num = (Integer) obj;
+                co coVar = this.b;
+                coVar.getClass();
+                if (num.intValue() != 0) {
+                    coVar.Bc(true);
+                    coVar.F(num.intValue(), 0, 0, 0, false, true);
+                    break;
+                } else {
+                    coVar.l1 = 0;
+                    coVar.Bc(true);
+                    coVar.getMessagesController().markReactionsAsRead(coVar.T5, coVar.d());
                     break;
                 }
-                break;
             case 1:
-                fn0 fn0Var = (fn0) this.b;
-                if (i10 != 67) {
-                    fn0Var.getClass();
+                Integer num2 = (Integer) obj;
+                co coVar2 = this.b;
+                coVar2.getClass();
+                if (num2.intValue() != 0) {
+                    int i10 = coVar2.m1 - 1;
+                    coVar2.m1 = i10;
+                    if (i10 <= 0) {
+                        coVar2.getMessagesController().markPollVotesAsRead(coVar2.T5, coVar2.d());
+                    }
+                    coVar2.Ac(true);
+                    coVar2.F(num2.intValue(), 0, 0, 0, false, true);
                     break;
-                } else if (fn0Var.V[2].length() == 0) {
-                    fn0Var.V[1].requestFocus();
-                    EditTextBoldCursor editTextBoldCursor2 = fn0Var.V[1];
-                    editTextBoldCursor2.setSelection(editTextBoldCursor2.length());
-                    fn0Var.V[1].dispatchKeyEvent(keyEvent);
+                } else {
+                    coVar2.m1 = 0;
+                    coVar2.Ac(true);
+                    coVar2.getMessagesController().markPollVotesAsRead(coVar2.T5, coVar2.d());
                     break;
                 }
-                break;
             default:
-                jv0 jv0Var = (jv0) this.b;
-                EditTextBoldCursor editTextBoldCursor3 = (EditTextBoldCursor) view;
-                if (i10 == 67 && keyEvent.getAction() == 0 && editTextBoldCursor3.length() == 0) {
-                    ImageView imageView = jv0Var.f;
-                    if (imageView != null) {
-                        imageView.callOnClick();
-                        break;
-                    }
+                co coVar3 = this.b;
+                coVar3.getClass();
+                boolean booleanValue = ((Boolean) obj).booleanValue();
+                coVar3.f7 = booleanValue;
+                if (!booleanValue) {
+                    coVar3.r8();
+                    break;
                 }
                 break;
         }
-        return true;
     }
 }

@@ -1,34 +1,114 @@
 package r0;
 
-import android.view.WindowInsets;
+import android.os.Build;
+import android.view.View;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class i1 extends h1 {
-    public static final m1 s;
+public class i1 {
+    public static final l1 b;
+    public final l1 a;
 
     static {
-        WindowInsets windowInsets;
-        windowInsets = WindowInsets.CONSUMED;
-        s = m1.h(null, windowInsets);
+        int i10 = Build.VERSION.SDK_INT;
+        b = (i10 >= 34 ? new a1() : i10 >= 30 ? new z0() : i10 >= 29 ? new y0() : new x0()).b().a.a().a.b().a.c();
     }
 
-    public i1(m1 m1Var, WindowInsets windowInsets) {
-        super(m1Var, windowInsets);
+    public i1(l1 l1Var) {
+        this.a = l1Var;
     }
 
-    @Override // r0.h1, r0.d1, r0.j1
-    public i0.b f(int i10) {
-        return i0.b.c(this.c.getInsets(l1.a(i10)));
+    public l1 a() {
+        return this.a;
     }
 
-    @Override // r0.h1, r0.d1, r0.j1
-    public i0.b g(int i10) {
-        return i0.b.c(this.c.getInsetsIgnoringVisibility(l1.a(i10)));
+    public l1 b() {
+        return this.a;
     }
 
-    @Override // r0.h1, r0.d1, r0.j1
+    public l1 c() {
+        return this.a;
+    }
+
+    public i e() {
+        return null;
+    }
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof i1)) {
+            return false;
+        }
+        i1 i1Var = (i1) obj;
+        return o() == i1Var.o() && n() == i1Var.n() && Objects.equals(k(), i1Var.k()) && Objects.equals(i(), i1Var.i()) && Objects.equals(e(), i1Var.e());
+    }
+
+    public i0.c f(int i10) {
+        return i0.c.e;
+    }
+
+    public i0.c g(int i10) {
+        if ((i10 & 8) == 0) {
+            return i0.c.e;
+        }
+        throw new IllegalArgumentException("Unable to query the maximum insets for IME");
+    }
+
+    public i0.c h() {
+        return k();
+    }
+
+    public int hashCode() {
+        return Objects.hash(Boolean.valueOf(o()), Boolean.valueOf(n()), k(), i(), e());
+    }
+
+    public i0.c i() {
+        return i0.c.e;
+    }
+
+    public i0.c j() {
+        return k();
+    }
+
+    public i0.c k() {
+        return i0.c.e;
+    }
+
+    public i0.c l() {
+        return k();
+    }
+
+    public l1 m(int i10, int i11, int i12, int i13) {
+        return b;
+    }
+
+    public boolean n() {
+        return false;
+    }
+
+    public boolean o() {
+        return false;
+    }
+
     public boolean p(int i10) {
-        return this.c.isVisible(l1.a(i10));
+        return true;
+    }
+
+    public void d(View view) {
+    }
+
+    public void q(i0.c[] cVarArr) {
+    }
+
+    public void r(l1 l1Var) {
+    }
+
+    public void s(i0.c cVar) {
+    }
+
+    public void t(int i10) {
     }
 }

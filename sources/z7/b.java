@@ -1,36 +1,116 @@
 package z7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import b6.m;
-import j7.f5;
-import java.util.Arrays;
-import u6.p;
+import java.util.AbstractSet;
+import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends c6.a {
-    public static final Parcelable.Creator<b> CREATOR = new p(25);
-    public String a;
+public final class b extends AbstractSet {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ d b;
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj instanceof b) {
-            return m.l(this.a, ((b) obj).a);
-        }
-        return false;
+    public /* synthetic */ b(d dVar, int i10) {
+        this.a = i10;
+        this.b = dVar;
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.a});
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        switch (this.a) {
+            case 0:
+                this.b.clear();
+                break;
+            default:
+                this.b.clear();
+                break;
+        }
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 1, this.a);
-        f5.r(parcel, q10);
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        switch (this.a) {
+            case 0:
+                d dVar = this.b;
+                Map a2 = dVar.a();
+                if (a2 != null) {
+                    return a2.entrySet().contains(obj);
+                }
+                if (obj instanceof Map.Entry) {
+                    Map.Entry entry = (Map.Entry) obj;
+                    int e7 = dVar.e(entry.getKey());
+                    if (e7 != -1) {
+                        Object[] objArr = dVar.d;
+                        objArr.getClass();
+                        if (w7.i9.a(objArr[e7], entry.getValue())) {
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            default:
+                return this.b.containsKey(obj);
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        switch (this.a) {
+            case 0:
+                d dVar = this.b;
+                Map a2 = dVar.a();
+                return a2 != null ? a2.entrySet().iterator() : new a(dVar, 1);
+            default:
+                d dVar2 = this.b;
+                Map a10 = dVar2.a();
+                return a10 != null ? a10.keySet().iterator() : new a(dVar2, 0);
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        switch (this.a) {
+            case 0:
+                d dVar = this.b;
+                Map a2 = dVar.a();
+                if (a2 != null) {
+                    return a2.entrySet().remove(obj);
+                }
+                if (obj instanceof Map.Entry) {
+                    Map.Entry entry = (Map.Entry) obj;
+                    if (!dVar.c()) {
+                        int d = dVar.d();
+                        Object key = entry.getKey();
+                        Object value = entry.getValue();
+                        Object obj2 = dVar.a;
+                        obj2.getClass();
+                        int[] iArr = dVar.b;
+                        iArr.getClass();
+                        Object[] objArr = dVar.c;
+                        objArr.getClass();
+                        Object[] objArr2 = dVar.d;
+                        objArr2.getClass();
+                        int a10 = w7.e9.a(key, value, d, obj2, iArr, objArr, objArr2);
+                        if (a10 != -1) {
+                            dVar.b(a10, d);
+                            dVar.f--;
+                            dVar.e += 32;
+                            return true;
+                        }
+                    }
+                }
+                return false;
+            default:
+                d dVar2 = this.b;
+                Map a11 = dVar2.a();
+                return a11 != null ? a11.keySet().remove(obj) : dVar2.g(obj) != d.s;
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        switch (this.a) {
+        }
+        return this.b.size();
     }
 }

@@ -1,80 +1,15 @@
 package i4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import f8.o;
-import j3.d1;
-import j3.n0;
-import java.util.Arrays;
-import org.telegram.ui.ai;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c implements e4.b {
-    public static final Parcelable.Creator<c> CREATOR = new o(7);
-    public final byte[] a;
-    public final String b;
-    public final String c;
+public final class c {
+    public final d2.b a;
+    public final long b;
+    public final long c;
 
-    public c(String str, String str2, byte[] bArr) {
-        this.a = bArr;
-        this.b = str;
-        this.c = str2;
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ n0 b() {
-        return null;
-    }
-
-    @Override // e4.b
-    public final void c(d1 d1Var) {
-        String str = this.b;
-        if (str != null) {
-            d1Var.a = str;
-        }
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ byte[] d() {
-        return null;
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || c.class != obj.getClass()) {
-            return false;
-        }
-        return Arrays.equals(this.a, ((c) obj).a);
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(this.a);
-    }
-
-    public final String toString() {
-        return android.support.v4.media.a.m(this.a.length, "\"", ai.l("ICY: title=\"", this.b, "\", url=\"", this.c, "\", rawMetadata.length=\""));
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeByteArray(this.a);
-        parcel.writeString(this.b);
-        parcel.writeString(this.c);
-    }
-
-    public c(Parcel parcel) {
-        byte[] createByteArray = parcel.createByteArray();
-        createByteArray.getClass();
-        this.a = createByteArray;
-        this.b = parcel.readString();
-        this.c = parcel.readString();
+    public c(d2.b bVar, long j3, long j10) {
+        this.a = bVar;
+        this.b = j3;
+        this.c = j10;
     }
 }

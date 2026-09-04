@@ -1,47 +1,29 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import org.telegram.messenger.MessagesStorage;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class ef implements Runnable {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ long e;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesStorage.IntCallback b;
+    public final /* synthetic */ int[] c;
 
-    public /* synthetic */ ef(MessagesStorage messagesStorage, int i10, boolean z4, long j10) {
-        this.b = messagesStorage;
-        this.d = i10;
-        this.c = z4;
-        this.e = j10;
+    public /* synthetic */ ef(MessagesStorage.IntCallback intCallback, int[] iArr, int i10) {
+        this.a = i10;
+        this.b = intCallback;
+        this.c = iArr;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$markMessagesAsDeleted$231(this.e, this.d, this.c);
-                break;
-            case 1:
-                this.b.lambda$removeFromDownloadQueue$182(this.c, this.d, this.e);
+                MessagesStorage.lambda$getDialogMaxMessageId$254(this.b, this.c);
                 break;
             default:
-                this.b.lambda$loadPendingTasks$31(this.d, this.c, this.e);
+                MessagesStorage.lambda$getSavedDialogMaxMessageId$52(this.b, this.c);
                 break;
         }
-    }
-
-    public /* synthetic */ ef(MessagesStorage messagesStorage, long j10, int i10, boolean z4) {
-        this.b = messagesStorage;
-        this.e = j10;
-        this.d = i10;
-        this.c = z4;
-    }
-
-    public /* synthetic */ ef(MessagesStorage messagesStorage, boolean z4, int i10, long j10) {
-        this.b = messagesStorage;
-        this.c = z4;
-        this.d = i10;
-        this.e = j10;
     }
 }

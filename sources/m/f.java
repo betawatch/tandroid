@@ -2,7 +2,7 @@ package m;
 
 import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class f implements Runnable {
     public final d a;
@@ -15,11 +15,11 @@ public final class f implements Runnable {
 
     @Override // java.lang.Runnable
     public final void run() {
-        l.i iVar;
+        l.j jVar;
         h hVar = this.b;
-        l.k kVar = hVar.c;
-        if (kVar != null && (iVar = kVar.e) != null) {
-            iVar.i(kVar);
+        l.l lVar = hVar.c;
+        if (lVar != null && (jVar = lVar.e) != null) {
+            jVar.n(lVar);
         }
         View view = (View) hVar.n;
         if (view != null && view.getWindowToken() != null) {
@@ -29,8 +29,8 @@ public final class f implements Runnable {
                     dVar.d(0, 0, false, false);
                 }
             }
-            hVar.F = dVar;
+            hVar.I = dVar;
         }
-        hVar.H = null;
+        hVar.K = null;
     }
 }

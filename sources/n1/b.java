@@ -4,26 +4,26 @@ import j$.util.DesugarCollections;
 import java.util.LinkedHashMap;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicBoolean;
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class b {
     public final LinkedHashMap a;
     public final AtomicBoolean b;
 
-    public b(LinkedHashMap linkedHashMap, boolean z4) {
+    public b(LinkedHashMap linkedHashMap, boolean z10) {
         this.a = linkedHashMap;
-        this.b = new AtomicBoolean(z4);
+        this.b = new AtomicBoolean(z10);
     }
 
     public final Object a(d key) {
-        j.e(key, "key");
+        i.e(key, "key");
         return this.a.get(key);
     }
 
     public final void b(d key, Object obj) {
-        j.e(key, "key");
+        i.e(key, "key");
         AtomicBoolean atomicBoolean = this.b;
         if (atomicBoolean.get()) {
             throw new IllegalStateException("Do mutate preferences once returned to DataStore.");
@@ -39,8 +39,8 @@ public final class b {
                 linkedHashMap.put(key, obj);
                 return;
             }
-            Set unmodifiableSet = DesugarCollections.unmodifiableSet(tc.g.p((Iterable) obj));
-            j.d(unmodifiableSet, "unmodifiableSet(value.toSet())");
+            Set unmodifiableSet = DesugarCollections.unmodifiableSet(hd.g.p((Iterable) obj));
+            i.d(unmodifiableSet, "unmodifiableSet(value.toSet())");
             linkedHashMap.put(key, unmodifiableSet);
         }
     }
@@ -49,7 +49,7 @@ public final class b {
         if (!(obj instanceof b)) {
             return false;
         }
-        return j.a(this.a, ((b) obj).a);
+        return i.a(this.a, ((b) obj).a);
     }
 
     public final int hashCode() {
@@ -57,10 +57,10 @@ public final class b {
     }
 
     public final String toString() {
-        return tc.g.h(this.a.entrySet(), ",\n", "{\n", "\n}", a.b, 24);
+        return hd.g.h(this.a.entrySet(), ",\n", "{\n", "\n}", a.b, 24);
     }
 
-    public /* synthetic */ b(boolean z4) {
-        this(new LinkedHashMap(), z4);
+    public /* synthetic */ b(boolean z10) {
+        this(new LinkedHashMap(), z10);
     }
 }

@@ -1,73 +1,180 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.AnimatorSet;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.StaticLayout;
+import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class jm0 extends AnimatorListenerAdapter {
+public final class jm0 extends FrameLayout {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ fn0 c;
+    public Object b;
+    public float c;
+    public final /* synthetic */ KeyEvent.Callback d;
 
-    public /* synthetic */ jm0(fn0 fn0Var, boolean z4, int i10) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ jm0(Context context, EditTextBoldCursor editTextBoldCursor, int i10) {
+        super(context);
         this.a = i10;
-        this.c = fn0Var;
-        this.b = z4;
+        this.d = editTextBoldCursor;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationCancel(Animator animator) {
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
         switch (this.a) {
             case 0:
-                fn0 fn0Var = this.c;
-                AnimatorSet animatorSet = fn0Var.J;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    fn0Var.J = null;
+                if (((StaticLayout) this.b) != null) {
+                    canvas.save();
+                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
+                    ((StaticLayout) this.b).draw(canvas);
+                    canvas.restore();
+                    break;
+                }
+                break;
+            case 1:
+                if (((StaticLayout) this.b) != null) {
+                    canvas.save();
+                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
+                    ((StaticLayout) this.b).draw(canvas);
+                    canvas.restore();
+                    break;
+                }
+                break;
+            case 2:
+                if (((StaticLayout) this.b) != null) {
+                    canvas.save();
+                    canvas.translate(AndroidUtilities.dp(21.0f) + this.c, ((EditTextBoldCursor) this.d).getLineY() + AndroidUtilities.dp(3.0f));
+                    ((StaticLayout) this.b).draw(canvas);
+                    canvas.restore();
                     break;
                 }
                 break;
             default:
-                fn0 fn0Var2 = this.c;
-                AnimatorSet animatorSet2 = fn0Var2.J;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    fn0Var2.J = null;
+                super.onDraw(canvas);
+                break;
+        }
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        switch (this.a) {
+            case 0:
+                int size = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
+                StaticLayout errorLayout = ((EditTextBoldCursor) this.d).getErrorLayout(size);
+                this.b = errorLayout;
+                if (errorLayout != null) {
+                    int lineCount = errorLayout.getLineCount();
+                    int i12 = 0;
+                    if (lineCount > 1) {
+                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
+                    }
+                    if (LocaleController.isRTL) {
+                        float f7 = 0.0f;
+                        while (true) {
+                            if (i12 < lineCount) {
+                                if (((StaticLayout) this.b).getLineLeft(i12) != 0.0f) {
+                                    this.c = 0.0f;
+                                } else {
+                                    f7 = Math.max(f7, ((StaticLayout) this.b).getLineWidth(i12));
+                                    if (i12 == lineCount - 1) {
+                                        this.c = size - f7;
+                                    }
+                                    i12++;
+                                }
+                            }
+                        }
+                    }
+                }
+                super.onMeasure(i10, i11);
+                break;
+            case 1:
+                int size2 = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
+                StaticLayout errorLayout2 = ((EditTextBoldCursor) this.d).getErrorLayout(size2);
+                this.b = errorLayout2;
+                if (errorLayout2 != null) {
+                    int lineCount2 = errorLayout2.getLineCount();
+                    int i13 = 0;
+                    if (lineCount2 > 1) {
+                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount2 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
+                    }
+                    if (LocaleController.isRTL) {
+                        float f10 = 0.0f;
+                        while (true) {
+                            if (i13 < lineCount2) {
+                                if (((StaticLayout) this.b).getLineLeft(i13) != 0.0f) {
+                                    this.c = 0.0f;
+                                } else {
+                                    f10 = Math.max(f10, ((StaticLayout) this.b).getLineWidth(i13));
+                                    if (i13 == lineCount2 - 1) {
+                                        this.c = size2 - f10;
+                                    }
+                                    i13++;
+                                }
+                            }
+                        }
+                    }
+                }
+                super.onMeasure(i10, i11);
+                break;
+            case 2:
+                int size3 = View.MeasureSpec.getSize(i10) - AndroidUtilities.dp(34.0f);
+                StaticLayout errorLayout3 = ((EditTextBoldCursor) this.d).getErrorLayout(size3);
+                this.b = errorLayout3;
+                if (errorLayout3 != null) {
+                    int lineCount3 = errorLayout3.getLineCount();
+                    int i14 = 0;
+                    if (lineCount3 > 1) {
+                        i11 = View.MeasureSpec.makeMeasureSpec((((StaticLayout) this.b).getLineBottom(lineCount3 - 1) - ((StaticLayout) this.b).getLineBottom(0)) + AndroidUtilities.dp(64.0f), TLObject.FLAG_30);
+                    }
+                    if (LocaleController.isRTL) {
+                        float f11 = 0.0f;
+                        while (true) {
+                            if (i14 < lineCount3) {
+                                if (((StaticLayout) this.b).getLineLeft(i14) != 0.0f) {
+                                    this.c = 0.0f;
+                                } else {
+                                    f11 = Math.max(f11, ((StaticLayout) this.b).getLineWidth(i14));
+                                    if (i14 == lineCount3 - 1) {
+                                        this.c = size3 - f11;
+                                    }
+                                    i14++;
+                                }
+                            }
+                        }
+                    }
+                }
+                super.onMeasure(i10, i11);
+                break;
+            default:
+                super.onMeasure(i10, i11);
+                org.telegram.ui.Components.aj0 aj0Var = ((org.telegram.ui.Components.ji0) this.d).h;
+                float measuredHeight = (r0.f / 768.0f) * ((ig.k) this.b).getMeasuredHeight();
+                if (this.c != measuredHeight) {
+                    this.c = measuredHeight;
+                    ViewGroup.LayoutParams layoutParams = aj0Var.getLayoutParams();
+                    int i15 = (int) measuredHeight;
+                    aj0Var.getLayoutParams().width = i15;
+                    layoutParams.height = i15;
+                    super.onMeasure(i10, i11);
                     break;
                 }
                 break;
         }
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                fn0 fn0Var = this.c;
-                AnimatorSet animatorSet = fn0Var.J;
-                if (animatorSet != null && animatorSet.equals(animator)) {
-                    if (!this.b) {
-                        fn0Var.K.setVisibility(4);
-                        break;
-                    } else {
-                        fn0Var.I.getContentView().setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-            default:
-                fn0 fn0Var2 = this.c;
-                AnimatorSet animatorSet2 = fn0Var2.J;
-                if (animatorSet2 != null && animatorSet2.equals(animator)) {
-                    if (!this.b) {
-                        fn0Var2.M.setVisibility(4);
-                        break;
-                    } else {
-                        fn0Var2.L.setVisibility(4);
-                        break;
-                    }
-                }
-                break;
-        }
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public jm0(org.telegram.ui.Components.ji0 ji0Var, Context context, ig.k kVar) {
+        super(context);
+        this.a = 3;
+        this.d = ji0Var;
+        this.b = kVar;
     }
 }

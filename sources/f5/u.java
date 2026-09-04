@@ -1,50 +1,50 @@
 package f5;
 
-import h5.d0;
-import java.util.Collections;
-import java.util.List;
-import o4.s0;
+import java.nio.ByteBuffer;
+import w7.p6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class u implements j3.g {
-    public static final String c;
-    public static final String d;
-    public final s0 a;
-    public final s8.v b;
+public final class u extends com.googlecode.mp4parser.c {
+    public static final /* synthetic */ mg.n f;
+    public static final /* synthetic */ mg.n h;
+    public long[] e;
 
     static {
-        int i10 = d0.a;
-        c = Integer.toString(0, 36);
-        d = Integer.toString(1, 36);
+        re.a aVar = new re.a(u.class, "SyncSampleBox.java");
+        aVar.e(aVar.d("getSampleNumber", "com.coremedia.iso.boxes.SyncSampleBox", "", "", "[J"));
+        f = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.SyncSampleBox", "", "", "java.lang.String"));
+        h = aVar.e(aVar.d("setSampleNumber", "com.coremedia.iso.boxes.SyncSampleBox", "[J", "sampleNumber", "void"));
     }
 
-    public u(s0 s0Var, int i10) {
-        this(s0Var, s8.v.x(Integer.valueOf(i10)));
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        int a2 = p6.a(e5.b.i(byteBuffer));
+        this.e = new long[a2];
+        for (int i10 = 0; i10 < a2; i10++) {
+            this.e[i10] = e5.b.i(byteBuffer);
         }
-        if (obj != null && u.class == obj.getClass()) {
-            u uVar = (u) obj;
-            if (this.a.equals(uVar.a) && this.b.equals(uVar.b)) {
-                return true;
-            }
-        }
-        return false;
     }
 
-    public final int hashCode() {
-        return (this.b.hashCode() * 31) + this.a.hashCode();
+    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        byteBuffer.putInt(this.e.length);
+        for (long j3 : this.e) {
+            byteBuffer.putInt((int) j3);
+        }
     }
 
-    public u(s0 s0Var, List list) {
-        if (!list.isEmpty() && (((Integer) Collections.min(list)).intValue() < 0 || ((Integer) Collections.max(list)).intValue() >= s0Var.a)) {
-            throw new IndexOutOfBoundsException();
-        }
-        this.a = s0Var;
-        this.b = s8.v.t(list);
+    @Override // com.googlecode.mp4parser.a
+    public final long getContentSize() {
+        return (this.e.length * 4) + 8;
+    }
+
+    public final String toString() {
+        com.google.firebase.messaging.s b10 = re.a.b(f, this, this);
+        com.googlecode.mp4parser.g.a().getClass();
+        com.googlecode.mp4parser.g.b(b10);
+        return a4.a.n(this.e.length, "]", new StringBuilder("SyncSampleBox[entryCount="));
     }
 }

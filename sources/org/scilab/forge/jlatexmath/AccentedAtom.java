@@ -1,8 +1,8 @@
 package org.scilab.forge.jlatexmath;
 
-import android.support.v4.media.a;
+import a4.a;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class AccentedAtom extends Atom {
     private boolean acc;
@@ -45,9 +45,9 @@ public class AccentedAtom extends Atom {
             }
             r62 = nextLarger;
         }
-        float f10 = -SpaceAtom.getFactor(5, teXEnvironment);
+        float f7 = -SpaceAtom.getFactor(5, teXEnvironment);
         if (!this.acc) {
-            f10 = Math.min(strutBox.getHeight(), teXFont.getXHeight(style, r62.getFontCode()));
+            f7 = Math.min(strutBox.getHeight(), teXFont.getXHeight(style, r62.getFontCode()));
         }
         VerticalBox verticalBox = new VerticalBox();
         float italic = r62.getItalic();
@@ -70,7 +70,7 @@ public class AccentedAtom extends Atom {
             strutBox = new HorizontalBox(strutBox, charBox.getWidth(), 2);
         }
         verticalBox.add(charBox);
-        verticalBox.add(new StrutBox(0.0f, this.changeSize ? -f10 : -strutBox.getHeight(), 0.0f, 0.0f));
+        verticalBox.add(new StrutBox(0.0f, this.changeSize ? -f7 : -strutBox.getHeight(), 0.0f, 0.0f));
         verticalBox.add(strutBox);
         float depth = verticalBox.getDepth() + verticalBox.getHeight();
         float depth2 = strutBox.getDepth();
@@ -85,9 +85,9 @@ public class AccentedAtom extends Atom {
         return horizontalBox2;
     }
 
-    public AccentedAtom(Atom atom, Atom atom2, boolean z4) {
+    public AccentedAtom(Atom atom, Atom atom2, boolean z10) {
         this(atom, atom2);
-        this.changeSize = z4;
+        this.changeSize = z10;
     }
 
     public AccentedAtom(Atom atom, String str) {
@@ -107,7 +107,7 @@ public class AccentedAtom extends Atom {
                 return;
             }
         }
-        throw new InvalidSymbolTypeException(a.o("The symbol with the name '", str, "' is not defined as an accent (type='acc') in 'TeXSymbols.xml'!"));
+        throw new InvalidSymbolTypeException(a.p("The symbol with the name '", str, "' is not defined as an accent (type='acc') in 'TeXSymbols.xml'!"));
     }
 
     public AccentedAtom(Atom atom, TeXFormula teXFormula) {

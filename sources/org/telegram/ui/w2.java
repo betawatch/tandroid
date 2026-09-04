@@ -1,159 +1,39 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.text.Layout;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.accessibility.AccessibilityNodeInfo;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import org.telegram.messenger.video.VideoPlayerHolderBase;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class w2 extends View implements org.telegram.ui.Cells.k9, i3 {
-    public final p70 a;
-    public final l4 b;
-    public f3 c;
-    public int d;
-    public int e;
-    public TL_iv.pageBlockSubtitle f;
+public final class w2 extends VideoPlayerHolderBase {
+    public final /* synthetic */ x2 a;
 
-    public w2(Context context, p70 p70Var, l4 l4Var) {
-        super(context);
-        this.a = p70Var;
-        this.b = l4Var;
+    public w2(x2 x2Var) {
+        this.a = x2Var;
     }
 
-    @Override // org.telegram.ui.Cells.k9
-    public final void fillTextLayoutBlocks(ArrayList arrayList) {
-        f3 f3Var = this.c;
-        if (f3Var != null) {
-            arrayList.add(f3Var);
-        }
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final boolean needRepeat() {
+        return true;
     }
 
-    @Override // org.telegram.ui.i3
-    public int getBoundLeft() {
-        f3 f3Var = this.c;
-        if (f3Var == null) {
-            return -1;
-        }
-        int a2 = f3Var.a() + f3Var.s;
-        this.a.getClass();
-        return a2 - AndroidUtilities.dp(18);
-    }
-
-    @Override // org.telegram.ui.i3
-    public int getBoundRight() {
-        f3 f3Var = this.c;
-        if (f3Var == null) {
-            return -1;
-        }
-        int b10 = f3Var.b() + f3Var.s;
-        this.a.getClass();
-        return AndroidUtilities.dp(18) + b10;
-    }
-
-    @Override // org.telegram.ui.i3
-    public int getLastLineBoundRight() {
-        f3 f3Var = this.c;
-        if (f3Var == null) {
-            return -1;
-        }
-        int c3 = f3Var.c() + f3Var.s;
-        this.a.getClass();
-        return AndroidUtilities.dp(18) + c3;
-    }
-
-    public /* bridge */ /* synthetic */ int getMinWidth() {
-        return b.b(this);
-    }
-
-    @Override // android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        f3 f3Var = this.c;
-        if (f3Var != null) {
-            f3Var.attach(this);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        f3 f3Var = this.c;
-        if (f3Var != null) {
-            f3Var.detach(this);
-        }
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        if (this.f == null || this.c == null) {
+    @Override // org.telegram.messenger.video.VideoPlayerHolderBase
+    public final void onRenderedFirstFrame() {
+        super.onRenderedFirstFrame();
+        if (this.firstFrameRendered) {
             return;
         }
-        canvas.save();
-        canvas.translate(this.d, this.e);
-        n4.v(this.a, canvas, this, 0);
-        this.c.draw(canvas, this);
-        canvas.restore();
-    }
-
-    @Override // android.view.View
-    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        accessibilityNodeInfo.setEnabled(true);
-        f3 f3Var = this.c;
-        if (f3Var == null) {
-            return;
+        this.firstFrameRendered = true;
+        x2 x2Var = this.a;
+        x2Var.n.setAlpha(1.0f);
+        TL_iv.pageBlockVideo pageblockvideo = x2Var.L;
+        if (pageblockvideo != null) {
+            v70 v70Var = x2Var.a;
+            a0.i iVar = v70Var.y;
+            long j3 = pageblockvideo.video_id;
+            y2 a2 = y2.a(v70Var.w, x2Var);
+            x2Var.c(a2);
+            iVar.k(a2, j3);
         }
-        accessibilityNodeInfo.setText(n4.i(R.string.AccDescrIVHeading, n4.j(this.a, this.b, f3Var)));
-    }
-
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        int i12;
-        int size = View.MeasureSpec.getSize(i10);
-        p70 p70Var = this.a;
-        p70Var.getClass();
-        this.d = AndroidUtilities.dp(18);
-        p70Var.getClass();
-        this.e = AndroidUtilities.dp(8);
-        TL_iv.pageBlockSubtitle pageblocksubtitle = this.f;
-        if (pageblocksubtitle != null) {
-            TL_iv.RichText richText = pageblocksubtitle.text;
-            p70 p70Var2 = this.a;
-            p70Var2.getClass();
-            int dp = size - AndroidUtilities.dp(36);
-            TL_iv.pageBlockSubtitle pageblocksubtitle2 = this.f;
-            l4 l4Var = this.b;
-            f3 p10 = n4.p(p70Var2, this, null, richText, dp, 0, pageblocksubtitle2, (l4Var == null || !l4Var.D) ? Layout.Alignment.ALIGN_NORMAL : org.telegram.ui.Components.kw0.a(), 0, this.b);
-            this.c = p10;
-            if (p10 != null) {
-                p70Var.getClass();
-                i12 = this.c.d.getHeight() + AndroidUtilities.dp(16);
-                f3 f3Var = this.c;
-                f3Var.s = this.d;
-                f3Var.v = this.e;
-            } else {
-                i12 = 0;
-            }
-        } else {
-            i12 = 1;
-        }
-        setMeasuredDimension(size, i12);
-    }
-
-    @Override // android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        return n4.l(this.a, this.b, motionEvent, this, this.c, this.d, this.e) || super.onTouchEvent(motionEvent);
-    }
-
-    public void setBlock(TL_iv.pageBlockSubtitle pageblocksubtitle) {
-        this.f = pageblocksubtitle;
-        requestLayout();
     }
 }

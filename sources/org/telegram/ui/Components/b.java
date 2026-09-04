@@ -4,7 +4,7 @@ import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b implements View.OnClickListener {
     public final /* synthetic */ int a;
@@ -23,22 +23,22 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 break;
             case 1:
                 f0 f0Var = this.b;
-                org.telegram.ui.Cells.h3 h3Var = f0Var.x0;
-                AndroidUtilities.hideKeyboard(h3Var.b);
-                f0Var.F0 = h3Var.getText().toString();
+                org.telegram.ui.Cells.i3 i3Var = f0Var.A0;
+                AndroidUtilities.hideKeyboard(i3Var.b);
+                f0Var.I0 = i3Var.getText().toString();
                 f0Var.q0();
                 f0Var.p0(true);
                 f0Var.k0();
                 break;
             case 2:
                 f0 f0Var2 = this.b;
-                if (f0Var2.h0 != null) {
+                if (f0Var2.k0 != null) {
                     TL_iv.RichMessage g02 = f0Var2.g0();
                     if (g02 != null) {
-                        f0Var2.h0.run(g02);
+                        f0Var2.k0.run(g02);
                     }
-                } else if (f0Var2.g0 != null && f0Var2.h0() != null) {
-                    f0Var2.g0.run(f0Var2.h0());
+                } else if (f0Var2.j0 != null && f0Var2.h0() != null) {
+                    f0Var2.j0.run(f0Var2.h0());
                 }
                 f0Var2.dismiss();
                 break;
@@ -47,9 +47,9 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 break;
             case 4:
                 f0 f0Var3 = this.b;
-                f0Var3.M0 = false;
-                f0Var3.I();
-                f0Var3.L0.N(true);
+                f0Var3.P0 = false;
+                f0Var3.J();
+                f0Var3.O0.N(true);
                 f0Var3.s();
                 break;
             case 5:
@@ -60,7 +60,7 @@ public final /* synthetic */ class b implements View.OnClickListener {
                 break;
             case 7:
                 f0 f0Var4 = this.b;
-                if (!f0Var4.O0) {
+                if (!f0Var4.R0) {
                     AndroidUtilities.addToClipboard(f0Var4.h0());
                     break;
                 }

@@ -1,47 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.app.Activity;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ti implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ui b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ org.telegram.ui.Components.pk0 e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ float h;
-    public final /* synthetic */ mg.q0 n;
+public final class ti extends org.telegram.ui.Components.io {
+    public final /* synthetic */ co M;
 
-    public /* synthetic */ ti(ui uiVar, int i10, boolean z4, org.telegram.ui.Components.pk0 pk0Var, float f10, float f11, mg.q0 q0Var, int i11) {
-        this.a = i11;
-        this.b = uiVar;
-        this.c = i10;
-        this.d = z4;
-        this.e = pk0Var;
-        this.f = f10;
-        this.h = f11;
-        this.n = q0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ti(co coVar, Activity activity, int i10, TLRPC.Document document, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(activity, i10, document, f6Var);
+        this.M = coVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        int i10;
-        switch (this.a) {
-            case 0:
-                AndroidUtilities.runOnUIThread(new ti(this.b, this.c, this.d, this.e, this.f, this.h, this.n, 1), 50L);
-                break;
-            default:
-                zn znVar = this.b.s;
-                org.telegram.ui.Cells.a0 q82 = znVar.q8(this.c, true);
-                if (this.d) {
-                    i10 = ((org.telegram.ui.ActionBar.p2) znVar).currentAccount;
-                    mg.m0.d(znVar, this.e, q82, null, this.f, this.h, this.n, i10, 1);
-                    mg.m0.f();
-                    break;
-                }
-                break;
-        }
+    @Override // android.widget.LinearLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        float y3 = getY();
+        co coVar = this.M;
+        float y10 = coVar.R0.getY() + y3;
+        this.J = coVar.X0.getBackgroundSizeY();
+        this.I = y10;
     }
 }

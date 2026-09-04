@@ -1,31 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.content.Context;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pi implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ wi a;
+public final class pi extends qi {
+    public int b;
+    public final /* synthetic */ vi c;
 
-    public /* synthetic */ pi(wi wiVar) {
-        this.a = wiVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public pi(vi viVar, Context context) {
+        super(context);
+        org.telegram.ui.ActionBar.f6 f6Var;
+        this.c = viVar;
+        setWillNotDraw(false);
+        setFocusable(true);
+        f6Var = ((org.telegram.ui.ActionBar.f3) viVar).resourcesProvider;
+        ph.b bVar = new ph.b(context);
+        bVar.d = f6Var;
+        bVar.Q = true;
+        TextView textView = bVar.a;
+        textView.setTextSize(1, 11.0f);
+        textView.setPadding(AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f), 0);
+        bVar.a(false);
+        bVar.b.setLayoutParams(w7.x5.d(24, 24.0f, 49, 0.0f, 4.0f, 0.0f, 0.0f));
+        bVar.w = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.cl, f6Var);
+        bVar.s = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.al, f6Var);
+        bVar.v = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.bl, f6Var);
+        bVar.f();
+        this.a = bVar;
+        addView(bVar, w7.x5.c(-1.0f, -1));
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.M((i51) obj, (View) obj2);
+    public final void a(int i10, String str, ph.a aVar) {
+        this.a.setText(str);
+        this.a.setTabAnimation(aVar);
+        this.b = i10;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        this.a.M((i51) obj, (View) obj2);
-        return Boolean.TRUE;
+    @Override // android.view.View
+    public final boolean hasOverlappingRendering() {
+        return false;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.e(((long) this.b) == this.c.W0, false);
     }
 }

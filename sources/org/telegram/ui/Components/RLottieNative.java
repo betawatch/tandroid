@@ -5,27 +5,27 @@ import android.os.Trace;
 import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class RLottieNative {
     public final int[] a;
     public long b;
     public final AtomicBoolean c = new AtomicBoolean(false);
 
-    public RLottieNative(long j10, int[] iArr) {
-        this.b = j10;
+    public RLottieNative(long j3, int[] iArr) {
+        this.b = j3;
         this.a = iArr;
     }
 
-    public static RLottieNative a(String str, String str2, int i10, int i11, int[] iArr, boolean z4, int[] iArr2, boolean z10, int i12, HashMap hashMap) {
+    public static RLottieNative a(String str, String str2, int i10, int i11, int[] iArr, boolean z10, int[] iArr2, boolean z11, int i12, HashMap hashMap) {
         String[] strArr;
         int[] iArr3;
         String str3;
         int i13;
         int i14;
-        boolean z11;
-        int[] iArr4;
         boolean z12;
+        int[] iArr4;
+        boolean z13;
         int i15;
         String str4;
         int[] iArr5 = new int[3];
@@ -46,9 +46,9 @@ public final class RLottieNative {
             str3 = str2;
             i13 = i10;
             i14 = i11;
-            z11 = z4;
-            iArr4 = iArr2;
             z12 = z10;
+            iArr4 = iArr2;
+            z13 = z11;
             i15 = i12;
         } else {
             int[] iArr6 = new int[strArr.length];
@@ -59,13 +59,13 @@ public final class RLottieNative {
             str3 = str2;
             i13 = i10;
             i14 = i11;
-            z11 = z4;
-            iArr4 = iArr2;
             z12 = z10;
+            iArr4 = iArr2;
+            z13 = z11;
             i15 = i12;
             str4 = str;
         }
-        long nCreate = nCreate(str4, str3, i13, i14, iArr5, z11, iArr4, z12, i15, strArr, iArr3);
+        long nCreate = nCreate(str4, str3, i13, i14, iArr5, z12, iArr4, z13, i15, strArr, iArr3);
         Trace.endSection();
         if (nCreate == 0) {
             return null;
@@ -107,22 +107,22 @@ public final class RLottieNative {
         return null;
     }
 
-    private static native long nCreate(String str, String str2, int i10, int i11, int[] iArr, boolean z4, int[] iArr2, boolean z10, int i12, String[] strArr, int[] iArr3);
+    private static native long nCreate(String str, String str2, int i10, int i11, int[] iArr, boolean z10, int[] iArr2, boolean z11, int i12, String[] strArr, int[] iArr3);
 
     private static native long nCreateWithJson(String str, int[] iArr, int[] iArr2, String[] strArr, int[] iArr3);
 
-    private static native void nDestroy(long j10);
+    private static native void nDestroy(long j3);
 
-    private static native int nGetFrame(long j10, int i10, Bitmap bitmap, boolean z4);
+    private static native int nGetFrame(long j3, int i10, Bitmap bitmap, boolean z10);
 
-    public final int c(int i10, Bitmap bitmap, boolean z4) {
+    public final int c(int i10, Bitmap bitmap, boolean z10) {
         if (this.c.get()) {
             throw new IllegalStateException("Called method on a recycled RLottie instance");
         }
-        long j10 = this.b;
+        long j3 = this.b;
         Trace.beginSection("RLottieNative#getFrame");
         try {
-            return nGetFrame(j10, i10, bitmap, z4);
+            return nGetFrame(j3, i10, bitmap, z10);
         } finally {
             Trace.endSection();
         }
@@ -130,12 +130,12 @@ public final class RLottieNative {
 
     public final void d() {
         if (this.c.compareAndSet(false, true)) {
-            long j10 = this.b;
+            long j3 = this.b;
             this.b = 0L;
-            if (j10 != 0) {
+            if (j3 != 0) {
                 Trace.beginSection("RLottieNative#destroy");
                 try {
-                    nDestroy(j10);
+                    nDestroy(j3);
                 } finally {
                     Trace.endSection();
                 }

@@ -11,9 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.window.OnBackInvokedDispatcher;
-import androidx.fragment.app.b0;
-import androidx.fragment.app.e0;
-import androidx.lifecycle.f0;
+import androidx.fragment.app.a0;
+import androidx.fragment.app.d0;
 import androidx.lifecycle.h0;
 import androidx.lifecycle.j0;
 import androidx.lifecycle.n0;
@@ -21,28 +20,26 @@ import androidx.lifecycle.q0;
 import androidx.lifecycle.s0;
 import androidx.lifecycle.t0;
 import androidx.lifecycle.u0;
-import com.google.android.gms.internal.cast.c0;
-import e0.p0;
-import j7.j8;
+import com.google.android.gms.internal.cast.f0;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.CopyOnWriteArraySet;
 import java.util.concurrent.atomic.AtomicInteger;
-import l7.w0;
 import org.telegram.messenger.beta.R;
+import w7.z7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
-    public final CopyOnWriteArrayList B;
-    public final CopyOnWriteArrayList C;
-    public final CopyOnWriteArrayList D;
-    public boolean E;
-    public boolean F;
-    public final c0 b;
-    public final w0 c;
+public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
+    public final CopyOnWriteArrayList E;
+    public final CopyOnWriteArrayList F;
+    public final CopyOnWriteArrayList G;
+    public boolean H;
+    public boolean I;
+    public final f0 b;
+    public final m2.t c;
     public final androidx.lifecycle.v d;
     public final o e;
     public t0 f;
@@ -55,36 +52,34 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
     public final CopyOnWriteArrayList x;
     public final CopyOnWriteArrayList y;
 
+    /* JADX WARN: Type inference failed for: r5v0, types: [androidx.activity.d] */
     public m() {
-        c0 c0Var = new c0(1);
-        this.b = c0Var;
-        this.c = new w0(new ag.d(this, 1));
+        f0 f0Var = new f0(1);
+        this.b = f0Var;
+        this.c = new m2.t(new a3.c(this, 5));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
         o oVar = new o(this);
         this.e = oVar;
         this.n = null;
-        this.r = new l(this);
-        new dd.a() { // from class: androidx.activity.d
-            @Override // dd.a
+        l lVar = new l(this);
+        this.r = lVar;
+        this.s = new o(lVar, (d) new rd.a() { // from class: androidx.activity.d
+            @Override // rd.a
             public final Object invoke() {
                 m.this.reportFullyDrawn();
                 return null;
             }
-        };
-        o oVar2 = new o();
-        oVar2.b = new Object();
-        oVar2.c = new ArrayList();
-        this.s = oVar2;
+        });
         this.v = new AtomicInteger();
         this.w = new h(this);
         this.x = new CopyOnWriteArrayList();
         this.y = new CopyOnWriteArrayList();
-        this.B = new CopyOnWriteArrayList();
-        this.C = new CopyOnWriteArrayList();
-        this.D = new CopyOnWriteArrayList();
-        this.E = false;
-        this.F = false;
+        this.E = new CopyOnWriteArrayList();
+        this.F = new CopyOnWriteArrayList();
+        this.G = new CopyOnWriteArrayList();
+        this.H = false;
+        this.I = false;
         int i10 = Build.VERSION.SDK_INT;
         vVar.a(new androidx.lifecycle.r() { // from class: androidx.activity.ComponentActivity$2
             @Override // androidx.lifecycle.r
@@ -106,10 +101,10 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
                     if (!m.this.isChangingConfigurations()) {
                         m.this.f().a();
                     }
-                    l lVar = m.this.r;
-                    m mVar2 = lVar.d;
-                    mVar2.getWindow().getDecorView().removeCallbacks(lVar);
-                    mVar2.getWindow().getDecorView().getViewTreeObserver().removeOnDrawListener(lVar);
+                    l lVar2 = m.this.r;
+                    m mVar2 = lVar2.d;
+                    mVar2.getWindow().getDecorView().removeCallbacks(lVar2);
+                    mVar2.getWindow().getDecorView().getViewTreeObserver().removeOnDrawListener(lVar2);
                 }
             }
         });
@@ -129,19 +124,19 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
                 mVar2.d.b(this);
             }
         });
-        oVar.a();
+        oVar.b();
         j0.d(this);
         if (i10 <= 23) {
             ImmLeaksCleaner immLeaksCleaner = new ImmLeaksCleaner();
             immLeaksCleaner.a = this;
             vVar.a(immLeaksCleaner);
         }
-        ((g2.e) oVar.c).f("android:support:activity-result", new e(this, 0));
+        ((m.p) oVar.d).f("android:support:activity-result", new e(this, 0));
         f fVar = new f(this, 0);
-        if (((m) c0Var.c) != null) {
+        if (((m) f0Var.c) != null) {
             fVar.a();
         }
-        ((CopyOnWriteArraySet) c0Var.b).add(fVar);
+        ((CopyOnWriteArraySet) f0Var.b).add(fVar);
     }
 
     @Override // android.app.Activity
@@ -191,9 +186,9 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
         return this.f;
     }
 
-    @Override // g2.f
-    public final g2.e g() {
-        return (g2.e) this.e.c;
+    @Override // t4.e
+    public final m.p g() {
+        return (m.p) this.e.d;
     }
 
     @Override // androidx.lifecycle.t
@@ -229,17 +224,17 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
 
     @Override // e0.h, android.app.Activity
     public void onCreate(Bundle bundle) {
-        this.e.b(bundle);
-        c0 c0Var = this.b;
-        c0Var.getClass();
-        c0Var.c = this;
-        Iterator it = ((CopyOnWriteArraySet) c0Var.b).iterator();
+        this.e.c(bundle);
+        f0 f0Var = this.b;
+        f0Var.getClass();
+        f0Var.c = this;
+        Iterator it = ((CopyOnWriteArraySet) f0Var.b).iterator();
         while (it.hasNext()) {
             ((f) it.next()).a();
         }
         super.onCreate(bundle);
         int i10 = h0.b;
-        f0.b(this);
+        androidx.lifecycle.f0.b(this);
     }
 
     @Override // android.app.Activity, android.view.Window.Callback
@@ -251,7 +246,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
         getMenuInflater();
         Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
         while (it.hasNext()) {
-            ((b0) it.next()).a.k();
+            ((a0) it.next()).a.k();
         }
         return true;
     }
@@ -264,7 +259,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
         if (i10 == 0) {
             Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
             while (it.hasNext()) {
-                if (((b0) it.next()).a.p()) {
+                if (((a0) it.next()).a.p()) {
                     return true;
                 }
             }
@@ -273,20 +268,20 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
     }
 
     @Override // android.app.Activity
-    public void onMultiWindowModeChanged(boolean z4) {
-        if (this.E) {
+    public void onMultiWindowModeChanged(boolean z10) {
+        if (this.H) {
             return;
         }
-        Iterator it = this.C.iterator();
+        Iterator it = this.F.iterator();
         while (it.hasNext()) {
-            ((q0.a) it.next()).accept(new e0.i(z4));
+            ((q0.a) it.next()).accept(new e0.i(z10));
         }
     }
 
     @Override // android.app.Activity
     public void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        Iterator it = this.B.iterator();
+        Iterator it = this.E.iterator();
         while (it.hasNext()) {
             ((q0.a) it.next()).accept(intent);
         }
@@ -296,19 +291,19 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
     public final void onPanelClosed(int i10, Menu menu) {
         Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
         while (it.hasNext()) {
-            ((b0) it.next()).a.q();
+            ((a0) it.next()).a.q();
         }
         super.onPanelClosed(i10, menu);
     }
 
     @Override // android.app.Activity
-    public final void onPictureInPictureModeChanged(boolean z4) {
-        if (this.F) {
+    public final void onPictureInPictureModeChanged(boolean z10) {
+        if (this.I) {
             return;
         }
-        Iterator it = this.D.iterator();
+        Iterator it = this.G.iterator();
         while (it.hasNext()) {
-            ((q0.a) it.next()).accept(new p0(z4));
+            ((q0.a) it.next()).accept(new e0.q0(z10));
         }
     }
 
@@ -320,7 +315,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
         super.onPreparePanel(i10, view, menu);
         Iterator it = ((CopyOnWriteArrayList) this.c.c).iterator();
         while (it.hasNext()) {
-            ((b0) it.next()).a.t();
+            ((a0) it.next()).a.t();
         }
         return true;
     }
@@ -355,7 +350,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
             vVar.g();
         }
         super.onSaveInstanceState(bundle);
-        this.e.c(bundle);
+        this.e.d(bundle);
     }
 
     @Override // android.app.Activity, android.content.ComponentCallbacks2
@@ -379,7 +374,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
                     x xVar = m.this.n;
                     OnBackInvokedDispatcher invoker = j.a((m) tVar);
                     xVar.getClass();
-                    kotlin.jvm.internal.j.e(invoker, "invoker");
+                    kotlin.jvm.internal.i.e(invoker, "invoker");
                     xVar.e = invoker;
                     xVar.c(xVar.g);
                 }
@@ -390,46 +385,46 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
 
     public final void q() {
         View decorView = getWindow().getDecorView();
-        kotlin.jvm.internal.j.e(decorView, "<this>");
+        kotlin.jvm.internal.i.e(decorView, "<this>");
         decorView.setTag(R.id.view_tree_lifecycle_owner, this);
         View decorView2 = getWindow().getDecorView();
-        kotlin.jvm.internal.j.e(decorView2, "<this>");
+        kotlin.jvm.internal.i.e(decorView2, "<this>");
         decorView2.setTag(R.id.view_tree_view_model_store_owner, this);
         View decorView3 = getWindow().getDecorView();
-        kotlin.jvm.internal.j.e(decorView3, "<this>");
+        kotlin.jvm.internal.i.e(decorView3, "<this>");
         decorView3.setTag(R.id.view_tree_saved_state_registry_owner, this);
         View decorView4 = getWindow().getDecorView();
-        kotlin.jvm.internal.j.e(decorView4, "<this>");
+        kotlin.jvm.internal.i.e(decorView4, "<this>");
         decorView4.setTag(R.id.view_tree_on_back_pressed_dispatcher_owner, this);
         View decorView5 = getWindow().getDecorView();
-        kotlin.jvm.internal.j.e(decorView5, "<this>");
+        kotlin.jvm.internal.i.e(decorView5, "<this>");
         decorView5.setTag(R.id.report_drawn, this);
     }
 
-    public final androidx.activity.result.c r(androidx.activity.result.b bVar, e0 e0Var) {
-        return this.w.c("activity_rq#" + this.v.getAndIncrement(), this, e0Var, bVar);
+    public final androidx.activity.result.c r(androidx.activity.result.b bVar, d0 d0Var) {
+        return this.w.c("activity_rq#" + this.v.getAndIncrement(), this, d0Var, bVar);
     }
 
     @Override // android.app.Activity
     public final void reportFullyDrawn() {
         try {
-            if (j8.b()) {
-                j8.a("reportFullyDrawn() for ComponentActivity");
+            if (z7.b()) {
+                z7.a("reportFullyDrawn() for ComponentActivity");
             }
             super.reportFullyDrawn();
             o oVar = this.s;
-            synchronized (oVar.b) {
+            synchronized (oVar.c) {
                 try {
-                    oVar.a = true;
-                    ArrayList arrayList = (ArrayList) oVar.c;
+                    oVar.b = true;
+                    ArrayList arrayList = (ArrayList) oVar.d;
                     int size = arrayList.size();
                     int i10 = 0;
                     while (i10 < size) {
                         Object obj = arrayList.get(i10);
                         i10++;
-                        ((dd.a) obj).invoke();
+                        ((rd.a) obj).invoke();
                     }
-                    ((ArrayList) oVar.c).clear();
+                    ((ArrayList) oVar.d).clear();
                 } finally {
                 }
             }
@@ -448,37 +443,37 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, g2.f {
     }
 
     @Override // android.app.Activity
-    public final void onMultiWindowModeChanged(boolean z4, Configuration newConfig) {
-        this.E = true;
+    public final void onMultiWindowModeChanged(boolean z10, Configuration newConfig) {
+        this.H = true;
         try {
-            super.onMultiWindowModeChanged(z4, newConfig);
-            this.E = false;
-            Iterator it = this.C.iterator();
+            super.onMultiWindowModeChanged(z10, newConfig);
+            this.H = false;
+            Iterator it = this.F.iterator();
             while (it.hasNext()) {
                 q0.a aVar = (q0.a) it.next();
-                kotlin.jvm.internal.j.e(newConfig, "newConfig");
-                aVar.accept(new e0.i(z4));
+                kotlin.jvm.internal.i.e(newConfig, "newConfig");
+                aVar.accept(new e0.i(z10));
             }
         } catch (Throwable th2) {
-            this.E = false;
+            this.H = false;
             throw th2;
         }
     }
 
     @Override // android.app.Activity
-    public void onPictureInPictureModeChanged(boolean z4, Configuration newConfig) {
-        this.F = true;
+    public void onPictureInPictureModeChanged(boolean z10, Configuration newConfig) {
+        this.I = true;
         try {
-            super.onPictureInPictureModeChanged(z4, newConfig);
-            this.F = false;
-            Iterator it = this.D.iterator();
+            super.onPictureInPictureModeChanged(z10, newConfig);
+            this.I = false;
+            Iterator it = this.G.iterator();
             while (it.hasNext()) {
                 q0.a aVar = (q0.a) it.next();
-                kotlin.jvm.internal.j.e(newConfig, "newConfig");
-                aVar.accept(new p0(z4));
+                kotlin.jvm.internal.i.e(newConfig, "newConfig");
+                aVar.accept(new e0.q0(z10));
             }
         } catch (Throwable th2) {
-            this.F = false;
+            this.I = false;
             throw th2;
         }
     }

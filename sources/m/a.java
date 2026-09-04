@@ -2,7 +2,7 @@ package m;
 
 import androidx.appcompat.widget.ActionBarOverlayLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class a implements Runnable {
     public final /* synthetic */ int a;
@@ -18,13 +18,13 @@ public final class a implements Runnable {
         switch (this.a) {
             case 0:
                 ActionBarOverlayLayout actionBarOverlayLayout = this.b;
-                actionBarOverlayLayout.b();
-                actionBarOverlayLayout.J = actionBarOverlayLayout.d.animate().translationY(0.0f).setListener(actionBarOverlayLayout.K);
+                actionBarOverlayLayout.c();
+                actionBarOverlayLayout.M = actionBarOverlayLayout.d.animate().translationY(0.0f).setListener(actionBarOverlayLayout.N);
                 break;
             default:
                 ActionBarOverlayLayout actionBarOverlayLayout2 = this.b;
-                actionBarOverlayLayout2.b();
-                actionBarOverlayLayout2.J = actionBarOverlayLayout2.d.animate().translationY(-actionBarOverlayLayout2.d.getHeight()).setListener(actionBarOverlayLayout2.K);
+                actionBarOverlayLayout2.c();
+                actionBarOverlayLayout2.M = actionBarOverlayLayout2.d.animate().translationY(-actionBarOverlayLayout2.d.getHeight()).setListener(actionBarOverlayLayout2.N);
                 break;
         }
     }

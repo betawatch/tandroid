@@ -1,47 +1,48 @@
 package org.telegram.ui.Components;
 
-import java.util.ArrayList;
+import android.content.Context;
+import android.graphics.Typeface;
+import android.widget.LinearLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class lc implements Utilities.Callback {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final class lc extends nb {
+    public final x9 a;
+    public final d90 b;
+    public final d90 c;
 
-    public /* synthetic */ lc(int i10, ic icVar, long j10) {
-        this.c = i10;
-        this.d = icVar;
-        this.b = j10;
+    public lc(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var);
+        int i10 = org.telegram.ui.ActionBar.j6.Hi;
+        getThemedColor(i10);
+        setBackground(getThemedColor(org.telegram.ui.ActionBar.j6.Fi));
+        x9 x9Var = new x9(context);
+        this.a = x9Var;
+        addView(x9Var, w7.x5.i(32.0f, 32.0f, 8388627, 12.0f, 0.0f, 12.0f, 0.0f));
+        int themedColor = getThemedColor(i10);
+        int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.j6.Gi);
+        LinearLayout f7 = org.telegram.messenger.wl.f(context, 1);
+        addView(f7, w7.x5.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
+        d90 d90Var = new d90(context, null);
+        this.b = d90Var;
+        d90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        d90Var.setTextColor(themedColor);
+        d90Var.setTextSize(1, 14.0f);
+        d90Var.setTypeface(AndroidUtilities.bold());
+        f7.addView(d90Var);
+        d90 d90Var2 = new d90(context, null);
+        this.c = d90Var2;
+        d90Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
+        d90Var2.setTextColor(themedColor);
+        d90Var2.setLinkTextColor(themedColor2);
+        d90Var2.setTypeface(Typeface.SANS_SERIF);
+        d90Var2.setTextSize(1, 13.0f);
+        f7.addView(d90Var2);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        TLRPC.StickerSet stickerSet;
-        int i10 = this.a;
-        int i11 = this.c;
-        long j10 = this.b;
-        Object obj2 = this.d;
-        switch (i10) {
-            case 0:
-                TLRPC.TL_messages_stickerSet tL_messages_stickerSet = (TLRPC.TL_messages_stickerSet) obj;
-                AndroidUtilities.runOnUIThread(new org.telegram.ui.np(10, (ic) obj2, (tL_messages_stickerSet == null || (stickerSet = tL_messages_stickerSet.set) == null) ? LocaleController.getString(R.string.AddEmojiNotFound) : i11 == 1 ? AndroidUtilities.replaceTags(LocaleController.formatString("TopicContainsEmojiPackSingle", R.string.TopicContainsEmojiPackSingle, stickerSet.title)) : i11 == 2 ? AndroidUtilities.replaceTags(LocaleController.formatString("StoryContainsEmojiPackSingle", R.string.StoryContainsEmojiPackSingle, stickerSet.title)) : AndroidUtilities.replaceTags(LocaleController.formatString("MessageContainsEmojiPackSingle", R.string.MessageContainsEmojiPackSingle, stickerSet.title))), Math.max(1L, 750 - (System.currentTimeMillis() - j10)));
-                break;
-            default:
-                ((yu0) obj2).getStoriesController().b(i11, j10, (ArrayList) obj);
-                break;
-        }
-    }
-
-    public /* synthetic */ lc(yu0 yu0Var, long j10, int i10) {
-        this.d = yu0Var;
-        this.b = j10;
-        this.c = i10;
+    @Override // org.telegram.ui.Components.ub
+    public CharSequence getAccessibilityText() {
+        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
     }
 }

@@ -9,7 +9,7 @@ import org.telegram.messenger.voip.VoIPPreNotificationService;
 import org.telegram.messenger.voip.VoIPService;
 import org.telegram.tgnet.tl.TL_phone;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public class VoIPPermissionActivity extends Activity {
     @Override // android.app.Activity
@@ -35,19 +35,19 @@ public class VoIPPermissionActivity extends Activity {
         }
         try {
             requestPermissions((String[]) arrayList.toArray(new String[0]), isVideo ? 102 : 101);
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 
     @Override // android.app.Activity
     public final void onRequestPermissionsResult(int i10, String[] strArr, int[] iArr) {
         if (i10 == 101 || i10 == 102) {
-            boolean z4 = false;
+            boolean z10 = false;
             int i11 = 0;
             while (true) {
                 if (i11 >= iArr.length) {
-                    z4 = true;
+                    z10 = true;
                     break;
                 } else if (iArr[i11] != 0) {
                     break;
@@ -55,7 +55,7 @@ public class VoIPPermissionActivity extends Activity {
                     i11++;
                 }
             }
-            if (iArr.length > 0 && z4) {
+            if (iArr.length > 0 && z10) {
                 if (VoIPService.getSharedInstance() != null) {
                     VoIPService.getSharedInstance().acceptIncomingCall();
                 } else {
@@ -74,7 +74,7 @@ public class VoIPPermissionActivity extends Activity {
             } else {
                 VoIPPreNotificationService.decline(this, 1);
             }
-            org.telegram.ui.Components.voip.f2.h(this, new sz0(this, 25), i10);
+            org.telegram.ui.Components.voip.d2.h(this, new f01(this, 25), i10);
         }
     }
 }

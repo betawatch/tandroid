@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class a1 implements Parcelable.Creator {
     public final /* synthetic */ int a;
@@ -12,57 +12,57 @@ public final class a1 implements Parcelable.Creator {
     public final Object createFromParcel(Parcel parcel) {
         switch (this.a) {
             case 0:
-                int z4 = j7.l0.z(parcel);
+                int z10 = w7.d0.z(parcel);
                 int i10 = 0;
-                boolean z10 = false;
-                while (parcel.dataPosition() < z4) {
+                boolean z11 = false;
+                while (parcel.dataPosition() < z10) {
                     int readInt = parcel.readInt();
-                    char c3 = (char) readInt;
-                    if (c3 == 2) {
-                        i10 = j7.l0.u(parcel, readInt);
-                    } else if (c3 != 3) {
-                        j7.l0.y(parcel, readInt);
+                    char c10 = (char) readInt;
+                    if (c10 == 2) {
+                        i10 = w7.d0.u(parcel, readInt);
+                    } else if (c10 != 3) {
+                        w7.d0.y(parcel, readInt);
                     } else {
-                        z10 = j7.l0.n(parcel, readInt);
+                        z11 = w7.d0.n(parcel, readInt);
                     }
                 }
-                j7.l0.m(parcel, z4);
+                w7.d0.m(parcel, z10);
                 x1 x1Var = new x1();
                 x1Var.a = i10;
-                x1Var.b = z10;
+                x1Var.b = z11;
                 return x1Var;
             default:
-                int z11 = j7.l0.z(parcel);
+                int z12 = w7.d0.z(parcel);
                 int i11 = 0;
-                long j10 = 0;
+                long j3 = 0;
                 int i12 = 0;
                 int i13 = 0;
                 int i14 = 0;
-                while (parcel.dataPosition() < z11) {
+                while (parcel.dataPosition() < z12) {
                     int readInt2 = parcel.readInt();
-                    char c10 = (char) readInt2;
-                    if (c10 == 2) {
-                        i11 = j7.l0.u(parcel, readInt2);
-                    } else if (c10 == 3) {
-                        i12 = j7.l0.u(parcel, readInt2);
-                    } else if (c10 == 4) {
-                        i13 = j7.l0.u(parcel, readInt2);
-                    } else if (c10 == 5) {
-                        j10 = j7.l0.w(parcel, readInt2);
-                    } else if (c10 != 6) {
-                        j7.l0.y(parcel, readInt2);
+                    char c11 = (char) readInt2;
+                    if (c11 == 2) {
+                        i11 = w7.d0.u(parcel, readInt2);
+                    } else if (c11 == 3) {
+                        i12 = w7.d0.u(parcel, readInt2);
+                    } else if (c11 == 4) {
+                        i13 = w7.d0.u(parcel, readInt2);
+                    } else if (c11 == 5) {
+                        j3 = w7.d0.w(parcel, readInt2);
+                    } else if (c11 != 6) {
+                        w7.d0.y(parcel, readInt2);
                     } else {
-                        i14 = j7.l0.u(parcel, readInt2);
+                        i14 = w7.d0.u(parcel, readInt2);
                     }
                 }
-                j7.l0.m(parcel, z11);
-                f3 f3Var = new f3();
-                f3Var.a = i11;
-                f3Var.b = i12;
-                f3Var.c = i13;
-                f3Var.d = j10;
-                f3Var.e = i14;
-                return f3Var;
+                w7.d0.m(parcel, z12);
+                g3 g3Var = new g3();
+                g3Var.a = i11;
+                g3Var.b = i12;
+                g3Var.c = i13;
+                g3Var.d = j3;
+                g3Var.e = i14;
+                return g3Var;
         }
     }
 
@@ -72,7 +72,7 @@ public final class a1 implements Parcelable.Creator {
             case 0:
                 return new x1[i10];
             default:
-                return new f3[i10];
+                return new g3[i10];
         }
     }
 }

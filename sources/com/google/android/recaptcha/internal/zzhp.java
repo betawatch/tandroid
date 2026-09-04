@@ -1,24 +1,24 @@
 package com.google.android.recaptcha.internal;
 
+import gd.c;
+import gd.g;
 import java.io.InputStreamReader;
 import java.io.StringWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.zip.GZIPInputStream;
-import k7.o7;
-import kotlin.jvm.internal.j;
-import sc.c;
-import sc.g;
+import kotlin.jvm.internal.i;
+import v7.s7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzhp implements zzhn {
     private final c zza;
 
     public zzhp() {
         int i10 = zzby.zza;
-        this.zza = o7.a(zzho.zza);
+        this.zza = s7.a(zzho.zza);
     }
 
     @Override // com.google.android.recaptcha.internal.zzhn
@@ -30,24 +30,24 @@ public final class zzhp implements zzhn {
                 zzhlVar.zzc();
                 zzhlVar.zze(zzzdVar.zzd());
                 zzts zza = zzhlVar.zza(zzxn.zzj());
-                j.b(zza);
+                i.b(zza);
                 zzxn zzxnVar = (zzxn) zza;
                 zzhlVar.zzd();
                 return zzxnVar;
-            } catch (zzcg e) {
+            } catch (zzcg e7) {
                 if (zzhlVar == null) {
-                    throw e;
+                    throw e7;
                 }
-                if (!j.a(e.zza(), zzcd.zzax)) {
-                    throw e;
+                if (!i.a(e7.zza(), zzcd.zzax)) {
+                    throw e7;
                 }
                 try {
                     throw zzcf.zza(zzzj.zzg(zzhlVar.zzb().getErrorStream()).zzi());
-                } catch (Exception e6) {
-                    throw new zzcg(zzce.zzc, zzcd.zzG, e6.getMessage(), null, 8, null);
+                } catch (Exception e10) {
+                    throw new zzcg(zzce.zzc, zzcd.zzG, e10.getMessage(), null, 8, null);
                 }
-            } catch (Exception e10) {
-                throw new zzcg(zzce.zzc, zzcd.zzF, e10.getMessage(), null, 8, null);
+            } catch (Exception e11) {
+                throw new zzcg(zzce.zzc, zzcd.zzF, e11.getMessage(), null, 8, null);
             }
         } finally {
         }
@@ -58,7 +58,7 @@ public final class zzhp implements zzhn {
         try {
             try {
                 URLConnection openConnection = new URL(str).openConnection();
-                j.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
+                i.c(openConnection, "null cannot be cast to non-null type java.net.HttpURLConnection");
                 HttpURLConnection httpURLConnection = (HttpURLConnection) openConnection;
                 httpURLConnection.setRequestMethod("GET");
                 httpURLConnection.setDoInput(true);
@@ -76,7 +76,7 @@ public final class zzhp implements zzhn {
                         stringWriter.write(cArr, 0, read);
                     }
                     String stringWriter2 = stringWriter.toString();
-                    j.d(stringWriter2, "toString(...)");
+                    i.d(stringWriter2, "toString(...)");
                     return stringWriter2;
                 } catch (Exception unused) {
                     throw new zzcg(zzce.zzc, zzcd.zzP, null, null, 12, null);

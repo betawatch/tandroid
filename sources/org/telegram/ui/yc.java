@@ -1,18 +1,34 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.widget.Toast;
+import java.util.List;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.tgnet.ResultCallback;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class yc extends org.telegram.ui.Components.w11 {
-    @Override // org.telegram.ui.Components.w11
-    public final String b() {
-        return LocaleController.getString(R.string.ChannelNoWallpaper);
+public final class yc implements ResultCallback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ zc b;
+
+    public yc(zc zcVar, int i10) {
+        this.b = zcVar;
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.Components.w11
-    public final int c() {
-        return 13;
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onComplete(Object obj) {
+        NotificationCenter.getInstance(this.a).doOnIdle(new org.telegram.ui.ActionBar.c6(20, this, (List) obj));
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final /* synthetic */ void onError(Throwable th2) {
+        org.telegram.tgnet.l.a(this, th2);
+    }
+
+    @Override // org.telegram.tgnet.ResultCallback
+    public final void onError(TLRPC.TL_error tL_error) {
+        Toast.makeText(this.b.getContext(), tL_error.text, 0).show();
     }
 }

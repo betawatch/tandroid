@@ -3,41 +3,41 @@ package org.telegram.ui.Components;
 import android.content.Context;
 import android.graphics.Rect;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class sr0 extends org.telegram.ui.q11 {
-    public final /* synthetic */ yu0 E;
+public final class sr0 extends org.telegram.ui.d21 {
+    public final /* synthetic */ xu0 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public sr0(yu0 yu0Var, Context context, qv0 qv0Var, nh.h6 h6Var, rr0 rr0Var) {
-        super(context, qv0Var, h6Var, rr0Var);
-        this.E = yu0Var;
+    public sr0(xu0 xu0Var, Context context, ov0 ov0Var, bi.f8 f8Var, rr0 rr0Var) {
+        super(context, ov0Var, f8Var, rr0Var);
+        this.H = xu0Var;
     }
 
-    @Override // org.telegram.ui.q11
+    @Override // org.telegram.ui.d21
     public final void a() {
         wr0 wr0Var;
         int measuredWidth = getMeasuredWidth();
         int visualHeight = (int) getVisualHeight();
-        Rect rect = this.C;
+        Rect rect = this.F;
         rect.set(0, 0, measuredWidth, visualHeight);
         setClipBounds(rect);
         invalidate();
-        yu0 yu0Var = this.E;
-        qt0[] qt0VarArr = yu0Var.h0;
+        xu0 xu0Var = this.H;
+        qt0[] qt0VarArr = xu0Var.k0;
         if (qt0VarArr != null) {
             for (qt0 qt0Var : qt0VarArr) {
                 if (qt0Var != null && (wr0Var = qt0Var.h) != null) {
                     int paddingLeft = wr0Var.getPaddingLeft();
-                    int Z = yu0Var.Z(qt0Var.C);
+                    int Z = xu0Var.Z(qt0Var.F);
                     int paddingRight = qt0Var.h.getPaddingRight();
                     wr0 wr0Var2 = qt0Var.h;
-                    int Y = yu0Var.Y(yu0Var.v0());
-                    wr0Var2.b3 = Y;
+                    int Y = xu0Var.Y(xu0Var.v0());
+                    wr0Var2.e3 = Y;
                     wr0Var.setPadding(paddingLeft, Z, paddingRight, Y);
                 }
             }
         }
-        yu0Var.K();
+        xu0Var.K();
     }
 }

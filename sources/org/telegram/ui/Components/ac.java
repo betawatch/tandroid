@@ -1,36 +1,68 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.graphics.Typeface;
-import android.widget.ImageView;
+import android.graphics.Canvas;
+import android.graphics.RectF;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.UserConfig;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public class ac extends eb {
-    public final ImageView a;
-    public final f90 b;
+public final class ac implements ek0 {
+    public final /* synthetic */ bc a;
 
-    public ac(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        int themedColor = getThemedColor(org.telegram.ui.ActionBar.j6.Hi);
-        ImageView imageView = new ImageView(context);
-        this.a = imageView;
-        imageView.setColorFilter(new PorterDuffColorFilter(themedColor, PorterDuff.Mode.MULTIPLY));
-        addView(imageView, k7.b6.i(24.0f, 24.0f, 8388627, 16.0f, 12.0f, 16.0f, 12.0f));
-        f90 f90Var = new f90(context, null);
-        this.b = f90Var;
-        f90Var.setDisablePaddingsOffsetY(true);
-        f90Var.setSingleLine();
-        f90Var.setTextColor(themedColor);
-        f90Var.setTypeface(Typeface.SANS_SERIF);
-        f90Var.setTextSize(1, 15.0f);
-        addView(f90Var, k7.b6.i(-2.0f, -2.0f, 8388627, 56.0f, 0.0f, 16.0f, 0.0f));
+    public ac(bc bcVar) {
+        this.a = bcVar;
     }
 
-    @Override // org.telegram.ui.Components.nb
-    public CharSequence getAccessibilityText() {
-        return this.b.getText();
+    @Override // org.telegram.ui.Components.ek0
+    public final void B(View view, ah.j1 j1Var, boolean z10, boolean z11) {
+        bc bcVar = this.a;
+        org.telegram.ui.ActionBar.n2 n2Var = bcVar.f;
+        if (bcVar.e == null) {
+            return;
+        }
+        boolean z12 = (n2Var instanceof org.telegram.ui.co) && ((org.telegram.ui.co) n2Var).a() == UserConfig.getInstance(n2Var.getCurrentAccount()).getClientUserId();
+        int i10 = 0;
+        for (int i11 = 0; i11 < bcVar.e.size(); i11++) {
+            int keyAt = bcVar.e.keyAt(i11);
+            TLRPC.Message message = new TLRPC.Message();
+            message.dialog_id = n2Var.getUserConfig().getClientUserId();
+            message.id = keyAt;
+            MessageObject messageObject = new MessageObject(n2Var.getCurrentAccount(), message, false, false);
+            ArrayList<ah.j1> arrayList = new ArrayList<>();
+            arrayList.add(j1Var);
+            n2Var.getSendMessagesHelper().sendReaction(messageObject, arrayList, j1Var, false, false, bcVar.f, null);
+            i10 = message.id;
+        }
+        bcVar.f();
+        qc.e();
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.sj(this, j1Var, !z12, n2Var.getCurrentAccount(), i10), 300L);
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ boolean S() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ boolean n() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ boolean t() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ void J() {
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public final /* synthetic */ void I(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

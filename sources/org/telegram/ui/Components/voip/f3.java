@@ -1,34 +1,31 @@
 package org.telegram.ui.Components.voip;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class f3 implements Runnable {
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class f3 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ k3 b;
-    public final /* synthetic */ int c;
+    public final /* synthetic */ h3 b;
 
-    public /* synthetic */ f3(k3 k3Var, int i10, int i11) {
-        this.a = i11;
-        this.b = k3Var;
-        this.c = i10;
+    public /* synthetic */ f3(h3 h3Var, int i10) {
+        this.a = i10;
+        this.b = h3Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new f3(this.b, this.c, 2));
-                break;
-            case 1:
-                AndroidUtilities.runOnUIThread(new f3(this.b, this.c, 3));
-                break;
-            case 2:
-                this.b.c(this.c);
+                h3 h3Var = this.b;
+                h3Var.r = 0;
+                h3Var.invalidate();
                 break;
             default:
-                this.b.a(this.c);
+                h3 h3Var2 = this.b;
+                h3Var2.s = 0;
+                h3Var2.invalidate();
                 break;
         }
     }

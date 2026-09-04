@@ -4,14 +4,14 @@ import android.content.Context;
 import android.util.Log;
 import androidx.activity.g;
 import com.google.android.gms.internal.vision.f0;
-import g8.a;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import s8.a;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class DynamiteClearcutLogger {
     private static final ExecutorService zza;
@@ -43,6 +43,6 @@ public class DynamiteClearcutLogger {
                 aVar.c = currentTimeMillis;
             }
         }
-        zza.execute(new g(this, i10, f0Var, 5));
+        zza.execute(new g(this, i10, f0Var, 8));
     }
 }

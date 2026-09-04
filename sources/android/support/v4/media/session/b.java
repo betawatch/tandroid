@@ -5,24 +5,24 @@ import android.os.IInterface;
 import android.support.v4.media.MediaMetadataCompat;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public interface b extends IInterface {
-    void C0(PlaybackStateCompat playbackStateCompat);
+    void C(Bundle bundle);
 
-    void D0(ParcelableVolumeInfo parcelableVolumeInfo);
+    void D0(PlaybackStateCompat playbackStateCompat);
 
-    void a0(CharSequence charSequence);
+    void F(List list);
 
-    void c0();
+    void F0(ParcelableVolumeInfo parcelableVolumeInfo);
 
-    void e0(MediaMetadataCompat mediaMetadataCompat);
+    void c0(CharSequence charSequence);
 
-    void o0(int i10);
+    void e0();
+
+    void g0(MediaMetadataCompat mediaMetadataCompat);
+
+    void h(int i10);
 
     void onRepeatModeChanged(int i10);
-
-    void u(Bundle bundle);
-
-    void x(List list);
 }

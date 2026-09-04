@@ -1,43 +1,66 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import android.content.SharedPreferences;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.Components.n70;
+import org.telegram.ui.co;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class he implements RequestDelegate {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+public final /* synthetic */ class he implements Runnable {
+    public final /* synthetic */ int a = 0;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ Object e;
+    public final /* synthetic */ Object f;
+    public final /* synthetic */ Object h;
+    public final /* synthetic */ Object n;
 
-    public /* synthetic */ he(BaseController baseController, long j10, int i10, int i11) {
-        this.a = i11;
-        this.d = baseController;
-        this.b = j10;
-        this.c = i10;
+    public /* synthetic */ he(MessagesController messagesController, TLRPC.updates_ChannelDifference updates_channeldifference, long j3, TLRPC.Chat chat, a0.i iVar, int i10, long j10) {
+        this.e = messagesController;
+        this.f = updates_channeldifference;
+        this.c = j3;
+        this.h = chat;
+        this.n = iVar;
+        this.b = i10;
+        this.d = j10;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$approveOrRejectSuggestedMessageImpl$506(this.b, this.c, tLObject, tL_error);
-                break;
-            case 1:
-                ((TopicsController) this.d).lambda$loadTopics$7(this.b, this.c, tLObject, tL_error);
+                ((MessagesController) this.e).lambda$getChannelDifference$346((TLRPC.updates_ChannelDifference) this.f, this.c, (TLRPC.Chat) this.h, (a0.i) this.n, this.b, this.d);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new lh.y8((org.telegram.ui.n4) this.d, tLObject, this.c, this.b, 12));
+                n70 n70Var = (n70) this.e;
+                n70 n70Var2 = (n70) this.f;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.h;
+                org.telegram.ui.ActionBar.f6 f6Var = (org.telegram.ui.ActionBar.f6) this.n;
+                n70Var.u();
+                SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(this.b);
+                StringBuilder sb2 = new StringBuilder("sound_enabled_");
+                long j3 = this.c;
+                long j10 = this.d;
+                boolean z10 = notificationsSettings.getBoolean(w1.i(j3, j10, sb2), true);
+                notificationsSettings.edit().putBoolean(w1.i(j3, j10, new StringBuilder("sound_enabled_")), !z10).apply();
+                n70Var2.u();
+                if (org.telegram.ui.Components.yc.a(n2Var)) {
+                    org.telegram.ui.Components.yc.S(z10 ? 1 : 0, n2Var, f6Var).j();
+                    break;
+                }
                 break;
         }
     }
 
-    public /* synthetic */ he(org.telegram.ui.n4 n4Var, int i10, long j10) {
-        this.a = 2;
-        this.d = n4Var;
-        this.c = i10;
-        this.b = j10;
+    public /* synthetic */ he(n70 n70Var, int i10, long j3, long j10, n70 n70Var2, co coVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.e = n70Var;
+        this.b = i10;
+        this.c = j3;
+        this.d = j10;
+        this.f = n70Var2;
+        this.h = coVar;
+        this.n = f6Var;
     }
 }

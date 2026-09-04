@@ -1,69 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import android.util.SparseArray;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class v41 extends oz {
-    public final /* synthetic */ e51 Y;
+public final class v41 extends g.p {
+    public final /* synthetic */ d51 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public v41(e51 e51Var, int i10, u41 u41Var) {
-        super(5, i10, u41Var);
-        this.Y = e51Var;
+    public v41(d51 d51Var) {
+        this.c = d51Var;
     }
 
-    @Override // org.telegram.ui.Components.oz
-    public final boolean D1() {
-        e51 e51Var = this.Y;
-        return e51Var.n.getAdapter() == e51Var.v;
-    }
-
-    @Override // f2.i0
-    public final boolean Y0() {
-        return LocaleController.isRTL;
-    }
-
-    @Override // f2.w, f2.i0, f2.v0
-    public final int o0(int i10, af.h hVar, f2.i1 i1Var) {
-        int i11;
-        View m9;
-        e51 e51Var = this.Y;
-        if (e51Var.K) {
-            return super.o0(i10, hVar, i1Var);
-        }
-        int i12 = 0;
-        if (e51Var.I != null) {
-            return 0;
-        }
-        if (e51Var.J) {
-            while (true) {
-                i11 = 1;
-                if (i12 >= r()) {
-                    break;
-                }
-                u41 u41Var = e51Var.n;
-                View q10 = q(i12);
-                u41Var.getClass();
-                int R = RecyclerView.R(q10);
-                if (R < 1) {
-                    i11 = R;
-                    break;
-                }
-                i12++;
+    @Override // g.p
+    public final int i(int i10) {
+        d51 d51Var = this.c;
+        s4.h0 adapter = d51Var.n.getAdapter();
+        c51 c51Var = d51Var.s;
+        if (adapter == c51Var) {
+            if ((c51Var.d.get(i10) instanceof Integer) || i10 >= c51Var.w) {
+                return c51Var.v;
             }
-            if (i11 == 0 && (m9 = e51Var.r.m(i11)) != null && m9.getTop() - i10 > AndroidUtilities.dp(58.0f)) {
-                i10 = m9.getTop() - AndroidUtilities.dp(58.0f);
-            }
+            return 1;
         }
-        return super.o0(i10, hVar, i1Var);
-    }
-
-    @Override // f2.w, f2.i0, f2.v0
-    public final boolean y0() {
-        return false;
+        hg.f2 f2Var = d51Var.v;
+        SparseArray sparseArray = f2Var.s;
+        if (i10 == f2Var.y || !(sparseArray.get(i10) == null || (sparseArray.get(i10) instanceof TLRPC.Document))) {
+            return f2Var.e.a();
+        }
+        return 1;
     }
 }

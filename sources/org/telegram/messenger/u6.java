@@ -1,44 +1,35 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MediaController;
+import android.content.SharedPreferences;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u6 implements Runnable {
+public final /* synthetic */ class u6 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ MediaDataController b;
+    public final /* synthetic */ SharedPreferences c;
 
-    public /* synthetic */ u6(int i10, int i11, String str) {
-        this.a = 3;
-        this.b = i10;
-        this.c = i11;
-        this.d = str;
+    public /* synthetic */ u6(MediaDataController mediaDataController, SharedPreferences sharedPreferences, int i10) {
+        this.a = i10;
+        this.b = mediaDataController;
+        this.c = sharedPreferences;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((MediaController.8) this.d).lambda$onStateChanged$0(this.b, this.c);
+                this.b.lambda$loadRestrictedStatusEmojis$246(this.c, tLObject, tL_error);
                 break;
             case 1:
-                ((MediaDataController) this.d).lambda$processLoadedStickers$106(this.b, this.c);
-                break;
-            case 2:
-                ((NotificationsController) this.d).lambda$deleteNotificationChannelGlobal$43(this.b, this.c);
+                this.b.lambda$loadSavedReactions$240(this.c, tLObject, tL_error);
                 break;
             default:
-                PushListenerController.lambda$sendRegistrationToServer$0(this.b, this.c, (String) this.d);
+                this.b.lambda$loadReplyIcons$244(this.c, tLObject, tL_error);
                 break;
         }
-    }
-
-    public /* synthetic */ u6(Object obj, int i10, int i11, int i12) {
-        this.a = i12;
-        this.d = obj;
-        this.b = i10;
-        this.c = i11;
     }
 }

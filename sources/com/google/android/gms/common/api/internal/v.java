@@ -1,143 +1,96 @@
 package com.google.android.gms.common.api.internal;
 
 import android.graphics.drawable.Drawable;
-import android.os.Bundle;
-import android.os.Parcel;
-import java.nio.ByteBuffer;
-import java.util.ArrayDeque;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.ui.Components.i71;
-import org.telegram.ui.Components.s71;
-import org.telegram.ui.Components.t71;
+import org.telegram.ui.Components.g71;
+import org.telegram.ui.Components.q71;
+import org.telegram.ui.Components.r71;
 import org.telegram.ui.PhotoViewer;
-import org.telegram.ui.gl0;
-import org.telegram.ui.ut0;
+import org.telegram.ui.hu0;
+import org.telegram.ui.rl0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class v implements s71, v4.g {
+public final class v implements q71 {
     public int a;
     public boolean b;
     public Object c;
     public Object d;
 
-    public v() {
-        this.c = new v4.j();
-        this.d = new ArrayDeque();
-        for (int i10 = 0; i10 < 2; i10++) {
-            ((ArrayDeque) this.d).addFirst(new v4.d(this, 0));
-        }
-        this.a = 0;
+    public v(PhotoViewer photoViewer) {
+        this.d = photoViewer;
     }
 
-    @Override // n3.e
-    public Object b() {
-        ArrayDeque arrayDeque = (ArrayDeque) this.d;
-        v4.j jVar = (v4.j) this.c;
-        h5.a.i(!this.b);
-        if (this.a != 2 || arrayDeque.isEmpty()) {
-            return null;
-        }
-        v4.k kVar = (v4.k) arrayDeque.removeFirst();
-        if (jVar.d(4)) {
-            kVar.a(4);
-        } else {
-            long j10 = jVar.f;
-            ByteBuffer byteBuffer = jVar.d;
-            byteBuffer.getClass();
-            byte[] array = byteBuffer.array();
-            Parcel obtain = Parcel.obtain();
-            obtain.unmarshall(array, 0, array.length);
-            obtain.setDataPosition(0);
-            Bundle readBundle = obtain.readBundle(Bundle.class.getClassLoader());
-            obtain.recycle();
-            ArrayList parcelableArrayList = readBundle.getParcelableArrayList("c");
-            parcelableArrayList.getClass();
-            kVar.k(jVar.f, new f2.c(j10, h5.a.s(v4.b.W, parcelableArrayList), 9), 0L);
-        }
-        jVar.b();
-        this.a = 0;
-        return kVar;
+    public e1 a() {
+        n6.l.a("execute parameter required", ((s) this.c) != null);
+        return new e1(this, (k6.c[]) this.d, this.b, this.a);
     }
 
-    @Override // n3.e
-    public Object c() {
-        h5.a.i(!this.b);
-        if (this.a != 0) {
-            return null;
-        }
-        this.a = 1;
-        return (v4.j) this.c;
-    }
-
-    @Override // n3.e
-    public void d(Object obj) {
-        v4.j jVar = (v4.j) obj;
-        h5.a.i(!this.b);
-        h5.a.i(this.a == 1);
-        h5.a.f(((v4.j) this.c) == jVar);
-        this.a = 2;
-    }
-
-    public f1 e() {
-        b6.m.a("execute parameter required", ((s) this.c) != null);
-        return new f1(this, (y5.c[]) this.d, this.b, this.a);
-    }
-
-    public void f(int i10) {
-        PhotoViewer photoViewer = (PhotoViewer) this.d;
-        Object obj = t71.c0;
-        if (i10 == 2) {
-            Drawable[] drawableArr = PhotoViewer.Q8;
-            photoViewer.u0();
-            boolean z4 = true;
-            if (photoViewer.Z1 == 1) {
-                photoViewer.s0();
-                photoViewer.R7 = -1L;
+    public m4.k1 b(Object obj) {
+        m4.k1 k1Var;
+        synchronized (this.c) {
+            try {
+                int e7 = e();
+                k1Var = new m4.k1(e7, obj);
+                if (this.b) {
+                    k1Var.o();
+                } else {
+                    ((a0.f) this.d).put(Integer.valueOf(e7), k1Var);
+                }
+            } catch (Throwable th2) {
+                throw th2;
             }
-            ut0 ut0Var = photoViewer.c0;
-            if (ut0Var == null || !ut0Var.x) {
-                i71 i71Var = photoViewer.C2;
-                if (i71Var == null || !i71Var.y()) {
-                    z4 = false;
+        }
+        return k1Var;
+    }
+
+    public void c(int i10) {
+        PhotoViewer photoViewer = (PhotoViewer) this.d;
+        Object obj = r71.f0;
+        if (i10 == 2) {
+            Drawable[] drawableArr = PhotoViewer.T8;
+            photoViewer.u0();
+            boolean z10 = true;
+            if (photoViewer.c2 == 1) {
+                photoViewer.s0();
+                photoViewer.U7 = -1L;
+            }
+            hu0 hu0Var = photoViewer.f0;
+            if (hu0Var == null || !hu0Var.x) {
+                g71 g71Var = photoViewer.F2;
+                if (g71Var == null || !g71Var.y()) {
+                    z10 = false;
                 }
             } else {
-                z4 = ut0Var.D;
+                z10 = hu0Var.G;
             }
-            this.b = z4;
-            if (z4) {
-                photoViewer.E2 = false;
+            this.b = z10;
+            if (z10) {
+                photoViewer.H2 = false;
                 photoViewer.g2();
-                photoViewer.b0.invalidate();
+                photoViewer.e0.invalidate();
             }
         }
     }
 
-    @Override // n3.e
-    public void flush() {
-        h5.a.i(!this.b);
-        ((v4.j) this.c).b();
-        this.a = 0;
-    }
-
-    public void g(int i10) {
+    public void d(int i10) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        gl0 gl0Var = (gl0) this.c;
-        if (gl0Var != null) {
-            AndroidUtilities.cancelRunOnUIThread(gl0Var);
-            ((gl0) this.c).run();
+        rl0 rl0Var = (rl0) this.c;
+        if (rl0Var != null) {
+            AndroidUtilities.cancelRunOnUIThread(rl0Var);
+            ((rl0) this.c).run();
         }
-        Drawable[] drawableArr = PhotoViewer.Q8;
+        Drawable[] drawableArr = PhotoViewer.T8;
         photoViewer.u0();
-        int i11 = photoViewer.Z1;
-        if (i11 == 1 && photoViewer.w2 != null) {
-            Object obj = t71.c0;
+        int i11 = photoViewer.c2;
+        if (i11 == 1 && photoViewer.z2 != null) {
+            Object obj = r71.f0;
             if (i10 == 2) {
                 photoViewer.s0();
-                photoViewer.R7 = photoViewer.r8;
-                if (photoViewer.S7 == this.a) {
+                photoViewer.U7 = photoViewer.u8;
+                if (photoViewer.V7 == this.a) {
                     PhotoViewer.V(photoViewer);
                     return;
                 }
@@ -145,84 +98,113 @@ public final class v implements s71, v4.g {
             }
         }
         if (i11 == 1 || this.b) {
-            photoViewer.E2 = false;
+            photoViewer.H2 = false;
             photoViewer.i2();
         }
     }
 
-    public void h(float f10) {
+    public int e() {
+        int i10;
+        synchronized (this.c) {
+            i10 = this.a;
+            this.a = i10 + 1;
+        }
+        return i10;
+    }
+
+    public void f(float f7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        i71 i71Var = photoViewer.C2;
-        if (i71Var == null) {
+        g71 g71Var = photoViewer.F2;
+        if (g71Var == null) {
             return;
         }
-        if (i71Var.y()) {
-            photoViewer.E2 = false;
-            photoViewer.C2.B();
-            photoViewer.b0.invalidate();
+        if (g71Var.y()) {
+            photoViewer.H2 = false;
+            photoViewer.F2.B();
+            photoViewer.e0.invalidate();
         }
         j(2);
-        i(f10);
-        photoViewer.n3.h(1.0f, false);
-        photoViewer.O7.setProgress(f10);
+        h(f7);
+        photoViewer.q3.h(1.0f, false);
+        photoViewer.R7.setProgress(f7);
         photoViewer.B3();
     }
 
-    public void i(float f10) {
+    public void g() {
+        ArrayList arrayList;
+        synchronized (this.c) {
+            this.b = true;
+            arrayList = new ArrayList(((a0.f) this.d).values());
+            ((a0.f) this.d).clear();
+        }
+        int size = arrayList.size();
+        int i10 = 0;
+        while (i10 < size) {
+            Object obj = arrayList.get(i10);
+            i10++;
+            ((m4.k1) obj).o();
+        }
+    }
+
+    public void h(float f7) {
         PhotoViewer photoViewer = (PhotoViewer) this.d;
-        this.a = (int) (photoViewer.e8 * f10);
+        this.a = (int) (photoViewer.h8 * f7);
         if (SharedConfig.getDevicePerformanceClass() != 2) {
-            if (((gl0) this.c) == null) {
-                gl0 gl0Var = new gl0(this, 14);
-                this.c = gl0Var;
-                AndroidUtilities.runOnUIThread(gl0Var, 100L);
+            if (((rl0) this.c) == null) {
+                rl0 rl0Var = new rl0(this, 14);
+                this.c = rl0Var;
+                AndroidUtilities.runOnUIThread(rl0Var, 100L);
                 return;
             }
             return;
         }
         photoViewer.t2(this.a);
-        if (photoViewer.Z1 == 1) {
-            long j10 = this.a;
-            photoViewer.T7 = j10;
-            if (photoViewer.S7 != j10) {
-                photoViewer.S7 = -1L;
+        if (photoViewer.c2 == 1) {
+            long j3 = this.a;
+            photoViewer.W7 = j3;
+            if (photoViewer.V7 != j3) {
+                photoViewer.V7 = -1L;
             }
         }
         this.c = null;
     }
 
-    public void j(int i10) {
-        PhotoViewer photoViewer = (PhotoViewer) this.d;
-        if (photoViewer.Z1 != 1) {
-            return;
-        }
-        if (i10 == 0) {
-            float progress = photoViewer.O7.getProgress();
-            photoViewer.s8 = progress;
-            photoViewer.r8 = (long) (photoViewer.e8 * 1000.0f * progress);
-        } else if (photoViewer.z1 != null) {
-            if (photoViewer.O7.getLeftProgress() > photoViewer.s8 || photoViewer.O7.getRightProgress() < photoViewer.s8) {
-                photoViewer.z1.setVideoThumbVisible(false);
-                if (i10 == 1) {
-                    photoViewer.r8 = (long) (photoViewer.O7.getLeftProgress() * photoViewer.e8 * 1000.0f);
-                } else {
-                    photoViewer.r8 = (long) (photoViewer.O7.getRightProgress() * photoViewer.e8 * 1000.0f);
+    public void i(int i10, m4.p1 p1Var) {
+        synchronized (this.c) {
+            try {
+                m4.k1 k1Var = (m4.k1) ((a0.f) this.d).remove(Integer.valueOf(i10));
+                if (k1Var != null) {
+                    if (k1Var.r.getClass() == m4.p1.class) {
+                        k1Var.m(p1Var);
+                    } else {
+                        e2.a.n("SequencedFutureManager", "Type mismatch, expected " + k1Var.r.getClass() + ", but was " + m4.p1.class);
+                    }
                 }
-                photoViewer.R7 = -1L;
+            } catch (Throwable th2) {
+                throw th2;
             }
         }
     }
 
-    @Override // n3.e
-    public void release() {
-        this.b = true;
-    }
-
-    public v(PhotoViewer photoViewer) {
-        this.d = photoViewer;
-    }
-
-    @Override // v4.g
-    public void a(long j10) {
+    public void j(int i10) {
+        PhotoViewer photoViewer = (PhotoViewer) this.d;
+        if (photoViewer.c2 != 1) {
+            return;
+        }
+        if (i10 == 0) {
+            float progress = photoViewer.R7.getProgress();
+            photoViewer.v8 = progress;
+            photoViewer.u8 = (long) (photoViewer.h8 * 1000.0f * progress);
+        } else if (photoViewer.C1 != null) {
+            if (photoViewer.R7.getLeftProgress() > photoViewer.v8 || photoViewer.R7.getRightProgress() < photoViewer.v8) {
+                photoViewer.C1.setVideoThumbVisible(false);
+                if (i10 == 1) {
+                    photoViewer.u8 = (long) (photoViewer.R7.getLeftProgress() * photoViewer.h8 * 1000.0f);
+                } else {
+                    photoViewer.u8 = (long) (photoViewer.R7.getRightProgress() * photoViewer.h8 * 1000.0f);
+                }
+                photoViewer.U7 = -1L;
+            }
+        }
     }
 }

@@ -1,60 +1,66 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.ui.web.HttpGetFileTask;
+import android.view.View;
+import android.widget.PopupWindow;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class e0 implements Runnable {
+public final /* synthetic */ class e0 implements PopupWindow.OnDismissListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object b;
 
-    public /* synthetic */ e0(Object obj, float f10, int i10) {
+    public /* synthetic */ e0(Object obj, int i10) {
         this.a = i10;
-        this.c = obj;
-        this.b = f10;
+        this.b = obj;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.widget.PopupWindow.OnDismissListener
+    public final void onDismiss() {
         switch (this.a) {
             case 0:
-                n4 n4Var = (n4) this.c;
-                n4Var.e0.J.c(this.b, true);
+                i4 i4Var = (i4) this.b;
+                View view = i4Var.f;
+                if (view != null) {
+                    i4Var.d = null;
+                    view.invalidate();
+                    i4Var.f = null;
+                    break;
+                }
                 break;
             case 1:
-                org.telegram.ui.Components.za zaVar = (org.telegram.ui.Components.za) this.c;
-                if (zaVar.a.getTranslationX() == this.b) {
-                    zaVar.y.b();
+                co coVar = (co) this.b;
+                coVar.Q8 = null;
+                coVar.T8 = null;
+                coVar.S8 = null;
+                coVar.z0.R = true;
+                coVar.g8(false, true, 0.0f);
+                mk mkVar = coVar.Y;
+                if (mkVar != null && mkVar.getEditField() != null) {
+                    coVar.Y.getEditField().setAllowDrawCursor(true);
                     break;
                 }
                 break;
             case 2:
-                org.telegram.ui.Components.voip.x0 x0Var = (org.telegram.ui.Components.voip.x0) this.c;
-                float f10 = this.b;
-                bi1 bi1Var = x0Var.c;
-                if (f10 > 0.0f) {
-                    int i10 = bi1Var.w;
-                    if (i10 < 2) {
-                        bi1Var.c(i10 + 1, true);
-                    }
+                oj ojVar = (oj) this.b;
+                ojVar.b = null;
+                co coVar2 = ojVar.w;
+                coVar2.Q8 = null;
+                coVar2.T8 = null;
+                coVar2.S8 = null;
+                coVar2.z0.R = true;
+                if (coVar2.R8) {
+                    coVar2.g8(false, true, 0.0f);
                 } else {
-                    int i11 = bi1Var.w;
-                    if (i11 > 0) {
-                        bi1Var.c(i11 - 1, true);
-                    }
+                    coVar2.R8 = true;
                 }
-                x0Var.b = false;
-                break;
-            case 3:
-                ((c80) this.c).f.e.smoothScrollTo(0, (int) this.b);
-                break;
-            case 4:
-                ApplicationLoader.applicationContext.getSharedPreferences("media_saved_pos", 0).edit().putFloat((String) this.c, this.b).commit();
+                mk mkVar2 = coVar2.Y;
+                if (mkVar2 != null && mkVar2.getEditField() != null) {
+                    coVar2.Y.getEditField().setAllowDrawCursor(true);
+                    break;
+                }
                 break;
             default:
-                ((HttpGetFileTask) this.c).lambda$doInBackground$0(this.b);
+                ((ProfileActivity) this.b).H3(0.0f);
                 break;
         }
     }

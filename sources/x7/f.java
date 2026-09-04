@@ -1,26 +1,10 @@
 package x7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import b6.m;
-import j7.f5;
-import u6.p;
+import java.io.Serializable;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f extends c6.a {
-    public static final Parcelable.Creator<f> CREATOR = new p(17);
-    public final String a;
-
-    public f(String str) {
-        m.i(str, "json must not be null");
-        this.a = str;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 2, this.a);
-        f5.r(parcel, q10);
-    }
+public final class f extends e implements Serializable, q {
+    public transient j c;
+    public transient int d;
 }

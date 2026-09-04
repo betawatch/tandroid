@@ -5,17 +5,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
-import b6.m;
-import q5.p;
-import r5.a;
-import r5.c;
-import r5.f;
-import r5.g;
-import s5.h;
-import s5.i;
-import u5.b;
+import c6.p;
+import d6.a;
+import d6.c;
+import d6.f;
+import d6.g;
+import e6.h;
+import e6.j;
+import g6.b;
+import n6.l;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class MediaIntentReceiver extends BroadcastReceiver {
     public static final String ACTION_DISCONNECT = "com.google.android.gms.cast.framework.action.DISCONNECT";
@@ -33,16 +33,16 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (cVar == null || !cVar.b()) {
             return null;
         }
-        m.e("Must be called from the main thread.");
+        l.e("Must be called from the main thread.");
         return cVar.j;
     }
 
-    private void seek(c cVar, long j10) {
+    private void seek(c cVar, long j3) {
         h remoteMediaClient;
-        if (j10 == 0 || (remoteMediaClient = getRemoteMediaClient(cVar)) == null || remoteMediaClient.j() || remoteMediaClient.n()) {
+        if (j3 == 0 || (remoteMediaClient = getRemoteMediaClient(cVar)) == null || remoteMediaClient.j() || remoteMediaClient.n()) {
             return;
         }
-        remoteMediaClient.q(new p(remoteMediaClient.a() + j10));
+        remoteMediaClient.q(new p(remoteMediaClient.a() + j3));
     }
 
     private void togglePlayback(c cVar) {
@@ -118,16 +118,16 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         onReceiveOtherAction(context, action, intent);
     }
 
-    public void onReceiveActionForward(f fVar, long j10) {
+    public void onReceiveActionForward(f fVar, long j3) {
         if (fVar instanceof c) {
-            seek((c) fVar, j10);
+            seek((c) fVar, j3);
         }
     }
 
     public void onReceiveActionMediaButton(f fVar, Intent intent) {
         if ((fVar instanceof c) && intent.hasExtra("android.intent.extra.KEY_EVENT")) {
             Bundle extras = intent.getExtras();
-            m.h(extras);
+            l.h(extras);
             KeyEvent keyEvent = (KeyEvent) extras.get("android.intent.extra.KEY_EVENT");
             if (keyEvent != null && keyEvent.getAction() == 0 && keyEvent.getKeyCode() == 85) {
                 togglePlayback((c) fVar);
@@ -135,9 +135,9 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         }
     }
 
-    public void onReceiveActionRewind(f fVar, long j10) {
+    public void onReceiveActionRewind(f fVar, long j3) {
         if (fVar instanceof c) {
-            seek((c) fVar, -j10);
+            seek((c) fVar, -j3);
         }
     }
 
@@ -146,9 +146,9 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (!(fVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) fVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        m.e("Must be called from the main thread.");
+        l.e("Must be called from the main thread.");
         if (remoteMediaClient.w()) {
-            h.x(new i(remoteMediaClient, 2));
+            h.x(new j(remoteMediaClient, 2));
         } else {
             h.t();
         }
@@ -159,9 +159,9 @@ public class MediaIntentReceiver extends BroadcastReceiver {
         if (!(fVar instanceof c) || (remoteMediaClient = getRemoteMediaClient((c) fVar)) == null || remoteMediaClient.n()) {
             return;
         }
-        m.e("Must be called from the main thread.");
+        l.e("Must be called from the main thread.");
         if (remoteMediaClient.w()) {
-            h.x(new i(remoteMediaClient, 1));
+            h.x(new j(remoteMediaClient, 1));
         } else {
             h.t();
         }

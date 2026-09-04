@@ -1,82 +1,135 @@
 package j4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import h5.d0;
-import java.util.Arrays;
+import e9.a1;
+import e9.i0;
+import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c extends j {
-    public static final Parcelable.Creator<c> CREATOR = new f8.o(14);
-    public final String b;
-    public final int c;
-    public final int d;
-    public final long e;
-    public final long f;
-    public final j[] h;
+public final class c implements c3.o {
+    public final b a = new b(0, 1, null, "audio/ac4");
+    public final e2.v b = new e2.v(16384);
+    public boolean c;
 
-    public c(String str, int i10, int i11, long j10, long j11, j[] jVarArr) {
-        super("CHAP");
-        this.b = str;
-        this.c = i10;
-        this.d = i11;
-        this.e = j10;
-        this.f = j11;
-        this.h = jVarArr;
+    /* JADX WARN: Code restructure failed: missing block: B:12:0x003c, code lost:
+    
+        r5.f = 0;
+        r1 = r1 + 1;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:13:0x0044, code lost:
+    
+        if ((r1 - r3) < 8192) goto L13;
+     */
+    /* JADX WARN: Code restructure failed: missing block: B:16:0x0088, code lost:
+    
+        return false;
+     */
+    @Override // c3.o
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean b(c3.p pVar) {
+        c3.l lVar;
+        int i10;
+        e2.v vVar = new e2.v(10);
+        int i11 = 0;
+        while (true) {
+            lVar = (c3.l) pVar;
+            lVar.j(vVar.a, 0, 10, false);
+            vVar.J(0);
+            if (vVar.A() != 4801587) {
+                break;
+            }
+            vVar.K(3);
+            int w10 = vVar.w();
+            i11 += w10 + 10;
+            lVar.v(w10, false);
+        }
+        lVar.f = 0;
+        lVar.v(i11, false);
+        int i12 = i11;
+        loop1: while (true) {
+            int i13 = 0;
+            while (true) {
+                int i14 = 7;
+                lVar.j(vVar.a, 0, 7, false);
+                vVar.J(0);
+                int D = vVar.D();
+                if (D != 44096 && D != 44097) {
+                    break;
+                }
+                i13++;
+                if (i13 >= 4) {
+                    return true;
+                }
+                byte[] bArr = vVar.a;
+                if (bArr.length < 7) {
+                    i10 = -1;
+                } else {
+                    int i15 = ((bArr[2] & 255) << 8) | (bArr[3] & 255);
+                    if (i15 == 65535) {
+                        i15 = ((bArr[4] & 255) << 16) | ((bArr[5] & 255) << 8) | (bArr[6] & 255);
+                    } else {
+                        i14 = 4;
+                    }
+                    if (D == 44097) {
+                        i14 += 2;
+                    }
+                    i10 = i15 + i14;
+                }
+                if (i10 == -1) {
+                    break loop1;
+                }
+                lVar.v(i10 - 7, false);
+            }
+            lVar.v(i12, false);
+        }
     }
 
-    @Override // j4.j, android.os.Parcelable
-    public final int describeContents() {
+    @Override // c3.o
+    public final void g(c3.q qVar) {
+        this.a.e(qVar, new f0(0, 1));
+        qVar.Z0();
+        qVar.P1(new c3.t(-9223372036854775807L));
+    }
+
+    @Override // c3.o
+    public final void h(long j3, long j10) {
+        this.c = false;
+        this.a.d();
+    }
+
+    @Override // c3.o
+    public final List i() {
+        e9.g0 g0Var = i0.b;
+        return a1.e;
+    }
+
+    @Override // c3.o
+    public final int m(c3.p pVar, c3.s sVar) {
+        e2.v vVar = this.b;
+        int read = pVar.read(vVar.a, 0, 16384);
+        if (read == -1) {
+            return -1;
+        }
+        vVar.J(0);
+        vVar.I(read);
+        boolean z10 = this.c;
+        b bVar = this.a;
+        if (!z10) {
+            bVar.o = 0L;
+            this.c = true;
+        }
+        bVar.b(vVar);
         return 0;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && c.class == obj.getClass()) {
-            c cVar = (c) obj;
-            if (this.c == cVar.c && this.d == cVar.d && this.e == cVar.e && this.f == cVar.f && d0.a(this.b, cVar.b) && Arrays.equals(this.h, cVar.h)) {
-                return true;
-            }
-        }
-        return false;
+    @Override // c3.o
+    public final c3.o c() {
+        return this;
     }
 
-    public final int hashCode() {
-        int i10 = (((((((527 + this.c) * 31) + this.d) * 31) + ((int) this.e)) * 31) + ((int) this.f)) * 31;
-        String str = this.b;
-        return i10 + (str != null ? str.hashCode() : 0);
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeString(this.b);
-        parcel.writeInt(this.c);
-        parcel.writeInt(this.d);
-        parcel.writeLong(this.e);
-        parcel.writeLong(this.f);
-        j[] jVarArr = this.h;
-        parcel.writeInt(jVarArr.length);
-        for (j jVar : jVarArr) {
-            parcel.writeParcelable(jVar, 0);
-        }
-    }
-
-    public c(Parcel parcel) {
-        super("CHAP");
-        String readString = parcel.readString();
-        int i10 = d0.a;
-        this.b = readString;
-        this.c = parcel.readInt();
-        this.d = parcel.readInt();
-        this.e = parcel.readLong();
-        this.f = parcel.readLong();
-        int readInt = parcel.readInt();
-        this.h = new j[readInt];
-        for (int i11 = 0; i11 < readInt; i11++) {
-            this.h[i11] = (j) parcel.readParcelable(j.class.getClassLoader());
-        }
+    @Override // c3.o
+    public final void release() {
     }
 }

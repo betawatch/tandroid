@@ -1,46 +1,24 @@
 package o5;
 
-import android.util.Log;
-import b4.e0;
-import b6.m;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.u;
-import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c implements Runnable {
-    public static final e0 c = new e0("RevokeAccessOperation", new String[0]);
-    public final String a;
-    public final u b;
+public enum c implements la.c {
+    b(0),
+    c(1),
+    d(2),
+    e(3),
+    f(4),
+    h(5),
+    n(6);
 
-    public c(String str) {
-        m.f(str);
-        this.a = str;
-        this.b = new u(null, 0);
+    public final int a;
+
+    c(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        e0 e0Var = c;
-        Status status = Status.h;
-        try {
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL("https://accounts.google.com/o/oauth2/revoke?token=" + this.a).openConnection();
-            httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-            int responseCode = httpURLConnection.getResponseCode();
-            if (responseCode == 200) {
-                status = Status.e;
-            } else {
-                Log.e((String) e0Var.c, ((String) e0Var.d).concat("Unable to revoke access!"));
-            }
-            e0Var.g("Response Code: " + responseCode, new Object[0]);
-        } catch (IOException e) {
-            Log.e((String) e0Var.c, ((String) e0Var.d).concat("IOException when revoking access: ".concat(String.valueOf(e.toString()))));
-        } catch (Exception e6) {
-            Log.e((String) e0Var.c, ((String) e0Var.d).concat("Exception when revoking access: ".concat(String.valueOf(e6.toString()))));
-        }
-        this.b.a(status);
+    @Override // la.c
+    public final int a() {
+        return this.a;
     }
 }

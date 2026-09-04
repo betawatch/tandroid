@@ -1,33 +1,54 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.IMapsProvider;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class tc0 extends f2.z0 {
-    public final /* synthetic */ cd0 a;
+public final /* synthetic */ class tc0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ id0 b;
+    public final /* synthetic */ IMapsProvider.IMapView c;
 
-    public tc0(cd0 cd0Var) {
-        this.a = cd0Var;
+    public /* synthetic */ tc0(id0 id0Var, IMapsProvider.IMapView iMapView, int i10) {
+        this.a = i10;
+        this.b = id0Var;
+        this.c = iMapView;
     }
 
-    @Override // f2.z0
-    public final void a(RecyclerView recyclerView, int i10) {
-        boolean z4 = i10 != 0;
-        cd0 cd0Var = this.a;
-        cd0Var.N = z4;
-        if (z4 || cd0Var.I == null) {
-            return;
-        }
-        cd0Var.I = null;
-    }
-
-    @Override // f2.z0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        cd0 cd0Var = this.a;
-        cd0Var.A0(false);
-        if (cd0Var.I != null) {
-            cd0Var.K += i11;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                id0 id0Var = this.b;
+                IMapsProvider.IMapView iMapView = this.c;
+                if (id0Var.K != null && id0Var.getParentActivity() != null) {
+                    try {
+                        iMapView.onCreate(null);
+                        ApplicationLoader.getMapsProvider().initializeMaps(ApplicationLoader.applicationContext);
+                        id0Var.K.getMapAsync(new uc0(id0Var, 0));
+                        id0Var.u0 = true;
+                        if (id0Var.v0) {
+                            id0Var.K.onResume();
+                            break;
+                        }
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                        return;
+                    }
+                }
+                break;
+            default:
+                id0 id0Var2 = this.b;
+                IMapsProvider.IMapView iMapView2 = this.c;
+                try {
+                    iMapView2.onCreate(null);
+                } catch (Exception unused) {
+                }
+                AndroidUtilities.runOnUIThread(new tc0(id0Var2, iMapView2, 0));
+                break;
         }
     }
 }

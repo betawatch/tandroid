@@ -3,20 +3,20 @@ package org.telegram.ui.Components;
 import android.view.View;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public interface jt0 {
-    void E();
+    void D();
 
     void R();
 
     boolean T();
 
-    rl0 f();
+    ll0 f();
 
     TLRPC.Chat g();
 
-    boolean h(TLRPC.ChatParticipant chatParticipant, boolean z4, boolean z10, View view);
+    boolean h(TLRPC.ChatParticipant chatParticipant, boolean z10, boolean z11, View view);
 
-    boolean q();
+    boolean p();
 }

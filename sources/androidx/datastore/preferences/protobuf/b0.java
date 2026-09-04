@@ -1,6 +1,31 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.io.IOException;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b0 extends c0 {
+public class b0 extends IOException {
+    public static b0 a() {
+        return new b0("Protocol message had invalid UTF-8.");
+    }
+
+    public static a0 b() {
+        return new a0("Protocol message tag had invalid wire type.");
+    }
+
+    public static b0 c() {
+        return new b0("CodedInputStream encountered a malformed varint.");
+    }
+
+    public static b0 d() {
+        return new b0("CodedInputStream encountered an embedded string or message which claimed to have negative size.");
+    }
+
+    public static b0 e() {
+        return new b0("Failed to parse the message.");
+    }
+
+    public static b0 f() {
+        return new b0("While parsing a protocol message, the input ended unexpectedly in the middle of a field.  This could mean either that the input has been truncated or that an embedded message misreported its own length.");
+    }
 }

@@ -1,17 +1,8 @@
 package org.telegram.ui.Cells;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.widget.LinearLayout;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class q6 {
-    public final int a;
-    public final CharSequence b;
-
-    public q6(CharSequence charSequence, int i10) {
-        this.b = charSequence;
-        this.a = i10;
-    }
-
-    public static q6 a(CharSequence charSequence) {
-        return new q6(charSequence, 0);
-    }
+public final class q6 extends LinearLayout {
 }

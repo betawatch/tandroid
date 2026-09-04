@@ -1,25 +1,27 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.FileLog;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class lx extends k7.c6 {
-    public final /* synthetic */ kz a;
+public final class lx extends s4.s {
+    public final /* synthetic */ kz Q;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public lx(kz kzVar) {
-        this.a = kzVar;
+        super(8);
+        this.Q = kzVar;
     }
 
-    @Override // k7.c6
-    public final void a() {
-        kz kzVar = this.a;
-        kzVar.c0 = false;
-        kzVar.M.w1();
-    }
-
-    @Override // k7.c6
-    public final void b() {
-        kz kzVar = this.a;
-        kzVar.M.w1();
-        kzVar.c0 = true;
+    @Override // s4.c0, s4.o0
+    public final void v0(RecyclerView recyclerView, s4.z0 z0Var, int i10) {
+        try {
+            di.m1 m1Var = new di.m1(this, recyclerView.getContext(), 2);
+            m1Var.a = i10;
+            w0(m1Var);
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
     }
 }

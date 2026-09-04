@@ -1,31 +1,24 @@
 package org.telegram.ui;
 
-import android.graphics.Bitmap;
-import java.util.ArrayList;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.VideoEditedInfo;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class tl extends fu0 {
-    public final /* synthetic */ Bitmap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ zn c;
+public final class tl extends su0 {
+    public final /* synthetic */ co a;
 
-    public tl(zn znVar, Bitmap bitmap, ArrayList arrayList) {
-        this.c = znVar;
-        this.a = bitmap;
-        this.b = arrayList;
+    public tl(co coVar) {
+        this.a = coVar;
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final ImageReceiver.BitmapHolder j(int i10) {
-        return new ImageReceiver.BitmapHolder(this.a, (String) null, 0);
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final cv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        return co.A1(this.a, messageObject, fileLocation, i10, z10, false);
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
-        this.c.r((MediaController.PhotoEntry) this.b.get(0), videoEditedInfo, z4, i11, 0, z10, 0L);
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final boolean K() {
+        return true;
     }
 }

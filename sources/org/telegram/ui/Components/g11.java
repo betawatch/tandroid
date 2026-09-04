@@ -1,22 +1,29 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class g11 extends rl0 {
-    public final /* synthetic */ ThemeEditorView.EditorAlert U2;
+public final class g11 extends AnimatorListenerAdapter {
+    public final /* synthetic */ ThemeEditorView.EditorAlert a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g11(ThemeEditorView.EditorAlert editorAlert, Context context) {
-        super(context, null);
-        this.U2 = editorAlert;
+    public g11(ThemeEditorView.EditorAlert editorAlert) {
+        this.a = editorAlert;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public final boolean E0(float f10) {
-        return f10 >= ((float) ((AndroidUtilities.dp(48.0f) + this.U2.B) + AndroidUtilities.statusBarHeight));
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        ThemeEditorView.EditorAlert editorAlert = this.a;
+        if (editorAlert.c.getAdapter() == editorAlert.r) {
+            m11 m11Var = editorAlert.f.b;
+            m11Var.requestFocus();
+            AndroidUtilities.showKeyboard(m11Var);
+        }
+        editorAlert.b.setVisibility(8);
+        editorAlert.v.setVisibility(8);
+        editorAlert.H = false;
     }
 }

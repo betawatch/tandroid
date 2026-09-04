@@ -1,35 +1,35 @@
 package androidx.activity;
 
-import androidx.fragment.app.a0;
+import androidx.fragment.app.z;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class v implements c {
-    public final a0 a;
+    public final z a;
     public final /* synthetic */ x b;
 
-    public v(x xVar, a0 onBackPressedCallback) {
-        kotlin.jvm.internal.j.e(onBackPressedCallback, "onBackPressedCallback");
+    public v(x xVar, z onBackPressedCallback) {
+        kotlin.jvm.internal.i.e(onBackPressedCallback, "onBackPressedCallback");
         this.b = xVar;
         this.a = onBackPressedCallback;
     }
 
-    /* JADX WARN: Type inference failed for: r0v2, types: [dd.a, kotlin.jvm.internal.i] */
+    /* JADX WARN: Type inference failed for: r0v2, types: [kotlin.jvm.internal.h, rd.a] */
     @Override // androidx.activity.c
     public final void cancel() {
         x xVar = this.b;
-        tc.e eVar = xVar.b;
-        a0 a0Var = this.a;
-        eVar.remove(a0Var);
-        if (kotlin.jvm.internal.j.a(xVar.c, a0Var)) {
-            a0Var.a();
+        hd.e eVar = xVar.b;
+        z zVar = this.a;
+        eVar.remove(zVar);
+        if (kotlin.jvm.internal.i.a(xVar.c, zVar)) {
+            zVar.a();
             xVar.c = null;
         }
-        a0Var.b.remove(this);
-        ?? r02 = a0Var.c;
+        zVar.b.remove(this);
+        ?? r02 = zVar.c;
         if (r02 != 0) {
             r02.invoke();
         }
-        a0Var.c = null;
+        zVar.c = null;
     }
 }

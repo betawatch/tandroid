@@ -1,52 +1,96 @@
 package i9;
 
-import android.os.Process;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.util.Date;
-import java.util.Locale;
-import java.util.concurrent.atomic.AtomicLong;
+import v7.k8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f {
-    public static final AtomicLong a = new AtomicLong(0);
-    public static String b;
-
-    public f(w wVar) {
-        long time = new Date().getTime();
-        ByteBuffer allocate = ByteBuffer.allocate(4);
-        allocate.putInt((int) (time / 1000));
-        allocate.order(ByteOrder.BIG_ENDIAN);
-        allocate.position(0);
-        byte[] array = allocate.array();
-        byte b10 = array[0];
-        byte b11 = array[1];
-        byte b12 = array[2];
-        byte b13 = array[3];
-        byte[] a2 = a(time % 1000);
-        byte b14 = a2[0];
-        byte b15 = a2[1];
-        byte[] a10 = a(a.incrementAndGet());
-        byte b16 = a10[0];
-        byte b17 = a10[1];
-        byte[] a11 = a(Integer.valueOf(Process.myPid()).shortValue());
-        byte[] bArr = {b10, b11, b12, b13, b14, b15, b16, b17, a11[0], a11[1]};
-        String i10 = h.i(wVar.b().a);
-        String f10 = h.f(bArr);
-        Locale locale = Locale.US;
-        b = String.format(locale, "%s%s%s%s", f10.substring(0, 12), f10.substring(12, 16), f10.subSequence(16, 20), i10.substring(0, 12)).toUpperCase(locale);
+public final class f extends k8 {
+    @Override // v7.k8
+    public final boolean a(o oVar, c cVar, c cVar2) {
+        synchronized (oVar) {
+            try {
+                if (oVar.b != cVar) {
+                    return false;
+                }
+                oVar.b = cVar2;
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 
-    public static byte[] a(long j10) {
-        ByteBuffer allocate = ByteBuffer.allocate(2);
-        allocate.putShort((short) j10);
-        allocate.order(ByteOrder.BIG_ENDIAN);
-        allocate.position(0);
-        return allocate.array();
+    @Override // v7.k8
+    public final boolean b(o oVar, Object obj, Object obj2) {
+        synchronized (oVar) {
+            try {
+                if (oVar.a != obj) {
+                    return false;
+                }
+                oVar.a = obj2;
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
     }
 
-    public final String toString() {
-        return b;
+    @Override // v7.k8
+    public final boolean c(o oVar, n nVar, n nVar2) {
+        synchronized (oVar) {
+            try {
+                if (oVar.c != nVar) {
+                    return false;
+                }
+                oVar.c = nVar2;
+                return true;
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+    }
+
+    @Override // v7.k8
+    public final c d(o oVar) {
+        c cVar;
+        c cVar2 = c.d;
+        synchronized (oVar) {
+            try {
+                cVar = oVar.b;
+                if (cVar != cVar2) {
+                    oVar.b = cVar2;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return cVar;
+    }
+
+    @Override // v7.k8
+    public final n e(o oVar) {
+        n nVar;
+        n nVar2 = n.c;
+        synchronized (oVar) {
+            try {
+                nVar = oVar.c;
+                if (nVar != nVar2) {
+                    oVar.c = nVar2;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
+        }
+        return nVar;
+    }
+
+    @Override // v7.k8
+    public final void f(n nVar, n nVar2) {
+        nVar.b = nVar2;
+    }
+
+    @Override // v7.k8
+    public final void g(n nVar, Thread thread) {
+        nVar.a = thread;
     }
 }

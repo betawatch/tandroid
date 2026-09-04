@@ -1,50 +1,31 @@
 package org.telegram.ui;
 
+import android.graphics.Bitmap;
 import java.util.ArrayList;
 import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MediaController;
 import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ul extends fu0 {
-    public final /* synthetic */ ArrayList a;
-    public final /* synthetic */ boolean[] b;
-    public final /* synthetic */ zn c;
+public final class ul extends su0 {
+    public final /* synthetic */ Bitmap a;
+    public final /* synthetic */ ArrayList b;
+    public final /* synthetic */ co c;
 
-    public ul(zn znVar, ArrayList arrayList, boolean[] zArr) {
-        this.c = znVar;
-        this.a = arrayList;
-        this.b = zArr;
+    public ul(co coVar, Bitmap bitmap, ArrayList arrayList) {
+        this.c = coVar;
+        this.a = bitmap;
+        this.b = arrayList;
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final boolean S() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
     public final ImageReceiver.BitmapHolder j(int i10) {
-        return null;
+        return new ImageReceiver.BitmapHolder(this.a, (String) null, 0);
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z4, int i11, int i12, boolean z10) {
-        ArrayList arrayList = this.a;
-        for (int size = arrayList.size() - 1; size >= 0; size--) {
-            if (!this.b[size]) {
-                arrayList.remove(size);
-            }
-        }
-        this.c.eb(arrayList, i11, z4, z10);
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final boolean x(int i10) {
-        return this.b[i10];
-    }
-
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final int k(int i10, VideoEditedInfo videoEditedInfo) {
-        return i10;
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final void o(int i10, VideoEditedInfo videoEditedInfo, boolean z10, int i11, int i12, boolean z11) {
+        this.c.q((MediaController.PhotoEntry) this.b.get(0), videoEditedInfo, z10, i11, 0, z11, 0L);
     }
 }

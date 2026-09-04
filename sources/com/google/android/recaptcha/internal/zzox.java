@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 final class zzox implements zzow {
     @Override // com.google.android.recaptcha.internal.zzow
@@ -8,19 +8,19 @@ final class zzox implements zzow {
         StackTraceElement[] stackTrace = new Throwable().getStackTrace();
         String name = cls.getName();
         int i11 = 3;
-        boolean z4 = false;
+        boolean z10 = false;
         while (true) {
             if (i11 >= stackTrace.length) {
                 i11 = -1;
                 break;
             }
             if (stackTrace[i11].getClassName().equals(name)) {
-                z4 = true;
+                z10 = true;
             } else {
-                if (z4) {
+                if (z10) {
                     break;
                 }
-                z4 = false;
+                z10 = false;
             }
             i11++;
         }

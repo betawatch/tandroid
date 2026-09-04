@@ -1,76 +1,130 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
 import android.graphics.Canvas;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
+import android.view.VelocityTracker;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_payments;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class na extends FrameLayout {
-    public final org.telegram.ui.Components.p9 a;
-    public final TextView b;
-    public TLRPC.TL_forumTopic c;
-    public boolean d;
+public final /* synthetic */ class na implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public na(Context context) {
-        super(context);
-        org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
-        this.a = p9Var;
-        TextView textView = new TextView(context);
-        this.b = textView;
-        org.telegram.messenger.y3.t(textView, org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.G6, false), 1, 16.0f);
-        if (LocaleController.isRTL) {
-            addView(p9Var, k7.b6.d(30, 30.0f, 21, 12.0f, 0.0f, 12.0f, 0.0f));
-            addView(textView, k7.b6.d(-1, -2.0f, 21, 12.0f, 0.0f, 56.0f, 0.0f));
-        } else {
-            addView(p9Var, k7.b6.d(30, 30.0f, 16, 12.0f, 0.0f, 12.0f, 0.0f));
-            addView(textView, k7.b6.d(-1, -2.0f, 16, 56.0f, 0.0f, 12.0f, 0.0f));
-        }
+    public /* synthetic */ na(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.d) {
-            int dp = AndroidUtilities.dp(56.0f);
-            if (LocaleController.isRTL) {
-                canvas.drawLine(0.0f, getMeasuredHeight() - 1, getMeasuredWidth() - dp, getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-            } else {
-                canvas.drawLine(dp, getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                ThemesHorizontalListCell$InnerThemeView themesHorizontalListCell$InnerThemeView = (ThemesHorizontalListCell$InnerThemeView) this.b;
+                TLObject tLObject = (TLObject) this.c;
+                pa paVar = themesHorizontalListCell$InnerThemeView.a0;
+                if (!(tLObject instanceof TLRPC.TL_wallPaper)) {
+                    themesHorizontalListCell$InnerThemeView.b.f = true;
+                    break;
+                } else {
+                    TLRPC.WallPaper wallPaper = (TLRPC.WallPaper) tLObject;
+                    String attachFileName = FileLoader.getAttachFileName(wallPaper.document);
+                    if (!paVar.Z2.containsKey(attachFileName)) {
+                        paVar.Z2.put(attachFileName, themesHorizontalListCell$InnerThemeView.b);
+                        FileLoader.getInstance(themesHorizontalListCell$InnerThemeView.b.E).loadFile(wallPaper.document, wallPaper, 1, 1);
+                        break;
+                    }
+                }
+                break;
+            case 1:
+                o0 o0Var = (o0) this.b;
+                n0 n0Var = (n0) this.c;
+                t1 t1Var = o0Var.a;
+                n0 n0Var2 = o0Var.F;
+                if (n0Var == n0Var2) {
+                    n0Var2.n.c(false);
+                    n0 n0Var3 = o0Var.F;
+                    if (!n0Var3.g) {
+                        TLObject tLObject2 = n0Var3.o;
+                        t1 t1Var2 = o0Var.a;
+                        if (t1Var2.getDelegate() != null) {
+                            t1Var2.getDelegate().x0(t1Var2, tLObject2, true);
+                        }
+                    } else if (t1Var.getDelegate() != null) {
+                        t1Var.getDelegate().o2();
+                    }
+                }
+                o0Var.F = null;
+                o0Var.G = null;
+                o0Var.B = false;
+                o0Var.A = false;
+                o0Var.y.c(false);
+                VelocityTracker velocityTracker = o0Var.D;
+                if (velocityTracker != null) {
+                    velocityTracker.recycle();
+                    o0Var.D = null;
+                    break;
+                }
+                break;
+            case 2:
+                final w0 w0Var = (w0) this.b;
+                final org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
+                TL_payments.TL_resolveStarGiftOffer tL_resolveStarGiftOffer = new TL_payments.TL_resolveStarGiftOffer();
+                tL_resolveStarGiftOffer.offer_msg_id = w0Var.getMessageObject().getId();
+                tL_resolveStarGiftOffer.decline = true;
+                ConnectionsManager.getInstance(w0Var.H).sendRequestTyped(tL_resolveStarGiftOffer, new Utilities.Callback2() { // from class: org.telegram.ui.Cells.r0
+                    @Override // org.telegram.messenger.Utilities.Callback2
+                    public final void run(Object obj, Object obj2) {
+                        TLRPC.Updates updates = (TLRPC.Updates) obj;
+                        TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
+                        if (updates != null) {
+                            MessagesController.getInstance(w0.this.H).processUpdates(updates, false);
+                        }
+                        if (tL_error != null) {
+                            AndroidUtilities.runOnUIThread(new na(3, n2Var, tL_error));
+                        }
+                    }
+                });
+                break;
+            case 3:
+                org.telegram.ui.ActionBar.n2 n2Var2 = (org.telegram.ui.ActionBar.n2) this.b;
+                yc.a0(n2Var2).d0((TLRPC.TL_error) this.c, false);
+                break;
+            case 4:
+                w0 w0Var2 = (w0) this.b;
+                w0Var2.X0.Z1(w0Var2, ((TLRPC.TL_messageActionGiftCode) this.c).slug);
+                break;
+            case 5:
+                t1 t1Var3 = (t1) this.b;
+                t1Var3.O0.draw((Canvas) this.c);
+                break;
+            case 6:
+                ((t1) this.b).post(new b1(8, (t1) this.c));
+                break;
+            case 7:
+                m8 m8Var = (m8) this.b;
+                TLRPC.Document document = (TLRPC.Document) this.c;
+                if (m8Var.r.documents.isEmpty()) {
+                    TLRPC.TL_messages_stickerSet tL_messages_stickerSet = m8Var.r;
+                    if (tL_messages_stickerSet.set.thumb_document_id == document.id) {
+                        tL_messages_stickerSet.documents.add(document);
+                        m8Var.d(m8Var.r, m8Var.f, m8Var.s);
+                        break;
+                    }
+                }
+                break;
+            default:
+                ((pa) this.b).v1((org.telegram.ui.ActionBar.i6) this.c);
+                break;
         }
-    }
-
-    public TLRPC.TL_forumTopic getTopic() {
-        return this.c;
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(48.0f), TLObject.FLAG_30));
-    }
-
-    public void setTopic(TLRPC.TL_forumTopic tL_forumTopic) {
-        this.c = tL_forumTopic;
-        boolean isEmpty = TextUtils.isEmpty(tL_forumTopic.searchQuery);
-        TextView textView = this.b;
-        if (isEmpty) {
-            textView.setText(AndroidUtilities.removeDiacritics(tL_forumTopic.title));
-        } else {
-            textView.setText(AndroidUtilities.highlightText(AndroidUtilities.removeDiacritics(tL_forumTopic.title), tL_forumTopic.searchQuery, (org.telegram.ui.ActionBar.f6) null));
-        }
-        org.telegram.ui.Components.p9 p9Var = this.a;
-        ag.f.p(p9Var, tL_forumTopic, false, false, null);
-        if (p9Var == null || p9Var.getImageReceiver() == null || !(p9Var.getImageReceiver().getDrawable() instanceof ag.e)) {
-            return;
-        }
-        ((ag.e) p9Var.getImageReceiver().getDrawable()).a(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.c9, false));
     }
 }

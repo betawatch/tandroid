@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class q0 implements Serializable, Iterable {
     public static final q0 c = new q0(j1.b);
@@ -43,26 +43,26 @@ public class q0 implements Serializable, Iterable {
             return i13;
         }
         if (i10 < 0) {
-            StringBuilder sb = new StringBuilder(32);
-            sb.append("Beginning index: ");
-            sb.append(i10);
-            sb.append(" < 0");
-            throw new IndexOutOfBoundsException(sb.toString());
-        }
-        if (i11 < i10) {
-            StringBuilder sb2 = new StringBuilder(66);
-            sb2.append("Beginning index larger than ending index: ");
+            StringBuilder sb2 = new StringBuilder(32);
+            sb2.append("Beginning index: ");
             sb2.append(i10);
-            sb2.append(", ");
-            sb2.append(i11);
+            sb2.append(" < 0");
             throw new IndexOutOfBoundsException(sb2.toString());
         }
-        StringBuilder sb3 = new StringBuilder(37);
-        sb3.append("End index: ");
-        sb3.append(i11);
-        sb3.append(" >= ");
-        sb3.append(i12);
-        throw new IndexOutOfBoundsException(sb3.toString());
+        if (i11 < i10) {
+            StringBuilder sb3 = new StringBuilder(66);
+            sb3.append("Beginning index larger than ending index: ");
+            sb3.append(i10);
+            sb3.append(", ");
+            sb3.append(i11);
+            throw new IndexOutOfBoundsException(sb3.toString());
+        }
+        StringBuilder sb4 = new StringBuilder(37);
+        sb4.append("End index: ");
+        sb4.append(i11);
+        sb4.append(" >= ");
+        sb4.append(i12);
+        throw new IndexOutOfBoundsException(sb4.toString());
     }
 
     public final boolean equals(Object obj) {
@@ -87,20 +87,20 @@ public class q0 implements Serializable, Iterable {
         int n10 = n();
         if (n10 > q0Var.n()) {
             int n11 = n();
-            StringBuilder sb = new StringBuilder(40);
-            sb.append("Length too large: ");
-            sb.append(n10);
-            sb.append(n11);
-            throw new IllegalArgumentException(sb.toString());
+            StringBuilder sb2 = new StringBuilder(40);
+            sb2.append("Length too large: ");
+            sb2.append(n10);
+            sb2.append(n11);
+            throw new IllegalArgumentException(sb2.toString());
         }
         if (n10 > q0Var.n()) {
             int n12 = q0Var.n();
-            StringBuilder sb2 = new StringBuilder(59);
-            sb2.append("Ran off end of other: 0, ");
-            sb2.append(n10);
-            sb2.append(", ");
-            sb2.append(n12);
-            throw new IllegalArgumentException(sb2.toString());
+            StringBuilder sb3 = new StringBuilder(59);
+            sb3.append("Ran off end of other: 0, ");
+            sb3.append(n10);
+            sb3.append(", ");
+            sb3.append(n12);
+            throw new IllegalArgumentException(sb3.toString());
         }
         byte[] bArr = q0Var.b;
         int r10 = r() + n10;
@@ -163,14 +163,14 @@ public class q0 implements Serializable, Iterable {
         if (n() <= 50) {
             concat = e1.k(this);
         } else {
-            int q10 = q(0, 47, n());
-            concat = String.valueOf(e1.k(q10 == 0 ? c : new p0(this.b, r(), q10))).concat("...");
+            int q6 = q(0, 47, n());
+            concat = String.valueOf(e1.k(q6 == 0 ? c : new p0(this.b, r(), q6))).concat("...");
         }
-        StringBuilder sb = new StringBuilder("<ByteString@");
-        sb.append(hexString);
-        sb.append(" size=");
-        sb.append(n10);
-        sb.append(" contents=\"");
-        return android.support.v4.media.a.r(sb, concat, "\">");
+        StringBuilder sb2 = new StringBuilder("<ByteString@");
+        sb2.append(hexString);
+        sb2.append(" size=");
+        sb2.append(n10);
+        sb2.append(" contents=\"");
+        return a4.a.s(sb2, concat, "\">");
     }
 }

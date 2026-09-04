@@ -1,40 +1,43 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class r8 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ float a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ w8 d;
+public final /* synthetic */ class r8 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f9 b;
 
-    public r8(w8 w8Var, float f10, float f11, boolean z4) {
-        this.d = w8Var;
-        this.a = f10;
-        this.b = f11;
-        this.c = z4;
+    public /* synthetic */ r8(f9 f9Var, int i10) {
+        this.a = i10;
+        this.b = f9Var;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        org.telegram.ui.ActionBar.k kVar;
-        org.telegram.ui.ActionBar.k kVar2;
-        float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-        w8 w8Var = this.d;
-        w8Var.K = floatValue;
-        float lerp = AndroidUtilities.lerp(this.a, this.b, floatValue);
-        kVar = ((org.telegram.ui.ActionBar.p2) w8Var).actionBar;
-        kVar.getTitleTextView().setAlpha(w8Var.K);
-        if (w8Var.C && !this.c) {
-            w8Var.i0(1.0f - w8Var.K, false);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                f9 f9Var = this.b;
+                if (!f9Var.U) {
+                    if (f9Var.N <= 0.0f) {
+                        f9Var.g0(!f9Var.a.v, true, false);
+                        break;
+                    } else {
+                        if (f9Var.M != null) {
+                            f9Var.E = 1.0f;
+                            f9Var.F = true;
+                        }
+                        AndroidUtilities.hideKeyboard(f9Var.fragmentView);
+                        break;
+                    }
+                }
+                break;
+            default:
+                f9 f9Var2 = this.b;
+                f9Var2.getClass();
+                f9Var2.presentFragment(new PremiumPreviewFragment(0, "avatar"));
+                break;
         }
-        w8Var.r.setTranslationY(lerp);
-        w8Var.x.setTranslationY(lerp);
-        w8Var.fragmentView.invalidate();
-        kVar2 = ((org.telegram.ui.ActionBar.p2) w8Var).actionBar;
-        kVar2.invalidate();
     }
 }

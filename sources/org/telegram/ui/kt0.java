@@ -1,49 +1,48 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewPropertyAnimator;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class kt0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ PhotoViewer c;
+public final class kt0 extends org.telegram.ui.Components.u00 {
+    public final /* synthetic */ ss0 e;
+    public final /* synthetic */ PhotoViewer f;
 
-    public /* synthetic */ kt0(PhotoViewer photoViewer, int i10, int i11) {
-        this.a = i11;
-        this.c = photoViewer;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kt0(PhotoViewer photoViewer, ss0 ss0Var) {
+        super(false);
+        this.f = photoViewer;
+        this.e = ss0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.c;
-                lt0 lt0Var = photoViewer.K1;
-                lt0Var.e.setVisibility(0);
-                FrameLayout frameLayout = lt0Var.r;
-                frameLayout.setVisibility(0);
-                frameLayout.setTranslationY(AndroidUtilities.dp(18.0f));
-                ViewPropertyAnimator translationY = frameLayout.animate().alpha(1.0f).translationY(0.0f);
-                org.telegram.ui.Components.mr mrVar = org.telegram.ui.Components.mr.h;
-                b.p(translationY, mrVar, 320L);
-                lt0Var.w.animate().alpha(1.0f).translationX(0.0f).setInterpolator(mrVar).setDuration(320L).start();
-                photoViewer.r4 = this.b;
-                photoViewer.n6 = null;
-                photoViewer.l6 = -1;
-                break;
-            default:
-                int i10 = this.b;
-                PhotoViewer photoViewer2 = this.c;
-                photoViewer2.r4 = i10;
-                photoViewer2.n6 = null;
-                photoViewer2.l6 = -1;
-                break;
-        }
+    @Override // org.telegram.ui.Components.co0
+    public final CharSequence d() {
+        StringBuilder sb2 = new StringBuilder();
+        PhotoViewer photoViewer = this.f;
+        int[] iArr = photoViewer.m3;
+        sb2.append(LocaleController.formatPluralString("Minutes", iArr[0], new Object[0]));
+        sb2.append(' ');
+        sb2.append(LocaleController.formatPluralString("Seconds", iArr[1], new Object[0]));
+        String sb3 = sb2.toString();
+        StringBuilder sb4 = new StringBuilder();
+        int[] iArr2 = photoViewer.n3;
+        sb4.append(LocaleController.formatPluralString("Minutes", iArr2[0], new Object[0]));
+        sb4.append(' ');
+        sb4.append(LocaleController.formatPluralString("Seconds", iArr2[1], new Object[0]));
+        return LocaleController.formatString("AccDescrPlayerDuration", R.string.AccDescrPlayerDuration, sb3, sb4.toString());
+    }
+
+    @Override // org.telegram.ui.Components.u00
+    public final float k() {
+        return this.f.q3.c();
+    }
+
+    @Override // org.telegram.ui.Components.u00
+    public final void l(float f7) {
+        this.e.b(f7);
+        PhotoViewer photoViewer = this.f;
+        photoViewer.q3.h(f7, false);
+        photoViewer.r3.invalidate();
     }
 }

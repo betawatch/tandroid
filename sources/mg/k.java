@@ -1,80 +1,83 @@
 package mg;
 
-import android.text.SpannableStringBuilder;
-import android.view.KeyEvent;
-import lh.n2;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Cells.r8;
-import org.telegram.ui.Components.u5;
+import android.view.ViewTreeObserver;
+import org.telegram.messenger.MediaController;
+import org.telegram.ui.Components.Crop.CropAreaView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k implements Utilities.Callback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ s b;
+public final class k implements ViewTreeObserver.OnPreDrawListener {
+    public final /* synthetic */ MediaController.CropState a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ q d;
 
-    public /* synthetic */ k(s sVar, int i10) {
-        this.a = i10;
-        this.b = sVar;
+    public k(q qVar, MediaController.CropState cropState, int i10, int i11) {
+        this.d = qVar;
+        this.a = cropState;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback
-    public final void run(Object obj) {
-        r8 r8Var;
-        switch (this.a) {
-            case 0:
-                Boolean bool = (Boolean) obj;
-                s sVar = this.b;
-                h hVar = sVar.R;
-                if (!sVar.a0()) {
-                    int editTextSelectionEnd = sVar.n.getEditTextSelectionEnd();
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(sVar.n.getText());
-                    for (u5 u5Var : (u5[]) spannableStringBuilder.getSpans(0, spannableStringBuilder.length(), u5.class)) {
-                        if (spannableStringBuilder.getSpanEnd(u5Var) == editTextSelectionEnd) {
-                            sVar.B.remove(Long.valueOf(u5Var.documentId));
-                            sVar.C.remove(Long.valueOf(u5Var.documentId));
-                            sVar.b.A(Long.valueOf(u5Var.documentId));
-                            if (u5Var.documentId == -1 && (r8Var = sVar.s) != null) {
-                                r8Var.setChecked(false);
-                                sVar.n.setMaxLength(sVar.G);
-                            }
-                            if (bool.booleanValue()) {
-                                sVar.n.dispatchKeyEvent(new KeyEvent(0, 67));
-                                AndroidUtilities.cancelRunOnUIThread(hVar);
-                                AndroidUtilities.runOnUIThread(hVar, 350L);
-                                break;
-                            } else {
-                                u5Var.setRemoved(new ah.a(sVar, u5Var, editTextSelectionEnd, 11));
-                                sVar.W(u5Var);
-                                sVar.Y(false);
-                                break;
-                            }
-                        }
-                    }
-                    break;
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
+        float f7;
+        float f10;
+        q qVar = this.d;
+        qVar.l(false);
+        CropAreaView cropAreaView = qVar.a;
+        MediaController.CropState cropState = this.a;
+        if (cropState != null) {
+            float f11 = cropState.lockedAspectRatio;
+            if (f11 > 1.0E-4f) {
+                cropAreaView.setLockedAspectRatio(f11);
+                p pVar = qVar.M;
+                if (pVar != null) {
+                    pVar.E(true);
                 }
-                break;
-            case 1:
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj;
-                s sVar2 = this.b;
-                if (!sVar2.isFinishing()) {
-                    sVar2.v.setLoading(false);
-                    if (tL_error.text.equals("CHAT_NOT_MODIFIED")) {
-                        sVar2.finishFragment();
-                        break;
-                    } else {
-                        AndroidUtilities.runOnUIThread(new n2(17, sVar2, tL_error), sVar2.N == null ? 200L : 0L);
-                        break;
-                    }
-                }
-                break;
-            default:
-                s sVar3 = this.b;
-                sVar3.getClass();
-                sVar3.L = ((Integer) obj).intValue();
-                break;
+            }
+            qVar.setFreeform(cropState.freeform);
+            float aspectRatio = cropAreaView.getAspectRatio();
+            int i10 = cropState.transformRotation;
+            int i11 = this.b;
+            int i12 = this.c;
+            if (i10 == 90 || i10 == 270) {
+                aspectRatio = 1.0f / aspectRatio;
+                o oVar = qVar.L;
+                f7 = oVar.b;
+                f10 = oVar.a;
+            } else {
+                o oVar2 = qVar.L;
+                f7 = oVar2.a;
+                f10 = oVar2.b;
+                i12 = i11;
+                i11 = i12;
+            }
+            if (!qVar.x || cropAreaView.getLockAspectRatio() <= 0.0f) {
+                cropAreaView.e(qVar.getCurrentWidth(), qVar.getCurrentHeight(), (((float) i10) + qVar.L.g) % 180.0f != 0.0f, qVar.x);
+            } else {
+                cropAreaView.setLockedAspectRatio(1.0f / cropAreaView.getLockAspectRatio());
+                cropAreaView.setActualRect(cropAreaView.getLockAspectRatio());
+            }
+            o.d(qVar.L, i10);
+            cropAreaView.setActualRect((aspectRatio * cropState.cropPw) / cropState.cropPh);
+            o oVar3 = qVar.L;
+            oVar3.j = cropState.mirrored;
+            o.e(oVar3, cropState.cropRotate);
+            o oVar4 = qVar.L;
+            float f12 = cropState.cropPx * i11;
+            float f13 = oVar4.f;
+            o.f(oVar4, f12 * f13, cropState.cropPy * i12 * f13);
+            float max = Math.max(cropAreaView.getCropWidth() / f7, cropAreaView.getCropHeight() / f10);
+            o oVar5 = qVar.L;
+            o.g(oVar5, cropState.cropScale * (max / oVar5.f), 0.0f, 0.0f);
+            qVar.r(false);
+            p pVar2 = qVar.M;
+            if (pVar2 != null) {
+                pVar2.W(false);
+            }
         }
+        cropAreaView.getViewTreeObserver().removeOnPreDrawListener(this);
+        return false;
     }
 }

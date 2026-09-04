@@ -19,14 +19,14 @@ public final class Optional<T> {
         this.a = Objects.requireNonNull(obj);
     }
 
-    public static <T> Optional<T> of(T t6) {
-        return new Optional<>(t6);
+    public static <T> Optional<T> of(T t10) {
+        return new Optional<>(t10);
     }
 
     public T get() {
-        T t6 = (T) this.a;
-        if (t6 != null) {
-            return t6;
+        T t10 = (T) this.a;
+        if (t10 != null) {
+            return t10;
         }
         throw new NoSuchElementException("No value present");
     }

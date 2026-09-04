@@ -1,18 +1,21 @@
 package v6;
 
-import android.os.IInterface;
-import com.google.android.gms.common.api.Status;
-import u6.l;
-import u6.r;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
+import l5.o;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface a extends IInterface {
-    void H(Status status, l lVar);
+public final class a implements ThreadFactory {
+    public final AtomicInteger b = new AtomicInteger();
+    public final ThreadFactory c = Executors.defaultThreadFactory();
+    public final String a = "GAC_Executor";
 
-    void N(Status status, r rVar);
-
-    void R(Status status, u6.e eVar);
-
-    void l(Status status, u6.b bVar);
+    @Override // java.util.concurrent.ThreadFactory
+    public final Thread newThread(Runnable runnable) {
+        Thread newThread = this.c.newThread(new o(2, runnable));
+        newThread.setName(this.a + "[" + this.b.getAndIncrement() + "]");
+        return newThread;
+    }
 }

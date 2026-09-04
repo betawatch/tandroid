@@ -4,35 +4,35 @@ import android.os.Looper;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.locks.Lock;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b0 implements b6.b {
+public final class b0 implements n6.b {
     public final WeakReference a;
     public final com.google.android.gms.common.api.e b;
     public final boolean c;
 
-    public b0(g0 g0Var, com.google.android.gms.common.api.e eVar, boolean z4) {
+    public b0(g0 g0Var, com.google.android.gms.common.api.e eVar, boolean z10) {
         this.a = new WeakReference(g0Var);
         this.b = eVar;
-        this.c = z4;
+        this.c = z10;
     }
 
-    @Override // b6.b
-    public final void a(y5.a aVar) {
+    @Override // n6.b
+    public final void a(k6.a aVar) {
         g0 g0Var = (g0) this.a.get();
         if (g0Var == null) {
             return;
         }
         Lock lock = g0Var.b;
-        b6.m.j("onReportServiceBinding must be called on the GoogleApiClient handler thread", Looper.myLooper() == g0Var.a.o.h);
+        n6.l.j("onReportServiceBinding must be called on the GoogleApiClient handler thread", Looper.myLooper() == g0Var.a.o.h);
         lock.lock();
         try {
             if (g0Var.i(0)) {
-                if (!aVar.f()) {
-                    g0Var.f(aVar, this.b, this.c);
+                if (!aVar.c()) {
+                    g0Var.g(aVar, this.b, this.c);
                 }
                 if (g0Var.j()) {
-                    g0Var.g();
+                    g0Var.h();
                 }
             }
         } finally {

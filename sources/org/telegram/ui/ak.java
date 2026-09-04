@@ -1,38 +1,59 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.MotionEvent;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ak extends org.telegram.ui.Components.c21 {
-    public final /* synthetic */ zn e;
+public final /* synthetic */ class ak implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ co b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ak(zn znVar, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, i10, f6Var);
-        this.e = znVar;
+    public /* synthetic */ ak(co coVar, int i10) {
+        this.a = i10;
+        this.b = coVar;
     }
 
-    @Override // org.telegram.ui.Components.c21, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        org.telegram.ui.ActionBar.k kVar;
-        if (getAlpha() == 0.0f) {
-            return false;
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        co coVar = this.b;
+        switch (i10) {
+            case 0:
+                co.i2(coVar);
+                break;
+            case 1:
+                co.i2(coVar);
+                break;
+            case 2:
+                int i11 = co.Hc;
+                coVar.Ma();
+                break;
+            case 3:
+                int i12 = co.Hc;
+                coVar.Ma();
+                break;
+            case 4:
+                int i13 = co.Hc;
+                coVar.Ma();
+                break;
+            case 5:
+                int i14 = co.Hc;
+                coVar.Ma();
+                break;
+            case 6:
+                int i15 = co.Hc;
+                coVar.Ma();
+                break;
+            case 7:
+                int i16 = co.Hc;
+                coVar.Ma();
+                break;
+            case 8:
+                int i17 = co.Hc;
+                coVar.Ma();
+                break;
+            default:
+                int i18 = co.Hc;
+                coVar.Ma();
+                break;
         }
-        zn znVar = this.e;
-        kVar = ((org.telegram.ui.ActionBar.p2) znVar).actionBar;
-        if (kVar.s() || znVar.A9()) {
-            return false;
-        }
-        return super.onTouchEvent(motionEvent);
-    }
-
-    @Override // android.view.View
-    public final void setTranslationY(float f10) {
-        if (getTranslationY() != f10) {
-            invalidate();
-        }
-        super.setTranslationY(f10);
     }
 }

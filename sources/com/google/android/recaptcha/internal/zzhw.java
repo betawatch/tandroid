@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import dd.p;
-import k7.p7;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzhw extends i implements p {
+final class zzhw extends j implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzib zzc;
@@ -24,16 +25,16 @@ final class zzhw extends i implements p {
         this.zze = str2;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzhw zzhwVar = new zzhw(this.zzc, this.zzd, this.zze, cVar);
         zzhwVar.zzf = obj;
         return zzhwVar;
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhw) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzhw) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:35:0x008a, code lost:
@@ -51,7 +52,7 @@ final class zzhw extends i implements p {
     /* JADX WARN: Type inference failed for: r1v27 */
     /* JADX WARN: Type inference failed for: r1v28 */
     /* JADX WARN: Type inference failed for: r1v9, types: [java.lang.Object] */
-    @Override // wc.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -71,7 +72,7 @@ final class zzhw extends i implements p {
             r12 = i10;
         }
         if (i10 == 0) {
-            p7.b(obj);
+            t7.b(obj);
             zzhk zzhkVar5 = (zzhk) this.zzf;
             zzib zzibVar = this.zzc;
             String str2 = this.zzd;
@@ -87,14 +88,14 @@ final class zzhw extends i implements p {
         if (i10 != 1) {
             if (i10 == 2) {
                 ?? r14 = (zzhk) this.zzf;
-                p7.b(obj);
+                t7.b(obj);
                 i10 = r14;
                 return (String) obj;
             }
             if (i10 == 3) {
                 zzhk zzhkVar6 = (zzhk) this.zza;
                 zzhkVar = (zzhk) this.zzf;
-                p7.b(obj);
+                t7.b(obj);
                 zzhkVar2 = zzhkVar6;
                 this.zzf = zzhkVar;
                 this.zza = null;
@@ -116,19 +117,19 @@ final class zzhw extends i implements p {
             if (i10 != 4) {
                 if (i10 != 5) {
                     String str5 = (String) this.zzf;
-                    p7.b(obj);
+                    t7.b(obj);
                     return str5;
                 }
                 zzhkVar3 = (zzhk) this.zza;
                 str = (String) this.zzf;
-                p7.b(obj);
+                t7.b(obj);
                 this.zzf = str;
                 this.zza = null;
                 this.zzb = 6;
                 return zzhj.zzb(zzhkVar3, (zzhf) obj, this) == aVar ? str : aVar;
             }
             zzhkVar3 = (zzhk) this.zzf;
-            p7.b(obj);
+            t7.b(obj);
             zzib zzibVar22 = this.zzc;
             String str32 = this.zzd;
             String str42 = (String) obj;
@@ -149,7 +150,7 @@ final class zzhw extends i implements p {
         zzhk zzhkVar7 = (zzhk) this.zza;
         zzhk zzhkVar8 = (zzhk) this.zzf;
         try {
-            p7.b(obj);
+            t7.b(obj);
             zzhkVar4 = zzhkVar7;
             r13 = zzhkVar8;
         } catch (Exception unused2) {

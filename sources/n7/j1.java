@@ -1,15 +1,8 @@
 package n7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class j1 {
-    public final i1 a;
-    public final Integer b;
-    public final ma c;
-
-    public /* synthetic */ j1(l7.w0 w0Var) {
-        this.a = (i1) w0Var.b;
-        this.b = (Integer) w0Var.c;
-        this.c = (ma) w0Var.d;
-    }
+    public static final j1 b = new j1();
+    public final f a = new f(new l1());
 }

@@ -20,14 +20,13 @@ import android.os.Bundle;
 import android.os.ext.SdkExtensions;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.Surface;
 import android.view.View;
 import android.view.Window;
 import android.view.accessibility.AccessibilityNodeInfo;
 import androidx.core.graphics.drawable.IconCompat;
-import androidx.mediarouter.app.h;
-import c2.c0;
-import c2.m;
-import c2.n;
+import androidx.mediarouter.app.g;
+import di.w9;
 import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,22 +34,25 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.MediaDataController;
+import p4.l;
+import p4.m;
+import p4.w;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class f {
     public static volatile e a;
     public static volatile ArrayList b;
 
     public static void a(Context context, ArrayList arrayList) {
-        List p10 = p(arrayList);
+        List p5 = p(arrayList);
         int i10 = Build.VERSION.SDK_INT;
         if (i10 <= 29) {
-            c(context, p10);
+            c(context, p5);
         }
         if (i10 >= 25) {
             ArrayList arrayList2 = new ArrayList();
-            ArrayList arrayList3 = (ArrayList) p10;
+            ArrayList arrayList3 = (ArrayList) p5;
             int size = arrayList3.size();
             int i11 = 0;
             while (i11 < size) {
@@ -62,7 +64,7 @@ public abstract class f {
                 return;
             }
         }
-        j(context).a(p10);
+        j(context).a(p5);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
             it.next().getClass();
@@ -72,7 +74,7 @@ public abstract class f {
 
     public static boolean b(Context context, c cVar) {
         Bitmap decodeStream;
-        IconCompat c3;
+        IconCompat c10;
         IconCompat iconCompat = cVar.h;
         if (iconCompat == null) {
             return false;
@@ -86,12 +88,12 @@ public abstract class f {
             return false;
         }
         if (i10 == 6) {
-            c3 = new IconCompat(5);
-            c3.b = decodeStream;
+            c10 = new IconCompat(5);
+            c10.b = decodeStream;
         } else {
-            c3 = IconCompat.c(decodeStream);
+            c10 = IconCompat.c(decodeStream);
         }
-        cVar.h = c3;
+        cVar.h = c10;
         return true;
     }
 
@@ -121,7 +123,7 @@ public abstract class f {
                 return new ArrayList();
             }
         }
-        List<ShortcutInfo> dynamicShortcuts = f0.d.b(context.getSystemService(f0.d.i())).getDynamicShortcuts();
+        List<ShortcutInfo> dynamicShortcuts = w9.a(context.getSystemService(w9.d())).getDynamicShortcuts();
         ArrayList arrayList = new ArrayList(dynamicShortcuts.size());
         Iterator<ShortcutInfo> it = dynamicShortcuts.iterator();
         while (it.hasNext()) {
@@ -137,7 +139,7 @@ public abstract class f {
     public static int g(Context context) {
         context.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            return f0.d.b(context.getSystemService(f0.d.i())).getMaxShortcutCountPerActivity();
+            return w9.a(context.getSystemService(w9.d())).getMaxShortcutCountPerActivity();
         }
         return 5;
     }
@@ -251,9 +253,9 @@ public abstract class f {
             }
             shortcutManager.addDynamicShortcuts(Arrays.asList(cVar.d()));
         }
-        e j10 = j(context);
+        e j3 = j(context);
         try {
-            List<c> b10 = j10.b();
+            List<c> b10 = j3.b();
             if (b10.size() >= g10) {
                 String str2 = null;
                 for (c cVar2 : b10) {
@@ -263,9 +265,9 @@ public abstract class f {
                         i11 = i13;
                     }
                 }
-                j10.d(Arrays.asList(str2));
+                j3.d(Arrays.asList(str2));
             }
-            j10.a(Arrays.asList(cVar));
+            j3.a(Arrays.asList(cVar));
             Iterator it = ((ArrayList) i(context)).iterator();
             if (it.hasNext()) {
                 if (it.next() != null) {
@@ -300,7 +302,7 @@ public abstract class f {
 
     public static void n(Context context) {
         if (Build.VERSION.SDK_INT >= 25) {
-            f0.d.b(context.getSystemService(f0.d.i())).removeAllDynamicShortcuts();
+            w9.a(context.getSystemService(w9.d())).removeAllDynamicShortcuts();
         }
         j(context).c();
         Iterator it = ((ArrayList) i(context)).iterator();
@@ -341,7 +343,7 @@ public abstract class f {
         context.getClass();
         str.getClass();
         if (Build.VERSION.SDK_INT >= 25) {
-            f0.d.b(context.getSystemService(f0.d.i())).reportShortcutUsed(str);
+            w9.a(context.getSystemService(w9.d())).reportShortcutUsed(str);
         }
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
@@ -354,7 +356,7 @@ public abstract class f {
     }
 
     public static void r(Context context, c cVar, IntentSender intentSender) {
-        boolean z4;
+        boolean z10;
         Bitmap bitmap;
         Object obj;
         Resources resources;
@@ -364,21 +366,21 @@ public abstract class f {
             return;
         }
         if (i10 >= 26) {
-            z4 = ((ShortcutManager) context.getSystemService(ShortcutManager.class)).isRequestPinShortcutSupported();
+            z10 = ((ShortcutManager) context.getSystemService(ShortcutManager.class)).isRequestPinShortcutSupported();
         } else {
-            if (f0.f.b(context, "com.android.launcher.permission.INSTALL_SHORTCUT") == 0) {
+            if (f0.e.b(context, "com.android.launcher.permission.INSTALL_SHORTCUT") == 0) {
                 Iterator<ResolveInfo> it = context.getPackageManager().queryBroadcastReceivers(new Intent("com.android.launcher.action.INSTALL_SHORTCUT"), 0).iterator();
                 while (it.hasNext()) {
                     String str = it.next().activityInfo.permission;
                     if (TextUtils.isEmpty(str) || "com.android.launcher.permission.INSTALL_SHORTCUT".equals(str)) {
-                        z4 = true;
+                        z10 = true;
                         break;
                     }
                 }
             }
-            z4 = false;
+            z10 = false;
         }
-        if (z4) {
+        if (z10) {
             Intent intent = new Intent("com.android.launcher.action.INSTALL_SHORTCUT");
             Intent[] intentArr = cVar.c;
             intent.putExtra("android.intent.extra.shortcut.INTENT", intentArr[intentArr.length - 1]).putExtra("android.intent.extra.shortcut.NAME", cVar.e.toString());
@@ -405,8 +407,8 @@ public abstract class f {
                                     if (applicationInfo != null) {
                                         resources = packageManager.getResourcesForApplication(applicationInfo);
                                     }
-                                } catch (PackageManager.NameNotFoundException e) {
-                                    Log.e("IconCompat", "Unable to find pkg=" + h + " for icon", e);
+                                } catch (PackageManager.NameNotFoundException e7) {
+                                    Log.e("IconCompat", "Unable to find pkg=" + h + " for icon", e7);
                                 }
                                 resources = null;
                             }
@@ -424,8 +426,8 @@ public abstract class f {
                 } else if (i11 == 2) {
                     try {
                         intent.putExtra("android.intent.extra.shortcut.ICON_RESOURCE", Intent.ShortcutIconResource.fromContext(context2.createPackageContext(iconCompat.h(), 0), iconCompat.e));
-                    } catch (PackageManager.NameNotFoundException e6) {
-                        throw new IllegalArgumentException("Can't find package " + iconCompat.b, e6);
+                    } catch (PackageManager.NameNotFoundException e10) {
+                        throw new IllegalArgumentException("Can't find package " + iconCompat.b, e10);
                     }
                 } else {
                     if (i11 != 5) {
@@ -438,7 +440,7 @@ public abstract class f {
             if (intentSender == null) {
                 context.sendBroadcast(intent);
             } else {
-                context.sendOrderedBroadcast(intent, null, new h(intentSender, 5), null, -1, null, null);
+                context.sendOrderedBroadcast(intent, null, new g(intentSender, 4), null, -1, null, null);
             }
         }
     }
@@ -457,6 +459,14 @@ public abstract class f {
         accessibilityNodeInfo.setStateDescription(charSequence);
     }
 
+    public static void v(Surface surface, float f7) {
+        try {
+            surface.setFrameRate(f7, f7 == 0.0f ? 0 : 1);
+        } catch (IllegalStateException e7) {
+            e2.a.f("VideoFrameReleaseHelper", "Failed to call Surface.setFrameRate", e7);
+        }
+    }
+
     /* JADX WARN: Removed duplicated region for block: B:37:0x00e1  */
     /* JADX WARN: Removed duplicated region for block: B:40:0x00f1  */
     /* JADX WARN: Removed duplicated region for block: B:51:0x011f  */
@@ -466,7 +476,7 @@ public abstract class f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static n v(MediaRoute2Info mediaRoute2Info) {
+    public static m w(MediaRoute2Info mediaRoute2Info) {
         int i10;
         CharSequence description;
         Uri iconUri;
@@ -474,9 +484,9 @@ public abstract class f {
         Bundle bundle;
         ArrayList parcelableArrayList;
         if (mediaRoute2Info != null) {
-            m mVar = new m(mediaRoute2Info.getId(), mediaRoute2Info.getName().toString());
+            l lVar = new l(mediaRoute2Info.getId(), mediaRoute2Info.getName().toString());
             int connectionState = mediaRoute2Info.getConnectionState();
-            Bundle bundle2 = mVar.a;
+            Bundle bundle2 = lVar.a;
             bundle2.putInt("connectionState", connectionState);
             bundle2.putInt("volumeHandling", mediaRoute2Info.getVolumeHandling());
             bundle2.putInt("volumeMax", mediaRoute2Info.getVolumeMax());
@@ -490,25 +500,25 @@ public abstract class f {
             bundle2.putBoolean("enabled", true);
             bundle2.putBoolean("canDisconnect", false);
             if (Build.VERSION.SDK_INT >= 34) {
-                bundle2.putStringArrayList("deduplicationIds", new ArrayList<>(c0.b(mediaRoute2Info)));
-                int c3 = c0.c(mediaRoute2Info);
+                bundle2.putStringArrayList("deduplicationIds", new ArrayList<>(w.b(mediaRoute2Info)));
+                int c10 = w.c(mediaRoute2Info);
                 i10 = 2;
-                if (c3 == 2) {
+                if (c10 == 2) {
                     i10 = 12;
-                } else if (c3 == 3) {
+                } else if (c10 == 3) {
                     i10 = 13;
-                } else if (c3 == 4) {
+                } else if (c10 == 4) {
                     i10 = 14;
-                } else if (c3 == 22) {
+                } else if (c10 == 22) {
                     i10 = 20;
-                } else if (c3 == 23) {
+                } else if (c10 == 23) {
                     i10 = 21;
-                } else if (c3 == 26) {
+                } else if (c10 == 26) {
                     i10 = 22;
-                } else if (c3 == 29) {
+                } else if (c10 == 29) {
                     i10 = 24;
-                } else if (c3 != 2000) {
-                    switch (c3) {
+                } else if (c10 != 2000) {
+                    switch (c10) {
                         case 8:
                             i10 = 3;
                             break;
@@ -528,7 +538,7 @@ public abstract class f {
                             i10 = 19;
                             break;
                         default:
-                            switch (c3) {
+                            switch (c10) {
                                 case 1001:
                                     i10 = 1;
                                     break;
@@ -584,9 +594,9 @@ public abstract class f {
                     bundle2.putInt("playbackType", extras.getInt("androidx.mediarouter.media.KEY_PLAYBACK_TYPE", 1));
                     parcelableArrayList = extras.getParcelableArrayList("androidx.mediarouter.media.KEY_CONTROL_FILTERS");
                     if (parcelableArrayList != null) {
-                        mVar.a(parcelableArrayList);
+                        lVar.a(parcelableArrayList);
                     }
-                    return mVar.b();
+                    return lVar.b();
                 }
             }
             i10 = 0;
@@ -608,21 +618,21 @@ public abstract class f {
                 parcelableArrayList = extras.getParcelableArrayList("androidx.mediarouter.media.KEY_CONTROL_FILTERS");
                 if (parcelableArrayList != null) {
                 }
-                return mVar.b();
+                return lVar.b();
             }
         }
         return null;
     }
 
-    public static void w(Context context, ArrayList arrayList) {
-        List p10 = p(arrayList);
+    public static void x(Context context, ArrayList arrayList) {
+        List p5 = p(arrayList);
         int i10 = Build.VERSION.SDK_INT;
         if (i10 <= 29) {
-            c(context, p10);
+            c(context, p5);
         }
         if (i10 >= 25) {
             ArrayList arrayList2 = new ArrayList();
-            ArrayList arrayList3 = (ArrayList) p10;
+            ArrayList arrayList3 = (ArrayList) p5;
             int size = arrayList3.size();
             int i11 = 0;
             while (i11 < size) {
@@ -634,7 +644,7 @@ public abstract class f {
                 return;
             }
         }
-        j(context).a(p10);
+        j(context).a(p5);
         Iterator it = ((ArrayList) i(context)).iterator();
         if (it.hasNext()) {
             it.next().getClass();

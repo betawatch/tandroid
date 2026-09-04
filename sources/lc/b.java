@@ -1,61 +1,42 @@
 package lc;
 
-import j4.h;
-import k7.u;
-import ke.e;
+import com.google.android.gms.internal.vision.e2;
+import java.nio.ByteBuffer;
+import mg.n;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends pe.a {
-    public final a a = new a();
-    public final StringBuilder b = new StringBuilder();
-    public final int c;
+public final class b extends a {
+    public static final /* synthetic */ n n;
+    public static final /* synthetic */ n r;
 
-    public b(int i10) {
-        this.c = i10;
+    static {
+        re.a aVar = new re.a(b.class, "ESDescriptorBox.java");
+        aVar.e(aVar.d("getEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor"));
+        aVar.e(aVar.d("setEsDescriptor", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "com.googlecode.mp4parser.boxes.mp4.objectdescriptors.ESDescriptor", "esDescriptor", "void"));
+        n = aVar.e(aVar.d("equals", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "java.lang.Object", "o", "boolean"));
+        r = aVar.e(aVar.d("hashCode", "com.googlecode.mp4parser.boxes.mp4.ESDescriptorBox", "", "", "int"));
     }
 
-    @Override // pe.a
-    public final void a(CharSequence charSequence) {
-        StringBuilder sb = this.b;
-        sb.append(charSequence);
-        sb.append('\n');
-    }
-
-    @Override // pe.a
-    public final void d() {
-        this.a.g = this.b.toString();
-    }
-
-    @Override // pe.a
-    public final ne.a e() {
-        return this.a;
-    }
-
-    @Override // pe.a
-    public final h h(e eVar) {
-        int i10;
-        int i11 = eVar.e;
-        CharSequence charSequence = eVar.a;
-        int length = charSequence.length();
-        if (eVar.g < 4) {
-            int i12 = i11;
-            while (true) {
-                if (i12 >= length) {
-                    i10 = length - i11;
-                    break;
-                }
-                if ('$' != charSequence.charAt(i12)) {
-                    i10 = i12 - i11;
-                    break;
-                }
-                i12++;
-            }
-            int i13 = this.c;
-            if (i10 == i13 && u.b(' ', charSequence, i11 + i13, length) == length) {
-                return new h(-1, -1, true);
-            }
+    public final boolean equals(Object obj) {
+        e2.q(re.a.c(n, this, this, obj));
+        if (this == obj) {
+            return true;
         }
-        return h.a(eVar.b);
+        if (obj == null || b.class != obj.getClass()) {
+            return false;
+        }
+        ByteBuffer byteBuffer = this.e;
+        ByteBuffer byteBuffer2 = ((b) obj).e;
+        return byteBuffer != null ? byteBuffer.equals(byteBuffer2) : byteBuffer2 == null;
+    }
+
+    public final int hashCode() {
+        e2.q(re.a.b(r, this, this));
+        ByteBuffer byteBuffer = this.e;
+        if (byteBuffer != null) {
+            return byteBuffer.hashCode();
+        }
+        return 0;
     }
 }

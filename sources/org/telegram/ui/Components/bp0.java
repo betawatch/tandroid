@@ -1,38 +1,104 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
 import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
+import android.widget.Toast;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class bp0 {
-    public final gu a;
-    public final long b;
-    public final float c;
-    public final float d;
-    public final float e;
+public final /* synthetic */ class bp0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ hq0 b;
 
-    public bp0(View view) {
-        gu guVar = new gu(1, view);
-        this.b = System.currentTimeMillis();
-        this.a = guVar;
-        this.c = AndroidUtilities.lerp(5.0f, 9.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-        this.d = AndroidUtilities.lerp(2.5f, 5.0f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
-        this.e = AndroidUtilities.lerp(2.5f, 5.2f, Utilities.clamp01(Utilities.fastRandom.nextFloat()));
+    public /* synthetic */ bp0(hq0 hq0Var, int i10) {
+        this.a = i10;
+        this.b = hq0Var;
     }
 
-    public final void a(Canvas canvas, float f10) {
-        gu guVar;
-        float currentTimeMillis = (System.currentTimeMillis() - this.b) / 1000.0f;
-        canvas.translate(0.0f, 0.0f);
-        canvas.rotate(((float) Math.sin(this.c * currentTimeMillis * 3.141592653589793d)) * 1.0f * f10);
-        canvas.translate(((float) Math.cos(this.d * currentTimeMillis * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f10, ((float) Math.sin(currentTimeMillis * this.e * 3.141592653589793d)) * AndroidUtilities.dp(0.5f) * f10);
-        canvas.translate(-0.0f, -0.0f);
-        if (f10 <= 0.0f || (guVar = this.a) == null) {
-            return;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                hq0 hq0Var = this.b;
+                hq0Var.e0.a(!r0.a.q, true);
+                hq0Var.Z0();
+                break;
+            case 1:
+                hq0 hq0Var2 = this.b;
+                org.telegram.ui.ActionBar.n1 n1Var = hq0Var2.J0;
+                if (n1Var != null && n1Var.isShowing()) {
+                    hq0Var2.J0.d(true);
+                }
+                hq0Var2.V0(false);
+                break;
+            case 2:
+                hq0 hq0Var3 = this.b;
+                org.telegram.ui.ActionBar.n1 n1Var2 = hq0Var3.J0;
+                if (n1Var2 != null && n1Var2.isShowing()) {
+                    hq0Var3.J0.d(true);
+                }
+                hq0Var3.V0(true);
+                break;
+            case 3:
+                hq0 hq0Var4 = this.b;
+                String[] strArr = hq0Var4.o0;
+                if (hq0Var4.U.m() == 0) {
+                    if (hq0Var4.n0 || strArr[0] != null) {
+                        hq0Var4.dismiss();
+                        PhotoViewer.t1().G0(true, false);
+                        if (strArr[0] != null || !hq0Var4.l0) {
+                            hq0Var4.getContext();
+                            hq0Var4.M0();
+                            break;
+                        } else {
+                            hq0Var4.m0 = true;
+                            Toast.makeText(hq0Var4.getContext(), LocaleController.getString(R.string.Loading), 0).show();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 4:
+                hq0 hq0Var5 = this.b;
+                String[] strArr2 = hq0Var5.o0;
+                if (hq0Var5.U.m() == 0) {
+                    if (hq0Var5.n0 || strArr2[0] != null) {
+                        hq0Var5.dismiss();
+                        if (strArr2[0] != null || !hq0Var5.l0) {
+                            hq0Var5.getContext();
+                            hq0Var5.M0();
+                            break;
+                        } else {
+                            hq0Var5.m0 = true;
+                            Toast.makeText(hq0Var5.getContext(), LocaleController.getString(R.string.Loading), 0).show();
+                            break;
+                        }
+                    }
+                }
+                break;
+            case 5:
+                hq0 hq0Var6 = this.b;
+                String[] strArr3 = hq0Var6.o0;
+                if (hq0Var6.U.m() == 0) {
+                    if (hq0Var6.n0 || strArr3[0] != null) {
+                        hq0Var6.dismiss();
+                        if (strArr3[0] != null || !hq0Var6.l0) {
+                            hq0Var6.getContext();
+                            hq0Var6.M0();
+                            break;
+                        } else {
+                            hq0Var6.m0 = true;
+                            Toast.makeText(hq0Var6.getContext(), LocaleController.getString(R.string.Loading), 0).show();
+                            break;
+                        }
+                    }
+                }
+                break;
+            default:
+                this.b.V0(true);
+                break;
         }
-        guVar.run();
     }
 }

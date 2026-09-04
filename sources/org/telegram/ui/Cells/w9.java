@@ -1,22 +1,11 @@
 package org.telegram.ui.Cells;
 
-import android.graphics.Rect;
-import android.text.Layout;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public interface w9 {
-    Layout getLayout();
+public final class w9 {
+    public final CharSequence a;
 
-    CharSequence getPrefix();
-
-    int getRow();
-
-    Rect getSelectionBounds();
-
-    CharSequence getText();
-
-    int getX();
-
-    int getY();
+    public w9(String str) {
+        this.a = str;
+    }
 }

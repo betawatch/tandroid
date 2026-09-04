@@ -1,152 +1,45 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.ViewParent;
-import android.widget.LinearLayout;
-import android.widget.ScrollView;
-import j$.util.Objects;
-import java.util.ArrayList;
+import android.text.TextUtils;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ProfileActivity;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public class do0 extends ScrollView {
-    public final org.telegram.ui.ActionBar.f6 a;
-    public final LinearLayout b;
-    public final float c;
-    public final float[] d;
-    public final float[] e;
-    public final ArrayList f;
-    public final ArrayList h;
-    public final Path n;
+public final class do0 extends e8 {
+    public final /* synthetic */ Context E;
+    public final /* synthetic */ Object F;
+    public final /* synthetic */ int y;
 
-    public do0(Context context, LinearLayout linearLayout, org.telegram.ui.ActionBar.f6 f6Var, boolean z4) {
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ do0(Object obj, Context context, Context context2, int i10) {
         super(context);
-        this.c = AndroidUtilities.dp(16.0f);
-        this.f = new ArrayList();
-        this.h = new ArrayList();
-        this.n = new Path();
-        this.a = f6Var;
-        this.b = linearLayout;
-        setWillNotDraw(false);
-        linearLayout.setPadding(AndroidUtilities.dp(12.0f), AndroidUtilities.dp(z4 ? 12.0f : 4.0f), AndroidUtilities.dp(12.0f), AndroidUtilities.dp(12.0f));
-        this.d = new float[]{AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), 0.0f, 0.0f, 0.0f, 0.0f};
-        this.e = new float[]{0.0f, 0.0f, 0.0f, 0.0f, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f)};
+        this.y = i10;
+        this.F = obj;
+        this.E = context2;
     }
 
-    public static boolean e(View view) {
-        return (Objects.equals(view.getTag(), -33024) || (view instanceof org.telegram.ui.Cells.z8) || (view instanceof org.telegram.ui.Cells.y6) || (view instanceof org.telegram.ui.y10)) ? false : true;
-    }
-
-    public final void a(Canvas canvas, View view, View view2) {
-        if (view == null || view2 == null) {
-            return;
+    @Override // org.telegram.ui.Components.e8
+    public final TextView a() {
+        switch (this.y) {
+            case 0:
+                s90 s90Var = new s90(this.E);
+                s90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Si, ((fo0) this.F).M));
+                s90Var.setTextSize(1, 12.0f);
+                s90Var.setEllipsize(TextUtils.TruncateAt.END);
+                s90Var.setSingleLine(true);
+                s90Var.setPadding(AndroidUtilities.dp(0.0f), 0, AndroidUtilities.dp(0.0f), AndroidUtilities.dp(0.0f));
+                return s90Var;
+            default:
+                TextView textView = new TextView(this.E);
+                textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Pi, ((ProfileActivity) this.F).z0));
+                textView.setTextSize(0, AndroidUtilities.dp(13.5f));
+                textView.setSingleLine(true);
+                textView.setEllipsize(TextUtils.TruncateAt.END);
+                textView.setGravity(3);
+                return textView;
         }
-        ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
-        ViewGroup.LayoutParams layoutParams2 = view2.getLayoutParams();
-        ViewParent parent = view.getParent();
-        float f10 = 0.0f;
-        LinearLayout linearLayout = this.b;
-        float f11 = (parent == linearLayout || !(layoutParams instanceof ViewGroup.MarginLayoutParams)) ? 0.0f : ((ViewGroup.MarginLayoutParams) layoutParams).topMargin;
-        if (view2.getParent() != linearLayout && (layoutParams2 instanceof ViewGroup.MarginLayoutParams)) {
-            f10 = ((ViewGroup.MarginLayoutParams) layoutParams2).topMargin;
-        }
-        RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(c(view) + linearLayout.getX(), Math.max(getScrollY() - AndroidUtilities.dp(16.0f), (d(view) + linearLayout.getY()) - f11), c(view) + linearLayout.getX() + view.getWidth(), Math.min(getScrollY() + AndroidUtilities.dp(16.0f) + getHeight(), d(view2) + linearLayout.getY() + view2.getHeight() + f10));
-        if (rectF.bottom < rectF.top) {
-            return;
-        }
-        rl0.N0(canvas, rectF, AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), view.getAlpha(), this.a);
-    }
-
-    public final void b(ViewGroup viewGroup, float f10, float f11) {
-        for (int i10 = 0; i10 < viewGroup.getChildCount(); i10++) {
-            View childAt = viewGroup.getChildAt(i10);
-            if (childAt.getVisibility() == 0) {
-                if (childAt instanceof LinearLayout) {
-                    LinearLayout linearLayout = (LinearLayout) childAt;
-                    if (linearLayout.getOrientation() == 1) {
-                        float x10 = childAt.getX() + f10;
-                        LinearLayout linearLayout2 = this.b;
-                        if (x10 <= linearLayout2.getPaddingLeft() && childAt.getX() + f10 + childAt.getWidth() >= linearLayout2.getWidth() - linearLayout2.getPaddingRight()) {
-                            b(linearLayout, childAt.getX() + f10, childAt.getY() + f11);
-                        }
-                    }
-                }
-                this.h.add(childAt);
-            }
-        }
-    }
-
-    public final float c(View view) {
-        if (view == this.b || !(view.getParent() instanceof View)) {
-            return view.getX();
-        }
-        return view.getX() + c((View) view.getParent());
-    }
-
-    public final float d(View view) {
-        if (view == this.b || !(view.getParent() instanceof View)) {
-            return view.getY();
-        }
-        return view.getY() + d((View) view.getParent());
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        ArrayList arrayList = this.h;
-        arrayList.clear();
-        b(this.b, 0.0f, 0.0f);
-        int size = arrayList.size();
-        int i10 = 0;
-        while (true) {
-            View view = null;
-            View view2 = null;
-            while (i10 < size) {
-                Object obj = arrayList.get(i10);
-                i10++;
-                View view3 = (View) obj;
-                if (!e(view3)) {
-                    break;
-                }
-                if (view != null && Math.abs(view2.getAlpha() - view3.getAlpha()) > 0.1f) {
-                    a(canvas, view, view2);
-                    view = null;
-                }
-                if (view == null) {
-                    view = view3;
-                }
-                view2 = view3;
-            }
-            a(canvas, view, view2);
-            super.dispatchDraw(canvas);
-            return;
-            a(canvas, view, view2);
-        }
-    }
-
-    @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
-        return super.drawChild(canvas, view, j10);
-    }
-
-    @Override // android.view.View
-    public final void onScrollChanged(int i10, int i11, int i12, int i13) {
-        super.onScrollChanged(i10, i11, i12, i13);
-        ArrayList arrayList = this.f;
-        int size = arrayList.size();
-        int i14 = 0;
-        while (i14 < size) {
-            Object obj = arrayList.get(i14);
-            i14++;
-            ((Runnable) obj).run();
-        }
-        invalidate();
-        this.b.invalidate();
     }
 }

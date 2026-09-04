@@ -2,24 +2,24 @@ package org.webrtc;
 
 import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class DataChannel {
     private long nativeDataChannel;
     private long nativeObserver;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class Buffer {
         public final boolean binary;
         public final ByteBuffer data;
 
-        public Buffer(ByteBuffer byteBuffer, boolean z4) {
+        public Buffer(ByteBuffer byteBuffer, boolean z10) {
             this.data = byteBuffer;
-            this.binary = z4;
+            this.binary = z10;
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class Init {
         public boolean negotiated;
         public boolean ordered = true;
@@ -53,16 +53,16 @@ public class DataChannel {
         }
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface Observer {
-        void onBufferedAmountChange(long j10);
+        void onBufferedAmountChange(long j3);
 
         void onMessage(Buffer buffer);
 
         void onStateChange();
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public enum State {
         CONNECTING,
         OPEN,
@@ -74,8 +74,8 @@ public class DataChannel {
         }
     }
 
-    public DataChannel(long j10) {
-        this.nativeDataChannel = j10;
+    public DataChannel(long j3) {
+        this.nativeDataChannel = j3;
     }
 
     private void checkDataChannelExists() {
@@ -94,11 +94,11 @@ public class DataChannel {
 
     private native long nativeRegisterObserver(Observer observer);
 
-    private native boolean nativeSend(byte[] bArr, boolean z4);
+    private native boolean nativeSend(byte[] bArr, boolean z10);
 
     private native State nativeState();
 
-    private native void nativeUnregisterObserver(long j10);
+    private native void nativeUnregisterObserver(long j3);
 
     public long bufferedAmount() {
         checkDataChannelExists();
@@ -132,9 +132,9 @@ public class DataChannel {
 
     public void registerObserver(Observer observer) {
         checkDataChannelExists();
-        long j10 = this.nativeObserver;
-        if (j10 != 0) {
-            nativeUnregisterObserver(j10);
+        long j3 = this.nativeObserver;
+        if (j3 != 0) {
+            nativeUnregisterObserver(j3);
         }
         this.nativeObserver = nativeRegisterObserver(observer);
     }

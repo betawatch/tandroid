@@ -1,35 +1,31 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.Iterator;
+import java.util.AbstractMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class p0 extends j0 {
-    public final transient r0 d;
-    public final transient q0 e;
+    public final /* synthetic */ q0 c;
 
-    public p0(r0 r0Var, q0 q0Var) {
-        this.d = r0Var;
-        this.e = q0Var;
+    public p0(q0 q0Var) {
+        this.c = q0Var;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
-    public final boolean contains(Object obj) {
-        return this.d.get(obj) != null;
+    @Override // java.util.List
+    public final /* bridge */ /* synthetic */ Object get(int i10) {
+        q0 q0Var = this.c;
+        v7.j5.a(i10, q0Var.f);
+        Object[] objArr = q0Var.e;
+        int i11 = i10 + i10;
+        Object obj = objArr[i11];
+        obj.getClass();
+        Object obj2 = objArr[i11 + 1];
+        obj2.getClass();
+        return new AbstractMap.SimpleImmutableEntry(obj, obj2);
     }
 
-    @Override // com.google.android.gms.internal.cast.d0
-    public final int i(Object[] objArr) {
-        return this.e.i(objArr);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
-    public final /* synthetic */ Iterator iterator() {
-        return this.e.listIterator(0);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
     public final int size() {
-        return this.d.h;
+        return this.c.f;
     }
 }

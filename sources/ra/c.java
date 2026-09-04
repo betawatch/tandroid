@@ -1,62 +1,84 @@
 package ra;
 
-import j$.util.Objects;
-import java.io.Serializable;
-import java.lang.reflect.Type;
-import java.lang.reflect.WildcardType;
+import android.content.SharedPreferences;
+import android.util.Base64;
+import android.util.Log;
+import java.security.KeyFactory;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.PublicKey;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.X509EncodedKeySpec;
+import k9.h;
+import k9.j;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c implements WildcardType, Serializable {
-    public final Type a;
-    public final Type b;
+public final class c {
+    public static final String[] c = {"*", "FCM", "GCM", ""};
+    public final SharedPreferences a;
+    public final String b;
 
-    public c(Type[] typeArr, Type[] typeArr2) {
-        d.b(typeArr2.length <= 1);
-        d.b(typeArr.length == 1);
-        if (typeArr2.length != 1) {
-            Objects.requireNonNull(typeArr[0]);
-            d.c(typeArr[0]);
-            this.b = null;
-            this.a = d.a(typeArr[0]);
-            return;
+    /* JADX WARN: Code restructure failed: missing block: B:11:0x0045, code lost:
+    
+        if (r1.isEmpty() != false) goto L12;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public c(h hVar) {
+        hVar.a();
+        this.a = hVar.a.getSharedPreferences("com.google.android.gms.appid", 0);
+        hVar.a();
+        j jVar = hVar.c;
+        String str = jVar.e;
+        if (str == null) {
+            hVar.a();
+            str = jVar.b;
+            if (str.startsWith("1:") || str.startsWith("2:")) {
+                String[] split = str.split(":");
+                if (split.length == 4) {
+                    str = split[1];
+                }
+                str = null;
+            }
         }
-        Objects.requireNonNull(typeArr2[0]);
-        d.c(typeArr2[0]);
-        d.b(typeArr[0] == Object.class);
-        this.b = d.a(typeArr2[0]);
-        this.a = Object.class;
+        this.b = str;
     }
 
-    public final boolean equals(Object obj) {
-        return (obj instanceof WildcardType) && d.e(this, (WildcardType) obj);
-    }
-
-    @Override // java.lang.reflect.WildcardType
-    public final Type[] getLowerBounds() {
-        Type type = this.b;
-        return type != null ? new Type[]{type} : d.a;
-    }
-
-    @Override // java.lang.reflect.WildcardType
-    public final Type[] getUpperBounds() {
-        return new Type[]{this.a};
-    }
-
-    public final int hashCode() {
-        Type type = this.b;
-        return (type != null ? type.hashCode() + 31 : 1) ^ (this.a.hashCode() + 31);
-    }
-
-    public final String toString() {
-        Type type = this.b;
-        if (type != null) {
-            return "? super " + d.k(type);
+    public final String a() {
+        String string;
+        synchronized (this.a) {
+            string = this.a.getString("|S|id", null);
         }
-        Type type2 = this.a;
-        if (type2 == Object.class) {
-            return "?";
+        return string;
+    }
+
+    public final String b() {
+        PublicKey publicKey;
+        synchronized (this.a) {
+            String str = null;
+            String string = this.a.getString("|S||P|", null);
+            if (string == null) {
+                return null;
+            }
+            try {
+                publicKey = KeyFactory.getInstance("RSA").generatePublic(new X509EncodedKeySpec(Base64.decode(string, 8)));
+            } catch (IllegalArgumentException | NoSuchAlgorithmException | InvalidKeySpecException e7) {
+                Log.w("ContentValues", "Invalid key stored " + e7);
+                publicKey = null;
+            }
+            if (publicKey == null) {
+                return null;
+            }
+            try {
+                byte[] digest = MessageDigest.getInstance("SHA1").digest(publicKey.getEncoded());
+                digest[0] = (byte) (((digest[0] & 15) + 112) & 255);
+                str = Base64.encodeToString(digest, 0, 8, 11);
+            } catch (NoSuchAlgorithmException unused) {
+                Log.w("ContentValues", "Unexpected error, device missing required algorithms");
+            }
+            return str;
         }
-        return "? extends " + d.k(type2);
     }
 }

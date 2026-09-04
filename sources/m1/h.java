@@ -1,42 +1,42 @@
 package m1;
 
-import androidx.datastore.preferences.protobuf.a0;
 import androidx.datastore.preferences.protobuf.a1;
-import androidx.datastore.preferences.protobuf.b1;
-import androidx.datastore.preferences.protobuf.f0;
+import androidx.datastore.preferences.protobuf.e0;
+import androidx.datastore.preferences.protobuf.u;
 import androidx.datastore.preferences.protobuf.v;
 import androidx.datastore.preferences.protobuf.w;
-import androidx.datastore.preferences.protobuf.x;
-import androidx.datastore.preferences.protobuf.x0;
+import androidx.datastore.preferences.protobuf.w0;
+import androidx.datastore.preferences.protobuf.y;
 import androidx.datastore.preferences.protobuf.z;
+import androidx.datastore.preferences.protobuf.z0;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class h extends x {
+public final class h extends w {
     private static final h DEFAULT_INSTANCE;
-    private static volatile x0 PARSER = null;
+    private static volatile w0 PARSER = null;
     public static final int STRINGS_FIELD_NUMBER = 1;
-    private z strings_ = a1.d;
+    private y strings_ = z0.d;
 
     static {
         h hVar = new h();
         DEFAULT_INSTANCE = hVar;
-        x.h(h.class, hVar);
+        w.h(h.class, hVar);
     }
 
     public static void i(h hVar, Set set) {
-        z zVar = hVar.strings_;
-        if (!((androidx.datastore.preferences.protobuf.b) zVar).a) {
-            int size = zVar.size();
-            hVar.strings_ = zVar.e(size == 0 ? 10 : size * 2);
+        y yVar = hVar.strings_;
+        if (!((androidx.datastore.preferences.protobuf.b) yVar).a) {
+            int size = yVar.size();
+            hVar.strings_ = yVar.d(size == 0 ? 10 : size * 2);
         }
         List list = hVar.strings_;
-        Charset charset = a0.a;
-        if (!(set instanceof f0)) {
+        Charset charset = z.a;
+        if (!(set instanceof e0)) {
             if (list instanceof ArrayList) {
                 ((ArrayList) list).ensureCapacity(set.size() + list.size());
             }
@@ -53,21 +53,21 @@ public final class h extends x {
             }
             return;
         }
-        List h = ((f0) set).h();
-        f0 f0Var = (f0) list;
+        List h = ((e0) set).h();
+        e0 e0Var = (e0) list;
         int size4 = list.size();
         for (Object obj2 : h) {
             if (obj2 == null) {
-                String str2 = "Element at index " + (f0Var.size() - size4) + " is null.";
-                for (int size5 = f0Var.size() - 1; size5 >= size4; size5--) {
-                    f0Var.remove(size5);
+                String str2 = "Element at index " + (e0Var.size() - size4) + " is null.";
+                for (int size5 = e0Var.size() - 1; size5 >= size4; size5--) {
+                    e0Var.remove(size5);
                 }
                 throw new NullPointerException(str2);
             }
             if (obj2 instanceof androidx.datastore.preferences.protobuf.g) {
-                f0Var.g((androidx.datastore.preferences.protobuf.g) obj2);
+                e0Var.g((androidx.datastore.preferences.protobuf.g) obj2);
             } else {
-                f0Var.add((String) obj2);
+                e0Var.add((String) obj2);
             }
         }
     }
@@ -77,19 +77,19 @@ public final class h extends x {
     }
 
     public static g l() {
-        return (g) ((v) DEFAULT_INSTANCE.d(5));
+        return (g) ((u) DEFAULT_INSTANCE.d(5));
     }
 
-    @Override // androidx.datastore.preferences.protobuf.x
+    @Override // androidx.datastore.preferences.protobuf.w
     public final Object d(int i10) {
-        x0 x0Var;
+        w0 w0Var;
         switch (j.c(i10)) {
             case 0:
                 return (byte) 1;
             case 1:
                 return null;
             case 2:
-                return new b1(DEFAULT_INSTANCE, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001a", new Object[]{"strings_"});
+                return new a1(DEFAULT_INSTANCE, "\u0001\u0001\u0000\u0000\u0001\u0001\u0001\u0000\u0001\u0000\u0001\u001a", new Object[]{"strings_"});
             case 3:
                 return new h();
             case 4:
@@ -97,28 +97,28 @@ public final class h extends x {
             case 5:
                 return DEFAULT_INSTANCE;
             case 6:
-                x0 x0Var2 = PARSER;
-                if (x0Var2 != null) {
-                    return x0Var2;
+                w0 w0Var2 = PARSER;
+                if (w0Var2 != null) {
+                    return w0Var2;
                 }
                 synchronized (h.class) {
                     try {
-                        x0Var = PARSER;
-                        if (x0Var == null) {
-                            x0Var = new w();
-                            PARSER = x0Var;
+                        w0Var = PARSER;
+                        if (w0Var == null) {
+                            w0Var = new v();
+                            PARSER = w0Var;
                         }
                     } catch (Throwable th2) {
                         throw th2;
                     }
                 }
-                return x0Var;
+                return w0Var;
             default:
                 throw new UnsupportedOperationException();
         }
     }
 
-    public final z k() {
+    public final y k() {
         return this.strings_;
     }
 }

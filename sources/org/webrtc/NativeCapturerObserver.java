@@ -3,18 +3,18 @@ package org.webrtc;
 import org.webrtc.VideoFrame;
 import org.webrtc.VideoProcessor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 class NativeCapturerObserver implements CapturerObserver {
     private final NativeAndroidVideoTrackSource nativeAndroidVideoTrackSource;
 
-    public NativeCapturerObserver(long j10) {
-        this.nativeAndroidVideoTrackSource = new NativeAndroidVideoTrackSource(j10);
+    public NativeCapturerObserver(long j3) {
+        this.nativeAndroidVideoTrackSource = new NativeAndroidVideoTrackSource(j3);
     }
 
     @Override // org.webrtc.CapturerObserver
-    public void onCapturerStarted(boolean z4) {
-        this.nativeAndroidVideoTrackSource.setState(z4);
+    public void onCapturerStarted(boolean z10) {
+        this.nativeAndroidVideoTrackSource.setState(z10);
     }
 
     @Override // org.webrtc.CapturerObserver

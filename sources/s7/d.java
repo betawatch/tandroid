@@ -1,24 +1,7 @@
 package s7;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import j7.f5;
-import r5.c0;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class d extends c6.a {
-    public static final Parcelable.Creator<d> CREATOR = new c0(5);
-    public final byte[] a;
-
-    public d(byte[] bArr) {
-        this.a = bArr;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.c(parcel, 2, this.a);
-        f5.r(parcel, q10);
-    }
+public abstract class d extends b8.b implements e {
+    public static final /* synthetic */ int b = 0;
 }

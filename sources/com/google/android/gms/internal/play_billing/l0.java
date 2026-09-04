@@ -1,37 +1,37 @@
 package com.google.android.gms.internal.play_billing;
 
-import j7.q6;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import v7.x5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class l0 extends x0 implements t0 {
     public static final Object d = new Object();
-    public static final s0 e = new s0(w0.class);
+    public static final s0 e = new s0(w0.class, 0);
     public static final boolean f;
-    public static final q6 h;
+    public static final x5 h;
     public volatile Object a;
     public volatile f0 b;
     public volatile k0 c;
 
     static {
-        boolean z4;
-        q6 i0Var;
+        boolean z10;
+        x5 i0Var;
         Throwable th2;
         Throwable th3;
         try {
-            z4 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
+            z10 = Boolean.parseBoolean(System.getProperty("guava.concurrent.generate_cancellation_cause", "false"));
         } catch (SecurityException unused) {
-            z4 = false;
+            z10 = false;
         }
-        f = z4;
+        f = z10;
         String property = System.getProperty("java.runtime.name", "");
         Throwable th4 = null;
         if (property == null || property.contains("Android")) {
             try {
                 i0Var = new j0();
-            } catch (Error | Exception e6) {
+            } catch (Error | Exception e7) {
                 try {
                     i0Var = new h0();
                 } catch (Error | Exception e10) {
@@ -39,7 +39,7 @@ public abstract class l0 extends x0 implements t0 {
                     i0Var = new i0();
                 }
                 th2 = th4;
-                th3 = e6;
+                th3 = e7;
             }
         } else {
             try {
@@ -53,14 +53,14 @@ public abstract class l0 extends x0 implements t0 {
         h = i0Var;
         if (th2 != null) {
             s0 s0Var = e;
-            Logger a2 = s0Var.a();
+            Logger b10 = s0Var.b();
             Level level = Level.SEVERE;
-            a2.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th3);
-            s0Var.a().logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "AtomicReferenceFieldUpdaterAtomicHelper is broken!", th2);
+            b10.logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "UnsafeAtomicHelper is broken!", th3);
+            s0Var.b().logp(level, "com.google.common.util.concurrent.AbstractFutureState", "<clinit>", "AtomicReferenceFieldUpdaterAtomicHelper is broken!", th2);
         }
     }
 
-    public final void c(k0 k0Var) {
+    public final void d(k0 k0Var) {
         k0Var.a = null;
         while (true) {
             k0 k0Var2 = this.c;

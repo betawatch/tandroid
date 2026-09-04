@@ -1,49 +1,16 @@
 package org.telegram.ui;
 
-import android.net.Uri;
-import android.text.TextUtils;
-import java.io.File;
-import java.io.IOException;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLoader;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ok0 {
-    public boolean a;
-    public boolean b;
-    public int c;
-    public int d;
-    public TLRPC.Document e;
-    public String f;
-    public String g;
+public final class ok0 extends s4.j {
+    public final /* synthetic */ NotificationsCustomSettingsActivity F;
 
-    public final Uri a(int i10) {
-        if (!TextUtils.isEmpty(this.g)) {
-            return Uri.fromFile(new File(this.g));
-        }
-        TLRPC.Document document = this.e;
-        if (document == null) {
-            return null;
-        }
-        String str = document.file_name_fixed;
-        String documentExtension = FileLoader.getDocumentExtension(document);
-        if (documentExtension == null) {
-            return null;
-        }
-        String lowerCase = documentExtension.toLowerCase();
-        if (!str.endsWith(lowerCase)) {
-            str = android.support.v4.media.a.z(str, ".", lowerCase);
-        }
-        File file = new File(AndroidUtilities.getCacheDir(), str);
-        if (!file.exists()) {
-            try {
-                AndroidUtilities.copyFile(FileLoader.getInstance(i10).getPathToAttach(this.e), file);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return Uri.fromFile(file);
+    public ok0(NotificationsCustomSettingsActivity notificationsCustomSettingsActivity) {
+        this.F = notificationsCustomSettingsActivity;
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.a.invalidate();
     }
 }

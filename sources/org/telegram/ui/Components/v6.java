@@ -1,36 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.Utilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class v6 implements Utilities.Callback2 {
+public final /* synthetic */ class v6 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ c8 b;
+    public final /* synthetic */ Runnable b;
 
-    public /* synthetic */ v6(c8 c8Var, int i10) {
+    public /* synthetic */ v6(int i10, Runnable runnable) {
         this.a = i10;
-        this.b = c8Var;
+        this.b = runnable;
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback2
-    public final void run(Object obj, Object obj2) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                boolean z4 = !((Boolean) obj2).booleanValue();
-                c8 c8Var = this.b;
-                c8Var.V = z4;
-                MediaController mediaController = MediaController.getInstance();
-                org.telegram.ui.ActionBar.c1 c1Var = c8Var.U;
-                float floatValue = ((Float) obj).floatValue();
-                c1Var.getClass();
-                mediaController.setPlaybackSpeed(true, (floatValue * 2.8f) + 0.2f);
+                this.b.run();
+                break;
+            case 1:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
                 break;
             default:
-                this.b.f0.setBackground(new BitmapDrawable((Bitmap) obj));
+                this.b.run();
                 break;
         }
     }

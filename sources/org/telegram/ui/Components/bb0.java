@@ -1,29 +1,33 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import android.view.ViewGroup;
+import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bb0 implements h5.d {
+public final /* synthetic */ class bb0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ViewGroup b;
+    public final /* synthetic */ qb0 b;
 
-    public /* synthetic */ bb0(ViewGroup viewGroup, int i10) {
+    public /* synthetic */ bb0(qb0 qb0Var, int i10) {
         this.a = i10;
-        this.b = viewGroup;
+        this.b = qb0Var;
     }
 
-    @Override // h5.d
-    public final void accept(Object obj) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                rb0 rb0Var = (rb0) this.b;
-                rb0Var.n.y(rb0Var.f.T((View) obj));
-                break;
+                qb0 qb0Var = this.b;
+                ib0 ib0Var = qb0Var.f;
+                if (!qb0Var.c0.d.webpageTop) {
+                    ib0Var.w0(ib0Var.computeVerticalScrollRange() - (ib0Var.computeVerticalScrollExtent() + ib0Var.computeVerticalScrollOffset()), MediaDataController.MAX_LINKS_COUNT, ki.o.V);
+                    break;
+                } else {
+                    ib0Var.w0(-ib0Var.computeVerticalScrollOffset(), MediaDataController.MAX_LINKS_COUNT, ki.o.V);
+                    break;
+                }
             default:
-                g61 g61Var = (g61) this.b;
-                g61Var.V2.Q(g61Var.T((View) obj), g61Var.Z2);
+                this.b.g(true, false);
                 break;
         }
     }

@@ -1,58 +1,74 @@
 package org.telegram.ui;
 
-import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.RectF;
 import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ft implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ rt b;
+public final /* synthetic */ class ft implements r0.n, org.telegram.ui.Components.ek0 {
+    public final /* synthetic */ st a;
 
-    public /* synthetic */ ft(rt rtVar, int i10) {
-        this.a = i10;
-        this.b = rtVar;
+    public /* synthetic */ ft(st stVar) {
+        this.a = stVar;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                rt rtVar = this.b;
-                rtVar.K = false;
-                rtVar.z.invalidate();
-                rtVar.n();
-                break;
-            case 1:
-                rt rtVar2 = this.b;
-                Activity activity = rtVar2.w;
-                if (activity instanceof LaunchActivity) {
-                    LaunchActivity launchActivity = (LaunchActivity) activity;
-                    if (launchActivity.O() != null && launchActivity.O().getLastFragment() != null) {
-                        launchActivity.O().getLastFragment().dismissCurrentDialog();
-                    }
-                    launchActivity.p0(new PremiumPreviewFragment(0, PremiumPreviewFragment.l0(5)));
-                }
-                rtVar2.K = false;
-                rtVar2.z.invalidate();
-                rtVar2.n();
-                break;
-            case 2:
-                rt rtVar3 = this.b;
-                pt ptVar = rtVar3.l;
-                if (ptVar != null) {
-                    ptVar.K();
-                }
-                rtVar3.p();
-                break;
-            default:
-                rt rtVar4 = this.b;
-                pt ptVar2 = rtVar4.l;
-                if (ptVar2 != null) {
-                    ptVar2.r();
-                }
-                rtVar4.p();
-                break;
+    @Override // org.telegram.ui.Components.ek0
+    public void B(View view, ah.j1 j1Var, boolean z10, boolean z11) {
+        if (j1Var == null) {
+            return;
         }
+        st stVar = this.a;
+        ah.u0 reactionsWindow = stVar.P.getReactionsWindow();
+        if (!stVar.o.contains(j1Var.f)) {
+            stVar.o.add(j1Var.f);
+            if (stVar.o.size() > 7) {
+                stVar.o.remove(0);
+            }
+        } else if (stVar.o.size() <= 1) {
+            return;
+        } else {
+            stVar.o.remove(j1Var.f);
+        }
+        stVar.P.setSelectedEmojis(stVar.o);
+        if (reactionsWindow != null) {
+            ah.o0 o0Var = reactionsWindow.m;
+            stVar.P.p(null, null, false);
+            if (o0Var != null) {
+                o0Var.setSelectedReactions(stVar.o);
+                o0Var.setRecentReactions(stVar.P.V);
+            }
+            reactionsWindow.d();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public /* synthetic */ boolean S() {
+        return false;
+    }
+
+    @Override // r0.n
+    public r0.l1 T0(View view, r0.l1 l1Var) {
+        this.a.q = AndroidUtilities.getDefaultWindowInsets(l1Var, false);
+        return l1Var;
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public /* synthetic */ boolean n() {
+        return true;
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public /* synthetic */ boolean t() {
+        return false;
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public /* synthetic */ void J() {
+    }
+
+    @Override // org.telegram.ui.Components.ek0
+    public /* synthetic */ void I(Canvas canvas, RectF rectF, float f7, float f10, float f11, int i10, boolean z10) {
     }
 }

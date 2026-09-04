@@ -1,29 +1,7 @@
 package id;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import k7.s7;
-import kotlin.jvm.internal.j;
-import tc.o;
-
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class d extends f {
-    public static List a(b bVar) {
-        j.e(bVar, "<this>");
-        Iterator it = bVar.iterator();
-        if (!it.hasNext()) {
-            return o.a;
-        }
-        Object next = it.next();
-        if (!it.hasNext()) {
-            return s7.a(next);
-        }
-        ArrayList arrayList = new ArrayList();
-        arrayList.add(next);
-        while (it.hasNext()) {
-            arrayList.add(it.next());
-        }
-        return arrayList;
-    }
+public final class d implements g {
+    public static final /* synthetic */ d a = new d();
 }

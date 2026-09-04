@@ -1,76 +1,55 @@
 package org.telegram.ui.Cells;
 
-import android.animation.AnimatorSet;
-import android.animation.ObjectAnimator;
-import android.util.Property;
-import android.view.Menu;
-import android.view.View;
-import android.view.animation.DecelerateInterpolator;
-import android.widget.TextView;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.LanguageDetector;
-import org.telegram.ui.Components.af0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class h9 implements LanguageDetector.StringCallback, LanguageDetector.ExceptionCallback, af0 {
-    public final /* synthetic */ Object a;
-    public final /* synthetic */ Object b;
+public final class h9 extends FrameLayout {
+    public final ImageView a;
+    public final org.telegram.ui.ActionBar.j5 b;
+    public final org.telegram.ui.ActionBar.f6 c;
+    public boolean d;
 
-    public /* synthetic */ h9(Object obj, Object obj2) {
-        this.a = obj;
-        this.b = obj2;
+    public h9(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context);
+        this.c = f6Var;
+        org.telegram.ui.ActionBar.j5 j5Var = new org.telegram.ui.ActionBar.j5(context);
+        this.b = j5Var;
+        j5Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
+        j5Var.setTextSize(16);
+        j5Var.setGravity(19);
+        addView(j5Var, w7.x5.d(-1, 48.0f, 16, 22.0f, 0.0f, 56.0f, 0.0f));
+        ImageView imageView = new ImageView(context);
+        this.a = imageView;
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.C6, f6Var), PorterDuff.Mode.SRC_IN));
+        addView(imageView, w7.x5.d(24, 24.0f, 8388629, 0.0f, 0.0f, 16.0f, 0.0f));
+        int i10 = org.telegram.ui.ActionBar.j6.h5;
+        int i11 = org.telegram.ui.ActionBar.y5.a;
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, i10, false);
+        setBackground(org.telegram.ui.ActionBar.y5.d(new float[0], w02, org.telegram.ui.ActionBar.y5.b(w02)));
     }
 
-    @Override // org.telegram.ui.Components.af0
-    public void i(int i10, int i11) {
-        u5 u5Var = (u5) this.a;
-        af0 af0Var = (af0) this.b;
-        m2.b bVar = u5Var.e;
-        TextView textView = u5Var.b;
-        af0Var.i(i10, i11);
-        if (i11 > 0) {
-            textView.setText("+" + i11);
-        } else {
-            textView.setText("" + i11);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        if (this.d) {
+            org.telegram.ui.ActionBar.f6 f6Var = this.c;
+            Paint G = f6Var != null ? f6Var.G("paintDivider") : null;
+            if (G == null) {
+                G = org.telegram.ui.ActionBar.j6.k0;
+            }
+            canvas.drawLine(AndroidUtilities.dp(22.0f), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, G);
         }
-        if (textView.getTag() != null) {
-            AndroidUtilities.cancelRunOnUIThread(bVar);
-            AndroidUtilities.runOnUIThread(bVar, 1000L);
-            return;
-        }
-        AnimatorSet animatorSet = u5Var.d;
-        if (animatorSet != null) {
-            animatorSet.cancel();
-        }
-        textView.setTag(1);
-        AnimatorSet animatorSet2 = new AnimatorSet();
-        u5Var.d = animatorSet2;
-        Property property = View.ALPHA;
-        animatorSet2.playTogether(ObjectAnimator.ofFloat(textView, (Property<TextView, Float>) property, 1.0f), ObjectAnimator.ofFloat(u5Var.a, (Property<TextView, Float>) property, 0.0f));
-        u5Var.d.setDuration(250L);
-        u5Var.d.setInterpolator(new DecelerateInterpolator());
-        u5Var.d.addListener(new org.telegram.ui.u5(u5Var, 9));
-        u5Var.d.start();
     }
 
-    @Override // org.telegram.messenger.LanguageDetector.StringCallback
-    public void run(String str) {
-        i9 i9Var = (i9) this.a;
-        Menu menu = (Menu) this.b;
-        i9Var.a = str;
-        i9Var.a(menu);
-    }
-
-    @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
-    public void run(Exception exc) {
-        i9 i9Var = (i9) this.a;
-        Menu menu = (Menu) this.b;
-        i9Var.getClass();
-        FileLog.e("mlkit: failed to detect language in selection");
-        FileLog.e(exc);
-        i9Var.a = null;
-        i9Var.a(menu);
+    public void setDivider(boolean z10) {
+        this.d = z10;
     }
 }

@@ -7,7 +7,7 @@ import java.util.Map;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class v1 extends e1 {
     private static final Map zzb = new ConcurrentHashMap();
@@ -20,7 +20,7 @@ public abstract class v1 extends e1 {
         this.zzc = x2.f;
     }
 
-    public static final boolean c(v1 v1Var, boolean z4) {
+    public static final boolean c(v1 v1Var, boolean z10) {
         byte byteValue = ((Byte) v1Var.d(1)).byteValue();
         if (byteValue == 1) {
             return true;
@@ -29,7 +29,7 @@ public abstract class v1 extends e1 {
             return false;
         }
         boolean b10 = q2.c.a(v1Var.getClass()).b(v1Var);
-        if (z4) {
+        if (z10) {
             v1Var.d(2);
         }
         return b10;
@@ -42,8 +42,8 @@ public abstract class v1 extends e1 {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 v1Var = (v1) map.get(cls);
-            } catch (ClassNotFoundException e) {
-                throw new IllegalStateException("Class initialization cannot fail.", e);
+            } catch (ClassNotFoundException e7) {
+                throw new IllegalStateException("Class initialization cannot fail.", e7);
             }
         }
         if (v1Var != null) {
@@ -60,10 +60,10 @@ public abstract class v1 extends e1 {
     public static Object i(Method method, v1 v1Var, Object... objArr) {
         try {
             return method.invoke(v1Var, objArr);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e6) {
-            Throwable cause = e6.getCause();
+        } catch (IllegalAccessException e7) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e7);
+        } catch (InvocationTargetException e10) {
+            Throwable cause = e10.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -86,7 +86,7 @@ public abstract class v1 extends e1 {
             if (d >= 0) {
                 return d;
             }
-            throw new IllegalStateException(kf.k0.j(d, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(i2.g.i(d, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -94,7 +94,7 @@ public abstract class v1 extends e1 {
         }
         int d10 = t2Var.d(this);
         if (d10 < 0) {
-            throw new IllegalStateException(kf.k0.j(d10, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(i2.g.i(d10, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | d10;
         return d10;
@@ -108,7 +108,7 @@ public abstract class v1 extends e1 {
             if (d >= 0) {
                 return d;
             }
-            throw new IllegalStateException(kf.k0.j(d, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(i2.g.i(d, "serialized size must be non-negative, was "));
         }
         int i10 = this.zzd & ConnectionsManager.DEFAULT_DATACENTER_ID;
         if (i10 != Integer.MAX_VALUE) {
@@ -116,7 +116,7 @@ public abstract class v1 extends e1 {
         }
         int d10 = q2.c.a(getClass()).d(this);
         if (d10 < 0) {
-            throw new IllegalStateException(kf.k0.j(d10, "serialized size must be non-negative, was "));
+            throw new IllegalStateException(i2.g.i(d10, "serialized size must be non-negative, was "));
         }
         this.zzd = (this.zzd & TLObject.FLAG_31) | d10;
         return d10;
@@ -178,10 +178,10 @@ public abstract class v1 extends e1 {
     public final String toString() {
         String obj = super.toString();
         char[] cArr = m2.a;
-        StringBuilder sb = new StringBuilder();
-        sb.append("# ");
-        sb.append(obj);
-        m2.c(this, sb, 0);
-        return sb.toString();
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append("# ");
+        sb2.append(obj);
+        m2.c(this, sb2, 0);
+        return sb2.toString();
     }
 }

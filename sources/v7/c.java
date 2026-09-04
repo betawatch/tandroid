@@ -1,30 +1,27 @@
 package v7;
 
-import android.os.Parcel;
-import android.os.RemoteException;
-import b6.m;
-import java.util.HashMap;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c {
-    public final w7.f a;
-    public h b;
+public final class c extends h9 {
+    public final transient Object[] c;
+    public final transient int d;
+    public final transient int e = 1;
 
-    public c(w7.f fVar) {
-        new HashMap();
-        m.h(fVar);
-        this.a = fVar;
+    public c(int i10, Object[] objArr) {
+        this.c = objArr;
+        this.d = i10;
     }
 
-    public final void a(int i10) {
-        try {
-            w7.f fVar = this.a;
-            Parcel M0 = fVar.M0();
-            M0.writeInt(i10);
-            fVar.Q0(M0, 16);
-        } catch (RemoteException e) {
-            throw new a7.b(e);
-        }
+    @Override // java.util.List
+    public final Object get(int i10) {
+        w7.w7.a(i10, this.e);
+        Object obj = this.c[i10 + i10 + this.d];
+        obj.getClass();
+        return obj;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.e;
     }
 }

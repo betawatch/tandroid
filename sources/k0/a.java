@@ -1,79 +1,79 @@
 package k0;
 
-import af.d;
+import a4.m;
 import android.hardware.fingerprint.FingerprintManager;
+import androidx.biometric.t;
 import androidx.biometric.u;
-import androidx.biometric.v;
-import androidx.biometric.x;
-import androidx.biometric.z;
+import androidx.biometric.w;
+import androidx.biometric.y;
+import androidx.lifecycle.z;
 import e0.b;
 import java.lang.ref.WeakReference;
 import java.security.Signature;
 import javax.crypto.Cipher;
 import javax.crypto.Mac;
-import o5.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class a extends FingerprintManager.AuthenticationCallback {
-    public final /* synthetic */ i a;
+    public final /* synthetic */ m a;
 
-    public a(i iVar) {
-        this.a = iVar;
+    public a(m mVar) {
+        this.a = mVar;
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationError(int i10, CharSequence charSequence) {
-        ((x) ((d) this.a.b).d).a(i10, charSequence);
+        ((w) ((aa.a) this.a.b).d).a(i10, charSequence);
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationFailed() {
-        WeakReference weakReference = ((x) ((d) this.a.b).d).a;
-        if (weakReference.get() == null || !((z) weakReference.get()).n) {
+        WeakReference weakReference = ((w) ((aa.a) this.a.b).d).a;
+        if (weakReference.get() == null || !((y) weakReference.get()).n) {
             return;
         }
-        z zVar = (z) weakReference.get();
-        if (zVar.u == null) {
-            zVar.u = new androidx.lifecycle.z();
+        y yVar = (y) weakReference.get();
+        if (yVar.u == null) {
+            yVar.u = new z();
         }
-        z.h(zVar.u, Boolean.TRUE);
+        y.h(yVar.u, Boolean.TRUE);
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationHelp(int i10, CharSequence charSequence) {
-        WeakReference weakReference = ((x) ((d) this.a.b).d).a;
+        WeakReference weakReference = ((w) ((aa.a) this.a.b).d).a;
         if (weakReference.get() != null) {
-            z zVar = (z) weakReference.get();
-            if (zVar.t == null) {
-                zVar.t = new androidx.lifecycle.z();
+            y yVar = (y) weakReference.get();
+            if (yVar.t == null) {
+                yVar.t = new z();
             }
-            z.h(zVar.t, charSequence);
+            y.h(yVar.t, charSequence);
         }
     }
 
     @Override // android.hardware.fingerprint.FingerprintManager.AuthenticationCallback
     public final void onAuthenticationSucceeded(FingerprintManager.AuthenticationResult authenticationResult) {
-        i iVar = this.a;
-        d B = b.B(b.e(authenticationResult));
-        iVar.getClass();
-        v vVar = null;
-        if (B != null) {
-            Cipher cipher = (Cipher) B.c;
+        m mVar = this.a;
+        aa.a L = b.L(b.f(authenticationResult));
+        mVar.getClass();
+        u uVar = null;
+        if (L != null) {
+            Cipher cipher = (Cipher) L.c;
             if (cipher != null) {
-                vVar = new v(cipher);
+                uVar = new u(cipher);
             } else {
-                Signature signature = (Signature) B.b;
+                Signature signature = (Signature) L.b;
                 if (signature != null) {
-                    vVar = new v(signature);
+                    uVar = new u(signature);
                 } else {
-                    Mac mac = (Mac) B.d;
+                    Mac mac = (Mac) L.d;
                     if (mac != null) {
-                        vVar = new v(mac);
+                        uVar = new u(mac);
                     }
                 }
             }
         }
-        ((x) ((d) iVar.b).d).b(new u(vVar, 2));
+        ((w) ((aa.a) mVar.b).d).b(new t(uVar, 2));
     }
 }

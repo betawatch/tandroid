@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class HlineAtom extends Atom {
     private float shift;
@@ -15,11 +15,11 @@ public class HlineAtom extends Atom {
         return verticalBox;
     }
 
-    public void setShift(float f10) {
-        this.shift = f10;
+    public void setShift(float f7) {
+        this.shift = f7;
     }
 
-    public void setWidth(float f10) {
-        this.width = f10;
+    public void setWidth(float f7) {
+        this.width = f7;
     }
 }

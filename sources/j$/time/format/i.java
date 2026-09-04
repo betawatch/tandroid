@@ -37,7 +37,7 @@ public class i implements f {
     }
 
     @Override // j$.time.format.f
-    public boolean j(r rVar, StringBuilder sb) {
+    public boolean j(r rVar, StringBuilder sb2) {
         j$.time.temporal.o oVar = this.a;
         Long a2 = rVar.a(oVar);
         if (a2 == null) {
@@ -45,8 +45,8 @@ public class i implements f {
         }
         long longValue = a2.longValue();
         v vVar = rVar.b.c;
-        String l10 = longValue == Long.MIN_VALUE ? "9223372036854775808" : Long.toString(Math.abs(longValue));
-        int length = l10.length();
+        String l4 = longValue == Long.MIN_VALUE ? "9223372036854775808" : Long.toString(Math.abs(longValue));
+        int length = l4.length();
         int i10 = this.c;
         if (length > i10) {
             throw new j$.time.b("Field " + oVar + " cannot be printed as the value " + longValue + " exceeds the maximum print width of " + i10);
@@ -58,23 +58,23 @@ public class i implements f {
             int i12 = c.a[xVar.ordinal()];
             if (i12 != 1) {
                 if (i12 == 2) {
-                    sb.append('+');
+                    sb2.append('+');
                 }
             } else if (i11 < 19 && longValue >= f[i11]) {
-                sb.append('+');
+                sb2.append('+');
             }
         } else {
             int i13 = c.a[xVar.ordinal()];
             if (i13 == 1 || i13 == 2 || i13 == 3) {
-                sb.append('-');
+                sb2.append('-');
             } else if (i13 == 4) {
                 throw new j$.time.b("Field " + oVar + " cannot be printed as the value " + longValue + " cannot be negative according to the SignStyle");
             }
         }
-        for (int i14 = 0; i14 < i11 - l10.length(); i14++) {
-            sb.append('0');
+        for (int i14 = 0; i14 < i11 - l4.length(); i14++) {
+            sb2.append('0');
         }
-        sb.append(l10);
+        sb2.append(l4);
         return true;
     }
 

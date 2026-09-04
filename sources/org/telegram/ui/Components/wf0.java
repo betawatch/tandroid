@@ -1,232 +1,253 @@
 package org.telegram.ui.Components;
 
+import android.animation.AnimatorSet;
+import android.animation.ObjectAnimator;
 import android.app.Activity;
-import android.os.Build;
-import android.provider.Settings;
+import android.content.SharedPreferences;
+import android.graphics.Canvas;
+import android.util.Property;
 import android.view.MotionEvent;
 import android.view.View;
-import android.webkit.WebView;
+import android.view.WindowManager;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 import java.util.ArrayList;
-import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessageObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class wf0 extends FrameLayout {
-    public float B;
-    public boolean C;
-    public boolean D;
-    public int E;
-    public int F;
-    public float G;
-    public boolean H;
-    public dc0 I;
-    public int a;
-    public PhotoViewer b;
-    public LinearLayout c;
-    public TextView d;
-    public TextView e;
-    public iu f;
-    public eg.h0 h;
-    public RadialProgressView n;
-    public View r;
-    public String s;
-    public ArrayList v;
-    public String w;
-    public boolean x;
-    public TLRPC.WebPage y;
+public final class wf0 extends FrameLayout {
+    public float a;
+    public float b;
+    public boolean c;
+    public boolean d;
+    public final /* synthetic */ PipRoundVideoView e;
 
-    public static void a(org.telegram.ui.ut0 ut0Var, String str) {
-        int videoDuration = ut0Var.getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        ArrayList arrayList = ut0Var.v;
-        arrayList.clear();
-        if (videoDuration <= 15) {
-            return;
-        }
-        String[] split = str.split("\\|");
-        String r10 = android.support.v4.media.a.r(new StringBuilder(), split[0].split("\\$")[0], "2/");
-        String str2 = split[0].split("\\$N")[1];
-        String str3 = split.length == 3 ? split[2].split("M#")[1] : split.length == 2 ? split[1].split("t#")[1] : split[3].split("M#")[1];
-        int ceil = (int) (videoDuration <= 100 ? Math.ceil(videoDuration / 25.0f) : videoDuration <= 250 ? Math.ceil((videoDuration / 2.0f) / 25.0f) : videoDuration <= 500 ? Math.ceil((videoDuration / 4.0f) / 25.0f) : videoDuration <= 1000 ? Math.ceil((videoDuration / 5.0f) / 25.0f) : Math.ceil((videoDuration / 10.0f) / 25.0f));
-        for (int i10 = 0; i10 < ceil; i10++) {
-            Locale locale = Locale.ROOT;
-            arrayList.add(r10 + "M" + i10 + str2 + "&sigh=" + str3);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wf0(PipRoundVideoView pipRoundVideoView, Activity activity) {
+        super(activity);
+        this.e = pipRoundVideoView;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        org.telegram.ui.ActionBar.h5 h5Var = org.telegram.ui.ActionBar.j6.k3;
+        if (h5Var != null) {
+            h5Var.setAlpha((int) (getAlpha() * 255.0f));
+            org.telegram.ui.ActionBar.j6.k3.setBounds(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(125.0f), AndroidUtilities.dp(125.0f));
+            org.telegram.ui.ActionBar.j6.k3.draw(canvas);
+            org.telegram.ui.ActionBar.j6.S1.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.ra, false));
+            org.telegram.ui.ActionBar.j6.S1.setAlpha((int) (getAlpha() * 255.0f));
+            canvas.drawCircle(AndroidUtilities.dp(63.0f), AndroidUtilities.dp(63.0f), AndroidUtilities.dp(59.5f), org.telegram.ui.ActionBar.j6.S1);
         }
     }
 
-    public final void b(boolean z4) {
-        dc0 dc0Var = this.I;
-        if (!z4 && this.D) {
-            AndroidUtilities.runOnUIThread(dc0Var, 500L);
-        } else {
-            if (!z4 || this.D) {
-                return;
-            }
-            AndroidUtilities.cancelRunOnUIThread(dc0Var);
-        }
-    }
-
-    /* JADX WARN: Removed duplicated region for block: B:10:0x0047 A[RETURN] */
-    /* JADX WARN: Removed duplicated region for block: B:7:0x0040  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final String c(int i10) {
-        float f10;
-        int i11;
-        ArrayList arrayList = this.v;
-        int videoDuration = getVideoDuration() / MediaDataController.MAX_STYLE_RUNS_COUNT;
-        if (videoDuration > 100) {
-            if (videoDuration <= 250) {
-                i11 = ((int) (i10 / 2.0f)) / 25;
-            } else if (videoDuration <= 500) {
-                i11 = ((int) (i10 / 4.0f)) / 25;
-            } else if (videoDuration <= 1000) {
-                i11 = ((int) (i10 / 5.0f)) / 25;
-            } else {
-                f10 = i10 / 10.0f;
-            }
-            if (i11 >= arrayList.size()) {
-                return (String) arrayList.get(i11);
-            }
-            return null;
-        }
-        f10 = i10;
-        i11 = (int) (f10 / 25.0f);
-        if (i11 >= arrayList.size()) {
-        }
-    }
-
-    public final boolean d() {
-        return this.x;
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
-        if (this.H) {
-            return false;
-        }
-        return super.dispatchTouchEvent(motionEvent);
-    }
-
-    public final boolean e() {
-        boolean z4 = this.x && "inapp".equals(MessagesController.getInstance(this.a).youtubePipType);
-        if (!z4 && Build.VERSION.SDK_INT >= 23 && !Settings.canDrawOverlays(getContext())) {
-            z4.B((Activity) getContext(), null, false);
-            return false;
-        }
-        if (this.n.getVisibility() == 0) {
-            return false;
-        }
-        if (mg0.m0.M) {
-            mg0.j(false);
-            AndroidUtilities.runOnUIThread(new rf0(this, 0), 300L);
-            return true;
-        }
-        this.h.setVisibility(0);
-        Activity activity = (Activity) getContext();
-        iu iuVar = this.f;
-        TLRPC.WebPage webPage = this.y;
-        if (mg0.x(z4, activity, this, iuVar, webPage.embed_width, webPage.embed_height, false)) {
-            mg0.w(PhotoViewer.t1());
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (motionEvent.getAction() == 0) {
+            this.a = motionEvent.getRawX();
+            this.b = motionEvent.getRawY();
+            this.d = true;
         }
         return true;
     }
 
-    public final void f() {
-        if (this.D && this.x) {
-            h("pauseVideo();");
-            this.D = false;
-            b(true);
+    /* JADX WARN: Removed duplicated region for block: B:69:0x0210  */
+    /* JADX WARN: Removed duplicated region for block: B:84:0x027b  */
+    /* JADX WARN: Removed duplicated region for block: B:93:0x02b8 A[ORIG_RETURN, RETURN] */
+    @Override // android.view.View
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        float f7;
+        boolean z10;
+        ArrayList arrayList;
+        boolean z11;
+        char c10;
+        MessageObject playingMessageObject;
+        if (!this.d && !this.c) {
+            return false;
         }
-    }
-
-    public final void g() {
-        if (this.D || !this.x) {
-            return;
-        }
-        h("playVideo();");
-        this.D = true;
-        b(false);
-    }
-
-    public float getBufferedPosition() {
-        return this.G;
-    }
-
-    public int getCurrentPosition() {
-        return this.F;
-    }
-
-    public int getVideoDuration() {
-        return this.E;
-    }
-
-    public WebView getWebView() {
-        return this.f;
-    }
-
-    public final void h(String str) {
-        this.f.evaluateJavascript(str, null);
-    }
-
-    public final void i(long j10) {
-        boolean z4 = this.D;
-        this.F = (int) j10;
-        if (z4) {
-            f();
-        }
-        if (z4) {
-            AndroidUtilities.runOnUIThread(new gg.y1(this, j10, 17), 100L);
-            return;
-        }
-        h("seekTo(" + Math.round(j10 / 1000.0f) + ", true);");
-    }
-
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        iu iuVar = this.f;
-        if (iuVar.getParent() == this) {
-            TLRPC.WebPage webPage = this.y;
-            int i12 = webPage.embed_width;
-            if (i12 == 0) {
-                i12 = 100;
+        float rawX = motionEvent.getRawX();
+        float rawY = motionEvent.getRawY();
+        int action = motionEvent.getAction();
+        float f10 = 1.0f;
+        PipRoundVideoView pipRoundVideoView = this.e;
+        if (action == 2) {
+            float f11 = rawX - this.a;
+            float f12 = rawY - this.b;
+            if (this.d) {
+                if (Math.abs(f11) < AndroidUtilities.getPixelsInCM(0.3f, true) && Math.abs(f12) < AndroidUtilities.getPixelsInCM(0.3f, false)) {
+                    return true;
+                }
+                this.c = true;
+                this.d = false;
+                return true;
             }
-            int i13 = webPage.embed_height;
-            int i14 = i13 != 0 ? i13 : 100;
-            int size = View.MeasureSpec.getSize(i10);
-            int size2 = View.MeasureSpec.getSize(i11);
-            float f10 = i12;
-            float f11 = i14;
-            float min = Math.min(size / f10, size2 / f11);
-            FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) iuVar.getLayoutParams();
-            int i15 = (int) (f10 * min);
-            layoutParams.width = i15;
-            int i16 = (int) (f11 * min);
-            layoutParams.height = i16;
-            layoutParams.topMargin = (size2 - i16) / 2;
-            layoutParams.leftMargin = (size - i15) / 2;
+            if (!this.c) {
+                return true;
+            }
+            WindowManager.LayoutParams layoutParams = pipRoundVideoView.v;
+            int i10 = (int) (layoutParams.x + f11);
+            layoutParams.x = i10;
+            layoutParams.y = (int) (layoutParams.y + f12);
+            int i11 = pipRoundVideoView.h / 2;
+            int i12 = -i11;
+            if (i10 < i12) {
+                layoutParams.x = i12;
+            } else {
+                int i13 = (AndroidUtilities.displaySize.x - layoutParams.width) + i11;
+                if (i10 > i13) {
+                    layoutParams.x = i13;
+                }
+            }
+            int i14 = layoutParams.x;
+            if (i14 < 0) {
+                f10 = a4.a.e(i14, i11, 0.5f, 1.0f);
+            } else {
+                if (i14 > AndroidUtilities.displaySize.x - layoutParams.width) {
+                    f10 = org.telegram.messenger.wl.c((i14 - r11) + r10, i11, 0.5f, 1.0f);
+                }
+            }
+            if (pipRoundVideoView.a.getAlpha() != f10) {
+                pipRoundVideoView.a.setAlpha(f10);
+            }
+            WindowManager.LayoutParams layoutParams2 = pipRoundVideoView.v;
+            int i15 = layoutParams2.y;
+            if (i15 < 0) {
+                layoutParams2.y = 0;
+            } else {
+                int i16 = AndroidUtilities.displaySize.y - layoutParams2.height;
+                if (i15 > i16) {
+                    layoutParams2.y = i16;
+                }
+            }
+            pipRoundVideoView.w.updateViewLayout(pipRoundVideoView.a, layoutParams2);
+            this.a = rawX;
+            this.b = rawY;
+            return true;
         }
-        super.onMeasure(i10, i11);
-    }
-
-    public void setPlaybackSpeed(float f10) {
-        this.B = f10;
-        if (this.n.getVisibility() == 0) {
-            this.C = true;
-        } else if (this.x) {
-            h("setPlaybackSpeed(" + f10 + ");");
+        if (motionEvent.getAction() != 1) {
+            return true;
         }
-    }
-
-    public void setTouchDisabled(boolean z4) {
-        this.H = z4;
+        if (this.d && !this.c && (playingMessageObject = MediaController.getInstance().getPlayingMessageObject()) != null) {
+            if (MediaController.getInstance().isMessagePaused()) {
+                MediaController.getInstance().playMessage(playingMessageObject);
+            } else {
+                MediaController.getInstance().lambda$startAudioAgain$7(playingMessageObject);
+            }
+        }
+        this.c = false;
+        this.d = false;
+        int b10 = PipRoundVideoView.b(true, 0, 0.0f, pipRoundVideoView.h);
+        int b11 = PipRoundVideoView.b(true, 1, 0.0f, pipRoundVideoView.h);
+        int b12 = PipRoundVideoView.b(false, 0, 0.0f, pipRoundVideoView.n);
+        int b13 = PipRoundVideoView.b(false, 1, 0.0f, pipRoundVideoView.n);
+        SharedPreferences.Editor edit = pipRoundVideoView.x.edit();
+        int dp = AndroidUtilities.dp(20.0f);
+        int abs = Math.abs(b10 - pipRoundVideoView.v.x);
+        Property property = View.ALPHA;
+        if (abs > dp) {
+            int i17 = pipRoundVideoView.v.x;
+            f7 = 1.0f;
+            if (i17 >= 0 || i17 <= (-pipRoundVideoView.h) / 4) {
+                if (Math.abs(b11 - i17) > dp) {
+                    int i18 = pipRoundVideoView.v.x;
+                    int i19 = AndroidUtilities.displaySize.x;
+                    c10 = 0;
+                    int i20 = pipRoundVideoView.h;
+                    if (i18 <= i19 - i20 || i18 >= i19 - ((i20 / 4) * 3)) {
+                        if (pipRoundVideoView.a.getAlpha() != 1.0f) {
+                            arrayList = new ArrayList();
+                            if (pipRoundVideoView.v.x < 0) {
+                                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", -pipRoundVideoView.h));
+                            } else {
+                                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", AndroidUtilities.displaySize.x));
+                            }
+                            z10 = true;
+                            if (!z10) {
+                                if (Math.abs(b12 - pipRoundVideoView.v.y) <= dp || pipRoundVideoView.v.y <= org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) {
+                                    if (arrayList == null) {
+                                        arrayList = new ArrayList();
+                                    }
+                                    edit.putInt("sidey", 0);
+                                    arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "y", b12));
+                                } else if (Math.abs(b13 - pipRoundVideoView.v.y) <= dp) {
+                                    if (arrayList == null) {
+                                        arrayList = new ArrayList();
+                                    }
+                                    edit.putInt("sidey", 1);
+                                    arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "y", b13));
+                                } else {
+                                    edit.putFloat("py", (pipRoundVideoView.v.y - b12) / (b13 - b12));
+                                    edit.putInt("sidey", 2);
+                                }
+                                edit.commit();
+                            }
+                            if (arrayList != null) {
+                                return true;
+                            }
+                            if (pipRoundVideoView.y == null) {
+                                pipRoundVideoView.y = new DecelerateInterpolator();
+                            }
+                            AnimatorSet animatorSet = new AnimatorSet();
+                            animatorSet.setInterpolator(pipRoundVideoView.y);
+                            animatorSet.setDuration(150L);
+                            if (z10) {
+                                z11 = true;
+                                arrayList.add(ObjectAnimator.ofFloat(pipRoundVideoView.a, (Property<wf0, Float>) property, 0.0f));
+                                animatorSet.addListener(new yf0(pipRoundVideoView, 1));
+                            } else {
+                                z11 = true;
+                            }
+                            animatorSet.playTogether(arrayList);
+                            animatorSet.start();
+                            return z11;
+                        }
+                        edit.putFloat("px", (pipRoundVideoView.v.x - b10) / (b11 - b10));
+                        edit.putInt("sidex", 2);
+                        arrayList = null;
+                        z10 = false;
+                        if (!z10) {
+                        }
+                        if (arrayList != null) {
+                        }
+                    }
+                } else {
+                    c10 = 0;
+                }
+                arrayList = new ArrayList();
+                edit.putInt("sidex", 1);
+                if (pipRoundVideoView.a.getAlpha() != 1.0f) {
+                    wf0 wf0Var = pipRoundVideoView.a;
+                    float[] fArr = new float[1];
+                    fArr[c10] = 1.0f;
+                    arrayList.add(ObjectAnimator.ofFloat(wf0Var, (Property<wf0, Float>) property, fArr));
+                }
+                arrayList.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", b11));
+                z10 = false;
+                if (!z10) {
+                }
+                if (arrayList != null) {
+                }
+            }
+        } else {
+            f7 = 1.0f;
+        }
+        ArrayList arrayList2 = new ArrayList();
+        edit.putInt("sidex", 0);
+        if (pipRoundVideoView.a.getAlpha() != f7) {
+            arrayList2.add(ObjectAnimator.ofFloat(pipRoundVideoView.a, (Property<wf0, Float>) property, f7));
+        }
+        arrayList2.add(ObjectAnimator.ofInt(pipRoundVideoView, "x", b10));
+        arrayList = arrayList2;
+        z10 = false;
+        if (!z10) {
+        }
+        if (arrayList != null) {
+        }
     }
 }

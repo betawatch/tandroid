@@ -1,36 +1,36 @@
 package o2;
 
-import android.os.Build;
-import java.util.HashSet;
+import b2.r0;
+import java.util.ArrayList;
+import v7.x7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class c implements d {
-    public static final HashSet c = new HashSet();
-    public final String a;
-    public final String b;
+public final class c {
+    public static final int[] c = {8, 13, 11, 2, 0, 1, 7};
+    public rb.a a;
+    public boolean b;
 
-    public c(String str, String str2) {
-        this.a = str;
-        this.b = str2;
-        c.add(this);
+    public static void a(int i10, ArrayList arrayList) {
+        if (x7.d(i10, 0, 7, c) == -1 || arrayList.contains(Integer.valueOf(i10))) {
+            return;
+        }
+        arrayList.add(Integer.valueOf(i10));
     }
 
-    public abstract boolean a();
-
-    public boolean b() {
-        HashSet hashSet = a.a;
-        String str = this.b;
-        if (hashSet.contains(str)) {
-            return true;
+    public final b2.s b(b2.s sVar) {
+        if (!this.b || !this.a.i0(sVar)) {
+            return sVar;
         }
-        String str2 = Build.TYPE;
-        if (!"eng".equals(str2) && !"userdebug".equals(str2)) {
-            return false;
-        }
-        StringBuilder sb = new StringBuilder();
-        sb.append(str);
-        sb.append(":dev");
-        return hashSet.contains(sb.toString());
+        b2.r a2 = sVar.a();
+        String str = sVar.k;
+        a2.q = r0.n("application/x-media3-cues");
+        a2.O = this.a.J(sVar);
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(sVar.r);
+        sb2.append(str != null ? " ".concat(str) : "");
+        a2.j = sb2.toString();
+        a2.v = Long.MAX_VALUE;
+        return new b2.s(a2);
     }
 }

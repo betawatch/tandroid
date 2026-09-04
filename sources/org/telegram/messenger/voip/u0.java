@@ -1,36 +1,31 @@
 package org.telegram.messenger.voip;
 
 import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.webrtc.VideoSink;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class u0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
-    public final /* synthetic */ Object e;
-
-    public /* synthetic */ u0(Object obj, Object obj2, Object obj3, boolean z4, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.e = obj3;
-        this.b = z4;
+public abstract /* synthetic */ class u0 {
+    public static void a(VoIPService.StateListener stateListener) {
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ((VoIPService.5) this.c).lambda$onFrame$0((String) this.d, (VideoSink) this.e, this.b);
-                break;
-            default:
-                ((VoIPService) this.c).lambda$acknowledgeCall$12((TLObject) this.d, (TLRPC.TL_error) this.e, this.b);
-                break;
-        }
+    public static void b(VoIPService.StateListener stateListener) {
+    }
+
+    public static void c(VoIPService.StateListener stateListener, boolean z10) {
+    }
+
+    public static void e(VoIPService.StateListener stateListener, boolean z10) {
+    }
+
+    public static void f(VoIPService.StateListener stateListener, int i10) {
+    }
+
+    public static void g(VoIPService.StateListener stateListener, int i10) {
+    }
+
+    public static void h(VoIPService.StateListener stateListener, boolean z10) {
+    }
+
+    public static void d(VoIPService.StateListener stateListener, int i10, int i11) {
     }
 }

@@ -1,60 +1,29 @@
 package org.telegram.ui;
 
-import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChannelBoostsController;
+import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class m5 implements org.telegram.ui.Components.io0 {
+public final /* synthetic */ class m5 implements e2.h {
     public final /* synthetic */ int a;
-    public final /* synthetic */ TextView b;
-    public final /* synthetic */ n5 c;
+    public final /* synthetic */ v5 b;
 
-    public /* synthetic */ m5(n5 n5Var, TextView textView, int i10) {
+    public /* synthetic */ m5(v5 v5Var, int i10) {
         this.a = i10;
-        this.c = n5Var;
-        this.b = textView;
+        this.b = v5Var;
     }
 
-    @Override // org.telegram.ui.Components.io0
-    public final void B() {
-        int i10 = this.a;
-    }
-
-    @Override // org.telegram.ui.Components.io0
-    public final void Y(float f10, boolean z4) {
+    @Override // e2.h
+    public final void accept(Object obj) {
         switch (this.a) {
             case 0:
-                n5.c = f10;
-                this.b.setText("Saturation " + (f10 * 5.0f));
-                org.telegram.ui.Components.qv0 qv0Var = this.c.b;
-                qv0Var.N();
-                qv0Var.M();
+                this.b.S = (ChannelBoostsController.CanApplyBoost) obj;
                 break;
             default:
-                this.b.setText("Alpha " + n5.e);
-                n5.e = f10;
-                this.c.b.M();
+                AndroidUtilities.runOnUIThread(new org.telegram.ui.ActionBar.c6(7, this.b, (TL_stories.TL_premium_boostsStatus) obj));
                 break;
         }
-    }
-
-    @Override // org.telegram.ui.Components.io0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        switch (this.a) {
-        }
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.io0
-    public final /* synthetic */ int j0() {
-        switch (this.a) {
-        }
-        return 0;
-    }
-
-    private final void a() {
-    }
-
-    private final void b() {
     }
 }

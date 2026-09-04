@@ -1,41 +1,104 @@
 package re;
 
-import com.google.android.gms.internal.cast.i4;
-import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.PriorityBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
-import org.telegram.messenger.FileLog;
+import com.google.firebase.messaging.s;
+import java.util.Hashtable;
+import java.util.StringTokenizer;
+import mg.n;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a extends ThreadPoolExecutor implements AutoCloseable {
-    public final /* synthetic */ c a;
+public final class a {
+    public static final Hashtable b;
+    public static final Object[] c;
+    public static /* synthetic */ Class d;
+    public final ClassLoader a;
 
-    /* JADX WARN: Illegal instructions before constructor call */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public a(c cVar, PriorityBlockingQueue priorityBlockingQueue) {
-        super(1, 1, 60L, r5, priorityBlockingQueue);
-        TimeUnit timeUnit = TimeUnit.SECONDS;
-        this.a = cVar;
+    static {
+        Hashtable hashtable = new Hashtable();
+        b = hashtable;
+        hashtable.put("void", Void.TYPE);
+        hashtable.put("boolean", Boolean.TYPE);
+        hashtable.put("byte", Byte.TYPE);
+        hashtable.put("char", Character.TYPE);
+        hashtable.put("short", Short.TYPE);
+        hashtable.put("int", Integer.TYPE);
+        hashtable.put("long", Long.TYPE);
+        hashtable.put("float", Float.TYPE);
+        hashtable.put("double", Double.TYPE);
+        c = new Object[0];
     }
 
-    @Override // java.util.concurrent.ThreadPoolExecutor
-    public final void beforeExecute(Thread thread, Runnable runnable) {
-        CountDownLatch countDownLatch = this.a.b;
-        if (countDownLatch != null) {
-            try {
-                countDownLatch.await();
-            } catch (InterruptedException e) {
-                FileLog.e(e);
+    public a(Class cls, String str) {
+        this.a = cls.getClassLoader();
+    }
+
+    public static Class a(ClassLoader classLoader, String str) {
+        if (str.equals("*")) {
+            return null;
+        }
+        Class cls = (Class) b.get(str);
+        if (cls != null) {
+            return cls;
+        }
+        try {
+            return classLoader == null ? Class.forName(str) : Class.forName(str, false, classLoader);
+        } catch (ClassNotFoundException unused) {
+            Class<?> cls2 = d;
+            if (cls2 == null) {
+                try {
+                    cls2 = Class.forName("java.lang.ClassNotFoundException");
+                    d = cls2;
+                } catch (ClassNotFoundException e7) {
+                    throw new NoClassDefFoundError(e7.getMessage());
+                }
             }
+            return cls2;
         }
     }
 
-    @Override // java.lang.AutoCloseable
-    public final /* synthetic */ void close() {
-        i4.h(this);
+    public static s b(n nVar, Object obj, Object obj2) {
+        return new s(nVar, obj, obj2, c);
+    }
+
+    public static s c(n nVar, Object obj, Object obj2, Object obj3) {
+        return new s(nVar, obj, obj2, new Object[]{obj3});
+    }
+
+    public final ra.a d(String str, String str2, String str3, String str4, String str5) {
+        int parseInt = Integer.parseInt("1", 16);
+        ClassLoader classLoader = this.a;
+        Class a2 = a(classLoader, str2);
+        StringTokenizer stringTokenizer = new StringTokenizer(str3, ":");
+        int countTokens = stringTokenizer.countTokens();
+        Class[] clsArr = new Class[countTokens];
+        for (int i10 = 0; i10 < countTokens; i10++) {
+            clsArr[i10] = a(classLoader, stringTokenizer.nextToken());
+        }
+        StringTokenizer stringTokenizer2 = new StringTokenizer(str4, ":");
+        int countTokens2 = stringTokenizer2.countTokens();
+        String[] strArr = new String[countTokens2];
+        for (int i11 = 0; i11 < countTokens2; i11++) {
+            strArr[i11] = stringTokenizer2.nextToken();
+        }
+        StringTokenizer stringTokenizer3 = new StringTokenizer("", ":");
+        int countTokens3 = stringTokenizer3.countTokens();
+        Class[] clsArr2 = new Class[countTokens3];
+        for (int i12 = 0; i12 < countTokens3; i12++) {
+            clsArr2[i12] = a(classLoader, stringTokenizer3.nextToken());
+        }
+        Class a10 = a(classLoader, str5);
+        ra.a aVar = new ra.a(1);
+        aVar.b = parseInt;
+        aVar.c = str;
+        aVar.e = a2;
+        aVar.g = clsArr;
+        aVar.h = a10;
+        return aVar;
+    }
+
+    public final n e(ra.a aVar) {
+        n nVar = new n(13, false);
+        nVar.b = aVar;
+        return nVar;
     }
 }

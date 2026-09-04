@@ -40,7 +40,7 @@ public final class n extends a implements Serializable {
         try {
             HashMap hashMap = new HashMap();
             int[][] w10 = w();
-            int z4 = (int) LocalDate.of(1882, 11, 12).z();
+            int z10 = (int) LocalDate.of(1882, 11, 12).z();
             for (int i10 = 1300; i10 <= 1600; i10++) {
                 int[] iArr = w10[i10 - 1300];
                 if (iArr.length != 12) {
@@ -48,22 +48,22 @@ public final class n extends a implements Serializable {
                 }
                 hashMap.put(Integer.valueOf(i10), iArr);
             }
-            if (z4 == 0) {
+            if (z10 == 0) {
                 throw new IllegalArgumentException("Configuration does not contain a ISO start date");
             }
             this.g = 15600;
-            this.e = z4;
-            int[] l10 = l(z4, hashMap);
-            this.d = l10;
-            this.f = l10[3612];
+            this.e = z10;
+            int[] l4 = l(z10, hashMap);
+            this.d = l4;
+            this.f = l4[3612];
             for (int i11 = 1300; i11 < 1600; i11++) {
-                int y10 = y(i11, 12);
-                this.j = Math.min(this.j, y10);
-                this.k = Math.max(this.k, y10);
+                int y3 = y(i11, 12);
+                this.j = Math.min(this.j, y3);
+                this.k = Math.max(this.k, y3);
             }
             this.c = true;
-        } catch (Exception e) {
-            throw new j$.time.b("Unable to initialize HijrahCalendar: Hijrah-umalqura", e);
+        } catch (Exception e7) {
+            throw new j$.time.b("Unable to initialize HijrahCalendar: Hijrah-umalqura", e7);
         }
     }
 

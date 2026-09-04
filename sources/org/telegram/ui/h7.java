@@ -1,31 +1,51 @@
 package org.telegram.ui;
 
 import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.ImageReceiver;
+import org.telegram.messenger.MessageObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class h7 implements org.telegram.ui.Components.hl0 {
-    public final /* synthetic */ org.telegram.ui.Components.rl0 a;
-    public final /* synthetic */ i7 b;
+public final class h7 extends su0 {
+    public org.telegram.ui.Components.ll0 a;
+    public final /* synthetic */ s7 b;
 
-    public h7(i7 i7Var, org.telegram.ui.Components.rl0 rl0Var) {
-        this.b = i7Var;
-        this.a = rl0Var;
+    public h7(s7 s7Var) {
+        this.b = s7Var;
     }
 
-    @Override // org.telegram.ui.Components.hl0
-    public final void d(int i10, View view) {
-        w7 w7Var = this.b.d;
-        org.telegram.ui.Components.rl0 rl0Var = this.a;
-        j7 j7Var = (j7) rl0Var.getAdapter();
-        q7 q7Var = (q7) j7Var.e.get(i10);
-        if (view instanceof org.telegram.ui.Cells.q7) {
-            w7.a(w7Var, q7Var, (s7) j7Var, rl0Var);
-            return;
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final cv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
+        org.telegram.ui.Cells.t7 t7Var;
+        org.telegram.ui.Components.ll0 listView = this.b.getListView();
+        int i11 = 0;
+        while (true) {
+            if (i11 >= listView.getChildCount()) {
+                t7Var = null;
+                break;
+            }
+            View childAt = listView.getChildAt(i11);
+            if (RecyclerView.R(childAt) == i10 && (childAt instanceof org.telegram.ui.Cells.t7)) {
+                t7Var = (org.telegram.ui.Cells.t7) childAt;
+                break;
+            }
+            i11++;
         }
-        m7 m7Var = w7Var.v;
-        if (m7Var != null) {
-            m7Var.r(q7Var.c, q7Var.d, false);
+        if (t7Var == null) {
+            return null;
         }
+        int[] iArr = new int[2];
+        t7Var.getLocationInWindow(iArr);
+        cv0 cv0Var = new cv0();
+        cv0Var.b = iArr[0];
+        cv0Var.c = iArr[1];
+        cv0Var.d = this.a;
+        ImageReceiver imageReceiver = t7Var.c;
+        cv0Var.a = imageReceiver;
+        cv0Var.e = imageReceiver.getBitmapSafe();
+        cv0Var.k = t7Var.getScaleX();
+        return cv0Var;
     }
 }

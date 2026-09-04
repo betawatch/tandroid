@@ -8,18 +8,18 @@ import java.util.function.IntFunction;
 /* loaded from: classes2.dex */
 public final class p2 extends g2 {
     @Override // j$.util.stream.e2
-    public final e2 e(long j10, long j11, IntFunction intFunction) {
-        if (j10 == 0 && j11 == this.c) {
+    public final e2 e(long j3, long j10, IntFunction intFunction) {
+        if (j3 == 0 && j10 == this.c) {
             return this;
         }
         long count = this.a.count();
-        if (j10 >= count) {
-            return this.b.e(j10 - count, j11 - count, intFunction);
+        if (j3 >= count) {
+            return this.b.e(j3 - count, j10 - count, intFunction);
         }
-        if (j11 > count) {
-            return t3.e0(w6.REFERENCE, this.a.e(j10, count, intFunction), this.b.e(0L, j11 - count, intFunction));
+        if (j10 > count) {
+            return t3.e0(w6.REFERENCE, this.a.e(j3, count, intFunction), this.b.e(0L, j10 - count, intFunction));
         }
-        return this.a.e(j10, j11, intFunction);
+        return this.a.e(j3, j10, intFunction);
     }
 
     @Override // j$.util.stream.e2
@@ -37,11 +37,11 @@ public final class p2 extends g2 {
 
     @Override // j$.util.stream.e2
     public final Object[] g(IntFunction intFunction) {
-        long j10 = this.c;
-        if (j10 >= 2147483639) {
+        long j3 = this.c;
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        Object[] objArr = (Object[]) intFunction.apply((int) j10);
+        Object[] objArr = (Object[]) intFunction.apply((int) j3);
         f(objArr, 0);
         return objArr;
     }
@@ -53,7 +53,7 @@ public final class p2 extends g2 {
     }
 
     public final String toString() {
-        long j10 = this.c;
-        return j10 < 32 ? String.format("ConcNode[%s.%s]", this.a, this.b) : String.format("ConcNode[size=%d]", Long.valueOf(j10));
+        long j3 = this.c;
+        return j3 < 32 ? String.format("ConcNode[%s.%s]", this.a, this.b) : String.format("ConcNode[size=%d]", Long.valueOf(j3));
     }
 }

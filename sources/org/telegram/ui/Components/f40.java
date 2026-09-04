@@ -1,58 +1,81 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.HashtagSearchController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.Rect;
+import android.text.TextPaint;
+import android.util.TypedValue;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class f40 implements Utilities.Callback5, Utilities.Callback5Return {
-    public final /* synthetic */ g40 a;
+public class f40 extends EditTextBoldCursor {
+    public final TextPaint b;
+    public String c;
+    public final Rect d;
 
-    public /* synthetic */ f40(g40 g40Var) {
-        this.a = g40Var;
+    public f40(Context context) {
+        super(context);
+        TextPaint textPaint = new TextPaint(1);
+        this.b = textPaint;
+        this.d = new Rect();
+        textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.H6, false));
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = ((i51) obj).d;
-        g40 g40Var = this.a;
-        if (i10 == 0) {
-            HashtagSearchController.getInstance(g40Var.a).clearHistory();
-            g40Var.f.N(true);
-        } else {
-            Utilities.Callback callback = g40Var.h;
-            if (callback != null) {
-                callback.run((String) g40Var.c.get(i10 - 1));
+    public String getHintText() {
+        return this.c;
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.bu, android.widget.TextView, android.view.View
+    public void onDraw(Canvas canvas) {
+        Canvas canvas2;
+        if (this.c != null && length() < this.c.length()) {
+            int i10 = 0;
+            float f7 = 0.0f;
+            while (i10 < this.c.length()) {
+                int length = length();
+                TextPaint textPaint = this.b;
+                float measureText = i10 < length ? getPaint().measureText(getText(), i10, i10 + 1) : textPaint.measureText(this.c, i10, i10 + 1);
+                if (i10 < length()) {
+                    f7 += measureText;
+                    canvas2 = canvas;
+                } else {
+                    int color = textPaint.getColor();
+                    canvas.save();
+                    String str = this.c;
+                    textPaint.getTextBounds(str, 0, str.length(), this.d);
+                    i(i10);
+                    canvas2 = canvas;
+                    canvas2.drawText(this.c, i10, i10 + 1, f7, (r5.height() + getHeight()) / 2.0f, (Paint) textPaint);
+                    f7 += measureText;
+                    canvas2.restore();
+                    textPaint.setColor(color);
+                }
+                i10++;
+                canvas = canvas2;
             }
         }
+        super.onDraw(canvas);
     }
 
-    @Override // org.telegram.messenger.Utilities.Callback5Return
-    public Object run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        ((Integer) obj3).getClass();
-        ((Float) obj4).getClass();
-        ((Float) obj5).getClass();
-        int i10 = ((i51) obj).d;
-        boolean z4 = false;
-        if (i10 != 0) {
-            g40 g40Var = this.a;
-            String str = (String) g40Var.c.get(i10 - 1);
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(g40Var.getContext(), 0, g40Var.b);
-            String string = LocaleController.getString(R.string.ClearSearchSingleAlertTitle);
-            org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-            d2Var.O = string;
-            d2Var.Q = LocaleController.formatString(R.string.ClearSearchSingleHashtagAlertText, str);
-            alertDialog$Builder.k(LocaleController.getString(R.string.ClearSearchRemove), new o1(20, g40Var, str));
-            alertDialog$Builder.h(LocaleController.getString(R.string.Cancel), null);
-            d2Var.show();
-            z4 = true;
-        }
-        return Boolean.valueOf(z4);
+    @Override // org.telegram.ui.Components.bu, android.widget.TextView, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        invalidate();
+    }
+
+    public void setHintText(String str) {
+        this.c = str;
+        invalidate();
+        setText(getText());
+    }
+
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView
+    public void setTextSize(int i10, float f7) {
+        super.setTextSize(i10, f7);
+        this.b.setTextSize(TypedValue.applyDimension(i10, f7, getResources().getDisplayMetrics()));
+    }
+
+    public void i(int i10) {
     }
 }

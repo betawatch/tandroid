@@ -1,95 +1,25 @@
 package org.telegram.ui;
 
-import android.view.WindowManager;
-import java.util.ArrayList;
+import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
-import org.telegram.messenger.MediaController;
-import org.telegram.ui.Components.ClippingImageView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class vq0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PhotoViewer b;
-    public final /* synthetic */ qu0 c;
+public final class vq0 extends g.p {
+    public final /* synthetic */ br0 c;
 
-    public /* synthetic */ vq0(PhotoViewer photoViewer, qu0 qu0Var, int i10) {
-        this.a = i10;
-        this.b = photoViewer;
-        this.c = qu0Var;
+    public vq0(br0 br0Var) {
+        this.c = br0Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ClippingImageView clippingImageView;
-        ArrayList arrayList;
-        ArrayList arrayList2;
-        switch (this.a) {
-            case 0:
-                PhotoViewer photoViewer = this.b;
-                photoViewer.e0.setImageBitmap(null);
-                qu0 qu0Var = this.c;
-                if (qu0Var != null && !AndroidUtilities.isTablet() && (clippingImageView = qu0Var.m) != null) {
-                    clippingImageView.setImageBitmap(null);
-                }
-                try {
-                    if (photoViewer.d0.getParent() != null) {
-                        ((WindowManager) photoViewer.y.getSystemService("window")).removeView(photoViewer.d0);
-                        photoViewer.V1();
-                        break;
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-                break;
-            case 1:
-                PhotoViewer photoViewer2 = this.b;
-                photoViewer2.m4 = null;
-                int i10 = 0;
-                photoViewer2.b0.setLayerType(0, null);
-                photoViewer2.k4 = 0;
-                photoViewer2.F1();
-                photoViewer2.X1(this.c);
-                MediaController.getInstance().tryResumePausedAudio();
-                if (photoViewer2.s7 && !photoViewer2.t7 && (arrayList = photoViewer2.d7) != null) {
-                    int size = arrayList.size();
-                    while (i10 < size) {
-                        Object obj = arrayList.get(i10);
-                        i10++;
-                        if (obj instanceof MediaController.PhotoEntry) {
-                            ((MediaController.PhotoEntry) obj).deleteAll();
-                        }
-                    }
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer3 = this.b;
-                photoViewer3.m4 = null;
-                iu0 iu0Var = photoViewer3.b0;
-                if (iu0Var != null) {
-                    int i11 = 0;
-                    iu0Var.setLayerType(0, null);
-                    photoViewer3.k4 = 0;
-                    photoViewer3.X1(this.c);
-                    photoViewer3.b0.setScaleX(1.0f);
-                    photoViewer3.b0.setScaleY(1.0f);
-                    MediaController.getInstance().tryResumePausedAudio();
-                    if (photoViewer3.s7 && !photoViewer3.t7 && (arrayList2 = photoViewer3.d7) != null) {
-                        int size2 = arrayList2.size();
-                        while (i11 < size2) {
-                            Object obj2 = arrayList2.get(i11);
-                            i11++;
-                            if (obj2 instanceof MediaController.PhotoEntry) {
-                                ((MediaController.PhotoEntry) obj2).deleteAll();
-                            }
-                        }
-                        break;
-                    }
-                }
-                break;
+    @Override // g.p
+    public final int i(int i10) {
+        br0 br0Var = this.c;
+        if (br0Var.L.j(i10) == 1 || br0Var.Y || (br0Var.J == null && TextUtils.isEmpty(br0Var.v))) {
+            return br0Var.M.J;
         }
+        int i11 = br0Var.R;
+        int i12 = br0Var.g0;
+        return i11 + (i10 % i12 != i12 - 1 ? AndroidUtilities.dp(2.0f) : 0);
     }
 }

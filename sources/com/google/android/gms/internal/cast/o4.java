@@ -1,124 +1,85 @@
 package com.google.android.gms.internal.cast;
 
-import android.text.TextUtils;
+import java.util.List;
+import java.util.concurrent.AbstractExecutorService;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.RunnableFuture;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class o4 implements r5.h {
-    public final /* synthetic */ c5.j a;
+public class o4 extends AbstractExecutorService implements n4, AutoCloseable {
+    public final ExecutorService a;
 
-    public /* synthetic */ o4(c5.j jVar) {
-        this.a = jVar;
+    public o4(ExecutorService executorService) {
+        executorService.getClass();
+        this.a = executorService;
     }
 
-    @Override // r5.h
-    public void d(r5.f fVar, int i10) {
-        b4.e0 e0Var = new b4.e0(8, 3);
-        e0Var.c = Integer.valueOf(i10);
-        v6 v6Var = new v6(e0Var);
-        c5.j jVar = this.a;
-        c5.j.D(jVar, v6Var);
-        jVar.F();
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean awaitTermination(long j3, TimeUnit timeUnit) {
+        return this.a.awaitTermination(j3, timeUnit);
     }
 
-    @Override // r5.h
-    public void f(r5.f fVar, String str) {
-        v6 v6Var = new v6(new b4.e0(4, 3));
-        c5.j jVar = this.a;
-        c5.j.D(jVar, v6Var);
-        u6 u6Var = (u6) jVar.d;
-        b6.m.h(u6Var);
-        u6Var.a((r5.c) fVar);
-        u6 u6Var2 = (u6) jVar.d;
-        b6.m.h(u6Var2);
-        String str2 = u6Var2.k;
-        if (str2 == null) {
-            u6Var2.k = str;
-        } else {
-            if (TextUtils.equals(str, str2)) {
-                return;
-            }
-            u6Var2.b(4);
-        }
+    @Override // java.lang.AutoCloseable
+    public /* synthetic */ void close() {
+        k4.c(this);
     }
 
-    @Override // r5.h
-    public /* bridge */ /* synthetic */ void g(r5.f fVar, boolean z4) {
-        v6 v6Var = new v6(new b4.e0(4, 3));
-        c5.j jVar = this.a;
-        c5.j.D(jVar, v6Var);
-        u6 u6Var = (u6) jVar.d;
-        b6.m.h(u6Var);
-        u6Var.a((r5.c) fVar);
+    @Override // java.util.concurrent.Executor
+    public final void execute(Runnable runnable) {
+        this.a.execute(runnable);
     }
 
-    @Override // r5.h
-    public void i(r5.f fVar, int i10) {
-        b4.e0 e0Var = new b4.e0(6, 3);
-        e0Var.c = Integer.valueOf(i10);
-        v6 v6Var = new v6(e0Var);
-        c5.j jVar = this.a;
-        c5.j.D(jVar, v6Var);
-        u6 u6Var = (u6) jVar.d;
-        b6.m.h(u6Var);
-        u6Var.a((r5.c) fVar);
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean isShutdown() {
+        return this.a.isShutdown();
     }
 
-    @Override // r5.h
-    public void j(r5.f fVar, int i10) {
-        b4.e0 e0Var = new b4.e0(5, 3);
-        e0Var.c = Integer.valueOf(i10);
-        v6 v6Var = new v6(e0Var);
-        c5.j jVar = this.a;
-        c5.j.D(jVar, v6Var);
-        jVar.F();
+    @Override // java.util.concurrent.ExecutorService
+    public final boolean isTerminated() {
+        return this.a.isTerminated();
     }
 
-    @Override // r5.h
-    public void k(r5.f fVar) {
-        r5.c cVar = (r5.c) fVar;
-        b4.e0 e0Var = new b4.e0(2, 3);
-        c5.j jVar = this.a;
-        e0Var.d = Boolean.valueOf(((c) jVar.b).d == 2);
-        c5.j.D(jVar, new v6(e0Var));
-        u6 u6Var = (u6) jVar.d;
-        b6.m.h(u6Var);
-        u6Var.a(cVar);
-        cVar.l = (o4) jVar.e;
+    @Override // java.util.concurrent.AbstractExecutorService
+    public final RunnableFuture newTaskFor(Runnable runnable, Object obj) {
+        return new u4(Executors.callable(runnable, obj));
     }
 
-    @Override // r5.h
-    public void l(r5.f fVar, String str) {
-        v6 v6Var = new v6(new b4.e0(7, 3));
-        c5.j jVar = this.a;
-        c5.j.D(jVar, v6Var);
-        u6 u6Var = (u6) jVar.d;
-        b6.m.h(u6Var);
-        u6Var.a((r5.c) fVar);
-        u6 u6Var2 = (u6) jVar.d;
-        b6.m.h(u6Var2);
-        String str2 = u6Var2.k;
-        if (str2 == null) {
-            u6Var2.k = str;
-        } else {
-            if (TextUtils.equals(str, str2)) {
-                return;
-            }
-            u6Var2.b(4);
-        }
+    @Override // java.util.concurrent.ExecutorService
+    public final void shutdown() {
+        this.a.shutdown();
     }
 
-    @Override // r5.h
-    public /* bridge */ /* synthetic */ void m(r5.f fVar) {
+    @Override // java.util.concurrent.ExecutorService
+    public final List shutdownNow() {
+        return this.a.shutdownNow();
     }
 
-    @Override // r5.h
-    public void o(r5.f fVar, int i10) {
-        b4.e0 e0Var = new b4.e0(9, 3);
-        e0Var.c = Integer.valueOf(i10);
-        c5.j jVar = this.a;
-        e0Var.d = Boolean.valueOf(((c) jVar.b).d == 2);
-        c5.j.D(jVar, new v6(e0Var));
-        jVar.F();
+    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
+    public final /* synthetic */ Future submit(Runnable runnable) {
+        return (i9.w) super.submit(runnable);
+    }
+
+    public final String toString() {
+        return super.toString() + "[" + String.valueOf(this.a) + "]";
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService
+    public final RunnableFuture newTaskFor(Callable callable) {
+        return new u4(callable);
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
+    public final /* synthetic */ Future submit(Runnable runnable, Object obj) {
+        return (i9.w) super.submit(runnable, obj);
+    }
+
+    @Override // java.util.concurrent.AbstractExecutorService, java.util.concurrent.ExecutorService
+    public final /* synthetic */ Future submit(Callable callable) {
+        return (i9.w) super.submit(callable);
     }
 }

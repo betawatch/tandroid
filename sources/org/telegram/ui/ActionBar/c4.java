@@ -1,106 +1,54 @@
 package org.telegram.ui.ActionBar;
 
-import android.graphics.Bitmap;
-import java.io.File;
-import java.io.FileOutputStream;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.FileLog;
+import android.util.SparseIntArray;
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class c4 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Bitmap b;
-    public final /* synthetic */ File c;
+public final class c4 implements gg.a {
+    public i6 a;
+    public TLRPC.TL_theme b;
+    public TLRPC.TL_chatThemeUniqueGift c;
+    public int d;
+    public int e = -1;
+    public SparseIntArray f;
+    public String g;
+    public int h;
+    public int i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public int n;
+    public int o;
 
-    public /* synthetic */ c4(Bitmap bitmap, File file, int i10) {
-        this.a = i10;
-        this.b = bitmap;
-        this.c = file;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                File file = this.c;
-                Bitmap bitmap = this.b;
-                try {
-                    FileOutputStream fileOutputStream = new FileOutputStream(file);
-                    try {
-                        bitmap.compress(Bitmap.CompressFormat.PNG, 87, fileOutputStream);
-                        fileOutputStream.close();
-                        return;
-                    } finally {
-                    }
-                } catch (Exception e) {
-                    FileLog.e(e);
-                    return;
-                }
-            case 1:
-                try {
-                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
-                    return;
-                } catch (Exception e6) {
-                    FileLog.e(e6);
-                    return;
-                }
-            case 2:
-                Bitmap bitmap2 = this.b;
-                try {
-                    try {
-                        bitmap2.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(this.c));
-                        if (bitmap2.isRecycled()) {
-                            return;
-                        }
-                    } catch (Exception e10) {
-                        FileLog.e(e10);
-                        if (bitmap2 == null || bitmap2.isRecycled()) {
-                            return;
-                        }
-                    }
-                    bitmap2.recycle();
-                    return;
-                } catch (Throwable th2) {
-                    if (bitmap2 != null && !bitmap2.isRecycled()) {
-                        bitmap2.recycle();
-                    }
-                    throw th2;
-                }
-            case 3:
-                Bitmap bitmap3 = this.b;
-                try {
-                    try {
-                        bitmap3.compress(Bitmap.CompressFormat.WEBP, 100, new FileOutputStream(this.c));
-                    } finally {
-                        AndroidUtilities.recycleBitmap(bitmap3);
-                    }
-                } catch (Exception e11) {
-                    FileLog.e(e11);
-                }
-                return;
-            case 4:
-                try {
-                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
-                    return;
-                } catch (Exception e12) {
-                    FileLog.e(e12);
-                    return;
-                }
-            default:
-                try {
-                    this.b.compress(Bitmap.CompressFormat.PNG, 87, new FileOutputStream(this.c));
-                    return;
-                } catch (Exception e13) {
-                    FileLog.e(e13);
-                    return;
-                }
+    public final long a() {
+        TLRPC.TL_theme tL_theme = this.b;
+        if (tL_theme != null) {
+            return tL_theme.id;
         }
+        TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
+        if (tL_chatThemeUniqueGift != null) {
+            return tL_chatThemeUniqueGift.gift.gift_id;
+        }
+        return 0L;
     }
 
-    public /* synthetic */ c4(File file, Bitmap bitmap) {
-        this.a = 0;
-        this.c = file;
-        this.b = bitmap;
+    public final TLRPC.ThemeSettings b(int i10) {
+        ArrayList<TLRPC.ThemeSettings> arrayList;
+        TLRPC.TL_theme tL_theme = this.b;
+        if (tL_theme == null) {
+            TLRPC.TL_chatThemeUniqueGift tL_chatThemeUniqueGift = this.c;
+            if (tL_chatThemeUniqueGift != null) {
+                arrayList = tL_chatThemeUniqueGift.theme_settings;
+            }
+            return null;
+        }
+        arrayList = tL_theme.settings;
+        if (arrayList != null && i10 >= 0 && arrayList.size() > i10) {
+            return arrayList.get(i10);
+        }
+        return null;
     }
 }

@@ -11,17 +11,17 @@ import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.video.MediaCodecVideoConvertor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class AudioRecoder {
     private static final int BYTES_PER_SHORT = 2;
-    ArrayList<mf.a> audioInputs;
+    ArrayList<ag.a> audioInputs;
     private final MediaCodec encoder;
     private boolean encoderDone;
     private ByteBuffer[] encoderInputBuffers;
     private ByteBuffer[] encoderOutputBuffers;
     public final MediaFormat format;
-    mf.a mainInput;
+    ag.a mainInput;
     private int sampleRate;
     private long totalDurationUs;
     private final int TIMEOUT_USEC = 2500;
@@ -36,10 +36,10 @@ public class AudioRecoder {
     private int channelCount = 2;
     private long encoderInputPresentationTimeUs = 0;
 
-    public AudioRecoder(ArrayList<mf.a> arrayList, long j10) {
+    public AudioRecoder(ArrayList<ag.a> arrayList, long j3) {
         this.sampleRate = 44100;
         this.audioInputs = arrayList;
-        this.totalDurationUs = j10;
+        this.totalDurationUs = j3;
         this.mainInput = arrayList.get(0);
         for (int i10 = 0; i10 < arrayList.size(); i10++) {
             if (arrayList.get(i10).b() > this.sampleRate) {
@@ -70,16 +70,16 @@ public class AudioRecoder {
     private void mix(ShortBuffer shortBuffer) {
         int remaining = shortBuffer.remaining();
         for (int i10 = 0; i10 < remaining && isInputAvailable(); i10++) {
-            boolean z4 = false;
-            short s6 = 0;
+            boolean z10 = false;
+            short s10 = 0;
             for (int i11 = 0; i11 < this.audioInputs.size() && isInputAvailable(); i11++) {
                 if (this.audioInputs.get(i11).c()) {
-                    s6 = (short) ((((short) (r6.a() * r6.a)) / this.audioInputs.size()) + s6);
-                    z4 = true;
+                    s10 = (short) ((((short) (r6.a() * r6.a)) / this.audioInputs.size()) + s10);
+                    z10 = true;
                 }
             }
-            if (z4) {
-                shortBuffer.put(s6);
+            if (z10) {
+                shortBuffer.put(s10);
             }
         }
     }
@@ -90,8 +90,8 @@ public class AudioRecoder {
             for (int i10 = 0; i10 < this.audioInputs.size(); i10++) {
                 this.audioInputs.get(i10).d();
             }
-        } catch (Exception e) {
-            FileLog.e(e);
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
     }
 

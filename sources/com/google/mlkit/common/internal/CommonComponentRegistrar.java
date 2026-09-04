@@ -1,57 +1,58 @@
 package com.google.mlkit.common.internal;
 
-import c9.a;
-import c9.b;
-import c9.m;
-import cb.d;
-import cb.h;
-import cb.i;
-import cb.l;
+import b2.i0;
 import com.google.firebase.components.ComponentRegistrar;
-import h7.g;
-import h7.u;
-import j7.s7;
 import java.util.List;
+import pb.c;
+import q9.a;
+import q9.j;
+import qb.b;
+import qb.d;
+import qb.g;
+import qb.h;
+import qb.k;
+import t7.u;
+import w7.h7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class CommonComponentRegistrar implements ComponentRegistrar {
     @Override // com.google.firebase.components.ComponentRegistrar
     public final List getComponents() {
-        a b10 = b.b(db.a.class);
-        b10.a(m.b(h.class));
-        b10.g = new ab.a(26);
-        b b11 = b10.b();
-        a b12 = b.b(i.class);
-        b12.g = new cb.b(26);
-        b b13 = b12.b();
-        a b14 = b.b(bb.b.class);
-        b14.a(new m(2, 0, bb.a.class));
-        b14.g = new db.a(26);
-        b b15 = b14.b();
-        a b16 = b.b(d.class);
-        b16.a(new m(1, 1, i.class));
-        b16.g = new u(26);
-        b b17 = b16.b();
-        a b18 = b.b(cb.a.class);
-        b18.g = new z9.d(26);
-        b b19 = b18.b();
-        a b20 = b.b(cb.b.class);
-        b20.a(m.b(cb.a.class));
-        b20.g = new ab.a(27);
-        b b21 = b20.b();
-        a b22 = b.b(ab.a.class);
-        b22.a(m.b(h.class));
-        b22.g = new cb.b(27);
-        b b23 = b22.b();
-        a b24 = b.b(bb.a.class);
-        b24.c = 1;
-        b24.a(new m(1, 1, ab.a.class));
-        b24.g = new db.a(27);
-        b b25 = b24.b();
-        h7.b bVar = h7.d.b;
-        Object[] objArr = {l.b, b11, b13, b15, b17, b19, b21, b23, b25};
-        s7.a(9, objArr);
-        return new g(9, objArr);
+        i0 a2 = a.a(rb.a.class);
+        a2.a(j.a(g.class));
+        a2.f = new b(14);
+        a b10 = a2.b();
+        i0 a10 = a.a(h.class);
+        a10.f = new rb.a(14);
+        a b11 = a10.b();
+        i0 a11 = a.a(c.class);
+        a11.a(new j(2, 0, pb.b.class));
+        a11.f = new u(14);
+        a b12 = a11.b();
+        i0 a12 = a.a(d.class);
+        a12.a(new j(1, 1, h.class));
+        a12.f = new na.d();
+        a b13 = a12.b();
+        i0 a13 = a.a(qb.a.class);
+        a13.f = new ob.a(15);
+        a b14 = a13.b();
+        i0 a14 = a.a(b.class);
+        a14.a(j.a(qb.a.class));
+        a14.f = new b(15);
+        a b15 = a14.b();
+        i0 a15 = a.a(ob.a.class);
+        a15.a(j.a(g.class));
+        a15.f = new rb.a(15);
+        a b16 = a15.b();
+        i0 a16 = a.a(pb.b.class);
+        a16.b = 1;
+        a16.a(new j(1, 1, ob.a.class));
+        a16.f = new u(15);
+        a b17 = a16.b();
+        t7.b bVar = t7.d.b;
+        Object[] objArr = {k.b, b10, b11, b12, b13, b14, b15, b16, b17};
+        h7.a(9, objArr);
+        return new t7.g(9, objArr);
     }
 }

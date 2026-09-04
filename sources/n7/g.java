@@ -1,78 +1,39 @@
 package n7;
 
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import java.io.Serializable;
+import java.util.Comparator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g extends com.google.android.gms.internal.cast.u0 implements ListIterator {
-    public final int b;
-    public int c;
-    public final i d;
+public final class g extends w implements Serializable {
+    public final Comparator a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(i iVar, int i10) {
-        super(8);
-        int size = iVar.size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(k7.e0.c(i10, size, "index"));
+    public g(Comparator comparator) {
+        comparator.getClass();
+        this.a = comparator;
+    }
+
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        return this.a.compare(obj, obj2);
+    }
+
+    @Override // java.util.Comparator
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
         }
-        this.b = size;
-        this.c = i10;
-        this.d = iVar;
-    }
-
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+        if (obj instanceof g) {
+            return this.a.equals(((g) obj).a);
         }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
+        return false;
     }
 
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
+    public final int hashCode() {
+        return this.a.hashCode();
     }
 
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
-        }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+    public final String toString() {
+        return this.a.toString();
     }
 }

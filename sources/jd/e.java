@@ -1,6 +1,13 @@
 package jd;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import v7.t7;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class e extends d {
+public final class e extends kd.c {
+    @Override // kd.a
+    public final Object invokeSuspend(Object obj) {
+        t7.b(obj);
+        return obj;
+    }
 }

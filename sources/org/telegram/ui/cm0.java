@@ -1,81 +1,82 @@
 package org.telegram.ui;
 
-import android.text.TextUtils;
-import java.util.Locale;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MrzRecognizer;
-import org.telegram.messenger.R;
+import android.content.Intent;
+import android.net.Uri;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ApplicationLoader;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.UserConfig;
+import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class cm0 implements w9 {
-    public final /* synthetic */ fn0 a;
+public final /* synthetic */ class cm0 implements org.telegram.ui.ActionBar.a2, au, dn0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ pn0 b;
 
-    public cm0(fn0 fn0Var) {
-        this.a = fn0Var;
+    public /* synthetic */ cm0(pn0 pn0Var, int i10) {
+        this.a = i10;
+        this.b = pn0Var;
     }
 
-    @Override // org.telegram.ui.w9
-    public final /* synthetic */ String C0() {
-        return null;
+    @Override // org.telegram.ui.au
+    public void a1(vt vtVar) {
+        switch (this.a) {
+            case 2:
+                pn0 pn0Var = this.b;
+                pn0Var.Y[5].setText(vtVar.a);
+                pn0Var.s = vtVar.d;
+                break;
+            default:
+                pn0 pn0Var2 = this.b;
+                pn0Var2.Y[0].setText(vtVar.a);
+                if (pn0Var2.U0.indexOf(vtVar.a) != -1) {
+                    pn0Var2.Z0 = true;
+                    String str = (String) pn0Var2.V0.get(vtVar.a);
+                    pn0Var2.Y[1].setText(str);
+                    String str2 = (String) pn0Var2.X0.get(str);
+                    pn0Var2.Y[2].setHintText(str2 != null ? str2.replace('X', (char) 8211) : null);
+                    pn0Var2.Z0 = false;
+                }
+                AndroidUtilities.runOnUIThread(new zl0(pn0Var2, 3), 300L);
+                pn0Var2.Y[2].requestFocus();
+                EditTextBoldCursor editTextBoldCursor = pn0Var2.Y[2];
+                editTextBoldCursor.setSelection(editTextBoldCursor.length());
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.w9
-    public final void P0(MrzRecognizer.Result result) {
-        boolean isEmpty = TextUtils.isEmpty(result.firstName);
-        fn0 fn0Var = this.a;
-        if (!isEmpty) {
-            fn0Var.V[0].setText(result.firstName);
-        }
-        if (!TextUtils.isEmpty(result.middleName)) {
-            fn0Var.V[1].setText(result.middleName);
-        }
-        if (!TextUtils.isEmpty(result.lastName)) {
-            fn0Var.V[2].setText(result.lastName);
-        }
-        int i10 = result.gender;
-        if (i10 != 0) {
-            if (i10 == 1) {
-                fn0Var.w = "male";
-                fn0Var.V[4].setText(LocaleController.getString(R.string.PassportMale));
-            } else if (i10 == 2) {
-                fn0Var.w = "female";
-                fn0Var.V[4].setText(LocaleController.getString(R.string.PassportFemale));
-            }
-        }
-        if (!TextUtils.isEmpty(result.nationality)) {
-            String str = result.nationality;
-            fn0Var.s = str;
-            String str2 = (String) fn0Var.V0.get(str);
-            if (str2 != null) {
-                fn0Var.V[5].setText(str2);
-            }
-        }
-        if (!TextUtils.isEmpty(result.issuingCountry)) {
-            String str3 = result.issuingCountry;
-            fn0Var.v = str3;
-            String str4 = (String) fn0Var.V0.get(str3);
-            if (str4 != null) {
-                fn0Var.V[6].setText(str4);
-            }
-        }
-        int i11 = result.birthDay;
-        if (i11 <= 0 || result.birthMonth <= 0 || result.birthYear <= 0) {
-            return;
-        }
-        fn0Var.V[3].setText(String.format(Locale.US, "%02d.%02d.%d", Integer.valueOf(i11), Integer.valueOf(result.birthMonth), Integer.valueOf(result.birthYear)));
+    @Override // org.telegram.ui.dn0
+    public void b(String str, String str2) {
+        this.b.x1();
     }
 
-    @Override // org.telegram.ui.w9
-    public final /* synthetic */ boolean a1(String str, o9 o9Var) {
-        return false;
-    }
-
-    @Override // org.telegram.ui.w9
-    public final /* synthetic */ void K(String str) {
-    }
-
-    @Override // org.telegram.ui.w9
-    public final /* synthetic */ void onDismiss() {
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 0:
+                pn0 pn0Var = this.b;
+                pn0Var.getClass();
+                try {
+                    Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
+                    intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
+                    pn0Var.getParentActivity().startActivity(intent);
+                    break;
+                } catch (Exception e7) {
+                    FileLog.e(e7);
+                    return;
+                }
+            case 1:
+                this.b.finishFragment();
+                break;
+            case 2:
+            case 3:
+            default:
+                pn0.a0(this.b);
+                break;
+            case 4:
+                of.f.s(r3.getParentActivity(), "https://telegram.org/deactivate?phone=" + UserConfig.getInstance(this.b.currentAccount).getClientPhone());
+                break;
+        }
     }
 }

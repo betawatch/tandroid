@@ -1,11 +1,33 @@
 package ud;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class e {
-    public static final o3.c a = new o3.c("NO_OWNER", 14);
+public final class e extends d {
+    public static final e d = new e(1, 0, 1);
 
-    public static d a() {
-        return new d(false);
+    public final boolean equals(Object obj) {
+        if (!(obj instanceof e)) {
+            return false;
+        }
+        if (isEmpty() && ((e) obj).isEmpty()) {
+            return true;
+        }
+        e eVar = (e) obj;
+        return this.a == eVar.a && this.b == eVar.b;
+    }
+
+    public final int hashCode() {
+        if (isEmpty()) {
+            return -1;
+        }
+        return (this.a * 31) + this.b;
+    }
+
+    public final boolean isEmpty() {
+        return this.a > this.b;
+    }
+
+    public final String toString() {
+        return this.a + ".." + this.b;
     }
 }

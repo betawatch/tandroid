@@ -1,35 +1,19 @@
 package gb;
 
-import j7.c9;
-import j7.g9;
-import j7.z8;
+import java.lang.reflect.GenericArrayType;
+import java.lang.reflect.Type;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public final c9 a;
-    public final e b;
-    public final cb.d c;
-
-    public a(e eVar, cb.d dVar) {
-        c9 b10;
-        this.b = eVar;
-        this.c = dVar;
-        String str = true != eVar.g ? "play-services-mlkit-language-id" : "language-id";
-        synchronized (g9.class) {
-            byte b11 = (byte) (((byte) 1) | 2);
-            if (b11 != 3) {
-                StringBuilder sb = new StringBuilder();
-                if ((b11 & 1) == 0) {
-                    sb.append(" enableFirelog");
-                }
-                if ((b11 & 2) == 0) {
-                    sb.append(" firelogEventType");
-                }
-                throw new IllegalStateException("Missing required properties:".concat(sb.toString()));
-            }
-            b10 = g9.b(new z8(str));
+public class a implements db.v {
+    @Override // db.v
+    public final db.u create(db.g gVar, kb.a aVar) {
+        Type type = aVar.b;
+        boolean z10 = type instanceof GenericArrayType;
+        if (!z10 && (!(type instanceof Class) || !((Class) type).isArray())) {
+            return null;
         }
-        this.a = b10;
+        Type genericComponentType = z10 ? ((GenericArrayType) type).getGenericComponentType() : ((Class) type).getComponentType();
+        return new b(gVar, gVar.b(new kb.a(genericComponentType)), fb.d.h(genericComponentType));
     }
 }

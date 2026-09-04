@@ -1,35 +1,10 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
-import android.view.ViewTreeObserver;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class xe implements ViewTreeObserver.OnPreDrawListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Dialog b;
-    public final /* synthetic */ ChatActivityEnterView c;
-
-    public /* synthetic */ xe(ChatActivityEnterView chatActivityEnterView, Dialog dialog, int i10) {
-        this.a = i10;
-        this.c = chatActivityEnterView;
-        this.b = dialog;
-    }
-
-    @Override // android.view.ViewTreeObserver.OnPreDrawListener
-    public final boolean onPreDraw() {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                chatActivityEnterView.m0.getViewTreeObserver().removeOnPreDrawListener(this);
-                chatActivityEnterView.m0.postDelayed(new fg(this.b, 18), 100L);
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView2 = this.c;
-                chatActivityEnterView2.m0.getViewTreeObserver().removeOnPreDrawListener(this);
-                chatActivityEnterView2.m0.postDelayed(new fg(this.b, 18), 100L);
-                break;
-        }
-        return true;
+public final class xe extends eq {
+    @Override // org.telegram.ui.Components.eq
+    public final int a() {
+        return org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.of, false);
     }
 }

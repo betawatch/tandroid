@@ -42,12 +42,9 @@ import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 implements NotificationCenter.NotificationCenterDelegate {
-    public int B;
-    public int C;
-    public int D;
+public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int E;
     public int F;
     public int G;
@@ -62,16 +59,19 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
     public int P;
     public int Q;
     public int R;
-    public boolean S;
-    public boolean T;
-    public boolean U;
-    public org.telegram.ui.Components.rl0 a;
+    public int S;
+    public int T;
+    public int U;
+    public boolean V;
+    public boolean W;
+    public boolean X;
+    public org.telegram.ui.Components.ll0 a;
     private int accountsAllRow;
     public boolean b;
     private int badgeNumberMessagesRow;
     private int badgeNumberMutedRow;
     private int badgeNumberShowRow;
-    public kk0 c;
+    public vk0 c;
     private int channelsRow;
     private int contactJoinedRow;
     public ArrayList d;
@@ -105,7 +105,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
         this.f = null;
         this.h = null;
         this.n = null;
-        this.R = 0;
+        this.U = 0;
     }
 
     public static /* synthetic */ void U(NotificationsSettingsActivity notificationsSettingsActivity, ArrayList arrayList, ArrayList arrayList2, ArrayList arrayList3, ArrayList arrayList4, ArrayList arrayList5, ArrayList arrayList6, ArrayList arrayList7, ArrayList arrayList8, Runnable runnable) {
@@ -117,9 +117,9 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
         notificationsSettingsActivity.f = arrayList6;
         notificationsSettingsActivity.h = arrayList7;
         notificationsSettingsActivity.n = arrayList8;
-        kk0 kk0Var = notificationsSettingsActivity.c;
-        if (kk0Var != null) {
-            kk0Var.m(notificationsSettingsActivity.privateRow);
+        vk0 vk0Var = notificationsSettingsActivity.c;
+        if (vk0Var != null) {
+            vk0Var.m(notificationsSettingsActivity.privateRow);
             notificationsSettingsActivity.c.m(notificationsSettingsActivity.groupRow);
             notificationsSettingsActivity.c.m(notificationsSettingsActivity.channelsRow);
             notificationsSettingsActivity.c.m(notificationsSettingsActivity.storiesRow);
@@ -158,7 +158,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
     */
     public static void W(NotificationsSettingsActivity notificationsSettingsActivity, ArrayList arrayList, Runnable runnable) {
         ArrayList<TLRPC.Chat> arrayList2;
-        boolean z4;
+        boolean z10;
         ArrayList<TLRPC.Chat> arrayList3;
         ArrayList<TLRPC.User> arrayList4;
         ArrayList<TLRPC.EncryptedChat> arrayList5;
@@ -193,7 +193,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
         ArrayList<TLRPC.User> arrayList21 = new ArrayList<>();
         ArrayList<TLRPC.Chat> arrayList22 = new ArrayList<>();
         ArrayList<TLRPC.EncryptedChat> arrayList23 = new ArrayList<>();
-        long j10 = UserConfig.getInstance(notificationsSettingsActivity.currentAccount).clientUserId;
+        long j3 = UserConfig.getInstance(notificationsSettingsActivity.currentAccount).clientUserId;
         SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
         Map<String, ?> all = notificationsSettings.getAll();
         Iterator<Map.Entry<String, ?>> it = all.entrySet().iterator();
@@ -217,30 +217,30 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                     ArrayList arrayList25 = arrayList16;
                     arrayList11 = arrayList17;
                     long longValue2 = parseLong2.longValue();
-                    if (longValue2 == 0 || longValue2 == j10) {
+                    if (longValue2 == 0 || longValue2 == j3) {
                         arrayList10 = arrayList25;
                     } else {
                         arrayList10 = arrayList25;
-                        lk0 lk0Var = new lk0();
-                        lk0Var.d = longValue2;
+                        wk0 wk0Var = new wk0();
+                        wk0Var.d = longValue2;
                         ArrayList arrayList26 = arrayList14;
-                        lk0Var.b = org.telegram.messenger.y3.v(NotificationsSettingsFacade.PROPERTY_CUSTOM, longValue2, notificationsSettings, false);
+                        wk0Var.b = org.telegram.messenger.w1.v(NotificationsSettingsFacade.PROPERTY_CUSTOM, longValue2, notificationsSettings, false);
                         int intValue = ((Integer) next.getValue()).intValue();
-                        lk0Var.c = intValue;
+                        wk0Var.c = intValue;
                         if (intValue != 0 && (num = (Integer) all.get(NotificationsSettingsFacade.PROPERTY_NOTIFY_UNTIL.concat(replace))) != null) {
-                            lk0Var.a = num.intValue();
+                            wk0Var.a = num.intValue();
                         }
                         if (DialogObject.isEncryptedDialog(longValue2)) {
                             int encryptedChatId = DialogObject.getEncryptedChatId(longValue2);
                             TLRPC.EncryptedChat encryptedChat = MessagesController.getInstance(notificationsSettingsActivity.currentAccount).getEncryptedChat(Integer.valueOf(encryptedChatId));
                             if (encryptedChat == null) {
                                 arrayList20.add(Integer.valueOf(encryptedChatId));
-                                longSparseArray.put(longValue2, lk0Var);
+                                longSparseArray.put(longValue2, wk0Var);
                             } else {
                                 TLRPC.User user = MessagesController.getInstance(notificationsSettingsActivity.currentAccount).getUser(Long.valueOf(encryptedChat.user_id));
                                 if (user == null) {
                                     arrayList18.add(Long.valueOf(encryptedChat.user_id));
-                                    longSparseArray.put(encryptedChat.user_id, lk0Var);
+                                    longSparseArray.put(encryptedChat.user_id, wk0Var);
                                 } else if (user.deleted) {
                                     arrayList22 = arrayList2;
                                     arrayList21 = arrayList24;
@@ -250,13 +250,13 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                                     arrayList14 = arrayList26;
                                 }
                             }
-                            arrayList13.add(lk0Var);
+                            arrayList13.add(wk0Var);
                             arrayList14 = arrayList26;
                         } else if (DialogObject.isUserDialog(longValue2)) {
                             TLRPC.User user2 = MessagesController.getInstance(notificationsSettingsActivity.currentAccount).getUser(parseLong2);
                             if (user2 == null) {
                                 arrayList18.add(parseLong2);
-                                longSparseArray.put(longValue2, lk0Var);
+                                longSparseArray.put(longValue2, wk0Var);
                             } else if (user2.deleted) {
                                 arrayList22 = arrayList2;
                                 arrayList21 = arrayList24;
@@ -265,20 +265,20 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                                 arrayList16 = arrayList10;
                                 arrayList14 = arrayList26;
                             }
-                            arrayList13.add(lk0Var);
+                            arrayList13.add(wk0Var);
                             arrayList14 = arrayList26;
                         } else {
-                            long j11 = -longValue2;
-                            TLRPC.Chat chat = MessagesController.getInstance(notificationsSettingsActivity.currentAccount).getChat(Long.valueOf(j11));
+                            long j10 = -longValue2;
+                            TLRPC.Chat chat = MessagesController.getInstance(notificationsSettingsActivity.currentAccount).getChat(Long.valueOf(j10));
                             if (chat == null) {
-                                arrayList19.add(Long.valueOf(j11));
-                                longSparseArray.put(longValue2, lk0Var);
+                                arrayList19.add(Long.valueOf(j10));
+                                longSparseArray.put(longValue2, wk0Var);
                             } else if (!chat.left && !chat.kicked && chat.migrated_to == null) {
                                 if (!ChatObject.isChannel(chat) || chat.megagroup) {
                                     arrayList14 = arrayList26;
-                                    arrayList14.add(lk0Var);
+                                    arrayList14.add(wk0Var);
                                 } else {
-                                    arrayList15.add(lk0Var);
+                                    arrayList15.add(wk0Var);
                                     arrayList14 = arrayList26;
                                 }
                             }
@@ -309,7 +309,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
         HashSet hashSet = new HashSet();
         Iterator<Map.Entry<String, ?>> it2 = all.entrySet().iterator();
         while (true) {
-            z4 = true;
+            z10 = true;
             if (!it2.hasNext()) {
                 break;
             }
@@ -322,23 +322,23 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                 } catch (Exception unused) {
                     arrayList9 = arrayList27;
                 }
-                if (longValue != 0 && longValue != j10) {
-                    lk0 lk0Var2 = new lk0();
-                    lk0Var2.d = longValue;
-                    lk0Var2.c = ((Boolean) next2.getValue()).booleanValue() ? 0 : ConnectionsManager.DEFAULT_DATACENTER_ID;
-                    lk0Var2.e = true;
+                if (longValue != 0 && longValue != j3) {
+                    wk0 wk0Var2 = new wk0();
+                    wk0Var2.d = longValue;
+                    wk0Var2.c = ((Boolean) next2.getValue()).booleanValue() ? 0 : ConnectionsManager.DEFAULT_DATACENTER_ID;
+                    wk0Var2.e = true;
                     if (DialogObject.isUserDialog(longValue)) {
                         TLRPC.User user3 = notificationsSettingsActivity.getMessagesController().getUser(parseLong);
                         if (user3 == null) {
                             try {
                                 arrayList18.add(parseLong);
-                                longSparseArray.put(longValue, lk0Var2);
+                                longSparseArray.put(longValue, wk0Var2);
                             } catch (Exception unused2) {
                             }
                         } else if (user3.deleted) {
                         }
                         arrayList9 = arrayList27;
-                        arrayList9.add(lk0Var2);
+                        arrayList9.add(wk0Var2);
                         hashSet.add(parseLong);
                         arrayList27 = arrayList9;
                     }
@@ -349,38 +349,38 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
         }
         ArrayList arrayList31 = arrayList27;
         ArrayList arrayList32 = arrayList;
-        Collections.sort(arrayList32, Comparator$-CC.comparingDouble(new lh.z0(6)));
+        Collections.sort(arrayList32, Comparator$-CC.comparingDouble(new org.telegram.ui.Components.k71(3)));
         int max = Math.max(0, arrayList32.size() - 5);
         while (max < arrayList32.size()) {
             long peerDialogId = DialogObject.getPeerDialogId(((TLRPC.TL_topPeer) arrayList32.get(max)).peer);
             if (hashSet.contains(Long.valueOf(peerDialogId))) {
                 i14 = max;
             } else {
-                lk0 lk0Var3 = new lk0();
-                lk0Var3.d = peerDialogId;
+                wk0 wk0Var3 = new wk0();
+                wk0Var3.d = peerDialogId;
                 i14 = max;
-                lk0Var3.c = 0;
-                lk0Var3.f = z4;
-                lk0Var3.e = z4;
+                wk0Var3.c = 0;
+                wk0Var3.f = z10;
+                wk0Var3.e = z10;
                 if (DialogObject.isUserDialog(peerDialogId)) {
                     TLRPC.User user4 = notificationsSettingsActivity.getMessagesController().getUser(Long.valueOf(peerDialogId));
                     if (user4 == null) {
                         arrayList18.add(Long.valueOf(peerDialogId));
-                        longSparseArray.put(peerDialogId, lk0Var3);
+                        longSparseArray.put(peerDialogId, wk0Var3);
                     }
                     arrayList8 = arrayList28;
-                    arrayList8.add(0, lk0Var3);
+                    arrayList8.add(0, wk0Var3);
                     hashSet.add(Long.valueOf(peerDialogId));
                     arrayList28 = arrayList8;
                     max = i14 + 1;
-                    z4 = true;
+                    z10 = true;
                     arrayList32 = arrayList;
                 }
             }
             arrayList8 = arrayList28;
             arrayList28 = arrayList8;
             max = i14 + 1;
-            z4 = true;
+            z10 = true;
             arrayList32 = arrayList;
         }
         ArrayList arrayList33 = arrayList28;
@@ -393,8 +393,8 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                         arrayList5 = arrayList30;
                         try {
                             MessagesStorage.getInstance(notificationsSettingsActivity.currentAccount).getEncryptedChatsInternal(TextUtils.join(",", arrayList20), arrayList5, arrayList18);
-                        } catch (Exception e) {
-                            e = e;
+                        } catch (Exception e7) {
+                            e = e7;
                             arrayList3 = arrayList2;
                             arrayList4 = arrayList29;
                             FileLog.e(e);
@@ -412,10 +412,10 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                             size4 = longSparseArray.size();
                             while (i13 < size4) {
                             }
-                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.ac(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+                            AndroidUtilities.runOnUIThread(new org.telegram.messenger.yb(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
                         }
-                    } catch (Exception e6) {
-                        e = e6;
+                    } catch (Exception e10) {
+                        e = e10;
                         arrayList5 = arrayList30;
                         arrayList3 = arrayList2;
                         arrayList4 = arrayList29;
@@ -434,7 +434,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                         size4 = longSparseArray.size();
                         while (i13 < size4) {
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.ac(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.yb(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
                     }
                 }
                 if (arrayList18.isEmpty()) {
@@ -442,8 +442,8 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                 } else {
                     try {
                         arrayList4 = arrayList29;
-                    } catch (Exception e10) {
-                        e = e10;
+                    } catch (Exception e11) {
+                        e = e11;
                         arrayList4 = arrayList29;
                         arrayList3 = arrayList2;
                         FileLog.e(e);
@@ -461,12 +461,12 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                         size4 = longSparseArray.size();
                         while (i13 < size4) {
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.ac(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.yb(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
                     }
                     try {
                         MessagesStorage.getInstance(notificationsSettingsActivity.currentAccount).getUsersInternal(arrayList18, arrayList4);
-                    } catch (Exception e11) {
-                        e = e11;
+                    } catch (Exception e12) {
+                        e = e12;
                         arrayList3 = arrayList2;
                         FileLog.e(e);
                         size = arrayList3.size();
@@ -483,7 +483,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                         size4 = longSparseArray.size();
                         while (i13 < size4) {
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.ac(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.yb(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
                     }
                 }
                 if (arrayList19.isEmpty()) {
@@ -494,8 +494,8 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                     arrayList3 = arrayList2;
                     try {
                         messagesStorage.getChatsInternal(join, arrayList3);
-                    } catch (Exception e12) {
-                        e = e12;
+                    } catch (Exception e13) {
+                        e = e13;
                         FileLog.e(e);
                         size = arrayList3.size();
                         i10 = 0;
@@ -511,11 +511,11 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                         size4 = longSparseArray.size();
                         while (i13 < size4) {
                         }
-                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.ac(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.yb(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
                     }
                 }
-            } catch (Exception e13) {
-                e = e13;
+            } catch (Exception e14) {
+                e = e14;
                 arrayList3 = arrayList2;
                 arrayList4 = arrayList29;
                 arrayList5 = arrayList30;
@@ -527,14 +527,14 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                 if (chat2.left || chat2.kicked || chat2.migrated_to != null) {
                     arrayList7 = arrayList33;
                 } else {
-                    lk0 lk0Var4 = (lk0) longSparseArray.get(-chat2.id);
+                    wk0 wk0Var4 = (wk0) longSparseArray.get(-chat2.id);
                     arrayList7 = arrayList33;
                     longSparseArray.remove(-chat2.id);
-                    if (lk0Var4 != null) {
+                    if (wk0Var4 != null) {
                         if (!ChatObject.isChannel(chat2) || chat2.megagroup) {
-                            arrayList14.add(lk0Var4);
+                            arrayList14.add(wk0Var4);
                         } else {
-                            arrayList15.add(lk0Var4);
+                            arrayList15.add(wk0Var4);
                         }
                     }
                 }
@@ -568,26 +568,26 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
             arrayList4 = arrayList29;
             arrayList5 = arrayList30;
         }
-        AndroidUtilities.runOnUIThread(new org.telegram.messenger.ac(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
+        AndroidUtilities.runOnUIThread(new org.telegram.messenger.yb(notificationsSettingsActivity, arrayList4, arrayList3, arrayList5, arrayList13, arrayList14, arrayList15, arrayList31, arrayList6, runnable));
     }
 
     public static /* synthetic */ void X(NotificationsSettingsActivity notificationsSettingsActivity, int i10, int i11) {
         MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount).edit().putInt("repeat_messages", i11 != 1 ? i11 == 2 ? 10 : i11 == 3 ? 30 : i11 == 4 ? 60 : i11 == 5 ? 120 : i11 == 6 ? 240 : 0 : 5).commit();
-        notificationsSettingsActivity.U = true;
+        notificationsSettingsActivity.X = true;
         notificationsSettingsActivity.c.m(i10);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:22:0x0579  */
+    /* JADX WARN: Removed duplicated region for block: B:22:0x057c  */
     /* JADX WARN: Removed duplicated region for block: B:25:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static void Y(NotificationsSettingsActivity notificationsSettingsActivity, View view, int i10, float f10) {
+    public static void Y(NotificationsSettingsActivity notificationsSettingsActivity, View view, int i10, float f7) {
         ArrayList arrayList;
         boolean isGlobalNotificationsEnabled;
         ArrayList arrayList2;
         int i11;
-        boolean z4;
+        boolean z10;
         ArrayList arrayList3;
         String formatPluralString;
         ArrayList arrayList4;
@@ -595,22 +595,20 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
             return;
         }
         int i12 = notificationsSettingsActivity.privateRow;
-        int i13 = 16;
-        int i14 = 4;
         String str = null;
-        r8 = null;
+        r7 = null;
         Parcelable parcelable = null;
         str = null;
         str = null;
-        boolean z10 = false;
-        z10 = false;
-        z10 = false;
-        z10 = false;
-        z10 = false;
-        z10 = false;
-        z10 = false;
+        boolean z11 = false;
+        z11 = false;
+        z11 = false;
+        z11 = false;
+        z11 = false;
+        z11 = false;
+        z11 = false;
         if (i10 != i12 && i10 != notificationsSettingsActivity.groupRow && i10 != notificationsSettingsActivity.channelsRow && i10 != notificationsSettingsActivity.storiesRow && i10 != notificationsSettingsActivity.reactionsRow) {
-            if (i10 == notificationsSettingsActivity.F) {
+            if (i10 == notificationsSettingsActivity.I) {
                 try {
                     SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
                     Intent intent = new Intent("android.intent.action.RINGTONE_PICKER");
@@ -626,154 +624,154 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                     }
                     intent.putExtra("android.intent.extra.ringtone.EXISTING_URI", parcelable);
                     notificationsSettingsActivity.startActivityForResult(intent, i10);
-                } catch (Exception e) {
-                    FileLog.e(e);
+                } catch (Exception e7) {
+                    FileLog.e(e7);
                 }
             } else if (i10 == notificationsSettingsActivity.resetNotificationsRow) {
                 AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(notificationsSettingsActivity.getParentActivity());
                 String string2 = LocaleController.getString("ResetNotificationsAlertTitle", R.string.ResetNotificationsAlertTitle);
-                org.telegram.ui.ActionBar.d2 d2Var = alertDialog$Builder.a;
-                d2Var.O = string2;
-                d2Var.Q = LocaleController.getString("ResetNotificationsAlert", R.string.ResetNotificationsAlert);
-                alertDialog$Builder.k(LocaleController.getString("Reset", R.string.Reset), new jk0(notificationsSettingsActivity));
+                org.telegram.ui.ActionBar.b2 b2Var = alertDialog$Builder.a;
+                b2Var.R = string2;
+                b2Var.T = LocaleController.getString("ResetNotificationsAlert", R.string.ResetNotificationsAlert);
+                alertDialog$Builder.k(LocaleController.getString("Reset", R.string.Reset), new uk0(notificationsSettingsActivity));
                 alertDialog$Builder.h(LocaleController.getString("Cancel", R.string.Cancel), null);
-                notificationsSettingsActivity.showDialog(d2Var);
-                TextView textView = (TextView) d2Var.d(-1);
+                notificationsSettingsActivity.showDialog(b2Var);
+                TextView textView = (TextView) b2Var.d(-1);
                 if (textView != null) {
                     textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.q7, false));
                 }
             } else if (i10 == notificationsSettingsActivity.inappSoundRow) {
                 SharedPreferences notificationsSettings2 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
                 SharedPreferences.Editor edit = notificationsSettings2.edit();
-                z10 = notificationsSettings2.getBoolean("EnableInAppSounds", true);
-                edit.putBoolean("EnableInAppSounds", !z10);
+                z11 = notificationsSettings2.getBoolean("EnableInAppSounds", true);
+                edit.putBoolean("EnableInAppSounds", !z11);
                 edit.commit();
             } else if (i10 == notificationsSettingsActivity.inappVibrateRow) {
                 SharedPreferences notificationsSettings3 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
                 SharedPreferences.Editor edit2 = notificationsSettings3.edit();
-                z10 = notificationsSettings3.getBoolean("EnableInAppVibrate", true);
-                edit2.putBoolean("EnableInAppVibrate", !z10);
+                z11 = notificationsSettings3.getBoolean("EnableInAppVibrate", true);
+                edit2.putBoolean("EnableInAppVibrate", !z11);
                 edit2.commit();
             } else if (i10 == notificationsSettingsActivity.inappPreviewRow) {
                 SharedPreferences notificationsSettings4 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
                 SharedPreferences.Editor edit3 = notificationsSettings4.edit();
-                z10 = notificationsSettings4.getBoolean("EnableInAppPreview", true);
-                edit3.putBoolean("EnableInAppPreview", !z10);
+                z11 = notificationsSettings4.getBoolean("EnableInAppPreview", true);
+                edit3.putBoolean("EnableInAppPreview", !z11);
                 edit3.commit();
             } else if (i10 == notificationsSettingsActivity.inchatSoundRow) {
                 SharedPreferences notificationsSettings5 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
                 SharedPreferences.Editor edit4 = notificationsSettings5.edit();
-                z10 = notificationsSettings5.getBoolean("EnableInChatSound", true);
-                boolean z11 = !z10;
-                edit4.putBoolean("EnableInChatSound", z11);
+                z11 = notificationsSettings5.getBoolean("EnableInChatSound", true);
+                boolean z12 = !z11;
+                edit4.putBoolean("EnableInChatSound", z12);
                 edit4.commit();
-                notificationsSettingsActivity.getNotificationsController().setInChatSoundEnabled(z11);
+                notificationsSettingsActivity.getNotificationsController().setInChatSoundEnabled(z12);
             } else if (i10 == notificationsSettingsActivity.inappPriorityRow) {
                 SharedPreferences notificationsSettings6 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
                 SharedPreferences.Editor edit5 = notificationsSettings6.edit();
-                z10 = notificationsSettings6.getBoolean("EnableInAppPopup", true);
-                edit5.putBoolean("EnableInAppPopup", !z10);
+                z11 = notificationsSettings6.getBoolean("EnableInAppPopup", true);
+                edit5.putBoolean("EnableInAppPopup", !z11);
                 edit5.commit();
             } else if (i10 == notificationsSettingsActivity.contactJoinedRow) {
                 SharedPreferences notificationsSettings7 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
                 SharedPreferences.Editor edit6 = notificationsSettings7.edit();
-                z10 = notificationsSettings7.getBoolean("EnableContactJoined", true);
-                boolean z12 = !z10;
-                MessagesController.getInstance(notificationsSettingsActivity.currentAccount).enableJoined = z12;
-                edit6.putBoolean("EnableContactJoined", z12);
+                z11 = notificationsSettings7.getBoolean("EnableContactJoined", true);
+                boolean z13 = !z11;
+                MessagesController.getInstance(notificationsSettingsActivity.currentAccount).enableJoined = z13;
+                edit6.putBoolean("EnableContactJoined", z13);
                 edit6.commit();
                 TL_account.setContactSignUpNotification setcontactsignupnotification = new TL_account.setContactSignUpNotification();
-                setcontactsignupnotification.silent = z10;
-                ConnectionsManager.getInstance(notificationsSettingsActivity.currentAccount).sendRequest(setcontactsignupnotification, new nh.p5(i14));
+                setcontactsignupnotification.silent = z11;
+                ConnectionsManager.getInstance(notificationsSettingsActivity.currentAccount).sendRequest(setcontactsignupnotification, new bi.c7(8));
             } else if (i10 == notificationsSettingsActivity.pinnedMessageRow) {
                 SharedPreferences notificationsSettings8 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
                 SharedPreferences.Editor edit7 = notificationsSettings8.edit();
-                z10 = notificationsSettings8.getBoolean("PinnedMessages", true);
-                edit7.putBoolean("PinnedMessages", !z10);
+                z11 = notificationsSettings8.getBoolean("PinnedMessages", true);
+                edit7.putBoolean("PinnedMessages", !z11);
                 edit7.commit();
-            } else if (i10 == notificationsSettingsActivity.M) {
+            } else if (i10 == notificationsSettingsActivity.P) {
                 SharedPreferences notificationsSettings9 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
                 SharedPreferences.Editor edit8 = notificationsSettings9.edit();
-                z10 = notificationsSettings9.getBoolean("EnableAutoNotifications", false);
-                edit8.putBoolean("EnableAutoNotifications", !z10);
+                z11 = notificationsSettings9.getBoolean("EnableAutoNotifications", false);
+                edit8.putBoolean("EnableAutoNotifications", !z11);
                 edit8.commit();
             } else if (i10 == notificationsSettingsActivity.badgeNumberShowRow) {
                 SharedPreferences.Editor edit9 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount).edit();
-                z10 = notificationsSettingsActivity.getNotificationsController().showBadgeNumber;
-                notificationsSettingsActivity.getNotificationsController().showBadgeNumber = !z10;
+                z11 = notificationsSettingsActivity.getNotificationsController().showBadgeNumber;
+                notificationsSettingsActivity.getNotificationsController().showBadgeNumber = !z11;
                 edit9.putBoolean("badgeNumber", notificationsSettingsActivity.getNotificationsController().showBadgeNumber);
                 edit9.commit();
                 notificationsSettingsActivity.getNotificationsController().updateBadge();
             } else if (i10 == notificationsSettingsActivity.badgeNumberMutedRow) {
                 SharedPreferences.Editor edit10 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount).edit();
-                z10 = notificationsSettingsActivity.getNotificationsController().showBadgeMuted;
-                notificationsSettingsActivity.getNotificationsController().showBadgeMuted = !z10;
+                z11 = notificationsSettingsActivity.getNotificationsController().showBadgeMuted;
+                notificationsSettingsActivity.getNotificationsController().showBadgeMuted = !z11;
                 edit10.putBoolean("badgeNumberMuted", notificationsSettingsActivity.getNotificationsController().showBadgeMuted);
                 edit10.commit();
                 notificationsSettingsActivity.getNotificationsController().updateBadge();
                 notificationsSettingsActivity.getMessagesStorage().updateMutedDialogsFiltersCounters();
             } else if (i10 == notificationsSettingsActivity.badgeNumberMessagesRow) {
                 SharedPreferences.Editor edit11 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount).edit();
-                z10 = notificationsSettingsActivity.getNotificationsController().showBadgeMessages;
-                notificationsSettingsActivity.getNotificationsController().showBadgeMessages = !z10;
+                z11 = notificationsSettingsActivity.getNotificationsController().showBadgeMessages;
+                notificationsSettingsActivity.getNotificationsController().showBadgeMessages = !z11;
                 edit11.putBoolean("badgeNumberMessages", notificationsSettingsActivity.getNotificationsController().showBadgeMessages);
                 edit11.commit();
                 notificationsSettingsActivity.getNotificationsController().updateBadge();
             } else if (i10 == notificationsSettingsActivity.w) {
                 SharedPreferences notificationsSettings10 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
-                z4 = notificationsSettings10.getBoolean("pushConnection", notificationsSettingsActivity.getMessagesController().backgroundConnection);
+                z10 = notificationsSettings10.getBoolean("pushConnection", notificationsSettingsActivity.getMessagesController().backgroundConnection);
                 SharedPreferences.Editor edit12 = notificationsSettings10.edit();
-                edit12.putBoolean("pushConnection", !z4);
+                edit12.putBoolean("pushConnection", !z10);
                 edit12.commit();
-                if (z4) {
+                if (z10) {
                     ConnectionsManager.getInstance(notificationsSettingsActivity.currentAccount).setPushConnectionEnabled(false);
                 } else {
                     ConnectionsManager.getInstance(notificationsSettingsActivity.currentAccount).setPushConnectionEnabled(true);
                 }
             } else if (i10 == notificationsSettingsActivity.accountsAllRow) {
                 SharedPreferences globalNotificationsSettings = MessagesController.getGlobalNotificationsSettings();
-                boolean z13 = globalNotificationsSettings.getBoolean("AllAccounts", true);
+                boolean z14 = globalNotificationsSettings.getBoolean("AllAccounts", true);
                 SharedPreferences.Editor edit13 = globalNotificationsSettings.edit();
-                boolean z14 = !z13;
-                edit13.putBoolean("AllAccounts", z14);
+                boolean z15 = !z14;
+                edit13.putBoolean("AllAccounts", z15);
                 edit13.commit();
-                SharedConfig.showNotificationsForAllAccounts = z14;
-                for (int i15 = 0; i15 < 4; i15++) {
+                SharedConfig.showNotificationsForAllAccounts = z15;
+                for (int i13 = 0; i13 < 4; i13++) {
                     if (SharedConfig.showNotificationsForAllAccounts) {
-                        NotificationsController.getInstance(i15).showNotifications();
-                    } else if (i15 == notificationsSettingsActivity.currentAccount) {
-                        NotificationsController.getInstance(i15).showNotifications();
+                        NotificationsController.getInstance(i13).showNotifications();
+                    } else if (i13 == notificationsSettingsActivity.currentAccount) {
+                        NotificationsController.getInstance(i13).showNotifications();
                     } else {
-                        NotificationsController.getInstance(i15).hideNotifications();
+                        NotificationsController.getInstance(i13).hideNotifications();
                     }
                 }
-                z10 = z13;
+                z11 = z14;
             } else if (i10 == notificationsSettingsActivity.v) {
                 SharedPreferences notificationsSettings11 = MessagesController.getNotificationsSettings(notificationsSettingsActivity.currentAccount);
-                z10 = notificationsSettings11.getBoolean("pushService", notificationsSettingsActivity.getMessagesController().keepAliveService);
+                z11 = notificationsSettings11.getBoolean("pushService", notificationsSettingsActivity.getMessagesController().keepAliveService);
                 SharedPreferences.Editor edit14 = notificationsSettings11.edit();
-                edit14.putBoolean("pushService", !z10);
+                edit14.putBoolean("pushService", !z11);
                 edit14.commit();
                 ApplicationLoader.startPushService();
-            } else if (i10 == notificationsSettingsActivity.E) {
+            } else if (i10 == notificationsSettingsActivity.H) {
                 if (notificationsSettingsActivity.getParentActivity() == null) {
                     return;
                 } else {
-                    notificationsSettingsActivity.showDialog(org.telegram.ui.Components.z4.Y(notificationsSettingsActivity.getParentActivity(), 0L, 0L, i10 == notificationsSettingsActivity.E ? "vibrate_calls" : null, new org.telegram.ui.Components.dw(notificationsSettingsActivity, i10, i13), null));
+                    notificationsSettingsActivity.showDialog(org.telegram.ui.Components.e5.Y(notificationsSettingsActivity.getParentActivity(), 0L, 0L, i10 == notificationsSettingsActivity.H ? "vibrate_calls" : null, new org.telegram.ui.Components.m8(notificationsSettingsActivity, i10, 20), null));
                 }
-            } else if (i10 == notificationsSettingsActivity.N) {
+            } else if (i10 == notificationsSettingsActivity.Q) {
                 AlertDialog$Builder alertDialog$Builder2 = new AlertDialog$Builder(notificationsSettingsActivity.getParentActivity());
                 String string3 = LocaleController.getString("RepeatNotifications", R.string.RepeatNotifications);
-                org.telegram.ui.ActionBar.d2 d2Var2 = alertDialog$Builder2.a;
-                d2Var2.O = string3;
-                alertDialog$Builder2.f(new CharSequence[]{LocaleController.getString("RepeatDisabled", R.string.RepeatDisabled), LocaleController.formatPluralString("Minutes", 5, new Object[0]), LocaleController.formatPluralString("Minutes", 10, new Object[0]), LocaleController.formatPluralString("Minutes", 30, new Object[0]), LocaleController.formatPluralString("Hours", 1, new Object[0]), LocaleController.formatPluralString("Hours", 2, new Object[0]), LocaleController.formatPluralString("Hours", 4, new Object[0])}, new uy(notificationsSettingsActivity, i10, 1));
+                org.telegram.ui.ActionBar.b2 b2Var2 = alertDialog$Builder2.a;
+                b2Var2.R = string3;
+                alertDialog$Builder2.f(new CharSequence[]{LocaleController.getString("RepeatDisabled", R.string.RepeatDisabled), LocaleController.formatPluralString("Minutes", 5, new Object[0]), LocaleController.formatPluralString("Minutes", 10, new Object[0]), LocaleController.formatPluralString("Minutes", 30, new Object[0]), LocaleController.formatPluralString("Hours", 1, new Object[0]), LocaleController.formatPluralString("Hours", 2, new Object[0]), LocaleController.formatPluralString("Hours", 4, new Object[0])}, new yy(notificationsSettingsActivity, i10, 1));
                 alertDialog$Builder2.h(LocaleController.getString("Cancel", R.string.Cancel), null);
-                notificationsSettingsActivity.showDialog(d2Var2);
+                notificationsSettingsActivity.showDialog(b2Var2);
             }
-            if (view instanceof org.telegram.ui.Cells.r8) {
+            if (view instanceof org.telegram.ui.Cells.w8) {
                 return;
             }
-            ((org.telegram.ui.Cells.r8) view).setChecked(!z10);
+            ((org.telegram.ui.Cells.w8) view).setChecked(!z11);
             return;
         }
         if (i10 == i12) {
@@ -807,14 +805,14 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
             return;
         }
         org.telegram.ui.Cells.i5 i5Var = (org.telegram.ui.Cells.i5) view;
-        if ((!LocaleController.isRTL || f10 > AndroidUtilities.dp(76.0f)) && (LocaleController.isRTL || f10 < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f))) {
-            int i16 = i11;
-            z4 = isGlobalNotificationsEnabled;
-            notificationsSettingsActivity.presentFragment(new NotificationsCustomSettingsActivity(i16, arrayList, arrayList2, false));
+        if ((!LocaleController.isRTL || f7 > AndroidUtilities.dp(76.0f)) && (LocaleController.isRTL || f7 < view.getMeasuredWidth() - AndroidUtilities.dp(76.0f))) {
+            int i14 = i11;
+            z10 = isGlobalNotificationsEnabled;
+            notificationsSettingsActivity.presentFragment(new NotificationsCustomSettingsActivity(i14, arrayList, arrayList2, false));
         } else {
-            boolean z15 = isGlobalNotificationsEnabled;
-            org.telegram.messenger.uj ujVar = new org.telegram.messenger.uj(notificationsSettingsActivity, i11, z15, i5Var, i10);
-            z4 = z15;
+            boolean z16 = isGlobalNotificationsEnabled;
+            org.telegram.messenger.sj sjVar = new org.telegram.messenger.sj(notificationsSettingsActivity, i11, z16, i5Var, i10);
+            z10 = z16;
             if (i10 == notificationsSettingsActivity.storiesRow) {
                 arrayList3 = notificationsSettingsActivity.h;
                 arrayList4 = notificationsSettingsActivity.n;
@@ -838,7 +836,7 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                 }
                 arrayList4 = null;
             } else if (i10 == notificationsSettingsActivity.reactionsRow) {
-                ujVar.run();
+                sjVar.run();
             } else {
                 arrayList3 = notificationsSettingsActivity.f;
                 if (arrayList3 != null && !arrayList3.isEmpty()) {
@@ -849,24 +847,24 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                 arrayList4 = null;
             }
             if (str == null) {
-                ujVar.run();
+                sjVar.run();
             } else {
                 AlertDialog$Builder alertDialog$Builder3 = new AlertDialog$Builder(notificationsSettingsActivity.getParentActivity());
                 int size = arrayList3.size();
-                org.telegram.ui.ActionBar.d2 d2Var3 = alertDialog$Builder3.a;
+                org.telegram.ui.ActionBar.b2 b2Var3 = alertDialog$Builder3.a;
                 if (size == 1) {
-                    d2Var3.Q = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.NotificationsExceptionsSingleAlert, str));
+                    b2Var3.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.NotificationsExceptionsSingleAlert, str));
                 } else {
-                    d2Var3.Q = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.NotificationsExceptionsAlert, str));
+                    b2Var3.T = AndroidUtilities.replaceTags(LocaleController.formatString(R.string.NotificationsExceptionsAlert, str));
                 }
-                d2Var3.O = LocaleController.getString("NotificationsExceptions", R.string.NotificationsExceptions);
-                alertDialog$Builder3.i(LocaleController.getString("ViewExceptions", R.string.ViewExceptions), new f7(notificationsSettingsActivity, arrayList3, arrayList4, i13));
-                alertDialog$Builder3.h(LocaleController.getString("OK", R.string.OK), new hu(ujVar, 26));
-                notificationsSettingsActivity.showDialog(d2Var3);
+                b2Var3.R = LocaleController.getString("NotificationsExceptions", R.string.NotificationsExceptions);
+                alertDialog$Builder3.i(LocaleController.getString("ViewExceptions", R.string.ViewExceptions), new b7(notificationsSettingsActivity, arrayList3, arrayList4, 16));
+                alertDialog$Builder3.h(LocaleController.getString("OK", R.string.OK), new iu(sjVar, 26));
+                notificationsSettingsActivity.showDialog(b2Var3);
             }
         }
-        z10 = z4;
-        if (view instanceof org.telegram.ui.Cells.r8) {
+        z11 = z10;
+        if (view instanceof org.telegram.ui.Cells.w8) {
         }
     }
 
@@ -875,42 +873,42 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
             return;
         }
         notificationsSettingsActivity.b = true;
-        ConnectionsManager.getInstance(notificationsSettingsActivity.currentAccount).sendRequest(new TL_account.resetNotifySettings(), new o(notificationsSettingsActivity, 15));
+        ConnectionsManager.getInstance(notificationsSettingsActivity.currentAccount).sendRequest(new TL_account.resetNotifySettings(), new m(notificationsSettingsActivity, 15));
     }
 
-    public final void A0(et etVar) {
+    public final void A0(org.telegram.ui.Components.r11 r11Var) {
         MediaDataController.getInstance(this.currentAccount).loadHints(true);
-        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new jf0(this, new ArrayList(MediaDataController.getInstance(this.currentAccount).hints), etVar, 9));
+        MessagesStorage.getInstance(this.currentAccount).getStorageQueue().postRunnable(new pf0(this, new ArrayList(MediaDataController.getInstance(this.currentAccount).hints), r11Var, 9));
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final View createView(Context context) {
         this.actionBar.setBackButtonImage(R.drawable.ic_ab_back);
         int i10 = 1;
         this.actionBar.setAllowOverlayTitle(true);
         this.actionBar.setTitle(LocaleController.getString(R.string.NotificationsAndSounds));
-        this.actionBar.setActionBarMenuOnItemClick(new org.telegram.ui.Components.y51(this, 28));
-        org.telegram.ui.ActionBar.e5 e5Var = this.parentLayout;
-        if (e5Var != null && ((ActionBarLayout) e5Var).K0) {
+        this.actionBar.setActionBarMenuOnItemClick(new o70(this, 12));
+        org.telegram.ui.ActionBar.d5 d5Var = this.parentLayout;
+        if (d5Var != null && ((ActionBarLayout) d5Var).N0) {
             this.actionBar.setBackButtonImage(R.drawable.ic_ab_close);
         }
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
         frameLayout.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false));
-        org.telegram.ui.Components.rl0 rl0Var = new org.telegram.ui.Components.rl0(context, null);
-        this.a = rl0Var;
-        rl0Var.o1();
+        org.telegram.ui.Components.ll0 ll0Var = new org.telegram.ui.Components.ll0(context, null);
+        this.a = ll0Var;
+        ll0Var.o1();
         this.actionBar.setAdaptiveBackground(this.a);
         this.a.setItemAnimator(null);
         this.a.setLayoutAnimation(null);
-        this.a.setLayoutManager(new k(i10, false, 11));
+        this.a.setLayoutManager(new hg.b0(i10, false, 13));
         this.a.setVerticalScrollBarEnabled(false);
-        frameLayout.addView(this.a, k7.b6.c(-1.0f, -1));
-        org.telegram.ui.Components.rl0 rl0Var2 = this.a;
-        kk0 kk0Var = new kk0(this, context);
-        this.c = kk0Var;
-        rl0Var2.setAdapter(kk0Var);
-        this.a.setOnItemClickListener(new jk0(this));
+        frameLayout.addView(this.a, w7.x5.c(-1.0f, -1));
+        org.telegram.ui.Components.ll0 ll0Var2 = this.a;
+        vk0 vk0Var = new vk0(this, context);
+        this.c = vk0Var;
+        ll0Var2.setAdapter(vk0Var);
+        this.a.setOnItemClickListener(new uk0(this));
         return this.fragmentView;
     }
 
@@ -921,10 +919,10 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final ArrayList getThemeDescriptions() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 16, new Class[]{org.telegram.ui.Cells.l4.class, org.telegram.ui.Cells.r8.class, org.telegram.ui.Cells.y8.class, org.telegram.ui.Cells.z9.class, org.telegram.ui.Cells.i5.class}, null, null, null, org.telegram.ui.ActionBar.j6.d6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 16, new Class[]{org.telegram.ui.Cells.l4.class, org.telegram.ui.Cells.w8.class, org.telegram.ui.Cells.d9.class, org.telegram.ui.Cells.ea.class, org.telegram.ui.Cells.i5.class}, null, null, null, org.telegram.ui.ActionBar.j6.d6));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.fragmentView, 1, null, null, null, null, org.telegram.ui.ActionBar.j6.a7));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 32768, null, null, null, null, org.telegram.ui.ActionBar.j6.s8));
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.actionBar, 64, null, null, null, null, org.telegram.ui.ActionBar.j6.v8));
@@ -941,25 +939,25 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.i5.class}, new String[]{"checkBox"}, null, null, -1, null, i12));
         int i13 = org.telegram.ui.ActionBar.j6.N6;
         arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.i5.class}, new String[]{"checkBox"}, null, null, -1, null, i13));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"valueTextView"}, null, null, -1, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"checkBox"}, null, null, -1, null, i12));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.r8.class}, new String[]{"checkBox"}, null, null, -1, null, i13));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.z9.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.z9.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.I6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.y8.class}, new String[]{"textView"}, null, null, -1, null, i10));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.y8.class}, new String[]{"valueTextView"}, null, null, -1, null, i11));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.z8.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.B6));
-        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 2, new Class[]{org.telegram.ui.Cells.z8.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.J6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"valueTextView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"checkBox"}, null, null, -1, null, i12));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.w8.class}, new String[]{"checkBox"}, null, null, -1, null, i13));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.ea.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.ea.class}, new String[]{"valueTextView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.I6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.d9.class}, new String[]{"textView"}, null, null, -1, null, i10));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.d9.class}, new String[]{"valueTextView"}, null, null, -1, null, i11));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 0, new Class[]{org.telegram.ui.Cells.e9.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.B6));
+        arrayList.add(new org.telegram.ui.ActionBar.l6(this.a, 2, new Class[]{org.telegram.ui.Cells.e9.class}, new String[]{"textView"}, null, null, -1, null, org.telegram.ui.ActionBar.j6.J6));
         return arrayList;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean isSupportEdgeToEdge() {
         return true;
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onActivityResultFragment(int i10, int i11, Intent intent) {
         String str;
         Ringtone ringtone;
@@ -968,11 +966,11 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
             if (uri == null || (ringtone = RingtoneManager.getRingtone(getParentActivity(), uri)) == null) {
                 str = null;
             } else {
-                str = i10 == this.F ? uri.equals(Settings.System.DEFAULT_RINGTONE_URI) ? LocaleController.getString("DefaultRingtone", R.string.DefaultRingtone) : ringtone.getTitle(getParentActivity()) : uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI) ? LocaleController.getString("SoundDefault", R.string.SoundDefault) : ringtone.getTitle(getParentActivity());
+                str = i10 == this.I ? uri.equals(Settings.System.DEFAULT_RINGTONE_URI) ? LocaleController.getString("DefaultRingtone", R.string.DefaultRingtone) : ringtone.getTitle(getParentActivity()) : uri.equals(Settings.System.DEFAULT_NOTIFICATION_URI) ? LocaleController.getString("SoundDefault", R.string.SoundDefault) : ringtone.getTitle(getParentActivity());
                 ringtone.stop();
             }
             SharedPreferences.Editor edit = MessagesController.getNotificationsSettings(this.currentAccount).edit();
-            if (i10 == this.F) {
+            if (i10 == this.I) {
                 if (str == null || uri == null) {
                     edit.putString("CallsRingtone", "NoSound");
                     edit.putString("CallsRingtonePath", "NoSound");
@@ -980,29 +978,29 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
                     edit.putString("CallsRingtone", str);
                     edit.putString("CallsRingtonePath", uri.toString());
                 }
-                this.T = true;
+                this.W = true;
             }
             edit.commit();
             this.c.m(i10);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final boolean onFragmentCreate() {
         MessagesController.getInstance(this.currentAccount).loadSignUpNotificationsSettings();
         A0(null);
         if (UserConfig.getActivatedAccountsCount() > 1) {
-            int i10 = this.R;
+            int i10 = this.U;
             this.r = i10;
             this.accountsAllRow = i10 + 1;
-            this.R = i10 + 3;
+            this.U = i10 + 3;
             this.s = i10 + 2;
         } else {
             this.r = -1;
             this.accountsAllRow = -1;
             this.s = -1;
         }
-        int i11 = this.R;
+        int i11 = this.U;
         this.x = i11;
         this.privateRow = i11 + 1;
         this.groupRow = i11 + 2;
@@ -1010,59 +1008,59 @@ public class NotificationsSettingsActivity extends org.telegram.ui.ActionBar.p2 
         this.storiesRow = i11 + 4;
         this.reactionsRow = i11 + 5;
         this.y = i11 + 6;
-        this.D = i11 + 7;
-        this.E = i11 + 8;
-        this.F = i11 + 9;
-        this.G = i11 + 10;
-        this.K = i11 + 11;
+        this.G = i11 + 7;
+        this.H = i11 + 8;
+        this.I = i11 + 9;
+        this.J = i11 + 10;
+        this.N = i11 + 11;
         this.badgeNumberShowRow = i11 + 12;
         this.badgeNumberMutedRow = i11 + 13;
         this.badgeNumberMessagesRow = i11 + 14;
-        this.L = i11 + 15;
-        this.B = i11 + 16;
+        this.O = i11 + 15;
+        this.E = i11 + 16;
         this.inappSoundRow = i11 + 17;
         this.inappVibrateRow = i11 + 18;
         this.inappPreviewRow = i11 + 19;
         this.inchatSoundRow = i11 + 20;
         this.inappPriorityRow = i11 + 21;
-        this.C = i11 + 22;
-        this.H = i11 + 23;
+        this.F = i11 + 22;
+        this.K = i11 + 23;
         this.contactJoinedRow = i11 + 24;
         this.pinnedMessageRow = i11 + 25;
-        this.I = i11 + 26;
-        this.J = i11 + 27;
+        this.L = i11 + 26;
+        this.M = i11 + 27;
         this.v = i11 + 28;
         this.w = i11 + 29;
-        this.M = -1;
-        this.N = i11 + 30;
-        this.O = i11 + 31;
-        this.P = i11 + 32;
+        this.P = -1;
+        this.Q = i11 + 30;
+        this.R = i11 + 31;
+        this.S = i11 + 32;
         this.resetNotificationsRow = i11 + 33;
-        this.R = i11 + 35;
-        this.Q = i11 + 34;
+        this.U = i11 + 35;
+        this.T = i11 + 34;
         NotificationCenter.getInstance(this.currentAccount).addObserver(this, NotificationCenter.notificationsSettingsUpdated);
         getMessagesController().reloadReactionsNotifySettings();
         return super.onFragmentCreate();
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onFragmentDestroy() {
         super.onFragmentDestroy();
         NotificationCenter.getInstance(this.currentAccount).removeObserver(this, NotificationCenter.notificationsSettingsUpdated);
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onInsets(int i10, int i11, int i12, int i13) {
         this.a.setPadding(0, 0, 0, i13);
         this.a.setClipToPadding(false);
     }
 
-    @Override // org.telegram.ui.ActionBar.p2
+    @Override // org.telegram.ui.ActionBar.n2
     public final void onResume() {
         super.onResume();
-        kk0 kk0Var = this.c;
-        if (kk0Var != null) {
-            kk0Var.l();
+        vk0 vk0Var = this.c;
+        if (vk0Var != null) {
+            vk0Var.l();
         }
     }
 }

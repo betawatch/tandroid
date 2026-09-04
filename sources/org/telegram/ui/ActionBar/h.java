@@ -6,7 +6,7 @@ import android.transition.TransitionValues;
 import android.view.View;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class h extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -29,25 +29,25 @@ public final class h extends AnimatorListenerAdapter {
                 actionBarPopupWindow$ActionBarPopupWindowLayout.n = false;
                 int itemsCount = actionBarPopupWindow$ActionBarPopupWindowLayout.getItemsCount();
                 for (int i10 = 0; i10 < itemsCount; i10++) {
-                    View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.I.getChildAt(i10);
-                    if (!(childAt instanceof m1)) {
+                    View childAt = actionBarPopupWindow$ActionBarPopupWindowLayout.L.getChildAt(i10);
+                    if (!(childAt instanceof k1)) {
                         childAt.setTranslationY(0.0f);
                         childAt.setAlpha(childAt.isEnabled() ? 1.0f : 0.5f);
                     }
                 }
                 break;
             case 2:
-                r1 r1Var = (r1) this.b;
-                if (!r1Var.e) {
-                    r1Var.j();
+                p1 p1Var = (p1) this.b;
+                if (!p1Var.e) {
+                    p1Var.j();
                     break;
                 }
                 break;
             case 3:
-                n3 n3Var = (n3) this.b;
-                if (n3Var.C == animator) {
-                    n3Var.D = n3Var.E;
-                    Iterator it = n3Var.F.iterator();
+                o3 o3Var = (o3) this.b;
+                if (o3Var.F == animator) {
+                    o3Var.G = o3Var.H;
+                    Iterator it = o3Var.I.iterator();
                     while (it.hasNext()) {
                         ((Runnable) it.next()).run();
                     }
@@ -55,16 +55,16 @@ public final class h extends AnimatorListenerAdapter {
                 }
                 break;
             default:
-                w3 w3Var = (w3) this.b;
-                n3 n3Var2 = w3Var.a;
-                if (n3Var2 != null) {
-                    n3Var2.b = true;
-                    n3Var2.invalidate();
+                x3 x3Var = (x3) this.b;
+                o3 o3Var2 = x3Var.a;
+                if (o3Var2 != null) {
+                    o3Var2.b = true;
+                    o3Var2.invalidate();
                 }
-                w3Var.S = w3Var.R ? 1.0f : 0.0f;
-                w3Var.invalidate();
-                if (!w3Var.R) {
-                    w3Var.O.clear();
+                x3Var.V = x3Var.U ? 1.0f : 0.0f;
+                x3Var.invalidate();
+                if (!x3Var.U) {
+                    x3Var.R.clear();
                     break;
                 }
                 break;

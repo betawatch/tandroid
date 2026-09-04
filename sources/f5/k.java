@@ -1,78 +1,116 @@
 package f5;
 
-import android.content.Context;
-import android.media.AudioAttributes;
-import android.media.AudioFormat;
-import android.media.AudioManager;
-import android.media.Spatializer;
-import android.os.Handler;
-import android.os.Looper;
-import h5.d0;
-import j3.n0;
-import org.webrtc.MediaStreamTrack;
+import com.google.android.gms.internal.vision.e2;
+import java.nio.ByteBuffer;
+import java.util.Date;
+import w7.q6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class k {
-    public final Spatializer a;
-    public final boolean b;
-    public Handler c;
-    public j d;
+public final class k extends com.googlecode.mp4parser.c {
+    public static final /* synthetic */ mg.n E;
+    public static final /* synthetic */ mg.n F;
+    public static final /* synthetic */ mg.n G;
+    public static final /* synthetic */ mg.n H;
+    public static final /* synthetic */ mg.n I;
+    public static final /* synthetic */ mg.n s;
+    public static final /* synthetic */ mg.n v;
+    public static final /* synthetic */ mg.n w;
+    public static final /* synthetic */ mg.n x;
+    public static final /* synthetic */ mg.n y;
+    public Date e;
+    public Date f;
+    public long h;
+    public long n;
+    public String r;
 
-    public k(Spatializer spatializer) {
-        this.a = spatializer;
-        this.b = spatializer.getImmersiveAudioLevel() != 0;
+    static {
+        re.a aVar = new re.a(k.class, "MediaHeaderBox.java");
+        s = aVar.e(aVar.d("getCreationTime", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.util.Date"));
+        v = aVar.e(aVar.d("getModificationTime", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.util.Date"));
+        I = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.lang.String"));
+        w = aVar.e(aVar.d("getTimescale", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "long"));
+        x = aVar.e(aVar.d("getDuration", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "long"));
+        y = aVar.e(aVar.d("getLanguage", "com.coremedia.iso.boxes.MediaHeaderBox", "", "", "java.lang.String"));
+        E = aVar.e(aVar.d("setCreationTime", "com.coremedia.iso.boxes.MediaHeaderBox", "java.util.Date", "creationTime", "void"));
+        aVar.e(aVar.d("setModificationTime", "com.coremedia.iso.boxes.MediaHeaderBox", "java.util.Date", "modificationTime", "void"));
+        F = aVar.e(aVar.d("setTimescale", "com.coremedia.iso.boxes.MediaHeaderBox", "long", "timescale", "void"));
+        G = aVar.e(aVar.d("setDuration", "com.coremedia.iso.boxes.MediaHeaderBox", "long", "duration", "void"));
+        H = aVar.e(aVar.d("setLanguage", "com.coremedia.iso.boxes.MediaHeaderBox", "java.lang.String", "language", "void"));
     }
 
-    public static k f(Context context) {
-        AudioManager audioManager = (AudioManager) context.getSystemService(MediaStreamTrack.AUDIO_TRACK_KIND);
-        if (audioManager == null) {
-            return null;
+    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        if (e() == 1) {
+            this.e = q6.b(e5.b.j(byteBuffer));
+            this.f = q6.b(e5.b.j(byteBuffer));
+            this.h = e5.b.i(byteBuffer);
+            this.n = e5.b.j(byteBuffer);
+        } else {
+            this.e = q6.b(e5.b.i(byteBuffer));
+            this.f = q6.b(e5.b.i(byteBuffer));
+            this.h = e5.b.i(byteBuffer);
+            this.n = e5.b.i(byteBuffer);
         }
-        return new k(audioManager.getSpatializer());
-    }
-
-    public final boolean a(n0 n0Var, l3.d dVar) {
-        String str = n0Var.C;
-        int i10 = n0Var.P;
-        if ("audio/eac3-joc".equals(str) && i10 == 16) {
-            i10 = 12;
+        int h = e5.b.h(byteBuffer);
+        StringBuilder sb2 = new StringBuilder();
+        for (int i10 = 0; i10 < 3; i10++) {
+            sb2.append((char) (((h >> ((2 - i10) * 5)) & 31) + 96));
         }
-        AudioFormat.Builder channelMask = new AudioFormat.Builder().setEncoding(2).setChannelMask(d0.n(i10));
-        int i11 = n0Var.Q;
-        if (i11 != -1) {
-            channelMask.setSampleRate(i11);
+        this.r = sb2.toString();
+        e5.b.h(byteBuffer);
+    }
+
+    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        if (e() == 1) {
+            byteBuffer.putLong(q6.a(this.e));
+            byteBuffer.putLong(q6.a(this.f));
+            byteBuffer.putInt((int) this.h);
+            byteBuffer.putLong(this.n);
+        } else {
+            byteBuffer.putInt((int) q6.a(this.e));
+            byteBuffer.putInt((int) q6.a(this.f));
+            byteBuffer.putInt((int) this.h);
+            byteBuffer.putInt((int) this.n);
         }
-        return this.a.canBeSpatialized((AudioAttributes) dVar.a().b, channelMask.build());
-    }
-
-    public final void b(p pVar, Looper looper) {
-        if (this.d == null && this.c == null) {
-            this.d = new j(pVar);
-            Handler handler = new Handler(looper);
-            this.c = handler;
-            this.a.addOnSpatializerStateChangedListener(new c2.f(handler, 0), this.d);
+        String str = this.r;
+        if (str.getBytes().length != 3) {
+            throw new IllegalArgumentException(a4.a.p("\"", str, "\" language string isn't exactly 3 characters long!"));
         }
-    }
-
-    public final boolean c() {
-        return this.a.isAvailable();
-    }
-
-    public final boolean d() {
-        return this.a.isEnabled();
-    }
-
-    public final void e() {
-        j jVar = this.d;
-        if (jVar == null || this.c == null) {
-            return;
+        int i10 = 0;
+        for (int i11 = 0; i11 < 3; i11++) {
+            i10 += (str.getBytes()[i11] - 96) << ((2 - i11) * 5);
         }
-        this.a.removeOnSpatializerStateChangedListener(jVar);
-        Handler handler = this.c;
-        int i10 = d0.a;
-        handler.removeCallbacksAndMessages(null);
-        this.c = null;
-        this.d = null;
+        e5.b.p(i10, byteBuffer);
+        e5.b.p(0, byteBuffer);
+    }
+
+    @Override // com.googlecode.mp4parser.a
+    public final long getContentSize() {
+        return (e() == 1 ? 32L : 20L) + 4;
+    }
+
+    public final String toString() {
+        com.google.firebase.messaging.s b10 = re.a.b(I, this, this);
+        com.googlecode.mp4parser.g.a().getClass();
+        com.googlecode.mp4parser.g.b(b10);
+        StringBuilder sb2 = new StringBuilder("MediaHeaderBox[creationTime=");
+        e2.q(re.a.b(s, this, this));
+        sb2.append(this.e);
+        sb2.append(";modificationTime=");
+        e2.q(re.a.b(v, this, this));
+        sb2.append(this.f);
+        sb2.append(";timescale=");
+        e2.q(re.a.b(w, this, this));
+        sb2.append(this.h);
+        sb2.append(";duration=");
+        e2.q(re.a.b(x, this, this));
+        sb2.append(this.n);
+        sb2.append(";language=");
+        e2.q(re.a.b(y, this, this));
+        return a4.a.s(sb2, this.r, "]");
     }
 }

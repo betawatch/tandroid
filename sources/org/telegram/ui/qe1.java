@@ -1,57 +1,165 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.ColorDrawable;
+import android.text.TextPaint;
 import android.view.View;
-import org.telegram.messenger.MessagesController;
+import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qe1 implements jh.d, MessagesController.ErrorDelegate, r0.o, org.telegram.ui.Components.kl0 {
-    public final /* synthetic */ sf1 a;
+public final class qe1 extends org.telegram.ui.Components.kl0 {
+    public int c;
+    public int d;
+    public int e;
+    public int f;
+    public int h;
+    public int n;
+    public final /* synthetic */ te1 r;
 
-    public /* synthetic */ qe1(sf1 sf1Var) {
-        this.a = sf1Var;
+    public qe1(te1 te1Var) {
+        this.r = te1Var;
     }
 
-    @Override // r0.o
-    public r0.m1 M0(View view, r0.m1 m1Var) {
-        int i10 = m1Var.a.f(519).d;
-        sf1 sf1Var = this.a;
-        sf1Var.b1 = i10;
-        of1 of1Var = sf1Var.o0;
-        if (of1Var != null) {
-            of1Var.setPadding(0, 0, 0, i10);
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        return c1Var.b() >= this.f && c1Var.b() < this.h;
+    }
+
+    public final void E() {
+        this.e = -1;
+        this.f = -1;
+        this.h = -1;
+        this.n = -1;
+        this.c = 2;
+        this.d = 1;
+        ArrayList arrayList = this.r.f;
+        if (arrayList.isEmpty()) {
+            return;
         }
-        if1 if1Var = sf1Var.n;
-        if (if1Var != null) {
-            if1Var.a.setTranslationY((-sf1Var.b1) - sf1Var.a1);
+        int i10 = this.c;
+        int i11 = i10 + 1;
+        this.e = i10;
+        int i12 = i10 + 2;
+        this.c = i12;
+        this.f = i11;
+        int size = (arrayList.size() - 1) + i12;
+        this.h = size;
+        this.c = size + 1;
+        this.n = size;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.c;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 1;
         }
-        sf1Var.h.setTranslationY(((-sf1Var.U0) - sf1Var.b1) - sf1Var.a1);
-        sf1Var.B0();
-        return r0.m1.b;
+        if (i10 == this.d) {
+            return 2;
+        }
+        if (i10 == this.e) {
+            return 3;
+        }
+        return i10 == this.n ? 5 : 4;
     }
 
-    @Override // org.telegram.ui.Components.kl0
-    public boolean c(float f10, float f11, int i10, View view) {
-        return sf1.W(this.a, view, f10);
+    @Override // s4.h0
+    public final void l() {
+        E();
+        super.l();
     }
 
-    @Override // jh.d
-    public void g(boolean z4, boolean z10) {
-        sf1 sf1Var = this.a;
-        sf1Var.R0.i(sf1Var.O0.c(), z4, z10);
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        View view = c1Var.a;
+        int i11 = this.e;
+        te1 te1Var = this.r;
+        if (i10 < i11 || i11 <= 0) {
+            view.setAlpha(1.0f);
+        } else {
+            view.setAlpha(te1Var.E);
+        }
+        if (j(i10) == 4) {
+            org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
+            TLRPC.Chat chat = (TLRPC.Chat) te1Var.f.get(i10 - this.f);
+            f4Var.e(chat, chat.title, (String) te1Var.h.get(i10 - this.f), i10 != this.h - 1);
+            f4Var.c(te1Var.w.contains(Long.valueOf(chat.id)), false);
+        }
     }
 
-    @Override // org.telegram.messenger.MessagesController.ErrorDelegate
-    public boolean run(TLRPC.TL_error tL_error) {
-        return sf1.U(this.a, tL_error);
-    }
-
-    @Override // org.telegram.ui.Components.kl0
-    public /* synthetic */ void h() {
-    }
-
-    @Override // org.telegram.ui.Components.kl0
-    public /* synthetic */ void p(float f10) {
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        View view2;
+        if (i10 != 1) {
+            if (i10 == 2) {
+                org.telegram.ui.Cells.a7 a7Var = new org.telegram.ui.Cells.a7(viewGroup.getContext(), (org.telegram.ui.Cells.p6) null);
+                org.telegram.ui.Components.oq oqVar = new org.telegram.ui.Components.oq(new ColorDrawable(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false)), org.telegram.ui.ActionBar.j6.V0(viewGroup.getContext(), R.drawable.greydivider, org.telegram.ui.ActionBar.j6.b7));
+                oqVar.w = true;
+                a7Var.setBackground(oqVar);
+                view2 = a7Var;
+            } else if (i10 != 3) {
+                view2 = i10 != 5 ? new org.telegram.ui.Cells.f4(viewGroup.getContext(), 1, 0, false) : new org.telegram.ui.Cells.k3(viewGroup.getContext(), AndroidUtilities.dp(12.0f));
+            } else {
+                org.telegram.ui.Cells.l4 l4Var = new org.telegram.ui.Cells.l4(viewGroup.getContext(), org.telegram.ui.ActionBar.j6.L6, 21, 8, false, null);
+                l4Var.setHeight(54);
+                l4Var.setText(LocaleController.getString(R.string.InactiveChats));
+                view = l4Var;
+            }
+            view = view2;
+        } else {
+            Context context = viewGroup.getContext();
+            org.telegram.ui.Cells.qa qaVar = new org.telegram.ui.Cells.qa(context);
+            ImageView imageView = new ImageView(context);
+            int i11 = org.telegram.ui.ActionBar.j6.m9;
+            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, i11, false), PorterDuff.Mode.MULTIPLY));
+            TextView textView = new TextView(context);
+            textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, i11, false));
+            textView.setTextSize(1, 20.0f);
+            textView.setTypeface(AndroidUtilities.bold());
+            textView.setGravity(17);
+            qaVar.addView(textView, w7.x5.d(-1, -2.0f, 51, 52.0f, 75.0f, 52.0f, 0.0f));
+            TextView textView2 = new TextView(context);
+            qaVar.a = textView2;
+            textView2.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.g9, false));
+            textView2.setTextSize(1, 14.0f);
+            textView2.setGravity(17);
+            qaVar.addView(textView2, w7.x5.d(-1, -2.0f, 51, 36.0f, 110.0f, 36.0f, 0.0f));
+            TextPaint textPaint = new TextPaint(1);
+            textPaint.setColor(-1);
+            textPaint.setTextSize(AndroidUtilities.dp(12.0f));
+            textPaint.setTypeface(AndroidUtilities.bold());
+            bi.e7 e7Var = new bi.e7(context, new Paint(1), textPaint);
+            e7Var.setWillNotDraw(false);
+            e7Var.addView(imageView, w7.x5.e(-2, -2, 1));
+            qaVar.addView(e7Var, w7.x5.d(-2, -2.0f, 49, 0.0f, 12.0f, 0.0f, 6.0f));
+            textView.setText(LocaleController.getString(R.string.TooManyCommunities));
+            imageView.setImageResource(R.drawable.groups_limit1);
+            te1 te1Var = this.r;
+            te1Var.x = qaVar;
+            int i12 = te1Var.G;
+            te1Var.x.setMessageText(i12 == 0 ? LocaleController.getString(R.string.TooManyCommunitiesHintJoin) : i12 == 1 ? LocaleController.getString(R.string.TooManyCommunitiesHintEdit) : LocaleController.getString(R.string.TooManyCommunitiesHintCreate));
+            s4.p0 p0Var = new s4.p0(-1, -2);
+            ((ViewGroup.MarginLayoutParams) p0Var).bottomMargin = AndroidUtilities.dp(16.0f);
+            ((ViewGroup.MarginLayoutParams) p0Var).topMargin = AndroidUtilities.dp(23.0f);
+            te1Var.x.setLayoutParams(p0Var);
+            view = qaVar;
+        }
+        return new org.telegram.ui.Components.vk0(view);
     }
 }

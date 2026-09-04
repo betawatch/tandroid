@@ -1,11 +1,11 @@
 package com.google.android.recaptcha.internal;
 
-import android.support.v4.media.a;
+import com.google.android.gms.internal.vision.e2;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 final class zzsd {
     private static final zzsd zzb = new zzsd(true);
@@ -138,10 +138,10 @@ final class zzsd {
     private final void zzm(Map.Entry entry) {
         zzsc zzscVar = (zzsc) entry.getKey();
         Object value = entry.getValue();
-        boolean z4 = value instanceof zztc;
+        boolean z10 = value instanceof zztc;
         zzscVar.zzg();
         if (zzscVar.zze() != zzvh.zzi) {
-            if (z4) {
+            if (z10) {
                 throw new IllegalStateException("Lazy fields must be message-valued");
             }
             this.zza.put(zzscVar, zzl(value));
@@ -149,13 +149,13 @@ final class zzsd {
         }
         Object zze = zze(zzscVar);
         if (zze != null) {
-            if (z4) {
+            if (z10) {
                 throw null;
             }
             this.zza.put(zzscVar, zze instanceof zztx ? zzscVar.zzc((zztx) zze, (zztx) value) : zzscVar.zzb(((zzts) zze).zzag(), (zzts) value).zzk());
         } else {
             this.zza.put(zzscVar, zzl(value));
-            if (z4) {
+            if (z10) {
                 this.zzd = true;
             }
         }
@@ -195,7 +195,7 @@ final class zzsd {
             zzA = zzqv.zzA(zza) + zzqv.zzA(16);
             int zzA3 = zzqv.zzA(24);
             int zza2 = ((zztc) value).zza();
-            zzx = a.C(zza2, zza2, zzA3);
+            zzx = e2.c(zza2, zza2, zzA3);
         } else {
             int zza3 = ((zzsc) entry.getKey()).zza();
             int zzA4 = zzqv.zzA(8);
@@ -320,7 +320,7 @@ final class zzsd {
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final void zzi(zzsc zzscVar, Object obj) {
-        boolean z4;
+        boolean z10;
         zzscVar.zzg();
         zzscVar.zzd();
         byte[] bArr = zzsv.zzb;
@@ -329,22 +329,22 @@ final class zzsd {
         zzvh zzvhVar = zzvh.zza;
         switch (r0.zza()) {
             case zza:
-                z4 = obj instanceof Integer;
+                z10 = obj instanceof Integer;
                 break;
             case zzb:
-                z4 = obj instanceof Long;
+                z10 = obj instanceof Long;
                 break;
             case zzc:
-                z4 = obj instanceof Float;
+                z10 = obj instanceof Float;
                 break;
             case zzd:
-                z4 = obj instanceof Double;
+                z10 = obj instanceof Double;
                 break;
             case zze:
-                z4 = obj instanceof Boolean;
+                z10 = obj instanceof Boolean;
                 break;
             case zzf:
-                z4 = obj instanceof String;
+                z10 = obj instanceof String;
                 break;
             case zzg:
                 if (!(obj instanceof zzqm)) {
@@ -397,7 +397,7 @@ final class zzsd {
         return true;
     }
 
-    private zzsd(boolean z4) {
+    private zzsd(boolean z10) {
         zzg();
         zzg();
     }

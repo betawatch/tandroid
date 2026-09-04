@@ -12,8 +12,8 @@ public final class u3 extends t3 {
         return new m4(this.i, this.h);
     }
 
-    public u3(w6 w6Var, LongBinaryOperator longBinaryOperator, long j10) {
+    public u3(w6 w6Var, LongBinaryOperator longBinaryOperator, long j3) {
         this.h = longBinaryOperator;
-        this.i = j10;
+        this.i = j3;
     }
 }

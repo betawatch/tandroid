@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public class GroupCreateCheckBox extends View {
     public static final /* synthetic */ int b = 0;
@@ -36,15 +36,15 @@ public class GroupCreateCheckBox extends View {
         }
     }
 
-    public void setProgress(float f10) {
-        if (this.a == f10) {
+    public void setProgress(float f7) {
+        if (this.a == f7) {
             return;
         }
-        this.a = f10;
+        this.a = f7;
         invalidate();
     }
 
-    public void setCheckScale(float f10) {
+    public void setCheckScale(float f7) {
     }
 
     public void setInnerRadDiff(int i10) {

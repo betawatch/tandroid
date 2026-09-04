@@ -7,7 +7,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_update;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class MemberRequestsController extends BaseController {
     private static final MemberRequestsController[] instances = new MemberRequestsController[4];
@@ -40,29 +40,29 @@ public class MemberRequestsController extends BaseController {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getImporters$0(TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z4, long j10, RequestDelegate requestDelegate) {
+    public /* synthetic */ void lambda$getImporters$0(TLRPC.TL_error tL_error, TLObject tLObject, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, long j3, RequestDelegate requestDelegate) {
         if (tL_error == null) {
             TLRPC.TL_messages_chatInviteImporters tL_messages_chatInviteImporters = (TLRPC.TL_messages_chatInviteImporters) tLObject;
-            if (tL_chatInviteImporter == null && z4) {
-                this.firstImportersCache.put(j10, tL_messages_chatInviteImporters);
+            if (tL_chatInviteImporter == null && z10) {
+                this.firstImportersCache.put(j3, tL_messages_chatInviteImporters);
             }
         }
         requestDelegate.run(tLObject, tL_error);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public /* synthetic */ void lambda$getImporters$1(TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z4, long j10, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error) {
-        AndroidUtilities.runOnUIThread(new zk(j10, this, requestDelegate, tLObject, tL_chatInviteImporter, tL_error, z4));
+    public /* synthetic */ void lambda$getImporters$1(TLRPC.TL_chatInviteImporter tL_chatInviteImporter, boolean z10, long j3, RequestDelegate requestDelegate, TLObject tLObject, TLRPC.TL_error tL_error) {
+        AndroidUtilities.runOnUIThread(new xk(j3, this, requestDelegate, tLObject, tL_chatInviteImporter, tL_error, z10));
     }
 
-    public TLRPC.TL_messages_chatInviteImporters getCachedImporters(long j10) {
-        return this.firstImportersCache.get(j10);
+    public TLRPC.TL_messages_chatInviteImporters getCachedImporters(long j3) {
+        return this.firstImportersCache.get(j3);
     }
 
-    public int getImporters(long j10, String str, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, LongSparseArray<TLRPC.User> longSparseArray, RequestDelegate requestDelegate) {
+    public int getImporters(long j3, String str, TLRPC.TL_chatInviteImporter tL_chatInviteImporter, LongSparseArray<TLRPC.User> longSparseArray, RequestDelegate requestDelegate) {
         boolean isEmpty = TextUtils.isEmpty(str);
         TLRPC.TL_messages_getChatInviteImporters tL_messages_getChatInviteImporters = new TLRPC.TL_messages_getChatInviteImporters();
-        tL_messages_getChatInviteImporters.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(-j10);
+        tL_messages_getChatInviteImporters.peer = MessagesController.getInstance(this.currentAccount).getInputPeer(-j3);
         tL_messages_getChatInviteImporters.requested = true;
         tL_messages_getChatInviteImporters.limit = 30;
         if (!isEmpty) {
@@ -75,13 +75,13 @@ public class MemberRequestsController extends BaseController {
             tL_messages_getChatInviteImporters.offset_user = getMessagesController().getInputUser(longSparseArray.get(tL_chatInviteImporter.user_id));
             tL_messages_getChatInviteImporters.offset_date = tL_chatInviteImporter.date;
         }
-        return getConnectionsManager().sendRequest(tL_messages_getChatInviteImporters, new ra(this, tL_chatInviteImporter, isEmpty, j10, requestDelegate, 3));
+        return getConnectionsManager().sendRequest(tL_messages_getChatInviteImporters, new oa(this, tL_chatInviteImporter, isEmpty, j3, requestDelegate, 3));
     }
 
     public void onPendingRequestsUpdated(TL_update.TL_updatePendingJoinRequests tL_updatePendingJoinRequests) {
-        long j10 = -MessageObject.getPeerId(tL_updatePendingJoinRequests.peer);
-        this.firstImportersCache.put(j10, null);
-        TLRPC.ChatFull chatFull = getMessagesController().getChatFull(j10);
+        long j3 = -MessageObject.getPeerId(tL_updatePendingJoinRequests.peer);
+        this.firstImportersCache.put(j3, null);
+        TLRPC.ChatFull chatFull = getMessagesController().getChatFull(j3);
         if (chatFull != null) {
             chatFull.requests_pending = tL_updatePendingJoinRequests.requests_pending;
             chatFull.recent_requesters = tL_updatePendingJoinRequests.recent_requesters;

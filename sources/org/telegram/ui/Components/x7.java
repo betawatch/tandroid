@@ -1,28 +1,46 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import android.content.Context;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class x7 extends FrameLayout {
-    public final p9[] a;
-    public int b;
-    public AnimatorSet c;
+public final class x7 extends AnimatorListenerAdapter {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ k8 b;
 
-    public x7(Context context) {
-        super(context);
-        this.a = new p9[2];
-        for (int i10 = 0; i10 < 2; i10++) {
-            this.a[i10] = new p9(context);
-            this.a[i10].getImageReceiver().setDelegate(new gg.m2(this, i10, 5));
-            this.a[i10].setRoundRadius(AndroidUtilities.dp(4.0f));
-            if (i10 == 1) {
-                this.a[i10].setVisibility(8);
-            }
-            addView(this.a[i10], k7.b6.c(-1.0f, -1));
+    public /* synthetic */ x7(k8 k8Var, int i10) {
+        this.a = i10;
+        this.b = k8Var;
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public void onAnimationCancel(Animator animator) {
+        switch (this.a) {
+            case 2:
+                this.b.C0 = null;
+                break;
+            default:
+                super.onAnimationCancel(animator);
+                break;
         }
+    }
+
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        switch (this.a) {
+            case 0:
+                this.b.m0 = false;
+                break;
+            case 1:
+                k8 k8Var = this.b;
+                k8Var.i0.setVisibility(4);
+                k8Var.j0.setImageBitmap(null);
+                k8Var.m0 = false;
+                break;
+        }
+    }
+
+    private final void a(Animator animator) {
     }
 }

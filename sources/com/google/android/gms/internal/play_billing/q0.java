@@ -1,82 +1,82 @@
 package com.google.android.gms.internal.play_billing;
 
-import j7.h6;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import v7.u5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class q0 implements Runnable {
     public final t0 a;
-    public final h5.u b;
+    public final j6.l b;
 
-    public q0(t0 t0Var, h5.u uVar) {
+    public q0(t0 t0Var, j6.l lVar) {
         this.a = t0Var;
-        this.b = uVar;
+        this.b = lVar;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     @Override // java.lang.Runnable
     public final void run() {
         Object obj;
-        Throwable b10;
+        Throwable c10;
         t0 t0Var = this.a;
-        boolean z4 = t0Var instanceof x0;
-        h5.u uVar = this.b;
-        if (z4 && (b10 = ((x0) t0Var).b()) != null) {
-            uVar.i(b10);
+        boolean z10 = t0Var instanceof x0;
+        j6.l lVar = this.b;
+        if (z10 && (c10 = ((x0) t0Var).c()) != null) {
+            lVar.k(c10);
             return;
         }
         try {
             boolean isDone = t0Var.isDone();
-            boolean z10 = false;
+            boolean z11 = false;
             Future future = t0Var;
             if (!isDone) {
-                throw new IllegalStateException(h6.a("Future was expected to be done: %s", t0Var));
+                throw new IllegalStateException(u5.a("Future was expected to be done: %s", t0Var));
             }
             while (true) {
                 try {
                     obj = future.get();
                     break;
                 } catch (InterruptedException unused) {
-                    z10 = true;
+                    z11 = true;
                     future = future;
                 } catch (Throwable th2) {
-                    if (z10) {
+                    if (z11) {
                         Thread.currentThread().interrupt();
                     }
                     throw th2;
                 }
             }
-            if (z10) {
+            if (z11) {
                 Thread.currentThread().interrupt();
             }
             Integer num = (Integer) obj;
             int intValue = num.intValue();
-            p2.y yVar = (p2.y) uVar.d;
+            c5.d0 d0Var = (c5.d0) lVar.d;
             if (intValue <= 0) {
-                ((Runnable) uVar.c).run();
+                ((Runnable) lVar.c).run();
                 return;
             }
-            int i10 = uVar.a;
+            int i10 = lVar.a;
             int intValue2 = num.intValue();
-            yVar.getClass();
-            p2.h a2 = p2.b0.a(intValue2, "Billing override value was set by a license tester.");
-            yVar.F(93, i10, a2);
-            ((q0.a) uVar.b).accept(a2);
-        } catch (ExecutionException e) {
-            uVar.i(e.getCause());
+            d0Var.getClass();
+            c5.h a2 = c5.g0.a(intValue2, "Billing override value was set by a license tester.");
+            d0Var.F(93, i10, a2);
+            ((q0.a) lVar.b).accept(a2);
+        } catch (ExecutionException e7) {
+            lVar.k(e7.getCause());
         } catch (Throwable th3) {
-            uVar.i(th3);
+            lVar.k(th3);
         }
     }
 
     public final String toString() {
-        af.d dVar = new af.d(q0.class.getSimpleName(), 10);
+        aa.a aVar = new aa.a(q0.class.getSimpleName(), 10);
         k kVar = new k();
-        ((k) dVar.d).b = kVar;
-        dVar.d = kVar;
+        ((k) aVar.d).b = kVar;
+        aVar.d = kVar;
         kVar.a = this.b;
-        return dVar.toString();
+        return aVar.toString();
     }
 }

@@ -12,8 +12,8 @@ public final class g0 extends i0 implements i5 {
     }
 
     @Override // j$.util.stream.i0, j$.util.stream.j5
-    public final void accept(long j10) {
-        x(Long.valueOf(j10));
+    public final void accept(long j3) {
+        x(Long.valueOf(j3));
     }
 
     @Override // java.util.function.Supplier

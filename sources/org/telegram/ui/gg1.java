@@ -1,20 +1,28 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.tl.TL_account;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class gg1 extends wg1 {
-    public final /* synthetic */ TwoStepVerificationActivity h0;
+public final class gg1 implements x11 {
+    public final /* synthetic */ TLRPC.TL_forumTopic a;
+    public final /* synthetic */ hg1 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public gg1(TwoStepVerificationActivity twoStepVerificationActivity, int i10, TL_account.Password password) {
-        super(i10, 4, password);
-        this.h0 = twoStepVerificationActivity;
+    public gg1(hg1 hg1Var, TLRPC.TL_forumTopic tL_forumTopic) {
+        this.b = hg1Var;
+        this.a = tL_forumTopic;
     }
 
-    @Override // org.telegram.ui.wg1
-    public final void B0() {
-        this.h0.K = true;
+    @Override // org.telegram.ui.x11
+    public final void b0() {
+        kg1 kg1Var = this.b.a;
+        TLRPC.TL_forumTopic tL_forumTopic = this.a;
+        kg1.U(kg1Var, tL_forumTopic.id);
+        AndroidUtilities.runOnUIThread(new w81(14, this, tL_forumTopic), 300L);
+    }
+
+    @Override // org.telegram.ui.x11
+    public final void v(wk0 wk0Var) {
     }
 }

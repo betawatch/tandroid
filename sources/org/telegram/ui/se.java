@@ -4,16 +4,16 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 import org.telegram.messenger.SendMessagesHelper;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class se implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
+    public final /* synthetic */ co b;
     public final /* synthetic */ String c;
 
-    public /* synthetic */ se(zn znVar, String str, int i10) {
+    public /* synthetic */ se(co coVar, String str, int i10) {
         this.a = i10;
-        this.b = znVar;
+        this.b = coVar;
         this.c = str;
     }
 
@@ -21,25 +21,25 @@ public final /* synthetic */ class se implements Runnable {
     public final void run() {
         switch (this.a) {
             case 0:
-                zn.W0(this.b, this.c);
+                co.W0(this.b, this.c);
                 break;
             case 1:
-                zn.h1(this.b, this.c);
+                co.h1(this.b, this.c);
                 break;
             case 2:
-                n4.f(this.c, r1.currentAccount, r1.U0, null, this.b.ba);
+                i4.f(this.c, r1.currentAccount, r1.X0, null, this.b.ea);
                 break;
             case 3:
-                zn znVar = this.b;
+                co coVar = this.b;
                 String str = this.c;
                 if (str != null) {
-                    znVar.getClass();
+                    coVar.getClass();
                     if (str.length() != 0) {
-                        znVar.getMessagesController().sendBotStart(znVar.f, str);
+                        coVar.getMessagesController().sendBotStart(coVar.f, str);
                         break;
                     }
                 }
-                znVar.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of("/start", znVar.Q5, null, null, null, false, null, null, null, true, 0, 0, null, false));
+                coVar.getSendMessagesHelper().sendMessage(SendMessagesHelper.SendMessageParams.of("/start", coVar.T5, null, null, null, false, null, null, null, true, 0, 0, null, false));
                 break;
             case 4:
                 this.b.la(this.c);
@@ -48,24 +48,24 @@ public final /* synthetic */ class se implements Runnable {
                 this.b.da(this.c, false);
                 break;
             case 6:
-                ze.d.s(this.b.getParentActivity(), "tel:" + this.c);
+                of.f.s(this.b.getParentActivity(), "tel:" + this.c);
                 break;
             case 7:
                 AndroidUtilities.addToClipboard(this.c);
-                b.m(R.string.PhoneCopied, org.telegram.ui.Components.qc.a0(this.b));
+                org.telegram.messenger.wl.o(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(this.b));
                 break;
             case 8:
-                zn.u1(this.b, this.c);
+                co.u1(this.b, this.c);
                 break;
             case 9:
-                ze.d.s(this.b.getParentActivity(), "tel:" + this.c);
+                of.f.s(this.b.getParentActivity(), "tel:" + this.c);
                 break;
             case 10:
                 AndroidUtilities.addToClipboard(this.c);
-                b.m(R.string.PhoneCopied, org.telegram.ui.Components.qc.a0(this.b));
+                org.telegram.messenger.wl.o(R.string.PhoneCopied, org.telegram.ui.Components.yc.a0(this.b));
                 break;
             default:
-                ze.d.s(this.b.getParentActivity(), "https://fragment.com/username/" + this.c);
+                of.f.s(this.b.getParentActivity(), "https://fragment.com/username/" + this.c);
                 break;
         }
     }

@@ -1,12 +1,71 @@
 package androidx.datastore.preferences.protobuf;
 
-import java.util.Iterator;
+import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g1 implements Iterable {
-    @Override // java.lang.Iterable
-    public final Iterator iterator() {
-        return s0.a;
+public final class g1 implements Map.Entry, Comparable {
+    public final Comparable a;
+    public Object b;
+    public final /* synthetic */ d1 c;
+
+    public g1(d1 d1Var, Comparable comparable, Object obj) {
+        this.c = d1Var;
+        this.a = comparable;
+        this.b = obj;
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        return this.a.compareTo(((g1) obj).a);
+    }
+
+    @Override // java.util.Map.Entry
+    public final boolean equals(Object obj) {
+        if (obj != this) {
+            if (obj instanceof Map.Entry) {
+                Map.Entry entry = (Map.Entry) obj;
+                Object key = entry.getKey();
+                Comparable comparable = this.a;
+                if (comparable == null ? key == null : comparable.equals(key)) {
+                    Object obj2 = this.b;
+                    Object value = entry.getValue();
+                    if (obj2 == null ? value == null : obj2.equals(value)) {
+                    }
+                }
+            }
+            return false;
+        }
+        return true;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getKey() {
+        return this.a;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object getValue() {
+        return this.b;
+    }
+
+    @Override // java.util.Map.Entry
+    public final int hashCode() {
+        Comparable comparable = this.a;
+        int hashCode = comparable == null ? 0 : comparable.hashCode();
+        Object obj = this.b;
+        return (obj != null ? obj.hashCode() : 0) ^ hashCode;
+    }
+
+    @Override // java.util.Map.Entry
+    public final Object setValue(Object obj) {
+        this.c.b();
+        Object obj2 = this.b;
+        this.b = obj;
+        return obj2;
+    }
+
+    public final String toString() {
+        return this.a + "=" + this.b;
     }
 }

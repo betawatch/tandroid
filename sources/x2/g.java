@@ -1,17 +1,21 @@
 package x2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class g implements u9.d {
-    public static final g a = new g();
-    public static final u9.c b = u9.c.c("networkType");
-    public static final u9.c c = u9.c.c("mobileSubtype");
+import e9.z;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        u9.e eVar = (u9.e) obj2;
-        n nVar = (n) ((v) obj);
-        eVar.e(b, nVar.a);
-        eVar.e(c, nVar.b);
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class g implements Comparable {
+    public final boolean a;
+    public final boolean b;
+
+    public g(b2.s sVar, int i10) {
+        this.a = (sVar.e & 1) != 0;
+        this.b = i2.g.d(i10, false);
+    }
+
+    @Override // java.lang.Comparable
+    public final int compareTo(Object obj) {
+        g gVar = (g) obj;
+        return z.a.c(this.b, gVar.b).c(this.a, gVar.a).e();
     }
 }

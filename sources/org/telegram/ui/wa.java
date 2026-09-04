@@ -3,9 +3,9 @@ package org.telegram.ui;
 import android.graphics.Canvas;
 import android.graphics.RectF;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wa implements og.a {
+public final /* synthetic */ class wa implements ch.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -14,33 +14,33 @@ public final /* synthetic */ class wa implements og.a {
         this.b = obj;
     }
 
-    @Override // og.a
-    public final void e(Canvas canvas, RectF rectF) {
+    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
+    @Override // ch.a
+    public final void e(bh.a aVar, RectF rectF) {
+        switch (this.a) {
+        }
+        aVar.a = true;
+    }
+
+    @Override // ch.a
+    public final void f(Canvas canvas, RectF rectF) {
         switch (this.a) {
             case 0:
                 ((rb) this.b).Z(canvas, rectF);
                 break;
             case 1:
-                np0 np0Var = (np0) this.b;
-                n0 n0Var = np0Var.d;
-                yo0 yo0Var = np0Var.h.b;
-                tg.c.b(yo0Var, canvas, rectF, yo0Var, n0Var);
-                yo0 yo0Var2 = np0Var.n.b;
-                tg.c.b(yo0Var2, canvas, rectF, yo0Var2, n0Var);
+                bq0 bq0Var = (bq0) this.b;
+                j0 j0Var = bq0Var.d;
+                mp0 mp0Var = bq0Var.h.b;
+                hh.d.b(mp0Var, canvas, rectF, mp0Var, j0Var);
+                mp0 mp0Var2 = bq0Var.n.b;
+                hh.d.b(mp0Var2, canvas, rectF, mp0Var2, j0Var);
                 break;
             default:
                 PremiumPreviewFragment premiumPreviewFragment = (PremiumPreviewFragment) this.b;
-                org.telegram.ui.Components.rl0 rl0Var = premiumPreviewFragment.a;
-                tg.c.b(rl0Var, canvas, rectF, rl0Var, premiumPreviewFragment.a0);
+                org.telegram.ui.Components.ll0 ll0Var = premiumPreviewFragment.a;
+                hh.d.b(ll0Var, canvas, rectF, ll0Var, premiumPreviewFragment.d0);
                 break;
         }
-    }
-
-    /* JADX WARN: Failed to find 'out' block for switch in B:2:0x0002. Please report as an issue. */
-    @Override // og.a
-    public final void g(g.x xVar, RectF rectF) {
-        switch (this.a) {
-        }
-        xVar.b = true;
     }
 }

@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public interface DropDataContentProviderBoundaryInterface {
     Uri cache(byte[] bArr, String str, String str2);
@@ -19,7 +19,7 @@ public interface DropDataContentProviderBoundaryInterface {
 
     boolean onCreate();
 
-    void onDragEnd(boolean z4);
+    void onDragEnd(boolean z10);
 
     ParcelFileDescriptor openFile(ContentProvider contentProvider, Uri uri);
 

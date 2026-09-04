@@ -4,5 +4,5 @@ package j$.util.stream;
 public abstract class b7 extends d7 {
     public int b;
 
-    public abstract void a(Object obj, long j10);
+    public abstract void a(Object obj, long j3);
 }

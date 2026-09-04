@@ -1,137 +1,22 @@
 package org.telegram.ui.Components;
 
-import java.util.List;
+import android.content.Context;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class a71 implements j3.y1 {
-    public final /* synthetic */ i71 a;
+public final class a71 extends i2.m {
+    public final /* synthetic */ g71 d;
 
-    public a71(i71 i71Var) {
-        this.a = i71Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public a71(Context context, g71 g71Var) {
+        super(context);
+        this.d = g71Var;
     }
 
-    @Override // j3.y1
-    public final /* synthetic */ void onCues(List list) {
-    }
-
-    @Override // j3.y1
-    public final void onPlayerStateChanged(boolean z4, int i10) {
-        i71 i71Var = this.a;
-        if (i71Var.E || i10 != 3) {
-            return;
-        }
-        i71Var.E = true;
-        if (i71Var.D && i71Var.F) {
-            i71Var.C();
-        }
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onPositionDiscontinuity(int i10) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onCues(v4.c cVar) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onPositionDiscontinuity(j3.z1 z1Var, j3.z1 z1Var2, int i10) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onAudioAttributesChanged(l3.d dVar) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onAvailableCommandsChanged(j3.w1 w1Var) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onIsLoadingChanged(boolean z4) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onIsPlayingChanged(boolean z4) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onLoadingChanged(boolean z4) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onMediaMetadataChanged(j3.e1 e1Var) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onMetadata(e4.c cVar) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onPlaybackParametersChanged(j3.v1 v1Var) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onPlaybackStateChanged(int i10) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onPlaybackSuppressionReasonChanged(int i10) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onPlayerError(j3.t1 t1Var) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onPlayerErrorChanged(j3.t1 t1Var) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onRenderedFirstFrame() {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onRepeatModeChanged(int i10) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onShuffleModeEnabledChanged(boolean z4) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onSkipSilenceEnabledChanged(boolean z4) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onTracksChanged(j3.q2 q2Var) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onVideoSizeChanged(i5.y yVar) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onVolumeChanged(float f10) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onEvents(j3.a2 a2Var, j3.x1 x1Var) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onMediaItemTransition(j3.c1 c1Var, int i10) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onPlayWhenReadyChanged(boolean z4, int i10) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onSurfaceSizeChanged(int i10, int i11) {
-    }
-
-    @Override // j3.y1
-    public final /* synthetic */ void onTimelineChanged(j3.o2 o2Var, int i10) {
+    @Override // i2.m
+    public final k2.d0 a(Context context) {
+        bi.n5 n5Var = new bi.n5(context);
+        n5Var.d = new aa.a(new c2.h[]{new k2.k0(new f71(this.d))});
+        return n5Var.a();
     }
 }

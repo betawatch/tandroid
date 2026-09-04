@@ -1,18 +1,18 @@
 package m1;
 
 import android.content.Context;
-import dd.l;
-import tc.o;
+import hd.o;
+import rd.l;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a extends kotlin.jvm.internal.k implements l {
+public final class a extends kotlin.jvm.internal.j implements l {
     public static final a b = new a(1);
 
-    @Override // dd.l
+    @Override // rd.l
     public final Object invoke(Object obj) {
         Context it = (Context) obj;
-        kotlin.jvm.internal.j.e(it, "it");
+        kotlin.jvm.internal.i.e(it, "it");
         return o.a;
     }
 }

@@ -10,11 +10,11 @@ public final class f6 extends x5 {
     public ArrayList d;
 
     @Override // j$.util.stream.f5, j$.util.stream.j5
-    public final void o(long j10) {
-        if (j10 >= 2147483639) {
+    public final void o(long j3) {
+        if (j3 >= 2147483639) {
             throw new IllegalArgumentException("Stream size exceeds max array size");
         }
-        this.d = j10 >= 0 ? new ArrayList((int) j10) : new ArrayList();
+        this.d = j3 >= 0 ? new ArrayList((int) j3) : new ArrayList();
     }
 
     @Override // j$.util.stream.f5, j$.util.stream.j5

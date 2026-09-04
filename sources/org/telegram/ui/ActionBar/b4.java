@@ -8,7 +8,7 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b4 implements Utilities.Callback {
     public final /* synthetic */ Utilities.Callback a;
@@ -17,17 +17,17 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
     public final /* synthetic */ int d;
     public final /* synthetic */ long e;
 
-    public /* synthetic */ b4(Utilities.Callback callback, TLRPC.WallPaper wallPaper, int i10, int i11, long j10) {
+    public /* synthetic */ b4(Utilities.Callback callback, TLRPC.WallPaper wallPaper, int i10, int i11, long j3) {
         this.a = callback;
         this.b = wallPaper;
         this.c = i10;
         this.d = i11;
-        this.e = j10;
+        this.e = j3;
     }
 
     @Override // org.telegram.messenger.Utilities.Callback
     public final void run(Object obj) {
-        pf.a aVar = (pf.a) obj;
+        dg.a aVar = (dg.a) obj;
         Utilities.Callback callback = this.a;
         if (aVar != null) {
             callback.run(aVar);
@@ -41,7 +41,7 @@ public final /* synthetic */ class b4 implements Utilities.Callback {
         int min = Math.min(point.x, point.y);
         Point point2 = AndroidUtilities.displaySize;
         imageReceiver.setImage(forDocument, (min / AndroidUtilities.density) + "_" + (Math.max(point2.x, point2.y) / AndroidUtilities.density) + "_f", null, ".jpg", wallPaper, 1);
-        imageReceiver.setDelegate(new org.telegram.tgnet.f(this.c, this.d, this.e, callback));
+        imageReceiver.setDelegate(new org.telegram.tgnet.g(this.c, this.d, this.e, callback));
         ImageLoader.getInstance().loadImageForImageReceiver(imageReceiver);
     }
 }

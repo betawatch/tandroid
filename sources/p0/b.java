@@ -1,9 +1,9 @@
 package p0;
 
 import android.text.SpannableStringBuilder;
-import c2.u;
+import b2.p;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class b {
     public static final String b;
@@ -13,16 +13,16 @@ public final class b {
     public final boolean a;
 
     static {
-        u uVar = f.c;
+        p pVar = f.c;
         b = Character.toString((char) 8206);
         c = Character.toString((char) 8207);
         d = new b(false);
         e = new b(true);
     }
 
-    public b(boolean z4) {
-        u uVar = f.a;
-        this.a = z4;
+    public b(boolean z10) {
+        p pVar = f.a;
+        this.a = z10;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:33:0x0085, code lost:
@@ -98,8 +98,8 @@ public final class b {
                     directionality = Character.getDirectionality(codePointAt);
                 } else {
                     aVar.c++;
-                    char c3 = aVar.d;
-                    directionality = c3 < 1792 ? a.e[c3] : Character.getDirectionality(c3);
+                    char c10 = aVar.d;
+                    directionality = c10 < 1792 ? a.e[c10] : Character.getDirectionality(c10);
                 }
                 if (directionality != 0) {
                     if (directionality == 1 || directionality == 2) {
@@ -189,29 +189,29 @@ public final class b {
     }
 
     public final SpannableStringBuilder c(CharSequence charSequence) {
-        u uVar = f.c;
+        p pVar = f.c;
         if (charSequence == null) {
             return null;
         }
-        boolean g10 = uVar.g(charSequence.length(), charSequence);
+        boolean h = pVar.h(charSequence.length(), charSequence);
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        boolean g11 = (g10 ? f.b : f.a).g(charSequence.length(), charSequence);
+        boolean h10 = (h ? f.b : f.a).h(charSequence.length(), charSequence);
         String str = "";
         String str2 = c;
         String str3 = b;
-        boolean z4 = this.a;
-        spannableStringBuilder.append((CharSequence) ((z4 || !(g11 || a(charSequence) == 1)) ? (!z4 || (g11 && a(charSequence) != -1)) ? "" : str2 : str3));
-        if (g10 != z4) {
-            spannableStringBuilder.append(g10 ? (char) 8235 : (char) 8234);
+        boolean z10 = this.a;
+        spannableStringBuilder.append((CharSequence) ((z10 || !(h10 || a(charSequence) == 1)) ? (!z10 || (h10 && a(charSequence) != -1)) ? "" : str2 : str3));
+        if (h != z10) {
+            spannableStringBuilder.append(h ? (char) 8235 : (char) 8234);
             spannableStringBuilder.append(charSequence);
             spannableStringBuilder.append((char) 8236);
         } else {
             spannableStringBuilder.append(charSequence);
         }
-        boolean g12 = (g10 ? f.b : f.a).g(charSequence.length(), charSequence);
-        if (!z4 && (g12 || b(charSequence) == 1)) {
+        boolean h11 = (h ? f.b : f.a).h(charSequence.length(), charSequence);
+        if (!z10 && (h11 || b(charSequence) == 1)) {
             str = str3;
-        } else if (z4 && (!g12 || b(charSequence) == -1)) {
+        } else if (z10 && (!h11 || b(charSequence) == -1)) {
             str = str2;
         }
         spannableStringBuilder.append((CharSequence) str);

@@ -1,11 +1,11 @@
 package com.google.android.recaptcha;
 
+import gd.f;
+import jd.a;
+import kd.c;
 import org.telegram.tgnet.TLObject;
-import sc.f;
-import vc.a;
-import wc.c;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class Recaptcha$getClient$1 extends c {
     /* synthetic */ Object zza;
@@ -13,12 +13,12 @@ public final class Recaptcha$getClient$1 extends c {
     int zzc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public Recaptcha$getClient$1(Recaptcha recaptcha, uc.c cVar) {
+    public Recaptcha$getClient$1(Recaptcha recaptcha, id.c cVar) {
         super(cVar);
         this.zzb = recaptcha;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         this.zza = obj;
         this.zzc |= TLObject.FLAG_31;

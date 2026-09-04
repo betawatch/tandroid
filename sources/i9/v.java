@@ -1,47 +1,25 @@
 package i9;
 
-import android.util.Log;
-import java.util.Locale;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.AbstractOwnableSynchronizer;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class v extends d {
-    public final /* synthetic */ String a;
-    public final /* synthetic */ ExecutorService b;
+public final class v extends AbstractOwnableSynchronizer implements Runnable {
+    public final d0 a;
 
-    public v(String str, ExecutorService executorService) {
-        TimeUnit timeUnit = TimeUnit.SECONDS;
-        this.a = str;
-        this.b = executorService;
+    public v(d0 d0Var) {
+        this.a = d0Var;
     }
 
-    @Override // i9.d
-    public final void a() {
-        String str = this.a;
-        ExecutorService executorService = this.b;
-        try {
-            String concat = "Executing shutdown hook for ".concat(str);
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", concat, null);
-            }
-            executorService.shutdown();
-            if (executorService.awaitTermination(2L, TimeUnit.SECONDS)) {
-                return;
-            }
-            String concat2 = str.concat(" did not shut down in the allocated time. Requesting immediate shutdown.");
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", concat2, null);
-            }
-            executorService.shutdownNow();
-        } catch (InterruptedException unused) {
-            Locale locale = Locale.US;
-            String o10 = android.support.v4.media.a.o("Interrupted while waiting for ", str, " to shut down. Requesting immediate shutdown.");
-            if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                Log.d("FirebaseCrashlytics", o10, null);
-            }
-            executorService.shutdownNow();
-        }
+    public static void a(v vVar, Thread thread) {
+        vVar.setExclusiveOwnerThread(thread);
+    }
+
+    public final String toString() {
+        return this.a.toString();
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
     }
 }

@@ -1,15 +1,13 @@
 package com.google.firebase.messaging;
 
-import vh.w2;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b implements u9.d {
+public final class b implements ia.d {
     public static final b a = new b();
-    public static final u9.c b = new u9.c("messagingClientEvent", w2.h(w2.g(x9.d.class, new x9.a(1))));
+    public static final ia.c b = new ia.c("messagingClientEvent", i2.g.n(i2.g.m(la.e.class, new la.a(1))));
 
-    @Override // u9.a
+    @Override // ia.a
     public final void a(Object obj, Object obj2) {
-        ((u9.e) obj2).e(b, ((ia.e) obj).a);
+        ((ia.e) obj2).a(b, ((wa.e) obj).a);
     }
 }

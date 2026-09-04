@@ -1,15 +1,74 @@
 package jb;
 
-import androidx.lifecycle.b0;
-import androidx.lifecycle.m;
-import androidx.lifecycle.s;
-import com.google.android.gms.common.api.n;
-import java.io.Closeable;
+import db.g;
+import db.j;
+import db.u;
+import db.v;
+import java.sql.Time;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.TimeZone;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface b extends Closeable, s, n {
-    @Override // java.io.Closeable, java.lang.AutoCloseable
-    @b0(m.ON_DESTROY)
-    void close();
+public final class b extends u {
+    public static final a b = new a();
+    public final SimpleDateFormat a;
+
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    public class a implements v {
+        @Override // db.v
+        public final u create(g gVar, kb.a aVar) {
+            if (aVar.a == Time.class) {
+                return new b(0);
+            }
+            return null;
+        }
+    }
+
+    public /* synthetic */ b(int i10) {
+        this();
+    }
+
+    @Override // db.u
+    public final Object read(lb.a aVar) {
+        Time time;
+        if (aVar.x() == 9) {
+            aVar.t();
+            return null;
+        }
+        String v = aVar.v();
+        synchronized (this) {
+            TimeZone timeZone = this.a.getTimeZone();
+            try {
+                try {
+                    time = new Time(this.a.parse(v).getTime());
+                } catch (ParseException e7) {
+                    throw new j("Failed parsing '" + v + "' as SQL Time; at path " + aVar.j(), e7);
+                }
+            } finally {
+                this.a.setTimeZone(timeZone);
+            }
+        }
+        return time;
+    }
+
+    @Override // db.u
+    public final void write(lb.b bVar, Object obj) {
+        String format;
+        Time time = (Time) obj;
+        if (time == null) {
+            bVar.i();
+            return;
+        }
+        synchronized (this) {
+            format = this.a.format((Date) time);
+        }
+        bVar.r(format);
+    }
+
+    private b() {
+        this.a = new SimpleDateFormat("hh:mm:ss a");
+    }
 }

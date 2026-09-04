@@ -23,8 +23,8 @@ public final class n0 extends p0 implements i5 {
     }
 
     @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l10) {
-        t3.H(this, l10);
+    public final /* synthetic */ void x(Long l4) {
+        t3.H(this, l4);
     }
 
     @Override // j$.util.stream.b8
@@ -39,13 +39,13 @@ public final class n0 extends p0 implements i5 {
         return null;
     }
 
-    public n0(LongConsumer longConsumer, boolean z4) {
-        super(z4);
+    public n0(LongConsumer longConsumer, boolean z10) {
+        super(z10);
         this.b = longConsumer;
     }
 
     @Override // j$.util.stream.p0, j$.util.stream.j5
-    public final void accept(long j10) {
-        this.b.accept(j10);
+    public final void accept(long j3) {
+        this.b.accept(j3);
     }
 }

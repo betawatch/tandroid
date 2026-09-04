@@ -1,83 +1,159 @@
 package ig;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
+import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
-import k7.b6;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Cells.r8;
+import org.telegram.ui.Cells.w8;
+import org.telegram.ui.Components.d5;
+import org.telegram.ui.Components.e5;
+import org.telegram.ui.Components.h51;
+import org.telegram.ui.co;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class a extends FrameLayout {
-    public final ph.d a;
-    public final View b;
-    public final f6 c;
-    public final Paint d;
-    public boolean e;
+public final /* synthetic */ class a implements Utilities.Callback5, org.telegram.ui.ActionBar.a2 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ c b;
 
-    public a(Context context, f6 f6Var) {
-        super(context);
-        this.d = new Paint(1);
-        this.c = f6Var;
-        View view = new View(context);
-        this.b = view;
-        addView(view, b6.n(-1, -1));
-        ph.d dVar = new ph.d(context, f6Var, true);
-        this.a = dVar;
-        addView(dVar, b6.d(-1, 48.0f, 17, 14.0f, 0.0f, 14.0f, 0.0f));
+    public /* synthetic */ a(c cVar, int i10) {
+        this.a = i10;
+        this.b = cVar;
     }
 
-    public final void a(int i10, boolean z4) {
-        this.e = true;
-        ph.d dVar = this.a;
-        dVar.k();
-        dVar.setShowZero(true);
-        dVar.setEnabled(true);
-        dVar.c(i10, z4);
-        dVar.g(LocaleController.getString(R.string.BoostingStartGiveaway), z4, true);
-        this.b.setBackgroundColor(j6.v0(j6.h5, this.c));
-    }
-
-    public final void b(boolean z4) {
-        this.a.setLoading(z4);
-    }
-
-    @Override // android.view.ViewGroup, android.view.View
-    public final void dispatchDraw(Canvas canvas) {
-        super.dispatchDraw(canvas);
-        if (this.e) {
-            int v02 = j6.v0(j6.a7, this.c);
-            Paint paint = this.d;
-            paint.setColor(v02);
-            paint.setAlpha(255);
-            canvas.drawRect(0.0f, 0.0f, getWidth(), 1.0f, paint);
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                this.b.X();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
         }
     }
 
-    public void setCloseStyle(boolean z4) {
-        this.e = false;
-        ph.d dVar = this.a;
-        dVar.setShowZero(false);
-        dVar.setEnabled(true);
-        dVar.g(LocaleController.formatString("Close", R.string.Close, new Object[0]), false, true);
-        this.e = z4;
-    }
-
-    public void setOkStyle(boolean z4) {
-        this.e = false;
-        ph.d dVar = this.a;
-        dVar.setShowZero(false);
-        dVar.setEnabled(true);
-        dVar.g(z4 ? LocaleController.formatString("BoostingUseLink", R.string.BoostingUseLink, new Object[0]) : LocaleController.formatString("OK", R.string.OK, new Object[0]), false, true);
-    }
-
-    @Override // android.view.View
-    public void setOnClickListener(View.OnClickListener onClickListener) {
-        this.a.setOnClickListener(onClickListener);
+    @Override // org.telegram.messenger.Utilities.Callback5
+    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
+        h51 h51Var = (h51) obj;
+        final View view = (View) obj2;
+        ((Integer) obj3).getClass();
+        ((Float) obj4).getClass();
+        ((Float) obj5).getClass();
+        final c cVar = this.b;
+        if (cVar.d.h(h51Var)) {
+            return;
+        }
+        int i10 = h51Var.d;
+        if (i10 == 2 || h51Var.a == 17) {
+            Bundle bundle = new Bundle();
+            bundle.putLong("user_id", cVar.getUserConfig().getClientUserId());
+            bundle.putInt("chatMode", 5);
+            bundle.putString("quick_reply", "away");
+            cVar.presentFragment(new co(bundle));
+            return;
+        }
+        if (i10 == 1) {
+            cVar.s = !cVar.s;
+            cVar.c.Y2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 6) {
+            a0 a0Var = cVar.d;
+            cVar.v = true;
+            a0Var.h = true;
+            cVar.c.Y2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 7) {
+            a0 a0Var2 = cVar.d;
+            cVar.v = false;
+            a0Var2.h = false;
+            cVar.c.Y2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 3) {
+            cVar.x = 0;
+            cVar.c.Y2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 4) {
+            cVar.x = 1;
+            cVar.c.Y2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 5) {
+            cVar.x = 2;
+            cVar.c.Y2.N(true);
+            cVar.V(true);
+            return;
+        }
+        if (i10 == 8) {
+            final int i11 = 0;
+            e5.y(cVar.getParentActivity(), LocaleController.getString(R.string.BusinessAwayScheduleCustomStartTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), cVar.F, new d5() { // from class: ig.b
+                @Override // org.telegram.ui.Components.d5
+                public final void J(int i12, int i13, boolean z10) {
+                    switch (i11) {
+                        case 0:
+                            c cVar2 = cVar;
+                            cVar2.getClass();
+                            r8 r8Var = (r8) view;
+                            cVar2.F = i12;
+                            r8Var.u(LocaleController.formatShortDateTime(i12), true);
+                            cVar2.V(true);
+                            break;
+                        default:
+                            c cVar3 = cVar;
+                            cVar3.getClass();
+                            r8 r8Var2 = (r8) view;
+                            cVar3.G = i12;
+                            r8Var2.u(LocaleController.formatShortDateTime(i12), true);
+                            cVar3.V(true);
+                            break;
+                    }
+                }
+            });
+            return;
+        }
+        if (i10 == 9) {
+            final int i12 = 1;
+            e5.y(cVar.getParentActivity(), LocaleController.getString(R.string.BusinessAwayScheduleCustomEndTitle), LocaleController.getString(R.string.BusinessAwayScheduleCustomSetButton), cVar.G, new d5() { // from class: ig.b
+                @Override // org.telegram.ui.Components.d5
+                public final void J(int i122, int i13, boolean z10) {
+                    switch (i12) {
+                        case 0:
+                            c cVar2 = cVar;
+                            cVar2.getClass();
+                            r8 r8Var = (r8) view;
+                            cVar2.F = i122;
+                            r8Var.u(LocaleController.formatShortDateTime(i122), true);
+                            cVar2.V(true);
+                            break;
+                        default:
+                            c cVar3 = cVar;
+                            cVar3.getClass();
+                            r8 r8Var2 = (r8) view;
+                            cVar3.G = i122;
+                            r8Var2.u(LocaleController.formatShortDateTime(i122), true);
+                            cVar3.V(true);
+                            break;
+                    }
+                }
+            });
+            return;
+        }
+        if (i10 == 10) {
+            boolean z10 = !cVar.w;
+            cVar.w = z10;
+            ((w8) view).setChecked(z10);
+            cVar.V(true);
+        }
     }
 }

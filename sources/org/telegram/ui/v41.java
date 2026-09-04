@@ -1,69 +1,52 @@
 package org.telegram.ui;
 
-import android.graphics.SurfaceTexture;
+import android.app.Activity;
+import android.graphics.Canvas;
+import android.graphics.Path;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class v41 implements org.telegram.ui.Components.f71, org.telegram.ui.Components.b71 {
-    public final /* synthetic */ w41 a;
+public final class v41 extends FrameLayout implements org.telegram.ui.ActionBar.z5 {
+    public final Path a;
+    public dh.d b;
 
-    public /* synthetic */ v41(w41 w41Var) {
-        this.a = w41Var;
+    public v41(Activity activity) {
+        super(activity);
+        this.a = new Path();
     }
 
-    @Override // org.telegram.ui.Components.b71
-    public boolean needUpdate() {
-        return this.a.S.i != null;
-    }
-
-    @Override // org.telegram.ui.Components.f71
-    public /* synthetic */ void onRenderedFirstFrame(k3.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.f71
-    public void onStateChanged(boolean z4, int i10) {
-        w41 w41Var = this.a;
-        if (i10 == 4) {
-            w41Var.dismiss();
-        } else {
-            AndroidUtilities.cancelRunOnUIThread(w41Var.W);
-            AndroidUtilities.runOnUIThread(w41Var.W, 16L);
+    @Override // org.telegram.ui.ActionBar.z5
+    public final void d() {
+        dh.d dVar = this.b;
+        if (dVar != null) {
+            dVar.u();
         }
     }
 
-    @Override // org.telegram.ui.Components.f71
-    public /* synthetic */ boolean onSurfaceDestroyed(SurfaceTexture surfaceTexture) {
-        return false;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        canvas.save();
+        canvas.clipPath(this.a);
+        super.dispatchDraw(canvas);
+        canvas.restore();
     }
 
-    @Override // org.telegram.ui.Components.b71
-    public void onVisualizerUpdate(boolean z4, boolean z10, float[] fArr) {
-        this.a.S.e(z4, true, fArr);
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // org.telegram.ui.Components.f71
-    public void onRenderedFirstFrame() {
-        AndroidUtilities.runOnUIThread(new sz0(this, 12));
+    @Override // android.view.View
+    public final void onSizeChanged(int i10, int i11, int i12, int i13) {
+        super.onSizeChanged(i10, i11, i12, i13);
+        Path path = this.a;
+        path.rewind();
+        path.addRoundRect(AndroidUtilities.dp(9.0f), AndroidUtilities.dp(9.0f), i10 - AndroidUtilities.dp(9.0f), i11 - AndroidUtilities.dp(9.0f), AndroidUtilities.dp(16.0f), AndroidUtilities.dp(16.0f), Path.Direction.CW);
     }
 
-    @Override // org.telegram.ui.Components.f71
-    public /* synthetic */ void onSeekFinished(k3.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.f71
-    public /* synthetic */ void onSeekStarted(k3.a aVar) {
-    }
-
-    @Override // org.telegram.ui.Components.f71
-    public /* synthetic */ void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
-    }
-
-    @Override // org.telegram.ui.Components.f71
-    public void onError(org.telegram.ui.Components.i71 i71Var, Exception exc) {
-    }
-
-    @Override // org.telegram.ui.Components.f71
-    public void onVideoSizeChanged(int i10, int i11, int i12, float f10) {
+    public void setBlurredBackground(dh.d dVar) {
+        this.b = dVar;
+        setBackground(dVar);
     }
 }

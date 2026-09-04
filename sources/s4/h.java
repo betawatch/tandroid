@@ -1,21 +1,25 @@
 package s4;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.List;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class h {
-    public final String a;
-    public final long b;
-    public final List c;
-    public final List d;
+    public c1 a;
+    public c1 b;
+    public final int c;
+    public final int d;
+    public final int e;
+    public final int f;
 
-    public h(String str, long j10, ArrayList arrayList, List list) {
-        this.a = str;
-        this.b = j10;
-        this.c = DesugarCollections.unmodifiableList(arrayList);
-        this.d = DesugarCollections.unmodifiableList(list);
+    public h(c1 c1Var, c1 c1Var2, int i10, int i11, int i12, int i13) {
+        this.a = c1Var;
+        this.b = c1Var2;
+        this.c = i10;
+        this.d = i11;
+        this.e = i12;
+        this.f = i13;
+    }
+
+    public final String toString() {
+        return "ChangeInfo{oldHolder=" + this.a + ", newHolder=" + this.b + ", fromX=" + this.c + ", fromY=" + this.d + ", toX=" + this.e + ", toY=" + this.f + '}';
     }
 }

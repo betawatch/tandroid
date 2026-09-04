@@ -1,63 +1,13 @@
 package o5;
 
-import android.os.Parcel;
-import com.google.android.gms.common.api.Status;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f extends a7.c implements j {
-    public final /* synthetic */ int b;
-    public final /* synthetic */ g c;
+public final class f {
+    public final long a;
+    public final long b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public f(g gVar, int i10) {
-        super("com.google.android.gms.auth.api.signin.internal.ISignInCallbacks", 10);
-        this.b = i10;
-        this.c = gVar;
-    }
-
-    @Override // a7.c
-    public final boolean G0(int i10, Parcel parcel, Parcel parcel2) {
-        switch (i10) {
-            case 101:
-                w6.f.b(parcel);
-                throw new UnsupportedOperationException();
-            case 102:
-                Status status = (Status) w6.f.a(parcel, Status.CREATOR);
-                w6.f.b(parcel);
-                f0(status);
-                break;
-            case 103:
-                Status status2 = (Status) w6.f.a(parcel, Status.CREATOR);
-                w6.f.b(parcel);
-                X(status2);
-                break;
-            default:
-                return false;
-        }
-        parcel2.writeNoException();
-        return true;
-    }
-
-    @Override // o5.j
-    public void X(Status status) {
-        switch (this.b) {
-            case 1:
-                this.c.a(status);
-                return;
-            default:
-                throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // o5.j
-    public void f0(Status status) {
-        switch (this.b) {
-            case 0:
-                this.c.a(status);
-                return;
-            default:
-                throw new UnsupportedOperationException();
-        }
+    public f(long j3, long j10) {
+        this.a = j3;
+        this.b = j10;
     }
 }

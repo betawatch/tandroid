@@ -1,54 +1,25 @@
 package r8;
 
-import java.io.Serializable;
-import java.util.List;
+import android.os.Parcel;
+import android.os.Parcelable;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g implements f, Serializable {
-    public final List a;
+public final class g extends o6.a {
+    public static final Parcelable.Creator<g> CREATOR = new p7.j(17);
+    public double a;
+    public double b;
 
-    public g(List list) {
-        this.a = list;
-    }
-
-    @Override // r8.f
-    public final boolean apply(Object obj) {
-        int i10 = 0;
-        while (true) {
-            List list = this.a;
-            if (i10 >= list.size()) {
-                return true;
-            }
-            if (!((f) list.get(i10)).apply(obj)) {
-                return false;
-            }
-            i10++;
-        }
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj instanceof g) {
-            return this.a.equals(((g) obj).a);
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode() + 306654252;
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("Predicates.and(");
-        boolean z4 = true;
-        for (Object obj : this.a) {
-            if (!z4) {
-                sb.append(',');
-            }
-            sb.append(obj);
-            z4 = false;
-        }
-        sb.append(')');
-        return sb.toString();
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = e0.q(parcel, 20293);
+        double d = this.a;
+        e0.s(parcel, 2, 8);
+        parcel.writeDouble(d);
+        double d10 = this.b;
+        e0.s(parcel, 3, 8);
+        parcel.writeDouble(d10);
+        e0.r(parcel, q6);
     }
 }

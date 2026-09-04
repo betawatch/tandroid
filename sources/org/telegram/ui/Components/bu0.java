@@ -6,19 +6,19 @@ import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class bu0 extends org.telegram.ui.fu0 {
+public final class bu0 extends org.telegram.ui.su0 {
     public final /* synthetic */ cu0 a;
 
     public bu0(cu0 cu0Var) {
         this.a = cu0Var;
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final org.telegram.ui.qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final org.telegram.ui.cv0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z10, boolean z11) {
         ImageReceiver imageReceiver;
-        org.telegram.ui.Cells.s1 s1Var;
+        org.telegram.ui.Cells.t1 t1Var;
         MessageObject messageObject2;
         eu0 eu0Var = this.a.c;
         pt0 pt0Var = eu0Var.r;
@@ -26,35 +26,35 @@ public final class bu0 extends org.telegram.ui.fu0 {
             int childCount = pt0Var.getChildCount();
             for (int i11 = 0; i11 < childCount; i11++) {
                 View childAt = eu0Var.r.getChildAt(i11);
-                if (!(childAt instanceof org.telegram.ui.Cells.s1) || messageObject == null || (messageObject2 = (s1Var = (org.telegram.ui.Cells.s1) childAt).getMessageObject()) == null || messageObject2.getId() != messageObject.getId()) {
+                if (!(childAt instanceof org.telegram.ui.Cells.t1) || messageObject == null || (messageObject2 = (t1Var = (org.telegram.ui.Cells.t1) childAt).getMessageObject()) == null || messageObject2.getId() != messageObject.getId()) {
                     imageReceiver = null;
                 } else {
                     ArrayList<Integer> arrayList = messageObject2.pollMediaMapping;
-                    imageReceiver = (arrayList == null || i10 < 0 || i10 >= arrayList.size()) ? s1Var.F2(i10) : s1Var.F2(messageObject2.pollMediaMapping.get(i10).intValue());
+                    imageReceiver = (arrayList == null || i10 < 0 || i10 >= arrayList.size()) ? t1Var.F2(i10) : t1Var.F2(messageObject2.pollMediaMapping.get(i10).intValue());
                 }
                 if (imageReceiver != null) {
                     int[] iArr = new int[2];
                     childAt.getLocationInWindow(iArr);
-                    org.telegram.ui.qu0 qu0Var = new org.telegram.ui.qu0();
-                    qu0Var.b = iArr[0];
-                    qu0Var.c = childAt.getPaddingTop() + iArr[1];
-                    qu0Var.d = eu0Var.r;
-                    qu0Var.m = null;
-                    qu0Var.a = imageReceiver;
-                    if (z4) {
-                        qu0Var.e = imageReceiver.getBitmapSafe();
+                    org.telegram.ui.cv0 cv0Var = new org.telegram.ui.cv0();
+                    cv0Var.b = iArr[0];
+                    cv0Var.c = childAt.getPaddingTop() + iArr[1];
+                    cv0Var.d = eu0Var.r;
+                    cv0Var.m = null;
+                    cv0Var.a = imageReceiver;
+                    if (z10) {
+                        cv0Var.e = imageReceiver.getBitmapSafe();
                     }
-                    qu0Var.h = imageReceiver.getRoundRadius(true);
-                    qu0Var.j = 0;
-                    qu0Var.i = 0;
-                    return qu0Var;
+                    cv0Var.h = imageReceiver.getRoundRadius(true);
+                    cv0Var.j = 0;
+                    cv0Var.i = 0;
+                    return cv0Var;
                 }
             }
         }
         return null;
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
     public final boolean K() {
         return true;
     }

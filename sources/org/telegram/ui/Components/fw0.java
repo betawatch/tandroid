@@ -1,47 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class fw0 extends sa {
-    public os U;
+public final class fw0 {
+    public MessagesController.PeerColor a;
+    public org.telegram.ui.ActionBar.f6 b;
+    public int c;
+    public int d;
+    public float e;
 
-    public fw0(Context context) {
-        super(context, null, true, false, false, 1, null);
-        fixNavigationBar();
-        this.B = true;
-        this.y = true;
-        J();
-        rl0 rl0Var = this.d;
-        int i10 = this.backgroundPaddingLeft;
-        rl0Var.setPadding(i10, 0, i10, 0);
-        this.d.j(new mb0(this, 6));
-        this.d.setOnItemClickListener(new k(this, 14));
-    }
-
-    public static void P(fw0 fw0Var, int i10) {
-        i51 G = fw0Var.U.G(i10 - 1);
-        Object obj = G != null ? G.G : null;
-        if (obj instanceof TLRPC.User) {
-            MessagesController.getInstance(fw0Var.currentAccount).openApp(fw0Var.attachedFragment, (TLRPC.User) obj, null, 0, null);
+    public final void a(MessagesController.PeerColor peerColor) {
+        this.a = peerColor;
+        if (peerColor == null) {
+            this.c = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.A8, this.b);
+            this.d = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.s8, this.b);
+            this.c = i0.a.d(this.e, this.c, 603979776);
+            this.d = i0.a.d(this.e, this.d, -1);
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final ql0 v(rl0 rl0Var) {
-        os osVar = new os(rl0Var, getContext(), this.currentAccount, 0, true, this.resourcesProvider);
-        this.U = osVar;
-        osVar.r = false;
-        return osVar;
-    }
-
-    @Override // org.telegram.ui.Components.sa
-    public final CharSequence y() {
-        return LocaleController.getString(R.string.SearchAppsExamples);
+        int bgColor1 = peerColor.getBgColor1(org.telegram.ui.ActionBar.j6.I.q());
+        int bgColor2 = peerColor.getBgColor2(org.telegram.ui.ActionBar.j6.I.q());
+        org.telegram.ui.ActionBar.f6 f6Var = this.b;
+        int d = i0.a.d(0.75f, bgColor2, bgColor1);
+        int v02 = AndroidUtilities.computePerceivedBrightness(d) > 0.721f ? org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.v6, f6Var) : org.telegram.ui.ActionBar.j6.b(0.08f, -0.08f, d);
+        this.c = v02;
+        this.d = AndroidUtilities.computePerceivedBrightness(v02) > 0.721f ? -16777216 : -1;
+        this.c = i0.a.d(this.e, this.c, 603979776);
+        this.d = i0.a.d(this.e, this.d, -1);
     }
 }

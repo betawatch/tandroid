@@ -1,31 +1,43 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.MotionEvent;
 import android.view.View;
-import android.widget.LinearLayout;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class so0 extends LinearLayout {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
+public final class so0 extends FrameLayout {
+    public final /* synthetic */ ff a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public so0(Context context, int i10, int i11) {
+    public so0(ff ffVar, Context context) {
         super(context);
-        this.a = i10;
-        this.b = i11;
+        this.a = ffVar;
     }
 
     @Override // android.view.View
-    public final int getSuggestedMinimumWidth() {
-        return AndroidUtilities.dp(260.0f);
-    }
-
-    @Override // android.widget.LinearLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i10), this.a), TLObject.FLAG_31), View.MeasureSpec.makeMeasureSpec(Math.min(View.MeasureSpec.getSize(i11), this.b), View.MeasureSpec.getMode(i11)));
+    public final boolean onTouchEvent(MotionEvent motionEvent) {
+        ff ffVar = this.a;
+        View contentView = ffVar.getContentView();
+        int[] iArr = new int[2];
+        contentView.getLocationInWindow(iArr);
+        iArr[0] = iArr[0] + ffVar.E;
+        iArr[1] = iArr[1] + ffVar.F;
+        getLocationInWindow(new int[2]);
+        if (motionEvent.getAction() != 0 || motionEvent.getX() > iArr[0]) {
+            if (motionEvent.getX() < contentView.getWidth() + iArr[0] && motionEvent.getY() > iArr[1]) {
+                if (motionEvent.getY() < contentView.getHeight() + iArr[1]) {
+                    motionEvent.offsetLocation(r2[0] - iArr[0], (AndroidUtilities.statusBarHeight + r2[1]) - iArr[1]);
+                    return contentView.dispatchTouchEvent(motionEvent);
+                }
+            }
+        }
+        if (!ffVar.A && !ffVar.D) {
+            ffVar.D = true;
+            ffVar.l(new o1.k[0]);
+        }
+        return true;
     }
 }

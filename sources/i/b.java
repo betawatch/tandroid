@@ -1,8 +1,8 @@
 package i;
 
-import a0.h;
 import a0.i;
-import a0.l;
+import a0.j;
+import a0.m;
 import android.content.res.ColorStateList;
 import android.content.res.Resources;
 import android.graphics.ColorFilter;
@@ -12,9 +12,9 @@ import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.SparseArray;
 import android.util.StateSet;
-import j7.i8;
+import v7.o8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class b extends Drawable.ConstantState {
     public boolean A;
@@ -25,9 +25,9 @@ public final class b extends Drawable.ConstantState {
     public boolean F;
     public boolean G;
     public int[][] H;
-    public h I;
-    public l J;
-    public final g a;
+    public i I;
+    public m J;
+    public final f a;
     public Resources b;
     public int c;
     public int d;
@@ -63,7 +63,7 @@ public final class b extends Drawable.ConstantState {
         this.a = eVar;
         this.b = resources != null ? resources : bVar != null ? bVar.b : null;
         int i10 = bVar != null ? bVar.c : 0;
-        int i11 = g.x;
+        int i11 = f.x;
         i10 = resources != null ? resources.getDisplayMetrics().densityDpi : i10;
         i10 = i10 == 0 ? 160 : i10;
         this.c = i10;
@@ -139,8 +139,8 @@ public final class b extends Drawable.ConstantState {
             this.I = bVar.I;
             this.J = bVar.J;
         } else {
-            this.I = new h();
-            this.J = new l();
+            this.I = new i();
+            this.J = new m();
         }
     }
 
@@ -213,7 +213,7 @@ public final class b extends Drawable.ConstantState {
                 Drawable[] drawableArr = this.g;
                 Drawable newDrawable = constantState.newDrawable(this.b);
                 if (Build.VERSION.SDK_INT >= 23) {
-                    i8.b(this.x, newDrawable);
+                    o8.b(this.x, newDrawable);
                 }
                 Drawable mutate = newDrawable.mutate();
                 mutate.setCallback(this.a);
@@ -253,7 +253,7 @@ public final class b extends Drawable.ConstantState {
         }
         Drawable newDrawable = ((Drawable.ConstantState) this.f.valueAt(indexOfKey)).newDrawable(this.b);
         if (Build.VERSION.SDK_INT >= 23) {
-            i8.b(this.x, newDrawable);
+            o8.b(this.x, newDrawable);
         }
         Drawable mutate = newDrawable.mutate();
         mutate.setCallback(this.a);
@@ -273,10 +273,10 @@ public final class b extends Drawable.ConstantState {
         if (i10 < 0) {
             return 0;
         }
-        l lVar = this.J;
+        m mVar = this.J;
         int i11 = 0;
-        int a2 = b0.a.a(lVar.c, i10, lVar.a);
-        if (a2 >= 0 && (r52 = lVar.b[a2]) != i.b) {
+        int a2 = b0.a.a(mVar.c, i10, mVar.a);
+        if (a2 >= 0 && (r52 = mVar.b[a2]) != j.b) {
             i11 = r52;
         }
         return i11.intValue();

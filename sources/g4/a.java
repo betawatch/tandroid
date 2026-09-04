@@ -1,125 +1,192 @@
 package g4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import e4.b;
-import f8.o;
-import h5.d0;
-import j3.d1;
-import j3.m0;
-import j3.n0;
-import java.util.Arrays;
+import android.text.SpannableStringBuilder;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
+import android.text.style.TypefaceSpan;
+import android.text.style.UnderlineSpan;
+import d2.b;
+import e2.d;
+import e2.d0;
+import e2.h;
+import e2.v;
+import e9.a1;
+import e9.g0;
+import e9.i0;
+import i2.g;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.List;
+import org.telegram.tgnet.TLObject;
+import w.f;
+import z3.l;
+import z3.m;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a implements b {
-    public static final Parcelable.Creator<a> CREATOR;
-    public static final n0 h;
-    public static final n0 n;
-    public final String a;
-    public final String b;
-    public final long c;
-    public final long d;
-    public final byte[] e;
-    public int f;
+public final class a implements m {
+    public final v a = new v();
+    public final boolean b;
+    public final int c;
+    public final int d;
+    public final String e;
+    public final float f;
+    public final int h;
 
-    static {
-        m0 m0Var = new m0();
-        m0Var.o = "application/id3";
-        h = new n0(m0Var);
-        m0 m0Var2 = new m0();
-        m0Var2.o = "application/x-scte35";
-        n = new n0(m0Var2);
-        CREATOR = new o(3);
-    }
-
-    public a(String str, String str2, long j10, long j11, byte[] bArr) {
-        this.a = str;
-        this.b = str2;
-        this.c = j10;
-        this.d = j11;
-        this.e = bArr;
-    }
-
-    @Override // e4.b
-    public final n0 b() {
-        String str = this.a;
-        str.getClass();
-        switch (str) {
-            case "urn:scte:scte35:2014:bin":
-                return n;
-            case "https://aomedia.org/emsg/ID3":
-            case "https://developer.apple.com/streaming/emsg-id3":
-                return h;
-            default:
-                return null;
+    public a(List list) {
+        if (list.size() != 1 || (((byte[]) list.get(0)).length != 48 && ((byte[]) list.get(0)).length != 53)) {
+            this.c = 0;
+            this.d = -1;
+            this.e = "sans-serif";
+            this.b = false;
+            this.f = 0.85f;
+            this.h = -1;
+            return;
+        }
+        byte[] bArr = (byte[]) list.get(0);
+        this.c = bArr[24];
+        this.d = ((bArr[26] & 255) << 24) | ((bArr[27] & 255) << 16) | ((bArr[28] & 255) << 8) | (bArr[29] & 255);
+        this.e = "Serif".equals(new String(bArr, 43, bArr.length - 43, StandardCharsets.UTF_8)) ? "serif" : "sans-serif";
+        int i10 = bArr[25] * 20;
+        this.h = i10;
+        boolean z10 = (bArr[0] & 32) != 0;
+        this.b = z10;
+        if (z10) {
+            this.f = d0.g(((bArr[11] & 255) | ((bArr[10] & 255) << 8)) / i10, 0.0f, 0.95f);
+        } else {
+            this.f = 0.85f;
         }
     }
 
-    @Override // e4.b
-    public final byte[] d() {
-        if (b() != null) {
-            return this.e;
+    public static void a(SpannableStringBuilder spannableStringBuilder, int i10, int i11, int i12, int i13, int i14) {
+        if (i10 != i11) {
+            spannableStringBuilder.setSpan(new ForegroundColorSpan((i10 >>> 8) | ((i10 & 255) << 24)), i12, i13, i14 | 33);
         }
-        return null;
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj != null && a.class == obj.getClass()) {
-            a aVar = (a) obj;
-            if (this.c == aVar.c && this.d == aVar.d && d0.a(this.a, aVar.a) && d0.a(this.b, aVar.b) && Arrays.equals(this.e, aVar.e)) {
-                return true;
+    public static void b(SpannableStringBuilder spannableStringBuilder, int i10, int i11, int i12, int i13, int i14) {
+        if (i10 != i11) {
+            int i15 = i14 | 33;
+            boolean z10 = (i10 & 1) != 0;
+            boolean z11 = (i10 & 2) != 0;
+            if (z10) {
+                if (z11) {
+                    spannableStringBuilder.setSpan(new StyleSpan(3), i12, i13, i15);
+                } else {
+                    spannableStringBuilder.setSpan(new StyleSpan(1), i12, i13, i15);
+                }
+            } else if (z11) {
+                spannableStringBuilder.setSpan(new StyleSpan(2), i12, i13, i15);
             }
+            boolean z12 = (i10 & 4) != 0;
+            if (z12) {
+                spannableStringBuilder.setSpan(new UnderlineSpan(), i12, i13, i15);
+            }
+            if (z12 || z10 || z11) {
+                return;
+            }
+            spannableStringBuilder.setSpan(new StyleSpan(0), i12, i13, i15);
         }
-        return false;
     }
 
-    public final int hashCode() {
-        if (this.f == 0) {
-            String str = this.a;
-            int hashCode = (527 + (str != null ? str.hashCode() : 0)) * 31;
-            String str2 = this.b;
-            int hashCode2 = (hashCode + (str2 != null ? str2.hashCode() : 0)) * 31;
-            long j10 = this.c;
-            int i10 = (hashCode2 + ((int) (j10 ^ (j10 >>> 32)))) * 31;
-            long j11 = this.d;
-            this.f = Arrays.hashCode(this.e) + ((i10 + ((int) (j11 ^ (j11 >>> 32)))) * 31);
+    @Override // z3.m
+    public final int U() {
+        return 2;
+    }
+
+    @Override // z3.m
+    public final void e0(byte[] bArr, int i10, int i11, l lVar, h hVar) {
+        String v;
+        int i12;
+        v vVar = this.a;
+        vVar.H(i10 + i11, bArr);
+        vVar.J(i10);
+        int i13 = 1;
+        int i14 = 2;
+        d.b(vVar.a() >= 2);
+        int D = vVar.D();
+        if (D == 0) {
+            v = "";
+        } else {
+            int i15 = vVar.b;
+            Charset F = vVar.F();
+            int i16 = D - (vVar.b - i15);
+            if (F == null) {
+                F = StandardCharsets.UTF_8;
+            }
+            v = vVar.v(i16, F);
         }
-        return this.f;
+        if (v.isEmpty()) {
+            g0 g0Var = i0.b;
+            hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, a1.e));
+            return;
+        }
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(v);
+        b(spannableStringBuilder, this.c, 0, 0, spannableStringBuilder.length(), 16711680);
+        a(spannableStringBuilder, this.d, -1, 0, spannableStringBuilder.length(), 16711680);
+        int length = spannableStringBuilder.length();
+        String str = this.e;
+        if (str != "sans-serif") {
+            spannableStringBuilder.setSpan(new TypefaceSpan(str), 0, length, 16711713);
+        }
+        float f7 = this.f;
+        while (vVar.a() >= 8) {
+            int i17 = vVar.b;
+            int j3 = vVar.j();
+            int j10 = vVar.j();
+            if (j10 == 1937013100) {
+                d.b(vVar.a() >= i14);
+                int D2 = vVar.D();
+                int i18 = 0;
+                while (i18 < D2) {
+                    d.b(vVar.a() >= 12);
+                    int D3 = vVar.D();
+                    int D4 = vVar.D();
+                    vVar.K(i14);
+                    int i19 = i18;
+                    int x10 = vVar.x();
+                    vVar.K(i13);
+                    int j11 = vVar.j();
+                    if (D4 > spannableStringBuilder.length()) {
+                        StringBuilder l4 = g.l(D4, "Truncating styl end (", ") to cueText.length() (");
+                        l4.append(spannableStringBuilder.length());
+                        l4.append(").");
+                        e2.a.n("Tx3gParser", l4.toString());
+                        D4 = spannableStringBuilder.length();
+                    }
+                    if (D3 >= D4) {
+                        e2.a.n("Tx3gParser", "Ignoring styl with start (" + D3 + ") >= end (" + D4 + ").");
+                        i12 = i19;
+                    } else {
+                        i12 = i19;
+                        int i20 = D4;
+                        b(spannableStringBuilder, x10, this.c, D3, i20, 0);
+                        a(spannableStringBuilder, j11, this.d, D3, i20, 0);
+                    }
+                    i18 = i12 + 1;
+                    i13 = 1;
+                    i14 = 2;
+                }
+            } else if (j10 == 1952608120 && this.b) {
+                d.b(vVar.a() >= 2);
+                f7 = d0.g(vVar.D() / this.h, 0.0f, 0.95f);
+                vVar.J(i17 + j3);
+                i13 = 1;
+                i14 = 2;
+            }
+            vVar.J(i17 + j3);
+            i13 = 1;
+            i14 = 2;
+        }
+        hVar.accept(new z3.a(-9223372036854775807L, -9223372036854775807L, i0.z(new b(spannableStringBuilder, null, null, null, f7, 0, 0, -3.4028235E38f, TLObject.FLAG_31, TLObject.FLAG_31, -3.4028235E38f, -3.4028235E38f, -3.4028235E38f, false, -16777216, TLObject.FLAG_31, 0.0f, 0))));
     }
 
-    public final String toString() {
-        return "EMSG: scheme=" + this.a + ", id=" + this.d + ", durationMs=" + this.c + ", value=" + this.b;
+    @Override // z3.m
+    public final /* synthetic */ z3.d p(int i10, int i11, byte[] bArr) {
+        return f.a(this, bArr, i11);
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeString(this.a);
-        parcel.writeString(this.b);
-        parcel.writeLong(this.c);
-        parcel.writeLong(this.d);
-        parcel.writeByteArray(this.e);
-    }
-
-    public a(Parcel parcel) {
-        String readString = parcel.readString();
-        int i10 = d0.a;
-        this.a = readString;
-        this.b = parcel.readString();
-        this.c = parcel.readLong();
-        this.d = parcel.readLong();
-        this.e = parcel.createByteArray();
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ void c(d1 d1Var) {
+    @Override // z3.m
+    public final /* synthetic */ void reset() {
     }
 }

@@ -1,177 +1,53 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Path;
-import android.graphics.RectF;
-import android.os.Build;
-import java.util.ArrayList;
-import java.util.List;
+import android.content.Context;
+import android.text.SpannableStringBuilder;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public class rq extends Path {
-    public static ArrayList g;
-    public int e;
-    public int f;
-    public boolean b = false;
-    public boolean c = true;
-    public float d = 0.0f;
-    public final ArrayList a = new ArrayList(1);
+public final class rq extends LinearLayout {
+    public final x9 a;
 
-    public rq() {
+    public rq(Context context) {
+        super(context);
+        setOrientation(1);
+        x9 x9Var = new x9(context);
+        this.a = x9Var;
+        x9Var.setImageDrawable(new j90(x9Var, "m418 282.6c13.4-21.1 20.2-44.9 20.2-70.8 0-88.3-79.8-175.3-178.9-175.3-100.1 0-178.9 88-178.9 175.3 0 46.6 16.9 73.1 29.1 86.1-19.3 23.4-30.9 52.3-34.6 86.1-2.5 22.7 3.2 41.4 17.4 57.3 14.3 16 51.7 35 148.1 35 41.2 0 119.9-5.3 156.7-18.3 49.5-17.4 59.2-41.1 59.2-76.2 0-41.5-12.9-74.8-38.3-99.2z", AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
+        if (!AndroidUtilities.isTablet()) {
+            addView(x9Var, w7.x5.q(110, 110, 49));
+        }
+        TextView g10 = org.telegram.messenger.w1.g(context, 1, 20.0f);
+        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.j6.G6, null, false, g10, 1);
+        g10.setText(LocaleController.getString(R.string.NoContactsYet3));
+        g10.setTypeface(AndroidUtilities.bold());
+        addView(g10, w7.x5.t(-2, -2, 49, 0, 15, 0, 7));
+        TextView textView = new TextView(context);
+        textView.setTextSize(1, 14.0f);
+        com.google.android.gms.internal.vision.e2.p(org.telegram.ui.ActionBar.j6.c7, null, false, textView, 1);
+        textView.setText(LocaleController.getString(R.string.NoContactsYet3Sub));
+        textView.setMaxWidth(AndroidUtilities.dp(260.0f));
+        textView.setLineSpacing(AndroidUtilities.dp(2.0f), 1.0f);
+        addView(textView, w7.x5.t(-2, -2, 49, 0, 0, 0, 19));
+        di.d dVar = new di.d(context, null, true);
+        dVar.setUseWrapContent(true);
+        dVar.e();
+        dVar.setPadding(AndroidUtilities.dp(28.0f), 0, AndroidUtilities.dp(28.0f), 0);
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder("c");
+        spannableStringBuilder.setSpan(new nq(R.drawable.filled_new_contact_24, 0), 0, 1, 33);
+        spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) LocaleController.getString(R.string.NewContact));
+        dVar.g(spannableStringBuilder, false, true);
+        addView(dVar, w7.x5.q(-2, 44, 49));
     }
 
-    public final void a() {
-        if (Build.VERSION.SDK_INT < 34 || !this.c || this.b) {
-            return;
-        }
-        b(this.a);
-        this.b = true;
-    }
-
-    @Override // android.graphics.Path
-    public final void addRect(RectF rectF, Path.Direction direction) {
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            float f10 = rectF.left;
-            int i10 = this.e;
-            float f11 = f10 - i10;
-            float f12 = rectF.top;
-            int i11 = this.f;
-            super.addRect(f11, f12 - i11, rectF.right + i10, rectF.bottom + i11, direction);
-            return;
-        }
-        ArrayList arrayList = this.a;
-        if (arrayList.size() <= 0 || !((RectF) kf.k0.i(1, arrayList)).contains(rectF)) {
-            if (arrayList.size() <= 0 || Math.abs(rectF.top - ((RectF) kf.k0.i(1, arrayList)).top) > this.d || Math.abs(rectF.bottom - ((RectF) kf.k0.i(1, arrayList)).bottom) > this.d) {
-                ArrayList arrayList2 = g;
-                RectF rectF2 = (arrayList2 == null || arrayList2.size() <= 0) ? new RectF() : (RectF) g.remove(0);
-                rectF2.set(rectF);
-                arrayList.add(rectF2);
-            } else {
-                ((RectF) kf.k0.i(1, arrayList)).union(rectF);
-            }
-            this.b = false;
-        }
-    }
-
-    public final void b(List list) {
-        if (list.isEmpty()) {
-            return;
-        }
-        boolean z4 = false;
-        if (list.size() == 1) {
-            super.addRect(((RectF) list.get(0)).left - this.e, ((RectF) list.get(0)).top - this.f, ((RectF) list.get(0)).right + this.e, ((RectF) list.get(0)).bottom + this.f, Path.Direction.CW);
-            return;
-        }
-        RectF rectF = (RectF) list.get(0);
-        int size = list.size() - 1;
-        super.moveTo(rectF.left - this.e, rectF.top - this.f);
-        for (int i10 = 1; i10 < list.size(); i10++) {
-            RectF rectF2 = (RectF) list.get(i10);
-            if (rectF2.width() != 0.0f) {
-                float f10 = rectF.bottom;
-                int i11 = this.f;
-                float f11 = f10 + i11;
-                float f12 = rectF2.top;
-                if (f11 >= f12 - i11) {
-                    float f13 = rectF.left;
-                    if (f13 <= rectF2.right) {
-                        float f14 = rectF.right;
-                        float f15 = rectF2.left;
-                        if (f14 >= f15) {
-                            if (f13 != f15) {
-                                super.lineTo(f13 - this.e, f12);
-                                super.lineTo(rectF2.left - this.e, rectF2.top);
-                            }
-                            rectF = rectF2;
-                        }
-                    }
-                }
-                size = i10;
-                z4 = true;
-                break;
-            }
-        }
-        super.lineTo(rectF.left - this.e, rectF.bottom + this.f);
-        super.lineTo(rectF.right + this.e, rectF.bottom + this.f);
-        for (int i12 = size - 1; i12 >= 0; i12--) {
-            RectF rectF3 = (RectF) list.get(i12);
-            if (rectF3.width() != 0.0f) {
-                float f16 = rectF.right;
-                if (f16 != rectF3.right) {
-                    super.lineTo(f16 + this.e, rectF.top);
-                    super.lineTo(rectF3.right + this.e, rectF.top);
-                }
-                rectF = rectF3;
-            }
-        }
-        super.lineTo(rectF.right + this.e, rectF.top - this.f);
-        super.close();
-        if (z4) {
-            b(list.subList(size, list.size()));
-        }
-    }
-
-    @Override // android.graphics.Path
-    public void reset() {
-        super.reset();
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            return;
-        }
-        ArrayList arrayList = g;
-        ArrayList arrayList2 = this.a;
-        if (arrayList == null) {
-            g = new ArrayList(arrayList2.size());
-        }
-        g.addAll(arrayList2);
-        arrayList2.clear();
-        this.b = false;
-    }
-
-    @Override // android.graphics.Path
-    public final void rewind() {
-        super.rewind();
-        if (Build.VERSION.SDK_INT < 34 || !this.c) {
-            return;
-        }
-        ArrayList arrayList = g;
-        ArrayList arrayList2 = this.a;
-        if (arrayList == null) {
-            g = new ArrayList(arrayList2.size());
-        }
-        g.addAll(arrayList2);
-        arrayList2.clear();
-        this.b = false;
-    }
-
-    public rq(int i10) {
-    }
-
-    @Override // android.graphics.Path
-    public void addRect(float f10, float f11, float f12, float f13, Path.Direction direction) {
-        RectF rectF;
-        if (Build.VERSION.SDK_INT >= 34 && this.c) {
-            ArrayList arrayList = this.a;
-            if (arrayList.size() <= 0 || !((RectF) kf.k0.i(1, arrayList)).contains(f10, f11, f12, f13)) {
-                if (arrayList.size() > 0 && Math.abs(f11 - ((RectF) kf.k0.i(1, arrayList)).top) <= this.d && Math.abs(f13 - ((RectF) kf.k0.i(1, arrayList)).bottom) <= this.d) {
-                    ((RectF) kf.k0.i(1, arrayList)).union(f10, f11, f12, f13);
-                } else {
-                    ArrayList arrayList2 = g;
-                    if (arrayList2 != null && arrayList2.size() > 0) {
-                        rectF = (RectF) g.remove(0);
-                    } else {
-                        rectF = new RectF();
-                    }
-                    rectF.set(f10, f11, f12, f13);
-                    arrayList.add(rectF);
-                }
-                this.b = false;
-                return;
-            }
-            return;
-        }
-        int i10 = this.e;
-        float f14 = f10 - i10;
-        int i11 = this.f;
-        super.addRect(f14, f11 - i11, f12 + i10, f13 + i11, direction);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.a.setImageDrawable(new xi0(R.raw.utyan_empty, AndroidUtilities.dp(110.0f), AndroidUtilities.dp(110.0f)));
     }
 }

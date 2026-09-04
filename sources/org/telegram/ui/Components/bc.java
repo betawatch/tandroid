@@ -1,120 +1,75 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.RectF;
-import android.text.Layout;
-import android.text.StaticLayout;
-import android.text.TextPaint;
-import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.UserConfig;
+import org.telegram.messenger.support.SparseLongArray;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class bc extends View {
-    public final Paint a;
-    public long b;
-    public int c;
-    public String d;
-    public int e;
-    public StaticLayout f;
-    public StaticLayout h;
-    public int n;
-    public float r;
-    public final TextPaint s;
-    public long v;
-    public final RectF w;
+public final class bc extends yb implements NotificationCenter.NotificationCenterDelegate {
+    public final zb d;
+    public SparseLongArray e;
+    public final org.telegram.ui.ActionBar.n2 f;
+    public final int h;
+    public qc n;
 
-    public bc(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.r = 1.0f;
-        this.w = new RectF();
-        TextPaint textPaint = new TextPaint(1);
-        this.s = textPaint;
-        textPaint.setTextSize(AndroidUtilities.dp(12.0f));
-        textPaint.setTypeface(AndroidUtilities.getTypeface("fonts/num.otf"));
-        Paint paint = new Paint(1);
-        this.a = paint;
-        paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
-        paint.setStrokeCap(Paint.Cap.ROUND);
-        setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Hi, f6Var));
+    public bc(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+        super(n2Var.getContext(), n2Var.getResourceProvider());
+        this.f = n2Var;
+        this.h = i10;
+        this.b.setLayoutParams(w7.x5.i(-2.0f, -2.0f, 8388659, 56.0f, 6.0f, 8.0f, 0.0f));
+        this.a.setLayoutParams(w7.x5.h(56.0f, 48.0f, 8388659));
+        zb zbVar = new zb(this, n2Var, getContext(), n2Var.getCurrentAccount(), n2Var.getResourceProvider());
+        this.d = zbVar;
+        zbVar.setPadding(AndroidUtilities.dp(4.0f), AndroidUtilities.dp(24.0f), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(0.0f));
+        this.d.setDelegate(new ac(this));
+        this.d.setTop(true);
+        this.d.setClipChildren(false);
+        this.d.setClipToPadding(false);
+        this.d.setVisibility(0);
+        this.d.setBubbleOffset(-AndroidUtilities.dp(80.0f));
+        this.d.setHint(LocaleController.getString(R.string.SavedTagReactionsHint));
+        addView(this.d, w7.x5.d(-2, 92.5f, 1, 0.0f, 36.0f, 0.0f, 0.0f));
+        this.d.p(null, null, true);
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        int ceil = this.b > 0 ? (int) Math.ceil(r2 / 1000.0f) : 0;
-        float dp = AndroidUtilities.dp(1.0f);
-        float dp2 = AndroidUtilities.dp(1.0f);
-        float measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(1.0f);
-        float measuredHeight = getMeasuredHeight() - AndroidUtilities.dp(1.0f);
-        RectF rectF = this.w;
-        rectF.set(dp, dp2, measuredWidth, measuredHeight);
-        int i10 = this.c;
-        TextPaint textPaint = this.s;
-        if (i10 != ceil) {
-            this.c = ceil;
-            this.d = String.valueOf(Math.max(0, ceil));
-            StaticLayout staticLayout = this.f;
-            if (staticLayout != null) {
-                this.h = staticLayout;
-                this.r = 0.0f;
-                this.n = this.e;
-            }
-            this.e = (int) Math.ceil(textPaint.measureText(r2));
-            this.f = new StaticLayout(this.d, textPaint, ConnectionsManager.DEFAULT_DATACENTER_ID, Layout.Alignment.ALIGN_NORMAL, 1.0f, 0.0f, false);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.savedMessagesForwarded) {
+            this.e = (SparseLongArray) objArr[0];
         }
-        float f10 = this.r;
-        if (f10 < 1.0f) {
-            float f11 = f10 + 0.10666667f;
-            this.r = f11;
-            if (f11 > 1.0f) {
-                this.r = 1.0f;
-            } else {
-                invalidate();
-            }
-        }
-        int alpha = textPaint.getAlpha();
-        if (this.h != null) {
-            float f12 = this.r;
-            if (f12 < 1.0f) {
-                textPaint.setAlpha((int) ((1.0f - f12) * alpha));
-                canvas.save();
-                canvas.translate(rectF.centerX() - (this.n / 2.0f), ((AndroidUtilities.dp(10.0f) * this.r) + (rectF.centerY() - (this.h.getHeight() / 2.0f))) - AndroidUtilities.dp(0.5f));
-                this.h.draw(canvas);
-                textPaint.setAlpha(alpha);
-                canvas.restore();
-            }
-        }
-        if (this.f != null) {
-            float f13 = this.r;
-            if (f13 != 1.0f) {
-                textPaint.setAlpha((int) (alpha * f13));
-            }
-            canvas.save();
-            canvas.translate(rectF.centerX() - (this.e / 2.0f), org.telegram.ui.ai.c(1.0f, this.r, AndroidUtilities.dp(10.0f), rectF.centerY() - (this.f.getHeight() / 2.0f)) - AndroidUtilities.dp(0.5f));
-            this.f.draw(canvas);
-            if (this.r != 1.0f) {
-                textPaint.setAlpha(alpha);
-            }
-            canvas.restore();
-        }
-        canvas.drawArc(rectF, -90.0f, (Math.max(0L, this.b) / 5000.0f) * (-360.0f), false, this.a);
-        if (this.v != 0) {
-            long currentTimeMillis = System.currentTimeMillis();
-            this.b -= currentTimeMillis - this.v;
-            this.v = currentTimeMillis;
-        } else {
-            this.v = System.currentTimeMillis();
-        }
-        invalidate();
     }
 
-    public void setColor(int i10) {
-        this.s.setColor(i10);
-        this.a.setColor(i10);
+    public final void f() {
+        if (this.d.getReactionsWindow() != null) {
+            this.d.e();
+            if (this.d.getReactionsWindow().a != null) {
+                this.d.getReactionsWindow().a.animate().alpha(0.0f).setDuration(180L).start();
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.ub
+    public int getMeasuredBackgroundHeight() {
+        return AndroidUtilities.dp(30.0f) + this.b.getMeasuredHeight();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getInstance(UserConfig.selectedAccount).addObserver(this, NotificationCenter.savedMessagesForwarded);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(UserConfig.selectedAccount).removeObserver(this, NotificationCenter.savedMessagesForwarded);
+    }
+
+    public void setBulletin(qc qcVar) {
+        this.n = qcVar;
     }
 }

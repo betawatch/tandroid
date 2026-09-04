@@ -1,33 +1,35 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class oh implements RequestDelegate {
+public final /* synthetic */ class oh implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ zn b;
-    public final /* synthetic */ TLRPC.TL_attachMenuBot c;
-    public final /* synthetic */ TLRPC.User d;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ Long d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ oh(zn znVar, TLRPC.TL_attachMenuBot tL_attachMenuBot, TLRPC.User user, int i10) {
+    public /* synthetic */ oh(Object obj, long j3, long j10, Long l4, int i10) {
         this.a = i10;
-        this.b = znVar;
-        this.c = tL_attachMenuBot;
-        this.d = user;
+        this.e = obj;
+        this.b = j3;
+        this.c = j10;
+        this.d = l4;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10;
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new rh(this.b, this.c, tL_error, this.d));
+                co.Y((co) this.e, this.b, this.c, this.d, (Boolean) obj);
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new rh(this.b, tL_error, this.c, this.d));
+                Boolean bool = (Boolean) obj;
+                i10 = ((org.telegram.ui.ActionBar.n2) ((nj) this.e).b).currentAccount;
+                zh.s5.y(i10, false).i0(this.b, this.c, this.d.longValue() > 0 && bool.booleanValue(), true);
                 break;
         }
     }

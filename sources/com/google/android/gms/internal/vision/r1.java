@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.List;
 import java.util.RandomAccess;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class r1 extends n0 implements t1, RandomAccess {
     public final ArrayList b;
@@ -20,6 +20,11 @@ public final class r1 extends n0 implements t1, RandomAccess {
         this(new ArrayList(i10));
     }
 
+    @Override // com.google.android.gms.internal.vision.t1
+    public final Object a(int i10) {
+        return this.b.get(i10);
+    }
+
     @Override // java.util.AbstractList, java.util.List
     public final /* synthetic */ void add(int i10, Object obj) {
         i();
@@ -30,11 +35,6 @@ public final class r1 extends n0 implements t1, RandomAccess {
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractCollection, java.util.Collection, java.util.List
     public final boolean addAll(Collection collection) {
         return addAll(this.b.size(), collection);
-    }
-
-    @Override // com.google.android.gms.internal.vision.t1
-    public final Object b(int i10) {
-        return this.b.get(i10);
     }
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
@@ -54,7 +54,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
         if (!(obj instanceof q0)) {
             byte[] bArr = (byte[]) obj;
             String str = new String(bArr, j1.a);
-            if (a3.a.s(0, bArr.length, bArr)) {
+            if (b3.a.s(0, bArr.length, bArr)) {
                 arrayList.set(i10, str);
             }
             return str;
@@ -62,7 +62,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
         q0 q0Var = (q0) obj;
         String str2 = q0Var.n() == 0 ? "" : new String(q0Var.b, q0Var.r(), q0Var.n(), j1.a);
         int r10 = q0Var.r();
-        if (a3.a.s(r10, q0Var.n() + r10, q0Var.b)) {
+        if (b3.a.s(r10, q0Var.n() + r10, q0Var.b)) {
             arrayList.set(i10, str2);
         }
         return str2;
@@ -127,7 +127,7 @@ public final class r1 extends n0 implements t1, RandomAccess {
 
     @Override // com.google.android.gms.internal.vision.t1
     public final t1 zze() {
-        return this.a ? new s2(this) : this;
+        return this.a ? new t2(this) : this;
     }
 
     public r1(ArrayList arrayList) {

@@ -1,339 +1,141 @@
 package org.telegram.ui;
 
-import android.os.IBinder;
-import android.os.Looper;
-import android.os.RemoteException;
-import android.os.SystemClock;
-import android.util.Log;
-import java.util.ArrayList;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledExecutorService;
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
+import android.text.SpannableStringBuilder;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DialogObject;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class az implements Runnable {
-    public final /* synthetic */ int a;
-    public Object b;
-    public final /* synthetic */ Object c;
+public final class az extends org.telegram.ui.Components.kl0 {
+    public final Context c;
+    public final /* synthetic */ dz d;
 
-    public /* synthetic */ az(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.c = obj;
-        this.b = obj2;
+    public az(dz dzVar, Context context) {
+        this.d = dzVar;
+        this.c = context;
     }
 
-    private final void a() {
-        x5.i iVar = (x5.i) this.b;
-        IBinder iBinder = (IBinder) this.c;
-        synchronized (iVar) {
-            if (iBinder == null) {
-                iVar.a("Null service connection");
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        int i10 = c1Var.f;
+        return i10 == 1 || i10 == 3;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d.v;
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        if (i10 == 0) {
+            return 2;
+        }
+        dz dzVar = this.d;
+        if (i10 == dzVar.h) {
+            return 1;
+        }
+        return i10 == dzVar.s ? 0 : 3;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        int i11 = c1Var.f;
+        View view = c1Var.a;
+        dz dzVar = this.d;
+        if (i11 == 0) {
+            org.telegram.ui.Cells.e9 e9Var = (org.telegram.ui.Cells.e9) view;
+            if (i10 == dzVar.s) {
+                SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
+                int i12 = dzVar.w;
+                if (i12 == 0) {
+                    spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.EditWidgetChatsInfo));
+                } else if (i12 == 1) {
+                    spannableStringBuilder.append((CharSequence) LocaleController.getString(R.string.EditWidgetContactsInfo));
+                }
+                if (SharedConfig.passcodeHash.length() > 0) {
+                    spannableStringBuilder.append((CharSequence) "\n\n").append((CharSequence) AndroidUtilities.replaceTags(LocaleController.getString(R.string.WidgetPasscode2)));
+                }
+                e9Var.setText(spannableStringBuilder);
                 return;
             }
-            try {
-                iVar.c = new q5.c0(iBinder);
-                iVar.a = 2;
-                ((ScheduledExecutorService) iVar.f.c).execute(new x5.g(iVar, 0));
-            } catch (RemoteException e) {
-                iVar.a(e.getMessage());
+            return;
+        }
+        if (i11 != 1) {
+            if (i11 != 3) {
+                return;
+            }
+            org.telegram.ui.Cells.f4 f4Var = (org.telegram.ui.Cells.f4) view;
+            Long l4 = (Long) dzVar.e.get(i10 - dzVar.n);
+            long longValue = l4.longValue();
+            if (DialogObject.isUserDialog(longValue)) {
+                f4Var.e(dzVar.getMessagesController().getUser(l4), null, null, i10 != dzVar.r - 1);
+                return;
+            } else {
+                f4Var.e(dzVar.getMessagesController().getChat(Long.valueOf(-longValue)), null, null, i10 != dzVar.r - 1);
+                return;
             }
         }
+        org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
+        r8Var.e(-1, org.telegram.ui.ActionBar.j6.q6);
+        Context context = this.c;
+        Drawable drawable = context.getResources().getDrawable(R.drawable.poll_add_circle);
+        Drawable drawable2 = context.getResources().getDrawable(R.drawable.poll_add_plus);
+        int w02 = org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.N6, false);
+        PorterDuff.Mode mode = PorterDuff.Mode.MULTIPLY;
+        drawable.setColorFilter(new PorterDuffColorFilter(w02, mode));
+        drawable2.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k7, false), mode));
+        r8Var.n(LocaleController.getString(R.string.SelectChats), new org.telegram.ui.Components.oq(drawable, drawable2), dzVar.n != -1);
+        r8Var.getImageView().setPadding(0, AndroidUtilities.dp(7.0f), 0, 0);
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        boolean z4;
-        boolean z10;
-        boolean z11;
-        boolean z12;
-        boolean z13;
-        boolean z14;
-        boolean z15;
-        boolean z16;
-        int i10 = 0;
-        switch (this.a) {
-            case 0:
-                ((org.telegram.ui.Components.ic) this.b).j();
-                ((dz) this.c).B = null;
-                return;
-            case 1:
-                p2.b bVar = (p2.b) this.b;
-                p2.h hVar = (p2.h) this.c;
-                if (((p2.p) bVar.f.c) != null) {
-                    ((p2.p) bVar.f.c).onPurchasesUpdated(hVar, null);
-                    return;
-                } else {
-                    com.google.android.gms.internal.play_billing.u.h("BillingClient", "No valid listener is set in BroadcastManager");
-                    return;
-                }
-            case 2:
-                Future future = (Future) this.b;
-                if (future.isDone() || future.isCancelled()) {
-                    return;
-                }
-                Runnable runnable = (Runnable) this.c;
-                future.cancel(true);
-                com.google.android.gms.internal.play_billing.u.h("BillingClient", "Async task is taking too long, cancel it!");
-                if (runnable != null) {
-                    runnable.run();
-                    return;
-                }
-                return;
-            case 3:
-                p2.b bVar2 = (p2.b) this.b;
-                org.telegram.messenger.d0 d0Var = (org.telegram.messenger.d0) this.c;
-                p2.h hVar2 = p2.b0.i;
-                bVar2.y(24, 7, hVar2);
-                com.google.android.gms.internal.play_billing.p pVar = com.google.android.gms.internal.play_billing.r.b;
-                com.google.android.gms.internal.play_billing.v vVar = com.google.android.gms.internal.play_billing.v.e;
-                d0Var.a(hVar2, new p2.r(vVar, vVar));
-                return;
-            case 4:
-                p2.b bVar3 = (p2.b) this.b;
-                p2.o oVar = (p2.o) this.c;
-                p2.h hVar3 = p2.b0.i;
-                bVar3.y(24, 9, hVar3);
-                com.google.android.gms.internal.play_billing.p pVar2 = com.google.android.gms.internal.play_billing.r.b;
-                oVar.b(hVar3, com.google.android.gms.internal.play_billing.v.e);
-                return;
-            case 5:
-                q5.f0 f0Var = ((q5.e0) this.b).b;
-                u5.d dVar = (u5.d) this.c;
-                u5.b bVar4 = q5.f0.G;
-                q5.d dVar2 = dVar.d;
-                q5.x xVar = dVar.f;
-                q5.d dVar3 = f0Var.t;
-                r5.e0 e0Var = f0Var.D;
-                if (!u5.a.d(dVar2, dVar3)) {
-                    f0Var.t = dVar2;
-                    e0Var.c();
-                }
-                double d = dVar.a;
-                if (Double.isNaN(d) || Math.abs(d - f0Var.v) <= 1.0E-7d) {
-                    z4 = false;
-                } else {
-                    f0Var.v = d;
-                    z4 = true;
-                }
-                boolean z17 = dVar.b;
-                if (z17 != f0Var.w) {
-                    f0Var.w = z17;
-                    z4 = true;
-                }
-                u5.b bVar5 = q5.f0.G;
-                bVar5.b("hasVolumeChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z4), Boolean.valueOf(f0Var.m));
-                if (e0Var != null && (z4 || f0Var.m)) {
-                    e0Var.f();
-                }
-                Double.isNaN(dVar.h);
-                int i11 = dVar.c;
-                if (i11 != f0Var.x) {
-                    f0Var.x = i11;
-                    z10 = true;
-                } else {
-                    z10 = false;
-                }
-                bVar5.b("hasActiveInputChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z10), Boolean.valueOf(f0Var.m));
-                if (e0Var != null && (z10 || f0Var.m)) {
-                    e0Var.a();
-                }
-                int i12 = dVar.e;
-                if (i12 != f0Var.y) {
-                    f0Var.y = i12;
-                    z11 = true;
-                } else {
-                    z11 = false;
-                }
-                bVar5.b("hasStandbyStateChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z11), Boolean.valueOf(f0Var.m));
-                if (e0Var != null && (z11 || f0Var.m)) {
-                    e0Var.e();
-                }
-                if (!u5.a.d(f0Var.z, xVar)) {
-                    f0Var.z = xVar;
-                }
-                f0Var.m = false;
-                return;
-            case 6:
-                q5.f0 f0Var2 = ((q5.e0) this.b).b;
-                u5.c cVar = (u5.c) this.c;
-                u5.b bVar6 = q5.f0.G;
-                String str = cVar.a;
-                if (u5.a.d(str, f0Var2.u)) {
-                    z12 = false;
-                } else {
-                    f0Var2.u = str;
-                    z12 = true;
-                }
-                q5.f0.G.b("hasChanged=%b, mFirstApplicationStatusUpdate=%b", Boolean.valueOf(z12), Boolean.valueOf(f0Var2.n));
-                r5.e0 e0Var2 = f0Var2.D;
-                if (e0Var2 != null && (z12 || f0Var2.n)) {
-                    e0Var2.d();
-                }
-                f0Var2.n = false;
-                return;
-            case 7:
-                qd.i iVar = (qd.i) this.c;
-                ld.a0 a0Var = iVar.c;
-                while (true) {
-                    try {
-                        ((Runnable) this.b).run();
-                    } catch (Throwable th2) {
-                        ld.e0.m(th2, uc.i.a);
-                    }
-                    Runnable f10 = iVar.f();
-                    if (f10 == null) {
-                        return;
-                    }
-                    this.b = f10;
-                    i10++;
-                    if (i10 >= 16 && a0Var.e()) {
-                        a0Var.c(iVar, this);
-                        return;
-                    }
-                }
-                break;
-            case 8:
-                u5.w wVar = (u5.w) this.b;
-                u5.d dVar4 = (u5.d) this.c;
-                u5.b bVar7 = u5.w.k0;
-                q5.d dVar5 = dVar4.d;
-                q5.x xVar2 = dVar4.f;
-                q5.d dVar6 = wVar.R;
-                r5.e0 e0Var3 = wVar.T;
-                if (!u5.a.d(dVar5, dVar6)) {
-                    wVar.R = dVar5;
-                    e0Var3.c();
-                }
-                double d10 = dVar4.a;
-                if (Double.isNaN(d10) || Math.abs(d10 - wVar.c0) <= 1.0E-7d) {
-                    z13 = false;
-                } else {
-                    wVar.c0 = d10;
-                    z13 = true;
-                }
-                boolean z18 = dVar4.b;
-                if (z18 != wVar.Z) {
-                    wVar.Z = z18;
-                    z13 = true;
-                }
-                Double.isNaN(dVar4.h);
-                u5.b bVar8 = u5.w.k0;
-                bVar8.b("hasVolumeChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z13), Boolean.valueOf(wVar.b0));
-                if (e0Var3 != null && (z13 || wVar.b0)) {
-                    e0Var3.f();
-                }
-                int i13 = dVar4.c;
-                if (i13 != wVar.e0) {
-                    wVar.e0 = i13;
-                    z14 = true;
-                } else {
-                    z14 = false;
-                }
-                bVar8.b("hasActiveInputChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z14), Boolean.valueOf(wVar.b0));
-                if (e0Var3 != null && (z14 || wVar.b0)) {
-                    e0Var3.a();
-                }
-                int i14 = dVar4.e;
-                if (i14 != wVar.f0) {
-                    wVar.f0 = i14;
-                    z15 = true;
-                } else {
-                    z15 = false;
-                }
-                bVar8.b("hasStandbyStateChanged=%b, mFirstDeviceStatusUpdate=%b", Boolean.valueOf(z15), Boolean.valueOf(wVar.b0));
-                if (e0Var3 != null && (z15 || wVar.b0)) {
-                    e0Var3.e();
-                }
-                if (!u5.a.d(wVar.d0, xVar2)) {
-                    wVar.d0 = xVar2;
-                }
-                wVar.b0 = false;
-                return;
-            case 9:
-                u5.w wVar2 = (u5.w) this.b;
-                u5.c cVar2 = (u5.c) this.c;
-                u5.b bVar9 = u5.w.k0;
-                String str2 = cVar2.a;
-                if (u5.a.d(str2, wVar2.Y)) {
-                    z16 = false;
-                } else {
-                    wVar2.Y = str2;
-                    z16 = true;
-                }
-                u5.w.k0.b("hasChanged=%b, mFirstApplicationStatusUpdate=%b", Boolean.valueOf(z16), Boolean.valueOf(wVar2.a0));
-                r5.e0 e0Var4 = wVar2.T;
-                if (e0Var4 != null && (z16 || wVar2.a0)) {
-                    e0Var4.d();
-                }
-                wVar2.a0 = false;
-                return;
-            case 10:
-                wh.n nVar = (wh.n) this.c;
-                ArrayList arrayList = (ArrayList) this.b;
-                int size = arrayList.size();
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    nVar.B((f2.j) obj);
-                }
-                arrayList.clear();
-                nVar.v.remove(arrayList);
-                return;
-            case 11:
-                x1.a aVar = (x1.a) this.c;
-                Object obj2 = this.b;
-                if (aVar.c.get()) {
-                    o5.d dVar7 = aVar.e;
-                    if (dVar7.h == aVar) {
-                        SystemClock.uptimeMillis();
-                        dVar7.h = null;
-                        dVar7.b();
-                    }
-                } else {
-                    o5.d dVar8 = aVar.e;
-                    if (dVar8.g != aVar) {
-                        if (dVar8.h == aVar) {
-                            SystemClock.uptimeMillis();
-                            dVar8.h = null;
-                            dVar8.b();
-                        }
-                    } else if (!dVar8.c) {
-                        SystemClock.uptimeMillis();
-                        dVar8.g = null;
-                        w1.a aVar2 = dVar8.a;
-                        if (aVar2 != null) {
-                            if (Looper.myLooper() == Looper.getMainLooper()) {
-                                aVar2.j(obj2);
-                            } else {
-                                aVar2.h(obj2);
-                            }
-                        }
-                    }
-                }
-                aVar.b = 3;
-                return;
-            case 12:
-                a();
-                return;
-            default:
-                x5.i iVar2 = (x5.i) this.b;
-                int i15 = ((x5.j) this.c).a;
-                synchronized (iVar2) {
-                    x5.j jVar = (x5.j) iVar2.e.get(i15);
-                    if (jVar != null) {
-                        Log.w("MessengerIpcClient", "Timing out request: " + i15);
-                        iVar2.e.remove(i15);
-                        jVar.b(new b7.a("Timed out waiting for response", null));
-                        iVar2.c();
-                    }
-                }
-                return;
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout frameLayout;
+        Context context = this.c;
+        if (i10 == 0) {
+            FrameLayout e9Var = new org.telegram.ui.Cells.e9(context);
+            e9Var.setBackgroundDrawable(org.telegram.ui.ActionBar.j6.V0(context, R.drawable.greydivider_bottom, org.telegram.ui.ActionBar.j6.b7));
+            frameLayout = e9Var;
+        } else if (i10 == 1) {
+            FrameLayout r8Var = new org.telegram.ui.Cells.r8(context);
+            r8Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+            frameLayout = r8Var;
+        } else if (i10 != 2) {
+            FrameLayout f4Var = new org.telegram.ui.Cells.f4(context, 0, 0, false);
+            ImageView imageView = new ImageView(context);
+            imageView.setImageResource(R.drawable.list_reorder);
+            imageView.setScaleType(ImageView.ScaleType.CENTER);
+            f4Var.setTag(R.id.object_tag, imageView);
+            f4Var.addView(imageView, w7.x5.d(40, -1.0f, (LocaleController.isRTL ? 3 : 5) | 16, 10.0f, 0.0f, 10.0f, 0.0f));
+            imageView.setOnTouchListener(new di.q1(5, this, f4Var));
+            imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.b9, false), PorterDuff.Mode.MULTIPLY));
+            frameLayout = f4Var;
+        } else {
+            dz dzVar = this.d;
+            cz czVar = new cz(dzVar, context);
+            dzVar.f = czVar;
+            frameLayout = czVar;
         }
+        return new org.telegram.ui.Components.vk0(frameLayout);
     }
 
-    public /* synthetic */ az(Object obj, Object obj2, boolean z4, int i10) {
-        this.a = i10;
-        this.b = obj;
-        this.c = obj2;
+    @Override // s4.h0
+    public final void y(s4.c1 c1Var) {
+        int i10 = c1Var.f;
+        if (i10 == 3 || i10 == 1) {
+            c1Var.a.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+        }
     }
 }

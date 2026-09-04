@@ -17,7 +17,7 @@ public abstract class u4 extends p4 implements o4 {
         throw null;
     }
 
-    public /* synthetic */ void accept(long j10) {
+    public /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -36,7 +36,7 @@ public abstract class u4 extends p4 implements o4 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.b = 0L;
     }
 }

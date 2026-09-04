@@ -4,7 +4,7 @@ import android.graphics.Rect;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class CameraSessionWrapper {
     public CameraSession camera1Session;
@@ -16,14 +16,14 @@ public class CameraSessionWrapper {
         return cameraSessionWrapper;
     }
 
-    public void destroy(boolean z4, Runnable runnable, Runnable runnable2) {
+    public void destroy(boolean z10, Runnable runnable, Runnable runnable2) {
         if (this.camera2Session != null) {
             if (runnable != null) {
                 runnable.run();
             }
-            this.camera2Session.destroy(z4, runnable2);
+            this.camera2Session.destroy(z10, runnable2);
         } else if (this.camera1Session != null) {
-            CameraController.getInstance().close(this.camera1Session, !z4 ? new CountDownLatch(1) : null, runnable, runnable2);
+            CameraController.getInstance().close(this.camera1Session, !z10 ? new CountDownLatch(1) : null, runnable, runnable2);
         }
     }
 
@@ -166,34 +166,34 @@ public class CameraSessionWrapper {
         }
     }
 
-    public void setFlipFront(boolean z4) {
+    public void setFlipFront(boolean z10) {
         CameraSession cameraSession;
         if (this.camera2Session == null && (cameraSession = this.camera1Session) != null) {
-            cameraSession.setFlipFront(z4);
+            cameraSession.setFlipFront(z10);
         }
     }
 
-    public void setOptimizeForBarcode(boolean z4) {
+    public void setOptimizeForBarcode(boolean z10) {
         Camera2Session camera2Session = this.camera2Session;
         if (camera2Session != null) {
-            camera2Session.setScanningBarcode(z4);
+            camera2Session.setScanningBarcode(z10);
             return;
         }
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
-            cameraSession.setOptimizeForBarcode(z4);
+            cameraSession.setOptimizeForBarcode(z10);
         }
     }
 
-    public void setZoom(float f10) {
+    public void setZoom(float f7) {
         Camera2Session camera2Session = this.camera2Session;
         if (camera2Session != null) {
-            camera2Session.setZoom(AndroidUtilities.lerp(camera2Session.getMinZoom(), this.camera2Session.getMaxZoom(), f10));
+            camera2Session.setZoom(AndroidUtilities.lerp(camera2Session.getMinZoom(), this.camera2Session.getMaxZoom(), f7));
             return;
         }
         CameraSession cameraSession = this.camera1Session;
         if (cameraSession != null) {
-            cameraSession.setZoom(f10);
+            cameraSession.setZoom(f7);
         }
     }
 

@@ -35,8 +35,8 @@ public abstract class e5 implements i5 {
     }
 
     @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l10) {
-        t3.H(this, l10);
+    public final /* synthetic */ void x(Long l4) {
+        t3.H(this, l4);
     }
 
     public e5(j5 j5Var) {
@@ -44,8 +44,8 @@ public abstract class e5 implements i5 {
     }
 
     @Override // j$.util.stream.j5
-    public void o(long j10) {
-        this.a.o(j10);
+    public void o(long j3) {
+        this.a.o(j3);
     }
 
     @Override // j$.util.stream.j5

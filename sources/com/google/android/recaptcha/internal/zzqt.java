@@ -1,10 +1,10 @@
 package com.google.android.recaptcha.internal;
 
-import android.support.v4.media.a;
+import a4.a;
 import java.io.IOException;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzqt extends IOException {
     public zzqt() {
@@ -15,13 +15,13 @@ public final class zzqt extends IOException {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public zzqt(long j10, long j11, int i10, Throwable th2) {
+    public zzqt(long j3, long j10, int i10, Throwable th2) {
         super("CodedOutputStream was writing to a flat byte array and ran out of space.: ".concat(r3.toString()), th2);
         Locale locale = Locale.US;
-        StringBuilder s6 = a.s(j10, "Pos: ", ", limit: ");
-        s6.append(j11);
-        s6.append(", len: ");
-        s6.append(i10);
+        StringBuilder t10 = a.t(j3, "Pos: ", ", limit: ");
+        t10.append(j10);
+        t10.append(", len: ");
+        t10.append(i10);
     }
 
     public zzqt(Throwable th2) {

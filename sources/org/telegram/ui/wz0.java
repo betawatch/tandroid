@@ -1,39 +1,19 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class wz0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ xz0 b;
+public final class wz0 extends a71 {
+    public final /* synthetic */ ProfileActivity e;
 
-    public /* synthetic */ wz0(xz0 xz0Var, int i10) {
-        this.a = i10;
-        this.b = xz0Var;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public wz0(ProfileActivity profileActivity, vz0 vz0Var) {
+        super(vz0Var);
+        this.e = profileActivity;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ProfileActivity profileActivity = this.b.A0;
-                jz0 jz0Var = profileActivity.y5;
-                if (jz0Var != null) {
-                    jz0Var.dismiss();
-                    profileActivity.y5 = null;
-                    break;
-                }
-                break;
-            default:
-                try {
-                    org.telegram.ui.Components.rl0 currentListView = this.b.u0.L.getCurrentListView();
-                    if (currentListView != null && currentListView.getAdapter() != null) {
-                        currentListView.getAdapter().l();
-                        break;
-                    }
-                } catch (Throwable unused) {
-                    return;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.a71, android.widget.PopupWindow
+    public final void dismiss() {
+        super.dismiss();
+        this.e.B5 = null;
     }
 }

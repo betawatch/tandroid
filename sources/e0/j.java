@@ -5,7 +5,7 @@ import android.os.Bundle;
 import androidx.core.graphics.drawable.IconCompat;
 import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class j {
     public final IconCompat a;
@@ -18,11 +18,11 @@ public final class j {
     public boolean h;
 
     public j(int i10, String str, PendingIntent pendingIntent) {
-        IconCompat e = i10 == 0 ? null : IconCompat.e(null, "", i10);
+        IconCompat e7 = i10 == 0 ? null : IconCompat.e(null, "", i10);
         Bundle bundle = new Bundle();
         this.d = true;
         this.h = true;
-        this.a = e;
+        this.a = e7;
         this.b = t.d(str);
         this.c = pendingIntent;
         this.e = bundle;
@@ -32,11 +32,11 @@ public final class j {
         this.h = true;
     }
 
-    public final void a(q0 q0Var) {
+    public final void a(r0 r0Var) {
         if (this.f == null) {
             this.f = new ArrayList();
         }
-        this.f.add(q0Var);
+        this.f.add(r0Var);
     }
 
     public final k b() {
@@ -49,12 +49,12 @@ public final class j {
             while (i10 < size) {
                 Object obj = arrayList3.get(i10);
                 i10++;
-                q0 q0Var = (q0) obj;
-                q0Var.getClass();
-                arrayList2.add(q0Var);
+                r0 r0Var = (r0) obj;
+                r0Var.getClass();
+                arrayList2.add(r0Var);
             }
         }
-        return new k(this.a, this.b, this.c, this.e, arrayList2.isEmpty() ? null : (q0[]) arrayList2.toArray(new q0[arrayList2.size()]), arrayList.isEmpty() ? null : (q0[]) arrayList.toArray(new q0[arrayList.size()]), this.d, this.g, this.h);
+        return new k(this.a, this.b, this.c, this.e, arrayList2.isEmpty() ? null : (r0[]) arrayList2.toArray(new r0[arrayList2.size()]), arrayList.isEmpty() ? null : (r0[]) arrayList.toArray(new r0[arrayList.size()]), this.d, this.g, this.h);
     }
 
     public final void c() {

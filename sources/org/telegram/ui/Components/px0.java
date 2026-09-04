@@ -1,60 +1,23 @@
 package org.telegram.ui.Components;
 
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.MediaDataController;
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.view.View;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class px0 extends f2.d0 {
-    public int e;
-    public final /* synthetic */ xx0 f;
+public final class px0 extends org.telegram.ui.Cells.f8 {
+    public final /* synthetic */ qx0 O;
 
-    public px0(xx0 xx0Var) {
-        this.f = xx0Var;
-        this.d = 15;
-        this.e = -1;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public px0(qx0 qx0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, f6Var, false);
+        this.O = qx0Var;
     }
 
-    @Override // f2.b0
-    public final boolean n(RecyclerView recyclerView, f2.l1 l1Var, f2.l1 l1Var2) {
-        int i10 = l1Var.f;
-        if (i10 == 3 || i10 != l1Var2.f) {
-            return false;
-        }
-        xx0 xx0Var = this.f;
-        if (xx0Var.P == null) {
-            return false;
-        }
-        int b10 = l1Var.b();
-        int b11 = l1Var2.b();
-        xx0Var.P.documents.add(b11, xx0Var.P.documents.remove(b10));
-        xx0Var.d.p(b10, b11);
-        this.e = b11;
-        return true;
-    }
-
-    @Override // f2.b0
-    public final void p(f2.l1 l1Var, int i10) {
-        xx0 xx0Var = this.f;
-        if (i10 != 0 || xx0Var.f == null || this.e <= 0) {
-            if (i10 == 2) {
-                xx0Var.f = ((org.telegram.ui.Cells.c8) l1Var.a).getSticker();
-            }
-        } else {
-            TLRPC.TL_stickers_changeStickerPosition tL_stickers_changeStickerPosition = new TLRPC.TL_stickers_changeStickerPosition();
-            tL_stickers_changeStickerPosition.position = this.e;
-            tL_stickers_changeStickerPosition.sticker = MediaDataController.getInputStickerSetItem(xx0Var.f, "").document;
-            this.e = -1;
-            xx0Var.f = null;
-        }
-    }
-
-    @Override // f2.b0
-    public final void q(f2.l1 l1Var) {
-    }
-
-    @Override // f2.b0
-    public final void o(RecyclerView recyclerView, f2.l1 l1Var, f2.l1 l1Var2, int i10, int i11, int i12) {
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        qx0 qx0Var = this.O;
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(qx0Var.r.O, TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(qx0Var.r.O, TLObject.FLAG_30));
     }
 }

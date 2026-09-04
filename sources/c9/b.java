@@ -1,68 +1,78 @@
 package c9;
 
-import j$.util.DesugarCollections;
-import j7.j5;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.content.ServiceConnection;
+import android.os.Bundle;
+import android.os.IBinder;
+import android.os.IInterface;
+import android.os.Parcel;
+import android.util.Log;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b {
-    public final String a;
-    public final Set b;
-    public final Set c;
-    public final int d;
-    public final int e;
-    public final f f;
-    public final Set g;
+public final class b implements ServiceConnection {
+    public b9.c a;
+    public final /* synthetic */ c b;
 
-    public b(String str, Set set, Set set2, int i10, int i11, f fVar, Set set3) {
-        this.a = str;
-        this.b = DesugarCollections.unmodifiableSet(set);
-        this.c = DesugarCollections.unmodifiableSet(set2);
-        this.d = i10;
-        this.e = i11;
-        this.f = fVar;
-        this.g = DesugarCollections.unmodifiableSet(set3);
+    public b(c cVar) {
+        this.b = cVar;
     }
 
-    public static a a(u uVar) {
-        u[] uVarArr = new u[0];
-        a aVar = new a();
-        aVar.a = null;
-        HashSet hashSet = new HashSet();
-        aVar.d = hashSet;
-        aVar.e = new HashSet();
-        aVar.b = 0;
-        aVar.c = 0;
-        aVar.f = new HashSet();
-        hashSet.add(uVar);
-        for (u uVar2 : uVarArr) {
-            j5.a(uVar2, "Null interface");
+    public static boolean a(b bVar) {
+        return bVar.a != null;
+    }
+
+    public final boolean b(Intent intent, Bundle bundle) {
+        b9.c cVar = this.a;
+        if (cVar != null) {
+            b9.a aVar = (b9.a) cVar;
+            Parcel obtain = Parcel.obtain();
+            obtain.writeInterfaceToken("com.google.android.search.verification.api.ISearchActionVerificationService");
+            int i10 = h5.a.a;
+            if (intent == null) {
+                obtain.writeInt(0);
+            } else {
+                obtain.writeInt(1);
+                intent.writeToParcel(obtain, 0);
+            }
+            obtain.writeInt(1);
+            bundle.writeToParcel(obtain, 0);
+            Parcel G0 = aVar.G0(obtain, 1);
+            boolean z10 = G0.readInt() != 0;
+            G0.recycle();
+            if (z10) {
+                return true;
+            }
         }
-        Collections.addAll((HashSet) aVar.d, uVarArr);
-        return aVar;
+        return false;
     }
 
-    public static a b(Class cls) {
-        return new a(cls, new Class[0]);
-    }
-
-    public static b c(Object obj, Class cls, Class... clsArr) {
-        HashSet hashSet = new HashSet();
-        HashSet hashSet2 = new HashSet();
-        HashSet hashSet3 = new HashSet();
-        hashSet.add(u.a(cls));
-        for (Class cls2 : clsArr) {
-            j5.a(cls2, "Null interface");
-            hashSet.add(u.a(cls2));
+    @Override // android.content.ServiceConnection
+    public final void onServiceConnected(ComponentName componentName, IBinder iBinder) {
+        boolean z10;
+        b9.c aVar;
+        z10 = this.b.dbg;
+        if (z10) {
+            Log.d("SAVerificationClientS", "onServiceConnected");
         }
-        return new b(null, new HashSet(hashSet), new HashSet(hashSet2), 0, 0, new a1.c(obj, 3), hashSet3);
+        int i10 = b9.b.a;
+        if (iBinder == null) {
+            aVar = null;
+        } else {
+            IInterface queryLocalInterface = iBinder.queryLocalInterface("com.google.android.search.verification.api.ISearchActionVerificationService");
+            aVar = queryLocalInterface instanceof b9.c ? (b9.c) queryLocalInterface : new b9.a(iBinder);
+        }
+        this.a = aVar;
     }
 
-    public final String toString() {
-        return "Component<" + Arrays.toString(this.b.toArray()) + ">{" + this.d + ", type=" + this.e + ", deps=" + Arrays.toString(this.c.toArray()) + "}";
+    @Override // android.content.ServiceConnection
+    public final void onServiceDisconnected(ComponentName componentName) {
+        boolean z10;
+        this.a = null;
+        z10 = this.b.dbg;
+        if (z10) {
+            Log.d("SAVerificationClientS", "onServiceDisconnected");
+        }
     }
 }

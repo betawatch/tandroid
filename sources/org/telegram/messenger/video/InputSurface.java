@@ -8,7 +8,7 @@ import android.opengl.EGLExt;
 import android.opengl.EGLSurface;
 import android.view.Surface;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class InputSurface {
     private static final int EGL_OPENGL_ES2_BIT = 4;
@@ -25,11 +25,11 @@ public class InputSurface {
     }
 
     private void checkEglError(String str) {
-        boolean z4 = false;
+        boolean z10 = false;
         while (EGL14.eglGetError() != 12288) {
-            z4 = true;
+            z10 = true;
         }
-        if (z4) {
+        if (z10) {
             throw new RuntimeException("EGL error encountered (see log)");
         }
     }
@@ -88,8 +88,8 @@ public class InputSurface {
         this.mSurface = null;
     }
 
-    public void setPresentationTime(long j10) {
-        EGLExt.eglPresentationTimeANDROID(this.mEGLDisplay, this.mEGLSurface, j10);
+    public void setPresentationTime(long j3) {
+        EGLExt.eglPresentationTimeANDROID(this.mEGLDisplay, this.mEGLSurface, j3);
     }
 
     public boolean swapBuffers() {

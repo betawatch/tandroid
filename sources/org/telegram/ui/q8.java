@@ -1,69 +1,55 @@
 package org.telegram.ui;
 
-import android.view.View;
+import j$.util.function.Predicate$-CC;
+import java.util.function.Predicate;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class q8 implements View.OnClickListener {
+public final /* synthetic */ class q8 implements Predicate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ long b;
 
-    public /* synthetic */ q8(int i10, boolean[] zArr) {
+    public /* synthetic */ q8(long j3, int i10) {
         this.a = i10;
-        this.b = zArr;
+        this.b = j3;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
+    public /* synthetic */ Predicate and(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$and(this, predicate);
+    }
+
+    public /* synthetic */ Predicate negate() {
+        switch (this.a) {
+        }
+        return Predicate$-CC.$default$negate(this);
+    }
+
+    public /* synthetic */ Predicate or(Predicate predicate) {
+        int i10 = this.a;
+        return Predicate$-CC.$default$or(this, predicate);
+    }
+
+    @Override // java.util.function.Predicate
+    public final boolean test(Object obj) {
         switch (this.a) {
             case 0:
-                boolean[] zArr = this.b;
-                boolean z4 = !zArr[0];
-                zArr[0] = z4;
-                ((org.telegram.ui.Cells.y1) view).c(z4, true);
-                break;
+                return ((TLRPC.User) obj).id == this.b;
             case 1:
-                boolean[] zArr2 = this.b;
-                boolean z10 = !zArr2[1];
-                zArr2[1] = z10;
-                ((org.telegram.ui.Cells.y1) view).c(z10, true);
-                break;
-            case 2:
-                boolean[] zArr3 = this.b;
-                boolean z11 = !zArr3[0];
-                zArr3[0] = z11;
-                ((org.telegram.ui.Cells.y1) view).c(z11, true);
-                break;
-            case 3:
-                boolean[] zArr4 = this.b;
-                boolean z12 = !zArr4[0];
-                zArr4[0] = z12;
-                ((org.telegram.ui.Cells.y1) view).c(z12, true);
-                break;
-            case 4:
-                if (view.isEnabled()) {
-                    boolean[] zArr5 = this.b;
-                    boolean z13 = !zArr5[0];
-                    zArr5[0] = z13;
-                    ((org.telegram.ui.Cells.y1) view).c(z13, true);
-                    break;
-                }
-                break;
-            case 5:
-                boolean[] zArr6 = this.b;
-                boolean z14 = !zArr6[0];
-                zArr6[0] = z14;
-                ((org.telegram.ui.Cells.y1) view).c(z14, true);
-                break;
+                return ((TLRPC.User) obj).id == this.b;
             default:
-                if (view.isEnabled()) {
-                    boolean[] zArr7 = this.b;
-                    boolean z15 = !zArr7[0];
-                    zArr7[0] = z15;
-                    ((org.telegram.ui.Cells.y1) view).c(z15, true);
-                    break;
+                TLObject tLObject = (TLObject) obj;
+                if (tLObject instanceof TLRPC.User) {
+                    if (((TLRPC.User) tLObject).id != this.b) {
+                        return true;
+                    }
+                } else if (tLObject instanceof TLRPC.Chat) {
+                    return true ^ ChatObject.hasAdminRights((TLRPC.Chat) tLObject);
                 }
-                break;
+                return false;
         }
     }
 }

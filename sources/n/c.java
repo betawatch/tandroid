@@ -3,22 +3,22 @@ package n;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import d1.f;
+import b5.d;
 import java.lang.reflect.InvocationTargetException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import k7.v;
+import w7.x;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c extends v {
+public final class c extends x {
     public final Object a = new Object();
     public final ExecutorService b = Executors.newFixedThreadPool(4, new b());
     public volatile Handler c;
 
     public static Handler a(Looper looper) {
         if (Build.VERSION.SDK_INT >= 28) {
-            return f.c(looper);
+            return d.c(looper);
         }
         try {
             return (Handler) Handler.class.getDeclaredConstructor(Looper.class, Handler.Callback.class, Boolean.TYPE).newInstance(looper, null, Boolean.TRUE);

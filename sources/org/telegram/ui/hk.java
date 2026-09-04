@@ -1,36 +1,39 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.os.Bundle;
+import org.telegram.ui.Components.FragmentContextView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class hk extends bo {
-    public final /* synthetic */ int f;
-    public boolean h;
+public final class hk extends FragmentContextView {
+    public final /* synthetic */ int N0;
+    public final /* synthetic */ co O0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ hk(Context context, org.telegram.ui.ActionBar.e5 e5Var, Bundle bundle, int i10) {
-        super(context, e5Var, bundle);
-        this.f = i10;
-    }
-
-    @Override // org.telegram.ui.bo
-    public final void a() {
-        switch (this.f) {
-            case 0:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
+    public hk(co coVar, Context context, co coVar2, org.telegram.ui.ActionBar.f6 f6Var, int i10) {
+        super(context, coVar2, null, true, f6Var);
+        this.N0 = i10;
+        switch (i10) {
+            case 1:
+                this.O0 = coVar;
+                super(context, coVar2, null, false, f6Var);
                 break;
             default:
-                if (!this.h) {
-                    this.h = true;
-                    super.a();
-                    break;
-                }
+                this.O0 = coVar;
+                break;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.FragmentContextView, android.view.View
+    public final void setVisibility(int i10) {
+        switch (this.N0) {
+            case 0:
+                co coVar = this.O0;
+                coVar.M0.i(coVar.a2, i10 == 0, true);
+                break;
+            default:
+                co coVar2 = this.O0;
+                coVar2.M0.i(coVar2.Y1, i10 == 0, true);
                 break;
         }
     }

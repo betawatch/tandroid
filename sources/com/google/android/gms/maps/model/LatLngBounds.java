@@ -1,28 +1,28 @@
 package com.google.android.gms.maps.model;
 
-import af.c;
 import android.os.Parcel;
 import android.os.Parcelable;
-import b6.m;
-import c6.a;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.f5;
+import g8.j;
 import java.util.Arrays;
-import u6.p;
+import n4.y;
+import n6.l;
+import o6.a;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class LatLngBounds extends a implements ReflectedParcelable {
-    public static final Parcelable.Creator<LatLngBounds> CREATOR = new p(15);
+    public static final Parcelable.Creator<LatLngBounds> CREATOR = new j(12);
     public final LatLng a;
     public final LatLng b;
 
     public LatLngBounds(LatLng latLng, LatLng latLng2) {
-        m.i(latLng, "southwest must not be null.");
-        m.i(latLng2, "northeast must not be null.");
+        l.i(latLng, "southwest must not be null.");
+        l.i(latLng2, "northeast must not be null.");
         double d = latLng2.a;
         double d10 = latLng.a;
-        m.c(d >= d10, "southern latitude exceeds northern latitude (%s > %s)", Double.valueOf(d10), Double.valueOf(d));
+        l.c(d >= d10, "southern latitude exceeds northern latitude (%s > %s)", Double.valueOf(d10), Double.valueOf(d));
         this.a = latLng;
         this.b = latLng2;
     }
@@ -43,17 +43,17 @@ public final class LatLngBounds extends a implements ReflectedParcelable {
     }
 
     public final String toString() {
-        c cVar = new c(this);
-        cVar.s(this.a, "southwest");
-        cVar.s(this.b, "northeast");
-        return cVar.toString();
+        y yVar = new y(this);
+        yVar.y(this.a, "southwest");
+        yVar.y(this.b, "northeast");
+        return yVar.toString();
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.k(parcel, 2, this.a, i10);
-        f5.k(parcel, 3, this.b, i10);
-        f5.r(parcel, q10);
+        int q6 = e0.q(parcel, 20293);
+        e0.k(parcel, 2, this.a, i10);
+        e0.k(parcel, 3, this.b, i10);
+        e0.r(parcel, q6);
     }
 }

@@ -1,43 +1,61 @@
 package org.telegram.ui;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.text.TextUtils;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class rh1 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ii1 b;
-    public final /* synthetic */ VoIPService c;
+public final class rh1 extends org.telegram.ui.Components.g51 {
+    public static final /* synthetic */ int a = 0;
 
-    public /* synthetic */ rh1(ii1 ii1Var, VoIPService voIPService, int i10) {
-        this.a = i10;
-        this.b = ii1Var;
-        this.c = voIPService;
+    static {
+        org.telegram.ui.Components.g51.setup(new rh1());
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                ii1 ii1Var = this.b;
-                AndroidUtilities.runOnUIThread(new sh1(ii1Var, 8));
-                int i10 = ii1Var.I;
-                if (i10 > 0) {
-                    this.c.sendCallRating(i10);
-                    break;
-                }
-                break;
-            default:
-                ii1 ii1Var2 = this.b;
-                AndroidUtilities.runOnUIThread(new sh1(ii1Var2, 10));
-                int i11 = ii1Var2.I;
-                if (i11 > 0) {
-                    this.c.sendCallRating(i11);
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.g51
+    public final void bindView(View view, org.telegram.ui.Components.h51 h51Var, boolean z10, org.telegram.ui.Components.v51 v51Var, org.telegram.ui.Components.d61 d61Var) {
+        sh1 sh1Var = (sh1) view;
+        int i10 = h51Var.k;
+        CharSequence charSequence = h51Var.l;
+        CharSequence charSequence2 = h51Var.m;
+        boolean z11 = h51Var.q;
+        boolean z12 = h51Var.r;
+        int i11 = h51Var.z;
+        TextView textView = sh1Var.d;
+        TextView textView2 = sh1Var.e;
+        ImageView imageView = sh1Var.f;
+        sh1Var.h = z11;
+        sh1Var.n = z12;
+        ImageView imageView2 = sh1Var.b;
+        imageView2.setImageResource(i10);
+        if (i11 != 0) {
+            imageView.setVisibility(0);
+            imageView.setImageResource(i11);
+        } else {
+            imageView.setVisibility(8);
         }
+        textView.setText(charSequence);
+        textView2.setText(charSequence2);
+        textView2.setVisibility(TextUtils.isEmpty(charSequence2) ? 8 : 0);
+        int dp = AndroidUtilities.dp(TextUtils.isEmpty(charSequence2) ? 15.0f : 10.0f);
+        sh1Var.c.setPadding(0, dp, 0, dp);
+        org.telegram.ui.ActionBar.f6 f6Var = sh1Var.a;
+        int v02 = org.telegram.ui.ActionBar.j6.v0(sh1Var.n ? org.telegram.ui.ActionBar.j6.q7 : sh1Var.h ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.G6, f6Var);
+        PorterDuff.Mode mode = PorterDuff.Mode.SRC_IN;
+        imageView2.setColorFilter(new PorterDuffColorFilter(v02, mode));
+        imageView.setColorFilter(new PorterDuffColorFilter(org.telegram.ui.ActionBar.j6.v0(sh1Var.n ? org.telegram.ui.ActionBar.j6.q7 : sh1Var.h ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.G6, f6Var), mode));
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(sh1Var.n ? org.telegram.ui.ActionBar.j6.p7 : sh1Var.h ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.G6, f6Var));
+        textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(sh1Var.n ? org.telegram.ui.ActionBar.j6.p7 : sh1Var.h ? org.telegram.ui.ActionBar.j6.n6 : org.telegram.ui.ActionBar.j6.y6, f6Var));
+    }
+
+    @Override // org.telegram.ui.Components.g51
+    public final View createView(Context context, org.telegram.ui.Components.ll0 ll0Var, int i10, int i11, org.telegram.ui.ActionBar.f6 f6Var) {
+        return new sh1(context, f6Var);
     }
 }

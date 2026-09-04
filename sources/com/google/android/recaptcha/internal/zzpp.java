@@ -2,7 +2,7 @@ package com.google.android.recaptcha.internal;
 
 import java.io.IOException;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class zzpp {
     private static final zzpp zza = new zzpm("base64()", "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/", '=');
@@ -46,12 +46,12 @@ public abstract class zzpp {
 
     public final String zzi(byte[] bArr, int i10, int i11) {
         zzmd.zzd(0, i11, bArr.length);
-        StringBuilder sb = new StringBuilder(zzd(i11));
+        StringBuilder sb2 = new StringBuilder(zzd(i11));
         try {
-            zzb(sb, bArr, 0, i11);
-            return sb.toString();
-        } catch (IOException e) {
-            throw new AssertionError(e);
+            zzb(sb2, bArr, 0, i11);
+            return sb2.toString();
+        } catch (IOException e7) {
+            throw new AssertionError(e7);
         }
     }
 
@@ -67,8 +67,8 @@ public abstract class zzpp {
             byte[] bArr2 = new byte[zza2];
             System.arraycopy(bArr, 0, bArr2, 0, zza2);
             return bArr2;
-        } catch (zzpn e) {
-            throw new IllegalArgumentException(e);
+        } catch (zzpn e7) {
+            throw new IllegalArgumentException(e7);
         }
     }
 }

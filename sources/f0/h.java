@@ -1,11 +1,48 @@
 package f0;
 
 import android.content.LocusId;
+import android.os.Build;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class h {
-    public static LocusId a(String str) {
-        return new LocusId(str);
+public final class h {
+    public final String a;
+    public final LocusId b;
+
+    public h(String str) {
+        if (TextUtils.isEmpty(str)) {
+            throw new IllegalArgumentException("id cannot be empty");
+        }
+        this.a = str;
+        if (Build.VERSION.SDK_INT >= 29) {
+            this.b = g.a(str);
+        } else {
+            this.b = null;
+        }
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || h.class != obj.getClass()) {
+            return false;
+        }
+        String str = ((h) obj).a;
+        String str2 = this.a;
+        return str2 == null ? str == null : str2.equals(str);
+    }
+
+    public final int hashCode() {
+        String str = this.a;
+        return 31 + (str == null ? 0 : str.hashCode());
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("LocusIdCompat[");
+        sb2.append(this.a.length() + "_chars");
+        sb2.append("]");
+        return sb2.toString();
     }
 }

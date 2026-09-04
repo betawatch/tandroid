@@ -1,18 +1,34 @@
 package m;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import android.view.View;
+import android.graphics.drawable.Drawable;
+import android.widget.ListAdapter;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class o0 extends View.BaseSavedState {
-    public static final Parcelable.Creator<o0> CREATOR = new l4.j(9);
-    public boolean a;
+public interface o0 {
+    boolean a();
 
-    @Override // android.view.View.BaseSavedState, android.view.AbsSavedState, android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        super.writeToParcel(parcel, i10);
-        parcel.writeByte(this.a ? (byte) 1 : (byte) 0);
-    }
+    int b();
+
+    void c(int i10);
+
+    void dismiss();
+
+    CharSequence e();
+
+    Drawable h();
+
+    void i(CharSequence charSequence);
+
+    void j(Drawable drawable);
+
+    void k(int i10);
+
+    void l(int i10);
+
+    void m(int i10, int i11);
+
+    int n();
+
+    void p(ListAdapter listAdapter);
 }

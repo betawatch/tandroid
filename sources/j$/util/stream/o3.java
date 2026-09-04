@@ -11,14 +11,14 @@ public final class o3 extends p3 {
         this.h = objArr;
     }
 
-    public o3(o3 o3Var, Spliterator spliterator, long j10, long j11) {
-        super(o3Var, spliterator, j10, j11, o3Var.h.length);
+    public o3(o3 o3Var, Spliterator spliterator, long j3, long j10) {
+        super(o3Var, spliterator, j3, j10, o3Var.h.length);
         this.h = o3Var.h;
     }
 
     @Override // j$.util.stream.p3
-    public final p3 a(Spliterator spliterator, long j10, long j11) {
-        return new o3(this, spliterator, j10, j11);
+    public final p3 a(Spliterator spliterator, long j3, long j10) {
+        return new o3(this, spliterator, j3, j10);
     }
 
     @Override // java.util.function.Consumer

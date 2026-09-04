@@ -5,18 +5,15 @@ import android.os.Bundle;
 import android.os.CancellationSignal;
 import android.os.Parcel;
 import android.os.ResultReceiver;
-import dd.l;
-import dd.p;
-import j7.b0;
+import hd.r;
 import java.util.LinkedHashSet;
 import java.util.concurrent.Executor;
-import kf.k0;
-import kotlin.jvm.internal.j;
-import kotlin.jvm.internal.q;
-import tc.r;
-import v0.i;
+import kotlin.jvm.internal.i;
+import rd.l;
+import rd.p;
+import v7.f0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class d {
     public static final a a = new a();
@@ -35,11 +32,11 @@ public abstract class d {
     }
 
     public static void a(ResultReceiver resultReceiver, Intent intent, String str) {
-        j.e(resultReceiver, "resultReceiver");
+        i.e(resultReceiver, "resultReceiver");
         intent.putExtra("TYPE", str);
         intent.putExtra("ACTIVITY_REQUEST_CODE", c);
         Parcel obtain = Parcel.obtain();
-        j.d(obtain, "obtain(...)");
+        i.d(obtain, "obtain(...)");
         resultReceiver.writeToParcel(obtain, 0);
         obtain.setDataPosition(0);
         ResultReceiver resultReceiver2 = (ResultReceiver) ResultReceiver.CREATOR.createFromParcel(obtain);
@@ -48,13 +45,13 @@ public abstract class d {
         intent.setFlags(65536);
     }
 
-    public static boolean b(Bundle bundle, p pVar, Executor executor, i callback, CancellationSignal cancellationSignal) {
-        j.e(executor, "executor");
-        j.e(callback, "callback");
+    public static boolean b(Bundle bundle, p pVar, Executor executor, v0.i callback, CancellationSignal cancellationSignal) {
+        i.e(executor, "executor");
+        i.e(callback, "callback");
         if (!bundle.getBoolean("FAILURE_RESPONSE")) {
             return false;
         }
-        b0.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
+        f0.a(cancellationSignal, new b(executor, callback, pVar.invoke(bundle.getString("EXCEPTION_TYPE"), bundle.getString("EXCEPTION_MESSAGE")), 0));
         return true;
     }
 
@@ -62,12 +59,12 @@ public abstract class d {
         if (i10 == -1) {
             return false;
         }
-        q qVar = new q();
-        qVar.a = new w0.c(k0.k(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
+        kotlin.jvm.internal.p pVar2 = new kotlin.jvm.internal.p();
+        pVar2.a = new w0.c(i2.g.j(i10, "activity with result code: ", " indicating not RESULT_OK"), 2);
         if (i10 == 0) {
-            qVar.a = new w0.b("activity is cancelled by the user.");
+            pVar2.a = new w0.b("activity is cancelled by the user.");
         }
-        pVar.invoke(cancellationSignal, new c(lVar, qVar, 0));
+        pVar.invoke(cancellationSignal, new c(lVar, pVar2, 0));
         return true;
     }
 }

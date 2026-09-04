@@ -4,7 +4,7 @@ import java.util.AbstractList;
 import java.util.ArrayList;
 
 /* loaded from: classes.dex */
-public final class w0 extends k {
+public final class w0 extends j {
     public static final w0 c;
     public final ArrayList b;
 
@@ -25,8 +25,8 @@ public final class w0 extends k {
         ((AbstractList) this).modCount++;
     }
 
-    @Override // com.google.android.gms.internal.clearcut.c0
-    public final c0 d(int i10) {
+    @Override // com.google.android.gms.internal.clearcut.b0
+    public final b0 f(int i10) {
         ArrayList arrayList = this.b;
         if (i10 < arrayList.size()) {
             throw new IllegalArgumentException();

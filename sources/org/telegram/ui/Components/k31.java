@@ -13,7 +13,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildConfig;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class k31 extends Thread {
     public final /* synthetic */ String a;
@@ -34,28 +34,28 @@ public final class k31 extends Thread {
         String str;
         Utilities.Callback2 callback2 = this.d;
         String str2 = this.c;
-        boolean z4 = false;
+        boolean z10 = false;
         try {
             httpURLConnection = (HttpURLConnection) new URI(("https://translate.googleapis.com/translate_a/single?client=gtx&sl=" + Uri.encode(this.a) + "&tl=" + Uri.encode(this.b) + "&dt=t&ie=UTF-8&oe=UTF-8&otf=1&ssel=0&tsel=0&kc=7&dt=at&dt=bd&dt=ex&dt=ld&dt=md&dt=qca&dt=rw&dt=rm&dt=ss&q=") + str2).toURL().openConnection();
             try {
                 httpURLConnection.setRequestMethod("GET");
-                httpURLConnection.setRequestProperty("User-Agent", v31.O[(int) Math.round(Math.random() * 5)]);
+                httpURLConnection.setRequestProperty("User-Agent", u31.R[(int) Math.round(Math.random() * 5)]);
                 httpURLConnection.setRequestProperty("Content-Type", "application/json");
-                StringBuilder sb = new StringBuilder();
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), r8.d.c));
+                StringBuilder sb2 = new StringBuilder();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpURLConnection.getInputStream(), d9.d.a));
                 while (true) {
                     try {
                         int read = bufferedReader.read();
                         if (read == -1) {
                             break;
                         } else {
-                            sb.append((char) read);
+                            sb2.append((char) read);
                         }
                     } finally {
                     }
                 }
                 bufferedReader.close();
-                JSONArray jSONArray = new JSONArray(new JSONTokener(sb.toString()));
+                JSONArray jSONArray = new JSONArray(new JSONTokener(sb2.toString()));
                 JSONArray jSONArray2 = jSONArray.getJSONArray(0);
                 try {
                     str = jSONArray.getString(2);
@@ -75,34 +75,34 @@ public final class k31 extends Thread {
                 if (str2.length() > 0 && str2.charAt(0) == '\n') {
                     str3 = "\n" + str3;
                 }
-                AndroidUtilities.runOnUIThread(new z80(28, callback2, str3));
-            } catch (Exception e) {
-                e = e;
+                AndroidUtilities.runOnUIThread(new jn0(17, callback2, str3));
+            } catch (Exception e7) {
+                e = e7;
                 try {
-                    StringBuilder sb2 = new StringBuilder();
-                    sb2.append("failed to translate a text ");
-                    sb2.append(httpURLConnection != null ? Integer.valueOf(httpURLConnection.getResponseCode()) : null);
-                    sb2.append(" ");
-                    sb2.append(httpURLConnection != null ? httpURLConnection.getResponseMessage() : null);
-                    Log.e("translate", sb2.toString());
-                } catch (IOException e6) {
-                    e6.printStackTrace();
+                    StringBuilder sb3 = new StringBuilder();
+                    sb3.append("failed to translate a text ");
+                    sb3.append(httpURLConnection != null ? Integer.valueOf(httpURLConnection.getResponseCode()) : null);
+                    sb3.append(" ");
+                    sb3.append(httpURLConnection != null ? httpURLConnection.getResponseMessage() : null);
+                    Log.e("translate", sb3.toString());
+                } catch (IOException e10) {
+                    e10.printStackTrace();
                 }
                 e.printStackTrace();
                 if (httpURLConnection != null) {
                     try {
                         if (httpURLConnection.getResponseCode() == 429) {
-                            z4 = true;
+                            z10 = true;
                         }
                     } catch (Exception unused2) {
-                        AndroidUtilities.runOnUIThread(new nq0(callback2, 21));
+                        AndroidUtilities.runOnUIThread(new jq0(callback2, 21));
                         return;
                     }
                 }
-                AndroidUtilities.runOnUIThread(new kv0(2, callback2, z4));
+                AndroidUtilities.runOnUIThread(new mr0(4, callback2, z10));
             }
-        } catch (Exception e10) {
-            e = e10;
+        } catch (Exception e11) {
+            e = e11;
             httpURLConnection = null;
         }
     }

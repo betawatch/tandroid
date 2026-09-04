@@ -1,38 +1,42 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class w3 extends e5 {
-    private static final w3 zzb;
-    private int zzd;
+public final class w3 extends h5 {
+    private static final k5 zzb = new g1();
+    private static final w3 zzd;
     private int zze;
     private int zzf;
-    private long zzg;
+    private int zzg;
+    private int zzi;
+    private long zzk;
+    private j5 zzh = i5.d;
+    private m5 zzj = h6.d;
 
     static {
         w3 w3Var = new w3();
-        zzb = w3Var;
-        e5.e(w3.class, w3Var);
+        zzd = w3Var;
+        h5.e(w3.class, w3Var);
     }
 
-    @Override // com.google.android.gms.internal.cast.e5
-    public final Object h(int i10, e5 e5Var) {
+    @Override // com.google.android.gms.internal.cast.h5
+    public final Object h(int i10, h5 h5Var) {
         int i11 = i10 - 1;
         if (i11 == 0) {
             return (byte) 1;
         }
         if (i11 == 2) {
-            return new f6(zzb, "\u0001\u0003\u0000\u0001\u0001\u0003\u0003\u0000\u0000\u0000\u0001᠌\u0000\u0002င\u0001\u0003ဂ\u0002", new Object[]{"zzd", "zze", z0.D, "zzf", "zzg"});
+            return new i6(zzd, "\u0001\u0006\u0000\u0001\u0001\u0007\u0006\u0000\u0002\u0000\u0001᠌\u0000\u0002᠌\u0001\u0003ࠞ\u0005᠌\u0002\u0006\u001b\u0007ဂ\u0003", new Object[]{"zze", "zzf", b1.B, "zzg", b0.O, "zzh", b1.A, "zzi", b0.I, "zzj", v3.class, "zzk"});
         }
         if (i11 == 3) {
             return new w3();
         }
         if (i11 == 4) {
-            return new d3(zzb);
+            return new f3(zzd);
         }
         if (i11 != 5) {
             return null;
         }
-        return zzb;
+        return zzd;
     }
 }

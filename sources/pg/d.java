@@ -1,23 +1,38 @@
 package pg;
 
 import android.graphics.Canvas;
+import org.telegram.ui.Cells.f8;
+import org.telegram.ui.Components.ll0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class d extends b {
-    public final sg.a E;
+public abstract class d extends ll0 {
+    public boolean X2;
 
-    public d(sg.a aVar) {
-        this.E = aVar;
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        this.X2 = false;
+        for (int i10 = 0; i10 < getChildCount(); i10++) {
+            if (getChildAt(i10) instanceof c) {
+                c cVar = (c) getChildAt(i10);
+                canvas.save();
+                canvas.translate(cVar.getX(), cVar.getY());
+                f8 f8Var = (f8) cVar;
+                if (f8Var.L) {
+                    f8Var.b(canvas, this);
+                }
+                canvas.restore();
+            }
+        }
+        super.dispatchDraw(canvas);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        c(canvas, this.E);
-    }
-
-    @Override // pg.b
-    public final sg.a i() {
-        return this.E;
+    @Override // android.view.View
+    public final void invalidate() {
+        if (this.X2) {
+            return;
+        }
+        super.invalidate();
+        this.X2 = true;
     }
 }

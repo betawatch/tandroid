@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import dd.p;
-import k7.p7;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzbb extends i implements p {
+final class zzbb extends j implements p {
     int zza;
     final /* synthetic */ zzbo zzb;
     final /* synthetic */ String zzc;
@@ -21,16 +22,16 @@ final class zzbb extends i implements p {
         this.zzc = str;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzbb zzbbVar = new zzbb(this.zzb, this.zzc, cVar);
         zzbbVar.zzd = obj;
         return zzbbVar;
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzbb) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzbb) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:10:0x0069, code lost:
@@ -73,7 +74,7 @@ final class zzbb extends i implements p {
     /* JADX WARN: Type inference failed for: r1v13 */
     /* JADX WARN: Type inference failed for: r1v14 */
     /* JADX WARN: Type inference failed for: r1v6 */
-    @Override // wc.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -90,7 +91,7 @@ final class zzbb extends i implements p {
             zzhkVar = obj2;
         }
         if (obj2 == 0) {
-            p7.b(obj);
+            t7.b(obj);
             zzhk zzhkVar2 = (zzhk) this.zzd;
             zzbo zzboVar2 = this.zzb;
             String str = this.zzc;
@@ -100,13 +101,13 @@ final class zzbb extends i implements p {
             obj2 = zzhkVar2;
         } else if (obj2 == 1) {
             zzhk zzhkVar3 = (zzhk) this.zzd;
-            p7.b(obj);
+            t7.b(obj);
             obj2 = zzhkVar3;
         } else if (obj2 != 2) {
-            p7.b(obj);
+            t7.b(obj);
         } else {
             zzhk zzhkVar4 = (zzhk) this.zzd;
-            p7.b(obj);
+            t7.b(obj);
             zzhkVar = zzhkVar4;
             this.zzd = null;
             this.zza = 3;

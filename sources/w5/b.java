@@ -1,59 +1,39 @@
 package w5;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import j7.f5;
 import java.util.Arrays;
-import u6.p;
+import n6.l;
+import n7.z0;
 
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends c6.a {
-    public static final Parcelable.Creator<b> CREATOR = new p(11);
+public final class b implements com.google.android.gms.common.api.b {
+    public static final b c;
     public final boolean a;
-    public final long b;
-    public final long c;
+    public final String b;
 
-    public b(long j10, long j11, boolean z4) {
-        this.a = z4;
-        this.b = j10;
-        this.c = j11;
+    static {
+        z0 z0Var = new z0(21, false);
+        z0Var.b = Boolean.FALSE;
+        c = new b(z0Var);
+    }
+
+    public b(z0 z0Var) {
+        this.a = ((Boolean) z0Var.b).booleanValue();
+        this.b = (String) z0Var.c;
     }
 
     public final boolean equals(Object obj) {
-        if (this == obj) {
+        if (obj == this) {
             return true;
         }
-        if (obj instanceof b) {
-            b bVar = (b) obj;
-            if (this.a == bVar.a && this.b == bVar.b && this.c == bVar.c) {
-                return true;
-            }
+        if (!(obj instanceof b)) {
+            return false;
         }
-        return false;
+        b bVar = (b) obj;
+        return l.l(null, null) && this.a == bVar.a && l.l(this.b, bVar.b);
     }
 
     public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a), Long.valueOf(this.b), Long.valueOf(this.c)});
-    }
-
-    public final String toString() {
-        StringBuilder sb = new StringBuilder("CollectForDebugParcelable[skipPersistentStorage: ");
-        sb.append(this.a);
-        sb.append(",collectForDebugStartTimeMillis: ");
-        sb.append(this.b);
-        sb.append(",collectForDebugExpiryTimeMillis: ");
-        return android.support.v4.media.a.q(sb, this.c, "]");
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.s(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        f5.s(parcel, 2, 8);
-        parcel.writeLong(this.c);
-        f5.s(parcel, 3, 8);
-        parcel.writeLong(this.b);
-        f5.r(parcel, q10);
+        return Arrays.hashCode(new Object[]{null, Boolean.valueOf(this.a), this.b});
     }
 }

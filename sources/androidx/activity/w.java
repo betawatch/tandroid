@@ -1,8 +1,8 @@
 package androidx.activity;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class w extends kotlin.jvm.internal.i implements dd.a {
+public final /* synthetic */ class w extends kotlin.jvm.internal.h implements rd.a {
     public final /* synthetic */ int a;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
@@ -11,7 +11,7 @@ public final /* synthetic */ class w extends kotlin.jvm.internal.i implements dd
         this.a = i12;
     }
 
-    @Override // dd.a
+    @Override // rd.a
     public final Object invoke() {
         switch (this.a) {
             case 0:
@@ -21,6 +21,6 @@ public final /* synthetic */ class w extends kotlin.jvm.internal.i implements dd
                 ((x) this.receiver).d();
                 break;
         }
-        return sc.i.a;
+        return gd.i.a;
     }
 }

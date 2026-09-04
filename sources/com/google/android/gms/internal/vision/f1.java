@@ -5,16 +5,16 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class f1 extends l0 {
     private static Map<Object, f1> zzd = new ConcurrentHashMap();
-    protected q2 zzb;
+    protected r2 zzb;
     private int zzc;
 
     public f1() {
         this.zza = 0;
-        this.zzb = q2.f;
+        this.zzb = r2.f;
         this.zzc = -1;
     }
 
@@ -24,14 +24,14 @@ public abstract class f1 extends l0 {
             try {
                 Class.forName(cls.getName(), true, cls.getClassLoader());
                 f1Var = zzd.get(cls);
-            } catch (ClassNotFoundException e) {
-                throw new IllegalStateException("Class initialization cannot fail.", e);
+            } catch (ClassNotFoundException e7) {
+                throw new IllegalStateException("Class initialization cannot fail.", e7);
             }
         }
         if (f1Var != null) {
             return f1Var;
         }
-        f1 f1Var2 = (f1) ((f1) x2.b(cls)).e(6);
+        f1 f1Var2 = (f1) ((f1) y2.b(cls)).e(6);
         if (f1Var2 == null) {
             throw new IllegalStateException();
         }
@@ -42,10 +42,10 @@ public abstract class f1 extends l0 {
     public static Object f(Method method, f1 f1Var, Object... objArr) {
         try {
             return method.invoke(f1Var, objArr);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e);
-        } catch (InvocationTargetException e6) {
-            Throwable cause = e6.getCause();
+        } catch (IllegalAccessException e7) {
+            throw new RuntimeException("Couldn't use Java reflection to implement protocol message reflection.", e7);
+        } catch (InvocationTargetException e10) {
+            Throwable cause = e10.getCause();
             if (cause instanceof RuntimeException) {
                 throw ((RuntimeException) cause);
             }
@@ -84,16 +84,16 @@ public abstract class f1 extends l0 {
         if (obj == null || getClass() != obj.getClass()) {
             return false;
         }
-        k2 k2Var = k2.c;
-        k2Var.getClass();
-        return k2Var.a(getClass()).g(this, (f1) obj);
+        l2 l2Var = l2.c;
+        l2Var.getClass();
+        return l2Var.a(getClass()).g(this, (f1) obj);
     }
 
     public final int h() {
         if (this.zzc == -1) {
-            k2 k2Var = k2.c;
-            k2Var.getClass();
-            this.zzc = k2Var.a(getClass()).zzb(this);
+            l2 l2Var = l2.c;
+            l2Var.getClass();
+            this.zzc = l2Var.a(getClass()).zzb(this);
         }
         return this.zzc;
     }
@@ -103,19 +103,19 @@ public abstract class f1 extends l0 {
         if (i10 != 0) {
             return i10;
         }
-        k2 k2Var = k2.c;
-        k2Var.getClass();
-        int d = k2Var.a(getClass()).d(this);
+        l2 l2Var = l2.c;
+        l2Var.getClass();
+        int d = l2Var.a(getClass()).d(this);
         this.zza = d;
         return d;
     }
 
     public final String toString() {
         String obj = super.toString();
-        StringBuilder sb = new StringBuilder();
-        sb.append("# ");
-        sb.append(obj);
-        e1.p(this, sb, 0);
-        return sb.toString();
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append("# ");
+        sb2.append(obj);
+        e1.p(this, sb2, 0);
+        return sb2.toString();
     }
 }

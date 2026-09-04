@@ -1,13 +1,13 @@
 package z3;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class m {
-    public final long a;
-    public final int b;
+public interface m {
+    int U();
 
-    public m(long j10, int i10) {
-        this.a = j10;
-        this.b = i10;
-    }
+    void e0(byte[] bArr, int i10, int i11, l lVar, e2.h hVar);
+
+    d p(int i10, int i11, byte[] bArr);
+
+    void reset();
 }

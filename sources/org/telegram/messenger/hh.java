@@ -1,29 +1,15 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.graphics.Canvas;
+import android.graphics.PostProcessor;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class hh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ NotificationsController b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ int d;
-
-    public /* synthetic */ hh(NotificationsController notificationsController, long j10, int i10, int i11) {
-        this.a = i11;
-        this.b = notificationsController;
-        this.c = j10;
-        this.d = i10;
-    }
-
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                this.b.lambda$processDeleteStory$15(this.c, this.d);
-                break;
-            default:
-                this.b.lambda$processReadStories$16(this.c, this.d);
-                break;
-        }
+public final /* synthetic */ class hh implements PostProcessor {
+    @Override // android.graphics.PostProcessor
+    public final int onPostProcess(Canvas canvas) {
+        int lambda$loadRoundAvatar$46;
+        lambda$loadRoundAvatar$46 = NotificationsController.lambda$loadRoundAvatar$46(canvas);
+        return lambda$loadRoundAvatar$46;
     }
 }

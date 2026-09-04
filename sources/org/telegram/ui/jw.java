@@ -1,97 +1,102 @@
 package org.telegram.ui;
 
-import android.graphics.Point;
-import android.graphics.RectF;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
+import android.content.SharedPreferences;
+import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jw implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate e;
-    public final /* synthetic */ TLObject f;
-    public final /* synthetic */ TLObject h;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ uy b;
 
-    public /* synthetic */ jw(qy qyVar, TLRPC.Chat chat, long j10, boolean z4, TLRPC.User user, boolean z10) {
-        this.e = qyVar;
-        this.f = chat;
-        this.c = j10;
-        this.b = z4;
-        this.h = user;
-        this.d = z10;
+    public /* synthetic */ jw(uy uyVar, int i10) {
+        this.a = i10;
+        this.b = uyVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        int i10 = this.a;
-        TLObject tLObject = this.h;
-        TLObject tLObject2 = this.f;
-        NotificationCenter.NotificationCenterDelegate notificationCenterDelegate = this.e;
-        switch (i10) {
+        switch (this.a) {
             case 0:
-                qy qyVar = (qy) notificationCenterDelegate;
-                TLRPC.Chat chat = (TLRPC.Chat) tLObject2;
-                TLRPC.User user = (TLRPC.User) tLObject;
-                long j10 = this.c;
-                boolean z4 = this.b;
-                if (chat != null) {
-                    qyVar.getClass();
-                    if (ChatObject.isNotInChat(chat)) {
-                        qyVar.getMessagesController().deleteDialog(j10, 0, z4);
-                    } else {
-                        qyVar.getMessagesController().deleteParticipantFromChat(-j10, qyVar.getMessagesController().getUser(Long.valueOf(qyVar.getUserConfig().getClientUserId())), (TLRPC.Chat) null, z4, z4);
-                    }
-                } else {
-                    qyVar.getMessagesController().deleteDialog(j10, 0, z4);
-                    if (user != null && user.bot && this.d) {
-                        qyVar.getMessagesController().blockPeer(user.id);
-                    }
+                uy uyVar = this.b;
+                if (uyVar.R0 != 10) {
+                    uyVar.c4(false);
                 }
-                qyVar.getMessagesController().checkIfFolderEmpty(qyVar.S2);
+                if (!uyVar.L || !uyVar.X3().G()) {
+                    uyVar.x4(true, true);
+                    break;
+                } else {
+                    uyVar.E0.h();
+                    break;
+                }
+            case 1:
+                uy uyVar2 = this.b;
+                ih.g gVar = uyVar2.y1;
+                if (gVar != null) {
+                    gVar.d();
+                }
+                uyVar2.s3();
+                uyVar2.m3();
+                uyVar2.t3();
+                ji.x1 x1Var = uyVar2.C1;
+                if (x1Var != null) {
+                    x1Var.setTranslationY(-uyVar2.v.c());
+                    break;
+                }
+                break;
+            case 2:
+                this.b.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.forceImportContactsStart, new Object[0]);
+                break;
+            case 3:
+                this.b.M3();
+                break;
+            case 4:
+                this.b.U4();
+                break;
+            case 5:
+                uy.F0(this.b);
+                break;
+            case 6:
+                this.b.getMessagesController().removeSuggestion(0L, "SETUP_LOGIN_EMAIL");
+                break;
+            case 7:
+                uy uyVar3 = this.b;
+                di.f4 f4Var = uyVar3.q0;
+                if (f4Var != null) {
+                    f4Var.e(true);
+                }
+                uyVar3.presentFragment(new PremiumPreviewFragment(0, "stories"));
+                break;
+            case 8:
+                this.b.e0[0].d.l();
+                break;
+            case 9:
+                uy uyVar4 = this.b;
+                UndoView Y3 = uyVar4.Y3();
+                if (Y3 != null) {
+                    Y3.l(0L, 15, null, new qv(uyVar4, 25));
+                    break;
+                }
+                break;
+            case 10:
+                uy uyVar5 = this.b;
+                uyVar5.getClass();
+                SharedPreferences globalMainSettings = MessagesController.getGlobalMainSettings();
+                long j3 = globalMainSettings.getLong("cache_hint_period", 604800000L);
+                if (j3 <= 604800000) {
+                    j3 = 2592000000L;
+                }
+                globalMainSettings.edit().putLong("cache_hint_showafter", System.currentTimeMillis() + j3).putLong("cache_hint_period", j3).apply();
+                uyVar5.U4();
+                break;
+            case 11:
+                MessagesController.getInstance(this.b.currentAccount).getMainSettings().edit().putBoolean("storyhint", false).commit();
                 break;
             default:
-                ph.da daVar = (ph.da) notificationCenterDelegate;
-                TL_stories.StoryItem storyItem = (TL_stories.StoryItem) tLObject2;
-                TLRPC.InputGroupCall inputGroupCall = (TLRPC.InputGroupCall) tLObject;
-                boolean z10 = this.b;
-                long j11 = this.c;
-                if (!z10) {
-                    nh.e1.T = new nh.e1(daVar.b, daVar.c, storyItem, j11, storyItem.id, z10, inputGroupCall, true, this.d);
-                }
-                ph.y9 y9Var = daVar.C;
-                if (y9Var != null) {
-                    y9Var.f(false);
-                }
-                daVar.C = null;
-                daVar.G = 0;
-                RectF rectF = daVar.E;
-                Point point = AndroidUtilities.displaySize;
-                rectF.set(0.0f, 0.0f, point.x, point.y);
-                daVar.D = AndroidUtilities.dp(8.0f);
-                daVar.q(true);
-                org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-                storyItem.dialogId = j11;
-                storyItem.justUploaded = true;
-                U.getOrCreateStoryViewer().G(daVar.b, storyItem, null);
-                NotificationCenter.getInstance(daVar.c).lambda$postNotificationNameOnUIThread$1(NotificationCenter.liveStoryUpdated, Long.valueOf(inputGroupCall.id));
+                this.b.a5();
                 break;
         }
-    }
-
-    public /* synthetic */ jw(ph.da daVar, boolean z4, TL_stories.StoryItem storyItem, long j10, TLRPC.InputGroupCall inputGroupCall, boolean z10) {
-        this.e = daVar;
-        this.b = z4;
-        this.f = storyItem;
-        this.c = j10;
-        this.h = inputGroupCall;
-        this.d = z10;
     }
 }

@@ -1,51 +1,16 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a4 extends j7.a6 {
-    public final AtomicReferenceFieldUpdater a;
-    public final AtomicReferenceFieldUpdater b;
-    public final AtomicReferenceFieldUpdater c;
-    public final AtomicReferenceFieldUpdater d;
-    public final AtomicReferenceFieldUpdater e;
+public final class a4 {
+    public final Throwable a;
 
-    public a4(AtomicReferenceFieldUpdater atomicReferenceFieldUpdater, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater2, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater3, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater4, AtomicReferenceFieldUpdater atomicReferenceFieldUpdater5) {
-        this.a = atomicReferenceFieldUpdater;
-        this.b = atomicReferenceFieldUpdater2;
-        this.c = atomicReferenceFieldUpdater3;
-        this.d = atomicReferenceFieldUpdater4;
-        this.e = atomicReferenceFieldUpdater5;
+    static {
+        new a4(new c0.b("Failure occurred while trying to finish a future.", 2));
     }
 
-    @Override // j7.a6
-    public final z3 a(f4 f4Var) {
-        return (z3) this.d.getAndSet(f4Var, z3.d);
-    }
-
-    @Override // j7.a6
-    public final e4 b(f4 f4Var) {
-        return (e4) this.c.getAndSet(f4Var, e4.c);
-    }
-
-    @Override // j7.a6
-    public final void c(e4 e4Var, e4 e4Var2) {
-        this.b.lazySet(e4Var, e4Var2);
-    }
-
-    @Override // j7.a6
-    public final void d(e4 e4Var, Thread thread) {
-        this.a.lazySet(e4Var, thread);
-    }
-
-    @Override // j7.a6
-    public final boolean e(f4 f4Var, Object obj, Object obj2) {
-        return j7.b6.a(this.e, f4Var, obj, obj2);
-    }
-
-    @Override // j7.a6
-    public final boolean f(f4 f4Var, e4 e4Var, e4 e4Var2) {
-        return j7.b6.a(this.c, f4Var, e4Var, e4Var2);
+    public a4(Throwable th2) {
+        th2.getClass();
+        this.a = th2;
     }
 }

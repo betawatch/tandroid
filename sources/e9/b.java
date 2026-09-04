@@ -1,37 +1,109 @@
 package e9;
 
-import com.google.android.gms.tasks.TaskCompletionSource;
-import e3.g;
-import i9.p;
-import i9.y;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
+import j$.util.Objects;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b implements Callable {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ p b;
-    public final /* synthetic */ g c;
+public final class b extends l1 {
+    public final /* synthetic */ d b;
 
-    public b(boolean z4, p pVar, g gVar) {
-        this.a = z4;
-        this.b = pVar;
-        this.c = gVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public b(d dVar) {
+        super(0);
+        this.b = dVar;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        if (!this.a) {
-            return null;
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final void clear() {
+        this.b.clear();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
+        Set entrySet = this.b.b.entrySet();
+        entrySet.getClass();
+        try {
+            return entrySet.contains(obj);
+        } catch (ClassCastException | NullPointerException unused) {
+            return false;
         }
-        p pVar = this.b;
-        ExecutorService executorService = pVar.k;
-        h2.g gVar = new h2.g(3, pVar, this.c);
-        ExecutorService executorService2 = y.a;
-        TaskCompletionSource taskCompletionSource = new TaskCompletionSource();
-        executorService.execute(new androidx.car.app.utils.b(gVar, executorService, taskCompletionSource, 10));
-        taskCompletionSource.getTask();
-        return null;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean isEmpty() {
+        return this.b.isEmpty();
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final Iterator iterator() {
+        return new c(this.b);
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean remove(Object obj) {
+        Object obj2;
+        if (!contains(obj)) {
+            return false;
+        }
+        Map.Entry entry = (Map.Entry) obj;
+        Objects.requireNonNull(entry);
+        v0 v0Var = (v0) this.b.e;
+        Object key = entry.getKey();
+        Map map = v0Var.d;
+        map.getClass();
+        try {
+            obj2 = map.remove(key);
+        } catch (ClassCastException | NullPointerException unused) {
+            obj2 = null;
+        }
+        Collection collection = (Collection) obj2;
+        if (collection == null) {
+            return true;
+        }
+        int size = collection.size();
+        collection.clear();
+        v0Var.e -= size;
+        return true;
+    }
+
+    @Override // e9.l1, java.util.AbstractSet, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean removeAll(Collection collection) {
+        try {
+            collection.getClass();
+            return super.removeAll(collection);
+        } catch (UnsupportedOperationException unused) {
+            Iterator it = collection.iterator();
+            boolean z10 = false;
+            while (it.hasNext()) {
+                z10 |= remove(it.next());
+            }
+            return z10;
+        }
+    }
+
+    @Override // e9.l1, java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean retainAll(Collection collection) {
+        try {
+            collection.getClass();
+            return super.retainAll(collection);
+        } catch (UnsupportedOperationException unused) {
+            HashSet hashSet = new HashSet(q.c(collection.size()));
+            for (Object obj : collection) {
+                if (contains(obj) && (obj instanceof Map.Entry)) {
+                    hashSet.add(((Map.Entry) obj).getKey());
+                }
+            }
+            return this.b.keySet().retainAll(hashSet);
+        }
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.b.b.size();
     }
 }

@@ -1,21 +1,21 @@
 package org.telegram.ui.ActionBar;
 
 import android.util.SparseIntArray;
-import org.telegram.ui.jd1;
+import org.telegram.ui.wd1;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class q5 extends g5 {
+public final class q5 extends f5 {
     public final /* synthetic */ int R = 1;
     public final /* synthetic */ Object S;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q5(jd1 jd1Var, int i10, boolean z4) {
-        super(i10, true, z4, null);
-        this.S = jd1Var;
+    public q5(wd1 wd1Var, int i10, boolean z10) {
+        super(i10, true, z10, null);
+        this.S = wd1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.f5
     public int g(int i10) {
         switch (this.R) {
             case 0:
@@ -27,7 +27,7 @@ public final class q5 extends g5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.f5
     public int h(int i10) {
         switch (this.R) {
             case 0:
@@ -37,11 +37,11 @@ public final class q5 extends g5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
+    @Override // org.telegram.ui.ActionBar.f5
     public void n(int i10, int i11, int i12) {
         switch (this.R) {
             case 1:
-                if (!((jd1) this.S).a2) {
+                if (!((wd1) this.S).d2) {
                     super.n(i10, i11, i12);
                     break;
                 }
@@ -52,24 +52,24 @@ public final class q5 extends g5 {
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.g5
-    public void o(int i10, int i11, int i12, int i13, int i14, int i15, boolean z4, boolean z10) {
+    @Override // org.telegram.ui.ActionBar.f5
+    public void o(int i10, int i11, int i12, int i13, int i14, int i15, boolean z10, boolean z11) {
         switch (this.R) {
             case 1:
-                if (!((jd1) this.S).a2) {
-                    super.o(i10, i11, i12, i13, i14, i15, z4, z10);
+                if (!((wd1) this.S).d2) {
+                    super.o(i10, i11, i12, i13, i14, i15, z10, z11);
                     break;
                 }
                 break;
             default:
-                super.o(i10, i11, i12, i13, i14, i15, z4, z10);
+                super.o(i10, i11, i12, i13, i14, i15, z10, z11);
                 break;
         }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public q5(boolean z4, SparseIntArray sparseIntArray) {
-        super(2, z4, false, null);
+    public q5(boolean z10, SparseIntArray sparseIntArray) {
+        super(2, z10, false, null);
         this.S = sparseIntArray;
     }
 }

@@ -1,54 +1,30 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.util.ArrayList;
+import org.telegram.tgnet.TLRPC;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class mr implements org.telegram.ui.Cells.z4, org.telegram.ui.Components.tv0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nr b;
+public final class mr implements a70 {
+    public final /* synthetic */ f70 a;
+    public final /* synthetic */ vr b;
 
-    public /* synthetic */ mr(nr nrVar, int i10) {
-        this.a = i10;
-        this.b = nrVar;
+    public mr(vr vrVar, f70 f70Var) {
+        this.b = vrVar;
+        this.a = f70Var;
     }
 
-    @Override // org.telegram.ui.Cells.z4
-    public boolean c(org.telegram.ui.Cells.a5 a5Var, boolean z4) {
-        rr rrVar = this.b.d;
-        return rrVar.h0(rrVar.a.E(((Integer) a5Var.getTag()).intValue()), !z4, a5Var);
+    @Override // org.telegram.ui.a70
+    public final void i(TLRPC.User user) {
+        this.b.t0(user.id, null, null, null, "", true, 0, false);
     }
 
-    @Override // org.telegram.ui.Components.tv0
-    public void g(int i10) {
-        switch (this.a) {
-            case 1:
-                rr rrVar = this.b.d;
-                if (rrVar.s != null) {
-                    int i11 = rrVar.m1;
-                    boolean z4 = (i11 > 0 && i10 == 0) || (i11 == 0 && i10 > 0);
-                    rrVar.m1 = i10;
-                    if (z4) {
-                        lr w02 = rrVar.w0();
-                        rrVar.B0();
-                        rrVar.A0(w02);
-                    }
-                    rrVar.a.m(rrVar.M0);
-                    break;
-                }
-                break;
-            default:
-                this.b.d.p1 = i10 + 1;
-                break;
+    @Override // org.telegram.ui.a70
+    public final void j(int i10, ArrayList arrayList) {
+        if (this.a.getParentActivity() == null) {
+            return;
         }
-    }
-
-    @Override // org.telegram.ui.Components.tv0
-    public /* synthetic */ void j() {
-        int i10 = this.a;
-    }
-
-    private final /* synthetic */ void a() {
-    }
-
-    private final /* synthetic */ void b() {
+        vr vrVar = this.b;
+        vrVar.getMessagesController().addUsersToChat(vrVar.r, vrVar, arrayList, i10, new h3(this, 2), new lr(0), null);
     }
 }

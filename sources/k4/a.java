@@ -1,100 +1,110 @@
 package k4;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import h5.d0;
-import j3.d1;
-import j3.n0;
-import j8.t;
-import java.util.Arrays;
-import kf.k0;
+import b2.r;
+import b2.r0;
+import b2.s;
+import b2.s0;
+import c3.h0;
+import c3.q;
+import e2.d0;
+import e2.v;
+import java.math.RoundingMode;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a implements e4.b {
-    public static final Parcelable.Creator<a> CREATOR = new t(11);
-    public final String a;
-    public final byte[] b;
-    public final int c;
+public final class a implements b {
+    public static final int[] m = {-1, -1, -1, -1, 2, 4, 6, 8, -1, -1, -1, -1, 2, 4, 6, 8};
+    public static final int[] n = {7, 8, 9, 10, 11, 12, 13, 14, 16, 17, 19, 21, 23, 25, 28, 31, 34, 37, 41, 45, 50, 55, 60, 66, 73, 80, 88, 97, 107, 118, 130, 143, 157, 173, 190, 209, 230, 253, 279, 307, 337, 371, 408, 449, 494, 544, 598, 658, 724, 796, 876, 963, 1060, 1166, 1282, 1411, 1552, 1707, 1878, 2066, 2272, 2499, 2749, 3024, 3327, 3660, 4026, 4428, 4871, 5358, 5894, 6484, 7132, 7845, 8630, 9493, 10442, 11487, 12635, 13899, 15289, 16818, 18500, 20350, 22385, 24623, 27086, 29794, 32767};
+    public final q a;
+    public final h0 b;
+    public final e2.q c;
     public final int d;
+    public final byte[] e;
+    public final v f;
+    public final int g;
+    public final s h;
+    public int i;
+    public long j;
+    public int k;
+    public long l;
 
-    public a(String str, byte[] bArr, int i10, int i11) {
-        this.a = str;
-        this.b = bArr;
-        this.c = i10;
-        this.d = i11;
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ n0 b() {
-        return null;
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ byte[] d() {
-        return null;
-    }
-
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    public a(q qVar, h0 h0Var, e2.q qVar2) {
+        this.a = qVar;
+        this.b = h0Var;
+        this.c = qVar2;
+        int i10 = qVar2.b;
+        int max = Math.max(1, i10 / 10);
+        this.g = max;
+        v vVar = new v((byte[]) qVar2.e);
+        vVar.q();
+        int q6 = vVar.q();
+        this.d = q6;
+        int i11 = qVar2.a;
+        int i12 = qVar2.c;
+        int i13 = (((i12 - (i11 * 4)) * 8) / (qVar2.d * i11)) + 1;
+        if (q6 != i13) {
+            throw s0.a(null, "Expected frames per block: " + i13 + "; got: " + q6);
         }
-        if (obj != null && a.class == obj.getClass()) {
-            a aVar = (a) obj;
-            if (this.a.equals(aVar.a) && Arrays.equals(this.b, aVar.b) && this.c == aVar.c && this.d == aVar.d) {
-                return true;
-            }
-        }
-        return false;
+        int f7 = d0.f(max, q6);
+        this.e = new byte[f7 * i12];
+        this.f = new v(q6 * 2 * i11 * f7);
+        int i14 = ((i12 * i10) * 8) / q6;
+        r rVar = new r();
+        rVar.q = r0.n("audio/raw");
+        rVar.h = i14;
+        rVar.i = i14;
+        rVar.r = max * 2 * i11;
+        rVar.I = i11;
+        rVar.J = i10;
+        rVar.K = 2;
+        this.h = new s(rVar);
     }
 
-    public final int hashCode() {
-        return ((((Arrays.hashCode(this.b) + k0.e(527, 31, this.a)) * 31) + this.c) * 31) + this.d;
+    @Override // k4.b
+    public final void a(long j3) {
+        this.i = 0;
+        this.j = j3;
+        this.k = 0;
+        this.l = 0L;
     }
 
-    public final String toString() {
-        String m9;
-        byte[] bArr = this.b;
-        int i10 = this.d;
-        if (i10 == 1) {
-            m9 = d0.m(bArr);
-        } else if (i10 == 23) {
-            int i11 = d0.a;
-            h5.a.f(bArr.length == 4);
-            m9 = String.valueOf(Float.intBitsToFloat((bArr[3] & 255) | (bArr[0] << 24) | ((bArr[1] & 255) << 16) | ((bArr[2] & 255) << 8)));
-        } else if (i10 != 67) {
-            m9 = d0.R(bArr);
-        } else {
-            int i12 = d0.a;
-            h5.a.f(bArr.length == 4);
-            m9 = String.valueOf(bArr[3] | (bArr[0] << 24) | (bArr[1] << 16) | (bArr[2] << 8));
-        }
-        return android.support.v4.media.a.p(this.a, ", value=", m9, new StringBuilder("mdta: key="));
+    /*  JADX ERROR: JadxOverflowException in pass: RegionMakerVisitor
+        jadx.core.utils.exceptions.JadxOverflowException: Regions count limit reached
+        	at jadx.core.utils.ErrorsCounter.addError(ErrorsCounter.java:59)
+        	at jadx.core.utils.ErrorsCounter.error(ErrorsCounter.java:31)
+        	at jadx.core.dex.attributes.nodes.NotificationAttrNode.addError(NotificationAttrNode.java:19)
+        */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x0046 A[ADDED_TO_REGION, EDGE_INSN: B:49:0x0046->B:14:0x0046 BREAK  A[LOOP:0: B:5:0x0024->B:11:0x0040], SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x0028  */
+    /* JADX WARN: Unsupported multi-entry loop pattern (BACK_EDGE: B:9:0x003d -> B:3:0x0021). Please report as a decompilation issue!!! */
+    @Override // k4.b
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean b(c3.p r25, long r26) {
+        /*
+            Method dump skipped, instructions count: 330
+            To view this dump add '--comments-level debug' option
+        */
+        throw new UnsupportedOperationException("Method not decompiled: k4.a.b(c3.p, long):boolean");
     }
 
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        parcel.writeString(this.a);
-        parcel.writeByteArray(this.b);
-        parcel.writeInt(this.c);
-        parcel.writeInt(this.d);
+    @Override // k4.b
+    public final void c(int i10, long j3) {
+        this.a.P1(new f(this.c, this.d, i10, j3));
+        this.b.b(this.h);
     }
 
-    public a(Parcel parcel) {
-        String readString = parcel.readString();
-        int i10 = d0.a;
-        this.a = readString;
-        this.b = parcel.createByteArray();
-        this.c = parcel.readInt();
-        this.d = parcel.readInt();
-    }
-
-    @Override // e4.b
-    public final /* synthetic */ void c(d1 d1Var) {
+    public final void d(int i10) {
+        long j3 = this.j;
+        long j10 = this.l;
+        e2.q qVar = this.c;
+        long j11 = qVar.b;
+        String str = d0.a;
+        long Y = j3 + d0.Y(j10, 1000000L, j11, RoundingMode.DOWN);
+        int i11 = i10 * 2 * qVar.a;
+        this.b.c(Y, 1, i11, this.k - i11, null);
+        this.l += i10;
+        this.k -= i11;
     }
 }

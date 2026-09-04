@@ -1,58 +1,13 @@
 package o5;
 
-import android.os.Parcel;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.m;
-import com.google.android.gms.common.api.q;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g extends com.google.android.gms.common.api.internal.e {
-    public final /* synthetic */ int q;
+public final class g {
+    public final long a;
+    public final long b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g(m mVar, int i10) {
-        super(k5.a.a, mVar);
-        this.q = i10;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult, com.google.android.gms.common.api.internal.f
-    public final /* bridge */ /* synthetic */ void a(q qVar) {
-        a(qVar);
-    }
-
-    @Override // com.google.android.gms.common.api.internal.BasePendingResult
-    public final /* bridge */ /* synthetic */ q d(Status status) {
-        int i10 = this.q;
-        return status;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.e
-    public final void n(com.google.android.gms.common.api.c cVar) {
-        switch (this.q) {
-            case 0:
-                e eVar = (e) cVar;
-                k kVar = (k) eVar.u();
-                f fVar = new f(this, 0);
-                GoogleSignInOptions googleSignInOptions = eVar.R;
-                Parcel I0 = kVar.I0();
-                int i10 = w6.f.a;
-                I0.writeStrongBinder(fVar);
-                w6.f.c(I0, googleSignInOptions);
-                kVar.J0(I0, 102);
-                break;
-            default:
-                e eVar2 = (e) cVar;
-                k kVar2 = (k) eVar2.u();
-                f fVar2 = new f(this, 1);
-                GoogleSignInOptions googleSignInOptions2 = eVar2.R;
-                Parcel I02 = kVar2.I0();
-                int i11 = w6.f.a;
-                I02.writeStrongBinder(fVar2);
-                w6.f.c(I02, googleSignInOptions2);
-                kVar2.J0(I02, 103);
-                break;
-        }
+    public g(long j3, long j10) {
+        this.a = j3;
+        this.b = j10;
     }
 }

@@ -1,18 +1,19 @@
 package com.googlecode.mp4parser;
 
+import com.google.android.gms.internal.vision.e2;
 import java.nio.ByteBuffer;
-import org.telegram.ui.ai;
+import mg.n;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class c extends a {
-    public static final /* synthetic */ bb.b c;
-    public static final /* synthetic */ bb.b d;
+    public static final /* synthetic */ n c;
+    public static final /* synthetic */ n d;
     public int a;
     public int b;
 
     static {
-        de.a aVar = new de.a(c.class, "AbstractFullBox.java");
+        re.a aVar = new re.a(c.class, "AbstractFullBox.java");
         c = aVar.e(aVar.d("setVersion", "com.googlecode.mp4parser.AbstractFullBox", "int", "version", "void"));
         d = aVar.e(aVar.d("setFlags", "com.googlecode.mp4parser.AbstractFullBox", "int", "flags", "void"));
     }
@@ -37,12 +38,12 @@ public abstract class c extends a {
     }
 
     public final void f(ByteBuffer byteBuffer) {
-        this.a = r2.b.k(byteBuffer);
-        this.b = r2.b.a(byteBuffer.get()) + (r2.b.h(byteBuffer) << 8);
+        this.a = e5.b.k(byteBuffer);
+        this.b = e5.b.a(byteBuffer.get()) + (e5.b.h(byteBuffer) << 8);
     }
 
     public final void g(int i10) {
-        ai.x(de.a.c(d, this, this, new Integer(i10)));
+        e2.q(re.a.c(d, this, this, new Integer(i10)));
         this.b = i10;
     }
 
@@ -52,12 +53,12 @@ public abstract class c extends a {
     }
 
     public final void h() {
-        ai.x(de.a.c(c, this, this, new Integer(1)));
+        e2.q(re.a.c(c, this, this, new Integer(1)));
         this.a = 1;
     }
 
     public final void i(ByteBuffer byteBuffer) {
-        r2.b.r(this.a, byteBuffer);
-        r2.b.q(this.b, byteBuffer);
+        e5.b.r(this.a, byteBuffer);
+        e5.b.q(this.b, byteBuffer);
     }
 }

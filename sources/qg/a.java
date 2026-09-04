@@ -1,13 +1,27 @@
 package qg;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public interface a {
-    int D();
+public final class a extends m {
+    @Override // qg.m
+    public final int c() {
+        return -30208;
+    }
 
-    int e0();
+    @Override // qg.m
+    public final float d() {
+        return 0.25f;
+    }
 
-    int m0();
+    @Override // qg.m
+    public final int e() {
+        return R.raw.photo_arrow;
+    }
 
-    int x();
+    @Override // qg.m
+    public final float j() {
+        return 0.25f;
+    }
 }

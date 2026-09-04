@@ -1,92 +1,20 @@
 package r0;
 
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.AccelerateInterpolator;
-import android.view.animation.DecelerateInterpolator;
-import android.view.animation.PathInterpolator;
-import java.util.Iterator;
-import java.util.List;
-import org.telegram.messenger.beta.R;
+import android.graphics.Insets;
+import android.view.WindowInsetsAnimation;
+import android.view.animation.Interpolator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class r0 extends v0 {
-    public static final PathInterpolator e = new PathInterpolator(0.0f, 1.1f, 0.0f, 1.0f);
-    public static final u1.a f = new u1.a(u1.a.c);
-    public static final DecelerateInterpolator g = new DecelerateInterpolator(1.5f);
-    public static final AccelerateInterpolator h = new AccelerateInterpolator(1.5f);
-
-    public static void e(View view, w0 w0Var) {
-        cb.e i10 = i(view);
-        if (i10 != null) {
-            i10.H();
-            return;
-        }
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
-            for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-                e(viewGroup.getChildAt(i11), w0Var);
-            }
-        }
+public abstract /* synthetic */ class r0 {
+    public static /* synthetic */ WindowInsetsAnimation.Bounds a(Insets insets, Insets insets2) {
+        return new WindowInsetsAnimation.Bounds(insets, insets2);
     }
 
-    public static void f(View view, m1 m1Var, boolean z4) {
-        cb.e i10 = i(view);
-        if (i10 != null) {
-            i10.a = m1Var;
-            if (!z4) {
-                z4 = true;
-            }
-        }
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
-            for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-                f(viewGroup.getChildAt(i11), m1Var, z4);
-            }
-        }
+    public static /* synthetic */ WindowInsetsAnimation b(int i10, long j3, Interpolator interpolator) {
+        return new WindowInsetsAnimation(i10, interpolator, j3);
     }
 
-    public static void g(View view, m1 m1Var, List list) {
-        cb.e i10 = i(view);
-        if (i10 != null) {
-            i10.I(m1Var, list);
-            return;
-        }
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
-            for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-                g(viewGroup.getChildAt(i11), m1Var, list);
-            }
-        }
-    }
-
-    public static void h(View view, w0 w0Var, q5.c0 c0Var) {
-        cb.e i10 = i(view);
-        if (i10 != null) {
-            ch.e eVar = (ch.e) i10;
-            if (eVar.c == 0) {
-                Iterator it = eVar.d.iterator();
-                while (it.hasNext()) {
-                    ((ch.d) it.next()).t();
-                }
-            }
-            eVar.c++;
-            return;
-        }
-        if (view instanceof ViewGroup) {
-            ViewGroup viewGroup = (ViewGroup) view;
-            for (int i11 = 0; i11 < viewGroup.getChildCount(); i11++) {
-                h(viewGroup.getChildAt(i11), w0Var, c0Var);
-            }
-        }
-    }
-
-    public static cb.e i(View view) {
-        Object tag = view.getTag(R.id.tag_window_insets_animation_callback);
-        if (tag instanceof q0) {
-            return ((q0) tag).a;
-        }
-        return null;
+    public static /* synthetic */ void c() {
     }
 }

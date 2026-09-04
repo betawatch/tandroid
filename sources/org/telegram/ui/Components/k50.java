@@ -1,27 +1,22 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class k50 extends s50 {
-    public final /* synthetic */ y50 d;
+public final class k50 {
+    public final ByteBuffer[] a = new ByteBuffer[10];
+    public final long[] b = new long[10];
+    public final int[] c = new int[10];
+    public int d;
+    public int e;
+    public boolean f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public k50(y50 y50Var, Context context) {
-        super(y50Var, context);
-        this.d = y50Var;
-    }
-
-    @Override // android.view.View
-    public final void setAlpha(float f10) {
-        super.setAlpha(f10);
-        this.d.invalidate();
-    }
-
-    @Override // android.view.View
-    public final void setRotationY(float f10) {
-        super.setRotationY(f10);
-        this.d.invalidate();
+    public k50() {
+        for (int i10 = 0; i10 < 10; i10++) {
+            this.a[i10] = ByteBuffer.allocateDirect(2048);
+            this.a[i10].order(ByteOrder.nativeOrder());
+        }
     }
 }

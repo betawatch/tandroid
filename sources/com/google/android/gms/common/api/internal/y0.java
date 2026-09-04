@@ -5,7 +5,7 @@ import com.google.android.gms.common.api.Status;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class y0 implements OnCompleteListener {
     public final h a;
@@ -14,21 +14,21 @@ public final class y0 implements OnCompleteListener {
     public final long d;
     public final long e;
 
-    public y0(h hVar, int i10, b bVar, long j10, long j11) {
+    public y0(h hVar, int i10, b bVar, long j3, long j10) {
         this.a = hVar;
         this.b = i10;
         this.c = bVar;
-        this.d = j10;
-        this.e = j11;
+        this.d = j3;
+        this.e = j10;
     }
 
     /* JADX WARN: Removed duplicated region for block: B:20:0x0031 A[RETURN] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public static b6.e a(p0 p0Var, b6.g gVar, int i10) {
-        b6.g0 g0Var = gVar.N;
-        b6.e eVar = g0Var == null ? null : g0Var.d;
+    public static n6.e a(p0 p0Var, n6.g gVar, int i10) {
+        n6.f0 f0Var = gVar.Q;
+        n6.e eVar = f0Var == null ? null : f0Var.d;
         if (eVar != null && eVar.b) {
             int[] iArr = eVar.d;
             int i11 = 0;
@@ -65,38 +65,38 @@ public final class y0 implements OnCompleteListener {
         int i12;
         int i13;
         int i14;
+        long j3;
         long j10;
-        long j11;
         int i15;
-        long j12 = this.d;
+        long j11 = this.d;
         h hVar = this.a;
         if (hVar.b()) {
-            b6.o oVar = (b6.o) b6.n.a().a;
-            if (oVar == null || oVar.b) {
+            n6.n nVar = (n6.n) n6.m.a().a;
+            if (nVar == null || nVar.b) {
                 p0 p0Var = (p0) hVar.s.get(this.c);
                 if (p0Var != null) {
                     com.google.android.gms.common.api.c cVar = p0Var.b;
-                    if (cVar instanceof b6.g) {
-                        b6.g gVar = (b6.g) cVar;
-                        boolean z4 = j12 > 0;
-                        int i16 = gVar.I;
-                        if (oVar != null) {
-                            z4 &= oVar.c;
-                            int i17 = oVar.d;
-                            int i18 = oVar.e;
-                            int i19 = oVar.a;
-                            if (gVar.N == null || gVar.e()) {
+                    if (cVar instanceof n6.g) {
+                        n6.g gVar = (n6.g) cVar;
+                        boolean z10 = j11 > 0;
+                        int i16 = gVar.L;
+                        if (nVar != null) {
+                            z10 &= nVar.c;
+                            int i17 = nVar.d;
+                            int i18 = nVar.e;
+                            int i19 = nVar.a;
+                            if (gVar.Q == null || gVar.f()) {
                                 i11 = i19;
                                 i12 = i18;
                             } else {
-                                b6.e a2 = a(p0Var, gVar, this.b);
+                                n6.e a2 = a(p0Var, gVar, this.b);
                                 if (a2 == null) {
                                     return;
                                 }
-                                boolean z10 = a2.c && j12 > 0;
+                                boolean z11 = a2.c && j11 > 0;
                                 i11 = i19;
                                 i12 = a2.e;
-                                z4 = z10;
+                                z10 = z11;
                             }
                             i10 = i17;
                         } else {
@@ -115,7 +115,7 @@ public final class y0 implements OnCompleteListener {
                                 if (exception instanceof com.google.android.gms.common.api.f) {
                                     Status status = ((com.google.android.gms.common.api.f) exception).getStatus();
                                     int i20 = status.a;
-                                    y5.a aVar = status.d;
+                                    k6.a aVar = status.d;
                                     if (aVar == null) {
                                         i13 = i20;
                                     } else {
@@ -128,20 +128,20 @@ public final class y0 implements OnCompleteListener {
                             }
                             i14 = -1;
                         }
-                        if (z4) {
-                            long j13 = this.e;
+                        if (z10) {
+                            long j12 = this.e;
                             long currentTimeMillis = System.currentTimeMillis();
-                            j10 = j12;
-                            i15 = (int) (SystemClock.elapsedRealtime() - j13);
-                            j11 = currentTimeMillis;
+                            j3 = j11;
+                            i15 = (int) (SystemClock.elapsedRealtime() - j12);
+                            j10 = currentTimeMillis;
                         } else {
+                            j3 = 0;
                             j10 = 0;
-                            j11 = 0;
                             i15 = -1;
                         }
-                        z0 z0Var = new z0(new b6.k(this.b, i13, i14, j10, j11, null, null, i16, i15), i11, i10, i12);
-                        a7.e eVar = hVar.x;
-                        eVar.sendMessage(eVar.obtainMessage(18, z0Var));
+                        z0 z0Var = new z0(new n6.j(this.b, i13, i14, j3, j10, null, null, i16, i15), i11, i10, i12);
+                        com.google.android.gms.internal.cast.c0 c0Var = hVar.x;
+                        c0Var.sendMessage(c0Var.obtainMessage(18, z0Var));
                     }
                 }
             }

@@ -1,69 +1,26 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SaveToGallerySettingsHelper;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class c41 implements org.telegram.ui.Components.io0 {
-    public final /* synthetic */ org.telegram.ui.Components.jo0 a;
-    public final /* synthetic */ f41 b;
-    public final /* synthetic */ f41 c;
-    public final /* synthetic */ f41 d;
-    public final /* synthetic */ d41 e;
+public final class c41 extends org.telegram.ui.Cells.i3 {
+    public final /* synthetic */ d41 x;
 
-    public c41(d41 d41Var, org.telegram.ui.Components.jo0 jo0Var, f41 f41Var, f41 f41Var2, f41 f41Var3) {
-        this.e = d41Var;
-        this.a = jo0Var;
-        this.b = f41Var;
-        this.c = f41Var2;
-        this.d = f41Var3;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c41(d41 d41Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, "", true, false, 1024, f6Var);
+        this.x = d41Var;
     }
 
-    @Override // org.telegram.ui.Components.io0
-    public final void Y(float f10, boolean z4) {
-        SaveToGallerySettingsActivity saveToGallerySettingsActivity = this.e.d;
-        boolean isAttachedToWindow = this.a.isAttachedToWindow();
-        long j10 = f10 > 0.7f ? (long) ((4089446400L * ((f10 - 0.7f) / 0.3f)) + SaveToGallerySettingsHelper.DEFAULT_VIDEO_LIMIT) : (long) ((104333312 * (f10 / 0.7f)) + 524288.0f);
-        f41 f41Var = this.d;
-        f41 f41Var2 = this.b;
-        f41 f41Var3 = this.c;
-        if (f10 >= 1.0f) {
-            f41Var2.e(false, isAttachedToWindow);
-            f41Var3.e(false, isAttachedToWindow);
-            f41Var.e(true, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(f41Var3, false, 0.8f, isAttachedToWindow);
-        } else if (f10 == 0.0f) {
-            f41Var2.e(true, isAttachedToWindow);
-            f41Var3.e(false, isAttachedToWindow);
-            f41Var.e(false, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(f41Var3, false, 0.8f, isAttachedToWindow);
-        } else {
-            f41Var3.c(LocaleController.formatString("UpToFileSize", R.string.UpToFileSize, AndroidUtilities.formatFileSize(j10, true, false)), false, true);
-            f41Var2.e(false, isAttachedToWindow);
-            f41Var3.e(true, isAttachedToWindow);
-            f41Var.e(false, isAttachedToWindow);
-            AndroidUtilities.updateViewVisibilityAnimated(f41Var3, true, 0.8f, isAttachedToWindow);
+    @Override // org.telegram.ui.Cells.i3
+    public final void b(Editable editable) {
+        d41 d41Var = this.x;
+        di.d dVar = d41Var.s;
+        if (dVar != null) {
+            dVar.setEnabled(d41Var.d.optional || !TextUtils.isEmpty(d41Var.n.getText()));
         }
-        if (z4) {
-            saveToGallerySettingsActivity.X().limitVideo = j10;
-            saveToGallerySettingsActivity.Y();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.io0
-    public final /* synthetic */ CharSequence getContentDescription() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.io0
-    public final /* synthetic */ int j0() {
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.io0
-    public final void B() {
     }
 }

@@ -1,9 +1,9 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public interface jl0 {
-    boolean d(int i10, View view);
+public abstract class jl0 {
+    public static final ArrayList a = new ArrayList();
 }

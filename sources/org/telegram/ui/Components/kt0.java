@@ -8,7 +8,7 @@ import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class kt0 extends LinearLayout {
     public final TextView a;
@@ -23,12 +23,12 @@ public final class kt0 extends LinearLayout {
         this.b = imageView;
         setOrientation(1);
         setGravity(17);
-        addView(imageView, k7.b6.n(-2, -2));
+        addView(imageView, w7.x5.n(-2, -2));
         textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, f6Var));
         textView.setGravity(17);
         textView.setTextSize(1, 17.0f);
         textView.setPadding(AndroidUtilities.dp(40.0f), 0, AndroidUtilities.dp(40.0f), AndroidUtilities.dp(128.0f));
-        addView(textView, k7.b6.t(-2, -2, 17, 0, 24, 0, 0));
+        addView(textView, w7.x5.t(-2, -2, 17, 0, 24, 0, 0));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

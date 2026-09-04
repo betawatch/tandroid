@@ -1,29 +1,52 @@
 package n7;
 
-import java.util.Map;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class x implements u9.d {
-    public static final /* synthetic */ x b = new x(0);
-    public static final /* synthetic */ x c = new x(1);
-    public final /* synthetic */ int a;
+public final class x extends m {
+    public static final x e = new x(0, new Object[0]);
+    public final transient Object[] c;
+    public final transient int d;
 
-    public /* synthetic */ x(int i10) {
-        this.a = i10;
+    public x(int i10, Object[] objArr) {
+        this.c = objArr;
+        this.d = i10;
     }
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        switch (this.a) {
-            case 0:
-                Map.Entry entry = (Map.Entry) obj;
-                u9.e eVar = (u9.e) obj2;
-                eVar.e(y.g, entry.getKey());
-                eVar.e(y.h, entry.getValue());
-                return;
-            default:
-                throw new u9.b("Couldn't find encoder for type ".concat(String.valueOf(obj.getClass().getCanonicalName())));
-        }
+    @Override // java.util.List
+    public final Object get(int i10) {
+        a.e(i10, this.d);
+        Object obj = this.c[i10];
+        Objects.requireNonNull(obj);
+        return obj;
+    }
+
+    @Override // n7.m, n7.h
+    public final int i(Object[] objArr) {
+        Object[] objArr2 = this.c;
+        int i10 = this.d;
+        System.arraycopy(objArr2, 0, objArr, 0, i10);
+        return i10;
+    }
+
+    @Override // n7.h
+    public final int n() {
+        return this.d;
+    }
+
+    @Override // n7.h
+    public final int o() {
+        return 0;
+    }
+
+    @Override // n7.h
+    public final Object[] q() {
+        return this.c;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
+    public final int size() {
+        return this.d;
     }
 }

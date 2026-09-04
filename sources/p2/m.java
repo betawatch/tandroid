@@ -1,48 +1,17 @@
 package p2;
 
-import java.util.ArrayList;
-import org.json.JSONArray;
-import org.json.JSONObject;
+import android.net.Uri;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class m {
-    public final String a;
-    public final l b;
+    public final Uri a;
+    public final b2.s b;
+    public final String c;
 
-    public m(JSONObject jSONObject) {
-        jSONObject.optString("basePlanId");
-        jSONObject.optString("offerId").getClass();
-        this.a = jSONObject.getString("offerIdToken");
-        this.b = new l(jSONObject.getJSONArray("pricingPhases"));
-        JSONObject optJSONObject = jSONObject.optJSONObject("installmentPlanDetails");
-        if (optJSONObject != null) {
-            optJSONObject.getInt("commitmentPaymentsCount");
-            optJSONObject.optInt("subsequentCommitmentPaymentsCount");
-        }
-        JSONObject optJSONObject2 = jSONObject.optJSONObject("transitionPlanDetails");
-        if (optJSONObject2 != null) {
-            optJSONObject2.getString("productId");
-            optJSONObject2.optString("title");
-            optJSONObject2.optString("name");
-            optJSONObject2.optString("description");
-            optJSONObject2.optString("basePlanId");
-            JSONObject optJSONObject3 = optJSONObject2.optJSONObject("pricingPhase");
-            if (optJSONObject3 != null) {
-                optJSONObject3.optString("billingPeriod");
-                optJSONObject3.optString("priceCurrencyCode");
-                optJSONObject3.optString("formattedPrice");
-                optJSONObject3.optLong("priceAmountMicros");
-                optJSONObject3.optInt("recurrenceMode");
-                optJSONObject3.optInt("billingCycleCount");
-            }
-        }
-        ArrayList arrayList = new ArrayList();
-        JSONArray optJSONArray = jSONObject.optJSONArray("offerTags");
-        if (optJSONArray != null) {
-            for (int i10 = 0; i10 < optJSONArray.length(); i10++) {
-                arrayList.add(optJSONArray.getString(i10));
-            }
-        }
+    public m(Uri uri, b2.s sVar, String str) {
+        this.a = uri;
+        this.b = sVar;
+        this.c = str;
     }
 }

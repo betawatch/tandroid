@@ -1,44 +1,52 @@
 package org.telegram.messenger;
 
+import org.telegram.messenger.FileLoadOperation;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.RequestDelegate;
 import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class wa implements Runnable {
+public final /* synthetic */ class wa implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ TLObject c;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ wa(MessagesController messagesController, TLObject tLObject, int i10) {
-        this.a = i10;
-        this.b = messagesController;
-        this.c = tLObject;
+    public /* synthetic */ wa(Object obj, int i10, Object obj2, int i11) {
+        this.a = i11;
+        this.c = obj;
+        this.b = i10;
+        this.d = obj2;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadHintDialogs$195(this.c);
+                ((MessagesController) this.c).lambda$checkChatlistFolderUpdate$478(this.b, (MessagesController.ChatlistUpdatesStat) this.d, tLObject, tL_error);
                 break;
             case 1:
-                this.b.lambda$getContentSettings$501(this.c);
+                ((FileLoadOperation) this.c).lambda$startDownloadRequest$28(this.b, (FileLoadOperation.RequestInfo) this.d, tLObject, tL_error);
                 break;
             case 2:
-                this.b.lambda$reloadReactionsNotifySettings$204(this.c);
+                ((MediaDataController) this.c).lambda$toggleStickerSetInternal$117((TLRPC.StickerSet) this.d, this.b, tLObject, tL_error);
                 break;
             case 3:
-                this.b.lambda$loadGlobalNotificationsSettings$202(this.c);
-                break;
-            case 4:
-                this.b.lambda$loadUnreadDialogs$361(this.c);
-                break;
-            case 5:
-                this.b.lambda$loadSuggestedFilters$24(this.c);
+                ((MediaDataController) this.c).lambda$loadStickers$97(this.b, (Utilities.Callback) this.d, tLObject, tL_error);
                 break;
             default:
-                this.b.lambda$loadSignUpNotificationsSettings$206(this.c);
+                ((MessagesController) this.c).lambda$registerForPush$324(this.b, (String) this.d, tLObject, tL_error);
                 break;
         }
+    }
+
+    public /* synthetic */ wa(MediaDataController mediaDataController, TLRPC.StickerSet stickerSet, int i10) {
+        this.a = 2;
+        this.c = mediaDataController;
+        this.d = stickerSet;
+        this.b = i10;
     }
 }

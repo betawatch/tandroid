@@ -1,249 +1,48 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
 import android.text.TextUtils;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import java.util.ArrayList;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DispatchQueue;
-import org.telegram.messenger.FileLoader;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class b8 extends ql0 {
-    public final Context c;
-    public ArrayList d = new ArrayList();
-    public String e;
-    public z7 f;
-    public boolean h;
-    public final /* synthetic */ c8 n;
+public final class b8 extends e8 {
+    public final /* synthetic */ Context E;
+    public final /* synthetic */ k8 F;
+    public final /* synthetic */ int y;
 
-    public b8(c8 c8Var, Context context) {
-        this.n = c8Var;
-        this.c = context;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ b8(k8 k8Var, Context context, Context context2, int i10) {
+        super(context);
+        this.y = i10;
+        this.F = k8Var;
+        this.E = context2;
     }
 
-    @Override // org.telegram.ui.Components.ql0
-    public final boolean D(f2.l1 l1Var) {
-        return (this.n.s0 && l1Var.b() == 0) ? false : true;
-    }
-
-    public final void E(String str) {
-        if (this.f != null) {
-            Utilities.searchQueue.cancelRunnable(this.f);
-            this.f = null;
+    @Override // org.telegram.ui.Components.e8
+    public final TextView a() {
+        switch (this.y) {
+            case 0:
+                s90 s90Var = new s90(this.E);
+                s90Var.setTextColor(this.F.getThemedColor(org.telegram.ui.ActionBar.j6.Oi));
+                s90Var.setTextSize(1, 17.0f);
+                s90Var.setTypeface(AndroidUtilities.bold());
+                s90Var.setEllipsize(TextUtils.TruncateAt.END);
+                s90Var.setSingleLine(true);
+                return s90Var;
+            default:
+                s90 s90Var2 = new s90(this.E);
+                int i10 = org.telegram.ui.ActionBar.j6.Si;
+                k8 k8Var = this.F;
+                s90Var2.setTextColor(k8Var.getThemedColor(i10));
+                s90Var2.setTextSize(1, 13.0f);
+                s90Var2.setEllipsize(TextUtils.TruncateAt.END);
+                s90Var2.setSingleLine(true);
+                s90Var2.setPadding(AndroidUtilities.dp(6.0f), 0, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(1.0f));
+                s90Var2.setBackground(org.telegram.ui.ActionBar.j6.Y(k8Var.getThemedColor(org.telegram.ui.ActionBar.j6.i6), AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f)));
+                s90Var2.setOnClickListener(new org.telegram.ui.rf(18, this, s90Var2));
+                return s90Var2;
         }
-        if (str == null) {
-            this.e = null;
-            this.d.clear();
-            l();
-        } else {
-            DispatchQueue dispatchQueue = Utilities.searchQueue;
-            z7 z7Var = new z7(this, str, 0);
-            this.f = z7Var;
-            dispatchQueue.postRunnable(z7Var, 300L);
-        }
-    }
-
-    @Override // f2.o0
-    public final int h() {
-        int size;
-        c8 c8Var = this.n;
-        boolean z4 = c8Var.s0;
-        if (c8Var.f) {
-            size = this.d.size();
-        } else {
-            if (c8Var.u0.size() <= 1) {
-                return 0;
-            }
-            size = c8Var.u0.size();
-        }
-        return size + (z4 ? 1 : 0);
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        return (this.n.s0 && i10 == 0) ? 1 : 0;
-    }
-
-    @Override // f2.o0
-    public final void l() {
-        super.l();
-        c8 c8Var = this.n;
-        View view = c8Var.e;
-        j7 j7Var = c8Var.B;
-        o7 o7Var = c8Var.n;
-        if ((c8Var.u0.size() > 1) != this.h) {
-            boolean z4 = c8Var.u0.size() > 1;
-            this.h = z4;
-            if (z4) {
-                o7Var.setVisibility(0);
-                o7Var.setTranslationY(AndroidUtilities.displaySize.y);
-                final int i10 = 0;
-                o7Var.animate().translationY(0.0f).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.y7
-                    public final /* synthetic */ b8 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ViewGroup viewGroup;
-                        ViewGroup viewGroup2;
-                        switch (i10) {
-                            case 0:
-                                viewGroup = ((org.telegram.ui.ActionBar.g3) this.b.n).containerView;
-                                viewGroup.invalidate();
-                                break;
-                            default:
-                                viewGroup2 = ((org.telegram.ui.ActionBar.g3) this.b.n).containerView;
-                                viewGroup2.invalidate();
-                                break;
-                        }
-                    }
-                }).setDuration(420L).setInterpolator(mr.h).start();
-            } else {
-                final int i11 = 1;
-                o7Var.animate().translationY(AndroidUtilities.displaySize.y).setUpdateListener(new ValueAnimator.AnimatorUpdateListener(this) { // from class: org.telegram.ui.Components.y7
-                    public final /* synthetic */ b8 b;
-
-                    {
-                        this.b = this;
-                    }
-
-                    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-                    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ViewGroup viewGroup;
-                        ViewGroup viewGroup2;
-                        switch (i11) {
-                            case 0:
-                                viewGroup = ((org.telegram.ui.ActionBar.g3) this.b.n).containerView;
-                                viewGroup.invalidate();
-                                break;
-                            default:
-                                viewGroup2 = ((org.telegram.ui.ActionBar.g3) this.b.n).containerView;
-                                viewGroup2.invalidate();
-                                break;
-                        }
-                    }
-                }).setDuration(420L).setInterpolator(mr.h).withEndAction(new fg(this, 9)).start();
-            }
-        }
-        if (c8Var.u0.size() > 1) {
-            j7Var.setBackgroundColor(c8Var.getThemedColor(org.telegram.ui.ActionBar.j6.Ri));
-            view.setVisibility(0);
-            o7Var.setPadding(0, o7Var.getPaddingTop(), 0, AndroidUtilities.dp(231.0f));
-        } else {
-            j7Var.setBackgroundColor(c8Var.getThemedColor(org.telegram.ui.ActionBar.j6.Ri));
-            view.setVisibility(0);
-            o7Var.setPadding(0, o7Var.getPaddingTop(), 0, 0);
-        }
-        c8Var.v.setVisibility((c8Var.h && c8Var.s.h() == 0) ? 0 : 8);
-        c8Var.E0();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x0024, code lost:
-    
-        if ((r12 + 1) < r10.d.size()) goto L11;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:11:0x0026, code lost:
-    
-        r12 = true;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:53:0x0028, code lost:
-    
-        r12 = false;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:59:0x0060, code lost:
-    
-        if (((r0.u0.size() - r12) - 2) >= 0) goto L11;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:61:0x0046, code lost:
-    
-        if ((r12 + 1) < r0.u0.size()) goto L11;
-     */
-    @Override // f2.o0
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void v(f2.l1 l1Var, int i10) {
-        MessageObject messageObject;
-        boolean z4;
-        org.telegram.ui.ActionBar.f6 f6Var;
-        c8 c8Var = this.n;
-        if (c8Var.s0) {
-            if (i10 == 0) {
-                return;
-            } else {
-                i10--;
-            }
-        }
-        org.telegram.ui.Cells.x xVar = (org.telegram.ui.Cells.x) l1Var.a;
-        if (c8Var.f) {
-            messageObject = (MessageObject) this.d.get(i10);
-        } else if (c8Var.t0 == null ? !SharedConfig.playOrderReversed : SharedConfig.playOrderReversed) {
-            ArrayList arrayList = c8Var.u0;
-            messageObject = (MessageObject) arrayList.get((arrayList.size() - i10) - 1);
-        } else {
-            messageObject = (MessageObject) c8Var.u0.get(i10);
-        }
-        if (messageObject != null) {
-            messageObject.setQuery(this.e);
-        }
-        org.telegram.ui.ActionBar.i1 i1Var = c8Var.s0() ? new org.telegram.ui.ActionBar.i1(1, this, xVar) : null;
-        int i11 = org.telegram.ui.ActionBar.j6.h5;
-        f6Var = ((org.telegram.ui.ActionBar.g3) c8Var).resourcesProvider;
-        xVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        boolean s02 = c8Var.s0();
-        dg.p pVar = (c8Var.s0() || c8Var.w0 || messageObject.getId() <= 0) ? null : new dg.p(this, xVar, messageObject, 18);
-        RadialProgress2 radialProgress2 = xVar.E;
-        ImageView imageView = xVar.v;
-        xVar.w = messageObject;
-        if (xVar.x != z4) {
-            xVar.invalidate();
-        }
-        xVar.x = z4;
-        imageView.setImageResource(s02 ? R.drawable.list_reorder : R.drawable.ic_ab_other);
-        imageView.setVisibility((s02 || pVar != null) ? 0 : 8);
-        imageView.setOnClickListener(pVar);
-        imageView.setOnTouchListener(i1Var);
-        TLRPC.Document document = messageObject.getDocument();
-        TLRPC.PhotoSize closestPhotoSizeWithSize = document != null ? FileLoader.getClosestPhotoSizeWithSize(document.thumbs, 90) : null;
-        if ((closestPhotoSizeWithSize instanceof TLRPC.TL_photoSize) || (closestPhotoSizeWithSize instanceof TLRPC.TL_photoSizeProgressive)) {
-            radialProgress2.i(closestPhotoSizeWithSize, document, messageObject);
-        } else {
-            String artworkUrl = messageObject.getArtworkUrl(true);
-            if (TextUtils.isEmpty(artworkUrl)) {
-                radialProgress2.i(null, null, null);
-            } else {
-                radialProgress2.h(artworkUrl);
-            }
-        }
-        xVar.requestLayout();
-        xVar.b(false, false);
-    }
-
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        org.telegram.ui.ActionBar.f6 f6Var;
-        Context context = this.c;
-        if (i10 == 1) {
-            gn gnVar = new gn(context, 7);
-            gnVar.setTag(-33024);
-            return new dl0(gnVar);
-        }
-        boolean currentPlaylistIsGlobalSearch = MediaController.getInstance().currentPlaylistIsGlobalSearch();
-        f6Var = ((org.telegram.ui.ActionBar.g3) this.n).resourcesProvider;
-        return new dl0(new org.telegram.ui.Cells.x(context, currentPlaylistIsGlobalSearch ? 1 : 0, f6Var));
     }
 }

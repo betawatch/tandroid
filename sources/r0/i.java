@@ -1,24 +1,36 @@
 package r0;
 
-import android.content.Context;
-import android.view.VelocityTracker;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.ui.Components.tp0;
+import android.view.DisplayCutout;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class i {
-    public final Context a;
-    public final tp0 b;
-    public VelocityTracker c;
-    public float d;
-    public int e = -1;
-    public int f = -1;
-    public int g = -1;
-    public final int[] h = {ConnectionsManager.DEFAULT_DATACENTER_ID, 0};
+    public final DisplayCutout a;
 
-    public i(Context context, tp0 tp0Var) {
-        this.a = context;
-        this.b = tp0Var;
+    public i(DisplayCutout displayCutout) {
+        this.a = displayCutout;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null || i.class != obj.getClass()) {
+            return false;
+        }
+        return Objects.equals(this.a, ((i) obj).a);
+    }
+
+    public final int hashCode() {
+        DisplayCutout displayCutout = this.a;
+        if (displayCutout == null) {
+            return 0;
+        }
+        return displayCutout.hashCode();
+    }
+
+    public final String toString() {
+        return "DisplayCutoutCompat{" + this.a + "}";
     }
 }

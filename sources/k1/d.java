@@ -1,22 +1,38 @@
 package k1;
 
-import j7.s8;
-import java.io.Serializable;
-import java.util.Iterator;
-import org.telegram.tgnet.TLObject;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class d extends wc.c {
-    public Serializable a;
-    public Iterator b;
-    public /* synthetic */ Object c;
-    public int d;
+public final class d extends kd.j implements rd.l {
+    public int a;
 
-    @Override // wc.a
+    @Override // kd.a
+    public final id.c create(id.c cVar) {
+        return new d(1, cVar);
+    }
+
+    @Override // rd.l
+    public final Object invoke(Object obj) {
+        d dVar = (d) create((id.c) obj);
+        gd.i iVar = gd.i.a;
+        dVar.invokeSuspend(iVar);
+        return iVar;
+    }
+
+    @Override // kd.a
     public final Object invokeSuspend(Object obj) {
-        this.c = obj;
-        this.d |= TLObject.FLAG_31;
-        return s8.a(null, null, this);
+        jd.a aVar = jd.a.a;
+        int i10 = this.a;
+        if (i10 == 0) {
+            t7.b(obj);
+            this.a = 1;
+            throw null;
+        }
+        if (i10 != 1) {
+            throw new IllegalStateException("call to 'resume' before 'invoke' with coroutine");
+        }
+        t7.b(obj);
+        return gd.i.a;
     }
 }

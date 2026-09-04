@@ -1,13 +1,54 @@
 package org.telegram.ui.ActionBar;
 
-import android.view.MenuItem;
+import android.graphics.Rect;
+import android.view.View;
+import org.telegram.ui.Components.fo0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class k4 implements MenuItem.OnMenuItemClickListener {
-    @Override // android.view.MenuItem.OnMenuItemClickListener
-    public final boolean onMenuItemClick(MenuItem menuItem) {
-        k4 k4Var = y4.p;
-        return false;
+public final class k4 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ int a;
+    public final Object b;
+    public final Object c;
+    public final /* synthetic */ Object d;
+
+    public k4(fo0 fo0Var, fo0 fo0Var2, fo0 fo0Var3) {
+        this.a = 1;
+        this.b = fo0Var;
+        this.c = fo0Var2;
+        this.d = fo0Var3;
+    }
+
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        switch (this.a) {
+            case 0:
+                Rect rect = (Rect) this.b;
+                rect.set(i10, i11, i12, i13);
+                Rect rect2 = (Rect) this.c;
+                rect2.set(i14, i15, i16, i17);
+                x4 x4Var = (x4) this.d;
+                v4 v4Var = x4Var.b;
+                if (v4Var.f() && !rect.equals(rect2)) {
+                    x4Var.h = true;
+                    if (v4Var.f()) {
+                        x4Var.c();
+                        break;
+                    }
+                }
+                break;
+            default:
+                ((fo0) this.b).setProgress(org.telegram.ui.i5.c);
+                ((fo0) this.c).setProgress(org.telegram.ui.i5.d);
+                ((fo0) this.d).setProgress(org.telegram.ui.i5.e);
+                break;
+        }
+    }
+
+    public k4(x4 x4Var) {
+        this.a = 0;
+        this.d = x4Var;
+        this.b = new Rect();
+        this.c = new Rect();
     }
 }

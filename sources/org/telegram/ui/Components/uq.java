@@ -1,150 +1,361 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.animation.ValueAnimator;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.text.Layout;
 import android.text.SpannableStringBuilder;
+import android.text.StaticLayout;
+import android.text.TextPaint;
 import android.text.TextUtils;
-import java.util.ArrayList;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.MessagesStorage;
-import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.UserObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_bots;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uq implements Runnable {
-    public final /* synthetic */ String[] a;
-    public final /* synthetic */ lh.s6 b;
-    public final /* synthetic */ org.telegram.ui.Cells.h3 c;
-    public final /* synthetic */ int[] d;
-    public final /* synthetic */ ph.d e;
-    public final /* synthetic */ boolean f;
-    public final /* synthetic */ int h;
-    public final /* synthetic */ TLRPC.User n;
-    public final /* synthetic */ int[] r;
-    public final /* synthetic */ boolean[] s;
-    public final /* synthetic */ Utilities.Callback v;
-    public final /* synthetic */ org.telegram.ui.ActionBar.g3 w;
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 x;
-    public final /* synthetic */ Context y;
+public final class uq {
+    public float A;
+    public float B;
+    public boolean D;
+    public float E;
+    public final boolean F;
+    public boolean G;
+    public View H;
+    public final org.telegram.ui.ActionBar.f6 J;
+    public boolean a;
+    public Paint d;
+    public boolean g;
+    public int h;
+    public String i;
+    public boolean j;
+    public ValueAnimator k;
+    public float m;
+    public StaticLayout n;
+    public StaticLayout o;
+    public StaticLayout p;
+    public StaticLayout q;
+    public int r;
+    public int s;
+    public int t;
+    public int u;
+    public int x;
+    public int y;
+    public float b = 1.0f;
+    public int c = -1;
+    public TextPaint e = new TextPaint(1);
+    public final RectF f = new RectF();
+    public float l = 1.0f;
+    public int v = org.telegram.ui.ActionBar.j6.sf;
+    public int w = org.telegram.ui.ActionBar.j6.tf;
+    public int z = 17;
+    public final float C = 11.5f;
+    public int I = 0;
 
-    public /* synthetic */ uq(String[] strArr, lh.s6 s6Var, org.telegram.ui.Cells.h3 h3Var, int[] iArr, ph.d dVar, boolean z4, int i10, TLRPC.User user, int[] iArr2, boolean[] zArr, Utilities.Callback callback, org.telegram.ui.ActionBar.g3 g3Var, org.telegram.ui.ActionBar.f6 f6Var, Context context) {
-        this.a = strArr;
-        this.b = s6Var;
-        this.c = h3Var;
-        this.d = iArr;
-        this.e = dVar;
-        this.f = z4;
-        this.h = i10;
-        this.n = user;
-        this.r = iArr2;
-        this.s = zArr;
-        this.v = callback;
-        this.w = g3Var;
-        this.x = f6Var;
-        this.y = context;
+    public uq(View view, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.H = view;
+        this.J = f6Var;
+        this.F = z10;
+        if (z10) {
+            Paint paint = new Paint(1);
+            this.d = paint;
+            paint.setColor(-16777216);
+        }
+        this.e.setTypeface(AndroidUtilities.bold());
+        this.e.setTextSize(AndroidUtilities.dp(13.0f));
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String[] strArr = this.a;
-        if (strArr[0] == null) {
-            this.b.run();
+    public final void a(Canvas canvas) {
+        float f7;
+        boolean z10;
+        Paint paint;
+        int i10 = this.I;
+        if (i10 != 1 && i10 != 2) {
+            int i11 = this.v;
+            org.telegram.ui.ActionBar.f6 f6Var = this.J;
+            int v02 = org.telegram.ui.ActionBar.j6.v0(i11, f6Var);
+            int v03 = org.telegram.ui.ActionBar.j6.v0(this.w, f6Var);
+            if (this.u != v02) {
+                this.u = v02;
+                this.e.setColor(v02);
+            }
+            Paint paint2 = this.d;
+            if (paint2 != null && this.t != v03) {
+                this.t = v03;
+                paint2.setColor(v03);
+            }
+        }
+        float f10 = this.l;
+        if (f10 == 1.0f) {
+            b(canvas);
             return;
         }
-        org.telegram.ui.Cells.h3 h3Var = this.c;
-        String trim = h3Var.b.getText().toString().trim();
-        if (TextUtils.isEmpty(trim)) {
-            int[] iArr = this.d;
-            int i10 = -iArr[0];
-            iArr[0] = i10;
-            AndroidUtilities.shakeViewSpring(h3Var, i10);
+        int i12 = this.c;
+        if (i12 == 0 || i12 == 1) {
+            e(this.s);
+            float f11 = (this.s / 2.0f) + this.A;
+            float f12 = this.x / 2.0f;
+            canvas.save();
+            float f13 = this.c == 0 ? this.l : 1.0f - this.l;
+            canvas.scale(f13, f13, f11, f12);
+            b(canvas);
+            canvas.restore();
             return;
         }
-        final ph.d dVar = this.e;
-        dVar.setLoading(true);
-        TL_bots.createBot createbot = new TL_bots.createBot();
-        createbot.via_deeplink = this.f;
-        createbot.username = strArr[0];
-        createbot.name = trim;
-        final int i11 = this.h;
-        MessagesController messagesController = MessagesController.getInstance(i11);
-        final TLRPC.User user = this.n;
-        createbot.manager_id = messagesController.getInputUser(user);
-        ConnectionsManager connectionsManager = ConnectionsManager.getInstance(i11);
-        org.telegram.messenger.a aVar = new org.telegram.messenger.a();
-        final int[] iArr2 = this.r;
-        final boolean[] zArr = this.s;
-        final Utilities.Callback callback = this.v;
-        final org.telegram.ui.ActionBar.g3 g3Var = this.w;
-        final org.telegram.ui.ActionBar.f6 f6Var = this.x;
-        final Context context = this.y;
-        iArr2[0] = connectionsManager.sendRequestTyped(createbot, aVar, new Utilities.Callback2() { // from class: org.telegram.ui.Components.xq
-            @Override // org.telegram.messenger.Utilities.Callback2
-            public final void run(Object obj, Object obj2) {
-                String userName;
-                TLRPC.User user2 = (TLRPC.User) obj;
-                TLRPC.TL_error tL_error = (TLRPC.TL_error) obj2;
-                iArr2[0] = -1;
-                dVar.setLoading(false);
-                int i12 = i11;
-                org.telegram.ui.ActionBar.g3 g3Var2 = g3Var;
-                if (user2 != null) {
-                    zArr[0] = true;
-                    MessagesController.getInstance(i12).putUser(user2, false);
-                    ArrayList arrayList = new ArrayList();
-                    arrayList.add(user2);
-                    MessagesStorage.getInstance(i12).putUsersAndChats(arrayList, null, false, false);
-                    callback.run(user2);
-                    g3Var2.dismiss();
+        float f14 = f10 * 2.0f;
+        if (f14 > 1.0f) {
+            f14 = 1.0f;
+        }
+        int i13 = this.x;
+        float f15 = this.C;
+        float f16 = f15 * 2.0f;
+        float dp = (i13 - AndroidUtilities.dp(f16)) / 2.0f;
+        int i14 = this.s;
+        int i15 = this.r;
+        float z11 = i14 == i15 ? i14 : com.google.android.gms.internal.vision.e2.z(1.0f, f14, i15, i14 * f14);
+        e(z11);
+        if (this.j) {
+            float f17 = this.l;
+            f7 = ((f17 <= 0.5f ? pr.g.getInterpolation(f17 * 2.0f) : pr.i.getInterpolation(1.0f - ((f17 - 0.5f) * 2.0f))) * 0.1f) + 1.0f;
+        } else {
+            f7 = 1.0f;
+        }
+        float f18 = this.B;
+        RectF rectF = this.f;
+        rectF.set(f18, dp, z11 + f18 + AndroidUtilities.dp(f15 - 0.5f), AndroidUtilities.dp(f16) + dp);
+        canvas.save();
+        canvas.scale(f7, f7, rectF.centerX(), rectF.centerY());
+        if (this.b != 1.0f) {
+            canvas.save();
+            float f19 = this.b;
+            canvas.scale(f19, f19, rectF.centerX(), rectF.centerY());
+            z10 = true;
+        } else {
+            z10 = false;
+        }
+        if (this.F && (paint = this.d) != null) {
+            float f20 = AndroidUtilities.density * f15;
+            canvas.drawRoundRect(rectF, f20, f20, paint);
+            if (this.g && org.telegram.ui.ActionBar.j6.a1()) {
+                float f21 = f15 * AndroidUtilities.density;
+                canvas.drawRoundRect(rectF, f21, f21, org.telegram.ui.ActionBar.j6.h2);
+            }
+        }
+        if (z10) {
+            canvas.restore();
+        }
+        canvas.clipRect(rectF);
+        boolean z12 = this.D != this.j;
+        if (this.q != null) {
+            canvas.save();
+            float f22 = this.A;
+            float dp2 = AndroidUtilities.dp(4.0f) + dp;
+            int dp3 = AndroidUtilities.dp(13.0f);
+            if (!z12) {
+                dp3 = -dp3;
+            }
+            canvas.translate(f22, com.google.android.gms.internal.vision.e2.z(1.0f, f14, dp3, dp2));
+            this.e.setAlpha((int) (f14 * 255.0f));
+            this.q.draw(canvas);
+            canvas.restore();
+        } else if (this.n != null) {
+            canvas.save();
+            float f23 = this.A;
+            float dp4 = AndroidUtilities.dp(4.0f) + dp;
+            int dp5 = AndroidUtilities.dp(13.0f);
+            if (!z12) {
+                dp5 = -dp5;
+            }
+            canvas.translate(f23, com.google.android.gms.internal.vision.e2.z(1.0f, f14, dp5, dp4));
+            this.e.setAlpha((int) (f14 * 255.0f));
+            this.n.draw(canvas);
+            canvas.restore();
+        }
+        if (this.o != null) {
+            canvas.save();
+            canvas.translate(this.A, ((z12 ? -AndroidUtilities.dp(13.0f) : AndroidUtilities.dp(13.0f)) * f14) + AndroidUtilities.dp(4.0f) + dp);
+            this.e.setAlpha((int) ((1.0f - f14) * 255.0f));
+            this.o.draw(canvas);
+            canvas.restore();
+        }
+        if (this.p != null) {
+            canvas.save();
+            canvas.translate(this.A, dp + AndroidUtilities.dp(4.0f));
+            this.e.setAlpha(255);
+            this.p.draw(canvas);
+            canvas.restore();
+        }
+        this.e.setAlpha(255);
+        canvas.restore();
+    }
+
+    public final void b(Canvas canvas) {
+        boolean z10;
+        float f7 = this.C;
+        float f10 = f7 * 2.0f;
+        float dp = (this.x - AndroidUtilities.dp(f10)) / 2.0f;
+        e(this.s);
+        float f11 = this.B;
+        RectF rectF = this.f;
+        rectF.set(f11, dp, this.s + f11 + AndroidUtilities.dp(f7 - 0.5f), AndroidUtilities.dp(f10) + dp);
+        if (this.d != null && this.F) {
+            if (this.b != 1.0f) {
+                canvas.save();
+                float f12 = this.b;
+                canvas.scale(f12, f12, rectF.centerX(), rectF.centerY());
+                z10 = true;
+            } else {
+                z10 = false;
+            }
+            float f13 = AndroidUtilities.density * f7;
+            canvas.drawRoundRect(rectF, f13, f13, this.d);
+            if (this.g && org.telegram.ui.ActionBar.j6.a1()) {
+                float f14 = f7 * AndroidUtilities.density;
+                canvas.drawRoundRect(rectF, f14, f14, org.telegram.ui.ActionBar.j6.h2);
+            }
+            if (z10) {
+                canvas.restore();
+            }
+        }
+        if (this.n != null) {
+            canvas.save();
+            canvas.translate(this.A, dp + AndroidUtilities.dp(4.0f));
+            this.n.draw(canvas);
+            canvas.restore();
+        }
+    }
+
+    public final void c(int i10, boolean z10) {
+        View view;
+        View view2;
+        boolean z11 = false;
+        String formatWholeNumber = this.a ? AndroidUtilities.formatWholeNumber(i10, 0) : String.valueOf(i10);
+        if (TextUtils.equals(formatWholeNumber, this.i)) {
+            return;
+        }
+        ValueAnimator valueAnimator = this.k;
+        if (valueAnimator != null) {
+            valueAnimator.cancel();
+        }
+        if (i10 > 0 && this.G && (view2 = this.H) != null) {
+            view2.setVisibility(0);
+        }
+        boolean z12 = Math.abs(i10 - this.h) > 99 ? false : z10;
+        if (!z12) {
+            this.h = i10;
+            this.i = formatWholeNumber;
+            if (i10 == 0) {
+                if (!this.G || (view = this.H) == null) {
                     return;
                 }
-                if (tL_error != null) {
-                    boolean equalsIgnoreCase = "BOT_CREATE_LIMIT_EXCEEDED".equalsIgnoreCase(tL_error.text);
-                    org.telegram.ui.ActionBar.f6 f6Var2 = f6Var;
-                    if (equalsIgnoreCase) {
-                        MessagesController messagesController2 = MessagesController.getInstance(i12);
-                        boolean isPremium = UserConfig.getInstance(i12).isPremium();
-                        qc qcVar = new qc(g3Var2.topBulletinContainer, f6Var2);
-                        int i13 = R.raw.error;
-                        String string = LocaleController.getString(R.string.CreateManagedBotLimitTitle);
-                        SpannableStringBuilder replaceSingleLink = AndroidUtilities.replaceSingleLink(isPremium ? LocaleController.formatString(R.string.CreateManagedBotLimitText, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get())) : LocaleController.formatString(R.string.CreateManagedBotLimitTextPremium, Integer.valueOf(messagesController2.config.botsCreateLimitPremium.get()), Integer.valueOf(messagesController2.config.botsCreateLimitDefault.get())), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, f6Var2), new up(g3Var2, 2));
-                        em emVar = new em(4, g3Var2, context);
-                        if (replaceSingleLink == null) {
-                            replaceSingleLink = new SpannableStringBuilder(replaceSingleLink);
-                        }
-                        int charSequenceIndexOf = AndroidUtilities.charSequenceIndexOf(replaceSingleLink, "@BotFather");
-                        if (charSequenceIndexOf >= 0) {
-                            replaceSingleLink.setSpan(new org.telegram.ui.Cells.i(f6Var2, emVar, 6), charSequenceIndexOf, charSequenceIndexOf + 10, 33);
-                        }
-                        ic M = qcVar.M(string, replaceSingleLink, i13);
-                        M.j = 8000;
-                        M.j();
-                    } else {
-                        String str = tL_error.text;
-                        if (str != null && str.startsWith("FLOOD_WAIT_")) {
-                            new qc(g3Var2.topBulletinContainer, f6Var2).M(LocaleController.getString(R.string.CreateManagedBotLimitTitle), LocaleController.formatString(R.string.CreateManagedBotLimitTextTime, LocaleController.formatDuration(Integer.parseInt(tL_error.text.substring(11)))), R.raw.error).j();
-                        } else if ("MANAGER_PERMISSION_MISSING".equalsIgnoreCase(tL_error.text)) {
-                            TLRPC.User user3 = user;
-                            if (TextUtils.isEmpty(UserObject.getPublicUsername(user3))) {
-                                userName = UserObject.getUserName(user3);
-                            } else {
-                                userName = "@" + UserObject.getPublicUsername(user3);
-                            }
-                            new qc(g3Var2.topBulletinContainer, f6Var2).Q(R.raw.error, 36, AndroidUtilities.replaceSingleLinkBold(LocaleController.formatString(R.string.CreateManagedBotUnsupported, userName), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.Gi, f6Var2))).j();
+                view.setVisibility(8);
+                return;
+            }
+            this.s = Math.max(AndroidUtilities.dp(12.0f), (int) Math.ceil(this.e.measureText(formatWholeNumber.toString())));
+            StaticLayout staticLayout = new StaticLayout(formatWholeNumber, this.e, this.s, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+            this.n = staticLayout;
+            this.m = staticLayout.getLineCount() >= 1 ? this.n.getLineWidth(0) : 0.0f;
+            View view3 = this.H;
+            if (view3 != null) {
+                view3.invalidate();
+                return;
+            }
+            return;
+        }
+        if (z12) {
+            ValueAnimator valueAnimator2 = this.k;
+            if (valueAnimator2 != null) {
+                valueAnimator2.cancel();
+            }
+            this.l = 0.0f;
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.k = ofFloat;
+            ofFloat.addUpdateListener(new l6(this, 14));
+            this.k.addListener(new j6(this, 18));
+            if (this.h <= 0) {
+                this.c = 0;
+                this.k.setDuration(220L);
+                this.k.setInterpolator(new OvershootInterpolator());
+            } else if (i10 == 0) {
+                this.c = 1;
+                this.k.setDuration(150L);
+                this.k.setInterpolator(pr.f);
+            } else {
+                this.c = 2;
+                this.k.setDuration(430L);
+                this.k.setInterpolator(pr.f);
+            }
+            if (this.n != null) {
+                String str = this.i;
+                if (str.length() == formatWholeNumber.length()) {
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(str);
+                    SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder(formatWholeNumber);
+                    SpannableStringBuilder spannableStringBuilder3 = new SpannableStringBuilder(formatWholeNumber);
+                    for (int i11 = 0; i11 < str.length(); i11++) {
+                        if (str.charAt(i11) == formatWholeNumber.charAt(i11)) {
+                            int i12 = i11 + 1;
+                            spannableStringBuilder.setSpan(new lz(z11), i11, i12, 0);
+                            spannableStringBuilder2.setSpan(new lz(z11), i11, i12, 0);
                         } else {
-                            org.telegram.ui.ai.u(g3Var2.topBulletinContainer, f6Var2, tL_error, false);
+                            spannableStringBuilder3.setSpan(new lz(z11), i11, i11 + 1, 0);
                         }
                     }
-                    AndroidUtilities.hideKeyboard(g3Var2.getCurrentFocus());
+                    int max = Math.max(AndroidUtilities.dp(12.0f), (int) Math.ceil(this.e.measureText(str.toString())));
+                    TextPaint textPaint = this.e;
+                    Layout.Alignment alignment = Layout.Alignment.ALIGN_CENTER;
+                    this.o = new StaticLayout(spannableStringBuilder, textPaint, max, alignment, 1.0f, 0.0f, false);
+                    this.p = new StaticLayout(spannableStringBuilder3, this.e, max, alignment, 1.0f, 0.0f, false);
+                    this.q = new StaticLayout(spannableStringBuilder2, this.e, max, alignment, 1.0f, 0.0f, false);
+                } else {
+                    this.o = this.n;
                 }
             }
-        }, 1024);
+            this.r = this.s;
+            this.j = i10 > this.h;
+            this.k.start();
+        }
+        if (i10 > 0) {
+            this.s = Math.max(AndroidUtilities.dp(12.0f), (int) Math.ceil(this.e.measureText(formatWholeNumber.toString())));
+            StaticLayout staticLayout2 = new StaticLayout(formatWholeNumber, this.e, this.s, Layout.Alignment.ALIGN_CENTER, 1.0f, 0.0f, false);
+            this.n = staticLayout2;
+            this.m = staticLayout2.getLineCount() >= 1 ? this.n.getLineWidth(0) : 0.0f;
+        }
+        this.h = i10;
+        this.i = formatWholeNumber;
+        View view4 = this.H;
+        if (view4 != null) {
+            view4.invalidate();
+        }
+    }
+
+    public final void d(int i10, int i11) {
+        if (i10 != this.x) {
+            int i12 = this.h;
+            this.h = -1;
+            c(i12, this.c == 0);
+            this.x = i10;
+        }
+        this.y = i11;
+    }
+
+    public final void e(float f7) {
+        float dp = this.F ? AndroidUtilities.dp(5.5f) : 0.0f;
+        int i10 = this.z;
+        if (i10 == 5) {
+            float f10 = this.y - dp;
+            this.A = f10;
+            float f11 = this.E;
+            if (f11 != 0.0f) {
+                this.A = f10 - Math.max((f7 / 2.0f) + f11, f7);
+            } else {
+                this.A = f10 - f7;
+            }
+        } else if (i10 == 3) {
+            this.A = dp;
+        } else {
+            this.A = (int) ((this.y - f7) / 2.0f);
+        }
+        this.B = this.A - dp;
     }
 }

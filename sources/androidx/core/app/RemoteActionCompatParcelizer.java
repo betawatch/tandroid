@@ -4,17 +4,17 @@ import android.app.PendingIntent;
 import android.os.Parcel;
 import android.text.TextUtils;
 import androidx.core.graphics.drawable.IconCompat;
-import l2.b;
-import l2.c;
-import l2.d;
+import y4.b;
+import y4.c;
+import y4.d;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class RemoteActionCompatParcelizer {
     public static RemoteActionCompat read(b bVar) {
         RemoteActionCompat remoteActionCompat = new RemoteActionCompat();
         d dVar = remoteActionCompat.a;
-        boolean z4 = true;
+        boolean z10 = true;
         if (bVar.e(1)) {
             dVar = bVar.h();
         }
@@ -30,18 +30,18 @@ public class RemoteActionCompatParcelizer {
         }
         remoteActionCompat.c = charSequence2;
         remoteActionCompat.d = (PendingIntent) bVar.g(remoteActionCompat.d, 4);
-        boolean z10 = remoteActionCompat.e;
+        boolean z11 = remoteActionCompat.e;
         if (bVar.e(5)) {
-            z10 = ((c) bVar).e.readInt() != 0;
+            z11 = ((c) bVar).e.readInt() != 0;
         }
-        remoteActionCompat.e = z10;
-        boolean z11 = remoteActionCompat.f;
+        remoteActionCompat.e = z11;
+        boolean z12 = remoteActionCompat.f;
         if (!bVar.e(6)) {
-            z4 = z11;
+            z10 = z12;
         } else if (((c) bVar).e.readInt() == 0) {
-            z4 = false;
+            z10 = false;
         }
-        remoteActionCompat.f = z4;
+        remoteActionCompat.f = z10;
         return remoteActionCompat;
     }
 
@@ -58,11 +58,11 @@ public class RemoteActionCompatParcelizer {
         bVar.i(3);
         TextUtils.writeToParcel(charSequence2, parcel, 0);
         bVar.k(remoteActionCompat.d, 4);
-        boolean z4 = remoteActionCompat.e;
+        boolean z10 = remoteActionCompat.e;
         bVar.i(5);
-        parcel.writeInt(z4 ? 1 : 0);
-        boolean z10 = remoteActionCompat.f;
-        bVar.i(6);
         parcel.writeInt(z10 ? 1 : 0);
+        boolean z11 = remoteActionCompat.f;
+        bVar.i(6);
+        parcel.writeInt(z11 ? 1 : 0);
     }
 }

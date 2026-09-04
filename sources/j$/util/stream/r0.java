@@ -31,32 +31,32 @@ public final class r0 extends CountedCompleter {
         Spliterator trySplit;
         Spliterator spliterator = this.a;
         long estimateSize = spliterator.estimateSize();
-        long j10 = this.d;
-        if (j10 == 0) {
-            j10 = d.e(estimateSize);
-            this.d = j10;
+        long j3 = this.d;
+        if (j3 == 0) {
+            j3 = d.e(estimateSize);
+            this.d = j3;
         }
-        boolean m9 = v6.SHORT_CIRCUIT.m(((a) this.c).m);
+        boolean m10 = v6.SHORT_CIRCUIT.m(((a) this.c).m);
         j5 j5Var = this.b;
-        boolean z4 = false;
+        boolean z10 = false;
         r0 r0Var = this;
         while (true) {
-            if (m9 && j5Var.q()) {
+            if (m10 && j5Var.q()) {
                 break;
             }
-            if (estimateSize <= j10 || (trySplit = spliterator.trySplit()) == null) {
+            if (estimateSize <= j3 || (trySplit = spliterator.trySplit()) == null) {
                 break;
             }
             r0 r0Var2 = new r0(r0Var, trySplit);
             r0Var.addToPendingCount(1);
-            if (z4) {
+            if (z10) {
                 spliterator = trySplit;
             } else {
                 r0 r0Var3 = r0Var;
                 r0Var = r0Var2;
                 r0Var2 = r0Var3;
             }
-            z4 = !z4;
+            z10 = !z10;
             r0Var.fork();
             r0Var = r0Var2;
             estimateSize = spliterator.estimateSize();

@@ -1,56 +1,26 @@
 package org.telegram.ui.Components;
 
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.MessagesController;
+import android.content.Context;
+import android.view.MotionEvent;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ri implements TextWatcher {
-    public final /* synthetic */ wi a;
+public final class ri extends b20 {
+    public final vi J;
 
-    public ri(wi wiVar) {
-        this.a = wiVar;
+    public ri(Context context, org.telegram.ui.ActionBar.f6 f6Var, vi viVar) {
+        super(context, f6Var);
+        this.J = viVar;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        wi wiVar = this.a;
-        mi miVar = wiVar.d0;
-        TextUtils.isEmpty(wiVar.B);
-        wiVar.B = editable.toString().trim();
-        mi miVar2 = wiVar.V;
-        AndroidUtilities.cancelRunOnUIThread(miVar2);
-        if (!TextUtils.isEmpty(wiVar.B)) {
-            String str = wiVar.B;
-            wiVar.U = str != null && str.length() >= 0;
-            if (!TextUtils.equals(wiVar.T, wiVar.B)) {
-                wiVar.J.clear();
-                wiVar.W = 0;
-                wiVar.a0 = false;
-            }
-            AndroidUtilities.runOnUIThread(miVar2, 1500L);
-        }
-        AndroidUtilities.cancelRunOnUIThread(miVar);
-        if (!TextUtils.isEmpty(wiVar.B)) {
-            String str2 = wiVar.B;
-            wiVar.k0 = (str2 == null || str2.length() < 3 || TextUtils.isEmpty(MessagesController.getInstance(wiVar.b.G1).config.musicSearchUsername.get())) ? false : true;
-            if (!TextUtils.equals(wiVar.c0, wiVar.B)) {
-                wiVar.K.clear();
-                wiVar.e0 = false;
-            }
-            AndroidUtilities.runOnUIThread(miVar, 1500L);
-        }
-        wiVar.P();
+    @Override // org.telegram.ui.Components.b20
+    public /* bridge */ /* synthetic */ int[] getColorKeys() {
+        return null;
     }
 
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-    }
-
-    @Override // android.text.TextWatcher
-    public final /* synthetic */ void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        this.J.t1(this.r, true);
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

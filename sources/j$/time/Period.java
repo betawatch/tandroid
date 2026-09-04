@@ -39,10 +39,10 @@ public final class Period implements Serializable {
             M++;
             i10 -= I.P();
         }
-        long j10 = M / 12;
+        long j3 = M / 12;
         int i11 = (int) (M % 12);
-        int i12 = (int) j10;
-        if (j10 == i12) {
+        int i12 = (int) j3;
+        if (j3 == i12) {
             return ((i12 | i11) | i10) == 0 ? d : new Period(i12, i11, i10);
         }
         throw new ArithmeticException();
@@ -79,23 +79,23 @@ public final class Period implements Serializable {
         if (this == d) {
             return "P0D";
         }
-        StringBuilder sb = new StringBuilder("P");
+        StringBuilder sb2 = new StringBuilder("P");
         int i10 = this.a;
         if (i10 != 0) {
-            sb.append(i10);
-            sb.append('Y');
+            sb2.append(i10);
+            sb2.append('Y');
         }
         int i11 = this.b;
         if (i11 != 0) {
-            sb.append(i11);
-            sb.append('M');
+            sb2.append(i11);
+            sb2.append('M');
         }
         int i12 = this.c;
         if (i12 != 0) {
-            sb.append(i12);
-            sb.append('D');
+            sb2.append(i12);
+            sb2.append('D');
         }
-        return sb.toString();
+        return sb2.toString();
     }
 
     private Object writeReplace() {

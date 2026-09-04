@@ -1,38 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class kw extends f2.u0 {
-    public final /* synthetic */ kz a;
+public final class kw extends xy {
+    public final /* synthetic */ kz H;
 
-    public kw(kz kzVar) {
-        this.a = kzVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kw(kz kzVar, Context context) {
+        super(kzVar, context, 1);
+        this.H = kzVar;
     }
 
-    @Override // f2.u0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.i1 i1Var) {
-        recyclerView.getClass();
-        int R = RecyclerView.R(view);
-        kz kzVar = this.a;
-        f2.o0 adapter = kzVar.e0.getAdapter();
-        oy oyVar = kzVar.k0;
-        if (adapter == oyVar && R == oyVar.F) {
-            rect.set(0, 0, 0, 0);
-            return;
+    @Override // android.view.View
+    public final void setTranslationY(float f7) {
+        if (f7 != getTranslationY()) {
+            super.setTranslationY(f7);
+            this.H.J.invalidate();
         }
-        if (R == 0) {
-            oyVar.getClass();
-        }
-        rect.left = 0;
-        rect.bottom = 0;
-        rect.top = AndroidUtilities.dp(2.0f);
-        py pyVar = kzVar.f0;
-        oyVar.getClass();
-        rect.right = pyVar.E1(R) ? 0 : AndroidUtilities.dp(2.0f);
     }
 }

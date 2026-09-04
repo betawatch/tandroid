@@ -1,38 +1,112 @@
 package org.telegram.ui.Components;
 
-import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ug implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ li b;
+public final class ug extends View {
+    public float a;
+    public long b;
+    public boolean c;
+    public boolean d;
+    public boolean e;
+    public final xi0 f;
+    public boolean h;
+    public final /* synthetic */ ChatActivityEnterView n;
 
-    public /* synthetic */ ug(li liVar, int i10) {
-        this.a = i10;
-        this.b = liVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ug(ChatActivityEnterView chatActivityEnterView, Context context) {
+        super(context);
+        this.n = chatActivityEnterView;
+        xi0 xi0Var = new xi0(R.raw.chat_audio_record_delete_2, AndroidUtilities.dp(28.0f), AndroidUtilities.dp(28.0f), false, null);
+        this.f = xi0Var;
+        xi0Var.p0 = true;
+        a();
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                this.b.b2();
-                break;
-            case 1:
-                this.b.A0.invalidate();
-                break;
-            case 2:
-                li.m(this.b, valueAnimator);
-                break;
-            case 3:
-                li liVar = this.b;
-                liVar.getClass();
-                liVar.K1(((Float) valueAnimator.getAnimatedValue()).floatValue());
-                break;
-            default:
-                this.b.b2();
-                break;
+    public final void a() {
+        int i10 = org.telegram.ui.ActionBar.j6.jf;
+        int i11 = ChatActivityEnterView.m5;
+        ChatActivityEnterView chatActivityEnterView = this.n;
+        int i02 = chatActivityEnterView.i0(i10);
+        int i03 = chatActivityEnterView.i0(org.telegram.ui.ActionBar.j6.Sd);
+        chatActivityEnterView.v3.setColor(i02);
+        xi0 xi0Var = this.f;
+        xi0Var.a0 = true;
+        xi0Var.O(i02, "Cup Red");
+        xi0Var.O(i02, "Box");
+        xi0Var.O(i03, "Line 1");
+        xi0Var.O(i03, "Line 2");
+        xi0Var.O(i03, "Line 3");
+        xi0Var.m();
+    }
+
+    @Override // android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        this.d = true;
+        boolean z10 = this.e;
+        xi0 xi0Var = this.f;
+        if (z10) {
+            xi0Var.start();
         }
+        xi0Var.v0 = this;
+    }
+
+    @Override // android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        this.d = false;
+        xi0 xi0Var = this.f;
+        xi0Var.stop();
+        xi0Var.v0 = null;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        Paint paint = this.n.v3;
+        boolean z10 = this.e;
+        xi0 xi0Var = this.f;
+        if (z10) {
+            xi0Var.setAlpha((int) (this.a * 255.0f));
+        }
+        paint.setAlpha((int) (this.a * 255.0f));
+        long currentTimeMillis = System.currentTimeMillis() - this.b;
+        if (this.h) {
+            this.a = 1.0f;
+        } else if (this.c || this.e) {
+            float f7 = (currentTimeMillis / 600.0f) + this.a;
+            this.a = f7;
+            if (f7 >= 1.0f) {
+                this.a = 1.0f;
+                this.c = false;
+            }
+        } else {
+            float f10 = this.a - (currentTimeMillis / 600.0f);
+            this.a = f10;
+            if (f10 <= 0.0f) {
+                this.a = 0.0f;
+                this.c = true;
+            }
+        }
+        this.b = System.currentTimeMillis();
+        if (this.e) {
+            xi0Var.draw(canvas);
+        }
+        if (!this.e || !xi0Var.s()) {
+            canvas.drawCircle(getMeasuredWidth() >> 1, getMeasuredHeight() >> 1, AndroidUtilities.dp(5.0f), paint);
+        }
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(i10, i11);
+        this.f.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
     }
 }

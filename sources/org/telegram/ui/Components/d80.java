@@ -1,31 +1,43 @@
 package org.telegram.ui.Components;
 
+import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_stars;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class d80 implements Runnable {
+public final /* synthetic */ class d80 implements Utilities.Callback2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ i80 b;
-    public final /* synthetic */ TLRPC.TL_chatInviteJoinResultWebView c;
-    public final /* synthetic */ long d;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3 c;
+    public final /* synthetic */ Object d;
 
-    public /* synthetic */ d80(i80 i80Var, TLRPC.TL_chatInviteJoinResultWebView tL_chatInviteJoinResultWebView, long j10, int i10) {
+    public /* synthetic */ d80(bb bbVar, Object obj, long j3, int i10) {
         this.a = i10;
-        this.b = i80Var;
-        this.c = tL_chatInviteJoinResultWebView;
-        this.d = j10;
+        this.c = bbVar;
+        this.d = obj;
+        this.b = j3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.messenger.Utilities.Callback2
+    public final void run(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                i80.p(this.b, this.c, this.d);
+                g80.m((g80) this.c, this.b, (TLRPC.TL_messages_importChatInvite) this.d, (TLRPC.ChatInviteJoinResult) obj, (TLRPC.TL_error) obj2);
+                break;
+            case 1:
+                yh.f4.V((yh.f4) this.c, (TL_stars.TL_starGiftUnique) this.d, this.b, (zh.a3) obj, (of.e) obj2);
                 break;
             default:
-                i80.o(this.b, this.c, this.d);
+                zh.g7.Q((zh.g7) this.c, (h51) this.d, this.b, (Boolean) obj, (String) obj2);
                 break;
         }
+    }
+
+    public /* synthetic */ d80(g80 g80Var, long j3, TLRPC.TL_messages_importChatInvite tL_messages_importChatInvite) {
+        this.a = 0;
+        this.c = g80Var;
+        this.b = j3;
+        this.d = tL_messages_importChatInvite;
     }
 }

@@ -1,21 +1,13 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.atomic.AtomicInteger;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class b {
-    public final long a;
-    public long b;
+    public final int a;
+    public final long b = System.currentTimeMillis();
     public long c;
-    public final AtomicInteger d;
-    public final int e;
 
-    public b(c5.c cVar) {
-        this.e = cVar.a;
-        long currentTimeMillis = System.currentTimeMillis();
-        this.a = currentTimeMillis;
-        this.b = currentTimeMillis;
-        this.d = new AtomicInteger(1);
+    public b(a aVar) {
+        this.a = aVar.a;
     }
 }

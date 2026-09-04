@@ -1,11 +1,11 @@
 package androidx.activity;
 
-import androidx.fragment.app.a0;
+import androidx.fragment.app.z;
 import java.util.ListIterator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class q extends kotlin.jvm.internal.k implements dd.a {
+public final class q extends kotlin.jvm.internal.j implements rd.a {
     public final /* synthetic */ int b;
     public final /* synthetic */ x c;
 
@@ -20,39 +20,39 @@ public final class q extends kotlin.jvm.internal.k implements dd.a {
     /* JADX WARN: Type inference failed for: r3v2 */
     /* JADX WARN: Type inference failed for: r3v3 */
     /* JADX WARN: Type inference failed for: r3v4, types: [java.lang.Object] */
-    @Override // dd.a
+    @Override // rd.a
     public final Object invoke() {
-        a0 a0Var;
+        z zVar;
         switch (this.b) {
             case 0:
                 this.c.b();
                 break;
             case 1:
                 x xVar = this.c;
-                a0 a0Var2 = xVar.c;
-                if (a0Var2 == null) {
-                    tc.e eVar = xVar.b;
+                z zVar2 = xVar.c;
+                if (zVar2 == null) {
+                    hd.e eVar = xVar.b;
                     ListIterator listIterator = eVar.listIterator(eVar.size());
                     while (true) {
                         if (listIterator.hasPrevious()) {
-                            a0Var = listIterator.previous();
-                            if (((a0) a0Var).a) {
+                            zVar = listIterator.previous();
+                            if (((z) zVar).a) {
                             }
                         } else {
-                            a0Var = 0;
+                            zVar = 0;
                         }
                     }
-                    a0Var2 = a0Var;
+                    zVar2 = zVar;
                 }
                 xVar.c = null;
-                if (a0Var2 != null) {
-                    a0Var2.a();
+                if (zVar2 != null) {
+                    zVar2.a();
                 }
                 break;
             default:
                 this.c.b();
                 break;
         }
-        return sc.i.a;
+        return gd.i.a;
     }
 }

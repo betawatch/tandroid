@@ -1,49 +1,38 @@
 package ud;
 
-import ld.i2;
-import ld.l;
-import ld.m;
-import qd.t;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c implements l, i2 {
-    public final m a;
-    public final /* synthetic */ d b;
-
-    public c(d dVar, m mVar) {
-        this.b = dVar;
-        this.a = mVar;
+public final class c extends a {
+    static {
+        new c((char) 1, (char) 0);
     }
 
-    @Override // ld.i2
-    public final void a(t tVar, int i10) {
-        this.a.a(tVar, i10);
-    }
-
-    @Override // ld.l
-    public final o3.c b(dd.l lVar, Object obj) {
-        d dVar = this.b;
-        b bVar = new b(dVar, this, 1);
-        o3.c F = this.a.F(bVar, (sc.i) obj);
-        if (F != null) {
-            d.g.set(dVar, null);
+    public final boolean equals(Object obj) {
+        c cVar;
+        char c10;
+        char c11;
+        if (!(obj instanceof c)) {
+            return false;
         }
-        return F;
+        char c12 = this.a;
+        char c13 = this.b;
+        if (c12 >= c13 && c12 != c13 && (c10 = (cVar = (c) obj).a) >= (c11 = cVar.b) && c10 != c11) {
+            return true;
+        }
+        c cVar2 = (c) obj;
+        return c12 == cVar2.a && c13 == cVar2.b;
     }
 
-    @Override // ld.l
-    public final void e(Object obj) {
-        this.a.e(obj);
+    public final int hashCode() {
+        char c10 = this.a;
+        char c11 = this.b;
+        if (c10 >= c11 && c10 != c11) {
+            return -1;
+        }
+        return (c10 * 31) + c11;
     }
 
-    @Override // uc.c
-    public final uc.h getContext() {
-        return this.a.e;
-    }
-
-    @Override // uc.c
-    public final void resumeWith(Object obj) {
-        this.a.resumeWith(obj);
+    public final String toString() {
+        return this.a + ".." + this.b;
     }
 }

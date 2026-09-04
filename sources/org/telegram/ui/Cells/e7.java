@@ -1,73 +1,99 @@
 package org.telegram.ui.Cells;
 
 import android.content.Context;
-import android.text.TextUtils;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LinearGradient;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffColorFilter;
+import android.graphics.Rect;
+import android.graphics.RectF;
+import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.mq;
-import org.telegram.ui.Components.n80;
+import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class e7 extends FrameLayout {
-    public final org.telegram.ui.Components.p9 a;
-    public final b7 b;
-    public final TextView c;
-    public long d;
-    public long e;
-    public final int f;
-    public final org.telegram.ui.ActionBar.f6 h;
+public final class e7 extends Drawable {
+    public final Paint a;
+    public final xi0 b;
+    public final Drawable c;
+    public int d;
 
-    public e7(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.f = UserConfig.selectedAccount;
-        this.h = f6Var;
-        setWillNotDraw(false);
-        org.telegram.ui.Components.p9 p9Var = new org.telegram.ui.Components.p9(context);
-        this.a = p9Var;
-        p9Var.setRoundRadius(AndroidUtilities.dp(28.0f));
-        addView(p9Var, k7.b6.d(56, 56.0f, 49, 0.0f, 7.0f, 0.0f, 0.0f));
-        TextView textView = new TextView(context);
-        this.c = textView;
-        org.telegram.ui.b.l(org.telegram.ui.ActionBar.j6.j5, f6Var, textView, 1, 12.0f);
-        textView.setMaxLines(2);
-        textView.setGravity(49);
-        textView.setLines(2);
-        textView.setEllipsize(TextUtils.TruncateAt.END);
-        addView(textView, k7.b6.d(-1, -2.0f, 51, 6.0f, 66.0f, 6.0f, 0.0f));
-        this.b = new b7(this, f6Var, 1);
-        setBackground(org.telegram.ui.ActionBar.j6.Y(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.i6, false), AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f)));
+    public e7(Context context, org.telegram.ui.Components.x9 x9Var, boolean z10, org.telegram.ui.ActionBar.f6 f6Var) {
+        this(context, x9Var, z10, R.drawable.large_repost_story, f6Var);
     }
 
-    public long getCurrentDialog() {
-        return this.d;
+    @Override // android.graphics.drawable.Drawable
+    public final void draw(Canvas canvas) {
+        canvas.save();
+        canvas.translate(getBounds().left, getBounds().top);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set(0.0f, 0.0f, getBounds().width(), getBounds().height());
+        int i10 = this.d;
+        Paint paint = this.a;
+        paint.setAlpha(i10);
+        float min = (this.d / 255.0f) * (Math.min(getBounds().width(), getBounds().height()) / 2.0f);
+        canvas.drawRoundRect(rectF, min, min, paint);
+        canvas.restore();
+        Drawable drawable = this.b;
+        int dp = AndroidUtilities.dp(drawable != null ? 20.0f : 15.0f);
+        Rect rect = AndroidUtilities.rectTmp2;
+        rect.set(getBounds().centerX() - dp, getBounds().centerY() - dp, getBounds().centerX() + dp, getBounds().centerY() + dp);
+        if (drawable == null) {
+            drawable = this.c;
+        }
+        if (drawable != null) {
+            drawable.setBounds(rect);
+            drawable.setAlpha(this.d);
+            drawable.draw(canvas);
+        }
     }
 
-    public long getCurrentTopic() {
-        return this.e;
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicHeight() {
+        return AndroidUtilities.dp(56.0f);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(103.0f), TLObject.FLAG_30));
+    @Override // android.graphics.drawable.Drawable
+    public final int getIntrinsicWidth() {
+        return AndroidUtilities.dp(56.0f);
     }
 
-    public void setAsNewBotForumTopic(boolean z4) {
-        this.c.setText(LocaleController.getString(z4 ? R.string.ShareSendToNewTopic : R.string.ShareSendToOffTopic));
-        org.telegram.ui.Components.p9 p9Var = this.a;
-        p9Var.setAnimatedEmojiDrawable(null);
-        ag.b bVar = new ag.b(ag.b.k[0]);
-        n80 n80Var = new n80(1, null);
-        n80Var.a("");
-        n80Var.i = 1.8f;
-        mq mqVar = new mq(bVar, n80Var, 0, 0);
-        mqVar.w = true;
-        p9Var.setImageDrawable(mqVar);
+    @Override // android.graphics.drawable.Drawable
+    public final int getOpacity() {
+        return -2;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setAlpha(int i10) {
+        this.d = i10;
+    }
+
+    public e7(Context context, View view, boolean z10, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        Paint paint = new Paint(1);
+        this.a = paint;
+        this.d = 255;
+        paint.setShader(new LinearGradient(0.0f, 0.0f, AndroidUtilities.dp(56.0f), AndroidUtilities.dp(56.0f), new int[]{org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.hk, f6Var), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ik, f6Var)}, new float[]{0.0f, 1.0f}, Shader.TileMode.CLAMP));
+        if (!z10) {
+            this.b = null;
+            Drawable mutate = context.getResources().getDrawable(i10).mutate();
+            this.c = mutate;
+            mutate.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
+            return;
+        }
+        xi0 xi0Var = new xi0(R.raw.story_repost, AndroidUtilities.dp(42.0f), AndroidUtilities.dp(42.0f), true, null);
+        this.b = xi0Var;
+        xi0Var.v0 = view;
+        AndroidUtilities.runOnUIThread(new q0(xi0Var, 1), 450L);
+        this.c = null;
+    }
+
+    @Override // android.graphics.drawable.Drawable
+    public final void setColorFilter(ColorFilter colorFilter) {
     }
 }

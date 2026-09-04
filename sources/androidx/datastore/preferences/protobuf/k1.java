@@ -1,44 +1,54 @@
 package androidx.datastore.preferences.protobuf;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.util.ListIterator;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class k1 {
-    public static boolean a(Object obj, i iVar) {
-        int d = iVar.d();
-        int i10 = d >>> 3;
-        int i11 = d & 7;
-        if (i11 == 0) {
-            ((j1) obj).c(i10 << 3, Long.valueOf(iVar.y()));
-            return true;
-        }
-        if (i11 == 1) {
-            ((j1) obj).c((i10 << 3) | 1, Long.valueOf(iVar.p()));
-            return true;
-        }
-        if (i11 == 2) {
-            ((j1) obj).c((i10 << 3) | 2, iVar.g());
-            return true;
-        }
-        if (i11 != 3) {
-            if (i11 == 4) {
-                return false;
-            }
-            if (i11 != 5) {
-                throw c0.b();
-            }
-            ((j1) obj).c((i10 << 3) | 5, Integer.valueOf(iVar.n()));
-            return true;
-        }
-        j1 b10 = j1.b();
-        int i12 = i10 << 3;
-        int i13 = i12 | 4;
-        while (iVar.c() != Integer.MAX_VALUE && a(b10, iVar)) {
-        }
-        if (i13 != iVar.d()) {
-            throw new c0("Protocol message end-group tag did not match expected tag.");
-        }
-        b10.e = false;
-        ((j1) obj).c(i12 | 3, b10);
-        return true;
+public final class k1 implements ListIterator {
+    public ListIterator a;
+
+    @Override // java.util.ListIterator
+    public final void add(Object obj) {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final boolean hasNext() {
+        return this.a.hasNext();
+    }
+
+    @Override // java.util.ListIterator
+    public final boolean hasPrevious() {
+        return this.a.hasPrevious();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final Object next() {
+        return (String) this.a.next();
+    }
+
+    @Override // java.util.ListIterator
+    public final int nextIndex() {
+        return this.a.nextIndex();
+    }
+
+    @Override // java.util.ListIterator
+    public final Object previous() {
+        return (String) this.a.previous();
+    }
+
+    @Override // java.util.ListIterator
+    public final int previousIndex() {
+        return this.a.previousIndex();
+    }
+
+    @Override // java.util.ListIterator, java.util.Iterator
+    public final void remove() {
+        throw new UnsupportedOperationException();
+    }
+
+    @Override // java.util.ListIterator
+    public final void set(Object obj) {
+        throw new UnsupportedOperationException();
     }
 }

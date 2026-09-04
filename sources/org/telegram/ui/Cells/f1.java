@@ -1,97 +1,127 @@
 package org.telegram.ui.Cells;
 
-import android.view.MotionEvent;
-import org.telegram.messenger.video.OldVideoPlayerRewinder;
-import org.telegram.ui.Components.lg0;
-import org.telegram.ui.Components.mg0;
-import org.telegram.ui.Components.y61;
-import org.telegram.ui.PhotoViewer;
+import android.view.ViewGroup;
+import org.telegram.ui.Components.bo0;
+import org.telegram.ui.Components.eo0;
+import org.telegram.ui.Components.fo0;
+import org.telegram.ui.Components.io0;
+import org.telegram.ui.Components.u00;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class f1 extends OldVideoPlayerRewinder {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public final class f1 extends u00 {
+    public final /* synthetic */ int e = 0;
+    public final /* synthetic */ ViewGroup f;
 
-    public /* synthetic */ f1(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f1(fo0 fo0Var, boolean z10) {
+        super(z10);
+        this.f = fo0Var;
     }
 
-    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
-    public final void onRewindCanceled() {
-        switch (this.a) {
-            case 0:
-                s1 s1Var = (s1) this.b;
-                s1Var.onTouchEvent(MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                s1Var.Dd.f(false);
-                break;
+    @Override // org.telegram.ui.Components.co0
+    public CharSequence d() {
+        switch (this.e) {
+            case 1:
+                eo0 eo0Var = ((fo0) this.f).w;
+                if (eo0Var != null) {
+                    return eo0Var.getContentDescription();
+                }
+                return null;
             default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                PhotoViewer.k(photoViewer, MotionEvent.obtain(0L, 0L, 3, 0.0f, 0.0f, 0));
-                photoViewer.w1.f(false);
-                mg0.m0.N.f(false);
-                break;
+                return super.d();
         }
     }
 
-    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
-    public final void onRewindStart(boolean z4) {
-        switch (this.a) {
-            case 0:
-                s1 s1Var = (s1) this.b;
-                y61 y61Var = s1Var.Dd;
-                y61Var.n = new ja.c(this, 26);
-                y61Var.e(false);
-                s1Var.Dd.d(!z4);
-                s1Var.Dd.f(true);
-                s1Var.invalidate();
-                break;
+    @Override // org.telegram.ui.Components.u00
+    public float h() {
+        switch (this.e) {
+            case 1:
+                int l02 = ((fo0) this.f).w.l0();
+                if (l02 > 0) {
+                    return 1.0f / l02;
+                }
+                return 0.05f;
             default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.w1.e(false);
-                photoViewer.w1.d(!z4);
-                photoViewer.w1.f(true);
-                photoViewer.b0.invalidate();
-                mg0.v(z4);
-                break;
+                return super.h();
         }
     }
 
-    @Override // org.telegram.messenger.video.OldVideoPlayerRewinder
-    public final void updateRewindProgressUi(long j10, float f10, boolean z4) {
-        switch (this.a) {
+    @Override // org.telegram.ui.Components.u00
+    public final float k() {
+        float f7;
+        int i10;
+        int i11;
+        switch (this.e) {
             case 0:
-                s1 s1Var = (s1) this.b;
-                s1Var.Dd.g(Math.abs(j10));
-                if (z4) {
-                    s1Var.v7.audioProgress = f10;
-                    s1Var.q4();
-                    break;
-                }
-                break;
-            default:
-                PhotoViewer photoViewer = (PhotoViewer) this.b;
-                photoViewer.w1.g(Math.abs(j10));
-                if (z4) {
-                    photoViewer.n3.h(f10, false);
-                    photoViewer.o3.invalidate();
-                }
-                mg0 mg0Var = mg0.m0;
-                mg0Var.N.g(0L);
-                if (z4) {
-                    mg0Var.W = f10;
-                    nh.a3 a3Var = mg0Var.Y;
-                    if (a3Var != null) {
-                        a3Var.invalidate();
+                t1 t1Var = (t1) this.f;
+                e1 e1Var = t1Var.G5;
+                if (t1Var.y7.isMusic()) {
+                    f7 = e1Var.b;
+                    i10 = e1Var.f;
+                    i11 = bo0.E;
+                } else {
+                    if (!t1Var.y7.isVoice()) {
+                        if (t1Var.y7.isRoundVideo()) {
+                            return t1Var.y7.audioProgress;
+                        }
+                        return 0.0f;
                     }
-                    lg0 lg0Var = mg0Var.h;
-                    if (lg0Var != null) {
-                        lg0Var.invalidate();
-                        break;
+                    if (t1Var.F5) {
+                        io0 io0Var = t1Var.H5;
+                        return io0Var.a / io0Var.g;
                     }
+                    f7 = e1Var.b;
+                    i10 = e1Var.f;
+                    i11 = bo0.E;
                 }
+                return f7 / (i10 - i11);
+            default:
+                return ((fo0) this.f).getProgress();
+        }
+    }
+
+    @Override // org.telegram.ui.Components.u00
+    public final void l(float f7) {
+        switch (this.e) {
+            case 0:
+                t1 t1Var = (t1) this.f;
+                io0 io0Var = t1Var.H5;
+                e1 e1Var = t1Var.G5;
+                if (t1Var.y7.isMusic()) {
+                    e1Var.i(f7);
+                } else if (t1Var.y7.isVoice()) {
+                    if (t1Var.F5) {
+                        io0Var.g(f7, false);
+                    } else {
+                        e1Var.i(f7);
+                    }
+                } else if (t1Var.y7.isRoundVideo()) {
+                    if (t1Var.F5) {
+                        if (io0Var != null) {
+                            io0Var.g(f7, false);
+                        }
+                    } else if (e1Var != null) {
+                        e1Var.i(f7);
+                    }
+                    t1Var.y7.audioProgress = f7;
+                }
+                t1Var.b(f7);
+                t1Var.invalidate();
+                break;
+            default:
+                fo0 fo0Var = (fo0) this.f;
+                fo0Var.v = true;
+                fo0Var.setProgress(f7);
+                fo0Var.f(f7, true);
+                fo0Var.v = false;
                 break;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public f1(t1 t1Var) {
+        super(false);
+        this.f = t1Var;
     }
 }

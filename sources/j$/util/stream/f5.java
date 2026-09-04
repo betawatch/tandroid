@@ -21,7 +21,7 @@ public abstract class f5 implements j5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j10) {
+    public final /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -35,8 +35,8 @@ public abstract class f5 implements j5 {
     }
 
     @Override // j$.util.stream.j5
-    public void o(long j10) {
-        this.a.o(j10);
+    public void o(long j3) {
+        this.a.o(j3);
     }
 
     @Override // j$.util.stream.j5

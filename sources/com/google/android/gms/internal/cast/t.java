@@ -1,47 +1,34 @@
 package com.google.android.gms.internal.cast;
 
-import android.os.BadParcelableException;
-import android.os.IInterface;
-import android.os.Parcel;
-import android.os.Parcelable;
+import android.util.Log;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class t {
-    public static final /* synthetic */ int a = 0;
+public final /* synthetic */ class t implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ u b;
 
-    static {
-        t.class.getClassLoader();
+    public /* synthetic */ t(u uVar, int i10) {
+        this.a = i10;
+        this.b = uVar;
     }
 
-    public static Parcelable a(Parcel parcel, Parcelable.Creator creator) {
-        if (parcel.readInt() == 0) {
-            return null;
-        }
-        return (Parcelable) creator.createFromParcel(parcel);
-    }
-
-    public static void b(Parcel parcel) {
-        int dataAvail = parcel.dataAvail();
-        if (dataAvail > 0) {
-            throw new BadParcelableException(kf.k0.j(dataAvail, "Parcel data not fully consumed, unread size: "));
-        }
-    }
-
-    public static void c(Parcel parcel, Parcelable parcelable) {
-        if (parcelable == null) {
-            parcel.writeInt(0);
-        } else {
-            parcel.writeInt(1);
-            parcelable.writeToParcel(parcel, 0);
-        }
-    }
-
-    public static void d(Parcel parcel, IInterface iInterface) {
-        if (iInterface == null) {
-            parcel.writeStrongBinder(null);
-        } else {
-            parcel.writeStrongBinder(iInterface.asBinder());
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        u uVar = this.b;
+        switch (i10) {
+            case 0:
+                g6.b bVar = u.i;
+                Log.i(bVar.a, bVar.d("transfer with type = %d has timed out", Integer.valueOf(uVar.e)));
+                uVar.b(101);
+                break;
+            default:
+                s sVar = new s(uVar);
+                d6.g gVar = uVar.f;
+                n6.l.h(gVar);
+                gVar.a(sVar);
+                break;
         }
     }
 }

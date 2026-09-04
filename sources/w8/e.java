@@ -1,40 +1,22 @@
 package w8;
 
-import android.util.Log;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.concurrent.atomic.AtomicReference;
+import android.os.Parcel;
+import android.os.Parcelable;
+import v8.r;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e implements com.google.android.gms.common.api.internal.c {
-    public static final AtomicReference a = new AtomicReference();
+public final class e extends o6.a {
+    public static final Parcelable.Creator<e> CREATOR = new r(21);
+    public String a;
+    public String b;
 
-    @Override // com.google.android.gms.common.api.internal.c
-    public final void a(boolean z4) {
-        synchronized (g.k) {
-            try {
-                ArrayList arrayList = new ArrayList(g.l.values());
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    g gVar = (g) obj;
-                    if (gVar.e.get()) {
-                        Log.d("FirebaseApp", "Notifying background state change listeners.");
-                        Iterator it = gVar.i.iterator();
-                        while (it.hasNext()) {
-                            g gVar2 = ((d) it.next()).a;
-                            if (!z4) {
-                                ((z9.c) gVar2.h.get()).c();
-                            }
-                        }
-                    }
-                }
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = e0.q(parcel, 20293);
+        e0.l(parcel, 2, this.a);
+        e0.l(parcel, 3, this.b);
+        e0.r(parcel, q6);
     }
 }

@@ -1,151 +1,133 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
+import android.graphics.Point;
 import android.view.View;
-import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import java.util.ArrayList;
-import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.UserConfig;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class jj extends nl0 {
-    public final int r = UserConfig.selectedAccount;
-    public final Context s;
-    public final /* synthetic */ qj v;
+public final class jj extends ni {
+    public bi.o0 n;
+    public int r;
+    public ci.k s;
+    public za v;
+    public int w;
+    public q0.a x;
 
-    public jj(qj qjVar, Context context) {
-        this.v = qjVar;
-        this.s = context;
-    }
-
-    @Override // org.telegram.ui.Components.bl0
-    public final String F(int i10) {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.bl0
-    public final void G(rl0 rl0Var, float f10, int[] iArr) {
-        iArr[0] = 0;
-        iArr[1] = 0;
-    }
-
-    @Override // org.telegram.ui.Components.nl0
-    public final int M(int i10) {
-        if (i10 == 0 || i10 == R() - 1) {
-            return 1;
+    @Override // org.telegram.ui.Components.ni
+    public final void D(ni niVar) {
+        vi viVar = this.b;
+        try {
+            viVar.X0.getTitleTextView().setBuildFullLayout(true);
+        } catch (Exception unused) {
         }
-        int i11 = i10 - 1;
-        int i12 = this.r;
-        HashMap<String, ArrayList<Object>> hashMap = ContactsController.getInstance(i12).phoneBookSectionsDict;
-        ArrayList<String> arrayList = ContactsController.getInstance(i12).phoneBookSectionsArray;
-        if (i11 < arrayList.size()) {
-            return hashMap.get(arrayList.get(i11)).size();
+        viVar.X0.setTitle(LocaleController.getString(R.string.SelectColor));
+        this.s.h1(0, 0);
+    }
+
+    @Override // org.telegram.ui.Components.ni
+    public final void G() {
+        this.n.x0(0);
+    }
+
+    @Override // org.telegram.ui.Components.ni
+    public int getCurrentItemTop() {
+        bi.o0 o0Var = this.n;
+        if (o0Var.getChildCount() <= 0) {
+            o0Var.setTopGlowOffset(o0Var.getPaddingTop());
+            return ConnectionsManager.DEFAULT_DATACENTER_ID;
         }
-        return 0;
-    }
-
-    @Override // org.telegram.ui.Components.nl0
-    public final Object O(int i10, int i11) {
-        if (i10 == 0) {
-            return null;
+        View childAt = o0Var.getChildAt(0);
+        vk0 vk0Var = (vk0) o0Var.G(childAt);
+        int top = childAt.getTop();
+        int dp = AndroidUtilities.dp(7.0f);
+        if (top < AndroidUtilities.dp(7.0f) || vk0Var == null || vk0Var.b() != 0) {
+            top = dp;
         }
-        int i12 = i10 - 1;
-        int i13 = this.r;
-        HashMap<String, ArrayList<Object>> hashMap = ContactsController.getInstance(i13).phoneBookSectionsDict;
-        ArrayList<String> arrayList = ContactsController.getInstance(i13).phoneBookSectionsArray;
-        if (i12 < arrayList.size()) {
-            ArrayList<Object> arrayList2 = hashMap.get(arrayList.get(i12));
-            if (i11 < arrayList2.size()) {
-                return arrayList2.get(i11);
-            }
-        }
-        return null;
+        o0Var.setTopGlowOffset(top);
+        return top;
     }
 
-    @Override // org.telegram.ui.Components.nl0
-    public final int P(int i10, int i11) {
-        if (i10 == 0) {
-            return 1;
-        }
-        return i10 == R() - 1 ? 2 : 0;
+    @Override // org.telegram.ui.Components.ni
+    public int getFirstOffset() {
+        return AndroidUtilities.dp(56.0f) + getListTopPadding();
     }
 
-    @Override // org.telegram.ui.Components.nl0
-    public final int R() {
-        return ContactsController.getInstance(this.r).phoneBookSectionsArray.size() + 2;
+    @Override // org.telegram.ui.Components.ni
+    public int getListTopPadding() {
+        return this.n.getPaddingTop();
     }
 
-    @Override // org.telegram.ui.Components.nl0
-    public final View T(int i10, View view) {
-        return null;
+    @Override // org.telegram.ui.Components.ni
+    public final int h() {
+        return 1;
     }
 
-    @Override // org.telegram.ui.Components.nl0
-    public final boolean V(int i10, int i11, f2.l1 l1Var) {
-        if (i10 == 0 || i10 == R() - 1) {
-            return false;
-        }
-        int i12 = this.r;
-        return i11 < ContactsController.getInstance(i12).phoneBookSectionsDict.get(ContactsController.getInstance(i12).phoneBookSectionsArray.get(i10 + (-1))).size();
+    public void setDelegate(q0.a aVar) {
+        this.x = aVar;
     }
 
-    @Override // org.telegram.ui.Components.nl0
-    public final void W(int i10, int i11, f2.l1 l1Var) {
-        TLRPC.User user;
-        if (l1Var.f == 0) {
-            pj pjVar = (pj) l1Var.a;
-            Object O = O(i10, i11);
-            boolean z4 = true;
-            if (i10 == R() - 2 && i11 == M(i10) - 1) {
-                z4 = false;
-            }
-            if (O instanceof ContactsController.Contact) {
-                ContactsController.Contact contact = (ContactsController.Contact) O;
-                user = contact.user;
-                if (user == null) {
-                    pjVar.setCurrentId(contact.contact_id);
-                    pjVar.a(null, ContactsController.formatName(contact.first_name, contact.last_name), new hj(contact, 0), z4);
-                    user = null;
-                }
-            } else {
-                user = (TLRPC.User) O;
-            }
-            if (user != null) {
-                pjVar.a(user, null, new ij(0, user), z4);
-            }
-            boolean containsKey = this.v.w.containsKey(fj.a(O));
-            kp kpVar = pjVar.d;
-            if (kpVar.getVisibility() != 0) {
-                kpVar.setVisibility(0);
-            }
-            kpVar.a(containsKey, false);
-        }
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        this.b.getSheetContainer().invalidate();
+        invalidate();
     }
 
-    @Override // org.telegram.ui.Components.nl0, f2.o0
-    public final void l() {
-        X(false);
-        this.v.N();
-    }
-
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        View pjVar;
-        Context context = this.s;
-        if (i10 == 0) {
-            pjVar = new pj(context, this.v.a);
-        } else if (i10 != 1) {
-            pjVar = new View(context);
-            pjVar.setTag(-33024);
+    /* JADX WARN: Removed duplicated region for block: B:14:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:17:0x00b5  */
+    /* JADX WARN: Removed duplicated region for block: B:20:? A[RETURN, SYNTHETIC] */
+    @Override // org.telegram.ui.Components.ni
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void y(int i10, int i11) {
+        int i12;
+        int i13;
+        bi.o0 o0Var = this.n;
+        za zaVar = this.v;
+        if (AndroidUtilities.isTablet()) {
+            this.w = 4;
         } else {
-            pjVar = new View(context);
-            pjVar.setLayoutParams(new f2.w0(-1, AndroidUtilities.dp(56.0f)));
-            pjVar.setTag(-33024);
+            Point point = AndroidUtilities.displaySize;
+            if (point.x > point.y) {
+                this.w = 4;
+            } else {
+                this.w = 3;
+            }
         }
-        return new dl0(pjVar);
+        ((FrameLayout.LayoutParams) getLayoutParams()).topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+        int dp = ((i10 - AndroidUtilities.dp(12.0f)) - AndroidUtilities.dp(10.0f)) / this.w;
+        if (this.r != dp) {
+            this.r = dp;
+            zaVar.l();
+        }
+        this.s.y1(Math.max(1, ((this.w - 1) * AndroidUtilities.dp(5.0f)) + (this.w * dp)));
+        int ceil = (int) Math.ceil((((ArrayList) zaVar.e).size() - 1) / this.w);
+        Math.max(0, ((i11 - ((AndroidUtilities.dp(5.0f) * (ceil - 1)) + (dp * ceil))) - org.telegram.ui.ActionBar.k.getCurrentActionBarHeight()) - AndroidUtilities.dp(60.0f));
+        if (!AndroidUtilities.isTablet()) {
+            Point point2 = AndroidUtilities.displaySize;
+            if (point2.x > point2.y) {
+                i12 = (int) (i11 / 3.5f);
+                int dp2 = i12 - AndroidUtilities.dp(52.0f);
+                i13 = dp2 >= 0 ? dp2 : 0;
+                if (o0Var.getPaddingTop() == i13) {
+                    o0Var.setPadding(AndroidUtilities.dp(6.0f), i13, AndroidUtilities.dp(6.0f), AndroidUtilities.dp(48.0f));
+                    return;
+                }
+                return;
+            }
+        }
+        i12 = (i11 / 5) * 2;
+        int dp22 = i12 - AndroidUtilities.dp(52.0f);
+        if (dp22 >= 0) {
+        }
+        if (o0Var.getPaddingTop() == i13) {
+        }
     }
 }

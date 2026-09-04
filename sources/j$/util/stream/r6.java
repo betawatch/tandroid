@@ -123,11 +123,11 @@ public abstract class r6 implements j$.util.d1 {
             int i12 = i11 - 1;
             int i13 = this.c;
             s6 s6Var = this.f;
-            j$.util.d1 c3 = c(i10, i12, i13, s6Var.j(s6Var.f[i12]));
+            j$.util.d1 c10 = c(i10, i12, i13, s6Var.j(s6Var.f[i12]));
             this.a = i11;
             this.c = 0;
             this.e = s6Var.f[i11];
-            return c3;
+            return c10;
         }
         if (i10 != i11) {
             return null;

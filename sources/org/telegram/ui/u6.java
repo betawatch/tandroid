@@ -1,19 +1,71 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ViewGroup;
-import org.telegram.messenger.AndroidUtilities;
+import j$.util.Objects;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class u6 extends q6 {
-    public final /* synthetic */ d7 d;
+public final class u6 extends pg.a {
+    public final int c;
+    public CharSequence d;
+    public String e;
+    public int f;
+    public long g;
+    public int h;
+    public boolean i;
+    public boolean j;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u6(d7 d7Var, Context context) {
-        super(context);
-        this.d = d7Var;
-        ((ViewGroup.MarginLayoutParams) this.a.getLayoutParams()).topMargin = AndroidUtilities.dp(5.0f);
-        this.a.setOnClickListener(new a(this, 6));
+    public u6(int i10, String str) {
+        super(i10, true);
+        this.c = -1;
+        this.d = str;
+    }
+
+    public static u6 b(int i10, long j3, String str, int i11) {
+        u6 u6Var = new u6(11);
+        u6Var.f = i10;
+        u6Var.d = str;
+        u6Var.g = j3;
+        u6Var.h = i11;
+        u6Var.j = false;
+        return u6Var;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this != obj) {
+            if (obj == null || u6.class != obj.getClass()) {
+                return false;
+            }
+            u6 u6Var = (u6) obj;
+            int i10 = this.a;
+            if (i10 != u6Var.a) {
+                return false;
+            }
+            if (i10 != 9 && i10 != 10 && i10 != 8 && i10 != 4 && i10 != 2 && i10 != 0 && i10 != 13) {
+                if (i10 == 3) {
+                    return Objects.equals(this.d, u6Var.d);
+                }
+                if (i10 == 1) {
+                    return Objects.equals(this.e, u6Var.e);
+                }
+                if (i10 == 11) {
+                    if (this.f != u6Var.f || this.g != u6Var.g) {
+                        return false;
+                    }
+                } else if (i10 != 7 || this.c != u6Var.c) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public u6(int i10, int i11) {
+        super(7, true);
+        this.c = i10;
+    }
+
+    public u6(int i10) {
+        super(i10, true);
+        this.c = -1;
     }
 }

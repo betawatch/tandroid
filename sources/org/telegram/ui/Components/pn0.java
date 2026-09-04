@@ -1,55 +1,26 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class pn0 extends zw0 {
-    public final /* synthetic */ int H;
-    public final /* synthetic */ org.telegram.ui.zx I;
+public final class pn0 extends e40 {
+    public final /* synthetic */ org.telegram.ui.ey c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ pn0(org.telegram.ui.zx zxVar, Context context, u00 u00Var, int i10) {
-        super(context, u00Var, 1, null);
-        this.H = i10;
-        this.I = zxVar;
+    public pn0(org.telegram.ui.ey eyVar, ll0 ll0Var, Context context, int i10) {
+        super(ll0Var, context, i10);
+        this.c0 = eyVar;
     }
 
-    @Override // org.telegram.ui.Components.zw0, android.view.View
-    public final void setVisibility(int i10) {
-        switch (this.H) {
-            case 0:
-                if (this.I.J0.getTag() == null) {
-                    super.setVisibility(i10);
-                    break;
-                } else {
-                    super.setVisibility(8);
-                    break;
-                }
-            case 1:
-                if (this.I.J0.getTag() == null) {
-                    super.setVisibility(i10);
-                    break;
-                } else {
-                    super.setVisibility(8);
-                    break;
-                }
-            case 2:
-                if (this.I.J0.getTag() == null) {
-                    super.setVisibility(i10);
-                    break;
-                } else {
-                    super.setVisibility(8);
-                    break;
-                }
-            default:
-                if (this.I.J0.getTag() == null) {
-                    super.setVisibility(i10);
-                    break;
-                } else {
-                    super.setVisibility(8);
-                    break;
-                }
-        }
+    @Override // org.telegram.ui.Components.v51
+    public final void N(boolean z10) {
+        super.N(z10);
+        ln0 ln0Var = this.c0.s0;
+        ln0Var.e(false, z10);
+        ln0Var.d.setText(LocaleController.getString(R.string.NoResult));
+        ln0Var.e.setVisibility(8);
     }
 }

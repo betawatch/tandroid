@@ -1,114 +1,106 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Rect;
-import android.view.GestureDetector;
-import android.view.MotionEvent;
-import android.view.View;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.KeyEvent;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class za extends FrameLayout {
-    public final nb a;
-    public final Rect b;
-    public final GestureDetector c;
-    public boolean d;
-    public boolean e;
-    public float f;
-    public float h;
-    public float n;
-    public boolean r;
-    public boolean s;
-    public boolean v;
-    public boolean w;
-    public final /* synthetic */ FrameLayout x;
-    public final /* synthetic */ ic y;
+public final class za extends kl0 {
+    public final /* synthetic */ int c;
+    public final Context d;
+    public final Object e;
+    public final /* synthetic */ KeyEvent.Callback f;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public za(ic icVar, nb nbVar, FrameLayout frameLayout) {
-        super(nbVar.getContext());
-        this.y = icVar;
-        this.x = frameLayout;
-        this.b = new Rect();
-        this.a = nbVar;
-        GestureDetector gestureDetector = new GestureDetector(nbVar.getContext(), new xb(this, nbVar));
-        this.c = gestureDetector;
-        gestureDetector.setIsLongpressEnabled(false);
-        addView(nbVar);
+    public za(jj jjVar, Context context) {
+        this.c = 1;
+        this.f = jjVar;
+        this.e = new ArrayList();
+        this.d = context;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:47:0x0114  */
-    /* JADX WARN: Removed duplicated region for block: B:50:0x011f  */
-    @Override // android.view.View
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        View.OnClickListener onClickListener;
-        boolean z4 = this.e;
-        nb nbVar = this.a;
-        if (!z4) {
-            float x10 = motionEvent.getX();
-            float y10 = motionEvent.getY();
-            Rect rect = this.b;
-            nbVar.getHitRect(rect);
-            if (!rect.contains((int) x10, (int) y10)) {
-                return false;
-            }
+    @Override // s4.h0
+    public void B(s4.j0 j0Var) {
+        switch (this.c) {
+            case 0:
+                ((kl0) this.e).B(new ya(this, j0Var));
+                break;
+            default:
+                super.B(j0Var);
+                break;
         }
-        this.c.onTouchEvent(motionEvent);
-        int actionMasked = motionEvent.getActionMasked();
-        FrameLayout frameLayout = this.x;
-        ic icVar = this.y;
-        if (actionMasked == 0) {
-            if (!this.e && !this.s) {
-                nbVar.animate().cancel();
-                this.n = 0.0f;
-                this.h = 0.0f;
-                this.r = false;
-                this.f = nbVar.getTranslationX();
-                System.currentTimeMillis();
-                ic icVar2 = nbVar.bulletin;
-                this.d = icVar2 == null || icVar2.m;
-                this.e = true;
-                icVar.i(false);
-                if (frameLayout.getParent() != null) {
-                    frameLayout.getParent().requestDisallowInterceptTouchEvent(true);
-                }
-                if (nbVar.onClickListener != null) {
-                    nbVar.setPressed(true);
-                    return true;
-                }
-            }
-        } else if ((actionMasked == 1 || actionMasked == 3) && this.e) {
-            if (!this.s) {
-                if (Math.abs(this.f) > nbVar.getWidth() / 3.0f) {
-                    float signum = Math.signum(this.f) * nbVar.getWidth();
-                    float f10 = this.f;
-                    nbVar.animate().translationX(signum).alpha(((f10 > 0.0f ? 1 : (f10 == 0.0f ? 0 : -1)) < 0 && this.v) || ((f10 > 0.0f ? 1 : (f10 == 0.0f ? 0 : -1)) > 0 && this.w) ? 0.0f : 1.0f).setDuration(200L).setInterpolator(AndroidUtilities.accelerateInterpolator).withEndAction(new org.telegram.ui.e0(this, signum, 1)).start();
-                    this.e = false;
-                    icVar.i(true);
-                    if (frameLayout.getParent() != null) {
-                        frameLayout.getParent().requestDisallowInterceptTouchEvent(false);
-                    }
-                    if (nbVar.onClickListener != null) {
-                        nbVar.setPressed(false);
-                    }
-                } else {
-                    nbVar.animate().translationX(0.0f).alpha(1.0f).setDuration(200L).start();
-                }
-            }
-            if (actionMasked == 1 && nbVar.isPressed() && (onClickListener = nbVar.onClickListener) != null && !this.r) {
-                onClickListener.onClick(nbVar);
-            }
-            this.e = false;
-            icVar.i(true);
-            if (frameLayout.getParent() != null) {
-            }
-            if (nbVar.onClickListener != null) {
-            }
+    }
+
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        switch (this.c) {
+            case 0:
+                return ((kl0) this.e).D(c1Var);
+            default:
+                return c1Var.f == 0;
         }
-        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        switch (this.c) {
+            case 0:
+                return ((kl0) this.e).h() + 1;
+            default:
+                return ((ArrayList) this.e).size();
+        }
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        switch (this.c) {
+            case 0:
+                bb bbVar = (bb) this.f;
+                if (i10 == (bbVar.P ? h() - 1 : 0)) {
+                    return -1000;
+                }
+                return ((kl0) this.e).j(i10 - (!bbVar.P ? 1 : 0));
+            default:
+                return 0;
+        }
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        switch (this.c) {
+            case 0:
+                bb bbVar = (bb) this.f;
+                if (i10 != (bbVar.P ? h() - 1 : 0)) {
+                    ((kl0) this.e).v(c1Var, i10 - (!bbVar.P ? 1 : 0));
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Cells.eb ebVar = (org.telegram.ui.Cells.eb) c1Var.a;
+                ebVar.d(1, false, false);
+                ebVar.setSize(((jj) this.f).r);
+                ebVar.e(1, ((ArrayList) this.e).get(i10), null, 0);
+                break;
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        switch (this.c) {
+            case 0:
+                return i10 == -1000 ? new vk0(new di.eb((bb) this.f, this.d)) : ((kl0) this.e).x(viewGroup, i10);
+            default:
+                ij ijVar = new ij(this, this.d);
+                ijVar.b = false;
+                return new vk0(ijVar);
+        }
+    }
+
+    public za(bb bbVar, kl0 kl0Var, Context context) {
+        this.c = 0;
+        this.f = bbVar;
+        this.e = kl0Var;
+        this.d = context;
     }
 }

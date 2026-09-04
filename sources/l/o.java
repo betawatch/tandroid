@@ -1,28 +1,29 @@
 package l;
 
-import android.view.CollapsibleActionView;
+import android.view.ActionProvider;
 import android.view.View;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class o extends FrameLayout implements k.b {
-    public final CollapsibleActionView a;
+public final class o implements ActionProvider.VisibilityListener {
+    public final ActionProvider a;
+    public xa.c b;
 
-    /* JADX WARN: Multi-variable type inference failed */
-    public o(View view) {
-        super(view.getContext());
-        this.a = (CollapsibleActionView) view;
-        addView(view);
+    public o(s sVar, ActionProvider actionProvider) {
+        this.a = actionProvider;
     }
 
-    @Override // k.b
-    public final void onActionViewCollapsed() {
-        this.a.onActionViewCollapsed();
+    public final View a(n nVar) {
+        return this.a.onCreateActionView(nVar);
     }
 
-    @Override // k.b
-    public final void onActionViewExpanded() {
-        this.a.onActionViewExpanded();
+    @Override // android.view.ActionProvider.VisibilityListener
+    public final void onActionProviderVisibilityChanged(boolean z10) {
+        xa.c cVar = this.b;
+        if (cVar != null) {
+            l lVar = ((n) cVar.b).n;
+            lVar.h = true;
+            lVar.p(true);
+        }
     }
 }

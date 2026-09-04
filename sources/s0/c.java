@@ -1,106 +1,364 @@
 package s0;
 
 import android.R;
+import android.graphics.Rect;
 import android.os.Build;
+import android.os.Bundle;
+import android.text.SpannableString;
+import android.text.TextUtils;
 import android.view.accessibility.AccessibilityNodeInfo;
+import java.util.ArrayList;
+import java.util.List;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class c {
-    public static final c c;
-    public static final c d;
-    public static final c e;
-    public static final c f;
-    public static final c g;
-    public static final c h;
-    public final Object a;
-    public final int b;
+    public static int c;
+    public final AccessibilityNodeInfo a;
+    public int b = -1;
 
-    static {
-        new c(null, 1, null, null);
-        new c(null, 2, null, null);
-        new c(null, 4, null, null);
-        new c(null, 8, null, null);
-        c = new c(null, 16, null, null);
-        new c(null, 32, null, null);
-        new c(null, 64, null, null);
-        new c(null, 128, null, null);
-        new c(null, 256, null, f.class);
-        new c(null, 512, null, f.class);
-        new c(null, 1024, null, g.class);
-        new c(null, 2048, null, g.class);
-        d = new c(null, 4096, null, null);
-        e = new c(null, 8192, null, null);
-        new c(null, 16384, null, null);
-        new c(null, 32768, null, null);
-        new c(null, 65536, null, null);
-        new c(null, 131072, null, k.class);
-        new c(null, 262144, null, null);
-        new c(null, TLObject.FLAG_19, null, null);
-        new c(null, 1048576, null, null);
-        new c(null, TLObject.FLAG_21, null, l.class);
-        int i10 = Build.VERSION.SDK_INT;
-        new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_ON_SCREEN : null, R.id.accessibilityActionShowOnScreen, null, null);
-        new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_TO_POSITION : null, R.id.accessibilityActionScrollToPosition, null, i.class);
-        f = new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_UP : null, R.id.accessibilityActionScrollUp, null, null);
-        new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_LEFT : null, R.id.accessibilityActionScrollLeft, null, null);
-        g = new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_DOWN : null, R.id.accessibilityActionScrollDown, null, null);
-        new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SCROLL_RIGHT : null, R.id.accessibilityActionScrollRight, null, null);
-        new c(i10 >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_UP : null, R.id.accessibilityActionPageUp, null, null);
-        new c(i10 >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_DOWN : null, R.id.accessibilityActionPageDown, null, null);
-        new c(i10 >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_LEFT : null, R.id.accessibilityActionPageLeft, null, null);
-        new c(i10 >= 29 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PAGE_RIGHT : null, R.id.accessibilityActionPageRight, null, null);
-        new c(i10 >= 23 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_CONTEXT_CLICK : null, R.id.accessibilityActionContextClick, null, null);
-        h = new c(i10 >= 24 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SET_PROGRESS : null, R.id.accessibilityActionSetProgress, null, j.class);
-        new c(i10 >= 26 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_MOVE_WINDOW : null, R.id.accessibilityActionMoveWindow, null, h.class);
-        new c(i10 >= 28 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_TOOLTIP : null, R.id.accessibilityActionShowTooltip, null, null);
-        new c(i10 >= 28 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_HIDE_TOOLTIP : null, R.id.accessibilityActionHideTooltip, null, null);
-        new c(i10 >= 30 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_PRESS_AND_HOLD : null, R.id.accessibilityActionPressAndHold, null, null);
-        new c(i10 >= 30 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_IME_ENTER : null, R.id.accessibilityActionImeEnter, null, null);
-        new c(i10 >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_START : null, R.id.accessibilityActionDragStart, null, null);
-        new c(i10 >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_DROP : null, R.id.accessibilityActionDragDrop, null, null);
-        new c(i10 >= 32 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_DRAG_CANCEL : null, R.id.accessibilityActionDragCancel, null, null);
-        new c(i10 >= 33 ? AccessibilityNodeInfo.AccessibilityAction.ACTION_SHOW_TEXT_SUGGESTIONS : null, R.id.accessibilityActionShowTextSuggestions, null, null);
-        new c(i10 >= 34 ? g1.a.e() : null, R.id.accessibilityActionScrollInDirection, null, null);
+    public c(AccessibilityNodeInfo accessibilityNodeInfo) {
+        this.a = accessibilityNodeInfo;
     }
 
-    public c(Object obj, int i10, CharSequence charSequence, Class cls) {
-        this.b = i10;
-        if (obj == null) {
-            this.a = new AccessibilityNodeInfo.AccessibilityAction(i10, charSequence);
-        } else {
-            this.a = obj;
+    public static String e(int i10) {
+        if (i10 == 1) {
+            return "ACTION_FOCUS";
         }
+        if (i10 == 2) {
+            return "ACTION_CLEAR_FOCUS";
+        }
+        switch (i10) {
+            case 4:
+                return "ACTION_SELECT";
+            case 8:
+                return "ACTION_CLEAR_SELECTION";
+            case 16:
+                return "ACTION_CLICK";
+            case 32:
+                return "ACTION_LONG_CLICK";
+            case 64:
+                return "ACTION_ACCESSIBILITY_FOCUS";
+            case 128:
+                return "ACTION_CLEAR_ACCESSIBILITY_FOCUS";
+            case 256:
+                return "ACTION_NEXT_AT_MOVEMENT_GRANULARITY";
+            case 512:
+                return "ACTION_PREVIOUS_AT_MOVEMENT_GRANULARITY";
+            case 1024:
+                return "ACTION_NEXT_HTML_ELEMENT";
+            case 2048:
+                return "ACTION_PREVIOUS_HTML_ELEMENT";
+            case 4096:
+                return "ACTION_SCROLL_FORWARD";
+            case 8192:
+                return "ACTION_SCROLL_BACKWARD";
+            case 16384:
+                return "ACTION_COPY";
+            case 32768:
+                return "ACTION_PASTE";
+            case 65536:
+                return "ACTION_CUT";
+            case 131072:
+                return "ACTION_SET_SELECTION";
+            case 262144:
+                return "ACTION_EXPAND";
+            case TLObject.FLAG_19 /* 524288 */:
+                return "ACTION_COLLAPSE";
+            case TLObject.FLAG_21 /* 2097152 */:
+                return "ACTION_SET_TEXT";
+            case R.id.accessibilityActionMoveWindow:
+                return "ACTION_MOVE_WINDOW";
+            case R.id.accessibilityActionScrollInDirection:
+                return "ACTION_SCROLL_IN_DIRECTION";
+            default:
+                switch (i10) {
+                    case R.id.accessibilityActionShowOnScreen:
+                        return "ACTION_SHOW_ON_SCREEN";
+                    case R.id.accessibilityActionScrollToPosition:
+                        return "ACTION_SCROLL_TO_POSITION";
+                    case R.id.accessibilityActionScrollUp:
+                        return "ACTION_SCROLL_UP";
+                    case R.id.accessibilityActionScrollLeft:
+                        return "ACTION_SCROLL_LEFT";
+                    case R.id.accessibilityActionScrollDown:
+                        return "ACTION_SCROLL_DOWN";
+                    case R.id.accessibilityActionScrollRight:
+                        return "ACTION_SCROLL_RIGHT";
+                    case R.id.accessibilityActionContextClick:
+                        return "ACTION_CONTEXT_CLICK";
+                    case R.id.accessibilityActionSetProgress:
+                        return "ACTION_SET_PROGRESS";
+                    default:
+                        switch (i10) {
+                            case R.id.accessibilityActionShowTooltip:
+                                return "ACTION_SHOW_TOOLTIP";
+                            case R.id.accessibilityActionHideTooltip:
+                                return "ACTION_HIDE_TOOLTIP";
+                            case R.id.accessibilityActionPageUp:
+                                return "ACTION_PAGE_UP";
+                            case R.id.accessibilityActionPageDown:
+                                return "ACTION_PAGE_DOWN";
+                            case R.id.accessibilityActionPageLeft:
+                                return "ACTION_PAGE_LEFT";
+                            case R.id.accessibilityActionPageRight:
+                                return "ACTION_PAGE_RIGHT";
+                            case R.id.accessibilityActionPressAndHold:
+                                return "ACTION_PRESS_AND_HOLD";
+                            default:
+                                switch (i10) {
+                                    case R.id.accessibilityActionImeEnter:
+                                        return "ACTION_IME_ENTER";
+                                    case R.id.accessibilityActionDragStart:
+                                        return "ACTION_DRAG_START";
+                                    case R.id.accessibilityActionDragDrop:
+                                        return "ACTION_DRAG_DROP";
+                                    case R.id.accessibilityActionDragCancel:
+                                        return "ACTION_DRAG_CANCEL";
+                                    default:
+                                        return "ACTION_UNKNOWN";
+                                }
+                        }
+                }
+        }
+    }
+
+    public final void a(int i10) {
+        this.a.addAction(i10);
+    }
+
+    public final void b(b bVar) {
+        this.a.addAction((AccessibilityNodeInfo.AccessibilityAction) bVar.a);
+    }
+
+    public final ArrayList c(String str) {
+        AccessibilityNodeInfo accessibilityNodeInfo = this.a;
+        ArrayList<Integer> integerArrayList = accessibilityNodeInfo.getExtras().getIntegerArrayList(str);
+        if (integerArrayList != null) {
+            return integerArrayList;
+        }
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        accessibilityNodeInfo.getExtras().putIntegerArrayList(str, arrayList);
+        return arrayList;
+    }
+
+    public final ArrayList d() {
+        List<AccessibilityNodeInfo.AccessibilityAction> actionList = this.a.getActionList();
+        ArrayList arrayList = new ArrayList();
+        int size = actionList.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            arrayList.add(new b(actionList.get(i10), 0, null, null));
+        }
+        return arrayList;
     }
 
     public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
         if (obj == null || !(obj instanceof c)) {
             return false;
         }
-        Object obj2 = ((c) obj).a;
-        Object obj3 = this.a;
-        return obj3 == null ? obj2 == null : obj3.equals(obj2);
+        c cVar = (c) obj;
+        AccessibilityNodeInfo accessibilityNodeInfo = cVar.a;
+        AccessibilityNodeInfo accessibilityNodeInfo2 = this.a;
+        if (accessibilityNodeInfo2 == null) {
+            if (accessibilityNodeInfo != null) {
+                return false;
+            }
+        } else if (!accessibilityNodeInfo2.equals(accessibilityNodeInfo)) {
+            return false;
+        }
+        return this.b == cVar.b;
+    }
+
+    public final boolean f(int i10) {
+        Bundle extras = this.a.getExtras();
+        return extras != null && (extras.getInt("androidx.view.accessibility.AccessibilityNodeInfoCompat.BOOLEAN_PROPERTY_KEY", 0) & i10) == i10;
+    }
+
+    public final CharSequence g() {
+        boolean isEmpty = c("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_START_KEY").isEmpty();
+        AccessibilityNodeInfo accessibilityNodeInfo = this.a;
+        if (isEmpty) {
+            return accessibilityNodeInfo.getText();
+        }
+        ArrayList c10 = c("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_START_KEY");
+        ArrayList c11 = c("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_END_KEY");
+        ArrayList c12 = c("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_FLAGS_KEY");
+        ArrayList c13 = c("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ID_KEY");
+        SpannableString spannableString = new SpannableString(TextUtils.substring(accessibilityNodeInfo.getText(), 0, accessibilityNodeInfo.getText().length()));
+        for (int i10 = 0; i10 < c10.size(); i10++) {
+            spannableString.setSpan(new a(((Integer) c13.get(i10)).intValue(), this, accessibilityNodeInfo.getExtras().getInt("androidx.view.accessibility.AccessibilityNodeInfoCompat.SPANS_ACTION_ID_KEY")), ((Integer) c10.get(i10)).intValue(), ((Integer) c11.get(i10)).intValue(), ((Integer) c12.get(i10)).intValue());
+        }
+        return spannableString;
+    }
+
+    public final void h(Rect rect) {
+        this.a.setBoundsInParent(rect);
     }
 
     public final int hashCode() {
-        Object obj = this.a;
-        if (obj != null) {
-            return obj.hashCode();
+        AccessibilityNodeInfo accessibilityNodeInfo = this.a;
+        if (accessibilityNodeInfo == null) {
+            return 0;
         }
-        return 0;
+        return accessibilityNodeInfo.hashCode();
+    }
+
+    public final void i(String str) {
+        this.a.setClassName(str);
+    }
+
+    public final void j(String str) {
+        this.a.setContentDescription(str);
+    }
+
+    public final void k(boolean z10) {
+        int i10 = Build.VERSION.SDK_INT;
+        AccessibilityNodeInfo accessibilityNodeInfo = this.a;
+        if (i10 >= 28) {
+            accessibilityNodeInfo.setHeading(z10);
+            return;
+        }
+        Bundle extras = accessibilityNodeInfo.getExtras();
+        if (extras != null) {
+            extras.putInt("androidx.view.accessibility.AccessibilityNodeInfoCompat.BOOLEAN_PROPERTY_KEY", (extras.getInt("androidx.view.accessibility.AccessibilityNodeInfoCompat.BOOLEAN_PROPERTY_KEY", 0) & (-3)) | (z10 ? 2 : 0));
+        }
+    }
+
+    public final void l(CharSequence charSequence) {
+        int i10 = Build.VERSION.SDK_INT;
+        AccessibilityNodeInfo accessibilityNodeInfo = this.a;
+        if (i10 >= 26) {
+            accessibilityNodeInfo.setHintText(charSequence);
+        } else {
+            accessibilityNodeInfo.getExtras().putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.HINT_TEXT_KEY", charSequence);
+        }
+    }
+
+    public final void m(CharSequence charSequence) {
+        int i10 = Build.VERSION.SDK_INT;
+        AccessibilityNodeInfo accessibilityNodeInfo = this.a;
+        if (i10 >= 28) {
+            accessibilityNodeInfo.setPaneTitle(charSequence);
+        } else {
+            accessibilityNodeInfo.getExtras().putCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.PANE_TITLE_KEY", charSequence);
+        }
+    }
+
+    public final void n(boolean z10) {
+        int i10 = Build.VERSION.SDK_INT;
+        AccessibilityNodeInfo accessibilityNodeInfo = this.a;
+        if (i10 >= 28) {
+            accessibilityNodeInfo.setScreenReaderFocusable(z10);
+            return;
+        }
+        Bundle extras = accessibilityNodeInfo.getExtras();
+        if (extras != null) {
+            extras.putInt("androidx.view.accessibility.AccessibilityNodeInfoCompat.BOOLEAN_PROPERTY_KEY", (z10 ? 1 : 0) | (extras.getInt("androidx.view.accessibility.AccessibilityNodeInfoCompat.BOOLEAN_PROPERTY_KEY", 0) & (-2)));
+        }
+    }
+
+    public final void o(CharSequence charSequence) {
+        this.a.setText(charSequence);
+    }
+
+    public final void p(boolean z10) {
+        this.a.setVisibleToUser(z10);
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("AccessibilityActionCompat: ");
-        String e6 = d.e(this.b);
-        if (e6.equals("ACTION_UNKNOWN")) {
-            Object obj = this.a;
-            if (((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel() != null) {
-                e6 = ((AccessibilityNodeInfo.AccessibilityAction) obj).getLabel().toString();
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(super.toString());
+        Rect rect = new Rect();
+        AccessibilityNodeInfo accessibilityNodeInfo = this.a;
+        accessibilityNodeInfo.getBoundsInParent(rect);
+        sb2.append("; boundsInParent: " + rect);
+        accessibilityNodeInfo.getBoundsInScreen(rect);
+        sb2.append("; boundsInScreen: " + rect);
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 34) {
+            g1.a.g(accessibilityNodeInfo, rect);
+        } else {
+            Rect rect2 = (Rect) accessibilityNodeInfo.getExtras().getParcelable("androidx.view.accessibility.AccessibilityNodeInfoCompat.BOUNDS_IN_WINDOW_KEY");
+            if (rect2 != null) {
+                rect.set(rect2.left, rect2.top, rect2.right, rect2.bottom);
             }
         }
-        sb.append(e6);
-        return sb.toString();
+        sb2.append("; boundsInWindow: " + rect);
+        sb2.append("; packageName: ");
+        sb2.append(accessibilityNodeInfo.getPackageName());
+        sb2.append("; className: ");
+        sb2.append(accessibilityNodeInfo.getClassName());
+        sb2.append("; text: ");
+        sb2.append(g());
+        sb2.append("; error: ");
+        sb2.append(accessibilityNodeInfo.getError());
+        sb2.append("; maxTextLength: ");
+        sb2.append(accessibilityNodeInfo.getMaxTextLength());
+        sb2.append("; stateDescription: ");
+        sb2.append(i10 >= 30 ? g0.f.l(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.STATE_DESCRIPTION_KEY"));
+        sb2.append("; contentDescription: ");
+        sb2.append(accessibilityNodeInfo.getContentDescription());
+        sb2.append("; tooltipText: ");
+        sb2.append(i10 >= 28 ? accessibilityNodeInfo.getTooltipText() : accessibilityNodeInfo.getExtras().getCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.TOOLTIP_TEXT_KEY"));
+        sb2.append("; viewIdResName: ");
+        sb2.append(accessibilityNodeInfo.getViewIdResourceName());
+        sb2.append("; uniqueId: ");
+        sb2.append(i10 >= 33 ? g0.a.f(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getString("androidx.view.accessibility.AccessibilityNodeInfoCompat.UNIQUE_ID_KEY"));
+        sb2.append("; checkable: ");
+        sb2.append(accessibilityNodeInfo.isCheckable());
+        sb2.append("; checked: ");
+        sb2.append(accessibilityNodeInfo.isChecked());
+        sb2.append("; fieldRequired: ");
+        sb2.append(accessibilityNodeInfo.getExtras().getBoolean("androidx.view.accessibility.AccessibilityNodeInfoCompat.IS_REQUIRED_KEY"));
+        sb2.append("; focusable: ");
+        sb2.append(accessibilityNodeInfo.isFocusable());
+        sb2.append("; focused: ");
+        sb2.append(accessibilityNodeInfo.isFocused());
+        sb2.append("; selected: ");
+        sb2.append(accessibilityNodeInfo.isSelected());
+        sb2.append("; clickable: ");
+        sb2.append(accessibilityNodeInfo.isClickable());
+        sb2.append("; longClickable: ");
+        sb2.append(accessibilityNodeInfo.isLongClickable());
+        sb2.append("; contextClickable: ");
+        sb2.append(i10 >= 23 ? accessibilityNodeInfo.isContextClickable() : false);
+        sb2.append("; enabled: ");
+        sb2.append(accessibilityNodeInfo.isEnabled());
+        sb2.append("; password: ");
+        sb2.append(accessibilityNodeInfo.isPassword());
+        sb2.append("; scrollable: " + accessibilityNodeInfo.isScrollable());
+        sb2.append("; containerTitle: ");
+        sb2.append(i10 >= 34 ? g1.a.h(accessibilityNodeInfo) : accessibilityNodeInfo.getExtras().getCharSequence("androidx.view.accessibility.AccessibilityNodeInfoCompat.CONTAINER_TITLE_KEY"));
+        sb2.append("; granularScrollingSupported: ");
+        sb2.append(f(67108864));
+        sb2.append("; importantForAccessibility: ");
+        sb2.append(i10 >= 24 ? accessibilityNodeInfo.isImportantForAccessibility() : true);
+        sb2.append("; visible: ");
+        sb2.append(accessibilityNodeInfo.isVisibleToUser());
+        sb2.append("; isTextSelectable: ");
+        sb2.append(i10 >= 33 ? g0.a.g(accessibilityNodeInfo) : f(TLObject.FLAG_23));
+        sb2.append("; accessibilityDataSensitive: ");
+        sb2.append(i10 >= 34 ? g1.a.k(accessibilityNodeInfo) : f(64));
+        sb2.append("; [");
+        ArrayList d = d();
+        for (int i11 = 0; i11 < d.size(); i11++) {
+            b bVar = (b) d.get(i11);
+            Object obj = bVar.a;
+            Object obj2 = bVar.a;
+            String e7 = e(((AccessibilityNodeInfo.AccessibilityAction) obj).getId());
+            if (e7.equals("ACTION_UNKNOWN") && ((AccessibilityNodeInfo.AccessibilityAction) obj2).getLabel() != null) {
+                e7 = ((AccessibilityNodeInfo.AccessibilityAction) obj2).getLabel().toString();
+            }
+            sb2.append(e7);
+            if (i11 != d.size() - 1) {
+                sb2.append(", ");
+            }
+        }
+        sb2.append("]");
+        return sb2.toString();
     }
 }

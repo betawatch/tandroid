@@ -89,15 +89,15 @@ public final class s extends b implements Collection {
     public final boolean removeAll(java.util.Collection collection) {
         collection.getClass();
         Object it = iterator();
-        boolean z4 = false;
+        boolean z10 = false;
         while (true) {
             a aVar = (a) it;
             if (!aVar.hasNext()) {
-                return z4;
+                return z10;
             }
             if (collection.contains(((h) it).next())) {
                 aVar.remove();
-                z4 = true;
+                z10 = true;
             }
         }
     }
@@ -107,7 +107,7 @@ public final class s extends b implements Collection {
         ConcurrentHashMap concurrentHashMap = this.a;
         predicate.getClass();
         l[] lVarArr = concurrentHashMap.a;
-        boolean z4 = false;
+        boolean z10 = false;
         if (lVarArr != null) {
             p pVar = new p(lVarArr, lVarArr.length, 0, lVarArr.length);
             while (true) {
@@ -118,20 +118,20 @@ public final class s extends b implements Collection {
                 Object obj = a2.b;
                 Object obj2 = a2.c;
                 if (predicate.test(obj2) && concurrentHashMap.g(obj, null, obj2) != null) {
-                    z4 = true;
+                    z10 = true;
                 }
             }
         }
-        return z4;
+        return z10;
     }
 
     @Override // java.util.Collection, java.lang.Iterable, j$.util.Collection
     public final j$.util.Spliterator spliterator() {
         ConcurrentHashMap concurrentHashMap = this.a;
-        long j10 = concurrentHashMap.j();
+        long j3 = concurrentHashMap.j();
         l[] lVarArr = concurrentHashMap.a;
         int length = lVarArr == null ? 0 : lVarArr.length;
-        return new j(lVarArr, length, 0, length, j10 < 0 ? 0L : j10, 1);
+        return new j(lVarArr, length, 0, length, j3 < 0 ? 0L : j3, 1);
     }
 
     @Override // java.lang.Iterable, j$.util.Collection

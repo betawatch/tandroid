@@ -1,9 +1,29 @@
 package org.telegram.ui;
 
+import android.app.Activity;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public interface id1 {
-    void a(TLRPC.TL_wallPaper tL_wallPaper);
+public final class id1 extends org.telegram.ui.Components.hq0 {
+    public final /* synthetic */ kd1 b1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public id1(kd1 kd1Var, Activity activity, String str, String str2) {
+        super(activity, null, str, false, str2, false, null);
+        this.b1 = kd1Var;
+    }
+
+    @Override // org.telegram.ui.Components.hq0
+    public final void R0(a0.i iVar, int i10, TLRPC.TL_forumTopic tL_forumTopic, boolean z10) {
+        if (z10) {
+            int m10 = iVar.m();
+            kd1 kd1Var = this.b1;
+            if (m10 == 1) {
+                kd1Var.a.l0.m(((TLRPC.Dialog) iVar.n(0)).id, Integer.valueOf(i10), 61);
+            } else {
+                kd1Var.a.l0.k(0L, 61, Integer.valueOf(i10), Integer.valueOf(iVar.m()), null, null);
+            }
+        }
+    }
 }

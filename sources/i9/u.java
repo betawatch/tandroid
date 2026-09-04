@@ -1,51 +1,57 @@
 package i9;
 
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicLong;
+import com.google.android.gms.internal.play_billing.s0;
+import java.util.concurrent.Executor;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class u implements ThreadFactory {
-    public final /* synthetic */ int a;
-    public final Object b;
-    public final Object c;
+public final class u implements w {
+    public static final u b = new u(null);
+    public static final s0 c = new s0(u.class, 1);
+    public final Object a;
 
-    public u(String str) {
-        this.a = 1;
-        this.c = Executors.defaultThreadFactory();
-        this.b = str;
+    public u(Object obj) {
+        this.a = obj;
     }
 
-    @Override // java.util.concurrent.ThreadFactory
-    public final Thread newThread(Runnable runnable) {
-        switch (this.a) {
-            case 0:
-                Thread newThread = Executors.defaultThreadFactory().newThread(new t(runnable));
-                newThread.setName(((String) this.b) + ((AtomicLong) this.c).getAndIncrement());
-                return newThread;
-            case 1:
-                Thread newThread2 = ((ThreadFactory) this.c).newThread(new d9.j(1, runnable));
-                newThread2.setName((String) this.b);
-                return newThread2;
-            default:
-                AtomicInteger atomicInteger = (AtomicInteger) this.c;
-                Thread newThread3 = ((ThreadFactory) this.b).newThread(runnable);
-                newThread3.setName("PlayBillingLibrary-" + atomicInteger.getAndIncrement());
-                return newThread3;
+    @Override // i9.w
+    public final void a(Runnable runnable, Executor executor) {
+        try {
+            executor.execute(runnable);
+        } catch (Exception e7) {
+            c.a().log(Level.SEVERE, "RuntimeException while executing runnable " + runnable + " with executor " + executor, (Throwable) e7);
         }
     }
 
-    public u(p2.b bVar) {
-        this.a = 2;
-        this.b = Executors.defaultThreadFactory();
-        this.c = new AtomicInteger(1);
+    @Override // java.util.concurrent.Future
+    public final boolean cancel(boolean z10) {
+        return false;
     }
 
-    public u(String str, AtomicLong atomicLong) {
-        this.a = 0;
-        this.b = str;
-        this.c = atomicLong;
+    @Override // java.util.concurrent.Future
+    public final Object get() {
+        return this.a;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isCancelled() {
+        return false;
+    }
+
+    @Override // java.util.concurrent.Future
+    public final boolean isDone() {
+        return true;
+    }
+
+    public final String toString() {
+        return super.toString() + "[status=SUCCESS, result=[" + this.a + "]]";
+    }
+
+    @Override // java.util.concurrent.Future
+    public final Object get(long j3, TimeUnit timeUnit) {
+        timeUnit.getClass();
+        return this.a;
     }
 }

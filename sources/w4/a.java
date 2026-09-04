@@ -1,15 +1,11 @@
 package w4;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class a {
-    public final int a;
-    public final boolean b;
-    public int c;
+import android.os.Trace;
 
-    public a(int i10, boolean z4, int i11) {
-        this.a = i10;
-        this.b = z4;
-        this.c = i11;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public abstract class a {
+    public static boolean a() {
+        return Trace.isEnabled();
     }
 }

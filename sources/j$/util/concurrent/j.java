@@ -10,10 +10,10 @@ public final class j extends p implements Spliterator {
     public long j;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ j(l[] lVarArr, int i10, int i11, int i12, long j10, int i13) {
+    public /* synthetic */ j(l[] lVarArr, int i10, int i11, int i12, long j3, int i13) {
         super(lVarArr, i10, i11, i12);
         this.i = i13;
-        this.j = j10;
+        this.j = j3;
     }
 
     @Override // j$.util.Spliterator
@@ -62,9 +62,9 @@ public final class j extends p implements Spliterator {
                 }
                 l[] lVarArr = this.a;
                 this.g = i12;
-                long j10 = this.j >>> 1;
-                this.j = j10;
-                return new j(lVarArr, this.h, i12, i11, j10, 0);
+                long j3 = this.j >>> 1;
+                this.j = j3;
+                return new j(lVarArr, this.h, i12, i11, j3, 0);
             default:
                 int i13 = this.f;
                 int i14 = this.g;
@@ -74,9 +74,9 @@ public final class j extends p implements Spliterator {
                 }
                 l[] lVarArr2 = this.a;
                 this.g = i15;
-                long j11 = this.j >>> 1;
-                this.j = j11;
-                return new j(lVarArr2, this.h, i15, i14, j11, 1);
+                long j10 = this.j >>> 1;
+                this.j = j10;
+                return new j(lVarArr2, this.h, i15, i14, j10, 1);
         }
     }
 

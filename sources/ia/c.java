@@ -1,24 +1,49 @@
 package ia;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.lang.annotation.Annotation;
+import java.util.Collections;
+import java.util.Map;
+import n4.y;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public enum c implements x9.b {
-    /* JADX INFO: Fake field, exist only in values array */
-    EF0(0),
-    b(1),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF23(2),
-    /* JADX INFO: Fake field, exist only in values array */
-    EF31(3);
+public final class c {
+    public final String a;
+    public final Map b;
 
-    public final int a;
-
-    c(int i10) {
-        this.a = i10;
+    public c(String str, Map map) {
+        this.a = str;
+        this.b = map;
     }
 
-    @Override // x9.b
-    public final int a() {
-        return this.a;
+    public static y a(String str) {
+        return new y(str, 18);
+    }
+
+    public static c c(String str) {
+        return new c(str, Collections.EMPTY_MAP);
+    }
+
+    public final Annotation b(Class cls) {
+        return (Annotation) this.b.get(cls);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (!(obj instanceof c)) {
+            return false;
+        }
+        c cVar = (c) obj;
+        return this.a.equals(cVar.a) && this.b.equals(cVar.b);
+    }
+
+    public final int hashCode() {
+        return this.b.hashCode() + (this.a.hashCode() * 31);
+    }
+
+    public final String toString() {
+        return "FieldDescriptor{name=" + this.a + ", properties=" + this.b.values() + "}";
     }
 }

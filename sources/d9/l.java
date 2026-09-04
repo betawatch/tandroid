@@ -1,35 +1,47 @@
 package d9;
 
-import android.os.Handler;
-import android.os.Looper;
-import java.util.concurrent.Executor;
+import a3.r;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class l implements Executor {
-    public static final l a;
-    public static final Handler b;
-    public static final /* synthetic */ l[] c;
+public final class l implements j {
+    public static final r d = new r(1);
+    public final Object a = new Object();
+    public volatile j b;
+    public Object c;
 
-    static {
-        l lVar = new l("INSTANCE", 0);
-        a = lVar;
-        c = new l[]{lVar};
-        b = new Handler(Looper.getMainLooper());
+    public l(j jVar) {
+        this.b = jVar;
     }
 
-    public static l valueOf(String str) {
-        return (l) Enum.valueOf(l.class, str);
+    @Override // d9.j
+    public final Object get() {
+        j jVar = this.b;
+        r rVar = d;
+        if (jVar != rVar) {
+            synchronized (this.a) {
+                try {
+                    if (this.b != rVar) {
+                        Object obj = this.b.get();
+                        this.c = obj;
+                        this.b = rVar;
+                        return obj;
+                    }
+                } finally {
+                }
+            }
+        }
+        return this.c;
     }
 
-    public static l[] values() {
-        return (l[]) c.clone();
-    }
-
-    @Override // java.util.concurrent.Executor
-    public final void execute(Runnable runnable) {
-        b.post(runnable);
+    public final String toString() {
+        Object obj = this.b;
+        StringBuilder sb2 = new StringBuilder("Suppliers.memoize(");
+        if (obj == d) {
+            obj = "<supplier that returned " + this.c + ">";
+        }
+        sb2.append(obj);
+        sb2.append(")");
+        return sb2.toString();
     }
 }

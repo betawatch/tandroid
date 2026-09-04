@@ -1,54 +1,35 @@
 package org.telegram.ui;
 
-import android.os.Build;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class zs extends f2.z0 {
-    public boolean a;
-    public boolean b;
-    public final /* synthetic */ ContactsActivity c;
+public final class zs extends hg.u1 {
+    public final /* synthetic */ ContactsActivity K;
 
-    public zs(ContactsActivity contactsActivity) {
-        this.c = contactsActivity;
+    public zs(ContactsActivity contactsActivity, Context context, a0.i iVar, boolean z10, boolean z11, boolean z12) {
+        this.K = contactsActivity;
+        this.d = new ArrayList();
+        this.e = new ArrayList();
+        this.H = new ArrayList();
+        this.c = context;
+        this.h = iVar;
+        this.r = z10;
+        this.s = z11;
+        this.x = 0;
+        this.v = z12;
+        this.w = true;
+        hg.b2 b2Var = new hg.b2(true);
+        this.f = b2Var;
+        b2Var.a = new hg.r1(this);
     }
 
-    @Override // f2.z0
-    public final void a(RecyclerView recyclerView, int i10) {
-        if (i10 != 1) {
-            this.b = false;
+    @Override // hg.u1
+    public final void F() {
+        if (this.y || this.f.e() || h() != 0) {
             return;
         }
-        ContactsActivity contactsActivity = this.c;
-        if ((contactsActivity.C && contactsActivity.B) || contactsActivity.W.r.isFocused()) {
-            AndroidUtilities.hideKeyboard(contactsActivity.getParentActivity().getCurrentFocus());
-        }
-        this.b = true;
-    }
-
-    @Override // f2.z0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ng.e eVar;
-        ContactsActivity contactsActivity = this.c;
-        int L0 = contactsActivity.n.L0();
-        View childAt = recyclerView.getChildAt(0);
-        int top = childAt != null ? childAt.getTop() : 0;
-        if (contactsActivity.w != null && !contactsActivity.C) {
-            boolean z4 = i11 > 0;
-            if (i11 != 0 && this.a && (z4 || this.b)) {
-                contactsActivity.x = !z4;
-                ContactsActivity.e0(contactsActivity);
-            }
-            this.a = true;
-        }
-        contactsActivity.V.b(L0 != 0 || top < contactsActivity.f.getPaddingTop(), true);
-        if (Build.VERSION.SDK_INT >= 31 && (eVar = contactsActivity.q0) != null) {
-            eVar.f(i10, i11);
-            contactsActivity.g0();
-        }
-        ContactsActivity.d0(contactsActivity);
+        this.K.e.e(false, true);
     }
 }

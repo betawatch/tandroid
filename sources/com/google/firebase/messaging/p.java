@@ -1,76 +1,121 @@
 package com.google.firebase.messaging;
 
-import android.app.AppOpsManager;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.app.RemoteInput;
 import android.content.Context;
-import android.content.LocusId;
-import android.content.SharedPreferences;
-import android.graphics.Insets;
-import android.os.Binder;
+import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.util.Log;
-import com.google.android.gms.tasks.TaskCompletionSource;
+import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class p {
-    public static void a(Context context, boolean z4, TaskCompletionSource taskCompletionSource) {
+public final class p {
+    public int a;
+    public int b;
+    public Object c;
+    public Object d;
+    public Object e;
+
+    public static String c(k9.h hVar) {
+        hVar.a();
+        k9.j jVar = hVar.c;
+        String str = jVar.e;
+        if (str != null) {
+            return str;
+        }
+        hVar.a();
+        String str2 = jVar.b;
+        if (!str2.startsWith("1:")) {
+            return str2;
+        }
+        String[] split = str2.split(":");
+        if (split.length < 2) {
+            return null;
+        }
+        String str3 = split[1];
+        if (str3.isEmpty()) {
+            return null;
+        }
+        return str3;
+    }
+
+    public synchronized String a() {
         try {
-            if (Binder.getCallingUid() != context.getApplicationInfo().uid) {
-                Log.e("FirebaseMessaging", "error configuring notification delegate for package " + context.getPackageName());
-                taskCompletionSource.trySetResult(null);
-                return;
+            if (((String) this.d) == null) {
+                f();
             }
-            Context applicationContext = context.getApplicationContext();
-            if (applicationContext == null) {
-                applicationContext = context;
-            }
-            SharedPreferences.Editor edit = applicationContext.getSharedPreferences("com.google.firebase.messaging", 0).edit();
-            edit.putBoolean("proxy_notification_initialized", true);
-            edit.apply();
-            NotificationManager notificationManager = (NotificationManager) context.getSystemService(NotificationManager.class);
-            if (z4) {
-                notificationManager.setNotificationDelegate("com.google.android.gms");
-            } else if ("com.google.android.gms".equals(notificationManager.getNotificationDelegate())) {
-                notificationManager.setNotificationDelegate(null);
-            }
-            taskCompletionSource.trySetResult(null);
         } catch (Throwable th2) {
-            taskCompletionSource.trySetResult(null);
             throw th2;
+        }
+        return (String) this.d;
+    }
+
+    public synchronized String b() {
+        try {
+            if (((String) this.e) == null) {
+                f();
+            }
+        } catch (Throwable th2) {
+            throw th2;
+        }
+        return (String) this.e;
+    }
+
+    public PackageInfo d(String str) {
+        try {
+            return ((Context) this.c).getPackageManager().getPackageInfo(str, 0);
+        } catch (PackageManager.NameNotFoundException e7) {
+            Log.w("FirebaseMessaging", "Failed to find package " + e7);
+            return null;
         }
     }
 
-    public static String b(Context context) {
-        return context.getOpPackageName();
+    public boolean e() {
+        int i10;
+        synchronized (this) {
+            i10 = this.b;
+            if (i10 == 0) {
+                PackageManager packageManager = ((Context) this.c).getPackageManager();
+                if (packageManager.checkPermission("com.google.android.c2dm.permission.SEND", "com.google.android.gms") == -1) {
+                    Log.e("FirebaseMessaging", "Google Play services missing or without correct permission.");
+                    i10 = 0;
+                } else {
+                    if (!u6.b.d()) {
+                        Intent intent = new Intent("com.google.android.c2dm.intent.REGISTER");
+                        intent.setPackage("com.google.android.gms");
+                        List<ResolveInfo> queryIntentServices = packageManager.queryIntentServices(intent, 0);
+                        if (queryIntentServices != null && queryIntentServices.size() > 0) {
+                            this.b = 1;
+                            i10 = 1;
+                        }
+                    }
+                    Intent intent2 = new Intent("com.google.iid.TOKEN_REQUEST");
+                    intent2.setPackage("com.google.android.gms");
+                    List<ResolveInfo> queryBroadcastReceivers = packageManager.queryBroadcastReceivers(intent2, 0);
+                    if (queryBroadcastReceivers == null || queryBroadcastReceivers.size() <= 0) {
+                        Log.w("FirebaseMessaging", "Failed to resolve IID implementation package, falling back");
+                        if (u6.b.d()) {
+                            this.b = 2;
+                        } else {
+                            this.b = 1;
+                        }
+                        i10 = this.b;
+                    } else {
+                        this.b = 2;
+                        i10 = 2;
+                    }
+                }
+            }
+        }
+        return i10 != 0;
     }
 
-    public static AppOpsManager c(Context context) {
-        return (AppOpsManager) context.getSystemService(AppOpsManager.class);
-    }
-
-    public static Insets d(int i10, int i11, int i12, int i13) {
-        return Insets.of(i10, i11, i12, i13);
-    }
-
-    public static void e(Notification.Builder builder, boolean z4) {
-        builder.setAllowSystemGeneratedContextualActions(z4);
-    }
-
-    public static void f(Notification.Builder builder, Notification.BubbleMetadata bubbleMetadata) {
-        builder.setBubbleMetadata(bubbleMetadata);
-    }
-
-    public static void g(Notification.Action.Builder builder) {
-        builder.setContextual(false);
-    }
-
-    public static void h(RemoteInput.Builder builder) {
-        builder.setEditChoicesBeforeSending(0);
-    }
-
-    public static void i(Notification.Builder builder, Object obj) {
-        builder.setLocusId((LocusId) obj);
+    public synchronized void f() {
+        PackageInfo d = d(((Context) this.c).getPackageName());
+        if (d != null) {
+            this.d = Integer.toString(d.versionCode);
+            this.e = d.versionName;
+        }
     }
 }

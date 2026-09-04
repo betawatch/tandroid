@@ -1,24 +1,15 @@
 package r0;
 
 import android.view.View;
-import android.view.WindowInsets;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class c0 {
-    public static m1 a(View view) {
-        WindowInsets rootWindowInsets = view.getRootWindowInsets();
-        if (rootWindowInsets == null) {
-            return null;
-        }
-        m1 h = m1.h(null, rootWindowInsets);
-        j1 j1Var = h.a;
-        j1Var.r(h);
-        j1Var.d(view.getRootView());
-        return h;
+    public static int a(View view) {
+        return view.getImportantForAutofill();
     }
 
-    public static void b(View view, int i10, int i11) {
-        view.setScrollIndicators(i10, i11);
+    public static void b(View view, int i10) {
+        view.setImportantForAutofill(i10);
     }
 }

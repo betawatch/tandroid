@@ -11,12 +11,12 @@ public final class b extends u {
     }
 
     @Override // j$.time.format.u
-    public final String a(j$.time.chrono.k kVar, j$.time.temporal.o oVar, long j10, TextStyle textStyle, Locale locale) {
-        return this.d.a(j10, textStyle);
+    public final String a(j$.time.chrono.k kVar, j$.time.temporal.o oVar, long j3, TextStyle textStyle, Locale locale) {
+        return this.d.a(j3, textStyle);
     }
 
     @Override // j$.time.format.u
-    public final String b(j$.time.temporal.o oVar, long j10, TextStyle textStyle, Locale locale) {
-        return this.d.a(j10, textStyle);
+    public final String b(j$.time.temporal.o oVar, long j3, TextStyle textStyle, Locale locale) {
+        return this.d.a(j3, textStyle);
     }
 }

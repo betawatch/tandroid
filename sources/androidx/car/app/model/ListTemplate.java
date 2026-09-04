@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class ListTemplate implements x0 {
     static final int MAX_ALLOWED_ITEMS = 100;
@@ -24,9 +24,9 @@ public final class ListTemplate implements x0 {
         this.mTitle = uVar.d;
         this.mHeaderAction = uVar.e;
         this.mSingleList = uVar.b;
-        this.mSectionedLists = androidx.car.app.utils.j.g(uVar.c);
+        this.mSectionedLists = androidx.car.app.utils.i.g(uVar.c);
         this.mActionStrip = uVar.f;
-        this.mActions = androidx.car.app.utils.j.g(uVar.g);
+        this.mActions = androidx.car.app.utils.i.g(uVar.g);
     }
 
     public static List<SectionedItemList> getTruncatedCopy(List<SectionedItemList> list) {

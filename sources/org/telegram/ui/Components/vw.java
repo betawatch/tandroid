@@ -1,63 +1,34 @@
 package org.telegram.ui.Components;
 
-import android.animation.ObjectAnimator;
-import android.content.Context;
-import android.util.Property;
-import android.view.MotionEvent;
-import android.view.ViewGroup;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class vw extends m2.h {
-    public final /* synthetic */ kz t0;
+public final class vw extends g.p {
+    public final /* synthetic */ kz c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public vw(kz kzVar, Context context) {
-        super(context);
-        this.t0 = kzVar;
+    public vw(kz kzVar) {
+        this.c = kzVar;
     }
 
-    @Override // m2.h, android.view.ViewGroup
-    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        if (this.t0.f) {
-            return false;
-        }
-        if (getParent() != null) {
-            getParent().requestDisallowInterceptTouchEvent(canScrollHorizontally(-1));
-        }
-        try {
-            return super.onInterceptTouchEvent(motionEvent);
-        } catch (IllegalArgumentException unused) {
-            return false;
-        }
-    }
-
-    @Override // m2.h
-    public final void x(int i10, boolean z4) {
-        kz kzVar = this.t0;
-        fw fwVar = kzVar.F;
-        kz.a(kzVar, i10 == 1);
-        if (i10 != getCurrentItem()) {
-            super.x(i10, z4);
-            return;
-        }
-        if (i10 != 0) {
-            if (i10 == 1) {
-                kzVar.e0.x0(0);
-                return;
-            } else {
-                kzVar.A0.x0(1);
-                return;
+    @Override // g.p
+    public final int i(int i10) {
+        kz kzVar = this.c;
+        fz fzVar = kzVar.z0;
+        s4.h0 adapter = kzVar.D0.getAdapter();
+        bz bzVar = kzVar.y0;
+        if (adapter != bzVar) {
+            if (i10 == fzVar.x || !(fzVar.r.get(i10) == null || (fzVar.r.get(i10) instanceof TLRPC.Document))) {
+                return bzVar.d;
             }
+            return 1;
         }
-        kzVar.N0[1] = 0;
-        ObjectAnimator ofFloat = ObjectAnimator.ofFloat(fwVar, (Property<fw, Float>) ViewGroup.TRANSLATION_Y, 0.0f);
-        ofFloat.setDuration(150L);
-        ofFloat.setInterpolator(mr.h);
-        ofFloat.start();
-        kzVar.H(1, 0);
-        if (fwVar != null) {
-            fwVar.j(0, true);
+        if (i10 == 0) {
+            return bzVar.d;
         }
+        if (i10 == bzVar.s || !(bzVar.h.get(i10) == null || (bzVar.h.get(i10) instanceof TLRPC.Document))) {
+            return bzVar.d;
+        }
+        return 1;
     }
 }

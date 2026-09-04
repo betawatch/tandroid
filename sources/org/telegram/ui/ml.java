@@ -1,97 +1,127 @@
 package org.telegram.ui;
 
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.Path;
+import android.graphics.RectF;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ml implements mm {
-    public final /* synthetic */ zn a;
-    public final /* synthetic */ zn b;
+public final class ml extends org.telegram.ui.Components.x9 {
+    public final /* synthetic */ int G = 0;
+    public Object H;
+    public Object I;
+    public Object J;
 
-    public ml(zn znVar, zn znVar2) {
-        this.b = znVar;
-        this.a = znVar2;
+    public /* synthetic */ ml(Context context) {
+        super(context);
     }
 
-    @Override // org.telegram.ui.mm
-    public final void O0(int i10) {
-        this.b.j(i10, 0, true, 0, true, 0);
+    @Override // android.view.View
+    public void draw(Canvas canvas) {
+        switch (this.G) {
+            case 1:
+                wh.h hVar = (wh.h) this.I;
+                Path path = (Path) this.H;
+                super.draw(canvas);
+                if (((org.telegram.ui.Components.po) this.J).h) {
+                    path.rewind();
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(this.a.getImageX(), this.a.getImageY(), this.a.getImageX2(), this.a.getImageY2());
+                    path.addRoundRect(rectF, AndroidUtilities.dp(2.0f), AndroidUtilities.dp(2.0f), Path.Direction.CW);
+                    canvas.save();
+                    canvas.clipPath(path);
+                    hVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f)));
+                    hVar.setBounds((int) this.a.getImageX(), (int) this.a.getImageY(), (int) this.a.getImageX2(), (int) this.a.getImageY2());
+                    hVar.draw(canvas);
+                    invalidate();
+                    canvas.restore();
+                    break;
+                }
+                break;
+            default:
+                super.draw(canvas);
+                break;
+        }
     }
 
-    @Override // org.telegram.ui.mm
-    public final void X(boolean z4, boolean z10) {
-        org.telegram.ui.Components.eb ebVar;
-        int i10;
-        zn znVar = this.b;
-        if (!z4) {
-            MessageObject messageObject = (MessageObject) znVar.G4.get(Integer.valueOf(znVar.I4));
-            if (messageObject == null) {
-                messageObject = (MessageObject) znVar.l6[0].get(znVar.I4);
-            }
-            znVar.cc(messageObject);
-            return;
+    @Override // org.telegram.ui.Components.x9, android.view.View
+    public void onDraw(Canvas canvas) {
+        switch (this.G) {
+            case 0:
+                float[] fArr = (float[]) this.J;
+                wh.h hVar = (wh.h) this.I;
+                Path path = (Path) this.H;
+                super.onDraw(canvas);
+                if (this.r) {
+                    canvas.save();
+                    RectF rectF = AndroidUtilities.rectTmp;
+                    rectF.set(0.0f, 0.0f, getWidth(), getHeight());
+                    int[] roundRadius = this.a.getRoundRadius();
+                    float f7 = roundRadius[0];
+                    fArr[1] = f7;
+                    fArr[0] = f7;
+                    float f10 = roundRadius[1];
+                    fArr[3] = f10;
+                    fArr[2] = f10;
+                    float f11 = roundRadius[2];
+                    fArr[5] = f11;
+                    fArr[4] = f11;
+                    float f12 = roundRadius[3];
+                    fArr[7] = f12;
+                    fArr[6] = f12;
+                    path.rewind();
+                    path.addRoundRect(rectF, fArr, Path.Direction.CW);
+                    canvas.clipPath(path);
+                    hVar.h(i0.a.k(-1, (int) (Color.alpha(-1) * 0.325f)));
+                    hVar.setBounds(0, 0, getWidth(), getHeight());
+                    hVar.draw(canvas);
+                    canvas.restore();
+                    invalidate();
+                    break;
+                }
+                break;
+            case 1:
+            default:
+                super.onDraw(canvas);
+                break;
+            case 2:
+                org.telegram.ui.Components.voip.h hVar2 = (org.telegram.ui.Components.voip.h) this.I;
+                super.onDraw(canvas);
+                org.telegram.ui.Components.w50 w50Var = (org.telegram.ui.Components.w50) this.J;
+                if (w50Var.s0) {
+                    int i10 = w50Var.N0;
+                    hVar2.f = i10;
+                    RectF rectF2 = AndroidUtilities.rectTmp;
+                    float f13 = i10;
+                    rectF2.set(0.0f, 0.0f, f13, f13);
+                    float width = rectF2.width() / 2.0f;
+                    canvas.drawRoundRect(rectF2, width, width, (Paint) this.H);
+                    rectF2.inset(AndroidUtilities.dp(1.0f), AndroidUtilities.dp(1.0f));
+                    hVar2.a(width, canvas, rectF2, null);
+                    invalidate();
+                    break;
+                }
+                break;
         }
-        ArrayList arrayList = new ArrayList(znVar.E4);
-        ArrayList arrayList2 = new ArrayList(znVar.G4.values());
-        org.telegram.ui.Components.ic icVar = null;
-        if (z10) {
-            i10 = ((org.telegram.ui.ActionBar.p2) znVar).currentAccount;
-            SharedPreferences notificationsSettings = MessagesController.getNotificationsSettings(i10);
-            if (znVar.E4.isEmpty()) {
-                notificationsSettings.edit().remove("pin_" + znVar.Q5).commit();
-            } else {
-                notificationsSettings.edit().putInt("pin_" + znVar.Q5, ((Integer) znVar.E4.get(0)).intValue()).commit();
-            }
-            znVar.yc(0, true);
-        } else {
-            znVar.getNotificationCenter().lambda$postNotificationNameOnUIThread$1(NotificationCenter.didLoadPinnedMessages, Long.valueOf(znVar.Q5), arrayList, Boolean.FALSE, null, null, 0, 0, Boolean.TRUE);
-        }
-        org.telegram.ui.Components.ic icVar2 = znVar.x3;
-        if (icVar2 != null) {
-            icVar2.b();
-        }
-        znVar.y3 = true;
-        int i11 = znVar.z3 + 1;
-        znVar.z3 = i11;
-        boolean z11 = znVar.e4;
-        zn znVar2 = this.a;
-        int G8 = z11 ? znVar2.G8() : znVar.G8();
-        ArrayList arrayList3 = new ArrayList(znVar.e4 ? znVar2.E4 : znVar.E4);
-        org.telegram.messenger.b8 b8Var = new org.telegram.messenger.b8(this, z10, arrayList, arrayList2, G8, i11);
-        org.telegram.messenger.voip.l0 l0Var = new org.telegram.messenger.voip.l0(this, z10, arrayList3, i11);
-        xn xnVar = znVar.ba;
-        if (znVar.getParentActivity() == null) {
-            l0Var.run();
-        } else {
-            if (z10) {
-                org.telegram.ui.Components.fc fcVar = new org.telegram.ui.Components.fc(znVar.getParentActivity(), xnVar);
-                fcVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                fcVar.b.setText(LocaleController.getString(R.string.PinnedMessagesHidden));
-                fcVar.c.setText(LocaleController.getString(R.string.PinnedMessagesHiddenInfo));
-                ebVar = fcVar;
-            } else {
-                org.telegram.ui.Components.qb qbVar = new org.telegram.ui.Components.qb(znVar.getParentActivity(), xnVar);
-                qbVar.c(R.raw.ic_unpin, 28, 28, "Pin", "Line");
-                qbVar.b.setText(LocaleController.formatPluralString("MessagesUnpinned", G8, new Object[0]));
-                ebVar = qbVar;
-            }
-            org.telegram.ui.Components.gc gcVar = new org.telegram.ui.Components.gc(znVar.getParentActivity(), xnVar, true);
-            gcVar.a = b8Var;
-            gcVar.b = l0Var;
-            ebVar.setButton(gcVar);
-            icVar = org.telegram.ui.Components.ic.g(znVar, ebVar, 5000);
-        }
-        znVar.x3 = icVar;
     }
 
-    @Override // org.telegram.ui.mm
-    public final void o0(String str) {
-        this.b.da(str, false);
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ml(org.telegram.ui.Components.po poVar, Context context, wh.h hVar) {
+        super(context);
+        this.J = poVar;
+        this.I = hVar;
+        this.H = new Path();
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ml(org.telegram.ui.Components.w50 w50Var, Context context, Paint paint) {
+        super(context);
+        this.J = w50Var;
+        this.H = paint;
+        this.I = new org.telegram.ui.Components.voip.h();
     }
 }

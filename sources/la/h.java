@@ -1,25 +1,102 @@
 package la;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class h implements u9.d {
-    public static final h a = new h();
-    public static final u9.c b = u9.c.c("sessionId");
-    public static final u9.c c = u9.c.c("firstSessionId");
-    public static final u9.c d = u9.c.c("sessionIndex");
-    public static final u9.c e = u9.c.c("eventTimestampUs");
-    public static final u9.c f = u9.c.c("dataCollectionStatus");
-    public static final u9.c g = u9.c.c("firebaseInstallationId");
+import v7.j;
+import x7.e0;
+import z7.y;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        k0 k0Var = (k0) obj;
-        u9.e eVar = (u9.e) obj2;
-        eVar.e(b, k0Var.a);
-        eVar.e(c, k0Var.b);
-        eVar.a(d, k0Var.c);
-        eVar.b(e, k0Var.d);
-        eVar.e(f, k0Var.e);
-        eVar.e(g, k0Var.f);
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class h implements ia.g {
+    public final /* synthetic */ int a;
+    public boolean b = false;
+    public boolean c = false;
+    public ia.c d;
+    public final ia.e e;
+
+    public /* synthetic */ h(ia.e eVar, int i10) {
+        this.a = i10;
+        this.e = eVar;
+    }
+
+    @Override // ia.g
+    public final ia.g b(String str) {
+        switch (this.a) {
+            case 0:
+                if (this.b) {
+                    throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((f) this.e).h(this.d, str, this.c);
+                return this;
+            case 1:
+                if (this.b) {
+                    throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((j) this.e).d(this.d, str, this.c);
+                return this;
+            case 2:
+                if (this.b) {
+                    throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((w7.f) this.e).d(this.d, str, this.c);
+                return this;
+            case 3:
+                if (this.b) {
+                    throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((e0) this.e).d(this.d, str, this.c);
+                return this;
+            default:
+                if (this.b) {
+                    throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((y) this.e).d(this.d, str, this.c);
+                return this;
+        }
+    }
+
+    @Override // ia.g
+    public final ia.g d(boolean z10) {
+        switch (this.a) {
+            case 0:
+                if (this.b) {
+                    throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((f) this.e).d(this.d, z10 ? 1 : 0, this.c);
+                return this;
+            case 1:
+                if (this.b) {
+                    throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((j) this.e).h(this.d, z10 ? 1 : 0, this.c);
+                return this;
+            case 2:
+                if (this.b) {
+                    throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((w7.f) this.e).h(this.d, z10 ? 1 : 0, this.c);
+                return this;
+            case 3:
+                if (this.b) {
+                    throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((e0) this.e).h(this.d, z10 ? 1 : 0, this.c);
+                return this;
+            default:
+                if (this.b) {
+                    throw new ia.b("Cannot encode a second value in the ValueEncoderContext");
+                }
+                this.b = true;
+                ((y) this.e).h(this.d, z10 ? 1 : 0, this.c);
+                return this;
+        }
     }
 }

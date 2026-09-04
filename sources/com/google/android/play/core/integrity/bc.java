@@ -1,12 +1,12 @@
 package com.google.android.play.core.integrity;
 
-import o8.f0;
+import a9.i0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class bc implements o8.n {
-    @Override // o8.q
+public final class bc implements a9.q {
+    @Override // a9.t
     public final /* synthetic */ Object a() {
-        return new f0("StandardIntegrity");
+        return new i0("StandardIntegrity");
     }
 }

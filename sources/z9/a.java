@@ -1,37 +1,71 @@
 package z9;
 
-import java.util.ArrayList;
+import bb.i;
+import cf.c;
+import com.google.firebase.sessions.FirebaseSessionsRegistrar;
+import org.telegram.ui.ActionBar.a2;
+import org.telegram.ui.ActionBar.b2;
+import org.telegram.ui.hh1;
+import q9.d;
+import za.c0;
+import za.i0;
+import za.l;
+import za.m0;
+import za.s;
+import zh.w3;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public final String a;
-    public final ArrayList b;
+public final /* synthetic */ class a implements d, a2 {
+    public final /* synthetic */ int a;
 
-    public a(String str, ArrayList arrayList) {
-        if (str == null) {
-            throw new NullPointerException("Null userAgent");
-        }
-        this.a = str;
-        this.b = arrayList;
+    public /* synthetic */ a(int i10) {
+        this.a = i10;
     }
 
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    @Override // q9.d
+    public Object D(c cVar) {
+        l lVar;
+        i0 i0Var;
+        c0 c0Var;
+        i iVar;
+        s sVar;
+        m0 m0Var;
+        switch (this.a) {
+            case 7:
+                lVar = FirebaseSessionsRegistrar.getComponents$lambda-0(cVar);
+                return lVar;
+            case 8:
+                i0Var = FirebaseSessionsRegistrar.getComponents$lambda-1(cVar);
+                return i0Var;
+            case 9:
+                c0Var = FirebaseSessionsRegistrar.getComponents$lambda-2(cVar);
+                return c0Var;
+            case 10:
+                iVar = FirebaseSessionsRegistrar.getComponents$lambda-3(cVar);
+                return iVar;
+            case 11:
+                sVar = FirebaseSessionsRegistrar.getComponents$lambda-4(cVar);
+                return sVar;
+            default:
+                m0Var = FirebaseSessionsRegistrar.getComponents$lambda-5(cVar);
+                return m0Var;
         }
-        if (!(obj instanceof a)) {
-            return false;
-        }
-        a aVar = (a) obj;
-        return this.a.equals(aVar.a) && this.b.equals(aVar.b);
     }
 
-    public final int hashCode() {
-        return ((this.a.hashCode() ^ 1000003) * 1000003) ^ this.b.hashCode();
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(b2 b2Var, int i10) {
+        switch (this.a) {
+            case 13:
+                w3.d2(new hh1(6, null));
+                break;
+            default:
+                int i11 = w3.q1;
+                break;
+        }
     }
 
-    public final String toString() {
-        return "HeartBeatResult{userAgent=" + this.a + ", usedDates=" + this.b + "}";
+    public /* synthetic */ a(w3 w3Var) {
+        this.a = 13;
     }
 }

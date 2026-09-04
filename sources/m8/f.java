@@ -2,61 +2,39 @@ package m8;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.f5;
-import org.telegram.ui.ai;
+import g8.j;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f extends c6.a implements l8.b, l8.d {
-    public static final Parcelable.Creator<f> CREATOR = new c(2);
-    public final String a;
-    public final String b;
-    public final String c;
+public final class f extends o6.a {
+    public static final Parcelable.Creator<f> CREATOR = new j(29);
+    public final long a;
+    public final a[] b;
+    public final int c;
+    public final boolean d;
 
-    public f(String str, String str2, String str3) {
-        b6.m.h(str);
-        this.a = str;
-        b6.m.h(str2);
-        this.b = str2;
-        b6.m.h(str3);
-        this.c = str3;
-    }
-
-    public final boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
+    public f(long j3, a[] aVarArr, int i10, boolean z10) {
+        this.a = j3;
+        this.b = aVarArr;
+        this.d = z10;
+        if (z10) {
+            this.c = i10;
+        } else {
+            this.c = -1;
         }
-        if (!(obj instanceof f)) {
-            return false;
-        }
-        f fVar = (f) obj;
-        return this.a.equals(fVar.a) && b6.m.l(fVar.b, this.b) && b6.m.l(fVar.c, this.c);
-    }
-
-    public final int hashCode() {
-        return this.a.hashCode();
-    }
-
-    public final String toString() {
-        String str = this.a;
-        int i10 = 0;
-        for (char c3 : str.toCharArray()) {
-            i10 += c3;
-        }
-        String trim = str.trim();
-        int length = trim.length();
-        if (length > 25) {
-            trim = trim.substring(0, 10) + "..." + trim.substring(length - 10, length) + "::" + i10;
-        }
-        return android.support.v4.media.a.r(ai.l("Channel{token=", trim, ", nodeId=", this.b, ", path="), this.c, "}");
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 2, this.a);
-        f5.l(parcel, 3, this.b);
-        f5.l(parcel, 4, this.c);
-        f5.r(parcel, q10);
+        int q6 = e0.q(parcel, 20293);
+        e0.s(parcel, 2, 8);
+        parcel.writeLong(this.a);
+        e0.o(parcel, 3, this.b, i10);
+        e0.s(parcel, 4, 4);
+        parcel.writeInt(this.c);
+        e0.s(parcel, 5, 4);
+        parcel.writeInt(this.d ? 1 : 0);
+        e0.r(parcel, q6);
     }
 }

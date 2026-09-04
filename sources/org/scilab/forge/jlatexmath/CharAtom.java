@@ -1,25 +1,25 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class CharAtom extends CharSymbol {
     private final char c;
     private boolean mathMode;
     private String textStyle;
 
-    public CharAtom(char c3, String str, boolean z4) {
-        this.c = c3;
+    public CharAtom(char c10, String str, boolean z10) {
+        this.c = c10;
         this.textStyle = str;
-        this.mathMode = z4;
+        this.mathMode = z10;
     }
 
-    private Char getChar(TeXFont teXFont, int i10, boolean z4) {
-        char c3 = this.c;
-        if (z4 && Character.isLowerCase(c3)) {
-            c3 = Character.toUpperCase(this.c);
+    private Char getChar(TeXFont teXFont, int i10, boolean z10) {
+        char c10 = this.c;
+        if (z10 && Character.isLowerCase(c10)) {
+            c10 = Character.toUpperCase(this.c);
         }
         String str = this.textStyle;
-        return str == null ? teXFont.getDefaultChar(c3, i10) : teXFont.getChar(c3, str, i10);
+        return str == null ? teXFont.getDefaultChar(c10, i10) : teXFont.getChar(c10, str, i10);
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom
@@ -50,7 +50,7 @@ public class CharAtom extends CharSymbol {
         return "CharAtom: '" + this.c + "'";
     }
 
-    public CharAtom(char c3, String str) {
-        this(c3, str, false);
+    public CharAtom(char c10, String str) {
+        this(c10, str, false);
     }
 }

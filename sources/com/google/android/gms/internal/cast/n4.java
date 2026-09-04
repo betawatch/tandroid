@@ -1,57 +1,8 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.Delayed;
-import java.util.concurrent.Future;
-import java.util.concurrent.ScheduledFuture;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.ExecutorService;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class n4 extends j7.x5 implements ScheduledFuture, v8.a, Future {
-    public final f4 b;
-    public final ScheduledFuture c;
-
-    public n4(f4 f4Var, ScheduledFuture scheduledFuture) {
-        this.b = f4Var;
-        this.c = scheduledFuture;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean cancel(boolean z4) {
-        boolean cancel = this.b.cancel(z4);
-        if (cancel) {
-            this.c.cancel(z4);
-        }
-        return cancel;
-    }
-
-    @Override // java.lang.Comparable
-    public final /* bridge */ /* synthetic */ int compareTo(Delayed delayed) {
-        return this.c.compareTo(delayed);
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get() {
-        return this.b.get();
-    }
-
-    @Override // java.util.concurrent.Delayed
-    public final long getDelay(TimeUnit timeUnit) {
-        return this.c.getDelay(timeUnit);
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isCancelled() {
-        return this.b.a instanceof x3;
-    }
-
-    @Override // java.util.concurrent.Future
-    public final boolean isDone() {
-        return this.b.isDone();
-    }
-
-    @Override // java.util.concurrent.Future
-    public final Object get(long j10, TimeUnit timeUnit) {
-        return this.b.get(j10, timeUnit);
-    }
+public interface n4 extends ExecutorService {
 }

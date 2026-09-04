@@ -1,38 +1,21 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.content.Context;
-import android.view.OrientationEventListener;
+import android.content.DialogInterface;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class mu extends OrientationEventListener {
-    public final /* synthetic */ ou a;
+public final class mu implements DialogInterface.OnShowListener {
+    public final /* synthetic */ tu a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public mu(ou ouVar, Context context) {
-        super(context);
-        this.a = ouVar;
+    public mu(tu tuVar) {
+        this.a = tuVar;
     }
 
-    @Override // android.view.OrientationEventListener
-    public final void onOrientationChanged(int i10) {
-        Activity activity;
-        ou ouVar = this.a;
-        e91 e91Var = ouVar.c;
-        if (ouVar.C != null && e91Var.getVisibility() == 0 && (activity = ouVar.r) != null && e91Var.Q && ouVar.J) {
-            if (i10 >= 240 && i10 <= 300) {
-                ouVar.K = true;
-                return;
-            }
-            if (!ouVar.K || i10 <= 0) {
-                return;
-            }
-            if (i10 >= 330 || i10 <= 30) {
-                activity.setRequestedOrientation(ouVar.I);
-                ouVar.J = false;
-                ouVar.K = false;
-            }
+    @Override // android.content.DialogInterface.OnShowListener
+    public final void onShow(DialogInterface dialogInterface) {
+        b91 b91Var = this.a.c;
+        if (eg0.p0.P && b91Var.f()) {
+            b91Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Cells.fa(this, 1));
         }
     }
 }

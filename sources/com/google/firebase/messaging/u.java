@@ -1,42 +1,149 @@
 package com.google.firebase.messaging;
 
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.os.PowerManager;
 import android.util.Log;
-import java.util.Arrays;
-import java.util.regex.Pattern;
+import java.io.IOException;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class u {
-    public static final Pattern d = Pattern.compile("[a-zA-Z0-9-_.~%]{1,900}");
-    public final String a;
-    public final String b;
-    public final String c;
+public final class u implements Runnable {
+    public final /* synthetic */ int a;
+    public final long b;
+    public final Object c;
+    public final Object d;
+    public final Object e;
 
-    public u(String str, String str2) {
-        String str3;
-        if (str2 == null || !str2.startsWith("/topics/")) {
-            str3 = str2;
-        } else {
-            Log.w("FirebaseMessaging", "Format /topics/topic-name is deprecated. Only 'topic-name' should be used in " + str + ".");
-            str3 = str2.substring(8);
-        }
-        if (str3 == null || !d.matcher(str3).matches()) {
-            throw new IllegalArgumentException(android.support.v4.media.a.o("Invalid topic name: ", str3, " does not match the allowed format [a-zA-Z0-9-_.~%]{1,900}."));
-        }
-        this.a = str3;
-        this.b = str;
-        this.c = android.support.v4.media.a.z(str, "!", str2);
+    public u(FirebaseMessaging firebaseMessaging, long j3) {
+        this.a = 0;
+        this.e = new ThreadPoolExecutor(0, 1, 30L, TimeUnit.SECONDS, new LinkedBlockingQueue(), new c5.w("firebase-iid-executor"));
+        this.d = firebaseMessaging;
+        this.b = j3;
+        PowerManager.WakeLock newWakeLock = ((PowerManager) firebaseMessaging.b.getSystemService("power")).newWakeLock(1, "fiid-sync");
+        this.c = newWakeLock;
+        newWakeLock.setReferenceCounted(false);
     }
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof u)) {
+    public boolean a() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) ((FirebaseMessaging) this.d).b.getSystemService("connectivity");
+        NetworkInfo activeNetworkInfo = connectivityManager != null ? connectivityManager.getActiveNetworkInfo() : null;
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
+
+    public boolean b() {
+        try {
+            if (((FirebaseMessaging) this.d).a() == null) {
+                Log.e("FirebaseMessaging", "Token retrieval failed: null");
+                return false;
+            }
+            if (!Log.isLoggable("FirebaseMessaging", 3)) {
+                return true;
+            }
+            Log.d("FirebaseMessaging", "Token successfully retrieved");
+            return true;
+        } catch (IOException e7) {
+            String message = e7.getMessage();
+            if (!"SERVICE_NOT_AVAILABLE".equals(message) && !"INTERNAL_SERVER_ERROR".equals(message) && !"InternalServerError".equals(message)) {
+                if (e7.getMessage() != null) {
+                    throw e7;
+                }
+                Log.w("FirebaseMessaging", "Token retrieval failed without exception message. Will retry token retrieval");
+                return false;
+            }
+            Log.w("FirebaseMessaging", "Token retrieval failed: " + e7.getMessage() + ". Will retry token retrieval");
+            return false;
+        } catch (SecurityException unused) {
+            Log.w("FirebaseMessaging", "Token retrieval failed with SecurityException. Will retry token retrieval");
             return false;
         }
-        u uVar = (u) obj;
-        return this.a.equals(uVar.a) && this.b.equals(uVar.b);
     }
 
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{this.b, this.a});
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                PowerManager.WakeLock wakeLock = (PowerManager.WakeLock) this.c;
+                s b10 = s.b();
+                FirebaseMessaging firebaseMessaging = (FirebaseMessaging) this.d;
+                if (b10.d(firebaseMessaging.b)) {
+                    wakeLock.acquire();
+                }
+                try {
+                    try {
+                        synchronized (firebaseMessaging) {
+                            firebaseMessaging.j = true;
+                        }
+                        if (!firebaseMessaging.i.e()) {
+                            firebaseMessaging.e(false);
+                            if (!s.b().d(firebaseMessaging.b)) {
+                                return;
+                            }
+                        } else if (!s.b().c(firebaseMessaging.b) || a()) {
+                            if (b()) {
+                                firebaseMessaging.e(false);
+                            } else {
+                                firebaseMessaging.f(this.b);
+                            }
+                            if (!s.b().d(firebaseMessaging.b)) {
+                                return;
+                            }
+                        } else {
+                            androidx.mediarouter.app.g gVar = new androidx.mediarouter.app.g();
+                            gVar.b = this;
+                            gVar.a();
+                            if (!s.b().d(firebaseMessaging.b)) {
+                                return;
+                            }
+                        }
+                    } catch (IOException e7) {
+                        Log.e("FirebaseMessaging", "Topic sync or token retrieval failed on hard failure exceptions: " + e7.getMessage() + ". Won't retry the operation.");
+                        firebaseMessaging.e(false);
+                        if (!s.b().d(firebaseMessaging.b)) {
+                            return;
+                        }
+                    }
+                    wakeLock.release();
+                    return;
+                } catch (Throwable th2) {
+                    if (s.b().d(firebaseMessaging.b)) {
+                        wakeLock.release();
+                    }
+                    throw th2;
+                }
+            default:
+                w9.m mVar = (w9.m) this.e;
+                w9.q qVar = mVar.n;
+                if (qVar == null || !qVar.e.get()) {
+                    long j3 = this.b / 1000;
+                    String e10 = mVar.e();
+                    if (e10 == null) {
+                        Log.w("FirebaseCrashlytics", "Tried to write a non-fatal exception while no session was open.", null);
+                        return;
+                    }
+                    n nVar = mVar.m;
+                    Throwable th3 = (Throwable) this.c;
+                    Thread thread = (Thread) this.d;
+                    nVar.getClass();
+                    String concat = "Persisting non-fatal event for session ".concat(e10);
+                    if (Log.isLoggable("FirebaseCrashlytics", 2)) {
+                        Log.v("FirebaseCrashlytics", concat, null);
+                    }
+                    nVar.v(th3, thread, e10, "error", j3, false);
+                    return;
+                }
+                return;
+        }
+    }
+
+    public u(w9.m mVar, long j3, Throwable th2, Thread thread) {
+        this.a = 1;
+        this.e = mVar;
+        this.b = j3;
+        this.c = th2;
+        this.d = thread;
     }
 }

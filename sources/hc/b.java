@@ -1,305 +1,296 @@
 package hc;
 
-import af.d;
-import b4.e0;
-import com.google.android.gms.internal.clearcut.e;
-import fc.f;
-import j7.o8;
-import j7.w7;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.security.Security;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
-import javax.net.ssl.HttpsURLConnection;
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.ui.ai;
-import vh.w2;
+import dc.h;
+import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class b {
-    public static final c a = new c();
+    public static final char[] a = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:".toCharArray();
 
-    public static HttpURLConnection a(String str, e eVar) {
-        Throwable th2;
-        OutputStream outputStream;
-        HttpURLConnection httpURLConnection = (HttpURLConnection) new URL("https://api.stripe.com/v1/tokens").openConnection();
-        httpURLConnection.setConnectTimeout(30000);
-        httpURLConnection.setReadTimeout(80000);
-        httpURLConnection.setUseCaches(false);
-        HashMap hashMap = new HashMap();
-        hashMap.put("Accept-Charset", "UTF-8");
-        hashMap.put("Accept", "application/json");
-        hashMap.put("User-Agent", "Stripe/v1 JavaBindings/3.5.0");
-        hashMap.put("Authorization", "Bearer " + eVar.a);
-        String[] strArr = {"os.name", "os.version", "os.arch", "java.version", "java.vendor", "java.vm.version", "java.vm.vendor"};
-        HashMap hashMap2 = new HashMap();
-        for (int i10 = 0; i10 < 7; i10++) {
-            String str2 = strArr[i10];
-            hashMap2.put(str2, System.getProperty(str2));
-        }
-        hashMap2.put("bindings.version", "3.5.0");
-        hashMap2.put("lang", "Java");
-        hashMap2.put("publisher", "Stripe");
-        hashMap.put("X-Stripe-Client-User-Agent", new JSONObject(hashMap2).toString());
-        for (Map.Entry entry : hashMap.entrySet()) {
-            httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
-        }
-        if (httpURLConnection instanceof HttpsURLConnection) {
-            ((HttpsURLConnection) httpURLConnection).setSSLSocketFactory(a);
-        }
-        httpURLConnection.setDoOutput(true);
-        httpURLConnection.setRequestMethod("POST");
-        httpURLConnection.setRequestProperty("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
-        try {
-            outputStream = httpURLConnection.getOutputStream();
-            try {
-                outputStream.write(str.getBytes("UTF-8"));
-                outputStream.close();
-                return httpURLConnection;
-            } catch (Throwable th3) {
-                th2 = th3;
-                if (outputStream == null) {
-                    throw th2;
-                }
-                outputStream.close();
-                throw th2;
+    public static void a(b4.d dVar, StringBuilder sb2, int i10, boolean z10) {
+        while (i10 > 1) {
+            if (dVar.d() < 11) {
+                throw cc.c.a();
             }
-        } catch (Throwable th4) {
-            th2 = th4;
-            outputStream = null;
+            int e7 = dVar.e(11);
+            sb2.append(f(e7 / 45));
+            sb2.append(f(e7 % 45));
+            i10 -= 2;
         }
-    }
-
-    public static String b(HashMap hashMap) {
-        StringBuilder sb = new StringBuilder();
-        for (a aVar : d(null, hashMap)) {
-            if (sb.length() > 0) {
-                sb.append("&");
+        if (i10 == 1) {
+            if (dVar.d() < 6) {
+                throw cc.c.a();
             }
-            String str = aVar.a;
-            String str2 = aVar.b;
-            sb.append((str == null ? null : URLEncoder.encode(str, "UTF-8")) + "=" + (str2 == null ? null : URLEncoder.encode(str2, "UTF-8")));
+            sb2.append(f(dVar.e(6)));
         }
-        return sb.toString();
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:27:0x0061, code lost:
-    
-        if (r4 == null) goto L30;
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:28:0x0063, code lost:
-    
-        java.security.Security.setProperty("networkaddress.cache.ttl", "-1");
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:29:0x0067, code lost:
-    
-        java.security.Security.setProperty("networkaddress.cache.ttl", r4);
-     */
-    /* JADX WARN: Code restructure failed: missing block: B:38:0x0085, code lost:
-    
-        if (r4 == null) goto L30;
-     */
-    /* JADX WARN: Removed duplicated region for block: B:12:0x0020 A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0089  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static d c(HashMap hashMap, e eVar) {
-        String str;
-        int i10;
-        String str2;
-        String str3;
-        Boolean bool = Boolean.TRUE;
-        d dVar = null;
-        try {
-            str = Security.getProperty("networkaddress.cache.ttl");
-        } catch (SecurityException unused) {
-            str = null;
-        }
-        try {
-            Security.setProperty("networkaddress.cache.ttl", "0");
-        } catch (SecurityException unused2) {
-            bool = Boolean.FALSE;
-            if (!eVar.a.trim().isEmpty()) {
-            }
-        }
-        if (!eVar.a.trim().isEmpty()) {
-            throw new fc.c("No API key provided. (HINT: set your API key using 'Stripe.apiKey = <API-KEY>'. You can generate API keys from the Stripe web interface. See https://stripe.com/api for details or email support@stripe.com if you have questions.", null);
-        }
-        try {
-            e0 f10 = f(hashMap, eVar);
-            i10 = f10.b;
-            str2 = (String) f10.c;
-            Map map = (Map) f10.d;
-            List list = map == null ? null : (List) map.get("Request-Id");
-            str3 = (list == null || list.size() <= 0) ? null : (String) list.get(0);
-        } catch (JSONException unused3) {
-            if (bool.booleanValue()) {
-            }
-        } catch (Throwable th2) {
-            if (bool.booleanValue()) {
-                if (str == null) {
-                    Security.setProperty("networkaddress.cache.ttl", "-1");
-                } else {
-                    Security.setProperty("networkaddress.cache.ttl", str);
-                }
-            }
-            throw th2;
-        }
-        if (i10 < 200 || i10 >= 300) {
-            g(i10, str2, str3);
-            throw null;
-        }
-        dVar = w7.a(str2);
-        if (bool.booleanValue()) {
-        }
-        return dVar;
-    }
-
-    public static LinkedList d(String str, Map map) {
-        LinkedList linkedList = new LinkedList();
-        if (map != null) {
-            for (Map.Entry entry : map.entrySet()) {
-                String str2 = (String) entry.getKey();
-                Object value = entry.getValue();
-                if (str != null) {
-                    str2 = str + "[" + str2 + "]";
-                }
-                linkedList.addAll(e(value, str2));
-            }
-        }
-        return linkedList;
-    }
-
-    public static List e(Object obj, String str) {
-        if (obj instanceof Map) {
-            return d(str, (Map) obj);
-        }
-        if (!(obj instanceof List)) {
-            if ("".equals(obj)) {
-                throw new fc.d(ai.k("You cannot set '", str, "' to an empty string. We interpret empty strings as null in requests. You may set '", str, "' to null to delete the property."), null, null);
-            }
-            if (obj == null) {
-                LinkedList linkedList = new LinkedList();
-                linkedList.add(new a(str, ""));
-                return linkedList;
-            }
-            LinkedList linkedList2 = new LinkedList();
-            linkedList2.add(new a(str, obj.toString()));
-            return linkedList2;
-        }
-        List list = (List) obj;
-        LinkedList linkedList3 = new LinkedList();
-        Iterator it = list.iterator();
-        String k10 = w2.k(str, "[]");
-        if (list.isEmpty()) {
-            linkedList3.add(new a(str, ""));
-            return linkedList3;
-        }
-        while (it.hasNext()) {
-            linkedList3.addAll(e(it.next(), k10));
-        }
-        return linkedList3;
-    }
-
-    /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0081  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public static e0 f(HashMap hashMap, e eVar) {
-        String next;
-        HttpURLConnection httpURLConnection = null;
-        try {
-            String b10 = b(hashMap);
-            try {
-                try {
-                    HttpURLConnection a2 = a(b10, eVar);
-                    try {
-                        int responseCode = a2.getResponseCode();
-                        if (responseCode < 200 || responseCode >= 300) {
-                            InputStream errorStream = a2.getErrorStream();
-                            next = new Scanner(errorStream, "UTF-8").useDelimiter("\\A").next();
-                            errorStream.close();
-                        } else {
-                            InputStream inputStream = a2.getInputStream();
-                            next = new Scanner(inputStream, "UTF-8").useDelimiter("\\A").next();
-                            inputStream.close();
+        if (z10) {
+            for (int length = sb2.length(); length < sb2.length(); length++) {
+                if (sb2.charAt(length) == '%') {
+                    if (length < sb2.length() - 1) {
+                        int i11 = length + 1;
+                        if (sb2.charAt(i11) == '%') {
+                            sb2.deleteCharAt(i11);
                         }
-                        Map<String, List<String>> headerFields = a2.getHeaderFields();
-                        e0 e0Var = new e0((char) 0, 9);
-                        e0Var.b = responseCode;
-                        e0Var.c = next;
-                        e0Var.d = headerFields;
-                        a2.disconnect();
-                        return e0Var;
-                    } catch (IOException e) {
-                        e = e;
-                        throw new fc.a("IOException during API request to Stripe (https://api.stripe.com/v1/tokens): " + e.getMessage() + " Please check your internet connection and try again. If this problem persists, you should check Stripe's service status at https://twitter.com/stripestatus, or let us know at support@stripe.com.", null, e);
                     }
-                } catch (Throwable th2) {
-                    th = th2;
-                    httpURLConnection = b10;
-                    if (httpURLConnection != null) {
-                        httpURLConnection.disconnect();
-                    }
-                    throw th;
+                    sb2.setCharAt(length, (char) 29);
                 }
-            } catch (IOException e6) {
-                e = e6;
-            } catch (Throwable th3) {
-                th = th3;
-                if (httpURLConnection != null) {
-                }
-                throw th;
             }
-        } catch (UnsupportedEncodingException e10) {
-            throw new fc.d("Unable to encode parameters to UTF-8. Please contact support@stripe.com for assistance.", null, e10);
         }
     }
 
-    public static void g(int i10, String str, String str2) {
-        String str3;
-        try {
-            JSONObject jSONObject = new JSONObject(str).getJSONObject("error");
-            o8.a(jSONObject.optString("charge"));
-            o8.a(jSONObject.optString("code"));
-            o8.a(jSONObject.optString("decline_code"));
-            str3 = o8.a(jSONObject.optString("message"));
-            o8.a(jSONObject.optString("param"));
-            o8.a(jSONObject.optString(TeXSymbolParser.TYPE_ATTR));
-        } catch (JSONException unused) {
-            str3 = "An improperly formatted error response was found.";
+    /* JADX WARN: Removed duplicated region for block: B:133:0x0128 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x00bd  */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x00da  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static void b(b4.d dVar, StringBuilder sb2, int i10, dc.c cVar, ArrayList arrayList) {
+        Charset forName;
+        boolean z10;
+        byte b10;
+        if (i10 * 8 > dVar.d()) {
+            throw cc.c.a();
         }
-        if (i10 == 429) {
-            throw new f(str3, str2, null);
+        byte[] bArr = new byte[i10];
+        int i11 = 0;
+        for (int i12 = 0; i12 < i10; i12++) {
+            bArr[i12] = (byte) dVar.e(8);
         }
-        switch (i10) {
-            case 400:
-                throw new fc.d(str3, str2, null);
-            case 401:
-                throw new fc.c(str3, str2);
-            case 402:
-                throw new fc.d(str3, str2, null);
-            case 403:
-                throw new fc.e(str3, str2);
-            case 404:
-                throw new fc.d(str3, str2, null);
-            default:
-                throw new fc.b(str3, str2, null);
+        if (cVar == null) {
+            Charset charset = h.b;
+            boolean z11 = true;
+            if (i10 <= 2 || !(((b10 = bArr[0]) == -2 && bArr[1] == -1) || (b10 == -1 && bArr[1] == -2))) {
+                boolean z12 = charset != null;
+                boolean z13 = i10 > 3 && bArr[0] == -17 && bArr[1] == -69 && bArr[2] == -65;
+                boolean z14 = z12;
+                int i13 = 0;
+                boolean z15 = true;
+                int i14 = 0;
+                int i15 = 0;
+                int i16 = 0;
+                int i17 = 0;
+                int i18 = 0;
+                int i19 = 0;
+                int i20 = 0;
+                int i21 = 0;
+                int i22 = 0;
+                int i23 = 0;
+                while (i15 < i10 && (z11 || z14 || z15)) {
+                    Charset charset2 = charset;
+                    byte b11 = bArr[i15];
+                    boolean z16 = z11;
+                    int i24 = b11 & 255;
+                    if (z15) {
+                        if (i16 <= 0) {
+                            z10 = z15;
+                            if ((b11 & 128) != 0) {
+                                if ((b11 & 64) != 0) {
+                                    int i25 = i16 + 1;
+                                    if ((b11 & 32) == 0) {
+                                        i18++;
+                                    } else {
+                                        i25 = i16 + 2;
+                                        if ((b11 & 16) == 0) {
+                                            i19++;
+                                        } else {
+                                            i16 += 3;
+                                            if ((b11 & 8) == 0) {
+                                                i20++;
+                                            }
+                                        }
+                                    }
+                                    i16 = i25;
+                                }
+                            }
+                        } else if ((b11 & 128) != 0) {
+                            i16--;
+                            if (z16) {
+                                if (i24 > 127 && i24 < 160) {
+                                    z16 = false;
+                                } else if (i24 > 159 && (i24 < 192 || i24 == 215 || i24 == 247)) {
+                                    i21++;
+                                }
+                            }
+                            if (z14) {
+                                if (i17 > 0) {
+                                    if (i24 >= 64 && i24 != 127 && i24 <= 252) {
+                                        i17--;
+                                    }
+                                    z14 = false;
+                                } else {
+                                    if (i24 != 128 && i24 != 160 && i24 <= 239) {
+                                        if (i24 <= 160 || i24 >= 224) {
+                                            if (i24 > 127) {
+                                                i17++;
+                                                int i26 = i22 + 1;
+                                                if (i26 > i13) {
+                                                    i13 = i26;
+                                                    i22 = i13;
+                                                } else {
+                                                    i22 = i26;
+                                                }
+                                            } else {
+                                                i22 = 0;
+                                            }
+                                            i23 = 0;
+                                        } else {
+                                            i14++;
+                                            int i27 = i23 + 1;
+                                            if (i27 > i11) {
+                                                i11 = i27;
+                                                i23 = i11;
+                                            } else {
+                                                i23 = i27;
+                                            }
+                                            i22 = 0;
+                                        }
+                                    }
+                                    z14 = false;
+                                }
+                            }
+                            i15++;
+                            charset = charset2;
+                            z11 = z16;
+                        }
+                        z15 = false;
+                        if (z16) {
+                        }
+                        if (z14) {
+                        }
+                        i15++;
+                        charset = charset2;
+                        z11 = z16;
+                    } else {
+                        z10 = z15;
+                    }
+                    z15 = z10;
+                    if (z16) {
+                    }
+                    if (z14) {
+                    }
+                    i15++;
+                    charset = charset2;
+                    z11 = z16;
+                }
+                Charset charset3 = charset;
+                boolean z17 = z11;
+                boolean z18 = z15;
+                boolean z19 = (!z18 || i16 <= 0) ? z18 : false;
+                boolean z20 = (!z14 || i17 <= 0) ? z14 : false;
+                if (!z19 || (!z13 && i18 + i19 + i20 <= 0)) {
+                    if (!z20 || (!h.d && i11 < 3 && i13 < 3)) {
+                        if (z17 && z20) {
+                            if ((i11 != 2 || i14 != 2) && i21 * 10 < i10) {
+                                forName = StandardCharsets.ISO_8859_1;
+                            }
+                        } else if (z17) {
+                            forName = StandardCharsets.ISO_8859_1;
+                        } else if (!z20) {
+                            forName = z19 ? StandardCharsets.UTF_8 : h.a;
+                        }
+                    }
+                    forName = charset3;
+                } else {
+                    forName = StandardCharsets.UTF_8;
+                }
+            } else {
+                forName = StandardCharsets.UTF_16;
+            }
+        } else {
+            forName = Charset.forName(cVar.name());
         }
+        sb2.append(new String(bArr, forName));
+        arrayList.add(bArr);
+    }
+
+    public static void c(b4.d dVar, StringBuilder sb2, int i10) {
+        if (h.c == null) {
+            throw cc.c.a();
+        }
+        if (i10 * 13 > dVar.d()) {
+            throw cc.c.a();
+        }
+        byte[] bArr = new byte[i10 * 2];
+        int i11 = 0;
+        while (i10 > 0) {
+            int e7 = dVar.e(13);
+            int i12 = (e7 % 96) | ((e7 / 96) << 8);
+            int i13 = i12 + (i12 < 2560 ? 41377 : 42657);
+            bArr[i11] = (byte) ((i13 >> 8) & 255);
+            bArr[i11 + 1] = (byte) (i13 & 255);
+            i11 += 2;
+            i10--;
+        }
+        sb2.append(new String(bArr, h.c));
+    }
+
+    public static void d(b4.d dVar, StringBuilder sb2, int i10) {
+        if (h.b == null) {
+            throw cc.c.a();
+        }
+        if (i10 * 13 > dVar.d()) {
+            throw cc.c.a();
+        }
+        byte[] bArr = new byte[i10 * 2];
+        int i11 = 0;
+        while (i10 > 0) {
+            int e7 = dVar.e(13);
+            int i12 = (e7 % 192) | ((e7 / 192) << 8);
+            int i13 = i12 + (i12 < 7936 ? 33088 : 49472);
+            bArr[i11] = (byte) (i13 >> 8);
+            bArr[i11 + 1] = (byte) i13;
+            i11 += 2;
+            i10--;
+        }
+        sb2.append(new String(bArr, h.b));
+    }
+
+    public static void e(b4.d dVar, StringBuilder sb2, int i10) {
+        while (i10 >= 3) {
+            if (dVar.d() < 10) {
+                throw cc.c.a();
+            }
+            int e7 = dVar.e(10);
+            if (e7 >= 1000) {
+                throw cc.c.a();
+            }
+            sb2.append(f(e7 / 100));
+            sb2.append(f((e7 / 10) % 10));
+            sb2.append(f(e7 % 10));
+            i10 -= 3;
+        }
+        if (i10 == 2) {
+            if (dVar.d() < 7) {
+                throw cc.c.a();
+            }
+            int e10 = dVar.e(7);
+            if (e10 >= 100) {
+                throw cc.c.a();
+            }
+            sb2.append(f(e10 / 10));
+            sb2.append(f(e10 % 10));
+            return;
+        }
+        if (i10 == 1) {
+            if (dVar.d() < 4) {
+                throw cc.c.a();
+            }
+            int e11 = dVar.e(4);
+            if (e11 >= 10) {
+                throw cc.c.a();
+            }
+            sb2.append(f(e11));
+        }
+    }
+
+    public static char f(int i10) {
+        char[] cArr = a;
+        if (i10 < cArr.length) {
+            return cArr[i10];
+        }
+        throw cc.c.a();
     }
 }

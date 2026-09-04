@@ -1,65 +1,79 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
+import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.util.Base64;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DialogObject;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PhotoViewer;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.ConnectionsManager;
+import org.telegram.tgnet.SerializedData;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class r2 implements Runnable {
+public final /* synthetic */ class r2 implements org.telegram.ui.ActionBar.a2 {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ long d;
-    public final /* synthetic */ Utilities.Callback e;
-    public final /* synthetic */ long f;
+    public final /* synthetic */ org.telegram.ui.ActionBar.n2 b;
 
-    public /* synthetic */ r2(int i10, long j10, long j11, Utilities.Callback callback, long j12, int i11) {
-        this.a = i11;
-        this.b = i10;
-        this.c = j10;
-        this.d = j11;
-        this.e = callback;
-        this.f = j12;
+    public /* synthetic */ r2(int i10, org.telegram.ui.ActionBar.n2 n2Var) {
+        this.a = i10;
+        this.b = n2Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    /* JADX WARN: Removed duplicated region for block: B:24:0x0061  */
+    /* JADX WARN: Removed duplicated region for block: B:27:0x0084  */
+    @Override // org.telegram.ui.ActionBar.a2
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        TLRPC.User user;
+        String string;
         switch (this.a) {
             case 0:
-                int i10 = this.b;
-                r2 r2Var = new r2(i10, this.c, this.d, this.e, this.f, 1);
-                if (!lh.t7.y(i10, false).e) {
-                    lh.t7 y10 = lh.t7.y(i10, false);
-                    y10.e = false;
-                    y10.q(false, true, r2Var);
-                    y10.e = true;
-                    break;
-                } else {
-                    r2Var.run();
-                    break;
-                }
+                org.telegram.ui.ActionBar.n2 n2Var = this.b;
+                MessagesController.getInstance(n2Var.getCurrentAccount()).openByUserName("spambot", n2Var, 1);
+                break;
             default:
-                int i11 = this.b;
-                long j10 = lh.t7.y(i11, false).p().amount;
-                long j11 = this.c;
-                Utilities.Callback callback = this.e;
-                long j12 = this.f;
-                if (j10 >= j11) {
-                    callback.run(Long.valueOf(j12));
-                    break;
-                } else {
-                    Activity activity = AndroidUtilities.getActivity();
-                    org.telegram.ui.ActionBar.p2 U = LaunchActivity.U();
-                    org.telegram.ui.ActionBar.f6 bVar = (PhotoViewer.t1().Q1() || (U != null && U.hasShownSheet())) ? new nh.b() : U != null ? U.getResourceProvider() : null;
-                    if (activity != null) {
-                        long j13 = this.d;
-                        new lh.z9(activity, bVar, j11, 13, DialogObject.getShortName(i11, j13), new org.telegram.ui.k6(j12, 1, callback), j13).show();
+                org.telegram.ui.ActionBar.n2 n2Var2 = this.b;
+                int currentAccount = n2Var2.getCurrentAccount();
+                SharedPreferences mainSettings = MessagesController.getMainSettings(currentAccount);
+                long prefIntOrLong = AndroidUtilities.getPrefIntOrLong(mainSettings, "support_id2", 0L);
+                if (prefIntOrLong != 0) {
+                    user = MessagesController.getInstance(currentAccount).getUser(Long.valueOf(prefIntOrLong));
+                    if (user == null && (string = mainSettings.getString("support_user", null)) != null) {
+                        try {
+                            byte[] decode = Base64.decode(string, 0);
+                            if (decode != null) {
+                                SerializedData serializedData = new SerializedData(decode);
+                                TLRPC.User TLdeserialize = TLRPC.User.TLdeserialize(serializedData, serializedData.readInt32(false), false);
+                                if (TLdeserialize != null && TLdeserialize.id == 333000) {
+                                    TLdeserialize = null;
+                                }
+                                serializedData.cleanup();
+                                user = TLdeserialize;
+                            }
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
+                        }
+                    }
+                    if (user == null) {
+                        MessagesController.getInstance(currentAccount).putUser(user, true);
+                        Bundle bundle = new Bundle();
+                        bundle.putLong("user_id", user.id);
+                        n2Var2.presentFragment(new org.telegram.ui.co(bundle));
+                        break;
+                    } else {
+                        org.telegram.ui.ActionBar.b2 b2Var2 = new org.telegram.ui.ActionBar.b2(n2Var2.getParentActivity(), 3, null);
+                        b2Var2.g0 = false;
+                        b2Var2.show();
+                        ConnectionsManager.getInstance(currentAccount).sendRequest(new TLRPC.TL_help_getSupport(), new bi.ga(mainSettings, b2Var2, currentAccount, n2Var2, 3));
                         break;
                     }
+                }
+                user = null;
+                if (user == null) {
                 }
                 break;
         }

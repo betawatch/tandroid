@@ -1,80 +1,93 @@
 package org.telegram.ui;
 
-import android.appwidget.AppWidgetManager;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import java.util.ArrayList;
-import org.scilab.forge.jlatexmath.TeXSymbolParser;
-import org.telegram.messenger.ChatsWidgetProvider;
-import org.telegram.messenger.ContactsWidgetProvider;
-import org.telegram.messenger.MessagesStorage;
+import android.content.Context;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ty extends org.telegram.ui.ActionBar.j {
-    public final /* synthetic */ zy a;
+public final class ty extends FrameLayout {
+    public static final /* synthetic */ int L = 0;
+    public boolean E;
+    public mx F;
+    public hg.m G;
+    public boolean H;
+    public final ww I;
+    public final ww J;
+    public final /* synthetic */ uy K;
+    public qy a;
+    public a5.a b;
+    public xw c;
+    public bx d;
+    public s4.y e;
+    public sy f;
+    public int h;
+    public ax n;
+    public org.telegram.ui.Components.ok0 r;
+    public int s;
+    public int v;
+    public org.telegram.ui.Components.t00 w;
+    public vw x;
+    public org.telegram.ui.Components.qk0 y;
 
-    public ty(zy zyVar) {
-        this.a = zyVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ty(Context context, uy uyVar) {
+        super(context);
+        this.K = uyVar;
+        this.I = new ww(this, 1);
+        this.J = new ww(this, 2);
     }
 
-    @Override // org.telegram.ui.ActionBar.j
-    public final void b(int i10) {
-        int i11;
-        zy zyVar = this.a;
-        int i12 = zyVar.w;
-        ArrayList arrayList = zyVar.e;
-        int i13 = zyVar.x;
-        if (i10 == -1) {
-            if (zyVar.y != null) {
-                zyVar.finishFragment();
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        ((FrameLayout.LayoutParams) this.a.getLayoutParams()).bottomMargin = 0;
+        super.onMeasure(i10, i11);
+    }
+
+    public final boolean p() {
+        int i10 = this.s;
+        return i10 == 0 || i10 == 7 || i10 == 8;
+    }
+
+    public final void q(boolean z10) {
+        if (((org.telegram.ui.ActionBar.n2) this.K).isPaused) {
+            return;
+        }
+        ww wwVar = this.J;
+        if (z10) {
+            AndroidUtilities.cancelRunOnUIThread(wwVar);
+            this.a.setItemAnimator(this.x);
+            wwVar.run();
+        } else {
+            if (this.H) {
                 return;
             }
-            zyVar.Y();
+            this.H = true;
+            if (!this.x.k()) {
+                this.a.setItemAnimator(null);
+            }
+            AndroidUtilities.runOnUIThread(wwVar, 36L);
         }
-        if (i10 != 1 || zyVar.getParentActivity() == null) {
-            return;
+    }
+
+    @Override // android.view.View
+    public void setTranslationX(float f7) {
+        ty tyVar;
+        if (getTranslationX() != f7) {
+            super.setTranslationX(f7);
+            uy uyVar = this.K;
+            if (uyVar.g3 && (tyVar = uyVar.e0[0]) == this) {
+                uyVar.z0.g(Math.abs(tyVar.getTranslationX()) / uyVar.e0[0].getMeasuredWidth(), uyVar.e0[1].h);
+            }
+            uyVar.m3();
         }
-        ArrayList<MessagesStorage.TopicKey> arrayList2 = new ArrayList<>();
-        for (int i14 = 0; i14 < arrayList.size(); i14++) {
-            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i14)).longValue(), 0L));
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        if (getTranslationY() != f7) {
+            this.K.m3();
         }
-        zyVar.getMessagesStorage().putWidgetDialogs(i13, arrayList2);
-        SharedPreferences.Editor edit = zyVar.getParentActivity().getSharedPreferences("shortcut_widget", 0).edit();
-        i11 = ((org.telegram.ui.ActionBar.p2) zyVar).currentAccount;
-        edit.putInt("account" + i13, i11);
-        edit.putInt(TeXSymbolParser.TYPE_ATTR + i13, i12);
-        edit.commit();
-        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(zyVar.getParentActivity());
-        if (i12 == 0) {
-            ChatsWidgetProvider.updateWidget(zyVar.getParentActivity(), appWidgetManager, i13);
-        } else {
-            ContactsWidgetProvider.updateWidget(zyVar.getParentActivity(), appWidgetManager, i13);
-        }
-        c1 c1Var = zyVar.y;
-        if (c1Var == null) {
-            zyVar.Y();
-            return;
-        }
-        int i15 = c1Var.a;
-        Object obj = c1Var.b;
-        switch (i15) {
-            case 25:
-                ChatsWidgetConfigActivity chatsWidgetConfigActivity = (ChatsWidgetConfigActivity) obj;
-                int i16 = ChatsWidgetConfigActivity.C;
-                Intent intent = new Intent();
-                intent.putExtra("appWidgetId", chatsWidgetConfigActivity.B);
-                chatsWidgetConfigActivity.setResult(-1, intent);
-                chatsWidgetConfigActivity.finish();
-                break;
-            default:
-                ContactsWidgetConfigActivity contactsWidgetConfigActivity = (ContactsWidgetConfigActivity) obj;
-                int i17 = ContactsWidgetConfigActivity.C;
-                Intent intent2 = new Intent();
-                intent2.putExtra("appWidgetId", contactsWidgetConfigActivity.B);
-                contactsWidgetConfigActivity.setResult(-1, intent2);
-                contactsWidgetConfigActivity.finish();
-                break;
-        }
+        super.setTranslationY(f7);
     }
 }

@@ -1,45 +1,28 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gg implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ig b;
-    public final /* synthetic */ ph.f3 c;
+import android.content.Context;
 
-    public /* synthetic */ gg(ig igVar, ph.f3 f3Var, int i10) {
-        this.a = i10;
-        this.b = igVar;
-        this.c = f3Var;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class gg extends p41 {
+    public final /* synthetic */ hg h;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gg(hg hgVar, Context context, org.telegram.ui.ActionBar.n2 n2Var, d51 d51Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, n2Var, d51Var, f6Var);
+        this.h = hgVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ig igVar = this.b;
-                ph.f3 f3Var = this.c;
-                igVar.removeView(f3Var);
-                if (igVar.b == f3Var) {
-                    igVar.b = null;
-                    break;
-                }
-                break;
-            case 1:
-                this.b.removeView(this.c);
-                break;
-            case 2:
-                this.b.removeView(this.c);
-                break;
-            default:
-                ig igVar2 = this.b;
-                ph.f3 f3Var2 = this.c;
-                igVar2.removeView(f3Var2);
-                if (igVar2.a == f3Var2) {
-                    igVar2.a = null;
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.p41, org.telegram.ui.ActionBar.f3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.j2
+    public final void dismiss() {
+        super.dismiss();
+        ChatActivityEnterView chatActivityEnterView = this.h.a;
+        if (chatActivityEnterView.Z2 == this) {
+            chatActivityEnterView.Z2 = null;
+        }
+        og ogVar = chatActivityEnterView.Y2;
+        if (ogVar != null) {
+            ogVar.z(false);
         }
     }
 }

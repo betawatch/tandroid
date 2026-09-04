@@ -1,58 +1,16 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import java.util.ArrayList;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ru0 extends org.telegram.ui.Components.z50 {
-    public final /* synthetic */ su0 d;
-
-    public ru0(su0 su0Var) {
-        this.d = su0Var;
-    }
-
-    @Override // org.telegram.ui.Components.go0
-    public final CharSequence d() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(LocaleController.getString("AccDescrVideoQuality", R.string.AccDescrVideoQuality));
-        if (this.d.s.V7 > 0) {
-            sb.append(", ");
-            sb.append(this.d.s.U7 + 1);
-            sb.append(" / ");
-            sb.append(this.d.s.V7);
-        }
-        sb.append(", ");
-        sb.append(this.d.h);
-        sb.append(" – ");
-        sb.append(this.d.n);
-        return sb.toString();
-    }
-
-    @Override // org.telegram.ui.Components.z50
-    public final int i() {
-        return Math.max(0, this.d.s.V7 - 1);
-    }
-
-    @Override // org.telegram.ui.Components.z50
-    public final int j() {
-        return this.d.s.U7;
-    }
-
-    @Override // org.telegram.ui.Components.z50
-    public final void k(int i10) {
-        int max;
-        if (this.d.s.V7 > 0 && (max = Math.max(0, Math.min(this.d.s.V7 - 1, i10))) != this.d.s.U7) {
-            su0 su0Var = this.d;
-            su0Var.r = su0Var.s.U7;
-            this.d.s.U7 = max;
-            this.d.s.R0();
-            this.d.invalidate();
-            int i11 = this.d.s.U7;
-            su0 su0Var2 = this.d;
-            if (i11 != su0Var2.r) {
-                su0Var2.s.p2(1);
-            }
-        }
-    }
+public final class ru0 {
+    public String a;
+    public String b;
+    public MediaController.CropState c;
+    public MediaController.SavedFilterState d;
+    public ArrayList e;
+    public ArrayList f;
+    public long g;
 }

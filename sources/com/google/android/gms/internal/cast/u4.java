@@ -1,106 +1,60 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.AbstractList;
-import java.util.Collection;
-import java.util.List;
-import java.util.RandomAccess;
+import java.util.concurrent.Callable;
+import java.util.concurrent.RunnableFuture;
+import java.util.concurrent.locks.LockSupport;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class u4 extends AbstractList implements j5 {
-    public boolean a;
+public final class u4 extends h4 implements RunnableFuture {
+    public volatile t4 n;
 
-    public u4(boolean z4) {
-        this.a = z4;
+    public u4(Callable callable) {
+        this.n = new t4(this, callable);
     }
 
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean add(Object obj) {
-        i();
-        return super.add(obj);
+    @Override // com.google.android.gms.internal.cast.h4
+    public final String c() {
+        t4 t4Var = this.n;
+        return t4Var != null ? a4.a.p("task=[", t4Var.toString(), "]") : super.c();
     }
 
-    @Override // java.util.AbstractList, java.util.List
-    public boolean addAll(int i10, Collection collection) {
-        i();
-        return super.addAll(i10, collection);
-    }
-
-    @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.util.List
-    public void clear() {
-        i();
-        super.clear();
-    }
-
-    @Override // java.util.AbstractList, java.util.Collection, java.util.List
-    public boolean equals(Object obj) {
-        if (obj == this) {
-            return true;
-        }
-        if (!(obj instanceof List)) {
-            return false;
-        }
-        if (!(obj instanceof RandomAccess)) {
-            return super.equals(obj);
-        }
-        List list = (List) obj;
-        int size = size();
-        if (size != list.size()) {
-            return false;
-        }
-        for (int i10 = 0; i10 < size; i10++) {
-            if (!get(i10).equals(list.get(i10))) {
-                return false;
+    @Override // com.google.android.gms.internal.cast.h4
+    public final void e() {
+        t4 t4Var;
+        Object obj = this.a;
+        if ((obj instanceof z3) && ((z3) obj).a && (t4Var = this.n) != null) {
+            m4 m4Var = t4.d;
+            m4 m4Var2 = t4.c;
+            Runnable runnable = (Runnable) t4Var.get();
+            if (runnable instanceof Thread) {
+                l4 l4Var = new l4(t4Var);
+                l4Var.setExclusiveOwnerThread(Thread.currentThread());
+                if (t4Var.compareAndSet(runnable, l4Var)) {
+                    try {
+                        Thread thread = (Thread) runnable;
+                        thread.interrupt();
+                        if (((Runnable) t4Var.getAndSet(m4Var2)) == m4Var) {
+                            LockSupport.unpark(thread);
+                        }
+                    } catch (Throwable th2) {
+                        if (((Runnable) t4Var.getAndSet(m4Var2)) == m4Var) {
+                            LockSupport.unpark((Thread) runnable);
+                        }
+                        throw th2;
+                    }
+                }
             }
         }
-        return true;
+        this.n = null;
     }
 
-    @Override // java.util.AbstractList, java.util.Collection, java.util.List
-    public int hashCode() {
-        int size = size();
-        int i10 = 1;
-        for (int i11 = 0; i11 < size; i11++) {
-            i10 = (i10 * 31) + get(i11).hashCode();
+    @Override // java.util.concurrent.RunnableFuture, java.lang.Runnable
+    public final void run() {
+        t4 t4Var = this.n;
+        if (t4Var != null) {
+            t4Var.run();
         }
-        return i10;
-    }
-
-    public final void i() {
-        if (!this.a) {
-            throw new UnsupportedOperationException();
-        }
-    }
-
-    @Override // java.util.AbstractList, java.util.List
-    public abstract Object remove(int i10);
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean remove(Object obj) {
-        i();
-        int indexOf = indexOf(obj);
-        if (indexOf == -1) {
-            return false;
-        }
-        remove(indexOf);
-        return true;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean removeAll(Collection collection) {
-        i();
-        return super.removeAll(collection);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final boolean retainAll(Collection collection) {
-        i();
-        return super.retainAll(collection);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public boolean addAll(Collection collection) {
-        i();
-        return super.addAll(collection);
+        this.n = null;
     }
 }

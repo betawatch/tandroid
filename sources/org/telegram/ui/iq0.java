@@ -1,46 +1,76 @@
 package org.telegram.ui;
 
-import android.view.View;
+import android.content.Context;
+import android.graphics.Paint;
+import android.view.ViewGroup;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class iq0 implements org.telegram.ui.Components.tl0 {
-    public final /* synthetic */ mq0 a;
+public final class iq0 extends org.telegram.ui.Components.kl0 {
+    public final Context c;
+    public final /* synthetic */ kq0 d;
 
-    public iq0(mq0 mq0Var) {
-        this.a = mq0Var;
+    public iq0(kq0 kq0Var, Context context) {
+        this.d = kq0Var;
+        this.c = context;
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final void a(boolean z4) {
-        org.telegram.ui.ActionBar.e5 e5Var;
-        mq0 mq0Var = this.a;
-        mq0Var.T = z4 ? 1 : 0;
-        if (z4) {
-            e5Var = ((org.telegram.ui.ActionBar.p2) mq0Var).parentLayout;
-            e5Var.getView().requestDisallowInterceptTouchEvent(true);
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        if (this.d.d != null) {
+            return (int) Math.ceil(r1.size() / r0.f);
         }
-        mq0Var.H.c1(true);
+        return 0;
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final boolean b(int i10) {
-        return this.a.I.j(i10) == 0;
+    @Override // s4.h0
+    public final int j(int i10) {
+        return 0;
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final void c(View view, boolean z4) {
-        if (z4 == this.a.U && (view instanceof org.telegram.ui.Cells.s5)) {
-            org.telegram.ui.Cells.s5 s5Var = (org.telegram.ui.Cells.s5) view;
-            s5Var.w.b(s5Var);
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        org.telegram.ui.Cells.x5 x5Var = (org.telegram.ui.Cells.x5) c1Var.a;
+        kq0 kq0Var = this.d;
+        x5Var.setAlbumsCount(kq0Var.f);
+        int i11 = 0;
+        while (true) {
+            int i12 = kq0Var.f;
+            if (i11 >= i12) {
+                x5Var.requestLayout();
+                return;
+            }
+            int i13 = (i12 * i10) + i11;
+            if (i13 < kq0Var.d.size()) {
+                x5Var.a(i11, (MediaController.AlbumEntry) kq0Var.d.get(i13));
+            } else {
+                x5Var.a(i11, null);
+            }
+            i11++;
         }
     }
 
-    @Override // org.telegram.ui.Components.tl0
-    public final boolean d(int i10) {
-        mq0 mq0Var = this.a;
-        MediaController.AlbumEntry albumEntry = mq0Var.G;
-        return mq0Var.b.containsKey(albumEntry != null ? Integer.valueOf(albumEntry.photos.get(i10).imageId) : ((MediaController.SearchImage) mq0Var.f.get(i10)).id);
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        Context context = this.c;
+        org.telegram.ui.Cells.x5 x5Var = new org.telegram.ui.Cells.x5(context);
+        x5Var.e = new Paint();
+        x5Var.b = new MediaController.AlbumEntry[4];
+        x5Var.a = new org.telegram.ui.Cells.v5[4];
+        for (int i11 = 0; i11 < 4; i11++) {
+            x5Var.a[i11] = new org.telegram.ui.Cells.v5(x5Var, context);
+            x5Var.addView(x5Var.a[i11]);
+            x5Var.a[i11].setVisibility(4);
+            x5Var.a[i11].setTag(Integer.valueOf(i11));
+            x5Var.a[i11].setOnClickListener(new org.telegram.ui.Cells.a(x5Var, 9));
+        }
+        x5Var.setDelegate(new vl0(this, 1));
+        return new org.telegram.ui.Components.vk0(x5Var);
     }
 }

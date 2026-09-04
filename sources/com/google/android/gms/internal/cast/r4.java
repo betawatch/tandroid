@@ -1,107 +1,29 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.concurrent.Callable;
-import java.util.concurrent.atomic.AtomicReference;
-import java.util.concurrent.locks.LockSupport;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class r4 extends AtomicReference implements Runnable {
-    public static final k4 c = new k4();
-    public static final k4 d = new k4();
-    public final Callable a;
-    public final /* synthetic */ s4 b;
+public final class r4 extends h4 implements Runnable {
+    public final Runnable n;
 
-    public r4(s4 s4Var, Callable callable) {
-        this.b = s4Var;
-        callable.getClass();
-        this.a = callable;
+    public r4(Runnable runnable) {
+        runnable.getClass();
+        this.n = runnable;
     }
 
-    public final void a(Thread thread) {
-        Runnable runnable = (Runnable) get();
-        j4 j4Var = null;
-        boolean z4 = false;
-        int i10 = 0;
-        while (true) {
-            boolean z10 = runnable instanceof j4;
-            k4 k4Var = d;
-            if (!z10) {
-                if (runnable != k4Var) {
-                    break;
-                }
-            } else {
-                j4Var = (j4) runnable;
-            }
-            i10++;
-            if (i10 <= 1000) {
-                Thread.yield();
-            } else if (runnable == k4Var || compareAndSet(runnable, k4Var)) {
-                z4 = Thread.interrupted() || z4;
-                LockSupport.park(j4Var);
-            }
-            runnable = (Runnable) get();
-        }
-        if (z4) {
-            thread.interrupt();
-        }
+    @Override // com.google.android.gms.internal.cast.h4
+    public final String c() {
+        return a4.a.p("task=[", this.n.toString(), "]");
     }
 
     @Override // java.lang.Runnable
     public final void run() {
-        Object call;
-        Thread currentThread = Thread.currentThread();
-        if (compareAndSet(null, currentThread)) {
-            s4 s4Var = this.b;
-            boolean isDone = s4Var.isDone();
-            k4 k4Var = c;
-            if (isDone) {
-                call = null;
-            } else {
-                try {
-                    call = this.a.call();
-                } catch (Throwable th2) {
-                    try {
-                        if (th2 instanceof InterruptedException) {
-                            Thread.currentThread().interrupt();
-                        }
-                        if (!compareAndSet(currentThread, k4Var)) {
-                            a(currentThread);
-                        }
-                        if (f4.f.e(s4Var, null, new y3(th2))) {
-                            f4.g(s4Var);
-                            return;
-                        }
-                        return;
-                    } catch (Throwable th3) {
-                        if (!compareAndSet(currentThread, k4Var)) {
-                            a(currentThread);
-                        }
-                        if (f4.f.e(s4Var, null, f4.h)) {
-                            f4.g(s4Var);
-                        }
-                        throw th3;
-                    }
-                }
+        try {
+            this.n.run();
+        } catch (Error | RuntimeException e7) {
+            if (h4.f.f(this, null, new a4(e7))) {
+                h4.h(this);
             }
-            if (!compareAndSet(currentThread, k4Var)) {
-                a(currentThread);
-            }
-            if (isDone) {
-                return;
-            }
-            if (call == null) {
-                call = f4.h;
-            }
-            if (f4.f.e(s4Var, null, call)) {
-                f4.g(s4Var);
-            }
+            throw e7;
         }
-    }
-
-    @Override // java.util.concurrent.atomic.AtomicReference
-    public final String toString() {
-        Runnable runnable = (Runnable) get();
-        return android.support.v4.media.a.z(runnable == c ? "running=[DONE]" : runnable instanceof j4 ? "running=[INTERRUPTED]" : runnable instanceof Thread ? android.support.v4.media.a.o("running=[RUNNING ON ", ((Thread) runnable).getName(), "]") : "running=[NOT STARTED YET]", ", ", this.a.toString());
     }
 }

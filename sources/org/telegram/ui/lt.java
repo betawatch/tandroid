@@ -1,26 +1,38 @@
 package org.telegram.ui;
 
+import android.view.View;
 import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class lt extends org.telegram.ui.ActionBar.p1 {
-    public final /* synthetic */ nt o;
+public final class lt extends org.telegram.ui.ActionBar.n1 {
+    public final /* synthetic */ ot o;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lt(nt ntVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
+    public lt(ot otVar, ActionBarPopupWindow$ActionBarPopupWindowLayout actionBarPopupWindow$ActionBarPopupWindowLayout) {
         super(actionBarPopupWindow$ActionBarPopupWindowLayout, -2, -2);
-        this.o = ntVar;
+        this.o = otVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.p1, android.widget.PopupWindow
+    @Override // org.telegram.ui.ActionBar.n1, android.widget.PopupWindow
     public final void dismiss() {
         d(true);
-        rt rtVar = this.o.a;
-        rtVar.k = null;
-        rtVar.K = false;
-        if (rtVar.R) {
-            rtVar.n();
+        st stVar = this.o.a;
+        stVar.k = null;
+        stVar.K = false;
+        if (stVar.R) {
+            stVar.n();
+        }
+        View view = stVar.h;
+        if (view != null) {
+            if (view instanceof org.telegram.ui.Cells.f8) {
+                ((org.telegram.ui.Cells.f8) view).setScaled(false);
+            } else if (view instanceof org.telegram.ui.Cells.d8) {
+                ((org.telegram.ui.Cells.d8) view).setScaled(false);
+            } else if (view instanceof org.telegram.ui.Cells.e2) {
+                ((org.telegram.ui.Cells.e2) view).setScaled(false);
+            }
+            stVar.h = null;
         }
     }
 }

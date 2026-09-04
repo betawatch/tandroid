@@ -9,10 +9,10 @@ public final class r5 extends x {
     public final /* synthetic */ long t;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public r5(z zVar, int i10, long j10, long j11) {
+    public r5(z zVar, int i10, long j3, long j10) {
         super(zVar, i10);
-        this.s = j10;
-        this.t = j11;
+        this.s = j3;
+        this.t = j10;
     }
 
     @Override // j$.util.stream.a
@@ -20,30 +20,30 @@ public final class r5 extends x {
         long k02 = aVar.k0(spliterator);
         if (k02 > 0 && spliterator.hasCharacteristics(16384)) {
             j$.util.u0 u0Var = (j$.util.u0) aVar.H0(spliterator);
-            long j10 = this.s;
-            return new l7(u0Var, j10, t3.Z(j10, this.t));
+            long j3 = this.s;
+            return new l7(u0Var, j3, t3.Z(j3, this.t));
         }
         if (v6.ORDERED.m(aVar.m)) {
             return ((e2) new t5(this, aVar, spliterator, new a1(23), this.s, this.t).invoke()).spliterator();
         }
         j$.util.u0 u0Var2 = (j$.util.u0) aVar.H0(spliterator);
-        long j11 = this.s;
-        long j12 = this.t;
-        if (j11 <= k02) {
-            long j13 = k02 - j11;
-            if (j12 >= 0) {
-                j13 = Math.min(j12, j13);
+        long j10 = this.s;
+        long j11 = this.t;
+        if (j10 <= k02) {
+            long j12 = k02 - j10;
+            if (j11 >= 0) {
+                j12 = Math.min(j11, j12);
             }
-            j12 = j13;
-            j11 = 0;
+            j11 = j12;
+            j10 = 0;
         }
-        return new r7(u0Var2, j11, j12);
+        return new r7(u0Var2, j10, j11);
     }
 
     @Override // j$.util.stream.a
     public final e2 N0(t3 t3Var, Spliterator spliterator, IntFunction intFunction) {
+        long j3;
         long j10;
-        long j11;
         long k02 = t3Var.k0(spliterator);
         if (k02 > 0 && spliterator.hasCharacteristics(16384)) {
             a aVar = (a) t3Var;
@@ -54,17 +54,17 @@ public final class r5 extends x {
         }
         if (!v6.ORDERED.m(((a) t3Var).m)) {
             j$.util.u0 u0Var = (j$.util.u0) t3Var.H0(spliterator);
-            long j12 = this.s;
-            long j13 = this.t;
-            if (j12 <= k02) {
-                long j14 = k02 - j12;
-                j10 = j13 >= 0 ? Math.min(j13, j14) : j14;
-                j11 = 0;
+            long j11 = this.s;
+            long j12 = this.t;
+            if (j11 <= k02) {
+                long j13 = k02 - j11;
+                j3 = j12 >= 0 ? Math.min(j12, j13) : j13;
+                j10 = 0;
             } else {
-                j10 = j13;
-                j11 = j12;
+                j3 = j12;
+                j10 = j11;
             }
-            return t3.b0(this, new r7(u0Var, j11, j10), true);
+            return t3.b0(this, new r7(u0Var, j10, j3), true);
         }
         return (e2) new t5(this, t3Var, spliterator, intFunction, this.s, this.t).invoke();
     }

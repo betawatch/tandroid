@@ -1,7 +1,7 @@
 package com.google.android.gms.tasks;
 
 import android.os.Looper;
-import b6.m;
+import d8.a;
 import j$.util.Objects;
 import java.util.Arrays;
 import java.util.Collection;
@@ -14,9 +14,9 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-import r7.a;
+import n6.l;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class Tasks {
     private Tasks() {
@@ -30,7 +30,7 @@ public final class Tasks {
         if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
             throw new IllegalStateException("Must not be called on GoogleApiHandler thread.");
         }
-        m.i(task, "Task must not be null");
+        l.i(task, "Task must not be null");
         if (task.isComplete()) {
             return (TResult) zza(task);
         }
@@ -90,10 +90,10 @@ public final class Tasks {
         return whenAllSuccess(TaskExecutors.MAIN_THREAD, collection);
     }
 
-    public static <T> Task<T> withTimeout(Task<T> task, long j10, TimeUnit timeUnit) {
-        m.i(task, "Task must not be null");
-        m.a("Timeout must be positive", j10 > 0);
-        m.i(timeUnit, "TimeUnit must not be null");
+    public static <T> Task<T> withTimeout(Task<T> task, long j3, TimeUnit timeUnit) {
+        l.i(task, "Task must not be null");
+        l.a("Timeout must be positive", j3 > 0);
+        l.i(timeUnit, "TimeUnit must not be null");
         final zzb zzbVar = new zzb();
         final TaskCompletionSource taskCompletionSource = new TaskCompletionSource(zzbVar);
         final a aVar = new a(Looper.getMainLooper());
@@ -102,7 +102,7 @@ public final class Tasks {
             public final void run() {
                 TaskCompletionSource.this.trySetException(new TimeoutException());
             }
-        }, timeUnit.toMillis(j10));
+        }, timeUnit.toMillis(j3));
         task.addOnCompleteListener(new OnCompleteListener() { // from class: com.google.android.gms.tasks.zzy
             @Override // com.google.android.gms.tasks.OnCompleteListener
             public final void onComplete(Task task2) {
@@ -143,8 +143,8 @@ public final class Tasks {
 
     @Deprecated
     public static <TResult> Task<TResult> call(Executor executor, Callable<TResult> callable) {
-        m.i(executor, "Executor must not be null");
-        m.i(callable, "Callback must not be null");
+        l.i(executor, "Executor must not be null");
+        l.i(callable, "Callback must not be null");
         zzw zzwVar = new zzw();
         executor.execute(new zzz(zzwVar, callable));
         return zzwVar;
@@ -193,20 +193,20 @@ public final class Tasks {
         return forResult(null);
     }
 
-    public static <TResult> TResult await(Task<TResult> task, long j10, TimeUnit timeUnit) {
+    public static <TResult> TResult await(Task<TResult> task, long j3, TimeUnit timeUnit) {
         if (Looper.getMainLooper() != Looper.myLooper()) {
             Looper myLooper = Looper.myLooper();
             if (myLooper != null && Objects.equals(myLooper.getThread().getName(), "GoogleApiHandler")) {
                 throw new IllegalStateException("Must not be called on GoogleApiHandler thread.");
             }
-            m.i(task, "Task must not be null");
-            m.i(timeUnit, "TimeUnit must not be null");
+            l.i(task, "Task must not be null");
+            l.i(timeUnit, "TimeUnit must not be null");
             if (task.isComplete()) {
                 return (TResult) zza(task);
             }
             zzad zzadVar = new zzad(null);
             zzb(task, zzadVar);
-            if (zzadVar.zzb(j10, timeUnit)) {
+            if (zzadVar.zzb(j3, timeUnit)) {
                 return (TResult) zza(task);
             }
             throw new TimeoutException("Timed out waiting for Task");

@@ -1,16 +1,52 @@
 package r3;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class d {
-    public static final d d = new d(-3, -9223372036854775807L, -1);
-    public final int a;
-    public final long b;
-    public final long c;
+import b2.m0;
+import b2.o0;
+import b2.s;
 
-    public d(int i10, long j10, long j11) {
-        this.a = i10;
-        this.b = j10;
-        this.c = j11;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class d implements o0 {
+    public final float a;
+    public final int b;
+
+    public d(float f7, int i10) {
+        this.a = f7;
+        this.b = i10;
+    }
+
+    @Override // b2.o0
+    public final /* synthetic */ s a() {
+        return null;
+    }
+
+    @Override // b2.o0
+    public final /* synthetic */ byte[] c() {
+        return null;
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj != null && d.class == obj.getClass()) {
+            d dVar = (d) obj;
+            if (this.a == dVar.a && this.b == dVar.b) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return ((Float.valueOf(this.a).hashCode() + 527) * 31) + this.b;
+    }
+
+    public final String toString() {
+        return "smta: captureFrameRate=" + this.a + ", svcTemporalLayerCount=" + this.b;
+    }
+
+    @Override // b2.o0
+    public final /* synthetic */ void b(m0 m0Var) {
     }
 }

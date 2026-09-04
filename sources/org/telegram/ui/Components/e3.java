@@ -1,26 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.app.Activity;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class e3 extends FrameLayout {
-    public final /* synthetic */ org.telegram.ui.Cells.y1[] a;
+public final /* synthetic */ class e3 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public e3(Activity activity, org.telegram.ui.Cells.y1[] y1VarArr) {
-        super(activity);
-        this.a = y1VarArr;
+    public /* synthetic */ e3(org.telegram.ui.ActionBar.f3 f3Var, int i10) {
+        this.a = i10;
+        this.b = f3Var;
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        org.telegram.ui.Cells.y1[] y1VarArr = this.a;
-        if (y1VarArr[0] != null) {
-            setMeasuredDimension(getMeasuredWidth(), AndroidUtilities.dp(7.0f) + y1VarArr[0].getMeasuredHeight() + getMeasuredHeight());
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.dismiss();
+                break;
+            case 1:
+                org.telegram.ui.ActionBar.n2 R = LaunchActivity.R();
+                if (R != null) {
+                    R.presentFragment(new PremiumPreviewFragment(0, "contact"));
+                    this.b.dismiss();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.dismiss();
+                break;
+            default:
+                this.b.dismiss();
+                break;
         }
     }
 }

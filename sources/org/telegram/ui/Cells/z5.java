@@ -10,10 +10,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.wl;
 import org.telegram.ui.Components.Switch;
-import org.telegram.ui.Components.sb0;
+import org.telegram.ui.Components.rb0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class z5 extends FrameLayout {
     public final TextView a;
@@ -31,43 +32,43 @@ public final class z5 extends FrameLayout {
         this.c = imageView;
         imageView.setFocusable(false);
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        addView(imageView, k7.b6.d(28, 28.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 16.0f, 18.0f, 9.0f));
+        addView(imageView, w7.x5.d(28, 28.0f, (LocaleController.isRTL ? 5 : 3) | 48, 18.0f, 16.0f, 18.0f, 9.0f));
         TextView textView = new TextView(context);
         this.a = textView;
-        org.telegram.ui.b.l(org.telegram.ui.ActionBar.j6.G6, f6Var, textView, 1, 16.0f);
+        wl.n(org.telegram.ui.ActionBar.j6.G6, f6Var, textView, 1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
         textView.setSingleLine(true);
         textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        boolean z4 = LocaleController.isRTL;
-        addView(textView, k7.b6.d(-1, -2.0f, (z4 ? 5 : 3) | 48, z4 ? 66.0f : 64.0f, 8.0f, z4 ? 64.0f : 66.0f, 0.0f));
+        boolean z10 = LocaleController.isRTL;
+        addView(textView, w7.x5.d(-1, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 66.0f : 64.0f, 8.0f, z10 ? 64.0f : 66.0f, 0.0f));
         TextView textView2 = new TextView(context);
         this.b = textView2;
-        org.telegram.ui.b.l(org.telegram.ui.ActionBar.j6.z6, f6Var, textView2, 1, 13.0f);
+        wl.n(org.telegram.ui.ActionBar.j6.z6, f6Var, textView2, 1, 13.0f);
         textView2.setGravity(LocaleController.isRTL ? 5 : 3);
         textView2.setLines(0);
         textView2.setMaxLines(0);
         textView2.setSingleLine(false);
         textView2.setEllipsize(null);
         textView2.setLineSpacing(AndroidUtilities.dp(1.66f), 1.0f);
-        boolean z10 = LocaleController.isRTL;
-        addView(textView2, k7.b6.d(-2, -2.0f, (z10 ? 5 : 3) | 48, z10 ? 66.0f : 64.0f, 31.0f, z10 ? 64.0f : 66.0f, 10.0f));
+        boolean z11 = LocaleController.isRTL;
+        addView(textView2, w7.x5.d(-2, -2.0f, (z11 ? 5 : 3) | 48, z11 ? 66.0f : 64.0f, 31.0f, z11 ? 64.0f : 66.0f, 10.0f));
         Switch r32 = new Switch(context, f6Var);
         this.d = r32;
         int i10 = org.telegram.ui.ActionBar.j6.M6;
         int i11 = org.telegram.ui.ActionBar.j6.N6;
         int i12 = org.telegram.ui.ActionBar.j6.d6;
         r32.d(i10, i11, i12, i12);
-        addView(r32, k7.b6.d(37, 40.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 10.0f, 19.0f, 0.0f));
+        addView(r32, w7.x5.d(37, 40.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 10.0f, 19.0f, 0.0f));
         r32.setFocusable(false);
     }
 
-    public final void a(String str, String str2, int i10, int i11, boolean z4) {
+    public final void a(String str, String str2, int i10, int i11, boolean z10) {
         this.a.setText(str);
         org.telegram.ui.ActionBar.f6 f6Var = this.h;
         boolean a2 = f6Var != null ? f6Var.a() : org.telegram.ui.ActionBar.j6.I.q();
-        sb0 sb0Var = new sb0(1);
+        rb0 rb0Var = new rb0(1);
         int i12 = -14899731;
         switch (i10) {
             case 1:
@@ -138,14 +139,14 @@ public final class z5 extends FrameLayout {
             default:
                 throw null;
         }
-        sb0Var.b(i12, i13);
-        sb0Var.b = a2;
+        rb0Var.b(i12, i13);
+        rb0Var.b = a2;
         ImageView imageView = this.c;
-        imageView.setBackground(sb0Var);
+        imageView.setBackground(rb0Var);
         imageView.setImageResource(i11);
-        boolean z10 = this.e;
+        boolean z11 = this.e;
         Switch r02 = this.d;
-        r02.b(0, z4, z10);
+        r02.b(0, z10, z11);
         this.b.setText(str2);
         r02.setContentDescription(str);
     }
@@ -174,28 +175,28 @@ public final class z5 extends FrameLayout {
     public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         accessibilityNodeInfo.setClassName("android.widget.Switch");
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.a.getText());
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.a.getText());
         TextView textView = this.b;
         if (textView != null && !TextUtils.isEmpty(textView.getText())) {
-            sb.append("\n");
-            sb.append(textView.getText());
+            sb2.append("\n");
+            sb2.append(textView.getText());
         }
-        accessibilityNodeInfo.setContentDescription(sb);
+        accessibilityNodeInfo.setContentDescription(sb2);
         accessibilityNodeInfo.setCheckable(true);
         accessibilityNodeInfo.setChecked(this.d.h);
     }
 
-    public void setAnimationsEnabled(boolean z4) {
-        this.e = z4;
+    public void setAnimationsEnabled(boolean z10) {
+        this.e = z10;
     }
 
-    public void setChecked(boolean z4) {
-        this.d.b(0, z4, true);
+    public void setChecked(boolean z10) {
+        this.d.b(0, z10, true);
     }
 
-    public void setDivider(boolean z4) {
-        this.f = z4;
+    public void setDivider(boolean z10) {
+        this.f = z10;
         invalidate();
     }
 

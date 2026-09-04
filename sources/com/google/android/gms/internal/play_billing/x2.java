@@ -2,7 +2,7 @@ package com.google.android.gms.internal.play_billing;
 
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class x2 {
     public static final x2 f = new x2(0, new int[0], new Object[0], false);
@@ -12,11 +12,11 @@ public final class x2 {
     public int d = -1;
     public boolean e;
 
-    public x2(int i10, int[] iArr, Object[] objArr, boolean z4) {
+    public x2(int i10, int[] iArr, Object[] objArr, boolean z10) {
         this.a = i10;
         this.b = iArr;
         this.c = objArr;
-        this.e = z4;
+        this.e = z10;
     }
 
     public static x2 b() {
@@ -25,7 +25,7 @@ public final class x2 {
 
     public final int a() {
         int b10;
-        int c3;
+        int c10;
         int b11;
         int i10 = this.d;
         if (i10 != -1) {
@@ -44,12 +44,12 @@ public final class x2 {
                     int i16 = i14 << 3;
                     l1 l1Var = (l1) this.c[i12];
                     int b12 = m1.b(i16);
-                    int o10 = l1Var.o();
-                    i11 = m1.b(o10) + o10 + b12 + i11;
+                    int o9 = l1Var.o();
+                    i11 = m1.b(o9) + o9 + b12 + i11;
                 } else if (i15 == 3) {
                     int b13 = m1.b(i14 << 3);
                     b10 = b13 + b13;
-                    c3 = ((x2) this.c[i12]).a();
+                    c10 = ((x2) this.c[i12]).a();
                 } else {
                     if (i15 != 5) {
                         throw new IllegalStateException(new b2());
@@ -62,9 +62,9 @@ public final class x2 {
                 int i17 = i14 << 3;
                 long longValue = ((Long) this.c[i12]).longValue();
                 b10 = m1.b(i17);
-                c3 = m1.c(longValue);
+                c10 = m1.c(longValue);
             }
-            i11 = c3 + b10 + i11;
+            i11 = c10 + b10 + i11;
         }
         this.d = i11;
         return i11;

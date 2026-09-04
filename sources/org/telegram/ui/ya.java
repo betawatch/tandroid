@@ -1,17 +1,17 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ya implements kf.d0, org.telegram.ui.Components.xk0 {
+public final /* synthetic */ class ya implements yf.b0, org.telegram.ui.Components.nk0 {
     public final /* synthetic */ ub a;
 
-    @Override // kf.d0
+    @Override // yf.b0
     public void a(int i10) {
         ub.X(this.a, i10);
     }
 
-    @Override // org.telegram.ui.Components.xk0
-    public void e() {
+    @Override // org.telegram.ui.Components.nk0
+    public void b() {
         this.a.d1();
     }
 }

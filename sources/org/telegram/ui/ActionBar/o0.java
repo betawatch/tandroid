@@ -1,52 +1,36 @@
 package org.telegram.ui.ActionBar;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.View;
-import java.util.ArrayList;
+import android.transition.Transition;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class o0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ w0 c;
+public final class o0 implements Transition.TransitionListener {
+    public final /* synthetic */ v0 a;
 
-    public /* synthetic */ o0(w0 w0Var, ArrayList arrayList, int i10) {
-        this.a = i10;
-        this.c = w0Var;
-        this.b = arrayList;
+    public o0(v0 v0Var) {
+        this.a = v0Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                w0 w0Var = this.c;
-                w0Var.C.setAlpha(0.0f);
-                int i10 = 0;
-                while (true) {
-                    ArrayList arrayList = this.b;
-                    if (i10 >= arrayList.size()) {
-                        w0Var.C.setVisibility(8);
-                        break;
-                    } else {
-                        ((View) arrayList.get(i10)).setAlpha(1.0f);
-                        i10++;
-                    }
-                }
-            default:
-                this.c.C.setAlpha(1.0f);
-                int i11 = 0;
-                while (true) {
-                    ArrayList arrayList2 = this.b;
-                    if (i11 >= arrayList2.size()) {
-                        break;
-                    } else {
-                        ((View) arrayList2.get(i11)).setAlpha(0.0f);
-                        i11++;
-                    }
-                }
-        }
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionCancel(Transition transition) {
+        this.a.i0.unlock();
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionEnd(Transition transition) {
+        this.a.i0.unlock();
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionStart(Transition transition) {
+        this.a.i0.lock();
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionPause(Transition transition) {
+    }
+
+    @Override // android.transition.Transition.TransitionListener
+    public final void onTransitionResume(Transition transition) {
     }
 }

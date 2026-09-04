@@ -3,7 +3,7 @@ package com.google.android.gms.internal.play_billing;
 import java.util.Iterator;
 import java.util.Set;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class t extends o implements Set, j$.util.Set {
     public transient r b;
@@ -42,9 +42,9 @@ public abstract class t extends o implements Set, j$.util.Set {
         if (rVar != null) {
             return rVar;
         }
-        r s6 = s();
-        this.b = s6;
-        return s6;
+        r s10 = s();
+        this.b = s10;
+        return s10;
     }
 
     public r s() {

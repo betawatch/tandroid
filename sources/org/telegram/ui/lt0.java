@@ -1,17 +1,29 @@
 package org.telegram.ui;
 
 import android.content.Context;
-import android.graphics.Bitmap;
-import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class lt0 extends dg.q1 {
-    public final /* synthetic */ PhotoViewer H;
+public final class lt0 extends org.telegram.ui.Components.n71 {
+    public final /* synthetic */ PhotoViewer h0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lt0(PhotoViewer photoViewer, Context context, int i10, Bitmap bitmap, Bitmap bitmap2, int i11, MediaController.CropState cropState) {
-        super(context, i10, bitmap, bitmap2, i11, cropState);
-        this.H = photoViewer;
+    public lt0(PhotoViewer photoViewer, Context context, qr0 qr0Var) {
+        super(context, qr0Var);
+        this.h0 = photoViewer;
+    }
+
+    @Override // android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        PhotoViewer.X(this.h0);
+    }
+
+    @Override // android.view.View
+    public final void setVisibility(int i10) {
+        super.setVisibility(i10);
+        if (i10 == 0) {
+            PhotoViewer.X(this.h0);
+        }
     }
 }

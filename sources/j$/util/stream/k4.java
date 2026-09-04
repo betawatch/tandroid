@@ -18,7 +18,7 @@ public final class k4 implements o4, h5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void accept(long j10) {
+    public final /* synthetic */ void accept(long j3) {
         t3.K();
         throw null;
     }
@@ -65,7 +65,7 @@ public final class k4 implements o4, h5 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         this.a = true;
         this.b = 0;
     }

@@ -1,24 +1,24 @@
 package com.google.android.recaptcha.internal;
 
 import android.content.Context;
-import bd.a;
-import j7.e0;
-import j7.f0;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
+import pd.a;
+import w7.h6;
+import w7.i6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzdl {
     public zzdl(Context context) {
     }
 
     public static final byte[] zza(File file) {
-        j.e(file, "<this>");
+        i.e(file, "<this>");
         FileInputStream fileInputStream = new FileInputStream(file);
         try {
             long length = file.length();
@@ -39,20 +39,20 @@ public final class zzdl {
             }
             if (i11 > 0) {
                 bArr = Arrays.copyOf(bArr, i12);
-                j.d(bArr, "copyOf(...)");
+                i.d(bArr, "copyOf(...)");
             } else {
                 int read2 = fileInputStream.read();
                 if (read2 != -1) {
                     a aVar = new a(8193);
                     aVar.write(read2);
-                    e0.a(fileInputStream, aVar);
+                    h6.a(fileInputStream, aVar);
                     int size = aVar.size() + i10;
                     if (size < 0) {
                         throw new OutOfMemoryError("File " + file + " is too big to fit in memory.");
                     }
                     byte[] a2 = aVar.a();
                     bArr = Arrays.copyOf(bArr, size);
-                    j.d(bArr, "copyOf(...)");
+                    i.d(bArr, "copyOf(...)");
                     System.arraycopy(a2, 0, bArr, i10, aVar.size());
                 }
             }
@@ -62,7 +62,7 @@ public final class zzdl {
             try {
                 throw th2;
             } catch (Throwable th3) {
-                f0.a(fileInputStream, th2);
+                i6.a(fileInputStream, th2);
                 throw th3;
             }
         }
@@ -72,7 +72,7 @@ public final class zzdl {
         if (file.exists() && !file.delete()) {
             throw new IOException("Unable to delete existing encrypted file");
         }
-        j.e(array, "array");
+        i.e(array, "array");
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         try {
             fileOutputStream.write(array);

@@ -25,11 +25,10 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.regex.Pattern;
 import java.util.zip.CRC32;
-import k7.s6;
-import kf.k0;
 import org.chromium.support_lib_boundary.WebViewProviderFactoryBoundaryInterface;
+import w7.x6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class g {
     public static final String[] E;
@@ -140,25 +139,54 @@ public final class g {
         if (file == null) {
             throw new NullPointerException("file cannot be null");
         }
-        n(file.getAbsolutePath());
+        o(file.getAbsolutePath());
     }
 
-    public static ByteOrder s(b bVar) {
+    public static ByteOrder t(b bVar) {
         short readShort = bVar.readShort();
-        boolean z4 = m;
+        boolean z10 = m;
         if (readShort == 18761) {
-            if (z4) {
+            if (z10) {
                 Log.d("ExifInterface", "readExifSegment: Byte Align II");
             }
             return ByteOrder.LITTLE_ENDIAN;
         }
         if (readShort == 19789) {
-            if (z4) {
+            if (z10) {
                 Log.d("ExifInterface", "readExifSegment: Byte Align MM");
             }
             return ByteOrder.BIG_ENDIAN;
         }
         throw new IOException("Invalid byte order: " + Integer.toHexString(readShort));
+    }
+
+    public final void A() {
+        y(0, 5);
+        y(0, 4);
+        y(5, 4);
+        HashMap[] hashMapArr = this.e;
+        c cVar = (c) hashMapArr[1].get("PixelXDimension");
+        c cVar2 = (c) hashMapArr[1].get("PixelYDimension");
+        if (cVar != null && cVar2 != null) {
+            hashMapArr[0].put("ImageWidth", cVar);
+            hashMapArr[0].put("ImageLength", cVar2);
+        }
+        if (hashMapArr[4].isEmpty() && p(hashMapArr[5])) {
+            hashMapArr[4] = hashMapArr[5];
+            hashMapArr[5] = new HashMap();
+        }
+        if (!p(hashMapArr[4])) {
+            Log.d("ExifInterface", "No image meets the size requirements of a thumbnail image.");
+        }
+        w(0, "ThumbnailOrientation", "Orientation");
+        w(0, "ThumbnailImageLength", "ImageLength");
+        w(0, "ThumbnailImageWidth", "ImageWidth");
+        w(5, "ThumbnailOrientation", "Orientation");
+        w(5, "ThumbnailImageLength", "ImageLength");
+        w(5, "ThumbnailImageWidth", "ImageWidth");
+        w(4, "Orientation", "ThumbnailOrientation");
+        w(4, "ImageLength", "ThumbnailImageLength");
+        w(4, "ImageWidth", "ThumbnailImageWidth");
     }
 
     public final void a() {
@@ -184,18 +212,18 @@ public final class g {
     }
 
     public final String b(String str) {
-        c c3 = c(str);
-        if (c3 != null) {
-            int i10 = c3.a;
+        c d = d(str);
+        if (d != null) {
+            int i10 = d.a;
             if (!M.contains(str)) {
-                return c3.f(this.g);
+                return d.f(this.g);
             }
             if (str.equals("GPSTimeStamp")) {
                 if (i10 != 5 && i10 != 10) {
                     Log.w("ExifInterface", "GPS Timestamp format is not rational. format=" + i10);
                     return null;
                 }
-                e[] eVarArr = (e[]) c3.g(this.g);
+                e[] eVarArr = (e[]) d.g(this.g);
                 if (eVarArr == null || eVarArr.length != 3) {
                     Log.w("ExifInterface", "Invalid GPS Timestamp array. array=" + Arrays.toString(eVarArr));
                     return null;
@@ -208,14 +236,26 @@ public final class g {
                 return String.format("%02d:%02d:%02d", valueOf, valueOf2, Integer.valueOf((int) (eVar3.a / eVar3.b)));
             }
             try {
-                return Double.toString(c3.d(this.g));
+                return Double.toString(d.d(this.g));
             } catch (NumberFormatException unused) {
             }
         }
         return null;
     }
 
-    public final c c(String str) {
+    public final int c() {
+        c d = d("Orientation");
+        if (d == null) {
+            return 1;
+        }
+        try {
+            return d.e(this.g);
+        } catch (NumberFormatException unused) {
+            return 1;
+        }
+    }
+
+    public final c d(String str) {
         if ("ISOSpeedRatings".equals(str)) {
             if (m) {
                 Log.d("ExifInterface", "getExifAttribute: Replacing TAG_ISO_SPEED_RATINGS with TAG_PHOTOGRAPHIC_SENSITIVITY.");
@@ -231,7 +271,7 @@ public final class g {
         return null;
     }
 
-    public final void d(f fVar) {
+    public final void e(f fVar) {
         String str;
         String str2;
         String str3;
@@ -291,7 +331,7 @@ public final class g {
                         throw new IOException("Can't read exif");
                     }
                     this.i = i10;
-                    t(0, bArr2);
+                    u(0, bArr2);
                 }
                 if (m) {
                     Log.d("ExifInterface", "Heif meta: " + str + "x" + str2 + ", rotation " + str3);
@@ -320,9 +360,9 @@ public final class g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void e(b bVar, int i10, int i11) {
-        boolean z4 = m;
-        if (z4) {
+    public final void f(b bVar, int i10, int i11) {
+        boolean z10 = m;
+        if (z10) {
             Log.d("ExifInterface", "getJpegAttributes starting with: " + bVar);
         }
         bVar.b = ByteOrder.BIG_ENDIAN;
@@ -342,20 +382,20 @@ public final class g {
                 throw new IOException("Invalid marker:" + Integer.toHexString(readByte2 & 255));
             }
             byte readByte3 = bVar.readByte();
-            if (z4) {
+            if (z10) {
                 Log.d("ExifInterface", "Found JPEG segment indicator: " + Integer.toHexString(readByte3 & 255));
             }
             if (readByte3 != -39 && readByte3 != -38) {
                 int readUnsignedShort = bVar.readUnsignedShort();
                 int i14 = readUnsignedShort - 2;
                 int i15 = i13 + 4;
-                if (z4) {
+                if (z10) {
                     Log.d("ExifInterface", "JPEG segment: " + Integer.toHexString(readByte3 & 255) + " (length: " + readUnsignedShort + ")");
                 }
                 if (i14 < 0) {
                     throw new IOException("Invalid length");
                 }
-                char c3 = 0;
+                char c10 = 0;
                 HashMap[] hashMapArr = this.e;
                 if (readByte3 == -31) {
                     byte[] bArr = new byte[i14];
@@ -367,13 +407,13 @@ public final class g {
                         while (i17 < bArr2.length) {
                             if (bArr[i17] == bArr2[i17]) {
                                 i17++;
-                                c3 = 0;
+                                c10 = 0;
                             }
                         }
                         byte[] copyOfRange = Arrays.copyOfRange(bArr, bArr2.length, i14);
                         this.i = i10 + i15 + bArr2.length;
-                        t(i11, copyOfRange);
-                        w(new b(copyOfRange));
+                        u(i11, copyOfRange);
+                        x(new b(copyOfRange));
                         i15 = i16;
                     }
                     byte[] bArr3 = Q;
@@ -384,7 +424,7 @@ public final class g {
                                 int length = i15 + bArr3.length;
                                 byte[] copyOfRange2 = Arrays.copyOfRange(bArr, bArr3.length, i14);
                                 if (b("Xmp") == null) {
-                                    hashMapArr[c3].put("Xmp", new c(length, copyOfRange2, 1, copyOfRange2.length));
+                                    hashMapArr[c10].put("Xmp", new c(length, copyOfRange2, 1, copyOfRange2.length));
                                 }
                             } else if (bArr[i18] == bArr3[i18]) {
                                 i18++;
@@ -508,18 +548,18 @@ public final class g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final int f(BufferedInputStream bufferedInputStream) {
+    public final int g(BufferedInputStream bufferedInputStream) {
         b bVar;
         int i10;
         b bVar2;
-        boolean z4;
+        boolean z10;
         b bVar3;
         b bVar4;
-        boolean z10;
         boolean z11;
+        boolean z12;
         long readInt;
         byte[] bArr;
-        long j10;
+        long j3;
         bufferedInputStream.mark(5000);
         byte[] bArr2 = new byte[5000];
         bufferedInputStream.read(bArr2);
@@ -534,7 +574,7 @@ public final class g {
                 byte[] bytes = "FUJIFILMCCD-RAW".getBytes(Charset.defaultCharset());
                 for (int i12 = 0; i12 < bytes.length; i12++) {
                     if (bArr2[i12] != bytes[i12]) {
-                        boolean z12 = true;
+                        boolean z13 = true;
                         try {
                             bVar2 = new b(bArr2);
                             try {
@@ -542,8 +582,8 @@ public final class g {
                                     readInt = bVar2.readInt();
                                     bArr = new byte[4];
                                     bVar2.read(bArr);
-                                } catch (Exception e) {
-                                    e = e;
+                                } catch (Exception e7) {
+                                    e = e7;
                                     i10 = 0;
                                 }
                             } catch (Throwable th2) {
@@ -554,8 +594,8 @@ public final class g {
                                 }
                                 throw th;
                             }
-                        } catch (Exception e6) {
-                            e = e6;
+                        } catch (Exception e10) {
+                            e = e10;
                             i10 = 0;
                             bVar2 = null;
                         } catch (Throwable th3) {
@@ -565,36 +605,36 @@ public final class g {
                         if (Arrays.equals(bArr, s)) {
                             if (readInt == 1) {
                                 readInt = bVar2.readLong();
-                                j10 = 16;
+                                j3 = 16;
                             } else {
-                                j10 = 8;
+                                j3 = 8;
                             }
                             i10 = 0;
-                            long j11 = 5000;
-                            if (readInt > j11) {
-                                readInt = j11;
+                            long j10 = 5000;
+                            if (readInt > j10) {
+                                readInt = j10;
                             }
-                            long j12 = readInt - j10;
-                            if (j12 >= 8) {
+                            long j11 = readInt - j3;
+                            if (j11 >= 8) {
                                 try {
                                     byte[] bArr4 = new byte[4];
-                                    boolean z13 = false;
                                     boolean z14 = false;
-                                    for (long j13 = 0; j13 < j12 / 4 && bVar2.read(bArr4) == 4; j13++) {
-                                        if (j13 != 1) {
+                                    boolean z15 = false;
+                                    for (long j12 = 0; j12 < j11 / 4 && bVar2.read(bArr4) == 4; j12++) {
+                                        if (j12 != 1) {
                                             if (Arrays.equals(bArr4, t)) {
-                                                z13 = true;
-                                            } else if (Arrays.equals(bArr4, u)) {
                                                 z14 = true;
+                                            } else if (Arrays.equals(bArr4, u)) {
+                                                z15 = true;
                                             }
-                                            if (z13 && z14) {
+                                            if (z14 && z15) {
                                                 bVar2.close();
                                                 return 12;
                                             }
                                         }
                                     }
-                                } catch (Exception e10) {
-                                    e = e10;
+                                } catch (Exception e11) {
+                                    e = e11;
                                     if (m) {
                                         Log.d("ExifInterface", "Exception parsing HEIF file type box.", e);
                                     }
@@ -602,30 +642,30 @@ public final class g {
                             }
                             bVar2.close();
                             b bVar5 = new b(bArr2);
-                            ByteOrder s6 = s(bVar5);
-                            this.g = s6;
-                            bVar5.b = s6;
+                            ByteOrder t10 = t(bVar5);
+                            this.g = t10;
+                            bVar5.b = t10;
                             short readShort = bVar5.readShort();
-                            z4 = readShort != 20306 || readShort == 21330;
+                            z10 = readShort != 20306 || readShort == 21330;
                             bVar5.close();
-                            if (z4) {
+                            if (z10) {
                                 return 7;
                             }
                             try {
                                 b bVar6 = new b(bArr2);
                                 try {
-                                    ByteOrder s9 = s(bVar6);
-                                    this.g = s9;
-                                    bVar6.b = s9;
-                                    z10 = bVar6.readShort() == 85;
+                                    ByteOrder t11 = t(bVar6);
+                                    this.g = t11;
+                                    bVar6.b = t11;
+                                    z11 = bVar6.readShort() == 85;
                                     bVar6.close();
                                 } catch (Exception unused) {
                                     bVar4 = bVar6;
                                     if (bVar4 != null) {
                                         bVar4.close();
                                     }
-                                    z10 = false;
-                                    if (!z10) {
+                                    z11 = false;
+                                    if (!z11) {
                                     }
                                 } catch (Throwable th4) {
                                     th = th4;
@@ -641,23 +681,23 @@ public final class g {
                                 th = th5;
                                 bVar3 = null;
                             }
-                            if (!z10) {
+                            if (!z11) {
                                 return 10;
                             }
                             int i13 = 0;
                             while (true) {
                                 byte[] bArr5 = x;
                                 if (i13 >= bArr5.length) {
-                                    z11 = true;
+                                    z12 = true;
                                     break;
                                 }
                                 if (bArr2[i13] != bArr5[i13]) {
-                                    z11 = false;
+                                    z12 = false;
                                     break;
                                 }
                                 i13++;
                             }
-                            if (z11) {
+                            if (z12) {
                                 return 13;
                             }
                             int i14 = 0;
@@ -682,8 +722,8 @@ public final class g {
                                     i14++;
                                 }
                             }
-                            z12 = false;
-                            if (z12) {
+                            z13 = false;
+                            if (z13) {
                                 return 14;
                             }
                             return i10;
@@ -691,14 +731,14 @@ public final class g {
                         bVar2.close();
                         i10 = 0;
                         b bVar52 = new b(bArr2);
-                        ByteOrder s62 = s(bVar52);
-                        this.g = s62;
-                        bVar52.b = s62;
+                        ByteOrder t102 = t(bVar52);
+                        this.g = t102;
+                        bVar52.b = t102;
                         short readShort2 = bVar52.readShort();
                         if (readShort2 != 20306) {
                         }
                         bVar52.close();
-                        if (z4) {
+                        if (z10) {
                         }
                     }
                 }
@@ -708,10 +748,10 @@ public final class g {
         }
     }
 
-    public final void g(f fVar) {
+    public final void h(f fVar) {
         int i10;
         int i11;
-        j(fVar);
+        k(fVar);
         HashMap[] hashMapArr = this.e;
         c cVar = (c) hashMapArr[1].get("MakerNote");
         if (cVar != null) {
@@ -729,7 +769,7 @@ public final class g {
             } else if (Arrays.equals(bArr4, bArr3)) {
                 fVar2.b(12L);
             }
-            u(fVar2, 6);
+            v(fVar2, 6);
             c cVar2 = (c) hashMapArr[7].get("PreviewImageStart");
             c cVar3 = (c) hashMapArr[7].get("PreviewImageLength");
             if (cVar2 != null && cVar3 != null) {
@@ -755,15 +795,15 @@ public final class g {
                     i15 = i16 - i15;
                     i14 = i16 - i15;
                 }
-                c c3 = c.c(i14, this.g);
-                c c10 = c.c(i15, this.g);
-                hashMapArr[0].put("ImageWidth", c3);
-                hashMapArr[0].put("ImageLength", c10);
+                c c10 = c.c(i14, this.g);
+                c c11 = c.c(i15, this.g);
+                hashMapArr[0].put("ImageWidth", c10);
+                hashMapArr[0].put("ImageLength", c11);
             }
         }
     }
 
-    public final void h(b bVar) {
+    public final void i(b bVar) {
         if (m) {
             Log.d("ExifInterface", "getPngAttributes starting with: " + bVar);
         }
@@ -788,7 +828,7 @@ public final class g {
                 if (Arrays.equals(bArr2, y)) {
                     byte[] bArr3 = new byte[readInt];
                     if (bVar.read(bArr3) != readInt) {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + s6.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + x6.a(bArr2));
                     }
                     int readInt2 = bVar.readInt();
                     CRC32 crc32 = new CRC32();
@@ -796,9 +836,9 @@ public final class g {
                     crc32.update(bArr3);
                     if (((int) crc32.getValue()) == readInt2) {
                         this.i = i10;
-                        t(0, bArr3);
-                        z();
-                        w(new b(bArr3));
+                        u(0, bArr3);
+                        A();
+                        x(new b(bArr3));
                         return;
                     }
                     throw new IOException("Encountered invalid CRC value for PNG-EXIF chunk.\n recorded CRC value: " + readInt2 + ", calculated CRC value: " + crc32.getValue());
@@ -812,9 +852,9 @@ public final class g {
         }
     }
 
-    public final void i(b bVar) {
-        boolean z4 = m;
-        if (z4) {
+    public final void j(b bVar) {
+        boolean z10 = m;
+        if (z10) {
             Log.d("ExifInterface", "getRafAttributes starting with: " + bVar);
         }
         bVar.a(84);
@@ -830,11 +870,11 @@ public final class g {
         byte[] bArr4 = new byte[i11];
         bVar.a(i10 - bVar.c);
         bVar.read(bArr4);
-        e(new b(bArr4), i10, 5);
+        f(new b(bArr4), i10, 5);
         bVar.a(i12 - bVar.c);
         bVar.b = ByteOrder.BIG_ENDIAN;
         int readInt = bVar.readInt();
-        if (z4) {
+        if (z10) {
             Log.d("ExifInterface", "numberOfDirectoryEntry: " + readInt);
         }
         for (int i13 = 0; i13 < readInt; i13++) {
@@ -843,12 +883,12 @@ public final class g {
             if (readUnsignedShort == H.a) {
                 short readShort = bVar.readShort();
                 short readShort2 = bVar.readShort();
-                c c3 = c.c(readShort, this.g);
-                c c10 = c.c(readShort2, this.g);
+                c c10 = c.c(readShort, this.g);
+                c c11 = c.c(readShort2, this.g);
                 HashMap[] hashMapArr = this.e;
-                hashMapArr[0].put("ImageLength", c3);
-                hashMapArr[0].put("ImageWidth", c10);
-                if (z4) {
+                hashMapArr[0].put("ImageLength", c10);
+                hashMapArr[0].put("ImageWidth", c11);
+                if (z10) {
                     Log.d("ExifInterface", "Updated to length: " + ((int) readShort) + ", width: " + ((int) readShort2));
                     return;
                 }
@@ -858,13 +898,13 @@ public final class g {
         }
     }
 
-    public final void j(f fVar) {
-        q(fVar);
-        u(fVar, 0);
-        y(fVar, 0);
-        y(fVar, 5);
-        y(fVar, 4);
-        z();
+    public final void k(f fVar) {
+        r(fVar);
+        v(fVar, 0);
+        z(fVar, 0);
+        z(fVar, 5);
+        z(fVar, 4);
+        A();
         if (this.d == 8) {
             HashMap[] hashMapArr = this.e;
             c cVar = (c) hashMapArr[1].get("MakerNote");
@@ -872,7 +912,7 @@ public final class g {
                 f fVar2 = new f(cVar.d);
                 fVar2.b = this.g;
                 fVar2.a(6);
-                u(fVar2, 9);
+                v(fVar2, 9);
                 c cVar2 = (c) hashMapArr[9].get("ColorSpace");
                 if (cVar2 != null) {
                     hashMapArr[1].put("ColorSpace", cVar2);
@@ -881,15 +921,15 @@ public final class g {
         }
     }
 
-    public final void k(f fVar) {
+    public final void l(f fVar) {
         if (m) {
             Log.d("ExifInterface", "getRw2Attributes starting with: " + fVar);
         }
-        j(fVar);
+        k(fVar);
         HashMap[] hashMapArr = this.e;
         c cVar = (c) hashMapArr[0].get("JpgFromRaw");
         if (cVar != null) {
-            e(new b(cVar.d), (int) cVar.c, 5);
+            f(new b(cVar.d), (int) cVar.c, 5);
         }
         c cVar2 = (c) hashMapArr[0].get("ISO");
         c cVar3 = (c) hashMapArr[1].get("PhotographicSensitivity");
@@ -899,7 +939,7 @@ public final class g {
         hashMapArr[1].put("PhotographicSensitivity", cVar2);
     }
 
-    public final void l(b bVar) {
+    public final void m(b bVar) {
         if (m) {
             Log.d("ExifInterface", "getWebpAttributes starting with: " + bVar);
         }
@@ -921,11 +961,11 @@ public final class g {
                     byte[] bArr3 = new byte[readInt2];
                     if (bVar.read(bArr3) == readInt2) {
                         this.i = i10;
-                        t(0, bArr3);
-                        w(new b(bArr3));
+                        u(0, bArr3);
+                        x(new b(bArr3));
                         return;
                     } else {
-                        throw new IOException("Failed to read given length for given PNG chunk type: " + s6.a(bArr2));
+                        throw new IOException("Failed to read given length for given PNG chunk type: " + x6.a(bArr2));
                     }
                 }
                 if (readInt2 % 2 == 1) {
@@ -945,29 +985,29 @@ public final class g {
         }
     }
 
-    public final void m(b bVar, HashMap hashMap) {
+    public final void n(b bVar, HashMap hashMap) {
         c cVar = (c) hashMap.get("JPEGInterchangeFormat");
         c cVar2 = (c) hashMap.get("JPEGInterchangeFormatLength");
         if (cVar == null || cVar2 == null) {
             return;
         }
-        int e = cVar.e(this.g);
-        int e6 = cVar2.e(this.g);
+        int e7 = cVar.e(this.g);
+        int e10 = cVar2.e(this.g);
         if (this.d == 7) {
-            e += this.j;
+            e7 += this.j;
         }
-        if (e > 0 && e6 > 0 && this.a == null && this.c == null && this.b == null) {
-            bVar.skip(e);
-            bVar.read(new byte[e6]);
+        if (e7 > 0 && e10 > 0 && this.a == null && this.c == null && this.b == null) {
+            bVar.skip(e7);
+            bVar.read(new byte[e10]);
         }
         if (m) {
-            Log.d("ExifInterface", "Setting thumbnail attributes with offset: " + e + ", length: " + e6);
+            Log.d("ExifInterface", "Setting thumbnail attributes with offset: " + e7 + ", length: " + e10);
         }
     }
 
-    public final void n(String str) {
+    public final void o(String str) {
         FileInputStream fileInputStream;
-        boolean z4;
+        boolean z10;
         if (str == null) {
             throw new NullPointerException("filename cannot be null");
         }
@@ -982,23 +1022,23 @@ public final class g {
         try {
             try {
                 h.c(fileInputStream.getFD(), 0L, OsConstants.SEEK_CUR);
-                z4 = true;
+                z10 = true;
             } catch (Exception unused) {
                 if (m) {
                     Log.d("ExifInterface", "The file descriptor for the given input is not seekable");
                 }
-                z4 = false;
+                z10 = false;
             }
-            if (z4) {
+            if (z10) {
                 this.b = fileInputStream.getFD();
             } else {
                 this.b = null;
             }
-            p(fileInputStream);
+            q(fileInputStream);
             try {
                 fileInputStream.close();
-            } catch (RuntimeException e) {
-                throw e;
+            } catch (RuntimeException e7) {
+                throw e7;
             } catch (Exception unused2) {
             }
         } catch (Throwable th3) {
@@ -1007,8 +1047,8 @@ public final class g {
             if (fileInputStream2 != null) {
                 try {
                     fileInputStream2.close();
-                } catch (RuntimeException e6) {
-                    throw e6;
+                } catch (RuntimeException e10) {
+                    throw e10;
                 } catch (Exception unused3) {
                 }
             }
@@ -1016,7 +1056,7 @@ public final class g {
         }
     }
 
-    public final boolean o(HashMap hashMap) {
+    public final boolean p(HashMap hashMap) {
         c cVar = (c) hashMap.get("ImageLength");
         c cVar2 = (c) hashMap.get("ImageWidth");
         if (cVar == null || cVar2 == null) {
@@ -1033,8 +1073,8 @@ public final class g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void p(InputStream inputStream) {
-        boolean z4 = m;
+    public final void q(InputStream inputStream) {
+        boolean z10 = m;
         if (inputStream == null) {
             throw new NullPointerException("inputstream shouldn't be null");
         }
@@ -1044,75 +1084,75 @@ public final class g {
                     this.e[i10] = new HashMap();
                 } catch (Throwable th2) {
                     a();
-                    if (z4) {
-                        r();
+                    if (z10) {
+                        s();
                     }
                     throw th2;
                 }
-            } catch (IOException e) {
-                e = e;
-                if (z4) {
+            } catch (IOException e7) {
+                e = e7;
+                if (z10) {
                     Log.w("ExifInterface", "Invalid image: ExifInterface got an unsupported image format file(ExifInterface supports JPEG and some RAW image formats only) or a corrupted JPEG file to ExifInterface.", e);
                 }
                 a();
-                if (z4) {
+                if (z10) {
                     return;
                 }
-                r();
+                s();
                 return;
-            } catch (UnsupportedOperationException e6) {
-                e = e6;
-                if (z4) {
+            } catch (UnsupportedOperationException e10) {
+                e = e10;
+                if (z10) {
                 }
                 a();
-                if (z4) {
+                if (z10) {
                 }
             }
         }
         BufferedInputStream bufferedInputStream = new BufferedInputStream(inputStream, 5000);
-        int f10 = f(bufferedInputStream);
-        this.d = f10;
-        if (f10 != 4 && f10 != 9 && f10 != 13 && f10 != 14) {
+        int g10 = g(bufferedInputStream);
+        this.d = g10;
+        if (g10 != 4 && g10 != 9 && g10 != 13 && g10 != 14) {
             f fVar = new f(bufferedInputStream);
             int i11 = this.d;
             if (i11 == 12) {
-                d(fVar);
+                e(fVar);
             } else if (i11 == 7) {
-                g(fVar);
+                h(fVar);
             } else if (i11 == 10) {
-                k(fVar);
+                l(fVar);
             } else {
-                j(fVar);
+                k(fVar);
             }
             fVar.b(this.i);
-            w(fVar);
+            x(fVar);
             a();
-            if (z4) {
+            if (z10) {
                 return;
             }
-            r();
+            s();
             return;
         }
         b bVar = new b(bufferedInputStream);
         int i12 = this.d;
         if (i12 == 4) {
-            e(bVar, 0, 0);
+            f(bVar, 0, 0);
         } else if (i12 == 13) {
-            h(bVar);
-        } else if (i12 == 9) {
             i(bVar);
+        } else if (i12 == 9) {
+            j(bVar);
         } else if (i12 == 14) {
-            l(bVar);
+            m(bVar);
         }
         a();
-        if (z4) {
+        if (z10) {
         }
     }
 
-    public final void q(f fVar) {
-        ByteOrder s6 = s(fVar);
-        this.g = s6;
-        fVar.b = s6;
+    public final void r(f fVar) {
+        ByteOrder t10 = t(fVar);
+        this.g = t10;
+        fVar.b = t10;
         int readUnsignedShort = fVar.readUnsignedShort();
         int i10 = this.d;
         if (i10 != 7 && i10 != 10 && readUnsignedShort != 42) {
@@ -1120,7 +1160,7 @@ public final class g {
         }
         int readInt = fVar.readInt();
         if (readInt < 8) {
-            throw new IOException(k0.j(readInt, "Invalid first Ifd offset: "));
+            throw new IOException(i2.g.i(readInt, "Invalid first Ifd offset: "));
         }
         int i11 = readInt - 8;
         if (i11 > 0) {
@@ -1128,16 +1168,16 @@ public final class g {
         }
     }
 
-    public final void r() {
+    public final void s() {
         int i10 = 0;
         while (true) {
             HashMap[] hashMapArr = this.e;
             if (i10 >= hashMapArr.length) {
                 return;
             }
-            StringBuilder m9 = k0.m(i10, "The size of tag group[", "]: ");
-            m9.append(hashMapArr[i10].size());
-            Log.d("ExifInterface", m9.toString());
+            StringBuilder l4 = i2.g.l(i10, "The size of tag group[", "]: ");
+            l4.append(hashMapArr[i10].size());
+            Log.d("ExifInterface", l4.toString());
             for (Map.Entry entry : hashMapArr[i10].entrySet()) {
                 c cVar = (c) entry.getValue();
                 Log.d("ExifInterface", "tagName: " + ((String) entry.getKey()) + ", tagType: " + cVar.toString() + ", tagValue: '" + cVar.f(this.g) + "'");
@@ -1146,10 +1186,10 @@ public final class g {
         }
     }
 
-    public final void t(int i10, byte[] bArr) {
+    public final void u(int i10, byte[] bArr) {
         f fVar = new f(bArr);
-        q(fVar);
-        u(fVar, i10);
+        r(fVar);
+        v(fVar, i10);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:22:0x016c  */
@@ -1160,66 +1200,66 @@ public final class g {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void u(f fVar, int i10) {
+    public final void v(f fVar, int i10) {
         HashMap[] hashMapArr;
-        short s6;
-        boolean z4;
+        short s10;
+        boolean z10;
         int i11;
         int i12;
+        long j3;
         long j10;
-        long j11;
-        boolean z10;
+        boolean z11;
         int i13;
         int i14;
-        short s9;
-        long j12;
+        short s11;
+        long j11;
         HashMap[] hashMapArr2;
         int i15;
         int readUnsignedShort;
-        long j13;
+        long j12;
         int i16 = i10;
         Integer valueOf = Integer.valueOf(fVar.c);
         HashSet hashSet = this.f;
         hashSet.add(valueOf);
         short readShort = fVar.readShort();
-        boolean z11 = m;
-        if (z11) {
+        boolean z12 = m;
+        if (z12) {
             Log.d("ExifInterface", "numberOfDirectoryEntry: " + ((int) readShort));
         }
         if (readShort <= 0) {
             return;
         }
-        short s10 = 0;
+        short s12 = 0;
         while (true) {
             hashMapArr = this.e;
-            if (s10 >= readShort) {
+            if (s12 >= readShort) {
                 break;
             }
             int readUnsignedShort2 = fVar.readUnsignedShort();
             int readUnsignedShort3 = fVar.readUnsignedShort();
             int readInt = fVar.readInt();
-            long j14 = fVar.c + 4;
+            long j13 = fVar.c + 4;
             d dVar = (d) K[i16].get(Integer.valueOf(readUnsignedShort2));
-            if (z11) {
+            if (z12) {
                 Log.d("ExifInterface", String.format("ifdType: %d, tagNumber: %d, tagName: %s, dataFormat: %d, numberOfComponents: %d", Integer.valueOf(i16), Integer.valueOf(readUnsignedShort2), dVar != null ? dVar.b : null, Integer.valueOf(readUnsignedShort3), Integer.valueOf(readInt)));
             }
             if (dVar == null) {
-                if (z11) {
+                if (z12) {
                     Log.d("ExifInterface", "Skip the tag entry since tag number is not defined: " + readUnsignedShort2);
                 }
-                s6 = readShort;
-                z4 = z11;
+                s10 = readShort;
+                z10 = z12;
             } else {
                 if (readUnsignedShort3 > 0) {
                     if (readUnsignedShort3 < F.length) {
                         i12 = dVar.c;
-                        s6 = readShort;
+                        s10 = readShort;
                         if (i12 == 7 || readUnsignedShort3 == 7 || i12 == readUnsignedShort3 || (i13 = dVar.d) == readUnsignedShort3) {
-                            z4 = z11;
+                            z10 = z12;
                         } else {
-                            z4 = z11;
+                            z10 = z12;
                             if (((i12 != 4 && i13 != 4) || readUnsignedShort3 != 3) && (((i12 != 9 && i13 != 9) || readUnsignedShort3 != 8) && ((i12 != 12 && i13 != 12) || readUnsignedShort3 != 11))) {
-                                if (z4) {
+                                if (z10) {
                                     Log.d("ExifInterface", "Skip the tag entry since data format (" + E[readUnsignedShort3] + ") is unexpected for tag: " + dVar.b);
                                 }
                             }
@@ -1228,25 +1268,25 @@ public final class g {
                             i12 = readUnsignedShort3;
                         }
                         i11 = readInt;
-                        j10 = r9[i12] * i11;
-                        if (j10 < 0 || j10 > 2147483647L) {
-                            if (z4) {
-                                j11 = j10;
+                        j3 = r9[i12] * i11;
+                        if (j3 < 0 || j3 > 2147483647L) {
+                            if (z10) {
+                                j10 = j3;
                                 Log.d("ExifInterface", "Skip the tag entry since the number of components is invalid: " + i11);
                             } else {
-                                j11 = j10;
+                                j10 = j3;
                             }
-                            j10 = j11;
-                            z10 = false;
-                            if (z10) {
-                                fVar.b(j14);
-                                s9 = s10;
+                            j3 = j10;
+                            z11 = false;
+                            if (z11) {
+                                fVar.b(j13);
+                                s11 = s12;
                             } else {
-                                if (j10 > 4) {
-                                    s9 = s10;
+                                if (j3 > 4) {
+                                    s11 = s12;
                                     int readInt2 = fVar.readInt();
                                     hashMapArr2 = hashMapArr;
-                                    if (z4) {
+                                    if (z10) {
                                         i15 = readUnsignedShort2;
                                         Log.d("ExifInterface", "seek to data offset: " + readInt2);
                                     } else {
@@ -1258,69 +1298,69 @@ public final class g {
                                         } else if (i16 == 6 && "ThumbnailImage".equals(dVar.b)) {
                                             this.k = readInt2;
                                             this.l = i11;
-                                            c c3 = c.c(6, this.g);
+                                            c c10 = c.c(6, this.g);
                                             i14 = i11;
                                             c a2 = c.a(this.k, this.g);
-                                            j12 = j14;
+                                            j11 = j13;
                                             c a10 = c.a(this.l, this.g);
-                                            hashMapArr2[4].put("Compression", c3);
+                                            hashMapArr2[4].put("Compression", c10);
                                             hashMapArr2[4].put("JPEGInterchangeFormat", a2);
                                             hashMapArr2[4].put("JPEGInterchangeFormatLength", a10);
                                             fVar.b(readInt2);
                                         }
                                     }
                                     i14 = i11;
-                                    j12 = j14;
+                                    j11 = j13;
                                     fVar.b(readInt2);
                                 } else {
                                     i14 = i11;
-                                    s9 = s10;
-                                    j12 = j14;
+                                    s11 = s12;
+                                    j11 = j13;
                                     hashMapArr2 = hashMapArr;
                                     i15 = readUnsignedShort2;
                                 }
                                 Integer num = (Integer) N.get(Integer.valueOf(i15));
-                                if (z4) {
-                                    Log.d("ExifInterface", "nextIfdType: " + num + " byteCount: " + j10);
+                                if (z10) {
+                                    Log.d("ExifInterface", "nextIfdType: " + num + " byteCount: " + j3);
                                 }
                                 if (num != null) {
                                     if (i12 != 3) {
                                         if (i12 == 4) {
-                                            j13 = fVar.readInt() & 4294967295L;
+                                            j12 = fVar.readInt() & 4294967295L;
                                         } else if (i12 == 8) {
                                             readUnsignedShort = fVar.readShort();
                                         } else if (i12 == 9 || i12 == 13) {
                                             readUnsignedShort = fVar.readInt();
                                         } else {
-                                            j13 = -1;
+                                            j12 = -1;
                                         }
-                                        if (z4) {
-                                            Log.d("ExifInterface", String.format("Offset: %d, tagName: %s", Long.valueOf(j13), dVar.b));
+                                        if (z10) {
+                                            Log.d("ExifInterface", String.format("Offset: %d, tagName: %s", Long.valueOf(j12), dVar.b));
                                         }
-                                        if (j13 <= 0) {
-                                            if (!hashSet.contains(Integer.valueOf((int) j13))) {
-                                                fVar.b(j13);
-                                                u(fVar, num.intValue());
-                                            } else if (z4) {
-                                                Log.d("ExifInterface", "Skip jump into the IFD since it has already been read: IfdType " + num + " (at " + j13 + ")");
+                                        if (j12 <= 0) {
+                                            if (!hashSet.contains(Integer.valueOf((int) j12))) {
+                                                fVar.b(j12);
+                                                v(fVar, num.intValue());
+                                            } else if (z10) {
+                                                Log.d("ExifInterface", "Skip jump into the IFD since it has already been read: IfdType " + num + " (at " + j12 + ")");
                                             }
-                                        } else if (z4) {
-                                            Log.d("ExifInterface", "Skip jump into the IFD since its offset is invalid: " + j13);
+                                        } else if (z10) {
+                                            Log.d("ExifInterface", "Skip jump into the IFD since its offset is invalid: " + j12);
                                         }
-                                        fVar.b(j12);
+                                        fVar.b(j11);
                                     } else {
                                         readUnsignedShort = fVar.readUnsignedShort();
                                     }
-                                    j13 = readUnsignedShort;
-                                    if (z4) {
+                                    j12 = readUnsignedShort;
+                                    if (z10) {
                                     }
-                                    if (j13 <= 0) {
+                                    if (j12 <= 0) {
                                     }
-                                    fVar.b(j12);
+                                    fVar.b(j11);
                                 } else {
-                                    long j15 = j12;
+                                    long j14 = j11;
                                     int i17 = fVar.c + this.i;
-                                    byte[] bArr = new byte[(int) j10];
+                                    byte[] bArr = new byte[(int) j3];
                                     fVar.readFully(bArr);
                                     c cVar = new c(i17, bArr, i12, i14);
                                     HashMap hashMap = hashMapArr2[i10];
@@ -1332,82 +1372,82 @@ public final class g {
                                     if ((("Make".equals(str) || "Model".equals(str)) && cVar.f(this.g).contains("PENTAX")) || ("Compression".equals(str) && cVar.e(this.g) == 65535)) {
                                         this.d = 8;
                                     }
-                                    if (fVar.c != j15) {
-                                        fVar.b(j15);
+                                    if (fVar.c != j14) {
+                                        fVar.b(j14);
                                     }
                                 }
                             }
-                            s10 = (short) (s9 + 1);
+                            s12 = (short) (s11 + 1);
                             i16 = i10;
-                            readShort = s6;
-                            z11 = z4;
+                            readShort = s10;
+                            z12 = z10;
                         } else {
-                            z10 = true;
-                            if (z10) {
+                            z11 = true;
+                            if (z11) {
                             }
-                            s10 = (short) (s9 + 1);
+                            s12 = (short) (s11 + 1);
                             i16 = i10;
-                            readShort = s6;
-                            z11 = z4;
+                            readShort = s10;
+                            z12 = z10;
                         }
                     }
                 }
-                s6 = readShort;
-                z4 = z11;
+                s10 = readShort;
+                z10 = z12;
                 i11 = readInt;
-                if (z4) {
+                if (z10) {
                     Log.d("ExifInterface", "Skip the tag entry since data format is invalid: " + readUnsignedShort3);
                 }
                 i12 = readUnsignedShort3;
-                j10 = 0;
-                z10 = false;
-                if (z10) {
+                j3 = 0;
+                z11 = false;
+                if (z11) {
                 }
-                s10 = (short) (s9 + 1);
+                s12 = (short) (s11 + 1);
                 i16 = i10;
-                readShort = s6;
-                z11 = z4;
+                readShort = s10;
+                z12 = z10;
             }
             i11 = readInt;
             i12 = readUnsignedShort3;
-            j10 = 0;
-            z10 = false;
-            if (z10) {
+            j3 = 0;
+            z11 = false;
+            if (z11) {
             }
-            s10 = (short) (s9 + 1);
+            s12 = (short) (s11 + 1);
             i16 = i10;
-            readShort = s6;
-            z11 = z4;
+            readShort = s10;
+            z12 = z10;
         }
-        boolean z12 = z11;
+        boolean z13 = z12;
         int readInt3 = fVar.readInt();
-        if (z12) {
+        if (z13) {
             Log.d("ExifInterface", String.format("nextIfdOffset: %d", Integer.valueOf(readInt3)));
         }
-        long j16 = readInt3;
-        if (j16 <= 0) {
-            if (z12) {
+        long j15 = readInt3;
+        if (j15 <= 0) {
+            if (z13) {
                 Log.d("ExifInterface", "Stop reading file since a wrong offset may cause an infinite loop: " + readInt3);
                 return;
             }
             return;
         }
         if (hashSet.contains(Integer.valueOf(readInt3))) {
-            if (z12) {
+            if (z13) {
                 Log.d("ExifInterface", "Stop reading file since re-reading an IFD may cause an infinite loop: " + readInt3);
                 return;
             }
             return;
         }
-        fVar.b(j16);
+        fVar.b(j15);
         if (hashMapArr[4].isEmpty()) {
-            u(fVar, 4);
+            v(fVar, 4);
         } else if (hashMapArr[5].isEmpty()) {
-            u(fVar, 5);
+            v(fVar, 5);
         }
     }
 
-    public final void v(int i10, String str, String str2) {
+    public final void w(int i10, String str, String str2) {
         HashMap[] hashMapArr = this.e;
         if (hashMapArr[i10].isEmpty() || hashMapArr[i10].get(str) == null) {
             return;
@@ -1417,22 +1457,22 @@ public final class g {
         hashMapArr[i10].remove(str);
     }
 
-    public final void w(b bVar) {
+    public final void x(b bVar) {
         c cVar;
-        int e;
+        int e7;
         HashMap hashMap = this.e[4];
         c cVar2 = (c) hashMap.get("Compression");
         if (cVar2 == null) {
-            m(bVar, hashMap);
+            n(bVar, hashMap);
             return;
         }
-        int e6 = cVar2.e(this.g);
+        int e10 = cVar2.e(this.g);
         int i10 = 1;
-        if (e6 != 1) {
-            if (e6 == 6) {
-                m(bVar, hashMap);
+        if (e10 != 1) {
+            if (e10 == 6) {
+                n(bVar, hashMap);
                 return;
-            } else if (e6 != 7) {
+            } else if (e10 != 7) {
                 return;
             }
         }
@@ -1440,14 +1480,14 @@ public final class g {
         if (cVar3 != null) {
             int[] iArr = (int[]) cVar3.g(this.g);
             int[] iArr2 = p;
-            if (Arrays.equals(iArr2, iArr) || (this.d == 3 && (cVar = (c) hashMap.get("PhotometricInterpretation")) != null && (((e = cVar.e(this.g)) == 1 && Arrays.equals(iArr, q)) || (e == 6 && Arrays.equals(iArr, iArr2))))) {
+            if (Arrays.equals(iArr2, iArr) || (this.d == 3 && (cVar = (c) hashMap.get("PhotometricInterpretation")) != null && (((e7 = cVar.e(this.g)) == 1 && Arrays.equals(iArr, q)) || (e7 == 6 && Arrays.equals(iArr, iArr2))))) {
                 c cVar4 = (c) hashMap.get("StripOffsets");
                 c cVar5 = (c) hashMap.get("StripByteCounts");
                 if (cVar4 == null || cVar5 == null) {
                     return;
                 }
-                long[] b10 = s6.b(cVar4.g(this.g));
-                long[] b11 = s6.b(cVar5.g(this.g));
+                long[] b10 = x6.b(cVar4.g(this.g));
+                long[] b11 = x6.b(cVar5.g(this.g));
                 if (b10 == null || b10.length == 0) {
                     Log.w("ExifInterface", "stripOffsets should not be null or have zero length.");
                     return;
@@ -1460,11 +1500,11 @@ public final class g {
                     Log.w("ExifInterface", "stripOffsets and stripByteCounts should have same length.");
                     return;
                 }
-                long j10 = 0;
-                for (long j11 : b11) {
-                    j10 += j11;
+                long j3 = 0;
+                for (long j10 : b11) {
+                    j3 += j10;
                 }
-                byte[] bArr = new byte[(int) j10];
+                byte[] bArr = new byte[(int) j3];
                 this.h = true;
                 int i11 = 0;
                 int i12 = 0;
@@ -1480,8 +1520,8 @@ public final class g {
                         Log.d("ExifInterface", "Invalid strip offset value");
                         return;
                     }
-                    long j12 = i16;
-                    if (bVar.skip(j12) != j12) {
+                    long j11 = i16;
+                    if (bVar.skip(j11) != j11) {
                         Log.d("ExifInterface", "Failed to skip " + i16 + " bytes.");
                         return;
                     }
@@ -1498,7 +1538,7 @@ public final class g {
                     i10 = 1;
                 }
                 if (this.h) {
-                    long j13 = b10[0];
+                    long j12 = b10[0];
                     return;
                 }
                 return;
@@ -1509,12 +1549,12 @@ public final class g {
         }
     }
 
-    public final void x(int i10, int i11) {
+    public final void y(int i10, int i11) {
         HashMap[] hashMapArr = this.e;
         boolean isEmpty = hashMapArr[i10].isEmpty();
-        boolean z4 = m;
+        boolean z10 = m;
         if (isEmpty || hashMapArr[i11].isEmpty()) {
-            if (z4) {
+            if (z10) {
                 Log.d("ExifInterface", "Cannot perform swap since only one image data exists");
                 return;
             }
@@ -1525,24 +1565,24 @@ public final class g {
         c cVar3 = (c) hashMapArr[i11].get("ImageLength");
         c cVar4 = (c) hashMapArr[i11].get("ImageWidth");
         if (cVar == null || cVar2 == null) {
-            if (z4) {
+            if (z10) {
                 Log.d("ExifInterface", "First image does not contain valid size information");
                 return;
             }
             return;
         }
         if (cVar3 == null || cVar4 == null) {
-            if (z4) {
+            if (z10) {
                 Log.d("ExifInterface", "Second image does not contain valid size information");
                 return;
             }
             return;
         }
-        int e = cVar.e(this.g);
-        int e6 = cVar2.e(this.g);
-        int e10 = cVar3.e(this.g);
-        int e11 = cVar4.e(this.g);
-        if (e >= e10 || e6 >= e11) {
+        int e7 = cVar.e(this.g);
+        int e10 = cVar2.e(this.g);
+        int e11 = cVar3.e(this.g);
+        int e12 = cVar4.e(this.g);
+        if (e7 >= e11 || e10 >= e12) {
             return;
         }
         HashMap hashMap = hashMapArr[i10];
@@ -1550,9 +1590,9 @@ public final class g {
         hashMapArr[i11] = hashMap;
     }
 
-    public final void y(f fVar, int i10) {
-        c c3;
+    public final void z(f fVar, int i10) {
         c c10;
+        c c11;
         HashMap[] hashMapArr = this.e;
         c cVar = (c) hashMapArr[i10].get("DefaultCropSize");
         c cVar2 = (c) hashMapArr[i10].get("SensorTopBorder");
@@ -1566,33 +1606,33 @@ public final class g {
                     Log.w("ExifInterface", "Invalid crop size values. cropSize=" + Arrays.toString(eVarArr));
                     return;
                 }
-                c3 = c.b(eVarArr[0], this.g);
-                c10 = c.b(eVarArr[1], this.g);
+                c10 = c.b(eVarArr[0], this.g);
+                c11 = c.b(eVarArr[1], this.g);
             } else {
                 int[] iArr = (int[]) cVar.g(this.g);
                 if (iArr == null || iArr.length != 2) {
                     Log.w("ExifInterface", "Invalid crop size values. cropSize=" + Arrays.toString(iArr));
                     return;
                 }
-                c3 = c.c(iArr[0], this.g);
-                c10 = c.c(iArr[1], this.g);
+                c10 = c.c(iArr[0], this.g);
+                c11 = c.c(iArr[1], this.g);
             }
-            hashMapArr[i10].put("ImageWidth", c3);
-            hashMapArr[i10].put("ImageLength", c10);
+            hashMapArr[i10].put("ImageWidth", c10);
+            hashMapArr[i10].put("ImageLength", c11);
             return;
         }
         if (cVar2 != null && cVar3 != null && cVar4 != null && cVar5 != null) {
-            int e = cVar2.e(this.g);
-            int e6 = cVar4.e(this.g);
-            int e10 = cVar5.e(this.g);
-            int e11 = cVar3.e(this.g);
-            if (e6 <= e || e10 <= e11) {
+            int e7 = cVar2.e(this.g);
+            int e10 = cVar4.e(this.g);
+            int e11 = cVar5.e(this.g);
+            int e12 = cVar3.e(this.g);
+            if (e10 <= e7 || e11 <= e12) {
                 return;
             }
-            c c11 = c.c(e6 - e, this.g);
-            c c12 = c.c(e10 - e11, this.g);
-            hashMapArr[i10].put("ImageLength", c11);
-            hashMapArr[i10].put("ImageWidth", c12);
+            c c12 = c.c(e10 - e7, this.g);
+            c c13 = c.c(e11 - e12, this.g);
+            hashMapArr[i10].put("ImageLength", c12);
+            hashMapArr[i10].put("ImageWidth", c13);
             return;
         }
         c cVar6 = (c) hashMapArr[i10].get("ImageLength");
@@ -1603,42 +1643,13 @@ public final class g {
             if (cVar8 == null || cVar9 == null) {
                 return;
             }
-            int e12 = cVar8.e(this.g);
             int e13 = cVar8.e(this.g);
-            fVar.b(e12);
-            byte[] bArr = new byte[e13];
+            int e14 = cVar8.e(this.g);
+            fVar.b(e13);
+            byte[] bArr = new byte[e14];
             fVar.read(bArr);
-            e(new b(bArr), e12, i10);
+            f(new b(bArr), e13, i10);
         }
-    }
-
-    public final void z() {
-        x(0, 5);
-        x(0, 4);
-        x(5, 4);
-        HashMap[] hashMapArr = this.e;
-        c cVar = (c) hashMapArr[1].get("PixelXDimension");
-        c cVar2 = (c) hashMapArr[1].get("PixelYDimension");
-        if (cVar != null && cVar2 != null) {
-            hashMapArr[0].put("ImageWidth", cVar);
-            hashMapArr[0].put("ImageLength", cVar2);
-        }
-        if (hashMapArr[4].isEmpty() && o(hashMapArr[5])) {
-            hashMapArr[4] = hashMapArr[5];
-            hashMapArr[5] = new HashMap();
-        }
-        if (!o(hashMapArr[4])) {
-            Log.d("ExifInterface", "No image meets the size requirements of a thumbnail image.");
-        }
-        v(0, "ThumbnailOrientation", "Orientation");
-        v(0, "ThumbnailImageLength", "ImageLength");
-        v(0, "ThumbnailImageWidth", "ImageWidth");
-        v(5, "ThumbnailOrientation", "Orientation");
-        v(5, "ThumbnailImageLength", "ImageLength");
-        v(5, "ThumbnailImageWidth", "ImageWidth");
-        v(4, "Orientation", "ThumbnailOrientation");
-        v(4, "ImageLength", "ThumbnailImageLength");
-        v(4, "ImageWidth", "ThumbnailImageWidth");
     }
 
     public g(String str) {
@@ -1647,7 +1658,7 @@ public final class g {
         this.f = new HashSet(dVarArr.length);
         this.g = ByteOrder.BIG_ENDIAN;
         if (str != null) {
-            n(str);
+            o(str);
             return;
         }
         throw new NullPointerException("filename cannot be null");
@@ -1679,7 +1690,7 @@ public final class g {
                 this.c = null;
                 this.b = null;
             }
-            p(inputStream);
+            q(inputStream);
             return;
         }
         throw new NullPointerException("inputStream cannot be null");

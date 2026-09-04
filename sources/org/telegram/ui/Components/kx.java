@@ -1,29 +1,24 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final class kx extends f2.v {
-    public final /* synthetic */ kz c;
+import android.content.Context;
+import android.view.MotionEvent;
 
-    public kx(kz kzVar) {
-        this.c = kzVar;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class kx extends wx {
+    public final /* synthetic */ kz g3;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kx(kz kzVar, Context context) {
+        super(kzVar, context);
+        this.g3 = kzVar;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        kz kzVar = this.c;
-        rx rxVar = kzVar.O;
-        jx jxVar = kzVar.N;
-        f2.o0 adapter = kzVar.M.getAdapter();
-        jy jyVar = kzVar.P;
-        if (adapter == jyVar) {
-            int j10 = jyVar.j(i10);
-            if (j10 == 1 || j10 == 3 || j10 == 2 || j10 == 4 || j10 == 5) {
-                return jxVar.J;
-            }
-        } else if ((kzVar.a0 && i10 == 0) || i10 == rxVar.d || i10 == rxVar.c || i10 == rxVar.f || rxVar.r.indexOfKey(i10) >= 0 || rxVar.v.indexOfKey(i10) >= 0) {
-            return jxVar.J;
+    @Override // org.telegram.ui.Components.wx, org.telegram.ui.Components.ll0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        if (this.g3.f) {
+            return false;
         }
-        return 1;
+        return super.onInterceptTouchEvent(motionEvent);
     }
 }

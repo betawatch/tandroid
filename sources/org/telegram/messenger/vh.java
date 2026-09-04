@@ -1,29 +1,31 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class vh implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ String c;
-    public final /* synthetic */ long d;
+import android.text.Spanned;
+import java.util.Comparator;
+import org.telegram.messenger.RichMessageLayout;
 
-    public /* synthetic */ vh(int i10, long j10, String str, String str2) {
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final /* synthetic */ class vh implements Comparator {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Spanned b;
+
+    public /* synthetic */ vh(Spanned spanned, int i10) {
         this.a = i10;
-        this.b = str;
-        this.c = str2;
-        this.d = j10;
+        this.b = spanned;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.Comparator
+    public final int compare(Object obj, Object obj2) {
+        int lambda$withReplacements$0;
+        int lambda$new$0;
         switch (this.a) {
             case 0:
-                PushListenerController.lambda$processRemoteMessage$6(this.b, this.c, this.d);
-                break;
+                lambda$withReplacements$0 = RichMessageLayout.RichBlock.lambda$withReplacements$0(this.b, (org.telegram.ui.Cells.w9) obj, (org.telegram.ui.Cells.w9) obj2);
+                return lambda$withReplacements$0;
             default:
-                PushListenerController.lambda$processRemoteMessage$7(this.b, this.c, this.d);
-                break;
+                lambda$new$0 = RichMessageLayout.Text.lambda$new$0(this.b, (RichMessageLayout.RichButtonSpan) obj, (RichMessageLayout.RichButtonSpan) obj2);
+                return lambda$new$0;
         }
     }
 }

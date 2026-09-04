@@ -1,120 +1,87 @@
 package h2;
 
-import android.util.Log;
-import androidx.sharetarget.ShortcutInfoCompatSaverImpl;
-import com.google.android.gms.tasks.Task;
-import com.google.android.gms.tasks.Tasks;
-import com.google.mlkit.vision.common.internal.MobileVisionBase;
-import i9.n;
-import i9.p;
-import i9.s;
-import java.io.File;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executor;
-import k7.fa;
-import k7.ga;
-import k7.na;
-import k7.oa;
+import b2.l0;
+import b2.s;
+import dd.k;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g implements Callable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ Object c;
+public class g extends k {
+    public s c;
+    public final c d = new c();
+    public ByteBuffer e;
+    public boolean f;
+    public long h;
+    public ByteBuffer n;
+    public final int r;
+    public final int s;
 
-    public /* synthetic */ g(int i10, Object obj, Object obj2) {
-        this.a = i10;
-        this.c = obj;
-        this.b = obj2;
+    static {
+        l0.a("media3.decoder");
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        ga gaVar;
-        int i10 = this.a;
-        boolean z4 = false;
-        Object obj = this.c;
-        Object obj2 = this.b;
-        switch (i10) {
-            case 0:
-                return (h) ((ShortcutInfoCompatSaverImpl) obj).b.get((String) obj2);
-            case 1:
-                f7.b bVar = (f7.b) obj;
-                n nVar = (n) bVar.c;
-                Boolean bool = (Boolean) obj2;
-                if (bool.booleanValue()) {
-                    if (Log.isLoggable("FirebaseCrashlytics", 3)) {
-                        Log.d("FirebaseCrashlytics", "Sending cached crash reports...", null);
-                    }
-                    boolean booleanValue = bool.booleanValue();
-                    s sVar = nVar.b;
-                    if (!booleanValue) {
-                        sVar.getClass();
-                        throw new IllegalStateException("An invalid data collection token was used.");
-                    }
-                    sVar.h.trySetResult(null);
-                    Executor executor = (Executor) nVar.e.b;
-                    return ((Task) bVar.b).onSuccessTask(executor, new f7.b(this, executor, z4, 12));
-                }
-                if (Log.isLoggable("FirebaseCrashlytics", 2)) {
-                    Log.v("FirebaseCrashlytics", "Deleting cached crash reports...", null);
-                }
-                Iterator it = n9.b.e(nVar.g.b.listFiles(n.r)).iterator();
-                while (it.hasNext()) {
-                    ((File) it.next()).delete();
-                }
-                n9.b bVar2 = ((n9.a) nVar.m.b).b;
-                n9.a.a(n9.b.e(bVar2.d.listFiles()));
-                n9.a.a(n9.b.e(bVar2.e.listFiles()));
-                n9.a.a(n9.b.e(bVar2.f.listFiles()));
-                nVar.q.trySetResult(null);
-                return Tasks.forResult(null);
-            case 2:
-                n.a((n) obj, (String) obj2, Boolean.FALSE);
-                return null;
-            case 3:
-                return p.a((p) obj, (e3.g) obj2);
-            default:
-                MobileVisionBase mobileVisionBase = (MobileVisionBase) obj2;
-                hb.a aVar = (hb.a) obj;
-                HashMap hashMap = ga.f;
-                oa.b();
-                int i11 = na.a;
-                oa.b();
-                if (Boolean.parseBoolean("")) {
-                    HashMap hashMap2 = ga.f;
-                    if (hashMap2.get("detectorTaskWithResource#run") == null) {
-                        hashMap2.put("detectorTaskWithResource#run", new ga("detectorTaskWithResource#run"));
-                    }
-                    gaVar = (ga) hashMap2.get("detectorTaskWithResource#run");
-                } else {
-                    gaVar = fa.h;
-                }
-                gaVar.a();
-                try {
-                    Object e = mobileVisionBase.b.e(aVar);
-                    gaVar.close();
-                    return e;
-                } catch (Throwable th2) {
-                    try {
-                        gaVar.close();
-                    } catch (Throwable th3) {
-                        try {
-                            Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th2, th3);
-                        } catch (Exception unused) {
-                        }
-                    }
-                    throw th2;
-                }
+    public g(int i10, int i11) {
+        this.r = i10;
+        this.s = i11;
+    }
+
+    public void i() {
+        this.b = 0;
+        ByteBuffer byteBuffer = this.e;
+        if (byteBuffer != null) {
+            byteBuffer.clear();
         }
+        ByteBuffer byteBuffer2 = this.n;
+        if (byteBuffer2 != null) {
+            byteBuffer2.clear();
+        }
+        this.f = false;
     }
 
-    public /* synthetic */ g(MobileVisionBase mobileVisionBase, hb.a aVar) {
-        this.a = 4;
-        this.b = mobileVisionBase;
-        this.c = aVar;
+    public final ByteBuffer j(int i10) {
+        int i11 = this.r;
+        if (i11 == 1) {
+            return ByteBuffer.allocate(i10);
+        }
+        if (i11 == 2) {
+            return ByteBuffer.allocateDirect(i10);
+        }
+        ByteBuffer byteBuffer = this.e;
+        throw new f("Buffer too small (" + (byteBuffer == null ? 0 : byteBuffer.capacity()) + " < " + i10 + ")");
+    }
+
+    public final void l(int i10) {
+        int i11 = i10 + this.s;
+        ByteBuffer byteBuffer = this.e;
+        if (byteBuffer == null) {
+            this.e = j(i11);
+            return;
+        }
+        int capacity = byteBuffer.capacity();
+        int position = byteBuffer.position();
+        int i12 = i11 + position;
+        if (capacity >= i12) {
+            this.e = byteBuffer;
+            return;
+        }
+        ByteBuffer j3 = j(i12);
+        j3.order(byteBuffer.order());
+        if (position > 0) {
+            byteBuffer.flip();
+            j3.put(byteBuffer);
+        }
+        this.e = j3;
+    }
+
+    public final void m() {
+        ByteBuffer byteBuffer = this.e;
+        if (byteBuffer != null) {
+            byteBuffer.flip();
+        }
+        ByteBuffer byteBuffer2 = this.n;
+        if (byteBuffer2 != null) {
+            byteBuffer2.flip();
+        }
     }
 }

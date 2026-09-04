@@ -1,17 +1,32 @@
 package com.google.android.gms.internal.cast;
 
-import android.os.Looper;
+import j$.util.DesugarCollections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class o {
-    public static final u5.b c = new u5.b("MediaRouterOPTListener", null);
-    public final s a;
-    public final a7.e b;
-
-    public o(s sVar) {
-        b6.m.h(sVar);
-        this.a = sVar;
-        this.b = new a7.e(Looper.getMainLooper(), 2);
+public abstract /* synthetic */ class o {
+    public static boolean a(String str) {
+        b5.b bVar = b5.m.a;
+        Set<b5.e> unmodifiableSet = DesugarCollections.unmodifiableSet(b5.c.c);
+        HashSet hashSet = new HashSet();
+        for (b5.e eVar : unmodifiableSet) {
+            if (((b5.c) eVar).a.equals(str)) {
+                hashSet.add(eVar);
+            }
+        }
+        if (hashSet.isEmpty()) {
+            throw new RuntimeException("Unknown feature ".concat(str));
+        }
+        Iterator it = hashSet.iterator();
+        while (it.hasNext()) {
+            b5.c cVar = (b5.c) ((b5.e) it.next());
+            if (cVar.a() || cVar.b()) {
+                return true;
+            }
+        }
+        return false;
     }
 }

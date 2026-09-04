@@ -10,10 +10,10 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotInlineKeyboard;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.tl.TL_keyboard;
-import org.telegram.ui.Components.j90;
-import org.telegram.ui.Components.k01;
+import org.telegram.ui.Components.f01;
+import org.telegram.ui.Components.h90;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class e0 {
     public final Runnable a;
@@ -23,7 +23,7 @@ public final class e0 {
     public float e;
     public int f;
     public int g;
-    public k01 h;
+    public f01 h;
     public TL_keyboard.KeyboardInlineButton i;
     public BotInlineKeyboard.ButtonCustom j;
     public BotInlineKeyboard.Button k;
@@ -33,10 +33,10 @@ public final class e0 {
     public final Paint o = new Paint(1);
     public final RectF p = new RectF();
     public final float[] q = new float[8];
-    public j90 r;
+    public h90 r;
     public z s;
     public Drawable t;
-    public org.telegram.ui.Components.l5 u;
+    public org.telegram.ui.Components.q5 u;
     public boolean v;
     public float w;
     public ValueAnimator x;
@@ -47,35 +47,35 @@ public final class e0 {
 
     public final float a() {
         if (this.v) {
-            float f10 = this.w;
-            if (f10 != 1.0f) {
-                float min = (Math.min(40.0f, 1000.0f / AndroidUtilities.screenRefreshRate) / 100.0f) + f10;
+            float f7 = this.w;
+            if (f7 != 1.0f) {
+                float min = (Math.min(40.0f, 1000.0f / AndroidUtilities.screenRefreshRate) / 100.0f) + f7;
                 this.w = min;
                 this.w = Utilities.clamp(min, 1.0f, 0.0f);
                 this.a.run();
             }
         }
-        return e2.c.w(1.0f, this.w, 0.04f, 0.96f);
+        return com.google.android.gms.internal.vision.e2.z(1.0f, this.w, 0.04f, 0.96f);
     }
 
-    public final void b(boolean z4) {
+    public final void b(boolean z10) {
         ValueAnimator valueAnimator;
-        if (this.v != z4) {
-            this.v = z4;
+        if (this.v != z10) {
+            this.v = z10;
             this.a.run();
-            if (z4 && (valueAnimator = this.x) != null) {
+            if (z10 && (valueAnimator = this.x) != null) {
                 valueAnimator.removeAllListeners();
                 this.x.cancel();
             }
-            if (z4) {
+            if (z10) {
                 return;
             }
-            float f10 = this.w;
-            if (f10 != 0.0f) {
-                ValueAnimator ofFloat = ValueAnimator.ofFloat(f10, 0.0f);
+            float f7 = this.w;
+            if (f7 != 0.0f) {
+                ValueAnimator ofFloat = ValueAnimator.ofFloat(f7, 0.0f);
                 this.x = ofFloat;
                 ofFloat.addUpdateListener(new r(this, 1));
-                this.x.addListener(new org.telegram.ui.u5(this, 5));
+                this.x.addListener(new org.telegram.ui.s0(this, 9));
                 this.x.setInterpolator(new OvershootInterpolator(2.0f));
                 this.x.setDuration(350L);
                 this.x.start();

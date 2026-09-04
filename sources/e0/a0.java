@@ -11,32 +11,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class a0 extends b0 {
     public final ArrayList e = new ArrayList();
     public final ArrayList f = new ArrayList();
-    public final o0 g;
+    public final p0 g;
     public CharSequence h;
     public Boolean i;
 
     public a0() {
-        o0 o0Var = new o0();
-        o0Var.a = "";
-        o0Var.b = null;
-        o0Var.c = null;
-        o0Var.d = null;
-        o0Var.e = false;
-        o0Var.f = false;
-        this.g = o0Var;
+        p0 p0Var = new p0();
+        p0Var.a = "";
+        p0Var.b = null;
+        p0Var.c = null;
+        p0Var.d = null;
+        p0Var.e = false;
+        p0Var.f = false;
+        this.g = p0Var;
     }
 
     @Override // e0.b0
     public final void a(Bundle bundle) {
         super.a(bundle);
-        o0 o0Var = this.g;
-        bundle.putCharSequence("android.selfDisplayName", o0Var.a);
-        bundle.putBundle("android.messagingStyleUser", o0Var.c());
+        p0 p0Var = this.g;
+        bundle.putCharSequence("android.selfDisplayName", p0Var.a);
+        bundle.putBundle("android.messagingStyleUser", p0Var.c());
         bundle.putCharSequence("android.hiddenConversationTitle", this.h);
         if (this.h != null && this.i.booleanValue()) {
             bundle.putCharSequence("android.conversationTitle", this.h);
@@ -60,13 +60,13 @@ public final class a0 extends b0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void b(a4.k kVar) {
+    public final void b(i0 i0Var) {
         boolean booleanValue;
         z zVar;
-        boolean z4;
+        boolean z10;
         int size;
         Notification.MessagingStyle b10;
-        Notification.Builder builder = (Notification.Builder) kVar.c;
+        Notification.Builder builder = (Notification.Builder) i0Var.c;
         t tVar = this.a;
         int i10 = 0;
         if (tVar == null || tVar.a.getApplicationInfo().targetSdkVersion >= 28 || this.i != null) {
@@ -85,12 +85,12 @@ public final class a0 extends b0 {
         int i11 = Build.VERSION.SDK_INT;
         ArrayList arrayList = this.e;
         if (i11 >= 24) {
-            o0 o0Var = this.g;
+            p0 p0Var = this.g;
             if (i11 >= 28) {
-                o0Var.getClass();
-                b10 = w.a(d1.f.E(o0Var));
+                p0Var.getClass();
+                b10 = w.a(b5.d.E(p0Var));
             } else {
-                b10 = u.b(o0Var.a);
+                b10 = u.b(p0Var.a);
             }
             int size2 = arrayList.size();
             int i12 = 0;
@@ -121,23 +121,23 @@ public final class a0 extends b0 {
         while (true) {
             if (size4 >= 0) {
                 zVar = (z) arrayList.get(size4);
-                o0 o0Var2 = zVar.c;
-                if (o0Var2 != null && !TextUtils.isEmpty(o0Var2.a)) {
+                p0 p0Var2 = zVar.c;
+                if (p0Var2 != null && !TextUtils.isEmpty(p0Var2.a)) {
                     break;
                 } else {
                     size4--;
                 }
             } else {
-                zVar = !arrayList.isEmpty() ? (z) kf.k0.i(1, arrayList) : null;
+                zVar = !arrayList.isEmpty() ? (z) i2.g.h(1, arrayList) : null;
             }
         }
         if (this.h != null && this.i.booleanValue()) {
             builder.setContentTitle(this.h);
         } else if (zVar != null) {
             builder.setContentTitle("");
-            o0 o0Var3 = zVar.c;
-            if (o0Var3 != null) {
-                builder.setContentTitle(o0Var3.a);
+            p0 p0Var3 = zVar.c;
+            if (p0Var3 != null) {
+                builder.setContentTitle(p0Var3.a);
             }
         }
         if (zVar != null) {
@@ -146,22 +146,22 @@ public final class a0 extends b0 {
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         if (this.h == null) {
             for (int size5 = arrayList.size() - 1; size5 >= 0; size5--) {
-                o0 o0Var4 = ((z) arrayList.get(size5)).c;
-                if (o0Var4 == null || o0Var4.a != null) {
+                p0 p0Var4 = ((z) arrayList.get(size5)).c;
+                if (p0Var4 == null || p0Var4.a != null) {
                 }
             }
-            z4 = false;
+            z10 = false;
             for (size = arrayList.size() - 1; size >= 0; size--) {
                 z zVar2 = (z) arrayList.get(size);
-                CharSequence e = z4 ? e(zVar2) : zVar2.a;
+                CharSequence e7 = z10 ? e(zVar2) : zVar2.a;
                 if (size != arrayList.size() - 1) {
                     spannableStringBuilder.insert(0, (CharSequence) "\n");
                 }
-                spannableStringBuilder.insert(0, e);
+                spannableStringBuilder.insert(0, e7);
             }
             new Notification.BigTextStyle(builder).setBigContentTitle(null).bigText(spannableStringBuilder);
         }
-        z4 = true;
+        z10 = true;
         while (size >= 0) {
         }
         new Notification.BigTextStyle(builder).setBigContentTitle(null).bigText(spannableStringBuilder);
@@ -180,8 +180,8 @@ public final class a0 extends b0 {
         String str = p0.b.b;
         p0.b bVar = TextUtils.getLayoutDirectionFromLocale(Locale.getDefault()) == 1 ? p0.b.e : p0.b.d;
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-        o0 o0Var = zVar.c;
-        CharSequence charSequence = o0Var == null ? "" : o0Var.a;
+        p0 p0Var = zVar.c;
+        CharSequence charSequence = p0Var == null ? "" : p0Var.a;
         int i10 = -16777216;
         if (TextUtils.isEmpty(charSequence)) {
             charSequence = this.g.a;
@@ -190,9 +190,9 @@ public final class a0 extends b0 {
                 i10 = i11;
             }
         }
-        SpannableStringBuilder c3 = bVar.c(charSequence);
-        spannableStringBuilder.append((CharSequence) c3);
-        spannableStringBuilder.setSpan(new TextAppearanceSpan(null, 0, 0, ColorStateList.valueOf(i10), null), spannableStringBuilder.length() - c3.length(), spannableStringBuilder.length(), 33);
+        SpannableStringBuilder c10 = bVar.c(charSequence);
+        spannableStringBuilder.append((CharSequence) c10);
+        spannableStringBuilder.setSpan(new TextAppearanceSpan(null, 0, 0, ColorStateList.valueOf(i10), null), spannableStringBuilder.length() - c10.length(), spannableStringBuilder.length(), 33);
         CharSequence charSequence2 = zVar.a;
         spannableStringBuilder.append((CharSequence) "  ").append((CharSequence) bVar.c(charSequence2 != null ? charSequence2 : ""));
         return spannableStringBuilder;
@@ -202,9 +202,9 @@ public final class a0 extends b0 {
         this.h = str;
     }
 
-    public a0(o0 o0Var) {
-        if (!TextUtils.isEmpty(o0Var.a)) {
-            this.g = o0Var;
+    public a0(p0 p0Var) {
+        if (!TextUtils.isEmpty(p0Var.a)) {
+            this.g = p0Var;
             return;
         }
         throw new IllegalArgumentException("User's name must not be empty.");

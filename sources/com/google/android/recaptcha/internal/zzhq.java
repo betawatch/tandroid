@@ -1,15 +1,16 @@
 package com.google.android.recaptcha.internal;
 
-import dd.p;
-import k7.p7;
-import ld.c0;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
+import zd.c0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzhq extends i implements p {
+final class zzhq extends j implements p {
     final /* synthetic */ zzht zza;
     final /* synthetic */ String zzb;
     final /* synthetic */ zzzd zzc;
@@ -22,20 +23,20 @@ final class zzhq extends i implements p {
         this.zzc = zzzdVar;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         return new zzhq(this.zza, this.zzb, this.zzc, cVar);
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzhq) create((c0) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzhq) create((c0) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final Object invokeSuspend(Object obj) {
         a aVar = a.a;
-        p7.b(obj);
+        t7.b(obj);
         try {
             zzht zzhtVar = this.zza;
             zzig zzb = zzht.zzb(zzhtVar);
@@ -44,10 +45,10 @@ final class zzhq extends i implements p {
                 return zzht.zza(zzhtVar).zza(str, this.zzc);
             }
             throw new zzcg(zzce.zzc, zzcd.zzQ, null, null, 12, null);
-        } catch (zzcg e) {
-            throw e;
-        } catch (Exception e6) {
-            throw new zzcg(zzce.zzb, zzcd.zzaz, e6.getMessage(), null, 8, null);
+        } catch (zzcg e7) {
+            throw e7;
+        } catch (Exception e10) {
+            throw new zzcg(zzce.zzb, zzcd.zzaz, e10.getMessage(), null, 8, null);
         }
     }
 }

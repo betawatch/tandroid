@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public final class RenderSynchronizer {
     private static final float DEFAULT_TARGET_FPS = 30.0f;
@@ -25,17 +25,17 @@ public final class RenderSynchronizer {
     private boolean renderWindowOpen;
     private final long targetFrameIntervalNanos;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface Listener {
         void onRenderWindowClose();
 
         void onRenderWindowOpen();
     }
 
-    public RenderSynchronizer(float f10) {
+    public RenderSynchronizer(float f7) {
         this.lock = new Object();
         this.listeners = new CopyOnWriteArrayList();
-        this.targetFrameIntervalNanos = Math.round(TimeUnit.SECONDS.toNanos(1L) / f10);
+        this.targetFrameIntervalNanos = Math.round(TimeUnit.SECONDS.toNanos(1L) / f7);
         Handler handler = new Handler(Looper.getMainLooper());
         this.mainThreadHandler = handler;
         handler.post(new n(this, 1));
@@ -62,7 +62,7 @@ public final class RenderSynchronizer {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public void onDisplayRefreshCycleBegin(long j10) {
+    public void onDisplayRefreshCycleBegin(long j3) {
         synchronized (this.lock) {
             try {
                 if (this.listeners.isEmpty()) {
@@ -71,11 +71,11 @@ public final class RenderSynchronizer {
                     return;
                 }
                 this.choreographer.postFrameCallback(new o(this));
-                long j11 = j10 - this.lastOpenedTimeNanos;
-                long j12 = j10 - this.lastRefreshTimeNanos;
-                this.lastRefreshTimeNanos = j10;
-                if (Math.abs(j11 - this.targetFrameIntervalNanos) < Math.abs((j11 - this.targetFrameIntervalNanos) + j12)) {
-                    this.lastOpenedTimeNanos = j10;
+                long j10 = j3 - this.lastOpenedTimeNanos;
+                long j11 = j3 - this.lastRefreshTimeNanos;
+                this.lastRefreshTimeNanos = j3;
+                if (Math.abs(j10 - this.targetFrameIntervalNanos) < Math.abs((j10 - this.targetFrameIntervalNanos) + j11)) {
+                    this.lastOpenedTimeNanos = j3;
                     openRenderWindow();
                 } else if (this.renderWindowOpen) {
                     closeRenderWindow();

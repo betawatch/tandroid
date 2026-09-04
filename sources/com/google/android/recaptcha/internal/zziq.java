@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+import hd.g;
+import hd.h;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import k7.s7;
-import kotlin.jvm.internal.j;
-import tc.g;
+import kotlin.jvm.internal.i;
+import xd.j;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zziq {
     private Set zza;
@@ -18,21 +19,21 @@ public final class zziq {
 
     private static final boolean zzc(String str, Set set) {
         List list;
-        j.e(str, "<this>");
+        i.e(str, "<this>");
         String valueOf = String.valueOf(new char[]{'.'}[0]);
-        int d = jd.j.d(0, str, valueOf, false);
+        int d = j.d(0, str, valueOf, false);
         if (d != -1) {
             ArrayList arrayList = new ArrayList(10);
             int i10 = 0;
             do {
                 arrayList.add(str.subSequence(i10, d).toString());
                 i10 = valueOf.length() + d;
-                d = jd.j.d(i10, str, valueOf, false);
+                d = j.d(i10, str, valueOf, false);
             } while (d != -1);
             arrayList.add(str.subSequence(i10, str.length()).toString());
             list = arrayList;
         } else {
-            list = s7.a(str.toString());
+            list = h.b(str.toString());
         }
         Iterator it = list.iterator();
         String str2 = "";
@@ -64,7 +65,7 @@ public final class zziq {
             return true;
         }
         Set set2 = this.zzb;
-        j.c(set2, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
+        i.c(set2, "null cannot be cast to non-null type kotlin.collections.Set<kotlin.String>");
         if (zzc(str, set2)) {
             return false;
         }

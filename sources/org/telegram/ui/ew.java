@@ -1,62 +1,62 @@
 package org.telegram.ui;
 
-import java.util.Collections;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
+import android.view.View;
+import java.util.ArrayList;
+import org.telegram.messenger.ChatObject;
+import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ew implements Runnable {
+public final /* synthetic */ class ew implements View.OnLongClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ qy b;
-    public final /* synthetic */ long c;
-    public final /* synthetic */ boolean d;
+    public final /* synthetic */ uy b;
 
-    public /* synthetic */ ew(qy qyVar, long j10, boolean z4, int i10) {
+    public /* synthetic */ ew(uy uyVar, int i10) {
         this.a = i10;
-        this.b = qyVar;
-        this.c = j10;
-        this.d = z4;
+        this.b = uyVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        String str;
-        TLRPC.Chat chat;
-        int i10 = this.a;
-        boolean z4 = this.d;
-        long j10 = this.c;
-        qy qyVar = this.b;
-        switch (i10) {
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        switch (this.a) {
             case 0:
-                qy qyVar2 = this.b;
-                nh.t6 storiesController = qyVar2.getMessagesController().getStoriesController();
-                long j11 = this.c;
-                boolean z10 = this.d;
-                storiesController.i0(j11, z10, false);
-                n7.qa qaVar = new n7.qa(11);
-                qaVar.b = new ew(qyVar2, j11, z10, 1);
-                qaVar.c = new ew(qyVar2, j11, z10, 2);
-                if (j11 >= 0) {
-                    TLRPC.User user = qyVar2.getMessagesController().getUser(Long.valueOf(j11));
-                    str = ContactsController.formatName(user.first_name, null, 15);
-                    chat = user;
-                } else {
-                    TLRPC.Chat chat2 = qyVar2.getMessagesController().getChat(Long.valueOf(-j11));
-                    str = chat2.title;
-                    chat = chat2;
-                }
-                qyVar2.P = org.telegram.ui.Components.qc.X().V(Collections.singletonList(chat), qyVar2.e4() ? AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToDialogs", R.string.StoriesMovedToDialogs, str)) : AndroidUtilities.replaceTags(LocaleController.formatString("StoriesMovedToContacts", R.string.StoriesMovedToContacts, ContactsController.formatName(str, null, 15))), null, qaVar).j();
+                uy uyVar = this.b;
+                uyVar.r4(uyVar.I2, 104, true, true, null);
                 break;
             case 1:
-                qyVar.getMessagesController().getStoriesController().i0(j10, !z4, false);
+                uy uyVar2 = this.b;
+                ArrayList arrayList = uyVar2.I2;
+                if (uyVar2.getParentActivity() != null) {
+                    boolean z10 = true;
+                    for (int i10 = 0; i10 < arrayList.size(); i10++) {
+                        long longValue = ((Long) arrayList.get(i10)).longValue();
+                        if (DialogObject.isEncryptedDialog(longValue)) {
+                            z10 = false;
+                        }
+                        TLRPC.Chat chat = uyVar2.getMessagesController().getChat(Long.valueOf(-longValue));
+                        if (chat != null && !ChatObject.canWriteToChat(chat)) {
+                            z10 = false;
+                        }
+                    }
+                    org.telegram.ui.Components.n70 H = org.telegram.ui.Components.n70.H(uyVar2, view);
+                    H.c(R.drawable.input_notify_off, LocaleController.getString(R.string.SendWithoutSound), new qv(uyVar2, 19), false);
+                    H.l(R.drawable.msg_calendar2, LocaleController.getString(R.string.ScheduleMessage), new qv(uyVar2, 20), z10);
+                    H.Z();
+                    break;
+                }
+                break;
+            case 2:
+                this.b.p4(view);
                 break;
             default:
-                qyVar.getMessagesController().getStoriesController().i0(j10, z4, true);
+                uy uyVar3 = this.b;
+                uyVar3.getContactsController().loadGlobalPrivacySetting();
+                uyVar3.K4();
                 break;
         }
+        return true;
     }
 }

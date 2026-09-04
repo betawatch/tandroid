@@ -5,7 +5,7 @@ import android.util.Log;
 import j$.util.Objects;
 import java.security.InvalidParameterException;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class FailureResponse {
     public static final int BUNDLER_EXCEPTION = 1;
@@ -21,7 +21,7 @@ public final class FailureResponse {
     public FailureResponse(Throwable th2) {
         Objects.requireNonNull(th2);
         this.mStackTrace = Log.getStackTraceString(th2);
-        if (th2 instanceof w.f) {
+        if (th2 instanceof w.g) {
             this.mErrorType = 1;
             return;
         }

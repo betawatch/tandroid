@@ -8,8 +8,8 @@ import java.util.function.IntFunction;
 /* loaded from: classes2.dex */
 public final class u2 extends x2 implements a2 {
     @Override // j$.util.stream.x2, j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.T(this, j10, j11);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.T(this, j3, j10);
     }
 
     @Override // j$.util.stream.e2

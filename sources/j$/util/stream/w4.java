@@ -31,7 +31,7 @@ public final class w4 extends f5 {
     }
 
     @Override // j$.util.stream.f5, j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         switch (this.b) {
             case 0:
                 this.a.o(-1L);

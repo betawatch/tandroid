@@ -1,37 +1,21 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class gl implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ hl b;
+import android.app.Activity;
 
-    public /* synthetic */ gl(hl hlVar, int i10) {
-        this.a = i10;
-        this.b = hlVar;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class gl extends org.telegram.ui.Components.w50 {
+    public final /* synthetic */ co d1;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public gl(co coVar, Activity activity, org.telegram.ui.Components.o50 o50Var, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(activity, o50Var, f6Var, true);
+        this.d1 = coVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                lk lkVar = this.b.E.V;
-                if (lkVar != null) {
-                    lkVar.Q0 = false;
-                    org.telegram.ui.Components.uf ufVar = lkVar.R0;
-                    if (ufVar != null) {
-                        ufVar.u(false);
-                        break;
-                    }
-                }
-                break;
-            default:
-                lk lkVar2 = this.b.E.V;
-                if (lkVar2 != null) {
-                    lkVar2.H0();
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.ui.Components.w50
+    public final void m(boolean z10, boolean z11) {
+        super.m(z10, z11);
+        this.d1.vc.a(z10, true);
     }
 }

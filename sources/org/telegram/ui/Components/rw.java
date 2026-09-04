@@ -1,34 +1,65 @@
 package org.telegram.ui.Components;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class rw extends f2.v {
-    public final /* synthetic */ kz c;
+public final class rw extends FrameLayout {
+    public final /* synthetic */ boolean a;
+    public final /* synthetic */ kz b;
 
-    public rw(kz kzVar) {
-        this.c = kzVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public rw(kz kzVar, Context context, boolean z10) {
+        super(context);
+        this.b = kzVar;
+        this.a = z10;
     }
 
-    @Override // f2.v
-    public final int i(int i10) {
-        kz kzVar = this.c;
-        fz fzVar = kzVar.w0;
-        f2.o0 adapter = kzVar.A0.getAdapter();
-        bz bzVar = kzVar.v0;
-        if (adapter != bzVar) {
-            if (i10 == fzVar.x || !(fzVar.r.get(i10) == null || (fzVar.r.get(i10) instanceof TLRPC.Document))) {
-                return bzVar.d;
-            }
-            return 1;
+    @Override // android.view.ViewGroup
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
+        kz kzVar = this.b;
+        xw xwVar = kzVar.B0;
+        tw twVar = kzVar.D0;
+        ww wwVar = kzVar.G0;
+        if (this.a || !(view == twVar || view == wwVar)) {
+            return super.drawChild(canvas, view, j3);
         }
-        if (i10 == 0) {
-            return bzVar.d;
+        canvas.save();
+        float y3 = xwVar.getY() + xwVar.getMeasuredHeight() + 1.0f;
+        if (view == twVar) {
+            y3 = Math.max(y3, wwVar.getY() + wwVar.getMeasuredHeight() + 1.0f);
         }
-        if (i10 == bzVar.s || !(bzVar.h.get(i10) == null || (bzVar.h.get(i10) instanceof TLRPC.Document))) {
-            return bzVar.d;
+        canvas.clipRect(0.0f, y3 - (AndroidUtilities.dp(16.0f) * kzVar.a.e), getMeasuredWidth(), getMeasuredHeight());
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        canvas.restore();
+        return drawChild;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        kz kzVar = this.b;
+        kzVar.K0 = true;
+        kzVar.a0();
+        hg.g1 g1Var = kzVar.T0;
+        if (g1Var != null) {
+            g1Var.a();
         }
-        return 1;
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        kz kzVar = this.b;
+        kzVar.K0 = false;
+        kzVar.a0();
+        hg.g1 g1Var = kzVar.T0;
+        if (g1Var != null) {
+            g1Var.a();
+        }
     }
 }

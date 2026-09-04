@@ -1,83 +1,60 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Point;
-import android.widget.FrameLayout;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import android.view.View;
+import org.telegram.ui.ActionBar.ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class y7 extends FrameLayout {
+public final class y7 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public int b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
+    public final /* synthetic */ Object b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ y7(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10) {
-        super(context);
+    public /* synthetic */ y7(Object obj, int i10) {
         this.a = i10;
-        this.c = notificationCenterDelegate;
-        this.b = -1;
+        this.b = obj;
     }
 
-    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-    public final void onLayout(boolean z4, int i10, int i11, int i12, int i13) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                super.onLayout(z4, i10, i11, i12, i13);
-                int measuredWidth = (getMeasuredWidth() + getMeasuredHeight()) << 16;
-                if (this.b != measuredWidth) {
-                    this.b = measuredWidth;
-                    ((l8) this.c).I.l();
-                    break;
+                e8 e8Var = (e8) this.b;
+                h8 h8Var = e8Var.x;
+                if (e8Var.n != null && h8Var.G) {
+                    int i10 = -1;
+                    int i11 = -1;
+                    for (int i12 = 0; i12 < e8Var.d; i12++) {
+                        f8 f8Var = (f8) e8Var.n.get(i12, null);
+                        if (f8Var != null) {
+                            if (i10 == -1) {
+                                i10 = f8Var.h;
+                            }
+                            i11 = f8Var.h;
+                        }
+                    }
+                    if (i10 >= 0 && i11 >= 0) {
+                        h8Var.P = i10;
+                        h8Var.Q = i11;
+                        h8Var.t0();
+                        h8Var.o0();
+                        break;
+                    }
                 }
                 break;
             case 1:
-                super.onLayout(z4, i10, i11, i12, i13);
-                int i14 = i13 - i11;
-                int i15 = this.b;
-                if (i15 != -1 && Math.abs(i15 - i14) > AndroidUtilities.dp(20.0f)) {
-                    ((lq) this.c).b.x0(r3.S - 1);
-                }
-                this.b = i14;
+                org.telegram.ui.Components.qc.e();
+                ((ActionBarPopupWindow$ActionBarPopupWindowLayout) this.b).getSwipeBack().b(true);
                 break;
-            default:
-                super.onLayout(z4, i10, i11, i12, i13);
-                Point point = AndroidUtilities.displaySize;
-                int i16 = point.x + point.y;
-                int i17 = this.b;
-                if (i17 > 0 && i17 != i16) {
-                    setVisibility(8);
-                    org.telegram.ui.Components.b30 b30Var = (org.telegram.ui.Components.b30) this.c;
-                    b30Var.w = false;
-                    b30Var.a();
-                }
-                this.b = i16;
-                break;
-        }
-    }
-
-    @Override // android.view.View
-    public void setVisibility(int i10) {
-        switch (this.a) {
             case 2:
-                super.setVisibility(i10);
-                if (i10 == 8) {
-                    this.b = -1;
+                if (((u81) this.b).a.getImageReceiver().getLottieAnimation() != null && !((u81) this.b).a.getImageReceiver().getLottieAnimation().l0) {
+                    ((u81) this.b).a.getImageReceiver().getLottieAnimation().L(0, false, false);
+                    ((u81) this.b).a.getImageReceiver().getLottieAnimation().F(false);
                     break;
                 }
                 break;
             default:
-                super.setVisibility(i10);
+                ((eg1) this.b).H0(true);
                 break;
         }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y7(l8 l8Var, Context context) {
-        super(context);
-        this.a = 0;
-        this.c = l8Var;
     }
 }

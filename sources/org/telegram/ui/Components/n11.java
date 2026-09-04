@@ -1,60 +1,76 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.view.View;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.messenger.AndroidUtilities;
+import android.text.Editable;
+import android.text.TextWatcher;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.ThemeEditorView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class n11 extends ql0 {
-    public Context c;
-    public ArrayList d;
+public final class n11 implements TextWatcher {
+    public final /* synthetic */ o11 a;
 
-    @Override // org.telegram.ui.Components.ql0
-    public final boolean D(f2.l1 l1Var) {
-        return true;
+    public n11(o11 o11Var) {
+        this.a = o11Var;
     }
 
-    @Override // f2.o0
-    public final int h() {
-        ArrayList arrayList = this.d;
-        if (arrayList.isEmpty()) {
-            return 0;
+    @Override // android.text.TextWatcher
+    public final void afterTextChanged(Editable editable) {
+        boolean z10 = this.a.b.length() > 0;
+        if (z10 != (this.a.a.getAlpha() != 0.0f)) {
+            this.a.a.animate().alpha(z10 ? 1.0f : 0.0f).setDuration(150L).scaleX(z10 ? 1.0f : 0.1f).scaleY(z10 ? 1.0f : 0.1f).start();
         }
-        return arrayList.size() + 1;
-    }
-
-    @Override // f2.o0
-    public final int j(int i10) {
-        return i10 == 0 ? 1 : 0;
-    }
-
-    @Override // f2.o0
-    public final void v(f2.l1 l1Var, int i10) {
-        if (l1Var.f == 0) {
-            org.telegram.ui.ActionBar.l6 l6Var = (org.telegram.ui.ActionBar.l6) ((ArrayList) this.d.get(i10 - 1)).get(0);
-            int b10 = l6Var.f == org.telegram.ui.ActionBar.j6.Nd ? 0 : l6Var.b();
-            org.telegram.ui.Cells.u8 u8Var = (org.telegram.ui.Cells.u8) l1Var.a;
-            u8Var.a.setText(org.telegram.ui.ActionBar.h5.i(l6Var.f));
-            u8Var.b = b10;
-            u8Var.setWillNotDraw(b10 == 0);
-            u8Var.invalidate();
-        }
-    }
-
-    @Override // f2.o0
-    public final f2.l1 x(ViewGroup viewGroup, int i10) {
-        View u8Var;
-        Context context = this.c;
-        if (i10 != 0) {
-            u8Var = new View(context);
-            u8Var.setLayoutParams(new f2.w0(-1, AndroidUtilities.dp(56.0f)));
+        String obj = this.a.b.getText().toString();
+        if (obj.length() != 0) {
+            mz mzVar = this.a.c.e;
+            if (mzVar != null) {
+                mzVar.setText(LocaleController.getString(R.string.NoResult));
+            }
         } else {
-            u8Var = new org.telegram.ui.Cells.u8(context);
-            u8Var.setLayoutParams(new f2.w0(-1, -2));
+            s4.h0 adapter = this.a.c.c.getAdapter();
+            ThemeEditorView.EditorAlert editorAlert = this.a.c;
+            if (adapter != editorAlert.n) {
+                int J = ThemeEditorView.EditorAlert.J(editorAlert);
+                this.a.c.e.setText(LocaleController.getString(R.string.NoChats));
+                this.a.c.e.c();
+                ThemeEditorView.EditorAlert editorAlert2 = this.a.c;
+                editorAlert2.c.setAdapter(editorAlert2.n);
+                this.a.c.n.l();
+                if (J > 0) {
+                    this.a.c.h.h1(0, -J);
+                }
+            }
         }
-        return new dl0(u8Var);
+        k11 k11Var = this.a.c.r;
+        if (k11Var == null || obj.equals(k11Var.n)) {
+            return;
+        }
+        k11Var.n = obj;
+        if (k11Var.h != null) {
+            Utilities.searchQueue.cancelRunnable(k11Var.h);
+            k11Var.h = null;
+        }
+        if (obj.length() != 0) {
+            int i10 = k11Var.d + 1;
+            k11Var.d = i10;
+            k11Var.h = new org.telegram.ui.dm(k11Var, obj, i10, 23);
+            Utilities.searchQueue.postRunnable(k11Var.h, 300L);
+            return;
+        }
+        k11Var.e.clear();
+        ThemeEditorView.EditorAlert editorAlert3 = k11Var.r;
+        editorAlert3.F = ThemeEditorView.EditorAlert.J(editorAlert3);
+        k11Var.d = -1;
+        k11Var.l();
+    }
+
+    @Override // android.text.TextWatcher
+    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+    }
+
+    @Override // android.text.TextWatcher
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
     }
 }

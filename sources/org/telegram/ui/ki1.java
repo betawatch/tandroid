@@ -1,36 +1,29 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.view.ViewGroup;
-import java.util.ArrayList;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import org.telegram.messenger.AndroidUtilities;
+import org.webrtc.RendererCommon;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ki1 extends AnimatorListenerAdapter {
-    public final /* synthetic */ org.telegram.ui.Cells.s1 a;
-    public final /* synthetic */ org.telegram.ui.Components.ki b;
-    public final /* synthetic */ li1 c;
+public final class ki1 implements RendererCommon.RendererEvents {
+    public final /* synthetic */ ui1 a;
 
-    public ki1(li1 li1Var, org.telegram.ui.Cells.s1 s1Var, org.telegram.ui.Components.ki kiVar) {
-        this.c = li1Var;
-        this.a = s1Var;
-        this.b = kiVar;
+    public ki1(ui1 ui1Var) {
+        this.a = ui1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        this.a.setEnterTransitionInProgress(false);
-        org.telegram.ui.Components.ki kiVar = this.b;
-        ArrayList arrayList = (ArrayList) kiVar.c;
-        li1 li1Var = this.c;
-        arrayList.remove(li1Var);
-        kiVar.a();
-        ((ViewGroup) kiVar.d).invalidate();
-        ChatActivityEnterView.RecordCircle recordCircle = li1Var.g;
-        if (recordCircle != null) {
-            recordCircle.K = false;
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFirstFrameRendered() {
+        ui1 ui1Var = this.a;
+        com.google.android.gms.internal.cast.p pVar = ui1Var.l1;
+        if (pVar != null) {
+            pVar.run();
+            ui1Var.l1 = null;
         }
+        AndroidUtilities.runOnUIThread(new f01(this, 22));
+    }
+
+    @Override // org.webrtc.RendererCommon.RendererEvents
+    public final void onFrameResolutionChanged(int i10, int i11, int i12) {
     }
 }

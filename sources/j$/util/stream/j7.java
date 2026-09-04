@@ -14,10 +14,10 @@ public final /* synthetic */ class j7 implements i5 {
         this.b = longConsumer;
     }
 
-    private final /* synthetic */ void a(long j10) {
+    private final /* synthetic */ void a(long j3) {
     }
 
-    private final /* synthetic */ void b(long j10) {
+    private final /* synthetic */ void b(long j3) {
     }
 
     private final /* synthetic */ void c() {
@@ -51,13 +51,13 @@ public final /* synthetic */ class j7 implements i5 {
     }
 
     @Override // j$.util.stream.i5, j$.util.stream.j5
-    public final void accept(long j10) {
+    public final void accept(long j3) {
         switch (this.a) {
             case 0:
-                this.b.accept(j10);
+                this.b.accept(j3);
                 break;
             default:
-                ((q6) this.b).accept(j10);
+                ((q6) this.b).accept(j3);
                 break;
         }
     }
@@ -93,7 +93,7 @@ public final /* synthetic */ class j7 implements i5 {
     }
 
     @Override // j$.util.stream.j5
-    public final /* synthetic */ void o(long j10) {
+    public final /* synthetic */ void o(long j3) {
         int i10 = this.a;
     }
 
@@ -105,13 +105,13 @@ public final /* synthetic */ class j7 implements i5 {
     }
 
     @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l10) {
+    public final /* synthetic */ void x(Long l4) {
         switch (this.a) {
             case 0:
-                t3.H(this, l10);
+                t3.H(this, l4);
                 break;
             default:
-                t3.H(this, l10);
+                t3.H(this, l4);
                 break;
         }
     }

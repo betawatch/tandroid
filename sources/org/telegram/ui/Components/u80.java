@@ -1,21 +1,23 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class u80 extends ri0 {
-    public final /* synthetic */ x80 n;
+public final class u80 extends l9 {
+    public final /* synthetic */ bi.e7 e;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public u80(x80 x80Var, Context context, String str, String str2, String str3) {
-        super(context, str, str2, str3, false);
-        this.n = x80Var;
+    public u80(bi.e7 e7Var, Context context) {
+        super(context, false);
+        this.e = e7Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.g3, android.app.Dialog, android.content.DialogInterface, org.telegram.ui.ActionBar.l2
-    public final void dismiss() {
-        super.dismiss();
-        this.n.B = null;
+    @Override // org.telegram.ui.Components.l9, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(Math.min(3, ((w80) this.e.d).w) == 0 ? 0 : com.google.android.gms.internal.vision.e2.w(r4, 1, 20, 32)), TLObject.FLAG_30), i11);
     }
 }

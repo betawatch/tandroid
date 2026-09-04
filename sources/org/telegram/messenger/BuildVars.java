@@ -7,7 +7,7 @@ import java.lang.Thread;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class BuildVars {
     public static String APP_HASH = null;
@@ -29,7 +29,7 @@ public class BuildVars {
     private static Boolean betaApp;
 
     static {
-        boolean z4 = true;
+        boolean z10 = true;
         NO_SCOPED_STORAGE = Build.VERSION.SDK_INT <= 29;
         BUILD_VERSION_STRING = BuildConfig.BUILD_VERSION_STRING;
         APP_ID = 4;
@@ -43,14 +43,14 @@ public class BuildVars {
         SUPPORTS_PASSKEYS = true;
         if (ApplicationLoader.applicationContext != null) {
             SharedPreferences sharedPreferences = ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0);
-            boolean z10 = DEBUG_VERSION;
-            if (!z10 && !sharedPreferences.getBoolean("logsEnabled", z10)) {
-                z4 = false;
+            boolean z11 = DEBUG_VERSION;
+            if (!z11 && !sharedPreferences.getBoolean("logsEnabled", z11)) {
+                z10 = false;
             }
-            LOGS_ENABLED = z4;
-            if (z4) {
+            LOGS_ENABLED = z10;
+            if (z10) {
                 final Thread.UncaughtExceptionHandler defaultUncaughtExceptionHandler = Thread.getDefaultUncaughtExceptionHandler();
-                Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: org.telegram.messenger.o0
+                Thread.setDefaultUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() { // from class: org.telegram.messenger.n0
                     @Override // java.lang.Thread.UncaughtExceptionHandler
                     public final void uncaughtException(Thread thread, Throwable th2) {
                         BuildVars.lambda$static$0(defaultUncaughtExceptionHandler, thread, th2);
@@ -65,24 +65,24 @@ public class BuildVars {
     }
 
     private static boolean hasDirectCurrency() {
-        p2.n nVar;
-        if (BillingController.getInstance().isReady() && (nVar = BillingController.PREMIUM_PRODUCT_DETAILS) != null) {
-            ArrayList arrayList = nVar.h;
+        c5.o oVar;
+        if (BillingController.getInstance().isReady() && (oVar = BillingController.PREMIUM_PRODUCT_DETAILS) != null) {
+            ArrayList arrayList = oVar.h;
             int size = arrayList.size();
             int i10 = 0;
             while (i10 < size) {
                 Object obj = arrayList.get(i10);
                 i10++;
-                ArrayList arrayList2 = ((p2.m) obj).b.a;
+                ArrayList arrayList2 = ((c5.n) obj).b.a;
                 int size2 = arrayList2.size();
                 int i11 = 0;
                 while (i11 < size2) {
                     Object obj2 = arrayList2.get(i11);
                     i11++;
-                    p2.k kVar = (p2.k) obj2;
+                    c5.l lVar = (c5.l) obj2;
                     Iterator<String> it = MessagesController.getInstance(UserConfig.selectedAccount).directPaymentsCurrency.iterator();
                     while (it.hasNext()) {
-                        if (Objects.equals(kVar.c, it.next())) {
+                        if (Objects.equals(lVar.c, it.next())) {
                             return true;
                         }
                     }

@@ -1,26 +1,87 @@
 package org.telegram.ui;
 
-import java.util.TimerTask;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.Vector;
+import org.telegram.tgnet.tl.TL_account;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class an0 extends TimerTask {
-    public final /* synthetic */ bn0 a;
+public final /* synthetic */ class an0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ bn0 b;
+    public final /* synthetic */ TLRPC.TL_error c;
+    public final /* synthetic */ TLObject d;
 
-    public an0(bn0 bn0Var) {
-        this.a = bn0Var;
+    public /* synthetic */ an0(bn0 bn0Var, TLObject tLObject, TLRPC.TL_error tL_error) {
+        this.a = 0;
+        this.b = bn0Var;
+        this.d = tLObject;
+        this.c = tL_error;
     }
 
-    @Override // java.util.TimerTask, java.lang.Runnable
+    @Override // java.lang.Runnable
     public final void run() {
-        bn0 bn0Var = this.a;
-        if (bn0Var.v == null) {
-            return;
+        switch (this.a) {
+            case 0:
+                bn0 bn0Var = this.b;
+                TLObject tLObject = this.d;
+                TLRPC.TL_error tL_error = this.c;
+                pn0 pn0Var = bn0Var.e;
+                if (tLObject instanceof Vector) {
+                    pn0Var.y = new TL_account.authorizationForm();
+                    Vector vector = (Vector) tLObject;
+                    int size = vector.objects.size();
+                    for (int i10 = 0; i10 < size; i10++) {
+                        pn0Var.y.values.add((TLRPC.TL_secureValue) vector.objects.get(i10));
+                    }
+                    bn0Var.a();
+                    break;
+                } else {
+                    if ("APP_VERSION_OUTDATED".equals(tL_error.text)) {
+                        org.telegram.ui.Components.e5.x0(pn0Var.getParentActivity(), LocaleController.getString(R.string.UpdateAppAlert), true);
+                    } else {
+                        pn0Var.M1(LocaleController.getString(R.string.AppName), tL_error.text);
+                    }
+                    pn0Var.N1(true, false);
+                    break;
+                }
+            case 1:
+                bn0 bn0Var2 = this.b;
+                TLRPC.TL_error tL_error2 = this.c;
+                TLObject tLObject2 = this.d;
+                if (tL_error2 == null) {
+                    TL_account.Password password = (TL_account.Password) tLObject2;
+                    bn0Var2.e.J = password;
+                    TwoStepVerificationActivity.m0(password);
+                    bn0Var2.b();
+                    break;
+                } else {
+                    bn0Var2.getClass();
+                    break;
+                }
+            default:
+                bn0 bn0Var3 = this.b;
+                TLRPC.TL_error tL_error3 = this.c;
+                TLObject tLObject3 = this.d;
+                if (tL_error3 == null) {
+                    TL_account.Password password2 = (TL_account.Password) tLObject3;
+                    bn0Var3.e.J = password2;
+                    TwoStepVerificationActivity.m0(password2);
+                    Utilities.globalQueue.postRunnable(new pf0(bn0Var3, bn0Var3.b, bn0Var3.d, 12));
+                    break;
+                }
+                break;
         }
-        double currentTimeMillis = System.currentTimeMillis();
-        bn0Var.y = (int) (bn0Var.y - (currentTimeMillis - bn0Var.C));
-        bn0Var.C = currentTimeMillis;
-        AndroidUtilities.runOnUIThread(new gl0(this, 6));
+    }
+
+    public /* synthetic */ an0(bn0 bn0Var, TLRPC.TL_error tL_error, TLObject tLObject, int i10) {
+        this.a = i10;
+        this.b = bn0Var;
+        this.c = tL_error;
+        this.d = tLObject;
     }
 }

@@ -7,7 +7,7 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class w1 extends f1 implements RandomAccess, y1 {
     public static final int[] d;
@@ -21,8 +21,8 @@ public final class w1 extends f1 implements RandomAccess, y1 {
         e = new w1(iArr, 0, false);
     }
 
-    public w1(int[] iArr, int i10, boolean z4) {
-        super(z4);
+    public w1(int[] iArr, int i10, boolean z10) {
+        super(z10);
         this.b = iArr;
         this.c = i10;
     }
@@ -33,7 +33,7 @@ public final class w1 extends f1 implements RandomAccess, y1 {
         int intValue = ((Integer) obj).intValue();
         i();
         if (i10 < 0 || i10 > (i11 = this.c)) {
-            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a4.a.l(i10, this.c, "Index:", ", Size:"));
         }
         int i12 = i10 + 1;
         int[] iArr = this.b;
@@ -157,7 +157,7 @@ public final class w1 extends f1 implements RandomAccess, y1 {
 
     public final void p(int i10) {
         if (i10 < 0 || i10 >= this.c) {
-            throw new IndexOutOfBoundsException(android.support.v4.media.a.k(i10, this.c, "Index:", ", Size:"));
+            throw new IndexOutOfBoundsException(a4.a.l(i10, this.c, "Index:", ", Size:"));
         }
     }
 

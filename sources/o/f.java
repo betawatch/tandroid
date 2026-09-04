@@ -4,7 +4,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class f implements Iterable {
     public c a;
@@ -119,17 +119,17 @@ public class f implements Iterable {
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder("[");
+        StringBuilder sb2 = new StringBuilder("[");
         Iterator it = iterator();
         while (true) {
             b bVar = (b) it;
             if (!bVar.hasNext()) {
-                sb.append("]");
-                return sb.toString();
+                sb2.append("]");
+                return sb2.toString();
             }
-            sb.append(((Map.Entry) bVar.next()).toString());
+            sb2.append(((Map.Entry) bVar.next()).toString());
             if (bVar.hasNext()) {
-                sb.append(", ");
+                sb2.append(", ");
             }
         }
     }

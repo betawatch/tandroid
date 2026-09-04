@@ -18,7 +18,7 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Log;
 import androidx.versionedparcelable.CustomVersionedParcelable;
-import d1.f;
+import b5.d;
 import e0.b;
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,7 +27,7 @@ import java.io.InputStream;
 import java.lang.reflect.InvocationTargetException;
 import org.scilab.forge.jlatexmath.TeXSymbolParser;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class IconCompat extends CustomVersionedParcelable {
     public static final PorterDuff.Mode k = PorterDuff.Mode.SRC_IN;
@@ -86,21 +86,21 @@ public class IconCompat extends CustomVersionedParcelable {
         }
     }
 
-    public static Bitmap b(Bitmap bitmap, boolean z4) {
+    public static Bitmap b(Bitmap bitmap, boolean z10) {
         int min = (int) (Math.min(bitmap.getWidth(), bitmap.getHeight()) * 0.6666667f);
         Bitmap createBitmap = Bitmap.createBitmap(min, min, Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         Paint paint = new Paint(3);
-        float f10 = min;
-        float f11 = 0.5f * f10;
-        float f12 = 0.9166667f * f11;
-        if (z4) {
-            float f13 = 0.010416667f * f10;
+        float f7 = min;
+        float f10 = 0.5f * f7;
+        float f11 = 0.9166667f * f10;
+        if (z10) {
+            float f12 = 0.010416667f * f7;
             paint.setColor(0);
-            paint.setShadowLayer(f13, 0.0f, f10 * 0.020833334f, 1023410176);
-            canvas.drawCircle(f11, f11, f12, paint);
-            paint.setShadowLayer(f13, 0.0f, 0.0f, 503316480);
-            canvas.drawCircle(f11, f11, f12, paint);
+            paint.setShadowLayer(f12, 0.0f, f7 * 0.020833334f, 1023410176);
+            canvas.drawCircle(f10, f10, f11, paint);
+            paint.setShadowLayer(f12, 0.0f, 0.0f, 503316480);
+            canvas.drawCircle(f10, f10, f11, paint);
             paint.clearShadowLayer();
         }
         paint.setColor(-16777216);
@@ -110,7 +110,7 @@ public class IconCompat extends CustomVersionedParcelable {
         matrix.setTranslate((-(bitmap.getWidth() - min)) / 2.0f, (-(bitmap.getHeight() - min)) / 2.0f);
         bitmapShader.setLocalMatrix(matrix);
         paint.setShader(bitmapShader);
-        canvas.drawCircle(f11, f11, f12, paint);
+        canvas.drawCircle(f10, f10, f11, paint);
         canvas.setBitmap(null);
         return createBitmap;
     }
@@ -176,18 +176,18 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         Object obj = this.b;
         if (i10 >= 28) {
-            return f.i(obj);
+            return d.i(obj);
         }
         try {
             return ((Integer) obj.getClass().getMethod("getResId", null).invoke(obj, null)).intValue();
-        } catch (IllegalAccessException e) {
-            Log.e("IconCompat", "Unable to get icon resource", e);
+        } catch (IllegalAccessException e7) {
+            Log.e("IconCompat", "Unable to get icon resource", e7);
             return 0;
-        } catch (NoSuchMethodException e6) {
-            Log.e("IconCompat", "Unable to get icon resource", e6);
-            return 0;
-        } catch (InvocationTargetException e10) {
+        } catch (NoSuchMethodException e10) {
             Log.e("IconCompat", "Unable to get icon resource", e10);
+            return 0;
+        } catch (InvocationTargetException e11) {
+            Log.e("IconCompat", "Unable to get icon resource", e11);
             return 0;
         }
     }
@@ -204,18 +204,18 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         Object obj = this.b;
         if (i10 >= 28) {
-            return f.j(obj);
+            return d.j(obj);
         }
         try {
             return (String) obj.getClass().getMethod("getResPackage", null).invoke(obj, null);
-        } catch (IllegalAccessException e) {
-            Log.e("IconCompat", "Unable to get icon package", e);
+        } catch (IllegalAccessException e7) {
+            Log.e("IconCompat", "Unable to get icon package", e7);
             return null;
-        } catch (NoSuchMethodException e6) {
-            Log.e("IconCompat", "Unable to get icon package", e6);
-            return null;
-        } catch (InvocationTargetException e10) {
+        } catch (NoSuchMethodException e10) {
             Log.e("IconCompat", "Unable to get icon package", e10);
+            return null;
+        } catch (InvocationTargetException e11) {
+            Log.e("IconCompat", "Unable to get icon package", e11);
             return null;
         }
     }
@@ -228,18 +228,18 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         Object obj = this.b;
         if (i10 >= 28) {
-            return f.q(obj);
+            return d.q(obj);
         }
         try {
             return ((Integer) obj.getClass().getMethod("getType", null).invoke(obj, null)).intValue();
-        } catch (IllegalAccessException e) {
-            Log.e("IconCompat", "Unable to get icon type " + obj, e);
+        } catch (IllegalAccessException e7) {
+            Log.e("IconCompat", "Unable to get icon type " + obj, e7);
             return -1;
-        } catch (NoSuchMethodException e6) {
-            Log.e("IconCompat", "Unable to get icon type " + obj, e6);
-            return -1;
-        } catch (InvocationTargetException e10) {
+        } catch (NoSuchMethodException e10) {
             Log.e("IconCompat", "Unable to get icon type " + obj, e10);
+            return -1;
+        } catch (InvocationTargetException e11) {
+            Log.e("IconCompat", "Unable to get icon type " + obj, e11);
             return -1;
         }
     }
@@ -255,37 +255,37 @@ public class IconCompat extends CustomVersionedParcelable {
         }
         Object obj = this.b;
         if (i10 >= 28) {
-            return f.r(obj);
+            return d.r(obj);
         }
         try {
             return (Uri) obj.getClass().getMethod("getUri", null).invoke(obj, null);
-        } catch (IllegalAccessException e) {
-            Log.e("IconCompat", "Unable to get icon uri", e);
+        } catch (IllegalAccessException e7) {
+            Log.e("IconCompat", "Unable to get icon uri", e7);
             return null;
-        } catch (NoSuchMethodException e6) {
-            Log.e("IconCompat", "Unable to get icon uri", e6);
-            return null;
-        } catch (InvocationTargetException e10) {
+        } catch (NoSuchMethodException e10) {
             Log.e("IconCompat", "Unable to get icon uri", e10);
+            return null;
+        } catch (InvocationTargetException e11) {
+            Log.e("IconCompat", "Unable to get icon uri", e11);
             return null;
         }
     }
 
     public final InputStream k(Context context) {
-        Uri j10 = j();
-        String scheme = j10.getScheme();
+        Uri j3 = j();
+        String scheme = j3.getScheme();
         if ("content".equals(scheme) || "file".equals(scheme)) {
             try {
-                return context.getContentResolver().openInputStream(j10);
-            } catch (Exception e) {
-                Log.w("IconCompat", "Unable to load image from URI: " + j10, e);
+                return context.getContentResolver().openInputStream(j3);
+            } catch (Exception e7) {
+                Log.w("IconCompat", "Unable to load image from URI: " + j3, e7);
                 return null;
             }
         }
         try {
             return new FileInputStream(new File((String) this.b));
-        } catch (FileNotFoundException e6) {
-            Log.w("IconCompat", "Unable to load image from path: " + j10, e6);
+        } catch (FileNotFoundException e10) {
+            Log.w("IconCompat", "Unable to load image from path: " + j3, e10);
             return null;
         }
     }
@@ -329,7 +329,7 @@ public class IconCompat extends CustomVersionedParcelable {
 
     public final Icon m(Context context) {
         if (Build.VERSION.SDK_INT >= 23) {
-            return b.z(this, context);
+            return b.I(this, context);
         }
         throw new UnsupportedOperationException("This method is only supported on API level 23+");
     }
@@ -339,7 +339,7 @@ public class IconCompat extends CustomVersionedParcelable {
         if (this.a == -1) {
             return String.valueOf(this.b);
         }
-        StringBuilder sb = new StringBuilder("Icon(typ=");
+        StringBuilder sb2 = new StringBuilder("Icon(typ=");
         switch (this.a) {
             case 1:
                 str = "BITMAP";
@@ -363,46 +363,46 @@ public class IconCompat extends CustomVersionedParcelable {
                 str = "UNKNOWN";
                 break;
         }
-        sb.append(str);
+        sb2.append(str);
         switch (this.a) {
             case 1:
             case 5:
-                sb.append(" size=");
-                sb.append(((Bitmap) this.b).getWidth());
-                sb.append("x");
-                sb.append(((Bitmap) this.b).getHeight());
+                sb2.append(" size=");
+                sb2.append(((Bitmap) this.b).getWidth());
+                sb2.append("x");
+                sb2.append(((Bitmap) this.b).getHeight());
                 break;
             case 2:
-                sb.append(" pkg=");
-                sb.append(this.j);
-                sb.append(" id=");
-                sb.append(String.format("0x%08x", Integer.valueOf(g())));
+                sb2.append(" pkg=");
+                sb2.append(this.j);
+                sb2.append(" id=");
+                sb2.append(String.format("0x%08x", Integer.valueOf(g())));
                 break;
             case 3:
-                sb.append(" len=");
-                sb.append(this.e);
+                sb2.append(" len=");
+                sb2.append(this.e);
                 if (this.f != 0) {
-                    sb.append(" off=");
-                    sb.append(this.f);
+                    sb2.append(" off=");
+                    sb2.append(this.f);
                     break;
                 }
                 break;
             case 4:
             case 6:
-                sb.append(" uri=");
-                sb.append(this.b);
+                sb2.append(" uri=");
+                sb2.append(this.b);
                 break;
         }
         if (this.g != null) {
-            sb.append(" tint=");
-            sb.append(this.g);
+            sb2.append(" tint=");
+            sb2.append(this.g);
         }
         if (this.h != k) {
-            sb.append(" mode=");
-            sb.append(this.h);
+            sb2.append(" mode=");
+            sb2.append(this.h);
         }
-        sb.append(")");
-        return sb.toString();
+        sb2.append(")");
+        return sb2.toString();
     }
 
     public IconCompat(int i10) {

@@ -1,24 +1,23 @@
 package org.telegram.ui;
 
-import org.telegram.tgnet.TLRPC;
+import android.content.Context;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ni1 implements org.telegram.ui.ActionBar.c2, id1 {
-    public final /* synthetic */ WallpapersListActivity a;
+public final class ni1 extends org.telegram.ui.Components.voip.b1 {
+    public final /* synthetic */ ui1 V;
 
-    public /* synthetic */ ni1(WallpapersListActivity wallpapersListActivity) {
-        this.a = wallpapersListActivity;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public ni1(ui1 ui1Var, Context context, float f7, float f10) {
+        super(context, f7, f10);
+        this.V = ui1Var;
     }
 
-    @Override // org.telegram.ui.id1
-    public void a(TLRPC.TL_wallPaper tL_wallPaper) {
-        int[][] iArr = WallpapersListActivity.h0;
-        this.a.removeSelfFromStack();
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        WallpapersListActivity.U(this.a);
+    @Override // org.telegram.ui.Components.voip.b1
+    public final int[] getFloatingViewLocation() {
+        int[] iArr = new int[2];
+        ui1 ui1Var = this.V;
+        ui1Var.Y.getLocationOnScreen(iArr);
+        return new int[]{iArr[0], iArr[1], ui1Var.Y.getMeasuredWidth()};
     }
 }

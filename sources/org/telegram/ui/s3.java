@@ -1,37 +1,46 @@
 package org.telegram.ui;
 
-import android.text.style.URLSpan;
-import android.view.View;
-import java.util.HashSet;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class s3 extends URLSpan {
+public final /* synthetic */ class s3 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ t3 b;
+    public final /* synthetic */ v3 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ s3(t3 t3Var, String str, int i10) {
-        super(str);
+    public /* synthetic */ s3(v3 v3Var, int i10) {
         this.a = i10;
-        this.b = t3Var;
+        this.b = v3Var;
     }
 
-    @Override // android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        int i10 = this.a;
-        t3 t3Var = this.b;
-        switch (i10) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
             case 0:
-                n4 n4Var = t3Var.c;
-                String url = getURL();
-                org.telegram.ui.Components.g90 g90Var = n4Var.b;
-                f3 f3Var = n4Var.d;
-                HashSet hashSet = n4.Y0;
-                n4Var.Q(url, null, g90Var == null ? null : new m0(n4Var, f3Var, g90Var));
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v3 v3Var = this.b;
+                v3Var.I = floatValue;
+                v3Var.c.invalidate();
+                v3Var.i();
+                v3Var.h();
+                break;
+            case 1:
+                v3 v3Var2 = this.b;
+                v3Var2.getClass();
+                v3Var2.w = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v3Var2.n();
+                v3Var2.i();
+                v3Var2.h();
                 break;
             default:
-                t3Var.c.Q(getURL(), null, null);
+                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                v3 v3Var3 = this.b;
+                v3Var3.x = floatValue2;
+                if (!v3Var3.n) {
+                    v3Var3.n();
+                }
+                v3Var3.i();
+                v3Var3.h();
                 break;
         }
     }

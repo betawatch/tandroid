@@ -1,82 +1,36 @@
 package n7;
 
-import java.io.Serializable;
-import java.util.AbstractCollection;
-import java.util.Arrays;
-import java.util.Collection;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class e extends AbstractCollection implements Serializable {
-    public static final Object[] a = new Object[0];
+public final class e extends d {
+    public final c7.x a;
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean add(Object obj) {
-        throw new UnsupportedOperationException();
+    public e(c7.x xVar) {
+        this.a = xVar;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean addAll(Collection collection) {
-        throw new UnsupportedOperationException();
+    @Override // n7.d
+    public final Object a() {
+        return this.a;
     }
 
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final void clear() {
-        throw new UnsupportedOperationException();
+    @Override // n7.d
+    public final boolean b() {
+        return true;
     }
 
-    public abstract int i(Object[] objArr);
-
-    public int n() {
-        throw new UnsupportedOperationException();
-    }
-
-    public int o() {
-        throw new UnsupportedOperationException();
-    }
-
-    public Object[] p() {
-        return null;
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean remove(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean removeAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final boolean retainAll(Collection collection) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray() {
-        return toArray(a);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection
-    public final Object[] toArray(Object[] objArr) {
-        objArr.getClass();
-        int size = size();
-        int length = objArr.length;
-        if (length < size) {
-            Object[] p10 = p();
-            if (p10 != null) {
-                return Arrays.copyOfRange(p10, o(), n(), objArr.getClass());
-            }
-            if (length != 0) {
-                objArr = Arrays.copyOf(objArr, 0);
-            }
-            objArr = Arrays.copyOf(objArr, size);
-        } else if (length > size) {
-            objArr[size] = null;
+    public final boolean equals(Object obj) {
+        if (obj instanceof e) {
+            return this.a.equals(((e) obj).a);
         }
-        i(objArr);
-        return objArr;
+        return false;
+    }
+
+    public final int hashCode() {
+        return this.a.hashCode() + 1502476572;
+    }
+
+    public final String toString() {
+        return a4.a.p("Optional.of(", this.a.toString(), ")");
     }
 }

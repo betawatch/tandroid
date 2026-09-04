@@ -1,21 +1,21 @@
 package com.google.android.gms.internal.play_billing;
 
-import j7.s6;
+import v7.z5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e4 extends s6 {
-    @Override // j7.s6
+public final class e4 extends z5 {
+    @Override // v7.z5
     public final void a(f4 f4Var, f4 f4Var2) {
         f4Var.b = f4Var2;
     }
 
-    @Override // j7.s6
+    @Override // v7.z5
     public final void b(f4 f4Var, Thread thread) {
         f4Var.a = thread;
     }
 
-    @Override // j7.s6
+    @Override // v7.z5
     public final boolean c(g4 g4Var, v2 v2Var, v2 v2Var2) {
         synchronized (g4Var) {
             try {
@@ -30,7 +30,7 @@ public final class e4 extends s6 {
         }
     }
 
-    @Override // j7.s6
+    @Override // v7.z5
     public final boolean d(g4 g4Var, Object obj, Object obj2) {
         synchronized (g4Var) {
             try {
@@ -45,7 +45,7 @@ public final class e4 extends s6 {
         }
     }
 
-    @Override // j7.s6
+    @Override // v7.z5
     public final boolean e(g4 g4Var, f4 f4Var, f4 f4Var2) {
         synchronized (g4Var) {
             try {

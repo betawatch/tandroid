@@ -1,58 +1,41 @@
 package g;
 
-import android.view.ViewGroup;
-import java.util.WeakHashMap;
-import r0.j0;
-import r0.m0;
+import java.lang.ref.WeakReference;
+import java.util.ArrayDeque;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class h implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ q b;
+public abstract class h {
+    public static final int a;
+    public static final a0.g b;
+    public static final Object c;
 
-    public /* synthetic */ h(q qVar, int i10) {
-        this.a = i10;
-        this.b = qVar;
+    static {
+        new ArrayDeque();
+        a = -100;
+        b = new a0.g(0);
+        c = new Object();
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ViewGroup viewGroup;
-        int i10 = this.a;
-        q qVar = this.b;
-        int i11 = 0;
-        switch (i10) {
-            case 0:
-                if ((qVar.f0 & 1) != 0) {
-                    qVar.k(0);
-                }
-                if ((qVar.f0 & 4096) != 0) {
-                    qVar.k(108);
-                }
-                qVar.e0 = false;
-                qVar.f0 = 0;
-                break;
-            default:
-                qVar.B.showAtLocation(qVar.y, 55, 0, 0);
-                m0 m0Var = qVar.D;
-                if (m0Var != null) {
-                    m0Var.b();
-                }
-                if (qVar.F && (viewGroup = qVar.G) != null) {
-                    WeakHashMap weakHashMap = j0.a;
-                    if (viewGroup.isLaidOut()) {
-                        qVar.y.setAlpha(0.0f);
-                        m0 a2 = j0.a(qVar.y);
-                        a2.a(1.0f);
-                        qVar.D = a2;
-                        a2.d(new i(this, i11));
-                        break;
+    public static void b(s sVar) {
+        synchronized (c) {
+            try {
+                a0.g gVar = b;
+                gVar.getClass();
+                a0.b bVar = new a0.b(gVar);
+                while (bVar.hasNext()) {
+                    h hVar = (h) ((WeakReference) bVar.next()).get();
+                    if (hVar == sVar || hVar == null) {
+                        bVar.remove();
                     }
                 }
-                qVar.y.setAlpha(1.0f);
-                qVar.y.setVisibility(0);
-                break;
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
     }
+
+    public abstract void a();
+
+    public abstract boolean c(int i10);
 }

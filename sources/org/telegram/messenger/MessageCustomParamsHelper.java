@@ -8,64 +8,64 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class MessageCustomParamsHelper {
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class Params_v1 extends TLObject {
         private static final int VERSION = 1;
         int flags;
         final TLRPC.Message message;
 
         @Override // org.telegram.tgnet.TLObject
-        public void readParams(InputSerializedData inputSerializedData, boolean z4) {
+        public void readParams(InputSerializedData inputSerializedData, boolean z10) {
             int readInt32 = inputSerializedData.readInt32(true);
             this.flags = readInt32;
             if ((readInt32 & 1) != 0) {
-                this.message.voiceTranscription = inputSerializedData.readString(z4);
+                this.message.voiceTranscription = inputSerializedData.readString(z10);
             }
             TLRPC.Message message = this.message;
             int i10 = this.flags;
             message.voiceTranscriptionForce = (i10 & 2) != 0;
             message.summarizedOpen = (i10 & 512) != 0;
-            message.voiceTranscriptionOpen = inputSerializedData.readBool(z4);
-            this.message.voiceTranscriptionFinal = inputSerializedData.readBool(z4);
-            this.message.voiceTranscriptionRated = inputSerializedData.readBool(z4);
-            this.message.voiceTranscriptionId = inputSerializedData.readInt64(z4);
-            this.message.premiumEffectWasPlayed = inputSerializedData.readBool(z4);
+            message.voiceTranscriptionOpen = inputSerializedData.readBool(z10);
+            this.message.voiceTranscriptionFinal = inputSerializedData.readBool(z10);
+            this.message.voiceTranscriptionRated = inputSerializedData.readBool(z10);
+            this.message.voiceTranscriptionId = inputSerializedData.readInt64(z10);
+            this.message.premiumEffectWasPlayed = inputSerializedData.readBool(z10);
             if ((this.flags & 4) != 0) {
-                this.message.originalLanguage = inputSerializedData.readString(z4);
+                this.message.originalLanguage = inputSerializedData.readString(z10);
             }
             if ((this.flags & 8) != 0) {
-                this.message.translatedToLanguage = inputSerializedData.readString(z4);
+                this.message.translatedToLanguage = inputSerializedData.readString(z10);
             }
             if ((this.flags & 16) != 0) {
-                this.message.translatedText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.message.translatedText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if ((this.flags & 32) != 0) {
-                this.message.translatedPoll = TranslateController.PollText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.message.translatedPoll = TranslateController.PollText.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if ((this.flags & 64) != 0) {
-                this.message.errorAllowedPriceStars = inputSerializedData.readInt64(z4);
+                this.message.errorAllowedPriceStars = inputSerializedData.readInt64(z10);
             }
             if ((this.flags & 128) != 0) {
-                this.message.errorNewPriceStars = inputSerializedData.readInt64(z4);
+                this.message.errorNewPriceStars = inputSerializedData.readInt64(z10);
             }
             if ((this.flags & 256) != 0) {
-                this.message.translatedVoiceTranscription = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.message.translatedVoiceTranscription = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 1024)) {
-                this.message.summaryText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.message.summaryText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 2048)) {
-                this.message.translatedSummaryText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.message.translatedSummaryText = TLRPC.TL_textWithEntities.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
             if (TLObject.hasFlag(this.flags, 4096)) {
-                this.message.translatedSummaryLanguage = inputSerializedData.readString(z4);
+                this.message.translatedSummaryLanguage = inputSerializedData.readString(z10);
             }
             if (TLObject.hasFlag(this.flags, 8192)) {
-                this.message.translatedRichMessage = TL_iv.RichMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z4), z4);
+                this.message.translatedRichMessage = TL_iv.RichMessage.TLdeserialize(inputSerializedData, inputSerializedData.readInt32(z10), z10);
             }
         }
 
@@ -184,7 +184,7 @@ public class MessageCustomParamsHelper {
         }
         int readInt32 = nativeByteBuffer.readInt32(true);
         if (readInt32 != 1) {
-            throw new RuntimeException(kf.k0.j(readInt32, "can't read params version = "));
+            throw new RuntimeException(i2.g.i(readInt32, "can't read params version = "));
         }
         new Params_v1(message).readParams(nativeByteBuffer, true);
     }
@@ -198,8 +198,8 @@ public class MessageCustomParamsHelper {
             NativeByteBuffer nativeByteBuffer = new NativeByteBuffer(params_v1.getObjectSize());
             params_v1.serializeToStream(nativeByteBuffer);
             return nativeByteBuffer;
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception e7) {
+            e7.printStackTrace();
             return null;
         }
     }

@@ -2,19 +2,58 @@ package org.telegram.ui;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class v0 extends AnimatorListenerAdapter {
-    public final /* synthetic */ n4 a;
+    public final /* synthetic */ i4 a;
 
-    public v0(n4 n4Var) {
-        this.a = n4Var;
+    public v0(i4 i4Var) {
+        this.a = i4Var;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        AndroidUtilities.runOnUIThread(new yt0(this, 6));
+        i4 i4Var = this.a;
+        v3 v3Var = i4Var.K;
+        if (i4Var.f0.e) {
+            i4Var.u0[0].setBackgroundDrawable(null);
+            m3[] m3VarArr = i4Var.u0;
+            m3 m3Var = m3VarArr[1];
+            m3VarArr[1] = m3VarArr[0];
+            m3VarArr[0] = m3Var;
+            i4Var.h0.i();
+            i4Var.Z0.a(i4Var.u0[0].getBackgroundColor(), true);
+            i4Var.a1.a(i4Var.u0[1].getBackgroundColor(), true);
+            if (v3Var != null) {
+                v3Var.m();
+            }
+            Object z10 = i2.g.z(1, i4Var.d0);
+            i4Var.O0.T(i4Var.u0[0].b);
+            org.telegram.ui.Cells.q9 q9Var = i4Var.O0;
+            q9Var.E0 = i4Var.u0[0].d;
+            q9Var.f(true);
+            i4Var.i0(false);
+            i4Var.f0();
+            i4Var.u0[1].b();
+            i4Var.u0[1].setVisibility(8);
+            if (z10 instanceof z2) {
+                ((z2) z10).a();
+            }
+            if (z10 instanceof TLRPC.WebPage) {
+                org.telegram.ui.web.j2.o((TLRPC.WebPage) z10);
+            }
+        } else if (v3Var != null) {
+            v3Var.release();
+            i4Var.s();
+        } else {
+            i4Var.U();
+            i4Var.M();
+        }
+        ArticleViewer$WindowView articleViewer$WindowView = i4Var.f0;
+        articleViewer$WindowView.e = false;
+        articleViewer$WindowView.d = false;
+        i4Var.T0 = false;
     }
 }

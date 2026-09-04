@@ -1,31 +1,50 @@
 package a5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class c {
-    public final int a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
-    public final int f;
-    public final int g;
-    public final int h;
-    public final int i;
-    public final int j;
-    public final int k;
+import android.content.pm.PackageInfo;
+import android.net.Uri;
+import android.webkit.WebView;
+import b5.m;
+import b5.n;
+import b5.o;
+import java.util.Set;
+import java.util.WeakHashMap;
 
-    public c(int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17, int i18, int i19, int i20) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = i14;
-        this.f = i15;
-        this.g = i16;
-        this.h = i17;
-        this.i = i18;
-        this.j = i19;
-        this.k = i20;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public abstract class c {
+    public static final boolean a;
+    public static final WeakHashMap b;
+
+    static {
+        Uri.parse("*");
+        Uri.parse("");
+        a = true;
+        b = new WeakHashMap();
+    }
+
+    public static void a(WebView webView, String str, Set set, b bVar) {
+        if (!m.c.b()) {
+            throw new UnsupportedOperationException("This method is not supported by the current version of the framework and the current WebView APK");
+        }
+        o c10 = c(webView);
+        c10.a.addWebMessageListener(str, (String[]) set.toArray(new String[0]), new se.a(new a4.m(bVar, 7)));
+    }
+
+    public static PackageInfo b() {
+        return (PackageInfo) Class.forName("android.webkit.WebViewFactory").getMethod("getLoadedPackageInfo", null).invoke(null, null);
+    }
+
+    public static o c(WebView webView) {
+        if (!m.e.b() || !a) {
+            return new o(n.a.createWebView(webView));
+        }
+        WeakHashMap weakHashMap = b;
+        o oVar = (o) weakHashMap.get(webView);
+        if (oVar != null) {
+            return oVar;
+        }
+        o oVar2 = new o(n.a.createWebView(webView));
+        weakHashMap.put(webView, oVar2);
+        return oVar2;
     }
 }

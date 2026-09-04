@@ -1,76 +1,72 @@
 package org.telegram.ui;
 
-import android.view.TextureView;
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.Components.UndoView;
+import android.view.View;
+import androidx.recyclerview.widget.RecyclerView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class sy0 implements org.telegram.ui.ActionBar.t0, yu0, org.telegram.ui.Components.g8 {
-    public final /* synthetic */ ProfileActivity a;
+public final /* synthetic */ class sy0 implements e2.h {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ProfileActivity b;
 
-    public /* synthetic */ sy0(ProfileActivity profileActivity) {
-        this.a = profileActivity;
+    public /* synthetic */ sy0(ProfileActivity profileActivity, int i10) {
+        this.a = i10;
+        this.b = profileActivity;
     }
 
-    @Override // org.telegram.ui.yu0
-    public void H(MessageObject messageObject) {
-        org.telegram.ui.Components.nh0 nh0Var = this.a.j0;
-        if (nh0Var == null || !nh0Var.a) {
-            return;
+    @Override // e2.h
+    public final void accept(Object obj) {
+        View view = (View) obj;
+        switch (this.a) {
+            case 0:
+                if (view instanceof org.telegram.ui.Cells.c9) {
+                    org.telegram.ui.Cells.c9 c9Var = (org.telegram.ui.Cells.c9) view;
+                    wh.p pVar = c9Var.a;
+                    ProfileActivity profileActivity = this.b;
+                    pVar.setLoading(profileActivity.i5);
+                    c9Var.b.setLoading(profileActivity.i5);
+                    break;
+                }
+                break;
+            default:
+                boolean z10 = view instanceof org.telegram.ui.Cells.l4;
+                ProfileActivity profileActivity2 = this.b;
+                if (z10) {
+                    ((org.telegram.ui.Cells.l4) view).setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.L6, profileActivity2.z0));
+                } else if (view instanceof org.telegram.ui.Cells.c9) {
+                    ((org.telegram.ui.Cells.c9) view).e();
+                } else if (view instanceof org.telegram.ui.Cells.r8) {
+                    ((org.telegram.ui.Cells.r8) view).v();
+                } else if (view instanceof org.telegram.ui.Cells.j) {
+                    org.telegram.ui.ActionBar.j6.P1.linkColor = org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.gc, ((org.telegram.ui.Cells.j) view).I);
+                } else if (view instanceof org.telegram.ui.Cells.i5) {
+                    ((org.telegram.ui.Cells.i5) view).getCheckBox().invalidate();
+                } else if (view instanceof ig.j1) {
+                    ig.j1 j1Var = (ig.j1) view;
+                    org.telegram.ui.Components.cq cqVar = j1Var.r;
+                    int dp = AndroidUtilities.dp(8.0f);
+                    int i10 = org.telegram.ui.ActionBar.j6.o6;
+                    org.telegram.ui.ActionBar.f6 f6Var = j1Var.a;
+                    int v02 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
+                    j1Var.a(v02);
+                    int l1 = org.telegram.ui.ActionBar.j6.l1(0.1f, v02);
+                    int v03 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
+                    j1Var.a(v03);
+                    int l12 = org.telegram.ui.ActionBar.j6.l1(0.22f, v03);
+                    cqVar.setBackground(org.telegram.ui.ActionBar.j6.i0(dp, dp, dp, dp, l1, l12, l12));
+                    int v04 = org.telegram.ui.ActionBar.j6.v0(i10, f6Var);
+                    j1Var.a(v04);
+                    cqVar.setTextColor(v04);
+                } else if (view instanceof org.telegram.ui.Cells.g6) {
+                    ((org.telegram.ui.Cells.g6) view).d();
+                }
+                a11 a11Var = profileActivity2.d;
+                profileActivity2.a.getClass();
+                RecyclerView.R(view);
+                a11Var.getClass();
+                profileActivity2.d.getClass();
+                break;
         }
-        nh0Var.L.d(0.0f, true);
-        nh0Var.invalidate();
-    }
-
-    @Override // org.telegram.ui.Components.g8
-    public void Q0(int i10, int i11) {
-        ProfileActivity profileActivity = this.a;
-        long a2 = profileActivity.a();
-        profileActivity.getMessagesController().setDialogHistoryTTL(a2, i10);
-        if (profileActivity.s2 == null && profileActivity.r2 == null) {
-            return;
-        }
-        UndoView undoView = profileActivity.J;
-        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(a2));
-        TLRPC.UserFull userFull = profileActivity.s2;
-        undoView.k(a2, i11, user, Integer.valueOf(userFull != null ? userFull.ttl_period : profileActivity.r2.ttl_period), null, null);
-    }
-
-    @Override // org.telegram.ui.Components.g8
-    public void dismiss() {
-        this.a.Q0.M(null, null);
-    }
-
-    @Override // org.telegram.ui.ActionBar.t0
-    public void e() {
-        org.telegram.ui.Components.hm0.d(new f5(this.a, 18));
-    }
-
-    @Override // org.telegram.ui.yu0
-    public /* synthetic */ TextureView e0() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.Components.g8
-    public void i1() {
-        this.a.presentFragment(new u4());
-        dismiss();
-    }
-
-    @Override // org.telegram.ui.yu0
-    public void w0(MessageObject messageObject) {
-        ProfileActivity profileActivity = this.a;
-        profileActivity.a.I0(true);
-        zz0 zz0Var = profileActivity.L;
-        if (zz0Var != null && zz0Var.getCurrentListView() != null) {
-            profileActivity.L.getCurrentListView().I0(true);
-        }
-        profileActivity.a1.setBackgroundColor(i0.a.d(0.1f, profileActivity.P3(profileActivity.S4.f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.a7, profileActivity.w0)));
-    }
-
-    @Override // org.telegram.ui.ActionBar.t0
-    public void c() {
     }
 }

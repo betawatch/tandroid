@@ -7,26 +7,26 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.TimeUnit;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class ThreadUtils {
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public class 1CaughtException {
         Exception e;
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public class 1Result {
         public V value;
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public interface BlockingOperation {
         void run();
     }
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class ThreadChecker {
         private Thread thread = Thread.currentThread();
 
@@ -67,16 +67,16 @@ public class ThreadUtils {
     }
 
     public static void executeUninterruptibly(BlockingOperation blockingOperation) {
-        boolean z4 = false;
+        boolean z10 = false;
         while (true) {
             try {
                 blockingOperation.run();
                 break;
             } catch (InterruptedException unused) {
-                z4 = true;
+                z10 = true;
             }
         }
-        if (z4) {
+        if (z10) {
             Thread.currentThread().interrupt();
         }
     }
@@ -85,8 +85,8 @@ public class ThreadUtils {
         if (handler.getLooper().getThread() == Thread.currentThread()) {
             try {
                 return callable.call();
-            } catch (Exception e) {
-                throw new RuntimeException(e);
+            } catch (Exception e7) {
+                throw new RuntimeException(e7);
             }
         }
         final 1Result r02 = new 1Result();
@@ -98,8 +98,8 @@ public class ThreadUtils {
             public void run() {
                 try {
                     1Result.this.value = callable.call();
-                } catch (Exception e6) {
-                    r12.e = e6;
+                } catch (Exception e10) {
+                    r12.e = e10;
                 }
                 countDownLatch.countDown();
             }
@@ -113,43 +113,43 @@ public class ThreadUtils {
         throw runtimeException;
     }
 
-    public static boolean joinUninterruptibly(Thread thread, long j10) {
+    public static boolean joinUninterruptibly(Thread thread, long j3) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z4 = false;
-        long j11 = j10;
-        while (j11 > 0) {
+        boolean z10 = false;
+        long j10 = j3;
+        while (j10 > 0) {
             try {
-                thread.join(j11);
+                thread.join(j10);
                 break;
             } catch (InterruptedException unused) {
-                j11 = j10 - (SystemClock.elapsedRealtime() - elapsedRealtime);
-                z4 = true;
+                j10 = j3 - (SystemClock.elapsedRealtime() - elapsedRealtime);
+                z10 = true;
             }
         }
-        if (z4) {
+        if (z10) {
             Thread.currentThread().interrupt();
         }
         return !thread.isAlive();
     }
 
-    public static boolean awaitUninterruptibly(CountDownLatch countDownLatch, long j10) {
+    public static boolean awaitUninterruptibly(CountDownLatch countDownLatch, long j3) {
         long elapsedRealtime = SystemClock.elapsedRealtime();
-        boolean z4 = false;
-        long j11 = j10;
         boolean z10 = false;
+        long j10 = j3;
+        boolean z11 = false;
         do {
             try {
-                z4 = countDownLatch.await(j11, TimeUnit.MILLISECONDS);
+                z10 = countDownLatch.await(j10, TimeUnit.MILLISECONDS);
                 break;
             } catch (InterruptedException unused) {
-                j11 = j10 - (SystemClock.elapsedRealtime() - elapsedRealtime);
-                z10 = true;
+                j10 = j3 - (SystemClock.elapsedRealtime() - elapsedRealtime);
+                z11 = true;
             }
-        } while (j11 > 0);
-        if (z10) {
+        } while (j10 > 0);
+        if (z11) {
             Thread.currentThread().interrupt();
         }
-        return z4;
+        return z10;
     }
 
     public static void joinUninterruptibly(final Thread thread) {

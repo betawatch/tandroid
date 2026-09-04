@@ -1,18 +1,16 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class kn0 {
-    public mg.q0 a;
-    public int b;
-    public String c;
-    public int d;
+public final class kn0 extends s4.j {
+    public final /* synthetic */ org.telegram.ui.ey F;
 
-    public final boolean equals(Object obj) {
-        if (!(obj instanceof kn0)) {
-            return false;
-        }
-        kn0 kn0Var = (kn0) obj;
-        return this.b == kn0Var.b && this.a.h == kn0Var.a.h && this.d == kn0Var.d;
+    public kn0(org.telegram.ui.ey eyVar) {
+        this.F = eyVar;
+    }
+
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.invalidate();
     }
 }

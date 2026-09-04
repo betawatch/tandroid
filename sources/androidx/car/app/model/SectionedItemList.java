@@ -5,7 +5,7 @@ import j$.util.Objects;
 import java.util.Iterator;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class SectionedItemList {
     private final CarText mHeader;
@@ -58,12 +58,12 @@ public final class SectionedItemList {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder("[ items: ");
-        sb.append(this.mItemList);
-        sb.append(", has header: ");
-        sb.append(this.mHeader != null);
-        sb.append("]");
-        return sb.toString();
+        StringBuilder sb2 = new StringBuilder("[ items: ");
+        sb2.append(this.mItemList);
+        sb2.append(", has header: ");
+        sb2.append(this.mHeader != null);
+        sb2.append("]");
+        return sb2.toString();
     }
 
     private SectionedItemList() {

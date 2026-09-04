@@ -1,87 +1,136 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.view.KeyEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.ChatObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class s20 extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ int c;
-    public final /* synthetic */ KeyEvent.Callback d;
+public final class s20 extends kl0 {
+    public ChatObject.Call c;
+    public final int d;
+    public ArrayList h;
+    public org.telegram.ui.a40 n;
+    public final org.telegram.ui.j60 r;
+    public final ArrayList e = new ArrayList();
+    public final ArrayList f = new ArrayList();
+    public boolean s = false;
 
-    public /* synthetic */ s20(KeyEvent.Callback callback, int i10, int i11, int i12) {
-        this.a = i12;
-        this.d = callback;
-        this.b = i10;
-        this.c = i11;
+    public s20(ChatObject.Call call, int i10, org.telegram.ui.j60 j60Var) {
+        this.c = call;
+        this.d = i10;
+        this.r = j60Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        int i10;
-        f2.o0 adapter;
-        switch (this.a) {
-            case 0:
-                t20 t20Var = (t20) this.d;
-                t20Var.I = this.b;
-                t20Var.J = this.c;
-                t20Var.C.setColorFilter(new PorterDuffColorFilter(t20Var.I, PorterDuff.Mode.MULTIPLY));
-                t20Var.B.setColor(t20Var.I);
-                t20Var.r.setColor(t20Var.J);
-                t20Var.G.d(i0.a.k(t20Var.J, 38));
-                break;
-            case 1:
-                yu0 yu0Var = (yu0) this.d;
-                qt0[] qt0VarArr = yu0Var.h0;
-                yu0Var.F1.unlock();
-                yu0Var.l1 = false;
-                int[] iArr = yu0Var.j1;
-                int i11 = this.c;
-                int i12 = this.b;
-                iArr[i12] = i11;
-                for (int i13 = 0; i13 < qt0VarArr.length; i13++) {
-                    qt0 qt0Var = qt0VarArr[i13];
-                    if (qt0Var != null && qt0Var.h != null && (((i10 = qt0Var.C) == 0 || yu0.p0(i10)) && (adapter = qt0VarArr[i13].h.getAdapter()) != null)) {
-                        int h = adapter.h();
-                        if (i13 == 0) {
-                            yu0Var.q1[0].g(false);
-                        }
-                        qt0VarArr[i13].x.y1(iArr[i12]);
-                        qt0VarArr[i13].h.a0();
-                        if (adapter.h() == h) {
-                            AndroidUtilities.updateVisibleRows(qt0VarArr[i13].h);
-                        } else {
-                            adapter.l();
-                        }
-                        qt0VarArr[i13].r.setVisibility(8);
-                    }
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        return false;
+    }
+
+    public final void E(ArrayList arrayList, org.telegram.ui.a40 a40Var) {
+        this.h = arrayList;
+        this.n = a40Var;
+    }
+
+    public final void F(org.telegram.ui.w30 w30Var, boolean z10) {
+        this.s = z10;
+        for (int i10 = 0; i10 < w30Var.getChildCount(); i10++) {
+            View childAt = w30Var.getChildAt(i10);
+            if (childAt instanceof r20) {
+                r20 r20Var = (r20) childAt;
+                if (r20Var.getVideoParticipant() != null) {
+                    r20Var.b(z10);
                 }
-                yu0Var.X0();
-                break;
-            case 2:
-                org.telegram.ui.Components.voip.t tVar = (org.telegram.ui.Components.voip.t) this.d;
-                int i14 = this.b;
-                tVar.A0 = i14;
-                tVar.B0 = i14;
-                int i15 = this.c;
-                tVar.C0 = i15;
-                tVar.Q.setColor(i15);
-                if (tVar.P > 0.0f) {
-                    tVar.invalidate();
-                    break;
-                }
-                break;
-            default:
-                rh.p2 p2Var = (rh.p2) this.d;
-                p2Var.O = i0.a.d(1.0f, this.b, this.c);
-                p2Var.h();
-                break;
+            }
         }
+    }
+
+    public final void G(ll0 ll0Var, boolean z10) {
+        if (this.c == null) {
+            return;
+        }
+        ArrayList arrayList = this.e;
+        ArrayList arrayList2 = this.f;
+        if (!z10) {
+            arrayList2.clear();
+            ChatObject.Call call = this.c;
+            if (!call.call.rtmp_stream) {
+                arrayList2.addAll(call.visibleParticipants);
+            }
+            arrayList.clear();
+            ChatObject.Call call2 = this.c;
+            if (!call2.call.rtmp_stream) {
+                arrayList.addAll(call2.visibleVideoParticipants);
+            }
+            l();
+            return;
+        }
+        ArrayList arrayList3 = new ArrayList(arrayList2);
+        ArrayList arrayList4 = new ArrayList(arrayList);
+        arrayList2.clear();
+        ChatObject.Call call3 = this.c;
+        if (!call3.call.rtmp_stream) {
+            arrayList2.addAll(call3.visibleParticipants);
+        }
+        arrayList.clear();
+        ChatObject.Call call4 = this.c;
+        if (!call4.call.rtmp_stream) {
+            arrayList.addAll(call4.visibleVideoParticipants);
+        }
+        s4.o.c(new p20(this, arrayList4, arrayList3), true).b(this);
+        AndroidUtilities.updateVisibleRows(ll0Var);
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.f.size() + this.e.size();
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        TLRPC.GroupCallParticipant groupCallParticipant;
+        ChatObject.VideoParticipant videoParticipant;
+        r20 r20Var = (r20) c1Var.a;
+        ChatObject.VideoParticipant videoParticipant2 = r20Var.f;
+        ArrayList arrayList = this.e;
+        if (i10 < arrayList.size()) {
+            videoParticipant = (ChatObject.VideoParticipant) arrayList.get(i10);
+            groupCallParticipant = ((ChatObject.VideoParticipant) arrayList.get(i10)).participant;
+        } else {
+            int size = i10 - arrayList.size();
+            ArrayList arrayList2 = this.f;
+            if (size >= arrayList2.size()) {
+                return;
+            }
+            groupCallParticipant = (TLRPC.GroupCallParticipant) arrayList2.get(i10 - arrayList.size());
+            videoParticipant = null;
+        }
+        r20Var.e(videoParticipant, groupCallParticipant);
+        if (videoParticipant2 != null && !videoParticipant2.equals(videoParticipant) && r20Var.K && r20Var.getRenderer() != null) {
+            r20Var.b(false);
+            if (videoParticipant != null) {
+                r20Var.b(true);
+                return;
+            }
+            return;
+        }
+        if (r20Var.K) {
+            if (r20Var.getRenderer() == null && videoParticipant != null && this.s) {
+                r20Var.b(true);
+            } else {
+                if (r20Var.getRenderer() == null || videoParticipant != null) {
+                    return;
+                }
+                r20Var.b(false);
+            }
+        }
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        return new vk0(new r20(this, viewGroup.getContext()));
     }
 }

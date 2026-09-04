@@ -1,55 +1,34 @@
 package c1;
 
-import dd.l;
-import java.util.concurrent.Executor;
-import kotlin.jvm.internal.j;
-import w0.i;
+import kotlin.jvm.internal.h;
+import rd.p;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements l {
+public final /* synthetic */ class c extends h implements p {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
 
-    public /* synthetic */ c(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ c(int i10, Object obj, Class cls, String str, String str2, int i11, int i12) {
+        super(i10, obj, cls, str, str2, i11);
+        this.a = i12;
     }
 
-    @Override // dd.l
-    public final Object invoke(Object obj) {
+    @Override // rd.p
+    public final Object invoke(Object obj, Object obj2) {
         switch (this.a) {
             case 0:
-                f fVar = (f) this.b;
-                i e = (i) obj;
-                j.e(e, "e");
-                fVar.f().execute(new a(fVar, e, 2));
-                break;
+                ((b1.a) this.receiver).getClass();
+                return b1.a.b((String) obj, (String) obj2);
             case 1:
-                d1.e eVar = (d1.e) this.b;
-                w0.d e6 = (w0.d) obj;
-                j.e(e6, "e");
-                Executor executor = eVar.g;
-                if (executor == null) {
-                    j.h("executor");
-                    throw null;
-                }
-                executor.execute(new d1.a(eVar, e6, 0));
-                break;
+                ((b1.a) this.receiver).getClass();
+                return b1.a.a((String) obj, (String) obj2);
             case 2:
-                e1.d dVar = (e1.d) this.b;
-                w0.d e10 = (w0.d) obj;
-                j.e(e10, "e");
-                Executor executor2 = dVar.g;
-                if (executor2 == null) {
-                    j.h("executor");
-                    throw null;
-                }
-                executor2.execute(new e1.c(dVar, e10, 0));
-                break;
+                ((b1.a) this.receiver).getClass();
+                return b1.a.a((String) obj, (String) obj2);
             default:
-                return obj == ((tc.c) this.b) ? "(this Collection)" : String.valueOf(obj);
+                ((b1.a) this.receiver).getClass();
+                return b1.a.b((String) obj, (String) obj2);
         }
-        return sc.i.a;
     }
 }

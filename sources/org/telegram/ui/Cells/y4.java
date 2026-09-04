@@ -5,36 +5,36 @@ import android.graphics.Canvas;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class y4 extends org.telegram.ui.Components.p9 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 D;
-    public final /* synthetic */ a5 E;
+public final class y4 extends org.telegram.ui.Components.x9 {
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 G;
+    public final /* synthetic */ a5 H;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public y4(a5 a5Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
         super(context);
-        this.E = a5Var;
-        this.D = f6Var;
+        this.H = a5Var;
+        this.G = f6Var;
     }
 
-    @Override // org.telegram.ui.Components.p9, android.view.View
+    @Override // org.telegram.ui.Components.x9, android.view.View
     public final void onDraw(Canvas canvas) {
-        a5 a5Var = this.E;
+        a5 a5Var = this.H;
         if (a5Var.r == null) {
             super.onDraw(canvas);
             return;
         }
         float dp = AndroidUtilities.dp(1.0f);
-        a5Var.K.F.set(dp, dp, getMeasuredWidth() - r1, getMeasuredHeight() - r1);
-        nh.i7 i7Var = a5Var.K;
-        i7Var.a = false;
-        i7Var.b = false;
-        i7Var.v = true;
-        i7Var.o = false;
-        i7Var.J = this.D;
+        a5Var.N.F.set(dp, dp, getMeasuredWidth() - r1, getMeasuredHeight() - r1);
+        bi.j9 j9Var = a5Var.N;
+        j9Var.a = false;
+        j9Var.b = false;
+        j9Var.v = true;
+        j9Var.o = false;
+        j9Var.J = this.G;
         TL_stories.StoryItem storyItem = a5Var.r;
-        i7Var.d = storyItem;
-        nh.m7.h(storyItem.dialogId, canvas, this.a, i7Var);
+        j9Var.d = storyItem;
+        bi.p9.h(storyItem.dialogId, canvas, this.a, j9Var);
     }
 }

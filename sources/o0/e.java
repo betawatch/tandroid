@@ -1,50 +1,47 @@
 package o0;
 
-import android.content.Context;
-import j$.util.DesugarCollections;
-import j$.util.Objects;
-import java.util.ArrayList;
+import android.util.Base64;
 import java.util.List;
-import java.util.concurrent.Callable;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class e implements Callable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ String b;
-    public final /* synthetic */ Context c;
-    public final /* synthetic */ int d;
-    public final /* synthetic */ Object e;
+public final class e {
+    public final String a;
+    public final String b;
+    public final String c;
+    public final List d;
+    public final String e;
 
-    public /* synthetic */ e(String str, Context context, Object obj, int i10, int i11) {
-        this.a = i11;
-        this.b = str;
-        this.c = context;
-        this.e = obj;
-        this.d = i10;
+    public e(String str, String str2, String str3, List list) {
+        str.getClass();
+        this.a = str;
+        str2.getClass();
+        this.b = str2;
+        this.c = str3;
+        list.getClass();
+        this.d = list;
+        this.e = str + "-" + str2 + "-" + str3;
     }
 
-    @Override // java.util.concurrent.Callable
-    public final Object call() {
-        int i10 = this.a;
-        int i11 = this.d;
-        Object obj = this.e;
-        Context context = this.c;
-        String str = this.b;
-        switch (i10) {
-            case 0:
-                Object[] objArr = {(d) obj};
-                ArrayList arrayList = new ArrayList(1);
-                Object obj2 = objArr[0];
-                Objects.requireNonNull(obj2);
-                arrayList.add(obj2);
-                return h.b(str, context, DesugarCollections.unmodifiableList(arrayList), i11);
-            default:
-                try {
-                    return h.b(str, context, (List) obj, i11);
-                } catch (Throwable unused) {
-                    return new g(-3);
-                }
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append("FontRequest {mProviderAuthority: " + this.a + ", mProviderPackage: " + this.b + ", mQuery: " + this.c + ", mCertificates:");
+        int i10 = 0;
+        while (true) {
+            List list = this.d;
+            if (i10 >= list.size()) {
+                sb2.append("}mCertificatesArray: 0");
+                return sb2.toString();
+            }
+            sb2.append(" [");
+            List list2 = (List) list.get(i10);
+            for (int i11 = 0; i11 < list2.size(); i11++) {
+                sb2.append(" \"");
+                sb2.append(Base64.encodeToString((byte[]) list2.get(i11), 0));
+                sb2.append("\"");
+            }
+            sb2.append(" ]");
+            i10++;
         }
     }
 }

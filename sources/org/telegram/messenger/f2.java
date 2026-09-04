@@ -1,36 +1,131 @@
 package org.telegram.messenger;
 
+import android.app.Dialog;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.drawable.Drawable;
+import java.io.File;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MessagesStorage;
 import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.ui.PhotoViewer;
+import org.telegram.ui.ir0;
+import org.telegram.ui.oy;
+import org.telegram.ui.tx;
+import org.telegram.ui.uy;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f2 implements Runnable {
+public final /* synthetic */ class f2 implements Utilities.Callback {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Utilities.Callback b;
-    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ long b;
+    public final /* synthetic */ Object c;
+    public final /* synthetic */ Object d;
+    public final /* synthetic */ Object e;
 
-    public /* synthetic */ f2(Utilities.Callback callback, ArrayList arrayList, int i10) {
+    public /* synthetic */ f2(Object obj, long j3, Object obj2, Object obj3, int i10) {
         this.a = i10;
-        this.b = callback;
-        this.c = arrayList;
+        this.c = obj;
+        this.b = j3;
+        this.d = obj2;
+        this.e = obj3;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        int i10 = this.a;
+        long j3 = this.b;
+        Object obj2 = this.e;
+        Object obj3 = this.d;
+        Object obj4 = this.c;
+        switch (i10) {
             case 0:
-                this.b.run(this.c);
+                ((FactCheckController) obj4).lambda$loadMissing$3(this.b, (ArrayList) obj3, (HashMap) obj2, (ArrayList) obj);
                 break;
             case 1:
-                this.b.run(this.c);
+                ((MessagesController) obj4).lambda$checkSensitive$448(this.b, (boolean[]) obj3, (Runnable) obj2, (Boolean) obj);
                 break;
             case 2:
-                MediaDataController.lambda$loadStickers$92(this.b, this.c);
+                ((TranslateController) obj4).lambda$checkTranslation$6((MessageObject) obj3, (String) obj2, this.b, (TLRPC.TL_textWithEntities) obj);
                 break;
+            case 3:
+                tx txVar = (tx) obj4;
+                org.telegram.ui.ActionBar.n2[] n2VarArr = (org.telegram.ui.ActionBar.n2[]) obj2;
+                txVar.getClass();
+                ((org.telegram.ui.ActionBar.b2) obj3).dismiss();
+                uy uyVar = txVar.b;
+                uyVar.getMessagesController().loadChannelParticipants(Long.valueOf(j3));
+                oy oyVar = uyVar.C2;
+                uyVar.removeSelfFromStack();
+                if (n2VarArr[1] != null) {
+                    n2VarArr[0].removeSelfFromStack();
+                    n2VarArr[1].finishFragment();
+                } else {
+                    n2VarArr[0].finishFragment();
+                }
+                if (oyVar != null) {
+                    ArrayList arrayList = new ArrayList();
+                    arrayList.add(MessagesStorage.TopicKey.of(-j3, 0L));
+                    oyVar.u(uyVar, arrayList, null, false, uyVar.J2, uyVar.K2, uyVar.L2, null);
+                    break;
+                }
+                break;
+            case 4:
+                PhotoViewer photoViewer = (PhotoViewer) obj4;
+                String str = (String) obj3;
+                MediaController.PhotoEntry photoEntry = (MediaController.PhotoEntry) obj2;
+                Bitmap bitmap = (Bitmap) obj;
+                Drawable[] drawableArr = PhotoViewer.T8;
+                if (bitmap == null) {
+                    AndroidUtilities.runOnUIThread(new ir0(photoViewer, 16));
+                    break;
+                } else {
+                    try {
+                        FileOutputStream fileOutputStream = new FileOutputStream(new File(str));
+                        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, fileOutputStream);
+                        fileOutputStream.close();
+                        Bitmap createBitmap = Bitmap.createBitmap(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f), Bitmap.Config.ARGB_8888);
+                        Canvas canvas = new Canvas(createBitmap);
+                        Paint paint = new Paint(3);
+                        canvas.translate(createBitmap.getWidth() / 2.0f, createBitmap.getHeight() / 2.0f);
+                        float max = Math.max(createBitmap.getWidth() / bitmap.getWidth(), createBitmap.getHeight() / bitmap.getHeight());
+                        canvas.scale(max, max);
+                        canvas.drawBitmap(bitmap, (-bitmap.getWidth()) / 2.0f, (-bitmap.getHeight()) / 2.0f, paint);
+                        AndroidUtilities.runOnUIThread(new org.telegram.messenger.voip.f(photoViewer, photoEntry, this.b, str, createBitmap, 6));
+                        break;
+                    } catch (Exception e7) {
+                        FileLog.e(e7);
+                        AndroidUtilities.runOnUIThread(new ir0(photoViewer, 17));
+                        return;
+                    }
+                }
             default:
-                this.b.run(this.c);
+                yh.b1 b1Var = (yh.b1) obj3;
+                of.e eVar = (of.e) obj;
+                eVar.d();
+                b1Var.v1(j3, new bi.r3((yh.p1) obj4, eVar, (Utilities.Callback) obj2, b1Var, 17));
                 break;
         }
+    }
+
+    public /* synthetic */ f2(Object obj, Dialog dialog, long j3, Object obj2, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = dialog;
+        this.b = j3;
+        this.e = obj2;
+    }
+
+    public /* synthetic */ f2(Object obj, Object obj2, Object obj3, long j3, int i10) {
+        this.a = i10;
+        this.c = obj;
+        this.d = obj2;
+        this.e = obj3;
+        this.b = j3;
     }
 }

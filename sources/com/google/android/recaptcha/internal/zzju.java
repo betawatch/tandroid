@@ -1,15 +1,15 @@
 package com.google.android.recaptcha.internal;
 
+import com.google.android.gms.internal.vision.e2;
+import hd.f;
+import hd.h;
+import hd.i;
+import hd.o;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import k7.s7;
-import org.telegram.ui.ai;
-import tc.f;
-import tc.i;
-import tc.o;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzju implements zzjt {
     public static final zzju zza = new zzju();
@@ -18,17 +18,17 @@ public final class zzju implements zzjt {
     }
 
     private static final List zzc(Object obj) {
-        boolean z4 = obj instanceof byte[];
+        boolean z10 = obj instanceof byte[];
         o oVar = o.a;
         int i10 = 0;
-        if (z4) {
+        if (z10) {
             byte[] bArr = (byte[]) obj;
             int length = bArr.length;
             if (length == 0) {
                 return oVar;
             }
             if (length == 1) {
-                return s7.a(Byte.valueOf(bArr[0]));
+                return h.b(Byte.valueOf(bArr[0]));
             }
             ArrayList arrayList = new ArrayList(bArr.length);
             int length2 = bArr.length;
@@ -45,7 +45,7 @@ public final class zzju implements zzjt {
                 return oVar;
             }
             if (length3 == 1) {
-                return s7.a(Short.valueOf(sArr[0]));
+                return h.b(Short.valueOf(sArr[0]));
             }
             ArrayList arrayList2 = new ArrayList(sArr.length);
             int length4 = sArr.length;
@@ -62,12 +62,12 @@ public final class zzju implements zzjt {
                 return oVar;
             }
             if (length5 == 1) {
-                return s7.a(Integer.valueOf(iArr[0]));
+                return h.b(Integer.valueOf(iArr[0]));
             }
             ArrayList arrayList3 = new ArrayList(iArr.length);
             int length6 = iArr.length;
             while (i10 < length6) {
-                i10 = ai.d(iArr[i10], i10, 1, arrayList3);
+                i10 = e2.e(iArr[i10], i10, 1, arrayList3);
             }
             return arrayList3;
         }
@@ -81,7 +81,7 @@ public final class zzju implements zzjt {
                 return oVar;
             }
             if (length7 == 1) {
-                return s7.a(Float.valueOf(fArr[0]));
+                return h.b(Float.valueOf(fArr[0]));
             }
             ArrayList arrayList4 = new ArrayList(fArr.length);
             int length8 = fArr.length;
@@ -100,7 +100,7 @@ public final class zzju implements zzjt {
             return oVar;
         }
         if (length9 == 1) {
-            return s7.a(Double.valueOf(dArr[0]));
+            return h.b(Double.valueOf(dArr[0]));
         }
         ArrayList arrayList5 = new ArrayList(dArr.length);
         int length10 = dArr.length;

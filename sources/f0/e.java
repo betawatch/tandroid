@@ -1,120 +1,98 @@
 package f0;
 
-import android.accounts.AccountManager;
-import android.app.ActivityManager;
-import android.app.AlarmManager;
 import android.app.AppOpsManager;
-import android.app.DownloadManager;
-import android.app.KeyguardManager;
-import android.app.NotificationManager;
-import android.app.SearchManager;
-import android.app.UiModeManager;
-import android.app.WallpaperManager;
-import android.app.admin.DevicePolicyManager;
-import android.app.job.JobScheduler;
-import android.app.usage.UsageStatsManager;
-import android.appwidget.AppWidgetManager;
-import android.bluetooth.BluetoothManager;
-import android.content.ClipboardManager;
-import android.content.RestrictionsManager;
-import android.content.pm.LauncherApps;
-import android.hardware.ConsumerIrManager;
-import android.hardware.SensorManager;
-import android.hardware.camera2.CameraManager;
-import android.hardware.display.DisplayManager;
-import android.hardware.input.InputManager;
-import android.hardware.usb.UsbManager;
-import android.location.LocationManager;
-import android.media.AudioManager;
-import android.media.MediaRouter;
-import android.media.projection.MediaProjectionManager;
-import android.media.session.MediaSessionManager;
-import android.media.tv.TvInputManager;
-import android.net.ConnectivityManager;
-import android.net.nsd.NsdManager;
-import android.net.wifi.WifiManager;
-import android.net.wifi.p2p.WifiP2pManager;
-import android.nfc.NfcManager;
-import android.os.BatteryManager;
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+import android.os.Binder;
 import android.os.Build;
-import android.os.DropBoxManager;
-import android.os.PowerManager;
-import android.os.UserManager;
-import android.os.Vibrator;
-import android.os.storage.StorageManager;
-import android.print.PrintManager;
-import android.telecom.TelecomManager;
-import android.telephony.SubscriptionManager;
-import android.telephony.TelephonyManager;
-import android.view.LayoutInflater;
-import android.view.WindowManager;
-import android.view.accessibility.AccessibilityManager;
-import android.view.accessibility.CaptioningManager;
-import android.view.inputmethod.InputMethodManager;
-import android.view.textservice.TextServicesManager;
-import java.util.HashMap;
-import org.webrtc.MediaStreamTrack;
+import android.os.Handler;
+import android.os.Process;
+import android.text.TextUtils;
+import androidx.biometric.n;
+import e0.n0;
+import j$.util.Objects;
+import java.util.concurrent.Executor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class e {
-    public static final HashMap a;
+    public static final Object a = null;
 
-    static {
-        HashMap hashMap = new HashMap();
-        a = hashMap;
-        if (Build.VERSION.SDK_INT >= 22) {
-            hashMap.put(SubscriptionManager.class, "telephony_subscription_service");
-            hashMap.put(UsageStatsManager.class, "usagestats");
+    /* JADX WARN: Removed duplicated region for block: B:29:0x007e A[RETURN] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int a(Context context, String str, int i10, int i11, String str2) {
+        int i12;
+        if (context.checkPermission(str, i10, i11) != -1) {
+            int i13 = Build.VERSION.SDK_INT;
+            String t10 = i13 >= 23 ? e0.b.t(str) : null;
+            if (t10 != null) {
+                if (str2 == null) {
+                    String[] packagesForUid = context.getPackageManager().getPackagesForUid(i11);
+                    if (packagesForUid != null && packagesForUid.length > 0) {
+                        str2 = packagesForUid[0];
+                    }
+                }
+                int myUid = Process.myUid();
+                String packageName = context.getPackageName();
+                int i14 = 1;
+                if (myUid == i11 && Objects.equals(packageName, str2)) {
+                    if (i13 >= 29) {
+                        AppOpsManager h = b2.c.h(context);
+                        i12 = h == null ? 1 : h.checkOpNoThrow(t10, Binder.getCallingUid(), str2);
+                        if (i12 == 0) {
+                            String g10 = b2.c.g(context);
+                            if (h != null) {
+                                i14 = h.checkOpNoThrow(t10, i11, g10);
+                            }
+                        }
+                        if (i12 == 0) {
+                            return -2;
+                        }
+                    } else if (i13 >= 23) {
+                        i14 = e0.b.s((AppOpsManager) e0.b.k(context), t10, str2);
+                    }
+                } else if (i13 >= 23) {
+                    i14 = e0.b.s((AppOpsManager) e0.b.k(context), t10, str2);
+                }
+                i12 = i14;
+                if (i12 == 0) {
+                }
+            }
+            return 0;
         }
-        hashMap.put(AppWidgetManager.class, "appwidget");
-        hashMap.put(BatteryManager.class, "batterymanager");
-        hashMap.put(CameraManager.class, "camera");
-        hashMap.put(JobScheduler.class, "jobscheduler");
-        hashMap.put(LauncherApps.class, "launcherapps");
-        hashMap.put(MediaProjectionManager.class, "media_projection");
-        hashMap.put(MediaSessionManager.class, "media_session");
-        hashMap.put(RestrictionsManager.class, "restrictions");
-        hashMap.put(TelecomManager.class, "telecom");
-        hashMap.put(TvInputManager.class, "tv_input");
-        hashMap.put(AppOpsManager.class, "appops");
-        hashMap.put(CaptioningManager.class, "captioning");
-        hashMap.put(ConsumerIrManager.class, "consumer_ir");
-        hashMap.put(PrintManager.class, "print");
-        hashMap.put(BluetoothManager.class, "bluetooth");
-        hashMap.put(DisplayManager.class, "display");
-        hashMap.put(UserManager.class, "user");
-        hashMap.put(InputManager.class, "input");
-        hashMap.put(MediaRouter.class, "media_router");
-        hashMap.put(NsdManager.class, "servicediscovery");
-        hashMap.put(AccessibilityManager.class, "accessibility");
-        hashMap.put(AccountManager.class, "account");
-        hashMap.put(ActivityManager.class, "activity");
-        hashMap.put(AlarmManager.class, "alarm");
-        hashMap.put(AudioManager.class, MediaStreamTrack.AUDIO_TRACK_KIND);
-        hashMap.put(ClipboardManager.class, "clipboard");
-        hashMap.put(ConnectivityManager.class, "connectivity");
-        hashMap.put(DevicePolicyManager.class, "device_policy");
-        hashMap.put(DownloadManager.class, "download");
-        hashMap.put(DropBoxManager.class, "dropbox");
-        hashMap.put(InputMethodManager.class, "input_method");
-        hashMap.put(KeyguardManager.class, "keyguard");
-        hashMap.put(LayoutInflater.class, "layout_inflater");
-        hashMap.put(LocationManager.class, "location");
-        hashMap.put(NfcManager.class, "nfc");
-        hashMap.put(NotificationManager.class, "notification");
-        hashMap.put(PowerManager.class, "power");
-        hashMap.put(SearchManager.class, "search");
-        hashMap.put(SensorManager.class, "sensor");
-        hashMap.put(StorageManager.class, "storage");
-        hashMap.put(TelephonyManager.class, "phone");
-        hashMap.put(TextServicesManager.class, "textservices");
-        hashMap.put(UiModeManager.class, "uimode");
-        hashMap.put(UsbManager.class, "usb");
-        hashMap.put(Vibrator.class, "vibrator");
-        hashMap.put(WallpaperManager.class, "wallpaper");
-        hashMap.put(WifiP2pManager.class, "wifip2p");
-        hashMap.put(WifiManager.class, "wifi");
-        hashMap.put(WindowManager.class, "window");
+        return -1;
+    }
+
+    public static int b(Context context, String str) {
+        if (str != null) {
+            return (Build.VERSION.SDK_INT >= 33 || !TextUtils.equals("android.permission.POST_NOTIFICATIONS", str)) ? context.checkPermission(str, Process.myPid(), Process.myUid()) : new n0(context).a() ? 0 : -1;
+        }
+        throw new NullPointerException("permission must be non-null");
+    }
+
+    public static int c(Context context, int i10) {
+        return Build.VERSION.SDK_INT >= 23 ? a.a(context, i10) : context.getResources().getColor(i10);
+    }
+
+    public static Drawable d(Context context, int i10) {
+        return context.getDrawable(i10);
+    }
+
+    public static Executor e(Context context) {
+        return Build.VERSION.SDK_INT >= 28 ? c.a(context) : new n(new Handler(context.getMainLooper()), 3);
+    }
+
+    public static Object f(Context context, Class cls) {
+        int i10 = Build.VERSION.SDK_INT;
+        if (i10 >= 23) {
+            return a.b(context, cls);
+        }
+        String c10 = i10 >= 23 ? a.c(context, cls) : (String) d.a.get(cls);
+        if (c10 != null) {
+            return context.getSystemService(c10);
+        }
+        return null;
     }
 }

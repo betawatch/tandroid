@@ -20,10 +20,10 @@ public enum j implements o {
         ChronoUnit chronoUnit = ChronoUnit.NANOS;
     }
 
-    j(String str, long j10) {
+    j(String str, long j3) {
         this.a = str;
-        this.b = s.e((-365243219162L) + j10, 365241780471L + j10);
-        this.c = j10;
+        this.b = s.e((-365243219162L) + j3, 365241780471L + j3);
+        this.c = j3;
     }
 
     @Override // j$.time.temporal.o
@@ -32,11 +32,11 @@ public enum j implements o {
     }
 
     @Override // j$.time.temporal.o
-    public final Temporal q(Temporal temporal, long j10) {
-        if (!this.b.d(j10)) {
-            throw new j$.time.b("Invalid value: " + this.a + " " + j10);
+    public final Temporal q(Temporal temporal, long j3) {
+        if (!this.b.d(j3)) {
+            throw new j$.time.b("Invalid value: " + this.a + " " + j3);
         }
-        return temporal.c(j$.com.android.tools.r8.a.U(j10, this.c), a.EPOCH_DAY);
+        return temporal.c(j$.com.android.tools.r8.a.U(j3, this.c), a.EPOCH_DAY);
     }
 
     @Override // j$.time.temporal.o

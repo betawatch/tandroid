@@ -1,21 +1,18 @@
 package org.telegram.ui;
 
 import android.view.View;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class p71 implements View.OnClickListener {
-    public final /* synthetic */ TLRPC.TL_authorization a;
-    public final /* synthetic */ v71 b;
+public final class p71 implements View.OnLayoutChangeListener {
+    public final /* synthetic */ t71 a;
 
-    public p71(v71 v71Var, TLRPC.TL_authorization tL_authorization) {
-        this.b = v71Var;
-        this.a = tL_authorization;
+    public p71(t71 t71Var) {
+        this.a = t71Var;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        v71.m(this.b, this.a.ip);
+    @Override // android.view.View.OnLayoutChangeListener
+    public final void onLayoutChange(View view, int i10, int i11, int i12, int i13, int i14, int i15, int i16, int i17) {
+        t71.S(this.a);
     }
 }

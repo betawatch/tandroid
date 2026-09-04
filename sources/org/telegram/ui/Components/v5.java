@@ -1,21 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapShader;
+import java.util.ArrayList;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class v5 {
-    public final BitmapShader[] a = new BitmapShader[3];
-    public final Bitmap b;
-    public final int c;
-    public final int d;
-    public int e;
-    public boolean f;
+    public ArrayList a;
+    public HashMap b;
+    public ArrayList c;
 
-    public v5(Bitmap bitmap) {
-        this.b = bitmap;
-        this.c = bitmap.getWidth();
-        this.d = bitmap.getHeight();
+    public final void a() {
+        ArrayList arrayList = this.a;
+        for (int i10 = 0; i10 < arrayList.size(); i10++) {
+            ((u5) arrayList.get(i10)).d.spanDrawn = false;
+        }
+    }
+
+    public final void b(int i10) {
+        u5 u5Var = (u5) this.a.remove(i10);
+        HashMap hashMap = this.b;
+        x5 x5Var = (x5) hashMap.get(u5Var.c);
+        if (x5Var == null) {
+            throw new RuntimeException("!!!");
+        }
+        ArrayList arrayList = x5Var.b;
+        arrayList.remove(u5Var);
+        x5Var.a();
+        if (arrayList.isEmpty()) {
+            hashMap.remove(u5Var.c);
+            this.c.remove(x5Var);
+        }
+        q5 q5Var = u5Var.f;
+        if (q5Var != null) {
+            q5Var.p(u5Var);
+        }
     }
 }

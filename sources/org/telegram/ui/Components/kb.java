@@ -1,27 +1,53 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class kb implements o1.g {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ nb b;
-    public final /* synthetic */ q0.a c;
+import android.content.Context;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
 
-    public /* synthetic */ kb(q0.a aVar, nb nbVar, int i10) {
-        this.a = i10;
-        this.c = aVar;
-        this.b = nbVar;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class kb extends FrameLayout {
+    public final /* synthetic */ lb a;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public kb(lb lbVar, Context context) {
+        super(context);
+        this.a = lbVar;
     }
 
-    @Override // o1.g
-    public final void a(o1.h hVar, float f10, float f11) {
-        switch (this.a) {
-            case 0:
-                ((xa) this.c).accept(Float.valueOf(this.b.getTranslationY()));
-                break;
-            default:
-                ((gl) this.c).accept(Float.valueOf(this.b.getTranslationY()));
-                break;
+    @Override // android.view.ViewGroup
+    public final void addView(View view) {
+        super.addView(view);
+        this.a.show();
+    }
+
+    public WindowManager.LayoutParams getLayout() {
+        return this.a.b;
+    }
+
+    @Override // android.view.ViewGroup, android.view.ViewManager
+    public final void removeView(View view) {
+        lb lbVar = this.a;
+        super.removeView(view);
+        try {
+            lbVar.dismiss();
+        } catch (Exception unused) {
         }
+        qc.h(lbVar.a);
+    }
+
+    public void setTouchable(boolean z10) {
+        lb lbVar = this.a;
+        WindowManager.LayoutParams layoutParams = lbVar.b;
+        if (layoutParams == null) {
+            return;
+        }
+        if (z10) {
+            layoutParams.flags &= -17;
+        } else {
+            layoutParams.flags |= 16;
+        }
+        lbVar.getWindow().setAttributes(lbVar.b);
     }
 }

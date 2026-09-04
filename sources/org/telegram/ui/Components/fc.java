@@ -1,68 +1,126 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Typeface;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class fc extends eb {
-    public final jj0 a;
-    public final f90 b;
-    public final f90 c;
-    public final LinearLayout d;
-    public final int e;
+public final class fc extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ ub a;
+    public final /* synthetic */ ib b;
 
-    public fc(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        int i10 = org.telegram.ui.ActionBar.j6.Hi;
-        this.e = getThemedColor(i10);
-        setBackground(getThemedColor(org.telegram.ui.ActionBar.j6.Fi));
-        jj0 jj0Var = new jj0(context);
-        this.a = jj0Var;
-        jj0Var.setScaleType(ImageView.ScaleType.CENTER);
-        addView(jj0Var, k7.b6.h(56.0f, 48.0f, 8388627));
-        int themedColor = getThemedColor(i10);
-        int themedColor2 = getThemedColor(org.telegram.ui.ActionBar.j6.Gi);
-        LinearLayout linearLayout = new LinearLayout(context);
-        this.d = linearLayout;
-        linearLayout.setOrientation(1);
-        addView(linearLayout, k7.b6.i(-2.0f, -2.0f, 8388627, 52.0f, 8.0f, 8.0f, 8.0f));
-        f90 f90Var = new f90(context, null);
-        this.b = f90Var;
-        f90Var.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        f90Var.setTextColor(themedColor);
-        f90Var.setTextSize(1, 14.0f);
-        f90Var.setTypeface(AndroidUtilities.bold());
-        linearLayout.addView(f90Var);
-        f90 f90Var2 = new f90(context, null);
-        this.c = f90Var2;
-        f90Var2.setPadding(AndroidUtilities.dp(4.0f), 0, AndroidUtilities.dp(4.0f), 0);
-        f90Var2.setTextColor(themedColor);
-        f90Var2.setLinkTextColor(themedColor2);
-        f90Var2.setTypeface(Typeface.SANS_SERIF);
-        f90Var2.setTextSize(1, 13.0f);
-        linearLayout.addView(f90Var2);
+    public fc(ib ibVar, ub ubVar) {
+        this.b = ibVar;
+        this.a = ubVar;
     }
 
-    public final void c(int i10, int i11, int i12, String... strArr) {
-        jj0 jj0Var = this.a;
-        jj0Var.f(i10, i11, i12, null);
-        for (String str : strArr) {
-            jj0Var.h(this.e, str);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        ib ibVar = this.b;
+        if (ibVar.s) {
+            return false;
         }
+        ub ubVar = this.a;
+        ibVar.v = ub.access$1400(ubVar, true);
+        ibVar.w = ub.access$1400(ubVar, false);
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.nb
-    public CharSequence getAccessibilityText() {
-        return ((Object) this.b.getText()) + ".\n" + ((Object) this.c.getText());
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onFling(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        boolean z10 = false;
+        if (Math.abs(f7) <= 2000.0f) {
+            return false;
+        }
+        ib ibVar = this.b;
+        if ((f7 < 0.0f && ibVar.v) || (f7 > 0.0f && ibVar.w)) {
+            z10 = true;
+        }
+        float signum = Math.signum(f7);
+        ub ubVar = this.a;
+        o1.k kVar = new o1.k(ubVar, o1.h.m, signum * ubVar.getWidth() * 2.0f);
+        if (!z10) {
+            final int i10 = 0;
+            kVar.a(new o1.f(this) { // from class: org.telegram.ui.Components.dc
+                public final /* synthetic */ fc b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // o1.f
+                public final void a(o1.h hVar, boolean z11, float f11, float f12) {
+                    switch (i10) {
+                        case 0:
+                            this.b.b.y.b();
+                            break;
+                        default:
+                            this.b.b.y.b();
+                            break;
+                    }
+                }
+            });
+            kVar.b(new l7(ubVar, 2));
+        }
+        kVar.u.a(1.0f);
+        kVar.u.b(100.0f);
+        kVar.a = f7;
+        kVar.f();
+        if (z10) {
+            o1.k kVar2 = new o1.k(ubVar, o1.h.t, 0.0f);
+            final int i11 = 1;
+            kVar2.a(new o1.f(this) { // from class: org.telegram.ui.Components.dc
+                public final /* synthetic */ fc b;
+
+                {
+                    this.b = this;
+                }
+
+                @Override // o1.f
+                public final void a(o1.h hVar, boolean z11, float f11, float f12) {
+                    switch (i11) {
+                        case 0:
+                            this.b.b.y.b();
+                            break;
+                        default:
+                            this.b.b.y.b();
+                            break;
+                    }
+                }
+            });
+            kVar2.b(new ec());
+            kVar.u.a(1.0f);
+            kVar.u.b(10.0f);
+            kVar.a = f7;
+            kVar2.f();
+        }
+        ibVar.s = true;
+        return true;
     }
 
-    @Override // org.telegram.ui.Components.nb
-    public final void onShow() {
-        super.onShow();
-        this.a.d();
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onScroll(MotionEvent motionEvent, MotionEvent motionEvent2, float f7, float f10) {
+        ib ibVar = this.b;
+        float f11 = ibVar.h + f7;
+        ibVar.h = f11;
+        float f12 = ibVar.n + f10;
+        ibVar.n = f12;
+        if (Utilities.dist(0.0f, 0.0f, f11, f12) > AndroidUtilities.touchSlop) {
+            ibVar.r = true;
+        }
+        if (!ibVar.d) {
+            return false;
+        }
+        float f13 = ibVar.f - f7;
+        ibVar.f = f13;
+        ub ubVar = this.a;
+        ubVar.setTranslationX(f13);
+        float f14 = ibVar.f;
+        if (f14 == 0.0f || ((f14 < 0.0f && ibVar.v) || (f14 > 0.0f && ibVar.w))) {
+            ubVar.setAlpha(1.0f - (Math.abs(f14) / ubVar.getWidth()));
+        }
+        return true;
     }
 }

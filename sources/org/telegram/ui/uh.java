@@ -1,67 +1,68 @@
 package org.telegram.ui;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MessageObject;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.R;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uh implements r0.o, kf.d0, org.telegram.ui.ActionBar.c2 {
-    public final /* synthetic */ zn a;
+public final /* synthetic */ class uh implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ co b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ TLObject d;
+    public final /* synthetic */ TLRPC.TL_error e;
+    public final /* synthetic */ int f;
+    public final /* synthetic */ MessageObject h;
+    public final /* synthetic */ TLRPC.TL_messages_getDiscussionMessage n;
+    public final /* synthetic */ TLRPC.Chat r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ MessageObject v;
 
-    public /* synthetic */ uh(zn znVar) {
-        this.a = znVar;
+    public /* synthetic */ uh(co coVar, int i10, TLObject tLObject, TLRPC.TL_error tL_error, int i11, MessageObject messageObject, TLRPC.TL_messages_getDiscussionMessage tL_messages_getDiscussionMessage, TLRPC.Chat chat, int i12, MessageObject messageObject2, int i13) {
+        this.a = i13;
+        this.b = coVar;
+        this.c = i10;
+        this.d = tLObject;
+        this.e = tL_error;
+        this.f = i11;
+        this.h = messageObject;
+        this.n = tL_messages_getDiscussionMessage;
+        this.r = chat;
+        this.s = i12;
+        this.v = messageObject2;
     }
 
-    @Override // r0.o
-    public r0.m1 M0(View view, r0.m1 m1Var) {
-        i0.b defaultWindowInsets = AndroidUtilities.getDefaultWindowInsets(m1Var, false);
-        int i10 = defaultWindowInsets.a;
-        int i11 = defaultWindowInsets.c;
-        zn znVar = this.a;
-        if (znVar.Ra != i10 || znVar.Sa != i11) {
-            znVar.Ra = i10;
-            znVar.Sa = i11;
-            znVar.U0.requestLayout();
-        }
-        znVar.v.i(m1Var);
-        ug.e eVar = znVar.H3;
-        if (eVar != null) {
-            eVar.setPadding(i10, 0, i11, 0);
-        }
-        znVar.n7();
-        znVar.r7();
-        znVar.p9();
-        boolean p10 = m1Var.a.p(8);
-        if (znVar.Qa != p10) {
-            znVar.Qa = p10;
-            znVar.U0.S();
-        }
-        gk gkVar = znVar.n1;
-        if (gkVar != null) {
-            r0.j0.b(gkVar, m1Var);
-        }
-        return r0.m1.b;
-    }
-
-    @Override // kf.d0
-    public void a(int i10) {
-        zn.S0(this.a, i10);
-    }
-
-    @Override // org.telegram.ui.ActionBar.c2
-    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        zn znVar = this.a;
-        znVar.getClass();
-        try {
-            Intent intent = new Intent("android.settings.APPLICATION_DETAILS_SETTINGS");
-            intent.setData(Uri.parse("package:" + ApplicationLoader.applicationContext.getPackageName()));
-            znVar.getParentActivity().startActivity(intent);
-        } catch (Exception e) {
-            FileLog.e(e);
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                co coVar = this.b;
+                coVar.h8(new uh(coVar, this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v, 1));
+                break;
+            default:
+                co coVar2 = this.b;
+                if (this.c == coVar2.fc) {
+                    coVar2.hc = -1;
+                    TLObject tLObject = this.d;
+                    if (tLObject == null) {
+                        if ("CHANNEL_PRIVATE".equals(this.e.text)) {
+                            MessagesController.showCantOpenAlert(coVar2, LocaleController.getString(R.string.ChannelCantOpenBannedByAdmin));
+                            coVar2.ic = 0;
+                            coVar2.jc = false;
+                            coVar2.x0.e1();
+                            break;
+                        }
+                    } else {
+                        coVar2.mc = (TLRPC.messages_Messages) tLObject;
+                    }
+                    coVar2.ya(coVar2.lc, coVar2.mc, this.f, this.h, this.n, this.r, this.s, this.v);
+                    break;
+                }
+                break;
         }
     }
 }

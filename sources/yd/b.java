@@ -1,108 +1,14 @@
 package yd;
 
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import uf.d0;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b {
-    public final a a;
-    public d0 b;
-    public int c;
-    public float d;
-    public float e;
-    public float f;
-    public float g;
+public abstract class b {
+    public static final /* synthetic */ int a = 0;
 
-    public b(a aVar) {
-        this.a = aVar;
-    }
-
-    public final boolean a(MotionEvent motionEvent, View view) {
-        float x10 = motionEvent.getX();
-        float y10 = motionEvent.getY();
-        int action = motionEvent.getAction();
-        a aVar = this.a;
-        if (action == 0) {
-            b(view, x10, y10);
-            if (aVar.needClickAt(view, x10, y10)) {
-                this.c |= 1;
-                this.d = x10;
-                this.e = y10;
-                aVar.onClickTouchDown(view, x10, y10);
-                if (aVar.needLongPress(x10, y10) && view != null) {
-                    if (this.b != null) {
-                        throw new AssertionError();
-                    }
-                    this.c |= 2;
-                    d0 d0Var = new d0(15, this, view);
-                    this.b = d0Var;
-                    view.postDelayed(d0Var, aVar.getLongPressDuration());
-                    return true;
-                }
-            }
-        }
-        if (action == 1) {
-            int i10 = this.c;
-            if ((i10 & 1) != 0) {
-                if ((i10 & 4) != 0) {
-                    aVar.onLongPressFinish(view, x10, y10);
-                    this.c &= -5;
-                } else {
-                    aVar.onClickAt(view, x10, y10);
-                    if ((this.c & 256) == 0 && view != null) {
-                        view.playSoundEffect(0);
-                    }
-                }
-                b(view, x10, y10);
-                return true;
-            }
-        } else if (action != 2) {
-            if (action == 3 && (this.c & 1) != 0) {
-                b(view, x10, y10);
-                return true;
-            }
-        } else if ((this.c & 1) != 0) {
-            aVar.onClickTouchMove(view, x10, y10);
-            if ((this.c & 4) != 0) {
-                aVar.onLongPressMove(view, motionEvent, x10, y10, this.f, this.g);
-                return true;
-            }
-            if (aVar.needCancelTouchBySlopMove() && Math.max(Math.abs(this.d - x10), Math.abs(this.e - y10)) > ViewConfiguration.get(view.getContext()).getScaledTouchSlop() * 1.89f) {
-                b(view, x10, y10);
-                return true;
-            }
-        }
-        return (this.c & 1) != 0;
-    }
-
-    public final void b(View view, float f10, float f11) {
-        int i10 = this.c;
-        if ((i10 & 2) != 0) {
-            this.c = i10 & (-3);
-            d0 d0Var = this.b;
-            if (d0Var == null) {
-                throw new AssertionError();
-            }
-            view.removeCallbacks(d0Var);
-            this.b = null;
-        }
-        int i11 = this.c;
-        int i12 = i11 & 8;
-        a aVar = this.a;
-        if (i12 != 0) {
-            this.c = i11 & (-9);
-            aVar.onLongPressCancelled(view, f10, f11);
-        }
-        if ((this.c & 4) != 0) {
-            aVar.onLongPressFinish(view, f10, f11);
-            this.c &= -5;
-        }
-        if ((this.c & 1) != 0) {
-            aVar.onClickTouchUp(view, f10, f11);
-            this.c &= -2;
+    static {
+        ThreadLocal[] threadLocalArr = new ThreadLocal[4];
+        for (int i10 = 0; i10 < 4; i10++) {
+            threadLocalArr[i10] = new ThreadLocal();
         }
     }
 }

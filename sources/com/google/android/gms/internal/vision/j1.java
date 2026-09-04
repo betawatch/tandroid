@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import java.nio.ByteBuffer;
 import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class j1 {
     public static final Charset a = Charset.forName("UTF-8");
@@ -22,13 +22,13 @@ public abstract class j1 {
             if (length > Integer.MAX_VALUE) {
                 throw n1.a();
             }
-        } catch (n1 e) {
-            throw new IllegalArgumentException(e);
+        } catch (n1 e7) {
+            throw new IllegalArgumentException(e7);
         }
     }
 
-    public static int a(long j10) {
-        return (int) (j10 ^ (j10 >>> 32));
+    public static int a(long j3) {
+        return (int) (j3 ^ (j3 >>> 32));
     }
 
     public static f1 b(Object obj, Object obj2) {

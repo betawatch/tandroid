@@ -1,100 +1,200 @@
 package hb;
 
-import af.d;
-import android.graphics.Bitmap;
-import android.os.SystemClock;
-import b6.j;
-import b6.m;
-import cb.o;
-import com.google.android.gms.common.api.internal.s1;
-import com.google.android.gms.tasks.Task;
-import f7.b;
-import java.util.HashMap;
-import java.util.concurrent.TimeUnit;
-import k7.d7;
-import k7.e7;
-import k7.ha;
-import k7.j7;
-import k7.ka;
-import k7.ma;
-import k7.y6;
-import m.s3;
-import org.telegram.tgnet.ConnectionsManager;
+import com.google.android.gms.internal.vision.e2;
+import j$.util.DesugarTimeZone;
+import java.text.ParseException;
+import java.text.ParsePosition;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.TimeZone;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public volatile Bitmap a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final int e;
+public abstract class a {
+    public static final TimeZone a = DesugarTimeZone.getTimeZone("UTC");
 
-    public a(Bitmap bitmap, int i10) {
-        m.h(bitmap);
-        this.a = bitmap;
-        this.b = bitmap.getWidth();
-        this.c = bitmap.getHeight();
-        boolean z4 = true;
-        if (i10 != 0 && i10 != 90 && i10 != 180 && i10 != 270) {
-            z4 = false;
-        }
-        m.a("Invalid rotation. Only 0, 90, 180, 270 are supported currently.", z4);
-        this.d = i10;
-        this.e = -1;
+    public static boolean a(String str, int i10, char c10) {
+        return i10 < str.length() && str.charAt(i10) == c10;
     }
 
-    public static a a(Bitmap bitmap, int i10) {
-        ka a2;
-        Task task;
-        a aVar;
-        long elapsedRealtime = SystemClock.elapsedRealtime();
-        a aVar2 = new a(bitmap, i10);
-        int height = bitmap.getHeight();
-        int width = bitmap.getWidth();
-        int allocationByteCount = bitmap.getAllocationByteCount();
-        synchronized (ma.class) {
-            byte b10 = (byte) (((byte) 1) | 2);
-            if (b10 != 3) {
-                StringBuilder sb = new StringBuilder();
-                if ((b10 & 1) == 0) {
-                    sb.append(" enableFirelog");
-                }
-                if ((b10 & 2) == 0) {
-                    sb.append(" firelogEventType");
-                }
-                throw new IllegalStateException("Missing required properties:".concat(sb.toString()));
+    /* JADX WARN: Removed duplicated region for block: B:104:0x01e6  */
+    /* JADX WARN: Removed duplicated region for block: B:55:0x00f7 A[Catch: IllegalArgumentException -> 0x004e, IndexOutOfBoundsException -> 0x0051, TRY_LEAVE, TryCatch #2 {IllegalArgumentException -> 0x004e, IndexOutOfBoundsException -> 0x0051, blocks: (B:3:0x0004, B:5:0x0017, B:6:0x0019, B:8:0x0025, B:9:0x0027, B:11:0x0037, B:13:0x003d, B:18:0x005b, B:20:0x006b, B:21:0x006d, B:23:0x0079, B:24:0x007c, B:26:0x0082, B:30:0x008c, B:35:0x009c, B:37:0x00a4, B:38:0x00a8, B:40:0x00ae, B:44:0x00bb, B:48:0x00c6, B:53:0x00f1, B:55:0x00f7, B:59:0x01a9, B:64:0x0109, B:65:0x0124, B:66:0x0125, B:69:0x0142, B:71:0x014f, B:74:0x0158, B:76:0x0177, B:79:0x0186, B:80:0x01a8, B:81:0x0131, B:82:0x01da, B:83:0x01e1, B:84:0x00d6, B:85:0x00d9, B:88:0x00c2), top: B:2:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:82:0x01da A[Catch: IllegalArgumentException -> 0x004e, IndexOutOfBoundsException -> 0x0051, TryCatch #2 {IllegalArgumentException -> 0x004e, IndexOutOfBoundsException -> 0x0051, blocks: (B:3:0x0004, B:5:0x0017, B:6:0x0019, B:8:0x0025, B:9:0x0027, B:11:0x0037, B:13:0x003d, B:18:0x005b, B:20:0x006b, B:21:0x006d, B:23:0x0079, B:24:0x007c, B:26:0x0082, B:30:0x008c, B:35:0x009c, B:37:0x00a4, B:38:0x00a8, B:40:0x00ae, B:44:0x00bb, B:48:0x00c6, B:53:0x00f1, B:55:0x00f7, B:59:0x01a9, B:64:0x0109, B:65:0x0124, B:66:0x0125, B:69:0x0142, B:71:0x014f, B:74:0x0158, B:76:0x0177, B:79:0x0186, B:80:0x01a8, B:81:0x0131, B:82:0x01da, B:83:0x01e1, B:84:0x00d6, B:85:0x00d9, B:88:0x00c2), top: B:2:0x0004 }] */
+    /* JADX WARN: Removed duplicated region for block: B:96:0x01e4  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static Date b(String str, ParsePosition parsePosition) {
+        String message;
+        int i10;
+        int i11;
+        int i12;
+        int i13;
+        int length;
+        char charAt;
+        int length2;
+        try {
+            int index = parsePosition.getIndex();
+            int i14 = index + 4;
+            int c10 = c(index, i14, str);
+            if (a(str, i14, '-')) {
+                i14 = index + 5;
             }
-            a2 = ma.a(new ha());
+            int i15 = i14 + 2;
+            int c11 = c(i14, i15, str);
+            if (a(str, i15, '-')) {
+                i15 = i14 + 3;
+            }
+            int i16 = i15 + 2;
+            int c12 = c(i15, i16, str);
+            boolean a2 = a(str, i16, 'T');
+            if (!a2 && str.length() <= i16) {
+                GregorianCalendar gregorianCalendar = new GregorianCalendar(c10, c11 - 1, c12);
+                gregorianCalendar.setLenient(false);
+                parsePosition.setIndex(i16);
+                return gregorianCalendar.getTime();
+            }
+            if (a2) {
+                int i17 = i15 + 5;
+                int c13 = c(i15 + 3, i17, str);
+                if (a(str, i17, ':')) {
+                    i17 = i15 + 6;
+                }
+                int i18 = i17 + 2;
+                int c14 = c(i17, i18, str);
+                if (a(str, i18, ':')) {
+                    i18 = i17 + 3;
+                }
+                if (str.length() > i18 && (charAt = str.charAt(i18)) != 'Z' && charAt != '+' && charAt != '-') {
+                    int i19 = i18 + 2;
+                    i13 = c(i18, i19, str);
+                    if (i13 > 59 && i13 < 63) {
+                        i13 = 59;
+                    }
+                    if (a(str, i19, '.')) {
+                        int i20 = i18 + 3;
+                        for (int i21 = i18 + 4; i21 < str.length(); i21++) {
+                            char charAt2 = str.charAt(i21);
+                            if (charAt2 >= '0' && charAt2 <= '9') {
+                            }
+                            length2 = i21;
+                        }
+                        length2 = str.length();
+                        int min = Math.min(length2, i18 + 6);
+                        i12 = c(i20, min, str);
+                        int i22 = min - i20;
+                        if (i22 == 1) {
+                            i12 *= 100;
+                        } else if (i22 == 2) {
+                            i12 *= 10;
+                        }
+                        i10 = c13;
+                        i16 = length2;
+                        i11 = c14;
+                    } else {
+                        i10 = c13;
+                        i16 = i19;
+                        i11 = c14;
+                        i12 = 0;
+                    }
+                    if (str.length() > i16) {
+                        throw new IllegalArgumentException("No time zone indicator");
+                    }
+                    char charAt3 = str.charAt(i16);
+                    TimeZone timeZone = a;
+                    if (charAt3 == 'Z') {
+                        length = i16 + 1;
+                    } else {
+                        if (charAt3 != '+' && charAt3 != '-') {
+                            throw new IndexOutOfBoundsException("Invalid time zone indicator '" + charAt3 + "'");
+                        }
+                        String substring = str.substring(i16);
+                        if (substring.length() < 5) {
+                            substring = substring + "00";
+                        }
+                        length = i16 + substring.length();
+                        if (!substring.equals("+0000") && !substring.equals("+00:00")) {
+                            String str2 = "GMT" + substring;
+                            timeZone = DesugarTimeZone.getTimeZone(str2);
+                            String id2 = timeZone.getID();
+                            if (!id2.equals(str2) && !id2.replace(":", "").equals(str2)) {
+                                throw new IndexOutOfBoundsException("Mismatching time zone indicator: " + str2 + " given, resolves to " + timeZone.getID());
+                            }
+                        }
+                    }
+                    GregorianCalendar gregorianCalendar2 = new GregorianCalendar(timeZone);
+                    gregorianCalendar2.setLenient(false);
+                    gregorianCalendar2.set(1, c10);
+                    gregorianCalendar2.set(2, c11 - 1);
+                    gregorianCalendar2.set(5, c12);
+                    gregorianCalendar2.set(11, i10);
+                    gregorianCalendar2.set(12, i11);
+                    gregorianCalendar2.set(13, i13);
+                    gregorianCalendar2.set(14, i12);
+                    parsePosition.setIndex(length);
+                    return gregorianCalendar2.getTime();
+                }
+                i16 = i18;
+                i10 = c13;
+                i11 = c14;
+            } else {
+                i10 = 0;
+                i11 = 0;
+            }
+            i12 = 0;
+            i13 = 0;
+            if (str.length() > i16) {
+            }
+        } catch (IllegalArgumentException e7) {
+            e = e7;
+            String str3 = str != null ? null : "\"" + str + '\"';
+            message = e.getMessage();
+            if (message != null || message.isEmpty()) {
+                message = "(" + e.getClass().getName() + ")";
+            }
+            ParseException parseException = new ParseException(e2.j("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
+            parseException.initCause(e);
+            throw parseException;
+        } catch (IndexOutOfBoundsException e10) {
+            e = e10;
+            if (str != null) {
+            }
+            message = e.getMessage();
+            if (message != null) {
+            }
+            message = "(" + e.getClass().getName() + ")";
+            ParseException parseException2 = new ParseException(e2.j("Failed to parse date [", str3, "]: ", message), parsePosition.getIndex());
+            parseException2.initCause(e);
+            throw parseException2;
         }
-        long elapsedRealtime2 = SystemClock.elapsedRealtime() - elapsedRealtime;
-        j7 j7Var = j7.b;
-        Task task2 = a2.e;
-        long elapsedRealtime3 = SystemClock.elapsedRealtime();
-        HashMap hashMap = a2.i;
-        if (hashMap.get(j7Var) == null) {
-            task = task2;
-            aVar = aVar2;
+    }
+
+    public static int c(int i10, int i11, String str) {
+        int i12;
+        int i13;
+        if (i10 < 0 || i11 > str.length() || i10 > i11) {
+            throw new NumberFormatException(str);
+        }
+        if (i10 < i11) {
+            i13 = i10 + 1;
+            int digit = Character.digit(str.charAt(i10), 10);
+            if (digit < 0) {
+                throw new NumberFormatException("Invalid number: " + str.substring(i10, i11));
+            }
+            i12 = -digit;
         } else {
-            task = task2;
-            aVar = aVar2;
-            if (elapsedRealtime3 - ((Long) hashMap.get(j7Var)).longValue() <= TimeUnit.SECONDS.toMillis(30L)) {
-                return aVar;
-            }
+            i12 = 0;
+            i13 = i10;
         }
-        hashMap.put(j7Var, Long.valueOf(elapsedRealtime3));
-        s3 s3Var = new s3();
-        s3Var.c = y6.b;
-        s3Var.b = d7.b;
-        s3Var.d = Integer.valueOf(allocationByteCount & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        s3Var.f = Integer.valueOf(height & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        s3Var.e = Integer.valueOf(width & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        s3Var.a = Long.valueOf(Long.MAX_VALUE & elapsedRealtime2);
-        s3Var.h = Integer.valueOf(i10 & ConnectionsManager.DEFAULT_DATACENTER_ID);
-        e7 e7Var = new e7(s3Var);
-        d dVar = new d(27, false);
-        dVar.d = e7Var;
-        o.a.execute(new s1(a2, new b(dVar), task.isSuccessful() ? (String) task.getResult() : j.c.a(a2.g)));
-        return aVar;
+        while (i13 < i11) {
+            int i14 = i13 + 1;
+            int digit2 = Character.digit(str.charAt(i13), 10);
+            if (digit2 < 0) {
+                throw new NumberFormatException("Invalid number: " + str.substring(i10, i11));
+            }
+            i12 = (i12 * 10) - digit2;
+            i13 = i14;
+        }
+        return -i12;
     }
 }

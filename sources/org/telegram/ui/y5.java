@@ -1,183 +1,91 @@
 package org.telegram.ui;
 
-import android.app.Activity;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import org.telegram.messenger.ChannelBoostsController;
-import org.telegram.messenger.ChatObject;
+import android.view.ViewGroup;
+import java.util.ArrayList;
+import org.telegram.messenger.CacheByChatsController;
+import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.tl.TL_stories;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class y5 extends FrameLayout {
-    public final /* synthetic */ a6 a;
+public final class y5 extends pg.b {
+    public final /* synthetic */ a6 d;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public y5(a6 a6Var, Activity activity) {
-        super(activity);
-        this.a = a6Var;
-        setWillNotDraw(false);
-        dg.s1 s1Var = new dg.s1(a6Var, getContext());
-        dg.s1 s1Var2 = new dg.s1(a6Var, getContext());
-        dg.s1 s1Var3 = new dg.s1(a6Var, getContext());
-        s1Var.c(R.drawable.filled_boost_plus, LocaleController.getString(R.string.BoostBtn));
-        s1Var2.c(R.drawable.filled_gift_premium, LocaleController.getString(R.string.GiveawayBtn));
-        s1Var3.c(R.drawable.filled_info, LocaleController.getString(R.string.FeaturesBtn));
-        final int i10 = 0;
-        s1Var.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.w5
-            public final /* synthetic */ y5 b;
+    public y5(a6 a6Var) {
+        this.d = a6Var;
+    }
 
-            {
-                this.b = this;
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        int i10 = c1Var.f;
+        return i10 == 1 || i10 == 2 || i10 == 4;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        return this.d.c.size();
+    }
+
+    @Override // s4.h0
+    public final int j(int i10) {
+        return ((z5) this.d.c.get(i10)).a;
+    }
+
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        String str;
+        a6 a6Var = this.d;
+        ArrayList arrayList = a6Var.c;
+        if (((z5) arrayList.get(i10)).a == 2) {
+            org.telegram.ui.Cells.za zaVar = (org.telegram.ui.Cells.za) c1Var.a;
+            CacheByChatsController.KeepMediaException keepMediaException = ((z5) arrayList.get(i10)).c;
+            TLObject userOrChat = a6Var.getMessagesController().getUserOrChat(keepMediaException.dialogId);
+            if (userOrChat instanceof TLRPC.User) {
+                TLRPC.User user = (TLRPC.User) userOrChat;
+                str = user.self ? LocaleController.getString(R.string.SavedMessages) : ContactsController.formatName(user.first_name, user.last_name);
+            } else {
+                str = userOrChat instanceof TLRPC.Chat ? ((TLRPC.Chat) userOrChat).title : null;
             }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                org.telegram.ui.ActionBar.f6 f6Var;
-                int i11 = i10;
-                y5 y5Var = this.b;
-                switch (i11) {
-                    case 0:
-                        a6 a6Var2 = y5Var.a;
-                        long j10 = a6Var2.M;
-                        ChannelBoostsController.CanApplyBoost canApplyBoost = a6Var2.P;
-                        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = a6Var2.O;
-                        int i12 = eg.v0.S0;
-                        if (canApplyBoost != null && tL_premium_boostsStatus != null && a6Var2.getParentActivity() != null) {
-                            eg.v0 v0Var = new eg.v0(19, a6Var2.getCurrentAccount(), a6Var2.getParentActivity(), a6Var2, a6Var2.getResourceProvider());
-                            v0Var.G1(canApplyBoost);
-                            v0Var.F1(tL_premium_boostsStatus, true);
-                            v0Var.H1(j10);
-                            v0Var.d0 = null;
-                            a6Var2.showDialog(v0Var);
-                            break;
-                        }
-                        break;
-                    case 1:
-                        a6 a6Var3 = y5Var.a;
-                        a6Var3.w0(true);
-                        long j11 = a6Var3.M;
-                        f6Var = ((org.telegram.ui.ActionBar.p2) a6Var3).resourceProvider;
-                        gg.x.m(a6Var3, f6Var, j11, null);
-                        gg.x.e.setOnHideListener(new x5(y5Var, 0));
-                        break;
-                    default:
-                        a6 a6Var4 = y5Var.a;
-                        eg.v0 v0Var2 = new eg.v0(31, a6Var4.N, y5Var.getContext(), a6Var4, a6Var4.getResourceProvider());
-                        v0Var2.F1(a6Var4.O, true);
-                        v0Var2.H1(a6Var4.M);
-                        a6Var4.showDialog(v0Var2);
-                        break;
-                }
+            boolean z10 = true;
+            zaVar.setSelfAsSavedMessages(true);
+            String keepMediaString = CacheByChatsController.getKeepMediaString(keepMediaException.keepMedia);
+            if (i10 != arrayList.size() - 1 && ((z5) arrayList.get(i10 + 1)).a != 2) {
+                z10 = false;
             }
-        });
-        final int i11 = 1;
-        s1Var2.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.w5
-            public final /* synthetic */ y5 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                org.telegram.ui.ActionBar.f6 f6Var;
-                int i112 = i11;
-                y5 y5Var = this.b;
-                switch (i112) {
-                    case 0:
-                        a6 a6Var2 = y5Var.a;
-                        long j10 = a6Var2.M;
-                        ChannelBoostsController.CanApplyBoost canApplyBoost = a6Var2.P;
-                        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = a6Var2.O;
-                        int i12 = eg.v0.S0;
-                        if (canApplyBoost != null && tL_premium_boostsStatus != null && a6Var2.getParentActivity() != null) {
-                            eg.v0 v0Var = new eg.v0(19, a6Var2.getCurrentAccount(), a6Var2.getParentActivity(), a6Var2, a6Var2.getResourceProvider());
-                            v0Var.G1(canApplyBoost);
-                            v0Var.F1(tL_premium_boostsStatus, true);
-                            v0Var.H1(j10);
-                            v0Var.d0 = null;
-                            a6Var2.showDialog(v0Var);
-                            break;
-                        }
-                        break;
-                    case 1:
-                        a6 a6Var3 = y5Var.a;
-                        a6Var3.w0(true);
-                        long j11 = a6Var3.M;
-                        f6Var = ((org.telegram.ui.ActionBar.p2) a6Var3).resourceProvider;
-                        gg.x.m(a6Var3, f6Var, j11, null);
-                        gg.x.e.setOnHideListener(new x5(y5Var, 0));
-                        break;
-                    default:
-                        a6 a6Var4 = y5Var.a;
-                        eg.v0 v0Var2 = new eg.v0(31, a6Var4.N, y5Var.getContext(), a6Var4, a6Var4.getResourceProvider());
-                        v0Var2.F1(a6Var4.O, true);
-                        v0Var2.H1(a6Var4.M);
-                        a6Var4.showDialog(v0Var2);
-                        break;
-                }
-            }
-        });
-        final int i12 = 2;
-        s1Var3.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.w5
-            public final /* synthetic */ y5 b;
-
-            {
-                this.b = this;
-            }
-
-            @Override // android.view.View.OnClickListener
-            public final void onClick(View view) {
-                org.telegram.ui.ActionBar.f6 f6Var;
-                int i112 = i12;
-                y5 y5Var = this.b;
-                switch (i112) {
-                    case 0:
-                        a6 a6Var2 = y5Var.a;
-                        long j10 = a6Var2.M;
-                        ChannelBoostsController.CanApplyBoost canApplyBoost = a6Var2.P;
-                        TL_stories.TL_premium_boostsStatus tL_premium_boostsStatus = a6Var2.O;
-                        int i122 = eg.v0.S0;
-                        if (canApplyBoost != null && tL_premium_boostsStatus != null && a6Var2.getParentActivity() != null) {
-                            eg.v0 v0Var = new eg.v0(19, a6Var2.getCurrentAccount(), a6Var2.getParentActivity(), a6Var2, a6Var2.getResourceProvider());
-                            v0Var.G1(canApplyBoost);
-                            v0Var.F1(tL_premium_boostsStatus, true);
-                            v0Var.H1(j10);
-                            v0Var.d0 = null;
-                            a6Var2.showDialog(v0Var);
-                            break;
-                        }
-                        break;
-                    case 1:
-                        a6 a6Var3 = y5Var.a;
-                        a6Var3.w0(true);
-                        long j11 = a6Var3.M;
-                        f6Var = ((org.telegram.ui.ActionBar.p2) a6Var3).resourceProvider;
-                        gg.x.m(a6Var3, f6Var, j11, null);
-                        gg.x.e.setOnHideListener(new x5(y5Var, 0));
-                        break;
-                    default:
-                        a6 a6Var4 = y5Var.a;
-                        eg.v0 v0Var2 = new eg.v0(31, a6Var4.N, y5Var.getContext(), a6Var4, a6Var4.getResourceProvider());
-                        v0Var2.F1(a6Var4.O, true);
-                        v0Var2.H1(a6Var4.M);
-                        a6Var4.showDialog(v0Var2);
-                        break;
-                }
-            }
-        });
-        LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.setOrientation(0);
-        linearLayout.addView(s1Var, k7.b6.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        if (MessagesController.getInstance(a6Var.N).giveawayGiftsPurchaseAvailable && ChatObject.hasAdminRights(a6Var.d0)) {
-            linearLayout.addView(s1Var2, k7.b6.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
+            zaVar.e(userOrChat, str, keepMediaString, z10);
         }
-        linearLayout.addView(s1Var3, k7.b6.k(6.0f, 0.0f, 6.0f, 0.0f, -2, -2));
-        addView(linearLayout, k7.b6.d(-2, -2.0f, 1, 0.0f, 19.0f, 0.0f, 0.0f));
+    }
+
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        View view;
+        View view2 = null;
+        if (i10 != 1) {
+            if (i10 == 2) {
+                View zaVar = new org.telegram.ui.Cells.za(4, 0, viewGroup.getContext(), null, false, false);
+                zaVar.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                view2 = zaVar;
+            } else if (i10 == 3) {
+                view = new org.telegram.ui.Cells.a7(viewGroup.getContext(), (org.telegram.ui.Cells.p6) null);
+            } else if (i10 == 4) {
+                org.telegram.ui.Cells.r8 r8Var = new org.telegram.ui.Cells.r8(viewGroup.getContext());
+                r8Var.i(LocaleController.getString(R.string.NotificationsDeleteAllException), false);
+                r8Var.e(-1, org.telegram.ui.ActionBar.j6.p7);
+                r8Var.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+                view = r8Var;
+            }
+            return com.google.android.gms.internal.vision.e2.l(view2, view2, -1, -2);
+        }
+        org.telegram.ui.Cells.r8 r8Var2 = new org.telegram.ui.Cells.r8(viewGroup.getContext());
+        r8Var2.m(R.drawable.msg_contact_add, LocaleController.getString(R.string.NotificationsAddAnException), true);
+        r8Var2.e(org.telegram.ui.ActionBar.j6.v6, org.telegram.ui.ActionBar.j6.u6);
+        r8Var2.setBackgroundColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.d6, false));
+        view = r8Var2;
+        view2 = view;
+        return com.google.android.gms.internal.vision.e2.l(view2, view2, -1, -2);
     }
 }

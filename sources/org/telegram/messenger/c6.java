@@ -1,35 +1,33 @@
 package org.telegram.messenger;
 
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.Components.p70;
+import org.telegram.tgnet.RequestDelegate;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c6 implements Runnable {
+public final /* synthetic */ class c6 implements RequestDelegate {
     public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate d;
 
-    public /* synthetic */ c6(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Object obj, float f10, int i10) {
-        this.a = i10;
-        this.c = notificationCenterDelegate;
-        this.d = obj;
-        this.b = f10;
+    public /* synthetic */ c6(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, int i10, int i11, int i12) {
+        this.a = i12;
+        this.d = notificationCenterDelegate;
+        this.b = i10;
+        this.c = i11;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // org.telegram.tgnet.RequestDelegate
+    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                ((MediaController) this.c).lambda$setPlaybackSpeed$16((MessageObject) this.d, this.b);
+                ((MediaController) this.d).lambda$loadMoreMusic$12(this.b, this.c, tLObject, tL_error);
                 break;
             default:
-                org.telegram.ui.n4 n4Var = (org.telegram.ui.n4) this.c;
-                p70 p70Var = (p70) this.d;
-                n4Var.e0.J.c(0.0f, true);
-                p70Var.p = new org.telegram.ui.e0(n4Var, this.b, 0);
-                p70Var.Z();
+                ((MessagesController) this.d).lambda$getDifference$359(this.b, this.c, tLObject, tL_error);
                 break;
         }
     }

@@ -1,49 +1,31 @@
 package o8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.os.Parcel;
+import android.os.Parcelable;
+import n6.v;
+import w7.e0;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class h extends i {
-    public final transient int c;
-    public final transient int d;
-    public final /* synthetic */ i e;
+public final class h extends o6.a {
+    public static final Parcelable.Creator<h> CREATOR = new m8.h(25);
+    public final int a;
+    public final k6.a b;
+    public final v c;
 
-    public h(i iVar, int i10, int i11) {
-        this.e = iVar;
-        this.c = i10;
-        this.d = i11;
+    public h(int i10, k6.a aVar, v vVar) {
+        this.a = i10;
+        this.b = aVar;
+        this.c = vVar;
     }
 
-    @Override // java.util.List
-    public final Object get(int i10) {
-        k7.i0.a(i10, this.d);
-        return this.e.get(i10 + this.c);
-    }
-
-    @Override // o8.f
-    public final int n() {
-        return this.e.o() + this.c + this.d;
-    }
-
-    @Override // o8.f
-    public final int o() {
-        return this.e.o() + this.c;
-    }
-
-    @Override // o8.f
-    public final Object[] p() {
-        return this.e.p();
-    }
-
-    @Override // o8.i, java.util.List
-    /* renamed from: q, reason: merged with bridge method [inline-methods] */
-    public final i subList(int i10, int i11) {
-        k7.i0.b(i10, i11, this.d);
-        int i12 = this.c;
-        return this.e.subList(i10 + i12, i11 + i12);
-    }
-
-    @Override // java.util.AbstractCollection, java.util.Collection, java.util.List
-    public final int size() {
-        return this.d;
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = e0.q(parcel, 20293);
+        e0.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        e0.k(parcel, 2, this.b, i10);
+        e0.k(parcel, 3, this.c, i10);
+        e0.r(parcel, q6);
     }
 }

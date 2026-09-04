@@ -32,23 +32,23 @@ public abstract class s6 extends c implements Iterable {
         this.e = newArray(16);
     }
 
-    public final void l(long j10) {
-        long j11;
+    public final void l(long j3) {
+        long j10;
         int i10 = this.c;
         if (i10 == 0) {
-            j11 = j(this.e);
+            j10 = j(this.e);
         } else {
-            j11 = j(this.f[i10]) + this.d[i10];
+            j10 = j(this.f[i10]) + this.d[i10];
         }
-        if (j10 > j11) {
+        if (j3 > j10) {
             if (this.f == null) {
-                Object[] m9 = m();
-                this.f = m9;
+                Object[] m10 = m();
+                this.f = m10;
                 this.d = new long[8];
-                m9[0] = this.e;
+                m10[0] = this.e;
             }
             int i11 = this.c + 1;
-            while (j10 > j11) {
+            while (j3 > j10) {
                 Object[] objArr = this.f;
                 if (i11 >= objArr.length) {
                     int length = objArr.length * 2;
@@ -63,34 +63,34 @@ public abstract class s6 extends c implements Iterable {
                 this.f[i11] = newArray(i13);
                 long[] jArr = this.d;
                 jArr[i11] = jArr[i11 - 1] + j(this.f[r6]);
-                j11 += i13;
+                j10 += i13;
                 i11++;
             }
         }
     }
 
-    public final int k(long j10) {
+    public final int k(long j3) {
         if (this.c == 0) {
-            if (j10 < this.b) {
+            if (j3 < this.b) {
                 return 0;
             }
-            throw new IndexOutOfBoundsException(Long.toString(j10));
+            throw new IndexOutOfBoundsException(Long.toString(j3));
         }
-        if (j10 >= count()) {
-            throw new IndexOutOfBoundsException(Long.toString(j10));
+        if (j3 >= count()) {
+            throw new IndexOutOfBoundsException(Long.toString(j3));
         }
         for (int i10 = 0; i10 <= this.c; i10++) {
-            if (j10 < this.d[i10] + j(this.f[i10])) {
+            if (j3 < this.d[i10] + j(this.f[i10])) {
                 return i10;
             }
         }
-        throw new IndexOutOfBoundsException(Long.toString(j10));
+        throw new IndexOutOfBoundsException(Long.toString(j3));
     }
 
     public void c(int i10, Object obj) {
-        long j10 = i10;
-        long count = count() + j10;
-        if (count > j(obj) || count < j10) {
+        long j3 = i10;
+        long count = count() + j3;
+        if (count > j(obj) || count < j3) {
             throw new IndexOutOfBoundsException("does not fit");
         }
         if (this.c == 0) {
@@ -119,24 +119,24 @@ public abstract class s6 extends c implements Iterable {
     }
 
     public final void n() {
-        long j10;
+        long j3;
         if (this.b == j(this.e)) {
             if (this.f == null) {
-                Object[] m9 = m();
-                this.f = m9;
+                Object[] m10 = m();
+                this.f = m10;
                 this.d = new long[8];
-                m9[0] = this.e;
+                m10[0] = this.e;
             }
             int i10 = this.c;
             int i11 = i10 + 1;
             Object[] objArr = this.f;
             if (i11 >= objArr.length || objArr[i11] == null) {
                 if (i10 == 0) {
-                    j10 = j(this.e);
+                    j3 = j(this.e);
                 } else {
-                    j10 = j(objArr[i10]) + this.d[i10];
+                    j3 = j(objArr[i10]) + this.d[i10];
                 }
-                l(j10 + 1);
+                l(j3 + 1);
             }
             this.b = 0;
             int i12 = this.c + 1;

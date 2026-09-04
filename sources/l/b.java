@@ -2,11 +2,11 @@ package l;
 
 import android.view.View;
 import androidx.appcompat.view.menu.ActionMenuItemView;
-import m.v1;
+import m.u1;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends v1 {
+public final class b extends u1 {
     public final /* synthetic */ int s = 0;
     public final /* synthetic */ View v;
 
@@ -16,18 +16,18 @@ public final class b extends v1 {
         this.v = actionMenuItemView;
     }
 
-    @Override // m.v1
-    public final b0 b() {
+    @Override // m.u1
+    public final c0 b() {
         m.d dVar;
         switch (this.s) {
             case 0:
                 c cVar = ((ActionMenuItemView) this.v).x;
-                if (cVar == null || (dVar = ((m.e) cVar).a.G) == null) {
+                if (cVar == null || (dVar = ((m.e) cVar).a.J) == null) {
                     return null;
                 }
                 return dVar.a();
             default:
-                m.d dVar2 = ((m.g) this.v).d.F;
+                m.d dVar2 = ((m.g) this.v).d.I;
                 if (dVar2 == null) {
                     return null;
                 }
@@ -35,26 +35,26 @@ public final class b extends v1 {
         }
     }
 
-    @Override // m.v1
+    @Override // m.u1
     public final boolean c() {
-        b0 b10;
+        c0 b10;
         switch (this.s) {
             case 0:
                 ActionMenuItemView actionMenuItemView = (ActionMenuItemView) this.v;
-                j jVar = actionMenuItemView.v;
-                return jVar != null && jVar.a(actionMenuItemView.n) && (b10 = b()) != null && b10.a();
+                k kVar = actionMenuItemView.v;
+                return kVar != null && kVar.a(actionMenuItemView.n) && (b10 = b()) != null && b10.a();
             default:
                 ((m.g) this.v).d.l();
                 return true;
         }
     }
 
-    @Override // m.v1
+    @Override // m.u1
     public boolean d() {
         switch (this.s) {
             case 1:
                 m.h hVar = ((m.g) this.v).d;
-                if (hVar.H != null) {
+                if (hVar.K != null) {
                     return false;
                 }
                 hVar.f();

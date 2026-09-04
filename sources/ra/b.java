@@ -1,81 +1,117 @@
 package ra;
 
-import j$.util.Objects;
-import java.io.Serializable;
-import java.lang.reflect.Modifier;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.Arrays;
+import m1.j;
+import org.telegram.messenger.BuildConfig;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b implements ParameterizedType, Serializable {
-    public final Type a;
-    public final Type b;
-    public final Type[] c;
+public final class b {
+    public final String a;
+    public final int b;
+    public final String c;
+    public final String d;
+    public final long e;
+    public final long f;
+    public final String g;
 
-    public b(Type type, Type type2, Type... typeArr) {
-        Objects.requireNonNull(type2);
-        if (type == null && (type2 instanceof Class)) {
-            Class cls = (Class) type2;
-            if (!Modifier.isStatic(cls.getModifiers()) && cls.getDeclaringClass() != null) {
-                throw new IllegalArgumentException("Must specify owner type for " + type2);
-            }
-        }
-        this.a = type == null ? null : d.a(type);
-        this.b = d.a(type2);
-        Type[] typeArr2 = (Type[]) typeArr.clone();
-        this.c = typeArr2;
-        int length = typeArr2.length;
-        for (int i10 = 0; i10 < length; i10++) {
-            Objects.requireNonNull(this.c[i10]);
-            d.c(this.c[i10]);
-            Type[] typeArr3 = this.c;
-            typeArr3[i10] = d.a(typeArr3[i10]);
-        }
+    public b(String str, int i10, String str2, String str3, long j3, long j10, String str4) {
+        this.a = str;
+        this.b = i10;
+        this.c = str2;
+        this.d = str3;
+        this.e = j3;
+        this.f = j10;
+        this.g = str4;
+    }
+
+    public final a a() {
+        a aVar = new a(0);
+        aVar.c = this.a;
+        aVar.b = this.b;
+        aVar.d = this.c;
+        aVar.e = this.d;
+        aVar.g = Long.valueOf(this.e);
+        aVar.h = Long.valueOf(this.f);
+        aVar.f = this.g;
+        return aVar;
     }
 
     public final boolean equals(Object obj) {
-        return (obj instanceof ParameterizedType) && d.e(this, (ParameterizedType) obj);
-    }
-
-    @Override // java.lang.reflect.ParameterizedType
-    public final Type[] getActualTypeArguments() {
-        return (Type[]) this.c.clone();
-    }
-
-    @Override // java.lang.reflect.ParameterizedType
-    public final Type getOwnerType() {
-        return this.a;
-    }
-
-    @Override // java.lang.reflect.ParameterizedType
-    public final Type getRawType() {
-        return this.b;
+        if (obj == this) {
+            return true;
+        }
+        if (!(obj instanceof b)) {
+            return false;
+        }
+        b bVar = (b) obj;
+        String str = bVar.g;
+        String str2 = bVar.d;
+        String str3 = bVar.c;
+        String str4 = bVar.a;
+        String str5 = this.a;
+        if (str5 == null) {
+            if (str4 != null) {
+                return false;
+            }
+        } else if (!str5.equals(str4)) {
+            return false;
+        }
+        if (!j.b(this.b, bVar.b)) {
+            return false;
+        }
+        String str6 = this.c;
+        if (str6 == null) {
+            if (str3 != null) {
+                return false;
+            }
+        } else if (!str6.equals(str3)) {
+            return false;
+        }
+        String str7 = this.d;
+        if (str7 == null) {
+            if (str2 != null) {
+                return false;
+            }
+        } else if (!str7.equals(str2)) {
+            return false;
+        }
+        if (this.e != bVar.e || this.f != bVar.f) {
+            return false;
+        }
+        String str8 = this.g;
+        return str8 == null ? str == null : str8.equals(str);
     }
 
     public final int hashCode() {
-        int hashCode = Arrays.hashCode(this.c) ^ this.b.hashCode();
-        Type type = this.a;
-        return hashCode ^ (type != null ? type.hashCode() : 0);
+        String str = this.a;
+        int hashCode = ((((str == null ? 0 : str.hashCode()) ^ 1000003) * 1000003) ^ j.c(this.b)) * 1000003;
+        String str2 = this.c;
+        int hashCode2 = (hashCode ^ (str2 == null ? 0 : str2.hashCode())) * 1000003;
+        String str3 = this.d;
+        int hashCode3 = (hashCode2 ^ (str3 == null ? 0 : str3.hashCode())) * 1000003;
+        long j3 = this.e;
+        int i10 = (hashCode3 ^ ((int) (j3 ^ (j3 >>> 32)))) * 1000003;
+        long j10 = this.f;
+        int i11 = (i10 ^ ((int) (j10 ^ (j10 >>> 32)))) * 1000003;
+        String str4 = this.g;
+        return (str4 != null ? str4.hashCode() : 0) ^ i11;
     }
 
     public final String toString() {
-        Type[] typeArr = this.c;
-        int length = typeArr.length;
-        Type type = this.b;
-        if (length == 0) {
-            return d.k(type);
-        }
-        StringBuilder sb = new StringBuilder((length + 1) * 30);
-        sb.append(d.k(type));
-        sb.append("<");
-        sb.append(d.k(typeArr[0]));
-        for (int i10 = 1; i10 < length; i10++) {
-            sb.append(", ");
-            sb.append(d.k(typeArr[i10]));
-        }
-        sb.append(">");
-        return sb.toString();
+        StringBuilder sb2 = new StringBuilder("PersistedInstallationEntry{firebaseInstallationId=");
+        sb2.append(this.a);
+        sb2.append(", registrationStatus=");
+        int i10 = this.b;
+        sb2.append(i10 != 1 ? i10 != 2 ? i10 != 3 ? i10 != 4 ? i10 != 5 ? BuildConfig.BETA_URL : "REGISTER_ERROR" : "REGISTERED" : "UNREGISTERED" : "NOT_GENERATED" : "ATTEMPT_MIGRATION");
+        sb2.append(", authToken=");
+        sb2.append(this.c);
+        sb2.append(", refreshToken=");
+        sb2.append(this.d);
+        sb2.append(", expiresInSecs=");
+        sb2.append(this.e);
+        sb2.append(", tokenCreationEpochInSecs=");
+        sb2.append(this.f);
+        sb2.append(", fisError=");
+        return a4.a.s(sb2, this.g, "}");
     }
 }

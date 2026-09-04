@@ -1,29 +1,26 @@
 package c5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import com.google.android.gms.internal.vision.e2;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class h {
-    public final String a;
-    public final float b;
-    public final float c;
-    public final int d;
-    public final int e;
-    public final float f;
-    public final float g;
-    public final int h;
-    public final float i;
-    public final int j;
+    public int a;
+    public int b;
+    public String c;
 
-    public h(String str, float f10, float f11, int i10, int i11, float f12, float f13, int i12, float f14, int i13) {
-        this.a = str;
-        this.b = f10;
-        this.c = f11;
-        this.d = i10;
-        this.e = i11;
-        this.f = f12;
-        this.g = f13;
-        this.h = i12;
-        this.i = f14;
-        this.j = i13;
+    public static c3.a a() {
+        c3.a aVar = new c3.a();
+        aVar.c = 0;
+        aVar.a = "";
+        return aVar;
+    }
+
+    public final String toString() {
+        int i10 = this.a;
+        int i11 = com.google.android.gms.internal.play_billing.u.a;
+        com.google.android.gms.internal.play_billing.a0 a0Var = com.google.android.gms.internal.play_billing.j.c;
+        Integer valueOf = Integer.valueOf(i10);
+        return e2.j("Response Code: ", (!a0Var.containsKey(valueOf) ? com.google.android.gms.internal.play_billing.j.b : (com.google.android.gms.internal.play_billing.j) a0Var.get(valueOf)).toString(), ", Debug Message: ", this.c);
     }
 }

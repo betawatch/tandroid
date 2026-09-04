@@ -1,100 +1,163 @@
 package mg;
 
+import android.content.Context;
+import android.os.SystemClock;
+import android.view.MotionEvent;
+import android.view.ScaleGestureDetector;
+import android.view.VelocityTracker;
+import android.view.ViewConfiguration;
+import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ai;
-import vh.w2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class c {
-    public float a;
-    public float b;
+    public final ScaleGestureDetector a;
+    public q b;
     public float c;
     public float d;
-    public float e;
-    public float f;
-    public float g;
-    public float h;
-    public long i;
-    public boolean j;
-    public float k;
-    public final /* synthetic */ d l;
+    public final float f;
+    public VelocityTracker g;
+    public boolean h;
+    public long k;
+    public boolean l;
+    public final float e = AndroidUtilities.dp(1.0f);
+    public int i = -1;
+    public int j = 0;
 
-    public c(d dVar) {
-        this.l = dVar;
+    public c(Context context) {
+        this.f = ViewConfiguration.get(context).getScaledMinimumFlingVelocity();
+        this.a = new ScaleGestureDetector(context, new b(this, 0));
     }
 
-    public final void a() {
-        d dVar;
-        float f10 = 0.0f;
-        this.h = 0.0f;
-        float b10 = b();
-        float c3 = c();
-        int i10 = 0;
-        while (true) {
-            dVar = this.l;
-            if (i10 >= 20) {
-                break;
+    public final void a(MotionEvent motionEvent) {
+        float x10;
+        float y3;
+        float x11;
+        float y10;
+        float x12;
+        float y11;
+        p pVar;
+        this.a.onTouchEvent(motionEvent);
+        int action = motionEvent.getAction() & 255;
+        if (action == 0) {
+            this.i = motionEvent.getPointerId(0);
+            this.k = SystemClock.elapsedRealtime();
+        } else if (action == 1 || action == 3) {
+            if (!this.h && SystemClock.elapsedRealtime() - this.k < 800 && (pVar = this.b.M) != null) {
+                pVar.b0();
             }
-            float b11 = b();
-            float c10 = c();
-            float f11 = 2.14748365E9f;
-            for (int i11 = 0; i11 < dVar.c.size(); i11++) {
-                float f12 = ((c) dVar.c.get(i11)).c - b11;
-                float f13 = ((c) dVar.c.get(i11)).d - c10;
-                float f14 = (f13 * f13) + (f12 * f12);
-                if (f14 < f11) {
-                    f11 = f14;
+            this.i = -1;
+        } else if (action == 6) {
+            int action2 = (65280 & motionEvent.getAction()) >> 8;
+            if (motionEvent.getPointerId(action2) == this.i) {
+                int i10 = action2 == 0 ? 1 : 0;
+                this.i = motionEvent.getPointerId(i10);
+                this.c = motionEvent.getX(i10);
+                this.d = motionEvent.getY(i10);
+            }
+        }
+        int i11 = this.i;
+        if (i11 == -1) {
+            i11 = 0;
+        }
+        this.j = motionEvent.findPointerIndex(i11);
+        int action3 = motionEvent.getAction();
+        if (action3 != 0) {
+            if (action3 == 1) {
+                if (this.h) {
+                    if (this.g != null) {
+                        try {
+                            x12 = motionEvent.getX(this.j);
+                        } catch (Exception unused) {
+                            x12 = motionEvent.getX();
+                        }
+                        this.c = x12;
+                        try {
+                            y11 = motionEvent.getY(this.j);
+                        } catch (Exception unused2) {
+                            y11 = motionEvent.getY();
+                        }
+                        this.d = y11;
+                        this.g.addMovement(motionEvent);
+                        this.g.computeCurrentVelocity(MediaDataController.MAX_STYLE_RUNS_COUNT);
+                        if (Math.max(Math.abs(this.g.getXVelocity()), Math.abs(this.g.getYVelocity())) >= this.f) {
+                            this.b.getClass();
+                        }
+                    }
+                    this.h = false;
                 }
+                VelocityTracker velocityTracker = this.g;
+                if (velocityTracker != null) {
+                    velocityTracker.recycle();
+                    this.g = null;
+                }
+                this.l = false;
+                return;
             }
-            if (f11 > f10) {
-                b10 = b11;
-                c3 = c10;
-                f10 = f11;
-            }
-            i10++;
-        }
-        float f15 = dVar.f ? 0.8f : 0.5f;
-        this.c = b10;
-        if (b10 > dVar.b.width() * f15) {
-            this.a = dVar.b.width() * f15;
-        } else {
-            float width = dVar.b.width() * f15;
-            this.a = width;
-            if (this.c > width) {
-                this.c = width - 0.1f;
+            if (action3 != 2) {
+                if (action3 != 3) {
+                    return;
+                }
+                VelocityTracker velocityTracker2 = this.g;
+                if (velocityTracker2 != null) {
+                    velocityTracker2.recycle();
+                    this.g = null;
+                }
+                this.l = false;
+                this.h = false;
+                return;
             }
         }
-        this.b = w2.c(ai.f(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, dVar.b.height() * 0.45f);
-        if (dVar.f) {
-            float c11 = w2.c(ai.f(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
-            this.f = c11;
-            this.g = (((ai.f(Utilities.fastRandom, 100) / 100.0f) * 1.5f) + 1.5f) * c11;
-            this.d = w2.c(ai.f(Utilities.fastRandom, 100), 100.0f, dVar.b.height() * 0.1f, this.f / 2.0f);
-            this.e = dVar.b.height() + this.f;
-            this.i = Math.abs(Utilities.fastRandom.nextInt() % 600) + MediaDataController.MAX_STYLE_RUNS_COUNT;
-        } else {
-            float c12 = w2.c(ai.f(Utilities.fastRandom, 100), 100.0f, dVar.b.width() * 0.1f, dVar.b.width() * 0.05f);
-            this.f = c12;
-            this.g = (((ai.f(Utilities.fastRandom, 100) / 100.0f) * 0.5f) + 1.5f) * c12;
-            this.d = c3;
-            this.e = c3 + dVar.b.height();
-            this.i = 1800L;
+        if (!this.l) {
+            VelocityTracker obtain = VelocityTracker.obtain();
+            this.g = obtain;
+            if (obtain != null) {
+                obtain.addMovement(motionEvent);
+            }
+            try {
+                x11 = motionEvent.getX(this.j);
+            } catch (Exception unused3) {
+                x11 = motionEvent.getX();
+            }
+            this.c = x11;
+            try {
+                y10 = motionEvent.getY(this.j);
+            } catch (Exception unused4) {
+                y10 = motionEvent.getY();
+            }
+            this.d = y10;
+            this.h = false;
+            this.l = true;
+            return;
         }
-        this.i = (long) (this.i / 1.75f);
-        this.j = Utilities.fastRandom.nextBoolean();
-        this.k = ((Utilities.fastRandom.nextInt() % 100) / 100.0f) * 20.0f;
-    }
-
-    public final float b() {
-        if (!this.l.f) {
-            return (ai.f(Utilities.fastRandom, 100) / 100.0f) * r0.b.width();
+        try {
+            x10 = motionEvent.getX(this.j);
+        } catch (Exception unused5) {
+            x10 = motionEvent.getX();
         }
-        return w2.c(ai.f(Utilities.fastRandom, 100), 100.0f, r0.b.width() * 1.5f, r0.b.width() * (-0.25f));
-    }
-
-    public final float c() {
-        return (ai.f(Utilities.fastRandom, 100) / 100.0f) * this.l.b.height() * 0.5f;
+        try {
+            y3 = motionEvent.getY(this.j);
+        } catch (Exception unused6) {
+            y3 = motionEvent.getY();
+        }
+        float f7 = x10 - this.c;
+        float f10 = y3 - this.d;
+        if (!this.h) {
+            this.h = ((float) Math.sqrt((double) ((f10 * f10) + (f7 * f7)))) >= this.e;
+        }
+        if (this.h) {
+            q qVar = this.b;
+            if (!qVar.F) {
+                o.f(qVar.L, f7, f10);
+                qVar.r(false);
+            }
+            this.c = x10;
+            this.d = y3;
+            VelocityTracker velocityTracker3 = this.g;
+            if (velocityTracker3 != null) {
+                velocityTracker3.addMovement(motionEvent);
+            }
+        }
     }
 }

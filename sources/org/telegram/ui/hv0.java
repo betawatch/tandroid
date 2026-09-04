@@ -1,55 +1,16 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.view.ActionMode;
-import java.util.ArrayList;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class hv0 extends org.telegram.ui.Cells.b6 {
-    public final /* synthetic */ kv0 C;
+public final class hv0 extends s4.j {
+    public final /* synthetic */ iv0 F;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public hv0(kv0 kv0Var, Context context, int i10) {
-        super(context, i10, null, null);
-        this.C = kv0Var;
+    public hv0(iv0 iv0Var) {
+        this.F = iv0Var;
     }
 
-    @Override // org.telegram.ui.Cells.b6
-    public final void i(boolean z4) {
-        mv0.d0(this.C.d, this, z4);
-    }
-
-    @Override // org.telegram.ui.Cells.b6
-    public final void j(org.telegram.ui.Cells.b6 b6Var) {
-        mv0.e0(this.C.d, b6Var);
-    }
-
-    @Override // org.telegram.ui.Cells.b6
-    public final boolean l(ArrayList arrayList) {
-        mv0 mv0Var = this.C.d;
-        if (arrayList.isEmpty()) {
-            return false;
-        }
-        dh.b bVar = this.d;
-        bVar.getText().replace(bVar.getSelectionStart(), bVar.getSelectionEnd(), (CharSequence) arrayList.remove(0));
-        int i10 = 0;
-        while (!arrayList.isEmpty() && i10 < mv0Var.n) {
-            for (int length = mv0Var.v.length - 1; length > i10; length--) {
-                CharSequence[] charSequenceArr = mv0Var.v;
-                charSequenceArr[length] = charSequenceArr[length - 1];
-            }
-            mv0Var.v[i10] = (CharSequence) arrayList.remove(0);
-            mv0Var.y++;
-            i10++;
-        }
-        mv0Var.r0();
-        mv0Var.d0 = (mv0Var.k0 + i10) - 1;
-        mv0Var.b.l();
-        return true;
-    }
-
-    @Override // org.telegram.ui.Cells.b6
-    public final void g(dh.b bVar, ActionMode actionMode) {
+    @Override // s4.j
+    public final void P(s4.c1 c1Var) {
+        this.F.invalidate();
     }
 }

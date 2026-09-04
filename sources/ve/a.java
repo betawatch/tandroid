@@ -1,61 +1,53 @@
 package ve;
 
-import android.graphics.Bitmap;
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.RandomAccessFile;
-import xe.m;
+import bf.p;
+import bf.s;
+import ye.b;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class a {
-    public String a;
-    public long b;
-    public String c;
-    public String d;
-    public String e;
-    public String f;
-    public short g;
-    public String h;
-    public String i;
-    public short j;
-    public short k;
-    public String l;
-    public String m;
-    public String n;
-    public Bitmap o;
-    public Bitmap p;
-    public File q;
+public final class a implements ef.a {
+    @Override // ef.a
+    public final char a() {
+        return '~';
+    }
 
-    public static a a(File file) {
-        byte b10;
-        try {
-            byte[] bArr = new byte[12];
-            RandomAccessFile randomAccessFile = new RandomAccessFile(file, "r");
-            randomAccessFile.readFully(bArr, 0, 8);
-            randomAccessFile.close();
-            BufferedInputStream bufferedInputStream = new BufferedInputStream(new FileInputStream(file));
-            if (bArr[4] == 102 && bArr[5] == 116 && bArr[6] == 121 && bArr[7] == 112) {
-                return new we.a(bufferedInputStream);
-            }
-            if (bArr[0] == 102 && bArr[1] == 76 && bArr[2] == 97 && bArr[3] == 99) {
-                b bVar = new b(file);
-                if (bVar.s) {
-                    return null;
-                }
-                return bVar;
-            }
-            if (!file.getAbsolutePath().endsWith("mp3") && (((b10 = bArr[0]) != 73 || bArr[1] != 68 || bArr[2] != 51) && (b10 != 84 || bArr[1] != 65 || bArr[2] != 71))) {
-                b bVar2 = new b(file);
-                if (bVar2.s) {
-                    return null;
-                }
-                return bVar2;
-            }
-            return new m(bufferedInputStream, file.length());
-        } catch (Exception unused) {
-            return null;
+    @Override // ef.a
+    public final int b(b bVar, b bVar2) {
+        return (bVar.g < 2 || bVar2.g < 2) ? 0 : 2;
+    }
+
+    @Override // ef.a
+    public final int c() {
+        return 2;
+    }
+
+    @Override // ef.a
+    public final void d(s sVar, s sVar2, int i10) {
+        ue.a aVar = new ue.a();
+        p pVar = (p) sVar.f;
+        while (pVar != null && pVar != sVar2) {
+            p pVar2 = (p) pVar.f;
+            aVar.b(pVar);
+            pVar = pVar2;
         }
+        aVar.g();
+        p pVar3 = (p) sVar.f;
+        aVar.f = pVar3;
+        if (pVar3 != null) {
+            pVar3.e = aVar;
+        }
+        aVar.e = sVar;
+        sVar.f = aVar;
+        p pVar4 = (p) sVar.b;
+        aVar.b = pVar4;
+        if (((p) aVar.f) == null) {
+            pVar4.d = aVar;
+        }
+    }
+
+    @Override // ef.a
+    public final char e() {
+        return '~';
     }
 }

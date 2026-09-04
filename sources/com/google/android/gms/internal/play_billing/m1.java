@@ -1,13 +1,14 @@
 package com.google.android.gms.internal.play_billing;
 
-import j7.u6;
+import com.google.android.gms.internal.cast.b5;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import v7.d6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class m1 extends u6 {
+public final class m1 extends d6 {
     public static final Logger e = Logger.getLogger(m1.class.getName());
     public static final boolean f = c3.e;
     public i2 a;
@@ -19,7 +20,7 @@ public final class m1 extends u6 {
         int length = bArr.length;
         if (((length - i10) | i10) < 0) {
             Locale locale = Locale.US;
-            throw new IllegalArgumentException(android.support.v4.media.a.k(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
+            throw new IllegalArgumentException(a4.a.l(length, i10, "Array range is invalid. Buffer.length=", ", offset=0, length="));
         }
         this.b = bArr;
         this.d = 0;
@@ -40,16 +41,16 @@ public final class m1 extends u6 {
         return (352 - (Integer.numberOfLeadingZeros(i10) * 9)) >>> 6;
     }
 
-    public static int c(long j10) {
-        return (640 - (Long.numberOfLeadingZeros(j10) * 9)) >>> 6;
+    public static int c(long j3) {
+        return (640 - (Long.numberOfLeadingZeros(j3) * 9)) >>> 6;
     }
 
     public final void d(int i10, byte[] bArr) {
         try {
             System.arraycopy(bArr, 0, this.b, this.d, i10);
             this.d += i10;
-        } catch (IndexOutOfBoundsException e6) {
-            throw new b7.y0(this.d, this.c, i10, e6);
+        } catch (IndexOutOfBoundsException e7) {
+            throw new b5(this.d, this.c, i10, e7);
         }
     }
 
@@ -73,31 +74,31 @@ public final class m1 extends u6 {
             bArr[i11 + 2] = (byte) (i10 >> 16);
             bArr[i11 + 3] = (byte) (i10 >> 24);
             this.d = i11 + 4;
-        } catch (IndexOutOfBoundsException e6) {
-            throw new b7.y0(i11, this.c, 4, e6);
+        } catch (IndexOutOfBoundsException e7) {
+            throw new b5(i11, this.c, 4, e7);
         }
     }
 
-    public final void h(int i10, long j10) {
+    public final void h(int i10, long j3) {
         o((i10 << 3) | 1);
-        i(j10);
+        i(j3);
     }
 
-    public final void i(long j10) {
+    public final void i(long j3) {
         int i10 = this.d;
         try {
             byte[] bArr = this.b;
-            bArr[i10] = (byte) j10;
-            bArr[i10 + 1] = (byte) (j10 >> 8);
-            bArr[i10 + 2] = (byte) (j10 >> 16);
-            bArr[i10 + 3] = (byte) (j10 >> 24);
-            bArr[i10 + 4] = (byte) (j10 >> 32);
-            bArr[i10 + 5] = (byte) (j10 >> 40);
-            bArr[i10 + 6] = (byte) (j10 >> 48);
-            bArr[i10 + 7] = (byte) (j10 >> 56);
+            bArr[i10] = (byte) j3;
+            bArr[i10 + 1] = (byte) (j3 >> 8);
+            bArr[i10 + 2] = (byte) (j3 >> 16);
+            bArr[i10 + 3] = (byte) (j3 >> 24);
+            bArr[i10 + 4] = (byte) (j3 >> 32);
+            bArr[i10 + 5] = (byte) (j3 >> 40);
+            bArr[i10 + 6] = (byte) (j3 >> 48);
+            bArr[i10 + 7] = (byte) (j3 >> 56);
             this.d = i10 + 8;
-        } catch (IndexOutOfBoundsException e6) {
-            throw new b7.y0(i10, this.c, 8, e6);
+        } catch (IndexOutOfBoundsException e7) {
+            throw new b5(i10, this.c, 8, e7);
         }
     }
 
@@ -134,19 +135,19 @@ public final class m1 extends u6 {
                 o((b12 - i11) - b11);
                 this.d = b12;
             }
-        } catch (d3 e6) {
+        } catch (d3 e7) {
             this.d = i11;
-            e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e6);
+            e.logp(Level.WARNING, "com.google.protobuf.CodedOutputStream", "inefficientWriteStringNoTag", "Converting ill-formed UTF-16. Your Protocol Buffer will not round trip correctly!", (Throwable) e7);
             byte[] bytes = str.getBytes(a2.a);
             try {
                 int length = bytes.length;
                 o(length);
                 d(length, bytes);
             } catch (IndexOutOfBoundsException e10) {
-                throw new b7.y0(e10);
+                throw new b5(e10);
             }
         } catch (IndexOutOfBoundsException e11) {
-            throw new b7.y0(e11);
+            throw new b5(e11);
         }
     }
 
@@ -176,48 +177,48 @@ public final class m1 extends u6 {
                     bArr[i12] = (byte) (i10 | 128);
                     i10 >>>= 7;
                     i12 = i11;
-                } catch (IndexOutOfBoundsException e6) {
-                    throw new b7.y0(i11, this.c, 1, e6);
+                } catch (IndexOutOfBoundsException e7) {
+                    throw new b5(i11, this.c, 1, e7);
                 }
             }
-            throw new b7.y0(i11, this.c, 1, e6);
+            throw new b5(i11, this.c, 1, e7);
         }
     }
 
-    public final void p(int i10, long j10) {
+    public final void p(int i10, long j3) {
         o(i10 << 3);
-        q(j10);
+        q(j3);
     }
 
-    public final void q(long j10) {
+    public final void q(long j3) {
         int i10;
         int i11 = this.d;
-        boolean z4 = f;
+        boolean z10 = f;
         int i12 = this.c;
         byte[] bArr = this.b;
-        if (!z4 || i12 - i11 < 10) {
-            long j11 = j10;
-            while ((j11 & (-128)) != 0) {
+        if (!z10 || i12 - i11 < 10) {
+            long j10 = j3;
+            while ((j10 & (-128)) != 0) {
                 i10 = i11 + 1;
                 try {
-                    bArr[i11] = (byte) (((int) j11) | 128);
-                    j11 >>>= 7;
+                    bArr[i11] = (byte) (((int) j10) | 128);
+                    j10 >>>= 7;
                     i11 = i10;
-                } catch (IndexOutOfBoundsException e6) {
-                    throw new b7.y0(i10, i12, 1, e6);
+                } catch (IndexOutOfBoundsException e7) {
+                    throw new b5(i10, i12, 1, e7);
                 }
             }
             i10 = i11 + 1;
-            bArr[i11] = (byte) j11;
+            bArr[i11] = (byte) j10;
         } else {
-            long j12 = j10;
-            while ((j12 & (-128)) != 0) {
-                c3.c.d(bArr, c3.f + i11, (byte) (((int) j12) | 128));
-                j12 >>>= 7;
+            long j11 = j3;
+            while ((j11 & (-128)) != 0) {
+                c3.c.d(bArr, c3.f + i11, (byte) (((int) j11) | 128));
+                j11 >>>= 7;
                 i11++;
             }
             i10 = i11 + 1;
-            c3.c.d(bArr, c3.f + i11, (byte) j12);
+            c3.c.d(bArr, c3.f + i11, (byte) j11);
         }
         this.d = i10;
     }

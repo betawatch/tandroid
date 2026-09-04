@@ -39,8 +39,8 @@ public final class l0 extends p0 implements g5 {
         return null;
     }
 
-    public l0(DoubleConsumer doubleConsumer, boolean z4) {
-        super(z4);
+    public l0(DoubleConsumer doubleConsumer, boolean z10) {
+        super(z10);
         this.b = doubleConsumer;
     }
 

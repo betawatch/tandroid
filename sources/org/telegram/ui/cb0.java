@@ -1,59 +1,41 @@
 package org.telegram.ui;
 
-import android.content.ComponentName;
-import android.content.Context;
-import org.telegram.messenger.R;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.NotificationCenter;
 
-/* JADX WARN: Enum visitor error
-jadx.core.utils.exceptions.JadxRuntimeException: Init of enum field 'h' uses external variables
-	at jadx.core.dex.visitors.EnumVisitor.createEnumFieldByConstructor(EnumVisitor.java:451)
-	at jadx.core.dex.visitors.EnumVisitor.processEnumFieldByRegister(EnumVisitor.java:395)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromFilledArray(EnumVisitor.java:324)
-	at jadx.core.dex.visitors.EnumVisitor.extractEnumFieldsFromInsn(EnumVisitor.java:262)
-	at jadx.core.dex.visitors.EnumVisitor.convertToEnum(EnumVisitor.java:151)
-	at jadx.core.dex.visitors.EnumVisitor.visit(EnumVisitor.java:100)
- */
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class cb0 {
-    public static final cb0 h;
-    public static final /* synthetic */ cb0[] n;
-    public final String a;
-    public final int b;
-    public final int c;
-    public final int d;
-    public final boolean e;
-    public ComponentName f;
+public final class cb0 extends AnimatorListenerAdapter {
+    public final /* synthetic */ org.telegram.ui.Components.aj0 a;
+    public final /* synthetic */ org.telegram.ui.Components.xi0 b;
+    public final /* synthetic */ boolean c;
+    public final /* synthetic */ LaunchActivity d;
 
-    static {
-        int i10 = R.drawable.icon_background_sa;
-        int i11 = R.mipmap.icon_foreground_sa;
-        cb0 cb0Var = new cb0("DEFAULT", 0, "DefaultIcon", i10, i11, R.string.AppIconDefault, false);
-        h = cb0Var;
-        n = new cb0[]{cb0Var, new cb0("VINTAGE", 1, "VintageIcon", R.drawable.icon_6_background_sa, R.mipmap.icon_6_foreground_sa, R.string.AppIconVintage, false), new cb0("AQUA", 2, "AquaIcon", R.drawable.icon_4_background_sa, i11, R.string.AppIconAqua, false), new cb0("PREMIUM", 3, "PremiumIcon", R.drawable.icon_3_background_sa, R.mipmap.icon_3_foreground_sa, R.string.AppIconPremium, true), new cb0("TURBO", 4, "TurboIcon", R.drawable.icon_5_background_sa, R.mipmap.icon_5_foreground_sa, R.string.AppIconTurbo, true), new cb0("NOX", 5, "NoxIcon", R.mipmap.icon_2_background_sa, i11, R.string.AppIconNox, true)};
+    public cb0(LaunchActivity launchActivity, org.telegram.ui.Components.aj0 aj0Var, org.telegram.ui.Components.xi0 xi0Var, boolean z10) {
+        this.d = launchActivity;
+        this.a = aj0Var;
+        this.b = xi0Var;
+        this.c = z10;
     }
 
-    public cb0(String str, int i10, String str2, int i11, int i12, int i13, boolean z4) {
-        this.a = str2;
-        this.b = i11;
-        this.c = i12;
-        this.d = i13;
-        this.e = z4;
-    }
-
-    public static cb0 valueOf(String str) {
-        return (cb0) Enum.valueOf(cb0.class, str);
-    }
-
-    public static cb0[] values() {
-        return (cb0[]) n.clone();
-    }
-
-    public final ComponentName a(Context context) {
-        if (this.f == null) {
-            this.f = new ComponentName(context.getPackageName(), "org.telegram.messenger." + this.a);
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
+        LaunchActivity launchActivity = this.d;
+        launchActivity.G0 = null;
+        launchActivity.z0.invalidate();
+        launchActivity.o0.invalidate();
+        launchActivity.o0.setImageDrawable(null);
+        launchActivity.o0.setVisibility(8);
+        launchActivity.p0.setVisibility(8);
+        org.telegram.ui.Components.aj0 aj0Var = this.a;
+        if (aj0Var != null) {
+            aj0Var.setImageDrawable(this.b);
         }
-        return this.f;
+        NotificationCenter.getGlobalInstance().lambda$postNotificationNameOnUIThread$1(NotificationCenter.themeAccentListUpdated, new Object[0]);
+        if (!this.c && aj0Var != null) {
+            aj0Var.setVisibility(0);
+        }
+        uy.x4 = false;
     }
 }

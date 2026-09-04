@@ -1,250 +1,100 @@
 package n7;
 
-import java.io.ByteArrayOutputStream;
-import java.io.OutputStream;
-import java.nio.ByteBuffer;
-import java.nio.ByteOrder;
-import java.nio.charset.Charset;
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class y implements u9.e {
-    public static final Charset f = Charset.forName("UTF-8");
-    public static final u9.c g = new u9.c("key", vh.w2.h(kf.k0.p(w.class, new s(1))));
-    public static final u9.c h = new u9.c("value", vh.w2.h(kf.k0.p(w.class, new s(2))));
-    public static final x i = x.b;
-    public OutputStream a;
-    public final HashMap b;
-    public final HashMap c;
-    public final u9.d d;
-    public final j7.l e = new j7.l(this, 3);
+public final class y extends o {
+    public static final Object[] r;
+    public static final y s;
+    public final transient Object[] d;
+    public final transient int e;
+    public final transient Object[] f;
+    public final transient int h;
+    public final transient int n;
 
-    public y(ByteArrayOutputStream byteArrayOutputStream, HashMap hashMap, HashMap hashMap2, u9.d dVar) {
-        this.a = byteArrayOutputStream;
-        this.b = hashMap;
-        this.c = hashMap2;
-        this.d = dVar;
+    static {
+        Object[] objArr = new Object[0];
+        r = objArr;
+        s = new y(0, 0, 0, objArr, objArr);
     }
 
-    public static int i(u9.c cVar) {
-        w wVar = (w) cVar.b(w.class);
-        if (wVar != null) {
-            return ((s) wVar).a;
-        }
-        throw new u9.b("Field has no @Protobuf config");
+    public y(int i10, int i11, int i12, Object[] objArr, Object[] objArr2) {
+        this.d = objArr;
+        this.e = i10;
+        this.f = objArr2;
+        this.h = i11;
+        this.n = i12;
     }
 
-    @Override // u9.e
-    public final /* synthetic */ u9.e a(u9.c cVar, int i10) {
-        h(cVar, i10, true);
-        return this;
-    }
-
-    @Override // u9.e
-    public final u9.e b(u9.c cVar, long j10) {
-        if (j10 == 0) {
-            return this;
-        }
-        w wVar = (w) cVar.b(w.class);
-        if (wVar == null) {
-            throw new u9.b("Field has no @Protobuf config");
-        }
-        k(((s) wVar).a << 3);
-        l(j10);
-        return this;
-    }
-
-    @Override // u9.e
-    public final u9.e c(u9.c cVar, double d) {
-        f(cVar, d, true);
-        return this;
-    }
-
-    @Override // u9.e
-    public final /* synthetic */ u9.e d(u9.c cVar, boolean z4) {
-        h(cVar, z4 ? 1 : 0, true);
-        return this;
-    }
-
-    @Override // u9.e
-    public final u9.e e(u9.c cVar, Object obj) {
-        g(cVar, obj, true);
-        return this;
-    }
-
-    public final void f(u9.c cVar, double d, boolean z4) {
-        if (z4 && d == 0.0d) {
-            return;
-        }
-        k((i(cVar) << 3) | 1);
-        this.a.write(ByteBuffer.allocate(8).order(ByteOrder.LITTLE_ENDIAN).putDouble(d).array());
-    }
-
-    public final void g(u9.c cVar, Object obj, boolean z4) {
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final boolean contains(Object obj) {
         if (obj == null) {
-            return;
+            return false;
         }
-        if (obj instanceof CharSequence) {
-            CharSequence charSequence = (CharSequence) obj;
-            if (z4 && charSequence.length() == 0) {
-                return;
-            }
-            k((i(cVar) << 3) | 2);
-            byte[] bytes = charSequence.toString().getBytes(f);
-            k(bytes.length);
-            this.a.write(bytes);
-            return;
+        Object[] objArr = this.f;
+        if (objArr.length == 0) {
+            return false;
         }
-        if (obj instanceof Collection) {
-            Iterator it = ((Collection) obj).iterator();
-            while (it.hasNext()) {
-                g(cVar, it.next(), false);
-            }
-            return;
-        }
-        if (obj instanceof Map) {
-            Iterator it2 = ((Map) obj).entrySet().iterator();
-            while (it2.hasNext()) {
-                j(i, cVar, (Map.Entry) it2.next(), false);
-            }
-            return;
-        }
-        if (obj instanceof Double) {
-            f(cVar, ((Double) obj).doubleValue(), z4);
-            return;
-        }
-        if (obj instanceof Float) {
-            float floatValue = ((Float) obj).floatValue();
-            if (z4 && floatValue == 0.0f) {
-                return;
-            }
-            k((i(cVar) << 3) | 5);
-            this.a.write(ByteBuffer.allocate(4).order(ByteOrder.LITTLE_ENDIAN).putFloat(floatValue).array());
-            return;
-        }
-        if (obj instanceof Number) {
-            long longValue = ((Number) obj).longValue();
-            if (z4 && longValue == 0) {
-                return;
-            }
-            w wVar = (w) cVar.b(w.class);
-            if (wVar == null) {
-                throw new u9.b("Field has no @Protobuf config");
-            }
-            k(((s) wVar).a << 3);
-            l(longValue);
-            return;
-        }
-        if (obj instanceof Boolean) {
-            h(cVar, ((Boolean) obj).booleanValue() ? 1 : 0, z4);
-            return;
-        }
-        if (obj instanceof byte[]) {
-            byte[] bArr = (byte[]) obj;
-            if (z4 && bArr.length == 0) {
-                return;
-            }
-            k((i(cVar) << 3) | 2);
-            k(bArr.length);
-            this.a.write(bArr);
-            return;
-        }
-        u9.d dVar = (u9.d) this.b.get(obj.getClass());
-        if (dVar != null) {
-            j(dVar, cVar, obj, z4);
-            return;
-        }
-        u9.f fVar = (u9.f) this.c.get(obj.getClass());
-        if (fVar != null) {
-            j7.l lVar = this.e;
-            lVar.b = false;
-            lVar.d = cVar;
-            lVar.c = z4;
-            fVar.a(obj, lVar);
-            return;
-        }
-        if (obj instanceof u) {
-            h(cVar, ((u) obj).zza(), true);
-        } else if (obj instanceof Enum) {
-            h(cVar, ((Enum) obj).ordinal(), true);
-        } else {
-            j(this.d, cVar, obj, z4);
-        }
-    }
-
-    public final void h(u9.c cVar, int i10, boolean z4) {
-        if (z4 && i10 == 0) {
-            return;
-        }
-        w wVar = (w) cVar.b(w.class);
-        if (wVar == null) {
-            throw new u9.b("Field has no @Protobuf config");
-        }
-        k(((s) wVar).a << 3);
-        k(i10);
-    }
-
-    public final void j(u9.d dVar, u9.c cVar, Object obj, boolean z4) {
-        j7.f fVar = new j7.f(3);
-        fVar.b = 0L;
-        try {
-            OutputStream outputStream = this.a;
-            this.a = fVar;
-            try {
-                dVar.a(obj, this);
-                this.a = outputStream;
-                long j10 = fVar.b;
-                fVar.close();
-                if (z4 && j10 == 0) {
-                    return;
-                }
-                k((i(cVar) << 3) | 2);
-                l(j10);
-                dVar.a(obj, this);
-            } catch (Throwable th2) {
-                this.a = outputStream;
-                throw th2;
-            }
-        } catch (Throwable th3) {
-            try {
-                fVar.close();
-            } catch (Throwable th4) {
-                try {
-                    Throwable.class.getDeclaredMethod("addSuppressed", Throwable.class).invoke(th3, th4);
-                } catch (Exception unused) {
-                }
-            }
-            throw th3;
-        }
-    }
-
-    public final void k(int i10) {
+        int rotateLeft = (int) (Integer.rotateLeft((int) (obj.hashCode() * (-862048943)), 15) * 461845907);
         while (true) {
-            int i11 = i10 & 127;
-            if ((i10 & (-128)) == 0) {
-                this.a.write(i11);
-                return;
-            } else {
-                this.a.write(i11 | 128);
-                i10 >>>= 7;
+            int i10 = this.h & rotateLeft;
+            Object obj2 = objArr[i10];
+            if (obj2 == null) {
+                return false;
             }
+            if (obj2.equals(obj)) {
+                return true;
+            }
+            rotateLeft = i10 + 1;
         }
     }
 
-    public final void l(long j10) {
-        while (true) {
-            int i10 = ((int) j10) & 127;
-            if (((-128) & j10) == 0) {
-                this.a.write(i10);
-                return;
-            } else {
-                this.a.write(i10 | 128);
-                j10 >>>= 7;
-            }
-        }
+    @Override // n7.o, java.util.Collection, java.util.Set
+    public final int hashCode() {
+        return this.e;
+    }
+
+    @Override // n7.h
+    public final int i(Object[] objArr) {
+        Object[] objArr2 = this.d;
+        int i10 = this.n;
+        System.arraycopy(objArr2, 0, objArr, 0, i10);
+        return i10;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.Set
+    public final /* synthetic */ Iterator iterator() {
+        return t().listIterator(0);
+    }
+
+    @Override // n7.h
+    public final int n() {
+        return this.n;
+    }
+
+    @Override // n7.h
+    public final int o() {
+        return 0;
+    }
+
+    @Override // n7.h
+    public final d0 p() {
+        return t().listIterator(0);
+    }
+
+    @Override // n7.h
+    public final Object[] q() {
+        return this.d;
+    }
+
+    @Override // java.util.AbstractCollection, java.util.Collection, java.util.Set
+    public final int size() {
+        return this.n;
+    }
+
+    @Override // n7.o
+    public final m u() {
+        return m.t(this.n, this.d);
     }
 }

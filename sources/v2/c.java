@@ -1,32 +1,71 @@
 package v2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import b2.s;
+import c3.g0;
+import c3.h0;
+import c3.n;
+import e2.d0;
+import e2.v;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c {
-    public final String a;
+public final class c implements h0 {
+    public final int a;
+    public final s b;
+    public final n c = new n();
+    public s d;
+    public h0 e;
+    public long f;
 
-    public c(String str) {
-        if (str == null) {
-            throw new NullPointerException("name is null");
-        }
-        this.a = str;
+    public c(int i10, int i11, s sVar) {
+        this.a = i11;
+        this.b = sVar;
     }
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (!(obj instanceof c)) {
-            return false;
-        }
-        return this.a.equals(((c) obj).a);
+    @Override // c3.h0
+    public final int a(b2.k kVar, int i10, boolean z10) {
+        return e(kVar, i10, z10);
     }
 
-    public final int hashCode() {
-        return this.a.hashCode() ^ 1000003;
+    @Override // c3.h0
+    public final void b(s sVar) {
+        s sVar2 = this.b;
+        if (sVar2 != null) {
+            sVar = sVar.d(sVar2);
+        }
+        this.d = sVar;
+        h0 h0Var = this.e;
+        String str = d0.a;
+        h0Var.b(sVar);
     }
 
-    public final String toString() {
-        return android.support.v4.media.a.r(new StringBuilder("Encoding{name=\""), this.a, "\"}");
+    @Override // c3.h0
+    public final void c(long j3, int i10, int i11, int i12, g0 g0Var) {
+        long j10 = this.f;
+        if (j10 != -9223372036854775807L && j3 >= j10) {
+            this.e = this.c;
+        }
+        h0 h0Var = this.e;
+        String str = d0.a;
+        h0Var.c(j3, i10, i11, i12, g0Var);
+    }
+
+    @Override // c3.h0
+    public final /* synthetic */ void d(int i10, v vVar) {
+        a4.a.a(this, vVar, i10);
+    }
+
+    @Override // c3.h0
+    public final int e(b2.k kVar, int i10, boolean z10) {
+        h0 h0Var = this.e;
+        String str = d0.a;
+        return h0Var.a(kVar, i10, z10);
+    }
+
+    @Override // c3.h0
+    public final void f(v vVar, int i10, int i11) {
+        h0 h0Var = this.e;
+        String str = d0.a;
+        h0Var.d(i10, vVar);
     }
 }

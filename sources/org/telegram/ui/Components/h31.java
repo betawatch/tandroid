@@ -5,24 +5,24 @@ import android.graphics.Rect;
 import android.view.MotionEvent;
 import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class h31 extends rl0 {
-    public final /* synthetic */ v31 U2;
+public final class h31 extends ll0 {
+    public final /* synthetic */ u31 X2;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public h31(v31 v31Var, Context context) {
+    public h31(u31 u31Var, Context context) {
         super(context, null);
-        this.U2 = v31Var;
+        this.X2 = u31Var;
     }
 
-    @Override // org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
+    @Override // org.telegram.ui.Components.ll0, android.view.ViewGroup, android.view.View
     public final boolean dispatchTouchEvent(MotionEvent motionEvent) {
         if (motionEvent.getAction() == 0) {
-            float y10 = motionEvent.getY();
-            v31 v31Var = this.U2;
-            if (y10 < v31Var.A(true) - getTop()) {
-                v31Var.dismiss();
+            float y3 = motionEvent.getY();
+            u31 u31Var = this.X2;
+            if (y3 < u31Var.A(true) - getTop()) {
+                u31Var.dismiss();
                 return true;
             }
         }

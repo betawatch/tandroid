@@ -1,46 +1,109 @@
 package org.telegram.messenger;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLRPC;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class r9 implements Runnable {
-    public final /* synthetic */ int a = 0;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ boolean d;
-    public final /* synthetic */ int e;
-    public final /* synthetic */ BaseController f;
-    public final /* synthetic */ Object h;
+    public final /* synthetic */ int a;
+    public final /* synthetic */ MessagesController b;
 
-    public /* synthetic */ r9(MediaDataController mediaDataController, boolean z4, int i10, ArrayList arrayList, boolean z10, int i11) {
-        this.f = mediaDataController;
-        this.c = z4;
-        this.b = i10;
-        this.h = arrayList;
-        this.d = z10;
-        this.e = i11;
+    public /* synthetic */ r9(MessagesController messagesController, int i10) {
+        this.a = i10;
+        this.b = messagesController;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                ((MediaDataController) this.f).lambda$processLoadedRecentDocuments$52(this.c, this.b, (ArrayList) this.h, this.d, this.e);
+                this.b.lambda$new$18();
+                break;
+            case 1:
+                this.b.lambda$new$39();
+                break;
+            case 2:
+                this.b.requestIsUserContactBlocked();
+                break;
+            case 3:
+                this.b.lambda$new$505();
+                break;
+            case 4:
+                this.b.lambda$updateTimerProc$158();
+                break;
+            case 5:
+                this.b.lambda$updateTimerProc$161();
+                break;
+            case 6:
+                this.b.lambda$applyAppConfig$36();
+                break;
+            case 7:
+                this.b.lambda$applyAppConfig$37();
+                break;
+            case 8:
+                this.b.lambda$processUpdates$380();
+                break;
+            case 9:
+                this.b.lambda$migrateDialogs$213();
+                break;
+            case 10:
+                this.b.lambda$loadRemoteFilters$26();
+                break;
+            case 11:
+                this.b.lambda$loadRemoteFilters$27();
+                break;
+            case 12:
+                this.b.lambda$loadRemoteFilters$28();
+                break;
+            case 13:
+                this.b.lambda$loadRemoteFilters$29();
+                break;
+            case 14:
+                this.b.lambda$cleanup$52();
+                break;
+            case 15:
+                this.b.lambda$cleanup$53();
+                break;
+            case 16:
+                this.b.lambda$cleanup$54();
+                break;
+            case 17:
+                this.b.lambda$toggleChannelInvitesHistory$287();
+                break;
+            case 18:
+                this.b.lambda$removeWebBrowserException$514();
+                break;
+            case 19:
+                this.b.lambda$checkPromoInfoInternal$166();
+                break;
+            case 20:
+                this.b.lambda$toggleChatJoinToSend$279();
+                break;
+            case 21:
+                this.b.lambda$migrateDialogs$215();
+                break;
+            case 22:
+                this.b.lambda$scheduleTranscriptionUpdate$38();
+                break;
+            case 23:
+                this.b.lambda$processUpdateArray$409();
+                break;
+            case 24:
+                this.b.lambda$processUpdateArray$410();
+                break;
+            case 25:
+                this.b.lambda$processUpdateArray$411();
+                break;
+            case 26:
+                this.b.lambda$registerForPush$323();
+                break;
+            case 27:
+                this.b.lambda$updateEmojiStatusUntil$474();
+                break;
+            case 28:
+                this.b.lambda$toggleChannelForum$285();
                 break;
             default:
-                ((MessagesController) this.f).lambda$processLoadedMessages$189(this.b, (TLRPC.messages_Messages) this.h, this.c, this.d, this.e);
+                this.b.lambda$toggleChannelSignatures$283();
                 break;
         }
-    }
-
-    public /* synthetic */ r9(MessagesController messagesController, int i10, TLRPC.messages_Messages messages_messages, boolean z4, boolean z10, int i11) {
-        this.f = messagesController;
-        this.b = i10;
-        this.h = messages_messages;
-        this.c = z4;
-        this.d = z10;
-        this.e = i11;
     }
 }

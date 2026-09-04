@@ -1,76 +1,33 @@
 package org.telegram.ui;
 
-import android.view.View;
-import android.view.ViewGroup;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class pl0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fn0 b;
+public final class pl0 extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ org.telegram.ui.ActionBar.f1 a;
+    public final /* synthetic */ PasscodeActivity b;
 
-    public /* synthetic */ pl0(fn0 fn0Var, int i10) {
-        this.a = i10;
-        this.b = fn0Var;
+    public pl0(PasscodeActivity passcodeActivity, org.telegram.ui.ActionBar.f1 f1Var) {
+        this.b = passcodeActivity;
+        this.a = f1Var;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        ViewGroup viewGroup;
-        switch (this.a) {
-            case 0:
-                fn0 fn0Var = this.b;
-                ViewGroup[] viewGroupArr = fn0Var.W;
-                if (viewGroupArr != null && (viewGroup = viewGroupArr[0]) != null && viewGroup.getVisibility() == 0) {
-                    fn0Var.V[0].requestFocus();
-                    AndroidUtilities.showKeyboard(fn0Var.V[0]);
-                    break;
-                }
-                break;
-            case 1:
-                fn0 fn0Var2 = this.b;
-                fn0Var2.presentFragment(fn0Var2.e1, true);
-                fn0Var2.e1 = null;
-                break;
-            case 2:
-                fn0 fn0Var3 = this.b;
-                EditTextBoldCursor[] editTextBoldCursorArr = fn0Var3.X;
-                if (editTextBoldCursorArr != null) {
-                    fn0Var3.I1(editTextBoldCursorArr[0]);
-                    break;
-                }
-                break;
-            case 3:
-                AndroidUtilities.showKeyboard(this.b.V[2]);
-                break;
-            case 4:
-                this.b.x1();
-                break;
-            case 5:
-                int i10 = 0;
-                while (true) {
-                    fn0 fn0Var4 = this.b;
-                    if (i10 >= fn0Var4.Z.getChildCount()) {
-                        fn0Var4.x1();
-                        fn0Var4.n1.clear();
-                        fn0Var4.m1.clear();
-                        fn0Var4.y.values.clear();
-                        fn0Var4.Q1();
-                        break;
-                    } else {
-                        View childAt = fn0Var4.Z.getChildAt(i10);
-                        if (childAt instanceof en0) {
-                            fn0Var4.Z.removeView(childAt);
-                            i10--;
-                        }
-                        i10++;
-                    }
-                }
-            default:
-                this.b.finishFragment();
-                break;
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        PasscodeActivity passcodeActivity = this.b;
+        if (i10 == -1) {
+            passcodeActivity.finishFragment();
+            return;
+        }
+        if (i10 == 1) {
+            passcodeActivity.y = passcodeActivity.y != 0 ? 0 : 1;
+            AndroidUtilities.runOnUIThread(new ej0(6, this, this.a), 150L);
+            passcodeActivity.h.setText("");
+            for (gs gsVar : passcodeActivity.n.f) {
+                gsVar.setText("");
+            }
+            passcodeActivity.l0();
         }
     }
 }

@@ -5,12 +5,12 @@ import androidx.car.app.IOnDoneCallback;
 import androidx.car.app.model.IOnSelectedListener;
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class OnSelectedDelegateImpl implements h0 {
     private final IOnSelectedListener mStub;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class OnSelectedListenerStub extends IOnSelectedListener.Stub {
         private final t mListener;
 
@@ -24,7 +24,7 @@ public class OnSelectedDelegateImpl implements h0 {
 
         @Override // androidx.car.app.model.IOnSelectedListener
         public void onSelected(int i10, IOnDoneCallback iOnDoneCallback) {
-            androidx.car.app.utils.j.b(iOnDoneCallback, "onSelectedListener", new g(this, i10, 1));
+            androidx.car.app.utils.i.b(iOnDoneCallback, "onSelectedListener", new g(this, i10, 1));
         }
     }
 
@@ -36,13 +36,13 @@ public class OnSelectedDelegateImpl implements h0 {
         return new OnSelectedDelegateImpl(tVar);
     }
 
-    public void sendSelected(int i10, androidx.car.app.j jVar) {
+    public void sendSelected(int i10, androidx.car.app.k kVar) {
         try {
             IOnSelectedListener iOnSelectedListener = this.mStub;
             Objects.requireNonNull(iOnSelectedListener);
-            iOnSelectedListener.onSelected(i10, androidx.car.app.utils.j.a());
-        } catch (RemoteException e) {
-            throw new RuntimeException(e);
+            iOnSelectedListener.onSelected(i10, androidx.car.app.utils.i.a());
+        } catch (RemoteException e7) {
+            throw new RuntimeException(e7);
         }
     }
 

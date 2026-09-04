@@ -1,70 +1,40 @@
 package org.telegram.ui.Components;
 
-import android.app.Dialog;
-import android.content.Context;
-import android.os.Build;
-import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
-import java.util.WeakHashMap;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.R;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.text.Layout;
+import android.text.Spanned;
+import android.text.style.LeadingMarginSpan;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class cb extends Dialog {
-    public final bb a;
-    public final WindowManager.LayoutParams b;
+public final class cb implements LeadingMarginSpan {
+    public final int a;
+    public final int b;
 
-    public cb(Context context, gg.w wVar) {
-        super(context);
-        AndroidUtilities.enableEdgeToEdge(getWindow());
-        bb bbVar = new bb(this, context);
-        this.a = bbVar;
-        setContentView(bbVar, new ViewGroup.LayoutParams(-1, -1));
-        t tVar = new t(this, 15);
-        WeakHashMap weakHashMap = r0.j0.a;
-        r0.b0.j(bbVar, tVar);
-        int i10 = Build.VERSION.SDK_INT;
-        if (i10 >= 30) {
-            bbVar.setSystemUiVisibility(1792);
-        } else {
-            bbVar.setSystemUiVisibility(1280);
-        }
-        ic.a(bbVar, new kh.t0(wVar, 7));
-        try {
-            Window window = getWindow();
-            window.setWindowAnimations(R.style.DialogNoAnimation);
-            window.setBackgroundDrawable(null);
-            WindowManager.LayoutParams attributes = window.getAttributes();
-            this.b = attributes;
-            attributes.width = -1;
-            attributes.height = -1;
-            attributes.gravity = 51;
-            attributes.dimAmount = 0.0f;
-            attributes.format = -3;
-            attributes.flags = (((-3) & attributes.flags) | (-1946091240)) & (-1025);
-            boolean z4 = true;
-            if (i10 >= 28) {
-                attributes.layoutInDisplayCutoutMode = 1;
+    public cb(int i10, int i11) {
+        this.a = i10;
+        this.b = i11;
+    }
+
+    @Override // android.text.style.LeadingMarginSpan
+    public final void drawLeadingMargin(Canvas canvas, Paint paint, int i10, int i11, int i12, int i13, int i14, CharSequence charSequence, int i15, int i16, boolean z10, Layout layout) {
+        if (((Spanned) charSequence).getSpanStart(this) == i15) {
+            Paint.Style style = paint.getStyle();
+            int color = paint.getColor();
+            paint.setColor(-11491093);
+            paint.setStyle(Paint.Style.FILL);
+            if (layout != null) {
+                i14 -= layout.getLineForOffset(i15) != layout.getLineCount() + (-1) ? (int) layout.getSpacingAdd() : 0;
             }
-            window.setAttributes(attributes);
-            if (AndroidUtilities.computePerceivedBrightness(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.a7, false)) <= 0.721f) {
-                z4 = false;
-            }
-            AndroidUtilities.setLightNavigationBar(this, z4);
-        } catch (Exception unused) {
+            canvas.drawCircle((i11 * r7) + i10, (i12 + i14) / 2.0f, this.b, paint);
+            paint.setColor(color);
+            paint.setStyle(style);
         }
     }
 
-    public static bb a(Context context) {
-        return new cb(context, null).a;
-    }
-
-    @Override // android.app.Dialog
-    public final void show() {
-        if (AndroidUtilities.isSafeToShow(getContext())) {
-            super.show();
-        }
+    @Override // android.text.style.LeadingMarginSpan
+    public final int getLeadingMargin(boolean z10) {
+        return (this.b * 2) + this.a;
     }
 }

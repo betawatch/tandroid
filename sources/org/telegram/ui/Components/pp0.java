@@ -1,112 +1,58 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.view.accessibility.AccessibilityNodeInfo;
-import android.widget.Button;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.ui.PhotoViewer;
+import android.graphics.Rect;
+import android.view.MotionEvent;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class pp0 extends lg {
-    public final /* synthetic */ int i0;
-    public final /* synthetic */ Object j0;
+public final class pp0 implements View.OnTouchListener {
+    public final /* synthetic */ int a;
+    public final Rect b;
+    public final /* synthetic */ hq0 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ pp0(Object obj, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(i10, context, f6Var, true);
-        this.i0 = i11;
-        this.j0 = obj;
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public boolean d() {
-        switch (this.i0) {
-            case 1:
-                return false;
-            case 2:
-                return false;
-            case 3:
-                return ((vh.y1) this.j0).l0();
-            default:
-                return super.d();
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public final boolean f() {
-        switch (this.i0) {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                if (((vh.y1) this.j0).I0 || this.r > 0) {
-                }
-                break;
-            default:
-                if (((vh.w3) this.j0).T || this.r > 0) {
-                }
-                break;
-        }
-        return true;
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public int getFillColor() {
-        int i10 = this.i0;
-        Object obj = this.j0;
+    public pp0(hq0 hq0Var, int i10) {
+        this.a = i10;
         switch (i10) {
-            case 0:
-                return ((lq0) obj).getThemedColor(org.telegram.ui.ActionBar.j6.S5);
             case 1:
-            default:
-                return super.getFillColor();
-            case 2:
-                int i11 = org.telegram.ui.ActionBar.j6.zf;
-                Drawable[] drawableArr = PhotoViewer.Q8;
-                return ((PhotoViewer) obj).z1(i11);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.lg
-    public boolean j() {
-        switch (this.i0) {
-            case 0:
-                return true;
-            case 1:
-                return true;
-            case 2:
-                return true;
-            default:
-                return super.j();
-        }
-    }
-
-    @Override // android.view.View
-    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
-        switch (this.i0) {
-            case 1:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-                accessibilityNodeInfo.setText(LocaleController.formatPluralString("AccDescrShareInChats", ((org.telegram.ui.qy) this.j0).F2.size(), new Object[0]));
-                accessibilityNodeInfo.setClassName(Button.class.getName());
-                accessibilityNodeInfo.setLongClickable(true);
-                accessibilityNodeInfo.setClickable(true);
+                this.c = hq0Var;
+                this.b = new Rect();
                 break;
             default:
-                super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+                this.c = hq0Var;
+                this.b = new Rect();
                 break;
         }
     }
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ pp0(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, int i11) {
-        super(i10, context, f6Var, false);
-        this.i0 = i11;
-        this.j0 = notificationCenterDelegate;
+    @Override // android.view.View.OnTouchListener
+    public final boolean onTouch(View view, MotionEvent motionEvent) {
+        hq0 hq0Var;
+        org.telegram.ui.ActionBar.n1 n1Var;
+        hq0 hq0Var2;
+        org.telegram.ui.ActionBar.n1 n1Var2;
+        switch (this.a) {
+            case 0:
+                if (motionEvent.getActionMasked() == 0 && (n1Var = (hq0Var = this.c).J0) != null && n1Var.isShowing()) {
+                    Rect rect = this.b;
+                    view.getHitRect(rect);
+                    if (!rect.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        hq0Var.J0.d(true);
+                        break;
+                    }
+                }
+                break;
+            default:
+                if (motionEvent.getActionMasked() == 0 && (n1Var2 = (hq0Var2 = this.c).J0) != null && n1Var2.isShowing()) {
+                    Rect rect2 = this.b;
+                    view.getHitRect(rect2);
+                    if (!rect2.contains((int) motionEvent.getX(), (int) motionEvent.getY())) {
+                        hq0Var2.J0.d(true);
+                        break;
+                    }
+                }
+                break;
+        }
+        return false;
     }
 }

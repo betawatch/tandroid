@@ -8,22 +8,22 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class p5 implements SensorEventListener {
     @Override // android.hardware.SensorEventListener
     public final void onSensorChanged(SensorEvent sensorEvent) {
-        float f10 = sensorEvent.values[0];
-        if (f10 <= 0.0f) {
-            f10 = 0.1f;
+        float f7 = sensorEvent.values[0];
+        if (f7 <= 0.0f) {
+            f7 = 0.1f;
         }
         if (ApplicationLoader.mainInterfacePaused || !ApplicationLoader.isScreenOn) {
             return;
         }
-        if (f10 > 500.0f) {
+        if (f7 > 500.0f) {
             j6.h = 1.0f;
         } else {
-            j6.h = ((float) Math.ceil((Math.log(f10) * 9.932299613952637d) + 27.05900001525879d)) / 100.0f;
+            j6.h = ((float) Math.ceil((Math.log(f7) * 9.932299613952637d) + 27.05900001525879d)) / 100.0f;
         }
         if (j6.h > j6.q) {
             if (j6.k) {

@@ -1,68 +1,140 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.Rect;
-import android.graphics.RectF;
+import android.view.MotionEvent;
 import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
+import android.view.ViewConfiguration;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class fl0 extends f2.u0 implements og.a {
-    public final Utilities.CallbackReturn a;
-    public final rl0 b;
-    public final int c;
-    public final boolean d;
+public final class fl0 extends l20 {
+    public View a;
+    public final /* synthetic */ gl0 b;
 
-    public fl0(rl0 rl0Var, Utilities.CallbackReturn callbackReturn, int i10, boolean z4) {
-        this.b = rl0Var;
-        this.a = callbackReturn;
-        this.c = i10;
-        this.d = z4;
+    public fl0(gl0 gl0Var) {
+        this.b = gl0Var;
     }
 
-    @Override // f2.u0
-    public final void a(Rect rect, View view, RecyclerView recyclerView, f2.i1 i1Var) {
-        int b10;
-        if (((Boolean) this.a.run(view)).booleanValue()) {
-            int i10 = this.c;
-            rect.right = i10;
-            rect.left = i10;
-            f2.l1 T = recyclerView.T(view);
-            f2.o0 adapter = recyclerView.getAdapter();
-            if (T == null || adapter == null || (b10 = T.b()) == -1) {
+    @Override // org.telegram.ui.Components.l20
+    public final boolean a() {
+        return ((ll0) this.b.b).Y0 != null;
+    }
+
+    public final void b(MotionEvent motionEvent, View view) {
+        ll0 ll0Var = (ll0) this.b.b;
+        if (view != null) {
+            if (ll0Var.V0 == null && ll0Var.W0 == null) {
                 return;
             }
-            boolean z4 = b10 == 0;
-            boolean z10 = b10 == adapter.h() - 1;
-            if (z4) {
-                rect.top = this.d ? i10 : AndroidUtilities.dp(4.0f);
+            float x10 = motionEvent.getX();
+            float y3 = motionEvent.getY();
+            ll0Var.g1(view, x10, y3, true);
+            int i10 = ll0Var.O1;
+            if (ll0Var.R1 && i10 != -1) {
+                try {
+                    view.playSoundEffect(0);
+                } catch (Exception unused) {
+                }
+                view.sendAccessibilityEvent(1);
+                zk0 zk0Var = ll0Var.V0;
+                if (zk0Var != null) {
+                    zk0Var.a(i10, view);
+                } else {
+                    al0 al0Var = ll0Var.W0;
+                    if (al0Var != null) {
+                        al0Var.d(x10 - view.getX(), y3 - view.getY(), i10, view);
+                    }
+                }
             }
-            if (z10) {
-                rect.bottom = i10;
+            el0 el0Var = new el0(this, view, i10, x10, y3);
+            ll0Var.S1 = el0Var;
+            AndroidUtilities.runOnUIThread(el0Var, ViewConfiguration.getPressedStateDuration());
+            dl0 dl0Var = ll0Var.e1;
+            if (dl0Var != null) {
+                AndroidUtilities.cancelRunOnUIThread(dl0Var);
+                ll0Var.e1 = null;
+                ll0Var.N1 = null;
+                ll0Var.P1 = false;
+                ll0Var.j1(motionEvent, view);
             }
         }
     }
 
-    @Override // f2.u0
-    public final void b(Canvas canvas, RecyclerView recyclerView) {
-        if (recyclerView instanceof rl0) {
-            ((rl0) recyclerView).P0(canvas);
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onDoubleTap(MotionEvent motionEvent) {
+        al0 al0Var;
+        ll0 ll0Var = (ll0) this.b.b;
+        View view = this.a;
+        if (view == null || (al0Var = ll0Var.W0) == null || !al0Var.d1(view)) {
+            return false;
+        }
+        ll0Var.W0.q0(this.a, motionEvent.getX(), motionEvent.getY());
+        this.a = null;
+        return true;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        return false;
+    }
+
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final void onLongPress(MotionEvent motionEvent) {
+        int i10;
+        ll0 ll0Var = (ll0) this.b.b;
+        View view = ll0Var.N1;
+        if (view == null || (i10 = ll0Var.O1) == -1) {
+            return;
+        }
+        bl0 bl0Var = ll0Var.X0;
+        if (bl0Var == null && ll0Var.Y0 == null) {
+            return;
+        }
+        if (bl0Var != null) {
+            if (bl0Var.a(i10, view)) {
+                try {
+                    view.performHapticFeedback(0);
+                } catch (Exception unused) {
+                }
+                view.sendAccessibilityEvent(2);
+                return;
+            }
+            return;
+        }
+        if (ll0Var.Y0.d(motionEvent.getX() - ll0Var.N1.getX(), motionEvent.getY() - ll0Var.N1.getY(), i10, view)) {
+            try {
+                view.performHapticFeedback(0);
+            } catch (Exception unused2) {
+            }
+            view.sendAccessibilityEvent(2);
+            ll0Var.Z0 = true;
         }
     }
 
-    @Override // og.a
-    public final void e(Canvas canvas, RectF rectF) {
-        canvas.save();
-        canvas.clipRect(rectF);
-        this.b.P0(canvas);
-        canvas.restore();
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnDoubleTapListener
+    public final boolean onSingleTapConfirmed(MotionEvent motionEvent) {
+        al0 al0Var;
+        View view = this.a;
+        if (view == null || (al0Var = ((ll0) this.b.b).W0) == null || !al0Var.d1(view)) {
+            return false;
+        }
+        b(motionEvent, this.a);
+        this.a = null;
+        return true;
     }
 
-    @Override // og.a
-    public final void g(g.x xVar, RectF rectF) {
-        xVar.b = true;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        ll0 ll0Var = (ll0) this.b.b;
+        View view = ll0Var.N1;
+        if (view != null) {
+            al0 al0Var = ll0Var.W0;
+            if (al0Var != null && al0Var.d1(view)) {
+                this.a = ll0Var.N1;
+                return false;
+            }
+            b(motionEvent, ll0Var.N1);
+        }
+        return false;
     }
 }

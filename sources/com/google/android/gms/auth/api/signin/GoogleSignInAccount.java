@@ -4,19 +4,19 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
-import b6.m;
-import c6.a;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.f5;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
-import n5.d;
+import n6.l;
+import o6.a;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import w7.e0;
+import z5.d;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 @Deprecated
 /* loaded from: classes.dex */
 public class GoogleSignInAccount extends a implements ReflectedParcelable {
@@ -35,7 +35,7 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
     public final String w;
     public final HashSet x = new HashSet();
 
-    public GoogleSignInAccount(int i10, String str, String str2, String str3, String str4, Uri uri, String str5, long j10, String str6, ArrayList arrayList, String str7, String str8) {
+    public GoogleSignInAccount(int i10, String str, String str2, String str3, String str4, Uri uri, String str5, long j3, String str6, ArrayList arrayList, String str7, String str8) {
         this.a = i10;
         this.b = str;
         this.c = str2;
@@ -43,14 +43,14 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         this.e = str4;
         this.f = uri;
         this.h = str5;
-        this.n = j10;
+        this.n = j3;
         this.r = str6;
         this.s = arrayList;
         this.v = str7;
         this.w = str8;
     }
 
-    public static GoogleSignInAccount e(String str) {
+    public static GoogleSignInAccount b(String str) {
         if (TextUtils.isEmpty(str)) {
             return null;
         }
@@ -71,7 +71,7 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
         String optString6 = jSONObject.has("givenName") ? jSONObject.optString("givenName") : null;
         String optString7 = jSONObject.has("familyName") ? jSONObject.optString("familyName") : null;
         String string = jSONObject.getString("obfuscatedIdentifier");
-        m.f(string);
+        l.f(string);
         GoogleSignInAccount googleSignInAccount = new GoogleSignInAccount(3, optString2, optString3, optString4, optString5, parse, null, parseLong, string, new ArrayList(hashSet), optString6, optString7);
         googleSignInAccount.h = jSONObject.has("serverAuthCode") ? jSONObject.optString("serverAuthCode") : null;
         return googleSignInAccount;
@@ -107,21 +107,21 @@ public class GoogleSignInAccount extends a implements ReflectedParcelable {
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.s(parcel, 1, 4);
+        int q6 = e0.q(parcel, 20293);
+        e0.s(parcel, 1, 4);
         parcel.writeInt(this.a);
-        f5.l(parcel, 2, this.b);
-        f5.l(parcel, 3, this.c);
-        f5.l(parcel, 4, this.d);
-        f5.l(parcel, 5, this.e);
-        f5.k(parcel, 6, this.f, i10);
-        f5.l(parcel, 7, this.h);
-        f5.s(parcel, 8, 8);
+        e0.l(parcel, 2, this.b);
+        e0.l(parcel, 3, this.c);
+        e0.l(parcel, 4, this.d);
+        e0.l(parcel, 5, this.e);
+        e0.k(parcel, 6, this.f, i10);
+        e0.l(parcel, 7, this.h);
+        e0.s(parcel, 8, 8);
         parcel.writeLong(this.n);
-        f5.l(parcel, 9, this.r);
-        f5.p(parcel, 10, this.s);
-        f5.l(parcel, 11, this.v);
-        f5.l(parcel, 12, this.w);
-        f5.r(parcel, q10);
+        e0.l(parcel, 9, this.r);
+        e0.p(parcel, 10, this.s);
+        e0.l(parcel, 11, this.v);
+        e0.l(parcel, 12, this.w);
+        e0.r(parcel, q6);
     }
 }

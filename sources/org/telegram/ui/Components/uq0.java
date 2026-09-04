@@ -1,57 +1,56 @@
 package org.telegram.ui.Components;
 
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import android.widget.FrameLayout;
+import org.telegram.messenger.BirthdayController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class uq0 implements Runnable {
+public final /* synthetic */ class uq0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ yu0 b;
+    public final /* synthetic */ boolean b;
+    public final /* synthetic */ int c;
+    public final /* synthetic */ FrameLayout d;
 
-    public /* synthetic */ uq0(yu0 yu0Var, int i10) {
-        this.a = i10;
-        this.b = yu0Var;
+    public /* synthetic */ uq0(FrameLayout frameLayout, boolean z10, int i10, int i11) {
+        this.a = i11;
+        this.d = frameLayout;
+        this.b = z10;
+        this.c = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
         switch (this.a) {
             case 0:
-                yu0 yu0Var = this.b;
-                is isVar = yu0Var.M0;
-                yu0Var.Y1 = (int) isVar.c(AndroidUtilities.dp(14.0f));
-                or0 or0Var = yu0Var.S;
-                if (or0Var != null) {
-                    or0Var.setPaddingTop(AndroidUtilities.dp(48.0f) + ((int) isVar.c(AndroidUtilities.dp(7.0f))));
-                }
-                qt0[] qt0VarArr = yu0Var.h0;
-                if (qt0VarArr != null) {
-                    for (qt0 qt0Var : qt0VarArr) {
-                        if (qt0Var != null) {
-                            int paddingTop = qt0Var.h.getPaddingTop();
-                            wr0 wr0Var = qt0Var.h;
-                            int paddingLeft = wr0Var.getPaddingLeft();
-                            int Z = yu0Var.Z(qt0Var.C);
-                            int paddingRight = qt0Var.h.getPaddingRight();
-                            wr0 wr0Var2 = qt0Var.h;
-                            int Y = yu0Var.Y(yu0Var.v0());
-                            wr0Var2.b3 = Y;
-                            wr0Var.setPadding(paddingLeft, Z, paddingRight, Y);
-                            AndroidUtilities.doOnLayout(qt0Var.h, new dw(qt0Var, paddingTop - qt0Var.h.getPaddingTop(), 5));
-                        }
-                    }
+                xu0 xu0Var = (xu0) this.d;
+                org.telegram.ui.ActionBar.n2 n2Var = xu0Var.v1;
+                if (!this.b) {
+                    n2Var.getMessagesController().getMainSettings().edit().putBoolean("story_keep", true).apply();
+                    di.pc.E(n2Var.getParentActivity(), n2Var.getCurrentAccount()).R(null);
+                    break;
+                } else {
+                    xu0Var.O0(n2Var, xu0Var.j1, this.c);
                     break;
                 }
-                break;
-            case 1:
-                yu0 yu0Var2 = this.b;
-                yu0Var2.b1(false);
-                yu0Var2.D.h(true);
-                yu0Var2.X0 = 0;
-                break;
             default:
-                this.b.k0();
-                break;
+                nr0 nr0Var = (nr0) this.d;
+                if (nr0Var.e.h() && nr0Var.h.getCurrentPosition() != 0) {
+                    nr0Var.a();
+                    break;
+                } else {
+                    boolean z10 = this.b;
+                    int i10 = this.c;
+                    if (!z10) {
+                        ug.n1.e0(2, BirthdayController.getInstance(i10).getState());
+                        break;
+                    } else {
+                        yh.p1 p1Var = new yh.p1(nr0Var.getContext(), i10, nr0Var.c, null, null);
+                        p1Var.V(BirthdayController.getInstance(i10).isToday(nr0Var.c));
+                        p1Var.show();
+                        break;
+                    }
+                }
         }
     }
 }

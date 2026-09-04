@@ -7,13 +7,13 @@ import android.transition.TransitionSet;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
-import k7.b6;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.k41;
-import org.telegram.ui.Components.mr;
+import org.telegram.ui.Components.jn0;
+import org.telegram.ui.Components.pr;
+import w7.x5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
 public final class k extends FrameLayout {
     public final j a;
     public final TransitionSet b;
@@ -25,21 +25,21 @@ public final class k extends FrameLayout {
         setWillNotDraw(false);
         j jVar = new j(activity);
         this.a = jVar;
-        addView(jVar, b6.e(52, 52, 5));
+        addView(jVar, x5.e(52, 52, 5));
         TransitionSet transitionSet = new TransitionSet();
         this.b = transitionSet;
         transitionSet.setOrdering(0);
         transitionSet.addTransition(new org.telegram.ui.ActionBar.i(1));
         transitionSet.setDuration(500L);
-        transitionSet.setInterpolator((TimeInterpolator) mr.f);
+        transitionSet.setInterpolator((TimeInterpolator) pr.f);
     }
 
-    public final void a(View.OnClickListener onClickListener, boolean z4) {
+    public final void a(View.OnClickListener onClickListener, boolean z10) {
         if (this.c) {
             return;
         }
         this.c = true;
-        if (z4) {
+        if (z10) {
             TransitionManager.beginDelayedTransition(this, this.b);
         }
         j jVar = this.a;
@@ -50,7 +50,7 @@ public final class k extends FrameLayout {
         ViewGroup.LayoutParams layoutParams = jVar.getLayoutParams();
         layoutParams.width = -1;
         jVar.setLayoutParams(layoutParams);
-        AndroidUtilities.runOnUIThread(new k41(7, this, onClickListener), 500L);
+        AndroidUtilities.runOnUIThread(new jn0(26, this, onClickListener), 500L);
     }
 
     public j getEndCloseView() {

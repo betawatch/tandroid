@@ -1,33 +1,23 @@
 package org.telegram.ui.Components;
 
-import android.text.TextPaint;
-import android.text.style.CharacterStyle;
+import android.app.Dialog;
+import android.content.Context;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class eu extends CharacterStyle {
-    public final /* synthetic */ int a;
-    public int b;
+public final class eu extends Dialog {
+    public final /* synthetic */ bi.l3 a;
 
-    public /* synthetic */ eu(int i10, int i11) {
-        this.a = i11;
-        this.b = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public eu(bi.l3 l3Var, Context context) {
+        super(context);
+        this.a = l3Var;
     }
 
-    @Override // android.text.style.CharacterStyle
-    public final void updateDrawState(TextPaint textPaint) {
-        switch (this.a) {
-            case 0:
-                textPaint.setAlpha((int) ((this.b / 255.0f) * textPaint.getAlpha()));
-                break;
-            default:
-                textPaint.setColor(org.telegram.ui.ActionBar.j6.l1(textPaint.getAlpha() / 255.0f, this.b));
-                break;
-        }
-    }
-
-    public eu() {
-        this.a = 0;
-        this.b = 0;
+    @Override // android.app.Dialog, android.content.DialogInterface
+    public final void dismiss() {
+        fu fuVar = (fu) this.a.b;
+        fuVar.a.k(false);
+        fuVar.a.e();
     }
 }

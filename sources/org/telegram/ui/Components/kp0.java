@@ -1,57 +1,32 @@
 package org.telegram.ui.Components;
 
-import android.os.Build;
-import android.view.View;
-import androidx.recyclerview.widget.RecyclerView;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class kp0 extends f2.z0 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ lq0 b;
+public final class kp0 extends g.p {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ hq0 d;
 
-    public /* synthetic */ kp0(lq0 lq0Var, int i10) {
-        this.a = i10;
-        this.b = lq0Var;
+    public /* synthetic */ kp0(hq0 hq0Var, int i10) {
+        this.c = i10;
+        this.d = hq0Var;
     }
 
-    @Override // f2.z0
-    public final void b(RecyclerView recyclerView, int i10, int i11) {
-        ng.e eVar;
-        nb nbVar;
-        switch (this.a) {
+    @Override // g.p
+    public final int i(int i10) {
+        switch (this.c) {
             case 0:
-                if (i11 != 0) {
-                    lq0 lq0Var = this.b;
-                    lq0.s0(lq0Var);
-                    lq0Var.n0 = lq0Var.m0;
-                    break;
+                if (i10 == 0) {
+                    return this.d.H.J;
                 }
-                break;
+                return 1;
             case 1:
-                lq0 lq0Var2 = this.b;
-                if (i11 != 0) {
-                    lq0.s0(lq0Var2);
-                    lq0Var2.n0 = lq0Var2.m0;
-                }
-                ic icVar = ic.w;
-                if (icVar != null && (nbVar = icVar.e) != null && (nbVar.getParent() instanceof View) && ((View) ic.w.e.getParent()).getParent() == lq0Var2.w) {
-                    ic.e();
-                }
-                if (Build.VERSION.SDK_INT >= 31 && (eVar = lq0Var2.L0) != null) {
-                    eVar.f(i10, i11);
-                    lq0.A0(lq0Var2);
-                    break;
-                }
-                break;
+                dq0 dq0Var = this.d.M;
+                return (i10 == dq0Var.w || i10 == dq0Var.x || i10 == dq0Var.y || i10 == dq0Var.F || dq0Var.j(i10) == 0) ? 4 : 1;
             default:
-                if (i11 != 0) {
-                    lq0 lq0Var3 = this.b;
-                    lq0.s0(lq0Var3);
-                    lq0Var3.n0 = lq0Var3.m0;
-                    break;
+                if (i10 == 0) {
+                    return this.d.I.J;
                 }
-                break;
+                return 1;
         }
     }
 }

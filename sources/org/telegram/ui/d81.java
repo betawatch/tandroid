@@ -1,101 +1,25 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.RectF;
-import android.view.MotionEvent;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class d81 extends org.telegram.ui.Components.rl0 {
-    public final /* synthetic */ int U2;
-    public final /* synthetic */ Object V2;
+public final class d81 implements View.OnClickListener {
+    public final /* synthetic */ f81 a;
+    public final /* synthetic */ TLRPC.TL_authorization b;
+    public final /* synthetic */ g81 c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ d81(Object obj, Context context, int i10) {
-        super(context, null);
-        this.U2 = i10;
-        this.V2 = obj;
+    public d81(g81 g81Var, f81 f81Var, TLRPC.TL_authorization tL_authorization) {
+        this.c = g81Var;
+        this.a = f81Var;
+        this.b = tL_authorization;
     }
 
-    @Override // org.telegram.ui.Components.rl0
-    public boolean E0(float f10) {
-        switch (this.U2) {
-            case 3:
-                org.telegram.ui.Components.li liVar = ((uf.c0) this.V2).b;
-                return f10 >= ((float) ((AndroidUtilities.dp(30.0f) + liVar.Y1[0]) + (!liVar.d0 ? AndroidUtilities.statusBarHeight : 0)));
-            default:
-                return super.E0(f10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.rl0
-    public Integer V0(int i10) {
-        int i11;
-        switch (this.U2) {
-            case 0:
-                i11 = ((SessionsActivity) this.V2).terminateAllSessionsRow;
-                org.telegram.ui.ActionBar.f6 f6Var = this.m2;
-                return i10 == i11 ? Integer.valueOf(org.telegram.ui.ActionBar.j6.l1(0.1f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.p7, f6Var))) : Integer.valueOf(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.i6, f6Var));
-            default:
-                return super.V0(i10);
-        }
-    }
-
-    @Override // org.telegram.ui.Components.rl0, android.view.ViewGroup, android.view.View
-    public void dispatchDraw(Canvas canvas) {
-        switch (this.U2) {
-            case 2:
-                org.telegram.ui.Components.df dfVar = (org.telegram.ui.Components.df) this.V2;
-                d81 d81Var = dfVar.c;
-                if (d81Var.getLayoutManager() != null && d81Var.getAdapter() != null && d81Var.getAdapter().h() != 0) {
-                    float dp = dfVar.h - AndroidUtilities.dp(8.0f);
-                    dfVar.e = dp - AndroidUtilities.dp(16.0f);
-                    pg.b bVar = dfVar.r;
-                    if (bVar != null) {
-                        bVar.draw(canvas);
-                    }
-                    RectF rectF = AndroidUtilities.rectTmp;
-                    rectF.set((getMeasuredWidth() / 2.0f) - AndroidUtilities.dp(12.0f), dp - AndroidUtilities.dp(4.0f), (getMeasuredWidth() / 2.0f) + AndroidUtilities.dp(12.0f), dp);
-                    canvas.drawRoundRect(rectF, AndroidUtilities.dp(4.0f), AndroidUtilities.dp(4.0f), dfVar.d);
-                    super.dispatchDraw(canvas);
-                    break;
-                } else {
-                    super.dispatchDraw(canvas);
-                    break;
-                }
-                break;
-            default:
-                super.dispatchDraw(canvas);
-                break;
-        }
-    }
-
-    @Override // androidx.recyclerview.widget.RecyclerView
-    public void k0(int i10, int i11) {
-        int i12 = this.U2;
-    }
-
-    @Override // org.telegram.ui.Components.rl0, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
-    public boolean onInterceptTouchEvent(MotionEvent motionEvent) {
-        switch (this.U2) {
-            case 1:
-                rt q10 = rt.q();
-                ph.h1 h1Var = (ph.h1) this.V2;
-                return super.onInterceptTouchEvent(motionEvent) || q10.r(motionEvent, h1Var.b, h1Var.f, this.m2);
-            default:
-                return super.onInterceptTouchEvent(motionEvent);
-        }
-    }
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public d81(uf.c0 c0Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context, f6Var);
-        this.U2 = 3;
-        this.V2 = c0Var;
-    }
-
-    private final void v1(int i10, int i11) {
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        this.a.d.c(!r0.h, true);
+        this.b.call_requests_disabled = !r4.d.h;
+        g81.n(this.c);
     }
 }

@@ -1,43 +1,362 @@
 package a0;
 
-import java.util.ConcurrentModificationException;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class i {
-    public static final Object a = new Object();
-    public static final Object b = new Object();
+public final class i implements Cloneable {
+    public /* synthetic */ boolean a;
+    public /* synthetic */ long[] b;
+    public /* synthetic */ Object[] c;
+    public /* synthetic */ int d;
 
-    public static final void a(g gVar, int i10) {
-        gVar.a = new int[i10];
-        gVar.b = new Object[i10];
+    public i(int i10) {
+        if (i10 == 0) {
+            this.b = b0.a.b;
+            this.c = b0.a.c;
+            return;
+        }
+        int i11 = i10 * 8;
+        int i12 = 4;
+        while (true) {
+            if (i12 >= 32) {
+                break;
+            }
+            int i13 = (1 << i12) - 12;
+            if (i11 <= i13) {
+                i11 = i13;
+                break;
+            }
+            i12++;
+        }
+        int i14 = i11 / 8;
+        this.b = new long[i14];
+        this.c = new Object[i14];
     }
 
-    public static final int b(g gVar, Object obj, int i10) {
-        int i11 = gVar.c;
-        if (i11 == 0) {
-            return -1;
+    public final void a(Long l4, long j3) {
+        int i10 = this.d;
+        if (i10 != 0 && j3 <= this.b[i10 - 1]) {
+            k(l4, j3);
+            return;
         }
-        try {
-            int a2 = b0.a.a(i11, i10, gVar.a);
-            if (a2 < 0 || kotlin.jvm.internal.j.a(obj, gVar.b[a2])) {
-                return a2;
-            }
-            int i12 = a2 + 1;
-            while (i12 < i11 && gVar.a[i12] == i10) {
-                if (kotlin.jvm.internal.j.a(obj, gVar.b[i12])) {
-                    return i12;
+        if (this.a) {
+            long[] jArr = this.b;
+            if (i10 >= jArr.length) {
+                Object[] objArr = this.c;
+                int i11 = 0;
+                for (int i12 = 0; i12 < i10; i12++) {
+                    Object obj = objArr[i12];
+                    if (obj != j.a) {
+                        if (i12 != i11) {
+                            jArr[i11] = jArr[i12];
+                            objArr[i11] = obj;
+                            objArr[i12] = null;
+                        }
+                        i11++;
+                    }
                 }
-                i12++;
+                this.a = false;
+                this.d = i11;
             }
-            for (int i13 = a2 - 1; i13 >= 0 && gVar.a[i13] == i10; i13--) {
-                if (kotlin.jvm.internal.j.a(obj, gVar.b[i13])) {
-                    return i13;
-                }
-            }
-            return ~i12;
-        } catch (IndexOutOfBoundsException unused) {
-            throw new ConcurrentModificationException();
         }
+        int i13 = this.d;
+        if (i13 >= this.b.length) {
+            int i14 = (i13 + 1) * 8;
+            int i15 = 4;
+            while (true) {
+                if (i15 >= 32) {
+                    break;
+                }
+                int i16 = (1 << i15) - 12;
+                if (i14 <= i16) {
+                    i14 = i16;
+                    break;
+                }
+                i15++;
+            }
+            int i17 = i14 / 8;
+            long[] copyOf = Arrays.copyOf(this.b, i17);
+            kotlin.jvm.internal.i.d(copyOf, "copyOf(this, newSize)");
+            this.b = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.c, i17);
+            kotlin.jvm.internal.i.d(copyOf2, "copyOf(this, newSize)");
+            this.c = copyOf2;
+        }
+        this.b[i13] = j3;
+        this.c[i13] = l4;
+        this.d = i13 + 1;
+    }
+
+    public final void b() {
+        int i10 = this.d;
+        Object[] objArr = this.c;
+        for (int i11 = 0; i11 < i10; i11++) {
+            objArr[i11] = null;
+        }
+        this.d = 0;
+        this.a = false;
+    }
+
+    /* renamed from: c, reason: merged with bridge method [inline-methods] */
+    public final i clone() {
+        Object clone = super.clone();
+        kotlin.jvm.internal.i.c(clone, "null cannot be cast to non-null type androidx.collection.LongSparseArray<E of androidx.collection.LongSparseArray>");
+        i iVar = (i) clone;
+        iVar.b = (long[]) this.b.clone();
+        iVar.c = (Object[]) this.c.clone();
+        return iVar;
+    }
+
+    public final boolean d(long j3) {
+        return h(j3) >= 0;
+    }
+
+    public final void e(long j3) {
+        int b10 = b0.a.b(this.b, this.d, j3);
+        if (b10 >= 0) {
+            Object[] objArr = this.c;
+            Object obj = objArr[b10];
+            Object obj2 = j.a;
+            if (obj != obj2) {
+                objArr[b10] = obj2;
+                this.a = true;
+            }
+        }
+    }
+
+    public final Object f(long j3) {
+        Object obj;
+        int b10 = b0.a.b(this.b, this.d, j3);
+        if (b10 < 0 || (obj = this.c[b10]) == j.a) {
+            return null;
+        }
+        return obj;
+    }
+
+    public final Object g(Object obj, long j3) {
+        Object obj2;
+        int b10 = b0.a.b(this.b, this.d, j3);
+        return (b10 < 0 || (obj2 = this.c[b10]) == j.a) ? obj : obj2;
+    }
+
+    public final int h(long j3) {
+        if (this.a) {
+            int i10 = this.d;
+            long[] jArr = this.b;
+            Object[] objArr = this.c;
+            int i11 = 0;
+            for (int i12 = 0; i12 < i10; i12++) {
+                Object obj = objArr[i12];
+                if (obj != j.a) {
+                    if (i12 != i11) {
+                        jArr[i11] = jArr[i12];
+                        objArr[i11] = obj;
+                        objArr[i12] = null;
+                    }
+                    i11++;
+                }
+            }
+            this.a = false;
+            this.d = i11;
+        }
+        return b0.a.b(this.b, this.d, j3);
+    }
+
+    public final boolean i() {
+        return m() == 0;
+    }
+
+    public final long j(int i10) {
+        int i11;
+        if (i10 < 0 || i10 >= (i11 = this.d)) {
+            throw new IllegalArgumentException(i2.g.i(i10, "Expected index to be within 0..size()-1, but was ").toString());
+        }
+        if (this.a) {
+            long[] jArr = this.b;
+            Object[] objArr = this.c;
+            int i12 = 0;
+            for (int i13 = 0; i13 < i11; i13++) {
+                Object obj = objArr[i13];
+                if (obj != j.a) {
+                    if (i13 != i12) {
+                        jArr[i12] = jArr[i13];
+                        objArr[i12] = obj;
+                        objArr[i13] = null;
+                    }
+                    i12++;
+                }
+            }
+            this.a = false;
+            this.d = i12;
+        }
+        return this.b[i10];
+    }
+
+    public final void k(Object obj, long j3) {
+        Object obj2 = j.a;
+        int b10 = b0.a.b(this.b, this.d, j3);
+        if (b10 >= 0) {
+            this.c[b10] = obj;
+            return;
+        }
+        int i10 = ~b10;
+        int i11 = this.d;
+        if (i10 < i11) {
+            Object[] objArr = this.c;
+            if (objArr[i10] == obj2) {
+                this.b[i10] = j3;
+                objArr[i10] = obj;
+                return;
+            }
+        }
+        if (this.a) {
+            long[] jArr = this.b;
+            if (i11 >= jArr.length) {
+                Object[] objArr2 = this.c;
+                int i12 = 0;
+                for (int i13 = 0; i13 < i11; i13++) {
+                    Object obj3 = objArr2[i13];
+                    if (obj3 != obj2) {
+                        if (i13 != i12) {
+                            jArr[i12] = jArr[i13];
+                            objArr2[i12] = obj3;
+                            objArr2[i13] = null;
+                        }
+                        i12++;
+                    }
+                }
+                this.a = false;
+                this.d = i12;
+                i10 = ~b0.a.b(this.b, i12, j3);
+            }
+        }
+        int i14 = this.d;
+        if (i14 >= this.b.length) {
+            int i15 = (i14 + 1) * 8;
+            int i16 = 4;
+            while (true) {
+                if (i16 >= 32) {
+                    break;
+                }
+                int i17 = (1 << i16) - 12;
+                if (i15 <= i17) {
+                    i15 = i17;
+                    break;
+                }
+                i16++;
+            }
+            int i18 = i15 / 8;
+            long[] copyOf = Arrays.copyOf(this.b, i18);
+            kotlin.jvm.internal.i.d(copyOf, "copyOf(this, newSize)");
+            this.b = copyOf;
+            Object[] copyOf2 = Arrays.copyOf(this.c, i18);
+            kotlin.jvm.internal.i.d(copyOf2, "copyOf(this, newSize)");
+            this.c = copyOf2;
+        }
+        int i19 = this.d - i10;
+        if (i19 != 0) {
+            long[] jArr2 = this.b;
+            int i20 = i10 + 1;
+            kotlin.jvm.internal.i.e(jArr2, "<this>");
+            System.arraycopy(jArr2, i10, jArr2, i20, i19);
+            Object[] objArr3 = this.c;
+            hd.f.c(i20, i10, this.d, objArr3, objArr3);
+        }
+        this.b[i10] = j3;
+        this.c[i10] = obj;
+        this.d++;
+    }
+
+    public final void l(long j3) {
+        int b10 = b0.a.b(this.b, this.d, j3);
+        if (b10 >= 0) {
+            Object[] objArr = this.c;
+            Object obj = objArr[b10];
+            Object obj2 = j.a;
+            if (obj != obj2) {
+                objArr[b10] = obj2;
+                this.a = true;
+            }
+        }
+    }
+
+    public final int m() {
+        if (this.a) {
+            int i10 = this.d;
+            long[] jArr = this.b;
+            Object[] objArr = this.c;
+            int i11 = 0;
+            for (int i12 = 0; i12 < i10; i12++) {
+                Object obj = objArr[i12];
+                if (obj != j.a) {
+                    if (i12 != i11) {
+                        jArr[i11] = jArr[i12];
+                        objArr[i11] = obj;
+                        objArr[i12] = null;
+                    }
+                    i11++;
+                }
+            }
+            this.a = false;
+            this.d = i11;
+        }
+        return this.d;
+    }
+
+    public final Object n(int i10) {
+        int i11;
+        if (i10 < 0 || i10 >= (i11 = this.d)) {
+            throw new IllegalArgumentException(i2.g.i(i10, "Expected index to be within 0..size()-1, but was ").toString());
+        }
+        if (this.a) {
+            long[] jArr = this.b;
+            Object[] objArr = this.c;
+            int i12 = 0;
+            for (int i13 = 0; i13 < i11; i13++) {
+                Object obj = objArr[i13];
+                if (obj != j.a) {
+                    if (i13 != i12) {
+                        jArr[i12] = jArr[i13];
+                        objArr[i12] = obj;
+                        objArr[i13] = null;
+                    }
+                    i12++;
+                }
+            }
+            this.a = false;
+            this.d = i12;
+        }
+        return this.c[i10];
+    }
+
+    public final String toString() {
+        if (m() <= 0) {
+            return "{}";
+        }
+        StringBuilder sb2 = new StringBuilder(this.d * 28);
+        sb2.append('{');
+        int i10 = this.d;
+        for (int i11 = 0; i11 < i10; i11++) {
+            if (i11 > 0) {
+                sb2.append(", ");
+            }
+            sb2.append(j(i11));
+            sb2.append('=');
+            Object n10 = n(i11);
+            if (n10 != sb2) {
+                sb2.append(n10);
+            } else {
+                sb2.append("(this Map)");
+            }
+        }
+        sb2.append('}');
+        String sb3 = sb2.toString();
+        kotlin.jvm.internal.i.d(sb3, "StringBuilder(capacity).…builderAction).toString()");
+        return sb3;
+    }
+
+    public i() {
+        this(10);
     }
 }

@@ -2,5 +2,5 @@ package java.util.function;
 
 /* loaded from: classes2.dex */
 public interface LongUnaryOperator {
-    long applyAsLong(long j10);
+    long applyAsLong(long j3);
 }

@@ -1,45 +1,7 @@
 package org.telegram.ui.Components.voip;
 
-import android.animation.ValueAnimator;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final /* synthetic */ class g3 implements ValueAnimator.AnimatorUpdateListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ j3 b;
-
-    public /* synthetic */ g3(j3 j3Var, int i10) {
-        this.a = i10;
-        this.b = j3Var;
-    }
-
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-        switch (this.a) {
-            case 0:
-                j3 j3Var = this.b;
-                j3Var.getClass();
-                j3Var.D = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                j3Var.invalidate();
-                break;
-            case 1:
-                j3 j3Var2 = this.b;
-                j3Var2.getClass();
-                j3Var2.w = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j3Var2.invalidate();
-                break;
-            case 2:
-                j3 j3Var3 = this.b;
-                j3Var3.getClass();
-                j3Var3.s = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j3Var3.invalidate();
-                break;
-            default:
-                j3 j3Var4 = this.b;
-                j3Var4.getClass();
-                j3Var4.r = ((Integer) valueAnimator.getAnimatedValue()).intValue();
-                j3Var4.invalidate();
-                break;
-        }
-    }
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public interface g3 {
+    void c(h3 h3Var);
 }

@@ -16,7 +16,7 @@ import android.widget.RemoteViewsService;
 import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactory {
     private AccountInstance accountInstance;
@@ -26,7 +26,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
     private Context mContext;
     private Paint roundPaint;
     private ArrayList<Long> dids = new ArrayList<>();
-    private a0.h dialogs = new a0.h();
+    private a0.i dialogs = new a0.i();
 
     public ContactsRemoteViewsFactory(Context context, Intent intent) {
         this.mContext = context;
@@ -37,9 +37,9 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
         if (i10 >= 0) {
             this.accountInstance = AccountInstance.getInstance(i10);
         }
-        StringBuilder sb = new StringBuilder("deleted");
-        sb.append(this.appWidgetId);
-        this.deleted = sharedPreferences.getBoolean(sb.toString(), false) || this.accountInstance == null;
+        StringBuilder sb2 = new StringBuilder("deleted");
+        sb2.append(this.appWidgetId);
+        this.deleted = sharedPreferences.getBoolean(sb2.toString(), false) || this.accountInstance == null;
     }
 
     @Override // android.widget.RemoteViewsService.RemoteViewsFactory
@@ -68,7 +68,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
         TLRPC.FileLocation fileLocation;
         Bitmap decodeFile;
         int i11;
-        org.telegram.ui.Components.z8 z8Var;
+        org.telegram.ui.Components.i9 i9Var;
         TLRPC.UserProfilePhoto userProfilePhoto;
         if (this.deleted) {
             RemoteViews remoteViews = new RemoteViews(this.mContext.getPackageName(), R.layout.widget_deleted);
@@ -95,9 +95,9 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
                 remoteViews3.setViewVisibility(i12 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, 4);
             } else {
                 remoteViews3.setViewVisibility(i12 == 0 ? R.id.contacts_widget_item1 : R.id.contacts_widget_item2, 0);
-                Long l10 = this.dids.get(i13);
-                if (DialogObject.isUserDialog(l10.longValue())) {
-                    user = this.accountInstance.getMessagesController().getUser(l10);
+                Long l4 = this.dids.get(i13);
+                if (DialogObject.isUserDialog(l4.longValue())) {
+                    user = this.accountInstance.getMessagesController().getUser(l4);
                     str = UserObject.isUserSelf(user) ? LocaleController.getString(R.string.SavedMessages) : UserObject.isReplyUser(user) ? LocaleController.getString(R.string.RepliesTitle) : UserObject.isDeleted(user) ? LocaleController.getString(R.string.HiddenName) : UserObject.getFirstName(user);
                     if (UserObject.isReplyUser(user) || UserObject.isUserSelf(user) || user == null || (userProfilePhoto = user.photo) == null || (fileLocation = userProfilePhoto.photo_small) == null || fileLocation.volume_id == 0 || fileLocation.local_id == 0) {
                         chat = null;
@@ -106,7 +106,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
                         chat = null;
                     }
                 } else {
-                    TLRPC.Chat chat2 = this.accountInstance.getMessagesController().getChat(Long.valueOf(-l10.longValue()));
+                    TLRPC.Chat chat2 = this.accountInstance.getMessagesController().getChat(Long.valueOf(-l4.longValue()));
                     if (chat2 != null) {
                         str = chat2.title;
                         TLRPC.ChatPhoto chatPhoto = chat2.photo;
@@ -137,19 +137,19 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
                 Canvas canvas = new Canvas(createBitmap);
                 if (decodeFile == null) {
                     if (user != null) {
-                        z8Var = new org.telegram.ui.Components.z8(0, user);
+                        i9Var = new org.telegram.ui.Components.i9(0, user);
                         if (UserObject.isReplyUser(user)) {
-                            z8Var.g(12);
+                            i9Var.g(12);
                         } else if (UserObject.isUserSelf(user)) {
-                            z8Var.g(1);
+                            i9Var.g(1);
                         }
                     } else {
-                        org.telegram.ui.Components.z8 z8Var2 = new org.telegram.ui.Components.z8((org.telegram.ui.ActionBar.f6) null);
-                        z8Var2.k(this.accountInstance.getCurrentAccount(), chat);
-                        z8Var = z8Var2;
+                        org.telegram.ui.Components.i9 i9Var2 = new org.telegram.ui.Components.i9((org.telegram.ui.ActionBar.f6) null);
+                        i9Var2.k(this.accountInstance.getCurrentAccount(), chat);
+                        i9Var = i9Var2;
                     }
-                    z8Var.setBounds(0, 0, dp, dp);
-                    z8Var.draw(canvas);
+                    i9Var.setBounds(0, 0, dp, dp);
+                    i9Var.draw(canvas);
                 } else {
                     Shader.TileMode tileMode = Shader.TileMode.CLAMP;
                     BitmapShader bitmapShader = new BitmapShader(decodeFile, tileMode, tileMode);
@@ -167,7 +167,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
                 }
                 canvas.setBitmap(null);
                 remoteViews3.setImageViewBitmap(i12 == 0 ? R.id.contacts_widget_item_avatar1 : R.id.contacts_widget_item_avatar2, createBitmap);
-                TLRPC.Dialog dialog = (TLRPC.Dialog) this.dialogs.f(l10.longValue());
+                TLRPC.Dialog dialog = (TLRPC.Dialog) this.dialogs.f(l4.longValue());
                 if (dialog == null || (i11 = dialog.unread_count) <= 0) {
                     remoteViews3.setViewVisibility(i12 == 0 ? R.id.contacts_widget_item_badge_bg1 : R.id.contacts_widget_item_badge_bg2, 8);
                 } else {
@@ -175,10 +175,10 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
                     remoteViews3.setViewVisibility(i12 == 0 ? R.id.contacts_widget_item_badge_bg1 : R.id.contacts_widget_item_badge_bg2, 0);
                 }
                 Bundle bundle2 = new Bundle();
-                if (DialogObject.isUserDialog(l10.longValue())) {
-                    bundle2.putLong("userId", l10.longValue());
+                if (DialogObject.isUserDialog(l4.longValue())) {
+                    bundle2.putLong("userId", l4.longValue());
                 } else {
-                    bundle2.putLong("chatId", -l10.longValue());
+                    bundle2.putLong("chatId", -l4.longValue());
                 }
                 bundle2.putInt("currentAccount", this.accountInstance.getCurrentAccount());
                 Intent intent2 = new Intent();
@@ -214,7 +214,7 @@ class ContactsRemoteViewsFactory implements RemoteViewsService.RemoteViewsFactor
         }
         ArrayList<TLRPC.User> arrayList = new ArrayList<>();
         ArrayList<TLRPC.Chat> arrayList2 = new ArrayList<>();
-        this.accountInstance.getMessagesStorage().getWidgetDialogs(this.appWidgetId, 1, this.dids, this.dialogs, new a0.h(), arrayList, arrayList2);
+        this.accountInstance.getMessagesStorage().getWidgetDialogs(this.appWidgetId, 1, this.dids, this.dialogs, new a0.i(), arrayList, arrayList2);
         this.accountInstance.getMessagesController().putUsers(arrayList, true);
         this.accountInstance.getMessagesController().putChats(arrayList2, true);
     }

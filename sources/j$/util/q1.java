@@ -29,22 +29,22 @@ public class q1 implements Spliterator {
 
     @Override // j$.util.Spliterator
     public final Spliterator trySplit() {
-        long j10;
+        long j3;
         Iterator it = this.b;
         if (it == null) {
             it = this.a.iterator();
             this.b = it;
-            j10 = this.a.size();
-            this.d = j10;
+            j3 = this.a.size();
+            this.d = j3;
         } else {
-            j10 = this.d;
+            j3 = this.d;
         }
-        if (j10 <= 1 || !it.hasNext()) {
+        if (j3 <= 1 || !it.hasNext()) {
             return null;
         }
         int i10 = this.e + 1024;
-        if (i10 > j10) {
-            i10 = (int) j10;
+        if (i10 > j3) {
+            i10 = (int) j3;
         }
         if (i10 > 33554432) {
             i10 = 33554432;
@@ -59,9 +59,9 @@ public class q1 implements Spliterator {
             }
         } while (it.hasNext());
         this.e = i11;
-        long j11 = this.d;
-        if (j11 != Long.MAX_VALUE) {
-            this.d = j11 - i11;
+        long j10 = this.d;
+        if (j10 != Long.MAX_VALUE) {
+            this.d = j10 - i11;
         }
         return new j1(objArr, 0, i11, this.c);
     }

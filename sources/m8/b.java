@@ -1,60 +1,32 @@
 package m8;
 
 import android.os.Parcel;
+import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
-import j7.f5;
-import java.util.ArrayList;
-import java.util.List;
-import org.telegram.ui.ai;
+import com.google.android.gms.common.data.DataHolder;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends c6.a implements l8.a {
-    public static final Parcelable.Creator<b> CREATOR = new c(0);
-    public final String a;
-    public final List b;
-
-    public b(String str, ArrayList arrayList) {
-        this.a = str;
-        this.b = arrayList;
-        b6.m.h(str);
-        b6.m.h(arrayList);
-    }
-
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || b.class != obj.getClass()) {
-            return false;
-        }
-        b bVar = (b) obj;
-        List list = bVar.b;
-        String str = bVar.a;
-        String str2 = this.a;
-        if (str2 == null ? str != null : !str2.equals(str)) {
-            return false;
-        }
-        List list2 = this.b;
-        return list2 == null ? list == null : list2.equals(list);
-    }
-
-    public final int hashCode() {
-        String str = this.a;
-        int hashCode = ((str != null ? str.hashCode() : 0) + 31) * 31;
-        List list = this.b;
-        return hashCode + (list != null ? list.hashCode() : 0);
-    }
-
-    public final String toString() {
-        return ai.k("CapabilityInfo{", this.a, ", ", String.valueOf(this.b), "}");
-    }
+public final class b extends o6.a {
+    public static final Parcelable.Creator<b> CREATOR = new h(2);
+    public String a;
+    public DataHolder b;
+    public ParcelFileDescriptor c;
+    public long d;
+    public byte[] e;
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 2, this.a);
-        f5.p(parcel, 3, this.b);
-        f5.r(parcel, q10);
+        int q6 = e0.q(parcel, 20293);
+        e0.l(parcel, 2, this.a);
+        e0.k(parcel, 3, this.b, i10);
+        e0.k(parcel, 4, this.c, i10);
+        long j3 = this.d;
+        e0.s(parcel, 5, 8);
+        parcel.writeLong(j3);
+        e0.c(parcel, 6, this.e);
+        e0.r(parcel, q6);
+        this.c = null;
     }
 }

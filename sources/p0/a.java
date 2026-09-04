@@ -1,6 +1,6 @@
 package p0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class a {
     public static final byte[] e = new byte[1792];
@@ -31,7 +31,7 @@ public final class a {
             return Character.getDirectionality(codePointBefore);
         }
         this.c--;
-        char c3 = this.d;
-        return c3 < 1792 ? e[c3] : Character.getDirectionality(c3);
+        char c10 = this.d;
+        return c10 < 1792 ? e[c10] : Character.getDirectionality(c10);
     }
 }

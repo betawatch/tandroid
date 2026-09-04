@@ -1,13 +1,13 @@
 package com.google.android.gms.internal.play_billing;
 
-import j7.q6;
 import java.security.AccessController;
 import java.security.PrivilegedActionException;
 import sun.misc.Unsafe;
+import v7.x5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class j0 extends q6 {
+public final class j0 extends x5 {
     public static final Unsafe a;
     public static final long b;
     public static final long c;
@@ -20,8 +20,8 @@ public final class j0 extends q6 {
         try {
             try {
                 unsafe = Unsafe.getUnsafe();
-            } catch (PrivilegedActionException e6) {
-                throw new RuntimeException("Could not initialize intrinsics", e6.getCause());
+            } catch (PrivilegedActionException e7) {
+                throw new RuntimeException("Could not initialize intrinsics", e7.getCause());
             }
         } catch (SecurityException unused) {
             unsafe = (Unsafe) AccessController.doPrivileged(new o0());
@@ -38,7 +38,7 @@ public final class j0 extends q6 {
         }
     }
 
-    @Override // j7.q6
+    @Override // v7.x5
     public final f0 a(w0 w0Var) {
         f0 f0Var;
         f0 f0Var2 = f0.d;
@@ -51,7 +51,7 @@ public final class j0 extends q6 {
         return f0Var;
     }
 
-    @Override // j7.q6
+    @Override // v7.x5
     public final k0 b(w0 w0Var) {
         k0 k0Var;
         k0 k0Var2 = k0.c;
@@ -64,27 +64,27 @@ public final class j0 extends q6 {
         return k0Var;
     }
 
-    @Override // j7.q6
+    @Override // v7.x5
     public final void c(k0 k0Var, k0 k0Var2) {
         a.putObject(k0Var, f, k0Var2);
     }
 
-    @Override // j7.q6
+    @Override // v7.x5
     public final void d(k0 k0Var, Thread thread) {
         a.putObject(k0Var, e, thread);
     }
 
-    @Override // j7.q6
+    @Override // v7.x5
     public final boolean e(w0 w0Var, f0 f0Var, f0 f0Var2) {
         return n0.a(a, w0Var, b, f0Var, f0Var2);
     }
 
-    @Override // j7.q6
+    @Override // v7.x5
     public final boolean f(l0 l0Var, Object obj, Object obj2) {
         return n0.a(a, l0Var, d, obj, obj2);
     }
 
-    @Override // j7.q6
+    @Override // v7.x5
     public final boolean g(l0 l0Var, k0 k0Var, k0 k0Var2) {
         return n0.a(a, l0Var, c, k0Var, k0Var2);
     }

@@ -1,11 +1,11 @@
 package c0;
 
-import j7.h0;
+import v7.c5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f extends h0 {
-    @Override // j7.h0
+public final class f extends c5 {
+    @Override // v7.c5
     public final boolean a(h hVar, d dVar, d dVar2) {
         synchronized (hVar) {
             try {
@@ -20,7 +20,7 @@ public final class f extends h0 {
         }
     }
 
-    @Override // j7.h0
+    @Override // v7.c5
     public final boolean b(h hVar, Object obj, Object obj2) {
         synchronized (hVar) {
             try {
@@ -35,7 +35,7 @@ public final class f extends h0 {
         }
     }
 
-    @Override // j7.h0
+    @Override // v7.c5
     public final boolean c(h hVar, g gVar, g gVar2) {
         synchronized (hVar) {
             try {
@@ -50,12 +50,12 @@ public final class f extends h0 {
         }
     }
 
-    @Override // j7.h0
+    @Override // v7.c5
     public final void d(g gVar, g gVar2) {
         gVar.b = gVar2;
     }
 
-    @Override // j7.h0
+    @Override // v7.c5
     public final void e(g gVar, Thread thread) {
         gVar.a = thread;
     }

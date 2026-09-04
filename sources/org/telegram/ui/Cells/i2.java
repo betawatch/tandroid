@@ -1,70 +1,28 @@
 package org.telegram.ui.Cells;
 
-import org.telegram.messenger.MessagesController;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.qy;
+import android.view.ViewGroup;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class i2 extends nh.i7 {
-    public final /* synthetic */ q2 S;
+public final /* synthetic */ class i2 implements Utilities.Callback {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ ViewGroup b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public i2(q2 q2Var) {
-        super(null, false);
-        this.S = q2Var;
+    public /* synthetic */ i2(ViewGroup viewGroup, int i10) {
+        this.a = i10;
+        this.b = viewGroup;
     }
 
-    @Override // nh.i7
-    public final boolean c(TLRPC.Chat chat, TLRPC.User user) {
-        return (((chat == null || chat.linked_community_id == 0) && (user == null || user.linked_community_id == 0)) || this.S.L0) ? false : true;
-    }
-
-    @Override // nh.i7
-    public final boolean d(long j10) {
-        q2 q2Var = this.S;
-        int i10 = q2Var.C0;
-        qy qyVar = q2Var.w4;
-        if (qyVar == null || q2Var.L0) {
-            return false;
-        }
-        if (j10 > 0) {
-            TLRPC.User user = MessagesController.getInstance(i10).getUser(Long.valueOf(j10));
-            if (user == null || user.linked_community_id == 0) {
-                return false;
-            }
-            qyVar.showDialog(new sh.i0(qyVar, user.linked_community_id));
-            return true;
-        }
-        TLRPC.Chat chat = MessagesController.getInstance(i10).getChat(Long.valueOf(-j10));
-        if (chat == null || chat.linked_community_id == 0) {
-            return false;
-        }
-        qyVar.showDialog(new sh.i0(qyVar, chat.linked_community_id));
-        return true;
-    }
-
-    @Override // nh.i7
-    public final void e() {
-        q2 q2Var = this.S;
-        m2 m2Var = q2Var.a0;
-        if (m2Var == null) {
-            return;
-        }
-        m2Var.f(q2Var);
-    }
-
-    @Override // nh.i7
-    public final void f(long j10) {
-        q2 q2Var = this.S;
-        m2 m2Var = q2Var.a0;
-        if (m2Var == null) {
-            return;
-        }
-        if (q2Var.G0 != 0) {
-            m2Var.c();
-        } else {
-            m2Var.e(q2Var);
+    @Override // org.telegram.messenger.Utilities.Callback
+    public final void run(Object obj) {
+        switch (this.a) {
+            case 0:
+                ((r2) this.b).d0(true);
+                break;
+            default:
+                ((m4) this.b).c(true);
+                break;
         }
     }
 }

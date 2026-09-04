@@ -1,40 +1,47 @@
 package org.telegram.ui.Components;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ChatActivityEnterView;
+import android.content.Context;
+import android.graphics.Paint;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class of extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class of extends fi.y {
+    public boolean s;
+    public final /* synthetic */ ChatActivityEnterView v;
 
-    public of(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.b = chatActivityEnterView;
-        this.a = i10;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public of(ChatActivityEnterView chatActivityEnterView, Context context) {
+        super(context);
+        this.v = chatActivityEnterView;
+        this.a = null;
+        Paint paint = new Paint(1);
+        this.d = paint;
+        this.f = true;
+        this.b = new b2.q0();
+        bi.o0 o0Var = new bi.o0(this, context, 2);
+        this.c = o0Var;
+        o0Var.setOverScrollMode(2);
+        o0Var.setClipToPadding(false);
+        o0Var.setClipToOutline(true);
+        o0Var.j(new ah.e0(this, 5));
+        addView(o0Var);
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Ii, false));
+        dh.d dVar = this.r;
+        if (dVar != null) {
+            dVar.u();
+        }
+        invalidate();
+        setClipChildren(false);
+        this.s = false;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        ChatActivityEnterView chatActivityEnterView = this.b;
-        if (animator.equals(chatActivityEnterView.p2)) {
-            int i10 = this.a;
-            if (i10 != 3 && chatActivityEnterView.B0 != null && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
-                chatActivityEnterView.B0.requestFocus();
-            }
-            chatActivityEnterView.A();
-            if (i10 != 3) {
-                ig igVar = chatActivityEnterView.K1;
-                if (igVar != null) {
-                    igVar.setVisibility(8);
-                }
-                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.J1;
-                if (recordCircle != null) {
-                    recordCircle.d();
-                }
-            }
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        if (this.s) {
+            return;
         }
+        this.s = true;
+        this.v.C1();
     }
 }

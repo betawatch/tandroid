@@ -4,7 +4,7 @@ import android.os.Bundle;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class f {
     public final /* synthetic */ int a;
@@ -19,17 +19,17 @@ public final /* synthetic */ class f {
         switch (this.a) {
             case 0:
                 m mVar = this.b;
-                Bundle c3 = ((g2.e) mVar.e.c).c("android:support:activity-result");
-                if (c3 != null) {
+                Bundle c10 = ((m.p) mVar.e.d).c("android:support:activity-result");
+                if (c10 != null) {
                     h hVar = mVar.w;
                     HashMap hashMap = hVar.b;
                     HashMap hashMap2 = hVar.a;
                     Bundle bundle = hVar.g;
-                    ArrayList<Integer> integerArrayList = c3.getIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS");
-                    ArrayList<String> stringArrayList = c3.getStringArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS");
+                    ArrayList<Integer> integerArrayList = c10.getIntegerArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_RCS");
+                    ArrayList<String> stringArrayList = c10.getStringArrayList("KEY_COMPONENT_ACTIVITY_REGISTERED_KEYS");
                     if (stringArrayList != null && integerArrayList != null) {
-                        hVar.d = c3.getStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS");
-                        bundle.putAll(c3.getBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT"));
+                        hVar.d = c10.getStringArrayList("KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS");
+                        bundle.putAll(c10.getBundle("KEY_COMPONENT_ACTIVITY_PENDING_RESULT"));
                         for (int i10 = 0; i10 < stringArrayList.size(); i10++) {
                             String str = stringArrayList.get(i10);
                             if (hashMap.containsKey(str)) {
@@ -49,8 +49,8 @@ public final /* synthetic */ class f {
                 }
                 break;
             default:
-                androidx.fragment.app.u uVar = (androidx.fragment.app.u) ((androidx.fragment.app.v) this.b).G.b;
-                uVar.d.b(uVar, uVar, null);
+                androidx.fragment.app.t tVar = (androidx.fragment.app.t) ((androidx.fragment.app.u) this.b).J.b;
+                tVar.d.b(tVar, tVar, null);
                 break;
         }
     }

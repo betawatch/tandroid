@@ -2,7 +2,7 @@ package androidx.car.app.model;
 
 import j$.util.Objects;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class CarColor {
     public static final int TYPE_BLUE = 6;
@@ -89,12 +89,12 @@ public final class CarColor {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder("[type: ");
-        sb.append(typeToString(this.mType));
-        sb.append(", color: ");
-        sb.append(this.mColor);
-        sb.append(", dark: ");
-        return android.support.v4.media.a.m(this.mColorDark, "]", sb);
+        StringBuilder sb2 = new StringBuilder("[type: ");
+        sb2.append(typeToString(this.mType));
+        sb2.append(", color: ");
+        sb2.append(this.mColor);
+        sb2.append(", dark: ");
+        return a4.a.n(this.mColorDark, "]", sb2);
     }
 
     private CarColor(int i10, int i11, int i12) {

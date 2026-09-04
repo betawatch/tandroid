@@ -1,123 +1,43 @@
 package a0;
 
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.ConcurrentModificationException;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public class j {
-    public final int a;
-    public final bb.b b;
-    public final z9.d c;
-    public int d;
-    public int e;
-    public int f;
+public abstract class j {
+    public static final Object a = new Object();
+    public static final Object b = new Object();
 
-    public j(int i10) {
-        this.a = i10;
-        if (i10 <= 0) {
-            throw new IllegalArgumentException("maxSize <= 0");
-        }
-        this.b = new bb.b();
-        this.c = new z9.d(2);
+    public static final void a(g gVar, int i10) {
+        gVar.a = new int[i10];
+        gVar.b = new Object[i10];
     }
 
-    public final Object a(Object key) {
-        kotlin.jvm.internal.j.e(key, "key");
-        synchronized (this.c) {
-            bb.b bVar = this.b;
-            bVar.getClass();
-            Object obj = ((LinkedHashMap) bVar.b).get(key);
-            if (obj != null) {
-                this.e++;
-                return obj;
+    public static final int b(g gVar, Object obj, int i10) {
+        int i11 = gVar.c;
+        if (i11 == 0) {
+            return -1;
+        }
+        try {
+            int a2 = b0.a.a(i11, i10, gVar.a);
+            if (a2 < 0 || kotlin.jvm.internal.i.a(obj, gVar.b[a2])) {
+                return a2;
             }
-            this.f++;
-            return null;
-        }
-    }
-
-    public final Object b(Object key, Object obj) {
-        Object put;
-        kotlin.jvm.internal.j.e(key, "key");
-        synchronized (this.c) {
-            this.d++;
-            bb.b bVar = this.b;
-            bVar.getClass();
-            put = ((LinkedHashMap) bVar.b).put(key, obj);
-            if (put != null) {
-                this.d--;
+            int i12 = a2 + 1;
+            while (i12 < i11 && gVar.a[i12] == i10) {
+                if (kotlin.jvm.internal.i.a(obj, gVar.b[i12])) {
+                    return i12;
+                }
+                i12++;
             }
-        }
-        c(this.a);
-        return put;
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:13:0x0095, code lost:
-    
-        throw new java.lang.IllegalStateException("LruCache.sizeOf() is reporting inconsistent results!");
-     */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void c(int i10) {
-        while (true) {
-            synchronized (this.c) {
-                try {
-                    if (this.d < 0 || (((LinkedHashMap) this.b.b).isEmpty() && this.d != 0)) {
-                        break;
-                    }
-                    if (this.d <= i10 || ((LinkedHashMap) this.b.b).isEmpty()) {
-                        break;
-                    }
-                    Set entrySet = ((LinkedHashMap) this.b.b).entrySet();
-                    kotlin.jvm.internal.j.d(entrySet, "map.entries");
-                    Object obj = null;
-                    if (entrySet instanceof List) {
-                        List list = (List) entrySet;
-                        if (!list.isEmpty()) {
-                            obj = list.get(0);
-                        }
-                    } else {
-                        Iterator it = entrySet.iterator();
-                        if (it.hasNext()) {
-                            obj = it.next();
-                        }
-                    }
-                    Map.Entry entry = (Map.Entry) obj;
-                    if (entry == null) {
-                        return;
-                    }
-                    Object key = entry.getKey();
-                    Object value = entry.getValue();
-                    bb.b bVar = this.b;
-                    bVar.getClass();
-                    kotlin.jvm.internal.j.e(key, "key");
-                    ((LinkedHashMap) bVar.b).remove(key);
-                    int i11 = this.d;
-                    kotlin.jvm.internal.j.e(value, "value");
-                    this.d = i11 - 1;
-                } catch (Throwable th2) {
-                    throw th2;
+            for (int i13 = a2 - 1; i13 >= 0 && gVar.a[i13] == i10; i13--) {
+                if (kotlin.jvm.internal.i.a(obj, gVar.b[i13])) {
+                    return i13;
                 }
             }
+            return ~i12;
+        } catch (IndexOutOfBoundsException unused) {
+            throw new ConcurrentModificationException();
         }
-    }
-
-    public final String toString() {
-        String str;
-        synchronized (this.c) {
-            try {
-                int i10 = this.e;
-                int i11 = this.f + i10;
-                str = "LruCache[maxSize=" + this.a + ",hits=" + this.e + ",misses=" + this.f + ",hitRate=" + (i11 != 0 ? (i10 * 100) / i11 : 0) + "%]";
-            } catch (Throwable th2) {
-                throw th2;
-            }
-        }
-        return str;
     }
 }

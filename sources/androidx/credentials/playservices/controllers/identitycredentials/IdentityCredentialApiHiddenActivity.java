@@ -7,9 +7,9 @@ import android.os.Bundle;
 import android.os.ResultReceiver;
 import b1.a;
 import b1.d;
-import kotlin.jvm.internal.j;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class IdentityCredentialApiHiddenActivity extends Activity {
     public ResultReceiver a;
@@ -63,7 +63,7 @@ public class IdentityCredentialApiHiddenActivity extends Activity {
 
     @Override // android.app.Activity
     public final void onSaveInstanceState(Bundle outState) {
-        j.e(outState, "outState");
+        i.e(outState, "outState");
         outState.putBoolean("androidx.credentials.playservices.AWAITING_RESULT", this.b);
         super.onSaveInstanceState(outState);
     }

@@ -4,17 +4,17 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkCapabilities;
 import android.os.Build;
+import gd.d;
+import hd.q;
+import hd.r;
 import j$.util.concurrent.ConcurrentHashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Set;
-import kotlin.jvm.internal.j;
-import sc.d;
-import tc.q;
-import tc.r;
+import kotlin.jvm.internal.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzch {
     public zzch() {
@@ -27,7 +27,7 @@ public final class zzch {
             LinkedHashSet linkedHashSet = new LinkedHashSet();
             if (Build.VERSION.SDK_INT >= 23) {
                 Object systemService = context.getSystemService("connectivity");
-                j.c(systemService, "null cannot be cast to non-null type android.net.ConnectivityManager");
+                i.c(systemService, "null cannot be cast to non-null type android.net.ConnectivityManager");
                 ConnectivityManager connectivityManager = (ConnectivityManager) systemService;
                 NetworkCapabilities networkCapabilities = connectivityManager.getNetworkCapabilities(connectivityManager.getActiveNetwork());
                 if (networkCapabilities != null && networkCapabilities.hasTransport(1)) {

@@ -1,147 +1,69 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.graphics.Typeface;
+import android.text.TextPaint;
+import android.util.SparseArray;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class q3 implements org.telegram.ui.web.g0 {
-    public final /* synthetic */ r3 a;
+public final class q3 {
+    public TextPaint a;
+    public final SparseArray b = new SparseArray();
+    public final SparseArray c = new SparseArray();
+    public final SparseArray d = new SparseArray();
+    public final SparseArray e = new SparseArray();
+    public final SparseArray f = new SparseArray();
+    public final SparseArray g = new SparseArray();
+    public final SparseArray h = new SparseArray();
+    public final SparseArray i = new SparseArray();
+    public final SparseArray j = new SparseArray();
+    public final SparseArray k = new SparseArray();
+    public final SparseArray l = new SparseArray();
+    public final SparseArray m = new SparseArray();
+    public final SparseArray n = new SparseArray();
+    public final SparseArray o = new SparseArray();
+    public final SparseArray p = new SparseArray();
+    public final SparseArray q = new SparseArray();
+    public final SparseArray r = new SparseArray();
+    public final SparseArray s = new SparseArray();
+    public final SparseArray t = new SparseArray();
+    public final SparseArray u = new SparseArray();
+    public final SparseArray v = new SparseArray();
+    public final SparseArray w = new SparseArray();
+    public final SparseArray x = new SparseArray();
+    public final SparseArray y = new SparseArray();
+    public final SparseArray z = new SparseArray();
+    public final SparseArray A = new SparseArray();
 
-    public q3(r3 r3Var) {
-        this.a = r3Var;
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void b() {
-        a4 a4Var = this.a.H.H;
-        if (a4Var != null) {
-            a4Var.dismiss(true);
+    public static void a(i4 i4Var, SparseArray sparseArray) {
+        for (int i10 = 0; i10 < sparseArray.size(); i10++) {
+            int keyAt = sparseArray.keyAt(i10);
+            TextPaint textPaint = (TextPaint) sparseArray.valueAt(i10);
+            if (textPaint != null) {
+                if ((keyAt & 8) == 0 && (keyAt & 512) == 0) {
+                    textPaint.setColor(i4Var.b());
+                } else {
+                    textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.J6, false));
+                }
+            }
         }
     }
 
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ String g(boolean z4, boolean z10) {
-        return "UNSUPPORTED";
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ boolean h() {
-        return false;
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void j() {
-        r3 r3Var = this.a;
-        n4 n4Var = r3Var.H;
-        a4 a4Var = n4Var.H;
-        if (a4Var == null) {
-            if (n4Var.r0[0] == r3Var) {
-                n4Var.G();
-            }
+    public static void b(int i10, TextPaint textPaint, Typeface typeface, Typeface typeface2, Typeface typeface3, Typeface typeface4) {
+        int i11 = i10 & 1;
+        if (i11 != 0 && (i10 & 2) != 0) {
+            textPaint.setTypeface(typeface2);
+            return;
+        }
+        if (i11 != 0) {
+            textPaint.setTypeface(typeface3);
+        } else if ((i10 & 2) != 0) {
+            textPaint.setTypeface(typeface4);
         } else {
-            if (a4Var.h) {
+            if ((i10 & 4) != 0) {
                 return;
             }
-            a4Var.h = true;
-            a4Var.release();
-            a4Var.H.s();
+            textPaint.setTypeface(typeface);
         }
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void o(int i10, boolean z4) {
-        r3.a(this.a, z4, i10);
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void y() {
-        r3 r3Var = this.a;
-        n4 n4Var = r3Var.H;
-        if (n4Var.r0[0] == r3Var) {
-            n4Var.G();
-        }
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ rh.u0 z() {
-        return null;
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void a() {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void c() {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void d(TLRPC.Document document) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void e(String str) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void f(ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void i(boolean z4) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void k(boolean z4) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void m(int i10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void p(boolean z4) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void r(int i10) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void s() {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void t(boolean z4) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final /* synthetic */ void w(boolean z4) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void x(boolean z4) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void n(TLRPC.InputInvoice inputInvoice, String str, TLObject tLObject) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void u(int i10, int i11, boolean z4) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void v(TLRPC.User user, String str, ArrayList arrayList) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void q(boolean z4, boolean z10, String str, long j10, int i10, int i11, boolean z11, boolean z12) {
-    }
-
-    @Override // org.telegram.ui.web.g0
-    public final void l(boolean z4, boolean z10, String str, long j10, int i10, int i11, boolean z11, boolean z12, String str2) {
     }
 }

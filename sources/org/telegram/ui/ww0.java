@@ -1,18 +1,29 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ww0 {
-    public final int a;
-    public final int b;
-    public final CharSequence c;
-    public final String d;
-    public int e;
+public final /* synthetic */ class ww0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ PremiumPreviewFragment b;
 
-    public ww0(int i10, int i11, String str, String str2) {
+    public /* synthetic */ ww0(PremiumPreviewFragment premiumPreviewFragment, int i10) {
         this.a = i10;
-        this.b = i11;
-        this.c = str;
-        this.d = str2;
+        this.b = premiumPreviewFragment;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                this.b.j0();
+                break;
+            case 1:
+                PremiumPreviewFragment premiumPreviewFragment = this.b;
+                premiumPreviewFragment.a.postOnAnimation(new ww0(premiumPreviewFragment, 0));
+                break;
+            default:
+                this.b.getMediaDataController().loadPremiumPromo(false);
+                break;
+        }
     }
 }

@@ -1,50 +1,24 @@
 package v2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import b2.s;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public final Integer a;
-    public final Object b;
-    public final d c;
-    public final b d;
+public abstract class a extends k {
+    public final long v;
+    public final long w;
+    public o0.a x;
+    public int[] y;
 
-    public a(Integer num, Object obj, d dVar, b bVar) {
-        this.a = num;
-        if (obj == null) {
-            throw new NullPointerException("Null payload");
-        }
-        this.b = obj;
-        this.c = dVar;
-        this.d = bVar;
+    public a(g2.h hVar, g2.m mVar, s sVar, int i10, Object obj, long j3, long j10, long j11, long j12, long j13) {
+        super(hVar, mVar, sVar, i10, obj, j3, j10, j13);
+        this.v = j11;
+        this.w = j12;
     }
 
-    public final boolean equals(Object obj) {
-        b bVar;
-        if (obj == this) {
-            return true;
-        }
-        if (obj instanceof a) {
-            a aVar = (a) obj;
-            b bVar2 = aVar.d;
-            Integer num = aVar.a;
-            Integer num2 = this.a;
-            if (num2 != null ? num2.equals(num) : num == null) {
-                if (this.b.equals(aVar.b) && this.c.equals(aVar.c) && ((bVar = this.d) != null ? bVar.equals(bVar2) : bVar2 == null)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public final int hashCode() {
-        Integer num = this.a;
-        int hashCode = ((((((num == null ? 0 : num.hashCode()) ^ 1000003) * 1000003) ^ this.b.hashCode()) * 1000003) ^ this.c.hashCode()) * 1000003;
-        b bVar = this.d;
-        return (bVar != null ? bVar.hashCode() : 0) ^ hashCode;
-    }
-
-    public final String toString() {
-        return "Event{code=" + this.a + ", payload=" + this.b + ", priority=" + this.c + ", productData=" + this.d + "}";
+    public final int d(int i10) {
+        int[] iArr = this.y;
+        e2.d.h(iArr);
+        return iArr[i10];
     }
 }

@@ -1,83 +1,54 @@
 package org.telegram.ui;
 
-import android.os.Bundle;
-import java.util.ArrayList;
-import java.util.HashSet;
+import android.content.Context;
+import android.text.Editable;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.BillingController;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.tgnet.tl.TL_phone;
-import org.telegram.tgnet.tl.TL_update;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class vb0 extends a70 {
-    public vb0(yb0 yb0Var, Bundle bundle) {
-        super(bundle);
+public final class vb0 extends org.telegram.ui.Cells.i3 {
+    public boolean x;
+    public final /* synthetic */ xb0 y;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public vb0(xb0 xb0Var, Context context, String str, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, str, false, false, -1, f6Var);
+        this.y = xb0Var;
     }
 
-    public static void t0(vb0 vb0Var, TLObject tLObject, HashSet hashSet, TLRPC.TL_error tL_error) {
-        int i10 = 0;
-        if (!(tLObject instanceof TLRPC.Updates)) {
-            if (!(tLObject instanceof TL_phone.groupCall)) {
-                if (tL_error != null) {
-                    yb0.b().d0(tL_error, false);
-                    return;
-                }
-                return;
-            }
-            TL_phone.groupCall groupcall = (TL_phone.groupCall) tLObject;
-            MessagesController.getInstance(vb0Var.currentAccount).putUsers(groupcall.users, false);
-            MessagesController.getInstance(vb0Var.currentAccount).putChats(groupcall.chats, false);
-            if (LaunchActivity.D1 == null) {
-                return;
-            }
-            TLRPC.TL_inputGroupCall tL_inputGroupCall = new TLRPC.TL_inputGroupCall();
-            TLRPC.GroupCall groupCall = groupcall.call;
-            tL_inputGroupCall.id = groupCall.id;
-            tL_inputGroupCall.access_hash = groupCall.access_hash;
-            org.telegram.ui.Components.voip.f2.g(LaunchActivity.D1, vb0Var.currentAccount, tL_inputGroupCall, false, groupCall, hashSet);
+    @Override // org.telegram.ui.Cells.i3
+    public final void b(Editable editable) {
+        int i10;
+        if (this.x) {
             return;
         }
-        TLRPC.Updates updates = (TLRPC.Updates) tLObject;
-        MessagesController.getInstance(vb0Var.currentAccount).putUsers(updates.users, false);
-        MessagesController.getInstance(vb0Var.currentAccount).putChats(updates.chats, false);
-        ArrayList findUpdatesAndRemove = MessagesController.findUpdatesAndRemove(updates, TL_update.TL_updateGroupCall.class);
-        int size = findUpdatesAndRemove.size();
-        TLRPC.GroupCall groupCall2 = null;
-        while (i10 < size) {
-            Object obj = findUpdatesAndRemove.get(i10);
-            i10++;
-            groupCall2 = ((TL_update.TL_updateGroupCall) obj).call;
-        }
-        if (LaunchActivity.D1 == null || groupCall2 == null) {
+        boolean isEmpty = TextUtils.isEmpty(editable);
+        xb0 xb0Var = this.y;
+        if (isEmpty) {
+            xb0Var.s.setText("");
             return;
         }
-        TLRPC.TL_inputGroupCall tL_inputGroupCall2 = new TLRPC.TL_inputGroupCall();
-        tL_inputGroupCall2.id = groupCall2.id;
-        tL_inputGroupCall2.access_hash = groupCall2.access_hash;
-        org.telegram.ui.Components.voip.f2.g(LaunchActivity.D1, vb0Var.currentAccount, tL_inputGroupCall2, false, groupCall2, hashSet);
-    }
-
-    @Override // org.telegram.ui.a70
-    public final void n0(HashSet hashSet) {
-        if (hashSet.size() == 1) {
-            TLRPC.User user = getMessagesController().getUser((Long) hashSet.iterator().next());
-            TLRPC.UserFull userFull = getMessagesController().getUserFull(user.id);
-            if (userFull == null) {
-                TLRPC.TL_users_getFullUser tL_users_getFullUser = new TLRPC.TL_users_getFullUser();
-                tL_users_getFullUser.id = getMessagesController().getInputUser(user.id);
-                getConnectionsManager().sendRequest(tL_users_getFullUser, new no(29, this, user));
-                return;
+        try {
+            long parseLong = Long.parseLong(editable.toString());
+            if (parseLong > xb0Var.getMessagesController().starsSubscriptionAmountMax) {
+                this.x = true;
+                parseLong = xb0Var.getMessagesController().starsSubscriptionAmountMax;
+                setText(Long.toString(parseLong));
+                this.x = false;
             }
-            org.telegram.ui.Components.voip.f2.m(user, false, userFull.video_calls_available, getParentActivity(), userFull, getAccountInstance());
-        } else {
-            TL_phone.createConferenceCall createconferencecall = new TL_phone.createConferenceCall();
-            createconferencecall.random_id = Utilities.random.nextInt();
-            ConnectionsManager.getInstance(this.currentAccount).sendRequest(createconferencecall, new ub0(0, this, hashSet));
+            TextView textView = xb0Var.s;
+            int i11 = xb0Var.getConnectionsManager().isTestBackend() ? R.string.RequireMonthlyFeePriceTest5Minutes : R.string.RequireMonthlyFeePrice;
+            BillingController billingController = BillingController.getInstance();
+            i10 = ((org.telegram.ui.ActionBar.n2) xb0Var).currentAccount;
+            textView.setText(LocaleController.formatString(i11, billingController.formatCurrency((long) ((parseLong / 1000.0d) * MessagesController.getInstance(i10).starsUsdWithdrawRate1000), "USD")));
+        } catch (Exception e7) {
+            FileLog.e(e7);
         }
-        finishFragment();
     }
 }

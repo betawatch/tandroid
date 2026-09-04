@@ -1,32 +1,44 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.TLRPC;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class wf implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MessagesStorage b;
-    public final /* synthetic */ TLRPC.EncryptedChat c;
+    public final /* synthetic */ ArrayList c;
+    public final /* synthetic */ int d;
 
-    public /* synthetic */ wf(MessagesStorage messagesStorage, TLRPC.EncryptedChat encryptedChat, int i10) {
-        this.a = i10;
+    public /* synthetic */ wf(int i10, ArrayList arrayList, MessagesStorage messagesStorage) {
+        this.a = 1;
         this.b = messagesStorage;
-        this.c = encryptedChat;
+        this.c = arrayList;
+        this.d = i10;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$updateEncryptedChat$174(this.c);
+                this.b.lambda$putWallpapers$78(this.d, this.c);
                 break;
             case 1:
-                this.b.lambda$updateEncryptedChatLayer$173(this.c);
+                this.b.lambda$unpinAllDialogsExceptNew$247(this.c, this.d);
+                break;
+            case 2:
+                this.b.lambda$getDownloadQueue$185(this.d, this.c);
                 break;
             default:
-                this.b.lambda$updateEncryptedChatTTL$172(this.c);
+                this.b.lambda$putWidgetDialogs$166(this.d, this.c);
                 break;
         }
+    }
+
+    public /* synthetic */ wf(MessagesStorage messagesStorage, int i10, ArrayList arrayList, int i11) {
+        this.a = i11;
+        this.b = messagesStorage;
+        this.d = i10;
+        this.c = arrayList;
     }
 }

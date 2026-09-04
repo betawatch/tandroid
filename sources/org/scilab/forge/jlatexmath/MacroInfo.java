@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class MacroInfo {
     public static HashMap<String, MacroInfo> Commands = new HashMap<>(300);
@@ -25,12 +25,12 @@ public class MacroInfo {
     public Object invoke(TeXParser teXParser, String[] strArr) {
         try {
             return this.macro.invoke(this.pack, teXParser, strArr);
-        } catch (IllegalAccessException e) {
-            throw new ParseException("Problem with command " + strArr[0] + " at position " + teXParser.getLine() + ":" + teXParser.getCol() + "\n", e);
-        } catch (IllegalArgumentException e6) {
-            throw new ParseException("Problem with command " + strArr[0] + " at position " + teXParser.getLine() + ":" + teXParser.getCol() + "\n", e6);
-        } catch (InvocationTargetException e10) {
-            throw new ParseException("Problem with command " + strArr[0] + " at position " + teXParser.getLine() + ":" + teXParser.getCol() + "\n" + e10.getCause().getMessage());
+        } catch (IllegalAccessException e7) {
+            throw new ParseException("Problem with command " + strArr[0] + " at position " + teXParser.getLine() + ":" + teXParser.getCol() + "\n", e7);
+        } catch (IllegalArgumentException e10) {
+            throw new ParseException("Problem with command " + strArr[0] + " at position " + teXParser.getLine() + ":" + teXParser.getCol() + "\n", e10);
+        } catch (InvocationTargetException e11) {
+            throw new ParseException("Problem with command " + strArr[0] + " at position " + teXParser.getLine() + ":" + teXParser.getCol() + "\n" + e11.getCause().getMessage());
         }
     }
 
@@ -50,9 +50,9 @@ public class MacroInfo {
         this((Object) null, (Method) null, i10);
     }
 
-    public MacroInfo(String str, String str2, float f10) {
+    public MacroInfo(String str, String str2, float f7) {
         this.hasOptions = false;
-        int i10 = (int) f10;
+        int i10 = (int) f7;
         Class<?>[] clsArr = {TeXParser.class, String[].class};
         try {
             Object obj = Packages.get(str);
@@ -63,15 +63,15 @@ public class MacroInfo {
             this.pack = obj;
             this.macro = obj.getClass().getDeclaredMethod(str2, clsArr);
             this.nbArgs = i10;
-        } catch (Exception e) {
+        } catch (Exception e7) {
             System.err.println("Cannot load package " + str + ":");
-            System.err.println(e.toString());
+            System.err.println(e7.toString());
         }
     }
 
-    public MacroInfo(String str, String str2, float f10, float f11) {
+    public MacroInfo(String str, String str2, float f7, float f10) {
         this.hasOptions = false;
-        int i10 = (int) f10;
+        int i10 = (int) f7;
         Class<?>[] clsArr = {TeXParser.class, String[].class};
         try {
             Object obj = Packages.get(str);
@@ -83,10 +83,10 @@ public class MacroInfo {
             this.macro = obj.getClass().getDeclaredMethod(str2, clsArr);
             this.nbArgs = i10;
             this.hasOptions = true;
-            this.posOpts = (int) f11;
-        } catch (Exception e) {
+            this.posOpts = (int) f10;
+        } catch (Exception e7) {
             System.err.println("Cannot load package " + str + ":");
-            System.err.println(e.toString());
+            System.err.println(e7.toString());
         }
     }
 }

@@ -6,26 +6,26 @@ import android.util.Pair;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.common.api.q;
 import com.google.android.gms.common.data.DataHolder;
-import j7.q5;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Set;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicReference;
+import v7.e5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends q5 {
-    public static final o1 n = new o1(0);
+public abstract class BasePendingResult<R extends com.google.android.gms.common.api.q> extends e5 {
+    public static final n1 n = new n1(0);
     public final g b;
     public final WeakReference c;
-    public s5.q f;
+    public e6.r f;
     public com.google.android.gms.common.api.q h;
     public Status i;
     public volatile boolean j;
     public boolean k;
     public boolean l;
-    private p1 resultGuardian;
+    private o1 resultGuardian;
     public final Object a = new Object();
     public final CountDownLatch d = new CountDownLatch(1);
     public final ArrayList e = new ArrayList();
@@ -33,24 +33,24 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
     public boolean m = false;
 
     public BasePendingResult(com.google.android.gms.common.api.m mVar) {
-        this.b = new g(mVar != null ? mVar.c() : Looper.getMainLooper(), 5);
+        this.b = new g(mVar != null ? mVar.c() : Looper.getMainLooper(), 2);
         this.c = new WeakReference(mVar);
     }
 
     public static void m(com.google.android.gms.common.api.q qVar) {
-        if (qVar instanceof l8.e) {
+        if (qVar instanceof x8.e) {
             try {
-                DataHolder dataHolder = ((l8.e) qVar).a;
+                DataHolder dataHolder = ((x8.e) qVar).a;
                 if (dataHolder != null) {
                     dataHolder.close();
                 }
-            } catch (RuntimeException e) {
-                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(qVar)), e);
+            } catch (RuntimeException e7) {
+                Log.w("BasePendingResult", "Unable to release ".concat(String.valueOf(qVar)), e7);
             }
         }
     }
 
-    @Override // j7.q5
+    @Override // v7.e5
     public final void b(com.google.android.gms.common.api.o oVar) {
         synchronized (this.a) {
             try {
@@ -94,11 +94,11 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
     }
 
     public final boolean f() {
-        boolean z4;
+        boolean z10;
         synchronized (this.a) {
-            z4 = this.k;
+            z10 = this.k;
         }
-        return z4;
+        return z10;
     }
 
     public final boolean g() {
@@ -115,8 +115,8 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
                     return;
                 }
                 g();
-                b6.m.j("Results have already been set", !g());
-                b6.m.j("Result has already been consumed", !this.j);
+                n6.l.j("Results have already been set", !g());
+                n6.l.j("Result has already been consumed", !this.j);
                 k(qVar);
             } catch (Throwable th2) {
                 throw th2;
@@ -124,20 +124,20 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         }
     }
 
-    public final void i(s5.q qVar) {
+    public final void i(e6.r rVar) {
         synchronized (this.a) {
             try {
-                b6.m.j("Result has already been consumed.", !this.j);
+                n6.l.j("Result has already been consumed.", !this.j);
                 if (f()) {
                     return;
                 }
                 if (g()) {
                     g gVar = this.b;
-                    com.google.android.gms.common.api.q j10 = j();
+                    com.google.android.gms.common.api.q j3 = j();
                     gVar.getClass();
-                    gVar.sendMessage(gVar.obtainMessage(1, new Pair(qVar, j10)));
+                    gVar.sendMessage(gVar.obtainMessage(1, new Pair(rVar, j3)));
                 } else {
-                    this.f = qVar;
+                    this.f = rVar;
                 }
             } catch (Throwable th2) {
                 throw th2;
@@ -148,18 +148,18 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
     public final com.google.android.gms.common.api.q j() {
         com.google.android.gms.common.api.q qVar;
         synchronized (this.a) {
-            b6.m.j("Result has already been consumed.", !this.j);
-            b6.m.j("Result is not ready.", g());
+            n6.l.j("Result has already been consumed.", !this.j);
+            n6.l.j("Result is not ready.", g());
             qVar = this.h;
             this.h = null;
             this.f = null;
             this.j = true;
         }
-        g1 g1Var = (g1) this.g.getAndSet(null);
-        if (g1Var != null) {
-            ((Set) g1Var.a.a).remove(this);
+        f1 f1Var = (f1) this.g.getAndSet(null);
+        if (f1Var != null) {
+            ((Set) f1Var.a.a).remove(this);
         }
-        b6.m.h(qVar);
+        n6.l.h(qVar);
         return qVar;
     }
 
@@ -170,13 +170,13 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
         if (this.k) {
             this.f = null;
         } else {
-            s5.q qVar2 = this.f;
-            if (qVar2 != null) {
+            e6.r rVar = this.f;
+            if (rVar != null) {
                 g gVar = this.b;
                 gVar.removeMessages(2);
-                gVar.sendMessage(gVar.obtainMessage(1, new Pair(qVar2, j())));
-            } else if (this.h instanceof l8.e) {
-                this.resultGuardian = new p1(this);
+                gVar.sendMessage(gVar.obtainMessage(1, new Pair(rVar, j())));
+            } else if (this.h instanceof x8.e) {
+                this.resultGuardian = new o1(this);
             }
         }
         ArrayList arrayList = this.e;
@@ -188,10 +188,10 @@ public abstract class BasePendingResult<R extends com.google.android.gms.common.
     }
 
     public final void l() {
-        boolean z4 = true;
+        boolean z10 = true;
         if (!this.m && !((Boolean) n.get()).booleanValue()) {
-            z4 = false;
+            z10 = false;
         }
-        this.m = z4;
+        this.m = z10;
     }
 }

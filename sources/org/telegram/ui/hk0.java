@@ -1,39 +1,112 @@
 package org.telegram.ui;
 
-import java.util.ArrayList;
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.RectF;
+import android.graphics.drawable.Drawable;
+import android.text.TextPaint;
+import android.view.View;
+import android.view.animation.OvershootInterpolator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class hk0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ik0 b;
-    public final /* synthetic */ String c;
+public final class hk0 extends View {
+    public final Paint a;
+    public final Paint b;
+    public final org.telegram.ui.Components.e6 c;
+    public final org.telegram.ui.Components.p6 d;
+    public int e;
+    public float f;
+    public ValueAnimator h;
 
-    public /* synthetic */ hk0(ik0 ik0Var, String str, int i10) {
-        this.a = i10;
-        this.b = ik0Var;
-        this.c = str;
+    public hk0(Context context) {
+        super(context);
+        Paint paint = new Paint(1);
+        this.a = paint;
+        Paint paint2 = new Paint(1);
+        this.b = paint2;
+        org.telegram.ui.Components.pr prVar = org.telegram.ui.Components.pr.h;
+        this.c = new org.telegram.ui.Components.e6(this, 0L, 320L, prVar);
+        org.telegram.ui.Components.p6 p6Var = new org.telegram.ui.Components.p6(false, true, true, false);
+        this.d = p6Var;
+        this.f = 1.0f;
+        paint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Oh, false));
+        paint2.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.h5, false));
+        paint2.setStyle(Paint.Style.STROKE);
+        paint2.setStrokeWidth(AndroidUtilities.dp(4.0f));
+        p6Var.setCallback(this);
+        p6Var.k(0.35f, 200L, prVar);
+        Paint.Style style = Paint.Style.FILL_AND_STROKE;
+        TextPaint textPaint = p6Var.a;
+        textPaint.setStyle(style);
+        textPaint.setStrokeWidth(AndroidUtilities.dp(0.24f));
+        textPaint.setStrokeJoin(Paint.Join.ROUND);
+        p6Var.t(AndroidUtilities.dp(13.3f));
+        p6Var.r(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.Sh, false));
+        p6Var.G = AndroidUtilities.dp(64.0f);
+        p6Var.b = 1;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ik0 ik0Var = this.b;
-                String str = this.c;
-                ik0Var.getClass();
-                AndroidUtilities.runOnUIThread(new hk0(ik0Var, str, 1));
-                break;
-            default:
-                ik0 ik0Var2 = this.b;
-                String str2 = this.c;
-                tf.j1 j1Var = ik0Var2.h;
-                int i10 = ik0Var2.n.s;
-                j1Var.g(str2, true, (i10 == 1 || i10 == 3) ? false : true, true, false, 0L, false, 0, 0);
-                Utilities.searchQueue.postRunnable(new jf0(ik0Var2, str2, new ArrayList(ik0Var2.n.w), 8));
-                break;
+    public final boolean a(int i10) {
+        int i11 = this.e;
+        if (i11 == i10) {
+            return false;
         }
+        boolean z10 = i11 < i10;
+        this.e = i10;
+        String str = "";
+        if (i10 > 0) {
+            str = "" + this.e;
+        }
+        this.d.q(str, true, true);
+        if (z10) {
+            ValueAnimator valueAnimator = this.h;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+                this.h = null;
+            }
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(0.0f, 1.0f);
+            this.h = ofFloat;
+            ofFloat.addUpdateListener(new c3(this, 18));
+            this.h.addListener(new gk0(this, 0));
+            this.h.setInterpolator(new OvershootInterpolator(2.0f));
+            this.h.setDuration(200L);
+            this.h.start();
+        }
+        return z10;
+    }
+
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        float d = this.c.d(this.e > 0 ? 1.0f : 0.0f, false);
+        canvas.save();
+        float f7 = this.f;
+        canvas.scale(f7 * d, f7 * d, getWidth() / 2.0f, getHeight() / 2.0f);
+        org.telegram.ui.Components.p6 p6Var = this.d;
+        float dpf2 = AndroidUtilities.dpf2(12.66f) + p6Var.d();
+        float dpf22 = AndroidUtilities.dpf2(20.3f);
+        RectF rectF = AndroidUtilities.rectTmp;
+        rectF.set((getWidth() - dpf2) / 2.0f, (getHeight() - dpf22) / 2.0f, (getWidth() + dpf2) / 2.0f, (getHeight() + dpf22) / 2.0f);
+        int i10 = (int) (d * 255.0f);
+        Paint paint = this.b;
+        paint.setAlpha(i10);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), paint);
+        Paint paint2 = this.a;
+        paint2.setAlpha(i10);
+        canvas.drawRoundRect(rectF, AndroidUtilities.dp(30.0f), AndroidUtilities.dp(30.0f), paint2);
+        canvas.save();
+        canvas.translate(0.0f, -AndroidUtilities.dp(1.0f));
+        p6Var.setBounds(0, 0, getWidth(), getHeight());
+        p6Var.draw(canvas);
+        canvas.restore();
+        canvas.restore();
+    }
+
+    @Override // android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

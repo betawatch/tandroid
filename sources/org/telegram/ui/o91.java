@@ -1,62 +1,33 @@
 package org.telegram.ui;
 
+import android.content.Context;
 import android.view.View;
-import android.widget.FrameLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class o91 extends org.telegram.ui.Components.c81 {
-    public final /* synthetic */ boolean a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ FrameLayout d;
-    public final /* synthetic */ oa1 e;
+public final /* synthetic */ class o91 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Context b;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 c;
 
-    public o91(oa1 oa1Var, boolean z4, boolean z10, boolean z11, FrameLayout frameLayout) {
-        this.e = oa1Var;
-        this.a = z4;
-        this.b = z10;
-        this.c = z11;
-        this.d = frameLayout;
+    public /* synthetic */ o91(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var) {
+        this.a = i10;
+        this.b = context;
+        this.c = f6Var;
     }
 
-    @Override // org.telegram.ui.Components.c81
-    public final View d(int i10) {
-        oa1 oa1Var = this.e;
-        if (oa1Var.i0) {
-            return oa1Var.g0;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                new zh.l7(this.b, this.c).show();
+                break;
+            case 1:
+                new zh.l7(this.b, this.c).show();
+                break;
+            default:
+                new zh.l7(this.b, this.c).show();
+                break;
         }
-        boolean z4 = this.a;
-        FrameLayout frameLayout = this.d;
-        if (z4) {
-            if (i10 == 0) {
-                return frameLayout;
-            }
-            i10--;
-        }
-        if (this.b) {
-            if (i10 == 0) {
-                return oa1Var.g0;
-            }
-            i10--;
-        }
-        return (this.c && i10 == 0) ? oa1Var.h0 : frameLayout;
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final int e() {
-        if (this.e.i0) {
-            return 1;
-        }
-        return (this.a ? 1 : 0) + (this.b ? 1 : 0) + (this.c ? 1 : 0);
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final int h(int i10) {
-        return i10;
-    }
-
-    @Override // org.telegram.ui.Components.c81
-    public final void b(View view, int i10, int i11) {
     }
 }

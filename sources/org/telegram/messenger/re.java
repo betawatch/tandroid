@@ -1,26 +1,30 @@
 package org.telegram.messenger;
 
-import org.telegram.messenger.MessagesController;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class re implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ MessagesController.DialogPhotos b;
+    public final /* synthetic */ MessagesStorage b;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ String e;
 
-    public /* synthetic */ re(MessagesController.DialogPhotos dialogPhotos, int i10) {
+    public /* synthetic */ re(MessagesStorage messagesStorage, long j3, long j10, String str, int i10) {
         this.a = i10;
-        this.b = dialogPhotos;
+        this.b = messagesStorage;
+        this.c = j3;
+        this.d = j10;
+        this.e = str;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadCache$5();
+                this.b.lambda$updateRanksInLastMessages$45(this.c, this.d, this.e);
                 break;
             default:
-                this.b.lambda$saveCache$6();
+                this.b.lambda$updateRanksInLastMessages$46(this.c, this.d, this.e);
                 break;
         }
     }

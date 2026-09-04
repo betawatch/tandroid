@@ -1,6 +1,6 @@
 package org.scilab.forge.jlatexmath;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class RaiseAtom extends Atom {
     private Atom base;
@@ -11,14 +11,14 @@ public class RaiseAtom extends Atom {
     private float r;
     private int runit;
 
-    public RaiseAtom(Atom atom, int i10, float f10, int i11, float f11, int i12, float f12) {
+    public RaiseAtom(Atom atom, int i10, float f7, int i11, float f10, int i12, float f11) {
         this.base = atom;
         this.runit = i10;
-        this.r = f10;
+        this.r = f7;
         this.hunit = i11;
-        this.h = f11;
+        this.h = f10;
         this.dunit = i12;
-        this.d = f12;
+        this.d = f11;
     }
 
     @Override // org.scilab.forge.jlatexmath.Atom

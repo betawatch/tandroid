@@ -1,24 +1,29 @@
 package f5;
 
-import j3.n0;
-import o4.s0;
+import java.nio.ByteBuffer;
+import java.nio.channels.WritableByteChannel;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class n {
-    public final int a;
-    public final s0 b;
-    public final int c;
-    public final n0 d;
-
-    public n(int i10, s0 s0Var, int i11) {
-        this.a = i10;
-        this.b = s0Var;
-        this.c = i11;
-        this.d = s0Var.d[i11];
+public final class n extends com.googlecode.mp4parser.b {
+    public n() {
+        super("stsd");
     }
 
-    public abstract int a();
+    @Override // com.googlecode.mp4parser.b, f5.b
+    public final void getBox(WritableByteChannel writableByteChannel) {
+        writableByteChannel.write(d());
+        ByteBuffer allocate = ByteBuffer.allocate(8);
+        e5.b.r(0, allocate);
+        e5.b.q(0, allocate);
+        allocate.putInt(this.b.size());
+        writableByteChannel.write((ByteBuffer) allocate.rewind());
+        c(writableByteChannel);
+    }
 
-    public abstract boolean b(n nVar);
+    @Override // com.googlecode.mp4parser.b, f5.b
+    public final long getSize() {
+        long b10 = b();
+        return 8 + b10 + (b10 + 16 >= 4294967296L ? 16 : 8);
+    }
 }

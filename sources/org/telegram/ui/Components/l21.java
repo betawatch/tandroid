@@ -2,9 +2,9 @@ package org.telegram.ui.Components;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class l21 extends f2.z0 {
+public final class l21 extends s4.s0 {
     public final /* synthetic */ int a;
     public final /* synthetic */ w21 b;
 
@@ -13,7 +13,7 @@ public final class l21 extends f2.z0 {
         this.b = w21Var;
     }
 
-    @Override // f2.z0
+    @Override // s4.s0
     public final void b(RecyclerView recyclerView, int i10, int i11) {
         switch (this.a) {
             case 0:

@@ -1,24 +1,35 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class mp implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ op b;
+    public final /* synthetic */ xp b;
 
-    public /* synthetic */ mp(op opVar, int i10) {
+    public /* synthetic */ mp(xp xpVar, int i10) {
         this.a = i10;
-        this.b = opVar;
+        this.b = xpVar;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.x.d.M = false;
+                xp xpVar = this.b;
+                org.telegram.ui.ActionBar.b2 b2Var = xpVar.r;
+                if (b2Var != null) {
+                    b2Var.setOnCancelListener(new pg(xpVar, 2));
+                    xpVar.showDialog(xpVar.r);
+                    break;
+                }
+                break;
+            case 1:
+                xp xpVar2 = this.b;
+                xpVar2.getMessagesController().loadFullChat(xpVar2.E, 0, true);
                 break;
             default:
-                this.b.x.d.M = false;
+                xp xpVar3 = this.b;
+                xpVar3.getMessagesController().loadFullChat(xpVar3.E, 0, true);
                 break;
         }
     }

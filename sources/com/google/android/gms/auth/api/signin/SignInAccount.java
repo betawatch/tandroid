@@ -2,13 +2,13 @@ package com.google.android.gms.auth.api.signin;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import b6.m;
-import c6.a;
 import com.google.android.gms.common.internal.ReflectedParcelable;
-import j7.f5;
-import n5.d;
+import n6.l;
+import o6.a;
+import w7.e0;
+import z5.d;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class SignInAccount extends a implements ReflectedParcelable {
     public static final Parcelable.Creator<SignInAccount> CREATOR = new d(2);
@@ -18,18 +18,18 @@ public class SignInAccount extends a implements ReflectedParcelable {
 
     public SignInAccount(String str, GoogleSignInAccount googleSignInAccount, String str2) {
         this.b = googleSignInAccount;
-        m.g(str, "8.3 and 8.4 SDKs require non-null email");
+        l.g(str, "8.3 and 8.4 SDKs require non-null email");
         this.a = str;
-        m.g(str2, "8.3 and 8.4 SDKs require non-null userId");
+        l.g(str2, "8.3 and 8.4 SDKs require non-null userId");
         this.c = str2;
     }
 
     @Override // android.os.Parcelable
     public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.l(parcel, 4, this.a);
-        f5.k(parcel, 7, this.b, i10);
-        f5.l(parcel, 8, this.c);
-        f5.r(parcel, q10);
+        int q6 = e0.q(parcel, 20293);
+        e0.l(parcel, 4, this.a);
+        e0.k(parcel, 7, this.b, i10);
+        e0.l(parcel, 8, this.c);
+        e0.r(parcel, q6);
     }
 }

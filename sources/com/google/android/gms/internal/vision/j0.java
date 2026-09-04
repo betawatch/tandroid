@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.vision;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public enum j0 implements i1 {
     b(0),
@@ -16,9 +16,9 @@ public enum j0 implements i1 {
     w(10),
     x(11),
     y(12),
-    B(13),
-    C(14),
-    D(16);
+    E(13),
+    F(14),
+    G(16);
 
     public final int a;
 

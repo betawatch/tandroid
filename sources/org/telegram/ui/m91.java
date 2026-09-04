@@ -1,10 +1,22 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import android.app.Activity;
+import android.content.Context;
+import android.view.View;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class m91 extends f2.l {
-    @Override // f2.l
-    public final long K(long j10, long j11, long j12) {
-        return j10;
+public final class m91 implements View.OnClickListener {
+    public final /* synthetic */ Context a;
+
+    public m91(Activity activity) {
+        this.a = activity;
+    }
+
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        of.f.s(this.a, LocaleController.getString(R.string.SponsoredMessageAlertLearnMoreUrl));
     }
 }

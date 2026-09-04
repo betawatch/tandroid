@@ -16,59 +16,46 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Future;
 import java.util.concurrent.locks.Lock;
-import m.s3;
+import m.p3;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class g0 implements k0 {
-    public b6.i B;
-    public boolean C;
-    public boolean D;
-    public final s3 E;
-    public final Map F;
-    public final a8.j G;
+    public n6.h E;
+    public boolean F;
+    public boolean G;
+    public final p3 H;
+    public final Map I;
+    public final a8.d J;
     public final m0 a;
     public final Lock b;
     public final Context c;
-    public final y5.e d;
-    public y5.a e;
+    public final k6.e d;
+    public k6.a e;
     public int f;
     public int n;
-    public c8.a v;
+    public o8.a v;
     public boolean w;
     public boolean x;
     public boolean y;
     public int h = 0;
     public final Bundle r = new Bundle();
     public final HashSet s = new HashSet();
-    public final ArrayList H = new ArrayList();
+    public final ArrayList K = new ArrayList();
 
-    public g0(m0 m0Var, s3 s3Var, Map map, y5.e eVar, a8.j jVar, Lock lock, Context context) {
+    public g0(m0 m0Var, p3 p3Var, Map map, k6.e eVar, a8.d dVar, Lock lock, Context context) {
         this.a = m0Var;
-        this.E = s3Var;
-        this.F = map;
+        this.H = p3Var;
+        this.I = map;
         this.d = eVar;
-        this.G = jVar;
+        this.J = dVar;
         this.b = lock;
         this.c = context;
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final boolean D() {
-        ArrayList arrayList = this.H;
-        int size = arrayList.size();
-        for (int i10 = 0; i10 < size; i10++) {
-            ((Future) arrayList.get(i10)).cancel(true);
-        }
-        arrayList.clear();
-        b(true);
-        this.a.h();
-        return true;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.k0
-    public final e H(e eVar) {
+    public final e A(e eVar) {
         throw new IllegalStateException("GoogleApiClient is not connected yet.");
     }
 
@@ -77,66 +64,78 @@ public final class g0 implements k0 {
         m0 m0Var = this.a;
         j0 j0Var = m0Var.o;
         HashMap hashMap = m0Var.i;
-        j0Var.C = Collections.EMPTY_SET;
+        j0Var.F = Collections.EMPTY_SET;
         Iterator it = this.s.iterator();
         while (it.hasNext()) {
             com.google.android.gms.common.api.d dVar = (com.google.android.gms.common.api.d) it.next();
             if (!hashMap.containsKey(dVar)) {
-                hashMap.put(dVar, new y5.a(17, null));
+                hashMap.put(dVar, new k6.a(17, null));
             }
         }
     }
 
-    public final void b(boolean z4) {
-        c8.a aVar = this.v;
+    public final void b(boolean z10) {
+        o8.a aVar = this.v;
         if (aVar != null) {
-            if (aVar.h() && z4) {
+            if (aVar.j() && z10) {
                 aVar.getClass();
                 try {
-                    c8.e eVar = (c8.e) aVar.u();
-                    Integer num = aVar.U;
-                    b6.m.h(num);
+                    o8.e eVar = (o8.e) aVar.u();
+                    Integer num = aVar.X;
+                    n6.l.h(num);
                     int intValue = num.intValue();
-                    Parcel G0 = eVar.G0();
-                    G0.writeInt(intValue);
-                    eVar.H0(G0, 7);
+                    Parcel I0 = eVar.I0();
+                    I0.writeInt(intValue);
+                    eVar.J0(I0, 7);
                 } catch (RemoteException unused) {
                     Log.w("SignInClientImpl", "Remote service probably died when clearAccountFromSessionStore is called");
                 }
             }
             aVar.disconnect();
-            b6.m.h(this.E);
-            this.B = null;
+            n6.l.h(this.H);
+            this.E = null;
         }
     }
 
-    public final void c() {
+    @Override // com.google.android.gms.common.api.internal.k0
+    public final void c(Bundle bundle) {
+        if (i(1)) {
+            if (bundle != null) {
+                this.r.putAll(bundle);
+            }
+            if (j()) {
+                d();
+            }
+        }
+    }
+
+    public final void d() {
         m0 m0Var = this.a;
         m0Var.a.lock();
         try {
             m0Var.o.h();
             m0Var.m = new a0(m0Var);
-            m0Var.m.w();
+            m0Var.m.x();
             m0Var.b.signalAll();
             m0Var.a.unlock();
-            n0.a.execute(new androidx.activity.i(this, 10));
-            c8.a aVar = this.v;
+            n0.a.execute(new androidx.activity.i(this, 12));
+            o8.a aVar = this.v;
             if (aVar != null) {
-                if (this.C) {
-                    b6.i iVar = this.B;
-                    b6.m.h(iVar);
-                    boolean z4 = this.D;
+                if (this.F) {
+                    n6.h hVar = this.E;
+                    n6.l.h(hVar);
+                    boolean z10 = this.G;
                     aVar.getClass();
                     try {
-                        c8.e eVar = (c8.e) aVar.u();
-                        Integer num = aVar.U;
-                        b6.m.h(num);
+                        o8.e eVar = (o8.e) aVar.u();
+                        Integer num = aVar.X;
+                        n6.l.h(num);
                         int intValue = num.intValue();
-                        Parcel G0 = eVar.G0();
-                        y6.a.d(G0, iVar);
-                        G0.writeInt(intValue);
-                        G0.writeInt(z4 ? 1 : 0);
-                        eVar.H0(G0, 9);
+                        Parcel I0 = eVar.I0();
+                        k7.a.d(I0, hVar);
+                        I0.writeInt(intValue);
+                        I0.writeInt(z10 ? 1 : 0);
+                        eVar.J0(I0, 9);
                     } catch (RemoteException unused) {
                         Log.w("SignInClientImpl", "Remote service probably died when saveDefaultAccount is called");
                     }
@@ -146,39 +145,27 @@ public final class g0 implements k0 {
             Iterator it = this.a.i.keySet().iterator();
             while (it.hasNext()) {
                 com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) this.a.f.get((com.google.android.gms.common.api.d) it.next());
-                b6.m.h(cVar);
+                n6.l.h(cVar);
                 cVar.disconnect();
             }
-            this.a.p.o(this.r.isEmpty() ? null : this.r);
+            this.a.p.v(this.r.isEmpty() ? null : this.r);
         } catch (Throwable th2) {
             m0Var.a.unlock();
             throw th2;
         }
     }
 
-    @Override // com.google.android.gms.common.api.internal.k0
-    public final void d(Bundle bundle) {
-        if (i(1)) {
-            if (bundle != null) {
-                this.r.putAll(bundle);
-            }
-            if (j()) {
-                c();
-            }
-        }
-    }
-
-    public final void e(y5.a aVar) {
-        ArrayList arrayList = this.H;
+    public final void e(k6.a aVar) {
+        ArrayList arrayList = this.K;
         int size = arrayList.size();
         for (int i10 = 0; i10 < size; i10++) {
             ((Future) arrayList.get(i10)).cancel(true);
         }
         arrayList.clear();
-        b(!aVar.e());
+        b(!aVar.b());
         m0 m0Var = this.a;
         m0Var.h();
-        m0Var.p.v(aVar);
+        m0Var.p.m(aVar);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:6:0x0017, code lost:
@@ -188,9 +175,9 @@ public final class g0 implements k0 {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void f(y5.a aVar, com.google.android.gms.common.api.e eVar, boolean z4) {
+    public final void g(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
         eVar.a.getClass();
-        if (z4 && !aVar.e()) {
+        if (z10 && !aVar.b()) {
         }
         if (this.e == null || Integer.MAX_VALUE < this.f) {
             this.e = aVar;
@@ -199,7 +186,7 @@ public final class g0 implements k0 {
         this.a.i.put(eVar.b, aVar);
     }
 
-    public final void g() {
+    public final void h() {
         if (this.n != 0) {
             return;
         }
@@ -214,13 +201,13 @@ public final class g0 implements k0 {
                 if (!m0Var.i.containsKey(dVar)) {
                     arrayList.add((com.google.android.gms.common.api.c) map2.get(dVar));
                 } else if (j()) {
-                    c();
+                    d();
                 }
             }
             if (arrayList.isEmpty()) {
                 return;
             }
-            this.H.add(n0.a.submit(new d0(this, arrayList, 1)));
+            this.K.add(n0.a.submit(new d0(this, arrayList, 1)));
         }
     }
 
@@ -235,18 +222,18 @@ public final class g0 implements k0 {
         printWriter.append((CharSequence) "").append((CharSequence) "mContext=").println(j0Var.f);
         printWriter.append((CharSequence) "").append((CharSequence) "mResuming=").print(j0Var.r);
         printWriter.append((CharSequence) " mWorkQueue.size()=").print(j0Var.n.size());
-        printWriter.append((CharSequence) " mUnconsumedApiCalls.size()=").println(((Set) j0Var.J.a).size());
+        printWriter.append((CharSequence) " mUnconsumedApiCalls.size()=").println(((Set) j0Var.M.a).size());
         x0 x0Var = j0Var.d;
         if (x0Var != null) {
-            x0Var.f("", null, printWriter, null);
+            x0Var.g("", null, printWriter, null);
         }
         Log.w("GACConnecting", stringWriter.toString());
         Log.w("GACConnecting", "Unexpected callback in ".concat(toString()));
         Log.w("GACConnecting", "mRemainingConnections=" + this.n);
-        StringBuilder t6 = android.support.v4.media.a.t("GoogleApiClient connecting is in step ", this.h != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN", " but received callback for step ");
-        t6.append(i10 != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN");
-        Log.e("GACConnecting", t6.toString(), new Exception());
-        e(new y5.a(8, null));
+        StringBuilder v = a4.a.v("GoogleApiClient connecting is in step ", this.h != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN", " but received callback for step ");
+        v.append(i10 != 0 ? "STEP_GETTING_REMOTE_SERVICE" : "STEP_SERVICE_BINDINGS_AND_SIGN_IN");
+        Log.e("GACConnecting", v.toString(), new Exception());
+        e(new k6.a(8, null));
         return false;
     }
 
@@ -258,7 +245,7 @@ public final class g0 implements k0 {
             return false;
         }
         if (i10 >= 0) {
-            y5.a aVar = this.e;
+            k6.a aVar = this.e;
             if (aVar == null) {
                 return true;
             }
@@ -273,34 +260,34 @@ public final class g0 implements k0 {
         printWriter.append((CharSequence) "").append((CharSequence) "mContext=").println(j0Var.f);
         printWriter.append((CharSequence) "").append((CharSequence) "mResuming=").print(j0Var.r);
         printWriter.append((CharSequence) " mWorkQueue.size()=").print(j0Var.n.size());
-        printWriter.append((CharSequence) " mUnconsumedApiCalls.size()=").println(((Set) j0Var.J.a).size());
+        printWriter.append((CharSequence) " mUnconsumedApiCalls.size()=").println(((Set) j0Var.M.a).size());
         x0 x0Var = j0Var.d;
         if (x0Var != null) {
-            x0Var.f("", null, printWriter, null);
+            x0Var.g("", null, printWriter, null);
         }
         Log.w("GACConnecting", stringWriter.toString());
         Log.wtf("GACConnecting", "GoogleApiClient received too many callbacks for the given step. Clients may be in an unexpected state; GoogleApiClient will now disconnect.", new Exception());
-        e(new y5.a(8, null));
+        e(new k6.a(8, null));
         return false;
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void k(y5.a aVar, com.google.android.gms.common.api.e eVar, boolean z4) {
+    public final void u(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10) {
         if (i(1)) {
-            f(aVar, eVar, z4);
+            g(aVar, eVar, z10);
             if (j()) {
-                c();
+                d();
             }
         }
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void t(int i10) {
-        e(new y5.a(8, null));
+    public final void w(int i10) {
+        e(new k6.a(8, null));
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void w() {
+    public final void x() {
         m0 m0Var = this.a;
         HashMap hashMap = m0Var.i;
         j0 j0Var = m0Var.o;
@@ -311,12 +298,12 @@ public final class g0 implements k0 {
         this.h = 0;
         this.w = true;
         this.y = false;
-        this.C = false;
+        this.F = false;
         HashMap hashMap2 = new HashMap();
-        Map map2 = this.F;
+        Map map2 = this.I;
         for (com.google.android.gms.common.api.e eVar : map2.keySet()) {
             com.google.android.gms.common.api.c cVar = (com.google.android.gms.common.api.c) map.get(eVar.b);
-            b6.m.h(cVar);
+            n6.l.h(cVar);
             com.google.android.gms.common.api.c cVar2 = cVar;
             eVar.a.getClass();
             boolean booleanValue = ((Boolean) map2.get(eVar)).booleanValue();
@@ -331,18 +318,31 @@ public final class g0 implements k0 {
             hashMap2.put(cVar2, new b0(this, eVar, booleanValue));
         }
         if (this.x) {
-            s3 s3Var = this.E;
-            b6.m.h(s3Var);
-            b6.m.h(this.G);
-            s3Var.h = Integer.valueOf(System.identityHashCode(j0Var));
+            p3 p3Var = this.H;
+            n6.l.h(p3Var);
+            n6.l.h(this.J);
+            p3Var.h = Integer.valueOf(System.identityHashCode(j0Var));
             f0 f0Var = new f0(this);
-            this.v = (c8.a) this.G.a(this.c, j0Var.h, s3Var, (b8.a) s3Var.f, f0Var, f0Var);
+            this.v = (o8.a) this.J.a(this.c, j0Var.h, p3Var, (n8.a) p3Var.f, f0Var, f0Var);
         }
         this.n = map.size();
-        this.H.add(n0.a.submit(new d0(this, hashMap2, 0)));
+        this.K.add(n0.a.submit(new d0(this, hashMap2, 0)));
     }
 
     @Override // com.google.android.gms.common.api.internal.k0
-    public final void h() {
+    public final boolean z() {
+        ArrayList arrayList = this.K;
+        int size = arrayList.size();
+        for (int i10 = 0; i10 < size; i10++) {
+            ((Future) arrayList.get(i10)).cancel(true);
+        }
+        arrayList.clear();
+        b(true);
+        this.a.h();
+        return true;
+    }
+
+    @Override // com.google.android.gms.common.api.internal.k0
+    public final void f() {
     }
 }

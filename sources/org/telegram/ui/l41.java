@@ -1,66 +1,39 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.transition.Fade;
-import android.transition.TransitionValues;
-import android.view.View;
-import android.view.ViewGroup;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class l41 extends Fade {
+public final /* synthetic */ class l41 implements ValueAnimator.AnimatorUpdateListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ SecretMediaViewer d;
+    public final /* synthetic */ o41 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l41(SecretMediaViewer secretMediaViewer, boolean z4, boolean z10, int i10) {
-        super(1);
+    public /* synthetic */ l41(o41 o41Var, int i10) {
         this.a = i10;
-        switch (i10) {
-            case 1:
-                this.d = secretMediaViewer;
-                this.b = z4;
-                this.c = z10;
-                super(2);
-                break;
-            default:
-                this.d = secretMediaViewer;
-                this.b = z4;
-                this.c = z10;
-                break;
-        }
+        this.b = o41Var;
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
         switch (this.a) {
             case 0:
-                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-                if (this.b && !this.c && view == this.d.W) {
-                    onAppear.addListener(new ss0(this, 16));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new o11(this, 4));
-                }
-                return onAppear;
-            default:
-                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-        }
-    }
-
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
+                o41 o41Var = this.b;
+                o41Var.getClass();
+                o41Var.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                o41Var.g();
+                break;
             case 1:
-                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-                if (!this.b && this.c && view == this.d.W) {
-                    onDisappear.addListener(new ss0(this, 17));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new o11(this, 5));
-                }
-                return onDisappear;
+                o41 o41Var2 = this.b;
+                o41Var2.getClass();
+                o41Var2.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                o41Var2.g();
+                break;
             default:
-                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                o41 o41Var3 = this.b;
+                o41Var3.getClass();
+                o41Var3.e = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                o41Var3.g();
+                break;
         }
     }
 }

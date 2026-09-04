@@ -1,172 +1,68 @@
 package org.telegram.ui.Components;
 
 import android.content.Context;
+import android.text.TextUtils;
+import android.view.Menu;
 import android.view.MotionEvent;
-import android.widget.FrameLayout;
-import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public abstract class di extends FrameLayout {
-    public final org.telegram.ui.ActionBar.f6 a;
-    public final li b;
-    public rl0 c;
-    public rl0 d;
-    public int e;
-    public boolean f;
-    public boolean h;
+public final class di extends hu {
+    public final /* synthetic */ vi V;
 
-    public di(Context context, org.telegram.ui.ActionBar.f6 f6Var, li liVar) {
-        super(context);
-        this.a = f6Var;
-        this.b = liVar;
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public di(vi viVar, Context context, li liVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, liVar, null, 1, true, f6Var);
+        this.V = viVar;
     }
 
-    public boolean C(int i10) {
-        return false;
+    @Override // org.telegram.ui.Components.hu
+    public final void f() {
+        super.f();
+        kz emojiView = getEmojiView();
+        if (emojiView != null) {
+            emojiView.w0 = false;
+            emojiView.x2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
+        }
     }
 
-    public boolean H(int i10, boolean z4, int i11, boolean z10, long j10) {
-        return false;
+    @Override // org.telegram.ui.Components.hu
+    public final void i(Menu menu) {
+        org.telegram.ui.ActionBar.n2 n2Var = this.V.f0;
+        if (n2Var instanceof org.telegram.ui.co) {
+            org.telegram.ui.co.k8(menu, ((org.telegram.ui.co) n2Var).h, true, true, true, true);
+        }
     }
 
-    public boolean I() {
-        return !(this instanceof rh.n3);
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        vi viVar = this.V;
+        di diVar = viVar.P0;
+        if (!viVar.u1) {
+            if (motionEvent.getX() <= diVar.getEditText().getLeft() || motionEvent.getX() >= diVar.getEditText().getRight() || motionEvent.getY() <= diVar.getEditText().getTop() || motionEvent.getY() >= diVar.getEditText().getBottom()) {
+                viVar.t1(diVar.getEditText(), false);
+            } else {
+                viVar.t1(diVar.getEditText(), true);
+            }
+        }
+        return super.onInterceptTouchEvent(motionEvent);
     }
 
-    public boolean b() {
-        return true;
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.V.b2();
     }
 
-    public boolean c() {
-        return true;
-    }
-
-    public boolean e() {
-        return false;
-    }
-
-    public boolean f() {
-        return false;
-    }
-
-    public boolean g() {
-        return false;
-    }
-
-    public int getButtonsHideOffset() {
-        return AndroidUtilities.dp(h() != 0 ? 12.0f : 17.0f);
-    }
-
-    public int getCurrentItemTop() {
-        return 0;
-    }
-
-    public int getCustomActionBarBackground() {
-        return 0;
-    }
-
-    public int getCustomBackground() {
-        return 0;
-    }
-
-    public int getFirstOffset() {
-        return 0;
-    }
-
-    public og.a getIBlur3Capture() {
-        return null;
-    }
-
-    public int getListTopPadding() {
-        return 0;
-    }
-
-    public int getSelectedItemsCount() {
-        return 0;
-    }
-
-    public ArrayList<org.telegram.ui.ActionBar.l6> getThemeDescriptions() {
-        return null;
-    }
-
-    public int h() {
-        return 0;
-    }
-
-    public boolean i() {
-        return false;
-    }
-
-    public boolean l(MotionEvent motionEvent) {
-        return false;
-    }
-
-    public boolean n() {
-        return false;
-    }
-
-    public boolean p() {
-        return true;
-    }
-
-    public abstract void y(int i10, int i11);
-
-    public void A() {
-    }
-
-    public void B(int i10) {
-    }
-
-    public void D(di diVar) {
-    }
-
-    public void E() {
-    }
-
-    public void F() {
-    }
-
-    public void a(CharSequence charSequence) {
-    }
-
-    public void d() {
-    }
-
-    public void j() {
-    }
-
-    public void k(float f10) {
-    }
-
-    public void m() {
-    }
-
-    public void o(int i10) {
-    }
-
-    public void q() {
-    }
-
-    public void r() {
-    }
-
-    public void s(float f10) {
-    }
-
-    public void t(int i10) {
-    }
-
-    public void u() {
-    }
-
-    public void v() {
-    }
-
-    public void x() {
-    }
-
-    public void w(int i10, boolean z4) {
+    @Override // org.telegram.ui.Components.hu
+    public final void q(int i10, int i11) {
+        vi viVar = this.V;
+        viVar.b2();
+        if (viVar.c0) {
+            viVar.M1(i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim()));
+        }
     }
 }

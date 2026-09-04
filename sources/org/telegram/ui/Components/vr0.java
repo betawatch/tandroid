@@ -1,13 +1,13 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class vr0 extends f2.v {
+public final class vr0 extends g.p {
     public final /* synthetic */ tr0 c;
-    public final /* synthetic */ yu0 d;
+    public final /* synthetic */ xu0 d;
 
-    public vr0(yu0 yu0Var, tr0 tr0Var) {
-        this.d = yu0Var;
+    public vr0(xu0 xu0Var, tr0 tr0Var) {
+        this.d = xu0Var;
         this.c = tr0Var;
     }
 
@@ -23,23 +23,23 @@ public final class vr0 extends f2.v {
     
         r1 = 1;
      */
-    @Override // f2.v
+    @Override // g.p
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
     public final int i(int i10) {
-        yu0 yu0Var = this.d;
-        int[] iArr = yu0Var.j1;
-        lt0 lt0Var = yu0Var.L;
+        xu0 xu0Var = this.d;
+        int[] iArr = xu0Var.m1;
+        lt0 lt0Var = xu0Var.O;
         tr0 tr0Var = this.c;
-        int i11 = iArr[yu0.p0(tr0Var.C) ? 1 : 0];
-        f2.o0 adapter = tr0Var.h.getAdapter();
-        ct0 ct0Var = yu0Var.E;
+        int i11 = iArr[xu0.p0(tr0Var.F) ? 1 : 0];
+        s4.h0 adapter = tr0Var.h.getAdapter();
+        ct0 ct0Var = xu0Var.H;
         if (adapter != ct0Var) {
-            if (yu0.u(yu0Var, tr0Var.h.getAdapter()) == -1) {
+            if (xu0.u(xu0Var, tr0Var.h.getAdapter()) == -1) {
                 if (tr0Var.h.getAdapter() != lt0Var) {
                     i11 = tr0Var.x.J;
-                } else if (tr0Var.h.getAdapter() == lt0Var && yu0Var.q1[5].a.isEmpty()) {
+                } else if (tr0Var.h.getAdapter() == lt0Var && xu0Var.t1[5].a.isEmpty()) {
                     i11 = tr0Var.x.J;
                 } else {
                     ur0 ur0Var = tr0Var.x;

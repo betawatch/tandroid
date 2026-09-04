@@ -1,32 +1,13 @@
 package c5;
 
-import org.telegram.tgnet.TLObject;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public class e {
-    public int a;
-    public int b;
+public final class e {
+    public final o a;
+    public final String b;
 
-    public /* synthetic */ e(int i10, int i11) {
-        this.a = i10;
-        this.b = i11;
-    }
-
-    public int a() {
-        int i10 = this.b;
-        if (i10 == 2) {
-            return 10;
-        }
-        if (i10 == 5) {
-            return 11;
-        }
-        if (i10 == 29) {
-            return 12;
-        }
-        if (i10 != 42) {
-            return i10 != 22 ? i10 != 23 ? 0 : 15 : TLObject.FLAG_30;
-        }
-        return 16;
+    public /* synthetic */ e(pf.b bVar) {
+        this.a = (o) bVar.b;
+        this.b = (String) bVar.c;
     }
 }

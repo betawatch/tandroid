@@ -1,29 +1,39 @@
 package org.telegram.ui.Components;
 
-import android.content.DialogInterface;
-import android.view.KeyEvent;
-import android.view.View;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class zg implements DialogInterface.OnCancelListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ KeyEvent.Callback b;
+public final class zg {
+    public static final zg a;
+    public static final zg b;
+    public static final zg c;
+    public static final zg d;
+    public static final zg e;
+    public static final zg f;
+    public static final /* synthetic */ zg[] h;
 
-    public /* synthetic */ zg(KeyEvent.Callback callback, int i10) {
-        this.a = i10;
-        this.b = callback;
+    static {
+        zg zgVar = new zg("VOICE", 0);
+        a = zgVar;
+        zg zgVar2 = new zg("VIDEO", 1);
+        b = zgVar2;
+        zg zgVar3 = new zg("STICKER", 2);
+        c = zgVar3;
+        zg zgVar4 = new zg("KEYBOARD", 3);
+        d = zgVar4;
+        zg zgVar5 = new zg("SMILE", 4);
+        e = zgVar5;
+        zg zgVar6 = new zg("GIF", 5);
+        f = zgVar6;
+        h = new zg[]{zgVar, zgVar2, zgVar3, zgVar4, zgVar5, zgVar6};
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        switch (this.a) {
-            case 0:
-                li.p((li) this.b);
-                break;
-            default:
-                ((View) this.b).setTag(null);
-                break;
-        }
+    public static zg valueOf(String str) {
+        return (zg) Enum.valueOf(zg.class, str);
+    }
+
+    public static zg[] values() {
+        return (zg[]) h.clone();
     }
 }

@@ -6,102 +6,102 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class b0 implements View.OnClickListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ w0 b;
+    public final /* synthetic */ v0 b;
 
-    public /* synthetic */ b0(w0 w0Var, int i10) {
+    public /* synthetic */ b0(v0 v0Var, int i10) {
         this.a = i10;
-        this.b = w0Var;
+        this.b = v0Var;
     }
 
     @Override // android.view.View.OnClickListener
     public final void onClick(View view) {
-        h5 h5Var;
+        g5 g5Var;
         switch (this.a) {
             case 0:
-                w0 w0Var = this.b;
-                ArrayList arrayList = w0Var.d0;
-                if (w0Var.e.length() != 0) {
-                    w0Var.e.setText("");
-                } else if (w0Var.p()) {
-                    w0Var.e.hideActionMode();
+                v0 v0Var = this.b;
+                ArrayList arrayList = v0Var.g0;
+                if (v0Var.e.length() != 0) {
+                    v0Var.e.setText("");
+                } else if (v0Var.p()) {
+                    v0Var.e.hideActionMode();
                     for (int i10 = 0; i10 < arrayList.size(); i10++) {
-                        if (w0Var.E != null && ((tf.e0) arrayList.get(i10)).h) {
-                            w0Var.E.o((tf.e0) arrayList.get(i10));
+                        if (v0Var.H != null && ((hg.q0) arrayList.get(i10)).h) {
+                            v0Var.H.o((hg.q0) arrayList.get(i10));
                         }
                     }
-                    w0Var.m();
+                    v0Var.m();
                 } else {
-                    TextView textView = w0Var.h;
-                    if (textView != null && textView.getVisibility() == 0 && ((h5Var = w0Var.E) == null || h5Var.a())) {
-                        w0Var.h.setVisibility(8);
-                        h5 h5Var2 = w0Var.E;
-                        if (h5Var2 != null) {
-                            h5Var2.k();
+                    TextView textView = v0Var.h;
+                    if (textView != null && textView.getVisibility() == 0 && ((g5Var = v0Var.H) == null || g5Var.a())) {
+                        v0Var.h.setVisibility(8);
+                        g5 g5Var2 = v0Var.H;
+                        if (g5Var2 != null) {
+                            g5Var2.k();
                         }
                     }
                 }
-                w0Var.e.requestFocus();
-                AndroidUtilities.showKeyboard(w0Var.e);
+                v0Var.e.requestFocus();
+                AndroidUtilities.showKeyboard(v0Var.e);
                 break;
             case 1:
-                w0 w0Var2 = this.b;
-                p1 p1Var = w0Var2.d;
-                if (p1Var != null && p1Var.isShowing()) {
-                    if (!w0Var2.Q) {
-                        w0Var2.Q = true;
-                        w0Var2.d.d(w0Var2.O);
+                v0 v0Var2 = this.b;
+                n1 n1Var = v0Var2.d;
+                if (n1Var != null && n1Var.isShowing()) {
+                    if (!v0Var2.T) {
+                        v0Var2.T = true;
+                        v0Var2.d.d(v0Var2.R);
                     }
                 }
-                z zVar = w0Var2.c;
+                z zVar = v0Var2.c;
                 if (zVar != null) {
                     zVar.o(((Integer) view.getTag()).intValue());
                     break;
                 } else {
-                    s0 s0Var = w0Var2.M;
-                    if (s0Var != null) {
-                        s0Var.m(((Integer) view.getTag()).intValue());
+                    r0 r0Var = v0Var2.P;
+                    if (r0Var != null) {
+                        r0Var.m(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }
                 break;
             case 2:
-                w0 w0Var3 = this.b;
-                z zVar2 = w0Var3.c;
+                v0 v0Var3 = this.b;
+                z zVar2 = v0Var3.c;
                 if (zVar2 != null) {
                     zVar2.o(((Integer) view.getTag()).intValue());
                     break;
                 } else {
-                    s0 s0Var2 = w0Var3.M;
-                    if (s0Var2 != null) {
-                        s0Var2.m(((Integer) view.getTag()).intValue());
+                    r0 r0Var2 = v0Var3.P;
+                    if (r0Var2 != null) {
+                        r0Var2.m(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }
                 break;
             default:
-                w0 w0Var4 = this.b;
-                p1 p1Var2 = w0Var4.d;
-                if (p1Var2 != null && p1Var2.isShowing()) {
-                    if (!w0Var4.Q) {
-                        w0Var4.Q = true;
-                        if (!w0Var4.O) {
-                            w0Var4.d.setAnimationStyle(R.style.PopupAnimation);
+                v0 v0Var4 = this.b;
+                n1 n1Var2 = v0Var4.d;
+                if (n1Var2 != null && n1Var2.isShowing()) {
+                    if (!v0Var4.T) {
+                        v0Var4.T = true;
+                        if (!v0Var4.R) {
+                            v0Var4.d.setAnimationStyle(R.style.PopupAnimation);
                         }
-                        w0Var4.d.d(w0Var4.O);
+                        v0Var4.d.d(v0Var4.R);
                     }
                 }
-                z zVar3 = w0Var4.c;
+                z zVar3 = v0Var4.c;
                 if (zVar3 != null) {
                     zVar3.o(((Integer) view.getTag()).intValue());
                     break;
                 } else {
-                    s0 s0Var3 = w0Var4.M;
-                    if (s0Var3 != null) {
-                        s0Var3.m(((Integer) view.getTag()).intValue());
+                    r0 r0Var3 = v0Var4.P;
+                    if (r0Var3 != null) {
+                        r0Var3.m(((Integer) view.getTag()).intValue());
                         break;
                     }
                 }

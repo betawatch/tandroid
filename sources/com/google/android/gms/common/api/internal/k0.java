@@ -2,20 +2,20 @@ package com.google.android.gms.common.api.internal;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public interface k0 {
-    boolean D();
+    e A(e eVar);
 
-    e H(e eVar);
+    void c(Bundle bundle);
 
-    void d(Bundle bundle);
+    void f();
 
-    void h();
+    void u(k6.a aVar, com.google.android.gms.common.api.e eVar, boolean z10);
 
-    void k(y5.a aVar, com.google.android.gms.common.api.e eVar, boolean z4);
+    void w(int i10);
 
-    void t(int i10);
+    void x();
 
-    void w();
+    boolean z();
 }

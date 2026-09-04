@@ -1,58 +1,79 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class eg0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ og0 b;
+import android.content.Context;
 
-    public /* synthetic */ eg0(og0 og0Var, int i10) {
-        this.a = i10;
-        this.b = og0Var;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class eg0 extends tg.e {
+    public final /* synthetic */ int b0;
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ eg0(Context context, int i10, int i11, int i12) {
+        super(context, i10, i11);
+        this.b0 = i12;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                og0 og0Var = this.b;
-                sj0 sj0Var = og0Var.a;
-                pg0 pg0Var = og0Var.S;
-                lg0 lg0Var = og0Var.b;
-                if (lg0Var != null) {
-                    if (pg0Var.Z) {
-                        sj0Var.clearFocus();
-                        lg0Var.clearFocus();
-                    } else if (sj0Var.length() != 0) {
-                        lg0Var.requestFocus();
-                        if (!og0Var.O) {
-                            lg0Var.setSelection(lg0Var.length());
-                        }
-                        pg0.T0(pg0Var, lg0Var);
-                    } else {
-                        sj0Var.requestFocus();
-                        pg0.T0(pg0Var, sj0Var);
-                    }
-                }
-                if (pg0Var.C == 0) {
-                    og0Var.t(false);
-                    break;
-                }
-                break;
-            case 1:
-                og0 og0Var2 = this.b;
-                og0Var2.postDelayed(new eg0(og0Var2, 2), 200L);
-                break;
-            case 2:
-                this.b.h(null);
-                break;
-            case 3:
-                this.b.t(true);
+    @Override // tg.e
+    public void k() {
+        switch (this.b0) {
+            case 4:
                 break;
             default:
-                og0 og0Var3 = this.b;
-                pg0.T0(og0Var3.S, og0Var3.b);
+                super.k();
                 break;
         }
+    }
+
+    @Override // tg.e, android.view.TextureView, android.view.View
+    public void onAttachedToWindow() {
+        switch (this.b0) {
+            case 0:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 1:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 2:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            case 3:
+                super.onAttachedToWindow();
+                setPaused(false);
+                break;
+            default:
+                super.onAttachedToWindow();
+                break;
+        }
+    }
+
+    @Override // tg.e, android.view.View
+    public void onDetachedFromWindow() {
+        switch (this.b0) {
+            case 0:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 1:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 2:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            case 3:
+                super.onDetachedFromWindow();
+                setPaused(true);
+                break;
+            default:
+                super.onDetachedFromWindow();
+                break;
+        }
+    }
+
+    private final void l() {
     }
 }

@@ -135,8 +135,8 @@ public final /* synthetic */ class b0 implements DoubleStream {
     }
 
     @Override // java.util.stream.DoubleStream
-    public final /* synthetic */ DoubleStream limit(long j10) {
-        return f(this.a.limit(j10));
+    public final /* synthetic */ DoubleStream limit(long j3) {
+        return f(this.a.limit(j3));
     }
 
     @Override // java.util.stream.DoubleStream
@@ -218,8 +218,8 @@ public final /* synthetic */ class b0 implements DoubleStream {
     }
 
     @Override // java.util.stream.DoubleStream
-    public final /* synthetic */ DoubleStream skip(long j10) {
-        return f(this.a.skip(j10));
+    public final /* synthetic */ DoubleStream skip(long j3) {
+        return f(this.a.skip(j3));
     }
 
     @Override // java.util.stream.DoubleStream

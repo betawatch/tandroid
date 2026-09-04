@@ -1,34 +1,35 @@
 package com.google.firebase.datatransport;
 
 import android.content.Context;
-import c9.b;
-import c9.c;
-import c9.m;
+import b2.i0;
 import com.google.firebase.components.ComponentRegistrar;
-import j7.m8;
+import di.w9;
+import i5.f;
+import j5.a;
 import java.util.Arrays;
 import java.util.List;
-import v2.f;
-import w2.a;
-import y2.q;
+import l5.s;
+import q9.b;
+import q9.j;
+import w7.o8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class TransportRegistrar implements ComponentRegistrar {
     private static final String LIBRARY_NAME = "fire-transport";
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static /* synthetic */ f lambda$getComponents$0(c cVar) {
-        q.b((Context) cVar.a(Context.class));
-        return q.a().c(a.f);
+    public static /* synthetic */ f lambda$getComponents$0(b bVar) {
+        s.b((Context) bVar.a(Context.class));
+        return s.a().c(a.f);
     }
 
     @Override // com.google.firebase.components.ComponentRegistrar
-    public List<b> getComponents() {
-        c9.a b10 = b.b(f.class);
-        b10.a = LIBRARY_NAME;
-        b10.a(m.b(Context.class));
-        b10.g = new s0.b(9);
-        return Arrays.asList(b10.b(), m8.a(LIBRARY_NAME, "18.1.8"));
+    public List<q9.a> getComponents() {
+        i0 a2 = q9.a.a(f.class);
+        a2.d = LIBRARY_NAME;
+        a2.a(j.a(Context.class));
+        a2.f = new w9(29);
+        return Arrays.asList(a2.b(), o8.a(LIBRARY_NAME, "18.1.8"));
     }
 }

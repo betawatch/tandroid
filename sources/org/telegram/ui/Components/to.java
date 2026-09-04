@@ -1,113 +1,57 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.ui.bb1;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class to extends View {
+public final /* synthetic */ class to implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ Canvas c;
-    public final /* synthetic */ float d;
-    public final /* synthetic */ float e;
-    public final /* synthetic */ float f;
-    public final /* synthetic */ Paint h;
-    public final /* synthetic */ Bitmap n;
-    public final /* synthetic */ Paint r;
-    public final /* synthetic */ float s;
-    public final /* synthetic */ float v;
-    public final /* synthetic */ NotificationCenter.NotificationCenterDelegate w;
+    public final /* synthetic */ lp b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ to(NotificationCenter.NotificationCenterDelegate notificationCenterDelegate, Context context, boolean z4, Canvas canvas, float f10, float f11, float f12, Paint paint, Bitmap bitmap, Paint paint2, float f13, float f14, int i10) {
-        super(context);
+    public /* synthetic */ to(lp lpVar, int i10) {
         this.a = i10;
-        this.w = notificationCenterDelegate;
-        this.b = z4;
-        this.c = canvas;
-        this.d = f10;
-        this.e = f11;
-        this.f = f12;
-        this.h = paint;
-        this.n = bitmap;
-        this.r = paint2;
-        this.s = f13;
-        this.v = f14;
+        this.b = lpVar;
     }
 
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                jp jpVar = (jp) this.w;
-                super.onDraw(canvas);
-                boolean z4 = this.b;
-                Paint paint = this.r;
-                float f10 = this.f;
-                float f11 = this.e;
-                float f12 = this.d;
-                if (z4) {
-                    float f13 = jpVar.P;
-                    if (f13 > 0.0f) {
-                        this.c.drawCircle(f12, f11, f10 * f13, this.h);
-                    }
-                    canvas.drawBitmap(this.n, 0.0f, 0.0f, paint);
-                } else {
-                    canvas.drawCircle(f12, f11, (1.0f - jpVar.P) * f10, paint);
-                }
-                canvas.save();
-                canvas.translate(this.s, this.v);
-                jpVar.D.draw(canvas);
-                canvas.restore();
+                this.b.h.l();
                 break;
             case 1:
-                org.telegram.ui.t21 t21Var = (org.telegram.ui.t21) this.w;
-                super.onDraw(canvas);
-                boolean z10 = this.b;
-                Paint paint2 = this.r;
-                float f14 = this.f;
-                float f15 = this.e;
-                float f16 = this.d;
-                if (z10) {
-                    float f17 = t21Var.M;
-                    if (f17 > 0.0f) {
-                        this.c.drawCircle(f16, f15, f14 * f17, this.h);
-                    }
-                    canvas.drawBitmap(this.n, 0.0f, 0.0f, paint2);
-                } else {
-                    canvas.drawCircle(f16, f15, (1.0f - t21Var.M) * f14, paint2);
-                }
-                canvas.save();
-                canvas.translate(this.s, this.v);
-                t21Var.C.draw(canvas);
-                canvas.restore();
+                this.b.s(true);
+                break;
+            case 2:
+                lp lpVar = this.b;
+                org.telegram.ui.co coVar = lpVar.v;
+                org.telegram.ui.ActionBar.n2 d02 = bb1.d0(coVar.getMessagesController().getChat(Long.valueOf(-coVar.a())), true);
+                org.telegram.ui.ActionBar.l2 l2Var = new org.telegram.ui.ActionBar.l2();
+                l2Var.a = true;
+                d02.setResourceProvider(coVar.getResourceProvider());
+                int i10 = 3;
+                l2Var.c = new ue(i10);
+                l2Var.d = new to(lpVar, i10);
+                l2Var.b = new to(lpVar, 4);
+                l2Var.e = true;
+                lpVar.X = d02;
+                coVar.showAsSheet(d02, l2Var);
+                break;
+            case 3:
+                this.b.u();
+                break;
+            case 4:
+                this.b.X = null;
+                break;
+            case 5:
+                this.b.u();
+                break;
+            case 6:
+                this.b.X = null;
                 break;
             default:
-                ph.da daVar = (ph.da) this.w;
-                super.onDraw(canvas);
-                boolean z11 = this.b;
-                Paint paint3 = this.r;
-                float f18 = this.f;
-                float f19 = this.e;
-                float f20 = this.d;
-                if (z11) {
-                    float f21 = daVar.A2;
-                    if (f21 > 0.0f) {
-                        this.c.drawCircle(f20, f19, f18 * f21, this.h);
-                    }
-                    canvas.drawBitmap(this.n, 0.0f, 0.0f, paint3);
-                } else {
-                    canvas.drawCircle(f20, f19, (1.0f - daVar.A2) * f18, paint3);
-                }
-                canvas.save();
-                canvas.translate(this.s, this.v);
-                daVar.f1.draw(canvas);
-                canvas.restore();
+                lp lpVar2 = this.b;
+                lpVar2.U.f(lpVar2.G, true);
                 break;
         }
     }

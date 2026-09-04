@@ -1,17 +1,17 @@
 package w1;
 
+import a6.d;
 import androidx.lifecycle.a0;
 import androidx.lifecycle.t;
 import androidx.lifecycle.z;
-import c2.u;
-import o5.d;
+import b2.p;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class a extends z {
     public final d l;
     public t m;
-    public u n;
+    public p n;
 
     public a(d dVar) {
         this.l = dVar;
@@ -45,24 +45,24 @@ public final class a extends z {
 
     public final void k() {
         t tVar = this.m;
-        u uVar = this.n;
-        if (tVar == null || uVar == null) {
+        p pVar = this.n;
+        if (tVar == null || pVar == null) {
             return;
         }
-        super.i(uVar);
-        d(tVar, uVar);
+        super.i(pVar);
+        d(tVar, pVar);
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder(64);
-        sb.append("LoaderInfo{");
-        sb.append(Integer.toHexString(System.identityHashCode(this)));
-        sb.append(" #0 : ");
+        StringBuilder sb2 = new StringBuilder(64);
+        sb2.append("LoaderInfo{");
+        sb2.append(Integer.toHexString(System.identityHashCode(this)));
+        sb2.append(" #0 : ");
         Class<?> cls = this.l.getClass();
-        sb.append(cls.getSimpleName());
-        sb.append("{");
-        sb.append(Integer.toHexString(System.identityHashCode(cls)));
-        sb.append("}}");
-        return sb.toString();
+        sb2.append(cls.getSimpleName());
+        sb2.append("{");
+        sb2.append(Integer.toHexString(System.identityHashCode(cls)));
+        sb2.append("}}");
+        return sb2.toString();
     }
 }

@@ -7,9 +7,9 @@ import java.util.Collection;
 import java.util.RandomAccess;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class h1 extends n0 implements i2, RandomAccess {
+public final class h1 extends n0 implements j2, RandomAccess {
     public static final h1 d;
     public int[] b;
     public int c;
@@ -154,12 +154,12 @@ public final class h1 extends n0 implements i2, RandomAccess {
 
     public final String p(int i10) {
         int i11 = this.c;
-        StringBuilder sb = new StringBuilder(35);
-        sb.append("Index:");
-        sb.append(i10);
-        sb.append(", Size:");
-        sb.append(i11);
-        return sb.toString();
+        StringBuilder sb2 = new StringBuilder(35);
+        sb2.append("Index:");
+        sb2.append(i10);
+        sb2.append(", Size:");
+        sb2.append(i11);
+        return sb2.toString();
     }
 
     @Override // com.google.android.gms.internal.vision.n0, java.util.AbstractList, java.util.List

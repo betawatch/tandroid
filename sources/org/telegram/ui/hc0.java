@@ -1,34 +1,53 @@
 package org.telegram.ui;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class hc0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ cd0 b;
-    public final /* synthetic */ boolean c;
+import android.text.TextUtils;
 
-    public /* synthetic */ hc0(cd0 cd0Var, boolean z4, int i10) {
-        this.a = i10;
-        this.b = cd0Var;
-        this.c = z4;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class hc0 extends pg.a {
+    public final CharSequence c;
+    public final int d;
+    public final int e;
+    public final int f;
+
+    public hc0(int i10, int i11, CharSequence charSequence, int i12, int i13) {
+        super(i10, false);
+        this.c = charSequence;
+        this.d = i11;
+        this.e = i12;
+        this.f = i13;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                boolean z4 = this.c;
-                cd0 cd0Var = this.b;
-                if (!z4) {
-                    cd0Var.b.setVisibility(8);
-                    break;
-                } else {
-                    cd0Var.getClass();
-                    break;
-                }
-            default:
-                this.b.s0(this.c);
-                break;
+    public static hc0 b(int i10, String str) {
+        return new hc0(4, 0, str, i10, 0);
+    }
+
+    public static hc0 c(int i10, int i11, String str) {
+        return new hc0(3, i10, str, i11, 0);
+    }
+
+    public final boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
         }
+        if (!(obj instanceof hc0)) {
+            return false;
+        }
+        hc0 hc0Var = (hc0) obj;
+        int i10 = hc0Var.a;
+        int i11 = this.a;
+        if (i10 != i11) {
+            return false;
+        }
+        if (i11 == 3 && hc0Var.d != this.d) {
+            return false;
+        }
+        if (i11 == 5 && hc0Var.f != this.f) {
+            return false;
+        }
+        if ((i11 == 3 || i11 == 4) && hc0Var.e != this.e) {
+            return false;
+        }
+        return !(i11 == 0 || i11 == 2 || i11 == 3 || i11 == 4 || i11 == 5) || TextUtils.equals(hc0Var.c, this.c);
     }
 }

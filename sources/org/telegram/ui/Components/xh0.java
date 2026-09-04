@@ -1,142 +1,97 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
+import android.content.Context;
 import android.graphics.Canvas;
-import android.graphics.ColorMatrixColorFilter;
 import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
 import android.graphics.RectF;
+import android.widget.Button;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotchInfoUtils;
-import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class xh0 implements zh0 {
-    public Bitmap a;
-    public Canvas b;
-    public final Paint c;
-    public final Paint d;
-    public int e;
+public final class xh0 extends Button {
+    public final RectF a;
+    public final Paint b;
+    public boolean c;
+    public float d;
+    public long e;
     public int f;
-    public int g;
-    public int h;
-    public final /* synthetic */ ai0 i;
 
-    public xh0(ai0 ai0Var) {
-        this.i = ai0Var;
-        Paint paint = new Paint();
-        this.c = paint;
-        Paint paint2 = new Paint();
-        this.d = paint2;
-        paint.setFlags(7);
-        paint.setFilterBitmap(true);
-        paint2.setFlags(7);
-        paint2.setFilterBitmap(true);
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
-        paint.setColorFilter(new ColorMatrixColorFilter(new float[]{0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 0.0f, 60.0f, -7500.0f}));
+    public xh0(Context context) {
+        super(context);
+        setAllCaps(false);
+        setTextSize(1, 14.0f);
+        setTypeface(AndroidUtilities.bold());
+        setOutlineProvider(null);
+        w7.d6.a(this, 8.0f, 0.0f, 8.0f, 0.0f);
+        int dp = AndroidUtilities.dp(60.0f);
+        setMinWidth(dp);
+        setMinimumWidth(dp);
+        this.a = new RectF();
+        Paint paint = new Paint(1);
+        this.b = paint;
+        paint.setStrokeCap(Paint.Cap.ROUND);
+        paint.setStyle(Paint.Style.STROKE);
+        paint.setStrokeWidth(AndroidUtilities.dp(2.0f));
     }
 
-    @Override // org.telegram.ui.Components.zh0
-    public final void c(ev evVar, Canvas canvas) {
-        Canvas canvas2;
-        int i10;
-        int i11;
-        ai0 ai0Var = (ai0) evVar.b;
-        ai0 ai0Var2 = this.i;
-        Paint paint = ai0Var2.a;
-        Bitmap bitmap = this.a;
-        if (bitmap == null || bitmap.isRecycled()) {
-            return;
+    public final void a(boolean z10, boolean z11) {
+        if (this.c != z10) {
+            this.c = z10;
+            if (!z11) {
+                this.d = z10 ? 1.0f : 0.0f;
+            }
+            this.e = System.currentTimeMillis();
+            invalidate();
         }
-        int a2 = (int) ((1.0f - ((k7.n.a(ai0Var2.f, 0.2f, 0.3f) - 0.2f) / 0.10000001f)) * 255.0f);
-        float width = (ai0Var2.getWidth() - this.f) / 2.0f;
-        canvas.save();
-        canvas.translate(0.0f, -AndroidUtilities.dp(32.0f));
-        if (a2 != 255) {
-            this.a.eraseColor(0);
-            this.b.save();
-            this.b.scale(this.a.getWidth() / this.g, this.a.getHeight() / this.h);
-            float f10 = -width;
-            this.b.translate(f10, 0.0f);
-            ai0.a(ai0Var, this.b);
-            this.b.restore();
-            this.b.save();
-            this.b.scale(this.a.getWidth() / this.g, this.a.getHeight() / this.h);
-            if (ai0Var2.n != null) {
-                this.b.save();
-                this.b.translate(f10, AndroidUtilities.dp(32.0f));
-                NotchInfoUtils.NotchInfo notchInfo = ai0Var2.n;
-                if (notchInfo.isLikelyCircle) {
-                    float min = Math.min(notchInfo.bounds.width(), ai0Var2.n.bounds.height()) / 2.0f;
-                    Canvas canvas3 = this.b;
-                    float centerX = ai0Var2.n.bounds.centerX();
-                    RectF rectF = ai0Var2.n.bounds;
-                    canvas3.drawCircle(centerX, rectF.bottom - (rectF.width() / 2.0f), min, paint);
-                } else if (notchInfo.isAccurate) {
-                    this.b.drawPath(notchInfo.path, paint);
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final void onDraw(Canvas canvas) {
+        super.onDraw(canvas);
+        if (this.c || this.d != 0.0f) {
+            int measuredWidth = getMeasuredWidth() - AndroidUtilities.dp(11.0f);
+            float f7 = measuredWidth;
+            float dp = AndroidUtilities.dp(3.0f);
+            float dp2 = AndroidUtilities.dp(8.0f) + measuredWidth;
+            float dp3 = AndroidUtilities.dp(11.0f);
+            RectF rectF = this.a;
+            rectF.set(f7, dp, dp2, dp3);
+            int min = Math.min(255, (int) (this.d * 255.0f));
+            Paint paint = this.b;
+            paint.setAlpha(min);
+            canvas.drawArc(rectF, this.f, 220.0f, false, paint);
+            long currentTimeMillis = System.currentTimeMillis();
+            if (Math.abs(this.e - System.currentTimeMillis()) < 1000) {
+                long j3 = currentTimeMillis - this.e;
+                int i10 = (int) (this.f + ((360 * j3) / 2000.0f));
+                this.f = i10 - ((i10 / 360) * 360);
+                if (this.c) {
+                    float f10 = this.d;
+                    if (f10 < 1.0f) {
+                        float f11 = (j3 / 200.0f) + f10;
+                        this.d = f11;
+                        if (f11 > 1.0f) {
+                            this.d = 1.0f;
+                        }
+                    }
                 } else {
-                    float max = Math.max(notchInfo.bounds.width(), ai0Var2.n.bounds.height()) / 2.0f;
-                    this.b.drawRoundRect(ai0Var2.n.bounds, max, max, paint);
+                    float f12 = this.d;
+                    if (f12 > 0.0f) {
+                        float f13 = f12 - (j3 / 200.0f);
+                        this.d = f13;
+                        if (f13 < 0.0f) {
+                            this.d = 0.0f;
+                        }
+                    }
                 }
-                this.b.restore();
-            } else {
-                this.b.drawRect(0.0f, 0.0f, this.f, AndroidUtilities.dp(32.0f), paint);
             }
-            this.b.restore();
-            Utilities.stackBlurBitmap(this.a, (int) ((ai0Var2.d * 2.0f) / 6.0f));
-            canvas.save();
-            canvas.translate(width, 0.0f);
-            i10 = 255;
-            canvas2 = canvas;
-            canvas2.saveLayer(0.0f, 0.0f, this.g, this.h, null);
-            canvas2.scale(this.g / this.a.getWidth(), this.h / this.a.getHeight());
-            canvas2.drawBitmap(this.a, 0.0f, 0.0f, this.c);
-            canvas2.drawBitmap(this.a, 0.0f, 0.0f, this.d);
-            canvas2.restore();
-            canvas2.restore();
-        } else {
-            canvas2 = canvas;
-            i10 = 255;
+            this.e = currentTimeMillis;
+            postInvalidateOnAnimation();
         }
-        if (a2 != 0) {
-            if (a2 != i10) {
-                i11 = a2;
-                canvas2.saveLayerAlpha(width, 0.0f, width + this.f, this.e, i11);
-            } else {
-                i11 = a2;
-            }
-            ai0.a(ai0Var, canvas2);
-            if (i11 != i10) {
-                canvas2.restore();
-            }
-        }
-        canvas2.restore();
     }
 
-    @Override // org.telegram.ui.Components.zh0
-    public final void d(int i10, int i11) {
-        Bitmap bitmap = this.a;
-        if (bitmap != null) {
-            bitmap.recycle();
-            this.a = null;
-        }
-        this.f = Math.min(AndroidUtilities.dp(120.0f), i10);
-        int min = Math.min(AndroidUtilities.dp(220.0f), i11);
-        this.e = min;
-        this.g = this.f;
-        int dp = AndroidUtilities.dp(32.0f) + min;
-        this.h = dp;
-        this.a = Bitmap.createBitmap((int) (this.g / 6.0f), (int) (dp / 6.0f), Bitmap.Config.ARGB_8888);
-        this.b = new Canvas(this.a);
-    }
-
-    @Override // org.telegram.ui.Components.zh0
-    public final /* synthetic */ void a(float f10) {
-    }
-
-    @Override // org.telegram.ui.Components.zh0
-    public final /* synthetic */ void b(float f10) {
+    public void setProgressColor(int i10) {
+        this.b.setColor(i10);
     }
 }

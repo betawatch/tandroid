@@ -6,7 +6,7 @@ import j$.util.Objects;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class Step {
     private final CarText mCue;
@@ -17,7 +17,7 @@ public final class Step {
 
     public Step(Maneuver maneuver, List<Lane> list, CarIcon carIcon, CarText carText, CarText carText2) {
         this.mManeuver = maneuver;
-        this.mLanes = androidx.car.app.utils.j.g(list);
+        this.mLanes = androidx.car.app.utils.i.g(list);
         t.b.b.a(carIcon);
         this.mLanesImage = carIcon;
         this.mCue = carText;
@@ -61,19 +61,19 @@ public final class Step {
     }
 
     public String toString() {
-        StringBuilder sb = new StringBuilder("[maneuver: ");
-        sb.append(this.mManeuver);
-        sb.append(", lane count: ");
+        StringBuilder sb2 = new StringBuilder("[maneuver: ");
+        sb2.append(this.mManeuver);
+        sb2.append(", lane count: ");
         List<Lane> list = this.mLanes;
-        sb.append(list != null ? list.size() : 0);
-        sb.append(", lanes image: ");
-        sb.append(this.mLanesImage);
-        sb.append(", cue: ");
-        sb.append(CarText.toShortString(this.mCue));
-        sb.append(", road: ");
-        sb.append(CarText.toShortString(this.mRoad));
-        sb.append("]");
-        return sb.toString();
+        sb2.append(list != null ? list.size() : 0);
+        sb2.append(", lanes image: ");
+        sb2.append(this.mLanesImage);
+        sb2.append(", cue: ");
+        sb2.append(CarText.toShortString(this.mCue));
+        sb2.append(", road: ");
+        sb2.append(CarText.toShortString(this.mRoad));
+        sb2.append("]");
+        return sb2.toString();
     }
 
     private Step() {

@@ -1,56 +1,60 @@
 package org.telegram.ui;
 
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import java.util.ArrayList;
+import android.graphics.Bitmap;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class s21 implements org.telegram.ui.ActionBar.k6 {
-    public boolean a = false;
-    public final /* synthetic */ t21 b;
+public final /* synthetic */ class s21 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ g31 b;
 
-    public s21(t21 t21Var) {
-        this.b = t21Var;
+    public /* synthetic */ s21(g31 g31Var, int i10) {
+        this.a = i10;
+        this.b = g31Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void a(float f10) {
-        ArrayList arrayList;
-        t21 t21Var = this.b;
-        if (f10 == 0.0f && !this.a) {
-            org.telegram.ui.Components.hp hpVar = t21Var.b;
-            if (hpVar != null && (arrayList = hpVar.d) != null) {
-                int size = arrayList.size();
-                int i10 = 0;
-                while (i10 < size) {
-                    Object obj = arrayList.get(i10);
-                    i10++;
-                    ((org.telegram.ui.Components.ip) obj).c = t21Var.J ? 1 : 0;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                f31 f31Var = this.b.f;
+                if (f31Var != null) {
+                    f31Var.s.setClickable(true);
+                    break;
                 }
-            }
-            if (!t21Var.N) {
-                org.telegram.ui.Components.hp hpVar2 = t21Var.b;
-                for (int i11 = 0; i11 < hpVar2.h(); i11++) {
-                    ((org.telegram.ui.Components.ip) hpVar2.d.get(i11)).getClass();
+                break;
+            case 1:
+                g31 g31Var = this.b;
+                g31Var.d0(0, g31Var.J, true);
+                org.telegram.ui.Components.xi0 animatedDrawable = g31Var.F.getAnimatedDrawable();
+                if (g31Var.I == null && animatedDrawable != null) {
+                    g31Var.I = Bitmap.createBitmap(animatedDrawable.b, animatedDrawable.c, Bitmap.Config.ARGB_8888);
+                    animatedDrawable.b();
+                    animatedDrawable.E0 = 33;
+                    animatedDrawable.a(g31Var.I);
+                    animatedDrawable.c();
+                    break;
                 }
-            }
-            this.a = true;
+                break;
+            case 2:
+                int i10 = R.raw.default_pattern;
+                g31 g31Var2 = this.b;
+                AndroidUtilities.runOnUIThread(new rx0(20, g31Var2, SvgHelper.getBitmap(i10, g31Var2.w.getWidth(), g31Var2.w.getHeight(), -16777216)));
+                break;
+            case 3:
+                g31 g31Var3 = this.b;
+                o0.a aVar = g31Var3.a;
+                aVar.b = g31Var3.J.b(((org.telegram.ui.ActionBar.n2) ((g31) aVar.c)).currentAccount, g31Var3.K ? 1 : 0);
+                break;
+            case 4:
+                g31.X(this.b);
+                break;
+            default:
+                g31.V(this.b);
+                break;
         }
-        t21Var.B.setColorFilter(new PorterDuffColorFilter(t21Var.d.getThemedColor(org.telegram.ui.ActionBar.j6.Oh), PorterDuff.Mode.SRC_IN));
-        if (t21Var.N) {
-            org.telegram.ui.Components.hp hpVar3 = t21Var.b;
-            for (int i12 = 0; i12 < hpVar3.h(); i12++) {
-                ((org.telegram.ui.Components.ip) hpVar3.d.get(i12)).getClass();
-            }
-        }
-        if (f10 == 1.0f && this.a) {
-            t21Var.N = false;
-            this.a = false;
-        }
-    }
-
-    @Override // org.telegram.ui.ActionBar.k6
-    public final void b() {
     }
 }

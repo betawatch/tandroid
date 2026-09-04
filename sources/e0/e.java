@@ -8,15 +8,15 @@ import android.text.TextUtils;
 import java.util.Arrays;
 import java.util.HashSet;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class e extends f0.f {
+public abstract class e extends f0.e {
     /* JADX WARN: Multi-variable type inference failed */
     public static void g(Activity activity, String[] strArr, int i10) {
         HashSet hashSet = new HashSet();
         for (int i11 = 0; i11 < strArr.length; i11++) {
             if (TextUtils.isEmpty(strArr[i11])) {
-                throw new IllegalArgumentException(android.support.v4.media.a.r(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
+                throw new IllegalArgumentException(a4.a.s(new StringBuilder("Permission request for permissions "), Arrays.toString(strArr), " must not contain null or empty values"));
             }
             if (Build.VERSION.SDK_INT < 33 && TextUtils.equals(strArr[i11], "android.permission.POST_NOTIFICATIONS")) {
                 hashSet.add(Integer.valueOf(i11));
@@ -39,7 +39,7 @@ public abstract class e extends f0.f {
         if (Build.VERSION.SDK_INT >= 23) {
             if (activity instanceof d) {
             }
-            b.q(activity, strArr, i10);
+            b.v(activity, strArr, i10);
         } else if (activity instanceof c) {
             new Handler(Looper.getMainLooper()).post(new androidx.activity.g(strArr2, activity, i10, 4));
         }

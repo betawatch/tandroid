@@ -3,9 +3,9 @@ package org.telegram.ui.ActionBar;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import org.telegram.ui.Components.qv0;
+import org.telegram.ui.Components.ov0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class d extends z {
     public final /* synthetic */ k h;
@@ -20,12 +20,12 @@ public final class d extends z {
     public final void dispatchDraw(Canvas canvas) {
         Canvas canvas2;
         k kVar = this.h;
-        Paint paint = kVar.I0;
-        if (kVar.H0 && this.a && kVar.w != 0) {
-            kVar.J0.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
+        Paint paint = kVar.L0;
+        if (kVar.K0 && this.a && kVar.w != 0) {
+            kVar.M0.set(0, 0, getMeasuredWidth(), getMeasuredHeight());
             paint.setColor(kVar.w);
             canvas2 = canvas;
-            kVar.G0.J(canvas2, 0.0f, kVar.J0, paint, true);
+            kVar.J0.J(canvas2, 0.0f, kVar.M0, paint, true);
         } else {
             canvas2 = canvas;
         }
@@ -35,27 +35,27 @@ public final class d extends z {
     @Override // android.view.ViewGroup, android.view.View
     public final void onAttachedToWindow() {
         super.onAttachedToWindow();
-        qv0 qv0Var = this.h.G0;
-        if (qv0Var != null) {
-            qv0Var.Q.add(this);
+        ov0 ov0Var = this.h.J0;
+        if (ov0Var != null) {
+            ov0Var.T.add(this);
         }
     }
 
     @Override // android.view.ViewGroup, android.view.View
     public final void onDetachedFromWindow() {
         super.onDetachedFromWindow();
-        qv0 qv0Var = this.h.G0;
-        if (qv0Var != null) {
-            qv0Var.Q.remove(this);
+        ov0 ov0Var = this.h.J0;
+        if (ov0Var != null) {
+            ov0Var.T.remove(this);
         }
     }
 
     @Override // android.view.View
-    public final void setAlpha(float f10) {
-        super.setAlpha(f10);
+    public final void setAlpha(float f7) {
+        super.setAlpha(f7);
         k kVar = this.h;
         kVar.invalidate();
-        Runnable runnable = kVar.Q0;
+        Runnable runnable = kVar.T0;
         if (runnable != null) {
             runnable.run();
         }
@@ -65,7 +65,7 @@ public final class d extends z {
     public final void setBackgroundColor(int i10) {
         k kVar = this.h;
         kVar.w = i10;
-        if (kVar.H0) {
+        if (kVar.K0) {
             return;
         }
         super.setBackgroundColor(i10);

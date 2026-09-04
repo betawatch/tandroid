@@ -1,60 +1,41 @@
 package org.telegram.ui;
 
+import android.graphics.Canvas;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
+import android.widget.FrameLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.tgnet.TLObject;
+import org.telegram.ui.Components.RadioButton;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class al0 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ PasscodeActivity b;
+public final class al0 extends FrameLayout {
+    public TextView a;
+    public RadioButton b;
+    public org.telegram.ui.Components.mp c;
+    public boolean d;
+    public zk0 e;
 
-    public /* synthetic */ al0(PasscodeActivity passcodeActivity, int i10) {
-        this.a = i10;
-        this.b = passcodeActivity;
+    @Override // android.view.View
+    public final void onDraw(Canvas canvas) {
+        if (this.d) {
+            canvas.drawLine(AndroidUtilities.dp(LocaleController.isRTL ? 0.0f : 60.0f), getHeight() - 1, getMeasuredWidth() - AndroidUtilities.dp(LocaleController.isRTL ? 60.0f : 0.0f), getHeight() - 1, org.telegram.ui.ActionBar.j6.k0);
+        }
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                PasscodeActivity passcodeActivity = this.b;
-                passcodeActivity.n.postDelayed(passcodeActivity.L, 3000L);
-                passcodeActivity.K = true;
-                break;
-            case 1:
-                PasscodeActivity passcodeActivity2 = new PasscodeActivity(0);
-                PasscodeActivity passcodeActivity3 = this.b;
-                passcodeActivity3.presentFragment(passcodeActivity2, true);
-                sb0 sb0Var = passcodeActivity3.N;
-                if (sb0Var != null) {
-                    AndroidUtilities.runOnUIThread(sb0Var);
-                    passcodeActivity3.N = null;
-                    break;
-                }
-                break;
-            case 2:
-                PasscodeActivity passcodeActivity4 = this.b;
-                AndroidUtilities.runOnUIThread(new al0(passcodeActivity4, 3), passcodeActivity4.e0() ? 150L : 1000L);
-                break;
-            case 3:
-                PasscodeActivity passcodeActivity5 = this.b;
-                if (passcodeActivity5.e0()) {
-                    for (ds dsVar : passcodeActivity5.n.f) {
-                        dsVar.i(0.0f);
-                    }
-                    break;
-                } else {
-                    passcodeActivity5.f.a(0.0f);
-                    break;
-                }
-            case 4:
-                PasscodeActivity passcodeActivity6 = this.b;
-                passcodeActivity6.K = false;
-                AndroidUtilities.updateViewVisibilityAnimated(passcodeActivity6.r, false);
-                break;
-            default:
-                this.b.k0();
-                break;
-        }
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.RadioButton");
+        accessibilityNodeInfo.setCheckable(true);
+        accessibilityNodeInfo.setChecked(this.b.f);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.View
+    public final void onMeasure(int i10, int i11) {
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(50.0f), TLObject.FLAG_30));
     }
 }

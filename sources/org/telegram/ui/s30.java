@@ -1,23 +1,33 @@
 package org.telegram.ui;
 
-import org.telegram.ui.Components.UndoView;
+import android.app.Activity;
+import android.text.TextUtils;
+import android.widget.TextView;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class s30 extends UndoView {
-    public final /* synthetic */ e60 c0;
+public final class s30 extends org.telegram.ui.Components.e8 {
+    public final /* synthetic */ j60 E;
+    public final /* synthetic */ Activity y;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public s30(e60 e60Var, LaunchActivity launchActivity) {
+    public s30(j60 j60Var, LaunchActivity launchActivity, Activity activity) {
         super(launchActivity);
-        this.c0 = e60Var;
+        this.E = j60Var;
+        this.y = activity;
     }
 
-    @Override // org.telegram.ui.Components.UndoView
-    public final void k(long j10, int i10, Object obj, Object obj2, Runnable runnable, Runnable runnable2) {
-        if (this.c0.w0 != null) {
-            return;
-        }
-        super.k(j10, i10, obj, obj2, runnable, runnable2);
+    @Override // org.telegram.ui.Components.e8
+    public final TextView a() {
+        TextView textView = new TextView(this.y);
+        textView.setTextColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.hg, false));
+        textView.setTextSize(1, 20.0f);
+        textView.setTypeface(AndroidUtilities.bold());
+        textView.setGravity(51);
+        textView.setSingleLine(true);
+        textView.setEllipsize(TextUtils.TruncateAt.END);
+        textView.setOnClickListener(new tv(9, this, textView));
+        return textView;
     }
 }

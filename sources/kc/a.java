@@ -1,69 +1,65 @@
 package kc;
 
+import java.io.FilterInputStream;
+import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.net.Socket;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
-import java.util.List;
-import java.util.logging.Level;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a implements Runnable {
-    public final InputStream a;
-    public final Socket b;
-    public final /* synthetic */ k c;
+public final class a extends FilterInputStream {
+    public int a;
+    public int b;
 
-    public a(k kVar, InputStream inputStream, Socket socket) {
-        this.c = kVar;
-        this.a = inputStream;
-        this.b = socket;
+    public a(InputStream inputStream) {
+        super(inputStream);
+        this.a = -1;
+        this.b = -1;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        OutputStream outputStream;
-        InputStream inputStream = this.a;
-        k kVar = this.c;
-        Socket socket = this.b;
-        OutputStream outputStream2 = null;
-        try {
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final boolean markSupported() {
+        return false;
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final int read() {
+        int read = super.read();
+        if (read == 3 && this.a == 0 && this.b == 0) {
+            this.a = -1;
+            this.b = -1;
+            read = super.read();
+        }
+        this.a = this.b;
+        this.b = read;
+        return read;
+    }
+
+    @Override // java.io.FilterInputStream, java.io.InputStream
+    public final int read(byte[] bArr, int i10, int i11) {
+        bArr.getClass();
+        if (i10 < 0 || i11 < 0 || i11 > bArr.length - i10) {
+            throw new IndexOutOfBoundsException();
+        }
+        if (i11 == 0) {
+            return 0;
+        }
+        int read = read();
+        if (read == -1) {
+            return -1;
+        }
+        bArr[i10] = (byte) read;
+        int i12 = 1;
+        while (i12 < i11) {
             try {
-                outputStream = socket.getOutputStream();
-            } catch (Throwable th2) {
-                th = th2;
+                int read2 = read();
+                if (read2 == -1) {
+                    break;
+                }
+                bArr[i10 + i12] = (byte) read2;
+                i12++;
+            } catch (IOException unused) {
             }
-        } catch (Exception e) {
-            e = e;
         }
-        try {
-            d dVar = new d(kVar, new ja.c(16), this.a, outputStream, socket.getInetAddress());
-            while (!socket.isClosed()) {
-                dVar.c();
-            }
-            k.d(outputStream);
-        } catch (Exception e6) {
-            e = e6;
-            outputStream2 = outputStream;
-            if ((!(e instanceof SocketException) || !"NanoHttpd Shutdown".equals(e.getMessage())) && !(e instanceof SocketTimeoutException)) {
-                k.d.log(Level.SEVERE, "Communication with the client broken, or an bug in the handler code", (Throwable) e);
-            }
-            k.d(outputStream2);
-            k.d(inputStream);
-            k.d(socket);
-            ((List) kVar.c.c).remove(this);
-        } catch (Throwable th3) {
-            th = th3;
-            outputStream2 = outputStream;
-            k.d(outputStream2);
-            k.d(inputStream);
-            k.d(socket);
-            ((List) kVar.c.c).remove(this);
-            throw th;
-        }
-        k.d(inputStream);
-        k.d(socket);
-        ((List) kVar.c.c).remove(this);
+        return i12;
     }
 }

@@ -7,10 +7,10 @@ import android.webkit.WebViewClient;
 import java.io.ByteArrayInputStream;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
-import kotlin.jvm.internal.j;
-import ld.t;
+import kotlin.jvm.internal.i;
+import zd.t;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzle extends WebViewClient {
     final /* synthetic */ zzly zza;
@@ -55,7 +55,7 @@ public final class zzle extends WebViewClient {
         zzly zzlyVar = this.zza;
         Uri parse = Uri.parse(str);
         zzly.zzq(zzlyVar);
-        j.b(parse);
+        i.b(parse);
         if (!zzig.zzc(parse) || zzly.zzq(zzlyVar).zza(parse)) {
             return super.shouldInterceptRequest(webView, str);
         }

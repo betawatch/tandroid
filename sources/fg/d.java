@@ -1,93 +1,22 @@
 package fg;
 
-import android.animation.AnimatorSet;
-import android.animation.ValueAnimator;
-import android.view.View;
-import cg.l0;
-import f2.y;
+import a3.g0;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.mr;
-import org.telegram.ui.Components.rl0;
+import org.telegram.tgnet.RequestTimeDelegate;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class d implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ float b;
-    public final /* synthetic */ float c;
-    public final /* synthetic */ Object d;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final /* synthetic */ class d implements RequestTimeDelegate {
+    public final /* synthetic */ f a;
+    public final /* synthetic */ e b;
 
-    public /* synthetic */ d(Object obj, float f10, float f11, int i10) {
-        this.a = i10;
-        this.d = obj;
-        this.b = f10;
-        this.c = f11;
+    public /* synthetic */ d(f fVar, e eVar) {
+        this.a = fVar;
+        this.b = eVar;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        View view;
-        int i10 = this.a;
-        float f10 = this.c;
-        float f11 = this.b;
-        Object obj = this.d;
-        switch (i10) {
-            case 0:
-                e eVar = (e) obj;
-                i iVar = (i) eVar.b;
-                ValueAnimator valueAnimator = iVar.P;
-                b bVar = iVar.U;
-                b bVar2 = iVar.T;
-                if (valueAnimator != null) {
-                    valueAnimator.removeAllListeners();
-                    iVar.P.cancel();
-                    iVar.P = null;
-                }
-                AnimatorSet animatorSet = iVar.Q;
-                if (animatorSet != null) {
-                    animatorSet.removeAllListeners();
-                    iVar.Q.cancel();
-                    iVar.Q = null;
-                }
-                if (Math.abs(iVar.b.d) <= 10.0f) {
-                    AndroidUtilities.cancelRunOnUIThread(iVar.R);
-                    iVar.Q = new AnimatorSet();
-                    ValueAnimator ofFloat = ValueAnimator.ofFloat(iVar.b.d, f11);
-                    ofFloat.addUpdateListener(bVar2);
-                    long j10 = 220;
-                    ofFloat.setDuration(j10);
-                    mr mrVar = mr.h;
-                    ofFloat.setInterpolator(mrVar);
-                    ValueAnimator ofFloat2 = ValueAnimator.ofFloat(f11, 0.0f);
-                    ofFloat2.addUpdateListener(bVar2);
-                    ofFloat2.setStartDelay(j10);
-                    ofFloat2.setDuration(600L);
-                    ofFloat2.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    ValueAnimator ofFloat3 = ValueAnimator.ofFloat(iVar.b.g, f10);
-                    ofFloat3.addUpdateListener(bVar);
-                    ofFloat3.setDuration(j10);
-                    ofFloat3.setInterpolator(mrVar);
-                    ValueAnimator ofFloat4 = ValueAnimator.ofFloat(f10, 0.0f);
-                    ofFloat4.addUpdateListener(bVar);
-                    ofFloat4.setStartDelay(j10);
-                    ofFloat4.setDuration(600L);
-                    ofFloat4.setInterpolator(AndroidUtilities.overshootInterpolator);
-                    iVar.Q.playTogether(ofFloat, ofFloat2, ofFloat3, ofFloat4);
-                    iVar.Q.addListener(new l0(eVar, 5));
-                    iVar.Q.start();
-                    break;
-                } else {
-                    iVar.i();
-                    break;
-                }
-            default:
-                rl0 rl0Var = (rl0) ((y) obj).b;
-                if (rl0Var.b1 != null && (view = rl0Var.K1) != null) {
-                    rl0Var.g1(view, f11, f10, true);
-                    rl0Var.b1 = null;
-                    break;
-                }
-                break;
-        }
+    @Override // org.telegram.tgnet.RequestTimeDelegate
+    public void run(long j3) {
+        AndroidUtilities.runOnUIThread(new g0(this.a, this.b, j3, 8));
     }
 }

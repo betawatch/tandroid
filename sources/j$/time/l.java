@@ -90,9 +90,9 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
         if (!j$.com.android.tools.r8.a.N(temporal).equals(j$.time.chrono.r.c)) {
             throw new b("Adjustment only supported on ISO date-time");
         }
-        Temporal c3 = temporal.c(this.a, j$.time.temporal.a.MONTH_OF_YEAR);
+        Temporal c10 = temporal.c(this.a, j$.time.temporal.a.MONTH_OF_YEAR);
         j$.time.temporal.a aVar = j$.time.temporal.a.DAY_OF_MONTH;
-        return c3.c(Math.min(c3.l(aVar).d, this.b), aVar);
+        return c10.c(Math.min(c10.l(aVar).d, this.b), aVar);
     }
 
     public final boolean equals(Object obj) {
@@ -113,13 +113,13 @@ public final class l implements j$.time.temporal.l, j$.time.temporal.m, Comparab
     }
 
     public final String toString() {
-        StringBuilder sb = new StringBuilder(10);
-        sb.append("--");
-        sb.append(this.a < 10 ? "0" : "");
-        sb.append(this.a);
-        sb.append(this.b < 10 ? "-0" : "-");
-        sb.append(this.b);
-        return sb.toString();
+        StringBuilder sb2 = new StringBuilder(10);
+        sb2.append("--");
+        sb2.append(this.a < 10 ? "0" : "");
+        sb2.append(this.a);
+        sb2.append(this.b < 10 ? "-0" : "-");
+        sb2.append(this.b);
+        return sb2.toString();
     }
 
     private Object writeReplace() {

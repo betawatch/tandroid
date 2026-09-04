@@ -1,29 +1,56 @@
 package ad;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public abstract class a {
-    public static final Integer a;
+import java.util.ArrayList;
+import java.util.Map;
 
-    static {
-        Integer num;
-        Object obj;
-        Integer num2 = null;
-        try {
-            obj = Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
-        } catch (Throwable unused) {
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class a extends c {
+    public final a e;
+    public ArrayList f;
+
+    public a(String str, int i10, Map map, a aVar) {
+        super(i10, str, map);
+        this.e = aVar;
+    }
+
+    @Override // ad.c
+    public final Map a() {
+        return this.c;
+    }
+
+    public final void b(int i10) {
+        if (this.d > -1) {
+            return;
         }
-        if (obj instanceof Integer) {
-            num = (Integer) obj;
-            if (num != null && num.intValue() > 0) {
-                num2 = num;
+        this.d = i10;
+        ArrayList arrayList = this.f;
+        if (arrayList != null) {
+            int size = arrayList.size();
+            int i11 = 0;
+            while (i11 < size) {
+                Object obj = arrayList.get(i11);
+                i11++;
+                ((a) obj).b(i10);
             }
-            a = num2;
         }
-        num = null;
-        if (num != null) {
-            num2 = num;
-        }
-        a = num2;
+    }
+
+    public final String toString() {
+        StringBuilder sb2 = new StringBuilder("BlockImpl{name='");
+        sb2.append(this.a);
+        sb2.append("', start=");
+        sb2.append(this.b);
+        sb2.append(", end=");
+        sb2.append(this.d);
+        sb2.append(", attributes=");
+        sb2.append(this.c);
+        sb2.append(", parent=");
+        a aVar = this.e;
+        sb2.append(aVar != null ? aVar.a : null);
+        sb2.append(", children=");
+        sb2.append(this.f);
+        sb2.append('}');
+        return sb2.toString();
     }
 }

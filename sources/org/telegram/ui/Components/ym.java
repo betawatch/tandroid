@@ -1,24 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.content.Context;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ym extends li {
-    public final /* synthetic */ Runnable M2;
+public final class ym extends org.telegram.ui.su0 {
+    public boolean a;
+    public final /* synthetic */ int b;
+    public final /* synthetic */ tn c;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ym(Context context, org.telegram.ui.ActionBar.p2 p2Var, org.telegram.ui.ActionBar.f6 f6Var, Runnable runnable) {
-        super(context, p2Var, false, false, true, f6Var);
-        this.M2 = runnable;
+    public ym(tn tnVar, int i10) {
+        this.c = tnVar;
+        this.b = i10;
     }
 
-    @Override // org.telegram.ui.Components.li, org.telegram.ui.ActionBar.g3
-    public final void dismissInternal() {
-        super.dismissInternal();
-        Runnable runnable = this.M2;
-        if (runnable != null) {
-            runnable.run();
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final void D() {
+        if (this.a) {
+            this.c.b0(this.b);
         }
+    }
+
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final void I() {
+        this.c.e0(this.b, null);
+    }
+
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final void V() {
+        this.a = true;
+    }
+
+    @Override // org.telegram.ui.su0, org.telegram.ui.av0
+    public final boolean z() {
+        return false;
     }
 }

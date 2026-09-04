@@ -1,30 +1,38 @@
 package k2;
 
-import android.animation.TypeEvaluator;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f implements TypeEvaluator {
-    public static final f a = new f();
+public final /* synthetic */ class f implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ n4.y b;
+    public final /* synthetic */ Exception c;
 
-    @Override // android.animation.TypeEvaluator
-    public final Object evaluate(float f10, Object obj, Object obj2) {
-        int intValue = ((Integer) obj).intValue();
-        float f11 = ((intValue >> 24) & 255) / 255.0f;
-        int intValue2 = ((Integer) obj2).intValue();
-        float f12 = ((intValue2 >> 24) & 255) / 255.0f;
-        float pow = (float) Math.pow(((intValue >> 16) & 255) / 255.0f, 2.2d);
-        float pow2 = (float) Math.pow(((intValue >> 8) & 255) / 255.0f, 2.2d);
-        float pow3 = (float) Math.pow((intValue & 255) / 255.0f, 2.2d);
-        float pow4 = (float) Math.pow(((intValue2 >> 16) & 255) / 255.0f, 2.2d);
-        float pow5 = (float) Math.pow(((intValue2 >> 8) & 255) / 255.0f, 2.2d);
-        float pow6 = (float) Math.pow((intValue2 & 255) / 255.0f, 2.2d);
-        float w10 = e2.c.w(f12, f11, f10, f11);
-        float w11 = e2.c.w(pow4, pow, f10, pow);
-        float w12 = e2.c.w(pow5, pow2, f10, pow2);
-        float w13 = e2.c.w(pow6, pow3, f10, pow3);
-        float pow7 = ((float) Math.pow(w11, 0.45454545454545453d)) * 255.0f;
-        float pow8 = ((float) Math.pow(w12, 0.45454545454545453d)) * 255.0f;
-        return Integer.valueOf(Math.round(((float) Math.pow(w13, 0.45454545454545453d)) * 255.0f) | (Math.round(pow7) << 16) | (Math.round(w10 * 255.0f) << 24) | (Math.round(pow8) << 8));
+    public /* synthetic */ f(n4.y yVar, Exception exc, int i10) {
+        this.a = i10;
+        this.b = yVar;
+        this.c = exc;
+    }
+
+    @Override // java.lang.Runnable
+    public final void run() {
+        int i10 = this.a;
+        Exception exc = this.c;
+        n4.y yVar = this.b;
+        switch (i10) {
+            case 0:
+                j jVar = (j) yVar.c;
+                String str = e2.d0.a;
+                j2.f fVar = ((i2.c0) jVar).a.s;
+                j2.a p5 = fVar.p();
+                fVar.q(p5, 1029, new i0.b(p5, exc, 29));
+                break;
+            default:
+                j jVar2 = (j) yVar.c;
+                String str2 = e2.d0.a;
+                j2.f fVar2 = ((i2.c0) jVar2).a.s;
+                j2.a p10 = fVar2.p();
+                fVar2.q(p10, 1014, new j2.c(p10, exc, 23));
+                break;
+        }
     }
 }

@@ -1,48 +1,67 @@
 package org.telegram.ui;
 
-import android.text.SpannableStringBuilder;
+import android.view.ViewGroup;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.R;
-import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class q10 implements org.telegram.ui.Cells.j7 {
-    public final /* synthetic */ r10 a;
+public final class q10 extends org.telegram.ui.Components.kl0 {
+    public final /* synthetic */ x10 c;
 
-    public q10(r10 r10Var) {
-        this.a = r10Var;
+    public q10(x10 x10Var) {
+        this.c = x10Var;
     }
 
-    @Override // org.telegram.ui.Cells.j7
-    public final void a(String str, boolean z4) {
-        u10 u10Var = this.a.v;
-        if (!z4) {
-            SpannableStringBuilder[] spannableStringBuilderArr = u10.p0;
-            u10Var.g(str);
-            return;
+    @Override // org.telegram.ui.Components.kl0
+    public final boolean D(s4.c1 c1Var) {
+        return true;
+    }
+
+    @Override // s4.h0
+    public final int h() {
+        x10 x10Var = this.c;
+        if (x10Var.f.isEmpty()) {
+            return 0;
         }
-        org.telegram.ui.ActionBar.g3 g3Var = new org.telegram.ui.ActionBar.g3(u10Var.H, null, false, false);
-        g3Var.fixNavigationBar();
-        g3Var.title = str;
-        g3Var.bigTitle = false;
-        CharSequence[] charSequenceArr = {LocaleController.getString(R.string.Open), LocaleController.getString(R.string.Copy)};
-        cg.u1 u1Var = new cg.u1(7, this, str);
-        g3Var.items = charSequenceArr;
-        g3Var.onClickListener = u1Var;
-        u10Var.I.showDialog(g3Var);
+        return x10Var.f.size() + (!x10Var.N ? 1 : 0);
     }
 
-    @Override // org.telegram.ui.Cells.j7
-    public final void b(TLRPC.WebPage webPage, MessageObject messageObject) {
-        u10 u10Var = this.a.v;
-        SpannableStringBuilder[] spannableStringBuilderArr = u10.p0;
-        org.telegram.ui.Components.ou.I(u10Var.I, messageObject, u10Var.d0, webPage.site_name, webPage.description, webPage.url, webPage.embed_url, webPage.embed_width, webPage.embed_height, -1, false);
+    @Override // s4.h0
+    public final int j(int i10) {
+        return i10 >= this.c.f.size() ? 3 : 0;
     }
 
-    @Override // org.telegram.ui.Cells.j7
-    public final boolean e() {
-        return !this.a.v.l0.f();
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        if (c1Var.f == 0) {
+            org.telegram.ui.Cells.r2 r2Var = (org.telegram.ui.Cells.r2) c1Var.a;
+            x10 x10Var = this.c;
+            MessageObject messageObject = (MessageObject) x10Var.f.get(i10);
+            r2Var.O = x10Var.p0;
+            r2Var.W(messageObject.getDialogId(), messageObject, messageObject.messageOwner.date, false, false);
+            r2Var.s2 = i10 != h() - 1;
+            r2Var.getViewTreeObserver().addOnPreDrawListener(new org.telegram.ui.Components.mk(this, r2Var, messageObject, r2Var.getMessage() != null && r2Var.getMessage().getId() == messageObject.getId(), 1));
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        hg.a0 a0Var;
+        if (i10 == 0) {
+            a0Var = new hg.a0(2, viewGroup.getContext(), true);
+        } else if (i10 != 3) {
+            org.telegram.ui.Cells.u3 u3Var = new org.telegram.ui.Cells.u3(viewGroup.getContext(), null);
+            u3Var.setText(LocaleController.getString(R.string.SearchMessages));
+            a0Var = u3Var;
+        } else {
+            org.telegram.ui.Components.t00 t00Var = new org.telegram.ui.Components.t00(viewGroup.getContext(), null);
+            t00Var.setIsSingleCell(true);
+            t00Var.setViewType(1);
+            a0Var = t00Var;
+        }
+        return com.google.android.gms.internal.vision.e2.l(a0Var, a0Var, -1, -2);
     }
 }

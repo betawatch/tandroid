@@ -1,48 +1,24 @@
 package z3;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import e9.i0;
+import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a extends n3.a {
+public final class a {
+    public final i0 a;
+    public final long b;
     public final long c;
-    public final ArrayList d;
-    public final ArrayList e;
+    public final long d;
 
-    public a(int i10, long j10) {
-        super(i10, 2);
+    public a(long j3, long j10, List list) {
+        this.a = i0.v(list);
+        this.b = j3;
         this.c = j10;
-        this.d = new ArrayList();
-        this.e = new ArrayList();
-    }
-
-    public final a j(int i10) {
-        ArrayList arrayList = this.e;
-        int size = arrayList.size();
-        for (int i11 = 0; i11 < size; i11++) {
-            a aVar = (a) arrayList.get(i11);
-            if (aVar.b == i10) {
-                return aVar;
-            }
+        long j11 = -9223372036854775807L;
+        if (j3 != -9223372036854775807L && j10 != -9223372036854775807L) {
+            j11 = j3 + j10;
         }
-        return null;
-    }
-
-    public final b k(int i10) {
-        ArrayList arrayList = this.d;
-        int size = arrayList.size();
-        for (int i11 = 0; i11 < size; i11++) {
-            b bVar = (b) arrayList.get(i11);
-            if (bVar.b == i10) {
-                return bVar;
-            }
-        }
-        return null;
-    }
-
-    @Override // n3.a
-    public final String toString() {
-        return n3.a.c(this.b) + " leaves: " + Arrays.toString(this.d.toArray()) + " containers: " + Arrays.toString(this.e.toArray());
+        this.d = j11;
     }
 }

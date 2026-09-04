@@ -1,72 +1,54 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.style.ReplacementSpan;
-import android.view.View;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageReceiver;
+import android.animation.ValueAnimator;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class l01 extends ReplacementSpan {
-    public static final /* synthetic */ int f = 0;
-    public ImageReceiver a;
-    public int b;
-    public int c;
-    public final boolean d;
-    public final int e;
+public final /* synthetic */ class l01 implements ValueAnimator.AnimatorUpdateListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ m01 b;
 
-    public l01(View view, Bitmap bitmap, int i10, int i11, int i12, int i13) {
-        this.b = i10;
-        this.c = i11;
-        ImageReceiver imageReceiver = new ImageReceiver(view);
-        this.a = imageReceiver;
-        imageReceiver.setInvalidateAll(true);
-        imageReceiver.setImageBitmap(bitmap);
-        imageReceiver.setColorFilter(new PorterDuffColorFilter(i12, PorterDuff.Mode.SRC_IN));
-        this.e = i13;
-        this.d = true;
+    public /* synthetic */ l01(m01 m01Var, int i10) {
+        this.a = i10;
+        this.b = m01Var;
     }
 
-    @Override // android.text.style.ReplacementSpan
-    public final void draw(Canvas canvas, CharSequence charSequence, int i10, int i11, float f10, int i12, int i13, int i14, Paint paint) {
-        int i15 = this.b;
-        int i16 = this.c;
-        ImageReceiver imageReceiver = this.a;
-        canvas.save();
-        if (this.d) {
-            imageReceiver.setImageCoords((int) f10, i13 - (i16 - this.e), i15, i16);
-        } else {
-            imageReceiver.setImageCoords((int) f10, kf.k0.d(org.telegram.messenger.y3.B(4.0f, i14, i12), i16, 2, i12), i15, i16);
+    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
+    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+        switch (this.a) {
+            case 0:
+                m01 m01Var = this.b;
+                m01Var.getClass();
+                m01Var.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m01Var.invalidate();
+                break;
+            case 1:
+                m01 m01Var2 = this.b;
+                m01Var2.getClass();
+                m01Var2.F = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m01Var2.invalidate();
+                break;
+            case 2:
+                m01 m01Var3 = this.b;
+                m01Var3.getClass();
+                m01Var3.f = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m01Var3.invalidate();
+                break;
+            case 3:
+                m01 m01Var4 = this.b;
+                m01Var4.getClass();
+                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m01Var4.s = floatValue;
+                m01Var4.w = (int) ((m01Var4.h * floatValue) + 0);
+                m01Var4.invalidate();
+                break;
+            default:
+                m01 m01Var5 = this.b;
+                m01Var5.getClass();
+                m01Var5.v = ((Float) valueAnimator.getAnimatedValue()).floatValue();
+                m01Var5.x = m01Var5.r + ((int) Math.ceil((m01Var5.n - r1) * r5));
+                m01Var5.invalidate();
+                break;
         }
-        imageReceiver.draw(canvas);
-        canvas.restore();
-    }
-
-    @Override // android.text.style.ReplacementSpan
-    public final int getSize(Paint paint, CharSequence charSequence, int i10, int i11, Paint.FontMetricsInt fontMetricsInt) {
-        int i12 = this.c;
-        if (fontMetricsInt != null) {
-            if (this.d) {
-                int i13 = this.e;
-                int i14 = -(i12 - i13);
-                fontMetricsInt.ascent = i14;
-                fontMetricsInt.top = i14;
-                fontMetricsInt.descent = i13;
-                fontMetricsInt.bottom = i13;
-            } else {
-                int dp = ((-i12) / 2) - AndroidUtilities.dp(4.0f);
-                fontMetricsInt.ascent = dp;
-                fontMetricsInt.top = dp;
-                int dp2 = (i12 - (i12 / 2)) - AndroidUtilities.dp(4.0f);
-                fontMetricsInt.descent = dp2;
-                fontMetricsInt.bottom = dp2;
-            }
-        }
-        return this.b;
     }
 }

@@ -49,19 +49,19 @@ public final class t5 extends b {
             this.o = true;
         }
         if (this.m >= 0 && !b()) {
-            long j10 = this.l + this.m;
-            long j11 = this.o ? this.n : j(j10);
-            if (j11 < j10) {
+            long j3 = this.l + this.m;
+            long j10 = this.o ? this.n : j(j3);
+            if (j10 < j3) {
                 t5 t5Var2 = (t5) ((d) getCompleter());
                 t5 t5Var3 = this;
                 while (true) {
                     if (t5Var2 != null) {
                         if (t5Var3 == t5Var2.e && (t5Var = (t5) t5Var2.d) != null) {
-                            long j12 = t5Var.j(j10) + j11;
-                            if (j12 >= j10) {
+                            long j11 = t5Var.j(j3) + j10;
+                            if (j11 >= j3) {
                                 break;
                             } else {
-                                j11 = j12;
+                                j10 = j11;
                             }
                         }
                         t5Var3 = t5Var2;
@@ -74,12 +74,12 @@ public final class t5 extends b {
         super.onCompletion(countedCompleter);
     }
 
-    public t5(a aVar, t3 t3Var, Spliterator spliterator, IntFunction intFunction, long j10, long j11) {
+    public t5(a aVar, t3 t3Var, Spliterator spliterator, IntFunction intFunction, long j3, long j10) {
         super(t3Var, spliterator);
         this.j = aVar;
         this.k = intFunction;
-        this.l = j10;
-        this.m = j11;
+        this.l = j3;
+        this.m = j10;
     }
 
     public t5(t5 t5Var, Spliterator spliterator) {
@@ -128,7 +128,7 @@ public final class t5 extends b {
         return build;
     }
 
-    public final long j(long j10) {
+    public final long j(long j3) {
         if (this.o) {
             return this.n;
         }
@@ -137,7 +137,7 @@ public final class t5 extends b {
         if (t5Var == null || t5Var2 == null) {
             return this.n;
         }
-        long j11 = t5Var.j(j10);
-        return j11 >= j10 ? j11 : t5Var2.j(j10) + j11;
+        long j10 = t5Var.j(j3);
+        return j10 >= j3 ? j10 : t5Var2.j(j3) + j10;
     }
 }

@@ -1,34 +1,17 @@
 package l5;
 
-import android.os.Parcel;
-import android.os.Parcelable;
-import j7.f5;
-import java.util.Arrays;
-import l4.j;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class d extends c6.a {
-    public static final Parcelable.Creator<d> CREATOR = new j(6);
-    public final boolean a;
+public final class d implements ia.d {
+    public static final d a = new d();
+    public static final ia.c b = new ia.c("logSource", i2.g.n(i2.g.m(la.e.class, new la.a(1))));
+    public static final ia.c c = new ia.c("logEventDropped", i2.g.n(i2.g.m(la.e.class, new la.a(2))));
 
-    public d(boolean z4) {
-        this.a = z4;
-    }
-
-    public final boolean equals(Object obj) {
-        return (obj instanceof d) && this.a == ((d) obj).a;
-    }
-
-    public final int hashCode() {
-        return Arrays.hashCode(new Object[]{Boolean.valueOf(this.a)});
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel parcel, int i10) {
-        int q10 = f5.q(parcel, 20293);
-        f5.s(parcel, 1, 4);
-        parcel.writeInt(this.a ? 1 : 0);
-        f5.r(parcel, q10);
+    @Override // ia.a
+    public final void a(Object obj, Object obj2) {
+        o5.e eVar = (o5.e) obj;
+        ia.e eVar2 = (ia.e) obj2;
+        eVar2.a(b, eVar.a);
+        eVar2.a(c, eVar.b);
     }
 }

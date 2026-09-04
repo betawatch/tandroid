@@ -6,30 +6,30 @@ import android.text.style.URLSpan;
 import android.view.View;
 import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class l31 extends ClickableSpan {
     public final /* synthetic */ URLSpan a;
-    public final /* synthetic */ v31 b;
+    public final /* synthetic */ u31 b;
 
-    public l31(v31 v31Var, URLSpan uRLSpan) {
-        this.b = v31Var;
+    public l31(u31 u31Var, URLSpan uRLSpan) {
+        this.b = u31Var;
         this.a = uRLSpan;
     }
 
     @Override // android.text.style.ClickableSpan
     public final void onClick(View view) {
-        v31 v31Var = this.b;
-        Utilities.CallbackReturn callbackReturn = v31Var.K;
+        u31 u31Var = this.b;
+        Utilities.CallbackReturn callbackReturn = u31Var.N;
         URLSpan uRLSpan = this.a;
         if (callbackReturn != null) {
             if (((Boolean) callbackReturn.run(uRLSpan)).booleanValue()) {
-                v31Var.dismiss();
+                u31Var.dismiss();
             }
         } else {
-            org.telegram.ui.ActionBar.p2 p2Var = v31Var.J;
-            if (p2Var != null) {
-                z4.q0(p2Var, uRLSpan.getURL(), false, false);
+            org.telegram.ui.ActionBar.n2 n2Var = u31Var.M;
+            if (n2Var != null) {
+                e5.q0(n2Var, uRLSpan.getURL(), false, false);
             }
         }
     }
@@ -37,7 +37,7 @@ public final class l31 extends ClickableSpan {
     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
     public final void updateDrawState(TextPaint textPaint) {
         int min = Math.min(textPaint.getAlpha(), (textPaint.getColor() >> 24) & 255);
-        if (!(this.a instanceof m51)) {
+        if (!(this.a instanceof l51)) {
             textPaint.setUnderlineText(true);
         }
         textPaint.setColor(org.telegram.ui.ActionBar.j6.w0(null, org.telegram.ui.ActionBar.j6.k5, false));

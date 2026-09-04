@@ -4,7 +4,7 @@ import android.graphics.PointF;
 import java.nio.ByteBuffer;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class wz implements yz {
     public final /* synthetic */ MediaController.SavedFilterState a;
@@ -57,7 +57,7 @@ public final class wz implements yz {
 
     @Override // org.telegram.ui.Components.yz
     public final float getContrastValue() {
-        return vh.w2.c(this.a.contrastValue, 100.0f, 0.3f, 1.0f);
+        return a4.a.e(this.a.contrastValue, 100.0f, 0.3f, 1.0f);
     }
 
     @Override // org.telegram.ui.Components.yz
@@ -82,26 +82,26 @@ public final class wz implements yz {
 
     @Override // org.telegram.ui.Components.yz
     public final float getHighlightsValue() {
-        return e2.c.v(this.a.highlightsValue, 0.75f, 100.0f, 100.0f);
+        return com.google.android.gms.internal.vision.e2.y(this.a.highlightsValue, 0.75f, 100.0f, 100.0f);
     }
 
     @Override // org.telegram.ui.Components.yz
     public final float getSaturationValue() {
-        float f10 = this.a.saturationValue / 100.0f;
-        if (f10 > 0.0f) {
-            f10 *= 1.05f;
+        float f7 = this.a.saturationValue / 100.0f;
+        if (f7 > 0.0f) {
+            f7 *= 1.05f;
         }
-        return f10 + 1.0f;
+        return f7 + 1.0f;
     }
 
     @Override // org.telegram.ui.Components.yz
     public final float getShadowsValue() {
-        return e2.c.v(this.a.shadowsValue, 0.55f, 100.0f, 100.0f);
+        return com.google.android.gms.internal.vision.e2.y(this.a.shadowsValue, 0.55f, 100.0f, 100.0f);
     }
 
     @Override // org.telegram.ui.Components.yz
     public final float getSharpenValue() {
-        return vh.w2.c(this.a.sharpenValue, 100.0f, 0.6f, 0.11f);
+        return a4.a.e(this.a.sharpenValue, 100.0f, 0.6f, 0.11f);
     }
 
     @Override // org.telegram.ui.Components.yz

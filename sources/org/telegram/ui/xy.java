@@ -1,72 +1,80 @@
 package org.telegram.ui;
 
-import androidx.recyclerview.widget.RecyclerView;
+import android.appwidget.AppWidgetManager;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import java.util.ArrayList;
+import org.scilab.forge.jlatexmath.TeXSymbolParser;
+import org.telegram.messenger.ChatsWidgetProvider;
+import org.telegram.messenger.ContactsWidgetProvider;
+import org.telegram.messenger.MessagesStorage;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class xy extends f2.b0 {
-    public boolean d;
-    public final /* synthetic */ zy e;
+public final class xy extends org.telegram.ui.ActionBar.j {
+    public final /* synthetic */ dz a;
 
-    public xy(zy zyVar) {
-        this.e = zyVar;
+    public xy(dz dzVar) {
+        this.a = dzVar;
     }
 
-    @Override // f2.b0
-    public final void a(RecyclerView recyclerView, f2.l1 l1Var) {
-        super.a(recyclerView, l1Var);
-        l1Var.a.setPressed(false);
-    }
-
-    @Override // f2.b0
-    public final int e(RecyclerView recyclerView, f2.l1 l1Var) {
-        return l1Var.f != 3 ? f2.b0.l(0, 0) : f2.b0.l(3, 0);
-    }
-
-    @Override // f2.b0
-    public final boolean n(RecyclerView recyclerView, f2.l1 l1Var, f2.l1 l1Var2) {
-        if (l1Var.f != l1Var2.f) {
-            return false;
-        }
-        int b10 = l1Var.b();
-        int b11 = l1Var2.b();
-        zy zyVar = this.e;
-        wy wyVar = zyVar.a;
-        zy zyVar2 = wyVar.d;
-        int i10 = zyVar2.n;
-        ArrayList arrayList = zyVar2.e;
-        int i11 = b10 - i10;
-        int i12 = b11 - i10;
-        int i13 = zyVar2.r - i10;
-        if (i11 >= 0 && i12 >= 0 && i11 < i13 && i12 < i13) {
-            Long l10 = (Long) arrayList.get(i11);
-            arrayList.set(i11, (Long) arrayList.get(i12));
-            arrayList.set(i12, l10);
-            wyVar.p(b10, b11);
-            ((org.telegram.ui.Cells.f4) l1Var.a).setDrawDivider(b11 != zyVar.r - 1);
-            ((org.telegram.ui.Cells.f4) l1Var2.a).setDrawDivider(b10 != zyVar.r - 1);
-            this.d = true;
-        }
-        return true;
-    }
-
-    @Override // f2.b0
-    public final void p(f2.l1 l1Var, int i10) {
-        zy zyVar = this.e;
-        if (i10 != 0) {
-            zyVar.b.I0(false);
-            l1Var.a.setPressed(true);
-        } else if (this.d) {
-            yy yyVar = zyVar.f;
-            if (yyVar != null) {
-                yyVar.a();
+    @Override // org.telegram.ui.ActionBar.j
+    public final void b(int i10) {
+        int i11;
+        dz dzVar = this.a;
+        int i12 = dzVar.w;
+        ArrayList arrayList = dzVar.e;
+        int i13 = dzVar.x;
+        if (i10 == -1) {
+            if (dzVar.y != null) {
+                dzVar.finishFragment();
+                return;
             }
-            this.d = false;
+            dzVar.Y();
         }
-    }
-
-    @Override // f2.b0
-    public final void q(f2.l1 l1Var) {
+        if (i10 != 1 || dzVar.getParentActivity() == null) {
+            return;
+        }
+        ArrayList<MessagesStorage.TopicKey> arrayList2 = new ArrayList<>();
+        for (int i14 = 0; i14 < arrayList.size(); i14++) {
+            arrayList2.add(MessagesStorage.TopicKey.of(((Long) arrayList.get(i14)).longValue(), 0L));
+        }
+        dzVar.getMessagesStorage().putWidgetDialogs(i13, arrayList2);
+        SharedPreferences.Editor edit = dzVar.getParentActivity().getSharedPreferences("shortcut_widget", 0).edit();
+        i11 = ((org.telegram.ui.ActionBar.n2) dzVar).currentAccount;
+        edit.putInt("account" + i13, i11);
+        edit.putInt(TeXSymbolParser.TYPE_ATTR + i13, i12);
+        edit.commit();
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(dzVar.getParentActivity());
+        if (i12 == 0) {
+            ChatsWidgetProvider.updateWidget(dzVar.getParentActivity(), appWidgetManager, i13);
+        } else {
+            ContactsWidgetProvider.updateWidget(dzVar.getParentActivity(), appWidgetManager, i13);
+        }
+        z0 z0Var = dzVar.y;
+        if (z0Var == null) {
+            dzVar.Y();
+            return;
+        }
+        int i15 = z0Var.a;
+        Object obj = z0Var.b;
+        switch (i15) {
+            case 25:
+                ChatsWidgetConfigActivity chatsWidgetConfigActivity = (ChatsWidgetConfigActivity) obj;
+                int i16 = ChatsWidgetConfigActivity.F;
+                Intent intent = new Intent();
+                intent.putExtra("appWidgetId", chatsWidgetConfigActivity.E);
+                chatsWidgetConfigActivity.setResult(-1, intent);
+                chatsWidgetConfigActivity.finish();
+                break;
+            default:
+                ContactsWidgetConfigActivity contactsWidgetConfigActivity = (ContactsWidgetConfigActivity) obj;
+                int i17 = ContactsWidgetConfigActivity.F;
+                Intent intent2 = new Intent();
+                intent2.putExtra("appWidgetId", contactsWidgetConfigActivity.E);
+                contactsWidgetConfigActivity.setResult(-1, intent2);
+                contactsWidgetConfigActivity.finish();
+                break;
+        }
     }
 }

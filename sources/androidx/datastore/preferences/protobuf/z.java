@@ -1,10 +1,50 @@
 package androidx.datastore.preferences.protobuf;
 
-import java.util.List;
-import java.util.RandomAccess;
+import java.nio.ByteBuffer;
+import java.nio.charset.Charset;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface z extends List, RandomAccess {
-    z e(int i10);
+public abstract class z {
+    public static final Charset a = Charset.forName("UTF-8");
+    public static final byte[] b;
+
+    static {
+        Charset.forName("ISO-8859-1");
+        byte[] bArr = new byte[0];
+        b = bArr;
+        ByteBuffer.wrap(bArr);
+        if (0 + 0 <= Integer.MAX_VALUE) {
+            return;
+        }
+        try {
+            throw b0.f();
+        } catch (b0 e7) {
+            throw new IllegalArgumentException(e7);
+        }
+    }
+
+    public static void a(Object obj, String str) {
+        if (obj == null) {
+            throw new NullPointerException(str);
+        }
+    }
+
+    public static int b(long j3) {
+        return (int) (j3 ^ (j3 >>> 32));
+    }
+
+    public static w c(Object obj, Object obj2) {
+        w wVar = (w) ((a) obj);
+        u uVar = (u) wVar.d(5);
+        uVar.c();
+        u.d(uVar.b, wVar);
+        a aVar = (a) obj2;
+        if (!uVar.a.getClass().isInstance(aVar)) {
+            throw new IllegalArgumentException("mergeFrom(MessageLite) can only merge messages of the same type.");
+        }
+        uVar.c();
+        u.d(uVar.b, (w) aVar);
+        return uVar.b();
+    }
 }

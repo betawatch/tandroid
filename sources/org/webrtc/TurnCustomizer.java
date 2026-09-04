@@ -1,12 +1,12 @@
 package org.webrtc;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public class TurnCustomizer {
     private long nativeTurnCustomizer;
 
-    public TurnCustomizer(long j10) {
-        this.nativeTurnCustomizer = j10;
+    public TurnCustomizer(long j3) {
+        this.nativeTurnCustomizer = j3;
     }
 
     private void checkTurnCustomizerExists() {
@@ -15,7 +15,7 @@ public class TurnCustomizer {
         }
     }
 
-    private static native void nativeFreeTurnCustomizer(long j10);
+    private static native void nativeFreeTurnCustomizer(long j3);
 
     public void dispose() {
         checkTurnCustomizerExists();

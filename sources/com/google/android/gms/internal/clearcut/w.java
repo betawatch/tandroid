@@ -1,40 +1,51 @@
 package com.google.android.gms.internal.clearcut;
 
 /* loaded from: classes.dex */
-public final class w implements p0 {
-    public static final w b = new w(0);
-    public final /* synthetic */ int a;
+public abstract class w implements Cloneable {
+    public final y a;
+    public y b;
+    public boolean c = false;
 
-    public /* synthetic */ w(int i10) {
-        this.a = i10;
+    public w(y yVar) {
+        this.a = yVar;
+        this.b = (y) yVar.a(4);
     }
 
-    @Override // com.google.android.gms.internal.clearcut.p0
-    public final boolean zza(Class cls) {
-        switch (this.a) {
-            case 0:
-                return z.class.isAssignableFrom(cls);
-            default:
-                return false;
+    public final void a(y yVar) {
+        b();
+        y yVar2 = this.b;
+        v0 v0Var = v0.c;
+        v0Var.getClass();
+        v0Var.a(yVar2.getClass()).c(yVar2, yVar);
+    }
+
+    public final void b() {
+        if (this.c) {
+            y yVar = (y) this.b.a(4);
+            y yVar2 = this.b;
+            v0 v0Var = v0.c;
+            v0Var.getClass();
+            v0Var.a(yVar.getClass()).c(yVar, yVar2);
+            this.b = yVar;
+            this.c = false;
         }
     }
 
-    @Override // com.google.android.gms.internal.clearcut.p0
-    public final x0 zzb(Class cls) {
-        switch (this.a) {
-            case 0:
-                if (!z.class.isAssignableFrom(cls)) {
-                    String name = cls.getName();
-                    throw new IllegalArgumentException(name.length() != 0 ? "Unsupported message type: ".concat(name) : new String("Unsupported message type: "));
-                }
-                try {
-                    return (x0) z.d(cls.asSubclass(z.class)).a(3);
-                } catch (Exception e) {
-                    String name2 = cls.getName();
-                    throw new RuntimeException(name2.length() != 0 ? "Unable to get message info for ".concat(name2) : new String("Unable to get message info for "), e);
-                }
-            default:
-                throw new IllegalStateException("This should never be called.");
+    public final y c() {
+        if (this.c) {
+            return this.b;
         }
+        y yVar = this.b;
+        v0 v0Var = v0.c;
+        v0Var.getClass();
+        v0Var.a(yVar.getClass()).b(yVar);
+        this.c = true;
+        return this.b;
+    }
+
+    public final /* synthetic */ Object clone() {
+        w wVar = (w) this.a.a(5);
+        wVar.a(c());
+        return wVar;
     }
 }

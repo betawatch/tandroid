@@ -1,20 +1,54 @@
 package n7;
 
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class v {
-    public static final v a;
-    public static final /* synthetic */ v[] b;
+import java.io.Serializable;
 
-    static {
-        v vVar = new v("DEFAULT", 0);
-        a = vVar;
-        b = new v[]{vVar, new v("SIGNED", 1), new v("FIXED", 2)};
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class v extends w implements Serializable {
+    public static final v b = new v(0);
+    public static final v c = new v(1);
+    public final /* synthetic */ int a;
+
+    public /* synthetic */ v(int i10) {
+        this.a = i10;
     }
 
-    public static v[] values() {
-        return (v[]) b.clone();
+    @Override // n7.w
+    public final w a() {
+        switch (this.a) {
+            case 0:
+                return c;
+            default:
+                return b;
+        }
+    }
+
+    @Override // java.util.Comparator
+    public final /* bridge */ /* synthetic */ int compare(Object obj, Object obj2) {
+        switch (this.a) {
+            case 0:
+                Comparable comparable = (Comparable) obj;
+                Comparable comparable2 = (Comparable) obj2;
+                comparable.getClass();
+                comparable2.getClass();
+                return comparable.compareTo(comparable2);
+            default:
+                Comparable comparable3 = (Comparable) obj;
+                Comparable comparable4 = (Comparable) obj2;
+                comparable3.getClass();
+                if (comparable3 == comparable4) {
+                    return 0;
+                }
+                return comparable4.compareTo(comparable3);
+        }
+    }
+
+    public final String toString() {
+        switch (this.a) {
+            case 0:
+                return "Ordering.natural()";
+            default:
+                return "Ordering.natural().reverse()";
+        }
     }
 }

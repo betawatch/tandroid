@@ -1,66 +1,79 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.ObjectAnimator;
-import android.transition.Fade;
-import android.transition.TransitionValues;
-import android.view.View;
-import android.view.ViewGroup;
+import android.R;
+import android.net.Uri;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ot0 extends Fade {
+public final /* synthetic */ class ot0 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ PhotoViewer d;
+    public final /* synthetic */ pt0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ot0(PhotoViewer photoViewer, boolean z4, boolean z10, int i10) {
-        super(1);
+    public /* synthetic */ ot0(pt0 pt0Var, int i10) {
         this.a = i10;
-        switch (i10) {
-            case 1:
-                this.d = photoViewer;
-                this.b = z4;
-                this.c = z10;
-                super(2);
-                break;
-            default:
-                this.d = photoViewer;
-                this.b = z4;
-                this.c = z10;
-                break;
-        }
+        this.b = pt0Var;
     }
 
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onAppear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
+    /* JADX WARN: Code restructure failed: missing block: B:38:0x0057, code lost:
+    
+        if (r2 != 7) goto L32;
+     */
+    @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final void run() {
+        b2.j jVar;
         switch (this.a) {
             case 0:
-                Animator onAppear = super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-                if (this.b && !this.c && view == this.d.N1) {
-                    onAppear.addListener(new ss0(this, 4));
-                    ((ObjectAnimator) onAppear).addUpdateListener(new g3(this, 20));
+                PhotoViewer photoViewer = this.b.b;
+                tu0 tu0Var = photoViewer.E2;
+                if (tu0Var != null) {
+                    org.telegram.ui.Components.g71 g71Var = photoViewer.F2;
+                    if (tu0Var.e != g71Var) {
+                        tu0Var.c = false;
+                        tu0Var.d = false;
+                        if (tu0Var.b) {
+                            tu0Var.a++;
+                            tu0Var.b = false;
+                        }
+                        tu0Var.setImageResource(R.color.transparent);
+                    }
+                    if (g71Var != null) {
+                        i2.f0 f0Var = g71Var.d;
+                        if (f0Var != null) {
+                            try {
+                                f0Var.B1();
+                                b2.s sVar = f0Var.Q;
+                                if (sVar != null && (jVar = sVar.H) != null) {
+                                    int i10 = jVar.c;
+                                    if (i10 != 6) {
+                                        break;
+                                    }
+                                }
+                            } catch (Exception unused) {
+                            }
+                        }
+                        long p5 = g71Var.p() - g71Var.n();
+                        if (!tu0Var.c && !tu0Var.d && !tu0Var.b && p5 < 5250.0f) {
+                            Uri uri = g71Var.F;
+                            int i11 = tu0Var.a + 1;
+                            tu0Var.a = i11;
+                            Utilities.globalQueue.postRunnable(new ai0(tu0Var, uri, i11, 3));
+                            tu0Var.b = true;
+                        }
+                    }
+                    tu0Var.e = g71Var;
+                    break;
                 }
-                return onAppear;
-            default:
-                return super.onAppear(viewGroup, view, transitionValues, transitionValues2);
-        }
-    }
-
-    @Override // android.transition.Fade, android.transition.Visibility
-    public Animator onDisappear(ViewGroup viewGroup, View view, TransitionValues transitionValues, TransitionValues transitionValues2) {
-        switch (this.a) {
+                break;
             case 1:
-                Animator onDisappear = super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
-                if (!this.b && this.c && view == this.d.N1) {
-                    onDisappear.addListener(new ss0(this, 5));
-                    ((ObjectAnimator) onDisappear).addUpdateListener(new g3(this, 21));
-                }
-                return onDisappear;
+                tu0.a(this.b.b.E2);
+                break;
             default:
-                return super.onDisappear(viewGroup, view, transitionValues, transitionValues2);
+                tu0.a(this.b.b.E2);
+                break;
         }
     }
 }

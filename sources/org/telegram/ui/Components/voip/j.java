@@ -15,8 +15,8 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.ActionBar.j6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
 public final class j extends View {
     public org.telegram.ui.Cells.z a;
     public final Paint b;
@@ -97,8 +97,8 @@ public final class j extends View {
         float height2 = getHeight();
         RectF rectF = this.e;
         rectF.set(0.0f, 0.0f, width2, height2);
-        float f10 = this.r;
-        canvas.drawRoundRect(rectF, f10, f10, paint);
+        float f7 = this.r;
+        canvas.drawRoundRect(rectF, f7, f7, paint);
         Drawable drawable = this.f;
         drawable.setBounds((int) (width - (drawable.getIntrinsicWidth() / 2.0f)), (int) (height - (drawable.getIntrinsicHeight() / 2)), (int) ((drawable.getIntrinsicWidth() / 2) + width), (int) ((drawable.getIntrinsicHeight() / 2) + height));
         drawable.setAlpha(this.s);

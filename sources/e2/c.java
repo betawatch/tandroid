@@ -1,206 +1,335 @@
 package e2;
 
-import j$.util.DesugarCollections;
-import java.io.File;
+import android.content.Context;
+import android.content.res.ColorStateList;
+import android.content.res.TypedArray;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.os.Looper;
+import android.util.AttributeSet;
+import android.view.View;
+import i2.f0;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.PriorityQueue;
+import java.util.WeakHashMap;
+import m.c3;
+import m.l1;
+import r0.i0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract /* synthetic */ class c {
-    public static float A(float f10, float f11, float f12, float f13) {
-        return (f10 * f11) + f12 + f13;
+public final class c {
+    public int a;
+    public final Object b;
+    public final Object c;
+    public Object d;
+    public Object e;
+    public Object f;
+
+    public c(View view) {
+        this.a = -1;
+        this.b = view;
+        this.c = m.q.a();
     }
 
-    public static /* synthetic */ int B(String str) {
-        if (str == null) {
-            throw new NullPointerException("Name is null");
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x0023, code lost:
+    
+        if (r9 < r2.b) goto L32;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void a(long j3, v vVar) {
+        ArrayDeque arrayDeque = (ArrayDeque) this.d;
+        PriorityQueue priorityQueue = (PriorityQueue) this.e;
+        int i10 = this.a;
+        if (i10 != 0) {
+            if (i10 != -1 && priorityQueue.size() >= this.a) {
+                f2.s sVar = (f2.s) priorityQueue.peek();
+                String str = d0.a;
+            }
+            ArrayDeque arrayDeque2 = (ArrayDeque) this.c;
+            v vVar2 = arrayDeque2.isEmpty() ? new v() : (v) arrayDeque2.pop();
+            vVar2.G(vVar.a());
+            System.arraycopy(vVar.a, vVar.b, vVar2.a, 0, vVar2.a());
+            f2.s sVar2 = (f2.s) this.f;
+            if (sVar2 != null && j3 == sVar2.b) {
+                sVar2.a.add(vVar2);
+                return;
+            }
+            f2.s sVar3 = arrayDeque.isEmpty() ? new f2.s() : (f2.s) arrayDeque.pop();
+            ArrayList arrayList = sVar3.a;
+            d.b(j3 != -9223372036854775807L);
+            d.g(arrayList.isEmpty());
+            sVar3.b = j3;
+            arrayList.add(vVar2);
+            priorityQueue.add(sVar3);
+            this.f = sVar3;
+            int i11 = this.a;
+            if (i11 != -1) {
+                c(i11);
+                return;
+            }
+            return;
         }
-        if (str.equals("GET")) {
-            return 1;
-        }
-        if (str.equals("PUT")) {
-            return 2;
-        }
-        if (str.equals("POST")) {
-            return 3;
-        }
-        if (str.equals("DELETE")) {
-            return 4;
-        }
-        if (str.equals("HEAD")) {
-            return 5;
-        }
-        if (str.equals("OPTIONS")) {
-            return 6;
-        }
-        if (str.equals("TRACE")) {
-            return 7;
-        }
-        if (str.equals("CONNECT")) {
-            return 8;
-        }
-        if (str.equals("PATCH")) {
-            return 9;
-        }
-        if (str.equals("PROPFIND")) {
-            return 10;
-        }
-        if (str.equals("PROPPATCH")) {
-            return 11;
-        }
-        if (str.equals("MKCOL")) {
-            return 12;
-        }
-        if (str.equals("MOVE")) {
-            return 13;
-        }
-        if (str.equals("COPY")) {
-            return 14;
-        }
-        if (str.equals("LOCK")) {
-            return 15;
-        }
-        if (str.equals("UNLOCK")) {
-            return 16;
-        }
-        throw new IllegalArgumentException("No enum constant fi.iki.elonen.NanoHTTPD.Method.".concat(str));
+        ((f2.t) this.b).a(j3, vVar);
     }
 
-    public static int a(String str) {
-        if (str == null) {
-            return 0;
-        }
-        try {
-            return B(str);
-        } catch (IllegalArgumentException unused) {
-            return 0;
-        }
-    }
-
-    public static int b(int i10, int i11, int i12) {
-        return i10 | i11 | i12 | 128;
-    }
-
-    public static /* synthetic */ int c(int i10) {
-        int i11 = 1;
-        if (i10 != 1) {
-            i11 = 2;
-            if (i10 != 2) {
-                i11 = 3;
-                if (i10 != 3) {
-                    if (i10 == 4) {
-                        return 4;
-                    }
-                    throw null;
+    public void b() {
+        View view = (View) this.b;
+        Drawable background = view.getBackground();
+        if (background != null) {
+            int i10 = Build.VERSION.SDK_INT;
+            if (i10 <= 21 ? i10 == 21 : ((c3) this.d) != null) {
+                if (((c3) this.f) == null) {
+                    this.f = new c3();
+                }
+                c3 c3Var = (c3) this.f;
+                c3Var.c = null;
+                c3Var.b = false;
+                c3Var.d = null;
+                c3Var.a = false;
+                WeakHashMap weakHashMap = i0.a;
+                ColorStateList c10 = r0.a0.c(view);
+                if (c10 != null) {
+                    c3Var.b = true;
+                    c3Var.c = c10;
+                }
+                PorterDuff.Mode d = r0.a0.d(view);
+                if (d != null) {
+                    c3Var.a = true;
+                    c3Var.d = d;
+                }
+                if (c3Var.b || c3Var.a) {
+                    m.q.d(background, c3Var, view.getDrawableState());
+                    return;
                 }
             }
+            c3 c3Var2 = (c3) this.e;
+            if (c3Var2 != null) {
+                m.q.d(background, c3Var2, view.getDrawableState());
+                return;
+            }
+            c3 c3Var3 = (c3) this.d;
+            if (c3Var3 != null) {
+                m.q.d(background, c3Var3, view.getDrawableState());
+            }
         }
-        return i11;
     }
 
-    public static float d(float f10, float f11, float f12, float f13) {
-        return (f12 - (f10 * f11)) / f13;
+    public void c(int i10) {
+        ArrayList arrayList;
+        PriorityQueue priorityQueue = (PriorityQueue) this.e;
+        while (priorityQueue.size() > i10) {
+            f2.s sVar = (f2.s) priorityQueue.poll();
+            String str = d0.a;
+            int i11 = 0;
+            while (true) {
+                arrayList = sVar.a;
+                if (i11 >= arrayList.size()) {
+                    break;
+                }
+                ((f2.t) this.b).a(sVar.b, (v) arrayList.get(i11));
+                ((ArrayDeque) this.c).push((v) arrayList.get(i11));
+                i11++;
+            }
+            arrayList.clear();
+            f2.s sVar2 = (f2.s) this.f;
+            if (sVar2 != null && sVar2.b == sVar.b) {
+                this.f = null;
+            }
+            ((ArrayDeque) this.d).push(sVar);
+        }
     }
 
-    public static int e(int i10, int i11, int i12, int i13) {
-        return ((i10 - i11) * i12) + i13;
+    public ColorStateList d() {
+        c3 c3Var = (c3) this.e;
+        if (c3Var != null) {
+            return (ColorStateList) c3Var.c;
+        }
+        return null;
     }
 
-    public static j7.e f(int i10, HashMap hashMap) {
-        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-        return new j7.e(i10);
+    public PorterDuff.Mode e() {
+        c3 c3Var = (c3) this.e;
+        if (c3Var != null) {
+            return (PorterDuff.Mode) c3Var.d;
+        }
+        return null;
     }
 
-    public static Object g(int i10, ArrayList arrayList) {
-        return arrayList.remove(arrayList.size() - i10);
+    /* JADX WARN: Removed duplicated region for block: B:32:0x0085 A[Catch: all -> 0x004b, TryCatch #0 {all -> 0x004b, blocks: (B:3:0x0026, B:5:0x002d, B:6:0x003d, B:9:0x0044, B:11:0x0047, B:16:0x0052, B:18:0x0053, B:20:0x005c, B:22:0x0067, B:24:0x0071, B:30:0x007f, B:32:0x0085, B:33:0x008c, B:35:0x008f, B:37:0x0096, B:39:0x00a6, B:41:0x00b0, B:45:0x00bb, B:47:0x00c1, B:48:0x00c8, B:8:0x003e), top: B:2:0x0026, inners: #1 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public void f(AttributeSet attributeSet, int i10) {
+        boolean z10;
+        ColorStateList i11;
+        View view = (View) this.b;
+        Context context = view.getContext();
+        int[] iArr = f.a.z;
+        aa.a y3 = aa.a.y(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) y3.c;
+        View view2 = (View) this.b;
+        i0.j(view2, view2.getContext(), iArr, attributeSet, (TypedArray) y3.c, i10);
+        try {
+            if (typedArray.hasValue(0)) {
+                this.a = typedArray.getResourceId(0, -1);
+                m.q qVar = (m.q) this.c;
+                Context context2 = view.getContext();
+                int i12 = this.a;
+                synchronized (qVar) {
+                    i11 = qVar.a.i(context2, i12);
+                }
+                if (i11 != null) {
+                    j(i11);
+                }
+            }
+            if (typedArray.hasValue(1)) {
+                ColorStateList q6 = y3.q(1);
+                int i13 = Build.VERSION.SDK_INT;
+                r0.a0.g(view, q6);
+                if (i13 == 21) {
+                    Drawable background = view.getBackground();
+                    if (r0.a0.c(view) == null && r0.a0.d(view) == null) {
+                        z10 = false;
+                        if (background != null && z10) {
+                            if (background.isStateful()) {
+                                background.setState(view.getDrawableState());
+                            }
+                            view.setBackground(background);
+                        }
+                    }
+                    z10 = true;
+                    if (background != null) {
+                        if (background.isStateful()) {
+                        }
+                        view.setBackground(background);
+                    }
+                }
+            }
+            if (typedArray.hasValue(2)) {
+                PorterDuff.Mode b10 = l1.b(typedArray.getInt(2, -1), null);
+                int i14 = Build.VERSION.SDK_INT;
+                r0.a0.h(view, b10);
+                if (i14 == 21) {
+                    Drawable background2 = view.getBackground();
+                    boolean z11 = (r0.a0.c(view) == null && r0.a0.d(view) == null) ? false : true;
+                    if (background2 != null && z11) {
+                        if (background2.isStateful()) {
+                            background2.setState(view.getDrawableState());
+                        }
+                        view.setBackground(background2);
+                    }
+                }
+            }
+            y3.A();
+        } catch (Throwable th2) {
+            y3.A();
+            throw th2;
+        }
     }
 
-    public static String h(int i10, String str, int i11) {
-        return i10 + str + i11;
+    public void g() {
+        this.a = -1;
+        j(null);
+        b();
     }
 
-    public static String i(long j10, String str, String str2) {
-        return str + j10 + str2;
+    public void h(int i10) {
+        ColorStateList colorStateList;
+        this.a = i10;
+        m.q qVar = (m.q) this.c;
+        if (qVar != null) {
+            Context context = ((View) this.b).getContext();
+            synchronized (qVar) {
+                colorStateList = qVar.a.i(context, i10);
+            }
+        } else {
+            colorStateList = null;
+        }
+        j(colorStateList);
+        b();
     }
 
-    public static String j(String str, int i10, int i11) {
-        return str.substring(i11, str.length() - i10);
+    public void i(Runnable runnable) {
+        z zVar = (z) this.b;
+        if (zVar.a.getLooper().getThread().isAlive()) {
+            zVar.c(runnable);
+        }
     }
 
-    public static String k(String str, String str2, String str3, String str4) {
-        return str + str2 + str3 + str4;
+    public void j(ColorStateList colorStateList) {
+        if (colorStateList != null) {
+            if (((c3) this.d) == null) {
+                this.d = new c3();
+            }
+            c3 c3Var = (c3) this.d;
+            c3Var.c = colorStateList;
+            c3Var.b = true;
+        } else {
+            this.d = null;
+        }
+        b();
     }
 
-    public static StringBuilder l(String str) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(str);
-        return sb;
+    public void k(int i10) {
+        d.g(i10 >= 0);
+        this.a = i10;
+        c(i10);
     }
 
-    public static StringBuilder m(String str, int i10, String str2, int i11, String str3) {
-        StringBuilder sb = new StringBuilder(str);
-        sb.append(i10);
-        sb.append(str2);
-        sb.append(i11);
-        sb.append(str3);
-        return sb;
+    public void l(ColorStateList colorStateList) {
+        if (((c3) this.e) == null) {
+            this.e = new c3();
+        }
+        c3 c3Var = (c3) this.e;
+        c3Var.c = colorStateList;
+        c3Var.b = true;
+        b();
     }
 
-    public static HashMap n(Class cls, j7.e eVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put(cls, eVar);
-        return hashMap;
+    public void m(PorterDuff.Mode mode) {
+        if (((c3) this.e) == null) {
+            this.e = new c3();
+        }
+        c3 c3Var = (c3) this.e;
+        c3Var.d = mode;
+        c3Var.a = true;
+        b();
     }
 
-    public static HashMap o(Class cls, k7.a aVar) {
-        HashMap hashMap = new HashMap();
-        hashMap.put(cls, aVar);
-        return hashMap;
+    public void n(Object obj) {
+        Object obj2 = this.e;
+        this.e = obj;
+        if (obj2.equals(obj)) {
+            return;
+        }
+        f0 f0Var = ((i2.x) this.d).b;
+        ((Integer) obj2).getClass();
+        Integer num = (Integer) obj;
+        int intValue = num.intValue();
+        f0Var.B1();
+        f0Var.p1(1, 10, num);
+        f0Var.p1(2, 10, num);
+        f0Var.m.e(21, new i2.w(intValue, 1));
     }
 
-    public static k7.a p(int i10, HashMap hashMap) {
-        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-        return new k7.a(i10);
+    public c(f2.t tVar) {
+        this.b = tVar;
+        this.c = new ArrayDeque();
+        this.d = new ArrayDeque();
+        this.e = new PriorityQueue();
+        this.a = -1;
     }
 
-    public static void q(int i10, String str, String str2) {
-        h5.a.K(str2, str + i10);
-    }
-
-    public static void r(HashMap hashMap) {
-        DesugarCollections.unmodifiableMap(new HashMap(hashMap));
-    }
-
-    public static /* synthetic */ boolean s(Object obj) {
-        return obj != null;
-    }
-
-    public static boolean t(String str) {
-        return new File(str).exists();
-    }
-
-    public static float u(float f10, float f11, float f12, float f13) {
-        return (f10 * f11 * f12) + f13;
-    }
-
-    public static float v(float f10, float f11, float f12, float f13) {
-        return ((f10 * f11) + f12) / f13;
-    }
-
-    public static float w(float f10, float f11, float f12, float f13) {
-        return ((f10 - f11) * f12) + f13;
-    }
-
-    public static float x(float f10, float f11, float f12, float f13) {
-        return ((f10 - f11) / f12) + f13;
-    }
-
-    public static float y(float f10, float f11, float f12, float f13) {
-        return ((f10 * f11) + f12) * f13;
-    }
-
-    public static float z(float f10, float f11, float f12, float f13) {
-        return f10 * f11 * f12 * f13;
+    public c(Object obj, Looper looper, Looper looper2, x xVar, i2.x xVar2) {
+        this.b = xVar.a(looper, null);
+        this.c = xVar.a(looper2, null);
+        this.e = obj;
+        this.f = obj;
+        this.d = xVar2;
     }
 }

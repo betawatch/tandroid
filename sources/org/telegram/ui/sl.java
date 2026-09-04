@@ -1,24 +1,37 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.MessageObject;
-import org.telegram.tgnet.TLRPC;
+import android.content.Intent;
+import java.util.ArrayList;
+import org.telegram.messenger.FileLoader;
+import org.telegram.messenger.FileLog;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class sl extends fu0 {
-    public final /* synthetic */ zn a;
+public final class sl implements jq0 {
+    public final /* synthetic */ co a;
 
-    public sl(zn znVar) {
-        this.a = znVar;
+    public sl(co coVar) {
+        this.a = coVar;
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final qu0 E(MessageObject messageObject, TLRPC.FileLocation fileLocation, int i10, boolean z4, boolean z10) {
-        return zn.A1(this.a, messageObject, fileLocation, i10, z4, false);
+    @Override // org.telegram.ui.jq0
+    public final void b() {
+        try {
+            Intent intent = new Intent();
+            intent.setType("video/*");
+            intent.setAction("android.intent.action.GET_CONTENT");
+            intent.putExtra("android.intent.extra.sizeLimit", FileLoader.DEFAULT_MAX_FILE_SIZE);
+            Intent intent2 = new Intent("android.intent.action.PICK");
+            intent2.setType("image/*");
+            Intent createChooser = Intent.createChooser(intent2, null);
+            createChooser.putExtra("android.intent.extra.INITIAL_INTENTS", new Intent[]{intent});
+            this.a.startActivityForResult(createChooser, 1);
+        } catch (Exception e7) {
+            FileLog.e(e7);
+        }
     }
 
-    @Override // org.telegram.ui.fu0, org.telegram.ui.ou0
-    public final boolean K() {
-        return true;
+    @Override // org.telegram.ui.jq0
+    public final void a(ArrayList arrayList) {
     }
 }

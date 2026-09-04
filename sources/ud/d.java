@@ -1,84 +1,29 @@
 package ud;
 
-import java.util.concurrent.atomic.AtomicIntegerFieldUpdater;
-import java.util.concurrent.atomic.AtomicReferenceFieldUpdater;
-import k7.g8;
-import ld.e0;
-import ld.m;
+import java.util.Iterator;
+import w7.w;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class d extends h implements a {
-    public static final /* synthetic */ AtomicReferenceFieldUpdater g = AtomicReferenceFieldUpdater.newUpdater(d.class, Object.class, "owner$volatile");
-    private volatile /* synthetic */ Object owner$volatile;
+public abstract class d implements Iterable {
+    public final int a;
+    public final int b;
+    public final int c;
 
-    public d(boolean z4) {
-        super(z4 ? 1 : 0);
-        this.owner$volatile = z4 ? null : e.a;
-    }
-
-    public final boolean c() {
-        return Math.max(h.f.get(this), 0) == 0;
-    }
-
-    public final Object d(wc.c cVar) {
-        int i10;
-        while (true) {
-            AtomicIntegerFieldUpdater atomicIntegerFieldUpdater = h.f;
-            int i11 = atomicIntegerFieldUpdater.get(this);
-            if (i11 > 1) {
-                do {
-                    i10 = atomicIntegerFieldUpdater.get(this);
-                    if (i10 > 1) {
-                    }
-                } while (!atomicIntegerFieldUpdater.compareAndSet(this, i10, 1));
-            } else {
-                sc.i iVar = sc.i.a;
-                if (i11 <= 0) {
-                    m l10 = e0.l(g8.b(cVar));
-                    try {
-                        a(new c(this, l10));
-                        Object r10 = l10.r();
-                        vc.a aVar = vc.a.a;
-                        if (r10 != aVar) {
-                            r10 = iVar;
-                        }
-                        return r10 == aVar ? r10 : iVar;
-                    } catch (Throwable th2) {
-                        l10.A();
-                        throw th2;
-                    }
-                }
-                if (atomicIntegerFieldUpdater.compareAndSet(this, i11, i11 - 1)) {
-                    g.set(this, null);
-                    return iVar;
-                }
-            }
+    public d(int i10, int i11, int i12) {
+        if (i12 == 0) {
+            throw new IllegalArgumentException("Step must be non-zero.");
         }
-    }
-
-    public final void e(Object obj) {
-        while (c()) {
-            AtomicReferenceFieldUpdater atomicReferenceFieldUpdater = g;
-            Object obj2 = atomicReferenceFieldUpdater.get(this);
-            o3.c cVar = e.a;
-            if (obj2 != cVar) {
-                if (obj2 == obj || obj == null) {
-                    while (!atomicReferenceFieldUpdater.compareAndSet(this, obj2, cVar)) {
-                        if (atomicReferenceFieldUpdater.get(this) != obj2) {
-                            break;
-                        }
-                    }
-                    b();
-                    return;
-                }
-                throw new IllegalStateException(("This mutex is locked by " + obj2 + ", but " + obj + " is expected").toString());
-            }
+        if (i12 == Integer.MIN_VALUE) {
+            throw new IllegalArgumentException("Step must be greater than Int.MIN_VALUE to avoid overflow on negation.");
         }
-        throw new IllegalStateException("This mutex is not locked");
+        this.a = i10;
+        this.b = w.a(i10, i11, i12);
+        this.c = i12;
     }
 
-    public final String toString() {
-        return "Mutex@" + e0.k(this) + "[isLocked=" + c() + ",owner=" + g.get(this) + ']';
+    @Override // java.lang.Iterable
+    public final Iterator iterator() {
+        return new b(this.a, this.b, this.c);
     }
 }

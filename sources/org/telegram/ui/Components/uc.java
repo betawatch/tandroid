@@ -1,133 +1,293 @@
 package org.telegram.ui.Components;
 
+import android.content.Context;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.Matrix;
 import android.graphics.Paint;
-import android.graphics.Path;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.RadialGradient;
-import android.graphics.RectF;
+import android.text.SpannableStringBuilder;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
+import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.MediaController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.MessagesController;
+import org.telegram.messenger.MessagesStorage;
+import org.telegram.messenger.SharedPrefsHelper;
+import org.telegram.messenger.Utilities;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.tl.TL_bots;
+import org.telegram.tgnet.tl.TL_phone;
+import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class uc {
-    public float A;
-    public float B;
-    public float C;
-    public float D;
-    public final /* synthetic */ wc E;
-    public final Paint a;
-    public Bitmap b;
-    public float c;
-    public float d;
-    public final z5 e;
-    public final z5 f;
-    public float g;
-    public final z5 h;
-    public float i;
-    public final z5 j;
-    public final j6 k;
-    public float l;
-    public final z5 m;
-    public boolean n;
-    public final z5 o;
-    public final Path p;
-    public final Paint q;
-    public final RectF r;
-    public final Paint s;
-    public final Paint t;
-    public final RectF u;
-    public RadialGradient v;
-    public Matrix w;
-    public float x;
-    public float y;
-    public float z;
+public final /* synthetic */ class uc implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Object b;
+    public final /* synthetic */ Object c;
 
-    public uc(wc wcVar) {
-        this.E = wcVar;
-        Paint paint = new Paint(3);
-        this.a = paint;
-        paint.setColor(-1);
-        mr mrVar = mr.h;
-        this.e = new z5(wcVar, 650L, mrVar);
-        this.f = new z5(wcVar, 650L, mrVar);
-        mr mrVar2 = mr.g;
-        this.h = new z5(wcVar, 0L, 150L, mrVar2);
-        this.i = 1.0f;
-        this.j = new z5(wcVar, 0L, 150L, mrVar2);
-        j6 j6Var = new j6(false, true, true, false);
-        this.k = j6Var;
-        this.m = new z5(wcVar, 0L, 150L, mrVar2);
-        this.o = new z5(wcVar, 0L, 200L, mrVar);
-        j6Var.r(-1);
-        j6Var.k(0.35f, 200L, mrVar);
-        j6Var.u(AndroidUtilities.bold());
-        j6Var.t(AndroidUtilities.dp(15.0f));
-        j6Var.b = 17;
-        this.p = new Path();
-        Paint paint2 = new Paint(1);
-        this.q = paint2;
-        this.r = new RectF();
-        this.s = new Paint(1);
-        Paint paint3 = new Paint(1);
-        this.t = paint3;
-        paint3.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
-        paint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_IN));
-        paint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.SRC_ATOP));
-        this.u = new RectF();
+    public /* synthetic */ uc(int i10, Object obj, Object obj2) {
+        this.a = i10;
+        this.b = obj;
+        this.c = obj2;
     }
 
-    public final void a(Canvas canvas, float f10, float f11, float f12, float f13, float f14, float f15, float f16, float f17, float f18, float f19) {
-        if (f19 <= 0.0f || !LiteMode.isEnabled(LiteMode.FLAGS_CHAT)) {
-            return;
-        }
-        long currentTimeMillis = System.currentTimeMillis();
-        float sqrt = (float) Math.sqrt(2.0d);
-        if (wc.V < 0) {
-            wc.V = currentTimeMillis;
-        }
-        float f20 = (currentTimeMillis - wc.V) / 10000.0f;
-        Bitmap bitmap = this.b;
-        if (bitmap != null) {
-            int width = bitmap.getWidth();
-            float f21 = width;
-            float dpf2 = AndroidUtilities.dpf2(15.0f) / f21;
-            float f22 = 7.0f;
-            int floor = (int) Math.floor((f14 % 360.0f) / 7.0f);
-            int ceil = (int) Math.ceil((f15 % 360.0f) / 7.0f);
-            while (floor <= ceil) {
-                float f23 = floor * f22;
-                float sin = (float) (((((Math.sin(2000.0f * f23) + 1.0d) * 0.25d) + 1.0d) * (100.0f + f20)) % 1.0d);
-                float f24 = f21 * sqrt;
-                float f25 = f20;
-                double lerp = AndroidUtilities.lerp(f16 - f24, f17 + f24, sin);
-                float a2 = (float) kf.k0.a(wc.a(f23), lerp, f10);
-                int i10 = width;
-                float sin2 = (float) ((Math.sin(wc.a(f23)) * lerp) + f11);
-                float abs = (Math.abs(sin - 0.5f) * (-1.75f)) + 1.0f;
-                int max = (int) (Math.max(0.0f, Math.min(1.0f, AndroidUtilities.lerp(1.0f, Math.min(k7.n6.a(a2, sin2, f12, f13) / AndroidUtilities.dpf2(64.0f), 1.0f), f18) * e2.c.y((float) (Math.sin(sin * 3.141592653589793d) - 1.0d), 0.25f, 1.0f, abs * 0.65f * f19))) * 255.0f);
-                Paint paint = this.a;
-                paint.setAlpha(max);
-                float f26 = dpf2;
-                float sin3 = f26 * ((float) ((((Math.sin(f23) + 1.0d) * 0.25d) + 0.800000011920929d) * e2.c.y((float) (Math.sin(r12) - 1.0d), 0.25f, 1.0f, 0.75f)));
-                canvas.save();
-                canvas.translate(a2, sin2);
-                canvas.scale(sin3, sin3);
-                float f27 = -(i10 >> 1);
-                canvas.drawBitmap(this.b, f27, f27, paint);
-                canvas.restore();
-                floor++;
-                sqrt = sqrt;
-                width = i10;
-                f21 = f21;
-                dpf2 = f26;
-                f20 = f25;
-                f22 = 7.0f;
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                boolean[] zArr = (boolean[]) this.b;
+                Runnable runnable = (Runnable) this.c;
+                if (!zArr[0]) {
+                    zArr[0] = true;
+                    runnable.run();
+                    break;
+                }
+                break;
+            case 1:
+                ((ld) this.b).removeView((di.f4) this.c);
+                break;
+            case 2:
+                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.b;
+                di.f4 f4Var = (di.f4) this.c;
+                int i10 = ChatActivityEnterView.m5;
+                chatActivityEnterView.removeView(f4Var);
+                break;
+            case 3:
+                ChatActivityEnterView chatActivityEnterView2 = (ChatActivityEnterView) this.b;
+                CharSequence charSequence = (CharSequence) this.c;
+                int i11 = ChatActivityEnterView.m5;
+                chatActivityEnterView2.setFieldText(charSequence);
+                chatActivityEnterView2.W = null;
+                break;
+            case 4:
+                ChatActivityEnterView chatActivityEnterView3 = (ChatActivityEnterView) this.b;
+                sd sdVar = (sd) this.c;
+                int i12 = ChatActivityEnterView.m5;
+                sdVar.run();
+                SharedPrefsHelper.setWebViewConfirmShown(chatActivityEnterView3.Q, chatActivityEnterView3.P2, true);
+                break;
+            case 5:
+                sg sgVar = (sg) this.b;
+                pg pgVar = (pg) this.c;
+                ChatActivityEnterView chatActivityEnterView4 = sgVar.V;
+                chatActivityEnterView4.i1 = chatActivityEnterView4.h1.getAudioRightMs() - chatActivityEnterView4.h1.getAudioLeftMs();
+                MediaController.getInstance().trimCurrentRecording(chatActivityEnterView4.h1.getAudioLeftMs(), chatActivityEnterView4.h1.getAudioRightMs(), pgVar);
+                break;
+            case 6:
+                ((vi) this.b).containerView.removeView((di.f4) this.c);
+                break;
+            case 7:
+                vi viVar = (vi) this.b;
+                org.telegram.ui.ActionBar.n2 n2Var = (org.telegram.ui.ActionBar.n2) this.c;
+                viVar.dismiss(true);
+                if (n2Var != null) {
+                    n2Var.presentFragment(new PremiumPreviewFragment(0, "caption_limit"));
+                    break;
+                }
+                break;
+            case 8:
+                vi viVar2 = (vi) this.b;
+                TLRPC.TL_attachMenuBot tL_attachMenuBot = ((oi) this.c).c;
+                tL_attachMenuBot.side_menu_disclaimer_needed = false;
+                tL_attachMenuBot.inactive = false;
+                viVar2.N1(tL_attachMenuBot.bot_id, null, false, true);
+                MediaDataController.getInstance(viVar2.J1).updateAttachMenuBotsInCache();
+                break;
+            case 9:
+                vi viVar3 = (vi) this.b;
+                TLRPC.TL_attachMenuBot tL_attachMenuBot2 = (TLRPC.TL_attachMenuBot) this.c;
+                MediaDataController.getInstance(viVar3.J1).loadAttachMenuBots(false, true);
+                if (viVar3.y0 == viVar3.x0.get(tL_attachMenuBot2.bot_id)) {
+                    viVar3.Q1(viVar3.j0);
+                    break;
+                }
+                break;
+            case 10:
+                gj gjVar = (gj) this.b;
+                ArrayList arrayList = (ArrayList) this.c;
+                gjVar.H = false;
+                gjVar.I = arrayList;
+                gjVar.P();
+                break;
+            case 11:
+                gj gjVar2 = (gj) this.b;
+                ((vi) this.c).Z0();
+                gjVar2.L();
+                gjVar2.b.X1(gjVar2, 0);
+                break;
+            case 12:
+                AndroidUtilities.runOnUIThread(new uc(13, (xj) this.b, ((wj) this.c).run()));
+                break;
+            case 13:
+                ((xj) this.b).setStatus((CharSequence) this.c);
+                break;
+            case 14:
+                nk nkVar = (nk) this.b;
+                String str = (String) this.c;
+                nkVar.getClass();
+                ArrayList arrayList2 = new ArrayList(nkVar.X.v.c);
+                if (nkVar.X.v.d.isEmpty()) {
+                    arrayList2.addAll(0, nkVar.X.v.e);
+                }
+                Utilities.searchQueue.postRunnable(new bi.e4(nkVar, str, !nkVar.R.isEmpty(), arrayList2, 17));
+                break;
+            case 15:
+                nk nkVar2 = (nk) this.b;
+                ArrayList arrayList3 = (ArrayList) this.c;
+                ok okVar = nkVar2.X;
+                boolean z10 = okVar.b0;
+                dk dkVar = okVar.r;
+                if (z10) {
+                    s4.h0 adapter = dkVar.getAdapter();
+                    nk nkVar3 = okVar.y;
+                    if (adapter != nkVar3) {
+                        dkVar.setAdapter(nkVar3);
+                    }
+                }
+                nkVar2.s = arrayList3;
+                nkVar2.l();
+                break;
+            case 16:
+                gl glVar = (gl) this.b;
+                float[] fArr = (float[]) this.c;
+                glVar.getClass();
+                glVar.b0(fArr[0], fArr[1]);
+                break;
+            case 17:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout = (ChatAttachAlertPhotoLayout) this.b;
+                ni niVar = (ni) this.c;
+                boolean z11 = ChatAttachAlertPhotoLayout.q1;
+                int currentItemTop = niVar.getCurrentItemTop();
+                int listTopPadding = niVar.getListTopPadding();
+                tl tlVar = chatAttachAlertPhotoLayout.E;
+                if (currentItemTop > AndroidUtilities.dp(8.0f)) {
+                    listTopPadding -= currentItemTop;
+                }
+                tlVar.scrollBy(0, listTopPadding);
+                break;
+            case 18:
+                ChatAttachAlertPhotoLayout chatAttachAlertPhotoLayout2 = (ChatAttachAlertPhotoLayout) this.b;
+                FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.c;
+                dm dmVar = chatAttachAlertPhotoLayout2.P;
+                if (dmVar != null) {
+                    dmVar.setLayoutParams(layoutParams);
+                    break;
+                }
+                break;
+            case 19:
+                qm qmVar = (qm) this.b;
+                ni niVar2 = (ni) this.c;
+                int currentItemTop2 = niVar2.getCurrentItemTop();
+                int listTopPadding2 = niVar2.getListTopPadding();
+                bi.o0 o0Var = qmVar.r;
+                if (currentItemTop2 > AndroidUtilities.dp(7.0f)) {
+                    listTopPadding2 -= currentItemTop2;
+                }
+                o0Var.scrollBy(0, listTopPadding2);
+                break;
+            case 20:
+                go goVar = (go) this.b;
+                ig.g gVar = (ig.g) this.c;
+                io.a(goVar.c);
+                gVar.run();
+                break;
+            case 21:
+                ((gp) this.b).b.x((List) this.c);
+                break;
+            case 22:
+                ((hp) this.b).b.x((List) this.c);
+                break;
+            case 23:
+                org.telegram.ui.ActionBar.f3 f3Var = (org.telegram.ui.ActionBar.f3) this.b;
+                Context context = (Context) this.c;
+                f3Var.dismiss();
+                of.f.s(context, "https://t.me/BotFather?start=deletebot");
+                break;
+            case 24:
+                lr lrVar = (lr) this.b;
+                di.d dVar = (di.d) this.c;
+                lrVar.getClass();
+                dVar.setLoading(false);
+                lrVar.dismiss();
+                break;
+            case 25:
+                lr lrVar2 = (lr) this.b;
+                TLObject tLObject = (TLObject) this.c;
+                if (tLObject != null && (tLObject instanceof TL_phone.groupCallStreamRtmpUrl)) {
+                    TL_phone.groupCallStreamRtmpUrl groupcallstreamrtmpurl = (TL_phone.groupCallStreamRtmpUrl) tLObject;
+                    lrVar2.b0 = groupcallstreamrtmpurl.url;
+                    lrVar2.c0 = groupcallstreamrtmpurl.key;
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(lrVar2.c0);
+                    lrVar2.d0 = spannableStringBuilder;
+                    n01 n01Var = new n01();
+                    n01Var.a |= 256;
+                    n01Var.b = 0;
+                    n01Var.c = spannableStringBuilder.length();
+                    lrVar2.d0.setSpan(new o01(n01Var, 0), 0, lrVar2.d0.length(), 0);
+                    lrVar2.e0.N(false);
+                    break;
+                }
+                break;
+            case 26:
+                ps psVar = (ps) this.b;
+                TLObject tLObject2 = (TLObject) this.c;
+                ls lsVar = psVar.b;
+                ArrayList arrayList4 = psVar.h;
+                int i13 = psVar.a;
+                if (tLObject2 instanceof TL_bots.popularAppBots) {
+                    TL_bots.popularAppBots popularappbots = (TL_bots.popularAppBots) tLObject2;
+                    MessagesController.getInstance(i13).putUsers(popularappbots.users, false);
+                    MessagesStorage.getInstance(i13).putUsersAndChats(popularappbots.users, null, false, true);
+                    arrayList4.addAll(popularappbots.users);
+                    String str2 = popularappbots.next_offset;
+                    psVar.g = str2;
+                    psVar.e = str2 == null;
+                    long currentTimeMillis = System.currentTimeMillis();
+                    psVar.f = currentTimeMillis;
+                    if (!psVar.i) {
+                        psVar.i = true;
+                        String str3 = psVar.g;
+                        if (str3 == null) {
+                            str3 = "";
+                        }
+                        String str4 = str3;
+                        ArrayList arrayList5 = new ArrayList();
+                        for (int i14 = 0; i14 < arrayList4.size(); i14 = com.google.android.gms.internal.vision.e2.g(((TLRPC.User) arrayList4.get(i14)).id, arrayList5, i14, 1)) {
+                        }
+                        MessagesStorage messagesStorage = MessagesStorage.getInstance(i13);
+                        messagesStorage.getStorageQueue().postRunnable(new org.telegram.messenger.voip.f(psVar, messagesStorage, arrayList5, currentTimeMillis, str4, 3));
+                    }
+                    psVar.c = false;
+                    lsVar.run();
+                    break;
+                } else {
+                    psVar.g = null;
+                    psVar.e = true;
+                    psVar.c = false;
+                    lsVar.run();
+                    break;
+                }
+            case 27:
+                nt ntVar = (nt) this.b;
+                Bitmap decodeFile = BitmapFactory.decodeFile((String) this.c);
+                Canvas canvas = new Canvas(Bitmap.createBitmap(AndroidUtilities.dp(26.0f), AndroidUtilities.dp(26.0f), Bitmap.Config.ARGB_8888));
+                Paint paint = new Paint(3);
+                canvas.translate(r2.getWidth() / 2.0f, r2.getHeight() / 2.0f);
+                float max = Math.max(r2.getWidth() / decodeFile.getWidth(), r2.getHeight() / decodeFile.getHeight());
+                canvas.scale(max, max);
+                canvas.drawBitmap(decodeFile, (-decodeFile.getWidth()) / 2.0f, (-decodeFile.getHeight()) / 2.0f, paint);
+                AndroidUtilities.runOnUIThread(new uc(28, ntVar, decodeFile));
+                break;
+            case 28:
+                ((nt) this.b).setImage((Bitmap) this.c);
+                break;
+            default:
+                ((EditTextBoldCursor) this.b).hintLayout.draw((Canvas) this.c);
+                break;
         }
     }
 }

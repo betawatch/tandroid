@@ -1,46 +1,74 @@
 package org.telegram.ui;
 
+import android.os.Bundle;
 import android.view.View;
-import org.telegram.messenger.Utilities;
+import android.widget.LinearLayout;
+import java.util.ArrayList;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.tgnet.TLObject;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ew0 implements org.telegram.ui.ActionBar.c2, Utilities.Callback5 {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ fw0 b;
+public final class ew0 implements View.OnClickListener {
+    public final /* synthetic */ gi0 a;
+    public final /* synthetic */ co b;
+    public final /* synthetic */ org.telegram.ui.Components.ll0 c;
+    public final /* synthetic */ LinearLayout d;
+    public final /* synthetic */ org.telegram.ui.Components.n70 e;
+    public final /* synthetic */ org.telegram.ui.Components.n70 f;
+    public final /* synthetic */ lw0 h;
 
-    public /* synthetic */ ew0(fw0 fw0Var, int i10) {
-        this.a = i10;
-        this.b = fw0Var;
+    public ew0(lw0 lw0Var, gi0 gi0Var, co coVar, org.telegram.ui.Components.ll0 ll0Var, LinearLayout linearLayout, org.telegram.ui.Components.n70 n70Var, org.telegram.ui.Components.n70 n70Var2) {
+        this.h = lw0Var;
+        this.a = gi0Var;
+        this.b = coVar;
+        this.c = ll0Var;
+        this.d = linearLayout;
+        this.e = n70Var;
+        this.f = n70Var2;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public void l(org.telegram.ui.ActionBar.d2 d2Var, int i10) {
-        switch (this.a) {
-            case 0:
-                this.b.Y();
-                break;
-            default:
-                this.b.finishFragment();
-                break;
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        gi0 gi0Var = this.a;
+        ArrayList arrayList = gi0Var.b;
+        ArrayList arrayList2 = gi0Var.c;
+        if (arrayList2.isEmpty()) {
+            return;
         }
-    }
-
-    @Override // org.telegram.messenger.Utilities.Callback5
-    public void run(Object obj, Object obj2, Object obj3, Object obj4, Object obj5) {
-        View view = (View) obj2;
-        ((Integer) obj3).intValue();
-        ((Float) obj4).floatValue();
-        ((Float) obj5).floatValue();
-        fw0 fw0Var = this.b;
-        fw0Var.getClass();
-        if (((org.telegram.ui.Components.i51) obj).d == 1) {
-            org.telegram.ui.Cells.r8 r8Var = (org.telegram.ui.Cells.r8) view;
-            boolean z4 = !r8Var.e.h;
-            fw0Var.r = z4;
-            r8Var.setChecked(z4);
-            fw0Var.d.V2.N(true);
-            fw0Var.V(true);
+        int size = arrayList2.size();
+        lw0 lw0Var = this.h;
+        co coVar = this.b;
+        if (size == 1 && (arrayList.size() <= 0 || ((Integer) arrayList.get(0)).intValue() <= 0)) {
+            TLObject tLObject = (TLObject) arrayList2.get(0);
+            if (tLObject == null) {
+                return;
+            }
+            Bundle bundle = new Bundle();
+            if (tLObject instanceof TLRPC.User) {
+                bundle.putLong("user_id", ((TLRPC.User) tLObject).id);
+            } else if (tLObject instanceof TLRPC.Chat) {
+                bundle.putLong("chat_id", ((TLRPC.Chat) tLObject).id);
+            }
+            coVar.presentFragment(new ProfileActivity(bundle, null));
+            lw0Var.c(false);
+            return;
         }
+        if (SharedConfig.messageSeenHintCount > 0 && coVar.X0.getKeyboardHeight() < AndroidUtilities.dp(20.0f)) {
+            org.telegram.ui.Components.qc t10 = new org.telegram.ui.Components.yc(org.telegram.ui.Components.lb.a(lw0Var.getContext()), lw0Var.b).t(AndroidUtilities.replaceTags(LocaleController.getString(R.string.MessageSeenTooltipMessage)), null);
+            coVar.n1 = t10;
+            t10.j = 4000;
+            t10.j();
+            SharedConfig.updateMessageSeenHintCount(SharedConfig.messageSeenHintCount - 1);
+        }
+        org.telegram.ui.Components.ll0 ll0Var = this.c;
+        ll0Var.requestLayout();
+        this.d.requestLayout();
+        ll0Var.getAdapter().l();
+        this.e.K(this.f);
     }
 }

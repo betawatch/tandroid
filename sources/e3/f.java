@@ -1,201 +1,196 @@
 package e3;
 
-import android.content.ContentValues;
-import android.content.Context;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.util.Pair;
-import android.view.View;
-import gg.y1;
-import java.io.File;
-import java.util.ArrayList;
-import k9.b1;
-import lh.j;
-import lh.q;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.j5;
-import org.telegram.messenger.voip.VoIPService;
-import org.telegram.tgnet.ResultCallback;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.c2;
-import org.telegram.ui.ActionBar.c4;
-import org.telegram.ui.ActionBar.d2;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.il0;
-import org.telegram.ui.Components.ir;
-import org.telegram.ui.ProfileActivity;
-import org.telegram.ui.TwoStepVerificationActivity;
-import org.telegram.ui.e60;
-import org.telegram.ui.ig1;
-import org.telegram.ui.qy;
-import org.telegram.ui.vz0;
-import ph.y7;
-import y2.i;
+import b2.r;
+import b2.r0;
+import b2.s;
+import com.google.android.gms.common.api.internal.w;
+import com.google.android.gms.internal.vision.e2;
+import e2.d0;
+import e2.v;
+import e9.a1;
+import e9.g0;
+import e9.i0;
+import e9.q;
+import java.nio.ByteOrder;
+import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class f implements g3.b, f3.f, ba.a, ig1, ChatObject.Call.OnParticipantsLoad, ImageReceiver.ImageReceiverDelegate, c2, il0, MessagesController.IsInChatCheckedCallback {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ Object c;
-    public final /* synthetic */ Object d;
+public final class f implements a {
+    public final i0 a;
+    public final int b;
 
-    public /* synthetic */ f(Object obj, long j10, Object obj2, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.b = j10;
-        this.d = obj2;
+    public f(int i10, a1 a1Var) {
+        this.b = i10;
+        this.a = a1Var;
     }
 
-    @Override // org.telegram.ui.Components.il0
-    public /* synthetic */ boolean Z0(View view) {
-        return false;
-    }
-
-    @Override // f3.f
-    public Object apply(Object obj) {
-        String str = (String) this.c;
-        SQLiteDatabase sQLiteDatabase = (SQLiteDatabase) obj;
-        int i10 = ((b3.c) this.d).a;
-        Cursor rawQuery = sQLiteDatabase.rawQuery("SELECT 1 FROM log_event_dropped WHERE log_source = ? AND reason = ?", new String[]{str, Integer.toString(i10)});
-        try {
-            boolean z4 = rawQuery.getCount() > 0;
-            rawQuery.close();
-            long j10 = this.b;
-            if (z4) {
-                sQLiteDatabase.execSQL(e2.c.i(j10, "UPDATE log_event_dropped SET events_dropped_count = events_dropped_count + ", " WHERE log_source = ? AND reason = ?"), new String[]{str, Integer.toString(i10)});
-                return null;
+    /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
+    public static f b(int i10, v vVar) {
+        a gVar;
+        String str;
+        int i11 = 4;
+        q.e(4, "initialCapacity");
+        Object[] objArr = new Object[4];
+        int i12 = vVar.c;
+        int i13 = -2;
+        int i14 = 0;
+        while (vVar.a() > 8) {
+            int l4 = vVar.l();
+            int l10 = vVar.b + vVar.l();
+            vVar.I(l10);
+            if (l4 != 1414744396) {
+                d dVar = null;
+                switch (l4) {
+                    case 1718776947:
+                        if (i13 == 2) {
+                            vVar.K(i11);
+                            int l11 = vVar.l();
+                            int l12 = vVar.l();
+                            vVar.K(i11);
+                            int l13 = vVar.l();
+                            switch (l13) {
+                                case 808802372:
+                                case 877677894:
+                                case 1145656883:
+                                case 1145656920:
+                                case 1482049860:
+                                case 1684633208:
+                                case 2021026148:
+                                    str = "video/mp4v-es";
+                                    break;
+                                case 826496577:
+                                case 828601953:
+                                case 875967048:
+                                    str = MediaController.VIDEO_MIME_TYPE;
+                                    break;
+                                case 842289229:
+                                    str = "video/mp42";
+                                    break;
+                                case 859066445:
+                                    str = "video/mp43";
+                                    break;
+                                case 1196444237:
+                                case 1735420525:
+                                    str = "video/mjpeg";
+                                    break;
+                                default:
+                                    str = null;
+                                    break;
+                            }
+                            if (str != null) {
+                                r rVar = new r();
+                                rVar.x = l11;
+                                rVar.y = l12;
+                                rVar.q = r0.n(str);
+                                gVar = new g(new s(rVar));
+                                break;
+                            } else {
+                                e2.n(l13, "Ignoring track with unsupported compression ", "StreamFormatChunk");
+                                gVar = dVar;
+                                break;
+                            }
+                        } else {
+                            if (i13 == 1) {
+                                int q6 = vVar.q();
+                                String str2 = q6 != 1 ? q6 != 85 ? q6 != 255 ? q6 != 8192 ? q6 != 8193 ? null : "audio/vnd.dts" : "audio/ac3" : MediaController.AUDIO_MIME_TYPE : "audio/mpeg" : "audio/raw";
+                                if (str2 != null) {
+                                    int q10 = vVar.q();
+                                    int l14 = vVar.l();
+                                    vVar.K(6);
+                                    int q11 = vVar.q();
+                                    String str3 = d0.a;
+                                    int B = d0.B(q11, ByteOrder.LITTLE_ENDIAN);
+                                    int q12 = vVar.a() > 0 ? vVar.q() : 0;
+                                    r rVar2 = new r();
+                                    rVar2.q = r0.n(str2);
+                                    rVar2.I = q10;
+                                    rVar2.J = l14;
+                                    if (str2.equals("audio/raw") && B != 0) {
+                                        rVar2.K = B;
+                                    }
+                                    if (str2.equals(MediaController.AUDIO_MIME_TYPE) && q12 > 0) {
+                                        byte[] bArr = new byte[q12];
+                                        vVar.h(0, q12, bArr);
+                                        rVar2.t = i0.z(bArr);
+                                    }
+                                    gVar = new g(new s(rVar2));
+                                    break;
+                                } else {
+                                    e2.n(q6, "Ignoring track with unsupported format tag ", "StreamFormatChunk");
+                                }
+                            } else {
+                                e2.a.n("StreamFormatChunk", "Ignoring strf box for unsupported track type: " + d0.G(i13));
+                            }
+                            gVar = dVar;
+                        }
+                    case 1751742049:
+                        int l15 = vVar.l();
+                        vVar.K(8);
+                        int l16 = vVar.l();
+                        int l17 = vVar.l();
+                        vVar.K(i11);
+                        vVar.l();
+                        vVar.K(12);
+                        gVar = new c(l15, l16, l17);
+                        break;
+                    case 1752331379:
+                        int l18 = vVar.l();
+                        vVar.K(12);
+                        vVar.l();
+                        int l19 = vVar.l();
+                        int l20 = vVar.l();
+                        vVar.K(i11);
+                        int l21 = vVar.l();
+                        int l22 = vVar.l();
+                        vVar.K(i11);
+                        dVar = new d(l18, l19, l20, l21, l22, vVar.l());
+                        gVar = dVar;
+                        break;
+                    case 1852994675:
+                        gVar = new h(vVar.v(vVar.a(), StandardCharsets.UTF_8));
+                        break;
+                    default:
+                        gVar = dVar;
+                        break;
+                }
+            } else {
+                gVar = b(vVar.l(), vVar);
             }
-            ContentValues contentValues = new ContentValues();
-            contentValues.put("log_source", str);
-            contentValues.put("reason", Integer.valueOf(i10));
-            contentValues.put("events_dropped_count", Long.valueOf(j10));
-            sQLiteDatabase.insert("log_event_dropped", null, contentValues);
-            return null;
-        } catch (Throwable th2) {
-            rawQuery.close();
-            throw th2;
+            if (gVar != null) {
+                if (gVar.getType() == 1752331379) {
+                    i13 = ((d) gVar).a();
+                }
+                int i15 = i14 + 1;
+                int h = w.h(objArr.length, i15);
+                if (h > objArr.length) {
+                    objArr = Arrays.copyOf(objArr, h);
+                }
+                objArr[i14] = gVar;
+                i14 = i15;
+            }
+            vVar.J(l10);
+            vVar.I(i12);
+            i11 = 4;
         }
+        return new f(i10, i0.t(i14, objArr));
     }
 
-    @Override // org.telegram.ui.Components.il0
-    public void c(float f10, float f11, int i10, View view) {
-        ProfileActivity.b0((ProfileActivity) this.c, (Context) this.d, this.b, view, i10, f10, f11);
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public void didSetImage(ImageReceiver imageReceiver, boolean z4, boolean z10, boolean z11) {
-        ResultCallback resultCallback = (ResultCallback) this.c;
-        long j10 = this.b;
-        File file = (File) this.d;
-        ImageReceiver.BitmapHolder bitmapSafe = imageReceiver.getBitmapSafe();
-        if (!z4 || bitmapSafe == null || bitmapSafe.bitmap.isRecycled()) {
-            return;
-        }
-        Bitmap bitmap = bitmapSafe.bitmap;
-        if (bitmap == null) {
-            Drawable drawable = bitmapSafe.drawable;
-            if (drawable instanceof BitmapDrawable) {
-                bitmap = ((BitmapDrawable) drawable).getBitmap();
+    public final a a(Class cls) {
+        g0 listIterator = this.a.listIterator(0);
+        while (listIterator.hasNext()) {
+            a aVar = (a) listIterator.next();
+            if (aVar.getClass() == cls) {
+                return aVar;
             }
         }
-        if (bitmap != null) {
-            if (resultCallback != null) {
-                resultCallback.onComplete(new Pair(Long.valueOf(j10), bitmap));
-            }
-            Utilities.globalQueue.postRunnable(new c4(file, bitmap));
-        } else if (resultCallback != null) {
-            resultCallback.onComplete(null);
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void didSetImageBitmap(int i10, String str, Drawable drawable) {
-        j5.a(this, i10, str, drawable);
-    }
-
-    @Override // ba.a
-    public void f(ba.b bVar) {
-        ((f9.a) bVar.get()).d((String) this.c, this.b, (b1) this.d);
-    }
-
-    @Override // org.telegram.ui.ig1
-    public void g(TLRPC.TL_inputCheckPasswordSRP tL_inputCheckPasswordSRP) {
-        ((q) this.c).h0(true, this.b, tL_inputCheckPasswordSRP, (TwoStepVerificationActivity) this.d);
-    }
-
-    @Override // g3.b
-    public Object h() {
-        g gVar = (g) this.c;
-        i iVar = (i) this.d;
-        f3.d dVar = (f3.d) gVar.c;
-        long l10 = ((h3.a) gVar.g).l() + this.b;
-        f3.h hVar = (f3.h) dVar;
-        hVar.getClass();
-        hVar.c(new f3.e(l10, iVar));
         return null;
     }
 
-    @Override // org.telegram.ui.ActionBar.c2
-    public void l(d2 d2Var, int i10) {
-        switch (this.a) {
-            case 6:
-                ir.Q((ir) this.c, (ph.d) this.d, this.b);
-                break;
-            case 7:
-                e60 e60Var = (e60) this.c;
-                e60Var.d.getMessagesController().addUserToChat(e60Var.i1(), (TLRPC.User) this.d, 0, null, (p2) e60Var.f0.O().getFragmentStack().get(e60Var.f0.O().getFragmentStack().size() - 1), new y1(e60Var, this.b, 20));
-                break;
-            default:
-                y7 y7Var = (y7) this.c;
-                ArrayList arrayList = (ArrayList) this.d;
-                y7Var.d.put(Long.valueOf(this.b), arrayList);
-                int size = arrayList.size();
-                int i11 = 0;
-                while (i11 < size) {
-                    Object obj = arrayList.get(i11);
-                    i11++;
-                    y7Var.b.k(Boolean.TRUE, ((Long) obj).longValue());
-                }
-                y7Var.i(true);
-                y7Var.e(true);
-                y7Var.f(true);
-                d2Var.dismiss();
-                y7Var.x.H = true;
-                break;
-        }
-    }
-
-    @Override // org.telegram.messenger.ImageReceiver.ImageReceiverDelegate
-    public /* synthetic */ void onAnimationReady(ImageReceiver imageReceiver) {
-        j5.b(this, imageReceiver);
-    }
-
-    @Override // org.telegram.messenger.ChatObject.Call.OnParticipantsLoad
-    public void onLoad(ArrayList arrayList) {
-        ((VoIPService) this.c).lambda$createGroupInstance$69(this.b, (int[]) this.d, arrayList);
-    }
-
-    @Override // org.telegram.messenger.MessagesController.IsInChatCheckedCallback
-    public void run(boolean z4, TLRPC.TL_chatAdminRights tL_chatAdminRights, String str) {
-        AndroidUtilities.runOnUIThread(new j((vz0) this.c, this.b, tL_chatAdminRights, str, z4, (qy) this.d));
-    }
-
-    public /* synthetic */ f(Object obj, Object obj2, long j10, int i10) {
-        this.a = i10;
-        this.c = obj;
-        this.d = obj2;
-        this.b = j10;
-    }
-
-    @Override // org.telegram.ui.Components.il0
-    public /* synthetic */ void n0(View view, float f10, float f11) {
+    @Override // e3.a
+    public final int getType() {
+        return this.b;
     }
 }

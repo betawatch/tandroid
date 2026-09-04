@@ -1,225 +1,417 @@
 package androidx.mediarouter.app;
 
-import android.view.View;
-import dg.y3;
-import eg.e2;
-import eg.o1;
-import gg.d1;
-import gg.i1;
-import gg.m1;
-import kh.g2;
-import lh.aa;
-import lh.e5;
-import lh.j1;
-import lh.ja;
-import lh.k4;
-import lh.q2;
-import lh.w0;
-import lh.x7;
-import lh.y9;
-import nh.b9;
-import nh.i9;
-import nh.m8;
-import nh.r5;
-import nh.r8;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.UserConfig;
-import org.telegram.messenger.Utilities;
-import org.telegram.tgnet.ConnectionsManager;
-import org.telegram.tgnet.TLRPC;
-import org.telegram.ui.ActionBar.n2;
-import org.telegram.ui.ActionBar.p2;
-import org.telegram.ui.Components.f90;
-import org.telegram.ui.LaunchActivity;
-import org.telegram.ui.PremiumPreviewFragment;
-import org.telegram.ui.pg;
+import android.media.MediaCodec;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
+import android.os.Message;
+import android.os.SystemClock;
+import android.util.Log;
+import android.util.Pair;
+import android.util.SparseArray;
+import com.google.android.gms.internal.vision.h3;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
+import org.telegram.ui.Components.h20;
+import org.telegram.ui.Components.i20;
+import org.telegram.ui.Components.j20;
+import org.telegram.ui.Components.k20;
+import org.telegram.ui.Components.l20;
+import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements View.OnClickListener {
+public final class c extends Handler {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+    public final Object b;
 
     public /* synthetic */ c(Object obj, int i10) {
         this.a = i10;
         this.b = obj;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        p2 R;
-        p2 R2;
+    private final void a(Message message) {
+        r2.e eVar = (r2.e) this.b;
+        int i10 = message.what;
+        r2.d dVar = null;
+        if (i10 == 1) {
+            r2.d dVar2 = (r2.d) message.obj;
+            try {
+                eVar.a.queueInputBuffer(dVar2.a, 0, dVar2.b, dVar2.d, dVar2.e);
+            } catch (RuntimeException e7) {
+                AtomicReference atomicReference = eVar.d;
+                while (!atomicReference.compareAndSet(null, e7) && atomicReference.get() == null) {
+                }
+            }
+            dVar = dVar2;
+        } else if (i10 == 2) {
+            r2.d dVar3 = (r2.d) message.obj;
+            int i11 = dVar3.a;
+            MediaCodec.CryptoInfo cryptoInfo = dVar3.c;
+            long j3 = dVar3.d;
+            int i12 = dVar3.e;
+            try {
+                synchronized (r2.e.h) {
+                    eVar.a.queueSecureInputBuffer(i11, 0, cryptoInfo, j3, i12);
+                }
+            } catch (RuntimeException e10) {
+                AtomicReference atomicReference2 = eVar.d;
+                while (!atomicReference2.compareAndSet(null, e10) && atomicReference2.get() == null) {
+                }
+            }
+            dVar = dVar3;
+        } else if (i10 == 3) {
+            eVar.e.e();
+        } else if (i10 != 4) {
+            AtomicReference atomicReference3 = eVar.d;
+            IllegalStateException illegalStateException = new IllegalStateException(String.valueOf(message.what));
+            while (!atomicReference3.compareAndSet(null, illegalStateException) && atomicReference3.get() == null) {
+            }
+        } else {
+            try {
+                eVar.a.setParameters((Bundle) message.obj);
+            } catch (RuntimeException e11) {
+                AtomicReference atomicReference4 = eVar.d;
+                while (!atomicReference4.compareAndSet(null, e11) && atomicReference4.get() == null) {
+                }
+            }
+        }
+        if (dVar != null) {
+            r2.e.e(dVar);
+        }
+    }
+
+    /* JADX WARN: Multi-variable type inference failed */
+    @Override // android.os.Handler
+    public final void handleMessage(Message msg) {
+        n4.r rVar;
+        n4.p pVar;
+        c cVar;
+        String str;
+        Object[] objArr = 0;
+        int i10 = 1;
         switch (this.a) {
             case 0:
-                ((i) this.b).dismiss();
-                break;
+                h hVar = (h) this.b;
+                c cVar2 = hVar.M;
+                int i11 = msg.what;
+                if (i11 == 1) {
+                    hVar.e((List) msg.obj);
+                    return;
+                }
+                if (i11 == 2) {
+                    if (hVar.r.isEmpty()) {
+                        hVar.i(2);
+                        cVar2.removeMessages(2);
+                        cVar2.removeMessages(3);
+                        cVar2.sendMessageDelayed(cVar2.obtainMessage(3), 15000L);
+                        return;
+                    }
+                    return;
+                }
+                if (i11 == 3 && hVar.r.isEmpty()) {
+                    hVar.i(3);
+                    cVar2.removeMessages(2);
+                    cVar2.removeMessages(3);
+                    cVar2.removeMessages(1);
+                    hVar.f.h(hVar.h);
+                    return;
+                }
+                return;
             case 1:
-                ((cg.e0) this.b).dismiss();
-                break;
+                if (msg.what != 1) {
+                    return;
+                }
+                d0 d0Var = (d0) this.b;
+                List list = (List) msg.obj;
+                d0Var.F = SystemClock.uptimeMillis();
+                d0Var.s.clear();
+                d0Var.s.addAll(list);
+                d0Var.v.D();
+                return;
             case 2:
-                ((ah.a) this.b).run();
-                break;
+                o0 o0Var = (o0) this.b;
+                int i12 = msg.what;
+                if (i12 == 1) {
+                    o0Var.n();
+                    return;
+                } else {
+                    if (i12 == 2 && o0Var.M != null) {
+                        o0Var.M = null;
+                        o0Var.o();
+                        return;
+                    }
+                    return;
+                }
             case 3:
-                ((y3) this.b).onBackPressed();
-                break;
+                m4.r rVar2 = (m4.r) msg.obj;
+                fg.f fVar = (fg.f) this.b;
+                if (fVar.B(rVar2)) {
+                    m4.q qVar = rVar2.d;
+                    e2.d.h(qVar);
+                    qVar.f();
+                    fVar.N(rVar2);
+                    return;
+                }
+                return;
             case 4:
-                ((pg) this.b).run();
-                break;
+                Pair pair = (Pair) msg.obj;
+                Object obj = pair.first;
+                Object obj2 = pair.second;
+                int i13 = msg.what;
+                if (i13 != 1) {
+                    if (i13 != 2) {
+                        return;
+                    }
+                    n2.b bVar = (n2.b) this.b;
+                    if (obj == bVar.w && bVar.k()) {
+                        bVar.w = null;
+                        if ((obj2 instanceof Exception) || (obj2 instanceof NoSuchMethodError)) {
+                            bVar.m((Throwable) obj2, false);
+                            return;
+                        }
+                        try {
+                            byte[] o02 = bVar.b.o0(bVar.u, (byte[]) obj2);
+                            if (bVar.v != null && o02 != null && o02.length != 0) {
+                                bVar.v = o02;
+                            }
+                            bVar.o = 4;
+                            bVar.i(new bi.f(18));
+                            return;
+                        } catch (Exception e7) {
+                            e = e7;
+                            bVar.m(e, true);
+                            return;
+                        } catch (NoSuchMethodError e10) {
+                            e = e10;
+                            bVar.m(e, true);
+                            return;
+                        }
+                    }
+                    return;
+                }
+                n2.b bVar2 = (n2.b) this.b;
+                pf.b bVar3 = bVar2.c;
+                if (obj == bVar2.x) {
+                    if (bVar2.o == 2 || bVar2.k()) {
+                        bVar2.x = null;
+                        if (obj2 instanceof Exception) {
+                            bVar3.b0((Exception) obj2, false);
+                            return;
+                        }
+                        try {
+                            bVar2.b.z0((byte[]) obj2);
+                            bVar3.c = null;
+                            HashSet hashSet = (HashSet) bVar3.b;
+                            e9.i0 v = e9.i0.v(hashSet);
+                            hashSet.clear();
+                            e9.g0 listIterator = v.listIterator(0);
+                            while (listIterator.hasNext()) {
+                                n2.b bVar4 = (n2.b) listIterator.next();
+                                if (bVar4.n()) {
+                                    bVar4.j(true);
+                                }
+                            }
+                            return;
+                        } catch (Exception e11) {
+                            bVar3.b0(e11, true);
+                            return;
+                        }
+                    }
+                    return;
+                }
+                return;
             case 5:
-                ((f90) this.b).performClick();
-                break;
+                byte[] bArr = (byte[]) msg.obj;
+                if (bArr == null) {
+                    return;
+                }
+                ArrayList arrayList = ((n2.e) this.b).w;
+                int size = arrayList.size();
+                int i14 = 0;
+                while (i14 < size) {
+                    Object obj3 = arrayList.get(i14);
+                    i14++;
+                    n2.b bVar5 = (n2.b) obj3;
+                    bVar5.p();
+                    if (Arrays.equals(bVar5.u, bArr)) {
+                        if (msg.what == 2 && bVar5.o == 4) {
+                            String str2 = e2.d0.a;
+                            bVar5.j(false);
+                            return;
+                        }
+                        return;
+                    }
+                }
+                return;
             case 6:
-                e2 e2Var = (e2) this.b;
-                PremiumPreviewFragment.p0();
-                PremiumPreviewFragment.k0(e2Var.q0, null, "profile", null);
-                break;
+                if (msg.what == 1) {
+                    synchronized (((n4.p) this.b).a) {
+                        rVar = (n4.r) ((n4.p) this.b).d.get();
+                        pVar = (n4.p) this.b;
+                        cVar = pVar.e;
+                    }
+                    if (rVar == null || pVar != rVar.b() || cVar == null) {
+                        return;
+                    }
+                    rVar.d((n4.a0) msg.obj);
+                    ((n4.p) this.b).a(rVar, cVar);
+                    rVar.d(null);
+                    return;
+                }
+                return;
             case 7:
-                final i1 i1Var = (i1) this.b;
-                ig.a aVar = i1Var.N0;
-                if (!aVar.a.K) {
-                    aVar.b(true);
-                    String str = i1Var.O0;
-                    final int i10 = 0;
-                    Utilities.Callback callback = new Utilities.Callback() { // from class: gg.h1
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj) {
-                            switch (i10) {
-                                case 0:
-                                    i1 i1Var2 = i1Var;
-                                    i1Var2.N0.b(false);
-                                    i1Var2.dismiss();
-                                    AndroidUtilities.runOnUIThread(new g1(i1Var2, 1), 200L);
-                                    break;
-                                default:
-                                    i1.c0(i1Var, (TLRPC.TL_error) obj);
-                                    break;
-                            }
-                        }
-                    };
-                    final int i11 = 1;
-                    Utilities.Callback callback2 = new Utilities.Callback() { // from class: gg.h1
-                        @Override // org.telegram.messenger.Utilities.Callback
-                        public final void run(Object obj) {
-                            switch (i11) {
-                                case 0:
-                                    i1 i1Var2 = i1Var;
-                                    i1Var2.N0.b(false);
-                                    i1Var2.dismiss();
-                                    AndroidUtilities.runOnUIThread(new g1(i1Var2, 1), 200L);
-                                    break;
-                                default:
-                                    i1.c0(i1Var, (TLRPC.TL_error) obj);
-                                    break;
-                            }
-                        }
-                    };
-                    ConnectionsManager connectionsManager = ConnectionsManager.getInstance(UserConfig.selectedAccount);
-                    TLRPC.TL_payments_applyGiftCode tL_payments_applyGiftCode = new TLRPC.TL_payments_applyGiftCode();
-                    tL_payments_applyGiftCode.slug = str;
-                    connectionsManager.sendRequest(tL_payments_applyGiftCode, new gg.f0(callback2, callback, 0), 2);
-                    break;
+                j20 j20Var = (j20) this.b;
+                i20 i20Var = j20Var.g;
+                int i15 = msg.what;
+                if (i15 == 1) {
+                    i20Var.getClass();
+                    return;
                 }
-                break;
+                if (i15 == 2) {
+                    j20Var.f.removeMessages(3);
+                    j20Var.j = false;
+                    j20Var.k = true;
+                    i20Var.onLongPress(j20Var.n);
+                    return;
+                }
+                if (i15 != 3) {
+                    throw new RuntimeException("Unknown message " + msg);
+                }
+                h20 h20Var = j20Var.h;
+                if (h20Var != null) {
+                    if (j20Var.i) {
+                        j20Var.j = true;
+                        return;
+                    } else {
+                        ((PhotoViewer) h20Var).Z1(j20Var.n);
+                        return;
+                    }
+                }
+                return;
             case 8:
-                ((m1) this.b).dismiss();
-                break;
+                k20 k20Var = (k20) this.b;
+                l20 l20Var = k20Var.f;
+                int i16 = msg.what;
+                if (i16 == 1) {
+                    l20Var.onShowPress(k20Var.m);
+                    return;
+                }
+                if (i16 == 2) {
+                    k20Var.e.removeMessages(3);
+                    k20Var.i = false;
+                    k20Var.j = true;
+                    l20Var.onLongPress(k20Var.m);
+                    return;
+                }
+                if (i16 != 3) {
+                    throw new RuntimeException("Unknown message " + msg);
+                }
+                l20 l20Var2 = k20Var.g;
+                if (l20Var2 != null) {
+                    if (k20Var.h) {
+                        k20Var.i = true;
+                        return;
+                    } else {
+                        l20Var2.onSingleTapConfirmed(k20Var.m);
+                        return;
+                    }
+                }
+                return;
             case 9:
-                ((d1) ((hg.e) this.b)).r.dismiss();
-                break;
+                int i17 = msg.what;
+                int i18 = msg.arg1;
+                Object obj4 = msg.obj;
+                Bundle peekData = msg.peekData();
+                SparseArray sparseArray = ((p4.g) this.b).j;
+                p4.o0 o0Var2 = (p4.o0) sparseArray.get(i18);
+                if (o0Var2 == null) {
+                    Log.w("MR2Provider", "Pending callback not found for control request.");
+                    return;
+                }
+                sparseArray.remove(i18);
+                if (i17 == 3) {
+                    o0Var2.b((Bundle) obj4);
+                    return;
+                } else {
+                    if (i17 != 4) {
+                        return;
+                    }
+                    p4.o0.a(peekData != null ? peekData.getString("error") : null, (Bundle) obj4);
+                    return;
+                }
             case 10:
-                Runnable runnable = ((kg.d) this.b).d;
-                if (runnable != null) {
-                    runnable.run();
-                    break;
+                h3 h3Var = (h3) this.b;
+                int i19 = msg.what;
+                if (i19 != 1) {
+                    if (i19 != 2) {
+                        return;
+                    }
+                    h3Var.b = false;
+                    h3Var.f((p4.n) h3Var.h);
+                    return;
                 }
-                break;
+                h3Var.c = false;
+                k2.g0 g0Var = (k2.g0) h3Var.f;
+                if (g0Var != null) {
+                    b2.p pVar2 = (b2.p) h3Var.n;
+                    p4.e eVar = (p4.e) g0Var.b;
+                    p4.u d = eVar.d(h3Var);
+                    if (d != null) {
+                        eVar.m(d, pVar2);
+                        return;
+                    }
+                    return;
+                }
+                return;
             case 11:
-                ((kh.d) this.b).dismiss();
-                break;
-            case 12:
-                ((kh.m0) this.b).dismiss();
-                break;
-            case 13:
-                if (((g2) this.b).c0.f > 0 && (R = LaunchActivity.R()) != null) {
-                    n2 n2Var = new n2();
-                    n2Var.a = true;
-                    R.showAsSheet(new ja(), n2Var);
-                    break;
-                }
-                break;
-            case 14:
-                ((lh.f0) this.b).dismiss();
-                break;
-            case 15:
-                ((lh.s0) this.b).dismiss();
-                break;
-            case 16:
-                w0 w0Var = (w0) this.b;
-                lf.b bVar = w0Var.B.a;
-                lf.b bVar2 = lf.b.b;
-                if (bVar == bVar2) {
-                    bVar2 = lf.b.a;
-                }
-                w0Var.n(lf.a.i(0L, bVar2), true, false, true);
-                w0Var.c.setText("");
-                break;
-            case 17:
-                ((j1) this.b).dismiss();
-                break;
-            case 18:
-                ((q2) this.b).run();
-                break;
-            case 19:
-                ((q2) this.b).run();
-                break;
-            case 20:
-                k4 k4Var = (k4) this.b;
-                k4Var.getClass();
-                new aa(k4Var.b, k4Var.g).show();
-                break;
-            case 21:
-                ((e5) this.b).dismiss();
-                break;
-            case 22:
-                ((x7) this.b).run();
-                break;
-            case 23:
-                if (((y9) ((kg.a) this.b).c).f > 0 && (R2 = LaunchActivity.R()) != null) {
-                    n2 n2Var2 = new n2();
-                    n2Var2.a = true;
-                    R2.showAsSheet(new ja(), n2Var2);
-                    break;
-                }
-                break;
-            case 24:
-                mg.d0 d0Var = (mg.d0) this.b;
-                if (d0Var.k) {
-                    d0Var.d();
-                    break;
-                }
-                break;
-            case 25:
-                ((nh.g2) this.b).q(!r6.c0, true);
-                break;
-            case 26:
-                ((i9) this.b).N();
-                break;
-            case 27:
-                ((r5) this.b).dismiss();
-                p2 R3 = LaunchActivity.R();
-                if (R3 != null) {
-                    R3.showDialog(new o1(R3, 14, false));
-                    break;
-                }
-                break;
-            case 28:
-                m8 m8Var = (m8) this.b;
-                m8Var.onClick(m8Var.b);
-                break;
+                a(msg);
+                return;
             default:
-                r8 r8Var = (r8) this.b;
-                r8Var.b.r1.animate().alpha(0.0f).setDuration(150L).setListener(new b9(r8Var, 0)).start();
-                break;
+                kotlin.jvm.internal.i.e(msg, "msg");
+                if (msg.what != 3) {
+                    Log.w("SessionLifecycleClient", "Received unexpected event from the SessionLifecycleService: " + msg);
+                    super.handleMessage(msg);
+                    return;
+                }
+                Bundle data = msg.getData();
+                if (data == null || (str = data.getString("SessionUpdateExtra")) == null) {
+                    str = "";
+                }
+                Log.d("SessionLifecycleClient", "Session update received: ".concat(str));
+                zd.e0.q(zd.e0.b((id.h) this.b), new za.t(str, objArr == true ? 1 : 0, i10));
+                return;
         }
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public /* synthetic */ c(Object obj, Looper looper, int i10) {
+        super(looper);
+        this.a = i10;
+        this.b = obj;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(id.h hVar) {
+        super(Looper.getMainLooper());
+        this.a = 12;
+        this.b = hVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(p4.g gVar) {
+        super(Looper.getMainLooper());
+        this.a = 9;
+        this.b = gVar;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public c(Looper looper, fg.f fVar) {
+        super(looper);
+        this.a = 3;
+        this.b = fVar;
     }
 }

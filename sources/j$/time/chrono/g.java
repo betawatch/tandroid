@@ -38,25 +38,25 @@ public final class g implements Serializable {
         if (this.b == 0 && this.c == 0 && this.d == 0) {
             return this.a.toString() + " P0D";
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.a.toString());
-        sb.append(" P");
+        StringBuilder sb2 = new StringBuilder();
+        sb2.append(this.a.toString());
+        sb2.append(" P");
         int i10 = this.b;
         if (i10 != 0) {
-            sb.append(i10);
-            sb.append('Y');
+            sb2.append(i10);
+            sb2.append('Y');
         }
         int i11 = this.c;
         if (i11 != 0) {
-            sb.append(i11);
-            sb.append('M');
+            sb2.append(i11);
+            sb2.append('M');
         }
         int i12 = this.d;
         if (i12 != 0) {
-            sb.append(i12);
-            sb.append('D');
+            sb2.append(i12);
+            sb2.append('D');
         }
-        return sb.toString();
+        return sb2.toString();
     }
 
     public final boolean equals(Object obj) {

@@ -1,41 +1,104 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
+import android.text.TextUtils;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.tl.TL_stats;
-import org.telegram.ui.la1;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.Utilities;
+import org.telegram.ui.Components.eo0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class x7 extends org.telegram.ui.Components.p9 {
-    public final /* synthetic */ org.telegram.ui.ActionBar.f6 D;
-    public final /* synthetic */ z7 E;
+public final class x7 implements eo0 {
+    public final /* synthetic */ z7 a;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public x7(z7 z7Var, Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.E = z7Var;
-        this.D = f6Var;
+    public x7(z7 z7Var) {
+        this.a = z7Var;
     }
 
-    @Override // org.telegram.ui.Components.p9, android.view.View
-    public final void onDraw(Canvas canvas) {
-        z7 z7Var = this.E;
-        la1 la1Var = z7Var.v;
-        if (la1Var == null || !(la1Var.a instanceof TL_stats.TL_postInteractionCountersStory)) {
-            super.onDraw(canvas);
+    @Override // org.telegram.ui.Components.eo0
+    public final void X(float f7, boolean z10) {
+        int round;
+        z7 z7Var = this.a;
+        y7 y7Var = z7Var.r;
+        if (y7Var == null || z7Var.n == null) {
             return;
         }
-        float dp = AndroidUtilities.dp(1.0f);
-        z7Var.r.F.set(dp, dp, getMeasuredWidth() - r1, getMeasuredHeight() - r1);
-        nh.i7 i7Var = z7Var.r;
-        i7Var.a = false;
-        i7Var.b = false;
-        i7Var.v = true;
-        i7Var.o = false;
-        i7Var.z = 1;
-        i7Var.J = this.D;
-        nh.m7.h(0L, canvas, this.a, i7Var);
+        if (y7Var.c != null) {
+            double length = f7 * (r1.length - 1);
+            int clamp = Utilities.clamp((int) Math.floor(length), z7Var.r.c.length - 1, 0);
+            int clamp2 = Utilities.clamp((int) Math.ceil(length), z7Var.r.c.length - 1, 0);
+            int[] iArr = z7Var.r.c;
+            round = Math.round(AndroidUtilities.lerp(iArr[clamp], iArr[clamp2], Math.round(((float) (length - Math.floor(length))) * z7Var.r.d) / z7Var.r.d));
+        } else {
+            round = Math.round(((z7Var.r.a() - z7Var.r.b()) * f7) + y7Var.b());
+        }
+        int i10 = z7Var.h;
+        if (i10 != Integer.MIN_VALUE) {
+            round = Math.max(round, i10);
+        }
+        int i11 = z7Var.f;
+        if (i11 != round) {
+            if (z7Var.c(i11) != z7Var.c(round)) {
+                AndroidUtilities.vibrateCursor(z7Var.e);
+            }
+            z7Var.f = round;
+            z7Var.e(round, true);
+            Utilities.Callback callback = z7Var.n;
+            if (callback != null) {
+                callback.run(Integer.valueOf(z7Var.f));
+            }
+        }
+    }
+
+    @Override // org.telegram.ui.Components.eo0
+    public final CharSequence getContentDescription() {
+        Utilities.Callback2Return callback2Return;
+        z7 z7Var = this.a;
+        try {
+            StringBuilder sb2 = new StringBuilder();
+            if (!TextUtils.isEmpty(z7Var.s)) {
+                sb2.append(z7Var.s);
+            }
+            y7 y7Var = z7Var.r;
+            if (y7Var != null && (callback2Return = y7Var.e) != null) {
+                CharSequence charSequence = (CharSequence) callback2Return.run(0, Integer.valueOf(z7Var.f));
+                if (!TextUtils.isEmpty(charSequence)) {
+                    if (sb2.length() > 0) {
+                        sb2.append(", ");
+                    }
+                    sb2.append(charSequence);
+                }
+                CharSequence charSequence2 = (CharSequence) z7Var.r.e.run(-1, Integer.valueOf(z7Var.r.b()));
+                CharSequence charSequence3 = (CharSequence) z7Var.r.e.run(1, Integer.valueOf(z7Var.r.a()));
+                if (!TextUtils.isEmpty(charSequence2) && !TextUtils.isEmpty(charSequence3)) {
+                    if (sb2.length() > 0) {
+                        sb2.append(", ");
+                    }
+                    sb2.append(charSequence2);
+                    sb2.append(" – ");
+                    sb2.append(charSequence3);
+                }
+            }
+            if (sb2.length() > 0) {
+                return sb2.toString();
+            }
+            return null;
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+            return z7Var.s;
+        }
+    }
+
+    @Override // org.telegram.ui.Components.eo0
+    public final int l0() {
+        y7 y7Var = this.a.r;
+        if (y7Var == null) {
+            return 0;
+        }
+        return y7Var.c != null ? (r1.length - 1) * y7Var.d : y7Var.a() - y7Var.b();
+    }
+
+    @Override // org.telegram.ui.Components.eo0
+    public final /* synthetic */ void B() {
     }
 }

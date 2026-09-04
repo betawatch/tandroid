@@ -1,101 +1,209 @@
 package a4;
 
-import h5.w;
-import j3.r1;
-import java.io.EOFException;
+import android.graphics.Color;
+import android.text.SpannableString;
+import android.text.SpannableStringBuilder;
+import android.text.style.BackgroundColorSpan;
+import android.text.style.ForegroundColorSpan;
+import android.text.style.StyleSpan;
+import android.text.style.UnderlineSpan;
+import java.util.ArrayList;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class g {
-    public int a;
-    public long b;
-    public int c;
-    public int d;
+    public static final boolean[] A;
+    public static final int[] B;
+    public static final int[] C;
+    public static final int[] D;
+    public static final int[] E;
+    public static final int v = c(2, 2, 2, 0);
+    public static final int w;
+    public static final int[] x;
+    public static final int[] y;
+    public static final int[] z;
+    public final ArrayList a = new ArrayList();
+    public final SpannableStringBuilder b = new SpannableStringBuilder();
+    public boolean c;
+    public boolean d;
     public int e;
-    public final int[] f = new int[255];
-    public final w g = new w(255);
+    public boolean f;
+    public int g;
+    public int h;
+    public int i;
+    public int j;
+    public int k;
+    public int l;
+    public int m;
+    public int n;
+    public int o;
+    public int p;
+    public int q;
+    public int r;
+    public int s;
+    public int t;
+    public int u;
 
-    public final boolean a(r3.l lVar, boolean z4) {
-        boolean z10;
-        boolean z11;
-        this.a = 0;
-        this.b = 0L;
-        this.c = 0;
-        this.d = 0;
-        this.e = 0;
-        w wVar = this.g;
-        wVar.C(27);
-        try {
-            z10 = lVar.f(wVar.a, 0, 27, z4);
-        } catch (EOFException e) {
-            if (!z4) {
-                throw e;
-            }
-            z10 = false;
-        }
-        if (z10 && wVar.v() == 1332176723) {
-            if (wVar.u() == 0) {
-                this.a = wVar.u();
-                this.b = wVar.j();
-                wVar.l();
-                wVar.l();
-                wVar.l();
-                int u10 = wVar.u();
-                this.c = u10;
-                this.d = u10 + 27;
-                wVar.C(u10);
-                try {
-                    z11 = lVar.f(wVar.a, 0, this.c, z4);
-                } catch (EOFException e6) {
-                    if (!z4) {
-                        throw e6;
-                    }
-                    z11 = false;
-                }
-                if (z11) {
-                    for (int i10 = 0; i10 < this.c; i10++) {
-                        int u11 = wVar.u();
-                        this.f[i10] = u11;
-                        this.e += u11;
-                    }
-                    return true;
-                }
-            } else if (!z4) {
-                throw r1.c("unsupported bit stream revision");
-            }
-        }
-        return false;
+    static {
+        int c10 = c(0, 0, 0, 0);
+        w = c10;
+        int c11 = c(0, 0, 0, 3);
+        x = new int[]{0, 0, 0, 0, 0, 2, 0};
+        y = new int[]{0, 0, 0, 0, 0, 0, 2};
+        z = new int[]{3, 3, 3, 3, 3, 3, 1};
+        A = new boolean[]{false, false, false, true, true, true, false};
+        B = new int[]{c10, c11, c10, c10, c11, c10, c10};
+        C = new int[]{0, 1, 2, 3, 4, 3, 4};
+        D = new int[]{0, 0, 0, 0, 0, 3, 3};
+        E = new int[]{c10, c10, c10, c10, c10, c11, c11};
     }
 
-    public final boolean b(r3.l lVar, long j10) {
-        boolean z4;
-        h5.a.f(lVar.getPosition() == lVar.g());
-        w wVar = this.g;
-        wVar.C(4);
-        while (true) {
-            if (j10 != -1 && lVar.getPosition() + 4 >= j10) {
-                break;
+    public g() {
+        d();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:10:0x0024  */
+    /* JADX WARN: Removed duplicated region for block: B:12:0x002a  */
+    /* JADX WARN: Removed duplicated region for block: B:14:0x0031  */
+    /* JADX WARN: Removed duplicated region for block: B:18:0x002d  */
+    /* JADX WARN: Removed duplicated region for block: B:19:0x0027  */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int c(int i10, int i11, int i12, int i13) {
+        int i14;
+        e2.d.c(i10, 4);
+        e2.d.c(i11, 4);
+        e2.d.c(i12, 4);
+        e2.d.c(i13, 4);
+        if (i13 != 0 && i13 != 1) {
+            if (i13 == 2) {
+                i14 = 127;
+            } else if (i13 == 3) {
+                i14 = 0;
             }
-            try {
-                z4 = lVar.f(wVar.a, 0, 4, true);
-            } catch (EOFException unused) {
-                z4 = false;
-            }
-            if (!z4) {
-                break;
-            }
-            wVar.F(0);
-            if (wVar.v() == 1332176723) {
-                lVar.m();
-                return true;
-            }
-            lVar.n(1);
+            return Color.argb(i14, i10 <= 1 ? 255 : 0, i11 <= 1 ? 255 : 0, i12 <= 1 ? 0 : 255);
         }
-        do {
-            if (j10 != -1 && lVar.getPosition() >= j10) {
-                break;
+        i14 = 255;
+        return Color.argb(i14, i10 <= 1 ? 255 : 0, i11 <= 1 ? 255 : 0, i12 <= 1 ? 0 : 255);
+    }
+
+    public final void a(char c10) {
+        SpannableStringBuilder spannableStringBuilder = this.b;
+        if (c10 != '\n') {
+            spannableStringBuilder.append(c10);
+            return;
+        }
+        SpannableString b10 = b();
+        ArrayList arrayList = this.a;
+        arrayList.add(b10);
+        spannableStringBuilder.clear();
+        if (this.o != -1) {
+            this.o = 0;
+        }
+        if (this.p != -1) {
+            this.p = 0;
+        }
+        if (this.q != -1) {
+            this.q = 0;
+        }
+        if (this.s != -1) {
+            this.s = 0;
+        }
+        while (true) {
+            if (arrayList.size() < this.j && arrayList.size() < 15) {
+                this.u = arrayList.size();
+                return;
             }
-        } while (lVar.skip(1) != -1);
-        return false;
+            arrayList.remove(0);
+        }
+    }
+
+    public final SpannableString b() {
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.b);
+        int length = spannableStringBuilder.length();
+        if (length > 0) {
+            if (this.o != -1) {
+                spannableStringBuilder.setSpan(new StyleSpan(2), this.o, length, 33);
+            }
+            if (this.p != -1) {
+                spannableStringBuilder.setSpan(new UnderlineSpan(), this.p, length, 33);
+            }
+            if (this.q != -1) {
+                spannableStringBuilder.setSpan(new ForegroundColorSpan(this.r), this.q, length, 33);
+            }
+            if (this.s != -1) {
+                spannableStringBuilder.setSpan(new BackgroundColorSpan(this.t), this.s, length, 33);
+            }
+        }
+        return new SpannableString(spannableStringBuilder);
+    }
+
+    public final void d() {
+        this.a.clear();
+        this.b.clear();
+        this.o = -1;
+        this.p = -1;
+        this.q = -1;
+        this.s = -1;
+        this.u = 0;
+        this.c = false;
+        this.d = false;
+        this.e = 4;
+        this.f = false;
+        this.g = 0;
+        this.h = 0;
+        this.i = 0;
+        this.j = 15;
+        this.k = 0;
+        this.l = 0;
+        this.m = 0;
+        int i10 = w;
+        this.n = i10;
+        this.r = v;
+        this.t = i10;
+    }
+
+    public final void e(boolean z10, boolean z11) {
+        int i10 = this.o;
+        SpannableStringBuilder spannableStringBuilder = this.b;
+        if (i10 != -1) {
+            if (!z10) {
+                spannableStringBuilder.setSpan(new StyleSpan(2), this.o, spannableStringBuilder.length(), 33);
+                this.o = -1;
+            }
+        } else if (z10) {
+            this.o = spannableStringBuilder.length();
+        }
+        if (this.p == -1) {
+            if (z11) {
+                this.p = spannableStringBuilder.length();
+            }
+        } else {
+            if (z11) {
+                return;
+            }
+            spannableStringBuilder.setSpan(new UnderlineSpan(), this.p, spannableStringBuilder.length(), 33);
+            this.p = -1;
+        }
+    }
+
+    public final void f(int i10, int i11) {
+        int i12 = this.q;
+        SpannableStringBuilder spannableStringBuilder = this.b;
+        if (i12 != -1 && this.r != i10) {
+            spannableStringBuilder.setSpan(new ForegroundColorSpan(this.r), this.q, spannableStringBuilder.length(), 33);
+        }
+        if (i10 != v) {
+            this.q = spannableStringBuilder.length();
+            this.r = i10;
+        }
+        if (this.s != -1 && this.t != i11) {
+            spannableStringBuilder.setSpan(new BackgroundColorSpan(this.t), this.s, spannableStringBuilder.length(), 33);
+        }
+        if (i11 != w) {
+            this.s = spannableStringBuilder.length();
+            this.t = i11;
+        }
     }
 }

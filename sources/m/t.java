@@ -3,37 +3,36 @@ package m;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.widget.TextView;
-import k7.k6;
-import org.telegram.ui.Components.zz;
+import w7.l6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class t {
     public final TextView a;
-    public final zz b;
+    public final l.d b;
 
     public t(TextView textView) {
         this.a = textView;
-        this.b = new zz(textView);
+        this.b = new l.d(textView);
     }
 
     public final void a(AttributeSet attributeSet, int i10) {
         TypedArray obtainStyledAttributes = this.a.getContext().obtainStyledAttributes(attributeSet, f.a.i, i10, 0);
         try {
-            boolean z4 = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
+            boolean z10 = obtainStyledAttributes.hasValue(14) ? obtainStyledAttributes.getBoolean(14, true) : true;
             obtainStyledAttributes.recycle();
-            c(z4);
+            c(z10);
         } catch (Throwable th2) {
             obtainStyledAttributes.recycle();
             throw th2;
         }
     }
 
-    public final void b(boolean z4) {
-        ((k6) this.b.b).b(z4);
+    public final void b(boolean z10) {
+        ((l6) this.b.b).b(z10);
     }
 
-    public final void c(boolean z4) {
-        ((k6) this.b.b).c(z4);
+    public final void c(boolean z10) {
+        ((l6) this.b.b).c(z10);
     }
 }

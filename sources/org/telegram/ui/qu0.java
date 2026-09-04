@@ -1,29 +1,85 @@
 package org.telegram.ui;
 
-import android.view.View;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.ui.Components.ClippingImageView;
+import android.content.Context;
+import android.widget.FrameLayout;
+import androidx.core.widget.NestedScrollView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class qu0 {
-    public ImageReceiver a;
-    public int b;
-    public int c;
-    public View d;
-    public ImageReceiver.BitmapHolder e;
-    public long f;
-    public long g;
-    public int[] h;
-    public int i;
-    public int j;
-    public boolean l;
-    public ClippingImageView m;
-    public int n;
-    public boolean p;
-    public int q;
-    public boolean r;
-    public boolean s;
-    public float k = 1.0f;
-    public boolean o = true;
+public final class qu0 extends org.telegram.ui.Components.p01 {
+    public boolean a;
+    public float b;
+    public NestedScrollView c;
+    public FrameLayout d;
+
+    public qu0(Context context) {
+        super(context);
+        this.a = false;
+        this.b = 1.0f;
+    }
+
+    public final void b(int i10, boolean z10) {
+        super.setVisibility(i10);
+        if (this.a && z10) {
+            this.c.setVisibility(i10);
+        }
+    }
+
+    @Override // android.view.View
+    public float getAlpha() {
+        return this.a ? this.b : super.getAlpha();
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        if (this.d == null || getParent() != this.d) {
+            return;
+        }
+        this.a = true;
+        this.c.setVisibility(getVisibility());
+        this.c.setAlpha(this.b);
+        super.setAlpha(1.0f);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        if (this.a) {
+            this.a = false;
+            this.c.setVisibility(8);
+            super.setAlpha(this.b);
+        }
+    }
+
+    @Override // android.view.View
+    public void setAlpha(float f7) {
+        this.b = f7;
+        if (this.a) {
+            this.c.setAlpha(f7);
+        } else {
+            super.setAlpha(f7);
+        }
+    }
+
+    public void setContainer(FrameLayout frameLayout) {
+        this.d = frameLayout;
+    }
+
+    public void setScrollView(NestedScrollView nestedScrollView) {
+        this.c = nestedScrollView;
+    }
+
+    @Override // android.view.View
+    public void setTranslationY(float f7) {
+        super.setTranslationY(f7);
+        if (this.a) {
+            this.c.invalidate();
+        }
+    }
+
+    @Override // android.view.View
+    public void setVisibility(int i10) {
+        b(i10, true);
+    }
 }

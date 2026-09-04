@@ -1,77 +1,48 @@
 package com.google.android.gms.internal.cast;
 
-import j$.util.DesugarCollections;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class o5 extends q5 {
-    public static final Class c = DesugarCollections.unmodifiableList(Collections.EMPTY_LIST).getClass();
+public final class o5 {
+    public static final o5 a;
+    public static final o5 b;
+    public static final o5 c;
+    public static final o5 d;
+    public static final o5 e;
+    public static final o5 f;
+    public static final o5 h;
+    public static final o5 n;
+    public static final o5 r;
+    public static final o5 s;
+    public static final /* synthetic */ o5[] v;
 
-    @Override // com.google.android.gms.internal.cast.q5
-    public final void a(Object obj, long j10) {
-        Object unmodifiableList;
-        List list = (List) r6.h(obj, j10);
-        if (list instanceof n5) {
-            unmodifiableList = ((n5) list).zzd();
-        } else {
-            if (c.isAssignableFrom(list.getClass())) {
-                return;
-            }
-            if ((list instanceof c6) && (list instanceof j5)) {
-                u4 u4Var = (u4) ((j5) list);
-                boolean z4 = u4Var.a;
-                if (z4 && z4) {
-                    u4Var.a = false;
-                    return;
-                }
-                return;
-            }
-            unmodifiableList = DesugarCollections.unmodifiableList(list);
-        }
-        r6.l(obj, j10, unmodifiableList);
+    static {
+        o5 o5Var = new o5("VOID", 0);
+        a = o5Var;
+        o5 o5Var2 = new o5("INT", 1);
+        b = o5Var2;
+        o5 o5Var3 = new o5("LONG", 2);
+        c = o5Var3;
+        o5 o5Var4 = new o5("FLOAT", 3);
+        d = o5Var4;
+        o5 o5Var5 = new o5("DOUBLE", 4);
+        e = o5Var5;
+        o5 o5Var6 = new o5("BOOLEAN", 5);
+        f = o5Var6;
+        o5 o5Var7 = new o5("STRING", 6);
+        h = o5Var7;
+        z4 z4Var = z4.c;
+        o5 o5Var8 = new o5("BYTE_STRING", 7);
+        n = o5Var8;
+        o5 o5Var9 = new o5("ENUM", 8);
+        r = o5Var9;
+        o5 o5Var10 = new o5("MESSAGE", 9);
+        s = o5Var10;
+        v = new o5[]{o5Var, o5Var2, o5Var3, o5Var4, o5Var5, o5Var6, o5Var7, o5Var8, o5Var9, o5Var10};
     }
 
-    /* JADX WARN: Multi-variable type inference failed */
-    @Override // com.google.android.gms.internal.cast.q5
-    public final void b(Object obj, long j10, Object obj2) {
-        m5 m5Var;
-        List list = (List) r6.h(obj2, j10);
-        int size = list.size();
-        List list2 = (List) r6.h(obj, j10);
-        if (list2.isEmpty()) {
-            list2 = list2 instanceof n5 ? new m5(size) : ((list2 instanceof c6) && (list2 instanceof j5)) ? ((j5) list2).zzg(size) : new ArrayList(size);
-            r6.l(obj, j10, list2);
-        } else {
-            if (c.isAssignableFrom(list2.getClass())) {
-                ArrayList arrayList = new ArrayList(list2.size() + size);
-                arrayList.addAll(list2);
-                r6.l(obj, j10, arrayList);
-                m5Var = arrayList;
-            } else if (list2 instanceof m6) {
-                m5 m5Var2 = new m5(list2.size() + size);
-                m5Var2.addAll(m5Var2.b.size(), (m6) list2);
-                r6.l(obj, j10, m5Var2);
-                m5Var = m5Var2;
-            } else if ((list2 instanceof c6) && (list2 instanceof j5)) {
-                j5 j5Var = (j5) list2;
-                if (!((u4) j5Var).a) {
-                    list2 = j5Var.zzg(list2.size() + size);
-                    r6.l(obj, j10, list2);
-                }
-            }
-            list2 = m5Var;
-        }
-        int size2 = list2.size();
-        int size3 = list.size();
-        if (size2 > 0 && size3 > 0) {
-            list2.addAll(list);
-        }
-        if (size2 > 0) {
-            list = list2;
-        }
-        r6.l(obj, j10, list);
+    public static o5[] values() {
+        return (o5[]) v.clone();
     }
 }

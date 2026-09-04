@@ -1,55 +1,49 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.FrameLayout;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class qw0 implements ValueAnimator.AnimatorUpdateListener {
+public final class qw0 implements ViewTreeObserver.OnPreDrawListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
-    public final /* synthetic */ View c;
-    public final /* synthetic */ Object d;
+    public final /* synthetic */ PopupNotificationActivity b;
 
-    public /* synthetic */ qw0(Object obj, ViewGroup viewGroup, Object obj2, int i10) {
+    public /* synthetic */ qw0(PopupNotificationActivity popupNotificationActivity, int i10) {
         this.a = i10;
-        this.b = obj;
-        this.c = viewGroup;
-        this.d = obj2;
+        this.b = popupNotificationActivity;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.view.ViewTreeObserver.OnPreDrawListener
+    public final boolean onPreDraw() {
         switch (this.a) {
             case 0:
-                vw0 vw0Var = (vw0) this.b;
-                ValueAnimator valueAnimator2 = (ValueAnimator) this.d;
-                PremiumPreviewFragment premiumPreviewFragment = vw0Var.n;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                View view = this.c;
-                view.setAlpha(floatValue);
-                view.setScaleX(floatValue);
-                view.setScaleY(floatValue);
-                float animatedFraction = valueAnimator2.getAnimatedFraction();
-                for (int i10 = 0; i10 < premiumPreviewFragment.R.getChildCount(); i10++) {
-                    View childAt = premiumPreviewFragment.R.getChildAt(i10);
-                    if (childAt != vw0Var.e) {
-                        childAt.setTranslationY((view.getMeasuredHeight() * animatedFraction) + (childAt == vw0Var.c ? 0.0f - (AndroidUtilities.dp(15.0f) * animatedFraction) : 0.0f + (AndroidUtilities.dp(8.0f) * animatedFraction)));
-                    }
+                PopupNotificationActivity popupNotificationActivity = this.b;
+                FrameLayout frameLayout = popupNotificationActivity.f;
+                if (frameLayout != null) {
+                    frameLayout.getViewTreeObserver().removeOnPreDrawListener(this);
                 }
+                int y3 = org.telegram.messenger.wl.y(48.0f, org.telegram.ui.ActionBar.k.getCurrentActionBarHeight(), 2);
+                FrameLayout frameLayout2 = popupNotificationActivity.f;
+                frameLayout2.setPadding(frameLayout2.getPaddingLeft(), y3, popupNotificationActivity.f.getPaddingRight(), y3);
                 break;
             default:
-                ya1 ya1Var = (ya1) this.b;
-                ChatActivityEnterView chatActivityEnterView = (ChatActivityEnterView) this.c;
-                org.telegram.ui.Components.ki kiVar = (org.telegram.ui.Components.ki) this.d;
-                ya1Var.getClass();
-                ya1Var.a = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                chatActivityEnterView.getEditField().setAlpha(ya1Var.a);
-                kiVar.invalidate();
+                PopupNotificationActivity popupNotificationActivity2 = this.b;
+                popupNotificationActivity2.n.getViewTreeObserver().removeOnPreDrawListener(this);
+                if (!popupNotificationActivity2.c() && !popupNotificationActivity2.X) {
+                    ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) popupNotificationActivity2.n.getLayoutParams();
+                    marginLayoutParams.topMargin = org.telegram.ui.ActionBar.k.getCurrentActionBarHeight();
+                    marginLayoutParams.bottomMargin = AndroidUtilities.dp(48.0f);
+                    marginLayoutParams.width = -1;
+                    marginLayoutParams.height = -1;
+                    popupNotificationActivity2.n.setLayoutParams(marginLayoutParams);
+                    popupNotificationActivity2.a(0);
+                    break;
+                }
                 break;
         }
+        return true;
     }
 }

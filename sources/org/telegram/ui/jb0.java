@@ -1,70 +1,35 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import android.text.TextWatcher;
-import org.telegram.messenger.Emoji;
+import android.window.OnBackInvokedCallback;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class jb0 implements TextWatcher {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ pb0 b;
+public final class jb0 implements OnBackInvokedCallback {
+    public final /* synthetic */ LaunchActivity a;
 
-    public /* synthetic */ jb0(pb0 pb0Var, int i10) {
-        this.a = i10;
-        this.b = pb0Var;
+    public jb0(LaunchActivity launchActivity) {
+        this.a = launchActivity;
     }
 
-    @Override // android.text.TextWatcher
-    public final void afterTextChanged(Editable editable) {
-        switch (this.a) {
-            case 0:
-                Emoji.replaceEmoji(editable, this.b.H.getPaint().getFontMetricsInt(), false);
-                break;
-            default:
-                pb0 pb0Var = this.b;
-                if (!pb0Var.L) {
-                    if (editable.toString().equals("0")) {
-                        pb0Var.C.setText("");
-                        break;
-                    } else {
-                        try {
-                            int parseInt = Integer.parseInt(editable.toString());
-                            if (parseInt <= 100000) {
-                                pb0Var.W(parseInt);
-                                break;
-                            } else {
-                                pb0Var.X();
-                                break;
-                            }
-                        } catch (NumberFormatException unused) {
-                            pb0Var.X();
-                        }
-                    }
-                }
-                break;
+    @Override // android.window.OnBackInvokedCallback
+    public final void onBackInvoked() {
+        if (AndroidUtilities.isTablet()) {
+            this.a.onBackPressed();
+            return;
         }
-    }
-
-    @Override // android.text.TextWatcher
-    public final void beforeTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    @Override // android.text.TextWatcher
-    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
-        int i13 = this.a;
-    }
-
-    private final void a(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void b(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void c(int i10, int i11, int i12, CharSequence charSequence) {
-    }
-
-    private final void d(int i10, int i11, int i12, CharSequence charSequence) {
+        if (this.a.c0(true)) {
+            LaunchActivity launchActivity = this.a;
+            ActionBarLayout actionBarLayout = launchActivity.q0;
+            if (actionBarLayout == null) {
+                launchActivity.onBackPressed();
+            } else if (!actionBarLayout.c1) {
+                actionBarLayout.G();
+            } else {
+                actionBarLayout.c1 = false;
+                actionBarLayout.e(false);
+            }
+        }
     }
 }

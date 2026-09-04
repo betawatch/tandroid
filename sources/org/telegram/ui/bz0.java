@@ -1,47 +1,31 @@
 package org.telegram.ui;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class bz0 implements iq {
-    public final /* synthetic */ TLRPC.Chat a;
-    public final /* synthetic */ lq b;
-    public final /* synthetic */ ProfileActivity c;
+public final /* synthetic */ class bz0 implements View.OnClickListener {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ Runnable b;
 
-    public bz0(ProfileActivity profileActivity, TLRPC.Chat chat, lq lqVar) {
-        this.c = profileActivity;
-        this.a = chat;
-        this.b = lqVar;
+    public /* synthetic */ bz0(int i10, Runnable runnable) {
+        this.a = i10;
+        this.b = runnable;
     }
 
-    @Override // org.telegram.ui.iq
-    public final void a(TLRPC.User user) {
-        ProfileActivity profileActivity = this.c;
-        profileActivity.J.m(-profileActivity.c1, user, profileActivity.B2.megagroup ? 10 : 9);
-    }
-
-    @Override // org.telegram.ui.iq
-    public final void b(int i10, TLRPC.TL_chatAdminRights tL_chatAdminRights, TLRPC.TL_chatBannedRights tL_chatBannedRights, String str) {
-        TLRPC.Chat chat;
-        ProfileActivity profileActivity = this.c;
-        profileActivity.removeSelfFromStack();
-        TLRPC.User user = profileActivity.getMessagesController().getUser(Long.valueOf(profileActivity.b1));
-        if (user == null || (chat = this.a) == null || profileActivity.b1 == 0) {
-            return;
-        }
-        lq lqVar = this.b;
-        if (!lqVar.N || lqVar.getParentLayout() == null) {
-            return;
-        }
-        for (org.telegram.ui.ActionBar.p2 p2Var : lqVar.getParentLayout().getFragmentStack()) {
-            if (p2Var instanceof ub) {
-                ub ubVar = (ub) p2Var;
-                ubVar.W0();
-                AndroidUtilities.runOnUIThread(new jf0(ubVar, user, chat, 25));
-                return;
-            }
+    @Override // android.view.View.OnClickListener
+    public final void onClick(View view) {
+        switch (this.a) {
+            case 0:
+                this.b.run();
+                break;
+            default:
+                Runnable runnable = this.b;
+                if (runnable != null) {
+                    runnable.run();
+                    break;
+                }
+                break;
         }
     }
 }

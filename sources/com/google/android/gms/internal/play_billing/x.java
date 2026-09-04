@@ -3,15 +3,15 @@ package com.google.android.gms.internal.play_billing;
 import java.util.Iterator;
 import java.util.Map;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class x extends t {
-    public final transient com.google.android.gms.internal.cast.i0 c;
+    public final transient com.google.android.gms.internal.cast.l0 c;
     public final transient Object[] d;
     public final transient int e;
 
-    public x(com.google.android.gms.internal.cast.i0 i0Var, Object[] objArr, int i10) {
-        this.c = i0Var;
+    public x(com.google.android.gms.internal.cast.l0 l0Var, Object[] objArr, int i10) {
+        this.c = l0Var;
         this.d = objArr;
         this.e = i10;
     }

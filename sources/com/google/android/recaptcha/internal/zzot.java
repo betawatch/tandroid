@@ -1,6 +1,6 @@
 package com.google.android.recaptcha.internal;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzot {
     public static Object zza(Object obj, String str) {
@@ -26,9 +26,9 @@ public final class zzot {
         return str;
     }
 
-    private static boolean zzc(char c3) {
-        if (c3 < 'a' || c3 > 'z') {
-            return c3 >= 'A' && c3 <= 'Z';
+    private static boolean zzc(char c10) {
+        if (c10 < 'a' || c10 > 'z') {
+            return c10 >= 'A' && c10 <= 'Z';
         }
         return true;
     }

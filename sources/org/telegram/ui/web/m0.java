@@ -1,493 +1,1388 @@
 package org.telegram.ui.web;
 
-import android.content.Context;
+import android.app.DownloadManager;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
-import android.net.http.SslError;
-import android.os.Build;
-import android.text.TextUtils;
-import android.webkit.RenderProcessGoneDetail;
-import android.webkit.SslErrorHandler;
-import android.webkit.WebResourceError;
-import android.webkit.WebResourceRequest;
-import android.webkit.WebResourceResponse;
+import android.os.Environment;
+import android.view.View;
+import android.webkit.URLUtil;
 import android.webkit.WebView;
-import android.webkit.WebViewClient;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.net.URLDecoder;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.BuildVars;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.R;
-import org.telegram.messenger.Utilities;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
-import org.telegram.ui.ActionBar.g3;
+import org.telegram.messenger.wl;
+import org.telegram.ui.ActionBar.f3;
+import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
-public final class m0 extends WebViewClient {
-    public boolean a = true;
-    public final l0 b = new l0(this, 0);
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ Context d;
-    public final /* synthetic */ y0 e;
+public final class m0 implements View.OnLongClickListener {
+    public final /* synthetic */ z0 a;
 
-    public m0(y0 y0Var, boolean z4, Context context) {
-        this.e = y0Var;
-        this.c = z4;
-        this.d = context;
+    public m0(z0 z0Var) {
+        this.a = z0Var;
     }
 
-    @Override // android.webkit.WebViewClient
-    public final void doUpdateVisitedHistory(WebView webView, String str, boolean z4) {
-        d1 d1Var;
-        boolean z10 = this.c;
-        y0 y0Var = this.e;
-        if (!z10 && ((d1Var = y0Var.e) == null || !TextUtils.equals(d1Var.c, str))) {
-            d1 d1Var2 = new d1();
-            y0Var.e = d1Var2;
-            d1Var2.a = Utilities.fastRandom.nextLong();
-            y0Var.e.b = System.currentTimeMillis();
-            y0Var.e.c = c1.v(y0Var.getUrl());
-            y0Var.e.d = l2.a(y0Var);
-            e1.c(y0Var.e);
-        }
-        y0Var.c("doUpdateVisitedHistory " + str + " " + z4);
-        c1 c1Var = y0Var.N;
-        if (c1Var != null) {
-            c1Var.J(!y0Var.canGoBack(), !y0Var.canGoForward());
-        }
-        super.doUpdateVisitedHistory(webView, str, z4);
-    }
+    @Override // android.view.View.OnLongClickListener
+    public final boolean onLongClick(View view) {
+        WebView.HitTestResult hitTestResult = this.a.getHitTestResult();
+        if (hitTestResult.getType() == 7) {
+            final String extra = hitTestResult.getExtra();
+            final int i10 = 0;
+            AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.web.k0
+                public final /* synthetic */ m0 b;
 
-    @Override // android.webkit.WebViewClient
-    public final void onPageCommitVisible(WebView webView, String str) {
-        c1 c1Var;
-        y0 y0Var = this.e;
-        y0Var.c("onPageCommitVisible " + str);
-        boolean z4 = this.c;
-        if (z4 && !k7.x.a("DOCUMENT_START_SCRIPT") && (c1Var = y0Var.N) != null) {
-            boolean z10 = c1.M0;
-            if (c1Var.r()) {
-                y0Var.d("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};");
-            }
-        }
-        if (z4) {
-            y0Var.K = true;
-            y0Var.d(AndroidUtilities.readRes(R.raw.webview_app_ext).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION));
-        } else {
-            y0Var.K = true;
-            y0Var.d(AndroidUtilities.readRes(R.raw.webview_ext).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION));
-            y0Var.d(AndroidUtilities.readRes(R.raw.webview_share));
-        }
-        super.onPageCommitVisible(webView, str);
-    }
+                {
+                    this.b = this;
+                }
 
-    @Override // android.webkit.WebViewClient
-    public final void onPageFinished(WebView webView, String str) {
-        c1 c1Var;
-        y0 y0Var = this.e;
-        y0Var.b = true;
-        y0Var.c("onPageFinished");
-        boolean z4 = this.c;
-        if (z4 && !k7.x.a("DOCUMENT_START_SCRIPT") && (c1Var = y0Var.N) != null) {
-            boolean z10 = c1.M0;
-            if (c1Var.r()) {
-                y0Var.d("window.TelegramWebviewProxy={postEvent:function(eventType,eventData){window.TelegramWebviewProxyMessage.postMessage(JSON.stringify({eventType:eventType,eventData:eventData}));}};");
-            }
-        }
-        c1 c1Var2 = y0Var.N;
-        if (c1Var2 != null) {
-            c1Var2.U(str, true);
-        } else {
-            y0Var.c("onPageFinished: no container");
-        }
-        if (z4) {
-            y0Var.K = true;
-            y0Var.d(AndroidUtilities.readRes(R.raw.webview_app_ext).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION));
-        } else {
-            y0Var.K = true;
-            y0Var.d(AndroidUtilities.readRes(R.raw.webview_ext).replace("$DEBUG$", "" + BuildVars.DEBUG_VERSION));
-            y0Var.d(AndroidUtilities.readRes(R.raw.webview_share));
-        }
-        y0.a(y0Var);
-        c1 c1Var3 = y0Var.N;
-        if (c1Var3 != null) {
-            if (!y0Var.B) {
-                y0Var.getUrl();
-            }
-            c1Var3.J(!y0Var.canGoBack(), !y0Var.canGoForward());
-        }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:9:0x001c, code lost:
-    
-        if (r0.s() == false) goto L11;
-     */
-    @Override // android.webkit.WebViewClient
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final void onPageStarted(WebView webView, String str, Bitmap bitmap) {
-        String str2;
-        c1 c1Var;
-        boolean z4 = this.c;
-        y0 y0Var = this.e;
-        if (z4 && (c1Var = y0Var.N) != null) {
-            c1Var.p0++;
-        }
-        c1 c1Var2 = y0Var.N;
-        if (c1Var2 != null) {
-            boolean z10 = c1.M0;
-        }
-        y0Var.getSettings().setMediaPlaybackRequiresUserGesture(true);
-        g3 g3Var = y0Var.C;
-        if (g3Var != null) {
-            g3Var.dismiss();
-            y0Var.C = null;
-        }
-        y0Var.e = null;
-        y0Var.r = null;
-        y0Var.s = false;
-        y0Var.v = false;
-        y0Var.J = false;
-        y0Var.c("onPageStarted " + str);
-        if (y0Var.N != null && y0Var.h && ((str2 = y0Var.n) == null || !TextUtils.equals(str2, str))) {
-            AndroidUtilities.runOnUIThread(this.b, 40L);
-        }
-        c1 c1Var3 = y0Var.N;
-        if (c1Var3 != null) {
-            c1Var3.J(!y0Var.canGoBack(), true ^ y0Var.canGoForward());
-        }
-        super.onPageStarted(webView, str, bitmap);
-        y0Var.K = false;
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedError(WebView webView, WebResourceRequest webResourceRequest, WebResourceError webResourceError) {
-        if (Build.VERSION.SDK_INT >= 23) {
-            String str = "onReceivedError: " + webResourceError.getErrorCode() + " " + ((Object) webResourceError.getDescription());
-            y0 y0Var = this.e;
-            y0Var.c(str);
-            if (y0Var.N != null && (webResourceRequest == null || webResourceRequest.isForMainFrame())) {
-                AndroidUtilities.cancelRunOnUIThread(this.b);
-                y0Var.r = null;
-                y0Var.s = false;
-                y0Var.v = false;
-                y0Var.J = false;
-                y0Var.G = false;
-                y0Var.n = (webResourceRequest == null || webResourceRequest.getUrl() == null) ? y0Var.getUrl() : webResourceRequest.getUrl().toString();
-                c1 c1Var = y0Var.N;
-                y0Var.H = null;
-                c1Var.I();
-                c1 c1Var2 = y0Var.N;
-                y0Var.L = null;
-                c1Var2.getClass();
-                c1 c1Var3 = y0Var.N;
-                y0Var.h = true;
-                webResourceError.getErrorCode();
-                c1Var3.E(webResourceError.getDescription() != null ? webResourceError.getDescription().toString() : null, true);
-            }
-        }
-        super.onReceivedError(webView, webResourceRequest, webResourceError);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedHttpError(WebView webView, WebResourceRequest webResourceRequest, WebResourceResponse webResourceResponse) {
-        super.onReceivedHttpError(webView, webResourceRequest, webResourceResponse);
-        StringBuilder sb = new StringBuilder("onReceivedHttpError: statusCode=");
-        sb.append(webResourceResponse == null ? null : Integer.valueOf(webResourceResponse.getStatusCode()));
-        sb.append(" request=");
-        sb.append(webResourceRequest == null ? null : webResourceRequest.getUrl());
-        String sb2 = sb.toString();
-        y0 y0Var = this.e;
-        y0Var.c(sb2);
-        if (y0Var.N != null) {
-            if ((webResourceRequest == null || webResourceRequest.isForMainFrame()) && webResourceResponse != null && TextUtils.isEmpty(webResourceResponse.getMimeType())) {
-                AndroidUtilities.cancelRunOnUIThread(this.b);
-                y0Var.r = null;
-                y0Var.s = false;
-                y0Var.v = false;
-                y0Var.J = false;
-                y0Var.G = false;
-                y0Var.n = (webResourceRequest == null || webResourceRequest.getUrl() == null) ? y0Var.getUrl() : webResourceRequest.getUrl().toString();
-                c1 c1Var = y0Var.N;
-                y0Var.H = null;
-                c1Var.I();
-                c1 c1Var2 = y0Var.N;
-                y0Var.L = null;
-                c1Var2.getClass();
-                c1 c1Var3 = y0Var.N;
-                y0Var.h = true;
-                webResourceResponse.getStatusCode();
-                c1Var3.E(webResourceResponse.getReasonPhrase(), true);
-            }
-        }
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedSslError(WebView webView, SslErrorHandler sslErrorHandler, SslError sslError) {
-        StringBuilder sb = new StringBuilder("onReceivedSslError: error=");
-        sb.append(sslError);
-        sb.append(" url=");
-        sb.append(sslError == null ? null : sslError.getUrl());
-        this.e.c(sb.toString());
-        sslErrorHandler.cancel();
-        super.onReceivedSslError(webView, sslErrorHandler, sslError);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean onRenderProcessGone(WebView webView, RenderProcessGoneDetail renderProcessGoneDetail) {
-        int i10 = Build.VERSION.SDK_INT;
-        y0 y0Var = this.e;
-        if (i10 >= 26) {
-            StringBuilder sb = new StringBuilder("onRenderProcessGone priority=");
-            sb.append(renderProcessGoneDetail == null ? null : Integer.valueOf(renderProcessGoneDetail.rendererPriorityAtExit()));
-            sb.append(" didCrash=");
-            sb.append(renderProcessGoneDetail == null ? null : Boolean.valueOf(renderProcessGoneDetail.didCrash()));
-            y0Var.c(sb.toString());
-        } else {
-            y0Var.c("onRenderProcessGone");
-        }
-        try {
-            if (!AndroidUtilities.isSafeToShow(y0Var.getContext())) {
-                return true;
-            }
-            Context context = y0Var.getContext();
-            c1 c1Var = y0Var.N;
-            AlertDialog$Builder alertDialog$Builder = new AlertDialog$Builder(context, 0, c1Var == null ? null : c1Var.e);
-            alertDialog$Builder.a.O = LocaleController.getString(R.string.ChromeCrashTitle);
-            alertDialog$Builder.a.Q = AndroidUtilities.replaceSingleTag(LocaleController.getString(R.string.ChromeCrashMessage), new l0(this, 2));
-            alertDialog$Builder.k(LocaleController.getString(R.string.OK), null);
-            alertDialog$Builder.a.setOnDismissListener(new eg.d0(this, 9));
-            alertDialog$Builder.o();
+                /* JADX WARN: Can't wrap try/catch for region: R(7:22|(2:23|24)|(4:28|29|30|31)|37|29|30|31) */
+                /* JADX WARN: Code restructure failed: missing block: B:34:0x00b0, code lost:
+                
+                    r3 = e;
+                 */
+                @Override // java.lang.Runnable
+                /*
+                    Code decompiled incorrectly, please refer to instructions dump.
+                */
+                public final void run() {
+                    String str;
+                    String str2;
+                    Uri parse;
+                    String str3;
+                    String str4;
+                    int i11 = i10;
+                    final String str5 = extra;
+                    final m0 m0Var = this.b;
+                    final int i12 = 1;
+                    final int i13 = 0;
+                    switch (i11) {
+                        case 0:
+                            z0 z0Var = m0Var.a;
+                            f3 i14 = wl.i(1, z0Var.getContext(), null, false);
+                            try {
+                                parse = Uri.parse(str5);
+                            } catch (Exception e7) {
+                                try {
+                                    FileLog.e((Throwable) e7, false);
+                                } catch (Exception e10) {
+                                    e = e10;
+                                    str = str5;
+                                    FileLog.e(e);
+                                    str2 = str;
+                                    i14.multipleLinesTitle = true;
+                                    i14.title = str2;
+                                    i14.bigTitle = false;
+                                    CharSequence[] charSequenceArr = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
+                                    DialogInterface.OnClickListener onClickListener = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                                        @Override // android.content.DialogInterface.OnClickListener
+                                        public final void onClick(DialogInterface dialogInterface, int i15) {
+                                            int i16 = i12;
+                                            String str6 = str5;
+                                            m0 m0Var2 = m0Var;
+                                            switch (i16) {
+                                                case 0:
+                                                    z0 z0Var2 = m0Var2.a;
+                                                    if (i15 != 0) {
+                                                        if (i15 != 1) {
+                                                            if (i15 == 2) {
+                                                                AndroidUtilities.addToClipboard(str6);
+                                                                d1 d1Var = z0Var2.Q;
+                                                                if (d1Var != null) {
+                                                                    new yc(d1Var, d1Var.e).k(false).k(true);
+                                                                    break;
+                                                                }
+                                                            }
+                                                        } else {
+                                                            try {
+                                                                String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                                if (guessFileName == null) {
+                                                                    guessFileName = "image.png";
+                                                                }
+                                                                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                                request.setMimeType("image/*");
+                                                                request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                                request.setNotificationVisibility(1);
+                                                                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                                DownloadManager downloadManager = (DownloadManager) z0Var2.getContext().getSystemService("download");
+                                                                if (downloadManager != null) {
+                                                                    downloadManager.enqueue(request);
+                                                                }
+                                                                d1 d1Var2 = z0Var2.Q;
+                                                                if (d1Var2 != null) {
+                                                                    new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                    break;
+                                                                }
+                                                            } catch (Exception e11) {
+                                                                FileLog.e(e11);
+                                                                return;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent.putExtra("create_new_tab", true);
+                                                            intent.putExtra("com.android.browser.application_id", z0Var2.getContext().getPackageName());
+                                                            z0Var2.getContext().startActivity(intent);
+                                                            break;
+                                                        } catch (Exception e12) {
+                                                            FileLog.e(e12);
+                                                            z0Var2.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                    break;
+                                                default:
+                                                    z0 z0Var3 = m0Var2.a;
+                                                    if (i15 != 0) {
+                                                        if (i15 != 1) {
+                                                            if (i15 == 2) {
+                                                                AndroidUtilities.addToClipboard(str6);
+                                                                d1 d1Var3 = z0Var3.Q;
+                                                                if (d1Var3 != null) {
+                                                                    new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                    break;
+                                                                }
+                                                            }
+                                                        } else {
+                                                            try {
+                                                                Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                                intent2.putExtra("create_new_tab", true);
+                                                                intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                                z0Var3.getContext().startActivity(intent2);
+                                                                break;
+                                                            } catch (Exception e13) {
+                                                                FileLog.e(e13);
+                                                                z0Var3.loadUrl(str6);
+                                                                return;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        z0Var3.loadUrl(str6);
+                                                        break;
+                                                    }
+                                                    break;
+                                            }
+                                        }
+                                    };
+                                    i14.items = charSequenceArr;
+                                    i14.onClickListener = onClickListener;
+                                    i14.show();
+                                    z0Var.F = i14;
+                                    return;
+                                }
+                            }
+                            if (parse != null && !parse.getScheme().equalsIgnoreCase("data")) {
+                                str = of.f.v(parse, null, null, of.f.a(parse.getHost()), null);
+                                str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
+                                i14.multipleLinesTitle = true;
+                                i14.title = str2;
+                                i14.bigTitle = false;
+                                CharSequence[] charSequenceArr2 = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
+                                DialogInterface.OnClickListener onClickListener2 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                                    @Override // android.content.DialogInterface.OnClickListener
+                                    public final void onClick(DialogInterface dialogInterface, int i15) {
+                                        int i16 = i12;
+                                        String str6 = str5;
+                                        m0 m0Var2 = m0Var;
+                                        switch (i16) {
+                                            case 0:
+                                                z0 z0Var2 = m0Var2.a;
+                                                if (i15 != 0) {
+                                                    if (i15 != 1) {
+                                                        if (i15 == 2) {
+                                                            AndroidUtilities.addToClipboard(str6);
+                                                            d1 d1Var = z0Var2.Q;
+                                                            if (d1Var != null) {
+                                                                new yc(d1Var, d1Var.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                            if (guessFileName == null) {
+                                                                guessFileName = "image.png";
+                                                            }
+                                                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                            request.setMimeType("image/*");
+                                                            request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                            request.setNotificationVisibility(1);
+                                                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                            DownloadManager downloadManager = (DownloadManager) z0Var2.getContext().getSystemService("download");
+                                                            if (downloadManager != null) {
+                                                                downloadManager.enqueue(request);
+                                                            }
+                                                            d1 d1Var2 = z0Var2.Q;
+                                                            if (d1Var2 != null) {
+                                                                new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                break;
+                                                            }
+                                                        } catch (Exception e11) {
+                                                            FileLog.e(e11);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent.putExtra("create_new_tab", true);
+                                                        intent.putExtra("com.android.browser.application_id", z0Var2.getContext().getPackageName());
+                                                        z0Var2.getContext().startActivity(intent);
+                                                        break;
+                                                    } catch (Exception e12) {
+                                                        FileLog.e(e12);
+                                                        z0Var2.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                                break;
+                                            default:
+                                                z0 z0Var3 = m0Var2.a;
+                                                if (i15 != 0) {
+                                                    if (i15 != 1) {
+                                                        if (i15 == 2) {
+                                                            AndroidUtilities.addToClipboard(str6);
+                                                            d1 d1Var3 = z0Var3.Q;
+                                                            if (d1Var3 != null) {
+                                                                new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent2.putExtra("create_new_tab", true);
+                                                            intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                            z0Var3.getContext().startActivity(intent2);
+                                                            break;
+                                                        } catch (Exception e13) {
+                                                            FileLog.e(e13);
+                                                            z0Var3.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    z0Var3.loadUrl(str6);
+                                                    break;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                };
+                                i14.items = charSequenceArr2;
+                                i14.onClickListener = onClickListener2;
+                                i14.show();
+                                z0Var.F = i14;
+                            }
+                            str = str5;
+                            str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
+                            i14.multipleLinesTitle = true;
+                            i14.title = str2;
+                            i14.bigTitle = false;
+                            CharSequence[] charSequenceArr22 = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
+                            DialogInterface.OnClickListener onClickListener22 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                                @Override // android.content.DialogInterface.OnClickListener
+                                public final void onClick(DialogInterface dialogInterface, int i15) {
+                                    int i16 = i12;
+                                    String str6 = str5;
+                                    m0 m0Var2 = m0Var;
+                                    switch (i16) {
+                                        case 0:
+                                            z0 z0Var2 = m0Var2.a;
+                                            if (i15 != 0) {
+                                                if (i15 != 1) {
+                                                    if (i15 == 2) {
+                                                        AndroidUtilities.addToClipboard(str6);
+                                                        d1 d1Var = z0Var2.Q;
+                                                        if (d1Var != null) {
+                                                            new yc(d1Var, d1Var.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                        if (guessFileName == null) {
+                                                            guessFileName = "image.png";
+                                                        }
+                                                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                        request.setMimeType("image/*");
+                                                        request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                        request.setNotificationVisibility(1);
+                                                        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                        DownloadManager downloadManager = (DownloadManager) z0Var2.getContext().getSystemService("download");
+                                                        if (downloadManager != null) {
+                                                            downloadManager.enqueue(request);
+                                                        }
+                                                        d1 d1Var2 = z0Var2.Q;
+                                                        if (d1Var2 != null) {
+                                                            new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            break;
+                                                        }
+                                                    } catch (Exception e11) {
+                                                        FileLog.e(e11);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent.putExtra("create_new_tab", true);
+                                                    intent.putExtra("com.android.browser.application_id", z0Var2.getContext().getPackageName());
+                                                    z0Var2.getContext().startActivity(intent);
+                                                    break;
+                                                } catch (Exception e12) {
+                                                    FileLog.e(e12);
+                                                    z0Var2.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            z0 z0Var3 = m0Var2.a;
+                                            if (i15 != 0) {
+                                                if (i15 != 1) {
+                                                    if (i15 == 2) {
+                                                        AndroidUtilities.addToClipboard(str6);
+                                                        d1 d1Var3 = z0Var3.Q;
+                                                        if (d1Var3 != null) {
+                                                            new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent2.putExtra("create_new_tab", true);
+                                                        intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                        z0Var3.getContext().startActivity(intent2);
+                                                        break;
+                                                    } catch (Exception e13) {
+                                                        FileLog.e(e13);
+                                                        z0Var3.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                z0Var3.loadUrl(str6);
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            };
+                            i14.items = charSequenceArr22;
+                            i14.onClickListener = onClickListener22;
+                            i14.show();
+                            z0Var.F = i14;
+                            break;
+                        default:
+                            z0 z0Var2 = m0Var.a;
+                            f3 i15 = wl.i(1, z0Var2.getContext(), null, false);
+                            try {
+                                Uri parse2 = Uri.parse(str5);
+                                str3 = of.f.v(parse2, null, null, of.f.a(parse2.getHost()), null);
+                            } catch (Exception e11) {
+                                try {
+                                    FileLog.e((Throwable) e11, false);
+                                    str3 = str5;
+                                } catch (Exception e12) {
+                                    e = e12;
+                                    str3 = str5;
+                                    FileLog.e(e);
+                                    str4 = str3;
+                                    i15.multipleLinesTitle = true;
+                                    i15.title = str4;
+                                    i15.bigTitle = false;
+                                    CharSequence[] charSequenceArr3 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
+                                    DialogInterface.OnClickListener onClickListener3 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                                        @Override // android.content.DialogInterface.OnClickListener
+                                        public final void onClick(DialogInterface dialogInterface, int i152) {
+                                            int i16 = i13;
+                                            String str6 = str5;
+                                            m0 m0Var2 = m0Var;
+                                            switch (i16) {
+                                                case 0:
+                                                    z0 z0Var22 = m0Var2.a;
+                                                    if (i152 != 0) {
+                                                        if (i152 != 1) {
+                                                            if (i152 == 2) {
+                                                                AndroidUtilities.addToClipboard(str6);
+                                                                d1 d1Var = z0Var22.Q;
+                                                                if (d1Var != null) {
+                                                                    new yc(d1Var, d1Var.e).k(false).k(true);
+                                                                    break;
+                                                                }
+                                                            }
+                                                        } else {
+                                                            try {
+                                                                String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                                if (guessFileName == null) {
+                                                                    guessFileName = "image.png";
+                                                                }
+                                                                DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                                request.setMimeType("image/*");
+                                                                request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                                request.setNotificationVisibility(1);
+                                                                request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                                DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
+                                                                if (downloadManager != null) {
+                                                                    downloadManager.enqueue(request);
+                                                                }
+                                                                d1 d1Var2 = z0Var22.Q;
+                                                                if (d1Var2 != null) {
+                                                                    new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                    break;
+                                                                }
+                                                            } catch (Exception e112) {
+                                                                FileLog.e(e112);
+                                                                return;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent.putExtra("create_new_tab", true);
+                                                            intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                            z0Var22.getContext().startActivity(intent);
+                                                            break;
+                                                        } catch (Exception e122) {
+                                                            FileLog.e(e122);
+                                                            z0Var22.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                    break;
+                                                default:
+                                                    z0 z0Var3 = m0Var2.a;
+                                                    if (i152 != 0) {
+                                                        if (i152 != 1) {
+                                                            if (i152 == 2) {
+                                                                AndroidUtilities.addToClipboard(str6);
+                                                                d1 d1Var3 = z0Var3.Q;
+                                                                if (d1Var3 != null) {
+                                                                    new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                    break;
+                                                                }
+                                                            }
+                                                        } else {
+                                                            try {
+                                                                Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                                intent2.putExtra("create_new_tab", true);
+                                                                intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                                z0Var3.getContext().startActivity(intent2);
+                                                                break;
+                                                            } catch (Exception e13) {
+                                                                FileLog.e(e13);
+                                                                z0Var3.loadUrl(str6);
+                                                                return;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        z0Var3.loadUrl(str6);
+                                                        break;
+                                                    }
+                                                    break;
+                                            }
+                                        }
+                                    };
+                                    i15.items = charSequenceArr3;
+                                    i15.onClickListener = onClickListener3;
+                                    i15.show();
+                                    z0Var2.F = i15;
+                                }
+                            }
+                            try {
+                                str4 = URLDecoder.decode(str3.replaceAll("\\+", "%2b"), "UTF-8");
+                            } catch (Exception e13) {
+                                e = e13;
+                                FileLog.e(e);
+                                str4 = str3;
+                                i15.multipleLinesTitle = true;
+                                i15.title = str4;
+                                i15.bigTitle = false;
+                                CharSequence[] charSequenceArr32 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
+                                DialogInterface.OnClickListener onClickListener32 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                                    @Override // android.content.DialogInterface.OnClickListener
+                                    public final void onClick(DialogInterface dialogInterface, int i152) {
+                                        int i16 = i13;
+                                        String str6 = str5;
+                                        m0 m0Var2 = m0Var;
+                                        switch (i16) {
+                                            case 0:
+                                                z0 z0Var22 = m0Var2.a;
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
+                                                            AndroidUtilities.addToClipboard(str6);
+                                                            d1 d1Var = z0Var22.Q;
+                                                            if (d1Var != null) {
+                                                                new yc(d1Var, d1Var.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                            if (guessFileName == null) {
+                                                                guessFileName = "image.png";
+                                                            }
+                                                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                            request.setMimeType("image/*");
+                                                            request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                            request.setNotificationVisibility(1);
+                                                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                            DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
+                                                            if (downloadManager != null) {
+                                                                downloadManager.enqueue(request);
+                                                            }
+                                                            d1 d1Var2 = z0Var22.Q;
+                                                            if (d1Var2 != null) {
+                                                                new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                break;
+                                                            }
+                                                        } catch (Exception e112) {
+                                                            FileLog.e(e112);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent.putExtra("create_new_tab", true);
+                                                        intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                        z0Var22.getContext().startActivity(intent);
+                                                        break;
+                                                    } catch (Exception e122) {
+                                                        FileLog.e(e122);
+                                                        z0Var22.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                                break;
+                                            default:
+                                                z0 z0Var3 = m0Var2.a;
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
+                                                            AndroidUtilities.addToClipboard(str6);
+                                                            d1 d1Var3 = z0Var3.Q;
+                                                            if (d1Var3 != null) {
+                                                                new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent2.putExtra("create_new_tab", true);
+                                                            intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                            z0Var3.getContext().startActivity(intent2);
+                                                            break;
+                                                        } catch (Exception e132) {
+                                                            FileLog.e(e132);
+                                                            z0Var3.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    z0Var3.loadUrl(str6);
+                                                    break;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                };
+                                i15.items = charSequenceArr32;
+                                i15.onClickListener = onClickListener32;
+                                i15.show();
+                                z0Var2.F = i15;
+                            }
+                            i15.multipleLinesTitle = true;
+                            i15.title = str4;
+                            i15.bigTitle = false;
+                            CharSequence[] charSequenceArr322 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
+                            DialogInterface.OnClickListener onClickListener322 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                                @Override // android.content.DialogInterface.OnClickListener
+                                public final void onClick(DialogInterface dialogInterface, int i152) {
+                                    int i16 = i13;
+                                    String str6 = str5;
+                                    m0 m0Var2 = m0Var;
+                                    switch (i16) {
+                                        case 0:
+                                            z0 z0Var22 = m0Var2.a;
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
+                                                        AndroidUtilities.addToClipboard(str6);
+                                                        d1 d1Var = z0Var22.Q;
+                                                        if (d1Var != null) {
+                                                            new yc(d1Var, d1Var.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                        if (guessFileName == null) {
+                                                            guessFileName = "image.png";
+                                                        }
+                                                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                        request.setMimeType("image/*");
+                                                        request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                        request.setNotificationVisibility(1);
+                                                        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                        DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
+                                                        if (downloadManager != null) {
+                                                            downloadManager.enqueue(request);
+                                                        }
+                                                        d1 d1Var2 = z0Var22.Q;
+                                                        if (d1Var2 != null) {
+                                                            new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            break;
+                                                        }
+                                                    } catch (Exception e112) {
+                                                        FileLog.e(e112);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent.putExtra("create_new_tab", true);
+                                                    intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                    z0Var22.getContext().startActivity(intent);
+                                                    break;
+                                                } catch (Exception e122) {
+                                                    FileLog.e(e122);
+                                                    z0Var22.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            z0 z0Var3 = m0Var2.a;
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
+                                                        AndroidUtilities.addToClipboard(str6);
+                                                        d1 d1Var3 = z0Var3.Q;
+                                                        if (d1Var3 != null) {
+                                                            new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent2.putExtra("create_new_tab", true);
+                                                        intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                        z0Var3.getContext().startActivity(intent2);
+                                                        break;
+                                                    } catch (Exception e132) {
+                                                        FileLog.e(e132);
+                                                        z0Var3.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                z0Var3.loadUrl(str6);
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            };
+                            i15.items = charSequenceArr322;
+                            i15.onClickListener = onClickListener322;
+                            i15.show();
+                            z0Var2.F = i15;
+                    }
+                }
+            });
             return true;
-        } catch (Exception e) {
-            FileLog.e(e);
+        }
+        if (hitTestResult.getType() != 5) {
             return false;
         }
-    }
+        final String extra2 = hitTestResult.getExtra();
+        final int i11 = 1;
+        AndroidUtilities.runOnUIThread(new Runnable(this) { // from class: org.telegram.ui.web.k0
+            public final /* synthetic */ m0 b;
 
-    @Override // android.webkit.WebViewClient
-    public final WebResourceResponse shouldInterceptRequest(WebView webView, WebResourceRequest webResourceRequest) {
-        HttpURLConnection httpURLConnection;
-        int i10;
-        StringBuilder sb = new StringBuilder("shouldInterceptRequest ");
-        HttpURLConnection httpURLConnection2 = null;
-        sb.append(webResourceRequest == null ? null : webResourceRequest.getUrl());
-        String sb2 = sb.toString();
-        y0 y0Var = this.e;
-        y0Var.c(sb2);
-        if (webResourceRequest != null && c1.q(webResourceRequest.getUrl())) {
-            y0Var.c("proxying ton");
-            this.a = false;
-            return c1.N(webResourceRequest.getMethod(), webResourceRequest.getUrl().toString(), webResourceRequest.getRequestHeaders());
-        }
-        if (!this.c && y0Var.f != null && this.a) {
-            try {
-                httpURLConnection = (HttpURLConnection) new URL(webResourceRequest.getUrl().toString()).openConnection();
-            } catch (Exception e) {
-                e = e;
+            {
+                this.b = this;
             }
-            try {
-                httpURLConnection.setRequestMethod(webResourceRequest.getMethod());
-                if (webResourceRequest.getRequestHeaders() != null) {
-                    for (Map.Entry<String, String> entry : webResourceRequest.getRequestHeaders().entrySet()) {
-                        httpURLConnection.setRequestProperty(entry.getKey(), entry.getValue());
-                    }
-                }
-                httpURLConnection.connect();
-                HashMap hashMap = new HashMap();
-                Iterator<Map.Entry<String, List<String>>> it = httpURLConnection.getHeaderFields().entrySet().iterator();
-                while (true) {
-                    if (!it.hasNext()) {
+
+            /* JADX WARN: Can't wrap try/catch for region: R(7:22|(2:23|24)|(4:28|29|30|31)|37|29|30|31) */
+            /* JADX WARN: Code restructure failed: missing block: B:34:0x00b0, code lost:
+            
+                r3 = e;
+             */
+            @Override // java.lang.Runnable
+            /*
+                Code decompiled incorrectly, please refer to instructions dump.
+            */
+            public final void run() {
+                String str;
+                String str2;
+                Uri parse;
+                String str3;
+                String str4;
+                int i112 = i11;
+                final String str5 = extra2;
+                final m0 m0Var = this.b;
+                final int i12 = 1;
+                final int i13 = 0;
+                switch (i112) {
+                    case 0:
+                        z0 z0Var = m0Var.a;
+                        f3 i14 = wl.i(1, z0Var.getContext(), null, false);
+                        try {
+                            parse = Uri.parse(str5);
+                        } catch (Exception e7) {
+                            try {
+                                FileLog.e((Throwable) e7, false);
+                            } catch (Exception e10) {
+                                e = e10;
+                                str = str5;
+                                FileLog.e(e);
+                                str2 = str;
+                                i14.multipleLinesTitle = true;
+                                i14.title = str2;
+                                i14.bigTitle = false;
+                                CharSequence[] charSequenceArr22 = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
+                                DialogInterface.OnClickListener onClickListener22 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                                    @Override // android.content.DialogInterface.OnClickListener
+                                    public final void onClick(DialogInterface dialogInterface, int i152) {
+                                        int i16 = i12;
+                                        String str6 = str5;
+                                        m0 m0Var2 = m0Var;
+                                        switch (i16) {
+                                            case 0:
+                                                z0 z0Var22 = m0Var2.a;
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
+                                                            AndroidUtilities.addToClipboard(str6);
+                                                            d1 d1Var = z0Var22.Q;
+                                                            if (d1Var != null) {
+                                                                new yc(d1Var, d1Var.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                            if (guessFileName == null) {
+                                                                guessFileName = "image.png";
+                                                            }
+                                                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                            request.setMimeType("image/*");
+                                                            request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                            request.setNotificationVisibility(1);
+                                                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                            DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
+                                                            if (downloadManager != null) {
+                                                                downloadManager.enqueue(request);
+                                                            }
+                                                            d1 d1Var2 = z0Var22.Q;
+                                                            if (d1Var2 != null) {
+                                                                new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                break;
+                                                            }
+                                                        } catch (Exception e112) {
+                                                            FileLog.e(e112);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent.putExtra("create_new_tab", true);
+                                                        intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                        z0Var22.getContext().startActivity(intent);
+                                                        break;
+                                                    } catch (Exception e122) {
+                                                        FileLog.e(e122);
+                                                        z0Var22.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                                break;
+                                            default:
+                                                z0 z0Var3 = m0Var2.a;
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
+                                                            AndroidUtilities.addToClipboard(str6);
+                                                            d1 d1Var3 = z0Var3.Q;
+                                                            if (d1Var3 != null) {
+                                                                new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent2.putExtra("create_new_tab", true);
+                                                            intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                            z0Var3.getContext().startActivity(intent2);
+                                                            break;
+                                                        } catch (Exception e132) {
+                                                            FileLog.e(e132);
+                                                            z0Var3.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    z0Var3.loadUrl(str6);
+                                                    break;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                };
+                                i14.items = charSequenceArr22;
+                                i14.onClickListener = onClickListener22;
+                                i14.show();
+                                z0Var.F = i14;
+                                return;
+                            }
+                        }
+                        if (parse != null && !parse.getScheme().equalsIgnoreCase("data")) {
+                            str = of.f.v(parse, null, null, of.f.a(parse.getHost()), null);
+                            str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
+                            i14.multipleLinesTitle = true;
+                            i14.title = str2;
+                            i14.bigTitle = false;
+                            CharSequence[] charSequenceArr222 = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
+                            DialogInterface.OnClickListener onClickListener222 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                                @Override // android.content.DialogInterface.OnClickListener
+                                public final void onClick(DialogInterface dialogInterface, int i152) {
+                                    int i16 = i12;
+                                    String str6 = str5;
+                                    m0 m0Var2 = m0Var;
+                                    switch (i16) {
+                                        case 0:
+                                            z0 z0Var22 = m0Var2.a;
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
+                                                        AndroidUtilities.addToClipboard(str6);
+                                                        d1 d1Var = z0Var22.Q;
+                                                        if (d1Var != null) {
+                                                            new yc(d1Var, d1Var.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                        if (guessFileName == null) {
+                                                            guessFileName = "image.png";
+                                                        }
+                                                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                        request.setMimeType("image/*");
+                                                        request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                        request.setNotificationVisibility(1);
+                                                        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                        DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
+                                                        if (downloadManager != null) {
+                                                            downloadManager.enqueue(request);
+                                                        }
+                                                        d1 d1Var2 = z0Var22.Q;
+                                                        if (d1Var2 != null) {
+                                                            new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            break;
+                                                        }
+                                                    } catch (Exception e112) {
+                                                        FileLog.e(e112);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent.putExtra("create_new_tab", true);
+                                                    intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                    z0Var22.getContext().startActivity(intent);
+                                                    break;
+                                                } catch (Exception e122) {
+                                                    FileLog.e(e122);
+                                                    z0Var22.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            z0 z0Var3 = m0Var2.a;
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
+                                                        AndroidUtilities.addToClipboard(str6);
+                                                        d1 d1Var3 = z0Var3.Q;
+                                                        if (d1Var3 != null) {
+                                                            new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent2.putExtra("create_new_tab", true);
+                                                        intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                        z0Var3.getContext().startActivity(intent2);
+                                                        break;
+                                                    } catch (Exception e132) {
+                                                        FileLog.e(e132);
+                                                        z0Var3.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                z0Var3.loadUrl(str6);
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            };
+                            i14.items = charSequenceArr222;
+                            i14.onClickListener = onClickListener222;
+                            i14.show();
+                            z0Var.F = i14;
+                        }
+                        str = str5;
+                        str2 = URLDecoder.decode(str.replaceAll("\\+", "%2b"), "UTF-8");
+                        i14.multipleLinesTitle = true;
+                        i14.title = str2;
+                        i14.bigTitle = false;
+                        CharSequence[] charSequenceArr2222 = {LocaleController.getString(R.string.OpenInTelegramBrowser), LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.Copy)};
+                        DialogInterface.OnClickListener onClickListener2222 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                            @Override // android.content.DialogInterface.OnClickListener
+                            public final void onClick(DialogInterface dialogInterface, int i152) {
+                                int i16 = i12;
+                                String str6 = str5;
+                                m0 m0Var2 = m0Var;
+                                switch (i16) {
+                                    case 0:
+                                        z0 z0Var22 = m0Var2.a;
+                                        if (i152 != 0) {
+                                            if (i152 != 1) {
+                                                if (i152 == 2) {
+                                                    AndroidUtilities.addToClipboard(str6);
+                                                    d1 d1Var = z0Var22.Q;
+                                                    if (d1Var != null) {
+                                                        new yc(d1Var, d1Var.e).k(false).k(true);
+                                                        break;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                    if (guessFileName == null) {
+                                                        guessFileName = "image.png";
+                                                    }
+                                                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                    request.setMimeType("image/*");
+                                                    request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                    request.setNotificationVisibility(1);
+                                                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                    DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
+                                                    if (downloadManager != null) {
+                                                        downloadManager.enqueue(request);
+                                                    }
+                                                    d1 d1Var2 = z0Var22.Q;
+                                                    if (d1Var2 != null) {
+                                                        new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                        break;
+                                                    }
+                                                } catch (Exception e112) {
+                                                    FileLog.e(e112);
+                                                    return;
+                                                }
+                                            }
+                                        } else {
+                                            try {
+                                                Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                intent.putExtra("create_new_tab", true);
+                                                intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                z0Var22.getContext().startActivity(intent);
+                                                break;
+                                            } catch (Exception e122) {
+                                                FileLog.e(e122);
+                                                z0Var22.loadUrl(str6);
+                                                return;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        z0 z0Var3 = m0Var2.a;
+                                        if (i152 != 0) {
+                                            if (i152 != 1) {
+                                                if (i152 == 2) {
+                                                    AndroidUtilities.addToClipboard(str6);
+                                                    d1 d1Var3 = z0Var3.Q;
+                                                    if (d1Var3 != null) {
+                                                        new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                        break;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent2.putExtra("create_new_tab", true);
+                                                    intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                    z0Var3.getContext().startActivity(intent2);
+                                                    break;
+                                                } catch (Exception e132) {
+                                                    FileLog.e(e132);
+                                                    z0Var3.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                        } else {
+                                            z0Var3.loadUrl(str6);
+                                            break;
+                                        }
+                                        break;
+                                }
+                            }
+                        };
+                        i14.items = charSequenceArr2222;
+                        i14.onClickListener = onClickListener2222;
+                        i14.show();
+                        z0Var.F = i14;
                         break;
-                    }
-                    Map.Entry<String, List<String>> next = it.next();
-                    String key = next.getKey();
-                    if (key != null) {
-                        hashMap.put(key, TextUtils.join(", ", next.getValue()));
-                        if (!y0Var.B && ("cross-origin-resource-policy".equals(key.toLowerCase()) || "cross-origin-embedder-policy".equals(key.toLowerCase()))) {
-                            Iterator<String> it2 = next.getValue().iterator();
-                            while (true) {
-                                if (!it2.hasNext()) {
-                                    break;
-                                }
-                                String next2 = it2.next();
-                                if (next2 != null && !"unsafe-none".equals(next2.toLowerCase()) && !"same-site".equals(next2.toLowerCase())) {
-                                    y0Var.c("<!> dangerous header CORS policy: " + key + ": " + next2 + " from " + webResourceRequest.getMethod() + " " + webResourceRequest.getUrl());
-                                    y0Var.B = true;
-                                    AndroidUtilities.runOnUIThread(new l0(this, 1));
-                                    break;
-                                }
+                    default:
+                        z0 z0Var2 = m0Var.a;
+                        f3 i15 = wl.i(1, z0Var2.getContext(), null, false);
+                        try {
+                            Uri parse2 = Uri.parse(str5);
+                            str3 = of.f.v(parse2, null, null, of.f.a(parse2.getHost()), null);
+                        } catch (Exception e11) {
+                            try {
+                                FileLog.e((Throwable) e11, false);
+                                str3 = str5;
+                            } catch (Exception e12) {
+                                e = e12;
+                                str3 = str5;
+                                FileLog.e(e);
+                                str4 = str3;
+                                i15.multipleLinesTitle = true;
+                                i15.title = str4;
+                                i15.bigTitle = false;
+                                CharSequence[] charSequenceArr322 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
+                                DialogInterface.OnClickListener onClickListener322 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                                    @Override // android.content.DialogInterface.OnClickListener
+                                    public final void onClick(DialogInterface dialogInterface, int i152) {
+                                        int i16 = i13;
+                                        String str6 = str5;
+                                        m0 m0Var2 = m0Var;
+                                        switch (i16) {
+                                            case 0:
+                                                z0 z0Var22 = m0Var2.a;
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
+                                                            AndroidUtilities.addToClipboard(str6);
+                                                            d1 d1Var = z0Var22.Q;
+                                                            if (d1Var != null) {
+                                                                new yc(d1Var, d1Var.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                            if (guessFileName == null) {
+                                                                guessFileName = "image.png";
+                                                            }
+                                                            DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                            request.setMimeType("image/*");
+                                                            request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                            request.setNotificationVisibility(1);
+                                                            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                            DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
+                                                            if (downloadManager != null) {
+                                                                downloadManager.enqueue(request);
+                                                            }
+                                                            d1 d1Var2 = z0Var22.Q;
+                                                            if (d1Var2 != null) {
+                                                                new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                                break;
+                                                            }
+                                                        } catch (Exception e112) {
+                                                            FileLog.e(e112);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent.putExtra("create_new_tab", true);
+                                                        intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                        z0Var22.getContext().startActivity(intent);
+                                                        break;
+                                                    } catch (Exception e122) {
+                                                        FileLog.e(e122);
+                                                        z0Var22.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                                break;
+                                            default:
+                                                z0 z0Var3 = m0Var2.a;
+                                                if (i152 != 0) {
+                                                    if (i152 != 1) {
+                                                        if (i152 == 2) {
+                                                            AndroidUtilities.addToClipboard(str6);
+                                                            d1 d1Var3 = z0Var3.Q;
+                                                            if (d1Var3 != null) {
+                                                                new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                                break;
+                                                            }
+                                                        }
+                                                    } else {
+                                                        try {
+                                                            Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                            intent2.putExtra("create_new_tab", true);
+                                                            intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                            z0Var3.getContext().startActivity(intent2);
+                                                            break;
+                                                        } catch (Exception e132) {
+                                                            FileLog.e(e132);
+                                                            z0Var3.loadUrl(str6);
+                                                            return;
+                                                        }
+                                                    }
+                                                } else {
+                                                    z0Var3.loadUrl(str6);
+                                                    break;
+                                                }
+                                                break;
+                                        }
+                                    }
+                                };
+                                i15.items = charSequenceArr322;
+                                i15.onClickListener = onClickListener322;
+                                i15.show();
+                                z0Var2.F = i15;
                             }
                         }
-                    }
-                }
-                String contentType = httpURLConnection.getContentType();
-                String contentEncoding = httpURLConnection.getContentEncoding();
-                if (contentType.indexOf("; ") >= 0) {
-                    String[] split = contentType.split("; ");
-                    if (!TextUtils.isEmpty(split[0])) {
-                        contentType = split[0];
-                    }
-                    for (i10 = 1; i10 < split.length; i10++) {
-                        if (split[i10].startsWith("charset=")) {
-                            contentEncoding = split[i10].substring(8);
+                        try {
+                            str4 = URLDecoder.decode(str3.replaceAll("\\+", "%2b"), "UTF-8");
+                        } catch (Exception e13) {
+                            e = e13;
+                            FileLog.e(e);
+                            str4 = str3;
+                            i15.multipleLinesTitle = true;
+                            i15.title = str4;
+                            i15.bigTitle = false;
+                            CharSequence[] charSequenceArr3222 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
+                            DialogInterface.OnClickListener onClickListener3222 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                                @Override // android.content.DialogInterface.OnClickListener
+                                public final void onClick(DialogInterface dialogInterface, int i152) {
+                                    int i16 = i13;
+                                    String str6 = str5;
+                                    m0 m0Var2 = m0Var;
+                                    switch (i16) {
+                                        case 0:
+                                            z0 z0Var22 = m0Var2.a;
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
+                                                        AndroidUtilities.addToClipboard(str6);
+                                                        d1 d1Var = z0Var22.Q;
+                                                        if (d1Var != null) {
+                                                            new yc(d1Var, d1Var.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                        if (guessFileName == null) {
+                                                            guessFileName = "image.png";
+                                                        }
+                                                        DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                        request.setMimeType("image/*");
+                                                        request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                        request.setNotificationVisibility(1);
+                                                        request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                        DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
+                                                        if (downloadManager != null) {
+                                                            downloadManager.enqueue(request);
+                                                        }
+                                                        d1 d1Var2 = z0Var22.Q;
+                                                        if (d1Var2 != null) {
+                                                            new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                            break;
+                                                        }
+                                                    } catch (Exception e112) {
+                                                        FileLog.e(e112);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent.putExtra("create_new_tab", true);
+                                                    intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                    z0Var22.getContext().startActivity(intent);
+                                                    break;
+                                                } catch (Exception e122) {
+                                                    FileLog.e(e122);
+                                                    z0Var22.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                            break;
+                                        default:
+                                            z0 z0Var3 = m0Var2.a;
+                                            if (i152 != 0) {
+                                                if (i152 != 1) {
+                                                    if (i152 == 2) {
+                                                        AndroidUtilities.addToClipboard(str6);
+                                                        d1 d1Var3 = z0Var3.Q;
+                                                        if (d1Var3 != null) {
+                                                            new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                            break;
+                                                        }
+                                                    }
+                                                } else {
+                                                    try {
+                                                        Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                        intent2.putExtra("create_new_tab", true);
+                                                        intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                        z0Var3.getContext().startActivity(intent2);
+                                                        break;
+                                                    } catch (Exception e132) {
+                                                        FileLog.e(e132);
+                                                        z0Var3.loadUrl(str6);
+                                                        return;
+                                                    }
+                                                }
+                                            } else {
+                                                z0Var3.loadUrl(str6);
+                                                break;
+                                            }
+                                            break;
+                                    }
+                                }
+                            };
+                            i15.items = charSequenceArr3222;
+                            i15.onClickListener = onClickListener3222;
+                            i15.show();
+                            z0Var2.F = i15;
                         }
-                    }
-                }
-                this.a = false;
-                return new WebResourceResponse(contentType, contentEncoding, httpURLConnection.getResponseCode(), httpURLConnection.getResponseMessage(), hashMap, httpURLConnection.getInputStream());
-            } catch (Exception e6) {
-                e = e6;
-                httpURLConnection2 = httpURLConnection;
-                FileLog.e(e);
-                if (httpURLConnection2 != null) {
-                    httpURLConnection2.disconnect();
-                }
-                this.a = false;
-                return super.shouldInterceptRequest(webView, webResourceRequest);
-            }
-        }
-        this.a = false;
-        return super.shouldInterceptRequest(webView, webResourceRequest);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final boolean shouldOverrideUrlLoading(WebView webView, String str) {
-        g0 g0Var;
-        if (str != null && !str.trim().startsWith("sms:")) {
-            boolean startsWith = str.trim().startsWith("tel:");
-            Context context = this.d;
-            y0 y0Var = this.e;
-            if (startsWith) {
-                if (y0Var.f != null) {
-                    g0 g0Var2 = y0Var.N.c;
-                    if (g0Var2 != null) {
-                        g0Var2.j();
-                    } else {
-                        Runnable runnable = y0Var.R;
-                        if (runnable != null) {
-                            runnable.run();
-                            y0Var.R = null;
-                        }
-                    }
-                }
-                ze.d.s(context, str);
-                return true;
-            }
-            Uri parse = Uri.parse(str);
-            boolean z4 = this.c;
-            if (!z4) {
-                if (ze.d.l(context, str, true)) {
-                    y0Var.c("shouldOverrideUrlLoading(" + str + ") = true (openInExternalBrowser)");
-                    if (!y0Var.b && !y0Var.canGoBack()) {
-                        g0 g0Var3 = y0Var.N.c;
-                        if (g0Var3 != null) {
-                            g0Var3.j();
-                            return true;
-                        }
-                        Runnable runnable2 = y0Var.R;
-                        if (runnable2 != null) {
-                            runnable2.run();
-                            y0Var.R = null;
-                        }
-                    }
-                    return true;
-                }
-                if (str.startsWith("intent://") || (parse != null && parse.getScheme() != null && parse.getScheme().equalsIgnoreCase("intent"))) {
-                    try {
-                        String stringExtra = Intent.parseUri(parse.toString(), 1).getStringExtra("browser_fallback_url");
-                        if (!TextUtils.isEmpty(stringExtra)) {
-                            y0Var.loadUrl(stringExtra);
-                            return true;
-                        }
-                    } catch (Exception e) {
-                        FileLog.e(e);
-                    }
-                }
-                if (parse != null && parse.getScheme() != null && !"https".equals(parse.getScheme()) && !"http".equals(parse.getScheme()) && !"tonsite".equals(parse.getScheme())) {
-                    y0Var.c("shouldOverrideUrlLoading(" + str + ") = true (browser open)");
-                    ze.d.p(y0Var.getContext(), parse, true, true);
-                    return true;
-                }
-            }
-            if (y0Var.N == null || !ze.d.f(parse, false, null)) {
-                if (parse != null) {
-                    parse.toString();
-                }
-                y0Var.c("shouldOverrideUrlLoading(" + str + ") = false");
-                return false;
-            }
-            if (z4 || !"1".equals(parse.getQueryParameter("embed")) || !"t.me".equals(parse.getAuthority())) {
-                if (MessagesController.getInstance(y0Var.N.J).webAppAllowedProtocols != null && MessagesController.getInstance(y0Var.N.J).webAppAllowedProtocols.contains(parse.getScheme())) {
-                    if (y0Var.f != null) {
-                        g0 g0Var4 = y0Var.N.c;
-                        if (g0Var4 != null) {
-                            g0Var4.j();
-                        } else {
-                            Runnable runnable3 = y0Var.R;
-                            if (runnable3 != null) {
-                                runnable3.run();
-                                y0Var.R = null;
+                        i15.multipleLinesTitle = true;
+                        i15.title = str4;
+                        i15.bigTitle = false;
+                        CharSequence[] charSequenceArr32222 = {LocaleController.getString(R.string.OpenInSystemBrowser), LocaleController.getString(R.string.AccActionDownload), LocaleController.getString(R.string.CopyLink)};
+                        DialogInterface.OnClickListener onClickListener32222 = new DialogInterface.OnClickListener() { // from class: org.telegram.ui.web.l0
+                            @Override // android.content.DialogInterface.OnClickListener
+                            public final void onClick(DialogInterface dialogInterface, int i152) {
+                                int i16 = i13;
+                                String str6 = str5;
+                                m0 m0Var2 = m0Var;
+                                switch (i16) {
+                                    case 0:
+                                        z0 z0Var22 = m0Var2.a;
+                                        if (i152 != 0) {
+                                            if (i152 != 1) {
+                                                if (i152 == 2) {
+                                                    AndroidUtilities.addToClipboard(str6);
+                                                    d1 d1Var = z0Var22.Q;
+                                                    if (d1Var != null) {
+                                                        new yc(d1Var, d1Var.e).k(false).k(true);
+                                                        break;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    String guessFileName = URLUtil.guessFileName(str6, null, "image/*");
+                                                    if (guessFileName == null) {
+                                                        guessFileName = "image.png";
+                                                    }
+                                                    DownloadManager.Request request = new DownloadManager.Request(Uri.parse(str6));
+                                                    request.setMimeType("image/*");
+                                                    request.setDescription(LocaleController.getString(R.string.WebDownloading));
+                                                    request.setNotificationVisibility(1);
+                                                    request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, guessFileName);
+                                                    DownloadManager downloadManager = (DownloadManager) z0Var22.getContext().getSystemService("download");
+                                                    if (downloadManager != null) {
+                                                        downloadManager.enqueue(request);
+                                                    }
+                                                    d1 d1Var2 = z0Var22.Q;
+                                                    if (d1Var2 != null) {
+                                                        new yc(d1Var2, d1Var2.e).Q(R.raw.ic_download, 36, AndroidUtilities.replaceTags(LocaleController.formatString(R.string.WebDownloadingFile, guessFileName))).k(true);
+                                                        break;
+                                                    }
+                                                } catch (Exception e112) {
+                                                    FileLog.e(e112);
+                                                    return;
+                                                }
+                                            }
+                                        } else {
+                                            try {
+                                                Intent intent = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                intent.putExtra("create_new_tab", true);
+                                                intent.putExtra("com.android.browser.application_id", z0Var22.getContext().getPackageName());
+                                                z0Var22.getContext().startActivity(intent);
+                                                break;
+                                            } catch (Exception e122) {
+                                                FileLog.e(e122);
+                                                z0Var22.loadUrl(str6);
+                                                return;
+                                            }
+                                        }
+                                        break;
+                                    default:
+                                        z0 z0Var3 = m0Var2.a;
+                                        if (i152 != 0) {
+                                            if (i152 != 1) {
+                                                if (i152 == 2) {
+                                                    AndroidUtilities.addToClipboard(str6);
+                                                    d1 d1Var3 = z0Var3.Q;
+                                                    if (d1Var3 != null) {
+                                                        new yc(d1Var3, d1Var3.e).k(false).k(true);
+                                                        break;
+                                                    }
+                                                }
+                                            } else {
+                                                try {
+                                                    Intent intent2 = new Intent("android.intent.action.VIEW", Uri.parse(str6));
+                                                    intent2.putExtra("create_new_tab", true);
+                                                    intent2.putExtra("com.android.browser.application_id", z0Var3.getContext().getPackageName());
+                                                    z0Var3.getContext().startActivity(intent2);
+                                                    break;
+                                                } catch (Exception e132) {
+                                                    FileLog.e(e132);
+                                                    z0Var3.loadUrl(str6);
+                                                    return;
+                                                }
+                                            }
+                                        } else {
+                                            z0Var3.loadUrl(str6);
+                                            break;
+                                        }
+                                        break;
+                                }
                             }
-                        }
-                        c1 c1Var = y0Var.f.N;
-                        if (c1Var != null && (g0Var = c1Var.c) != null) {
-                            g0Var.b();
-                        }
-                    }
-                    y0Var.N.H(parse, null, !r5.l0, false, false);
+                        };
+                        i15.items = charSequenceArr32222;
+                        i15.onClickListener = onClickListener32222;
+                        i15.show();
+                        z0Var2.F = i15;
                 }
-                y0Var.c("shouldOverrideUrlLoading(" + str + ") = true");
-                return true;
             }
-        }
-        return false;
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final void onReceivedError(WebView webView, int i10, String str, String str2) {
-        y0 y0Var = this.e;
-        y0Var.c("onReceivedError: " + i10 + " " + str + " url=" + str2);
-        if (Build.VERSION.SDK_INT < 23 && y0Var.N != null) {
-            AndroidUtilities.cancelRunOnUIThread(this.b);
-            y0Var.r = null;
-            y0Var.s = false;
-            y0Var.v = false;
-            y0Var.J = false;
-            y0Var.G = false;
-            y0Var.n = y0Var.getUrl();
-            c1 c1Var = y0Var.N;
-            y0Var.H = null;
-            c1Var.I();
-            c1 c1Var2 = y0Var.N;
-            y0Var.L = null;
-            c1Var2.getClass();
-            c1 c1Var3 = y0Var.N;
-            y0Var.h = true;
-            c1Var3.E(str, true);
-        }
-        super.onReceivedError(webView, i10, str, str2);
-    }
-
-    @Override // android.webkit.WebViewClient
-    public final WebResourceResponse shouldInterceptRequest(WebView webView, String str) {
-        y0 y0Var = this.e;
-        y0Var.c("shouldInterceptRequest " + str);
-        boolean z4 = c1.M0;
-        if (str != null && c1.q(Uri.parse(str))) {
-            y0Var.c("proxying ton");
-            return c1.N("GET", str, null);
-        }
-        return super.shouldInterceptRequest(webView, str);
+        });
+        return true;
     }
 }

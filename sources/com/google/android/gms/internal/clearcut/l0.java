@@ -1,27 +1,124 @@
 package com.google.android.gms.internal.clearcut;
 
-/* loaded from: classes.dex */
-public final class l0 implements p0 {
-    public p0[] a;
+import java.nio.charset.Charset;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.Set;
 
-    @Override // com.google.android.gms.internal.clearcut.p0
-    public final boolean zza(Class cls) {
-        for (p0 p0Var : this.a) {
-            if (p0Var.zza(cls)) {
-                return true;
+/* loaded from: classes.dex */
+public final class l0 extends LinkedHashMap {
+    public static final l0 b;
+    public boolean a = true;
+
+    static {
+        l0 l0Var = new l0();
+        b = l0Var;
+        l0Var.a = false;
+    }
+
+    public static int b(Object obj) {
+        if (!(obj instanceof byte[])) {
+            if (obj instanceof p1) {
+                throw new UnsupportedOperationException();
+            }
+            return obj.hashCode();
+        }
+        byte[] bArr = (byte[]) obj;
+        int length = bArr.length;
+        Charset charset = z.a;
+        int i10 = length;
+        for (byte b10 : bArr) {
+            i10 = (i10 * 31) + b10;
+        }
+        if (i10 == 0) {
+            return 1;
+        }
+        return i10;
+    }
+
+    public final void a() {
+        if (!this.a) {
+            throw new UnsupportedOperationException();
+        }
+    }
+
+    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final void clear() {
+        a();
+        super.clear();
+    }
+
+    @Override // java.util.LinkedHashMap, java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Set entrySet() {
+        return isEmpty() ? Collections.EMPTY_SET : super.entrySet();
+    }
+
+    /* JADX WARN: Removed duplicated region for block: B:9:0x005c A[RETURN] */
+    @Override // java.util.AbstractMap, java.util.Map
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final boolean equals(Object obj) {
+        boolean z10;
+        if (obj instanceof Map) {
+            Map map = (Map) obj;
+            if (this != map) {
+                if (size() == map.size()) {
+                    for (Map.Entry entry : entrySet()) {
+                        if (map.containsKey(entry.getKey())) {
+                            Object value = entry.getValue();
+                            Object obj2 = map.get(entry.getKey());
+                            if (!(((value instanceof byte[]) && (obj2 instanceof byte[])) ? Arrays.equals((byte[]) value, (byte[]) obj2) : value.equals(obj2))) {
+                            }
+                        }
+                    }
+                }
+                z10 = false;
+                if (!z10) {
+                    return true;
+                }
+            }
+            z10 = true;
+            if (!z10) {
             }
         }
         return false;
     }
 
-    @Override // com.google.android.gms.internal.clearcut.p0
-    public final x0 zzb(Class cls) {
-        for (p0 p0Var : this.a) {
-            if (p0Var.zza(cls)) {
-                return p0Var.zzb(cls);
-            }
+    @Override // java.util.AbstractMap, java.util.Map
+    public final int hashCode() {
+        int i10 = 0;
+        for (Map.Entry entry : entrySet()) {
+            i10 += b(entry.getValue()) ^ b(entry.getKey());
         }
-        String name = cls.getName();
-        throw new UnsupportedOperationException(name.length() != 0 ? "No factory is available for message type: ".concat(name) : new String("No factory is available for message type: "));
+        return i10;
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Object put(Object obj, Object obj2) {
+        a();
+        Charset charset = z.a;
+        obj.getClass();
+        obj2.getClass();
+        return super.put(obj, obj2);
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final void putAll(Map map) {
+        a();
+        for (Object obj : map.keySet()) {
+            Charset charset = z.a;
+            obj.getClass();
+            map.get(obj).getClass();
+        }
+        super.putAll(map);
+    }
+
+    @Override // java.util.HashMap, java.util.AbstractMap, java.util.Map
+    public final Object remove(Object obj) {
+        a();
+        return super.remove(obj);
     }
 }

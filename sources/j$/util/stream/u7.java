@@ -45,30 +45,30 @@ public abstract class u7 extends x7 implements j$.util.d1 {
         Objects.requireNonNull(obj);
         b7 b7Var = null;
         while (true) {
-            w7 c3 = c();
-            if (c3 == w7.NO_MORE) {
+            w7 c10 = c();
+            if (c10 == w7.NO_MORE) {
                 return;
             }
             w7 w7Var = w7.MAYBE_MORE;
             Spliterator spliterator = this.a;
-            if (c3 == w7Var) {
+            if (c10 == w7Var) {
                 int i10 = this.c;
                 if (b7Var == null) {
                     b7Var = e(i10);
                 } else {
                     b7Var.b = 0;
                 }
-                long j10 = 0;
+                long j3 = 0;
                 while (((j$.util.d1) spliterator).tryAdvance(b7Var)) {
-                    j10++;
-                    if (j10 >= i10) {
+                    j3++;
+                    if (j3 >= i10) {
                         break;
                     }
                 }
-                if (j10 == 0) {
+                if (j3 == 0) {
                     return;
                 } else {
-                    b7Var.a(obj, a(j10));
+                    b7Var.a(obj, a(j3));
                 }
             } else {
                 ((j$.util.d1) spliterator).forEachRemaining(obj);

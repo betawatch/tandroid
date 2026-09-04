@@ -69,27 +69,27 @@ public abstract class ZoneId implements Serializable {
         return new u(str, zoneOffset.getRules());
     }
 
-    public static ZoneId H(String str, boolean z4) {
+    public static ZoneId H(String str, boolean z10) {
         Objects.requireNonNull(str, "zoneId");
         if (str.length() <= 1 || str.startsWith("+") || str.startsWith("-")) {
             return ZoneOffset.M(str);
         }
         if (str.startsWith("UTC") || str.startsWith("GMT")) {
-            return J(str, 3, z4);
+            return J(str, 3, z10);
         }
         if (str.startsWith("UT")) {
-            return J(str, 2, z4);
+            return J(str, 2, z10);
         }
-        return u.L(str, z4);
+        return u.L(str, z10);
     }
 
-    public static ZoneId J(String str, int i10, boolean z4) {
+    public static ZoneId J(String str, int i10, boolean z10) {
         String substring = str.substring(0, i10);
         if (str.length() == i10) {
             return I(substring, ZoneOffset.UTC);
         }
         if (str.charAt(i10) != '+' && str.charAt(i10) != '-') {
-            return u.L(str, z4);
+            return u.L(str, z10);
         }
         try {
             ZoneOffset M = ZoneOffset.M(str.substring(i10));
@@ -97,8 +97,8 @@ public abstract class ZoneId implements Serializable {
                 return I(substring, M);
             }
             return I(substring, M);
-        } catch (b e) {
-            throw new b("Invalid ID for offset-based ZoneId: ".concat(str), e);
+        } catch (b e7) {
+            throw new b("Invalid ID for offset-based ZoneId: ".concat(str), e7);
         }
     }
 

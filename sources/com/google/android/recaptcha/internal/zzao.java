@@ -1,14 +1,15 @@
 package com.google.android.recaptcha.internal;
 
-import dd.p;
-import k7.p7;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzao extends i implements p {
+final class zzao extends j implements p {
     int zza;
     final /* synthetic */ zzar zzb;
     final /* synthetic */ String zzc;
@@ -21,16 +22,16 @@ final class zzao extends i implements p {
         this.zzc = str;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzao zzaoVar = new zzao(this.zzb, this.zzc, cVar);
         zzaoVar.zzd = obj;
         return zzaoVar;
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzao) create((zzhk) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzao) create((zzhk) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:15:0x003a, code lost:
@@ -45,7 +46,7 @@ final class zzao extends i implements p {
     
         if (r8 != r0) goto L18;
      */
-    @Override // wc.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -53,13 +54,13 @@ final class zzao extends i implements p {
         a aVar = a.a;
         int i10 = this.zza;
         try {
-        } catch (Exception e) {
+        } catch (Exception e7) {
             zzar zzarVar = this.zzb;
             this.zza = 2;
-            obj = zzarVar.zzg(e, this);
+            obj = zzarVar.zzg(e7, this);
         }
         if (i10 == 0) {
-            p7.b(obj);
+            t7.b(obj);
             zzhk zzhkVar = (zzhk) this.zzd;
             zzar zzarVar2 = this.zzb;
             int zza = zzarVar2.zza();
@@ -68,10 +69,10 @@ final class zzao extends i implements p {
             obj = new zzhf(37, zzanVar, new Integer(zza)).zza(zzhkVar, this);
         } else {
             if (i10 != 1) {
-                p7.b(obj);
+                t7.b(obj);
                 return (zzat) obj;
             }
-            p7.b(obj);
+            t7.b(obj);
         }
         return (zzat) obj;
     }

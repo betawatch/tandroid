@@ -1,52 +1,36 @@
 package org.telegram.ui.Components;
 
-import android.animation.AnimatorSet;
-import org.telegram.messenger.AndroidUtilities;
+import android.view.View;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class re implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ ChatActivityEnterView b;
+public final class re implements d5, bl0 {
+    public final /* synthetic */ ChatActivityEnterView a;
 
-    public /* synthetic */ re(ChatActivityEnterView chatActivityEnterView, int i10) {
-        this.a = i10;
-        this.b = chatActivityEnterView;
+    public /* synthetic */ re(ChatActivityEnterView chatActivityEnterView) {
+        this.a = chatActivityEnterView;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
-        switch (this.a) {
-            case 0:
-                ChatActivityEnterView chatActivityEnterView = this.b;
-                re reVar = chatActivityEnterView.n3;
-                if ((!chatActivityEnterView.j0() || !chatActivityEnterView.v()) && !org.telegram.ui.ActionBar.p2.hasSheets(chatActivityEnterView.L2) && !chatActivityEnterView.U1 && chatActivityEnterView.B0 != null && chatActivityEnterView.g3 && !chatActivityEnterView.v2 && !AndroidUtilities.usingHardwareInput && !AndroidUtilities.isInMultiwindow) {
-                    eg egVar = chatActivityEnterView.V2;
-                    if (egVar != null) {
-                        egVar.w1();
-                    }
-                    chatActivityEnterView.B0.requestFocus();
-                    AndroidUtilities.showKeyboard(chatActivityEnterView.B0);
-                    AndroidUtilities.cancelRunOnUIThread(reVar);
-                    AndroidUtilities.runOnUIThread(reVar, 100L);
-                    break;
-                }
-                break;
-            case 1:
-                eg egVar2 = this.b.V2;
-                if (egVar2 != null) {
-                    egVar2.p2(0, 0, 0, 0L, 0L, true);
-                    break;
-                }
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView2 = this.b;
-                AnimatorSet animatorSet = chatActivityEnterView2.S0;
-                if (animatorSet != null && !animatorSet.isRunning()) {
-                    chatActivityEnterView2.S0.start();
-                    break;
-                }
-                break;
+    @Override // org.telegram.ui.Components.d5
+    public void J(int i10, int i11, boolean z10) {
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        boolean T0 = chatActivityEnterView.T0(i10, z10, i11, true, 0L);
+        nf nfVar = chatActivityEnterView.L0;
+        if (nfVar != null) {
+            nfVar.h(!T0);
+            chatActivityEnterView.L0 = null;
         }
+    }
+
+    @Override // org.telegram.ui.Components.bl0
+    public boolean a(int i10, View view) {
+        if (!(view instanceof fi.a0)) {
+            return false;
+        }
+        String str = ((fi.a0) view).getCommand() + " ";
+        ChatActivityEnterView chatActivityEnterView = this.a;
+        chatActivityEnterView.setFieldText(str);
+        chatActivityEnterView.m0.c();
+        return true;
     }
 }

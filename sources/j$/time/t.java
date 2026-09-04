@@ -148,8 +148,8 @@ public final class t implements j$.time.temporal.l, Consumer, Predicate, Supplie
     }
 
     @Override // java.util.function.LongFunction
-    public Object apply(long j10) {
-        Object apply = ((LongFunction) this.b).apply(j10);
+    public Object apply(long j3) {
+        Object apply = ((LongFunction) this.b).apply(j3);
         if (apply == null) {
             return null;
         }

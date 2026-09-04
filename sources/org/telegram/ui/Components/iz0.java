@@ -1,37 +1,18 @@
 package org.telegram.ui.Components;
 
-import android.view.ViewGroup;
-import org.telegram.tgnet.TLObject;
+import android.graphics.Paint;
+import org.telegram.tgnet.tl.TL_iv;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class iz0 extends ViewGroup.MarginLayoutParams {
-    public kz0 a;
-    public kz0 b;
+public interface iz0 {
+    bz0 createTextLayout(TL_iv.pageTableCell pagetablecell, int i10);
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public iz0() {
-        super(-2, -2);
-        kz0 kz0Var = kz0.e;
-        this.a = kz0Var;
-        this.b = kz0Var;
-        setMargins(TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31, TLObject.FLAG_31);
-        this.a = kz0Var;
-        this.b = kz0Var;
-    }
+    Paint getHeaderPaint();
 
-    public final boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null || iz0.class != obj.getClass()) {
-            return false;
-        }
-        iz0 iz0Var = (iz0) obj;
-        return this.b.equals(iz0Var.b) && this.a.equals(iz0Var.a);
-    }
+    Paint getLinePaint();
 
-    public final int hashCode() {
-        return this.b.hashCode() + (this.a.hashCode() * 31);
-    }
+    Paint getStripPaint();
+
+    void onLayoutChild(bz0 bz0Var, int i10, int i11);
 }

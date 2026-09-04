@@ -1,14 +1,21 @@
 package kd;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final /* synthetic */ int a = 0;
+public final class b implements id.c {
+    public static final b a = new b();
 
-    static {
-        ThreadLocal[] threadLocalArr = new ThreadLocal[4];
-        for (int i10 = 0; i10 < 4; i10++) {
-            threadLocalArr[i10] = new ThreadLocal();
-        }
+    @Override // id.c
+    public final id.h getContext() {
+        throw new IllegalStateException("This continuation is already complete");
+    }
+
+    @Override // id.c
+    public final void resumeWith(Object obj) {
+        throw new IllegalStateException("This continuation is already complete");
+    }
+
+    public final String toString() {
+        return "This continuation is already complete";
     }
 }

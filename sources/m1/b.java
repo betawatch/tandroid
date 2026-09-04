@@ -3,9 +3,9 @@ package m1;
 import android.content.Context;
 import java.io.File;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends kotlin.jvm.internal.k implements dd.a {
+public final class b extends kotlin.jvm.internal.j implements rd.a {
     public final /* synthetic */ Context b;
     public final /* synthetic */ c c;
 
@@ -16,14 +16,14 @@ public final class b extends kotlin.jvm.internal.k implements dd.a {
         this.c = cVar;
     }
 
-    @Override // dd.a
+    @Override // rd.a
     public final Object invoke() {
         Context applicationContext = this.b;
-        kotlin.jvm.internal.j.d(applicationContext, "applicationContext");
+        kotlin.jvm.internal.i.d(applicationContext, "applicationContext");
         String name = this.c.a;
-        kotlin.jvm.internal.j.e(name, "name");
-        String fileName = kotlin.jvm.internal.j.g(".preferences_pb", name);
-        kotlin.jvm.internal.j.e(fileName, "fileName");
-        return new File(applicationContext.getApplicationContext().getFilesDir(), kotlin.jvm.internal.j.g(fileName, "datastore/"));
+        kotlin.jvm.internal.i.e(name, "name");
+        String fileName = kotlin.jvm.internal.i.g(".preferences_pb", name);
+        kotlin.jvm.internal.i.e(fileName, "fileName");
+        return new File(applicationContext.getApplicationContext().getFilesDir(), kotlin.jvm.internal.i.g(fileName, "datastore/"));
     }
 }

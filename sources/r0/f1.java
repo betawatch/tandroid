@@ -1,44 +1,51 @@
 package r0;
 
-import android.view.DisplayCutout;
 import android.view.WindowInsets;
-import j$.util.Objects;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class f1 extends e1 {
-    public f1(m1 m1Var, WindowInsets windowInsets) {
-        super(m1Var, windowInsets);
+    public i0.c o;
+    public i0.c p;
+    public i0.c q;
+
+    public f1(l1 l1Var, WindowInsets windowInsets) {
+        super(l1Var, windowInsets);
+        this.o = null;
+        this.p = null;
+        this.q = null;
     }
 
-    @Override // r0.j1
-    public m1 a() {
-        return m1.h(null, this.c.consumeDisplayCutout());
-    }
-
-    @Override // r0.j1
-    public j e() {
-        DisplayCutout displayCutout = this.c.getDisplayCutout();
-        if (displayCutout == null) {
-            return null;
+    @Override // r0.i1
+    public i0.c h() {
+        if (this.p == null) {
+            this.p = i0.c.c(this.c.getMandatorySystemGestureInsets());
         }
-        return new j(displayCutout);
+        return this.p;
     }
 
-    @Override // r0.d1, r0.j1
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
+    @Override // r0.i1
+    public i0.c j() {
+        if (this.o == null) {
+            this.o = i0.c.c(this.c.getSystemGestureInsets());
         }
-        if (!(obj instanceof f1)) {
-            return false;
-        }
-        f1 f1Var = (f1) obj;
-        return Objects.equals(this.c, f1Var.c) && Objects.equals(this.g, f1Var.g) && d1.B(this.h, f1Var.h);
+        return this.o;
     }
 
-    @Override // r0.j1
-    public int hashCode() {
-        return this.c.hashCode();
+    @Override // r0.i1
+    public i0.c l() {
+        if (this.q == null) {
+            this.q = i0.c.c(this.c.getTappableElementInsets());
+        }
+        return this.q;
+    }
+
+    @Override // r0.c1, r0.i1
+    public l1 m(int i10, int i11, int i12, int i13) {
+        return l1.h(null, this.c.inset(i10, i11, i12, i13));
+    }
+
+    @Override // r0.d1, r0.i1
+    public void s(i0.c cVar) {
     }
 }

@@ -1,46 +1,55 @@
 package org.telegram.ui;
 
-import android.widget.EditText;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
+import android.content.Intent;
+import android.os.Build;
+import org.telegram.messenger.FileLog;
+import org.telegram.messenger.voip.VoIPService;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class si1 extends org.telegram.ui.ActionBar.h5 {
-    public final /* synthetic */ WallpapersListActivity f;
+public final class si1 implements org.telegram.ui.Components.voip.d {
+    public final /* synthetic */ ui1 a;
 
-    public si1(WallpapersListActivity wallpapersListActivity) {
-        this.f = wallpapersListActivity;
+    public si1(ui1 ui1Var) {
+        this.a = ui1Var;
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void k() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        xi1 xi1Var = wallpapersListActivity.G;
-        xi1Var.n = null;
-        xi1Var.E(null, true);
-        wallpapersListActivity.I.setSearchFieldHint(LocaleController.getString(R.string.SearchBackgrounds));
+    public final void a() {
+        ui1 ui1Var = this.a;
+        if (ui1Var.p0 != 17) {
+            if (Build.VERSION.SDK_INT >= 23 && ui1Var.b.checkSelfPermission("android.permission.RECORD_AUDIO") != 0) {
+                ui1Var.b.requestPermissions(new String[]{"android.permission.RECORD_AUDIO"}, 101);
+                return;
+            } else {
+                if (VoIPService.getSharedState() != null) {
+                    ui1Var.r(new f01(this, 24));
+                    return;
+                }
+                return;
+            }
+        }
+        Intent intent = new Intent(ui1Var.b, (Class<?>) VoIPService.class);
+        intent.putExtra("user_id", ui1Var.d.id);
+        intent.putExtra("is_outgoing", true);
+        intent.putExtra("start_incall_activity", false);
+        intent.putExtra("video_call", ui1Var.U0);
+        intent.putExtra("can_video_call", ui1Var.U0);
+        intent.putExtra("account", ui1Var.a);
+        try {
+            ui1Var.b.startService(intent);
+        } catch (Throwable th2) {
+            FileLog.e(th2);
+        }
     }
 
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void m() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        wallpapersListActivity.E.setAdapter(wallpapersListActivity.F);
-        wallpapersListActivity.E.invalidate();
-        wallpapersListActivity.G.E(null, true);
-        wallpapersListActivity.I.setSearchFieldCaption(null);
-        k();
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void n() {
-        WallpapersListActivity wallpapersListActivity = this.f;
-        wallpapersListActivity.E.setAdapter(wallpapersListActivity.G);
-        wallpapersListActivity.E.invalidate();
-    }
-
-    @Override // org.telegram.ui.ActionBar.h5
-    public final void q(EditText editText) {
-        this.f.G.E(editText.getText().toString(), false);
+    public final void b() {
+        ui1 ui1Var = this.a;
+        if (ui1Var.p0 == 17) {
+            ui1Var.u0.b();
+        } else if (VoIPService.getSharedState() != null) {
+            VoIPService.getSharedState().declineIncomingCall();
+        } else {
+            ui1Var.u0.b();
+        }
     }
 }

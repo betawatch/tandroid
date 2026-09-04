@@ -1,139 +1,14 @@
 package p2;
 
-import android.content.Context;
-import android.content.Intent;
-import android.content.pm.PackageInfo;
-import android.content.pm.PackageManager;
-import android.content.pm.ResolveInfo;
-import android.util.Log;
-import java.util.List;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g implements z3.d {
-    public int a;
-    public int b;
-    public Object c;
+public final class g extends j {
+    public final boolean w;
+    public final boolean x;
 
-    @Override // z3.d
-    public int a() {
-        return this.a;
-    }
-
-    @Override // z3.d
-    public int b() {
-        return this.b;
-    }
-
-    @Override // z3.d
-    public int c() {
-        int i10 = this.a;
-        return i10 == -1 ? ((h5.w) this.c).x() : i10;
-    }
-
-    public int d() {
-        return ((((byte[]) this.c).length - this.a) * 8) - this.b;
-    }
-
-    public h e() {
-        h hVar = new h();
-        hVar.a = this.a;
-        hVar.b = this.b;
-        hVar.c = (String) this.c;
-        return hVar;
-    }
-
-    public int f(int i10) {
-        byte[] bArr = (byte[]) this.c;
-        if (i10 < 1 || i10 > 32 || i10 > d()) {
-            throw new IllegalArgumentException(String.valueOf(i10));
-        }
-        int i11 = this.b;
-        int i12 = 0;
-        if (i11 > 0) {
-            int i13 = 8 - i11;
-            int min = Math.min(i10, i13);
-            int i14 = i13 - min;
-            int i15 = this.a;
-            int i16 = (((255 >> (8 - min)) << i14) & bArr[i15]) >> i14;
-            i10 -= min;
-            int i17 = this.b + min;
-            this.b = i17;
-            if (i17 == 8) {
-                this.b = 0;
-                this.a = i15 + 1;
-            }
-            i12 = i16;
-        }
-        if (i10 > 0) {
-            while (i10 >= 8) {
-                int i18 = i12 << 8;
-                int i19 = this.a;
-                int i20 = i18 | (bArr[i19] & 255);
-                this.a = i19 + 1;
-                i10 -= 8;
-                i12 = i20;
-            }
-            if (i10 > 0) {
-                int i21 = 8 - i10;
-                int i22 = ((bArr[this.a] & ((255 >> i21) << i21)) >> i21) | (i12 << i10);
-                this.b += i10;
-                return i22;
-            }
-        }
-        return i12;
-    }
-
-    public synchronized int g() {
-        PackageInfo packageInfo;
-        if (this.a == 0) {
-            try {
-                packageInfo = k6.b.a((Context) this.c).L(0, "com.google.android.gms");
-            } catch (PackageManager.NameNotFoundException e) {
-                Log.w("Metadata", "Failed to find package ".concat(e.toString()));
-                packageInfo = null;
-            }
-            if (packageInfo != null) {
-                this.a = packageInfo.versionCode;
-            }
-        }
-        return this.a;
-    }
-
-    public synchronized int h() {
-        int i10 = this.b;
-        if (i10 != 0) {
-            return i10;
-        }
-        Context context = (Context) this.c;
-        PackageManager packageManager = context.getPackageManager();
-        if (((Context) k6.b.a(context).b).getPackageManager().checkPermission("com.google.android.c2dm.permission.SEND", "com.google.android.gms") == -1) {
-            Log.e("Metadata", "Google Play services missing or without correct permission.");
-            return 0;
-        }
-        int i11 = 1;
-        if (!i6.b.d()) {
-            Intent intent = new Intent("com.google.android.c2dm.intent.REGISTER");
-            intent.setPackage("com.google.android.gms");
-            List<ResolveInfo> queryIntentServices = packageManager.queryIntentServices(intent, 0);
-            if (queryIntentServices != null && !queryIntentServices.isEmpty()) {
-                this.b = i11;
-                return i11;
-            }
-        }
-        Intent intent2 = new Intent("com.google.iid.TOKEN_REQUEST");
-        intent2.setPackage("com.google.android.gms");
-        List<ResolveInfo> queryBroadcastReceivers = packageManager.queryBroadcastReceivers(intent2, 0);
-        if (queryBroadcastReceivers != null && !queryBroadcastReceivers.isEmpty()) {
-            i11 = 2;
-            this.b = i11;
-            return i11;
-        }
-        Log.w("Metadata", "Failed to resolve IID implementation package, falling back");
-        if (true == i6.b.d()) {
-            i11 = 2;
-        }
-        this.b = i11;
-        return i11;
+    public g(String str, i iVar, long j3, int i10, long j10, b2.o oVar, String str2, String str3, long j11, long j12, boolean z10, boolean z11, boolean z12) {
+        super(str, iVar, j3, i10, j10, oVar, str2, str3, j11, j12, z10);
+        this.w = z11;
+        this.x = z12;
     }
 }

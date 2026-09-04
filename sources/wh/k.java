@@ -1,89 +1,67 @@
 package wh;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
+import android.view.GestureDetector;
+import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewPropertyAnimator;
-import f2.l1;
-import java.util.ArrayList;
-import org.telegram.ui.Cells.s1;
+import java.util.Iterator;
+import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes4.dex */
-public final class k extends AnimatorListenerAdapter {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ f2.j b;
-    public final /* synthetic */ ViewPropertyAnimator c;
-    public final /* synthetic */ View d;
-    public final /* synthetic */ n e;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class k extends GestureDetector.SimpleOnGestureListener {
+    public final /* synthetic */ View a;
+    public final /* synthetic */ List b;
+    public final /* synthetic */ l c;
+    public final /* synthetic */ m d;
 
-    public /* synthetic */ k(n nVar, f2.j jVar, ViewPropertyAnimator viewPropertyAnimator, View view, int i10) {
-        this.a = i10;
-        this.e = nVar;
-        this.b = jVar;
-        this.c = viewPropertyAnimator;
-        this.d = view;
+    public k(m mVar, View view, List list, l lVar) {
+        this.d = mVar;
+        this.a = view;
+        this.b = list;
+        this.c = lVar;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                this.c.setListener(null);
-                View view = this.d;
-                view.setAlpha(1.0f);
-                view.setScaleX(1.0f);
-                view.setScaleX(1.0f);
-                if (view instanceof s1) {
-                    ((s1) view).setAnimationOffsetX(0.0f);
-                } else {
-                    view.setTranslationX(0.0f);
-                }
-                view.setTranslationY(0.0f);
-                n nVar = this.e;
-                ArrayList arrayList = nVar.B;
-                f2.j jVar = this.b;
-                if (arrayList.remove(jVar.a)) {
-                    nVar.d(jVar.a);
-                    nVar.G();
-                    break;
-                }
-                break;
-            default:
-                this.c.setListener(null);
-                View view2 = this.d;
-                view2.setAlpha(1.0f);
-                view2.setScaleX(1.0f);
-                view2.setScaleX(1.0f);
-                if (view2 instanceof s1) {
-                    ((s1) view2).setAnimationOffsetX(0.0f);
-                } else {
-                    view2.setTranslationX(0.0f);
-                }
-                view2.setTranslationY(0.0f);
-                n nVar2 = this.e;
-                ArrayList arrayList2 = nVar2.B;
-                f2.j jVar2 = this.b;
-                if (arrayList2.remove(jVar2.b)) {
-                    nVar2.d(jVar2.b);
-                    nVar2.G();
-                    break;
-                }
-                break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onDown(MotionEvent motionEvent) {
+        int x10 = (int) motionEvent.getX();
+        int y3 = (int) motionEvent.getY();
+        View view = this.a;
+        int scrollY = view.getScrollY() + y3;
+        int paddingLeft = x10 - view.getPaddingLeft();
+        int paddingTop = scrollY - view.getPaddingTop();
+        m mVar = this.d;
+        int i10 = paddingLeft - mVar.c;
+        int i11 = paddingTop - mVar.d;
+        Iterator it = this.b.iterator();
+        while (it.hasNext()) {
+            if (((h) it.next()).getBounds().contains(i10, i11)) {
+                mVar.b = true;
+                return true;
+            }
         }
+        return false;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationStart(Animator animator) {
-        switch (this.a) {
-            case 0:
-                l1 l1Var = this.b.a;
-                this.e.getClass();
-                break;
-            default:
-                l1 l1Var2 = this.b.b;
-                this.e.getClass();
-                break;
+    @Override // android.view.GestureDetector.SimpleOnGestureListener, android.view.GestureDetector.OnGestureListener
+    public final boolean onSingleTapUp(MotionEvent motionEvent) {
+        m mVar = this.d;
+        if (mVar.b) {
+            View view = this.a;
+            view.playSoundEffect(0);
+            mVar.b = false;
+            int x10 = (int) motionEvent.getX();
+            int scrollY = view.getScrollY() + ((int) motionEvent.getY());
+            int paddingLeft = x10 - view.getPaddingLeft();
+            int paddingTop = scrollY - view.getPaddingTop();
+            int i10 = paddingLeft - mVar.c;
+            int i11 = paddingTop - mVar.d;
+            for (h hVar : this.b) {
+                if (hVar.getBounds().contains(i10, i11)) {
+                    this.c.o(hVar, i10, i11);
+                    return true;
+                }
+            }
         }
+        return false;
     }
 }

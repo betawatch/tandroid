@@ -1,25 +1,29 @@
 package nd;
 
-import k7.o8;
-
-/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
-/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class a {
-    public static final /* synthetic */ a[] a;
+public abstract class a {
+    public static final Integer a;
 
     static {
-        a[] aVarArr = {new a("SUSPEND", 0), new a("DROP_OLDEST", 1), new a("DROP_LATEST", 2)};
-        a = aVarArr;
-        o8.a(aVarArr);
-    }
-
-    public static a valueOf(String str) {
-        return (a) Enum.valueOf(a.class, str);
-    }
-
-    public static a[] values() {
-        return (a[]) a.clone();
+        Integer num;
+        Object obj;
+        Integer num2 = null;
+        try {
+            obj = Class.forName("android.os.Build$VERSION").getField("SDK_INT").get(null);
+        } catch (Throwable unused) {
+        }
+        if (obj instanceof Integer) {
+            num = (Integer) obj;
+            if (num != null && num.intValue() > 0) {
+                num2 = num;
+            }
+            a = num2;
+        }
+        num = null;
+        if (num != null) {
+            num2 = num;
+        }
+        a = num2;
     }
 }

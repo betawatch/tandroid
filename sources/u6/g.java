@@ -1,31 +1,11 @@
 package u6;
 
-import android.os.Bundle;
-import android.os.Parcel;
-import android.os.Parcelable;
-import j7.f5;
-import r5.c0;
+import android.os.StrictMode;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class g extends c6.a {
-    public static final Parcelable.Creator<g> CREATOR = new c0(21);
-    public final String a;
-    public final Bundle b;
-
-    public g(String type, Bundle data) {
-        kotlin.jvm.internal.j.e(type, "type");
-        kotlin.jvm.internal.j.e(data, "data");
-        this.a = type;
-        this.b = data;
-    }
-
-    @Override // android.os.Parcelable
-    public final void writeToParcel(Parcel dest, int i10) {
-        kotlin.jvm.internal.j.e(dest, "dest");
-        int q10 = f5.q(dest, 20293);
-        f5.l(dest, 1, this.a);
-        f5.b(dest, 2, this.b);
-        f5.r(dest, q10);
+public abstract class g {
+    public static StrictMode.VmPolicy.Builder a(StrictMode.VmPolicy.Builder builder) {
+        return builder.permitUnsafeIntentLaunch();
     }
 }

@@ -1,149 +1,107 @@
 package ng;
 
-import android.graphics.RecordingCanvas;
-import android.graphics.RenderEffect;
-import android.graphics.RenderNode;
-import android.graphics.Shader;
-import android.support.v4.media.session.y;
-import org.telegram.messenger.MediaDataController;
+import android.app.Activity;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
+import android.widget.Toast;
+import n7.z0;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SharedConfig;
+import org.telegram.messenger.w1;
+import org.telegram.messenger.wl;
+import org.telegram.ui.ActionBar.j6;
+import org.telegram.ui.ActionBar.k4;
+import org.telegram.ui.ActionBar.n2;
+import org.telegram.ui.Components.fo0;
+import org.telegram.ui.Components.ov0;
+import org.telegram.ui.LaunchActivity;
+import org.telegram.ui.ProfileActivity;
+import org.telegram.ui.i5;
+import w7.x5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class c {
-    public final RenderNode a = y.c();
-    public final RenderNode[] b;
-    public final RenderNode[] c;
-    public final boolean d;
-    public int e;
-    public int f;
-    public float g;
-    public float h;
-    public long i;
-    public final /* synthetic */ e j;
+public final /* synthetic */ class c implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ i b;
 
-    public c(e eVar, String str, int i10, boolean z4) {
-        this.j = eVar;
-        int i11 = i10 + 1;
-        this.b = new RenderNode[i11];
-        for (int i12 = 0; i12 < i11; i12++) {
-            RenderNode[] renderNodeArr = this.b;
-            y.i();
-            renderNodeArr[i12] = y.d(str + "_down_" + i10);
-        }
-        if (i10 > 0 || z4) {
-            this.c = new RenderNode[i11];
-            for (int i13 = 0; i13 < i11; i13++) {
-                this.c[i13] = y.c();
-            }
-        } else {
-            this.c = this.b;
-        }
-        this.d = this.c == this.b;
-        this.f = 1;
-        this.e = 1;
+    public /* synthetic */ c(i iVar, int i10) {
+        this.a = i10;
+        this.b = iVar;
     }
 
-    public final void a(RenderNode renderNode) {
-        boolean z4;
-        int width = renderNode.getWidth();
-        int height = renderNode.getHeight();
-        float f10 = width;
-        e eVar = this.j;
-        int round = Math.round((eVar.d * f10) / this.e);
-        float f11 = height;
-        int round2 = Math.round((eVar.d * f11) / this.f);
-        float f12 = round;
-        float f13 = f12 / f10;
-        float f14 = round2;
-        float f15 = f14 / f11;
-        int i10 = eVar.d;
-        float f16 = (f10 * i10) / f12;
-        float f17 = (f11 * i10) / f14;
-        long calcHash = MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(MediaDataController.calcHash(0L, renderNode.getUniqueId()), round), round2), width), height);
-        boolean z10 = (this.a.hasDisplayList() && this.b[0].hasDisplayList()) ? false : true;
-        int i11 = 0;
-        while (true) {
-            int length = this.b.length;
-            z4 = this.d;
-            if (i11 >= length) {
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                n2 R = LaunchActivity.R();
+                i5 i5Var = new i5(R.getParentActivity(), false);
+                if (R.getFragmentView() instanceof ov0) {
+                    i5Var.b = (ov0) R.getFragmentView();
+                }
+                Activity parentActivity = R.getParentActivity();
+                LinearLayout f7 = w1.f(parentActivity, 1);
+                TextView textView = new TextView(parentActivity);
+                textView.setText("Saturation " + (i5.c * 5.0f));
+                int i10 = j6.n5;
+                wl.r(textView, j6.w0(null, i10, false), 1, 16.0f, 1);
+                textView.setMaxLines(1);
+                textView.setSingleLine(true);
+                textView.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
+                f7.addView(textView, x5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                fo0 fo0Var = new fo0(parentActivity);
+                fo0Var.setDelegate(new o0.a(i5Var, textView, false, 1));
+                fo0Var.setReportChanges(true);
+                f7.addView(fo0Var, x5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                TextView textView2 = new TextView(parentActivity);
+                textView2.setText("Alpha " + i5.e);
+                wl.r(textView2, j6.w0(null, i10, false), 1, 16.0f, 1);
+                textView2.setMaxLines(1);
+                textView2.setSingleLine(true);
+                textView2.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
+                f7.addView(textView2, x5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                fo0 fo0Var2 = new fo0(parentActivity);
+                fo0Var2.setDelegate(new z0(i5Var, textView2, false, 2));
+                fo0Var2.setReportChanges(true);
+                f7.addView(fo0Var2, x5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                TextView textView3 = new TextView(parentActivity);
+                textView3.setText("Blur Radius");
+                wl.r(textView3, j6.w0(null, i10, false), 1, 16.0f, 1);
+                textView3.setMaxLines(1);
+                textView3.setSingleLine(true);
+                textView3.setGravity((LocaleController.isRTL ? 3 : 5) | 48);
+                f7.addView(textView3, x5.d(-2, -1.0f, (LocaleController.isRTL ? 3 : 5) | 48, 21.0f, 13.0f, 21.0f, 0.0f));
+                fo0 fo0Var3 = new fo0(parentActivity);
+                fo0Var3.setDelegate(new org.telegram.ui.g(i5Var, 5));
+                fo0Var3.setReportChanges(true);
+                f7.addView(fo0Var3, x5.d(-1, 38.0f, 0, 5.0f, 4.0f, 5.0f, 0.0f));
+                f7.addOnLayoutChangeListener(new k4(fo0Var, fo0Var3, fo0Var2));
+                ScrollView scrollView = new ScrollView(parentActivity);
+                scrollView.addView(f7);
+                i5Var.setCustomView(scrollView);
+                i5Var.show();
+                this.b.c(false);
                 break;
-            }
-            z10 |= !r15[i11].hasDisplayList();
-            if (!z4) {
-                z10 |= !this.c[i11].hasDisplayList();
-            }
-            i11++;
+            case 1:
+                i iVar = this.b;
+                iVar.getClass();
+                SharedConfig.toggleDebugWebView();
+                Toast.makeText(iVar.getContext(), LocaleController.getString(SharedConfig.debugWebView ? R.string.DebugMenuWebViewDebugEnabled : R.string.DebugMenuWebViewDebugDisabled), 0).show();
+                break;
+            case 2:
+                ProfileActivity.H4((Activity) this.b.getContext(), false);
+                break;
+            default:
+                i iVar2 = this.b;
+                iVar2.n = true;
+                try {
+                    iVar2.performHapticFeedback(0);
+                    break;
+                } catch (Exception unused) {
+                    return;
+                }
         }
-        if (this.i == calcHash && !z10) {
-            return;
-        }
-        this.i = calcHash;
-        int i12 = 0;
-        this.a.setPosition(0, 0, width, height);
-        this.a.beginRecording(width, height).drawRenderNode(renderNode);
-        this.a.endRecording();
-        this.b[0].setPosition(0, 0, round, round2);
-        RecordingCanvas beginRecording = this.b[0].beginRecording(round, round2);
-        beginRecording.scale(f13, f15);
-        beginRecording.drawRenderNode(this.a);
-        this.b[0].endRecording();
-        int i13 = 0;
-        while (true) {
-            RenderNode[] renderNodeArr = this.b;
-            if (i13 >= renderNodeArr.length) {
-                return;
-            }
-            renderNodeArr[i13].setPosition(i12, i12, round, round2);
-            RecordingCanvas beginRecording2 = this.b[i13].beginRecording(round, round2);
-            if (i13 > 0) {
-                beginRecording2.drawRenderNode(this.b[i12]);
-            } else {
-                beginRecording2.scale(f13, f15);
-                beginRecording2.drawRenderNode(this.a);
-            }
-            this.b[i13].endRecording();
-            if (z4) {
-                this.b[i13].setScaleX(f16);
-                this.b[i13].setScaleY(f17);
-                this.b[i13].setPivotX(0.0f);
-                this.b[i13].setPivotY(0.0f);
-            } else {
-                this.c[i13].setPosition(0, 0, width, height);
-                RecordingCanvas beginRecording3 = this.c[i13].beginRecording(width, height);
-                beginRecording3.scale(f16, f17);
-                beginRecording3.drawRenderNode(this.b[i13]);
-                this.c[i13].endRecording();
-            }
-            i13++;
-            i12 = 0;
-        }
-    }
-
-    public final void b(float f10, float f11) {
-        int i10 = this.e;
-        float f12 = i10 >= 2 ? (this.g + f10) % i10 : 0.0f;
-        this.g = f12;
-        int i11 = this.f;
-        this.h = i11 >= 2 ? (this.h + f11) % i11 : 0.0f;
-        if (this.j.b) {
-            this.a.setTranslationX(f12);
-            this.a.setTranslationY(this.h);
-            for (RenderNode renderNode : this.c) {
-                renderNode.setTranslationX(-this.g);
-                renderNode.setTranslationY(-this.h);
-            }
-        }
-    }
-
-    public final void c(float f10) {
-        this.b[0].setRenderEffect(RenderEffect.createBlurEffect(e.a(f10, this.e), e.a(f10, this.f), Shader.TileMode.CLAMP));
-    }
-
-    public final void d(float f10, RenderEffect renderEffect) {
-        this.b[0].setRenderEffect(RenderEffect.createChainEffect(RenderEffect.createBlurEffect(e.a(f10, this.e), e.a(f10, this.f), Shader.TileMode.CLAMP), renderEffect));
-    }
-
-    public final void e(RenderEffect renderEffect) {
-        this.b[1].setRenderEffect(renderEffect);
     }
 }

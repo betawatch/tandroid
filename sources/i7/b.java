@@ -1,80 +1,43 @@
 package i7;
 
-import com.google.android.gms.internal.cast.u0;
-import j7.d8;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.j;
+import w7.f0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b extends u0 implements ListIterator {
-    public final int b;
-    public int c;
-    public final d d;
+public final class b extends j {
+    public static final com.google.android.gms.common.api.e l = new com.google.android.gms.common.api.e("Auth.Api.Identity.SignIn.API", new a8.d(6), new com.google.android.gms.common.api.d());
+    public final String k;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b(d dVar, int i10) {
-        super(4);
-        int size = dVar.size();
-        if (i10 < 0 || i10 > size) {
-            throw new IndexOutOfBoundsException(d8.c(i10, size, "index"));
+    public b(Context context, x5.i iVar) {
+        super(context, l, iVar, com.google.android.gms.common.api.i.c);
+        this.k = e.a();
+    }
+
+    public final x5.g f(Intent intent) {
+        Status status = Status.h;
+        if (intent == null) {
+            throw new com.google.android.gms.common.api.f(status);
         }
-        this.b = size;
-        this.c = i10;
-        this.d = dVar;
-    }
-
-    public final Object a(int i10) {
-        return this.d.get(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final void add(Object obj) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final boolean hasNext() {
-        return this.c < this.b;
-    }
-
-    @Override // java.util.ListIterator
-    public final boolean hasPrevious() {
-        return this.c > 0;
-    }
-
-    @Override // java.util.Iterator, java.util.ListIterator
-    public final Object next() {
-        if (!hasNext()) {
-            throw new NoSuchElementException();
+        Parcelable.Creator<Status> creator = Status.CREATOR;
+        byte[] byteArrayExtra = intent.getByteArrayExtra("status");
+        Status status2 = (Status) (byteArrayExtra == null ? null : f0.a(byteArrayExtra, creator));
+        if (status2 == null) {
+            throw new com.google.android.gms.common.api.f(Status.r);
         }
-        int i10 = this.c;
-        this.c = i10 + 1;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int nextIndex() {
-        return this.c;
-    }
-
-    @Override // java.util.ListIterator
-    public final Object previous() {
-        if (!hasPrevious()) {
-            throw new NoSuchElementException();
+        if (!status2.b()) {
+            throw new com.google.android.gms.common.api.f(status2);
         }
-        int i10 = this.c - 1;
-        this.c = i10;
-        return a(i10);
-    }
-
-    @Override // java.util.ListIterator
-    public final int previousIndex() {
-        return this.c - 1;
-    }
-
-    @Override // java.util.ListIterator
-    public final void set(Object obj) {
-        throw new UnsupportedOperationException();
+        Parcelable.Creator<x5.g> creator2 = x5.g.CREATOR;
+        byte[] byteArrayExtra2 = intent.getByteArrayExtra("sign_in_credential");
+        x5.g gVar = (x5.g) (byteArrayExtra2 != null ? f0.a(byteArrayExtra2, creator2) : null);
+        if (gVar != null) {
+            return gVar;
+        }
+        throw new com.google.android.gms.common.api.f(status);
     }
 }

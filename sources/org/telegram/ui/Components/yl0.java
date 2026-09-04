@@ -1,23 +1,35 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final class yl0 {
-    public final float a;
-    public final float b;
-    public final float c;
-    public final float d;
-    public final boolean e;
+import org.telegram.messenger.AndroidUtilities;
 
-    public yl0(float f10, float f11, float f12, float f13, int i10) {
-        this(f10, f11, f12, f13);
-        this.e = true;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final /* synthetic */ class yl0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ am0 b;
+
+    public /* synthetic */ yl0(am0 am0Var, int i10) {
+        this.a = i10;
+        this.b = am0Var;
     }
 
-    public yl0(float f10, float f11, float f12, float f13) {
-        this.a = f10;
-        this.b = f11;
-        this.c = f12;
-        this.d = f13;
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                am0 am0Var = this.b;
+                am0Var.getClass();
+                AndroidUtilities.runOnUIThread(new yl0(am0Var, 2));
+                break;
+            case 1:
+                AndroidUtilities.runOnUIThread(new yl0(this.b, 3));
+                break;
+            case 2:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+            default:
+                super/*android.app.Dialog*/.dismiss();
+                break;
+        }
     }
 }

@@ -1,13 +1,14 @@
 package b1;
 
 import com.google.android.gms.common.api.r;
+import di.b7;
 import java.util.concurrent.Executor;
 import v0.i;
 import v0.o;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class b implements dd.a {
+public final /* synthetic */ class b implements rd.a {
     public final /* synthetic */ int a;
     public final /* synthetic */ Executor b;
     public final /* synthetic */ i c;
@@ -20,15 +21,15 @@ public final /* synthetic */ class b implements dd.a {
         this.c = iVar;
     }
 
-    @Override // dd.a
+    @Override // rd.a
     public final Object invoke() {
         Object cVar;
         switch (this.a) {
             case 0:
-                this.b.execute(new a1.e(3, this.c, this.d));
+                this.b.execute(new a1.e(12, this.c, this.d));
                 break;
             case 1:
-                this.b.execute(new a1.e(4, this.c, (o) this.d));
+                this.b.execute(new a1.e(13, this.c, (o) this.d));
                 break;
             case 2:
                 this.b.execute(new h(this.c, (w0.i) this.d, 0));
@@ -53,10 +54,10 @@ public final /* synthetic */ class b implements dd.a {
                 } else {
                     cVar = new w0.c("Conditional create failed, failure: " + exc, 2);
                 }
-                this.b.execute(new a1.e(20, this.c, cVar));
+                this.b.execute(new b7(14, this.c, cVar));
                 break;
         }
-        return sc.i.a;
+        return gd.i.a;
     }
 
     public /* synthetic */ b(Executor executor, i iVar, Object obj, int i10) {

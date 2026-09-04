@@ -9,13 +9,13 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.accessibility.AccessibilityNodeInfo;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
+import ji.u4;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLObject;
-import org.telegram.ui.Components.zz;
-import r0.j0;
-import s0.d;
+import r0.i0;
+import s0.c;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class b extends r0.b {
     public static final Rect n = new Rect(ConnectionsManager.DEFAULT_DATACENTER_ID, ConnectionsManager.DEFAULT_DATACENTER_ID, TLObject.FLAG_31, TLObject.FLAG_31);
@@ -34,14 +34,14 @@ public abstract class b extends r0.b {
         this.i = view;
         this.h = (AccessibilityManager) view.getContext().getSystemService("accessibility");
         view.setFocusable(true);
-        WeakHashMap weakHashMap = j0.a;
+        WeakHashMap weakHashMap = i0.a;
         if (view.getImportantForAccessibility() == 0) {
             view.setImportantForAccessibility(1);
         }
     }
 
     @Override // r0.b
-    public final zz a(View view) {
+    public final u4 a(View view) {
         if (this.j == null) {
             this.j = new a(this);
         }
@@ -49,8 +49,8 @@ public abstract class b extends r0.b {
     }
 
     @Override // r0.b
-    public final void c(View view, d dVar) {
-        this.a.onInitializeAccessibilityNodeInfo(view, dVar.a);
+    public final void c(View view, c cVar) {
+        this.a.onInitializeAccessibilityNodeInfo(view, cVar.a);
     }
 
     public final AccessibilityEvent e(int i10, int i11) {
@@ -61,9 +61,9 @@ public abstract class b extends r0.b {
             return obtain;
         }
         AccessibilityEvent obtain2 = AccessibilityEvent.obtain(i11);
-        d j10 = j(i10);
-        obtain2.getText().add(j10.g());
-        AccessibilityNodeInfo accessibilityNodeInfo = j10.a;
+        c j3 = j(i10);
+        obtain2.getText().add(j3.g());
+        AccessibilityNodeInfo accessibilityNodeInfo = j3.a;
         obtain2.setContentDescription(accessibilityNodeInfo.getContentDescription());
         obtain2.setScrollable(accessibilityNodeInfo.isScrollable());
         obtain2.setPassword(accessibilityNodeInfo.isPassword());
@@ -110,7 +110,7 @@ public abstract class b extends r0.b {
         return true;
     }
 
-    public abstract int g(float f10, float f11);
+    public abstract int g(float f7, float f10);
 
     public abstract void h(ArrayList arrayList);
 
@@ -120,17 +120,17 @@ public abstract class b extends r0.b {
         if (!this.h.isEnabled() || (parent = (view = this.i).getParent()) == null) {
             return;
         }
-        AccessibilityEvent e = e(-1, 2048);
-        e.setContentChangeTypes(1);
-        parent.requestSendAccessibilityEvent(view, e);
+        AccessibilityEvent e7 = e(-1, 2048);
+        e7.setContentChangeTypes(1);
+        parent.requestSendAccessibilityEvent(view, e7);
     }
 
-    public final d j(int i10) {
+    public final c j(int i10) {
         View view = this.i;
         if (i10 == -1) {
             AccessibilityNodeInfo obtain = AccessibilityNodeInfo.obtain(view);
-            d dVar = new d(obtain);
-            WeakHashMap weakHashMap = j0.a;
+            c cVar = new c(obtain);
+            WeakHashMap weakHashMap = i0.a;
             view.onInitializeAccessibilityNodeInfo(obtain);
             ArrayList arrayList = new ArrayList();
             h(arrayList);
@@ -139,21 +139,21 @@ public abstract class b extends r0.b {
             }
             int size = arrayList.size();
             for (int i11 = 0; i11 < size; i11++) {
-                dVar.a.addChild(view, ((Integer) arrayList.get(i11)).intValue());
+                cVar.a.addChild(view, ((Integer) arrayList.get(i11)).intValue());
             }
-            return dVar;
+            return cVar;
         }
         AccessibilityNodeInfo obtain2 = AccessibilityNodeInfo.obtain();
-        d dVar2 = new d(obtain2);
+        c cVar2 = new c(obtain2);
         obtain2.setEnabled(true);
         obtain2.setFocusable(true);
-        dVar2.i("android.view.View");
+        cVar2.i("android.view.View");
         Rect rect = n;
-        dVar2.h(rect);
+        cVar2.h(rect);
         obtain2.setBoundsInScreen(rect);
         obtain2.setParent(view);
-        l(i10, dVar2);
-        if (dVar2.g() == null && obtain2.getContentDescription() == null) {
+        l(i10, cVar2);
+        if (cVar2.g() == null && obtain2.getContentDescription() == null) {
             throw new RuntimeException("Callbacks must add text or a content description in populateNodeForVirtualViewId()");
         }
         Rect rect2 = this.e;
@@ -169,22 +169,22 @@ public abstract class b extends r0.b {
             throw new RuntimeException("Callbacks must not add ACTION_CLEAR_ACCESSIBILITY_FOCUS in populateNodeForVirtualViewId()");
         }
         obtain2.setPackageName(view.getContext().getPackageName());
-        dVar2.b = i10;
+        cVar2.b = i10;
         obtain2.setSource(view, i10);
         if (this.k == i10) {
             obtain2.setAccessibilityFocused(true);
-            dVar2.a(128);
+            cVar2.a(128);
         } else {
             obtain2.setAccessibilityFocused(false);
-            dVar2.a(64);
+            cVar2.a(64);
         }
-        boolean z4 = this.l == i10;
-        if (z4) {
-            dVar2.a(2);
+        boolean z10 = this.l == i10;
+        if (z10) {
+            cVar2.a(2);
         } else if (obtain2.isFocusable()) {
-            dVar2.a(1);
+            cVar2.a(1);
         }
-        obtain2.setFocused(z4);
+        obtain2.setFocused(z10);
         int[] iArr = this.g;
         view.getLocationOnScreen(iArr);
         Rect rect3 = this.d;
@@ -208,18 +208,18 @@ public abstract class b extends r0.b {
                             }
                             parent = view2.getParent();
                         } else if (parent != null) {
-                            dVar2.p(true);
+                            cVar2.p(true);
                         }
                     }
                 }
             }
         }
-        return dVar2;
+        return cVar2;
     }
 
     public abstract boolean k(int i10, int i11);
 
-    public abstract void l(int i10, d dVar);
+    public abstract void l(int i10, c cVar);
 
     public final void m(int i10, int i11) {
         View view;

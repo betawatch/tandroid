@@ -1,49 +1,54 @@
 package org.telegram.ui.ActionBar;
 
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.v00;
+import android.content.Context;
+import android.os.Bundle;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class b1 extends v00 {
-    public final /* synthetic */ c1 e;
+public final class b1 extends c1 {
+    public final a1 e0;
+    public String f0;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public b1(c1 c1Var) {
-        super(false);
-        this.e = c1Var;
+    public b1(Context context, f6 f6Var) {
+        super(context, f6Var);
+        this.f0 = null;
+        setFocusable(true);
+        setFocusableInTouchMode(true);
+        setImportantForAccessibility(1);
+        a1 a1Var = new a1(this);
+        this.e0 = a1Var;
+        setAccessibilityDelegate(a1Var);
     }
 
-    @Override // org.telegram.ui.Components.go0
-    public final CharSequence d() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(df.f.a(this.e.getSpeed()));
-        sb.append("x  ");
-        return org.telegram.messenger.y3.h(R.string.AccDescrSpeedSlider, sb);
+    public final void d(float f7, boolean z10) {
+        c((f7 - 0.2f) / 2.8f, z10);
     }
 
-    @Override // org.telegram.ui.Components.v00
-    public final float h() {
-        return 0.2f;
+    public float getSpeed() {
+        return (getValue() * 2.8f) + 0.2f;
     }
 
-    @Override // org.telegram.ui.Components.v00
-    public final float i() {
-        return 3.0f;
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        this.e0.e(this, accessibilityNodeInfo);
     }
 
-    @Override // org.telegram.ui.Components.v00
-    public final float j() {
-        return 0.2f;
+    @Override // android.view.View
+    public final boolean performAccessibilityAction(int i10, Bundle bundle) {
+        return super.performAccessibilityAction(i10, bundle) || this.e0.g(this, i10, bundle);
     }
 
-    @Override // org.telegram.ui.Components.v00
-    public final float k() {
-        return this.e.getSpeed();
+    public void setLabel(String str) {
+        this.f0 = str;
     }
 
-    @Override // org.telegram.ui.Components.v00
-    public final void l(float f10) {
-        this.e.d(f10, true);
+    @Override // org.telegram.ui.ActionBar.c1
+    public void setStops(float[] fArr) {
+        for (int i10 = 0; i10 < fArr.length; i10++) {
+            fArr[i10] = (fArr[i10] - 0.2f) / 2.8f;
+        }
+        super.setStops(fArr);
     }
 }

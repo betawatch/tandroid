@@ -1,26 +1,56 @@
 package f5;
 
+import java.nio.ByteBuffer;
+import java.util.ArrayList;
 import java.util.List;
+import w7.p6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class r extends c {
-    @Override // f5.c
-    public final int h() {
-        return 0;
+public final class r extends com.googlecode.mp4parser.c {
+    public static final /* synthetic */ mg.n f;
+    public static final /* synthetic */ mg.n h;
+    public static final /* synthetic */ mg.n n;
+    public List e;
+
+    static {
+        re.a aVar = new re.a(r.class, "SampleToChunkBox.java");
+        f = aVar.e(aVar.d("getEntries", "com.coremedia.iso.boxes.SampleToChunkBox", "", "", "java.util.List"));
+        h = aVar.e(aVar.d("setEntries", "com.coremedia.iso.boxes.SampleToChunkBox", "java.util.List", "entries", "void"));
+        n = aVar.e(aVar.d("toString", "com.coremedia.iso.boxes.SampleToChunkBox", "", "", "java.lang.String"));
+        aVar.e(aVar.d("blowup", "com.coremedia.iso.boxes.SampleToChunkBox", "int", "chunkCount", "[J"));
     }
 
-    @Override // f5.c
-    public final Object j() {
-        return null;
+    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
+    public final void _parseDetails(ByteBuffer byteBuffer) {
+        f(byteBuffer);
+        int a2 = p6.a(e5.b.i(byteBuffer));
+        this.e = new ArrayList(a2);
+        for (int i10 = 0; i10 < a2; i10++) {
+            this.e.add(new q(e5.b.i(byteBuffer), e5.b.i(byteBuffer), e5.b.i(byteBuffer)));
+        }
     }
 
-    @Override // f5.c
-    public final int k() {
-        return 0;
+    @Override // com.googlecode.mp4parser.c, com.googlecode.mp4parser.a
+    public final void getContent(ByteBuffer byteBuffer) {
+        i(byteBuffer);
+        byteBuffer.putInt(this.e.size());
+        for (q qVar : this.e) {
+            byteBuffer.putInt((int) qVar.a);
+            byteBuffer.putInt((int) qVar.b);
+            byteBuffer.putInt((int) qVar.c);
+        }
     }
 
-    @Override // f5.c
-    public final void v(long j10, long j11, long j12, List list, q4.l[] lVarArr) {
+    @Override // com.googlecode.mp4parser.a
+    public final long getContentSize() {
+        return (this.e.size() * 12) + 8;
+    }
+
+    public final String toString() {
+        com.google.firebase.messaging.s b10 = re.a.b(n, this, this);
+        com.googlecode.mp4parser.g.a().getClass();
+        com.googlecode.mp4parser.g.b(b10);
+        return "SampleToChunkBox[entryCount=" + this.e.size() + "]";
     }
 }

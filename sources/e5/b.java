@@ -1,79 +1,137 @@
 package e5;
 
-import h5.w;
-import java.util.regex.Pattern;
+import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class b {
-    public static final Pattern c = Pattern.compile("\\[voice=\"([^\"]*)\"\\]");
-    public static final Pattern d = Pattern.compile("^((?:[0-9]*\\.)?[0-9]+)(px|em|%)$");
-    public final w a = new w();
-    public final StringBuilder b = new StringBuilder();
+public abstract class b {
+    public static final char[] a = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'};
 
-    public static String a(w wVar, StringBuilder sb) {
-        boolean z4 = false;
-        sb.setLength(0);
-        int i10 = wVar.b;
-        int i11 = wVar.c;
-        while (i10 < i11 && !z4) {
-            char c3 = (char) wVar.a[i10];
-            if ((c3 < 'A' || c3 > 'Z') && ((c3 < 'a' || c3 > 'z') && !((c3 >= '0' && c3 <= '9') || c3 == '#' || c3 == '-' || c3 == '.' || c3 == '_'))) {
-                z4 = true;
-            } else {
-                i10++;
-                sb.append(c3);
-            }
-        }
-        wVar.G(i10 - wVar.b);
-        return sb.toString();
+    public static int a(byte b10) {
+        return b10 < 0 ? b10 + 256 : b10;
     }
 
-    public static String b(w wVar, StringBuilder sb) {
-        c(wVar);
-        if (wVar.a() == 0) {
+    public static byte[] b(String str) {
+        if (str == null) {
             return null;
         }
-        String a2 = a(wVar, sb);
-        if (!"".equals(a2)) {
-            return a2;
+        try {
+            return str.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e7) {
+            throw new Error(e7);
         }
-        return "" + ((char) wVar.u());
     }
 
-    public static void c(w wVar) {
-        while (true) {
-            for (boolean z4 = true; wVar.a() > 0 && z4; z4 = false) {
-                int i10 = wVar.b;
-                byte[] bArr = wVar.a;
-                byte b10 = bArr[i10];
-                char c3 = (char) b10;
-                if (c3 == '\t' || c3 == '\n' || c3 == '\f' || c3 == '\r' || c3 == ' ') {
-                    wVar.G(1);
-                } else {
-                    int i11 = wVar.c;
-                    int i12 = i10 + 2;
-                    if (i12 <= i11) {
-                        int i13 = i10 + 1;
-                        if (b10 == 47 && bArr[i13] == 42) {
-                            while (true) {
-                                int i14 = i12 + 1;
-                                if (i14 >= i11) {
-                                    break;
-                                }
-                                if (((char) bArr[i12]) == '*' && ((char) bArr[i14]) == '/') {
-                                    i12 += 2;
-                                    i11 = i12;
-                                } else {
-                                    i12 = i14;
-                                }
-                            }
-                            wVar.G(i11 - wVar.b);
-                        }
-                    }
-                }
+    public static String c(int i10, byte[] bArr) {
+        int length = bArr.length;
+        char[] cArr = new char[(length << 1) + (i10 > 0 ? length / i10 : 0)];
+        int i11 = 0;
+        for (int i12 = 0; i12 < length; i12++) {
+            if (i10 > 0 && i12 % i10 == 0 && i11 > 0) {
+                cArr[i11] = '-';
+                i11++;
             }
-            return;
+            int i13 = i11 + 1;
+            byte b10 = bArr[i12];
+            char[] cArr2 = a;
+            cArr[i11] = cArr2[(b10 & 240) >>> 4];
+            i11 += 2;
+            cArr[i13] = cArr2[b10 & 15];
         }
+        return new String(cArr);
+    }
+
+    public static String d(ByteBuffer byteBuffer) {
+        byte[] bArr = new byte[4];
+        byteBuffer.get(bArr);
+        try {
+            return new String(bArr, "ISO-8859-1");
+        } catch (UnsupportedEncodingException e7) {
+            throw new RuntimeException(e7);
+        }
+    }
+
+    public static double e(ByteBuffer byteBuffer) {
+        byteBuffer.get(new byte[4]);
+        return (((((r0[0] << 24) & (-16777216)) | ((r0[1] << 16) & 16711680)) | ((r0[2] << 8) & 65280)) | (r0[3] & 255)) / 1.073741824E9d;
+    }
+
+    public static double f(ByteBuffer byteBuffer) {
+        byteBuffer.get(new byte[4]);
+        return (((((r0[0] << 24) & (-16777216)) | ((r0[1] << 16) & 16711680)) | ((r0[2] << 8) & 65280)) | (r0[3] & 255)) / 65536.0d;
+    }
+
+    public static float g(ByteBuffer byteBuffer) {
+        byteBuffer.get(new byte[2]);
+        return ((short) (((short) ((r0[0] << 8) & 65280)) | (r0[1] & 255))) / 256.0f;
+    }
+
+    public static int h(ByteBuffer byteBuffer) {
+        return a(byteBuffer.get()) + (a(byteBuffer.get()) << 8);
+    }
+
+    public static long i(ByteBuffer byteBuffer) {
+        long j3 = byteBuffer.getInt();
+        return j3 < 0 ? j3 + 4294967296L : j3;
+    }
+
+    public static long j(ByteBuffer byteBuffer) {
+        long i10 = i(byteBuffer) << 32;
+        if (i10 >= 0) {
+            return i(byteBuffer) + i10;
+        }
+        throw new RuntimeException("I don't know how to deal with UInt64! long is not sufficient and I don't want to use BigInt");
+    }
+
+    public static int k(ByteBuffer byteBuffer) {
+        return a(byteBuffer.get());
+    }
+
+    public static int l(String str) {
+        if (str == null) {
+            return 0;
+        }
+        try {
+            return str.getBytes("UTF-8").length;
+        } catch (UnsupportedEncodingException unused) {
+            throw new RuntimeException();
+        }
+    }
+
+    public static void m(ByteBuffer byteBuffer, double d) {
+        int i10 = (int) (d * 1.073741824E9d);
+        byteBuffer.put((byte) (((-16777216) & i10) >> 24));
+        byteBuffer.put((byte) ((16711680 & i10) >> 16));
+        byteBuffer.put((byte) ((65280 & i10) >> 8));
+        byteBuffer.put((byte) (i10 & 255));
+    }
+
+    public static void n(ByteBuffer byteBuffer, double d) {
+        int i10 = (int) (d * 65536.0d);
+        byteBuffer.put((byte) (((-16777216) & i10) >> 24));
+        byteBuffer.put((byte) ((16711680 & i10) >> 16));
+        byteBuffer.put((byte) ((65280 & i10) >> 8));
+        byteBuffer.put((byte) (i10 & 255));
+    }
+
+    public static void o(ByteBuffer byteBuffer, double d) {
+        short s10 = (short) (d * 256.0d);
+        byteBuffer.put((byte) ((65280 & s10) >> 8));
+        byteBuffer.put((byte) (s10 & 255));
+    }
+
+    public static void p(int i10, ByteBuffer byteBuffer) {
+        r((65535 & i10) >> 8, byteBuffer);
+        byteBuffer.put((byte) (i10 & 255));
+    }
+
+    public static void q(int i10, ByteBuffer byteBuffer) {
+        p((16777215 & i10) >> 8, byteBuffer);
+        byteBuffer.put((byte) (i10 & 255));
+    }
+
+    public static void r(int i10, ByteBuffer byteBuffer) {
+        byteBuffer.put((byte) (i10 & 255));
     }
 }

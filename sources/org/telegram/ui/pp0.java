@@ -1,50 +1,42 @@
 package org.telegram.ui;
 
-import android.text.Editable;
-import java.util.ArrayList;
-import java.util.HashMap;
+import android.os.Build;
+import androidx.recyclerview.widget.RecyclerView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class pp0 implements lq0 {
-    public final /* synthetic */ HashMap a;
-    public final /* synthetic */ ArrayList b;
-    public final /* synthetic */ wp0 c;
+public final class pp0 extends s4.s0 {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vp0 b;
 
-    public pp0(wp0 wp0Var, HashMap hashMap, ArrayList arrayList) {
-        this.c = wp0Var;
-        this.a = hashMap;
-        this.b = arrayList;
+    public pp0(vp0 vp0Var, int i10) {
+        this.b = vp0Var;
+        this.a = i10;
     }
 
-    @Override // org.telegram.ui.lq0
-    public final void c(Editable editable) {
-        wp0 wp0Var = this.c;
-        org.telegram.ui.Components.cu cuVar = wp0Var.J;
-        wp0Var.a = editable;
-        cuVar.setText(editable);
-    }
-
-    @Override // org.telegram.ui.lq0
-    public final /* synthetic */ boolean e() {
-        return true;
-    }
-
-    @Override // org.telegram.ui.lq0
-    public final void f(int i10, boolean z4, boolean z10) {
-        wp0 wp0Var = this.c;
-        wp0Var.removeSelfFromStack();
-        if (z4) {
+    @Override // s4.s0
+    public final void b(RecyclerView recyclerView, int i10, int i11) {
+        bh.f fVar;
+        vp0 vp0Var = this.b;
+        bq0 bq0Var = vp0Var.p0;
+        if (i11 != 0) {
+            bq0Var.D0(1);
+        }
+        if (Build.VERSION.SDK_INT >= 31 && (fVar = bq0Var.f0) != null) {
+            fVar.f(i10, i11);
+        }
+        vp0Var.h();
+        if (vp0Var.K != null) {
+            if (vp0Var.J == null || !vp0Var.c()) {
+                return;
+            }
+            vp0Var.J.g(false);
             return;
         }
-        wp0Var.V(this.a, this.b, z10, i10);
-    }
-
-    @Override // org.telegram.ui.lq0
-    public final void a() {
-    }
-
-    @Override // org.telegram.ui.lq0
-    public final /* synthetic */ void d() {
+        zh.j5 j5Var = this.a == 1 ? bq0Var.c : bq0Var.b;
+        if (j5Var == null || !vp0Var.c()) {
+            return;
+        }
+        j5Var.a();
     }
 }

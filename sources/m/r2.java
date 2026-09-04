@@ -1,30 +1,46 @@
 package m;
 
+import android.view.View;
+import android.view.ViewGroup;
 import androidx.appcompat.widget.SearchView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class r2 implements Runnable {
+public final class r2 implements View.OnFocusChangeListener {
     public final /* synthetic */ int a;
-    public final /* synthetic */ SearchView b;
+    public final /* synthetic */ ViewGroup b;
 
-    public /* synthetic */ r2(SearchView searchView, int i10) {
+    public /* synthetic */ r2(ViewGroup viewGroup, int i10) {
         this.a = i10;
-        this.b = searchView;
+        this.b = viewGroup;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // android.view.View.OnFocusChangeListener
+    public final void onFocusChange(View view, boolean z10) {
         switch (this.a) {
             case 0:
-                this.b.r();
-                break;
-            default:
-                h1.b bVar = this.b.e0;
-                if (bVar instanceof c3) {
-                    bVar.b(null);
+                SearchView searchView = (SearchView) this.b;
+                View.OnFocusChangeListener onFocusChangeListener = searchView.d0;
+                if (onFocusChangeListener != null) {
+                    onFocusChangeListener.onFocusChange(searchView, z10);
                     break;
                 }
+                break;
+            case 1:
+                org.telegram.ui.Cells.f3 f3Var = (org.telegram.ui.Cells.f3) this.b;
+                f3Var.h = z10;
+                if (f3Var.f) {
+                    f3Var.c();
+                    break;
+                }
+                break;
+            default:
+                org.telegram.ui.Cells.i3 i3Var = (org.telegram.ui.Cells.i3) this.b;
+                i3Var.n = z10;
+                if (i3Var.f) {
+                    i3Var.c();
+                }
+                i3Var.a(z10);
                 break;
         }
     }

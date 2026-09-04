@@ -1,21 +1,16 @@
 package z3;
 
-import r3.v;
-import r3.w;
+import b2.s;
+import t7.u;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class k {
-    public final o a;
-    public final r b;
-    public final v c;
-    public final w d;
-    public int e;
+public interface k {
+    public static final u D = new u(28);
 
-    public k(o oVar, r rVar, v vVar) {
-        this.a = oVar;
-        this.b = rVar;
-        this.c = vVar;
-        this.d = "audio/true-hd".equals(oVar.f.C) ? new w() : null;
-    }
+    int J(s sVar);
+
+    boolean i0(s sVar);
+
+    m v(s sVar);
 }

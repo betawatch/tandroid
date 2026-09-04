@@ -1,6 +1,62 @@
 package com.google.android.gms.internal.cast;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public interface g5 extends j5 {
+public abstract class g5 implements Cloneable {
+    public final h5 a;
+    public h5 b;
+
+    public g5(h5 h5Var) {
+        this.a = h5Var;
+        if (h5Var.g()) {
+            throw new IllegalArgumentException("Default instance must be immutable.");
+        }
+        this.b = (h5) h5Var.h(4, null);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:8:0x002b, code lost:
+    
+        if (r3 != false) goto L12;
+     */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final h5 a() {
+        h5 b10 = b();
+        byte byteValue = ((Byte) b10.h(1, null)).byteValue();
+        if (byteValue != 1) {
+            if (byteValue != 0) {
+                boolean f7 = g6.c.a(b10.getClass()).f(b10);
+                b10.h(2, true == f7 ? b10 : null);
+            }
+            throw new androidx.car.app.j("Message was missing required fields.  (Lite runtime could not determine which fields were missing).");
+        }
+        return b10;
+    }
+
+    public final h5 b() {
+        if (!this.b.g()) {
+            return this.b;
+        }
+        h5 h5Var = this.b;
+        h5Var.getClass();
+        g6.c.a(h5Var.getClass()).a(h5Var);
+        h5Var.d();
+        return this.b;
+    }
+
+    public final void c() {
+        if (this.b.g()) {
+            return;
+        }
+        h5 h5Var = (h5) this.a.h(4, null);
+        g6.c.a(h5Var.getClass()).d(h5Var, this.b);
+        this.b = h5Var;
+    }
+
+    public final Object clone() {
+        g5 g5Var = (g5) this.a.h(5, null);
+        g5Var.b = b();
+        return g5Var;
+    }
 }

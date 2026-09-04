@@ -41,8 +41,8 @@ public final class k3 extends q6 implements c2, v1 {
     }
 
     @Override // j$.util.stream.e2
-    public final /* synthetic */ e2 e(long j10, long j11, IntFunction intFunction) {
-        return t3.U(this, j10, j11);
+    public final /* synthetic */ e2 e(long j3, long j10, IntFunction intFunction) {
+        return t3.U(this, j3, j10);
     }
 
     @Override // j$.util.stream.j5
@@ -65,8 +65,8 @@ public final class k3 extends q6 implements c2, v1 {
     }
 
     @Override // j$.util.stream.i5
-    public final /* synthetic */ void x(Long l10) {
-        t3.H(this, l10);
+    public final /* synthetic */ void x(Long l4) {
+        t3.H(this, l4);
     }
 
     @Override // j$.util.stream.e2
@@ -106,9 +106,9 @@ public final class k3 extends q6 implements c2, v1 {
     }
 
     @Override // j$.util.stream.j5
-    public final void o(long j10) {
+    public final void o(long j3) {
         clear();
-        l(j10);
+        l(j3);
     }
 
     @Override // j$.util.stream.s6, j$.util.stream.d2

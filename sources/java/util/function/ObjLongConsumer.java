@@ -2,5 +2,5 @@ package java.util.function;
 
 /* loaded from: classes2.dex */
 public interface ObjLongConsumer<T> {
-    void accept(T t6, long j10);
+    void accept(T t10, long j3);
 }

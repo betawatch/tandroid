@@ -3,7 +3,7 @@ package org.telegram.ui;
 import java.util.concurrent.CountDownLatch;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class yb implements Runnable {
     public final /* synthetic */ int a;
@@ -30,17 +30,17 @@ public final /* synthetic */ class yb implements Runnable {
                 break;
             case 1:
                 cc ccVar2 = this.b;
-                ccVar2.E = false;
+                ccVar2.H = false;
                 ccVar2.d(true);
                 break;
             case 2:
                 cc ccVar3 = this.b;
-                ccVar3.E = false;
+                ccVar3.H = false;
                 ccVar3.d(true);
                 break;
             default:
                 cc ccVar4 = this.b;
-                ccVar4.E = false;
+                ccVar4.H = false;
                 ccVar4.d(true);
                 break;
         }

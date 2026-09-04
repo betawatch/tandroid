@@ -1,75 +1,154 @@
 package org.telegram.ui.Components;
 
-import android.view.animation.DecelerateInterpolator;
+import android.media.AudioTimestamp;
+import java.nio.ByteBuffer;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.VideoEditedInfo;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class u50 implements Runnable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ x50 b;
+public final class u50 implements Runnable {
+    public final /* synthetic */ v50 a;
 
-    public /* synthetic */ u50(x50 x50Var, int i10) {
-        this.a = i10;
-        this.b = x50Var;
+    public u50(v50 v50Var) {
+        this.a = v50Var;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:78:0x0034, code lost:
+    
+        if (r22.a.X == 0) goto L79;
+     */
     @Override // java.lang.Runnable
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
     public final void run() {
-        VideoEditedInfo videoEditedInfo;
-        int i10 = this.a;
-        x50 x50Var = this.b;
-        switch (i10) {
-            case 0:
-                x50Var.E0.m(false, false);
-                break;
-            case 1:
-                NotificationCenter.getInstance(x50Var.E0.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                break;
-            case 2:
-                y50 y50Var = x50Var.E0;
-                VideoEditedInfo videoEditedInfo2 = new VideoEditedInfo();
-                y50Var.K = videoEditedInfo2;
-                videoEditedInfo2.roundVideo = true;
-                videoEditedInfo2.startTime = -1L;
-                videoEditedInfo2.endTime = -1L;
-                videoEditedInfo2.file = y50Var.E;
-                videoEditedInfo2.encryptedFile = y50Var.F;
-                videoEditedInfo2.key = y50Var.G;
-                videoEditedInfo2.iv = y50Var.H;
-                videoEditedInfo2.estimatedSize = Math.max(1L, y50Var.I);
-                VideoEditedInfo videoEditedInfo3 = y50Var.K;
-                videoEditedInfo3.framerate = 25;
-                videoEditedInfo3.originalWidth = 360;
-                videoEditedInfo3.resultWidth = 360;
-                videoEditedInfo3.originalHeight = 360;
-                videoEditedInfo3.resultHeight = 360;
-                videoEditedInfo3.originalPath = y50Var.V.getAbsolutePath();
-                x50Var.h(y50Var.V);
-                y50Var.K.estimatedDuration = y50Var.c0;
-                NotificationCenter.getInstance(y50Var.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.audioDidSent, Integer.valueOf(y50Var.N), y50Var.K, y50Var.V.getAbsolutePath(), x50Var.x0);
-                break;
-            case 3:
-                if (x50Var.D0 && (videoEditedInfo = x50Var.E0.K) != null) {
-                    videoEditedInfo.notReadyYet = false;
+        k50 k50Var;
+        long j3;
+        long j10;
+        AudioTimestamp audioTimestamp = new AudioTimestamp();
+        long j11 = -1;
+        long j12 = -1;
+        boolean z10 = false;
+        boolean z11 = true;
+        while (!z10) {
+            if ((!this.a.W || this.a.D0) && this.a.y0.getRecordingState() != 1) {
+                try {
+                    this.a.y0.stop();
+                } catch (Exception unused) {
+                    z10 = true;
                 }
-                x50Var.c(x50Var.a, 0L, true);
-                MediaController.getInstance().requestRecordAudioFocus(false);
-                break;
-            case 4:
-                x50Var.E0.V0 = null;
-                break;
-            case 5:
-                NotificationCenter.getInstance(x50Var.E0.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.stopAllHeavyOperations, 512);
-                break;
-            case 6:
-                x50Var.E0.j0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
-                break;
-            default:
-                x50Var.E0.j0.animate().setDuration(120L).alpha(0.0f).setInterpolator(new DecelerateInterpolator()).start();
-                break;
+            }
+            boolean z12 = z10;
+            if (this.a.z0.isEmpty()) {
+                try {
+                    k50Var = new k50();
+                } catch (OutOfMemoryError unused2) {
+                    System.gc();
+                    k50Var = new k50();
+                }
+            } else {
+                k50Var = (k50) this.a.z0.poll();
+            }
+            k50 k50Var2 = k50Var;
+            k50Var2.e = 0;
+            k50Var2.d = 10;
+            int i10 = 0;
+            while (true) {
+                if (i10 >= 10) {
+                    break;
+                }
+                long j13 = 1000;
+                if (j12 == j11 && !z11) {
+                    j12 = System.nanoTime() / 1000;
+                }
+                ByteBuffer byteBuffer = k50Var2.a[i10];
+                byteBuffer.rewind();
+                int read = this.a.y0.read(byteBuffer, 2048);
+                if (read <= 0 || i10 % 2 != 0) {
+                    j3 = 1000;
+                } else {
+                    byteBuffer.limit(read);
+                    double d = 0.0d;
+                    int i11 = 0;
+                    while (true) {
+                        j3 = j13;
+                        if (i11 >= read / 2) {
+                            break;
+                        }
+                        short s10 = byteBuffer.getShort();
+                        d += s10 * s10;
+                        i11++;
+                        j13 = j3;
+                    }
+                    final double sqrt = Math.sqrt((d / read) / 2.0d);
+                    AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.t50
+                        @Override // java.lang.Runnable
+                        public final void run() {
+                            v50 v50Var = u50.this.a;
+                            NotificationCenter.getInstance(v50Var.H0.a).lambda$postNotificationNameOnUIThread$1(NotificationCenter.recordProgressChanged, Integer.valueOf(v50Var.H0.Q), Double.valueOf(sqrt));
+                        }
+                    });
+                    byteBuffer.position(0);
+                }
+                if (read <= 0) {
+                    k50Var2.d = i10;
+                    if (!this.a.W) {
+                        k50Var2.f = true;
+                    }
+                } else {
+                    if (z11) {
+                        try {
+                            this.a.y0.getTimestamp(audioTimestamp, 0);
+                            j10 = j12;
+                            j12 = audioTimestamp.nanoTime / j3;
+                        } catch (Exception e7) {
+                            FileLog.e(e7);
+                            j12 = System.nanoTime() / j3;
+                            j10 = j12;
+                            z11 = false;
+                        }
+                    } else {
+                        j10 = j12;
+                    }
+                    k50Var2.b[i10] = j12;
+                    k50Var2.c[i10] = read;
+                    int i12 = ((read * MediaController.VIDEO_BITRATE_480) / 48000) / 2;
+                    if (!z11) {
+                        j10 += i12;
+                    }
+                    j12 = j10;
+                    i10++;
+                    j11 = -1;
+                }
+            }
+            if (k50Var2.d >= 0 || k50Var2.f) {
+                if (!this.a.W && k50Var2.d < 10) {
+                    z12 = true;
+                }
+                this.a.T.sendMessage(this.a.T.obtainMessage(3, k50Var2));
+            } else if (this.a.W) {
+                try {
+                    this.a.z0.put(k50Var2);
+                } catch (Exception unused3) {
+                }
+            } else {
+                z10 = true;
+                j11 = -1;
+            }
+            z10 = z12;
+            j11 = -1;
         }
+        try {
+            this.a.y0.release();
+        } catch (Exception e10) {
+            FileLog.e(e10);
+        }
+        if (this.a.D0) {
+            return;
+        }
+        this.a.T.sendMessage(this.a.T.obtainMessage(1, this.a.X, 0, this.a.Y));
     }
 }

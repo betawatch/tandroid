@@ -1,31 +1,47 @@
 package org.telegram.ui;
 
-import android.view.View;
+import j$.util.Objects;
+import org.telegram.messenger.SaveToGallerySettingsHelper;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class s41 implements View.OnClickListener {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ w41 b;
+public final class s41 extends pg.a {
+    public final SaveToGallerySettingsHelper.DialogException c;
+    public final String d;
 
-    public /* synthetic */ s41(w41 w41Var, int i10) {
-        this.a = i10;
-        this.b = w41Var;
+    public s41(int i10) {
+        super(i10, false);
+        this.c = null;
     }
 
-    @Override // android.view.View.OnClickListener
-    public final void onClick(View view) {
-        switch (this.a) {
-            case 0:
-                w41 w41Var = this.b;
-                if (w41Var.V == null) {
-                    w41Var.dismiss();
-                    break;
-                }
-                break;
-            default:
-                this.b.dismiss();
-                break;
+    public final boolean equals(Object obj) {
+        SaveToGallerySettingsHelper.DialogException dialogException;
+        if (this == obj) {
+            return true;
         }
+        if (obj == null || s41.class != obj.getClass()) {
+            return false;
+        }
+        s41 s41Var = (s41) obj;
+        if (this.a != s41Var.a) {
+            return false;
+        }
+        String str = this.d;
+        if (str != null) {
+            return Objects.equals(str, s41Var.d);
+        }
+        SaveToGallerySettingsHelper.DialogException dialogException2 = this.c;
+        return dialogException2 == null || (dialogException = s41Var.c) == null || dialogException2.dialogId == dialogException.dialogId;
+    }
+
+    public s41(SaveToGallerySettingsHelper.DialogException dialogException) {
+        super(2, false);
+        this.c = dialogException;
+    }
+
+    public s41(int i10, String str) {
+        super(i10, false);
+        this.d = str;
+        this.c = null;
     }
 }

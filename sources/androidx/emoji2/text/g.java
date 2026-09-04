@@ -2,20 +2,20 @@ package androidx.emoji2.text;
 
 import android.graphics.Rect;
 import android.view.View;
-import f2.i0;
 import org.telegram.tgnet.TLObject;
+import s4.c0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public abstract class g {
     public int a;
     public final Object b;
     public final Object c;
 
-    public g(i0 i0Var) {
+    public g(c0 c0Var) {
         this.a = TLObject.FLAG_31;
         this.c = new Rect();
-        this.b = i0Var;
+        this.b = c0Var;
     }
 
     public abstract int a(View view);

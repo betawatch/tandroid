@@ -1,23 +1,47 @@
 package org.telegram.ui.Components.voip;
 
 import android.content.Context;
-import org.telegram.ui.Components.UndoView;
-import org.telegram.ui.x30;
+import android.graphics.Canvas;
+import android.graphics.drawable.ShapeDrawable;
+import android.widget.FrameLayout;
+import android.widget.TextView;
+import org.telegram.ui.Components.l9;
+import org.telegram.ui.Components.pr;
+import org.telegram.ui.a40;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class g0 extends UndoView {
-    public final /* synthetic */ x30 c0;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class g0 extends FrameLayout {
+    public final /* synthetic */ ShapeDrawable a;
+    public final /* synthetic */ a40 b;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public g0(x30 x30Var, Context context) {
+    public g0(a40 a40Var, Context context, ShapeDrawable shapeDrawable) {
         super(context);
-        this.c0 = x30Var;
+        this.b = a40Var;
+        this.a = shapeDrawable;
     }
 
-    @Override // org.telegram.ui.Components.UndoView, android.view.View
-    public final void invalidate() {
-        super.invalidate();
-        this.c0.invalidate();
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        a40 a40Var = this.b;
+        l9 l9Var = a40Var.J;
+        TextView textView = a40Var.K;
+        float f7 = a40Var.O;
+        ShapeDrawable shapeDrawable = this.a;
+        if (f7 == 1.0f) {
+            shapeDrawable.setBounds(0, 0, getMeasuredWidth(), getMeasuredHeight());
+            l9Var.setTranslationX(0.0f);
+            textView.setTranslationX(0.0f);
+        } else {
+            float interpolation = 1.0f - pr.f.getInterpolation(f7);
+            float left = (a40Var.P - getLeft()) * interpolation;
+            float left2 = (a40Var.Q - textView.getLeft()) * interpolation;
+            shapeDrawable.setBounds((int) left, 0, getMeasuredWidth() + ((int) ((a40Var.R - getRight()) * interpolation)), getMeasuredHeight());
+            l9Var.setTranslationX(left);
+            textView.setTranslationX(-left2);
+        }
+        shapeDrawable.draw(canvas);
+        super.dispatchDraw(canvas);
     }
 }

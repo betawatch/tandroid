@@ -2,40 +2,37 @@ package g6;
 
 import android.os.Parcel;
 import android.os.Parcelable;
-import j7.l0;
-import java.util.ArrayList;
+import java.util.Arrays;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class c implements Parcelable.Creator {
-    @Override // android.os.Parcelable.Creator
-    public final Object createFromParcel(Parcel parcel) {
-        int z4 = l0.z(parcel);
-        ArrayList arrayList = null;
-        String str = null;
-        String str2 = null;
-        boolean z10 = false;
-        while (parcel.dataPosition() < z4) {
-            int readInt = parcel.readInt();
-            char c3 = (char) readInt;
-            if (c3 == 1) {
-                arrayList = l0.l(parcel, readInt, y5.c.CREATOR);
-            } else if (c3 == 2) {
-                z10 = l0.n(parcel, readInt);
-            } else if (c3 == 3) {
-                str = l0.h(parcel, readInt);
-            } else if (c3 != 4) {
-                l0.y(parcel, readInt);
-            } else {
-                str2 = l0.h(parcel, readInt);
-            }
-        }
-        l0.m(parcel, z4);
-        return new a(arrayList, z10, str, str2);
+public final class c extends o6.a {
+    public static final Parcelable.Creator<c> CREATOR = new e6.i(11);
+    public final String a;
+
+    public c(String str) {
+        this.a = str;
     }
 
-    @Override // android.os.Parcelable.Creator
-    public final /* synthetic */ Object[] newArray(int i10) {
-        return new a[i10];
+    public final boolean equals(Object obj) {
+        if (obj == this) {
+            return true;
+        }
+        if (obj instanceof c) {
+            return a.d(this.a, ((c) obj).a);
+        }
+        return false;
+    }
+
+    public final int hashCode() {
+        return Arrays.hashCode(new Object[]{this.a});
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = e0.q(parcel, 20293);
+        e0.l(parcel, 2, this.a);
+        e0.r(parcel, q6);
     }
 }

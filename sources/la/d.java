@@ -1,27 +1,24 @@
 package la;
 
-import android.os.Build;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class d implements u9.d {
-    public static final d a = new d();
-    public static final u9.c b = u9.c.c("appId");
-    public static final u9.c c = u9.c.c("deviceModel");
-    public static final u9.c d = u9.c.c("sessionSdkVersion");
-    public static final u9.c e = u9.c.c("osVersion");
-    public static final u9.c f = u9.c.c("logEnvironment");
-    public static final u9.c g = u9.c.c("androidAppInfo");
+public final class d {
+    public static final d a;
+    public static final /* synthetic */ d[] b;
 
-    @Override // u9.a
-    public final void a(Object obj, Object obj2) {
-        b bVar = (b) obj;
-        u9.e eVar = (u9.e) obj2;
-        eVar.e(b, bVar.a);
-        eVar.e(c, Build.MODEL);
-        eVar.e(d, "1.2.0");
-        eVar.e(e, Build.VERSION.RELEASE);
-        eVar.e(f, o.b);
-        eVar.e(g, bVar.b);
+    static {
+        d dVar = new d("DEFAULT", 0);
+        a = dVar;
+        b = new d[]{dVar, new d("SIGNED", 1), new d("FIXED", 2)};
+    }
+
+    public static d valueOf(String str) {
+        return (d) Enum.valueOf(d.class, str);
+    }
+
+    public static d[] values() {
+        return (d[]) b.clone();
     }
 }

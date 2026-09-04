@@ -1,40 +1,61 @@
 package org.telegram.ui.web;
 
-import java.io.File;
-import java.io.FileInputStream;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
+import java.io.BufferedInputStream;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.ui.oj0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
-public final class j1 extends FileInputStream {
-    public final long a;
+public final class j1 extends AsyncTask {
+    public final HashMap a = new HashMap();
+    public final oj0 b;
+    public Exception c;
 
-    public j1(File file, long j10, long j11) {
-        super(file);
-        this.a = j11;
-        if (j10 > 0 && skip(j10) != j10) {
-            throw new RuntimeException("BoundedInputStream failed to skip");
+    public j1(oj0 oj0Var) {
+        this.b = oj0Var;
+    }
+
+    @Override // android.os.AsyncTask
+    public final Object doInBackground(Object[] objArr) {
+        try {
+            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(((String[]) objArr)[0]).openConnection();
+            for (Map.Entry entry : this.a.entrySet()) {
+                if (entry.getKey() != null && entry.getValue() != null) {
+                    httpURLConnection.setRequestProperty((String) entry.getKey(), (String) entry.getValue());
+                }
+            }
+            httpURLConnection.setRequestMethod("GET");
+            httpURLConnection.setDoInput(true);
+            int responseCode = httpURLConnection.getResponseCode();
+            if (responseCode >= 200 && responseCode < 300) {
+                return (httpURLConnection.getContentType() == null || !httpURLConnection.getContentType().contains("svg")) ? BitmapFactory.decodeStream(new BufferedInputStream(httpURLConnection.getInputStream())) : SvgHelper.getBitmap((InputStream) new BufferedInputStream(httpURLConnection.getInputStream()), 64, 64, false);
+            }
+            httpURLConnection.disconnect();
+            return null;
+        } catch (Exception e7) {
+            this.c = e7;
+            return null;
         }
     }
 
-    @Override // java.io.FileInputStream, java.io.InputStream
-    public final int read() {
-        if (getChannel().position() >= this.a) {
-            return -1;
+    @Override // android.os.AsyncTask
+    public final void onPostExecute(Object obj) {
+        Bitmap bitmap = (Bitmap) obj;
+        oj0 oj0Var = this.b;
+        if (oj0Var != null) {
+            if (this.c == null) {
+                oj0Var.run(bitmap);
+            } else {
+                oj0Var.run(null);
+            }
         }
-        return super.read();
-    }
-
-    @Override // java.io.FileInputStream, java.io.InputStream
-    public final int read(byte[] bArr, int i10, int i11) {
-        long position = getChannel().position();
-        long j10 = this.a;
-        if (position >= j10) {
-            return -1;
-        }
-        long position2 = j10 - getChannel().position();
-        if (i11 > position2) {
-            i11 = (int) position2;
-        }
-        return super.read(bArr, i10, i11);
     }
 }

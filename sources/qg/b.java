@@ -1,67 +1,41 @@
 package qg;
 
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LiteMode;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
+import org.telegram.messenger.R;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public class b implements a {
-    public final f6 a;
-    public final int b;
-    public final float c;
-    public int d;
-    public int e;
-    public int f;
-    public int h;
-
-    public b(int i10, f6 f6Var) {
-        this(f6Var, i10, LiteMode.isEnabled(262144) ? 0.85f : 0.76f);
+public final class b extends m {
+    @Override // qg.m
+    public final float a() {
+        return 1.0f;
     }
 
-    @Override // qg.a
-    public int D() {
-        return this.h;
+    @Override // qg.m
+    public final float d() {
+        return 1.0f;
     }
 
-    public boolean a() {
-        return AndroidUtilities.computePerceivedBrightness(j6.v0(this.b, this.a)) < 0.721f;
+    @Override // qg.m
+    public final int e() {
+        return R.raw.photo_blur;
     }
 
-    public final void b() {
-        this.d = j6.l1(this.c, j6.v0(this.b, this.a));
-        if (a()) {
-            this.f = 687865855;
-            this.h = 352321535;
-            this.e = 0;
-        } else {
-            this.f = -1;
-            this.h = -1;
-            this.e = TLObject.FLAG_29;
+    @Override // qg.m
+    public final float g() {
+        return 0.35f;
+    }
+
+    @Override // qg.m
+    public final String i(int i10) {
+        if (i10 == 0) {
+            return "blitWithMaskBlurer";
         }
-    }
-
-    @Override // qg.a
-    public int e0() {
-        return this.e;
-    }
-
-    @Override // qg.a
-    public int m0() {
-        return this.d;
-    }
-
-    @Override // qg.a
-    public int x() {
-        return this.f;
-    }
-
-    public b(f6 f6Var, int i10, float f10) {
-        this.a = f6Var;
-        this.b = i10;
-        this.c = f10;
-        b();
+        if (i10 == 1) {
+            return "compositeWithMaskBlurer";
+        }
+        if (i10 != 2) {
+            return null;
+        }
+        return "brush";
     }
 }

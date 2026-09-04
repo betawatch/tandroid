@@ -3,12 +3,12 @@ package org.telegram.messenger;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
+import org.telegram.ui.Components.f10;
 import org.telegram.ui.Components.g10;
-import org.telegram.ui.Components.h10;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public class ANRDetector implements g10 {
+public class ANRDetector implements f10 {
     private static final int MSG_UI_PING = 1;
     private static final long TIMEOUT_MS = 5000;
     private final Runnable anrDetected;
@@ -33,10 +33,10 @@ public class ANRDetector implements g10 {
 
     public ANRDetector(Runnable runnable) {
         this.anrDetected = runnable;
-        h10 h10Var = h10.getInstance();
-        this.foreground = h10Var.isForeground();
-        h10Var.addListener(this);
-        Thread thread = new Thread(new e1(this, 11), "ANRDetector");
+        g10 g10Var = g10.getInstance();
+        this.foreground = g10Var.isForeground();
+        g10Var.addListener(this);
+        Thread thread = new Thread(new d1(this, 11), "ANRDetector");
         this.detectorThread = thread;
         thread.start();
     }
@@ -87,7 +87,7 @@ public class ANRDetector implements g10 {
                 this.foreground = false;
                 this.generation++;
                 this.lock.notifyAll();
-                h10.getInstance().removeListener(this);
+                g10.getInstance().removeListener(this);
                 this.mainHandler.removeMessages(1);
                 this.detectorThread.interrupt();
             } catch (Throwable th2) {
@@ -96,7 +96,7 @@ public class ANRDetector implements g10 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g10
+    @Override // org.telegram.ui.Components.f10
     public void onBecameBackground() {
         synchronized (this.lock) {
             try {
@@ -113,7 +113,7 @@ public class ANRDetector implements g10 {
         }
     }
 
-    @Override // org.telegram.ui.Components.g10
+    @Override // org.telegram.ui.Components.f10
     public void onBecameForeground() {
         synchronized (this.lock) {
             try {

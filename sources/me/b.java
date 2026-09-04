@@ -1,58 +1,108 @@
 package me;
 
-import e2.c;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.nio.charset.Charset;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewConfiguration;
+import ji.b5;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class b {
-    public static final Map a;
-    public static final Pattern b;
+public final class b {
+    public final a a;
+    public b5 b;
+    public int c;
+    public float d;
+    public float e;
+    public float f;
+    public float g;
 
-    static {
-        HashMap hashMap = new HashMap();
-        try {
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(b.class.getResourceAsStream("/org/commonmark/internal/util/entities.properties"), Charset.forName("UTF-8")));
-            while (true) {
-                try {
-                    String readLine = bufferedReader.readLine();
-                    if (readLine == null) {
-                        bufferedReader.close();
-                        hashMap.put("NewLine", "\n");
-                        a = hashMap;
-                        b = Pattern.compile("^&#[Xx]?");
-                        return;
-                    }
-                    if (readLine.length() != 0) {
-                        int indexOf = readLine.indexOf("=");
-                        hashMap.put(readLine.substring(0, indexOf), readLine.substring(indexOf + 1));
-                    }
-                } finally {
-                }
-            }
-        } catch (IOException e) {
-            throw new IllegalStateException("Failed reading data for HTML named character references", e);
-        }
+    public b(a aVar) {
+        this.a = aVar;
     }
 
-    public static String a(String str) {
-        Matcher matcher = b.matcher(str);
-        if (!matcher.find()) {
-            String str2 = (String) a.get(c.j(str, 1, 1));
-            return str2 != null ? str2 : str;
+    public final boolean a(MotionEvent motionEvent, View view) {
+        float x10 = motionEvent.getX();
+        float y3 = motionEvent.getY();
+        int action = motionEvent.getAction();
+        a aVar = this.a;
+        if (action == 0) {
+            b(view, x10, y3);
+            if (aVar.needClickAt(view, x10, y3)) {
+                this.c |= 1;
+                this.d = x10;
+                this.e = y3;
+                aVar.onClickTouchDown(view, x10, y3);
+                if (aVar.needLongPress(x10, y3) && view != null) {
+                    if (this.b != null) {
+                        throw new AssertionError();
+                    }
+                    this.c |= 2;
+                    b5 b5Var = new b5(11, this, view);
+                    this.b = b5Var;
+                    view.postDelayed(b5Var, aVar.getLongPressDuration());
+                    return true;
+                }
+            }
         }
-        try {
-            int parseInt = Integer.parseInt(str.substring(matcher.end(), str.length() - 1), matcher.end() == 2 ? 10 : 16);
-            return parseInt == 0 ? "�" : new String(Character.toChars(parseInt));
-        } catch (IllegalArgumentException unused) {
-            return "�";
+        if (action == 1) {
+            int i10 = this.c;
+            if ((i10 & 1) != 0) {
+                if ((i10 & 4) != 0) {
+                    aVar.onLongPressFinish(view, x10, y3);
+                    this.c &= -5;
+                } else {
+                    aVar.onClickAt(view, x10, y3);
+                    if ((this.c & 256) == 0 && view != null) {
+                        view.playSoundEffect(0);
+                    }
+                }
+                b(view, x10, y3);
+                return true;
+            }
+        } else if (action != 2) {
+            if (action == 3 && (this.c & 1) != 0) {
+                b(view, x10, y3);
+                return true;
+            }
+        } else if ((this.c & 1) != 0) {
+            aVar.onClickTouchMove(view, x10, y3);
+            if ((this.c & 4) != 0) {
+                aVar.onLongPressMove(view, motionEvent, x10, y3, this.f, this.g);
+                return true;
+            }
+            if (aVar.needCancelTouchBySlopMove() && Math.max(Math.abs(this.d - x10), Math.abs(this.e - y3)) > ViewConfiguration.get(view.getContext()).getScaledTouchSlop() * 1.89f) {
+                b(view, x10, y3);
+                return true;
+            }
+        }
+        return (this.c & 1) != 0;
+    }
+
+    public final void b(View view, float f7, float f10) {
+        int i10 = this.c;
+        if ((i10 & 2) != 0) {
+            this.c = i10 & (-3);
+            b5 b5Var = this.b;
+            if (b5Var == null) {
+                throw new AssertionError();
+            }
+            view.removeCallbacks(b5Var);
+            this.b = null;
+        }
+        int i11 = this.c;
+        int i12 = i11 & 8;
+        a aVar = this.a;
+        if (i12 != 0) {
+            this.c = i11 & (-9);
+            aVar.onLongPressCancelled(view, f7, f10);
+        }
+        if ((this.c & 4) != 0) {
+            aVar.onLongPressFinish(view, f7, f10);
+            this.c &= -5;
+        }
+        if ((this.c & 1) != 0) {
+            aVar.onClickTouchUp(view, f7, f10);
+            this.c &= -2;
         }
     }
 }

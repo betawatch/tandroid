@@ -1,29 +1,15 @@
 package com.google.android.gms.internal.cast;
 
-import java.util.NoSuchElementException;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class k0 extends u0 {
-    public boolean b;
-    public final /* synthetic */ Object c;
+public final class k0 {
+    public final Object a;
+    public final Object b;
+    public final Object c;
 
-    public k0(Object obj) {
-        super(0);
-        this.c = obj;
-    }
-
-    @Override // java.util.Iterator
-    public final boolean hasNext() {
-        return !this.b;
-    }
-
-    @Override // java.util.Iterator
-    public final Object next() {
-        if (this.b) {
-            throw new NoSuchElementException();
-        }
-        this.b = true;
-        return this.c;
+    public k0(Object obj, Object obj2, Object obj3) {
+        this.a = obj;
+        this.b = obj2;
+        this.c = obj3;
     }
 }

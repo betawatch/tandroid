@@ -1,6 +1,6 @@
 package androidx.lifecycle;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class SavedStateHandleController implements r {
     public final String a;
@@ -12,9 +12,9 @@ public final class SavedStateHandleController implements r {
         this.b = i0Var;
     }
 
-    public final void c(o lifecycle, g2.e registry) {
-        kotlin.jvm.internal.j.e(registry, "registry");
-        kotlin.jvm.internal.j.e(lifecycle, "lifecycle");
+    public final void c(o lifecycle, m.p registry) {
+        kotlin.jvm.internal.i.e(registry, "registry");
+        kotlin.jvm.internal.i.e(lifecycle, "lifecycle");
         if (this.c) {
             throw new IllegalStateException("Already attached to lifecycleOwner");
         }

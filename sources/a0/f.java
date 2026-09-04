@@ -11,9 +11,9 @@ import java.util.function.BiConsumer;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class f extends k implements Map, j$.util.Map {
+public final class f extends l implements Map, j$.util.Map {
     public a d;
     public c e;
     public e f;
@@ -91,10 +91,10 @@ public final class f extends k implements Map, j$.util.Map {
         int[] iArr = this.a;
         if (iArr.length < size) {
             int[] copyOf = Arrays.copyOf(iArr, size);
-            kotlin.jvm.internal.j.d(copyOf, "copyOf(this, newSize)");
+            kotlin.jvm.internal.i.d(copyOf, "copyOf(this, newSize)");
             this.a = copyOf;
             Object[] copyOf2 = Arrays.copyOf(this.b, size * 2);
-            kotlin.jvm.internal.j.d(copyOf2, "copyOf(this, newSize)");
+            kotlin.jvm.internal.i.d(copyOf2, "copyOf(this, newSize)");
             this.b = copyOf2;
         }
         if (this.c != i10) {

@@ -1,46 +1,55 @@
 package org.telegram.ui;
 
-import android.animation.ValueAnimator;
-import org.telegram.messenger.AndroidUtilities;
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
+import android.animation.AnimatorSet;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class b51 implements ValueAnimator.AnimatorUpdateListener {
+public final class b51 extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ x61 b;
-    public final /* synthetic */ boolean c;
+    public final /* synthetic */ SecretMediaViewer b;
 
-    public /* synthetic */ b51(x61 x61Var, boolean z4, int i10) {
+    public /* synthetic */ b51(SecretMediaViewer secretMediaViewer, int i10) {
         this.a = i10;
-        this.b = x61Var;
-        this.c = z4;
+        this.b = secretMediaViewer;
     }
 
-    @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-    public final void onAnimationUpdate(ValueAnimator valueAnimator) {
+    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
+    public final void onAnimationEnd(Animator animator) {
         switch (this.a) {
             case 0:
-                x61 x61Var = this.b;
-                t51 t51Var = x61Var.e0;
-                i51 i51Var = x61Var.f0;
-                float floatValue = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!this.c) {
-                    floatValue = 1.0f - floatValue;
+                SecretMediaViewer secretMediaViewer = this.b;
+                Runnable runnable = secretMediaViewer.o0;
+                if (runnable != null) {
+                    runnable.run();
+                    secretMediaViewer.o0 = null;
+                    break;
                 }
-                float f10 = 1.0f - floatValue;
-                t51Var.setAlpha(f10);
-                t51Var.setTranslationY(AndroidUtilities.dp(8.0f) * floatValue);
-                i51Var.setAlpha(floatValue);
-                i51Var.setTranslationY(AndroidUtilities.dp(8.0f) * f10);
-                x61Var.g0.setAlpha(i51Var.getAlpha() * floatValue);
+                break;
+            case 1:
+                SecretMediaViewer secretMediaViewer2 = this.b;
+                AnimatorSet animatorSet = secretMediaViewer2.G;
+                if (animatorSet != null && animatorSet.equals(animator)) {
+                    secretMediaViewer2.F.setVisibility(8);
+                    secretMediaViewer2.G = null;
+                    secretMediaViewer2.a0.scrollTo(0, 0);
+                    break;
+                }
+                break;
+            case 2:
+                SecretMediaViewer secretMediaViewer3 = this.b;
+                Runnable runnable2 = secretMediaViewer3.o0;
+                if (runnable2 != null) {
+                    runnable2.run();
+                    secretMediaViewer3.o0 = null;
+                    break;
+                }
                 break;
             default:
-                float floatValue2 = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-                if (!this.c) {
-                    floatValue2 = 1.0f - floatValue2;
-                }
-                x61 x61Var2 = this.b;
-                x61Var2.g0.setAlpha(x61Var2.f0.getAlpha() * floatValue2);
+                SecretMediaViewer secretMediaViewer4 = this.b;
+                secretMediaViewer4.K0 = null;
+                secretMediaViewer4.e.invalidate();
                 break;
         }
     }

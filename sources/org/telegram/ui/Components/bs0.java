@@ -2,37 +2,37 @@ package org.telegram.ui.Components;
 
 import android.os.Bundle;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class bs0 extends org.telegram.ui.zn {
-    public boolean Nc;
-    public final /* synthetic */ int Oc;
-    public final /* synthetic */ yu0 Pc;
+public final class bs0 extends org.telegram.ui.co {
+    public boolean Qc;
+    public final /* synthetic */ int Rc;
+    public final /* synthetic */ xu0 Sc;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public bs0(yu0 yu0Var, Bundle bundle, int i10) {
+    public bs0(xu0 xu0Var, Bundle bundle, int i10) {
         super(bundle);
-        this.Pc = yu0Var;
-        this.Oc = i10;
-        this.Nc = true;
+        this.Sc = xu0Var;
+        this.Rc = i10;
+        this.Qc = true;
     }
 
-    @Override // org.telegram.ui.zn, org.telegram.ui.ActionBar.p2
-    public final void onTransitionAnimationStart(boolean z4, boolean z10) {
-        yu0 yu0Var = this.Pc;
-        ju0 ju0Var = yu0Var.P;
-        if (this.Nc) {
-            if (this.g0 != null) {
+    @Override // org.telegram.ui.co, org.telegram.ui.ActionBar.n2
+    public final void onTransitionAnimationStart(boolean z10, boolean z11) {
+        xu0 xu0Var = this.Sc;
+        iu0 iu0Var = xu0Var.S;
+        if (this.Qc) {
+            if (this.j0 != null) {
                 la("");
-                this.g0.H(ju0Var.w, false);
+                this.j0.H(iu0Var.w, false);
             }
-            org.telegram.ui.xk xkVar = this.l1;
-            if (xkVar != null) {
-                xkVar.e(ju0Var.x, false);
+            org.telegram.ui.yk ykVar = this.o1;
+            if (ykVar != null) {
+                ykVar.e(iu0Var.x, false);
             }
-            yu0Var.s1.getMediaDataController().portSavedSearchResults(getClassGuid(), ju0Var.x, ju0Var.w, ju0Var.n, ju0Var.h, this.Oc, ju0Var.v, ju0Var.s);
-            this.Nc = false;
+            xu0Var.v1.getMediaDataController().portSavedSearchResults(getClassGuid(), iu0Var.x, iu0Var.w, iu0Var.n, iu0Var.h, this.Rc, iu0Var.v, iu0Var.s);
+            this.Qc = false;
         }
-        super.onTransitionAnimationStart(z4, z10);
+        super.onTransitionAnimationStart(z10, z11);
     }
 }

@@ -1,32 +1,27 @@
 package org.telegram.ui;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ce1 extends AnimatorListenerAdapter {
+public final /* synthetic */ class ce1 implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ ge1 b;
+    public final /* synthetic */ le1 b;
 
-    public /* synthetic */ ce1(ge1 ge1Var, int i10) {
+    public /* synthetic */ ce1(le1 le1Var, int i10) {
         this.a = i10;
-        this.b = ge1Var;
+        this.b = le1Var;
     }
 
-    @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
-    public final void onAnimationEnd(Animator animator) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                ge1 ge1Var = this.b;
-                ge1Var.v = 0;
-                ge1Var.n.setVisibility(8);
+                this.b.c(false);
                 break;
             case 1:
-                this.b.v = 0;
+                super/*android.app.Dialog*/.dismiss();
                 break;
             default:
-                this.b.C.setVisibility(8);
+                this.b.c(false);
                 break;
         }
     }

@@ -11,7 +11,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class n5 extends FrameLayout {
     public final /* synthetic */ s5 a;
@@ -23,26 +23,26 @@ public final class n5 extends FrameLayout {
     }
 
     @Override // android.view.ViewGroup
-    public final boolean drawChild(Canvas canvas, View view, long j10) {
+    public final boolean drawChild(Canvas canvas, View view, long j3) {
         float measuredWidth;
         float measuredHeight;
         int i10;
         s5 s5Var = this.a;
         o5 o5Var = s5Var.a;
-        if (s5Var.J == null || view != o5Var) {
-            return super.drawChild(canvas, view, j10);
+        if (s5Var.M == null || view != o5Var) {
+            return super.drawChild(canvas, view, j3);
         }
-        boolean drawChild = super.drawChild(canvas, view, j10);
-        if (s5Var.K) {
-            Rect rect = s5.U;
-            MediaController.PhotoEntry photoEntry = s5Var.D;
+        boolean drawChild = super.drawChild(canvas, view, j3);
+        if (s5Var.N) {
+            Rect rect = s5.a0;
+            MediaController.PhotoEntry photoEntry = s5Var.G;
             if (photoEntry == null || !photoEntry.isAttachSpoilerRevealed) {
-                s5Var.J.c(canvas, s5Var.b, o5Var.getMeasuredWidth(), o5Var.getMeasuredHeight(), 1.0f, false);
-                MediaController.PhotoEntry photoEntry2 = s5Var.D;
+                s5Var.M.c(canvas, s5Var.b, o5Var.getMeasuredWidth(), o5Var.getMeasuredHeight(), 1.0f, false);
+                MediaController.PhotoEntry photoEntry2 = s5Var.G;
                 if (photoEntry2 != null && photoEntry2.starsAmount > 0 && o5Var.y != null) {
-                    Path path = o5Var.B;
+                    Path path = o5Var.E;
                     if (path == null) {
-                        o5Var.B = new Path();
+                        o5Var.E = new Path();
                     } else {
                         path.rewind();
                     }
@@ -56,24 +56,24 @@ public final class n5 extends FrameLayout {
                     }
                     float dp = o5Var.y.c + AndroidUtilities.dp(18.0f);
                     float dp2 = AndroidUtilities.dp(28.0f);
-                    float f10 = (measuredWidth - dp) / 2.0f;
-                    float f11 = measuredHeight / 2.0f;
+                    float f7 = (measuredWidth - dp) / 2.0f;
+                    float f10 = measuredHeight / 2.0f;
                     RectF rectF = AndroidUtilities.rectTmp;
-                    float f12 = dp2 / 2.0f;
-                    rectF.set(f10, f11 - f12, dp + f10, f11 + f12);
-                    o5Var.B.addRoundRect(rectF, f12, f12, Path.Direction.CW);
+                    float f11 = dp2 / 2.0f;
+                    rectF.set(f7, f10 - f11, dp + f7, f10 + f11);
+                    o5Var.E.addRoundRect(rectF, f11, f11, Path.Direction.CW);
                     canvas.save();
-                    canvas.clipPath(o5Var.B);
+                    canvas.clipPath(o5Var.E);
                     ImageReceiver imageReceiver = o5Var.b;
                     if (imageReceiver != null && o5Var.s) {
-                        imageReceiver.setColorFilter(o5Var.C);
+                        imageReceiver.setColorFilter(o5Var.F);
                         float alpha = o5Var.b.getAlpha();
                         o5Var.b.setAlpha(1.0f);
                         o5Var.b.draw(canvas);
                         o5Var.b.setAlpha(alpha);
                         o5Var.b.setColorFilter(null);
                     }
-                    o5Var.y.c(f10 + AndroidUtilities.dp(9.0f), f11, 1.0f, -1, canvas);
+                    o5Var.y.c(f7 + AndroidUtilities.dp(9.0f), f10, 1.0f, -1, canvas);
                     canvas.restore();
                 }
             }

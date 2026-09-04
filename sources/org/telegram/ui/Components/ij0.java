@@ -1,50 +1,67 @@
 package org.telegram.ui.Components;
 
-import android.graphics.Canvas;
-import android.graphics.ColorFilter;
-import android.graphics.Rect;
-import android.graphics.drawable.Drawable;
-import org.telegram.messenger.AndroidUtilities;
+import android.content.Context;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import org.telegram.messenger.MessagesController;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ij0 extends Drawable {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ jj0 c;
+public final class ij0 extends s4.h0 {
+    public final /* synthetic */ int c;
+    public final /* synthetic */ Context d;
+    public final /* synthetic */ org.telegram.ui.ActionBar.f6 e;
+    public final /* synthetic */ boolean f;
+    public final /* synthetic */ pj0 h;
 
-    public ij0(jj0 jj0Var, int i10, int i11) {
-        this.c = jj0Var;
-        this.a = i10;
-        this.b = i11;
+    public ij0(pj0 pj0Var, int i10, Context context, org.telegram.ui.ActionBar.f6 f6Var, boolean z10) {
+        this.h = pj0Var;
+        this.c = i10;
+        this.d = context;
+        this.e = f6Var;
+        this.f = z10;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void draw(Canvas canvas) {
-        Rect rect = AndroidUtilities.rectTmp2;
-        int centerX = getBounds().centerX();
-        float f10 = this.a;
-        int dp = centerX - (AndroidUtilities.dp(f10) / 2);
-        int centerY = getBounds().centerY();
-        float f11 = this.b;
-        rect.set(dp, centerY - (AndroidUtilities.dp(f11) / 2), (AndroidUtilities.dp(f10) / 2) + getBounds().centerX(), (AndroidUtilities.dp(f11) / 2) + getBounds().centerY());
-        jj0 jj0Var = this.c;
-        jj0Var.c.setImageCoords(rect);
-        jj0Var.c.draw(canvas);
+    @Override // s4.h0
+    public final int h() {
+        pj0 pj0Var = this.h;
+        return pj0Var.n.size() + ((pj0Var.H.isEmpty() || MessagesController.getInstance(this.c).premiumFeaturesBlocked()) ? 0 : 1);
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final int getOpacity() {
-        return -2;
+    @Override // s4.h0
+    public final int j(int i10) {
+        return i10 < this.h.n.size() ? 0 : 1;
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setAlpha(int i10) {
-        this.c.c.setAlpha(i10 / 255.0f);
+    @Override // s4.h0
+    public final void v(s4.c1 c1Var, int i10) {
+        if (c1Var.f == 0) {
+            ((org.telegram.ui.Cells.n6) c1Var.a).setUserReaction((TLRPC.MessagePeerReaction) this.h.n.get(i10));
+        }
     }
 
-    @Override // android.graphics.drawable.Drawable
-    public final void setColorFilter(ColorFilter colorFilter) {
-        this.c.c.setColorFilter(colorFilter);
+    @Override // s4.h0
+    public final s4.c1 x(ViewGroup viewGroup, int i10) {
+        FrameLayout n6Var;
+        if (i10 != 0) {
+            pj0 pj0Var = this.h;
+            ua0 ua0Var = pj0Var.J;
+            if (ua0Var == null) {
+                pj0Var.i();
+            } else if (ua0Var.getParent() != null) {
+                ((ViewGroup) pj0Var.J.getParent()).removeView(pj0Var.J);
+            }
+            Context context = this.d;
+            n6Var = new FrameLayout(context);
+            View view = new View(context);
+            view.setBackgroundColor(org.telegram.ui.ActionBar.j6.l1(0.06f, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.E8, this.e)));
+            n6Var.addView(view, w7.x5.c(8.0f, -1));
+            n6Var.addView(pj0Var.J, w7.x5.d(-1, -1.0f, 0, 0.0f, 8.0f, 0.0f, 0.0f));
+        } else {
+            n6Var = new org.telegram.ui.Cells.n6(0, this.c, this.d, this.e, true, this.f);
+        }
+        return new vk0(n6Var);
     }
 }

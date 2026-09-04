@@ -1,190 +1,71 @@
 package ig;
 
-import android.animation.ValueAnimator;
 import android.content.Context;
-import android.graphics.Bitmap;
 import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffColorFilter;
-import android.text.method.LinkMovementMethod;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import eg.p2;
-import k7.b6;
+import android.graphics.drawable.Drawable;
+import android.view.View;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ChatObject;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.messenger.y3;
-import org.telegram.tgnet.TLRPC;
+import org.telegram.tgnet.TLObject;
 import org.telegram.ui.ActionBar.f6;
 import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.Components.c90;
-import org.telegram.ui.Components.f90;
-import org.telegram.ui.Components.mr;
+import org.telegram.ui.Components.EditTextBoldCursor;
+import org.telegram.ui.Components.h5;
+import org.telegram.ui.Components.p6;
+import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class s extends FrameLayout {
-    public final eg.i a;
-    public final p b;
-    public final TextView c;
-    public final f90 d;
-    public final f6 e;
-    public final c90 f;
-    public final Paint[] h;
-    public ValueAnimator n;
+public final class s extends EditTextBoldCursor {
+    public final h5 b;
+    public int c;
+    public final p6 d;
+    public final /* synthetic */ f6 e;
 
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public s(Context context, f6 f6Var) {
         super(context);
         this.e = f6Var;
-        LinearLayout f10 = y3.f(context, 1);
-        eg.i iVar = new eg.i(context, 1, 0, 2);
-        this.a = iVar;
-        Bitmap createBitmap = Bitmap.createBitmap(50, 50, Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(createBitmap);
-        int i10 = j6.Mj;
-        canvas.drawColor(i0.a.d(0.5f, j6.v0(i10, f6Var), j6.v0(j6.h5, f6Var)));
-        iVar.setBackgroundBitmap(createBitmap);
-        fg.a aVar = iVar.b;
-        aVar.w = i10;
-        aVar.x = j6.Lj;
-        aVar.b();
-        f10.addView(iVar, b6.q(160, 160, 1));
-        p pVar = new p(this, context);
-        this.b = pVar;
-        this.h = new Paint[20];
-        a(0.0f);
-        p2 p2Var = pVar.a;
-        p2Var.q = false;
-        p2Var.K = false;
-        p2Var.L = true;
-        p2Var.H = true;
-        p2Var.l = new dg.a0(this, 1);
-        p2Var.c();
-        iVar.setStarParticlesView(pVar);
-        TextView textView = new TextView(context);
-        this.c = textView;
-        org.telegram.ui.b.g(22.0f, 1, textView);
-        int i11 = j6.G6;
-        textView.setTextColor(j6.v0(i11, f6Var));
-        textView.setGravity(1);
-        f10.addView(textView, b6.t(-2, -2, 1, 24, -8, 24, 0));
-        c90 c90Var = new c90(this);
-        this.f = c90Var;
-        f90 f90Var = new f90(context, c90Var, f6Var);
-        this.d = f90Var;
-        f90Var.setTextSize(1, 15.0f);
-        f90Var.setGravity(17);
-        f90Var.setTextColor(j6.v0(i11, f6Var));
-        f90Var.setMovementMethod(LinkMovementMethod.getInstance());
-        f90Var.setLinkTextColor(j6.v0(j6.J6, f6Var));
-        f90Var.setImportantForAccessibility(2);
-        f10.addView(f90Var, b6.d(-1, -2.0f, 17, 24.0f, 8.0f, 24.0f, 18.0f));
-        setClipChildren(false);
-        addView(pVar, b6.e(-1, 234, 48));
-        addView(f10);
-        setWillNotDraw(false);
-    }
-
-    public final void a(float f10) {
-        int i10 = j6.Lj;
-        f6 f6Var = this.e;
-        int v02 = j6.v0(i10, f6Var);
-        int v03 = j6.v0(j6.Mj, f6Var);
-        int d = i0.a.d(f10, v02, -371690);
-        int d10 = i0.a.d(f10, v03, -14281);
-        int i11 = 0;
-        while (true) {
-            Paint[] paintArr = this.h;
-            if (i11 >= paintArr.length) {
-                return;
-            }
-            paintArr[i11] = new Paint(1);
-            paintArr[i11].setColorFilter(new PorterDuffColorFilter(i0.a.d(i11 / (paintArr.length - 1), d, d10), PorterDuff.Mode.SRC_IN));
-            i11++;
-        }
+        this.b = new h5(this);
+        p6 p6Var = new p6(false, true, true, false);
+        this.d = p6Var;
+        p6Var.k(0.2f, 160L, pr.h);
+        p6Var.t(AndroidUtilities.dp(15.33f));
+        p6Var.setCallback(this);
+        p6Var.b = 5;
     }
 
     @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
-        c90 c90Var = this.f;
-        if (c90Var != null) {
-            canvas.save();
-            f90 f90Var = this.d;
-            canvas.translate(f90Var.getLeft(), f90Var.getTop());
-            if (c90Var.f(canvas)) {
-                invalidate();
-            }
-            canvas.restore();
-        }
+    public final void dispatchDraw(Canvas canvas) {
+        super.dispatchDraw(canvas);
+        int a2 = this.b.a(j6.v0(this.c < 0 ? j6.p7 : j6.P5, this.e), false);
+        p6 p6Var = this.d;
+        p6Var.r(a2);
+        p6Var.setBounds(getScrollX(), 0, getWidth() + getScrollX(), getHeight());
+        p6Var.draw(canvas);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
     public final void onMeasure(int i10, int i11) {
-        super.onMeasure(i10, i11);
-        eg.i iVar = this.a;
-        p pVar = this.b;
-        pVar.setTranslationY(((iVar.getMeasuredHeight() / 2.0f) + iVar.getTop()) - (pVar.getMeasuredHeight() / 2.0f));
+        super.onMeasure(i10, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(36.0f), TLObject.FLAG_30));
     }
 
-    public void setBoostViaGifsText(TLRPC.Chat chat) {
-        setOutlineProvider(new q());
-        setClipToOutline(true);
-        ViewGroup.MarginLayoutParams marginLayoutParams = (ViewGroup.MarginLayoutParams) getLayoutParams();
-        marginLayoutParams.topMargin = -AndroidUtilities.dp(6.0f);
-        setLayoutParams(marginLayoutParams);
-        int i10 = j6.a7;
-        f6 f6Var = this.e;
-        setBackgroundColor(j6.v0(i10, f6Var));
-        this.c.setText(LocaleController.formatString("BoostingBoostsViaGifts", R.string.BoostingBoostsViaGifts, new Object[0]));
-        String formatString = LocaleController.formatString(ChatObject.isChannelAndNotMegaGroup(chat) ? R.string.BoostingGetMoreBoost2 : R.string.BoostingGetMoreBoostGroup, new Object[0]);
-        f90 f90Var = this.d;
-        f90Var.setText(formatString);
-        f90Var.setTextColor(j6.v0(j6.r5, f6Var));
-    }
-
-    public void setPaused(boolean z4) {
-        this.a.setPaused(z4);
-        this.b.setPaused(z4);
-    }
-
-    public void setStars(final boolean z4) {
-        ValueAnimator valueAnimator = this.n;
-        if (valueAnimator != null) {
-            valueAnimator.cancel();
-        }
-        eg.i iVar = this.a;
-        final float f10 = iVar.b.i;
-        final float f11 = z4 ? 1.0f : 0.0f;
-        this.n = ValueAnimator.ofFloat(0.0f, 1.0f);
-        final float[] fArr = {0.0f};
-        AndroidUtilities.cancelRunOnUIThread(iVar.R);
-        iVar.d();
-        iVar.i();
-        this.n.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: ig.n
-            @Override // android.animation.ValueAnimator.AnimatorUpdateListener
-            public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                float floatValue = ((Float) valueAnimator2.getAnimatedValue()).floatValue();
-                float[] fArr2 = fArr;
-                float f12 = floatValue - fArr2[0];
-                fArr2[0] = floatValue;
-                s sVar = s.this;
-                eg.i iVar2 = sVar.a;
-                iVar2.b.i = AndroidUtilities.lerp(f10, f11, floatValue);
-                fg.a aVar = iVar2.b;
-                aVar.f = (f12 * 360.0f * (z4 ? 1 : -1)) + aVar.f;
-                aVar.b();
-                sVar.a(iVar2.b.i);
+    @Override // org.telegram.ui.Components.EditTextBoldCursor, org.telegram.ui.Components.bu, android.widget.TextView
+    public final void onTextChanged(CharSequence charSequence, int i10, int i11, int i12) {
+        super.onTextChanged(charSequence, i10, i11, i12);
+        p6 p6Var = this.d;
+        if (p6Var != null) {
+            this.c = 32 - charSequence.length();
+            p6Var.b();
+            String str = "";
+            if (this.c <= 4) {
+                str = "" + this.c;
             }
-        });
-        this.n.addListener(new r(this, fArr, f10, f11, z4));
-        this.n.setDuration(680L);
-        this.n.setInterpolator(mr.h);
-        this.n.start();
+            p6Var.q(str, true, true);
+        }
+    }
+
+    @Override // android.widget.TextView, android.view.View
+    public final boolean verifyDrawable(Drawable drawable) {
+        return drawable == this.d || super.verifyDrawable(drawable);
     }
 }

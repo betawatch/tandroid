@@ -1,30 +1,49 @@
 package org.telegram.messenger;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.util.ArrayList;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final /* synthetic */ class hc implements Runnable {
-    public final /* synthetic */ int a;
+    public final /* synthetic */ int a = 1;
     public final /* synthetic */ MessagesController b;
-    public final /* synthetic */ a0.h c;
+    public final /* synthetic */ long c;
+    public final /* synthetic */ long d;
+    public final /* synthetic */ ArrayList e;
 
-    public /* synthetic */ hc(MessagesController messagesController, a0.h hVar, int i10) {
-        this.a = i10;
+    public /* synthetic */ hc(MessagesController messagesController, long j3, long j10, ArrayList arrayList) {
         this.b = messagesController;
-        this.c = hVar;
+        this.c = j3;
+        this.d = j10;
+        this.e = arrayList;
     }
 
     @Override // java.lang.Runnable
     public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$processUpdateArray$407(this.c);
+                this.b.lambda$processUpdateArray$419(this.c, this.e, this.d);
                 break;
             case 1:
-                this.b.lambda$processUpdateArray$406(this.c);
+                this.b.lambda$checkUnreadPollVotesInternal2$431(this.c, this.d, 0, this.e);
                 break;
             default:
-                this.b.lambda$getChannelDifference$340(this.c);
+                this.b.lambda$deleteMessagesByPush$370(this.e, this.c, this.d);
                 break;
         }
+    }
+
+    public /* synthetic */ hc(MessagesController messagesController, long j3, ArrayList arrayList, long j10) {
+        this.b = messagesController;
+        this.c = j3;
+        this.e = arrayList;
+        this.d = j10;
+    }
+
+    public /* synthetic */ hc(MessagesController messagesController, ArrayList arrayList, long j3, long j10) {
+        this.b = messagesController;
+        this.e = arrayList;
+        this.c = j3;
+        this.d = j10;
     }
 }

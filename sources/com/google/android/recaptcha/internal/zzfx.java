@@ -1,16 +1,17 @@
 package com.google.android.recaptcha.internal;
 
-import dd.p;
-import k7.p7;
-import ld.s;
-import ld.t;
-import uc.c;
-import vc.a;
-import wc.i;
+import gd.i;
+import id.c;
+import jd.a;
+import kd.j;
+import rd.p;
+import v7.t7;
+import zd.s;
+import zd.t;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-final class zzfx extends i implements p {
+final class zzfx extends j implements p {
     Object zza;
     int zzb;
     final /* synthetic */ zzgb zzc;
@@ -19,30 +20,30 @@ final class zzfx extends i implements p {
     private /* synthetic */ Object zzf;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public zzfx(zzgb zzgbVar, long j10, s sVar, c cVar) {
+    public zzfx(zzgb zzgbVar, long j3, s sVar, c cVar) {
         super(2, cVar);
         this.zzc = zzgbVar;
-        this.zzd = j10;
+        this.zzd = j3;
         this.zze = sVar;
     }
 
-    @Override // wc.a
+    @Override // kd.a
     public final c create(Object obj, c cVar) {
         zzfx zzfxVar = new zzfx(this.zzc, this.zzd, this.zze, cVar);
         zzfxVar.zzf = obj;
         return zzfxVar;
     }
 
-    @Override // dd.p
+    @Override // rd.p
     public final /* bridge */ /* synthetic */ Object invoke(Object obj, Object obj2) {
-        return ((zzfx) create((zzgr) obj, (c) obj2)).invokeSuspend(sc.i.a);
+        return ((zzfx) create((zzgr) obj, (c) obj2)).invokeSuspend(i.a);
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:22:0x007a, code lost:
     
         if (r9 == r0) goto L36;
      */
-    @Override // wc.a
+    @Override // kd.a
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
@@ -57,14 +58,14 @@ final class zzfx extends i implements p {
         int i10 = this.zzb;
         try {
             if (i10 == 0) {
-                p7.b(obj);
+                t7.b(obj);
                 zzgrVar = (zzgr) this.zzf;
                 zzfpVar = this.zzc.zza;
-                long j10 = this.zzd;
+                long j3 = this.zzd;
                 this.zzf = zzgrVar;
                 this.zza = zzgrVar;
                 this.zzb = 1;
-                obj = zzfpVar.zzp(j10, this);
+                obj = zzfpVar.zzp(j3, this);
                 if (obj == aVar) {
                     return aVar;
                 }
@@ -72,18 +73,18 @@ final class zzfx extends i implements p {
             } else if (i10 == 1) {
                 zzgrVar = (zzgr) this.zza;
                 zzgrVar2 = (zzgr) this.zzf;
-                p7.b(obj);
+                t7.b(obj);
             } else {
                 if (i10 != 2) {
                     if (i10 != 3) {
-                        p7.b(obj);
+                        t7.b(obj);
                         zzgb zzgbVar = this.zzc;
                         zzdsVar = zzdv.zzb;
                         zzgbVar.zzf = zzdsVar;
-                        return Boolean.valueOf(((t) this.zze).A(sc.i.a));
+                        return Boolean.valueOf(((t) this.zze).A(i.a));
                     }
                     zzgrVar3 = (zzgr) this.zzf;
-                    p7.b(obj);
+                    t7.b(obj);
                     this.zzf = null;
                     this.zzb = 4;
                     if (((zzhg) obj).zza(zzgrVar3.zza(), this) == aVar) {
@@ -92,18 +93,18 @@ final class zzfx extends i implements p {
                     zzgb zzgbVar2 = this.zzc;
                     zzdsVar = zzdv.zzb;
                     zzgbVar2.zzf = zzdsVar;
-                    return Boolean.valueOf(((t) this.zze).A(sc.i.a));
+                    return Boolean.valueOf(((t) this.zze).A(i.a));
                 }
                 zzgrVar3 = (zzgr) this.zzf;
-                p7.b(obj);
+                t7.b(obj);
                 zzxn zzxnVar = (zzxn) obj;
                 zzgb zzgbVar3 = this.zzc;
                 zzgbVar3.zze = zzxnVar;
                 zzfpVar2 = zzgbVar3.zza;
-                long j11 = this.zzd;
+                long j10 = this.zzd;
                 this.zzf = zzgrVar3;
                 this.zzb = 3;
-                obj = zzfpVar2.zzn(zzxnVar, j11, this);
+                obj = zzfpVar2.zzn(zzxnVar, j10, this);
             }
             this.zzf = zzgrVar2;
             this.zza = null;
@@ -115,15 +116,15 @@ final class zzfx extends i implements p {
                 zzgb zzgbVar32 = this.zzc;
                 zzgbVar32.zze = zzxnVar2;
                 zzfpVar2 = zzgbVar32.zza;
-                long j112 = this.zzd;
+                long j102 = this.zzd;
                 this.zzf = zzgrVar3;
                 this.zzb = 3;
-                obj = zzfpVar2.zzn(zzxnVar2, j112, this);
+                obj = zzfpVar2.zzn(zzxnVar2, j102, this);
             }
             return aVar;
-        } catch (zzcg e) {
-            this.zzc.zzd = e;
-            throw e;
+        } catch (zzcg e7) {
+            this.zzc.zzd = e7;
+            throw e7;
         }
     }
 }

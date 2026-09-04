@@ -1,12 +1,12 @@
 package com.google.android.recaptcha.internal;
 
+import hd.f;
+import hd.i;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import tc.f;
-import tc.i;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class zzjj implements zzjt {
     public static final zzjj zza = new zzjj();

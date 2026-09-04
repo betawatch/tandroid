@@ -1,200 +1,105 @@
 package androidx.mediarouter.app;
 
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.os.SystemClock;
-import android.support.v4.media.MediaDescriptionCompat;
-import android.util.Log;
-import j$.util.DesugarCollections;
-import j$.util.Objects;
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
-import java.util.List;
+import android.os.Bundle;
+import android.os.Handler;
+import android.os.IBinder;
+import android.os.Message;
+import android.support.v4.media.MediaMetadataCompat;
+import android.support.v4.media.session.PlaybackStateCompat;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class r extends AsyncTask {
-    public final Bitmap a;
-    public final Uri b;
-    public int c;
-    public long d;
-    public final /* synthetic */ v e;
+public final class r implements IBinder.DeathRecipient {
+    public final android.support.v4.media.session.e a = new android.support.v4.media.session.e(this);
+    public android.support.v4.media.session.f b;
+    public android.support.v4.media.session.g c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ g.u e;
 
-    public r(v vVar) {
-        this.e = vVar;
-        MediaDescriptionCompat mediaDescriptionCompat = vVar.i0;
-        Bitmap bitmap = mediaDescriptionCompat == null ? null : mediaDescriptionCompat.e;
-        if (bitmap != null && bitmap.isRecycled()) {
-            Log.w("MediaRouteCtrlDialog", "Can't fetch the given art bitmap because it's already recycled.");
-            bitmap = null;
-        }
-        this.a = bitmap;
-        MediaDescriptionCompat mediaDescriptionCompat2 = vVar.i0;
-        this.b = mediaDescriptionCompat2 != null ? mediaDescriptionCompat2.f : null;
+    public r(g.u uVar, int i10) {
+        this.d = i10;
+        this.e = uVar;
     }
 
-    public final BufferedInputStream a(Uri uri) {
-        InputStream openInputStream;
-        String lowerCase = uri.getScheme().toLowerCase();
-        if ("android.resource".equals(lowerCase) || "content".equals(lowerCase) || "file".equals(lowerCase)) {
-            openInputStream = this.e.s.getContentResolver().openInputStream(uri);
-        } else {
-            URLConnection openConnection = new URL(uri.toString()).openConnection();
-            int i10 = v.C0;
-            openConnection.setConnectTimeout(i10);
-            openConnection.setReadTimeout(i10);
-            openInputStream = openConnection.getInputStream();
+    public final void a(MediaMetadataCompat mediaMetadataCompat) {
+        switch (this.d) {
+            case 0:
+                u uVar = (u) this.e;
+                uVar.l0 = mediaMetadataCompat == null ? null : mediaMetadataCompat.a();
+                uVar.r();
+                uVar.q(false);
+                break;
+            default:
+                o0 o0Var = (o0) this.e;
+                o0Var.b0 = mediaMetadataCompat == null ? null : mediaMetadataCompat.a();
+                o0Var.f();
+                o0Var.k();
+                break;
         }
-        if (openInputStream == null) {
-            return null;
-        }
-        return new BufferedInputStream(openInputStream);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:12:0x0028, code lost:
-    
-        if (r5 != null) goto L11;
-     */
-    /* JADX WARN: Not initialized variable reg: 5, insn: 0x002f: MOVE (r3 I:??[OBJECT, ARRAY]) = (r5 I:??[OBJECT, ARRAY]) (LINE:48), block:B:60:0x002f */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x00f6  */
-    @Override // android.os.AsyncTask
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final Object doInBackground(Object[] objArr) {
-        InputStream inputStream;
-        BufferedInputStream bufferedInputStream;
-        InputStream inputStream2 = null;
-        Bitmap bitmap = this.a;
-        if (bitmap == null) {
-            Uri uri = this.b;
-            try {
-                if (uri != null) {
-                    try {
-                        bufferedInputStream = a(uri);
-                        try {
-                            try {
-                                if (bufferedInputStream == null) {
-                                    Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
-                                } else {
-                                    BitmapFactory.Options options = new BitmapFactory.Options();
-                                    options.inJustDecodeBounds = true;
-                                    BitmapFactory.decodeStream(bufferedInputStream, null, options);
-                                    if (options.outWidth != 0 && options.outHeight != 0) {
-                                        try {
-                                            bufferedInputStream.reset();
-                                        } catch (IOException unused) {
-                                            bufferedInputStream.close();
-                                            bufferedInputStream = a(uri);
-                                            if (bufferedInputStream == null) {
-                                                Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri);
-                                                if (bufferedInputStream == null) {
-                                                    return null;
-                                                }
-                                            }
-                                        }
-                                        options.inJustDecodeBounds = false;
-                                        options.inSampleSize = Math.max(1, Integer.highestOneBit(options.outHeight / this.e.k(options.outWidth, options.outHeight)));
-                                        if (isCancelled()) {
-                                            bufferedInputStream.close();
-                                            return null;
-                                        }
-                                        bitmap = BitmapFactory.decodeStream(bufferedInputStream, null, options);
-                                        try {
-                                            bufferedInputStream.close();
-                                        } catch (IOException unused2) {
-                                        }
-                                    }
-                                }
-                                bufferedInputStream.close();
-                                return null;
-                            } catch (IOException unused3) {
-                                return null;
-                            }
-                        } catch (IOException e) {
-                            e = e;
-                            Log.w("MediaRouteCtrlDialog", "Unable to open: " + uri, e);
-                            if (bufferedInputStream != null) {
-                                try {
-                                    bufferedInputStream.close();
-                                } catch (IOException unused4) {
-                                }
-                            }
-                            bitmap = null;
-                            if (bitmap == null) {
-                            }
-                            if (bitmap != null) {
-                                androidx.emoji2.text.p pVar = new androidx.emoji2.text.p(bitmap);
-                                pVar.a = 1;
-                                List list = (List) pVar.b().a;
-                                this.c = DesugarCollections.unmodifiableList(list).isEmpty() ? 0 : ((d2.d) DesugarCollections.unmodifiableList(list).get(0)).d;
-                            }
-                            return bitmap;
-                        }
-                    } catch (IOException e6) {
-                        e = e6;
-                        bufferedInputStream = null;
-                    } catch (Throwable th2) {
-                        th = th2;
-                        if (inputStream2 != null) {
-                            try {
-                                inputStream2.close();
-                            } catch (IOException unused5) {
-                            }
-                        }
-                        throw th;
-                    }
+    public void b(PlaybackStateCompat playbackStateCompat) {
+        switch (this.d) {
+            case 0:
+                u uVar = (u) this.e;
+                uVar.k0 = playbackStateCompat;
+                uVar.q(false);
+                break;
+        }
+    }
+
+    @Override // android.os.IBinder.DeathRecipient
+    public final void binderDied() {
+        e(8, null, null);
+    }
+
+    public final void d() {
+        switch (this.d) {
+            case 0:
+                u uVar = (u) this.e;
+                pf.b bVar = uVar.i0;
+                if (bVar != null) {
+                    bVar.j0(uVar.j0);
+                    uVar.i0 = null;
+                    break;
                 }
-                bitmap = null;
-            } catch (Throwable th3) {
-                th = th3;
-                inputStream2 = inputStream;
+                break;
+            default:
+                o0 o0Var = (o0) this.e;
+                pf.b bVar2 = o0Var.Z;
+                if (bVar2 != null) {
+                    bVar2.j0(o0Var.a0);
+                    o0Var.Z = null;
+                    break;
+                }
+                break;
+        }
+    }
+
+    public final void e(int i10, Object obj, Bundle bundle) {
+        android.support.v4.media.session.f fVar = this.b;
+        if (fVar != null) {
+            Message obtainMessage = fVar.obtainMessage(i10, obj);
+            obtainMessage.setData(bundle);
+            obtainMessage.sendToTarget();
+        }
+    }
+
+    public final void f(Handler handler) {
+        if (handler != null) {
+            android.support.v4.media.session.f fVar = new android.support.v4.media.session.f(this, handler.getLooper());
+            this.b = fVar;
+            fVar.b = true;
+        } else {
+            android.support.v4.media.session.f fVar2 = this.b;
+            if (fVar2 != null) {
+                fVar2.b = false;
+                fVar2.removeCallbacksAndMessages(null);
+                this.b = null;
             }
         }
-        if (bitmap == null && bitmap.isRecycled()) {
-            Log.w("MediaRouteCtrlDialog", "Can't use recycled bitmap: " + bitmap);
-            return null;
-        }
-        if (bitmap != null && bitmap.getWidth() < bitmap.getHeight()) {
-            androidx.emoji2.text.p pVar2 = new androidx.emoji2.text.p(bitmap);
-            pVar2.a = 1;
-            List list2 = (List) pVar2.b().a;
-            this.c = DesugarCollections.unmodifiableList(list2).isEmpty() ? 0 : ((d2.d) DesugarCollections.unmodifiableList(list2).get(0)).d;
-        }
-        return bitmap;
     }
 
-    @Override // android.os.AsyncTask
-    public final void onPostExecute(Object obj) {
-        Bitmap bitmap = (Bitmap) obj;
-        v vVar = this.e;
-        vVar.j0 = null;
-        Bitmap bitmap2 = vVar.k0;
-        Bitmap bitmap3 = this.a;
-        boolean equals = Objects.equals(bitmap2, bitmap3);
-        Uri uri = this.b;
-        if (equals && Objects.equals(vVar.l0, uri)) {
-            return;
-        }
-        vVar.k0 = bitmap3;
-        vVar.n0 = bitmap;
-        vVar.l0 = uri;
-        vVar.o0 = this.c;
-        vVar.m0 = true;
-        vVar.q(SystemClock.uptimeMillis() - this.d > 120);
-    }
-
-    @Override // android.os.AsyncTask
-    public final void onPreExecute() {
-        this.d = SystemClock.uptimeMillis();
-        v vVar = this.e;
-        vVar.m0 = false;
-        vVar.n0 = null;
-        vVar.o0 = 0;
+    public final void c(PlaybackStateCompat playbackStateCompat) {
     }
 }

@@ -1,45 +1,92 @@
 package kg;
 
-import android.content.Context;
-import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.TextView;
-import k7.b6;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.LocaleController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.ui.ActionBar.f6;
-import org.telegram.ui.ActionBar.j6;
-import org.telegram.ui.ai;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class e extends FrameLayout {
-    public final f6 a;
-    public final TextView b;
+public final class e extends b {
+    public long[] l;
+    public long[][] m;
+    public int n;
 
-    public e(Context context, f6 f6Var) {
-        super(context);
-        this.a = f6Var;
-        setBackgroundColor(j6.v0(j6.e7, f6Var));
-        TextView textView = new TextView(getContext());
-        this.b = textView;
-        ai.o(14.0f, 1, textView);
-        textView.setTextColor(j6.v0(j6.f7, f6Var));
-        textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
-        addView(textView, b6.d(-1, -1.0f, (LocaleController.isRTL ? 5 : 3) | 48, 16.0f, 0.0f, 16.0f, 0.0f));
+    public e(b bVar, long j3) {
+        this.d = new ArrayList();
+        this.e = 0L;
+        this.f = Long.MAX_VALUE;
+        this.g = 0.0f;
+        this.h = 0.0f;
+        this.i = 0;
+        this.j = 0;
+        int binarySearch = Arrays.binarySearch(bVar.a, j3);
+        int i10 = binarySearch - 4;
+        int i11 = binarySearch + 4;
+        if (i10 < 0) {
+            i11 += -i10;
+            i10 = 0;
+        }
+        long[] jArr = bVar.a;
+        if (i11 > jArr.length - 1) {
+            i10 -= i11 - jArr.length;
+            i11 = jArr.length - 1;
+        }
+        i10 = i10 < 0 ? 0 : i10;
+        int i12 = (i11 - i10) + 1;
+        this.a = new long[i12];
+        this.b = new float[i12];
+        this.d = new ArrayList();
+        for (int i13 = 0; i13 < bVar.d.size(); i13++) {
+            a aVar = new a();
+            aVar.a = new long[i12];
+            aVar.c = ((a) bVar.d.get(i13)).c;
+            aVar.d = ((a) bVar.d.get(i13)).d;
+            aVar.g = ((a) bVar.d.get(i13)).g;
+            aVar.h = ((a) bVar.d.get(i13)).h;
+            aVar.i = ((a) bVar.d.get(i13)).i;
+            this.d.add(aVar);
+        }
+        int i14 = 0;
+        while (i10 <= i11) {
+            this.a[i14] = bVar.a[i10];
+            for (int i15 = 0; i15 < this.d.size(); i15++) {
+                ((a) this.d.get(i15)).a[i14] = ((a) bVar.d.get(i15)).a[i10];
+            }
+            i14++;
+            i10++;
+        }
+        this.k = 86400000L;
+        e();
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i10), TLObject.FLAG_30), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.dp(32.0f), TLObject.FLAG_30));
-    }
-
-    public void setLetter(CharSequence charSequence) {
-        this.b.setText(charSequence);
-    }
-
-    public void setTextColor(int i10) {
-        this.b.setTextColor(j6.v0(i10, this.a));
+    @Override // kg.b
+    public final void e() {
+        super.e();
+        this.n = 0;
+        int length = this.b.length;
+        int size = this.d.size();
+        int max = Math.max(1, Math.round(length / 140.0f));
+        int i10 = length / max;
+        this.m = (long[][]) Array.newInstance((Class<?>) Long.TYPE, size, i10);
+        long[] jArr = new long[size];
+        for (int i11 = 0; i11 < length; i11++) {
+            for (int i12 = 0; i12 < size; i12++) {
+                long j3 = ((a) this.d.get(i12)).a[i11];
+                if (j3 > jArr[i12]) {
+                    jArr[i12] = j3;
+                }
+            }
+            if (i11 % max == 0) {
+                for (int i13 = 0; i13 < size; i13++) {
+                    this.m[i13][this.n] = jArr[i13];
+                    jArr[i13] = 0;
+                }
+                int i14 = this.n + 1;
+                this.n = i14;
+                if (i14 >= i10) {
+                    return;
+                }
+            }
+        }
     }
 }

@@ -1,30 +1,37 @@
 package org.telegram.messenger;
 
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class d7 implements RequestDelegate {
+public final /* synthetic */ class d7 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ String c;
+    public final /* synthetic */ TLRPC.TL_messages_stickerSet c;
 
-    public /* synthetic */ d7(MediaDataController mediaDataController, String str, int i10) {
+    public /* synthetic */ d7(MediaDataController mediaDataController, TLRPC.TL_messages_stickerSet tL_messages_stickerSet, int i10) {
         this.a = i10;
         this.b = mediaDataController;
-        this.c = str;
+        this.c = tL_messages_stickerSet;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$verifyAnimatedStickerMessageInternal$70(this.c, tLObject, tL_error);
+                this.b.lambda$saveStickerSetIntoCache$40(this.c);
+                break;
+            case 1:
+                this.b.lambda$loadGroupStickerSet$45(this.c);
+                break;
+            case 2:
+                this.b.lambda$loadGroupStickerSet$43(this.c);
+                break;
+            case 3:
+                this.b.lambda$putSetToCache$47(this.c);
                 break;
             default:
-                this.b.lambda$fetchStickerSetInternal$42(this.c, tLObject, tL_error);
+                this.b.lambda$replaceStickerSet$28(this.c);
                 break;
         }
     }

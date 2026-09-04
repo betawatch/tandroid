@@ -1,20 +1,28 @@
 package jd;
 
-import java.nio.charset.Charset;
+import w7.m;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* JADX WARN: Failed to restore enum class, 'enum' modifier and super class removed */
+/* JADX WARN: Unknown enum class pattern. Please report as an issue! */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class a {
-    public static final Charset a;
+public final class a {
+    public static final a a;
+    public static final /* synthetic */ a[] b;
 
     static {
-        Charset forName = Charset.forName("UTF-8");
-        kotlin.jvm.internal.j.d(forName, "forName(...)");
-        a = forName;
-        kotlin.jvm.internal.j.d(Charset.forName("UTF-16"), "forName(...)");
-        kotlin.jvm.internal.j.d(Charset.forName("UTF-16BE"), "forName(...)");
-        kotlin.jvm.internal.j.d(Charset.forName("UTF-16LE"), "forName(...)");
-        kotlin.jvm.internal.j.d(Charset.forName("US-ASCII"), "forName(...)");
-        kotlin.jvm.internal.j.d(Charset.forName("ISO-8859-1"), "forName(...)");
+        a aVar = new a("COROUTINE_SUSPENDED", 0);
+        a = aVar;
+        a[] aVarArr = {aVar, new a("UNDECIDED", 1), new a("RESUMED", 2)};
+        b = aVarArr;
+        m.a(aVarArr);
+    }
+
+    public static a valueOf(String str) {
+        return (a) Enum.valueOf(a.class, str);
+    }
+
+    public static a[] values() {
+        return (a[]) b.clone();
     }
 }

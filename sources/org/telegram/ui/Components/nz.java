@@ -4,9 +4,9 @@ import android.util.SparseIntArray;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.tgnet.ConnectionsManager;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public class nz extends f2.w {
+public class nz extends s4.s {
     public final boolean Q;
     public final SparseIntArray R;
     public final SparseIntArray S;
@@ -15,49 +15,49 @@ public class nz extends f2.w {
     public int V;
     public int W;
 
-    public nz(int i10, boolean z4) {
+    public nz(int i10, boolean z10) {
         super(i10);
         this.R = new SparseIntArray();
         this.S = new SparseIntArray();
-        this.Q = z4;
+        this.Q = z10;
     }
 
-    public static jv0 C1(jv0 jv0Var) {
-        if (jv0Var == null) {
+    public static iv0 C1(iv0 iv0Var) {
+        if (iv0Var == null) {
             return null;
         }
-        if (jv0Var.a == 0.0f) {
-            jv0Var.a = 100.0f;
+        if (iv0Var.a == 0.0f) {
+            iv0Var.a = 100.0f;
         }
-        if (jv0Var.b == 0.0f) {
-            jv0Var.b = 100.0f;
+        if (iv0Var.b == 0.0f) {
+            iv0Var.b = 100.0f;
         }
-        float f10 = jv0Var.a;
-        float f11 = jv0Var.b;
-        float f12 = f10 / f11;
-        if (f12 <= 4.0f && f12 >= 0.2f) {
-            return jv0Var;
+        float f7 = iv0Var.a;
+        float f10 = iv0Var.b;
+        float f11 = f7 / f10;
+        if (f11 <= 4.0f && f11 >= 0.2f) {
+            return iv0Var;
         }
-        float max = Math.max(f10, f11);
-        jv0Var.a = max;
-        jv0Var.b = max;
-        return jv0Var;
+        float max = Math.max(f7, f10);
+        iv0Var.a = max;
+        iv0Var.b = max;
+        return iv0Var;
     }
 
     public final void B1() {
         int i10;
         int min;
-        boolean z4;
-        float f10;
+        boolean z10;
+        float f7;
         SparseIntArray sparseIntArray = this.R;
         if (sparseIntArray.size() == A() && this.W == this.m && this.T == this.J) {
             return;
         }
         int i11 = this.m;
         this.W = i11;
-        float f11 = i11;
-        if (f11 == 0.0f) {
-            f11 = 100.0f;
+        float f10 = i11;
+        if (f10 == 0.0f) {
+            f10 = 100.0f;
         }
         sparseIntArray.clear();
         SparseIntArray sparseIntArray2 = this.S;
@@ -71,41 +71,41 @@ public class nz extends f2.w {
         }
         int dp = AndroidUtilities.dp(100.0f);
         int i12 = this.J;
-        boolean z10 = this.Q;
-        int i13 = A + (z10 ? 1 : 0);
+        boolean z11 = this.Q;
+        int i13 = A + (z11 ? 1 : 0);
         int i14 = i12;
         int i15 = 0;
         int i16 = 0;
         while (i15 < i13) {
-            jv0 C1 = i15 < A ? C1(D1(i15)) : null;
+            iv0 C1 = i15 < A ? C1(D1(i15)) : null;
             if (C1 == null) {
-                z4 = i16 != 0;
+                z10 = i16 != 0;
                 i10 = dp;
                 min = i12;
             } else {
                 i10 = dp;
-                min = Math.min(i12, (int) Math.floor((((C1.a / C1.b) * dp) / f11) * i12));
-                boolean z11 = i14 < min || (min > 33 && i14 < min + (-15));
+                min = Math.min(i12, (int) Math.floor((((C1.a / C1.b) * dp) / f10) * i12));
+                boolean z12 = i14 < min || (min > 33 && i14 < min + (-15));
                 if (C1.c) {
                     sparseIntArray.put(i15, i14);
                     this.V++;
-                    f10 = f11;
+                    f7 = f10;
                     i14 = i12;
                     i16 = 0;
                     i15++;
                     dp = i10;
-                    f11 = f10;
+                    f10 = f7;
                 } else {
-                    z4 = z11;
+                    z10 = z12;
                 }
             }
-            if (z4) {
+            if (z10) {
                 if (i14 == 0 || i16 == 0) {
-                    f10 = f11;
+                    f7 = f10;
                 } else {
                     int i17 = i14 / i16;
                     int i18 = i15 - i16;
-                    f10 = f11;
+                    f7 = f10;
                     int i19 = i18;
                     while (true) {
                         int i20 = i18 + i16;
@@ -129,7 +129,7 @@ public class nz extends f2.w {
                 i14 = i12;
                 i16 = 0;
             } else {
-                f10 = f11;
+                f7 = f10;
                 if (i14 < min) {
                     min = i14;
                 }
@@ -137,7 +137,7 @@ public class nz extends f2.w {
             if (this.V == 0) {
                 this.U = Math.max(this.U, i15);
             }
-            if (i15 == A - 1 && !z10) {
+            if (i15 == A - 1 && !z11) {
                 sparseIntArray2.put(i15, this.V);
             }
             i16++;
@@ -145,13 +145,13 @@ public class nz extends f2.w {
             sparseIntArray.put(i15, min);
             i15++;
             dp = i10;
-            f11 = f10;
+            f10 = f7;
         }
         this.V++;
     }
 
-    public jv0 D1(int i10) {
-        return new jv0(100.0f, 100.0f);
+    public iv0 D1(int i10) {
+        return new iv0(100.0f, 100.0f);
     }
 
     public final boolean E1(int i10) {
@@ -159,17 +159,17 @@ public class nz extends f2.w {
         return this.S.get(i10, ConnectionsManager.DEFAULT_DATACENTER_ID) != Integer.MAX_VALUE;
     }
 
-    @Override // f2.w, f2.v0
-    public final int I(af.h hVar, f2.i1 i1Var) {
-        return i1Var.b();
+    @Override // s4.s, s4.o0
+    public final int I(pf.e eVar, s4.z0 z0Var) {
+        return z0Var.b();
     }
 
-    @Override // f2.w, f2.v0
-    public final int u(af.h hVar, f2.i1 i1Var) {
+    @Override // s4.s, s4.o0
+    public final int u(pf.e eVar, s4.z0 z0Var) {
         return 1;
     }
 
-    @Override // f2.w, f2.i0, f2.v0
+    @Override // s4.s, s4.c0, s4.o0
     public boolean y0() {
         return false;
     }

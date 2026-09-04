@@ -2,6 +2,9 @@ package org.telegram.messenger.video;
 
 import android.media.MediaCodec;
 import android.media.MediaFormat;
+import com.google.android.gms.internal.vision.e2;
+import f5.s;
+import f5.z;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
@@ -12,20 +15,17 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 import org.telegram.messenger.MediaController;
-import org.telegram.ui.ai;
-import s2.s;
-import s2.z;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class Track {
     private static Map<Integer, Integer> samplingFrequencyIndexMap;
     private String handler;
-    private s2.a headerBox;
+    private f5.a headerBox;
     private int height;
     private boolean isAudio;
     private int[] sampleCompositions;
-    private s2.n sampleDescriptionBox;
+    private f5.n sampleDescriptionBox;
     private long[] sampleDurations;
     private LinkedList<Integer> syncSamples;
     private int timeScale;
@@ -38,15 +38,15 @@ public class Track {
     private ArrayList<SamplePresentationTime> samplePresentationTimes = new ArrayList<>();
     private boolean first = true;
 
-    /* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
     public static class SamplePresentationTime {
         private long dt;
         private int index;
         private long presentationTime;
 
-        public SamplePresentationTime(int i10, long j10) {
+        public SamplePresentationTime(int i10, long j3) {
             this.index = i10;
-            this.presentationTime = j10;
+            this.presentationTime = j3;
         }
     }
 
@@ -67,35 +67,35 @@ public class Track {
         samplingFrequencyIndexMap.put(8000, 11);
     }
 
-    public Track(int i10, MediaFormat mediaFormat, boolean z4) {
+    public Track(int i10, MediaFormat mediaFormat, boolean z10) {
         int i11;
         int i12;
         this.syncSamples = null;
         this.volume = 0.0f;
         this.trackId = i10;
-        this.isAudio = z4;
+        this.isAudio = z10;
         int i13 = 0;
-        if (z4) {
+        if (z10) {
             this.volume = 1.0f;
             this.timeScale = mediaFormat.getInteger("sample-rate");
             this.handler = "soun";
             this.headerBox = new s("smhd");
-            this.sampleDescriptionBox = new s2.n();
-            t2.b bVar = new t2.b("mp4a");
+            this.sampleDescriptionBox = new f5.n();
+            g5.b bVar = new g5.b("mp4a");
             bVar.h = mediaFormat.getInteger("channel-count");
             bVar.r = mediaFormat.getInteger("sample-rate");
             bVar.f = 1;
             bVar.n = 16;
-            xb.b bVar2 = new xb.b("esds");
-            yb.g gVar = new yb.g();
+            lc.b bVar2 = new lc.b("esds");
+            mc.g gVar = new mc.g();
             gVar.i = 0;
             gVar.o = new ArrayList();
             gVar.d = 0;
-            yb.m mVar = new yb.m();
+            mc.m mVar = new mc.m();
             mVar.d = 2;
             gVar.n = mVar;
             String string = mediaFormat.containsKey("mime") ? mediaFormat.getString("mime") : "audio/mp4-latm";
-            yb.d dVar = new yb.d();
+            mc.d dVar = new mc.d();
             dVar.k = new ArrayList();
             if ("audio/mpeg".equals(string)) {
                 dVar.d = 105;
@@ -112,30 +112,30 @@ public class Track {
                 dVar.h = 96000L;
             }
             dVar.i = this.timeScale;
-            yb.a aVar = new yb.a();
+            mc.a aVar = new mc.a();
             aVar.e = 2;
             aVar.f = samplingFrequencyIndexMap.get(Integer.valueOf((int) bVar.r)).intValue();
             aVar.h = bVar.h;
             dVar.j = aVar;
             gVar.m = dVar;
             ByteBuffer allocate = ByteBuffer.allocate(gVar.c());
-            r2.b.r(3, allocate);
+            e5.b.r(3, allocate);
             allocate.put((byte) ((gVar.c() - 2) & 255));
-            r2.b.p(gVar.d, allocate);
+            e5.b.p(gVar.d, allocate);
             allocate.put((byte) (((gVar.e << 7) | (gVar.f << 6) | (gVar.g << 5) | (31 & gVar.h)) & 255));
             if (gVar.e > 0) {
-                r2.b.p(gVar.k, allocate);
+                e5.b.p(gVar.k, allocate);
             }
             if (gVar.f > 0) {
                 allocate.put((byte) (gVar.i & 255));
-                allocate.put(r2.b.b(gVar.j));
+                allocate.put(e5.b.b(gVar.j));
                 allocate.put((byte) 0);
             }
             if (gVar.g > 0) {
-                r2.b.p(gVar.l, allocate);
+                e5.b.p(gVar.l, allocate);
             }
-            yb.d dVar2 = gVar.m;
-            yb.a aVar2 = dVar2.j;
+            mc.d dVar2 = gVar.m;
+            mc.a aVar2 = dVar2.j;
             if (aVar2 == null) {
                 i12 = 0;
             } else {
@@ -145,8 +145,8 @@ public class Track {
                 i12 = 4;
             }
             ByteBuffer allocate2 = ByteBuffer.allocate(i12 + 15);
-            r2.b.r(4, allocate2);
-            yb.a aVar3 = dVar2.j;
+            e5.b.r(4, allocate2);
+            mc.a aVar3 = dVar2.j;
             if (aVar3 != null) {
                 if (aVar3.e != 2) {
                     throw new UnsupportedOperationException("can't serialize that yet");
@@ -156,21 +156,21 @@ public class Track {
             allocate2.put((byte) ((i13 + i11) & 255));
             allocate2.put((byte) (dVar2.d & 255));
             allocate2.put((byte) (((dVar2.e << 2) | (dVar2.f << 1) | 1) & 255));
-            r2.b.q(dVar2.g, allocate2);
+            e5.b.q(dVar2.g, allocate2);
             allocate2.putInt((int) dVar2.h);
             allocate2.putInt((int) dVar2.i);
-            yb.a aVar4 = dVar2.j;
+            mc.a aVar4 = dVar2.j;
             if (aVar4 != null) {
                 if (aVar4.e != 2) {
                     throw new UnsupportedOperationException("can't serialize that yet");
                 }
                 ByteBuffer allocate3 = ByteBuffer.allocate(4);
-                r2.b.r(5, allocate3);
+                e5.b.r(5, allocate3);
                 if (aVar4.e != 2) {
                     throw new UnsupportedOperationException("can't serialize that yet");
                 }
                 allocate3.put((byte) 2);
-                yb.c cVar = new yb.c(1, allocate3);
+                mc.c cVar = new mc.c(1, allocate3);
                 cVar.c(aVar4.e, 5);
                 cVar.c(aVar4.f, 4);
                 if (aVar4.f == 15) {
@@ -179,15 +179,15 @@ public class Track {
                 cVar.c(aVar4.h, 4);
                 allocate2.put(allocate3.array());
             }
-            yb.m mVar2 = gVar.n;
+            mc.m mVar2 = gVar.n;
             mVar2.getClass();
             ByteBuffer allocate4 = ByteBuffer.allocate(3);
-            r2.b.r(6, allocate4);
+            e5.b.r(6, allocate4);
             allocate4.put((byte) 1);
             allocate4.put((byte) (mVar2.d & 255));
             allocate.put(allocate2.array());
             allocate.put(allocate4.array());
-            ai.x(de.a.c(xb.a.h, bVar2, bVar2, allocate));
+            e2.q(re.a.c(lc.a.h, bVar2, bVar2, allocate));
             bVar2.e = allocate;
             bVar.a(bVar2);
             this.sampleDescriptionBox.a(bVar);
@@ -203,11 +203,11 @@ public class Track {
         zVar.f = new int[3];
         zVar.g(1);
         this.headerBox = zVar;
-        this.sampleDescriptionBox = new s2.n();
+        this.sampleDescriptionBox = new f5.n();
         String string2 = mediaFormat.getString("mime");
         if (!string2.equals(MediaController.VIDEO_MIME_TYPE)) {
             if (string2.equals("video/mp4v")) {
-                t2.c cVar2 = new t2.c("mp4v");
+                g5.c cVar2 = new g5.c("mp4v");
                 cVar2.f = 1;
                 cVar2.x = 24;
                 cVar2.v = 1;
@@ -260,17 +260,17 @@ public class Track {
                 }
             }
             try {
-                t2.c parseFromCsd = HevcDecoderConfigurationRecord.parseFromCsd(Arrays.asList(ByteBuffer.wrap(bArr), ByteBuffer.wrap(bArr3), ByteBuffer.wrap(bArr2)));
+                g5.c parseFromCsd = HevcDecoderConfigurationRecord.parseFromCsd(Arrays.asList(ByteBuffer.wrap(bArr), ByteBuffer.wrap(bArr3), ByteBuffer.wrap(bArr2)));
                 parseFromCsd.h = this.width;
                 parseFromCsd.n = this.height;
                 this.sampleDescriptionBox.a(parseFromCsd);
                 return;
-            } catch (IOException e) {
-                e.printStackTrace();
+            } catch (IOException e7) {
+                e7.printStackTrace();
                 return;
             }
         }
-        t2.c cVar3 = new t2.c("avc1");
+        g5.c cVar3 = new g5.c("avc1");
         cVar3.f = 1;
         cVar3.x = 24;
         cVar3.v = 1;
@@ -278,8 +278,8 @@ public class Track {
         cVar3.s = 72.0d;
         cVar3.h = this.width;
         cVar3.n = this.height;
-        dc.a aVar5 = new dc.a("avcC");
-        dc.b bVar3 = new dc.b();
+        rc.a aVar5 = new rc.a("avcC");
+        rc.b bVar3 = new rc.b();
         bVar3.f = new ArrayList();
         bVar3.g = new ArrayList();
         bVar3.h = true;
@@ -306,9 +306,9 @@ public class Track {
             byte[] bArr5 = new byte[byteBuffer2.remaining()];
             byteBuffer2.get(bArr5);
             arrayList2.add(bArr5);
-            ai.x(de.a.c(dc.a.h, aVar5, aVar5, arrayList));
+            e2.q(re.a.c(rc.a.h, aVar5, aVar5, arrayList));
             aVar5.a.f = arrayList;
-            ai.x(de.a.c(dc.a.n, aVar5, aVar5, arrayList2));
+            e2.q(re.a.c(rc.a.n, aVar5, aVar5, arrayList2));
             aVar5.a.g = arrayList2;
         }
         if (mediaFormat.containsKey("level")) {
@@ -371,17 +371,17 @@ public class Track {
         } else {
             aVar5.e(100);
         }
-        ai.x(de.a.c(dc.a.s, aVar5, aVar5, new Integer(-1)));
+        e2.q(re.a.c(rc.a.s, aVar5, aVar5, new Integer(-1)));
         aVar5.a.j = -1;
-        ai.x(de.a.c(dc.a.v, aVar5, aVar5, new Integer(-1)));
+        e2.q(re.a.c(rc.a.v, aVar5, aVar5, new Integer(-1)));
         aVar5.a.k = -1;
-        ai.x(de.a.c(dc.a.r, aVar5, aVar5, new Integer(-1)));
+        e2.q(re.a.c(rc.a.r, aVar5, aVar5, new Integer(-1)));
         aVar5.a.i = -1;
-        ai.x(de.a.c(dc.a.b, aVar5, aVar5, new Integer(1)));
+        e2.q(re.a.c(rc.a.b, aVar5, aVar5, new Integer(1)));
         aVar5.a.a = 1;
-        ai.x(de.a.c(dc.a.f, aVar5, aVar5, new Integer(3)));
+        e2.q(re.a.c(rc.a.f, aVar5, aVar5, new Integer(3)));
         aVar5.a.e = 3;
-        ai.x(de.a.c(dc.a.d, aVar5, aVar5, new Integer(0)));
+        e2.q(re.a.c(rc.a.d, aVar5, aVar5, new Integer(0)));
         aVar5.a.c = 0;
         cVar3.a(aVar5);
         this.sampleDescriptionBox.a(cVar3);
@@ -402,11 +402,11 @@ public class Track {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public void addSample(long j10, MediaCodec.BufferInfo bufferInfo) {
-        boolean z4 = this.isAudio ? false : true;
-        this.samples.add(new Sample(j10, bufferInfo.size));
+    public void addSample(long j3, MediaCodec.BufferInfo bufferInfo) {
+        boolean z10 = this.isAudio ? false : true;
+        this.samples.add(new Sample(j3, bufferInfo.size));
         LinkedList<Integer> linkedList = this.syncSamples;
-        if (linkedList != null && z4) {
+        if (linkedList != null && z10) {
             linkedList.add(Integer.valueOf(this.samples.size()));
         }
         ArrayList<SamplePresentationTime> arrayList = this.samplePresentationTimes;
@@ -433,7 +433,7 @@ public class Track {
         return (((this.duration - this.sampleDurations[r2.length - 1]) * 1000000) - 500000) / this.timeScale;
     }
 
-    public s2.a getMediaHeaderBox() {
+    public f5.a getMediaHeaderBox() {
         return this.headerBox;
     }
 
@@ -441,7 +441,7 @@ public class Track {
         return this.sampleCompositions;
     }
 
-    public s2.n getSampleDescriptionBox() {
+    public f5.n getSampleDescriptionBox() {
         return this.sampleDescriptionBox;
     }
 
@@ -487,49 +487,49 @@ public class Track {
 
     public void prepare() {
         int i10;
-        long j10;
-        long j11 = 0;
+        long j3;
+        long j10 = 0;
         this.duration = 0L;
         ArrayList arrayList = new ArrayList(this.samplePresentationTimes);
         int i11 = 0;
         Collections.sort(this.samplePresentationTimes, new b(i11));
         this.sampleDurations = new long[this.samplePresentationTimes.size()];
-        long j12 = Long.MAX_VALUE;
-        long j13 = 0;
+        long j11 = Long.MAX_VALUE;
+        long j12 = 0;
         int i12 = 0;
-        boolean z4 = false;
+        boolean z10 = false;
         while (true) {
             if (i12 >= this.samplePresentationTimes.size()) {
                 break;
             }
             SamplePresentationTime samplePresentationTime = this.samplePresentationTimes.get(i12);
-            long j14 = samplePresentationTime.presentationTime - j13;
-            j13 = samplePresentationTime.presentationTime;
-            this.sampleDurations[samplePresentationTime.index] = j14;
+            long j13 = samplePresentationTime.presentationTime - j12;
+            j12 = samplePresentationTime.presentationTime;
+            this.sampleDurations[samplePresentationTime.index] = j13;
             if (samplePresentationTime.index != 0) {
-                j10 = j11;
-                this.duration += j14;
+                j3 = j10;
+                this.duration += j13;
             } else {
-                j10 = j11;
+                j3 = j10;
             }
-            if (j14 > j10 && j14 < 2147483647L) {
-                j12 = Math.min(j12, j14);
+            if (j13 > j3 && j13 < 2147483647L) {
+                j11 = Math.min(j11, j13);
             }
             if (samplePresentationTime.index != i12) {
-                z4 = true;
+                z10 = true;
             }
             i12++;
-            j11 = j10;
+            j10 = j3;
         }
         long[] jArr = this.sampleDurations;
         if (jArr.length > 0) {
-            jArr[0] = j12;
-            this.duration += j12;
+            jArr[0] = j11;
+            this.duration += j11;
         }
         for (i10 = 1; i10 < arrayList.size(); i10++) {
             ((SamplePresentationTime) arrayList.get(i10)).dt = this.sampleDurations[i10] + ((SamplePresentationTime) arrayList.get(i10 - 1)).dt;
         }
-        if (z4) {
+        if (z10) {
             this.sampleCompositions = new int[this.samplePresentationTimes.size()];
             while (i11 < this.samplePresentationTimes.size()) {
                 SamplePresentationTime samplePresentationTime2 = this.samplePresentationTimes.get(i11);

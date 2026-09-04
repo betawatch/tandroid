@@ -1,38 +1,30 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.DatePicker;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.ui.Components.EditTextBoldCursor;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class gq implements DialogInterface.OnShowListener {
+public final /* synthetic */ class gq implements Runnable {
     public final /* synthetic */ int a;
-    public final /* synthetic */ View b;
+    public final /* synthetic */ qq b;
+    public final /* synthetic */ long c;
 
-    public /* synthetic */ gq(int i10, View view) {
+    public /* synthetic */ gq(qq qqVar, long j3, int i10) {
         this.a = i10;
-        this.b = view;
+        this.b = qqVar;
+        this.c = j3;
     }
 
-    @Override // android.content.DialogInterface.OnShowListener
-    public final void onShow(DialogInterface dialogInterface) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                DatePicker datePicker = (DatePicker) this.b;
-                int childCount = datePicker.getChildCount();
-                for (int i10 = 0; i10 < childCount; i10++) {
-                    View childAt = datePicker.getChildAt(i10);
-                    ViewGroup.LayoutParams layoutParams = childAt.getLayoutParams();
-                    layoutParams.width = -1;
-                    childAt.setLayoutParams(layoutParams);
-                }
+                long j3 = this.c;
+                qq qqVar = this.b;
+                qqVar.n = j3;
+                qqVar.r = true;
+                qqVar.n0();
                 break;
             default:
-                AndroidUtilities.runOnUIThread(new eh(1, (EditTextBoldCursor) this.b));
+                qq.Z(this.b, this.c);
                 break;
         }
     }

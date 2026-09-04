@@ -1,63 +1,58 @@
 package org.telegram.ui;
 
-import android.content.Context;
-import android.graphics.Rect;
-import android.view.KeyEvent;
-import android.view.MotionEvent;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.R;
-import org.telegram.ui.Components.AnimatedPhoneNumberEditText;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class lg0 extends AnimatedPhoneNumberEditText {
-    public final /* synthetic */ og0 D;
+public final /* synthetic */ class lg0 implements Runnable {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ vg0 b;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public lg0(og0 og0Var, Context context) {
-        super(context);
-        this.D = og0Var;
+    public /* synthetic */ lg0(vg0 vg0Var, int i10) {
+        this.a = i10;
+        this.b = vg0Var;
     }
 
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final void onFocusChanged(boolean z4, int i10, Rect rect) {
-        super.onFocusChanged(z4, i10, rect);
-        og0 og0Var = this.D;
-        pg0 pg0Var = og0Var.S;
-        org.telegram.ui.Components.bd0 bd0Var = og0Var.f;
-        float f10 = (z4 || og0Var.a.isFocused()) ? 1.0f : 0.0f;
-        bd0Var.b(f10, f10, true);
-        if (!z4) {
-            if (og0Var.x == 2) {
-                og0Var.setCountryButtonText(null);
-            }
-        } else {
-            pg0Var.c.setEditText(this);
-            pg0Var.c.setDispatchBackWhenEmpty(true);
-            if (og0Var.x == 2) {
-                og0Var.setCountryButtonText(LocaleController.getString(R.string.WrongCountry));
-            }
+    @Override // java.lang.Runnable
+    public final void run() {
+        switch (this.a) {
+            case 0:
+                vg0 vg0Var = this.b;
+                ck0 ck0Var = vg0Var.a;
+                wg0 wg0Var = vg0Var.V;
+                sg0 sg0Var = vg0Var.b;
+                if (sg0Var != null) {
+                    if (wg0Var.c0) {
+                        ck0Var.clearFocus();
+                        sg0Var.clearFocus();
+                    } else if (ck0Var.length() != 0) {
+                        sg0Var.requestFocus();
+                        if (!vg0Var.R) {
+                            sg0Var.setSelection(sg0Var.length());
+                        }
+                        wg0.T0(wg0Var, sg0Var);
+                    } else {
+                        ck0Var.requestFocus();
+                        wg0.T0(wg0Var, ck0Var);
+                    }
+                }
+                if (wg0Var.F == 0) {
+                    vg0Var.u(false);
+                    break;
+                }
+                break;
+            case 1:
+                vg0 vg0Var2 = this.b;
+                vg0Var2.postDelayed(new lg0(vg0Var2, 2), 200L);
+                break;
+            case 2:
+                this.b.h(null);
+                break;
+            case 3:
+                this.b.u(true);
+                break;
+            default:
+                vg0 vg0Var3 = this.b;
+                wg0.T0(vg0Var3.V, vg0Var3.b);
+                break;
         }
-    }
-
-    @Override // android.widget.TextView, android.view.View, android.view.KeyEvent.Callback
-    public final boolean onKeyDown(int i10, KeyEvent keyEvent) {
-        og0 og0Var = this.D;
-        sj0 sj0Var = og0Var.a;
-        if (i10 == 67 && og0Var.b.length() == 0) {
-            sj0Var.requestFocus();
-            sj0Var.setSelection(sj0Var.length());
-            sj0Var.dispatchKeyEvent(keyEvent);
-        }
-        return super.onKeyDown(i10, keyEvent);
-    }
-
-    @Override // org.telegram.ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
-    public final boolean onTouchEvent(MotionEvent motionEvent) {
-        if (motionEvent.getAction() == 0 && !pg0.T0(this.D.S, this)) {
-            clearFocus();
-            requestFocus();
-        }
-        return super.onTouchEvent(motionEvent);
     }
 }

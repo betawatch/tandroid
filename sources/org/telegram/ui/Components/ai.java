@@ -1,115 +1,127 @@
 package org.telegram.ui.Components;
 
+import android.animation.ValueAnimator;
+import android.content.Context;
+import android.graphics.Canvas;
+import android.text.TextUtils;
+import android.view.Menu;
+import android.view.MotionEvent;
 import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class ai extends org.telegram.ui.ActionBar.r1 {
-    public final /* synthetic */ bi x;
+public final class ai extends hu {
+    public boolean V;
+    public int W;
+    public int a0;
+    public ValueAnimator b0;
+    public final /* synthetic */ vi c0;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public ai(bi biVar, bi biVar2) {
-        super(biVar2);
-        this.x = biVar;
+    public ai(vi viVar, Context context, li liVar, org.telegram.ui.ActionBar.f6 f6Var) {
+        super(context, liVar, null, 1, true, f6Var);
+        this.c0 = viVar;
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final boolean b() {
-        kz kzVar;
-        li liVar = this.x.y0;
-        if (!liVar.isDismissed() && liVar.p1) {
-            di diVar = liVar.v0;
-            if (diVar != liVar.j0 && diVar != liVar.k0 && !liVar.m1().m()) {
-                return true;
-            }
-            di diVar2 = liVar.v0;
-            pn pnVar = liVar.j0;
-            if (diVar2 == pnVar && ((kzVar = pnVar.B) == null || kzVar.getVisibility() != 0)) {
-                return true;
-            }
-            di diVar3 = liVar.v0;
-            pn pnVar2 = liVar.k0;
-            if (diVar3 == pnVar2) {
-                kz kzVar2 = pnVar2.B;
-                return kzVar2 == null || kzVar2.getVisibility() != 0;
-            }
-        }
-        return false;
+    @Override // org.telegram.ui.Components.hu
+    public final void c(float f7) {
+        vi viVar = this.c0;
+        viVar.g2 = f7;
+        xh xhVar = viVar.D0;
+        xhVar.setTranslationY(f7);
+        xhVar.invalidate();
+        viVar.g1();
+        viVar.X1(viVar.y0, 0);
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void e(float f10, float f11, boolean z4) {
-        bi biVar = this.x;
-        li liVar = biVar.y0;
-        liVar.i2 = f10;
-        float f12 = liVar.a2;
-        if (f12 > 0.0f) {
-            liVar.i2 = e2.c.w(1.0f, f11, f12 - liVar.b2, f10);
+    @Override // android.view.ViewGroup, android.view.View
+    public final void dispatchDraw(Canvas canvas) {
+        if (this.V) {
+            zt editText = this.c0.E0.getEditText();
+            editText.setOffsetY(editText.getOffsetY() - ((this.a0 - editText.getScrollY()) + (this.W - editText.getMeasuredHeight())));
+            ValueAnimator ofFloat = ValueAnimator.ofFloat(editText.getOffsetY(), 0.0f);
+            ofFloat.addUpdateListener(new ah.m0(15, this, editText));
+            ValueAnimator valueAnimator = this.b0;
+            if (valueAnimator != null) {
+                valueAnimator.cancel();
+            }
+            this.b0 = ofFloat;
+            ofFloat.setDuration(200L);
+            ofFloat.setInterpolator(pr.f);
+            ofFloat.start();
+            this.V = false;
         }
-        liVar.U0.setTranslationY(liVar.i2);
-        liVar.X0.setTranslationY(liVar.i2);
-        org.telegram.ui.ActionBar.w0 w0Var = liVar.b1;
-        if (w0Var != null) {
-            w0Var.setTranslationY(liVar.i2);
-        }
-        org.telegram.ui.ActionBar.w0 w0Var2 = liVar.Z0;
-        if (w0Var2 != null) {
-            w0Var2.setTranslationY(liVar.X0.getTranslationY());
-        }
-        ph.f3 f3Var = liVar.a1;
-        if (f3Var != null) {
-            f3Var.setTranslationY(liVar.X0.getTranslationY());
-        }
-        liVar.c1.setTranslationY(liVar.i2);
-        liVar.a2(0);
-        liVar.setCurrentPanTranslationY(liVar.i2);
-        biVar.invalidate();
-        liVar.A0.invalidate();
-        liVar.U1();
-        di diVar = liVar.v0;
-        if (diVar != null) {
-            diVar.k(liVar.i2);
-        }
+        super.dispatchDraw(canvas);
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
+    @Override // org.telegram.ui.Components.hu
+    public final void e() {
+        super/*org.telegram.ui.ActionBar.f3*/.dismiss();
+    }
+
+    @Override // org.telegram.ui.Components.hu
     public final void f() {
-        boolean z4;
-        li liVar = this.x.y0;
-        liVar.X1(liVar.v0, 0);
-        liVar.Z1 = liVar.Y1[0];
-        liVar.v0.v();
-        if (!(liVar.v0 instanceof rh.n3) || liVar.A1) {
-            return;
-        }
-        z4 = ((org.telegram.ui.ActionBar.g3) liVar).keyboardVisible;
-        int dp = z4 ? AndroidUtilities.dp(84.0f) : 0;
-        for (int i10 = 0; i10 < liVar.u0.size(); i10++) {
-            ((rh.n3) liVar.u0.valueAt(i10)).setMeasureOffsetY(dp);
+        super.f();
+        kz emojiView = getEmojiView();
+        if (emojiView != null) {
+            emojiView.w0 = false;
+            emojiView.x2 = false;
+            emojiView.setShouldDrawBackground(false);
+            emojiView.setBottomInset(AndroidUtilities.navigationBarHeight);
         }
     }
 
-    @Override // org.telegram.ui.ActionBar.r1
-    public final void g(int i10, boolean z4) {
-        int i11;
-        bi biVar = this.x;
-        li liVar = biVar.y0;
-        int i12 = liVar.Z1;
-        if (i12 <= 0 || i12 == (i11 = liVar.Y1[0]) || !z4) {
-            liVar.a2 = -1.0f;
-        } else {
-            liVar.a2 = i12;
-            liVar.b2 = i11;
+    @Override // org.telegram.ui.Components.hu
+    public final void i(Menu menu) {
+        org.telegram.ui.ActionBar.n2 n2Var = this.c0.f0;
+        if (n2Var instanceof org.telegram.ui.co) {
+            org.telegram.ui.co.k8(menu, ((org.telegram.ui.co) n2Var).h, true, true, true, true);
         }
-        biVar.invalidate();
-        mh mhVar = liVar.u1;
-        if ((liVar.v0 instanceof rh.n3) && !liVar.A1) {
-            if (z4) {
-                mhVar.setVisibility(8);
+    }
+
+    @Override // android.view.ViewGroup
+    public final boolean onInterceptTouchEvent(MotionEvent motionEvent) {
+        vi viVar = this.c0;
+        ai aiVar = viVar.E0;
+        if (!viVar.u1) {
+            if (motionEvent.getX() <= aiVar.getEditText().getLeft() || motionEvent.getX() >= aiVar.getEditText().getRight() || motionEvent.getY() <= aiVar.getEditText().getTop() || motionEvent.getY() >= aiVar.getEditText().getBottom()) {
+                viVar.t1(aiVar.getEditText(), false);
             } else {
-                mhVar.setVisibility(0);
+                viVar.t1(aiVar.getEditText(), true);
             }
         }
-        liVar.v0.w(i10, z4);
+        return super.onInterceptTouchEvent(motionEvent);
+    }
+
+    @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
+    public final void onLayout(boolean z10, int i10, int i11, int i12, int i13) {
+        super.onLayout(z10, i10, i11, i12, i13);
+        this.c0.U1();
+    }
+
+    @Override // org.telegram.ui.Components.hu
+    public final void q(int i10, int i11) {
+        vi viVar = this.c0;
+        xh xhVar = viVar.D0;
+        boolean z10 = false;
+        if (TextUtils.isEmpty(getEditText().getText())) {
+            getEditText().animate().cancel();
+            getEditText().setOffsetY(0.0f);
+            this.V = false;
+        } else {
+            this.V = true;
+            this.W = getEditText().getMeasuredHeight();
+            this.a0 = getEditText().getScrollY();
+            invalidate();
+        }
+        if (!viVar.c0) {
+            if (i11 > 2 && !TextUtils.isEmpty(getEditText().getText().toString().trim())) {
+                z10 = true;
+            }
+            viVar.M1(z10);
+        }
+        viVar.W1 = xhVar.getTop() + viVar.V1;
+        xhVar.invalidate();
+        viVar.U1();
     }
 }

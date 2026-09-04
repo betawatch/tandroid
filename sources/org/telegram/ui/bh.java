@@ -1,31 +1,46 @@
 package org.telegram.ui;
 
-import android.content.DialogInterface;
-import java.util.regex.Pattern;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.LiteMode;
+import org.telegram.messenger.Utilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class bh implements DialogInterface.OnCancelListener {
+public final /* synthetic */ class bh implements Utilities.Callback0Return {
     public final /* synthetic */ int a;
-    public final /* synthetic */ boolean[] b;
+    public final /* synthetic */ co b;
 
-    public /* synthetic */ bh(int i10, boolean[] zArr) {
+    public /* synthetic */ bh(co coVar, int i10) {
         this.a = i10;
-        this.b = zArr;
+        this.b = coVar;
     }
 
-    @Override // android.content.DialogInterface.OnCancelListener
-    public final void onCancel(DialogInterface dialogInterface) {
-        int i10 = this.a;
-        boolean[] zArr = this.b;
-        switch (i10) {
+    @Override // org.telegram.messenger.Utilities.Callback0Return
+    public final Object run() {
+        switch (this.a) {
             case 0:
-                zArr[0] = true;
-                break;
+                if (LiteMode.isEnabled(65536) && org.telegram.ui.Components.w01.c()) {
+                    co coVar = this.b;
+                    org.telegram.ui.Components.w01 w01Var = coVar.v0;
+                    if (w01Var == null || w01Var.e) {
+                        if (coVar.getParentActivity() != null && org.telegram.ui.Components.w01.c() && coVar.x0 != null && coVar.X0 != null) {
+                            org.telegram.ui.Components.w01 w01Var2 = coVar.v0;
+                            if (w01Var2 != null) {
+                                AndroidUtilities.removeFromParent(w01Var2);
+                            }
+                            org.telegram.ui.Components.w01 w01Var3 = new org.telegram.ui.Components.w01(coVar.getParentActivity(), new org.telegram.ui.ActionBar.c6(26, coVar, r2));
+                            coVar.v0 = w01Var3;
+                            org.telegram.ui.Components.w01[] w01VarArr = {w01Var3};
+                            um umVar = coVar.X0;
+                            umVar.addView(w01Var3, umVar.indexOfChild(coVar.x0) + 1, w7.x5.c(-1.0f, -1));
+                        }
+                    }
+                    return coVar.v0;
+                }
+                return null;
             default:
-                Pattern pattern = LaunchActivity.y1;
-                zArr[0] = true;
-                break;
+                this.b.getClass();
+                return Boolean.valueOf(org.telegram.ui.Components.w01.c() && LiteMode.isEnabled(65536));
         }
     }
 }

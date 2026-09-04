@@ -1,67 +1,9 @@
 package eh;
 
-import android.graphics.Canvas;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MediaController;
-import org.telegram.messenger.SendMessagesHelper;
+import org.telegram.ui.ActionBar.f6;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class d extends dh.h {
-    public final MediaController.PhotoEntry b;
-    public final SendMessagesHelper.SendingMediaInfo c;
-
-    /* JADX WARN: Removed duplicated region for block: B:6:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:9:0x0090  */
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public d(SendMessagesHelper.SendingMediaInfo sendingMediaInfo) {
-        ImageLocation imageLocation;
-        ImageLocation imageLocation2;
-        this.c = sendingMediaInfo;
-        MediaController.PhotoEntry photoEntry = sendingMediaInfo.originalPhotoEntry;
-        this.b = photoEntry;
-        this.a.setRoundRadius(AndroidUtilities.dp(7.0f));
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setOrientation(0, true);
-        String str = photoEntry.coverPath;
-        if (str != null) {
-            imageLocation = ImageLocation.getForPath(str);
-        } else {
-            String str2 = photoEntry.thumbPath;
-            if (str2 != null) {
-                imageLocation = ImageLocation.getForPath(str2);
-            } else if (photoEntry.path == null) {
-                imageReceiver.clearImage();
-                imageLocation = null;
-            } else {
-                if (!photoEntry.isVideo || photoEntry.isLivePhoto()) {
-                    ImageLocation forPath = ImageLocation.getForPath("thumb://" + photoEntry.imageId + ":" + photoEntry.path);
-                    imageReceiver.setOrientation(photoEntry.orientation, photoEntry.invert, true);
-                    imageLocation2 = forPath;
-                    if (imageLocation2 == null) {
-                        imageReceiver.setImage(imageLocation2, null, null, null, null, 0);
-                        return;
-                    } else {
-                        imageReceiver.clearImage();
-                        return;
-                    }
-                }
-                imageLocation = ImageLocation.getForPath("vthumb://" + photoEntry.imageId + ":" + photoEntry.path);
-            }
-        }
-        imageLocation2 = imageLocation;
-        if (imageLocation2 == null) {
-        }
-    }
-
-    @Override // dh.h
-    public final void c(Canvas canvas, int i10, int i11) {
-        ImageReceiver imageReceiver = this.a;
-        imageReceiver.setImageCoords(0.0f, 0.0f, i10, i11);
-        imageReceiver.draw(canvas);
-    }
+public interface d {
+    int f(f6 f6Var, boolean z10);
 }

@@ -1,75 +1,25 @@
 package org.telegram.messenger;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
-import org.telegram.messenger.MessagesController;
-import org.telegram.messenger.TranslateController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import java.util.function.IntFunction;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class nd implements Runnable {
-    public final /* synthetic */ int a = 2;
-    public final /* synthetic */ long b;
-    public final /* synthetic */ boolean c;
-    public final /* synthetic */ BaseController d;
-    public final /* synthetic */ Object e;
-    public final /* synthetic */ Object f;
-    public final /* synthetic */ Object h;
+public final /* synthetic */ class nd implements IntFunction {
+    public final /* synthetic */ int a;
 
-    public /* synthetic */ nd(ChatThemeController chatThemeController, TLObject tLObject, long j10, boolean z4, String str, Runnable runnable) {
-        this.d = chatThemeController;
-        this.e = tLObject;
-        this.b = j10;
-        this.c = z4;
-        this.f = str;
-        this.h = runnable;
+    public /* synthetic */ nd(int i10) {
+        this.a = i10;
     }
 
-    @Override // java.lang.Runnable
-    public final void run() {
+    @Override // java.util.function.IntFunction
+    public final Object apply(int i10) {
+        int[][] lambda$new$16;
         switch (this.a) {
             case 0:
-                ((MessagesController) this.d).lambda$getSendAsPeers$442((TLRPC.TL_channels_sendAsPeers) this.e, (a0.h) this.f, this.b, (MessagesController.SendAsPeersInfo) this.h, this.c);
-                break;
-            case 1:
-                ((TranslateController) this.d).lambda$pushToTranslate$24((HashMap) this.e, this.b, (TranslateController.PendingTranslation) this.f, this.c, (Set) this.h);
-                break;
-            case 2:
-                ((ChatThemeController) this.d).lambda$setWallpaperToPeer$16((TLObject) this.e, this.b, this.c, (String) this.f, (Runnable) this.h);
-                break;
+                return String.valueOf(i10);
             default:
-                ((TopicsController) this.d).lambda$reloadTopics$15((TLObject) this.e, this.c, this.b, (HashSet) this.f, (Runnable) this.h);
-                break;
+                lambda$new$16 = MessagesController.lambda$new$16(i10);
+                return lambda$new$16;
         }
-    }
-
-    public /* synthetic */ nd(MessagesController messagesController, TLRPC.TL_channels_sendAsPeers tL_channels_sendAsPeers, a0.h hVar, long j10, MessagesController.SendAsPeersInfo sendAsPeersInfo, boolean z4) {
-        this.d = messagesController;
-        this.e = tL_channels_sendAsPeers;
-        this.f = hVar;
-        this.b = j10;
-        this.h = sendAsPeersInfo;
-        this.c = z4;
-    }
-
-    public /* synthetic */ nd(TopicsController topicsController, TLObject tLObject, boolean z4, long j10, HashSet hashSet, Runnable runnable) {
-        this.d = topicsController;
-        this.e = tLObject;
-        this.c = z4;
-        this.b = j10;
-        this.f = hashSet;
-        this.h = runnable;
-    }
-
-    public /* synthetic */ nd(TranslateController translateController, HashMap hashMap, long j10, TranslateController.PendingTranslation pendingTranslation, boolean z4, Set set) {
-        this.d = translateController;
-        this.e = hashMap;
-        this.b = j10;
-        this.f = pendingTranslation;
-        this.c = z4;
-        this.h = set;
     }
 }

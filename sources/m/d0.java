@@ -7,9 +7,9 @@ import android.graphics.Canvas;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
-import j7.i8;
+import v7.o8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class d0 extends y {
     public final c0 e;
@@ -34,37 +34,37 @@ public final class d0 extends y {
         c0 c0Var = this.e;
         Context context = c0Var.getContext();
         int[] iArr = f.a.g;
-        l7.w0 y10 = l7.w0.y(context, attributeSet, iArr, i10);
-        TypedArray typedArray = (TypedArray) y10.c;
-        r0.j0.j(c0Var, c0Var.getContext(), iArr, attributeSet, (TypedArray) y10.c, i10);
-        Drawable u10 = y10.u(0);
-        if (u10 != null) {
-            c0Var.setThumb(u10);
+        aa.a y3 = aa.a.y(context, attributeSet, iArr, i10);
+        TypedArray typedArray = (TypedArray) y3.c;
+        r0.i0.j(c0Var, c0Var.getContext(), iArr, attributeSet, (TypedArray) y3.c, i10);
+        Drawable s10 = y3.s(0);
+        if (s10 != null) {
+            c0Var.setThumb(s10);
         }
-        Drawable t6 = y10.t(1);
+        Drawable r10 = y3.r(1);
         Drawable drawable = this.f;
         if (drawable != null) {
             drawable.setCallback(null);
         }
-        this.f = t6;
-        if (t6 != null) {
-            t6.setCallback(c0Var);
-            i8.b(c0Var.getLayoutDirection(), t6);
-            if (t6.isStateful()) {
-                t6.setState(c0Var.getDrawableState());
+        this.f = r10;
+        if (r10 != null) {
+            r10.setCallback(c0Var);
+            o8.b(c0Var.getLayoutDirection(), r10);
+            if (r10.isStateful()) {
+                r10.setState(c0Var.getDrawableState());
             }
             f();
         }
         c0Var.invalidate();
         if (typedArray.hasValue(3)) {
-            this.h = m1.b(typedArray.getInt(3, -1), this.h);
+            this.h = l1.b(typedArray.getInt(3, -1), this.h);
             this.j = true;
         }
         if (typedArray.hasValue(2)) {
-            this.g = y10.s(2);
+            this.g = y3.q(2);
             this.i = true;
         }
-        y10.A();
+        y3.A();
         f();
     }
 
@@ -72,7 +72,7 @@ public final class d0 extends y {
         Drawable drawable = this.f;
         if (drawable != null) {
             if (this.i || this.j) {
-                Drawable d = i8.d(drawable.mutate());
+                Drawable d = o8.d(drawable.mutate());
                 this.f = d;
                 if (this.i) {
                     d.setTintList(this.g);

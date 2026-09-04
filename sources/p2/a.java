@@ -1,16 +1,50 @@
 package p2;
 
-import android.app.Activity;
-import org.telegram.messenger.BillingController;
+import android.net.Uri;
+import android.os.SystemClock;
+import c5.b0;
+import e2.d0;
+import java.util.HashMap;
+import java.util.List;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class a {
-    public abstract void a(com.google.android.gms.internal.clearcut.e eVar, i iVar);
+public final class a implements t {
+    public final /* synthetic */ c a;
 
-    public abstract h b(Activity activity, f fVar);
+    public a(c cVar) {
+        this.a = cVar;
+    }
 
-    public abstract void c(o3.c cVar, org.telegram.messenger.d0 d0Var);
+    @Override // p2.t
+    public final void a() {
+        this.a.e.remove(this);
+    }
 
-    public abstract void d(BillingController billingController);
+    @Override // p2.t
+    public final boolean b(Uri uri, b0 b0Var, boolean z10) {
+        b bVar;
+        c cVar = this.a;
+        HashMap hashMap = cVar.d;
+        if (cVar.w == null) {
+            long elapsedRealtime = SystemClock.elapsedRealtime();
+            o oVar = cVar.s;
+            String str = d0.a;
+            List list = oVar.e;
+            int i10 = 0;
+            for (int i11 = 0; i11 < list.size(); i11++) {
+                b bVar2 = (b) hashMap.get(((n) list.get(i11)).a);
+                if (bVar2 != null && elapsedRealtime < bVar2.n) {
+                    i10++;
+                }
+            }
+            y2.g gVar = new y2.g(1, 0, cVar.s.e.size(), i10);
+            cVar.c.getClass();
+            k4.d K3 = rb.a.K3(gVar, b0Var);
+            if (K3 != null && K3.a == 2 && (bVar = (b) hashMap.get(uri)) != null) {
+                b.a(bVar, K3.b);
+            }
+        }
+        return false;
+    }
 }

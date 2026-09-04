@@ -1,8 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-import org.telegram.ui.ai;
-
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class s {
     public final Object a;
@@ -17,6 +15,6 @@ public final class s {
 
     public final IllegalArgumentException a() {
         Object obj = this.a;
-        return new IllegalArgumentException(android.support.v4.media.a.p(String.valueOf(obj), "=", String.valueOf(this.c), ai.l("Multiple entries with same key: ", String.valueOf(obj), "=", String.valueOf(this.b), " and ")));
+        return new IllegalArgumentException(a4.a.q(String.valueOf(obj), "=", String.valueOf(this.c), a4.a.w("Multiple entries with same key: ", String.valueOf(obj), "=", String.valueOf(this.b), " and ")));
     }
 }

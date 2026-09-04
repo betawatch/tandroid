@@ -1,33 +1,102 @@
 package c2;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class i extends s {
-    public final String a;
-    public final h b;
+public abstract class i implements h {
+    public f b;
+    public f c;
+    public f d;
+    public f e;
+    public ByteBuffer f;
+    public ByteBuffer g;
+    public boolean h;
 
-    public i(String str, h hVar) {
-        this.a = str;
-        this.b = hVar;
+    public i() {
+        ByteBuffer byteBuffer = h.a;
+        this.f = byteBuffer;
+        this.g = byteBuffer;
+        f fVar = f.e;
+        this.d = fVar;
+        this.e = fVar;
+        this.b = fVar;
+        this.c = fVar;
     }
 
-    @Override // c2.s
-    public final void f(int i10) {
-        h hVar;
-        String str = this.a;
-        if (str == null || (hVar = this.b) == null) {
-            return;
-        }
-        hVar.q(i10, str);
+    @Override // c2.h
+    public ByteBuffer a() {
+        ByteBuffer byteBuffer = this.g;
+        this.g = h.a;
+        return byteBuffer;
     }
 
-    @Override // c2.s
-    public final void i(int i10) {
-        h hVar;
-        String str = this.a;
-        if (str == null || (hVar = this.b) == null) {
-            return;
+    @Override // c2.h
+    public boolean b() {
+        return this.h && this.g == h.a;
+    }
+
+    @Override // c2.h
+    public final f d(f fVar) {
+        this.d = fVar;
+        this.e = f(fVar);
+        return isActive() ? this.e : f.e;
+    }
+
+    @Override // c2.h
+    public final void e() {
+        this.h = true;
+        h();
+    }
+
+    public abstract f f(f fVar);
+
+    @Override // c2.h
+    public final void flush() {
+        this.g = h.a;
+        this.h = false;
+        this.b = this.d;
+        this.c = this.e;
+        g();
+    }
+
+    @Override // c2.h
+    public boolean isActive() {
+        return this.e != f.e;
+    }
+
+    public final ByteBuffer j(int i10) {
+        if (this.f.capacity() < i10) {
+            this.f = ByteBuffer.allocateDirect(i10).order(ByteOrder.nativeOrder());
+        } else {
+            this.f.clear();
         }
-        hVar.r(i10, str);
+        ByteBuffer byteBuffer = this.f;
+        this.g = byteBuffer;
+        return byteBuffer;
+    }
+
+    @Override // c2.h
+    public final void reset() {
+        ByteBuffer byteBuffer = h.a;
+        this.g = byteBuffer;
+        this.h = false;
+        this.f = byteBuffer;
+        f fVar = f.e;
+        this.d = fVar;
+        this.e = fVar;
+        this.b = fVar;
+        this.c = fVar;
+        i();
+    }
+
+    public void g() {
+    }
+
+    public void h() {
+    }
+
+    public void i() {
     }
 }

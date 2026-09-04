@@ -1,48 +1,39 @@
 package o8;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes.dex */
-public final class b extends g0 {
-    public final /* synthetic */ int h;
-    public final /* synthetic */ Object n;
+import android.content.Intent;
+import android.os.Parcel;
+import android.os.Parcelable;
+import com.google.android.gms.common.api.Status;
+import com.google.android.gms.common.api.q;
+import w7.e0;
 
-    public /* synthetic */ b(Object obj, int i10) {
-        this.h = i10;
-        this.n = obj;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes.dex */
+public final class b extends o6.a implements q {
+    public static final Parcelable.Creator<b> CREATOR = new m8.h(22);
+    public final int a;
+    public final int b;
+    public final Intent c;
+
+    public b(int i10, int i11, Intent intent) {
+        this.a = i10;
+        this.b = i11;
+        this.c = intent;
     }
 
-    @Override // o8.g0
-    public final void b() {
-        switch (this.h) {
-            case 0:
-                c cVar = (c) ((hf.a) this.n).b;
-                cVar.b.b("unlinkToDeath", new Object[0]);
-                cVar.n.asBinder().unlinkToDeath(cVar.k, 0);
-                cVar.n = null;
-                cVar.g = false;
-                return;
-            default:
-                synchronized (((c) this.n).f) {
-                    try {
-                        if (((c) this.n).l.get() > 0 && ((c) this.n).l.decrementAndGet() > 0) {
-                            ((c) this.n).b.b("Leaving the connection open for other ongoing calls.", new Object[0]);
-                            return;
-                        }
-                        c cVar2 = (c) this.n;
-                        if (cVar2.n != null) {
-                            cVar2.b.b("Unbind from service.", new Object[0]);
-                            c cVar3 = (c) this.n;
-                            cVar3.a.unbindService(cVar3.m);
-                            c cVar4 = (c) this.n;
-                            cVar4.g = false;
-                            cVar4.n = null;
-                            cVar4.m = null;
-                        }
-                        ((c) this.n).e();
-                        return;
-                    } finally {
-                    }
-                }
-        }
+    @Override // com.google.android.gms.common.api.q
+    public final Status i() {
+        return this.b == 0 ? Status.e : Status.r;
+    }
+
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = e0.q(parcel, 20293);
+        e0.s(parcel, 1, 4);
+        parcel.writeInt(this.a);
+        e0.s(parcel, 2, 4);
+        parcel.writeInt(this.b);
+        e0.k(parcel, 3, this.c, i10);
+        e0.r(parcel, q6);
     }
 }

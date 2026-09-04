@@ -1,34 +1,45 @@
 package org.telegram.messenger;
 
-import android.content.SharedPreferences;
-import org.telegram.tgnet.RequestDelegate;
-import org.telegram.tgnet.TLObject;
+import java.util.ArrayList;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final /* synthetic */ class y6 implements RequestDelegate {
+public final /* synthetic */ class y6 implements Runnable {
     public final /* synthetic */ int a;
     public final /* synthetic */ MediaDataController b;
-    public final /* synthetic */ SharedPreferences c;
+    public final /* synthetic */ TLRPC.messages_Messages c;
+    public final /* synthetic */ int d;
+    public final /* synthetic */ long e;
+    public final /* synthetic */ ArrayList f;
+    public final /* synthetic */ int h;
+    public final /* synthetic */ int n;
+    public final /* synthetic */ boolean r;
+    public final /* synthetic */ int s;
+    public final /* synthetic */ int v;
 
-    public /* synthetic */ y6(MediaDataController mediaDataController, SharedPreferences sharedPreferences, int i10) {
-        this.a = i10;
+    public /* synthetic */ y6(MediaDataController mediaDataController, TLRPC.messages_Messages messages_messages, int i10, long j3, ArrayList arrayList, int i11, int i12, boolean z10, int i13, int i14, int i15) {
+        this.a = i15;
         this.b = mediaDataController;
-        this.c = sharedPreferences;
+        this.c = messages_messages;
+        this.d = i10;
+        this.e = j3;
+        this.f = arrayList;
+        this.h = i11;
+        this.n = i12;
+        this.r = z10;
+        this.s = i13;
+        this.v = i14;
     }
 
-    @Override // org.telegram.tgnet.RequestDelegate
-    public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
+    @Override // java.lang.Runnable
+    public final void run() {
         switch (this.a) {
             case 0:
-                this.b.lambda$loadRestrictedStatusEmojis$246(this.c, tLObject, tL_error);
-                break;
-            case 1:
-                this.b.lambda$loadSavedReactions$240(this.c, tLObject, tL_error);
+                this.b.lambda$processLoadedMedia$133(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v);
                 break;
             default:
-                this.b.lambda$loadReplyIcons$244(this.c, tLObject, tL_error);
+                this.b.lambda$processLoadedMedia$134(this.c, this.d, this.e, this.f, this.h, this.n, this.r, this.s, this.v);
                 break;
         }
     }

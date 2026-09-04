@@ -2,7 +2,7 @@ package com.google.android.gms.common.api.internal;
 
 import com.google.android.gms.common.api.Status;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class u extends BasePendingResult {
     public final /* synthetic */ int o;
@@ -19,7 +19,7 @@ public final class u extends BasePendingResult {
             case 0:
                 return status;
             default:
-                return new s5.n(status, 0);
+                return new e6.o(status, 0);
         }
     }
 }

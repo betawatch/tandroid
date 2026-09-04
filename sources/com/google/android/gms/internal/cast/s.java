@@ -1,94 +1,137 @@
 package com.google.android.gms.internal.cast;
 
-import android.os.Looper;
-import j$.util.DesugarCollections;
+import android.util.Log;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class s {
-    public static final u5.b i = new u5.b("SessionTransController", null);
-    public final r5.b a;
-    public r5.g f;
-    public c0.i g;
-    public q5.r h;
-    public final Set b = DesugarCollections.synchronizedSet(new HashSet());
-    public int e = 0;
-    public final a7.e c = new a7.e(Looper.getMainLooper(), 2);
-    public final r d = new r(this, 0);
+public final /* synthetic */ class s implements OnSuccessListener, OnFailureListener, d6.h {
+    public final /* synthetic */ u a;
 
-    public s(r5.b bVar) {
-        this.a = bVar;
+    public /* synthetic */ s(u uVar) {
+        this.a = uVar;
     }
 
-    public final s5.h a() {
-        r5.g gVar = this.f;
-        u5.b bVar = i;
-        if (gVar == null) {
-            bVar.b("skip transferring as SessionManager is null", new Object[0]);
-            return null;
-        }
-        r5.c c3 = gVar.c();
-        if (c3 == null) {
-            bVar.b("skip transferring as CastSession is null", new Object[0]);
-            return null;
-        }
-        b6.m.e("Must be called from the main thread.");
-        return c3.j;
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void d(d6.f fVar, String str) {
     }
 
-    public final void b(int i10) {
-        c0.i iVar = this.g;
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void f(d6.f fVar, int i10) {
+    }
+
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void g(d6.f fVar, boolean z10) {
+    }
+
+    @Override // d6.h
+    public void j(d6.f fVar, int i10) {
+        g6.b bVar = u.i;
+        bVar.b("onSessionEnded with error = %d", Integer.valueOf(i10));
+        u uVar = this.a;
+        int i11 = uVar.e;
+        if (i11 != 0) {
+            if (uVar.h != null) {
+                bVar.b("notify transferred with type = %d, sessionState = %s", Integer.valueOf(i11), uVar.h);
+                Iterator it = new HashSet(uVar.b).iterator();
+                while (it.hasNext()) {
+                    a1 a1Var = (a1) it.next();
+                    int i12 = uVar.e;
+                    switch (a1Var.a) {
+                        case 0:
+                            c1.j.b("onTransferred with type = %d", Integer.valueOf(i12));
+                            c1 c1Var = (c1) a1Var.b;
+                            c1Var.c();
+                            t1 b10 = c1Var.c.b(c1Var.g);
+                            o1 m10 = p1.m(b10.d());
+                            m10.c();
+                            p1.v((p1) m10.b, i12);
+                            b10.e((p1) m10.a());
+                            c1Var.a.a((u1) b10.a(), 231);
+                            c1Var.i = false;
+                            c1Var.g = null;
+                            break;
+                    }
+                }
+            } else {
+                bVar.b("No need to notify with null sessionState", new Object[0]);
+            }
+        } else {
+            bVar.b("No need to notify transferred if the transfer type is unknown", new Object[0]);
+        }
+        if (uVar.e == 2) {
+            return;
+        }
+        uVar.c();
+    }
+
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void n(d6.f fVar) {
+    }
+
+    @Override // com.google.android.gms.tasks.OnFailureListener
+    public void onFailure(Exception exc) {
+        u uVar = this.a;
+        uVar.getClass();
+        g6.b bVar = u.i;
+        Log.w(bVar.a, bVar.d("Fail to store SessionState", new Object[0]), exc);
+        uVar.b(100);
+    }
+
+    @Override // com.google.android.gms.tasks.OnSuccessListener
+    public void onSuccess(Object obj) {
+        u uVar = this.a;
+        uVar.h = (c6.r) obj;
+        c0.i iVar = uVar.g;
         if (iVar != null) {
-            iVar.d = true;
-            c0.k kVar = iVar.b;
-            if (kVar != null && kVar.b.cancel(true)) {
-                iVar.a = null;
-                iVar.b = null;
-                iVar.c = null;
-            }
+            iVar.a();
         }
-        i.b("notify failed transfer with type = %d, reason = %d", Integer.valueOf(this.e), Integer.valueOf(i10));
-        Iterator it = new HashSet(this.b).iterator();
-        while (it.hasNext()) {
-            y0 y0Var = (y0) it.next();
-            int i11 = this.e;
-            switch (y0Var.a) {
-                case 0:
-                    a1.j.b("onTransferFailed with type = %d and reason = %d", Integer.valueOf(i11), Integer.valueOf(i10));
-                    a1 a1Var = (a1) y0Var.b;
-                    a1Var.c();
-                    r1 b10 = a1Var.c.b(a1Var.g);
-                    m1 m9 = n1.m(b10.d());
-                    m9.c();
-                    n1.v((n1) m9.b, i11);
-                    m9.c();
-                    n1.w((n1) m9.b, i10);
-                    b10.e((n1) m9.a());
-                    a1Var.a.a((s1) b10.a(), 232);
-                    a1Var.i = false;
-                    break;
-                default:
-                    b4.e0 e0Var = new b4.e0(11, 3);
-                    e0Var.c = Integer.valueOf(i10);
-                    c5.j jVar = (c5.j) y0Var.b;
-                    e0Var.d = Boolean.valueOf(((c) jVar.b).d == 2);
-                    c5.j.D(jVar, new v6(e0Var));
-                    break;
-            }
-        }
-        c();
     }
 
-    public final void c() {
-        a7.e eVar = this.c;
-        b6.m.h(eVar);
-        r rVar = this.d;
-        b6.m.h(rVar);
-        eVar.removeCallbacks(rVar);
-        this.e = 0;
-        this.h = null;
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void q(d6.f fVar, int i10) {
+    }
+
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void t(d6.f fVar) {
+    }
+
+    @Override // d6.h
+    public void u(d6.f fVar, String str) {
+        c6.k kVar;
+        g6.b bVar = u.i;
+        u uVar = this.a;
+        int i10 = 1;
+        bVar.b("onSessionStarted with transferType = %d", Integer.valueOf(uVar.e));
+        if (uVar.a.y && uVar.e == 2) {
+            if (uVar.h == null) {
+                bVar.b("skip restoring session state due to null SessionState", new Object[0]);
+            } else {
+                e6.h a2 = uVar.a();
+                if (a2 == null) {
+                    bVar.b("skip restoring session state due to null RemoteMediaClient", new Object[0]);
+                } else {
+                    bVar.b("resume SessionState to current session", new Object[0]);
+                    c6.r rVar = uVar.h;
+                    if (rVar != null && (kVar = rVar.a) != null) {
+                        e6.h.k.b("resume SessionState", new Object[0]);
+                        n6.l.e("Must be called from the main thread.");
+                        if (a2.w()) {
+                            e6.h.x(new e6.k(a2, kVar, i10));
+                        } else {
+                            e6.h.t();
+                        }
+                    }
+                }
+            }
+        }
+        uVar.c();
+    }
+
+    @Override // d6.h
+    public /* bridge */ /* synthetic */ void v(d6.f fVar, int i10) {
     }
 }

@@ -1,132 +1,238 @@
 package org.telegram.ui.Components;
 
+import android.animation.TimeInterpolator;
+import android.animation.ValueAnimator;
 import android.content.Context;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
-import android.text.SpannableString;
-import android.text.SpannableStringBuilder;
+import android.text.TextPaint;
+import android.text.TextUtils;
 import android.view.View;
-import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.ContactsController;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.NotificationCenter;
-import org.telegram.messenger.R;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.accessibility.AccessibilityNodeInfo;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class q6 extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    public final int a;
-    public final f90 b;
-    public final Runnable c;
+public class q6 extends View {
+    public boolean a;
+    public Drawable b;
+    public final p6 c;
+    public int d;
+    public int e;
+    public CharSequence f;
+    public boolean h;
+    public boolean n;
+    public boolean r;
 
-    public q6(Context context, int i10, org.telegram.ui.ActionBar.f6 f6Var, Runnable runnable, org.telegram.ui.bj bjVar) {
+    public q6(Context context, boolean z10, boolean z11, boolean z12) {
         super(context);
-        this.a = i10;
-        this.c = runnable;
-        ContactsController.getInstance(i10).loadGlobalPrivacySetting();
-        LinearLayout linearLayout = new LinearLayout(context);
-        linearLayout.setOrientation(1);
-        addView(linearLayout, k7.b6.e(-1, -2, 17));
-        ImageView imageView = new ImageView(context);
-        imageView.setBackground(org.telegram.ui.ActionBar.j6.K(AndroidUtilities.dp(80.0f), org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.K7, f6Var)));
-        imageView.setImageResource(R.drawable.large_archive);
-        imageView.setScaleType(ImageView.ScaleType.CENTER);
-        linearLayout.addView(imageView, k7.b6.t(80, 80, 49, 0, bjVar != null ? 14 : 0, 0, 14));
-        TextView textView = new TextView(context);
-        textView.setTextSize(1, 20.0f);
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.j5, f6Var));
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setGravity(1);
-        textView.setText(LocaleController.getString(R.string.ArchiveHintHeader1));
-        linearLayout.addView(textView, k7.b6.t(-1, -2, 1, 32, 0, 32, 9));
-        f90 f90Var = new f90(context, null);
-        this.b = f90Var;
-        f90Var.setTextSize(1, 14.0f);
-        f90Var.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, f6Var));
-        f90Var.setGravity(1);
-        b();
-        linearLayout.addView(f90Var, k7.b6.t(-1, -2, 1, 32, 0, 32, 25));
-        linearLayout.addView(a(R.drawable.msg_archive_archive, LocaleController.getString("ArchiveHintSection1"), LocaleController.getString("ArchiveHintSection1Info"), f6Var), k7.b6.t(-1, -2, 7, 32, 0, 32, 16));
-        linearLayout.addView(a(R.drawable.msg_archive_hide, LocaleController.getString("ArchiveHintSection2"), LocaleController.getString("ArchiveHintSection2Info"), f6Var), k7.b6.t(-1, -2, 7, 32, 0, 32, 16));
-        linearLayout.addView(a(R.drawable.msg_archive_stories, LocaleController.getString("ArchiveHintSection3"), LocaleController.getString("ArchiveHintSection3Info"), f6Var), k7.b6.t(-1, -2, 7, 32, 0, 32, 16));
-        if (bjVar != null) {
-            ph.d p10 = org.telegram.messenger.y3.p(24, context, f6Var, true);
-            p10.g(LocaleController.getString("GotIt"), false, true);
-            p10.setOnClickListener(new p6(0, bjVar));
-            linearLayout.addView(p10, k7.b6.k(14.0f, 18.0f, 14.0f, 0.0f, -1, 48));
+        this.n = true;
+        this.r = true;
+        p6 p6Var = new p6(z10, z11, z12, false);
+        this.c = p6Var;
+        p6Var.setCallback(this);
+        p6Var.C = new pg(this, 8);
+    }
+
+    public final void a() {
+        this.c.b();
+    }
+
+    public final void b(float f7, long j3, TimeInterpolator timeInterpolator) {
+        this.c.k(f7, j3, timeInterpolator);
+    }
+
+    public final void c(CharSequence charSequence, boolean z10, boolean z11) {
+        boolean z12 = !this.r && z10;
+        this.r = false;
+        p6 p6Var = this.c;
+        if (z12 && !TextUtils.equals(charSequence, p6Var.g)) {
+            if (p6Var.D) {
+                ValueAnimator valueAnimator = p6Var.o;
+                if (valueAnimator != null) {
+                    valueAnimator.cancel();
+                    p6Var.o = null;
+                }
+            } else if (p6Var.f()) {
+                this.f = charSequence;
+                this.h = z11;
+                return;
+            }
+        }
+        int e7 = (int) p6Var.e();
+        p6Var.setBounds(getPaddingLeft(), getPaddingTop(), this.d - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
+        p6Var.q(charSequence, z12, z11);
+        float f7 = e7;
+        if (f7 < p6Var.e() || !(z12 || f7 == p6Var.e())) {
+            requestLayout();
         }
     }
 
-    public final FrameLayout a(int i10, String str, String str2, org.telegram.ui.ActionBar.f6 f6Var) {
-        FrameLayout frameLayout = new FrameLayout(getContext());
-        ImageView imageView = new ImageView(getContext());
-        int i11 = org.telegram.ui.ActionBar.j6.j5;
-        imageView.setColorFilter(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        imageView.setImageResource(i10);
-        frameLayout.addView(imageView, k7.b6.d(24, 24.0f, 51, 0.0f, 8.0f, 0.0f, 0.0f));
-        LinearLayout linearLayout = new LinearLayout(getContext());
-        linearLayout.setOrientation(1);
-        TextView textView = new TextView(getContext());
-        textView.setTextColor(org.telegram.ui.ActionBar.j6.v0(i11, f6Var));
-        textView.setTypeface(AndroidUtilities.bold());
-        textView.setTextSize(0, AndroidUtilities.dp(14.0f));
-        textView.setText(str);
-        linearLayout.addView(textView, k7.b6.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
-        TextView textView2 = new TextView(getContext());
-        textView2.setTextColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.z6, f6Var));
-        textView2.setTextSize(0, AndroidUtilities.dp(14.0f));
-        textView2.setText(str2);
-        linearLayout.addView(textView2, k7.b6.k(0.0f, 2.6f, 0.0f, 0.0f, -1, -2));
-        frameLayout.addView(linearLayout, k7.b6.d(-1, -2.0f, 55, 41.0f, 0.0f, 0.0f, 0.0f));
-        return frameLayout;
+    public final int d() {
+        return getPaddingRight() + getPaddingLeft() + ((int) Math.ceil(this.c.d()));
     }
 
-    public final void b() {
-        TLRPC.GlobalPrivacySettings globalPrivacySettings = ContactsController.getInstance(this.a).getGlobalPrivacySettings();
-        String string = LocaleController.getString(globalPrivacySettings != null ? globalPrivacySettings.keep_archived_unmuted : true ? "ArchiveHintSubtitle" : "ArchiveHintSubtitleUnmutedMove");
-        int i10 = org.telegram.ui.ActionBar.j6.gc;
-        SpannableStringBuilder replaceSingleTag = AndroidUtilities.replaceSingleTag(string, i10, 0, this.c);
-        SpannableString spannableString = new SpannableString(">");
-        Drawable mutate = getContext().getResources().getDrawable(R.drawable.msg_arrowright).mutate();
-        mutate.setColorFilter(new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN));
-        lq lqVar = new lq(0, mutate);
-        lqVar.setColorKey(i10);
-        lqVar.setSize(AndroidUtilities.dp(18.0f));
-        lqVar.setWidth(AndroidUtilities.dp(11.0f));
-        lqVar.setTranslateX(-AndroidUtilities.dp(5.0f));
-        spannableString.setSpan(lqVar, 0, spannableString.length(), 33);
-        this.b.setText(AndroidUtilities.replaceCharSequence(">", replaceSingleTag, spannableString));
+    public p6 getDrawable() {
+        return this.c;
     }
 
-    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
-    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
-        if (i10 == NotificationCenter.privacyRulesUpdated) {
-            b();
+    public TextPaint getPaint() {
+        return this.c.a;
+    }
+
+    public float getRightPadding() {
+        return this.c.H;
+    }
+
+    public Drawable getSizeableBackground() {
+        return this.b;
+    }
+
+    public CharSequence getText() {
+        return this.c.g;
+    }
+
+    public int getTextColor() {
+        return this.c.a.getColor();
+    }
+
+    public int getTextHeight() {
+        return getPaint().getFontMetricsInt().descent - getPaint().getFontMetricsInt().ascent;
+    }
+
+    @Override // android.view.View, android.graphics.drawable.Drawable.Callback
+    public final void invalidateDrawable(Drawable drawable) {
+        super.invalidateDrawable(drawable);
+        invalidate();
+    }
+
+    @Override // android.view.View
+    public void onDraw(Canvas canvas) {
+        Drawable drawable = this.b;
+        p6 p6Var = this.c;
+        if (drawable != null && (!this.a || p6Var.g() > 0.0f)) {
+            int d = (int) (p6Var.d() + getPaddingLeft() + getPaddingRight());
+            if ((p6Var.b & 7) == 5) {
+                this.b.setBounds(getWidth() - d, 0, getWidth(), getHeight());
+            } else {
+                this.b.setBounds(0, 0, d, getHeight());
+            }
+            this.b.draw(canvas);
         }
+        p6Var.setBounds(getPaddingLeft(), getPaddingTop(), getMeasuredWidth() - getPaddingRight(), getMeasuredHeight() - getPaddingBottom());
+        p6Var.draw(canvas);
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onAttachedToWindow() {
-        super.onAttachedToWindow();
-        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.privacyRulesUpdated);
-        b();
+    @Override // android.view.View
+    public final void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
+        super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
+        accessibilityNodeInfo.setClassName("android.widget.TextView");
+        accessibilityNodeInfo.setText(getText());
     }
 
-    @Override // android.view.ViewGroup, android.view.View
-    public final void onDetachedFromWindow() {
-        super.onDetachedFromWindow();
-        NotificationCenter.getInstance(this.a).removeObserver(this, NotificationCenter.privacyRulesUpdated);
+    @Override // android.view.View
+    public void onMeasure(int i10, int i11) {
+        int size = View.MeasureSpec.getSize(i10);
+        int size2 = View.MeasureSpec.getSize(i11);
+        int i12 = this.e;
+        if (i12 > 0) {
+            size = Math.min(size, i12);
+        }
+        int i13 = this.d;
+        p6 p6Var = this.c;
+        if (i13 != size && getLayoutParams().width != 0) {
+            p6Var.setBounds(getPaddingLeft(), getPaddingTop(), size - getPaddingRight(), size2 - getPaddingBottom());
+            p6Var.q(p6Var.g, false, true);
+        }
+        this.d = size;
+        if (this.n && View.MeasureSpec.getMode(i10) == Integer.MIN_VALUE) {
+            size = getPaddingRight() + getPaddingLeft() + ((int) Math.ceil(p6Var.e()));
+        }
+        setMeasuredDimension(size, size2);
     }
 
-    @Override // android.widget.FrameLayout, android.view.View
-    public final void onMeasure(int i10, int i11) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(Math.min(AndroidUtilities.dp(400.0f), View.MeasureSpec.getSize(i10)), TLObject.FLAG_30), i11);
+    public void setAllowCancel(boolean z10) {
+        this.c.D = z10;
+    }
+
+    public void setEllipsizeByGradient(boolean z10) {
+        this.c.n(z10);
+    }
+
+    public void setEmojiCacheType(int i10) {
+        this.c.l = i10;
+    }
+
+    public void setEmojiColor(int i10) {
+        p6 p6Var = this.c;
+        if (p6Var.T != i10) {
+            p6Var.T = i10;
+            p6Var.U = new PorterDuffColorFilter(i10, PorterDuff.Mode.SRC_IN);
+        }
+        invalidate();
+    }
+
+    public void setEmojiColorFilter(ColorFilter colorFilter) {
+        this.c.U = colorFilter;
+        invalidate();
+    }
+
+    public void setGravity(int i10) {
+        this.c.b = i10;
+    }
+
+    public void setHideBackgroundIfEmpty(boolean z10) {
+        this.a = z10;
+    }
+
+    public void setIgnoreRTL(boolean z10) {
+        this.c.E = z10;
+    }
+
+    public void setIncludeFontPadding(boolean z10) {
+        this.c.M = z10;
+    }
+
+    public void setMaxWidth(int i10) {
+        this.e = i10;
+    }
+
+    public void setOnWidthUpdatedListener(Runnable runnable) {
+        this.c.V = runnable;
+    }
+
+    public void setRightPadding(float f7) {
+        p6 p6Var = this.c;
+        p6Var.H = f7;
+        p6Var.invalidateSelf();
+    }
+
+    public void setScaleProperty(float f7) {
+        this.c.v = f7;
+    }
+
+    public void setSizeableBackground(Drawable drawable) {
+        this.b = drawable;
+        invalidate();
+    }
+
+    public void setText(CharSequence charSequence) {
+        c(charSequence, true, true);
+    }
+
+    public void setTextColor(int i10) {
+        this.c.r(i10);
+        invalidate();
+    }
+
+    public void setTextSize(float f7) {
+        this.c.t(f7);
+    }
+
+    public void setTypeface(Typeface typeface) {
+        this.c.u(typeface);
     }
 }

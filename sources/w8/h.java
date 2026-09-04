@@ -1,61 +1,28 @@
 package w8;
 
-import c9.u;
-import com.google.android.gms.common.api.Status;
-import com.google.android.gms.common.api.internal.t;
-import java.util.concurrent.Executor;
-import l8.j;
-import ld.y0;
+import android.os.Parcel;
+import android.os.Parcelable;
+import v8.r;
+import w7.e0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public final class h implements c9.f, t {
-    public static final h b = new h(0);
-    public static final h c = new h(1);
-    public static final h d = new h(2);
-    public static final h e = new h(3);
-    public final /* synthetic */ int a;
+public final class h extends o6.a {
+    public static final Parcelable.Creator<h> CREATOR = new r(24);
+    public String a;
+    public String b;
+    public f c;
+    public g d;
+    public g e;
 
-    public /* synthetic */ h(int i10) {
-        this.a = i10;
-    }
-
-    @Override // com.google.android.gms.common.api.internal.t
-    public Exception a(Status status) {
-        int i10 = status.a;
-        int i11 = status.a;
-        String str = status.b;
-        if (i10 == 8) {
-            if (str == null) {
-                str = j.a(i11);
-            }
-            return new b7.a(str);
-        }
-        if (str == null) {
-            str = j.a(i11);
-        }
-        return new c(str);
-    }
-
-    @Override // c9.f
-    public Object d0(c5.j jVar) {
-        switch (this.a) {
-            case 0:
-                Object f10 = jVar.f(new u(y8.a.class, Executor.class));
-                kotlin.jvm.internal.j.d(f10, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) f10);
-            case 1:
-                Object f11 = jVar.f(new u(y8.c.class, Executor.class));
-                kotlin.jvm.internal.j.d(f11, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) f11);
-            case 2:
-                Object f12 = jVar.f(new u(y8.b.class, Executor.class));
-                kotlin.jvm.internal.j.d(f12, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) f12);
-            default:
-                Object f13 = jVar.f(new u(y8.d.class, Executor.class));
-                kotlin.jvm.internal.j.d(f13, "c.get(Qualified.qualifie…a, Executor::class.java))");
-                return new y0((Executor) f13);
-        }
+    @Override // android.os.Parcelable
+    public final void writeToParcel(Parcel parcel, int i10) {
+        int q6 = e0.q(parcel, 20293);
+        e0.l(parcel, 2, this.a);
+        e0.l(parcel, 3, this.b);
+        e0.k(parcel, 4, this.c, i10);
+        e0.k(parcel, 5, this.d, i10);
+        e0.k(parcel, 6, this.e, i10);
+        e0.r(parcel, q6);
     }
 }

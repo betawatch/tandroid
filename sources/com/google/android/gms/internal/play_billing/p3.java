@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.play_billing;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class p3 extends v1 {
     private static final p3 zzb;
@@ -37,14 +37,14 @@ public final class p3 extends v1 {
         p3Var.zzh = i10;
     }
 
-    public static /* synthetic */ void q(p3 p3Var, long j10) {
+    public static /* synthetic */ void q(p3 p3Var, long j3) {
         p3Var.zzd |= 16;
-        p3Var.zzi = j10;
+        p3Var.zzi = j3;
     }
 
-    public static /* synthetic */ void r(p3 p3Var, long j10) {
+    public static /* synthetic */ void r(p3 p3Var, long j3) {
         p3Var.zzd |= 32;
-        p3Var.zzj = j10;
+        p3Var.zzj = j3;
     }
 
     public static /* synthetic */ void s(p3 p3Var) {

@@ -1,22 +1,13 @@
 package org.telegram.ui.Components;
 
-import android.view.View;
-import org.telegram.ui.ActionBar.AlertDialog$Builder;
+import android.widget.TextView;
+import org.telegram.messenger.Emoji;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class l3 extends m51 {
-    public final /* synthetic */ AlertDialog$Builder e;
-
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public l3(String str, AlertDialog$Builder alertDialog$Builder) {
-        super(str, (s01) null);
-        this.e = alertDialog$Builder;
-    }
-
-    @Override // org.telegram.ui.Components.m51, android.text.style.URLSpan, android.text.style.ClickableSpan
-    public final void onClick(View view) {
-        this.e.a.I0.run();
-        super.onClick(view);
+public final class l3 extends TextView {
+    @Override // android.widget.TextView
+    public final void setText(CharSequence charSequence, TextView.BufferType bufferType) {
+        super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), false), bufferType);
     }
 }

@@ -1,48 +1,22 @@
 package o2;
 
-import android.os.Build;
+import e2.b0;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public class b extends c {
-    public final /* synthetic */ int d;
+public final class b {
+    public static final c3.s f = new c3.s();
+    public final c3.o a;
+    public final b2.s b;
+    public final b0 c;
+    public final z3.k d;
+    public final boolean e;
 
-    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public /* synthetic */ b(int i10, String str, String str2) {
-        super(str, str2);
-        this.d = i10;
-    }
-
-    @Override // o2.c
-    public final boolean a() {
-        switch (this.d) {
-            case 0:
-                if (Build.VERSION.SDK_INT >= 23) {
-                }
-                break;
-            case 1:
-                if (Build.VERSION.SDK_INT >= 24) {
-                }
-                break;
-            case 2:
-                break;
-            case 3:
-                if (Build.VERSION.SDK_INT >= 26) {
-                }
-                break;
-            case 4:
-                if (Build.VERSION.SDK_INT >= 27) {
-                }
-                break;
-            case 5:
-                if (Build.VERSION.SDK_INT >= 28) {
-                }
-                break;
-            default:
-                if (Build.VERSION.SDK_INT >= 29) {
-                }
-                break;
-        }
-        return false;
+    public b(c3.o oVar, b2.s sVar, b0 b0Var, z3.k kVar, boolean z10) {
+        this.a = oVar;
+        this.b = sVar;
+        this.c = b0Var;
+        this.d = kVar;
+        this.e = z10;
     }
 }

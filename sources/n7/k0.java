@@ -1,6 +1,32 @@
 package n7;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
-public abstract class k0 {
+public final class k0 extends m0 {
+    public final char[] e;
+
+    public k0(j0 j0Var) {
+        super(j0Var, (Character) null);
+        this.e = new char[512];
+        char[] cArr = j0Var.b;
+        if (cArr.length != 16) {
+            throw new IllegalArgumentException();
+        }
+        for (int i10 = 0; i10 < 256; i10++) {
+            char[] cArr2 = this.e;
+            cArr2[i10] = cArr[i10 >>> 4];
+            cArr2[i10 | 256] = cArr[i10 & 15];
+        }
+    }
+
+    @Override // n7.m0
+    public final void a(StringBuilder sb2, byte[] bArr, int i10) {
+        a.m(0, i10, bArr.length);
+        for (int i11 = 0; i11 < i10; i11++) {
+            int i12 = bArr[i11] & 255;
+            char[] cArr = this.e;
+            sb2.append(cArr[i12]);
+            sb2.append(cArr[i12 | 256]);
+        }
+    }
 }

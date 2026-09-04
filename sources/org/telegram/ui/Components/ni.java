@@ -1,55 +1,172 @@
 package org.telegram.ui.Components;
 
-import android.util.SparseIntArray;
-import android.view.View;
+import android.content.Context;
+import android.view.MotionEvent;
+import android.widget.FrameLayout;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.DocumentObject;
-import org.telegram.messenger.ImageLocation;
-import org.telegram.messenger.ImageReceiver;
-import org.telegram.messenger.MessageObject;
-import org.telegram.messenger.R;
-import org.telegram.messenger.SvgHelper;
-import org.telegram.messenger.Utilities;
-import org.telegram.messenger.WebFile;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final /* synthetic */ class ni implements Utilities.CallbackReturn {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+public abstract class ni extends FrameLayout {
+    public final org.telegram.ui.ActionBar.f6 a;
+    public final vi b;
+    public ll0 c;
+    public ll0 d;
+    public int e;
+    public boolean f;
+    public boolean h;
 
-    public /* synthetic */ ni(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+    public ni(Context context, org.telegram.ui.ActionBar.f6 f6Var, vi viVar) {
+        super(context);
+        this.a = f6Var;
+        this.b = viVar;
     }
 
-    @Override // org.telegram.messenger.Utilities.CallbackReturn
-    public final Object run(Object obj) {
-        switch (this.a) {
-            case 0:
-                return Boolean.valueOf(wi.J((wi) this.b, (MessageObject) obj));
-            case 1:
-                eh.g gVar = (eh.g) this.b;
-                View view = (View) obj;
-                ImageReceiver imageReceiver = new ImageReceiver(view);
-                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(R.raw.map_placeholder, org.telegram.ui.ActionBar.j6.Pb, (org.telegram.ui.ActionBar.j6.I.q() ? 3 : 6) * 0.12f);
-                svgThumb.setAspectCenter(true);
-                svgThumb.setColorKey(org.telegram.ui.ActionBar.j6.qe);
-                imageReceiver.setImage(ImageLocation.getForWebFile(WebFile.createWithGeoPoint(gVar.b.geo, 300, 168, 15, Math.min(2, (int) Math.ceil(AndroidUtilities.density)))), (String) null, (ImageLocation) null, (String) null, new bq(svgThumb), (Object) null, 0);
-                view.addOnAttachStateChangeListener(new eh.f(imageReceiver, 0));
-                imageReceiver.setRoundRadius(AndroidUtilities.dp(14.0f));
-                return new df.f(imageReceiver, view.getContext().getResources().getDrawable(R.drawable.map_pin).mutate());
-            case 2:
-                int i10 = ((SparseIntArray) this.b).get(((Integer) obj).intValue(), -1);
-                if (i10 == -1) {
-                    return Boolean.TRUE;
-                }
-                return Boolean.valueOf(i10 == 1);
-            default:
-                g61 g61Var = (g61) this.b;
-                View view2 = (View) obj;
-                g61Var.getClass();
-                return view2.getParent() != g61Var ? Boolean.FALSE : Boolean.valueOf(!w51.K(g61Var.T(view2).f));
-        }
+    public boolean C(int i10) {
+        return false;
+    }
+
+    public boolean I(int i10, boolean z10, int i11, boolean z11, long j3) {
+        return false;
+    }
+
+    public boolean J() {
+        return !(this instanceof fi.r4);
+    }
+
+    public boolean b() {
+        return true;
+    }
+
+    public boolean c() {
+        return true;
+    }
+
+    public boolean e() {
+        return false;
+    }
+
+    public boolean f() {
+        return false;
+    }
+
+    public boolean g() {
+        return false;
+    }
+
+    public int getButtonsHideOffset() {
+        return AndroidUtilities.dp(h() != 0 ? 12.0f : 17.0f);
+    }
+
+    public int getCurrentItemTop() {
+        return 0;
+    }
+
+    public int getCustomActionBarBackground() {
+        return 0;
+    }
+
+    public int getCustomBackground() {
+        return 0;
+    }
+
+    public int getFirstOffset() {
+        return 0;
+    }
+
+    public ch.a getIBlur3Capture() {
+        return null;
+    }
+
+    public int getListTopPadding() {
+        return 0;
+    }
+
+    public int getSelectedItemsCount() {
+        return 0;
+    }
+
+    public ArrayList<org.telegram.ui.ActionBar.l6> getThemeDescriptions() {
+        return null;
+    }
+
+    public int h() {
+        return 0;
+    }
+
+    public boolean i() {
+        return false;
+    }
+
+    public boolean l(MotionEvent motionEvent) {
+        return false;
+    }
+
+    public boolean n() {
+        return false;
+    }
+
+    public boolean p() {
+        return true;
+    }
+
+    public abstract void y(int i10, int i11);
+
+    public void A() {
+    }
+
+    public void B(int i10) {
+    }
+
+    public void D(ni niVar) {
+    }
+
+    public void F() {
+    }
+
+    public void G() {
+    }
+
+    public void a(CharSequence charSequence) {
+    }
+
+    public void d() {
+    }
+
+    public void j() {
+    }
+
+    public void k(float f7) {
+    }
+
+    public void m() {
+    }
+
+    public void o(int i10) {
+    }
+
+    public void q() {
+    }
+
+    public void r() {
+    }
+
+    public void s(float f7) {
+    }
+
+    public void t(int i10) {
+    }
+
+    public void u() {
+    }
+
+    public void v() {
+    }
+
+    public void x() {
+    }
+
+    public void w(int i10, boolean z10) {
     }
 }

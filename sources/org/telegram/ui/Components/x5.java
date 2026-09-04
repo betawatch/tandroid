@@ -1,41 +1,20 @@
 package org.telegram.ui.Components;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
-/* loaded from: classes3.dex */
-public final /* synthetic */ class x5 implements kf.i {
-    public final /* synthetic */ int a;
-    public final /* synthetic */ Object b;
+import android.text.Layout;
+import android.view.View;
+import java.util.ArrayList;
 
-    public /* synthetic */ x5(Object obj, int i10) {
-        this.a = i10;
-        this.b = obj;
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* loaded from: classes3.dex */
+public final class x5 {
+    public Layout a;
+    public final ArrayList b = new ArrayList();
+
+    public x5(View view, Layout layout) {
+        this.a = layout;
     }
 
-    @Override // kf.i
-    public final void doFrame(long j10) {
-        switch (this.a) {
-            case 0:
-                y5 y5Var = (y5) this.b;
-                int i10 = y5Var.N0 + 1;
-                y5Var.N0 = i10;
-                if (i10 > 10) {
-                    y5Var.O0 = true;
-                }
-                y5Var.i();
-                if (y5Var.R0) {
-                    y5Var.Q0 = true;
-                    y5Var.t();
-                    break;
-                }
-                break;
-            case 1:
-                EditTextBoldCursor editTextBoldCursor = (EditTextBoldCursor) this.b;
-                int i11 = EditTextBoldCursor.a;
-                editTextBoldCursor.invalidate();
-                break;
-            default:
-                gj0.g((gj0) this.b);
-                break;
-        }
+    public final void a() {
+        this.b.size();
     }
 }

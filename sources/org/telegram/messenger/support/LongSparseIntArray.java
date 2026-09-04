@@ -1,6 +1,6 @@
 package org.telegram.messenger.support;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public class LongSparseIntArray implements Cloneable {
     private long[] mKeys;
@@ -11,19 +11,19 @@ public class LongSparseIntArray implements Cloneable {
         this(10);
     }
 
-    private static int binarySearch(long[] jArr, int i10, int i11, long j10) {
+    private static int binarySearch(long[] jArr, int i10, int i11, long j3) {
         int i12 = i11 + i10;
         int i13 = i10 - 1;
         int i14 = i12;
         while (i14 - i13 > 1) {
             int i15 = (i14 + i13) / 2;
-            if (jArr[i15] < j10) {
+            if (jArr[i15] < j3) {
                 i13 = i15;
             } else {
                 i14 = i15;
             }
         }
-        return i14 == i12 ? ~i12 : jArr[i14] == j10 ? i14 : ~i14;
+        return i14 == i12 ? ~i12 : jArr[i14] == j3 ? i14 : ~i14;
     }
 
     private void growKeyAndValueArrays(int i10) {
@@ -38,16 +38,16 @@ public class LongSparseIntArray implements Cloneable {
         this.mValues = iArr;
     }
 
-    public void append(long j10, int i10) {
+    public void append(long j3, int i10) {
         int i11 = this.mSize;
-        if (i11 != 0 && j10 <= this.mKeys[i11 - 1]) {
-            put(j10, i10);
+        if (i11 != 0 && j3 <= this.mKeys[i11 - 1]) {
+            put(j3, i10);
             return;
         }
         if (i11 >= this.mKeys.length) {
             growKeyAndValueArrays(i11 + 1);
         }
-        this.mKeys[i11] = j10;
+        this.mKeys[i11] = j3;
         this.mValues[i11] = i10;
         this.mSize = i11 + 1;
     }
@@ -56,24 +56,24 @@ public class LongSparseIntArray implements Cloneable {
         this.mSize = 0;
     }
 
-    public void delete(long j10) {
-        int binarySearch = binarySearch(this.mKeys, 0, this.mSize, j10);
+    public void delete(long j3) {
+        int binarySearch = binarySearch(this.mKeys, 0, this.mSize, j3);
         if (binarySearch >= 0) {
             removeAt(binarySearch);
         }
     }
 
-    public int get(long j10) {
-        return get(j10, 0);
+    public int get(long j3) {
+        return get(j3, 0);
     }
 
-    public int indexOfKey(long j10) {
-        return binarySearch(this.mKeys, 0, this.mSize, j10);
+    public int indexOfKey(long j3) {
+        return binarySearch(this.mKeys, 0, this.mSize, j3);
     }
 
-    public int indexOfValue(long j10) {
+    public int indexOfValue(long j3) {
         for (int i10 = 0; i10 < this.mSize; i10++) {
-            if (this.mValues[i10] == j10) {
+            if (this.mValues[i10] == j3) {
                 return i10;
             }
         }
@@ -84,8 +84,8 @@ public class LongSparseIntArray implements Cloneable {
         return this.mKeys[i10];
     }
 
-    public void put(long j10, int i10) {
-        int binarySearch = binarySearch(this.mKeys, 0, this.mSize, j10);
+    public void put(long j3, int i10) {
+        int binarySearch = binarySearch(this.mKeys, 0, this.mSize, j3);
         if (binarySearch >= 0) {
             this.mValues[binarySearch] = i10;
             return;
@@ -103,7 +103,7 @@ public class LongSparseIntArray implements Cloneable {
             int[] iArr = this.mValues;
             System.arraycopy(iArr, i11, iArr, i14, this.mSize - i11);
         }
-        this.mKeys[i11] = j10;
+        this.mKeys[i11] = j3;
         this.mValues[i11] = i10;
         this.mSize++;
     }
@@ -147,8 +147,8 @@ public class LongSparseIntArray implements Cloneable {
         }
     }
 
-    public int get(long j10, int i10) {
-        int binarySearch = binarySearch(this.mKeys, 0, this.mSize, j10);
+    public int get(long j3, int i10) {
+        int binarySearch = binarySearch(this.mKeys, 0, this.mSize, j3);
         return binarySearch < 0 ? i10 : this.mValues[binarySearch];
     }
 }

@@ -1,52 +1,10 @@
 package org.telegram.ui.web;
 
-import java.util.ArrayList;
-import org.telegram.messenger.LocaleController;
-import org.telegram.messenger.SharedConfig;
-import org.telegram.messenger.Utilities;
+import java.util.HashMap;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes4.dex */
 public final class n1 {
-    public static ArrayList d;
-    public final String a;
-    public final String b;
-    public final String c;
-
-    public n1(String str, String str2, String str3) {
-        this.a = str;
-        this.b = str2;
-        this.c = str3;
-    }
-
-    public static n1 a() {
-        ArrayList b10 = b();
-        return b10.isEmpty() ? new n1("Google", "https://www.google.com/search?q=", "https://suggestqueries.google.com/complete/search?client=chrome&amp;q=") : (n1) b10.get(Utilities.clamp(SharedConfig.searchEngineType, b10.size() - 1, 0));
-    }
-
-    public static ArrayList b() {
-        if (d == null) {
-            d = new ArrayList();
-            int i10 = 1;
-            while (true) {
-                String c3 = c(LocaleController.getString("SearchEngine" + i10 + "Name"));
-                if (c3 == null) {
-                    break;
-                }
-                String c10 = c(LocaleController.getString("SearchEngine" + i10 + "SearchURL"));
-                String c11 = c(LocaleController.getString("SearchEngine" + i10 + "AutocompleteURL"));
-                c(LocaleController.getString("SearchEngine" + i10 + "PrivacyPolicyURL"));
-                d.add(new n1(c3, c10, c11));
-                i10++;
-            }
-        }
-        return d;
-    }
-
-    public static String c(String str) {
-        if (str == null || str.startsWith("LOC_ERR") || "reserved".equals(str)) {
-            return null;
-        }
-        return str;
-    }
+    public String a;
+    public final HashMap b = new HashMap();
 }

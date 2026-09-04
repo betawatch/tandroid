@@ -1,44 +1,87 @@
 package org.telegram.ui.Cells;
 
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.DocumentObject;
+import org.telegram.messenger.ImageLocation;
+import org.telegram.messenger.LocaleController;
+import org.telegram.messenger.MediaDataController;
+import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.R;
+import org.telegram.messenger.SvgHelper;
+import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class b3 extends View {
-    public boolean a;
-    public final Paint b;
-    public final org.telegram.ui.ActionBar.f6 c;
+public abstract class b3 extends LinearLayout implements NotificationCenter.NotificationCenterDelegate {
+    public int a;
+    public org.telegram.ui.Components.x9 b;
+    public TextView c;
+    public TextView d;
+    public TextView e;
 
-    public b3(Context context, org.telegram.ui.ActionBar.f6 f6Var) {
-        super(context);
-        this.b = new Paint();
-        this.c = f6Var;
-        setPadding(0, AndroidUtilities.dp(8.0f), 0, AndroidUtilities.dp(8.0f));
-    }
-
-    @Override // android.view.View
-    public final void onDraw(Canvas canvas) {
-        boolean z4 = this.a;
-        org.telegram.ui.ActionBar.f6 f6Var = this.c;
-        Paint paint = this.b;
-        if (z4) {
-            paint.setColor(i0.a.d(0.2f, -16777216, org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.ug, f6Var)));
-        } else {
-            paint.setColor(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.d7, f6Var));
+    public final void a() {
+        org.telegram.ui.Components.x9 x9Var = this.b;
+        int i10 = this.a;
+        TLRPC.TL_messages_stickerSet stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
+        if (stickerSetByName == null) {
+            stickerSetByName = MediaDataController.getInstance(i10).getStickerSetByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME);
         }
-        canvas.drawLine(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop(), paint);
+        TLRPC.TL_messages_stickerSet tL_messages_stickerSet = stickerSetByName;
+        TLRPC.Document document = (tL_messages_stickerSet == null || 1 >= tL_messages_stickerSet.documents.size()) ? null : tL_messages_stickerSet.documents.get(1);
+        if (document == null) {
+            MediaDataController.getInstance(i10).loadStickersByEmojiOrName(AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME, false, tL_messages_stickerSet == null);
+            x9Var.getImageReceiver().clearImage();
+            return;
+        }
+        SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(document.thumbs, org.telegram.ui.ActionBar.j6.a7, 0.2f);
+        if (svgThumb != null) {
+            svgThumb.overrideWidthAndHeight(512, 512);
+        }
+        this.b.i(ImageLocation.getForDocument(document), "130_130", "tgs", svgThumb, tL_messages_stickerSet);
+        x9Var.getImageReceiver().setAutoRepeat(2);
     }
 
-    @Override // android.view.View
-    public final void onMeasure(int i10, int i11) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i10), getPaddingBottom() + getPaddingTop() + 1);
+    @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
+    public final void didReceivedNotification(int i10, int i11, Object... objArr) {
+        if (i10 == NotificationCenter.diceStickersDidLoad && AndroidUtilities.STICKERS_PLACEHOLDER_PACK_NAME.equals((String) objArr[0]) && getVisibility() == 0) {
+            a();
+        }
     }
 
-    public void setForceDarkTheme(boolean z4) {
-        this.a = z4;
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.diceStickersDidLoad);
+    }
+
+    @Override // android.view.ViewGroup, android.view.View
+    public final void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        NotificationCenter.getInstance(this.a).addObserver(this, NotificationCenter.diceStickersDidLoad);
+    }
+
+    public void set(TLRPC.RequestPeerType requestPeerType) {
+        TextView textView = this.d;
+        TextView textView2 = this.c;
+        TextView textView3 = this.e;
+        if (requestPeerType instanceof TLRPC.TL_requestPeerTypeBroadcast) {
+            textView2.setText(LocaleController.getString(R.string.NoSuchChannels));
+            textView.setText(LocaleController.getString(R.string.NoSuchChannelsInfo));
+            textView3.setVisibility(0);
+            textView3.setText(LocaleController.getString(R.string.CreateChannelForThis));
+            return;
+        }
+        if (!(requestPeerType instanceof TLRPC.TL_requestPeerTypeChat)) {
+            textView2.setText(LocaleController.getString(R.string.NoSuchUsers));
+            textView.setText(LocaleController.getString(R.string.NoSuchUsersInfo));
+            textView3.setVisibility(8);
+        } else {
+            textView2.setText(LocaleController.getString(R.string.NoSuchGroups));
+            textView.setText(LocaleController.getString(R.string.NoSuchGroupsInfo));
+            textView3.setVisibility(0);
+            textView3.setText(LocaleController.getString(R.string.CreateGroupForThis));
+        }
     }
 }

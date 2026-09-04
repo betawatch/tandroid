@@ -3,14 +3,14 @@ package android.support.v4.media.session;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes.dex */
 public final class MediaSessionCompat$Token implements Parcelable {
     public static final Parcelable.Creator<MediaSessionCompat$Token> CREATOR = new b0(2);
     public final Object b;
     public d c;
     public final Object a = new Object();
-    public l2.d d = null;
+    public y4.d d = null;
 
     public MediaSessionCompat$Token(Object obj, u uVar) {
         this.b = obj;
@@ -25,15 +25,21 @@ public final class MediaSessionCompat$Token implements Parcelable {
         return dVar;
     }
 
-    @Override // android.os.Parcelable
-    public final int describeContents() {
-        return 0;
-    }
-
-    public final void e(d dVar) {
+    public final void b(d dVar) {
         synchronized (this.a) {
             this.c = dVar;
         }
+    }
+
+    public final void c(y4.d dVar) {
+        synchronized (this.a) {
+            this.d = dVar;
+        }
+    }
+
+    @Override // android.os.Parcelable
+    public final int describeContents() {
+        return 0;
     }
 
     public final boolean equals(Object obj) {
@@ -52,12 +58,6 @@ public final class MediaSessionCompat$Token implements Parcelable {
             return false;
         }
         return obj3.equals(obj2);
-    }
-
-    public final void f(l2.d dVar) {
-        synchronized (this.a) {
-            this.d = dVar;
-        }
     }
 
     public final int hashCode() {

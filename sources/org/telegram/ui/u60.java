@@ -1,23 +1,47 @@
 package org.telegram.ui;
 
-import java.util.Comparator;
-import org.telegram.messenger.ContactsController;
-import org.telegram.tgnet.TLObject;
-import org.telegram.tgnet.TLRPC;
+import android.view.View;
+import org.telegram.messenger.AndroidUtilities;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
-public final class u60 implements Comparator {
-    public static String a(TLObject tLObject) {
-        if (!(tLObject instanceof TLRPC.User)) {
-            return tLObject instanceof TLRPC.Chat ? ((TLRPC.Chat) tLObject).title : "";
-        }
-        TLRPC.User user = (TLRPC.User) tLObject;
-        return ContactsController.formatName(user.first_name, user.last_name);
+public final /* synthetic */ class u60 implements org.telegram.ui.Components.c20, org.telegram.ui.ActionBar.a2, r0.n {
+    public final /* synthetic */ int a;
+    public final /* synthetic */ f70 b;
+
+    public /* synthetic */ u60(f70 f70Var, int i10) {
+        this.a = i10;
+        this.b = f70Var;
     }
 
-    @Override // java.util.Comparator
-    public final int compare(Object obj, Object obj2) {
-        return a((TLObject) obj).compareTo(a((TLObject) obj2));
+    @Override // r0.n
+    public r0.l1 T0(View view, r0.l1 l1Var) {
+        int i10 = AndroidUtilities.getDefaultWindowInsets(l1Var, false).d;
+        f70 f70Var = this.b;
+        f70Var.m0 = i10;
+        bi.e7 e7Var = f70Var.F;
+        if (e7Var != null) {
+            e7Var.setPadding(0, 0, 0, i10);
+        }
+        f70Var.j0();
+        f70Var.h0();
+        return r0.l1.b;
+    }
+
+    @Override // org.telegram.ui.Components.c20
+    public void a(int i10) {
+        this.b.b.a(Math.min(i10, r0.c0));
+    }
+
+    @Override // org.telegram.ui.ActionBar.a2
+    public void g(org.telegram.ui.ActionBar.b2 b2Var, int i10) {
+        switch (this.a) {
+            case 1:
+                this.b.o0();
+                break;
+            default:
+                this.b.finishFragment();
+                break;
+        }
     }
 }

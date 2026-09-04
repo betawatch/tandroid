@@ -2,66 +2,39 @@ package org.telegram.ui.Components;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.ui.Components.ChatActivityEnterView;
 
-/* compiled from: r8-map-id-33f3ee7b3837766f245c82aac5a618a539713405f9dc265162d35c247069ed49 */
+/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
 /* loaded from: classes3.dex */
 public final class yf extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
-    public final /* synthetic */ int b;
-    public final /* synthetic */ ChatActivityEnterView c;
+    public final /* synthetic */ ChatActivityEnterView b;
 
-    public /* synthetic */ yf(ChatActivityEnterView chatActivityEnterView, int i10, int i11) {
-        this.a = i11;
-        this.c = chatActivityEnterView;
-        this.b = i10;
+    public yf(ChatActivityEnterView chatActivityEnterView, int i10) {
+        this.b = chatActivityEnterView;
+        this.a = i10;
     }
 
     @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
     public final void onAnimationEnd(Animator animator) {
-        switch (this.a) {
-            case 0:
-                int i10 = this.b;
-                ChatActivityEnterView chatActivityEnterView = this.c;
-                if (i10 == 0) {
-                    chatActivityEnterView.w2 = 0;
+        ChatActivityEnterView chatActivityEnterView = this.b;
+        if (animator.equals(chatActivityEnterView.s2)) {
+            int i10 = this.a;
+            if (i10 != 3 && chatActivityEnterView.E0 != null && !AndroidUtilities.isAccessibilityScreenReaderEnabled()) {
+                chatActivityEnterView.E0.requestFocus();
+            }
+            chatActivityEnterView.A();
+            if (i10 != 3) {
+                sg sgVar = chatActivityEnterView.N1;
+                if (sgVar != null) {
+                    sgVar.setVisibility(8);
                 }
-                chatActivityEnterView.S0 = null;
-                chatActivityEnterView.D1.setTranslationY(0.0f);
-                chatActivityEnterView.D1.setVisibility(8);
-                chatActivityEnterView.H3.unlock();
-                eg egVar = chatActivityEnterView.V2;
-                if (egVar != null) {
-                    egVar.x(0.0f);
+                ChatActivityEnterView.RecordCircle recordCircle = chatActivityEnterView.M1;
+                if (recordCircle != null) {
+                    recordCircle.d();
                 }
-                chatActivityEnterView.requestLayout();
-                break;
-            default:
-                ChatActivityEnterView chatActivityEnterView2 = this.c;
-                qv0 qv0Var = chatActivityEnterView2.i1;
-                chatActivityEnterView2.w3 = false;
-                chatActivityEnterView2.x3 = null;
-                uf ufVar = chatActivityEnterView2.R0;
-                if (ufVar != null) {
-                    if (chatActivityEnterView2.Z4 == null) {
-                        ufVar.getLayoutParams().height = this.b;
-                    }
-                    chatActivityEnterView2.R0.setLayerType(0, null);
-                }
-                if (qv0Var != null) {
-                    qv0Var.requestLayout();
-                    qv0Var.setForeground(null);
-                    qv0Var.setWillNotDraw(false);
-                }
-                if (chatActivityEnterView2.v2 && chatActivityEnterView2.t0()) {
-                    chatActivityEnterView2.t1(0, chatActivityEnterView2.b2, true, true);
-                }
-                yd ydVar = chatActivityEnterView2.o0;
-                if (ydVar != null) {
-                    ydVar.run();
-                    chatActivityEnterView2.o0 = null;
-                }
-                chatActivityEnterView2.H3.unlock();
-                break;
+            }
         }
     }
 }
