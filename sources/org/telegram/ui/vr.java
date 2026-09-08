@@ -32,7 +32,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.Switch;
 import org.telegram.ui.Components.UndoView;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public final class vr extends org.telegram.ui.ActionBar.n2 implements NotificationCenter.NotificationCenterDelegate {
     public int A0;
@@ -2236,7 +2236,7 @@ public final class vr extends org.telegram.ui.ActionBar.n2 implements Notificati
             str2 = "KickFromGroup";
             i12 = R.string.KickFromGroup;
         }
-        H2.m(z23, i18, LocaleController.getString(str2, i12), true, new a3.g0(this, user, j13, 16));
+        H2.m(z23, i18, LocaleController.getString(str2, i12), true, new a3.h0(this, user, j13, 16));
         H2.S = 190;
         H2.Z();
         return true;

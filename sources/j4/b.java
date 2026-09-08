@@ -5,7 +5,7 @@ import c3.h0;
 import j$.util.Objects;
 import org.telegram.messenger.MediaDataController;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class b implements i {
     public final /* synthetic */ int a;
@@ -397,7 +397,7 @@ public final class b implements i {
                         if (i44 == 16) {
                             a4.h hVar2 = this.b;
                             hVar2.q(0);
-                            a3.k m10 = c3.b.m(hVar2);
+                            a3.l m10 = c3.b.m(hVar2);
                             int i45 = m10.a;
                             b2.s sVar3 = this.m;
                             if (sVar3 == null || 2 != sVar3.J || i45 != sVar3.K || !"audio/ac4".equals(sVar3.r)) {

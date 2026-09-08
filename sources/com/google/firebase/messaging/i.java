@@ -43,7 +43,7 @@ import org.telegram.ui.pn0;
 import org.telegram.ui.w00;
 import org.telegram.ui.zl0;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final /* synthetic */ class i implements Continuation, a2, j0, al0, dt, androidx.car.app.utils.c {
     public final /* synthetic */ int a;
@@ -197,7 +197,7 @@ public final /* synthetic */ class i implements Continuation, a2, j0, al0, dt, a
 
     @Override // com.google.android.gms.tasks.Continuation
     public Object then(Task task) {
-        return (u6.b.d() && ((Integer) task.getResult()).intValue() == 402) ? j.a((Context) this.c, (Intent) this.d, this.b).continueWith(new a3.a(2), new androidx.emoji2.text.w(22)) : task;
+        return (u6.b.d() && ((Integer) task.getResult()).intValue() == 402) ? j.a((Context) this.c, (Intent) this.d, this.b).continueWith(new a3.b(2), new androidx.emoji2.text.w(22)) : task;
     }
 
     public /* synthetic */ i(Object obj, boolean z10, Object obj2, int i10) {

@@ -2,28 +2,28 @@ package dd;
 
 import java.util.Locale;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public abstract class j extends k {
     public String c;
     public String d;
     public String e;
     public final StringBuilder f;
-    public String h;
-    public boolean n;
-    public boolean r;
-    public boolean s;
-    public cd.c v;
+    public String g;
+    public boolean h;
+    public boolean i;
+    public boolean j;
+    public cd.c k;
 
     public j(int i10) {
         super(i10, 0);
         this.f = new StringBuilder();
-        this.n = false;
-        this.r = false;
-        this.s = false;
+        this.h = false;
+        this.i = false;
+        this.j = false;
     }
 
-    public final void i(char c10) {
+    public final void d(char c10) {
         String valueOf = String.valueOf(c10);
         String str = this.e;
         if (str != null) {
@@ -32,46 +32,46 @@ public abstract class j extends k {
         this.e = valueOf;
     }
 
-    public final void j(char c10) {
-        this.r = true;
-        String str = this.h;
+    public final void e(char c10) {
+        this.i = true;
+        String str = this.g;
         StringBuilder sb2 = this.f;
         if (str != null) {
             sb2.append(str);
-            this.h = null;
+            this.g = null;
         }
         sb2.append(c10);
     }
 
-    public final void l(String str) {
-        this.r = true;
-        String str2 = this.h;
+    public final void f(String str) {
+        this.i = true;
+        String str2 = this.g;
         StringBuilder sb2 = this.f;
         if (str2 != null) {
             sb2.append(str2);
-            this.h = null;
+            this.g = null;
         }
         if (sb2.length() == 0) {
-            this.h = str;
+            this.g = str;
         } else {
             sb2.append(str);
         }
     }
 
-    public final void m(int[] iArr) {
-        this.r = true;
-        String str = this.h;
+    public final void g(int[] iArr) {
+        this.i = true;
+        String str = this.g;
         StringBuilder sb2 = this.f;
         if (str != null) {
             sb2.append(str);
-            this.h = null;
+            this.g = null;
         }
         for (int i10 : iArr) {
             sb2.appendCodePoint(i10);
         }
     }
 
-    public final void n(String str) {
+    public final void h(String str) {
         String str2 = this.c;
         if (str2 != null) {
             str = str2.concat(str);
@@ -80,7 +80,7 @@ public abstract class j extends k {
         this.d = str != null ? str.toLowerCase(Locale.ENGLISH) : "";
     }
 
-    public final String o() {
+    public final String i() {
         String str = this.c;
         if (str == null || str.length() == 0) {
             throw new IllegalArgumentException("Must be false");
@@ -88,9 +88,9 @@ public abstract class j extends k {
         return this.c;
     }
 
-    public final void p() {
-        if (this.v == null) {
-            this.v = new cd.c();
+    public final void j() {
+        if (this.k == null) {
+            this.k = new cd.c();
         }
         String str = this.e;
         StringBuilder sb2 = this.f;
@@ -98,8 +98,8 @@ public abstract class j extends k {
             String trim = str.trim();
             this.e = trim;
             if (trim.length() > 0) {
-                String sb3 = this.r ? sb2.length() > 0 ? sb2.toString() : this.h : this.n ? "" : null;
-                cd.c cVar = this.v;
+                String sb3 = this.i ? sb2.length() > 0 ? sb2.toString() : this.g : this.h ? "" : null;
+                cd.c cVar = this.k;
                 String str2 = this.e;
                 int i10 = cVar.i(str2);
                 if (i10 != -1) {
@@ -134,24 +134,24 @@ public abstract class j extends k {
             }
         }
         this.e = null;
-        this.n = false;
-        this.r = false;
-        k.g(sb2);
-        this.h = null;
+        this.h = false;
+        this.i = false;
+        k.c(sb2);
+        this.g = null;
     }
 
     @Override // dd.k
-    /* renamed from: q, reason: merged with bridge method [inline-methods] */
-    public j f() {
+    /* renamed from: k, reason: merged with bridge method [inline-methods] */
+    public j b() {
         this.c = null;
         this.d = null;
         this.e = null;
-        k.g(this.f);
-        this.h = null;
-        this.n = false;
-        this.r = false;
-        this.s = false;
-        this.v = null;
+        k.c(this.f);
+        this.g = null;
+        this.h = false;
+        this.i = false;
+        this.j = false;
+        this.k = null;
         return this;
     }
 }

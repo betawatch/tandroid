@@ -28,7 +28,7 @@ import u2.d1;
 import u2.t;
 import x2.r;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class h implements b1, d1, y2.h, y2.k {
     public final o0.a E;
@@ -227,7 +227,7 @@ public final class h implements b1, d1, y2.h, y2.k {
     }
 
     @Override // u2.b1
-    public final int f(y yVar, h2.g gVar, int i10) {
+    public final int f(y yVar, h2.h hVar, int i10) {
         if (z()) {
             return -3;
         }
@@ -237,7 +237,7 @@ public final class h implements b1, d1, y2.h, y2.k {
             return -3;
         }
         A();
-        return a1Var.C(yVar, gVar, i10, this.O);
+        return a1Var.C(yVar, hVar, i10, this.O);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x0227  */

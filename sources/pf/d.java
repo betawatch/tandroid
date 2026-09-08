@@ -1,6 +1,6 @@
 package pf;
 
-import a3.y;
+import a3.z;
 import android.net.Uri;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
@@ -36,7 +36,7 @@ import org.telegram.ui.Components.yg;
 import org.telegram.ui.sw0;
 import yc.i;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class d extends i {
     public static final f l;
@@ -233,7 +233,7 @@ public final class d extends i {
     public final yc.g k(yc.d dVar) {
         boolean z10;
         long j3;
-        y yVar;
+        z zVar;
         long j10;
         yc.g c10;
         long parseLong;
@@ -324,11 +324,11 @@ public final class d extends i {
                 long j13 = parseLong;
                 j3 = open;
                 long j14 = j3 - 1;
-                yVar = new y(j13, parseLong2 > j14 ? j14 : parseLong2);
-                long j15 = yVar == null ? (yVar.b - yVar.a) + 1 : j3;
-                if (yVar != null) {
+                zVar = new z(j13, parseLong2 > j14 ? j14 : parseLong2);
+                long j15 = zVar == null ? (zVar.b - zVar.a) + 1 : j3;
+                if (zVar != null) {
                     j12 = j15;
-                    j11 = yVar.a;
+                    j11 = zVar.a;
                 }
                 if (!z10) {
                     int i11 = (int) j15;
@@ -341,7 +341,7 @@ public final class d extends i {
                 if (j15 != 0) {
                     j10 = j3;
                     c cVar = new c(createDataSource, new m(uri, 1, null, map, j11, j12, null, 0));
-                    if (yVar != null) {
+                    if (zVar != null) {
                         fVar = yc.f.e;
                     }
                     c10 = new yc.g(fVar, fVar2.a, cVar, j15);
@@ -350,18 +350,18 @@ public final class d extends i {
                     c10 = i.c(yc.f.d, str3, "");
                 }
                 yc.g gVar = c10;
-                if (yVar != null) {
-                    gVar.e.put("Content-Range", "bytes " + yVar.a + "-" + yVar.b + "/" + j10);
+                if (zVar != null) {
+                    gVar.e.put("Content-Range", "bytes " + zVar.a + "-" + zVar.b + "/" + j10);
                 }
                 return gVar;
             }
         }
         z10 = equals2;
         j3 = open;
-        yVar = null;
-        if (yVar == null) {
+        zVar = null;
+        if (zVar == null) {
         }
-        if (yVar != null) {
+        if (zVar != null) {
         }
         if (!z10) {
         }

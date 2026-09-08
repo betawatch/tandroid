@@ -13,7 +13,7 @@ import org.telegram.ui.Cells.p6;
 import ru.noties.jlatexmath.android.R;
 import ru.noties.jlatexmath.awt.Color;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public class JLatexMathView extends View {
     public static final int ALIGN_CENTER = 1;
@@ -29,7 +29,7 @@ public class JLatexMathView extends View {
     private int textSize;
     private float top;
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     @Retention(RetentionPolicy.CLASS)
     public @interface Align {
     }

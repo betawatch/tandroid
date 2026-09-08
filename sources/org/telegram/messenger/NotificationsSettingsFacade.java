@@ -6,7 +6,7 @@ import android.media.RingtoneManager;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public class NotificationsSettingsFacade {
     public static final String PROPERTY_CONTENT_PREVIEW = "content_preview_";
@@ -128,7 +128,7 @@ public class NotificationsSettingsFacade {
         if (peerNotifySettings == null) {
             return;
         }
-        Utilities.globalQueue.postRunnable(new a3.f0(this, j3, j10, peerNotifySettings, 9));
+        Utilities.globalQueue.postRunnable(new a3.g0(this, j3, j10, peerNotifySettings, 9));
     }
 
     /* JADX WARN: Removed duplicated region for block: B:15:0x00f7  */

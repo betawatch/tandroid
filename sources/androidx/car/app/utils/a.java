@@ -1,5 +1,6 @@
 package androidx.car.app.utils;
 
+import a3.k0;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -52,7 +53,6 @@ import ji.v3;
 import m4.a0;
 import m4.d1;
 import m4.j0;
-import m4.k0;
 import m4.l1;
 import m4.p1;
 import m4.r;
@@ -109,7 +109,7 @@ import org.telegram.ui.ro;
 import org.telegram.ui.uy;
 import org.telegram.ui.wo0;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final /* synthetic */ class a implements d, MessagesStorage.StringCallback, kb, SuccessContinuation, MediaDataController.KeywordResultCallback, a2, wo0, bl, j0, p, tc0, r0, oy, d5 {
     public final /* synthetic */ int a;
@@ -189,7 +189,7 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
                 p1 p1Var = new p1(0);
                 String str = d0.a;
                 c0 c0Var = new c0();
-                d0.U(handler, new a3.j0(c0Var, b5Var, p1Var, i11));
+                d0.U(handler, new k0(c0Var, b5Var, p1Var, i11));
                 return c0Var;
             default:
                 a0 a0Var2 = (a0) obj4;
@@ -200,7 +200,7 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
                 p1 p1Var2 = new p1(0);
                 String str2 = d0.a;
                 c0 c0Var2 = new c0();
-                d0.U(handler2, new a3.j0(c0Var2, b5Var2, p1Var2, i11));
+                d0.U(handler2, new k0(c0Var2, b5Var2, p1Var2, i11));
                 return c0Var2;
         }
     }
@@ -298,7 +298,7 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
 
     @Override // m4.j0
     public void f(r rVar) {
-        k0 k0Var = (k0) this.b;
+        m4.k0 k0Var = (m4.k0) this.b;
         Bundle bundle = (Bundle) this.d;
         ResultReceiver resultReceiver = (ResultReceiver) this.c;
         a0 a0Var = k0Var.g;
@@ -547,7 +547,7 @@ public final /* synthetic */ class a implements d, MessagesStorage.StringCallbac
         this.d = obj2;
     }
 
-    public /* synthetic */ a(k0 k0Var, l1 l1Var, Bundle bundle, ResultReceiver resultReceiver) {
+    public /* synthetic */ a(m4.k0 k0Var, l1 l1Var, Bundle bundle, ResultReceiver resultReceiver) {
         this.a = 13;
         this.b = k0Var;
         this.d = bundle;

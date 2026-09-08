@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public enum m0 extends b2 {
     public m0() {
@@ -13,7 +13,7 @@ public enum m0 extends b2 {
         n0 n0Var = b2.X;
         if (d == 0) {
             lVar.m(this);
-            lVar.i.p();
+            lVar.i.j();
             aVar.q();
             lVar.c = n0Var;
             return;
@@ -42,7 +42,7 @@ public enum m0 extends b2 {
                         lVar.c = wVar;
                         break;
                     default:
-                        lVar.i.p();
+                        lVar.i.j();
                         aVar.q();
                         lVar.c = n0Var;
                         break;
@@ -50,8 +50,8 @@ public enum m0 extends b2 {
                 return;
             }
             lVar.m(this);
-            lVar.i.p();
-            lVar.i.i(d);
+            lVar.i.j();
+            lVar.i.d(d);
             lVar.c = n0Var;
         }
     }

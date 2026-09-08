@@ -1,21 +1,21 @@
 package a3;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+import android.content.Context;
+import android.os.Handler;
+
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class k {
-    public int a;
-    public int b;
-    public int c;
+    public final Context a;
+    public boolean b;
+    public r2.k c;
+    public long d;
+    public Handler e;
+    public i2.c0 f;
+    public int g;
 
-    public k() {
-        this.a = 0;
-        this.b = 0;
-        this.c = 0;
-    }
-
-    public /* synthetic */ k(int i10, int i11, int i12) {
-        this.a = i10;
-        this.b = i11;
-        this.c = i12;
+    public k(Context context) {
+        this.a = context;
+        this.c = new q2.b(context);
     }
 }

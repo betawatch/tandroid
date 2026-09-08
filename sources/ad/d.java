@@ -16,7 +16,7 @@ import java.util.Set;
 import m1.j;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class d extends pb.a {
     public static final Set g = DesugarCollections.unmodifiableSet(new HashSet(Arrays.asList("a", "abbr", "acronym", "b", "bdo", "big", "br", "button", "cite", "code", "dfn", "em", "i", "img", "input", "kbd", "label", "map", "object", "q", "samp", "script", "select", "small", "span", "strong", "sub", "sup", "textarea", "time", "tt", "var")));
@@ -35,7 +35,7 @@ public final class d extends pb.a {
     }
 
     public static Map a(i iVar) {
-        cd.c cVar = iVar.v;
+        cd.c cVar = iVar.k;
         int i10 = cVar.a;
         if (i10 <= 0) {
             return Collections.EMPTY_MAP;
@@ -188,7 +188,7 @@ public final class d extends pb.a {
                             }
                             this.f = false;
                         }
-                        if (set3.contains(str3) || iVar.s) {
+                        if (set3.contains(str3) || iVar.j) {
                             bVar2.getClass();
                             String v22 = qb.b.v2(bVar3);
                             if (v22 != null && v22.length() > 0) {
@@ -234,7 +234,7 @@ public final class d extends pb.a {
                         Map a2 = a(iVar);
                         a aVar = this.d;
                         a aVar2 = new a(str4, length7, a2, aVar);
-                        boolean z10 = set3.contains(str4) || iVar.s;
+                        boolean z10 = set3.contains(str4) || iVar.j;
                         if (z10) {
                             bVar2.getClass();
                             String v23 = qb.b.v2(aVar2);
@@ -339,7 +339,7 @@ public final class d extends pb.a {
                         }
                     }
                 }
-                dVar.f();
+                dVar.b();
             } else {
                 lVar.c.d(lVar, lVar.a);
             }

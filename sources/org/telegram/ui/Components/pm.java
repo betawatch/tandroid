@@ -25,7 +25,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.PhotoViewer;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public final class pm extends ViewGroup {
     public om E;
@@ -939,7 +939,7 @@ public final class pm extends ViewGroup {
                     long elapsedRealtime = SystemClock.elapsedRealtime();
                     this.y = elapsedRealtime;
                     i10 = 1;
-                    AndroidUtilities.runOnUIThread(new a3.g0(this, elapsedRealtime, this.F, 20), ViewConfiguration.getLongPressTimeout());
+                    AndroidUtilities.runOnUIThread(new a3.h0(this, elapsedRealtime, this.F, 20), ViewConfiguration.getLongPressTimeout());
                     invalidate();
                 }
                 z10 = true;

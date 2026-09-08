@@ -1,5 +1,6 @@
 package a1;
 
+import a3.l0;
 import ah.h1;
 import ah.k1;
 import ah.m1;
@@ -30,7 +31,6 @@ import bi.f8;
 import bi.g8;
 import bi.gb;
 import bi.j0;
-import bi.l0;
 import bi.l8;
 import bi.m8;
 import bi.n5;
@@ -99,7 +99,7 @@ import v0.i;
 import v0.o;
 import w7.x5;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final /* synthetic */ class e implements Runnable {
     public final /* synthetic */ int a;
@@ -129,27 +129,27 @@ public final /* synthetic */ class e implements Runnable {
             case 2:
                 pf.b bVar = (pf.b) this.b;
                 x1 x1Var = (x1) this.c;
-                c0 c0Var = (c0) bVar.c;
+                l0 l0Var = (l0) bVar.c;
                 String str2 = d0.a;
-                f0 f0Var = c0Var.a;
+                f0 f0Var = ((c0) l0Var).a;
                 f0Var.h0 = x1Var;
                 f0Var.m.e(25, new b0(x1Var));
                 return;
             case 3:
                 pf.b bVar2 = (pf.b) this.b;
                 Exception exc = (Exception) this.c;
-                c0 c0Var2 = (c0) bVar2.c;
+                l0 l0Var2 = (l0) bVar2.c;
                 String str3 = d0.a;
-                j2.f fVar = c0Var2.a.s;
+                j2.f fVar = ((c0) l0Var2).a.s;
                 j2.a p5 = fVar.p();
                 fVar.q(p5, 1030, new i0.b(p5, exc, 13));
                 return;
             case 4:
                 pf.b bVar3 = (pf.b) this.b;
                 String str4 = (String) this.c;
-                c0 c0Var3 = (c0) bVar3.c;
+                l0 l0Var3 = (l0) bVar3.c;
                 String str5 = d0.a;
-                j2.f fVar2 = c0Var3.a.s;
+                j2.f fVar2 = ((c0) l0Var3).a.s;
                 j2.a p10 = fVar2.p();
                 fVar2.q(p10, 1019, new i0.b(p10, str4, 20));
                 return;
@@ -363,7 +363,7 @@ public final /* synthetic */ class e implements Runnable {
                     FrameLayout frameLayout = new FrameLayout(context);
                     di.d dVar = new di.d(context, t0Var, true);
                     dVar.g(LocaleController.getString(R.string.DeleteProceedBtn), false, true);
-                    dVar.setOnClickListener(new l0(z1Var, z1Var2, z1Var3, j0Var, f3Var, 0));
+                    dVar.setOnClickListener(new bi.l0(z1Var, z1Var2, z1Var3, j0Var, f3Var, 0));
                     frameLayout.addView(dVar, x5.d(-1, 48.0f, 119, 16.0f, 16.0f, 16.0f, 16.0f));
                     f7.addView(frameLayout, x5.n(-1, -2));
                     f3Var.setCustomView(f7);

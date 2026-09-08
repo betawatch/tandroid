@@ -53,7 +53,7 @@ import qb.b;
 import rb.a;
 import u2.e0;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public class g71 implements b2.z0, b2.w1, j2.b, NotificationCenter.NotificationCenterDelegate {
     public static int j0;
@@ -1156,7 +1156,7 @@ public class g71 implements b2.z0, b2.w1, j2.b, NotificationCenter.NotificationC
         i2.l lVar = new i2.l(dVar, i11, i10);
         if (this.d == null) {
             i2.m a71Var = this.K != null ? new a71(ApplicationLoader.applicationContext, this) : new i2.m(ApplicationLoader.applicationContext);
-            a71Var.c = 2;
+            a71Var.c = 1;
             i2.q qVar = new i2.q(ApplicationLoader.applicationContext);
             e2.d.g(!qVar.v);
             qVar.c = new i2.p(a71Var, 2);

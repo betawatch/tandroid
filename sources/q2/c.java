@@ -7,41 +7,47 @@ import b2.s0;
 import e2.d0;
 import h2.h;
 import h2.j;
+import h2.l;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import v7.l7;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
-public final class c extends j {
+public final class c extends l {
     public final Context o;
     public final int p;
 
     public c(Context context) {
-        super(new h2.g[1], new a[1]);
+        super(new h[1], new a[1]);
         this.o = context;
         this.p = -1;
     }
 
-    @Override // h2.j
-    public final h2.g f() {
-        return new h2.g(1, 0);
+    @Override // h2.l
+    public final h f() {
+        return new h(1, 0);
     }
 
-    @Override // h2.j
-    public final h g() {
+    @Override // h2.l
+    public final j g() {
         return new a(this);
     }
 
-    @Override // h2.j
-    public final h2.e h(Throwable th2) {
+    @Override // h2.e
+    public final String getName() {
+        return "BitmapFactoryImageDecoder";
+    }
+
+    @Override // h2.l
+    public final h2.f h(Throwable th2) {
         return new d("Unexpected decode error", th2);
     }
 
-    @Override // h2.j
-    public final h2.e i(h2.g gVar, h hVar, boolean z10) {
-        a aVar = (a) hVar;
-        ByteBuffer byteBuffer = gVar.e;
+    @Override // h2.l
+    public final h2.f i(h hVar, j jVar, boolean z10) {
+        a aVar = (a) jVar;
+        ByteBuffer byteBuffer = hVar.c;
         byteBuffer.getClass();
         e2.d.g(byteBuffer.hasArray());
         e2.d.b(byteBuffer.arrayOffset() == 0);
@@ -53,7 +59,7 @@ public final class c extends j {
                     Point w10 = d0.w(context);
                     int i11 = w10.x;
                     int i12 = w10.y;
-                    s sVar = gVar.c;
+                    s sVar = hVar.a;
                     if (sVar != null) {
                         int i13 = sVar.Q;
                         if (i13 != -1) {
@@ -69,8 +75,8 @@ public final class c extends j {
                     i10 = 4096;
                 }
             }
-            aVar.f = l7.a(byteBuffer.remaining(), i10, byteBuffer.array());
-            aVar.c = gVar.h;
+            aVar.a = l7.a(byteBuffer.remaining(), i10, byteBuffer.array());
+            aVar.timeUs = hVar.e;
             return null;
         } catch (s0 e7) {
             return new d("Could not decode image data with BitmapFactory.", e7);

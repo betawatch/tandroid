@@ -12,7 +12,7 @@ import java.util.List;
 import t7.u;
 import w7.l;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class c extends l {
     public final v a = new v();
@@ -24,10 +24,10 @@ public final class c extends l {
         b eVar;
         long j3;
         b0 b0Var = this.c;
-        if (b0Var == null || aVar.v != b0Var.e()) {
-            b0 b0Var2 = new b0(aVar.h);
+        if (b0Var == null || aVar.r != b0Var.e()) {
+            b0 b0Var2 = new b0(aVar.e);
             this.c = b0Var2;
-            b0Var2.a(aVar.h - aVar.v);
+            b0Var2.a(aVar.e - aVar.r);
         }
         byte[] array = byteBuffer.array();
         int limit = byteBuffer.limit();

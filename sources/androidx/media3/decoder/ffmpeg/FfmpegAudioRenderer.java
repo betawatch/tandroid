@@ -1,6 +1,6 @@
 package androidx.media3.decoder.ffmpeg;
 
-import a3.f0;
+import a3.g0;
 import a6.m;
 import android.os.Build;
 import android.os.Handler;
@@ -11,14 +11,15 @@ import b2.r;
 import b2.r0;
 import b2.s;
 import b2.v0;
+import e0.b;
+import e2.d;
 import e2.x;
 import e9.i0;
-import h2.d;
 import h2.e;
-import h2.g;
+import h2.h;
+import h2.l;
 import hg.t;
 import i2.f;
-import i2.h;
 import i2.i;
 import i2.m1;
 import i2.s0;
@@ -26,30 +27,30 @@ import j2.k;
 import ji.b5;
 import k2.d0;
 import k2.j;
-import k2.l;
 import k2.o;
 import k2.p;
 import k2.w;
+import n2.g;
 import n4.y;
 import org.telegram.tgnet.TLObject;
-import u2.b1;
+import u2.f0;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
-public final class b extends f implements s0 {
+public final class FfmpegAudioRenderer extends f implements s0 {
     public final y I;
     public final p J;
-    public final g K;
-    public h L;
+    public final h K;
+    public i2.h L;
     public s M;
     public int N;
     public int O;
     public boolean P;
-    public d Q;
-    public g R;
+    public FfmpegAudioDecoder Q;
+    public h R;
     public SimpleDecoderOutputBuffer S;
-    public n2.g T;
-    public n2.g U;
+    public g T;
+    public g U;
     public int V;
     public boolean W;
     public boolean X;
@@ -66,27 +67,64 @@ public final class b extends f implements s0 {
     public long i0;
     public long j0;
 
-    public b(Handler handler, j jVar, p pVar) {
+    public FfmpegAudioRenderer(Handler handler, j jVar, p pVar) {
         super(1);
         this.I = new y(handler, jVar);
         this.J = pVar;
         ((d0) pVar).t = new m(this, 29);
-        this.K = new g(0, 0);
+        this.K = new h(0, 0);
         this.V = 0;
         this.X = true;
-        H(-9223372036854775807L);
+        I(-9223372036854775807L);
         this.d0 = new long[10];
         this.h0 = -9223372036854775807L;
         this.i0 = -9223372036854775807L;
         this.j0 = -9223372036854775807L;
     }
 
+    /* JADX WARN: Code restructure failed: missing block: B:19:0x0042, code lost:
+    
+        if (((k2.d0) r4).G(e2.d0.C(4, r2, r1)) == false) goto L19;
+     */
     @Override // i2.f
-    public final int A() {
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public final int A(s sVar) {
+        int i10;
+        String str = sVar.r;
+        int i11 = sVar.K;
+        int i12 = sVar.J;
+        if (!r0.i(str)) {
+            return i2.g.b(0, 0, 0, 0);
+        }
+        String str2 = sVar.r;
+        str2.getClass();
+        String str3 = FfmpegLibrary.a;
+        if (r0.i(str2)) {
+            if (FfmpegLibrary.d(str2)) {
+                s C = e2.d0.C(2, i12, i11);
+                p pVar = this.J;
+                i10 = 4;
+                if (!((d0) pVar).G(C)) {
+                }
+                if (sVar.S != 0) {
+                    i10 = 2;
+                }
+            }
+            i10 = 1;
+        } else {
+            i10 = 0;
+        }
+        return i10 <= 2 ? i2.g.b(i10, 0, 0, 0) : i10 | 168;
+    }
+
+    @Override // i2.f
+    public final int B() {
         return 8;
     }
 
-    public final d B(s sVar) {
+    public final e C(s sVar) {
         Trace.beginSection("createFfmpegAudioDecoder");
         int i10 = sVar.s;
         int i11 = sVar.K;
@@ -105,37 +143,37 @@ public final class b extends f implements s0 {
         return ffmpegAudioDecoder;
     }
 
-    public final boolean C() {
+    public final boolean D() {
         if (this.S == null) {
-            SimpleDecoderOutputBuffer simpleDecoderOutputBuffer = (SimpleDecoderOutputBuffer) ((h2.j) this.Q).c();
+            SimpleDecoderOutputBuffer simpleDecoderOutputBuffer = (SimpleDecoderOutputBuffer) this.Q.c();
             this.S = simpleDecoderOutputBuffer;
             if (simpleDecoderOutputBuffer == null) {
                 return false;
             }
-            int i10 = simpleDecoderOutputBuffer.d;
+            int i10 = simpleDecoderOutputBuffer.skippedOutputBufferCount;
             if (i10 > 0) {
                 this.L.f += i10;
                 ((d0) this.J).N = true;
             }
-            if (simpleDecoderOutputBuffer.c(TLObject.FLAG_27)) {
+            if (simpleDecoderOutputBuffer.isFirstSample()) {
                 long[] jArr = this.d0;
                 ((d0) this.J).N = true;
                 if (this.e0 != 0) {
-                    H(jArr[0]);
+                    I(jArr[0]);
                     int i11 = this.e0 - 1;
                     this.e0 = i11;
                     System.arraycopy(jArr, 1, jArr, 0, i11);
                 }
             }
         }
-        if (this.S.c(4)) {
+        if (this.S.isEndOfStream()) {
             if (this.V == 2) {
-                G();
-                E();
+                H();
+                F();
                 this.X = true;
                 return false;
             }
-            this.S.j();
+            this.S.release();
             this.S = null;
             try {
                 this.b0 = true;
@@ -148,7 +186,7 @@ public final class b extends f implements s0 {
         }
         this.j0 = -9223372036854775807L;
         if (this.X) {
-            FfmpegAudioDecoder ffmpegAudioDecoder = (FfmpegAudioDecoder) this.Q;
+            FfmpegAudioDecoder ffmpegAudioDecoder = this.Q;
             ffmpegAudioDecoder.getClass();
             r rVar = new r();
             rVar.q = r0.n("audio/raw");
@@ -172,79 +210,78 @@ public final class b extends f implements s0 {
         }
         p pVar = this.J;
         SimpleDecoderOutputBuffer simpleDecoderOutputBuffer2 = this.S;
-        if (!((d0) pVar).n(simpleDecoderOutputBuffer2.h, simpleDecoderOutputBuffer2.c, 1)) {
-            this.j0 = this.S.c;
+        if (!((d0) pVar).n(simpleDecoderOutputBuffer2.timeUs, 1, simpleDecoderOutputBuffer2.b)) {
+            this.j0 = this.S.timeUs;
             return false;
         }
         this.L.e++;
-        this.S.j();
+        this.S.release();
         this.S = null;
         return true;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:10:0x001e, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:10:0x001c, code lost:
     
         if (r0 == null) goto L46;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean D() {
-        d dVar = this.Q;
-        if (dVar != null && this.V != 2 && !this.a0) {
+    public final boolean E() {
+        FfmpegAudioDecoder ffmpegAudioDecoder = this.Q;
+        if (ffmpegAudioDecoder != null && this.V != 2 && !this.a0) {
             if (this.R == null) {
-                g gVar = (g) ((h2.j) dVar).d();
-                this.R = gVar;
+                h hVar = (h) ffmpegAudioDecoder.d();
+                this.R = hVar;
             }
             if (this.V == 1) {
-                g gVar2 = this.R;
-                gVar2.b = 4;
-                h2.j jVar = (h2.j) this.Q;
-                jVar.getClass();
-                jVar.e(gVar2);
+                this.R.setFlags(4);
+                FfmpegAudioDecoder ffmpegAudioDecoder2 = this.Q;
+                h hVar2 = this.R;
+                ffmpegAudioDecoder2.getClass();
+                ffmpegAudioDecoder2.e(hVar2);
                 this.R = null;
                 this.V = 2;
                 return false;
             }
             y yVar = this.c;
             yVar.A();
-            int v = v(yVar, this.R, 0);
-            if (v == -5) {
-                F(yVar);
+            int w10 = w(yVar, this.R, 0);
+            if (w10 == -5) {
+                G(yVar);
                 return true;
             }
-            if (v == -4) {
-                if (this.R.c(4)) {
+            if (w10 == -4) {
+                if (this.R.isEndOfStream()) {
                     this.a0 = true;
                     this.i0 = this.h0;
-                    d dVar2 = this.Q;
-                    g gVar3 = this.R;
-                    h2.j jVar2 = (h2.j) dVar2;
-                    jVar2.getClass();
-                    jVar2.e(gVar3);
+                    FfmpegAudioDecoder ffmpegAudioDecoder3 = this.Q;
+                    h hVar3 = this.R;
+                    ffmpegAudioDecoder3.getClass();
+                    ffmpegAudioDecoder3.e(hVar3);
                     this.R = null;
                     return false;
                 }
                 if (!this.P) {
                     this.P = true;
-                    this.R.a(TLObject.FLAG_27);
+                    this.R.addFlag(TLObject.FLAG_27);
                 }
-                this.h0 = this.R.h;
-                if (k() || this.R.c(TLObject.FLAG_29)) {
+                this.h0 = this.R.e;
+                if (k() || this.R.isLastSample()) {
                     this.i0 = this.h0;
                 }
-                this.R.m();
-                g gVar4 = this.R;
-                gVar4.c = this.M;
-                h2.j jVar3 = (h2.j) this.Q;
-                jVar3.getClass();
-                jVar3.e(gVar4);
+                this.R.c();
+                h hVar4 = this.R;
+                hVar4.a = this.M;
+                FfmpegAudioDecoder ffmpegAudioDecoder4 = this.Q;
+                ffmpegAudioDecoder4.getClass();
+                ffmpegAudioDecoder4.e(hVar4);
                 this.W = true;
                 this.L.c++;
                 this.R = null;
                 return true;
             }
-            if (v != -3) {
+            if (w10 != -3) {
                 throw new IllegalStateException();
             }
             if (k()) {
@@ -255,12 +292,12 @@ public final class b extends f implements s0 {
         return false;
     }
 
-    public final void E() {
+    public final void F() {
         y yVar = this.I;
         if (this.Q != null) {
             return;
         }
-        n2.g gVar = this.U;
+        g gVar = this.U;
         i2.g.D(this.T, gVar);
         this.T = gVar;
         if (gVar != null && gVar.h() == null && this.T.g() == null) {
@@ -269,19 +306,19 @@ public final class b extends f implements s0 {
         try {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             Trace.beginSection("createAudioDecoder");
-            d B = B(this.M);
-            this.Q = B;
-            ((h2.j) B).a(this.w);
+            e C = C(this.M);
+            this.Q = (FfmpegAudioDecoder) C;
+            ((l) C).a(this.w);
             Trace.endSection();
             long elapsedRealtime2 = SystemClock.elapsedRealtime();
-            String o9 = ((FfmpegAudioDecoder) this.Q).o();
+            String name = this.Q.getName();
             long j3 = elapsedRealtime2 - elapsedRealtime;
             Handler handler = (Handler) yVar.b;
             if (handler != null) {
-                handler.post(new f0(yVar, o9, elapsedRealtime2, j3, 2));
+                handler.post(new g0(yVar, name, elapsedRealtime2, j3, 2));
             }
             this.L.a++;
-        } catch (e e7) {
+        } catch (h2.f e7) {
             e2.a.f("DecoderAudioRenderer", "Audio codec error", e7);
             Handler handler2 = (Handler) yVar.b;
             if (handler2 != null) {
@@ -293,20 +330,20 @@ public final class b extends f implements s0 {
         }
     }
 
-    public final void F(y yVar) {
+    public final void G(y yVar) {
         s sVar = (s) yVar.c;
         sVar.getClass();
-        n2.g gVar = (n2.g) yVar.b;
+        g gVar = (g) yVar.b;
         i2.g.D(this.U, gVar);
         this.U = gVar;
         s sVar2 = this.M;
         this.M = sVar;
         this.N = sVar.M;
         this.O = sVar.N;
-        d dVar = this.Q;
+        FfmpegAudioDecoder ffmpegAudioDecoder = this.Q;
         y yVar2 = this.I;
-        if (dVar == null) {
-            E();
+        if (ffmpegAudioDecoder == null) {
+            F();
             s sVar3 = this.M;
             Handler handler = (Handler) yVar2.b;
             if (handler != null) {
@@ -315,13 +352,13 @@ public final class b extends f implements s0 {
             }
             return;
         }
-        i iVar = gVar != this.T ? new i(((FfmpegAudioDecoder) dVar).o(), sVar2, sVar, 0, 128) : new i(((FfmpegAudioDecoder) dVar).o(), sVar2, sVar, 0, 1);
+        i iVar = gVar != this.T ? new i(ffmpegAudioDecoder.getName(), sVar2, sVar, 0, 128) : new i(ffmpegAudioDecoder.getName(), sVar2, sVar, 0, 1);
         if (iVar.d == 0) {
             if (this.W) {
                 this.V = 1;
             } else {
-                G();
-                E();
+                H();
+                F();
                 this.X = true;
             }
         }
@@ -332,22 +369,22 @@ public final class b extends f implements s0 {
         }
     }
 
-    public final void G() {
+    public final void H() {
         this.R = null;
         this.S = null;
         this.V = 0;
         this.W = false;
         this.h0 = -9223372036854775807L;
         this.i0 = -9223372036854775807L;
-        d dVar = this.Q;
-        if (dVar != null) {
+        FfmpegAudioDecoder ffmpegAudioDecoder = this.Q;
+        if (ffmpegAudioDecoder != null) {
             this.L.b++;
-            ((FfmpegAudioDecoder) dVar).release();
-            String o9 = ((FfmpegAudioDecoder) this.Q).o();
+            ffmpegAudioDecoder.release();
+            String name = this.Q.getName();
             y yVar = this.I;
             Handler handler = (Handler) yVar.b;
             if (handler != null) {
-                handler.post(new b5(3, yVar, o9));
+                handler.post(new b5(3, yVar, name));
             }
             this.Q = null;
         }
@@ -355,14 +392,14 @@ public final class b extends f implements s0 {
         this.T = null;
     }
 
-    public final void H(long j3) {
+    public final void I(long j3) {
         this.c0 = j3;
         if (j3 != -9223372036854775807L) {
             this.J.getClass();
         }
     }
 
-    public final void I() {
+    public final void J() {
         l();
         long i10 = ((d0) this.J).i();
         if (i10 != Long.MIN_VALUE) {
@@ -377,7 +414,7 @@ public final class b extends f implements s0 {
     @Override // i2.s0
     public final long a() {
         if (this.n == 2) {
-            I();
+            J();
         }
         return this.Y;
     }
@@ -415,7 +452,7 @@ public final class b extends f implements s0 {
         }
         if (i10 == 12) {
             if (Build.VERSION.SDK_INT >= 23) {
-                e0.b.w(pVar, obj);
+                b.w(pVar, obj);
             }
         } else {
             if (i10 != 9) {
@@ -482,35 +519,27 @@ public final class b extends f implements s0 {
 
     @Override // i2.f
     public final boolean m() {
-        boolean e7;
         if (((d0) this.J).o()) {
             return true;
         }
-        if (this.M == null) {
-            return false;
+        if (this.M != null) {
+            return n() || this.S != null;
         }
-        if (k()) {
-            e7 = this.y;
-        } else {
-            b1 b1Var = this.r;
-            b1Var.getClass();
-            e7 = b1Var.e();
-        }
-        return e7 || this.S != null;
+        return false;
     }
 
     @Override // i2.f
-    public final void n() {
+    public final void o() {
         y yVar = this.I;
         this.M = null;
         this.X = true;
-        H(-9223372036854775807L);
+        I(-9223372036854775807L);
         this.f0 = false;
         this.j0 = -9223372036854775807L;
         try {
             i2.g.D(this.U, null);
             this.U = null;
-            G();
+            H();
             ((d0) this.J).y();
         } finally {
             yVar.D(this.L);
@@ -518,8 +547,8 @@ public final class b extends f implements s0 {
     }
 
     @Override // i2.f
-    public final void o(boolean z10, boolean z11) {
-        h hVar = new h();
+    public final void p(boolean z10, boolean z11) {
+        i2.h hVar = new i2.h();
         this.L = hVar;
         y yVar = this.I;
         Handler handler = (Handler) yVar.b;
@@ -532,7 +561,7 @@ public final class b extends f implements s0 {
         p pVar = this.J;
         if (z12) {
             d0 d0Var = (d0) pVar;
-            e2.d.g(d0Var.Y);
+            d.g(d0Var.Y);
             if (!d0Var.d0) {
                 d0Var.d0 = true;
                 d0Var.g();
@@ -554,7 +583,7 @@ public final class b extends f implements s0 {
     }
 
     @Override // i2.f
-    public final void p(long j3, boolean z10) {
+    public final void q(long j3, boolean z10) {
         ((d0) this.J).g();
         this.Y = j3;
         this.j0 = -9223372036854775807L;
@@ -564,43 +593,42 @@ public final class b extends f implements s0 {
         this.b0 = false;
         if (this.Q != null) {
             if (this.V != 0) {
-                G();
-                E();
+                H();
+                F();
                 return;
             }
             this.R = null;
             SimpleDecoderOutputBuffer simpleDecoderOutputBuffer = this.S;
             if (simpleDecoderOutputBuffer != null) {
-                simpleDecoderOutputBuffer.j();
+                simpleDecoderOutputBuffer.release();
                 this.S = null;
             }
-            d dVar = this.Q;
-            dVar.getClass();
-            h2.j jVar = (h2.j) dVar;
-            jVar.flush();
-            jVar.a(this.w);
+            FfmpegAudioDecoder ffmpegAudioDecoder = this.Q;
+            ffmpegAudioDecoder.getClass();
+            ffmpegAudioDecoder.flush();
+            ffmpegAudioDecoder.a(this.w);
             this.W = false;
         }
     }
 
     @Override // i2.f
-    public final void s() {
+    public final void t() {
         ((d0) this.J).u();
         this.g0 = true;
     }
 
     @Override // i2.f
-    public final void t() {
-        I();
+    public final void u() {
+        J();
         ((d0) this.J).t();
         this.g0 = false;
     }
 
     @Override // i2.f
-    public final void u(s[] sVarArr, long j3, long j10, u2.f0 f0Var) {
+    public final void v(s[] sVarArr, long j3, long j10, f0 f0Var) {
         this.P = false;
         if (this.c0 == -9223372036854775807L) {
-            H(j10);
+            I(j10);
             return;
         }
         int i10 = this.e0;
@@ -614,7 +642,7 @@ public final class b extends f implements s0 {
     }
 
     @Override // i2.f
-    public final void w(long j3, long j10) {
+    public final void x(long j3, long j10) {
         if (this.b0) {
             try {
                 ((d0) this.J).w();
@@ -627,11 +655,11 @@ public final class b extends f implements s0 {
         if (this.M == null) {
             y yVar = this.c;
             yVar.A();
-            this.K.i();
-            int v = v(yVar, this.K, 2);
-            if (v != -5) {
-                if (v == -4) {
-                    e2.d.g(this.K.c(4));
+            this.K.clear();
+            int w10 = w(yVar, this.K, 2);
+            if (w10 != -5) {
+                if (w10 == -4) {
+                    d.g(this.K.isEndOfStream());
                     this.a0 = true;
                     try {
                         this.b0 = true;
@@ -644,20 +672,20 @@ public final class b extends f implements s0 {
                 }
                 return;
             }
-            F(yVar);
+            G(yVar);
         }
-        E();
+        F();
         if (this.Q != null) {
             try {
                 Trace.beginSection("drainAndFeed");
-                while (C()) {
-                }
                 while (D()) {
+                }
+                while (E()) {
                 }
                 Trace.endSection();
                 synchronized (this.L) {
                 }
-            } catch (e e11) {
+            } catch (h2.f e11) {
                 e2.a.f("DecoderAudioRenderer", "Audio codec error", e11);
                 y yVar2 = this.I;
                 Handler handler = (Handler) yVar2.b;
@@ -665,7 +693,7 @@ public final class b extends f implements s0 {
                     handler.post(new k2.f(yVar2, e11, 0));
                 }
                 throw c(e11, this.M, false, 4003);
-            } catch (l e12) {
+            } catch (k2.l e12) {
                 throw c(e12, e12.a, false, 5001);
             } catch (k2.m e13) {
                 throw c(e13, e13.c, e13.b, 5001);
@@ -673,43 +701,6 @@ public final class b extends f implements s0 {
                 throw c(e14, e14.c, e14.b, 5002);
             }
         }
-    }
-
-    /* JADX WARN: Code restructure failed: missing block: B:19:0x0042, code lost:
-    
-        if (((k2.d0) r4).G(e2.d0.C(4, r2, r1)) == false) goto L19;
-     */
-    @Override // i2.f
-    /*
-        Code decompiled incorrectly, please refer to instructions dump.
-    */
-    public final int z(s sVar) {
-        int i10;
-        String str = sVar.r;
-        int i11 = sVar.K;
-        int i12 = sVar.J;
-        if (!r0.i(str)) {
-            return i2.g.b(0, 0, 0, 0);
-        }
-        String str2 = sVar.r;
-        str2.getClass();
-        String str3 = FfmpegLibrary.a;
-        if (r0.i(str2)) {
-            if (FfmpegLibrary.d(str2)) {
-                s C = e2.d0.C(2, i12, i11);
-                p pVar = this.J;
-                i10 = 4;
-                if (!((d0) pVar).G(C)) {
-                }
-                if (sVar.S != 0) {
-                    i10 = 2;
-                }
-            }
-            i10 = 1;
-        } else {
-            i10 = 0;
-        }
-        return i10 <= 2 ? i2.g.b(i10, 0, 0, 0) : i10 | 168;
     }
 
     @Override // i2.f

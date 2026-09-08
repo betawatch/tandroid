@@ -1,7 +1,6 @@
 package a6;
 
-import a3.g0;
-import a3.k0;
+import a3.m0;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -12,10 +11,8 @@ import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.SurfaceTexture;
 import android.os.Bundle;
-import android.os.Handler;
 import android.os.Parcel;
 import android.os.ResultReceiver;
-import android.os.SystemClock;
 import android.support.v4.media.MediaMetadataCompat;
 import android.support.v4.media.session.c0;
 import android.text.SpannableStringBuilder;
@@ -92,9 +89,9 @@ import org.telegram.ui.n01;
 import org.telegram.ui.sz0;
 import v7.z6;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
-public final class i implements k0, s, a0, androidx.activity.result.b, lb, OnCompleteListener, la0, d71, n, f6.a, fb.n, x, ao0, d5, j0 {
+public final class i implements m0, s, a0, androidx.activity.result.b, lb, OnCompleteListener, la0, d71, n, f6.a, fb.n, x, ao0, d5, j0 {
     public static i c;
     public final /* synthetic */ int a;
     public Object b;
@@ -285,11 +282,11 @@ public final class i implements k0, s, a0, androidx.activity.result.b, lb, OnCom
         return ((p4) this.b).a;
     }
 
-    @Override // a3.k0
+    @Override // a3.m0
     public void H() {
-        a3.m mVar = (a3.m) this.b;
-        if (mVar.n1 != null) {
-            mVar.M0(0, 1);
+        a3.n nVar = (a3.n) this.b;
+        if (nVar.n1 != null) {
+            nVar.N0(0, 1);
         }
     }
 
@@ -378,9 +375,9 @@ public final class i implements k0, s, a0, androidx.activity.result.b, lb, OnCom
         }
     }
 
-    @Override // a3.k0
+    @Override // a3.m0
     public void K() {
-        i0 i0Var = ((a3.m) this.b).W;
+        i0 i0Var = ((a3.n) this.b).W;
         if (i0Var != null) {
             i0Var.a();
         }
@@ -853,17 +850,13 @@ public final class i implements k0, s, a0, androidx.activity.result.b, lb, OnCom
         d6.c.h((d6.c) ((d6.j) this.b).c, "joinApplication", task);
     }
 
-    @Override // a3.k0
+    @Override // a3.m0
     public void onFirstFrameRendered() {
-        a3.m mVar = (a3.m) this.b;
-        Surface surface = mVar.n1;
+        a3.n nVar = (a3.n) this.b;
+        Surface surface = nVar.n1;
         if (surface != null) {
-            pf.b bVar = mVar.Z0;
-            Handler handler = (Handler) bVar.b;
-            if (handler != null) {
-                handler.post(new g0(bVar, surface, SystemClock.elapsedRealtime(), 0));
-            }
-            mVar.q1 = true;
+            nVar.Z0.g0(surface);
+            nVar.q1 = true;
         }
     }
 
@@ -1143,7 +1136,7 @@ public final class i implements k0, s, a0, androidx.activity.result.b, lb, OnCom
         this.b = new File(cVar.b, "com.crashlytics.settings.json");
     }
 
-    @Override // a3.k0
+    @Override // a3.m0
     public void h0() {
     }
 

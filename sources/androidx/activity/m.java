@@ -30,7 +30,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.beta.R;
 import w7.z7;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public final CopyOnWriteArrayList E;
@@ -56,7 +56,7 @@ public abstract class m extends e0.h implements u0, androidx.lifecycle.i, t4.e {
     public m() {
         f0 f0Var = new f0(1);
         this.b = f0Var;
-        this.c = new m2.t(new a3.c(this, 5));
+        this.c = new m2.t(new a3.d(this, 5));
         androidx.lifecycle.v vVar = new androidx.lifecycle.v(this);
         this.d = vVar;
         o oVar = new o(this);

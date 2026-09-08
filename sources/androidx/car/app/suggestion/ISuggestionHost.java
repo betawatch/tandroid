@@ -6,18 +6,18 @@ import android.os.IInterface;
 import android.os.Parcel;
 import w.b;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public interface ISuggestionHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$suggestion$ISuggestionHost".replace('$', '.');
 
     void updateSuggestions(b bVar);
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static abstract class Stub extends Binder implements ISuggestionHost {
         static final int TRANSACTION_updateSuggestions = 2;
 
-        /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+        /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
         public static class Proxy implements ISuggestionHost {
             private IBinder mRemote;
 
@@ -91,7 +91,7 @@ public interface ISuggestionHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class Default implements ISuggestionHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {

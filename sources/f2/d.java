@@ -3,7 +3,7 @@ package f2;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class d extends dd.k {
     public final long c;
@@ -17,7 +17,7 @@ public final class d extends dd.k {
         this.e = new ArrayList();
     }
 
-    public final d i(int i10) {
+    public final d d(int i10) {
         ArrayList arrayList = this.e;
         int size = arrayList.size();
         for (int i11 = 0; i11 < size; i11++) {
@@ -29,7 +29,7 @@ public final class d extends dd.k {
         return null;
     }
 
-    public final e j(int i10) {
+    public final e e(int i10) {
         ArrayList arrayList = this.d;
         int size = arrayList.size();
         for (int i11 = 0; i11 < size; i11++) {
@@ -43,6 +43,6 @@ public final class d extends dd.k {
 
     @Override // dd.k
     public final String toString() {
-        return dd.k.b(this.b) + " leaves: " + Arrays.toString(this.d.toArray()) + " containers: " + Arrays.toString(this.e.toArray());
+        return dd.k.a(this.b) + " leaves: " + Arrays.toString(this.d.toArray()) + " containers: " + Arrays.toString(this.e.toArray());
     }
 }

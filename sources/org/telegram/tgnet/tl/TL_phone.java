@@ -9,11 +9,11 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.Vector;
 import org.telegram.tgnet.m;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public class TL_phone {
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static abstract class PhoneCall extends TLObject {
         public long access_hash;
         public long admin_id;
@@ -70,7 +70,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static abstract class PhoneCallProtocol extends TLObject {
         public int flags;
         public ArrayList<String> library_versions = new ArrayList<>();
@@ -84,7 +84,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class TL_groupCallStreamChannel extends TLObject {
         public static final int constructor = -2132064081;
         public int channel;
@@ -111,7 +111,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class TL_phoneCall extends PhoneCall {
         public static final int constructor = 810769141;
 
@@ -163,7 +163,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class TL_phoneCallAccepted extends PhoneCall {
         public static final int constructor = 912311057;
 
@@ -197,7 +197,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class TL_phoneCallDiscarded extends PhoneCall {
         public static final int constructor = 1355435489;
 
@@ -237,7 +237,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class TL_phoneCallEmpty extends PhoneCall {
         public static final int constructor = 1399245077;
 
@@ -253,7 +253,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class TL_phoneCallProtocol extends PhoneCallProtocol {
         public static final int constructor = -58224696;
 
@@ -282,7 +282,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class TL_phoneCallProtocol_layer110 extends TL_phoneCallProtocol {
         public static final int constructor = -1564789301;
 
@@ -309,7 +309,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class TL_phoneCallWaiting extends PhoneCall {
         public static final int constructor = -987599081;
 
@@ -347,7 +347,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class TL_phoneCall_layer176 extends TL_phoneCall {
         public static final int constructor = -1770029977;
 
@@ -390,7 +390,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class TL_phone_phoneCall extends TLObject {
         public static final int constructor = -326966976;
         public PhoneCall phone_call;
@@ -414,7 +414,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class acceptCall extends TLObject {
         public static final int constructor = 1003664544;
         public byte[] g_b;
@@ -435,7 +435,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class checkGroupCall extends TLObject {
         public static final int constructor = -1248003721;
         public TLRPC.InputGroupCall call;
@@ -454,7 +454,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class confirmCall extends TLObject {
         public static final int constructor = 788404002;
         public byte[] g_a;
@@ -477,7 +477,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class createConferenceCall extends TLObject {
         public static final int constructor = 2097431739;
         public byte[] block;
@@ -513,7 +513,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class createGroupCall extends TLObject {
         public static final int constructor = 1221445336;
         public int flags;
@@ -542,7 +542,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class declineConferenceCallInvite extends TLObject {
         public static final int constructor = 1011325297;
         public int msg_id;
@@ -559,7 +559,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class deleteConferenceCallParticipants extends TLObject {
         public static final int constructor = -1935276763;
         public byte[] block;
@@ -588,7 +588,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class deleteGroupCallMessages extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -162573065;
         public TLRPC.InputGroupCall call;
@@ -612,7 +612,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class deleteGroupCallParticipantMessages extends TLMethod<TLRPC.Updates> {
         public static final int constructor = 499117216;
         public TLRPC.InputGroupCall call;
@@ -636,7 +636,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class discardCall extends TLObject {
         public static final int constructor = -1295269440;
         public long connection_id;
@@ -664,7 +664,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class discardGroupCall extends TLObject {
         public static final int constructor = 2054648117;
         public TLRPC.InputGroupCall call;
@@ -681,7 +681,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class editGroupCallParticipant extends TLObject {
         public static final int constructor = -1524155713;
         public TLRPC.InputGroupCall call;
@@ -726,7 +726,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class editGroupCallTitle extends TLObject {
         public static final int constructor = 480685066;
         public TLRPC.InputGroupCall call;
@@ -745,7 +745,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class exportGroupCallInvite extends TLObject {
         public static final int constructor = -425040769;
         public TLRPC.InputGroupCall call;
@@ -767,7 +767,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class exportedGroupCallInvite extends TLObject {
         public static final int constructor = 541839704;
         public String link;
@@ -788,7 +788,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class getCallConfig extends TLObject {
         public static final int constructor = 1430593449;
 
@@ -803,7 +803,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class getGroupCall extends TLObject {
         public static final int constructor = 68699611;
         public TLRPC.InputGroupCall call;
@@ -822,7 +822,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class getGroupCallChainBlocks extends TLObject {
         public static final int constructor = -291534682;
         public TLRPC.InputGroupCall call;
@@ -845,7 +845,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class getGroupCallJoinAs extends TLObject {
         public static final int constructor = -277077702;
         public TLRPC.InputPeer peer;
@@ -862,7 +862,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class getGroupCallStars extends TLMethod<groupCallStars> {
         public static final int constructor = 1868784386;
         public TLRPC.InputGroupCall call;
@@ -879,7 +879,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class getGroupCallStreamChannels extends TLObject {
         public static final int constructor = 447879488;
         public TLRPC.InputGroupCall call;
@@ -896,7 +896,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class getGroupCallStreamRtmpUrl extends TLObject {
         public static final int constructor = 1525991226;
         public int flags;
@@ -920,7 +920,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class getGroupParticipants extends TLObject {
         public static final int constructor = -984033109;
         public TLRPC.InputGroupCall call;
@@ -945,7 +945,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class groupCall extends TLObject {
         public static final int constructor = -1636664659;
         public TLRPC.GroupCall call;
@@ -978,7 +978,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class groupCallDonor extends TLObject {
         public static final int constructor = -297595771;
         public boolean anonymous;
@@ -1022,7 +1022,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class groupCallStars extends TLObject {
         public static final int constructor = -1658995418;
         public long total_stars;
@@ -1052,7 +1052,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class groupCallStreamChannels extends TLObject {
         public static final int constructor = -790330702;
         public ArrayList<TL_groupCallStreamChannel> channels = new ArrayList<>();
@@ -1073,7 +1073,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class groupCallStreamRtmpUrl extends TLObject {
         public static final int constructor = 767505458;
         public String key;
@@ -1097,7 +1097,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class groupParticipants extends TLObject {
         public static final int constructor = -193506890;
         public int count;
@@ -1133,7 +1133,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class inviteConferenceCallParticipant extends TLObject {
         public static final int constructor = -1124981115;
         public TLRPC.InputGroupCall call;
@@ -1157,7 +1157,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class inviteToGroupCall extends TLObject {
         public static final int constructor = 2067345760;
         public TLRPC.InputGroupCall call;
@@ -1176,7 +1176,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class joinAsPeers extends TLObject {
         public static final int constructor = -1343921601;
         public ArrayList<TLRPC.Peer> peers = new ArrayList<>();
@@ -1203,7 +1203,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class joinGroupCall extends TLObject {
         public static final int constructor = -1883951017;
         public byte[] block;
@@ -1242,7 +1242,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class joinGroupCallPresentation extends TLObject {
         public static final int constructor = -873829436;
         public TLRPC.InputGroupCall call;
@@ -1261,7 +1261,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class leaveGroupCall extends TLObject {
         public static final int constructor = 1342404601;
         public TLRPC.InputGroupCall call;
@@ -1280,7 +1280,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class leaveGroupCallPresentation extends TLObject {
         public static final int constructor = 475058500;
         public TLRPC.InputGroupCall call;
@@ -1297,7 +1297,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class phoneCallRequested extends PhoneCall {
         public static final int constructor = 347139340;
 
@@ -1331,7 +1331,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class receivedCall extends TLObject {
         public static final int constructor = 399855457;
         public TLRPC.TL_inputPhoneCall peer;
@@ -1348,7 +1348,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class requestCall extends TLObject {
         public static final int constructor = 1124046573;
         public int flags;
@@ -1376,7 +1376,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class saveCallDebug extends TLObject {
         public static final int constructor = 662363518;
         public TLRPC.TL_dataJSON debug;
@@ -1395,7 +1395,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class saveCallLog extends TLObject {
         public static final int constructor = 1092913030;
         public TLRPC.InputFile file;
@@ -1414,7 +1414,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class saveDefaultGroupCallJoinAs extends TLObject {
         public static final int constructor = 1465786252;
         public TLRPC.InputPeer join_as;
@@ -1433,7 +1433,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class saveDefaultSendAs extends TLMethod<TLRPC.Bool> {
         public static final int constructor = 1097313745;
         public TLRPC.InputGroupCall call;
@@ -1452,7 +1452,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class sendConferenceCallBroadcast extends TLObject {
         public static final int constructor = -965732096;
         public byte[] block;
@@ -1471,7 +1471,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class sendGroupCallEncryptedMessage extends TLMethod<TLRPC.Bool> {
         public static final int constructor = -441473683;
         public TLRPC.InputGroupCall call;
@@ -1490,7 +1490,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class sendGroupCallMessage extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1311697904;
         public long allow_paid_stars;
@@ -1523,7 +1523,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class sendSignalingData extends TLObject {
         public static final int constructor = -8744061;
         public byte[] data;
@@ -1542,7 +1542,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class setCallRating extends TLObject {
         public static final int constructor = 1508562471;
         public String comment;
@@ -1568,7 +1568,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class startScheduledGroupCall extends TLObject {
         public static final int constructor = 1451287362;
         public TLRPC.InputGroupCall call;
@@ -1585,7 +1585,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class toggleGroupCallRecord extends TLObject {
         public static final int constructor = -248985848;
         public TLRPC.InputGroupCall call;
@@ -1618,7 +1618,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class toggleGroupCallSettings extends TLMethod<TLRPC.Updates> {
         public static final int constructor = -1757179150;
         public TLRPC.InputGroupCall call;
@@ -1650,7 +1650,7 @@ public class TL_phone {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class toggleGroupCallStartSubscription extends TLObject {
         public static final int constructor = 563885286;
         public TLRPC.InputGroupCall call;

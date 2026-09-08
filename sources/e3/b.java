@@ -1,6 +1,6 @@
 package e3;
 
-import a3.k;
+import a3.l;
 import b2.r;
 import b2.r0;
 import b2.s0;
@@ -21,11 +21,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class b implements o {
     public final v a;
-    public final k b;
+    public final l b;
     public final boolean c;
     public final rb.a d;
     public int e;
@@ -45,7 +45,7 @@ public final class b implements o {
         this.d = aVar;
         this.c = (i10 & 1) == 0;
         this.a = new v(12);
-        this.b = new k();
+        this.b = new l();
         this.f = new qb.b(5);
         this.i = new e[0];
         this.m = -1L;
@@ -133,7 +133,7 @@ public final class b implements o {
                 int i13 = this.e;
                 int i14 = 4;
                 e eVar3 = null;
-                k kVar = this.b;
+                l lVar = this.b;
                 v vVar = this.a;
                 switch (i13) {
                     case 0:
@@ -146,21 +146,21 @@ public final class b implements o {
                     case 1:
                         pVar.readFully(vVar.a, 0, 12);
                         vVar.J(0);
-                        kVar.getClass();
-                        kVar.a = vVar.l();
-                        kVar.b = vVar.l();
-                        kVar.c = 0;
-                        if (kVar.a != 1414744396) {
-                            throw s0.a(null, "LIST expected, found: " + kVar.a);
+                        lVar.getClass();
+                        lVar.a = vVar.l();
+                        lVar.b = vVar.l();
+                        lVar.c = 0;
+                        if (lVar.a != 1414744396) {
+                            throw s0.a(null, "LIST expected, found: " + lVar.a);
                         }
                         int l4 = vVar.l();
-                        kVar.c = l4;
+                        lVar.c = l4;
                         if (l4 == 1819436136) {
-                            this.l = kVar.b;
+                            this.l = lVar.b;
                             this.e = 2;
                             return 0;
                         }
-                        throw s0.a(null, "hdrl expected, found: " + kVar.c);
+                        throw s0.a(null, "hdrl expected, found: " + lVar.c);
                     case 2:
                         int i15 = this.l - 4;
                         v vVar2 = new v(i15);
@@ -242,23 +242,23 @@ public final class b implements o {
                         pVar.b(0, 12, vVar.a);
                         pVar.q();
                         vVar.J(0);
-                        kVar.getClass();
-                        kVar.a = vVar.l();
-                        kVar.b = vVar.l();
-                        kVar.c = 0;
+                        lVar.getClass();
+                        lVar.a = vVar.l();
+                        lVar.b = vVar.l();
+                        lVar.c = 0;
                         int l10 = vVar.l();
-                        int i20 = kVar.a;
+                        int i20 = lVar.a;
                         if (i20 == 1179011410) {
                             pVar.r(12);
                             return 0;
                         }
                         if (i20 != 1414744396 || l10 != 1769369453) {
-                            this.j = pVar.getPosition() + kVar.b + 8;
+                            this.j = pVar.getPosition() + lVar.b + 8;
                             return 0;
                         }
                         long position3 = pVar.getPosition();
                         this.m = position3;
-                        this.n = position3 + kVar.b + 8;
+                        this.n = position3 + lVar.b + 8;
                         if (!this.p) {
                             c cVar2 = this.g;
                             cVar2.getClass();

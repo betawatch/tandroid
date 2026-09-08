@@ -9,7 +9,7 @@ import android.text.TextUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class PlaybackStateCompat implements Parcelable {
     public static final Parcelable.Creator<PlaybackStateCompat> CREATOR = new b0(4);
@@ -118,7 +118,7 @@ public final class PlaybackStateCompat implements Parcelable {
         parcel.writeInt(this.f);
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static final class CustomAction implements Parcelable {
         public static final Parcelable.Creator<CustomAction> CREATOR = new g0();
         public final String a;

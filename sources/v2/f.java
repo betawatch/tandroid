@@ -4,7 +4,7 @@ import n4.y;
 import u2.a1;
 import u2.b1;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class f implements b1 {
     public final h a;
@@ -39,18 +39,18 @@ public final class f implements b1 {
     }
 
     @Override // u2.b1
-    public final int f(y yVar, h2.g gVar, int i10) {
-        h hVar = this.e;
-        if (hVar.z()) {
+    public final int f(y yVar, h2.h hVar, int i10) {
+        h hVar2 = this.e;
+        if (hVar2.z()) {
             return -3;
         }
-        a aVar = hVar.L;
+        a aVar = hVar2.L;
         a1 a1Var = this.b;
         if (aVar != null && aVar.d(this.c + 1) <= a1Var.t()) {
             return -3;
         }
         a();
-        return a1Var.C(yVar, gVar, i10, hVar.O);
+        return a1Var.C(yVar, hVar, i10, hVar2.O);
     }
 
     @Override // u2.b1

@@ -26,11 +26,14 @@ import org.webrtc.SurfaceTextureHelper;
 import org.webrtc.VideoCapturer;
 import org.webrtc.voiceengine.WebRtcAudioRecord;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public class VideoCapturerDevice {
     private static final int CAPTURE_FPS = 30;
+    private static final int CAPTURE_HEIGHT = 720;
+    private static final int CAPTURE_WIDTH = 1280;
     public static EglBase eglBase;
+    private static VideoCapturerDevice[] instance = new VideoCapturerDevice[2];
     public static Intent mediaProjectionPermissionResultData;
     private int currentHeight;
     private int currentWidth;
@@ -40,11 +43,8 @@ public class VideoCapturerDevice {
     private HandlerThread thread;
     private VideoCapturer videoCapturer;
     private SurfaceTextureHelper videoCapturerSurfaceTextureHelper;
-    private static final int CAPTURE_WIDTH = 1280;
-    private static final int CAPTURE_HEIGHT = 720;
-    private static VideoCapturerDevice[] instance = new VideoCapturerDevice[2];
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public class 1 extends MediaProjection.Callback {
         public 1() {
         }
@@ -103,7 +103,7 @@ public class VideoCapturerDevice {
         return getScreenCaptureSize(16);
     }
 
-    private EglBase.Context getSharedEGLContext() {
+    private static EglBase.Context getSharedEGLContext() {
         if (eglBase == null) {
             eglBase = org.webrtc.e.d(null, EglBase.CONFIG_PLAIN);
         }
@@ -115,7 +115,7 @@ public class VideoCapturerDevice {
     }
 
     private void init(long j3, String str) {
-        AndroidUtilities.runOnUIThread(new a3.g0(this, j3, str, 12));
+        AndroidUtilities.runOnUIThread(new a3.h0(this, j3, str, 12));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -199,7 +199,7 @@ public class VideoCapturerDevice {
                 this.currentWidth = screenCaptureSize.x;
                 this.currentHeight = screenCaptureSize.y;
                 this.videoCapturerSurfaceTextureHelper = SurfaceTextureHelper.create("ScreenCapturerThread", eglBase.getEglBaseContext());
-                this.handler.post(new a3.g0(this, j3, screenCaptureSize, 13));
+                this.handler.post(new a3.h0(this, j3, screenCaptureSize, 13));
             }
         }
     }
@@ -355,7 +355,7 @@ public class VideoCapturerDevice {
         return point;
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public class 2 implements CameraVideoCapturer.CameraEventsHandler {
         public 2() {
         }
@@ -393,7 +393,7 @@ public class VideoCapturerDevice {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public class 3 implements CameraVideoCapturer.CameraSwitchHandler {
         public 3() {
         }

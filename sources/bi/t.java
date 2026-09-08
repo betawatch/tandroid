@@ -43,7 +43,7 @@ import org.telegram.ui.dj;
 import org.telegram.ui.im;
 import org.telegram.ui.vn;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public final class t extends AnimatorListenerAdapter {
     public final /* synthetic */ int a;
@@ -144,7 +144,7 @@ public final class t extends AnimatorListenerAdapter {
                     int i12 = ProfileStoriesView.s0;
                     if (SharedConfig.getDevicePerformanceClass() > 0) {
                         AndroidUtilities.vibrateCursor(profileStoriesView);
-                        AndroidUtilities.runOnUIThread(new a3.c(profileStoriesView, 19), 180L);
+                        AndroidUtilities.runOnUIThread(new a3.d(profileStoriesView, 19), 180L);
                     }
                 }
                 profileStoriesView.W = 1.0f;

@@ -29,7 +29,7 @@ import org.telegram.ui.fh;
 import org.telegram.ui.ke;
 import org.telegram.ui.zc;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class m1 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -64,28 +64,28 @@ public final /* synthetic */ class m1 implements RequestDelegate {
                 AndroidUtilities.runOnUIThread(new b5(iaVar, 0));
                 break;
             case 2:
-                AndroidUtilities.runOnUIThread(new a3.j0((b8) this.b, tLObject, (Runnable) this.c, 9));
+                AndroidUtilities.runOnUIThread(new a3.k0((b8) this.b, tLObject, (Runnable) this.c, 9));
                 break;
             case 3:
                 AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b((f8) this.b, tLObject, (Utilities.Callback) this.c, tL_error, 3));
                 break;
             case 4:
-                AndroidUtilities.runOnUIThread(new a3.j0((yb) this.b, tLObject, (TL_stories.TL_stories_getStoriesViews) this.c, 11));
+                AndroidUtilities.runOnUIThread(new a3.k0((yb) this.b, tLObject, (TL_stories.TL_stories_getStoriesViews) this.c, 11));
                 break;
             case 5:
-                AndroidUtilities.runOnUIThread(new a3.j0((di.d2) this.b, (String) this.c, tLObject, 13));
+                AndroidUtilities.runOnUIThread(new a3.k0((di.d2) this.b, (String) this.c, tLObject, 13));
                 break;
             case 6:
-                AndroidUtilities.runOnUIThread(new a3.j0((di.w3) this.b, tLObject, (MessagesController) this.c, 16));
+                AndroidUtilities.runOnUIThread(new a3.k0((di.w3) this.b, tLObject, (MessagesController) this.c, 16));
                 break;
             case 7:
-                AndroidUtilities.runOnUIThread(new a3.j0((di.ba) this.b, tLObject, (MessagesController) this.c, 19));
+                AndroidUtilities.runOnUIThread(new a3.k0((di.ba) this.b, tLObject, (MessagesController) this.c, 19));
                 break;
             case 8:
-                AndroidUtilities.runOnUIThread(new a3.j0((boolean[]) this.b, tLObject, (fi.v1) this.c, 25));
+                AndroidUtilities.runOnUIThread(new a3.k0((boolean[]) this.b, tLObject, (fi.v1) this.c, 25));
                 break;
             case 9:
-                AndroidUtilities.runOnUIThread(new a3.j0((fi.e4) this.b, tLObject, (org.telegram.ui.ActionBar.b2) this.c, 28));
+                AndroidUtilities.runOnUIThread(new a3.k0((fi.e4) this.b, tLObject, (org.telegram.ui.ActionBar.b2) this.c, 28));
                 break;
             case 10:
                 AndroidUtilities.runOnUIThread(new androidx.car.app.utils.b((hg.c) this.b, tL_error, (String) this.c, tLObject, 13));

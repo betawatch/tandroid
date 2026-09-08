@@ -10,7 +10,7 @@ import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.tgnet.TLObject;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public final class ho0 {
     public final int a;
@@ -67,8 +67,8 @@ public final class ho0 {
         return x0Var;
     }
 
-    public static u2.x0 f(u2.x0 x0Var, h2.g gVar, j5.b bVar, e2.v vVar) {
-        if (gVar.c(TLObject.FLAG_30)) {
+    public static u2.x0 f(u2.x0 x0Var, h2.h hVar, j5.b bVar, e2.v vVar) {
+        if (hVar.getFlag(TLObject.FLAG_30)) {
             long j3 = bVar.a;
             int i10 = 1;
             vVar.G(1);
@@ -77,14 +77,14 @@ public final class ho0 {
             byte b10 = vVar.a[0];
             boolean z10 = (b10 & 128) != 0;
             int i11 = b10 & Byte.MAX_VALUE;
-            h2.c cVar = gVar.d;
-            byte[] bArr = cVar.a;
+            h2.d dVar = hVar.b;
+            byte[] bArr = dVar.a;
             if (bArr == null) {
-                cVar.a = new byte[16];
+                dVar.a = new byte[16];
             } else {
                 Arrays.fill(bArr, (byte) 0);
             }
-            x0Var = e(e7, j10, cVar.a, i11);
+            x0Var = e(e7, j10, dVar.a, i11);
             long j11 = j10 + i11;
             if (z10) {
                 vVar.G(2);
@@ -92,11 +92,11 @@ public final class ho0 {
                 j11 += 2;
                 i10 = vVar.D();
             }
-            int[] iArr = cVar.d;
+            int[] iArr = dVar.d;
             if (iArr == null || iArr.length < i10) {
                 iArr = new int[i10];
             }
-            int[] iArr2 = cVar.e;
+            int[] iArr2 = dVar.e;
             if (iArr2 == null || iArr2.length < i10) {
                 iArr2 = new int[i10];
             }
@@ -117,19 +117,19 @@ public final class ho0 {
             c3.g0 g0Var = (c3.g0) bVar.c;
             String str = e2.d0.a;
             byte[] bArr2 = g0Var.b;
-            byte[] bArr3 = cVar.a;
+            byte[] bArr3 = dVar.a;
             int i14 = g0Var.a;
             int i15 = g0Var.c;
             int i16 = g0Var.d;
-            cVar.f = i10;
-            cVar.d = iArr;
-            cVar.e = iArr2;
-            cVar.b = bArr2;
-            cVar.a = bArr3;
-            cVar.c = i14;
-            cVar.g = i15;
-            cVar.h = i16;
-            MediaCodec.CryptoInfo cryptoInfo = cVar.i;
+            dVar.f = i10;
+            dVar.d = iArr;
+            dVar.e = iArr2;
+            dVar.b = bArr2;
+            dVar.a = bArr3;
+            dVar.c = i14;
+            dVar.g = i15;
+            dVar.h = i16;
+            MediaCodec.CryptoInfo cryptoInfo = dVar.i;
             cryptoInfo.numSubSamples = i10;
             cryptoInfo.numBytesOfClearData = iArr;
             cryptoInfo.numBytesOfEncryptedData = iArr2;
@@ -137,36 +137,36 @@ public final class ho0 {
             cryptoInfo.iv = bArr3;
             cryptoInfo.mode = i14;
             if (Build.VERSION.SDK_INT >= 24) {
-                h2.b bVar2 = cVar.j;
-                bVar2.getClass();
-                h2.b.a(bVar2, i15, i16);
+                h2.c cVar = dVar.j;
+                cVar.getClass();
+                h2.c.a(cVar, i15, i16);
             }
             long j12 = bVar.a;
             int i17 = (int) (j11 - j12);
             bVar.a = j12 + i17;
             bVar.b -= i17;
         }
-        if (!gVar.c(TLObject.FLAG_28)) {
-            gVar.l(bVar.b);
-            return d(x0Var, bVar.a, gVar.e, bVar.b);
+        if (!hVar.hasSupplementalData()) {
+            hVar.b(bVar.b);
+            return d(x0Var, bVar.a, hVar.c, bVar.b);
         }
         vVar.G(4);
         u2.x0 e10 = e(x0Var, bVar.a, vVar.a, 4);
         int B = vVar.B();
         bVar.a += 4;
         bVar.b -= 4;
-        gVar.l(B);
-        u2.x0 d = d(e10, bVar.a, gVar.e, B);
+        hVar.b(B);
+        u2.x0 d = d(e10, bVar.a, hVar.c, B);
         bVar.a += B;
         int i18 = bVar.b - B;
         bVar.b = i18;
-        ByteBuffer byteBuffer = gVar.n;
+        ByteBuffer byteBuffer = hVar.f;
         if (byteBuffer == null || byteBuffer.capacity() < i18) {
-            gVar.n = ByteBuffer.allocate(i18);
+            hVar.f = ByteBuffer.allocate(i18);
         } else {
-            gVar.n.clear();
+            hVar.f.clear();
         }
-        return d(d, bVar.a, gVar.n, bVar.b);
+        return d(d, bVar.a, hVar.f, bVar.b);
     }
 
     public void a(u2.x0 x0Var) {

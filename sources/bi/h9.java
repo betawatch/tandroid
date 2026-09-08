@@ -24,7 +24,7 @@ import org.telegram.tgnet.NativeByteBuffer;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_stories;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public final class h9 {
     public int a;
@@ -101,7 +101,7 @@ public final class h9 {
                                         th = th2;
                                         try {
                                             FileLog.e(th);
-                                            AndroidUtilities.runOnUIThread(new a3.c(q7Var, 25));
+                                            AndroidUtilities.runOnUIThread(new a3.d(q7Var, 25));
                                             return;
                                         } finally {
                                             if (sQLiteCursor != 0) {
@@ -125,7 +125,7 @@ public final class h9 {
                                             th = th3;
                                             sQLiteCursor = obj2;
                                             FileLog.e(th);
-                                            AndroidUtilities.runOnUIThread(new a3.c(q7Var, 25));
+                                            AndroidUtilities.runOnUIThread(new a3.d(q7Var, 25));
                                             return;
                                         }
                                     } else {
@@ -547,7 +547,7 @@ public final class h9 {
         if (j3 == 0) {
             return;
         }
-        this.b.getStorageQueue().postRunnable(new a3.g0(this, j3, storyItem, 5));
+        this.b.getStorageQueue().postRunnable(new a3.h0(this, j3, storyItem, 5));
     }
 
     public final void l(long j3, TL_stories.StoryItem storyItem) {

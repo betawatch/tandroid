@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.LaunchActivity;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public final class yc {
     public final org.telegram.ui.ActionBar.n2 a;
@@ -170,7 +170,7 @@ public final class yc {
         return qc.g(n2Var, ybVar, 5000);
     }
 
-    public static qc v(Context context, org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, int i10, long j3, int i11, int i12, int i13, int i14, boolean z10, a3.g0 g0Var) {
+    public static qc v(Context context, org.telegram.ui.ActionBar.n2 n2Var, FrameLayout frameLayout, int i10, long j3, int i11, int i12, int i13, int i14, boolean z10, a3.h0 h0Var) {
         yb ybVar;
         SpannableStringBuilder replaceTags;
         qc g10;
@@ -182,8 +182,8 @@ public final class yc {
         }
         yb ybVar2 = ybVar;
         int i16 = 0;
-        boolean z11 = g0Var != null;
-        uc ucVar = g0Var != null ? new uc(i16, new boolean[]{false}, g0Var) : null;
+        boolean z11 = h0Var != null;
+        uc ucVar = h0Var != null ? new uc(i16, new boolean[]{false}, h0Var) : null;
         if (i10 > 1) {
             replaceTags = i11 <= 1 ? AndroidUtilities.replaceTags(LocaleController.formatPluralString("FwdMessageToManyChats", i10, new Object[0])) : AndroidUtilities.replaceTags(LocaleController.formatPluralString("FwdMessagesToManyChats", i10, new Object[0]));
             ybVar2.c(R.raw.forward, 30, 30, new String[0]);
@@ -196,18 +196,18 @@ public final class yc {
             }
             ybVar2.c(R.raw.saved_messages, 30, 30, new String[0]);
         } else {
-            a3.g0 g0Var2 = new a3.g0(ucVar, n2Var, j3, 17);
+            a3.h0 h0Var2 = new a3.h0(ucVar, n2Var, j3, 17);
             if (DialogObject.isChatDialog(j3)) {
                 TLRPC.Chat chat = MessagesController.getInstance(UserConfig.selectedAccount).getChat(Long.valueOf(-j3));
-                replaceTags = i11 <= 1 ? n2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.FwdMessageToGroup, chat.title), -1, 2, g0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FwdMessageToGroup, chat.title)) : n2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.FwdMessagesToGroup, chat.title), -1, 2, g0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FwdMessagesToGroup, chat.title));
+                replaceTags = i11 <= 1 ? n2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.FwdMessageToGroup, chat.title), -1, 2, h0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FwdMessageToGroup, chat.title)) : n2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(R.string.FwdMessagesToGroup, chat.title), -1, 2, h0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(R.string.FwdMessagesToGroup, chat.title));
             } else {
                 TLRPC.User user = MessagesController.getInstance(UserConfig.selectedAccount).getUser(Long.valueOf(j3));
                 if (i11 <= 1) {
                     int i18 = z11 ? R.string.FwdMessageToUserShort : R.string.FwdMessageToUser;
-                    replaceTags = n2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(i18, UserObject.getFirstName(user)), -1, 2, g0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(i18, UserObject.getFirstName(user)));
+                    replaceTags = n2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(i18, UserObject.getFirstName(user)), -1, 2, h0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(i18, UserObject.getFirstName(user)));
                 } else {
                     int i19 = z11 ? R.string.FwdMessagesToUserShort : R.string.FwdMessagesToUser;
-                    replaceTags = n2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(i19, UserObject.getFirstName(user)), -1, 2, g0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(i19, UserObject.getFirstName(user)));
+                    replaceTags = n2Var != null ? AndroidUtilities.replaceSingleTag(LocaleController.formatString(i19, UserObject.getFirstName(user)), -1, 2, h0Var2) : AndroidUtilities.replaceTags(LocaleController.formatString(i19, UserObject.getFirstName(user)));
                 }
             }
             ybVar2.c(R.raw.forward, 30, 30, new String[0]);

@@ -10,7 +10,7 @@ import android.view.Window;
 import android.window.OnBackInvokedDispatcher;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public class n extends Dialog implements androidx.lifecycle.t, t4.e {
     public androidx.lifecycle.v a;
@@ -20,7 +20,7 @@ public class n extends Dialog implements androidx.lifecycle.t, t4.e {
     public n(Context context, int i10) {
         super(context, i10);
         this.b = new o(this);
-        this.c = new x(new a3.c(this, 7));
+        this.c = new x(new a3.d(this, 7));
     }
 
     public static void a(n nVar) {

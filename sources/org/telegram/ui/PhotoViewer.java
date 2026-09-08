@@ -156,7 +156,7 @@ import org.telegram.ui.Components.RadialProgressView;
 import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public class PhotoViewer implements NotificationCenter.NotificationCenterDelegate, org.telegram.ui.Components.i20, org.telegram.ui.Components.h20, sf.a, le.d {
     public static Drawable[] T8;
@@ -665,7 +665,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
     public final float[] z7;
     public boolean z8;
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public class BackgroundDrawable extends ColorDrawable {
         public static final /* synthetic */ int g = 0;
         public final RectF a;
@@ -787,7 +787,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class CounterView extends View {
         public StaticLayout a;
         public final TextPaint b;
@@ -2909,7 +2909,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         try {
             b5.d.b(0);
             if (pf.b.W().a0()) {
-                pf.b.W().g0(m1());
+                pf.b.W().h0(m1());
             }
             org.telegram.ui.Components.g71 g71Var3 = this.F2;
             if (g71Var3 != null) {
@@ -13295,7 +13295,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
                         this.o7 = g71Var2 != null ? g71Var2.o() : -1;
                         b5.d.b(0);
                         if (pf.b.W().a0()) {
-                            pf.b.W().g0(m1());
+                            pf.b.W().h0(m1());
                         }
                         g71Var = this.F2;
                         if (g71Var != null) {
@@ -15744,7 +15744,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
         try {
             b5.d.b(0);
             if (pf.b.W().a0()) {
-                pf.b.W().g0(m1());
+                pf.b.W().h0(m1());
             }
         } catch (Exception e7) {
             FileLog.e(e7);
@@ -21342,7 +21342,7 @@ public class PhotoViewer implements NotificationCenter.NotificationCenterDelegat
             try {
                 b5.d.b(0);
                 if (pf.b.W().a0()) {
-                    pf.b.W().g0(m1());
+                    pf.b.W().h0(m1());
                 }
                 org.telegram.ui.Components.g71 g71Var4 = this.F2;
                 if (g71Var4 != null) {

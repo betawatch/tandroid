@@ -1,6 +1,6 @@
 package androidx.biometric;
 
-import a3.j0;
+import a3.k0;
 import android.content.Context;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
@@ -10,7 +10,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 import v7.t8;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class s implements androidx.emoji2.text.k, v0.h {
     public final Context a;
@@ -37,7 +37,7 @@ public final class s implements androidx.emoji2.text.k, v0.h {
     public void a(v7.w wVar) {
         ThreadPoolExecutor threadPoolExecutor = new ThreadPoolExecutor(0, 1, 15L, TimeUnit.SECONDS, new LinkedBlockingDeque(), new androidx.emoji2.text.a("EmojiCompatInitializer", 0));
         threadPoolExecutor.allowCoreThreadTimeOut(true);
-        threadPoolExecutor.execute(new j0(this, wVar, threadPoolExecutor, 3));
+        threadPoolExecutor.execute(new k0(this, wVar, threadPoolExecutor, 3));
     }
 
     public void b(aa.a aVar, b2.p pVar, a4.m mVar) {
@@ -72,7 +72,7 @@ public final class s implements androidx.emoji2.text.k, v0.h {
         CancellationSignal cancellationSignal = new CancellationSignal();
         mVar.u(new v0.g(cancellationSignal));
         mg.n nVar = new mg.n(mVar, 18);
-        a3.a aVar = new a3.a(2);
+        a3.b bVar = new a3.b(2);
         kotlin.jvm.internal.i.e(context, "context");
         v0.j b10 = k6.h.b(new k6.h(this.a, 2), eVar);
         if (b10 == null) {
@@ -80,10 +80,10 @@ public final class s implements androidx.emoji2.text.k, v0.h {
         } else if (context.getPackageManager().hasSystemFeature("android.hardware.type.watch")) {
             nVar.onError(new w0.c("createCredential is not supported on this device", 3));
         } else {
-            b10.onCreateCredential(context, eVar, cancellationSignal, aVar, nVar);
+            b10.onCreateCredential(context, eVar, cancellationSignal, bVar, nVar);
         }
         Object r10 = mVar.r();
-        jd.a aVar2 = jd.a.a;
+        jd.a aVar = jd.a.a;
         return r10;
     }
 }

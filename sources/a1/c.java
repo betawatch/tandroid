@@ -64,6 +64,8 @@ import di.rb;
 import di.s3;
 import di.x3;
 import fg.k;
+import h2.i;
+import h2.j;
 import j$.util.Objects;
 import java.io.File;
 import java.io.IOException;
@@ -112,9 +114,9 @@ import r0.n;
 import s4.m0;
 import wh.l;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
-public final /* synthetic */ class c implements OnSuccessListener, bl0, Utilities.Callback2Return, al0, a2, c9, jb, l, n, Continuation, OnCompleteListener, nk0, Utilities.Callback5, s1, CameraController.VideoTakeCallback, a5.b {
+public final /* synthetic */ class c implements OnSuccessListener, i, bl0, Utilities.Callback2Return, al0, a2, c9, jb, l, n, Continuation, OnCompleteListener, nk0, Utilities.Callback5, s1, CameraController.VideoTakeCallback, a5.b {
     public final /* synthetic */ int a;
     public final /* synthetic */ Object b;
 
@@ -1853,6 +1855,14 @@ public final /* synthetic */ class c implements OnSuccessListener, bl0, Utilitie
         float pow = (float) Math.pow(f7, 2.0d);
         path.addCircle((rectF.right + AndroidUtilities.dp(7.0f)) - (AndroidUtilities.dp(14.0f) * pow), (rectF.bottom + AndroidUtilities.dp(7.0f)) - (AndroidUtilities.dp(14.0f) * pow), AndroidUtilities.dp(11.0f), Path.Direction.CW);
         canvas.clipPath(path, Region.Op.DIFFERENCE);
+    }
+
+    @Override // h2.i
+    public void i(j jVar) {
+        a4.l lVar = (a4.l) this.b;
+        a4.k kVar = (a4.k) jVar;
+        kVar.clear();
+        lVar.b.add(kVar);
     }
 
     @Override // wh.l

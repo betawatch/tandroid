@@ -3,16 +3,17 @@ package q2;
 import android.graphics.Bitmap;
 import android.os.Trace;
 import b2.s;
+import h2.h;
 import java.nio.ByteBuffer;
 import java.util.ArrayDeque;
 import n4.y;
 import u2.f0;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class g extends i2.f {
     public final b I;
-    public final h2.g J;
+    public final h J;
     public final ArrayDeque K;
     public boolean L;
     public boolean M;
@@ -23,7 +24,7 @@ public final class g extends i2.f {
     public int R;
     public s S;
     public c T;
-    public h2.g U;
+    public h U;
     public e V;
     public Bitmap W;
     public boolean X;
@@ -36,7 +37,7 @@ public final class g extends i2.f {
         super(4);
         this.I = bVar;
         this.V = e.a;
-        this.J = new h2.g(0, 0);
+        this.J = new h(0, 0);
         this.N = f.c;
         this.K = new ArrayDeque();
         this.P = -9223372036854775807L;
@@ -45,14 +46,20 @@ public final class g extends i2.f {
         this.R = 1;
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:68:0x0147, code lost:
+    @Override // i2.f
+    public final int A(s sVar) {
+        this.I.getClass();
+        return b.a(sVar);
+    }
+
+    /* JADX WARN: Code restructure failed: missing block: B:68:0x0146, code lost:
     
         if (r14 == ((r0 * r1.Q) - 1)) goto L79;
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean B(long j3) {
+    public final boolean C(long j3) {
         boolean z10;
         Bitmap bitmap;
         Bitmap bitmap2 = this.W;
@@ -62,18 +69,18 @@ public final class g extends i2.f {
                 e2.d.h(this.T);
                 a aVar = (a) this.T.c();
                 if (aVar != null) {
-                    if (!aVar.c(4)) {
-                        e2.d.i(aVar.f, "Non-EOS buffer came back from the decoder without bitmap.");
-                        this.W = aVar.f;
-                        aVar.j();
+                    if (!aVar.isEndOfStream()) {
+                        e2.d.i(aVar.a, "Non-EOS buffer came back from the decoder without bitmap.");
+                        this.W = aVar.a;
+                        aVar.release();
                     } else {
                         if (this.Q == 3) {
-                            E();
+                            F();
                             e2.d.h(this.S);
-                            D();
+                            E();
                             return false;
                         }
-                        aVar.j();
+                        aVar.release();
                         if (arrayDeque.isEmpty()) {
                             this.M = true;
                             return false;
@@ -163,36 +170,36 @@ public final class g extends i2.f {
     
         if (r2 == null) goto L93;
      */
-    /* JADX WARN: Code restructure failed: missing block: B:76:0x010f, code lost:
+    /* JADX WARN: Code restructure failed: missing block: B:76:0x0110, code lost:
     
         if (r2 == false) goto L81;
      */
-    /* JADX WARN: Removed duplicated region for block: B:35:0x0087  */
-    /* JADX WARN: Removed duplicated region for block: B:38:0x00aa  */
-    /* JADX WARN: Removed duplicated region for block: B:41:0x0123  */
-    /* JADX WARN: Removed duplicated region for block: B:43:0x0128  */
-    /* JADX WARN: Removed duplicated region for block: B:49:0x00ae  */
+    /* JADX WARN: Removed duplicated region for block: B:35:0x0088  */
+    /* JADX WARN: Removed duplicated region for block: B:38:0x00ab  */
+    /* JADX WARN: Removed duplicated region for block: B:41:0x0124  */
+    /* JADX WARN: Removed duplicated region for block: B:43:0x0129  */
+    /* JADX WARN: Removed duplicated region for block: B:49:0x00af  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final boolean C(long j3) {
+    public final boolean D(long j3) {
         boolean z10;
-        h2.g gVar;
+        h hVar;
         s sVar;
         int i10;
-        h2.g gVar2;
+        h hVar2;
         if (!this.X || this.Y == null) {
             y yVar = this.c;
             yVar.A();
             c cVar = this.T;
             if (cVar != null && this.Q != 3 && !this.L) {
                 if (this.U == null) {
-                    h2.g gVar3 = (h2.g) cVar.d();
-                    this.U = gVar3;
+                    h hVar3 = (h) cVar.d();
+                    this.U = hVar3;
                 }
                 if (this.Q == 2) {
                     e2.d.h(this.U);
-                    this.U.b = 4;
+                    this.U.setFlags(4);
                     c cVar2 = this.T;
                     e2.d.h(cVar2);
                     cVar2.e(this.U);
@@ -200,8 +207,8 @@ public final class g extends i2.f {
                     this.Q = 3;
                     return false;
                 }
-                int v = v(yVar, this.U, 0);
-                if (v == -5) {
+                int w10 = w(yVar, this.U, 0);
+                if (w10 == -5) {
                     s sVar2 = (s) yVar.c;
                     e2.d.h(sVar2);
                     this.S = sVar2;
@@ -209,30 +216,30 @@ public final class g extends i2.f {
                     this.Q = 2;
                     return true;
                 }
-                if (v == -4) {
-                    this.U.m();
-                    ByteBuffer byteBuffer = this.U.e;
+                if (w10 == -4) {
+                    this.U.c();
+                    ByteBuffer byteBuffer = this.U.c;
                     if (byteBuffer == null || byteBuffer.remaining() <= 0) {
-                        h2.g gVar4 = this.U;
-                        e2.d.h(gVar4);
-                        if (!gVar4.c(4)) {
+                        h hVar4 = this.U;
+                        e2.d.h(hVar4);
+                        if (!hVar4.isEndOfStream()) {
                             z10 = false;
                             if (z10) {
-                                h2.g gVar5 = this.U;
-                                e2.d.h(gVar5);
-                                gVar5.c = this.S;
+                                h hVar5 = this.U;
+                                e2.d.h(hVar5);
+                                hVar5.a = this.S;
                                 c cVar3 = this.T;
                                 e2.d.h(cVar3);
-                                h2.g gVar6 = this.U;
-                                e2.d.h(gVar6);
-                                cVar3.e(gVar6);
+                                h hVar6 = this.U;
+                                e2.d.h(hVar6);
+                                cVar3.e(hVar6);
                                 this.a0 = 0;
                             }
-                            gVar = this.U;
-                            e2.d.h(gVar);
-                            if (gVar.c(4)) {
+                            hVar = this.U;
+                            e2.d.h(hVar);
+                            if (hVar.isEndOfStream()) {
                                 int i11 = this.a0;
-                                long j10 = gVar.h;
+                                long j10 = hVar.e;
                                 j5.b bVar = new j5.b();
                                 bVar.b = i11;
                                 bVar.a = j10;
@@ -253,23 +260,23 @@ public final class g extends i2.f {
                             } else {
                                 this.X = true;
                             }
-                            gVar2 = this.U;
-                            e2.d.h(gVar2);
-                            if (!gVar2.c(4)) {
+                            hVar2 = this.U;
+                            e2.d.h(hVar2);
+                            if (!hVar2.isEndOfStream()) {
                                 this.L = true;
                                 this.U = null;
                                 return false;
                             }
                             long j11 = this.P;
-                            h2.g gVar7 = this.U;
-                            e2.d.h(gVar7);
-                            this.P = Math.max(j11, gVar7.h);
+                            h hVar7 = this.U;
+                            e2.d.h(hVar7);
+                            this.P = Math.max(j11, hVar7.e);
                             if (z10) {
                                 this.U = null;
                             } else {
-                                h2.g gVar8 = this.U;
-                                e2.d.h(gVar8);
-                                gVar8.i();
+                                h hVar8 = this.U;
+                                e2.d.h(hVar8);
+                                hVar8.clear();
                             }
                             return !this.X;
                         }
@@ -277,15 +284,15 @@ public final class g extends i2.f {
                     z10 = true;
                     if (z10) {
                     }
-                    gVar = this.U;
-                    e2.d.h(gVar);
-                    if (gVar.c(4)) {
+                    hVar = this.U;
+                    e2.d.h(hVar);
+                    if (hVar.isEndOfStream()) {
                     }
-                    gVar2 = this.U;
-                    e2.d.h(gVar2);
-                    if (!gVar2.c(4)) {
+                    hVar2 = this.U;
+                    e2.d.h(hVar2);
+                    if (!hVar2.isEndOfStream()) {
                     }
-                } else if (v != -3) {
+                } else if (w10 != -3) {
                     throw new IllegalStateException();
                 }
             }
@@ -293,7 +300,7 @@ public final class g extends i2.f {
         return false;
     }
 
-    public final void D() {
+    public final void E() {
         if (this.b0) {
             s sVar = this.S;
             sVar.getClass();
@@ -312,7 +319,7 @@ public final class g extends i2.f {
         }
     }
 
-    public final void E() {
+    public final void F() {
         this.U = null;
         this.Q = 0;
         this.P = -9223372036854775807L;
@@ -355,21 +362,21 @@ public final class g extends i2.f {
     }
 
     @Override // i2.f
-    public final void n() {
+    public final void o() {
         this.S = null;
         this.N = f.c;
         this.K.clear();
-        E();
+        F();
         this.V.getClass();
     }
 
     @Override // i2.f
-    public final void o(boolean z10, boolean z11) {
+    public final void p(boolean z10, boolean z11) {
         this.R = z11 ? 1 : 0;
     }
 
     @Override // i2.f
-    public final void p(long j3, boolean z10) {
+    public final void q(long j3, boolean z10) {
         this.R = Math.min(this.R, 1);
         this.M = false;
         this.L = false;
@@ -386,13 +393,13 @@ public final class g extends i2.f {
     }
 
     @Override // i2.f
-    public final void q() {
-        E();
+    public final void r() {
+        F();
     }
 
     @Override // i2.f
-    public final void r() {
-        E();
+    public final void s() {
+        F();
         this.R = Math.min(this.R, 1);
     }
 
@@ -404,7 +411,7 @@ public final class g extends i2.f {
     /*
         Code decompiled incorrectly, please refer to instructions dump.
     */
-    public final void u(s[] sVarArr, long j3, long j10, f0 f0Var) {
+    public final void v(s[] sVarArr, long j3, long j10, f0 f0Var) {
         if (this.N.b != -9223372036854775807L) {
             ArrayDeque arrayDeque = this.K;
             if (arrayDeque.isEmpty()) {
@@ -422,19 +429,19 @@ public final class g extends i2.f {
     }
 
     @Override // i2.f
-    public final void w(long j3, long j10) {
+    public final void x(long j3, long j10) {
         if (this.M) {
             return;
         }
         if (this.S == null) {
             y yVar = this.c;
             yVar.A();
-            h2.g gVar = this.J;
-            gVar.i();
-            int v = v(yVar, gVar, 2);
-            if (v != -5) {
-                if (v == -4) {
-                    e2.d.g(gVar.c(4));
+            h hVar = this.J;
+            hVar.clear();
+            int w10 = w(yVar, hVar, 2);
+            if (w10 != -5) {
+                if (w10 == -4) {
+                    e2.d.g(hVar.isEndOfStream());
                     this.L = true;
                     this.M = true;
                     return;
@@ -447,23 +454,17 @@ public final class g extends i2.f {
             this.b0 = true;
         }
         if (this.T == null) {
-            D();
+            E();
         }
         try {
             Trace.beginSection("drainAndFeedDecoder");
-            while (B(j3)) {
-            }
             while (C(j3)) {
+            }
+            while (D(j3)) {
             }
             Trace.endSection();
         } catch (d e7) {
             throw c(e7, null, false, 4003);
         }
-    }
-
-    @Override // i2.f
-    public final int z(s sVar) {
-        this.I.getClass();
-        return b.a(sVar);
     }
 }

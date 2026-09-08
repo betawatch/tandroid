@@ -42,7 +42,7 @@ import org.telegram.ui.le1;
 import org.telegram.ui.se1;
 import org.telegram.ui.te1;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class r11 implements Runnable {
     public final /* synthetic */ int a;
@@ -397,10 +397,10 @@ public final /* synthetic */ class r11 implements Runnable {
                             int width = bitmap2.getWidth();
                             int height = bitmap2.getHeight();
                             tVar.d = bitmap2;
-                            a3.k kVar = (a3.k) tVar.b;
-                            kVar.a = width;
-                            kVar.b = height;
-                            kVar.c = i20;
+                            a3.l lVar = (a3.l) tVar.b;
+                            lVar.a = width;
+                            lVar.b = height;
+                            lVar.c = i20;
                             if (cVar.Z0(tVar).size() == 0) {
                                 z10 = false;
                             }

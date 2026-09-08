@@ -3,7 +3,7 @@ package com.google.android.gms.internal.vision;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class g3 extends o6.a {
     public static final Parcelable.Creator<g3> CREATOR = new a1(1);
@@ -15,13 +15,13 @@ public final class g3 extends o6.a {
 
     public static g3 b(m2.t tVar) {
         g3 g3Var = new g3();
-        a3.k kVar = (a3.k) tVar.b;
-        g3Var.a = kVar.a;
-        g3Var.b = kVar.b;
-        g3Var.e = kVar.c;
-        kVar.getClass();
+        a3.l lVar = (a3.l) tVar.b;
+        g3Var.a = lVar.a;
+        g3Var.b = lVar.b;
+        g3Var.e = lVar.c;
+        lVar.getClass();
         g3Var.c = 0;
-        ((a3.k) tVar.b).getClass();
+        ((a3.l) tVar.b).getClass();
         g3Var.d = 0L;
         return g3Var;
     }

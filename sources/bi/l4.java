@@ -23,7 +23,7 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.gz;
 import org.telegram.ui.ov0;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public final class l4 extends b0 {
     public final org.telegram.ui.Components.e6 d;
@@ -159,7 +159,7 @@ public final class l4 extends b0 {
         f10 = clamp;
         if (!o5Var.Y0 && clamp == 1.0f && ((!m5Var.e || !o5Var.j3) && !o5Var.L2)) {
             o5Var.Y0 = true;
-            post(new a3.c(this, 17));
+            post(new a3.d(this, 17));
         }
         pb pbVar2 = this.w;
         l8 l8Var2 = pbVar2.O0;

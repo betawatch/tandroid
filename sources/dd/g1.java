@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public enum g1 extends b2 {
     public g1() {
@@ -13,14 +13,14 @@ public enum g1 extends b2 {
         boolean o9 = aVar.o();
         h1 h1Var = b2.p0;
         if (o9) {
-            fVar.f();
+            fVar.b();
             lVar.c = h1Var;
             return;
         }
         char d = aVar.d();
         if (d == 0) {
             lVar.m(this);
-            fVar.f();
+            fVar.b();
             fVar.c.append((char) 65533);
             lVar.c = h1Var;
             return;
@@ -28,7 +28,7 @@ public enum g1 extends b2 {
         if (d != ' ') {
             if (d == 65535) {
                 lVar.l(this);
-                fVar.f();
+                fVar.b();
                 fVar.getClass();
                 lVar.j();
                 lVar.c = b2.a;
@@ -37,7 +37,7 @@ public enum g1 extends b2 {
             if (d == '\t' || d == '\n' || d == '\f' || d == '\r') {
                 return;
             }
-            fVar.f();
+            fVar.b();
             fVar.c.append(d);
             lVar.c = h1Var;
         }

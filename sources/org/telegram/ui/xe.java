@@ -24,7 +24,7 @@ import org.telegram.ui.ActionBar.AlertDialog$Builder;
 import org.telegram.ui.LaunchActivity;
 import org.telegram.ui.ThemeActivity;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class xe implements org.telegram.ui.ActionBar.a2, org.telegram.ui.Components.al0 {
     public final /* synthetic */ int a;
@@ -242,7 +242,7 @@ public final /* synthetic */ class xe implements org.telegram.ui.ActionBar.a2, o
                 org.telegram.ui.Components.n70 F = org.telegram.ui.Components.n70.F(tr0Var, f6Var, t1Var);
                 F.c0 = true;
                 F.V(messageObject4.isOutOwner() ? 5 : 3);
-                F.c(R.drawable.msg_message, LocaleController.getString(R.string.AccDescrGoToMessage), new a3.g0(xu0Var, j10, messageObject4, 22), false);
+                F.c(R.drawable.msg_message, LocaleController.getString(R.string.AccDescrGoToMessage), new a3.h0(xu0Var, j10, messageObject4, 22), false);
                 if (!messageObject4.isPollClosed()) {
                     if (messageObject4.canUnvote()) {
                         F.c(R.drawable.msg_unvote, LocaleController.getString(R.string.Unvote), new org.telegram.ui.Components.wq0(xu0Var, f6Var, currentAccount2, messageObject4), false);

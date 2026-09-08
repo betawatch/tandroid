@@ -31,7 +31,7 @@ import java.util.concurrent.TimeoutException;
 import org.telegram.messenger.BillingController;
 import v7.z5;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class d0 extends c {
     public final Context C;
@@ -77,7 +77,7 @@ public final class d0 extends c {
         int i12 = e0.a;
         g3 b10 = e0.b(i10, i11, hVar, null, m3.b);
         Objects.requireNonNull(b10, "ApiFailure should not be null");
-        this.h.l0(b10);
+        this.h.m0(b10);
     }
 
     public final void G(int i10, q0.a aVar, Runnable runnable) {
@@ -178,7 +178,7 @@ public final class d0 extends c {
                 pf.b bVar = this.h;
                 bVar.getClass();
                 try {
-                    bVar.t0(c10, (p3) bVar.b);
+                    bVar.u0(c10, (p3) bVar.b);
                 } catch (Throwable th2) {
                     com.google.android.gms.internal.play_billing.u.i("BillingLogger", "Unable to log.", th2);
                 }

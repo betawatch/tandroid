@@ -27,7 +27,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.PremiumPreviewFragment;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class jn0 implements Runnable {
     public final /* synthetic */ int a;
@@ -241,7 +241,7 @@ public final /* synthetic */ class jn0 implements Runnable {
                 Throwable cause = u0Var.getCause();
                 if (!(cause instanceof r2.n) || (!cause.toString().contains("av1") && !cause.toString().contains("av01"))) {
                     TextureView textureView = g71Var.n;
-                    if (textureView == null || ((g71Var.E || !(cause instanceof r2.p)) && !(cause instanceof a3.w))) {
+                    if (textureView == null || ((g71Var.E || !(cause instanceof r2.p)) && !(cause instanceof a3.x))) {
                         g71Var.J.onError(g71Var, u0Var);
                         break;
                     } else {

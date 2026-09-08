@@ -46,7 +46,7 @@ import w7.x5;
 import w7.z5;
 import zh.v7;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public final class e4 extends r20 implements NotificationCenter.NotificationCenterDelegate {
     public final long P;
@@ -111,7 +111,7 @@ public final class e4 extends r20 implements NotificationCenter.NotificationCent
                 n70 H = n70.H(e4Var, view);
                 H.l(R.drawable.msg_bot, LocaleController.getString(R.string.ProfileBotOpenApp), new b7(27, e4Var, user), user.bot_has_main_app);
                 H.l(R.drawable.msg_bot, LocaleController.getString(R.string.BotWebViewOpenBot), new b7(28, e4Var, connectedbotstarref), !user.bot_has_main_app);
-                H.c(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new a3.j0(e4Var, connectedbotstarref, user, 27), false);
+                H.c(R.drawable.msg_link2, LocaleController.getString(R.string.CopyLink), new a3.k0(e4Var, connectedbotstarref, user, 27), false);
                 H.m(!connectedbotstarref.revoked, R.drawable.msg_leave, LocaleController.getString(R.string.LeaveAffiliateLinkButton), true, new androidx.car.app.utils.b(e4Var, context, user, connectedbotstarref, 10));
                 H.V(5);
                 H.Z();

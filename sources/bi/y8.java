@@ -19,21 +19,21 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.R;
 import org.telegram.ui.Components.xi0;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public final class y8 extends FrameLayout {
     public final ArrayList a;
     public ValueAnimator b;
     public int c;
     public int d;
-    public final a3.c e;
+    public final a3.d e;
 
     public y8(Context context, db dbVar) {
         super(context);
         this.c = -1;
         int i10 = 0;
         this.d = 0;
-        this.e = new a3.c(this, 24);
+        this.e = new a3.d(this, 24);
         ImageView imageView = new ImageView(context);
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         addView(imageView, -1, -1);

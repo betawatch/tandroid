@@ -30,7 +30,7 @@ import org.telegram.tgnet.TLRPC;
 import org.telegram.tgnet.tl.TL_account;
 import org.telegram.ui.ActionBar.AlertDialog$Builder;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public final /* synthetic */ class iu implements org.telegram.ui.Components.rv0, org.telegram.ui.ActionBar.a2, MessagesController.ErrorDelegate, org.telegram.ui.Components.sg0, Utilities.Callback5, org.telegram.ui.Components.rd0, org.telegram.ui.ActionBar.l1, org.telegram.ui.Components.wk0, hg.a2, org.telegram.ui.Components.bl0, r0.n, org.telegram.ui.Components.al0, au, le.d, vj0 {
     public final /* synthetic */ int a;
@@ -266,7 +266,7 @@ public final /* synthetic */ class iu implements org.telegram.ui.Components.rv0,
         Object obj = this.b;
         switch (i12) {
             case 1:
-                ((a3.g0) obj).run();
+                ((a3.h0) obj).run();
                 break;
             case 12:
                 ((n70) obj).U(true);
@@ -515,7 +515,7 @@ public final /* synthetic */ class iu implements org.telegram.ui.Components.rv0,
 
     @Override // org.telegram.messenger.MessagesController.ErrorDelegate
     public boolean run(TLRPC.TL_error tL_error) {
-        ((a3.f0) this.b).run();
+        ((a3.g0) this.b).run();
         return true;
     }
 

@@ -27,7 +27,7 @@ import org.telegram.tgnet.tl.TL_aicompose;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 import org.webrtc.MediaStreamTrack;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public final class fc0 {
     public final LaunchActivity a;
@@ -778,7 +778,7 @@ public final class fc0 {
                                 }
                                 if (!TextUtils.isEmpty(str7) && "passkey".equalsIgnoreCase(str2) && Build.VERSION.SDK_INT >= 28) {
                                     k();
-                                    this.h = ConnectionsManager.getInstance(i13).sendRequestTyped(new TL_account.getPasskeys(), new a3.a(1), new bi.f0(15, this, str7));
+                                    this.h = ConnectionsManager.getInstance(i13).sendRequestTyped(new TL_account.getPasskeys(), new a3.b(1), new bi.f0(15, this, str7));
                                     return true;
                                 }
                                 if (!TextUtils.isEmpty(str7) && "auto-delete".equalsIgnoreCase(str2) && d().getGlobalTTl() >= 0) {

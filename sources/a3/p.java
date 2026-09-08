@@ -1,82 +1,80 @@
 package a3;
 
 import android.content.Context;
-import b2.v0;
-import i2.o0;
-import i2.q1;
-import i2.s0;
-import org.telegram.messenger.MediaDataController;
+import android.graphics.SurfaceTexture;
+import android.os.Build;
+import android.view.Surface;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
-public final class p implements s0 {
-    public boolean a;
-    public boolean b;
-    public final Object c;
-    public final Object d;
-    public Object e;
-    public Object f;
+public final class p extends Surface {
+    public static int d;
+    public static boolean e;
+    public final boolean a;
+    public final o b;
+    public boolean c;
 
-    public p(o0 o0Var, e2.x xVar) {
-        this.d = o0Var;
-        this.c = new q1(xVar);
-        this.a = true;
+    public p(o oVar, SurfaceTexture surfaceTexture, boolean z10) {
+        super(surfaceTexture);
+        this.b = oVar;
+        this.a = z10;
     }
 
-    @Override // i2.s0
-    public long a() {
-        if (this.a) {
-            return ((q1) this.c).a();
+    /* JADX WARN: Removed duplicated region for block: B:13:0x0048 A[RETURN] */
+    /* JADX WARN: Removed duplicated region for block: B:7:0x003a A[Catch: k -> 0x0046, TRY_LEAVE, TryCatch #0 {k -> 0x0046, blocks: (B:3:0x0001, B:7:0x003a, B:16:0x000d, B:18:0x0018, B:22:0x0025, B:25:0x0032), top: B:2:0x0001 }] */
+    /*
+        Code decompiled incorrectly, please refer to instructions dump.
+    */
+    public static int a(Context context) {
+        boolean j3;
+        try {
+            int i10 = Build.VERSION.SDK_INT;
+            if (i10 >= 24 && ((i10 >= 26 || (!"samsung".equals(Build.MANUFACTURER) && !"XT1650".equals(Build.MODEL))) && (i10 >= 26 || context.getPackageManager().hasSystemFeature("android.hardware.vr.high_performance")))) {
+                j3 = e2.a.j("EGL_EXT_protected_content");
+                if (j3) {
+                    return 0;
+                }
+                return e2.a.j("EGL_KHR_surfaceless_context") ? 1 : 2;
+            }
+            j3 = false;
+            if (j3) {
+            }
+        } catch (e2.k e7) {
+            e2.a.e("PlaceholderSurface", "Failed to determine secure mode due to GL error: " + e7.getMessage());
+            return 0;
         }
-        s0 s0Var = (s0) this.f;
-        s0Var.getClass();
-        return s0Var.a();
     }
 
-    @Override // i2.s0
-    public boolean b() {
-        if (this.a) {
-            ((q1) this.c).getClass();
-            return false;
+    public static synchronized boolean b(Context context) {
+        boolean z10;
+        synchronized (p.class) {
+            try {
+                if (!e) {
+                    d = a(context);
+                    e = true;
+                }
+                z10 = d != 0;
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        s0 s0Var = (s0) this.f;
-        s0Var.getClass();
-        return s0Var.b();
+        return z10;
     }
 
-    public void c(i2.f fVar) {
-        s0 s0Var;
-        s0 i10 = fVar.i();
-        if (i10 == null || i10 == (s0Var = (s0) this.f)) {
-            return;
+    @Override // android.view.Surface
+    public final void release() {
+        super.release();
+        synchronized (this.b) {
+            try {
+                if (!this.c) {
+                    o oVar = this.b;
+                    oVar.b.getClass();
+                    oVar.b.sendEmptyMessage(2);
+                    this.c = true;
+                }
+            } catch (Throwable th2) {
+                throw th2;
+            }
         }
-        if (s0Var != null) {
-            throw new i2.o(2, new IllegalStateException("Multiple renderer media clocks enabled."), MediaDataController.MAX_STYLE_RUNS_COUNT);
-        }
-        this.f = i10;
-        this.e = fVar;
-        i10.f((v0) ((q1) this.c).e);
-    }
-
-    @Override // i2.s0
-    public void f(v0 v0Var) {
-        s0 s0Var = (s0) this.f;
-        if (s0Var != null) {
-            s0Var.f(v0Var);
-            v0Var = ((s0) this.f).h();
-        }
-        ((q1) this.c).f(v0Var);
-    }
-
-    @Override // i2.s0
-    public v0 h() {
-        s0 s0Var = (s0) this.f;
-        return s0Var != null ? s0Var.h() : (v0) ((q1) this.c).e;
-    }
-
-    public p(Context context, z zVar) {
-        this.c = context.getApplicationContext();
-        this.d = zVar;
-        this.f = e2.x.a;
     }
 }

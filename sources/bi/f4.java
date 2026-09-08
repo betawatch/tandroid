@@ -15,7 +15,7 @@ import org.telegram.ui.Components.ChatActivityEnterView;
 import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.yc;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class f4 implements Utilities.Callback {
     public final /* synthetic */ int a = 1;
@@ -96,7 +96,7 @@ public final /* synthetic */ class f4 implements Utilities.Callback {
                     }
                 }
                 if (l4.longValue() <= 0) {
-                    qc q6 = new yc(o5Var.c1, o5Var.B0).q(f7, LocaleController.getString(R.string.ReactionSent), LocaleController.getString(R.string.ViewInChat), new a3.c(g4Var, 16));
+                    qc q6 = new yc(o5Var.c1, o5Var.B0).q(f7, LocaleController.getString(R.string.ReactionSent), LocaleController.getString(R.string.ViewInChat), new a3.d(g4Var, 16));
                     q6.j = 5000;
                     q6.j();
                 }

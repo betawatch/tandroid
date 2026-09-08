@@ -43,7 +43,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.ui.ActionBar.ActionBarLayout;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public class u9 extends org.telegram.ui.ActionBar.n2 {
     public final PointF[] E;
@@ -486,9 +486,9 @@ public class u9 extends org.telegram.ui.ActionBar.n2 {
                     int width = bitmap.getWidth();
                     int height = bitmap.getHeight();
                     tVar3.d = bitmap;
-                    a3.k kVar = (a3.k) tVar3.b;
-                    kVar.a = width;
-                    kVar.b = height;
+                    a3.l lVar = (a3.l) tVar3.b;
+                    lVar.a = width;
+                    lVar.b = height;
                     i13 = bitmap.getWidth();
                     i14 = bitmap.getHeight();
                 } else {
@@ -503,9 +503,9 @@ public class u9 extends org.telegram.ui.ActionBar.n2 {
                         throw new IllegalArgumentException("Invalid image data size.");
                     }
                     tVar3.c = wrap;
-                    a3.k kVar2 = (a3.k) tVar3.b;
-                    kVar2.a = width2;
-                    kVar2.b = height2;
+                    a3.l lVar2 = (a3.l) tVar3.b;
+                    lVar2.a = width2;
+                    lVar2.b = height2;
                     i13 = size.getWidth();
                     i14 = size.getWidth();
                 }
@@ -545,9 +545,9 @@ public class u9 extends org.telegram.ui.ActionBar.n2 {
                         int width3 = Z.getWidth();
                         int height3 = Z.getHeight();
                         tVar5.d = Z;
-                        a3.k kVar3 = (a3.k) tVar5.b;
-                        kVar3.a = width3;
-                        kVar3.b = height3;
+                        a3.l lVar3 = (a3.l) tVar5.b;
+                        lVar3.a = width3;
+                        lVar3.b = height3;
                         i13 = Z.getWidth();
                         i14 = Z.getHeight();
                         SparseArray Z02 = this.U.Z0(tVar5);
@@ -582,9 +582,9 @@ public class u9 extends org.telegram.ui.ActionBar.n2 {
                             int width4 = b02.getWidth();
                             int height4 = b02.getHeight();
                             tVar6.d = b02;
-                            a3.k kVar4 = (a3.k) tVar6.b;
-                            kVar4.a = width4;
-                            kVar4.b = height4;
+                            a3.l lVar4 = (a3.l) tVar6.b;
+                            lVar4.a = width4;
+                            lVar4.b = height4;
                             int width5 = Z.getWidth();
                             int height5 = Z.getHeight();
                             SparseArray Z03 = this.U.Z0(tVar6);

@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.MediaController;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public abstract class p {
     public static final byte[] a = {0, 0, 0, 1};
@@ -74,7 +74,7 @@ public abstract class p {
                 return false;
             }
         } else if (Objects.equals(sVar.r, "video/hevc")) {
-            a3.k e7 = e(new a4.h(bArr, 4, i10 + 4));
+            a3.l e7 = e(new a4.h(bArr, 4, i10 + 4));
             int i12 = e7.a;
             if (i12 == 35) {
                 return false;
@@ -93,9 +93,9 @@ public abstract class p {
         return (Objects.equals(sVar.r, "video/hevc") || r0.b(sVar.k, "video/hevc") != null) ? 2 : 0;
     }
 
-    public static a3.k e(a4.h hVar) {
+    public static a3.l e(a4.h hVar) {
         hVar.s();
-        return new a3.k(hVar.i(6), hVar.i(6), hVar.i(3) - 1);
+        return new a3.l(hVar.i(6), hVar.i(6), hVar.i(3) - 1);
     }
 
     /* JADX WARN: Removed duplicated region for block: B:21:0x005e  */
@@ -283,7 +283,7 @@ public abstract class p {
         int i35;
         int i36;
         pf.b bVar;
-        a3.k e7 = e(new a4.h(bArr, i10, i11));
+        a3.l e7 = e(new a4.h(bArr, i10, i11));
         a4.h hVar = new a4.h(bArr, i10 + 2, i11);
         int i37 = 4;
         hVar.t(4);

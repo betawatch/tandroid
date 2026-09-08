@@ -7,7 +7,7 @@ import android.os.Parcel;
 import androidx.car.app.hardware.ICarHardwareResult;
 import w.b;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public interface ICarHardwareHost extends IInterface {
     public static final String DESCRIPTOR = "androidx$car$app$hardware$ICarHardwareHost".replace('$', '.');
@@ -18,13 +18,13 @@ public interface ICarHardwareHost extends IInterface {
 
     void unsubscribeCarHardwareResult(int i10, b bVar);
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static abstract class Stub extends Binder implements ICarHardwareHost {
         static final int TRANSACTION_getCarHardwareResult = 2;
         static final int TRANSACTION_subscribeCarHardwareResult = 3;
         static final int TRANSACTION_unsubscribeCarHardwareResult = 4;
 
-        /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+        /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
         public static class Proxy implements ICarHardwareHost {
             private IBinder mRemote;
 
@@ -153,7 +153,7 @@ public interface ICarHardwareHost extends IInterface {
         }
     }
 
-    /* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+    /* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
     public static class Default implements ICarHardwareHost {
         @Override // android.os.IInterface
         public IBinder asBinder() {

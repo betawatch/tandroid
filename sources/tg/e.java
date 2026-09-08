@@ -13,7 +13,7 @@ import android.view.animation.LinearInterpolator;
 import android.view.animation.OvershootInterpolator;
 import bi.t5;
 import com.google.android.gms.internal.vision.e2;
-import h2.i;
+import h2.k;
 import java.util.ArrayList;
 import java.util.Collections;
 import javax.microedition.khronos.egl.EGL10;
@@ -31,12 +31,12 @@ import org.telegram.ui.Components.voip.w;
 import sg.z1;
 import zh.w7;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public class e extends TextureView implements TextureView.SurfaceTextureListener {
     public boolean E;
     public boolean F;
-    public i G;
+    public k G;
     public final int H;
     public final long I;
     public final int J;
@@ -464,7 +464,7 @@ public class e extends TextureView implements TextureView.SurfaceTextureListener
 
     @Override // android.view.TextureView.SurfaceTextureListener
     public final void onSurfaceTextureAvailable(SurfaceTexture surfaceTexture, int i10, int i11) {
-        this.G = new i(this);
+        this.G = new k(this);
         this.c = surfaceTexture;
         this.w = i10;
         this.v = i11;

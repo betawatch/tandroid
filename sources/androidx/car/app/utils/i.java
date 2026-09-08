@@ -1,6 +1,6 @@
 package androidx.car.app.utils;
 
-import a3.j0;
+import a3.k0;
 import android.os.RemoteException;
 import android.util.Log;
 import androidx.car.app.IOnDoneCallback;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public abstract class i {
     public static IOnDoneCallback a() {
@@ -32,7 +32,7 @@ public abstract class i {
     }
 
     public static void b(IOnDoneCallback iOnDoneCallback, String str, c cVar) {
-        j.a(new j0(iOnDoneCallback, str, cVar, 2));
+        j.a(new k0(iOnDoneCallback, str, cVar, 2));
     }
 
     public static void c(o oVar, IOnDoneCallback iOnDoneCallback, String str, c cVar) {

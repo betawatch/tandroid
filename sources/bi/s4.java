@@ -34,7 +34,7 @@ import org.telegram.ui.Components.qc;
 import org.telegram.ui.Components.yc;
 import org.telegram.ui.co;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public final class s4 extends ea {
     public final /* synthetic */ pb x0;
@@ -131,7 +131,7 @@ public final class s4 extends ea {
     }
 
     @Override // bi.ea
-    public final void H(final URLSpan uRLSpan, final View view, a3.c cVar) {
+    public final void H(final URLSpan uRLSpan, final View view, a3.d dVar) {
         String str;
         final String url = uRLSpan.getURL();
         String url2 = uRLSpan.getURL();
@@ -176,7 +176,7 @@ public final class s4 extends ea {
         };
         f3Var.items = charSequenceArr;
         f3Var.onClickListener = onClickListener;
-        f3Var.setOnHideListener(new r4(cVar, 0));
+        f3Var.setOnHideListener(new r4(dVar, 0));
         f3Var.fixNavigationBar(org.telegram.ui.ActionBar.j6.v0(org.telegram.ui.ActionBar.j6.h5, f6Var));
         ((gb) o5Var.Q1).h(f3Var);
     }

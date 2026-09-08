@@ -42,7 +42,7 @@ import org.telegram.ui.Components.x9;
 import org.telegram.ui.Components.xi0;
 import org.telegram.ui.cc1;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public class t3 extends FrameLayout {
     public final LinearLayout.LayoutParams[] E;
@@ -816,7 +816,6 @@ public class t3 extends FrameLayout {
 
     public final void f(TL_stars.StarGift starGift, boolean z10, boolean z11, boolean z12) {
         this.M = false;
-        int i10 = 1;
         boolean z13 = z10 || z11;
         boolean z14 = starGift instanceof TL_stars.TL_starGiftUnique;
         cc1 cc1Var = this.H;
@@ -843,7 +842,7 @@ public class t3 extends FrameLayout {
                 TL_stars.starGiftAttributeBackdrop stargiftattributebackdrop = stargiftattributebackdropArr[0];
                 textView.setBackground(org.telegram.ui.ActionBar.j6.b0(AndroidUtilities.dp(12.0f), i0.a.d(0.25f, stargiftattributebackdrop.edge_color | (-16777216), stargiftattributebackdrop.pattern_color | (-16777216))));
                 if (w3.N1(UserConfig.selectedAccount, DialogObject.getPeerDialogId(starGift.owner_id))) {
-                    textView.setOnClickListener(new p3(this, i10));
+                    textView.setOnClickListener(new p3(this, 1));
                     w7.z5.a(textView);
                 } else {
                     textView.setOnClickListener(null);

@@ -31,7 +31,7 @@ import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.beta.R;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class o0 extends g.u {
     public static final /* synthetic */ int j0 = 0;
@@ -136,7 +136,7 @@ public final class o0 extends g.u {
         pf.b bVar = this.Z;
         r rVar = this.a0;
         if (bVar != null) {
-            bVar.j0(rVar);
+            bVar.k0(rVar);
             this.Z = null;
         }
         if (mediaSessionCompat$Token != null && this.F) {

@@ -4,7 +4,7 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class z {
     public boolean a = false;
@@ -30,11 +30,11 @@ public final class z {
             aVar.r = false;
             aVar.d();
             a aVar2 = i0Var.h;
-            a3.c cVar = new a3.c(i0Var, 10);
+            a3.d dVar = new a3.d(i0Var, 10);
             if (aVar2.p == null) {
                 aVar2.p = new ArrayList();
             }
-            aVar2.p.add(cVar);
+            aVar2.p.add(dVar);
             i0Var.h.e(false, true);
             i0Var.i = true;
             i0Var.A(true);

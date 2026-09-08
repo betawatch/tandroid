@@ -1,6 +1,6 @@
 package i2;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public abstract class f implements i1 {
     public boolean E;
@@ -26,7 +26,9 @@ public abstract class f implements i1 {
         this.b = i10;
     }
 
-    public int A() {
+    public abstract int A(b2.s sVar);
+
+    public int B() {
         return 0;
     }
 
@@ -40,7 +42,7 @@ public abstract class f implements i1 {
         if (sVar != null && !this.E) {
             this.E = true;
             try {
-                i11 = z(sVar) & 7;
+                i11 = A(sVar) & 7;
             } catch (o unused) {
             } finally {
                 this.E = false;
@@ -72,21 +74,30 @@ public abstract class f implements i1 {
 
     public abstract boolean m();
 
-    public abstract void n();
-
-    public abstract void p(long j3, boolean z10);
-
-    public final int v(n4.y yVar, h2.g gVar, int i10) {
+    public final boolean n() {
+        if (k()) {
+            return this.y;
+        }
         u2.b1 b1Var = this.r;
         b1Var.getClass();
-        int f7 = b1Var.f(yVar, gVar, i10);
+        return b1Var.e();
+    }
+
+    public abstract void o();
+
+    public abstract void q(long j3, boolean z10);
+
+    public final int w(n4.y yVar, h2.h hVar, int i10) {
+        u2.b1 b1Var = this.r;
+        b1Var.getClass();
+        int f7 = b1Var.f(yVar, hVar, i10);
         if (f7 == -4) {
-            if (gVar.c(4)) {
+            if (hVar.isEndOfStream()) {
                 this.x = Long.MIN_VALUE;
                 return this.y ? -4 : -3;
             }
-            long j3 = gVar.h + this.v;
-            gVar.h = j3;
+            long j3 = hVar.e + this.v;
+            hVar.e = j3;
             this.x = Math.max(this.x, j3);
             return f7;
         }
@@ -103,9 +114,9 @@ public abstract class f implements i1 {
         return f7;
     }
 
-    public abstract void w(long j3, long j10);
+    public abstract void x(long j3, long j10);
 
-    public final void x(b2.s[] sVarArr, u2.b1 b1Var, long j3, long j10, u2.f0 f0Var) {
+    public final void y(b2.s[] sVarArr, u2.b1 b1Var, long j3, long j10, u2.f0 f0Var) {
         e2.d.g(!this.y);
         this.r = b1Var;
         this.G = f0Var;
@@ -114,15 +125,10 @@ public abstract class f implements i1 {
         }
         this.s = sVarArr;
         this.v = j10;
-        u(sVarArr, j3, j10, f0Var);
+        v(sVarArr, j3, j10, f0Var);
     }
-
-    public abstract int z(b2.s sVar);
 
     public void e() {
-    }
-
-    public void q() {
     }
 
     public void r() {
@@ -134,16 +140,19 @@ public abstract class f implements i1 {
     public void t() {
     }
 
+    public void u() {
+    }
+
     @Override // i2.i1
     public void d(int i10, Object obj) {
     }
 
-    public void o(boolean z10, boolean z11) {
+    public void p(boolean z10, boolean z11) {
     }
 
-    public void y(float f7, float f10) {
+    public void z(float f7, float f10) {
     }
 
-    public void u(b2.s[] sVarArr, long j3, long j10, u2.f0 f0Var) {
+    public void v(b2.s[] sVarArr, long j3, long j10, u2.f0 f0Var) {
     }
 }

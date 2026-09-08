@@ -32,7 +32,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.ui.Components.CheckBoxBase;
 import org.telegram.ui.Components.pr;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public final class s3 extends FrameLayout {
     public static int d0;
@@ -51,7 +51,7 @@ public final class s3 extends FrameLayout {
     public DispatchQueue Q;
     public String R;
     public Object S;
-    public a3.j0 T;
+    public a3.k0 T;
     public boolean U;
     public boolean V;
     public final Path W;
@@ -233,9 +233,9 @@ public final class s3 extends FrameLayout {
             this.T = null;
         }
         DispatchQueue a2 = a();
-        a3.j0 j0Var = new a3.j0(this, obj, str, 14);
-        this.T = j0Var;
-        a2.postRunnable(j0Var);
+        a3.k0 k0Var = new a3.k0(this, obj, str, 14);
+        this.T = k0Var;
+        a2.postRunnable(k0Var);
     }
 
     public final Bitmap c(MediaController.PhotoEntry photoEntry, BitmapFactory.Options options) {

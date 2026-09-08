@@ -138,7 +138,7 @@ import org.telegram.ui.Components.UndoView;
 import org.webrtc.MediaStreamTrack;
 import org.webrtc.voiceengine.WebRtcAudioTrack;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes3.dex */
 public class LaunchActivity extends h5 implements org.telegram.ui.ActionBar.a5, NotificationCenter.NotificationCenterDelegate, oy, rf.a {
     public static final Pattern B1 = Pattern.compile("^(?:http(?:s|)://|)([A-z0-9-]+?)\\.t\\.me");
@@ -11647,7 +11647,7 @@ public class LaunchActivity extends h5 implements org.telegram.ui.ActionBar.a5, 
                                                             FileLog.d(t10.toString());
                                                             if (findTopic == null) {
                                                                 long j33 = j11;
-                                                                MessagesController.getInstance(r12.O).getTopicsController().loadTopic(j33, j3, new a3.f0((Object) r12, j33, j3, coVar2, 13));
+                                                                MessagesController.getInstance(r12.O).getTopicsController().loadTopic(j33, j3, new a3.g0((Object) r12, j33, j3, coVar2, 13));
                                                                 return i16;
                                                             }
                                                             og.d.a(coVar2, MessagesStorage.TopicKey.of(-j11, j3));
@@ -15462,7 +15462,7 @@ public class LaunchActivity extends h5 implements org.telegram.ui.ActionBar.a5, 
                     ga0Var.run(user);
                     return;
                 } else {
-                    MessagesStorage.getInstance(this.O).getStorageQueue().postRunnable(new a3.g0(this, j3, ga0Var, 27));
+                    MessagesStorage.getInstance(this.O).getStorageQueue().postRunnable(new a3.h0(this, j3, ga0Var, 27));
                     return;
                 }
             }

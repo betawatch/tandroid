@@ -11,7 +11,7 @@ import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC;
 import org.telegram.ui.id0;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes4.dex */
 public final /* synthetic */ class j7 implements RequestDelegate {
     public final /* synthetic */ int a;
@@ -28,7 +28,7 @@ public final /* synthetic */ class j7 implements RequestDelegate {
     public final void run(TLObject tLObject, TLRPC.TL_error tL_error) {
         switch (this.a) {
             case 0:
-                AndroidUtilities.runOnUIThread(new a3.g0((u8) this.c, this.b, tLObject, 2));
+                AndroidUtilities.runOnUIThread(new a3.h0((u8) this.c, this.b, tLObject, 2));
                 break;
             case 1:
                 ((ContactsController) this.c).lambda$loadContacts$28(this.b, tLObject, tL_error);
@@ -48,7 +48,7 @@ public final /* synthetic */ class j7 implements RequestDelegate {
             default:
                 id0 id0Var = (id0) this.c;
                 if (tLObject != null) {
-                    AndroidUtilities.runOnUIThread(new a3.g0(id0Var, tLObject, this.b, 28));
+                    AndroidUtilities.runOnUIThread(new a3.h0(id0Var, tLObject, this.b, 28));
                     break;
                 }
                 break;

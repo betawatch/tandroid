@@ -9,7 +9,7 @@ import android.view.Surface;
 import java.nio.ByteBuffer;
 import k2.g0;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public final class x implements l {
     public final MediaCodec a;
@@ -30,8 +30,8 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void b(int i10, h2.c cVar, long j3, int i11) {
-        this.a.queueSecureInputBuffer(i10, 0, cVar.i, j3, i11);
+    public final void b(int i10, h2.d dVar, long j3, int i11) {
+        this.a.queueSecureInputBuffer(i10, 0, dVar.i, j3, i11);
     }
 
     @Override // r2.l
@@ -40,8 +40,8 @@ public final class x implements l {
     }
 
     @Override // r2.l
-    public final void d(a3.l lVar, Handler handler) {
-        this.a.setOnFrameRenderedListener(new a(this, lVar, 1), handler);
+    public final void d(a3.m mVar, Handler handler) {
+        this.a.setOnFrameRenderedListener(new a(this, mVar, 1), handler);
     }
 
     @Override // r2.l

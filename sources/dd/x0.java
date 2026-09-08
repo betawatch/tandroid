@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public enum x0 extends b2 {
     public x0() {
@@ -10,7 +10,7 @@ public enum x0 extends b2 {
     @Override // dd.b2
     public final void d(l lVar, a aVar) {
         if (aVar.k("--")) {
-            lVar.n.f();
+            lVar.n.b();
             lVar.c = b2.h0;
         } else if (aVar.l("DOCTYPE")) {
             lVar.c = b2.n0;

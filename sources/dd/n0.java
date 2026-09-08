@@ -1,6 +1,6 @@
 package dd;
 
-/* compiled from: r8-map-id-1d37b327b7539539df9db5f3096c2b1fda35266a40e118b6745b92f988bd863c */
+/* compiled from: r8-map-id-fc8091fbf48934909e0e4bbf4c2510a13915b1f3367c1e4641e44f77ea5701eb */
 /* loaded from: classes.dex */
 public enum n0 extends b2 {
     public n0() {
@@ -19,7 +19,7 @@ public enum n0 extends b2 {
         char d = aVar.d();
         if (d == 0) {
             lVar.m(this);
-            lVar.i.i((char) 65533);
+            lVar.i.d((char) 65533);
             return;
         }
         if (d != ' ') {
@@ -46,14 +46,14 @@ public enum n0 extends b2 {
                             lVar.c = wVar;
                             break;
                         default:
-                            lVar.i.i(d);
+                            lVar.i.d(d);
                             break;
                     }
                     return;
                 }
             }
             lVar.m(this);
-            lVar.i.i(d);
+            lVar.i.d(d);
             return;
         }
         lVar.c = b2.Y;
